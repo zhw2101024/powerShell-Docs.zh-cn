@@ -26,6 +26,7 @@
 ### [基于类的自定义资源](authoringResourceClass.md)
 ### [复合资源](authoringResourceComposite.md)
 ### [调试 DSC 资源](debugResource.md)
+### [资源创作清单](resourceAuthoringChecklist.md)
 
 # [配置本地配置管理器 (LCM)](metaConfig.md)
 ## [在 PowerShell 4.0 中配置 LCM](metaConfig4.md)
@@ -52,4 +53,4 @@
 ### [nxService 资源](lnxServiceResource.md)
 ### [nxSshAuthorizedKeys 资源](lnxSshAuthorizedKeysResource.md)
 ### [nxUser 资源](lnxUserResource.md)
-<!--HONumber=Feb16_HO4-->
+<!--HONumber=Mar16_HO1-->
