@@ -1,27 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [dsc\images\CredentialEncryptionDiagram1.png](https://github.com/PowerShell/powerShell-Docs/blob/97cfb44dc3db0937a0eaae5af5113210f988aa56/dsc/images/CredentialEncryptionDiagram1.png) | InSyncHandedBackSuccess | [Details](#d9f53a805041164f5070845c0fd216b63d17ae5824)
 
 ## Item Details
-##### <a name='d9f53a805041164f5070845c0fd216b63d17ae5824'></a> Source: [dsc\images\CredentialEncryptionDiagram1.png](https://github.com/PowerShell/powerShell-Docs/blob/97cfb44dc3db0937a0eaae5af5113210f988aa56/dsc/images/CredentialEncryptionDiagram1.png)
-* Status: InSyncHandedBackSuccess
-* Target File: [dsc\images\CredentialEncryptionDiagram1.png](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/70ab2e86876edc00a959dc45723bc6d7f8481a9a/dsc/images/CredentialEncryptionDiagram1.png)
-* Handoff File: [d9f53a805041164f5070845c0fd216b63d17ae58.png](https://github.com/PowerShell/powerShell-Docs.handoff/blob/7a4fd67e1a0a9f426a81139b387636c5adf46b5f/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/d9f53a805041164f5070845c0fd216b63d17ae58.png)
-* Handoff Datetime: 2016-03-11 01:02:59
-* Handoff Reason: IsDependency
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [d9f53a805041164f5070845c0fd216b63d17ae58.png](https://github.com/PowerShell/powerShell-Docs.handback/blob/d17981895d81918c23efe5fc00339a83bf57cce4/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/d9f53a805041164f5070845c0fd216b63d17ae58.png)
-* Handback Datetime: 2016-03-30 18:16:01
-* Dependency From: dsc\secureMOF.md
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
