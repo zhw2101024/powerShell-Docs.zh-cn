@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "183dddd89bd4d152de12e2ca122fc0305b420cb4",
-  "LastTranslatedCommit": "70ab2e86876edc00a959dc45723bc6d7f8481a9a",
+  "LastTranslatedCommit": "d48cbd0f03745150253125a61b5d050491c19144",
   "Items": {
     "81efeb79a70df604ef8c126c0ebd17b4f4711a44": {
       "FileHash": "81efeb79a70df604ef8c126c0ebd17b4f4711a44",
@@ -308,14 +308,14 @@
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
-      "TargetFileCommit": "66682b7babe03c5fd90e958b4faf6c66a82b847c",
+      "TargetFileCommit": "d48cbd0f03745150253125a61b5d050491c19144",
       "TargetFilePath": "dsc\\configurations.md",
       "HandbackFilePath": "ol-handback\\PowerShell\\powerShell-Docs.zh-cn\\live\\configurations.02626ddbf3a00f8ede56fdfd2e46a027800e75b6.zh-cn.xlf",
-      "HandbackFileCommit": "9d6e862349d3e058f2557cae9f42e61acafa7705",
-      "HandbackDateTime": "2016-03-30T18:07:42.0579263Z",
+      "HandbackFileCommit": "e720c8f96cfde2725ac781aaf78e2cb06ca1c956",
+      "HandbackDateTime": "2016-03-31T20:02:13.4755433Z",
       "HandbackException": null,
       "HandbackFailureTimes": 0,
-      "UpdatedDateTime": "2016-03-30T18:07:42.0579263Z",
+      "UpdatedDateTime": "2016-03-31T20:02:13.4755433Z",
       "ArchiveFilePath": null,
       "ArchiveFileCommit": null,
       "ArchiveFileDateTime": "0001-01-01T00:00:00",
