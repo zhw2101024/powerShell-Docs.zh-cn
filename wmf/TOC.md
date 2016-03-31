@@ -39,7 +39,6 @@
 #### [使用多个配置片段配置节点](dsc_partialconfig.md)
 ##### [对混合 RefreshMode 的支持](dsc_partialconfig_mixedmode.md)
 #### [使用新的属性配置 DSC 引擎](dsc_metaconfiguration.md)
-#### [推送模式和请求模式的混合搭配](dsc_mixedrefreshmode.md)
 #### [关于 LCM 状态的详细信息](dsc_lcmstate.md)
 #### [RefreshMode 和 ConfigurationMode 的频率无需是彼此的倍数](dsc_freqnomultiple.md)
 #### [RefreshMode 属性的附加值](dsc_refreshmode.md)
@@ -98,4 +97,8 @@
 
 # [已知问题和限制](limitation_overview.md)
 ## [Desired State Configuration (DSC) 已知问题](limitation_dsc.md)
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Mar16_HO3-->
+
+
