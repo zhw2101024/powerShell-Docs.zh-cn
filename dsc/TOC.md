@@ -4,6 +4,7 @@
 ## [执行配置](enactingConfigurations.md)
 ## [配置数据](configData.md)
 ### [配置数据中的凭据选项](configDataCredentials.md)
+### [使用用户凭据运行 DSC](runAsUser.md)
 ## [保护配置 MOF 文件](secureMOF.md)
 ## [部分配置](partialConfigs.md)
 # [资源](resources.md)
@@ -18,7 +19,7 @@
 ### [脚本资源](scriptResource.md)
 ### [服务资源](serviceResource.md)
 ### [用户资源](userResource.md)
-### [Windows 功能资源](windowsfeatureResource.md)
+### [WindowsFeature 资源](windowsfeatureResource.md)
 ### [WindowsProcess 资源](windowsProcessResource.md)
 ## [创作自定义资源](authoringResource.md) 
 ### [基于 MOF 的自定义资源](authoringResourceMOF.md)
@@ -33,6 +34,7 @@
 
 # DSC 请求模型
 ## [设置 Web 请求服务器](pullServer.md)
+## [设置 DSC SMB 请求服务器](pullServerSMB.md)
 ## [设置请求客户端](pullClient.md)
 ### [使用配置名称设置请求客户端](pullClientConfigNames.md)
 ### [使用配置 ID 设置请求客户端](pullClientConfigID.md)
@@ -53,4 +55,8 @@
 ### [nxService 资源](lnxServiceResource.md)
 ### [nxSshAuthorizedKeys 资源](lnxSshAuthorizedKeysResource.md)
 ### [nxUser 资源](lnxUserResource.md)
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO3-->
+
+

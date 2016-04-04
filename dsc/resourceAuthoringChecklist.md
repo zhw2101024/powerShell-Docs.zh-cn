@@ -1,7 +1,7 @@
 # 资源创作清单
-
+此清单是创作新 DSC 资源时的最佳做法的列表
 ## 资源模块包含用于所有资源的 .psd1 文件和 schema.mof 
-你首先应检查你的资源是否具有正确的结构以及是否包含所有所需文件。 每个资源模块都应包含 .psd1 文件且每个非复合资源都应具有 schema.mof 文件。 未包含架构的资源不会被 **Get-DscResource** 列出且用户在针对 ISE 中的这些模块写入代码时不能使用 IntelliSense。 
+你首先应检查你的资源是否具有正确的结构以及是否包含所有所需文件。 每个资源模块都应包含 .psd1 文件且每个非复合资源都应具有 schema.mof 文件。 未包含架构的资源不会被 Get-DscResource 列出且用户在针对 ISE 中的这些模块写入代码时不能使用 IntelliSense。 
 xRemoteFile 资源是 xPSDesiredStateConfiguration 资源模块的一部分，其示例目录结构如下所示：
 
 
@@ -62,7 +62,7 @@ class MSFT_xRemoteFile : OMI_BaseResource
     [Read, ValueMap{"Present", "Absent"}, Values{"Present", "Absent"}, Description("Says whether DestinationPath exists on the machine")] String Ensure;
 }; 
 ```
-此外，你应从 DSC 资源设计器中使用 **Test-xDscResource** cmdlet 和 **Test-xDscSchema** cmdlet 来自动验证资源和架构：
+此外，你应从 DSC 资源设计器中使用 Test-xDscResource cmdlet 和 Test-xDscSchema cmdlet 来自动验证资源和架构：
 ```
 Test-xDscResource <Resource_folder>
 Test-xDscSchema <Path_to_resource_schema_file>
@@ -92,36 +92,36 @@ File file {
 } 
 ```
 在第一次应用它之后，test.txt 文件应出现在 C:\test 文件夹。 但是，后续运行相同配置时不会更改计算机的状态（例如，不会创建 test.txt 文件的任何副本）。
-要确保资源是幂等的，我们可以在直接测试资源时重复调用 **Set-TargetResource**，或在进行端到端测试时多次调用 **Start-DscConfiguration**。 每次运行后结果都应是相同的。 
+要确保资源是幂等的，我们可以在直接测试资源时重复调用 Set-TargetResource，或在进行端到端测试时多次调用 Start-DscConfiguration。 每次运行后结果都应是相同的。 
 
 
 ## 测试了用户修改方案 ##
-用户修改是值得测试的另一个常用方案。 它有助于验证 **Set-TargetResource** 和 **Test-TargetResource** 是否正常运行。 以下是测试它时应该采取的步骤：
+用户修改是值得测试的另一个常用方案。 它有助于验证 Set-TargetResource 和 Test-TargetResource 是否正常运行。 以下是测试它时应该采取的步骤：
 1.  从未在所需状态的资源开始。
 2.  使用资源运行配置
-3.  验证 **Test-DscConfiguration** 是否返回 True
+3.  验证 Test-DscConfiguration 是否返回 True
 4.  修改未在所需状态的资源
-5.  验证 **Test-DscConfiguration** 是否返回 false
+5.  验证 Test-DscConfiguration 是否返回 false
 下面介绍了一个使用 Registry 资源的更为具体的示例：
 1.  从未在所需状态的注册表项开始
-2.  运行 **Start-DscConfiguration** 及其配置以将它放入所需状态并验证其是否通过。
-3.  运行 **Test-DscConfiguration** 并验证其是否返回 true
+2.  运行 Start-DscConfiguration 及其配置以将它放入所需状态并验证其是否通过。
+3.  运行 Test-DscConfiguration 并验证其是否返回 true
 4.  修改项的值，使它不在所需状态
-5.  运行 **Test-DscConfiguration** 并验证其是否返回 false
+5.  运行 Test-DscConfiguration 并验证其是否返回 false
 6.  已使用 Get-DscConfiguration 验证了 Get-TargetResource 功能
 
 Get-TargetResource 应该返回资源的当前状态的详细信息。 确保通过在应用该配置之后调用 Get-DscConfiguration 并验证输出是否正确反映了计算机的当前状态对其进行测试。 请务必对它进行单独测试，因为在调用 Start-DscConfiguration 时此区域的任何问题都不会出现。
 
-## 已通过直接调用 **Get/Set/Test-TargetResource** 函数验证了资源 ##
+## 已通过直接调用 Get/Set/Test-TargetResource 函数验证了资源 ##
 
-请确保对在资源中实现的 **Get/Set/Test-TargetResource** 函数进行测试，可通过直接调用它们并按预期方式进行验证完成此操作。
+请确保对在资源中实现的 Get/Set/Test-TargetResource 函数进行测试，可通过直接调用它们并按预期方式进行验证完成此操作。
 
-## 已使用 **Start-DscConfiguration** 端到端地验证了资源 ##
+## 已使用 Start-DscConfiguration 端到端地验证了资源 ##
 
-虽然通过直接调用 **Get/Set/Test-TargetResource** 函数对它们进行测试至关重要，但不是所有问题都能以这种方法发现。 你应该将测试的关注重心放在使用 **Start-DscConfiguration** 上或请求服务器上。 事实上，这就是用户使用资源的方式，所以不要低估此类测试的重要性。 
+虽然通过直接调用 Get/Set/Test-TargetResource 函数对它们进行测试至关重要，但不是所有问题都能以这种方法发现。 你应该将测试的关注重心放在使用 Start-DscConfiguration 上或请求服务器上。 事实上，这就是用户使用资源的方式，所以不要低估此类测试的重要性。 
 可能的问题类型：
 -   由于 DSC 代理以服务方式运行，因此凭据/会话的行为可能不同。  请务必端到端地测试此处的任何功能。
--   验证由资源显示的错误消息是否有意义。 例如，由 **Start-DscConfiguration** 输出的错误可能与在直接调用 **Set-TargetResource** 函数时显示的错误不同。
+-   验证由资源显示的错误消息是否有意义。 例如，由 Start-DscConfiguration 输出的错误可能与在直接调用 Set-TargetResource 函数时显示的错误不同。
 
 ## 资源在所有支持 DSC 的平台上运行正常（或返回特定的错误） ##
 资源应适用于所有支持 DSC 的平台（Windows Server 2008 R2 或更高版本）。 确保在操作系统上安装了最新的 WMF (Windows Management Framework) 以获取最新版本的 DSC。 如果资源按设计无法在部分这些平台上运作，则将返回特定的错误消息。 此外，确保资源检查你调用的 cmdlet 是否存在于特定的计算机上。 Windows Server 2012 添加了大量新 cmdlet，即使安装了 WMF，它们在 Windows Server 2008R2 上也不可用。 
@@ -196,12 +196,12 @@ Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg"
 -   精确性：描述问题的具体内容
 -   建设性：建议如何修复问题
 -   礼貌用语：不要责怪用户或让他们感到愚笨
-确保验证端到端方案中的错误（使用 **Start-DscConfiguration**），因为它们可能与直接运行资源函数时返回的错误不同。 
+确保验证端到端方案中的错误（使用 Start-DscConfiguration），因为它们可能与直接运行资源函数时返回的错误不同。 
 
 ## 日志消息要易于理解且信息量大（包括 –verbose、–debug 和 ETW 日志） ##
 确保由资源输出的日志易于理解且向用户提供有价值的信息。 资源应输出所有可能对用户有用的信息，但并不总是日志越多越好。 你应该避免冗余和输出不提供更多价值的数据 – 不要让人为了找到他们要找的内容而浏览成百上千条日志。 当然，针对此问题没有任何日志也是不可接受的解决方案。 
 
-测试时还应分析 verbose 和 debug 日志（通过合理使用 –verbose 和 –debug 开关运行 **Start-DscConfiguration**）以及 ETW 日志。 若要查看 DSC ETW 日志，请转到“事件查看器”并打开下列文件夹：Applications and Services- Microsoft - Windows - Desired State Configuration。  默认情况下设置有“操作”通道，但要确保启用了“分析”通道和“调试”通道（必须在运行配置前执行）。 
+测试时还应分析 verbose 和 debug 日志（通过合理使用 –verbose 和 –debug 开关运行 Start-DscConfiguration）以及 ETW 日志。 若要查看 DSC ETW 日志，请转到“事件查看器”并打开下列文件夹：Applications and Services- Microsoft - Windows - Desired State Configuration。  默认情况下设置有“操作”通道，但要确保启用了“分析”通道和“调试”通道（必须在运行配置前执行）。 
 若要启用“分析”/“调试”通道，可以执行下面的脚本：
 ```powershell
 $statusEnabled = $true
@@ -245,18 +245,18 @@ $programFilesPath = ${env:ProgramFiles(x86)}
 - SAMBA 共享（如果希望支持 Linux。）
 
 ## 资源未使用需要交互输入的 cmdlet ##
-应自动执行 **Get/Set/Test-TargetResource** 函数，且不能在任何执行阶段等待用户输入（例如，不能在这些函数中使用 **Get-Credential**）。 如果需要提供用户的输入，应在编译阶段期间将它作为参数传递到配置。 
+应自动执行 Get/Set/Test-TargetResource 函数，且不能在任何执行阶段等待用户输入（例如，不能在这些函数中使用 Get-Credential）。 如果需要提供用户的输入，应在编译阶段期间将它作为参数传递到配置。 
 ## 已全面测试资源功能 ##
 你有责任确保资源行为正确，因此请手动测试它的功能，或者更好的做法是编写自动化。 此清单包含要测试的重要项和/或经常丢失的项。 提供了一系列测试，主要是特定于你要测试的资源和此处未提及的测试。 不要忘记负面测试用例。 这可能是资源测试中最耗时的部分。 
 ## 最佳做法：资源模块包含具有 ResourceDesignerTests.ps1 脚本的 Tests 文件夹 ##
-对于给定模块中的所有资源，使用 **Test-xDscResource** 和 **Test-xDscSchema** 在资源模块中创建“Tests”文件夹、创建 ResourceDesignerTests.ps1 文件并添加测试是很好的做法。 
+对于给定模块中的所有资源，使用 Test-xDscResource 和 Test-xDscSchema 在资源模块中创建“Tests”文件夹、创建 ResourceDesignerTests.ps1 文件并添加测试是很好的做法。 
 这样我们就能快速验证给定模块的所有资源的架构并在发布前执行完整性检查。
 对于 xRemoteFile，ResourceTests.ps1 可能和以下情况一样简单：
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof 
 ```
-**最佳做法：资源文件夹包含用于生成架构的资源设计器脚本**
+最佳做法：资源文件夹包含用于生成架构的资源设计器脚本
 每个资源应包含生成资源的 mof 架构的资源设计器脚本。 应将此文件放在 <ResourceName>\ResourceDesignerScripts 并将其命名为 Generate<ResourceName>Schema.ps1
 对于 xRemoteFile 资源，此文件被称为 GenerateXRemoteFileSchema.ps1 且包含：
 ```powershell 
@@ -315,4 +315,8 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 
 以上就是清单的基础知识。 请记住，此列表并不详尽，但它涵盖了我们在设计、开发和测试 DSC 资源时会遇到的许多重要问题。 列出清单有助于我们确保不会忘记任何这些方面的问题，事实上，我们自己在开发 DSC 资源时就会在 Microsoft 中用到它。 
 如果你开发了用于编写和测试 DSC 资源的指导和最佳做法，请和我们分享吧！
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO2-->
+
+
