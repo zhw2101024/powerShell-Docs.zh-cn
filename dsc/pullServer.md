@@ -63,7 +63,7 @@ configuration Sample_xDscWebService
 1. 运行此配置，将你所创建自签名证书的指纹作为 **certificateThumbPrint** 参数进行传递：
 
 ```powershell
-PS:\>$myCert = Get-ChildItem CERT: | Where-Object {$_.Subject -eq 'CN=PSDSCPullServerCert'}
+PS:\>$myCert = Get-ChildItem CERT:\LocalMachine\My | Where-Object {$_.Subject -eq 'CN=PSDSCPullServerCert'}
 PS:\>Sample_xDSCService -certificateThumbprint $myCert.Thumbprint 
 ```
 
@@ -89,4 +89,8 @@ PS:\>Sample_xDSCService -certificateThumbprint $myCert.Thumbprint
 * [Windows PowerShell Desired State Configuration 概述](overview.md)
 * [执行配置](enactingConfigurations.md)
 * [如何从 DSC 请求服务器检索节点信息](retrieveNodeInfo.md)
-<!--HONumber=Feb16_HO4-->
+
+
+<!--HONumber=Mar16_HO1-->
+
+

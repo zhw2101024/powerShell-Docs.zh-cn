@@ -10,9 +10,9 @@
 配置会以各种形式出现。 创建新配置最简单方法就是创建 .ps1（PowerShell 脚本）文件。 若要执行此操作，请打开首选编辑器。 PowerShell ISE 是一个不错的选择，因为它本身了解 DSC。 将以下内容另存为 PS1：
 
 ```powershell
-configuration myFirstConfiguration
+configuration MyFirstConfiguration
 {
-    import-dscresource -name WindowsFeature
+    Import-DscResource -Name WindowsFeature
 
     Node localhost
     {
@@ -50,11 +50,15 @@ myFirstConfiguration
 
 执行配置：
 ```powershell
-Start-DscConfiguration -path ./myFirstConfiguration
+Start-DscConfiguration -Path ./myFirstConfiguration
 ```
-这将创建可访问配置中节点的 PowerShell 作业，并对其进行配置。 若要查看作业输出，请使用 -wait。 
+这将创建可访问配置中节点的 PowerShell 作业，并对其进行配置。 若要查看作业输出，请使用 -Wait。 
 ```powershell
-Start-DscConfiguration -path ./myFirstConfiguration -wait
+Start-DscConfiguration -Path ./myFirstConfiguration -Wait
 ```
 
-<!--HONumber=Feb16_HO4-->
+
+
+<!--HONumber=Mar16_HO1-->
+
+

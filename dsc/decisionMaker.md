@@ -4,7 +4,7 @@
 
 ## 什么是 Desired State Configuration？ ##
 
-Windows PowerShell Desired State Configuration (DSC) 提供基于开放标准的内置于 Windows 中的配置平台。 DSC 足够灵活以在部署生命周期的各个阶段（开发、测试、预生产、生产）及扩展期间可靠而一致地运转。 
+Windows PowerShell Desired State Configuration (DSC) 是基于开放标准的内置于 Windows 中的配置管理平台。 DSC 足够灵活以在部署生命周期的各个阶段（开发、测试、预生产、生产）及扩展期间可靠而一致地运转。 
 
 DSC 以“[配置](https://msdn.microsoft.com/en-us/powershell/dsc/configurations)”理念为中心，这些配置是易读的文档，描述了由具有特定特征的计算机（“节点”）组成的环境。 这些特性可简单可复杂，或如确保特定 Windows 功能已启用般简单，或如部署 SharePoint 般复杂。 
 
@@ -12,11 +12,11 @@ DSC 也内置了监视和报告。 如果系统不再相容，DSC 会引发警�
 
 ## 使用 Desired State Configuration 的优点 ##
 
-配置的设计实现了轻松读取、存储并更新。 配置只需声明目标设备应处于的状态，无需编写如何将其置于该状态的说明。 这样有关 DSC 的学习、使用、实现和配置维护的成本都大大降低。 
+配置的设计实现了轻松读取、存储并更新。 配置只需声明目标设备应处于的状态，无需编写如何将其置于该状态的说明。 这样用于 DSC 的学习、使用、实现和配置维护的成本都大大降低。 
 
 创建配置意味着，单个位置中的复杂部署步骤将捕获为“单一资料来源”。 这使得重复部署一组特定的计算机不易出错。 反过来，这将使部署更快且更可靠。 这实现了复杂部署的快速周转。
 
-配置也可通过 PowerShell 库进行共享。 这意味着你需完成的工作可能已存在常见方案和最佳做法。
+配置也可通过 [PowerShell 库](https://powershellgallery.com)进行共享。 这意味着你需完成的工作可能已存在常见方案和最佳做法。
 
 
 ## Desired State Configuration 和 DevOps ##
@@ -31,6 +31,10 @@ DSC 可用于管理本地和非本地部署。 针对本地解决方案，Desire
 
 ## DSC 和兼容性 ##
 
-尽管 DSC 在 Windows Server 2012 R2 中引入，但下层操作系统可通过 Windows Management Framework (WMF) 程序包使用它。 有关 WMF 的详细信息，可查看 [PowerShell 登录页](https://msdn.microsoft.com/en-us/powershell/)。 
+尽管 DSC 在 Windows Server 2012 R2 中引入，但下层操作系统可通过 Windows Management Framework (WMF) 程序包使用它。 有关 WMF 的详细信息，可查看 [PowerShell 主页](https://msdn.microsoft.com/en-us/powershell/)。 
 
-DSC 还可以用于管理 Linux。 有关详细信息，请参阅[适用于 Linux 的 DSC 入门](https://msdn.microsoft.com/en-us/powershell/dsc/lnxgettingstarted)。<!--HONumber=Feb16_HO4-->
+DSC 还可以用于管理 Linux。 有关详细信息，请参阅[适用于 Linux 的 DSC 入门](https://msdn.microsoft.com/en-us/powershell/dsc/lnxgettingstarted)。
+
+<!--HONumber=Mar16_HO1-->
+
+

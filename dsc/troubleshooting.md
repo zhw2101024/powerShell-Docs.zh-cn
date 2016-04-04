@@ -18,14 +18,14 @@
 也可以运行相应的 PowerShell cmdlet ([Get-WinEvent](https://technet.microsoft.com/library/hh849682.aspx)) 以查看事件日志：
 
 ```
-PS C:\Users> Get-WinEvent -LogName "Microsoft-Windows-Dsc/Operational"
+PS C:\> Get-WinEvent -LogName "Microsoft-Windows-Dsc/Operational"
    ProviderName: Microsoft-Windows-DSC
 TimeCreated                     Id LevelDisplayName Message                                                                                                  
 -----------                     -- ---------------- -------                                                                                                  
 11/17/2014 10:27:23 PM        4102 Information      Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} : 
 ```
 
-如上所示，DSC 的主日志名称为 **Microsoft->Windows->DSC**（为简洁起见，此处未显示 Windows 下的其他日志名称）。 将主名称追加到通道名称，以创建完整的日志名称。 DSC 引擎主要写入三种类型的日志：[运行、分析和调试日志](https://technet.microsoft.com/library/cc722404.aspx)。 分析和调试日志默认处于关闭状态，因此你应该在事件查看器中启用它们。 若要进行此操作，请在 Windows PowerShell 中输入 eventvwr 以打开事件查看器，或依次单击“开始”、“控制面板”、“管理工具”以及“事件查看器”。 在事件查看器中的“查看”菜单上，单击“显示分析和调试日志”。 分析通道的日志名称为 **Microsoft-Windows-Dsc/Analytic**，而调试通道为 **Microsoft-Windows-Dsc/Debug**。 你还可以通过 [wevtutil](https://technet.microsoft.com/library/cc732848.aspx) 实用程序启用日志，如下面的示例中所示。
+如上所示，DSC 的主日志名称为 **Microsoft->Windows->DSC**（为简洁起见，此处未显示 Windows 下的其他日志名称）。 将主名称追加到通道名称，以创建完整的日志名称。 DSC 引擎主要写入三种类型的日志：[运行、分析和调试日志](https://technet.microsoft.com/library/cc722404.aspx)。 分析和调试日志默认处于关闭状态，因此你应该在事件查看器中启用它们。 若要进行此操作，请在 Windows PowerShell 中输入 Show-EventLog 以打开事件查看器，或依次单击“开始”、“控制面板”、“管理工具”以及“事件查看器”。**************** 在事件查看器中的“查看”菜单上，单击“显示分析和调试日志”。 分析通道的日志名称为 **Microsoft-Windows-Dsc/Analytic**，而调试通道为 **Microsoft-Windows-Dsc/Debug**。 你还可以通过 [wevtutil](https://technet.microsoft.com/library/cc732848.aspx) 实用程序启用日志，如下面的示例中所示。
 
 ```powershell
 wevtutil.exe set-log “Microsoft-Windows-Dsc/Analytic” /q:true /e:true
@@ -36,17 +36,17 @@ wevtutil.exe set-log “Microsoft-Windows-Dsc/Analytic” /q:true /e:true
 根据消息的重要性，将 DSC 日志拆分到三个日志通道。 DSC 中的运行日志包含所有错误消息，可用于确定问题。 分析日志包含更多事件，可确定错误出现的位置。 此通道还包含详细消息（若有）。 调试日志包含的日志可帮助你了解错误出现的过程。 DSC 事件消息的构成方式是，每个事件消息以表示唯一 DSC 操作的作业 ID 开头。 下面的示例尝试从记录到 DSC 操作日志的第一个事件获取消息。
 
 ```powershell
-PS C:\Users> $AllDscOpEvents=get-winevent -LogName "Microsoft-Windows-Dsc/Operational"
-PS C:\Users> $FirstOperationalEvent=$AllDscOpEvents[0]
-PS C:\Users> $FirstOperationalEvent.Message
+PS C:\> $AllDscOpEvents = Get-WinEvent -LogName "Microsoft-Windows-Dsc/Operational"
+PS C:\> $FirstOperationalEvent = $AllDscOpEvents[0]
+PS C:\> $FirstOperationalEvent.Message
 Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} : 
 Consistency engine was run successfully. 
 ```
 
 以特定结构记录 DSC 事件，该结构让用户可以通过一个 DSC 作业聚合事件。 该结构如下所示：
 
-**作业 ID : \<Guid\>**
-**\<事件消息\>**
+**作业 ID：<Guid>**
+**<Event Message>**
 
 ## 通过单个 DSC 操作收集事件
 
@@ -70,15 +70,15 @@ Get-DscLocalConfigurationManager
 Step 3 : Collect all DSC Logs, from the Analytic, Debug and Operational channels
 ###########################################################################>
  
-$DscEvents=[System.Array](Get-WinEvent "Microsoft-windows-dsc/operational") `
+$DscEvents=[System.Array](Get-WinEvent "Microsoft-Windows-Dsc/Operational") `
          + [System.Array](Get-WinEvent "Microsoft-Windows-Dsc/Analytic" -Oldest) `
-         + [System.Array](Get-Winevent "Microsoft-Windows-Dsc/Debug" -Oldest)
+         + [System.Array](Get-WinEvent "Microsoft-Windows-Dsc/Debug" -Oldest)
  
  
 <##########################################################################
  Step 4 : Group all logs based on the job ID
 ###########################################################################>
-$SeparateDscOperations=$DscEvents | Group {$_.Properties[0].value}  
+$SeparateDscOperations = $DscEvents | Group {$_.Properties[0].value}  
 ```
 
 此处，变量 `$SeparateDscOperations` 包含按作业 ID 分组的日志。 此变量的每个数组元素表示由不同的 DSC 操作记录的一组事件，让你可以访问有关日志的更多信息。
@@ -118,7 +118,7 @@ TimeCreated                     Id LevelDisplayName Message
 所有事件都具有[严重性级别](https://msdn.microsoft.com/library/dd996917(v=vs.85))。 此信息可用于标识错误事件：
 
 ```
-PS C:\> $SeparateDscOperations  | Where-Object {$_.Group.LevelDisplayName -contains "Error"}
+PS C:\> $SeparateDscOperations | Where-Object {$_.Group.LevelDisplayName -contains "Error"}
 Count Name                      Group                                                                     
 ----- ----                      -----                                                                     
    38 {5BCA8BE7-5BB6-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
@@ -129,8 +129,8 @@ Count Name                      Group
 每个 Windows 事件都具有 `TimeCreated` 属性，它表明创建该事件的时间。 可通过将此属性与特定日期/时间对象进行比较来筛选所有事件：
 
 ```powershell
-PS C:\> $DateLatest=(Get-date).AddMinutes(-30)
-PS C:\> $SeparateDscOperations  | Where-Object {$_.Group.TimeCreated -gt $DateLatest}
+PS C:\> $DateLatest = (Get-Date).AddMinutes(-30)
+PS C:\> $SeparateDscOperations | Where-Object {$_.Group.TimeCreated -gt $DateLatest}
 Count Name                      Group                                                                     
 ----- ----                      -----                                                                     
     1 {6CEC5B09-5BB0-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord}   
@@ -163,7 +163,7 @@ Displaying messages from built-in DSC resources:
 `$SeparateDscOperations[0].Group` 包含最新操作的一组事件。 运行 `Where-Object` cmdlet 可根据事件级别显示名称对筛选事件。 结果将存储在 `$myFailedEvent` 变量中，可以进一步细化以获取事件消息：
 
 ```powershell
-PS C:\> $myFailedEvent=($SeparateDscOperations[0].Group | Where-Object {$_.LevelDisplayName -eq "Error"})
+PS C:\> $myFailedEvent = ($SeparateDscOperations[0].Group | Where-Object {$_.LevelDisplayName -eq "Error"})
  
 PS C:\> $myFailedEvent.Message
 Job {5BCA8BE7-5BB6-11E3-BF41-00155D553612} : 
@@ -192,11 +192,11 @@ TimeCreated                     Id LevelDisplayName Message
 
 ## 使用 xDscDiagnostics 分析 DSC 日志
 
-**xDscDiagnostics** 是由两个简单操作组成的 PowerShell 模块，这两个操作（`Get-xDscOperation` 和 `Trace-xDscOperation`）可以帮助你分析计算机上的 DSC 失败。 这些函数可以帮助你确定因过去的 DSC 操作而起的所有本地事件，或（具有有效凭据的）远程计算机上的 DSC 事件。 此处使用了“DSC 操作”这一术语来定义单个唯一的 DSC 执行过程。 例如，`Test-DscConfiguration` 将是一个单独的 DSC 操作。 同样，DSC 中每个其他 cmdlet （如 `Get-DscConfiguration`、`Start-DscConfiguration` 等）可各自识别为单独的 DSC 操作。 以下 [xDscDiagnostics](https://powershellgallery.com/packages/xDscDiagnostics) PowerShell 模块（DSC 资源工具包）中更详细地解释了这两个 cmdlet。 可通过运行 `Get-Help <cmdlet name>` 获取帮助。
+**xDscDiagnostics** 是由两个简单函数组成的 PowerShell 模块，这两个函数（`Get-xDscOperation` 和 `Trace-xDscOperation`）可以帮助你分析计算机上的 DSC 失败。 这些函数可以帮助你确定因过去的 DSC 操作而起的所有本地事件，或（具有有效凭据的）远程计算机上的 DSC 事件。 此处使用了“DSC 操作”这一术语来定义单个唯一的 DSC 执行过程。 例如，`Test-DscConfiguration` 将是一个单独的 DSC 操作。 同样，DSC 中每个其他 cmdlet （如 `Get-DscConfiguration`、`Start-DscConfiguration` 等）可各自识别为单独的 DSC 操作。 以下 [xDscDiagnostics](https://powershellgallery.com/packages/xDscDiagnostics) PowerShell 模块（DSC 资源工具包）中更详细地解释了这两个函数。 可通过运行 `Get-Help <cmdlet name>` 获取帮助。
 
 ## Get-xDscOperation
 
-可通过此 cmdlet 查找在一台或多台计算机上运行的 DSC 操作的结果，并返回一个包含每个 DSC 操作所产生事件的集合的对象。 例如，在下面的输出中，运行了三个命令。 第一个命令成功，另外两个失败。 在 `Get-xDscOperation` 的输出中总结了这些结果。
+可通过此函数查找在一台或多台计算机上运行的 DSC 操作的结果，并返回一个包含每个 DSC 操作所产生事件的集合的对象。 例如，在下面的输出中，运行了三个命令。 第一个命令成功，另外两个失败。 在 `Get-xDscOperation` 的输出中总结了这些结果。
 
 TODO：替换显示 Get-xDscOperation 输出的图像
 
@@ -204,7 +204,7 @@ TODO：替换显示 Get-xDscOperation 输出的图像
 
 * **Newest**：采用整数值指示要显示的操作数。 默认情况下，它将返回 10 个最新的操作。 例如，
   TODO：显示 Get-xDscOperation -Newest 5
-* **ComputerName**：接受字符串数组的参数，这些字符串各包含你想要从中收集 DSC 事件日志数据的计算机的名称。 默认情况下，它从主机收集数据。 若要启用此功能，必须在提升模式下在远程计算机上运行以下命令，以允许收集事件
+* **ComputerName**：接受字符串数组的参数，这些字符串各包含你想要从中收集 DSC 事件日志数据的计算机的名称。 默认情况下，它从本地计算机收集数据。 若要启用此功能，必须在提升模式下在远程计算机上运行以下命令，以允许收集事件
 ```powershell
   New-NetFirewallRule -Name "Service RemoteAdmin" -Action Allow
 ```
@@ -220,7 +220,7 @@ TODO：替换显示 Get-xDscOperation 输出的图像
 * **AllEvents**：表示由 DSC 操作所生成事件的集合的对象。
 
 例如，下面的输出显示来自多台计算机的上一个操作的结果：
- TODO：替换 Get-xDscOperation 的图片以显示远程计算机日志
+  TODO：替换 Get-xDscOperation 的图片以显示远程计算机日志
 
 ## Trace-xDscOperation
 
@@ -267,15 +267,15 @@ New-NetFirewallRule -Name "Service RemoteAdmin" -Action Allow
 ```
 
 此操作将显示与 `Get-WinEvent` cmdlet 相同的结果，例如以下输出中的结果：
- TODO：输出内容是什么？
+  TODO：输出内容是什么？
 
-理想情况下，你将首先使用 `Get-xDscOperations` 列出在计算机上运行的最后几个 DSC 配置。 此后，可以通过 `Trace-xDscOperation` 检查任意单个操作（使用其 sequenceID 或 JobID）以发现它在后台进行的活动。
+理想情况下，你将首先使用 `Get-xDscOperation` 列出在计算机上运行的最后几个 DSC 配置。 此后，可以通过 `Trace-xDscOperation` 检查任意单个操作（使用其 SequenceID 或 JobID）以发现它在后台进行的活动。
 
 ## 资源不更新：如何重置缓存
 
 出于效率考虑，DSC 引擎将缓存作为 PowerShell 模块实现的资源。 但是，当你同时创作和测试资源时，这可能导致问题，因为在重启进程前，DSC 将始终加载缓存的版本。 使 DSC 加载较新版本的唯一方法是显式终止承载 DSC 引擎的进程。
 
-同样，当你运行 `Start-DSCConfiguration` 时，在添加和修改自定义资源之后，重启计算机之前可能无法执行修改。 这是因为 DSC 在 WMI 提供程序主机进程 (WmiPrvSE) 中运行，且通常情况下将有 WmiPrvSE 的多个实例同时运行。 重启时，将重新启动主机进程并清除缓存。
+同样，当你运行 `Start-DscConfiguration` 时，在添加和修改自定义资源之后，重启计算机之前可能无法执行修改。 这是因为 DSC 在 WMI 提供程序主机进程 (WmiPrvSE) 中运行，且通常情况下将有 WmiPrvSE 的多个实例同时运行。 重启时，将重新启动主机进程并清除缓存。
 
 若要在不重启的情况下成功回收配置并清除缓存，必须停止并重新启动主机进程。 可按实例逐一进行此操作，在这些实例中标识、停止和重新启动该进程。 或者，你可以使用 `DebugMode` 来重新加载 PowerShell DSC 资源，如下所示。
 
@@ -302,7 +302,7 @@ Get-Process -Id $dscProcessID | Stop-Process
 下列演示表明了 `DebugMode` 可以如何自动刷新缓存。 首先，让我们看一下默认配置：
 
 ```
-PS C:\Users\WinVMAdmin\Desktop> Get-DscLocalConfigurationManager
+PS C:\> Get-DscLocalConfigurationManager
  
  
 AllowModuleOverwrite           : False
@@ -333,7 +333,7 @@ function Get-TargetResource
         [Parameter(Mandatory)]
         $onlyProperty
     )
-    return @{onlyProperty = Get-Content -path "$env:SystemDrive\OutputFromTestProviderDebugMode.txt"}
+    return @{onlyProperty = Get-Content -Path "$env:SystemDrive\OutputFromTestProviderDebugMode.txt"}
 }
 function Set-TargetResource
 {
@@ -342,7 +342,7 @@ function Set-TargetResource
         [Parameter(Mandatory)]
         $onlyProperty
     )
-    "1"|Out-File -PSPath "$env:SystemDrive\OutputFromTestProviderDebugMode.txt"
+    "1" | Out-File -PSPath "$env:SystemDrive\OutputFromTestProviderDebugMode.txt"
 }
 function Test-TargetResource
 {
@@ -386,7 +386,7 @@ function Get-TargetResource
         [Parameter(Mandatory)]
         `$onlyProperty
     )
-    return @{onlyProperty = Get-Content -path "$env:SystemDrive\OutputFromTestProviderDebugMode.txt"}
+    return @{onlyProperty = Get-Content -Path "$env:SystemDrive\OutputFromTestProviderDebugMode.txt"}
 }
 function Set-TargetResource
 {
@@ -395,7 +395,7 @@ function Set-TargetResource
         [Parameter(Mandatory)]
         `$onlyProperty
     )
-    "$newResourceOutput"|Out-File -PSPath C:\OutputFromTestProviderDebugMode.txt
+    "$newResourceOutput" | Out-File -PSPath C:\OutputFromTestProviderDebugMode.txt
 }
 function Test-TargetResource
 {
@@ -423,17 +423,17 @@ LocalConfigurationManager
 再次运行上述脚本时，你将看到该文件的内容每次都不同。 （可运行 `Get-DscConfiguration` 以对其进行检查）。 以下是两次额外运行的结果（当你运行脚本时，结果可能不同）：
 
 ```powershell
-PS C:\Users\WinVMAdmin\Desktop> Get-DscConfiguration -CimSession (New-CimSession localhost)
+PS C:\> Get-DscConfiguration -CimSession (New-CimSession localhost)
  
 onlyProperty                            PSComputerName                         
 ------------                            --------------                         
 20                                      localhost                              
  
-PS C:\Users\WinVMAdmin\Desktop> Get-DscConfiguration -CimSession (New-CimSession localhost)
+PS C:\> Get-DscConfiguration -CimSession (New-CimSession localhost)
  
 onlyProperty                            PSComputerName                         
 ------------                            --------------                         
-14 
+14                                      localhost
 ```
 
 ## 另请参阅
@@ -446,4 +446,8 @@ onlyProperty                            PSComputerName
 
 ### 其他资源
 * [Windows PowerShell Desired State Configuration Cmdlet](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)
-<!--HONumber=Feb16_HO4-->
+
+
+<!--HONumber=Mar16_HO1-->
+
+
