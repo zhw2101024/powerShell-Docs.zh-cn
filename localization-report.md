@@ -930,9 +930,9 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\secureMOF.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/66682b7babe03c5fd90e958b4faf6c66a82b847c/dsc/secureMOF.md)
-* Current Handback File: [secureMOF.84bae90620632fc30568f4afa595e2b86e8aa6d1.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/9d6e862349d3e058f2557cae9f42e61acafa7705/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/secureMOF.84bae90620632fc30568f4afa595e2b86e8aa6d1.zh-cn.xlf)
-* Current Handback Datetime: 2016-03-30 18:07:42
+* Current Target File: [dsc\secureMOF.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/f693350ce27066713a59fcf6cecde71e73d52e7f/dsc/secureMOF.md)
+* Current Handback File: [secureMOF.84bae90620632fc30568f4afa595e2b86e8aa6d1.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d8760b62a953ec0c3158dba372417d7b4ca01bb8/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/secureMOF.84bae90620632fc30568f4afa595e2b86e8aa6d1.zh-cn.xlf)
+* Current Handback Datetime: 2016-04-04 13:14:43
 * [Back to Top](#report-top)
 
 ##### <a name='2290a81a8dbc82b7881d2b6006d70a90578f9a5661'></a> Source: [dsc\secureServer.md](https://github.com/PowerShell/powerShell-Docs/blob/dcacf14d13cc0c3e4bb3b6602ad3ab6b3141471f/dsc/secureServer.md)
