@@ -8,21 +8,51 @@ DSC 通过将包含配置信息的 MOF 文件发送到各个节点，告知目�
 
 要成功加密所用凭据以保护 DSC 配置，请确保你有以下各项：
 
-* **颁发和分发证书的方法**。 本主题及其中示例假定你使用 Active Directory 证书颁发机构。 有关 Active Directory 证书服务的更多背景信息，请参阅 [Active Directory 证书服务概述](https://technet.microsoft.com/library/hh831740.aspx)和 [Windows Server 2008 中的 Active Directory 证书服务](https://technet.microsoft.com/windowsserver/dd448615.aspx)。
-* **对目标节点的管理访问权限**。
-* **每个目标节点的个人存储区中均保存了可加密的证书**。 在 Windows PowerShell 中，该存储区的路径为 Cert:\LocalMachine\My。 本主题中的示例使用“工作站身份验证”模板，你可以在[默认证书模板](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx)中找到它（以及其他证书模板）。
-* 如果你将在计算机而不是目标节点上运行此配置，请**导出证书的公钥**，然后将其导入到你将要从中运行配置的计算机。 请确保仅导出**公**钥；保护私钥安全。
+* 颁发和分发证书的方法。 本主题及其中示例假定你使用 Active Directory 证书颁发机构。 有关 Active Directory 证书服务的更多背景信息，请参阅 Active Directory 证书服务概述和 Windows Server 2008 中的 Active Directory 证书服务。
+* 对目标节点的管理访问权限。
+* 每个目标节点的个人存储区中均保存了可加密的证书。 在 Windows PowerShell 中，该存储区的路径为 Cert:\LocalMachine\My。 本主题中的示例使用“工作站身份验证”模板，你可以在默认证书模板中找到它（以及其他证书模板）。
+* 如果你将在计算机而不是目标节点上运行此配置，请导出证书的公钥，然后将其导入到你将要从中运行配置的计算机。 请确保仅导出公钥；保护私钥安全。
 
 ## 整体过程
 
-1. 设置证书、密钥和指纹，确保每个目标节点具有证书的副本，且配置计算机具有公钥和指纹。
-1. 创建包含公钥的路径和指纹的配置数据块。
-1. 创建配置脚本，该脚本定义目标节点的所需配置，并通过命令本地配置管理器使用证书及其指纹解密配置数据来设置目标节点上的解密。
-1. 运行配置，这将设置本地配置管理器设置并启动 DSC 配置。
+ 1. 设置证书、密钥和指纹，确保每个目标节点具有证书的副本，且配置计算机具有公钥和指纹。
+ 2. 创建包含公钥的路径和指纹的配置数据块。
+ 3. 创建配置脚本，该脚本定义目标节点的所需配置，并通过命令本地配置管理器使用证书及其指纹解密配置数据来设置目标节点上的解密。
+ 4. 运行配置，这将设置本地配置管理器设置并启动 DSC 配置。
+
+![Diagram1](images/CredentialEncryptionDiagram1.png)
+
+## 证书要求
+
+若要执行凭据加密，需要在受用于创作 DSC 配置的计算机所信任的目标节点上可使用公钥证书。
+此公钥证书具有特定要求，必须满足这些要求才能允许将它用于 DSC 凭据加密：
+ 1. 密钥用法：
+   - 必须包含：“KeyEncipherment”和“DataEncipherment”。
+   - 不应包含：“数字签名”。
+ 2. 增强型密钥用法：
+   - 必须包含：文档加密 (1.3.6.1.4.1.311.80.1)。
+   - 不应包含：客户端身份验证 (1.3.6.1.5.5.7.3.2) 和服务器身份验证 (1.3.6.1.5.5.7.3.1)。
+ 3. 证书的私钥在目标节点上可用。
+ 
+推荐最佳做法：虽然可以使用包含“数字签名”密钥用法或某个身份验证 EKU 的证书，但是这使加密密钥更容易误用，而且容易受到攻击。 因此，最好是使用为保护 DSC 凭据而专门创建的省略了这些密钥用法和 EKU 的证书。
+  
+目标节点上满足这些条件的任何现有证书都可以用于保护 DSC 凭据。
+ 
+## 创建证书
+
+私钥证书可以在目标节点上进行创建，而公钥证书可以复制到用于将 DSC 配置编译为 MOF 文件的计算机。
+
+或者，私钥证书可以在用于编译 DSC 配置文件的计算机上进行创建，随私钥导出，然后在目标节点上导入。 这是用于在 Nano Server 上实现 DSC 凭据加密的当前方法。 
 
 ## 配置数据
 
-配置数据块定义在哪个目标节点上进行操作、是否加密凭据、加密方式以及其他信息。 有关配置数据块的详细信息，请参阅[分隔配置和环境数据](configData.md)。
+配置数据块定义在哪个目标节点上进行操作、是否加密凭据、加密方式以及其他信息。 有关配置数据块的详细信息，请参阅分隔配置和环境数据。
+
+可以为与凭据加密相关的每个节点配置的元素有：
+* NodeName - 为其配置凭据加密的目标节点的名称。
+* PsDscAllowPlainTextPassword - 是否允许将未加密的凭据传递给此节点。 不建议使用此元素。
+* Thumbprint - 将用于在目标节点上的 DSC 配置中解密凭据的证书的指纹。 **此证书必须存在于目标节点上的本地计算机证书存储中。**
+* CertificateFile - 应该用于为目标节点加密凭据的证书文件（只包含公钥）。 它必须是 DER 编码的二进制 X.509 或 Base-64 编码的 X.509 格式证书文件。
 
 此示例显示了一个配置数据块，该数据块指定了要操作的名为 targetNode 的目标节点、公钥证书文件（名为 targetNode.cer）的路径和公钥的指纹。
 
@@ -124,8 +154,8 @@ configuration CredentialEncryptionExample
 
 此时，你可以运行配置，此操作将输出两个文件：
 
-* *.meta.mof 文件，它将本地配置管理器配置为使用存储在本地计算机存储区上、并由其指纹标识的证书来解密凭据。 Set-DscLocalConfigurationManager 应用 *.meta.mof 文件。
-* 实际应用配置的 MOF 文件。 Start-DscConfiguration 应用配置。
+ * *.meta.mof 文件，它将本地配置管理器配置为使用存储在本地计算机存储区上、并由其指纹标识的证书来解密凭据。 `Set-DscLocalConfigurationManager` 应用 *.meta.mof 文件。
+ * 实际应用配置的 MOF 文件。 Start-DscConfiguration 应用配置。
 
 这些命令将完成这些步骤：
 
@@ -139,6 +169,13 @@ Set-DscLocalConfigurationManager .\CredentialEncryptionExample -Verbose
 Write-Host "Starting Configuration..."
 Start-DscConfiguration .\CredentialEncryptionExample -wait -Verbose
 ```
+
+此示例将 DSC 配置推送到目标节点。
+还可以使用 DSC 请求服务器（如果可用）来应用 DSC 配置。
+
+有关使用 DSC 请求服务器应用 DSC 配置的详细信息，请参阅此页面。
+
+## 凭据加密模块示例
 
 以下是包含所有步骤的完整示例，以及用于导出和复制公钥的帮助程序 cmdlet：
 
@@ -252,4 +289,10 @@ function Get-EncryptionCertificate
     # Return the thumbprint
     return $returnValue[0]
 }
-```<!--HONumber=Feb16_HO4-->
+
+Start-CredentialEncryptionExample
+```
+
+<!--HONumber=Mar16_HO4-->
+
+
