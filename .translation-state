@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "3a3d0fec469924d41d970aea40125eebf304b4c3",
+  "LastProcessedCommit": "1306e6830d509352e35cb943f05ecf49fa9e8f64",
   "LastTranslatedCommit": "24f0bfe49b93b3b8631a998da05841210325a4b3",
   "Items": {
     "81efeb79a70df604ef8c126c0ebd17b4f4711a44": {
@@ -12480,6 +12480,35 @@
       "HandoffFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-cn\\live\\dsc_directaccess.014c91015162b26b678e0a5fdfd453a3bf6e41b0.zh-cn.xlf",
       "HandoffFileCommit": "dafb4ff6f1f82b362f1c9463b8d371f074f1e502",
       "HandoffDateTime": "2016-04-22T22:42:46.1843444Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "00e5a37e5fbe4532a00ead52c14a61558361c719": {
+      "FileHash": "00e5a37e5fbe4532a00ead52c14a61558361c719",
+      "SourceFileCommit": "7a7b201f894b746447d9f05a82adb0f731e08f1c",
+      "SourceFilePath": "scripting\\Topic\\WinRMSecurity.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "scripting\\Topic\\WinRMSecurity.md"
+      ],
+      "HandoffFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-cn\\live\\WinRMSecurity.41ebd580a3043a25529c5a385d78966a9cbd25dc.zh-cn.xlf",
+      "HandoffFileCommit": "eb543ab2398c56d5ff2b238202b765e4ca772021",
+      "HandoffDateTime": "2016-04-26T21:40:15.6995885Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
