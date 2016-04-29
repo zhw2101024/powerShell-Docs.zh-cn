@@ -27,6 +27,7 @@
 ### [基于类的自定义资源](authoringResourceClass.md)
 ### [复合资源](authoringResourceComposite.md)
 ### [调试 DSC 资源](debugResource.md)
+### [编写单实例 DSC 资源（最佳做法）](singleInstance.md)
 ### [资源创作清单](resourceAuthoringChecklist.md)
 
 # [配置本地配置管理器 (LCM)](metaConfig.md)
@@ -57,6 +58,6 @@
 ### [nxUser 资源](lnxUserResource.md)
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=Apr16_HO1-->
 
 
