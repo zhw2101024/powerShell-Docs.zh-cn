@@ -52,7 +52,7 @@ Configuration MyDscConfiguration {
 }
 ```
 
-在此示例中，当你 [编译配置]（# Compiling the configuration）时，可通过将其传递为 $computerName 参数以指定节点名。 该名称默认为“localhost”。
+在此示例中，当你 [编译配置](# Compiling the configuration) 时，可通过将其传递为 $computerName 参数以指定节点名。 该名称默认为“localhost”。
 
 ## 正在编译配置
 必须将其编译为 MOF 文档才能执行配置。 你可通过调用配置（像调用 PowerShell 函数一样）以执行此操作。
