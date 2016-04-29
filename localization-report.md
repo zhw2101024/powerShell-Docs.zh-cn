@@ -572,9 +572,9 @@
 * Archive Datetime: 2016-04-29 00:26:24
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\configurations.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/24f0bfe49b93b3b8631a998da05841210325a4b3/dsc/configurations.md)
-* Current Handback File: [configurations.02626ddbf3a00f8ede56fdfd2e46a027800e75b6.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/56c9245a96910c2c1d3265b284a9f2538331fdf7/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/configurations.02626ddbf3a00f8ede56fdfd2e46a027800e75b6.zh-cn.xlf)
-* Current Handback Datetime: 2016-04-08 01:37:00
+* Current Target File: [dsc\configurations.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/d5fe6901f91be68088becaf134883c67ff251175/dsc/configurations.md)
+* Current Handback File: [configurations.02626ddbf3a00f8ede56fdfd2e46a027800e75b6.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/8269ef85bdd3edab6f9890782da2d03e5c90440f/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/configurations.02626ddbf3a00f8ede56fdfd2e46a027800e75b6.zh-cn.xlf)
+* Current Handback Datetime: 2016-04-29 18:02:34
 * [Back to Top](#report-top)
 
 ##### <a name='f6b6006e9d1ad8aef62523accf73e5f2dba3689816'></a> Source: [dsc\crossNodeDependencies.md](https://github.com/PowerShell/powerShell-Docs/blob/4528b4c033ae0a9b7476a60899e5cd0c96607d1c/dsc/crossNodeDependencies.md)
