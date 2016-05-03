@@ -23,7 +23,7 @@ ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
 
 -   [Windows PowerShell 集成脚本环境 &#40;ISE&#41;](../Topic/Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md)。 [!INCLUDE[wps_2](../Token/wps_2_md.md)] ISE 的文档、图形 [!INCLUDE[wps_2](../Token/wps_2_md.md)] 脚本编辑器和控制台。
 
--   [Windows PowerShell 所需状态配置 (DSC) 概述](assetId:///04c9e716-822c-40f0-8fdf-f2dda8abd888)。 [!INCLUDE[wps_2](../Token/wps_2_md.md)] 4.0 新功能（即 Windows PowerShell 所需状态配置 (DSC)）简介。 DSC 可帮助管理员在 Windows 环境中和诸如网络交换机的设备上实现一致的配置。
+-   [Windows PowerShell 所需状态配置 (DSC) 概述](https://technet.microsoft.com/en-us/library/04c9e716-822c-40f0-8fdf-f2dda8abd888)。 [!INCLUDE[wps_2](../Token/wps_2_md.md)] 4.0 新功能（即 Windows PowerShell 所需状态配置 (DSC)）简介。 DSC 可帮助管理员在 Windows 环境中和诸如网络交换机的设备上实现一致的配置。
 
 -   [PowerShell.exe 命令行帮助](../Topic/PowerShell.exe-Command-Line-Help.md)。 如何从 Windows 命令提示符启动 [!INCLUDE[wps_2](../Token/wps_2_md.md)]，并运行基本 [!INCLUDE[wps_2](../Token/wps_2_md.md)] 命令。
 
@@ -38,7 +38,7 @@ ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
 
 -   [Windows PowerShell Web 服务（Management OData IIS 扩展）](http://msdn.microsoft.com/library/windows/desktop/hh880865.aspx)。 [!INCLUDE[wps_2](../Token/wps_2_md.md)] Web 服务是一个框架，用于轻松地通过在 Web 服务器 (IIS) 中运行的基于 OData 的 Web 服务公开 [!INCLUDE[wps_2](../Token/wps_2_md.md)] cmdlet。
 
--   [Windows PowerShell Desired State Configuration 入门](assetId:///c134aa32-b085-4656-9a89-955d8ff768d0)。 在 [!INCLUDE[psversion4](../Token/psversion4_md.md)] 中引入的 [!INCLUDE[wps_2](../Token/wps_2_md.md)] Desired State Configuration (DSC) 是 [!INCLUDE[wps_2](../Token/wps_2_md.md)] 中的新管理平台，该平台可对软件服务的配置数据和这些服务的运行环境进行部署和管理。 DSC 提供一组可用于以声明方式指定你希望配置软件环境状态的方式的 [!INCLUDE[wps_2](../Token/wps_2_md.md)] 语言扩展、新的 cmdlet 和资源。
+-   [Windows PowerShell Desired State Configuration 入门](https://technet.microsoft.com/en-us/library/c134aa32-b085-4656-9a89-955d8ff768d0)。 在 [!INCLUDE[psversion4](../Token/psversion4_md.md)] 中引入的 [!INCLUDE[wps_2](../Token/wps_2_md.md)] Desired State Configuration (DSC) 是 [!INCLUDE[wps_2](../Token/wps_2_md.md)] 中的新管理平台，该平台可对软件服务的配置数据和这些服务的运行环境进行部署和管理。 DSC 提供一组可用于以声明方式指定你希望配置软件环境状态的方式的 [!INCLUDE[wps_2](../Token/wps_2_md.md)] 语言扩展、新的 cmdlet 和资源。
 
 -   [Windows Management Framework 4.0 Preview](http://go.microsoft.com/fwlink/?LinkID=293881) 包含对 [!INCLUDE[wps_2](../Token/wps_2_md.md)]、[!INCLUDE[wps_2](../Token/wps_2_md.md)] ISE、[!INCLUDE[wps_2](../Token/wps_2_md.md)] Web 服务（管理 OData IIS 扩展）、Windows 远程管理 (WinRM)、Windows Management Infrastructure (WMI)、服务器管理器 WMI 提供程序的更新以及 4.0 的新功能（即 [!INCLUDE[wps_2](../Token/wps_2_md.md)] 所需状态配置 (DSC)）。 Windows Management Framework 4.0 Preview 允许你在运行 [!INCLUDE[win8_server_2](../Token/win8_server_2_md.md)]、[!INCLUDE[win7_client_firstref](../Token/win7_client_firstref_md.md)] SP1 和 [!INCLUDE[win7_server_secondref](../Token/win7_server_secondref_md.md)] SP1 的计算机上安装并使用这些技术。
 
@@ -74,6 +74,6 @@ ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 

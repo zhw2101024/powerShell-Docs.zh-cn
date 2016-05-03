@@ -72,7 +72,7 @@ PowerShell[.exe] -Help | -? | /?
 确定 Windows PowerShell 输出内容的格式。 有效值为“Text”（文本字符串）或“XML”（序列化 CLIXML 格式）。
 
 ### -PSConsoleFile <FilePath>
-加载指定的 Windows PowerShell 控制台文件。 输入控制台文件的路径和名称。 若要创建控制台文件，请使用 Windows PowerShell 中的 [Export-console](assetId:///4bab1c02-9e61-4aaf-9957-11d1934ef4ef) cmdlet。
+加载指定的 Windows PowerShell 控制台文件。 输入控制台文件的路径和名称。 若要创建控制台文件，请使用 Windows PowerShell 中的 [Export-console](https://technet.microsoft.com/en-us/library/4bab1c02-9e61-4aaf-9957-11d1934ef4ef) cmdlet。
 
 ### -Sta
 使用单线程单元启动 Windows PowerShell。 在 [!INCLUDE[psversion3](../Token/psversion3_md.md)] 中，单线程单元 (STA) 是默认设置。 在 [!INCLUDE[psversion2](../Token/psversion2_md.md)] 中，多线程单元 (MTA) 是默认设置。
@@ -82,7 +82,7 @@ PowerShell[.exe] -Help | -? | /?
 
 如果未安装 [!INCLUDE[psversion3](../Token/psversion3_md.md)]，则唯一的有效值为“2.0”。 将忽略其他值。
 
-有关详细信息，请参阅 [Windows PowerShell 入门 [OLD MSDN]](assetId:///69555d95-b481-43e1-86e7-b46d68b3e2dd)中的“安装 Windows PowerShell”。
+有关详细信息，请参阅 [Windows PowerShell 入门 [OLD MSDN]](https://technet.microsoft.com/en-us/library/69555d95-b481-43e1-86e7-b46d68b3e2dd)中的“安装 Windows PowerShell”。
 
 ### -WindowStyle <Window style>
 为会话设置窗口样式。 有效值包括 Normal、Minimized、Maximized 和 Hidden。
@@ -130,6 +130,6 @@ powershell.exe -encodedCommand $encodedCommand
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 

@@ -13,7 +13,7 @@ Windows PowerShell 包含了详细的帮助主题，其中解释了 Windows Powe
 可以在命令提示符下显示这些帮助主题，或在 Microsoft TechNet 库中查看这些主题的最近更新的版本。 许多托管 Windows PowerShell 的程序（如 Windows PowerShell 集成脚本环境）提供了其他帮助功能，如区分上下文的帮助和编译的帮助文件 (.chm)。
 
 ## 获取有关 Cmdlet 的帮助
-若要获取有关 Windows PowerShell cmdlet 的帮助，请使用 [Get-Help [m2]](assetId:///2d7fe1b4-0025-4580-a911-d81922dd6cd2) cmdlet。 例如，若要获取 [Get-ChildItem [m2]](assetId:///4b270d63-c995-45b8-b5b4-3f8887efbfcc) cmdlet 的帮助，请键入：
+若要获取有关 Windows PowerShell cmdlet 的帮助，请使用 [Get-Help [m2]](https://technet.microsoft.com/en-us/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2) cmdlet。 例如，若要获取 [Get-ChildItem [m2]](https://technet.microsoft.com/en-us/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc) cmdlet 的帮助，请键入：
 
 ```
 get-help get-childitem
@@ -126,7 +126,7 @@ get-help c:\ps-test\TestScript.ps1
 
 用于显示 cmdlet 帮助的参数，如 *Detailed**Full**Examples* 和 *Parameter* 也适用于脚本帮助和函数帮助。 但是，当你通过键入“get-help”显示所有帮助时，将不显示有关函数和脚本的帮助。
 
-有关为函数和脚本编写帮助的信息，请参阅 [about_Functions [m2]](assetId:///61d40692-5300-4de9-a9b5-bae31815e105)、[about_Scripts](assetId:///7dc08334-dcfe-450b-b949-0554855623af) 和 [about_Comment_Based_Help](assetId:///99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)。
+有关为函数和脚本编写帮助的信息，请参阅 [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)、[about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af) 和 [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)。
 
 ## 在线获取帮助
 如果已经连接到 Internet，获取帮助的最好方法之一就是在线查看帮助主题。 由于在线主题易于更新，所以它们倾向于提供最新内容。
@@ -163,16 +163,16 @@ get-help add-computer
 Online version: http://go.microsoft.com/fwlink/?LinkID=135194
 ```
 
-有关如何为帮助主题提供在线支持的信息，请参阅 [about_Comment_Based_Help](assetId:///99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf) 和 MSDN（Microsoft 开发人员网络）库中的“如何编写 Cmdlet 帮助”([http://go.microsoft.com/fwlink/?LinkID=123415](http://go.microsoft.com/fwlink/?LinkID=123415))。
+有关如何为帮助主题提供在线支持的信息，请参阅 [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf) 和 MSDN（Microsoft 开发人员网络）库中的“如何编写 Cmdlet 帮助”([http://go.microsoft.com/fwlink/?LinkID=123415](http://go.microsoft.com/fwlink/?LinkID=123415))。
 
 ## 另请参阅
-[about_Functions [m2]](assetId:///61d40692-5300-4de9-a9b5-bae31815e105)
-[about_Scripts](assetId:///7dc08334-dcfe-450b-b949-0554855623af)
-[about_Comment_Based_Help](assetId:///99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
-[Get-Help [m2]](assetId:///2d7fe1b4-0025-4580-a911-d81922dd6cd2)
+[about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)
+[about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af)
+[about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
+[Get-Help [m2]](https://technet.microsoft.com/en-us/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 

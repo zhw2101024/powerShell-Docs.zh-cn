@@ -136,16 +136,16 @@ Set-Service cmdlet 更改本地或远程计算机上服务的属性。 因为服
 
 若要在 Windows Vista 及 Windows 的更高版本上使用 Set-Service，请使用“以管理员身份运行”选项打开 Windows PowerShell。
 
-有关详细信息，请参阅 [Set-Service [m2]](assetId:///b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
+有关详细信息，请参阅 [Set-Service [m2]](https://technet.microsoft.com/en-us/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
 
 ## 另请参阅
-[Get-Service [m2]](assetId:///0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
-[Set-Service [m2]](assetId:///b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
-[Restart-Service [m2]](assetId:///45acf50d-2277-4523-baf7-ce7ced977d0f)
-[Suspend-Service [m2]](assetId:///c8492b87-0e21-4faf-8054-3c83c2ec2826)
+[Get-Service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
+[Set-Service [m2]](https://technet.microsoft.com/en-us/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
+[Restart-Service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
+[Suspend-Service [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 
