@@ -124,7 +124,7 @@ hashtable new(int capacity, float loadFactor)
 
 ## 方法
 
-Windows PowerShell 类方法被实现为仅有一个结束块的 ScriptBlock。 所有方法都是公开的。 下面介绍了定义一个名为 **DoSomething** 的方法的示例。
+Windows PowerShell 类方法被实现为仅有一个结束块的 ScriptBlock。 所有方法都是公开的。 下面介绍了定义一个名为 **DoSomething** 的方法的示例.
 
 ```powershell
 class MyClass
@@ -168,7 +168,7 @@ Hidden 成员是公开的，除非添加了 -Force 参数，否则不出现在 G
 
 ## 属性
 
-已添加四个新属性：**DscResource**、**DscResourceKey**、**DscResourceMandatory** 和 **DscResourceOut**。
+添加了 **DscResource** 和 **DscProperty** 这两个新属性。
 
 ## 变量的词法作用域
 
@@ -324,4 +324,8 @@ function Style
 # and then returns the resulting type.
 #
 function Html ([HTML] $doc) { return $doc }
-```<!--HONumber=Mar16_HO2-->
+```
+
+<!--HONumber=Apr16_HO5-->
+
+

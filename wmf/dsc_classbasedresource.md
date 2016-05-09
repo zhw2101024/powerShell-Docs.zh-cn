@@ -9,7 +9,7 @@
 * 模块文件中的 **DSCResource** 子文件夹不是必需的。
 * PowerShell 模块文件可以包含多个 DSC 资源类。
 
-下面是基于类的 DSC 资源的示例，该资源可扩展同一个文件中的另一个类 DSC 资源。 这将被另存为一个模块 **MyDSCResource.psm1**。 
+下面是基于类的 DSC 资源的示例，该资源可扩展同一个文件中的另一个类 DSC 资源。 这将被另存为一个模块 **MyDSCResource.psm1**. 
 请注意，必须始终在类定义的 DSC 资源或其基类中包含至少一个关键字属性和 Get、Set、Test 方法。
 
 ```powershell
@@ -60,7 +60,7 @@ NOTE: This property is required because [DscProperty(Mandatory)] is set.
 [string] $SourcePath
 
 <#
-This property reports the file's creation timestamp.
+This property reports the file creation timestamp.
 
 [DscProperty(NotConfigurable)] attribute indicates the property is not configurable in a DSC configuration. Properties marked this way are populated by the Get() method to report additional details about the resource when it is present.
 #>
@@ -212,13 +212,13 @@ class FileResource : BaseFileResource
     [bool] $IsReadOnly
 
     <#
-    This property reports the file's LastAccessTime timestamp.
+    This property reports the file LastAccessTime timestamp.
     #>
     [DscProperty(NotConfigurable)]
     [Nullable[datetime]] $LastAccessTime
 
     <#
-    This property reports the file's LastWriteTime timestamp.
+    This property reports the file LastWriteTime timestamp.
     #>
     [DscProperty(NotConfigurable)]
     [Nullable[datetime]] $LastWriteTime
@@ -252,7 +252,7 @@ class FileResource : BaseFileResource
 }
 ```
 
-在创建类定义的 DSC 资源提供程序并将其另存为模块之后，为该模块创建一个模块清单。 在此示例中，下面的模块清单另存为 **MyDscResource.psd1**。
+在创建类定义的 DSC 资源提供程序并将其另存为模块之后，为该模块创建一个模块清单。 在此示例中，下面的模块清单另存为 **MyDscResource.psd1**.
 
 ```powershell
 @{
@@ -288,13 +288,13 @@ DscResourcesToExport = @('BaseFileResource','FileResource')
 }
 ```
 
-通过为其在 `$env:SystemDrive\Program Files\WindowsPowerShell\Modules` 下创建 **MyDscResource** 文件夹部署新的 DSC 资源提供程序。
+通过为其在以下内容之下创建 **MyDscResource** 文件夹部署新的 DSC 资源提供程序 `$env:SystemDrive\Program Files\WindowsPowerShell\Modules`.
 你不需要创建一个 DSCResource 子文件夹。
 将模块和模块清单文件（**MyDscResource.psm1** 和 **MyDscResource.psd1**）复制到 **MyDscResource** 文件夹。
 
 从这时开始，你可以像对其他 DSC 资源进行的操作一样，创建并运行配置脚本。 
 以下是引用 MyDSCResource 模块的配置。 
-将该配置另存为脚本 **MyResource.ps1**。
+将该配置另存为脚本 **MyResource.ps1**.
 
 ```powershell
 Configuration MyConfig
@@ -333,4 +333,8 @@ Get-DscConfiguration
 
 * 如果基于类的 DSC 资源的 Get() 函数返回复杂类型，则 Get-DscConfiguration 可能会返回空值 (Null)。
 * 复合资源不能作为基于类的资源写入。
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Apr16_HO5-->
+
+
