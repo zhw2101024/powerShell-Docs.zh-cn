@@ -35,6 +35,10 @@ DSC 还包含用于创建配置的大量新语言关键字、cmdlet 和工具，
 ## 另请参阅
 * [DSC 配置](configurations.md)
 * [DSC 资源](resources.md)
-* [配置本地配置管理器](metaconfig.md)
+* [配置本地配置管理器](metaConfig.md)
 
-<!--HONumber=Feb16_HO4-->
+
+
+<!--HONumber=Apr16_HO2-->
+
+

@@ -2,11 +2,14 @@
 
 # [配置](configurations.md)
 ## [执行配置](enactingConfigurations.md)
+## [使用具有多个版本的资源](sxsResource.md)
+## [指定跨节点依赖关系](crossNodeDependencies.md)
 ## [配置数据](configData.md)
 ### [配置数据中的凭据选项](configDataCredentials.md)
 ### [使用用户凭据运行 DSC](runAsUser.md)
 ## [保护配置 MOF 文件](secureMOF.md)
 ## [部分配置](partialConfigs.md)
+
 # [资源](resources.md)
 ## [内置资源](builtInResource.md)
 ### [存档资源](archiveResource.md)
@@ -27,6 +30,7 @@
 ### [基于类的自定义资源](authoringResourceClass.md)
 ### [复合资源](authoringResourceComposite.md)
 ### [调试 DSC 资源](debugResource.md)
+### [直接调用 DSC 资源方法](directCallResource.md)
 ### [编写单实例 DSC 资源（最佳做法）](singleInstance.md)
 ### [资源创作清单](resourceAuthoringChecklist.md)
 
@@ -44,6 +48,8 @@
 
 # [DSC 故障排除](troubleshooting.md)
 
+# [使用 Nano Server 上的 DSC](nanoDsc.md)
+
 # Linux 上的 DSC
 ## [适用于 Linux 的 DSC 入门](lnxGettingStarted.md)
 ## [适用于 Linux 的内置资源](lnxBuiltInResources.md)
@@ -57,7 +63,32 @@
 ### [nxSshAuthorizedKeys 资源](lnxSshAuthorizedKeysResource.md)
 ### [nxUser 资源](lnxUserResource.md)
 
+# DSC MOF 引用
+## [MSFT_DSCLocalConfigurationManager 类](msft-dsclocalconfigurationmanager.md)
+### [MSFT_DSCLocalConfigurationManager 类的 ApplyConfiguration 方法](msft-dsclocalconfigurationmanager-applyconfiguration.md)
+### [MSFT_DSCLocalConfigurationManager 类的 DisableDebugConfiguration 方法](msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)
+### [MSFT_DSCLocalConfigurationManager 类的 EnableDebugConfiguration 方法](msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)
+### [MSFT_DSCLocalConfigurationManager 类的 GetConfiguration 方法](msft-dsclocalconfigurationmanager-getconfiguration.md)
+### [MSFT_DSCLocalConfigurationManager 类的 GetConfigurationResultOutput 方法](msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md)
+### [MSFT_DSCLocalConfigurationManager 类的 GetConfigurationStatus 方法](msft-dsclocalconfigurationmanager-getconfigurationstatus.md)
+### [MSFT_DSCLocalConfigurationManager 类的 GetMetaConfiguration 方法](msft-dsclocalconfigurationmanager-getmetaconfiguration.md)
+### [MSFT_DSCLocalConfigurationManager 类的 PerformRequiredConfigurationChecks 方法](msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md)
+### [MSFT_DSCLocalConfigurationManager 类的 RemoveConfiguration 方法](msft-dsclocalconfigurationmanager-removeconfiguration.md)
+### [MSFT_DSCLocalConfigurationManager 类的 ResourceGet 方法](msft-dsclocalconfigurationmanager-resourceget.md)
+### [MSFT_DSCLocalConfigurationManager 类的 ResourceSet 方法](msft-dsclocalconfigurationmanager-resourceset.md)
+### [MSFT_DSCLocalConfigurationManager 类的 ResourceTest 方法](msft-dsclocalconfigurationmanager-resourcetest.md)
+### [MSFT_DSCLocalConfigurationManager 类的 RollBack 方法](msft-dsclocalconfigurationmanager-rollback.md)
+### [MSFT_DSCLocalConfigurationManager 类的 SendConfiguration 方法](msft-dsclocalconfigurationmanager-sendconfiguration.md)
+### [MSFT_DSCLocalConfigurationManager 类的 SendConfigurationApply 方法](msft-dsclocalconfigurationmanager-sendconfigurationapply.md)
+### [MSFT_DSCLocalConfigurationManager 类的 SendConfigurationApplyAsync 方法](msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)
+### [MSFT_DSCLocalConfigurationManager 类的 SendMetaConfigurationApply 方法](msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md)
+### [MSFT_DSCLocalConfigurationManager 类的 StopConfiguration 方法](msft-dsclocalconfigurationmanager-stopconfiguration.md)
+### [MSFT_DSCLocalConfigurationManager 类的 TestConfiguration 方法](msft-dsclocalconfigurationmanager-testconfiguration.md)
 
-<!--HONumber=Apr16_HO1-->
+# 更多资源
+## [白皮书](whitepapers.md)
+
+
+<!--HONumber=Apr16_HO4-->
 
 

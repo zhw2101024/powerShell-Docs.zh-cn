@@ -44,7 +44,7 @@
 ### [Windows PowerShell 导航](Topic/Windows-PowerShell-Navigation.md)
 #### [管理当前位置](Topic/Managing-Current-Location.md)
 #### [管理 Windows PowerShell 驱动器](Topic/Managing-Windows-PowerShell-Drives.md)
-#### [使用文件、文件夹和注册表项](Topic/Working-With-Files,-Folders-and-Registry-Keys.md)
+#### [使用文件、文件夹和注册表项](Topic/Working-With-Files-Folders-and-Registry-Keys.md)
 #### [直接操作项](Topic/Manipulating-Items-Directly.md)
 ### [使用对象](Topic/Working-with-Objects.md)
 #### [获取 WMI 对象“Get-WmiObject”](Topic/Getting-WMI-Objects--Get-WmiObject-.md)
@@ -67,6 +67,8 @@
 #### [使用注册表项](Topic/Working-with-Registry-Keys.md)
 #### [使用注册表条目](Topic/Working-with-Registry-Entries.md)
 #### [运行远程命令](Topic/Running-Remote-Commands.md)
+## Windows PowerShell 安全
+### [PowerShell 远程处理安全注意事项](Topic/WinRMSecurity.md)
 ## [Windows PowerShell 5 中的新增功能](Topic/What-s-New-in-Windows-PowerShell.md)
 ### [兼容性别名](Topic/Appendix-1---Compatibility-Aliases.md)
 ### [创建自定义 PowerShell 快捷方式](Topic/Appendix-2---Creating-a-Custom-PowerShell-Shortcut.md)
@@ -74,6 +76,6 @@
 ## [Windows PowerShell 术语表](Topic/Windows-PowerShell-Glossary.md)
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO4-->
 
 
