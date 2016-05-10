@@ -100,8 +100,9 @@ Configuration DependsOnExample {
 
         User UserExample {
             Ensure = "Present"
+            UserName = "TestUser"
             FullName = "TestUser"
-            DependsOn = "GroupExample"
+            DependsOn = "[Group]GroupExample"
         }
     }
 }
@@ -117,9 +118,9 @@ Configuration DependsOnExample {
 ## 另请参阅
 * [Windows PowerShell Desired State Configuration 概述](overview.md)
 * [DSC 资源](resources.md)
-* [配置本地配置管理器](metaconfig.md)
+* [配置本地配置管理器](metaConfig.md)
 
 
-<!--HONumber=Feb16_HO4-->
+<!--HONumber=Apr16_HO2-->
 
 
