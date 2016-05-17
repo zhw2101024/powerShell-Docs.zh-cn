@@ -1,3 +1,14 @@
+---
+title:   DSC WindowsFeature 资源。
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC WindowsFeature 资源。
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
@@ -41,4 +52,8 @@ WindowsFeature RoleExample
 }
 ```
 
-<!--HONumber=Feb16_HO4-->
+
+
+<!--HONumber=May16_HO3-->
+
+

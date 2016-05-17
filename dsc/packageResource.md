@@ -1,3 +1,14 @@
+---
+title:   DSC Package 资源
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC Package 资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
@@ -47,4 +58,9 @@ Package PackageExample
     ProductId = "ACDDCDAF-80C6-41E6-A1B9-8ABD8A05027E"
 } 
 ```
-<!--HONumber=Feb16_HO4-->
+
+
+
+<!--HONumber=May16_HO3-->
+
+

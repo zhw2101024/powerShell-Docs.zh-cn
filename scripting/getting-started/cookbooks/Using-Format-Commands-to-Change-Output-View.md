@@ -1,12 +1,15 @@
 ---
-title: 使用格式命令更改输出视图
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 63515a06-a6f7-4175-a45e-a0537f4f6d05
+title:  使用格式命令更改输出视图
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  63515a06-a6f7-4175-a45e-a0537f4f6d05
 ---
+
 # 使用格式命令更改输出视图
 Windows PowerShell 具有一组 cmdlet，可让你控制要显示的特定对象的属性。 所有 cmdlet 的名称都以谓词 **Format** 开头。 它们使你可以选择要显示的一个或多个属性。
 
@@ -212,6 +215,6 @@ powershell 2656 C:\Program Files\Windows PowerShell\v1.0\powershell.exe
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

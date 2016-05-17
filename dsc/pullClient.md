@@ -1,3 +1,14 @@
+---
+title:   设置 DSC请求客户端
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 设置 DSC请求客户端
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
@@ -10,9 +21,10 @@
 * [使用配置名称设置请求客户端](pullClientConfigNames.md)
 * [使用配置 ID 设置请求客户端](pullClientConfigID.md)
 
-> <ctype="x-NOTFOUND" mdpre="**" mdpost="**">注意</ctype="x-NOTFOUND">：这些主题适用于 PowerShell 5.0。 有关在 PowerShell 4.0 中设置请求客户端的信息，请参阅<ctype="x-NOTFOUND" mdpre="[" mdpost="](pullClientConfigID4.md)">在 PowerShell 4.0 中使用配置 ID 设置请求客户端</ctype="x-NOTFOUND">。
+> **请注意**：这些主题适用于 PowerShell 5.0。 有关在 PowerShell 4.0 中设置请求客户端的信息，请参阅[在 PowerShell 4.0 中使用配置 ID 设置请求客户端](pullClientConfigID4.md)。
 
 
-<!--HONumber=Mar16_HO4-->
+
+<!--HONumber=May16_HO3-->
 
 

@@ -1,3 +1,14 @@
+---
+title:   DSC WindowsProcess 资源
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC WindowsProcess 资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
@@ -33,4 +44,9 @@ WindowsProcess [string] #ResourceName
 | StandardInputPath| 指示标准输入位置。| 
 | StandardOutputPath| 指示写入标准输出的位置。 将覆盖任何现有文件。| 
 | WorkingDirectory| 指示将用作进程当前工作目录的位置。| 
-<!--HONumber=Feb16_HO4-->
+
+
+
+<!--HONumber=May16_HO3-->
+
+

@@ -1,3 +1,14 @@
+---
+title:   白皮书
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 白皮书
 
 为提供 PowerShell Desired State Configuration 相关主题的其他信息，已发布下列白皮书。
@@ -7,6 +18,8 @@
 
 **[下载 PDF](http://aka.ms/thereleasepipelinemodelpdf)**
 
-<!--HONumber=Apr16_HO2-->
+
+
+<!--HONumber=May16_HO3-->
 
 

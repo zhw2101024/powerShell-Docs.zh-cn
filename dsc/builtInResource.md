@@ -1,3 +1,14 @@
+---
+title:   内置 Windows PowerShell Desired State Configuration 资源
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 内置 Windows PowerShell Desired State Configuration 资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
@@ -18,6 +29,7 @@ Windows PowerShell Desired State Configuration (DSC) 附带有一组内置配置
 * [WindowsProcess 资源](windowsProcessResource.md)
 
 
-<!--HONumber=Apr16_HO2-->
+
+<!--HONumber=May16_HO3-->
 
 

@@ -1,3 +1,14 @@
+---
+title:   适用于 Linux 的 DSC nxScript 资源
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 适用于 Linux 的 DSC nxScript 资源
 
 PowerShell Desired State Configuration (DSC) 中的 **nxScript** 资源提供了在 Linux 节点上运行 Linux 脚本的机制。
@@ -61,4 +72,9 @@ fi
 } 
 }
 ```
-<!--HONumber=Feb16_HO4-->
+
+
+
+<!--HONumber=May16_HO3-->
+
+

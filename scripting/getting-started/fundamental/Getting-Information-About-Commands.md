@@ -1,12 +1,15 @@
 ---
-title: 获取有关命令的信息
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
+title:  获取有关命令的信息
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
 ---
+
 # 获取有关命令的信息
 Windows PowerShell **Get-Command** cmdlet 获取在当前会话中可用的所有命令。 当在 Windows PowerShell 提示符下键入 **Get-Command** 时，将看到类似于以下内容的输出：
 
@@ -78,6 +81,6 @@ Get-Command -CommandType Script
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

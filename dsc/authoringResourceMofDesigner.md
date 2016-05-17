@@ -1,3 +1,14 @@
+---
+title:   使用资源设计器工具
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 使用资源设计器工具
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
@@ -171,4 +182,9 @@ PS C:\> Update-xDscResource –Name ‘Demo_ADUser’ –Property $UserName, $En
 
 #### 其他资源
 [xDscResourceDesigner 模块](https://powershellgallery.com/packages/xDscResourceDesigner)
-<!--HONumber=Feb16_HO4-->
+
+
+
+<!--HONumber=May16_HO3-->
+
+

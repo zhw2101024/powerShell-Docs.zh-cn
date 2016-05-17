@@ -1,3 +1,14 @@
+---
+title:   Windows PowerShell 4.0 Desired State Configuration 本地配置管理器 (LCM)
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Windows PowerShell 4.0 Desired State Configuration 本地配置管理器 (LCM)
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
@@ -61,4 +72,10 @@ Set-DscLocalConfigurationManager -Path "c:\users\public\dsc"
 
 > **注意**：调用以上示例中的配置时，必须为 **Path** 参数指定与 **OutputPath** 参数相同的路径。
 
-若要查看当前本地配置管理器设置，可以使用 **Get-DscLocalConfigurationManager** cmdlet。 如果不带任何参数调用此 cmdlet，默认情况下它将获取其运行于的节点上的本地配置管理器设置。 若要指定另一个节点，请将 **CimSession** 参数用于此 cmdlet。<!--HONumber=Feb16_HO4-->
+若要查看当前本地配置管理器设置，可以使用 **Get-DscLocalConfigurationManager** cmdlet。 如果不带任何参数调用此 cmdlet，默认情况下它将获取其运行于的节点上的本地配置管理器设置。 若要指定另一个节点，请将 **CimSession** 参数用于此 cmdlet。
+
+
+
+<!--HONumber=May16_HO3-->
+
+

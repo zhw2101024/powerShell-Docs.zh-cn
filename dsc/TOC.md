@@ -3,12 +3,13 @@
 # [配置](configurations.md)
 ## [执行配置](enactingConfigurations.md)
 ## [使用具有多个版本的资源](sxsResource.md)
+## [使用用户凭据运行 DSC](runAsUser.md)
 ## [指定跨节点依赖关系](crossNodeDependencies.md)
 ## [配置数据](configData.md)
 ### [配置数据中的凭据选项](configDataCredentials.md)
-### [使用用户凭据运行 DSC](runAsUser.md)
 ## [保护配置 MOF 文件](secureMOF.md)
 ## [部分配置](partialConfigs.md)
+## [编写 DSC 配置的帮助](configHelp.md)
 
 # [资源](resources.md)
 ## [内置资源](builtInResource.md)
@@ -89,6 +90,7 @@
 ## [白皮书](whitepapers.md)
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=May16_HO3-->
 
 

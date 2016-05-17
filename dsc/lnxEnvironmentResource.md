@@ -1,3 +1,14 @@
+---
+title:   适用于 Linux nxEnvironment 资源的 DSC
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 适用于 Linux nxEnvironment 资源的 DSC
 
 PowerShell Desired State Configuration (DSC) 中的 **nxEnvironment** 资源提供了管理 Linux 节点上系统环境变量的机制。
@@ -48,4 +59,8 @@ nxEnvironment EnvironmentExample
 ```
 
 
-<!--HONumber=Feb16_HO4-->
+
+
+<!--HONumber=May16_HO3-->
+
+

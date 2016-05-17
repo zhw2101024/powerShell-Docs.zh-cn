@@ -1,3 +1,14 @@
+---
+title:   分离配置和环境数据
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 分离配置和环境数据
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
@@ -207,4 +218,9 @@ configuration MyConfiguration
 ```
 
 可在 [xWebAdministration 模块](https://powershellgallery.com/packages/xWebAdministration)中查找完整示例。
-<!--HONumber=Feb16_HO4-->
+
+
+
+<!--HONumber=May16_HO3-->
+
+

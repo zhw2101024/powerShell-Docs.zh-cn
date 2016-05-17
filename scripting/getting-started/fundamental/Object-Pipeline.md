@@ -1,12 +1,15 @@
 ---
-title: 对象管道
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 523d8ae4-d743-47a4-b79a-806130ca688a
+title:  对象管道
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  523d8ae4-d743-47a4-b79a-806130ca688a
 ---
+
 # 对象管道
 管道的行为就像一系列连接的管道段一样。 沿着管道移动的项会通过每个管道段。 若要在 Windows PowerShell 中创建管道，请使用管道运算符“|”将命令连接在一起。 每个命令的输出都将被用作下一命令的输入。
 
@@ -16,6 +19,6 @@ ms.assetid: 523d8ae4-d743-47a4-b79a-806130ca688a
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

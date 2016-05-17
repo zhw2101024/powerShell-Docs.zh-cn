@@ -1,12 +1,15 @@
 ---
-title: Windows PowerShell 入门
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
+title:  Windows PowerShell 入门
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  b0e2ad92-875f-421d-b612-f624e644aa69
 ---
+
 # Windows PowerShell 入门
 Windows PowerShell 是专门为系统管理员设计的新 Windows 命令行 Shell。 Windows PowerShell 包括可以单独或组合使用的交互提示和脚本编写环境。
 
@@ -14,7 +17,7 @@ Windows PowerShell 是专门为系统管理员设计的新 Windows 命令行 She
 
 Windows PowerShell 引入了 cmdlet（读作“command-let”）的概念，它是内置于 Shell 的简单的单一函数命令行工具。 可以分别使用每个 cmdlet，但只有组合使用这些简单的工具来执行复杂的任务时，你才会意识到它们的强大功能。 Windows PowerShell 包括一百多个基本核心 cmdlet，你可以编写自己的 cmdlet 并与其他用户共享。
 
-与许多 Shell 类似，Windows PowerShell 允许你访问计算机上的文件系统。 此外，Windows PowerShell 提供程序使你能够像访问文件系统一样方便地访问其他数据存储（例如注册表和数字签名证书存储）。
+与许多 Shell 类似，Windows PowerShell 允许你访问计算机上的文件系统。 此外，Windows PowerShell *提供程序*使你能够像访问文件系统一样方便地访问其他数据存储（例如注册表和数字签名证书存储）。
 
 本入门指南提供对 Windows PowerShell 的介绍：包括语言、cmdlet、提供程序，以及对象的使用。
 

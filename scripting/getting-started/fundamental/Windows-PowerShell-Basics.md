@@ -1,12 +1,15 @@
 ---
-title: Windows PowerShell 基础知识
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 6b3cbbc8-060c-4877-b00b-7300dbbe4e28
+title:  Windows PowerShell 基础知识
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  6b3cbbc8-060c-4877-b00b-7300dbbe4e28
 ---
+
 # Windows PowerShell 基础知识
 图形用户界面采用大多数计算机用户熟悉的一些基本概念。 用户凭借对这些界面的熟悉度来完成任务。 操作系统为用户提供可浏览项的图形表现形式，通常含有访问特定功能的下拉菜单以及访问特定于上下文的功能的上下文菜单。
 
@@ -28,6 +31,6 @@ Windows PowerShell 旨在充分利用用户对 CLI 一直以来所了解的知�
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
