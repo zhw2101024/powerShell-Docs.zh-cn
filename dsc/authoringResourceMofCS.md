@@ -2,9 +2,9 @@
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
-通常在 PowerShell 脚本中实现 Windows PowerShell Desired State Configuration (DSC) 自定义资源。 但是你也可以通过在 C# 中编写 cmdlet 来实现 DSC 自定义资源的功能。 有关在 C# 中编写 cmdlet 的介绍，请参阅[编写 Windows PowerShell Cmdlet](https://technet.microsoft.com/en-us/library/dd878294.aspx)。
+通常在 PowerShell 脚本中实现 Windows PowerShell Desired State Configuration (DSC) 自定义资源。 但是你也可以通过在 C# 中编写 cmdlet 来实现 DSC 自定义资源的功能。 有关在 C# 中编写 cmdlet 的介绍，请参阅[编写 Windows PowerShell Cmdlet](https://technet.microsoft.com/en-us/library/dd878294.aspx).
 
-除在 C# 中用 cmdlet 实现资源外，创建 MOF 架构、创建文件夹结构、导入和使用自定义 DSC 资源的过程都与[使用 MOF 编写自定义 DSC 资源](authoringResourceMOF.md)中介绍的相同。
+除在 C# 中用 cmdlet 实现资源外，创建 MOF 架构、创建文件夹结构、导入和使用自定义 DSC 资源的过程都与[使用 MOF 编写自定义 DSC 资源](authoringResourceMOF.md)中介绍的相同.
 
 ## 编写基于 cmdlet 的资源
 此示例中，我们将实现一个管理文本文件及其内容的简单资源。
@@ -29,9 +29,9 @@ class MSFT_XDemoFile : OMI_BaseResource
 1. 打开 Visual Studio
 1. 创建 C# 项目并命名。
 1. 从可用的项目模板中选择**类库**。
-1. 单击“确定”****。
+1. 单击“确定”.
 1. 将 System.Automation.Management.dll 的程序集引用添加到项目。
-1. 更改程序集名称，使其与资源名称一致。 在本示例中，程序集应该被命名为 **MSFT_XDemoFile**。
+1. 更改程序集名称，使其与资源名称一致。 在本示例中，程序集应命名为 **MSFT_XDemoFile**.
 
 ### 编写 cmdlet 代码
 
@@ -150,6 +150,7 @@ Test-TargetResource
 ```
 $env: psmodulepath (folder)
     |- MyDscResources (folder)
+        |- MyDscResources.psd1 (file, required)     
         |- DSCResources (folder)
             |- MSFT_XDemoFile (folder)
                 |- MSFT_XDemoFile.psd1 (file, optional)
@@ -161,4 +162,9 @@ $env: psmodulepath (folder)
 #### 概念
 [使用 MOF 编写自定义 DSC 资源](authoringResourceMOF.md)
 #### 其他资源
-[编写 Windows PowerShell Cmdlet](https://msdn.microsoft.com/en-us/library/dd878294.aspx)<!--HONumber=Feb16_HO4-->
+[编写 Windows PowerShell Cmdlet](https://msdn.microsoft.com/en-us/library/dd878294.aspx)
+
+
+<!--HONumber=May16_HO2-->
+
+

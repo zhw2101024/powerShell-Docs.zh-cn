@@ -10,10 +10,10 @@
 
 ### MOF 资源的文件夹结构
 
-想要使用 MOF 架构实现 DSC 自定义资源，请创建下列文件夹结构。 在 Demo_IISWebsite.schema.mof 文件中定义 MOF 架构，并在 Demo_IISWebsite.ps1 中定义资源脚本。 或者你也可以创建一个模块清单 (psd1) 文件。
+想要使用 MOF 架构实现 DSC 自定义资源，请创建下列文件夹结构。 在 Demo_IISWebsite.schema.mof 文件中定义 MOF 架构，并在 Demo_IISWebsite.psm1. 中定义资源脚本。 或者你也可以创建一个模块清单 (psd1) 文件。
 
 ```
-$env: psmodulepath (folder)
+$env:PSModulePath (folder)
     |- MyDscResources (folder)
         |- DSCResources (folder)
             |- Demo_IISWebsite (folder)
@@ -26,7 +26,7 @@ $env: psmodulepath (folder)
 
 ### MOF 文件的内容
 
-下面是一个可用于自定义网站资源的示例 MOF 文件。 要执行此示例操作，请将此架构保存至文件，并调用文件 *Demo_IISWebsite.schema.mof*。
+下面是一个可用于自定义网站资源的示例 MOF 文件。 要执行此示例操作，请将此架构保存至文件，并调用文件 *Demo_IISWebsite.schema.mof*.
 
 ```
 [ClassVersion("1.0.0"), FriendlyName("Website")] 
@@ -46,12 +46,12 @@ class Demo_IISWebsite : OMI_BaseResource
 请注意下列有关之前代码的信息：
 
 * `FriendlyName` 定义一个名称，你可以将其用来在 DSC 配置脚本中指代此自定义资源。 在此示例中，`Website` 相当于内置存档资源的友好名称 `Archive`。
-* 为自定义资源定义的类必须派生自 `OMI_BaseResource`。
-* 属性上的类型限定符 `[Key]` 表示此属性将唯一地标识资源实例。 也需要一个 `[Key]` 属性。
+* 为自定义资源定义的类必须派生自 `OMI_BaseResource`.
+* 属性上的类型限定符 `[Key]` 表示此属性将唯一地标识资源实例。 至少需要一个 `[Key]` 属性。
 * `[Required]` 限定符表示属性是必需的（在使用此资源的任何配置脚本中都必须指定值）。
 * `[write]` 限定符表示在配置脚本中使用自定义资源时，此属性是可选的。 `[read]` 限定符表示不能通过配置来设置属性，属性只用于报告目的。
-* `Values` 按照 `ValueMap` 中定义的值的列表限制分配给属性的值。 有关详细信息，请参阅 [ValueMap 和值限定符](https://msdn.microsoft.com/library/windows/desktop/aa393965.aspx)。
-* 建议在资源中包含一个名为 `Ensure` 的属性，以便与内置 DSC 资源保持一致。
+* `Values` 按照 `ValueMap` 中定义的值的列表限制分配给属性的值。 有关详细信息，请参阅 [ValueMap 和值限定符](https://msdn.microsoft.com/library/windows/desktop/aa393965.aspx).
+* 建议在资源中包含一个名为 `Ensure` 且包含值 `Present` 和 `Absent` 的属性，以便与内置 DSC 资源保持一致。
 * 如下所示命名自定义资源的架构文件：`classname.schema.mof`，其中 `classname` 是遵循架构定义中 `class` 关键字的标识符。
 
 ### 编写资源脚本
@@ -154,7 +154,7 @@ function Set-TargetResource
 }
 ```
 
-最后，**Test-TargetResource** 函数必须采用与 **Get-TargetResource** 和 **Set-TargetResource** 相同的参数集。 在 **Test-TargetResource** 的实现中，检查在键参数中指定的资源实例的状态。 如果资源实例的实际状态与在参数集中指定的值不匹配，则返回 **$false**。 否则返回 **$true**。
+最后，**Test-TargetResource** 函数必须采用与 **Get-TargetResource** 和 **Set-TargetResource** 相同的参数集。 在 **Test-TargetResource** 的实现中，检查在键参数中指定的资源实例的状态。 如果资源实例的实际状态与在参数集中指定的值不匹配，则返回 **$false**。 否则返回 **$true**.
 
 下面的代码实现 **Test-TargetResource** 函数。
 
@@ -207,7 +207,7 @@ $result
 
 ### 创建模块清单
 
-最后，使用 **New-ModuleManifest** cmdlet 来为自定义资源模块定义一个 <ResourceName>.psd1 文件。 调用此 cmdlet 时，引用上一节中所介绍的脚本模块 (.psm1) 文件。 将 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** 包括在要导出的函数列表中。 以下是一个示例清单文件。
+最后，使用 **New-ModuleManifest** cmdlet 来定义 <ResourceName>你的自定义资源模块的 .psd1 文件。 调用此 cmdlet 时，引用上一节中所介绍的脚本模块 (.psm1) 文件。 将 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** 包括在要导出的函数列表中。 以下是一个示例清单文件。
 
 ```powershell
 # Module manifest for module 'Demo.IIS.Website'
@@ -261,6 +261,7 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 }
 ```
 
-<!--HONumber=Feb16_HO4-->
+
+<!--HONumber=May16_HO2-->
 
 
