@@ -1,27 +1,43 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [dsc\partialConfigs.md](https://github.com/PowerShell/powerShell-Docs/blob/b5e92d3c81d3d44f9c8bca7d0ff8d51287b85fd6/dsc/partialConfigs.md) | OutofSyncHandedBackSuccess | [Details](#85d81ef4f82ef10c0f838601a9adb79d2fba65e771)
+ [wmf\productincompat.md](https://github.com/PowerShell/powerShell-Docs/blob/4e8bdf251336d99c1922b72c14187fccb1ccadab/wmf/productincompat.md) | OutofSyncHandedBackSuccess | [Details](#cad255b9c3c919b10769cf7bd658dc344d3d29a7305)
+ [wmf\TOC.md](https://github.com/PowerShell/powerShell-Docs/blob/fb3eaba21c7ca7d09e398a302076ecb1651e6c61/wmf/TOC.md) | OutofSyncHandedBackSuccess | [Details](#af8aee96244140094066b8e2df65fdb525a94811316)
 
 ## Item Details
-##### <a name='85d81ef4f82ef10c0f838601a9adb79d2fba65e771'></a> Source: [dsc\partialConfigs.md](https://github.com/PowerShell/powerShell-Docs/blob/b5e92d3c81d3d44f9c8bca7d0ff8d51287b85fd6/dsc/partialConfigs.md)
+##### <a name='cad255b9c3c919b10769cf7bd658dc344d3d29a7305'></a> Source: [wmf\productincompat.md](https://github.com/PowerShell/powerShell-Docs/blob/4e8bdf251336d99c1922b72c14187fccb1ccadab/wmf/productincompat.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [partialConfigs.f483ab7fa1511b557780a02b5b807245f730c1b6.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/a189c6625d2e998cccc280830f75729eeb854ec7/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/partialConfigs.f483ab7fa1511b557780a02b5b807245f730c1b6.zh-cn.xlf)
-* Handoff Datetime: 2016-05-23 18:20:58
+* Handoff File: [productincompat.62bb00299c0283b5297001553476a745e28a49cb.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/9937553fcdc9e4f72324d6ea48bb50a1f2f7fd3d/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/productincompat.62bb00299c0283b5297001553476a745e28a49cb.zh-cn.xlf)
+* Handoff Datetime: 2016-05-23 18:51:09
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\partialConfigs.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/0213aa455a8638eb8bd9056c252250515690c066/dsc/partialConfigs.md)
-* Current Handback File: [partialConfigs.f483ab7fa1511b557780a02b5b807245f730c1b6.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/1f5f96f7a1aa8aff0a5d78eeb21d81a9622f1945/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/partialConfigs.f483ab7fa1511b557780a02b5b807245f730c1b6.zh-cn.xlf)
-* Current Handback Datetime: 2016-05-09 21:28:08
+* Current Target File: [wmf\productincompat.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/c6ea6b281465bcec4850854de33b84918b5bff59/wmf/productincompat.md)
+* Current Handback File: [productincompat.62bb00299c0283b5297001553476a745e28a49cb.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/2e54e8e7f84a40b35598d8a4ab0228b336f1a032/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/productincompat.62bb00299c0283b5297001553476a745e28a49cb.zh-cn.xlf)
+* Current Handback Datetime: 2016-05-10 07:33:55
+* [Back to Top](#report-top)
+
+##### <a name='af8aee96244140094066b8e2df65fdb525a94811316'></a> Source: [wmf\TOC.md](https://github.com/PowerShell/powerShell-Docs/blob/fb3eaba21c7ca7d09e398a302076ecb1651e6c61/wmf/TOC.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [TOC.60497266061c38453b3db893ec675eb65584af89.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/9937553fcdc9e4f72324d6ea48bb50a1f2f7fd3d/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/TOC.60497266061c38453b3db893ec675eb65584af89.zh-cn.xlf)
+* Handoff Datetime: 2016-05-23 18:51:09
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [wmf\TOC.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/3f141564a30e8512500f90f03bde9b8c947752f3/wmf/TOC.md)
+* Current Handback File: [TOC.60497266061c38453b3db893ec675eb65584af89.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/a0b000850689a1be19f9f165effcad21c15b25a8/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/TOC.60497266061c38453b3db893ec675eb65584af89.zh-cn.xlf)
+* Current Handback Datetime: 2016-03-31 20:05:35
 * [Back to Top](#report-top)
 
 
