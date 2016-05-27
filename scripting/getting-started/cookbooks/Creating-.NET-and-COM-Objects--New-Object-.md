@@ -1,12 +1,15 @@
 ---
-title: 创建 .NET 和 COM 对象 (New-Object)
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
+title:  创建 .NET 和 COM 对象 (New Object) 
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  2057b113-efeb-465e-8b44-da2f20dbf603
 ---
+
 # 创建 .NET 和 COM 对象 (New-Object)
 存在具有 .NET Framework 和 COM 接口的软件组件，使用它们可执行许多系统管理任务。 Windows PowerShell 允许你使用这些组件，因此你将不限于执行可通过使用 cmdlet 执行的任务。 Windows PowerShell 初始版本中的许多 cmdlet 对远程计算机无效。 我们将演示如何通过直接从 Windows PowerShell 使用 .NET Framework **System.Diagnostics.EventLog** 类在管理事件日志时绕过此限制。
 
@@ -175,20 +178,11 @@ $Home\Desktop\PSHome.lnk
 
 我们现在有一个名为 **$lnk** 的变量，其中包含新的快捷方式引用。 如果想要查看其成员，你可以通过管道将它传递到 **Get-Member**。 下面的输出显示了完成创建快捷方式所需使用的成员：
 
-<pre>PS> $lnk | Get-Member
-TypeName: System.__ComObject#{f935dc23-1cf0-11d0-adb9-00c04fd58a0b}
-Name             MemberType   Definition
-----             ----------   ----------
-...
-Save             Method       void Save ()
-...
-TargetPath       Property     string TargetPath () {get} {set}
-...</pre>
+<pre>PS> $lnk | Get-Member TypeName: System.__ComObject#{f935dc23-1cf0-11d0-adb9-00c04fd58a0b} Name             MemberType   Definition ----             ----------   ---------- ...Save             Method       void Save () ...TargetPath       Property     string TargetPath () {get} {set} ...</pre>
 
 我们需要指定 **TargetPath**（它是 Windows PowerShell 的应用程序文件夹），然后通过调用 **Save** 方法保存快捷方式 **$lnk**。 Windows PowerShell 应用程序文件夹路径存储在变量 **$PSHome** 中，因此我们可以通过键入以下内容执行此操作：
 
-<pre>$lnk.TargetPath = $PSHome
-$lnk.Save()</pre>
+<pre>$lnk.TargetPath = $PSHome $lnk.Save()</pre>
 
 ### 从 Windows PowerShell 使用 Internet Explorer
 使用 COM 可以使许多应用程序（包括 Microsoft Office 系列应用程序和 Internet Explorer）自动执行。 Internet Explorer 阐明了有关使用基于 COM 的应用程序的一些典型方法和涉及的问题。
@@ -266,6 +260,6 @@ At line:1 char:17
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

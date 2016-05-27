@@ -1,3 +1,14 @@
+---
+title:   PowerShell Desired State Configuration 部分配置
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # PowerShell Desired State Configuration 部分配置
 
 >适用于：Windows PowerShell 5.0
@@ -150,6 +161,7 @@ PartialConfigDemo
 [Windows 配置本地配置管理器](https://technet.microsoft.com/en-us/library/mt421188.aspx) 
 
 
-<!--HONumber=Apr16_HO2-->
+
+<!--HONumber=May16_HO3-->
 
 

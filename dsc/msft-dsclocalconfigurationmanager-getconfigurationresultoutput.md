@@ -1,9 +1,12 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: '检索与特定作业相关的配置代理输出。'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_getconfigurationresultoutput'
-MSHAttr: 'PreferredLib:/library'
-title: 'MSFT_DSCLocalConfigurationManager 类的 GetConfigurationResultOutput 方法'
+title:  MSFT_DSCLocalConfigurationManager 类的 GetConfigurationResultOutput 方法
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
 ---
 
 # MSFT_DSCLocalConfigurationManager 类的 GetConfigurationResultOutput 方法
@@ -62,6 +65,6 @@ uint32 GetConfigurationResultOutput(
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

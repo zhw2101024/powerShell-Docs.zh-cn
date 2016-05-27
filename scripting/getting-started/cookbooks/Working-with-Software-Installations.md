@@ -1,12 +1,15 @@
 ---
-title: 使用软件安装
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
+title:  使用软件安装
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
 ---
+
 # 使用软件安装
 可以通过 WMI 的 **Win32_Product** 类访问旨在使用 Windows Installer 的应用程序，但当今使用的所有应用程序并非都使用 Windows Installer。 由于 Windows Installer 提供了最广泛的标准技术用于使用可安装的应用程序，因此我们将主要使用这些应用程序。 使用替代安装例程的应用程序通常不由 Windows Installer 管理。 用于使用这些应用程序的特定技术将取决于安装程序软件和应用程序开发人员做出的决策。
 
@@ -137,8 +140,7 @@ SKC  VC Name                           Property
 ### 安装应用程序
 可以使用 **Win32_Product** 类远程或本地安装 Windows Installer 程序包。
 
-> [!NOTE]
-> 若要在 Windows Vista、Windows Server 2008 以及更高版本的 Windows 上安装应用程序，你必须使用“以管理员身份运行”选项启动 Windows PowerShell。
+> [!NOTE] 若要在 Windows Vista、Windows Server 2008 以及更高版本的 Windows 上安装应用程序，你必须使用“以管理员身份运行”选项启动 Windows PowerShell。
 
 在远程安装时，请使用通用命名约定 (UNC) 网络路径指定 .msi 程序包的路径，因为 WMI 子系统并不了解 Windows PowerShell 路径。 例如，若要在远程计算机 PC01 上安装位于网络共享 \AppServ\dsp 中的 NewPackage.msi 程序包，请在 Windows PowerShell 提示符下键入以下命令：
 
@@ -178,6 +180,6 @@ Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue("Displ
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

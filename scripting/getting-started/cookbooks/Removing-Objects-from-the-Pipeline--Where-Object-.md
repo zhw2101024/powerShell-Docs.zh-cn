@@ -1,12 +1,15 @@
 ---
-title: 从管道中删除对象 (Where-Object)
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
+title:  从管道中删除对象 (Where Object) 
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  01df8b22-2d22-4e2c-a18d-c004cd3cc284
 ---
+
 # 从管道中删除对象 (Where-Object)
 在 Windows PowerShell 中，你通常会生成和传递比预期更多的对象到管道中。 可以通过使用 **Format** cmdlet 指定特定对象的属性进行显示，但是这对从显示中删除整个对象的问题没有任何帮助。 你可能希望在管道末尾之前筛选对象，以便你可以只对初始生成对象的子集执行操作。
 
@@ -15,8 +18,7 @@ Windows PowerShell 包括 **Where-Object** cmdlet，它可让你在管道中测�
 ### 使用 Where-Object 执行简单测试
 **FilterScript** 的值是一个*脚本块* - 由大括号 {} 括起来的一个或多个 Windows PowerShell 命令，其计算结果为 True 或 False。 这些脚本块可能非常简单，但是创建它们需要了解有关 Windows PowerShell 的另一个概念，即比较运算符。 比较运算符比较其每一侧显示的项。 比较运算符以“-”字符开头，后跟名称。 基本比较运算符适用于几乎任何类型的对象。 更高级的比较运算符可能仅适用于文本或数组。
 
-> [!NOTE]
-> 默认情况下，处理文本时，Windows PowerShell 比较运算符不区分大小写。
+> [!NOTE] 默认情况下，在处理文本时，Windows PowerShell 比较运算符不区分大小写。
 
 出于分析考虑，<、> 和 = 等符号不用作比较运算符。 相反，比较运算符由字母组成。 下表中列出了基本比较运算符。
 
@@ -102,6 +104,6 @@ Get-WmiObject -Class Win32_SystemDriver | Where-Object -FilterScript { ($_.State
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

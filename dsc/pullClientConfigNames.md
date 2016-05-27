@@ -1,3 +1,14 @@
+---
+title:   使用配置名称设置请求客户端
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 使用配置名称设置请求客户端
 
 > 适用于：Windows PowerShell 5.0
@@ -38,16 +49,13 @@ PullClientConfigID
 
 此脚本运行后，将创建名为 **PullClientConfigID** 的新输出文件夹，并在其中放入元配置 MOF 文件。 在本例中，会将元配置 MOF 文件命名为 `localhost.meta.mof`。
 
-若要应用配置，请调用 **Set-DscLocalConfigurationManager** cmdlet，并将 **Path** 设置为元配置 MOF 文件的位置。 例如：`Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigID –Verbose.`
+若要应用配置，请调用 **Set-DscLocalConfigurationManager** cmdlet，并将 **Path** 设置为元配置 MOF 文件的位置。 例如： `Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigID –Verbose.`
 
 > **注意**：注册密钥仅适用于 Web 请求服务器。 对于 SMB 请求服务器，你仍必须使用 **ConfigurationID**。 有关使用 **ConfigurationID** 配置请求服务器的信息，请参阅[使用配置 ID 设置请求客户端](pullClientConfigID.md)
 
 ## 资源和报表服务器
 
-如果在 LCM 配置中只指定 **ConfigurationRepositoryWeb** 或 **ConfigurationRepositoryShare** 块（如同前面的示例），则请求客户端会 
-从指定服务器请求资源，但是不会向它发送报表。 可以将单个请求服务器用于配置、资源和报告，但是必须创建 
-**ReportRepositoryWeb** 块以设置报告。 下面的示例演示一个元配置，它将客户端设置为请求配置和资源并将报表数据发送到单个
-请求服务器。
+如果你在 LCM 配置中只指定 **ConfigurationRepositoryWeb** 或 **ConfigurationRepositoryShare** 块（如同上一个示例所示），请求客户端会从指定服务器请求资源，但不会向它发送报表。 虽然你可以将一个请求服务器用于配置、资源和报告，但必须创建 **ReportRepositoryWeb** 块来设置报表。 下面的示例展示了将客户端设置为请求配置和资源并将报表数据发送到一个请求服务器的元配置。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -80,8 +88,7 @@ PullClientConfigID
 ```
 
 
-还可以为资源和报告指定不同的请求服务器。 若要指定资源服务器，请使用 **ResourceRepositoryWeb**（适用于 Web 请求服务器）或  
-**ResourceRepositoryShare** 块（适用于 SMB 请求服务器）。
+还可以为资源和报告指定不同的请求服务器。 若要指定资源服务器，请使用 **ResourceRepositoryWeb**（适用于 Web 请求服务器）或 **ResourceRepositoryShare**（适用于 SMB 请求服务器）块。
 若要指定报表服务器，请使用 **ReportRepositoryWeb** 块。 报表服务器不能为 SMB 服务器。
 以下元配置将请求客户端配置为从 **CONTOSO-PullSrv** 获取其配置、从 **CONTOSO-ResourceSrv** 获取资源、将状态报告发送到 **CONTOSO-ReportSrv**：
 
@@ -126,6 +133,7 @@ PullClientConfigID
 * [设置 DSC Web 请求服务器](pullServer.md)
 
 
-<!--HONumber=Apr16_HO2-->
+
+<!--HONumber=May16_HO3-->
 
 

@@ -1,12 +1,15 @@
 ---
-title: 使用 Out-* Cmdlet 重定向数据
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 2a4acd33-041d-43a5-a3e9-9608a4c52b0c
+title:  使用 Out Cmdlet 重定向数据
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  2a4acd33-041d-43a5-a3e9-9608a4c52b0c
 ---
+
 # 使用 Out-* Cmdlet 重定向数据
 Windows PowerShell 提供多个 cmdlet，可让你直接控制数据输出。 这些 cmdlet 具有两个重要的共同特征。
 
@@ -61,8 +64,7 @@ Name    : explorer
 
 这适用于所有 **Out** cmdlet。 **Out** cmdlet 应始终出现在管道末尾。
 
-> [!NOTE]
-> 所有 **Out** cmdlet 都使用对控制台窗口有效的格式（包括行长度限制）将输出呈现为文本。
+> [!NOTE] 所有 **Out** cmdlet 都使用对控制台窗口有效的格式（包括行长度限制）将输出呈现为文本。
 
 #### 分页控制台输出 (Out-Host)
 默认情况下，Windows PowerShell 将数据发送到主机窗口，这正是 Out-Host cmdlet 的用途。 Out-Host cmdlet 的主要用途是对数据进行分页，如前面所述。 例如，下面的命令使用 Out-Host 对 Get-Command cmdlet 的输出进行分页：
@@ -153,6 +155,6 @@ Get-Command | Out-File -FilePath c:\temp\output.txt -Width 2147483647
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

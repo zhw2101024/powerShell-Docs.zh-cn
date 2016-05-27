@@ -1,10 +1,19 @@
+---
+title:   编写 DSC 配置的帮助
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 编写 DSC 配置的帮助
 
 >适用于：Windows PowerShell 5.0
 
-可在 DSC 配置中使用基于注释的帮助。 用户可以通过调用具有 `-?` 的配置函数或通过使用以下方法来访问帮助 
-[Get-Help](https://technet.microsoft.com/en-us/library/hh849696.aspx) cmdlet。 有关 PowerShell 基于注释的帮助的更多信息，请参阅 
-[about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/hh847834.aspx).
+可在 DSC 配置中使用基于注释的帮助。 若要访问帮助内容，用户可以使用 `-?` 调用配置函数或使用 [Get-Help](https://technet.microsoft.com/en-us/library/hh849696.aspx) cmdlet。 若要详细了解基于 PowerShell 注释的帮助内容，请参阅 [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/hh847834.aspx)。
 
 下面的示例演示了一个脚本，它包含两个配置和及其各自基于注释的帮助：
 
@@ -52,8 +61,7 @@ configuration HelpSample1
 
 ## 查看配置帮助
 
-若要查看有关配置的帮助，请使用带有函数名称的 **Get-help** cmdlet，或键入后跟 `-?` 的函数名称。 下面是
-传递给 **Get-help** 时上一个函数的输出：
+若要查看有关配置的帮助，请使用带有函数名称的 **Get-help** cmdlet，或键入后跟 `-?` 的函数名称。 下面展示了在传递给 **Get-Help** 时上一个函数的输出：
 
 ```powershell
 PS C:\> Get-Help HelpSample1
@@ -85,6 +93,8 @@ REMARKS
 ## 另请参阅
 * [DSC 配置](configurations.md)
 
-<!--HONumber=Apr16_HO5-->
+
+
+<!--HONumber=May16_HO3-->
 
 

@@ -1,12 +1,15 @@
 ---
-title: 管理当前位置
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
+title:  管理当前位置
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
 ---
+
 # 管理当前位置
 在文件资源管理器中导航文件夹系统时，你通常具有一个特定的工作位置（即当前打开的文件夹）。 通过单击当前文件夹中的项，可轻松对其进行操作。 对于命令行接口（例如 Cmd.exe），当你位于特定文件所在的相同文件夹中时，你可以通过指定一个相对较短的名称来访问它，而无需指定该文件的完整路径。 当前目录称为工作目录。
 
@@ -47,10 +50,7 @@ C:\WINDOWS
 
 例如，如果你位于 **C:\Windows** 文件夹中，则句点 (**.**) 表示 **C:\Windows**，而双句点 (**..**) 表示 **C:**。 你可以从当前位置更改到 C: 驱动器的根目录，方法是键入：
 
-<pre>PS> Set-Location -Path .. -PassThru
-路径
-----
-C:\</pre>
+<pre>PS> Set-Location -Path .. -PassThru Path ---- C:\</pre>
 
 相同的技术适用于非文件系统驱动器（例如 **HKLM:**）的 Windows PowerShell 驱动器。 你可以在注册表中将你的位置设置为 HKLM\Software 项，方法是键入：
 
@@ -168,6 +168,6 @@ Set-Location : Cannot find path 'D:\' because it does not exist.
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

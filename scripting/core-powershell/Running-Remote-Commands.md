@@ -1,12 +1,15 @@
 ---
-title: 运行远程命令
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
+title:  运行远程命令
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
 ---
+
 # 运行远程命令
 你可以使用单个 Windows PowerShell 命令在一台或数百台计算机上运行命令。 Windows PowerShell 通过使用各种技术（包括 WMI、RPC 和 WS-Management）支持远程计算。
 
@@ -46,8 +49,7 @@ Windows PowerShell 远程处理，它使用 WS-Management 协议，并且使你�
 
 若要使用 Windows PowerShell 远程处理，必须配置远程计算机以进行远程管理。 有关详细信息（包括说明），请参阅[关于远程要求](https://technet.microsoft.com/en-us/library/dd315349.aspx)。
 
-配置了 Windows PowerShell 远程处理后，有许多远程处理策略可供你使用。 此文档的其余部分只列出了其中的一部分。 有关详细信息，请参阅[关于远程](https://technet.microsoft.com/en-us/library/dd347744.aspx)和 
-[关于远程的常见问题解答](https://technet.microsoft.com/en-us/library/dd347744.aspx)。
+配置了 Windows PowerShell 远程处理后，有许多远程处理策略可供你使用。 此文档的其余部分只列出了其中的一部分。 有关详细信息，请参阅 [About Remote（关于远程）](https://technet.microsoft.com/en-us/library/dd347744.aspx)和 [About Remote FAQ（关于远程 FAQ）](https://technet.microsoft.com/en-us/library/dd347744.aspx)。
 
 ### 启动交互会话
 若要使用单台远程计算机启动交互会话，请使用 [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) cmdlet。 例如，若要使用 Server01 远程计算器启动交互会话，请键入：
@@ -64,8 +66,7 @@ enter-pssession Server01
 exit-pssession
 ```
 
-有关 Enter-PSSession 和 Exit-PSSession cmdlet 的详细信息，请参阅 [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx)  
-和 [Exit-PSSession](https://technet.microsoft.com/en-us/library/dd315322.aspx)。
+有关 Enter-PSSession 和 Exit-PSSession cmdlet 的详细信息，请参阅 [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) 和 [Exit-PSSession](https://technet.microsoft.com/en-us/library/dd315322.aspx)。
 
 ### 运行远程命令
 若要在一台或多台远程计算机上运行任何命令，请使用 [Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx) cmdlet。
@@ -124,8 +125,7 @@ invoke-command -session $s {$h | where {$_.installedby -ne "NTAUTHORITY\SYSTEM"
 Windows PowerShell 远程管理就在此处开始。 通过使用随 Windows PowerShell 一起安装的 cmdlet，你可以从本地和远程端点建立和配置远程会话、创建自定义和受限制的会话、允许用户从实际在远程会话上隐式运行的远程会话中导入命令、配置远程会话的安全性等。
 
 为了便于远程配置，Windows PowerShell 包含了 WSMan 提供程序。 提供程序创建的 WSMAN: 驱动器使你可以在本地计算机和远程计算机上的配置设置层次结构之间导航。
- 有关 WSMan 提供程序的详细信息，请参阅 [WSMan 提供程序](https://technet.microsoft.com/en-us/library/dd819476.aspx)和
-  [有关 WS-Management Cmdlet](https://technet.microsoft.com/en-us/library/dd819481.aspx)，或在 Windows PowerShell 控制台中，键入“get\-help wsman”。
+ 有关 WSMan 提供程序的详细信息，请参阅 [WSMan Provider（WSMan 提供程序）](https://technet.microsoft.com/en-us/library/dd819476.aspx)和   [About WS-Management Cmdlets（关于 WS-Management Cmdlet）](https://technet.microsoft.com/en-us/library/dd819481.aspx)，或在 Windows PowerShell 控制台中键入“get\-help wsman”。
 
 有关更多信息，请参阅：
 - [关于远程 FAQ](https://technet.microsoft.com/en-us/library/dd315359.aspx)
@@ -149,6 +149,6 @@ Windows PowerShell 远程管理就在此处开始。 通过使用随 Windows Pow
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO2-->
 
 

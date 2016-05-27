@@ -1,12 +1,15 @@
 ---
-title: 管理 Windows PowerShell 驱动器
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
+title:  管理 Windows PowerShell 驱动器
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  bd809e38-8de9-437a-a250-f30a667d11b4
 ---
+
 # 管理 Windows PowerShell 驱动器
 *Windows PowerShell 驱动器*是一个数据存储位置，你可以像访问 Windows PowerShell 中的文件系统驱动器那样访问它。 Windows PowerShell 提供程序将为你创建一些驱动器，例如文件系统驱动器（包括 C: 和 D:）、注册表驱动器（HKCU: 和 HKLM:）和证书驱动器 (Cert:)，你也可以创建自己的 Windows PowerShell 驱动器。 这些驱动器非常有用，但它们仅在 Windows PowerShell 内可用。 你无法通过使用其他 Windows 工具（如文件资源管理器或 Cmd.exe）访问它们。
 
@@ -56,20 +59,11 @@ D          FileSystem    D:\
 
 若要查看表示注册表配置单元的 Windows PowerShell 驱动器，请使用 **PSProvider** 参数来仅显示受 Windows PowerShell Registry 提供程序支持的 Windows PowerShell 驱动器：
 
-<pre>PS> Get-PSDrive -PSProvider Registry
-名称       提供程序      根路径                                   CurrentLocation
-----       --------      ----                                   ---------------
-HKCU       Registry      HKEY_CURRENT_USER
-HKLM       Registry      HKEY_LOCAL_MACHINE</pre>
+<pre>PS> Get-PSDrive -PSProvider Registry Name       Provider      Root                                   CurrentLocation ----       --------      ----                                   --------------- HKCU       Registry      HKEY_CURRENT_USER HKLM       Registry      HKEY_LOCAL_MACHINE</pre>
 
 你还可以将标准 Location cmdlet 与 Windows PowerShell 驱动器结合使用：
 
-<pre>PS> Set-Location HKLM:\SOFTWARE
-PS> Push-Location .\Microsoft
-PS> Get-Location
-路径
-----
-HKLM:\SOFTWARE\Microsoft</pre>
+<pre>PS> Set-Location HKLM:\SOFTWARE PS> Push-Location .\Microsoft PS> Get-Location Path ---- HKLM:\SOFTWARE\Microsoft</pre>
 
 ### 添加新的 Windows PowerShell 驱动器 (New-PSDrive)
 你可以通过使用 **New-PSDrive** 命令添加自己的 Windows PowerShell 驱动器。 若要获取 **New-PSDrive** 命令的语法，请使用 **Syntax** 参数输入 **Get-Command** 命令：
@@ -101,18 +95,13 @@ Name       Provider      Root                                   CurrentLocation
 Office     FileSystem    C:\Program Files\Microsoft Offic...
 ```
 
-> [!NOTE]
-> 一般情况下，路径不区分大小写。
+> [!NOTE] 一般情况下，路径不区分大小写。
 
 在执行所有 Windows PowerShell 驱动器时，请参考新的 Windows PowerShell 驱动器，格式是其名称后面跟一个冒号 (**:**)。
 
 Windows PowerShell 驱动器可以使许多任务变得更简单。 例如，Windows 注册表中的某些最重要的项的路径长度非常长，难以访问且难以记住这些路径。 关键的配置信息位于 **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion** 下。 若要查看和更改 CurrentVersion 注册表项中的项，你可以创建一个其根在该项中的 Windows PowerShell 驱动器，方法是键入：
 
-<pre>PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\W
-indows\CurrentVersion
-名称       提供程序      根路径                                   CurrentLocation
-----       --------      ----                                   ---------------
-cvkey      Registry      HKLM\Software\Microsoft\Windows\...</pre>
+<pre>PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\W indows\CurrentVersion Name       Provider      Root                                   CurrentLocation ----       --------      ----                                   --------------- cvkey      Registry      HKLM\Software\Microsoft\Windows\...</pre>
 
 然后，你可以像对任何其他驱动器一样，将位置更改为 **cvkey:** 驱动器：
 
@@ -120,10 +109,7 @@ cvkey      Registry      HKLM\Software\Microsoft\Windows\...</pre>
 
 或者：
 
-<pre>PS> Set-Location cvkey: -PassThru
-路径
-----
-cvkey: \</pre>
+<pre>PS> Set-Location cvkey: -PassThru Path ---- cvkey:\</pre>
 
 New-PsDrive cmdlet 仅将新的驱动器添加到当前 Windows PowerShell 会话中。 如果关闭 Windows PowerShell 窗口，则会丢失新的驱动器。 若要保存 Windows PowerShell 驱动器，请使用 Export-Console cmdlet 导出当前 Windows PowerShell 会话，然后使用 PowerShell.exe **PSConsoleFile** 参数来将其导入。 或者，将新的驱动器添加到 Windows PowerShell 配置文件中。
 
@@ -157,6 +143,6 @@ Windows PowerShell 检测在 Windows 中添加或删除的文件系统驱动器�
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

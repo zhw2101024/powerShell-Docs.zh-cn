@@ -1,12 +1,15 @@
 ---
-title: 选择对象部件 (Select-Object)
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 72e64b1a-d351-4500-9da3-24d8a71d7a92
+title:  选择对象部件 (Select Object) 
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  72e64b1a-d351-4500-9da3-24d8a71d7a92
 ---
+
 # 选择对象部件 (Select-Object)
 可以使用 **Select-Object** cmdlet 创建新的自定义 Windows PowerShell 对象（包含从用于创建它们的对象中选择的属性）。 键入下面的命令以创建仅包括 Win32_LogicalDisk WMI 类的 Name 和 FreeSpace 属性的新对象：
 
@@ -46,6 +49,6 @@ C:                                                                48317.7265625
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

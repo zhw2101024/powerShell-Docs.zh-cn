@@ -1,12 +1,15 @@
 ---
-title: 了解重要的 Windows PowerShell 概念
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
+title:  了解重要的 Windows PowerShell 概念
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  3e601e38-4520-4578-a48d-b6779f1d35ee
 ---
+
 # 了解重要的 Windows PowerShell 概念
 Windows PowerShell 设计集成了很多不同环境的概念。 具有特定 Shell 或编程环境方面经验的人会对其中几种比较熟悉，但很少有人了解全部概念。 查看其中一些概念可获得有关 Shell 的有用概述。
 
@@ -28,7 +31,7 @@ Windows PowerShell 中的本机二进制命令称为 *cmdlet*（读作 command-l
 ### Windows PowerShell 处理控制台输入和显示
 当你键入命令时，Windows PowerShell 会始终直接处理命令行输入。 Windows PowerShell 还会对你在屏幕上看到的输出进行格式设置。 这很重要，因为它减少了每个 cmdlet 所需执行的工作，并确保你始终可以相同的方式执行操作而不用考虑所使用的 cmdlet。 一个有关这会如何简化工具开发人员和用户生活的例子是命令行帮助。
 
-传统的命令行工具有自己的用于请求和显示帮助的方案。 某些命令行工具使用 **/?** 来触发帮助显示；其他工具则使用 **-?**、**/H** 或者甚至是 **//**。 有些工具会在 GUI 窗口而不是在控制台显示区域显示帮助。 一些复杂的工具，比如应用程序更新程序，在显示帮助前先将内部文件解压缩。 如果你使用的参数有误，该工具可能会忽略你键入的内容并自动开始执行任务。
+传统的命令行工具有自己的用于请求和显示帮助的方案。 某些命令行工具使用 **/?** 来触发显示帮助内容；其他工具则使用 **\-?**、**\/H** 或 **\/\/**。 有些工具会在 GUI 窗口而不是在控制台显示区域显示帮助。 一些复杂的工具，比如应用程序更新程序，在显示帮助前先将内部文件解压缩。 如果你使用的参数有误，该工具可能会忽略你键入的内容并自动开始执行任务。
 
 当你在 Windows PowerShell 中输入命令时，Windows PowerShell 会自动分析并预处理你输入的任何内容。 如果你将 **-?** 参数 和 Windows PowerShell cmdlet 结合使用，则始终意味着“显示此命令的帮助”。 Cmdlet 开发人员无需分析命令；只需提供帮助文本。
 
@@ -44,6 +47,6 @@ Windows PowerShell 所具有的语法功能和关键字与 C# 编程语言中所
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

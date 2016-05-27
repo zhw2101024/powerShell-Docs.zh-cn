@@ -1,26 +1,30 @@
+---
+title:   保护 MOF 文件
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 保护 MOF 文件
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
-DSC 通过将包含配置信息的 MOF 文件发送到各个节点，告知目标节点应有的配置，本地配置管理器 (LCM) 在这些节点上实施所需 
-配置。 由于此文件包含配置的详细信息，因此确保其安全非常重要。 若要执行此操作，可以设置 LCM 来检查 
-用户凭据。 本主题介绍如何通过证书加密将这些凭据安全传输到目标节点。
+DSC 通过将包含配置信息的 MOF 文件发送到各个节点，告知目标节点应有的配置，本地配置管理器 (LCM) 在这些节点上实施所需配置。 由于此文件包含配置的详细信息，因此确保其安全非常重要。 为此，你可以将 LCM 设置为检查用户凭据。 本主题介绍如何通过证书加密将这些凭据安全传输到目标节点。
 
->**注意：**本主题讨论用于加密的证书。 对于加密，自签名证书就已足够，因为私钥始终保密，而加密并不表示信任该文档。 自签名证书
->*不*应用于身份验证目的。 应使用来自受信任的证书颁发机构 (CA) 的证书进行任何身份验证。
+>**注意：**本主题讨论用于加密的证书。 对于加密，自签名证书就已足够，因为私钥始终保密，而加密并不表示信任该文档。 自签名证书*不*得用于身份验证目的。 应使用来自受信任的证书颁发机构 (CA) 的证书进行任何身份验证。
 
 ## 必备条件
 
 要成功加密所用凭据以保护 DSC 配置，请确保你有以下各项：
 
-* **颁发和分发证书的方法**。 本主题及其中示例假定你使用 Active Directory 证书颁发机构。 有关 Active Directory 证书服务的详细背景信息， 
-请参阅 [Active Directory 证书服务概述](https://technet.microsoft.com/library/hh831740.aspx)和 
-[Windows Server 2008 中的 Active Directory 证书服务](https://technet.microsoft.com/windowsserver/dd448615.aspx)。
+* **颁发和分发证书的方法**。 本主题及其中示例假定你使用 Active Directory 证书颁发机构。 有关 Active Directory 证书服务的更多背景信息，请参阅 [Active Directory 证书服务概述](https://technet.microsoft.com/library/hh831740.aspx)和 [Windows Server 2008 中的 Active Directory 证书服务](https://technet.microsoft.com/windowsserver/dd448615.aspx)。
 * **对目标节点的管理访问权限**。
-* **每个目标节点的个人存储区中均保存了可加密的证书**。 在 Windows PowerShell 中，该存储区的路径为 Cert:\LocalMachine\My。 本主题中的示例使用 
-“工作站身份验证”模板，你可以在[默认证书模板](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx)中找到它（以及其他证书模板）。
-* 如果你将在计算机而不是目标节点上运行此配置，请**导出证书的公钥**，然后将其导入到你将要从中运行 
-配置的计算机。 请确保仅导出**公**钥；保护私钥安全。
+* **每个目标节点的个人存储区中均保存了可加密的证书**。 在 Windows PowerShell 中，该存储区的路径为 Cert:\LocalMachine\My。 本主题中的示例使用“工作站身份验证”模板，你可以在[默认证书模板](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx)中找到它（以及其他证书模板）。
+* 如果你将在计算机而不是目标节点上运行此配置，请**导出证书的公钥**，然后将其导入到你将要从中运行配置的计算机。 请确保仅导出**公**钥；保护私钥安全。
 
 ## 整体过程
 
@@ -44,9 +48,7 @@ DSC 通过将包含配置信息的 MOF 文件发送到各个节点，告知目�
  3. 证书的私钥在*目标节点_上可用。
  4. 证书的**提供程序**必须是“Microsoft RSA SChannel Cryptographic Provider”。
  
->**推荐最佳做法：**虽然可以使用包含“数字签名”密钥用法或某个身份验证 EKU 的证书，但是这使加密密钥 
->更容易误用，而且容易受到攻击。 因此，最好是使用为保护 DSC 凭据而专门创建的省略了这些密钥用法和 
->EKU 的证书。
+>**推荐最佳做法：**虽然你可以使用包含“数字签名”密钥用法或某个身份验证 EKU 的证书，但这会导致加密密钥更容易被误用，而且更容易受到攻击。 因此，最好是使用为保护 DSC 凭据而专门创建的省略了这些密钥用法和 EKU 的证书。
   
 _目标节点_上满足这些条件的任何现有证书都可以用于保护 DSC 凭据。
 
@@ -62,8 +64,7 @@ _目标节点_上满足这些条件的任何现有证书都可以用于保护 DS
 
 ### 在目标节点上创建证书
 
-私钥必须是保密的，因为需使用它解密**目标节点**上的 MOF。
-为此，最简单的方法是在**目标节点**上创建私钥，并将**公钥证书**复制到用于将 DSC 配置创建为 MOF 文件的计算机。
+私钥必须是保密的，因为它可用于解密**目标节点**上的 MOF。为此，最简单的方法是在**目标节点**上创建私钥证书，并将**公钥证书**复制到用于将 DSC 配置编写到 MOF 文件中的计算机内。
 以下示例：
  1. 在**目标节点**上创建证书
  2. 在**目标节点**上导出公钥证书。
@@ -192,12 +193,6 @@ $mypwd = ConvertTo-SecureString -String "YOUR_PFX_PASSWD" -Force -AsPlainText
 Import-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -CertStoreLocation Cert:\LocalMachine\Root -Password $mypwd > $null
 ```
 
-注意：如果目标节点是 _Nano 服务器_，应使用 CertOC.exe 应用程序导入私钥证书，因为 ```Import-PfxCertificate``` cmdlet 不可用。
-```powershell
-# Import to the root store so that it is trusted
-certoc.exe -ImportPFX -p YOUR_PFX_PASSWD Root c:\temp\DscPrivateKey.pfx
-```
-
 ## 配置数据
 
 配置数据块定义在哪个目标节点上进行操作、是否加密凭据、加密方式以及其他信息。 有关配置数据块的详细信息，请参阅[分隔配置和环境数据](configData.md)。
@@ -308,7 +303,7 @@ configuration CredentialEncryptionExample
 
 此时，你可以运行配置，此操作将输出两个文件：
 
- * *.meta.mof 文件，它将本地配置管理器配置为使用存储在本地计算机存储区上、并由其指纹标识的证书来解密凭据。 [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/en-us/library/dn521621.aspx) 应用 *.meta.mof 文件。
+ * *.meta.mof 文件，它将本地配置管理器配置为使用存储在本地计算机存储区上且由其指纹进行标识的证书来解密凭据。[`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/en-us/library/dn521621.aspx) 应用 *.meta.mof 文件。
  * 实际应用配置的 MOF 文件。 Start-DscConfiguration 应用配置。
 
 这些命令将完成这些步骤：
@@ -448,6 +443,7 @@ Start-CredentialEncryptionExample
 ```
 
 
-<!--HONumber=Apr16_HO3-->
+
+<!--HONumber=May16_HO3-->
 
 

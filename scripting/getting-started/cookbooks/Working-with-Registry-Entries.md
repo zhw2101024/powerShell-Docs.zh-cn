@@ -1,12 +1,15 @@
 ---
-title: 使用注册表条目
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc
+title:  使用注册表条目
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  fd254570-27ac-4cc9-81d4-011afd29b7dc
 ---
+
 # 使用注册表条目
 因为注册表条目是项的属性而无法直接浏览，因此我们在使用它们时需要采取略有不同的方式。
 
@@ -143,8 +146,7 @@ PowerShellPath : C:\Program Files\Windows PowerShell\v1.0
 |字符串|任意字符串值|
 |QWord|8 字节的二进制数据|
 
-> [!NOTE]
-> 你可以通过为 **Path** 参数指定一组值来将注册表条目添加到多个位置：
+> [!NOTE] 你可以为 **Path** 参数指定一组值，从而将注册表项添加到多个位置：
 
 ```
 New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion, HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -PropertyType String -Value $PSHome
@@ -175,6 +177,6 @@ Remove-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name 
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

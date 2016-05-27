@@ -1,9 +1,12 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: '获取配置状态历史记录。'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_getconfigurationstatus'
-MSHAttr: 'PreferredLib:/library'
-title: 'MSFT_DSCLocalConfigurationManager 类的 GetConfigurationStatus 方法'
+title:  MSFT_DSCLocalConfigurationManager 类的 GetConfigurationStatus 方法
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
 ---
 
 # MSFT_DSCLocalConfigurationManager 类的 GetConfigurationStatus 方法
@@ -24,8 +27,7 @@ uint32 GetConfigurationStatus(
 ----------
 
 *All* \[in\]  
-如果此方法返回在计算机上运行的所有配置的相关信息，则为 **true**（这些信息包括
-配置应用程序和一致性检查）。
+如果此方法应返回计算机上运行的所有配置的相关信息（包括配置应用程序和一致性检查），则为 **true**。
 
 *configurationStatus* \[out\]  
 返回时，包含定义设置的 **MSFT_DSCMetaConfiguration** 类的嵌入实例。
@@ -60,6 +62,6 @@ uint32 GetConfigurationStatus(
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

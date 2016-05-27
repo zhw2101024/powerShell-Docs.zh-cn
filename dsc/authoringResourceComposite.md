@@ -1,3 +1,8 @@
+---
+标题：复合资源：将 DSC 配置用作资源 ms.date：2016 年 5 月 16 日 关键字：powershell、DSC 描述：  
+ms.topic：文章作者：eslesar 管理员：dongill ms.prod：powershell
+---
+
 # 复合资源：将 DSC 配置用作资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
@@ -181,4 +186,9 @@ configuration RenameVM
 ### 概念
 * [使用 MOF 编写自定义 DSC 资源](authoringResourceMOF.md)
 * [Windows PowerShell Desired State Configuration 入门](overview.md)
-<!--HONumber=Feb16_HO4-->
+
+
+
+<!--HONumber=May16_HO3-->
+
+

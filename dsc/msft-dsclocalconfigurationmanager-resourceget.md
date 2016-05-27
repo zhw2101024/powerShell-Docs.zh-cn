@@ -1,9 +1,12 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: '在提供程序上直接执行 Get。'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_resourceget'
-MSHAttr: 'PreferredLib:/library'
-title: 'MSFT_DSCLocalConfigurationManager 类的 ResourceGet 方法'
+title: MSFT_DSCLocalConfigurationManager 类的 ResourceGet 方法 
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
 ---
 
 # MSFT_DSCLocalConfigurationManager 类的 ResourceGet 方法
@@ -32,8 +35,7 @@ uint32 ResourceGet(
 包含要调用的资源的模块名称。
 
 *resourceProperty* \[in\]  
-分别在哈希表中将资源属性名称及其值指定为键和值。 使用
-[Get-dscresource](https://technet.microsoft.com/en-us/library/dn521625.aspx) cmdlet 以发现资源属性及其类型。
+分别在哈希表中将资源属性名称及其值指定为键和值。 使用 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) cmdlet 可以发现资源属性及其类型。
 
 *configurations* \[out\]  
 在返回时包含配置的嵌入实例。
@@ -68,6 +70,6 @@ uint32 ResourceGet(
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

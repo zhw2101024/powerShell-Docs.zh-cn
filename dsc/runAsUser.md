@@ -1,3 +1,14 @@
+---
+title:   使用用户凭据运行 DSC 
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 使用用户凭据运行 DSC 
 
 > 适用于：Windows PowerShell 5.0
@@ -7,14 +18,12 @@
 有时需要以用户身份运行，例如在特定用户上下文中安装 MSI 程序包、设置用户的注册表项、访问用户的特定本地目录或访问网络共享。
 
 每个 DSC 资源都具有 **PsDscRunAsCredential** 属性，它可以设置为任何用户凭据（[PSCredential](https://msdn.microsoft.com/en-us/library/ms572524(v=VS.85).aspx) 对象）。
-凭据可以在配置中硬编码为该属性的值，你也可以将值设置为 [Get-Credential](https://technet.microsoft.com/en-us/library/hh849815.aspx)，
-这会在编译配置时提示用户输入凭据（有关编译配置的信息，请参阅[配置](configurations.md)。）.
+凭据可以硬编码为配置中属性的值，你也可以将值设置为 [Get-Credential](https://technet.microsoft.com/en-us/library/hh849815.aspx)，这会在编译配置时提示用户输入凭据（有关编译配置的信息，请参阅[配置](configurations.md)）。
 
 >**注意：****PsDscRunAsCredential** 属性在 PowerShell 4.0 中不可用。
 
 在下面的示例中，**Get-Credential** 用于提示用户输入凭据。 
-[Registry](registryResource.md) 资源用于更改为 Windows 命令提示符窗口指定背景色
-的注册表项。
+[Registry](registryResource.md) 资源用于更改可指定 Windows 命令提示符窗口背景色的注册表项。
 
 ```powershell
 Configuration ChangeCmdBackGroundColor    
@@ -51,10 +60,10 @@ $configData = @{
 ChangeCmdBackGroundColor -ConfigurationData $configData
 ```
 >**注意：**此示例假定你在 `C:\publicKeys\targetNode.cer` 上具有有效证书，并且该证书的指纹是显示的值。
->有关在 DSC 配置 MOF 文件中加密凭据的信息，请参阅[保护 MOF 文件](secureMOF.md).
+>若要了解如何在 DSC 配置 MOF 文件中加密凭据，请参阅[保护 MOF 文件](secureMOF.md)。
 
 
 
-<!--HONumber=Apr16_HO5-->
+<!--HONumber=May16_HO3-->
 
 

@@ -1,12 +1,15 @@
 ---
-title: 使用文件、文件夹和注册表项
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
+title:  使用文件、文件夹和注册表项
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
 ---
+
 # 使用文件、文件夹和注册表项
 Windows PowerShell 使用名词 **Item** 来引用在 Windows PowerShell 驱动器上找到的项。 处理 Windows PowerShell FileSystem 提供程序时，**Item** 可能是文件、文件夹或 Windows PowerShell 驱动器。 列出并使用这些项是大部分管理设置中的关键基本任务，因此我们想要详细讨论这些任务。
 
@@ -118,19 +121,7 @@ Get-ChildItem -Path C:\Windows\[xz]*
 
 类似于 **w&#42;32&#42;.dll** 的表达式将找到满足条件的所有 DLL，但它也可能返回名称中包含“95”或“16”的 Windows 95 和 16 位 Windows 兼容性 DLL。 你可以通过将 **Exclude** 参数与模式 **&#42;[9516]&#42;** 一起使用来忽略名称中含有任意这些数字的文件：
 
-<pre>PS> Get-ChildItem -Path C:\Windows\System32\w*32*.dll -Exclude *[9516]*
-目录：Microsoft.PowerShell.Core\FileSystem::C:\Windows\System32
-模式                上次写入时间     长度名称
-----                -------------     ------ ----
--a---        2004-08-04   上午 8:00     174592 w32time.dll
--a---        2004-08-04   上午 8:00     22016 w32topl.dll
--a---        2004-08-04   上午 8:00     101888 win32spl.dll
--a---        2004-08-04   上午 8:00     172032 wldap32.dll
--a---        2004-08-04   上午 8:00     264192 wow32.dll
--a---        2004-08-04   上午 8:00     82944 ws2_32.dll
--a---        2004-08-04   上午 8:00     42496 wsnmp32.dll
--a---        2004-08-04   上午 8:00     22528 wsock32.dll
--a---        2004-08-04   上午 8:00     18432 wtsapi32.dll</pre>
+<pre>PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]* Directory: Microsoft.PowerShell.Core\FileSystem::C:\WINDOWS\System32 Mode                LastWriteTime     Length Name ----                -------------     ------ ---- -a---        2004-08-04   8:00 AM     174592 w32time.dll -a---        2004-08-04   8:00 AM      22016 w32topl.dll -a---        2004-08-04   8:00 AM     101888 win32spl.dll -a---        2004-08-04   8:00 AM     172032 wldap32.dll -a---        2004-08-04   8:00 AM     264192 wow32.dll -a---        2004-08-04   8:00 AM      82944 ws2_32.dll -a---        2004-08-04   8:00 AM      42496 wsnmp32.dll -a---        2004-08-04   8:00 AM      22528 wsock32.dll -a---        2004-08-04   8:00 AM      18432 wtsapi32.dll</pre>
 
 #### 混合使用 Get-ChildItem 参数
 你可以在同一命令中使用 **Get-ChildItem** cmdlet 的多个参数。 在混合使用参数之前，请确保你了解通配符匹配。 例如，以下命令不会返回任何结果：
@@ -163,6 +154,6 @@ Mode                LastWriteTime     Length Name
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

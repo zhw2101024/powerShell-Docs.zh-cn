@@ -1,3 +1,14 @@
+---
+title:   适用于 Linux 的 Desired State Configuration (DSC) 入门
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 适用于 Linux 的 Desired State Configuration (DSC) 入门
 
 本主题说明如何开始使用适用于 Linux 的 PowerShell Desired State Configuration (DSC)。 有关 DSC 的常规信息，请参阅 [Windows PowerShell Desired State Configuration 入门](overview.md)。
@@ -114,7 +125,7 @@ $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Aut
 * 对于“推送”模式，用户凭据必须是 Linux 计算机上的根用户。
 * 适用于 Linux 的 DSC 仅支持 SSL/TLS 连接，使用 New-CimSession 时必须将 –UseSSL 参数设置为 $true。
 * 在 `/opt/omi/etc/omiserver.conf` 文件中通过 pemfile 和 keyfile 属性指定（DSC 的）OMI 使用的 SSL 证书。
-如果 [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) cmdlet 运行于的 Windows 计算机不信任此证书，你可以通过以下 CIMSession 选项选择忽略证书验证：`-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`。
+如果正在运行 [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) cmdlet 的 Windows 计算机不信任此证书，你可以通过以下 CIMSession 选项选择忽略证书验证： `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
 
 运行以下命令以将 DSC 配置推送到 Linux 节点。
 
@@ -173,6 +184,7 @@ $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Aut
 |dsc.log|/opt/omi/var/log/|与本地配置管理器 (LCM) 操作和 DSC 资源操作相关的消息。|
 
 
-<!--HONumber=Apr16_HO2-->
+
+<!--HONumber=May16_HO3-->
 
 

@@ -1,3 +1,14 @@
+---
+title:   DSC 配置
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC 配置
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
@@ -37,9 +48,9 @@ Configuration MyDscConfiguration {
 Configuration MyDscConfiguration {
 
     param(
-        [string[]]$computerName="localhost"
+        [string[]]$ComputerName="localhost"
     )
-    Node $computerName {
+    Node $ComputerName {
         WindowsFeature MyFeatureInstance {
             Ensure = "Present"
             Name =  "RSAT"
@@ -52,11 +63,11 @@ Configuration MyDscConfiguration {
 }
 ```
 
-在此示例中，当你 [编译配置](# Compiling the configuration) 时，可通过将其传递为 $computerName 参数以指定节点名。 该名称默认为“localhost”。
+在此示例中，你在[编译配置](# Compiling the configuration)时将节点名称作为 $ComputerName 参数进行传递，从而指定节点名称。 该名称默认为“localhost”。
 
 ## 正在编译配置
 必须将其编译为 MOF 文档才能执行配置。 你可通过调用配置（像调用 PowerShell 函数一样）以执行此操作。
->__注意：__若要调用配置，该函数必须在全局范围内（与任何其他 PowerShell 函数一样）。 可通过以下方式来实现此操作：对脚本执行“dot-source”操作，或者使用 F5 或单击 ISE 中的“运行脚本”____按钮以运行配置脚本。 若要对脚本执行“dot-source”操作，请运行命令 `. .\myConfig.ps1`，其中 `myConfig.ps1` 是包含配置的脚本文件的名称。
+>__注意：__若要调用配置，该函数必须在全局范围内（与任何其他 PowerShell 函数一样）。 可通过以下方式来实现此操作：对脚本执行“dot-source”操作，或者使用 F5 或单击 ISE 中的“运行脚本”按钮以运行配置脚本。 若要对脚本执行“dot-source”操作，请运行命令 `. .\myConfig.ps1`，其中 `myConfig.ps1` 是包含配置的脚本文件的名称。
 
 调用配置时，将创建：
 
@@ -80,7 +91,7 @@ Mode                LastWriteTime         Length Name
 
 ```powershell
 PS C:\users\default\Documents\DSC Configurations> . .\MyDscConfiguration.ps1
-PS C:\users\default\Documents\DSC Configurations> MyDscConfiguration -computerName 'MyTestNode'
+PS C:\users\default\Documents\DSC Configurations> MyDscConfiguration -ComputerName 'MyTestNode'
     Directory: C:\users\default\Documents\DSC Configurations\MyDscConfiguration
 Mode                LastWriteTime         Length Name                                                                                              
 ----                -------------         ------ ----                                                                                         
@@ -121,6 +132,7 @@ Configuration DependsOnExample {
 * [配置本地配置管理器](metaConfig.md)
 
 
-<!--HONumber=Apr16_HO2-->
+
+<!--HONumber=May16_HO3-->
 
 

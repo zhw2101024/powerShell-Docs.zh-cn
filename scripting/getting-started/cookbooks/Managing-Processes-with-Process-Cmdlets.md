@@ -1,12 +1,15 @@
 ---
-title: 使用 Process Cmdlet 管理进程
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 5038f612-d149-4698-8bbb-999986959e31
+title:  使用 Process Cmdlet 管理进程
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  5038f612-d149-4698-8bbb-999986959e31
 ---
+
 # 使用 Process Cmdlet 管理进程
 可以在 Windows PowerShell 中使用 Process cmdlet 来管理 Windows PowerShell 中的本地和远程进程。
 
@@ -174,6 +177,6 @@ Windows PowerShell 还附带 cmdlet，以启动（或重启）、调试进程，
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO2-->
 
 

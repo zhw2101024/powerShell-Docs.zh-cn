@@ -1,12 +1,15 @@
 ---
-title: 使用静态类和方法
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
+title:  使用静态类和方法
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  418ad766-afa6-4b8c-9a44-471889af7fd9
 ---
+
 # 使用静态类和方法
 不是所有 .NET Framework 类都可使用 **New-Object** 来创建。 例如，如果你尝试使用 **New-Object** 创建 **System.Environment** 或 **System.Math** 对象，你将收到以下错误消息：
 
@@ -113,8 +116,7 @@ False
 ### 使用 System.Math 做数学
 System.Math 静态类可用于执行某些数学运算。 **System.Math** 的大多数重要成员是方法，我们可以用过使用 **Get-Member** 来显示它们。
 
-> [!NOTE]
-> System.Math 的一些方法具有相同的名称，但可以按其参数的类型对其进行区分。
+> [!NOTE] 虽然 System.Math 包含多个同名的方法，但这些方法可以通过其参数的类型进行区分。
 
 键入以下内容来列出 **System.Math** 类的方法。
 
@@ -182,6 +184,6 @@ PS> [System.Math]::Truncate(-9.3)
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

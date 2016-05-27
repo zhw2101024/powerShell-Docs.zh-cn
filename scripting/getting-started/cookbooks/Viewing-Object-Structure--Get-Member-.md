@@ -1,12 +1,15 @@
 ---
-title: 查看对象结构 (Get-Member)
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: a1819ed2-2ef3-453a-b2b0-f3589c550481
+title:  查看对象结构 (Get Member) 
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  a1819ed2-2ef3-453a-b2b0-f3589c550481
 ---
+
 # 查看对象结构 (Get-Member)
 由于对象在 Windows PowerShell 中扮演了如此重要的角色，因此存在几个用于处理任意对象类型的本机命令。 最重要的一个是 **Get-Member** 命令。
 
@@ -57,8 +60,7 @@ Path                       ScriptProperty System.Object Path {get=$this.Main...
 ...
 ```
 
-> [!NOTE]
-> MemberType 的允许值有 AliasProperty、CodeProperty、Property、NoteProperty、ScriptProperty、Properties、PropertySet、Method、CodeMethod、ScriptMethod、Methods、ParameterizedProperty、MemberSet 以及 All。
+> [!NOTE] MemberType 的可取值为 AliasProperty、CodeProperty、Property、NoteProperty、ScriptProperty、Properties、PropertySet、Method、CodeMethod、ScriptMethod、Methods、ParameterizedProperty、MemberSet 和 All。
 
 一个进程有 60 多个属性。 对于任何已知的对象，Windows PowerShell 通常仅显示少许属性，这是因为显示所有属性会导致产生无法管理的信息量。
 
@@ -69,6 +71,6 @@ Path                       ScriptProperty System.Object Path {get=$this.Main...
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

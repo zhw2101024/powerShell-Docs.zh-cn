@@ -1,10 +1,14 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: '启用调试 DSC 配置。'
-MS-HAID: 'cimwin32a.msft\_dsclocalconfigurationmanager\_enabledebugconfiguration'
-MSHAttr: 'PreferredLib:/library'
-title: 'MSFT_DSCLocalConfigurationManager 类的 EnableDebugConfiguration 方法'
+title:  MSFT_DSCLocalConfigurationManager 类的 EnableDebugConfiguration 方法
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
 ---
+
 
 # MSFT_DSCLocalConfigurationManager 类的 EnableDebugConfiguration 方法
 
@@ -53,6 +57,6 @@ uint32 EnableDebugConfiguration(
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

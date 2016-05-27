@@ -1,12 +1,15 @@
 ---
-title: 为多个对象重复执行任务 (ForEach-Object)
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 6697a12d-2470-4ed6-b5bb-c35e5d525eb6
+title:  为多个对象重复执行任务 (ForEach Object) 
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  6697a12d-2470-4ed6-b5bb-c35e5d525eb6
 ---
+
 # 为多个对象重复执行任务 (ForEach-Object)
 **ForEach-Object** cmdlet 为当前管道对象使用脚本块和 $_ 描述符，以便你可以对管道中的每个对象运行命令。 这可用于执行某些复杂的任务。
 
@@ -49,6 +52,6 @@ eeSpace = ($_.FreeSpace)/1024.0/1024.0}
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

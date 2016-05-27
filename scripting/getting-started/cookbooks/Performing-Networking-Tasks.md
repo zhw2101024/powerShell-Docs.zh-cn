@@ -1,12 +1,15 @@
 ---
-title: 执行网络任务
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: a43cc55f-70c1-45c8-9467-eaad0d57e3b5
+title:  执行网络任务
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  a43cc55f-70c1-45c8-9467-eaad0d57e3b5
 ---
+
 # 执行网络任务
 由于 TCP/IP 是最常用的网络协议，因此大多数低级别网络协议管理任务都涉及 TCP/IP。 在本部分中，我们使用 Windows PowerShell 和 WMI 来执行这些任务。
 
@@ -21,19 +24,11 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=TRUE -C
 
 <pre>IPAddress
 ---------
-{192.168.1.80}
-{192.168.148.1}
-{192.168.171.1}
-{0.0.0.0}</pre>
+{192.168.1.80} {192.168.148.1} {192.168.171.1} {0.0.0.0}</pre>
 
 若要了解大括号出现的原因，请使用 Get-Member cmdlet 检查 **IPAddress** 属性：
 
-<pre>PS> Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=TRUE -ComputerName。 | Get-Member -Name IPAddress
-TypeName：System.Management.ManagementObject#root\cimv2\Win32_NetworkAdapter
-配置
-名称      MemberType 定义
-----      ---------- ----------
-IPAddress 属性   System.String[] IPAddress {get;}</pre>
+<pre>PS> Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=TRUE -ComputerName。 | Get-Member -Name IPAddress TypeName: System.Management.ManagementObject#root\cimv2\Win32_NetworkAdapter Configuration Name      MemberType Definition ----      ---------- ---------- IPAddress Property   System.String[] IPAddress {get;}</pre>
 
 每个网络适配器的 IPAddress 属性实际上是一个数组。 定义中的大括号指示 **IPAddress** 不是 **System.String** 值，而是由 **System.String** 值组成的数组。
 
@@ -157,8 +152,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=true a
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=true and DHCPEnabled=true" -ComputerName . | Where-Object -FilterScript {$_.DHCPServer -contains "192.168.1.254"} | ForEach-Object -Process {$_.ReleaseDHCPLease()}
 ```
 
-> [!NOTE]
-> 在远程计算机上使用这些方法时，请注意，如果你通过已释放或已续订租约的适配器连接到远程系统，则可能会失去对该系统的访问权限。
+> [!NOTE] 在远程计算机上使用这些方法时，请注意，如果你通过租赁已释放或已续订的适配器连接到远程系统，则可能会失去对远程系统的访问权限。
 
 #### 释放和续订所有适配器上的 DHCP 租约
 可以通过使用 **Win32_NetworkAdapterConfiguration** 方法、**ReleaseDHCPLeaseAll** 和 **RenewDHCPLeaseAll** 对所有适配器指定全局 DHCP 地址释放或续订。 但是，该命令必须适用于 WMI 类，而不是特定的适配器，因为全局释放和续订租约是对该类执行的，而不是对特定适配器执行的。
@@ -225,6 +219,6 @@ net use B: \\FPS01\users
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

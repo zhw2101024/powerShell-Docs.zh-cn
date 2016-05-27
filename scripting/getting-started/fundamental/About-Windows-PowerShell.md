@@ -1,12 +1,15 @@
 ---
-title: 关于 Windows PowerShell
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 979654ae-7994-47f8-be43-d79e7a140143
+title:  关于 Windows PowerShell
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  979654ae-7994-47f8-be43-d79e7a140143
 ---
+
 # 关于 Windows PowerShell
 Windows PowerShell 旨在通过消除长期存在的问题和添加新功能改进命令行和脚本环境。
 
@@ -14,19 +17,18 @@ Windows PowerShell 旨在通过消除长期存在的问题和添加新功能改�
 Windows PowerShell 使它的功能更易发现。 例如，若要查找用于查看和更改 Windows 服务的 cmdlet 列表，请键入：
 
 ```
-get-command *-service
+Get-Command *-Service
 ```
 
 找到完成任务的 cmdlet 后，可通过使用 Get-Help cmdlet 了解有关该 cmdlet 的详细信息。 例如，若要显示有关 Get-Service cmdlet 的帮助，请键入：
 
 ```
-get-help get-service
+Get-Help Get-Service
 ```
-
-若要全面了解该 cmdlet 的输出，请将其输出通过管道传递给 Get-Member cmdlet。 例如，下面的命令显示了有关 Get-Service cmdlet 所输出对象的成员的信息。
+大多数 cmdlet 会发出对象，这些对象可获得操作，然后再呈现为显示文本。 若要全面了解该 cmdlet 的输出，请将其输出通过管道传递给 Get-Member cmdlet。 例如，下面的命令显示了有关 Get-Service cmdlet 所输出对象的成员的信息。
 
 ```
-get-service | get-member
+Get-Service | Get-Member
 ```
 
 ## 一致性
@@ -51,6 +53,6 @@ Windows PowerShell 让你能够从以交互方式键入命令转换到创建和�
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

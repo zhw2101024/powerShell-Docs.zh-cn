@@ -1,10 +1,14 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: '在提供程序上直接执行 Set。'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_resourceset'
-MSHAttr: 'PreferredLib:/library'
-title: 'MSFT_DSCLocalConfigurationManager 类的 ResourceSet 方法'
+title:  MSFT_DSCLocalConfigurationManager 类的 ResourceSet 方法
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
 ---
+
 
 # MSFT_DSCLocalConfigurationManager 类的 ResourceSet 方法
 
@@ -32,8 +36,7 @@ uint32 ResourceSet(
 包含要调用的资源的模块名称。
 
 *resourceProperty* \[in\]  
-分别在哈希表中将资源属性名称及其值指定为键和值。 使用
-[Get-dscresource](https://technet.microsoft.com/en-us/library/dn521625.aspx) cmdlet 以发现资源属性及其类型。
+分别在哈希表中将资源属性名称及其值指定为键和值。 使用 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) cmdlet 可以发现资源属性及其类型。
 
 *RebootRequired* \[out\]  
 返回时，如果目标节点需要重启，会将此属性设置为 **true**。
@@ -67,6 +70,6 @@ uint32 ResourceSet(
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

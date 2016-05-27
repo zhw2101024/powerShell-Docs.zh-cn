@@ -1,10 +1,14 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: '将配置文档发送到托管节点，并开始使用配置代理应用配置。 使用 GetConfigurationResultOutput 检索结果输出。'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_sendconfigurationapplyasync'
-MSHAttr: 'PreferredLib:/library'
-title: 'MSFT_DSCLocalConfigurationManager 类的 SendConfigurationApplyAsync 方法'
+title:  MSFT_DSCLocalConfigurationManager 类的 SendConfigurationApplyAsync 方法
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
 ---
+
 
 # MSFT_DSCLocalConfigurationManager 类的 SendConfigurationApplyAsync 方法
 
@@ -63,6 +67,6 @@ uint32 SendConfigurationApplyAsync(
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

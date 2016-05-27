@@ -1,12 +1,15 @@
 ---
-title: 附录 1 - 兼容性别名
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 96ad921e-1a57-463e-8e60-424faf8b6ef8
+title:  附录 1：兼容性别名
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  96ad921e-1a57-463e-8e60-424faf8b6ef8
 ---
+
 # 附录 1 - 兼容性别名
 Windows PowerShell 具有几个转换别名，它们让 UNIX 和 Cmd 用户能够在 Windows PowerShell 中使用熟悉的命令名称的。 下表中显示的是最常见的别名，别名后带有 Windows PowerShell 命令和标准 Windows PowerShell 别名（如果存在）。
 
@@ -34,6 +37,6 @@ Alias           cls                             Clear-Host
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

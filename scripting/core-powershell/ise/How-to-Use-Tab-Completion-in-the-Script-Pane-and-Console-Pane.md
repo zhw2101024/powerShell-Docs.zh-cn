@@ -1,12 +1,15 @@
 ---
-title: 如何在脚本窗格和控制台窗格中使用 Tab 自动补全
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 3b752c3c-0bd0-4eca-a2d3-2d5a37fd9d84
+title:  如何在脚本窗格和控制台窗格中使用 Tab 自动补全
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  3b752c3c-0bd0-4eca-a2d3-2d5a37fd9d84
 ---
+
 # 如何在脚本窗格和控制台窗格中使用 Tab 自动补全
 在脚本窗格或在命令窗格中进行键入时，Tab 自动补全将提供自动帮助。 使用以下步骤来利用此功能：
 
@@ -24,6 +27,7 @@ ms.assetid: 3b752c3c-0bd0-4eca-a2d3-2d5a37fd9d84
 ## 另请参阅
 [使用 Windows PowerShell ISE](using-the-windows-powershell-ise.md)
 [如何创建 PowerShell 选项卡](How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)
+
 
 
 <!--HONumber=May16_HO2-->

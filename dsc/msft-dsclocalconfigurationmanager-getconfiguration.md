@@ -1,9 +1,12 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: '将配置文档发送到托管节点，并使用配置代理，通过 Get 方法应用配置。'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_getconfiguration'
-MSHAttr: 'PreferredLib:/library'
-title: 'MSFT_DSCLocalConfigurationManager 类的 GetConfiguration 方法'
+title:  MSFT_DSCLocalConfigurationManager 类的 GetConfiguration 方法
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
 ---
 
 # MSFT_DSCLocalConfigurationManager 类的 GetConfiguration 方法
@@ -57,6 +60,6 @@ uint32 GetConfiguration(
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

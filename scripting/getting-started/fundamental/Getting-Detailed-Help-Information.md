@@ -1,12 +1,15 @@
 ---
-title: 获取详细的帮助信息
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
+title:  获取详细的帮助信息
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  6fb4daf7-8607-4a3e-b692-f77631adc1b9
 ---
+
 # 获取详细的帮助信息
 Windows PowerShell 包含了详细的帮助主题，其中解释了 Windows PowerShell 概念和 Windows PowerShell 语言。 还有针对每个 cmdlet 和提供程序的帮助主题，以及针对许多函数和脚本的帮助主题。
 
@@ -173,6 +176,6 @@ Online version: http://go.microsoft.com/fwlink/?LinkID=135194
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO2-->
 
 

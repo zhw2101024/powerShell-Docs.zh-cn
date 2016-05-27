@@ -1,3 +1,14 @@
+---
+title:   DSC 资源
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC 资源
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
@@ -9,5 +20,11 @@ Desired State Configuration (DSC) 资源为 DSC 配置提供构建基块。 资�
 以下主题介绍了 DSC 资源：
 
 - [内置 DSC 资源](builtInResource.md)
-- [构建自定义 DSC 资源](authoringResource.md)
-- [适用于 Linux 的内置 DSC 资源](lnxBuiltInResources.md)<!--HONumber=Feb16_HO4-->
+- [生成自定义 DSC 资源](authoringResource.md)
+- [适用于 Linux 的内置 DSC 资源](lnxBuiltInResources.md)
+
+
+
+<!--HONumber=May16_HO3-->
+
+

@@ -1,3 +1,14 @@
+---
+title:   配置数据中的凭据选项
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 配置数据中的凭据选项
 >适用于：Windows PowerShell 5.0
 
@@ -15,7 +26,7 @@
 但某些资源需要凭据，例如 `Package` 资源需要使用特定用户帐户安装软件。
 
 早期的资源使用硬编码 `Credential` 属性名称来处理此问题。
-WMF 5.0 为所有资源都添加了自动 `PsDscRunAsCredential` 属性。
+WMF 5.0 为所有资源都添加了自动 `PsDscRunAsCredential` 属性。 若要了解如何使用 `PsDscRunAsCredential`，请参阅[使用用户凭据运行 DSC](runAsUser.md)。
 较新的资源和自定义资源可以使用此自动属性，而不必为凭据创建其自身属性。
 
 *请注意，由于某种原因，某些资源的设计是使用多个凭据，这些资源有其自己的凭据属性。*
@@ -150,7 +161,7 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
-*请注意 `NodeName` 不等同于星号，特定节点名称为必需项。*
+*请注意，`NodeName` 不等同于星号，必须指定具体的节点名称。*
 
 **因为具有重大安全风险，Microsoft 建议避免使用纯文本密码。**
 
@@ -161,7 +172,7 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 
 **对 DSC 资源使用凭据时，应尽可能选择本地帐户而非域帐户。**
 
-如果凭据的 `Username` 属性中存在“\”或者“@”，则 DSC 会把该凭据当做域帐户。
+如果凭据的 `Username` 属性中有 \' 或 @，则 DSC 会将该凭据视为域帐户。
 用户名中域部分的“localhost”、“127.0.0.1”和“::1”除外。
 
 ## PSDscAllowDomainUser
@@ -183,4 +194,9 @@ $cd = @{
 ```
 
 现在配置脚本生成的 MOF 文件将不再出现错误或警告消息。
-<!--HONumber=Feb16_HO4-->
+
+
+
+<!--HONumber=May16_HO3-->
+
+

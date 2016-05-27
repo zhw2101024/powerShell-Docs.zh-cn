@@ -1,25 +1,29 @@
+---
+title:   使用 DSC 报表服务器
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 使用 DSC 报表服务器
 
 > 适用于：Windows PowerShell 5.0
 
 >**注意：**本主题中描述的报表服务器在 PowerShell 4.0 中不可用。
 
-可将节点的本地配置管理器 (LCM) 配置为向请求服务器发送有关其配置状态的报表，然后即可查询该服务器以检索此数据。 每当节点检查和应用
-配置时，它都会将报表发送到报表服务器。 这些报表存储在服务器上的数据库中，可通过调用报告 Web 服务进行检索。 每个报告中包含
-应用的配置、应用配置是否成功、使用的资源、引发的任何错误以及开始和结束时间等信息。
+可将节点的本地配置管理器 (LCM) 配置为向请求服务器发送有关其配置状态的报表，然后即可查询该服务器以检索此数据。 每当节点检查和应用配置时，它都会将报表发送到报表服务器。 这些报表存储在服务器上的数据库中，可通过调用报告 Web 服务进行检索。 每个报表中包含所应用的配置、配置是否成功、所使用的资源、引发的所有错误以及开始时间和结束时间等信息。
 
 ## 将节点配置为发送报表
 
-使用节点上 LCM 配置中的 **ReportServerWeb** 块告诉节点将报表发送到服务器（有关配置 LCM 的详细信息，
-请参阅[配置本地配置管理器](metaConfig.md)）。 必须将节点向其发送报表的服务器设置为 Web 请求服务器（不能
-将报表发送到 SMB 共享）。 有关设置请求服务器的信息，请参阅[设置 DSC 请求服务器](pullServer.md)。 报表服务器可以是
-节点从中请求配置和获取资源的同一服务，也可以是其他服务。
+使用节点上 LCM 配置中的 **ReportServerWeb** 块可指示节点将报表发送到服务器（若要了解如何配置 LCM，请参阅[配置本地配置管理器](metaConfig.md)）。 必须将节点向其发送报表的服务器设置为 Web 请求服务器（不能将报表发送到 SMB 共享）。 有关设置请求服务器的信息，请参阅[设置 DSC 请求服务器](pullServer.md)。 报表服务器可以是节点从中请求配置和获取资源的同一服务，也可以是不同服务。
  
-在 **ReportServerWeb** 块中，指定请求服务的 URL 和
-服务器已知的注册密钥。
+在 **ReportServerWeb** 块中，指定请求服务的 URL 和服务器已知的注册密钥。
  
-以下配置将节点配置为从一项服务请求配置，并将报表发送到
-另一台服务器上的服务。 
+以下配置将节点配置为从一项服务请求配置，并将报表发送到另一台服务器上的服务。 
  
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -88,11 +92,7 @@ PullClientConfig
 
 ## 获取报表数据
 
-发送到请求服务器的报表将被输入该服务器上的数据库。 通过调用 Web 服务即可使用这些报表。 若要检索特定节点的报表， 
-请通过以下形式向报表 Web 服务发送 HTTP 请求：
-`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentID = MyNodeAgentId)/Reports` 
-其中 `MyNodeAgentId` 是你想要获取其报表的节点的 AgentId。 可通过在节点上调用 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) 来
-获取该节点的 AgentID。
+发送到请求服务器的报表将被输入该服务器上的数据库。 通过调用 Web 服务即可使用这些报表。 若要检索特定节点的报表，请通过以下形式向报表 Web 服务发送 HTTP 请求：`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentID = MyNodeAgentId)/Reports`。其中 `MyNodeAgentId` 是要为其获取报表的节点的 AgentId。 可通过在节点上调用 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) 来获取相应节点的 AgentID。
 
 报表将返回为 JSON 对象数组。
 
@@ -160,8 +160,7 @@ $reportsByStartTime = $reports | Sort-Object -Property StartTime -Descending
 $reportMostRecent = $reportsByStartTime[0]
 ```
 
-请注意，**StatusData** 属性是具有多个属性的对象。 这是大部分报表数据所在的位置。 我们来看看
-最新报表的 **StatusData** 属性的各个字段：
+请注意，**StatusData** 属性是具有多个属性的对象。 这是大部分报表数据所在的位置。 让我们来看看最新报表的 **StatusData** 属性的各个字段：
 
 ```powershell
 $statusData = $reportMostRecent.StatusData | ConvertFrom-Json
@@ -199,8 +198,7 @@ Locale                     : en-US
 Mode                       : Pull
 ```
 
-此外，这表明最新配置调用了两种资源，其中之一处于所需状态，而另一个没有。 你可以获取
-**ResourcesNotInDesiredState** 属性的可读性更强的输出：
+此外，这表明最新配置调用了两种资源，其中之一处于所需状态，而另一个没有。 你可以获取 **ResourcesNotInDesiredState** 属性的可读性更强的输出：
 
 ```powershell
 $statusData.ResourcesInDesiredState
@@ -218,8 +216,7 @@ ConfigurationName : Sample_ArchiveFirewall
 InDesiredState    : True
 ```
 
-请注意，这些示例旨在让你了解如何使用报表数据。 有关在 PowerShell 中使用 JSON 的介绍，请参阅
-[Playing with JSON and PowerShell（使用 JSON 和 PowerShell）](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/)。
+请注意，这些示例旨在让你了解如何使用报表数据。 有关在 PowerShell 中使用 JSON 的介绍，请参阅 [Playing with JSON and PowerShell（使用 JSON 和 PowerShell）](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/)。
 
 ## 另请参阅
 - [配置本地配置管理器](metaConfig.md)
@@ -227,6 +224,7 @@ InDesiredState    : True
 - [使用配置名称设置请求客户端](pullClientConfigNames.md)
 
 
-<!--HONumber=Apr16_HO1-->
+
+<!--HONumber=May16_HO3-->
 
 
