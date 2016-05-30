@@ -2,7 +2,7 @@
 
 # [安装详细信息](requirements.md)
 
-# [已知的产品不兼容性](productincompat.md)
+# [产品兼容性状态](productincompat.md)
 
 # [反馈](feedback.md)
 
@@ -99,6 +99,6 @@
 ## [Desired State Configuration (DSC) 已知问题](limitation_dsc.md)
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO4-->
 
 

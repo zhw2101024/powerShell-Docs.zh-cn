@@ -1,3 +1,14 @@
+---
+title:  卸载 Windows PowerShell Web 访问
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 #  卸载 Windows PowerShell Web 访问
 
 更新时间：2013年 6 月 24日
@@ -10,7 +21,7 @@
 
 ------------------------------------------------------------------------
 
-从网关服务器中卸载 Windows PowerShell Web 访问之前，运行 <span class="code">Uninstall-PswaWebApplication</span> cmdlet 删除网站和 Windows PowerShell Web 访问 Web 应用程序，或使用 IIS 管理器程序，即是[通过使用 IIS 管理器删除 Windows PowerShell Web 访问网站和 Web 应用程序](#BKMK_delsite)。.
+从网关服务器中卸载 Windows PowerShell Web 访问之前，运行 <span class="code">Uninstall-PswaWebApplication</span> cmdlet 删除网站和 Windows PowerShell Web 访问 Web 应用程序，或使用 IIS Manager 程序，即[通过使用 IIS Manager 删除 Windows PowerShell Web 访问网站和 Web 应用程序](#BKMK_delsite)。
 
 卸载 Windows PowerShell Web 访问并不卸载 IIS 或任何其他自动安装的功能，因为 Windows PowerShell Web 访问需要它们处于运行状态。 卸载过程保留了依赖 Windows PowerShell Web 访问的功能；必要时你可以单独卸载那些功能。
 
@@ -35,9 +46,9 @@
 
     -   在 Windows 桌面上，右键单击任务栏上的 Windows PowerShell。
 
-    -   在 Windows“开始”屏幕上，单击 Windows PowerShell。.
+    -   在 Windows **开始**屏幕上，单击**Windows PowerShell**。
 
-2.  键入 **Uninstall-PswaWebApplication**，然后按 **Enter**。.
+2.  键入**Uninstall-PswaWebApplication**，然后按**Enter**。
 
 3.  如果你使用的是测试证书，则将 <span class="code">DeleteTestCertificate</span> 参数添加到 cmdlet（如以下示例所述）。
 
@@ -55,9 +66,9 @@
 
 1.  使用提升的用户权限执行以下操作之一打开 Windows PowerShell 会话。 如果会话已经打开，则继续执行下一步。
 
-    -   在 Windows 桌面上，右键单击任务栏上的 Windows PowerShell，然后单击“以管理员身份运行”.
+    -   在 Windows 桌面上，右键单击任务栏上的**Windows PowerShell**，然后单击**以管理员身份运行**。
 
-    -   在 Windows“开始”屏幕上，右键单击 Windows PowerShell，然后单击“以管理员身份运行”。.
+    -   在 Windows **开始**屏幕上，右键单击**Windows PowerShell**，然后单击**以管理员身份运行**。
 
 2.  键入以下内容，然后按 **Enter**，其中的 *computer\_name* 代表要从中删除 Windows PowerShell Web 访问的远程服务器。 如果在删除过程中有必要，<span class="code">–Restart</span> 参数将自动重新启动目标服务器。
 
@@ -90,15 +101,15 @@
 
 1.  通过执行以下操作之一，打开 IIS 管理器控制台。 如果该控制台已经打开，则继续执行下一步。
 
-    -   在 Windows 桌面上，启动服务管理器，方法是单击 Windows 任务栏中的“服务器管理器”。 在“服务器管理器”的“工具”菜单中，单击“Internet Information Services (IIS) 管理器”。.
+    -   在 Windows 桌面上，启动服务器管理器，方法是单击 Windows 任务栏中的“服务器管理器”。 在“服务器管理器”的**工具**菜单中，单击**Internet Information Services (IIS) Manager**。
 
     -   在 Windows“开始”屏幕上，键入“Internet 信息服务 (IIS) 管理器”名称的任何部分。 当快捷方式在“应用程序”结果中显示时，单击它。
 
 2.  在 IIS 管理器树窗格中，选择运行 Windows PowerShell Web 访问 Web 应用程序的网站。
 
-3.  在“操作”窗格中，在“管理网站”下，单击“停止”.
+3.  在**操作**窗格中，在**管理网站**下，单击**停止**。
 
-4.  在树窗格中，右键单击运行 Windows PowerShell Web 访问 Web 应用程序的网站中的 Web 应用程序，然后单击“删除”.
+4.  在树窗格中，右键单击运行 Windows PowerShell Web 访问 Web 应用程序的网站中的 Web 应用程序，然后单击**删除**。
 
 5.  在树窗格中，选择“应用程序池”，并选择 Windows PowerShell Web 访问应用程序池文件夹，单击“操作”窗格中的“停止”，然后单击内容窗格中的“删除”。
 
@@ -128,21 +139,21 @@
 
 #### 使用“删除角色和功能向导”卸载 Windows PowerShell Web 访问
 
-1.  如果服务管理器已经打开，则继续执行下一步。 如果服务管理器尚未打开，请执行以下任一操作打开它。
+1.  如果服务管理器已经打开，则继续执行下一步。 如果服务器管理器尚未打开，请执行以下任一操作打开它。
 
-    -   在 Windows 桌面上，启动服务管理器，方法是单击 Windows 任务栏中的“服务器管理器”。
+    -   在 Windows 桌面上，启动服务器管理器，方法是单击 Windows 任务栏中的“服务器管理器”。
 
-    -   在 Windows“开始”屏幕上，单击“服务器管理器”.
+    -   在 Windows **开始**屏幕上，单击**服务器管理器**。
 
-2.  在“管理”菜单上，单击“删除角色和功能”.
+2.  在**管理**菜单上，单击**删除角色和功能**。
 
-3.  在“选择目标服务器”页面上，选择你想删除其功能的服务器或离线 VHD。 若要选择离线的 VHD，请选择安装 VHD 的服务器，然后选择 VHD 文件。 选择目标服务器后，单击“下一步”.
+3.  在“选择目标服务器”页面上，选择你想删除其功能的服务器或离线 VHD。 若要选择离线的 VHD，请选择安装 VHD 的服务器，然后选择 VHD 文件。 选择目标服务器后，单击**下一步**。
 
 4.  再次单击“下一步”，跳到“删除功能”页面。
 
-5.  清除“Windows PowerShell Web 访问”复选框，然后单击“下一步”.
+5.  清除**Windows PowerShell Web 访问**复选框，然后单击**下一步**。
 
-6.  在“确认删除选择”页面上，单击“删除”.
+6.  在**确认删除选择**页面上，单击**删除**。
 
 <a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">另请参阅</span></a>
 <a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
@@ -150,28 +161,24 @@
 ------------------------------------------------------------------------
 
 [安装和使用 Windows PowerShell Web 访问](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
-[IIS 管理器 7.0 帮助](https://technet.microsoft.com/library/cc732664.aspx)
+[IIS Manager 7.0 帮助](https://technet.microsoft.com/library/cc732664.aspx)
 
 <span>显示：</span>继承内容受保护
 
 <span class="stdr-votetitle">此页面是否有所帮助？</span>
-是
-否
+是 否
 
 更多反馈？
 
-<span class="stdr-count"><span class="stdr-charcnt">剩余 1500</span> 个字符</span>
-提交
-跳过此部分
+<span class="stdr-count"><span class="stdr-charcnt">剩余 1500</span> 个字符</span> 提交 跳过此部分
 
-<span class="stdr-thankyou">感谢您参与！</span> <span class="stdr-appreciate">我们非常感谢您的反馈意见。</span>
+<span class="stdr-thankyou">谢谢！</span> <span class="stdr-appreciate">我们非常感谢你的反馈意见。</span>
 
 [管理你的个人资料](https://social.technet.microsoft.com/profile)
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> 站点反馈</a>
-站点反馈
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> 站点反馈</a>站点反馈
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 
@@ -187,7 +194,7 @@
 
 告诉我们更多内容
 
--   [Flash 新闻稿](https://technet.microsoft.com/cc543196.aspx)
+-   [快讯](https://technet.microsoft.com/cc543196.aspx)
 -   |
 -   [联系我们](https://technet.microsoft.com/cc512759.aspx)
 -   |
@@ -202,8 +209,9 @@
 
 © 2016 Microsoft
 
-链接到此网站或从中引用的第三方脚本和代码由拥有此类代码的第三方（而非 Microsoft）授权给你。 请参阅 ASP.NET Ajax CDN 使用条款 – http://www.asp.net/ajaxlibrary/CDN.ashx。
+链接到此站点或从中引用的第三方脚本或代码由拥有此类代码的第三方（而非 Microsoft）授权给你。 请参阅 ASP.NET Ajax CDN 使用条款 – http://www.asp.net/ajaxlibrary/CDN.ashx。
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
+
 
 
 <!--HONumber=May16_HO2-->

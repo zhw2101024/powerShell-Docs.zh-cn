@@ -1,12 +1,15 @@
 ---
-title: ISEMenuItem 对象
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: a16660bd-0aee-46fd-ac17-3f022165d089
+title:  ISEMenuItem 对象
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  a16660bd-0aee-46fd-ac17-3f022165d089
 ---
+
 # ISEMenuItem 对象
   **ISEMenuItem** 对象是 Microsoft.PowerShell.Host.ISE.ISEMenuItem 类的实例。 “加载项”菜单上的所有对象都是 **Microsoft.PowerShell.Host.ISE.ISEMenuItem** 类的实例。
 

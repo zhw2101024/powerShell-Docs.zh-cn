@@ -22,7 +22,7 @@ ms.prod:  powershell
 
 使用特殊类型的配置将 LCM 配置为指定以上各行为。 以下各节介绍如何配置 LCM。
 
-> **注意**：本主题适用于 Windows PowerShell 5.0 中引入的 LCM。 有关在 Windows PowerShell 4.0 中配置 LCM 的信息，请参阅“Windows PowerShell 4.0 Desired State Configuration 本地配置管理器”。
+> **注意**：本主题适用于 Windows PowerShell 5.0 中引入的 LCM。 有关在 Windows PowerShell 4.0 中配置 LCM 的信息，请参阅 [Windows PowerShell 4.0 Desired State Configuration 本地配置管理器](metaconfig4.md)。
 
 ## 编写和执行 LCM 配置
 
@@ -42,7 +42,7 @@ configuration LCMConfig
 } 
 ```
 
-调用和运行配置来创建配置 MOF，与常规配置类似（有关创建配置 MOF 的信息，请参阅“Windows PowerShell Desired State Configuration 入门”）。 与常规配置不同的是，不通过调用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet 来执行 LCM 配置。 而是通过调用 Set-DscLocalConfigurationManager cmdlet，将路径作为参数提供给配置 MOF。 执行配置后，可以通过调用 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) cmdlet 查看 LCM 的属性。
+调用和运行配置来创建配置 MOF，与常规配置类似（有关创建配置 MOF 的信息，请参阅[编译配置](configurations#compiling-the-configuration)）。 与常规配置不同的是，不通过调用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet 来执行 LCM 配置。 而是通过调用 [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) cmdlet，将路径作为参数提供给配置 MOF。 执行配置后，可以通过调用 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) cmdlet 查看 LCM 的属性。
 
 LCM 配置只能包含有限组资源的块。 在上面的示例中，调用的唯一资源名为 **Settings**。 其他可用资源有：
 
@@ -149,11 +149,15 @@ LCM 配置只能包含有限组资源的块。 在上面的示例中，调用的
 ## 另请参阅 
 
 ### 概念
-Windows PowerShell Desired State Configuration 入门[设置 DSC 请求服务器](pullServer.md) 
+[Windows PowerShell Desired State Configuration 概述](overview.md)
+ 
+[设置 DSC 请求服务器](pullServer.md) 
+
 [Windows PowerShell 4.0 Desired State Configuration 本地配置管理器](metaConfig4.md) 
 
 ### 其他资源
 [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) 
+
 [使用配置名称设置请求客户端](pullClientConfigNames.md) 
 
 

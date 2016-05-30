@@ -1,12 +1,15 @@
 ---
-title: ISEFile 对象
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
+title:  ISEFile 对象
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 ---
+
 # ISEFile 对象
   **ISEFile** 对象代表 Windows PowerShellÂ® 集成脚本环境 (ISE) 中的文件。 它是 Microsoft.PowerShell.Host.ISE.ISEFile 类的实例。 本主题列出其成员方法和成员属性。 **$PsISE.CurrentFile** 和 PowerShell 选项卡中的文件集合中的文件是 Microsoft.PowerShell.Host.ISE.ISEFile 类的所有实例。
 
@@ -17,8 +20,8 @@ ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 
  将该文件保存到磁盘。
 
- **\[saveEncoding\]** – optional [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
- 一个要用于已保存文件的可选字符编码参数。 默认值是 **UTF8**.
+ **\[saveEncoding\]** – 可选 [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
+ 一个要用于已保存文件的可选字符编码参数。 默认值是 **UTF8**。
 
  **例外**
  -   **System.IO.IOException**：无法保存该文件。
@@ -41,11 +44,10 @@ $myfile.Encoding
 
  使用指定的文件名和编码保存文件。
 
- **filename** \- String
- 要用于保存该文件的名称。
+ **filename** \- 要用于保存该文件的名称。
 
- **\[saveEncoding\]** – optional [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
- 一个要用于已保存文件的可选字符编码参数。 默认值是 **UTF8**.
+ **\[saveEncoding\]** – 可选 [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
+ 一个要用于已保存文件的可选字符编码参数。 默认值是 **UTF8**。
 
  **例外**
  -   **System.ArgumentNullException**：**filename** 参数为 null。

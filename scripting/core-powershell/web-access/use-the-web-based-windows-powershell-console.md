@@ -1,3 +1,14 @@
+---
+title:  使用基于 Web 的 Windows PowerShell 控制台
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 #  使用基于 Web 的 Windows PowerShell 控制台
 
 更新时间：2013年 6 月 24日
@@ -59,9 +70,9 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 ------------------------------------------------------------------------
 
-若要使用 Windows PowerShell Web 访问基于 Web 的控制台，浏览器必须执行以下操作：
+若要使用 Windows PowerShell Web 访问基于 Web 的控制台，浏览器必须执行以下操作。
 
--   允许 Windows PowerShell Web 访问网关网站中的 cookie。
+-   允许 Windows PowerShell Web 访问网关网站中的 Cookie。
 
 -   可打开和访问 HTTPS 页面。
 
@@ -74,7 +85,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 ------------------------------------------------------------------------
 
-Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵组织 Windows PowerShell Web 访问网关网站的地址。 默认情况下，此网址的地址为 https://&lt;server\_name&gt;/pswa。 在登录到 Windows PowerShell Web 访问之前，确保拥有想要管理的远程计算机的名称或 IP 地址。 你必须是远程计算机上的授权用户，并且必须将远程计算机配置为可远程管理。 有关将计算机配置为可远程管理的详细信息，请参阅[在 Windows PowerShell 中启用和使用远程命令](https://technet.microsoft.com/magazine/ff700227.aspx)。 将计算机配置为可远程管理的最简单方法是：在使用提升的用户权限打开的 Windows PowerShell 会话中（以管理员身份运行），在计算机上运行 Enable-PSRemoting -force cmdlet。).
+Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵组织 Windows PowerShell Web 访问网关网站的地址。 默认情况下，此网址的地址为 https://&lt;server\_name&gt;/pswa。 在登录到 Windows PowerShell Web 访问之前，确保拥有想要管理的远程计算机的名称或 IP 地址。 你必须是远程计算机上的授权用户，并且必须将远程计算机配置为可远程管理。 有关将计算机配置为可远程管理的详细信息，请参阅[在 Windows PowerShell 中启用和使用远程命令](https://technet.microsoft.com/magazine/ff700227.aspx)。 将计算机配置为可远程管理的最简单方法是：在使用提升的用户权限打开的 Windows PowerShell 会话中（**以管理员身份运行**），在计算机上运行**Enable-PSRemoting -force** cmdlet。
 
 ### 登录到 Windows PowerShell Web Access
 
@@ -94,15 +105,15 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
     <tbody>
     <tr class="odd">
     <td><ul>
-    <li><p>如果目标计算机在工作组中，则使用以下语法提供你的用户名并登录到计算机：&lt;<em>workgroup_name</em>&gt;\&lt;<em>user_name</em>&gt;.</p></li>
+    <li><p>如果目标计算机在工作组中，则使用以下语法提供你的用户名并登录到计算机：&lt;<em>workgroup_name</em>&gt;\&lt;<em>user_name</em>&gt;。</p></li>
     <li><p>如果目标计算机是网关服务器，则可在“计算机名”<strong></strong>字段中指定“localhost”<strong></strong>。</p></li>
-    <li><p>如果目标计算机是网关服务器，并且该网关服务器在工作组中，则可在“计算机名”<strong></strong>字段中使用“localhost”<strong></strong>，但不可在“用户名”<strong></strong>字段中使用 localhost\&lt;<em>user_name</em>&gt;。 必须使用&lt;<em>工作组名称</em>&gt;\&lt;<em>user_name</em>&gt;.</p></li>
+    <li><p>如果目标计算机是网关服务器，并且该网关服务器在工作组中，则可在“计算机名”<strong></strong>字段中使用“localhost”<strong></strong>，但不可在“用户名”<strong></strong>字段中使用 localhost\&lt;<em>user_name</em>&gt;。 必须使用&lt;<em>工作组名称 </em>&gt;\&lt;<em>user_name</em>&gt;。</p></li>
     </ul></td>
     </tr>
     </tbody>
     </table>
 
-3.  “可选的连接设置”部分涉及你想要管理的远程计算机的授权要求。 有关与可选的连接设置等效的参数的详细信息，请参阅 [Enter-PSSession cmdlet 帮助](https://technet.microsoft.com/library/dd315384.aspx)。.
+3.  “可选的连接设置”部分涉及你想要管理的远程计算机的授权要求。 有关与可选的连接设置等效的参数的详细信息，请参阅 [Enter-PSSession cmdlet 帮助](https://technet.microsoft.com/library/dd315384.aspx)。
 
     一般情况下，你用于通过 Windows PowerShell Web 访问网关的凭据与你想要管理的远程计算机所识别的凭据是一样的。 但是，如果你想要使用不同的凭据管理你在步骤 2 中指定的远程计算机，请展开“可选的连接设置”部分，并提供备用凭据。 否则，请跳到步骤 6。
 
@@ -110,7 +121,7 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
 
 5.  除非 Windows PowerShell Web 访问管理员指示你以其他方式处理，否则将“身份验证类型”设置保持为“默认”。
 
-6.  单击“登录”.
+6.  单击**登录**。
 
 <a href="" id="BKMK_timeout"></a>
 
@@ -129,7 +140,7 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
 
 -   尝试登录，以便在相同的浏览器会话中或在相同浏览器会话的新选项卡中，管理不同的远程计算机。 （这种情况不适用于运行 Windows Server 2012 R2 的网关服务器；Windows Server 2012 R2 上运行的 Windows PowerShell Web 访问允许在相同浏览器会话的新选项卡中打开多个用户会话。）有关如何在相同计算机上使用多个活动会话的详细信息，请参阅本主题[基于 Web 的控制台的限制](#BKMK_limits)部分中的“同时连接到多台目标计算机”。
 
--   会话停止活动 20 分钟。 网关管理员可以自定义停止活动超时时间；有关详细信息，请参阅[会话管理](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx#BKMK_sesmgmt).
+-   会话停止活动 20 分钟。 网关管理员可以自定义停止活动超时时间；有关详细信息，请参阅[会话管理](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx#BKMK_sesmgmt)。
 
     -   如果你从基于 Web 的控制台中的会话断开连接是由于网络错误或其他计划外关机或故障，而不是因为自己关闭了会话，Windows PowerShell Web 访问会话将继续运行并连接到目标计算机，直到客户端的超时期结束。 默认情况下，此超时期为 20 分钟，并由网关管理员配置。 会话在默认的 20 分钟或网关管理员指定的超时期（以时间较短者为准）后断开连接。
 
@@ -304,7 +315,7 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
 
     -   使用 cmdlet，更改控制台窗口的高度和宽度
 
-        可按以下方式使用 cmdlet 来配置 Windows PowerShell Web 访问控制台窗口。 在下例中，用户将 Windows PowerShell Web 访问控制台的宽度更改为 **20**.
+        可按以下方式使用 cmdlet 来配置 Windows PowerShell Web 访问控制台窗口。 在下例中，用户将 Windows PowerShell Web 访问控制台的宽度更改为**20**。
 
         [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_778d5e55-9195-4bd7-b313-d1fbca7876e4'); "Copy to clipboard.")
 
@@ -317,39 +328,35 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
 
         你可以使用类似的方式更改控制台的高度。
 
-        如要获取自定义控制台视图的其他示例，请参阅 [Windows PowerShell 团队博客](http://blogs.msdn.com/b/powershell/)。.
+        如要获取自定义控制台视图的其他示例，请参阅 [Windows PowerShell 团队博客](http://blogs.msdn.com/b/powershell/)。
 
 <a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">另请参阅</span></a>
 <a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
 
 ------------------------------------------------------------------------
 
-[Windows PowerShell Cmdlet 参考资料](https://technet.microsoft.com/library/ee407531(ws.10).aspx)
-[Microsoft TechNet 上的 Windows PowerShell](https://technet.microsoft.com/library/bb978526.aspx)
-[TechNet 脚本中央储存库](http://gallery.technet.microsoft.com/scriptcenter)
-[脚本中心 – 脚本编写人员，你好！](https://technet.microsoft.com/scriptcenter)
+[Windows PowerShell Cmdlet 参考](https://technet.microsoft.com/library/ee407531(ws.10).aspx)
+[ Microsoft TechNet 上的 Windows PowerShell](https://technet.microsoft.com/library/bb978526.aspx)
+[TechNet 脚本中心存储库](http://gallery.technet.microsoft.com/scriptcenter)
+[脚本中心 - 嗨，脚本专家！](https://technet.microsoft.com/scriptcenter)
 [Windows PowerShell 团队博客](http://blogs.msdn.com/b/powershell/)
 
 <span>显示：</span>继承内容受保护
 
 <span class="stdr-votetitle">此页面是否有所帮助？</span>
-是
-否
+是 否
 
 更多反馈？
 
-<span class="stdr-count"><span class="stdr-charcnt">剩余 1500</span> 个字符</span>
-提交
-跳过此部分
+<span class="stdr-count"><span class="stdr-charcnt">剩余 1500</span> 个字符</span> 提交 跳过此部分
 
-<span class="stdr-thankyou">感谢您参与！</span> <span class="stdr-appreciate">我们非常感谢您的反馈意见。</span>
+<span class="stdr-thankyou">谢谢！</span> <span class="stdr-appreciate">我们非常感谢你的反馈意见。</span>
 
 [管理你的个人资料](https://social.technet.microsoft.com/profile)
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> 站点反馈</a>
-站点反馈
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> 站点反馈</a>站点反馈
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 
@@ -365,7 +372,7 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
 
 告诉我们更多内容
 
--   [Flash 新闻稿](https://technet.microsoft.com/cc543196.aspx)
+-   [快讯](https://technet.microsoft.com/cc543196.aspx)
 -   |
 -   [联系我们](https://technet.microsoft.com/cc512759.aspx)
 -   |
@@ -380,8 +387,9 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
 
 © 2016 Microsoft
 
-链接到此网站或从中引用的第三方脚本和代码由拥有此类代码的第三方（而非 Microsoft）授权给你。 请参阅 ASP.NET Ajax CDN 使用条款 – http://www.asp.net/ajaxlibrary/CDN.ashx。
+链接到此站点或从中引用的第三方脚本或代码由拥有此类代码的第三方（而非 Microsoft）授权给你。 请参阅 ASP.NET Ajax CDN 使用条款 – http://www.asp.net/ajaxlibrary/CDN.ashx。
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
+
 
 
 <!--HONumber=May16_HO2-->
