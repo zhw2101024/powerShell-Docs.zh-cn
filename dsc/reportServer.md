@@ -156,7 +156,7 @@ AdditionalData       : {}
 默认情况下，报表按 **JobID** 排序。 若要获取最新报表，可以按 **StartTime** 属性对其进行降序排序，然后获取数组的第一个元素：
 
 ```powershell
-$reportsByStartTime = $reports | Sort-Object -Property StartTime -Descending
+$reportsByStartTime = $reports | Sort-Object {$_."StartTime" -as [DateTime] } -Descending
 $reportMostRecent = $reportsByStartTime[0]
 ```
 
@@ -225,6 +225,6 @@ InDesiredState    : True
 
 
 
-<!--HONumber=May16_HO3-->
+<!--HONumber=May16_HO4-->
 
 
