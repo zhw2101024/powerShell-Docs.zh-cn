@@ -39,9 +39,9 @@ ms.assetid:  c3636b45-61aa-4720-85f0-58312c4fc8f9
       <section>
         <title>引用程序集</title>
         <content>
-          <para>引用程序集默认情况下安装在以下位置 ︰ <codeInline>c:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\V1.0</codeInline>。</para>
+          <para>默认情况下，引用程序集安装在以下位置：<codeInline>c:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\V1.0</codeInline>。</para>
           <alert class="note">
-            <para>根据 Windows PowerShell 2.0 程序集编译的代码不能加载到 Windows PowerShell 1.0 安装。 但可以将针对 Windows PowerShell 1.0 程序集编译的代码加载到 Windows PowerShell 2.0 安装中。</para>
+            <para>不能将针对 Windows PowerShell 2.0 程序集编译的代码加载到 Windows PowerShell 1.0 安装中。 但可以将针对 Windows PowerShell 1.0 程序集编译的代码加载到 Windows PowerShell 2.0 安装中。</para>
           </alert>
         </content>
       </section>
@@ -151,11 +151,15 @@ ms.assetid:  c3636b45-61aa-4720-85f0-58312c4fc8f9
               <definitionTable>
                 <definedTerm>Runspace01</definedTerm>
                 <definition>
-                  <para>演示了如何使用 <codeEntityReference>T:System.Management.Automation.PowerShell</codeEntityReference> 类同步运行 <externalLink><linkText>Get-Process</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkId=113324</linkUri></externalLink> cmdlet。 <externalLink><linkText>Get-Process</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkId=113324</linkText><linkUri> cmdlet 将为在本地计算机上运行的每个进程返回 <codeEntityReference>T:System.Diagnostics.Process</codeEntityReference> 对象。</para>
+                  <para>演示了如何使用 <codeEntityReference>T:System.Management.Automation.PowerShell</codeEntityReference> 类同步运行 <externalLink><linkText>Get-Process</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkId=113324</linkUri></externalLink> cmdlet。 <externalLink><linkText>Get-Process</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkId=113324</linkUri></externalLink> cmdlet 将为在本地计算机上运行的每个进程返回 <codeEntityReference>T:System.Diagnostics.Process</codeEntityReference> 对象。</para>
                 </definition>
                 <definedTerm>Runspace02</definedTerm>
                 <definition>
-                  <para>演示了如何使用 <codeEntityReference>T:System.Management.Automation.PowerShell</codeEntityReference> 类同步运行 <externalLink><linkText>Get-Process</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkId=113324</linkUri></externalLink> 和 <externalLink><linkText>Sort-Object</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkID=113403</linkUri></externalLink> cmdlet。 <externalLink><linkText>Get-process</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkId=113324</linkUri></externalLink> cmdlet 将为在本地计算机上运行的每个进程返回 <codeEntityReference>T:System.Diagnostics.Process</codeEntityReference> 对象，并且 Sort-Object 将根据其 <codeEntityReference>P:System.Diagnostics.Process.Id</codeEntityReference> 属性为对象排序。 这些命令的结果通过使用 <codeEntityReference>T:System.Windows.Forms.DataGridView</codeEntityReference> 控件显示。Runspace03演示了如何使用 T:System.Management.Automation.PowerShell 类同步运行脚本，以及如何处理非终止错误。 该脚本可接收一系列进程名称，然后检索这些进程。 脚本结果（包括运行该脚本时生成的任何非终止错误）将显示在控制台窗口中。</para>
+                  <para>演示了如何使用 <codeEntityReference>T:System.Management.Automation.PowerShell</codeEntityReference> 类同步运行 <externalLink><linkText>Get-Process</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkId=113324</linkUri></externalLink> 和 <externalLink><linkText>Sort-Object</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkID=113403</linkUri></externalLink> cmdlet。 <externalLink><linkText>Get-process</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkId=113324</linkUri></externalLink> cmdlet 将为在本地计算机上运行的每个进程返回 <codeEntityReference>T:System.Diagnostics.Process</codeEntityReference> 对象，并且 Sort-Object 将根据其 <codeEntityReference>P:System.Diagnostics.Process.Id</codeEntityReference> 属性为对象排序。 这些命令的结果通过使用 <codeEntityReference>T:System.Windows.Forms.DataGridView</codeEntityReference> 控件显示。</para>
+                </definition>
+                <definedTerm>Runspace03</definedTerm>
+                <definition>
+                  <para>演示了如何使用 <codeEntityReference>T:System.Management.Automation.PowerShell</codeEntityReference> 类同步运行脚本，以及如何处理非终止错误。 该脚本可接收一系列进程名称，然后检索这些进程。 脚本结果（包括运行该脚本时生成的任何非终止错误）将显示在控制台窗口中。</para>
                 </definition>
                 <definedTerm>Runspace04</definedTerm>
                 <definition>
