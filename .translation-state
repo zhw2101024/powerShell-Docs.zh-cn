@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "a654e9eb64af857e4bc313e0b651b205e3d878b4",
-  "LastTranslatedCommit": "9458c3dc94e23f6126b3dd5ca9073668ef3bd1ad",
+  "LastTranslatedCommit": "ebd92e2754339ccac7e8ad8b59b0de005c88dd7d",
   "Items": {
     "81efeb79a70df604ef8c126c0ebd17b4f4711a44": {
       "FileHash": "81efeb79a70df604ef8c126c0ebd17b4f4711a44",
@@ -20020,14 +20020,14 @@
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
-      "TargetFileCommit": "6c5c500a9a1c859fea01ce72164fa707183527b0",
+      "TargetFileCommit": "ebd92e2754339ccac7e8ad8b59b0de005c88dd7d",
       "TargetFilePath": "scripting\\setup\\Installing-the-Windows-PowerShell-SDK.md",
       "HandbackFilePath": "ol-handback\\PowerShell\\powerShell-Docs.zh-cn\\live\\Installing-the-Windows-PowerShell-SDK.bfd31a5fc654dd34236aff66cf62844476672b64.zh-cn.xlf",
-      "HandbackFileCommit": "4e371cfa7141d3fa121cd27132d5b8b4012a23de",
-      "HandbackDateTime": "2016-06-02T18:13:26.9226861Z",
+      "HandbackFileCommit": "01069139eabc14d5fbb0ace0c1193b9898dc7988",
+      "HandbackDateTime": "2016-06-03T12:41:07.2882201Z",
       "HandbackException": null,
       "HandbackFailureTimes": 0,
-      "UpdatedDateTime": "2016-06-02T18:13:26.9226861Z",
+      "UpdatedDateTime": "2016-06-03T12:41:07.2882201Z",
       "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-cn\\live\\archive\\Installing-the-Windows-PowerShell-SDK.bfd31a5fc654dd34236aff66cf62844476672b64.zh-cn.xlf",
       "ArchiveFileCommit": "eeeb6db370cdb9f10bbf27207ba8abac018c852c",
       "ArchiveFileDateTime": "2016-05-31T13:20:51.9159901Z",
