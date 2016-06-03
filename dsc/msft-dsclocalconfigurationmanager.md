@@ -1,5 +1,5 @@
 ---
-title:  
+title: MSFT_DSCLocalConfigurationManager 类 
 ms.date:  2016-05-16
 keywords:  powershell,DSC
 description:  
@@ -30,7 +30,7 @@ class MSFT_DSCLocalConfigurationManager
 
 **MSFT_DSCLocalConfigurationManager** 类拥有以下成员：
 
--   [Methods][]
+-   [方法][]
 
 ### 方法
 
