@@ -1,11 +1,26 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [dsc\msft-dsclocalconfigurationmanager.md](https://github.com/PowerShell/powerShell-Docs/blob/919438862ca9786447b690d2db10e905da0a7c42/dsc/msft-dsclocalconfigurationmanager.md) | InSyncHandedBackSuccess | [Details](#7fe92c1266593dd98ab6933fb408558effda5ccb67)
 
 ## Item Details
+##### <a name='7fe92c1266593dd98ab6933fb408558effda5ccb67'></a> Source: [dsc\msft-dsclocalconfigurationmanager.md](https://github.com/PowerShell/powerShell-Docs/blob/919438862ca9786447b690d2db10e905da0a7c42/dsc/msft-dsclocalconfigurationmanager.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [dsc\msft-dsclocalconfigurationmanager.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e046f27128ea77006a852db9f445fbada4343c1a/dsc/msft-dsclocalconfigurationmanager.md)
+* Handoff File: [msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/ef65d6b9d11c0cb2f7ae4ecf08d617a5a71dff80/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.zh-cn.xlf)
+* Handoff Datetime: 2016-05-19 19:02:16
+* Handoff Reason: Include
+* Archive File: [msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/56913d0e2a8945dab6662b31f81f6a7a1dbbd478/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.zh-cn.xlf)
+* Archive Datetime: 2016-05-24 13:17:15
+* Handback File: [msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/8ff4b2dbc48d063b4fff1ecfe2dbc5bd3a62d09f/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.zh-cn.xlf)
+* Handback Datetime: 2016-06-03 13:42:22
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
