@@ -9,8 +9,8 @@
 [ Archive Failed Files ](#archive-failed-list)| 0
 [ Archive Success Files ](#archive-success-list)| 1
 [ Handback Failed Files ](#handback-failed-list)| 0
-[ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 90
-[ In Sync Handback Files ](#insync-handback-success-list)| 214
+[ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 89
+[ In Sync Handback Files ](#insync-handback-success-list)| 215
 [ Ignored Files ](#ignored-list)| 16
 
 ## <a name='handoff-failed-list'></a> Handoff Failed File List
@@ -36,7 +36,6 @@
  [dsc\authoringResourceMOF.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/authoringResourceMOF.md) | OutofSyncHandedBackSuccess | [Details](#4d685e518acd3a18f4872417b645dbe66f7584219)
  [dsc\authoringResourceMofCS.md](https://github.com/PowerShell/powerShell-Docs/blob/644d08a69a8bb70f49e12c1504aa46c4b57a51fc/dsc/authoringResourceMofCS.md) | OutofSyncHandedBackSuccess | [Details](#991a324945289b2eff0b706d093b2d345352fb1510)
  [dsc\metaConfig.md](https://github.com/PowerShell/powerShell-Docs/blob/4cc8668e84405c276be2dfe4b25f622416d1b255/dsc/metaConfig.md) | OutofSyncHandedBackSuccess | [Details](#a451e4b8c4483d9099fa69a553162bd0632ef59a46)
- [dsc\pullClientConfigID.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/pullClientConfigID.md) | OutofSyncHandedBackSuccess | [Details](#f6569220fbafdba49bac9ac9dca3e6036a7aad0873)
  [dsc\secureMOF.md](https://github.com/PowerShell/powerShell-Docs/blob/0dc83a1b69f26a25874c819a2f3a027ed7966895/dsc/secureMOF.md) | OutofSyncHandedBackSuccess | [Details](#f0aed5bb627825b74fe4df29cbe2f0bc53f90c2385)
  [dsc\troubleshooting.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/troubleshooting.md) | OutofSyncHandedBackSuccess | [Details](#95e75bd95552a9bcfa41adee74ef5ceacb3ea33b91)
  [scripting\core-powershell\console\PowerShell.exe-Command-Line-Help.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/console/PowerShell.exe-Command-Line-Help.md) | OutofSyncHandedBackSuccess | [Details](#a53a9457712973b4ff43c226b247214d24406592102)
@@ -186,6 +185,7 @@
  [dsc\packageResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/packageResource.md) | InSyncHandedBackSuccess | [Details](#bcaf82cbafe67cc309765e16b3c9cd6eff0a982a70)
  [dsc\partialConfigs.md](https://github.com/PowerShell/powerShell-Docs/blob/ede565ef23c36a195f137e9949b215c6632a7e26/dsc/partialConfigs.md) | InSyncHandedBackSuccess | [Details](#9e3052353dd54568eb2dfaf5af5efde7faafd03a71)
  [dsc\pullClient.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/pullClient.md) | InSyncHandedBackSuccess | [Details](#95f49fecdf13a54049caf27345d2a48c98b8f09b72)
+ [dsc\pullClientConfigID.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/pullClientConfigID.md) | InSyncHandedBackSuccess | [Details](#f6569220fbafdba49bac9ac9dca3e6036a7aad0873)
  [dsc\pullClientConfigID4.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/pullClientConfigID4.md) | InSyncHandedBackSuccess | [Details](#730f2f26e2811996e79cf0073a4ef65cad39068774)
  [dsc\pullClientConfigNames.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/pullClientConfigNames.md) | InSyncHandedBackSuccess | [Details](#32ff157c7c8366cf0c9847dec4815d2d4b9cc5fa75)
  [dsc\pullServer.md](https://github.com/PowerShell/powerShell-Docs/blob/a5f3025ff222d4a27c0da074df9e84d82c51a46f/dsc/pullServer.md) | InSyncHandedBackSuccess | [Details](#7bbfc31fdebdde83ac1784373b51af40b1dc949276)
@@ -1254,18 +1254,15 @@
 * [Back to Top](#report-top)
 
 ##### <a name='f6569220fbafdba49bac9ac9dca3e6036a7aad0873'></a> Source: [dsc\pullClientConfigID.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/pullClientConfigID.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
+* Status: InSyncHandedBackSuccess
+* Target File: [dsc\pullClientConfigID.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/5ddb013d9a7107789ee00c937b4d4c76e7ae36c3/dsc/pullClientConfigID.md)
 * Handoff File: [pullClientConfigID.1b955603d220e49bbe52711bacf74c46feec04cc.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/b4670b453354168eae1ddf3d29d2916fc0d968c8/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/pullClientConfigID.1b955603d220e49bbe52711bacf74c46feec04cc.zh-cn.xlf)
 * Handoff Datetime: 2016-05-16 23:01:58
 * Handoff Reason: Include
 * Archive File: [pullClientConfigID.1b955603d220e49bbe52711bacf74c46feec04cc.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/cdb8d3274ece17fab438345d167e1c54de0813c4/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/pullClientConfigID.1b955603d220e49bbe52711bacf74c46feec04cc.zh-cn.xlf)
 * Archive Datetime: 2016-05-17 13:25:46
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\pullClientConfigID.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/58c6eca4b5d4990b1a4a121c77db7e8228289e60/dsc/pullClientConfigID.md)
-* Current Handback File: [pullClientConfigID.1b955603d220e49bbe52711bacf74c46feec04cc.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/977cc0f05d2db911f960f6e24b4ed3c6a6d3eea0/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/pullClientConfigID.1b955603d220e49bbe52711bacf74c46feec04cc.zh-cn.xlf)
-* Current Handback Datetime: 2016-05-21 19:25:37
+* Handback File: [pullClientConfigID.1b955603d220e49bbe52711bacf74c46feec04cc.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/ae1ff40dd4be1228a4a308c9ec0af9a3d5c1aa51/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/pullClientConfigID.1b955603d220e49bbe52711bacf74c46feec04cc.zh-cn.xlf)
+* Handback Datetime: 2016-06-07 22:55:44
 * [Back to Top](#report-top)
 
 ##### <a name='730f2f26e2811996e79cf0073a4ef65cad39068774'></a> Source: [dsc\pullClientConfigID4.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/pullClientConfigID4.md)
