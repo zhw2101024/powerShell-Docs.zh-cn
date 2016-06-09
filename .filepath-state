@@ -170,9 +170,6 @@
   "95e75bd95552a9bcfa41adee74ef5ceacb3ea33b": [
     "dsc\\troubleshooting.md"
   ],
-  "d571a7562bd23e3bca78127732dd4fccb88fee1c": [
-    "dsc\\troubleshooting.md"
-  ],
   "5c7878bdfc8a3f118b569a9e43be6c7e4333ad2c": [
     "dsc\\userResource.md"
   ],
@@ -443,9 +440,6 @@
   "24e9b67cf51b99156db3f0bdfb446996b9d3df76": [
     "scripting\\getting-started\\cookbooks\\Appendix-2---Creating-a-Custom-PowerShell-Shortcut.md"
   ],
-  "a30fcb49f83cb29ce659afeb59ec8813e86fc829": [
-    "scripting\\getting-started\\cookbooks\\Appendix-2---Creating-a-Custom-PowerShell-Shortcut.md"
-  ],
   "13b1fd65b9dddf2570e7ab9c5420c0a6d18ce35e": [
     "scripting\\getting-started\\cookbooks\\Changing-Computer-State.md"
   ],
@@ -458,13 +452,7 @@
   "628062cfadcadcec3311dcb8bfdd6bd3b9a9e567": [
     "scripting\\getting-started\\cookbooks\\Creating-a-Custom-Input-Box.md"
   ],
-  "c71ccacd9b51b4da9999a909b9e27ed4255c941c": [
-    "scripting\\getting-started\\cookbooks\\Creating-a-Custom-Input-Box.md"
-  ],
   "f359254900dce0ef0a28af3e16b8ef4095e85309": [
-    "scripting\\getting-started\\cookbooks\\Creating-a-Graphical-Date-Picker.md"
-  ],
-  "57fe10bb30a32b26de84ec293d6de284dffe76ee": [
     "scripting\\getting-started\\cookbooks\\Creating-a-Graphical-Date-Picker.md"
   ],
   "a19601bd785ab91f5d8175acd081113e87a62a57": [
@@ -489,9 +477,6 @@
     "scripting\\getting-started\\cookbooks\\Manipulating-Items-Directly.md"
   ],
   "84030be8564e10ce33e15c21f41bda79ea8fad7d": [
-    "scripting\\getting-started\\cookbooks\\Multiple-selection-List-Boxes.md"
-  ],
-  "5cb14585c77c156b39e18c310049ce0eb20ac5d3": [
     "scripting\\getting-started\\cookbooks\\Multiple-selection-List-Boxes.md"
   ],
   "56aa32d40d8e5e61f5328d5a373ca5a1bd7ca6e3": [
@@ -1010,13 +995,7 @@
   "7e8fd05cfedd500c51f2d7e4f6adbb7d1f27cb00": [
     "scripting\\getting-started\\cookbooks\\Selecting-Items-from-a-List-Box.md"
   ],
-  "daeb4385e0ff4a3491e1c36e256ea3a0d4bd3064": [
-    "scripting\\getting-started\\cookbooks\\Selecting-Items-from-a-List-Box.md"
-  ],
   "642bc1ba2e6d63de2ef692a1e2c547fb3f1a5946": [
-    "scripting\\getting-started\\fundamental\\Exploring-the-Windows-PowerShell-ISE.md"
-  ],
-  "1644d635776b84c5059bb6ea10be9afaa45e0030": [
     "scripting\\getting-started\\fundamental\\Exploring-the-Windows-PowerShell-ISE.md"
   ],
   "0148f4631e34e65a4336c5d1d50e313fb6639748": [
