@@ -1,12 +1,15 @@
 ---
-title: 附录 2 - 创建自定义 PowerShell 快捷方式
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 5d4fd421-5d43-4ec7-86fd-acfe887b066e
+title:  附录 2：创建自定义 PowerShell 快捷方式
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  5d4fd421-5d43-4ec7-86fd-acfe887b066e
 ---
+
 # 附录 2 - 创建自定义 PowerShell 快捷方式
 下面的过程描述如何创建对多个方便的选项进行了自定义的 Windows PowerShell 快捷方式。
 
@@ -34,10 +37,10 @@ ms.assetid: 5d4fd421-5d43-4ec7-86fd-acfe887b066e
 
 11. 如果你想要在控制台打开时将它放置在桌面上的某个特定点上，请清除“窗口位置”部分中的“由系统定位窗口”复选框，然后更改“窗口位置”部分中“左侧”和“顶部”框中的值。
 
-12. 单击“确定”****。
+12. 单击“确定”。
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

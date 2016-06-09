@@ -1,12 +1,15 @@
 ---
-title: 创建自定义输入框
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 0b12e56c-299f-40ee-afbf-d30d23ed2565
+title:  创建自定义输入框
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  0b12e56c-299f-40ee-afbf-d30d23ed2565
 ---
+
 # 创建自定义输入框
 通过使用 Windows PowerShell 3.0 及更高版本中的 Microsoft .NET Framework 窗体构建功能来为图形自定义输入框编写脚本。
 
@@ -81,7 +84,7 @@ $form.Size = New-Object System.Drawing.Size(300,200)
 $form.StartPosition = "CenterScreen"
 ```
 
-接下来，为窗体创建“确定”按钮。 指定“确定”按钮的大小和行为。 在此示例中，按钮位置为距窗体上边缘 120 像素，距左边缘 75 像素。 按钮高度为 23 像素，按钮长度为 75 像素。 此脚本使用预定义的 Windows 窗体类型确定按钮行为。
+接下来，为窗体创建“确定”按钮。   指定“确定”按钮的大小和行为。 在此示例中，按钮位置为距窗体上边缘 120 像素，距左边缘 75 像素。 按钮高度为 23 像素，按钮长度为 75 像素。 此脚本使用预定义的 Windows 窗体类型确定按钮行为。
 
 ```
 $OKButton = New-Object System.Windows.Forms.Button
@@ -153,12 +156,12 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 ```
 
 ## 另请参阅
-[脚本编写人员，你好：为什么这些 PowerShell GUI 示例不起作用呢？](http://go.microsoft.com/fwlink/?LinkId=506644)
-[GitHub：Dave Wyatt 的 WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-[Windows PowerShell 每周提示：创建自定义输入框](http://technet.microsoft.com/library/ff730941.aspx)
+[Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?（Hey Scripting Guy 博客：为什么这些 PowerShell GUI 示例不起作用？）](http://go.microsoft.com/fwlink/?LinkId=506644)
+[GitHub: Dave Wyatt's WinFormsExampleUpdates（GitHub：Dave Wyatt 的 WinFormsExampleUpdates）](https://github.com/dlwyatt/WinFormsExampleUpdates)
+[Windows PowerShell Tip of the Week:  Creating a Custom Input Box（Windows PowerShell 每周提示：创建自定义输入框）](http://technet.microsoft.com/library/ff730941.aspx)
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

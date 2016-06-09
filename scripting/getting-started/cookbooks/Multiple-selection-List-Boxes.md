@@ -1,12 +1,15 @@
 ---
-title: 多选列表框
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: f74cd5d9-da57-4802-b614-0b194a7bc8f8
+title:  多选列表框
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  f74cd5d9-da57-4802-b614-0b194a7bc8f8
 ---
+
 # 多选列表框
 使用 Windows PowerShell 3.0 和更高版本在自定义 Windows 窗体中创建多选列表框控件。
 
@@ -166,7 +169,7 @@ $form.Topmost = $True
 $result = $form.ShowDialog()
 ```
 
-最后，**If** 块内的代码指示在用户从列表框中选择一个或多个选项，然后单击“确定”****按钮或按“Enter”****键后，Windows 应如何处理该窗体。
+最后，**If** 块内的代码指示在用户从列表框中选择一个或多个选项，然后单击“确定”按钮或按“Enter”键后，Windows 应如何处理该窗体。
 
 ```
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
@@ -177,12 +180,12 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 ```
 
 ## 另请参阅
-[脚本编写人员，你好：为什么这些 PowerShell GUI 示例不起作用呢？](http://go.microsoft.com/fwlink/?LinkId=506644)
-[GitHub：Dave Wyatt 的 WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-[Windows PowerShell 本周提示：多选列表框 - 还有更多！](http://technet.microsoft.com/library/ff730950.aspx)
+[Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?（Hey Scripting Guy 博客：为什么这些 PowerShell GUI 示例不起作用？）](http://go.microsoft.com/fwlink/?LinkId=506644)
+[GitHub: Dave Wyatt's WinFormsExampleUpdates（GitHub：Dave Wyatt 的 WinFormsExampleUpdates）](https://github.com/dlwyatt/WinFormsExampleUpdates)
+[Windows PowerShell Tip of the Week:  Multi-Select List Boxes – And More!（Windows PowerShell 每周提示：多选列表框 - 还有更多！）](http://technet.microsoft.com/library/ff730950.aspx)
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,23 +1,24 @@
 ---
-title: 探究 Windows PowerShell ISE
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
+title:  探究 Windows PowerShell ISE
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
 ---
+
 # 探究 Windows PowerShell ISE
 Windows PowerShellÂ® 集成脚本环境 (ISE) 可用于创建、运行和调试命令与脚本。 Windows PowerShell ISE 包含菜单栏、Windows PowerShell 选项卡、工具栏、脚本选项卡、脚本窗格、控制台窗格、状态栏、文字大小滑块和区分上下文的帮助。
 
-> [!NOTE]
-> 以 Windows PowerShell ISE 3.0 开头的命令和输出窗格已合并为单一的控制台窗格。
+> [!NOTE] 以 Windows PowerShell ISE 3.0 开头的命令和输出窗格已合并为单一的控制台窗格。
 
 ## 菜单栏
-菜单栏包含“文件”、“编辑”、“视图”、“工具”、“调试”、“加载项”和“帮助”菜单。 菜单上的按钮允许执行与编写和运行脚本以及在 Windows PowerShell ISE 中运行命令相关的任务。 此外，可以通过运行使用 [Windows PowerShell ISE 脚本对象模型](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)的脚本将[外接程序工具](../../core-powershell/ise/The-ISEAddOnTool-Object.md)放置在菜单栏上.
+菜单栏包含“文件”、“编辑”、“视图”、“工具”、“调试”、“加载项”和“帮助”菜单。 菜单上的按钮允许执行与编写和运行脚本以及在 Windows PowerShell ISE 中运行命令相关的任务。 此外，可以通过运行使用 [Windows PowerShell ISE 脚本对象模型](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)的脚本将[外接程序工具](../../core-powershell/ise/The-ISEAddOnTool-Object.md)放置在菜单栏上。
 
-> [!NOTE]
-> 在 Windows PowerShell ISE 2.0 中，不存在“工具”和“加载项”菜单。
+> [!NOTE] 在 Windows PowerShell ISE 2.0 中，不存在**工具**和**加载项**菜单。
 
 ## Windows PowerShell 选项卡
 Windows PowerShell 选项卡是 Windows PowerShell 脚本可在其中运行的环境。 可以在 Windows PowerShell ISE 中打开新的 Windows PowerShell 选项卡以在本地计算机或远程计算机上创建单独的环境。 最多可同时打开八个 PowerShell 选项卡。
@@ -70,6 +71,7 @@ Windows PowerShell 选项卡是 Windows PowerShell 脚本可在其中运行的�
 
 ## 另请参阅
 [使用 Windows PowerShell ISE](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+
 
 
 <!--HONumber=May16_HO2-->

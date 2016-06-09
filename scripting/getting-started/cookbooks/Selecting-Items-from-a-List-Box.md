@@ -1,12 +1,15 @@
 ---
-title: 从列表框中选择项
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 327c7cc5-21d0-4ace-b151-aa1491d1d3c2
+title:  从列表框中选择项
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  327c7cc5-21d0-4ace-b151-aa1491d1d3c2
 ---
+
 # 从列表框中选择项
 使用 Windows PowerShell 3.0 和更高版本创建一个对话框，从而允许用户从列表框控件中选择项。
 
@@ -137,7 +140,7 @@ $listBox.Height = 80
 在下一部分中，你可以指定希望列表框向用户显示的值。
 
 > [!NOTE]
-> 此脚本创建的列表框只允许进行单选。 若要创建允许进行多选的列表框控件，请指定 **SelectionMode** 属性的值，类似于以下内容：`$listBox.SelectionMode = "MultiExtended"`。 有关详细信息，请参阅[多选列表框](Multiple-selection-List-Boxes.md).
+> 此脚本创建的列表框只允许进行单选。 若要创建允许进行多选的列表框控件，请指定 **SelectionMode** 属性的值，类似于以下内容：`$listBox.SelectionMode = "MultiExtended"`。 有关详细信息，请参阅[多选列表框](Multiple-selection-List-Boxes.md)。
 
 ```
 [void] $listBox.Items.Add("atl-dc-001")
@@ -173,9 +176,9 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 ```
 
 ## 另请参阅
-[脚本编写人员，你好：为什么这些 PowerShell GUI 示例不起作用呢？](http://go.microsoft.com/fwlink/?LinkId=506644)
-[GitHub：Dave Wyatt 的 WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-[Windows PowerShell 本周提示：从列表框中选择项](http://technet.microsoft.com/library/ff730949.aspx)
+[Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?](http://go.microsoft.com/fwlink/?LinkId=506644)（Hey Scripting Guy 博客：为什么这些 PowerShell GUI 示例不起作用？）
+[GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)（Dave Wyatt 的 WinFormsExampleUpdates）
+[Windows PowerShell Tip of the Week:  Selecting Items from a List Box](http://technet.microsoft.com/library/ff730949.aspx)（Windows PowerShell 每周提示：从列表框选择项）
 
 
 
