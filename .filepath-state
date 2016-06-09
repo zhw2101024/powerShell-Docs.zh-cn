@@ -800,9 +800,6 @@
   "29e73b1bfd8efea2b53299c52bf65117f7c535f5": [
     "scripting\\core-powershell\\ise\\How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md"
   ],
-  "43c545247a7b03002c0f4c5094eb1580288053bb": [
-    "scripting\\core-powershell\\ise\\How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md"
-  ],
   "1c1534bc37d0a53262caffdfa60400e1ff8d98e7": [
     "scripting\\core-powershell\\ise\\How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md"
   ],
@@ -812,9 +809,6 @@
   "64afa8599f29279798445a5694fe467143d29bec": [
     "scripting\\core-powershell\\ise\\Introducing-the-Windows-PowerShell-ISE.md"
   ],
-  "ab6031661fb71e27a09fbf5edae5e72c71e67389": [
-    "scripting\\core-powershell\\ise\\Introducing-the-Windows-PowerShell-ISE.md"
-  ],
   "750253273ca2b97085fef1de695d6011057d6846": [
     "scripting\\core-powershell\\ise\\ISE-Module.md"
   ],
@@ -822,9 +816,6 @@
     "scripting\\core-powershell\\ise\\ISE-Module.md"
   ],
   "df4fc6e4a501bc7cbeae83b6bf90f05544c6a6ac": [
-    "scripting\\core-powershell\\ise\\Keyboard-Shortcuts-for-the-Windows-PowerShell-ISE.md"
-  ],
-  "de9d86314ca576f0a9a4fcd465c916b5310be4e6": [
     "scripting\\core-powershell\\ise\\Keyboard-Shortcuts-for-the-Windows-PowerShell-ISE.md"
   ],
   "41c508e7aebc3501f29be7246ca817f95180ef2f": [
@@ -1074,9 +1065,6 @@
     "scripting\\PowerShell-Scripting.md"
   ],
   "a6581fe76bf29a0090f9dfa5ad41ec4fc7572998": [
-    "scripting\\setup\\Accessibility-in-Windows-PowerShell-ISE.md"
-  ],
-  "faabfc44164dc22fcc8c4cd75d4cccd1ea810edf": [
     "scripting\\setup\\Accessibility-in-Windows-PowerShell-ISE.md"
   ],
   "8a61e974e7f7ea479ecc447c2db91c677cd8931f": [
