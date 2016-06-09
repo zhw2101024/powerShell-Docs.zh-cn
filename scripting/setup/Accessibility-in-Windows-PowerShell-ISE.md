@@ -1,12 +1,15 @@
 ---
-title: Windows PowerShell ISE 中的辅助功能
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
+title:  Windows PowerShell ISE 中的辅助功能
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  a078f9d1-dd6b-4323-b16d-0622cd993aa8
 ---
+
 # Windows PowerShell ISE 中的辅助功能
 本主题介绍 Windows PowerShellÂ® 集成脚本环境 (ISE) 的辅助功能，也许对你有所帮助。
 
@@ -40,11 +43,11 @@ Windows PowerShell ISE 支持高对比度模式。 为方便有视觉障碍的�
 ### 移动脚本窗格和控制台窗格
 执行下列操作之一：
 
--   若要将脚本窗格移动到命令和输出窗格上方，请按 **CTRL+1**，或单击工具栏上的“显示脚本窗格顶部”图标，或单击“视图”菜单上的“显示脚本窗格顶部”.
+-   若要将脚本窗格移动到命令和输出窗格上方，请按 **CTRL+1**，或单击工具栏上的“显示脚本窗格顶部”图标，或单击“视图”菜单上的“显示脚本窗格顶部”。
 
--   若要将脚本窗格移动到控制台窗格的右侧，请按 **CTRL+2**，或单击工具栏上的“显示脚本窗格右侧”图标，或单击“视图”菜单上的“显示脚本窗格右侧”.
+-   若要将脚本窗格移动到控制台窗格的右侧，请按 **CTRL+2**，或单击工具栏上的“显示脚本窗格右侧”图标，或单击“视图”菜单上的“显示脚本窗格右侧”。
 
--   若要最大化脚本窗格，请按 **CTRL+3**，或单击工具栏上的“显示最大化脚本窗格”图标，或单击“视图”菜单上的“显示最大化脚本窗格”.
+-   若要最大化脚本窗格，请按 **CTRL+3**，或单击工具栏上的“显示最大化脚本窗格”图标，或单击“视图”菜单上的“显示最大化脚本窗格”。
 
 -   若要最大化控制台窗格并隐藏脚本窗格，请在选项卡行的最右侧边缘上单击“隐藏脚本窗格”图标，在“视图”菜单上单击以取消选择“显示脚本窗格”菜单选项。
 

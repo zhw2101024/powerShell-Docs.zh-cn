@@ -1,12 +1,15 @@
 ---
-title: 如何在 Windows PowerShell ISE 中使用控制台窗格
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 44d67705-87c7-4a69-a53e-6471fdebb757
+title:  如何在 Windows PowerShell ISE 中使用控制台窗格
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  44d67705-87c7-4a69-a53e-6471fdebb757
 ---
+
 # 如何在 Windows PowerShell ISE 中使用控制台窗格
 Windows PowerShellÂ® 集成脚本环境 (ISE) 的“控制台”窗格的运行方式和独立的 Windows PowerShell ISE 控制台窗口完全一样。
 
@@ -20,7 +23,7 @@ Windows PowerShellÂ® 集成脚本环境 (ISE) 的“控制台”窗格的运�
 
 -   将所选文本粘贴在当前光标位置。 单击工具栏上的“粘贴”按钮。
 
--   清除控制台窗格中的所有文本。 若要清除控制台窗格，你可以单击工具栏上的“清除控制台窗格”或运行 **Clear-Host** 命令或其别名 **cls**.
+-   清除控制台窗格中的所有文本。 若要清除控制台窗格，你可以单击工具栏上的“清除控制台窗格”或运行 **Clear-Host** 命令或其别名 **cls**。
 
 ## 另请参阅
 [使用 Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)

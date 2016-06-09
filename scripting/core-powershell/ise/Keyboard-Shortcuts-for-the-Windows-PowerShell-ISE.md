@@ -1,21 +1,24 @@
 ---
-title: Windows PowerShell ISE 的键盘快捷方式
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
+title:  Windows PowerShell ISE 的键盘快捷方式
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  8328b946-0f02-4ef4-ac28-2743a1b4043b
 ---
+
 # Windows PowerShell ISE 的键盘快捷方式
-使用以下键盘快捷方式在 Windows PowerShellÂ® 集成脚本环境 (ISE) 中执行操作。 Windows PowerShell ISE 可作为 Windows Server 和 Windows 客户端操作系统的一部分，但是也可作为 [Windows Management Framework 4.0 下载包](http://go.microsoft.com/fwlink/?LinkID=293881)的一部分安装在早期的 Windows 操作系统上.
+使用以下键盘快捷方式在 Windows PowerShellÂ® 集成脚本环境 (ISE) 中执行操作。 Windows PowerShell ISE 可作为 Windows Server 和 Windows 客户端操作系统的一部分，但是也可作为 [Windows Management Framework 4.0 下载包](http://go.microsoft.com/fwlink/?LinkID=293881)的一部分安装在早期的 Windows 操作系统上。
 
 ## 编辑文本的键盘快捷方式
 编辑文本时可以使用以下键盘快捷方式。
 
 |操作|键盘快捷方式|用于|
 |----------|----------------------|----------|
-|**帮助**|F1|脚本窗格“重要提示”：你可以指定 F1 帮助来自 Web 上的 TechNet 库或下载的帮助（请参阅“更新帮助”）。 若要选择，请单击“工具”、“选项”，然后在“常规设置”选项卡上，设置或清除“使用本地帮助内容，而不是联机内容”。|
+|**帮助**|F1|脚本窗格“重要提示”：你可以指定 F1 帮助来自 Web 上的 TechNet 库或下载的帮助（请参阅“更新帮助”）。**Tools** 若要选择，请单击“工具”、“选项”，然后在“常规设置”选项卡上，设置或清除“使用本地帮助内容，而不是联机内容”。|
 |**复制**|CTRL+C|脚本窗格、命令窗格、输出窗格|
 |**剪切**|CTRL+X|脚本窗格、命令窗格|
 |**展开或折叠大纲**|CTRL+M|脚本窗格|
