@@ -1,11 +1,26 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [scripting\getting-started\fundamental\Learning-Windows-PowerShell-Names.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/getting-started/fundamental/Learning-Windows-PowerShell-Names.md) | InSyncHandedBackSuccess | [Details](#bc504fbde14d0ba743accf644ee5114810afb609203)
 
 ## Item Details
+##### <a name='bc504fbde14d0ba743accf644ee5114810afb609203'></a> Source: [scripting\getting-started\fundamental\Learning-Windows-PowerShell-Names.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/getting-started/fundamental/Learning-Windows-PowerShell-Names.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [scripting\getting-started\fundamental\Learning-Windows-PowerShell-Names.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/44905a91a919fd48e9145c1f01254c8df321b55f/scripting/getting-started/fundamental/Learning-Windows-PowerShell-Names.md)
+* Handoff File: [Learning-Windows-PowerShell-Names.fc1b82ec398316e9fb38af6a070070e1e3773976.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/057ff303072e879baac3335a8806ac480687b64e/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/Learning-Windows-PowerShell-Names.fc1b82ec398316e9fb38af6a070070e1e3773976.zh-cn.xlf)
+* Handoff Datetime: 2016-05-12 23:21:01
+* Handoff Reason: Include
+* Archive File: [Learning-Windows-PowerShell-Names.fc1b82ec398316e9fb38af6a070070e1e3773976.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/cdb8d3274ece17fab438345d167e1c54de0813c4/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/Learning-Windows-PowerShell-Names.fc1b82ec398316e9fb38af6a070070e1e3773976.zh-cn.xlf)
+* Archive Datetime: 2016-05-17 13:25:46
+* Handback File: [Learning-Windows-PowerShell-Names.fc1b82ec398316e9fb38af6a070070e1e3773976.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/ce9de0b406c37b69a3faa595dafaf5bbc263866e/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/Learning-Windows-PowerShell-Names.fc1b82ec398316e9fb38af6a070070e1e3773976.zh-cn.xlf)
+* Handback Datetime: 2016-06-09 16:55:55
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
