@@ -1,12 +1,15 @@
 ---
-title: 学习 Windows PowerShell 名称
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
+title:  学习 Windows PowerShell 名称
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  b4d0fd22-8298-4ee6-82ae-9b6f2907c986
 ---
+
 # 学习 Windows PowerShell 名称
 学习命令和命令参数的名称是使用大多数命令行接口时重要的时间投入。 问题是模式非常少，因此学习的唯一方法是通过记住需要定期使用的每个命令和每个参数。
 
@@ -92,6 +95,6 @@ Windows PowerShell 具有一些名为“通用参数”的参数。 因为这些
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
