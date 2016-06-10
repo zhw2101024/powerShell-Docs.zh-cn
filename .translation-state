@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "dfa1b62e1f20808bf11ad8613e185e6ca56d76b0",
-  "LastTranslatedCommit": "44905a91a919fd48e9145c1f01254c8df321b55f",
+  "LastTranslatedCommit": "8ebf26393bc0594a42b337d14e8422a8d12f2762",
   "Items": {
     "81efeb79a70df604ef8c126c0ebd17b4f4711a44": {
       "FileHash": "81efeb79a70df604ef8c126c0ebd17b4f4711a44",
@@ -19450,14 +19450,14 @@
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
-      "TargetFileCommit": null,
-      "TargetFilePath": null,
-      "HandbackFilePath": null,
-      "HandbackFileCommit": null,
-      "HandbackDateTime": "0001-01-01T00:00:00",
+      "TargetFileCommit": "8ebf26393bc0594a42b337d14e8422a8d12f2762",
+      "TargetFilePath": "scripting\\core-powershell\\ise\\How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md",
+      "HandbackFilePath": "ol-handback\\PowerShell\\powerShell-Docs.zh-cn\\live\\How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.1d5273a3389d28903b210dd8461757538ccbbad2.zh-cn.xlf",
+      "HandbackFileCommit": "2f32d3004bdad700c70645b3516f439c83a5310b",
+      "HandbackDateTime": "2016-06-10T09:58:14.580041Z",
       "HandbackException": null,
       "HandbackFailureTimes": 0,
-      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "UpdatedDateTime": "2016-06-10T09:58:14.580041Z",
       "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-cn\\live\\archive\\How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.1d5273a3389d28903b210dd8461757538ccbbad2.zh-cn.xlf",
       "ArchiveFileCommit": "cdb8d3274ece17fab438345d167e1c54de0813c4",
       "ArchiveFileDateTime": "2016-05-17T13:25:46.764459Z",
