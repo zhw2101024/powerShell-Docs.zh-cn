@@ -42,7 +42,7 @@ configuration LCMConfig
 } 
 ```
 
-调用和运行配置来创建配置 MOF，与常规配置类似（有关创建配置 MOF 的信息，请参阅[编译配置](configurations#compiling-the-configuration)）。 与常规配置不同的是，不通过调用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet 来执行 LCM 配置。 而是通过调用 [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) cmdlet，将路径作为参数提供给配置 MOF。 执行配置后，可以通过调用 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) cmdlet 查看 LCM 的属性。
+调用和运行配置来创建配置 MOF，与常规配置类似（有关创建配置 MOF 的信息，请参阅[编译配置](configurations.md#compiling-the-configuration)）。 与常规配置不同的是，不通过调用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet 来执行 LCM 配置。 而是通过调用 [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) cmdlet，将路径作为参数提供给配置 MOF。 执行配置后，可以通过调用 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) cmdlet 查看 LCM 的属性。
 
 LCM 配置只能包含有限组资源的块。 在上面的示例中，调用的唯一资源名为 **Settings**。 其他可用资源有：
 
@@ -162,6 +162,6 @@ LCM 配置只能包含有限组资源的块。 在上面的示例中，调用的
 
 
 
-<!--HONumber=May16_HO3-->
+<!--HONumber=Jun16_HO1-->
 
 
