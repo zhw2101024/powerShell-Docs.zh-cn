@@ -5,9 +5,9 @@
  -------- | ----- 
  Total Files | 322
 [ Handoff Failed Files ](#handoff-failed-list)| 0
-[ Handoff Success Files ](#handoff-success-list)| 1
+[ Handoff Success Files ](#handoff-success-list)| 0
 [ Archive Failed Files ](#archive-failed-list)| 0
-[ Archive Success Files ](#archive-success-list)| 1
+[ Archive Success Files ](#archive-success-list)| 2
 [ Handback Failed Files ](#handback-failed-list)| 0
 [ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 74
 [ In Sync Handback Files ](#insync-handback-success-list)| 230
@@ -16,9 +16,6 @@
 ## <a name='handoff-failed-list'></a> Handoff Failed File List
 
 ## <a name='handoff-success-list'></a> Handoff Success File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [jea\README.md](https://github.com/PowerShell/powerShell-Docs/blob/60a4a3125347e0a1e5351573cb60f6ea2494e5bd/jea/README.md) | HandedOffSuccess | [Details](#f2c72fc2a66f59d78da643da9febb9e09ce7989e98)
 
 ## <a name='archive-failed-list'></a> Archive Failed File List
 
@@ -26,6 +23,7 @@
  Source File | Status | Details 
  ----------- | ------ | ------- 
  [jea\jea-guide.md](https://github.com/PowerShell/powerShell-Docs/blob/6c2bff0e95957095dc4638160cc7349714482d19/jea/jea-guide.md) | ArchivedSuccess | [Details](#b1bf871729b206fa95349c60a27787452f26e22097)
+ [jea\README.md](https://github.com/PowerShell/powerShell-Docs/blob/60a4a3125347e0a1e5351573cb60f6ea2494e5bd/jea/README.md) | ArchivedSuccess | [Details](#f2c72fc2a66f59d78da643da9febb9e09ce7989e98)
 
 ## <a name='handback-failed-list'></a> Handback Failed File List
 
@@ -464,8 +462,8 @@
 * Handoff File: [authoringResourceComposite.6d5d1e53e83e25cfc63e26078da390a4fa6737f2.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/6367fa76f3cf68dc33468856a338ee88c11ef4db/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/authoringResourceComposite.6d5d1e53e83e25cfc63e26078da390a4fa6737f2.zh-cn.xlf)
 * Handoff Datetime: 2016-06-07 18:32:24
 * Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
+* Archive File: [authoringResourceComposite.6d5d1e53e83e25cfc63e26078da390a4fa6737f2.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/be5e472dbcad7879cfd524db8af8db5fed4f853d/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/authoringResourceComposite.6d5d1e53e83e25cfc63e26078da390a4fa6737f2.zh-cn.xlf)
+* Archive Datetime: 2016-06-14 13:16:57
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Current Target File: [dsc\authoringResourceComposite.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/d4302d18d301c24e765ff80e65d9f255fd130eae/dsc/authoringResourceComposite.md)
@@ -494,8 +492,8 @@
 * Handoff File: [authoringResourceMofCS.0647b27b00ec52b2f524a2856e48bc7c29c0f867.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/6367fa76f3cf68dc33468856a338ee88c11ef4db/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/authoringResourceMofCS.0647b27b00ec52b2f524a2856e48bc7c29c0f867.zh-cn.xlf)
 * Handoff Datetime: 2016-06-07 18:32:24
 * Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
+* Archive File: [authoringResourceMofCS.0647b27b00ec52b2f524a2856e48bc7c29c0f867.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/be5e472dbcad7879cfd524db8af8db5fed4f853d/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/authoringResourceMofCS.0647b27b00ec52b2f524a2856e48bc7c29c0f867.zh-cn.xlf)
+* Archive Datetime: 2016-06-14 13:16:57
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Current Target File: [dsc\authoringResourceMofCS.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/58c6eca4b5d4990b1a4a121c77db7e8228289e60/dsc/authoringResourceMofCS.md)
@@ -1403,8 +1401,8 @@
 * Handoff File: [secureMOF.84bae90620632fc30568f4afa595e2b86e8aa6d1.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/6367fa76f3cf68dc33468856a338ee88c11ef4db/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/secureMOF.84bae90620632fc30568f4afa595e2b86e8aa6d1.zh-cn.xlf)
 * Handoff Datetime: 2016-06-07 18:32:24
 * Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
+* Archive File: [secureMOF.84bae90620632fc30568f4afa595e2b86e8aa6d1.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/be5e472dbcad7879cfd524db8af8db5fed4f853d/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/secureMOF.84bae90620632fc30568f4afa595e2b86e8aa6d1.zh-cn.xlf)
+* Archive Datetime: 2016-06-14 13:16:57
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Current Target File: [dsc\secureMOF.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/d4302d18d301c24e765ff80e65d9f255fd130eae/dsc/secureMOF.md)
@@ -1557,13 +1555,13 @@
 * [Back to Top](#report-top)
 
 ##### <a name='f2c72fc2a66f59d78da643da9febb9e09ce7989e98'></a> Source: [jea\README.md](https://github.com/PowerShell/powerShell-Docs/blob/60a4a3125347e0a1e5351573cb60f6ea2494e5bd/jea/README.md)
-* Status: HandedOffSuccess
+* Status: ArchivedSuccess
 * Target File: 
 * Handoff File: [README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/6367fa76f3cf68dc33468856a338ee88c11ef4db/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-cn.xlf)
 * Handoff Datetime: 2016-06-07 18:32:24
 * Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
+* Archive File: [README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/be5e472dbcad7879cfd524db8af8db5fed4f853d/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-cn.xlf)
+* Archive Datetime: 2016-06-14 13:16:57
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
