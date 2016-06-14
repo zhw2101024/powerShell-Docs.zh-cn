@@ -226,6 +226,7 @@ $ConfigData= @{
     }
 ```
 
+
 ## 配置脚本
 
 在配置脚本中，使用 `PsCredential` 参数确保凭据存储时间尽可能短。 运行提供的示例时，DSC 将提示你输入凭据，然后使用配置数据块中与目标节点相关联的 CertificateFile 加密 MOF 文件。 此代码示例将文件从受保护共享复制到用户。
@@ -444,6 +445,6 @@ Start-CredentialEncryptionExample
 
 
 
-<!--HONumber=May16_HO3-->
+<!--HONumber=Jun16_HO1-->
 
 
