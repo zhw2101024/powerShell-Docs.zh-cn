@@ -1,3 +1,14 @@
+---
+title:  Windows PowerShell Web 访问中的访问问题疑难解答
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 #  Windows PowerShell Web 访问中的访问问题疑难解答
 
 更新时间： 2013年 6 月 24日
@@ -27,7 +38,7 @@
 <td><p>失败可能是由于下列某个原因所至：</p>
 <ul>
 <li><p>允许用户访问计算机的授权规则或远程计算机上的特定会话配置并不存在。 Windows PowerShell Web 访问安全是严谨的；必须使用授权规则明确赋予用户访问远程计算机的权限。 有关创建授权规则的详细信息，请参阅本指南中的 <a href="https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx">Windows PowerShell Web 访问的授权规则和安全功能</a>。</p></li>
-<li><p>用户未获得访问目标计算机的权限。 这是由访问控制列表 (ACL) 来确定的。 有关详细信息，请参阅<a href="https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx">使用基于 Web 的 Windows PowerShell 控制台</a>或 <a href="https://msdn.microsoft.com/library/windows/desktop/ee706585.aspx">Windows PowerShell 团队博客中的“登录到 Windows PowerShell Web 访问”</a>.</p>
+<li><p>用户未获得访问目标计算机的权限。 这是由访问控制列表 (ACL) 来确定的。 有关详细信息，请参阅<a href="https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx">使用基于 Web 的 Windows PowerShell 控制台</a>中的“登录到 Windows PowerShell Web 访问”或 <a href="https://msdn.microsoft.com/library/windows/desktop/ee706585.aspx">Windows PowerShell Team Blog</a>（Windows PowerShell 团队博客）。</p>
 <ul>
 <li><p>可能无法在目标计算机上启用 Windows PowerShell 远程管理。 验证它是否已在用户尝试连接的计算机上启用。 有关详细信息，请参阅 Windows PowerShell 相关帮助主题中 <a href="https://technet.microsoft.com/library/dd315349.aspx">about_Remote_Requirements</a> 的“如何为进行远程处理而配置计算机”。</p></li>
 </ul></li>
@@ -37,17 +48,17 @@
 <td><p>当用户尝试在 Internet Explorer 窗口中登录到 Windows PowerShell Web 访问时，会向他们显示“内部服务器错误”<strong></strong>页面或 Internet Explorer 停止响应。 此问题特定于 Internet Explorer。</p></td>
 <td><p>对于已使用包含中文字符的域名登录的用户或网关服务器名称中包含一个或多个中文字符时会出现此问题。 若要解决此问题，用户应<a href="http://ie.microsoft.com/testdrive/info/downloads/Default.html">安装并运行 Internet Explorer 10</a>，然后执行以下步骤。</p>
 <ol>
-<li><p>将 Internet Explorer“文档模式”<strong></strong>设置更改为“IE10 标准” <strong></strong>.</p>
+<li><p>将 Internet Explorer“文档模式”<strong></strong>设置更改为“IE10 标准”<strong></strong>。</p>
 <ol>
 <li><p>按 <strong>F12</strong> 可打开“开发人员工具”控制台。</p></li>
-<li><p>在 Internet Explorer 10 中，单击“浏览器模式”<strong></strong>，然后选择“Internet Explorer 10”<strong></strong>.</p></li>
-<li><p>单击“文档模式”<strong></strong>，然后单击“IE10 标准”<strong></strong>.</p></li>
+<li><p>在 Internet Explorer 10 中，单击“浏览器模式”<strong></strong>，然后选择“Internet Explorer 10”<strong></strong>。</p></li>
+<li><p>单击“文档模式”<strong></strong>，然后单击“IE10 标准”<strong></strong>。</p></li>
 <li><p>再次按 <strong>F12</strong> 可关闭“开发人员工具”控制台。</p></li>
 </ol></li>
 <li><p>禁用自动代理配置。</p>
 <ol>
-<li><p>在 Internet Explorer 10 中，单击“工具”<strong></strong>，然后单击“Internet 选项”<strong></strong>.</p></li>
-<li><p>在“Internet 选项”<strong></strong>对话框中的“连接”<strong></strong>选项卡上，单击“LAN 设置”<strong></strong>.</p></li>
+<li><p>在 Internet Explorer 10 中，单击“工具”<strong></strong>，然后单击“Internet 选项”<strong></strong>。</p></li>
+<li><p>在“Internet 选项”<strong></strong>对话框中的“连接”<strong></strong>选项卡上，单击“LAN 设置”<strong></strong>。</p></li>
 <li><p>清除“自动检测设置”<strong></strong>复选框。 单击“确定”<strong></strong>，然后再次单击“确定”<strong></strong>可关闭“Internet 选项”<strong></strong>对话框。</p></li>
 </ol></li>
 </ol></td>
@@ -116,7 +127,7 @@
 </tr>
 <tr class="even">
 <td><p>无法登录到已在授权规则中指定为带有域的 IPv6 地址的目标计算机。</p></td>
-<td><p>授权规则不支持域名形式的 IPv6 地址。 若要使用 IPv6 地址指定目标计算机，请在授权规则中使用原始 IPv6 地址（包含冒号）。 支持域和数值（带有冒号）IPv6 地址作为 Windows PowerShell Web 访问登录页面而非授权规则中的目标计算机名称。 有关 IPv6 地址的详细信息，请参阅 <a href="https://technet.microsoft.com/library/cc781672.aspx">IPv6 的工作原理</a>.</p></td>
+<td><p>授权规则不支持域名形式的 IPv6 地址。 若要使用 IPv6 地址指定目标计算机，请在授权规则中使用原始 IPv6 地址（包含冒号）。 支持域和数值（带有冒号）IPv6 地址作为 Windows PowerShell Web 访问登录页面而非授权规则中的目标计算机名称。 有关 IPv6 地址的详细信息，请参阅 <a href="https://technet.microsoft.com/library/cc781672.aspx">How IPv6 Works</a>（IPv6 的工作原理）。</p></td>
 </tr>
 </tbody>
 </table>
@@ -133,23 +144,19 @@
 <span>显示：</span>继承内容受保护
 
 <span class="stdr-votetitle">此页面是否有所帮助？</span>
-是
-否
+是 否
 
 更多反馈？
 
-<span class="stdr-count"><span class="stdr-charcnt">剩余 1500</span> 个字符</span>
-提交
-跳过此部分
+<span class="stdr-count"><span class="stdr-charcnt">剩余 1500</span> 个字符</span> 提交 跳过此部分
 
-<span class="stdr-thankyou">感谢您参与！</span> <span class="stdr-appreciate">我们非常感谢您的反馈意见。</span>
+<span class="stdr-thankyou">谢谢！</span> <span class="stdr-appreciate">我们非常感谢你的反馈意见。</span>
 
 [管理你的个人资料](https://social.technet.microsoft.com/profile)
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> 站点反馈</a>
-站点反馈
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> 站点反馈</a>站点反馈
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 
@@ -159,11 +166,11 @@
 
 <span> 是<span> </span></span> <span> 否<span> </span></span>
 
-你喜欢此页面设计吗？
+你喜欢页面设计吗？
 
 <span> 是<span> </span></span> <span> 否<span> </span></span>
 
-告诉我们详细信息
+告诉我们更多内容
 
 -   [快讯](https://technet.microsoft.com/cc543196.aspx)
 -   |
@@ -180,8 +187,9 @@
 
 © 2016 Microsoft
 
-链接到此网站或从中引用的第三方脚本和代码由拥有此类代码的第三方（而非 Microsoft）授权给你。 请参阅 ASP.NET Ajax CDN 使用条款 – http://www.asp.net/ajaxlibrary/CDN.ashx。
+链接到此站点或从中引用的第三方脚本或代码由拥有此类代码的第三方（而非 Microsoft）授权给你。 请参阅 ASP.NET Ajax CDN 使用条款 – http://www.asp.net/ajaxlibrary/CDN.ashx。
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
+
 
 
 <!--HONumber=May16_HO2-->

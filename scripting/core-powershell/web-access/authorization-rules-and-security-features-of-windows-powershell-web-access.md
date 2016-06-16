@@ -1,3 +1,14 @@
+---
+title:  Windows PowerShell Web 访问的授权规则和安全功能
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Windows PowerShell Web 访问的授权规则和安全功能
 
 更新时间： 2013年 6 月 24日
@@ -11,7 +22,7 @@
 -   [会话管理](#BKMK_sesmgmt)
 
 
-安装 Windows PowerShell Web 访问和配置网关后，用户可在浏览器中打开登录页面，但他们无法登录，直到 Windows PowerShell Web 访问管理员显式授予用户访问权限。 通过使用下表所述的一组 Windows PowerShell cmdlet 来管理 Windows PowerShell Web 访问的访问控制。 没有相当的 GUI 可用于添加或管理授权规则。 有关 Windows PowerShell Web 访问 cmdlet 的更多详细信息，请参阅 cmdlet 参考主题，[Windows PowerShell Web 访问 Cmdlet](https://technet.microsoft.com/library/hh918342.aspx).
+安装 Windows PowerShell Web 访问和配置网关后，用户可在浏览器中打开登录页面，但他们无法登录，直到 Windows PowerShell Web 访问管理员显式授予用户访问权限。 Windows PowerShell Web 访问的访问控制通过使用下表所述的 Windows PowerShell cmdlet 集进行管理。 没有相当的 GUI 可用于添加或管理授权规则。 有关 Windows PowerShell Web 访问 cmdlet 的更多详细信息，请参阅 cmdlet 参考主题 [Windows PowerShell Web 访问 Cmdlet](https://technet.microsoft.com/library/hh918342.aspx)。
 
 管理员可为 Windows PowerShell Web 访问定义 0-*n* 条身份验证规则。 默认的安全性较为严格，而非宽松；零条身份验证规则意味着无用户可访问任何内容。
 
@@ -128,7 +139,7 @@ Windows PowerShell Web 访问安全模型在基于 Web 控制台的最终用户�
 <td><p>Web 服务器 (IIS) 安全功能，如客户端证书身份验证</p></td>
 <td><p>Windows PowerShell Web 访问用户必须始终提供用户名和密码，以对其在网关上的帐户进行身份验证。 但是，Windows PowerShell Web 访问管理员还可打开或关闭可选的客户端证书身份验证（参阅<a href="https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx">安装和使用 Windows PowerShell Web 访问</a>中的“使用 IIS Manager 在现有网站中配置网关”的步骤 10）。 可选的客户端证书功能要求最终用户除拥有其用户名和密码外，还须持有有效的客户端证书，这是 Web 服务器 (IIS) 配置的一部分。 当启用客户端证书层时，Windows PowerShell Web 访问登录页面将提示用户提供有效的证书，然后再评估用户的登录凭据。 客户端证书身份验证程序自动检查客户端证书。</p>
 <p>如果找不到有效的证书，Windows PowerShell Web 访问会通知用户，以便用户提供证书。 如果找到有效的证书，Windows PowerShell Web 访问将为用户打开登录页面，以提供用户名和密码。</p>
-<p>这是 Web 服务器 (IIS) 提供其他安全设置的示例之一。 有关其他 IIS 安全功能的详细信息，请参阅<a href="https://technet.microsoft.com/library/cc731278(ws.10).aspx">配置 Web 服务器安全 (IIS 7)</a>.</p></td>
+<p>这是 Web 服务器 (IIS) 提供其他安全设置的示例之一。 有关其他 IIS 安全功能的详细信息，请参阅<a href="https://technet.microsoft.com/library/cc731278(ws.10).aspx">配置 Web 服务器安全性 (IIS 7)</a>。</p></td>
 </tr>
 <tr class="even">
 <td><p>2</p></td>
@@ -185,27 +196,27 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即是星号 ( \* )
 
 #### 添加受限的授权规则
 
-1.  使用提升的用户权限执行以下操作之一打开 Windows PowerShell 会话。
+1.  使用提升的用户权限执行以下操作之一以打开 Windows PowerShell 会话。
 
-    -   在 Windows 桌面上，右键单击任务栏上的“Windows PowerShell”，然后单击“以管理员身份运行”.
+    -   在 Windows 桌面上，右键单击任务栏上的**Windows PowerShell**，然后单击**以管理员身份运行**。
 
-    -   在 Windows**“开始”**屏幕上，右键单击 **Windows PowerShell**，然后单击**“以管理员身份运行”**.
+    -   在 Windows **开始**屏幕上，右键单击**Windows PowerShell**，然后单击**以管理员身份运行**。
 
-2.  <span class="label">使用会话配置限制用户访问的可选步骤：</span>验证要在已存在规则中使用的会话配置。 如果尚未创建这些配置，则使用 MSDN 上用于在 [about\_Session\_Configuration\_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) 中创建会话配置的说明。
+2.  <span class="label">使用会话配置限制用户访问的可选步骤：</span>验证要在规则中使用的会话配置已存在。 如果尚未创建这些配置，则使用 MSDN 上 [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) 中用于创建会话配置的说明。
 
-3.  键入以下命令，然后按 **Enter**.
+3.  键入以下命令，然后按**Enter**。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_1079478f-cd51-4d35-8022-4b532a9d57a4'); "Copy to clipboard.")
 
         Add-PswaAuthorizationRule –UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
-    本授权规则允许特定用户通过他们通常访问的网络访问一台计算机，以及可让特定用户拥有对满足用户常见的脚本和 cmdlet 需求的特定会话配置的权限。 在以下示例中，<span class="code">Contoso</span> 域中名为 <span class="code">JSmith</span> 的用户获得访问权限，以管理计算机 <span class="code">Contoso\_214</span>，并使用名为 <span class="code">NewAdminsOnly 的会话配置</span>.
+    本授权规则允许特定用户通过他们通常访问的网络访问一台计算机，以及可让特定用户拥有对满足用户常见的脚本和 cmdlet 需求的特定会话配置的权限。 在以下示例中，<span class="code">Contoso</span> 域中名为 <span class="code">JSmith</span> 的用户获得访问权限，以管理计算机 <span class="code">Contoso\_214</span>，并使用名为 <span class="code">NewAdminsOnly</span> 的会话配置。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_4e760377-e401-4ef4-988f-7a0aec1b2a90'); "Copy to clipboard.")
 
         Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  确保通过运行 **Get-PswaAuthorizationRule** cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer\_name&gt; 创建了该规则。 例如，**Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso\_214**.
+4.  确保通过运行 **Get-PswaAuthorizationRule** cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer\_name&gt; 创建了该规则。 例如，**Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso\_214**。
 
 #### 删除授权规则
 
@@ -248,9 +259,9 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即是星号 ( \* )
 
 -   管理员创建名为 **PswaEndpoint** 的终结点（其中带有受限的运行空间），并希望限制特定用户的访问权限。 管理员创建一组名为 **Level1Support** 的用户，并定义以下规则：**Level1Support,\*,PswaEndpoint**。 规则可让 **Level1Support** 组中的用户访问所有带有 **PswaEndpoint** 配置的计算机。 类似地，可限制对特定计算机组合的访问权限。
 
--   有些管理员为某些用户提供的访问权限要比其他用户多。 例如，管理员创建两个用户组，分别是 **Admins** 和 **BasicSupport**。 管理员还创建名为 **PswaEndpoint** 的终结点（其中带有受限的运行空间），并定义以下两条规则：**Admins,\*,\*** 和 **BasicSupport,\*,PswaEndpoint**。 第一条规则为 **Admin** 组中的所有用户提供访问所有计算机的权限，第二条规则为 **BasicSupport** 组中的所有用户仅提供访问那些带有 **PswaEndpoint** 的计算机的权限.
+-   有些管理员为某些用户提供的访问权限要比其他用户多。 例如，管理员创建两个用户组，分别是 **Admins** 和 **BasicSupport**。 管理员还创建名为 **PswaEndpoint** 的终结点（其中带有受限的运行空间），并定义以下两条规则：**Admins,\*,\*** 和 **BasicSupport,\*,PswaEndpoint**。 第一条规则为**Admin**组中的所有用户提供访问所有计算机的权限，第二条规则为**BasicSupport**组中的所有用户仅提供访问那些带有**PswaEndpoint**的计算机的权限。
 
--   管理员已设置专用测试环境，希望可让所有授权的网络用户通过他们经常访问的网络访问所有计算机，并持有对所有他们经常访问的会话配置的访问权限。 因为这是专用测试环境，管理员创建了不安全的授权规则。 管理员运行的 cmdlet <span class="code">Add-PswaAuthorizationRule \* \* \*</span>，使用通配符 **\*** 来表示所有用户、所有计算机和所有配置。 此规则与以下项等效：<span class="code">Add-PswaAuthorizationRule –UserName \* -ComputerName \* -ConfigurationName \*</span>.
+-   管理员已设置专用测试环境，希望可让所有授权的网络用户通过他们经常访问的网络访问所有计算机，并持有对所有他们经常访问的会话配置的访问权限。 因为这是专用测试环境，管理员创建了不安全的授权规则。 管理员运行的 cmdlet <span class="code">Add-PswaAuthorizationRule \* \* \*</span>，使用通配符 **\*** 来表示所有用户、所有计算机和所有配置。 此规则与以下项等效：<span class="code">Add-PswaAuthorizationRule –UserName \* -ComputerName \* -ConfigurationName \*</span>。
 
     <table>
     <colgroup>
@@ -274,7 +285,7 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即是星号 ( \* )
 
         Add-PswaAuthorizationRule –userName PswaServer\chrisLocal –computerName srv1.contoso.com –configurationName Microsoft.PowerShell
 
-    上述规则示例会在网关服务器上对 Chris 进行身份验证，然后授权他可以访问 *srv1*。 在登录页面上，Chris 必须在“可选连接设置”区域 (*contoso\\chris*) 中提供另一组凭据。 网关服务器使用其他组凭据在目标计算机 *srv1.contoso.com* 上对其进行身份验证.
+    上述规则示例会在网关服务器上对 Chris 进行身份验证，然后授权他可以访问 *srv1*。 在登录页面上，Chris 必须在“可选连接设置”区域 (*contoso\\chris*) 中提供另一组凭据。 网关服务器使用一组额外的凭据在目标计算机*srv1.contoso.com*上对其进行身份验证。
 
     在上述情景中，Windows PowerShell Web 访问仅在以下操作已成功且至少一个授权规则允许使用以下操作之后才会建立到目标计算机的成功连接。
 
@@ -293,7 +304,7 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即是星号 ( \* )
     </thead>
     <tbody>
     <tr class="odd">
-    <td><p>如果网关和目标计算机位于不同的工作组或域中，则必须在两个工作组计算机之间、两个域之间或工作组和域之间建立信任关系。 不能使用 Windows PowerShell Web 访问授权规则 cmdlet 配置此关系。 授权规则不会定义计算机之间的信任关系，它们仅可授权用户连接到特定目标计算机和会话配置。 有关如何配置不同域之间信任关系的详细信息，请参阅<a href="https://technet.microsoft.com/library/cc794775.aspx">创建域和林信任</a>。 有关如何向受信任主机列表中添加工作组计算机的详细信息，请参阅<a href="https://technet.microsoft.com/library/dd759202.aspx">使用服务器管理器进行远程管理</a>.</p></td>
+    <td><p>如果网关和目标计算机位于不同的工作组或域中，则必须在两个工作组计算机之间、两个域之间或工作组和域之间建立信任关系。 不能使用 Windows PowerShell Web 访问授权规则 cmdlet 配置此关系。 授权规则不会定义计算机之间的信任关系，它们仅可授权用户连接到特定目标计算机和会话配置。 有关如何配置不同域之间信任关系的详细信息，请参阅<a href="https://technet.microsoft.com/library/cc794775.aspx">创建域和林信任</a>。 有关如何向受信任主机列表中添加工作组计算机的详细信息，请参阅<a href="https://technet.microsoft.com/library/dd759202.aspx">使用服务器管理器进行远程管理</a>。</p></td>
     </tr>
     </tbody>
     </table>
@@ -357,30 +368,26 @@ Windows PowerShell Web 访问会话超时。 在 Windows Server 2012 上运行�
 
 ------------------------------------------------------------------------
 
-[安装和使用 Windows PowerShell Web 访问](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
+[安装和使用 Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
 [about\_Session\_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 [Windows PowerShell Web 访问 Cmdlet](https://technet.microsoft.com/library/hh918342.aspx)
 
 <span>显示：</span>继承内容受保护
 
 <span class="stdr-votetitle">此页面是否有所帮助？</span>
-是
-否
+是 否
 
 更多反馈？
 
-<span class="stdr-count"><span class="stdr-charcnt">剩余 1500</span> 个字符</span>
-提交
-跳过此部分
+<span class="stdr-count"><span class="stdr-charcnt">剩余 1500</span> 个字符</span> 提交 跳过此部分
 
-<span class="stdr-thankyou">感谢您参与！</span> <span class="stdr-appreciate">我们非常感谢您的反馈意见。</span>
+<span class="stdr-thankyou">谢谢！</span> <span class="stdr-appreciate">我们非常感谢你的反馈意见。</span>
 
 [管理你的个人资料](https://social.technet.microsoft.com/profile)
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> 站点反馈</a>
-站点反馈
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> 站点反馈</a>站点反馈
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 
@@ -390,11 +397,11 @@ Windows PowerShell Web 访问会话超时。 在 Windows Server 2012 上运行�
 
 <span> 是<span> </span></span> <span> 否<span> </span></span>
 
-你喜欢此页面设计吗？
+你喜欢页面设计吗？
 
 <span> 是<span> </span></span> <span> 否<span> </span></span>
 
-告诉我们详细信息
+告诉我们更多内容
 
 -   [快讯](https://technet.microsoft.com/cc543196.aspx)
 -   |
@@ -411,8 +418,9 @@ Windows PowerShell Web 访问会话超时。 在 Windows Server 2012 上运行�
 
 © 2016 Microsoft
 
-链接到此网站或从中引用的第三方脚本和代码由拥有此类代码的第三方（而非 Microsoft）授权给你。 请参阅 ASP.NET Ajax CDN 使用条款 – http://www.asp.net/ajaxlibrary/CDN.ashx。
+链接到此站点或从中引用的第三方脚本或代码由拥有此类代码的第三方（而非 Microsoft）授权给你。 请参阅 ASP.NET Ajax CDN 使用条款 – http://www.asp.net/ajaxlibrary/CDN.ashx。
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
+
 
 
 <!--HONumber=May16_HO2-->

@@ -1,3 +1,14 @@
+---
+title:  PowerShell 的新增功能
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 # PowerShell 的新增功能
 Windows PowerShell® 5.0 包括了重要的新功能，这些功能可扩展其用途、提高其可用性，并使你能够更轻松、全面地控制和管理基于 Windows 的环境。
 
@@ -16,6 +27,7 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 
 -   New features in Windows PowerShell 3.0
 -->
+
 
 
 <!--HONumber=May16_HO2-->

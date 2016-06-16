@@ -1,19 +1,22 @@
 ---
-title: Windows PowerShell ISE 中的新增功能
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
+title:  PowerShell 50 ISE 中的新增功能
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  38648d47-7c27-4b37-a40e-ad29948519c2
 ---
+
 # Windows PowerShell ISE 中的新增功能
 本主题介绍已在 Windows PowerShellÂ® 集成脚本环境 (ISE) 的各版本中引入的新增功能和更新功能。
 
 ## <a name="overview"></a>功能描述
 Windows PowerShell ISE 是一款主机应用程序，让你可以在直观的图形环境中编写、运行和测试脚本与模块。 其语法着色、Tab 补齐、可视调试、Unicode 遵从以及上下文相关帮助等主要功能可为您提供丰富的脚本编写体验。
 
-有关 Windows PowerShell ISE 的概述，请参阅 [Windows PowerShell 集成脚本环境概述](https://technet.microsoft.com/en-us/library/3c1892c2-bf84-4cb6-af26-1f453be9e671).
+有关 Windows PowerShell ISE 的概述，请参阅 [Windows PowerShell 集成脚本环境概述](https://technet.microsoft.com/en-us/library/3c1892c2-bf84-4cb6-af26-1f453be9e671)。
 
 ## <a name="versions"></a>Windows PowerShell ISE 中的新增功能和更改功能
 下表列出了 Windows PowerShell 中此版本的 Windows PowerShell ISE 的新增功能和更改功能。
@@ -55,12 +58,12 @@ Intellisense 是一个自动完成帮助功能，是 Windows PowerShell ISE 的�
 
 **工作原理的不同之处是什么？**
 
-若要在 Windows PowerShell 3.0 或更高版本中使用代码段，在“编辑”菜单上，单击“启动代码段”，或按“Ctrl\-J”.
+若要在 Windows PowerShell 3.0 或更高版本中使用代码段，请在**编辑**菜单上，单击**启动代码段**，或按**Ctrl\-J**。
 
 ### <a name="BKMK_AddOnTools"></a>附加工具
 **在 PowerShell 3.0 中添加**
 
-Windows PowerShell ISE 现在支持附加工具，这些工具是通过使用对象模型添加的 Windows Presentation Foundation (WPF) 控件。 外接程序工具可以在控制台窗格中垂直或水平显示。 窗格中的多个外接程序工具显示为选项卡式控件。 你还可以添加或删除由 Microsoft 以外的参与方创建的外接程序工具。 有关如何导入或删除附加工具的详细信息，请参阅 [Windows PowerShell ISE 操作](http://technet.microsoft.com/library/cc732148.aspx).
+Windows PowerShell ISE 现在支持附加工具，这些工具是通过使用对象模型添加的 Windows Presentation Foundation (WPF) 控件。 外接程序工具可以在控制台窗格中垂直或水平显示。 窗格中的多个外接程序工具显示为选项卡式控件。 你还可以添加或删除由 Microsoft 以外的参与方创建的外接程序工具。 有关如何导入或删除外接程序工具的详细信息，请参阅 [Windows PowerShell ISE 操作](http://technet.microsoft.com/library/cc732148.aspx)。
 
 **这一更改增添了什么价值？**
 
@@ -77,7 +80,7 @@ Windows PowerShell ISE 3.0 版及更高版本附带**命令**附加工具。 **�
 
 Windows PowerShell ISE 每隔两分钟在单独的位置上自动保存你打开的脚本。  如果 Windows PowerShell ISE 停止工作或操作系统重新启动，则重新启动 Windows PowerShell ISE 后，它会恢复上次会话中打开的脚本（即使你未保存这些脚本）。
 
-要更改自动保存间隔，可在控制台窗格中运行下面的命令：**$psise.Options.AutoSaveMinuteInterval**.
+要更改自动保存间隔，可在控制台窗格中运行下面的命令：**$psise.Options.AutoSaveMinuteInterval**。
 
 **这一更改增添了什么价值？**
 
@@ -92,7 +95,7 @@ Windows PowerShell ISE 2.0 在发生意外重启时不会自动保存脚本。
 
 Windows PowerShell ISE 现在具有最近使用过的文件列表。 在 Windows PowerShell ISE 中打开文件时，文件会添加到“文件”菜单上的最近使用列表中。
 
-若要更改最近使用列表中的文件默认数量，在控制台窗格中运行以下命令：**$psise.Options.MruCount**.
+若要更改最近使用列表中的文件默认数量，在控制台窗格中运行以下命令：**$psise.Options.MruCount**。
 
 **这一更改增添了什么价值？**
 
@@ -148,7 +151,7 @@ Windows PowerShell ISE 2.0 具有单独的命令和输出窗格。
 
 -   *-Help*：显示帮助窗口
 
--   *\-mta*在多线程的单元模式下启动 Windows PowerShell ISE。 Windows PowerShell ISE 的默认操作模式是单线程的单元模式，或 *\-sta*.
+-   *\-mta*在多线程的单元模式下启动 Windows PowerShell ISE。 Windows PowerShell ISE 的默认操作模式是单线程的单元模式，或*\-sta*。
 
 **这一更改增添了什么价值？**
 
@@ -167,7 +170,7 @@ Windows PowerShell ISE 2.0 不识别这些命令行开关。
 
 -   **大括号匹配** Windows PowerShell ISE 包括大括号匹配和突出显示，并可以通过以下方式使用：（例如，如果已选择左大括号，则可使用 **Go to Match** 命令或 **Ctrl \+ ]** 定位右大括号）。
 
--   **大纲视图** 脚本窗格支持大纲显示，允许通过单击左边距中的 (+) 或 (-) 来实现代码段的折叠或展开。 你可以使用大括号或 **#region** 和 **#endregion** 标记来标记可折叠段的开头或末尾。 若要展开或折叠所有区域，请按 **Ctrl \+ M**.
+-   **大纲视图** 脚本窗格支持大纲显示，允许通过单击左边距中的 (+) 或 (-) 来实现代码段的折叠或展开。 你可以使用大括号或 **#region** 和 **#endregion** 标记来标记可折叠段的开头或末尾。 若要展开或折叠所有区域，请按 **Ctrl+M**。
 
 -   **拖放文本编辑**Windows PowerShell ISE 现在支持拖放文本编辑。 可以选择任何文本块，并通过将该文本拖动到编辑器或控制台中的另一个位置来移动文本。 如果拖动所选文本时按住 Ctrl 键不放，则释放鼠标按钮时，文本便会复制到新位置。 在此版本的 Windows PowerShell ISE 以及以前版本的 Windows PowerShell ISE 中，当您将文件拖放到 Windows PowerShell ISE 中，Windows PowerShell ISE 会打开该文件。
 
@@ -177,7 +180,7 @@ Windows PowerShell ISE 2.0 不识别这些命令行开关。
 
 -   **富文本复制和粘贴** 在 Windows PowerShell ISE 中将内容复制到剪贴板时，会保留原选定内容的字体、大小和颜色信息。
 
--   **块选择** 你可以通过在用鼠标选定脚本窗格中文本的同时按住 ALT 键，或通过按 **Alt\+Shift\+箭头**键来选定文本块.
+-   **块选择** 你可以通过在用鼠标选定脚本窗格中文本的同时按住 ALT 键，或通过按 **Alt+Shift+箭头**键来选定文本块。
 
 **这一更改增添了什么价值？**
 
@@ -190,7 +193,7 @@ Windows PowerShell ISE 2.0 中不具有这些编辑增强功能。
 ### <a name="BKMK_NewHelpViewer"></a>新的帮助查看器窗口
 **在 PowerShell 3.0 中添加**
 
-当你将光标置于某个 cmdlet 中，或突出显示某个 cmdlet 的一部分时，按 **F1** 会打开新的帮助查看器，其中显示了有关突出显示的 cmdlet 的上下文相关帮助。 要显示 Windows PowerShell 的“关于”帮助，可在控制台窗格中键入“运算符”，然后按 **F1**.
+当你将光标置于某个 cmdlet 中，或突出显示某个 cmdlet 的一部分时，按 **F1** 会打开新的帮助查看器，其中显示了有关突出显示的 cmdlet 的上下文相关帮助。 要显示 Windows PowerShell 的“关于”帮助，可在控制台窗格中键入**operators**，然后按**F1**。
 
 使用此功能之前，必须先从 Microsoft 网站下载最新版本的 Windows PowerShell 帮助主题。 当你以管理员身份运行 Windows PowerShell ISE 时，下载“帮助”主题的最简单方法是在控制台窗格中运行 **Update\-Help** cmdlet。
 
@@ -225,6 +228,7 @@ Show\-Command 是新的 Windows PowerShell ISE 3.0。
 -   [TechNet Wiki 上的 ISE](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
 
 -   [脚本中心](http://technet.microsoft.com/scriptcenter/default)
+
 
 
 <!--HONumber=May16_HO2-->

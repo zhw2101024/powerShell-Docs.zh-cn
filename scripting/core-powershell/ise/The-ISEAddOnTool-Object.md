@@ -1,12 +1,15 @@
 ---
-title: ISEAddOnTool 对象
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3
+title:  ISEAddOnTool 对象
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3
 ---
+
 # ISEAddOnTool 对象
   **ISEAddonTool** 对象表示已安装的可提供 Windows PowerShell ISE 附加功能的附加设备工具。 例如，“命令”工具，你可以通过单击“查看”，然后单击“显示命令附加设备”进行显示。 然后，你可以通过操作各种可用 **ISEAddOnTool** 对象来访问此工具。
 
@@ -165,6 +168,7 @@ Commands
  [Windows PowerShell ISE 脚本对象模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
  [Windows PowerShell ISE 对象模型参考](Windows-PowerShell-ISE-Object-Model-Reference.md)
  [ISE 对象模型层次结构](The-ISE-Object-Model-Hierarchy.md)
+
 
 
 <!--HONumber=May16_HO2-->

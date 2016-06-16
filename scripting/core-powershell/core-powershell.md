@@ -1,3 +1,14 @@
+---
+title:  核心 PowerShell
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 #  核心 PowerShell
 本部分包含适用于 PowerShell 的所有参考材料和深入指南。  
 本节包括：
@@ -10,6 +21,7 @@
 -  PowerShell 工作流指南[](workflows-guide.md)
 -  PowerShell Web 访问指南[](web-access.md)
 -  PowerShell 术语表[](../Windows-PowerShell-Glossary.md)
+
 
 
 <!--HONumber=May16_HO2-->
