@@ -23,9 +23,6 @@
   "91d35f9209f8ac3132c3715795661c33e376dfff": [
     "dsc\\authoringResourceMofCS.md"
   ],
-  "c9dbaed88eb4aec3c745686b466b04a04b708979": [
-    "dsc\\authoringResourceMofCS.md"
-  ],
   "be2141330dda803a22fdce6d65a1e379adf14fed": [
     "dsc\\authoringResourceMofDesigner.md"
   ],
@@ -749,9 +746,6 @@
   "897702d56a14657881121890f2283f50bdc2d517": [
     "scripting\\core-powershell\\core-powershell.md"
   ],
-  "65eaf56239163e2061dd65e0887d71ac0d481b82": [
-    "scripting\\core-powershell\\core-powershell.md"
-  ],
   "8af4de973a95352fd41d2bb2823b9382899ef5bf": [
     "scripting\\core-powershell\\ise\\How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md"
   ],
@@ -800,13 +794,7 @@
   "44b218200e4207fba059ce63adabec924fe6eb1d": [
     "scripting\\core-powershell\\ise\\The-ISEAddOnTool-Object.md"
   ],
-  "3bddc2c5e6e45f880adfbffdfd29d3db861f6188": [
-    "scripting\\core-powershell\\ise\\The-ISEAddOnTool-Object.md"
-  ],
   "4812092dea24fa61245af7e06d1c5924ec812218": [
-    "scripting\\core-powershell\\ise\\The-ISEEditor-Object.md"
-  ],
-  "6492bfc588249a5b2d3b8d14cd197ed1caafd1b2": [
     "scripting\\core-powershell\\ise\\The-ISEEditor-Object.md"
   ],
   "c334a38d6686be45101f4569f38411e9703c8fea": [
@@ -834,9 +822,6 @@
     "scripting\\core-powershell\\ise\\The-ISE-Object-Model-Hierarchy.md"
   ],
   "272749d487a59ccf5eb30352dc902591228746f3": [
-    "scripting\\core-powershell\\ise\\The-ISEOptions-Object.md"
-  ],
-  "63934e7c215939d55afddabfb993a48494df045c": [
     "scripting\\core-powershell\\ise\\The-ISEOptions-Object.md"
   ],
   "1d899709f3a0caa2c957fc8b84f00eeb597a47fa": [
@@ -914,16 +899,10 @@
   "ed586e55f4533ce5be7c68564e5cc537fed05016": [
     "scripting\\core-powershell\\web-access\\authorization-rules-and-security-features-of-windows-powershell-web-access.md"
   ],
-  "aa7280313d0f08abaa9ea02f3b2ce15c3ff88fc8": [
-    "scripting\\core-powershell\\web-access\\authorization-rules-and-security-features-of-windows-powershell-web-access.md"
-  ],
   "d2f78148402f06992f5f58cd40e8c4f624b5e4b5": [
     "scripting\\core-powershell\\web-access\\install-and-use-windows-powershell-web-access.md"
   ],
   "6366ec9c49f721b758b6a520f68cf2b3c5ee0caf": [
-    "scripting\\core-powershell\\web-access\\troubleshooting-access-problems-in-windows-powershell-web-access.md"
-  ],
-  "85b0f9fa8ef53c680cf8c1467afabdfbefa0ee44": [
     "scripting\\core-powershell\\web-access\\troubleshooting-access-problems-in-windows-powershell-web-access.md"
   ],
   "ee5e88ece27add955fcef3a9df0a441a08251e77": [
@@ -1076,25 +1055,13 @@
   "e2e129c1c90ab7561861a7d9c71fb654569d5712": [
     "scripting\\setup\\Windows-PowerShell-System-Requirements.md"
   ],
-  "c87643a766a4030af10935ad1d3f5ec51009f7fa": [
-    "scripting\\setup\\Windows-PowerShell-System-Requirements.md"
-  ],
-  "8c5092005bf812d3fb5aadd02caed97d7074ccdc": [
-    "scripting\\setup\\Windows-PowerShell-System-Requirements.md"
-  ],
   "7be11016317a65565dd9af2a3f65e8f00b3818f3": [
-    "scripting\\whats-new\\What-s-New-in-the-PowerShell-50-ISE.md"
-  ],
-  "ecd54fd1b79b3e7b1411f37aa74f003f6f838b67": [
     "scripting\\whats-new\\What-s-New-in-the-PowerShell-50-ISE.md"
   ],
   "87e4a23f93d19219a8d00671f319ef93a96fbbf6": [
     "scripting\\whats-new\\What-s-New-in-Windows-PowerShell-50.md"
   ],
   "abb8a868b735a2eb39a2276da6ece611d5423a16": [
-    "scripting\\whats-new\\What-s-New-With-PowerShell.md"
-  ],
-  "7c494765f0808808e60ca8c166e707ed43d1caee": [
     "scripting\\whats-new\\What-s-New-With-PowerShell.md"
   ],
   "0cd377653a3ca82052b1b88f00bfe92830f2020f": [
