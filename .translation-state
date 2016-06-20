@@ -27453,9 +27453,9 @@
       "ArchiveFileCommit": "be5e472dbcad7879cfd524db8af8db5fed4f853d",
       "ArchiveFileDateTime": "2016-06-14T13:16:57.5468588Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.zh-cn\\live\\authoringResourceMofCS.0647b27b00ec52b2f524a2856e48bc7c29c0f867.zh-cn.xlf",
+      "BilingualFileCommit": "1862e8234799c8a90ae194047866e45c93f7c2a9",
+      "BilingualDateTime": "2016-06-20T10:18:19.8010649Z",
       "BilingualException": null
     },
     "f0aed5bb627825b74fe4df29cbe2f0bc53f90c23": {
@@ -27521,9 +27521,9 @@
       "ArchiveFileCommit": "be5e472dbcad7879cfd524db8af8db5fed4f853d",
       "ArchiveFileDateTime": "2016-06-14T13:16:57.5468588Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.zh-cn\\live\\README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-cn.xlf",
+      "BilingualFileCommit": "1862e8234799c8a90ae194047866e45c93f7c2a9",
+      "BilingualDateTime": "2016-06-20T10:18:19.8010649Z",
       "BilingualException": null
     },
     "8a3ae5fdf5d70de999ca6b992efb14533408c305": {

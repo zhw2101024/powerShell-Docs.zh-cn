@@ -1,11 +1,46 @@
 # <a name='report-top'></a> Localization Bilingual Report
 
 ## Summary
- Total Files | 0
+ Total Files | 2
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [dsc\authoringResourceMofCS.md](https://github.com/PowerShell/powerShell-Docs/blob/644d08a69a8bb70f49e12c1504aa46c4b57a51fc/dsc/authoringResourceMofCS.md) | InSyncHandedBackSuccess | [Details](#991a324945289b2eff0b706d093b2d345352fb1510)
+ [jea\README.md](https://github.com/PowerShell/powerShell-Docs/blob/97b43cc541335dd91917195861a75b8a8f98835a/jea/README.md) | OutofSyncHandedBackSuccess | [Details](#08b317533a7180e111746334e5d9228caa8a09e798)
 
 ## Item Details
+##### <a name='991a324945289b2eff0b706d093b2d345352fb1510'></a> Source: [dsc\authoringResourceMofCS.md](https://github.com/PowerShell/powerShell-Docs/blob/644d08a69a8bb70f49e12c1504aa46c4b57a51fc/dsc/authoringResourceMofCS.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [dsc\authoringResourceMofCS.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/798fe5bd28dda945043dd7b8dd4dbb122ea775fc/dsc/authoringResourceMofCS.md)
+* Handoff File: [authoringResourceMofCS.0647b27b00ec52b2f524a2856e48bc7c29c0f867.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/6367fa76f3cf68dc33468856a338ee88c11ef4db/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/authoringResourceMofCS.0647b27b00ec52b2f524a2856e48bc7c29c0f867.zh-cn.xlf)
+* Handoff Datetime: 2016-06-07 18:32:24
+* Handoff Reason: Include
+* Archive File: [authoringResourceMofCS.0647b27b00ec52b2f524a2856e48bc7c29c0f867.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/be5e472dbcad7879cfd524db8af8db5fed4f853d/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/authoringResourceMofCS.0647b27b00ec52b2f524a2856e48bc7c29c0f867.zh-cn.xlf)
+* Archive Datetime: 2016-06-14 13:16:57
+* Handback File: [authoringResourceMofCS.0647b27b00ec52b2f524a2856e48bc7c29c0f867.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/1862e8234799c8a90ae194047866e45c93f7c2a9/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/authoringResourceMofCS.0647b27b00ec52b2f524a2856e48bc7c29c0f867.zh-cn.xlf)
+* Handback Datetime: 2016-06-20 10:17:44
+* Bilingual File: [authoringResourceMofCS.0647b27b00ec52b2f524a2856e48bc7c29c0f867.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/1862e8234799c8a90ae194047866e45c93f7c2a9/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/authoringResourceMofCS.0647b27b00ec52b2f524a2856e48bc7c29c0f867.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-20 10:18:19
+* [Back to Top](#report-top)
+
+##### <a name='08b317533a7180e111746334e5d9228caa8a09e798'></a> Source: [jea\README.md](https://github.com/PowerShell/powerShell-Docs/blob/97b43cc541335dd91917195861a75b8a8f98835a/jea/README.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/84b5bb39c8a6358e875dddbc3f95f89f648e0133/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-cn.xlf)
+* Handoff Datetime: 2016-06-17 21:44:24
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [jea\README.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/798fe5bd28dda945043dd7b8dd4dbb122ea775fc/jea/README.md)
+* Current Handback File: [README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/1862e8234799c8a90ae194047866e45c93f7c2a9/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-cn.xlf)
+* Current Handback Datetime: 2016-06-20 10:17:44
+* Bilingual File: [README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/1862e8234799c8a90ae194047866e45c93f7c2a9/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-20 10:18:19
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
