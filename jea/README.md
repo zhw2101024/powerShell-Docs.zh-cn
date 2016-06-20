@@ -55,13 +55,13 @@ PowerShell 角色功能文件 (.psrc) 定义属于某个角色的用户能够在
 
 ### 浏览体验指南
 准备好创建你的第一个 JEA 终结点了吗？
-请参阅 [JEA 体验指南](./JEA Guide.md)了解如何创作、部署和使用你自己的 JEA 终结点。
+请参阅 [JEA 体验指南](jea-uide.md)了解如何创作、部署和使用你自己的 JEA 终结点。
 该指南允许你使用预构建的 JEA 终结点快速开始，让你大概了解最终用户体验；然后引导你从头重新创建终结点，以帮助解释会话配置和角色功能。
 
 ### 开始创作你自己的 JEA 终结点
 创作 JEA 终结点很容易 -- 仅需启用了 JEA 的系统和文件编辑器（如 PowerShell ISE）。
 对于开始使用很有帮助的一个提示是，使用不带任何其他参数的 `New-PSRoleCapabilityFile -Path <path>` 和 `New-PSSessionCapabilityFile -Path <Path>` 创建主干文件。
-这些主干文件包含所有适用的配置字段，以及解释每个字段用途的有益注释。 
+这些主干文件包含所有适用的配置字段，以及解释每个字段用途的有益注释。
 
 若要更轻松地创作 JEA 终结点，请参阅 [JEA 工具包帮助程序](http://blogs.technet.com/b/privatecloud/archive/2015/12/20/introducing-the-updated-jea-helper-tool.aspx)，它提供可以用于创作会话配置文件和角色功能文件的 GUI。
 它甚至支持生成基于 PowerShell 日志的角色功能，直接为你提供你的用户定期运行完成其工作的命令。
