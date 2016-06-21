@@ -30,10 +30,10 @@
 #### [用 C 语言编写的基于 MOF 的资源#](authoringResourceMofCS.md)
 ### [基于类的自定义资源](authoringResourceClass.md)
 ### [复合资源](authoringResourceComposite.md)
-### [调试 DSC 资源](debugResource.md)
-### [直接调用 DSC 资源方法](directCallResource.md)
 ### [编写单实例 DSC 资源（最佳做法）](singleInstance.md)
 ### [资源创作清单](resourceAuthoringChecklist.md)
+## [调试 DSC 资源](debugResource.md)
+## [直接调用 DSC 资源方法](directCallResource.md)
 
 # [配置本地配置管理器 (LCM)](metaConfig.md)
 ## [在 PowerShell 4.0 中配置 LCM](metaConfig4.md)
@@ -91,6 +91,6 @@
 
 
 
-<!--HONumber=May16_HO3-->
+<!--HONumber=Jun16_HO3-->
 
 
