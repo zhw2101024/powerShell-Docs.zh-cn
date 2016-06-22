@@ -27691,9 +27691,9 @@
       "ArchiveFileCommit": "580581335ffae5c9d3fab3c3ea91aa60f887f804",
       "ArchiveFileDateTime": "2016-06-21T13:13:10.7557371Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.zh-cn\\live\\msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.zh-cn.xlf",
+      "BilingualFileCommit": "9249ae62a95225b3b53f976e37093e9e3424a201",
+      "BilingualDateTime": "2016-06-22T18:29:18.4729929Z",
       "BilingualException": null
     },
     "716ecd9b14976dd70b69a740850ab53670387956": {
