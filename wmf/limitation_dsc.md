@@ -191,8 +191,43 @@ At C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
 Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}  
 ```  
 
+一些 DSC 资源，如注册表资源可能开始需要较长时间处理请求。
+--------------------------------------------------------------------------------------------------------------------------------
+
+**解决方案 1：**创建定期清理以下文件夹的计划任务。
+``` PowerShell 
+$env:windir\system32\config\systemprofile\AppData\Local\Microsoft\Windows\PowerShell\CommandAnalysis 
+```
+
+“”**解决方案 2：**更改 DSC 配置以在配置结束时清理 *CommandAnalysis* 文件夹。
+``` PowerShell
+Configuration $configName
+{
+
+   # User Data
+    Registry SetRegisteredOwner
+    {
+        Ensure = 'Present'
+        Force = $True
+        Key = $Node.RegisteredKey
+        ValueName = $Node.RegisteredOwnerValue
+        ValueType = 'String'
+        ValueData = $Node.RegisteredOwnerData
+    }
+    #
+    # Script to delete the config 
+    #
+    script DeleteCommandAnalysisCache
+    {
+        DependsOn="[Registry]SetRegisteredOwner"
+        getscript="@{}"
+        testscript = 'Remove-Item -Path $env:windir\system32\config\systemprofile\AppData\Local\Microsoft\Windows\PowerShell\CommandAnalysis -Force -Recurse -ErrorAction SilentlyContinue -ErrorVariable ev | out-null;$true'
+        setscript = '$true'
+    }
+}
+```
 
 
-<!--HONumber=May16_HO1-->
+<!--HONumber=Jun16_HO3-->
 
 

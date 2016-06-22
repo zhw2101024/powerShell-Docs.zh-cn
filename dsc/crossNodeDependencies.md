@@ -23,7 +23,7 @@ DSC 提供特殊的资源，**WaitForAll**、**WaitForAny** 和 **WaitForSome**�
 
 若要使用 **WaitForXXXX** 资源，可以创建指定要等待的 DSC 资源和节点的该资源类型的资源块。 然后，使用配置中其他任何资源块内的 **DependsOn** 属性，等待 **WaitForXXXX** 节点中指定的条件成功。
 
-例如，在下面的配置中，目标节点正在等待 **xADDomain** 资源通过 30 次重试（时间间隔为 15 秒）在 **MyDC** 节点上完成，然后目标节点才能加入域。
+例如，在下面的配置中，目标节点正在等待 **xADDomain** 资源通过最多 30 次重试（时间间隔为 15 秒）在 **MyDC** 节点上完成，然后目标节点才能加入域。
 
 ```PowerShell
 Configuration JoinDomain
@@ -46,7 +46,7 @@ Configuration JoinDomain
         {
             Name             = 'MyPC'
             DomainName       = 'Contoso.com'
-            Credential       = (get-credential)
+            Credential       = (Get-Credential)
             DependsOn        ='[WaitForAll]DC'
         }
     }
@@ -62,6 +62,6 @@ Configuration JoinDomain
 
 
 
-<!--HONumber=May16_HO3-->
+<!--HONumber=Jun16_HO3-->
 
 
