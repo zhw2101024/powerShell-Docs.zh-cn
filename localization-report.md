@@ -4956,8 +4956,8 @@
 * Archive Datetime: 2016-03-29 13:11:32
 * Handback File: [requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/a5839e3a052750b02c285b23b6f9e483873f00d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.zh-cn.xlf)
 * Handback Datetime: 2016-06-22 18:59:13
-* Bilingual File: [requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/31277d0c5aa0664c8ba5c87230840c9d0718dcaa/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-16 14:30:28
+* Bilingual File: [requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/a5839e3a052750b02c285b23b6f9e483873f00d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-22 19:00:12
 * [Back to Top](#report-top)
 
 ##### <a name='edc1a0383cebfbe89b18b0238a13bb28e4d25c5a319'></a> Source: [wmf\sil_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/sil_overview.md)
