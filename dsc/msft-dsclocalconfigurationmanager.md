@@ -30,7 +30,7 @@ class MSFT_DSCLocalConfigurationManager
 
 **MSFT_DSCLocalConfigurationManager** 类拥有以下成员：
 
--   [方法][]
+-   [Methods][]
 
 ### 方法
 
@@ -51,7 +51,7 @@ class MSFT_DSCLocalConfigurationManager
 | [ResourceSet](msft-dsclocalconfigurationmanager-resourceset.md)| 直接调用 DSC 资源的 **Set** 方法。| 
 | [ResourceTest](msft-dsclocalconfigurationmanager-resourcetest.md)| 直接调用 DSC 资源的 **Test** 方法。| 
 | [RollBack](msft-dsclocalconfigurationmanager-rollback.md)| 回滚到以前的配置。| 
-| [SendConfiguration](msft-dsclocalconfigurationmanager-sendconfiguration.md)| 将配置文档发送到托管节点，并将其保存为挂起状态。将配置文档发送到托管节点并将其保存为挂起的更改。| 
+| [SendConfiguration](msft-dsclocalconfigurationmanager-sendconfiguration.md)| 将配置文档发送到托管节点并将其保存为挂起的更改。| 
 | [SendConfigurationApply](msft-dsclocalconfigurationmanager-sendconfigurationapply.md)| 将配置文档发送到托管节点，并使用配置代理应用配置。| 
 | [SendConfigurationApplyAsync](msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)| 将配置文档发送到托管节点，并开始使用配置代理应用配置。 使用 GetConfigurationResultOutput 检索结果输出。| 
 | [SendMetaConfigurationApply](msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md)| 设置用于控制配置代理的 LCM 设置。| 
@@ -78,6 +78,6 @@ class MSFT_DSCLocalConfigurationManager
 
 
 
-<!--HONumber=May16_HO3-->
+<!--HONumber=Jun16_HO3-->
 
 
