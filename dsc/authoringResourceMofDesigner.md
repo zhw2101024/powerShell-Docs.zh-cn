@@ -1,12 +1,16 @@
 ---
-title:   使用资源设计器工具
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "使用资源设计器工具"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: be2141330dda803a22fdce6d65a1e379adf14fed
+
 ---
 
 # 使用资源设计器工具
@@ -185,6 +189,7 @@ PS C:\> Update-xDscResource –Name ‘Demo_ADUser’ –Property $UserName, $En
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 
