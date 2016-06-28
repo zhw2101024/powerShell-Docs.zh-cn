@@ -27684,8 +27684,8 @@
       "ArchiveFileDateTime": "2016-06-28T13:28:35.9717674Z",
       "ArchiveException": null,
       "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.zh-cn\\live\\What-s-New-in-Windows-PowerShell-50.c86af26f5e83de3e47d3ac33f24919d8e93982d7.zh-cn.xlf",
-      "BilingualFileCommit": "3403107651e7f19029cf94c4b54530e703060510",
-      "BilingualDateTime": "2016-06-16T14:30:28.441666Z",
+      "BilingualFileCommit": "622a7ef9a0f3604d5b4517b019ba064ed8f26370",
+      "BilingualDateTime": "2016-06-28T21:18:23.8621724Z",
       "BilingualException": null
     },
     "85d81ef4f82ef10c0f838601a9adb79d2fba65e7": {
@@ -28490,8 +28490,8 @@
       "ArchiveFileDateTime": "2016-06-28T13:28:35.9717674Z",
       "ArchiveException": null,
       "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.zh-cn\\live\\msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.zh-cn.xlf",
-      "BilingualFileCommit": "9249ae62a95225b3b53f976e37093e9e3424a201",
-      "BilingualDateTime": "2016-06-22T18:29:18.4729929Z",
+      "BilingualFileCommit": "622a7ef9a0f3604d5b4517b019ba064ed8f26370",
+      "BilingualDateTime": "2016-06-28T21:18:23.8621724Z",
       "BilingualException": null
     },
     "716ecd9b14976dd70b69a740850ab53670387956": {

@@ -1034,8 +1034,8 @@
 * Archive Datetime: 2016-06-28 13:28:35
 * Handback File: [msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/622a7ef9a0f3604d5b4517b019ba064ed8f26370/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.zh-cn.xlf)
 * Handback Datetime: 2016-06-28 21:14:48
-* Bilingual File: [msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/9249ae62a95225b3b53f976e37093e9e3424a201/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-22 18:29:18
+* Bilingual File: [msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/622a7ef9a0f3604d5b4517b019ba064ed8f26370/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 21:18:23
 * [Back to Top](#report-top)
 
 ##### <a name='6f9c6a8851732574ac72bc4f3a3db1a73fbbecf248'></a> Source: [dsc\msft-dsclocalconfigurationmanager-applyconfiguration.md](https://github.com/PowerShell/powerShell-Docs/blob/919438862ca9786447b690d2db10e905da0a7c42/dsc/msft-dsclocalconfigurationmanager-applyconfiguration.md)
@@ -3936,8 +3936,8 @@
 * Archive Datetime: 2016-06-28 13:28:35
 * Handback File: [What-s-New-in-Windows-PowerShell-50.c86af26f5e83de3e47d3ac33f24919d8e93982d7.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/622a7ef9a0f3604d5b4517b019ba064ed8f26370/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/What-s-New-in-Windows-PowerShell-50.c86af26f5e83de3e47d3ac33f24919d8e93982d7.zh-cn.xlf)
 * Handback Datetime: 2016-06-28 21:14:48
-* Bilingual File: [What-s-New-in-Windows-PowerShell-50.c86af26f5e83de3e47d3ac33f24919d8e93982d7.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/3403107651e7f19029cf94c4b54530e703060510/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/What-s-New-in-Windows-PowerShell-50.c86af26f5e83de3e47d3ac33f24919d8e93982d7.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-16 14:30:28
+* Bilingual File: [What-s-New-in-Windows-PowerShell-50.c86af26f5e83de3e47d3ac33f24919d8e93982d7.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/622a7ef9a0f3604d5b4517b019ba064ed8f26370/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/What-s-New-in-Windows-PowerShell-50.c86af26f5e83de3e47d3ac33f24919d8e93982d7.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 21:18:23
 * [Back to Top](#report-top)
 
 ##### <a name='abb8a868b735a2eb39a2276da6ece611d5423a16246'></a> Source: [scripting\whats-new\What-s-New-With-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/whats-new/What-s-New-With-PowerShell.md)
