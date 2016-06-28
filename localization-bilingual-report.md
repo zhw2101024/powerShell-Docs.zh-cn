@@ -1,491 +1,461 @@
 # <a name='report-top'></a> Localization Bilingual Report
 
 ## Summary
- Total Files | 32
+ Total Files | 30
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [dsc\authoringResourceClass.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/authoringResourceClass.md) | InSyncHandedBackSuccess | [Details](#553ef07e42a4c41e5f0dc9e80c54f828d9c625c37)
- [dsc\builtInResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/builtInResource.md) | InSyncHandedBackSuccess | [Details](#ea312b4e773cd8b0eceeca123e616957728eb1c612)
- [dsc\configData.md](https://github.com/PowerShell/powerShell-Docs/blob/ebd74549e2671a332ef6abf131ab984a4d0865a6/dsc/configData.md) | InSyncHandedBackSuccess | [Details](#8a3ae5fdf5d70de999ca6b992efb14533408c30513)
- [dsc\configurations.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/configurations.md) | InSyncHandedBackSuccess | [Details](#29676d0bf51adf9176753d0056efe76687a4060016)
- [dsc\crossNodeDependencies.md](https://github.com/PowerShell/powerShell-Docs/blob/04aa6292dee991060669e1ac770cf98cbba41bfc/dsc/crossNodeDependencies.md) | InSyncHandedBackSuccess | [Details](#f4c64d3603fd01f29a63f8b180057714bf3d119717)
- [dsc\debugResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/debugResource.md) | InSyncHandedBackSuccess | [Details](#f5290e085c8949f6b3cdf23f3244a7142da6248d18)
- [dsc\decisionMaker.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/decisionMaker.md) | InSyncHandedBackSuccess | [Details](#2d2b142dc862f7655f28aa34e1fd91f63bd6286e19)
- [dsc\lnxScriptResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxScriptResource.md) | InSyncHandedBackSuccess | [Details](#4c575bbf0e0553e19e56bcc6edd605e36586cb9440)
- [dsc\lnxSshAuthorizedKeysResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxSshAuthorizedKeysResource.md) | InSyncHandedBackSuccess | [Details](#edc906b4e9c925320c4ed00c5ab295189066ccb942)
- [dsc\metaConfig.md](https://github.com/PowerShell/powerShell-Docs/blob/901cf8190252ac344182bf49d550a8adade559a0/dsc/metaConfig.md) | InSyncHandedBackSuccess | [Details](#c66b8d6abf4886143f71c0de823cbfde86d875ba46)
- [dsc\metaConfig4.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/metaConfig4.md) | InSyncHandedBackSuccess | [Details](#25195166f4d9dd668427d6bb5d748ef61273cdee47)
- [dsc\msft-dsclocalconfigurationmanager-applyconfiguration.md](https://github.com/PowerShell/powerShell-Docs/blob/919438862ca9786447b690d2db10e905da0a7c42/dsc/msft-dsclocalconfigurationmanager-applyconfiguration.md) | InSyncHandedBackSuccess | [Details](#6f9c6a8851732574ac72bc4f3a3db1a73fbbecf248)
- [dsc\msft-dsclocalconfigurationmanager-getconfiguration.md](https://github.com/PowerShell/powerShell-Docs/blob/919438862ca9786447b690d2db10e905da0a7c42/dsc/msft-dsclocalconfigurationmanager-getconfiguration.md) | InSyncHandedBackSuccess | [Details](#19d4790f22491e0bb11de1e315d1ee3b07929d5551)
- [dsc\msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md) | InSyncHandedBackSuccess | [Details](#8f13964dfbbe1cd827c58232a35d1cbacddeed1b52)
- [dsc\msft-dsclocalconfigurationmanager-rollback.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-rollback.md) | InSyncHandedBackSuccess | [Details](#771a9c7b50aba26f89dbf6b24eb3df67bafeac0a60)
- [dsc\msft-dsclocalconfigurationmanager-sendconfigurationapply.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-sendconfigurationapply.md) | InSyncHandedBackSuccess | [Details](#701063dfa37fe4ba8b014cadadd10339b7fd1bf762)
- [dsc\msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md) | InSyncHandedBackSuccess | [Details](#41177f2eb2bbcf2dddaf232141fb483efaaeeea563)
- [dsc\msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md) | InSyncHandedBackSuccess | [Details](#a81b41f66883b3cf0931905d24c8ff92ef55b6c764)
- [dsc\msft-dsclocalconfigurationmanager-stopconfiguration.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-stopconfiguration.md) | InSyncHandedBackSuccess | [Details](#9721486cca6f94d6b156c6ee1992eced6652c12365)
- [dsc\packageResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/packageResource.md) | InSyncHandedBackSuccess | [Details](#bcaf82cbafe67cc309765e16b3c9cd6eff0a982a70)
- [dsc\pullClient.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/pullClient.md) | InSyncHandedBackSuccess | [Details](#95f49fecdf13a54049caf27345d2a48c98b8f09b72)
- [dsc\scriptResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/scriptResource.md) | InSyncHandedBackSuccess | [Details](#801a0491746c17061d14d6d4938e7182650f6ff384)
- [scripting\core-powershell\Running-Remote-Commands.md](https://github.com/PowerShell/powerShell-Docs/blob/593f0c2ca72e00f19c395c1dae31798d5a5f652d/scripting/core-powershell/Running-Remote-Commands.md) | InSyncHandedBackSuccess | [Details](#75d41569b18e61342809eebcc76b7899ec6363fa162)
- [scripting\getting-started\cookbooks\Selecting-Items-from-a-List-Box.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/getting-started/cookbooks/Selecting-Items-from-a-List-Box.md) | InSyncHandedBackSuccess | [Details](#7e8fd05cfedd500c51f2d7e4f6adbb7d1f27cb00195)
- [scripting\getting-started\fundamental\Scripting-with-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/getting-started/fundamental/Scripting-with-Windows-PowerShell.md) | InSyncHandedBackSuccess | [Details](#0148f4631e34e65a4336c5d1d50e313fb6639748215)
- [wmf\class_interface.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/class_interface.md) | InSyncHandedBackSuccess | [Details](#31b64b6845c8d6ece8628bd565662525a65353d9255)
- [wmf\class_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/class_overview.md) | InSyncHandedBackSuccess | [Details](#3010b1ce497d8a5e45ada003587d9e104eddd8b1257)
- [wmf\dsc_improvements.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/dsc_improvements.md) | InSyncHandedBackSuccess | [Details](#336c6bc43b482eda6524ebed0381240868261f64269)
- [wmf\dsc_newresources.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/dsc_newresources.md) | InSyncHandedBackSuccess | [Details](#34c29d88f0676e51c1b8af9d9e65b151eb8a4272272)
- [wmf\dsc_removeconfigdoc.md](https://github.com/PowerShell/powerShell-Docs/blob/d367048eab0ba3fd67baed2ee27332ce0827d5ac/wmf/dsc_removeconfigdoc.md) | InSyncHandedBackSuccess | [Details](#b0fb33b1d5e4ef1b0b9018ec5dd5f88ef5df4719278)
- [wmf\feedback_moduleversionranges.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/feedback_moduleversionranges.md) | InSyncHandedBackSuccess | [Details](#f2f968b1cd304009b3b29cdc793b61461e605812299)
- [wmf\psget_moduledependency.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/psget_moduledependency.md) | InSyncHandedBackSuccess | [Details](#f723a03aa04ea613f28d31c019b0c4d7e8af7f00322)
+ [dsc\directCallResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/directCallResource.md) | InSyncHandedBackSuccess | [Details](#1fe624c2532e44ed675762f3c141934fb4f0b60d20)
+ [dsc\fileResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/fileResource.md) | InSyncHandedBackSuccess | [Details](#535b25125a0c56feb10147f1872bdfdf3e3ef33a24)
+ [dsc\lnxFileLineResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxFileLineResource.md) | InSyncHandedBackSuccess | [Details](#9196129e79272d8bee717ef8a5d42fb590760a0f35)
+ [dsc\lnxGettingStarted.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxGettingStarted.md) | InSyncHandedBackSuccess | [Details](#c05b48d2c903e59f8b65c4c8c289d2dd5c23c3f937)
+ [dsc\lnxGroupResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxGroupResource.md) | InSyncHandedBackSuccess | [Details](#2139e4462c0568c30b118ef6cb3ceef1717b52e638)
+ [dsc\msft-dsclocalconfigurationmanager-disabledebugconfiguration.md](https://github.com/PowerShell/powerShell-Docs/blob/919438862ca9786447b690d2db10e905da0a7c42/dsc/msft-dsclocalconfigurationmanager-disabledebugconfiguration.md) | InSyncHandedBackSuccess | [Details](#97ad8a5711d469a80a7a61056d71b7e2b69cfd2749)
+ [dsc\msft-dsclocalconfigurationmanager-enabledebugconfiguration.md](https://github.com/PowerShell/powerShell-Docs/blob/919438862ca9786447b690d2db10e905da0a7c42/dsc/msft-dsclocalconfigurationmanager-enabledebugconfiguration.md) | InSyncHandedBackSuccess | [Details](#f74e9941180c00a1aae1bd1d7b48fa4de0c8790d50)
+ [dsc\msft-dsclocalconfigurationmanager-removeconfiguration.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-removeconfiguration.md) | InSyncHandedBackSuccess | [Details](#4f3d74949d98e3ab3f5136303e229c23ed903c5d56)
+ [dsc\msft-dsclocalconfigurationmanager-resourceget.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-resourceget.md) | InSyncHandedBackSuccess | [Details](#1666b85402f17230090f7290c8cb400dd9fbf0a657)
+ [dsc\msft-dsclocalconfigurationmanager-resourceset.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-resourceset.md) | InSyncHandedBackSuccess | [Details](#cbc499f293aad941d40fcb720ef53e832c3b1ea858)
+ [dsc\msft-dsclocalconfigurationmanager-sendconfiguration.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-sendconfiguration.md) | InSyncHandedBackSuccess | [Details](#95b141472d9428cee71b6970fc1f496704211c0b61)
+ [dsc\pullServerSMB.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/pullServerSMB.md) | InSyncHandedBackSuccess | [Details](#35ac9b38086b12fb48844c56a488854f63529e2177)
+ [dsc\serviceResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/serviceResource.md) | InSyncHandedBackSuccess | [Details](#ce8d6c1c9e8005c5c4792ae0fa4c5030bb9a92ed87)
+ [dsc\singleInstance.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/singleInstance.md) | InSyncHandedBackSuccess | [Details](#4b1e8a6d3fb4feca426a9d7861c40d194e612c2288)
+ [dsc\whitepapers.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/whitepapers.md) | InSyncHandedBackSuccess | [Details](#434ebc17f2bc7b7ee868788e87dc5b34cef6152993)
+ [dsc\windowsfeatureResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/windowsfeatureResource.md) | InSyncHandedBackSuccess | [Details](#522dbea958a60f76e98abe32e11e6491ea6d457c94)
+ [scripting\setup\WinRMSecurity.md](https://github.com/PowerShell/powerShell-Docs/blob/7facb78962411d7b96ef6741e3ffa153d5537a0d/scripting/setup/WinRMSecurity.md) | InSyncHandedBackSuccess | [Details](#e1827e102a9b35ea214f89395f7ff3c5e0a58506241)
+ [scripting\topic\WinRMSecurity.md](https://github.com/PowerShell/powerShell-Docs/blob/afa259b8611f995bbf5b824179a12e3d8f15df86/scripting/topic/WinRMSecurity.md) | InSyncHandedBackSuccess | [Details](#207792452c563ec6cca5c17fbcd122372442d8ac243)
+ [wmf\debug_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/debug_overview.md) | InSyncHandedBackSuccess | [Details](#0660867e6e7c7a93a8ca80d76f22db7fd86f8826258)
+ [wmf\dsc_updateconfig.md](https://github.com/PowerShell/powerShell-Docs/blob/d367048eab0ba3fd67baed2ee27332ce0827d5ac/wmf/dsc_updateconfig.md) | InSyncHandedBackSuccess | [Details](#e3643fd339a0662d87f9532d9c38fd56c7f72333287)
+ [wmf\feedback_convertstring.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/feedback_convertstring.md) | InSyncHandedBackSuccess | [Details](#71e9f46958b59abce912278677217cd632629439295)
+ [wmf\feedback_nonewline.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/feedback_nonewline.md) | InSyncHandedBackSuccess | [Details](#24969d20cd4500db4e8dc27c16cac84c0f3dc696301)
+ [wmf\informationstream_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/informationstream_overview.md) | InSyncHandedBackSuccess | [Details](#20254315c2503d46e6160593fb822391c5db2dd4307)
+ [wmf\jea_endpoint.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/jea_endpoint.md) | InSyncHandedBackSuccess | [Details](#061fb3a39191f7aaf3f5e51b12f56cac84031f49309)
+ [wmf\jea_report.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/jea_report.md) | InSyncHandedBackSuccess | [Details](#a91b675a4f19306481bb87dc3f3b8cb32ab07e8c311)
+ [wmf\limitation_dsc.md](https://github.com/PowerShell/powerShell-Docs/blob/3c72d76301f0dc9296feb7644951883206d72562/wmf/limitation_dsc.md) | InSyncHandedBackSuccess | [Details](#ad262a8f38b79f748757c1503a5e7173a1010923312)
+ [wmf\oneget_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/oneget_overview.md) | InSyncHandedBackSuccess | [Details](#967366156ab58d16b085a97f9a08169d3bff75c2318)
+ [wmf\psget_modulesxsinstall.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/psget_modulesxsinstall.md) | InSyncHandedBackSuccess | [Details](#644781a07bed2df5464d8090155522ae7477a11e323)
+ [wmf\psget_psrepository.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/psget_psrepository.md) | InSyncHandedBackSuccess | [Details](#972f011c3c9f98b54fb5cc270281cd146eb9ac71324)
+ [wmf\TOC.md](https://github.com/PowerShell/powerShell-Docs/blob/fb3eaba21c7ca7d09e398a302076ecb1651e6c61/wmf/TOC.md) | InSyncHandedBackSuccess | [Details](#af8aee96244140094066b8e2df65fdb525a94811330)
 
 ## Item Details
-##### <a name='553ef07e42a4c41e5f0dc9e80c54f828d9c625c37'></a> Source: [dsc\authoringResourceClass.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/authoringResourceClass.md)
+##### <a name='1fe624c2532e44ed675762f3c141934fb4f0b60d20'></a> Source: [dsc\directCallResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/directCallResource.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [dsc\authoringResourceClass.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/dsc/authoringResourceClass.md)
-* Handoff File: [authoringResourceClass.3603134df9ad1cad202d10769ff631a083cc3aae.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/authoringResourceClass.3603134df9ad1cad202d10769ff631a083cc3aae.zh-cn.xlf)
+* Target File: [dsc\directCallResource.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/dsc/directCallResource.md)
+* Handoff File: [directCallResource.7adf3e286a432cf50a90cb04db12b1f70bb586cd.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/directCallResource.7adf3e286a432cf50a90cb04db12b1f70bb586cd.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [authoringResourceClass.3603134df9ad1cad202d10769ff631a083cc3aae.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/authoringResourceClass.3603134df9ad1cad202d10769ff631a083cc3aae.zh-cn.xlf)
+* Archive File: [directCallResource.7adf3e286a432cf50a90cb04db12b1f70bb586cd.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/directCallResource.7adf3e286a432cf50a90cb04db12b1f70bb586cd.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [authoringResourceClass.3603134df9ad1cad202d10769ff631a083cc3aae.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/authoringResourceClass.3603134df9ad1cad202d10769ff631a083cc3aae.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [authoringResourceClass.3603134df9ad1cad202d10769ff631a083cc3aae.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/authoringResourceClass.3603134df9ad1cad202d10769ff631a083cc3aae.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [directCallResource.7adf3e286a432cf50a90cb04db12b1f70bb586cd.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/directCallResource.7adf3e286a432cf50a90cb04db12b1f70bb586cd.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [directCallResource.7adf3e286a432cf50a90cb04db12b1f70bb586cd.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/directCallResource.7adf3e286a432cf50a90cb04db12b1f70bb586cd.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='ea312b4e773cd8b0eceeca123e616957728eb1c612'></a> Source: [dsc\builtInResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/builtInResource.md)
+##### <a name='535b25125a0c56feb10147f1872bdfdf3e3ef33a24'></a> Source: [dsc\fileResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/fileResource.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [dsc\builtInResource.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/dsc/builtInResource.md)
-* Handoff File: [builtInResource.2f855e1582347e986aa4e5e62b842b886596fdc2.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/builtInResource.2f855e1582347e986aa4e5e62b842b886596fdc2.zh-cn.xlf)
+* Target File: [dsc\fileResource.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/dsc/fileResource.md)
+* Handoff File: [fileResource.ad0d9bba41b615db808e5dfc814b50945863b3da.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/fileResource.ad0d9bba41b615db808e5dfc814b50945863b3da.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [builtInResource.2f855e1582347e986aa4e5e62b842b886596fdc2.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/builtInResource.2f855e1582347e986aa4e5e62b842b886596fdc2.zh-cn.xlf)
+* Archive File: [fileResource.ad0d9bba41b615db808e5dfc814b50945863b3da.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/fileResource.ad0d9bba41b615db808e5dfc814b50945863b3da.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [builtInResource.2f855e1582347e986aa4e5e62b842b886596fdc2.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/builtInResource.2f855e1582347e986aa4e5e62b842b886596fdc2.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [builtInResource.2f855e1582347e986aa4e5e62b842b886596fdc2.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/builtInResource.2f855e1582347e986aa4e5e62b842b886596fdc2.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [fileResource.ad0d9bba41b615db808e5dfc814b50945863b3da.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/fileResource.ad0d9bba41b615db808e5dfc814b50945863b3da.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [fileResource.ad0d9bba41b615db808e5dfc814b50945863b3da.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/fileResource.ad0d9bba41b615db808e5dfc814b50945863b3da.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='8a3ae5fdf5d70de999ca6b992efb14533408c30513'></a> Source: [dsc\configData.md](https://github.com/PowerShell/powerShell-Docs/blob/ebd74549e2671a332ef6abf131ab984a4d0865a6/dsc/configData.md)
+##### <a name='9196129e79272d8bee717ef8a5d42fb590760a0f35'></a> Source: [dsc\lnxFileLineResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxFileLineResource.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [dsc\configData.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/dsc/configData.md)
-* Handoff File: [configData.51d01a46dd9af8b425788cc485523b09f8470b95.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/configData.51d01a46dd9af8b425788cc485523b09f8470b95.zh-cn.xlf)
+* Target File: [dsc\lnxFileLineResource.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/dsc/lnxFileLineResource.md)
+* Handoff File: [lnxFileLineResource.d91fc802a4c6cdbff5a2e35f92b34c36c6dbf5eb.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/lnxFileLineResource.d91fc802a4c6cdbff5a2e35f92b34c36c6dbf5eb.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [configData.51d01a46dd9af8b425788cc485523b09f8470b95.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/configData.51d01a46dd9af8b425788cc485523b09f8470b95.zh-cn.xlf)
+* Archive File: [lnxFileLineResource.d91fc802a4c6cdbff5a2e35f92b34c36c6dbf5eb.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/lnxFileLineResource.d91fc802a4c6cdbff5a2e35f92b34c36c6dbf5eb.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [configData.51d01a46dd9af8b425788cc485523b09f8470b95.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/configData.51d01a46dd9af8b425788cc485523b09f8470b95.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [configData.51d01a46dd9af8b425788cc485523b09f8470b95.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/configData.51d01a46dd9af8b425788cc485523b09f8470b95.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [lnxFileLineResource.d91fc802a4c6cdbff5a2e35f92b34c36c6dbf5eb.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/lnxFileLineResource.d91fc802a4c6cdbff5a2e35f92b34c36c6dbf5eb.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [lnxFileLineResource.d91fc802a4c6cdbff5a2e35f92b34c36c6dbf5eb.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/lnxFileLineResource.d91fc802a4c6cdbff5a2e35f92b34c36c6dbf5eb.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='29676d0bf51adf9176753d0056efe76687a4060016'></a> Source: [dsc\configurations.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/configurations.md)
+##### <a name='c05b48d2c903e59f8b65c4c8c289d2dd5c23c3f937'></a> Source: [dsc\lnxGettingStarted.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxGettingStarted.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [dsc\configurations.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/dsc/configurations.md)
-* Handoff File: [configurations.02626ddbf3a00f8ede56fdfd2e46a027800e75b6.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/configurations.02626ddbf3a00f8ede56fdfd2e46a027800e75b6.zh-cn.xlf)
+* Target File: [dsc\lnxGettingStarted.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/dsc/lnxGettingStarted.md)
+* Handoff File: [lnxGettingStarted.1601cf6d0eb8b4f7343575c8fbf2106bfaad8b65.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/lnxGettingStarted.1601cf6d0eb8b4f7343575c8fbf2106bfaad8b65.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [configurations.02626ddbf3a00f8ede56fdfd2e46a027800e75b6.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/configurations.02626ddbf3a00f8ede56fdfd2e46a027800e75b6.zh-cn.xlf)
+* Archive File: [lnxGettingStarted.1601cf6d0eb8b4f7343575c8fbf2106bfaad8b65.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/lnxGettingStarted.1601cf6d0eb8b4f7343575c8fbf2106bfaad8b65.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [configurations.02626ddbf3a00f8ede56fdfd2e46a027800e75b6.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/configurations.02626ddbf3a00f8ede56fdfd2e46a027800e75b6.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [configurations.02626ddbf3a00f8ede56fdfd2e46a027800e75b6.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/configurations.02626ddbf3a00f8ede56fdfd2e46a027800e75b6.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [lnxGettingStarted.1601cf6d0eb8b4f7343575c8fbf2106bfaad8b65.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/lnxGettingStarted.1601cf6d0eb8b4f7343575c8fbf2106bfaad8b65.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [lnxGettingStarted.1601cf6d0eb8b4f7343575c8fbf2106bfaad8b65.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/lnxGettingStarted.1601cf6d0eb8b4f7343575c8fbf2106bfaad8b65.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='f4c64d3603fd01f29a63f8b180057714bf3d119717'></a> Source: [dsc\crossNodeDependencies.md](https://github.com/PowerShell/powerShell-Docs/blob/04aa6292dee991060669e1ac770cf98cbba41bfc/dsc/crossNodeDependencies.md)
+##### <a name='2139e4462c0568c30b118ef6cb3ceef1717b52e638'></a> Source: [dsc\lnxGroupResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxGroupResource.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [dsc\crossNodeDependencies.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/dsc/crossNodeDependencies.md)
-* Handoff File: [crossNodeDependencies.bd1d65501a23b72cf44e4d417ebad7a3bd5c7139.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/crossNodeDependencies.bd1d65501a23b72cf44e4d417ebad7a3bd5c7139.zh-cn.xlf)
+* Target File: [dsc\lnxGroupResource.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/dsc/lnxGroupResource.md)
+* Handoff File: [lnxGroupResource.0cedb684d797032bd47cdb852629c36da0884567.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/lnxGroupResource.0cedb684d797032bd47cdb852629c36da0884567.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [crossNodeDependencies.bd1d65501a23b72cf44e4d417ebad7a3bd5c7139.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/crossNodeDependencies.bd1d65501a23b72cf44e4d417ebad7a3bd5c7139.zh-cn.xlf)
+* Archive File: [lnxGroupResource.0cedb684d797032bd47cdb852629c36da0884567.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/lnxGroupResource.0cedb684d797032bd47cdb852629c36da0884567.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [crossNodeDependencies.bd1d65501a23b72cf44e4d417ebad7a3bd5c7139.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/crossNodeDependencies.bd1d65501a23b72cf44e4d417ebad7a3bd5c7139.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [crossNodeDependencies.bd1d65501a23b72cf44e4d417ebad7a3bd5c7139.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/crossNodeDependencies.bd1d65501a23b72cf44e4d417ebad7a3bd5c7139.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [lnxGroupResource.0cedb684d797032bd47cdb852629c36da0884567.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/lnxGroupResource.0cedb684d797032bd47cdb852629c36da0884567.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [lnxGroupResource.0cedb684d797032bd47cdb852629c36da0884567.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/lnxGroupResource.0cedb684d797032bd47cdb852629c36da0884567.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='f5290e085c8949f6b3cdf23f3244a7142da6248d18'></a> Source: [dsc\debugResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/debugResource.md)
+##### <a name='97ad8a5711d469a80a7a61056d71b7e2b69cfd2749'></a> Source: [dsc\msft-dsclocalconfigurationmanager-disabledebugconfiguration.md](https://github.com/PowerShell/powerShell-Docs/blob/919438862ca9786447b690d2db10e905da0a7c42/dsc/msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [dsc\debugResource.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/dsc/debugResource.md)
-* Handoff File: [debugResource.ac634156affe5c723cc149a298f5aa4268d17016.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/debugResource.ac634156affe5c723cc149a298f5aa4268d17016.zh-cn.xlf)
+* Target File: [dsc\msft-dsclocalconfigurationmanager-disabledebugconfiguration.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/dsc/msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)
+* Handoff File: [msft-dsclocalconfigurationmanager-disabledebugconfiguration.9c5587dc91662800483c6063f100aa74b2fc1881.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-disabledebugconfiguration.9c5587dc91662800483c6063f100aa74b2fc1881.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [debugResource.ac634156affe5c723cc149a298f5aa4268d17016.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/debugResource.ac634156affe5c723cc149a298f5aa4268d17016.zh-cn.xlf)
+* Archive File: [msft-dsclocalconfigurationmanager-disabledebugconfiguration.9c5587dc91662800483c6063f100aa74b2fc1881.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/msft-dsclocalconfigurationmanager-disabledebugconfiguration.9c5587dc91662800483c6063f100aa74b2fc1881.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [debugResource.ac634156affe5c723cc149a298f5aa4268d17016.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/debugResource.ac634156affe5c723cc149a298f5aa4268d17016.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [debugResource.ac634156affe5c723cc149a298f5aa4268d17016.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/debugResource.ac634156affe5c723cc149a298f5aa4268d17016.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [msft-dsclocalconfigurationmanager-disabledebugconfiguration.9c5587dc91662800483c6063f100aa74b2fc1881.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-disabledebugconfiguration.9c5587dc91662800483c6063f100aa74b2fc1881.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [msft-dsclocalconfigurationmanager-disabledebugconfiguration.9c5587dc91662800483c6063f100aa74b2fc1881.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-disabledebugconfiguration.9c5587dc91662800483c6063f100aa74b2fc1881.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='2d2b142dc862f7655f28aa34e1fd91f63bd6286e19'></a> Source: [dsc\decisionMaker.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/decisionMaker.md)
+##### <a name='f74e9941180c00a1aae1bd1d7b48fa4de0c8790d50'></a> Source: [dsc\msft-dsclocalconfigurationmanager-enabledebugconfiguration.md](https://github.com/PowerShell/powerShell-Docs/blob/919438862ca9786447b690d2db10e905da0a7c42/dsc/msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [dsc\decisionMaker.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/dsc/decisionMaker.md)
-* Handoff File: [decisionMaker.01553169f2ba4241995260fad925e2784b5f5567.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/decisionMaker.01553169f2ba4241995260fad925e2784b5f5567.zh-cn.xlf)
+* Target File: [dsc\msft-dsclocalconfigurationmanager-enabledebugconfiguration.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/dsc/msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)
+* Handoff File: [msft-dsclocalconfigurationmanager-enabledebugconfiguration.56f0b880660ab81bf574c91fac5c3489b478d217.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-enabledebugconfiguration.56f0b880660ab81bf574c91fac5c3489b478d217.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [decisionMaker.01553169f2ba4241995260fad925e2784b5f5567.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/decisionMaker.01553169f2ba4241995260fad925e2784b5f5567.zh-cn.xlf)
+* Archive File: [msft-dsclocalconfigurationmanager-enabledebugconfiguration.56f0b880660ab81bf574c91fac5c3489b478d217.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/msft-dsclocalconfigurationmanager-enabledebugconfiguration.56f0b880660ab81bf574c91fac5c3489b478d217.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [decisionMaker.01553169f2ba4241995260fad925e2784b5f5567.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/decisionMaker.01553169f2ba4241995260fad925e2784b5f5567.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [decisionMaker.01553169f2ba4241995260fad925e2784b5f5567.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/decisionMaker.01553169f2ba4241995260fad925e2784b5f5567.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [msft-dsclocalconfigurationmanager-enabledebugconfiguration.56f0b880660ab81bf574c91fac5c3489b478d217.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-enabledebugconfiguration.56f0b880660ab81bf574c91fac5c3489b478d217.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [msft-dsclocalconfigurationmanager-enabledebugconfiguration.56f0b880660ab81bf574c91fac5c3489b478d217.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-enabledebugconfiguration.56f0b880660ab81bf574c91fac5c3489b478d217.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='4c575bbf0e0553e19e56bcc6edd605e36586cb9440'></a> Source: [dsc\lnxScriptResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxScriptResource.md)
+##### <a name='4f3d74949d98e3ab3f5136303e229c23ed903c5d56'></a> Source: [dsc\msft-dsclocalconfigurationmanager-removeconfiguration.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-removeconfiguration.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [dsc\lnxScriptResource.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/dsc/lnxScriptResource.md)
-* Handoff File: [lnxScriptResource.1344a5d5b807ee53705e93842d9ef5e25a883359.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/lnxScriptResource.1344a5d5b807ee53705e93842d9ef5e25a883359.zh-cn.xlf)
+* Target File: [dsc\msft-dsclocalconfigurationmanager-removeconfiguration.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/dsc/msft-dsclocalconfigurationmanager-removeconfiguration.md)
+* Handoff File: [msft-dsclocalconfigurationmanager-removeconfiguration.dfbeb60ce8a2ce97a6dd15d3d1cff3363d1d73e9.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-removeconfiguration.dfbeb60ce8a2ce97a6dd15d3d1cff3363d1d73e9.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [lnxScriptResource.1344a5d5b807ee53705e93842d9ef5e25a883359.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/lnxScriptResource.1344a5d5b807ee53705e93842d9ef5e25a883359.zh-cn.xlf)
+* Archive File: [msft-dsclocalconfigurationmanager-removeconfiguration.dfbeb60ce8a2ce97a6dd15d3d1cff3363d1d73e9.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/msft-dsclocalconfigurationmanager-removeconfiguration.dfbeb60ce8a2ce97a6dd15d3d1cff3363d1d73e9.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [lnxScriptResource.1344a5d5b807ee53705e93842d9ef5e25a883359.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/lnxScriptResource.1344a5d5b807ee53705e93842d9ef5e25a883359.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [lnxScriptResource.1344a5d5b807ee53705e93842d9ef5e25a883359.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/lnxScriptResource.1344a5d5b807ee53705e93842d9ef5e25a883359.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [msft-dsclocalconfigurationmanager-removeconfiguration.dfbeb60ce8a2ce97a6dd15d3d1cff3363d1d73e9.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-removeconfiguration.dfbeb60ce8a2ce97a6dd15d3d1cff3363d1d73e9.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [msft-dsclocalconfigurationmanager-removeconfiguration.dfbeb60ce8a2ce97a6dd15d3d1cff3363d1d73e9.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-removeconfiguration.dfbeb60ce8a2ce97a6dd15d3d1cff3363d1d73e9.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='edc906b4e9c925320c4ed00c5ab295189066ccb942'></a> Source: [dsc\lnxSshAuthorizedKeysResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxSshAuthorizedKeysResource.md)
+##### <a name='1666b85402f17230090f7290c8cb400dd9fbf0a657'></a> Source: [dsc\msft-dsclocalconfigurationmanager-resourceget.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-resourceget.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [dsc\lnxSshAuthorizedKeysResource.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/dsc/lnxSshAuthorizedKeysResource.md)
-* Handoff File: [lnxSshAuthorizedKeysResource.9a647ff238cd38a2fc7da58f3cc5682acf7d3346.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/lnxSshAuthorizedKeysResource.9a647ff238cd38a2fc7da58f3cc5682acf7d3346.zh-cn.xlf)
+* Target File: [dsc\msft-dsclocalconfigurationmanager-resourceget.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/dsc/msft-dsclocalconfigurationmanager-resourceget.md)
+* Handoff File: [msft-dsclocalconfigurationmanager-resourceget.31d499db5e4d041aadbeeba37268e2948c4b99bd.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-resourceget.31d499db5e4d041aadbeeba37268e2948c4b99bd.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [lnxSshAuthorizedKeysResource.9a647ff238cd38a2fc7da58f3cc5682acf7d3346.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/lnxSshAuthorizedKeysResource.9a647ff238cd38a2fc7da58f3cc5682acf7d3346.zh-cn.xlf)
+* Archive File: [msft-dsclocalconfigurationmanager-resourceget.31d499db5e4d041aadbeeba37268e2948c4b99bd.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/msft-dsclocalconfigurationmanager-resourceget.31d499db5e4d041aadbeeba37268e2948c4b99bd.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [lnxSshAuthorizedKeysResource.9a647ff238cd38a2fc7da58f3cc5682acf7d3346.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/lnxSshAuthorizedKeysResource.9a647ff238cd38a2fc7da58f3cc5682acf7d3346.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [lnxSshAuthorizedKeysResource.9a647ff238cd38a2fc7da58f3cc5682acf7d3346.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/lnxSshAuthorizedKeysResource.9a647ff238cd38a2fc7da58f3cc5682acf7d3346.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [msft-dsclocalconfigurationmanager-resourceget.31d499db5e4d041aadbeeba37268e2948c4b99bd.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-resourceget.31d499db5e4d041aadbeeba37268e2948c4b99bd.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [msft-dsclocalconfigurationmanager-resourceget.31d499db5e4d041aadbeeba37268e2948c4b99bd.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-resourceget.31d499db5e4d041aadbeeba37268e2948c4b99bd.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='c66b8d6abf4886143f71c0de823cbfde86d875ba46'></a> Source: [dsc\metaConfig.md](https://github.com/PowerShell/powerShell-Docs/blob/901cf8190252ac344182bf49d550a8adade559a0/dsc/metaConfig.md)
+##### <a name='cbc499f293aad941d40fcb720ef53e832c3b1ea858'></a> Source: [dsc\msft-dsclocalconfigurationmanager-resourceset.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-resourceset.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [dsc\metaConfig.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/dsc/metaConfig.md)
-* Handoff File: [metaConfig.915dba9ed66671e4a41c35a16d5248bb4c94e3d6.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/metaConfig.915dba9ed66671e4a41c35a16d5248bb4c94e3d6.zh-cn.xlf)
+* Target File: [dsc\msft-dsclocalconfigurationmanager-resourceset.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/dsc/msft-dsclocalconfigurationmanager-resourceset.md)
+* Handoff File: [msft-dsclocalconfigurationmanager-resourceset.b8a6e6f4417ed8b51815e20c25c3967e3bbfc7c7.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-resourceset.b8a6e6f4417ed8b51815e20c25c3967e3bbfc7c7.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [metaConfig.915dba9ed66671e4a41c35a16d5248bb4c94e3d6.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/metaConfig.915dba9ed66671e4a41c35a16d5248bb4c94e3d6.zh-cn.xlf)
+* Archive File: [msft-dsclocalconfigurationmanager-resourceset.b8a6e6f4417ed8b51815e20c25c3967e3bbfc7c7.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/msft-dsclocalconfigurationmanager-resourceset.b8a6e6f4417ed8b51815e20c25c3967e3bbfc7c7.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [metaConfig.915dba9ed66671e4a41c35a16d5248bb4c94e3d6.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/metaConfig.915dba9ed66671e4a41c35a16d5248bb4c94e3d6.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [metaConfig.915dba9ed66671e4a41c35a16d5248bb4c94e3d6.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/metaConfig.915dba9ed66671e4a41c35a16d5248bb4c94e3d6.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [msft-dsclocalconfigurationmanager-resourceset.b8a6e6f4417ed8b51815e20c25c3967e3bbfc7c7.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-resourceset.b8a6e6f4417ed8b51815e20c25c3967e3bbfc7c7.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [msft-dsclocalconfigurationmanager-resourceset.b8a6e6f4417ed8b51815e20c25c3967e3bbfc7c7.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-resourceset.b8a6e6f4417ed8b51815e20c25c3967e3bbfc7c7.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='25195166f4d9dd668427d6bb5d748ef61273cdee47'></a> Source: [dsc\metaConfig4.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/metaConfig4.md)
+##### <a name='95b141472d9428cee71b6970fc1f496704211c0b61'></a> Source: [dsc\msft-dsclocalconfigurationmanager-sendconfiguration.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-sendconfiguration.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [dsc\metaConfig4.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/dsc/metaConfig4.md)
-* Handoff File: [metaConfig4.4ec702d458e6574099cead724f0e57c3c5d262df.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/metaConfig4.4ec702d458e6574099cead724f0e57c3c5d262df.zh-cn.xlf)
+* Target File: [dsc\msft-dsclocalconfigurationmanager-sendconfiguration.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/dsc/msft-dsclocalconfigurationmanager-sendconfiguration.md)
+* Handoff File: [msft-dsclocalconfigurationmanager-sendconfiguration.ef2224874728677cee639c7ea223742feeb969fe.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-sendconfiguration.ef2224874728677cee639c7ea223742feeb969fe.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [metaConfig4.4ec702d458e6574099cead724f0e57c3c5d262df.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/metaConfig4.4ec702d458e6574099cead724f0e57c3c5d262df.zh-cn.xlf)
+* Archive File: [msft-dsclocalconfigurationmanager-sendconfiguration.ef2224874728677cee639c7ea223742feeb969fe.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/msft-dsclocalconfigurationmanager-sendconfiguration.ef2224874728677cee639c7ea223742feeb969fe.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [metaConfig4.4ec702d458e6574099cead724f0e57c3c5d262df.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/metaConfig4.4ec702d458e6574099cead724f0e57c3c5d262df.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [metaConfig4.4ec702d458e6574099cead724f0e57c3c5d262df.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/metaConfig4.4ec702d458e6574099cead724f0e57c3c5d262df.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [msft-dsclocalconfigurationmanager-sendconfiguration.ef2224874728677cee639c7ea223742feeb969fe.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-sendconfiguration.ef2224874728677cee639c7ea223742feeb969fe.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [msft-dsclocalconfigurationmanager-sendconfiguration.ef2224874728677cee639c7ea223742feeb969fe.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-sendconfiguration.ef2224874728677cee639c7ea223742feeb969fe.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='6f9c6a8851732574ac72bc4f3a3db1a73fbbecf248'></a> Source: [dsc\msft-dsclocalconfigurationmanager-applyconfiguration.md](https://github.com/PowerShell/powerShell-Docs/blob/919438862ca9786447b690d2db10e905da0a7c42/dsc/msft-dsclocalconfigurationmanager-applyconfiguration.md)
+##### <a name='35ac9b38086b12fb48844c56a488854f63529e2177'></a> Source: [dsc\pullServerSMB.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/pullServerSMB.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [dsc\msft-dsclocalconfigurationmanager-applyconfiguration.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/dsc/msft-dsclocalconfigurationmanager-applyconfiguration.md)
-* Handoff File: [msft-dsclocalconfigurationmanager-applyconfiguration.8a8c7cf9f83c8fe20cc7240603987f13bf76ac94.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-applyconfiguration.8a8c7cf9f83c8fe20cc7240603987f13bf76ac94.zh-cn.xlf)
+* Target File: [dsc\pullServerSMB.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/dsc/pullServerSMB.md)
+* Handoff File: [pullServerSMB.772aec5ae27ccb19ced78e3eb665a4e16db1c4df.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/pullServerSMB.772aec5ae27ccb19ced78e3eb665a4e16db1c4df.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [msft-dsclocalconfigurationmanager-applyconfiguration.8a8c7cf9f83c8fe20cc7240603987f13bf76ac94.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/msft-dsclocalconfigurationmanager-applyconfiguration.8a8c7cf9f83c8fe20cc7240603987f13bf76ac94.zh-cn.xlf)
+* Archive File: [pullServerSMB.772aec5ae27ccb19ced78e3eb665a4e16db1c4df.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/pullServerSMB.772aec5ae27ccb19ced78e3eb665a4e16db1c4df.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [msft-dsclocalconfigurationmanager-applyconfiguration.8a8c7cf9f83c8fe20cc7240603987f13bf76ac94.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-applyconfiguration.8a8c7cf9f83c8fe20cc7240603987f13bf76ac94.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [msft-dsclocalconfigurationmanager-applyconfiguration.8a8c7cf9f83c8fe20cc7240603987f13bf76ac94.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-applyconfiguration.8a8c7cf9f83c8fe20cc7240603987f13bf76ac94.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [pullServerSMB.772aec5ae27ccb19ced78e3eb665a4e16db1c4df.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/pullServerSMB.772aec5ae27ccb19ced78e3eb665a4e16db1c4df.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [pullServerSMB.772aec5ae27ccb19ced78e3eb665a4e16db1c4df.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/pullServerSMB.772aec5ae27ccb19ced78e3eb665a4e16db1c4df.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='19d4790f22491e0bb11de1e315d1ee3b07929d5551'></a> Source: [dsc\msft-dsclocalconfigurationmanager-getconfiguration.md](https://github.com/PowerShell/powerShell-Docs/blob/919438862ca9786447b690d2db10e905da0a7c42/dsc/msft-dsclocalconfigurationmanager-getconfiguration.md)
+##### <a name='ce8d6c1c9e8005c5c4792ae0fa4c5030bb9a92ed87'></a> Source: [dsc\serviceResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/serviceResource.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [dsc\msft-dsclocalconfigurationmanager-getconfiguration.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/dsc/msft-dsclocalconfigurationmanager-getconfiguration.md)
-* Handoff File: [msft-dsclocalconfigurationmanager-getconfiguration.6595ca00c942ab3e3e62fb2c001bc28d2324a33d.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-getconfiguration.6595ca00c942ab3e3e62fb2c001bc28d2324a33d.zh-cn.xlf)
+* Target File: [dsc\serviceResource.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/dsc/serviceResource.md)
+* Handoff File: [serviceResource.17d839ef9952ec1a45ba971fcff47a80c41593cf.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/serviceResource.17d839ef9952ec1a45ba971fcff47a80c41593cf.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [msft-dsclocalconfigurationmanager-getconfiguration.6595ca00c942ab3e3e62fb2c001bc28d2324a33d.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/msft-dsclocalconfigurationmanager-getconfiguration.6595ca00c942ab3e3e62fb2c001bc28d2324a33d.zh-cn.xlf)
+* Archive File: [serviceResource.17d839ef9952ec1a45ba971fcff47a80c41593cf.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/serviceResource.17d839ef9952ec1a45ba971fcff47a80c41593cf.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [msft-dsclocalconfigurationmanager-getconfiguration.6595ca00c942ab3e3e62fb2c001bc28d2324a33d.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-getconfiguration.6595ca00c942ab3e3e62fb2c001bc28d2324a33d.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [msft-dsclocalconfigurationmanager-getconfiguration.6595ca00c942ab3e3e62fb2c001bc28d2324a33d.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-getconfiguration.6595ca00c942ab3e3e62fb2c001bc28d2324a33d.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [serviceResource.17d839ef9952ec1a45ba971fcff47a80c41593cf.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/serviceResource.17d839ef9952ec1a45ba971fcff47a80c41593cf.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [serviceResource.17d839ef9952ec1a45ba971fcff47a80c41593cf.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/serviceResource.17d839ef9952ec1a45ba971fcff47a80c41593cf.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='8f13964dfbbe1cd827c58232a35d1cbacddeed1b52'></a> Source: [dsc\msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md)
+##### <a name='4b1e8a6d3fb4feca426a9d7861c40d194e612c2288'></a> Source: [dsc\singleInstance.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/singleInstance.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [dsc\msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/dsc/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md)
-* Handoff File: [msft-dsclocalconfigurationmanager-getconfigurationresultoutput.3528ac9caa01aaee78b88e1d947f7c6d57c55834.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.3528ac9caa01aaee78b88e1d947f7c6d57c55834.zh-cn.xlf)
+* Target File: [dsc\singleInstance.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/dsc/singleInstance.md)
+* Handoff File: [singleInstance.4f8933068a5f26b35ccecf08382837dc04056f86.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/singleInstance.4f8933068a5f26b35ccecf08382837dc04056f86.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [msft-dsclocalconfigurationmanager-getconfigurationresultoutput.3528ac9caa01aaee78b88e1d947f7c6d57c55834.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.3528ac9caa01aaee78b88e1d947f7c6d57c55834.zh-cn.xlf)
+* Archive File: [singleInstance.4f8933068a5f26b35ccecf08382837dc04056f86.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/singleInstance.4f8933068a5f26b35ccecf08382837dc04056f86.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [msft-dsclocalconfigurationmanager-getconfigurationresultoutput.3528ac9caa01aaee78b88e1d947f7c6d57c55834.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.3528ac9caa01aaee78b88e1d947f7c6d57c55834.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [msft-dsclocalconfigurationmanager-getconfigurationresultoutput.3528ac9caa01aaee78b88e1d947f7c6d57c55834.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.3528ac9caa01aaee78b88e1d947f7c6d57c55834.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [singleInstance.4f8933068a5f26b35ccecf08382837dc04056f86.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/singleInstance.4f8933068a5f26b35ccecf08382837dc04056f86.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [singleInstance.4f8933068a5f26b35ccecf08382837dc04056f86.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/singleInstance.4f8933068a5f26b35ccecf08382837dc04056f86.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='771a9c7b50aba26f89dbf6b24eb3df67bafeac0a60'></a> Source: [dsc\msft-dsclocalconfigurationmanager-rollback.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-rollback.md)
+##### <a name='434ebc17f2bc7b7ee868788e87dc5b34cef6152993'></a> Source: [dsc\whitepapers.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/whitepapers.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [dsc\msft-dsclocalconfigurationmanager-rollback.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/dsc/msft-dsclocalconfigurationmanager-rollback.md)
-* Handoff File: [msft-dsclocalconfigurationmanager-rollback.ca9b0ac6513b64cca5924a4ebdc9c393cb0cccc6.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-rollback.ca9b0ac6513b64cca5924a4ebdc9c393cb0cccc6.zh-cn.xlf)
+* Target File: [dsc\whitepapers.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/dsc/whitepapers.md)
+* Handoff File: [whitepapers.40273d6b9e10f219b68cfb2a8802aec2c9f891cc.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/whitepapers.40273d6b9e10f219b68cfb2a8802aec2c9f891cc.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [msft-dsclocalconfigurationmanager-rollback.ca9b0ac6513b64cca5924a4ebdc9c393cb0cccc6.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/msft-dsclocalconfigurationmanager-rollback.ca9b0ac6513b64cca5924a4ebdc9c393cb0cccc6.zh-cn.xlf)
+* Archive File: [whitepapers.40273d6b9e10f219b68cfb2a8802aec2c9f891cc.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/whitepapers.40273d6b9e10f219b68cfb2a8802aec2c9f891cc.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [msft-dsclocalconfigurationmanager-rollback.ca9b0ac6513b64cca5924a4ebdc9c393cb0cccc6.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-rollback.ca9b0ac6513b64cca5924a4ebdc9c393cb0cccc6.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [msft-dsclocalconfigurationmanager-rollback.ca9b0ac6513b64cca5924a4ebdc9c393cb0cccc6.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-rollback.ca9b0ac6513b64cca5924a4ebdc9c393cb0cccc6.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [whitepapers.40273d6b9e10f219b68cfb2a8802aec2c9f891cc.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/whitepapers.40273d6b9e10f219b68cfb2a8802aec2c9f891cc.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [whitepapers.40273d6b9e10f219b68cfb2a8802aec2c9f891cc.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/whitepapers.40273d6b9e10f219b68cfb2a8802aec2c9f891cc.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='701063dfa37fe4ba8b014cadadd10339b7fd1bf762'></a> Source: [dsc\msft-dsclocalconfigurationmanager-sendconfigurationapply.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-sendconfigurationapply.md)
+##### <a name='522dbea958a60f76e98abe32e11e6491ea6d457c94'></a> Source: [dsc\windowsfeatureResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/windowsfeatureResource.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [dsc\msft-dsclocalconfigurationmanager-sendconfigurationapply.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/dsc/msft-dsclocalconfigurationmanager-sendconfigurationapply.md)
-* Handoff File: [msft-dsclocalconfigurationmanager-sendconfigurationapply.04f85927d24f711ab08c310f7301b3477b8ce2d1.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-sendconfigurationapply.04f85927d24f711ab08c310f7301b3477b8ce2d1.zh-cn.xlf)
+* Target File: [dsc\windowsfeatureResource.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/dsc/windowsfeatureResource.md)
+* Handoff File: [windowsfeatureResource.07b968eb71ba947a4bf5fa25add8a0e2c25bcadf.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/windowsfeatureResource.07b968eb71ba947a4bf5fa25add8a0e2c25bcadf.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [msft-dsclocalconfigurationmanager-sendconfigurationapply.04f85927d24f711ab08c310f7301b3477b8ce2d1.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/msft-dsclocalconfigurationmanager-sendconfigurationapply.04f85927d24f711ab08c310f7301b3477b8ce2d1.zh-cn.xlf)
+* Archive File: [windowsfeatureResource.07b968eb71ba947a4bf5fa25add8a0e2c25bcadf.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/windowsfeatureResource.07b968eb71ba947a4bf5fa25add8a0e2c25bcadf.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [msft-dsclocalconfigurationmanager-sendconfigurationapply.04f85927d24f711ab08c310f7301b3477b8ce2d1.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-sendconfigurationapply.04f85927d24f711ab08c310f7301b3477b8ce2d1.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [msft-dsclocalconfigurationmanager-sendconfigurationapply.04f85927d24f711ab08c310f7301b3477b8ce2d1.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-sendconfigurationapply.04f85927d24f711ab08c310f7301b3477b8ce2d1.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [windowsfeatureResource.07b968eb71ba947a4bf5fa25add8a0e2c25bcadf.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/windowsfeatureResource.07b968eb71ba947a4bf5fa25add8a0e2c25bcadf.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [windowsfeatureResource.07b968eb71ba947a4bf5fa25add8a0e2c25bcadf.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/windowsfeatureResource.07b968eb71ba947a4bf5fa25add8a0e2c25bcadf.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='41177f2eb2bbcf2dddaf232141fb483efaaeeea563'></a> Source: [dsc\msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)
+##### <a name='e1827e102a9b35ea214f89395f7ff3c5e0a58506241'></a> Source: [scripting\setup\WinRMSecurity.md](https://github.com/PowerShell/powerShell-Docs/blob/7facb78962411d7b96ef6741e3ffa153d5537a0d/scripting/setup/WinRMSecurity.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [dsc\msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/dsc/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)
-* Handoff File: [msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.6d0c80dc6d6cb7b85269234b88c53e813bb7d47f.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.6d0c80dc6d6cb7b85269234b88c53e813bb7d47f.zh-cn.xlf)
+* Target File: [scripting\setup\WinRMSecurity.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/scripting/setup/WinRMSecurity.md)
+* Handoff File: [WinRMSecurity.255765f15bf2d6a4b9d093e2c9eada2cd613afe0.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/WinRMSecurity.255765f15bf2d6a4b9d093e2c9eada2cd613afe0.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.6d0c80dc6d6cb7b85269234b88c53e813bb7d47f.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.6d0c80dc6d6cb7b85269234b88c53e813bb7d47f.zh-cn.xlf)
+* Archive File: [WinRMSecurity.255765f15bf2d6a4b9d093e2c9eada2cd613afe0.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/WinRMSecurity.255765f15bf2d6a4b9d093e2c9eada2cd613afe0.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.6d0c80dc6d6cb7b85269234b88c53e813bb7d47f.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.6d0c80dc6d6cb7b85269234b88c53e813bb7d47f.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.6d0c80dc6d6cb7b85269234b88c53e813bb7d47f.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.6d0c80dc6d6cb7b85269234b88c53e813bb7d47f.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [WinRMSecurity.255765f15bf2d6a4b9d093e2c9eada2cd613afe0.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/WinRMSecurity.255765f15bf2d6a4b9d093e2c9eada2cd613afe0.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [WinRMSecurity.255765f15bf2d6a4b9d093e2c9eada2cd613afe0.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/WinRMSecurity.255765f15bf2d6a4b9d093e2c9eada2cd613afe0.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='a81b41f66883b3cf0931905d24c8ff92ef55b6c764'></a> Source: [dsc\msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md)
+##### <a name='207792452c563ec6cca5c17fbcd122372442d8ac243'></a> Source: [scripting\topic\WinRMSecurity.md](https://github.com/PowerShell/powerShell-Docs/blob/afa259b8611f995bbf5b824179a12e3d8f15df86/scripting/topic/WinRMSecurity.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [dsc\msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/dsc/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md)
-* Handoff File: [msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.a2ebf60264f7a711d4c37b3dbfc197f36e50280e.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.a2ebf60264f7a711d4c37b3dbfc197f36e50280e.zh-cn.xlf)
+* Target File: [scripting\topic\WinRMSecurity.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/scripting/topic/WinRMSecurity.md)
+* Handoff File: [WinRMSecurity.bed416d948611138eff822ac11c040f02ce812b9.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/WinRMSecurity.bed416d948611138eff822ac11c040f02ce812b9.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.a2ebf60264f7a711d4c37b3dbfc197f36e50280e.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.a2ebf60264f7a711d4c37b3dbfc197f36e50280e.zh-cn.xlf)
+* Archive File: [WinRMSecurity.bed416d948611138eff822ac11c040f02ce812b9.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/WinRMSecurity.bed416d948611138eff822ac11c040f02ce812b9.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.a2ebf60264f7a711d4c37b3dbfc197f36e50280e.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.a2ebf60264f7a711d4c37b3dbfc197f36e50280e.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.a2ebf60264f7a711d4c37b3dbfc197f36e50280e.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.a2ebf60264f7a711d4c37b3dbfc197f36e50280e.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [WinRMSecurity.bed416d948611138eff822ac11c040f02ce812b9.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/WinRMSecurity.bed416d948611138eff822ac11c040f02ce812b9.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [WinRMSecurity.bed416d948611138eff822ac11c040f02ce812b9.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/WinRMSecurity.bed416d948611138eff822ac11c040f02ce812b9.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='9721486cca6f94d6b156c6ee1992eced6652c12365'></a> Source: [dsc\msft-dsclocalconfigurationmanager-stopconfiguration.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-stopconfiguration.md)
+##### <a name='0660867e6e7c7a93a8ca80d76f22db7fd86f8826258'></a> Source: [wmf\debug_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/debug_overview.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [dsc\msft-dsclocalconfigurationmanager-stopconfiguration.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/dsc/msft-dsclocalconfigurationmanager-stopconfiguration.md)
-* Handoff File: [msft-dsclocalconfigurationmanager-stopconfiguration.be28209b8b0b7015bd9b68775697d0adbb5e5ebe.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-stopconfiguration.be28209b8b0b7015bd9b68775697d0adbb5e5ebe.zh-cn.xlf)
+* Target File: [wmf\debug_overview.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/wmf/debug_overview.md)
+* Handoff File: [debug_overview.70b71c20b8b625704c25da28a58e804a048bafb0.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/debug_overview.70b71c20b8b625704c25da28a58e804a048bafb0.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [msft-dsclocalconfigurationmanager-stopconfiguration.be28209b8b0b7015bd9b68775697d0adbb5e5ebe.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/msft-dsclocalconfigurationmanager-stopconfiguration.be28209b8b0b7015bd9b68775697d0adbb5e5ebe.zh-cn.xlf)
+* Archive File: [debug_overview.70b71c20b8b625704c25da28a58e804a048bafb0.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/debug_overview.70b71c20b8b625704c25da28a58e804a048bafb0.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [msft-dsclocalconfigurationmanager-stopconfiguration.be28209b8b0b7015bd9b68775697d0adbb5e5ebe.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-stopconfiguration.be28209b8b0b7015bd9b68775697d0adbb5e5ebe.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [msft-dsclocalconfigurationmanager-stopconfiguration.be28209b8b0b7015bd9b68775697d0adbb5e5ebe.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager-stopconfiguration.be28209b8b0b7015bd9b68775697d0adbb5e5ebe.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [debug_overview.70b71c20b8b625704c25da28a58e804a048bafb0.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/debug_overview.70b71c20b8b625704c25da28a58e804a048bafb0.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [debug_overview.70b71c20b8b625704c25da28a58e804a048bafb0.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/debug_overview.70b71c20b8b625704c25da28a58e804a048bafb0.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='bcaf82cbafe67cc309765e16b3c9cd6eff0a982a70'></a> Source: [dsc\packageResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/packageResource.md)
+##### <a name='e3643fd339a0662d87f9532d9c38fd56c7f72333287'></a> Source: [wmf\dsc_updateconfig.md](https://github.com/PowerShell/powerShell-Docs/blob/d367048eab0ba3fd67baed2ee27332ce0827d5ac/wmf/dsc_updateconfig.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [dsc\packageResource.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/dsc/packageResource.md)
-* Handoff File: [packageResource.132c4949cee174dc0dc324456d220436cb9884e6.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/packageResource.132c4949cee174dc0dc324456d220436cb9884e6.zh-cn.xlf)
+* Target File: [wmf\dsc_updateconfig.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/wmf/dsc_updateconfig.md)
+* Handoff File: [dsc_updateconfig.a07eb85e3458d42d7ab1ed5c57dcfc70df709d07.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/dsc_updateconfig.a07eb85e3458d42d7ab1ed5c57dcfc70df709d07.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [packageResource.132c4949cee174dc0dc324456d220436cb9884e6.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/packageResource.132c4949cee174dc0dc324456d220436cb9884e6.zh-cn.xlf)
+* Archive File: [dsc_updateconfig.a07eb85e3458d42d7ab1ed5c57dcfc70df709d07.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/dsc_updateconfig.a07eb85e3458d42d7ab1ed5c57dcfc70df709d07.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [packageResource.132c4949cee174dc0dc324456d220436cb9884e6.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/packageResource.132c4949cee174dc0dc324456d220436cb9884e6.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [packageResource.132c4949cee174dc0dc324456d220436cb9884e6.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/packageResource.132c4949cee174dc0dc324456d220436cb9884e6.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [dsc_updateconfig.a07eb85e3458d42d7ab1ed5c57dcfc70df709d07.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/dsc_updateconfig.a07eb85e3458d42d7ab1ed5c57dcfc70df709d07.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [dsc_updateconfig.a07eb85e3458d42d7ab1ed5c57dcfc70df709d07.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/dsc_updateconfig.a07eb85e3458d42d7ab1ed5c57dcfc70df709d07.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='95f49fecdf13a54049caf27345d2a48c98b8f09b72'></a> Source: [dsc\pullClient.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/pullClient.md)
+##### <a name='71e9f46958b59abce912278677217cd632629439295'></a> Source: [wmf\feedback_convertstring.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/feedback_convertstring.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [dsc\pullClient.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/dsc/pullClient.md)
-* Handoff File: [pullClient.4844144e7d40a6e8b1be2cfaa80a5307f19f47f9.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/pullClient.4844144e7d40a6e8b1be2cfaa80a5307f19f47f9.zh-cn.xlf)
+* Target File: [wmf\feedback_convertstring.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/wmf/feedback_convertstring.md)
+* Handoff File: [feedback_convertstring.42e964e30093962871c3a4d586ed6c54f25f840d.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/feedback_convertstring.42e964e30093962871c3a4d586ed6c54f25f840d.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [pullClient.4844144e7d40a6e8b1be2cfaa80a5307f19f47f9.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/pullClient.4844144e7d40a6e8b1be2cfaa80a5307f19f47f9.zh-cn.xlf)
+* Archive File: [feedback_convertstring.42e964e30093962871c3a4d586ed6c54f25f840d.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/feedback_convertstring.42e964e30093962871c3a4d586ed6c54f25f840d.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [pullClient.4844144e7d40a6e8b1be2cfaa80a5307f19f47f9.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/pullClient.4844144e7d40a6e8b1be2cfaa80a5307f19f47f9.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [pullClient.4844144e7d40a6e8b1be2cfaa80a5307f19f47f9.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/pullClient.4844144e7d40a6e8b1be2cfaa80a5307f19f47f9.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [feedback_convertstring.42e964e30093962871c3a4d586ed6c54f25f840d.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/feedback_convertstring.42e964e30093962871c3a4d586ed6c54f25f840d.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [feedback_convertstring.42e964e30093962871c3a4d586ed6c54f25f840d.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/feedback_convertstring.42e964e30093962871c3a4d586ed6c54f25f840d.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='801a0491746c17061d14d6d4938e7182650f6ff384'></a> Source: [dsc\scriptResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/scriptResource.md)
+##### <a name='24969d20cd4500db4e8dc27c16cac84c0f3dc696301'></a> Source: [wmf\feedback_nonewline.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/feedback_nonewline.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [dsc\scriptResource.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/dsc/scriptResource.md)
-* Handoff File: [scriptResource.086a4e23c7f1950435cf115060757fcd9b7f7f5d.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/scriptResource.086a4e23c7f1950435cf115060757fcd9b7f7f5d.zh-cn.xlf)
+* Target File: [wmf\feedback_nonewline.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/wmf/feedback_nonewline.md)
+* Handoff File: [feedback_nonewline.7a9b7e24c50399879089bba2b8eee7dc325572e2.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/feedback_nonewline.7a9b7e24c50399879089bba2b8eee7dc325572e2.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [scriptResource.086a4e23c7f1950435cf115060757fcd9b7f7f5d.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/scriptResource.086a4e23c7f1950435cf115060757fcd9b7f7f5d.zh-cn.xlf)
+* Archive File: [feedback_nonewline.7a9b7e24c50399879089bba2b8eee7dc325572e2.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/feedback_nonewline.7a9b7e24c50399879089bba2b8eee7dc325572e2.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [scriptResource.086a4e23c7f1950435cf115060757fcd9b7f7f5d.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/scriptResource.086a4e23c7f1950435cf115060757fcd9b7f7f5d.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [scriptResource.086a4e23c7f1950435cf115060757fcd9b7f7f5d.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/scriptResource.086a4e23c7f1950435cf115060757fcd9b7f7f5d.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [feedback_nonewline.7a9b7e24c50399879089bba2b8eee7dc325572e2.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/feedback_nonewline.7a9b7e24c50399879089bba2b8eee7dc325572e2.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [feedback_nonewline.7a9b7e24c50399879089bba2b8eee7dc325572e2.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/feedback_nonewline.7a9b7e24c50399879089bba2b8eee7dc325572e2.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='75d41569b18e61342809eebcc76b7899ec6363fa162'></a> Source: [scripting\core-powershell\Running-Remote-Commands.md](https://github.com/PowerShell/powerShell-Docs/blob/593f0c2ca72e00f19c395c1dae31798d5a5f652d/scripting/core-powershell/Running-Remote-Commands.md)
+##### <a name='20254315c2503d46e6160593fb822391c5db2dd4307'></a> Source: [wmf\informationstream_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/informationstream_overview.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [scripting\core-powershell\Running-Remote-Commands.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/scripting/core-powershell/Running-Remote-Commands.md)
-* Handoff File: [Running-Remote-Commands.625cb4f9a4da4433a285f1820cb5aa2ba4546438.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/Running-Remote-Commands.625cb4f9a4da4433a285f1820cb5aa2ba4546438.zh-cn.xlf)
+* Target File: [wmf\informationstream_overview.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/wmf/informationstream_overview.md)
+* Handoff File: [informationstream_overview.d2f238b2b4021ccdb7271cf89f53d58970d56cf5.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/informationstream_overview.d2f238b2b4021ccdb7271cf89f53d58970d56cf5.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [Running-Remote-Commands.625cb4f9a4da4433a285f1820cb5aa2ba4546438.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/Running-Remote-Commands.625cb4f9a4da4433a285f1820cb5aa2ba4546438.zh-cn.xlf)
+* Archive File: [informationstream_overview.d2f238b2b4021ccdb7271cf89f53d58970d56cf5.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/informationstream_overview.d2f238b2b4021ccdb7271cf89f53d58970d56cf5.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [Running-Remote-Commands.625cb4f9a4da4433a285f1820cb5aa2ba4546438.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/Running-Remote-Commands.625cb4f9a4da4433a285f1820cb5aa2ba4546438.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [Running-Remote-Commands.625cb4f9a4da4433a285f1820cb5aa2ba4546438.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/Running-Remote-Commands.625cb4f9a4da4433a285f1820cb5aa2ba4546438.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [informationstream_overview.d2f238b2b4021ccdb7271cf89f53d58970d56cf5.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/informationstream_overview.d2f238b2b4021ccdb7271cf89f53d58970d56cf5.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [informationstream_overview.d2f238b2b4021ccdb7271cf89f53d58970d56cf5.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/informationstream_overview.d2f238b2b4021ccdb7271cf89f53d58970d56cf5.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='7e8fd05cfedd500c51f2d7e4f6adbb7d1f27cb00195'></a> Source: [scripting\getting-started\cookbooks\Selecting-Items-from-a-List-Box.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/getting-started/cookbooks/Selecting-Items-from-a-List-Box.md)
+##### <a name='061fb3a39191f7aaf3f5e51b12f56cac84031f49309'></a> Source: [wmf\jea_endpoint.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/jea_endpoint.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [scripting\getting-started\cookbooks\Selecting-Items-from-a-List-Box.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/scripting/getting-started/cookbooks/Selecting-Items-from-a-List-Box.md)
-* Handoff File: [Selecting-Items-from-a-List-Box.afbdc6b6a2c0471cc31c7a41f3dcb7f0911919c5.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/Selecting-Items-from-a-List-Box.afbdc6b6a2c0471cc31c7a41f3dcb7f0911919c5.zh-cn.xlf)
+* Target File: [wmf\jea_endpoint.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/wmf/jea_endpoint.md)
+* Handoff File: [jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [Selecting-Items-from-a-List-Box.afbdc6b6a2c0471cc31c7a41f3dcb7f0911919c5.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/Selecting-Items-from-a-List-Box.afbdc6b6a2c0471cc31c7a41f3dcb7f0911919c5.zh-cn.xlf)
+* Archive File: [jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [Selecting-Items-from-a-List-Box.afbdc6b6a2c0471cc31c7a41f3dcb7f0911919c5.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/Selecting-Items-from-a-List-Box.afbdc6b6a2c0471cc31c7a41f3dcb7f0911919c5.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [Selecting-Items-from-a-List-Box.afbdc6b6a2c0471cc31c7a41f3dcb7f0911919c5.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/Selecting-Items-from-a-List-Box.afbdc6b6a2c0471cc31c7a41f3dcb7f0911919c5.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='0148f4631e34e65a4336c5d1d50e313fb6639748215'></a> Source: [scripting\getting-started\fundamental\Scripting-with-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+##### <a name='a91b675a4f19306481bb87dc3f3b8cb32ab07e8c311'></a> Source: [wmf\jea_report.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/jea_report.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [scripting\getting-started\fundamental\Scripting-with-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/scripting/getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
-* Handoff File: [Scripting-with-Windows-PowerShell.2db569b949f9f41122774e4819582e471a7b8657.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/Scripting-with-Windows-PowerShell.2db569b949f9f41122774e4819582e471a7b8657.zh-cn.xlf)
+* Target File: [wmf\jea_report.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/wmf/jea_report.md)
+* Handoff File: [jea_report.7860cec6e93b7405844ccbbe5bc879921447ac0b.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/jea_report.7860cec6e93b7405844ccbbe5bc879921447ac0b.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [Scripting-with-Windows-PowerShell.2db569b949f9f41122774e4819582e471a7b8657.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/Scripting-with-Windows-PowerShell.2db569b949f9f41122774e4819582e471a7b8657.zh-cn.xlf)
+* Archive File: [jea_report.7860cec6e93b7405844ccbbe5bc879921447ac0b.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/jea_report.7860cec6e93b7405844ccbbe5bc879921447ac0b.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [Scripting-with-Windows-PowerShell.2db569b949f9f41122774e4819582e471a7b8657.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/Scripting-with-Windows-PowerShell.2db569b949f9f41122774e4819582e471a7b8657.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [Scripting-with-Windows-PowerShell.2db569b949f9f41122774e4819582e471a7b8657.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/Scripting-with-Windows-PowerShell.2db569b949f9f41122774e4819582e471a7b8657.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [jea_report.7860cec6e93b7405844ccbbe5bc879921447ac0b.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/jea_report.7860cec6e93b7405844ccbbe5bc879921447ac0b.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [jea_report.7860cec6e93b7405844ccbbe5bc879921447ac0b.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/jea_report.7860cec6e93b7405844ccbbe5bc879921447ac0b.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='31b64b6845c8d6ece8628bd565662525a65353d9255'></a> Source: [wmf\class_interface.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/class_interface.md)
+##### <a name='ad262a8f38b79f748757c1503a5e7173a1010923312'></a> Source: [wmf\limitation_dsc.md](https://github.com/PowerShell/powerShell-Docs/blob/3c72d76301f0dc9296feb7644951883206d72562/wmf/limitation_dsc.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [wmf\class_interface.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/wmf/class_interface.md)
-* Handoff File: [class_interface.84a08fd30808364a820bdd4440de18ec4504a6c7.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/class_interface.84a08fd30808364a820bdd4440de18ec4504a6c7.zh-cn.xlf)
+* Target File: [wmf\limitation_dsc.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/wmf/limitation_dsc.md)
+* Handoff File: [limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [class_interface.84a08fd30808364a820bdd4440de18ec4504a6c7.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/class_interface.84a08fd30808364a820bdd4440de18ec4504a6c7.zh-cn.xlf)
+* Archive File: [limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [class_interface.84a08fd30808364a820bdd4440de18ec4504a6c7.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/class_interface.84a08fd30808364a820bdd4440de18ec4504a6c7.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [class_interface.84a08fd30808364a820bdd4440de18ec4504a6c7.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/class_interface.84a08fd30808364a820bdd4440de18ec4504a6c7.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='3010b1ce497d8a5e45ada003587d9e104eddd8b1257'></a> Source: [wmf\class_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/class_overview.md)
+##### <a name='967366156ab58d16b085a97f9a08169d3bff75c2318'></a> Source: [wmf\oneget_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/oneget_overview.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [wmf\class_overview.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/wmf/class_overview.md)
-* Handoff File: [class_overview.91227b885afcb8df385ab601ab970b924eca2533.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/class_overview.91227b885afcb8df385ab601ab970b924eca2533.zh-cn.xlf)
+* Target File: [wmf\oneget_overview.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/wmf/oneget_overview.md)
+* Handoff File: [oneget_overview.e71a25f36f957ab7471d259c6e716651f6f23c94.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/oneget_overview.e71a25f36f957ab7471d259c6e716651f6f23c94.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [class_overview.91227b885afcb8df385ab601ab970b924eca2533.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/class_overview.91227b885afcb8df385ab601ab970b924eca2533.zh-cn.xlf)
+* Archive File: [oneget_overview.e71a25f36f957ab7471d259c6e716651f6f23c94.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/oneget_overview.e71a25f36f957ab7471d259c6e716651f6f23c94.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [class_overview.91227b885afcb8df385ab601ab970b924eca2533.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/class_overview.91227b885afcb8df385ab601ab970b924eca2533.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [class_overview.91227b885afcb8df385ab601ab970b924eca2533.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/class_overview.91227b885afcb8df385ab601ab970b924eca2533.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [oneget_overview.e71a25f36f957ab7471d259c6e716651f6f23c94.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/oneget_overview.e71a25f36f957ab7471d259c6e716651f6f23c94.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [oneget_overview.e71a25f36f957ab7471d259c6e716651f6f23c94.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/oneget_overview.e71a25f36f957ab7471d259c6e716651f6f23c94.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='336c6bc43b482eda6524ebed0381240868261f64269'></a> Source: [wmf\dsc_improvements.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/dsc_improvements.md)
+##### <a name='644781a07bed2df5464d8090155522ae7477a11e323'></a> Source: [wmf\psget_modulesxsinstall.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/psget_modulesxsinstall.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [wmf\dsc_improvements.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/wmf/dsc_improvements.md)
-* Handoff File: [dsc_improvements.d9ed6ffedf9d9650bb6b26b5ed611e420a0aacbb.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/dsc_improvements.d9ed6ffedf9d9650bb6b26b5ed611e420a0aacbb.zh-cn.xlf)
+* Target File: [wmf\psget_modulesxsinstall.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/wmf/psget_modulesxsinstall.md)
+* Handoff File: [psget_modulesxsinstall.110ba80d8f917899ef488b46bd15f5654f6ba06c.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/psget_modulesxsinstall.110ba80d8f917899ef488b46bd15f5654f6ba06c.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [dsc_improvements.d9ed6ffedf9d9650bb6b26b5ed611e420a0aacbb.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/dsc_improvements.d9ed6ffedf9d9650bb6b26b5ed611e420a0aacbb.zh-cn.xlf)
+* Archive File: [psget_modulesxsinstall.110ba80d8f917899ef488b46bd15f5654f6ba06c.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/psget_modulesxsinstall.110ba80d8f917899ef488b46bd15f5654f6ba06c.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [dsc_improvements.d9ed6ffedf9d9650bb6b26b5ed611e420a0aacbb.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/dsc_improvements.d9ed6ffedf9d9650bb6b26b5ed611e420a0aacbb.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [dsc_improvements.d9ed6ffedf9d9650bb6b26b5ed611e420a0aacbb.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/dsc_improvements.d9ed6ffedf9d9650bb6b26b5ed611e420a0aacbb.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [psget_modulesxsinstall.110ba80d8f917899ef488b46bd15f5654f6ba06c.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/psget_modulesxsinstall.110ba80d8f917899ef488b46bd15f5654f6ba06c.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [psget_modulesxsinstall.110ba80d8f917899ef488b46bd15f5654f6ba06c.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/psget_modulesxsinstall.110ba80d8f917899ef488b46bd15f5654f6ba06c.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='34c29d88f0676e51c1b8af9d9e65b151eb8a4272272'></a> Source: [wmf\dsc_newresources.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/dsc_newresources.md)
+##### <a name='972f011c3c9f98b54fb5cc270281cd146eb9ac71324'></a> Source: [wmf\psget_psrepository.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/psget_psrepository.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [wmf\dsc_newresources.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/wmf/dsc_newresources.md)
-* Handoff File: [dsc_newresources.b9c40f591f875ea205c834f7675f3edbe1050592.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/dsc_newresources.b9c40f591f875ea205c834f7675f3edbe1050592.zh-cn.xlf)
+* Target File: [wmf\psget_psrepository.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/wmf/psget_psrepository.md)
+* Handoff File: [psget_psrepository.c4381b2ff7bb6496ab74ed8bb2b07325cfbfc056.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/psget_psrepository.c4381b2ff7bb6496ab74ed8bb2b07325cfbfc056.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [dsc_newresources.b9c40f591f875ea205c834f7675f3edbe1050592.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/dsc_newresources.b9c40f591f875ea205c834f7675f3edbe1050592.zh-cn.xlf)
+* Archive File: [psget_psrepository.c4381b2ff7bb6496ab74ed8bb2b07325cfbfc056.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/psget_psrepository.c4381b2ff7bb6496ab74ed8bb2b07325cfbfc056.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [dsc_newresources.b9c40f591f875ea205c834f7675f3edbe1050592.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/dsc_newresources.b9c40f591f875ea205c834f7675f3edbe1050592.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [dsc_newresources.b9c40f591f875ea205c834f7675f3edbe1050592.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/dsc_newresources.b9c40f591f875ea205c834f7675f3edbe1050592.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [psget_psrepository.c4381b2ff7bb6496ab74ed8bb2b07325cfbfc056.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/psget_psrepository.c4381b2ff7bb6496ab74ed8bb2b07325cfbfc056.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [psget_psrepository.c4381b2ff7bb6496ab74ed8bb2b07325cfbfc056.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/psget_psrepository.c4381b2ff7bb6496ab74ed8bb2b07325cfbfc056.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
-##### <a name='b0fb33b1d5e4ef1b0b9018ec5dd5f88ef5df4719278'></a> Source: [wmf\dsc_removeconfigdoc.md](https://github.com/PowerShell/powerShell-Docs/blob/d367048eab0ba3fd67baed2ee27332ce0827d5ac/wmf/dsc_removeconfigdoc.md)
+##### <a name='af8aee96244140094066b8e2df65fdb525a94811330'></a> Source: [wmf\TOC.md](https://github.com/PowerShell/powerShell-Docs/blob/fb3eaba21c7ca7d09e398a302076ecb1651e6c61/wmf/TOC.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [wmf\dsc_removeconfigdoc.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/wmf/dsc_removeconfigdoc.md)
-* Handoff File: [dsc_removeconfigdoc.d16cdab7eaedf468bcc38dae34e93be26a204318.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/dsc_removeconfigdoc.d16cdab7eaedf468bcc38dae34e93be26a204318.zh-cn.xlf)
+* Target File: [wmf\TOC.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/wmf/TOC.md)
+* Handoff File: [TOC.60497266061c38453b3db893ec675eb65584af89.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/TOC.60497266061c38453b3db893ec675eb65584af89.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
-* Archive File: [dsc_removeconfigdoc.d16cdab7eaedf468bcc38dae34e93be26a204318.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/dsc_removeconfigdoc.d16cdab7eaedf468bcc38dae34e93be26a204318.zh-cn.xlf)
+* Archive File: [TOC.60497266061c38453b3db893ec675eb65584af89.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/TOC.60497266061c38453b3db893ec675eb65584af89.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [dsc_removeconfigdoc.d16cdab7eaedf468bcc38dae34e93be26a204318.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/dsc_removeconfigdoc.d16cdab7eaedf468bcc38dae34e93be26a204318.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [dsc_removeconfigdoc.d16cdab7eaedf468bcc38dae34e93be26a204318.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/dsc_removeconfigdoc.d16cdab7eaedf468bcc38dae34e93be26a204318.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
-* [Back to Top](#report-top)
-
-##### <a name='f2f968b1cd304009b3b29cdc793b61461e605812299'></a> Source: [wmf\feedback_moduleversionranges.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/feedback_moduleversionranges.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [wmf\feedback_moduleversionranges.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/wmf/feedback_moduleversionranges.md)
-* Handoff File: [feedback_moduleversionranges.611b3a3219d64dbfa1d01541b60a727b880a0c4b.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/feedback_moduleversionranges.611b3a3219d64dbfa1d01541b60a727b880a0c4b.zh-cn.xlf)
-* Handoff Datetime: 2016-06-27 20:17:18
-* Handoff Reason: Include
-* Archive File: [feedback_moduleversionranges.611b3a3219d64dbfa1d01541b60a727b880a0c4b.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/feedback_moduleversionranges.611b3a3219d64dbfa1d01541b60a727b880a0c4b.zh-cn.xlf)
-* Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [feedback_moduleversionranges.611b3a3219d64dbfa1d01541b60a727b880a0c4b.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/feedback_moduleversionranges.611b3a3219d64dbfa1d01541b60a727b880a0c4b.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [feedback_moduleversionranges.611b3a3219d64dbfa1d01541b60a727b880a0c4b.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/feedback_moduleversionranges.611b3a3219d64dbfa1d01541b60a727b880a0c4b.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
-* [Back to Top](#report-top)
-
-##### <a name='f723a03aa04ea613f28d31c019b0c4d7e8af7f00322'></a> Source: [wmf\psget_moduledependency.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/psget_moduledependency.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [wmf\psget_moduledependency.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/72838fe742952d745b8ca409169f9ae3d01271d1/wmf/psget_moduledependency.md)
-* Handoff File: [psget_moduledependency.89ba9310335ae64db5481a3c02034ac4fe01b6a2.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/psget_moduledependency.89ba9310335ae64db5481a3c02034ac4fe01b6a2.zh-cn.xlf)
-* Handoff Datetime: 2016-06-27 20:17:18
-* Handoff Reason: Include
-* Archive File: [psget_moduledependency.89ba9310335ae64db5481a3c02034ac4fe01b6a2.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/psget_moduledependency.89ba9310335ae64db5481a3c02034ac4fe01b6a2.zh-cn.xlf)
-* Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [psget_moduledependency.89ba9310335ae64db5481a3c02034ac4fe01b6a2.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/psget_moduledependency.89ba9310335ae64db5481a3c02034ac4fe01b6a2.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 14:56:09
-* Bilingual File: [psget_moduledependency.89ba9310335ae64db5481a3c02034ac4fe01b6a2.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d118d7be1cb5555e53216ede6c22c53969be88d5/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/psget_moduledependency.89ba9310335ae64db5481a3c02034ac4fe01b6a2.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:34
+* Handback File: [TOC.60497266061c38453b3db893ec675eb65584af89.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/TOC.60497266061c38453b3db893ec675eb65584af89.zh-cn.xlf)
+* Handback Datetime: 2016-06-28 15:13:24
+* Bilingual File: [TOC.60497266061c38453b3db893ec675eb65584af89.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/TOC.60497266061c38453b3db893ec675eb65584af89.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
 
 
