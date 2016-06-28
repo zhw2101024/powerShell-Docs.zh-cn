@@ -1,13 +1,17 @@
 ---
-title:  运行远程命令
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
+title: "运行远程命令"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
+translationtype: Human Translation
+ms.sourcegitcommit: 593f0c2ca72e00f19c395c1dae31798d5a5f652d
+ms.openlocfilehash: 75d41569b18e61342809eebcc76b7899ec6363fa
+
 ---
 
 # 运行远程命令
@@ -149,6 +153,7 @@ Windows PowerShell 远程管理就在此处开始。 通过使用随 Windows Pow
 
 
 
-<!--HONumber=May16_HO4-->
+
+<!--HONumber=Jun16_HO4-->
 
 

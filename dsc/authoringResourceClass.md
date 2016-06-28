@@ -1,12 +1,16 @@
 ---
-title:   使用 PowerShell 类编写自定义 DSC 资源
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "使用 PowerShell 类编写自定义 DSC 资源"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 553ef07e42a4c41e5f0dc9e80c54f828d9c625c3
+
 ---
 
 # 使用 PowerShell 类编写自定义 DSC 资源
@@ -476,6 +480,7 @@ Start-DscConfiguration -Wait -Force Test
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

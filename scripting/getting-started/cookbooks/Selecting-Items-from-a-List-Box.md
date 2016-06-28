@@ -1,13 +1,17 @@
 ---
-title:  从列表框中选择项
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  327c7cc5-21d0-4ace-b151-aa1491d1d3c2
+title: "从列表框中选择项"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 327c7cc5-21d0-4ace-b151-aa1491d1d3c2
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 7e8fd05cfedd500c51f2d7e4f6adbb7d1f27cb00
+
 ---
 
 # 从列表框中选择项
@@ -94,7 +98,7 @@ $form.Size = New-Object System.Drawing.Size(300,200)
 $form.StartPosition = "CenterScreen"
 ```
 
-接下来，为窗体创建“确定”按钮。 指定“确定”按钮的大小和行为。 在此示例中，按钮位置为距窗体上边缘 120 像素，距左边缘 75 像素。 按钮高度为 23 像素，按钮长度为 75 像素。 此脚本使用预定义的 Windows 窗体类型确定按钮行为。
+接下来，为窗体创建“确定”按钮。   指定“确定”按钮的大小和行为。 在此示例中，按钮位置为距窗体上边缘 120 像素，距左边缘 75 像素。 按钮高度为 23 像素，按钮长度为 75 像素。 此脚本使用预定义的 Windows 窗体类型确定按钮行为。
 
 ```
 $OKButton = New-Object System.Windows.Forms.Button
@@ -182,6 +186,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

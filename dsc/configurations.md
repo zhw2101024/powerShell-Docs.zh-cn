@@ -1,20 +1,23 @@
 ---
-title:   DSC 配置
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "DSC 配置"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 29676d0bf51adf9176753d0056efe76687a40600
+
 ---
 
 # DSC 配置
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
-DSC 配置是定义某一特殊类型函数的 PowerShell 脚本。 
-若要定义配置，你可使用 PowerShell 关键字 __Configuration__。
+DSC 配置是定义某一特殊类型函数的 PowerShell 脚本。 若要定义配置，你可使用 PowerShell 关键字 __Configuration__。
 
 ```powershell
 Configuration MyDscConfiguration {
@@ -121,8 +124,7 @@ Configuration DependsOnExample {
 
 ## 在配置中使用新的资源
 如果运行了前面的示例，你可能注意到你已收到警告信息，提示你正在使用未显式导入的资源。
-现在，DSC 附带 12 种资源作为 PSDesiredStateConfiguration 模块的一部分。 外部模块中的其他资源须置于 `$env:PSModulePath` 中以便 LCM 能够识别。 新的 cmdlet - [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)，可用来确定哪些资源已安装在系统上并且可供 LCM 使用。 
-一旦这些模块已置于 `$env:PSModulePath` 中并由 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 正确识别，你仍需在配置中加载它们。 __Import-DscResource__ 是仅可在__配置__块中识别的动态关键字（即它不是 cmdlet）。 __Import-DscResource__ 支持两种参数：
+现在，DSC 附带 12 种资源作为 PSDesiredStateConfiguration 模块的一部分。 外部模块中的其他资源须置于 `$env:PSModulePath` 中以便 LCM 能够识别。 新的 cmdlet - [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)，可用来确定哪些资源已安装在系统上并且可供 LCM 使用。 一旦这些模块已置于 `$env:PSModulePath` 中并由 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 正确识别，你仍需在配置中加载它们。 __Import-DscResource__ 是仅可在__配置__块中识别的动态关键字（即它不是 cmdlet）。 __Import-DscResource__ 支持两种参数：
 * __ModuleName__ 是使用 __Import-DscResource__ 的推荐方法。 它接受包含要导入资源的模块名称以及模块名称的字符串数组。 
 * __Name__ 是要导入资源的名称。 这不是由 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 返回为“Name”的友好名称，而是定义资源架构时使用的类名（由 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 返回为 __ResourceType__）。 
 
@@ -133,6 +135,7 @@ Configuration DependsOnExample {
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

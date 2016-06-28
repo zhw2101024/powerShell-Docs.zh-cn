@@ -1,12 +1,16 @@
 ---
-title:   设置 DSC请求客户端
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "设置 DSC请求客户端"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 95f49fecdf13a54049caf27345d2a48c98b8f09b
+
 ---
 
 # 设置 DSC请求客户端
@@ -25,6 +29,7 @@ ms.prod:  powershell
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

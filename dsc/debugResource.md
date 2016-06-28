@@ -1,12 +1,16 @@
 ---
-title:   调试 DSC 资源
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "调试 DSC 资源"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: f5290e085c8949f6b3cdf23f3244a7142da6248d
+
 ---
 
 # 调试 DSC 资源
@@ -18,8 +22,7 @@ ms.prod:  powershell
 ## 启用 DSC 调试
 必须通过调用 [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx) cmdlet 启用调试后，才能调试资源。 此 cmdlet 采用强制参数，**BreakAll**。 
 
-你可通过查看调用 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) 的结果以验证是否已启用调试。 
-以下 PowerShell 输出显式了启用调试的结果：
+你可通过查看调用 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) 的结果以验证是否已启用调试。 以下 PowerShell 输出显式了启用调试的结果：
 
 
 ```powershell
@@ -106,6 +109,7 @@ Debug-Runspace -Id 9
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 
