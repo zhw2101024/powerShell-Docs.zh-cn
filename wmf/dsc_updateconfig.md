@@ -2,6 +2,7 @@
 
 新的 Update-DscConfiguration cmdlet 将触发对元配置中所定义请求服务器的请求。 该行为通常称为“立即请求”。 
 
+
 一旦触发，请求的行为将与以正常频率触发的行为完全相同：
 
 1. 将当前配置的校验和与请求服务器上配置的校验和相比较。 
@@ -29,4 +30,8 @@ Update-DscConfiguration     -CimSession <CimSession[]>
                             [-WhatIf] 
                             [-Confirm] 
                             [<CommonParameters>]
-```<!--HONumber=Mar16_HO2-->
+```
+
+<!--HONumber=Jun16_HO4-->
+
+

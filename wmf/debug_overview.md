@@ -8,7 +8,7 @@ PowerShell 控制台和 Windows PowerShell ISE 现在可以中断调试器，而
 
 在控制台中，按 **Ctrl+Break**。
 
-在 ISE 中，按 **Ctrl+B**，或使用“调试”->“全部中断”****菜单命令。
+在 ISE 中，按 **Ctrl+B**，或使用“调试”->“全部中断”菜单命令。
 
 ## Windows PowerShell ISE 中的远程调试和远程文件编辑
 
@@ -41,4 +41,8 @@ Windows PowerShell ISE 现在可以通过运行 PSEdit 命令，在远程会话�
 你现在可以附加到已加载 Windows PowerShell 的任何计算机进程。 可通过输入与该进程交互的会话执行此操作，类似于你通过运行 Enter-PSSession cmdlet 输入交互式远程会话的操作方式。
 
 -   Enter-PSHostProcess
--   Exit-PSHostProcess<!--HONumber=Mar16_HO2-->
+-   Exit-PSHostProcess
+
+<!--HONumber=Jun16_HO4-->
+
+

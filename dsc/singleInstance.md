@@ -1,12 +1,16 @@
 ---
-title:   编写单实例 DSC 资源（最佳做法）
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "编写单实例 DSC 资源（最佳做法）"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 4b1e8a6d3fb4feca426a9d7861c40d194e612c22
+
 ---
 
 # 编写单实例 DSC 资源（最佳做法）
@@ -48,8 +52,7 @@ Configuration SetTimeZone
 
 这是由 DSC 资源键的作用方式导致的。 一个资源必须具有至少一个键属性。 如果资源实例的所有键属性的值组合是唯一的，那么该实例也被视为是唯一的。 在其早期实现中，[xTimeZone](https://github.com/PowerShell/xTimeZone) 资源仅有一个属性（即 **TimeZone**），该属性必须是一个键。 因此，如上所示的配置可以编译和运行，而不会发出警告。 每个 **xTimeZone** 资源块都被视为是唯一的。 这将导致配置重复应用于该节点，反复循环时区。
 
-为确保配置只能为目标节点设置一次时区，已更新资源以添加另一属性，即 **IsSingleInstance**，该属性已成为键属性。 
-已使用 **ValueMap** 将 **IsSingleInstance** 限制为单个值，即“Yes”。 该资源的旧 MOF 架构为：
+为确保配置只能为目标节点设置一次时区，已更新资源以添加另一属性，即 **IsSingleInstance**，该属性已成为键属性。 已使用 **ValueMap** 将 **IsSingleInstance** 限制为单个值，即“Yes”。 该资源的旧 MOF 架构为：
 
 ```powershell
 [ClassVersion("1.0.0.0"), FriendlyName("xTimeZone")]
@@ -225,6 +228,7 @@ At C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
    
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

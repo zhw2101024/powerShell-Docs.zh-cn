@@ -1,12 +1,16 @@
 ---
-title:   适用于 Linux 的 Desired State Configuration (DSC) 入门
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "适用于 Linux 的 Desired State Configuration (DSC) 入门"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: c05b48d2c903e59f8b65c4c8c289d2dd5c23c3f9
+
 ---
 
 # 适用于 Linux 的 Desired State Configuration (DSC) 入门
@@ -185,6 +189,7 @@ $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Aut
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

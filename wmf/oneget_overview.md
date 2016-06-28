@@ -8,4 +8,8 @@ PackageManagement（又称 OneGet）是一种用于发现和安装来自 Web 上
 -   无缝安装、卸载和盘存一个或多个软件存储库中的包
 
 有关详细信息，请参阅 http://oneget.org/。
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+

@@ -31,4 +31,8 @@ Cmdlet          Restart-Service                                    3.0.0.0 Micro
 
 若要报告用户在 JEA 会话期间执行的_操作_，你可以：
 1. 为该 JEA 终结点启用“即时权限提升”脚本，并查询脚本目录以获取记录了每个用户的操作的完整日志。
-2. 打开 PowerShell 模块日志记录并检查 PowerShell 事件日志。<!--HONumber=Mar16_HO2-->
+2. 打开 PowerShell 模块日志记录并检查 PowerShell 事件日志。
+
+<!--HONumber=Jun16_HO4-->
+
+
