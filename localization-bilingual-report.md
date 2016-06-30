@@ -1,41 +1,26 @@
 # <a name='report-top'></a> Localization Bilingual Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [dsc\msft-dsclocalconfigurationmanager.md](https://github.com/PowerShell/powerShell-Docs/blob/26db4a48af3aa3d6a9a2054fb85da8779626f284/dsc/msft-dsclocalconfigurationmanager.md) | InSyncHandedBackSuccess | [Details](#b9cb89bb120151df69e3cb26b50c3a0d15c2371167)
- [scripting\whats-new\What-s-New-in-Windows-PowerShell-50.md](https://github.com/PowerShell/powerShell-Docs/blob/ca7ab17f7ba2615c7a39d1e3dd944501bab4e72c/scripting/whats-new/What-s-New-in-Windows-PowerShell-50.md) | InSyncHandedBackSuccess | [Details](#87e4a23f93d19219a8d00671f319ef93a96fbbf6245)
+ [scripting\core-powershell\core-powershell.md](https://github.com/PowerShell/powerShell-Docs/blob/cd6e130d9f6f70449084d25eb386a3c0a2b84737/scripting/core-powershell/core-powershell.md) | InSyncHandedBackSuccess | [Details](#4c22e1a2543690a971836813cb32ace74ababb4a133)
 
 ## Item Details
-##### <a name='b9cb89bb120151df69e3cb26b50c3a0d15c2371167'></a> Source: [dsc\msft-dsclocalconfigurationmanager.md](https://github.com/PowerShell/powerShell-Docs/blob/26db4a48af3aa3d6a9a2054fb85da8779626f284/dsc/msft-dsclocalconfigurationmanager.md)
+##### <a name='4c22e1a2543690a971836813cb32ace74ababb4a133'></a> Source: [scripting\core-powershell\core-powershell.md](https://github.com/PowerShell/powerShell-Docs/blob/cd6e130d9f6f70449084d25eb386a3c0a2b84737/scripting/core-powershell/core-powershell.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [dsc\msft-dsclocalconfigurationmanager.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/f580ff091d9661243da909fdf9dc21c82136b69d/dsc/msft-dsclocalconfigurationmanager.md)
-* Handoff File: [msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.zh-cn.xlf)
-* Handoff Datetime: 2016-06-27 20:17:18
+* Target File: [scripting\core-powershell\core-powershell.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/33ec95d46cce1bb1ed0dba1fa5edcd9dcf47342e/scripting/core-powershell/core-powershell.md)
+* Handoff File: [core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/49de56c1eebae7555d26f7de845b870b930a967b/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf)
+* Handoff Datetime: 2016-06-23 22:16:30
 * Handoff Reason: Include
-* Archive File: [msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.zh-cn.xlf)
+* Archive File: [core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/622a7ef9a0f3604d5b4517b019ba064ed8f26370/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 21:14:48
-* Bilingual File: [msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/622a7ef9a0f3604d5b4517b019ba064ed8f26370/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 21:18:23
-* [Back to Top](#report-top)
-
-##### <a name='87e4a23f93d19219a8d00671f319ef93a96fbbf6245'></a> Source: [scripting\whats-new\What-s-New-in-Windows-PowerShell-50.md](https://github.com/PowerShell/powerShell-Docs/blob/ca7ab17f7ba2615c7a39d1e3dd944501bab4e72c/scripting/whats-new/What-s-New-in-Windows-PowerShell-50.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [scripting\whats-new\What-s-New-in-Windows-PowerShell-50.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/f580ff091d9661243da909fdf9dc21c82136b69d/scripting/whats-new/What-s-New-in-Windows-PowerShell-50.md)
-* Handoff File: [What-s-New-in-Windows-PowerShell-50.c86af26f5e83de3e47d3ac33f24919d8e93982d7.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/What-s-New-in-Windows-PowerShell-50.c86af26f5e83de3e47d3ac33f24919d8e93982d7.zh-cn.xlf)
-* Handoff Datetime: 2016-06-27 20:17:18
-* Handoff Reason: Include
-* Archive File: [What-s-New-in-Windows-PowerShell-50.c86af26f5e83de3e47d3ac33f24919d8e93982d7.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/What-s-New-in-Windows-PowerShell-50.c86af26f5e83de3e47d3ac33f24919d8e93982d7.zh-cn.xlf)
-* Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [What-s-New-in-Windows-PowerShell-50.c86af26f5e83de3e47d3ac33f24919d8e93982d7.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/622a7ef9a0f3604d5b4517b019ba064ed8f26370/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/What-s-New-in-Windows-PowerShell-50.c86af26f5e83de3e47d3ac33f24919d8e93982d7.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 21:14:48
-* Bilingual File: [What-s-New-in-Windows-PowerShell-50.c86af26f5e83de3e47d3ac33f24919d8e93982d7.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/622a7ef9a0f3604d5b4517b019ba064ed8f26370/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/What-s-New-in-Windows-PowerShell-50.c86af26f5e83de3e47d3ac33f24919d8e93982d7.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 21:18:23
+* Handback File: [core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/21540fec033c9776c77e78fc39d2877f7a63eff8/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf)
+* Handback Datetime: 2016-06-30 06:31:22
+* Bilingual File: [core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/21540fec033c9776c77e78fc39d2877f7a63eff8/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-30 06:32:10
 * [Back to Top](#report-top)
 
 

@@ -2255,8 +2255,8 @@
 * Archive Datetime: 2016-06-28 13:28:35
 * Handback File: [core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/21540fec033c9776c77e78fc39d2877f7a63eff8/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf)
 * Handback Datetime: 2016-06-30 06:31:22
-* Bilingual File: [core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/a4cfd1d7db0f20ccb77ccab9b48e61a4390515b3/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-16 14:30:28
+* Bilingual File: [core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/21540fec033c9776c77e78fc39d2877f7a63eff8/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf)
+* Bilingual Datetime: 2016-06-30 06:32:10
 * [Back to Top](#report-top)
 
 ##### <a name='8af4de973a95352fd41d2bb2823b9382899ef5bf135'></a> Source: [scripting\core-powershell\ise\How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/ise/How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)
