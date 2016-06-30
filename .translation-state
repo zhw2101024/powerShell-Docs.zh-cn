@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "3008988efe84065def22e0e1839f5ae362120d75",
+  "LastProcessedCommit": "d915872415e419a4c80c774af2bf6c28ac449213",
   "LastTranslatedCommit": "33ec95d46cce1bb1ed0dba1fa5edcd9dcf47342e",
   "Items": {
     "81efeb79a70df604ef8c126c0ebd17b4f4711a44": {
@@ -29275,10 +29275,10 @@
         "scripting\\core-powershell\\core-powershell.md"
       ],
       "HasMetadata": true,
-      "TranslationType": 0,
+      "TranslationType": 1,
       "HandoffFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-cn\\live\\core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf",
-      "HandoffFileCommit": "49de56c1eebae7555d26f7de845b870b930a967b",
-      "HandoffDateTime": "2016-06-23T22:16:30.4943042Z",
+      "HandoffFileCommit": "870e537190af1eff234b383e3bf9fb301ac0fc7c",
+      "HandoffDateTime": "2016-06-30T18:41:12.5243769Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
@@ -29290,9 +29290,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "2016-06-30T06:31:22.4558309Z",
-      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-cn\\live\\archive\\core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf",
-      "ArchiveFileCommit": "d0d7451abfc4389c2d52329d4c671eff11ec4cf2",
-      "ArchiveFileDateTime": "2016-06-28T13:28:35.9717674Z",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
       "ArchiveException": null,
       "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.zh-cn\\live\\core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf",
       "BilingualFileCommit": "21540fec033c9776c77e78fc39d2877f7a63eff8",
