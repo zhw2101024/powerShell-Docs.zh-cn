@@ -1,17 +1,21 @@
 ---
-title:  创建图形日期选取器
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  c1cb722c-41e9-4baa-be83-59b4653222e9
+title: "创建图形日期选取器"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: c1cb722c-41e9-4baa-be83-59b4653222e9
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: f359254900dce0ef0a28af3e16b8ef4095e85309
+
 ---
 
 # 创建图形日期选取器
-使用 Windows PowerShell 3.0 和更高版本创建一个带有日历式图形控件的窗体，该控件使用户可以选择本月的某一天。
+使用 Windows PowerShell 3.0 和更高版本创建一个带有日历式图形控件的窗体，该控件使用户可以选择当月的某一天。
 
 ## 创建图形日期选取器控件
 复制以下内容并将其粘贴到 Windows PowerShell ISE 中，然后将其另存为 Windows PowerShell 脚本 (.ps1)。
@@ -87,7 +91,7 @@ $calendar.MaxSelectionCount = 1
 $form.Controls.Add($calendar)
 ```
 
-接下来，为窗体创建“确定”按钮。 指定“确定”按钮的大小和行为。 在此示例中，按钮位置为距窗体上边缘 165 像素，距左边缘 38 像素。 按钮高度为 23 像素，按钮长度为 75 像素。 此脚本使用预定义的 Windows 窗体类型确定按钮行为。
+接下来，为窗体创建“确定”按钮。**** 指定“确定”按钮的大小和行为。**** 在此示例中，按钮位置为距窗体上边缘 165 像素，距左边缘 38 像素。 按钮高度为 23 像素，按钮长度为 75 像素。 此脚本使用预定义的 Windows 窗体类型确定按钮行为。
 
 ```
 $OKButton = New-Object System.Windows.Forms.Button
@@ -99,7 +103,7 @@ $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-采用相同方式创建“取消”按钮。 “取消”按钮距窗口上边缘 165 像素，但距左边缘 113 像素。
+采用相同方式创建“取消”按钮。**** “取消”按钮距窗口上边缘 165 像素，但距左边缘 113 像素。****
 
 ```
 $CancelButton = New-Object System.Windows.Forms.Button
@@ -123,7 +127,7 @@ $form.Topmost = $True
 $result = $form.ShowDialog()
 ```
 
-最后，**If** 块内的代码指示在用户在日历上选择某一天，然后单击“确定”按钮或按“Enter”键后，Windows 应如何处理该窗体。 Windows PowerShell 向用户显示选定的日期。
+最后，**If** 块内的代码指示在用户在日历上选择某一天，然后单击“确定”按钮或按“Enter”键后，Windows 应如何处理该窗体。******** Windows PowerShell 向用户显示选定的日期。
 
 ```
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
@@ -140,6 +144,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

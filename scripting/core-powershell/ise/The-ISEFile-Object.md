@@ -1,13 +1,17 @@
 ---
-title:  ISEFile 对象
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  1c6d91f3-c556-42a2-a017-79b6b7b4b7db
+title: "ISEFile 对象"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: ce9364e8fb73a2d31b728430c590fef4175ebe26
+
 ---
 
 # ISEFile 对象
@@ -44,7 +48,7 @@ $myfile.Encoding
 
  使用指定的文件名和编码保存文件。
 
- **filename** \- 要用于保存该文件的名称。
+ **filename**\-字符串要用于保存该文件的名称。
 
  **\[saveEncoding\]** – 可选 [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
  一个要用于已保存文件的可选字符编码参数。 默认值是 **UTF8**。
@@ -70,7 +74,7 @@ $psIse.CurrentFile.SaveAs( $fullPath, [System.Text.Encoding]::UTF8 )
 ###  <a name="Displayname"></a> DisplayName
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
- 只读属性，可获取包含此文件显示名称的字符串。 名称显示在编辑器顶部的“文件”选项卡上。 名称结尾处存在星号 \(\*\) 表示文件具有未保存的更改。
+ 只读属性，可获取包含此文件显示名称的字符串。 名称显示在编辑器顶部的****“文件”选项卡上。 名称结尾处存在星号 \(\*\) 表示文件具有未保存的更改。
 
 ```
 # Shows the display name of the file.
@@ -81,7 +85,7 @@ $psIse.CurrentFile.DisplayName
 ###  <a name="Editor"></a> 编辑器
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
- 只读属性，可获取用于指定文件的[编辑器对象](The-ISEEditor-Object.md)
+ 只读属性，可获取用于指定文件的[编辑器对象](The-ISEEditor-Object.md)。
 
 ```
 # Gets the editor and the text.
@@ -145,6 +149,7 @@ $psISE.CurrentFile.IsUntitled
   
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

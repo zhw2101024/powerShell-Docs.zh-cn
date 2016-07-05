@@ -1,20 +1,24 @@
 ---
-title:  使用 Process Cmdlet 管理进程
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  5038f612-d149-4698-8bbb-999986959e31
+title: "使用 Process Cmdlet 管理进程"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 5038f612-d149-4698-8bbb-999986959e31
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 6857cf5e73252f646e563fa12a8252b4bdc2e1e5
+
 ---
 
 # 使用 Process Cmdlet 管理进程
 可以在 Windows PowerShell 中使用 Process cmdlet 来管理 Windows PowerShell 中的本地和远程进程。
 
-## 获取进程 (Get-Process)
-若要获取在本地计算机上运行的进程，请运行不具有参数的 **Get-Process**。
+## 获取进程 (Get\-Process)
+若要获取正在本地计算机上运行的进程，请运行不带任何参数的 **Get\-Process**。
 
 你可以通过指定其进程名称或进程 ID 来获取特定进程。 以下命令将获取空闲进程：
 
@@ -25,7 +29,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
       0       0        0         16     0               0 Idle
 ```
 
-尽管某些情况下 cmdlet 不会返回任何数据很正常，但当你按其 ProcessId 指定一个进程时，如果未找到任何匹配项，**Get-Process** 将生成一个错误，因为通常的目的是检索一个已知的正在运行的进程。 如果按该 ID 找不到进程，则很可能该 ID 不正确或相关进程已退出：
+尽管某些情况下 cmdlet 不会返回任何数据很正常，但当你按其 ProcessId 指定一个进程时，如果未找到任何匹配项，**Get\-Process** 将生成一个错误，因为通常的目的是检索一个已知的正在运行的进程。 如果按该 ID 找不到进程，则很可能该 ID 不正确或相关进程已退出：
 
 ```
 PS> Get-Process -Id 99
@@ -34,7 +38,7 @@ At line:1 char:12
 + Get-Process  <<<< -Id 99
 ```
 
-你可以使用 Get-Process cmdlet 的 Name 参数来基于进程名称指定进程的子集。 Name 参数可以采用多个名称（在列表中以逗号分隔），并且支持使用通配符，因此，你可以键入名称模式。
+可以使用 Get\-Process cmdlet 的 Name 参数来基于进程名称指定进程的子集。 Name 参数可以采用多个名称（在列表中以逗号分隔），并且支持使用通配符，因此，你可以键入名称模式。
 
 例如，以下命令将获取名称以“ex”开头的进程。
 
@@ -48,7 +52,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 由于 .NET System.Diagnostics.Process 类是 Windows PowerShell 进程的基础，因此它遵循 System.Diagnostics.Process 使用的某些约定。 其中一个约定是可执行文件的进程名从不在可执行文件名的末尾包含“.exe”。
 
-**Get-Process** 还接受 Name 参数的多个值。
+**Get\-Process** 还接受 Name 参数的多个值。
 
 ```
 PS> Get-Process -Name exp*,power* 
@@ -58,7 +62,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     605       9    30668      29800   155     7.11   3052 powershell
 ```
 
-可以使用 Get-Process 的 ComputerName 参数获取远程计算机上的进程。 例如，以下命令将获取本地计算机（表示为“localhost”）和两台远程计算机上的 PowerShell 进程。
+可以使用 Get\-Process 的 ComputerName 参数获取远程计算机上的进程。 例如，以下命令将获取本地计算机（表示为“localhost”）和两台远程计算机上的 PowerShell 进程。
 
 ```
 PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server02
@@ -69,7 +73,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     605       9    30668      29800   155     7.11   3052 powershell
 ```
 
-计算机名在此显示中不可见，但是它们存储在 Get-Process 返回的进程对象的 MachineName 属性中。 下面的命令使用 Format-Table cmdlet 显示进程对象的进程 ID、ProcessName 和 MachineName (ComputerName) 属性。
+计算机名在此显示中不可见，但是它们存储在 Get\-Process 返回的进程对象的 MachineName 属性中。 下面的命令使用 Format\-Table cmdlet 显示进程对象的进程 ID、ProcessName 和 MachineName (ComputerName) 属性。
 
 ```
 PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 | Format-Table -Property ID, ProcessName, MachineName
@@ -80,7 +84,7 @@ PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 | F
 5816 powershell  localhost
 ```
 
-这一更为复杂的命令将 MachineName 属性添加到标准 Get-Process 显示中。 反撇号 (`)(ASCII 96) 是 Windows PowerShell 的继续符。
+这一更为复杂的命令将 MachineName 属性添加到标准 Get\-Process 显示中。 反撇号 (\`)(ASCII 96) 是 Windows PowerShell 的继续符。
 
 ```
 get-process powershell -computername localhost, Server01, Server02 | format-table -property Handles, `
@@ -99,10 +103,10 @@ Handles  NPM(K)  PM(K) WS(K) VM(M) CPU(s)  Id ProcessName  MachineName
     605       9  30668 29800   155 7.11    3052 powershell Server02
 ```
 
-## 停止进程 (Stop-Process)
+## 停止进程 (Stop\-Process)
 Windows PowerShell 可以灵活地列出进程，但停止进程呢？
 
-**Stop-Process** cmdlet 将采用 Name 或 ID 来指定想要停止的进程。 能否停止进程取决于你的权限。 某些进程无法停止。 例如，如果你尝试停止空闲进程，则会出现错误：
+**Stop\-Process** cmdlet 将采用 Name 或 ID 来指定想要停止的进程。 能否停止进程取决于你的权限。 某些进程无法停止。 例如，如果你尝试停止空闲进程，则会出现错误：
 
 ```
 PS> Stop-Process -Name Idle
@@ -134,13 +138,13 @@ Performing operation "Stop-Process" on Target "taskmgr (4072)".
 Get-Process | Where-Object -FilterScript {$_.Responding -eq $false} | Stop-Process
 ```
 
-在其他情况下，可以使用相同的方法。 例如，假设用户启动另一个应用程序时，辅助通知区域的应用程序将自动运行。 你可能会发现在“终端服务”会话中它无法正常工作，但你仍想要将其保留在物理计算机控制台上运行的会话中。 连接到物理计算机桌面的会话始终具有一个为 0 的会话 ID，这样你可以通过使用 **Where-Object** 和进程 **SessionId** 停止在其他会话中的所有进程的实例：
+在其他情况下，可以使用相同的方法。 例如，假设用户启动另一个应用程序时，辅助通知区域的应用程序将自动运行。 你可能会发现在“终端服务”会话中它无法正常工作，但你仍想要将其保留在物理计算机控制台上运行的会话中。 连接到物理计算机桌面的会话始终具有一个为 0 的会话 ID，这样你可以通过使用 **Where\-Object** 和进程 **SessionId** 停止在其他会话中的进程的所有实例：
 
 ```
 Get-Process -Name BadApp | Where-Object -FilterScript {$_.SessionId -neq 0} | Stop-Process
 ```
 
-Stop-Process cmdlet 不具有 ComputerName 参数。 因此，若要在远程计算机上运行停止进程，需要使用 Invoke-Command cmdlet。 例如，若要停止 Server01 远程计算器上的 PowerShell 进程，请键入：
+Stop\-Process cmdlet 不具有 ComputerName 参数。 因此，若要在远程计算机上运行停止进程，需要使用 Invoke\-Command cmdlet。 例如，若要停止 Server01 远程计算器上的 PowerShell 进程，请键入：
 
 ```
 Invoke-Command -ComputerName Server01 {Stop-Process Powershell}
@@ -177,6 +181,7 @@ Windows PowerShell 还附带 cmdlet，以启动（或重启）、调试进程，
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

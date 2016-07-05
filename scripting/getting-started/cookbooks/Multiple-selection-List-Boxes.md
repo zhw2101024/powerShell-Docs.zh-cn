@@ -1,13 +1,17 @@
 ---
-title:  多选列表框
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  f74cd5d9-da57-4802-b614-0b194a7bc8f8
+title: "多选列表框"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: f74cd5d9-da57-4802-b614-0b194a7bc8f8
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 84030be8564e10ce33e15c21f41bda79ea8fad7d
+
 ---
 
 # 多选列表框
@@ -92,7 +96,7 @@ $form.Size = New-Object System.Drawing.Size(300,200)
 $form.StartPosition = "CenterScreen"
 ```
 
-接下来，为窗体创建“确定”按钮。 指定“确定”按钮的大小和行为。 在此示例中，按钮位置为距窗体上边缘 120 像素，距左边缘 75 像素。 按钮高度为 23 像素，按钮长度为 75 像素。 此脚本使用预定义的 Windows 窗体类型确定按钮行为。
+接下来，为窗体创建“确定”按钮。****   指定“确定”按钮的大小和行为。**** 在此示例中，按钮位置为距窗体上边缘 120 像素，距左边缘 75 像素。 按钮高度为 23 像素，按钮长度为 75 像素。 此脚本使用预定义的 Windows 窗体类型确定按钮行为。
 
 ```
 $OKButton = New-Object System.Windows.Forms.Button
@@ -104,7 +108,7 @@ $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-采用相同方式创建“取消”按钮。 “取消”按钮距窗口上边缘 120 像素，但距左边缘 150 像素。
+采用相同方式创建“取消”按钮。**** “取消”按钮距窗口上边缘 120 像素，但距左边缘 150 像素。****
 
 ```
 $CancelButton = New-Object System.Windows.Forms.Button
@@ -169,7 +173,7 @@ $form.Topmost = $True
 $result = $form.ShowDialog()
 ```
 
-最后，**If** 块内的代码指示在用户从列表框中选择一个或多个选项，然后单击“确定”按钮或按“Enter”键后，Windows 应如何处理该窗体。
+最后，**If** 块内的代码指示在用户从列表框中选择一个或多个选项，然后单击“确定”****按钮或按“Enter”****键后，Windows 应如何处理该窗体。
 
 ```
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
@@ -186,6 +190,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

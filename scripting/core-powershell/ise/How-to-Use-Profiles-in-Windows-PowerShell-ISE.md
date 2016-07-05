@@ -1,17 +1,21 @@
 ---
-title:  如何在 Windows PowerShell ISE 中使用配置文件
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  0219626a-6da5-4acc-b630-d058e8b29cc6
+title: "如何在 Windows PowerShell ISE 中使用配置文件"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 0219626a-6da5-4acc-b630-d058e8b29cc6
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: a8b729612c54e5f0f95497a71a192f16e2a9d32a
+
 ---
 
 # 如何在 Windows PowerShell ISE 中使用配置文件
-本主题说明如何使用 Windows PowerShellÂ® 集成脚本环境 (ISE) 中的配置文件。 我们建议在执行本部分中的任务之前，先查看 [about_Profiles [v4]](https://technet.microsoft.com/en-us/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054)，或在控制台窗格中，键入“get-help about_profiles”，然后按 **ENTER**。
+本主题说明如何使用 Windows PowerShellÂ® 集成脚本环境 (ISE) 中的配置文件。 我们建议在执行本部分中的任务之前，先查看 [about_Profiles [v4]](https://technet.microsoft.com/en-us/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054)，或在控制台窗格中键入“get\-help about\_profiles”，然后按 **ENTER**。
 
 配置文件是当你启动新的会话时自动运行的 Windows PowerShell ISE 脚本。  你可以为 Windows PowerShell ISE 创建一个或多个 Windows PowerShell ISE 配置文件，并使用它们向 Windows PowerShell 或 Windows PowerShell ISE 环境添加配置，从而通过提供你所需要的变量、别名、函数、颜色和字体首选项做好准备，以供你使用。 配置文件会对你所启动的每个 Windows PowerShell ISE 会话产生影响。
 
@@ -25,7 +29,7 @@ Windows PowerShell ISE 支持适用于当前用户和所有用户的配置文件
 
 -   如果仅使用 Windows PowerShell ISE 运行 Windows PowerShell，那么将你的所有项保存在特定于 ISE 的其中一个配置文件中，如用于 Windows PowerShell ISE 的 CurrentUserCurrentHost 配置文件或用于 Windows PowerShell ISE 的 AllUsersCurrentHost 配置文件。
 
--   如果你使用多个主机程序运行 Windows PowerShell，那么将你的函数、别名、变量和命令保存在影响所有主机程序的配置文件中（如 CurrentUserAllHosts 或 AllUsersAllHosts 配置文件），并将特定于 ISE 的功能（如颜色和字体自定义）保存在用于 Windows PowerShell ISE 配置文件的 CurrentUserCurrentHost 配置文件或用于 Windows PowerShell ISE 的 AllUsersCurrentHost 配置文件中。
+-   如果你使用多个主机程序运行 Windows PowerShell，那么将你的函数、别名、变量和命令保存在影响所有主机程序的配置文件中（如 CurrentUserAllHosts 或 AllUsersAllHosts 配置文件），并将特定于 ISE 的功能（如颜色和字体自定义）保存在用于 Windows PowerShell ISE 的 CurrentUserCurrentHost 配置文件或用于 Windows PowerShell ISE 的 AllUsersCurrentHost 配置文件中。
 
 以下是可以在 Windows PowerShell ISE 中创建和使用的配置文件。 每个配置文件都保存到自己特定的路径。
 
@@ -75,7 +79,7 @@ if (!(test-path $profile.AllUsersAllHosts))
 
     -   若要将字体大小更改为 20，请在配置文件中键入： `$psISE.Options.FontSize =20`
 
-3.  若要保存你的配置文件，请在“文件”菜单上单击“保存”。 下次打开 Windows PowerShell ISE 时，会应用你的自定义项。
+3.  若要保存你的配置文件，请在“文件”菜单上单击“保存”。******** 下次打开 Windows PowerShell ISE 时，会应用你的自定义项。
 
 ## 另请参阅
 [about_Profiles [v4]](https://technet.microsoft.com/en-us/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054)
@@ -83,6 +87,7 @@ if (!(test-path $profile.AllUsersAllHosts))
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

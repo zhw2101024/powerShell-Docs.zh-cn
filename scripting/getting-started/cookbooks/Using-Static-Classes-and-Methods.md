@@ -1,17 +1,21 @@
 ---
-title:  使用静态类和方法
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  418ad766-afa6-4b8c-9a44-471889af7fd9
+title: "使用静态类和方法"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 50ebc8a737b50aba5a5af49716b59905da74669a
+
 ---
 
 # 使用静态类和方法
-不是所有 .NET Framework 类都可使用 **New-Object** 来创建。 例如，如果你尝试使用 **New-Object** 创建 **System.Environment** 或 **System.Math** 对象，你将收到以下错误消息：
+不是所有 .NET Framework 类都可使用 **New\-Object** 来创建。 例如，如果你尝试使用 **New\-Object** 创建 **System.Environment** 或 **System.Math** 对象，你将收到以下错误消息：
 
 ```
 PS> New-Object System.Environment
@@ -29,7 +33,7 @@ At line:1 char:11
 之所以发生这些错误，是因为无法从这些类创建新的对象。 这些类是不更改状态的方法和属性的引用库。 你无需创建这些类，只需要使用它们。 这样的类和方法称为*静态类*，因为它们不会被创建、销毁或更改。 为了明确这一点，我们将提供静态类的使用示例。
 
 ### 使用 System.Environment 获取环境数据
-通常，在 Windows PowerShell 中使用对象的第一步是使用 Get-Member 找出其所包含的成员。 使用静态类，进程会稍有不同，因为实际类不是对象。
+通常，在 Windows PowerShell 中使用对象的第一步是使用 Get\-Member 找出其所包含的成员。 使用静态类，进程会稍有不同，因为实际类不是对象。
 
 #### 引用静态的 System.Environment 类
 可以通过使用方括号将类名称括起来以引用静态类。 例如，可以通过在括号内键入名称来引用 **System.Environment**。 执行此操作会显示某些泛型类型的信息：
@@ -43,11 +47,11 @@ True     False    Environment                              System.Object
 ```
 
 > [!NOTE]
-> 正如我们之前提到的，当你使用 **New-Object** 时，Windows PowerShell 会 在类型名称前自动追加“**System.**”。 使用被括号括起来的类型名称时也会发生同样的情况，因此可以将 **\[System.Environment]** 指定为 **\[Environment]**。
+> 正如我们之前提到的，当你使用 **New-Object** 时，Windows PowerShell 会 自动追加“**System.**”以键入名称。 使用被括号括起来的类型名称时也会发生同样的情况，因此可以将 **\[System.Environment]** 指定为 **\[Environment]**。
 
 **System.Environment** 类包含关于当前进程工作环境的一般信息，如果是在 Windows PowerShell 内工作，该进程为 powershell.exe。
 
-如果尝试通过键入 **\[System.Environment] | Get-Member** 来查看此类的详细信息，对象类型将报告为 **System.RuntimeType**，而不是 **System.Environment**：
+如果尝试通过键入 **\[System.Environment] | Get\-Member** 来查看此类的详细信息，对象类型将报告为 **System.RuntimeType**，而不是 **System.Environment**：
 
 ```
 PS> [System.Environment] | Get-Member
@@ -55,7 +59,7 @@ PS> [System.Environment] | Get-Member
    TypeName: System.RuntimeType
 ```
 
-若要使用 Get-Member 查看静态成员，请指定 **Static** 参数：
+若要使用 Get\-Member 查看静态成员，请指定 **Static** 参数：
 
 ```
 PS> [System.Environment] | Get-Member -Static
@@ -114,9 +118,10 @@ False
 ```
 
 ### 使用 System.Math 做数学
-System.Math 静态类可用于执行某些数学运算。 **System.Math** 的大多数重要成员是方法，我们可以用过使用 **Get-Member** 来显示它们。
+System.Math 静态类可用于执行某些数学运算。 **System.Math** 的重要成员大多数是方法，我们可以使用 **Get\-Member** 来显示它们。
 
-> [!NOTE] 虽然 System.Math 包含多个同名的方法，但这些方法可以通过其参数的类型进行区分。
+> [!NOTE]
+> System.Math 的一些方法具有相同的名称，但可以按其参数的类型对其进行区分。
 
 键入以下内容来列出 **System.Math** 类的方法。
 
@@ -184,6 +189,7 @@ PS> [System.Math]::Truncate(-9.3)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

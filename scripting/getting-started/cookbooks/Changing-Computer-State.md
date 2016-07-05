@@ -1,13 +1,17 @@
 ---
-title:  更改计算机状态
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  8093268b-27f8-4a49-8871-142c5cc33f01
+title: "更改计算机状态"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 13b1fd65b9dddf2570e7ab9c5420c0a6d18ce35e
+
 ---
 
 # 更改计算机状态
@@ -27,7 +31,7 @@ rundll32.exe user32.dll,LockWorkStation
 若要关闭终端服务器上的特定会话，请使用 **tsshutdn.exe** 命令行工具。
 
 ### 注销当前会话
-可以使用多种不同的方法来注销本地系统上的会话。 最简单的方法是使用远程桌面/终端服务命令行工具 **logoff.exe**（若要了解有关详细信息，请在 Windows PowerShell 提示符处键入**logoff /?**）。 若要注销当前活动会话，请键入 **logoff** 而不带参数。
+可以使用多种不同的方法来注销本地系统上的会话。 最简单的方法是使用远程桌面\/终端服务命令行工具 **logoff.exe**（若要了解有关详细信息，请在 Windows PowerShell 提示符处键入 **logoff \/?**）。 若要注销当前活动会话，请键入 **logoff** 而不带参数。
 
 你还可以使用具 **shutdown.exe** 工具及其 logoff 选项：
 
@@ -35,18 +39,18 @@ rundll32.exe user32.dll,LockWorkStation
 shutdown.exe -l
 ```
 
-第三个选项是使用 WMI。 Win32_OperatingSystem 类具有 Win32Shutdown 方法。 调用具有 0 标志的方法将启动注销：
+第三个选项是使用 WMI。 Win32\_OperatingSystem 类具有 Win32Shutdown 方法。 调用具有 0 标志的方法将启动注销：
 
 ```
 (Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(0)
 ```
 
-若要了解有关详细信息和 Win32Shutdown 方法的其他功能，请参阅 MSDN 中的“Win32_OperatingSystem 类的 Win32Shutdown 方法”。
+若要了解有关详细信息和 Win32Shutdown 方法的其他功能，请参阅 MSDN 中的“Win32\_OperatingSystem 类的 Win32Shutdown 方法”。
 
 ### 关闭或重启计算机
-关闭和重启计算机通常是相同类型的任务。 关闭计算机的工具通常也可以重启计算机，反之亦然。 从 Windows PowerShell 重启计算机有两个直接的选项。 使用 Tsshutdn.exe 或 Shutdown.exe 及其相应参数。 你可以从 **tsshutdn.exe /?** 或 **shutdown.exe /?** 获取详细的使用情况信息。
+关闭和重启计算机通常是相同类型的任务。 关闭计算机的工具通常也可以重启计算机，反之亦然。 从 Windows PowerShell 重启计算机有两个直接的选项。 使用 Tsshutdn.exe 或 Shutdown.exe 及其相应参数。 你可以从 **tsshutdn.exe \/?** 或 **shutdown.exe \/?** 获取详细的使用情况信息。
 
-也可以通过使用 **Win32_OperatingSystem** 直接从 Windows PowerShell 执行关闭或重启操作。
+也可以通过使用 **Win32\_OperatingSystem** 直接从 Windows PowerShell 执行关闭或重启操作。
 
 若要关闭计算机，请使用具有 **1** 标志的 Win32Shutdown 方法。
 
@@ -62,6 +66,7 @@ shutdown.exe -l
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

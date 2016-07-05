@@ -1,13 +1,17 @@
 ---
-title:  使用变量存储对象
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  b1688d73-c173-491e-9ba6-6d0c1cc852de
+title: "使用变量存储对象"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: c3bcf9dc6f70383e971d9c1ae75ec78860111de9
+
 ---
 
 # 使用变量存储对象
@@ -39,7 +43,7 @@ Path
 C:\temp
 ```
 
-你可以使用 **Get-Member** 来显示有关变量内容的信息。 通过管道将 $loc 传递至 Get-Member 会向你显示这是一个 **PathInfo** 对象，就像 Get-Location 的输出一样：
+你可以使用 **Get\-Member** 以显示有关变量内容的信息。 通过管道将 $loc 传递至 Get\-Member 会向你显示这是一个 **PathInfo** 对象，就像 Get\-Location 的输出一样：
 
 ```
 PS> $loc | Get-Member -MemberType Property
@@ -61,7 +65,7 @@ Windows PowerShell 提供多个用以操作变量的命令。 你可以通过键
 Get-Command -Noun Variable | Format-Table -Property Name,Definition -AutoSize -Wrap
 ```
 
-除了你在当前的 Windows PowerShell 会话中创建的变量，还存在多个系统定义的变量。 你可以使用 **Remove-Variable** cmdlet 来清除所有不受 Windows PowerShell 控制的变量。 键入以下命令来清除所有变量：
+除了你在当前的 Windows PowerShell 会话中创建的变量，还存在多个系统定义的变量。 你可以使用 **Remove\-Variable** cmdlet 来清除所有不受 Windows PowerShell 控制的变量。 键入以下命令来清除所有变量：
 
 ```
 Remove-Variable -Name * -Force -ErrorAction SilentlyContinue
@@ -77,7 +81,7 @@ Performing operation "Remove Variable" on Target "Name: Error".
 (default is "Y"):A
 ```
 
-然后，如果你运行 **Get-Variable** cmdlet，你会看到其余的 Windows PowerShell 变量。 由于还存在一个变量 Windows PowerShell 驱动器，你也可以通过键入以下内容显示所有的 Windows PowerShell 变量：
+然后，如果你运行 **Get\-Variable** cmdlet，你会看到其余的 Windows PowerShell 变量。 由于还存在一个变量 Windows PowerShell 驱动器，你也可以通过键入以下内容显示所有的 Windows PowerShell 变量：
 
 ```
 Get-ChildItem variable:
@@ -90,7 +94,7 @@ Get-ChildItem variable:
 Get-ChildItem env:
 ```
 
-虽然标准变量 cmdlet 并不用于处理 **env:** 变量，但你仍可以通过指定 **env:** 前缀来使用它们。 例如，若要查看操作系统根目录，你可以通过键入以下内容从 Windows PowerShell 内部使用命令 Shell **%SystemRoot%** 变量：
+虽然标准变量 cmdlet 并不用于处理 **env:** 变量，但你仍可以通过指定 **env:** 前缀来使用它们。 例如，若要查看操作系统根目录，你可以通过键入以下内容从 Windows PowerShell 内部使用命令shell **%SystemRoot%** 变量：
 
 ```
 PS> $env:SystemRoot
@@ -101,6 +105,7 @@ C:\WINDOWS
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,13 +1,17 @@
 ---
-title:  关于 Windows PowerShell
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  979654ae-7994-47f8-be43-d79e7a140143
+title: "关于 Windows PowerShell"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 979654ae-7994-47f8-be43-d79e7a140143
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: b990fb5c6855aaffeb241e9596c333014050e059
+
 ---
 
 # 关于 Windows PowerShell
@@ -20,12 +24,12 @@ Windows PowerShell 使它的功能更易发现。 例如，若要查找用于查
 Get-Command *-Service
 ```
 
-找到完成任务的 cmdlet 后，可通过使用 Get-Help cmdlet 了解有关该 cmdlet 的详细信息。 例如，若要显示有关 Get-Service cmdlet 的帮助，请键入：
+找到完成任务的 cmdlet 后，可通过使用 Get\-Help cmdlet 了解有关该 cmdlet 的详细信息。 例如，若要显示有关 Get\-Service cmdlet 的帮助，请键入：
 
 ```
 Get-Help Get-Service
 ```
-大多数 cmdlet 会发出对象，这些对象可获得操作，然后再呈现为显示文本。 若要全面了解该 cmdlet 的输出，请将其输出通过管道传递给 Get-Member cmdlet。 例如，下面的命令显示了有关 Get-Service cmdlet 所输出对象的成员的信息。
+大多数 cmdlet 会发出对象，这些对象可获得操作，然后再呈现为显示文本。 若要全面了解该 cmdlet 的输出，请将其输出通过管道传递给 Get\-Member cmdlet。 例如，下面的命令显示了有关 Get\-Service cmdlet 所输出对象的成员的信息。
 
 ```
 Get-Service | Get-Member
@@ -34,7 +38,7 @@ Get-Service | Get-Member
 ## 一致性
 管理系统是一项复杂的任务，具有一致的接口的工具有助于控制固有的复杂性。 遗憾的是，命令行工具和可脚本化 COM 对象的一致性均未知。
 
-Windows PowerShell 的一致性是其主要资产之一。 例如，如果了解如何使用 Sort-Object cmdlet，你可以利用这一知识对任何 cmdlet 的输出进行排序。 不需要了解每个 cmdlet 的不同排序例程。
+Windows PowerShell 的一致性是其主要资产之一。 例如，如果了解如何使用 Sort\-Object cmdlet，你可以利用这一知识对任何 cmdlet 的输出进行排序。 不需要了解每个 cmdlet 的不同排序例程。
 
 此外，cmdlet 开发人员无需为其 cmdlet 设计排序功能。 Windows PowerShell 将给它们一个提供基本功能的框架，并强制它们在接口的多个方面保持一致。 该框架消除了通常留给开发人员的某些选择，但它也因而使得开发可靠的和易于使用的 cmdlet 变得简单得多。
 
@@ -53,6 +57,7 @@ Windows PowerShell 让你能够从以交互方式键入命令转换到创建和�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

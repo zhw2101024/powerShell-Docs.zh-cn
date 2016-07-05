@@ -1,13 +1,17 @@
 ---
-title:  ISEOptions 对象
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  75e2a76f-f3d1-490b-ad5d-e3829946aabb
+title: "ISEOptions 对象"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 75e2a76f-f3d1-490b-ad5d-e3829946aabb
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 272749d487a59ccf5eb30352dc902591228746f3
+
 ---
 
 # ISEOptions 对象
@@ -220,7 +224,7 @@ $psISE.Options.ConsolePaneTextBackgroundColor = "pink"
 ###  <a name="contc"></a> ConsoleTokenColors
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
- 指定 Windows PowerShell ISE“控制台”窗格中 IntelliSense 标记的颜色。 此属性是一个包含标记类型的名称值对和“控制台”窗格颜色的字典对象。 若要更改“脚本”窗格中 IntelliSense 标记的颜色，请参阅 [TokenColors](#tc)。 若要将颜色重置为默认值，请参阅 [RestoreDefaultConsoleTokenColors()](#rdctc)。 可以针对以下项设置标记颜色：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。
+ 指定 Windows PowerShell ISE“控制台”窗格中 IntelliSense 标记的颜色。 此属性是一个包含“控制台”窗格标记类型和颜色的名称值对的字典对象。 若要更改“脚本”窗格中 IntelliSense 标记的颜色，请参阅 [TokenColors](#tc)。 若要将颜色重置为默认值，请参阅 [RestoreDefaultConsoleTokenColors()](#rdctc)。 可以针对以下项设置标记颜色：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。
 
 ```
 # Sets the color of commands to green.
@@ -432,7 +436,7 @@ $psISE.Options.SelectedScriptPaneState = "Maximized"
 ###  <a name="sds"></a> ShowDefaultSnippets
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
- 指定代码段的 **CTRL + J** 列表是否包括Windows PowerShell 中包含的初学者套件。 当设置为 **$false** 时，只有用户定义的代码段显示在 **CTRL + J** 列表中。 默认值为 **$true**。
+ 指定代码段的 **CTRL\+J** 列表是否包括Windows PowerShell 中包含的初学者套件。 当设置为 **$false** 时，只有用户定义的代码段显示在 **CTRL\+J** 列表中。 默认值为 **$true**。
 
 ```
 # Hide the default snippets from the CTRL+J list.
@@ -516,7 +520,7 @@ $psISE.Options.ShowWarningForDuplicateFiles = $true
 ###  <a name="tc"></a> TokenColors
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
- 指定 Windows PowerShell ISE“脚本”窗格中 IntelliSense 标记的颜色。 此属性是一个包含标记类型的名称值对和“脚本”窗格颜色的字典对象。 若要更改“脚本”窗格中 IntelliSense 标记的颜色，请参阅 [ConsoleTokenColors](#contc)。 若要将颜色重置为默认值，请参阅 [RestoreDefaultTokenColors()](#rdtc)。 可以针对以下项设置标记颜色：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。
+ 指定 Windows PowerShell ISE“脚本”窗格中 IntelliSense 标记的颜色。 此属性是一个包含“脚本”窗格标记类型和颜色的名称值对的字典对象。 若要更改“脚本”窗格中 IntelliSense 标记的颜色，请参阅 [ConsoleTokenColors](#contc)。 若要将颜色重置为默认值，请参阅 [RestoreDefaultTokenColors()](#rdtc)。 可以针对以下项设置标记颜色：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。
 
 ```
 # Sets the color of commands to green.
@@ -604,7 +608,7 @@ $psISE.Options.WarningForegroundColor =”yellow”
 ###  <a name="xtc"></a> XmlTokenColors
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
- 指定包含标记类型的名称值对以及 Windows PowerShell ISE 中显示的 XML 内容颜色的字典对象。 可以针对以下项设置标记颜色：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。 另请参阅 [RestoreDefaultXmlTokenColors()](#rdxtc)。
+ 指定包含在 Windows PowerShell ISE 中显示的 XML 内容的标记类型和颜色的名称\/值对的字典对象。 可以针对以下项设置标记颜色：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。 另请参阅 [RestoreDefaultXmlTokenColors()](#rdxtc)。
 
 ```
 # Sets the color of XML element names to green.
@@ -630,6 +634,7 @@ $psISE.Options.Zoom = 200
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

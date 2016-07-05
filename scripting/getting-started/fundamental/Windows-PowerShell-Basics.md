@@ -1,13 +1,17 @@
 ---
-title:  Windows PowerShell 基础知识
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  6b3cbbc8-060c-4877-b00b-7300dbbe4e28
+title: "Windows PowerShell 基础知识"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 6b3cbbc8-060c-4877-b00b-7300dbbe4e28
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 8d4a801c534075db568cb38eb51cb11db40cce15
+
 ---
 
 # Windows PowerShell 基础知识
@@ -19,18 +23,19 @@ ms.assetid:  6b3cbbc8-060c-4877-b00b-7300dbbe4e28
 
 Windows PowerShell 旨在充分利用用户对 CLI 一直以来所了解的知识。 在本节中，我们将谈论可用于快速了解 Windows PowerShell 的基本工具和概念。 其中包括：
 
--   使用 Get-Command
+-   使用 Get\-Command
 
 -   使用 Cmd.exe 和 UNIX 命令
 
 -   使用外部命令
 
--   使用 Tab-Completion
+-   使用 Tab 自动补全
 
--   使用 Get-Help
+-   使用 Get\-Help
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 
