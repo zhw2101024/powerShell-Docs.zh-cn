@@ -1,12 +1,16 @@
 ---
-title:  安装和使用 Windows PowerShell Web 访问
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
+title: "安装和使用 Windows PowerShell Web 访问"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: d2f78148402f06992f5f58cd40e8c4f624b5e4b5
+
 ---
 
 #  安装和使用 Windows PowerShell Web 访问
@@ -159,7 +163,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
     </tbody>
     </table>
 
-2.  键入以下内容，然后按 **Enter**，其中 *computer_name* 代表要安装 Windows PowerShell Web 访问的远程计算机（如果适用）。 必要时，<span class="code">Restart</span> 参数会自动重新启动目标服务器。
+2.  键入以下内容，然后按 **Enter**，其中 *computer\_name* 代表要安装 Windows PowerShell Web 访问的远程计算机（如果适用）。 必要时，<span class="code">Restart</span> 参数会自动重新启动目标服务器。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_374a9c21-4f6e-471e-b957-bb190a594533'); "Copy to clipboard.")
 
@@ -200,7 +204,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 使用 **Install-PswaWebApplication** cmdlet 可快速配置 Windows PowerShell Web 访问。 虽然你可将 <span class="code">UseTestCertificate</span> 参数添加到 <span class="code">Install-PswaWebApplication</span> cmdlet，以出于测试目的而安装自签名的 SSL 证书，但这种做法是不安全的；对安全的生产环境而言，应始终使用证书颁发机构 (CA) 签名的有效 SSL 证书。 管理员可通过 IIS 管理器控制台，使用自行选择的已签名证书代替测试证书。
 
-你可完成 Windows PowerShell Web 访问 Web 应用程序配置，方法是运行 <span class="code">Install-PswaWebApplication</span> cmdlet，或在 IIS 管理器中执行基于 GUI 的配置步骤。 默认情况下，cmdlet 在**默认网站**容器中安装 Web 应用程序、**pswa**（及其应用程序池 **pswa_pool**），如 IIS 管理器所示；必要时，你可指示 cmdlet 更改 Web 应用程序的默认网站容器。 IIS 管理器提供可供 Web 应用程序使用的配置选项，例如更改端口号或安全套接字层 (SSL) 证书。
+你可完成 Windows PowerShell Web 访问 Web 应用程序配置，方法是运行 <span class="code">Install-PswaWebApplication</span> cmdlet，或在 IIS 管理器中执行基于 GUI 的配置步骤。 默认情况下，cmdlet 在**默认网站**容器中安装 Web 应用程序、**pswa**（及其应用程序池 **pswa\_pool**），如 IIS 管理器所示；必要时，可指示 cmdlet 更改 Web 应用程序的默认网站容器。 IIS 管理器提供可供 Web 应用程序使用的配置选项，例如更改端口号或安全套接字层 (SSL) 证书。
 
 <table>
 <colgroup>
@@ -250,7 +254,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
     </tbody>
     </table>
 
-    通过运行 cmdlet，在 IIS 默认网站容器中安装 Windows PowerShell Web 访问 Web 应用程序。 Cmdlet 创建在默认网站 (https://&lt;server_name&gt;/pswa) 上运行 Windows PowerShell Web 访问所必需的基础结构。 若要在不同的网站上安装 web 应用程序，请添加 <span class="code">WebSiteName</span> 参数，以提供网站名称。 若要更改 Web 应用程序的名称（默认名称是 <span class="code">pswa</span>），请添加 <span class="code">WebApplicationName</span> 参数。
+    通过运行 cmdlet，在 IIS 默认网站容器中安装 Windows PowerShell Web 访问 Web 应用程序。 cmdlet 创建在默认网站 (https://&lt;server\_name&gt;/pswa) 上运行 Windows PowerShell Web 访问所必需的基础结构。 若要在不同的网站上安装 web 应用程序，请添加 <span class="code">WebSiteName</span> 参数，以提供网站名称。 若要更改 Web 应用程序的名称（默认名称是 <span class="code">pswa</span>），请添加 <span class="code">WebApplicationName</span> 参数。
 
     通过运行 cmdlet，配置以下设置。 必要时，你可在 IIS 管理器控制台中手动更改这些设置。
 
@@ -320,7 +324,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 8.  在“SSL 证书”字段中，从下拉菜单中选择你的已签名证书。  **[絋﹚]** 有关如何获得证书的详细信息，请参阅本主题中的[在 IIS 管理器中配置 SSL 证书](#BKMK_cert)。
 
-    现可配置 Windows PowerShell Web 访问 Web 应用程序，以便使用已签名的 SSL 证书。 你可通过在浏览器窗口中打开 https://&lt;server_name&gt;/pswa 访问 Windows PowerShell Web 访问。
+    现可配置 Windows PowerShell Web 访问 Web 应用程序，以便使用已签名的 SSL 证书。 可以通过在浏览器窗口中打开 https://&lt;server\_name&gt;/pswa 访问 Windows PowerShell Web 访问。
 
     <table>
     <colgroup>
@@ -357,7 +361,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
     -   在 Windows **开始**屏幕上，右键单击**Windows PowerShell**，然后单击**以管理员身份运行**。
 
-2.  <span class="label">使用会话配置限制用户访问的可选步骤：</span>验证要在规则中使用的会话配置已存在。 如果尚未创建这些配置，则使用 MSDN 上 [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) 中用于创建会话配置的说明。
+2.  <span class="label">使用会话配置限制用户访问的可选步骤：</span>验证要在规则中使用的会话配置已存在。 如果尚未创建这些配置，则使用 MSDN 上 [about\_Session\_Configuration\_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) 中用于创建会话配置的说明。
 
 3.  键入以下命令，然后按**Enter**。
 
@@ -371,7 +375,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
         Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  确保通过运行 **Get-PswaAuthorizationRule** cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer\_name&gt; 创建了该规则。 例如，**Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso\_214**。
+4.  确保通过运行 **Get-PswaAuthorizationRule** cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user &gt;ComputerName** &lt;computer\_name&gt; 创建了该规则。 例如，**Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso\_214**。
 
 配置授权规则之后，授权用户便可以登录基于 Web 的控制台并开始使用 Windows PowerShell Web 访问。
 
@@ -453,13 +457,13 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 2.  为 Windows PowerShell Web 访问创建新的应用程序池。 在 IIS 管理器树窗格中展开网关服务器的节点，选择“应用程序池”，然后单击“操作”窗格中的“添加应用程序池”。
 
-3.  为新的应用程序池添加名称 **pswa_pool**，或提供其他名称。 单击“确定”。
+3.  为新的应用程序池添加名称 **pswa\_pool**，或提供其他名称。 单击“确定”。
 
 4.  在 IIS 管理器树窗格中，展开已安装 Windows PowerShell Web 访问的服务器的节点，直到“站点”文件夹可见。 选择“站点”文件夹。
 
 5.  右键单击你想添加 Windows PowerShell Web 访问网站的网站（例如，**默认网站**），然后单击**添加应用程序**。
 
-6.  在“别名”字段中，键入 pswa 或提供其他别名。 别名变为虚拟目录的名称。 例如，以下 URL 中的 **pswa** 表示在本步骤中指定的别名：https://&lt;server_name&gt;/pswa。
+6.  在“别名”字段中，键入 pswa 或提供其他别名。 别名变为虚拟目录的名称。 例如，以下 URL 中的 **pswa** 表示在本步骤中指定的别名：https://&lt;server\_name&gt;pswa。
 
 7.  在“应用程序池”字段中，选择在步骤 3 中创建的应用程序池。
 
@@ -491,7 +495,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
     </tbody>
     </table>
 
-13. 在使用提升的用户权限打开的 Windows PowerShell 会话（以管理员身份运行）中，运行以下脚本（其中 *application_pool_name* 表示你在步骤 3 中创建的应用程序池的名称），以便向应用程序池提供授权文件的访问权限。
+13. 在使用提升的用户权限（以管理员身份运行）打开的 Windows PowerShell 会话中，运行以下脚本（其中 *application\_pool\_name* 表示你在步骤 3 中创建的应用程序池的名称），以便向应用程序池提供授权文件的访问权限。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_c1a80a93-8fcf-4beb-a025-5f81bfb8bdae'); "Copy to clipboard.")
 
@@ -535,7 +539,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 11. 单击“确定”关闭“添加网站”对话框。
 
-12. 在使用提升的用户权限打开的 Windows PowerShell 会话（以管理员身份运行）中，运行以下脚本（其中 *application_pool_name* 表示你在步骤 4 中创建的应用程序池的名称），以便向应用程序池提供授权文件的访问权限。
+12. 在使用提升的用户权限（以管理员身份运行）打开的 Windows PowerShell 会话中，运行以下脚本（其中 *application\_pool\_name* 表示你在步骤 4 中创建的应用程序池的名称），以便向应用程序池提供授权文件的访问权限。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_35ae9944-ca44-4af7-9c96-616083b3e3db'); "Copy to clipboard.")
 
@@ -555,7 +559,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 15. 打开新的 Windows PowerShell Web 访问网站。
 
-    因为根网站指向 Windows PowerShell Web 访问文件夹，所以当你打开 https://&lt; *gateway\_server\_name*&gt;时，浏览器应显示 Windows PowerShell Web 访问登录网页。 你无需向 URL 添加 **/pswa**。
+    因为根网站指向 Windows PowerShell Web 访问文件夹，所以当你打开 https://&lt; *gateway\_server\_name*&gt; 时，浏览器应显示 Windows PowerShell Web 访问登录网页。 你无需向 URL 添加 **/pswa**。
 
     <table>
     <colgroup>
@@ -591,7 +595,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
     -   在 Windows **开始**屏幕上，右键单击**Windows PowerShell**，然后单击**以管理员身份运行**。
 
-2.  <span class="label">使用会话配置限制用户访问的可选步骤：</span>验证要在规则中使用的会话配置已存在。 如果尚未创建这些配置，则使用 MSDN 上 [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) 中用于创建会话配置的说明。
+2.  <span class="label">使用会话配置限制用户访问的可选步骤：</span>验证要在规则中使用的会话配置已存在。 如果尚未创建这些配置，则使用 MSDN 上 [about\_Session\_Configuration\_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) 中用于创建会话配置的说明。
 
 3.  键入以下命令，然后按**Enter**。
 
@@ -605,7 +609,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
         Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  确保通过运行 **Get-PswaAuthorizationRule** cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer\_name&gt; 创建了该规则。 例如，**Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso\_214**。
+4.  确保通过运行 **Get-PswaAuthorizationRule** cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user &gt;ComputerName** &lt;computer\_name&gt; 创建了该规则。 例如，**Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso\_214**。
 
 配置授权规则之后，授权用户便可以登录基于 Web 的控制台并开始使用 Windows PowerShell Web 访问。
 
@@ -708,6 +712,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

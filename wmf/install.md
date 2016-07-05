@@ -38,8 +38,11 @@
 - 已安装最新服务包。
 - 已安装 [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855)
 
-*WinRM 依赖关系：*
-Windows PowerShell Desired State Configuration (DSC) 依赖 WinRM。 在 Windows Server 2008 R2 和 Windows 7 上默认不启用 WinRM。 若要启用 WinRM，请在 Windows PowerShell 提升的会话中运行 **Set-WSManQuickConfig**。
+*WinRM 依赖关系：*Windows PowerShell Desired State Configuration (DSC) 依赖 WinRM。 在 Windows Server 2008 R2 和 Windows 7 上默认不启用 WinRM。 若要启用 WinRM，请在 Windows PowerShell 提升的会话中运行 **Set-WSManQuickConfig**。
 
 
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+

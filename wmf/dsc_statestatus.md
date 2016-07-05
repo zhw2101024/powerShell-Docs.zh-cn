@@ -18,17 +18,15 @@
 | F**^**                          | PendingConfiguration | 失败    | $false        | $null                        | F                              |
 | S、F                             | PendingConfiguration | 失败    | $false        | S                            | F                              |
 | F、S                             | PendingConfiguration | 失败    | $false        | S                            | F                              |
-| S<sub>1</sub>、F、S<sub>2</sub> | PendingConfiguration | 失败    | $false        | S<sub>1</sub>、S<sub>2</sub> | F                              |
-| F<sub>1</sub>、S、F<sub>2</sub> | PendingConfiguration | 失败    | $false        | S                            | F<sub>1</sub>、F<sub>2</sub>   |
+| S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | 失败    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
+| F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | 失败    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
 | S、r                            | PendingReboot        | Success    | $true         | S                            | r                              |
 | F、r                            | PendingReboot        | 失败    | $true         | $null                        | F、r                           |
 | r、S                            | PendingReboot        | Success    | $true         | $null                        | r                              |
 | r、F                            | PendingReboot        | Success    | $true         | $null                        | r                              |
 
 ^
-S<sub>i</sub>：成功应用的一系列资源
-F<sub>i</sub>：不成功应用的一系列资源
-r：需要重新启动的资源
+S<sub>i</sub>：一系列成功应用 F<sub>i</sub> 的资源：一系列成功应用 r 的资源 ：需要重新启动的资源
 \*
 
 ```powershell
@@ -105,4 +103,8 @@ LCM State: Idle,
 LCM State: Busy, LCM is performing a consistency check.
 LCM State: Idle,
 ```
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+

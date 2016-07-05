@@ -1,20 +1,24 @@
 ---
-title:  使用打印机
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  4f29ead3-f83b-4706-ac3e-f2154ff38dc5
+title: "使用打印机"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 4f29ead3-f83b-4706-ac3e-f2154ff38dc5
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 27d3d11b71b95cd79817449cf8bdb1a0a26936bd
+
 ---
 
 # 使用打印机
 你可以通过 Windows PowerShell 使用 WMI 和 WSH 中的 WScript.Network COM 对象来管理打印机。 我们将结合这两种工具来演示特定任务。
 
 ### 列出打印机连接
-列出计算机上安装的打印机的最简单方法是使用 WMI **Win32_Printer** 类：
+列出计算机上安装的打印机的最简单方法是使用 WMI **Win32\_Printer** 类：
 
 ```
 Get-WmiObject -Class Win32_Printer -ComputerName
@@ -36,7 +40,7 @@ Get-WmiObject -Class Win32_Printer -ComputerName
 ```
 
 ### 设置默认打印机
-若要使用 WMI 设置默认打印机，请在 **Win32_Printer** 集合中查找打印机，然后调用 **SetDefaultPrinter** 方法：
+若要使用 WMI 设置默认打印机，请在 **Win32\_Printer** 集合中查找打印机，然后调用 **SetDefaultPrinter** 方法：
 
 ```
 (Get-WmiObject -ComputerName . -Class Win32_Printer -Filter "Name='HP LaserJet 5Si'").SetDefaultPrinter()
@@ -57,6 +61,7 @@ Get-WmiObject -Class Win32_Printer -ComputerName
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,12 +1,16 @@
 ---
-title:  使用基于 Web 的 Windows PowerShell 控制台
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
+title: "使用基于 Web 的 Windows PowerShell 控制台"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 02964dd763ccccbf27a963c0f8eef20aa23cc117
+
 ---
 
 #  使用基于 Web 的 Windows PowerShell 控制台
@@ -107,7 +111,7 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
     <td><ul>
     <li><p>如果目标计算机在工作组中，则使用以下语法提供你的用户名并登录到计算机：&lt;<em>workgroup_name</em>&gt;\&lt;<em>user_name</em>&gt;。</p></li>
     <li><p>如果目标计算机是网关服务器，则可在“计算机名”<strong></strong>字段中指定“localhost”<strong></strong>。</p></li>
-    <li><p>如果目标计算机是网关服务器，并且该网关服务器在工作组中，则可在“计算机名”<strong></strong>字段中使用“localhost”<strong></strong>，但不可在“用户名”<strong></strong>字段中使用 localhost\&lt;<em>user_name</em>&gt;。 必须使用&lt;<em>工作组名称 </em>&gt;\&lt;<em>user_name</em>&gt;。</p></li>
+    <li><p>如果目标计算机是网关服务器，并且该网关服务器在工作组中，则可在“<strong>计算机名</strong>”字段中使用“<strong>localhost</strong>”，但不可在“<strong>用户名</strong>”字段中使用 localhost\&lt;<em>user_name</em>&gt;。 必须使用 &lt;<em>workgroup name</em>&gt;\&lt;<em>user_name</em>&gt;。</p></li>
     </ul></td>
     </tr>
     </tbody>
@@ -392,6 +396,7 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

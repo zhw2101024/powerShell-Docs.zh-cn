@@ -1,19 +1,22 @@
 ---
-title:   资源创作清单
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "资源创作清单"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: bd6af2cbf746e71aa59f509eae14664e647a1b05
+
 ---
 
 # 资源创作清单
 此清单是创作新 DSC 资源时的最佳做法的列表
 ## 资源模块包含用于所有资源的 .psd1 文件和 schema.mof 
-你首先应检查你的资源是否具有正确的结构以及是否包含所有所需文件。 每个资源模块都应包含 .psd1 文件且每个非复合资源都应具有 schema.mof 文件。 未包含架构的资源不会被 **Get-DscResource** 列出且用户在针对 ISE 中的这些模块写入代码时不能使用 IntelliSense。 
-xRemoteFile 资源是 xPSDesiredStateConfiguration 资源模块的一部分，其示例目录结构如下所示：
+你首先应检查你的资源是否具有正确的结构以及是否包含所有所需文件。 每个资源模块都应包含 .psd1 文件且每个非复合资源都应具有 schema.mof 文件。 未包含架构的资源不会被 **Get-DscResource** 列出且用户在针对 ISE 中的这些模块写入代码时不能使用 IntelliSense。 xRemoteFile 资源是 xPSDesiredStateConfiguration 资源模块的一部分，其示例目录结构如下所示：
 
 
 ```
@@ -32,8 +35,7 @@ xPSDesiredStateConfiguration
 ```
 
 ## 资源和架构正确且已使用 DscResourceDesigner cmdlet 进行了验证 ##
-另一个重要方面是验证资源架构 (*.schema.mof) 文件。 
-请确保：
+另一个重要方面是验证资源架构 (*.schema.mof) 文件。 请确保：
 -   属性类型正确（例如，不将字符串用于接受数值的属性，应改为使用 UInt32 或其他数值类型）
 -   正确指定了属性特性（[key]、[required]、[write]、[read]）
 
@@ -126,8 +128,7 @@ Get-TargetResource 应该返回资源的当前状态的详细信息。 确保通
 
 ## 已使用 **Start-DscConfiguration** 端到端地验证了资源 ##
 
-虽然通过直接调用 **Get/Set/Test-TargetResource** 函数对它们进行测试至关重要，但不是所有问题都能以这种方法发现。 你应该将测试的关注重心放在使用 **Start-DscConfiguration** 上或请求服务器上。 事实上，这就是用户使用资源的方式，所以不要低估此类测试的重要性。 
-可能的问题类型：
+虽然通过直接调用 **Get/Set/Test-TargetResource** 函数对它们进行测试至关重要，但不是所有问题都能以这种方法发现。 你应该将测试的关注重心放在使用 **Start-DscConfiguration** 上或请求服务器上。 事实上，这就是用户使用资源的方式，所以不要低估此类测试的重要性。 可能的问题类型：
 -   由于 DSC 代理以服务方式运行，因此凭据/会话的行为可能不同。  请务必端到端地测试此处的任何功能。
 -   验证由资源显示的错误消息是否有意义。 例如，由 **Start-DscConfiguration** 输出的错误可能与在直接调用 **Set-TargetResource** 函数时显示的错误不同。
 
@@ -179,8 +180,7 @@ configuration Sample_xRemoteFile_DownloadFile
     }
 } 
 ```
--   包括（注释掉）关于如何在脚本的末尾使用实际值调用配置的示例，就是一个很好的做法。 
-例如，在上面的配置中，指定 UserAgent 最好的方法是以下这种方法，但这并非对每个人都显而易见：
+-   包括（注释掉）关于如何在脚本的末尾使用实际值调用配置的示例，就是一个很好的做法。 例如，在上面的配置中，指定 UserAgent 最好的方法是以下这种方法，但这并非对每个人都显而易见：
 
 `UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer`  
 这就是我们应该在配置的示例执行中包含注释的原因：
@@ -208,8 +208,7 @@ Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg"
 ## 日志消息要易于理解且信息量大（包括 –verbose、–debug 和 ETW 日志） ##
 确保由资源输出的日志易于理解且向用户提供有价值的信息。 资源应输出所有可能对用户有用的信息，但并不总是日志越多越好。 你应该避免冗余和输出不提供更多价值的数据 – 不要让人为了找到他们要找的内容而浏览成百上千条日志。 当然，针对此问题没有任何日志也是不可接受的解决方案。 
 
-测试时还应分析 verbose 和 debug 日志（通过合理使用 –verbose 和 –debug 开关运行 **Start-DscConfiguration**）以及 ETW 日志。 若要查看 DSC ETW 日志，请转到“事件查看器”并打开下列文件夹：Applications and Services- Microsoft - Windows - Desired State Configuration。  默认情况下设置有“操作”通道，但要确保启用了“分析”通道和“调试”通道（必须在运行配置前执行）。 
-若要启用“分析”/“调试”通道，可以执行下面的脚本：
+测试时还应分析 verbose 和 debug 日志（通过合理使用 –verbose 和 –debug 开关运行 **Start-DscConfiguration**）以及 ETW 日志。 若要查看 DSC ETW 日志，请转到“事件查看器”并打开下列文件夹：Applications and Services- Microsoft - Windows - Desired State Configuration。  默认情况下设置有“操作”通道，但要确保启用了“分析”通道和“调试”通道（必须在运行配置前执行）。 若要启用“分析”/“调试”通道，可以执行下面的脚本：
 ```powershell
 $statusEnabled = $true
 # Use "Analytic" to enable Analytic channel
@@ -256,14 +255,13 @@ $programFilesPath = ${env:ProgramFiles(x86)}
 ## 已全面测试资源功能 ##
 你有责任确保资源行为正确，因此请手动测试它的功能，或者更好的做法是编写自动化。 此清单包含要测试的重要项和/或经常丢失的项。 提供了一系列测试，主要是特定于你要测试的资源和此处未提及的测试。 不要忘记负面测试用例。 这可能是资源测试中最耗时的部分。 
 ## 最佳做法：资源模块包含具有 ResourceDesignerTests.ps1 脚本的 Tests 文件夹 ##
-对于给定模块中的所有资源，使用 **Test-xDscResource** 和 **Test-xDscSchema** 在资源模块中创建“Tests”文件夹、创建 ResourceDesignerTests.ps1 文件并添加测试是很好的做法。 
-这样我们就能快速验证给定模块的所有资源的架构并在发布前执行完整性检查。
+对于给定模块中的所有资源，使用 **Test-xDscResource** 和 **Test-xDscSchema** 在资源模块中创建“Tests”文件夹、创建 ResourceDesignerTests.ps1 文件并添加测试是很好的做法。 这样我们就能快速验证给定模块的所有资源的架构并在发布前执行完整性检查。
 对于 xRemoteFile，ResourceTests.ps1 可能和以下情况一样简单：
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof 
 ```
-**最佳做法：资源文件夹包含用于生成架构的资源设计器脚本** 每个资源应包含用于生成资源的 mof 架构的资源设计器脚本。 应将此文件放在 <ResourceName>\ResourceDesignerScripts 并将其命名为 Generate<ResourceName>Schema.ps1 对于 xRemoteFile 资源，此文件的命名为 GenerateXRemoteFileSchema.ps1，其中包含：
+**最佳做法：资源文件夹包含用于生成架构的资源设计器脚本** 每个资源应包含用于生成资源的 mof 架构的资源设计器脚本。 该文件应位于 <ResourceName>\ResourceDesignerScripts 并命名为 Generate<ResourceName>Schema.ps1 对于 xRemoteFile 资源，该文件应命名为 GenerateXRemoteFileSchema.ps1 并包含:
 ```powershell 
 $DestinationPath = New-xDscResourceProperty -Name DestinationPath -Type String -Attribute Key -Description 'Path under which downloaded or copied file should be accessible after operation.'
 $Uri = New-xDscResourceProperty -Name Uri -Type String -Attribute Required -Description 'Uri of a file which should be copied or downloaded. This parameter supports HTTP and HTTPS values.'
@@ -276,8 +274,7 @@ $CertificateThumbprint = New-xDscResourceProperty -Name CertificateThumbprint -T
 New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Headers, $UserAgent, $Ensure, $Credential, $CertificateThumbprint) -ModuleName xPSDesiredStateConfiguration2 -FriendlyName xRemoteFile 
 ```
 22 最佳做法：资源支持 -whatif 如果资源正在执行“危险”操作，最佳做法是实现 -whatif 功能。 完成后，请确保 whatif 输出正确地描述了在无 whatif 开关情况下执行命令时可能发生的操作。
-此外，验证当 –whatif 开关存在时操作未执行（未对节点的状态进行更改）。 
-例如，假设我们正在测试 File 资源。 下面是创建“test.txt”文件及其“test”内容的简单配置：
+此外，验证当 –whatif 开关存在时操作未执行（未对节点的状态进行更改）。 例如，假设我们正在测试 File 资源。 下面是创建“test.txt”文件及其“test”内容的简单配置：
 ```powershell
 configuration config
 {
@@ -317,11 +314,11 @@ VERBOSE: [X]: LCM:  [ End    Set      ]    in  0.1050 seconds.
 VERBOSE: Operation 'Invoke CimMethod' complete.
 ```
 
-以上就是清单的基础知识。 请记住，此列表并不详尽，但它涵盖了我们在设计、开发和测试 DSC 资源时会遇到的许多重要问题。 列出清单有助于我们确保不会忘记任何这些方面的问题，事实上，我们自己在开发 DSC 资源时就会在 Microsoft 中用到它。 
-如果你开发了用于编写和测试 DSC 资源的指导和最佳做法，请和我们分享吧！
+以上就是清单的基础知识。 请记住，此列表并不详尽，但它涵盖了我们在设计、开发和测试 DSC 资源时会遇到的许多重要问题。 列出清单有助于我们确保不会忘记任何这些方面的问题，事实上，我们自己在开发 DSC 资源时就会在 Microsoft 中用到它。 如果你开发了用于编写和测试 DSC 资源的指导和最佳做法，请和我们分享吧！
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

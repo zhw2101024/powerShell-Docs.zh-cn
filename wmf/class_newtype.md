@@ -4,8 +4,7 @@ PowerShell 5.0 引入了以下 Windows PowerShell 中的新语言元素：
 
 ## Class 关键字
 
-**class** 关键字定义了一个新类。 这是真正的 .NET Framework 类型。 
-Class 成员是公开的，但仅在模块作用域内公开。
+**class** 关键字定义了一个新类。 这是真正的 .NET Framework 类型。 Class 成员是公开的，但仅在模块作用域内公开。
 不能引用类型名称作为字符串（例如，`New-Object` 不起作用），并且在此版本中，也不能在该类定义的脚本/模块外部使用类型文本（例如，`[MyClass]`）。
 
 ```powershell
@@ -124,7 +123,7 @@ hashtable new(int capacity, float loadFactor)
 
 ## 方法
 
-Windows PowerShell 类方法被实现为仅有一个结束块的 ScriptBlock。 所有方法都是公开的。 下面介绍了定义一个名为 **DoSomething** 的方法的示例.
+Windows PowerShell 类方法被实现为仅有一个结束块的 ScriptBlock。 所有方法都是公开的。 下面介绍了定义一个名为 **DoSomething** 的方法的示例。
 
 ```powershell
 class MyClass
@@ -200,8 +199,7 @@ $v -eq $d # true
 
 ## 端到端示例
 
-下面的示例创建了几个新的自定义类来实现 HTML 动态样式表语言 (DSL)。 
-然后，由于不能在模块的范围之外使用类型，因此，该示例还添加了帮助程序函数来创建特定的元素类型作为元素类的一部分（如标题样式和表）。
+下面的示例创建了几个新的自定义类来实现 HTML 动态样式表语言 (DSL)。 然后，由于不能在模块的范围之外使用类型，因此，该示例还添加了帮助程序函数来创建特定的元素类型作为元素类的一部分（如标题样式和表）。
 
 ```powershell
 # Classes that define the structure of the document
@@ -326,6 +324,6 @@ function Style
 function Html ([HTML] $doc) { return $doc }
 ```
 
-<!--HONumber=Apr16_HO5-->
+<!--HONumber=Jun16_HO4-->
 
 

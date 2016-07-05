@@ -17,7 +17,7 @@ Unprotect-CmsMessage [-LiteralPath] <string> [[-To] <CmsMessageRecipient[]>] [-I
 
 CMS 加密标准采用公钥加密系统，其中用来加密内容的密匙（*公匙*）和用来解密内容的密匙（*私匙*）是分离的。
 
-公匙可以广泛共享，它不是敏感数据。 如果用此公匙加密了任何内容，只有你的私匙可以解密它。 有关“公匙加密系统”的详细信息，请参阅：<http://en.wikipedia.org/wiki/Public-key_cryptography>。
+公匙可以广泛共享，它不是敏感数据。 如果用此公匙加密了任何内容，只有你的私匙可以解密它。 有关公钥加密的详细信息，请参阅：<http://en.wikipedia.org/wiki/Public-key_cryptography>。
 
 若要在 PowerShell 中进行识别，加密证书需要唯一的密匙用法标识符 (EKU) 将它们识别为数据加密证书（如“代码签名”标识符、“加密邮件”标识符）。
 
@@ -81,4 +81,8 @@ Hello World
 
 ```powershell
 dir -DocumentEncryptionCert
-```<!--HONumber=Mar16_HO2-->
+```
+
+<!--HONumber=Jun16_HO4-->
+
+

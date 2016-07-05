@@ -31,7 +31,7 @@
 
 该 ID 是表示脚本块的 GUID（可以与事件 ID 0x1008 相关联），且 Runspace ID 表示该脚本块在其中运行的运行空间。
 
-调用消息中的百分号表示结构化的 ETW 属性。 虽然它们会被消息文本中的实际值替换，但访问它们更可靠的的方式是，使用 Get-WinEvent cmdlet 检索消息，然后使用消息的****“属性”数组。
+调用消息中的百分号表示结构化的 ETW 属性。 虽然它们会被消息文本中的实际值替换，但访问它们更可靠的的方式是，使用 Get-WinEvent cmdlet 检索消息，然后使用消息的“属性”数组。
 
 下例描述了该功能如何帮助取消对脚本进行加密和模糊化的恶意尝试：
 
@@ -96,4 +96,8 @@ $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 ```
 
 正如所有日志系统都有一个有限的保留缓存区（即 ETW 日志）一样，针对此基础结构的一个攻击就是，用虚假事件充斥日志以隐藏早期的证据。 若要避免这种攻击，请确保具有某种形式的事件日志集合设置（即 Windows 事件转发，[通过 Windows 事件日志监视发现攻击者](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf)）以尽快将事件日志从计算机中移除。
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+

@@ -73,17 +73,16 @@ P1    P2
 
 > 2 \[C:\\temp\]
 >
-> &gt;&gt; Get-Content .\\addresses.output.txt | ConvertFrom-String -TemplateFile .\\addresses.template.txt |
-> &gt;&gt;&gt; Format-Table -Auto
+> &gt;&gt; Get-Content .\\addresses.output.txt | ConvertFrom-String -TemplateFile .\\addresses.template.txt | &gt;&gt;&gt; Format-Table -Auto
 >
 > ExtentText                     姓名               城市     州
 > ----------                     ----               ----     -----
-> Ana Trujillo...              Ana Trujillo       雷德蒙市  华盛顿州
-> Antonio Moreno...            Antonio Moreno     兰顿市   华盛顿州
-> Thomas Hardy...              Thomas Hardy       西雅图市  华盛顿州
-> Christina Berglund...        Christina Berglund 雷德蒙市  华盛顿州
-> Hanna Moos...                Hanna Moos         皮阿拉普市 华盛顿州
+> Ana Trujillo...              Ana Trujillo       雷德蒙市  华盛顿州 Antonio Moreno...            Antonio Moreno     兰顿市   华盛顿州 Thomas Hardy...              Thomas Hardy       西雅图  华盛顿州 Christina Berglund...        Christina Berglund 雷德蒙市  华盛顿州 Hanna Moos...                Hanna Moos         皮阿拉普市 华盛顿州
 
 为了对提取的文本进行其他数据操作，则 **ExtentText** 属性将捕获从中提取记录的原始文本。 若要提供有关此功能的反馈或共享无法为其写入示例的内容，请发送电子邮件至 <psdmfb@microsoft.com>。
 
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+

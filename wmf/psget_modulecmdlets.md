@@ -277,4 +277,8 @@ PrivateData = @{
 } # End of PrivateData hashtable
 ```
 ***注意：***DscResourcesToExport 仅在最新的 PowerShell 5.0 版本上才受支持。 如果你正在之前的 PowerShell 版本上运行，我们将无法更新字段。
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+

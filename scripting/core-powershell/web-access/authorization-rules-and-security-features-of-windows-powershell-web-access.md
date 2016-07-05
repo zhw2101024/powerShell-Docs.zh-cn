@@ -1,12 +1,16 @@
 ---
-title:  Windows PowerShell Web 访问的授权规则和安全功能
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
+title: "Windows PowerShell Web 访问的授权规则和安全功能"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: ed586e55f4533ce5be7c68564e5cc537fed05016
+
 ---
 
 # Windows PowerShell Web 访问的授权规则和安全功能
@@ -176,7 +180,7 @@ Windows PowerShell Web 访问安全模型在基于 Web 控制台的最终用户�
 
 如果你计划使用自定义会话配置以允许特定用户仅在 Windows PowerShell Web 访问的限制运行空间中运行，则创建自定义会话配置，然后再添加参考其的授权规则。 无法使用 Windows PowerShell Web 访问 cmdlet 创建自定义会话配置。 有关创建自定义会话配置的详细信息，请参阅 MSDN 上的 [about\_Session\_Configuration\_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx)。
 
-Windows PowerShell Web 访问 cmdlet 支持一个通配符，即是星号 ( \* )。 字符串中的通配符不受支持；根据属性（用户、计算机或会话配置）使用单个星号。
+Windows PowerShell Web 访问 cmdlet 支持一个通配符，即星号 ( \* )。 字符串中的通配符不受支持；根据属性（用户、计算机或会话配置）使用单个星号。
 
 <table>
 <colgroup>
@@ -202,7 +206,7 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即是星号 ( \* )
 
     -   在 Windows **开始**屏幕上，右键单击**Windows PowerShell**，然后单击**以管理员身份运行**。
 
-2.  <span class="label">使用会话配置限制用户访问的可选步骤：</span>验证要在规则中使用的会话配置已存在。 如果尚未创建这些配置，则使用 MSDN 上 [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) 中用于创建会话配置的说明。
+2.  <span class="label">使用会话配置限制用户访问的可选步骤：</span>验证要在规则中使用的会话配置已存在。 如果尚未创建这些配置，则使用 MSDN 上 [about\_Session\_Configuration\_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) 中用于创建会话配置的说明。
 
 3.  键入以下命令，然后按**Enter**。
 
@@ -216,7 +220,7 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即是星号 ( \* )
 
         Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  确保通过运行 **Get-PswaAuthorizationRule** cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer\_name&gt; 创建了该规则。 例如，**Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso\_214**。
+4.  确保通过运行 **Get-PswaAuthorizationRule** cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user &gt;ComputerName** &lt;computer\_name&gt; 创建了该规则。 例如，**Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso\_214**。
 
 #### 删除授权规则
 
@@ -255,13 +259,13 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即是星号 ( \* )
 
 每个 Windows PowerShell 会话都使用会话配置；如果尚未为会话指定任何会话配置，Windows PowerShell 将使用默认的内置 Windows PowerShell 会话配置（被称为 Microsoft.PowerShell）。 默认的会话配置包括计算机上可用的所有 cmdlet。 管理员可利用受限的运行空间（有限范围内的其最终用户可执行的 cmdlet 和任务）定义会话配置，从而限制对所有计算机的访问权限。 对于有权访问一台具有所有语言访问权限的计算机或仅可访问 Windows PowerShell 远程管理 cmdlet 的用户，可连接到其他与第一台计算机连接的计算机。 定义受限的运行空间可阻止用户从其获准许的 Windows PowerShell 运行空间访问其他计算机，从而改善你的 Windows PowerShell Web 访问环境的安全性。 可（通过使用组策略）将会话配置分配给所有管理员想通过 Windows PowerShell Web 访问进行访问的计算机。 有关会话配置的详细信息，请参阅 [about\_Session\_Configurations](https://technet.microsoft.com/library/dd819508.aspx)。 以下是本方案的一些示例。
 
--   管理员创建名为 **PswaEndpoint** 的终结点，其中带有受限的运行空间。 然后管理员创建规则（**\*,\*,PswaEndpoint**），并将终结点分配给其他计算机。 规则可让所有用户访问所有带有终结点 **PswaEndpoint** 的计算机。 如果这只是在规则集中定义的授权规则，则不能访问不带有终结点的计算机。
+-   管理员创建名为 **PswaEndpoint** 的终结点，其中带有受限的运行空间。 然后管理员创建规则 (**\*,\*,PswaEndpoint**)，并将终结点分配给其他计算机。 规则可让所有用户访问所有带有终结点 **PswaEndpoint** 的计算机。 如果这只是在规则集中定义的授权规则，则不能访问不带有终结点的计算机。
 
 -   管理员创建名为 **PswaEndpoint** 的终结点（其中带有受限的运行空间），并希望限制特定用户的访问权限。 管理员创建一组名为 **Level1Support** 的用户，并定义以下规则：**Level1Support,\*,PswaEndpoint**。 规则可让 **Level1Support** 组中的用户访问所有带有 **PswaEndpoint** 配置的计算机。 类似地，可限制对特定计算机组合的访问权限。
 
 -   有些管理员为某些用户提供的访问权限要比其他用户多。 例如，管理员创建两个用户组，分别是 **Admins** 和 **BasicSupport**。 管理员还创建名为 **PswaEndpoint** 的终结点（其中带有受限的运行空间），并定义以下两条规则：**Admins,\*,\*** 和 **BasicSupport,\*,PswaEndpoint**。 第一条规则为**Admin**组中的所有用户提供访问所有计算机的权限，第二条规则为**BasicSupport**组中的所有用户仅提供访问那些带有**PswaEndpoint**的计算机的权限。
 
--   管理员已设置专用测试环境，希望可让所有授权的网络用户通过他们经常访问的网络访问所有计算机，并持有对所有他们经常访问的会话配置的访问权限。 因为这是专用测试环境，管理员创建了不安全的授权规则。 管理员运行的 cmdlet <span class="code">Add-PswaAuthorizationRule \* \* \*</span>，使用通配符 **\*** 来表示所有用户、所有计算机和所有配置。 此规则与以下项等效：<span class="code">Add-PswaAuthorizationRule –UserName \* -ComputerName \* -ConfigurationName \*</span>。
+-   管理员已设置专用测试环境，希望可让所有授权的网络用户通过他们经常访问的网络访问所有计算机，并持有对所有他们经常访问的会话配置的访问权限。 因为这是专用测试环境，管理员创建了不安全的授权规则。 管理员运行 cmdlet <span class="code">Add-PswaAuthorizationRule \* \* \*</span>，其使用通配符 **\*** 来表示所有用户、所有计算机和所有配置。 此规则与以下项等效：<span class="code">Add-PswaAuthorizationRule –UserName \* -ComputerName \* -ConfigurationName \*</span>。
 
     <table>
     <colgroup>
@@ -285,7 +289,7 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即是星号 ( \* )
 
         Add-PswaAuthorizationRule –userName PswaServer\chrisLocal –computerName srv1.contoso.com –configurationName Microsoft.PowerShell
 
-    上述规则示例会在网关服务器上对 Chris 进行身份验证，然后授权他可以访问 *srv1*。 在登录页面上，Chris 必须在“可选连接设置”区域 (*contoso\\chris*) 中提供另一组凭据。 网关服务器使用一组额外的凭据在目标计算机*srv1.contoso.com*上对其进行身份验证。
+    上述规则示例会在网关服务器上对 Chris 进行身份验证，然后授权他可以访问 *srv1*。 在登录页面上，Chris 必须在“**可选连接设置**”区域 (*contoso\\chris*) 中提供第二组凭据。 网关服务器使用一组额外的凭据在目标计算机*srv1.contoso.com*上对其进行身份验证。
 
     在上述情景中，Windows PowerShell Web 访问仅在以下操作已成功且至少一个授权规则允许使用以下操作之后才会建立到目标计算机的成功连接。
 
@@ -423,6 +427,7 @@ Windows PowerShell Web 访问会话超时。 在 Windows Server 2012 上运行�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

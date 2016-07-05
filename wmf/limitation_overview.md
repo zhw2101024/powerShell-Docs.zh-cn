@@ -39,8 +39,7 @@ Set-ExecutionPolicy RemoteSigned
 如果将 LiteralPath 和 -Recurse 一起使用，Get-ChildItem 将失效
 --------------------------------------------------------------------------
 
-如果目录名称包含无效的通配符，则当同时
-使用 -LiteralPath 和 -Recurse 时，Get-ChildItem 不会产生预期结果。
+如果目录名称包含无效的通配符，则将 -LiteralPath 和 -Recurse 一起使用时，Get-ChildItem 不会产生预期结果。
 
 **解决方法：**尽管不理想，但当前的解决方法是在脚本中实现递归，而不是依赖 cmdlet。
 
@@ -100,6 +99,6 @@ Sysprep 在安装 WMF 5.0 后无法正常工作
 
 
 
-<!--HONumber=May16_HO1-->
+<!--HONumber=Jun16_HO4-->
 
 

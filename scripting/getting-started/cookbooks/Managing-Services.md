@@ -1,20 +1,24 @@
 ---
-title:  管理服务
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  7a410e4d-514b-4813-ba0c-0d8cef88df31
+title: "管理服务"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: a9d6ece1df3b66090b2abf9d85019fee4db946b5
+
 ---
 
 # 管理服务
-有八个专为各种服务任务设计的核心 Service cmdlet。 我们将只查看列出和更改服务的运行状态，但是你可以通过使用 **Get-Help &#42;-Service** 获取 Service cmdlet 列表，还可以使用 **Get-Help<Cmdlet-Name>**（例如 **Get-Help New-Service**）找到每个 Service cmdlet 的信息。
+有八个专为各种服务任务设计的核心 Service cmdlet。 我们将只查看列出和更改服务的运行状态，但是你可以通过使用 **Get\-Help \&#42;\-Service** 获取 Service cmdlet 列表，还可以使用 **Get\-Help<Cmdlet\-Name>**（例如 **Get\-Help New\-Service**）找到每个 Service cmdlet 的相关信息。
 
 ## 获取服务
-可以通过使用 **Get-Service** cmdlet 获取本地或远程计算机上的服务。 与使用 **Get-Process** 相同，使用不带参数的 **Get-Service** 命令将返回所有服务。 你可以按名称进行筛选，甚至可以使用星号作为通配符：
+可以通过使用 **Get\-Service** cmdlet 获取本地或远程计算机上的服务。 与使用 **Get\-Process** 相同，使用不带参数的 **Get\-Service** 命令将返回所有服务。 你可以按名称进行筛选，甚至可以使用星号作为通配符：
 
 ```
 PS> Get-Service -Name se*
@@ -43,16 +47,16 @@ Running  lanmanserver       Server
 Stopped  ServiceLayer       ServiceLayer
 ```
 
-可以使用 Get-Service cmdlet 的 ComputerName 参数获取远程计算机上的服务。 ComputerName 参数接受多个值和通配符，因此你可以使用单个命令获取多台计算机上的服务。 例如，下面的命令获取 Server01 远程计算机上的服务。
+可以使用 Get\-Service cmdlet 的 ComputerName 参数获取远程计算机上的服务。 ComputerName 参数接受多个值和通配符，因此你可以使用单个命令获取多台计算机上的服务。 例如，下面的命令获取 Server01 远程计算机上的服务。
 
 ```
 Get-Service -ComputerName Server01
 ```
 
 ## 获取必需和从属服务
-Get-Service cmdlet 具有两个在服务管理中非常有用的参数。 DependentServices 参数获取依赖于该服务的服务。 RequiredServices 参数获取此服务所依赖的服务。
+Get\-Service cmdlet 具有两个在服务管理中非常有用的参数。 DependentServices 参数获取依赖于该服务的服务。 RequiredServices 参数获取此服务所依赖的服务。
 
-这些参数只显示 Get-Service 返回的 System.ServiceProcess.ServiceController 对象的 DependentServices 和 ServicesDependedOn (alias=RequiredServices) 属性的值，但是它们可简化命令，使获取此信息更加简单。
+这些参数只显示 Get\-Service 返回的 System.ServiceProcess.ServiceController 对象的 DependentServices 和 ServicesDependedOn (alias\=RequiredServices) 属性的值，但是它们可简化命令，使获取此信息更加简单。
 
 下面的命令获取 LanmanWorkstation 服务需要的服务。
 
@@ -78,7 +82,7 @@ Stopped  Browser            Computer Browser
 Running  BITS               Background Intelligent Transfer Ser...
 ```
 
-你甚至可以获取所有具有依赖关系的服务。 下面的命令所做的就是这些，然后使用 Format-Table cmdlet 来显示计算机上服务的 Status、Name、RequiredServices 和 DependentServices 属性。
+你甚至可以获取所有具有依赖关系的服务。 下面的命令所做的就是这些，然后使用 Format\-Table cmdlet 来显示计算机上服务的 Status、Name、RequiredServices 和 DependentServices 属性。
 
 ```
 Get-Service -Name * | where {$_.RequiredServices -or $_.DependentServices} | Format-Table -Property Status, Name, RequiredServices, DependentServices -auto
@@ -103,7 +107,7 @@ Start-Service -Name spooler
 Suspend-Service -Name spooler
 ```
 
-虽然 **Restart-Service** cmdlet 的操作方式与其他 Service cmdlet 的操作方式相同，但是我们将针对它列举一些更复杂的示例。 使用最简单的方式指定服务的名称：
+虽然 **Restart\-Service** cmdlet 的操作方式与其他 Service cmdlet 的操作方式相同，但是我们将针对它列举一些更复杂的示例。 使用最简单的方式指定服务的名称：
 
 ```
 PS> Restart-Service -Name spooler
@@ -128,16 +132,16 @@ WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
 WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
 ```
 
-虽然这些 Service cmdlet 没有 ComputerName 参数，但是你可通过使用 Invoke-Command cmdlet 在远程计算机上运行它们。 例如，下面的命令在 Server01 远程计算机上重启后台打印程序服务。
+虽然这些 Service cmdlet 没有 ComputerName 参数，但是你可通过使用 Invoke\-Command cmdlet 在远程计算机上运行它们。 例如，下面的命令在 Server01 远程计算机上重启后台打印程序服务。
 
 ```
 Invoke-Command -ComputerName Server01 {Restart-Service Spooler}
 ```
 
 ## 设置服务属性
-Set-Service cmdlet 更改本地或远程计算机上服务的属性。 因为服务状态是一种属性，所以你可以使用此 cmdlet 来启动、停止和暂停服务。 Set-Service cmdlet 还有一个 StartupType 参数，可让你更改服务启动类型。
+Set\-Service cmdlet 更改本地或远程计算机上服务的属性。 因为服务状态是一种属性，所以你可以使用此 cmdlet 来启动、停止和暂停服务。 Set\-Service cmdlet 还有一个 StartupType 参数，可让你更改服务启动类型。
 
-若要在 Windows Vista 及 Windows 的更高版本上使用 Set-Service，请使用“以管理员身份运行”选项打开 Windows PowerShell。
+若要在 Windows Vista 及 Windows 的更高版本上使用 Set\-Service，请使用“以管理员身份运行”选项打开 Windows PowerShell。
 
 有关详细信息，请参阅 [Set-Service [m2]](https://technet.microsoft.com/en-us/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
 
@@ -149,6 +153,7 @@ Set-Service cmdlet 更改本地或远程计算机上服务的属性。 因为服
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 
