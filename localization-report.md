@@ -4945,14 +4945,14 @@
 
 ##### <a name='061fb3a39191f7aaf3f5e51b12f56cac84031f49312'></a> Source: [wmf\5.0\jea_endpoint.md](https://github.com/PowerShell/powerShell-Docs/blob/b32cb86b7a18fee929cc81360d81f479571a74c2/wmf/5.0/jea_endpoint.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [wmf\jea_endpoint.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e690263f26fbf6747253e9cfe01785528be648ca/wmf/jea_endpoint.md)
+* Target File: [wmf\5.0\jea_endpoint.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/d6f01596e2ed4d500045f568f72a93a691543f70/wmf/5.0/jea_endpoint.md)
 * Handoff File: [jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e5e12ff5a65bad98a7a1ffdb51f53e51aff00125/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-cn.xlf)
 * Handoff Datetime: 2016-06-27 20:17:18
 * Handoff Reason: Include
 * Archive File: [jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d0d7451abfc4389c2d52329d4c671eff11ec4cf2/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-cn.xlf)
 * Archive Datetime: 2016-06-28 13:28:35
-* Handback File: [jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-cn.xlf)
-* Handback Datetime: 2016-06-28 15:13:24
+* Handback File: [jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/aefb2894d696d55cd3de210552cd67f60cb0594c/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-cn.xlf)
+* Handback Datetime: 2016-07-19 16:26:26
 * Bilingual File: [jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-cn.xlf)
 * Bilingual Datetime: 2016-06-28 15:16:56
 * [Back to Top](#report-top)
