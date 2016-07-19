@@ -2479,8 +2479,8 @@
 * Archive Datetime: 2016-07-19 13:10:36
 * Handback File: [How-to-Debug-Scripts-in-Windows-PowerShell-ISE.fe1e91b6be8b768d0e36f102791ffd867cff9b45.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/2baad82a8b3a485f16f4213694e8fe1a18e9bd57/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.fe1e91b6be8b768d0e36f102791ffd867cff9b45.zh-cn.xlf)
 * Handback Datetime: 2016-07-19 14:29:01
-* Bilingual File: [How-to-Debug-Scripts-in-Windows-PowerShell-ISE.fe1e91b6be8b768d0e36f102791ffd867cff9b45.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/c2c0cfce7f28380c85c1a5ea5621be8e454783b8/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.fe1e91b6be8b768d0e36f102791ffd867cff9b45.zh-cn.xlf)
-* Bilingual Datetime: 2016-07-05 14:45:59
+* Bilingual File: [How-to-Debug-Scripts-in-Windows-PowerShell-ISE.fe1e91b6be8b768d0e36f102791ffd867cff9b45.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/2baad82a8b3a485f16f4213694e8fe1a18e9bd57/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.fe1e91b6be8b768d0e36f102791ffd867cff9b45.zh-cn.xlf)
+* Bilingual Datetime: 2016-07-19 14:29:58
 * [Back to Top](#report-top)
 
 ##### <a name='a8b729612c54e5f0f95497a71a192f16e2a9d32a144'></a> Source: [scripting\core-powershell\ise\How-to-Use-Profiles-in-Windows-PowerShell-ISE.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/ise/How-to-Use-Profiles-in-Windows-PowerShell-ISE.md)
@@ -5513,6 +5513,8 @@
 * Archive Datetime: 2016-07-19 13:10:36
 * Handback File: [ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/2baad82a8b3a485f16f4213694e8fe1a18e9bd57/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.zh-cn.xlf)
 * Handback Datetime: 2016-07-19 14:29:01
+* Bilingual File: [ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/2baad82a8b3a485f16f4213694e8fe1a18e9bd57/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.zh-cn.xlf)
+* Bilingual Datetime: 2016-07-19 14:29:58
 * [Back to Top](#report-top)
 
 ##### <a name='dfba55f1eae5468df95309e14b3ee256511badf4356'></a> Source: [wmf\5.1\features-scenarios-cache\template.md](https://github.com/PowerShell/powerShell-Docs/blob/a952a27ec1695ce9951c352446194cf72d18f50a/wmf/5.1/features-scenarios-cache/template.md)
@@ -5537,6 +5539,8 @@
 * Archive Datetime: 2016-07-19 13:10:36
 * Handback File: [using-module.dfdedb618ec7d188918f7f3f705c8c39bbb26521.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/2baad82a8b3a485f16f4213694e8fe1a18e9bd57/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/using-module.dfdedb618ec7d188918f7f3f705c8c39bbb26521.zh-cn.xlf)
 * Handback Datetime: 2016-07-19 14:29:01
+* Bilingual File: [using-module.dfdedb618ec7d188918f7f3f705c8c39bbb26521.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/2baad82a8b3a485f16f4213694e8fe1a18e9bd57/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/using-module.dfdedb618ec7d188918f7f3f705c8c39bbb26521.zh-cn.xlf)
+* Bilingual Datetime: 2016-07-19 14:29:58
 * [Back to Top](#report-top)
 
 ##### <a name='8a10903c421f62311a28c9f32e352bba75f21052358'></a> Source: [wmf\5.1\install-configure.md](https://github.com/PowerShell/powerShell-Docs/blob/26da6c80568327faadc6746099ac9869f2018fcf/wmf/5.1/install-configure.md)

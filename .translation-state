@@ -32540,9 +32540,9 @@
       "ArchiveFileCommit": "efd164e947f9920bb4219739d9b6cdee6fafeb57",
       "ArchiveFileDateTime": "2016-07-19T13:10:36.5343856Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.zh-cn\\live\\How-to-Debug-Scripts-in-Windows-PowerShell-ISE.fe1e91b6be8b768d0e36f102791ffd867cff9b45.zh-cn.xlf",
+      "BilingualFileCommit": "2baad82a8b3a485f16f4213694e8fe1a18e9bd57",
+      "BilingualDateTime": "2016-07-19T14:29:58.9449928Z",
       "BilingualException": null
     },
     "ababa1b3ce913528a3ac7089d91ef74c5eb27737": {
@@ -32645,9 +32645,9 @@
       "ArchiveFileCommit": "efd164e947f9920bb4219739d9b6cdee6fafeb57",
       "ArchiveFileDateTime": "2016-07-19T13:10:36.5343856Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.zh-cn\\live\\ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.zh-cn.xlf",
+      "BilingualFileCommit": "2baad82a8b3a485f16f4213694e8fe1a18e9bd57",
+      "BilingualDateTime": "2016-07-19T14:29:58.9449928Z",
       "BilingualException": null
     },
     "8a10903c421f62311a28c9f32e352bba75f21052": {
@@ -33276,9 +33276,9 @@
       "ArchiveFileCommit": "efd164e947f9920bb4219739d9b6cdee6fafeb57",
       "ArchiveFileDateTime": "2016-07-19T13:10:36.5343856Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.zh-cn\\live\\using-module.dfdedb618ec7d188918f7f3f705c8c39bbb26521.zh-cn.xlf",
+      "BilingualFileCommit": "2baad82a8b3a485f16f4213694e8fe1a18e9bd57",
+      "BilingualDateTime": "2016-07-19T14:29:58.9449928Z",
       "BilingualException": null
     },
     "387ebc0467b9f154444292f391af0f4b77123639": {
