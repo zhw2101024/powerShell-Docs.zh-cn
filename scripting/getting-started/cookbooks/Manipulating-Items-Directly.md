@@ -177,7 +177,7 @@ specified. If you continue, all children will be removed with the item. Are you
 (default is "Y"):
 ```
 
-由于“是”****是默认响应，因此若要删除文件夹及其文件，请按“Enter”****键。 若要删除文件夹而不进行确认，请使用 **\-Recurse** 参数。
+由于“是”是默认响应，因此若要删除文件夹及其文件，请按“Enter”键。 若要删除文件夹而不进行确认，请使用 **\-Recurse** 参数。
 
 ```
 PS> Remove-Item C:\temp\New.Directory -Recurse
