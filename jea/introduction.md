@@ -8,8 +8,9 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "简介"
 ms.technology: powershell
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 46f4e5b231d09952f11387cec7c80fbfce9f9d4b
+translationtype: Human Translation
+ms.sourcegitcommit: e6b5107b7222708dcceff14bc26f0e12ef98d728
+ms.openlocfilehash: 00d568234b1453b9161b60d20117374ee4111ab3
 
 ---
 
@@ -26,14 +27,14 @@ ms.openlocfilehash: 46f4e5b231d09952f11387cec7c80fbfce9f9d4b
 此外，RBAC 作用范围中存在缺口。
 例如，在 Windows 中，特许访问权很大程度上是一个二进制开关，在将用户添加到“管理员”组时会强制你授予其不必要的权限。
 
-##  **Just Enough Administration -JEA-** 
-通过 PowerShell 远程处理提供基于角色的访问控制 -RBAC- 平台。
+##  **Just Enough Administration (JEA)** 
+通过 PowerShell 远程处理提供基于角色的访问控制 (RBAC) 平台。
 *它允许特定用户在服务器上执行特定管理任务，而不授予其管理员权限。*
 这让你能够填补现有 RBAC 解决方案之间的缺口，并简化了这些设置的管理。
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

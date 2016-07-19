@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 29676d0bf51adf9176753d0056efe76687a40600
+ms.sourcegitcommit: 59bf4cff540dabeeb77038ea84177f7c6bac2b4b
+ms.openlocfilehash: e5412a3168a18d1dbd117ed8b3eb6dd42a8d8f70
 
 ---
 
@@ -72,10 +72,11 @@ Configuration MyDscConfiguration {
 必须将其编译为 MOF 文档才能执行配置。 你可通过调用配置（像调用 PowerShell 函数一样）以执行此操作。
 >__注意：__若要调用配置，该函数必须在全局范围内（与任何其他 PowerShell 函数一样）。 可通过以下方式来实现此操作：对脚本执行“dot-source”操作，或者使用 F5 或单击 ISE 中的“运行脚本”按钮以运行配置脚本。 若要对脚本执行“dot-source”操作，请运行命令 `. .\myConfig.ps1`，其中 `myConfig.ps1` 是包含配置的脚本文件的名称。
 
-调用配置时，将创建：
+调用配置时，它会：
 
-- 与配置名称相同的位于当前目录的文件夹。
-- 新目录中名为 _NodeName_.mof 的文件，其中 _NodeName_ 为配置的目标节点名称。 如果有多个节点，则将为每个节点创建 MOF 文件。
+- 解析所有变量 
+- 在当前目录中使用与配置相同的名称创建文件夹。
+- 在新目录中创建名为 _NodeName_.mof 的文件，其中 _NodeName_ 为配置的目标节点名称。 如果有多个节点，则将为每个节点创建 MOF 文件。
 
 >__请注意__：此 MOF 文件包含目标节点的所有配置信息。 因此，务必确保其安全性。 有关详细信息，请参阅[保护 MOF 文件](secureMOF.md)。
 
@@ -136,6 +137,6 @@ Configuration DependsOnExample {
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

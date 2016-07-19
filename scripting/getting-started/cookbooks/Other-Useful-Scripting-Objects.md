@@ -1,12 +1,19 @@
 ---
-title: 其他有用的脚本对象
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "其他有用的脚本对象"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 4d781196-720b-4ccc-90d2-c570e5e719f5
+translationtype: Human Translation
+ms.sourcegitcommit: ebf9d61bd67cc352d6d6404a9b592f856c99759e
+ms.openlocfilehash: c68e6d7d26a8a9b1e32a35e82dd705d95480c9bf
+
 ---
+
 # 其他有用的脚本对象
   以下对象提供 Windows PowerShell ISE 中的其他脚本编写功能。 它们不属于 **$psISE** 层次结构。
 
@@ -26,11 +33,11 @@ psUnsupportedConsoleApplications
 ```
 
 ### $psLocalHelp
- 这是维护帮助主题和本地已编译的 HTML 帮助文件中和其关联链接之间的上下文相关映射的字典对象。 它用于查找有关某个特定主题的本地帮助。 你可以添加或删除此列表中的主题。 下面的代码示例显示了 **$psLocalHelp** 中包含的一些示例键值对.
+ 这是维护帮助主题和本地已编译的 HTML 帮助文件中和其关联链接之间的上下文相关映射的字典对象。 它用于查找有关某个特定主题的本地帮助。 你可以添加或删除此列表中的主题。 下面的代码示例显示了 **$psLocalHelp** 中包含的一些示例键值对。
 
 ```
 # See the local help map
-$psLocalHelp |Format-List
+$psLocalHelp | Format-List
 
 ```
 
@@ -51,7 +58,7 @@ $psLocalHelp.Add("get-myNoun","c:\MyFolder\MyHelpChm.chm::/html/0198854a-1298-57
  这是维护帮助主题的主题标题和其关联外部 URL 之间的上下文相关映射的字典对象。 它用于查找 Web 上有关某个特定主题的帮助。 你可以添加或删除此列表中的主题。
 
 ```
-$psOnlineHelp |format-list
+$psOnlineHelp | Format-List
 
 ```
 
@@ -74,6 +81,7 @@ $psOnlineHelp.Add("get-myNoun","http://www.mydomain.com/MyNoun.html")
   
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jul16_HO1-->
 
 

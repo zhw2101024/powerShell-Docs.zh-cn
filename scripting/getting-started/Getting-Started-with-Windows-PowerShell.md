@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: bee671bf537a100bd8ad407f34ccd5fe63c7f9a8
+ms.sourcegitcommit: 35dafe18719cd26977966a26d2781fc99cbf4097
+ms.openlocfilehash: d0f5fb26844edd4e07265a8c7d638f30a51244f7
 
 ---
 
 # Windows PowerShell 入门
-Windows PowerShell 是专门为系统管理员设计的新 Windows 命令行 Shell。 Windows PowerShell 包括可以单独或组合使用的交互提示和脚本编写环境。
+Windows PowerShell 是专门为系统管理员设计的 Windows 命令行 Shell。 Windows PowerShell 包括可以单独或组合使用的交互提示和脚本编写环境。
 
 与大多数 Shell（它们接受和返回文本）不同，Windows PowerShell 是在 .NET Framework 公共语言运行时 (CLR) 和.NET Framework 的基础上生成的，它将接受和返回 .NET Framework 对象。 环境中的这一基本更改为 Windows 的管理和配置带来了全新的工具和方法。
 
@@ -38,6 +38,6 @@ Windows PowerShell 引入了 cmdlet（读作“command\-let”）的概念，它
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

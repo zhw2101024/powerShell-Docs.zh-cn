@@ -8,8 +8,9 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "端到端 - Active Directory"
 ms.technology: powershell
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 0a262e2c83174db7041d3cf35d97542b1cac4386
+translationtype: Human Translation
+ms.sourcegitcommit: 5954eb797df43de6f132a434ecad7049ee0221fb
+ms.openlocfilehash: 204909c16d5e3e2099f6ba4247929d61445cd654
 
 ---
 
@@ -70,7 +71,7 @@ ms.openlocfilehash: 0a262e2c83174db7041d3cf35d97542b1cac4386
 现在你拥有了操作的列表，需仔细思考每个命令的功能。
 这样做有两个重要的原因：
 
-1.  首先，容易公开使用户具有比你预期的更多功能。
+1.  首先，容易为用户提供比你预期更多的功能。
 例如，`Set-ADUser` 是一个极其强大和灵活的命令。
 你可能不希望向技术支持用户公开其全部功能。  
 
@@ -82,7 +83,7 @@ ms.openlocfilehash: 0a262e2c83174db7041d3cf35d97542b1cac4386
 
 检查每个命令后，请决定限制以下内容：
 
-1.  `Set-ADUser` 应仅允许在使用“-Title”参数时运行
+1.  `Set-ADUser` 应仅允许在使用 -Title 参数时运行
 
 2.  `Add-ADGroupMember` `Remove-ADGroupMember` 应仅适用于特定组
 
@@ -92,15 +93,15 @@ JEA 在*无语言*模式下运行，该模式（以及其他一些模式）将�
 为确保最终用户具有流畅的体验，请务必检查某些内容。
 
 例如，请考虑 `Set-ADAccountPassword`。
-“-NewPassword”参数需要安全字符串。
+-NewPassword 参数需要安全字符串。
 用户常创建安全字符串并将其作为变量进行传递（如下所示）：
 
 ```PowerShell
-$newPassword = (Read-Host -Prompt "Specify a new password" -AsSecureString)
+$newPassword = Read-Host -Prompt "Specify a new password" -AsSecureString
 Set-ADAccountPassword -Identity mollyd -NewPassword $newPassword -Reset
 ```
 
-但是，无语言模式阻止使用变量。
+但是，*无语言*模式阻止使用变量。
 你可以通过两种方式避开此限制：
 
 1.  你可以要求用户运行命令而不分配变量。
@@ -124,7 +125,7 @@ Set-ADAccountPassword -Identity mollyd -NewPassword (Read-Host -Prompt "Specify 
 
 1. 在 PowerShell ISE 中，打开“Contoso_AD_Module.psm1”
 ```PowerShell
-ISE 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\Contoso_AD_Module.psm1'
+ise 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\Contoso_AD_Module.psm1'
 ```
 
 2. 按 Crtl+J 以打开代码片段菜单。
@@ -165,7 +166,7 @@ Set-ADUser -Identity $Identity -ChangePasswordAtLogon
 在[角色功能创建](#role-capability-creation)部分，你创建了一个空白的角色功能文件。
 在本部分中，你将在该文件中填充值。
 
-首先在 ISE 中打开该角色功能文件。
+首先在 PowerShell ISE 中打开该角色功能文件。
 ```PowerShell
 ise 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\RoleCapabilities\ADHelpDesk.psrc'
 ```
@@ -193,7 +194,7 @@ VisibleFunctions = 'Reset-ContosoUserPassword'
 1.  PowerShell 将尝试自动加载你的角色功能所需的模块。
 如果你注意到未自动加载模块的问题，可能需要在“ModulesToImport”字段中显式列出模块名称。
 
-2.  如果你不确定某命令是 cmdlet 还是函数，请运行 `Get-Command` 并查看“CommandType”
+2.  如果你不确定某命令是 cmdlet 还是函数，请运行 `Get-Command` 并查看“CommandType”属性
 
 3.  如果不易定义一组允许的值，可通过 ValidatePattern 使用正则表达式来限制形参实参。
 不能为单个参数同时定义 ValidatePattern 和 ValidateSet。
@@ -210,7 +211,7 @@ ise "$env:ProgramData\JEAConfiguration\HelpDeskDemo.pssc"
 如果你正在自己的环境中工作，应将“CONTOSO\JEA_NonAdmins_Helpdesk”替换为你自己的非管理员用户或组。
 ```PowerShell
 # OLD: Description = ''
-Description = 'An endpoint for active directory tasks.'
+Description = 'An endpoint for Active Directory tasks.'
 
 # OLD: SessionType = 'Default'
 SessionType = 'RestrictedRemoteServer'
@@ -266,12 +267,12 @@ Exit-PSSession
 有关详细信息，请运行 `Get-Help about_Functions`。
 
 **ValidateSet/ValidatePattern**：公开命令时，你可以限制特定形参的有效实参。
-ValidateSet 是有效命令的特定列表。
+ValidateSet 是有效实参的特定列表。
 ValidatePattern 是该形参的实参必须匹配的正则表达式。
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

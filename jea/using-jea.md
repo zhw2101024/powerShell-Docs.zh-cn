@@ -8,8 +8,9 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "使用 jea"
 ms.technology: powershell
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 3bac5932c3ed57713bdb08e3a9ed435b228518bc
+translationtype: Human Translation
+ms.sourcegitcommit: 88ce340c09efdbb3d81a72fe6113c1187a9152f2
+ms.openlocfilehash: 9db7a5a91d25d459313117da34af63016f03c241
 
 ---
 
@@ -49,7 +50,7 @@ Get-Command
 ```
 
 显而易见，这是正常 PowerShell 窗口中可用命令的一个及其有限的子集（正常窗口中通常可以包括数千条命令）。
-具体而言，它仅显示了 7 个默认 JEA cmdlet（Clear-Host、Exit-PSSession、Get-Command、Get-FormatData、Get-Help、Measure-Object、Out-Default、Select-Object）和维护角色功能文件中显式包含的 2 个命令。
+具体而言，它仅显示了 8 个默认 JEA 命令（Clear-Host、Exit-PSSession、Get-Command、Get-FormatData、Get-Help、Measure-Object、Out-Default、Select-Object）和维护角色功能文件中显式包含的 2 个命令。
 
 接下来，让我们通过调用维护角色功能文件中包含的自定义函数，查看此会话运行于的用户上下文：
 
@@ -96,6 +97,6 @@ Exit-PSSession
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

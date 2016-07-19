@@ -1,12 +1,19 @@
 ---
-title: PSWorkflow 模块
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "PSWorkflow 模块"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 117316fe-2f82-4fc9-b5dc-794ae9e3f258
+translationtype: Human Translation
+ms.sourcegitcommit: 4f67538548a3828f0f2ad2cdb1a7828a0f3db892
+ms.openlocfilehash: 1e30424797ee285e9e4eeae990979e8a1329fd74
+
 ---
+
 # PSWorkflow 模块
 本部分包含有关 **PSWorkflow** 模块的帮助主题，此模块包含支持 Windows PowerShell 工作流功能的 cmdlet。 **PSWorkflow** 模块随 Windows PowerShell 一起安装。
 
@@ -29,8 +36,6 @@ ms.assetid: 117316fe-2f82-4fc9-b5dc-794ae9e3f258
 
 [about_Parallel](https://technet.microsoft.com/en-us/library/104559a8-e89a-49f5-8c08-e5bf72768cbf)
 
-[about_Foreach-Parallel](https://technet.microsoft.com/en-us/library/35704780-dde8-4f5f-9319-5b982148bba7)
-
 [about_Sequence](https://technet.microsoft.com/en-us/library/bda3f81a-be8a-43be-b0df-12bb7e193b9b)
 
 [about_Suspend-Workflow](https://technet.microsoft.com/en-us/library/be2ded75-1eca-493e-96c1-758f92b5f199)
@@ -44,6 +49,7 @@ ms.assetid: 117316fe-2f82-4fc9-b5dc-794ae9e3f258
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jul16_HO1-->
 
 

@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: ce8d6c1c9e8005c5c4792ae0fa4c5030bb9a92ed
+ms.sourcegitcommit: bda348e6597f31b8dfa2014e5c34c5d3bc7bca15
+ms.openlocfilehash: 10123359213df7180388d9251e032c2bbb673143
 
 ---
 
@@ -31,6 +31,10 @@ Service [string] #ResourceName
     [ DependsOn = [string[]] ]
     [ StartupType = [string] { Automatic | Disabled | Manual }  ]
     [ State = [string] { Running | Stopped }  ]
+    [ Description = [string] ]
+    [ DisplayName = [string] ]
+    [ Ensure = [string] { Absent | Present } ]
+    [ Path = [string] ]
 }
 ```
 
@@ -44,21 +48,33 @@ Service [string] #ResourceName
 | DependsOn| 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 __ResourceName__、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。| 
 | StartupType| 设置服务的启动类型。 允许用于此属性的值有：**Automatic**、**Disabled** 和 **Manual**。| 
 | State| 指示你想要确保服务所处的状态。| 
+| 说明 | 指示目标服务的说明。| 
+| DisplayName | 指示目标服务的显示名称。| 
+| Ensure | 指示目标服务是否在系统中存在。 将此属性设置为 **Absent** 可确保目标服务不存在。 将它设置为 **Present**（默认值）可确保目标服务存在。|
+| 路径 | 指示新服务的二进制文件的路径。| 
 
 ## 示例
 
 ```powershell
-Service ServiceExample
+configuration ServiceTest
 {
-    Name = "TermService"
-    StartupType = "Manual"
-    State = "Running"
-} 
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+    Node localhost
+    {
+
+        Service ServiceExample
+        {
+            Name        = "TermService"
+            StartupType = "Manual"
+            State       = "Running"
+        } 
+    }
+}
 ```
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

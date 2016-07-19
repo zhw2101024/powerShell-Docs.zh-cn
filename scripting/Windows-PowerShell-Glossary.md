@@ -1,12 +1,19 @@
 ---
-title: Windows PowerShell 术语表
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Windows PowerShell 术语表"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
+translationtype: Human Translation
+ms.sourcegitcommit: ea25f98e60050a52fc1d72c7e529985855eeed36
+ms.openlocfilehash: ab41246eda58eb384500daa1f99aa9a8f9e019e1
+
 ---
+
 # Windows PowerShell 术语表
 
 
@@ -15,7 +22,7 @@ ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
 |二进制模块|一个 Windows PowerShell 模块，其根模块是一个二进制模块文件 (.dll)。 二进制模块可能包含或不包含模块清单。|
 |通用参数|一个参数，它由 Windows PowerShell 引擎添加到所有 cmdlet 和高级函数中。|
 |使用点获取来源|在 Windows PowerShell 中，若要启动一个命令，可在该命令前键入一个点和一个空格。 采用点获取其来源的命令运行在当前范围而非新范围中。 命令创建的任何变量、别名、函数或驱动器都创建于当前范围，并在命令完成时提供给用户。|
-|动态模块|一个仅存在于内存中的模块。 Import-PSSession cmdlet 创建动态模块。|
+|动态模块|一个仅存在于内存中的模块。 New-Module 和 Import-PSSession cmdlet 会创建动态模块。|
 |动态参数|在某些情况下添加到 Windows PowerShell cmdlet、函数或脚本的一个参数。 Cmdlet、函数、提供程序和脚本可以添加动态参数。|
 |格式设置文件|一个 Windows PowerShell XML 文件，它具有 .format.ps1xml 扩展名且定义 Windows PowerShell 如何基于对象的 .NET Framework 类型来显示对象。|
 |全局会话状态|包含 Windows PowerShell 会话用户可访问的数据的会话状态。|
@@ -56,6 +63,7 @@ ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jul16_HO1-->
 
 

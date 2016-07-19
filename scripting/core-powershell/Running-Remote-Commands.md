@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
 translationtype: Human Translation
-ms.sourcegitcommit: 593f0c2ca72e00f19c395c1dae31798d5a5f652d
-ms.openlocfilehash: 75d41569b18e61342809eebcc76b7899ec6363fa
+ms.sourcegitcommit: 0f77e2d13a26c58d2a4813e57a76ba54dbcaac46
+ms.openlocfilehash: 48385de53964217b2f7d263d85bfb99b1dbf6507
 
 ---
 
@@ -30,7 +30,7 @@ ms.openlocfilehash: 75d41569b18e61342809eebcc76b7899ec6363fa
 
 -   [Get-EventLog](https://technet.microsoft.com/en-us/library/dd315250.aspx)
 
--   [Get-Hotfix](https://technet.microsoft.com/en-us/library/e1ef636f-5170-4675-b564-199d9ef6f101)
+-   [Get-HotFix](https://technet.microsoft.com/en-us/library/e1ef636f-5170-4675-b564-199d9ef6f101)
 
 -   [Get-Process](https://technet.microsoft.com/en-us/library/dd347630.aspx)
 
@@ -45,7 +45,7 @@ ms.openlocfilehash: 75d41569b18e61342809eebcc76b7899ec6363fa
 通常情况下，支持无需特殊配置即可进行远程处理的 cmdlet 具有 ComputerName 参数，但不具有 Session 参数。 若要在会话中查找这些 cmdlet，请键入：
 
 ```
-get-command | where { $_.parameters.keys -contains "ComputerName" -and $_.parameters.keys -notcontains "Session"}
+Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parameters.keys -notcontains "Session"}
 ```
 
 ## Windows PowerShell 远程处理
@@ -59,7 +59,7 @@ Windows PowerShell 远程处理使用 WS\-Management 协议，使你可以在一
 若要使用单台远程计算机启动交互会话，请使用 [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) cmdlet。 例如，若要使用 Server01 远程计算器启动交互会话，请键入：
 
 ```
-enter-pssession Server01
+Enter-PSSession Server01
 ```
 
 命令提示符更改为显示你连接到的计算机的名称。 此后，你在提示符中键入的任何命令都将在远程计算机上运行，并且结果将显示在本地计算机上。
@@ -67,7 +67,7 @@ enter-pssession Server01
 若要结束交互会话，请键入：
 
 ```
-exit-pssession
+Exit-PSSession
 ```
 
 有关 Enter\-PSSession 和 Exit\-PSSession cmdlet 的详细信息，请参阅 [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) 和 [Exit-PSSession](https://technet.microsoft.com/en-us/library/dd315322.aspx)。
@@ -77,7 +77,7 @@ exit-pssession
 例如，若要在 Server01 和 Server02 远程计算机上运行 [Get-UICulture ](https://technet.microsoft.com/en-us/library/dd347742.aspx) 命令，请键入：
 
 ```
-invoke-command -computername Server01, Server02 {get-UICulture}
+Invoke-Command -ComputerName Server01, Server02 {Get-UICulture}
 ```
 
 输出将返回到你的计算机。
@@ -97,7 +97,7 @@ LCID    Name     DisplayName               PSComputerName
 例如，以下命令在 Server01 和 Server02 远程计算机上运行 DiskCollect.ps1 脚本。
 
 ```
-invoke-command -computername Server01, Server02 -filepath c:\Scripts\DiskCollect.ps1
+Invoke-Command -ComputerName Server01, Server02 -FilePath c:\Scripts\DiskCollect.ps1
 ```
 
 有关 Invoke\-Command cmdlet 的详细信息，请参阅 [Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx)。
@@ -108,28 +108,28 @@ invoke-command -computername Server01, Server02 -filepath c:\Scripts\DiskCollect
 例如，以下命令在 Server01 计算机上创建远程会话，在 Server02 计算机上创建另一个远程会话。 它将会话对象保存在 $s 变量中。
 
 ```
-$s = new-pssession -computername Server01, Server02
+$s = New-PSSession -ComputerName Server01, Server02
 ```
 
 建立会话后，你可以在这些会话中运行任何命令。 此外，由于会话是持久的，因此你可以在一个命令中收集数据，在后续命令中使用它。
 
-例如，下面的命令可在 $s 变量中的会话中运行 Get\-Hotfix 命令，然后将结果保存在 $h 变量中。 将在 $s 中的每个会话中创建 $h 变量，但它不会存在于本地会话中。
+例如，下面的命令可在 $s 变量中的会话中运行 Get\-HotFix 命令，然后将结果保存在 $h 变量中。 将在 $s 中的每个会话中创建 $h 变量，但它不会存在于本地会话中。
 
 ```
-invoke-command -session $s {$h = get-hotfix}
+Invoke-Command -Session $s {$h = Get-HotFix}
 ```
 
 现在，你可以在后续命令中使用 $h 变量中的数据，例如以下命令。 结果将显示在本地计算机上。
 
 ```
-invoke-command -session $s {$h | where {$_.installedby -ne "NTAUTHORITY\SYSTEM"} }
+Invoke-Command -Session $s {$h | where {$_.installedby -ne "NTAUTHORITY\SYSTEM"}}
 ```
 
 ### 高级远程处理
 Windows PowerShell 远程管理就在此处开始。 通过使用随 Windows PowerShell 一起安装的 cmdlet，你可以从本地和远程端点建立和配置远程会话、创建自定义和受限制的会话、允许用户从实际在远程会话上隐式运行的远程会话中导入命令、配置远程会话的安全性等。
 
 为了便于远程配置，Windows PowerShell 包含了 WSMan 提供程序。 提供程序创建的 WSMAN: 驱动器使你可以在本地计算机和远程计算机上的配置设置层次结构之间导航。
-有关 WSMan 提供程序的详细信息，请参阅 [WSMan Provider](https://technet.microsoft.com/en-us/library/dd819476.aspx) 和   [About WS-Management Cmdlets](https://technet.microsoft.com/en-us/library/dd819481.aspx)（关于 WS-Management Cmdlet），或在 Windows PowerShell 控制台中键入“get\-help wsman”。
+有关 WSMan 提供程序的详细信息，请参阅 [WSMan Provider](https://technet.microsoft.com/en-us/library/dd819476.aspx) 和   [About WS-Management Cmdlets](https://technet.microsoft.com/en-us/library/dd819481.aspx)（关于 WS-Management Cmdlet），或在 Windows PowerShell 控制台中键入“Get\-Help wsman”。
 
 有关更多信息，请参阅：
 - [关于远程 FAQ](https://technet.microsoft.com/en-us/library/dd315359.aspx)
@@ -154,6 +154,6 @@ Windows PowerShell 远程管理就在此处开始。 通过使用随 Windows Pow
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

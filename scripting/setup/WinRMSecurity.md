@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 7facb78962411d7b96ef6741e3ffa153d5537a0d
-ms.openlocfilehash: e1827e102a9b35ea214f89395f7ff3c5e0a58506
+ms.sourcegitcommit: 67ef350559f9b3d17232f3c93d67634b3e939c60
+ms.openlocfilehash: b1addddd50368fadcbb2581673d3ebc7cad8e32a
 
 ---
 
@@ -19,7 +19,7 @@ PowerShell 远程处理是管理 Windows 系统的推荐方式。 在 Windows Se
 
 ## PowerShell 远程处理是什么？
 
-PowerShell 远程处理使用 [Windows 远程管理 (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426.aspx)（这是 [Web Services for Managment (WS-Managment)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) 协议的 Microsoft 实现），允许用户在远程计算机上运行 PowerShell 命令。 你可以在[运行远程命令](https://technet.microsoft.com/en-us/library/dd819505.aspx)处找到有关使用 PowerShell 远程处理的详细信息。
+PowerShell 远程处理使用 [Windows 远程管理 (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426.aspx)（这是 [Web Services for Management (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) 协议的 Microsoft 实现），允许用户在远程计算机上运行 PowerShell 命令。 你可以在[运行远程命令](https://technet.microsoft.com/en-us/library/dd819505.aspx)处找到有关使用 PowerShell 远程处理的详细信息。
 
 PowerShell 远程处理不同于使用 cmdlet 的 **ComputerName** 参数在远程计算机上运行它，后者使用远程过程调用 (RPC) 作为其基础协议。
 
@@ -62,7 +62,7 @@ Kerberos 保证用户标识和服务器标识，而不发送任何种类的可�
       
 但 NTLM 协议不能保证服务器标识。 如同所有使用 NTLM 进行身份验证的协议一样，如果攻击者有权访问已加入域的计算机的帐户，则可以调用域控制器来计算 NTLM 会话密钥，从而模拟服务器。
 
-默认禁用基于 NTLM 的身份验证，但是可以通过配置目标服务器上的 SSL 或配置 WinRM TrustedHosts 设置而允许使用。
+默认禁用基于 NTLM 的身份验证，但是可以通过配置目标服务器上的 SSL 或配置客户端上的 WinRM TrustedHosts 设置而允许使用。
     
 #### 使用 SSL 证书以在基于 NTLM 的连接过程中验证服务器标识
 
@@ -121,6 +121,6 @@ New-PSDrive -Name Tools \\Server2\Shared\Tools -Credential $myCredential
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

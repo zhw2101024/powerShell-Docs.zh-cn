@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 801a0491746c17061d14d6d4938e7182650f6ff3
+ms.sourcegitcommit: e1d217b8e633779f55e195fbf80aeee83db01409
+ms.openlocfilehash: ad2b20a3a977dc33b27f8a1096a2b48fcb3abe0e
 
 ---
 
@@ -20,7 +20,7 @@ ms.openlocfilehash: 801a0491746c17061d14d6d4938e7182650f6ff3
 
 Windows PowerShell Desired State Configuration (DSC) 中的 **Script** 资源提供了在目标节点上运行 Windows PowerShell 脚本的机制。 `Script` 资源具有 `GetScript`、`SetScript` 和 `TestScript` 属性。 应将这些属性设置为将在每个目标节点上运行的脚本块。 
 
-`GetScript` 脚本块应返回表示当前节点状态的哈希表。 它不需要返回任何内容。 DSC 不与此脚本块的输出执行任何操作。
+`GetScript` 脚本块应返回表示当前节点状态的哈希表。 哈希表必须只包含一个键 `Result`，并且值必须属于 `String` 类型。 它不需要返回任何内容。 DSC 不与此脚本块的输出执行任何操作。
 
 `TestScript` 脚本块应确定当前节点是否需要进行修改。 如果节点是最新的，它应返回 `$true`。 如果节点的配置已过期，它应返回 `$false`，并且应使用 `SetScript` 脚本块进行更新。 `TestScript` 脚本块由 DSC 调用。
 
@@ -46,7 +46,7 @@ Script [string] #ResourceName
 
 |  属性  |  说明   | 
 |---|---| 
-| GetScript| 提供调用 [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx) cmdlet 时运行的 Windows PowerShell 脚本块。 此块必返回一个哈希表。| 
+| GetScript| 提供调用 [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx) cmdlet 时运行的 Windows PowerShell 脚本块。 此块必须返回一个哈希表。 哈希表必须只包含一个键 **Result**，并且值必须属于 **String** 类型。| 
 | SetScript| 提供 Windows PowerShell 脚本块。 调用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet 时，将首先运行 **TestScript** 块。 如果 **TestScript** 块返回 **$false**，则将运行 **SetScript** 块。 如果 **TestScript** 块返回 **$true**，**SetScript** 块将不会运行。| 
 | TestScript| 提供 Windows PowerShell 脚本块。 调用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet 时，将运行此块。 如果它返回 **$false**，将运行 SetScript 块。 如果它返回 **$true**，将不运行 SetScript 块。 调用 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet 时，也将运行 **TestScript** 块。 但是，在这种情况下，无论 TestScript 返回何值，都不会运行 **SetScript**。 如果实际配置与当前所需状态配置相匹配，**TestScript** 块必返回 True，如果不匹配，则返回 False。 （当前所需状态配置是在使用 DSC 的节点上执行的最后一个配置。）| 
 | 凭据| 指示要用于运行此脚本的凭据（如果需要凭据）。| 
@@ -62,7 +62,7 @@ Script ScriptExample
         $sw.Close()
     }
     TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
-    GetScript = { <# This must return a hash table #> }          
+    GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }          
 }
 ```
 
@@ -73,7 +73,7 @@ Script UpdateConfigurationVersion
 {
     GetScript = { 
         $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
-        return @{ 'Version' = $currentVersion }
+        return @{ 'Result' = "Version: $currentVersion" }
     }          
     TestScript = { 
         $state = GetScript
@@ -96,6 +96,6 @@ Script UpdateConfigurationVersion
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -8,8 +8,9 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "重新创建演示终结点"
 ms.technology: powershell
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: dabb5023012e90ace3fbc5f347c17821abd92595
+translationtype: Human Translation
+ms.sourcegitcommit: d20ea8418cb7389d756de94ea752cf604b8d07af
+ms.openlocfilehash: acd2cfbd038250a26236c875d0e8b03a32cd84f9
 
 ---
 
@@ -91,7 +92,7 @@ RoleDefinitions = @{'CONTOSO\JEA_NonAdmin_Operator' = @{ RoleCapabilities =  'Ma
 它定义特定用户可以特权帐户身份执行的操作。
 使用此字段，你可以指定基于组成员身份的任何连接用户可用的功能。
 这是 JEA 的 RBAC 功能的核心。
-在此示例中，你将向“Contoso\JEA_NonAdmin_Operator”组的成员公开预制的“演示”角色功能。
+在此示例中，你将向“Contoso\JEA_NonAdmin_Operator”组的成员公开预制的“维护”角色功能。
 
 3.  *RunAsVirtualAccount* 字段指示 PowerShell 在此终结点处的“运行方式”应为虚拟帐户。
 默认情况下，虚拟帐户是内置“管理员”组的成员。
@@ -124,7 +125,7 @@ Register-PSSessionConfiguration -Name 'JEADemo2' -Path "$env:ProgramData\JEAConf
 
 ## 测试终结点
 针对你的新终结点重新运行 [使用 JEA](using-jea.md) 部分中所列出的步骤，确认它按照预期方式运行。
-为 Enter-PSSession 提供配置名称时，请确保使用新的终结点名称 (JEADemo2)。
+为 `Enter-PSSession` 提供配置名称时，请确保使用新的终结点名称 (JEADemo2)。
 
 ```PowerShell
 Enter-PSSession -ComputerName . -ConfigurationName JEADemo2 -Credential $NonAdminCred
@@ -152,6 +153,6 @@ Enter-PSSession -ComputerName . -ConfigurationName JEADemo2 -Credential $NonAdmi
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

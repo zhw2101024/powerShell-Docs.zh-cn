@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: d7bd873cde4a4bda12490d69acdd5e2b0ba8cdec
+ms.sourcegitcommit: 97714d3fa9a1c00fb3d2e79cc873280ca945a840
+ms.openlocfilehash: 0fe5e7d9679d44bb50c897badf8c6517b95049e2
 
 ---
 
@@ -40,7 +40,7 @@ WindowsProcess [string] #ResourceName
 |  属性  |  说明   | 
 |---|---| 
 | 参数| 指示要原样传递到进程的参数字符串 如果需要传递多个参数，请将它们全部放在此字符串中。| 
-| 路径| 指示进程可执行文件的路径。 如果将此属性设置为可执行文件的名称，DSC 将查找 __Path__ 变量。 如果提供完全限定的域名，则进程必须存在于其中，因为在此情况下，DSC 不会检查 __Path__ 变量。| 
+| 路径| 进程可执行文件的路径。 如果这是可执行文件的文件名（不是完全限定的路径），则 DSC 资源会搜索环境**路径**变量 (`$env:Path`) 以查找可执行文件。 如果此属性的值是完全限定的路径，则 DSC 不使用**路径**环境变量查找文件，并且会在不存在路径时引发错误。 不允许使用相对路径。| 
 | 凭据| 指示启动进程的凭据。| 
 | Ensure| 指示进程是否存在。 将此属性设置为“Present”以确保进程存在。 否则，将其设置为“Absent”。 默认值为“Present”。| 
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 __ResourceName__、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"``。| 
@@ -52,6 +52,6 @@ WindowsProcess [string] #ResourceName
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 
