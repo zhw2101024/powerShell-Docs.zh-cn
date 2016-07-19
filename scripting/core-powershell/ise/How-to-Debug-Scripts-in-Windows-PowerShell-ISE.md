@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 6dc6d8f9-8978-46e9-a92f-169af37e2817
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: c6d79fc7ef5a896bb3b686468adb540d4327605e
+ms.sourcegitcommit: 669bbe8da3d6b5f4955b86474c21c11c3cfe495b
+ms.openlocfilehash: 080cbfd63838472d9d5405e4b232cda1cc1d028a
 
 ---
 
@@ -27,7 +27,7 @@ ms.openlocfilehash: c6d79fc7ef5a896bb3b686468adb540d4327605e
 
 可以在 Windows PowerShell 调试环境中设置三种类型的断点：
 
-1.  行断点  **** 在脚本运行期间，当达到所指定的行时，脚本暂停
+1.  行断点   在脚本运行期间，当达到所指定的行时，脚本暂停
 
 2.  **变量断点。** 每当指定变量的值发生更改时，脚本暂停。
 
@@ -36,7 +36,7 @@ ms.openlocfilehash: c6d79fc7ef5a896bb3b686468adb540d4327605e
 其中，在 Windows PowerShell ISE 调试环境中，只有行断点可以通过使用菜单或键盘快捷方式进行设置。 可以设置其他两种类型的断点，但应通过使用 [Set-PSBreakpoint [m2]](https://technet.microsoft.com/en-us/library/88d2d9ad-17dc-44ae-99aa-f841125b9dc8) cmdlet 从控制台窗格中进行设置。 本部分介绍了如何通过使用菜单（若有）在 Windows PowerShell ISE 中执行调试任务，并通过脚本从控制台窗格中执行更广泛的命令。
 
 ### 设置断点
-仅当保存脚本后，才可以在其中设置断点。 右键单击你想要设置行断点的行，然后单击“**切换断点**”。 或者，单击你想要设置的行断点所在的行，然后按 **F9**，或在“调试”菜单上，单击“切换断点”。********
+仅当保存脚本后，才可以在其中设置断点。 右键单击你想要设置行断点的行，然后单击“**切换断点**”。 或者，单击你想要设置的行断点所在的行，然后按 **F9**，或在“调试”菜单上，单击“切换断点”。
 
 以下脚本是如何通过使用 [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420) cmdlet 从控制台窗格中设置变量断点的示例。
 
@@ -48,7 +48,7 @@ set-psbreakpoint -script sample.ps1 -variable Server
 ### 列出所有断点
 在当前 Windows PowerShellÂ® 会话中显示所有断点。
 
-在“调试”菜单上，单击“列表断点”。******** 以下脚本是如何通过使用 [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) cmdlet 从控制台窗格中列出所有断点的示例。
+在“调试”菜单上，单击“列表断点”。 以下脚本是如何通过使用 [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) cmdlet 从控制台窗格中列出所有断点的示例。
 
 ```
 # This command lists all breakpoints in the current session. 
@@ -56,7 +56,7 @@ get-psbreakpoint
 ```
 
 ### 移除断点
-移除断点会将其删除。  如果你认为稍后还可能再次使用，请考虑改为[禁用](#bkmk_disable)。  右键单击你想要移除的断点所在的行，然后单击“**切换断点**”。 或者，单击你想要移除的断点所在的行，然后在“调试”菜单上，单击“切换断点”。******** 以下脚本是如何通过使用 [Remove-PSBreakpoint](https://technet.microsoft.com/en-us/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) cmdlet 从控制台窗格中移除具有指定 ID 的断点的示例。
+移除断点会将其删除。  如果你认为稍后还可能再次使用，请考虑改为[禁用](#bkmk_disable)。  右键单击你想要移除的断点所在的行，然后单击“**切换断点**”。 或者，单击你想要移除的断点所在的行，然后在“调试”菜单上，单击“切换断点”。 以下脚本是如何通过使用 [Remove-PSBreakpoint](https://technet.microsoft.com/en-us/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) cmdlet 从控制台窗格中移除具有指定 ID 的断点的示例。
 
 ```
 # This command deletes the breakpoint with breakpoint ID 2.
@@ -64,17 +64,17 @@ remove-psbreakpoint -id 2
 ```
 
 ### 移除所有断点
-若要移除在当前会话中定义的所有断点，在“调试”菜单上，单击“移除所有断点”。********
+若要移除在当前会话中定义的所有断点，在“调试”菜单上，单击“移除所有断点”。
 
 以下脚本是如何通过使用 [Remove-PSBreakpoint](https://technet.microsoft.com/en-us/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) cmdlet 从控制台窗格中移除所有断点的示例。
 
 ```
 # This command deletes all of the breakpoints in the current session.
-get-breakpoint | remove-breakpoint
+get-psbreakpoint | remove-psbreakpoint
 ```
 
 ### <a name="bkmk_disable"></a>禁用断点
-禁用断点不会将断点移除；只是会将其关闭，直至启用。  若要禁用特定行断点，右键单击你想要禁用的行断点所在的行，然后单击“**禁用断点**”。 或者，单击你想要禁用的断点所在的行，然后按 **F9**，或在“调试”菜单上，单击“禁用断点”。******** 以下脚本是如何通过使用 [Disable-PSBreakpoint](https://technet.microsoft.com/en-us/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) cmdlet 从控制台窗格中移除具有指定 ID 的断点的示例。
+禁用断点不会将断点移除；只是会将其关闭，直至启用。  若要禁用特定行断点，右键单击你想要禁用的行断点所在的行，然后单击“**禁用断点**”。 或者，单击你想要禁用的断点所在的行，然后按 **F9**，或在“调试”菜单上，单击“禁用断点”。 以下脚本是如何通过使用 [Disable-PSBreakpoint](https://technet.microsoft.com/en-us/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) cmdlet 从控制台窗格中移除具有指定 ID 的断点的示例。
 
 ```
 # This command disables the breakpoint with breakpoint ID 0.
@@ -82,7 +82,7 @@ disable-psbreakpoint -id 0
 ```
 
 ### 禁用所有断点
-禁用断点不会将断点移除；只是会将其关闭，直至启用。  若要禁用在当前会话中的所有断点，在“调试”菜单上，单击“禁用所有断点”。******** 以下脚本是如何通过使用 [Disable-PSBreakpoint](https://technet.microsoft.com/en-us/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) cmdlet 从控制台窗格中禁用所有断点的示例。
+禁用断点不会将断点移除；只是会将其关闭，直至启用。  若要禁用在当前会话中的所有断点，在“调试”菜单上，单击“禁用所有断点”。 以下脚本是如何通过使用 [Disable-PSBreakpoint](https://technet.microsoft.com/en-us/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) cmdlet 从控制台窗格中禁用所有断点的示例。
 
 ```
 # This command disables all breakpoints in the current session. 
@@ -91,7 +91,7 @@ get-psbreakpoint | disable-psbreakpoint
 ```
 
 ### 启用断点
-若要启用特定断点，右键单击你想要启用的断点所在的行，然后单击“**启用断点**”。 或者，单击你想要启用的断点所在的行，然后按 **F9**，或在“调试”菜单上，单击“启用断点”。******** 以下脚本是如何通过使用 [Enable-PSBreakpoint](https://technet.microsoft.com/en-us/library/739e1091-3b3f-405f-a428-bec7543e5df0) cmdlet 从控制台窗格中启用特定断点的示例。
+若要启用特定断点，右键单击你想要启用的断点所在的行，然后单击“**启用断点**”。 或者，单击你想要启用的断点所在的行，然后按 **F9**，或在“调试”菜单上，单击“启用断点”。 以下脚本是如何通过使用 [Enable-PSBreakpoint](https://technet.microsoft.com/en-us/library/739e1091-3b3f-405f-a428-bec7543e5df0) cmdlet 从控制台窗格中启用特定断点的示例。
 
 ```
 # This command enables breakpoints with breakpoint IDs 0, 1, and 5.
@@ -99,7 +99,7 @@ enable-psbreakpoint -id 0, 1, 5
 ```
 
 ### 启用所有断点
-若要启用在当前会话中定义的所有断点，在“调试”菜单上，单击“启用所有断点”。******** 以下脚本是如何通过使用 [Enable-PSBreakpoint](https://technet.microsoft.com/en-us/library/739e1091-3b3f-405f-a428-bec7543e5df0) cmdlet 从控制台窗格中启用所有断点的示例。
+若要启用在当前会话中定义的所有断点，在“调试”菜单上，单击“启用所有断点”。 以下脚本是如何通过使用 [Enable-PSBreakpoint](https://technet.microsoft.com/en-us/library/739e1091-3b3f-405f-a428-bec7543e5df0) cmdlet 从控制台窗格中启用所有断点的示例。
 
 ```
 # This command enables all breakpoints in the current session. 
@@ -130,8 +130,8 @@ get-psbreakpoint | enable-psbreakpoint
 ||||
 |-|-|-|
 |**调试任务**|**说明**|**如何在 PowerShell ISE 中完成它**|
-|**步入**|执行当前的语句，然后在下一个语句处停止。 如果当前语句是一个函数或脚本调用，则调试器将单步调试该函数或脚本，或者停止在下一条语句上。|按 **F11**，或在“调试”菜单上，单击“步入”，或者，在控制台窗格中，键入 **S**，然后按 **ENTER**。********|
-|**步越**|执行当前的语句，然后在下一个语句处停止。 如果当前语句是一个函数或脚本调用，则调试器将执行整个函数或脚本，或者在函数调用后在下个语句处停止。|按 **F10**，或在“调试”菜单上，单击“步越”，或者在控制台窗格中，键入 **V**，然后按 **ENTER**。********|
+|**步入**|执行当前的语句，然后在下一个语句处停止。 如果当前语句是一个函数或脚本调用，则调试器将单步调试该函数或脚本，或者停止在下一条语句上。|按 **F11**，或在“调试”菜单上，单击“步入”，或者，在控制台窗格中，键入 **S**，然后按 **ENTER**。|
+|**步越**|执行当前的语句，然后在下一个语句处停止。 如果当前语句是一个函数或脚本调用，则调试器将执行整个函数或脚本，或者在函数调用后在下个语句处停止。|按 **F10**，或在“调试”菜单上，单击“步越”，或者在控制台窗格中，键入 **V**，然后按 **ENTER**。|
 |**步出**|跳出当前函数，如果函数是嵌套的则返回上一级。 如果在主正文中，脚本将执行到末尾，或到下一个断点。 将执行跳过的语句，但不会单步遍历。|按 **SHIFT\+F11**，或在“**调试**”菜单上单击“**步出**”，或在控制台窗格中键入 **O**，然后按 **ENTER**。|
 |**继续**|继续执行到结束，或到下一个断点。 将执行已跳过的函数和调用，但不会进行单步遍历。|按 **F5** 或在“**调试**”菜单上单击“**运行\/继续**”，或在控制台窗格中键入 **C**，然后按 **ENTER**。|
 
@@ -183,6 +183,6 @@ C:\ps-test\MyScript.ps1
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 
