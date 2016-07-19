@@ -8,4 +8,8 @@
 * **PendingConfiguration**
 
 我们还添加了 LCMStateDetail 属性，它包含有关状态的详细信息。
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+

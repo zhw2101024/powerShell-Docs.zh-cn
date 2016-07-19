@@ -1,12 +1,16 @@
 ---
-title:   使用 DSC 报表服务器
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "使用 DSC 报表服务器"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 59793e1701740dc783439cf1408c6efabd53cbcf
+ms.openlocfilehash: d541f37723d77cf0b52012bae143dc7d64efd65d
+
 ---
 
 # 使用 DSC 报表服务器
@@ -225,6 +229,7 @@ InDesiredState    : True
 
 
 
-<!--HONumber=May16_HO4-->
+
+<!--HONumber=Jun16_HO4-->
 
 

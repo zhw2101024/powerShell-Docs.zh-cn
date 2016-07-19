@@ -1,12 +1,16 @@
 ---
-title:  MSFT_DSCLocalConfigurationManager 类的 ResourceTest 方法
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "MSFT_DSCLocalConfigurationManager 类的 ResourceTest 方法"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: c915ebd021ed20209bc491505d45cff2ac89f21d
+ms.openlocfilehash: 4129c83dd0b72159cbf1d47c037b9d462ca45f0e
+
 ---
 
 
@@ -71,6 +75,7 @@ uint32 ResourceTest(
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

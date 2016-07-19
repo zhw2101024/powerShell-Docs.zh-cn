@@ -1,12 +1,16 @@
 ---
-title:   执行配置
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "执行配置"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 4c802002c6a03a27d02221dd713677911a77c30b
+
 ---
 
 # 执行配置
@@ -30,8 +34,7 @@ ms.prod:  powershell
 
 ![请求模式](images/Pull.png "How pull mode works")
 
-在请求模式下，配置请求客户端以从远程请求服务器中获取所需的状态配置。 同样，已将请求服务器设置为托管 DSC 服务，并提供了请求服务器所需的配置和资源。 每个请求客户端都有计划的任务，在节点的配置上定期执行相容性检查。 首次触发事件时，将导致请求客户端上的本地配置管理器 (LCM) 验证此配置。 
-如果将请求客户端配置为所需，则不会进行验证。 否则，LCM 将向请求服务器发出请求以获取给定的配置。 如果请求服务器上存在该配置，并通过了初始验证检查，则配置将传送到请求客户端，然后在其上由 LCM 进行执行。
+在请求模式下，配置请求客户端以从远程请求服务器中获取所需的状态配置。 同样，已将请求服务器设置为托管 DSC 服务，并提供了请求服务器所需的配置和资源。 每个请求客户端都有计划的任务，在节点的配置上定期执行相容性检查。 首次触发事件时，将导致请求客户端上的本地配置管理器 (LCM) 验证此配置。 如果将请求客户端配置为所需，则不会进行验证。 否则，LCM 将向请求服务器发出请求以获取给定的配置。 如果请求服务器上存在该配置，并通过了初始验证检查，则配置将传送到请求客户端，然后在其上由 LCM 进行执行。
 
 有关部署本地 DSC 请求服务器的详细信息，请参阅《DSC 请求服务器配置和计划指南》。
 
@@ -45,6 +48,7 @@ ms.prod:  powershell
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 
