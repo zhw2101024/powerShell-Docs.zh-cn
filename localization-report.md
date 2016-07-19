@@ -4953,8 +4953,8 @@
 * Archive Datetime: 2016-06-28 13:28:35
 * Handback File: [jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/aefb2894d696d55cd3de210552cd67f60cb0594c/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-cn.xlf)
 * Handback Datetime: 2016-07-19 16:26:26
-* Bilingual File: [jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f35175b3059a773c04b288ca7451273bcf74b63d/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-28 15:16:56
+* Bilingual File: [jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/aefb2894d696d55cd3de210552cd67f60cb0594c/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-cn.xlf)
+* Bilingual Datetime: 2016-07-19 16:27:14
 * [Back to Top](#report-top)
 
 ##### <a name='811596d4ad7994a12987ff172e626eac534bdf4d313'></a> Source: [wmf\5.0\jea_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/b32cb86b7a18fee929cc81360d81f479571a74c2/wmf/5.0/jea_overview.md)
