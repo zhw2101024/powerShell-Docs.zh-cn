@@ -3183,8 +3183,8 @@
 * Archive Datetime: 2016-07-05 13:08:25
 * Handback File: [core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/dc1d7a570a1a726d7caf1cb2060ee7dc42300698/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf)
 * Handback Datetime: 2016-07-21 14:32:06
-* Bilingual File: [core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d441a0894a99804f735313ba26b223faa65934be/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf)
-* Bilingual Datetime: 2016-07-05 14:10:29
+* Bilingual File: [core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/dc1d7a570a1a726d7caf1cb2060ee7dc42300698/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf)
+* Bilingual Datetime: 2016-07-21 14:32:56
 * [Back to Top](#report-top)
 
 ##### <a name='8af4de973a95352fd41d2bb2823b9382899ef5bf200'></a> Source: [scripting\core-powershell\ise\How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/ise/How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)
@@ -4604,8 +4604,8 @@
 * Archive Datetime: 2016-07-12 13:13:17
 * Handback File: [PowerShell-Scripting.8f5d79e74e333fb9812de946411a1b4ef2060582.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/dc1d7a570a1a726d7caf1cb2060ee7dc42300698/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/PowerShell-Scripting.8f5d79e74e333fb9812de946411a1b4ef2060582.zh-cn.xlf)
 * Handback Datetime: 2016-07-21 14:32:06
-* Bilingual File: [PowerShell-Scripting.8f5d79e74e333fb9812de946411a1b4ef2060582.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/500d6d87be295faf39968498db66aa45df85de90/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/PowerShell-Scripting.8f5d79e74e333fb9812de946411a1b4ef2060582.zh-cn.xlf)
-* Bilingual Datetime: 2016-07-12 18:26:15
+* Bilingual File: [PowerShell-Scripting.8f5d79e74e333fb9812de946411a1b4ef2060582.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/dc1d7a570a1a726d7caf1cb2060ee7dc42300698/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/PowerShell-Scripting.8f5d79e74e333fb9812de946411a1b4ef2060582.zh-cn.xlf)
+* Bilingual Datetime: 2016-07-21 14:32:56
 * [Back to Top](#report-top)
 
 ##### <a name='cdf1f553d0bea91e2dcd051faef42417ad0cbc7a295'></a> Source: [scripting\setup\Accessibility-in-Windows-PowerShell-ISE.md](https://github.com/PowerShell/powerShell-Docs/blob/51b2182de7b563daefb9d64434bdc8b8ab5e0343/scripting/setup/Accessibility-in-Windows-PowerShell-ISE.md)

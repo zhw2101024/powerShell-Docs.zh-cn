@@ -1,11 +1,43 @@
 # <a name='report-top'></a> Localization Bilingual Report
 
 ## Summary
- Total Files | 0
+ Total Files | 2
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [scripting\core-powershell\core-powershell.md](https://github.com/PowerShell/powerShell-Docs/blob/cd6e130d9f6f70449084d25eb386a3c0a2b84737/scripting/core-powershell/core-powershell.md) | InSyncHandedBackSuccess | [Details](#4c22e1a2543690a971836813cb32ace74ababb4a198)
+ [scripting\PowerShell-Scripting.md](https://github.com/PowerShell/powerShell-Docs/blob/32b4e11f150fe0374472d2d4c75f8de6c3575abb/scripting/PowerShell-Scripting.md) | InSyncHandedBackSuccess | [Details](#8ef9ea5b00c9c0ac0d14370a39d1ed7970e65cc3294)
 
 ## Item Details
+##### <a name='4c22e1a2543690a971836813cb32ace74ababb4a198'></a> Source: [scripting\core-powershell\core-powershell.md](https://github.com/PowerShell/powerShell-Docs/blob/cd6e130d9f6f70449084d25eb386a3c0a2b84737/scripting/core-powershell/core-powershell.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [scripting\core-powershell\core-powershell.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/52785408d930781cfc0b0ce4490381a1b44f974e/scripting/core-powershell/core-powershell.md)
+* Handoff File: [core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/870e537190af1eff234b383e3bf9fb301ac0fc7c/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf)
+* Handoff Datetime: 2016-06-30 18:41:12
+* Handoff Reason: Include
+* Archive File: [core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/56d7d88b9069be4317dcf41a3bd0b6c95f2a4e28/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf)
+* Archive Datetime: 2016-07-05 13:08:25
+* Handback File: [core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/dc1d7a570a1a726d7caf1cb2060ee7dc42300698/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf)
+* Handback Datetime: 2016-07-21 14:32:06
+* Bilingual File: [core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/dc1d7a570a1a726d7caf1cb2060ee7dc42300698/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/core-powershell.94ba5d1996717b25414c15a5364425d4d49e05f1.zh-cn.xlf)
+* Bilingual Datetime: 2016-07-21 14:32:56
+* [Back to Top](#report-top)
+
+##### <a name='8ef9ea5b00c9c0ac0d14370a39d1ed7970e65cc3294'></a> Source: [scripting\PowerShell-Scripting.md](https://github.com/PowerShell/powerShell-Docs/blob/32b4e11f150fe0374472d2d4c75f8de6c3575abb/scripting/PowerShell-Scripting.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [scripting\PowerShell-Scripting.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/52785408d930781cfc0b0ce4490381a1b44f974e/scripting/PowerShell-Scripting.md)
+* Handoff File: [PowerShell-Scripting.8f5d79e74e333fb9812de946411a1b4ef2060582.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/ae2492bfa89d67e40694d26e51e6c3ea980a5844/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/PowerShell-Scripting.8f5d79e74e333fb9812de946411a1b4ef2060582.zh-cn.xlf)
+* Handoff Datetime: 2016-07-06 23:49:05
+* Handoff Reason: Include
+* Archive File: [PowerShell-Scripting.8f5d79e74e333fb9812de946411a1b4ef2060582.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/60b0774c612a430a7efbd3047c8d3b62af82b1de/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/archive/PowerShell-Scripting.8f5d79e74e333fb9812de946411a1b4ef2060582.zh-cn.xlf)
+* Archive Datetime: 2016-07-12 13:13:17
+* Handback File: [PowerShell-Scripting.8f5d79e74e333fb9812de946411a1b4ef2060582.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/dc1d7a570a1a726d7caf1cb2060ee7dc42300698/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/PowerShell-Scripting.8f5d79e74e333fb9812de946411a1b4ef2060582.zh-cn.xlf)
+* Handback Datetime: 2016-07-21 14:32:06
+* Bilingual File: [PowerShell-Scripting.8f5d79e74e333fb9812de946411a1b4ef2060582.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/dc1d7a570a1a726d7caf1cb2060ee7dc42300698/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/PowerShell-Scripting.8f5d79e74e333fb9812de946411a1b4ef2060582.zh-cn.xlf)
+* Bilingual Datetime: 2016-07-21 14:32:56
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
