@@ -1,6 +1,6 @@
 ---
 title: "WMF 5.1 中的新方案和功能（预览版）"
-ms.date: 2016-07-06
+ms.date: 2016-07-13
 keywords: PowerShell, DSC, WMF
 description: 
 ms.topic: article
@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: dcccf6880873c3f5c1b58fb1a8c546901b173879
-ms.openlocfilehash: 9341b7fc3feea20cc2434065c3e512d1a8dd2b54
+ms.sourcegitcommit: 57049ff138604b0e13c8fd949ae14da05cb03a4b
+ms.openlocfilehash: 01d7ac9815a8650f36150e36b4f6942f451dc368
 
 ---
 
@@ -29,6 +29,45 @@ ms.openlocfilehash: 9341b7fc3feea20cc2434065c3e512d1a8dd2b54
 - [声明模块与特定 PowerShell 版本的兼容性]()
 - [按 CompatiblePSEditions 筛选 Get-Module 结果]()
 - [阻止脚本执行，除非在 PowerShell 的兼容版本上运行]()
+
+## 目录 Cmdlet  
+
+在 [Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx) 模块中新增了两个新 cmdlet；这两个 cmdlet 可用于生成和验证 windows 目录文件。  
+
+###New-FileCatalog 
+--------------------------------
+
+New File 目录用于为文件夹和文件集合创建 windows 目录文件。 该目录文件包含指定路径中的所有文件的哈希值。 用户可以分发文件夹集合以及代表这些文件夹的对应的目录文件。 该信息对于验证自目录创建以来是否对文件夹进行了任何更改很有用。    
+
+```PowerShell
+New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersion <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+支持目录版本 1 和 2。 版本 1 使用 SHA1 哈希算法来创建文件哈希值；版本 2 则使用 SHA256。 Windows Server 2008 R2 或 Windows 7 不支持目录版本 2。 你应在 Windows 8、Windows Server 2012 及更高版本的操作系统上使用目录版本 2。  
+
+![](../../images/NewFileCatalog.jpg)
+
+这将创建目录文件。 
+
+![](../../images/CatalogFile1.jpg)  
+
+![](../../images/CatalogFile2.jpg) 
+
+若要验证目录文件（上面示例中的 Pester.cat 文件）的完整性，应使用 [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet 对其进行签名。   
+
+
+###Test-FileCatalog 
+--------------------------------
+
+Test File 目录用于验证代表一组文件夹的目录。 
+
+```PowerShell
+Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-FilesToSkip <string[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+![](../../images/TestFileCatalog.jpg)
+
+此 cmdlet 将目录中找到的所有文件的哈希值及其相对路径与磁盘中的进行比较。 如果它检测到文件哈希值和路径之间存在任何不匹配，将返回状态 ValidationFailed。 用户可以使用 -Detailed 标志检索所有该信息。 它还在“签名”字段中显示目录的签名状态，该结果与针对目录文件调用 [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) cmdlet 的结果相同。 用户也可以使用 -FilesToSkip 参数在验证过程中跳过任何文件。 
+
 
 ## 模块分析缓存 ##
 从 WMF 5.1 开始，PowerShell 针对用于缓存有关模块的数据（如它导出的命令）的文件提供了控制。
@@ -72,214 +111,20 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
 * 如果有多个版本的模块，则 PowerShell 会使用与 `Import-Module` **相同的解析逻辑**，不会返回错误 - - 行为与 `Import-Module` 和 `Import-DscResource` 相同。
 
-## PowerShell 控制台改进
 
-在 WMF 5.1 中对 Powershell.exe 进行了以下更改以改进控制台体验：
 
-###VT100 支持
 
-Windows 10 添加了对 [VT100 转义序列](https://msdn.microsoft.com/en-us/library/windows/desktop/mt638032(v=vs.85).aspx)的支持。
-计算表宽度时，PowerShell 会忽略某些 VT100 格式设置转义序列。
 
-PowerShell 还添加了一个新 API，它可以在格式设置代码中用于确定是否支持 VT100。 例如：
 
-```
-if ($host.UI.SupportsVirtualTerminal)
-{
-    $esc = [char]0x1b
-    "A yellow ${esc}[93mhello${esc}[0m"
-}
-else
-{
-    "A default hello"
-}
-```
-下面是一个完整[示例](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7)，可以用于突出显示来自 Select-String 的匹配项。
-将该示例保存在名为 `MatchInfo.format.ps1xml` 的文件中，随后若要在配置文件或其他位置使用它，请运行 `Update-FormatData -Prepend MatchInfo.format.ps1xml`。
 
-请注意，VT100 转义序列仅从 Windows 10 Aniversary 更新开始受支持；它们在早期系统上不受支持。   
 
-### PSReadline 中的 Vi 模式支持
+##针对 Pester 的改进
+在 WMF 5.1 中，PowerShell 随附的 Pester 版本从 3.3.5 更新到 3.4.0，并且添加了一个提交：https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e，从而改善了 Nano 上的 Pester 的行为。 
 
-[PSReadline](https://github.com/lzybkr/PSReadLine) 添加了对 vi 模式的支持。 若要使用 vi 模式，请运行 `Set-PSReadline -EditMode vi`。
+你可以通过检查 https://github.com/pester/Pester/blob/master/CHANGELOG.md 上的 ChangeLog.md 文件查看从版本 3.3.5 到 3.4.0 的更改
 
-### 带交互式输入的重定向 stdin 
 
-在早期版本中，重定向 stdin 以及你要以交互方式输入命令时，需要使用 `powershell -File -` 启动 PowerShell。
 
-借助 WMF 5.1，不再需要这一难以发现的选项，你可以在不使用任何选项的情况下启动 powershell，例如 `powershell`。
-
-请注意，PSReadline 当前不支持重定向 stdin，使用重定向 stdin 的内置命令行编辑体验极其有限，例如箭头键不起作用。  PSReadline 的未来版本应该会解决此问题。   
-
-##PowerShell 引擎改进
-
-在 WMF 5.1 中，实现了针对核心 PowerShell 引擎的以下改进：
-
-
-## 性能 ##
-
-性能在一些重要方面得到了改进：
-
-- 启动
-- 向 ForEach-Object 和 Where-Object 这类 cmdlet 进行管道传递的速度大约提供了 50% 
-
-一些示例改进（结果可能因硬件而异）： 
-
-| 方案 | 5.0 时间（毫秒） | 5.1 时间（毫秒） |
-| -------- | :---------------: | :---------------: |
-| `powershell -command "echo 1"` | 900 | 250 |
-| PowerShell 首次运行： `powershell -command "Unknown-Command"` | 30000 | 13000 |
-| 构建的命令分析缓存： `powershell -command "Unknown-Command"` | 7000 | 520 |
-| `1..1000000 | % { }` | 1400 | 750 |
-  
-> [!NOTE]  
-> 与启动相关的一个更改可能会影响某些不支持的方案。 PowerShell 不再读取文件 `$pshome\*.ps1xml` - 这些文件已转换为 C#，以避免处理 XML 文件的某些文件和 CPU 开销。 这些文件仍存在，以同时支持 V2，因此如果更改文件内容，则不会对 V5 产生任何影响，只会影响 V2。 请注意，更改这些文件的内容从来都不是受支持的方案。
-
-另一个显著更改是 PowerShell 如何为系统上安装的模块缓存导出的命令和其他信息。 以前，此缓存存储在目录 `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\CommandAnalysis` 中。 在 WMF 5.1 中，此缓存是单个文件 `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\ModuleAnalysisCache`。
-有关详细信息，请参阅 [analysis_cache.md]()。
-
-
-
-## Bug 修复 ##
-
-修复了以下值得注意的 bug：
-
-### 模块自动发现完全遵循 `$env:PSModulePath` ###
-
-WMF 3 中引入了模块自动发现（调用命令时自动加载模块而无需使用显式 Import-Module）。 引入时，PowerShell 会在使用 `$env:PSModulePath` 之前检查 `$PSHome\Modules` 中的命令。
-
-WMF 5.1 将此行为更改为完全遵循 `$env:PSModulePath`。 这允许定义 PowerShell 提供的命令（例如 `Get-ChildItem`）的用户创作模块自动加载并正确重写内置命令。
-
-### 文件重定向不再硬编码 `-Encoding Unicode` ###
-
-在所有以前版本的 PowerShell 中，无法控制文件重定向运算符使用的文件编码（例如 `get-childitem > out.txt`），因为 PowerShell 添加了 `-Encoding Unicode`。
-
-从 WMF 5.1 开始，现在可以通过设置 `$PSDefaultParameterValues` 来更改重定向的文件编码，例如
-
-```
-$PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
-```
-
-### 修复了成员访问中的回归 `System.Reflection.TypeInfo` ###
-
-WMF 5.0 中引入的回归会破坏 `System.Reflection.RuntimeType` 的成员访问（例如 `[int].ImplementedInterfaces`）。
-WMF5.1 中已修复了此 bug。
-
-
-### 修复了与 COM 对象相关的一些问题 ###
-
-WMF 5.0 引入了一个新 COM 绑定器，用于对 COM 对象调用方法和访问 COM 对象的属性。
-这一新绑定器显著提高了性能，但是同样引入了一些 bug，在 WMF5.1 中已修复了它们。
-
-#### 参数转换并不总是正确执行 ####
-
-在以下示例中：
-
-```
-$obj = new-object -com wscript.shell
-$obj.SendKeys([char]173)
-```
-
-SendKeys 方法需要一个字符串，但是 PowerShell 未将字符转换为字符串，而是将转换延迟到 IDispatch::Invoke，后者使用 VariantChangeType 进行转换，在此示例中，这导致发送键“1”、“7”和“3”而不是预期的 Volume.Mute 键。
-
-#### 可枚举 COM 对象并不总是正确处理 ####
-
-PowerShell 通常可枚举大多数可枚举对象，但是在 WMF 5.0 中引入的回归会阻止实现 IEnumerable 的 COM 对象的枚举。  例如：
-
-```
-function Get-COMDictionary
-{
-    $d = New-Object -ComObject Scripting.Dictionary
-    $d.Add('a', 2)
-    $d.Add('b', 2)
-    return $d
-}
-
-$x = Get-COMDictionary
-```
-
-在上面的示例中，WMF 5.0 错误地将 Scripting.Dictionary 写入管道，而不是枚举键值对。
-
-
-### `[ordered]` 不允许在类中使用 ###
-
-WMF5 引入了会对类中使用的类型文本进行验证的类。  `[ordered]` 类似于类型文本，但不是成为真正的 .Net 类型。  WMF5 错误地对类中的 `[ordered]` 报告错误：
-
-```
-class CThing
-{
-    [object] foo($i)
-    {
-        [ordered]@{ Thing = $i }
-    }
-}
-```
-
-
-### 有关涉及多个版本的主题的帮助不起作用 ###
-
-在 WMF 5.1 之前，如果安装了模块的多个版本，并且它们都共享帮助主题（例如 about_PSReadline），则 `help about_PSReadline` 会返回多个主题，没有明确的方法来查看实际帮助。
-
-WMF 5.1 通过返回有关最新版本主题的帮助来解决此问题。
-
-Get-Help 未提供用于指定你希望获取相关帮助的版本的方法。 若要解决此问题，请导航到模块目录，然后使用工具（如自己喜爱的编辑器）来直接查看帮助。 
-
-## OneGet 改进
-WMF 5.1 包含一些修复和改进，用于解决 WMF 5.0 版本中的一些用户体验缺口。 
-
-###删除了版本别名
-
-**情形**：如果你在系统上安装了包 P1 的版本 1.0 和 2.0，并且要卸载版本 1.0，则会运行“uninstall-package -name P1 -version 1.0”，并且预计在运行该 cmdlet 之后将卸载版本 1.0。 但是结果是卸载了版本 2.0。 
-    
-出现此问题是因为“-version”参数是“-minimumversion”参数的别名。 当 OneGet 查找具有最低版本 1.0 的合格包时，它会返回最新版本。 在正常情况下需要此行为，因为查找最新版本通常是所需结果。 但是，它不应该应用于 uninstall-package 情况。
-    
-**解决方案**：在 WMF 5.1 中，在 OneGet 和 PowerShellGet 中完全删除了 -version 别名。 
-
-###多个用于启动 NuGet 提供程序的提示
-
-**情形**：在计算机上首次运行 Find-Module 或 Install-module 或是其他 OneGet cmdlet 时，OneGet 会尝试启动 NuGet 提供程序。 它这样做是因为 PowerShellGet 提供程序还使用 NuGet 提供程序来下载 PowerShell 模块。 OneGet 随后会提示用户输入安装 NuGet 提供程序的权限。 用户选择“yes”进行启动之后，会安装最新版本的 NuGet 提供程序。 
-    
-但是在某些情况下，当在计算机上安装了旧版本的 NuGet 提供程序时，较旧版本的 NuGet 有时会先加载到 PowerShell 会话中（这是 OneGet 中的争用条件）。 但是 PowerShellGet 需要更新版本的 NuGet 提供程序来正常运行，因此 PowerShellGet 会要求 OneGet 再次启动 NuGet 提供程序。 这会导致出现多个用于启动 NuGet 提供程序的提示。
-
-**解决方案**：在 WMF 5.1 中，OneGet 现在加载最新版本的 NuGet 提供程序，以避免出现多个用于启动 NuGet 提供程序的提示。
-
-还可以通过手动删除旧版本的 NuGet 提供程序（NuGet-Anycpu.exe，如果在 $env:ProgramFiles\PackageManagement\ProviderAssemblies $env:LOCALAPPDATA\PackageManagement\ProviderAssemblies 中存在）来解决此问题
-
-
-###在仅具有 intranet 访问的计算机上支持 OneGet
-
-**情形**：在 WMF 5.0 中，OneGet 不支持仅具有 intranet（但没有 internet）访问的计算机。
-
-**解决方案**：在 WMF 5.1 中，可以按照以下步骤允许 intranet 计算机使用 OneGet：
-
-1. 使用 Install-PackageProvider NuGet，通过具有 internet 连接的其他计算机下载 NuGet 提供程序。
-
-2. 在 $env:ProgramFiles\PackageManagement\ProviderAssemblies\nuget 或 $env:LOCALAPPDATA\PackageManagement\ProviderAssemblies\nuget 下查找 NuGet 提供程序。 
-
-3. 将二进制文件复制到 intranet 计算机可以访问的文件夹或网络共享位置，然后使用“Install-PackageProvider NuGet -Source <Path to folder>”安装 NuGet 提供程序。
-
-
-###事件日志记录改进
-
-安装包时，你会更改计算机的状态。 在 WMF 5.1 中，OneGet 现在针对安装、卸载和保存包活动将事件记录到 Windows 事件日志中。 事件通道在操作方面与 PowerShell 相同，即，Microsoft-Windows-PowerShell。
-
-###对基本身份验证的支持
-
-在 WMF 5.1 中，OneGet 支持从需要基本身份验证的存储库查找和安装包。 你可以向 Find-Package 和 Install-Package cmdlet 提供凭据。 例如：
-
-``` PowerShell
-Find-Package -Source <SourceWithCredential> -Credential (Get-Credential)
-```
-###支持在代理后面使用 OneGet
-
-在 WMF 5.1 中，OneGet 现在采用新的代理参数：-ProxyCredential 和 -Proxy。 使用这些参数可以向 OneGet cmdlet 指定代理 URL 和凭据。 默认情况下，会使用系统代理设置。 例如：
-
-``` PowerShell
-Find-Package -Source http://www.nuget.org/api/v2/ -Proxy http://www.myproxyserver.com -ProxyCredential (Get-Credential)
-```
-
-
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Jul16_HO3-->
 
 

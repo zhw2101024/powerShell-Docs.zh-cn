@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 535b25125a0c56feb10147f1872bdfdf3e3ef33a
+ms.sourcegitcommit: df9bb0362e82757ed1580cc4ace27735414a3e6d
+ms.openlocfilehash: 8c8fb7a40c066b048e1a54a741f4953e6b5a47b6
 
 ---
 
@@ -18,6 +18,9 @@ ms.openlocfilehash: 535b25125a0c56feb10147f1872bdfdf3e3ef33a
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) 中的 File 资源提供了管理目标节点上的文件和文件夹的机制。
+
+>**注意：**如果 **MatchSource** 属性设为 **$false**（这是默认值），那么第一次应用配置时将缓存要复制的内容。 
+>配置的后续应用将不再检查由 **SourcePath** 指定的路径中的已更新文件和/或文件夹。 如果想要每次应用配置时检查 **SourcePath** 中文件和/或文件夹的更新，请将 **MatchSource** 设为 **$true**。 
 
 ## 语法
 ```
@@ -53,7 +56,7 @@ File [string] #ResourceName
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 __ResourceName__、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。| 
 | SourcePath| 指示要从其中复制文件或文件夹资源的路径。| 
 | 类型| 指示正在配置的资源是目录还是文件。 将此属性设置为“Directory”可指示该资源是一个目录。 将其设置为“File”可指示该资源是一个文件。 默认值为“File”。| 
-| MatchSource| 如果设置的默认值为 __$false__，则将在首次运用此配置时将源中的任何文件（如文件 A、B 和 C）添加到目标中。 如果已添加新文件 (D) 到源中，则即使稍后重新应用配置也不会将其添加到目标中。 如果值为 __$true__，则每当应用此配置时，在源上随后找到的新文件（如本示例中的文件 D）将会被添加到目标中。| 
+| MatchSource| 如果设置的默认值为 __$false__，则将在首次运用此配置时将源中的任何文件（如文件 A、B 和 C）添加到目标中。 如果已添加新文件 (D) 到源中，则即使稍后重新应用配置也不会将其添加到目标中。 如果值为 __$true__，则每当应用此配置时，在源上随后找到的新文件（如本示例中的文件 D）将会被添加到目标中。 默认值为 **$false**。| 
 
 ## 示例
 
@@ -86,6 +89,6 @@ Configuration FileResourceDemo
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

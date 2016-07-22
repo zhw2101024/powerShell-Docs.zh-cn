@@ -2,8 +2,8 @@
 title: "PackageManagement（又称为 OneGet）改进"
 contributor: jianyunt, quoctruong
 translationtype: Human Translation
-ms.sourcegitcommit: 4c1b57f221d0f502313eecb21dd36b5e85c2de4d
-ms.openlocfilehash: e2646a59c7a241491ef934c62fdfb6d649d16191
+ms.sourcegitcommit: 3b5a3bb0ef9cf123c0cee4a36890ac61431c85ff
+ms.openlocfilehash: bb1129e6aa20b64e94ddb6d7b7cf7b51b1df9ca3
 
 ---
 
@@ -36,9 +36,9 @@ ms.openlocfilehash: e2646a59c7a241491ef934c62fdfb6d649d16191
 **情形**：对于企业情形，人们在没有 Internet 访问，而是只有 Intranet 的环境中工作。 OneGet 在 WMF 5.0 中不支持这种情况。
 
 **解决方案**：
-- 可以通过命令 Install-PackageProvider NuGet，使用具有 Internet 连接的其他计算机下载 NuGet 提供程序。
+- 你可以在其他计算机上通过 Internet 连接，使用命令“Install-PackageProvider -Name NuGet”下载 NuGet 提供程序。
 
-- 在 $env:ProgramFiles\PackageManagement\ProviderAssemblies\nuget 或 $env:LOCALAPPDATA\PackageManagement\ProviderAssemblies\nuget 下查找 NuGet 提供程序。 
+- 在 $env:ProgramFiles\PackageManagement\ProviderAssemblies\nuget 或 $env:LOCALAPPDATA\PackageManagement\ProviderAssemblies\nuget 下查找你刚安装的 NuGet 提供程序。 
 
 - 将二进制文件复制到你的计算机（没有 Internet 的那台计算机）也有权访问的文件夹或网络共享位置，然后使用“Install-PackageProvider NuGet -Source <Path to folder>”安装 NuGet 提供程序。
 
@@ -60,6 +60,6 @@ Find-Package -Source http://www.nuget.org/api/v2/ -Proxy http://www.myproxyserve
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Jul16_HO3-->
 
 
