@@ -32680,9 +32680,9 @@
       "ArchiveFileCommit": "efd164e947f9920bb4219739d9b6cdee6fafeb57",
       "ArchiveFileDateTime": "2016-07-19T13:10:36.5343856Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.zh-cn\\live\\install-configure.d23935c7edf43234f7208217daa4ff7870a16d7c.zh-cn.xlf",
+      "BilingualFileCommit": "dc2ec180496d4e28d36a5dc7b01677b42f9cd75a",
+      "BilingualDateTime": "2016-07-22T08:14:17.6693908Z",
       "BilingualException": null
     },
     "d25a22b0448e82a85e45c302a998abc35bd4c1b6": {
@@ -32715,9 +32715,9 @@
       "ArchiveFileCommit": "efd164e947f9920bb4219739d9b6cdee6fafeb57",
       "ArchiveFileDateTime": "2016-07-19T13:10:36.5343856Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.zh-cn\\live\\release-notes.218509b1bab21c093b32cb5d4953c42d1cb90cb4.zh-cn.xlf",
+      "BilingualFileCommit": "dc2ec180496d4e28d36a5dc7b01677b42f9cd75a",
+      "BilingualDateTime": "2016-07-22T08:14:17.6693908Z",
       "BilingualException": null
     },
     "bc58ff634458e9c8d218d4ac44ee02e64b8a5dcf": {
@@ -32890,9 +32890,9 @@
       "ArchiveFileCommit": "efd164e947f9920bb4219739d9b6cdee6fafeb57",
       "ArchiveFileDateTime": "2016-07-19T13:10:36.5343856Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.zh-cn\\live\\engine-improvements.c5dd46175ad980e169540bcebd2cac560021ece6.zh-cn.xlf",
+      "BilingualFileCommit": "dc2ec180496d4e28d36a5dc7b01677b42f9cd75a",
+      "BilingualDateTime": "2016-07-22T08:14:17.6693908Z",
       "BilingualException": null
     },
     "7ca0f3b5a6655a8b7fd5371ad8d6a91be3d5e9a1": {
@@ -33101,9 +33101,9 @@
       "ArchiveFileCommit": "efd164e947f9920bb4219739d9b6cdee6fafeb57",
       "ArchiveFileDateTime": "2016-07-19T13:10:36.5343856Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.zh-cn\\live\\Improved-dsc-resourcedebugging.0f92046f690e1bab0e838d53b3c92087667cbfa9.zh-cn.xlf",
+      "BilingualFileCommit": "dc2ec180496d4e28d36a5dc7b01677b42f9cd75a",
+      "BilingualDateTime": "2016-07-22T08:14:17.6693908Z",
       "BilingualException": null
     },
     "8bb3f7173559c349d033d175f5784d80b7a16ed0": {
@@ -33214,9 +33214,9 @@
       "ArchiveFileCommit": "efd164e947f9920bb4219739d9b6cdee6fafeb57",
       "ArchiveFileDateTime": "2016-07-19T13:10:36.5343856Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.zh-cn\\live\\improvements-oneget.c8c4d33b77e464fe53344366059ee41c9a3b5fce.zh-cn.xlf",
+      "BilingualFileCommit": "dc2ec180496d4e28d36a5dc7b01677b42f9cd75a",
+      "BilingualDateTime": "2016-07-22T08:14:17.6693908Z",
       "BilingualException": null
     },
     "dd7905bfd221201919d028ec158cd5ef349335e2": {

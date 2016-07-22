@@ -6049,6 +6049,8 @@
 * Current Target File: [wmf\5.1\engine-improvements.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e524af335fdc384dddb63b228f6268194904ae3c/wmf/5.1/engine-improvements.md)
 * Current Handback File: [engine-improvements.c5dd46175ad980e169540bcebd2cac560021ece6.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/dc2ec180496d4e28d36a5dc7b01677b42f9cd75a/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/engine-improvements.c5dd46175ad980e169540bcebd2cac560021ece6.zh-cn.xlf)
 * Current Handback Datetime: 2016-07-22 08:13:33
+* Bilingual File: [engine-improvements.c5dd46175ad980e169540bcebd2cac560021ece6.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/dc2ec180496d4e28d36a5dc7b01677b42f9cd75a/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/engine-improvements.c5dd46175ad980e169540bcebd2cac560021ece6.zh-cn.xlf)
+* Bilingual Datetime: 2016-07-22 08:14:17
 * [Back to Top](#report-top)
 
 ##### <a name='3e5d5e93231b772b65d1913a4dbafc86d4edb950397'></a> Source: [wmf\5.1\features-scenarios-cache\analysis_cache.md](https://github.com/PowerShell/powerShell-Docs/blob/9ce218a2807dd7b1c69f81efdbd6132321e6a815/wmf/5.1/features-scenarios-cache/analysis_cache.md)
@@ -6161,6 +6163,8 @@
 * Archive Datetime: 2016-07-19 13:10:36
 * Handback File: [Improved-dsc-resourcedebugging.0f92046f690e1bab0e838d53b3c92087667cbfa9.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/dc2ec180496d4e28d36a5dc7b01677b42f9cd75a/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/Improved-dsc-resourcedebugging.0f92046f690e1bab0e838d53b3c92087667cbfa9.zh-cn.xlf)
 * Handback Datetime: 2016-07-22 08:13:33
+* Bilingual File: [Improved-dsc-resourcedebugging.0f92046f690e1bab0e838d53b3c92087667cbfa9.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/dc2ec180496d4e28d36a5dc7b01677b42f9cd75a/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/Improved-dsc-resourcedebugging.0f92046f690e1bab0e838d53b3c92087667cbfa9.zh-cn.xlf)
+* Bilingual Datetime: 2016-07-22 08:14:17
 * [Back to Top](#report-top)
 
 ##### <a name='8bb3f7173559c349d033d175f5784d80b7a16ed0406'></a> Source: [wmf\5.1\features-scenarios-cache\improved-pullclient-security.md](https://github.com/PowerShell/powerShell-Docs/blob/e39aa2e5cbda0c83e24e21c4459d957d8baaff25/wmf/5.1/features-scenarios-cache/improved-pullclient-security.md)
@@ -6198,6 +6202,8 @@
 * Archive Datetime: 2016-07-19 13:10:36
 * Handback File: [improvements-oneget.c8c4d33b77e464fe53344366059ee41c9a3b5fce.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/dc2ec180496d4e28d36a5dc7b01677b42f9cd75a/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/improvements-oneget.c8c4d33b77e464fe53344366059ee41c9a3b5fce.zh-cn.xlf)
 * Handback Datetime: 2016-07-22 08:13:33
+* Bilingual File: [improvements-oneget.c8c4d33b77e464fe53344366059ee41c9a3b5fce.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/dc2ec180496d4e28d36a5dc7b01677b42f9cd75a/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/improvements-oneget.c8c4d33b77e464fe53344366059ee41c9a3b5fce.zh-cn.xlf)
+* Bilingual Datetime: 2016-07-22 08:14:17
 * [Back to Top](#report-top)
 
 ##### <a name='bb1129e6aa20b64e94ddb6d7b7cf7b51b1df9ca3409'></a> Source: [wmf\5.1\features-scenarios-cache\oneget-improvement.md](https://github.com/PowerShell/powerShell-Docs/blob/3b5a3bb0ef9cf123c0cee4a36890ac61431c85ff/wmf/5.1/features-scenarios-cache/oneget-improvement.md)
@@ -6296,8 +6302,8 @@
 * Current Target File: [wmf\5.1\install-configure.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e524af335fdc384dddb63b228f6268194904ae3c/wmf/5.1/install-configure.md)
 * Current Handback File: [install-configure.d23935c7edf43234f7208217daa4ff7870a16d7c.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/dc2ec180496d4e28d36a5dc7b01677b42f9cd75a/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/install-configure.d23935c7edf43234f7208217daa4ff7870a16d7c.zh-cn.xlf)
 * Current Handback Datetime: 2016-07-22 08:13:33
-* Bilingual File: [install-configure.d23935c7edf43234f7208217daa4ff7870a16d7c.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/7aa5bd40c5becb72b4f1db445ceadaba9d595d43/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/install-configure.d23935c7edf43234f7208217daa4ff7870a16d7c.zh-cn.xlf)
-* Bilingual Datetime: 2016-07-19 20:13:21
+* Bilingual File: [install-configure.d23935c7edf43234f7208217daa4ff7870a16d7c.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/dc2ec180496d4e28d36a5dc7b01677b42f9cd75a/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/install-configure.d23935c7edf43234f7208217daa4ff7870a16d7c.zh-cn.xlf)
+* Bilingual Datetime: 2016-07-22 08:14:17
 * [Back to Top](#report-top)
 
 ##### <a name='387ebc0467b9f154444292f391af0f4b77123639417'></a> Source: [wmf\5.1\known-issues.md](https://github.com/PowerShell/powerShell-Docs/blob/57049ff138604b0e13c8fd949ae14da05cb03a4b/wmf/5.1/known-issues.md)
@@ -6353,8 +6359,8 @@
 * Archive Datetime: 2016-07-19 13:10:36
 * Handback File: [release-notes.218509b1bab21c093b32cb5d4953c42d1cb90cb4.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/dc2ec180496d4e28d36a5dc7b01677b42f9cd75a/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/release-notes.218509b1bab21c093b32cb5d4953c42d1cb90cb4.zh-cn.xlf)
 * Handback Datetime: 2016-07-22 08:13:33
-* Bilingual File: [release-notes.218509b1bab21c093b32cb5d4953c42d1cb90cb4.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/7aa5bd40c5becb72b4f1db445ceadaba9d595d43/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/release-notes.218509b1bab21c093b32cb5d4953c42d1cb90cb4.zh-cn.xlf)
-* Bilingual Datetime: 2016-07-19 20:13:21
+* Bilingual File: [release-notes.218509b1bab21c093b32cb5d4953c42d1cb90cb4.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/dc2ec180496d4e28d36a5dc7b01677b42f9cd75a/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/release-notes.218509b1bab21c093b32cb5d4953c42d1cb90cb4.zh-cn.xlf)
+* Bilingual Datetime: 2016-07-22 08:14:17
 * [Back to Top](#report-top)
 
 ##### <a name='49bc62fccc5b3dfd88fb06082fa84dc86327595f420'></a> Source: [wmf\5.1\scenarios-features.md](https://github.com/PowerShell/powerShell-Docs/blob/9c742da1d1996d9142d438c591c048ff32b503dc/wmf/5.1/scenarios-features.md)
