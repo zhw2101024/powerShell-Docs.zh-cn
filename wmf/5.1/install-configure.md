@@ -9,12 +9,15 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 4c1b57f221d0f502313eecb21dd36b5e85c2de4d
-ms.openlocfilehash: 5a7aa50eb4ad5ea2788dc2cbdd189d5632f5c15f
+ms.sourcegitcommit: 26da6c80568327faadc6746099ac9869f2018fcf
+ms.openlocfilehash: 8a10903c421f62311a28c9f32e352bba75f21052
 
 ---
 
 # 安装并配置 WMF 5.1（预览版） #
+
+***请注意：*** 
+*该内容为占位符。下面的链接指向 WMF 5.0 版本，并且将在版本发布后更新。*
 
 下载适用于要在其中进行安装的操作系统和体系结构的 WMF 5.1 包：
 
@@ -57,6 +60,7 @@ ms.openlocfilehash: 5a7aa50eb4ad5ea2788dc2cbdd189d5632f5c15f
 
 
 
-<!--HONumber=Jul16_HO1-->
+
+<!--HONumber=Jul16_HO2-->
 
 
