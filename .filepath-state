@@ -1151,9 +1151,6 @@
   "8a10903c421f62311a28c9f32e352bba75f21052": [
     "wmf\\5.1\\install-configure.md"
   ],
-  "5a7aa50eb4ad5ea2788dc2cbdd189d5632f5c15f": [
-    "wmf\\5.1\\install-configure.md"
-  ],
   "387ebc0467b9f154444292f391af0f4b77123639": [
     "wmf\\5.1\\known-issues.md"
   ],
@@ -1164,9 +1161,6 @@
     "wmf\\5.1\\known-issues-cache\\template.md"
   ],
   "d25a22b0448e82a85e45c302a998abc35bd4c1b6": [
-    "wmf\\5.1\\release-notes.md"
-  ],
-  "a4a59cefde5bac004dc07d7b5bfc6ad091eaf8ea": [
     "wmf\\5.1\\release-notes.md"
   ],
   "49bc62fccc5b3dfd88fb06082fa84dc86327595f": [
