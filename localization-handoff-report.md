@@ -1,24 +1,42 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [gallery\index.md](https://github.com/PowerShell/powerShell-Docs/blob/8c31a7878b8c16469fd709d76af8bb9f1b39af1e/gallery/index.md) | HandedOffSuccess | [Details](#97403b5ae385aa568d0eba44eabac2e10b130a76104)
+ [wmf\5.1\known-issues-cache\NetworkingSwitchCmdletInput.md](https://github.com/PowerShell/powerShell-Docs/blob/34337749a77f4379b841a8478d4e6e3bc97e7ada/wmf/5.1/known-issues-cache/NetworkingSwitchCmdletInput.md) | HandedOffSuccess | [Details](#180158033e0c960f73dba66a3d77b15765e3e382421)
+ [wmf\5.1\release-notes.md](https://github.com/PowerShell/powerShell-Docs/blob/5eb9eae6257cdb57f4f778b5dddf5aa7ef9d10bb/wmf/5.1/release-notes.md) | OutofSyncHandedBackSuccess | [Details](#12f2c084ab92134b733ee037c3d9fbd512af2e4c425)
 
 ## Item Details
-##### <a name='97403b5ae385aa568d0eba44eabac2e10b130a76104'></a> Source: [gallery\index.md](https://github.com/PowerShell/powerShell-Docs/blob/8c31a7878b8c16469fd709d76af8bb9f1b39af1e/gallery/index.md)
+##### <a name='180158033e0c960f73dba66a3d77b15765e3e382421'></a> Source: [wmf\5.1\known-issues-cache\NetworkingSwitchCmdletInput.md](https://github.com/PowerShell/powerShell-Docs/blob/34337749a77f4379b841a8478d4e6e3bc97e7ada/wmf/5.1/known-issues-cache/NetworkingSwitchCmdletInput.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [index.fb851c60ffb7fc30c83dbadbcac26716f6e1f16d.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/81461867e695df6999b898adfd8a76642303913a/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/index.fb851c60ffb7fc30c83dbadbcac26716f6e1f16d.zh-cn.xlf)
-* Handoff Datetime: 2016-07-29 18:12:18
+* Handoff File: [NetworkingSwitchCmdletInput.eed91b2188e6217c0c49c260c2510c33d4434177.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/1c1e31bb15720065ae547e3c98cb35632adc777c/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/NetworkingSwitchCmdletInput.eed91b2188e6217c0c49c260c2510c33d4434177.zh-cn.xlf)
+* Handoff Datetime: 2016-07-31 08:41:18
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='12f2c084ab92134b733ee037c3d9fbd512af2e4c425'></a> Source: [wmf\5.1\release-notes.md](https://github.com/PowerShell/powerShell-Docs/blob/5eb9eae6257cdb57f4f778b5dddf5aa7ef9d10bb/wmf/5.1/release-notes.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [release-notes.218509b1bab21c093b32cb5d4953c42d1cb90cb4.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/1c1e31bb15720065ae547e3c98cb35632adc777c/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/release-notes.218509b1bab21c093b32cb5d4953c42d1cb90cb4.zh-cn.xlf)
+* Handoff Datetime: 2016-07-31 08:41:18
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [wmf\5.1\release-notes.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/e524af335fdc384dddb63b228f6268194904ae3c/wmf/5.1/release-notes.md)
+* Current Handback File: [release-notes.218509b1bab21c093b32cb5d4953c42d1cb90cb4.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/dc2ec180496d4e28d36a5dc7b01677b42f9cd75a/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/release-notes.218509b1bab21c093b32cb5d4953c42d1cb90cb4.zh-cn.xlf)
+* Current Handback Datetime: 2016-07-22 08:13:33
+* Bilingual File: [release-notes.218509b1bab21c093b32cb5d4953c42d1cb90cb4.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/dc2ec180496d4e28d36a5dc7b01677b42f9cd75a/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/release-notes.218509b1bab21c093b32cb5d4953c42d1cb90cb4.zh-cn.xlf)
+* Bilingual Datetime: 2016-07-22 08:14:17
 * [Back to Top](#report-top)
 
 
