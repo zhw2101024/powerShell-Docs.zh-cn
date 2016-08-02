@@ -1,28 +1,11 @@
 # <a name='report-top'></a> Localization Bilingual Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [gallery\index.md](https://github.com/PowerShell/powerShell-Docs/blob/8c31a7878b8c16469fd709d76af8bb9f1b39af1e/gallery/index.md) | InSyncHandedBackSuccess | [Details](#97403b5ae385aa568d0eba44eabac2e10b130a76104)
 
 ## Item Details
-##### <a name='97403b5ae385aa568d0eba44eabac2e10b130a76104'></a> Source: [gallery\index.md](https://github.com/PowerShell/powerShell-Docs/blob/8c31a7878b8c16469fd709d76af8bb9f1b39af1e/gallery/index.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [gallery\index.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/bad58c5a3d7ccced9edde3c49f7769c7b54b057a/gallery/index.md)
-* Handoff File: [index.fb851c60ffb7fc30c83dbadbcac26716f6e1f16d.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/81461867e695df6999b898adfd8a76642303913a/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/index.fb851c60ffb7fc30c83dbadbcac26716f6e1f16d.zh-cn.xlf)
-* Handoff Datetime: 2016-07-29 18:12:18
-* Handoff Reason: Include
-* Archive File: [index.fb851c60ffb7fc30c83dbadbcac26716f6e1f16d.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/68f58f7135163a43b10fae53b4ad6f40681c84d4/ol-archive/PowerShell/powerShell-Docs.zh-cn/live/index.fb851c60ffb7fc30c83dbadbcac26716f6e1f16d.zh-cn.xlf)
-* Archive Datetime: 2016-08-02 13:12:15
-* Handback File: [index.fb851c60ffb7fc30c83dbadbcac26716f6e1f16d.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/7c9c13c09453b73d5f15a450671b9f50ce32d5f1/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/index.fb851c60ffb7fc30c83dbadbcac26716f6e1f16d.zh-cn.xlf)
-* Handback Datetime: 2016-08-02 14:03:50
-* Bilingual File: [index.fb851c60ffb7fc30c83dbadbcac26716f6e1f16d.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/7c9c13c09453b73d5f15a450671b9f50ce32d5f1/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/index.fb851c60ffb7fc30c83dbadbcac26716f6e1f16d.zh-cn.xlf)
-* Bilingual Datetime: 2016-08-02 14:06:13
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
