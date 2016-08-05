@@ -2,11 +2,11 @@
 
 # [WMF 5.1](5.1/release-notes.md)
 ## [新方案和功能](5.1/scenarios-features.md)
-### [WMF 5.1 中修复的 bug](5.1/bugfixes.md)
+### [Desired State Configuration (DSC) 中的改进](5.1/DSC-improvements.md)
 ### [PowerShell 控制台中的改进](5.1/console-improvements.md)
 ### [PowerShell 引擎中的改进](5.1/engine-improvements.md)
-### [Desired State Configuration (DSC) 中的改进](5.1/DSC-improvements.md)
-### [OneGet 中的改进]
+### [程序包管理中的改进](5/1/package-management-improvements.md)
+### [WMF 5.1 中修复的 bug](5.1/bugfixes.md)
 ## [安装和配置](5.1/install-configure.md)
 ## [已知问题](5.1/known-issues.md)
 ## [兼容性](5.1/Compatibility.md)
@@ -94,6 +94,6 @@
 ### [软件清单日志记录 (SIL)](5.0/sil_overview.md)
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Jul16_HO4-->
 
 

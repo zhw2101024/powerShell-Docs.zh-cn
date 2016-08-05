@@ -9,8 +9,8 @@ ms.date: 2016-06-22
 title: "自述文件"
 ms.technology: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: d4e46653ff31ea7cda71f1c92b12ce5f2811b8a7
-ms.openlocfilehash: e24757029fd3ac9a70f710a7a755c35f440f087c
+ms.sourcegitcommit: bd7f637d0889fd0f56c3fa653389819341d2ccff
+ms.openlocfilehash: bfee5ef59a4085f0350ff454f634fc0bf5d6d837
 
 ---
 
@@ -28,7 +28,7 @@ Just Enough Administration (JEA) 是一项安全技术，委派的管理员可�
 
 而有了 JEA，你就可以为 DNS 管理员配置角色，使其能够并且仅能够访问完成工作所需的所有命令。
 这意味着你可以提供适当的访问权限以修复中毒的 DNS 缓存，而无需无意间授予他们对 Active Directory 的权限，或授予他们浏览文件系统、运行具有潜在危险的脚本的权限。
-更棒的是，将 JEA 会话配置为使用具有一次性特权的虚拟帐户时，你的 DNS 管理员可以使用 *无特权* 凭据连接到服务器并仍可运行特权命令。
+更棒的是，将 JEA 会话配置为使用具有一次性特权的虚拟帐户时，你的 DNS 管理员可以使用*无特权*凭据连接到服务器并仍可运行特权命令。
 
 ## 可用性
 JEA 正与 Windows Server 2016 同步开发，并可通过 Windows Management Framework 更新在旧版 Windows 上使用。
@@ -92,6 +92,6 @@ JEA 正与 Windows Server 2016 同步开发，并可通过 Windows Management Fr
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Jul16_HO4-->
 
 
