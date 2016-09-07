@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 75e2a76f-f3d1-490b-ad5d-e3829946aabb
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 272749d487a59ccf5eb30352dc902591228746f3
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 1aee849dd8b89492a641560ed4ef163c3cb96da4
 
 ---
 
@@ -224,7 +224,7 @@ $psISE.Options.ConsolePaneTextBackgroundColor = "pink"
 ###  <a name="contc"></a> ConsoleTokenColors
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
- 指定 Windows PowerShell ISE“控制台”窗格中 IntelliSense 标记的颜色。 此属性是一个包含“控制台”窗格标记类型和颜色的名称值对的字典对象。 若要更改“脚本”窗格中 IntelliSense 标记的颜色，请参阅 [TokenColors](#tc)。 若要将颜色重置为默认值，请参阅 [RestoreDefaultConsoleTokenColors()](#rdctc)。 可以针对以下项设置标记颜色：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。
+ 指定 Windows PowerShell ISE“控制台”窗格中 IntelliSense 标记的颜色。 此属性是一个包含标记类型的名称/值对和“控制台”窗格颜色的字典对象。 若要更改“脚本”窗格中 IntelliSense 标记的颜色，请参阅 [TokenColors](#tc)。 若要将颜色重置为默认值，请参阅 [RestoreDefaultConsoleTokenColors()](#rdctc)。 可以针对以下项设置标记颜色：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。
 
 ```
 # Sets the color of commands to green.
@@ -365,7 +365,7 @@ $psISE.Options.MruCount = 5
 ###  <a name="opbc"></a> OutputPaneBackgroundColor
   此功能存在于 Windows PowerShell ISE 2.0 中，但已在更高版本的 ISE 中删除或重命名。  对于更高版本，请参阅 [ConsolePaneBackgroundColor](#conpbc)。
 
- 读写属性，可获取或设置“输出”窗格本身的背景色。 它是 **System.Windows.Media.Color** 类的实例。
+ 读/写属性，可获取或设置“输出”窗格本身的背景色。 它是 **System.Windows.Media.Color** 类的实例。
 
 ```
 # Changes the background color of the Output pane to gold.
@@ -376,7 +376,7 @@ $psISE.Options.OutputPaneForegroundColor = "gold"
 ###  <a name="optfc"></a> OutputPaneTextForegroundColor
   此功能存在于 Windows PowerShell ISE 2.0 中，但已在更高版本的 ISE 中删除或重命名。  对于更高版本，请参阅 [ConsolePaneForegroundColor](#conpfc)。
 
- 读写属性，可更改 Windows PowerShell ISE 2.0 中“输出”窗格中的文本前景色。
+ 读/写属性，可更改 Windows PowerShell ISE 2.0 中“输出”窗格中的文本前景色。
 
 ```
 # Changes the foreground color of the text in the Output Pane to blue.
@@ -387,7 +387,7 @@ $psISE.Options.OutputPaneTextForegroundColor  = "blue"
 ###  <a name="optbc"></a> OutputPaneTextBackgroundColor
   此功能存在于 Windows PowerShell ISE 2.0 中，但已在更高版本的 ISE 中删除或重命名。  对于更高版本，请参阅 [ConsolePaneTextBackgroundColor](#conptbc)。
 
- 读写属性，可更改“输出”窗格中的文本背景色。
+ 读/写属性，可更改“输出”窗格中的文本背景色。
 
 ```
 # Changes the background color of the Output pane text to pink.
@@ -397,7 +397,7 @@ $psISE.Options.OutputPaneTextBackgroundColor = "pink"
 ###  <a name="spbc"></a> ScriptPaneBackgroundColor
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
- 读写属性，可获取或设置文件的背景色。 它是 **System.Windows.Media.Color** 类的实例。
+ 读/写属性，可获取或设置文件的背景色。 它是 **System.Windows.Media.Color** 类的实例。
 
 ```
 
@@ -409,7 +409,7 @@ $psISE.Options.ScriptPaneBackgroundColor = ”yellow”
 ###  <a name="spfc"></a> ScriptPaneForegroundColor
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
- 读写属性，可获取或设置“脚本”窗格中非脚本文件的前景色。
+ 读/写属性，可获取或设置“脚本”窗格中非脚本文件的前景色。
 若要设置脚本文件的前景色，请使用 [TokenColors](The-ISEOptions-Object.md#tc) 属性。
 
 ```
@@ -421,7 +421,7 @@ $psISE.Options.ScriptPaneBackgroundColor = "green"
 ###  <a name="ssps"></a> SelectedScriptPaneState
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
- 读写属性，可获取或设置“脚本”窗格在显示屏上的位置。 字符串可以是“最大化”、“顶部”或“右侧”。
+ 读/写属性，可获取或设置“脚本”窗格在显示屏上的位置。 字符串可以是“最大化”、“顶部”或“右侧”。
 
 ```
 # Moves the Script Pane to the top.
@@ -436,7 +436,7 @@ $psISE.Options.SelectedScriptPaneState = "Maximized"
 ###  <a name="sds"></a> ShowDefaultSnippets
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
- 指定代码段的 **CTRL\+J** 列表是否包括Windows PowerShell 中包含的初学者套件。 当设置为 **$false** 时，只有用户定义的代码段显示在 **CTRL\+J** 列表中。 默认值为 **$true**。
+ 指定代码段的 **CTRL + J** 列表是否包括Windows PowerShell 中包含的初学者套件。 当设置为 **$false** 时，只有用户定义的代码段显示在 **CTRL + J** 列表中。 默认值为 **$true**。
 
 ```
 # Hide the default snippets from the CTRL+J list.
@@ -476,7 +476,7 @@ $psISe.Options.ShowLineNumbers = $false
 ###  <a name="so"></a> ShowOutlining
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
- 指定“脚本”窗格中是否在左边空白处代码段的旁边显示可展开和折叠的括号。 如果显示，你可以单击文本块旁边的减号 \(\-\) 图标将其折叠起来，或单击加号 \(\+\) 图标展开文本块。 默认值为 **$true**。
+ 指定“脚本”窗格中是否在左边空白处代码段的旁边显示可展开和折叠的括号。 如果显示，你可以单击文本块旁边的减号 \(-\) 图标将其折叠起来，或单击加号 \(+\) 图标展开文本块。 默认值为 **$true**。
 
 ```
 # Turn off outlining in the Script pane.
@@ -520,7 +520,7 @@ $psISE.Options.ShowWarningForDuplicateFiles = $true
 ###  <a name="tc"></a> TokenColors
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
- 指定 Windows PowerShell ISE“脚本”窗格中 IntelliSense 标记的颜色。 此属性是一个包含“脚本”窗格标记类型和颜色的名称值对的字典对象。 若要更改“脚本”窗格中 IntelliSense 标记的颜色，请参阅 [ConsoleTokenColors](#contc)。 若要将颜色重置为默认值，请参阅 [RestoreDefaultTokenColors()](#rdtc)。 可以针对以下项设置标记颜色：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。
+ 指定 Windows PowerShell ISE“脚本”窗格中 IntelliSense 标记的颜色。 此属性是一个包含标记类型的名称/值对和“脚本”窗格颜色的字典对象。 若要更改“脚本”窗格中 IntelliSense 标记的颜色，请参阅 [ConsoleTokenColors](#contc)。 若要将颜色重置为默认值，请参阅 [RestoreDefaultTokenColors()](#rdtc)。 可以针对以下项设置标记颜色：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。
 
 ```
 # Sets the color of commands to green.
@@ -608,7 +608,7 @@ $psISE.Options.WarningForegroundColor =”yellow”
 ###  <a name="xtc"></a> XmlTokenColors
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
- 指定包含在 Windows PowerShell ISE 中显示的 XML 内容的标记类型和颜色的名称\/值对的字典对象。 可以针对以下项设置标记颜色：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。 另请参阅 [RestoreDefaultXmlTokenColors()](#rdxtc)。
+ 指定包含标记类型的名称/值对以及 Windows PowerShell ISE 中显示的 XML 内容颜色的字典对象。 可以针对以下项设置标记颜色：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。 另请参阅 [RestoreDefaultXmlTokenColors()](#rdxtc)。
 
 ```
 # Sets the color of XML element names to green.
@@ -635,6 +635,6 @@ $psISE.Options.Zoom = 200
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

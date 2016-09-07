@@ -1,12 +1,19 @@
 ---
-title: Microsoft.WSMan.Management 模块
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Microsoft.WSMan.Management 模块"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 687cb04d-541c-44f6-a896-75c9686cb04e
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: de6a4fcc1b07ed1bd41f4b2f6b6cd68e2cd66f84
+
 ---
+
 # Microsoft.WSMan.Management 模块
 本部分包含有关 **Microsoft.WSMan.Management** 模块的帮助主题，其中包含 [WSMan 提供程序 [v3]](https://technet.microsoft.com/en-us/library/4c3d8d36-4f7a-4211-996f-64110e4b2eb7)和管理 Web Services for Management (WS-Management) 和 Windows 远程管理 (WinRM) 的 cmdlet。 **Microsoft.WSMan.Management** 模块随 Windows PowerShell 一起安装。
 
@@ -24,6 +31,7 @@ ms.assetid: 687cb04d-541c-44f6-a896-75c9686cb04e
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

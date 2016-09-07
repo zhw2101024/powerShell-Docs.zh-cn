@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: c9bc3460e25063347de3c594ef5ce437b0f8961d
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: c3f7c226fcb496e5bb51ba601429c54b43de9d52
 
 ---
 
@@ -18,19 +18,19 @@ ms.openlocfilehash: c9bc3460e25063347de3c594ef5ce437b0f8961d
 在 Windows PowerShell 驱动器中导航和操作其上面的项类似于操作 Windows 物理磁盘驱动器上的文件和文件夹。 本节我们将讨论如何处理特定文件和文件夹操作任务。
 
 ### 列出某个文件夹内的所有文件和文件夹
-可以通过使用 **Get\-ChildItem** 直接获取某个文件夹中的所有项目。 添加可选的 **Force** 参数以显示隐藏项或系统项。 例如，此命令将显示 Windows PowerShell 驱动器 C（它与 Windows 物理驱动器 C 相同）的直观内容：
+可以通过使用 **Get-ChildItem** 直接获取某个文件夹中的所有项目。 添加可选的 **Force** 参数以显示隐藏项或系统项。 例如，此命令将显示 Windows PowerShell 驱动器 C（它与 Windows 物理驱动器 C 相同）的直观内容：
 
 ```
 Get-ChildItem -Force C:\
 ```
 
-该命令将仅列出直接包含的项，类似于使用 Cmd.exe 的 **DIR** 命令或 UNIX shell 中的 **ls**。 为了显示包含的项，你还需要指定 **\-Recurse** 参数。 （这可能需要相当长的时间才能完成。）列出 C 驱动器上的所有内容：
+该命令将仅列出直接包含的项，类似于使用 Cmd.exe 的 **DIR** 命令或 UNIX shell 中的 **ls**。 为了显示包含的项，你还需要指定 **-Recurse** 参数。 （这可能需要相当长的时间才能完成。）列出 C 驱动器上的所有内容：
 
 ```
 Get-ChildItem -Force C:\ -Recurse
 ```
 
-**Get\-ChildItem** 可以使用其 **Path**、**Filter**、**Include** 和 **Exclude** 参数筛选项，但那些通常只基于名称。 还可以通过使用 **Where\-Object** 基于项的其他属性执行复杂的筛选。
+**Get-ChildItem** 可以使用其 **Path**、**Filter**、**Include** 和 **Exclude** 参数筛选项，但那些通常只基于名称。 还可以通过使用 **Where-Object** 基于项的其他属性执行复杂的筛选。
 
 下面的命令用于查找上次于 2005 年 10 月 1 日之后修改，并且不小于 1 兆字节，也不大于 10 兆字节的 Program Files 文件夹中的所有可执行文件：
 
@@ -39,7 +39,7 @@ Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -Fi
 ```
 
 ### 复制文件和文件夹
-复制通过 **Copy\-Item** 完成。 以下命令用于将 C:\\boot.ini 备份到 C:\\boot.bak：
+复制通过 **Copy-Item** 完成。 以下命令用于将 C:\\boot.ini 备份到 C:\\boot.bak：
 
 ```
 Copy-Item -Path c:\boot.ini -Destination c:\boot.bak
@@ -87,7 +87,7 @@ New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType "file"
 ```
 
 ### 删除某个文件夹内的所有文件和文件夹
-你可以使用 **Remove\-Item** 删除包含的项，但如果项包含任何其他内容，系统将提示你确认该删除。 例如，如果尝试删除包含其他项的文件夹 C:\\temp\\DeleteMe，则在删除该文件夹之前 Windows PowerShell 会提示你确认：
+你可以使用 **Remove-Item** 删除包含的项，但如果项包含任何其他内容，系统将提示你确认该删除。 例如，如果尝试删除包含其他项的文件夹 C:\\temp\\DeleteMe，则在删除该文件夹之前 Windows PowerShell 会提示你确认：
 
 ```
 Remove-Item C:\temp\DeleteMe
@@ -116,7 +116,7 @@ subst p: $env:programfiles
 正如网络驱动器一样，使用 **subst** 在 Windows PowerShell 内映射的驱动器将对 Windows PowerShell shell 立即可见。
 
 ### 将文本文件数据读取到数组中
-文本数据更常见的存储格式之一是采用文件形式，其中单独的行被视为不同的数据元素。 **Get\-Content** cmdlet 可用于一步读取整个文件，如下所示：
+文本数据更常见的存储格式之一是采用文件形式，其中单独的行被视为不同的数据元素。 **Get-Content** cmdlet 可用于一步读取整个文件，如下所示：
 
 ```
 PS> Get-Content -Path C:\boot.ini
@@ -130,14 +130,14 @@ multi(0)disk(0)rdisk(0)partition(1)\WINDOWS=" Microsoft Windows XP Professional
 with Data Execution Prevention" /noexecute=optin /fastdetect
 ```
 
-**Get\-Content** 已将从文件读取的数据视为数组，其中每行文件内容视为一个元素。 可以通过检查返回的内容的**长度**来确认此点：
+**Get-Content** 已将从文件读取的数据视为数组，其中每行文件内容视为一个元素。 可以通过检查返回的内容的**长度**来确认此点：
 
 ```
 PS> (Get-Content -Path C:\boot.ini).Length
 6
 ```
 
-此命令对于直接从 Windows PowerShell 获取列表信息最为有用。 例如，你可能会在文件 C:\\temp\\domainMembers.txt 中存储计算机名称或 IP 地址的列表，其中文件的每一行上一个名称。 你可以使用 **Get\-Content** 来检索文件内容并将它们放在变量 **$Computers** 中：
+此命令对于直接从 Windows PowerShell 获取列表信息最为有用。 例如，你可能会在文件 C:\\temp\\domainMembers.txt 中存储计算机名称或 IP 地址的列表，其中文件的每一行上一个名称。 你可以使用 **Get-Content** 来检索文件内容并将它们放在变量 **$Computers** 中：
 
 ```
 $Computers = Get-Content -Path C:\temp\DomainMembers.txt
@@ -148,6 +148,6 @@ $Computers = Get-Content -Path C:\temp\DomainMembers.txt
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

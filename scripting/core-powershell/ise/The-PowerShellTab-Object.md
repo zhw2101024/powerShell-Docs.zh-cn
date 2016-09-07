@@ -1,12 +1,19 @@
 ---
-title: PowerShellTab 对象
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "PowerShellTab 对象"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: f3f2d27c3c82406f8e8967fd1784a6e07579c1fa
+
 ---
+
 # PowerShellTab 对象
   **PowerShellTab** 对象代表 Windows PowerShell 运行时环境。
 
@@ -20,8 +27,7 @@ ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
 > [!NOTE]
 >  此方法仅适用于其他 PowerShell 选项卡，不适用于运行它的 PowerShell 选项卡。 它不返回任何对象或值。 如果代码修改任何变量，则这些更改将仍保存在根据其调用该命令的选项卡上。
 
- **脚本** \- System.Management.Automation.ScriptBlock 或字符串
- 要运行的脚本块。
+ **Script** - 要运行的脚本块的 System.Management.Automation.ScriptBlock 或字符串。
 
 ```
 # Manually create a second PowerShell tab before running this script.
@@ -37,14 +43,13 @@ $psise.PowerShellTabs[1].Invoke({dir})
 > [!NOTE]
 >  此方法仅适用于其他 PowerShell 选项卡，不适用于运行它的 PowerShell 选项卡。 运行脚本块，并且从该脚本返回的任何值将返回到从中调用该命令的运行环境。 如果命令运行所花费的时间大于指定的 **millesecondsTimeout** 值，则该命令将失败并出现异常：“操作已超时。”
 
- **脚本** \- System.Management.Automation.ScriptBlock 或字符串
- 要运行的脚本块。
+ **Script** - 要运行的脚本块的 System.Management.Automation.ScriptBlock 或字符串。
 
- **\[useNewScope\]** \-可选布尔值，默认值为 **$true**
- 如果设置为 **$true**，则将创建在其中运行命令的新作用域。 它不会修改该命令指定的 PowerShell 选项卡的运行时环境。
+ **\[useNewScope\]** -  可选的布尔值，默认值为 **$true**
+ 如果设置为 **$true**，则会新建作用域以在其中运行命令。 它不会修改该命令指定的 PowerShell 选项卡的运行时环境。
 
- **\[millisecondsTimeout\]** \-  可选整数，默认值为 **500**.
- 如果在指定时间内未完成命令，则该命令将生成 **TimeoutException** 并显示消息“操作已超时。”
+ **\[millisecondsTimeout\]** - 可选整数，默认值为 **500**。
+如果在指定时间内未完成命令，则该命令将生成 **TimeoutException** 并显示消息“操作已超时。”
 
 ```
 # create a new PowerShell tab and then switch back to the first
@@ -106,7 +111,7 @@ $secondTab.CanInvoke
 ```
 
 ###  <a name="Commandpane"></a> Consolepane
-  在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。  在 Windows PowerShell ISE 2.0 中，这命名为 **CommandPane**.
+  在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。  在 Windows PowerShell ISE 2.0 中，这命名为 **CommandPane**。
 
  获取“控制台”窗格 [editor](../ise/The-ISEEditor-Object.md) 对象的只读属性。
 
@@ -119,7 +124,7 @@ $psISE.CurrentPowerShellTab.ConsolePane
 ###  <a name="Displayname"></a> DisplayName
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
- 读写属性，可获取或设置 PowerShell 选项卡上显示的文本。 默认情况下，选项卡命名为“PowerShell \ #”，其中 # 表示数字。
+ 读写属性，可获取或设置 PowerShell 选项卡上显示的文本。 默认情况下，选项卡命名为“PowerShell #”，其中 # 表示数字。
 
 ```
 $newTab = $psise.PowerShellTabs.Add()
@@ -153,7 +158,7 @@ $newFile.Editor.LineCount
 ###  <a name="Output"></a> 输出
   此功能存在于 Windows PowerShell ISE 2.0 中，但已在更高版本的 ISE 中删除或重命名。  在更高版本的 Windows PowerShell ISE 中，你可以将 **ConsolePane** 对象用于相同的目的。
 
- 只读属性，可获取当前[编辑器](../ise/The-ISEEditor-Object.md)的“输出”窗格。.
+ 只读属性，可获取当前[编辑器](../ise/The-ISEEditor-Object.md)的“输出”窗格。
 
 ```
 # Clears the text in the Output pane.
@@ -223,6 +228,7 @@ $psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened
   
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

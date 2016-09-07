@@ -1,12 +1,19 @@
 ---
-title: Windows PowerShell 核心“关于”主题
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Windows PowerShell 核心“关于”主题"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 4d33ebe2a067781d708ca3b0f8dc4dd2848ba4d4
+
 ---
+
 # Windows PowerShell 核心“关于”主题
 本部分包含适用于所有 Windows PowerShell 模块的（“关于”）帮助主题。 有关其他模块的“关于”主题，请参阅特定模块的帮助主题。
 
@@ -31,7 +38,7 @@ ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
 |[about_Debuggers [v4]](https://technet.microsoft.com/en-us/library/2b2ce8b3-f881-4528-bd30-f453dea06755)|介绍 Windows PowerShell 脚本调试程序，即一组用于调试脚本和函数的 cmdlet。|
 |[about_Do [v4]](https://technet.microsoft.com/en-us/library/d1f65c4e-6231-44e2-b21c-78a91845ad6c)|介绍 Do 语句，用于遵循 While 或 Until 条件运行一次或多次脚本块。|
 |[about_Environment_Variables [v4]](https://technet.microsoft.com/en-us/library/998c8863-3794-42a8-8971-a5cadef72772)|说明如何访问 Windows PowerShell 中的 Windows 环境变量。|
-|[about_Escape_Characters [v4]](https://technet.microsoft.com/en-us/library/576ca013-c4ca-4ade-bf46-b0d1ce2c778f)|介绍 Windows PowerShell 中的转义字符 (`) 并说明其效果。|
+|[about_Escape_Characters [v4]](https://technet.microsoft.com/en-us/library/576ca013-c4ca-4ade-bf46-b0d1ce2c778f)|介绍 Windows PowerShell 中的转义字符 (\`) 并说明其效果。|
 |[about_Eventlogs [v4]](https://technet.microsoft.com/en-us/library/8b5279cd-daf1-4ed1-8575-2df4baf7042d)|介绍事件查看器中的 Windows PowerShell 事件日志。|
 |[about_Execution_Policies [v4]](https://technet.microsoft.com/en-us/library/347708dc-1515-4d74-978b-8334603472e6)|介绍 Windows PowerShell 执行策略并说明如何管理它们。|
 |[about_For [v4]](https://technet.microsoft.com/en-us/library/a2eb48d6-7d47-4087-a8d6-deb1d029a957)|介绍 Windows PowerShell 中的 **For** 循环。|
@@ -116,7 +123,7 @@ ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
 |[about_Updatable_Help](https://technet.microsoft.com/en-us/library/10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe)|介绍 Windows PowerShell 中的可更新帮助系统。|
 |[about_Variables [v4]](https://technet.microsoft.com/en-us/library/0cb2aa2b-508a-4d25-999b-e066e99a9312)|说明 Windows PowerShell 中的变量类型的概述主题。|
 |[about_While [v4]](https://technet.microsoft.com/en-us/library/3a1a1329-2501-4e4e-8660-a2ca68c68541)|介绍 Windows PowerShell 中的 **While** 循环。|
-|[about_Wildcards [v4]](https://technet.microsoft.com/en-us/library/9fe09a23-afce-4547-9e2f-c38090f77636)|说明如何在 Windows PowerShell 中使用通配符 (*)。|
+|[about_Wildcards [v4]](https://technet.microsoft.com/en-us/library/9fe09a23-afce-4547-9e2f-c38090f77636)|说明如何在 Windows PowerShell 中使用通配符 (\*)。|
 |[about_Windows_PowerShell_5.0](https://technet.microsoft.com/en-us/library/6d56fa88-371e-40c9-b2de-64a2a0cd49da)|介绍 Windows PowerShell 4.0 的新增功能和更改。|
 |[about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)|介绍 Windows PowerShellÂ® 集成脚本环境 (ISE)。|
 |[about_Workflows](https://technet.microsoft.com/en-us/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)|提供对 Windows PowerShell 工作流功能的简短介绍。|
@@ -124,7 +131,7 @@ ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
 |[about_WMI](https://technet.microsoft.com/en-us/library/32da7221-c213-48ad-8466-fad82285e4e8)|介绍 Windows Management Instrumentation (WMI)，它是 Microsoft 的基于 Web 的企业管理 (WBEM) 行业标准的实现。|
 |[about_WMI_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/9c56b172-3b25-47b2-b6e0-86db649b1c45)|提供有关 Windows Management Instrumentation (WMI) 和 Windows PowerShell 的背景信息。|
 |[about_WQL](https://technet.microsoft.com/en-us/library/820b2d23-3473-46f5-a188-5910704c7905)|介绍可用于获取 Windows PowerShell 中的 WMI 对象的 WMI 查询语言 (WQL)。|
-|[about_WS-Management_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/22738d36-4d49-472c-ae51-9365b9bbd7c2)|介绍 Microsoft.WsMan.Management 模块中的 cmdlet。 说明如何一起使用它们来管理 WS-Management 功能，包括 WSMan 提供程序驱动器。|
+|[about_WS-Management_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/22738d36-4d49-472c-ae51-9365b9bbd7c2)|介绍 Microsoft.WsMan.Management 模块中的 cmdlet。 说明如何使用它们一起管理 WS-Management 功能，包括 WSMan 提供程序驱动器。|
 
 ## 另请参阅
 [使用 Windows PowerShell 编写脚本](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
@@ -132,11 +139,12 @@ ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
 [Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
 [about_Scheduled_Jobs](https://technet.microsoft.com/en-us/library/3b546629-703c-4939-b44f-52dd567bce92)
 [about_WMI_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/9c56b172-3b25-47b2-b6e0-86db649b1c45)
-[about_WS-Management_Cmdlets](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
+[about_ws-management_cmdlets](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
 [Windows PowerShell SDK](http://go.microsoft.com/fwlink/?LinkID=107032)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

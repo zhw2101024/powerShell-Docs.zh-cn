@@ -1,18 +1,25 @@
 ---
-title: ISEMenuItemCollection 对象
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "ISEMenuItemCollection 对象"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 0c0f5484-3320-408e-8534-5bd1c8e48512
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 563bfc58e545a9e67eb9dd89d8d28e1aa2a33f1c
+
 ---
+
 # ISEMenuItemCollection 对象
-  **ISEMenuItemCollection** 对象是 **ISEMenuItem** 对象的集合。 它是 Microsoft.PowerShell.Host.ISE.ISEOptions 类的实例。 一个示例是用于在 Windows PowerShellÂ® Integrated Scripting Environment (ISE) 中自定义 **Add\-On** 菜单的 **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** 对象。
+  **ISEMenuItemCollection** 对象是 **ISEMenuItem** 对象的集合。 它是 Microsoft.PowerShell.Host.ISE.ISEOptions 类的实例。 一个示例是用于在 Windows PowerShellÂ® Integrated Scripting Environment (ISE) 中自定义 **Add-On** 菜单的 **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** 对象。
 
 ## 方法
 
-### 添加\（字符串 DisplayName, System.Management.Automation.ScriptBlock Action, System.Windows.Input.KeyGesture 快捷方式\）
+### 添加\(字符串 DisplayName、System.Management.Automation.ScriptBlock Action、System.Windows.Input.KeyGesture 快捷方式 \)
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  将菜单项添加到集合。
@@ -20,13 +27,13 @@ ms.assetid: 0c0f5484-3320-408e-8534-5bd1c8e48512
  **DisplayName**
  要添加的菜单显示名称。
 
- **操作**
+ **Action**
  **System.Management.Automation.ScriptBlock** 对象指定与此菜单项关联的操作。
 
- **快捷方式**
- 此操作的键盘快捷方式
+ **Shortcut**
+ 此操作的键盘快捷方式。
 
- **返回**
+ **Returns**
  刚添加 ISEMenuItem 对象。
 
 ```
@@ -35,7 +42,7 @@ ms.assetid: 0c0f5484-3320-408e-8534-5bd1c8e48512
 $menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Alt+P")
 ```
 
-### Clear\(\)
+### 清除\(\)
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  从菜单项中删除所有子菜单。
@@ -55,6 +62,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
   
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

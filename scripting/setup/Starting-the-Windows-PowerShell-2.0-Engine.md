@@ -1,23 +1,30 @@
 ---
-title: 启动 Windows PowerShell 2.0 引擎
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "启动 Windows PowerShell 2.0 引擎"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 094c3c9f240457fc884031e7d82dcdc1e81e582d
+
 ---
+
 # 启动 Windows PowerShell 2.0 引擎
 本部分介绍如何在包含 Windows PowerShell 2.0 引擎 的 Windows 8.1、Windows Server 2012 R2、Windows 8 和 Windows Server 2012 上，以及安装了 Windows PowerShell 2.0、Windows PowerShell 3.0 和 Windows PowerShell 4.0 的其他系统上启动 Windows PowerShell 2.0 引擎。
 
-Windows PowerShell 4.0 和 Windows PowerShell 3.0 旨在能够与 Windows PowerShell 2.0 向后兼容。 为 Windows PowerShell 2.0 编写的 Cmdlet、提供程序、管理单元、模块和脚本无需更改，即可在 Windows PowerShell 4.0 和 Windows PowerShell 3.0 中运行。 但是，由于 Microsoft.NET framework 4 中的运行时激活策略的更改，为 Windows PowerShell 2.0 编写并使用公共语言运行时 (CLR) 2.0 编译的 Windows PowerShell 主机程序在使用 CLR 4.0 编译的 Windows PowerShell 3.0 或 Windows PowerShell 4.0 中未进行修改时，将无法运行。 Windows PowerShell 2.0 引擎仅在当前脚本或主机程序无法运行时使用，因为它与 Windows PowerShell 4.0、Windows PowerShell 3.0 或 Microsoft .NET Framework 4 不兼容。 这种情况很少见。
+Windows PowerShell 4.0 和 Windows PowerShell 3.0 旨在能够与 Windows PowerShell 2.0 向后兼容。 为 Windows PowerShell 2.0 编写的 Cmdlet、提供程序、管理单元、模块以及脚本无需更改，即可在 Windows PowerShell 4.0 和 Windows PowerShell 3.0 中运行。 但是，由于 Microsoft.NET framework 4 中的运行时激活策略的更改，为 Windows PowerShell 2.0 编写并使用公共语言运行时 (CLR) 2.0 编译的 Windows PowerShell 主机程序在使用 CLR 4.0 编译的 Windows PowerShell 3.0 或 Windows PowerShell 4.0 中未进行修改时，将无法运行。 Windows PowerShell 2.0 引擎仅在当前脚本或主机程序无法运行时使用，因为它与 Windows PowerShell 4.0、Windows PowerShell 3.0 或 Microsoft .NET Framework 4 不兼容。 这种情况很少见。
 
 许多需要 Windows PowerShell 2.0 引擎的程序将自动启动。 这些说明适用于极少数需要手动启动该引擎的情况。
 
 ## 安装和启用必需程序
-启动 Windows PowerShell 2.0 引擎之前，请先启用 Windows PowerShell 2.0 引擎和具有 Service Pack 1 的 Microsoft.NET Framework 3.5。 有关说明，请参阅[安装 Windows PowerShell](Installing-Windows-PowerShell.md).
+启动 Windows PowerShell 2.0 引擎之前，请先启用 Windows PowerShell 2.0 引擎和具有 Service Pack 1 的 Microsoft.NET Framework 3.5。 有关说明，请参阅[安装 Windows PowerShell](Installing-Windows-PowerShell.md)。
 
-安装了 [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) 或 Windows Management Framework 3.0 的系统上具备所有必需组件。 无需进行任何其他配置。 有关安装 [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) 或 Windows Management Framework 3.0 的信息，请参阅[安装 Windows PowerShell](Installing-Windows-PowerShell.md).
+安装了 [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) 或 Windows Management Framework 3.0 的系统上具备所有必需组件。 无需进行任何其他配置。 有关安装 [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) 或 Windows Management Framework 3.0 的信息，请参阅[安装 Windows PowerShell](Installing-Windows-PowerShell.md)。
 
 ## 如何启动 Windows PowerShell 2.0 引擎
 启动 Windows PowerShell 时，默认启动最新版本。 若要使用 Windows PowerShell 2.0 引擎启动 Windows PowerShell，请使用 PowerShell.exe 的版本参数。 你可以在任何命令提示符（包括 Windows PowerShell 和 Cmd.exe）处运行该命令。
@@ -33,7 +40,7 @@ PowerShell.exe -Version 2
 
 以下过程使用 [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) cmdlet 的 **PSVersion** 参数来创建使用 Windows PowerShell 2.0 引擎的会话配置。 你还可以使用 [New-PSSessionConfigurationFile](https://technet.microsoft.com/en-us/library/5f3e3633-6e90-479c-aea9-ba45a1954866) cmdlet 的 **PowerShellVersion** 参数为加载 Windows PowerShell 2.0 引擎的会话创建会话配置文件，此外，你可以使用 [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) 参数的 **PSVersion** 参数将会话配置更改为使用 Windows PowerShell 2.0 引擎。
 
-有关会话配置文件的详细信息，请参阅 [about_Session_Configuration_Files](https://technet.microsoft.com/en-us/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8)。有关会话配置（包括安装和安全性）的信息，请参阅 [about_Session_Configurations [v4]](https://technet.microsoft.com/en-us/library/a2fbe12a-350c-4d04-be50-24102824e3ab).
+有关会话配置文件的详细信息，请参阅 [about_Session_Configuration_Files](https://technet.microsoft.com/en-us/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8)。有关会话配置（包括安装和安全性）的信息，请参阅 [about_Session_Configurations [v4]](https://technet.microsoft.com/en-us/library/a2fbe12a-350c-4d04-be50-24102824e3ab)。
 
 #### 启动远程 Windows PowerShell 2.0 会话
 
@@ -64,10 +71,11 @@ PowerShell.exe -Version 2
 Start-Job {Get-Process} -PSVersion 2.0
 ```
 
-有关后台作业的详细信息，请参阅 [about_Jobs [v4]](https://technet.microsoft.com/en-us/library/7362512a-8a4e-4575-b2ea-a740e5c4f002).
+有关后台作业的详细信息，请参阅 [about_Jobs [v4]](https://technet.microsoft.com/en-us/library/7362512a-8a4e-4575-b2ea-a740e5c4f002)。
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

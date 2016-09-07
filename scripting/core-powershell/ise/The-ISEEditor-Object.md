@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 4812092dea24fa61245af7e06d1c5924ec812218
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 05255e63ae34e239003e5847c9f3b7fb2f4e3a0a
 
 ---
 
@@ -73,7 +73,7 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ### GoToMatch\(\)
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。 
 
- 如果编辑器对象的 **CanGoToMatch** 属性是 **$true**，当脱字号直接位于左括号、中括号或大括号 \- \(、\[、{ \- 之前或直接位于右括号、中括号或大括号 \- \)、\]、} 之后时会出现此情况，则将脱字号移动到匹配的字符。  脱字号位于开始字符之前或结束字符之后。 如果 **CanGoToMatch** 属性是 **$false**，则此方法不执行任何操作。 请参阅 [CanGoToMatch](#cangotomatch)。
+ 如果编辑器对象的 **CanGoToMatch** 属性是 **$true**，当脱字号直接位于左括号、中括号或大括号 - \(、\[、{ - 或直接位于右括号、中括号或大括号 - \)、\]、}。  脱字号位于开始字符之前或结束字符之后。 如果 **CanGoToMatch** 属性是 **$false**，则此方法不执行任何操作。 请参阅 [CanGoToMatch](#cangotomatch)。
 
 ```
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
@@ -84,7 +84,7 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  将所选内容替换为文本或在当前脱字号位置插入文本。
 
- **text** \\- String 要插入的文本。
+ **text** - String 要插入的文本。
 
  请参阅本主题稍后介绍的[脚本示例](#example)。
 
@@ -93,13 +93,13 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  从 **startLine**、**startColumn**、**endLine** 和 **endColumn** 参数中选择文本。
 
- **startLine** \- Integer 所选内容的起始行。
+ **startLine** - Integer 所选内容的起始行。
 
- **startColumn** \- Integer 所选内容的起始行中的列。
+ **startColumn** - Integer 所选内容的起始行中的列。
 
- **endLine** \- Integer 所选内容的结束行。
+ **endLine** - Integer 所选内容的结束行。
 
- **endColumn** \- Integer 所选内容的结束行中的列。
+ **endColumn** - Integer 所选内容的结束行中的列。
 
  请参阅本主题稍后介绍的[脚本示例](#example)。
 
@@ -121,9 +121,9 @@ $psIse.CurrentFile.Editor.SelectCaretLine()
 
  在行号和列号处设置脱字号位置。 如果脱字号行号或脱字号列号不在其各自的有效范围内，会引发异常。
 
- **lineNumber** \- Integer 脱字号行号。
+ **lineNumber** - Integer 脱字号行号。
 
- **columnNumber** \- Integer 脱字号列号。
+ **columnNumber** - Integer 脱字号列号。
 
 ```
 # Set the CaretPosition.
@@ -253,6 +253,6 @@ $myEditor.InsertText($selection.ToLower())
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

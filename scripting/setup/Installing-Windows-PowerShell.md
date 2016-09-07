@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 6fbb0409-5a54-48ec-95e6-7f8b7d8c4969
 translationtype: Human Translation
-ms.sourcegitcommit: f856f170c6e18be8758d52df9b50ac443531fdf2
-ms.openlocfilehash: 415e68b372c831ed8dd4535c2968e5a36b5cb65d
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 00249ec98e1624a949fe11fee8be9e93018578a9
 
 ---
 
@@ -45,9 +45,9 @@ Windows PowerShell 3.0 已安装和配置，并可供使用。 Windows PowerShel
 
 #### 安装 Windows PowerShell 3.0
 
-1.  从 Microsoft 下载中心 [http://go.microsoft.com/fwlink/?LinkID=212547](http://go.microsoft.com/fwlink/?LinkID=212547) 安装 Microsoft .NET Framework 4 (dotNetFx40\_Full\_setup.exe) 的完全安装版。
+1.  从 Microsoft 下载中心 [http://go.microsoft.com/fwlink/?LinkID=212547](http://go.microsoft.com/fwlink/?LinkID=212547) 安装 Microsoft .NET Framework 4 (dotNetFx40_Full_setup.exe) 的完全安装版。
 
-    或者，从 Microsoft 下载中心 [http://go.microsoft.com/fwlink/?LinkID=242919](http://go.microsoft.com/fwlink/?LinkID=242919) 安装 Microsoft .NET Framework 4.5 (dotNetFx45\_Full\_setup.exe)。
+    或者，从 Microsoft 下载中心 [http://go.microsoft.com/fwlink/?LinkID=242919](http://go.microsoft.com/fwlink/?LinkID=242919) 安装 Microsoft .NET Framework 4.5 (dotNetFx45_Full_setup.exe)。
 
 2.  从 Microsoft 下载中心 [http://go.microsoft.com/fwlink/?LinkID=240290](http://go.microsoft.com/fwlink/?LinkID=240290) 安装 Windows Management Framework 3.0。
 
@@ -93,9 +93,9 @@ Windows PowerShell 3.0 已安装和配置，并可供使用。 Windows PowerShel
 
 2.  从 Microsoft 下载中心 [http://go.microsoft.com/fwlink/?LinkId=243035](http://go.microsoft.com/fwlink/?LinkId=243035) 安装 Windows Management Framework （Windows PowerShell 2.0，KB 968930）。
 
-3.  从 Microsoft 下载中心 [http://go.microsoft.com/fwlink/?LinkID=212547](http://go.microsoft.com/fwlink/?LinkID=212547) 安装 Microsoft .NET Framework 4 (dotNetFx40\_Full\_setup.exe) 的完全安装版。
+3.  从 Microsoft 下载中心 [http://go.microsoft.com/fwlink/?LinkID=212547](http://go.microsoft.com/fwlink/?LinkID=212547) 安装 Microsoft .NET Framework 4 (dotNetFx40_Full_setup.exe) 的完全安装版。
 
-    或者，从 Microsoft 下载中心 [http://go.microsoft.com/fwlink/?LinkID=242919](http://go.microsoft.com/fwlink/?LinkID=242919) 安装 Microsoft .NET Framework 4.5 (dotNetFx45\_Full\_setup.exe)。
+    或者，从 Microsoft 下载中心 [http://go.microsoft.com/fwlink/?LinkID=242919](http://go.microsoft.com/fwlink/?LinkID=242919) 安装 Microsoft .NET Framework 4.5 (dotNetFx45_Full_setup.exe)。
 
 4.  从 [http://go.microsoft.com/fwlink/?LinkID=186398](http://go.microsoft.com/fwlink/?LinkID=186398) 安装“扩展的身份验证保护”(KB 968389)。
 
@@ -107,6 +107,6 @@ Windows PowerShell 3.0 已安装和配置，并可供使用。 Windows PowerShel
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

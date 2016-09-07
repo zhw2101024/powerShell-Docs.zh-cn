@@ -1,12 +1,19 @@
 ---
-title: PowerShell.exe 命令行帮助
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "PowerShell.exe 命令行帮助"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: e4635890a5433e199d5ddbce0ac1475a134ecd57
+
 ---
+
 # PowerShell.exe 命令行帮助
 启动 Windows PowerShell 会话。 可以使用 PowerShell.exe 从另一工具（如 Cmd.exe）的命令行启动 Windows PowerShell 会话，或在 Windows PowerShell 命令行中使用它来启动新会话。 使用参数自定义会话。
 
@@ -39,9 +46,9 @@ PowerShell[.exe] -Help | -? | /?
 接受命令的 base-64 编码字符串版本。 使用此参数将命令提交到需要复杂的引号或大括号的 Windows PowerShell。
 
 ### -ExecutionPolicy <ExecutionPolicy>
-为当前会话设置默认执行策略，并将其保存在 $env:PSExecutionPolicyPreference 环境变量中。 此参数不会更改在注册表中设置的 Windows PowerShell 执行策略。 有关 Windows PowerShell 执行策略的信息（包括有效值列表），请参阅 _Execution_Policies (http://go.microsoft.com/fwlink/?LinkID\=135170)。
+为当前会话设置默认执行策略，并将其保存在 $env:PSExecutionPolicyPreference 环境变量中。 此参数不会更改在注册表中设置的 Windows PowerShell 执行策略。 有关 Windows PowerShell 执行策略的信息（包括有效值列表），请参阅 about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170)。
 
-### -File <FilePath> [<Parameters>]
+### -File <FilePath> \[<Parameters>]
 在本地作用域中运行指定的脚本（“dot-sourced”），以便脚本创建的函数和变量在当前会话中可用。 输入脚本文件路径和任何参数。 **File** 必须是命令中的最后一个参数，因为在 **File** 参数名称后键入的所有字符都会被解释为后跟脚本参数及其值的脚本文件路径。
 
 **File** 参数的值中可以包括脚本参数和参数值。 例如： `-File .\Get-Script.ps1 -Domain Central`
@@ -82,7 +89,7 @@ PowerShell[.exe] -Help | -? | /?
 
 如果未安装 Windows PowerShell 3.0，则唯一的有效值为“2.0”。 将忽略其他值。
 
-有关详细信息，请参阅 [Windows PowerShell 入门 [OLD MSDN]](https://technet.microsoft.com/en-us/library/69555d95-b481-43e1-86e7-b46d68b3e2dd) 中的“安装 Windows PowerShell”.
+有关详细信息，请参阅 [Windows PowerShell 入门 [OLD MSDN]](https://technet.microsoft.com/en-us/library/69555d95-b481-43e1-86e7-b46d68b3e2dd)中的“安装 Windows PowerShell”。
 
 ### -WindowStyle <Window style>
 为会话设置窗口样式。 有效值包括 Normal、Minimized、Maximized 和 Hidden。
@@ -104,7 +111,7 @@ Command 的值可以为“-”、字符串。 或脚本块。 如果 Command 的
 
 其中，引号指示一个字符串，调用运算符 (&) 用于执行命令。
 
-### -Help, -?, /?
+### -Help、-?、/?
 显示此消息。 如果要在 Windows PowerShell 中键入 PowerShell.exe 命令，请以连字符 (-) 作为命令参数的前缀，不要使用正斜杠 (/)。 你可以在 Cmd.exe 中使用连字符或正斜杠。
 
 > [!NOTE]
@@ -130,6 +137,7 @@ powershell.exe -encodedCommand $encodedCommand
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

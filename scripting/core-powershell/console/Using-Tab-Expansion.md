@@ -9,22 +9,22 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 644dbbb51e98efda9735f0ff23489e936f6b28a2
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: fd950429d80972b6025e67ea727aa49ef195e882
 
 ---
 
 # 使用选项卡扩展
-命令行 shell 通常提供一种方法来自动完成长文件或命令的名称，从而加快命令输入并给出提示。 Windows PowerShell 允许通过按下 **Tab** 键来填充文件名称和 cmdlet 名称。
+Command-line Shell 通常提供一种方法来自动完成长文件或命令的名称，从而加快命令输入并给出提示。 Windows PowerShell 允许通过按下 **Tab** 键来填充文件名称和 cmdlet 名称。
 
 > [!NOTE]
 > 选项卡扩展由内部函数 TabExpansion 控制。 由于此函数可被修改或覆盖，所以此讨论可用作针对默认 Windows PowerShell 配置的行为的指导。
 
 若要从可用选择中自动填充文件名或路径，键入部分名称并按下 **Tab** 键。 Windows PowerShell 将自动将名称扩展至找到的第一个匹配项。 重复按下 **Tab** 将循环浏览所有可用选择。
 
-cmdlet 名称的选项卡扩展稍有不同。 若要在 cmdlet 名称上使用选项卡扩充，键入名称的整个第一部分（即谓词），然后是后跟的连字符。 你可以填入名称的更多内容以进行部分匹配。 例如，如果你键入 **get\-co** 然后按下 **Tab** 键，Windows PowerShell 将自动将其扩展为 **Get\-Command cmdlet**（注意，还会将字母的大小写改为标准形式）。 如果你再次按下 **Tab**，Windows PowerShell 会将此替换为另一个唯一匹配的 cmdlet 名称，**Get\-Content**。
+cmdlet 名称的选项卡扩展稍有不同。 若要在 cmdlet 名称上使用选项卡扩充，键入名称的整个第一部分（即谓词），然后是后跟的连字符。 你可以填入名称的更多内容以进行部分匹配。 例如，如果你键入 **get-co** 然后按下 **Tab** 键，Windows PowerShell 将自动将其扩展为 **Get-Command** cmdlet（注意，还会将字母的大小写改为标准形式）。 如果你再次按下 **Tab**，Windows PowerShell 会将此替换为另一个唯一的匹配的 cmdlet 名称，**Get-Content**。
 
-你可以在同一行上重复使用选项卡扩展。 例如，你可以通过输入以下内容在 **Get\-Content** cmdlet 的名称上使用 tab 扩展：
+你可以在同一行上重复使用选项卡扩展。 例如，你可以通过输入以下内容在 **Get-Content** cmdlet 的名称上使用选项卡扩展：
 
 ```
 PS> Get-Con<Tab>
@@ -54,6 +54,6 @@ PS> Get-Content C:\windows\actsetup.log
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

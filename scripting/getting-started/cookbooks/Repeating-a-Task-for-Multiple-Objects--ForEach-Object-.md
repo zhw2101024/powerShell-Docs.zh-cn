@@ -9,15 +9,15 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 6697a12d-2470-4ed6-b5bb-c35e5d525eb6
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 8a8ebbaecde15efa15aa7a23a4c31db5e808d454
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 8dd7904611fb697f9b398161e12765454b4f3441
 
 ---
 
 # 为多个对象重复执行任务 (ForEach-Object)
-**ForEach\-Object** cmdlet 为当前管道对象使用脚本块和 $\_ 描述符，以便你可以对管道中的每个对象运行命令。 这可用于执行某些复杂的任务。
+**ForEach-Object** cmdlet 为当前管道对象使用脚本块和 $_ 描述符，以便你可以对管道中的每个对象运行命令。 这可用于执行某些复杂的任务。
 
-一种有帮助的情况就是操纵数据使其更为有用。 例如，WMI 的 Win32\_LogicalDisk 类可用于返回每个本地磁盘的可用空间信息。 返回以字节表示的数据，但是，这也将增加阅读的难度：
+一种有帮助的情况就是操纵数据使其更为有用。 例如，WMI 的 Win32_LogicalDisk 类可用于返回每个本地磁盘的可用空间信息。 返回以字节表示的数据，但是，这也将增加阅读的难度：
 
 ```
 PS> Get-WmiObject -Class Win32_LogicalDisk
@@ -30,7 +30,7 @@ Size         : 203912880128
 VolumeName   : Local Disk
 ```
 
-我们可以通过将每个值除以 1024 两次来将 FreeSpace 值转换为兆字节；第一次除法后，该数据将以千字节为单位，而完成第二次除法后，该值则以兆字节为单位。 你可通过键入以下内容在 ForEach\-Object 脚本块中实现此操作：
+我们可以通过将每个值除以 1024 两次来将 FreeSpace 值转换为兆字节；第一次除法后，该数据将以千字节为单位，而完成第二次除法后，该值则以兆字节为单位。 你可通过键入以下内容在 ForEach-Object 脚本块中实现此操作：
 
 ```
 Get-WmiObject -Class Win32_LogicalDisk | ForEach-Object -Process {($_.FreeSpace)/1024.0/1024.0}
@@ -52,11 +52,11 @@ At line:1 char:70
 eeSpace = ($_.FreeSpace)/1024.0/1024.0}
 ```
 
-可以通过使用一些高级技术重新组织数据，但更简单的方法是通过使用 **Select\-Object** 创建新对象。
+可以通过使用一些高级技术重新组织数据，但更简单的方法是通过使用 **Select-Object** 创建新对象。
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

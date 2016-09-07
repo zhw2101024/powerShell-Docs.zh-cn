@@ -8,8 +8,8 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: ed586e55f4533ce5be7c68564e5cc537fed05016
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: dc50a729855a71d61c187da9d698bd294f740546
 
 ---
 
@@ -178,7 +178,7 @@ Windows PowerShell Web 访问安全模型在基于 Web 控制台的最终用户�
 
 管理员可能想对为了进行 Windows PowerShell 远程管理已在其环境中定义的 Windows PowerShell Web 访问用户执行相同的授权规则。 本部分中的第一个程序描述如何添加安全授权规则，此类规则可授予一名用户访问权限，以便用户登录并管理一台计算机，以及处于单个会话配置中。 第二个程序描述如何删除不再需要的授权规则。
 
-如果你计划使用自定义会话配置以允许特定用户仅在 Windows PowerShell Web 访问的限制运行空间中运行，则创建自定义会话配置，然后再添加参考其的授权规则。 无法使用 Windows PowerShell Web 访问 cmdlet 创建自定义会话配置。 有关创建自定义会话配置的详细信息，请参阅 MSDN 上的 [about\_Session\_Configuration\_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx)。
+如果你计划使用自定义会话配置以允许特定用户仅在 Windows PowerShell Web 访问的限制运行空间中运行，则创建自定义会话配置，然后再添加参考其的授权规则。 无法使用 Windows PowerShell Web 访问 cmdlet 创建自定义会话配置。 有关创建自定义会话配置的详细信息，请参阅 MSDN 上的 [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx)。
 
 Windows PowerShell Web 访问 cmdlet 支持一个通配符，即星号 ( \* )。 字符串中的通配符不受支持；根据属性（用户、计算机或会话配置）使用单个星号。
 
@@ -200,13 +200,13 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即星号 ( \* )。
 
 #### 添加受限的授权规则
 
-1.  使用提升的用户权限执行以下操作之一以打开 Windows PowerShell 会话。
+1.  使用提升的用户权限执行以下操作之一打开 Windows PowerShell 会话。
 
     -   在 Windows 桌面上，右键单击任务栏上的**Windows PowerShell**，然后单击**以管理员身份运行**。
 
     -   在 Windows **开始**屏幕上，右键单击**Windows PowerShell**，然后单击**以管理员身份运行**。
 
-2.  <span class="label">使用会话配置限制用户访问的可选步骤：</span>验证要在规则中使用的会话配置已存在。 如果尚未创建这些配置，则使用 MSDN 上 [about\_Session\_Configuration\_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) 中用于创建会话配置的说明。
+2.  <span class="label">使用会话配置限制用户访问的可选步骤：</span>验证要在规则中使用的会话配置已存在。 如果尚未创建这些配置，则使用 MSDN 上 [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) 中用于创建会话配置的说明。
 
 3.  键入以下命令，然后按**Enter**。
 
@@ -214,13 +214,13 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即星号 ( \* )。
 
         Add-PswaAuthorizationRule –UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
-    本授权规则允许特定用户通过他们通常访问的网络访问一台计算机，以及可让特定用户拥有对满足用户常见的脚本和 cmdlet 需求的特定会话配置的权限。 在以下示例中，<span class="code">Contoso</span> 域中名为 <span class="code">JSmith</span> 的用户获得访问权限，以管理计算机 <span class="code">Contoso\_214</span>，并使用名为 <span class="code">NewAdminsOnly</span> 的会话配置。
+    本授权规则允许特定用户通过他们通常访问的网络访问一台计算机，以及可让特定用户拥有对满足用户常见的脚本和 cmdlet 需求的特定会话配置的权限。 在以下示例中，<span class="code">Contoso</span> 域中名为 <span class="code">JSmith</span> 的用户获得访问权限，以管理计算机 <span class="code">Contoso_214</span>，并使用名为 <span class="code">NewAdminsOnly</span> 的会话配置。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_4e760377-e401-4ef4-988f-7a0aec1b2a90'); "Copy to clipboard.")
 
         Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  确保通过运行 **Get-PswaAuthorizationRule** cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user &gt;ComputerName** &lt;computer\_name&gt; 创建了该规则。 例如，**Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso\_214**。
+4.  确保通过运行 **Get-PswaAuthorizationRule** cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt; 创建了该规则。 例如，**Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso_214**。
 
 #### 删除授权规则
 
@@ -257,7 +257,7 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即星号 ( \* )。
 
 ------------------------------------------------------------------------
 
-每个 Windows PowerShell 会话都使用会话配置；如果尚未为会话指定任何会话配置，Windows PowerShell 将使用默认的内置 Windows PowerShell 会话配置（被称为 Microsoft.PowerShell）。 默认的会话配置包括计算机上可用的所有 cmdlet。 管理员可利用受限的运行空间（有限范围内的其最终用户可执行的 cmdlet 和任务）定义会话配置，从而限制对所有计算机的访问权限。 对于有权访问一台具有所有语言访问权限的计算机或仅可访问 Windows PowerShell 远程管理 cmdlet 的用户，可连接到其他与第一台计算机连接的计算机。 定义受限的运行空间可阻止用户从其获准许的 Windows PowerShell 运行空间访问其他计算机，从而改善你的 Windows PowerShell Web 访问环境的安全性。 可（通过使用组策略）将会话配置分配给所有管理员想通过 Windows PowerShell Web 访问进行访问的计算机。 有关会话配置的详细信息，请参阅 [about\_Session\_Configurations](https://technet.microsoft.com/library/dd819508.aspx)。 以下是本方案的一些示例。
+每个 Windows PowerShell 会话都使用会话配置；如果尚未为会话指定任何会话配置，Windows PowerShell 将使用默认的内置 Windows PowerShell 会话配置（被称为 Microsoft.PowerShell）。 默认的会话配置包括计算机上可用的所有 cmdlet。 管理员可利用受限的运行空间（有限范围内的其最终用户可执行的 cmdlet 和任务）定义会话配置，从而限制对所有计算机的访问权限。 对于有权访问一台具有所有语言访问权限的计算机或仅可访问 Windows PowerShell 远程管理 cmdlet 的用户，可连接到其他与第一台计算机连接的计算机。 定义受限的运行空间可阻止用户从其获准许的 Windows PowerShell 运行空间访问其他计算机，从而改善你的 Windows PowerShell Web 访问环境的安全性。 可（通过使用组策略）将会话配置分配给所有管理员想通过 Windows PowerShell Web 访问进行访问的计算机。 有关会话配置的详细信息，请参阅 [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)。 以下是本方案的一些示例。
 
 -   管理员创建名为 **PswaEndpoint** 的终结点，其中带有受限的运行空间。 然后管理员创建规则 (**\*,\*,PswaEndpoint**)，并将终结点分配给其他计算机。 规则可让所有用户访问所有带有终结点 **PswaEndpoint** 的计算机。 如果这只是在规则集中定义的授权规则，则不能访问不带有终结点的计算机。
 
@@ -293,7 +293,7 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即星号 ( \* )。
 
     在上述情景中，Windows PowerShell Web 访问仅在以下操作已成功且至少一个授权规则允许使用以下操作之后才会建立到目标计算机的成功连接。
 
-    1.  工作组网关服务器上的身份验证，方法是向授权规则添加采用 *server\_name*\\*user\_name* 格式的用户名
+    1.  工作组网关服务器上的身份验证，方法是向授权规则添加采用 *server_name*\\*user_name* 格式的用户名
 
     2.  目标计算机上的身份验证，方法是使用“可选连接设置”区域的登录页面中提供的备用凭据
 
@@ -373,7 +373,7 @@ Windows PowerShell Web 访问会话超时。 在 Windows Server 2012 上运行�
 ------------------------------------------------------------------------
 
 [安装和使用 Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
-[about\_Session\_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
+[about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 [Windows PowerShell Web 访问 Cmdlet](https://technet.microsoft.com/library/hh918342.aspx)
 
 <span>显示：</span>继承内容受保护
@@ -428,6 +428,6 @@ Windows PowerShell Web 访问会话超时。 在 Windows Server 2012 上运行�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

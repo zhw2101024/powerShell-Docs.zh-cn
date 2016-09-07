@@ -8,8 +8,8 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 6366ec9c49f721b758b6a520f68cf2b3c5ee0caf
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: df935247806f108705c9528e4c5454ce499becef
 
 ---
 
@@ -197,6 +197,6 @@ ms.openlocfilehash: 6366ec9c49f721b758b6a520f68cf2b3c5ee0caf
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

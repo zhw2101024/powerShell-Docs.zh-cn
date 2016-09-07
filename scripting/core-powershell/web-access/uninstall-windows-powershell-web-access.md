@@ -8,8 +8,8 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: ee5e88ece27add955fcef3a9df0a441a08251e77
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: d54139714552943901f565a8525bb478ed308f09
 
 ---
 
@@ -74,7 +74,7 @@ ms.openlocfilehash: ee5e88ece27add955fcef3a9df0a441a08251e77
 
     -   在 Windows **开始**屏幕上，右键单击**Windows PowerShell**，然后单击**以管理员身份运行**。
 
-2.  键入以下内容，然后按 **Enter**，其中的 *computer\_name* 代表要从中删除 Windows PowerShell Web 访问的远程服务器。 如果在删除过程中有必要，<span class="code">–Restart</span> 参数将自动重新启动目标服务器。
+2.  键入以下内容，然后按 **Enter**，其中的 *computer_name* 代表要从中删除 Windows PowerShell Web 访问的远程服务器。 如果在删除过程中有必要，<span class="code">–Restart</span> 参数将自动重新启动目标服务器。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_7b534520-f292-471f-89e3-a1079c03e369'); "Copy to clipboard.")
 
@@ -86,7 +86,7 @@ ms.openlocfilehash: ee5e88ece27add955fcef3a9df0a441a08251e77
 
         Uninstall-WindowsFeature –Name WindowsPowerShellWebAccess –VHD <path> -ComputerName <computer_name> -Restart
 
-3.  删除完成后，验证你已删除 Windows PowerShell Web 访问，方法是打开服务管理器中的“所有服务器”页面，选择要删除其功能的服务器，然后在选定服务器的页面上查看“角色和功能”磁贴。 你也可以将选定的服务器作为目标运行 <span class="code">Get-WindowsFeature</span> cmdlet (Get-WindowsFeature -ComputerName &lt;*computer\_name*&gt;)，以查看该服务器上安装的角色和功能的列表。
+3.  删除完成后，验证你已删除 Windows PowerShell Web 访问，方法是打开服务管理器中的“所有服务器”页面，选择要删除其功能的服务器，然后在选定服务器的页面上查看“角色和功能”磁贴。 你也可以将选定的服务器作为目标运行 <span class="code">Get-WindowsFeature</span> cmdlet (Get-WindowsFeature -ComputerName &lt;*computer_name*&gt;)，以查看该服务器上安装的角色和功能的列表。
 
 <a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">自定义卸载</span></a>
 <a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
@@ -219,6 +219,6 @@ ms.openlocfilehash: ee5e88ece27add955fcef3a9df0a441a08251e77
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

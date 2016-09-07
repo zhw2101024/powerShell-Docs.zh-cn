@@ -1,14 +1,21 @@
 ---
-title: 使用 Windows PowerShell
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "使用 Windows PowerShell"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 994e6c89f6fc20b95691f010deb3c48062cef310
+
 ---
+
 # 使用 Windows PowerShell
-Windows PowerShellÂ® 是基于任务的命令行管理程序和脚本语言，专为进行系统管理而设计。 在 .NET Framework 的基础上构建的 Windows PowerShell 可帮助 IT 专业人士和高级用户控制和自动执行 Windows 操作系统以及在 Windows 上运行的应用程序的管理。
+Windows PowerShell® 是基于任务的命令行管理程序和脚本语言，专为进行系统管理而设计。 在 .NET Framework 的基础上构建的 Windows PowerShell 可帮助 IT 专业人士和高级用户控制和自动执行 Windows 操作系统以及在 Windows 上运行的应用程序的管理。
 
 本部分中的资源可帮助你了解 Windows PowerShell、Windows PowerShell 附带的功能，以及图形 Windows PowerShell 编辑器、Windows PowerShell 集成脚本环境。
 
@@ -28,7 +35,7 @@ Windows PowerShellÂ® 是基于任务的命令行管理程序和脚本语言，
 -   [Windows PowerShell 术语表](../../Windows-PowerShell-Glossary.md)。 了解 Windows PowerShell 及其文档中的常用术语。
 
 ## 相关技术
-Windows PowerShell 是一系列相关脚本编写技术的一部分，这些技术可帮助你自动执行基于 Windows 的计算机的远程管理。 此处为你提供了指向有关这些技术的详细信息的链接。
+Windows PowerShell 是一系列相关脚本编写技术的一部分，这些技术可以帮助你自动执行基于 Windows 的计算机的远程管理。 此处为你提供了指向有关这些技术的详细信息的链接。
 
 -   [Windows PowerShell 工作流](http://technet.microsoft.com/library/jj134242.aspx)。 Windows PowerShell 工作流在 Windows PowerShell 3.0 中首次引入，可让 IT 专业人员和开发人员通过 Windows PowerShell 的自动化功能和简易操作来利用 [Windows Workflow Foundation](http://msdn.microsoft.com/library/ee342461.aspx) 的优势。
 
@@ -62,13 +69,15 @@ Windows PowerShell 是一系列相关脚本编写技术的一部分，这些技�
 
 -   [Update-Help](http://technet.microsoft.com/library/hh849720.aspx) cmdlet。 用于在计算机上下载和安装 Windows PowerShell 模块的最新版本帮助主题的 Windows PowerShell cmdlet。
 
-    有关 Windows PowerShell 中可更新的帮助系统的详细信息（包括如何在网络隔离的计算机上安装可更新帮助），请参阅 [about_Updatable_Help](http://technet.microsoft.com/library/hh847735.aspx)、[Save-Help](http://technet.microsoft.com/library/hh849724.aspx) 和[支持可更新的帮助](http://msdn.microsoft.com/library/hh852754.aspx).
+    有关 Windows PowerShell 中可更新的帮助系统的详细信息（包括如何在网络隔离的计算机上安装可更新帮助），请参阅 [about_Updatable_Help](http://technet.microsoft.com/library/hh847735.aspx)、[Save-Help](http://technet.microsoft.com/library/hh849724.aspx) 和[支持可更新的帮助](http://msdn.microsoft.com/library/hh852754.aspx)。
 
 -   [Get-Help](http://technet.microsoft.com/library/hh849696(v=wps.630).aspx) cmdlet。 可用于了解在系统上安装的 cmdlet 和提供程序的 Windows PowerShell cmdlet。
 
--   通过订阅到以下 RSS 源，可以获取有关已发布帮助文件的任何更新的通知：[http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions](http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions).
+-   通过订阅到以下 RSS 源，可以获取有关已发布帮助文件的任何更新的通知：[http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions](http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions)。
 
 
-<!--HONumber=May16_HO2-->
+
+
+<!--HONumber=Aug16_HO4-->
 
 

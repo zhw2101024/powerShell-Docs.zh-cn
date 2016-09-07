@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
 translationtype: Human Translation
-ms.sourcegitcommit: 1ae9150b226147c039acf0738690de4da8686a71
-ms.openlocfilehash: e2e129c1c90ab7561861a7d9c71fb654569d5712
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: b5b797ed09f9f43bfd0259e4af8b3754655d7c84
 
 ---
 
@@ -47,12 +47,12 @@ Windows PowerShell 4.0 需要完全安装 Microsoft .NET Framework 4.5。 Window
 
 Windows PowerShell 3.0 需要完全安装 Microsoft .NET Framework 4。 默认情况下，Windows 8 和 Windows Server 2012 中包含了满足此要求的 Microsoft .NET Framework 4.5。
 
-若要安装 Microsoft .NET Framework 4.5 (dotNetFx45\_Full\_setup.exe)，请参阅 Microsoft 下载中心的 [Microsoft .NET Framework 4.5](http://go.microsoft.com/fwlink/?LinkID=242919)。
+若要安装 Microsoft .NET Framework 4.5 (dotNetFx45_Full_setup.exe)，请参阅 Microsoft 下载中心的 [Microsoft .NET Framework 4.5](http://go.microsoft.com/fwlink/?LinkID=242919)。
 
-若要安装 Microsoft .NET Framework 4 (dotNetFx40\_Full\_setup.exe) 的完全安装，请参阅 Microsoft 下载中心的 [Microsoft .NET Framework 4（Web 安装程序）](http://go.microsoft.com/fwlink/?LinkID=212931)。
+若要安装 Microsoft .NET Framework 4 (dotNetFx40_Full_setup.exe) 的完全安装，请参阅 Microsoft 下载中心的 [Microsoft .NET Framework 4 (Web Installer)](http://go.microsoft.com/fwlink/?LinkID=212931)。
 
-## WS\-Management 3.0
-Windows PowerShell 3.0 和 Windows PowerShell 4.0 需要支持 WinRM 服务和 WSMan 协议的 WS\-Management 3.0。 Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、Windows Management Framework 4.0 和 Windows Management Framework 3.0 中包含此程序。
+## WS-Management 3.0
+Windows PowerShell 3.0 和 Windows PowerShell 4.0 需要支持 WinRM 服务和 WSMan 协议的 WS-Management 3.0。 Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、Windows Management Framework 4.0 和 Windows Management Framework 3.0 中包含此程序。
 
 ## Windows Management Instrumentation 3.0
 Windows PowerShell 3.0 和 Windows PowerShell 4.0 要求安装 Windows Management Instrumentation 3.0 (WMI)。 Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、Windows Management Framework 4.0 和 Windows Management Framework 3.0 中包含此程序。 如果计算机上未安装此程序，则不能运行需要 WMI 的功能，如 CIM 命令。
@@ -84,7 +84,7 @@ Windows PowerShell 是基于控制台的应用程序，不需要图形用户界�
     2.  [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) 和 [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) cmdlet 的 **ShowSecurityDescriptorUI** 参数。
 
 ## Windows PowerShell 引擎要求
-Windows PowerShell 4.0 旨在能够与 Windows PowerShell 3.0 和 Windows PowerShell 2.0 向后兼容。 为 Windows PowerShell 2.0 和 Windows PowerShell 3.0 编写的 cmdlet、提供程序、管理单元、模块以及脚本无需更改，即可在 Windows PowerShell 4.0 中运行。
+Windows PowerShell 4.0 旨在能够与 Windows PowerShell 3.0 和 Windows PowerShell 2.0 向后兼容。 为 Windows PowerShell 2.0 和 Windows PowerShell 3.0 编写的 Cmdlet、提供程序、管理单元、模块以及脚本无需更改，即可在 Windows PowerShell 4.0 中运行。
 
 但是，由于 Microsoft.NET framework 4 中的运行时激活策略的更改，为 Windows PowerShell 2.0 编写并使用公共语言运行时 (CLR) 2.0 编译的 Windows PowerShell 主机程序在使用 CLR 4.0 编译的 Windows PowerShell 3.0 中未进行修改时，将无法运行。
 
@@ -117,6 +117,6 @@ Windows PowerShell 2.0、Windows PowerShell 3.0 和 Windows PowerShell 4.0 在 W
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

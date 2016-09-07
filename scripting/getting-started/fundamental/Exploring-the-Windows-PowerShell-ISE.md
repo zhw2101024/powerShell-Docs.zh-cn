@@ -9,22 +9,22 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 642bc1ba2e6d63de2ef692a1e2c547fb3f1a5946
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: c1f285a1d1beb35c931c17f5944d7ec697cb152e
 
 ---
 
 # 探究 Windows PowerShell ISE
-Windows PowerShellÂ® 集成脚本环境 (ISE) 可用于创建、运行和调试命令与脚本。 Windows PowerShell ISE 包含菜单栏、Windows PowerShell 选项卡、工具栏、脚本选项卡、脚本窗格、控制台窗格、状态栏、文本大小滑块和上下文相关帮助。
+Windows PowerShellÂ® 集成脚本环境 (ISE) 可用于创建、运行和调试命令与脚本。 Windows PowerShell ISE 包含菜单栏、Windows PowerShell 选项卡、工具栏、脚本选项卡、脚本窗格、控制台窗格、状态栏、文字大小滑块和区分上下文的帮助。
 
 > [!NOTE]
 > 以 Windows PowerShell ISE 3.0 开头的命令和输出窗格已合并为单一的控制台窗格。
 
 ## 菜单栏
-菜单栏包含“**文件**”、“**编辑**”、“**视图**”、“**工具**”、“**调试**”、“**附加设备**”和“**帮助**”菜单。 菜单上的按钮允许执行与编写和运行脚本以及在 Windows PowerShell ISE 中运行命令相关的任务。 此外，可以通过运行使用 [Windows PowerShell ISE 脚本对象模型](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)的脚本将[外接程序工具](../../core-powershell/ise/The-ISEAddOnTool-Object.md)放置在菜单栏上。
+菜单栏包含“**文件**”、“**编辑**”、“**视图**”、“**工具**”、“**调试**”、“**加载项**”和“**帮助**”菜单。 菜单上的按钮允许执行与编写和运行脚本以及在 Windows PowerShell ISE 中运行命令相关的任务。 此外，可以通过运行使用 [Windows PowerShell ISE 脚本对象模型](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)的脚本将[外接程序工具](../../core-powershell/ise/The-ISEAddOnTool-Object.md)放置在菜单栏上。
 
 > [!NOTE]
-> 在 Windows PowerShell ISE 2.0 中，不存在“**工具**”和“**附加设备**”菜单。
+> 在 Windows PowerShell ISE 2.0 中，不存在“**工具**”和“**加载项**”菜单。
 
 ## Windows PowerShell 选项卡
 Windows PowerShell 选项卡是 Windows PowerShell 脚本可在其中运行的环境。 可以在 Windows PowerShell ISE 中打开新的 Windows PowerShell 选项卡以在本地计算机或远程计算机上创建单独的环境。 最多可同时打开八个 PowerShell 选项卡。
@@ -64,16 +64,16 @@ Windows PowerShell 选项卡是 Windows PowerShell 脚本可在其中运行的�
 显示已运行的命令和脚本的结果。 还可以在输出窗格中复制和清除内容。
 
 ## 命令窗格
-允许编写命令。 可以在命令窗格中运行单行命令或多行命令。 按 SHIFT\+ENTER 以输入多行命令的每一行，并在输入最后一行后按 ENTER 以执行该多行命令。 命令窗格顶部显示的提示将展示当前工作目录的路径。
+允许编写命令。 可以在命令窗格中运行单行命令或多行命令。 按 SHIFT+ENTER 以输入多行命令的每一行，并在输入最后一行后按 ENTER 以执行该多行命令。 命令窗格顶部显示的提示将展示当前工作目录的路径。
 
 ## 状态栏
 允许查看你运行的命令和脚本是否完成。 状态栏位于显示器最底部。 错误消息的已选部分将显示在状态栏中。
 
-## 文本大小滑块
+## 文字大小滑块
 增大或减小屏幕上的文字大小。
 
 ## 帮助
-可在 Web 上的 TechNet 库中找到有关 Windows PowerShell ISE 的帮助。 可以通过单击“帮助”菜单上的“Windows PowerShell ISE 帮助”打开帮助，或通过在任意位置（光标在脚本窗格或控制台窗格中的 cmdlet 名称上时除外）按 F1 键打开帮助。******** 从“**帮助**”菜单还可以运行 Update\-Help cmdlet 和显示命令窗口，该命令窗口可显示某个 cmdlet 的所有参数并允许你在易于使用的窗体中填写参数，从而帮助你构造命令。
+可在 Web 上的 TechNet 库中找到有关 Windows PowerShell ISE 的帮助。 可以通过单击“帮助”菜单上的“Windows PowerShell ISE 帮助”打开帮助，或通过在任意位置（光标在脚本窗格或控制台窗格中的 cmdlet 名称上时除外）按 F1 键打开帮助。 从“**帮助**”菜单还可以运行 Update-Help cmdlet 和显示命令窗口，该命令窗口可显示某个 cmdlet 的所有参数并允许你在易于使用的窗体中填写参数，从而帮助你构造命令。
 
 ## 另请参阅
 [使用 Windows PowerShell ISE](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
@@ -81,6 +81,6 @@ Windows PowerShell 选项卡是 Windows PowerShell 脚本可在其中运行的�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

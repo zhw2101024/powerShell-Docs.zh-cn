@@ -1,12 +1,19 @@
 ---
-title: Windows PowerShell ISE 脚本对象模型的用途
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Windows PowerShell ISE 脚本对象模型的用途"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: d176a131-ab0c-43ee-80c1-f824ab8e4a05
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 16bd9de4e5636431a192dc3d49e3310c816b997f
+
 ---
+
 # Windows PowerShell ISE 脚本对象模型的用途
   对象与 Windows PowerShell 集成脚本环境 (ISE) 的窗体和函数相关。 对象模型参考提供有关这些对象公开的成员属性和方法的详细信息。 提供了示例来演示如何使用脚本直接访问这些方法和属性。 脚本对象模型使得可以轻松完成下列任务。
 
@@ -71,6 +78,7 @@ ms.assetid: d176a131-ab0c-43ee-80c1-f824ab8e4a05
   
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 
