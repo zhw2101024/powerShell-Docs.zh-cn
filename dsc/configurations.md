@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 59bf4cff540dabeeb77038ea84177f7c6bac2b4b
-ms.openlocfilehash: e5412a3168a18d1dbd117ed8b3eb6dd42a8d8f70
+ms.sourcegitcommit: 6c5f3d3321b7e50215cf58267e1864b7da827764
+ms.openlocfilehash: d84bb35ada3588367436e6f5e3c6696b90c3661b
 
 ---
 
@@ -45,7 +45,7 @@ Configuration MyDscConfiguration {
 - 一个或多个**节点**块。 这些将定义正在配置的节点（计算机或 VM）。 在以上配置中，有一个以计算机为目标的名为“TEST-PC1”的**节点**块。
 - 一个或多个资源块。 这是此配置为其正在配置的资源设置属性的位置。 在这种情况下，有两个资源块，每个资源块都调用“WindowsFeature”资源。
 
-在**配置**块中，你可以执行通常可在 PoweShell 函数中执行的任何操作。 例如，在上一示例中，如果不想在配置中对目标计算机名进行硬编码，则可以为节点名添加参数：
+在**配置**块中，可执行在 PowerShell 函数中通常可执行的任何操作。 例如，在上一示例中，如果不想在配置中对目标计算机名进行硬编码，则可以为节点名添加参数：
 
 ```powershell
 Configuration MyDscConfiguration {
@@ -137,6 +137,6 @@ Configuration DependsOnExample {
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

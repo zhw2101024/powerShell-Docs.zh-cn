@@ -9,8 +9,8 @@ ms.date: 2016-06-22
 title: "端到端 - Active Directory"
 ms.technology: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 5954eb797df43de6f132a434ecad7049ee0221fb
-ms.openlocfilehash: 204909c16d5e3e2099f6ba4247929d61445cd654
+ms.sourcegitcommit: 33e92c7fd6039a1e3f5f784470c7bd0e43a7f030
+ms.openlocfilehash: e7ea3957ce3bbd3ce0fc072a82cd108606f05614
 
 ---
 
@@ -27,7 +27,7 @@ ms.openlocfilehash: 204909c16d5e3e2099f6ba4247929d61445cd654
 若要按照此部分进行逐步操作，需在域控制器上进行操作。
 如果你无权访问你的域控制器，请不要担心。
 请尝试对你熟悉的其他方案或角色进行操作以便跟进。
-如果你想要快速设置新的域控制器，请参阅[“创建域控制器”附录](#creating-a-domain-controller)。
+如要快速设置新的域控制器，请参阅[“创建域控制器”附录](.\creating-a-domain-controller.md)。
 
 ## 创建新角色功能和会话配置的步骤
 
@@ -163,7 +163,7 @@ Set-ADUser -Identity $Identity -ChangePasswordAtLogon
 现在，你的用户可以轻松调用 `Reset-ContosoUserPassword` 而无需记忆创建安全字符串内联的语法。
 
 ## 步骤 4：编辑角色功能文件
-在[角色功能创建](#role-capability-creation)部分，你创建了一个空白的角色功能文件。
+在[角色功能创建](./role-capabilities.md#role-capability-creation)部分，已创建一个空白的角色功能文件。
 在本部分中，你将在该文件中填充值。
 
 首先在 PowerShell ISE 中打开该角色功能文件。
@@ -273,6 +273,6 @@ ValidatePattern 是该形参的实参必须匹配的正则表达式。
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

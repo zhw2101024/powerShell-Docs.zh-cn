@@ -9,8 +9,8 @@ ms.date: 2016-06-22
 title: "自述文件"
 ms.technology: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: bd7f637d0889fd0f56c3fa653389819341d2ccff
-ms.openlocfilehash: bfee5ef59a4085f0350ff454f634fc0bf5d6d837
+ms.sourcegitcommit: 8149f656f0aacbb23cacc8a1a9b45ed59866b92f
+ms.openlocfilehash: 7bb5635832e912b39ec387e8ac93ada24a434ff8
 
 ---
 
@@ -83,7 +83,7 @@ JEA 正与 Windows Server 2016 同步开发，并可通过 Windows Management Fr
 
 ## 开始创作你自己的 JEA 终结点
 创作 JEA 终结点很容易 -- 仅需启用了 JEA 的系统和文件编辑器（如 PowerShell ISE）。
-对于开始使用很有帮助的一个提示是，使用不带任何其他参数的 `New-PSRoleCapabilityFile -Path <path>` 和 `New-PSSessionCapabilityFile -Path <Path>` 创建主干文件。
+使用不带任何其他参数的 [`New-PSRoleCapabilityFile -Path <path>`](https://technet.microsoft.com/library/mt631422.aspx) 和 [`New-PSSessionConfigurationFile -Path <Path>`](https://technet.microsoft.com/library/mt631422.aspx) 创建主干文件，此技巧对于初学者而言尤为有用。
 这些主干文件包含所有适用的配置字段，以及解释每个字段用途的有益注释。
 
 若要更轻松地创作 JEA 终结点，请参阅 [JEA 工具包帮助程序](http://blogs.technet.com/b/privatecloud/archive/2015/12/20/introducing-the-updated-jea-helper-tool.aspx)，它提供可以用于创作会话配置文件和角色功能文件的 GUI。
@@ -92,6 +92,6 @@ JEA 正与 Windows Server 2016 同步开发，并可通过 Windows Management Fr
 
 
 
-<!--HONumber=Jul16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

@@ -16,6 +16,8 @@ New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersio
 ```
 我们支持创建目录版本 1 和 2。 版本 1 使用 SHA1 哈希算法来创建文件哈希值，版本 2 则使用 SHA256。 Windows Server 2008 R2 和 Windows 7 不支持目录版本 2。 如果使用的平台为 Windows 8、Windows Server 2012 及更高版本，则建议使用目录版本 2。  
 
+若要在现有模块上使用此命令，请指定 CatalogFilePath 和 Path 变量，以匹配模块清单的位置。 在下面的示例中，模块清单位于 C:\Program Files\Windows PowerShell\Modules\Pester。 
+
 ![](../../images/NewFileCatalog.jpg)
 
 这将创建目录文件。 
@@ -42,6 +44,7 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 
 
 
-<!--HONumber=Jul16_HO3-->
+
+<!--HONumber=Aug16_HO5-->
 
 
