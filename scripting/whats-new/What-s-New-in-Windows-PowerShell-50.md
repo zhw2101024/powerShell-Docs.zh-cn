@@ -256,7 +256,7 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 
 -   针对 Windows PowerShell ISE 的改进使创作 DSC 资源变得轻松。 现在可以执行以下操作。
 
-    -   通过在块内的空行上输入 **Ctrl+Space** 来列出**配置**或**节点**块内的 DSC 资源。
+    -   通过在块内的空行上输入 **Ctrl+Space** ，列出**配置**或**节点**块内的所有 DSC 资源。
 
     -   **枚举**类型的资源属性的自动完成。
 
