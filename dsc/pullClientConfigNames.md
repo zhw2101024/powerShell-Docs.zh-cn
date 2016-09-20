@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 32ff157c7c8366cf0c9847dec4815d2d4b9cc5fa
+ms.sourcegitcommit: b617ae80ae6a555e531469efde07e443d83c51d8
+ms.openlocfilehash: 02721f0f6f68cc78ae0430205d06f079e3e7465a
 
 ---
 
@@ -25,7 +25,7 @@ ms.openlocfilehash: 32ff157c7c8366cf0c9847dec4815d2d4b9cc5fa
 
 ```powershell
 [DSCLocalConfigurationManager()]
-configuration PullClientConfigID
+configuration PullClientConfigNames
 {
     Node localhost
     {
@@ -44,18 +44,22 @@ configuration PullClientConfigID
         }      
     }
 }
-PullClientConfigID
+PullClientConfigNames
 ```
 
 在该脚本中，**ConfigurationRepositoryWeb** 块定义了请求服务器。 **ServerURL** 属性为请求服务器指定终结点。
 
-**RegistrationKey** 属性是请求服务器的所有客户端节点与该请求服务器之间的共享密钥。 请求服务器上的文件中存储了相同的值。 **ConfigurationNames** 属性指定用于客户端节点的配置的名称。 在请求服务器上，必须将此客户端节点的配置 MOF 文件命名为 *ConfigurationNames*.mof，其中 *ConfigurationNames* 的值与你在此元配置中设置的 **ConfigurationNames** 属性的值相匹配。
+**RegistrationKey** 属性是请求服务器的所有客户端节点与该请求服务器之间的共享密钥。 请求服务器上的文件中存储了相同的值。 
 
-此脚本运行后，将创建名为 **PullClientConfigID** 的新输出文件夹，并在其中放入元配置 MOF 文件。 在本例中，会将元配置 MOF 文件命名为 `localhost.meta.mof`。
+**ConfigurationNames** 属性是指定用于客户端节点的配置的名称的数组。 在请求服务器上，必须将此客户端节点的配置 MOF 文件命名为 *ConfigurationNames*.mof，其中 *ConfigurationNames* 的值与你在此元配置中设置的 **ConfigurationNames** 属性的值相匹配。
 
-若要应用配置，请调用 **Set-DscLocalConfigurationManager** cmdlet，并将 **Path** 设置为元配置 MOF 文件的位置。 例如： `Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigID –Verbose.`
+>**注意：**如果你在 **ConfigurationNames** 中指定多个值，则必须也在你的配置中指定 **PartialConfiguration** 块。 有关部分配置的信息，请参阅 [PowerShell Desired State Configuration 部分配置](partialConfigs.md)。
 
-> **注意**：注册密钥仅适用于 Web 请求服务器。 对于 SMB 请求服务器，你仍必须使用 **ConfigurationID**。 有关使用 **ConfigurationID** 配置请求服务器的信息，请参阅[使用配置 ID 设置请求客户端](pullClientConfigID.md)
+此脚本运行后，将创建名为 **PullClientConfigNames** 的新输出文件夹，并在其中放入元配置 MOF 文件。 在本例中，会将元配置 MOF 文件命名为 `localhost.meta.mof`。
+
+若要应用配置，请调用 **Set-DscLocalConfigurationManager** cmdlet，并将 **Path** 设置为元配置 MOF 文件的位置。 例如： `Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigNames –Verbose.`
+
+> **注意**：注册密钥仅适用于 Web 请求服务器。 对于 SMB 请求服务器，你仍必须使用 **ConfigurationID**。 有关使用 **ConfigurationID** 配置请求服务器的信息，请参阅[使用配置 ID 设置请求客户端](PullClientConfigNames.md)
 
 ## 资源和报表服务器
 
@@ -63,7 +67,7 @@ PullClientConfigID
 
 ```powershell
 [DSCLocalConfigurationManager()]
-configuration PullClientConfigID
+configuration PullClientConfigNames
 {
     Node localhost
     {
@@ -80,17 +84,14 @@ configuration PullClientConfigID
             RegistrationKey = 'fbc6ef09-ad98-4aad-a062-92b0e0327562'
         }
         
-        
-
         ReportServerWeb CONTOSO-PullSrv
         {
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
         }
     }
 }
-PullClientConfigID
+PullClientConfigNames
 ```
-
 
 还可以为资源和报告指定不同的请求服务器。 若要指定资源服务器，请使用 **ResourceRepositoryWeb**（适用于 Web 请求服务器）或 **ResourceRepositoryShare**（适用于 SMB 请求服务器）块。
 若要指定报表服务器，请使用 **ReportRepositoryWeb** 块。 报表服务器不能为 SMB 服务器。
@@ -98,7 +99,7 @@ PullClientConfigID
 
 ```powershell
 [DSCLocalConfigurationManager()]
-configuration PullClientConfigID
+configuration PullClientConfigNames
 {
     Node localhost
     {
@@ -128,17 +129,17 @@ configuration PullClientConfigID
         }
     }
 }
-PullClientConfigID
+PullClientConfigNames
 ```
 
 ## 另请参阅
 
-* [使用配置 ID 设置请求客户端](pullClientConfigID.md)
+* [使用配置 ID 设置请求客户端](PullClientConfigNames.md)
 * [设置 DSC Web 请求服务器](pullServer.md)
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

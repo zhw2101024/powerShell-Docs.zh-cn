@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 97ffa20191016584fc2fba459c457787365d11ee
+ms.sourcegitcommit: 62f993e3d3e6ef744fb07920d332d476dfd24fc6
+ms.openlocfilehash: 60085295fa7df6179a81cd98859cd33e6923150f
 
 ---
 
@@ -29,6 +29,12 @@ Log [string] #ResourceName
 }
 ```
 
+注意：默认情况下，仅启用 DSC 的“操作”日志。
+必须先启用“分析”日志才能看到或使用它。
+请参阅以下文章。
+
+[DSC 事件日志在哪里？](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs)
+
 ## “属性”
 |  属性  |  说明   | 
 |---|---| 
@@ -42,15 +48,24 @@ Log [string] #ResourceName
 > **注意**：如果你在配置此资源后运行 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx)，它将始终返回 **$false**。
 
 ```powershell 
-Log LogExample
+Configuration logResourceTest
 {
-    Message = "This message will appear in the Microsoft-Windows-Desired State Configuration/Analytic event log."
-} 
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+
+    Node localhost
+
+    {
+        Log LogExample
+        {
+            Message = "This message will appear in the Microsoft-Windows-Desired State Configuration/Analytic event log."
+        }
+    }
+}
 ```
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 
