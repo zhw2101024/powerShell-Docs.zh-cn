@@ -74,8 +74,8 @@
 
 ### [我可以从何处深入了解？](getting-started/more-powershell-learning.md)
 
-## [核心 PowerShell](core-powershell/core-powershell.md)
-### [核心模块](core-powershell/core-modules.md)
+## [常见 PowerShell](core-powershell/core-powershell.md)
+### [常见模块](core-powershell/core-modules.md)
 ####  [存档模块](core-powershell/core-modules/Microsoft.PowerShell.Archive-Module.md)
 ####  [核心模块](core-powershell/core-modules/Microsoft.PowerShell.Core-Module.md)
 ####  [核心模块参考列表](core-powershell/core-modules/Windows-PowerShell-5.0.md)
@@ -106,6 +106,7 @@
 ####  [如何在 PowerShell ISE 中调试脚本](core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)
 ####  [如何在 PowerShell ISE 中使用配置文件](core-powershell/ise/How-to-Use-Profiles-in-Windows-PowerShell-ISE.md)
 ####  [如何在 PowerShell ISE 中使用控制台窗格](core-powershell/ise/How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
+####  [如何在脚本窗格和控制台窗格中使用 Tab 自动补全](core-powershell/ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
 ####  [如何在 Windows PowerShell ISE 中编写和运行脚本](core-powershell/ise/How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md)
 ####  [PowerShell ISE 简介](core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)
 ####  [ISE 模块](core-powershell/ise/ISE-Module.md)
@@ -123,7 +124,6 @@
 
 ### [控制台](core-powershell/console-guide.md)
 ####  [控制台命令行参考](core-powershell/console/PowerShell.exe-Command-Line-Help.md)
-####  [如何在脚本窗格和控制台窗格中使用 Tab 自动补全](core-powershell/ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
 ####  [使用选项卡扩展](core-powershell/console/Using-Tab-Expansion.md)
 
 ### [运行远程命令](core-powershell/Running-Remote-Commands.md)
@@ -142,6 +142,6 @@
 ## [PowerShell 术语表](Windows-PowerShell-Glossary.md)
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

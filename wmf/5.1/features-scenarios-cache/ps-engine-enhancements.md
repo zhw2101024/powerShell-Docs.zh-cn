@@ -2,8 +2,8 @@
 title: "PowerShell 引擎增强功能"
 author: jasonsh
 translationtype: Human Translation
-ms.sourcegitcommit: 6813902aec214aee9ede27ff79dd291364e9f443
-ms.openlocfilehash: f864850128f118704d7545b09110835ab1d51b8e
+ms.sourcegitcommit: 47c963343c541d0f2ace194f365de5fcd809ccc5
+ms.openlocfilehash: 1b35a25312b44d14ec8771be9e17aaa43e270b61
 
 ---
 
@@ -19,7 +19,7 @@ ms.openlocfilehash: f864850128f118704d7545b09110835ab1d51b8e
 1. 启动
 2. 向 ForEach-Object 和 Where-Object 这类 cmdlet 进行管道传递的速度大约提供了 50% 
 
-一些示例改进（结果可能因硬件而异）： 
+一些示例改进（结果可能因你的硬件而异）： 
 
 | 方案 | 5.0 时间（毫秒） | 5.1 时间（毫秒） |
 | -------- | :---------------: | :---------------: |
@@ -28,7 +28,7 @@ ms.openlocfilehash: f864850128f118704d7545b09110835ab1d51b8e
 | 构建的命令分析缓存： `powershell -command "Unknown-Command"` | 7000 | 520 |
 | <code>1..1000000 &#124; % { }</code> | 1400 | 750 |
   
-与启动相关的一个更改可能会影响某些（不支持的）方案。 PowerShell 不再读取文件 `$pshome\*.ps1xml` - 这些文件已转换为 C#，以避免处理 xml 文件的某些文件和 cpu 开销。 这些文件仍存在，以同时支持 V2，因此如果更改文件内容，则不会对 V5 产生任何影响，只会影响 V2。 请注意，更改这些文件的内容从来都不是受支持的方案。
+与启动相关的一个更改可能会影响某些（不支持的）方案。 PowerShell 不再读取文件 `$pshome\*.ps1xml` - 这些文件已转换为 C#，以避免处理 XML 文件的某些文件和 CPU 开销。 这些文件仍存在，以同时支持 V2，因此如果更改文件内容，则不会对 V5 产生任何影响，只会影响 V2。 请注意，更改这些文件的内容从来都不是受支持的方案。
 
 另一个显著更改是 PowerShell 如何为系统上安装的模块缓存导出的命令和其他信息。 以前，此缓存存储在目录 `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\CommandAnalysis` 中。 在 WMF 5.1 中，此缓存是单个文件 `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\ModuleAnalysisCache`。
 有关详细信息，请参阅 [analysis_cache.md]()。
@@ -49,7 +49,7 @@ WMF5.1 将此行为更改为完全遵循 `$env:PSModulePath`。 这允许定义 
 
 ### 文件重定向不再硬编码 `-Encoding Unicode` ###
 
-在所有以前版本的 PowerShell 中，无法控制文件重定向运算符使用的文件编码（例如 `get-childitem > out.txt`），因为 PowerShell 添加了 `-Encoding Unicode`。
+在所有以前版本的 PowerShell 中，无法控制文件重定向运算符使用的文件编码（例如 `Get-ChildItem > out.txt`），因为 PowerShell 添加了 `-Encoding Unicode`。
 
 从 WMF 5.1 开始，现在可以通过设置 `$PSDefaultParameterValues` 来更改重定向的文件编码，例如
 
@@ -60,20 +60,20 @@ $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
 ### 修复了成员访问中的回归 `System.Reflection.TypeInfo` ###
 
 WMF5 中引入的回归会破坏 `System.Reflection.RuntimeType` 的成员访问（例如 `[int].ImplementedInterfaces`）。
-WMF5.1 中已修复了此 bug。
+WMF 5.1 中已修复了此 bug。
 
 
 ### 修复了与 COM 对象相关的一些问题 ###
 
 WMF5 引入了一个新 COM 绑定器，用于对 COM 对象调用方法和访问 COM 对象的属性。
-这一新绑定器显著提高了性能，但是同样引入了一些 bug，在 WMF5.1 中已修复了它们。
+这一新绑定器显著提高了性能，但是同样引入了一些 bug，在 WMF 5.1 中已修复了它们。
 
 #### 参数转换并不总是正确执行 ####
 
 在以下示例中：
 
 ```
-$obj = new-object -com wscript.shell
+$obj = New-Object -ComObject WScript.Shell
 $obj.SendKeys([char]173)
 ```
 
@@ -100,7 +100,7 @@ $x = Get-COMDictionary
 
 ### `[ordered]` 不允许在类中使用 ###
 
-WMF5 引入了会对类中使用的类型文本进行验证的类。  `[ordered]` 类似于类型文本，但不是成为真正的 .Net 类型。  WMF5 错误地对类中的 `[ordered]` 报告错误：
+WMF5 引入了会对类中使用的类型文本进行验证的类。  `[ordered]` 类似于类型文本，但不是成为真正的 .NET 类型。  WMF5 错误地对类中的 `[ordered]` 报告错误：
 
 ```
 class CThing
@@ -123,6 +123,6 @@ Get-Help 未提供用于指定你希望获取相关帮助的版本的方法，�
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 3b752c3c-0bd0-4eca-a2d3-2d5a37fd9d84
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 07f7fb6b4e5d94de31551566ca8faff263817383
+ms.sourcegitcommit: b14aaee5a66a80295420fe9b517ba1fc652c86bf
+ms.openlocfilehash: 290d9237e20b35ec603f0967854b1e0d193e6cbb
 
 ---
 
@@ -26,15 +26,15 @@ ms.openlocfilehash: 07f7fb6b4e5d94de31551566ca8faff263817383
 ## 自动完成 cmdlet 参数输入
 在命令窗格或脚本窗格中，键入 cmdlet 后跟一个破折号，然后按 TAB 键。
 
-例如，键入 `get-process -`，然后多次按 TAB 键以显示 cmdlet 的每个参数。
+例如，键入 `Get-Process -`，然后多次按 TAB 键以显示 cmdlet 的每个参数。
 
 ## 另请参阅
-[使用 Windows PowerShell ISE](using-the-windows-powershell-ise.md)
-[如何创建 PowerShell 选项卡](How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)
+- [使用 Windows PowerShell ISE](using-the-windows-powershell-ise.md)
+- [如何创建 PowerShell 选项卡](How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

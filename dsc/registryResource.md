@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 15e346ecd630a1256477d375bc1373f376e76f64
+ms.sourcegitcommit: 62f993e3d3e6ef744fb07920d332d476dfd24fc6
+ms.openlocfilehash: 48b68a99baa489dad38e7072b171db10ee0f7386
 
 ---
 
@@ -64,19 +64,28 @@ Registry [string] #ResourceName
 <li>可扩展字符串 (REG_EXPAND_SZ)</li></ul>
 
 ## 示例
+此示例确保名为“ExampleKey”的键存在于 **HKEY\_LOCAL\_MACHINE** 配置单元中。
 ```powershell
-Registry RegistryExample
+Configuration RegistryTest
 {
-    Ensure = "Present"  # You can also set Ensure to "Absent"
-    Key = "HKEY_LOCAL_MACHINE\SOFTWARE\ExampleKey"
-    ValueName = "TestValue"
-    ValueData = "TestData"
+    Registry RegistryExample
+    {
+        Ensure      = "Present"  # You can also set Ensure to "Absent"
+        Key         = "HKEY_LOCAL_MACHINE\SOFTWARE\ExampleKey"
+        ValueName   = "TestValue"
+        ValueData   = "TestData"
+    }
 }
 ```
 
+>**注意：**要在 **HKEY\_CURRENT\_USER** 配置单元中更改注册表设置，需要使用用户凭据运行配置，而不是将配置作为系统运行。
+>可以使用 **PsDscRunAsCredential** 属性来指定配置的用户凭据。 有关示例，请参阅[使用用户凭据运行 DSC](runAsUser.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+
+<!--HONumber=Sep16_HO3-->
 
 

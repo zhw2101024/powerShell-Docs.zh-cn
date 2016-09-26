@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 44d67705-87c7-4a69-a53e-6471fdebb757
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: d48ea75b99ef3d20c3e180ccec7f35adf6290a63
+ms.sourcegitcommit: 117b3fe541b7a92479e9c68e07fa21fc8add9678
+ms.openlocfilehash: 4588577c0c05fadee6b443e2fa4c32049cf99ac3
 
 ---
 
 # 如何在 Windows PowerShell ISE 中使用控制台窗格
-Windows PowerShellÂ® 集成脚本环境 (ISE) 的“控制台”窗格的运行方式和独立的 Windows PowerShell ISE 控制台窗口完全一样。
+Windows PowerShell® 集成脚本环境 (ISE) 的“控制台”窗格的运行方式和独立的 Windows PowerShell ISE 控制台窗口完全一样。
 
 若要在控制台窗格中运行命令，请键入命令，然后按 ENTER 键。 若要输入多个命令并且你想要按顺序执行这些命令，请在命令之间键入 SHIFT+ENTER。 有关键入命令的帮助，请参阅[如何在脚本窗格和控制台窗格中使用 Tab 自动补全](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)。
 
@@ -35,6 +35,6 @@ Windows PowerShellÂ® 集成脚本环境 (ISE) 的“控制台”窗格的运�
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

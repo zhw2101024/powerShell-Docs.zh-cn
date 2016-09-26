@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 901cf8190252ac344182bf49d550a8adade559a0
-ms.openlocfilehash: c66b8d6abf4886143f71c0de823cbfde86d875ba
+ms.sourcegitcommit: 140f60bf7344eae57e2b5d364464bc0b7c1a2220
+ms.openlocfilehash: 5d37938869a71bea0d8a6349e680411b7d0200d9
 
 ---
 
@@ -65,7 +65,7 @@ LCM 配置只能包含有限组资源的块。 在上面的示例中，调用的
 |----------- |------- |--------------- | 
 | ConfigurationModeFrequencyMins| UInt32| 检查和应用当前配置的时间间隔（以分钟为单位）。 如果将 ConfigurationMode 属性设置为 ApplyOnly，则将忽略此属性。 默认值为 15。 <br> __注意__：此属性的值必须是 __RefreshFrequencyMins__ 属性值的倍数，或者 __RefreshFrequencyMins__ 属性值必须为此属性值的倍数。| 
 | RebootNodeIfNeeded| 布尔| 将此设置为 __$true__，可在应用要求重启的设置后自动重启节点。 否则，你必须为要求重启的配置手动重启节点。 默认值为 __$false__。| 
-| ConfigurationMode| 字符串 | 指定 LCM 实际如何将配置应用到目标节点。 可能的值为__“ApplyOnly”__、__“ApplyandMonitior”（默认值）__和__“ApplyandAutoCorrect”__。 <ul><li>__ApplyOnly__：DSC 将应用配置，但若未向目标节点推送新配置或从服务器请求新配置，则它不会执行任何进一步操作。 首次应用新配置后，DSC 不会检查是否偏离以前配置的状态。</li><li> __ApplyAndMonitor__：这是默认值。 LCM 将应用任意新配置。 首次应用新配置后，如果目标节点偏离期望状态，则 DSC 将在日志中报告差异。</li><li>__ApplyAndAutoCorrect__：DSC 将应用任何新配置。 首次应用新配置后，如果目标节点偏离适当状态，则 DSC 将在日志中报告差异然后重新应用当前配置。</li></ul>| 
+| ConfigurationMode| 字符串 | 指定 LCM 实际如何将配置应用到目标节点。 可能的值为__“ApplyOnly”__、__“ApplyandMonitior”（默认值）__和__“ApplyandAutoCorrect”__。 <ul><li>__ApplyOnly__：DSC 将应用配置，但若未向目标节点推送新配置或从服务器请求新配置，则它不会执行任何进一步操作。 首次应用新配置后，DSC 不会检查是否偏离以前配置的状态。 请注意，__ApplyOnly__ 生效前，DSC 将尝试应用配置，直到成功为止。 </li><li> __ApplyAndMonitor__：这是默认值。 LCM 将应用任意新配置。 首次应用新配置后，如果目标节点偏离期望状态，则 DSC 将在日志中报告差异。 请注意，__ApplyAndMonitor__ 生效前，DSC 将尝试应用配置，直到成功为止。</li><li>__ApplyAndAutoCorrect__：DSC 将应用任何新配置。 首次应用新配置后，如果目标节点偏离适当状态，则 DSC 将在日志中报告差异然后重新应用当前配置。</li></ul>| 
 | ActionAfterReboot| 字符串| 指定在应用配置期间重启后进行什么操作。 可能的值为__“ContinueConfiguration”（默认值）__和__“StopConfiguration”__。 <ul><li> __ContinueConfiguration__：在计算机重新启动后继续应用当前配置。</li><li>__StopConfiguration__：在计算机重新启动后停止当前配置。</li></ul>| 
 | RefreshMode| 字符串| 指定 LCM 如何获取配置。 可能的值为__“Disabled”__、__“Push”（默认值）__和__“Pull”__。 <ul><li>__Disabled__：DSC 配置对该节点禁用。</li><li> __Push__：通过调用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet 启动配置。 将配置立即应用到节点。 这是默认值。</li><li>__Pull：__将节点配置为从请求服务器定期检查配置。 如果此属性被设置为 __Pull__，你必须在 __ConfigurationRepositoryWeb__ 或 __ConfigurationRepositoryShare__ 块中指定请求服务器。 有关请求服务器的详细信息，请参阅[设置 DSC 请求服务器](pullServer.md)。</li></ul>| 
 | CertificateID| 字符串| 指定访问配置时用于保护凭据的证书的 GUID。 更多详细信息，请参阅 [Want to secure credentials in Windows PowerShell Desired State Configuration?（希望在 Windows PowerShell Desired State Configuration 中保护凭据？）](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)。| 
@@ -167,6 +167,6 @@ LCM 配置只能包含有限组资源的块。 在上面的示例中，调用的
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 
