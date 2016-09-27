@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 6b3c739ef54596495dad65dd51c3bcb4404c3d94
+ms.sourcegitcommit: 26d8bc85b78248e15558dbfef72d32cca7de9627
+ms.openlocfilehash: e63809763808836af9f468c2ac55ede42836d6b2
 
 ---
 
@@ -168,14 +168,14 @@ Commands
 ```
 
 ## 另请参阅
- [ISEAddOnToolCollection 对象](The-ISEAddOnToolCollection-Object.md)
- [Windows PowerShell ISE 脚本对象模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
- [Windows PowerShell ISE 对象模型参考](Windows-PowerShell-ISE-Object-Model-Reference.md)
- [ISE 对象模型层次结构](The-ISE-Object-Model-Hierarchy.md)
+- [ISEAddOnToolCollection 对象](The-ISEAddOnToolCollection-Object.md)
+- [Windows PowerShell ISE 脚本对象模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Windows PowerShell ISE 对象模型参考](Windows-PowerShell-ISE-Object-Model-Reference.md)
+- [ISE 对象模型层次结构](The-ISE-Object-Model-Hierarchy.md)
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Sep16_HO4-->
 
 
