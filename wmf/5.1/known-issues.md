@@ -9,14 +9,18 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: f413ba6470985622e55bb4bd175d7c5d4b94c7d9
-ms.openlocfilehash: e545d49381a92ef3f7cc6a27316cbfc3a036a8c9
+ms.sourcegitcommit: 3dde62efa7ba595ed5160cc81b4e2b17a54e52a2
+ms.openlocfilehash: d4c9e88ddd6cfaec611527d19d00cbd4db9f5d1d
 
 ---
 
 #WMF 5.1 中的已知问题（预览版） #
 
 > 注意：此信息是预发布版本，可能会进行更改。
+
+##以管理员身份启动 PowerShell 快捷方式
+在安装 WMF 时，如果尝试以管理员身份通过该快捷方式启动 PowerShell，可能会显示“未指定的错误”消息。
+以非管理员身份重新打开快捷方式，快捷方式现在甚至可以管理员身份工作。
 
 ##Pester
 在本版本中，在 Nano 服务器上使用 Pester 时应注意两个问题：
@@ -30,6 +34,6 @@ ms.openlocfilehash: e545d49381a92ef3f7cc6a27316cbfc3a036a8c9
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 
