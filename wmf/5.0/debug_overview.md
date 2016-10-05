@@ -43,6 +43,6 @@ Windows PowerShell ISE 现在可以通过运行 PSEdit 命令，在远程会话�
 -   Enter-PSHostProcess
 -   Exit-PSHostProcess
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

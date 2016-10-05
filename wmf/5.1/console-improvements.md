@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 57049ff138604b0e13c8fd949ae14da05cb03a4b
-ms.openlocfilehash: 221b8095c15a810c032bd93aafe8ec886af233d9
+ms.sourcegitcommit: 749c1ca8bc617014dffacecce7d14a55adc38036
+ms.openlocfilehash: 2a17fdd4092adf734398f38bec915d53c1b3e566
 
 ---
 
@@ -18,7 +18,7 @@ ms.openlocfilehash: 221b8095c15a810c032bd93aafe8ec886af233d9
 
 ## PowerShell 控制台改进
 
-在 WMF 5.1 中对 Powershell.exe 进行了以下更改以改进控制台体验：
+在 WMF 5.1 中对 powershell.exe 进行了以下更改以改进控制台体验：
 
 ###VT100 支持
 
@@ -51,12 +51,12 @@ else
 
 在早期版本中，重定向 stdin 以及你要以交互方式输入命令时，需要使用 `powershell -File -` 启动 PowerShell。
 
-借助 WMF 5.1，不再需要这一难以发现的选项，你可以在不使用任何选项的情况下启动 powershell，例如 `powershell`。
+使用 WMF 5.1，不再需要如此困难地发现选项。 你可以在不使用任何选项的情况下启动 PowerShell，例如 `powershell`。
 
-请注意，PSReadline 当前不支持重定向 stdin，使用重定向 stdin 的内置命令行编辑体验极其有限，例如箭头键不起作用。  PSReadline 的未来版本应该会解决此问题。   
+请注意，PSReadline 当前不支持重定向 stdin，使用重定向 stdin 的内置命令行编辑体验极其有限，例如箭头键不起作用。 PSReadline 的未来版本应该会解决此问题。   
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 

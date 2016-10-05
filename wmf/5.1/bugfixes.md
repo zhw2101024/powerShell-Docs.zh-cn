@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 57049ff138604b0e13c8fd949ae14da05cb03a4b
-ms.openlocfilehash: 90d57af0c8b90e709769525455ae39557b9c7176
+ms.sourcegitcommit: be3659b02cb1bc58cc13aa9d8f92946b2afa37b1
+ms.openlocfilehash: 8a7774b36f15ff790c31d4c1a8bc69be257b8508
 
 ---
 
@@ -28,9 +28,9 @@ WMF 5.1 将此行为更改为完全遵循 `$env:PSModulePath`。 这允许定义
 
 ### 文件重定向不再硬编码 `-Encoding Unicode` ###
 
-在所有以前版本的 PowerShell 中，无法控制文件重定向运算符使用的文件编码（例如 `get-childitem > out.txt`），因为 PowerShell 添加了 `-Encoding Unicode`。
+在所有以前版本的 PowerShell 中，无法控制文件重定向运算符使用的文件编码（例如 `Get-ChildItem > out.txt`），因为 PowerShell 添加了 `-Encoding Unicode`。
 
-从 WMF 5.1 开始，现在可以通过设置 `$PSDefaultParameterValues` 来更改重定向的文件编码，例如
+从 WMF 5.1 开始，现在可以通过设置 `$PSDefaultParameterValues` 来更改重定向的文件编码：
 
 ```
 $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
@@ -39,20 +39,19 @@ $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
 ### 修复了成员访问中的回归 `System.Reflection.TypeInfo` ###
 
 WMF 5.0 中引入的回归会破坏 `System.Reflection.RuntimeType` 的成员访问（例如 `[int].ImplementedInterfaces`）。
-WMF5.1 中已修复了此 bug。
+WMF 5.1 中已修复了此 bug。
 
 
 ### 修复了与 COM 对象相关的一些问题 ###
 
-WMF 5.0 引入了一个新 COM 绑定器，用于对 COM 对象调用方法和访问 COM 对象的属性。
-这一新绑定器显著提高了性能，但是同样引入了一些 bug，在 WMF5.1 中已修复了它们。
+WMF 5.0 引入了一个新 COM 绑定器，用于对 COM 对象调用方法和访问 COM 对象的属性。 这一新绑定器显著提高了性能，但是同样引入了一些 bug，在 WMF 5.1 中已修复了它们。
 
 #### 参数转换并不总是正确执行 ####
 
 在以下示例中：
 
 ```
-$obj = new-object -com wscript.shell
+$obj = New-Object -ComObject WScript.Shell
 $obj.SendKeys([char]173)
 ```
 
@@ -74,13 +73,14 @@ function Get-COMDictionary
 $x = Get-COMDictionary
 ```
 
-在上面的示例中，WMF 5.0 错误地将 Scripting.Dictionary 写入管道，而不是枚举键值对。
+在上面的示例中，WMF 5.0 错误地将 Scripting.Dictionary 写入管道，而不是枚举键/值对。
 
 此更改还解决了 [Connect 上的问题 1752224](https://connect.microsoft.com/PowerShell/feedback/details/1752224)
 
 ### `[ordered]` 不允许在类中使用 ###
 
-WMF5 引入了会对类中使用的类型文本进行验证的类。  `[ordered]` 类似于类型文本，但不是成为真正的 .Net 类型。  WMF5 错误地对类中的 `[ordered]` 报告错误：
+WMF 5.0 引入了会对类中使用的类型文本进行验证的类。  
+`[ordered]` 类似于类型文本，但不是成为真正的 .NET 类型。 WMF 5.0 错误地对类中的 `[ordered]` 报告错误：
 
 ```
 class CThing
@@ -99,10 +99,10 @@ class CThing
 
 WMF 5.1 通过返回有关最新版本主题的帮助来解决此问题。
 
-Get-Help 未提供用于指定你希望获取相关帮助的版本的方法。 若要解决此问题，请导航到模块目录，然后使用工具（如自己喜爱的编辑器）来直接查看帮助。 
+`Get-Help` 未提供用于指定你希望获取相关帮助的版本的方法。 若要解决此问题，请导航到模块目录，然后使用工具（如自己喜爱的编辑器）来直接查看帮助。 
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 
