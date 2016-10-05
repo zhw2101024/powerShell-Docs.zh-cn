@@ -11,6 +11,6 @@
 这种加密仅适用于配置 MOF 文档（例如 pending.mof、current.mof、previous.mof 和部分 MOF）。 仍以纯文本格式保存元配置 MOF，因为它们不太可能包含机密信息。
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

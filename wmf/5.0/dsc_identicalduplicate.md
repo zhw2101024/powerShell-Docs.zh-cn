@@ -86,6 +86,6 @@ Configuration WebApplication
 
 这个非常相似的配置将失败，因为 WindowsFeature FE_IIS 和 WindowsFeature Worker_IIS 资源由于不再完全相同而发生冲突。
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -11,6 +11,6 @@
 已将 PsDesiredStateConfiguration 的模块版本更新至 1.1。 针对 WMF 5.0 预览版 2015 年 2 月版或更早版本编译的 DSC 配置对于 PowerShell/WMF 5.0 将无效。 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -9,19 +9,19 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 0a53817d6af625822d9183d2a0d5bc7bf4d2b264
-ms.openlocfilehash: 058d18deeb3d4926970ea25a157f92ad14836e4b
+ms.sourcegitcommit: c88163b5a7d8805d0dea82d321796d8f41d17bb8
+ms.openlocfilehash: 26a325dc7a18ba167ddc56ca226fce3eded79f52
 
 ---
 
 # 安装并配置 WMF 5.1（预览版） #
 
 ## 安装 .Net 4.6
-必须安装 .Net Framework 4.6，才可使用 WMF 5.1。 必须启动新的目录签名功能，这将影响 WMF 5.1 中模块和脚本加载的若干方面。 
+要使用 WMF 5.1，必须安装 .Net Framework 4.6。 必须启动新的目录签名功能，这将影响 WMF 5.1 中模块和脚本加载的若干方面。 
 
-[.Net Framework 4.6 作为 KB 3045560](https://support.microsoft.com/en-us/kb/3045560) 提供。 下载位置提供了安装说明。
+[.NET Framework 4.6 作为 KB 3045560](https://support.microsoft.com/en-us/kb/3045560) 提供。 下载位置提供了安装说明。
 
-> **注意：**存在一个已知问题 - WMF 5.1 预览版安装程序未检测到 .NET 4.6 要求，因此你将可在安装 .Net 4.6 前安装 WMF 5.1 预览版。 我们的测试表明，你可在安装 WMF 5.1 预览版后安装 .Net 4.6。 WMF 5.1 的最终版本将在安装前正确检查此先决条件要求。 
+> **注意：**存在一个已知问题 - WMF 5.1 预览版安装程序未检测到 .NET 4.6 要求，因此你将可在安装 .NET 4.6 前安装 WMF 5.1 预览版。 我们的测试表明，你可在安装 WMF 5.1 预览版后安装 .NET 4.6。 WMF 5.1 的最终版本将在安装前正确检查此先决条件要求。 
 
 ## 下载和安装 WMF 5.1 预览版
 
@@ -62,11 +62,11 @@ ms.openlocfilehash: 058d18deeb3d4926970ea25a157f92ad14836e4b
 - WMF 5.1 需要 [Microsoft .NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560)。 可按照下载位置的说明安装 Microsoft .NET Framework 4.6。
 - [SHA-2 代码签名](https://technet.microsoft.com/en-us/library/security/3033929)的安全更新。 Windows 目录文件需要使用新的 PowerShell cmdlet。 
 
-> **WinRM 依赖关系** - Windows PowerShell Desired State Configuration (DSC) 依赖 WinRM。 在 Windows Server 2008 R2 和 Windows 7 上默认不启用 WinRM。 若要启用 WinRM，请在 Windows PowerShell 提升的会话中运行 `Set-WSManQuickConfig`。
+> **WinRM 依赖关系** - Windows PowerShell Desired State Configuration (DSC) 依赖 WinRM。 在 Windows Server 2008 R2 和 Windows 7 上默认不启用 WinRM。 若要启用 WinRM，在 Windows PowerShell 提升的会话中运行 `Set-WSManQuickConfig`。
 
 
 
 
-<!--HONumber=Jul16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

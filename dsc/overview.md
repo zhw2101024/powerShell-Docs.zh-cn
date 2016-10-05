@@ -55,6 +55,6 @@ DSC 还包含用于创建配置的大量新语言关键字、cmdlet 和工具，
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

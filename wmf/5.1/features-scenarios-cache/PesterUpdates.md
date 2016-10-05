@@ -12,6 +12,6 @@
 * 一个代码覆盖率测试失败的原因是当前 Nano 中不存在 *WindowsFeature* DSC 资源。 这些故障通常是无害的。
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -7,6 +7,6 @@ Windows PowerShell 脚本已经得到改进以应用到所有主机应用程序�
 脚本选项（包括启用系统范围内的脚本）可以使用“打开 PowerShell 脚本”组策略设置（位于“管理模板”->“Windows 组件”->“Windows PowerShell”中）来进行配置。
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

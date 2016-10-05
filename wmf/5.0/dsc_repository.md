@@ -4,6 +4,6 @@
 
 有关详细信息，请参阅[使用配置 ID 设置请求客户端](https://msdn.microsoft.com/powershell/dsc/pullclientconfigid)或[使用配置名称设置请求客户端](https://msdn.microsoft.com/powershell/dsc/pullclientconfignames)
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

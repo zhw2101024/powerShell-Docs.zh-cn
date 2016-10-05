@@ -32,6 +32,6 @@ DSC 资源是一个 Windows PowerShell 模块。 该模块既包含资源的架�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -10,6 +10,6 @@
 我们还添加了 LCMStateDetail 属性，它包含有关状态的详细信息。
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 
