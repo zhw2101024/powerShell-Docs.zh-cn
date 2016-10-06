@@ -21,6 +21,6 @@ Mode LastWriteTime Length Name
 剪贴板 cmdlet 支持图像、音频文件、文件列表和文本。
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

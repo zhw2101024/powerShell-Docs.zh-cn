@@ -139,6 +139,6 @@ Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 如果已连接到 JEA 会话，运行你有权访问的列在允许列表中的“角色功能”将会受限。
  如果尝试运行任何不允许你的角色运行的命令，将会遇到错误。
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

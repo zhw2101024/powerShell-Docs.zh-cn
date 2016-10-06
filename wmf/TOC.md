@@ -5,7 +5,7 @@
 ### [Desired State Configuration (DSC) 中的改进](5.1/DSC-improvements.md)
 ### [PowerShell 控制台中的改进](5.1/console-improvements.md)
 ### [PowerShell 引擎中的改进](5.1/engine-improvements.md)
-### [程序包管理中的改进](5/1/package-management-improvements.md)
+### [程序包管理中的改进](5.1/package-management-improvements.md)
 ### [WMF 5.1 中修复的 bug](5.1/bugfixes.md)
 ## [安装和配置](5.1/install-configure.md)
 ## [已知问题](5.1/known-issues.md)
@@ -34,7 +34,7 @@
 ##### [DSC 配置的帮助支持](5.0/dsc_confighelp.md)
 ##### [使用 PowerShell ISE 创作改进](5.0/dsc_authoring.md)
 ##### [配置中完全相同的重复资源的限额](5.0/dsc_identicalduplicate.md)
-##### [Import-DscResource 关键字支持 -moduleversion 参数](5.0/dsc_importdscresource.md)
+##### [Import-DscResource 关键字支持 -ModuleVersion 参数](5.0/dsc_importdscresource.md)
 ##### [对 Configuration 关键字的 WOW64 支持](5.0/dsc_wow64.md)
 #### [资源]()
 ##### [基于类的 DSC 资源](5.0/dsc_classbasedresource.md)
@@ -51,12 +51,12 @@
 ##### [RefreshMode 属性的附加值](5.0/dsc_refreshmode.md)
 #### [Cmdlet]()
 ##### [关于配置状态的详细信息](5.0/dsc_getconfigurationstatus.md)
-##### [Test-DscConfiguration cmdlet 支持引用配置](5.0/dsc_testconfiguration.md)
+##### [Test-DscConfiguration Cmdlet 支持引用配置](5.0/dsc_testconfiguration.md)
 ##### [直接访问 DSC 资源方法](5.0/dsc_directaccess.md)
 ##### [传递配置文档而不应用](5.0/dsc_publishconfig.md)
 ##### [删除 DSC 文档](5.0/dsc_removeconfigdoc.md)
 ##### [统一且一致的状态和状态表示形式](5.0/dsc_statestatus.md)
-##### [Set-DscLocalConfigurationManager cmdlet 支持 -force 参数](5.0/dsc_setdsclcm.md)
+##### [Set-DscLocalConfigurationManager Cmdlet 支持 -Force 参数](5.0/dsc_setdsclcm.md)
 #### [请求模式]()
 ##### [DSC 配置的按需请求](5.0/dsc_updateconfig.md)
 ##### [节点和配置 ID 的分离](5.0/dsc_nodeid.md)
@@ -65,7 +65,7 @@
 ### [审核使用脚本和日志记录的 PowerShell 使用情况](5.0/audit_overview.md)
 #### [增强的脚本选项](5.0/audit_transcript.md)
 #### [脚本跟踪和日志记录](5.0/audit_script.md)
-#### [加密消息语法 (CMS) cmdlet](5.0/audit_cms.md)\
+#### [加密消息语法 (CMS) Cmdlet](5.0/audit_cms.md)
 ### [使用 PackageManagement 进行软件发现、安装和盘存](5.0/oneget_overview.md)
 #### [PackageManagement Cmdlet](5.0/oneget_cmdlets.md)
 ### [使用 PowerShellGet 进行 PowerShell 模块发现、安装和盘存](5.0/psget_module_overview.md)
@@ -75,10 +75,10 @@
 #### [用于模块管理的 PowerShellGet Cmdlet](5.0/psget_modulecmdlets.md)
 ### [使用 PowerShellGet 进行 PowerShell 脚本发现、安装和管理](5.0/psget_script_overview.md)
 #### [用于脚本管理的 PowerShellGet cmdlet](5.0/psget_scriptcmdlets.md)
-### [根据社区反馈的新增和更新的 cmdlet ](5.0/feedback_cmdlets.md)
-#### [使用项 cmdlet 的符号链接](5.0/feedback_symbolic.md)
-#### [存档 cmdlet](5.0/feedback_archive.md)
-#### [剪贴板 cmdlet](5.0/feedback_clipboard.md)
+### [根据社区反馈的新增和更新的 Cmdlet](5.0/feedback_cmdlets.md)
+#### [使用项 Cmdlet 的符号链接](5.0/feedback_symbolic.md)
+#### [存档 Cmdlet](5.0/feedback_archive.md)
+#### [剪贴板 Cmdlet](5.0/feedback_clipboard.md)
 #### [Convert-String](5.0/feedback_convertstring.md)
 #### [提取和分析字符串外的结构化对象](5.0/feedback_convertfromString.md)
 #### [Format-Hex](5.0/feedback_formathex.md)
@@ -94,6 +94,6 @@
 ### [软件清单日志记录 (SIL)](5.0/sil_overview.md)
 
 
-<!--HONumber=Jul16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

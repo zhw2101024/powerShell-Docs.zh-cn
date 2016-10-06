@@ -15,6 +15,6 @@ WMF 5.0 RTM 替换 [WMF 5.0 产品预览版](http://blogs.msdn.com/b/powershell/
 *注意：*如果你正在运行 Windows 10，你可以通过更新 Windows 10 的十一月更新版（1511 版本）获取 WMF 5.0 RTM 中可用的相同功能集。 如果你尚未更新 Windows 10 系统，选择“开始”按钮，然后选择“设置”>“更新和安全”>“Windows 更新”>“检查更新”。 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

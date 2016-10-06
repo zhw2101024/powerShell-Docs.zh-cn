@@ -3,6 +3,6 @@
 WMF 5.0 可帮助你将配置文档以片段形式传递到节点。 有关详细信息，请参阅[部分配置](https://msdn.microsoft.com/powershell/dsc/partialconfigs)。
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

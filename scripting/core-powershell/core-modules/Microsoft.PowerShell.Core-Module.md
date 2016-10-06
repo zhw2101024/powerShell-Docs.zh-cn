@@ -1,12 +1,19 @@
 ---
-title: Microsoft.PowerShell.Core 模块
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Microsoft.PowerShell.Core 模块"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: caa21265-653d-4ba0-9691-b6c0310b9c3d
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: da1ec55f88ece496b8a55d1c1d0ad9bf0052c8fa
+
 ---
+
 # Microsoft.PowerShell.Core 模块
 本部分包含有关 **Microsoft.PowerShell.Core** 模块的帮助主题。 **Microsoft.PowerShell.Core** 模块随 Windows PowerShell 一起安装。
 
@@ -23,6 +30,8 @@ ms.assetid: caa21265-653d-4ba0-9691-b6c0310b9c3d
 [使用 Windows PowerShell 编写脚本](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 
 
-<!--HONumber=May16_HO2-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

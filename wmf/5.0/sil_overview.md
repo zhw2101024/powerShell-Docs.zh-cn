@@ -11,6 +11,6 @@
 有关软件清单日志记录 cmdlet 的详细信息和文档，请参阅 <http://technet.microsoft.com/library/dn383584.aspx> 中的 Windows Server 2012 R2 在线资源。
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

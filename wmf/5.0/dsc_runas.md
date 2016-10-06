@@ -4,6 +4,6 @@ WMF 5.0 支持以使用 `PsDscRunAsCredential` 属性指定的一组凭据为基
 
 有关详细信息，请参阅[使用用户凭据运行 DSC](https://msdn.microsoft.com/powershell/dsc/runasuser)。
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -35,6 +35,6 @@ Windows PowerShell Desired State Configuration (DSC) 附带有一组内置配置
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

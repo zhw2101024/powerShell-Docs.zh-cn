@@ -10,6 +10,6 @@
 -   使用 PowerShell 语言调试类型
 -   使用正式的机制以及适当的级别生成和处理异常
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

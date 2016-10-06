@@ -236,6 +236,6 @@ Show-Command 是新的 Windows PowerShell ISE 3.0。
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

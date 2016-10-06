@@ -30,6 +30,6 @@ Desired State Configuration (DSC) 资源为 DSC 配置提供构建基块。 资�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

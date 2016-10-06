@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 1bbed7edf5c2b643b88311727dd9bd4e9de88944
-ms.openlocfilehash: af0f58c5d84e21416cb15e4bd53c24369fa9c1b6
+ms.sourcegitcommit: 45182af45b2d1510b7ad8e9f2ac35fa5346ddb66
+ms.openlocfilehash: bb7efc55b1c948c349aa778b700e5cb1277b9762
 
 ---
 
@@ -26,7 +26,7 @@ ms.openlocfilehash: af0f58c5d84e21416cb15e4bd53c24369fa9c1b6
 - 启动
 - 向 ForEach-Object 和 Where-Object 这类 cmdlet 进行管道传递的速度大约提供了 50% 
 
-一些示例改进（结果可能因硬件而异）： 
+一些示例改进（结果可能因你的硬件而异）： 
 
 | 方案 | 5.0 时间（毫秒） | 5.1 时间（毫秒） |
 | -------- | :---------------: | :---------------: |
@@ -35,13 +35,16 @@ ms.openlocfilehash: af0f58c5d84e21416cb15e4bd53c24369fa9c1b6
 | 构建的命令分析缓存： `powershell -command "Unknown-Command"` | 7000 | 520 |
 | <code>1..1000000 &#124; % { }</code> | 1400 | 750 |
   
-> 注意：与启动相关的更改可能会影响某些不支持的方案。 PowerShell 不再读取文件 `$pshome\*.ps1xml` - 这些文件已转换为 C#，以避免处理 XML 文件的某些文件和 CPU 开销。 这些文件仍存在，以同时支持 V2，因此如果更改文件内容，则不会对 V5 产生任何影响，只会影响 V2。 请注意，更改这些文件的内容从来都不是受支持的方案。
+> 注意：与启动相关的更改可能会影响某些不支持的方案。 
+> PowerShell 不再读取文件 `$pshome\*.ps1xml` -- 这些文件已转换为 C#，以避免处理 XML 文件的某些文件和 CPU 开销。 
+这些文件仍存在，以同时支持 V2，因此如果更改文件内容，则不会对 V5 产生任何影响，只会影响 V2。 
+请注意，更改这些文件的内容从来都不是受支持的方案。
 
 另一个显著更改是 PowerShell 如何为系统上安装的模块缓存导出的命令和其他信息。 以前，此缓存存储在目录 `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\CommandAnalysis` 中。 在 WMF 5.1 中，此缓存是单个文件 `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\ModuleAnalysisCache`。
-有关详细信息，请参阅 [analysis_cache.md]()。
+有关详细信息，请参阅[模块分析缓存](scenarios-features.md#module-analysis-cache)。
 
 
 
-<!--HONumber=Jul16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 
