@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: c243385d2cf2cae2f7e7d52dcd529878cd1e4f5b
-ms.openlocfilehash: 05683faf5ef0baf823cb365a17c82af57fc4942e
+ms.sourcegitcommit: b414a01bcd111143791a5fac77e61ce309a0a5c5
+ms.openlocfilehash: b5de1100450a89796c20a5bbb2e71f7759374b02
 
 ---
 
@@ -30,7 +30,7 @@ ms.openlocfilehash: 05683faf5ef0baf823cb365a17c82af57fc4942e
 想要使用 PowerShell 类实现 DSC 自定义资源，请创建下列文件夹结构。 在 **MyDscResource.psm1** 中定义类，并且在 **MyDscResource.psd1** 中定义模块清单。
 
 ```
-$env: ProgramFiles\WindowsPowerShell\Modules (folder)
+$env:ProgramFiles\WindowsPowerShell\Modules (folder)
     |- MyDscResource (folder)
         |- MyDscResource.psm1 
            MyDscResource.psd1 
@@ -481,6 +481,6 @@ Start-DscConfiguration -Wait -Force Test
 
 
 
-<!--HONumber=Sep16_HO5-->
+<!--HONumber=Oct16_HO1-->
 
 
