@@ -1,3 +1,18 @@
+---
+title: "基本指南"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: e1c94c281a39b3ae026bbeea9811ecc71b9cdb1c
+
+---
+
 #  [基本 Cookbook 参考](cookbooks/basic-cookbooks-reference.md)
 
 -  [更改计算机状态](cookbooks/Changing-Computer-State.md)
@@ -35,6 +50,8 @@
 -  [使用软件安装](cookbooks/Working-with-Software-Installations.md)
 
 
-<!--HONumber=May16_HO2-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

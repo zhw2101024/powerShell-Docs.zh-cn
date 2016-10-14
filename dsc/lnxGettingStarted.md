@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: c05b48d2c903e59f8b65c4c8c289d2dd5c23c3f9
+ms.sourcegitcommit: e4385f0ed482b97e8794cde968de549902cc358e
+ms.openlocfilehash: 2283e797275f426b624119bd1191e58080780c09
 
 ---
 
@@ -184,12 +184,12 @@ $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Aut
 
 |日志文件|Directory|说明|
 |---|---|---|
-|omiserver.log|/opt/omi/var/log/|与 OMI CIM 服务器操作相关的消息。|
-|dsc.log|/opt/omi/var/log/|与本地配置管理器 (LCM) 操作和 DSC 资源操作相关的消息。|
+|omiserver.log|/var/opt/omi/log|与 OMI CIM 服务器操作相关的消息。|
+|dsc.log|/var/opt/omi/log|与本地配置管理器 (LCM) 操作和 DSC 资源操作相关的消息。|
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

@@ -1,16 +1,23 @@
 ---
-title: Windows PowerShell 核心提供程序
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Windows PowerShell 核心提供程序"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 6e24bf6d-4c70-4edf-956a-1e8e4779ba10
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: f6b1ca1a3253c941c76826c6644079a14f19ddcf
+
 ---
+
 # Windows PowerShell 核心提供程序
 此部分包含的帮助主题介绍了 **Microsoft.PowerShell.Core** 模块中的 Windows PowerShell 提供程序。
 
-Windows PowerShell 提供程序是 .NET 程序，用于使专用数据存储中的数据在 Windows PowerShell 中可用，以便你可以轻松地查看和管理它。 提供程序公开的数据显示在驱动器中，它与文件系统驱动器非常相似。 有关详细信息，请参阅 [about_Providers [v4]](https://technet.microsoft.com/en-us/library/2d9b3f32-be78-49ad-a547-21231c803242).
+Windows PowerShell 提供程序是 .NET 程序，用于使专用数据存储中的数据在 Windows PowerShell 中可用，以便你可以轻松地查看和管理它。 提供程序公开的数据显示在驱动器中，它与文件系统驱动器非常相似。 有关详细信息，请参阅 [about_Providers [v4]](https://technet.microsoft.com/en-us/library/2d9b3f32-be78-49ad-a547-21231c803242)。
 
 |提供程序|说明|
 |------------|---------------|
@@ -22,13 +29,14 @@ Windows PowerShell 提供程序是 .NET 程序，用于使专用数据存储中�
 |[Variable 提供程序 [v3]](https://technet.microsoft.com/en-us/library/78dbcbbd-7946-4b9b-b75b-146f247f821c)|提供对 Windows PowerShell 变量及其值的访问权限。|
 
 ## 另请参阅
-[Certificate 提供程序 [v3]](https://technet.microsoft.com/en-us/library/3f743541-d0c6-4670-809a-b16fb01f7c4d)
+[证书提供程序 [v3]](https://technet.microsoft.com/en-us/library/3f743541-d0c6-4670-809a-b16fb01f7c4d)
 [WSMan 提供程序 [v3]](https://technet.microsoft.com/en-us/library/4c3d8d36-4f7a-4211-996f-64110e4b2eb7)
 [about_Providers [v4]](https://technet.microsoft.com/en-us/library/2d9b3f32-be78-49ad-a547-21231c803242)
 [Microsoft.PowerShell.Core 模块](Microsoft.PowerShell.Core-Module.md)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 
