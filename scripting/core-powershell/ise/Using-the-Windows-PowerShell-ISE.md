@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 64fb5f37-90a8-4b89-9fc8-c6b8fcc0c7d0
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 117a7a3e031ffde70ebcbcb5d180c2d7b822ac76
+ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
+ms.openlocfilehash: 78e9875815adfbe18f675023e9d9d0742aca2786
 
 ---
 
 # 使用 Windows PowerShell ISE
-本文档中此主题描述可以如何使用 Windows PowerShellÂ® 集成脚本环境 (ISE) 的功能来提高工作效率。
+本文档中的本主题介绍如何使用 Windows PowerShell® 集成脚本环境 (ISE) 的功能来提高工作效率。
 
 [如何在脚本窗格和控制台窗格中使用 Tab 自动补全](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) 提供在脚本窗格和控制台窗格中执行 Tab 自动补全的步骤。
 
@@ -37,6 +37,6 @@ ms.openlocfilehash: 117a7a3e031ffde70ebcbcb5d180c2d7b822ac76
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO1-->
 
 

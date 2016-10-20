@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 69b047d0-da79-413e-b948-8e45d05d1f85
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: e1c4da3865f8c9dd7d2f73b243ac0b0216bd9631
+ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
+ms.openlocfilehash: 3b3c7561466db47f9bbf5b3bdc41719521a8f002
 
 ---
 
 # Windows PowerShell ISE 脚本对象模型
-  Windows PowerShellÂ® 集成脚本环境 (ISE) 通过基础的脚本对象模型公开其功能，该模型能使用户写入可以操作 Windows PowerShell ISE 的各种可视化和功能方面的 Windows PowerShell 脚本。 脚本对象及其属性和方法专门针对此用途进行定义。
+  Windows PowerShell® 集成脚本环境 (ISE) 通过基础的脚本对象模型公开其功能，该模型能使用户写入可以操作 Windows PowerShell ISE 的各种可视化和功能方面的 Windows PowerShell 脚本。 脚本对象及其属性和方法专门针对此用途进行定义。
 
 ## 本文档内容
 
@@ -28,12 +28,12 @@ ms.openlocfilehash: e1c4da3865f8c9dd7d2f73b243ac0b0216bd9631
 -   [其他有用的脚本对象](../../getting-started/cookbooks/Other-Useful-Scripting-Objects.md)
 
 ## 另请参阅
- [Windows PowerShell 集成脚本环境 &#40;ISE&#41;。](../../getting-started/fundamental/Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md)
+- [Windows PowerShell 集成脚本环境 &#40;ISE&#41;。](../../getting-started/fundamental/Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md)
 
   
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO1-->
 
 

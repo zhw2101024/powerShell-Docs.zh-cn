@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: c1744841e23aa9c2fedf3eb92230ef422c36f0cd
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: 9063e17928c433db8c3c9d26d41d31c2675e413c
 
 ---
 
 # ISEFile 对象
-  **ISEFile** 对象代表 Windows PowerShellÂ® 集成脚本环境 (ISE) 中的文件。 它是 Microsoft.PowerShell.Host.ISE.ISEFile 类的实例。 本主题列出其成员方法和成员属性。 **$PsISE.CurrentFile** 和 PowerShell 选项卡中的文件集合中的文件是 Microsoft.PowerShell.Host.ISE.ISEFile 类的所有实例。
+  **ISEFile** 对象，表示 Windows PowerShell® 集成脚本环境 (ISE) 中的文件。 它是 Microsoft.PowerShell.Host.ISE.ISEFile 类的实例。 本主题列出其成员方法和成员属性。 **$PsISE.CurrentFile** 和 PowerShell 选项卡中的文件集合中的文件是 Microsoft.PowerShell.Host.ISE.ISEFile 类的所有实例。
 
 ## 方法
 
@@ -24,8 +24,8 @@ ms.openlocfilehash: c1744841e23aa9c2fedf3eb92230ef422c36f0cd
 
  将该文件保存到磁盘。
 
- **\[saveEncoding\]** – 可选 [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
- 一个要用于已保存文件的可选字符编码参数。 默认值是 **UTF8**。
+ **\[saveEncoding\]** - 可选 [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
+用于已保存文件的可选字符编码参数。 默认值是 **UTF8**。
 
  **例外**
  -   **System.IO.IOException**：无法保存该文件。
@@ -50,8 +50,8 @@ $myfile.Encoding
 
  **filename** - 字符串要用于保存该文件的名称。
 
- **\[saveEncoding\]** – 可选 [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
- 一个要用于已保存文件的可选字符编码参数。 默认值是 **UTF8**。
+ **\[saveEncoding\]** - 可选 [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
+用于已保存文件的可选字符编码参数。 默认值是 **UTF8**。
 
  **例外**
  -   **System.ArgumentNullException**：**filename** 参数为 null。
@@ -150,6 +150,6 @@ $psISE.CurrentFile.IsUntitled
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

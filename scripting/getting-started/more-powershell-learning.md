@@ -8,8 +8,8 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 05205ff8fcf0a3b23e66a6ac756be0d9a5055bd2
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: ba4f79742e21e23fb3745ca8c7833679d398ccf4
 
 ---
 
@@ -27,7 +27,7 @@ ms.openlocfilehash: 05205ff8fcf0a3b23e66a6ac756be0d9a5055bd2
 -   [了解 PowerShell 页](http://www.scriptingguys.com/learnpowershell) 是在 TechNet 脚本中心上的 Windows PowerShell 中心。 此页面托管了一系列由 Microsoft 脚本专家 Ed Wilson 制作的初学者视频课程。 它还包含 Windows PowerShell 测验、社区内容链接等。
 -   有关于使用 Windows PowerShell 的问题？ 在[官方脚本专家论坛](http://social.technet.microsoft.com/forums/itcg/threads/)上与数百位兴趣相符的其他用户进行交流。
 -   [Microsoft 脚本中心](https://technet.microsoft.com/scriptcenter)。 包含许多有用的 Windows PowerShell 资源的门户，其中包括[脚本中心存储库](http://gallery.technet.microsoft.com/scriptcenter/)。 了解脚本编写的最佳方法之一是查看实际示例。 搜索数以千计的 Windows PowerShell 脚本，它们都已准备就绪，你可以评估并改编这些脚本来满足你的需求。
--   参与 Windows PowerShell 用户社区。 有关众多 Windows PowerShell 用户组（其中可能有一个距你很近）的位置信息，请参阅[脚本中心社区页](https://technet.microsoft.com/scriptcenter/hh182567.aspx)。 同时了解 Microsoft 脚本专家的社区活动的最新消息。
+-   参与 Windows PowerShell 用户社区。 有关众多 Windows PowerShell 用户组（其中可能有一个距你很近）的位置信息，请参阅 [Script Center](https://technet.microsoft.com/scriptcenter/hh182567.aspx)（脚本中心社区页面）。 同时了解 Microsoft 脚本专家的社区活动的最新消息。
 
 ## 视频培训
 
@@ -60,6 +60,6 @@ ms.openlocfilehash: 05205ff8fcf0a3b23e66a6ac756be0d9a5055bd2
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO1-->
 
 

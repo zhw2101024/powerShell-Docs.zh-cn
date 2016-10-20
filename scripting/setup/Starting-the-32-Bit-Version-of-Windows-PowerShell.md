@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 12b31890-2609-4a76-8c24-0ebe78084f50
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 310f898a471ca60da4d9ebe5234ee86a636e44b5
+ms.sourcegitcommit: fa0a541965b4121b8e8ac677b3c38e6f316b4553
+ms.openlocfilehash: 4e6a0e7f8935b905d1cb19576541d1b532fcba21
 
 ---
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: 310f898a471ca60da4d9ebe5234ee86a636e44b5
 
 若要启动 32 位版本的 Windows PowerShell，请使用以下任何过程。
 
-#### 在 Windows ServerÂ® 2012 R2 中
+#### 在 Windows Server® 2012 R2 中
 
 -   在“开始”屏幕上，键入 **Windows PowerShell (x86)**。 单击“Windows PowerShell x86”磁贴。
 
@@ -31,7 +31,7 @@ ms.openlocfilehash: 310f898a471ca60da4d9ebe5234ee86a636e44b5
 
 -   通过命令行，输入： `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### 在 Windows Server 2012 中
+#### 在 Windows Server® 2012 中
 
 -   在“开始”屏幕上，键入 **PowerShell**，然后单击“Windows PowerShell (x86)”。
 
@@ -41,7 +41,7 @@ ms.openlocfilehash: 310f898a471ca60da4d9ebe5234ee86a636e44b5
 
 -   通过命令行，输入： `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### 在 Windows 8.1 中
+#### 在 Windows® 8.1 中
 
 -   在“开始”屏幕上，键入 **Windows PowerShell (x86)**。 单击“Windows PowerShell x86”磁贴。
 
@@ -51,7 +51,7 @@ ms.openlocfilehash: 310f898a471ca60da4d9ebe5234ee86a636e44b5
    
 -   通过命令行，输入： `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### 在 Windows 8 中
+#### 在 Windows® 8 中
 
 -   在“开始”屏幕上，将光标移动到右上角，依次单击“设置”、“磁贴”，然后将“显示管理工具”滑块移动到“是”。 然后，键入 **PowerShell**，单击“Windows PowerShell (x86)”。
 
@@ -63,6 +63,6 @@ ms.openlocfilehash: 310f898a471ca60da4d9ebe5234ee86a636e44b5
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

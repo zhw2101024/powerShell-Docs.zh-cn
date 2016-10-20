@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 13fcf7ee-b18f-4499-a2b4-ccfc4484cd88
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 5d9b2492dbcade15c91d2b7687f5fc64998e2a9a
+ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
+ms.openlocfilehash: 2c403e38b0f89a2d8c1344a6abbd56151449f059
 
 ---
 
 # ObjectModelRoot 对象
-  Windows PowerShellÂ® 集成脚本环境 (ISE) 中的主体根对象 **$PsISE** 对象是 Microsoft.PowerShell.Host.ISE.ObjectModelRoot 类的实例。 本主题介绍 **ObjectModelRoot** 对象的属性。
+  Windows PowerShell® 集成脚本环境 (ISE) 中的主体根对象（**$psISE** 对象）是 Microsoft.PowerShell.Host.ISE.ObjectModelRoot 类的实例。 本主题介绍 **ObjectModelRoot** 对象的属性。
 
 ## “属性”
 
@@ -58,6 +58,6 @@ ms.openlocfilehash: 5d9b2492dbcade15c91d2b7687f5fc64998e2a9a
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

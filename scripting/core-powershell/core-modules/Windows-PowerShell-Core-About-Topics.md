@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 4d33ebe2a067781d708ca3b0f8dc4dd2848ba4d4
+ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
+ms.openlocfilehash: aeb0b26ff7cb65381a4cecbf9ae790e5a22a8e97
 
 ---
 
@@ -125,7 +125,7 @@ ms.openlocfilehash: 4d33ebe2a067781d708ca3b0f8dc4dd2848ba4d4
 |[about_While [v4]](https://technet.microsoft.com/en-us/library/3a1a1329-2501-4e4e-8660-a2ca68c68541)|介绍 Windows PowerShell 中的 **While** 循环。|
 |[about_Wildcards [v4]](https://technet.microsoft.com/en-us/library/9fe09a23-afce-4547-9e2f-c38090f77636)|说明如何在 Windows PowerShell 中使用通配符 (\*)。|
 |[about_Windows_PowerShell_5.0](https://technet.microsoft.com/en-us/library/6d56fa88-371e-40c9-b2de-64a2a0cd49da)|介绍 Windows PowerShell 4.0 的新增功能和更改。|
-|[about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)|介绍 Windows PowerShellÂ® 集成脚本环境 (ISE)。|
+|[about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)|介绍 Windows PowerShell® 集成脚本环境 (ISE)。|
 |[about_Workflows](https://technet.microsoft.com/en-us/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)|提供对 Windows PowerShell 工作流功能的简短介绍。|
 |[about_WorkflowCommonParameters](https://technet.microsoft.com/en-us/library/119f968e-618e-439c-b76c-cdd17e6df27c)|介绍对所有 Windows PowerShell 工作流命令有效的参数。|
 |[about_WMI](https://technet.microsoft.com/en-us/library/32da7221-c213-48ad-8466-fad82285e4e8)|介绍 Windows Management Instrumentation (WMI)，它是 Microsoft 的基于 Web 的企业管理 (WBEM) 行业标准的实现。|
@@ -145,6 +145,6 @@ ms.openlocfilehash: 4d33ebe2a067781d708ca3b0f8dc4dd2848ba4d4
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

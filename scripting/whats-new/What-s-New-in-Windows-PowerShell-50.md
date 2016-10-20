@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 666590df32157a7477d385961dd5665094275868
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: 9e012dd8218a256e4236c2263babefd29ecdb016
 
 ---
 
@@ -38,7 +38,7 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 
     -   [Get-DscResource](http://technet.microsoft.com/library/dn521625.aspx) 更加快速（特别是在 ISE 中）。
 
-    -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) 拥有一个新参数 –UseExisting，可重新应用上一次应用的配置。
+    -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) 有一个新的 -UseExisting 参数，使用该参数可重新应用上一次应用的配置。
 
     -   已修复 [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) -Force。
 
@@ -170,9 +170,9 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 
 -   已增强了 New-Item、Remove-Item、Get-ChildItem 的功能，用于支持创建和管理[符号链接](http://en.wikipedia.org/wiki/Symbolic_link)。 New-Item 的 **ItemType** 参数接受一个新的值 **SymbolicLink**。 现在可通过运行 New-Item cmdlet 在单行中创建符号链接。
 
--   Get-ChildItem 也有一个新的 –Depth 参数，可与 –Recurse 参数一起使用以限制递归。 例如，Get-ChildItem –Recurse –Depth 2 从当前文件夹、当前文件夹中所有的子文件夹和子文件夹中所有的文件夹中返回结果。
+-   Get-ChildItem 也有一个新的 -Depth 参数，可将该参数与 -Recurse 参数一起使用，以限制递归。 例如，Get-ChildItem -Recurse -Depth 2 从当前文件夹、当前文件夹中的所有子文件夹，以及子文件夹中的所有文件夹返回结果。
 
--   现在 Copy-Item 使你能够将文件或文件夹从一个 Windows PowerShell 会话复制到另一个会话中，意味着你可以将文件复制到已连接至远程计算机（包括运行 [Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx) 因而没有其他界面的计算机）的会话中。 若要复制文件，请将 PSSession ID 指定为新的 -FromSession 和 -ToSession 参数的值，并且添加 –Path 和 –Destination 以分别指定源路径和目标位置。 例如，Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder。
+-   现在 Copy-Item 使你能够将文件或文件夹从一个 Windows PowerShell 会话复制到另一个会话中，意味着你可以将文件复制到已连接至远程计算机（包括运行 [Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx) 因而没有其他界面的计算机）的会话中。 若要复制文件，请将 PSSession ID 指定为新的 -FromSession 和 -ToSession 参数的值，并添加 -Path 和 -Destination 以分别指定源路径和目标位置。 例如，Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder。
 
 -   除了控制台主机 (**powershell.exe**) 外，Windows PowerShell 转录已经得到改进以应用到所有主机应用程序（例如 Windows PowerShell ISE）。 脚本选项（包括启用 system-wide 脚本）可以通过启用“打开 PowerShell 脚本”组策略设置（位于 Administrative Templates/Windows Components/Windows PowerShell）来进行配置。
 
@@ -190,7 +190,7 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 
 -   新的 New-TemporaryFile cmdlet 使你能够创建临时文件作为脚本的一部分。 默认情况下，新的临时文件创建在 ```C:\Users\<user name>\AppData\Local\Temp``` 中。
 
--   Out-file、Add-Content 和 Set-Content cmdlet 现在拥有一个新的 –NoNewline 参数，它将在输出后省略新的行。
+-   Out-File、Add-Content 和 Set-Content cmdlet 现在有一个新的 -NoNewline 参数，使用该参数将在输出后省略新的行。
 
 -   New-Guid cmdlet 利用 .NET Framework Guid 类以生成 GUID，这在当你正在编写脚本或 DSC 资源时很有用。
 
@@ -212,7 +212,7 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 
 -   现在 Get-Command cmdlet 的结果显示版本列；一个新的版本属性已添加到 CommandInfo 类中。 Get-Command 从相同模块的多个版本中显示命令。 Version 属性也是 CmdletInfo 的派生类的一部分：CmdletInfo 和 ApplicationInfo。
 
--   Get-Command 拥由一个新的参数 -ShowCommandInfo，它将 ShowCommand 信息作为 PSObjects 返回。 当通过使用 Windows PowerShell 远程在 Windows PowerShell ISE 中运行 Show-Command 时，这是非常有用的功能。 –ShowCommandInfo 参数替换了 Microsoft.PowerShell.Utility 模块中现有的 Get-SerializedCommand 函数，但 Get-SerializedCommand 脚本仍可用于支持下层脚本。
+-   Get-Command 拥由一个新的参数 -ShowCommandInfo，它将 ShowCommand 信息作为 PSObjects 返回。 当通过使用 Windows PowerShell 远程在 Windows PowerShell ISE 中运行 Show-Command 时，这是非常有用的功能。 -ShowCommandInfo 参数替换了 Microsoft.PowerShell.Utility 模块中现有的 Get-SerializedCommand 函数，但 Get-SerializedCommand 脚本仍可用于支持下层脚本。
 
 -   新的 Get-ItemPropertyValue cmdlet 使你能够获取属性的值，而无需使用点表示法。 例如，在 Windows PowerShell 的较旧版本中，可以运行以下命令来获取 PowerShellEngine 注册表项的 Application Base 属性的值：**(Get-ItemProperty -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase).ApplicationBase**。 从 PowerShell 5.0 开始，可运行 **Get-ItemPropertyValue -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase**。
 
@@ -313,7 +313,7 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 ## <a name="BKMK_wps4"></a>Windows PowerShell 4.0 中的新增功能
 Windows PowerShell 4.0 可向后兼容。 为 Windows PowerShell 3.0 和 Windows PowerShell 2.0 设计的 Cmdlet、提供程序、模块、管理单元、脚本、函数和配置文件通常适用于 Windows PowerShell 4.0，无需更改。
 
-默认情况下，Windows PowerShell 4.0 安装在 WindowsÂ® 8.1 和 Windows Server 2012 R2 上。 若要在 Windows 7 SP1 或 Windows Server 2008 R2 上安装 Windows PowerShell 4.0，请下载并安装 [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855)。 请务必先阅读下载详细信息并确保满足所有系统要求，然后再安装 Windows Management Framework 4.0。
+Windows PowerShell 4.0 默认安装在 Windows® 8.1 和 Windows Server 2012 R2 上。 若要在 Windows 7 SP1 或 Windows Server 2008 R2 上安装 Windows PowerShell 4.0，请下载并安装 [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855)。 请务必先阅读下载详细信息并确保满足所有系统要求，然后再安装 Windows Management Framework 4.0。
 
 -   [Windows PowerShell 中的新增功能](#BKMK_core)
 
@@ -367,7 +367,7 @@ Windows PowerShell 4.0 包括以下新增功能。
 
 -   **$PSVersionTable.PSVersion** 的值已更新为 4.0。
 
--   **Where()** 运算符行为已更改。 `Collection.Where('property –match name')` 不再支持接受采用 `"Property –CompareOperator Value"` 格式的字符串表达式。 但是，**Where()** 运算符可接受采用脚本块格式的字符串表达式；仍支持此行为。
+-   **Where()** 运算符行为已更改。 `Collection.Where('property -match name')` 不再支持接受采用 `"Property -CompareOperator Value"` 格式的字符串表达式。 但是，**Where()** 运算符可接受采用脚本块格式的字符串表达式；仍支持此行为。
 
 ### <a name="BKMK_ise"></a>Windows PowerShell 集成脚本环境 (ISE) 中的新增功能
 
@@ -433,7 +433,7 @@ Windows PowerShell 4.0 包括以下新增功能。
 
 -   **Get-Module** 现在可在 **Version** 列中显示模块版本。
 
--   不出所料，现在 Remove-Item –Recurse 可删除子文件夹中的项。
+-   不出所料，现在 Remove-Item -Recurse 会删除子文件夹中的项。
 
 -   已向 **Get-Process** 输出对象添加 **UserName** 属性。
 
@@ -441,7 +441,7 @@ Windows PowerShell 4.0 包括以下新增功能。
 
 -   **Add-Member** 现在将对哈希表生效，即使尚未访问这些哈希表。
 
--   **Select-Object –Expand** 在属性值为 null 或空时不再失败或生成异常。
+-   **Select-Object -Expand** 在属性值为 null 或空时不再失败或生成异常。
 
 -   **Get-Process** 现在可与用于从对象中获取 **ComputerName** 属性的其他命令一起在管道中使用。
 
@@ -513,7 +513,7 @@ Windows PowerShell 3.0 包括以下新增功能。
 -   [特殊字符处理改进](#BKMK_CHAR)
 
 ### <a name="BKMK_Workflow"></a>Windows PowerShell 工作流程
-Windows PowerShellÂ® 工作流将 Windows Workflow Foundation 的强大功能引入到 Windows PowerShell。 你可以采用 XAML 或 Windows PowerShell 语言编写工作流，然后像运行 cmdlet 一样运行它们。 [Get-command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet 获取工作流命令，[Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet 获取工作流帮助。
+Windows PowerShell® 工作流将 Windows Workflow Foundation 的强大功能引入到 Windows PowerShell 中。 你可以采用 XAML 或 Windows PowerShell 语言编写工作流，然后像运行 cmdlet 一样运行它们。 [Get-command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet 获取工作流命令，[Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet 获取工作流帮助。
 
 工作流是多计算机管理活动序列，其特点是长期运行、可重复、频繁、可并行化、可中断、可挂起并且可重启。 工作流可以从有意或意外中断（例如网络中断、Windows 重新启动或电源故障）中恢复。
 
@@ -540,12 +540,12 @@ Windows PowerShellÂ® 工作流将 Windows Workflow Foundation 的强大功能�
 -   **工作流和连接限制。** 可以限制工作流执行和到节点的连接，从而实现可扩展性且高可用性的方案。
 
 ### <a name="BKMK_WebAccess"></a>Windows PowerShell Web 访问
-Windows PowerShellÂ® Web 访问是 Windows Server 2012 功能，它允许用户在基于 Web 的控制台中运行 Windows PowerShell 命令和脚本。 使用基于 Web 的控制台的设备不需要安装 Windows PowerShell、远程管理软件或浏览器插件。 只需要正确配置的 Windows PowerShell Web 访问网关以及支持 JavaScript® 和接受 Cookie 的客户端设备浏览器。
+Windows PowerShell® Web 访问是一项 Windows Server 2012 功能，它允许用户在基于 Web 的控制台中运行 Windows PowerShell 命令和脚本。 使用基于 Web 的控制台的设备不需要安装 Windows PowerShell、远程管理软件或浏览器插件。 只需要正确配置的 Windows PowerShell Web 访问网关以及支持 JavaScript® 和接受 Cookie 的客户端设备浏览器。
 
 有关详细信息，请参阅[部署 Windows PowerShell Web 访问](http://go.microsoft.com/fwlink/p/?LinkID=221050)。
 
 ### <a name="BKMK_ISE"></a>新的 Windows PowerShell ISE 功能
-对于 Windows PowerShell 3.0 来说，Windows PowerShellÂ® 集成脚本环境 (ISE) 具有许多新增功能，包括 IntelliSense、显示命令窗口、统一的控制台窗格、代码段、大括号匹配、展开/折叠部分、自动保存、最近的项列表、批量复制、块复制和对编写 Windows PowerShell 脚本工作流的完全支持。 有关详细信息，请参阅 [about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)。
+对于 Windows PowerShell 3.0 来说，Windows PowerShell® 集成脚本环境 (ISE) 具有许多新增功能，包括 IntelliSense、显示命令窗口、统一的控制台窗格、代码段、大括号匹配、展开/折叠部分、自动保存、最近使用的项列表、批量复制、块复制，以及对编写 Windows PowerShell 脚本工作流的完全支持。 有关详细信息，请参阅 [about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)。
 
 ### <a name="BKMK_NET4"></a>对 Microsoft .NET Framework 4 的支持
 Windows PowerShell 是针对公共语言运行时 4.0 而构建的。 Cmdlet、脚本和工作流作者可以在 Windows PowerShell 中使用新的 Microsoft .NET Framework 4 类，其功能包括应用程序兼容性和部署、Managed Extensibility Framework、并行计算、网络、Windows Communication Foundation 和 Windows Workflow Foundation。
@@ -759,6 +759,6 @@ Windows PowerShell 3.0 包括对运行身份和共享主机功能的支持。
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: ae974955-4282-4cbc-8c42-0fff1904ef32
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: d7debb2ca5560839f7fdb986d26255dba930d8f5
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: 545a6fb6d22aadfef7dc852471f0e633599ab529
 
 ---
 
@@ -24,7 +24,7 @@ ms.openlocfilehash: d7debb2ca5560839f7fdb986d26255dba930d8f5
 
  加载包含用户定义的代码段的 .snippets.ps1xml 文件。 创建代码段最简单的方法就是使用 New-IseSnippet cmdlet，后者会自动将它们存储在配置文件文件夹中，以便你每次启动 Windows PowerShell ISE 时进行加载。
 
- **FilePathName** – 包含代码段定义的 .snippets.ps1xml 文件的路径和文件名。
+ **FilePathName** - 字符串，包含代码段定义的 .snippets.ps1xml 文件的路径和文件名。
 
 ```
 # Loads a custom snippet file into the current PowerShell tab.
@@ -42,6 +42,6 @@ $SnipFile = Join-Path ( Split-Path $profile) “Snippets\MySnips.snippets.ps1xml
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

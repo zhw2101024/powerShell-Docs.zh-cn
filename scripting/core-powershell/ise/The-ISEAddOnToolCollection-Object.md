@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 634eab89-0845-4016-974b-361b09bb8f7b
 translationtype: Human Translation
-ms.sourcegitcommit: 457451343b51891e336b0df6f979c285fb6144eb
-ms.openlocfilehash: 0a8f19693085b9b878fae60953a2cdc358ba8f4c
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: 575ee3b8279ad50920df17ff92d4f65467d83830
 
 ---
 
@@ -24,11 +24,11 @@ ms.openlocfilehash: 0a8f19693085b9b878fae60953a2cdc358ba8f4c
 
  将新附加工具添加到集合。 它将返回新添加的附加工具。 在运行此命令之前，必须在本地计算机上安装附加工具并加载程序集。
 
- **Name** – 指定添加到 Windows PowerShell ISE 的附加工具的显示名称。
+ **Name** - 字符串，指定添加到 Windows PowerShell ISE 的附加工具的显示名称。
 
- **ControlType** – 指定要添加的控件。
+ **ControlType** - 类型，指定要添加的控件。
 
- **\[IsVisible\]** – 如果设置为 **$true** 则为可选布尔值，附加工具立即可显示在关联的工具窗格中。
+ **\[IsVisible\]** - 可选布尔值，如果设置为 **$true**，可立即在关联的工具窗格中看到附加工具。
 
 ```PowerShell
 # Load a DLL with an add-on and then add it to the ISE
@@ -41,7 +41,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 
  从集合中删除指定的附加工具。
 
- **Item** – Microsoft.PowerShell.Host.ISE.ISEAddOnTool 指定要从 Windows PowerShell ISE 删除的对象。
+ **Item** - Microsoft.PowerShell.Host.ISE.ISEAddOnTool，指定要从 Windows PowerShell ISE 删除的对象。
 
 ```PowerShell
 # Load a DLL with an add-on and then add it to the ISE
@@ -54,7 +54,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 
  选择 **psTab** 参数指定的 PowerShell 选项卡。
 
- **psTab** – Microsoft.PowerShell.Host.ISE.PowerShellTab 要选择的 PowerShell 选项卡。
+ **psTab** - Microsoft.PowerShell.Host.ISE.PowerShellTab，要选择的 PowerShell 选项卡。
 
 ```PowerShell
       $newTab = $psISE.PowerShellTabs.Add()
@@ -67,7 +67,7 @@ $newTab.DisplayName="Brand New Tab"
 
  删除 **psTab** 参数指定的 PowerShell 选项卡。
 
- **psTab** – Microsoft.PowerShell.Host.ISE.PowerShellTab 要删除的 PowerShell 选项卡。
+ **psTab** - Microsoft.PowerShell.Host.ISE.PowerShellTab，要删除的 PowerShell 选项卡。
 
 ```PowerShell
 $newTab = $psISE.PowerShellTabs.Add()
@@ -87,6 +87,6 @@ $psISE.PowerShellTabs.Remove($newTab)
 
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

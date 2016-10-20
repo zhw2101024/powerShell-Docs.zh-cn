@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 6e58c298725254a84819856070b9702340fcf81d
+ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
+ms.openlocfilehash: c378e9f38c6cc9ea94ce07c320d7a42dd3f102b5
 
 ---
 
@@ -24,7 +24,7 @@ ms.openlocfilehash: 6e58c298725254a84819856070b9702340fcf81d
 -   [如何保存脚本](#bkmk_3)
 
 ## <a name="bkmk_1"></a>如何创建和运行脚本
-你可以在脚本窗格中打开和编辑 Windows PowerShellÂ® 文件。 Windows PowerShellÂ® 中相关的特定文件类型包括脚本文件 (.ps1)、脚本数据文件 (.psd1) 和脚本模块文件 (.psm1)。 这些文件类型在脚本窗格编辑器中是经语法颜色设置的。 可能在脚本窗格中打开的其他常见文件类型有配置文件 (.ps1xml)、XML 文件和文本文件。
+可以在脚本窗格中打开和编辑 Windows PowerShell® 文件。 Windows PowerShell® 中的相关特定文件类型有脚本文件 (.ps1)、脚本数据文件 (.psd1) 和脚本模块文件 (.psm1)。 这些文件类型在脚本窗格编辑器中是经语法颜色设置的。 可能在脚本窗格中打开的其他常见文件类型有配置文件 (.ps1xml)、XML 文件和文本文件。
 
 > [!NOTE]
 > Windows PowerShell 执行策略确定你是否可以运行脚本并加载 Windows PowerShell 配置文件。 默认执行策略（受限）可以防止运行所有脚本，并防止加载配置文件。 若要将执行策略更改为允许加载和使用配置文件，请参阅 [Set-ExecutionPolicy[PSITPro5_Security]](https://technet.microsoft.com/en-us/library/5690a0e1-495b-4e63-8280-65ead7bf01ab) 和 [about_Signing [v4]](https://technet.microsoft.com/en-us/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d)。
@@ -150,11 +150,11 @@ Windows PowerShell ISE 支持以下编码选项：ASCII、BigEndianUnicode、Uni
 Windows PowerShell ISE 不会更改在其他编辑器中创建的脚本的编码，即使你使用的是 Windows PowerShell ISE 中的“保存”或“另存为”命令。
 
 ## 另请参阅
-[使用 Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
+- [使用 Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

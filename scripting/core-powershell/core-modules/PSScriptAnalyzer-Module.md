@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 8734c1e1-898e-4fc1-8fc0-d1ad7d3cf077
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 3e9ba43162afb7b689bf92883f2347c2c8551ea2
+ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
+ms.openlocfilehash: 4f822b0e7ddbef7382a448d9b5d1872ee0543fae
 
 ---
 
 # PSScriptAnalyzer 模块
-此部分包含 **PSScriptAnalyzer** 模块的相关帮助主题，可用于检查 Windows PowerShellÂ® 内脚本和模块中的问题。 此模块随 Windows PowerShell 一起安装。
+本部分包含 **PSScriptAnalyzer** 模块的帮助主题，可用于检查 Windows PowerShell® 中的脚本和模块存在的问题。 此模块随 Windows PowerShell 一起安装。
 
 ## 帮助主题
 
@@ -27,6 +27,6 @@ ms.openlocfilehash: 3e9ba43162afb7b689bf92883f2347c2c8551ea2
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO1-->
 
 

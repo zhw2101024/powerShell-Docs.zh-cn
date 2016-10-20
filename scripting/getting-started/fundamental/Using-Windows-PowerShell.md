@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 994e6c89f6fc20b95691f010deb3c48062cef310
+ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
+ms.openlocfilehash: 9563e58d2840c7cc2120b58b041660aaeee12830
 
 ---
 
@@ -45,9 +45,9 @@ Windows PowerShell 是一系列相关脚本编写技术的一部分，这些技�
 
 -   [Windows PowerShell Desired State Configuration 入门](https://technet.microsoft.com/en-us/library/c134aa32-b085-4656-9a89-955d8ff768d0)。 在 Windows PowerShell 4.0 中引入的 Windows PowerShell Desired State Configuration (DSC) 是 Windows PowerShell 中的新管理平台，该平台可对软件服务的配置数据和这些服务的运行环境进行部署和管理。 DSC 提供一组可用于以声明方式指定你希望配置软件环境状态的方式的 Windows PowerShell 语言扩展、新的 cmdlet 和资源。
 
--   [Windows Management Framework 4.0 Preview](http://go.microsoft.com/fwlink/?LinkID=293881) 包含对 Windows PowerShell、Windows PowerShell ISE、Windows PowerShell Web 服务（管理 OData IIS 扩展）、Windows 远程管理 (WinRM)、Windows Management Infrastructure (WMI)、服务器管理器 WMI 提供程序的更新以及 4.0 的新功能（即 Windows PowerShell 所需状态配置 (DSC)）。 Windows Management Framework 4.0 Preview 允许你在运行 Windows Server 2012、WindowsÂ® 7 SP1 和 Windows Server 2008 R2 SP1 的计算机上安装并使用这些技术。
+-   [Windows Management Framework 4.0 Preview](http://go.microsoft.com/fwlink/?LinkID=293881) 包含对 Windows PowerShell、Windows PowerShell ISE、Windows PowerShell Web 服务（管理 OData IIS 扩展）、Windows 远程管理 (WinRM)、Windows Management Infrastructure (WMI)、服务器管理器 WMI 提供程序的更新以及 4.0 的新功能（即 Windows PowerShell 所需状态配置 (DSC)）。 Windows Management Framework 4.0 Preview 允许在运行 Windows Server 2012、Windows® 7 SP1 和 Windows Server 2008 R2 SP1 的计算机上安装并使用这些技术。
 
--   [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) 包含对 Windows PowerShell、Windows PowerShell ISE、Windows PowerShell Web 服务（管理 OData IIS 扩展）、Windows 远程管理 (WinRM)、Windows Management Infrastructure (WMI) 以及服务器管理器 WMI 提供程序的更新。 Windows Management Framework 3.0 Preview 允许你在运行 WindowsÂ® 7 SP1、Windows Server 2008 SP2 和 Windows Server 2008 R2 SP1 的计算机上安装并使用这些技术。
+-   [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) 包含对 Windows PowerShell、Windows PowerShell ISE、Windows PowerShell Web 服务（管理 OData IIS 扩展）、Windows 远程管理 (WinRM)、Windows Management Infrastructure (WMI) 以及服务器管理器 WMI 提供程序的更新。 Windows Management Framework 3.0 Preview 允许在运行 Windows® 7 SP1、Windows Server 2008 SP2 和 Windows Server 2008 R2 SP1 的计算机上安装并使用这些技术。
 
 ## 学习 Windows PowerShell
 若要开始学习 Windows PowerShell，请从以下资源入手：
@@ -78,6 +78,6 @@ Windows PowerShell 是一系列相关脚本编写技术的一部分，这些技�
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 
