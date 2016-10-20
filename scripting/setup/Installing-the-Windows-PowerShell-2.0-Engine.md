@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: b6189e43fc9579a29d598deb705bb8e4e32e4a4f
+ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
+ms.openlocfilehash: 34fc34fa752e8f67e9bdb015c234da83e80b7328
 
 ---
 
@@ -21,7 +21,7 @@ Windows PowerShell 3.0 旨在能够与 Windows PowerShell 2.0 向后兼容。 �
 
 为了保持与受这些更改影响的命令和主机程序的向后兼容性，Windows PowerShell 2.0、Windows PowerShell 3.0 和 Windows PowerShell 4.0 引擎被设计为并排运行。 此外，Windows PowerShell 2.0 引擎也包含在 Windows Server 2012 R2、Windows 8.1、Windows 8、Windows Server 2012 和 Windows Management Framework 3.0 中。 Windows PowerShell 2.0 引擎仅在当前脚本或主机程序无法运行时使用，因为它与 Windows PowerShell 3.0、Windows PowerShell 4.0 或 Microsoft .NET Framework 4 不兼容。 这种情况很少见。
 
-Windows PowerShell 2.0 引擎是 Windows Server 2012 R2、Windows 8.1、WindowsÂ® 8 和 Windows ServerÂ® 2012 的一项可选功能。 在早期版本的 Windows 中，在安装 Windows Management Framework 3.0 时，Windows PowerShell 3.0 安装将完全替代 Windows PowerShell 安装目录中的 Windows PowerShell 2.0 安装。 然而，Windows PowerShell 2.0 引擎将保留。
+Windows PowerShell 2.0 引擎是 Windows Server 2012 R2、Windows 8.1、Windows® 8 和 Windows Server® 2012 的一项可选功能。 在早期版本的 Windows 中，在安装 Windows Management Framework 3.0 时，Windows PowerShell 3.0 安装将完全替代 Windows PowerShell 安装目录中的 Windows PowerShell 2.0 安装。 然而，Windows PowerShell 2.0 引擎将保留。
 
 有关启动 Windows PowerShell 2.0 引擎的信息，请参阅[启动 Windows PowerShell 2.0 引擎](Starting-the-Windows-PowerShell-2.0-Engine.md)。
 
@@ -87,6 +87,6 @@ Windows PowerShell 2.0 引擎是 Windows Server 2012 R2、Windows 8.1、Windows�
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 
