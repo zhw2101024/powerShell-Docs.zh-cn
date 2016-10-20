@@ -8,13 +8,13 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: edb3be980d23cafb8c9b9923a7153308481e6c67
+ms.sourcegitcommit: 18949229d4d9e3867cdc265c3fd958d2598186b4
+ms.openlocfilehash: 77ac8a58f87371a176ca7a3613c1f319aa69baff
 
 ---
 
 # PowerShell 的新增功能
-Windows PowerShell® 5.0 包括了重要的新功能，这些功能可扩展其用途、提高其可用性，并使你能够更轻松、全面地控制和管理基于 Windows 的环境。
+Windows PowerShell® 5.0 包括了重要的新功能，这些功能可扩展其用途、提高其可用性，并使你能够更轻松、全面地控制和管理基于 Windows 的环境。  所需状态配置、安全性、性能、远程处理以及语言增强方面有重大改进。
 
 Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows PowerShell 3.0 和 Windows PowerShell 2.0 设计的 cmdlet、提供程序、模块、管理单元、脚本、函数和配置文件通常适用于 Windows PowerShell 5.0，无需更改。
 
@@ -35,6 +35,6 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

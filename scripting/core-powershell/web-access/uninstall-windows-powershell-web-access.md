@@ -8,8 +8,8 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: d54139714552943901f565a8525bb478ed308f09
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
 
 ---
 
@@ -74,17 +74,17 @@ ms.openlocfilehash: d54139714552943901f565a8525bb478ed308f09
 
     -   在 Windows **开始**屏幕上，右键单击**Windows PowerShell**，然后单击**以管理员身份运行**。
 
-2.  键入以下内容，然后按 **Enter**，其中的 *computer_name* 代表要从中删除 Windows PowerShell Web 访问的远程服务器。 如果在删除过程中有必要，<span class="code">–Restart</span> 参数将自动重新启动目标服务器。
+2.  键入以下内容，然后按 **Enter**，其中的 *computer_name* 代表要从中删除 Windows PowerShell Web 访问的远程服务器。 如果在删除过程中有必要，<span class="code">-Restart</span> 参数将自动重启目标服务器。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_7b534520-f292-471f-89e3-a1079c03e369'); "Copy to clipboard.")
 
-        Uninstall-WindowsFeature –Name WindowsPowerShellWebAccess -ComputerName <computer_name> -Restart
+        Uninstall-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -Restart
 
     若要在离线的 VHD 上删除角色和功能，你必须添加 <span class="code">-ComputerName</span> 参数和 <span class="code">-VHD</span> 参数。 <span class="code">-ComputerName</span> 参数含有安装 VHD 的服务器的名称，<span class="code">-VHD</span> 参数含有 VHD 文件在指定服务器上的路径。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_5d8f91ee-b91a-4653-b7df-e745187fd72d'); "Copy to clipboard.")
 
-        Uninstall-WindowsFeature –Name WindowsPowerShellWebAccess –VHD <path> -ComputerName <computer_name> -Restart
+        Uninstall-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -Restart
 
 3.  删除完成后，验证你已删除 Windows PowerShell Web 访问，方法是打开服务管理器中的“所有服务器”页面，选择要删除其功能的服务器，然后在选定服务器的页面上查看“角色和功能”磁贴。 你也可以将选定的服务器作为目标运行 <span class="code">Get-WindowsFeature</span> cmdlet (Get-WindowsFeature -ComputerName &lt;*computer_name*&gt;)，以查看该服务器上安装的角色和功能的列表。
 
@@ -213,12 +213,12 @@ ms.openlocfilehash: d54139714552943901f565a8525bb478ed308f09
 
 © 2016 Microsoft
 
-链接到此站点或从中引用的第三方脚本或代码由拥有此类代码的第三方（而非 Microsoft）授权给你。 请参阅 ASP.NET Ajax CDN 使用条款 – http://www.asp.net/ajaxlibrary/CDN.ashx。
+链接到此站点或从中引用的第三方脚本或代码由拥有此类代码的第三方（而非 Microsoft）授权给你。 请参阅 ASP.NET Ajax CDN 使用条款，网址为 http://www.asp.net/ajaxlibrary/CDN.ashx。
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

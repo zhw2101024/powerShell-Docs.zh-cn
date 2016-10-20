@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 13fdac5369d70289d7a0b5115a04879f707e47fc
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: 4334a1ff099072c2287af299d65caed3f16032fe
 
 ---
 
@@ -117,7 +117,7 @@ $UninstallableApplications = Get-ChildItem -Path Uninstall:
 ```
 
 > [!NOTE]
-> 为了清楚起见，我们在此处使用了较长的变量名称。 在实际应用中，没有必要使用长名称。 尽管可以使用 Tab 自动补全输入变量名称，但也可以使用 1–2 个字符的名称提高速度。 在开发可重用代码时，较长的描述性名称最为有用。
+> 为了清楚起见，我们在此处使用了较长的变量名称。 在实际应用中，没有必要使用长名称。 尽管可以使用 Tab 自动补全输入变量名称，但也可以使用 1-2 个字符的名称提高速度。 在开发可重用代码时，较长的描述性名称最为有用。
 
 若要显示 Uninstall 下注册表项中的注册表条目的值，请使用注册表项的 GetValue 方法。 该方法的值是注册表条目的名称。
 
@@ -186,6 +186,6 @@ Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue("Displ
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

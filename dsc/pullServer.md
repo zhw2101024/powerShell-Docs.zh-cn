@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: a5f3025ff222d4a27c0da074df9e84d82c51a46f
-ms.openlocfilehash: 7bbfc31fdebdde83ac1784373b51af40b1dc9492
+ms.sourcegitcommit: 8e486891a4e5db20389d6ae65d00c42e1308af35
+ms.openlocfilehash: 4ab20cdcac6f10dc9ecab6d85b38f413e0ade8b0
 
 ---
 
@@ -150,6 +150,8 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
 ### DSC 资源模块程序包格式
 每个资源模块需要进行压缩并按照以下模式 **{模块名称}_{模块版本}.zip** 进行命名。 例如，一个名为 xWebAdminstration 并且模块版本为 3.1.2.0 的模块会命名为“xWebAdministration_3.2.1.0.zip”。 每个版本的模块都必须包含在单个 zip 文件中。 由于每个 zip 文件中只有单个版本的资源，因此不支持在 WMF 5.0 中添加的可在单个目录中支持多个模块版本的模块格式。 这意味着在打包 DSC 资源模块以便用于请求服务器之前，需要对目录结构进行少量更改。 WMF 5.0 中包含 DSC 资源的模块默认格式是 {Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\'。 为请求服务器进行打包之前，只需删除 **{Module version}** 文件夹，以便路径成为 {Module Folder}\DscResources\{DSC Resource Folder}\'。 进行此更改之后，按上文所述压缩文件夹，并将这些 zip 文件置于 **ModulePath** 文件夹中。
 
+使用 `new-dscchecksum {module zip file}` 可为新添加的模块创建校验和文件。
+
 ### 配置 MOF 格式 
 配置 MOF 文件需要与校验和文件配对，以使目标节点上的 LCM 可以验证配置。 若要创建校验和，请调用 [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) cmdlet。 该 cmdlet 将接受 **Path** 参数，该参数指定了配置 MOF 所在的文件夹。 该 cmdlet 将创建名为 `ConfigurationMOFName.mof.checksum` 的校验和文件，其中 `ConfigurationMOFName` 是配置 mof 文件的名称。 如果指定文件夹中存在多个配置 MOF 文件，则将为该文件夹中的每个配置分别创建校验和。 将 MOF 文件及其关联校验和文件置于 **ConfigurationPath** 文件夹中。
 
@@ -187,6 +189,6 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO1-->
 
 

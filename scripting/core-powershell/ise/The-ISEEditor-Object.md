@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
 translationtype: Human Translation
-ms.sourcegitcommit: 0f045cbeaa8116b15ba6e24210e66348b82e063a
-ms.openlocfilehash: 020c94511ab5c0b4a19611967071e071242fadad
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: a735582afc1293108cfa16d4137648e0e65b564f
 
 ---
 
@@ -142,7 +142,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 ###  <a name="CanGoToMatch"></a> CanGoToMatch
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。 
 
- 只读布尔值属性，可指示将脱字号插入小括号、中括号还是大括号旁边 – \(\)、\[\]、{}。 如果脱字号直接位于开始字符之前或直接位于结束字符之后，则此属性值是 **$true**。 否则，是**$false**。
+ 只读布尔值属性，指示将脱字号插入小括号、中括号还是大括号（即 \(\)、\[\]、{}）旁边。 如果脱字号直接位于开始字符之前或直接位于结束字符之后，则此属性值是 **$true**。 否则，是**$false**。
 
 ```PowerShell
 # Test to see if the caret is next to a parenthesis, bracket, or brace
@@ -243,6 +243,6 @@ $myEditor.InsertText($selection.ToLower())
 
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

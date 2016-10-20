@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: c60f0f63b0d64c82a3ae0716743087ee2b8740c0
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: 57ccd656e0b869da8aadece97e9bb871764c3f70
 
 ---
 
@@ -27,7 +27,7 @@ Cmdlet          Add-Member                      Add-Member [-MemberType] <PS...
 ...
 ```
 
-该输出与 Cmd.exe 的帮助输出非常相似：内部命令的表格式摘要。 在如上所示的 **Get-Command** 命令输出摘录中，显示的每个命令都具有 Cmdlet 的 CommandType。 Cmdlet 是 Windows PowerShell 的内部命令类型 - 此类型大致对应于 Cmd.exe 的 **dir** 和 **cd** 命令，以及 UNIX shell 中的 BASH 等内置命令。
+该输出与 Cmd.exe 的帮助输出非常相似：内部命令的表格式摘要。 在如上所示的 **Get-Command** 命令输出摘录中，显示的每个命令都具有 Cmdlet 的 CommandType。 cmdlet 是 Windows PowerShell 的内部命令类型，此类型大致对应于 Cmd.exe 的 **dir** 和 **cd** 命令，以及 UNIX shell 中的 BASH 等内置命令。
 
 在 **Get-Command** 命令的输出中，所有定义均以省略号 (...) 结尾，表示 PowerShell 无法在可用空间内显示所有内容。 当 Windows PowerShell 显示输出时，它将输出格式设置为文本，然后对其进行排列以使数据恰好适应窗口。 稍后我们将在有关格式设置的部分中对此进行讨论。
 
@@ -86,6 +86,6 @@ Get-Command -CommandType Script
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 
