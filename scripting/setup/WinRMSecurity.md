@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 67ef350559f9b3d17232f3c93d67634b3e939c60
-ms.openlocfilehash: b1addddd50368fadcbb2581673d3ebc7cad8e32a
+ms.sourcegitcommit: 4ddd5099ce33263d43dcbad0930e654b573a8937
+ms.openlocfilehash: fa7e5c84ac82fa72836536ece507f1751e099077
 
 ---
 
@@ -86,10 +86,6 @@ Kerberos 保证用户标识和服务器标识，而不发送任何种类的可�
 
 有几种方法可以避免此问题：
 
-### Kerberos 约束委派
-
-对于高度受信任的服务器，可以启用 [Kerberos 约束委派](https://technet.microsoft.com/en-us/library/cc995228.aspx)。 这样一来，远程服务器便可以将已通过身份验证的用户模拟到指定的计算机和服务列表中。
-
 ### 远程计算机之间的信任
 
 如果你信任远程连接到 *Server1* 的用户访问 *Server2* 上的资源，则可以显式授予 *Server1* 对这些资源的访问权限。
@@ -121,6 +117,6 @@ New-PSDrive -Name Tools \\Server2\Shared\Tools -Credential $myCredential
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO2-->
 
 
