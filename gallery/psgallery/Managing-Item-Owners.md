@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: powershell,cmdlet,gallery
+ms.date: 2016-10-14
+contributor: manikb
+title: "管理项所有者"
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 00fe57762c6b2bb690255ecaea642f97124f4328
+
+---
+
 # 管理项所有者
 
 由将项发布到库的人定义 PowerShell 中项的所有权。
@@ -67,6 +84,9 @@ PowerShell 库管理员可以访问任何项的“管理所有者”链接。
 我们将仅在验证你应为所有者后才执行此操作，此过程因具体情况而异。
 通常，我们将使用项的项目 URL 设法联系项目所有者，但我们也可能使用 Twitter、电子邮件或其他方式联系项目所有者。
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+<!--HONumber=Oct16_HO2-->
 
 

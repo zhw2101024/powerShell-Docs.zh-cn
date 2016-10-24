@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: powershell,cmdlet,gallery
+ms.date: 2016-10-14
+contributor: manikb
+title: psgallery_gettingstarted
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: d6f36a62c95a4444f456cf7c14f7f3dc08236447
+
+---
+
 # PowerShell 库入门
 
 ## PowerShell 库是什么？
@@ -105,6 +122,8 @@ PowerShellGet 也是 Windows Management Framework (WMF) 5.0 的一部分，可�
 同样，若要查找从 PowerShell 库已安装的脚本，请运行 [**Get-InstalledScript**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet。 此命令会列出系统上所有已直接从 PowerShell 库安装的脚本。
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Oct16_HO2-->
 
 

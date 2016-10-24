@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: powershell,cmdlet,gallery
+ms.date: 2016-10-14
+contributor: manikb
+title: "psget_find 模块"
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 67542f54cd350bd1d9512eae0a2355b47943c2f2
+
+---
+
 # Find-Module
 查找联机库中与指定条件相匹配的模块。
 
@@ -129,6 +146,8 @@ AdditionalMetadata         : {downloadCount, description, copyright, FileList...
 ```
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Oct16_HO2-->
 
 

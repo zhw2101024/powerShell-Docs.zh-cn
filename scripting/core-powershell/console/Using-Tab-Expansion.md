@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: fd950429d80972b6025e67ea727aa49ef195e882
+ms.sourcegitcommit: 27512f637dd44485eee38936fea4723cd17b6218
+ms.openlocfilehash: b67024fb27c08e1079caad891cfc3e621a354b27
 
 ---
 
@@ -18,7 +18,7 @@ ms.openlocfilehash: fd950429d80972b6025e67ea727aa49ef195e882
 Command-line Shell 通常提供一种方法来自动完成长文件或命令的名称，从而加快命令输入并给出提示。 Windows PowerShell 允许通过按下 **Tab** 键来填充文件名称和 cmdlet 名称。
 
 > [!NOTE]
-> 选项卡扩展由内部函数 TabExpansion 控制。 由于此函数可被修改或覆盖，所以此讨论可用作针对默认 Windows PowerShell 配置的行为的指导。
+> 选项卡扩展由内部函数 TabExpansion 或 TabExpansion2 控制。 由于此函数可被修改或覆盖，所以此讨论可用作针对默认 Windows PowerShell 配置的行为的指导。
 
 若要从可用选择中自动填充文件名或路径，键入部分名称并按下 **Tab** 键。 Windows PowerShell 将自动将名称扩展至找到的第一个匹配项。 重复按下 **Tab** 将循环浏览所有可用选择。
 
@@ -54,6 +54,6 @@ PS> Get-Content C:\windows\actsetup.log
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO2-->
 
 

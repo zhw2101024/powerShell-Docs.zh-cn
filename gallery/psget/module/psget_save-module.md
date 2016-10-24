@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: powershell,cmdlet,gallery
+ms.date: 2016-10-14
+contributor: manikb
+title: "psget_save 模块"
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: ee03101cc5b54ac515cfdcc318b97d9c3178cda1
+
+---
+
 # Save-Module
 
 在不安装的情况下本地保存模块。
@@ -45,6 +62,8 @@ Find-RoleCapability -Name Maintenance,MyJeaRole | Save-Module -Path C:\MyModules
 ```
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Oct16_HO2-->
 
 

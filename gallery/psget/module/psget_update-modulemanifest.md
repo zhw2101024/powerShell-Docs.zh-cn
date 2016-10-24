@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: powershell,cmdlet,gallery
+ms.date: 2016-10-14
+contributor: manikb
+title: psget_update modulemanifest
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 9ade4e89a28b777266f48556c910092bfab67227
+
+---
+
 # Update-ModuleManifest
 更新模块清单文件。
 
@@ -6,7 +23,7 @@
 Update-ModuleManifest cmdlet 更新模块清单 (.psd1) 文件。
 
 ### 注释
-    - DscResourcesToExport is only supported on the latest PowerShell version 5.0. We won’t be able to update the field if you are running on lower versions of PowerShell.
+    - DscResourcesToExport 仅在最新的 PowerShell 5.0 版本上才受支持。 如果你正在较低版本的 PowerShell 上运行，我们将无法更新该字段。
 
 ## Cmdlet 语法
 ```powershell
@@ -107,6 +124,7 @@ PrivateData = @{
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Oct16_HO2-->
 
 

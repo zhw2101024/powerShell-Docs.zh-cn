@@ -1,3 +1,19 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: powershell,cmdlet,gallery
+ms.date: 2016-10-14
+contributor: manikb
+title: psgalleryint_status
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 49f15c88a3bb0e52ed53555f8f59737a622a3b87
+
+---
 
 PowerShell 库状态
 =========================
@@ -11,6 +27,7 @@ __后续步骤__：如果在此期间使用了“联系我们”链接或向 cga
 
 
 
-<!--HONumber=Sep16_HO2-->
+
+<!--HONumber=Oct16_HO2-->
 
 

@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: powershell,cmdlet,gallery
+ms.date: 2016-10-14
+contributor: manikb
+title: psget_cmdlets_troubleshooting
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 740c72620e1a5a114716f924f859c57cad125614
+
+---
+
 ## 如何解决“警告: 无法下载包‘你的包名称’”问题？
 
 
@@ -16,6 +33,8 @@ Update-Module Azure -Verbose
 ```
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Oct16_HO2-->
 
 

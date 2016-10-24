@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: powershell,cmdlet,gallery
+ms.date: 2016-10-14
+contributor: manikb
+title: psgallery_dispute_resolution
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 6d7015a14f0d0a75bc28e201dceefe6c9c682b31
+
+---
+
 # 争议解决
 
 本文档是推荐的争议解决过程，用于社区成员帮助解决与其他 PowerShell 库发布者的争议。
@@ -29,6 +46,8 @@ PowerShellGallery.com 支持团队将介入，尝试解决此问题。
 **此策略的变更受 PowerShell 自由裁量权的约束。**
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Oct16_HO2-->
 
 

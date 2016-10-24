@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: powershell,cmdlet,gallery
+ms.date: 2016-10-14
+contributor: manikb
+title: "psget_install 脚本"
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: df04c387f09ad603d001bb94ee4cdeabc6d9d5a6
+
+---
+
 # Install-Script
 
 将联机存储库中的 PowerShell 脚本文件安装到本地计算机。
@@ -889,6 +906,8 @@ Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Oct16_HO2-->
 
 

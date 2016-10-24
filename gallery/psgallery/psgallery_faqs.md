@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: powershell,cmdlet,gallery
+ms.date: 2016-10-14
+contributor: manikb
+title: psgallery_faqs
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 96d38c487a311852a0f670b7d3de4929fab68e4d
+
+---
+
 # 常见问题
 
 ## PowerShell 模块是什么？
@@ -158,6 +175,9 @@ PowerShell 库是 [NuGet Gallery](http://www.nuget.org/)（NuGet 库）的修改
 
 我们鼓励 PowerShell 社区解决项所有者之间可能出现的任何争议。  PowerShellGallery.com 管理员进行调解之前，我们希望你遵循我们精心指定的[争议解决过程](psgallery_dispute_resolution.md)。
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+<!--HONumber=Oct16_HO2-->
 
 

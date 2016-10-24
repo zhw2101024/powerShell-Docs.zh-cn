@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: powershell,cmdlet,gallery
+ms.date: 2016-10-14
+contributor: manikb
+title: "psget_find 脚本"
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 5651989acde9d47a7a07fac9284aebae84f28174
+
+---
+
 # Find-Script
 
 查找联机库中与指定条件相匹配的 PowerShell 脚本文件。
@@ -142,6 +159,8 @@ Cmdlet                         {}
 ```
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Oct16_HO2-->
 
 

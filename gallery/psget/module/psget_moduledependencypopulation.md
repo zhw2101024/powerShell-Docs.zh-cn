@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: powershell,cmdlet,gallery
+ms.date: 2016-10-14
+contributor: manikb
+title: psget_moduledependencypopulation
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: a6ace8faebd6f37d3c41ee5a3fef2bda70b8c651
+
+---
+
 # 在发布操作过程中准备模块依赖项的逻辑
 1.  作为 RequiredModules 的一部分列出的模块将被视为依赖项。
 2.  作为 NestedModules（其模块基准不位于指定的模块基准下）的一部分列出的模块将被视为依赖项。
@@ -19,6 +36,8 @@
 *请确保发布操作过程中，模块的依赖项在系统上的 $env:PSModulePath 下可用。*
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Oct16_HO2-->
 
 

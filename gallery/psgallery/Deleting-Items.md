@@ -1,3 +1,21 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: powershell,cmdlet,gallery
+ms.date: 2016-10-14
+contributor: manikb
+title: "删除项"
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 4e0258ccf05ef5ab0dc799a5113b05becc3dbb05
+
+---
+
+
 # 删除项
 
 PowerShell 库不支持永久删除项，因为这会对依赖其仍可用的人造成中断。
@@ -6,6 +24,9 @@ PowerShell 库不支持永久删除项，因为这会对依赖其仍可用的人
 
 如果你遇到你认为必须删除一个项的特殊情况，PowerShell 库团队可手动解决此问题。 例如，如果存在侵犯版权问题或潜在有害内容，这是删除项的正当理由。 在此情况下，你应通过 [PowerShell 库] (http://www.PowerShellGallery.com) 提交支持请求。
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+<!--HONumber=Oct16_HO2-->
 
 

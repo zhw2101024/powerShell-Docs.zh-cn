@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: powershell,cmdlet,gallery
+ms.date: 2016-10-14
+contributor: manikb
+title: "psget_update 脚本"
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 8c5211a51a9ff8bce641fde8deacd2d288916602
+
+---
+
 # Update-Script
 
 Update-Script cmdlet 可对使用 Install-Script cmdlet 安装的脚本文件进行就地更新。
@@ -58,6 +75,7 @@ Version Name Type Repository Description
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Oct16_HO2-->
 
 

@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: powershell,cmdlet,gallery
+ms.date: 2016-10-14
+contributor: manikb
+title: scriptwithpseditionsupport
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 46efb494303c4cb691d5b58791a156dcc5bc99b9
+
+---
+
 # 具有兼容的 PowerShell 版本的脚本
 从版本 5.1 开始，PowerShell 以表现出不同功能集和平台兼容性的不同版本提供。
 
@@ -56,6 +73,7 @@ Find-Script -Tag PSEditon_Core
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Oct16_HO2-->
 
 

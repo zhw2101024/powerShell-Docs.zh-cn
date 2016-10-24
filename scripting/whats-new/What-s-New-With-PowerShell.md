@@ -8,8 +8,8 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 18949229d4d9e3867cdc265c3fd958d2598186b4
-ms.openlocfilehash: 77ac8a58f87371a176ca7a3613c1f319aa69baff
+ms.sourcegitcommit: 1d4062490ba76a8cc62faa8fb96eff92b49169b7
+ms.openlocfilehash: 035fc8adc08df500069e800cfb94c5dcff46d88f
 
 ---
 
@@ -18,7 +18,7 @@ Windows PowerShell® 5.0 包括了重要的新功能，这些功能可扩展其�
 
 Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows PowerShell 3.0 和 Windows PowerShell 2.0 设计的 cmdlet、提供程序、模块、管理单元、脚本、函数和配置文件通常适用于 Windows PowerShell 5.0，无需更改。
 
-默认情况下，Windows PowerShell 5.0 安装在 Windows Server® 2016 技术预览和 Windows 10® 上。 若要在 Windows Server 2012 R2、Windows 8.1 企业版或 Windows 8.1 专业版上安装 Windows PowerShell 5.0，请下载并安装 [Windows Management Framework 5.0 预览版](http://go.microsoft.com/fwlink/?LinkID=395058)。 在安装 Windows Management Framework 5.0 预览版前，请务必阅读下载详细信息并确保满足所有系统要求。
+默认情况下，Windows PowerShell 5.0 安装在 Windows Server® 2016 和 Windows® 10 上。 若要在 Windows Server 2012 R2、Windows 8.1 企业版或 Windows 8.1 专业版上安装 Windows PowerShell 5.0，请下载并安装 [Windows Management Framework 5.0](https://go.microsoft.com/fwlink/?linkid=830436)。 在安装 Windows Management Framework 5.0 预览版前，请务必阅读下载详细信息并确保满足所有系统要求。
 
 ## 本主题内容
 
@@ -35,6 +35,6 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 
 
 
-<!--HONumber=Oct16_HO1-->
+<!--HONumber=Oct16_HO3-->
 
 
