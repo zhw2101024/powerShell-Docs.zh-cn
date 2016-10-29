@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
 translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: 9e012dd8218a256e4236c2263babefd29ecdb016
+ms.sourcegitcommit: 1d4062490ba76a8cc62faa8fb96eff92b49169b7
+ms.openlocfilehash: 966cab74cb2519893d4744e8bd0ca12f93f73136
 
 ---
 
@@ -19,7 +19,10 @@ Windows PowerShell ® 5.0 包括了重要的新功能，这些功能可扩展其
 
 Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows PowerShell 3.0 和 Windows PowerShell 2.0 设计的 cmdlet、提供程序、模块、管理单元、脚本、函数和配置文件通常适用于 Windows PowerShell 5.0，无需更改。
 
-默认情况下，Windows PowerShell 5.0 安装在 Windows Server ® 2016 技术预览和 Windows 10 ® 上。 若要在 Windows Server 2012 R2、Windows 8.1 企业版或 Windows 8.1 专业版上安装 Windows PowerShell 5.0，请下载并安装 [Windows Management Framework 5.0](http://aka.ms/wmf5download)。 请务必先阅读下载详细信息并确保满足所有系统要求，然后再安装 Windows Management Framework 5.0。
+# 安装 Windows PowerShell
+默认情况下，Windows PowerShell 5.0 安装在 Windows Server ® 2016 技术预览和 Windows 10 ® 上。 
+
+若要在 Windows Server 2012 R2、Windows 8.1 企业版或 Windows 8.1 专业版上安装 Windows PowerShell 5.0，请下载并安装 [Windows Management Framework 5.0](http://aka.ms/wmf5download)。 请务必先阅读下载详细信息并确保满足所有系统要求，然后再安装 Windows Management Framework 5.0。
 
 ## 本主题内容
 
@@ -752,13 +755,13 @@ Windows PowerShell 3.0 包括对运行身份和共享主机功能的支持。
 为了改进 Windows PowerShell 3.0 解译和正确处理特殊字符的能力，用于处理路径中特殊字符的 **LiteralPath** 参数几乎对具有 **Path** 参数的所有 cmdlet 都有效，包括新增的 [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) 和 [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) cmdlet。 分析程序中还包括了特殊逻辑，用于改进对文件名和路径中的反撇号字符 (\`) 和方括号的处理。
 
 ## 另请参阅
-[about_Windows_PowerShell_4.0](http://technet.microsoft.com/en-us/library/hh847833(v=wps.630).aspx)
-[about_Windows_PowerShell_5.0](https://technet.microsoft.com/en-us/library/6d56fa88-371e-40c9-b2de-64a2a0cd49da)
-[Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
+- [about_Windows_PowerShell_4.0](http://technet.microsoft.com/en-us/library/hh847833(v=wps.630).aspx)
+- [about_Windows_PowerShell_5.0](https://technet.microsoft.com/en-us/library/6d56fa88-371e-40c9-b2de-64a2a0cd49da)
+- [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
 
 
 
 
-<!--HONumber=Oct16_HO1-->
+<!--HONumber=Oct16_HO5-->
 
 
