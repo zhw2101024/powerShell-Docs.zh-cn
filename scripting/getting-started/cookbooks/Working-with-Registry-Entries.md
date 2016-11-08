@@ -14,10 +14,10 @@ ms.openlocfilehash: cdc7f45c9fa8a6bf748a52b460a1ac190d283971
 
 ---
 
-# 使用注册表条目
+# <a name="working-with-registry-entries"></a>使用注册表条目
 因为注册表条目是项的属性而无法直接浏览，因此我们在使用它们时需要采取略有不同的方式。
 
-### 列出注册表条目
+### <a name="listing-registry-entries"></a>列出注册表条目
 可采用许多不同的方法检查注册表条目。 最简单的方法是获取与某个项相关联的属性名称。 例如，若要查看注册表项 **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion** **Get-Item**。 注册表项具有一个通用名称为“Property”的属性，它是项中的注册表条目的列表。 以下命令选择 Property 属性并扩展这些项，以便它们可在列表中显示：
 
 ```
@@ -80,7 +80,7 @@ ProgramFilesDir     : C:\Program Files
 
 路径扩展的工作方式与其在文件系统中的工作方式相同，因此在此位置中，你可以通过使用 **Get-ItemProperty -Path ..\\Help** 来获取 **HKLM:\\SOFTWARE\\Microsoft\\Windows\\Help** 的 **ItemProperty** 列表。
 
-### 获取单个注册表条目
+### <a name="getting-a-single-registry-entry"></a>获取单个注册表条目
 如果你希望在注册表项中检索特定条目，可以使用几种可能的方法之一。 此示例在 **HKEY_LOCAL_MACHINE\\\\Microsoft\\Windows\\CurrentVersion** 中查找 **DevicePath** 的值。
 
 通过使用 **Get-ItemProperty**，可使用 **Path** 参数指定项的名称，使用 **Name** 参数指定 **DevicePath** 条目的名称。
@@ -121,7 +121,7 @@ PS> (New-Object -ComObject WScript.Shell).RegRead("HKLM\SOFTWARE\Microsoft\Windo
 %SystemRoot%\inf
 ```
 
-### 创建新注册表条目
+### <a name="creating-new-registry-entries"></a>创建新注册表条目
 若要将名为“PowerShellPath”的新条目添加到 **CurrentVersion** 项，请将 **New-ItemProperty** 与该项的路径、条目名称和条目的值一起使用。 对于此示例，我们将采用 Windows PowerShell 变量 **$PSHome** 的值，该变量可存储 Windows PowerShell 的安装目录的路径。
 
 你可以通过使用以下命令来将新条目添加到项，该命令还会返回有关新条目的信息：
@@ -159,7 +159,7 @@ New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion, HKCU:\SO
 
 你还可以替代预先存在的注册表条目值，方法是将 **Force** 参数添加到任何 **New-ItemProperty** 命令。
 
-### 重命名注册表条目
+### <a name="renaming-registry-entries"></a>重命名注册表条目
 若要将 **PowerShellPath** 条目重命名为“PSHome”，请使用 **Rename-ItemProperty**：
 
 ```
@@ -172,7 +172,7 @@ Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name 
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome -passthru
 ```
 
-### 删除注册表条目
+### <a name="deleting-registry-entries"></a>删除注册表条目
 若要删除 PSHome 和 PowerShellPath 注册表条目，请使用 **Remove-ItemProperty**：
 
 ```
@@ -183,6 +183,6 @@ Remove-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Nov16_HO1-->
 
 
