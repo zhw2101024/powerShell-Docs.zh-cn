@@ -8,12 +8,12 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6c5f3d3321b7e50215cf58267e1864b7da827764
-ms.openlocfilehash: d84bb35ada3588367436e6f5e3c6696b90c3661b
+ms.sourcegitcommit: 49ddf6faf98a51f7ad5252e9563b1543478ed113
+ms.openlocfilehash: 567ab9528402c7d39d80a997bc14b6c6992cf772
 
 ---
 
-# DSC 配置
+# <a name="dsc-configurations"></a>DSC 配置
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
@@ -37,7 +37,7 @@ Configuration MyDscConfiguration {
 
 将脚本保存为 .ps1 文件。
 
-## 配置语法
+## <a name="configuration-syntax"></a>配置语法
 
 配置脚本由以下部分组成：
 
@@ -68,7 +68,7 @@ Configuration MyDscConfiguration {
 
 在此示例中，你在[编译配置](# Compiling the configuration)时将节点名称作为 $ComputerName 参数进行传递，从而指定节点名称。 该名称默认为“localhost”。
 
-## 正在编译配置
+## <a name="compiling-the-configuration"></a>正在编译配置
 必须将其编译为 MOF 文档才能执行配置。 你可通过调用配置（像调用 PowerShell 函数一样）以执行此操作。
 >__注意：__若要调用配置，该函数必须在全局范围内（与任何其他 PowerShell 函数一样）。 可通过以下方式来实现此操作：对脚本执行“dot-source”操作，或者使用 F5 或单击 ISE 中的“运行脚本”按钮以运行配置脚本。 若要对脚本执行“dot-source”操作，请运行命令 `. .\myConfig.ps1`，其中 `myConfig.ps1` 是包含配置的脚本文件的名称。
 
@@ -102,7 +102,7 @@ Mode                LastWriteTime         Length Name
 -a----       10/23/2015   4:32 PM           2842 MyTestNode.mof
 ```      
 
-## 使用 DependsOn
+## <a name="using-dependson"></a>使用 DependsOn
 有效的 DSC 关键字为 __DependsOn__。 通常（但不一定总是），DSC 将按资源在配置中显示的顺序来应用这些资源。 但是，由 __DependsOn__ 指定哪些资源依赖于其他资源，而 LCM 则确保这些资源的应用顺序正确（无论资源实例是以何种顺序定义的）。 例如，配置可能会指定__用户__资源实例依赖于__组__实例的存在：
 
 ```powershell
@@ -123,13 +123,13 @@ Configuration DependsOnExample {
 }
 ```
 
-## 在配置中使用新的资源
+## <a name="using-new-resources-in-your-configuration"></a>在配置中使用新的资源
 如果运行了前面的示例，你可能注意到你已收到警告信息，提示你正在使用未显式导入的资源。
 现在，DSC 附带 12 种资源作为 PSDesiredStateConfiguration 模块的一部分。 外部模块中的其他资源须置于 `$env:PSModulePath` 中以便 LCM 能够识别。 新的 cmdlet - [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)，可用来确定哪些资源已安装在系统上并且可供 LCM 使用。 一旦这些模块已置于 `$env:PSModulePath` 中并由 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 正确识别，你仍需在配置中加载它们。 __Import-DscResource__ 是仅可在__配置__块中识别的动态关键字（即它不是 cmdlet）。 __Import-DscResource__ 支持两种参数：
 * __ModuleName__ 是使用 __Import-DscResource__ 的推荐方法。 它接受包含要导入资源的模块名称以及模块名称的字符串数组。 
 * __Name__ 是要导入资源的名称。 这不是由 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 返回为“Name”的友好名称，而是定义资源架构时使用的类名（由 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 返回为 __ResourceType__）。 
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 * [Windows PowerShell Desired State Configuration 概述](overview.md)
 * [DSC 资源](resources.md)
 * [配置本地配置管理器](metaConfig.md)
@@ -137,6 +137,6 @@ Configuration DependsOnExample {
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 
