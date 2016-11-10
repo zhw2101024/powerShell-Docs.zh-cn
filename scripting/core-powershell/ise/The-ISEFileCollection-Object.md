@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 0f86a427-ea38-4bce-85f8-06c98d30d508
 translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: 109d93df4ebe6dbc354d333e038846ad2c3cb984
+ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
+ms.openlocfilehash: 86cb3485445fdb00c9b99a20694b9bf12a6e8f2c
 
 ---
 
@@ -71,15 +71,15 @@ $psISE.CurrentPowerShellTab.Files.SetSelectedFile($firstfile)
 ```
 
 ## 另请参阅
- [ISEFile 对象](The-ISEFile-Object.md) 
- [Windows PowerShell ISE 脚本对象模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE 对象模型参考](Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [ISE 对象模型层次结构](The-ISE-Object-Model-Hierarchy.md)
+- [ISEFile 对象](The-ISEFile-Object.md) 
+- [Windows PowerShell ISE 脚本对象模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+- [Windows PowerShell ISE 对象模型参考](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [ISE 对象模型层次结构](The-ISE-Object-Model-Hierarchy.md)
 
   
 
 
 
-<!--HONumber=Oct16_HO1-->
+<!--HONumber=Oct16_HO3-->
 
 
