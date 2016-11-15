@@ -8,18 +8,18 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: c7b198d6206c57ef663ea5f4c8cef5ab5678a823
-ms.openlocfilehash: d06b330e3a64705e2f86230e8a9e344e85b8d4be
+ms.sourcegitcommit: 99c1ea706ca5c3fb008065e98cc99fef463b1011
+ms.openlocfilehash: caf661fe58faf8cf24c789b408505051429df3f4
 
 ---
 
-# DSC 故障排除
+# <a name="troubleshooting-dsc"></a>DSC 故障排除
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 本主题介绍出现问题时 DSC 故障排除的方法。
 
-## 使用 Get-DscConfigurationStatus
+## <a name="using-getdscconfigurationstatus"></a>使用 Get-DscConfigurationStatus
 
 [Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx) cmdlet 从目标节点中获取有关配置状态的信息。 将返一个回富对象，它包含有关配置运行成功与否的高级信息。 你可以深入探究该对象，以查明有关配置运行的详细信息，例如：
 
@@ -46,7 +46,7 @@ Get-DscConfigurationStatus  -All
                             [<CommonParameters>]
 ```
 
-## 示例
+## <a name="example"></a>示例
 
 ```powershell
 PS C:\> $Status = Get-DscConfigurationStatus 
@@ -79,11 +79,11 @@ StartDate               :   11/24/2015  3:44:56
 PSComputerName          :
 ```
 
-## 脚本不运行：使用 DSC 日志来诊断脚本错误
+## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a>脚本不运行：使用 DSC 日志来诊断脚本错误
 
 与所有 Windows 软件一样，DSC 将错误和事件记录在[日志](https://msdn.microsoft.com/library/windows/desktop/aa363632.aspx)中，可以通过[事件查看器](http://windows.microsoft.com/windows/what-information-event-logs-event-viewer)查看。 检查这些日志可以帮助你了解某一特定操作失败的原因，以及如何防止将来出现故障。 编写配置脚本可能会很棘手，因此，为了在创作时更轻松地跟踪错误，请在 DSC Analytic 事件日志中使用 DSC Log 资源跟踪配置的进度。
 
-## DSC 事件日志在哪里？
+## <a name="where-are-dsc-event-logs"></a>DSC 事件日志在哪里？
 
 在事件查看器中，DSC 事件位于：**Applications and Services Logs/Microsoft/Windows/Desired State Configuration**
 
@@ -103,7 +103,7 @@ TimeCreated                     Id LevelDisplayName Message
 wevtutil.exe set-log “Microsoft-Windows-Dsc/Analytic” /q:true /e:true
 ```
 
-## DSC 日志包含哪些内容？
+## <a name="what-do-dsc-logs-contain"></a>DSC 日志包含哪些内容？
 
 根据消息的重要性，将 DSC 日志拆分到三个日志通道。 DSC 中的运行日志包含所有错误消息，可用于确定问题。 分析日志包含更多事件，可确定错误出现的位置。 此通道还包含详细消息（若有）。 调试日志包含的日志可帮助你了解错误出现的过程。 DSC 事件消息的构成方式是，每个事件消息以表示唯一 DSC 操作的作业 ID 开头。 下面的示例尝试从记录到 DSC 操作日志的第一个事件获取消息。
 
@@ -120,7 +120,7 @@ Consistency engine was run successfully.
 **作业 ID：<Guid>**
 **<Event Message>**
 
-## 通过单个 DSC 操作收集事件
+## <a name="gathering-events-from-a-single-dsc-operation"></a>通过单个 DSC 操作收集事件
 
 DSC 事件日志包含由各种 DSC 操作生成的事件。 但是，你通常只关心某一特定操作的详细信息。 可按作业 ID 属性对所有 DSC 日志进行分组，作业 ID 对每个 DSC 操作来说是唯一的。 作业 ID 显示为所有 DSC 事件中的第一个属性值。 下列步骤说明如何在一个分组数组结构中累计所有事件。
 
@@ -185,7 +185,7 @@ TimeCreated                     Id LevelDisplayName Message
 
 可以用 [Where-object](https://technet.microsoft.com/library/ee177028.aspx) 提取变量 `$SeparateDscOperations` 中的数据。 在以下五种情况下，可能需要提取数据以解决 DSC 问题：
 
-### 1：操作故障
+### <a name="1-operations-failures"></a>1：操作故障
 
 所有事件都具有[严重性级别](https://msdn.microsoft.com/library/dd996917(v=vs.85))。 此信息可用于标识错误事件：
 
@@ -196,9 +196,9 @@ Count Name                      Group
    38 {5BCA8BE7-5BB6-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
 ```
 
-### 2：过去半小时内所运行操作的详细信息
+### <a name="2-details-of-operations-run-in-the-last-half-hour"></a>2：过去半小时内所运行操作的详细信息
 
-`TimeCreated`，每个 Windows 事件的属性，表明创建该事件的时间。 可通过将此属性与特定日期/时间对象进行比较来筛选所有事件：
+每个 Windows 事件都具有 `TimeCreated` 属性，它表明创建该事件的时间。 可通过将此属性与特定日期/时间对象进行比较来筛选所有事件：
 
 ```powershell
 PS C:\> $DateLatest = (Get-Date).AddMinutes(-30)
@@ -208,7 +208,7 @@ Count Name                      Group
     1 {6CEC5B09-5BB0-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord}   
 ```
 
-### 3：来自最新操作的消息
+### <a name="3-messages-from-the-latest-operation"></a>3：来自最新操作的消息
 
 最新操作存储在数组组 `$SeparateDscOperations` 的第一个索引中。 查询索引 0 的组消息将返回最新操作的所有消息：
 
@@ -230,7 +230,7 @@ Displaying messages from built-in DSC resources:
  Message : [INCH-VM]:                            [] Consistency check completed. 
 ```
 
-### 4：为最近的失败操作记录到的错误消息
+### <a name="4-error-messages-logged-for-recent-failed-operations"></a>4：为最近的失败操作记录到的错误消息
 
 `$SeparateDscOperations[0].Group` 包含最新操作的一组事件。 运行 `Where-Object` cmdlet 可根据事件级别显示名称对筛选事件。 结果将存储在 `$myFailedEvent` 变量中，可以进一步细化以获取事件消息：
 
@@ -245,9 +245,9 @@ rameter to specify a configuration file and create a current configuration first
 Error Code : 1 
 ```
 
-### 5：为特定作业 ID 生成的所有事件。
+### <a name="5-all-events-generated-for-a-particular-job-id"></a>5：为特定作业 ID 生成的所有事件。
 
-`$SeparateDscOperations` 是一系列组，其中每个组的名称即其唯一作业 ID。 通过运行 `Where-Object` cmdlet，你可以提取这些具有特定作业 ID 的事件组：
+`$SeparateDscOperations` 是一个组数组，其中每个组的名称即其唯一作业 ID。 通过运行 `Where-Object` cmdlet，你可以提取这些具有特定作业 ID 的事件组：
 
 ```powershell
 PS C:\> ($SeparateDscOperations | Where-Object {$_.Name -eq $jobX} ).Group
@@ -262,11 +262,11 @@ TimeCreated                     Id LevelDisplayName Message
 12/2/2013 4:33:24 PM          4120 Information      Job {847A5619-5BB2-11E3-BF41-00155D553612} : ...  
 ```
 
-## 使用 xDscDiagnostics 分析 DSC 日志
+## <a name="using-xdscdiagnostics-to-analyze-dsc-logs"></a>使用 xDscDiagnostics 分析 DSC 日志
 
 **xDscDiagnostics** 是由几个函数组成的 PowerShell 模块，这些函数可以帮助你分析计算机上的 DSC 失败。 这些函数可以帮助你确定因过去的 DSC 操作而起的所有本地事件，或（具有有效凭据的）远程计算机上的 DSC 事件。 此处使用了“DSC 操作”这一术语来定义单个唯一的 DSC 执行过程。 例如，`Test-DscConfiguration` 将是一个单独的 DSC 操作。 同样，DSC 中每个其他 cmdlet （如 `Get-DscConfiguration`、`Start-DscConfiguration` 等）可各自识别为单独的 DSC 操作。 在 [xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics) 中对函数进行了解释。 可通过运行 `Get-Help <cmdlet name>` 获取帮助。
 
-### 获取 DSC 操作的详细信息 
+### <a name="getting-details-of-dsc-operations"></a>获取 DSC 操作的详细信息 
 
 可通过 `Get-xDscOperation` 函数查找在一台或多台计算机上运行的 DSC 操作的结果，并返回一个包含每个 DSC 操作所产生事件的集合的对象。 例如，在下面的输出中，运行了三个命令。 第一个命令成功，另外两个失败。 在 `Get-xDscOperation` 的输出中总结了这些结果。
 
@@ -294,9 +294,9 @@ SRV1   4          6/23/2016 4:36:54 PM  Success  5c06402a-399b-11e6-9165-00155d3
 SRV1   5          6/23/2016 4:36:51 PM  Success                                        {@{Message=; TimeC...
 ```
 
-### 获取 DSC 事件的详细信息
+### <a name="getting-details-of-dsc-events"></a>获取 DSC 事件的详细信息
 
-`Trace-xDscOperation1` cmdlet 将返回一个对象，其中包含事件集合、其事件类型以及特定 DSC 操作生成的消息输出。 通常情况下，使用 `Get-xDscOperation` 在任何操作中查找故障时，将跟踪该操作以查明导致故障的事件。
+`Trace-xDscOperation` cmdlet 将返回一个对象，其中包含事件集合、其事件类型以及特定 DSC 操作生成的消息输出。 通常情况下，使用 `Get-xDscOperation` 在任何操作中查找故障时，将跟踪该操作以查明导致故障的事件。
 
 使用  `SequenceID` 参数以获取某个特定计算机的某个特定操作的事件。 例如，如果你指定 9 的 `SequenceID`，则 `Trace-xDscOperaion` 获取 DSC 操作的跟踪（自上一次操作的第 9 个）：
 
@@ -401,7 +401,7 @@ TimeCreated                     Id LevelDisplayName Message
 
 理想情况下，你将首先使用 `Get-xDscOperation` 列出在计算机上运行的最后几个 DSC 配置。 此后，可以通过 `Trace-xDscOperation` 检查任意单个操作（使用其 SequenceID 或 JobID）以发现它在后台进行的活动。
 
-### 获取远程计算机的事件
+### <a name="getting-events-for-a-remote-computer"></a>获取远程计算机的事件
 
 使用 `ComputerName` cmdlet 的 `Trace-xDscOperation` 参数以获取远程计算机上的事件详细信息。 执行此操作前，你需要创建一个防火墙规则，以允许在远程计算机上进行远程管理：
 
@@ -447,7 +447,7 @@ SRV2   OPERATIONAL  6/24/2016 11:36:56 AM Operation Consistency Check or Pull co
 SRV2   ANALYTIC     6/24/2016 11:36:56 AM Deleting file from C:\Windows\System32\Configuration\DSCEngineCach...
 ```
 
-## 资源不更新：如何重置缓存
+## <a name="my-resources-wont-update-how-to-reset-the-cache"></a>资源不更新：如何重置缓存
 
 出于效率考虑，DSC 引擎将缓存作为 PowerShell 模块实现的资源。 但是，当你同时创作和测试资源时，这可能导致问题，因为在重启进程前，DSC 将始终加载缓存的版本。 使 DSC 加载较新版本的唯一方法是显式终止承载 DSC 引擎的进程。
 
@@ -471,7 +471,7 @@ Select-Object -ExpandProperty HostProcessIdentifier
 Get-Process -Id $dscProcessID | Stop-Process
 ```
 
-## 使用 DebugMode
+## <a name="using-debugmode"></a>使用 DebugMode
 
 可将 DSC 本地配置管理器 (LCM) 配置为使用 `DebugMode`，以便在重新启动主机进程时始终清除缓存。 当设置为 **TRUE**，它将使引擎始终重新加载 PowerShell DSC 资源。 编写完资源后，可将其设置回 **FALSE**，引擎将恢复到其缓存模块的行为。
 
@@ -612,20 +612,20 @@ onlyProperty                            PSComputerName
 14                                      localhost
 ```
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
-### 引用
+### <a name="reference"></a>引用
 * [DSC Log 资源](logResource.md)
 
-### 概念
+### <a name="concepts"></a>概念
 * [构建自定义 Windows PowerShell Desired State Configuration 资源](authoringResource.md)
 
-### 其他资源
+### <a name="other-resources"></a>其他资源
 * [Windows PowerShell Desired State Configuration Cmdlet](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)
 
 
 
 
-<!--HONumber=Oct16_HO1-->
+<!--HONumber=Oct16_HO4-->
 
 

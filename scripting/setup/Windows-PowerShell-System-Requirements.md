@@ -9,17 +9,31 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: b5b797ed09f9f43bfd0259e4af8b3754655d7c84
+ms.sourcegitcommit: c1e210afa664304fa38f7dead444ab4a206be64f
+ms.openlocfilehash: f560b955f8f817caf96dba40900844b98a0e92a9
 
 ---
 
-# Windows PowerShell 系统要求
-本主题列出了用于 Windows PowerShell 3.0 和 Windows PowerShell 4.0，以及用于特殊功能（如 Windows PowerShell 集成脚本环境 (ISE)、CIM 命令和工作流的系统要求。
+# <a name="windows-powershell-system-requirements"></a>Windows PowerShell 系统要求
+本主题列出了用于 Windows PowerShell 3.0、Windows PowerShell 4.0 和 Windows PowerShell 5.0，以及用于特殊功能（如 Windows PowerShell 集成脚本环境 (ISE)、CIM 命令和工作流）的系统要求。
 
 Windows® 8.1 和 Windows Server® 2012 R2 包括所有必需的程序。 本主题主要面向 Windows 早期版本的用户。
 
-## 操作系统要求
+## <a name="operating-system-requirements"></a>操作系统要求
+Windows PowerShell 5.0 在以下 Windows 版本上运行。
+
+-   Windows Server 2016，默认安装
+
+-   Windows Server 2012 R2，安装 [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) 以运行 Windows PowerShell 5.0
+
+-   Windows Server 2012，安装 [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) 以运行 Windows PowerShell 5.0
+
+-   Windows Server 2008 R2 Service Pack 1，安装 [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) 以运行 Windows PowerShell 5.0
+
+-   Windows 8.1
+
+-   Windows 7 Service Pack 1，安装 [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) 以运行 Windows PowerShell 5.0
+
 Windows PowerShell 4.0 在以下 Windows 版本上运行。
 
 -   Windows 8.1，默认安装
@@ -42,7 +56,9 @@ Windows PowerShell 3.0 在以下 Windows 版本上运行。
 
 -   Windows Server 2008 Service Pack 2，安装 [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) 以运行 Windows PowerShell 3.0
 
-## Microsoft .NET Framework 要求
+## <a name="microsoft-net-framework-requirements"></a>Microsoft .NET Framework 要求
+Windows PowerShell 5.0 需要完全安装 Microsoft .NET Framework 4.5。 Windows 8.1 和 Windows Server 2012 R2 默认包括 Microsoft.NET Framework 4.5。
+
 Windows PowerShell 4.0 需要完全安装 Microsoft .NET Framework 4.5。 Windows 8.1 和 Windows Server 2012 R2 默认包括 Microsoft.NET Framework 4.5。
 
 Windows PowerShell 3.0 需要完全安装 Microsoft .NET Framework 4。 默认情况下，Windows 8 和 Windows Server 2012 中包含了满足此要求的 Microsoft .NET Framework 4.5。
@@ -51,16 +67,19 @@ Windows PowerShell 3.0 需要完全安装 Microsoft .NET Framework 4。 默认�
 
 若要安装 Microsoft .NET Framework 4 (dotNetFx40_Full_setup.exe) 的完全安装，请参阅 Microsoft 下载中心的 [Microsoft .NET Framework 4 (Web Installer)](http://go.microsoft.com/fwlink/?LinkID=212931)。
 
-## WS-Management 3.0
+## <a name="windows-management-framework-40"></a>Windows Management Framework 4.0
+Windows PowerShell 5.0 要求在 Windows Server 2008 R2 SP1 和 Windows 7 SP1 上预先安装 Windows Management Framework 4.0。
+
+## <a name="wsmanagement-30"></a>WS-Management 3.0
 Windows PowerShell 3.0 和 Windows PowerShell 4.0 需要支持 WinRM 服务和 WSMan 协议的 WS-Management 3.0。 Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、Windows Management Framework 4.0 和 Windows Management Framework 3.0 中包含此程序。
 
-## Windows Management Instrumentation 3.0
+## <a name="windows-management-instrumentation-30"></a>Windows Management Instrumentation 3.0
 Windows PowerShell 3.0 和 Windows PowerShell 4.0 要求安装 Windows Management Instrumentation 3.0 (WMI)。 Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、Windows Management Framework 4.0 和 Windows Management Framework 3.0 中包含此程序。 如果计算机上未安装此程序，则不能运行需要 WMI 的功能，如 CIM 命令。
 
-## 公共语言运行时 4.0
-针对公共语言运行时 (CLR) 4.0 编译 Windows PowerShell 3.0 和 Windows PowerShell 4.0。
+## <a name="common-language-runtime-40"></a>公共语言运行时 4.0
+针对公共语言运行时 (CLR) 4.0 编译 Windows PowerShell 3.0、Windows PowerShell 4.0 和 Windows PowerShell 5.0。
 
-## 图形用户界面要求
+## <a name="graphical-user-interface-requirements"></a>图形用户界面要求
 Windows PowerShell 是基于控制台的应用程序，不需要图形用户界面。 因此，它适用于没有屏幕或监视器或用户界面的计算机，例如 Windows Server 2012 R2 或 Windows Server 2012 的服务器核心安装选项。
 
 但是，以下的一些项则需要图形用户界面。 有关详细信息，请参阅每个项的帮助主题。
@@ -83,7 +102,7 @@ Windows PowerShell 是基于控制台的应用程序，不需要图形用户界�
 
     2.  [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) 和 [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) cmdlet 的 **ShowSecurityDescriptorUI** 参数。
 
-## Windows PowerShell 引擎要求
+## <a name="windows-powershell-engine-requirements"></a>Windows PowerShell 引擎要求
 Windows PowerShell 4.0 旨在能够与 Windows PowerShell 3.0 和 Windows PowerShell 2.0 向后兼容。 为 Windows PowerShell 2.0 和 Windows PowerShell 3.0 编写的 Cmdlet、提供程序、管理单元、模块以及脚本无需更改，即可在 Windows PowerShell 4.0 中运行。
 
 但是，由于 Microsoft.NET framework 4 中的运行时激活策略的更改，为 Windows PowerShell 2.0 编写并使用公共语言运行时 (CLR) 2.0 编译的 Windows PowerShell 主机程序在使用 CLR 4.0 编译的 Windows PowerShell 3.0 中未进行修改时，将无法运行。
@@ -92,7 +111,7 @@ Windows PowerShell 2.0 引擎至少需要 Microsoft .NET Framework 2.0.50727。 
 
 有关添加或安装 Windows PowerShell 2.0 引擎，以及添加或安装 Microsoft.NET Framework 所需版本的详细信息，请参阅[安装 Windows PowerShell 2.0 引擎](Installing-the-Windows-PowerShell-2.0-Engine.md)。 有关启动 Windows PowerShell 2.0 引擎的信息，请参阅[启动 Windows PowerShell 2.0 引擎](Starting-the-Windows-PowerShell-2.0-Engine.md)。
 
-## Windows 预安装环境
+## <a name="windows-preinstallation-environment"></a>Windows 预安装环境
 Windows PowerShell 2.0、Windows PowerShell 3.0 和 Windows PowerShell 4.0 在 Windows 预安装环境 (Windows PE) 中运行。 但是，不支持以下 cmdlet。
 
 -   [后台智能传输服务 (BITS) Cmdlet](http://go.microsoft.com/fwlink/?LinkId=257514)
@@ -107,16 +126,14 @@ Windows PowerShell 2.0、Windows PowerShell 3.0 和 Windows PowerShell 4.0 在 W
 
 同时，Windows PE 上不存在**WinRM**服务。
 
-## 另请参阅
-[Windows PowerShell 入门](../getting-started/Getting-Started-with-Windows-PowerShell.md)
-
-[安装 Windows PowerShell](Installing-Windows-PowerShell.md)
-
-[启动 Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+## <a name="see-also"></a>另请参阅
+- [Windows PowerShell 入门](../getting-started/Getting-Started-with-Windows-PowerShell.md)
+- [安装 Windows PowerShell](Installing-Windows-PowerShell.md)
+- [启动 Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO4-->
 
 

@@ -10,13 +10,15 @@
 ## [保护配置 MOF 文件](secureMOF.md)
 ## [部分配置](partialConfigs.md)
 ## [编写 DSC 配置的帮助](configHelp.md)
+## [初始启动时使用 DSC 配置虚拟机](bootstrapDsc.md)
+### [DSCAutomationHostEnabled 注册表项](DSCAutomationHostEnabled.md)
 
 # [资源](resources.md)
 ## [内置资源](builtInResource.md)
 ### [存档资源](archiveResource.md)
 ### [环境资源](environmentResource.md)
 ### [文件资源](fileResource.md)
-### [分组资源](groupResource.md)
+### [组资源](groupResource.md)
 ### [日志资源](logResource.md)
 ### [包资源](packageResource.md)
 ### [注册表资源](registryResource.md)
@@ -27,7 +29,7 @@
 ### [WindowsProcess 资源](windowsProcessResource.md)
 ## [创作自定义资源](authoringResource.md) 
 ### [基于 MOF 的自定义资源](authoringResourceMOF.md)
-#### [用 C 语言编写的基于 MOF 的资源#](authoringResourceMofCS.md)
+#### [用 C# 语言编写的基于 MOF 的资源](authoringResourceMofCS.md)
 ### [基于类的自定义资源](authoringResourceClass.md)
 ### [复合资源](authoringResourceComposite.md)
 ### [编写单实例 DSC 资源（最佳做法）](singleInstance.md)
@@ -91,6 +93,6 @@
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO4-->
 
 
