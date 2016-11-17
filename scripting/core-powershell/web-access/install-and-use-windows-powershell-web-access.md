@@ -13,7 +13,7 @@ ms.openlocfilehash: fe79ca70ff1f9a3960b79747221a70adc46b7c67
 
 ---
 
-#  安装和使用 Windows PowerShell Web 访问
+#  <a name="install-and-use-windows-powershell-web-access"></a>安装和使用 Windows PowerShell Web 访问
 
 更新时间：2013 年 11 月 5 日
 
@@ -75,7 +75,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">受支持的台式计算机浏览器</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">支持的台式计算机浏览器</span></a>
 
 ------------------------------------------------------------------------
 
@@ -139,7 +139,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 ------------------------------------------------------------------------
 
-#### 使用 Windows PowerShell cmdlet 安装 Windows PowerShell Web 访问
+#### <a name="to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets"></a>使用 Windows PowerShell cmdlet 安装 Windows PowerShell Web 访问
 
 1.  使用提升的用户权限执行以下操作之一打开 Windows PowerShell 会话。
 
@@ -153,7 +153,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意 </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意</span></th>
     </tr>
     </thead>
     <tbody>
@@ -175,7 +175,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意 </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意</span></th>
     </tr>
     </thead>
     <tbody>
@@ -222,11 +222,11 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 </tbody>
 </table>
 
--   [使用 Install-PswaWebApplication，配置带有测试证书的 Windows PowerShell Web 访问网关。](#BKMK_testcert)
+-   [使用 Install-PswaWebApplication，配置带有测试证书的 Windows PowerShell Web 访问网关](#BKMK_testcert)
 
 -   [使用 Install-PswaWebApplication 和 IIS 管理器，配置带有正版证书的 Windows PowerShell Web 访问网关](#BKMK_gencert)
 
-#### 使用 Install-PswaWebApplication，配置带有测试证书的 Windows PowerShell Web 访问网关。
+#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-installpswawebapplication"></a>使用 Install-PswaWebApplication，配置带有测试证书的 Windows PowerShell Web 访问网关。
 
 1.  执行以下操作之一，打开 Windows PowerShell 会话。
 
@@ -266,7 +266,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
     -   PhysicalPath: %*windir*%/Web/PowerShellWebAccess/wwwroot
 
-    <span class="label">示例：</span> <span class="code">Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate</span>
+    <span class="label">示例：</span><span class="code">Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate</span>
 
     在本示例中，Windows PowerShell Web 访问的相关网站是 https://&lt; *server_name*&gt;/myWebApp。
 
@@ -276,7 +276,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意 </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意</span></th>
     </tr>
     </thead>
     <tbody>
@@ -286,7 +286,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
     </tbody>
     </table>
 
-#### 使用 Install-PswaWebApplication 和 IIS 管理器，配置带有正版证书的 Windows PowerShell Web 访问网关
+#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-installpswawebapplication-and-iis-manager"></a>使用 Install-PswaWebApplication 和 IIS 管理器，配置带有正版证书的 Windows PowerShell Web 访问网关
 
 1.  执行以下操作之一，打开 Windows PowerShell 会话。
 
@@ -332,7 +332,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意 </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意</span></th>
     </tr>
     </thead>
     <tbody>
@@ -353,7 +353,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 有关 Windows PowerShell Web 访问授权规则和安全性的详细信息，请参阅 [Windows PowerShell Web 访问的授权规则和安全功能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)。
 
-#### 添加受限的授权规则
+#### <a name="to-add-a-restrictive-authorization-rule"></a>添加受限的授权规则
 
 1.  使用提升的用户权限执行以下操作之一打开 Windows PowerShell 会话。
 
@@ -395,7 +395,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 ------------------------------------------------------------------------
 
-#### 若要使用“添加角色和功能向导”安装 Windows PowerShell Web 访问
+#### <a name="to-install-windows-powershell-web-access-by-using-the-add-roles-and-features-wizard"></a>若要使用“添加角色和功能向导”安装 Windows PowerShell Web 访问
 
 1.  如果服务器管理器已经打开，则继续执行下一步。 如果服务器管理器尚未打开，请执行以下任一操作打开它。
 
@@ -419,7 +419,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意 </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意</span></th>
     </tr>
     </thead>
     <tbody>
@@ -447,7 +447,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 -   
 
-#### 使用 IIS 管理器在现有的网站中配置网关
+#### <a name="to-use-iis-manager-to-configure-the-gateway-in-an-existing-website"></a>使用 IIS 管理器在现有的网站中配置网关
 
 1.  通过执行以下操作之一，打开 IIS 管理器控制台。
 
@@ -469,7 +469,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 8.  在“物理路径”字段中，浏览到应用程序的位置。 你可使用默认的位置，即 %windir%/Web/PowerShellWebAccess/wwwroot。 单击“确定”。
 
-9.  执行本主题中的[在 IIS 管理器中配置 SSL 证书](#BKMK_cert)程序所述的步骤。
+9.  按照本主题中的过程 [在 IIS 管理器中配置 SSL 证书](#BKMK_cert) 中的步骤执行。
 
 10. <span class="label">可选的安全步骤：</span>利用树窗格中所选的网站，双击内容窗格中的“SSL 设置”。 选择“需要 SSL”，然后在“操作”窗格中，单击“应用”。 此外，在“SSL 设置”窗格中，你可要求连接到 Windows PowerShell Web 访问网站的用户持有客户端证书。 客户端证书可协助验证客户端设备用户的身份。 有关要求提供客户端证书如何提高 Windows PowerShell Web 访问的安全性的详细信息，请参阅本指南中 [Windows PowerShell Web 访问的授权规则和安全功能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)。
 
@@ -485,7 +485,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意 </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意</span></th>
     </tr>
     </thead>
     <tbody>
@@ -509,7 +509,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
         c:\windows\system32\icacls.exe $authorizationFile
 
-#### 使用 IIS 管理器，将网关配置为带有测试证书的根网站
+#### <a name="to-use-iis-manager-to-configure-the-gateway-as-a-root-website-with-a-test-certificate"></a>使用 IIS 管理器，将网关配置为带有测试证书的根网站
 
 1.  通过执行以下操作之一，打开 IIS 管理器控制台。
 
@@ -567,7 +567,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意 </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意</span></th>
     </tr>
     </thead>
     <tbody>
@@ -587,7 +587,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 有关 Windows PowerShell Web 访问授权规则和安全性的详细信息，请参阅 [Windows PowerShell Web 访问的授权规则和安全功能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)。
 
-#### 添加受限的授权规则
+#### <a name="to-add-a-restrictive-authorization-rule"></a>添加受限的授权规则
 
 1.  使用提升的用户权限执行以下操作之一打开 Windows PowerShell 会话。
 
@@ -622,7 +622,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 对于安全的生产环境，请始终使用证书颁发机构 (CA) 已签名的有效 SSL 证书。 本部分中的过程介绍如何从 CA 获取并应用有效的 SSL 证书。
 
-### 在 IIS 管理器中配置 SSL 证书
+### <a name="to-configure-an-ssl-certificate-in-iis-manager"></a>在 IIS 管理器中配置 SSL 证书
 
 1.  在 IIS 管理器树窗格中，选择已安装 Windows PowerShell Web 访问的服务器。
 
@@ -668,15 +668,15 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 更多反馈？
 
-<span class="stdr-count"><span class="stdr-charcnt">剩余 1500</span> 个字符</span> 提交 跳过此部分
+剩余 <span class="stdr-count"><span class="stdr-charcnt">1500</span> 个字符</span>提交，跳过此部分
 
 <span class="stdr-thankyou">谢谢！</span> <span class="stdr-appreciate">我们非常感谢你的反馈意见。</span>
 
-[管理你的个人资料](https://social.technet.microsoft.com/profile)
+[管理个人资料](https://social.technet.microsoft.com/profile)
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> 站点反馈</a>站点反馈
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"><img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /></span>站点反馈</a>站点反馈
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 

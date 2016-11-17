@@ -14,9 +14,9 @@ ms.openlocfilehash: ac9231a475ba84e9051bbd06a65f3f20c9e49846
 
 ---
 
-# 必备条件
+# <a name="prerequisites"></a>必备条件
 
-## 初始状态
+## <a name="initial-state"></a>初始状态
 在开始此部分内容之前，请确保满足以下条件：
 
 1. JEA 在你的系统上可用。 有关当前支持的操作系统和所需下载，请参阅 [README](./README.md)。
@@ -24,7 +24,7 @@ ms.openlocfilehash: ac9231a475ba84e9051bbd06a65f3f20c9e49846
 3. 计算机已加入域。
 如果你尚未拥有域，请参阅[创建域控制器](#creating-a-domain-controller)部分，以在服务器上快速设置新域。
 
-## 启用 PowerShell 远程处理
+## <a name="enable-powershell-remoting"></a>启用 PowerShell 远程处理
 通过 PowerShell 远程处理管理 JEA。
 在“管理员”PowerShell 窗口中，运行以下命令以确保已启用并已正确配置此项：
 
@@ -34,7 +34,7 @@ Enable-PSRemoting
 
 如果你不熟悉 PowerShell 远程处理，最好运行 `Get-Help about_Remote` 以了解这一重要基本概念。
 
-## 标识你的用户或组
+## <a name="identify-your-users-or-groups"></a>标识你的用户或组
 为在操作中展示 JEA，需标识你在本指南中要使用的非管理员用户和组。
 
 如果你使用现有域，请标识或创建一些无特权用户和组。
@@ -45,7 +45,7 @@ Enable-PSRemoting
 请参阅附录中的 [设置用户和组](creating-a-domain-controller.md#set-up-users-and-groups) 部分以创建非管理员用户和组。
 `$NonAdministrator` 的默认值将为在此部分中创建的组。
 
-## 设置维护角色功能文件
+## <a name="set-up-maintenance-role-capability-file"></a>设置维护角色功能文件
 在 PowerShell 中运行以下命令以创建将用于下一部分的演示角色功能文件。
 在本指南的稍后部分，你将了解此文件的用途。
 
@@ -68,7 +68,7 @@ New-Item -Path "$env:ProgramFiles\WindowsPowerShell\Modules\Demo_Module\RoleCapa
 New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\Demo_Module\RoleCapabilities\Maintenance.psrc" @MaintenanceRoleCapabilityCreationParams
 ```
 
-## 创建和注册演示会话配置文件
+## <a name="create-and-register-demo-session-configuration-file"></a>创建和注册演示会话配置文件
 运行以下命令以创建将用于下一部分的演示会话配置文件。
 在本指南的稍后部分，你将了解此文件的用途。
 
@@ -110,7 +110,7 @@ New-PSSessionConfigurationFile -Path "$env:ProgramData\JEAConfiguration\JEADemo.
 Register-PSSessionConfiguration -Name $sessionName -Path "$env:ProgramData\JEAConfiguration\JEADemo.pssc"
 ```
 
-## 启用 PowerShell 模块日志记录（可选）
+## <a name="enable-powershell-module-logging-optional"></a>启用 PowerShell 模块日志记录（可选）
 执行以下步骤将为系统上的所有 PowerShell 操作启用日志记录。
 并非启用它才能正常使用 JEA，但它在 [报告 JEA](reporting-on-jea.md) 部分中将很有用。
 
@@ -124,11 +124,11 @@ Register-PSSessionConfiguration -Name $sessionName -Path "$env:ProgramData\JEACo
 
 注意：也可通过“组策略”启用系统范围的 PowerShell 脚本。
 
-**祝贺你！现在你已为计算机配置演示终结点，可以开始使用 JEA 了！**
+**祝贺！现在已为计算机配置演示终结点，可以开始使用 JEA 了！**
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -13,7 +13,7 @@ ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
 
 ---
 
-#  卸载 Windows PowerShell Web 访问
+#  <a name="uninstall-windows-powershell-web-access"></a>卸载 Windows PowerShell Web 访问
 
 更新时间：2013年 6 月 24日
 
@@ -44,7 +44,7 @@ ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
 
 如果指定了自己的自定义网站名称，请将 <span class="code">WebsiteName</span> 参数添加到命令中，并指定网站名称。 如果使用了自定义 Web 应用程序（不是默认应用程序 **pswa**)，请将 <span class="code">WebApplicationName</span> 参数添加到命令中，并指定 Web 应用程序的名称。
 
-#### 使用 Uninstall-PswaWebApplication cmdlet 删除网站和 Web 应用程序
+#### <a name="to-delete-the-website-and-web-applications-by-using-the-uninstallpswawebapplication-cmdlet"></a>使用 Uninstall-PswaWebApplication cmdlet 删除网站和 Web 应用程序
 
 1.  执行以下操作之一，打开 Windows PowerShell 会话。
 
@@ -66,7 +66,7 @@ ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
 
 ------------------------------------------------------------------------
 
-#### 使用 Windows PowerShell cmdlet 卸载 Windows PowerShell Web 访问
+#### <a name="to-uninstall-windows-powershell-web-access-by-using-windows-powershell-cmdlets"></a>使用 Windows PowerShell cmdlet 卸载 Windows PowerShell Web 访问
 
 1.  使用提升的用户权限执行以下操作之一打开 Windows PowerShell 会话。 如果会话已经打开，则继续执行下一步。
 
@@ -101,7 +101,7 @@ ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
 
 ------------------------------------------------------------------------
 
-#### 使用 IIS 管理器删除 Windows PowerShell Web 访问网站和 Web 应用程序
+#### <a name="to-delete-the-windows-powershell-web-access-website-and-web-applications-by-using-iis-manager"></a>使用 IIS 管理器删除 Windows PowerShell Web 访问网站和 Web 应用程序
 
 1.  通过执行以下操作之一，打开 IIS 管理器控制台。 如果该控制台已经打开，则继续执行下一步。
 
@@ -125,7 +125,7 @@ ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意 </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意</span></th>
     </tr>
     </thead>
     <tbody>
@@ -141,7 +141,7 @@ ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
 
 ------------------------------------------------------------------------
 
-#### 使用“删除角色和功能向导”卸载 Windows PowerShell Web 访问
+#### <a name="to-uninstall-windows-powershell-web-access-by-using-the-remove-roles-and-features-wizard"></a>使用“删除角色和功能向导”卸载 Windows PowerShell Web 访问
 
 1.  如果服务管理器已经打开，则继续执行下一步。 如果服务器管理器尚未打开，请执行以下任一操作打开它。
 
@@ -174,15 +174,15 @@ ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
 
 更多反馈？
 
-<span class="stdr-count"><span class="stdr-charcnt">剩余 1500</span> 个字符</span> 提交 跳过此部分
+剩余 <span class="stdr-count"><span class="stdr-charcnt">1500</span> 个字符</span>提交，跳过此部分
 
 <span class="stdr-thankyou">谢谢！</span> <span class="stdr-appreciate">我们非常感谢你的反馈意见。</span>
 
-[管理你的个人资料](https://social.technet.microsoft.com/profile)
+[管理个人资料](https://social.technet.microsoft.com/profile)
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> 站点反馈</a>站点反馈
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"><img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /></span>站点反馈</a>站点反馈
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 

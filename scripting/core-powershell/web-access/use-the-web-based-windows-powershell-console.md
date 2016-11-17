@@ -13,7 +13,7 @@ ms.openlocfilehash: 67426f6ad72967293f8aee1b3f098afc73067c59
 
 ---
 
-#  使用基于 Web 的 Windows PowerShell 控制台
+#  <a name="use-the-webbased-windows-powershell-console"></a>使用基于 Web 的 Windows PowerShell 控制台
 
 更新时间：2013年 6 月 24日
 
@@ -25,13 +25,13 @@ Windows PowerShell® Web 访问让 Windows PowerShell® 用户登录到由安全
 
 本主题内容：
 
--   [受支持的浏览器和客户端设备](#BKMK_browser)
+-   [支持的浏览器和客户端设备](#BKMK_browser)
 
--   [登录到 Windows PowerShell Web Access](#BKMK_sign)
+-   [登录到 Windows PowerShell Web 访问](#BKMK_sign)
 
 -   [注销和超时](#BKMK_timeout)
 
--   [基于 Web 的 Windows PowerShell 控制台的独特之处](#BKMK_web)
+-   [基于 Web 的 Windows PowerShell 控制台的不同之处](#BKMK_web)
 
 <a href="" id="BKMK_browser"></a>
 ------------------------------------------------------------------------
@@ -40,7 +40,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">受支持的台式计算机浏览器</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">支持的台式计算机浏览器</span></a>
 
 ------------------------------------------------------------------------
 
@@ -84,14 +84,14 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 <a href="" id="BKMK_sign"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">登录到 Windows PowerShell Web Access</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">登录到 Windows PowerShell Web 访问</span></a>
 <a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
 
 ------------------------------------------------------------------------
 
 Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵组织 Windows PowerShell Web 访问网关网站的地址。 默认情况下，此网址的地址为 https://&lt;server_name&gt;/pswa。 在登录到 Windows PowerShell Web 访问之前，确保拥有想要管理的远程计算机的名称或 IP 地址。 你必须是远程计算机上的授权用户，并且必须将远程计算机配置为可远程管理。 有关将计算机配置为可远程管理的详细信息，请参阅[在 Windows PowerShell 中启用和使用远程命令](https://technet.microsoft.com/magazine/ff700227.aspx)。 将计算机配置为可远程管理的最简单方法是：在使用提升的用户权限打开的 Windows PowerShell 会话中（**以管理员身份运行**），在计算机上运行**Enable-PSRemoting -force** cmdlet。
 
-### 登录到 Windows PowerShell Web Access
+### <a name="to-sign-in-to-windows-powershell-web-access"></a>登录到 Windows PowerShell Web Access
 
 1.  在 Internet 浏览器窗口或选项卡中打开 Windows PowerShell Web 访问网站。
 
@@ -103,15 +103,15 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意 </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意</span></th>
     </tr>
     </thead>
     <tbody>
     <tr class="odd">
     <td><ul>
-    <li><p>如果目标计算机在工作组中，则使用以下语法提供你的用户名并登录到计算机：&lt;<em>workgroup_name</em>&gt;\&lt;<em>user_name</em>&gt;。</p></li>
+    <li><p>如果目标计算机在工作组中，则使用以下语法提供用户名并登录到计算机：&lt;<em>workgroup_name</em>&gt;\&lt;<em>user_name</em>&gt;。</p></li>
     <li><p>如果目标计算机是网关服务器，则可在“计算机名”<strong></strong>字段中指定“localhost”<strong></strong>。</p></li>
-    <li><p>如果目标计算机是网关服务器，并且该网关服务器在工作组中，则可在“<strong>计算机名</strong>”字段中使用“<strong>localhost</strong>”，但不可在“<strong>用户名</strong>”字段中使用 localhost\&lt;<em>user_name</em>&gt;。 必须使用 &lt;<em>workgroup name</em>&gt;\&lt;<em>user_name</em>&gt;。</p></li>
+    <li><p>如果目标计算机是网关服务器，并且该网关服务器在工作组中，则可在“计算机名”<strong></strong>字段中使用 <strong>localhost</strong>，但不可在“用户名”<strong></strong>字段中使用 localhost\&lt;<em>user_name</em>&gt;。 必须使用 &lt;<em>workgroup name</em>&gt;\&lt;<em>user_name</em>&gt;。</p></li>
     </ul></td>
     </tr>
     </tbody>
@@ -160,7 +160,7 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
 
 <a href="" id="BKMK_web"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">基于 Web 的 Windows PowerShell 控制台的独特之处</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">基于 Web 的 Windows PowerShell 控制台的不同之处</span></a>
 <a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
 
 ------------------------------------------------------------------------
@@ -279,9 +279,11 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
 </table>
 
 <a href="" id="BKMK_limits"></a>
+
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">基于 Web 的控制台的限制</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">
+基于 Web 的控制台的限制</span></a>
 
 ------------------------------------------------------------------------
 
@@ -309,7 +311,7 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
 
     当 Windows PowerShell Web 访问网关在 Windows Server 2012 R2 上运行时，用户可以在不同的浏览器选项卡中打开与远程计算机之间的多个连接。 如果想要使用基于 Web 的 Windows PowerShel 控制台打开与远程计算机之间的多个连接，请咨询 Windows PowerShell Web 访问网关管理员，了解网关服务器是否支持此功能。
 
--   <span class="label">持续的 Windows PowerShell 会话（重新连接）。</span>   Windows PowerShell Web 访问网关超时后，网关和目标计算机之间的远程连接将关闭。 这会阻止当前正在运行的任何 cmdlet 或脚本。 当你执行长时间运行的任务时，建议使用 **-Job** 基础结构，这样就可以启动作业，断开计算机的连接，稍后重新连接，让作业持续进行。 使用 **-Job** cmdlet 的另一个好处是可以使用 Windows PowerShell Web 访问启动它们，注销并通过运行 Windows PowerShell Web 访问或另一台主机（如 Windows PowerShell® 集成脚本环境 (ISE)）来重新连接它们。
+-   <span class="label">持续的 Windows PowerShell 会话 （重新连接）。</span>   Windows PowerShell Web 访问网关超时后，网关和目标计算机之间的远程连接将关闭。 这会阻止当前正在运行的任何 cmdlet 或脚本。 当你执行长时间运行的任务时，建议使用 **-Job** 基础结构，这样就可以启动作业，断开计算机的连接，稍后重新连接，让作业持续进行。 使用 **-Job** cmdlet 的另一个好处是可以使用 Windows PowerShell Web 访问启动它们，注销并通过运行 Windows PowerShell Web 访问或另一台主机（如 Windows PowerShell® 集成脚本环境 (ISE)）来重新连接它们。
 
 -   <span class="label">调整控制台大小。</span>   可通过以下三种方式调整 **PowerShell.exe** 控制台窗口大小。
 
@@ -352,15 +354,15 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
 
 更多反馈？
 
-<span class="stdr-count"><span class="stdr-charcnt">剩余 1500</span> 个字符</span> 提交 跳过此部分
+剩余 <span class="stdr-count"><span class="stdr-charcnt">1500</span> 个字符</span>提交，跳过此部分
 
 <span class="stdr-thankyou">谢谢！</span> <span class="stdr-appreciate">我们非常感谢你的反馈意见。</span>
 
-[管理你的个人资料](https://social.technet.microsoft.com/profile)
+[管理个人资料](https://social.technet.microsoft.com/profile)
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> 站点反馈</a>站点反馈
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"><img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /></span>站点反馈</a>站点反馈
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 
