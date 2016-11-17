@@ -8,29 +8,29 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 4c802002c6a03a27d02221dd713677911a77c30b
+ms.sourcegitcommit: 49ddf6faf98a51f7ad5252e9563b1543478ed113
+ms.openlocfilehash: 9090f4be2987b8a56ba4d839f54e05082a8bcfa0
 
 ---
 
-# 执行配置
+# <a name="enacting-configurations"></a>执行配置
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 有两种执行 PowerShell Desired State Configuration (DSC) 配置的方法：推送模式和请求模式。
 
-## 推送模式
+## <a name="push-mode"></a>推送模式
 
 ![推送模式](images/Push.png "How push mode works")
 
 推送模式指的是用户通过调用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet 主动将配置应用到目标节点。
 
-创建并编译配置后，可通过调用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet，并将 cmdlet 的 -Path 参数设置为配置 MOF 所在的路径，从而在推送模式下执行该配置。 例如，如果配置 MOF 位于 `C:\DSC\Configurations\localhost.mof` 中，你会使用以下命令将其应用于本地计算机： `Start-DscConfiguration -Path 'C:\DSC\Configurations'`
+创建并编译配置后，可通过调用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet，并将 cmdlet 的 -Path 参数设置为配置 MOF 所在的路径，从而在推送模式下执行该配置。 例如，如果配置 MOF 位于 `C:\DSC\Configurations\localhost.mof` 中，则使用以下命令将其应用于本地计算机：`Start-DscConfiguration -Path 'C:\DSC\Configurations'`
 
-> __注意__：默认情况下，DSC 运行配置作为后台作业。 若要以交互方式运行此配置，请使用 __-Wait__ 参数调用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx)。
+> __注意__：默认情况下，DSC 运行配置作为后台作业。 若要以交互方式运行此配置，请使用 __-Wait__ 参数调用 [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx)。
 
 
-## 请求模式
+## <a name="pull-mode"></a>请求模式
 
 ![请求模式](images/Pull.png "How pull mode works")
 
@@ -49,6 +49,6 @@ ms.openlocfilehash: 4c802002c6a03a27d02221dd713677911a77c30b
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

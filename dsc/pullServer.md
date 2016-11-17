@@ -8,12 +8,12 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 8e486891a4e5db20389d6ae65d00c42e1308af35
-ms.openlocfilehash: 4ab20cdcac6f10dc9ecab6d85b38f413e0ade8b0
+ms.sourcegitcommit: 08f91852d698954d6c3211bf8a429fe3b4143084
+ms.openlocfilehash: 1c9a3ca18995621332cbd05a2147c7b0f71e619e
 
 ---
 
-# 设置 DSC Web 请求服务器
+# <a name="setting-up-a-dsc-web-pull-server"></a>设置 DSC Web 请求服务器
 
 > 适用于：Windows PowerShell 5.0
 
@@ -29,12 +29,12 @@ DSC Web 请求服务器是 IIS 中的一项 Web 服务，当目标节点请求 D
 
 可使用服务器管理器中的添加角色和功能向导或使用 PowerShell 来添加 IIS 服务器角色和 DSC 服务。 本主题中包含的示例脚本将为你提供这两种方法的步骤。
 
-## 使用 xWebService 资源
+## <a name="using-the-xwebservice-resource"></a>使用 xWebService 资源
 设置 Web 请求服务器的最简单方法是使用包含在 xPSDesiredStateConfiguration 模块中的 xWebService 资源。 下列步骤说明如何使用设置 Web 服务的配置中的资源。
 
 1. 调用 [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) 以安装 **xPSDesiredStateConfiguration** 模块。 **请注意**：**Install-Module** 包含在 **PowerShellGet** 模块中，后者纳入 PowerShell 5.0。 可在 [PackageManagement PowerShell 模块预览](https://www.microsoft.com/en-us/download/details.aspx?id=49186)中下载适用于 PowerShell 3.0 和 4.0 的 **PowerShellGet**。 
 1. 从受信任的证书颁发机构（在你的组织或公共颁发机构中）获取 DSC 请求服务器的 SSL 证书。 从颁发机构收到的证书通常采用 PFX 格式。 采用默认位置（应是 CERT:\LocalMachine\My），在将成为请求服务器的节点上安装证书。 记下证书指纹。
-1. 选择要用作注册密钥的 GUID。 若要使用 PowerShell 生成一个，请在 PS 提示符处输入以下内容令，然后按 Enter：“``` [guid]::newGuid()```”。 此密钥将由客户端节点用作共享密钥，以便在注册过程中进行身份验证。 有关详细信息，请参阅下面的[注册密钥](#RegKey)部分。
+1. 选择要用作注册密钥的 GUID。 若要使用 PowerShell 生成一个，请在 PS 提示符处输入以下命令，然后按 Enter：“``` [guid]::newGuid()```”或“```New-Guid```”。 此密钥将由客户端节点用作共享密钥，以便在注册过程中进行身份验证。 有关详细信息，请参阅下面的[注册密钥](#RegKey)部分。
 1. 在 PowerShell ISE 中，启动 (F5) 以下配置脚本（包含于 **xPSDesiredStateConfiguration** 模块的示例文件夹中，名为 Sample_xDscWebService.ps1）。 此脚本会设置请求服务器。
   
 ```powershell
@@ -53,7 +53,8 @@ configuration Sample_xDscPullServer
      ) 
  
  
-     Import-DSCResource -ModuleName xPSDesiredStateConfiguration 
+     Import-DSCResource -ModuleName xPSDesiredStateConfiguration
+     Import-DSCResource –ModuleName PSDesiredStateConfiguration
 
      Node $NodeName 
      { 
@@ -65,15 +66,16 @@ configuration Sample_xDscPullServer
  
          xDscWebService PSDSCPullServer 
          { 
-             Ensure                  = 'Present' 
-             EndpointName            = 'PSDSCPullServer' 
-             Port                    = 8080 
-             PhysicalPath            = "$env:SystemDrive\inetpub\PSDSCPullServer" 
-             CertificateThumbPrint   = $certificateThumbPrint          
-             ModulePath              = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Modules" 
-             ConfigurationPath       = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration" 
-             State                   = 'Started'
-             DependsOn               = '[WindowsFeature]DSCServiceFeature'                         
+             Ensure                   = 'Present' 
+             EndpointName             = 'PSDSCPullServer' 
+             Port                     = 8080 
+             PhysicalPath             = "$env:SystemDrive\inetpub\PSDSCPullServer" 
+             CertificateThumbPrint    = $certificateThumbPrint          
+             ModulePath               = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Modules" 
+             ConfigurationPath        = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration" 
+             State                    = 'Started'
+             DependsOn                = '[WindowsFeature]DSCServiceFeature'     
+             UseSecurityBestPractices = $true
          } 
 
         File RegistrationKeyFile
@@ -102,7 +104,7 @@ Sample_xDSCPullServer -certificateThumbprint 'A7000024B753FA6FFF88E966FD6E19301F
 Start-DscConfiguration -Path c:\Configs\PullServer -Wait -Verbose
 ```
 
-## 注册密钥
+## <a name="registration-key"></a>注册密钥
 若要允许客户端节点注册到服务器以便使用配置名称代替配置 ID，需将以上配置创建的注册密钥保存在 `C:\Program Files\WindowsPowerShell\DscService` 中名为 `RegistrationKeys.txt` 的文件中。 注册密钥会在初始注册过程中充当由客户端用于请求服务器的共享密钥。 注册成功完成之后，客户端会生成用于唯一地向请求服务器进行身份验证的自签名证书。 此证书的指纹在本地进行存储，并与请求服务器的 URL 关联。
 > **注意**：PowerShell 4.0 中不支持注册密钥。 
 
@@ -144,20 +146,20 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
 
 >**注意**：在推送方案中，当前版本中存在一个 bug，因此需要在元配置文件中为绝不会向请求服务器注册的节点定义 ConfigurationID 属性。 这会强制使用 V1 请求服务器协议，避免注册失败消息。
 
-## 放置配置和资源
+## <a name="placing-configurations-and-resources"></a>放置配置和资源
 请求服务器设置完成之后，在请求服务器配置中通过 **ConfigurationPath** 和 **ModulePath** 属性定义的文件夹是用于放置可供目标节点请求的模块和配置的位置。 这些文件需要采用特定格式，以便请求服务器可正确处理它们。 
 
-### DSC 资源模块程序包格式
+### <a name="dsc-resource-module-package-format"></a>DSC 资源模块程序包格式
 每个资源模块需要进行压缩并按照以下模式 **{模块名称}_{模块版本}.zip** 进行命名。 例如，一个名为 xWebAdminstration 并且模块版本为 3.1.2.0 的模块会命名为“xWebAdministration_3.2.1.0.zip”。 每个版本的模块都必须包含在单个 zip 文件中。 由于每个 zip 文件中只有单个版本的资源，因此不支持在 WMF 5.0 中添加的可在单个目录中支持多个模块版本的模块格式。 这意味着在打包 DSC 资源模块以便用于请求服务器之前，需要对目录结构进行少量更改。 WMF 5.0 中包含 DSC 资源的模块默认格式是 {Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\'。 为请求服务器进行打包之前，只需删除 **{Module version}** 文件夹，以便路径成为 {Module Folder}\DscResources\{DSC Resource Folder}\'。 进行此更改之后，按上文所述压缩文件夹，并将这些 zip 文件置于 **ModulePath** 文件夹中。
 
 使用 `new-dscchecksum {module zip file}` 可为新添加的模块创建校验和文件。
 
-### 配置 MOF 格式 
+### <a name="configuration-mof-format"></a>配置 MOF 格式 
 配置 MOF 文件需要与校验和文件配对，以使目标节点上的 LCM 可以验证配置。 若要创建校验和，请调用 [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) cmdlet。 该 cmdlet 将接受 **Path** 参数，该参数指定了配置 MOF 所在的文件夹。 该 cmdlet 将创建名为 `ConfigurationMOFName.mof.checksum` 的校验和文件，其中 `ConfigurationMOFName` 是配置 mof 文件的名称。 如果指定文件夹中存在多个配置 MOF 文件，则将为该文件夹中的每个配置分别创建校验和。 将 MOF 文件及其关联校验和文件置于 **ConfigurationPath** 文件夹中。
 
 >**注意**：如果以任何方式更改配置 MOF 文件，则还必须重新创建校验和文件。
 
-## 工具
+## <a name="tooling"></a>工具
 为了使请求服务器的设置、验证和管理更加容易，以下工具作为示例包含在最新版本的 xPSDesiredStateConfiguration 模块中：
 1. 该模块有助于打包 DSC 资源模块和配置文件以便在请求服务器上使用。 [PublishModulesAndMofsToPullServer.psm1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCPullServerSetup/PublishModulesAndMofsToPullServer.psm1). 以下示例：
 
@@ -173,7 +175,7 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
 1. 验证请求服务器是否配置正确的脚本。 [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/Examples/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
 
 
-## 请求客户端配置 
+## <a name="pull-client-configuration"></a>请求客户端配置 
 以下主题详细描述了如何设置请求客户端：
 
 * [使用配置 ID 设置 DSC 请求客户端](pullClientConfigID.md)
@@ -181,7 +183,7 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
 * [部分配置](partialConfigs.md)
 
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 * [Windows PowerShell Desired State Configuration 概述](overview.md)
 * [执行配置](enactingConfigurations.md)
 * [使用 DSC 报表服务器](reportServer.md)
@@ -189,6 +191,6 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
 
 
 
-<!--HONumber=Oct16_HO1-->
+<!--HONumber=Nov16_HO1-->
 
 
