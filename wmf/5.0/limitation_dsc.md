@@ -45,7 +45,7 @@ Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 ------------------------------------------------------------------------------------------------------------------------
 如果 LCM 处于 DebugMode，则当试图停止由 Get-DscConfiguration 启动的操作时，Stop-DscConfiguration 可能挂起
 
-**解决方法：**按[调试 DSC 资源](../../dsc/debugResource.md)部分中所述完成由 Get-DscConfiguration 所启动操作的调试。
+**解决方法：**按[调试 DSC 资源](https://msdn.microsoft.com/powershell/dsc/debugresource)部分中所述完成由 Get-DscConfiguration 所启动操作的调试。
 
 
 <a name="no-verbose-error-messages-are-shown-in-debugmode"></a>DebugMode 中不显示详细错误消息
@@ -77,7 +77,7 @@ Invoke-DscResource cmdlet 不按 LCM 或 DSC 资源生成详细、警告和错�
 
 <a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invokedscresource"></a>与 Invoke-DscResource 一起使用时，无法轻松调试 DSC 资源
 -----------------------------------------------------------------------
-LCM 在调试模式下运行时（请参阅 [调试 DSC 资源](../../dsc/debugResource.md)以了解详细信息），Invoke-DscResource cmdlet 不会给出有关连接到运行空间以进行调试的信息。
+LCM 在调试模式下运行时（请参阅 [调试 DSC 资源](https://msdn.microsoft.com/powershell/dsc/debugresource)以了解详细信息），Invoke-DscResource cmdlet 不会给出有关连接到运行空间以进行调试的信息。
 **解决方法：**使用 cmdlet **Get-PSHostProcessInfo**、**Enter-PSHostProcess**、**Get-Runspace** 和 **Debug-Runspace** 来发现并连接到运行空间，以便调试 DSC 资源。
 
 ```powershell
@@ -228,6 +228,6 @@ Configuration $configName
 ```
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO2-->
 
 
