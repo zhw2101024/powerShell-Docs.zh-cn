@@ -14,14 +14,14 @@ ms.openlocfilehash: b81bcbd37cdfebc04fbc7ef92d76f0769c135713
 
 ---
 
-# Windows PowerShell ISE 中的辅助功能
+# <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE 中的辅助功能
 本主题介绍 Windows PowerShell® 集成脚本环境 (ISE) 的辅助功能，也许对你有所帮助。
 
 * [如何更改控制台和脚本窗格的大小和位置](#bkmk_1)
 * [编辑文本的键盘快捷方式](#bkmk_2)
 * [运行脚本的键盘快捷方式](#bkmk_3)
 * [自定义视图的键盘快捷方式](#bkmk_4)
-* [用于调试脚本的键盘快捷方式](#bkmk_5)
+* [调试脚本的键盘快捷方式](#bkmk_5)
 * [Windows PowerShell 选项卡的键盘快捷方式](#bkmk_6)
 * [启动和退出的键盘快捷方式](#bkmk_7)
 
@@ -35,16 +35,16 @@ Windows PowerShell ISE 支持高对比度模式。 为方便有视觉障碍的�
 
 -   文字大小更改
 
-## <a name="bkmk_1"></a>如何更改控制台和脚本窗格的大小和位置
+## <a name="a-namebkmk1ahow-to-change-the-size-and-location-of-the-console-and-script-panes"></a><a name="bkmk_1"></a>如何更改控制台和脚本窗格的大小和位置
 可以使用以下步骤更改控制台窗格和脚本窗格的大小和位置。 再次打开 Windows PowerShell ISE 时，将会保留你对大小和位置所做的更改。
 
-### 调整脚本窗格和控制台窗格的大小
+### <a name="to-resize-the-script-pane-and-console-pane"></a>调整脚本窗格和控制台窗格的大小
 
 1.  将鼠标指针放在脚本窗格和控制台窗格之间的拆分行上。
 
 2.  当鼠标指针更改为双向箭头时，拖动边框来更改窗格的大小。
 
-### 移动脚本窗格和控制台窗格
+### <a name="to-move-the-script-pane-and-console-pane"></a>移动脚本窗格和控制台窗格
 执行下列操作之一：
 
 -   若要将脚本窗格移动到控制台窗格上方，请按 **CTRL+1**，或单击工具栏上的“**顶部显示脚本窗格**”图标，或单击“**视图**”菜单上的“**顶部显示脚本窗格**”。
@@ -57,7 +57,7 @@ Windows PowerShell ISE 支持高对比度模式。 为方便有视觉障碍的�
 
 -   若要在控制台窗格最大化时显示脚本窗格，请在选项卡行的最右侧边缘上单击“隐藏脚本窗格”图标，或在“视图”菜单上单击以选择“显示脚本窗格”菜单选项。
 
-## <a name="bkmk_2"></a>编辑文本的键盘快捷方式
+## <a name="a-namebkmk2akeyboard-shortcuts-for-editing-text"></a><a name="bkmk_2"></a>编辑文本的键盘快捷方式
 编辑文本时可以使用以下键盘快捷方式。
 
 |操作|键盘快捷方式|用于|
@@ -74,12 +74,12 @@ Windows PowerShell ISE 支持高对比度模式。 为方便有视觉障碍的�
 |**全选**|CTRL+A|脚本窗格、控制台窗格|
 |**撤消**|CTRL+Z|脚本窗格、控制台窗格|
 
-## <a name="bkmk_3"></a>运行脚本的键盘快捷方式
+## <a name="a-namebkmk3akeyboard-shortcuts-for-running-scripts"></a><a name="bkmk_3"></a>运行脚本的键盘快捷方式
 在脚本窗格中运行脚本时，可使用以下键盘快捷方式。
 
 |操作|键盘快捷方式|
 |----------|---------------------|
-|**“新建”**|Ctrl+N|
+|**新建**|Ctrl+N|
 |**打开**|Ctrl+O|
 |**运行**|F5|
 |**运行选定内容**|F8|
@@ -87,7 +87,7 @@ Windows PowerShell ISE 支持高对比度模式。 为方便有视觉障碍的�
 |**Tab**（切换到下一个脚本）|CTRL+TAB **注意：**仅当打开单个 PowerShell 选项卡时，或打开多个 PowerShell 选项卡而焦点位于脚本窗格中时，切换到下一个脚本才有效。|
 |**Tab**（切换到上一个脚本）|CTRL+SHIFT+TAB **注意：**仅当打开单个 PowerShell 选项卡时，或打开多个 PowerShell 选项卡而焦点位于脚本窗格中时，切换到上一个脚本才有效。|
 
-## <a name="bkmk_4"></a>自定义视图的键盘快捷方式
+## <a name="a-namebkmk4akeyboard-shortcuts-for-customizing-the-view"></a><a name="bkmk_4"></a>自定义视图的键盘快捷方式
 可以使用以下键盘快捷方式在 Windows PowerShell ISE 中自定义视图。 可从应用程序中的所有窗格对它们进行访问。
 
 |操作|键盘快捷方式|
@@ -103,7 +103,7 @@ Windows PowerShell ISE 支持高对比度模式。 为方便有视觉障碍的�
 |**放大**|CTRL+加号|
 |**缩小**|CTRL+减号|
 
-## <a name="bkmk_5"></a>用于调试脚本的键盘快捷方式
+## <a name="a-namebkmk5akeyboard-shortcuts-for-debugging-scripts"></a><a name="bkmk_5"></a>
 调试脚本时，可使用以下键盘快捷方式。
 
 |操作|键盘快捷方式|用于|
@@ -133,17 +133,17 @@ Windows PowerShell ISE 支持高对比度模式。 为方便有视觉障碍的�
 |**列出脚本**|L|控制台窗格，调试脚本时|
 |**显示控制台调试命令**|H 或 ?|控制台窗格，调试脚本时|
 
-## <a name="bkmk_6"></a>Windows PowerShell 选项卡的键盘快捷方式
+## <a name="a-namebkmk6akeyboard-shortcuts-for-windows-powershell-tabs"></a><a name="bkmk_6"></a>Windows PowerShell 选项卡的键盘快捷方式
 使用 Windows PowerShell 选项卡时，可使用以下键盘快捷方式。
 
 |操作|键盘快捷方式|
 |----------|---------------------|
 |**关闭 PowerShell 选项卡**|Ctrl+W|
 |**新建 PowerShell 选项卡**|CTRL+T|
-|**上一个 PowerShell 选项卡**|CTRL+SHIFT+TAB. 此快捷方式仅在任意 PowerShell 选项卡上都未打开任何文件时起作用。|
-|**下一个 Windows PowerShell 选项卡**|CTRL+TAB. 此快捷方式仅在任意 PowerShell 选项卡上都未打开任何文件时起作用。|
+|**上一个 PowerShell 选项卡**|CTRL+SHIFT+TAB。 此快捷方式仅在任意 PowerShell 选项卡上都未打开任何文件时起作用。|
+|**下一个 Windows PowerShell 选项卡**|CTRL+TAB。 此快捷方式仅在任意 PowerShell 选项卡上都未打开任何文件时起作用。|
 
-## <a name="bkmk_7"></a>启动和退出的键盘快捷方式
+## <a name="a-namebkmk7akeyboard-shortcuts-for-starting-and-exiting"></a><a name="bkmk_7"></a>启动和退出的键盘快捷方式
 可以使用以下键盘快捷方式来启动 Windows PowerShell 控制台 (PowerShell.exe) 或退出 Windows PowerShell ISE。
 
 |操作|键盘快捷方式|
@@ -151,12 +151,12 @@ Windows PowerShell ISE 支持高对比度模式。 为方便有视觉障碍的�
 |**退出**|Alt + F4|
 |**启动 PowerShell.exe**（Windows PowerShell 控制台）|CTRL+SHIFT+P|
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 - [使用 Windows PowerShell ISE](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO3-->
 
 
