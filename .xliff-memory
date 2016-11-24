@@ -20517,8 +20517,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\PowerShell\\powerShell-Docs.zh-cn\\live\\edafde9188cad3b21d0cd2b30cfaaf1bede9b195.bfa18cfa80e341f8d224403b521c83fe6b6f3e44.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\PowerShell\\powerShell-Docs.zh-cn\\live\\README.cf2da502d5141d3c542b8221274cee500c801dc1.zh-cn.xlf",
+      "LocXliffCommit": "eee171b465383cbd21f4fe34eb326581f4133933"
     },
     "reference\\3.0\\Microsoft.PowerShell.Security\\ConvertFrom-SecureString.md.69ea732a9595c53fa120bb890818bad48055f021.HT": {
       "SourceFilename": "reference\\3.0\\Microsoft.PowerShell.Security\\ConvertFrom-SecureString.md",
