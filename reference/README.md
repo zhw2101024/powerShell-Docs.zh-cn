@@ -14,7 +14,7 @@ ms.openlocfilehash: edafde9188cad3b21d0cd2b30cfaaf1bede9b195
 
 ---
 
-#  <a name="powershell-reference"></a>PowerShell 参考
+#  PowerShell 参考
 
 参考资料整理为发行版本。
 
@@ -50,6 +50,6 @@ ms.openlocfilehash: edafde9188cad3b21d0cd2b30cfaaf1bede9b195
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 
