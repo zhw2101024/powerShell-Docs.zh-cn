@@ -9337,8 +9337,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\PowerShell\\powerShell-Docs.zh-cn\\live\\b831555354d14bca22e5137afffadc1ed3b14554.1407a81b61740fb0a161472de55e582c5c1999cf.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\PowerShell\\powerShell-Docs.zh-cn\\live\\known-issues.7fc7aa932b574dc3cc428850a7fbc702d58225ff.zh-cn.xlf",
+      "LocXliffCommit": "43ef78536504b568b1f2f44c8357d61edb06352c"
     },
     "reference\\3.0\\Microsoft.PowerShell.Core\\Remove-PSSession.md.b32c9022dae966b896a4842f5ee5eb1c0fb5aaaa.HT": {
       "SourceFilename": "reference\\3.0\\Microsoft.PowerShell.Core\\Remove-PSSession.md",
