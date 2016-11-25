@@ -14,10 +14,10 @@ ms.openlocfilehash: 03a9bbfb14c4587d794db2eaadf60cc7a4d4dcdc
 
 ---
 
-# 多选列表框
+# <a name="multiple-selection-list-boxes"></a>多选列表框
 使用 Windows PowerShell 3.0 和更高版本在自定义 Windows 窗体中创建多选列表框控件。
 
-## 创建允许进行多选的列表框控件
+## <a name="create-list-box-controls-that-allow-multiple-selections"></a>创建允许进行多选的列表框控件
 复制以下内容并将其粘贴到 Windows PowerShell ISE 中，然后将其另存为 Windows PowerShell 脚本 (.ps1)。
 
 ```
@@ -84,9 +84,9 @@ $form = New-Object System.Windows.Forms.Form
 
 在创建 Form 类的实例后，为此类的三个属性赋值。
 
--   **Text。** 这将成为该窗口的标题。
+-   **文本。** 这将成为该窗口的标题。
 
--   **Size。** 这是窗体的大小（以像素为单位）。 上述脚本创建的窗体大小为宽 300 像素、高 200 像素。
+-   **大小。** 这是窗体的大小（以像素为单位）。 上述脚本创建的窗体大小为宽 300 像素、高 200 像素。
 
 -   **StartingPosition。** 在上述脚本中，此可选属性将设置为 **CenterScreen**。 如果未添加此属性，Windows 将在窗体打开时选择一个位置。 通过将 **StartingPosition** 设置为 **CenterScreen**，可使窗体在每次加载时都自动显示在屏幕中间。
 
@@ -184,7 +184,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 - [脚本编写人员，你好：为什么这些 PowerShell GUI 示例不起作用呢？](http://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub：Dave Wyatt 的 WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
 - [Windows PowerShell 本周提示：多选列表框 - 还有更多！](http://technet.microsoft.com/library/ff730950.aspx)
@@ -192,6 +192,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

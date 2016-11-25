@@ -5,7 +5,9 @@
 ### [Desired State Configuration (DSC) 中的改进](5.1/DSC-improvements.md)
 ### [PowerShell 控制台中的改进](5.1/console-improvements.md)
 ### [PowerShell 引擎中的改进](5.1/engine-improvements.md)
-### [程序包管理中的改进](5.1/package-management-improvements.md)
+### [包管理中的改进](5.1/package-management-improvements.md)
+### [JEA 中的改进](5.1/jea-improvements.md)
+### [目录 cmdlet](5.1/catalog-cmdlets.md)
 ### [WMF 5.1 中修复的 bug](5.1/bugfixes.md)
 ## [安装和配置](5.1/install-configure.md)
 ## [已知问题](5.1/known-issues.md)
@@ -74,8 +76,8 @@
 #### [模块依赖项的安装](5.0/psget_moduledependency.md)
 #### [用于模块管理的 PowerShellGet Cmdlet](5.0/psget_modulecmdlets.md)
 ### [使用 PowerShellGet 进行 PowerShell 脚本发现、安装和管理](5.0/psget_script_overview.md)
-#### [用于脚本管理的 PowerShellGet cmdlet](5.0/psget_scriptcmdlets.md)
-### [根据社区反馈的新增和更新的 Cmdlet](5.0/feedback_cmdlets.md)
+#### [用于脚本管理的 PowerShellGet Cmdlet](5.0/psget_scriptcmdlets.md)
+### [基于社区反馈的新增和更新的 Cmdlet](5.0/feedback_cmdlets.md)
 #### [使用项 Cmdlet 的符号链接](5.0/feedback_symbolic.md)
 #### [存档 Cmdlet](5.0/feedback_archive.md)
 #### [剪贴板 Cmdlet](5.0/feedback_clipboard.md)
@@ -94,6 +96,6 @@
 ### [软件清单日志记录 (SIL)](5.0/sil_overview.md)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

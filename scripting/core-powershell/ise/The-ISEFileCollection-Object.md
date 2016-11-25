@@ -14,12 +14,12 @@ ms.openlocfilehash: 86cb3485445fdb00c9b99a20694b9bf12a6e8f2c
 
 ---
 
-# ISEFileCollection 对象
+# <a name="the-isefilecollection-object"></a>ISEFileCollection 对象
   **ISEFileCollection** 对象是 **ISEFile** 对象的集合。 例如，$psISE.CurrentPowerShellTab.Files 集合。
 
-## 方法
+## <a name="methods"></a>方法
 
-### Add\( \[fullPath\] \)
+### <a name="add-fullpath-"></a>Add\( \[fullPath\] \)
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  创建并返回一个新的未命名文件，并将其添加到集合中。 新创建的文件的 **IsUntitled** 属性为 **$true**。
@@ -35,7 +35,7 @@ $psISE.CurrentPowerShellTab.Files.Add("$pshome\Examples\profile.ps1")
 
 ```
 
-### Remove\( File, \[Force\] \)
+### <a name="remove-file-force-"></a>Remove\( File, \[Force\] \)
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  从当前 PowerShell 选项卡中删除指定的文件。
@@ -55,7 +55,7 @@ $firstfile = $psISE.CurrentPowerShellTab.Files[0]
 $psISE.CurrentPowerShellTab.Files.Remove($firstfile, $true)
 ```
 
-### SetSelectedFile\( selectedFile \)
+### <a name="setselectedfile-selectedfile-"></a>SetSelectedFile\( selectedFile \)
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  选择由 **selectedFile** 参数指定的文件。
@@ -70,7 +70,7 @@ $psISE.CurrentPowerShellTab.Files.SetSelectedFile($firstfile)
 
 ```
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 - [ISEFile 对象](The-ISEFile-Object.md) 
 - [Windows PowerShell ISE 脚本对象模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
 - [Windows PowerShell ISE 对象模型参考](Windows-PowerShell-ISE-Object-Model-Reference.md) 
@@ -80,6 +80,6 @@ $psISE.CurrentPowerShellTab.Files.SetSelectedFile($firstfile)
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

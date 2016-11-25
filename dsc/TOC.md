@@ -66,6 +66,8 @@
 ### [nxSshAuthorizedKeys 资源](lnxSshAuthorizedKeysResource.md)
 ### [nxUser 资源](lnxUserResource.md)
 
+# [在 Microsoft Azure 上使用 DSC](azureDsc.md)
+
 # DSC MOF 引用
 ## [MSFT_DSCLocalConfigurationManager 类](msft-dsclocalconfigurationmanager.md)
 ### [MSFT_DSCLocalConfigurationManager 类的 ApplyConfiguration 方法](msft-dsclocalconfigurationmanager-applyconfiguration.md)
@@ -93,6 +95,6 @@
 
 
 
-<!--HONumber=Oct16_HO4-->
+<!--HONumber=Nov16_HO4-->
 
 

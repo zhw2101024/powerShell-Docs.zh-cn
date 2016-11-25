@@ -14,12 +14,12 @@ ms.openlocfilehash: e4d830fa49157366fb20851f01b34d433b296534
 
 ---
 
-# ISEFile 对象
+# <a name="the-isefile-object"></a>ISEFile 对象
   **ISEFile** 对象，表示 Windows PowerShell® 集成脚本环境 (ISE) 中的文件。 它是 Microsoft.PowerShell.Host.ISE.ISEFile 类的实例。 本主题列出其成员方法和成员属性。 **$PsISE.CurrentFile** 和 PowerShell 选项卡中的文件集合中的文件是 Microsoft.PowerShell.Host.ISE.ISEFile 类的所有实例。
 
-## 方法
+## <a name="methods"></a>方法
 
-###  <a name="save-override"></a> Save\( \[saveEncoding\] \)
+###  <a name="a-namesave-overridea-save-saveencoding-"></a><a name="save-override"></a> Save\( \[saveEncoding\] \)
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  将该文件保存到磁盘。
@@ -43,7 +43,7 @@ $myfile.Encoding
 
 ```
 
-###  <a name="saveas"></a> SaveAs\(filename, \[saveEncoding\]\)
+###  <a name="a-namesaveasa-saveasfilename-saveencoding"></a><a name="saveas"></a> SaveAs\(filename, \[saveEncoding\]\)
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  使用指定的文件名和编码保存文件。
@@ -69,12 +69,12 @@ $psIse.CurrentFile.SaveAs( $fullPath, [System.Text.Encoding]::UTF8 )
 
 ```
 
-## “属性”
+## <a name="properties"></a>“属性”
 
-###  <a name="Displayname"></a> DisplayName
+###  <a name="a-namedisplaynamea-displayname"></a><a name="Displayname"></a> DisplayName
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
- 只读属性，可获取包含此文件显示名称的字符串。 名称显示在编辑器顶部的“文件”选项卡上。 名称结尾处存在星号 \(\*\) 表示文件具有未保存的更改。
+ 只读属性，可获取包含此文件显示名称的字符串。 名称显示在编辑器顶部的“文件”选项卡上。 名称结尾处存在星号 \(\*\)，表示文件具有未保存的更改。
 
 ```
 # Shows the display name of the file.
@@ -82,7 +82,7 @@ $psIse.CurrentFile.DisplayName
 
 ```
 
-###  <a name="Editor"></a> 编辑器
+###  <a name="a-nameeditora-editor"></a><a name="Editor"></a>编辑器
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取用于指定文件的[编辑器对象](The-ISEEditor-Object.md)。
@@ -93,7 +93,7 @@ $psIse.CurrentFile.Editor.Text
 
 ```
 
-###  <a name="Encoding"></a> 编码
+###  <a name="a-nameencodinga-encoding"></a><a name="Encoding"></a>编码
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取原始文件编码。 这是一个 **System.Text.Encoding** 对象。
@@ -104,7 +104,7 @@ $psIse.CurrentFile.Encoding
 
 ```
 
-###  <a name="FullPath"></a> FullPath
+###  <a name="a-namefullpatha-fullpath"></a><a name="FullPath"></a> FullPath
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取指定已打开文件的完整路径的字符串。
@@ -115,7 +115,7 @@ $psIse.CurrentFile.FullPath
 
 ```
 
-###  <a name="IsSaved"></a> IsSaved
+###  <a name="a-nameissaveda-issaved"></a><a name="IsSaved"></a> IsSaved
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读布尔属性，如果在最后一次修改文件后保存了文件，则返回 **$true**。
@@ -127,7 +127,7 @@ $myfile.IsSaved
 
 ```
 
-###  <a name="IsUntitled"></a> IsUntitled
+###  <a name="a-nameisuntitleda-isuntitled"></a><a name="IsUntitled"></a> IsUntitled
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，如果从未指定文件标题，则返回 **$true**。
@@ -140,7 +140,7 @@ $psISE.CurrentFile.IsUntitled
 
 ```
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 - [ISEFileCollectionObject](The-ISEFileCollection-Object.md) 
 - [Windows PowerShell ISE 脚本对象模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
 - [Windows PowerShell ISE 对象模型参考](Windows-PowerShell-ISE-Object-Model-Reference.md) 
@@ -150,6 +150,6 @@ $psISE.CurrentFile.IsUntitled
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 
