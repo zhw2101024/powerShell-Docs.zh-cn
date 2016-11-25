@@ -30946,8 +30946,8 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [Starting-Windows-PowerShell.a3dcf25852cd345b654f8612f2d32861f0ccad4f.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/fd83ef9ed79af261788657cdd9c752b07ec6d7d7/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/Starting-Windows-PowerShell.a3dcf25852cd345b654f8612f2d32861f0ccad4f.zh-cn.xlf)
 * Handback Datetime: 2016-11-25 14:44:25
-* Bilingual File: [Starting-Windows-PowerShell.a3dcf25852cd345b654f8612f2d32861f0ccad4f.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/e6060b128cbc13eac657c5de5af9ec1cef3f5d4a/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/Starting-Windows-PowerShell.a3dcf25852cd345b654f8612f2d32861f0ccad4f.zh-cn.xlf)
-* Bilingual Datetime: 2016-06-16 14:30:28
+* Bilingual File: [Starting-Windows-PowerShell.a3dcf25852cd345b654f8612f2d32861f0ccad4f.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/fd83ef9ed79af261788657cdd9c752b07ec6d7d7/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/Starting-Windows-PowerShell.a3dcf25852cd345b654f8612f2d32861f0ccad4f.zh-cn.xlf)
+* Bilingual Datetime: 2016-11-25 14:45:35
 * [Back to Top](#report-top)
 
 ##### <a name='333469a642a4b88442a7d3ca8fa65f5755c69bcc2301'></a> Source: [scripting\setup\Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md](https://github.com/PowerShell/powerShell-Docs/blob/c40ab96196531d36001e4d94a3821d20612cbfce/scripting/setup/Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md)
