@@ -8,9 +8,9 @@
 [ Handoff Success Files ](#handoff-success-list)| 2169
 [ Archive Failed Files ](#archive-failed-list)| 0
 [ Archive Success Files ](#archive-success-list)| 15
-[ Handback Failed Files ](#handback-failed-list)| 9
+[ Handback Failed Files ](#handback-failed-list)| 10
 [ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 0
-[ In Sync Handback Files ](#insync-handback-success-list)| 194
+[ In Sync Handback Files ](#insync-handback-success-list)| 193
 [ Ignored Files ](#ignored-list)| 36
 
 ## <a name='handoff-failed-list'></a> Handoff Failed File List
@@ -2224,6 +2224,7 @@
  [scripting\core-powershell\workflows\PSWorkflow-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/6c666e2e23cb74818e37293410dafc9033057733/scripting/core-powershell/workflows/PSWorkflow-Module.md) | HandedBackFailed | [Details](#4bef4aa944dce5c15cd87ff3b256f2222a92daf02233)
  [scripting\getting-started\cookbooks\Managing-Services.md](https://github.com/PowerShell/powerShell-Docs/blob/f891988cce205b5729d0da6c4ce23da5fbd53b7f/scripting/getting-started/cookbooks/Managing-Services.md) | HandedBackFailed | [Details](#61c98c54ca1b555f6b2e827fb31228bf6a2cc71d2248)
  [scripting\getting-started\cookbooks\PowerShellGet-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/f891988cce205b5729d0da6c4ce23da5fbd53b7f/scripting/getting-started/cookbooks/PowerShellGet-Module.md) | HandedBackFailed | [Details](#16b3617b75b6aae25a92beaf5d6d2d6f2437ee132254)
+ [scripting\setup\Starting-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/2aa04e8094fee4b0da3d5e7025cca215d542355e/scripting/setup/Starting-Windows-PowerShell.md) | HandedBackFailed | [Details](#260805af4b64646922477f874c6679f58af8aea92302)
 
 ## <a name='outofsync-handback-success-list'></a> Out Of Sync Handback Success File List
 
@@ -2336,7 +2337,6 @@
  [scripting\getting-started\fundamental\Exploring-the-Windows-PowerShell-ISE.md](https://github.com/PowerShell/powerShell-Docs/blob/b59186234a513cf34d2615d90643ee749bd60d3f/scripting/getting-started/fundamental/Exploring-the-Windows-PowerShell-ISE.md) | InSyncHandedBackSuccess | [Details](#d0f9c059f6f5286388af3cfc07995fe46e7321c32273)
  [scripting\getting-started\fundamental\Scripting-with-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/getting-started/fundamental/Scripting-with-Windows-PowerShell.md) | InSyncHandedBackSuccess | [Details](#0148f4631e34e65a4336c5d1d50e313fb66397482278)
  [scripting\setup\Installing-the-Windows-PowerShell-2.0-Engine.md](https://github.com/PowerShell/powerShell-Docs/blob/2aa04e8094fee4b0da3d5e7025cca215d542355e/scripting/setup/Installing-the-Windows-PowerShell-2.0-Engine.md) | InSyncHandedBackSuccess | [Details](#68a3d823f6545e1fbf6399b4d566a7e62daeebc92294)
- [scripting\setup\Starting-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/2aa04e8094fee4b0da3d5e7025cca215d542355e/scripting/setup/Starting-Windows-PowerShell.md) | InSyncHandedBackSuccess | [Details](#260805af4b64646922477f874c6679f58af8aea92302)
  [scripting\topic\WinRMSecurity.md](https://github.com/PowerShell/powerShell-Docs/blob/afa259b8611f995bbf5b824179a12e3d8f15df86/scripting/topic/WinRMSecurity.md) | InSyncHandedBackSuccess | [Details](#207792452c563ec6cca5c17fbcd122372442d8ac2306)
  [scripting\whats-new\What-s-New-in-Windows-PowerShell-50.md](https://github.com/PowerShell/powerShell-Docs/blob/1d4062490ba76a8cc62faa8fb96eff92b49169b7/scripting/whats-new/What-s-New-in-Windows-PowerShell-50.md) | InSyncHandedBackSuccess | [Details](#966cab74cb2519893d4744e8bd0ca12f93f731362308)
  [scripting\whats-new\What-s-New-With-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/1d4062490ba76a8cc62faa8fb96eff92b49169b7/scripting/whats-new/What-s-New-With-PowerShell.md) | InSyncHandedBackSuccess | [Details](#035fc8adc08df500069e800cfb94c5dcff46d88f2309)
@@ -30927,7 +30927,7 @@
 * [Back to Top](#report-top)
 
 ##### <a name='260805af4b64646922477f874c6679f58af8aea92302'></a> Source: [scripting\setup\Starting-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/2aa04e8094fee4b0da3d5e7025cca215d542355e/scripting/setup/Starting-Windows-PowerShell.md)
-* Status: InSyncHandedBackSuccess
+* Status: HandedBackFailed
 * Target File: [scripting\setup\Starting-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs.zh-cn/blob/cf75c797045a46888e01781c1786be460cf53d22/scripting/setup/Starting-Windows-PowerShell.md)
 * Handoff File: [Starting-Windows-PowerShell.a3dcf25852cd345b654f8612f2d32861f0ccad4f.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/48cdcaa716f761701e0e4a9ba24c73ebd9018da6/ol-handoff/PowerShell/powerShell-Docs.zh-cn/live/Starting-Windows-PowerShell.a3dcf25852cd345b654f8612f2d32861f0ccad4f.zh-cn.xlf)
 * Handoff Datetime: 2016-11-23 22:01:40
@@ -30935,7 +30935,8 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [Starting-Windows-PowerShell.a3dcf25852cd345b654f8612f2d32861f0ccad4f.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/fd83ef9ed79af261788657cdd9c752b07ec6d7d7/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/Starting-Windows-PowerShell.a3dcf25852cd345b654f8612f2d32861f0ccad4f.zh-cn.xlf)
-* Handback Datetime: 2016-11-25 14:44:25
+* Handback Datetime: 2016-11-30 22:29:58
+* Handback Error: [handback_file_rejected](#260805af4b64646922477f874c6679f58af8aea92302handback_file_rejected)
 * Bilingual File: [Starting-Windows-PowerShell.a3dcf25852cd345b654f8612f2d32861f0ccad4f.zh-cn.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/fd83ef9ed79af261788657cdd9c752b07ec6d7d7/ol-handback/PowerShell/powerShell-Docs.zh-cn/live/Starting-Windows-PowerShell.a3dcf25852cd345b654f8612f2d32861f0ccad4f.zh-cn.xlf)
 * Bilingual Datetime: 2016-11-25 14:45:35
 * [Back to Top](#report-top)
@@ -32731,6 +32732,12 @@
 * Error Message: file PowerShellGet-Module.ac51526ac1d58e30a623a4d259ded86670804b8e.zh-cn.xlf is out of handoff scope
 * Retriable: False
 * Error Details: {"internal_error_code":"handback_file_rejected","internal_error_message":"file PowerShellGet-Module.ac51526ac1d58e30a623a4d259ded86670804b8e.zh-cn.xlf is out of handoff scope","internal_error_retriable":false,"exception_message":"file PowerShellGet-Module.ac51526ac1d58e30a623a4d259ded86670804b8e.zh-cn.xlf is out of handoff scope","exception_type":"Microsoft.OpenLocalization.Common.ErrorHandling.OpenLocalizationException","stack_trace":null,"extended_information":null}
+
+##### <a name='260805af4b64646922477f874c6679f58af8aea92302handback_file_rejected'></a> Source: [scripting\setup\Starting-Windows-PowerShell.md](#260805af4b64646922477f874c6679f58af8aea92302)
+* Error Code: handback_file_rejected
+* Error Message: file Starting-Windows-PowerShell.a3dcf25852cd345b654f8612f2d32861f0ccad4f.zh-cn.xlf is out of handoff scope
+* Retriable: False
+* Error Details: {"internal_error_code":"handback_file_rejected","internal_error_message":"file Starting-Windows-PowerShell.a3dcf25852cd345b654f8612f2d32861f0ccad4f.zh-cn.xlf is out of handoff scope","internal_error_retriable":false,"exception_message":"file Starting-Windows-PowerShell.a3dcf25852cd345b654f8612f2d32861f0ccad4f.zh-cn.xlf is out of handoff scope","exception_type":"Microsoft.OpenLocalization.Common.ErrorHandling.OpenLocalizationException","stack_trace":null,"extended_information":null}
 
 
 Generated by OpenLocalization.
