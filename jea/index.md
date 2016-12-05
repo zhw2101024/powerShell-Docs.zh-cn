@@ -1,5 +1,1 @@
-# 用于打开发布的索引测试文件
-
-<!--HONumber=Aug16_HO3-->
-
-
+# <a name="index-test-file-for-open-publishing"></a>用于打开发布的索引测试文件
