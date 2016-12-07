@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 20a7711604033b5ff1484dbb526df2642a9a1738
-
+ms.openlocfilehash: 4a51b56091aea23568674cdc7d4d4128c78b239c
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC Environment 资源
+# <a name="dsc-environment-resource"></a>DSC Environment 资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) 中的 __Environment__ 资源提供了管理系统环境变量的机制。
 
-## 语法
+## <a name="syntax"></a>语法
 ``` mof
 Environment [string] #ResourceName
 {
@@ -31,7 +29,7 @@ Environment [string] #ResourceName
 }
 ```
 
-## “属性”
+## <a name="properties"></a>“属性”
 
 |  属性  |  说明   | 
 |---|---| 
@@ -41,7 +39,7 @@ Environment [string] #ResourceName
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 __ResourceName__、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。| 
 | 值| 要分配给环境变量的值。| 
 
-## 示例
+## <a name="example"></a>示例
 
 以下示例可确保 __TestEnvironmentVariable__ 存在且具有值 __TestValue__。 如果不存在，则创建它。
 
@@ -53,10 +51,4 @@ Environment EnvironmentExample
     Value = "TestValue"
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

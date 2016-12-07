@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: d266a109b1acd97c03594f988ce2fab3c697b80c
-
+ms.openlocfilehash: 776e55de817dd200142965e19ce84bbe776fcb9d
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 管理 Windows PowerShell 驱动器
+# <a name="managing-windows-powershell-drives"></a>管理 Windows PowerShell 驱动器
 *Windows PowerShell 驱动器*是一个数据存储位置，你可以像访问 Windows PowerShell 中的文件系统驱动器那样访问它。 Windows PowerShell 提供程序将为你创建一些驱动器，例如文件系统驱动器（包括 C: 和 D:）、注册表驱动器（HKCU: 和 HKLM:）和证书驱动器 (Cert:)，你也可以创建自己的 Windows PowerShell 驱动器。 这些驱动器非常有用，但它们仅在 Windows PowerShell 内可用。 你无法通过使用其他 Windows 工具（如文件资源管理器或 Cmd.exe）访问它们。
 
 Windows PowerShell 可针对适用于 Windows PowerShell 驱动器的命令使用名词 **PSDrive**。 有关 Windows PowerShell 会话中的 Windows PowerShell 驱动器列表，请使用 **Get-PSDrive** cmdlet。
@@ -69,7 +67,7 @@ D          FileSystem    D:\
 
 <pre>PS> Set-Location HKLM:\SOFTWARE PS> Push-Location .\Microsoft PS> Get-Location Path ---- HKLM:\SOFTWARE\Microsoft</pre>
 
-### 添加新的 Windows PowerShell 驱动器 (New-PSDrive)
+### <a name="adding-new-windows-powershell-drives-new-psdrive"></a>添加新的 Windows PowerShell 驱动器 (New-PSDrive)
 你可以通过使用 **New-PSDrive** 命令添加自己的 Windows PowerShell 驱动器。 若要获取 **New-PSDrive** 命令的语法，请使用 **Syntax** 参数输入 **Get-Command** 命令：
 
 ```
@@ -118,7 +116,7 @@ Windows PowerShell 驱动器可以使许多任务变得更简单。 例如，Win
 
 New-PsDrive cmdlet 仅将新的驱动器添加到当前 Windows PowerShell 会话中。 如果关闭 Windows PowerShell 窗口，则会丢失新的驱动器。 若要保存 Windows PowerShell 驱动器，请使用 Export-Console cmdlet 导出当前 Windows PowerShell 会话，然后使用 PowerShell.exe **PSConsoleFile** 参数来将其导入。 或者，将新的驱动器添加到 Windows PowerShell 配置文件中。
 
-### 删除 Windows PowerShell 驱动器 (Remove-PSDrive)
+### <a name="deleting-windows-powershell-drives-remove-psdrive"></a>删除 Windows PowerShell 驱动器 (Remove-PSDrive)
 你可以通过使用 **Remove-PSDrive** cmdlet 从 Windows PowerShell 中删除驱动器。 **Remove-PSDrive** cmdlet 易于使用；若要删除特定 Windows PowerShell 驱动器，只需提供 Windows PowerShell 驱动器名称。
 
 例如，如果已添加 **Office:** Windows PowerShell 驱动器（如 **New-PSDrive** 主题中所示），则可以通过键入以下内容将其删除：
@@ -143,12 +141,6 @@ At line:1 char:15
 + remove-psdrive  <<<< -name office
 ```
 
-### 添加和删除 Windows PowerShell 之外的驱动器
+### <a name="adding-and-removing-drives-outside-windows-powershell"></a>添加和删除 Windows PowerShell 之外的驱动器
 Windows PowerShell 检测在 Windows 中添加或删除的文件系统驱动器，包括映射的网络驱动器、附加的 USB 驱动器，以及通过使用 **net use** 命令或来自 Windows 脚本宿主 (WSH) 脚本的 **WScript.NetworkMapNetworkDrive** 和 **RemoveNetworkDrive** 方法删除的驱动器。
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

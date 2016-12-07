@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 5c7878bdfc8a3f118b569a9e43be6c7e4333ad2c
-
+ms.openlocfilehash: 84ed3408cfef1dbc99f6f3147ae36be09bca67e4
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#DSC User 资源#
+#<a name="dsc-user-resource"></a>DSC User 资源#
 
  
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
@@ -22,7 +20,7 @@ ms.openlocfilehash: 5c7878bdfc8a3f118b569a9e43be6c7e4333ad2c
 Windows PowerShell Desired State Configuration (DSC) 中的 __User__ 资源提供在目标节点上管理用户帐户的机制。
 
 
-##语法##
+##<a name="syntax"></a>语法##
 
 ```
 User [string] #ResourceName
@@ -40,7 +38,7 @@ User [string] #ResourceName
 }
 ```
 
-## “属性”
+## <a name="properties"></a>“属性”
 |  属性  |  说明   | 
 |---|---| 
 | UserName| 指示要确保其特定状态的帐户名。| 
@@ -54,7 +52,7 @@ User [string] #ResourceName
 | PasswordNeverExpires| 指示密码是否会过期。 将此属性设置为 __$true__ 以确保此帐户的密码永不过期，将其设置为 __$false__ 则密码会过期。 默认值为 __$false__。| 
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 __ResourceName__、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-## 示例
+## <a name="example"></a>示例
 
 ```powershell
 User UserExample
@@ -65,10 +63,4 @@ User UserExample
     DependsOn = “[Group]GroupExample" # Configures GroupExample first
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

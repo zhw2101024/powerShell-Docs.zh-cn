@@ -1,4 +1,4 @@
-# 加密消息语法 (CMS) cmdlet
+# <a name="cryptographic-message-syntax-cms-cmdlets"></a>加密消息语法 (CMS) cmdlet
 
 加密消息语法 cmdlet 对使用 IETF 标准格式加密保护消息的内容提供加密和解密支持，如 [RFC5652](http://tools.ietf.org/html/rfc5652).中所述。
 
@@ -82,7 +82,3 @@ Hello World
 ```powershell
 dir -DocumentEncryptionCert
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

@@ -1,4 +1,4 @@
-# 剪贴板 cmdlet
+# <a name="clipboard-cmdlets"></a>剪贴板 cmdlet
 通过 **Get-Clipboard** 和 **Set-Clipboard**，你可以更轻松地将内容传入和传出 Windows PowerShell 会话。 例如，如果你使用 Windows 资源管理器将三个文件复制到剪贴板（例如，通过选择它们并按 `ctrl-c`），然后就可以轻松地以文件列表的方式访问剪贴板的内容：
 
 ```powershell 
@@ -19,8 +19,3 @@ Mode LastWriteTime Length Name
 
 
 剪贴板 cmdlet 支持图像、音频文件、文件列表和文本。
-
-
-<!--HONumber=Aug16_HO3-->
-
-

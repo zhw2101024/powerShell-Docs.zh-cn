@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: b414a01bcd111143791a5fac77e61ce309a0a5c5
-ms.openlocfilehash: b5de1100450a89796c20a5bbb2e71f7759374b02
-
+ms.openlocfilehash: a8c2094cbef1bb14c4a9082ff78fae78ec0c2e65
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 使用 PowerShell 类编写自定义 DSC 资源
+# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>使用 PowerShell 类编写自定义 DSC 资源
 
 > 适用于：Windows PowerShell 5.0
 
@@ -25,7 +23,7 @@ ms.openlocfilehash: b5de1100450a89796c20a5bbb2e71f7759374b02
 
 有关 DSC 资源的详细信息，请参阅[构建自定义 Windows PowerShell Desired State Configuration 资源](authoringResource.md)。
 
-## 类资源的文件夹结构
+## <a name="folder-structure-for-a-class-resource"></a>类资源的文件夹结构
 
 想要使用 PowerShell 类实现 DSC 自定义资源，请创建下列文件夹结构。 在 **MyDscResource.psm1** 中定义类，并且在 **MyDscResource.psd1** 中定义模块清单。
 
@@ -36,7 +34,7 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
            MyDscResource.psd1 
 ```
 
-## 创建类
+## <a name="create-the-class"></a>创建类
 
 使用类关键字创建 PowerShell 类。 使用 **DscResource()** 特性来指定类是 DSC 资源。 类的名称就是 DSC 资源的名称。
 
@@ -46,7 +44,7 @@ class FileResource {
 }
 ```
 
-### 声明属性
+### <a name="declare-properties"></a>声明属性
 
 DSC 资源架构被定义为类的属性。 我们声明下列三个属性。
 
@@ -81,7 +79,7 @@ enum Ensure
 }
 ```
 
-### 实现该方法
+### <a name="implementing-the-methods"></a>实现该方法
 
 **Get()**、**Set()** 和 **Test()** 方法类似于脚本资源中的 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** 函数。
 
@@ -218,7 +216,7 @@ enum Ensure
     }
 ```
 
-### 完整文件
+### <a name="the-complete-file"></a>完整文件
 完整类文件如下。
 
 ```powershell
@@ -417,7 +415,7 @@ class FileResource
 ```
 
 
-## 创建清单
+## <a name="create-a-manifest"></a>创建清单
 
 若要让基于类的资源对 DSC 引擎可用，你必须在清单文件中添加 **DscResourcesToExport** 声明，以指示模块导出资源。 我们的清单如下所示：
 
@@ -455,7 +453,7 @@ PowerShellVersion = '5.0'
 } 
 ```
 
-## 测试资源
+## <a name="test-the-resource"></a>测试资源
 
 如前面所述，将类和清单文件保存到文件夹结构中之后，就可以创建一个使用新资源的配置。 有关如何运行 DSC 配置的信息，请参阅[执行配置](enactingConfigurations.md)。 下面的配置将检查 `c:\test\test.txt` 的文件是否存在，如果不存在，则会从 `c:\test.txt` 进行复制（运行配置前应先创建 `c:\test.txt`）。
 
@@ -474,13 +472,7 @@ Test
 Start-DscConfiguration -Wait -Force Test
 ```
 
-## 另请参阅
-### 概念
+## <a name="see-also"></a>另请参阅
+### <a name="concepts"></a>概念
 [构建自定义 Windows PowerShell Desired State Configuration 资源](authoringResource.md)
-
-
-
-
-<!--HONumber=Oct16_HO1-->
-
 

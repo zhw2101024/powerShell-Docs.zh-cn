@@ -33,7 +33,7 @@ Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 ```
 
 
-<a name="lcm-can-go-into-an-unstable-state-while-using-getdscconfiguration-in-debugmode"></a>在 DebugMode 中使用 Get-DscConfiguration 时，LCM 可能进入不稳定状态
+<a name="lcm-can-go-into-an-unstable-state-while-using-get-dscconfiguration-in-debugmode"></a>在 DebugMode 中使用 Get-DscConfiguration 时，LCM 可能进入不稳定状态
 -------------------------------------------------------------------------------
 
 如果 LCM 处于 DebugMode，按 Ctrl+C 来停止 Get-DscConfiguration 处理可能导致 LCM 进入不稳定状态，从而导致大部分 DSC cmdlet 失效。
@@ -41,7 +41,7 @@ Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 **解决方法：**不要在调试 Get-DscConfiguration cmdlet 时按 Ctrl+C。
 
 
-<a name="stopdscconfiguration-may-hang-in-debugmode"></a>在 DebugMode 中，Stop-DscConfiguration 可能挂起
+<a name="stop-dscconfiguration-may-hang-in-debugmode"></a>在 DebugMode 中，Stop-DscConfiguration 可能挂起
 ------------------------------------------------------------------------------------------------------------------------
 如果 LCM 处于 DebugMode，则当试图停止由 Get-DscConfiguration 启动的操作时，Stop-DscConfiguration 可能挂起
 
@@ -55,27 +55,27 @@ Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 **解决方法：**禁用 *DebugMode* 以从资源中查看详细消息
 
 
-<a name="invokedscresource-operations-cannot-be-retrieved-by-getdscconfigurationstatus-cmdlet"></a>Get-DscConfigurationStatus cmdlet 无法检索 Invoke-DscResource 操作
+<a name="invoke-dscresource-operations-cannot-be-retrieved-by-get-dscconfigurationstatus-cmdlet"></a>Get-DscConfigurationStatus cmdlet 无法检索 Invoke-DscResource 操作
 --------------------------------------------------------------------------------------
 使用 Invoke-DscResource cmdlet 直接调用资源的方法后，将无法再通过 Get-DscConfigurationStatus 检索此类操作的记录。
 
 **解决方法：**无。
 
 
-<a name="getdscconfigurationstatus-returns-pull-cycle-operations-as-type-consistency"></a>Get-DscConfigurationStatus 将请求周期操作返回为 *Consistency* 类型
+<a name="get-dscconfigurationstatus-returns-pull-cycle-operations-as-type-consistency"></a>Get-DscConfigurationStatus 将请求周期操作返回为 *Consistency* 类型
 ---------------------------------------------------------------------------------
 将节点设置为 PULL 刷新模式时，对于所执行的每个请求操作，Get-DscConfigurationStatus cmdlet 会将操作类型报告为 *Consistency* 而不是 *Initial*
 
 **解决方法：**无。
 
-<a name="invokedscresource-cmdlet-does-not-return-message-in-the-order-they-were-produced"></a>Invoke-DscResource cmdlet 不按生成消息的顺序返回消息
+<a name="invoke-dscresource-cmdlet-does-not-return-message-in-the-order-they-were-produced"></a>Invoke-DscResource cmdlet 不按生成消息的顺序返回消息
 ---------------------------------------------------------------------------------
 Invoke-DscResource cmdlet 不按 LCM 或 DSC 资源生成详细、警告和错误消息的顺序返回这些消息。
 
 **解决方法：**无。
 
 
-<a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invokedscresource"></a>与 Invoke-DscResource 一起使用时，无法轻松调试 DSC 资源
+<a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>与 Invoke-DscResource 一起使用时，无法轻松调试 DSC 资源
 -----------------------------------------------------------------------
 LCM 在调试模式下运行时（请参阅 [调试 DSC 资源](https://msdn.microsoft.com/powershell/dsc/debugresource)以了解详细信息），Invoke-DscResource cmdlet 不会给出有关连接到运行空间以进行调试的信息。
 **解决方法：**使用 cmdlet **Get-PSHostProcessInfo**、**Enter-PSHostProcess**、**Get-Runspace** 和 **Debug-Runspace** 来发现并连接到运行空间，以便调试 DSC 资源。
@@ -114,7 +114,7 @@ Debug-Runspace -Id 2
 **解决方法：**即使对不同部分配置中的相同资源也使用不同的名称。
 
 
-<a name="startdscconfiguration-useexisting-does-not-work-with-credential"></a>Start-DscConfiguration –UseExisting 不可与 -Credential 一起使用
+<a name="start-dscconfiguration-useexisting-does-not-work-with--credential"></a>Start-DscConfiguration –UseExisting 不可与 -Credential 一起使用
 ------------------------------------------------------------------
 
 使用具有 –UseExisting 参数的 Start-DscConfiguration 时，将忽略 –Credential 参数。 DSC 使用默认进程标识继续执行操作。 当需要其他凭据才可在远程节点上继续执行时，这将导致错误。
@@ -133,14 +133,14 @@ Start-DscConfiguration -UseExisting -CimSession $session
 **解决方法：**无。
 
 
-<a name="debugging-of-classbased-dsc-resources"></a>调试基于类的 DSC 资源
+<a name="debugging-of-class-based-dsc-resources"></a>调试基于类的 DSC 资源
 --------------------------------------
 此版本中不支持调试基于类的 DSC 资源。
 
 **解决方法：**无。
 
 
-<a name="variables-functions-defined-in-script-scope-in-dsc-classbased-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>在多次调用 DSC 资源之间，将不保留在 DSC 基于类的资源中 $script 作用域内定义的变量和函数 
+<a name="variables-functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>在多次调用 DSC 资源之间，将不保留在 DSC 基于类的资源中 $script 作用域内定义的变量和函数 
 -------------------------------------------------------------------------------------------------------------------------------------
 
 如果配置使用任何基于类的资源，而该资源包含在 $script 作用域内定义的变量或函数，则对 Start-DSCConfiguration 的多个连续调用将失败。
@@ -161,7 +161,7 @@ Start-DscConfiguration -UseExisting -CimSession $session
 **解决方法：**尽可能使用 Credential 属性。 示例 ServiceSet 和 WindowsFeatureSet
 
 
-<a name="getdscresource-syntax-does-not-reflect-psdscrunascredential-correctly"></a>*Get-DscResource -Syntax* 不能正确地反映 PsDscRunAsCredential
+<a name="get-dscresource--syntax-does-not-reflect-psdscrunascredential-correctly"></a>*Get-DscResource -Syntax* 不能正确地反映 PsDscRunAsCredential
 -------------------------------------------------------------------------
 当资源将 Get-DscResource -Syntax 标记为强制使用或不支持它时，它将不能正确地反映 PsDscRunAsCredential。
 
@@ -173,7 +173,7 @@ Start-DscConfiguration -UseExisting -CimSession $session
 
 WindowsOptionalFeature DSC 资源在 Windows 7 中不可用。 此资源需要 DISM 模块以及在 Windows 8 和更新版 Windows 操作系统中开始提供的 DISM cmdlet。
 
-<a name="for-classbased-dsc-resources-importdscresource-moduleversion-may-not-work-as-expected"></a>对于基于类的 DSC 资源，Import-DscResource -ModuleVersion 可能未按预期运行   
+<a name="for-class-based-dsc-resources-import-dscresource--moduleversion-may-not-work-as-expected"></a>对于基于类的 DSC 资源，Import-DscResource -ModuleVersion 可能未按预期运行   
 ------------------------------------------------------------------------------------------
 如果编译节点具有多个版本的基于类的 DSC 资源模块，`Import-DscResource -ModuleVersion` 不会获取指定版本，并导致产生以下编译错误。
 
@@ -226,8 +226,3 @@ Configuration $configName
     }
 }
 ```
-
-
-<!--HONumber=Nov16_HO2-->
-
-

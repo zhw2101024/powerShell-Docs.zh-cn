@@ -8,12 +8,10 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "必备条件"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: ac9231a475ba84e9051bbd06a65f3f20c9e49846
-
+ms.openlocfilehash: 6cd57c2fab63d2184cb5c792b63df99dbd782235
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="prerequisites"></a>必备条件
 
 ## <a name="initial-state"></a>初始状态
@@ -125,10 +123,4 @@ Register-PSSessionConfiguration -Name $sessionName -Path "$env:ProgramData\JEACo
 注意：也可通过“组策略”启用系统范围的 PowerShell 脚本。
 
 **祝贺！现在已为计算机配置演示终结点，可以开始使用 JEA 了！**
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

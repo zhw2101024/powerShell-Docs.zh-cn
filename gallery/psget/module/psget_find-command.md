@@ -9,17 +9,15 @@ ms.date: 2016-10-14
 contributor: manikb
 title: "psget_find 命令"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 7d46f02106785b0f94f73e60231fb4623002cfb6
-
+ms.openlocfilehash: 99091130ea89023495e5e3aacafb292f67f2db30
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Find-Command
+# <a name="find-command"></a>Find-Command
 
 查找模块中的 PowerShell 命令。
 
-## 说明
+## <a name="description"></a>说明
 Find-Command cmdlet 会查找 cmdlet、别名、函数和工作流等 PowerShell 命令。 Find-Command 搜索已注册存储库中的模块。
 对于此 cmdlet 找到的每个命令，将返回一个 PSGetCommandInfo 对象。 可将 PSGetCommandInfo 对象传递给 Install-Module cmdlet 以安装包含此命令的模块。
 
@@ -32,16 +30,16 @@ Find-Command cmdlet 会查找 cmdlet、别名、函数和工作流等 PowerShell
 - Find-Command 可使用 -Filter 参数对存储库特定搜索语言进行筛选。
 - Find-Command 可从所有或少数的已注册的存储库中对模块进行筛选。
 
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a>Cmdlet 语法
 ```powershell
 Get-Command -Name Find-Command -Module PowerShellGet -Syntax
 ```
 
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
 
 [Find-Command](http://go.microsoft.com/fwlink/?LinkId=733636)
 
-## 示例命令
+## <a name="example-commands"></a>示例命令
 ```powershell
 
 # Find a specific command
@@ -83,10 +81,4 @@ Find-Command -Filter RBAC
 Find-Command -Tag Azure, DSC
 
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

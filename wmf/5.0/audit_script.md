@@ -1,4 +1,4 @@
-# 脚本跟踪和日志记录
+# <a name="script-tracing-and-logging"></a>脚本跟踪和日志记录
 
 尽管 Windows PowerShell 已经具有 **LogPipelineExecutionDetails** 组策略设置用以记录 cmdlet 的调用，但 PowerShell 的脚本语言仍有许多你可能想记录和/或审核的功能。 新的“详细脚本跟踪”功能让你能够启用系统上使用的 Windows PowerShell 脚本的详细跟踪和分析。 在启用详细脚本跟踪后，Windows PowerShell 会将所有脚本块记录到 **Microsoft-Windows-PowerShell/Operational** 的 ETW 事件日志中。 如果一个脚本块创建了另一个脚本块（例如，一个在字符串上调用 Invoke-Expression cmdlet 的脚本），那么该结果脚本块也会被记录。
 
@@ -96,8 +96,3 @@ $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 ```
 
 正如所有日志系统都有一个有限的保留缓存区（即 ETW 日志）一样，针对此基础结构的一个攻击就是，用虚假事件充斥日志以隐藏早期的证据。 若要避免这种攻击，请确保具有某种形式的事件日志集合设置（即 Windows 事件转发，[通过 Windows 事件日志监视发现攻击者](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf)）以尽快将事件日志从计算机中移除。
-
-
-<!--HONumber=Aug16_HO3-->
-
-

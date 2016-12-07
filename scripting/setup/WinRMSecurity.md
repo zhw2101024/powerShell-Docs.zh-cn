@@ -7,23 +7,21 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 4ddd5099ce33263d43dcbad0930e654b573a8937
-ms.openlocfilehash: fa7e5c84ac82fa72836536ece507f1751e099077
-
+ms.openlocfilehash: d1a75f4167a2f0af60801f33b79fb07cf7fe9398
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# PowerShell 远程处理安全注意事项
+# <a name="powershell-remoting-security-considerations"></a>PowerShell 远程处理安全注意事项
 
 PowerShell 远程处理是管理 Windows 系统的推荐方式。 在 Windows Server 2012 R2 中，默认启用 PowerShell 远程处理。 本文档将介绍与使用 PowerShell 远程处理相关的安全问题、建议和最佳做法。
 
-## PowerShell 远程处理是什么？
+## <a name="what-is-powershell-remoting"></a>PowerShell 远程处理是什么？
 
 PowerShell 远程处理使用 [Windows 远程管理 (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426.aspx)（这是 [Web Services for Management (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) 协议的 Microsoft 实现），允许用户在远程计算机上运行 PowerShell 命令。 你可以在[运行远程命令](https://technet.microsoft.com/en-us/library/dd819505.aspx)处找到有关使用 PowerShell 远程处理的详细信息。
 
 PowerShell 远程处理不同于使用 cmdlet 的 **ComputerName** 参数在远程计算机上运行它，后者使用远程过程调用 (RPC) 作为其基础协议。
 
-##  PowerShell 远程处理默认设置
+##  <a name="powershell-remoting-default-settings"></a>PowerShell 远程处理默认设置
 
 PowerShell 远程处理（和 WinRM）侦听以下端口：
 
@@ -36,22 +34,22 @@ PowerShell 远程处理（和 WinRM）侦听以下端口：
 
 >**警告：**公用网络的防火墙规则旨在保护计算机免于潜在的恶意外部连接尝试。 请谨慎删除此规则。
 
-## 进程隔离
+## <a name="process-isolation"></a>进程隔离
 
 PowerShell 远程处理使用 [Windows 远程管理 (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426)来实现计算机之间的通信。 WinRM 作为网络服务帐户下的服务运行，并生成以用户帐户运行的隔离进程以托管 PowerShell 实例。 以一个用户身份运行的 PowerShell 实例无权访问以其他用户身份运行 PowerShell 实例的进程。
 
-## PowerShell 远程处理生成的事件日志
+## <a name="event-logs-generated-by-powershell-remoting"></a>PowerShell 远程处理生成的事件日志
 
 FireEye 提供了良好的事件日志和其他由 PowerShell 远程处理会话生成的安全证据的摘要。该摘要在  
 [调查 PowerShell 攻击](https://www.fireeye.com/content/dam/fireeye-www/global/en/solutions/pdfs/wp-lazanciyan-investigating-powershell-attacks.pdf)中可用。
 
-## 加密和传输协议
+## <a name="encryption-and-transport-protocols"></a>加密和传输协议
 
 从以下两个角度来考虑 PowerShell 远程处理连接的安全性会有所帮助：初始身份验证和正在进行的通信。 
 
 无论使用哪种传输协议（HTTP 或 HTTPS），在使用每会话 AES-256 对称密钥完成初始身份验证后，PowerShell 远程处理将始终加密所有的通信。
     
-### 初始身份验证
+### <a name="initial-authentication"></a>初始身份验证
 
 身份验证确认客户端到服务器（理想情况下，从服务器到客户端）的身份。
     
@@ -64,33 +62,33 @@ Kerberos 保证用户标识和服务器标识，而不发送任何种类的可�
 
 默认禁用基于 NTLM 的身份验证，但是可以通过配置目标服务器上的 SSL 或配置客户端上的 WinRM TrustedHosts 设置而允许使用。
     
-#### 使用 SSL 证书以在基于 NTLM 的连接过程中验证服务器标识
+#### <a name="using-ssl-certificates-to-validate-server-identity-during-ntlm-based-connections"></a>使用 SSL 证书以在基于 NTLM 的连接过程中验证服务器标识
 
 由于 NTLM 身份验证协议无法确保目标服务器的标识（除非它已知道你的密码），因此你可以将目标服务器配置为使用适用于 PowerShell 远程处理的 SSL。 将 SSL 证书分配给目标服务器（如果证书是由客户端也信任的证书颁发机构颁发的话）可启用基于 NTLM 的身份验证，从而确保用户标识和服务器标识。
     
-#### 忽略基于 NTLM 的服务器标识错误
+#### <a name="ignoring-ntlm-based-server-identity-errors"></a>忽略基于 NTLM 的服务器标识错误
       
 如果无法将 SSL 证书部署到服务器以进行 NTLM 连接，你可以将此服务器添加到 WinRM **TrustedHosts** 列表中，从而取消生成的标识错误。 请注意，将服务器名称添加到 TrustedHosts 列表不得被视为任何形式的主机本身可信度声明，因为 NTLM 身份验证协议无法确保你实际要连接到的主机就是你想要连接到的主机。
 相反，应将 TrustedHosts 设置视为你想为其取消因无法验证服务器标识而生成的错误的主机列表。
     
     
-### 正在进行的通信
+### <a name="ongoing-communication"></a>正在进行的通信
 
 初始身份验证完成后，[PowerShell 远程处理协议](https://msdn.microsoft.com/en-us/library/dd357801.aspx)会使用每会话 AES-256 对称密钥对所有正在进行的通信进行加密。  
 
 
-## 形成第二个跃点
+## <a name="making-the-second-hop"></a>形成第二个跃点
 
 默认情况下，PowerShell 远程处理使用 Kerberos（如果可用）或者 NTLM 进行身份验证。 这两种协议对远程计算机进行身份验证而无需向其发送凭据。
 这是进行身份验证最安全的方式，但由于远程计算机没有用户的凭据，因此它不能以该用户的名义访问其他计算机和服务。 这被称为“双跃点”问题。
 
 有几种方法可以避免此问题：
 
-### 远程计算机之间的信任
+### <a name="trust-between-remote-computers"></a>远程计算机之间的信任
 
 如果你信任远程连接到 *Server1* 的用户访问 *Server2* 上的资源，则可以显式授予 *Server1* 对这些资源的访问权限。
 
-### 访问远程资源时使用显式凭据
+### <a name="use-explicit-credentials-when-accessing-remote-resources"></a>访问远程资源时使用显式凭据
 
 通过使用 cmdlet 的 **Credential** 参数，可以将凭据显式传递到远程资源。 例如：
 
@@ -99,7 +97,7 @@ $myCredential = Get-Credential
 New-PSDrive -Name Tools \\Server2\Shared\Tools -Credential $myCredential 
 ```
 
-### CredSSP
+### <a name="credssp"></a>CredSSP
 
 你可以使用[凭据安全支持提供程序 (CredSSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/bb931352.aspx) 进行身份验证，具体方法为将“CredSSP”指定为对 [New-PSSession](https://technet.microsoft.com/en-us/library/hh849717.aspx) cmdlet 的调用的 `Authentication` 参数值。 CredSSP 会将凭据以纯文本的形式传递给服务器，因此会导致你面临遭受凭据被盗攻击的风险。 如果远程计算机被攻破，攻击者将有权访问用户的凭据。 默认情况下，CredSSP 在客户端和服务器计算机上都处于禁用状态。 应该仅在最受信任的环境中启用 CredSSP。 例如，连接到域控制器的域管理员，因为域控制器是高度可信任的。
 
@@ -112,11 +110,5 @@ New-PSDrive -Name Tools \\Server2\Shared\Tools -Credential $myCredential
 
 
 
-
-
-
-
-
-<!--HONumber=Oct16_HO2-->
 
 

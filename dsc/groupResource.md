@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: f6e33f82f495a89a4aa28c64b7974c170d50cfe1
-ms.openlocfilehash: 446c9036989c47c03664d978a1dea4e0234ada8d
-
+ms.openlocfilehash: 12c6ad6f30b4e1b67296289c927e59fd64079675
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC Group 资源
+# <a name="dsc-group-resource"></a>DSC Group 资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) 中的 Group 资源提供了管理目标节点上的本地组的机制。
 
-##语法##
+##<a name="syntax"></a>语法##
 ```
 Group [string] #ResourceName
 {
@@ -34,7 +32,7 @@ Group [string] #ResourceName
 }
 ```
 
-## “属性”
+## <a name="properties"></a>“属性”
 
 |  属性  |  说明   | 
 |---|---| 
@@ -47,7 +45,7 @@ Group [string] #ResourceName
 | MembersToInclude| 使用此属性将成员添加到组的现有成员资格中。 此属性的值是一组形式为 *Domain*\\*UserName* 的字符串。 如果你在配置中设置此属性，请勿使用 **Members** 属性。 这样做会导致错误生成。| 
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 __ResourceName__、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"``。| 
 
-## 示例 1
+## <a name="example-1"></a>示例 1
 
 下面的示例展示了如何确保名为“TestGroup”的组不存在。 
 
@@ -60,7 +58,7 @@ Group GroupExample
     GroupName = "TestGroup"
 }
 ```
-## 示例 2
+## <a name="example-2"></a>示例 2
 以下示例演示如何将 Active Directory 用户添加到属于多计算机实验室版本（已在其中对本地管理员帐户使用 PSCredential）的本地管理员组。 因为这也适用于域管理帐户（域升级后），接下来我们需要将此现有的 PSCredential 转换为域友好的凭据，以便能够在成员服务器上将域用户添加到本地管理员组。
 
 ```powershell
@@ -89,10 +87,4 @@ Group AddADUserToLocalAdminGroup
             PsDscRunAsCredential = $DCredential
         }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

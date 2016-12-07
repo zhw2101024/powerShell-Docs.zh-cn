@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 6b001c12885022006003ef3ffe91b7aede07bd17
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 适用于 Linux 的内置 Desired State Configuration 资源
+# <a name="built-in-desired-state-configuration-resources-for-linux"></a>适用于 Linux 的内置 Desired State Configuration 资源
 
 资源是可用于编写 PowerShell Desired State Configuration (DSC) 脚本的构建基块。 适用于 Linux 的 DSC 附带了一套用于配置资源（如文件和文件夹、程序包、环境变量、服务和进程）的内置功能。
 
-## 内置资源 
+## <a name="built-in-resources"></a>内置资源 
 
 下表提供了关于主题的资源和链接列表，其中进行了详细介绍。
 
@@ -32,9 +30,3 @@ ms.openlocfilehash: 6b001c12885022006003ef3ffe91b7aede07bd17
 * [nxSshAuthorizedKeys 资源](lnxSshAuthorizedKeysResource.md)--为 Linux 用户管理公共 ssh 密钥。 
 * [nxUser 资源](lnxUserResource.md)--管理本地 Linux 用户。 
   
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: d176a131-ab0c-43ee-80c1-f824ab8e4a05
-translationtype: Human Translation
-ms.sourcegitcommit: 641b6b2169824296b459691e67cdb771f3a07294
-ms.openlocfilehash: 63ea621ed8eb31a3be8394d99fd05dc8f663769f
-
+ms.openlocfilehash: 3213279588df19a677940b67fa1752a29a678e36
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell ISE 脚本对象模型的用途
+# <a name="purpose-of-the-windows-powershell-ise-scripting-object-model"></a>Windows PowerShell ISE 脚本对象模型的用途
   对象与 Windows PowerShell 集成脚本环境 (ISE) 的窗体和函数相关。 对象模型参考提供有关这些对象公开的成员属性和方法的详细信息。 提供了示例来演示如何使用脚本直接访问这些方法和属性。 脚本对象模型使得可以轻松完成下列任务。
 
-## 自定义 Windows PowerShell ISE 的外观
+## <a name="customizing-the-appearance-of-windows-powershell-ise"></a>自定义 Windows PowerShell ISE 的外观
  对象模型可用于修改应用程序设置和选项。 例如，可以如下所示修改它们：
 
 -   可以更改错误、警告、详细输出和调试输出的颜色。
@@ -32,7 +30,7 @@ ms.openlocfilehash: 63ea621ed8eb31a3be8394d99fd05dc8f663769f
 
 -   你可以在“脚本”窗格和“输出”窗格并排显示的视图与“脚本”窗格位于“输出”窗格之上的视图之间进行切换。 你可以将“命令”窗格停靠在“输出”窗格的底部或之上。
 
-## 增强 Windows PowerShell ISE 的功能
+## <a name="enhancing-the-functionality-of-windows-powershell-ise"></a>增强 Windows PowerShell ISE 的功能
  对象模型可用于增强 Windows PowerShell ISE 的功能。 例如，你能够：
 
 -   添加和修改 Windows PowerShell ISE 本身的实例。 例如，若要更改菜单，可以添加新菜单项并将新菜单项映射到脚本。
@@ -67,18 +65,12 @@ ms.openlocfilehash: 63ea621ed8eb31a3be8394d99fd05dc8f663769f
 
     -   选择一个文件。
 
-## 自动执行任务
+## <a name="automating-tasks"></a>自动执行任务
  脚本对象模型可用于创建频繁执行的操作的键盘快捷方式。
 
-## 另请参阅
- - [ISE 对象模型层次结构](The-ISE-Object-Model-Hierarchy.md) 
- - [Windows PowerShell ISE 对象模型参考](Windows-PowerShell-ISE-Object-Model-Reference.md) 
- - [Windows PowerShell ISE 脚本对象模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+## <a name="see-also"></a>另请参阅
+- [ISE 对象模型层次结构](The-ISE-Object-Model-Hierarchy.md) 
+- [Windows PowerShell ISE 对象模型参考](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [Windows PowerShell ISE 脚本对象模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 
   
-
-
-
-<!--HONumber=Sep16_HO3-->
-
-
