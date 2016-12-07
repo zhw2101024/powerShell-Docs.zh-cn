@@ -1,4 +1,4 @@
-# 调用基类构造函数
+# <a name="call-base-class-constructor"></a>调用基类构造函数
 
 若要从子类调用基类构造函数，请使用关键字 **base**：
 
@@ -29,7 +29,3 @@ class C : B
     C([int]$c) {}
 }
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

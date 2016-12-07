@@ -8,25 +8,23 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "角色功能"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 81fd386d58576a8930093b4f18ce36a4ff6cecd0
-ms.openlocfilehash: a3dd4a217f5b1fd80e97adf802c65073ca015bbc
-
+ms.openlocfilehash: d5f6311d74e47f2fa1a93909c244cddf114b0229
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="role-capabilities"></a>角色功能
 
-# 角色功能
-
-## 概述
+## <a name="overview"></a>概述
 在上一部分中，你已了解到“RoleDefinitions”字段定义有权访问各角色功能的组。
 你可能想问，“什么是角色功能？”
 本部分将回答这个问题。  
 
-## PowerShell 角色功能简介
+## <a name="introducing-powershell-role-capabilities"></a>PowerShell 角色功能简介
 PowerShell 角色功能定义用户可在 JEA 终结点执行的“操作”。
 它们详细介绍了可见命令、可见应用程序等内容的白名单。
 角色功能由扩展名为“.psrc”的文件定义。
 
-## 角色功能内容
+## <a name="role-capability-contents"></a>角色功能内容
 我们首先将检查并修改你之前使用的演示角色功能文件。
 假设你在环境中部署了会话配置，但收到反馈称需要更改向用户公开的功能。
 操作员需要能够重启计算机，并且他们还希望能够获取有关网络设置的信息。
@@ -102,7 +100,7 @@ Restart-Service WSearch # This should fail
 Exit-PSSession
 ```
 
-## 角色功能创建
+## <a name="role-capability-creation"></a>角色功能创建
 在下一部分中，你将为 AD 技术支持用户创建 JEA 终结点。
 我们将首先创建空白的角色配置文件，准备在该部分中进行填充。
 为了在会话启动时解析角色功能，必须在有效 PowerShell 模块内的“RoleCapabilities”文件夹中创建它。
@@ -133,7 +131,7 @@ New-PSRoleCapabilityFile -Path 'C:\Program Files\WindowsPowerShell\Modules\Conto
 祝贺你！你已创建空白角色功能文件。
 将在下一部分中使用它。
 
-## 关键概念
+## <a name="key-concepts"></a>关键概念
 **角色功能 (.psrc)**：定义用户可在 JEA 终结点执行的“操作”的文件。
 它详细介绍了可见命令、可见控制台应用程序等内容的白名单。
 为使 PowerShell 能检测角色功能，必须将其置于有效 PowerShell 模块内的“RoleCapabilities”文件夹中。
@@ -141,10 +139,4 @@ New-PSRoleCapabilityFile -Path 'C:\Program Files\WindowsPowerShell\Modules\Conto
 **PowerShell 模块**：PowerShell 功能的包。
 它可以包含 PowerShell 函数、cmdlet、DSC 资源、角色功能等。
 为实现自动加载，PowerShell 模块必须位于 `$env:PSModulePath` 中的路径下。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 62f993e3d3e6ef744fb07920d332d476dfd24fc6
-ms.openlocfilehash: d07b11c148dfa747b3f9c0157191b83efb6c65df
-
+ms.openlocfilehash: 343bd3c625e2df9f34480ea8065e3039d6069d61
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC Package 资源
+# <a name="dsc-package-resource"></a>DSC Package 资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) 中的 **Package** 资源提供了在目标节点上安装或卸载程序包（如 Windows Installer 和 setup.exe 程序包）的机制。
 
-## 语法
+## <a name="syntax"></a>语法
 
 ```
 Package [string] #ResourceName
@@ -36,7 +34,7 @@ Package [string] #ResourceName
 }
 ```
 
-## “属性”
+## <a name="properties"></a>“属性”
 |  属性  |  说明   | 
 |---|---| 
 | 名称| 指示要确保其特定状态的程序包的名称。| 
@@ -49,7 +47,7 @@ Package [string] #ResourceName
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"``。| 
 | ReturnCode| 指示预期的返回代码。 如果实际返回代码与此处提供的预期值不匹配，则配置将返回错误。| 
 
-## 示例
+## <a name="example"></a>示例
 
 此示例将运行位于指定路径且具有指定产品 ID 的 .msi 安装程序。
 
@@ -65,10 +63,4 @@ Configuration PackageTest
     } 
 }
 ```
-
-
-
-
-<!--HONumber=Sep16_HO3-->
-
 

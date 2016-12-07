@@ -1,4 +1,4 @@
-# 声明基类
+# <a name="declare-base-class"></a>声明基类
 可以将 Windows PowerShell 类声明为另一个 Windows PowerShell 类的基类型。
 
 ```PowerShell
@@ -29,7 +29,3 @@ $list.Add(100)
 
 $list[0] # return 100
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

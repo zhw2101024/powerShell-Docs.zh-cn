@@ -94,8 +94,3 @@
 ### [基于 OData 终结点生成 PowerShell Cmdlet](5.0/odata_overview.md)
 ### [PowerShell 网络交换机管理](5.0/networkswitch_overview.md)
 ### [软件清单日志记录 (SIL)](5.0/sil_overview.md)
-
-
-<!--HONumber=Nov16_HO4-->
-
-

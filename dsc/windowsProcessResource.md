@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 97714d3fa9a1c00fb3d2e79cc873280ca945a840
-ms.openlocfilehash: 0fe5e7d9679d44bb50c897badf8c6517b95049e2
-
+ms.openlocfilehash: 7e8c0d39d4f49d09acef79d789ee54f158e465f8
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC WindowsProcess 资源
+# <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess 资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) 中的 **WindowsProcess** 资源提供了用于在目标节点上配置进程的机制。
 
-## 语法
+## <a name="syntax"></a>语法
 
 ```
 WindowsProcess [string] #ResourceName
@@ -36,7 +34,7 @@ WindowsProcess [string] #ResourceName
 }
 ```
 
-## “属性”
+## <a name="properties"></a>“属性”
 |  属性  |  说明   | 
 |---|---| 
 | 参数| 指示要原样传递到进程的参数字符串 如果需要传递多个参数，请将它们全部放在此字符串中。| 
@@ -48,10 +46,4 @@ WindowsProcess [string] #ResourceName
 | StandardInputPath| 指示标准输入位置。| 
 | StandardOutputPath| 指示写入标准输出的位置。 将覆盖任何现有文件。| 
 | WorkingDirectory| 指示将用作进程当前工作目录的位置。| 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

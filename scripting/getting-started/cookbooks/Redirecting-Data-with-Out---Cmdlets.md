@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 2a4acd33-041d-43a5-a3e9-9608a4c52b0c
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: e62ae14e4d7334d0cd42681c7e2591692c089187
-
+ms.openlocfilehash: b48cc5fbd5c229d0339a24402e186fe9ef69e97b
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 使用 Out-* Cmdlet 重定向数据
+# <a name="redirecting-data-with-out--cmdlets"></a>使用 Out-* Cmdlet 重定向数据
 Windows PowerShell 提供多个 cmdlet，可让你直接控制数据输出。 这些 cmdlet 具有两个重要的共同特征。
 
 第一，它们通常将数据转换为某种形式的文本。 这样做的原因是它们将数据输出到需要文本输入的系统组件。 这意味着它们需要将对象表示为文本。 因此，文本的格式设置为你在 Windows PowerShell 控制台窗口中看到的形式。
@@ -71,7 +69,7 @@ Name    : explorer
 > [!NOTE]
 > 所有 **Out** cmdlet 都使用对控制台窗口有效的格式（包括行长度限制）将输出呈现为文本。
 
-#### 分页控制台输出 (Out-Host)
+#### <a name="paging-console-output-out-host"></a>分页控制台输出 (Out-Host)
 默认情况下，Windows PowerShell 将数据发送到主机窗口，这正是 Out-Host cmdlet 的用途。 Out-Host cmdlet 的主要用途是对数据进行分页，如前面所述。 例如，下面的命令使用 Out-Host 对 Get-Command cmdlet 的输出进行分页：
 
 ```
@@ -95,7 +93,7 @@ default=multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
 ...
 ```
 
-#### 放弃输出 (Out-Null)
+#### <a name="discarding-output-out-null"></a>放弃输出 (Out-Null)
 **Out-Null** cmdlet 旨在用于立即放弃接收的任何输入。 这对放弃收到的不利于运行命令的不必要数据很有用。 键入下面的命令时，该命令不会返回任何内容：
 
 ```
@@ -112,14 +110,14 @@ At line:1 char:12
 + Get-Command  <<<< Is-NotACommand | Out-Null
 ```
 
-#### 打印数据 (Out-Printer)
+#### <a name="printing-data-out-printer"></a>打印数据 (Out-Printer)
 可以通过使用 **Out-Printer** cmdlet 打印数据。 如果未提供打印机名称，则 **Out-Printer** cmdlet 将使用默认打印机。 可以通过指定其显示名称使用任何基于 Windows 的打印机。 无需使用任何类型的打印机端口映射，甚至无需使用真正的物理打印机。 例如，如果安装了 Microsoft Office 文档映像工具，则可通过键入以下内容将数据发送到映像文件：
 
 ```
 PS> Get-Command Get-Command | Out-Printer -Name "Microsoft Office Document Image Writer"
 ```
 
-#### 保存数据 (Out-File)
+#### <a name="saving-data-out-file"></a>保存数据 (Out-File)
 可以使用 **Out-File** cmdlet 将输出发送到文件而不是控制台窗口。 下面的命令行将进程列表发送到文件 **C:\\temp\\processlist.txt**：
 
 ```
@@ -157,10 +155,4 @@ Get-Command | Out-File -FilePath c:\temp\output.txt -Width 2147483647
 ```
 
 想要保存原本显示在控制台中的输出时，使用 **Out-File** cmdlet 最有用。 若要更好地控制输出格式，需要更高级的工具。 我们将在下一章中查看这些内容以及有关对象操作的一些详细信息。
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

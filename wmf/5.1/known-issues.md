@@ -8,31 +8,29 @@ author: krishna
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: 98a0e6d3c46a56cbed94de6a4bd68b88a79116ff
-ms.openlocfilehash: b831555354d14bca22e5137afffadc1ed3b14554
-
+ms.openlocfilehash: e2f19ed2fa2d2070860438b128513a463d95adae
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# WMF 5.1 中的已知问题（预览版） #
+# <a name="known-issues-in-wmf-51-preview"></a>WMF 5.1 中的已知问题（预览版） #
 
 > 注意：此信息是预发布版本，可能会进行更改。
 
-## 以管理员身份启动 PowerShell 快捷方式
+## <a name="starting-powershell-shortcut-as-administrator"></a>以管理员身份启动 PowerShell 快捷方式
 在安装 WMF 时，如果尝试以管理员身份通过该快捷方式启动 PowerShell，可能会显示“未指定的错误”消息。
 以非管理员身份重新打开快捷方式，快捷方式现在甚至可以管理员身份工作。
 
-## Pester
+## <a name="pester"></a>Pester
 在本版本中，在 Nano 服务器上使用 Pester 时应注意两个问题：
 
 * 由于 FULL CLR 和 CORE CLR 之间的差异，针对 Pester 自身运行测试可能导致一些失败。 特别是，Validate 方法不可用于 XmlDocument 类型。 众所周知，尝试验证 NUnit 输出日志的架构的六个测试都将失败。 
 * 一个代码覆盖率测试失败的原因是当前 Nano 服务器中不存在 *WindowsFeature* DSC 资源。 但是，这些故障通常是无害的，可以放心地忽略。
 
-## 操作验证 
+## <a name="operation-validation"></a>操作验证 
 
 * 由于帮助 URI 不起作用，针对 Microsoft.PowerShell.Operation.Validation 模块的 Update-Help 将失败
 
-## 卸载 WMF 后的 DSC 
+## <a name="dsc-after-uninstall-wmf"></a>卸载 WMF 后的 DSC 
 * 卸载 WMF 不会从配置文件夹中删除 DSC MOF 文档。 如果 MOF 文档包含在较旧系统中不可用的较新属性，DSC 将无法正常工作。 在这种情况下，请从提升的 PowerShell 控制台运行以下脚本，以清理 DSC 状态。
  ```PowerShell
     $PreviousDSCStates = @("$env:windir\system32\configuration\*.mof",
@@ -43,8 +41,3 @@ ms.openlocfilehash: b831555354d14bca22e5137afffadc1ed3b14554
 
     $PreviousDSCStates | Remove-Item -ErrorAction SilentlyContinue -Verbose
  ```  
-
-
-<!--HONumber=Nov16_HO4-->
-
-

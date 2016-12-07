@@ -1,4 +1,4 @@
-# Test-DscConfiguration cmdlet 支持引用配置
+# <a name="test-dscconfiguration-cmdlet-supports-reference-configurations"></a>Test-DscConfiguration cmdlet 支持引用配置
 
 已更新 Test-DscConfiguration cmdlet，以允许通过指定用于比较的参考配置文档来测试一个或多个目标节点的所需配置状态。
 
@@ -35,8 +35,3 @@ Test-DscConfiguration   -ReferenceConfiguration <string>
                         [-AsJob] 
                         [<CommonParameters>]
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

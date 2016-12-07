@@ -9,39 +9,37 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_new scriptfileinfo
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 8a534132c9622c699b636252e7c4bf7eafcf4d44
-
+ms.openlocfilehash: d6b8790c3dd7ce366d608ff7bfd083ca12b201fd
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# New-ScriptFileInfo
+# <a name="new-scriptfileinfo"></a>New-ScriptFileInfo
 
 使用元数据创建脚本文件。
 
-## 说明
+## <a name="description"></a>说明
 
 New-ScriptFileInfo cmdlet 创建 PowerShell 脚本文件，包括有关脚本的元数据。
 
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a>Cmdlet 语法
 
 ```powershell
 Get-Command -Name New-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
 
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
 
 [New-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619792)
 
-## 示例命令
+## <a name="example-commands"></a>示例命令
 
-### PassThru 参数
+### <a name="passthru-parameter"></a>PassThru 参数
 
 ```powershell
 New-ScriptFileInfo -Description "Script file description." -PassThru
 ```
 
-### New-ScriptFileInfo cmdlet
+### <a name="new-scriptfileinfo-cmdlet"></a>New-ScriptFileInfo cmdlet
 New-ScriptFileInfo cmdlet 可创建包含诸如 Version、Guid、Author 和 Description 等元数据的新脚本文件。 
 
 ```powershell
@@ -197,10 +195,4 @@ DefinedCommands : {Demo-ScriptFunction, Demo-ScriptWorkflow}
 DefinedFunctions : Demo-ScriptFunction
 DefinedWorkflows : Demo-ScriptWorkflow
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

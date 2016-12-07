@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 97714d3fa9a1c00fb3d2e79cc873280ca945a840
-ms.openlocfilehash: 012a0e5c4f2a1f60ecea869d588b9c54e0567ced
-
+ms.openlocfilehash: f9754be3f803d3232189985faa41fb209bfcfe46
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC WindowsProcess 资源
+# <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess 资源
 
 > 适用于：Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) 中的 **ProcessSet** 资源提供了用于在目标节点上配置进程的机制。 此资源是[复合资源](authoringResourceComposite.md)，它会针对 `GroupName` 参数中指定的每个组调用 [WindowsProcess 资源](windowsProcessResource.md)。
 
-## 语法
+## <a name="syntax"></a>语法
 
 ```
 WindowsProcess [string] #ResourceName
@@ -36,7 +34,7 @@ WindowsProcess [string] #ResourceName
 }
 ```
 
-## “属性”
+## <a name="properties"></a>“属性”
 |  属性  |  说明   | 
 |---|---| 
 | 参数| 包含要原样传递到进程的参数的字符串。 如果需要传递多个参数，请将它们全部放在此字符串中。| 
@@ -48,10 +46,4 @@ WindowsProcess [string] #ResourceName
 | StandardOutputPath| 进程写入标准输出的文件的路径。 将覆盖任何现有文件。| 
 | WorkingDirectory| 用作进程当前工作目录的位置。| 
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"``。| 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

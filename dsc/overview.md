@@ -7,24 +7,22 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 1a796658eb30bdf5c37ea3677f94767260a34b45
-
+ms.openlocfilehash: 2dff393684eb46aab6853010cebc76d5ca4b93a8
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell Desired State Configuration 概述 
+# <a name="windows-powershell-desired-state-configuration-overview"></a>Windows PowerShell Desired State Configuration 概述 
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 本主题介绍 Windows PowerShell 中的 Windows PowerShell Desired State Configuration (DSC) 功能。 你可以使用本主题获取 DSC 概述并查找了解和使用 DSC 所需的文档资源。
 
-## 功能描述
+## <a name="feature-description"></a>功能描述
 DSC 是 Windows PowerShell 中的新管理平台，可用于部署和管理软件服务的配置数据，并管理这些服务的运行的环境。
 
 DSC 提供了一组 Windows PowerShell 语言扩展、新的 Windows PowerShell cmdlet 和可用于以声明方式指定软件环境配置方式的资源。 它还提供了维护和管理现有配置的方法。
 
-## 实际的应用程序
+## <a name="practical-applications"></a>实际的应用程序
 在以下示例方案中，你可以使用内置 DSC 资源自动化配置和管理一组计算机（也称为目标节点）：
 
 * 启用或禁用服务器角色和功能
@@ -38,7 +36,7 @@ DSC 提供了一组 Windows PowerShell 语言扩展、新的 Windows PowerShell 
 * 修复偏离所需状态的配置
 * 发现给定节点上的实际配置状态
 
-## 关键概念
+## <a name="key-concepts"></a>关键概念
 DSC 是一个声明性平台，用于配置、部署和管理系统。 它包括三个主要组件：
 
 * [Configurations](configurations.md) 是声明性的 PowerShell 脚本，用于定义和配置资源实例。 在运行配置时，DSC（和配置调用的资源）将“使其如此”，确保系统处于配置所布局的状态。 DSC 配置也是幂等的：无论配置声明什么状态，本地配置管理器 (LCM) 都将继续确保计算机已配置为该状态。
@@ -47,14 +45,8 @@ DSC 是一个声明性平台，用于配置、部署和管理系统。 它包括
 
 DSC 还包含用于创建配置的大量新语言关键字、cmdlet 和工具，它们可帮助你构建 DSC 资源、调用配置和管理 LCM。 其中许多 cmdlet 是 Windows 8.1 中 PsDesiredStateConfig 模块的一部分（包括 `Start-DscConfiguration`、`Set-DscLocalConfigurationManager` 和 `Get-DscResource`）。 xDscResourceDesigner（位于 [PowerShell 库](https://www.powershellgallery.com/packages/xDSCResourceDesigner/)中）是一个 cmdlet 集合，可简化 DSC 资源的开发。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 * [DSC 配置](configurations.md)
 * [DSC 资源](resources.md)
 * [配置本地配置管理器](metaConfig.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

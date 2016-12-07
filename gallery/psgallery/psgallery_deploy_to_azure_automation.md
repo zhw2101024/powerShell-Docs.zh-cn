@@ -9,13 +9,11 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgallery_deploy_to_azure_automation
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: c028bf6145b41c13bccda9543a782b838bd730ff
-
+ms.openlocfilehash: 20b0dd53b5d10f36089a884a99209a575332a91a
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-部署到 Azure 自动化
+<a name="deploy-to-azure-automation"></a>部署到 Azure 自动化
 ===========================
 
 项详细信息页上的“部署到 Azure 自动化”按钮会将项从 PowerShell 库部署到 Azure 自动化。
@@ -32,10 +30,4 @@ ms.openlocfilehash: c028bf6145b41c13bccda9543a782b838bd730ff
 通过将 AzureAutomationNotSupported 标记添加到项元数据可禁用“部署到 Azure 自动化”按钮。
 
 若要了解有关 Azure 自动化的详细信息，请参阅 Azure 自动化网站 [Azure 自动化网站](http://azure.microsoft.com/en-us/services/automation/)。
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

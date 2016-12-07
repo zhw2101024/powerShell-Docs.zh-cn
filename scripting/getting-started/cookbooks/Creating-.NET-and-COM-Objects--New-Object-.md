@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
-translationtype: Human Translation
-ms.sourcegitcommit: 41647fc2b323292e496340f68bc92fd9a997ce0e
-ms.openlocfilehash: 662d0823749c142a716b74164ad57a8612833ccd
-
+ms.openlocfilehash: f35cfa6b547c63fc94c370f21ee83987468a894d
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# <a name="creating-net-and-com-objects-newobject"></a>创建 .NET 和 COM 对象 (New-Object)
+# <a name="creating-net-and-com-objects-new-object"></a>创建 .NET 和 COM 对象 (New-Object)
 存在具有 .NET Framework 和 COM 接口的软件组件，使用它们可执行许多系统管理任务。 Windows PowerShell 允许你使用这些组件，因此你将不限于执行可通过使用 cmdlet 执行的任务。 Windows PowerShell 初始版本中的许多 cmdlet 对远程计算机无效。 我们将演示如何通过直接从 Windows PowerShell 使用 .NET Framework **System.Diagnostics.EventLog** 类在管理事件日志时绕过此限制。
 
-### <a name="using-newobject-for-event-log-access"></a>使用 New-Object 进行事件日志访问
+### <a name="using-new-object-for-event-log-access"></a>使用 New-Object 进行事件日志访问
 .NET Framework 类库包括一个名为 **System.Diagnostics.EventLog** 的类，该类可用于管理事件日志。 可以通过使用具有 **TypeName** 参数的 **New-Object** cmdlet 创建 .NET Framework 类的新实例。 例如，以下命令将创建事件日志引用：
 
 ```
@@ -29,7 +27,7 @@ PS> New-Object -TypeName System.Diagnostics.EventLog
 
 尽管该命令创建了 EventLog 类的实例，但该实例不包含任何数据。 这是因为我们未指定特定的事件日志。 如何获取真正的事件日志？
 
-#### <a name="using-constructors-with-newobject"></a>将构造函数与 New-Object 一起使用
+#### <a name="using-constructors-with-new-object"></a>将构造函数与 New-Object 一起使用
 若要引用特定的事件日志，需要指定日志的名称。 **New-Object** 具有 **ArgumentList** 参数。 作为值传递到此形参的实参将由对象的特殊的启动方法使用。 此方法叫做*构造函数*，因为它将用于构造对象。 例如，若要对获取应用程序日志的引用，请指定字符串“Application”作为实参：
 
 ```
@@ -62,7 +60,7 @@ PS> $AppLog
   16,384      7 OverwriteOlder          2,160 Application
 ```
 
-#### <a name="accessing-a-remote-event-log-with-newobject"></a>使用 New-Object 访问远程事件日志
+#### <a name="accessing-a-remote-event-log-with-new-object"></a>使用 New-Object 访问远程事件日志
 上一节中使用的命令以本地计算机为目标；**Get-EventLog** cmdlet 可做到这一点。 若要访问远程计算机上的应用程序日志，必须同时将日志名称和计算机名称（或 IP 地址）作为参数提供。
 
 ```
@@ -116,7 +114,7 @@ PS> $RemoteAppLog
      512      7 OverwriteOlder              0 Application
 ```
 
-### <a name="creating-com-objects-with-newobject"></a>使用 New-Object 创建 COM 对象
+### <a name="creating-com-objects-with-new-object"></a>使用 New-Object 创建 COM 对象
 可以使用 **New-Object** 来处理组件对象模型 (COM) 组件。 组件的范围从 Windows 脚本宿主 (WSH) 包含的各种库到 ActiveX 应用程序（如大多数系统上安装的 Internet Explorer）。
 
 **New-Object** 使用 .NET Framework 运行时可调用的包装器创建 COM 对象，因此调用 COM 对象时它与 .NET Framework 具有相同的限制。 若要创建 COM 对象，需要为 **ComObject** 参数指定要使用的 COM 类的编程标识符（或 *ProgId*）。 COM 用途限制的全面讨论和确定系统上可用的 ProgId 已超出本用户指南的范围，但来自环境的大多数已知对象（如 WSH）都可在 Windows PowerShell 内使用。
@@ -259,7 +257,7 @@ Remove-Variable ie
 > [!NOTE]
 > 删除对 ActiveX 可执行文件的引用时，它会退出还是继续运行没有通用标准。 具体取决于不同情况（如应用程序是否可见、已编辑的文档是否正在其中运行甚至 Windows PowerShell 是否仍在运行），应用程序可能退出也可能不退出。 因此，应该为想要在 Windows PowerShell 中使用的每个 ActiveX 可执行文件测试终止行为。
 
-### <a name="getting-warnings-about-net-frameworkwrapped-com-objects"></a>获取有关 .NET Framework 包装的 COM 对象的警告
+### <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>获取有关 .NET Framework 包装的 COM 对象的警告
 在某些情况下，COM 对象可能具有相关联的 .NET Framework *运行时可调用包装器*（或称 RCW），它将由 **New-Object** 使用。 因为 RCW 的行为可能与普通 COM 对象的行为不同，所以 **New-Object** 具有 **Strict** 参数，它将对访问 RCW 进行警告。 如果指定 **Strict** 参数然后创建使用 RCW 的 COM 对象，你会收到一条警告消息：
 
 ```
@@ -274,10 +272,4 @@ At line:1 char:17
 ```
 
 尽管仍将创建该对象，但将警告你它不是标准 COM 对象。
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

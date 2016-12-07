@@ -7,12 +7,10 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 4bc84787847c55658077ba0bb21784d59ca5bed7
-ms.openlocfilehash: 2d2573612da7388f01467ed2113cfc233e6f4dd6
-
+ms.openlocfilehash: e62d4bf50e122d2e381cebf8fa594dda4f888e47
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="setting-up-a-dsc-web-pull-server"></a>设置 DSC Web 请求服务器
 
 > 适用于：Windows PowerShell 5.0
@@ -187,10 +185,4 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
 * [Windows PowerShell Desired State Configuration 概述](overview.md)
 * [执行配置](enactingConfigurations.md)
 * [使用 DSC 报表服务器](reportServer.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 62f993e3d3e6ef744fb07920d332d476dfd24fc6
-ms.openlocfilehash: 6b060d17fb106089528b0737ab03cc7d592d412a
-
+ms.openlocfilehash: 56eb7ef230d84cc5f5679f39e13e2019205c65f5
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC Script 资源
+# <a name="dsc-script-resource"></a>DSC Script 资源
 
  
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
@@ -29,7 +27,7 @@ Windows PowerShell Desired State Configuration (DSC) 中的 **Script** 资源提
 如果需要从 `GetScript`、`TestScript` 或者 `SetScript` 脚本块内的配置脚本使用变量，请使用 `$using:` 作用域（参见以下内容为例）。
 
 
-## 语法
+## <a name="syntax"></a>语法
 
 ```
 Script [string] #ResourceName
@@ -42,7 +40,7 @@ Script [string] #ResourceName
 }
 ```
 
-## “属性”
+## <a name="properties"></a>“属性”
 
 |  属性  |  说明   | 
 |---|---| 
@@ -52,7 +50,7 @@ Script [string] #ResourceName
 | 凭据| 指示要用于运行此脚本的凭据（如果需要凭据）。| 
 | DependsOn| 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。
 
-## 示例 1
+## <a name="example-1"></a>示例 1
 ```powershell
 $version = Get-Content 'version.txt'
 
@@ -74,7 +72,7 @@ Configuration ScriptTest
 }
 ```
 
-## 示例 2
+## <a name="example-2"></a>示例 2
 ```powershell
 $version = Get-Content 'version.txt'
 
@@ -106,10 +104,4 @@ Configuration ScriptTest
 ```
 
 此资源正在将配置的版本写入文本文件。 此版本在客户端计算机上可用，但不在任何节点上，因此必须通过 PowerShell 的 `using` 作用域将其传递到每个 `Script` 资源的脚本块。 生成节点的 MOF 文件时，将从客户端计算机上的文本文件读取 `$version` 变量的值。 DSC 将每个脚本块中的 `$using:version` 变量替换为 `$version` 变量的值。
-
-
-
-
-<!--HONumber=Sep16_HO3-->
-
 

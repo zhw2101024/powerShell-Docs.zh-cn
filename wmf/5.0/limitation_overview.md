@@ -36,7 +36,7 @@ Set-ExecutionPolicy RemoteSigned
 
 **解决方法：**在 WMF 安装后立即运行 Start-SilLogging cmdlet，因为安装过程将错误地停止软件清单日志记录功能。
 
-<a name="getchilditem-does-not-work-if-literalpath-and-recurse-are-used-together"></a>如果将 LiteralPath 和 -Recurse 一起使用，Get-ChildItem 将失效
+<a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a>如果将 LiteralPath 和 -Recurse 一起使用，Get-ChildItem 将失效
 --------------------------------------------------------------------------
 
 如果目录名称包含无效的通配符，则将 -LiteralPath 和 -Recurse 一起使用时，Get-ChildItem 不会产生预期结果。
@@ -105,8 +105,3 @@ Set-ExecutionPolicy RemoteSigned
       * 假定你编辑的 Generalize.xml 副本已复制到 C:\。
 
   10.   Generalize.xml 中现已更新解决方法。 请在启用通用选项的情况下运行 Sysprep。
-
-
-<!--HONumber=Oct16_HO5-->
-
-

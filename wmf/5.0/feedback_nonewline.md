@@ -1,4 +1,4 @@
-# NoNewLine 参数
+# <a name="nonewline-parameter"></a>NoNewLine 参数
 **Out-file**、**Add-content**和 **Set-content** 现在具有新的 **–NoNewline** 开关，它将在输出后直接省略换行。
 ```PowerShell
 PS C:\> "This is " | Out-File -FilePath Example.txt -NoNewline
@@ -27,8 +27,3 @@ a single
 
 sentence.
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

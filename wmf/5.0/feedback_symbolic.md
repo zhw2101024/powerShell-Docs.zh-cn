@@ -1,12 +1,12 @@
-# 使用改进的 Item cmdlet 与符号链接交互
+# <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a>使用改进的 Item cmdlet 与符号链接交互
 
 为支持符号链接，扩展了 **\*-Item** 和几个相关 cmdlet。 现可使用 **New-Item** 在简单的单行中创建符号链接。 你将注意到，Item 相关的 cmdlet（**Remove-Item、Get-ChildItem**）的行为与以前非常相似。
 
 以下为新功能的一些用例：
 
-## NEW-ITEM
+## <a name="new-item"></a>NEW-ITEM
 
-### 符号链接文件
+### <a name="symbolic-link-files"></a>符号链接文件
 
 ```powershell
 # Create a new symbolic link file named MySymLinkFile.txt in C:\Temp which links to $pshome\profile.ps1
@@ -20,7 +20,7 @@ New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkFile.txt -Value $pshome\p
 New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkFile.txt -Value $pshome\profile.ps1
 ```
 
-### 符号链接目录
+### <a name="symbolic-link-directories"></a>符号链接目录
 
 ```powershell
 # Create a new symbolic link directory named MySymLinkDir in C:\Temp which links to the $pshome folder
@@ -35,21 +35,21 @@ New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkDir -Value $pshome
 New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkDir -Value $pshome
 ```
 
-### 硬链接
+### <a name="hard-links"></a>硬链接
 
 ```powershell
 New-Item -ItemType HardLink -Path C:\Temp -Name MyHardLinkFile.txt -Value $pshome\profile.ps1
 # Same combinations of Path and Name allowed as described above
 ```
 
-### 目录联接
+### <a name="directory-junctions"></a>目录联接
 
 ```powershell
 New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome
 # Same combinations of Path and Name allowed as described above
 ```
 
-## GET-CHILDITEM
+## <a name="get-childitem"></a>GET-CHILDITEM
 
 ```powershell
 # Append link type column to Mode property and display with Get-ChildItem
@@ -100,7 +100,7 @@ SpecialBuild: False
 Language:
 ```
 
-## REMOVE-ITEM
+## <a name="remove-item"></a>REMOVE-ITEM
 
 ```powershell
 # Works like any other item type
@@ -113,8 +113,3 @@ Remove-Item C:\Temp\MySymLinkDir
 # Removes the files in the target directory and MySymLinkDir
 Remove-Item C:\Temp\MySymLinkDir -Force
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-
