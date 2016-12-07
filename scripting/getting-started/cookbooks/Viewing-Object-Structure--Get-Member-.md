@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: a1819ed2-2ef3-453a-b2b0-f3589c550481
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: acd52c1271013320dafa7f7bf5c72b752e07574b
-
+ms.openlocfilehash: 041b58f5fcfdf2225704adcb943de864c94502c1
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# <a name="viewing-object-structure-getmember"></a>查看对象结构 (Get-Member)
+# <a name="viewing-object-structure-get-member"></a>查看对象结构 (Get-Member)
 由于对象在 Windows PowerShell 中扮演了如此重要的角色，因此存在几个用于处理任意对象类型的本机命令。 最重要的一个是 **Get-Member** 命令。
 
 分析命令返回的对象的最简单方法是通过管道将该命令的输出传递到 **Get-Member** cmdlet。 **Get-Member** cmdlet 向你显示对象类型的正式名称及其成员的完整列表。 有时返回的元素数目可能非常巨大。 例如，一个进程对象可以拥有 100 多个成员。
@@ -73,10 +71,4 @@ Path                       ScriptProperty System.Object Path {get=$this.Main...
 > Windows PowerShell 通过使用存储在以 .format.ps1xml 结尾的 XML 文件中的信息来决定某种类型的对象的显示方式。 进程对象也即 .NET System.Diagnostics.Process 对象的格式设置数据存储在 PowerShellCore.format.ps1xml 中。
 
 如果需要查看 Windows PowerShell 默认显示的属性之外的属性，则需要自己对输出数据进行格式化。 这可以通过使用格式 cmdlet 实现。
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

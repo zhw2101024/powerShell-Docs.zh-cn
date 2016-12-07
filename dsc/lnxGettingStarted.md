@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e4385f0ed482b97e8794cde968de549902cc358e
-ms.openlocfilehash: 2283e797275f426b624119bd1191e58080780c09
-
+ms.openlocfilehash: c585dc929e85a404aecfb1e9f06daf2dfaf21832
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 适用于 Linux 的 Desired State Configuration (DSC) 入门
+# <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>适用于 Linux 的 Desired State Configuration (DSC) 入门
 
 本主题说明如何开始使用适用于 Linux 的 PowerShell Desired State Configuration (DSC)。 有关 DSC 的常规信息，请参阅 [Windows PowerShell Desired State Configuration 入门](overview.md)。
 
-## 支持的 Linux 操作系统版本
+## <a name="supported-linux-operation-system-versions"></a>支持的 Linux 操作系统版本
 
 适用于 Linux 的 DSC 支持以下 Linux 操作系统版本。
 - CentOS 5、6 和 7 (x86/x64)
@@ -38,11 +36,11 @@ ms.openlocfilehash: 2283e797275f426b624119bd1191e58080780c09
 | ctypes| Python CTypes 库| 必须与 Python 版本匹配| 
 | libcurl| cURL http 客户端库| 7.15.1| 
 
-## 安装适用于 Linux 的 DSC
+## <a name="installing-dsc-for-linux"></a>安装适用于 Linux 的 DSC
 
 必须先安装[开放式管理基础结构 (OMI)](https://collaboration.opengroup.org/omi/)，才能安装适用于 Linux 的 DSC。
 
-### 安装 OMI
+### <a name="installing-omi"></a>安装 OMI
 
 适用于 Linux 的 Desired State Configuration 需要开放式管理基础结构 (OMI) CIM 服务器 1.0.8.1 版。 可从 The Open Group：[Open Management Infrastructure (OMI)（开放式管理基础结构）](https://collaboration.opengroup.org/omi/)下载 OMI。
 
@@ -54,7 +52,7 @@ ms.openlocfilehash: 2283e797275f426b624119bd1191e58080780c09
 
 `# sudo rpm -Uvh omiserver-1.0.8.ssl_100.rpm`
 
-### 安装 DSC
+### <a name="installing-dsc"></a>安装 DSC
 
 适用于 Linux 的 DSC 可在[此处](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest)下载。 
 
@@ -67,11 +65,11 @@ ms.openlocfilehash: 2283e797275f426b624119bd1191e58080780c09
 `# sudo rpm -Uvh dsc-1.0.0-254.ssl_100.x64.rpm`
 
 
-## 使用适用于 Linux 的 DSC
+## <a name="using-dsc-for-linux"></a>使用适用于 Linux 的 DSC
 
 以下章节说明了如何在 Linux 计算机上创建和运行 DSC 配置。
 
-### 创建配置 MOF 文档
+### <a name="creating-a-configuration-mof-document"></a>创建配置 MOF 文档
 
 使用 Windows PowerShell Configuration 关键字为 Linux 计算机创建配置，与为 Windows 计算机创建配置类似。 以下步骤描述了如何使用 Windows PowerShell 为 Linux 计算机创建配置文档。
 
@@ -107,7 +105,7 @@ Configuration ExampleConfiguration{
 ExampleConfiguration -OutputPath:"C:\temp" 
 ```
 
-### 将配置推送到 Linux 计算机
+### <a name="push-the-configuration-to-the-linux-computer"></a>将配置推送到 Linux 计算机
 
 可使用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet 将配置文档（MOF 文件）推送到 Linux 计算机。 若要将此 cmdlet 和 [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379).aspx 或 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet 远程运用到 Linux 计算机，必须使用 CIMSession。 使用 [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) cmdlet 将 CIMSession 创建到 Linux 计算机中。
 
@@ -129,17 +127,17 @@ $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Aut
 * 对于“推送”模式，用户凭据必须是 Linux 计算机上的根用户。
 * 适用于 Linux 的 DSC 仅支持 SSL/TLS 连接，使用 New-CimSession 时必须将 –UseSSL 参数设置为 $true。
 * 在 `/opt/omi/etc/omiserver.conf` 文件中通过 pemfile 和 keyfile 属性指定（DSC 的）OMI 使用的 SSL 证书。
-如果正在运行 [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) cmdlet 的 Windows 计算机不信任此证书，你可以通过以下 CIMSession 选项选择忽略证书验证： `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
+如果 [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) cmdlet 运行于的 Windows 计算机不信任此证书，你可以通过以下 CIMSession 选项选择忽略证书验证：`-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`。
 
 运行以下命令以将 DSC 配置推送到 Linux 节点。
 
 `Start-DscConfiguration -Path:"C:\temp" -CimSession:$Sess -Wait -Verbose`
 
-### 使用请求服务器分发配置
+### <a name="distribute-the-configuration-with-a-pull-server"></a>使用请求服务器分发配置
 
 可使用请求服务器将配置分发到 Linux 计算机，与分发到 Windows 计算机类似。 有关使用请求服务器的指南，请参阅 [Windows PowerShell Desired State Configuration 请求服务器](pullServer.md)。 有关通过请求服务器使用 Linux 计算机其他信息和限制条件，请参阅“适用于 Linux 的 Desired State Configuration 发行说明”。
 
-### 从本地进行配置
+### <a name="working-with-configurations-locally"></a>从本地进行配置
 
 适用于 Linux 的 DSC 包括用于从本地 Linux 计算机进行配置的脚本。 这些脚本位于 `/opt/microsoft/dsc/Scripts` 中，包括以下内容：
 * GetDscConfiguration.py
@@ -178,7 +176,7 @@ $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Aut
 
 `# sudo ./SetDscLocalConfigurationManager.py –configurationmof /tmp/localhost.meta.mof`
 
-## 适用于 Linux 的 PowerShell Desired State Configuration 日志文件
+## <a name="powershell-desired-state-configuration-for-linux-log-files"></a>适用于 Linux 的 PowerShell Desired State Configuration 日志文件
 
 为适用于 Linux 的.DSC 生成了以下日志文件。
 
@@ -186,10 +184,4 @@ $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Aut
 |---|---|---|
 |omiserver.log|/var/opt/omi/log|与 OMI CIM 服务器操作相关的消息。|
 |dsc.log|/var/opt/omi/log|与本地配置管理器 (LCM) 操作和 DSC 资源操作相关的消息。|
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

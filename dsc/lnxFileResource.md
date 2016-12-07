@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 2ba44df5dd6c91371cbbfe95d48184a4ff4a7738
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 适用于 Linux nxFile 资源的 DSC
+# <a name="dsc-for-linux-nxfile-resource"></a>适用于 Linux nxFile 资源的 DSC
 
 PowerShell Desired State Configuration (DSC) 中的 **nxFile** 资源提供了管理 Linux 节点上的文件和目录的机制。
 
-## 语法
+## <a name="syntax"></a>语法
 
 ```
 nxFile <string> #ResourceName
@@ -39,7 +37,7 @@ nxFile <string> #ResourceName
 }
 ```
 
-## “属性”
+## <a name="properties"></a>“属性”
 
 |  属性 |  说明 | 
 |---|---|
@@ -56,7 +54,7 @@ nxFile <string> #ResourceName
 | 模式| 以八进制或符号表示法指定资源的所需权限。 （例如，777 或 rwxrwxrwx）。 如果使用符号表示法，不需提供指示文件或目录的第一个字符。| 
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 **ID** 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-## 其他信息
+## <a name="additional-information"></a>其他信息
 
 
 Linux 和 Windows 在文本文件中默认使用不同的换行符，这可能会导致在 Linux 计算机上使用 __nxFile__ 配置某些文件时产生意外结果。 有多种管理 Linux 文件内容，同时避免由意外换行符引起问题的方法：
@@ -134,7 +132,7 @@ nxFile resolvConf
 }
 ```
 
-## 示例
+## <a name="example"></a>示例
 
 以下示例可确保目录 `/opt/mydir` 存在，并且具有指定内容的文件存在于此目录中。
 
@@ -161,10 +159,4 @@ nxFile FileExample
 } 
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

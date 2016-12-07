@@ -7,12 +7,10 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
-
+ms.openlocfilehash: 9e03bca75eeb6acf3f1433a9baaed0c1674ab1be
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 #  <a name="uninstall-windows-powershell-web-access"></a>卸载 Windows PowerShell Web 访问
 
 更新时间：2013年 6 月 24日
@@ -44,7 +42,7 @@ ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
 
 如果指定了自己的自定义网站名称，请将 <span class="code">WebsiteName</span> 参数添加到命令中，并指定网站名称。 如果使用了自定义 Web 应用程序（不是默认应用程序 **pswa**)，请将 <span class="code">WebApplicationName</span> 参数添加到命令中，并指定 Web 应用程序的名称。
 
-#### <a name="to-delete-the-website-and-web-applications-by-using-the-uninstallpswawebapplication-cmdlet"></a>使用 Uninstall-PswaWebApplication cmdlet 删除网站和 Web 应用程序
+#### <a name="to-delete-the-website-and-web-applications-by-using-the-uninstall-pswawebapplication-cmdlet"></a>使用 Uninstall-PswaWebApplication cmdlet 删除网站和 Web 应用程序
 
 1.  执行以下操作之一，打开 Windows PowerShell 会话。
 
@@ -215,10 +213,4 @@ ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
 
 链接到此站点或从中引用的第三方脚本或代码由拥有此类代码的第三方（而非 Microsoft）授权给你。 请参阅 ASP.NET Ajax CDN 使用条款，网址为 http://www.asp.net/ajaxlibrary/CDN.ashx。
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

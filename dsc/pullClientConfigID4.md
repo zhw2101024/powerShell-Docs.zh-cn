@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 730f2f26e2811996e79cf0073a4ef65cad390687
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 在 PowerShell 4.0 中使用配置 ID 设置请求客户端
+# <a name="setting-up-a-pull-client-using-configuration-id-in-powershell-40"></a>在 PowerShell 4.0 中使用配置 ID 设置请求客户端
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
@@ -48,10 +46,10 @@ SimpleMetaConfigurationForPull -Output "."
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path . –Verbose.
 ```
 
-## 配置 ID
+## <a name="configuration-id"></a>配置 ID
 此脚本将 LCM 的 **ConfigurationID** 属性设置为之前为此目的创建的 GUID（你可以通过使用 **New-Guid** cmdlet 创建 GUID）。 LCM 使用 **ConfigurationID** 在请求服务器上查找相应配置。 请求服务器上的配置 MOF 文件必须命名为 `ConfigurationID.mof`，其中 *ConfigurationID* 是目标节点上 LCM 的 **ConfigurationID** 属性值。
 
-## 从 SMB 服务器请求
+## <a name="pulling-from-an-smb-server"></a>从 SMB 服务器请求
 
 如果请求服务器被设置为 SMB 文件共享，而不是 Web 服务，请指定 **DscFileDownloadManager**，而不是 **WebDownLoadManager**。
 **DscFileDownloadManager** 采用 **SourcePath** 属性，而不是 **ServerUrl**。 下面的脚本将 LCM 配置为从“CONTOSO-SERVER”服务器上的“SmbDscShare”SMB 共享请求配置：
@@ -74,14 +72,8 @@ Configuration SimpleMetaConfigurationForPull
 SimpleMetaConfigurationForPull -Output "."
 ```
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [设置 DSC Web 请求服务器](pullServer.md)
 - [设置 DSC SMB 请求服务器](pullServerSMB.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

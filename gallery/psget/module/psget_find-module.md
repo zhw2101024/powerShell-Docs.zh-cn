@@ -9,16 +9,14 @@ ms.date: 2016-10-14
 contributor: manikb
 title: "psget_find 模块"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 67542f54cd350bd1d9512eae0a2355b47943c2f2
-
+ms.openlocfilehash: b6fe3ffcbb366ee237acf0304ec4804b93e2b8ad
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Find-Module
+# <a name="find-module"></a>Find-Module
 查找联机库中与指定条件相匹配的模块。
 
-## 说明
+## <a name="description"></a>说明
 Find-Module 在已注册存储库中发现与指定条件相匹配的模块。
 对于每个找到的模块，Find-Module 将返回 PSRepositoryItemInfo 对象，可根据需要将其通过管道传递到 Install-Module 以安装该模块。
 
@@ -32,16 +30,16 @@ Find-Module 在已注册存储库中发现与指定条件相匹配的模块。
 - Find-Module 可使用 -Filter 参数对存储库特定搜索语言进行筛选。
 - Find-Module 可从所有或少数的已注册的存储库中对模块进行筛选。
 
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a>Cmdlet 语法
 ```powershell
 Get-Command -Name Find-Module -Module PowerShellGet -Syntax
 ```
 
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
 
 [Find-Module](http://go.microsoft.com/fwlink/?LinkID=398574)
 
-## 示例命令
+## <a name="example-commands"></a>示例命令
 ```powershell
 # Find a specific module
 Find-Module Azure
@@ -144,10 +142,4 @@ PackageManagementProvider  : NuGet
 AdditionalMetadata         : {downloadCount, description, copyright, FileList...}
 
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

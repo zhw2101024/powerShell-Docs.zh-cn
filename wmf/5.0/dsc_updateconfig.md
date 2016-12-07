@@ -1,4 +1,4 @@
-# DSC 配置的按需请求
+# <a name="on-demand-pull-of-dsc-configurations"></a>DSC 配置的按需请求
 
 新的 Update-DscConfiguration cmdlet 将触发对元配置中所定义请求服务器的请求。 该行为通常称为“立即请求”。 
 
@@ -31,7 +31,3 @@ Update-DscConfiguration     -CimSession <CimSession[]>
                             [-Confirm] 
                             [<CommonParameters>]
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 6b3cbbc8-060c-4877-b00b-7300dbbe4e28
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 6b35f2dd3cf441daa1a92d52435ed0ae350c138a
-
+ms.openlocfilehash: 6644ad379def3853d618dad2c72e7aa97b8242da
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell 基础知识
+# <a name="windows-powershell-basics"></a>Windows PowerShell 基础知识
 图形用户界面采用大多数计算机用户熟悉的一些基本概念。 用户凭借对这些界面的熟悉度来完成任务。 操作系统为用户提供可浏览项的图形表现形式，通常含有访问特定功能的下拉菜单以及访问特定于上下文的功能的上下文菜单。
 
 命令行接口 (CLI)（如 Windows PowerShell）则必须使用不同的方法来公开信息，因为它没有菜单或图形系统来帮助用户。 你需要知道命令的名称才能使用命令。 尽管你可以键入与 GUI 环境中功能等效的复杂命令，但你必须要熟悉常用命令和命令参数。
@@ -32,10 +30,4 @@ Windows PowerShell 旨在充分利用用户对 CLI 一直以来所了解的知�
 -   使用 Tab-Completion
 
 -   使用 Get-Help
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

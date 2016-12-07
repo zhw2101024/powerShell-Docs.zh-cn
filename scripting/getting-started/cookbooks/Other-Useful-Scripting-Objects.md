@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 4d781196-720b-4ccc-90d2-c570e5e719f5
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 83aa2ceb63497c7a12ec80d4b1472327284acf5b
-
+ms.openlocfilehash: 114f7b60bf44e0cfc2c9e2bad223552cb141d145
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 其他有用的脚本对象
+# <a name="other-useful-scripting-objects"></a>其他有用的脚本对象
   以下对象提供 Windows PowerShell ISE 中的其他脚本编写功能。 它们不属于 **$psISE** 层次结构。
 
-## 有用的脚本对象
+## <a name="useful-scripting-objects"></a>有用的脚本对象
 
-### $psUnsupportedConsoleApplications
+### <a name="psunsupportedconsoleapplications"></a>$psUnsupportedConsoleApplications
  在 Windows PowerShell ISE 如何与控制台应用程序交互方面存在一些限制。 需要用户干预的命令或自动化脚本可能无法像从 Windows PowerShell 控制台那样工作。 你可能想阻止这些命令或脚本在 Windows PowerShell ISE 命令窗格中运行。 **$PsUnsupportedConsoleApplications** 对象保留此类命令的列表。 如果你尝试运行此列表中的命令，你将收到它们不受支持的消息。 下面的脚本将向该列表添加一个条目。
 
 ```
@@ -32,7 +30,7 @@ psUnsupportedConsoleApplications
 
 ```
 
-### $psLocalHelp
+### <a name="pslocalhelp"></a>$psLocalHelp
  这是维护帮助主题和本地已编译的 HTML 帮助文件中和其关联链接之间的上下文相关映射的字典对象。 它用于查找有关某个特定主题的本地帮助。 你可以添加或删除此列表中的主题。 下面的代码示例显示了 **$psLocalHelp** 中包含的一些示例键值对。
 
 ```
@@ -41,7 +39,7 @@ $psLocalHelp | Format-List
 
 ```
 
-### 示例输出
+### <a name="sample-output"></a>示例输出
 
 |||
 |-|-|
@@ -54,7 +52,7 @@ $psLocalHelp | Format-List
 $psLocalHelp.Add("get-myNoun","c:\MyFolder\MyHelpChm.chm::/html/0198854a-1298-57ae-aa0c-87b5e5a84712.htm")
 ```
 
-### $psOnlineHelp
+### <a name="psonlinehelp"></a>$psOnlineHelp
  这是维护帮助主题的主题标题和其关联外部 URL 之间的上下文相关映射的字典对象。 它用于查找 Web 上有关某个特定主题的帮助。 你可以添加或删除此列表中的主题。
 
 ```
@@ -62,7 +60,7 @@ $psOnlineHelp | Format-List
 
 ```
 
-### 示例输出
+### <a name="sample-output"></a>示例输出
 
 |||
 |-|-|
@@ -75,13 +73,7 @@ $psOnlineHelp | Format-List
 $psOnlineHelp.Add("get-myNoun","http://www.mydomain.com/MyNoun.html")
 ```
 
-## 另请参阅
- [Windows PowerShell ISE 脚本对象模型](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+## <a name="see-also"></a>另请参阅
+- [Windows PowerShell ISE 脚本对象模型](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 
   
-
-
-
-<!--HONumber=Aug16_HO4-->
-
-

@@ -9,17 +9,15 @@ ms.date: 2016-10-14
 contributor: manikb
 title: "psget_install 模块"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 68e7ba36a723b0cb863ed890834855fa5f531240
-
+ms.openlocfilehash: 82e4bb1ec76b1a51e1a99de85bc77a5429d46e26
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Install-Module
+# <a name="install-module"></a>Install-Module
 
 将联机存储库中的 PowerShell 模块安装到本地计算机。
 
-## 说明
+## <a name="description"></a>说明
 
 Install-Module cmdlet 从联机库中下载一个或多个模块，对其进行验证并安装到本地计算机的指定安装范围。
 
@@ -35,7 +33,7 @@ Install-Module cmdlet 从联机库中获取满足指定条件的一个或多个�
 - -Force 将重新安装已安装的模块
 - RequiredVersion 将指定版本安装于 SxS 中，将现有版本安装于 PowerShell version 5.0 或更新的版本中。
 
-### 作用域
+### <a name="scope"></a>作用域
 指定模块的安装范围。 此参数可接受的值是：AllUsers 和 CurrentUser。
 
 默认安装范围为 AllUsers。
@@ -44,7 +42,7 @@ AllUsers 范围允许模块安装在计算机的所有用户都可访问的位�
 
 CurrentUser 范围仅允许模块安装在“$home\Documents\WindowsPowerShell\Modules”，因此仅向当前用户提供该模块。
 
-## 注释
+## <a name="notes"></a>注释
 
 此 cmdlet 在 Windows PowerShell 3.0 或更高版本的 Windows PowerShell、Windows 7 或 Windows 2008 R2 及 Windows 的更高版本上运行。
 
@@ -61,16 +59,16 @@ CurrentUser 范围仅允许模块安装在“$home\Documents\WindowsPowerShell\M
 为防止运行包含恶意代码的模块，不会通过安装自动导入已安装的模块。 安全性最佳的做法是首次在模块中运行任何 cmdlet 或函数前，先评估模块代码。
 
 
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a>Cmdlet 语法
 ```powershell
 Get-Command -Name Install-Module -Module PowerShellGet -Syntax
 ```
 
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
 
 [Install-Module](http://go.microsoft.com/fwlink/?LinkID=398573)
 
-## 示例命令
+## <a name="example-commands"></a>示例命令
 
 ```powershell
 
@@ -111,7 +109,7 @@ Install-Module ContosoClient -Force
 Install-Module -Name 
 ```
 
-## 管道操作中的 Install-Module cmdlet
+## <a name="install-module-cmdlet-in-pipeline-operations"></a>管道操作中的 Install-Module cmdlet
 
 ```powershell
 
@@ -138,11 +136,11 @@ Get-InstalledModule
 
 ```
 
-## PowerShell 5.0 或更高版本上的并行版本支持
+## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>PowerShell 5.0 或更高版本上的并行版本支持
 
 PowerShellGet 在 Windows PowerShell 5.0 或更新的版本中运行的 Install-Module cmdlet、Update-Module cmdlet 和 Publish-Module cmdlet 中对并行 (SxS) 模块版本提供支持。
 
-### Install-Module 示例
+### <a name="install-module-examples"></a>Install-Module 示例
 
 ```powershell
 # Install a version of the module
@@ -174,7 +172,7 @@ Version    Name                                Repository           Description
 
 ```
 
-## 安装模块及其依赖项
+## <a name="install-module-with-its-dependencies"></a>安装模块及其依赖项
 
 ```powershell
 
@@ -268,7 +266,7 @@ Version    Name                                Repository           Description
 
 ```
 
-## 错误方案
+## <a name="error-scenarios"></a>错误方案
 
 ```powershell
 
@@ -285,10 +283,4 @@ Install-Module ContosoClient,ContosoServer -RequiredVersion 2.0
 Install-Module ContosoClient,ContosoServer -MinimumVersion 2.0
 
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

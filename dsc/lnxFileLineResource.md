@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 9196129e79272d8bee717ef8a5d42fb590760a0f
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 适用于 Linux nxFileLine 资源的 DSC
+# <a name="dsc-for-linux-nxfileline-resource"></a>适用于 Linux nxFileLine 资源的 DSC
 
 PowerShell Desired State Configuration (DSC) 中的 **nxFileLine** 资源提供了管理 Linux 节点上配置文件中的行的机制。
 
-## 语法
+## <a name="syntax"></a>语法
 
 ```
 nxFileLine <string> #ResourceName
@@ -30,7 +28,7 @@ nxFileLine <string> #ResourceName
 }
 ```
 
-## “属性”
+## <a name="properties"></a>“属性”
 
 |  属性 |  说明 | 
 |---|---|
@@ -39,7 +37,7 @@ nxFileLine <string> #ResourceName
 | DoesNotContainPattern| 不应存在于此文件中的行的正则表达式模式。 将从文件中删除任何存在于此文件中并与正则表达式相匹配的行。| 
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 **ID** 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-## 示例
+## <a name="example"></a>示例
 
 此示例演示如何使用 **nxFileLine** 资源来配置 `/etc/sudoers` 文件，从而确保将用户 monuser 配置为“not requiretty”。
 
@@ -53,10 +51,4 @@ nxFileLine DoNotRequireTTY
    DoesNotContainPattern = "Defaults:monuser[ ]+requiretty"
 } 
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

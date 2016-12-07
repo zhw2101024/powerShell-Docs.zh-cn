@@ -1,12 +1,10 @@
 ---
 title: "网络交换机管理器 cmdlet 失败"
 contributor: vaibch
-translationtype: Human Translation
-ms.sourcegitcommit: 34337749a77f4379b841a8478d4e6e3bc97e7ada
-ms.openlocfilehash: 180158033e0c960f73dba66a3d77b15765e3e382
-
+ms.openlocfilehash: e32e31762b665a7e2c6f6938fe494cb6127d4264
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 网络交换机管理器 cmdlet 可用于通过 WSMAN 管理网络交换机。 此模块的几个 cmdlet 可接受管道中的值。 在 WMF 5.1 预览版中，当值不通过管道传递时，无法执行可接受管道中的值的 cmdlet。
 
 如果未使用“InputObject”参数，则 cmdlet 会继续执行且不会出现故障。
@@ -24,7 +22,7 @@ ms.openlocfilehash: 180158033e0c960f73dba66a3d77b15765e3e382
 - Remove-NetworkSwitchVlan
 - Set-NetworkSwitchVlanProperty
 
-### 解决方法
+### <a name="resolution"></a>解决方法
 如果 InputObject 参数的值通过管道传递到 cmdlet，则 cmdlet 工作正常。 适用于以上 cmdlet 的一些示例包括：
 
 - Disable-NetworkSwitchEthernetPort
@@ -77,9 +75,3 @@ $properties = @{Caption = "New Caption"}
 $vlan = Get-CimInstance -ClassName CIM_NetworkVlan -Namespace root/interop -CimSession $cimSession | Select-Object -First 1
 $vlan | Set-NetworkSwitchVlanProperty -Property $properties -CimSession $cimSession
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

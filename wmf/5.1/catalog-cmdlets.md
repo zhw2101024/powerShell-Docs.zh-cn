@@ -8,10 +8,9 @@ author: keithb
 manager: carolz
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: ecf70f38bbf48f410eb59b75f86eea767637757a
-ms.openlocfilehash: 72df0311a1d187dc6c7c1d29b0a3d2fd243848f0
-
+ms.openlocfilehash: 6986e7b8543ce38c0330e6428ac908ca7f126e08
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
 # <a name="catalog-cmdlets"></a>目录 Cmdlet  
 
@@ -52,9 +51,3 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 ![](../images/TestFileCatalog.jpg)
 
 此 cmdlet 将在目录文件中找到的所有文件的哈希值及其相对路径与保存到磁盘的值相比较。 如果它检测到文件哈希值和路径之间存在任何不匹配，将返回状态 `ValidationFailed`。 用户可使用 `Detailed` 切换检索所有该信息。 目录的签名状态将在 `Signature` 字段中显示，该结果与针对目录文件调用 [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) cmdlet 的结果相同。 用户也可使用 `FilesToSkip` 参数在验证过程中跳过任何文件。 
-
-
-
-<!--HONumber=Nov16_HO4-->
-
-

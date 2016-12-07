@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
-translationtype: Human Translation
-ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
-ms.openlocfilehash: c935d6f066aed1496069681723aa7bd72edbb8e3
-
+ms.openlocfilehash: 5343cf633d74171037ed3cdc9fcaa04495f4aaf7
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="windows-powershell-core-about-topics"></a>Windows PowerShell 核心“关于”主题
 本部分包含适用于所有 Windows PowerShell 模块的（“关于”）帮助主题。 有关其他模块的“关于”主题，请参阅特定模块的帮助主题。
 
@@ -141,10 +139,4 @@ ms.openlocfilehash: c935d6f066aed1496069681723aa7bd72edbb8e3
 - [about_WMI_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/9c56b172-3b25-47b2-b6e0-86db649b1c45)
 - [about_WS-Management_Cmdlets](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
 - [Windows PowerShell SDK](http://go.microsoft.com/fwlink/?LinkID=107032)
-
-
-
-
-<!--HONumber=Nov16_HO4-->
-
 

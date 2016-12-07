@@ -1,6 +1,6 @@
-# 基于类的 DSC 资源
+# <a name="class-based-dsc-resources"></a>基于类的 DSC 资源
 
-## 使用类定义 DSC 资源
+## <a name="defining-dsc-resources-with-classes"></a>使用类定义 DSC 资源
 
 根据反馈，我们已简化了编写基于类的 DSC 资源的操作，并且内容更易于理解。 基于类的 DSC 资源和 cmdlet DSC 资源提供程序之间的主要区别如下：
 
@@ -9,8 +9,3 @@
 * PowerShell 模块文件可以包含多个 DSC 资源类。
 
 有关详细信息，请参阅[使用 PowerShell 类编写自定义 DSC 资源](https://msdn.microsoft.com/powershell/dsc/authoringresource)。
-
-
-<!--HONumber=Aug16_HO3-->
-
-

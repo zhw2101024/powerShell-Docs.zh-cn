@@ -7,12 +7,10 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 49ddf6faf98a51f7ad5252e9563b1543478ed113
-ms.openlocfilehash: 9090f4be2987b8a56ba4d839f54e05082a8bcfa0
-
+ms.openlocfilehash: 69248223a67c8dbbea421f80b57cb245489fbc4f
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="enacting-configurations"></a>执行配置
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
@@ -45,10 +43,4 @@ ms.openlocfilehash: 9090f4be2987b8a56ba4d839f54e05082a8bcfa0
 - [设置 Web 请求服务器](pullServer.md)
 - [设置 SMB 请求服务器](pullServerSMB.md)
 - [配置请求客户端](pullClientConfigID.md)
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

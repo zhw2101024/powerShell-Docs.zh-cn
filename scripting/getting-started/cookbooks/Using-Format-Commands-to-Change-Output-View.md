@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 63515a06-a6f7-4175-a45e-a0537f4f6d05
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 4d8c2392c6a9f59dc5e601308bc08db8c653760e
-
+ms.openlocfilehash: 8480270797960463d438fb47dfaaa9ec297bea0e
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 使用格式命令更改输出视图
+# <a name="using-format-commands-to-change-output-view"></a>使用格式命令更改输出视图
 Windows PowerShell 具有一组 cmdlet，可让你控制要显示的特定对象的属性。 所有 cmdlet 的名称都以谓词 **Format** 开头。 它们使你可以选择要显示的一个或多个属性。
 
 **Format** cmdlet 包括 **Format-Wide**、**Format-List**、**Format-Table** 和 **Format-Custom**。 在本用户指南中，我们将只介绍 **Format-Wide**、**Format-List** 和 **Format-Table** cmdlet。
@@ -32,7 +30,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 在本部分接下来的内容中，我们将探究如何使用 **Format** cmdlet 更改此命令的输出的显示方式。
 
-### 将 Format-Wide 用于 Single-Item 输出
+### <a name="using-format-wide-for-single-item-output"></a>将 Format-Wide 用于 Single-Item 输出
 默认情况下，**Format-Wide** 只显示对象的默认属性。 与每个对象关联的信息将显示在单个列中：
 
 ```
@@ -49,14 +47,14 @@ PS> Get-Process -Name powershell | Format-Wide -Property Id
 2760                                    3448
 ```
 
-#### 使用列控制 Format-Wide 显示
+#### <a name="controlling-format-wide-display-with-column"></a>使用列控制 Format-Wide 显示
 使用 **Format-Wide** cmdlet，每次只能显示一个属性。 这对于显示每行只显示一个元素的简单列表很有用。 若要获取简单列表，通过键入以下内容将 **Column** 参数的值设为 1：
 
 ```
 Get-Command Format-Wide -Property Name -Column 1
 ```
 
-### 将 Format-List 用于列表视图
+### <a name="using-format-list-for-a-list-view"></a>将 Format-List 用于列表视图
 **Format-List** cmdlet 以列表的形式显示对象，同时标记每个属性并在单独的行上显示：
 
 ```
@@ -90,7 +88,7 @@ StartTime   : 2006-05-24 13:54:28
 Id          : 3448
 ```
 
-#### 通过将 Format-List 与通配符搭配使用获取详细信息
+#### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>通过将 Format-List 与通配符搭配使用获取详细信息
 **Format-List** cmdlet 使你可以将通配符用作其 **Property** 参数的值。 这样便可以显示详细信息。 通常情况下，对象包含的信息比你需要的多，这就是默认情况下 Windows PowerShell 不显示所有属性值的原因。 若要显示对象的全部属性，则使用 **Format-List-Property \&#42;**命令。 下面的命令针对单个进程生成超过 60 行的输出：
 
 ```
@@ -99,7 +97,7 @@ Get-Process -Name powershell | Format-List -Property *
 
 虽然 **Format-List** 命令对显示详细信息很有用，但如果你想要包括多个项目的输出的概述，更常用的是一个更简单的表格视图。
 
-### 将 Format-Table 用于表格输出
+### <a name="using-format-table-for-tabular-output"></a>将 Format-Table 用于表格输出
 如果你在没有指定属性名称的情况下使用 **Format-Table** cmdlet 来格式化 **Get-Process** 命令的输出，你所得到的输出会和未执行任何格式设置时得到的完全一样。 原因是进程通常以表格格式显示，和大多数 Windows PowerShell 对象一样。
 
 ```
@@ -111,7 +109,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     332       9    23140        632   141     1.06   3448 powershell
 ```
 
-#### 改进 Format-Table 输出（自动调整大小）
+#### <a name="improving-format-table-output-autosize"></a>改进 Format-Table 输出（自动调整大小）
 尽管表格视图对显示大量可比较的信息很有用，但如果显示区域对于数据来说太窄，则可能导致数据难以理解。 例如，如果你尝试显示进程路径、ID、名称和公司，你获得的却是进程路径和公司列的截断了的输出：
 
 ```
@@ -160,7 +158,7 @@ Microsoft Corporation C:\Program Files\Windows PowerShell\v1.0\powershell.exe 6
 
 在上面的输出中，将截断 ID 列以使其适合列表，并叠加列标题。 自动调整列大小不会始终执行所需的操作。
 
-#### 让列中的 Format-Table 输出自动换行 (Wrap)
+#### <a name="wrapping-format-table-output-in-columns-wrap"></a>让列中的 Format-Table 输出自动换行 (Wrap)
 你可以通过使用 **Wrap** 参数让较长的 **Format-Table** 数据在其显示列中自动换行。 仅使用 **Wrap** 参数不一定会实现所需的操作，因为如果你不同时指定 **AutoSize**，它会使用默认设置：
 
 ```
@@ -202,7 +200,7 @@ C:\Program Files\Windows PowerShell\v1.0\powershell.exe 2836 Microsoft Corporat
                                                              ion
 ```
 
-#### 组织选项卡输出 (-GroupBy)
+#### <a name="organizing-table-output--groupby"></a>组织选项卡输出 (-GroupBy)
 用于表格输出控制的另一个有用参数是 **GroupBy**。 较长的列表可能尤其难以进行比较。 **GroupBy** 参数基于属性值对输出进行分组 例如，我们可以按公司对进程分组以便于检查，同时从属性列表中省略公司的值：
 
 ```
@@ -216,10 +214,4 @@ Name         Id Path
 powershell 1956 C:\Program Files\Windows PowerShell\v1.0\powershell.exe
 powershell 2656 C:\Program Files\Windows PowerShell\v1.0\powershell.exe
 ```
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

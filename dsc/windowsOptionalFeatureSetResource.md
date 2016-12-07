@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 97714d3fa9a1c00fb3d2e79cc873280ca945a840
-ms.openlocfilehash: 52eb958e59ecb1d5ae3faf268933bbd544410d47
-
+ms.openlocfilehash: 1fab04dfcd4ce927bbe526b93c826cf3749a42a5
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC WindowsOptionalFeatureSet 资源
+# <a name="dsc-windowsoptionalfeatureset-resource"></a>DSC WindowsOptionalFeatureSet 资源
 
 > 适用于：Windows PowerShell 5.0
 
@@ -21,7 +19,7 @@ Windows PowerShell Desired State Configuration (DSC) 中的 **WindowsOptionalFea
 
 要将一些 Windows 可选功能配置为相同状态时，请使用此资源。
 
-## 语法
+## <a name="syntax"></a>语法
 
 ```
 WindowsOptionalFeature [string] #ResourceName
@@ -38,7 +36,7 @@ WindowsOptionalFeature [string] #ResourceName
 }
 ```
 
-## “属性”
+## <a name="properties"></a>“属性”
 
 |  属性  |  说明   | 
 |---|---| 
@@ -52,11 +50,5 @@ WindowsOptionalFeature [string] #ResourceName
 | DependsOn| 指定必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 __ResourceName__、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。| 
  
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

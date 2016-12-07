@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 97bdd8ed6278fc5d45b34adf50ef8a194966ef0c
-
+ms.openlocfilehash: 77960d8876a7b0bc928158a04b26735aa6be517b
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 管理当前位置
+# <a name="managing-current-location"></a>管理当前位置
 在文件资源管理器中导航文件夹系统时，你通常具有一个特定的工作位置（即当前打开的文件夹）。 通过单击当前文件夹中的项，可轻松对其进行操作。 对于命令行接口（例如 Cmd.exe），当你位于特定文件所在的相同文件夹中时，你可以通过指定一个相对较短的名称来访问它，而无需指定该文件的完整路径。 当前目录称为工作目录。
 
 Windows PowerShell 使用名词 **Location** 来引用工作目录，并实现一系列 cmdlet 以检查你的位置并对其进行操作。
 
-### 获取你的当前位置 (Get-Location)
+### <a name="getting-your-current-location-get-location"></a>获取你的当前位置 (Get-Location)
 若要确定你的当前目录位置的路径，请输入 **Get-Location** 命令：
 
 ```
@@ -32,7 +30,7 @@ C:\Documents and Settings\PowerUser
 > [!NOTE]
 > Get-Location cmdlet 类似于 BASH shell 中的 **pwd** 命令。 Set-Location cmdlet 类似于 Cmd.exe 中的 **cd** 命令。
 
-### 设置你的当前位置 (Set-Location)
+### <a name="setting-your-current-location-set-location"></a>设置你的当前位置 (Set-Location)
 **Get-Location** 命令与 **Set-Location** 命令结合使用。 **Set-Location** 命令允许你指定当前目录位置。
 
 ```
@@ -90,7 +88,7 @@ chdir -Path .. -PassThru
 sl -Path HKLM:\SOFTWARE -PassThru
 ```
 
-### 保存和重新调用最近的位置（Push-Location 和 Pop-Location）
+### <a name="saving-and-recalling-recent-locations-push-location-and-pop-location"></a>保存和重新调用最近的位置（Push-Location 和 Pop-Location）
 当更改位置时，它有助于跟踪你访问过的位置并使你能够返回到之前的位置。 Windows PowerShell 中的 **Push-Location** cmdlet 将创建一个你访问过的目录路径的有序历史记录（“堆栈”），你可以通过使用补充的 **Pop-Location** cmdlet 在目录路径历史记录上返回到之前位置。
 
 例如，Windows PowerShell 通常在用户的主目录中启动。
@@ -171,10 +169,4 @@ Set-Location : Cannot find path 'D:\' because it does not exist.
 ```
 
 当你使用命令行接口时，使用文件资源管理器检查可用的物理驱动器会很不方便。 此外，文件资源管理器不会向你显示所有 Windows PowerShell 驱动器。 Windows PowerShell 提供一组命令，用于对 Windows PowerShell 驱动器进行操作，我们将在下一步讨论这些命令。
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

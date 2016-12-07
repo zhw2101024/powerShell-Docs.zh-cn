@@ -9,18 +9,16 @@ ms.date: 2016-10-14
 contributor: manikb
 title: "psget_install 脚本"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: df04c387f09ad603d001bb94ee4cdeabc6d9d5a6
-
+ms.openlocfilehash: ac2473283a80e76d4823d85d4c4481d349a95a12
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Install-Script
+# <a name="install-script"></a>Install-Script
 
 将联机存储库中的 PowerShell 脚本文件安装到本地计算机。
 
 
-## 说明
+## <a name="description"></a>说明
 
 Install-Script cmdlet 从存储库获取了脚本负载，验证负载为有效的 PowerShell 脚本，并将该脚本文件复制到指定的安装位置。
 
@@ -43,7 +41,7 @@ Install-Script cmdlet 从联机库中获取满足指定条件的一个或多个�
 
 Install-Module、Save-Module、Uninstall-Module、Install-Script、Save-Script 和 Uninstall-Script cmdlet 上的 -Name 中不支持通配符。
 
-### 作用域
+### <a name="scope"></a>作用域
 指定模块的安装范围。 此参数可接受的值是：AllUsers 和 CurrentUser。
 
 默认安装范围为 AllUsers。
@@ -58,7 +56,7 @@ CurrentUser 范围仅允许模块安装在“$home\Documents\WindowsPowerShell\M
 AllUsers 范围指定将脚本安装到 %systemdrive%:\ProgramFiles\WindowsPowerShell\Scripts，向所有用户提供该脚本。 CurrentUser 范围指定将脚本安装到 $home\Documents\WindowsPowerShell\Scripts，仅向当前用户提供该脚本。
 
 
-## NoPathUpdate
+## <a name="nopathupdate"></a>NoPathUpdate
 
 - Install-Script cmdlet 上的 NoPathUpdate 开关参数绕过向 PATH 环境变量添加脚本安装位置的提示。
 - 只要使用指定了 –NoPathUpdate 的命令，结果就不会有提示，且不会更新 PATH（此处忽略 force）。
@@ -67,7 +65,7 @@ AllUsers 范围指定将脚本安装到 %systemdrive%:\ProgramFiles\WindowsPower
 - 以上全部内容仅适用于首次在给定范围中使用 Install-Script 时。
 
 
-## 注释
+## <a name="notes"></a>注释
 
 此 cmdlet 在 Windows PowerShell 3.0 或更高版本的 Windows PowerShell、Windows 7 或 Windows 2008 R2 及 Windows 的更高版本上运行。
 
@@ -84,17 +82,17 @@ AllUsers 范围指定将脚本安装到 %systemdrive%:\ProgramFiles\WindowsPower
 为防止运行包含恶意代码的模块，不会通过安装自动导入已安装的模块。 安全性最佳的做法是首次在模块中运行任何 cmdlet 或函数前，先评估模块代码。
 
 
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a>Cmdlet 语法
 
 ```powershell
 Get-Command -Name Install-Script -Module PowerShellGet -Syntax
 ```
 
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
 
 [Install-Script](http://go.microsoft.com/fwlink/?LinkId=619784)
 
-## 示例命令
+## <a name="example-commands"></a>示例命令
 
 ```powershell
 
@@ -476,7 +474,7 @@ The scripts install location 'C:\Program Files\WindowsPowerShell\Scripts' is req
 
 ```
 
-## 管道操作中的 Install-Script cmdlet
+## <a name="install-script-cmdlet-in-pipeline-operations"></a>管道操作中的 Install-Script cmdlet
 
 ```powershell
 
@@ -503,11 +501,11 @@ Get-InstalledModule
 
 ```
 
-## PowerShell 5.0 或更高版本上的并行版本支持
+## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>PowerShell 5.0 或更高版本上的并行版本支持
 
 PowerShellGet 在 Windows PowerShell 5.0 或更新的版本中运行的 Install-Script、Update-Script 和 Publish-Script cmdlet 中对并行 (SxS) 模块版本提供支持。
 
-### Install-Script 示例
+### <a name="install-script-examples"></a>Install-Script 示例
 
 ```powershell
 # Install a version of the module
@@ -539,7 +537,7 @@ Version    Name                                Repository           Description
 
 ```
 
-## 安装模块及其依赖项
+## <a name="install-module-with-its-dependencies"></a>安装模块及其依赖项
 
 ```powershell
 
@@ -633,7 +631,7 @@ Version    Name                                Repository           Description
 
 ```
 
-## 错误方案
+## <a name="error-scenarios"></a>错误方案
 
 ```powershell
 
@@ -651,7 +649,7 @@ Install-Script ContosoClient,ContosoServer -MinimumVersion 2.0
 
 ```
 
-## 安装具有依赖脚本和模块的脚本
+## <a name="installing-a-script-with-dependent-scripts-and-modules"></a>安装具有依赖脚本和模块的脚本
 
 ```powershell
 # Installing a script with dependent scripts and modules
@@ -724,7 +722,7 @@ Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
 Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
 
-## Install-Script cmdlet 和 Get-InstalledScript cmdlet
+## <a name="install-script-and-get-installedscript-cmdlets"></a>Install-Script cmdlet 和 Get-InstalledScript cmdlet
 Install-Script cmdlet 可用于将特定的脚本文件及其依赖项安装到指定的作用域。 默认情况下，脚本将安装到 AllUsers 作用域。 Get-InstalledScript cmdlet 可用于获取使用 Install-Script cmdlet 安装的脚本文件列表。
 
 使用注意事项：为了在安装脚本之后能够对其进行管理和定位，Install-script 将在 $home\Documents\WindowsPowerShell\Scripts 创建默认文件夹用于存储脚本，并将该文件夹添加到 PATH 环境。 如果担心修改路径会出现问题，请使用 Save-Script 而非 Install-Script。 Get InstalledScripts 和 Uninstall-Script 只能处理使用 Install-Script 放置在系统上的脚本。
@@ -904,10 +902,4 @@ Param()
 Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
 Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

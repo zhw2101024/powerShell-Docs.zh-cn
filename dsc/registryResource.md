@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 62f993e3d3e6ef744fb07920d332d476dfd24fc6
-ms.openlocfilehash: 48b68a99baa489dad38e7072b171db10ee0f7386
-
+ms.openlocfilehash: d94f178fb75d15b12268ad783f78183ceba9f2b3
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC Registry 资源
+# <a name="dsc-registry-resource"></a>DSC Registry 资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) 中的 **Registry** 资源提供了在目标节点上管理注册表项和值的机制。
 
-## 语法
+## <a name="syntax"></a>语法
 
 ```
 Registry [string] #ResourceName
@@ -35,7 +33,7 @@ Registry [string] #ResourceName
 }
 ```
 
-## “属性”
+## <a name="properties"></a>“属性”
 |  属性  |  说明   | 
 |---|---| 
 | 键| 指示要确保其特定状态的注册表项的路径。 路径必须包含配置单元。| 
@@ -63,7 +61,7 @@ Registry [string] #ResourceName
 
 <li>可扩展字符串 (REG_EXPAND_SZ)</li></ul>
 
-## 示例
+## <a name="example"></a>示例
 此示例确保名为“ExampleKey”的键存在于 **HKEY\_LOCAL\_MACHINE** 配置单元中。
 ```powershell
 Configuration RegistryTest
@@ -81,11 +79,5 @@ Configuration RegistryTest
 >**注意：**要在 **HKEY\_CURRENT\_USER** 配置单元中更改注册表设置，需要使用用户凭据运行配置，而不是将配置作为系统运行。
 >可以使用 **PsDscRunAsCredential** 属性来指定配置的用户凭据。 有关示例，请参阅[使用用户凭据运行 DSC](runAsUser.md)
 
-
-
-
-
-
-<!--HONumber=Sep16_HO3-->
 
 

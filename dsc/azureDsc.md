@@ -7,12 +7,10 @@ ms.topic: article
 author: eslesar
 manager: carolz
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: d87f81867181d6110532dc0afff1572ebc5bfff3
-ms.openlocfilehash: b7e0e4e8dba43ff85c77446a2ec593f42316f460
-
+ms.openlocfilehash: 938dcdfe6ef4254819068703d1c267934df913b4
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="using-dsc-on-microsoft-azure"></a>在 Microsoft Azure 上使用 DSC
 
 通过 [Azure 所需状态配置扩展处理程序](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-extensions-dsc-overview)和 [Azure 自动化 DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview)，Microsoft Azure 中支持所需状态配置 (DSC)。
@@ -32,10 +30,4 @@ Azure DSC 扩展允许通过 DSC 管理位于 Microsoft Azure 中的 VM。 有�
 - [Azure 自动化 DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
 - [Azure 自动化 DSC 入门](https://docs.microsoft.com/azure/automation/automation-dsc-getting-started)
 - [载入计算机以便通过 Azure 自动化 DSC 进行管理](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding)
-
-
-
-
-<!--HONumber=Nov16_HO4-->
-
 

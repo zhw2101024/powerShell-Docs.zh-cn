@@ -9,30 +9,28 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgallery_search_syntax
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: bb42496bdc9794b8d33dc9869f33771a241d31db
-
+ms.openlocfilehash: 36b551cd6576b1d2a9ca696f2bfdab570ea2523f
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 库搜索语法
+# <a name="gallery-search-syntax"></a>库搜索语法
 
 PowerShell 库提供文本搜索框，可以在其中使用单词、短语和关键字表达式来缩小搜索结果的范围。
 
-## 按关键字搜索
+## <a name="search-by-keywords"></a>按关键字搜索
 
     dsc azure sql
 
 “搜索”将最大程度地查找包含所有 3 个关键字的相关文档，并返回匹配的文档。
 
-## 使用短语和关键字进行搜索
+## <a name="search-using-phrases-and-keywords"></a>使用短语和关键字进行搜索
 
     "azure sql" deployment
 
 在引号（“”）之间输入短语将搜索更改为查找特定的短语而不是单独的关键字。
 匹配的文档通常应包含确切的短语“azure sql”，包括大写的变体。“Azure SQL”，并通常还包含“deployment”一词。
 
-## 按字段进行筛选
+## <a name="filtering-on-fields"></a>按字段进行筛选
 
 通过将字段名称作为前缀加入搜索词，可以搜索特定项 ID（或“Id”或“id”），或一些其他字段。
 
@@ -40,7 +38,7 @@ PowerShell 库提供文本搜索框，可以在其中使用单词、短语和关
 
 [ID 和标题之间的区别是什么？ ID 是在控制台中使用的名称。 标题是在搜索结果中的项页顶部所显示的内容。]
 
-## 示例
+## <a name="examples"></a>示例
 
     ID:"PSReadline"
     id:"AzureRM.Profile"
@@ -97,10 +95,4 @@ PowerShell 库提供文本搜索框，可以在其中使用单词、短语和关
 的解释与此查询完全相同：
 
     blobs storage
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

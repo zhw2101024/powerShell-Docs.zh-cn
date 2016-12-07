@@ -1,4 +1,4 @@
-# Get-ChildItem 具有 -Depth 参数
+# <a name="get-childitem-has--depth-parameter"></a>Get-ChildItem 具有 -Depth 参数
 **Get-ChildItem** 现在具有 **–Depth** 参数，你可以将其与 **–Recurse** 一起使用来限制递归：
 
 PS C:\\Users\\slee\\Downloads\\Example&gt; Get-ChildItem -Recurse -Depth 0
@@ -40,8 +40,3 @@ d----- 4/14/2015 5:36 PM Depth0
 ---- ------------- ------ ----
 
 d----- 4/14/2015 5:33 PM Depth1
-
-
-<!--HONumber=Aug16_HO3-->
-
-

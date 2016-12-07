@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 97714d3fa9a1c00fb3d2e79cc873280ca945a840
-ms.openlocfilehash: df6869cdf1d1f6c823704e4de2882e90cb672ad2
-
+ms.openlocfilehash: 1bb0e73a1aae6926040373e017494c2ef5e5fd3e
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC WindowsFeatureSet 资源
+# <a name="dsc-windowsfeatureset-resource"></a>DSC WindowsFeatureSet 资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
@@ -22,7 +20,7 @@ Windows PowerShell Desired State Configuration (DSC) 中的 **WindowsFeatureSet*
 
 要将一些 Windows 功能配置为相同状态时，请使用此资源。
 
-## 语法
+## <a name="syntax"></a>语法
 
 ```
 WindowsFeatureSet [string] #ResourceName
@@ -38,7 +36,7 @@ WindowsFeatureSet [string] #ResourceName
 }
 ```
 
-## “属性”
+## <a name="properties"></a>“属性”
 
 |  属性  |  说明   | 
 |---|---| 
@@ -50,7 +48,7 @@ WindowsFeatureSet [string] #ResourceName
 | DependsOn| 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 __ResourceName__、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。| 
 | 源| 指示要用于安装的源文件的位置（如有必要）。| 
 
-## 示例
+## <a name="example"></a>示例
 
 以下配置可确保安装 **Web 服务器** (IIS) 和 **SMTP 服务器**功能，以及各自的所有子功能。
 
@@ -70,10 +68,4 @@ configuration FeatureSetTest
     }
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 6697a12d-2470-4ed6-b5bb-c35e5d525eb6
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 8dd7904611fb697f9b398161e12765454b4f3441
-
+ms.openlocfilehash: 4b219e4499482eafa6eddf1461b74c62ba091d1a
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 为多个对象重复执行任务 (ForEach-Object)
+# <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>为多个对象重复执行任务 (ForEach-Object)
 **ForEach-Object** cmdlet 为当前管道对象使用脚本块和 $_ 描述符，以便你可以对管道中的每个对象运行命令。 这可用于执行某些复杂的任务。
 
 一种有帮助的情况就是操纵数据使其更为有用。 例如，WMI 的 Win32_LogicalDisk 类可用于返回每个本地磁盘的可用空间信息。 返回以字节表示的数据，但是，这也将增加阅读的难度：
@@ -53,10 +51,4 @@ eeSpace = ($_.FreeSpace)/1024.0/1024.0}
 ```
 
 可以通过使用一些高级技术重新组织数据，但更简单的方法是通过使用 **Select-Object** 创建新对象。
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

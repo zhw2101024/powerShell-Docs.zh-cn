@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-translationtype: Human Translation
-ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
-ms.openlocfilehash: 068ea5b8de5463c492c894d313ac1f266c449797
-
+ms.openlocfilehash: f38c9f310c528a9daff2784ab3a686309e624ecb
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中编写和运行脚本
 本主题说明如何在脚本窗格中创建、编辑、运行以及保存脚本。
 
@@ -151,10 +149,4 @@ Windows PowerShell ISE 不会更改在其他编辑器中创建的脚本的编码
 
 ## <a name="see-also"></a>另请参阅
 - [使用 Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
-
-
-
-
-<!--HONumber=Nov16_HO4-->
-
 

@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: c10c18c7-9ece-4fd0-83dc-a19c53d4fd83
-translationtype: Human Translation
-ms.sourcegitcommit: d015dfae1990c66ea75aa45004b366d1609fb36f
-ms.openlocfilehash: 460ab6d82b694266d31b09779866f746b56c9f51
-
+ms.openlocfilehash: fb568b1194a3d123913e635d26b5fbd2ad76c531
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中创建 PowerShell 选项卡
 使用 Windows PowerShell® 集成脚本环境 (ISE) 中的选项卡，可在相同的应用程序中同时创建并使用多个执行环境。 每个 PowerShell 选项卡对应于单独的执行环境或会话。
 
@@ -44,10 +42,4 @@ ms.openlocfilehash: 460ab6d82b694266d31b09779866f746b56c9f51
 ## <a name="see-also"></a>另请参阅
 - [使用 Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
 - [如何在 Windows PowerShell ISE 中使用控制台窗格](How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

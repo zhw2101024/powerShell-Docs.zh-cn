@@ -7,12 +7,10 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 1d4062490ba76a8cc62faa8fb96eff92b49169b7
-ms.openlocfilehash: 035fc8adc08df500069e800cfb94c5dcff46d88f
-
+ms.openlocfilehash: e3c7634462800736f0f321481e8f26074359f40b
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="what39s-new-with-powershell"></a>PowerShell 的新增功能
 Windows PowerShell® 5.0 包括了重要的新功能，这些功能可扩展其用途、提高其可用性，并使你能够更轻松、全面地控制和管理基于 Windows 的环境。  所需状态配置、安全性、性能、远程处理以及语言增强方面有重大改进。
 
@@ -31,10 +29,4 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 
 -   New features in Windows PowerShell 3.0
 -->
-
-
-
-
-<!--HONumber=Nov16_HO4-->
-
 

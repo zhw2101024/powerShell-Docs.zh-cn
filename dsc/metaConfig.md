@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 140f60bf7344eae57e2b5d364464bc0b7c1a2220
-ms.openlocfilehash: 5d37938869a71bea0d8a6349e680411b7d0200d9
-
+ms.openlocfilehash: e978ee828fe3c91be52077442c5781b7a20e50be
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 配置本地配置管理器
+# <a name="configuring-the-local-configuration-manager"></a>配置本地配置管理器
 
 > 适用于：Windows PowerShell 5.0
 
@@ -28,7 +26,7 @@ ms.openlocfilehash: 5d37938869a71bea0d8a6349e680411b7d0200d9
 
 > **注意**：本主题适用于 Windows PowerShell 5.0 中引入的 LCM。 有关在 Windows PowerShell 4.0 中配置 LCM 的信息，请参阅 [Windows PowerShell 4.0 Desired State Configuration 本地配置管理器](metaconfig4.md)。
 
-## 编写和执行 LCM 配置
+## <a name="writing-and-enacting-an-lcm-configuration"></a>编写和执行 LCM 配置
 
 若要配置 LCM，你需要创建并运行特殊类型的配置。 若要指定 LCM 配置，你可以使用 DscLocalConfigurationManager 特性。 下面演示将 LCM 设置为推送模式的简单配置。
 
@@ -57,7 +55,7 @@ LCM 配置只能包含有限组资源的块。 在上面的示例中，调用的
 * **ReportServerWeb**：指定将报告发送到的 HTTP 请求服务器。
 * **PartialConfiguration**：指定部分配置。
 
-## 基本设置
+## <a name="basic-settings"></a>基本设置
 
 不通过指定请求服务器和部分配置 LCM 的所有属性，而是在 **Settings** 块中进行配置。 **Settings** 块中提供下列属性。
 
@@ -79,7 +77,7 @@ LCM 配置只能包含有限组资源的块。 在上面的示例中，调用的
 | PartialConfigurations| CimInstance| 未实现。 不使用。| 
 | StatusRetentionTimeInDays | UInt32| LCM 保留当前配置状态的天数。| 
 
-## 请求服务器
+## <a name="pull-servers"></a>请求服务器
 
 请求服务器是一个 OData Web 服务或作为 DSC 文件的中心位置使用的 SMB 共享。 LCM 配置支持定义以下类型的请求服务器：
 
@@ -89,7 +87,7 @@ LCM 配置只能包含有限组资源的块。 在上面的示例中，调用的
 
 有关设置和使用请求服务器的信息，请参阅[设置 DSC 请求服务器](pullServer.md)。
 
-## 配置服务器块
+## <a name="configuration-server-blocks"></a>配置服务器块
 
 要定义基于 Web 的配置服务器，请创建 **ConfigurationRepositoryWeb** 块。 **ConfigurationRepositoryWeb** 定义以下属性。
 
@@ -108,7 +106,7 @@ LCM 配置只能包含有限组资源的块。 在上面的示例中，调用的
 |凭据|MSFT_Credential|用于对 SMB 共享进行身份验证的凭据。|
 |SourcePath|字符串|SMB 共享的路径。|
 
-## 资源服务器块
+## <a name="resource-server-blocks"></a>资源服务器块
 
 若要定义基于 Web 的资源服务器，请创建 **ResourceRepositoryWeb** 块。 **ResourceRepositoryWeb** 定义以下属性。
 
@@ -126,7 +124,7 @@ LCM 配置只能包含有限组资源的块。 在上面的示例中，调用的
 |凭据|MSFT_Credential|用于对 SMB 共享进行身份验证的凭据。|
 |SourcePath|字符串|SMB 共享的路径。|
 
-## 报表服务器块
+## <a name="report-server-blocks"></a>报表服务器块
 
 报表服务器必须是 OData Web 服务。 若要定义报表服务器，请创建 **ReportServerWeb** 块。 **ReportServerWeb** 定义以下属性。
 
@@ -137,7 +135,7 @@ LCM 配置只能包含有限组资源的块。 在上面的示例中，调用的
 |RegistrationKey|字符串|用于将节点标识到请求服务器的 GUID。 有关详细信息，请参阅“如何将节点注册到 DSC 请求服务器”。|
 |ServerURL|字符串|配置服务器的 URL。|
 
-## 部分配置
+## <a name="partial-configurations"></a>部分配置
 
 若要定义部分配置，请创建 **PartialConfiguration** 块。 有关部分配置的详细信息，请参阅 [DSC 部分配置](partialConfigs.md)。 **PartialConfiguration** 定义以下属性。
 
@@ -150,23 +148,17 @@ LCM 配置只能包含有限组资源的块。 在上面的示例中，调用的
 |RefreshMode|字符串|指定 LCM 如何获取此部分配置。 可能的值为__“Disabled”__、__“Push”（默认值）__和__“Pull”__。 <ul><li>__Disabled__：禁用此部分配置。</li><li> __Push__：通过调用 [Publish-DscConfiguration](https://technet.microsoft.com/en-us/library/mt517875.aspx) cmdlet 将部分配置推送到节点。 从服务器推送或请求该节点的所有部分配置后，可以通过调用 `Start-DscConfiguration –UseExisting` 来启动配置。 这是默认值。</li><li>__Pull：__将节点配置为从请求服务器定期检查部分配置。 如果将此属性设置为 __Pull__，则必须在 __ConfigurationSource__ 属性中指定请求服务器。 有关请求服务器的详细信息，请参阅[设置 DSC 请求服务器](pullServer.md)。</li></ul>|
 |ResourceModuleSource|string[]|可从中下载此部分配置所需资源的资源服务器的名称数组。 这些名称必须表示之前在 **ResourceRepositoryWeb** 和 **ResourceRepositoryShare** 块中定义的资源服务器。|
 
-## 另请参阅 
+## <a name="see-also"></a>另请参阅 
 
-### 概念
+### <a name="concepts"></a>概念
 [Windows PowerShell Desired State Configuration 概述](overview.md)
  
 [设置 DSC 请求服务器](pullServer.md) 
 
 [Windows PowerShell 4.0 Desired State Configuration 本地配置管理器](metaConfig4.md) 
 
-### 其他资源
+### <a name="other-resources"></a>其他资源
 [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) 
 
 [使用配置名称设置请求客户端](pullClientConfigNames.md) 
-
-
-
-
-<!--HONumber=Sep16_HO3-->
-
 

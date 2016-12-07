@@ -7,12 +7,10 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 7f0d3167538afb1e7f0003466254059372319789
 ms.openlocfilehash: 03db9843209038f7a14b46cf8a27316f1c63a819
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="setting-up-a-pull-client-using-configuration-names"></a>使用配置名称设置请求客户端
 
 > 适用于：Windows PowerShell 5.0
@@ -154,9 +152,3 @@ PullClientConfigNames
 
 * [使用配置 ID 设置请求客户端](PullClientConfigNames.md)
 * [设置 DSC Web 请求服务器](pullServer.md)
-
-
-
-<!--HONumber=Nov16_HO4-->
-
-

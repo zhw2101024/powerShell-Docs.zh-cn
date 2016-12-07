@@ -9,32 +9,30 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_update modulemanifest
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 9ade4e89a28b777266f48556c910092bfab67227
-
+ms.openlocfilehash: 85153872326c5af8f869bc2254040eca1a152f8b
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Update-ModuleManifest
+# <a name="update-modulemanifest"></a>Update-ModuleManifest
 更新模块清单文件。
 
-## 说明
+## <a name="description"></a>说明
 
 Update-ModuleManifest cmdlet 更新模块清单 (.psd1) 文件。
 
-### 注释
+### <a name="notes"></a>注释
     - DscResourcesToExport 仅在最新的 PowerShell 5.0 版本上才受支持。 如果你正在较低版本的 PowerShell 上运行，我们将无法更新该字段。
 
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a>Cmdlet 语法
 ```powershell
 Get-Command -Name Update-ModuleManifest -Module PowerShellGet -Syntax
 ```
 
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
 
 [Update-ModuleManifest](http://go.microsoft.com/fwlink/?LinkId=619311)
 
-## 示例命令
+## <a name="example-commands"></a>示例命令
 
 此新的 cmdlet 用于通过输入属性值帮助更新清单文件。 它会接收 New-ModuleManifest 接收的所有参数。
 
@@ -121,10 +119,4 @@ PrivateData = @{
     } # End of PSData hashtable
 } # End of PrivateData hashtable
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

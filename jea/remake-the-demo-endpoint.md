@@ -8,17 +8,15 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "重新创建演示终结点"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: d20ea8418cb7389d756de94ea752cf604b8d07af
-ms.openlocfilehash: acd2cfbd038250a26236c875d0e8b03a32cd84f9
-
+ms.openlocfilehash: 4a56272b6f995500d443d441f5e03db85dac6f96
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 重新创建演示终结点
+# <a name="remake-the-demo-endpoint"></a>重新创建演示终结点
 在本部分中，你将了解如何生成上一部分中所使用的演示终结点的精确副本。
 这将引入了解 JEA 所必须了解的核心概念，包括 PowerShell 会话配置和角色功能。
 
-## PowerShell 会话配置
+## <a name="powershell-session-configurations"></a>PowerShell 会话配置
 在上一部分中使用 JEA 时，你是通过运行以下命令开始的：
 
 ```PowerShell
@@ -41,14 +39,14 @@ Enter-PSSession -ComputerName . -ConfigurationName JEA_Demo -Credential $NonAdmi
 Get-PSSessionConfiguration
 ```
 
-## PowerShell 会话配置文件
+## <a name="powershell-session-configuration-files"></a>PowerShell 会话配置文件
 可通过注册新的 *PowerShell 会话配置文件*来创建新的会话配置。
 会话配置文件的文件扩展名为“.pssc”。
 你可以使用 New-PSSessionConfigurationFile cmdlet 生成会话配置文件。
 
 接下来，你要为 JEA 创建并注册新的会话配置。
 
-## 生成并修改 PowerShell 会话配置
+## <a name="generate-and-modify-your-powershell-session-configuration"></a>生成并修改 PowerShell 会话配置
 运行以下命令以生成 PowerShell 会话配置“主干”文件。
 
 ```PowerShell
@@ -107,7 +105,7 @@ RoleDefinitions = @{'CONTOSO\JEA_NonAdmin_Operator' = @{ RoleCapabilities =  'Ma
 
 最后，将你的更改保存到 *JEADemo2.pssc*。
 
-## 应用 PowerShell 会话配置
+## <a name="apply-the-powershell-session-configuration"></a>应用 PowerShell 会话配置
 
 若要从会话配置文件创建终结点，需注册该文件。
 这需要几条信息：
@@ -123,7 +121,7 @@ Register-PSSessionConfiguration -Name 'JEADemo2' -Path "$env:ProgramData\JEAConf
 
 祝贺你！ 你已设置 JEA 终结点。
 
-## 测试终结点
+## <a name="test-out-your-endpoint"></a>测试终结点
 针对你的新终结点重新运行 [使用 JEA](using-jea.md) 部分中所列出的步骤，确认它按照预期方式运行。
 为 `Enter-PSSession` 提供配置名称时，请确保使用新的终结点名称 (JEADemo2)。
 
@@ -131,7 +129,7 @@ Register-PSSessionConfiguration -Name 'JEADemo2' -Path "$env:ProgramData\JEAConf
 Enter-PSSession -ComputerName . -ConfigurationName JEADemo2 -Credential $NonAdminCred
 ```
 
-## 关键概念
+## <a name="key-concepts"></a>关键概念
 **PowerShell 会话配置**：有时称为 *PowerShell 终结点*，这是一个象征性的“位置”，用户可连接到它并获取 PowerShell 功能的访问权限。
 你可以通过运行 `Get-PSSessionConfiguration` 列出系统上已注册的会话配置。
 以特定方式配置后，可将 PowerShell 会话配置称为 *JEA 终结点*。
@@ -149,10 +147,4 @@ Enter-PSSession -ComputerName . -ConfigurationName JEADemo2 -Credential $NonAdmi
 **PowerShell 脚本**：包含 PowerShell 会话的“即时权限提升”视图的文件。
 你可以将 PowerShell 设置为使用 TranscriptDirectory 字段生成 JEA 会话的脚本。
 有关脚本的详细信息，请参阅这篇[博客文章](https://technet.microsoft.com/en-us/magazine/ff687007.aspx)。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

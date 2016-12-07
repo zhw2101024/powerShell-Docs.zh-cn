@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: c425d27a-bb41-4947-8d73-ba5480bc8ee0
-translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 0148f4631e34e65a4336c5d1d50e313fb6639748
-
+ms.openlocfilehash: f7c9164e09e253e8138820708ba8864841ddfff2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 使用 Windows PowerShell 编写脚本
+# <a name="scripting-with-windows-powershell"></a>使用 Windows PowerShell 编写脚本
 
 Windows PowerShell® 是基于任务的命令行管理程序和脚本语言，专为进行系统管理而设计。 在 .NET Framework 的基础上构建的 Windows PowerShell 可帮助 IT 专业人士和高级用户控制和自动执行 Windows 操作系统以及在 Windows 上运行的应用程序的管理。
 
@@ -28,10 +26,4 @@ Windows PowerShell 包括以下功能：
 -   简化的基于命令的操作系统导航，使用户可以通过使用用于导航文件系统的相同技术来导航注册表和其他数据存储。
 -   强大的对象操作功能。 可直接执行对象操作或将这些对象发送到其他工具或数据库。
 -   可扩展接口。 独立软件供应商和企业开发人员可以构建用于管理其软件的自定义工具和实用工具。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

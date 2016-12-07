@@ -3,13 +3,13 @@
 ms.topic：文章作者：eslesar 管理员：dongill ms.prod：powershell
 ---
 
-# 复合资源：将 DSC 配置用作资源
+# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>复合资源：将 DSC 配置用作资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 在实际情况中，配置可能会变得长而复杂，调用许多不同的资源，并设置大量的属性。 将 Windows PowerShell Desired State Configuration (DSC) 配置用作其他配置的资源可以解决复杂性的问题。 我们把它叫做复合资源。 复合资源是使用参数的 DSC 配置。 配置的参数充当资源的属性。 将配置保存为带有 **.schema.psm1** 扩展名的文件，它代替了典型 DSC 资源中的 MOF 架构和资源脚本（有关 DSC 资源的详细信息，请参阅 [Windows PowerShell Desired State Configuration 资源](resources.md)）。
 
-## 创建复合资源
+## <a name="creating-the-composite-resource"></a>创建复合资源
 
 在示例中，我们创建了一个调用多个现有资源的配置来配置虚拟机。 配置采用了大量之后将在配置块中使用的参数，而没有指定应该在配置块中设置的值。
 
@@ -125,7 +125,7 @@ Configuration xVirtualMachine
 }
 ```
 
-### 将配置保存为复合资源
+### <a name="saving-the-configuration-as-a-composite-resource"></a>将配置保存为复合资源
 
 要将参数化配置用作 DSC 资源，请将其保存至与其他基于 MOF 资源的目录结构相类似的目录结构下，并以 **.schema.psm1** 扩展名命名。 在此示例中，我们将文件命名为 **xVirtualMachine.schema.psm1**。 你还需要创建一个名为 **xVirtualMachine.psd1** 并包含下列行的的清单。 请注意，这是除 **MyDscResources.psd1**（位于 **MyDscResources** 文件夹下所有资源的模块清单）之外的另一个清单。
 
@@ -147,7 +147,7 @@ $env: psmodulepath
 
 现在可以使用 Get-DscResource cmdlet 找到资源，并且可以使用该 cmdlet 或者使用 Windows PowerShell ISE 中的 **Ctrl+Space** 自动完成找到其属性。
 
-## 使用复合资源
+## <a name="using-the-composite-resource"></a>使用复合资源
 
 接下来我们将创建一个调用复合资源的配置。 此配置调用 xVirtualMachine 复合资源来创建一个虚拟机，然后调用 **xComputer** 资源重命名虚拟机。
 
@@ -182,14 +182,8 @@ configuration RenameVM
 }
 ```
 
-## 另请参阅
-### 概念
+## <a name="see-also"></a>另请参阅
+### <a name="concepts"></a>概念
 * [使用 MOF 编写自定义 DSC 资源](authoringResourceMOF.md)
 * [Windows PowerShell Desired State Configuration 入门](overview.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -8,20 +8,12 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 7ecc94a4-015c-4459-ae58-85289ea09030
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: e7069571249447bffc587d3665ffdb8f75bd9c25
-
+ms.openlocfilehash: 6319732807785d88ef477382c4b6205d10b957ea
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 使用对象
+# <a name="working-with-objects"></a>使用对象
 我们已讨论了 Windows PowerShell 如何使用对象在 cmdlet 之间传输数据，并通过使用 Get-Member 和 Format cmdlet 查看对象的特定属性演示了几种查看有关对象详细信息的方法。
 
 对象可以为你提供访问大量复杂数据的权限，并且该权限已关联。 通过一些简单的技术，你可以进一步操作对象来完成更多工作。 本章我们将介绍几种特定类型的对象，以及这些对象的操作方法。
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

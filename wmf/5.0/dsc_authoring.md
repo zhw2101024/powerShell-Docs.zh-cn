@@ -1,4 +1,4 @@
-# 使用 PowerShell ISE 创作改进
+# <a name="authoring-improvements-using-powershell-ise"></a>使用 PowerShell ISE 创作改进
 
 由于以下改进，现在在 Windows PowerShell ISE 中创作 DSC 配置的操作要容易得多：
 
@@ -8,8 +8,3 @@
 - 使用“Tab”更好地完成资源属性值。
 
 **注意：**在你可以使用“Ctrl+Space”列出选项之前，资源属性值必须为空字符串。 按 **Tab** 循环显示选项。
-
-
-<!--HONumber=Aug16_HO3-->
-
-

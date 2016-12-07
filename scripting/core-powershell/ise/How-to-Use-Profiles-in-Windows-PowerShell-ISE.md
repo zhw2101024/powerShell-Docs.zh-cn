@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 0219626a-6da5-4acc-b630-d058e8b29cc6
-translationtype: Human Translation
-ms.sourcegitcommit: cb3db96ff87078756166df9f90d44d88cdfd155f
-ms.openlocfilehash: 3543503655cc506c4c0f8a7f3d1056c05a66ecba
-
+ms.openlocfilehash: dc85d616aac580effc7170935a3edb35e1a54e04
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="how-to-use-profiles-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中使用配置文件
 本主题说明如何使用 Windows PowerShell® 集成脚本环境 (ISE) 中的配置文件。 建议在执行本部分中的任务之前，先查看 [about_Profiles [v4]](https://technet.microsoft.com/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054(v=wps.630))，或在控制台窗格中键入 `Get-Help about_Profiles`，然后按 **Enter**。
 
@@ -84,10 +82,4 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
 ## <a name="see-also"></a>另请参阅
 - [about_Profiles [v4]](https://technet.microsoft.com/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054(v=wps.630))
 - [使用 Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

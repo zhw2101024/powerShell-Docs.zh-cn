@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: bf36abde6a3bfff4c2e49868465e089cc886d031
-ms.openlocfilehash: 45fe96c43a834566d398820e3d94e3be923bb385
-
+ms.openlocfilehash: 6e5ea98febfe7541f35a84c37df73df580654340
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC GroupSet 资源
+# <a name="dsc-groupset-resource"></a>DSC GroupSet 资源
 
 > 适用于：Windows PowerShell 5.0
 
@@ -21,7 +19,7 @@ Windows PowerShell Desired State Configuration (DSC) 中的 **GroupSet** 资源�
 
 当你要对多个组添加和/或删除相同成员列表、删除多个组或添加具有相同成员列表的多个组时，请使用此资源。
 
-##语法##
+##<a name="syntax"></a>语法##
 ```
 Group [string] #ResourceName
 {
@@ -34,7 +32,7 @@ Group [string] #ResourceName
 }
 ```
 
-## “属性”
+## <a name="properties"></a>“属性”
 
 |  属性  |  说明   | 
 |---|---| 
@@ -46,7 +44,7 @@ Group [string] #ResourceName
 | MembersToInclude| 使用此属性将成员添加到组的现有成员资格中。 此属性的值是一组形式为 *Domain*\\*UserName* 的字符串。 如果你在配置中设置此属性，请勿使用 **Members** 属性。 这样做会导致错误生成。| 
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 __ResourceName__、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"``。| 
 
-## 示例 1
+## <a name="example-1"></a>示例 1
 
 下面的示例演示如何确保名为“myGroup”和“myOtherGroup”的两个组存在。 
 
@@ -81,11 +79,5 @@ GroupSetTest -ConfigurationData $cd
 ```
 
 >**注意：**为简单起见，此示例使用纯文本凭据。 有关如何在配置 MOF 文件中加密凭据的信息，请参阅[保护 MOF 文件](secureMOF.md)。
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -9,31 +9,29 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_test scriptfileinfo
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 52dca469e9a97c4d640821b5bd44af240f5bf643
-
+ms.openlocfilehash: 570ad7e878195f36e1d0831c504301bcee647a7d
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Test-ScriptFileInfo
+# <a name="test-scriptfileinfo"></a>Test-ScriptFileInfo
 
 验证脚本文件的元数据注释块。
 
-## 说明
+## <a name="description"></a>说明
 
 Test-ScriptFileInfo cmdlet 验证将使用 Publish-Script cmdlet.发布的脚本的开头部分的注释块。
 如果元数据注释块中有错误，则此 cmdlet 将返回错误的位置或更正方法的相关信息。
 
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a>Cmdlet 语法
 
 ```powershell
 Get-Command -Name Test-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
 
 [Test-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619791)
 
-## 示例命令
+## <a name="example-commands"></a>示例命令
 ```powershell
 # Create a new script file with minimum required metadata values
 New-ScriptFileInfo -Path C:\ScriptSharingDemo\Demo-Script.ps1 -Description "Script file description goes here"
@@ -79,10 +77,4 @@ At line:1 char:1
     + FullyQualifiedErrorId : MissingPSScriptInfo,Test-ScriptFileInfo
 
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

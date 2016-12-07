@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 6216f3e1a766c57a7549a3e3b4fbe76d043a8a41
-
+ms.openlocfilehash: 5f37f66a34a98a4da28f4e36f115272d44ae5fc4
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 使用变量存储对象
+# <a name="using-variables-to-store-objects"></a>使用变量存储对象
 Windows PowerShell 处理对象。 Windows PowerShell 允许你创建实质上是命名对象的变量以保留输出以供以后使用。 如果你习惯在其他 Shell 中处理变量，请记住，Windows PowerShell 变量是对象，而非文本。
 
 始终使用初始字符 $ 指定变量，并且可以在其名称中包含任何字母数字字符或下划线。
 
-### 创建变量
+### <a name="creating-a-variable"></a>创建变量
 可以通过键入有效的变量名称来创建变量：
 
 ```
@@ -58,7 +56,7 @@ Provider     Property   System.Management.Automation.ProviderInfo Provider {...
 ProviderPath Property   System.String ProviderPath {get;}
 ```
 
-### 操作变量
+### <a name="manipulating-variables"></a>操作变量
 Windows PowerShell 提供多个用以操作变量的命令。 你可以通过键入以下内容看到可读形式的完整列表：
 
 ```
@@ -87,7 +85,7 @@ Performing operation "Remove Variable" on Target "Name: Error".
 Get-ChildItem variable:
 ```
 
-### 使用 Cmd.exe 变量
+### <a name="using-cmdexe-variables"></a>使用 Cmd.exe 变量
 虽然 Windows PowerShell 不是 Cmd.exe，但它在命令 Shell 环境中运行，并且可以在 Windows 的任何环境中使用相同的可用变量。 这些变量通过名为 **env** 的驱动器进行公开： 你可以通过键入以下内容查看这些变量：
 
 ```
@@ -102,10 +100,4 @@ C:\WINDOWS
 ```
 
 你还可以从 Windows PowerShell 内部创建和修改环境变量。 从 Windows PowerShell 访问的环境变量遵循针对 Windows 中其他环境变量的一般规则。
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

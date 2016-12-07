@@ -22,9 +22,3 @@ DSCAutomationHostEnabled 支持三种模式：
 有关如何使用此功能在初始启动时运行配置的示例，请参阅[初始启动时使用 DSC 配置虚拟机](bootstrapDsc.md)。
 
 
-
-
-
-<!--HONumber=Oct16_HO4-->
-
-

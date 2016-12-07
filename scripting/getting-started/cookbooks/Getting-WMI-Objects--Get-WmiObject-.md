@@ -8,15 +8,13 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: f0ddfc7d-6b5e-4832-82de-2283597ea70d
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: de9e8af7908ac6a72a100fd2c86b52c30c390c39
-
+ms.openlocfilehash: 517b07a9ebca91029381684beaec95d37934f3ce
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="getting-wmi-objects-get-wmiobject"></a>获取 WMI 对象 (Get-WmiObject)
 
-# <a name="getting-wmi-objects-getwmiobject"></a>获取 WMI 对象 (Get-WmiObject)
-
-## <a name="getting-wmi-objects-getwmiobject"></a>获取 WMI 对象 (Get-WmiObject)
+## <a name="getting-wmi-objects-get-wmiobject"></a>获取 WMI 对象 (Get-WmiObject)
 Windows Management Instrumentation (WMI) 是 Windows 系统管理的核心技术，因为它以统一的方式公开大量信息。 由于 WMI 可实现的效果，用于访问 WMI 对象的 Windows PowerShell cmdlet **Get-WmiObject** 是进行实际工作最有用的对象之一。 我们将讨论如何使用 Get-WmiObject 访问 WMI 对象以及如何使用 WMI 对象执行特定操作。
 
 ### <a name="listing-wmi-classes"></a>列出 WMI 类
@@ -109,7 +107,7 @@ BuildNumber                               Property   System.String BuildNumb...
 ...
 ```
 
-#### <a name="displaying-nondefault-properties-with-format-cmdlets"></a>通过 Format Cmdlet 显示非默认属性
+#### <a name="displaying-non-default-properties-with-format-cmdlets"></a>通过 Format Cmdlet 显示非默认属性
 如果需要 **Win32_OperatingSystem** 类中所包含的默不显示的信息，可以通过用 **Format** cmdlet 显示它们。 例如，如果你想显示可用内存数据，请键入：
 
 ```
@@ -135,10 +133,4 @@ FreePhysicalMemory     : 301876
 FreeVirtualMemory      : 2056724
 FreeSpaceInPagingFiles : 1556644
 ```
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

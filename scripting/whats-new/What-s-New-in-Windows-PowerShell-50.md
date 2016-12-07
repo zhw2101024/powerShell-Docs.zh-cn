@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
-translationtype: Human Translation
-ms.sourcegitcommit: 1d4062490ba76a8cc62faa8fb96eff92b49169b7
-ms.openlocfilehash: 966cab74cb2519893d4744e8bd0ca12f93f73136
-
+ms.openlocfilehash: b3823319cef457c7d04ebdaf521857f1f3e096b9
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="what39s-new-in-windows-powershell"></a>Windows PowerShell 中的新增功能
 Windows PowerShell ® 5.0 包括了重要的新功能，这些功能可扩展其用途、提高其可用性，并使你能够更轻松、全面地控制和管理基于 Windows 的环境。
 
@@ -758,10 +756,4 @@ Windows PowerShell 3.0 包括对运行身份和共享主机功能的支持。
 - [about_Windows_PowerShell_4.0](http://technet.microsoft.com/en-us/library/hh847833(v=wps.630).aspx)
 - [about_Windows_PowerShell_5.0](https://technet.microsoft.com/en-us/library/6d56fa88-371e-40c9-b2de-64a2a0cd49da)
 - [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
-
-
-
-
-<!--HONumber=Nov16_HO4-->
-
 

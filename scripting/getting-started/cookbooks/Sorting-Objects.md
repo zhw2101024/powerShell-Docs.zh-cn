@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 8530caa8-3ed4-4c56-aed7-1295dd9ba199
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 88753c43124cfce3581af2259449be5f01579ae8
-
+ms.openlocfilehash: 99ca62261f8302673f886149a7715ce06efa16cb
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 对对象进行排序
+# <a name="sorting-objects"></a>对对象进行排序
 可以通过使用 **Sort-Object** cmdlet 组织已显示的数据，使其更易于扫描。 **Sort-Object** 依据一个或多个属性的名称进行排序，并返回按这些属性的值进行排序的数据。
 
 请考虑列出 Win32_SystemDriver 实例的问题。 如果想要依次按 **State** 和 **Name** 进行排序，可键入：
@@ -54,10 +52,4 @@ wdmaud         Running    True Microsoft WINMM WDM Audio Compatibility Driver
 Wanarp         Running    True Remote Access IP ARP Driver
 ...
 ```
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

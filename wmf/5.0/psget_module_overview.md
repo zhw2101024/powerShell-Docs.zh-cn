@@ -1,4 +1,4 @@
-# 使用 PowerShellGet 进行 PowerShell 模块发现、安装和盘存
+# <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a>使用 PowerShellGet 进行 PowerShell 模块发现、安装和盘存
  
 此版本的 WMF 中包括了 PowerShellGet：
 -   Find-Module 可以使用 -Tag 参数对模块元数据进行筛选
@@ -7,7 +7,7 @@
 -   Find-DscResource 可以发现存储库中的单个 DSC 资源
 -   支持使用 NuGet 从文件共享安装，且支持发布到文件共享
 
-## 示例命令
+## <a name="example-commands"></a>示例命令
 ```powershell
 \# Find all modules with tags Azure or DSC
 Find-Module -Tag Azure, DSC
@@ -42,7 +42,7 @@ Find-Module -Filter Cookbook -Repository PSGallery
 Find-Module -Filter RBAC -Repository PSGallery
 ```
 
-## PowerShellGet 中的新增功能
+## <a name="new-features-in-powershellget"></a>PowerShellGet 中的新增功能
 -   PowerShell 5.0 或更高版本上的并行版本支持
 -   模块依赖项安装支持
 -   三个新的 cmdlet
@@ -50,7 +50,3 @@ Find-Module -Filter RBAC -Repository PSGallery
     -   Uninstall-Module
     -   Save-Module
     
-
-<!--HONumber=Aug16_HO3-->
-
-

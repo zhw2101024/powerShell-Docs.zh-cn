@@ -1,4 +1,4 @@
-# 调用基类方法
+# <a name="call-base-class-method"></a>调用基类方法
 
 你可以重写子类中的现有方法。 若要执行此操作，请使用相同的名称和签名声明方法：
 
@@ -46,7 +46,3 @@ $list = [MyIntList]::new()
 $list.Add(100)
 $list[0] # return 200
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

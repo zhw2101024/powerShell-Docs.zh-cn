@@ -9,31 +9,29 @@ ms.date: 2016-10-14
 contributor: manikb
 title: "psget_publish 模块"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: bcf1abe7021c9b48fa35f08762f4d4a0a710dfa3
-
+ms.openlocfilehash: 2619738ba76ed3b3c84d1a77771531ebd6955d6f
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Publish-Script
+# <a name="publish-script"></a>Publish-Script
 
 Publish-Script cmdlet 会将指定的脚本发布到联机库。
 
-## 说明
+## <a name="description"></a>说明
 
 Publish-Script cmdlet 可发布包含诸如 Version、Guid、Author 和 Description 等有效元数据的脚本文件。Publish-Script cmdlet 上的 Force 开关参数会在不提示的情况下启动 NuGet.exe。
 
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a>Cmdlet 语法
 
 ```powershell
 Get-Command -Name Publish-Script -Module PowerShellGet -Syntax
 ```
 
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
 
 [Publish-Script](http://go.microsoft.com/fwlink/?LinkId=619788)
 
-## 示例命令
+## <a name="example-commands"></a>示例命令
 
 ```powershell
 # Publish the really basic script file with required metadata
@@ -80,10 +78,4 @@ PackageManagementProvider : NuGet
 AdditionalMetadata : {description, developmentDependency, tags, PackageManagementProvider...}
 
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

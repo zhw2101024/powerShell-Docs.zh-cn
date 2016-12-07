@@ -9,34 +9,32 @@ ms.date: 2016-10-14
 contributor: manikb
 title: "psget_uninstall 模块"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 9b5895b71e19671b99506bf371f2656c2a419832
-
+ms.openlocfilehash: d638bd583d5cbe2d593cd4e6ebbddc998d4b1987
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Uninstall-Module
+# <a name="uninstall-module"></a>Uninstall-Module
 
 卸载使用 PowerShellGet cmdlet 安装的模块。
 
-## 说明
+## <a name="description"></a>说明
 
 Uninstall-Module cmdlet 卸载本地计算机中的指定模块。 如果其他某些模块在此模块上具有依赖项，则无法卸载它。
 Uninstall-Module cmdlet 还会验证正在卸载的模块是否正在使用中。 若该模块正在使用中，将引发错误。
 
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a>Cmdlet 语法
 ```powershell
 Get-Command -Name Uninstall-Module -Module PowerShellGet -Syntax
 ```
 
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
 
 [Uninstall-Module](http://go.microsoft.com/fwlink/?LinkId=526864)
 
 
-## 示例命令
+## <a name="example-commands"></a>示例命令
 
-###  运行 Uninstall-Module cmdlet 以卸载通过使用 PowerShellGet 安装的模块。
+###  <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a>运行 Uninstall-Module cmdlet 以卸载通过使用 PowerShellGet 安装的模块。
 如果任何其他模块依赖于你要删除的模块，则 PowerShellGet 会引发错误。
 ```powershell
 Get-InstalledModule -Name RequiredModule1 | Uninstall-Module
@@ -49,7 +47,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\PSGet.psm1:1303 char
 + FullyQualifiedErrorId : UnableToUninstallAsOtherModulesNeedThisModule,Uninstall-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.UninstallPackage
 ```
 
-### 正在卸载其他模块在其上有依赖项的模块。
+### <a name="uninstalling-a-module-when-some-other-modules-have-a-dependency-on-it"></a>正在卸载其他模块在其上有依赖项的模块。
 
 ```powershell
 Uninstall-Module SnippetPx
@@ -64,14 +62,14 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.3\PSModule.psm
    kageManagement.Cmdlets.UninstallPackage
 ```
 
-### 可通过在 Uninstall-Module cmdlet 上指定 -Force 选项覆盖它
+### <a name="you-can-override-this-by-specify--force-option-on-uninstall-module-cmdlet"></a>可通过在 Uninstall-Module cmdlet 上指定 -Force 选项覆盖它
 **注意：**不推荐这种做法。 其他模块将中断此操作。
 
 ```powershell
 Uninstall-Module SnippetPx -Force
 ```
 
-### 卸载已在使用中的模块
+### <a name="uninstall-a-module-which-is-already-in-use"></a>卸载已在使用中的模块
 
 ```powershell
 Get-InstalledModule TypePx,SnippetPx
@@ -82,7 +80,7 @@ Version    Name                                Repository           Description
 1.0.5.18   SnippetPx                           PSGallery            The SnippetPx module enhances the snippet experi...
 ```
 
-### 由于依赖模块，卸载 SnippetPx 失败
+### <a name="uninstall-snippetpx-fails-due-to-the-dependent-module"></a>由于依赖模块，卸载 SnippetPx 失败
 
 ```powershell
 Uninstall-Module SnippetPx
@@ -99,7 +97,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm
    kageManagement.Cmdlets.UninstallPackage
 ```
 
-### 依次卸载 TypePx、SnippetPx
+### <a name="uninstall-typepx-then-uninstall-the-snippetpx"></a>依次卸载 TypePx、SnippetPx
 
 ```powershell
 Uninstall-Module TypePx
@@ -118,7 +116,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm
 ```
 
 
-### 对于不是使用 PowerShellGet cmdlet 安装的模块名称
+### <a name="for-a-module-name-which-is-not-installed-using-powershellget-cmdlets"></a>对于不是使用 PowerShellGet cmdlet 安装的模块名称
 
 ```powershell
 Uninstall-Module SnipptPx
@@ -131,10 +129,4 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm
    , Exception
     + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.UninstallPackage
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

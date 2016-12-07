@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-translationtype: Human Translation
-ms.sourcegitcommit: 2aa04e8094fee4b0da3d5e7025cca215d542355e
-ms.openlocfilehash: b81bcbd37cdfebc04fbc7ef92d76f0769c135713
-
+ms.openlocfilehash: 698cef0d283b061a53d9230d42062c547666d127
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE 中的辅助功能
 本主题介绍 Windows PowerShell® 集成脚本环境 (ISE) 的辅助功能，也许对你有所帮助。
 
@@ -153,10 +151,4 @@ Windows PowerShell ISE 支持高对比度模式。 为方便有视觉障碍的�
 
 ## <a name="see-also"></a>另请参阅
 - [使用 Windows PowerShell ISE](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

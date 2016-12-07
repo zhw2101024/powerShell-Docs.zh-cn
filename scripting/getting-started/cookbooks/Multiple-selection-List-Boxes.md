@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: f74cd5d9-da57-4802-b614-0b194a7bc8f8
-translationtype: Human Translation
-ms.sourcegitcommit: f891988cce205b5729d0da6c4ce23da5fbd53b7f
-ms.openlocfilehash: 03a9bbfb14c4587d794db2eaadf60cc7a4d4dcdc
-
+ms.openlocfilehash: 0c17cb271441ed20b36176e2c5d8cecdad586e8b
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="multiple-selection-list-boxes"></a>多选列表框
 使用 Windows PowerShell 3.0 和更高版本在自定义 Windows 窗体中创建多选列表框控件。
 
@@ -188,10 +186,4 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 - [脚本编写人员，你好：为什么这些 PowerShell GUI 示例不起作用呢？](http://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub：Dave Wyatt 的 WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
 - [Windows PowerShell 本周提示：多选列表框 - 还有更多！](http://technet.microsoft.com/library/ff730950.aspx)
-
-
-
-
-<!--HONumber=Nov16_HO4-->
-
 

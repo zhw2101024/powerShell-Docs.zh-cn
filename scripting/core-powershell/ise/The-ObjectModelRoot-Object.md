@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 13fcf7ee-b18f-4499-a2b4-ccfc4484cd88
-translationtype: Human Translation
-ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
-ms.openlocfilehash: d51f5ab8b80bdf5e12a5b0f505f91eeeb4f3d48a
-
+ms.openlocfilehash: f65837e69471d3042a577e2c6f185e8f80a80d47
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="the-objectmodelroot-object"></a>ObjectModelRoot 对象
   Windows PowerShell® 集成脚本环境 (ISE) 中的主体根对象（**$psISE** 对象）是 Microsoft.PowerShell.Host.ISE.ObjectModelRoot 类的实例。 本主题介绍 **ObjectModelRoot** 对象的属性。
 
@@ -55,9 +53,3 @@ ms.openlocfilehash: d51f5ab8b80bdf5e12a5b0f505f91eeeb4f3d48a
 - [ISE 对象模型层次结构](The-ISE-Object-Model-Hierarchy.md)
 
   
-
-
-
-<!--HONumber=Nov16_HO4-->
-
-

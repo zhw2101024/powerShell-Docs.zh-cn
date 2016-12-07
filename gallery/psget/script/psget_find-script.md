@@ -9,17 +9,15 @@ ms.date: 2016-10-14
 contributor: manikb
 title: "psget_find 脚本"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 5651989acde9d47a7a07fac9284aebae84f28174
-
+ms.openlocfilehash: 09f4d6eca9cf04d03fddbe23beea6a5bc0243657
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Find-Script
+# <a name="find-script"></a>Find-Script
 
 查找联机库中与指定条件相匹配的 PowerShell 脚本文件。
 
-## 说明
+## <a name="description"></a>说明
 
 Find-Script 在已注册存储库中发现了与指定条件相匹配的脚本文件。
 对于每个已发现的脚本，Find-Script 将返回 PSRepositoryItemInfo 对象，可根据需要将其通过管道传递到 Install-Script 以安装该脚本。
@@ -37,17 +35,17 @@ Find-Script cmdlet 可使用不同的搜索条件（如名称、标记、筛选�
 
 **注意：**已注册的 PSRepository 应具有有效的 ScriptSourceLocation。 可使用 Set-PSRepository 设置 ScriptSourceLocation 值。
 
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a>Cmdlet 语法
 
 ```powershell
 Get-Command -Name Find-Script -Module PowerShellGet -Syntax
 ```
 
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
 
 [Find-Script](http://go.microsoft.com/fwlink/?LinkId=619785)
 
-## 示例命令
+## <a name="example-commands"></a>示例命令
 
 ```powershell
 # Find a script from the registered repository with ScriptSourceLocation
@@ -157,10 +155,4 @@ Cmdlet                         {}
 
 
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

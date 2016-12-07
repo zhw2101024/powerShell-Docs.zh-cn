@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: f6569220fbafdba49bac9ac9dca3e6036a7aad08
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 使用配置 ID 设置请求客户端
+# <a name="setting-up-a-pull-client-using-configuration-id"></a>使用配置 ID 设置请求客户端
 
 > 适用于：Windows PowerShell 5.0
 
@@ -50,13 +48,13 @@ PullClientConfigID
 
 此脚本运行后，将创建名为 **PullClientConfigID** 的新输出文件夹，并在其中放入元配置 MOF 文件。 在本例中，会将元配置 MOF 文件命名为 `localhost.meta.mof`。
 
-若要应用配置，请调用 **Set-DscLocalConfigurationManager** cmdlet，并将 **Path** 设置为元配置 MOF 文件的位置。 例如： `Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigID –Verbose.`
+若要应用配置，请调用 **Set-DscLocalConfigurationManager** cmdlet，并将 **Path** 设置为元配置 MOF 文件的位置。 例如：`Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigID –Verbose.`
 
-## 配置 ID
+## <a name="configuration-id"></a>配置 ID
 
 此脚本将 LCM 的 **ConfigurationID** 属性设置为之前为此目的创建的 GUID（你可以通过使用 **New-Guid** cmdlet 创建 GUID）。 LCM 使用 **ConfigurationID** 在请求服务器上查找相应配置。 请求服务器上的配置 MOF 文件必须命名为 _ConfigurationID_.mof，其中 _ConfigurationID_ 是目标节点上 LCM 的 **ConfigurationID** 属性值。
 
-## SMB 请求服务器
+## <a name="smb-pull-server"></a>SMB 请求服务器
 
 若要将客户端设置为从 SMB 服务器请求配置，请使用 **ConfigurationRepositoryShare** 块。 在 **ConfigurationRepositoryShare** 块中，可以通过设置 **SourcePath** 属性指定服务器的路径。 以下元配置将目标节点配置为从名为 **SMBPullServer** 的 SMB 请求服务器请求配置。
 
@@ -83,7 +81,7 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-## 资源和报表服务器
+## <a name="resource-and-report-servers"></a>资源和报表服务器
 
 如果你在 LCM 配置中只指定 **ConfigurationRepositoryWeb** 或 **ConfigurationRepositoryShare** 块（如同上一个示例所示），请求客户端会从指定服务器请求资源，但不会向它发送报表。 虽然你可以将一个请求服务器用于配置、资源和报告，但必须创建 **ReportRepositoryWeb** 块来设置报表。 
 
@@ -157,13 +155,7 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 * [使用配置名称设置请求客户端](pullClientConfigNames.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

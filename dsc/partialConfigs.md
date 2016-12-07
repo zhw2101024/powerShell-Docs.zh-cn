@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 0e830804616ff23412e0d6ff69c38e2ea20228e5
-ms.openlocfilehash: c5d3cb1045e67d4913fbbad13938e8f95a43cacf
-
+ms.openlocfilehash: 5f3d40fe431d026d8d83dfc720d919048c6bf336
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# PowerShell Desired State Configuration 部分配置
+# <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell Desired State Configuration 部分配置
 
 >适用于：Windows PowerShell 5.0
 
@@ -21,10 +19,10 @@ ms.openlocfilehash: c5d3cb1045e67d4913fbbad13938e8f95a43cacf
 
 可以在推送模式、请求模式或两种模式的组合下使用部分配置。
 
-## 推送模式下的部分配置
+## <a name="partial-configurations-in-push-mode"></a>推送模式下的部分配置
 若要在推送模式下使用部分配置，你需要在目标节点上配置 LCM 以接收部分配置。 必须使用 Publish-DSCConfiguration cmdlet 将每个部分配置推送到目标。 然后，目标节点将部分配置组合成为单个配置。你可以通过调用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet 来应用配置。
 
-### 针对推送模式部分配置来配置 LCM
+### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>针对推送模式部分配置来配置 LCM
 若要针对推送模式下的部分配置来配置 LCM，你可以为每个部分配置创建带有一个 **PartialConfiguration** 块的 **DSCLocalConfigurationManager** 配置。 有关配置 LCM 的详细信息，请参阅 [Windows 配置本地配置管理器](https://technet.microsoft.com/en-us/library/mt421188.aspx)。 下面的示例显示了需要两个部分配置的 LCM 配置：一个用于部署操作系统，另一个用于部署和配置 SharePoint。
 
 ```powershell
@@ -51,22 +49,22 @@ PartialConfigDemo
 
 每个部分配置的 **RefreshMode** 都设置为“Push”。 **PartialConfiguration** 块的名称（在本例中即“ServiceAccountConfig”和“SharePointConfig”）必须与推送到目标节点的配置名称完全匹配。
 
-### 发布和启动推送模式部分配置
+### <a name="publishing-and-starting-push-mode-partial-configurations"></a>发布和启动推送模式部分配置
 ![PartialConfig 文件夹结构](./images/PartialConfig1.jpg)
 
 然后，可以对每个配置调用 **Publish-DSCConfiguration**，将包含配置文档的文件夹作为 Path 参数进行传递。 发布两个配置后，即可在目标节点上调用 `Start-DSCConfiguration –UseExisting`。
 
-## 请求模式下的部分配置
+## <a name="partial-configurations-in-pull-mode"></a>请求模式下的部分配置
 
 可以从一个或多个请求服务器请求部分配置（有关请求服务器的详细信息，请参阅 [Windows PowerShell Desired State Configuration Pull Servers](pullServer.md)）。 若要执行此操作，必须在要请求部分配置的目标节点上配置 LCM，并在请求服务器上正确命名和定位配置文档。
 
-### 针对请求节点配置来配置 LCM
+### <a name="configuring-the-lcm-for-pull-node-configurations"></a>针对请求节点配置来配置 LCM
 
 若要配置 LCM 以从请求服务器请求部分配置，你需要在 **ConfigurationRepositoryWeb**（适用于 HTTP 请求服务器）或者 **ConfigurationRepositoryShare**（适用于 SMB 请求服务器）块上定义请求服务器。 然后创建 **PartialConfiguration** 块，这些块通过使用 **ConfigurationSource** 属性引用请求服务器。 你还需创建**设置**块来指定 LCM 使用请求模式，并指定请求服务器和目标节点用于识别配置的 **ConfigurationNames** 或者 **ConfigurationID**。 下面的元配置定义了名为 CONTOSO-PullSrv 的 HTTP 请求服务器，以及使用该请求服务器的两个部分配置。
 
 有关使用 **ConfigurationNames** 配置 LCM 的详细信息，请参阅[使用配置名称设置请求客户端](pullClientConfigNames.md)。 有关使用 **ConfigurationID** 配置 LCM 的详细信息，请参阅[使用配置 ID 设置请求客户端](pullClientConfigID.md)。
 
-#### 使用配置名称针对配置模式配置来配置 LCM
+#### <a name="configuring-the-lcm-for-pull-mode-configurations-using-configuration-names"></a>使用配置名称针对配置模式配置来配置 LCM
 
 ```powershell
 [DscLocalConfigurationManager()]
@@ -104,7 +102,7 @@ Configuration PartialConfigDemoConfigNames
 }
 ``` 
 
-#### 使用配置 ID 针对配置模式配置来配置 LCM
+#### <a name="configuring-the-lcm-for-pull-mode-configurations-using-configurationid"></a>使用配置 ID 针对配置模式配置来配置 LCM
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -147,7 +145,7 @@ PartialConfigDemo
 
 创建元配置后，必须运行该元配置以创建配置文档（MOF 文件），然后调用 [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621(v=wps.630).aspx) 以配置 LCM。
 
-### 在请求服务器 (ConfigurationNames) 上命名和放置配置文档
+### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationnames"></a>在请求服务器 (ConfigurationNames) 上命名和放置配置文档
 
 必须将部分配置文档置于请求服务器的 `web.config` 文件中指定为 **ConfigurationPath** 的文件夹中（通常为 `C:\Program Files\WindowsPowerShell\DscService\Configuration`）。 配置文档必须按如下所示命名：`ConfigurationName.mof`，其中 _ConfigurationName_ 是部分配置的名称。 在本例中，配置文档应按如下所示命名：
 
@@ -158,7 +156,7 @@ SharePointConfig.mof
 SharePointConfig.mof.checksum
 ```
 
-### 在请求服务器 (ConfigurationID) 上命名和放置配置文档
+### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationid"></a>在请求服务器 (ConfigurationID) 上命名和放置配置文档
 
 必须将部分配置文档置于请求服务器的 `web.config` 文件中指定为 **ConfigurationPath** 的文件夹中（通常为 `C:\Program Files\WindowsPowerShell\DscService\Configuration`）。 必须将配置文档命名如下：_ConfigurationName_. _ConfigurationID_`.mof`，其中 _ConfigurationName_ 是部分配置的名称，_ConfigurationID_ 是目标节点上 LCM 中定义的配置 ID。 在本例中，配置文档应按如下所示命名：
 
@@ -170,16 +168,16 @@ SharePointConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof.checksum
 ```
 
 
-### 从请求服务器上运行部分配置
+### <a name="running-partial-configurations-from-a-pull-server"></a>从请求服务器上运行部分配置
 
 在目标节点上配置 LCM，并在请求服务器上正确创建和命名配置文档后，目标节点将请求并合并部分配置，然后按照由 LCM 的 **RefreshFrequencyMins** 属性指定的固定时间间隔应用生成的配置。 如果想要强制进行刷新，则可以调用 [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541.aspx) cmdlet 以请求配置，然后调用 `Start-DSCConfiguration –UseExisting` 以应用这些配置。
 
 
-## 推送与请求混合模式下的部分配置
+## <a name="partial-configurations-in-mixed-push-and-pull-modes"></a>推送与请求混合模式下的部分配置
 
 你还可以混用推送和请求模式以进行部分配置。 也就是说，你可以同时拥有一个从请求服务器请求的部分配置和另一个推送的部分配置。 根据上文各节中所述的配置刷新模式，使用需要的部分配置。 例如，下面的元配置描述了同一示例，它具有请求模式下的服务帐户部分配置和推送模式下的 SharePoint 部分配置。
 
-### 使用 ConfigurationNames 的推送与请求混合模式
+### <a name="mixed-push-and-pull-modes-using-configurationnames"></a>使用 ConfigurationNames 的推送与请求混合模式
 
 ```powershell
 [DscLocalConfigurationManager()]
@@ -218,7 +216,7 @@ Configuration PartialConfigDemoConfigNames
 }
 ``` 
 
-### 使用 ConfigurationID 的推送与请求混合模式
+### <a name="mixed-push-and-pull-modes-using-configurationid"></a>使用 ConfigurationID 的推送与请求混合模式
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -260,7 +258,7 @@ PartialConfigDemo
 
 可按照上文所述的相应刷新模式命名和放置配置 MOF 文件。 可调用 **Publish-DSCConfiguration** 来发布 `SharePointConfig` 部分配置，并等待从请求服务器请求 `ServiceAccountConfig` 配置或通过调用 [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541(v=wps.630).aspx) 强制进行刷新。
 
-## ServiceAccountConfig 部分配置示例
+## <a name="example-serviceaccountconfig-partial-configuration"></a>ServiceAccountConfig 部分配置示例
 
 ```powershell
 Configuration ServiceAccountConfig
@@ -297,7 +295,7 @@ Configuration ServiceAccountConfig
 ServiceAccountConfig
 
 ```
-## SharePointConfig 部分配置示例
+## <a name="example-sharepointconfig-partial-configuration"></a>SharePointConfig 部分配置示例
 ```powershell
 Configuration SharePointConfig
 {
@@ -321,16 +319,10 @@ Configuration SharePointConfig
 }
 SharePointConfig
 ```
-##另请参阅 
+##<a name="see-also"></a>另请参阅 
 
 **概念**
 [Windows PowerShell Desired State Configuration 请求服务器](pullServer.md) 
 
 [Windows 配置本地配置管理器](https://technet.microsoft.com/en-us/library/mt421188.aspx) 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

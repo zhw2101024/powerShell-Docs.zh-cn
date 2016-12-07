@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 25195166f4d9dd668427d6bb5d748ef61273cdee
-
+ms.openlocfilehash: 64fc906cf0328d7be3aba7d5d6819640b4dcb4fa
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell 4.0 Desired State Configuration 本地配置管理器 (LCM)
+# <a name="windows-powershell-40-desired-state-configuration-local-configuration-manager-lcm"></a>Windows PowerShell 4.0 Desired State Configuration 本地配置管理器 (LCM)
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 本地配置管理器是 Windows PowerShell Desired State Configuration (DSC) 引擎。 它在所有的目标节点上运行，负责调用 DSC 配置脚本中包含的配置资源。 本主题列出了本地配置管理器的属性，并介绍如何在目标节点上修改本地配置管理器设置。
 
-## 本地配置管理器属性
+## <a name="local-configuration-manager-properties"></a>本地配置管理器属性
 以下列出了可以设置或检索的本地配置管理器属性。
  
 * **AllowModuleOverwrite**：控制是否允许从配置服务器下载的新配置覆盖目标节点上的旧配置。 可能的值为 True 和 False。
@@ -37,7 +35,7 @@ ms.openlocfilehash: 25195166f4d9dd668427d6bb5d748ef61273cdee
 * **RefreshFrequencyMins**：设置“请求”服务器后使用。 表示本地配置管理器与“请求”服务器联系以下载当前配置的频率（以分钟为单位）。 可将此值设置为与 ConfigurationModeFrequencyMins 结合使用。 当 RefreshMode 设置为 PULL 时，目标节点按 RefreshFrequencyMins 所设置的时间间隔与“请求”服务器联系并下载当前配置。 一致性引擎将在由 ConfigurationModeFrequencyMins 设置的时间间隔将下载的最新配置应用到目标节点。 若 RefreshFrequencyMins 未设置为 ConfigurationModeFrequencyMins 的整倍数，系统将会向上进行舍入。 默认值为 30。
 * **RefreshMode**：可能的值为 **Push**（默认值）和 **Pull**。 在“推送”配置下，必须在每个目标节点上放置配置文件（可使用任何客户端计算机进行此操作）。 在“请求”模式下，必须为本地配置管理器设置“请求”服务器，以便其联系和访问配置文件。
 
-### 更新本地配置管理器设置的示例
+### <a name="example-of-updating-local-configuration-manager-settings"></a>更新本地配置管理器设置的示例
 
 可以通过在节点块内包含 **LocalConfigurationManager** 块来更新目标节点的本地配置管理器设置，如以下示例中所示。
 
@@ -77,10 +75,4 @@ Set-DscLocalConfigurationManager -Path "c:\users\public\dsc"
 > **注意**：调用以上示例中的配置时，必须为 **Path** 参数指定与 **OutputPath** 参数相同的路径。
 
 若要查看当前本地配置管理器设置，可以使用 **Get-DscLocalConfigurationManager** cmdlet。 如果不带任何参数调用此 cmdlet，默认情况下它将获取其运行于的节点上的本地配置管理器设置。 若要指定另一个节点，请将 **CimSession** 参数用于此 cmdlet。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

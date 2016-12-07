@@ -9,30 +9,28 @@ ms.date: 2016-10-14
 contributor: manikb
 title: "psget_uninstall 脚本"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: af3f3b0056d8f35650323ddbd1ff6979fd3e3a84
-
+ms.openlocfilehash: 9cc6ee62720bfca858e7f783753adabe8a53fb29
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Uninstall-Script
+# <a name="uninstall-script"></a>Uninstall-Script
 
 卸载使用 PowerShellGet 安装的脚本文件。
 
-## 说明
+## <a name="description"></a>说明
 
 Uninstall-Script cmdlet 卸载从联机存储库安装的指定脚本文件。
 
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a>Cmdlet 语法
 
 ```powershell
 Get-Command -Name Uninstall-Script -Module PowerShellGet -Syntax
 ```
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
 
 [Uninstall-Script](http://go.microsoft.com/fwlink/?LinkId=619789)
 
-## 示例命令
+## <a name="example-commands"></a>示例命令
 
 ```powershell
 Get-InstalledScript | Uninstall-Script -WhatIf
@@ -72,10 +70,4 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm
 + CategoryInfo : ObjectNotFound: (Microsoft.Power...lets.GetPackage:GetPackage) [Get-Package], Exception
 + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.GetPackage
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

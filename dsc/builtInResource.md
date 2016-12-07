@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: ea312b4e773cd8b0eceeca123e616957728eb1c6
-
+ms.openlocfilehash: 1cbe3ac8de217d659f717cb960b4b57cb2d4fdd9
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 内置 Windows PowerShell Desired State Configuration 资源
+# <a name="built-in-windows-powershell-desired-state-configuration-resources"></a>内置 Windows PowerShell Desired State Configuration 资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
@@ -22,7 +20,7 @@ Windows PowerShell Desired State Configuration (DSC) 附带有一组内置配置
 * [存档资源](archiveResource.md)
 * [环境资源](environmentResource.md)
 * [文件资源](fileResource.md)
-* [分组资源](groupResource.md)
+* [组资源](groupResource.md)
 * [日志资源](logResource.md)
 * [包资源](packageResource.md)
 * [注册表资源](registryResource.md)
@@ -31,10 +29,4 @@ Windows PowerShell Desired State Configuration (DSC) 附带有一组内置配置
 * [用户资源](userResource.md)
 * [WindowsFeature 资源](windowsfeatureResource.md)
 * [WindowsProcess 资源](windowsProcessResource.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 99c1ea706ca5c3fb008065e98cc99fef463b1011
-ms.openlocfilehash: caf661fe58faf8cf24c789b408505051429df3f4
-
+ms.openlocfilehash: f933d5d821d71a497d20e8ff66ebe26af9661f50
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="troubleshooting-dsc"></a>DSC 故障排除
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 本主题介绍出现问题时 DSC 故障排除的方法。
 
-## <a name="using-getdscconfigurationstatus"></a>使用 Get-DscConfigurationStatus
+## <a name="using-get-dscconfigurationstatus"></a>使用 Get-DscConfigurationStatus
 
 [Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx) cmdlet 从目标节点中获取有关配置状态的信息。 将返一个回富对象，它包含有关配置运行成功与否的高级信息。 你可以深入探究该对象，以查明有关配置运行的详细信息，例如：
 
@@ -622,10 +620,4 @@ onlyProperty                            PSComputerName
 
 ### <a name="other-resources"></a>其他资源
 * [Windows PowerShell Desired State Configuration Cmdlet](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

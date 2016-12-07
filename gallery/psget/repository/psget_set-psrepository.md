@@ -9,30 +9,28 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_set psrepository
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: f53076825f764ff805f2d956eecddbb492f7b694
-
+ms.openlocfilehash: be2c16a79a3e6873c0f7a364092def881d490091
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Set-PSRepository
+# <a name="set-psrepository"></a>Set-PSRepository
 
 Set-PSRepository 为已注册的存储库设置值。
 
-## 说明
+## <a name="description"></a>说明
 
 Set-PSRepository cmdlet 为已注册的模块存储库设置值。
 
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a>Cmdlet 语法
 
 ```powershell
 Get-Command -Name Set-PSRepository -Module PowerShellGet -Syntax
 ```
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
 
 [Set-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517128)
 
-## 示例命令
+## <a name="example-commands"></a>示例命令
 
 ```powershell
 PS C:\> Register-PSRepository -Name myRepository -SourceLocation "https://www.myget.org/F/powershellgetdemo/api/v2" -InstallationPolicy Trusted
@@ -51,7 +49,7 @@ myRepository              Untrusted            https://www.myget.org/F/powershel
 ```
 
 
-### 具有脚本共享支持的 Set-PSRepository cmdlet
+### <a name="set-psrepository-cmdlet-with-script-sharing-support"></a>具有脚本共享支持的 Set-PSRepository cmdlet
 
 使用 Set-PSRepository cmdlet 将 **ScriptSourceLocation** 和 **ScriptPublishLocation** 添加到 PSRepository。
 ```powershell
@@ -74,10 +72,4 @@ ScriptPublishLocation : https://MyGallery.com/api/v2/package/
 ProviderOptions : {}
 
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

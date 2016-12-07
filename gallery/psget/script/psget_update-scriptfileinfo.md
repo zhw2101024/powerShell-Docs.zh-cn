@@ -9,17 +9,15 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_update scriptfileinfo
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 10e88b62b51c9e0d8e7f85ea120bf71b0d910285
-
+ms.openlocfilehash: 7e71e2cbd5ce5bad5899e40f077bf16050dcd763
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Update-ScriptFileInfo
+# <a name="update-scriptfileinfo"></a>Update-ScriptFileInfo
 
 Update-ScriptFileInfo cmdlet 可更新现有的脚本文件元数据。
 
-## 说明
+## <a name="description"></a>说明
 
 Update-ScriptFileInfo cmdlet 更新脚本的信息。
 - Update-ScriptFileInfo cmdlet 仅更新使用 New-ScriptFileInfo cmdlet 创建或具有有效 PSScriptInfo 注释的脚本文件的元数据。
@@ -27,16 +25,16 @@ Update-ScriptFileInfo cmdlet 更新脚本的信息。
 - 如果已指定 –Force，可尝试将元数据添加到并非使用 New-ScriptFileInfo cmdlet 创建的现有脚本文件中。
 - 将脚本元数据预置到现有文件后，如果 Test-ScriptFileInfo 失败，出现分析错误，错误将显示类似“无法将元数据添加到现有文件，可使用 new-scriptfileinfo cmdlet 将元数据添加到并非使用 New-ScriptFileInfo cmdlet 创建的现有脚本文件中”等内容。
 
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a>Cmdlet 语法
 
 ```powershell
 Get-Command -Name Update-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
 
 [Update-Script](http://go.microsoft.com/fwlink/?LinkId=619793)
 
-## 示例命令
+## <a name="example-commands"></a>示例命令
 
 ```powershell
 # Use Update-ScriptFileInfo cmdlet to update the script metadata
@@ -50,7 +48,7 @@ Version Name Author Description
 ```
 
 
-### 将脚本元数据添加到现有脚本文件
+### <a name="adding-the-script-metadata-to-the-existing-script-file"></a>将脚本元数据添加到现有脚本文件
 
 ```powershell
 PS C:\WINDOWS\system32> New-ScriptFileInfo -Description "Script file description." -PassThru
@@ -193,10 +191,4 @@ Function foo
 Foo
 
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

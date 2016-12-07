@@ -7,13 +7,11 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: 67426f6ad72967293f8aee1b3f098afc73067c59
-
+ms.openlocfilehash: a62e258812960ce59f050e59d2ef3acc296663a2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#  <a name="use-the-webbased-windows-powershell-console"></a>使用基于 Web 的 Windows PowerShell 控制台
+#  <a name="use-the-web-based-windows-powershell-console"></a>使用基于 Web 的 Windows PowerShell 控制台
 
 更新时间：2013年 6 月 24日
 
@@ -307,7 +305,7 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
 
 -   登录到 **NoLanguage** 会话配置或 Windows PowerShell Web 访问的受限运行空间的用户不能运行“退出”命令以结束会话。 若要注销，用户应在控制台页面上单击“注销”。
 
--   <span class="label">同时连接到多台目标计算机。</span>   如果网关服务器正在运行 Windows Server 2012，Windows PowerShell Web 访问仅允许每个浏览器会话连接一台远程计算机；它不允许用户只登录一次，即使用独立的浏览器选项卡连接到多台远程计算机。 当你打开新的选项卡或浏览器窗口时，Windows PowerShell Web 访问将提示你断开当前的会话，并启动新的会话，以使你可以连接到新的（或相同的）远程计算机。 但是，如果不同的远程计算机需要两个或更多独立会话，Internet Explorer 中的某一功能可让你创建新的会话。 若要在 Internet Explorer 中启动新的浏览器会话，请按下 **ALT**，打开“文件”菜单，然后选择“新建会话”。 随后在新的会话中打开 Windows PowerShell Web 访问网站，登录即可访问其他远程计算机。
+-   <span class="label">同时连接到多台目标计算机。</span>   如果网关服务器正在运行 Windows Server 2012，Windows PowerShell Web 访问仅允许每个浏览器会话连接一台远程计算机；它不允许用户只登录一次，即使用独立的浏览器选项卡连接到多台远程计算机。 当你打开新的选项卡或浏览器窗口时，Windows PowerShell Web 访问将提示你断开当前的会话，并启动新的会话，以使你可以连接到新的（或相同的）远程计算机。 但是，如果不同的远程计算机需要两个或更多独立会话，Internet Explorer 中的某一功能可让你创建新的会话。 若要在 Internet Explorer 中启动新的浏览器会话，请按下 **ALT**，打开“文件”菜单，然后选择“新建会话”。 随后在新的会话中打开 Windows PowerShell Web 访问网站，登录即可访问其他远程计算机。
 
     当 Windows PowerShell Web 访问网关在 Windows Server 2012 R2 上运行时，用户可以在不同的浏览器选项卡中打开与远程计算机之间的多个连接。 如果想要使用基于 Web 的 Windows PowerShel 控制台打开与远程计算机之间的多个连接，请咨询 Windows PowerShell Web 访问网关管理员，了解网关服务器是否支持此功能。
 
@@ -395,10 +393,4 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
 
 链接到此站点或从中引用的第三方脚本或代码由拥有此类代码的第三方（而非 Microsoft）授权给你。 请参阅 ASP.NET Ajax CDN 使用条款，网址为 http://www.asp.net/ajaxlibrary/CDN.ashx。
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

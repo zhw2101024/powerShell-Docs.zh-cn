@@ -1,4 +1,4 @@
-# 用于模块管理的 PowerShellGet Cmdlet
+# <a name="powershellget-cmdlets-for-module-management"></a>用于模块管理的 PowerShellGet Cmdlet
 
 - [Find-DscResource](https://technet.microsoft.com/en-us/library/mt654006.aspx)
 - [Find-Module](https://technet.microsoft.com/en-us/library/dn807167.aspx)
@@ -24,16 +24,16 @@
 - [Update-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653991.aspx)
 - [Unregister-PSRepository](https://technet.microsoft.com/en-us/library/dn807161.aspx)
 
-## 模块依赖项安装支持、Get-InstalledModule cmdlet 和 Uninstall-Module cmdlet
+## <a name="module-dependency-installation-support-get-installedmodule-and-uninstall-module-cmdlets"></a>模块依赖项安装支持、Get-InstalledModule cmdlet 和 Uninstall-Module cmdlet
 - 在 Publish-Module cmdlet 中添加了模块依赖项填充。 在准备要发布的模块依赖项列表时使用的 PSModuleInfo 的 RequiredModules 和 NestedModules 列表。
 - 在 Install-Module cmdlet 和 Update-Module cmdlet 中添加了依赖项安装支持。 默认情况下已安装和更新模块依赖项。
 - 将 -IncludeDependencies 参数添加到了 Find-Module cmdlet 以在结果中包含模块依赖项。
 - 在 Find-Module cmdlet、Install-Module cmdlet 和 Update-Module cmdlet 中添加了 -MaximumVersion 支持。
 - 添加了新的 Get-InstalledModule cmdlet 和 Uninstall-Module cmdlet。
 
-## 具有模块依赖项支持的 PowerShellGet cmdlet 演示：
+## <a name="powershellget-cmdlets-demo-with-module-dependencies-support"></a>具有模块依赖项支持的 PowerShellGet cmdlet 演示：
 
-### 确保模块依赖项在存储库中可用：
+### <a name="ensure-that-module-dependencies-are-available-on-the-repository"></a>确保模块依赖项在存储库中可用：
 ```powershell
 Find-Module -Repository LocalRepo -Name RequiredModule1,RequiredModule2,RequiredModule3,NestedRequiredModule1,NestedRequiredModule2,NestedRequiredModule3 | Sort-Object -Property Name
 
@@ -47,7 +47,7 @@ Version    Name                     Repository    Description
 2.0        RequiredModule3          LocalRepo     RequiredModule3 module
 ```
 
-### 创建一个模块，其中依赖项在其模块清单的 RequiredModules 和 NestedModules 属性中进行指定。
+### <a name="create-a-module-with-dependencies-that-are-specified-in-the-requiredmodules-and-nestedmodules-properties-of-its-module-manifest"></a>创建一个模块，其中依赖项在其模块清单的 RequiredModules 和 NestedModules 属性中进行指定。
 ```powershell
 $RequiredModules = @('RequiredModule1',
                      @{ModuleName = 'RequiredModule2'; ModuleVersion = '1.5'; },
@@ -61,12 +61,12 @@ New-ModuleManifest -Path 'C:\Program Files\WindowsPowerShell\Modules\TestDepWith
 -NestedModules $NestedRequiredModules -RequiredModules $RequiredModules -ModuleVersion "1.0" -Description "TestDepWithNestedRequiredModules1 module"
 ```
 
-###  将具有依赖项的 TestDepWithNestedRequiredModules1 模块的两个版本（**“1.0”**和**“2.0”**）发布到存储库中。
+###  <a name="publish-two-versions-10-and-20-of-the-testdepwithnestedrequiredmodules1-module-with-dependencies-to-the-repository"></a>将具有依赖项的 TestDepWithNestedRequiredModules1 模块的两个版本（**“1.0”**和**“2.0”**）发布到存储库中。
 ```powershell
 Publish-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -NuGetApiKey "MyNuGet-ApiKey-For-LocalRepo"
 ```
 
-###  通过指定 -IncludeDependencies 查找 TestDepWithNestedRequiredModules1 模块及其依赖项。
+###  <a name="find-the-testdepwithnestedrequiredmodules1-module-with-its-dependencies-by-specifying--includedependencies"></a>通过指定 -IncludeDependencies 查找 TestDepWithNestedRequiredModules1 模块及其依赖项。
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo –IncludeDependencies -MaximumVersion "1.0"
 
@@ -81,7 +81,7 @@ Version    Name                                Repository  Description
 2.0        NestedRequiredModule3               LocalRepo   NestedRequiredModule3 module
 ``` 
 
-### 使用 Find-Module 元数据查找模块依赖项。
+### <a name="use-find-module-metadata-to-find-the-module-dependencies"></a>使用 Find-Module 元数据查找模块依赖项。
 ```powershell
 $psgetModuleInfo = Find-Module -Repository MSPSGallery -Name ModuleWithDependencies2
 $psgetModuleInfo.Dependencies.ModuleName
@@ -120,7 +120,7 @@ RequiredVersion 2.5
 CanonicalId PowerShellGet:NestedRequiredModule3/2.5#http://psget/psGallery/api/v2/
 ```
 
-###  安装 TestDepWithNestedRequiredModules1 模块及其依赖项。
+###  <a name="install-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>安装 TestDepWithNestedRequiredModules1 模块及其依赖项。
 ```powershell
 Install-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -RequiredVersion "1.0"
 Get-InstalledModule
@@ -136,7 +136,7 @@ Version    Name                    Repository   Description
 1.0        TestDepWithNestedRequiredModules1  LocalRepo    TestDepWithNestedRequiredModules1 module
 ```
 
-###  更新 TestDepWithNestedRequiredModules1 模块及其依赖项。
+###  <a name="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>更新 TestDepWithNestedRequiredModules1 模块及其依赖项。
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -AllVersions
 
@@ -162,7 +162,7 @@ Version    Name                                Repository  Description
 2.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
 ```
 
-###  运行 Uninstall-Module cmdlet 以卸载通过使用 PowerShellGet 安装的模块。
+###  <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a>运行 Uninstall-Module cmdlet 以卸载通过使用 PowerShellGet 安装的模块。
 如果任何其他模块依赖于你要删除的模块，则 PowerShellGet 会引发错误。
 ```powershell
 Get-InstalledModule -Name RequiredModule1 | Uninstall-Module
@@ -175,7 +175,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\PSGet.psm1:1303 char
 + FullyQualifiedErrorId : UnableToUninstallAsOtherModulesNeedThisModule,Uninstall-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.UninstallPackage
 ```
 
-## Save-Module cmdlet
+## <a name="save-module-cmdlet"></a>Save-Module cmdlet
 ```powershell
 Save-Module -Repository MSPSGallery -Name ModuleWithDependencies2 -Path C:\MySavedModuleLocation
 dir C:\MySavedModuleLocation
@@ -193,7 +193,7 @@ d----- 4/21/2015 5:40 PM RequiredModule2
 d----- 4/21/2015 5:40 PM RequiredModule3
 ```
 
-## Update-ModuleManifest cmdlet
+## <a name="update-modulemanifest-cmdlet"></a>Update-ModuleManifest cmdlet
 此新的 cmdlet 用于通过输入属性值帮助更新清单文件。 它会接收 Test-ModuleManifest 接收的所有参数。
 
 我们注意到，许多模块作者想要在诸如 FunctionsToExport 和 CmdletsToExport 等导出值中指定“\*”。在将模块发布到 PowerShell 库期间，未指定的函数和命令将无法正确填充到库上。 因此，我们建议模块作者使用合适的值更新自己的清单。
@@ -277,8 +277,3 @@ PrivateData = @{
 } # End of PrivateData hashtable
 ```
 ***注意：***DscResourcesToExport 仅在最新的 PowerShell 5.0 版本上才受支持。 如果你正在之前的 PowerShell 版本上运行，我们将无法更新字段。
-
-
-<!--HONumber=Aug16_HO3-->
-
-

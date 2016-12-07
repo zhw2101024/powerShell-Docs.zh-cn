@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-translationtype: Human Translation
-ms.sourcegitcommit: c1e210afa664304fa38f7dead444ab4a206be64f
-ms.openlocfilehash: f560b955f8f817caf96dba40900844b98a0e92a9
-
+ms.openlocfilehash: 9510e13156b0dd0da8e5c4f94cfaf7b3152f3ad0
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell 系统要求
 本主题列出了用于 Windows PowerShell 3.0、Windows PowerShell 4.0 和 Windows PowerShell 5.0，以及用于特殊功能（如 Windows PowerShell 集成脚本环境 (ISE)、CIM 命令和工作流）的系统要求。
 
@@ -70,7 +68,7 @@ Windows PowerShell 3.0 需要完全安装 Microsoft .NET Framework 4。 默认�
 ## <a name="windows-management-framework-40"></a>Windows Management Framework 4.0
 Windows PowerShell 5.0 要求在 Windows Server 2008 R2 SP1 和 Windows 7 SP1 上预先安装 Windows Management Framework 4.0。
 
-## <a name="wsmanagement-30"></a>WS-Management 3.0
+## <a name="ws-management-30"></a>WS-Management 3.0
 Windows PowerShell 3.0 和 Windows PowerShell 4.0 需要支持 WinRM 服务和 WSMan 协议的 WS-Management 3.0。 Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、Windows Management Framework 4.0 和 Windows Management Framework 3.0 中包含此程序。
 
 ## <a name="windows-management-instrumentation-30"></a>Windows Management Instrumentation 3.0
@@ -130,10 +128,4 @@ Windows PowerShell 2.0、Windows PowerShell 3.0 和 Windows PowerShell 4.0 在 W
 - [Windows PowerShell 入门](../getting-started/Getting-Started-with-Windows-PowerShell.md)
 - [安装 Windows PowerShell](Installing-Windows-PowerShell.md)
 - [启动 Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
-
-
-
-
-<!--HONumber=Oct16_HO4-->
-
 
