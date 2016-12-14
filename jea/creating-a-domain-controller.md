@@ -8,24 +8,22 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "创建域控制器"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: d4a72a7c5883b1d3ba8de3dbc9cfe016a6fb3498
-ms.openlocfilehash: 8473eb668e4da5bab01c2f2b7647cbced413bd22
-
+ms.openlocfilehash: 80b957ed666ca626c6083041cf99c263e2e0dc27
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-### 创建域控制器
+### <a name="creating-a-domain-controller"></a>创建域控制器
 
 本文档假定你的计算机已加入域。
 如果你当前尚未加入域，这一部分可以帮助你使用 DSC 快速建立起域控制器。
 
-#### 必备条件
+#### <a name="prerequisites"></a>必备条件
 
 1.  计算机位于内部网络上
 2.  计算机未加入到现有域
 3.  计算机正在运行 Windows Server 2016 或安装了 WMF 5.0
 
-#### 安装 xActiveDirectory
+#### <a name="install-xactivedirectory"></a>安装 xActiveDirectory
 如果你的计算机具有有效的 Internet 连接，请在提升的 PowerShell 窗口中输入以下命令：
 ```PowerShell
 Install-Module xActiveDirectory -Force
@@ -37,9 +35,9 @@ Install-Module xActiveDirectory -Force
 Get-Module xActiveDirectory -ListAvailable
 ```
 
-#### 使用 DSC 设置域
+#### <a name="set-up-a-domain-with-dsc"></a>使用 DSC 设置域
 将以下脚本复制到 PowerShell 中，使你的计算机成为新域中的域控制器。
-**作者注释：不使用提供的凭据将导致已知问题。  为了安全起见，请勿忘记你的本地管理员密码。**
+**作者注释：不使用提供的凭据将导致已知问题。为了安全起见，请勿忘记本地管理员密码。**
 
 ```PowerShell
 Set-Item WSMan:\localhost\Client\TrustedHosts -Value $env:COMPUTERNAME -Force
@@ -115,7 +113,7 @@ Start-DSCConfiguration -path .\DomainController -ComputerName $env:Computername 
 你的计算机将重启数次。
 看到包含“Domain has been created.”的名为“C:\temp.txt”的文件，表示过程已完成。
 
-#### 设置用户和组
+#### <a name="set-up-users-and-groups"></a>设置用户和组
 以下命令将在你的域中设置“操作员和技术支持人员”组以及身为该组成员的相应非管理员用户。
 ```PowerShell
 # Make Groups
@@ -134,10 +132,4 @@ Enable-ADAccount -Identity $HelpDeskUser
 Add-ADGroupMember -Identity $NonAdminOperatorGroup -Members $OperatorUser
 Add-ADGroupMember -Identity $NonAdminHelpDeskGroup -Members $HelpDeskUser
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

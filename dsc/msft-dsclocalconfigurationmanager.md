@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 26db4a48af3aa3d6a9a2054fb85da8779626f284
 ms.openlocfilehash: b9cb89bb120151df69e3cb26b50c3a0d15c23711
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# MSFT_DSCLocalConfigurationManager 类
+# <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类
 
 控制配置文件的状态并使用配置代理应用配置的本地配置管理器 (LCM)。
 
 以下语法从托管对象格式 (MOF) 代码中简化，包括所有继承的属性。
 
-## 语法
+## <a name="syntax"></a>语法
 ------
 
 ``` syntax
@@ -29,14 +27,14 @@ class MSFT_DSCLocalConfigurationManager
 };
 ```
 
-## 成员
+## <a name="members"></a>成员
 -------
 
 **MSFT_DSCLocalConfigurationManager** 类拥有以下成员：
 
 -   [Methods][]
 
-### 方法
+### <a name="methods"></a>方法
 
 **MSFT_DSCLocalConfigurationManager** 类拥有这些方法。
 
@@ -66,7 +64,7 @@ class MSFT_DSCLocalConfigurationManager
 
  
 
-## 要求
+## <a name="requirements"></a>要求
 ------------
 >**MOF：** DscCore.mof
 
@@ -78,11 +76,5 @@ class MSFT_DSCLocalConfigurationManager
 
  
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

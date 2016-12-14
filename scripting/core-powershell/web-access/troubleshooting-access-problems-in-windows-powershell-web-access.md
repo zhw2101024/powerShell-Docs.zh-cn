@@ -7,13 +7,11 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: 3d2eb84bf706c935e978e78b84e221f9f68042f8
-
+ms.openlocfilehash: e22fa0d8712321e8b0f61b849d46c0c610049c86
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#  Windows PowerShell Web 访问中的访问问题疑难解答
+#  <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Windows PowerShell Web 访问中的访问问题疑难解答
 
 更新时间： 2013年 6 月 24日
 
@@ -69,7 +67,7 @@ ms.openlocfilehash: 3d2eb84bf706c935e978e78b84e221f9f68042f8
 </tr>
 <tr class="odd">
 <td><p>无法连接到远程工作组计算机</p></td>
-<td><p>如果目标计算机在工作组中，则使用以下语法，提供你的用户名，并且登录到计算机：&lt;<em>workgroup_name</em>&gt;\&lt;<em>user_name</em>&gt;</p></td>
+<td><p>如果目标计算机在工作组中，则使用以下语法，提供用户名，并且登录到计算机：&lt;<em>workgroup_name</em>&gt;\&lt;<em>user_name</em>&gt;</p></td>
 </tr>
 <tr class="even">
 <td><p>找不到 Web 服务器 (IIS) 管理工具，即使已安装了角色</p></td>
@@ -152,15 +150,15 @@ ms.openlocfilehash: 3d2eb84bf706c935e978e78b84e221f9f68042f8
 
 更多反馈？
 
-<span class="stdr-count"><span class="stdr-charcnt">剩余 1500</span> 个字符</span> 提交 跳过此部分
+剩余 <span class="stdr-count"><span class="stdr-charcnt">1500</span> 个字符</span>提交，跳过此部分
 
 <span class="stdr-thankyou">谢谢！</span> <span class="stdr-appreciate">我们非常感谢你的反馈意见。</span>
 
-[管理你的个人资料](https://social.technet.microsoft.com/profile)
+[管理个人资料](https://social.technet.microsoft.com/profile)
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> 站点反馈</a>站点反馈
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"><img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /></span>站点反馈</a>站点反馈
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 
@@ -193,10 +191,4 @@ ms.openlocfilehash: 3d2eb84bf706c935e978e78b84e221f9f68042f8
 
 链接到此站点或从中引用的第三方脚本或代码由拥有此类代码的第三方（而非 Microsoft）授权给你。 请参阅 ASP.NET Ajax CDN 使用条款，网址为 http://www.asp.net/ajaxlibrary/CDN.ashx。
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
-
-
-
-
-<!--HONumber=Oct16_HO1-->
-
 

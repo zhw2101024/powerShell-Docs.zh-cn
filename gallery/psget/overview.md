@@ -9,21 +9,13 @@ ms.date: 2016-10-14
 contributor: manikb
 title: "概述"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: e2f00a4ec1e287471d9c7c1c5e95d6c7111e5bf1
-
+ms.openlocfilehash: 11861846269c0588bd8ef3bb556f7c2d01bed0a5
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# PowerShellGet 概述
+# <a name="powershellget-overview"></a>PowerShellGet 概述
 
 PowerShellGet 模块包含用于发现、安装、更新和发布来自 https://www.PowerShellGallery.com 和其他专用存储库的模块、DSC 资源、角色功能和脚本等 PowerShell 项目的 cmdlet。
 
-## [PowerShellGet cmdlet 参考](./psget_cmdlets_reference.md)
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
+## <a name="powershellget-cmdlet-referencepsgetcmdletsreferencemd"></a>[PowerShellGet cmdlet 参考](./psget_cmdlets_reference.md)
 

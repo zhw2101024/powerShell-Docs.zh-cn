@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: be2141330dda803a22fdce6d65a1e379adf14fed
-
+ms.openlocfilehash: 4478806e46c9c6cdc314b1ecadd8554d6558e8f5
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 使用资源设计器工具
+# <a name="using-the-resource-designer-tool"></a>使用资源设计器工具
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
@@ -23,7 +21,7 @@ ms.openlocfilehash: be2141330dda803a22fdce6d65a1e379adf14fed
 
 >**请注意**：**Install-Module** 包含在 **PowerShellGet** 模块中，后者纳入 PowerShell 5.0。 可在 [PackageManagement PowerShell 模块预览](https://www.microsoft.com/en-us/download/details.aspx?id=49186)中下载适用于 PowerShell 3.0 和 4.0 的 **PowerShellGet**。
 
-## 创建资源属性
+## <a name="creating-resource-properties"></a>创建资源属性
 我们首先要确定资源将公开的属性。 在此示例中，我们将通过以下属性来定义 Active Directory 用户。
  
 参数名称  说明
@@ -41,7 +39,7 @@ PS C:\> $DomainCredential = New-xDscResourceProperty –Name DomainCredential-Ty
 PS C:\> $Password = New-xDscResourceProperty –Name Password -Type PSCredential -Attribute Write
 ```
 
-## 创建资源
+## <a name="create-the-resource"></a>创建资源
 
 创建好资源属性后，我们就可以调用 **New-xDscResource** cmdlet 来创建资源。 **New-xDscResource** cmdlet 采用了属性列表作为参数。 它还采用了应将模块创建于的路径、新资源的名称以及包含它的模块名称。 下面的 PowerShell 命令可以创建资源。
 
@@ -164,7 +162,7 @@ $result
 Export-ModuleMember -Function *-TargetResource
 ```
 
-## 更新资源
+## <a name="updating-the-resource"></a>更新资源
 
 如果需要添加或修改资源的参数列表，可以调用 **Update-xDscResource** cmdlet。 该 cmdlet 将使用新参数列表更新资源。 如果你已在资源脚本中添加逻辑，它将保持不变。
 
@@ -175,21 +173,15 @@ PS C:\> $lastLogon = New-xDscResourceProperty –Name LastLogon –Type Hashtabl
 PS C:\> Update-xDscResource –Name ‘Demo_ADUser’ –Property $UserName, $Ensure, $DomainCredential, $Password, $lastLogon -Force
 ```
 
-## 测试资源架构
+## <a name="testing-a-resource-schema"></a>测试资源架构
 
 资源设计器工具还公开了一个 cmdlet，可用于测试手动编写的 MOF 架构的有效性。 调用 **Test-xDscSchema** cmdlet，将 MOF 资源架构的路径作为参数传递。 该 cmdlet 将输出架构中的任何错误。
 
-### 另请参阅
+### <a name="see-also"></a>另请参阅
 
-#### 概念
+#### <a name="concepts"></a>概念
 [构建自定义 Windows PowerShell Desired State Configuration 资源](authoringResource.md)
 
-#### 其他资源
+#### <a name="other-resources"></a>其他资源
 [xDscResourceDesigner 模块](https://powershellgallery.com/packages/xDscResourceDesigner)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

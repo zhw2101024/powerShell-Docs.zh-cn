@@ -8,28 +8,20 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 71a727b5-49a5-47a9-8034-161c86cf042b
-translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 249a0ece77a11fd9aa54a6ff4170e44f42b377c9
-
+ms.openlocfilehash: f1c54761db169a3f79efb06124be916185c3fb28
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Microsoft.PowerShell.Archive 模块
+# <a name="microsoftpowershellarchive-module"></a>Microsoft.PowerShell.Archive 模块
 本节包含有关与 Windows PowerShell **Microsoft.PowerShell.Archive** 模块一起安装的 cmdlet 的帮助主题。 存档模块包含允许你创建和提取存档或 ZIP 文件的 cmdlet。
 
-## Microsoft.PowerShell.Archive cmdlet
+## <a name="microsoftpowershellarchive-cmdlets"></a>Microsoft.PowerShell.Archive cmdlet
 
 |||
 |-|-|
 |[Compress-Archive](http://technet.microsoft.com/library/dn841358.aspx)|将一个或多个指定的文件或文件夹压缩到一个存档文件中。|
 |[Expand-Archive](http://technet.microsoft.com/library/dn841359.aspx)|将存档（或 ZIP）文件的内容提取到指定的目标。|
 
-## 另请参阅
-[Windows PowerShell 中的核心模块](http://technet.microsoft.com/library/hh847741.aspx)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+## <a name="see-also"></a>另请参阅
+- [Windows PowerShell 中的核心模块](http://technet.microsoft.com/library/hh847741.aspx)
 

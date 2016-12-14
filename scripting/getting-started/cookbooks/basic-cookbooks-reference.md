@@ -7,22 +7,20 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: a5bfad60f1cb254f1899723c40751cd8b96ef54e
-
+ms.openlocfilehash: 4de37228686c8515ca697dc9c7bc4779b4dd9d58
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#  基本 Cookbook 参考
+#  <a name="basic-cookbooks-reference"></a>基本 Cookbook 参考
 
 -  [更改计算机状态](Changing-Computer-State.md)
 -  [收集有关计算机的信息](Collecting-Information-About-Computers.md)
 -  [兼容性别名](Appendix-1---Compatibility-Aliases.md)
--  [创建 .NET 和 COM 对象“New Object” ](Creating-.NET-and-COM-Objects--New-Object-.md)
+-  [创建 .NET 和 COM 对象 (New-Object)](Creating-.NET-and-COM-Objects--New-Object-.md)
 -  [创建自定义输入框](Creating-a-Custom-Input-Box.md)
 -  [创建自定义 PowerShell 快捷方式](Appendix-2---Creating-a-Custom-PowerShell-Shortcut.md)
 -  [创建图形日期选取器](Creating-a-Graphical-Date-Picker.md)
--  [获取 WMI 对象“Get WmiObject” ](Getting-WMI-Objects--Get-WmiObject-.md)
+-  [获取 WMI 对象 (Get WmiObject)](Getting-WMI-Objects--Get-WmiObject-.md)
 -  [管理当前位置](Managing-Current-Location.md)
 -  [使用 Process Cmdlet 管理进程](Managing-Processes-with-Process-Cmdlets.md)
 -  [管理服务](Managing-Services.md)
@@ -33,14 +31,14 @@ ms.openlocfilehash: a5bfad60f1cb254f1899723c40751cd8b96ef54e
 -  [执行网络任务](Performing-Networking-Tasks.md)
 -  [PowerShellGet 模块](PowerShellGet-Module.md)
 -  [使用 Out Cmdlet 重定向数据](Redirecting-Data-with-Out---Cmdlets.md)
--  [从管道删除对象“Where object” ](Removing-Objects-from-the-Pipeline--Where-Object-.md)
--  [为多个对象重复执行任务“ForEach Object” ](Repeating-a-Task-for-Multiple-Objects--ForEach-Object-.md)
+-  [从管道中删除对象（Where 对象）](Removing-Objects-from-the-Pipeline--Where-Object-.md)
+-  [为多个对象重复执行任务（ForEach 对象）](Repeating-a-Task-for-Multiple-Objects--ForEach-Object-.md)
 -  [从列表框中选择项](Selecting-Items-from-a-List-Box.md)
--  [选择对象的各个部分“Select Object” ](Selecting-Parts-of-Objects--Select-Object-.md)
+-  [选择对象部件（Select 对象）](Selecting-Parts-of-Objects--Select-Object-.md)
 -  [对对象进行排序](Sorting-Objects.md)
 -  [使用格式命令更改输出视图](Using-Format-Commands-to-Change-Output-View.md)
 -  [使用静态类和方法](Using-Static-Classes-and-Methods.md)
--  [查看对象结构“Get Member” ](Viewing-Object-Structure--Get-Member-.md)
+-  [查看对象结构 (Get Member)](Viewing-Object-Structure--Get-Member-.md)
 -  [使用文件和文件夹](Working-with-Files-and-Folders.md)
 -  [使用文件、文件夹和注册表项](Working-With-Files-Folders-and-Registry-Keys.md)
 -  [使用对象](Working-with-Objects.md)
@@ -48,10 +46,4 @@ ms.openlocfilehash: a5bfad60f1cb254f1899723c40751cd8b96ef54e
 -  [使用注册表条目](Working-with-Registry-Entries.md)
 -  [使用注册表项](Working-with-Registry-Keys.md)
 -  [使用软件安装](Working-with-Software-Installations.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

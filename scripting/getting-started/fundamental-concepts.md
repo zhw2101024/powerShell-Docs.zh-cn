@@ -7,13 +7,11 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: b3b97b9dcf01094fe1fadbac355c92df35feaee2
-
+ms.openlocfilehash: edd8614879c1781a065eb76025799893f10cc1ab
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#  基本概念
+#  <a name="fundamental-concepts"></a>基本概念
 
 -  [关于 Windows PowerShell](fundamental/About-Windows-PowerShell.md)
 -  [探究 Windows PowerShell ISE](fundamental/Exploring-the-Windows-PowerShell-ISE.md)
@@ -29,11 +27,5 @@ ms.openlocfilehash: b3b97b9dcf01094fe1fadbac355c92df35feaee2
 -  [使用 Windows PowerShell 进行管理](fundamental/Using-Windows-PowerShell-for-Administration.md)
 -  [使用 Windows PowerShell](fundamental/Using-Windows-PowerShell.md)
 -  [Windows PowerShell 基础知识](fundamental/Windows-PowerShell-Basics.md)
--  [Windows PowerShell 集成脚本环境 ISE ](fundamental/Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+-  [Windows PowerShell 集成脚本环境 (ISE)](fundamental/Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md)
 

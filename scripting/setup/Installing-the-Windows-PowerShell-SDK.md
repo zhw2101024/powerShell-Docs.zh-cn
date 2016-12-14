@@ -8,17 +8,15 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: c3636b45-61aa-4720-85f0-58312c4fc8f9
-translationtype: Human Translation
-ms.sourcegitcommit: 7caac42751c580d588fcf19db7253c8b75d6c865
-ms.openlocfilehash: 7af27dc9bd8e93d1df5258b0d8df8af12726f568
-
+ms.openlocfilehash: 8df8b9bb74eba5921263ad9d802dcece41261f9a
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 安装 Windows PowerShell SDK
+# <a name="installing-the-windows-powershell-sdk"></a>安装 Windows PowerShell SDK
 
 以下主题介绍了如何在不同版本的 Windows 中安装 PowerShell SDK。
 
-## 安装用于 Windows 8 和 Windows Server 2012 的 Windows PowerShell 3.0 SDK
+## <a name="installing-windows-powershell-30-sdk-for-windows-8-and-windows-server-2012"></a>安装用于 Windows 8 和 Windows Server 2012 的 Windows PowerShell 3.0 SDK
 
 Windows PowerShell 3.0 随 Windows 8 和 Windows Server 2012 自动安装。
 此外，可以下载并安装 Windows PowerShell 3.0 的引用程序集作为 Windows 8 SDK 的一部分。
@@ -32,33 +30,33 @@ Windows PowerShell 3.0 随 Windows 8 和 Windows Server 2012 自动安装。
 有关如何下载 Windows PowerShell 2.0 SDK 的详细信息，请参阅后文。
 （请注意，虽然 2.0 代码示例与 Windows 8 和 Windows PowerShell 3.0 兼容，但不能在 Windows 8 平台上安装 Windows PowerShell 2.0。）
 
-##安装用于 Windows 7 和 Windows Server 2008 R2 的 Windows PowerShell 3.0 SDK
+##<a name="installing-windows-powershell-30-sdk-for-windows-7-and-windows-server-2008-r2"></a>安装用于 Windows 7 和 Windows Server 2008 R2 的 Windows PowerShell 3.0 SDK
 
 Windows 7 和 Windows Server 2008 R2 将自动安装 PowerShell 2.0。
 此外，你还可以在这些系统上安装 PowerShell 3.0。
 （有关详细信息，请参阅[安装 Windows PowerShell](Installing-Windows-PowerShell.md)。）。
 如上所述，你还可以在 Windows 7 和 Windows Server 2008 R2 中安装 Windows 8 SDK。
 
-## 安装用于 Windows 7、Vista、XP、Server 2003 和 Server 2008 的 Windows PowerShell 2.0 SDK
+## <a name="installing-windows-powershell-20-sdk-for-windows-7-vista-xp-server-2003-and-server-2008"></a>安装用于 Windows 7、Vista、XP、Server 2003 和 Server 2008 的 Windows PowerShell 2.0 SDK
 
 Windows PowerShell 2.0 SDK 提供了用于编写 cmdlet、提供程序和托管应用程序所需的引用程序集，还提供了 C# 示例代码，开始编写代码时你可以使用此示例代码作为起点。
 
 若要安装此 SDK，请参阅 [Windows PowerShell 2.0 SDK](http://go.microsoft.com/fwlink/?LinkId=184611)。
 
-## 引用程序集
+## <a name="reference-assemblies"></a>引用程序集
 
 默认情况下，引用程序集安装在以下位置：`c:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\V1.0`。
 
 > **请注意**：无法将针对 Windows PowerShell 2.0 程序集编译的代码加载到 Windows PowerShell 1.0 安装中。
 >但可以将针对 Windows PowerShell 1.0 程序集编译的代码加载到 Windows PowerShell 2.0 安装中。
 
-## 示例
+## <a name="samples"></a>示例
 
 默认情况下，代码示例安装在以下位置：`C:\Program Files\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`。
 
 以下部分提供对每个示例的作用的简要描述。
 
-## Cmdlet 示例
+## <a name="cmdlet-samples"></a>Cmdlet 示例
 **GetProcessSample01**
 
 演示如何编写获取本地计算机上所有进程的简单 cmdlet。
@@ -105,7 +103,7 @@ cmdlet 可接受一个或多个进程名称，并返回匹配的进程。
 
 演示如何声明参数集（即 cmdlet 将其作为输入的对象）以及如何指定要使用的默认参数集。
 
-## 远程示例
+## <a name="remoting-samples"></a>远程示例
 
 **RemoteRunspace01**
 
@@ -127,7 +125,7 @@ cmdlet 可接受一个或多个进程名称，并返回匹配的进程。
 
 演示如何查看现有 .NET 类，并确保将此类和派生类的实例反序列化（解除冻结）为实时 .NET 对象。
 
-## 事件示例
+## <a name="event-samples"></a>事件示例
 
 **Event01**
 
@@ -138,7 +136,7 @@ cmdlet 可接受一个或多个进程名称，并返回匹配的进程。
 演示如何接收在远程计算机上生成的 Windows PowerShell 事件的通知。
 它使用通过 [Runspace](https://technet.microsoft.com/library/system.management.automation.runspaces.runspace.aspx) 类公开的 PSEventReceived 事件。
 
-## 托管应用程序示例
+## <a name="hosting-application-samples"></a>托管应用程序示例
 
 **Runspace01**
 
@@ -204,7 +202,7 @@ cmdlet 可接受一个或多个进程名称，并返回匹配的进程。
 
 演示如何使用运行空间池同时运行多个命令。
 
-## 主机示例
+## <a name="host-samples"></a>主机示例
 
 **Host01**
 
@@ -236,7 +234,7 @@ cmdlet 可接受一个或多个进程名称，并返回匹配的进程。
 演示如何生成基于控制台的交互式主机应用程序，该应用程序可从命令行读取并执行命令，然后将结果显示在控制台中。
 此外，此示例还使用了 Tokenizer API 来指定用户输入的文本颜色。
 
-## 提供程序示例
+## <a name="provider-samples"></a>提供程序示例
 
 **AccessDBProviderSample01**
 
@@ -271,9 +269,3 @@ cmdlet 可接受一个或多个进程名称，并返回匹配的进程。
 演示如何覆盖内容方法以支持对 Clear-Content、Get-Content 和 Set-Content cmdlet 的调用。
 当用户需要管理数据存储区中的项的内容时，应实现这些方法。
 此示例中的提供程序派生自 [NavigationCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider.aspx) 类，并实现 [IContentCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.icontentcmdletprovider.aspx) 接口。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

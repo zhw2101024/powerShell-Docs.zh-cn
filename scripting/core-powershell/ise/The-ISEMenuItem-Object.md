@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: a16660bd-0aee-46fd-ac17-3f022165d089
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: 43477d0742612f331f74833a1d70e69692b5b8e7
-
+ms.openlocfilehash: a1456065c707e5229fd383a9e39d24f9436d4a99
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# ISEMenuItem 对象
+# <a name="the-isemenuitem-object"></a>ISEMenuItem 对象
   **ISEMenuItem** 对象是 Microsoft.PowerShell.Host.ISE.ISEMenuItem 类的实例。 “**加载项**”菜单上的所有对象都是 **Microsoft.PowerShell.Host.ISE.ISEMenuItem** 类的实例。
 
-## “属性”
+## <a name="properties"></a>“属性”
 
-###  <a name="DisplayName"></a> DisplayName
+###  <a name="a-namedisplaynamea-displayname"></a><a name="DisplayName"></a> DisplayName
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取菜单项的显示名称。
@@ -32,7 +30,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName
 
 ```
 
-###  <a name="Action"></a> 操作
+###  <a name="a-nameactiona-action"></a><a name="Action"></a> 操作
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取脚本块。 单击菜单项时，它将调用该操作。
@@ -47,7 +45,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action.Invoke()
 ```
 
-###  <a name="Shortcut"></a> 快捷方式
+###  <a name="a-nameshortcuta-shortcut"></a><a name="Shortcut"></a> 快捷方式
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取菜单项的 Windows 输入键盘快捷方式。
@@ -59,7 +57,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Al
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ```
 
-###  <a name="Submenus"></a> 子菜单
+###  <a name="a-namesubmenusa-submenus"></a><a name="Submenus"></a> 子菜单
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取菜单项的[子菜单列表](The-ISEMenuItemCollection-Object.md)。
@@ -71,7 +69,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Al
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus
 ```
 
-## 脚本示例
+## <a name="scripting-example"></a>脚本示例
  若要更好地了解加载项菜单及其可编写脚本属性的使用，请通读下面的脚本示例。
 
 ```
@@ -89,16 +87,10 @@ $parentAdded.SubMenus.Add("_Dir",{dir},"Alt+D")
 
 ```
 
-## 另请参阅
- [ISEMenuItemCollection 对象](The-ISEMenuItemCollection-Object.md) 
- [Windows PowerShell ISE 脚本对象模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE 对象模型参考](Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [ISE 对象模型层次结构](The-ISE-Object-Model-Hierarchy.md)
+## <a name="see-also"></a>另请参阅
+- [ISEMenuItemCollection 对象](The-ISEMenuItemCollection-Object.md) 
+- [Windows PowerShell ISE 脚本对象模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+- [Windows PowerShell ISE 对象模型参考](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [ISE 对象模型层次结构](The-ISE-Object-Model-Hierarchy.md)
 
   
-
-
-
-<!--HONumber=Oct16_HO1-->
-
-

@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: d36a862d27ed4bb8a4bed2ae58f9479ba1b29d21
-
+ms.openlocfilehash: 08b29a2fc00aab990f9a64b8cc18fdab7b838986
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 运行远程命令
+# <a name="running-remote-commands"></a>运行远程命令
 你可以使用单个 Windows PowerShell 命令在一台或数百台计算机上运行命令。 Windows PowerShell 通过使用各种技术（包括 WMI、RPC 和 WS-Management）支持远程计算。
 
-## 无需配置即可进行远程处理
+## <a name="remoting-without-configuration"></a>无需配置即可进行远程处理
 许多 Windows PowerShell cmdlet 都具有 ComputerName 参数，此参数可使你在一台或多台远程计算机上收集数据和更改设置。 它们使用各种通信技术，并且许多 cmdlet 在 Windows PowerShell 支持的所有 Windows 操作系统上都有效，而无需任何特殊配置。
 
 这些 cmdlet 包括：
@@ -48,14 +46,14 @@ ms.openlocfilehash: d36a862d27ed4bb8a4bed2ae58f9479ba1b29d21
 Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parameters.keys -notcontains "Session"}
 ```
 
-## Windows PowerShell 远程处理
+## <a name="windows-powershell-remoting"></a>Windows PowerShell 远程处理
 Windows PowerShell 远程处理，它使用 WS-Management 协议，并且使你可以在一台或多台远程计算机上运行任何 Windows PowerShell 命令。 它使你可以建立持久连接、启动 1:1 交互会话并在多台计算机上运行脚本。
 
 若要使用 Windows PowerShell 远程处理，必须配置远程计算机以进行远程管理。 有关详细信息（包括说明），请参阅[关于远程要求](https://technet.microsoft.com/en-us/library/dd315349.aspx)。
 
 配置了 Windows PowerShell 远程处理后，有许多远程处理策略可供你使用。 此文档的其余部分只列出了其中的一部分。 有关详细信息，请参阅 [About Remote（关于远程）](https://technet.microsoft.com/en-us/library/dd347744.aspx)和 [About Remote FAQ（关于远程 FAQ）](https://technet.microsoft.com/en-us/library/dd347744.aspx)。
 
-### 启动交互会话
+### <a name="start-an-interactive-session"></a>启动交互会话
 若要使用单台远程计算机启动交互会话，请使用 [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) cmdlet。 例如，若要使用 Server01 远程计算器启动交互会话，请键入：
 
 ```
@@ -72,7 +70,7 @@ Exit-PSSession
 
 有关 Enter-PSSession 和 Exit-PSSession cmdlet 的详细信息，请参阅 [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) 和 [Exit-PSSession](https://technet.microsoft.com/en-us/library/dd315322.aspx)。
 
-### 运行远程命令
+### <a name="run-a-remote-command"></a>运行远程命令
 若要在一台或多台远程计算机上运行任何命令，请使用 [Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx) cmdlet。
 例如，若要在 Server01 和 Server02 远程计算机上运行 [Get-UICulture ](https://technet.microsoft.com/en-us/library/dd347742.aspx) 命令，请键入：
 
@@ -91,7 +89,7 @@ LCID    Name     DisplayName               PSComputerName
 
 有关 Invoke-Command cmdlet 的详细信息，请参阅 [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462)。
 
-### 运行脚本
+### <a name="run-a-script"></a>运行脚本
 若要在一台或多台远程计算机上运行脚本，请使用 Invoke-Command cmdlet 的 FilePath 参数。 该脚本必须在你的本地计算机上或可由其访问。 结果将返回到你的本地计算机。
 
 例如，以下命令在 Server01 和 Server02 远程计算机上运行 DiskCollect.ps1 脚本。
@@ -102,7 +100,7 @@ Invoke-Command -ComputerName Server01, Server02 -FilePath c:\Scripts\DiskCollect
 
 有关 Invoke-Command cmdlet 的详细信息，请参阅 [Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx)。
 
-### 建立持久连接
+### <a name="establish-a-persistent-connection"></a>建立持久连接
 若要运行一系列共享数据的相关命令，请在远程计算机上创建会话，然后使用 Invoke-Command cmdlet 在你创建的会话中运行命令。 若要创建远程会话，请使用 New-PSSession cmdlet。
 
 例如，以下命令在 Server01 计算机上创建远程会话，在 Server02 计算机上创建另一个远程会话。 它将会话对象保存在 $s 变量中。
@@ -125,20 +123,20 @@ Invoke-Command -Session $s {$h = Get-HotFix}
 Invoke-Command -Session $s {$h | where {$_.installedby -ne "NTAUTHORITY\SYSTEM"}}
 ```
 
-### 高级远程处理
+### <a name="advanced-remoting"></a>高级远程处理
 Windows PowerShell 远程管理就在此处开始。 通过使用随 Windows PowerShell 一起安装的 cmdlet，你可以从本地和远程端点建立和配置远程会话、创建自定义和受限制的会话、允许用户从实际在远程会话上隐式运行的远程会话中导入命令、配置远程会话的安全性等。
 
 为了便于远程配置，Windows PowerShell 包含了 WSMan 提供程序。 提供程序创建的 WSMAN: 驱动器使你可以在本地计算机和远程计算机上的配置设置层次结构之间导航。
 有关 WSMan 提供程序的详细信息，请参阅 [WSMan 提供程序](https://technet.microsoft.com/en-us/library/dd819476.aspx)和  [关于 WS-Management Cmdlet](https://technet.microsoft.com/en-us/library/dd819481.aspx)，或在 Windows PowerShell 控制台中键入“Get-Help wsman”。
 
 有关更多信息，请参阅：
-- [关于远程 FAQ](https://technet.microsoft.com/en-us/library/dd315359.aspx)
+- [有关远程的常见问题解答](https://technet.microsoft.com/en-us/library/dd315359.aspx)
 - [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/dd819496.aspx)
 - [Import-PSSession](https://technet.microsoft.com/en-us/library/dd347575.aspx)。 
 
 有关远程处理错误的帮助，请参阅 [about_Remote_Troubleshooting](https://technet.microsoft.com/en-us/library/dd347642.aspx)。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 - [about_Remote](https://technet.microsoft.com/en-us/library/9b4a5c87-9162-4adf-bdfe-fbc80b9b8970)
 - [about_Remote_FAQ](https://technet.microsoft.com/en-us/library/e23702fd-9415-4a98-9975-390a4d3adc42)
 - [about_Remote_Requirements](https://technet.microsoft.com/en-us/library/da213949-134c-4741-b307-81f4492ba1bd)
@@ -150,10 +148,4 @@ Windows PowerShell 远程管理就在此处开始。 通过使用随 Windows Pow
 - [New-PSSession](https://technet.microsoft.com/en-us/library/59452f12-a11d-4558-99ea-e6ca6ad5ffd3)
 - [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/af68867a-d201-4b19-a1de-594015ed8a25)
 - [WSMan 提供程序](https://technet.microsoft.com/en-us/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

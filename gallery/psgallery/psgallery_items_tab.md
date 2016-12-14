@@ -9,13 +9,11 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgallery_items_tab
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 6edf1451cb869f0b9400b353b3143c99c3568382
-
+ms.openlocfilehash: 32f28df7318472f34f79c61f19f33016cf73f517
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-“项”选项卡
+<a name="items-tab"></a>“项”选项卡
 ==========
 
 “项”选项卡显示 PowerShell 库中的所有可用项。
@@ -26,7 +24,7 @@ ms.openlocfilehash: 6edf1451cb869f0b9400b353b3143c99c3568382
 
 对项进行排序的几种方法：
 
-##筛选依据##
+##<a name="filter-by"></a>筛选依据##
 “筛选依据”部分允许用户根据以下内容筛选结果：
 * 项类型：
     * 模块
@@ -41,20 +39,14 @@ ms.openlocfilehash: 6edf1451cb869f0b9400b353b3143c99c3568382
 示例：如果选中 Cmdlet 或 Function（或两者），将显示包含 Cmdlet 和 Function 二者的项。  如果未选中任何一个，则不会显示项。  
 同样，如果选择了所有类别，将仅显示包含这些类别之一的项。 **不会显示不属于任何这些类别的项。**
 
-##排序依据## 
+##<a name="sort-by"></a>排序依据## 
 “排序依据”下拉框允许用户根据以下内容筛选结果：
 * 热门程度 - 热门程度取决于下载计数。
 * A-Z - 按项名称的字母顺序排序。
 * 最近 - 按发布日期的顺序显示项。
 
 
-##搜索框##
+##<a name="search-box"></a>搜索框##
 搜索框允许用户通过关键字来搜索项。  
 有关详细信息，请参阅[搜索语法](./psgallery_search_syntax.md)。
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

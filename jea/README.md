@@ -8,13 +8,11 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "自述文件"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 8149f656f0aacbb23cacc8a1a9b45ed59866b92f
-ms.openlocfilehash: 7bb5635832e912b39ec387e8ac93ada24a434ff8
-
+ms.openlocfilehash: b0ef4ff685b82e1a4e9ab83a45736720df7b39a2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Just Enough Administration
+# <a name="just-enough-administration"></a>Just Enough Administration
 Just Enough Administration (JEA) 是一项安全技术，委派的管理员可通过它执行可通过 PowerShell 处理的任意操作。
 使用 JEA，你可以：
 - 通过利用代表普通用户执行特权操作的虚拟帐户，**减少你计算机上的管理员数量**。
@@ -30,7 +28,7 @@ Just Enough Administration (JEA) 是一项安全技术，委派的管理员可�
 这意味着你可以提供适当的访问权限以修复中毒的 DNS 缓存，而无需无意间授予他们对 Active Directory 的权限，或授予他们浏览文件系统、运行具有潜在危险的脚本的权限。
 更棒的是，将 JEA 会话配置为使用具有一次性特权的虚拟帐户时，你的 DNS 管理员可以使用*无特权*凭据连接到服务器并仍可运行特权命令。
 
-## 可用性
+## <a name="availability"></a>可用性
 JEA 正与 Windows Server 2016 同步开发，并可通过 Windows Management Framework 更新在旧版 Windows 上使用。
 当前版本的 JEA 在以下平台上可用：
 
@@ -45,7 +43,7 @@ JEA 正与 Windows Server 2016 同步开发，并可通过 Windows Management Fr
 \* Windows Server 2008 R2 或 Windows 7 上目前不支持在 JEA 会话中使用虚拟帐户。
 
 
-## 浏览体验指南
+## <a name="explore-the-experience-guide"></a>浏览体验指南
 准备好了解如何创作、部署和使用你自己的 JEA 终结点了吗？
 
 该指南允许你使用预构建的 JEA 终结点快速开始，让你大概了解最终用户体验；然后引导你从头重新创建终结点，以帮助解释诸如会话配置和角色功能的概念。
@@ -81,17 +79,11 @@ JEA 正与 Windows Server 2016 同步开发，并可通过 Windows Management Fr
   -  [限制命令时的注意事项](considerations-when-limiting-commands.md)  
   -  [角色功能的常见问题](common-role-capability-pitfalls.md)
 
-## 开始创作你自己的 JEA 终结点
+## <a name="start-authoring-your-own-jea-endpoints"></a>开始创作你自己的 JEA 终结点
 创作 JEA 终结点很容易 -- 仅需启用了 JEA 的系统和文件编辑器（如 PowerShell ISE）。
 使用不带任何其他参数的 [`New-PSRoleCapabilityFile -Path <path>`](https://technet.microsoft.com/library/mt631422.aspx) 和 [`New-PSSessionConfigurationFile -Path <Path>`](https://technet.microsoft.com/library/mt631422.aspx) 创建主干文件，此技巧对于初学者而言尤为有用。
 这些主干文件包含所有适用的配置字段，以及解释每个字段用途的有益注释。
 
 若要更轻松地创作 JEA 终结点，请参阅 [JEA 工具包帮助程序](http://blogs.technet.com/b/privatecloud/archive/2015/12/20/introducing-the-updated-jea-helper-tool.aspx)，它提供可以用于创作会话配置文件和角色功能文件的 GUI。
 它甚至支持生成基于 PowerShell 日志的角色功能，直接为你提供你的用户定期运行完成其工作的命令。
-
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

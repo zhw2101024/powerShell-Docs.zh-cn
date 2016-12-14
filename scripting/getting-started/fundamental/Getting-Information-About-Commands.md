@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: 57ccd656e0b869da8aadece97e9bb871764c3f70
-
+ms.openlocfilehash: b91b68f6d7bfee668edc4731f23b21233d9367d5
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 获取有关命令的信息
+# <a name="getting-information-about-commands"></a>获取有关命令的信息
 Windows PowerShell **Get-Command** cmdlet 获取在当前会话中可用的所有命令。 当在 Windows PowerShell 提示符下键入 **Get-Command** 时，将看到类似于以下内容的输出：
 
 ```
@@ -49,7 +47,7 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
  [-Role <String[]>] [-Parameter <String>] [-Online] [-Verbose] [-Debug] [-ErrorAction <ActionPreference>] [-WarningAction <ActionPreference>] [-ErrorVariable <String>] [-WarningVariable <String>] [-OutVariable <String>] [-OutBuffer <Int32>]
 ```
 
-### 显示可用的命令类型
+### <a name="displaying-available-command-types"></a>显示可用的命令类型
 **Get-Command** 命令不会列出 Windows PowerShell 中的每个可用命令。 **Get-Command** 命令仅列出当前会话中的 cmdlet。 实际上，Windows PowerShell 支持几种其他类型的命令。 别名、函数和脚本也是 Windows PowerShell 命令，尽管在 Windows PowerShell 用户指南中并未对它们进行详细讨论。 属于可执行文件，或具有已注册的文件类型处理程序的外部文件也被归类为命令。
 
 若要获取会话中的所有命令，请键入：
@@ -82,10 +80,4 @@ Get-Command -CommandType Function
 ```
 Get-Command -CommandType Script
 ```
-
-
-
-
-<!--HONumber=Oct16_HO1-->
-
 

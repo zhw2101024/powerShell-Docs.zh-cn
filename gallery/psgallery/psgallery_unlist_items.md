@@ -9,13 +9,11 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgallery_unlist_items
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 95e0bb58eb110a9060615e409cb55fa9231d505f
-
+ms.openlocfilehash: ede07cce7b65b795f48d16cb2862880f84c3eda2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 取消列出项
+# <a name="unlisting-items"></a>取消列出项
 
 **为什么未显示从 PowerShell 库删除项的选项？**
 
@@ -41,11 +39,5 @@ PowerShell 库不支持用户永久删除其项。 这让其他人能够依赖�
 - 项包含敏感数据。
 
 若要向 PowerShell 库管理员提交删除项请求，请访问项的详细信息页面并选择“联系支持人员”。  
-
-
-
-
-
-<!--HONumber=Oct16_HO2-->
 
 

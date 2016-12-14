@@ -1,12 +1,12 @@
-# PowerShell 库
+# <a name="the-powershell-gallery"></a>PowerShell 库
 
 PowerShell 库是 PowerShell 内容的中心存储库。 你可以在库中找到新的 PowerShell 命令或 Desired State Configuration (DSC) 资源。
 
-# PowerShellGet 概述
+# <a name="powershellget-overview"></a>PowerShellGet 概述
 
 PowerShellGet 模块包含用于发现、安装、更新和发布来自 https://www.PowerShellGallery.com 和其他专用存储库的模块、DSC 资源、角色功能和脚本等 PowerShell 项目的 cmdlet。
 
-## 库入门
+## <a name="getting-started-with-the-gallery"></a>库入门
 
 从库安装项需要最新版本的 PowerShellGet 模块，Windows 10、Windows Management Framework (WMF) 5.0 或基于 MSI 的安装程序（适用于 PowerShell 3 和 4）中提供此模块。
 
@@ -24,7 +24,7 @@ PowerShellGet 模块包含用于发现、安装、更新和发布来自 https://
 
 有关如何在库中使用 PowerShellGet 命令的详细信息，请参阅[入门](psgallery/psgallery_gettingstarted.md)页面。 你也可运行 *Update-Help -Module PowerShellGet* 安装这些命令的本地帮助。
 
-## 受支持的操作系统
+## <a name="supported-operating-systems"></a>受支持的操作系统
 
 **PowerShellGet** 模块需要 **PowerShell 3.0 或更高版本**。
 
@@ -41,12 +41,7 @@ PowerShellGet 模块包含用于发现、安装、更新和发布来自 https://
 **PowerShellGet** 也需要 .NET Framework 4.5 或更高版本。 你可从[此处](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx)安装 .NET Framework 4.5 或更高版本。
 
 
-## 遇到问题？ 有反馈？
+## <a name="got-a-question-have-feedback"></a>遇到问题？ 有反馈？
 
 可在[入门](psgallery/psgallery_gettingstarted.md)页面找到有关 PowerShell 库和 PowerShellGet 的详细信息。 请使用 [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell) 提供反馈和报告问题。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

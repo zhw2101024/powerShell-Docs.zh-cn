@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 2ae52a0d-2eb5-4c71-971f-fb3f612d281b
-translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 8adf724740b2f09bff6d5cafb822566f4747780c
-
+ms.openlocfilehash: 841c3ce80a625b1f52a1ce50e989ca348c65f93b
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell 5.0
+# <a name="windows-powershell-50"></a>Windows PowerShell 5.0
 本主题列出了 Windows PowerShell 中附带的 cmdlet 和函数模块。 列表中的 Windows PowerShell 模块提供了 Windows PowerShell 的基本功能。
 
 下表还显示了每个模块的最新发布版本的帮助。 通过使用下面的链接可在 TechNet 库中找到帮助，或可更新的帮助文件。 Windows PowerShell 3.0 中引入了可更新的帮助，使你能够在你的计算机上本地使用最新的帮助主题。 有关详细信息，请参阅 [about_Updatable_Help](http://technet.microsoft.com/library/hh847735.aspx)。
@@ -22,7 +20,7 @@ ms.openlocfilehash: 8adf724740b2f09bff6d5cafb822566f4747780c
 > [!NOTE]
 > 有关以前版本的 Windows PowerShell 的信息，请参阅 TechNet 库中的 [http://technet.microsoft.com/library/hh847741(v=wps.620).aspx](http://technet.microsoft.com/library/hh847741(v=wps.620).aspx)。
 
-## Windows PowerShell 核心模块
+## <a name="windows-powershell-core-modules"></a>Windows PowerShell 核心模块
 
 |模块名称|标题和 Web 版本链接|最新版本|
 |---------------|---------------------------------|------------------|
@@ -35,7 +33,7 @@ ms.openlocfilehash: 8adf724740b2f09bff6d5cafb822566f4747780c
 |Microsoft.PowerShell.Security|[Windows PowerShell 安全 Cmdlet](http://technet.microsoft.com/library/3D94A738-3A83-4BD3-8937-E518890D576F)|5.0.1.0|
 |Microsoft.PowerShell.Utility|[Windows PowerShell 实用程序 Cmdlet](http://technet.microsoft.com/library/E5764DA6-8961-4320-B733-F460F3E6F730)|5.0.1.0|
 |Microsoft.WSMan.Management|[Windows PowerShell WSMan Cmdlet](http://technet.microsoft.com/library/F0905869-019D-42B5-94FE-6457A182BA57)|5.0.1.0|
-|ISE|[Windows PowerShell ISE Cmdlets](http://technet.microsoft.com/library/7F6F1CD2-2409-47C0-8BED-72FFC88DE104)|5.0.1.0|
+|ISE|[Windows PowerShell ISE Cmdlet](http://technet.microsoft.com/library/7F6F1CD2-2409-47C0-8BED-72FFC88DE104)|5.0.1.0|
 |PackageManagement|[Windows PowerShell PackageManagement Cmdlet](http://technet.microsoft.com/library/dn890951.aspx)|5.0.1.0|
 |PowerShellGet|[Windows PowerShell PowerShellGet Cmdlet](http://technet.microsoft.com/library/dn835097.aspx)|5.0.1.0|
 |PSDesiredStateConfiguration|[Windows PowerShell Desired State Configuration Cmdlet](https://technet.microsoft.com/en-US/library/dn521624.aspx)|5.0.1.0|
@@ -45,10 +43,4 @@ ms.openlocfilehash: 8adf724740b2f09bff6d5cafb822566f4747780c
 |PSScriptAnalyzer|[Windows PowerShell PSScriptAnalyzer Cmdlet](http://technet.microsoft.com/library/dn927161.aspx)|5.0.1.0|
 |PSWorkflow|[Windows PowerShell 工作流 Cmdlet](http://technet.microsoft.com/library/A6B6D03A-6FDF-478A-B08A-0C145AB690BD)|5.0.1.0|
 |PSWorkflowUtility|[Windows PowerShell 工作流实用程序 Cmdlet](http://technet.microsoft.com/library/D33B1B65-7140-431C-9A70-F768D025074A)|5.0.1.0|
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

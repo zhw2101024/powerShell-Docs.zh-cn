@@ -9,13 +9,11 @@ ms.date: 2016-10-14
 contributor: manikb
 title: scriptwithpseditionsupport
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 46efb494303c4cb691d5b58791a156dcc5bc99b9
-
+ms.openlocfilehash: aac38b9a5b133b0b7982e7748e1483a0774599a2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 具有兼容的 PowerShell 版本的脚本
+# <a name="script-with-compatible-powershell-editions"></a>具有兼容的 PowerShell 版本的脚本
 从版本 5.1 开始，PowerShell 以表现出不同功能集和平台兼容性的不同版本提供。
 
 - **桌面版：**以 .NET Framework 为基础构建，提供与面向在完整功能 Windows 版本（如服务器核心和 Windows 桌面）上运行的 PowerShell 版本的脚本和模块的兼容性。
@@ -67,13 +65,7 @@ Find-Script -Tag PSEditon_Core
 
 ```
 
-## 详细信息
-### [PSEditions 模块](../module/modulewithpseditionsupport.md)
-### [PowerShell 库的 PSEditions 支持](../../psgallery/psgallery_pseditions.md)
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
+## <a name="more-details"></a>详细信息
+### <a name="modules-with-pseditionsmodulemodulewithpseditionsupportmd"></a>[PSEditions 模块](../module/modulewithpseditionsupport.md)
+### <a name="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd"></a>[PowerShell 库的 PSEditions 支持](../../psgallery/psgallery_pseditions.md)
 

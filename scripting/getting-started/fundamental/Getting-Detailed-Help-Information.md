@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-translationtype: Human Translation
-ms.sourcegitcommit: b59186234a513cf34d2615d90643ee749bd60d3f
-ms.openlocfilehash: c38edc68154ccfa9cd76ebdad5a94ddfb4f902c8
-
+ms.openlocfilehash: 983876d805404857392565d4273e4dc38752a094
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 获取详细的帮助信息
+# <a name="getting-detailed-help-information"></a>获取详细的帮助信息
 Windows PowerShell 包含了详细的帮助主题，其中解释了 Windows PowerShell 概念和 Windows PowerShell 语言。 还有针对每个 cmdlet 和提供程序的帮助主题，以及针对许多函数和脚本的帮助主题。
 
 可以在命令提示符下显示这些帮助主题，或在 Microsoft TechNet 库中查看这些主题的最近更新的版本。 许多托管 Windows PowerShell 的程序（如 Windows PowerShell 集成脚本环境）提供了其他帮助功能，如区分上下文的帮助和编译的帮助文件 (.chm)。
 
-## 获取有关 Cmdlet 的帮助
+## <a name="getting-help-for-cmdlets"></a>获取有关 Cmdlet 的帮助
 若要获取有关 Windows PowerShell cmdlet 的帮助，请使用 [Get-Help [m2]](https://technet.microsoft.com/en-us/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2) cmdlet。 例如，若要获取 [Get-ChildItem [m2]](https://technet.microsoft.com/en-us/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc) cmdlet 的帮助，请键入：
 
 ```
@@ -82,7 +80,7 @@ get-help get-childitem -examples
 
 有关如何为你编写的 cmdlet 编写帮助主题的信息，请参阅 MSDN 中的“如何编写 Cmdlet 帮助”主题。
 
-## 获取概念帮助
+## <a name="getting-conceptual-help"></a>获取概念帮助
 Get-Help cmdlet 也将显示有关 Windows PowerShell 中的概念主题（包括有关 Windows PowerShell 语言的主题）的信息。 概念主题以“about_”前缀开头，例如 about_line_editing。 （概念主题的名称必须用英文输入，即使在非英语版本的 Windows PowerShell 中也是如此。）
 
 若要显示概念主题的列表，请键入：
@@ -99,7 +97,7 @@ get-help about_command_syntax
 
 Get-Help 的参数，例如 *Detailed*、*Parameter* 和 *Examples*，它们对概念帮助主题的显示没有影响。
 
-## 获取有关提供程序的帮助
+## <a name="getting-help-about-providers"></a>获取有关提供程序的帮助
 Get-Help cmdlet 显示有关 Windows PowerShell 提供程序的信息。 若要获取有关提供程序的帮助，请键入“Get-Help”，后跟提供程序名称。 例如，若要获取有关 Registr 提供程序的帮助，请键入：
 
 ```
@@ -114,7 +112,7 @@ get-help -category provider
 
 Get-Help 的参数，例如 *Detailed*、*Parameter* 和 *Examples*，它们对提供程序帮助主题的显示没有影响。
 
-## 获取有关脚本和函数的帮助
+## <a name="getting-help-about-scripts-and-functions"></a>获取有关脚本和函数的帮助
 Windows PowerShell 中的许多脚本和函数都有帮助主题。 使用 Get-Help cmdlet 显示脚本和函数的帮助主题。
 
 若要显示有关某个函数的帮助，请键入“get-help”，后跟函数名称。 例如，若要获取有关 Disable-PSRemoting 函数的帮助，请键入：
@@ -135,7 +133,7 @@ get-help c:\ps-test\TestScript.ps1
 
 有关为函数和脚本编写帮助的信息，请参阅 [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)、[about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af) 和 [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)。
 
-## 在线获取帮助
+## <a name="getting-help-online"></a>在线获取帮助
 如果已经连接到 Internet，获取帮助的最好方法之一就是在线查看帮助主题。 由于在线主题易于更新，所以它们倾向于提供最新内容。
 
 若要在线获取帮助，请尝试使用 Get-Help cmdlet 的 *Online* 参数。 Get-Help cmdlet 的 *Online* 参数仅适用于 cmdlet 帮助、函数帮助和脚本帮助。 不能将 *Online* 参数用于概念（关于）主题或提供程序帮助主题。 此外，由于这是一个可选功能，所以它并不适用于每一个 cmdlet、函数或脚本帮助主题。
@@ -172,15 +170,9 @@ Online version: http://go.microsoft.com/fwlink/?LinkID=135194
 
 有关如何为帮助主题提供在线支持的信息，请参阅 [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf) 和 MSDN（Microsoft 开发人员网络）库中的“如何编写 Cmdlet 帮助”([http://go.microsoft.com/fwlink/?LinkID=123415](http://go.microsoft.com/fwlink/?LinkID=123415))。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 - [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)
 - [about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af)
 - [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
 - [Get-Help [m2]](https://technet.microsoft.com/en-us/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)
-
-
-
-
-<!--HONumber=Oct16_HO3-->
-
 

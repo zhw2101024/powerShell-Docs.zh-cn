@@ -7,13 +7,11 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 053a4fd734b1e86c5f8ca22c8197ce4e80b6fce6
-
+ms.openlocfilehash: 52103ee815f97068efc2c4cf666589e9d240bf92
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# ISE 指南
+# <a name="ise-guide"></a>ISE 指南
 
 -  [如何在 Windows PowerShell ISE 中创建 PowerShell 选项卡](ise/How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)
 -  [如何在 Windows PowerShell ISE 中调试脚本](ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)
@@ -35,17 +33,11 @@ ms.openlocfilehash: 053a4fd734b1e86c5f8ca22c8197ce4e80b6fce6
 -  [ISEMenuItemCollection 对象](ise/The-ISEMenuItemCollection-Object.md)
 -  [ISEOptions 对象](ise/The-ISEOptions-Object.md)
 -  [ISESnippetCollection 对象](ise/The-ISESnippetCollection-Object.md)
--  [ISESnippet 对象](ise/The-ISESnippetObject.md)
+-  [ISESnippetObject](ise/The-ISESnippetObject.md)
 -  [ObjectModelRoot 对象](ise/The-ObjectModelRoot-Object.md)
 -  [PowerShellTab 对象](ise/The-PowerShellTab-Object.md)
 -  [PowerShellTabCollection 对象](ise/The-PowerShellTabCollection-Object.md)
 -  [Windows PowerShell ISE 脚本对象模型](ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 -  [使用 Windows PowerShell ISE](ise/Using-the-Windows-PowerShell-ISE.md)
 -  [Windows PowerShell ISE 对象模型参考](ise/Windows-PowerShell-ISE-Object-Model-Reference.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

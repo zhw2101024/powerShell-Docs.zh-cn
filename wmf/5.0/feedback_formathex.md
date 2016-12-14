@@ -1,4 +1,4 @@
-# Format-Hex
+# <a name="format-hex"></a>Format-Hex
 **Format-Hex** 使你可以以十六进制格式查看文本或二进制数据。 以下是一个示例，请观察字符串的十六进制表示形式和 Word 文档的二进制内容。
 
 PS C:\\&gt; "hello world" | Format-Hex
@@ -26,8 +26,3 @@ Path: C:\\Users\\slee\\Downloads\\DSP1009\_1 1 1.doc
 00000050 DC 01 00 00 DD 01 00 00 DE 01 00 00 E3 01 00 00 Ü...Ý...Þ...ã...
 
 00000060 4F 02 00 00 D8 02 00 00 79 03 00 00 FF FF FF FF O...Ø...y.......
-
-
-<!--HONumber=Aug16_HO3-->
-
-

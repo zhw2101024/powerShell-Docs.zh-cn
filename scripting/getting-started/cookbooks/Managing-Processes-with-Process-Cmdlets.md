@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 5038f612-d149-4698-8bbb-999986959e31
-translationtype: Human Translation
-ms.sourcegitcommit: f891988cce205b5729d0da6c4ce23da5fbd53b7f
-ms.openlocfilehash: 3812d0492da1879df50538533740ff857af7b15d
-
+ms.openlocfilehash: 7f7097966aff6ae73b50521b86f932ffdfadf937
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 使用 Process Cmdlet 管理进程
+# <a name="managing-processes-with-process-cmdlets"></a>使用 Process Cmdlet 管理进程
 可以在 Windows PowerShell 中使用 Process cmdlet 来管理 Windows PowerShell 中的本地和远程进程。
 
-## 获取进程 (Get-Process)
+## <a name="getting-processes-get-process"></a>获取进程 (Get-Process)
 若要获取在本地计算机上运行的进程，请运行不具有参数的 **Get-Process**。
 
 你可以通过指定其进程名称或进程 ID 来获取特定进程。 以下命令将获取空闲进程：
@@ -103,7 +101,7 @@ Handles  NPM(K)  PM(K) WS(K) VM(M) CPU(s)  Id ProcessName  MachineName
     605       9  30668 29800   155 7.11    3052 powershell Server02
 ```
 
-## 停止进程 (Stop-Process)
+## <a name="stopping-processes-stop-process"></a>停止进程 (Stop-Process)
 Windows PowerShell 可以灵活地列出进程，但停止进程呢？
 
 **Stop-Process** cmdlet 将采用 Name 或 ID 来指定想要停止的进程。 能否停止进程取决于你的权限。 某些进程无法停止。 例如，如果你尝试停止空闲进程，则会出现错误：
@@ -150,7 +148,7 @@ Stop-Process cmdlet 不具有 ComputerName 参数。 因此，若要在远程计
 Invoke-Command -ComputerName Server01 {Stop-Process Powershell}
 ```
 
-## 停止所有其他 Windows PowerShell 会话
+## <a name="stopping-all-other-windows-powershell-sessions"></a>停止所有其他 Windows PowerShell 会话
 这可能对停止当前会话之外的所有正在运行的 Windows PowerShell 会话偶尔有用。 如果会话正在使用过多资源或无法访问（它可能正在远程运行或在另一个桌面会话中运行），可能不能直接将其停止。 如果你尝试停止所有正在运行的会话，但是，这可能会终止当前会话。
 
 每个 Windows PowerShell 会话都具有一个包含 Windows PowerShell 进程的 ID 的环境变量 PID。 你可以对比每个会话的 ID 检查 $PID，并仅终止具有不同 ID 的 Windows PowerShell 会话。 下面的管道命令执行此操作并返回终止的会话的列表（因为使用了 **PassThru** 参数）：
@@ -168,19 +166,13 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     287       9    21044      26928   143     1.02   3672 powershell
 ```
 
-## 启动、调试和等待进程
+## <a name="starting-debugging-and-waiting-for-processes"></a>启动、调试和等待进程
 Windows PowerShell 还附带 cmdlet，以启动（或重启）、调试进程，并在运行命令之前等待进程完成。 有关这些 cmdlet 的信息，请参阅有关每个 cmdlet 的 cmdlet 帮助主题。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 - [Get-Process [m2]](https://technet.microsoft.com/en-us/library/27a05dbd-4b69-48a3-8d55-b295f6225f15)
 - [Stop-Process [m2]](https://technet.microsoft.com/en-us/library/12454238-9881-457a-bde4-fb6cd124deec)
 - [Start-Process](https://technet.microsoft.com/en-us/library/41a7e43c-9bb3-4dc2-8b0c-f6c32962e72c)
 - [Wait-Process](https://technet.microsoft.com/en-us/library/9222af7a-789d-4a09-aa90-09d7c256c799)
 - [Debug-Process](https://technet.microsoft.com/en-us/library/eea1dace-3913-4dbd-b659-5a94a610eee1)
 - [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462)
-
-
-
-<!--HONumber=Oct16_HO3-->
-
-

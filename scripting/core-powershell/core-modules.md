@@ -7,13 +7,11 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: ab536969fac8ded0e540da3eb138448b4f444f67
-ms.openlocfilehash: 3bee547fc53d1164d3cbf17f033083d4f1099ae7
-
+ms.openlocfilehash: cd31c0b058a09aca3fd9125a8495f31600924ac1
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#  PowerShell 常见模块
+#  <a name="the-powershell-common-modules"></a>PowerShell 常见模块
 
 PowerShell 常见模块提供 PowerShell 的基本功能。
 这些模块涵盖的主要区域包括：
@@ -34,9 +32,3 @@ PowerShell 常见模块提供 PowerShell 的基本功能。
 -  [计划作业模块](core-modules/PSScheduledJob-Module.md)
 -  [ScriptAnalyzer 模块](core-modules/PSScriptAnalyzer-Module.md)
 -  [实用程序模块](core-modules/Microsoft.PowerShell.Utility-Module.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

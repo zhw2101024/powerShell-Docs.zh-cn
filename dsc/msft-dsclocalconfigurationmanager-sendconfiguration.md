@@ -7,18 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: c915ebd021ed20209bc491505d45cff2ac89f21d
 ms.openlocfilehash: 95b141472d9428cee71b6970fc1f496704211c0b
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-
-# MSFT_DSCLocalConfigurationManager 类的 SendConfiguration 方法
+# <a name="sendconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类的 SendConfiguration 方法
 
 将配置文档发送到托管节点并将其保存为挂起的更改。
 
-语法
+<a name="syntax"></a>语法
 ------
 
 ```mof
@@ -28,32 +25,32 @@ uint32 SendConfiguration(
 );
 ```
 
-参数
+<a name="parameters"></a>参数
 ----------
 
-*ConfigurationData* \[in\]  
+ConfigurationData \[in\]  
 配置的环境数据。
 
-*force* \[in\]  
+force \[in\]  
 为 **true**，则强制停止配置。
 
-## 返回值
+## <a name="return-value"></a>返回值
 ------------
 
 如果成功，则返回零；否则返回错误代码。
 
-## 备注
+## <a name="remarks"></a>备注
 
 这是一种静态方法。
 
-## 要求
+## <a name="requirements"></a>要求
 ------------
 >**MOF：** DscCore.mof
 
 >**命名空间**：Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
@@ -63,11 +60,5 @@ uint32 SendConfiguration(
 
  
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

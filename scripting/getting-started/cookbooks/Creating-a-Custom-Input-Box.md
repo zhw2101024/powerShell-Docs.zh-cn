@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 0b12e56c-299f-40ee-afbf-d30d23ed2565
-translationtype: Human Translation
-ms.sourcegitcommit: f891988cce205b5729d0da6c4ce23da5fbd53b7f
-ms.openlocfilehash: 6fffd6406a7570e06fc4403cd238804ef0f51360
-
+ms.openlocfilehash: f7e27957db90430b4f550e56df18c227b2971a0d
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 创建自定义输入框
+# <a name="creating-a-custom-input-box"></a>创建自定义输入框
 通过使用 Windows PowerShell 3.0 及更高版本中的 Microsoft .NET Framework 窗体构建功能为图形自定义输入框编写脚本。
 
-## 创建自定义图形输入框
+## <a name="create-a-custom-graphical-input-box"></a>创建自定义图形输入框
 复制以下内容并将其粘贴到 Windows PowerShell ISE 中，然后将其另存为 Windows PowerShell 脚本 (.ps1)。
 
 ```
@@ -76,9 +74,9 @@ $form = New-Object System.Windows.Forms.Form
 
 在创建 Form 类的实例后，为此类的三个属性赋值。
 
--   **Text。** 这将成为该窗口的标题。
+-   **文本。** 这将成为该窗口的标题。
 
--   **Size。** 这是窗体的大小（以像素为单位）。 上述脚本创建的窗体大小为宽 300 像素、高 200 像素。
+-   **大小。** 这是窗体的大小（以像素为单位）。 上述脚本创建的窗体大小为宽 300 像素、高 200 像素。
 
 -   **StartingPosition。** 在上述脚本中，此可选属性将设置为 **CenterScreen**。 如果未添加此属性，Windows 将在窗体打开时选择一个位置。 通过将 **StartingPosition** 设置为 **CenterScreen**，可使窗体在每次加载时都自动显示在屏幕中间。
 
@@ -159,14 +157,8 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 - [脚本编写人员，你好：为什么这些 PowerShell GUI 示例不起作用呢？](http://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub：Dave Wyatt 的 WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
 - [Windows PowerShell 每周提示：创建自定义输入框](http://technet.microsoft.com/library/ff730941.aspx)
-
-
-
-
-<!--HONumber=Oct16_HO3-->
-
 

@@ -8,26 +8,24 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-translationtype: Human Translation
-ms.sourcegitcommit: 5b978b9c939759bd47ee73d4f7ffa6e3a66df788
-ms.openlocfilehash: ababa1b3ce913528a3ac7089d91ef74c5eb27737
-
+ms.openlocfilehash: 957bf31c4d1d78e1df627fbddf03ce7d97083f1b
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell ISE 中的新增功能
+# <a name="what39s-new-in-the-windows-powershell-ise"></a>Windows PowerShell ISE 中的新增功能
 本主题介绍已在 Windows PowerShell (R) 集成脚本环境 (ISE) 的各版本中引入的新增功能和更新功能。
 
-## <a name="overview"></a>功能描述
+## <a name="a-nameoverviewafeature-description"></a><a name="overview"></a>功能描述
 Windows PowerShell ISE 是一款主机应用程序，让你可以在直观的图形环境中编写、运行和测试脚本与模块。 其主要功能，如语法着色、Tab 自动补全、可视调试、Unicode 遵从和上下文相关帮助，将为你带来丰富的脚本编写体验。
 
 有关 Windows PowerShell ISE 的概述，请参阅 [Windows PowerShell 集成脚本环境概述](https://technet.microsoft.com/en-us/library/3c1892c2-bf84-4cb6-af26-1f453be9e671)。
 
-## <a name="versions"></a>Windows PowerShell ISE 中的新增功能和更改功能
+## <a name="a-nameversionsanew-and-changed-functionality-in-windows-powershell-ise"></a><a name="versions"></a>Windows PowerShell ISE 中的新增功能和更改功能
 下表列出了 Windows PowerShell 中此版本的 Windows PowerShell ISE 的新增功能和更改功能。
 
 |特性/功能|Windows PowerShell ISE 4.0|Windows PowerShell ISE 3.0|Windows PowerShell ISE 2.0|
 |--------------------------|-----------------------------------------------|-----------------------------------------------|-----------------------------------------------|
-|**[Intellisense](#BKMK_Intellisense)**|X|X||
+|**[IntelliSense](#BKMK_Intellisense)**|X|X||
 |**[代码段](#bkmk_snippets)**|X|X||
 |**[外接程序工具](#BKMK_AddOnTools)**|X|X||
 |**[重启管理器和自动保存](#BKMK_RestartMgr)**|X|X||
@@ -38,12 +36,12 @@ Windows PowerShell ISE 是一款主机应用程序，让你可以在直观的图
 |**[新的帮助查看器窗口](#BKMK_NewHelpViewer)**|X|X||
 |**[Show-Command cmdlet](#BKMK_ShowCommand)**|X|X||
 
-### <a name="BKMK_Intellisense"></a>Intellisense
+### <a name="a-namebkmkintellisenseaintellisense"></a><a name="BKMK_Intellisense"></a>IntelliSense
 **在 ISE 3.0 中添加**
 
 Intellisense 是一个自动完成辅助功能，是 Windows PowerShell ISE 的一部分。 Intellisense 会在你键入时显示可单击的菜单，其中包括可能匹配的 cmdlet、参数、参数值、文件或文件夹。
 
-**这一更改增添了什么价值？**
+**更改增添了什么价值？**
 
 新增 Intellisense 功能后，使用 Windows PowerShell ISE 创建脚本时，可以更容易地发现 cmdlet 和语法。 在创建新脚本时，还可以使用 Windows PowerShell ISE 了解 Windows PowerShell。
 
@@ -51,12 +49,12 @@ Intellisense 是一个自动完成辅助功能，是 Windows PowerShell ISE 的�
 
 当在 Windows PowerShell ISE 3.0 或更高版本中键入 cmdlet 时，会显示一个可滚动和可点击的菜单，并可在其中浏览和选择适当的命令。
 
-### <a name="BKMK_Snippets"></a>代码段
+### <a name="a-namebkmksnippetsasnippets"></a><a name="BKMK_Snippets"></a>代码段
 **在 ISE 3.0 中添加**
 
 *代码段*是 Windows PowerShell 代码的一小部分，它可以插入到你在 Windows PowerShell ISE 中创建的脚本。 Windows PowerShell ISE 附带一组默认的代码段。 在 Windows PowerShell ISE 中工作时，可使用 **New\-Snippet** cmdlet 添加代码段。
 
-**这一更改增添了什么价值？**
+**更改增添了什么价值？**
 
 通过使用代码段，可以快速组建脚本以自动运行你的环境。
 
@@ -64,12 +62,12 @@ Intellisense 是一个自动完成辅助功能，是 Windows PowerShell ISE 的�
 
 若要在 Windows PowerShell 3.0 或更高版本中使用代码段，请在“编辑”菜单上，单击“启动代码段”，或按**Ctrl\-J**。
 
-### <a name="BKMK_AddOnTools"></a>附加工具
+### <a name="a-namebkmkaddontoolsaadd-on-tools"></a><a name="BKMK_AddOnTools"></a>外接程序工具
 **在 PowerShell 3.0 中添加**
 
 Windows PowerShell ISE 现在支持附加工具，这些工具是通过使用对象模型添加的 Windows Presentation Foundation (WPF) 控件。 附加工具可以在控制台中显示为垂直或水平窗格。 窗格中的多个附加工具会显示为选项卡式控件。 你还可以添加或删除由 Microsoft 以外的参与方创建的附加工具。 有关如何导入或删除附加工具的详细信息，请参阅 [Windows PowerShell ISE 操作](http://technet.microsoft.com/library/cc732148.aspx)。
 
-**这一更改增添了什么价值？**
+**更改增添了什么价值？**
 
 附加工具可以改善你的脚本编写体验，使用这些工具可以扩展和自定义 Windows PowerShell ISE，或者向 Windows PowerShell ISE 添加新的功能。
 
@@ -79,14 +77,14 @@ Windows PowerShell ISE 3.0 及更高版本附带**命令**附加工具。 借助
 
 可通过使用“附加工具”菜单上的“打开附加工具网站”命令找到其他附加工具。
 
-### <a name="BKMK_RestartMgr"></a>重启管理器和自动保存
+### <a name="a-namebkmkrestartmgrarestart-manager-and-auto-save"></a><a name="BKMK_RestartMgr"></a>重启管理器和自动保存
 **在 PowerShell 3.0 中添加**
 
 Windows PowerShell ISE 每隔两分钟在单独的位置上自动保存你打开的脚本。  如果 Windows PowerShell ISE 停止工作或操作系统重新启动，则重新启动 Windows PowerShell ISE 后，它会恢复上次会话中打开的脚本（即使你未保存这些脚本）。
 
 要更改自动保存间隔，可在控制台窗格中运行下面的命令：**$psise.Options.AutoSaveMinuteInterval**。
 
-**这一更改增添了什么价值？**
+**更改增添了什么价值？**
 
 你已经了解意外重启时将自动保存你打开的脚本，现在便可以在 Windows PowerShell ISE 中工作了。
 
@@ -94,14 +92,14 @@ Windows PowerShell ISE 每隔两分钟在单独的位置上自动保存你打开
 
 Windows PowerShell ISE 2.0 在发生意外重启时不会自动保存脚本。
 
-### <a name="BKMK_MRU"></a>最近使用的列表
+### <a name="a-namebkmkmruamost-recently-used-list"></a><a name="BKMK_MRU"></a>最近使用的列表
 **在 PowerShell 3.0 中添加**
 
 Windows PowerShell ISE 现在具有最近使用过的文件列表。 在 Windows PowerShell ISE 中打开文件时，文件会添加到“文件”菜单上的最近使用列表中。
 
 若要更改最近使用列表中的文件默认数量，请在控制台窗格中运行以下命令：**$psise.Options.MruCount**。
 
-**这一更改增添了什么价值？**
+**更改增添了什么价值？**
 
 现在可以使用最近使用列表轻松地访问频繁使用的文件。
 
@@ -109,7 +107,7 @@ Windows PowerShell ISE 现在具有最近使用过的文件列表。 在 Windows
 
 Windows PowerShell ISE 2.0 没有最近使用列表。
 
-### <a name="BKMK_ConsolePane"></a>控制台窗格
+### <a name="a-namebkmkconsolepaneaconsole-pane"></a><a name="BKMK_ConsolePane"></a>控制台窗格
 **在 PowerShell 3.0 中添加**
 
 第一版 Windows PowerShell ISE 中可用的单独的命令窗格和输出窗格现在合并成了一个控制台窗格。 该控制台窗格的功能和外观与典型的 Windows PowerShell 控制台类似，但经过了以下改进（本主题对其中大多数进行了介绍）。
@@ -138,7 +136,7 @@ Windows PowerShell ISE 2.0 没有最近使用列表。
 
 -   当你在控制台中按“向上”箭头查看历史记录时，命令行处会保留你所键入的内容
 
-**这一更改增添了什么价值？**
+**更改增添了什么价值？**
 
 这些新增的控制台窗格变化提供了与控制台界面更加一致的脚本编写体验。
 
@@ -146,7 +144,7 @@ Windows PowerShell ISE 2.0 没有最近使用列表。
 
 Windows PowerShell ISE 2.0 具有单独的命令和输出窗格。
 
-### <a name="BKMK_CommandLine"></a>命令行开关
+### <a name="a-namebkmkcommandlineacommand-line-switches"></a><a name="BKMK_CommandLine"></a>命令行开关
 **在 PowerShell 3.0 中添加**
 
 如果从命令行（通过键入 **powershell_ise.exe**）启动 Windows PowerShell ISE，则可以添加下列新的命令行开关。
@@ -157,7 +155,7 @@ Windows PowerShell ISE 2.0 具有单独的命令和输出窗格。
 
 -   -mta：在多线程的单元模式下启动 Windows PowerShell ISE。 Windows PowerShell ISE 的默认操作模式是单线程的单元模式，或 *-sta*。
 
-**这一更改增添了什么价值？**
+**更改增添了什么价值？**
 
 这些新增的命令行开关使你能够控制运行 Windows PowerShell ISE 的环境。
 
@@ -165,7 +163,7 @@ Windows PowerShell ISE 2.0 具有单独的命令和输出窗格。
 
 Windows PowerShell ISE 2.0 不识别这些命令行开关。
 
-### <a name="BKMK_NewEditorFeatures"></a>新的编辑器功能
+### <a name="a-namebkmkneweditorfeaturesanew-editor-features"></a><a name="BKMK_NewEditorFeatures"></a>新的编辑器功能
 **在 PowerShell 3.0 中添加**
 
 其他 Windows PowerShell ISE 编辑功能包括：
@@ -186,7 +184,7 @@ Windows PowerShell ISE 2.0 不识别这些命令行开关。
 
 -   **块选择** 你可以通过在用鼠标选定脚本窗格中文本的同时按住 ALT 键，或通过按 **Alt+Shift+箭头**键来选定文本块。
 
-**这一更改增添了什么价值？**
+**更改增添了什么价值？**
 
 这些新增的编辑功能提供更一致、更强大的编辑环境。
 
@@ -194,7 +192,7 @@ Windows PowerShell ISE 2.0 不识别这些命令行开关。
 
 Windows PowerShell ISE 2.0 中不具有这些编辑增强功能。
 
-### <a name="BKMK_NewHelpViewer"></a>新的帮助查看器窗口
+### <a name="a-namebkmknewhelpvieweranew-help-viewer-window"></a><a name="BKMK_NewHelpViewer"></a>新的帮助查看器窗口
 **在 PowerShell 3.0 中添加**
 
 当你将光标置于某个 cmdlet 中，或突出显示某个 cmdlet 的一部分时，按 **F1** 会打开新的帮助查看器，其中显示了有关突出显示的 cmdlet 的上下文相关帮助。 要显示 Windows PowerShell 的“关于”帮助，可在控制台窗格中键入**operators**，然后按**F1**。
@@ -203,7 +201,7 @@ Windows PowerShell ISE 2.0 中不具有这些编辑增强功能。
 
 可以修改 **F1** 键寻找帮助的位置。 在“工具”/“选项”菜单中“常规设置”选项卡上的“其他设置”下，可以设置或清除复选框“使用本地帮助内容而非联机内容”。 如果勾选了此复选框，客户端便会在模块文件夹中的已下载帮助中查找 cmdlet 帮助。  如果清除了该复选框，则客户端会在 TechNet 库中查找 cmdlet 帮助。
 
-**这一更改增添了什么价值？**
+**更改增添了什么价值？**
 
 在无需离开当前 cmdlet 或脚本的情况下，上下文相关帮助提供了无缝的学习体验。
 
@@ -211,12 +209,12 @@ Windows PowerShell ISE 2.0 中不具有这些编辑增强功能。
 
 在 Windows PowerShell ISE 的早期版本中按 F1 会打开本地计算机上的帮助文件。 在 Windows PowerShell ISE 3.0 及更高版本中，会打开一个窗口，其中包含该 cmdlet 的可搜索和可配置的帮助。 此帮助体验是 Windows PowerShell ISE 3.0 的新增功能，可更新帮助是 Windows PowerShell 3.0 的新增功能。
 
-### <a name="BKMK_ShowCommand"></a>Show-Command cmdlet
+### <a name="a-namebkmkshowcommandashow-command-cmdlet"></a><a name="BKMK_ShowCommand"></a>Show-Command cmdlet
 **在 PowerShell 3.0 中添加**
 
 **Show-Command** cmdlet 使你能够通过填写图形表单来编写或运行 cmdlet 或函数。 该表单使用户可在图形环境中使用 Windows PowerShell。 **Show-Command** 还可以让高级脚本编写者快速创建基于 Windows PowerShell 的 GUI。
 
-**这一更改增添了什么价值？**
+**更改增添了什么价值？**
 
 通过在 Windows PowerShell 脚本中使用 **Show-Command**，可以为用户提供其熟悉的图形环境。 **Show-Command** 还有助于初级用户了解 Windows PowerShell。
 
@@ -224,18 +222,10 @@ Windows PowerShell ISE 2.0 中不具有这些编辑增强功能。
 
 Show-Command 是新的 Windows PowerShell ISE 3.0。
 
-## <a name="BKMK_LINKS"></a>另请参阅
+## <a name="a-namebkmklinksasee-also"></a><a name="BKMK_LINKS"></a>另请参阅
 有关在 Windows PowerShell 中使用 Windows PowerShell ISE 的详细信息，请参阅以下链接。
 
--   [使用 Windows PowerShell 集成脚本环境](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
-
--   [TechNet Wiki 上的 ISE](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
-
--   [脚本中心](http://technet.microsoft.com/scriptcenter/default)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+- [使用 Windows PowerShell 集成脚本环境](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+- [TechNet Wiki 上的 ISE](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
+- [脚本中心](http://technet.microsoft.com/scriptcenter/default)
 

@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 81f4bf4a-83bf-415e-8378-1703792fbb58
-translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 4456b1e165130fd52249ffdbd7c22ff591061a8e
-
+ms.openlocfilehash: 79edc4e41522b187cd6421be0bd897663b42bb44
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# PowerShellTabCollection 对象
+# <a name="the-powershelltabcollection-object"></a>PowerShellTabCollection 对象
   **PowerShellTab** 集合对象是 **PowerShellTab** 对象的集合。 每个 **PowerShellTab** 对象充当一个单独的运行时环境。 它是 Microsoft.PowerShell.Host.ISE.PowerShellTabs 类的实例。 例如 **$psISE.PowerShellTabs** 对象。
 
-## 方法
+## <a name="methods"></a>方法
 
-### 添加\(\)
+### <a name="add"></a>添加\(\)
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  向集合中添加一个新的 PowerShell 选项卡。 它将返回新添加的选项卡。
@@ -29,7 +27,7 @@ $NewTab=$psISE.PowerShellTabs.Add()
 $newTab.DisplayName="Brand New Tab"
 ```
 
-### Remove\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)
+### <a name="removemicrosoftpowershellhostisepowershelltab-pstab"></a>Remove\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  删除由 **psTab** 参数指定的选项卡。
@@ -46,7 +44,7 @@ sleep 5
 $psISE.PowerShellTabs.Remove($newTab)
 ```
 
-### SetSelectedPowerShellTab\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)
+### <a name="setselectedpowershelltabmicrosoftpowershellhostisepowershelltab-pstab"></a>SetSelectedPowerShellTab\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  选择由 **psTab** 参数指定的 PowerShell 选项卡，以使它当前是处于活动状态的 PowerShell 选项卡。
@@ -65,16 +63,10 @@ $newTab.DisplayName="Brand New Tab"
 $psISE.PowerShellTabs.SelectedPowerShellTab=$oldtab
 ```
 
-## 另请参阅
- [PowerShellTab 对象](The-PowerShellTab-Object.md) 
- [Windows PowerShell ISE 脚本对象模型](../ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE 对象模型参考](../ise/Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [ISE 对象模型层次结构](../ise/The-ISE-Object-Model-Hierarchy.md)
+## <a name="see-also"></a>另请参阅
+- [PowerShellTab 对象](The-PowerShellTab-Object.md) 
+- [Windows PowerShell ISE 脚本对象模型](../ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+- [Windows PowerShell ISE 对象模型参考](../ise/Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [ISE 对象模型层次结构](../ise/The-ISE-Object-Model-Hierarchy.md)
 
   
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

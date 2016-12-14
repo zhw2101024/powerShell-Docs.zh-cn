@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: bc3300e4-9c17-4f00-a621-c8867126e3b3
-translationtype: Human Translation
-ms.sourcegitcommit: 53d9bf77ef39c878d3e729548181d91f01a50ea2
-ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
-
+ms.openlocfilehash: 8e192fa1a1a7b43852296ed23b8729feabc55dc5
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# ISE 对象模型层次结构
+# <a name="the-ise-object-model-hierarchy"></a>ISE 对象模型层次结构
   本主题介绍了属于 Windows PowerShell 集成脚本环境 (ISE) 一部分的对象的层次结构。 在 Windows PowerShell 3.0 和 Windows PowerShell 4.0 中包含 Windows PowerShell ISE。 单击一个对象，使你转到定义对象的类的参考文档。
 
-##  <a name="psISE"></a> **$psISE 对象**
+##  <a name="a-namepsisea-psise-object"></a><a name="psISE"></a>**$psISE 对象**
  **$PsISE** 对象是 Windows PowerShell ISE 对象层次结构的[根对象](The-ObjectModelRoot-Object.md)。 它位于顶层，使以下对象可用于脚本编写：
 
 -   **[$psISE.CurrentFile](#currentfile)**
@@ -32,14 +30,14 @@ ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
 -   **[$psISE.PowerShellTabs](#powershelltabs)**
 
-##  <a name="CurrentFile"></a> **[$psISE.CurrentFile](The-ISEFile-Object.md)**
+##  <a name="a-namecurrentfilea-psisecurrentfilethe-isefile-objectmd"></a><a name="CurrentFile"></a>**[$psISE.CurrentFile](The-ISEFile-Object.md)**
  **$PsISE.CurrentFile** 对象是 [ISEFile](The-ISEFile-Object.md) 类的实例，使以下对象可用于脚本编写：
 
 -   **[$psISE.CurrentFile.DisplayName](The-ISEFile-Object.md#Displayname)**
 
 -   **[$psISE.CurrentFile.Editor](The-ISEEditor-Object.md)**  此对象是 [ISEEditor](The-ISEEditor-Object.md) 类的实例，使以下对象可用于脚本编写：
 
-    -   **[$psISE.CurrentFile.Editor.CanGoToMatch](The-ISEEditor-Object.md#cangotomatch)**
+    -   **[$psISE.CurrentFile.Editor.CanGoToMatch](The-ISEEditor-Object.md#CanGoToMatch)**
 
     -   **[CaretColumn](The-ISEEditor-Object.md#CaretColumn)**
 
@@ -51,9 +49,9 @@ ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
     -   **[SelectedText](The-ISEEditor-Object.md#SelectedText)**
 
-    -   **[文本](The-ISEEditor-Object.md#Text)**
+    -   **[Text](The-ISEEditor-Object.md#Text)**
 
--   **[编码](The-ISEFile-Object.md#Encoding)**
+-   **[Encoding](The-ISEFile-Object.md#Encoding)**
 
 -   **[FullPath](The-ISEFile-Object.md#FullPath)**
 
@@ -61,7 +59,7 @@ ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
 -   **[IsUntitled](The-ISEFile-Object.md#IsUntitled)**
 
-##  <a name="CurrentPowerShellTab"></a> **[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)**
+##  <a name="a-namecurrentpowershelltaba-psisecurrentpowershelltabthe-powershelltab-objectmd"></a><a name="CurrentPowerShellTab"></a> **[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)**
  **$psISE.CurrentPowerShellTab** 对象是 [PowerShellTab](The-PowerShellTab-Object.md) 类的实例，使以下对象可用于脚本编写：
 
 -   **[$psISE.CurrentPowerShellTab.AddOnsMenu](The-ISEMenuItem-Object.md)**  此对象是 [ISEMenuItem](The-ISEMenuItem-Object.md) 类的实例，使以下对象可用于脚本编写：
@@ -78,7 +76,7 @@ ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
 -   **[$psISE.CurrentPowerShellTab.ConsolePane](The-ISEEditor-Object.md)**  此对象是 [ISEEditor](The-ISEEditor-Object.md) 类的实例，使以下对象可用于脚本编写：
 
-    -   **[$psISE.CurrentPowerShellTab.ConsolePane.CanGoToMatch](The-ISEEditor-Object.md#cangotomatch)**
+    -   **[$psISE.CurrentPowerShellTab.ConsolePane.CanGoToMatch](The-ISEEditor-Object.md#CanGoToMatch)**
 
     -   **[CaretColumn](The-ISEEditor-Object.md#CaretColumn)**
 
@@ -90,7 +88,7 @@ ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
     -   **[SelectedText](The-ISEEditor-Object.md#SelectedText)**
 
-    -   **[文本](The-ISEEditor-Object.md#Text)**
+    -   **[Text](The-ISEEditor-Object.md#Text)**
 
 -   **[$psISE.CurrentPowerShellTab.DisplayName](The-PowerShellTab-Object.md#Displayname)**
 
@@ -118,25 +116,25 @@ ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
 -   **[$psISE.CurrentPowerShellTab.VisibleVerticalAddOnTools](The-ISEAddOnToolCollection-Object.md)**
 
-##  <a name="CurrentVisibleHorizontalTool"></a> **$psISE.CurrentVisibleHorizontalTool**
+##  <a name="a-namecurrentvisiblehorizontaltoola-psisecurrentvisiblehorizontaltool"></a><a name="CurrentVisibleHorizontalTool"></a> **$psISE.CurrentVisibleHorizontalTool**
  **$PsISE.CurrentVisibleHorizontalTool** 对象是 [ISEAddOnTool](The-ISEAddOnTool-Object.md) 类的实例。 它表示已安装的外接程序工具，当前停靠在 Windows PowerShell ISE 窗口的顶部。 此对象使以下对象可用于脚本编写：
 
--   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#control)**
+-   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#Control)**
 
--   **[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#isvisible)**
+-   **[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#IsVisible)**
 
 -   **[$psISE.CurrentVisibleHorizontalTool.Name](The-ISEAddOnTool-Object.md#name)**
 
-##  <a name="CurrentVisibleVerticalTool"></a> **$psISE.CurrentVisibleVerticalTool**
+##  <a name="a-namecurrentvisibleverticaltoola-psisecurrentvisibleverticaltool"></a><a name="CurrentVisibleVerticalTool"></a>**$psISE.CurrentVisibleVerticalTool**
  **$PsISE.CurrentVisibleHorizontalTool** 对象是 [ISEAddOnTool](The-ISEAddOnTool-Object.md) 类的实例。 它表示已安装的外接程序工具，当前停靠在 Windows PowerShell ISE 窗口的右侧。 此对象使以下对象可用于脚本编写：
 
--   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#control)**
+-   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#Control)**
 
--   **[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#isvisible)**
+-   **[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#IsVisible)**
 
 -   **[$psISE.CurrentVisibleHorizontalTool.Name](The-ISEAddOnTool-Object.md#name)**
 
-##  <a name="Options"></a> **$psISE.Options**
+##  <a name="a-nameoptionsa-psiseoptions"></a><a name="Options"></a>**$psISE.Options**
  **$psISE.Options** 对象使以下对象可用于脚本编写：
 
 -   **[$psISE.Options.AutoSaveMinuteInterval](The-ISEOptions-Object.md#asmi)**
@@ -193,7 +191,7 @@ ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
 -   **[$psISE.Options.UseEnterToSelectConsolePaneIntellisense](The-ISEOptions-Object.md#uetsicpi)**
 
--   **[$psISE.Options. UseEnterToSelectScriptPaneIntellisense](The-ISEOptions-Object.md#uetsispi)**
+-   **[$psISE.Options.UseEnterToSelectScriptPaneIntellisense](The-ISEOptions-Object.md#uetsispi)**
 
 -   **[$psISE.Options.UseLocalHelp](The-ISEOptions-Object.md#ulh)**
 
@@ -209,16 +207,10 @@ ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
 -   **[$psISE.Options.Zoom](The-ISEOptions-Object.md#z)**
 
-##  <a name="PowerShellTabs"></a> **[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)**
+##  <a name="a-namepowershelltabsa-psisepowershelltabsthe-powershelltabcollection-objectmd"></a><a name="PowerShellTabs"></a>**[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)**
  **$PsISE.PowerShellTabs** 对象是 [PowerShellTabCollection](The-PowerShellTabCollection-Object.md) 类的实例。 它是所有当前打开的 PowerShell 选项卡的集合，表示本地计算机上或在已连接的远程计算机上可用的 Windows PowerShell 运行环境。 集合中的每个成员均为 [PowerShellTab](The-PowerShellTab-Object.md) 类的实例。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 - [Windows PowerShell ISE 脚本对象模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [Windows PowerShell ISE 对象模型参考](Windows-PowerShell-ISE-Object-Model-Reference.md)
-
-
-
-
-<!--HONumber=Sep16_HO4-->
-
 

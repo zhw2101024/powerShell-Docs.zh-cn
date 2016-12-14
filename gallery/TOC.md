@@ -1,6 +1,6 @@
 # [概述](readme.md)
 ## 库
-### [开始使用](psgallery/psgallery_gettingstarted.md)
+### [入门](psgallery/psgallery_gettingstarted.md)
 ### [运行状况](psgallery/psgallery_status.md)
 ### [有关库的常见问题](psgallery/psgallery_faqs.md)
 ### [库“项”选项卡](psgallery/psgallery_items_tab.md)
@@ -52,9 +52,4 @@
 ### [修改已注册的存储库](psget/repository/psget_set-psrepository.md)
 ### [取消注册存储库](psget/repository/psget_unregister-psrepository.md)
 
-## [PackageManagement Cmdlet](psget/oneget/PackageManagement_cmdlets.md)
-
-
-<!--HONumber=Sep16_HO2-->
-
-
+## [PackageManagement cmdlet](psget/oneget/PackageManagement_cmdlets.md)

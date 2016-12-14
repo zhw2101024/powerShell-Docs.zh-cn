@@ -9,33 +9,31 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_unregister psrepository
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 7d9c24ebb20756a2f7852692532ac6ec7e558ca9
-
+ms.openlocfilehash: c90710db47dbfdc58e1ca7f84c6d6fd8f04b5109
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Unregister-PSRepository
+# <a name="unregister-psrepository"></a>Unregister-PSRepository
 
 取消注册存储库。
 
-## 说明
+## <a name="description"></a>说明
 
 Unregister-PSRepository cmdlet 为当前用户注销存储库。
 - 允许为企业和断开连接的方案注销和重新注册 PSGallery 存储库。
 - 用户可重新注册 PSGallery，只需运行 `Register-PSRepository -Default`
 - 由于 PSGallery 是 Publish-Module 和 Publish-Script cmdlet 中的默认发布存储库，如果 PSGallery 在已注册的存储库列表中不可用，将会引发错误。
 
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a>Cmdlet 语法
 
 ```powershell
 Get-Command -Name Unregister-PSRepository -Module PowerShellGet -Syntax
 ```
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
 
 [Unregister-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517130)
 
-## 示例命令
+## <a name="example-commands"></a>示例命令
 
 ```powershell
 Unregister-PSRepository -Name "MyPrivateGallery"
@@ -43,7 +41,7 @@ Unregister-PSRepository -Name "MyPrivateGallery"
 Get-PSRepository exp | Unregister-PSRepository
 ```
 
-### 允许为企业和断开连接的方案注销和重新注册 PSGallery 存储库。
+### <a name="unregistration-and-re-registration-of-the-psgallery-repository-is-allowed-for-an-enterprise-and-disconnected-scenarios"></a>允许为企业和断开连接的方案注销和重新注册 PSGallery 存储库。
 ```powershell
 
 # Unregister PSGallery repository
@@ -61,10 +59,4 @@ At line:1 char:1
 # Re-register PSGallery repository
 Register-PSRepository -Default
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

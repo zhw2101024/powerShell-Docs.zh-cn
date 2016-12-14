@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 644d08a69a8bb70f49e12c1504aa46c4b57a51fc
-ms.openlocfilehash: 991a324945289b2eff0b706d093b2d345352fb15
-
+ms.openlocfilehash: df330cede5466f4d8da3b4be0057f6a822d15f00
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 在 C 中创作 DSC 资源`#`
+# <a name="authoring-a-dsc-resource-in-c"></a>在 C 中创作 DSC 资源`#`
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
@@ -21,10 +19,10 @@ ms.openlocfilehash: 991a324945289b2eff0b706d093b2d345352fb15
 
 除在 C# 中用 cmdlet 实现资源外，创建 MOF 架构、创建文件夹结构、导入和使用自定义 DSC 资源的过程都与[使用 MOF 编写自定义 DSC 资源](authoringResourceMOF.md)中介绍的相同。
 
-## 编写基于 cmdlet 的资源
+## <a name="writing-a-cmdlet-based-resource"></a>编写基于 cmdlet 的资源
 此示例中，我们将实现一个管理文本文件及其内容的简单资源。
 
-### 编写 MOF 架构
+### <a name="writing-the-mof-schema"></a>编写 MOF 架构
 
 下面是 MOF 资源的定义。
 
@@ -38,8 +36,8 @@ class MSFT_XDemoFile : OMI_BaseResource
 };
 ```
 
-### 设置 Visual Studio 项目
-#### 设置 cmdlet 项目
+### <a name="setting-up-the-visual-studio-project"></a>设置 Visual Studio 项目
+#### <a name="setting-up-a-cmdlet-project"></a>设置 cmdlet 项目
 
 1. 打开 Visual Studio
 1. 创建 C# 项目并命名。
@@ -48,7 +46,7 @@ class MSFT_XDemoFile : OMI_BaseResource
 1. 将 System.Automation.Management.dll 的程序集引用添加到项目。
 1. 更改程序集名称，使其与资源名称一致。 在本示例中，程序集应该被命名为 **MSFT_XDemoFile**。
 
-### 编写 cmdlet 代码
+### <a name="writing-the-cmdlet-code"></a>编写 cmdlet 代码
 
 下列 C# 代码会实现 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** cmdlet。
 
@@ -266,7 +264,7 @@ namespace cSharpDSCResourceExample
 }
 ```
 
-### 部署资源
+### <a name="deploying-the-resource"></a>部署资源
 
 应将已编译的 dll 文件保存在与基于脚本的资源相类似的文件结构中。 下面是此资源的文件夹结构。
 
@@ -281,15 +279,9 @@ $env: psmodulepath (folder)
                 |- MSFT_XDemoFile.schema.mof (file, required)
 ```
 
-### 另请参阅
-#### 概念
+### <a name="see-also"></a>另请参阅
+#### <a name="concepts"></a>概念
 [使用 MOF 编写自定义 DSC 资源](authoringResourceMOF.md)
-#### 其他资源
+#### <a name="other-resources"></a>其他资源
 [编写 Windows PowerShell Cmdlet](https://msdn.microsoft.com/en-us/library/dd878294.aspx)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

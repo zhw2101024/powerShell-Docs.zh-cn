@@ -8,26 +8,24 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 1dd7dade688b56e3ac544c0562ad6bad4a4284a7
-
+ms.openlocfilehash: 6bd3c3d9b9f05f8ea633ee23fdce7608e985abd7
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 学习 Windows PowerShell 名称
+# <a name="learning-windows-powershell-names"></a>学习 Windows PowerShell 名称
 学习命令和命令参数的名称是使用大多数命令行接口时重要的时间投入。 问题是模式非常少，因此学习的唯一方法是通过记住需要定期使用的每个命令和每个参数。
 
 当使用新命令或参数时，你通常不能使用已知名称；你需要查找和学习新的名称。 如果你看看接口是如何从一小组工具通过递增添加发展为功能，那就很容易明白为什么结构是非标准的。 特别是命令名称，由于每个命令都是独立的工具，所以听起来可能很有逻辑，但还有更好的方法来处理命令名称。
 
 大多数命令用于管理操作系统或应用程序中的元素，如服务或进程。 命令具有众多名称，这些名称可能或可能不会纳入一个系列。 例如，在 Windows 系统中，你可以使用 **net start** 和 **net stop** 命令来启动和停止服务。 还有另一种对 Windows 更通用的服务控制工具，该工具具有完全不同的名称，即 **sc**，但该名称未纳入 **net** 服务命令的命名模式。 对于流程管理，Windows 使用 **tasklist** 命令列出进程，使用 **taskkill** 命令终止进程。
 
-采用参数的命令的参数规范不规则。 不能使用 **net start** 命令来启动远程计算机上的服务。 **sc** 命令将在远程计算机上启动服务，但若要指定远程计算机，必须在其名称前使用双反斜杠作为前缀。 例如，若要在名为 DC01 的远程计算机上启动后台处理程序服务，应键入 **sc \\\\DC01 start spooler**。 若要列出在 DC01 上运行的任务，需要使用 **/S**（代指“系统”）参数并提供没有反斜杠的名称 DC01，如：**tasklist /S DC01**。
+采用参数的命令的参数规范不规则。 不能使用 **net start** 命令来启动远程计算机上的服务。 **sc** 命令将在远程计算机上启动服务，但若要指定远程计算机，必须在其名称前使用双反斜杠作为前缀。 例如，若要在名为 DC01 的远程计算机上启动后台处理程序服务，应键入 **sc \\DC01 start spooler\\**。 若要列出在 DC01 上运行的任务，需要使用 **/S**（代指“系统”）参数并提供没有反斜杠的名称 DC01，如：**tasklist /S DC01**。
 
 尽管服务和进程之间具有重要的技术区别，但它们都是计算机上的可管理元素的示例，具有定义完善的生命周期。 你可能想要启动或停止服务或进程，或获取所有当前正在运行的服务或进程的列表。 换而言之，尽管服务和过程是不同的事物，我们对服务或进程执行的操作通常从概念上讲是相同的。 此外，通过指定参数自定义操作所做的选择从概念上讲也是相似的。
 
 Windows PowerShell 利用这些相似之处减少了解和使用 cmdlet 时需要知道的不同名称的数量。
 
-### Cmdlet 使用谓词-名词的名称来减少命令记忆
+### <a name="cmdlets-use-verb-noun-names-to-reduce-command-memorization"></a>Cmdlet 使用谓词-名词的名称来减少命令记忆
 Windows PowerShell 使用“谓词-名词”命名系统，其中每个 cmdlet 名称由标准谓词、连字符、特定名词组成。 Windows PowerShell 谓词并不始终是英文谓词，但在 Windows PowerShell 中表达特定的操作。 名词非常类似于任何语言中的名词，它们描述在系统管理中十分重要的特定类型的对象。 通过查看一些谓词和名词的示例，可以很容易地演示这些包含两个部分的名称如何减少学习的负担。
 
 名词所受限制更少，但它们应始终描述命令作用的对象。 Windows PowerShell 很多命令，例如 **Get-Process**、**Stop-Process**、**Get-Service** 和 **Stop-Service**。
@@ -76,7 +74,7 @@ CommandType     Name                            Definition
 Function        Clear-Host                      $spaceType = [System.Managem...
 ```
 
-### Cmdlet 使用标准参数
+### <a name="cmdlets-use-standard-parameters"></a>Cmdlet 使用标准参数
 如前文所述，在传统命令行接口中使用的命令通常没有一致的参数名称。 有时参数根本没有名称。 若有名称，通常是可以快速输入但对新用户来说不能轻松理解的单个字符或缩写词。
 
 不同于大多数其他传统的命令行接口，Windows PowerShell 直接处理参数，并使用参数的这种直接访问权限以及开发人员指南标准化参数名称。 尽管这样并不保证每个 cmdlet 将始终符合标准，但还是备受鼓舞。
@@ -86,20 +84,14 @@ Function        Clear-Host                      $spaceType = [System.Managem...
 
 以下是标准参数名称和用法的一些一般特征。
 
-#### 帮助参数 (?)
+#### <a name="the-help-parameter-"></a>帮助参数 (?)
 指定 **-?** 时 参数到任何 cmdlet，将不会执行 cmdlet。 相反，Windows PowerShell 将显示有关 cmdlet 的帮助。
 
-#### 通用参数
+#### <a name="common-parameters"></a>通用参数
 Windows PowerShell 具有一些名为“通用参数”的参数。 因为这些参数由 Windows PowerShell 引擎控制，每当 cmdlet 实现这些参数时，它们的行为方式将始终相同。 通用参数有 **WhatIf**、**Confirm**、**Verbose**、**Debug**、**Warn**、**ErrorAction**、**ErrorVariable**、**OutVariable** 和 **OutBuffer**
 
-#### 建议参数
+#### <a name="suggested-parameters"></a>建议参数
 对于类似的参数，Windows PowerShell 核心 cmdlet 使用标准名称。 尽管不强制使用参数名称，但是具有明确的用法指南支持标准化。
 
 例如，本指南建议使用例如 **ComputerName** 等名称命名指示计算机的参数，而不使用 Server、Host、System、Node 或其他常见的备选单词。 重要的建议参数名称有 **Force**、**Exclude**、**Include**、**PassThru**、**Path** 和 **CaseSensitive**。
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

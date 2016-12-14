@@ -8,13 +8,11 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "本指南中使用的主要概念"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 178fea44987b0c457b8e5d23fbe851ee12f03b31
-
+ms.openlocfilehash: 873ab19fdf43ec4ac41cc546aa94b64fbc607984
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 本指南中使用的主要概念
+# <a name="key-concepts-used-throughout-this-guide"></a>本指南中使用的主要概念
 **JEA 具体是什么？**
 
 JEA 是 PowerShell [受约束的终结点](http://blogs.technet.com/b/heyscriptingguy/archive/2014/03/31/introduction-to-powershell-endpoints.aspx)的扩展，它添加了角色定义、虚拟帐户和多项其他改进，让你能够更轻松地锁定管理终结点。
@@ -53,10 +51,4 @@ JEA 通过 PowerShell 远程处理限制可用的功能。
 
 **“已连接的”用户**：连接到 JEA 终结点并向其分配了角色的非管理员用户。
 此用户运行的任何命令都在运行方式用户或虚拟帐户的上下文之下运行。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

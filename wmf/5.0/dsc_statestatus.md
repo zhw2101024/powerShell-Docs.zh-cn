@@ -1,4 +1,4 @@
-# 统一且一致的状态和状态表示形式
+# <a name="unified-and-consistent-state-and-status-representation"></a>统一且一致的状态和状态表示形式
 
 在此版本中，增加了一系列自动化构建 LCM 状态和 DSC 状态的增强功能。 其中包括统一且一致的状态和状态表示形式：Get-DscConfigurationStatus cmdlet 所返回状态对象的可管理日期时间属性和 Get-DscLocalConfigurationManager cmdlet 所返回增强的 LCM 状态详细信息属性。
 
@@ -18,16 +18,15 @@
 | F**^**                          | PendingConfiguration | 失败    | $false        | $null                        | F                              |
 | S、F                             | PendingConfiguration | 失败    | $false        | S                            | F                              |
 | F、S                             | PendingConfiguration | 失败    | $false        | S                            | F                              |
-| S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | 失败    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
-| F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | 失败    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
+| S<sub>1</sub>、F、S<sub>2</sub> | PendingConfiguration | 失败    | $false        | S<sub>1</sub>、S<sub>2</sub> | F                              |
+| F<sub>1</sub>、S、F<sub>2</sub> | PendingConfiguration | 失败    | $false        | S                            | F<sub>1</sub>、F<sub>2</sub>   |
 | S、r                            | PendingReboot        | Success    | $true         | S                            | r                              |
 | F、r                            | PendingReboot        | 失败    | $true         | $null                        | F、r                           |
 | r、S                            | PendingReboot        | Success    | $true         | $null                        | r                              |
 | r、F                            | PendingReboot        | Success    | $true         | $null                        | r                              |
 
 ^
-S<sub>i</sub>：一系列成功应用 F<sub>i</sub> 的资源：一系列成功应用 r 的资源 ：需要重新启动的资源
-\*
+S<sub>i</sub>：一系列应用成功的资源 F<sub>i</sub>：一系列应用失败的资源 r：要求重新启动的资源 \*
 
 ```powershell
 $LCMState = (Get-DscLocalConfigurationManager).LCMState
@@ -39,7 +38,7 @@ $ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
 
 $ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
 ```
-## Get-DscConfigurationStatus cmdlet 中的增强功能
+## <a name="enhancement-in-get-dscconfigurationstatus-cmdlet"></a>Get-DscConfigurationStatus cmdlet 中的增强功能
 
 在此版本中，对 Get DscConfigurationStatus cmdlet 进行了几处改进。 以前，该 cmdlet 返回的对象的 StartDate 属性是 String 类型。 现在，它是 Datetime 类型，从而可以根据 Datetime 对象的内部属性更轻松地进行复杂选择和筛选。
 ```powershell
@@ -81,7 +80,7 @@ Success 11/13/2015 11:20:44 AM Initial True
 Success 11/13/2015 11:20:44 AM LocalConfigurationManager False
 ```
 
-## Get-DscLocalConfigurationManager cmdlet 中的增强功能
+## <a name="enhancement-in-get-dsclocalconfigurationmanager-cmdlet"></a>Get-DscLocalConfigurationManager cmdlet 中的增强功能
 新字段 LCMStateDetail 已添加到从 Get-DscLocalConfigurationManager cmdlet 返回的对象。 LCMState 为“忙碌”时，填充此字段。 它可以通过以下 cmdlet 来检索：
 ```powershell
 (Get-DscLocalConfigurationManager).LCMStateDetail
@@ -103,8 +102,3 @@ LCM State: Idle,
 LCM State: Busy, LCM is performing a consistency check.
 LCM State: Idle,
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

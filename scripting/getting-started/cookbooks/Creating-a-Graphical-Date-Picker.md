@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: c1cb722c-41e9-4baa-be83-59b4653222e9
-translationtype: Human Translation
-ms.sourcegitcommit: f891988cce205b5729d0da6c4ce23da5fbd53b7f
-ms.openlocfilehash: e3899a183cb1c8652adff7d01ffc09efde7f49b4
-
+ms.openlocfilehash: 25c6dcbc2c79cb62d26aad60c7e3277ef039564f
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 创建图形日期选取器
+# <a name="creating-a-graphical-date-picker"></a>创建图形日期选取器
 使用 Windows PowerShell 3.0 和更高版本创建一个带有日历式图形控件的窗体，该控件使用户可以选择本月的某一天。
 
-## 创建图形日期选取器控件
+## <a name="create-a-graphical-date-picker-control"></a>创建图形日期选取器控件
 复制以下内容并将其粘贴到 Windows PowerShell ISE 中，然后将其另存为 Windows PowerShell 脚本 (.ps1)。
 
 ```
@@ -70,9 +68,9 @@ $form = New-Object Windows.Forms.Form
 
 在创建 Form 类的实例后，为此类的三个属性赋值。
 
--   **Text。** 这将成为该窗口的标题。
+-   **文本。** 这将成为该窗口的标题。
 
--   **Size。** 这是窗体的大小（以像素为单位）。 上述脚本创建的窗体大小为宽 243 像素、高 230 像素。
+-   **大小。** 这是窗体的大小（以像素为单位）。 上述脚本创建的窗体大小为宽 243 像素、高 230 像素。
 
 -   **StartingPosition。** 在上述脚本中，此可选属性将设置为 **CenterScreen**。 如果未添加此属性，Windows 将在窗体打开时选择一个位置。 通过将 **StartingPosition** 设置为 **CenterScreen**，可使窗体在每次加载时都自动显示在屏幕中间。
 
@@ -137,14 +135,8 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 - [脚本编写人员，你好：为什么这些 PowerShell GUI 示例不起作用呢？](http://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub：Dave Wyatt 的 WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
 - [Windows PowerShell 每周提示：创建图形日期选取器](http://technet.microsoft.com/library/ff730942.aspx)
-
-
-
-
-<!--HONumber=Oct16_HO3-->
-
 

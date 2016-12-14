@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 66c2a8c8afab49f16e8ef7d0b5ba3a2a65c92490
-
+ms.openlocfilehash: 9d9566328cac84ae6b450d9dedeb75a37d6dcba5
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 管理服务
+# <a name="managing-services"></a>管理服务
 有八个专为各种服务任务设计的核心 Service cmdlet。 我们将只查看列出和更改服务的运行状态，但是你可以通过使用 **Get-Help \&#42;-Service** 获取 Service cmdlet 列表，还可以使用 **Get-Help<Cmdlet-Name>**（例如 **Get-Help New-Service**）找到每个 Service cmdlet 的信息。
 
-## 获取服务
+## <a name="getting-services"></a>获取服务
 可以通过使用 **Get-Service** cmdlet 获取本地或远程计算机上的服务。 与使用 **Get-Process** 相同，使用不带参数的 **Get-Service** 命令将返回所有服务。 你可以按名称进行筛选，甚至可以使用星号作为通配符：
 
 ```
@@ -53,7 +51,7 @@ Stopped  ServiceLayer       ServiceLayer
 Get-Service -ComputerName Server01
 ```
 
-## 获取必需和从属服务
+## <a name="getting-required-and-dependent-services"></a>获取必需和从属服务
 Get-Service cmdlet 具有两个在服务管理中非常有用的参数。 DependentServices 参数获取依赖于该服务的服务。 RequiredServices 参数获取此服务所依赖的服务。
 
 这些参数只显示 Get-Service 返回的 System.ServiceProcess.ServiceController 对象的 DependentServices 和 ServicesDependedOn (alias=RequiredServices) 属性的值，但是它们可简化命令，使获取此信息更加简单。
@@ -88,7 +86,7 @@ Running  BITS               Background Intelligent Transfer Ser...
 Get-Service -Name * | where {$_.RequiredServices -or $_.DependentServices} | Format-Table -Property Status, Name, RequiredServices, DependentServices -auto
 ```
 
-## 停止、启动、暂停和重启服务
+## <a name="stopping-starting-suspending-and-restarting-services"></a>停止、启动、暂停和重启服务
 所有 Service cmdlet 都具有相同的一般形式。 可以按公用名或显示名称指定服务，并使用列表和通配符作为值。 若要停止打印后台处理程序，请使用：
 
 ```
@@ -138,22 +136,16 @@ WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
 Invoke-Command -ComputerName Server01 {Restart-Service Spooler}
 ```
 
-## 设置服务属性
+## <a name="setting-service-properties"></a>设置服务属性
 Set-Service cmdlet 更改本地或远程计算机上服务的属性。 因为服务状态是一种属性，所以你可以使用此 cmdlet 来启动、停止和暂停服务。 Set-Service cmdlet 还有一个 StartupType 参数，可让你更改服务启动类型。
 
 若要在 Windows Vista 及 Windows 的更高版本上使用 Set-Service，请使用“以管理员身份运行”选项打开 Windows PowerShell。
 
 有关详细信息，请参阅 [Set-Service [m2]](https://technet.microsoft.com/en-us/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
 
-## 另请参阅
-[Get-Service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
-[Set-Service [m2]](https://technet.microsoft.com/en-us/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
-[Restart-Service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
-[Suspend-Service [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
+## <a name="see-also"></a>另请参阅
+- [Get-Service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
+- [Set-Service [m2]](https://technet.microsoft.com/en-us/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
+- [Restart-Service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
+- [Suspend-Service [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)
 

@@ -1,4 +1,4 @@
-# [PowerShell 脚本](PowerShell-Scripting.md)
+# [PowerShell 脚本编写](PowerShell-Scripting.md)
 
 ## [PowerShell 的新增功能](whats-new/What-s-New-With-PowerShell.md)
 ### [PowerShell v5.0](whats-new/What-s-New-in-Windows-PowerShell-50.md)
@@ -22,7 +22,7 @@
 
 ### [基本概念](getting-started/fundamental-concepts.md)
 ####  [PowerShell 基础知识](getting-started/fundamental/Windows-PowerShell-Basics.md)
-####  [获取详细的帮助信息](getting-started/fundamental/Getting-Detailed-Help-Information.md)
+####  [获取详细帮助信息](getting-started/fundamental/Getting-Detailed-Help-Information.md)
 ####  [探究 Windows PowerShell ISE](getting-started/fundamental/Exploring-the-Windows-PowerShell-ISE.md)
 ####  [获取有关命令的信息](getting-started/fundamental/Getting-Information-About-Commands.md)
 ####  [了解 PowerShell 名称](getting-started/fundamental/Learning-Windows-PowerShell-Names.md)
@@ -45,7 +45,7 @@
 ####  [创建自定义输入框](getting-started/cookbooks/Creating-a-Custom-Input-Box.md)
 ####  [创建自定义 PowerShell 快捷方式](getting-started/cookbooks/Appendix-2---Creating-a-Custom-PowerShell-Shortcut.md)
 ####  [创建图形日期选取器](getting-started/cookbooks/Creating-a-Graphical-Date-Picker.md)
-####  [获取 WMI 对象 (Get-WmiObject)](getting-started/cookbooks/Getting-WMI-Objects--Get-WmiObject-.md)
+####  [获取 WMI 对象 (Get WmiObject)](getting-started/cookbooks/Getting-WMI-Objects--Get-WmiObject-.md)
 ####  [使用 Process Cmdlet 管理进程](getting-started/cookbooks/Managing-Processes-with-Process-Cmdlets.md)
 ####  [管理服务](getting-started/cookbooks/Managing-Services.md)
 ####  [管理 Windows PowerShell 驱动器](getting-started/cookbooks/Managing-Windows-PowerShell-Drives.md)
@@ -63,7 +63,7 @@
 ####  [对对象进行排序](getting-started/cookbooks/Sorting-Objects.md)
 ####  [使用格式命令更改输出视图](getting-started/cookbooks/Using-Format-Commands-to-Change-Output-View.md)
 ####  [使用静态类和方法](getting-started/cookbooks/Using-Static-Classes-and-Methods.md)
-####  [查看对象结构 (Get-Member)](getting-started/cookbooks/Viewing-Object-Structure--Get-Member-.md)
+####  [查看对象结构 (Get Member)](getting-started/cookbooks/Viewing-Object-Structure--Get-Member-.md)
 ####  [使用文件、文件夹和注册表项](getting-started/cookbooks/Working-With-Files-Folders-and-Registry-Keys.md)
 ####  [使用文件和文件夹](getting-started/cookbooks/Working-with-Files-and-Folders.md)
 ####  [使用对象](getting-started/cookbooks/Working-with-Objects.md)
@@ -72,7 +72,7 @@
 ####  [使用注册表项](getting-started/cookbooks/Working-with-Registry-Keys.md)
 ####  [使用软件安装](getting-started/cookbooks/Working-with-Software-Installations.md)
 
-### [我可以从何处深入了解？](getting-started/more-powershell-learning.md)
+### [可从何处深入了解？](getting-started/more-powershell-learning.md)
 
 ## [常见 PowerShell](core-powershell/core-powershell.md)
 ### [常见模块](core-powershell/core-modules.md)
@@ -134,14 +134,9 @@
 
 ### [Web 访问](core-powershell/web-access.md)
 ####  [Windows PowerShell Web 访问的授权规则和安全功能](core-powershell/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md)
-####  [安装和使用 Windows PowerShell Web Access](core-powershell/web-access/install-and-use-windows-powershell-web-access.md)
+####  [安装和使用 Windows PowerShell Web 访问](core-powershell/web-access/install-and-use-windows-powershell-web-access.md)
 ####  [Windows PowerShell Web 访问中的访问问题疑难解答](core-powershell/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md)
 ####  [卸载 Windows PowerShell Web 访问](core-powershell/web-access/uninstall-windows-powershell-web-access.md)
 ####  [使用基于 Web 的 Windows PowerShell 控制台](core-powershell/web-access/use-the-web-based-windows-powershell-console.md)
 
 ## [PowerShell 术语表](Windows-PowerShell-Glossary.md)
-
-
-<!--HONumber=Oct16_HO1-->
-
-

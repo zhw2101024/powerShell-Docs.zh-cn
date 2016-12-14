@@ -8,18 +8,16 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: 45182af45b2d1510b7ad8e9f2ac35fa5346ddb66
-ms.openlocfilehash: bb7efc55b1c948c349aa778b700e5cb1277b9762
-
+ms.openlocfilehash: 118cb91528824b75e28a1eadaa377a696c67f2dd
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#PowerShell 引擎改进
+#<a name="powershell-engine-improvements"></a>PowerShell 引擎改进
 
 在 WMF 5.1 中，实现了针对核心 PowerShell 引擎的以下改进：
 
 
-## 性能 ##
+## <a name="performance"></a>性能 ##
 
 性能在一些重要方面得到了改进：
 
@@ -31,8 +29,8 @@ ms.openlocfilehash: bb7efc55b1c948c349aa778b700e5cb1277b9762
 | 方案 | 5.0 时间（毫秒） | 5.1 时间（毫秒） |
 | -------- | :---------------: | :---------------: |
 | `powershell -command "echo 1"` | 900 | 250 |
-| PowerShell 首次运行： `powershell -command "Unknown-Command"` | 30000 | 13000 |
-| 构建的命令分析缓存： `powershell -command "Unknown-Command"` | 7000 | 520 |
+| PowerShell 首次运行：`powershell -command "Unknown-Command"` | 30000 | 13000 |
+| 构建的命令分析缓存：`powershell -command "Unknown-Command"` | 7000 | 520 |
 | <code>1..1000000 &#124; % { }</code> | 1400 | 750 |
   
 > 注意：与启动相关的更改可能会影响某些不支持的方案。 
@@ -42,9 +40,3 @@ ms.openlocfilehash: bb7efc55b1c948c349aa778b700e5cb1277b9762
 
 另一个显著更改是 PowerShell 如何为系统上安装的模块缓存导出的命令和其他信息。 以前，此缓存存储在目录 `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\CommandAnalysis` 中。 在 WMF 5.1 中，此缓存是单个文件 `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\ModuleAnalysisCache`。
 有关详细信息，请参阅[模块分析缓存](scenarios-features.md#module-analysis-cache)。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

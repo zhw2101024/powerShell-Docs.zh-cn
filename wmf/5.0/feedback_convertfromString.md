@@ -1,4 +1,4 @@
-# 提取和分析字符串外的结构化对象
+# <a name="extract-and-parse-structured-objects-out-of-string"></a>提取和分析字符串外的结构化对象
 这也为 ConvertFrom-String cmdlet 引入了一些附加功能：
 
 -   默认情况下删除盘区文本属性。 可以将其包含于 -IncludeExtent 参数中。
@@ -8,7 +8,7 @@
 -   新 -UpdateTemplate 参数，用于将学习算法的结果保存到模板文件中的注释内。 这使得学习过程（速度最慢的阶段）成为一次性完成的过程。 使用包含已编码学习算法的模板来运行 Convert-String 现为近即时行为。
 
 
-从字符串内容中提取并分析结构化对象
+<a name="extract-and-parse-structured-objects-out-of-string-content"></a>从字符串内容中提取并分析结构化对象
 ----------------------------------------------------------
 
 与 [Microsoft Research](http://research.microsoft.com/) 协作添加了一个新的 **ConvertFrom-String** cmdlet。
@@ -18,7 +18,7 @@
 默认情况下，分隔分析会在空格处将输入拆分，并为得到的组分配属性名称。 你可以自定义分隔符：
 
 > 1 \[C:\\temp\]
-> &gt;&gt; "Hello World" | ConvertFrom-String | Format-Table -Auto
+> &gt;&gt;“Hello World”| ConvertFrom-String | Format-Table -Auto
 
 P1    P2
 --    --
@@ -80,9 +80,4 @@ P1    P2
 > Ana Trujillo...              Ana Trujillo       雷德蒙市  华盛顿州 Antonio Moreno...            Antonio Moreno     兰顿市   华盛顿州 Thomas Hardy...              Thomas Hardy       西雅图  华盛顿州 Christina Berglund...        Christina Berglund 雷德蒙市  华盛顿州 Hanna Moos...                Hanna Moos         皮阿拉普市 华盛顿州
 
 为了对提取的文本进行其他数据操作，则 **ExtentText** 属性将捕获从中提取记录的原始文本。 若要提供有关此功能的反馈或共享无法为其写入示例的内容，请发送电子邮件至 <psdmfb@microsoft.com>。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

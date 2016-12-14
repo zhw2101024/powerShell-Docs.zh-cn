@@ -7,22 +7,20 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: e1c94c281a39b3ae026bbeea9811ecc71b9cdb1c
-
+ms.openlocfilehash: 0a5460dd8b3d94745c1350d4c88ac4ba2420eb03
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#  [基本 Cookbook 参考](cookbooks/basic-cookbooks-reference.md)
+#  <a name="basic-cookbooks-referencecookbooksbasic-cookbooks-referencemd"></a>[基本 Cookbook 参考](cookbooks/basic-cookbooks-reference.md)
 
 -  [更改计算机状态](cookbooks/Changing-Computer-State.md)
 -  [收集有关计算机的信息](cookbooks/Collecting-Information-About-Computers.md)
 -  [兼容性别名](cookbooks/Appendix-1---Compatibility-Aliases.md)
 -  [创建自定义 PowerShell 快捷方式](cookbooks/Appendix-2---Creating-a-Custom-PowerShell-Shortcut.md)
--  [创建 .NET 和 COM 对象“New Object” ](cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md)
+-  [创建 .NET 和 COM 对象 (New-Object)](cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md)
 -  [创建自定义输入框](cookbooks/Creating-a-Custom-Input-Box.md)
 -  [创建图形日期选取器](cookbooks/Creating-a-Graphical-Date-Picker.md)
--  [获取 WMI 对象“Get WmiObject” ](cookbooks/Getting-WMI-Objects--Get-WmiObject-.md)
+-  [获取 WMI 对象 (Get WmiObject)](cookbooks/Getting-WMI-Objects--Get-WmiObject-.md)
 -  [管理当前位置](cookbooks/Managing-Current-Location.md)
 -  [使用 Process Cmdlet 管理进程](cookbooks/Managing-Processes-with-Process-Cmdlets.md)
 -  [管理服务](cookbooks/Managing-Services.md)
@@ -33,14 +31,14 @@ ms.openlocfilehash: e1c94c281a39b3ae026bbeea9811ecc71b9cdb1c
 -  [执行网络任务](cookbooks/Performing-Networking-Tasks.md)
 -  [PowerShellGet 模块](cookbooks/PowerShellGet-Module.md)
 -  [使用 Out Cmdlet 重定向数据](cookbooks/Redirecting-Data-with-Out---Cmdlets.md)
--  [从管道删除对象“Where object” ](cookbooks/Removing-Objects-from-the-Pipeline--Where-Object-.md)
--  [为多个对象重复执行任务“ForEach Object” ](cookbooks/Repeating-a-Task-for-Multiple-Objects--ForEach-Object-.md)
+-  [从管道中删除对象（Where 对象）](cookbooks/Removing-Objects-from-the-Pipeline--Where-Object-.md)
+-  [为多个对象重复执行任务（ForEach 对象）](cookbooks/Repeating-a-Task-for-Multiple-Objects--ForEach-Object-.md)
 -  [从列表框中选择项](cookbooks/Selecting-Items-from-a-List-Box.md)
--  [选择对象的各个部分“Select Object” ](cookbooks/Selecting-Parts-of-Objects--Select-Object-.md)
+-  [选择对象部件（Select 对象）](cookbooks/Selecting-Parts-of-Objects--Select-Object-.md)
 -  [对对象进行排序](cookbooks/Sorting-Objects.md)
 -  [使用格式命令更改输出视图](cookbooks/Using-Format-Commands-to-Change-Output-View.md)
 -  [使用静态类和方法](cookbooks/Using-Static-Classes-and-Methods.md)
--  [查看对象结构“Get Member” ](cookbooks/Viewing-Object-Structure--Get-Member-.md)
+-  [查看对象结构 (Get Member)](cookbooks/Viewing-Object-Structure--Get-Member-.md)
 -  [使用文件和文件夹](cookbooks/Working-with-Files-and-Folders.md)
 -  [使用文件、文件夹和注册表项](cookbooks/Working-With-Files-Folders-and-Registry-Keys.md)
 -  [使用对象](cookbooks/Working-with-Objects.md)
@@ -48,10 +46,4 @@ ms.openlocfilehash: e1c94c281a39b3ae026bbeea9811ecc71b9cdb1c
 -  [使用注册表条目](cookbooks/Working-with-Registry-Entries.md)
 -  [使用注册表项](cookbooks/Working-with-Registry-Keys.md)
 -  [使用软件安装](cookbooks/Working-with-Software-Installations.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 6e24bf6d-4c70-4edf-956a-1e8e4779ba10
-translationtype: Human Translation
-ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
-ms.openlocfilehash: 39692bf9deda498e05742f0b746af0bd54cb07c3
-
+ms.openlocfilehash: 59b4554c31a95a2d2537a431fccb2d7b67da7e95
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell 核心提供程序
+# <a name="windows-powershell-core-providers"></a>Windows PowerShell 核心提供程序
 此部分包含的帮助主题介绍了 **Microsoft.PowerShell.Core** 模块中的 Windows PowerShell 提供程序。
 
 Windows PowerShell 提供程序是 .NET 程序，用于使专用数据存储中的数据在 Windows PowerShell 中可用，以便你可以轻松地查看和管理它。 提供程序公开的数据显示在驱动器中，它与文件系统驱动器非常相似。 有关详细信息，请参阅 [about_Providers [v4]](https://technet.microsoft.com/en-us/library/2d9b3f32-be78-49ad-a547-21231c803242)。
@@ -28,15 +26,9 @@ Windows PowerShell 提供程序是 .NET 程序，用于使专用数据存储中�
 |[Registry 提供程序 [v3]](https://technet.microsoft.com/en-us/library/d3c8013c-8caa-48d7-9feb-bfef0d95926e)|提供对系统注册表项和值的访问权限。|
 |[Variable 提供程序 [v3]](https://technet.microsoft.com/en-us/library/78dbcbbd-7946-4b9b-b75b-146f247f821c)|提供对 Windows PowerShell 变量及其值的访问权限。|
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 - [Certificate 提供程序 [v3]](https://technet.microsoft.com/en-us/library/3f743541-d0c6-4670-809a-b16fb01f7c4d)
 - [WSMan 提供程序 [v3]](https://technet.microsoft.com/en-us/library/4c3d8d36-4f7a-4211-996f-64110e4b2eb7)
 - [about_Providers [v4]](https://technet.microsoft.com/en-us/library/2d9b3f32-be78-49ad-a547-21231c803242)
 - [Microsoft.PowerShell.Core 模块](Microsoft.PowerShell.Core-Module.md)
-
-
-
-
-<!--HONumber=Oct16_HO3-->
-
 

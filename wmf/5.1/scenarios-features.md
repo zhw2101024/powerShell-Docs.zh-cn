@@ -8,17 +8,15 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: a1dde68414fd9754a15adb42642646f87adb0823
-ms.openlocfilehash: 9611a7da48a849b52821ac2890e1ea60441a75e3
-
+ms.openlocfilehash: 92a4657e90c197cbd7d1b11f778809a860092596
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# WMF 5.1 中的新方案和功能（预览版） #
+# <a name="new-scenarios-and-features-in-wmf-51-preview"></a>WMF 5.1 中的新方案和功能（预览版） #
 
 > 注意：此信息是预发布版本，可能会进行更改。
 
-## PowerShell 版本 ##
+## <a name="powershell-editions"></a>PowerShell 版本 ##
 从版本 5.1 开始，PowerShell 以表现出不同功能集和平台兼容性的不同版本提供。
 
 - **桌面版：**以 .NET Framework 为基础构建，提供与面向在完整功能 Windows 版本（如服务器核心和 Windows 桌面）上运行的 PowerShell 版本的脚本和模块的兼容性。
@@ -30,11 +28,11 @@ ms.openlocfilehash: 9611a7da48a849b52821ac2890e1ea60441a75e3
 - [按 CompatiblePSEditions 筛选 Get-Module 结果]()
 - [阻止脚本执行，除非在 PowerShell 的兼容版本上运行]()
 
-## 目录 Cmdlet  
+## <a name="catalog-cmdlets"></a>目录 Cmdlet  
 
 在 [Microsoft.PowerShell.Security](https://technet.microsoft.com/en-us/library/hh847877.aspx) 模块中新增了两个新 cmdlet；这两个 cmdlet 可用于生成和验证 Windows 目录文件。  
 
-###New-FileCatalog 
+###<a name="new-filecatalog"></a>New-FileCatalog 
 --------------------------------
 
 New-FileCatalog 用于为文件夹和文件集合创建 Windows 目录文件。 该目录文件包含指定路径中的所有文件的哈希值。 用户可以分发文件夹集合以及代表这些文件夹的对应的目录文件。 该信息对于验证自目录创建以来是否对文件夹进行了任何更改很有用。    
@@ -55,7 +53,7 @@ New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersio
 若要验证目录文件（上面示例中的 Pester.cat 文件）的完整性，应使用 [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet 对其进行签名。   
 
 
-###Test-FileCatalog 
+###<a name="test-filecatalog"></a>Test-FileCatalog 
 --------------------------------
 
 Test-FileCatalog 用于验证代表一组文件夹的目录。 
@@ -69,7 +67,7 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 此 cmdlet 将目录中找到的所有文件的哈希值及其相对路径与磁盘中的进行比较。 如果它检测到文件哈希值和路径之间存在任何不匹配，将返回状态 ValidationFailed。 用户可通过使用 *-Detailed* 参数检索所有这些信息。 它还在“签名”属性中显示目录的签名状态，该结果与针对目录文件调用 [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) cmdlet 的结果相同。 用户也可以使用 -FilesToSkip 参数在验证过程中跳过任何文件。 
 
 
-## 模块分析缓存 ##
+## <a name="module-analysis-cache"></a>模块分析缓存 ##
 从 WMF 5.1 开始，PowerShell 针对用于缓存有关模块的数据（如它导出的命令）的文件提供了控制。
 
 默认情况下，此缓存存储在文件 `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache` 中。
@@ -96,7 +94,7 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
 此环境变量的设置会在当前进程中立即生效。
 
-##指定模块版本
+##<a name="specifying-module-version"></a>指定模块版本
 
 在 WMF 5.1 中，`using module` 的行为方式与 PowerShell 中其他与模块相关的构造相同。 以前无法指定特定模块版本；如果有多个版本存在，则这会导致错误。
 
@@ -105,18 +103,12 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
 * 可以使用 `ModuleSpecification` [哈希表](https://msdn.microsoft.com/en-us/library/jj136290(v=vs.85).aspx)。 此哈希表具有与 `Get-Module -FullyQualifiedName` 相同的格式。
 
-**例如：** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
+**示例：** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
 * 如果有多个版本的模块，则 PowerShell 会使用与 `Import-Module` **相同的解析逻辑**，不会返回错误 - - 行为与 `Import-Module` 和 `Import-DscResource` 相同。
 
 
-##针对 Pester 的改进
+##<a name="improvements-to-pester"></a>针对 Pester 的改进
 在 WMF 5.1 中，PowerShell 随附的 Pester 版本从 3.3.5 更新到 3.4.0，并且添加了一个提交：https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e，从而改善了 Nano 服务器上的 Pester 的行为。 
 
 你可以通过检查 https://github.com/pester/Pester/blob/master/CHANGELOG.md 上的 ChangeLog.md 文件查看从版本 3.3.5 到 3.4.0 的更改
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

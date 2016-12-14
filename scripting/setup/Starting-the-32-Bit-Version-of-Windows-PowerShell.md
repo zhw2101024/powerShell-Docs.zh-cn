@@ -8,20 +8,18 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 12b31890-2609-4a76-8c24-0ebe78084f50
-translationtype: Human Translation
-ms.sourcegitcommit: fa0a541965b4121b8e8ac677b3c38e6f316b4553
-ms.openlocfilehash: 4e6a0e7f8935b905d1cb19576541d1b532fcba21
-
+ms.openlocfilehash: e6e9d951b2dd10637bbf2c6afda774cd9ba32a8d
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 启动 32 位版本的 Windows PowerShell
+# <a name="starting-the-32-bit-version-of-windows-powershell"></a>启动 32 位版本的 Windows PowerShell
 在 64 位计算机 (**Windows PowerShell (x86)**) 上安装 Windows PowerShell 时，除 64 位版之外，还将安装 32 位版本的 Windows PowerShell。 运行 Windows PowerShell 时，默认运行 64 位版。
 
 但是，有时可能需要运行 **Windows PowerShell (x86)**，例如使用需要 32 位版的模块时，或者远程连接到 32 位计算机时。
 
 若要启动 32 位版本的 Windows PowerShell，请使用以下任何过程。
 
-#### 在 Windows Server® 2012 R2 中
+#### <a name="in-windows-server-2012-r2"></a>在 Windows Server® 2012 R2 中
 
 -   在“开始”屏幕上，键入 **Windows PowerShell (x86)**。 单击“Windows PowerShell x86”磁贴。
 
@@ -29,9 +27,9 @@ ms.openlocfilehash: 4e6a0e7f8935b905d1cb19576541d1b532fcba21
 
 -   在桌面上，将光标移动到右上角，单击“搜索”，键入**PowerShell x86**，然后单击“Windows PowerShell (x86)”。
 
--   通过命令行，输入： `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
+-   通过命令行，输入：`%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### 在 Windows Server® 2012 中
+#### <a name="in-windows-server-2012"></a>在 Windows Server® 2012 中
 
 -   在“开始”屏幕上，键入 **PowerShell**，然后单击“Windows PowerShell (x86)”。
 
@@ -39,9 +37,9 @@ ms.openlocfilehash: 4e6a0e7f8935b905d1cb19576541d1b532fcba21
 
 -   在桌面上，将光标移动到右上角，单击“搜索”，键入 **PowerShell**，然后单击“Windows PowerShell (x86)”。
 
--   通过命令行，输入： `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
+-   通过命令行，输入：`%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### 在 Windows® 8.1 中
+#### <a name="in-windows-81"></a>在 Windows® 8.1 中
 
 -   在“开始”屏幕上，键入 **Windows PowerShell (x86)**。 单击“Windows PowerShell x86”磁贴。
 
@@ -49,9 +47,9 @@ ms.openlocfilehash: 4e6a0e7f8935b905d1cb19576541d1b532fcba21
 
 -   在桌面上，将光标移动到右上角，单击“搜索”，键入**PowerShell x86**，然后单击“Windows PowerShell (x86)”。
    
--   通过命令行，输入： `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
+-   通过命令行，输入：`%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### 在 Windows® 8 中
+#### <a name="in-windows-8"></a>在 Windows® 8 中
 
 -   在“开始”屏幕上，将光标移动到右上角，依次单击“设置”、“磁贴”，然后将“显示管理工具”滑块移动到“是”。 然后，键入 **PowerShell**，单击“Windows PowerShell (x86)”。
 
@@ -59,10 +57,4 @@ ms.openlocfilehash: 4e6a0e7f8935b905d1cb19576541d1b532fcba21
 
 -   在“开始”屏幕或桌面上，键入 **PowerShell (x86)**，然后单击“Windows PowerShell (x86)”。
 
--   通过命令行，输入： `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
-
-
-
-<!--HONumber=Oct16_HO1-->
-
-
+-   通过命令行，输入：`%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`

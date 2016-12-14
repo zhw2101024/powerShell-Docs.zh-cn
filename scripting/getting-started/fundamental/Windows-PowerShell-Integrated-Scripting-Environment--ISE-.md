@@ -8,21 +8,19 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: bfb36e6313379080ee071ec1df41992b945d2d83
-
+ms.openlocfilehash: 411d7cce5c93d274ab1f10d77f5efba2154c74a8
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell 集成脚本环境 (ISE)
+# <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell 集成脚本环境 (ISE)
 Windows PowerShell 集成脚本环境 (ISE) 是 Windows PowerShell 引擎和语言的两个主机之一。 借助它你可以采取 Windows PowerShell 控制台中不可用的方式来编写、运行并测试脚本。 ISE 添加了语法着色、Tab 自动补全、IntelliSense、可视调试和上下文相关帮助。
 
 ISE 使你能够在控制台窗格中运行命令，但它也支持可用于同时查看脚本的源代码的窗格和可以插入到 ISE 中的其他工具。 甚至可以同时打开多个脚本窗口，当你正调试的脚本使用其他脚本或模块中定义的函数时，这将特别有用。
 
-## 新增功能
+## <a name="whats-new"></a>新增功能
 以下是最新的 PowerShell 版本中已添加到 ISE 的一些功能。
 
-### PowerShell 3.0 中的新添功能（Windows Server 2012、Windows 8）
+### <a name="added-in-powershell-30-windows-server-2012-windows-8"></a>PowerShell 3.0 中的新添功能（Windows Server 2012、Windows 8）
 **IntelliSense** 通过在你进行键入时，显示匹配的 cmdlet、参数、参数值、文件或文件夹来自动完成你的命令。
 
 **代码片段**是代码的一小部分，它可以轻松插入到你编写的脚本中。 有用的代码片段的集合包含在框中，你可以通过使用 **New-Snippet** cmdlet 添加更多的代码片段。
@@ -55,21 +53,15 @@ ISE 使你能够在控制台窗格中运行命令，但它也支持可用于同�
 
 -   **块选择**。 你可以通过在用鼠标选定脚本窗格中文本的同时按住 ALT 键，或通过按 **Alt+Shift+箭头**键来选定块状的文本块。
 
-### PowerShell 2.0 中的新添功能（Windows Server 2008 R2、Windows 7）
+### <a name="added-in-powershell-20-windows-server-2008-r2-windows-7"></a>PowerShell 2.0 中的新添功能（Windows Server 2008 R2、Windows 7）
 ISE 随 PowerShell v2.0 一同引入。
 
-## 运行 Windows PowerShell ISE 的要求
+## <a name="requirements-for-running-the-windows-powershell-ise"></a>运行 Windows PowerShell ISE 的要求
 ISE 可在任何运行 Windows PowerShell v2.0 或更高版本的计算机上使用。 每个 Windows 和 Windows Server 版本都包含一个 Windows PowerShell 和 ISE 版本，但你可以通过安装 Windows Management Framework 升级至最新的可用版本。 运行此搜索以查找最新的可用版本：[下载](http://www.microsoft.com/en-us/search/DownloadResults.aspx?q=%22windows%20management%20framework%22%20PowerShell&sortby=Relevancy~Descending)。 请注意：任何标记为“预览版”的条目都是预发布的代码，并不具备完整的功能。
 
 > [!NOTE]
 > 由于 Windows PowerShell ISE 需要图形用户界面，因此你无法在 Windows Server 的 Server Core 选项上运行它。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 - [使用 Windows PowerShell 集成脚本环境](http://technet.microsoft.com/library/cc732148.aspx)
-
-
-
-
-<!--HONumber=Oct16_HO1-->
-
 

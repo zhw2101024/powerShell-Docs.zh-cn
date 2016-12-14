@@ -7,17 +7,15 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: b38cfd053cc2356fa7ca99605dbd84190d342327
-ms.openlocfilehash: fc6307be4dafb378350b6d9667b2b6aca0e2e6d4
-
+ms.openlocfilehash: e5ad9190ae620e511258675ad7e65ec59018d89f
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#  PowerShell
+#  <a name="powershell"></a>PowerShell
 
 基于.NET Framework 构建，Windows PowerShell 是一种基于任务的命令行外壳和脚本语言；专门面向系统管理员和高级用户，可快速自动化多个操作系统（Linux、OSX、Unix 和 Windows）和这些操作系统上运行的应用程序相关进程的管理。
 
-###  PowerShell 现在是开放源代码
+###  <a name="powershell-is-now-open-source"></a>PowerShell 现在是开放源代码
 
 PowerShell 基本源代码目前在 GitHub 中可用，且对社区贡献开放，请参阅 [PowerShell](https://github.com/powershell/powershell)。
 
@@ -27,19 +25,19 @@ PowerShell 基本源代码目前在 GitHub 中可用，且对社区贡献开放�
 >  **注意：**  
 >  GitHub 中所有有关 PowerShell 的链接都将转至 GitHub。
 
-#  文档
+#  <a name="documentation"></a>文档
 
 文档集围绕以下 4 个主要部分进行组织：
 
-##  [PowerShell 的新增功能](whats-new/What-s-New-With-PowerShell.md)
+##  <a name="whats-new-with-powershellwhats-newwhat-s-new-with-powershellmd"></a>[PowerShell 的新增功能](whats-new/What-s-New-With-PowerShell.md)
 本部分介绍了关于产品的所有公告（按版本和发布版分类）。
 
-##  [安装 PowerShell](setup/setup-reference.md)
+##  <a name="powershell-setupsetupsetup-referencemd"></a>[安装 PowerShell ](setup/setup-reference.md)
 本部分介绍了如何在受支持的环境中安装 PowerShell 所有版本。  
 
 此外，还介绍了如何配置安全性、可访问性、远程访问和管理、工作流以及 Web 访问。
 
-##  [PowerShell 入门](getting-started/Getting-Started-with-Windows-PowerShell.md)
+##  <a name="getting-started-with-powershellgetting-startedgetting-started-with-windows-powershellmd"></a>[PowerShell 快速入门](getting-started/Getting-Started-with-Windows-PowerShell.md)
 本部分针对 PowerShell 新用户介绍了使用该产品的所有所需信息。  
 本部分内容：
 -   [准备好使用 Windows PowerShell](getting-started/Getting-Ready-to-Use-Windows-PowerShell.md)，说明了安装 PowerShell 所需的必要步骤，以便试用“PowerShell 快速入门”部分中介绍的所有代码段和命令。
@@ -48,7 +46,7 @@ PowerShell 基本源代码目前在 GitHub 中可用，且对社区贡献开放�
 -  一系列“[&lt;用法&gt;](getting-started/cookbooks/basic-cookbooks-reference.md)基本指南”主题，介绍了关于文件、文件系统、注册表、进程、服务和相似的日常主题的标准任务执行方法。
 -  有关[了解 PowerShell](getting-started/more-powershell-learning.md)的其他资源的系统化指南。
 
-##  [常见 PowerShell](core-powershell/core-powershell.md)
+##  <a name="common-powershellcore-powershellcore-powershellmd"></a>[常见 PowerShell](core-powershell/core-powershell.md)
 本部分包含所有的引用材料 PowerShell。  
 本节包括：
 -  [PowerShell 常见模块](core-powershell/core-modules.md)
@@ -58,9 +56,3 @@ PowerShell 基本源代码目前在 GitHub 中可用，且对社区贡献开放�
 -  [PowerShell 工作流](core-powershell/workflows-guide.md)
 -  [PowerShell Web 访问](core-powershell/web-access.md)
 -  [PowerShell 术语表](Windows-PowerShell-Glossary.md)
-
-
-
-<!--HONumber=Aug16_HO4-->
-
-

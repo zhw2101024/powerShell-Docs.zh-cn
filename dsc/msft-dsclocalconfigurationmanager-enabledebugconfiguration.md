@@ -7,18 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 919438862ca9786447b690d2db10e905da0a7c42
 ms.openlocfilehash: f74e9941180c00a1aae1bd1d7b48fa4de0c8790d
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-
-# MSFT_DSCLocalConfigurationManager 类的 EnableDebugConfiguration 方法
+# <a name="enabledebugconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类的 EnableDebugConfiguration 方法
 
 启用 DSC 资源调试。
 
-语法
+<a name="syntax"></a>语法
 ------
 
 ```mof
@@ -27,29 +24,29 @@ uint32 EnableDebugConfiguration(
 );
 ```
 
-参数
+<a name="parameters"></a>参数
 ----------
 
-*BreakAll* \[in\]  
+BreakAll \[in\]  
 在资源脚本中的每一行设置断点。
 
-## 返回值
+## <a name="return-value"></a>返回值
 ------------
 
 如果成功，则返回零；否则返回错误代码。
 
-## 备注
+## <a name="remarks"></a>备注
 
 这是一种静态方法。
 
-## 要求
+## <a name="requirements"></a>要求
 ------------
 >**MOF：** DscCore.mof
 
 >**命名空间**：Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
@@ -57,11 +54,5 @@ uint32 EnableDebugConfiguration(
 
  
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 
