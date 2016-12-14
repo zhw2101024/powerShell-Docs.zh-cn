@@ -8,13 +8,11 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: b32cb86b7a18fee929cc81360d81f479571a74c2
-ms.openlocfilehash: a7ef0ddf4d093a89f32f3484dfbef78fb159f0c2
-
+ms.openlocfilehash: eacd33d2a0a92977a3990132e23eef9871a7f0dc
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows Management Framework
+# <a name="windows-management-framework"></a>Windows Management Framework
 
 Windows Management Framework (WMF) 是跨各种风格的 Windows 和 Windows Server 提供一致的管理接口的传递机制。
 使用 WMF 安装时，客户可无缝地在其环境中的各种操作系统之间进行交互操作。
@@ -31,7 +29,7 @@ WMF 安装添加和/或更新了以下功能：
 - 软件清单日志记录 (SIL)
 - 服务器管理器 CIM 提供程序
 
-## WMF 发行说明
+## <a name="wmf-release-notes"></a>WMF 发行说明
 若要了解给定 WMF 的 PowerShell 和其他组件中的各种增强功能，请参阅以下链接以查看发行说明：
 
 
@@ -39,7 +37,7 @@ WMF 安装添加和/或更新了以下功能：
 - [WMF 5.0](5.0/releasenotes.md)
 
 
-## 各个 Windows 操作系统间的 WMF 可用性
+## <a name="wmf-availability-across-windows-operating-systems"></a>各个 Windows 操作系统间的 WMF 可用性
 
 >TODO：在列标题上添加指向特定 WMF DLC 的链接
 
@@ -59,9 +57,3 @@ WMF 安装添加和/或更新了以下功能：
 | Windows XP | | | |  | 是 |
 
 >TODO：解释上表中的 *
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-
