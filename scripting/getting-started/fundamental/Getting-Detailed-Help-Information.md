@@ -1,15 +1,16 @@
 ---
-title: "获取详细的帮助信息"
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "获取详细的帮助信息"
+ms.technology: powershell
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 983876d805404857392565d4273e4dc38752a094
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 63a002058d7e305cacdf6933bc8e16c1c56d4c63
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="getting-detailed-help-information"></a>获取详细的帮助信息

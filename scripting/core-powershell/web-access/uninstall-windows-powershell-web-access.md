@@ -1,14 +1,15 @@
 ---
-title: "卸载 Windows PowerShell Web 访问"
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 9e03bca75eeb6acf3f1433a9baaed0c1674ab1be
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "卸载 Windows PowerShell Web 访问"
+ms.technology: powershell
+ms.openlocfilehash: 1673892b5430f8c49b6ea5ffacf8be0e9e2b3fdf
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 #  <a name="uninstall-windows-powershell-web-access"></a>卸载 Windows PowerShell Web 访问

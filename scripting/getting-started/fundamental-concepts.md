@@ -1,14 +1,15 @@
 ---
-title: "基本概念"
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: edd8614879c1781a065eb76025799893f10cc1ab
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "基本概念"
+ms.technology: powershell
+ms.openlocfilehash: 9fec14d7b916be64dbffc0ffa244647642e06b18
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 #  <a name="fundamental-concepts"></a>基本概念

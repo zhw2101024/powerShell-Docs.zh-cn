@@ -1,15 +1,16 @@
 ---
-title: "Microsoft.PowerShell.Archive 模块"
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "Microsoft.PowerShell.Archive 模块"
+ms.technology: powershell
 ms.assetid: 71a727b5-49a5-47a9-8034-161c86cf042b
-ms.openlocfilehash: f1c54761db169a3f79efb06124be916185c3fb28
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: faebb9161a89854e64af9e07081804958710f45a
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="microsoftpowershellarchive-module"></a>Microsoft.PowerShell.Archive 模块

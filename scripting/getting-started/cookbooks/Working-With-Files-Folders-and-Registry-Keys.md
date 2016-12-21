@@ -1,15 +1,16 @@
 ---
-title: "使用文件、文件夹和注册表项"
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "使用文件、文件夹和注册表项"
+ms.technology: powershell
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: e049f49414a79b9de5c05100957ae4dba8d992ce
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 5d76098261c0288c83b4a27063ca36c23d606103
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>使用文件、文件夹和注册表项

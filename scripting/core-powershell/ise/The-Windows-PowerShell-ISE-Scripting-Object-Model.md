@@ -1,15 +1,16 @@
 ---
-title: "Windows PowerShell ISE 脚本对象模型"
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "Windows PowerShell ISE 脚本对象模型"
+ms.technology: powershell
 ms.assetid: 69b047d0-da79-413e-b948-8e45d05d1f85
-ms.openlocfilehash: 43887f2ab51722f8238bafedd938f9003120d961
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 902f11f34ef128c3d8d66a20aadb356567f35485
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="the-windows-powershell-ise-scripting-object-model"></a>Windows PowerShell ISE 脚本对象模型

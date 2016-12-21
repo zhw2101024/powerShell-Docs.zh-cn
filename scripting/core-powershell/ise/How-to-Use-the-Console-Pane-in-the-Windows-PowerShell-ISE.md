@@ -1,15 +1,16 @@
 ---
-title: "如何在 Windows PowerShell ISE 中使用控制台窗格"
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "如何在 Windows PowerShell ISE 中使用控制台窗格"
+ms.technology: powershell
 ms.assetid: 44d67705-87c7-4a69-a53e-6471fdebb757
-ms.openlocfilehash: 100697bc474c46d0381bccf5bc169474f4213aac
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 68dd5499e4f0686a77f33265016414c7c4eb0618
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="how-to-use-the-console-pane-in-the-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中使用控制台窗格

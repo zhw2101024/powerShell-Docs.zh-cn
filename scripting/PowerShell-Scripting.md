@@ -1,14 +1,15 @@
 ---
-title: "PowerShell 脚本"
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: e5ad9190ae620e511258675ad7e65ec59018d89f
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "PowerShell 脚本"
+ms.technology: powershell
+ms.openlocfilehash: 2dde8bdf8dda74648ea8ea7891dd3c7b96393e8a
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 #  <a name="powershell"></a>PowerShell
@@ -56,3 +57,4 @@ PowerShell 基本源代码目前在 GitHub 中可用，且对社区贡献开放�
 -  [PowerShell 工作流](core-powershell/workflows-guide.md)
 -  [PowerShell Web 访问](core-powershell/web-access.md)
 -  [PowerShell 术语表](Windows-PowerShell-Glossary.md)
+

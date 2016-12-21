@@ -1,15 +1,16 @@
 ---
-title: "安装 Windows PowerShell"
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "安装 Windows PowerShell"
+ms.technology: powershell
 ms.assetid: 6fbb0409-5a54-48ec-95e6-7f8b7d8c4969
-ms.openlocfilehash: 2c3e698e83fb3c37eda6ec604b894079ec3508bb
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: fd0336b66312293c434ae2c5ad5a7899c20777ff
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="installing-windows-powershell"></a>安装 Windows PowerShell
@@ -102,3 +103,4 @@ Windows PowerShell 3.0 已安装和配置，并可供使用。 Windows PowerShel
 ## <a name="see-also"></a>另请参阅
 - [Windows PowerShell 系统要求](Windows-PowerShell-System-Requirements.md)
 - [启动 Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+

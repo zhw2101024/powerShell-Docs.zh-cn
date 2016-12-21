@@ -1,14 +1,15 @@
 ---
-title: "使用基于 Web 的 Windows PowerShell 控制台"
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: a62e258812960ce59f050e59d2ef3acc296663a2
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "使用基于 Web 的 Windows PowerShell 控制台"
+ms.technology: powershell
+ms.openlocfilehash: ea530d346ec36000da331b287f51d8f732947629
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 #  <a name="use-the-web-based-windows-powershell-console"></a>使用基于 Web 的 Windows PowerShell 控制台
@@ -305,7 +306,7 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
 
 -   登录到 **NoLanguage** 会话配置或 Windows PowerShell Web 访问的受限运行空间的用户不能运行“退出”命令以结束会话。 若要注销，用户应在控制台页面上单击“注销”。
 
--   <span class="label">同时连接到多台目标计算机。</span>   如果网关服务器正在运行 Windows Server 2012，Windows PowerShell Web 访问仅允许每个浏览器会话连接一台远程计算机；它不允许用户只登录一次，即使用独立的浏览器选项卡连接到多台远程计算机。 当你打开新的选项卡或浏览器窗口时，Windows PowerShell Web 访问将提示你断开当前的会话，并启动新的会话，以使你可以连接到新的（或相同的）远程计算机。 但是，如果不同的远程计算机需要两个或更多独立会话，Internet Explorer 中的某一功能可让你创建新的会话。 若要在 Internet Explorer 中启动新的浏览器会话，请按下 **ALT**，打开“文件”菜单，然后选择“新建会话”。 随后在新的会话中打开 Windows PowerShell Web 访问网站，登录即可访问其他远程计算机。
+-   <span class="label">同时连接到多台目标计算机。</span>   如果网关服务器正在运行 Windows Server 2012，Windows PowerShell Web 访问仅允许每个浏览器会话连接一台远程计算机；它不允许用户只登录一次，即使用独立的浏览器选项卡连接到多台远程计算机。 当你打开新的选项卡或浏览器窗口时，Windows PowerShell Web 访问将提示你断开当前的会话，并启动新的会话，以使你可以连接到新的（或相同的）远程计算机。 但是，如果不同的远程计算机需要两个或更多独立会话，Internet Explorer 中的某一功能可让你创建新的会话。 若要在 Internet Explorer 中启动新的浏览器会话，请按下 **ALT**，打开“文件”菜单，然后选择“新建会话”。 随后在新的会话中打开 Windows PowerShell Web 访问网站，登录即可访问其他远程计算机。
 
     当 Windows PowerShell Web 访问网关在 Windows Server 2012 R2 上运行时，用户可以在不同的浏览器选项卡中打开与远程计算机之间的多个连接。 如果想要使用基于 Web 的 Windows PowerShel 控制台打开与远程计算机之间的多个连接，请咨询 Windows PowerShell Web 访问网关管理员，了解网关服务器是否支持此功能。
 

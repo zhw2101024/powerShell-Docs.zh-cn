@@ -1,15 +1,16 @@
 ---
-title: "PowerShell.exe 命令行帮助"
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "PowerShell.exe 命令行帮助"
+ms.technology: powershell
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: f2a682671bb39de943fac47488e2a1c651423b53
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 609682294c344129f96afd0241116bb19154d19e
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="powershellexe-command-line-help"></a>PowerShell.exe 命令行帮助
@@ -55,7 +56,7 @@ PowerShell[.exe] -Help | -? | /?
 
 在极少数情况下，你可能需要为开关参数提供一个布尔值。 若要在 **File** 参数的值中为开关参数提供布尔值，请将参数名称和参数值括在大括号中，如下所示：`-File .\Get-Script.ps1 {-All:$False}`
 
-### <a name="-inputformat-text-xml"></a>-InputFormat {文本 |XML}
+### <a name="-inputformat-text--xml"></a>-InputFormat {文本 |XML}
 描述发送到 Windows PowerShell 的数据格式。 有效值为“Text”（文本字符串）或“XML”（序列化 CLIXML 格式）。
 
 ### <a name="-mta"></a>-Mta
@@ -73,7 +74,7 @@ PowerShell[.exe] -Help | -? | /?
 ### <a name="-noprofile"></a>-NoProfile
 不加载 Windows PowerShell 配置文件。
 
-### <a name="-outputformat-text-xml"></a>-OutputFormat {文本 | XML}
+### <a name="-outputformat-text--xml"></a>-OutputFormat {文本 | XML}
 确定 Windows PowerShell 输出内容的格式。 有效值为“Text”（文本字符串）或“XML”（序列化 CLIXML 格式）。
 
 ### <a name="-psconsolefile-filepath"></a>-PSConsoleFile <FilePath>

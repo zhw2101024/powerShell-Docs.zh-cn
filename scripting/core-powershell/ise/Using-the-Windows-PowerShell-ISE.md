@@ -1,15 +1,16 @@
 ---
-title: "使用 Windows PowerShell ISE"
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "使用 Windows PowerShell ISE"
+ms.technology: powershell
 ms.assetid: 64fb5f37-90a8-4b89-9fc8-c6b8fcc0c7d0
-ms.openlocfilehash: 818183e7bbaa5b0e05cca4a32e49987525dfa321
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 2aa86e8a9dedf46089fe4414b8070fdae132a024
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="using-the-windows-powershell-ise"></a>使用 Windows PowerShell ISE

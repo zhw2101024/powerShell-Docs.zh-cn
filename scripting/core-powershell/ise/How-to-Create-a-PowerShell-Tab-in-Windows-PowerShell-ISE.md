@@ -1,15 +1,16 @@
 ---
-title: "如何在 Windows PowerShell ISE 中创建 PowerShell 选项卡"
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "如何在 Windows PowerShell ISE 中创建 PowerShell 选项卡"
+ms.technology: powershell
 ms.assetid: c10c18c7-9ece-4fd0-83dc-a19c53d4fd83
-ms.openlocfilehash: fb568b1194a3d123913e635d26b5fbd2ad76c531
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 1c57e557e2fefbdf67b6a3c71721cd2a916a0ec5
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中创建 PowerShell 选项卡

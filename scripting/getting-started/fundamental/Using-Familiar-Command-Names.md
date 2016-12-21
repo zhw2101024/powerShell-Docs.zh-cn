@@ -1,15 +1,16 @@
 ---
-title: "使用熟悉的命令名称"
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "使用熟悉的命令名称"
+ms.technology: powershell
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: 9db1afb2a90e763ccca1e7ecfcc33c15e87c95e9
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: c71df3c8e973f58bab76a5b99142f6c61ca652b2
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="using-familiar-command-names"></a>使用熟悉的命令名称

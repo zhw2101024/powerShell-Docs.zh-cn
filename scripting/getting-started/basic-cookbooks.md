@@ -1,14 +1,15 @@
 ---
-title: "基本指南"
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 0a5460dd8b3d94745c1350d4c88ac4ba2420eb03
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "基本指南"
+ms.technology: powershell
+ms.openlocfilehash: 6caf1917904b125b67fce080b503b321ad0fd47c
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 #  <a name="basic-cookbooks-referencecookbooksbasic-cookbooks-referencemd"></a>[基本 Cookbook 参考](cookbooks/basic-cookbooks-reference.md)

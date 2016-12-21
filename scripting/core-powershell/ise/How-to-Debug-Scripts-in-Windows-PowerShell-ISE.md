@@ -1,15 +1,16 @@
 ---
-title: "如何在 Windows PowerShell ISE 中调试脚本"
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "如何在 Windows PowerShell ISE 中调试脚本"
+ms.technology: powershell
 ms.assetid: 6dc6d8f9-8978-46e9-a92f-169af37e2817
-ms.openlocfilehash: 7af6ddb5861a7136d279dc0b7b5c03b49ff6bc5c
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 8574754ccdf4717d29c4076f88d41691501da471
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中调试脚本

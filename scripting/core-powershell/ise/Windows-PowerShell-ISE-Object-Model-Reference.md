@@ -1,15 +1,16 @@
 ---
-title: "Windows PowerShell ISE 对象模型参考"
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "Windows PowerShell ISE 对象模型参考"
+ms.technology: powershell
 ms.assetid: e1a9e7d1-0fd5-47de-8d9b-f1be1ed13b0c
-ms.openlocfilehash: 44d5f142c6d2c68c1a70b3a1017a8e6e57a58abe
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 8bcb8620d668abb4d5026e3940fc322cbcfcd523
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="windows-powershell-ise-object-model-reference"></a>Windows PowerShell ISE 对象模型参考

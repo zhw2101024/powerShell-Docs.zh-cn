@@ -1,15 +1,16 @@
 ---
-title: "ISEMenuItemCollection 对象"
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "ISEMenuItemCollection 对象"
+ms.technology: powershell
 ms.assetid: 0c0f5484-3320-408e-8534-5bd1c8e48512
-ms.openlocfilehash: 89f62e1dc70886bd4c3bf84a3ffc27dfdcba7a3e
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 45e9123df5f22f37d2a76e49db6df5aa98824e1c
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="the-isemenuitemcollection-object"></a>ISEMenuItemCollection 对象
