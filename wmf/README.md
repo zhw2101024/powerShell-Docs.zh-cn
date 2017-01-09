@@ -1,6 +1,6 @@
 ---
 title: Windows Management Framework (WMF)
-ms.date: 2016-05-16
+ms.date: 2016-12-07
 keywords: PowerShell, WMF
 description: 
 ms.topic: article
@@ -8,8 +8,8 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: eacd33d2a0a92977a3990132e23eef9871a7f0dc
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: b652613561655c4cbd63342b0fcc495195f83a80
+ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
 translationtype: HT
 ---
 # <a name="windows-management-framework"></a>Windows Management Framework
@@ -30,30 +30,28 @@ WMF 安装添加和/或更新了以下功能：
 - 服务器管理器 CIM 提供程序
 
 ## <a name="wmf-release-notes"></a>WMF 发行说明
-若要了解给定 WMF 的 PowerShell 和其他组件中的各种增强功能，请参阅以下链接以查看发行说明：
 
+若要了解给定 WMF 的 PowerShell 和其他组件中的各种增强功能，请参阅以下链接以查看发行说明：
 
 - [WMF 5.1（预览版）](5.1/release-notes.md)
 - [WMF 5.0](5.0/releasenotes.md)
 
-
 ## <a name="wmf-availability-across-windows-operating-systems"></a>各个 Windows 操作系统间的 WMF 可用性
 
->TODO：在列标题上添加指向特定 WMF DLC 的链接
-
-| 操作系统版本 | [WMF 5.1 预览版*]() | [WMF 5.0]() | [WMF 4.0]() |  [WMF 3.0]() | [WMF (2.0)]() |
+| 操作系统版本 | [WMF 5.1](https://aka.ms/wmf51download) | [WMF 5.0](https://aka.ms/wmf5download) | [WMF 4.0](https://aka.ms/wmf4download) |  [WMF 3.0](https://aka.ms/wmf3download) | [WMF 2.0](https://aka.ms/wmf2download) |
 | ------------------------ | ----------- | ----------- | ----------- | ------------ |  ------------- |
-| Windows Server 2016 | 内置提供* | 内置提供* |  |  |  |
-| Windows 10 | 内置提供* | 内置提供*  | | | |  
-| Windows Server 2012 R2| ?? | 是 | 内置提供 |  |  |
-| Windows 8.1 | ?? | 是 |  内置提供 |  |  |
-| Windows Server 2012 | ?? | 是 | 是 |  内置提供 | |
+| Windows Server 2016 | 内置提供 |  |  |  |  |
+| Windows 10 | 内置提供 | 内置提供  | | | |  
+| Windows Server 2012 R2| 是 | 是 | 内置提供 |  |  |
+| Windows 8.1 | 是 | 是 |  内置提供 |  |  |
+| Windows Server 2012 | 是 | 是 | 是 |  内置提供 | |
 | Windows 8 |  |  |  | 内置提供 | |
-| Windows Server 2008 R2 SP1 | ?? | 是 | 是 |  是| 内置提供 |
-| Windows 7 SP1  | ?? | 是 | 是 | 是 | 内置提供 |
+| Windows Server 2008 R2 SP1 | 是 | 是 | 是 |  是| 内置提供 |
+| Windows 7 SP1  | 是 | 是 | 是 | 是 | 内置提供 |
 | Windows Server 2008 SP2 | | | | 是 | 是 |
 | Windows Vista | | | | | 是 |
 | Windows Server 2003| | | |  | 是 |
 | Windows XP | | | |  | 是 |
 
->TODO：解释上表中的 *
+**内置提供**：`specified WMF` 的功能内置于所示的 Windows 和 Windows Server 版本中。
+因此，无需在所示的操作系统版本上安装 `specified WMF`。

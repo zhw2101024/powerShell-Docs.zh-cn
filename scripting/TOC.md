@@ -15,6 +15,7 @@
 ### [安装 Windows PowerShell SDK](setup/Installing-the-Windows-PowerShell-SDK.md)
 ### [安全](setup/security.md)
 #### [PowerShell 远程处理安全注意事项](setup/WinRMSecurity.md)
+#### [在 PowerShell 远程处理中形成第二个跃点](setup/PS-remoting-second-hop.md)
 ### [辅助功能](setup/Accessibility-in-Windows-PowerShell-ISE.md)
 
 ## [入门](getting-started/Getting-Started-with-Windows-PowerShell.md)

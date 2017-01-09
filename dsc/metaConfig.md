@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: e978ee828fe3c91be52077442c5781b7a20e50be
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 13ff9acefa048e3b01c64150d67a2f14ec501284
+ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
 translationtype: HT
 ---
 # <a name="configuring-the-local-configuration-manager"></a>配置本地配置管理器
@@ -66,7 +66,7 @@ LCM 配置只能包含有限组资源的块。 在上面的示例中，调用的
 | ConfigurationMode| 字符串 | 指定 LCM 实际如何将配置应用到目标节点。 可能的值为__“ApplyOnly”__、__“ApplyandMonitior”（默认值）__和__“ApplyandAutoCorrect”__。 <ul><li>__ApplyOnly__：DSC 将应用配置，但若未向目标节点推送新配置或从服务器请求新配置，则它不会执行任何进一步操作。 首次应用新配置后，DSC 不会检查是否偏离以前配置的状态。 请注意，__ApplyOnly__ 生效前，DSC 将尝试应用配置，直到成功为止。 </li><li> __ApplyAndMonitor__：这是默认值。 LCM 将应用任意新配置。 首次应用新配置后，如果目标节点偏离期望状态，则 DSC 将在日志中报告差异。 请注意，__ApplyAndMonitor__ 生效前，DSC 将尝试应用配置，直到成功为止。</li><li>__ApplyAndAutoCorrect__：DSC 将应用任何新配置。 首次应用新配置后，如果目标节点偏离适当状态，则 DSC 将在日志中报告差异然后重新应用当前配置。</li></ul>| 
 | ActionAfterReboot| 字符串| 指定在应用配置期间重启后进行什么操作。 可能的值为__“ContinueConfiguration”（默认值）__和__“StopConfiguration”__。 <ul><li> __ContinueConfiguration__：在计算机重新启动后继续应用当前配置。</li><li>__StopConfiguration__：在计算机重新启动后停止当前配置。</li></ul>| 
 | RefreshMode| 字符串| 指定 LCM 如何获取配置。 可能的值为__“Disabled”__、__“Push”（默认值）__和__“Pull”__。 <ul><li>__Disabled__：DSC 配置对该节点禁用。</li><li> __Push__：通过调用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet 启动配置。 将配置立即应用到节点。 这是默认值。</li><li>__Pull：__将节点配置为从请求服务器定期检查配置。 如果此属性被设置为 __Pull__，你必须在 __ConfigurationRepositoryWeb__ 或 __ConfigurationRepositoryShare__ 块中指定请求服务器。 有关请求服务器的详细信息，请参阅[设置 DSC 请求服务器](pullServer.md)。</li></ul>| 
-| CertificateID| 字符串| 指定访问配置时用于保护凭据的证书的 GUID。 更多详细信息，请参阅 [Want to secure credentials in Windows PowerShell Desired State Configuration?（希望在 Windows PowerShell Desired State Configuration 中保护凭据？）](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)。| 
+| CertificateID| 字符串| 用于保护在配置中传递的凭据的证书指纹。 更多详细信息，请参阅 [Want to secure credentials in Windows PowerShell Desired State Configuration?（希望在 Windows PowerShell Desired State Configuration 中保护凭据？）](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)。| 
 | ConfigurationID| 字符串| 用于标识请求模式下要从请求服务器获取的配置文件的 GUID。 如果配置 MOF 名为 ConfigurationID.mof，则节点将在请求服务器上请求配置。<br> __注意：__如果设置此属性，将无法使用 __RegistryKey__ 将节点注册到请求服务器。 有关详细信息，请参阅[使用配置名称设置请求客户端](pullClientConfigNames.md)。| 
 | RefreshFrequencyMins| Uint32| LCM 按此时间间隔（以分钟为单位）检查请求服务器以获取更新的配置。 如果 LCM 未配置为请求模式，则将忽略此值。 默认值为 30。<br> __注意__：此属性的值必须是 __ConfigurationModeFrequencyMins__ 属性值的倍数，或者 __ConfigurationModeFrequencyMins__ 属性值必须为此属性值的倍数。| 
 | AllowModuleOverwrite| 布尔| 若允许从配置服务器下载的新配置覆盖目标节点上的旧配置，则为 __$TRUE__。 否则为 $FALSE。| 
@@ -94,7 +94,7 @@ LCM 配置只能包含有限组资源的块。 在上面的示例中，调用的
 |属性|类型|说明|
 |---|---|---| 
 |AllowUnsecureConnection|布尔|设置为 **$TRUE** 以允许无需身份验证即可从节点连接到服务器。 设置为 **$FALSE** 以要求进行身份验证。|
-|CertificateID|字符串|表示用于向服务器进行身份验证的证书的 GUID。|
+|CertificateID|字符串|用于向服务器进行身份验证的证书指纹。|
 |ConfigurationNames|string[]|目标节点将请求的配置名称的数组。 仅当通过 **RegistrationKey** 将节点注册到请求服务器后，才使用这些操作。 有关详细信息，请参阅[使用配置名称设置请求客户端](pullClientConfigNames.md)。|
 |RegistrationKey|字符串|用于将节点注册到请求服务器的 GUID。 有关详细信息，请参阅[使用配置名称设置请求客户端](pullClientConfigNames.md)。|
 |ServerURL|字符串|配置服务器的 URL。|
@@ -113,7 +113,7 @@ LCM 配置只能包含有限组资源的块。 在上面的示例中，调用的
 |属性|类型|说明|
 |---|---|---|
 |AllowUnsecureConnection|布尔|设置为 **$TRUE** 以允许无需身份验证即可从节点连接到服务器。 设置为 **$FALSE** 以要求进行身份验证。|
-|CertificateID|字符串|表示用于向服务器进行身份验证的证书的 GUID。|
+|CertificateID|字符串|用于向服务器进行身份验证的证书指纹。|
 |RegistrationKey|字符串|用于将节点标识到请求服务器的 GUID。 有关详细信息，请参阅“如何将节点注册到 DSC 请求服务器”。|
 |ServerURL|字符串|配置服务器的 URL。|
  
@@ -121,7 +121,7 @@ LCM 配置只能包含有限组资源的块。 在上面的示例中，调用的
 
 |属性|类型|说明|
 |---|---|---|
-|凭据|MSFT_Credential|用于对 SMB 共享进行身份验证的凭据。|
+|凭据|MSFT_Credential|用于对 SMB 共享进行身份验证的凭据。 有关传递凭据的示例，请参阅[设置 DSC SMB 请求服务器](pullServerSMB.md)|
 |SourcePath|字符串|SMB 共享的路径。|
 
 ## <a name="report-server-blocks"></a>报表服务器块
@@ -131,7 +131,7 @@ LCM 配置只能包含有限组资源的块。 在上面的示例中，调用的
 |属性|类型|说明|
 |---|---|---| 
 |AllowUnsecureConnection|布尔|设置为 **$TRUE** 以允许无需身份验证即可从节点连接到服务器。 设置为 **$FALSE** 以要求进行身份验证。|
-|CertificateID|字符串|表示用于向服务器进行身份验证的证书的 GUID。|
+|CertificateID|字符串|用于向服务器进行身份验证的证书指纹。|
 |RegistrationKey|字符串|用于将节点标识到请求服务器的 GUID。 有关详细信息，请参阅“如何将节点注册到 DSC 请求服务器”。|
 |ServerURL|字符串|配置服务器的 URL。|
 

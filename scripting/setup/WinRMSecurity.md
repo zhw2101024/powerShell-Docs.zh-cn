@@ -1,14 +1,15 @@
 ---
-title: WinRMSecurity
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
-author: eslesar
-manager: dongill
+author: jpjofre
 ms.prod: powershell
-ms.openlocfilehash: d1a75f4167a2f0af60801f33b79fb07cf7fe9398
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: WinRMSecurity
+ms.technology: powershell
+ms.openlocfilehash: 31b5ec784d394568c462a1e133b501f0a8884f2e
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell 远程处理安全注意事项
@@ -80,30 +81,11 @@ Kerberos 保证用户标识和服务器标识，而不发送任何种类的可�
 ## <a name="making-the-second-hop"></a>形成第二个跃点
 
 默认情况下，PowerShell 远程处理使用 Kerberos（如果可用）或者 NTLM 进行身份验证。 这两种协议对远程计算机进行身份验证而无需向其发送凭据。
-这是进行身份验证最安全的方式，但由于远程计算机没有用户的凭据，因此它不能以该用户的名义访问其他计算机和服务。 这被称为“双跃点”问题。
+这是进行身份验证最安全的方式，但由于远程计算机没有用户的凭据，因此它不能以该用户的名义访问其他计算机和服务。 这被称为“第二个跃点问题”。
 
-有几种方法可以避免此问题：
+有几种方法可以避免此问题。 若要深入了解这些方法以及每种方法的优缺点，请参阅[在 PowerShell 远程处理中形成第二个跃点](PS-remoting-second-hop.md)。
 
-### <a name="trust-between-remote-computers"></a>远程计算机之间的信任
 
-如果你信任远程连接到 *Server1* 的用户访问 *Server2* 上的资源，则可以显式授予 *Server1* 对这些资源的访问权限。
-
-### <a name="use-explicit-credentials-when-accessing-remote-resources"></a>访问远程资源时使用显式凭据
-
-通过使用 cmdlet 的 **Credential** 参数，可以将凭据显式传递到远程资源。 例如：
-
-```powershell
-$myCredential = Get-Credential
-New-PSDrive -Name Tools \\Server2\Shared\Tools -Credential $myCredential 
-```
-
-### <a name="credssp"></a>CredSSP
-
-你可以使用[凭据安全支持提供程序 (CredSSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/bb931352.aspx) 进行身份验证，具体方法为将“CredSSP”指定为对 [New-PSSession](https://technet.microsoft.com/en-us/library/hh849717.aspx) cmdlet 的调用的 `Authentication` 参数值。 CredSSP 会将凭据以纯文本的形式传递给服务器，因此会导致你面临遭受凭据被盗攻击的风险。 如果远程计算机被攻破，攻击者将有权访问用户的凭据。 默认情况下，CredSSP 在客户端和服务器计算机上都处于禁用状态。 应该仅在最受信任的环境中启用 CredSSP。 例如，连接到域控制器的域管理员，因为域控制器是高度可信任的。
-
-若要详细了解在使用 CredSSP 进行 PowerShell 远程处理时需要注意的安全问题，请参阅 [Accidental Sabotage: Beware of CredSSP（非蓄意破坏：当心 CredSSP）](http://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp)。
-
-有关凭据被盗攻击的详细信息，请参阅[缓解哈希传递 (PtH) 攻击和其他凭据被盗](https://www.microsoft.com/en-us/download/details.aspx?id=36036)。
 
 
 

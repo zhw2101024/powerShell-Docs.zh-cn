@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 64fc906cf0328d7be3aba7d5d6819640b4dcb4fa
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: cec3aaf4e57d1efc3e29880e4a7f078bd1840901
+ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
 translationtype: HT
 ---
 # <a name="windows-powershell-40-desired-state-configuration-local-configuration-manager-lcm"></a>Windows PowerShell 4.0 Desired State Configuration 本地配置管理器 (LCM)
@@ -21,7 +21,7 @@ translationtype: HT
 以下列出了可以设置或检索的本地配置管理器属性。
  
 * **AllowModuleOverwrite**：控制是否允许从配置服务器下载的新配置覆盖目标节点上的旧配置。 可能的值为 True 和 False。
-* **CertificateID**：访问配置时用于保护凭据的证书的 GUID。 更多详细信息，请参阅 [Want to secure credentials in Windows PowerShell Desired State Configuration?（希望在 Windows PowerShell Desired State Configuration 中保护凭据？）](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)。
+* **CertificateID**：用于保护在配置中传递的凭据的证书指纹。 更多详细信息，请参阅 [Want to secure credentials in Windows PowerShell Desired State Configuration?（希望在 Windows PowerShell Desired State Configuration 中保护凭据？）](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)。
 * **ConfigurationID**：指示用于从设置为“请求”服务器的服务器获取特定配置文件的 GUID。 GUID 可确保访问正确的配置文件。
 * **ConfigurationMode**：指定本地配置管理器实际如何将配置应用到目标节点。 可以有下列值：
     - **ApplyOnly**：使用此选项，DSC 将应用配置，但在检测到新配置之前不会执行任何进一步操作。检测新配置的方式可以是向目标节点直接发送新配置（“推送”）；也可以是配置“请求”服务器后，DSC 检查“请求”服务器时发现新配置。 如果目标节点的配置偏离，则不执行任何操作。

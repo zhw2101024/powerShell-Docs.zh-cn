@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: e62d4bf50e122d2e381cebf8fa594dda4f888e47
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: f419394b7699544567bf17945a55773ed3024f24
+ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
 translationtype: HT
 ---
 # <a name="setting-up-a-dsc-web-pull-server"></a>设置 DSC Web 请求服务器
@@ -145,10 +145,12 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
 >**注意**：在推送方案中，当前版本中存在一个 bug，因此需要在元配置文件中为绝不会向请求服务器注册的节点定义 ConfigurationID 属性。 这会强制使用 V1 请求服务器协议，避免注册失败消息。
 
 ## <a name="placing-configurations-and-resources"></a>放置配置和资源
+
 请求服务器设置完成之后，在请求服务器配置中通过 **ConfigurationPath** 和 **ModulePath** 属性定义的文件夹是用于放置可供目标节点请求的模块和配置的位置。 这些文件需要采用特定格式，以便请求服务器可正确处理它们。 
 
 ### <a name="dsc-resource-module-package-format"></a>DSC 资源模块程序包格式
-每个资源模块需要进行压缩并按照以下模式 **{模块名称}_{模块版本}.zip** 进行命名。 例如，一个名为 xWebAdminstration 并且模块版本为 3.1.2.0 的模块会命名为“xWebAdministration_3.2.1.0.zip”。 每个版本的模块都必须包含在单个 zip 文件中。 由于每个 zip 文件中只有单个版本的资源，因此不支持在 WMF 5.0 中添加的可在单个目录中支持多个模块版本的模块格式。 这意味着在打包 DSC 资源模块以便用于请求服务器之前，需要对目录结构进行少量更改。 WMF 5.0 中包含 DSC 资源的模块默认格式是 {Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\'。 为请求服务器进行打包之前，只需删除 **{Module version}** 文件夹，以便路径成为 {Module Folder}\DscResources\{DSC Resource Folder}\'。 进行此更改之后，按上文所述压缩文件夹，并将这些 zip 文件置于 **ModulePath** 文件夹中。
+
+每个资源模块都需要进行压缩并按照 `{Module Name}_{Module Version}.zip` 模式进行命名。 例如，一个名为 xWebAdminstration 并且模块版本为 3.1.2.0 的模块会命名为“xWebAdministration_3.2.1.0.zip”。 每个版本的模块都必须包含在单个 zip 文件中。 由于每个 zip 文件中只有单个版本的资源，因此不支持在 WMF 5.0 中添加的可在单个目录中支持多个模块版本的模块格式。 这意味着在打包 DSC 资源模块以便用于请求服务器之前，需要对目录结构进行少量更改。 WMF 5.0 中包含 DSC 资源的模块默认格式是 {Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\'。 为请求服务器进行打包之前，只需删除 **{Module version}** 文件夹，以便路径成为 {Module Folder}\DscResources\{DSC Resource Folder}\'。 进行此更改之后，按上文所述压缩文件夹，并将这些 zip 文件置于 **ModulePath** 文件夹中。
 
 使用 `new-dscchecksum {module zip file}` 可为新添加的模块创建校验和文件。
 

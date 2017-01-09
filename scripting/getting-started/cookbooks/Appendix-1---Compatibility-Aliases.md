@@ -1,15 +1,16 @@
 ---
-title: "附录 1：兼容性别名"
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "附录 1 - 兼容性别名"
+ms.technology: powershell
 ms.assetid: 96ad921e-1a57-463e-8e60-424faf8b6ef8
-ms.openlocfilehash: fc715f9ba2a1dc61d2549d5370371fe2b29fa063
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 126c124bd9bd4aa7c724fc0ef0b075a649d66f44
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="appendix-1---compatibility-aliases"></a>附录 1 - 兼容性别名
