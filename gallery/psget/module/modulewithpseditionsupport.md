@@ -9,8 +9,8 @@ ms.date: 2016-10-14
 contributor: manikb
 title: modulewithpseditionsupport
 ms.technology: powershell
-ms.openlocfilehash: d502427a3685467bdafb875ea84b9389483746e4
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 042df39b52cfb1cce9a44689ca40b42763321853
+ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
 translationtype: HT
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>具有兼容的 PowerShell 版本的模块
@@ -40,12 +40,12 @@ SerializationVersion           1.1.0.1
 
 ```powershell
 New-ModuleManifest -Path .\TestModuleWithEdition.psd1 -CompatiblePSEditions Desktop,Core -PowerShellVersion 5.1
-$moduleInfo = Test-ModuleManifest -Path \TestModuleWithEdition.psd1
-$moduleInfo.CompatiblePSEditions
+$ModuleInfo = Test-ModuleManifest -Path .\TestModuleWithEdition.psd1
+$ModuleInfo.CompatiblePSEditions
 Desktop
 Core
 
-$moduleInfo | Get-Member CompatiblePSEditions
+$ModuleInfo | Get-Member CompatiblePSEditions
 
    TypeName: System.Management.Automation.PSModuleInfo
 
@@ -74,7 +74,7 @@ Core
 ## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a>模块作者可发布面向 PowerShell 的两个版本（Desktop 和 Core）或其中之一的单一模块 
 
 由于模块作者必须使用 $PSEdition 变量在 RootModule 或模块清单中添加所需的逻辑，因此单一模块可同时在 Desktop 和 Core 版本上运行。
-模块可以有两套以 CoreCLR 和 FullCLR 为目标的已编译 dll。
+模块可以有两套以 CoreCLR 和 FullCLR 为目标的已编译 DLL。
 以下是两种使用逻辑打包模块来加载合适的 dll 的选项。
 
 ### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>选项 1：打包面向多个版本和多个 PowerShell 版本的模块

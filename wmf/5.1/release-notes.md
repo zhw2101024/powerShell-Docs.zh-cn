@@ -8,8 +8,8 @@ author: jkeithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 15de6aca52624134998b2d08fcfff9e1bcc1af7b
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
+ms.openlocfilehash: 0a499bbfd2517c1f44e41f1096cda0c23b1c3df8
+ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
 translationtype: HT
 ---
 # <a name="windows-management-framework-wmf-51-release-notes"></a>Windows Management Framework (WMF) 5.1 发行说明 #
@@ -25,7 +25,7 @@ WMF 5.1 包括将与 Windows Server 2016 一起发行的 PowerShell、WMI、WinR
 
 **重要说明：**
 
-- **WMF 5.1 需要 .NET Framework 4.5**。 将成功安装，但若未安装 .NET 4.5，主要功能将失败。 相关说明请参见[安装和配置 WMF 5.1](https://msdn.microsoft.com/en-us/powershell/wmf/5.1/install-configure) 主题。 
+- **WMF 5.1 需要 .NET Framework 4.6**。 安装将成功，但如果未安装 .NET 4.6，主要功能将失败。 相关说明请参见[安装和配置 WMF 5.1](https://msdn.microsoft.com/en-us/powershell/wmf/5.1/install-configure) 主题。 
 - 安装 WMF 5.1 RTM 之前，必须先卸载 WMF 5.1 预览版。
 - 可在 WMF 5.0 或 WMF 4.0 上直接安装 WMF 5.1。
 - 在 Windows 7 和 Windows Server 2008 R2 上安装 WMF 5.1 前，无需安装 WMF 4.0。 它只对 WMF 5.1 预览版本有影响，但已得到解决。  

@@ -8,8 +8,8 @@ author: krishna
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 8f1b550e92c3c280b84664e0b1f9695172370522
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
+ms.openlocfilehash: b341f57592feb183eb0e7228cdc08460e370369f
+ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
 translationtype: HT
 ---
 # <a name="known-issues-in-wmf-51"></a>WMF 5.1 中的已知问题 #
