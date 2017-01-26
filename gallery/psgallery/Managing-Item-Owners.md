@@ -29,7 +29,7 @@ translationtype: HT
 将项发布到 PowerShell 库后，可轻松邀请其他用户成为项的所有者。
 
 1. 使用项的当前所有者的帐户[登录](https://powershellgallery.com/users/account/LogOn) PowerShell 库。
-2. 通过使用“项”选项卡、搜索或单击你的用户名，然后单击“管理我的项”[](https://www.powershellgallery.com/account/Packages)，导航到项页面。
+2. 通过使用“项”选项卡、搜索或单击你的用户名，然后单击[**“管理我的项”**](https://www.powershellgallery.com/account/Packages)，导航到项页面。
 3. 以项的所有者身份登录时，左侧有“管理所有者”链接可以单击。
 4. 输入要添加为所有者的人员的用户名，并单击“添加”。
 5. 随后将向新的共同所有者发送一封电子邮件，作为成为项的所有者的邀请函。
