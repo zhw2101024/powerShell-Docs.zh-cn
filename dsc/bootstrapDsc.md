@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: bf5b3da641facfdfa395aacf0eadcf773b8c4b02
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 38751d62a56dc90ff69fe3ab6e92829fb33edb2b
+ms.sourcegitcommit: a81ffb39f370b95ae802cd054dc4480c9e68cf77
 translationtype: HT
 ---
 >适用于：Windows PowerShell 5.0
@@ -32,9 +32,9 @@ translationtype: HT
 
 如果不希望 DSC 在启动时运行，将 [DSCAutomationHostEnabled](DSCAutomationHostEnabled.md) 注册表项的值设置为 0。
 
-- [将配置 MOF 文档注入 VHD](##Inject-a-configuration-MOF-document-into-a-VHD)
-- [将 DSC 元配置注入 VHD](##Inject-a-DSC-metaconfiguration-into-a-VHD)
-- [在启动时禁用 DSC](##Disable-DSC-at-boot-time)
+- 将配置 MOF 文档注入 VHD
+- 将 DSC 元配置注入 VHD
+- 启动时，请禁用 DSC
 
 >**注意：**可以将 `Pending.mof` 和 `MetaConfig.mof` 同时注入计算机。
 如果这两个文件都存在，则在 `MetaConfig.mof` 中指定的设置优先。

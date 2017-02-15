@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: f933d5d821d71a497d20e8ff66ebe26af9661f50
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 6b506abf2508a8ba182af9c3362fcc408785d058
+ms.sourcegitcommit: a3966253a165d193a42b43b9430a4dc76988f82f
 translationtype: HT
 ---
 # <a name="troubleshooting-dsc"></a>DSC 故障排除
@@ -16,6 +16,10 @@ translationtype: HT
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 本主题介绍出现问题时 DSC 故障排除的方法。
+
+## <a name="winrm-dependency"></a>WinRM 依赖关系
+
+Windows PowerShell Desired State Configuration (DSC) 依赖 WinRM。 在 Windows Server 2008 R2 和 Windows 7 上默认不启用 WinRM。 若要启用 WinRM，在 Windows PowerShell 提升的会话中运行 ```Set-WSManQuickConfig```。
 
 ## <a name="using-get-dscconfigurationstatus"></a>使用 Get-DscConfigurationStatus
 
@@ -29,7 +33,7 @@ translationtype: HT
 下面的参数集将返回上次配置运行的状态信息：
 
 ```powershell
-Get-DscConfigurationStatus  [-CimSession <CimSession[]>] 
+Get-DscConfigurationStatus     [-CimSession <CimSession[]>] 
                             [-ThrottleLimit <int>] 
                             [-AsJob] 
                             [<CommonParameters>]
@@ -37,7 +41,7 @@ Get-DscConfigurationStatus  [-CimSession <CimSession[]>]
 下面的参数集将返回之前所有配置运行的状态信息：
 
 ```powershell
-Get-DscConfigurationStatus  -All 
+Get-DscConfigurationStatus     -All 
                             [-CimSession <CimSession[]>] 
                             [-ThrottleLimit <int>] 
                             [-AsJob] 
@@ -51,30 +55,30 @@ PS C:\> $Status = Get-DscConfigurationStatus
 
 PS C:\> $Status
 
-Status      StartDate               Type            Mode    RebootRequested     NumberOfResources
-------      ---------               ----            ----    ---------------     -----------------
-Failure     11/24/2015  3:44:56     Consistency     Push    True                36
+Status         StartDate                Type            Mode    RebootRequested        NumberOfResources
+------        ---------                ----            ----    ---------------        -----------------
+Failure        11/24/2015  3:44:56     Consistency        Push    True                36
 
 PS C:\> $Status.ResourcesNotInDesiredState
 
-ConfigurationName       :   MyService
-DependsOn               :   
-ModuleName              :   PSDesiredStateConfiguration
-ModuleVersion           :   1.1
-PsDscRunAsCredential    :   
-ResourceID              :   [File]ServiceDll
-SourceInfo              :   c:\git\CustomerService\Configs\MyCustomService.ps1::5::34::File
-DurationInSeconds       :   0.19
-Error                   :   SourcePath must be accessible for current configuration. The related file/directory is:
+ConfigurationName        :    MyService
+DependsOn                :    
+ModuleName                :    PSDesiredStateConfiguration
+ModuleVersion            :    1.1
+PsDscRunAsCredential    :    
+ResourceID                 :    [File]ServiceDll
+SourceInfo                :    c:\git\CustomerService\Configs\MyCustomService.ps1::5::34::File
+DurationInSeconds        :    0.19
+Error                    :    SourcePath must be accessible for current configuration. The related file/directory is:
                             \\Server93\Shared\contosoApp.dll. The related ResourceID is [File]ServiceDll
-FinalState              :   
-InDesiredState          :   False
-InitialState            :   
-InstanceName            :   ServiceDll
-RebootRequested         :   False
-ReosurceName            :   File
-StartDate               :   11/24/2015  3:44:56
-PSComputerName          :
+FinalState                :    
+InDesiredState             :    False
+InitialState             :    
+InstanceName            :    ServiceDll
+RebootRequested            :    False
+ReosurceName            :    File
+StartDate                :    11/24/2015  3:44:56
+PSComputerName            :
 ```
 
 ## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a>脚本不运行：使用 DSC 日志来诊断脚本错误

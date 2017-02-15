@@ -8,17 +8,15 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 6956c31692285f62e5bf5a9ad857423abc7e8335
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
+ms.openlocfilehash: ed7be717b831bad24bde74a68ce39d5e65f1c5d9
+ms.sourcegitcommit: 58e5e77050ba32717ce3e31e314f0f25cb7b2979
 translationtype: HT
 ---
 # <a name="wmf-51-operating-system-compatibility"></a>WMF 5.1 操作系统兼容性 #
 
 > 注意：此信息是预发布版本，可能会进行更改。
 
->TODO：在列标题上添加指向 WMF 5.1 DLC 的链接
-
-| 操作系统版本 | [WMF 5.1]() | [WMF 5.0](https://aka.ms/wmf5download) | [WMF 4.0](https://aka.ms/wmf4download) |  [WMF 3.0](https://aka.ms/wmf3download) | [WMF 2.0](https://aka.ms/wmf2download) |
+| 操作系统版本 | [WMF 5.1](https://aka.ms/wmf51download) | [WMF 5.0](https://aka.ms/wmf5download) | [WMF 4.0](https://aka.ms/wmf4download) |  [WMF 3.0](https://aka.ms/wmf3download) | [WMF 2.0](https://aka.ms/wmf2download) |
 | ------------------------ | ----------- | ----------- | ----------- | ------------ |  ------------- |
 | Windows Server 2016 | 内置提供* |  |  |  |  |
 | Windows 10 | 内置提供* | 内置提供*  | | | |  
