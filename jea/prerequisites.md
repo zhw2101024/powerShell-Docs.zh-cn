@@ -8,8 +8,8 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-12-05
 title: "JEA 先决条件"
 ms.technology: powershell
-ms.openlocfilehash: c709b3692705db327245e4e1b3fde800ac7d57a9
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
+ms.openlocfilehash: d463e6cdfeb78a32eab9055b035747928d38e783
+ms.sourcegitcommit: cfe32f213819ae76de05da564c3e2c4b7ecfda2f
 translationtype: HT
 ---
 # <a name="prerequisites"></a>必备条件
@@ -21,14 +21,19 @@ Just Enough Administration 是 Windows PowerShell 5.0 及更高版本随附的�
 
 ## <a name="install-jea"></a>安装 JEA
 Windows PowerShell 5.0 及更高版本均包含 JEA 功能，但若要使用完整的功能，建议安装适用于系统的 PowerShell 最新版。
-下表介绍了 JEA 在每个受支持的 OS 上的可用性。
+下表介绍了 JEA 在 Windows Server 上的可用性：
 
-操作系统          | JEA 可用性
---------------------------|------------------------------------------------------
+服务器操作系统   | JEA 可用性
+--------------------------|--------------------------------
 Windows Server 2016       | 已预安装
 Windows Server 2012 R2    | 包含 WMF 5.1 的完整功能
 Windows Server 2012       | 包含 WMF 5.1 的完整功能
 Windows Server 2008 R2    | 包含 WMF 5.1 的完整功能
+
+此外，还可以在家庭或工作计算机上使用 JEA：
+
+客户端操作系统   | JEA 可用性
+--------------------------|-----------------------------------------------------
 Windows 10 1607 版           | 已预安装
 Windows 10 1603 版、1511 版     | 已预安装，但功能减少了<sup>1</sup>
 Windows 10 1507 版           | 不可用

@@ -7,18 +7,21 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 8a8af7f4b82b856460427a68ec536e98f7cd981b
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 5436b047052f522e930e60925aef1de2f5e81fcb
+ms.sourcegitcommit: a3966253a165d193a42b43b9430a4dc76988f82f
 translationtype: HT
 ---
 # <a name="running-dsc-with-user-credentials"></a>使用用户凭据运行 DSC 
 
-> 适用于：Windows PowerShell 5.0
+> 适用于：Windows PowerShell 5.0 和 Windows PowerShell 5.1
 
 可以通过在配置中使用 **PsDscRunAsCredential** 属性，在指定的一组凭据之下运行 DSC 资源。 默认情况下，DSC 以系统帐户身份运行每个资源。 有时需要以用户身份运行，例如在特定用户上下文中安装 MSI 程序包、设置用户的注册表项、访问用户的特定本地目录或访问网络共享。
 
 每个 DSC 资源都具有 **PsDscRunAsCredential** 属性，它可以设置为任何用户凭据（[PSCredential](https://msdn.microsoft.com/en-us/library/ms572524(v=VS.85).aspx) 对象）。
 凭据可以硬编码为配置中属性的值，你也可以将值设置为 [Get-Credential](https://technet.microsoft.com/en-us/library/hh849815.aspx)，这会在编译配置时提示用户输入凭据（有关编译配置的信息，请参阅[配置](configurations.md)）。
+
+>**注意：**在 PowerShell 5.0 中，不支持在调用复合资源的配置中使用 **PsDscRunAsCredential** 属性。 
+>在 PowerShell 5.1 中，支持在调用复合资源的配置中使用 **PsDscRunAsCredential** 属性。
 
 >**注意：****PsDscRunAsCredential** 属性在 PowerShell 4.0 中不可用。
 

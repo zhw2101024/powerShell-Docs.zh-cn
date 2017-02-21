@@ -8,8 +8,8 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 09316fef0594697a60a1bd4acabf39588f75edc2
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
+ms.openlocfilehash: 8957f4709c95ccb5b72c4fa9b42c9fe9ef93dffe
+ms.sourcegitcommit: 58e5e77050ba32717ce3e31e314f0f25cb7b2979
 translationtype: HT
 ---
 # <a name="bug-fixes-in-wmf-51"></a>WMF 5.1 中的 Bug 修复#
@@ -98,3 +98,16 @@ class CThing
 WMF 5.1 通过返回有关最新版本主题的帮助来解决此问题。
 
 `Get-Help` 不提供某种方法，这种方法用于指定希望获取相关帮助的版本。 若要解决此问题，请导航到模块目录，然后使用工具（如自己喜爱的编辑器）来直接查看帮助。 
+
+### <a name="powershellexe-reading-from-stdin-stopped-working"></a>从 STDIN 中读取的 powershell.exe 停止运行
+
+客户使用本机应用中的 `powershell -command -` 来执行通过 STDIN 传入脚本的 PowerShell。遗憾的是，由于控制台主机中的其他变更，导致此操作中断。
+
+https://windowsserver.uservoice.com/forums/301869-powershell/suggestions/15854689-powershell-exe-command-is-broken-on-windows-10
+
+### <a name="powershellexe-creates-spike-in-cpu-usage-on-startup"></a>powershell.exe 在启动时形成 CPU 使用率峰值
+
+PowerShell 使用 WMI 查询来检查是否是通过组策略启动，以免导致延迟登录。
+WMI 查询最终将 tzres.mui.dll 注入系统中的每个进程，因为 WMI Win32_Process 类会尝试检索本地时区信息。
+这会导致 wmiprvse（WMI 提供程序主机）出现 CPU 大峰值。
+解决方法是使用 Win32 API 调用来获取相同信息，而不是使用 WMI。

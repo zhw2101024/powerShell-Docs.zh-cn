@@ -1,64 +1,81 @@
 ---
-title: "安装并配置 WMF 5.1（预览版）"
-ms.date: 2016-05-16
+title: "安装和配置 WMF 5.1"
+ms.date: 2017-01-18
 keywords: PowerShell, DSC, WMF
 description: 
 ms.topic: article
-contributor: kriscv
-manager: dongill
+contributor: keithb
+manager: carmonm
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 21f26830cdc20a90ce48aa09bc7013d733242ae9
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 55a2e03385b90c7631d1b0373bf85602aa7d769b
+ms.sourcegitcommit: 267688f61dcc76fd685c1c34a6c7bfd9be582046
 translationtype: HT
 ---
-# <a name="install-and-configure-wmf-51-preview"></a>安装并配置 WMF 5.1（预览版） #
+# <a name="install-and-configure-wmf-51"></a>安装和配置 WMF 5.1 #
 
-## <a name="install-net-46"></a>安装 .Net 4.6
-要使用 WMF 5.1，必须安装 .Net Framework 4.6。 必须启动新的目录签名功能，这将影响 WMF 5.1 中模块和脚本加载的若干方面。 
 
-[.NET Framework 4.6 作为 KB 3045560](https://support.microsoft.com/en-us/kb/3045560) 提供。 下载位置提供了安装说明。
-
-> **注意：**存在一个已知问题 - WMF 5.1 预览版安装程序未检测到 .NET 4.6 要求，因此你将可在安装 .NET 4.6 前安装 WMF 5.1 预览版。 我们的测试表明，你可在安装 WMF 5.1 预览版后安装 .NET 4.6。 WMF 5.1 的最终版本将在安装前正确检查此先决条件要求。 
-
-## <a name="download-and-install-the-wmf-51-preview"></a>下载和安装 WMF 5.1 预览版
+## <a name="download-and-install-the-wmf-51-package"></a>下载和安装 WMF 5.1 包
 
 下载适用于要在其中进行安装的操作系统和体系结构的 WMF 5.1 包：
 
-| 操作系统       | 必备条件 | 包链接             |
-|------------------------|---------------|---------------------------|
-| Windows Server 2012 R2 | [.NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560) | [Win8.1AndW2K12R2-KB3156422-x64.msu](http://go.microsoft.com/fwlink/?LinkID=823586)|
-| Windows Server 2012    | [.NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560) | [W2K12-KB3156423-x64.msu](http://go.microsoft.com/fwlink/?LinkID=823587)|
-| Windows Server 2008 R2 | [.NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560) </br> [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) </br> [SHA-2 代码签名](https://technet.microsoft.com/en-us/library/security/3033929)的安全更新 | [Win7AndW2K8R2-KB3156424-x64.msu](http://go.microsoft.com/fwlink/?LinkID=823588) |
-| Windows 8.1            | [.NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560) | **x64：**[Win8.1AndW2K12R2-KB3156422-x64.msu](http://go.microsoft.com/fwlink/?LinkID=823586) </br> **x86：**[Win8.1-KB3156422-x86.msu](http://go.microsoft.com/fwlink/?LinkID=823589) |
-| Windows 7 SP1          | [.NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560) </br> [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) </br> [SHA-2 代码签名](https://technet.microsoft.com/en-us/library/security/3033929)的安全更新 | **x64：**[Win7AndW2K8R2-KB3156424-x64.msu](http://go.microsoft.com/fwlink/?LinkID=823588) </br> **x86：**[Win7-KB3156424-x86.msu](http://go.microsoft.com/fwlink/?LinkID=823590) |
+| 操作系统         | 必备条件       | 包链接             |
+|------------------------|---------------------|---------------------------|
+| Windows Server 2012 R2 | | [Win8.1AndW2K12R2-KB3191564-x64.msu](https://go.microsoft.com/fwlink/?linkid=839516)|
+| Windows Server 2012     | | [W2K12-KB3191565-x64.msu](https://go.microsoft.com/fwlink/?linkid=839513)|
+| Windows Server 2008 R2 | [.NET Framework 4.5.2](https://www.microsoft.com/en-ca/download/details.aspx?id=42642) | [Win7AndW2K8R2-KB3191566-x64.ZIP](https://go.microsoft.com/fwlink/?linkid=839523) | 
+| Windows 8.1            |  | **x64：**[Win8.1AndW2K12R2-KB3191564-x64.msu](https://go.microsoft.com/fwlink/?linkid=839516) </br> **x86：**[Win8.1-KB3191564-x86.msu](https://go.microsoft.com/fwlink/?linkid=839521) |
+| Windows 7 SP1          | [.NET Framework 4.5.2](https://www.microsoft.com/en-ca/download/details.aspx?id=42642) | **x64：**[Win7AndW2K8R2-KB3191566-x64.ZIP](https://go.microsoft.com/fwlink/?linkid=839523) </br> **x86：**[Win7-KB3191566-x86.ZIP](https://go.microsoft.com/fwlink/?linkid=839522)
 
 
-## <a name="install-wmf-51-from-windows-explorer-or-file-explorer-in-windows-server-2012-r2-or-windows-81"></a>从 Windows 资源管理器（或是 Windows Server 2012 R2 或 Windows 8.1 中的文件资源管理器）安装 WMF 5.1
+
+## <a name="install-wmf-51-for-windows-server-2008-r2-and-windows-7"></a>安装适用于 Windows Server 2008 R2 和 Windows 7 的 WMF 5.1
+
+> **注意：**针对 Windows Server 2008 R2 和 Windows 7 的安装说明发生变化，不同于其他包的安装说明。 下文中介绍了针对 Windows Server 2012 R2、Windows Server 2012 和 Windows 8.1 的安装说明。
+
+**在 Windows Server 2008 R2 和 Windows 7 上安装 WMF 5.1**
+
+1. 转到在其中下载了 ZIP 文件的文件夹。 
+
+2. 右键单击 ZIP 文件，然后选择“全部提取...”。 ZIP 文件中包含 2 个文件：MSU 和 Install-WMF5.1.PS1 脚本文件。 解压缩 ZIP 文件后，便可以将内容复制到运行 Windows 7 或 Windows Server 2008 R2 的任何一台计算机上。  
+
+3. 提取 ZIP 文件内容后，以管理员身份打开 PowerShell，然后转到包含  
+ZIP 文件内容的文件夹。 
+
+4. 在此文件夹中运行 Install-Wmf5.1.ps1 脚本，然后按说明操作。 此脚本会在本地计算机上检查系统必备，如果系统必备已满足，则会安装 WMF 5.1。 下文中列出了系统必备。 
+
+Install-WMF5.1.ps1 采用以下参数，以简化在 Windows Server 2008 R2 和 Windows 7 上自动执行安装：
+
+- AcceptEula：如果包含此参数，将会自动接受但不显示 EULA。
+- AllowRestart：只有在指定 AcceptEula 后，才能使用此参数。 如果包含此参数，并且在安装 WMF 5.1 后需要重启，将在安装完成后不发出提示就立即重启计算机。 
+
+**Windows Server 2008 R2 SP1 和 Windows 7 SP1 的 WMF 5.1 系统必备**
+
+若要在 Windows Server 2008 R2 SP1 或 Windows 7 SP1 上安装 WMF 5.1，必须先安装以下各项：
+- 必须安装最新 Service Pack。
+- **不得**安装 WMF 3.0。 安装 WMF 5.1 来替代 WMF 3.0 会导致 PSModulePath 丢失，进而可能会导致其他应用程序无法正常运行。 安装 WMF 5.1 前，要么必须先卸载 WMF 3.0，要么必须先保存 PSModulePath，然后在 WMF 5.1 安装完成后进行手动还原。 
+- WMF 5.1 需要 [.NET Framework 4.5.2](https://www.microsoft.com/en-ca/download/details.aspx?id=42642)。可按下载位置提供的说明操作，安装 Microsoft .NET Framework 4.5.2。
+
+**WinRM 依赖关系** 
+
+Windows PowerShell Desired State Configuration (DSC) 依赖 WinRM。 在 Windows Server 2008 R2 和 Windows 7 上默认不启用 WinRM。 若要启用 WinRM，在 Windows PowerShell 提升的会话中运行 `Set-WSManQuickConfig`。
+
+
+## <a name="install-wmf-51-for-windows-server-2012-r2-windows-server-2012-and-windows-81"></a>安装适用于 Windows Server 2012 R2、Windows Server 2012 和 Windows 8.1 的 WMF 5.1
+**在 Windows 资源管理器（或 Windows Server 2012 R2 或 Windows 8.1 中的文件资源管理器）中安装**
 
 1. 导航到在其中下载了 MSU 文件的文件夹。
 
 2. 双击 MSU 以运行它。
 
-## <a name="install-wmf-51-from-the-command-prompt"></a>从命令提示符安装 WMF 5.1##
+**通过命令提示符进行安装**
 
 1. 下载适用于计算机体系结构的正确程序包后，使用提升的用户权限（以管理员身份运行）打开“命令提示符”窗口。 在 Windows Server 2012 R2、Windows Server 2012 或 Windows Server 2008 R2 SP1 的服务器核心安装选项上，命令提示符默认使用提升的用户权限打开。
 
 2. 将目录更改为向其中下载或复制 WMF 5.1 安装包的文件夹。
 
 3. 运行下列命令之一：
-    - 在运行 Windows Server 2012 R2 或 Windows 8.1 x64 的计算机上，运行 `Win8.1AndW2K12R2-KB3156422-x64.msu /quiet`。
-    - 在运行 Windows Server 2012 的计算机上，运行 `W2K12-KB3156423-x64.msu /quiet`。
-    - 在运行 Windows Server 2008 R2 SP1 或 Windows 7 SP1 x64 的计算机上，运行 `Win7AndW2K8R2-KB3156424-x64.msu /quiet`。
-    - 在运行 Windows 8.1 x86 的计算机上，运行 `Win8.1-KB3156422-x86.msu /quiet`。
-    - 在运行 Windows 7 SP1 x86 的计算机上，运行 `Win7-KB3156424-x86.msu /quiet`。
-
-## <a name="additional-installation-notes-for-windows-server-2008-r2-sp1-and-windows-7-sp1"></a>Windows Server 2008 R2 SP1 和 Windows 7 SP1 的其他安装说明##
-在 Windows Server 2008 R2 SP1 或 Windows 7 SP1 上安装 WMF 5.1 需要安装以下各项：
-- 最新 Service Pack。
-- [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855)
-- WMF 5.1 需要 [Microsoft .NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560)。 可按照下载位置的说明安装 Microsoft .NET Framework 4.6。
-- [SHA-2 代码签名](https://technet.microsoft.com/en-us/library/security/3033929)的安全更新。 Windows 目录文件需要使用新的 PowerShell cmdlet。 
-
-> **WinRM 依赖关系** - Windows PowerShell Desired State Configuration (DSC) 依赖 WinRM。 在 Windows Server 2008 R2 和 Windows 7 上默认不启用 WinRM。 若要启用 WinRM，在 Windows PowerShell 提升的会话中运行 `Set-WSManQuickConfig`。
-
+    - 在运行 Windows Server 2012 R2 或 Windows 8.1 x64 的计算机上，运行 `Win8.1AndW2K12R2-KB3191564-x64.msu /quiet`。
+    - 在运行 Windows Server 2012 的计算机上，运行 `W2K12-KB3191565-x64.msu /quiet`。
+    - 在运行 Windows 8.1 x86 的计算机上，运行 `Win8.1-KB3191564-x86.msu /quiet`。
+    

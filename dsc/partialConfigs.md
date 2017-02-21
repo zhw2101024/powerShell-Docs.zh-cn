@@ -7,13 +7,13 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 02f1cc45f30c0892e777a9e05d87f440f628fbf5
-ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
+ms.openlocfilehash: fba9b3ed183d82cf532e2431de4a9e2c30243197
+ms.sourcegitcommit: a3966253a165d193a42b43b9430a4dc76988f82f
 translationtype: HT
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell Desired State Configuration 部分配置
 
->适用于：Windows PowerShell 5.0
+>适用于：Windows PowerShell 5.0 及更高版本。
 
 在 PowerShell 5.0 中，Desired State Configuration (DSC) 允许从多个源中以片段形式提交配置。 目标节点上的本地配置管理器 (LCM) 将碎片整理到一起，然后将其作为单个配置进行应用。 此功能允许在团队或个人之间共享配置控制权。 例如，如果两个或更多开发人员团队协作提供一项服务，那么每个团队都可以创建配置来管理该服务中由其负责的部分。 可以从不同请求服务器请求其中每个配置，并可以在各个开发阶段加入这些配置。 部分配置还允许不同的个人或团队控制配置节点的不同方面，而无需协调单个配置文档的编辑。 例如，可能由一个团队负责部署 VM 和操作系统，而由另一个团队负责在该 VM 上部署其它应用程序和服务。 使用部分配置，每个团队都可以创建自己的配置，避免任何不必要的复杂配置。
 
@@ -53,7 +53,7 @@ PartialConfigDemo
 
 ### <a name="publishing-and-starting-push-mode-partial-configurations"></a>发布和启动推送模式部分配置
 
-然后，可以对每个配置调用 [Publish-DSCConfiguration](/reference/5.0/PSDesiredStateconfiguration/Publish-DscConfiguration.md)，将包含配置文档的文件夹作为 **Path** 参数进行传递。 `Publish-DSCConfiguration`将配置 MOF 文件放置到目标节点。 发布两个配置后，即可在目标节点上调用 `Start-DSCConfiguration –UseExisting`。
+然后，可以对每个配置调用 [Publish-DSCConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration)，将包含配置文档的文件夹作为 **Path** 参数进行传递。 `Publish-DSCConfiguration`将配置 MOF 文件放置到目标节点。 发布两个配置后，即可在目标节点上调用 `Start-DSCConfiguration –UseExisting`。
 
 例如，如果你在创作节点上编译了以下配置 MOF 文档：
 
@@ -98,8 +98,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 17     Job17           Configuratio... Running       True            TestVM            Start-DscConfiguration...
 ```
 
->**注意：**运行的用户 
-
+>**注意：**运行 [Publish-DSCConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) cmdlet 的用户必须在目标节点上拥有管理员权限。
 
 ## <a name="partial-configurations-in-pull-mode"></a>请求模式下的部分配置
 
@@ -194,7 +193,16 @@ PartialConfigDemo
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationnames"></a>在请求服务器 (ConfigurationNames) 上命名和放置配置文档
 
-必须将部分配置文档置于请求服务器的 `web.config` 文件中指定为 **ConfigurationPath** 的文件夹中（通常为 `C:\Program Files\WindowsPowerShell\DscService\Configuration`）。 配置文档必须按如下所示命名：`ConfigurationName.mof`，其中 _ConfigurationName_ 是部分配置的名称。 在本例中，配置文档应按如下所示命名：
+必须将部分配置文档置于请求服务器的 `web.config` 文件中指定为 **ConfigurationPath** 的文件夹中（通常为 `C:\Program Files\WindowsPowerShell\DscService\Configuration`）。 
+
+#### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-51"></a>在 PowerShell 5.1 中的拉取服务器上命名配置文档
+
+如果只要从单个拉取服务器中拉取一个部分配置，可以对配置文档进行任意命名。 如果要从拉取服务器中拉取多个部分配置，可以将配置文档命名为 `<ConfigurationName>.mof`（其中 _ConfigurationName_ 是部分配置的名称）或 `<ConfigurationName>.<NodeName>.mof`（其中 _ConfigurationName_ 是部分配置的名称，_NodeName_ 是目标节点的名称）。 这样一来，便可以从 Azure Automation DSC 拉取服务器中拉取配置。
+
+
+#### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-50"></a>在 PowerShell 5.0 中的拉取服务器上命名配置文档
+
+配置文档必须按如下所示命名：`ConfigurationName.mof`，其中 _ConfigurationName_ 是部分配置的名称。 在本例中，配置文档应按如下所示命名：
 
 ```
 ServiceAccountConfig.mof
@@ -222,7 +230,7 @@ SharePointConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof.checksum
 
 ## <a name="partial-configurations-in-mixed-push-and-pull-modes"></a>推送与请求混合模式下的部分配置
 
-你还可以混用推送和请求模式以进行部分配置。 也就是说，你可以同时拥有一个从请求服务器请求的部分配置和另一个推送的部分配置。 根据上文各节中所述的配置刷新模式，使用需要的部分配置。 例如，下面的元配置描述了同一示例，它具有请求模式下的服务帐户部分配置和推送模式下的 SharePoint 部分配置。
+你还可以混用推送和请求模式以进行部分配置。 也就是说，你可以同时拥有一个从请求服务器请求的部分配置和另一个推送的部分配置。 根据上文各部分所述，指定每个部分配置的刷新模式。 例如，还是以下面的元配置为例，其中 `ServiceAccountConfig` 部分配置处于拉取模式，`SharePointConfig` 部分配置处于推送模式。
 
 ### <a name="mixed-push-and-pull-modes-using-configurationnames"></a>使用 ConfigurationNames 的推送与请求混合模式
 
@@ -301,7 +309,7 @@ configuration PartialConfigDemo
 PartialConfigDemo 
 ```
 
-请注意，Settings 块中指定的 **RefreshMode** 为“Pull”，而 SharePointConfig 部分配置中的 **RefreshMode** 为“Push”。
+请注意，Settings 块中指定的 **RefreshMode** 为“Pull”，而 `SharePointConfig` 部分配置的 **RefreshMode** 为“Push”。
 
 可按照上文所述的相应刷新模式命名和放置配置 MOF 文件。 可调用 **Publish-DSCConfiguration** 来发布 `SharePointConfig` 部分配置，并等待从请求服务器请求 `ServiceAccountConfig` 配置或通过调用 [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541(v=wps.630).aspx) 强制进行刷新。
 

@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 01af336f34928aec63cac7402c1ab20c701579fe
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: f833eed14a30d80b1fcc3a9e5e67811c53096bf5
+ms.sourcegitcommit: a81ffb39f370b95ae802cd054dc4480c9e68cf77
 translationtype: HT
 ---
 # <a name="dsc-configurations"></a>DSC 配置
@@ -30,7 +30,9 @@ Configuration MyDscConfiguration {
             Name = "Bitlocker"
         }
     }
-}
+} 
+
+MyDscConfiguration 
 ```
 
 将脚本保存为 .ps1 文件。
@@ -62,12 +64,14 @@ Configuration MyDscConfiguration {
         }
     }
 }
+
+MyDscConfiguration 
 ```
 
-在此示例中，你在[编译配置](# Compiling the configuration)时将节点名称作为 $ComputerName 参数进行传递，从而指定节点名称。 该名称默认为“localhost”。
+在此示例中，在编译配置时将节点名称作为 $ComputerName 参数进行传递，从而指定节点名称。 该名称默认为“localhost”。
 
 ## <a name="compiling-the-configuration"></a>正在编译配置
-必须将其编译为 MOF 文档才能执行配置。 你可通过调用配置（像调用 PowerShell 函数一样）以执行此操作。
+必须将其编译为 MOF 文档才能执行配置。 你可通过调用配置（像调用 PowerShell 函数一样）以执行此操作。  此示例的最后一行仅包含配置名称，用于调用配置。
 >__注意：__若要调用配置，该函数必须在全局范围内（与任何其他 PowerShell 函数一样）。 可通过以下方式来实现此操作：对脚本执行“dot-source”操作，或者使用 F5 或单击 ISE 中的“运行脚本”按钮以运行配置脚本。 若要对脚本执行“dot-source”操作，请运行命令 `. .\myConfig.ps1`，其中 `myConfig.ps1` 是包含配置的脚本文件的名称。
 
 调用配置时，它会：
@@ -89,7 +93,7 @@ Mode                LastWriteTime         Length Name
 -a----       10/23/2015   4:32 PM           2842 TEST-PC1.mof
 ```  
 
-如果配置采用了参数（如示例 2 所述），则需在编译时提供该参数。 其形式如下：
+如果配置采用了参数（如示例&2; 所述），则需在编译时提供该参数。 其形式如下：
 
 ```powershell
 PS C:\users\default\Documents\DSC Configurations> . .\MyDscConfiguration.ps1
@@ -119,6 +123,8 @@ Configuration DependsOnExample {
         }
     }
 }
+
+DependsOnExample
 ```
 
 ## <a name="using-new-resources-in-your-configuration"></a>在配置中使用新的资源

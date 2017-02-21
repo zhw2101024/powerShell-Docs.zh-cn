@@ -1,8 +1,16 @@
 ---
-标题：复合资源：将 DSC 配置用作资源 ms.date：2016 年 5 月 16 日 关键字：powershell、DSC 描述：  
-ms.topic：文章作者：eslesar 管理员：dongill ms.prod：powershell
+title: "复合资源--将 DSC 配置用作资源"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+ms.openlocfilehash: 36851c9616cfb9a2fc79925e4187effa913341ad
+ms.sourcegitcommit: c7577f7a1e902a41df6d337e5d85361d1814f90a
+translationtype: HT
 ---
-
 # <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>复合资源：将 DSC 配置用作资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0

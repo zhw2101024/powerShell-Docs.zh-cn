@@ -8,11 +8,11 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 581d80d476e918a78775291521abfd254703a7b7
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
+ms.openlocfilehash: 1bf1bf914982e0d52e592e6ef421d36b1915b338
+ms.sourcegitcommit: 267688f61dcc76fd685c1c34a6c7bfd9be582046
 translationtype: HT
 ---
-#<a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 中的 Desired State Configuration (DSC) 改进
+# <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 中的 Desired State Configuration (DSC) 改进
 
 ## <a name="dsc-class-resource-improvements"></a>DSC 类资源改进
 
@@ -25,7 +25,6 @@ translationtype: HT
 
 
 ## <a name="dsc-resource-debugging-improvements"></a>DSC 资源调试改进
-
 在 WMF 5.0 中，PowerShell 调试器不直接在基于类的资源方法（Get/Set/Test）处停止。
 在 WMF 5.1 中，和基于 MOF 的资源方法一样，调试器也可以在基于类的资源方法处停止。
 
@@ -37,16 +36,26 @@ translationtype: HT
 在 WMF 的早期版本中，在使用 ESENT 数据库时同时注册 DSC 请求服务器或向其报告请求，将导致 LCM 无法注册和/或报告。 在这种情况下，请求服务器上的事件日志将显示错误“Instance Name already in use.（实例名称正在使用中。）”
 这是由于在多线程情况下使用不正确的模式访问 ESENT 数据库。 在 WMF 5.1 中已修复此问题。 在 WMF 5.1 中并发的注册或报告（涉及 ESENT 数据库）可以正常工作。 此问题仅适用于 ESENT 数据库，并不适用于 OLEDB 数据库。 
 
-##<a name="pull-partial-configuration-naming-convention"></a>拉取部分配置命名约定
+## <a name="enable-circular-log-on-esent-database-instance"></a>在 ESENT 数据库实例上启用循环日志
+在旧版 DSC PullServer 中，ESENT 数据库日志文件填满了 pullserver 的磁盘空间，因为数据库实例在创建时未启用循环日志。 在此版本中，客户将可以视情况使用 pullserver 的 web.config 来控制实例的循环日志行为。 默认情况下，CircularLogging 设置为 TRUE。
+```
+<appSettings>
+     <add key="dbprovider" value="ESENT" />
+    <add key="dbconnectionstr" value="C:\Program Files\WindowsPowerShell\DscService\Devices.edb" />
+    <add key="CheckpointDepthMaxKB" value="512" />
+    <add key="UseCircularESENTLogs" value="TRUE" />
+  </appSettings>
+```
+## <a name="pull-partial-configuration-naming-convention"></a>拉取部分配置命名约定
 在以前的版本中，部分配置的命名约定为请求服务器/服务中 mof 文件名应与本地配置管理器设置中指定的部分配置名称匹配，反过来后者必须与 MOF 文件中嵌入的配置名称匹配。 
 
 请参阅以下快照：
 
-•   本地配置设置，定义了节点可以接收的部分配置。
+•    本地配置设置，定义了节点可以接收的部分配置。
 
 ![示例 metaconfiguration](../images/MetaConfigPartialOne.png)
 
-•   部分配置定义示例 
+•    部分配置定义示例 
 
 ```PowerShell
 Configuration PartialOne
@@ -63,11 +72,11 @@ Configuration PartialOne
 PartialOne
 ```
 
-•   生成的 MOF 文件中嵌入的“ConfigurationName”。
+•    生成的 MOF 文件中嵌入的“ConfigurationName”。
 
 ![生成的 mof 文件示例](../images/PartialGeneratedMof.png)
 
-•   拉取配置存储库中的文件名 
+•    拉取配置存储库中的文件名 
 
 ![配置存储库中的文件名](../images/PartialInConfigRepository.png)
 

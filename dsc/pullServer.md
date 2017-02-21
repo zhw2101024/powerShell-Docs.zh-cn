@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: f419394b7699544567bf17945a55773ed3024f24
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
+ms.openlocfilehash: 802f9b0cde5d56ed3da327593753aedcf89e00f6
+ms.sourcegitcommit: a81ffb39f370b95ae802cd054dc4480c9e68cf77
 translationtype: HT
 ---
 # <a name="setting-up-a-dsc-web-pull-server"></a>设置 DSC Web 请求服务器
@@ -32,7 +32,7 @@ DSC Web 请求服务器是 IIS 中的一项 Web 服务，当目标节点请求 D
 
 1. 调用 [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) 以安装 **xPSDesiredStateConfiguration** 模块。 **请注意**：**Install-Module** 包含在 **PowerShellGet** 模块中，后者纳入 PowerShell 5.0。 可在 [PackageManagement PowerShell 模块预览](https://www.microsoft.com/en-us/download/details.aspx?id=49186)中下载适用于 PowerShell 3.0 和 4.0 的 **PowerShellGet**。 
 1. 从受信任的证书颁发机构（在你的组织或公共颁发机构中）获取 DSC 请求服务器的 SSL 证书。 从颁发机构收到的证书通常采用 PFX 格式。 采用默认位置（应是 CERT:\LocalMachine\My），在将成为请求服务器的节点上安装证书。 记下证书指纹。
-1. 选择要用作注册密钥的 GUID。 若要使用 PowerShell 生成一个，请在 PS 提示符处输入以下命令，然后按 Enter：“``` [guid]::newGuid()```”或“```New-Guid```”。 此密钥将由客户端节点用作共享密钥，以便在注册过程中进行身份验证。 有关详细信息，请参阅下面的[注册密钥](#RegKey)部分。
+1. 选择要用作注册密钥的 GUID。 若要使用 PowerShell 生成一个，请在 PS 提示符处输入以下命令，然后按 Enter：“``` [guid]::newGuid()```”或“```New-Guid```”。 此密钥将由客户端节点用作共享密钥，以便在注册过程中进行身份验证。 有关详细信息，请参阅下面的“注册密钥”部分。
 1. 在 PowerShell ISE 中，启动 (F5) 以下配置脚本（包含于 **xPSDesiredStateConfiguration** 模块的示例文件夹中，名为 Sample_xDscWebService.ps1）。 此脚本会设置请求服务器。
   
 ```powershell

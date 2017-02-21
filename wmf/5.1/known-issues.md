@@ -8,8 +8,8 @@ author: krishna
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: b341f57592feb183eb0e7228cdc08460e370369f
-ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
+ms.openlocfilehash: 260a3bc443302f2d582f455aafb30ed717d95c84
+ms.sourcegitcommit: cfe32f213819ae76de05da564c3e2c4b7ecfda2f
 translationtype: HT
 ---
 # <a name="known-issues-in-wmf-51"></a>WMF 5.1 中的已知问题 #
@@ -41,3 +41,25 @@ translationtype: HT
 
     $PreviousDSCStates | Remove-Item -ErrorAction SilentlyContinue -Verbose
  ```  
+
+## <a name="jea-virtual-accounts"></a>JEA 虚拟帐户
+升级到 WMF 5.1 后，在 WMF 5.0 中配置为使用虚拟帐户的 JEA 终结点和会话配置不会配置为使用虚拟帐户。
+也就是说，在 JEA 会话中运行的命令将在连接用户的身份（而不是临时管理员帐户）下运行，这可能会导致用户无法运行需要提升的权限的命令。
+若要还原虚拟帐户，需要先取消注册，然后重新注册使用虚拟帐户的所有会话配置。
+
+```powershell
+# Find the JEA endpoint by its name
+$jea = Get-PSSessionConfiguration -Name MyJeaEndpoint
+
+# Copy the cached PSSC file so it can be re-registered
+$pssc = Copy-Item $jea.ConfigFilePath $env:temp -PassThru
+
+# Unregister the current PSSC
+Unregister-PSSessionConfiguration -Name $jea.Name
+
+# Re-register the PSSC
+Register-PSSessionConfiguration -Name $jea.Name -Path $pssc.FullName -Force
+
+# Ensure the access policies remain the same
+Set-PSSessionConfiguration -Name $newjea.Name -SecurityDescriptorSddl $jea.SecurityDescriptorSddl
+```
