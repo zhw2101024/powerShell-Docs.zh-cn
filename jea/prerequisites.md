@@ -5,11 +5,11 @@ author: rpsqrd
 ms.author: ryanpu
 ms.prod: powershell
 keywords: powershell,cmdlet,jea
-ms.date: 2016-12-05
+ms.date: 2017-03-07
 title: "JEA 先决条件"
 ms.technology: powershell
-ms.openlocfilehash: d463e6cdfeb78a32eab9055b035747928d38e783
-ms.sourcegitcommit: cfe32f213819ae76de05da564c3e2c4b7ecfda2f
+ms.openlocfilehash: e4ae3ebd0b2c330a76d3183e6c9c1106f769feb3
+ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
 translationtype: HT
 ---
 # <a name="prerequisites"></a>必备条件
@@ -20,6 +20,7 @@ Just Enough Administration 是 Windows PowerShell 5.0 及更高版本随附的�
 本主题介绍使用 JEA 必须满足的先决条件。
 
 ## <a name="install-jea"></a>安装 JEA
+
 Windows PowerShell 5.0 及更高版本均包含 JEA 功能，但若要使用完整的功能，建议安装适用于系统的 PowerShell 最新版。
 下表介绍了 JEA 在 Windows Server 上的可用性：
 
@@ -46,6 +47,7 @@ Windows 7                 | 包含 WMF 5.1 的有限功能<sup>2</sup>
 <sup>2</sup> JEA 不能配置为在 Windows 7 上使用虚拟帐户。
 
 ### <a name="check-which-version-of-powershell-is-installed"></a>查看安装的 PowerShell 版本类型
+
 若要查看系统上安装的 PowerShell 版本类型，请查看 Windows PowerShell 提示符中的 `$PSVersionTable` 变量。
 
 ```powershell
@@ -60,6 +62,7 @@ Major  Minor  Build  Revision
 如果可能，为获得最佳体验，并有权访问所有最新功能，建议升级到 PowerShell **5.1** 版。
 
 ### <a name="install-windows-management-framework"></a>安装 Windows Management Framework
+
 如果运行的是 PowerShell 较旧版本，需要使用最新的 Windows Management Framework (WMF) 更新来更新系统。
 可在[下载中心](https://aka.ms/WMF5)找到更新包和最新 WMF 发行说明的链接。
 
@@ -68,6 +71,7 @@ Major  Minor  Build  Revision
 Windows 10 用户需安装最新功能更新才能获取当前版本的 Windows PowerShell。
 
 ## <a name="enable-powershell-remoting"></a>启用 PowerShell 远程处理
+
 PowerShell 远程处理提供了构建 JEA 的基础。
 因此，有必要先确保系统已启用 PowerShell 远程处理并[受到适当保护](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)，然后才能使用 JEA。
 
@@ -79,6 +83,7 @@ Enable-PSRemoting
 ```
 
 ## <a name="enable-powershell-module-and-script-block-logging-optional"></a>启用 PowerShell 模块和脚本块日志记录（可选）
+
 执行以下步骤将为系统上的所有 PowerShell 操作启用日志记录。
 PowerShell 模块日志记录不是 JEA 必需的，但强烈建议打开它，以确保在中心位置记录用户运行的命令。
 
@@ -104,5 +109,6 @@ PowerShell 模块日志记录不是 JEA 必需的，但强烈建议打开它，�
 - [创建会话配置文件](session-configurations.md)
 
 ## <a name="see-also"></a>另请参阅
+
 - [有关 PowerShell 远程处理和 WinRM 安全性的其他信息](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)
 - [PowerShell ♥ the Blue Team 关于安全的博客文章](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
