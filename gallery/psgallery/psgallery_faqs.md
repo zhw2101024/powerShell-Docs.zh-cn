@@ -9,8 +9,8 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgallery_faqs
 ms.technology: powershell
-ms.openlocfilehash: acde09c9b9953371236e64b21186568a430fee67
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: c352fe48c5833e9bbb2c86e6b23037a4a8f84596
+ms.sourcegitcommit: 6d27d6db5ab0e2d5b6c7229e2e2d2e57915ea22d
 translationtype: HT
 ---
 # <a name="frequently-asked-questions"></a>常见问题
@@ -27,14 +27,14 @@ PowerShell 脚本是存储在.ps1 文件中的一系列命令，用于启用重�
 
 通常模块更适合共享，但我们正启用脚本共享使向社区贡献工作流和脚本变得更加容易。 有关详细信息，请参阅以下博客：
 
-- [不编写脚本，编写 PowerShell 模块](http://blogs.technet.com/b/heyscriptingguy/archive/2011/06/27/don-t-write-scripts-write-powershell-modules.aspx)
-- [了解 PowerShell 模块](http://blogs.technet.com/b/heyscriptingguy/archive/2015/07/10/understanding-powershell-modules.aspx)
+- [不编写脚本，编写 PowerShell 模块](https://blogs.technet.microsoft.com/heyscriptingguy/2011/06/27/dont-write-scripts-write-powershell-modules/)
+- [了解 PowerShell 模块](https://blogs.technet.microsoft.com/heyscriptingguy/2015/07/10/understanding-powershell-modules/)
 
 ## <a name="how-can-i-publish-to-the-powershell-gallery"></a>如何发布到 PowerShell 库？
 
 必须在 PowerShell 库中注册帐户后才可将项发布到库中。 原因是发布项需要注册时提供的 NuGetApiKey。 若要注册，请使用个人、工作或学校帐户登录到 PowerShell 库。 第一次登录时需要一次性注册过程。 此后，个人资料页上会提供 NuGetApiKey。
 
-在库中注册后，使用 [Publish-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 或 [Publish-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet 将项发布到库中。 有关如何运行这些 cmdlet 的详细信息，请访问“发布”选项卡，或阅读 [Publish-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 和 [Publish-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 文档。
+在库中注册后，使用 [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 或 [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet 将项发布到库中。 有关如何运行这些 cmdlet 的详细信息，请访问“发布”选项卡，或阅读 [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 和 [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 文档。
 
 **安装或保存项无需注册或登录到库。**
 
@@ -51,7 +51,7 @@ PowerShell 脚本是存储在.ps1 文件中的一系列命令，用于启用重�
 
 ## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>为什么昨天可使用个人帐户登录而现在却无法登陆？
 
-请注意库帐户不会适应主电子邮件别名的更改。 有关详细信息，请参阅 [Microsoft 电子邮件别名](http://windows.microsoft.com/en-us/windows/outlook/add-alias-account)。
+请注意库帐户不会适应主电子邮件别名的更改。 有关详细信息，请参阅 [Microsoft 电子邮件别名](https://windows.microsoft.com/en-us/windows/outlook/add-alias-account)。
 
 ## <a name="why-dont-i-see-all-the-gallery-items-when-i-select-all-the-category-checkboxes-on-the-items-tab"></a>为什么选中“项”选项卡上所有“类别”复选框时没有显示所有库项？
 
@@ -59,29 +59,29 @@ PowerShell 脚本是存储在.ps1 文件中的一系列命令，用于启用重�
 
 ## <a name="what-are-the-requirements-to-publish-a-module-to-the-powershell-gallery"></a>将模块发布到 PowerShell 库中有什么要求？
 
-任何种类的 PowerShell 模块（脚本模块、二进制模块或清单模块）都可发布到库中。 若要发布模块，PowerShellGet 需要了解该模块的版本、说明、作者和许可方式等信息。 从模块清单 (.psd1) 文件或 [**Publish-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet 的 **LicenseUri** 参数的值的部分发布过程中读取此信息。 所有发布到库中的模块必须具有模块清单。 清单中包含以下信息的任何模块都可发布到库中：
+任何种类的 PowerShell 模块（脚本模块、二进制模块或清单模块）都可发布到库中。 若要发布模块，PowerShellGet 需要了解该模块的版本、说明、作者和许可方式等信息。 从模块清单 (.psd1) 文件或 [**Publish-Module**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet 的 **LicenseUri** 参数的值的部分发布过程中读取此信息。 所有发布到库中的模块必须具有模块清单。 清单中包含以下信息的任何模块都可发布到库中：
 
 - 版本
 - 说明
 - 作者
-- 一个该模块许可条款的 URI，或作为该清单的 **PrivateData** 的一部分，或在 [**Publish-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet 的 **LicenseUri** 参数中。
+- 一个该模块许可条款的 URI，或作为该清单的 **PrivateData** 的一部分，或在 [**Publish-Module**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet 的 **LicenseUri** 参数中。
 
 ## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>如何创建格式正确的模块清单？
 
-创建模块清单最简单的方法是运行 [**New-ModuleManifest**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet。 PowerShell 5.0 或更高版本中，New-ModuleManifest 会生成格式正确的模块清单，其中包含 **ProjectUri**、**LicenseUri**、**Tags** 等有用元数据的空白字段。 只需填写空值，或使用生成的清单作为正确格式的示例。
+创建模块清单最简单的方法是运行 [**New-ModuleManifest**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet。 PowerShell 5.0 或更高版本中，New-ModuleManifest 会生成格式正确的模块清单，其中包含 **ProjectUri**、**LicenseUri**、**Tags** 等有用元数据的空白字段。 只需填写空值，或使用生成的清单作为正确格式的示例。
 
-若要验证是否已正确填写所有必需的元数据字段，请使用 [**Test-ModuleManifest**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet。
+若要验证是否已正确填写所有必需的元数据字段，请使用 [**Test-ModuleManifest**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet。
 
-若要更新模块清单文件字段，请使用 [**Update-ModuleManifest**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet。
+若要更新模块清单文件字段，请使用 [**Update-ModuleManifest**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet。
 
 ## <a name="what-are-the-requirements-to-publish-a-script-to-the-gallery"></a>将脚本发布到库中有什么要求？
 
-任何种类的 PowerShell 脚本（脚本或工作流）都可发布到库中。 若要发布脚本，PowerShellGet 需要了解该脚本的版本、说明、作者和许可方式等信息。 从脚本文件的 PSScriptInfo 部分或 [**Publish-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet 的 **LicenseUri** 参数的值的部分发布过程中读取此信息。 所有发布到库中的脚本必须具有元数据信息。 PSScriptInfo 部分中包括以下信息的任何脚本都可发布到库中：
+任何种类的 PowerShell 脚本（脚本或工作流）都可发布到库中。 若要发布脚本，PowerShellGet 需要了解该脚本的版本、说明、作者和许可方式等信息。 从脚本文件的 PSScriptInfo 部分或 [**Publish-Script**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet 的 **LicenseUri** 参数的值的部分发布过程中读取此信息。 所有发布到库中的脚本必须具有元数据信息。 PSScriptInfo 部分中包括以下信息的任何脚本都可发布到库中：
 
 - 版本
 - 说明
 - 作者
-- 一个该脚本许可条款的 URI，或作为此脚本的 **PSScriptInfo** 的一部分，或在 [**Publish-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet 的 **LicenseUri** 参数中。
+- 一个该脚本许可条款的 URI，或作为此脚本的 **PSScriptInfo** 的一部分，或在 [**Publish-Script**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet 的 **LicenseUri** 参数中。
 
 ## <a name="how-do-i-search"></a>如何搜索？
 
@@ -97,11 +97,11 @@ PowerShell 脚本是存储在.ps1 文件中的一系列命令，用于启用重�
 
 ## <a name="how-do-i-create-a-correctly-formatted-script-file"></a>如何创建格式正确的脚本文件？
 
-创建格式正确的脚本文件最简单的方法是运行 [**New-ScriptFileInfo**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet。 PowerShell 5.0 中，New-ScriptFileInfo 会生成格式正确的脚本文件，其中包含 **ProjectUri**、**LicenseUri**、**Tags** 等有用元数据的空白字段。 只需填写空值，或使用生成的脚本文件作为正确格式的示例。
+创建格式正确的脚本文件最简单的方法是运行 [**New-ScriptFileInfo**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet。 PowerShell 5.0 中，New-ScriptFileInfo 会生成格式正确的脚本文件，其中包含 **ProjectUri**、**LicenseUri**、**Tags** 等有用元数据的空白字段。 只需填写空值，或使用生成的脚本文件作为正确格式的示例。
 
 若要验证是否已正确填写所有必需的元数据字段，请使用 [**Test-ScriptFileInfo**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet。
 
-若要更新脚本元数据字段，请使用 [**Update-ScriptFileInfo**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet。
+若要更新脚本元数据字段，请使用 [**Update-ScriptFileInfo**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet。
 
 ## <a name="what-other-types-of-powershell-modules-exist"></a>还有哪些其他类型的 PowerShell 模块？
 
@@ -115,17 +115,17 @@ PowerShell 脚本是存储在.ps1 文件中的一系列命令，用于启用重�
 
 PackageManagement 是使用任何程序包管理器的一个公共接口。 最后，无论是处理 PowerShell 模块、MSI、Ruby gem、NuGet 包还是 Perl 模块，都可使用 PackageManagement 命令（Find-Package 和 Install-Package）进行查找和安装。 每个插入 PackageManagement 的程序包管理器都具有一个程序包提供程序，因而 PackageManagement 可实现该操作。 提供程序完成所有的实际工作；它们从存储库中提取内容，并本地安装内容。 通常，程序包提供程序环绕处理给定程序包类型的现有程序包管理器工具。
 
-PowerShellGet 是 PowerShell 项的程序包管理器。 存在一个通过 PackageManagement 揭示 PowerShellGet 功能的 PSModule 程序包提供程序。 因此，可运行 [Install-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 或 Install-Package -Provider PSModule 来从 PowerShell 库安装模块。 特定 PowerShellGet 功能（包括 [Update-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 和 [Publish-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)）无法通过 PackageManagement 命令访问。
+PowerShellGet 是 PowerShell 项的程序包管理器。 存在一个通过 PackageManagement 揭示 PowerShellGet 功能的 PSModule 程序包提供程序。 因此，可运行 [Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 或 Install-Package -Provider PSModule 来从 PowerShell 库安装模块。 特定 PowerShellGet 功能（包括 [Update-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 和 [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)）无法通过 PackageManagement 命令访问。
 
 总之，PowerShellGet 仅侧重于提供优质 PowerShell 内容的程序包管理体验。 PackageManagement 侧重于通过一组工具公开所有的包管理体验。 如对此回答不满意，可在本文档底部的 **PackageManagement 与 PowerShellGet 有何关联？** 部分中查看更详尽的回答。
 
-有关详细信息，请访问 [PackageManagement 项目页](http://oneget.org/)。
+有关详细信息，请访问 [PackageManagement 项目页](https://oneget.org/)。
 
 ## <a name="how-does-nuget-relate-to-powershellget"></a>NuGet 与 PowerShellGet 有何关联？
 
-PowerShell 库是 [NuGet Gallery](http://www.nuget.org/)（NuGet 库）的修改版本。 PowerShellGet 使用 NuGet 提供程序支持基于 NuGet 的存储库，例如 PowerShell 库。
+PowerShell 库是 [NuGet Gallery](https://www.nuget.org/)（NuGet 库）的修改版本。 PowerShellGet 使用 NuGet 提供程序支持基于 NuGet 的存储库，例如 PowerShell 库。
 
-可对任何有效的 NuGet 存储库或文件共享使用 PowerShellGet。 只需通过运行 [**Register-PSRepository**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet 添加此存储库。
+可对任何有效的 NuGet 存储库或文件共享使用 PowerShellGet。 只需通过运行 [**Register-PSRepository**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet 添加此存储库。
 
 ## <a name="does-that-mean-i-can-use-nugetexe-to-work-with-the-gallery"></a>这是否意味着可以使用 NuGet.exe 来处理库？
 
@@ -135,7 +135,7 @@ PowerShell 库是 [NuGet Gallery](http://www.nuget.org/)（NuGet 库）的修改
 
 事实上，PowerShellGet 很大程度上利用了 PackageManagement 基础结构。
 
-在 PowerShell cmdlet 层，[Install-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 实际上是 Install-Package -Provider PSModule 的薄包装器。
+在 PowerShell cmdlet 层，[Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 实际上是 Install-Package -Provider PSModule 的薄包装器。
 
 在 PackageManagement 程序包提供程序层，PSModule 程序包提供程序实际调用到其他 PackageManagement 程序包提供程序。 例如，使用基于 NuGet 的库（例如 PowerShell 库）时，PSModule 程序包提供程序会使用 NuGet 程序包提供程序作用于该存储库。
 
@@ -172,4 +172,3 @@ PowerShell 库是 [NuGet Gallery](http://www.nuget.org/)（NuGet 库）的修改
 ## <a name="how-do-i-deal-with-an-item-owner-who-is-violating-my-item-license"></a>如何处理违反项许可证的项所有者？
 
 我们鼓励 PowerShell 社区解决项所有者之间可能出现的任何争议。  PowerShellGallery.com 管理员进行调解之前，我们希望你遵循我们精心指定的[争议解决过程](psgallery_dispute_resolution.md)。
-
