@@ -5,17 +5,17 @@ keywords: powershell,DSC
 description: 
 ms.topic: article
 author: eslesar
-manager: dongill
+manager: carmonm
 ms.prod: powershell
-ms.openlocfilehash: f833eed14a30d80b1fcc3a9e5e67811c53096bf5
-ms.sourcegitcommit: a81ffb39f370b95ae802cd054dc4480c9e68cf77
+ms.openlocfilehash: d960cbe8534d4e5b4a423e685113a3ebafd403d4
+ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
 translationtype: HT
 ---
 # <a name="dsc-configurations"></a>DSC 配置
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
-DSC 配置是定义某一特殊类型函数的 PowerShell 脚本。 若要定义配置，你可使用 PowerShell 关键字 __Configuration__。
+DSC 配置是定义某一特殊类型函数的 PowerShell 脚本。 若要定义配置，你可使用 PowerShell 关键字 **Configuration**。
 
 ```powershell
 Configuration MyDscConfiguration {
@@ -23,7 +23,7 @@ Configuration MyDscConfiguration {
     Node "TEST-PC1" {
         WindowsFeature MyFeatureInstance {
             Ensure = "Present"
-            Name =  "RSAT"
+            Name =    "RSAT"
         }
         WindowsFeature My2ndFeatureInstance {
             Ensure = "Present"
@@ -56,7 +56,7 @@ Configuration MyDscConfiguration {
     Node $ComputerName {
         WindowsFeature MyFeatureInstance {
             Ensure = "Present"
-            Name =  "RSAT"
+            Name =    "RSAT"
         }
         WindowsFeature My2ndFeatureInstance {
             Ensure = "Present"
@@ -68,36 +68,49 @@ Configuration MyDscConfiguration {
 MyDscConfiguration 
 ```
 
-在此示例中，在编译配置时将节点名称作为 $ComputerName 参数进行传递，从而指定节点名称。 该名称默认为“localhost”。
+在此示例中，在编译配置时将节点名称作为 **ComputerName** 参数进行传递，从而指定节点名称。 该名称默认为“localhost”。
 
 ## <a name="compiling-the-configuration"></a>正在编译配置
-必须将其编译为 MOF 文档才能执行配置。 你可通过调用配置（像调用 PowerShell 函数一样）以执行此操作。  此示例的最后一行仅包含配置名称，用于调用配置。
->__注意：__若要调用配置，该函数必须在全局范围内（与任何其他 PowerShell 函数一样）。 可通过以下方式来实现此操作：对脚本执行“dot-source”操作，或者使用 F5 或单击 ISE 中的“运行脚本”按钮以运行配置脚本。 若要对脚本执行“dot-source”操作，请运行命令 `. .\myConfig.ps1`，其中 `myConfig.ps1` 是包含配置的脚本文件的名称。
+
+必须将其编译为 MOF 文档才能执行配置。 你可通过调用配置（像调用 PowerShell 函数一样）以执行此操作。  
+此示例的最后一行仅包含配置名称，用于调用配置。
+
+>**注意：**若要调用配置，该函数必须在全局范围内（与任何其他 PowerShell 函数一样）。 
+>可通过以下方式来实现此操作：对脚本执行“dot-source”操作，或者使用 F5 或单击 ISE 中的“运行脚本”按钮以运行配置脚本。 
+>若要对脚本执行“dot-source”操作，请运行命令 `. .\myConfig.ps1`，其中 `myConfig.ps1` 是包含配置的脚本文件的名称。
 
 调用配置时，它会：
 
 - 解析所有变量 
 - 在当前目录中使用与配置相同的名称创建文件夹。
-- 在新目录中创建名为 _NodeName_.mof 的文件，其中 _NodeName_ 为配置的目标节点名称。 如果有多个节点，则将为每个节点创建 MOF 文件。
+- 在新目录中创建名为 _NodeName_.mof 的文件，其中 _NodeName_ 为配置的目标节点名称。 
+    如果有多个节点，则将为每个节点创建 MOF 文件。
 
->__请注意__：此 MOF 文件包含目标节点的所有配置信息。 因此，务必确保其安全性。 有关详细信息，请参阅[保护 MOF 文件](secureMOF.md)。
+>**请注意**：此 MOF 文件包含目标节点的所有配置信息。 因此，务必确保其安全性。 
+>有关详细信息，请参阅[保护 MOF 文件](secureMOF.md)。
 
 编译上述第一个配置会形成以下文件夹结构：
 
 ```powershell
-PS C:\users\default\Documents\DSC Configurations> . .\MyDscConfiguration.ps1
-PS C:\users\default\Documents\DSC Configurations> MyDscConfiguration
+. .\MyDscConfiguration.ps1
+MyDscConfiguration
+```
+
+```
     Directory: C:\users\default\Documents\DSC Configurations\MyDscConfiguration
 Mode                LastWriteTime         Length Name                                                                                              
 ----                -------------         ------ ----                                                                                         
 -a----       10/23/2015   4:32 PM           2842 TEST-PC1.mof
 ```  
 
-如果配置采用了参数（如示例&2; 所述），则需在编译时提供该参数。 其形式如下：
+如果配置采用了参数（如示例 2 所述），则需在编译时提供该参数。 其形式如下：
 
 ```powershell
-PS C:\users\default\Documents\DSC Configurations> . .\MyDscConfiguration.ps1
-PS C:\users\default\Documents\DSC Configurations> MyDscConfiguration -ComputerName 'MyTestNode'
+. .\MyDscConfiguration.ps1
+MyDscConfiguration -ComputerName 'MyTestNode'
+```
+
+```
     Directory: C:\users\default\Documents\DSC Configurations\MyDscConfiguration
 Mode                LastWriteTime         Length Name                                                                                              
 ----                -------------         ------ ----                                                                                         
@@ -105,7 +118,8 @@ Mode                LastWriteTime         Length Name
 ```      
 
 ## <a name="using-dependson"></a>使用 DependsOn
-有效的 DSC 关键字为 __DependsOn__。 通常（但不一定总是），DSC 将按资源在配置中显示的顺序来应用这些资源。 但是，由 __DependsOn__ 指定哪些资源依赖于其他资源，而 LCM 则确保这些资源的应用顺序正确（无论资源实例是以何种顺序定义的）。 例如，配置可能会指定__用户__资源实例依赖于__组__实例的存在：
+
+有效的 DSC 关键字为 **DependsOn**。 通常（但不一定总是），DSC 将按资源在配置中显示的顺序来应用这些资源。 但是，由 **DependsOn** 指定哪些资源依赖于其他资源，而 LCM 则确保这些资源的应用顺序正确（无论资源实例是以何种顺序定义的）。 例如，配置可能会指定**用户**资源实例依赖于**组**实例的存在：
 
 ```powershell
 Configuration DependsOnExample {
@@ -128,10 +142,13 @@ DependsOnExample
 ```
 
 ## <a name="using-new-resources-in-your-configuration"></a>在配置中使用新的资源
+
 如果运行了前面的示例，你可能注意到你已收到警告信息，提示你正在使用未显式导入的资源。
-现在，DSC 附带 12 种资源作为 PSDesiredStateConfiguration 模块的一部分。 外部模块中的其他资源须置于 `$env:PSModulePath` 中以便 LCM 能够识别。 新的 cmdlet - [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)，可用来确定哪些资源已安装在系统上并且可供 LCM 使用。 一旦这些模块已置于 `$env:PSModulePath` 中并由 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 正确识别，你仍需在配置中加载它们。 __Import-DscResource__ 是仅可在__配置__块中识别的动态关键字（即它不是 cmdlet）。 __Import-DscResource__ 支持两种参数：
-* __ModuleName__ 是使用 __Import-DscResource__ 的推荐方法。 它接受包含要导入资源的模块名称以及模块名称的字符串数组。 
-* __Name__ 是要导入资源的名称。 这不是由 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 返回为“Name”的友好名称，而是定义资源架构时使用的类名（由 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 返回为 __ResourceType__）。 
+现在，DSC 附带 12 种资源作为 PSDesiredStateConfiguration 模块的一部分。 外部模块中的其他资源须置于 `$env:PSModulePath` 中以便 LCM 能够识别。 新的 cmdlet - [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)，可用来确定哪些资源已安装在系统上并且可供 LCM 使用。 一旦这些模块已置于 `$env:PSModulePath` 中并由 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 正确识别，你仍需在配置中加载它们。 
+**Import-DscResource** 是仅可在**配置**块中识别的动态关键字（即它不是 cmdlet）。 
+**Import-DscResource** 支持两种参数：
+- **ModuleName** 是使用 **Import-DscResource** 的推荐方法。 它接受包含要导入资源的模块名称以及模块名称的字符串数组。 
+- **Name** 是要导入资源的名称。 这不是由 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 返回为“Name”的友好名称，而是定义资源架构时使用的类名（由 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 返回为 **ResourceType**）。 
 
 ## <a name="see-also"></a>另请参阅
 * [Windows PowerShell Desired State Configuration 概述](overview.md)

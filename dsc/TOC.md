@@ -1,4 +1,7 @@
 # [概述](overview.md)
+## [适用于决策者的 Desired State Configuration 概述](decisionMaker.md)
+## [适用于工程师的 Desired State Configuration 概述](DscForEngineers.md)
+## [DSC 快速入门](quickStart.md)
 
 # [配置](configurations.md)
 ## [执行配置](enactingConfigurations.md)

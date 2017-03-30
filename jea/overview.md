@@ -1,16 +1,15 @@
 ---
-description: 
-manager: dongill
+manager: carmonm
 ms.topic: article
 author: rpsqrd
 ms.author: ryanpu
 ms.prod: powershell
 keywords: powershell,cmdlet,jea
-ms.date: 2016-12-05
+ms.date: 2017-03-07
 title: "Just Enough Administration 概述"
 ms.technology: powershell
-ms.openlocfilehash: 742f88bd130a9bcb577914c842735e8c47ca53e6
-ms.sourcegitcommit: cfe32f213819ae76de05da564c3e2c4b7ecfda2f
+ms.openlocfilehash: 2206ccbbcf5996b1bf8db9a46acab2f18f8020dd
+ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
 translationtype: HT
 ---
 # <a name="just-enough-administration"></a>Just Enough Administration
@@ -18,7 +17,7 @@ translationtype: HT
 Just Enough Administration (JEA) 是一项安全技术，委派的管理员可通过它执行可通过 PowerShell 处理的任意操作。
 使用 JEA，你可以：
 
-- 通过利用代表普通用户执行特权操作的虚拟帐户，**减少你计算机上的管理员数量**。
+- 通过利用代表普通用户执行特权操作的虚拟帐户或组托管服务帐户，**减少你计算机上的管理员数量**。
 - 通过指定用户可运行的 cmdlet、函数和外部命令，**限制用户可执行的操作**。
 - 使用准确显示用户在会话中所执行命令的脚本和日志，**更好地了解你的用户进行的操作**。
 
@@ -52,3 +51,7 @@ JEA 可通过采用最小特权原则来帮助解决此问题。
 - [使用 JEA](using-jea.md) - 了解可以使用 JEA 的各种方法。
 - [安全注意事项](security-considerations.md) - 了解最佳安全方案和 JEA 配置选项的含义。
 - [JEA 审核和报告](audit-and-report.md) - 了解如何审核和报告 JEA 终结点。
+
+## <a name="samples-and-dsc-resource"></a>示例和 DSC 资源
+
+示例 JEA 配置和 JEA DSC 资源可以在 [JEA GitHub 存储库](https://github.com/PowerShell/JEA)中找到。

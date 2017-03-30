@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 162ae26dec67e8259661bb58c1b713818627220b
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
+ms.openlocfilehash: e6ea0992f90a72da6426d9112950c925ab6cd32b
+ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
 translationtype: HT
 ---
 # <a name="credentials-options-in-configuration-data"></a>配置数据中的凭据选项
@@ -82,10 +82,8 @@ configuration unencryptedPasswordDemo
             Ensure = "Present"
             MembersToInclude = "User1"
         }
-
     }
 
-    
     Node "TestMachine2"
     {
         # Now we'll use a node-specific password to this machine
@@ -112,7 +110,6 @@ configuration unencryptedPasswordDemo
             Ensure = "Present"
             MembersToInclude = "User2"
         }
-      
     }
 
 }
@@ -160,7 +157,8 @@ Group [String] #ResourceName
 它可以创建本地组并添加或删除成员。
 它同时接受 `Credential` 属性和自动 `PsDscRunAsCredential` 属性。
 但是该资源只使用 `Credential` 属性。
-阅读更多有关 `PsDscRunAsCredential` 的信息，请参阅 [WMF 发行说明](https://msdn.microsoft.com/en-us/powershell/wmf/dsc_runas)。
+
+有关 `PsDscRunAsCredential` 属性的详细信息，请参阅[使用用户凭据运行 DSC](runAsUser.md)。
 
 ## <a name="example-the-group-resource-credential-property"></a>示例：Group 资源 Credential 属性
 
@@ -279,7 +277,7 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 
 **对 DSC 资源使用凭据时，应尽可能选择本地帐户而非域帐户。**
 
-如果凭据的 `Username` 属性中存在 '\' 或 '@'，则 DSC 会将该凭据视为域帐户。
+如果凭据的 `Username` 属性中有 \' 或 @，则 DSC 会将该凭据视为域帐户。
 用户名中域部分的“localhost”、“127.0.0.1”和“::1”除外。
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
