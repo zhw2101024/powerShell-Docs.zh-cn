@@ -9,20 +9,22 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgalleryint_status
 ms.technology: powershell
-ms.openlocfilehash: a889620aff415146d1808df052ffc43732640ae7
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
+ms.openlocfilehash: 58f06ca061a4f171288e75b30698910c701f1da1
+ms.sourcegitcommit: ba8ed836799ef465e507fa1b8d341ba38459d863
 translationtype: HT
 ---
 <a name="powershell-gallery-status"></a>PowerShell 库状态
 =========================
 
-## <a name="03272017---unable-to-see-individual-module-and-script-pages"></a>2017/03/27/ - 无法查看单个模块和脚本页面
+## <a name="03272017---resolved-unable-to-see-individual-module-and-script-pages"></a>2017/03/27/ - 已解决：无法查看单个模块和脚本页面
 
-__影响摘要__：指向 https://www.powershellgallery.com 上的单个模块和脚本页面的直接链接已暂时中断。 目前正在所有区域对该事件进行报告。 这会影响所有 PowerShellGet cmdlet，即：Install-Module、Install-Script、Update-Module、Update-Script、Publish-Module，Publish-Scirpt 应该可以继续运行。
+__影响摘要__：指向 https://www.powershellgallery.com 上单个模块和脚本页面的直接链接已中断。 所有区域中均报告发生此问题。 这不会影响任意 PowerShellGet cmdlet，即 Install-Module、Install-Script、Update-Module、Update-Script、Publish-Module 和 Publish-Scirpt 继续运行。
 
 __根本原因__：工程师确定原因是将类似 Facebook 的社交媒体按钮设置在了页面上。  
 
-__解决方案__：工程师正在编写解决此问题的修补程序。 
+__解决__：工程师已通过禁用 Facebook 计数信息修复了此问题。
+
+__后续步骤__：已打开内部跟踪，跟踪 Facebook API 使用情况修复问题。
 
 ## <a name="12152016---unable-to-send-emails-via-powershellgallery-website"></a>2016/12/15 - 无法通过 PowerShellGallery 网站发送电子邮件
 
