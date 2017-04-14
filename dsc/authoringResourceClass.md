@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: a8c2094cbef1bb14c4a9082ff78fae78ec0c2e65
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: feec9b9e242ef6f43c272bfeb179d11944d1cb06
+ms.sourcegitcommit: 1002c473b88abb209e4188bb626d93675c3614e2
 translationtype: HT
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>使用 PowerShell 类编写自定义 DSC 资源
@@ -22,6 +22,8 @@ translationtype: HT
 在本主题中，我们将创建一个名为 **FileResource** 的简单资源来管理指定路径中的文件。
 
 有关 DSC 资源的详细信息，请参阅[构建自定义 Windows PowerShell Desired State Configuration 资源](authoringResource.md)。
+
+>**请注意：**基于类的资源中不支持泛型集合。
 
 ## <a name="folder-structure-for-a-class-resource"></a>类资源的文件夹结构
 

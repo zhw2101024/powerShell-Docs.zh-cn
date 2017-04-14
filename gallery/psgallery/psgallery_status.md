@@ -9,12 +9,20 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgallery_status
 ms.technology: powershell
-ms.openlocfilehash: 48f554793d25c2d5ea10bc202489845f4225b2b9
-ms.sourcegitcommit: ba8ed836799ef465e507fa1b8d341ba38459d863
+ms.openlocfilehash: 1886715c4b948e4bc59a51fb96d54b56b5b5afed
+ms.sourcegitcommit: 809e4f1bdf218b283e84438151030bfa94ca956d
 translationtype: HT
 ---
 <a name="powershell-gallery-status"></a>PowerShell 库状态
 =========================
+
+## <a name="04112017---users-unable-to-log-in"></a>2017/04/11 - 用户无法登录
+
+__影响摘要__某些用户无法使用 Azure AD 帐户登录到 PowerShell 库。 PowerShell 库操作团队正在调查此问题。 该问题貌似不会影响具有 Microsoft 帐户（即带有 Outlook.com 和 Live.com 等域的帐户）的用户 
+ 
+__根本原因__：TBD  
+
+__后续步骤__：我们正在协同 Azure AD 团队调查此问题。 
 
 ## <a name="03272017---resolved-unable-to-see-individual-module-and-script-pages"></a>2017/03/27/ - 已解决：无法查看单个模块和脚本页面
 
