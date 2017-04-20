@@ -9,20 +9,22 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgallery_status
 ms.technology: powershell
-ms.openlocfilehash: 1886715c4b948e4bc59a51fb96d54b56b5b5afed
-ms.sourcegitcommit: 809e4f1bdf218b283e84438151030bfa94ca956d
+ms.openlocfilehash: a260b9b696b41947fbbb789fd165dfe4bdac1dc3
+ms.sourcegitcommit: 214b8442f05618d078837889cbb6a30b42c01edb
 translationtype: HT
 ---
 <a name="powershell-gallery-status"></a>PowerShell 库状态
 =========================
 
-## <a name="04112017---users-unable-to-log-in"></a>2017/04/11 - 用户无法登录
+## <a name="04112017---users-unable-to-log-in-with-azure-active-directory-aad-accounts"></a>2017/04/11 - 用户无法使用 Azure Active Directory (AAD) 帐户登录
 
-__影响摘要__某些用户无法使用 Azure AD 帐户登录到 PowerShell 库。 PowerShell 库操作团队正在调查此问题。 该问题貌似不会影响具有 Microsoft 帐户（即带有 Outlook.com 和 Live.com 等域的帐户）的用户 
+__影响摘要__：某些用户无法使用 Azure AD 帐户登录到 PowerShell 库。 
  
-__根本原因__：TBD  
+__根本原因__：在执行更新以实现与 AAD 更安全交互的过程中，缺少了某项设置更改。 用于验证更改的测试未包含某些类型的 AAD 帐户，因此该部署还会继续。
 
-__后续步骤__：我们正在协同 Azure AD 团队调查此问题。 
+__解决办法__：工程师确定了缺少的设置并更正了此问题。 
+
+__后续步骤__：我们将修改测试以包含一组更广泛的 AAD 帐户类型。
 
 ## <a name="03272017---resolved-unable-to-see-individual-module-and-script-pages"></a>2017/03/27/ - 已解决：无法查看单个模块和脚本页面
 
