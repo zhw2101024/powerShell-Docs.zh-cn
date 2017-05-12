@@ -1,14 +1,23 @@
-
 ---
-标题：DSCAutomationHostEnabled 注册表项 ms.date：2016-05-16 关键字：powershell,DSC 说明：  
-ms.topic：文章作者：eslesar 管理员：dongill ms.prod：powershell
+title: "DSCAutomationHostEnabled 注册表项"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+ms.openlocfilehash: eb5889668136def1b47a4999374711460a08179c
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/08/2017
 ---
-
 >适用于：Windows PowerShell 5.0
 
 # <a name="dscautomationhostenabled-registry-key"></a>DSCAutomationHostEnabled 注册表项
 
-DSC 使用 **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies** 下的 **DSCAutomationHostEnabled** 注册表项在初始启动时自动配置计算机。
+DSC 使用 **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies** 下的 **DSCAutomationHostEnabled** 注册表项，启用在初始启动时配置计算机。
 DSCAutomationHostEnabled 支持三种模式：
 
 |  DSCAutomationHostEnabled 值  |  说明   | 

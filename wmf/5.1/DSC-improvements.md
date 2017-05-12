@@ -8,9 +8,11 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 1bf1bf914982e0d52e592e6ef421d36b1915b338
-ms.sourcegitcommit: 267688f61dcc76fd685c1c34a6c7bfd9be582046
-translationtype: HT
+ms.openlocfilehash: 4c5dfaaf368097c18a2788a9df15632ce116dbbb
+ms.sourcegitcommit: ee407927101c3b166cc200a39a6ea786a1c21f95
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 中的 Desired State Configuration (DSC) 改进
 
@@ -26,21 +28,21 @@ translationtype: HT
 
 ## <a name="dsc-resource-debugging-improvements"></a>DSC 资源调试改进
 在 WMF 5.0 中，PowerShell 调试器不直接在基于类的资源方法（Get/Set/Test）处停止。
-在 WMF 5.1 中，和基于 MOF 的资源方法一样，调试器也可以在基于类的资源方法处停止。
+在 WMF 5.1 中，调试器在基于类的资源方法处停止，与遇到基于 MOF 的资源方法时一样。
 
 ## <a name="dsc-pull-client-supports-tls-11-and-tls-12"></a>DSC 请求客户端支持 TLS 1.1 和 TLS 1.2 
 以前，DSC 请求客户端仅支持基于 https 连接的 SSL3.0 和 TLS1.0。 当强制使用更安全的协议时，请求客户端停止工作了。 在 WMF 5.1 中，DSC 请求客户端不再支持 SSL 3.0，而增加了对更安全的 TLS 1.1 和 TLS 1.2 协议的支持。  
 
 ## <a name="improved-pull-server-registration"></a>改进的请求服务器注册 ##
 
-在 WMF 的早期版本中，在使用 ESENT 数据库时同时注册 DSC 请求服务器或向其报告请求，将导致 LCM 无法注册和/或报告。 在这种情况下，请求服务器上的事件日志将显示错误“Instance Name already in use.（实例名称正在使用中。）”
-这是由于在多线程情况下使用不正确的模式访问 ESENT 数据库。 在 WMF 5.1 中已修复此问题。 在 WMF 5.1 中并发的注册或报告（涉及 ESENT 数据库）可以正常工作。 此问题仅适用于 ESENT 数据库，并不适用于 OLEDB 数据库。 
+在 WMF 的早期版本中，在使用 ESENT 数据库时同时注册 DSC 请求服务器或向其报告请求，将导致 LCM 无法注册和/或报告。 在这种情况下，请求服务器上的事件日志显示错误“实例名称已使用”。
+这是由于在多线程情况下使用不正确的模式访问 ESENT 数据库。 在 WMF 5.1 中已修复此问题。 在 WMF 5.1 中，并发注册或报告（涉及 ESENT 数据库）可以正常运行。 此问题仅适用于 ESENT 数据库，并不适用于 OLEDB 数据库。 
 
 ## <a name="enable-circular-log-on-esent-database-instance"></a>在 ESENT 数据库实例上启用循环日志
-在旧版 DSC PullServer 中，ESENT 数据库日志文件填满了 pullserver 的磁盘空间，因为数据库实例在创建时未启用循环日志。 在此版本中，客户将可以视情况使用 pullserver 的 web.config 来控制实例的循环日志行为。 默认情况下，CircularLogging 设置为 TRUE。
+在旧版 DSC PullServer 中，ESENT 数据库日志文件填满了 pullserver 的磁盘空间，因为数据库实例在创建时未启用循环日志。 在此版本中，可以视需要使用 pullserver 的 web.config 来控制实例的循环记录行为。 默认情况下，CircularLogging 设为 TRUE。
 ```
 <appSettings>
-     <add key="dbprovider" value="ESENT" />
+    <add key="dbprovider" value="ESENT" />
     <add key="dbconnectionstr" value="C:\Program Files\WindowsPowerShell\DscService\Devices.edb" />
     <add key="CheckpointDepthMaxKB" value="512" />
     <add key="UseCircularESENTLogs" value="TRUE" />
@@ -80,7 +82,7 @@ PartialOne
 
 ![配置存储库中的文件名](../images/PartialInConfigRepository.png)
 
-Azure 自动化服务名称生成的 MOF 文件名为 `<ConfigurationName>.<NodeName>.mof`。 因此下面的配置将编译为 PartialOne.localhost.mof。
+Azure 自动化服务名称生成的 MOF 文件名为 `<ConfigurationName>.<NodeName>.mof`。 因此，下面的配置编译到 PartialOne.localhost.mof 中。
 
 这样将无法从 Azure 自动化服务中提取一个部分配置。
 
@@ -99,9 +101,9 @@ Configuration PartialOne
 PartialOne
 ```
 
-在 WMF 5.1 中，请求服务器/服务中的部分配置可以命名为 `<ConfigurationName>.<NodeName>.mof`。 此外，如果一台计算机从请求服务器/服务中提取一个配置，那么请求服务器配置存储库上的配置文件可以有任何文件名。 这种命名灵活性允许 Azure 自动化服务部分管理你的节点，节点的一些配置来自 Azure Automation DSC，并且你具有希望在本地管理的部分配置。
+在 WMF 5.1 中，请求服务器/服务中的部分配置可以命名为 `<ConfigurationName>.<NodeName>.mof`。 此外，如果一台计算机从请求服务器/服务中提取一个配置，那么请求服务器配置存储库上的配置文件可以有任何文件名。 借助这种命名灵活性，可以使用 Azure 自动化服务管理部分节点（节点的一些配置来自 Azure 自动化 DSC），也可以在本地管理部分配置。
 
-下面的元配置将设置一个节点，该节点可以在本地管理，也可以由 Azure 自动化服务管理。
+下面的元配置将节点设置为可以在本地管理，也可以由 Azure 自动化服务管理。
 
 ```PowerShell
   [DscLocalConfigurationManager()]
@@ -136,14 +138,14 @@ PartialOne
    }
 
    RegistrationMetaConfig
-   slcm -Path .\RegistrationMetaConfig -Verbose
+   Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
  ```
 
 # <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>在 DSC 复合资源中使用 PsDscRunAsCredential   
 
 我们新增了对 DSC [复合](https://msdn.microsoft.com/en-us/powershell/dsc/authoringresourcecomposite)资源使用 [PsDscRunAsCredential](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) 的支持。    
 
-用户现在使用配置内部的复合资源时，可以指定 PsDscRunAsCredential 的值。 如果指定了该值，则可以 RunAs 用户身份运行复合资源内部的所有资源。 如果复合资源调用了另一个复合资源，也将以 RunAs 用户运行该复合资源中的所有资源。 RunAs 凭据可以传播到复合资源层次结构的任一级别。 如果复合资源内的任何资源指定了自己的 PsDscRunAsCredential 的值，那么在配置编译期间将产生合并错误。
+现在可以在使用配置内的复合资源时，指定 PsDscRunAsCredential 值。 如果指定了该值，则可以 RunAs 用户身份运行复合资源内部的所有资源。 如果复合资源调用了另一个复合资源，也将以 RunAs 用户运行该复合资源中的所有资源。 RunAs 凭据可以传播到复合资源层次结构的任一级别。 如果复合资源内的任何资源指定了自己的 PsDscRunAsCredential 值，那么会在配置编译期间生成合并错误。
 
 本示例演示了在 PSDesiredStateConfiguration 模块中包含的 [WindowsFeatureSet](https://msdn.microsoft.com/en-us/powershell/wmf/dsc_newresources) 复合资源中该属性的使用。 
 
@@ -187,7 +189,7 @@ InstallWindowsFeature -ConfigurationData $configData
 ##<a name="dsc-module-and-configuration-signing-validations"></a>DSC 模块和配置签名验证
 在 DSC 中，从请求服务器中将配置和模块分发到托管计算机。 如果请求服务器受到攻击，攻击者可能修改请求服务器上的配置和模块，并将其分发到所有托管节点，将损害所有这些节点。 
 
- 在 WMF 5.1 中，DSC 支持验证目录和配置文件 (.MOF) 上的数字签名。 该功能可以防止节点执行未经受信任的签名者签署的配置或模块文件，或者是经受信任的签名者签署后被篡改的配置或模块文件。 
+ 在 WMF 5.1 中，DSC 支持验证目录和配置文件 (.MOF) 上的数字签名。 此功能可防止节点执行受信任的签名者未签名的配置或模块文件，或是在受信任的签名者签名后被篡改的配置或模块文件。 
 
 
 
@@ -223,7 +225,7 @@ Configuration EnableSignatureValidation
       RegistrationKey = 'd6750ff1-d8dd-49f7-8caf-7471ea9793fc' # Replace this with correct registration key.
     }
     SignatureValidation validations{
-        # By default, LCM will use default Windows trusted publisher store to validate the certificate chain. If TrustedStorePath property is specified, LCM will use this custom store for retrieving the trusted publishers to validate the content.
+        # By default, LCM uses the default Windows trusted publisher store to validate the certificate chain. If TrustedStorePath property is specified, LCM uses this custom store for retrieving the trusted publishers to validate the content.
         TrustedStorePath = 'Cert:\LocalMachine\DSCStore'            
         SignedItemType = 'Configuration','Module'         # This is a list of DSC artifacts, for which LCM need to verify their digital signature before executing them on the node.       
     }
@@ -233,7 +235,7 @@ EnableSignatureValidation
 Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose 
  ```
 
-在节点上设置上述元配置可以对下载的配置和模块进行签名验证。 本地配置管理器将执行以下步骤来验证数字签名。
+在节点上设置上述元配置可以对下载的配置和模块进行签名验证。 本地配置管理器执行以下步骤来验证数字签名。
 
 1. 验证配置文件 (.MOF) 上的签名是否有效。 
    它使用在 5.1 中扩展的 PowerShell cmdlet [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) 来支持 MOF 签名验证。
@@ -247,16 +249,16 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 6. 进程配置
 
 > 注意：仅在第一次将配置应用到系统或下载并安装模块时，才执行对模块目录和配置的签名验证。 一致性运行不会验证 Current.mof 或其模块依赖项的签名。
-如果在任何阶段验证失败，例如，如果从请求服务器提取的配置尚未签名，则将终止配置处理，并显示以下错误，以及删除所有临时文件。
+如果在任何阶段验证失败（例如，如果从请求服务器请求获取的配置未签名），那么配置处理会终止，同时显示以下错误，并删除所有临时文件。
 
 ![错误输出配置示例](../images/PullUnsignedConfigFail.png)
 
-类似地，拉取其目录未签名的模块将导致以下错误：
+同样，如果请求获取的模块包含未签名的目录，也会导致以下错误生成：
 
 ![错误输出模块示例](../images/PullUnisgnedCatalog.png)
 
 ####<a name="push"></a>推送
-通过使用推送提供的配置可能会在其提供到节点之前在源处被篡改。 本地配置管理器将对推送或发布的配置执行类似的签名验证步骤。
+通过使用推送提供的配置可能会在其提供到节点之前在源处被篡改。 本地配置管理器对推送或发布的配置执行类似的签名验证步骤。
 下面是针对推送的签名验证的完整示例。
 
 * 启用针对节点的签名验证。

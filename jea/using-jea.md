@@ -8,9 +8,11 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-12-05
 title: "使用 JEA"
 ms.technology: powershell
-ms.openlocfilehash: 4f1fad1d28b9ced462c392210449d73af325b132
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
-translationtype: HT
+ms.openlocfilehash: 62e5f74d60b2fd09e302ecc12996f97e90b73f2f
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="using-jea"></a>使用 JEA
 
@@ -134,7 +136,6 @@ $allowedCommands | Where-Object { $_.CommandType -in 'Function', 'Cmdlet' } | Fo
 ```csharp
 
 // using System.Management.Automation;
-
 var computerName = "SERVER01";
 var configName   = "JEAMaintenance";
 var creds        = // create a PSCredential object here (https://msdn.microsoft.com/en-us/library/system.management.automation.pscredential(v=vs.85).aspx)
@@ -146,7 +147,6 @@ WSManConnectionInfo connectionInfo = new WSManConnectionInfo(
                     "/wsman",              // WSMan Path
                     string.Format(CultureInfo.InvariantCulture, "http://schemas.microsoft.com/powershell/{0}", configName),  // Connection URI with config name
                     creds);                // Credentials
-
 // Now, use the connection info to create a runspace where you can run the commands
 using (Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo))
 {
@@ -173,7 +173,7 @@ using (Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo))
 
 ## <a name="using-jea-with-powershell-direct"></a>将 JEA 与 PowerShell Direct 配合使用
 
-Windows 10 和 Windows Server 2016 中的 Hyper-V 提供 [PowerShell Direct](https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/vmsession) 功能，即使 VM 位于其他网络中，该功能也可允许 Hyper-V 管理员使用 PowerShell 管理虚拟机。
+Windows 10 和 Windows Server 2016 中的 Hyper-V 提供 [PowerShell Direct](https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/vmsession) 功能，以便 Hyper-V 管理员可以使用 PowerShell 管理虚拟机，无论虚拟机上的网络配置或远程管理设置如何。
 
 可以将 PowerShell Direct 与 JEA 配合使用，向 Hyper-V 管理员提供对 VM 有限的访问权限，这在失去与 VM 的网络连接并需要数据中心管理员来修复网络设置时十分有用。
 
@@ -190,6 +190,6 @@ Enter-PSSession -VMId $vm.VMId -ConfigurationName 'NICMaintenance' -Credential '
 ```
 
 强烈建议创建没有其他系统管理权限的本地用户，以供 Hyper-V 管理员使用。
-请记住，默认情况下，即使没有特权的用户仍可通过使用非约束 PowerShell 等方式登录到 Windows 计算机。
+请注意，默认情况下，即使是没有特权的用户，也仍可登录 Windows 计算机（包括使用不受限制的 PowerShell）。
 这将使他们能够浏览（某些）文件系统，并深入了解操作系统环境。
-若要锁定 Hyper-V 管理员，仅允许将 PowerShell Direct 与 JEA 配合使用来访问 VM，则需要拒绝 Hyper-V 管理员的 JEA 帐户的本地登录权限。
+若要将 Hyper-V 管理员限制为只能通过将 PowerShell Direct 与 JEA 结合使用来访问 VM，则需要拒绝向 Hyper-V 管理员的 JEA 帐户授予本地登录权限。

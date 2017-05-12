@@ -9,9 +9,11 @@ ms.date: 2016-12-12
 title: "Windows PowerShell 集成脚本环境 (ISE)"
 ms.technology: powershell
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: ce6f084ee1f7e8f086ef5c3a6202cbf7070431db
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 6b10e9ee610235cb17795a371fe05e4c2a81c3bb
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell 集成脚本环境 (ISE)
 Windows PowerShell 集成脚本环境 (ISE) 是 Windows PowerShell 引擎和语言的两个主机之一。 借助它你可以采取 Windows PowerShell 控制台中不可用的方式来编写、运行并测试脚本。 ISE 添加了语法着色、Tab 自动补全、IntelliSense、可视调试和上下文相关帮助。
@@ -54,7 +56,7 @@ ISE 使你能够在控制台窗格中运行命令，但它也支持可用于同�
 
 -   **块选择**。 你可以通过在用鼠标选定脚本窗格中文本的同时按住 ALT 键，或通过按 **Alt+Shift+箭头**键来选定块状的文本块。
 
-### <a name="added-in-powershell-20-windows-server-2008-r2-windows-7"></a>PowerShell 2.0 中的新添功能（Windows Server 2008 R2、Windows 7）
+### <a name="added-in-powershell-20-windows-server-2008-r2-windows-7"></a>PowerShell 2.0 中的新增功能（Windows Server 2008 R2、Windows 7）
 ISE 随 PowerShell v2.0 一同引入。
 
 ## <a name="requirements-for-running-the-windows-powershell-ise"></a>运行 Windows PowerShell ISE 的要求

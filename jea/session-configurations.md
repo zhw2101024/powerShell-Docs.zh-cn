@@ -5,12 +5,14 @@ author: rpsqrd
 ms.author: ryanpu
 ms.prod: powershell
 keywords: powershell,cmdlet,jea
-ms.date: 2017-03-08
+ms.date: 2017-04-25
 title: "JEA 会话配置"
 ms.technology: powershell
-ms.openlocfilehash: e98214d1777a1530b5a18ac9df1a6185d6d73979
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.openlocfilehash: 8773096627217663362e61fb158cc900aea20f43
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="jea-session-configurations"></a>JEA 会话配置
 
@@ -40,7 +42,7 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEA
 
 可在任意文本编辑器中打开会话配置文件。
 `-SessionType RestrictedRemoteServer` 字段指示 JEA 将使用该会话配置进行安全管理。
-按此方式配置的会话将在[NoLanguage 模式](https://technet.microsoft.com/en-us/library/dn433292.aspx)下运行，并且仅提供以下 8 个默认 cmdlet（和别名）：
+通过此方式配置的会话将在 [NoLanguage 模式](https://technet.microsoft.com/en-us/library/dn433292.aspx)下运行，并且只包含以下 8 个默认命令（和别名）：
 
 - Clear-Host (cls, clear)
 - Exit-PSSession (exsn, exit)
@@ -139,7 +141,7 @@ MountUserDrive = $true
 ```
 
 默认情况下，用户驱动器允许每个用户存储最多 50 MB 的数据。
-可使用“UserDriveMaxmimumSize”字段限制用户能使用的数据量。
+可使用“UserDriveMaximumSize”字段限制用户能使用的数据量。
 
 ```powershell
 # Enables the user drive with a per-user limit of 500MB (524288000 bytes)
@@ -169,6 +171,15 @@ RoleDefinitions = @{
 
 如果某用户属于角色定义中的多个组，则其将获得访问每个组角色的权限。
 如果两个角色向同一个 cmdlet 授予访问权限，则将向用户授予最宽松的参数集。
+
+在角色定义字段中指定本地用户或组时，请务必在反斜杠前面添加计算机名称（而不是 *localhost* 或 *.*）。
+可通过检查 `$env:computername` 变量来查看计算机名称。
+
+```powershell
+RoleDefinitions = @{
+    'MyComputerName\MyLocalGroup' = @{ RoleCapabilities = 'DnsAuditor' }
+}
+```
 
 ### <a name="role-capability-search-order"></a>角色功能搜索顺序
 如上例所示，角色功能由角色功能文件的平面名称（不含扩展名的文件名）进行引用。

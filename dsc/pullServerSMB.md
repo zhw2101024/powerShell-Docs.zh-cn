@@ -7,15 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: df994500ce5f46d62f143af07d8ce86dddf44c3e
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
-translationtype: HT
+ms.openlocfilehash: f16af7664ac5d07b5884070534bed20e8cf2fcd9
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>设置 DSC SMB 请求服务器
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
-DSC [SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx) 请求服务器是 SMB 文件共享，可在目标节点请求获取 DSC 配置文件和/或 DSC 资源时，向这些节点提供它们。
+DSC [SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx) 请求服务器是计算机托管 SMB 文件共享，可在目标节点提出请求时向它们提供 DSC 配置文件和 DSC 资源。
 
 若要将 SMB 请求服务器用于 DSC，必须执行以下操作：
 - 在运行 PowerShell 4.0 或更高版本的服务器上设置一个 SMB 文件共享
@@ -32,7 +34,7 @@ DSC [SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx) 请求服�
 
 ### <a name="create-the-directory-and-file-share"></a>创建目录和文件共享
 
-下面的配置使用 [File](fileResource.md) 资源为共享创建目录，并使用 **xSmbShare** 资源设置 SMB 共享：
+下面的配置使用 [File](fileResource.md) 资源创建共享目录，并使用 **xSmbShare** 资源创建 SMB 共享：
 
 ```powershell
 Configuration SmbShare {
@@ -67,7 +69,7 @@ Import-DscResource -ModuleName xSmbShare
 }
 ```
 
-该配置会创建目录 `C:\DscSmbShare`（如果尚未存在），随后将该目录用作 SMB 文件共享。 **FullAccess** 应授予给所有需要写入文件共享或从文件共享中删除内容的帐户，而 **ReadAccess** 则必须授予给所有将从共享获取配置和/或 DSC 资源的客户端节点（这是因为 DSC 在默认情况下作为系统帐户运行，计算机本身必须有权访问共享）。
+该配置会创建目录 `C:\DscSmbShare`（如果尚未存在），随后将该目录用作 SMB 文件共享。 **FullAccess** 应授予给所有需要在文件共享中写入或删除内容的帐户，而 **ReadAccess** 则必须授予给所有从共享获取配置和/或 DSC 资源的客户端节点（这是因为 DSC 默认作为系统帐户运行，计算机本身必须有权访问共享）。
 
 
 ### <a name="give-file-system-access-to-the-pull-client"></a>向请求客户端授予文件系统访问权限
@@ -135,7 +137,7 @@ Import-DscResource -ModuleName cNtfsAccessControl
 
 >**注意：**如果你使用的是 SMB 请求服务器，则必须使用配置 ID。 SMB 不支持配置名称。
 
-每个资源模块都需要进行压缩并按照 `{Module Name}_{Module Version}.zip` 模式进行命名。 例如，一个名为 xWebAdminstration 并且模块版本为 3.1.2.0 的模块会命名为“xWebAdministration_3.2.1.0.zip”。 每个版本的模块都必须包含在单个 zip 文件中。 由于每个 zip 文件中只有单个版本的资源，因此不支持在 WMF 5.0 中添加的可在单个目录中支持多个模块版本的模块格式。 这意味着在打包 DSC 资源模块以便用于请求服务器之前，需要对目录结构进行少量更改。 WMF 5.0 中包含 DSC 资源的模块默认格式是 {Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\'。 为请求服务器进行打包之前，只需删除 **{Module version}** 文件夹，以便路径成为 {Module Folder}\DscResources\{DSC Resource Folder}\'。 进行此更改之后，按上文所述压缩文件夹，并将这些 zip 文件置于 SMB 共享文件夹中。 
+每个资源模块都需要进行压缩并按照 `{Module Name}_{Module Version}.zip` 模式进行命名。 例如，一个名为 xWebAdminstration 并且模块版本为 3.1.2.0 的模块会命名为“xWebAdministration_3.2.1.0.zip”。 每个版本的模块都必须包含在单个 zip 文件中。 由于每个 zip 文件中只有单个版本的资源，因此不支持在 WMF 5.0 中添加的可在单个目录中支持多个模块版本的模块格式。 也就是说，在打包 DSC 资源模块以供请求服务器使用之前，必须对目录结构稍作更改。 WMF 5.0 中包含 DSC 资源的模块默认格式是 {Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\'。 为请求服务器进行打包之前，只需删除 **{Module version}** 文件夹，以便路径成为 {Module Folder}\DscResources\{DSC Resource Folder}\'。 进行此更改之后，按上文所述压缩文件夹，并将这些 zip 文件置于 SMB 共享文件夹中。 
 
 ## <a name="creating-the-mof-checksum"></a>创建 MOF 校验和
 配置 MOF 文件需要与校验和文件配对，以使目标节点上的 LCM 可以验证配置。 若要创建校验和，请调用 [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) cmdlet。 该 cmdlet 将接受 **Path** 参数，该参数指定了配置 MOF 所在的文件夹。 该 cmdlet 将创建名为 `ConfigurationMOFName.mof.checksum` 的校验和文件，其中 `ConfigurationMOFName` 是配置 mof 文件的名称。 如果指定文件夹中存在多个配置 MOF 文件，则将为该文件夹中的每个配置分别创建校验和。
@@ -146,7 +148,7 @@ Import-DscResource -ModuleName cNtfsAccessControl
 
 ## <a name="setting-up-a-pull-client-for-smb"></a>设置 SMB 请求客户端
 
-若要设置从 SMB 共享请求配置和/或资源的客户端，可使用 **ConfigurationRepositoryShare** 和 **ResourceRepositoryShare** 程序块配置本地配置管理器 (LCM)，这些程序块可指定从中请求的共享。
+若要设置从 SMB 共享请求获取配置和/或资源的客户端，可使用指定从哪个共享中请求获取配置和 DSC 资源的 **ConfigurationRepositoryShare** 和 **ResourceRepositoryShare** 代码块，配置客户端的本地配置管理器 (LCM)。
 
 有关配置 LCM 的详细信息，请参阅[使用配置 ID 设置请求客户端](pullClientConfigID.md)。
 

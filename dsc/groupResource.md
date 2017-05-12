@@ -7,9 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 12c6ad6f30b4e1b67296289c927e59fd64079675
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: db2a12141ab1eaca73bf958b5a27ef2a356d5b8f
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="dsc-group-resource"></a>DSC Group 资源
 
@@ -17,18 +19,18 @@ translationtype: HT
 
 Windows PowerShell Desired State Configuration (DSC) 中的 Group 资源提供了管理目标节点上的本地组的机制。
 
-##<a name="syntax"></a>语法##
+## <a name="syntax"></a>语法
 ```
 Group [string] #ResourceName
 {
-    GroupName = [string]
-    [ Credential = [PSCredential] ]
-    [ Description = [string[]] ]
-    [ Ensure = [string] { Absent | Present }  ]
-    [ Members = [string[]] ]
+    GroupName          = [string]
+    [ Credential       = [PSCredential] ]
+    [ Description      = [string[]] ]
+    [ Ensure           = [string] { Absent | Present }  ]
+    [ Members          = [string[]] ]
     [ MembersToExclude = [string[]] ]
     [ MembersToInclude = [string[]] ]
-    [ DependsOn = [string[]] ]
+    [ DependsOn        = [string[]] ]
 }
 ```
 
@@ -37,11 +39,11 @@ Group [string] #ResourceName
 |  属性  |  说明   | 
 |---|---| 
 | GroupName| 要确保其处于特定状态的组的名称。| 
-| 凭据| 访问远程资源所需的凭据。 **注意**：此帐户必须具有相应的 Active Directory 权限才能将所有非将本地帐户添加到组中；否则，将发生错误。
+| 凭据| 访问远程资源所需的凭据。 **注意**：此帐户必须拥有相应的 Active Directory 权限，才能将所有非本地帐户添加到组中；否则，在目标节点上执行配置时会生成错误。  
 | 说明| 组的说明。| 
 | Ensure| 指示该组是否存在。 将其属性设置为“Absent”可确保组不存在。 将其设置为"Present"（默认值）可确保组存在。| 
-| 成员| 使用此属性将当前的组成员身份替换为指定成员。 此属性的值是一组形式为 *Domain*\\*UserName* 的字符串。 如果你在配置中设置此属性，请勿使用 **MembersToExclude** 或 **MembersToInclude** 属性。 这样做会导致错误生成。| 
-| MembersToExclude| 使用此属性从现有的组成员身份中删除成员。 此属性的值是一组形式为 *Domain*\\*UserName* 的字符串。 如果你在配置中设置此属性，请勿使用 **Members** 属性。 这样做会导致错误生成。| 
+| 成员| 使用此属性将当前的组成员身份替换为指定成员。 此属性的值是一组形式为 *Domain*\\*UserName* 的字符串。 如果你在配置中设置此属性，请勿使用 **MembersToExclude** 或 **MembersToInclude** 属性。 这样会生成错误。| 
+| MembersToExclude| 使用此属性从现有的组成员身份中删除成员。 此属性的值是一组形式为 *Domain*\\*UserName* 的字符串。 如果你在配置中设置此属性，请勿使用 **Members** 属性。 这样会生成错误。| 
 | MembersToInclude| 使用此属性将成员添加到组的现有成员资格中。 此属性的值是一组形式为 *Domain*\\*UserName* 的字符串。 如果你在配置中设置此属性，请勿使用 **Members** 属性。 这样做会导致错误生成。| 
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 __ResourceName__、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"``。| 
 
@@ -52,7 +54,7 @@ Group [string] #ResourceName
 ```powershell
 Group GroupExample
 {
-    # This will remove TestGroup, if present
+    # This removes TestGroup, if present
     # To create a new group, set Ensure to "Present“
     Ensure = "Absent"
     GroupName = "TestGroup"
@@ -88,3 +90,22 @@ Group AddADUserToLocalAdminGroup
         }
 ```
 
+## <a name="example-3"></a>示例 3
+下面的示例展示了如何确保服务器 TigerTeamSource.Contoso.Com 上的本地组 TigerTeamAdmins 不包含特定域帐户 Contoso\JerryG。  
+
+```powershell
+
+Configuration SecureTigerTeamSrouce 
+{
+  Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
+  
+  Node TigerTeamSource.Contoso.Com {
+  Group TigerTeamAdmins
+    {
+       GroupName        = 'TigerTeamAdmins'   
+       Ensure           = 'Absent'             
+       MembersToInclude = "Contoso\JerryG"
+    }
+  }
+}
+```

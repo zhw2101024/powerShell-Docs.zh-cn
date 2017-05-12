@@ -8,9 +8,11 @@ keywords: powershell,cmdlet,jea
 ms.date: 2017-03-07
 title: "JEA 先决条件"
 ms.technology: powershell
-ms.openlocfilehash: e4ae3ebd0b2c330a76d3183e6c9c1106f769feb3
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.openlocfilehash: a38c9e948190b9384c62eec3e40758a782c9f72b
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="prerequisites"></a>必备条件
 
@@ -29,22 +31,23 @@ Windows PowerShell 5.0 及更高版本均包含 JEA 功能，但若要使用完�
 Windows Server 2016       | 已预安装
 Windows Server 2012 R2    | 包含 WMF 5.1 的完整功能
 Windows Server 2012       | 包含 WMF 5.1 的完整功能
-Windows Server 2008 R2    | 包含 WMF 5.1 的完整功能
+Windows Server 2008 R2    | 减少了功能<sup>1</sup>（如果 WMF 5.1 已安装）
 
 此外，还可以在家庭或工作计算机上使用 JEA：
 
 客户端操作系统   | JEA 可用性
 --------------------------|-----------------------------------------------------
-Windows 10 1607 版           | 已预安装
-Windows 10 1603 版、1511 版     | 已预安装，但功能减少了<sup>1</sup>
+Windows 10 1607 及更高版本          | 已预安装
+Windows 10 1603 版、1511 版     | 已预安装，但减少了功能<sup>2</sup>
 Windows 10 1507 版           | 不可用
 Windows 8、8.1            | 包含 WMF 5.1 的完整功能
-Windows 7                 | 包含 WMF 5.1 的有限功能<sup>2</sup>
+Windows 7                 | 减少了功能<sup>1</sup>（如果 WMF 5.1 已安装）
 
-<sup>1</sup> Windows 10 1511 版和 1603 版不支持以下 JEA 功能：以组托管服务帐户身份运行、会话配置中的条件访问规则、用户驱动器以及授予本地用户帐户访问权限。
+<sup>1</sup>无法将 JEA 配置为在 Windows Server 2008 R2 或 Windows 7 上使用组托管服务帐户。
+*支持*虚拟帐户和其他 JEA 功能。
+
+<sup>2</sup>Windows 10 版本 1511 和 1603 不支持以下 JEA 功能：以组托管服务帐户身份运行、会话配置中的条件访问规则、用户驱动器以及向本地用户帐户授予访问权限。
 若要获取对这些功能的支持，请将 Windows 更新到 1607 版（周年更新）或更高版本。
-
-<sup>2</sup> JEA 不能配置为在 Windows 7 上使用虚拟帐户。
 
 ### <a name="check-which-version-of-powershell-is-installed"></a>查看安装的 PowerShell 版本类型
 

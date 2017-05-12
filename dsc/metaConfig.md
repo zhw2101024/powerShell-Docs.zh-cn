@@ -7,9 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: fa45b4bf97a24e098ed81166119f789a5b961c26
-ms.sourcegitcommit: a81ffb39f370b95ae802cd054dc4480c9e68cf77
-translationtype: HT
+ms.openlocfilehash: c9b6bfc77a4a00875846c38fd4f29e85f4d92020
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="configuring-the-local-configuration-manager"></a>配置本地配置管理器
 
@@ -63,14 +65,15 @@ LCM 配置只能包含有限组资源的块。 在上面的示例中，调用的
 |----------- |------- |--------------- | 
 | ConfigurationModeFrequencyMins| UInt32| 检查和应用当前配置的时间间隔（以分钟为单位）。 如果将 ConfigurationMode 属性设置为 ApplyOnly，则将忽略此属性。 默认值为 15。 <br> __注意__：此属性的值必须是 __RefreshFrequencyMins__ 属性值的倍数，或者 __RefreshFrequencyMins__ 属性值必须为此属性值的倍数。| 
 | RebootNodeIfNeeded| 布尔| 将此设置为 __$true__，可在应用要求重启的设置后自动重启节点。 否则，你必须为要求重启的配置手动重启节点。 默认值为 __$false__。| 
-| ConfigurationMode| 字符串 | 指定 LCM 实际如何将配置应用到目标节点。 可能的值为__“ApplyOnly”__、__“ApplyandMonitior”（默认值）__和__“ApplyandAutoCorrect”__。 <ul><li>__ApplyOnly__：DSC 将应用配置，但若未向目标节点推送新配置或从服务器请求新配置，则它不会执行任何进一步操作。 首次应用新配置后，DSC 不会检查是否偏离以前配置的状态。 请注意，__ApplyOnly__ 生效前，DSC 将尝试应用配置，直到成功为止。 </li><li> __ApplyAndMonitor__：这是默认值。 LCM 将应用任意新配置。 首次应用新配置后，如果目标节点偏离期望状态，则 DSC 将在日志中报告差异。 请注意，__ApplyAndMonitor__ 生效前，DSC 将尝试应用配置，直到成功为止。</li><li>__ApplyAndAutoCorrect__：DSC 将应用任何新配置。 首次应用新配置后，如果目标节点偏离适当状态，则 DSC 将在日志中报告差异然后重新应用当前配置。</li></ul>| 
-| ActionAfterReboot| 字符串| 指定在应用配置期间重启后进行什么操作。 可能的值为__“ContinueConfiguration”（默认值）__和__“StopConfiguration”__。 <ul><li> __ContinueConfiguration__：在计算机重新启动后继续应用当前配置。</li><li>__StopConfiguration__：在计算机重新启动后停止当前配置。</li></ul>| 
-| RefreshMode| 字符串| 指定 LCM 如何获取配置。 可能的值为__“Disabled”__、__“Push”（默认值）__和__“Pull”__。 <ul><li>__Disabled__：DSC 配置对该节点禁用。</li><li> __Push__：通过调用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet 启动配置。 将配置立即应用到节点。 这是默认值。</li><li>__Pull：__将节点配置为从请求服务器定期检查配置。 如果此属性被设置为 __Pull__，你必须在 __ConfigurationRepositoryWeb__ 或 __ConfigurationRepositoryShare__ 块中指定请求服务器。 有关请求服务器的详细信息，请参阅[设置 DSC 请求服务器](pullServer.md)。</li></ul>| 
+| ConfigurationMode| 字符串 | 指定 LCM 实际如何将配置应用到目标节点。 可取值为 __ApplyOnly__、__ApplyandMonitior__ 和 __ApplyandAutoCorrect__。 <ul><li>__ApplyOnly__：DSC 将应用配置，但若未向目标节点推送新配置或从服务器请求新配置，则它不会执行任何进一步操作。 首次应用新配置后，DSC 不会检查是否偏离以前配置的状态。 请注意，__ApplyOnly__ 生效前，DSC 将尝试应用配置，直到成功为止。 </li><li> __ApplyAndMonitor__：这是默认值。 LCM 将应用任意新配置。 首次应用新配置后，如果目标节点偏离期望状态，则 DSC 将在日志中报告差异。 请注意，__ApplyAndMonitor__ 生效前，DSC 将尝试应用配置，直到成功为止。</li><li>__ApplyAndAutoCorrect__：DSC 将应用任何新配置。 首次应用新配置后，如果目标节点偏离适当状态，则 DSC 将在日志中报告差异然后重新应用当前配置。</li></ul>| 
+| ActionAfterReboot| 字符串| 指定在应用配置期间重启后进行什么操作。 可取值为 __ContinueConfiguration__ 和 __StopConfiguration__。 <ul><li> __ContinueConfiguration__：在计算机重新启动后继续应用当前配置。 此为默认值</li>
+<li>__StopConfiguration__：在计算机重新启动后停止当前配置。</li></ul>| 
+| RefreshMode| 字符串| 指定 LCM 如何获取配置。 可取值为 __Disabled__、__Push__ 和 __Pull__。 <ul><li>__Disabled__：DSC 配置对该节点禁用。</li><li> __Push__：通过调用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet 启动配置。 将配置立即应用到节点。 这是默认值。</li><li>__Pull：__将节点配置为从请求服务器定期检查配置。 如果此属性被设置为 __Pull__，你必须在 __ConfigurationRepositoryWeb__ 或 __ConfigurationRepositoryShare__ 块中指定请求服务器。 有关请求服务器的详细信息，请参阅[设置 DSC 请求服务器](pullServer.md)。</li></ul>| 
 | CertificateID| 字符串| 用于保护在配置中传递的凭据的证书指纹。 更多详细信息，请参阅 [Want to secure credentials in Windows PowerShell Desired State Configuration?（希望在 Windows PowerShell Desired State Configuration 中保护凭据？）](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)。| 
 | ConfigurationID| 字符串| 用于标识请求模式下要从请求服务器获取的配置文件的 GUID。 如果配置 MOF 名为 ConfigurationID.mof，那么节点将在拉取服务器上拉取配置。<br> __注意：__如果设置此属性，将无法使用 __RegistryKey__ 将节点注册到请求服务器。 有关详细信息，请参阅[使用配置名称设置请求客户端](pullClientConfigNames.md)。| 
 | RefreshFrequencyMins| Uint32| LCM 按此时间间隔（以分钟为单位）检查请求服务器以获取更新的配置。 如果 LCM 未配置为请求模式，则将忽略此值。 默认值为 30。<br> __注意__：此属性的值必须是 __ConfigurationModeFrequencyMins__ 属性值的倍数，或者 __ConfigurationModeFrequencyMins__ 属性值必须为此属性值的倍数。| 
 | AllowModuleOverwrite| 布尔| 若允许从配置服务器下载的新配置覆盖目标节点上的旧配置，则为 __$TRUE__。 否则为 $FALSE。| 
-| DebugMode| 字符串| 可能的值为 __None（默认）__、__ForceModuleImport__ 和 __All__。 <ul><li>设置为 __None__ 可以使用缓存的资源。 这是默认值，应在生产方案中使用。</li><li>设置为 __ForceModuleImport__ 会导致 LCM 重载所有 DSC 资源模块，即使这些模块之前已被加载并缓存，也是如此。 这会影响 DSC 操作的性能，因为将在使用时重新加载每个模块。 通常在调试资源时使用此值</li><li>在此版本中，__All__ 等同于 __ForceModuleImport__</li></ul> |
+| DebugMode| 字符串| 可取值为 __None__、__ForceModuleImport__ 和 __All__。 <ul><li>设置为 __None__ 可以使用缓存的资源。 这是默认值，应在生产方案中使用。</li><li>设置为 __ForceModuleImport__ 会导致 LCM 重载所有 DSC 资源模块，即使这些模块之前已被加载并缓存，也是如此。 这会影响 DSC 操作的性能，因为将在使用时重新加载每个模块。 通常在调试资源时使用此值</li><li>在此版本中，__All__ 等同于 __ForceModuleImport__</li></ul> |
 | ConfigurationDownloadManagers| CimInstance[]| 已过时。 使用 __ConfigurationRepositoryWeb__ 和 __ConfigurationRepositoryShare__ 块定义配置请求服务器。| 
 | ResourceModuleManagers| CimInstance[]| 已过时。 使用 __ResourceRepositoryWeb__ 和 __ResourceRepositoryShare__ 块定义资源请求服务器。| 
 | ReportManagers| CimInstance[]| 已过时。 使用 __ReportServerWeb__ 块定义报表请求服务器。| 
@@ -145,7 +148,7 @@ LCM 配置只能包含有限组资源的块。 在上面的示例中，调用的
 |DependsOn|string{}|应用此部分配置之前必须完成的其他配置名称的列表。|
 |说明|字符串|用于描述部分配置的文本。|
 |ExclusiveResources|string[]|此部分配置专用的资源数组。|
-|RefreshMode|字符串|指定 LCM 如何获取此部分配置。 可能的值为__“Disabled”__、__“Push”（默认值）__和__“Pull”__。 <ul><li>__Disabled__：禁用此部分配置。</li><li> __Push__：通过调用 [Publish-DscConfiguration](https://technet.microsoft.com/en-us/library/mt517875.aspx) cmdlet 将部分配置推送到节点。 从服务器推送或请求该节点的所有部分配置后，可以通过调用 `Start-DscConfiguration –UseExisting` 来启动配置。 这是默认值。</li><li>__Pull：__将节点配置为从请求服务器定期检查部分配置。 如果将此属性设置为 __Pull__，则必须在 __ConfigurationSource__ 属性中指定请求服务器。 有关请求服务器的详细信息，请参阅[设置 DSC 请求服务器](pullServer.md)。</li></ul>|
+|RefreshMode|字符串|指定 LCM 如何获取此部分配置。 可取值为 __Disabled__、__Push__ 和 __Pull__。 <ul><li>__Disabled__：禁用此部分配置。</li><li> __Push__：通过调用 [Publish-DscConfiguration](https://technet.microsoft.com/en-us/library/mt517875.aspx) cmdlet 将部分配置推送到节点。 从服务器推送或请求该节点的所有部分配置后，可以通过调用 `Start-DscConfiguration –UseExisting` 来启动配置。 这是默认值。</li><li>__Pull：__将节点配置为从请求服务器定期检查部分配置。 如果将此属性设置为 __Pull__，则必须在 __ConfigurationSource__ 属性中指定请求服务器。 有关请求服务器的详细信息，请参阅[设置 DSC 请求服务器](pullServer.md)。</li></ul>|
 |ResourceModuleSource|string[]|可从中下载此部分配置所需资源的资源服务器的名称数组。 这些名称必须表示之前在 **ResourceRepositoryWeb** 和 **ResourceRepositoryShare** 块中定义的资源服务器。|
 
 ## <a name="see-also"></a>另请参阅 

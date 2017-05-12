@@ -7,9 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: ec773688540a3f4a2f128f66d311926fd5b9a935
-ms.sourcegitcommit: 6d27d6db5ab0e2d5b6c7229e2e2d2e57915ea22d
-translationtype: HT
+ms.openlocfilehash: efd15e1cee366ee887d302c7e681f18a93c68080
+ms.sourcegitcommit: ee407927101c3b166cc200a39a6ea786a1c21f95
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="windows-powershell-desired-state-configuration-overview"></a>Windows PowerShell Desired State Configuration 概述 
 
@@ -28,9 +30,9 @@ DSC 是一个声明性平台，用于配置、部署和管理系统。 它包括
 - [Configurations](configurations.md) 是声明性的 PowerShell 脚本，用于定义和配置资源实例。
     在运行配置时，DSC（和配置调用的资源）将“使其如此”，确保系统处于配置所布局的状态。 
     DSC 配置也是幂等的：无论配置声明什么状态，本地配置管理器 (LCM) 都将继续确保计算机已配置为该状态。
-- 资源是 DSC 的“使其如此”部分。 它们包含将配置的目标置于并保持在指定状态的代码。 
+- [资源](resources.md)是 DSC 的“实现器”部分。 它们包含将配置的目标置于并保持在指定状态的代码。 
     资源驻留在 PowerShell 模块内，可编写以便对某项内容进行建模，建模对象可以是一般的文件或 Windows 进程，也可以是在 Azure 中运行的具体 IIS 服务器或 VM。
-- 本地配置管理器 (LCM) 是一个引擎，DSC 通过该引擎促进资源和配置之间的交互。 
+- [本地配置管理器 (LCM)](metaConfig.md) 是 DSC 用来推动资源和配置之间交互的引擎。 
     LCM 使用由资源实现的控制流定期轮询系统，以确保配置所定义的状态得以保持。 
     如果系统不处于相应状态，LCM 将根据配置调用资源内的代码“使其如此”。 
 
