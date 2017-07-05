@@ -1,16 +1,12 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "工作流指南"
-ms.technology: powershell
-ms.openlocfilehash: 59b31a94ad73bb723ade296cbb5faf147e663df1
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 9eb5ae1d665ed6e4319ede62e7f7a27e6ce5b04f
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="psworkflow-module"></a>PSWorkflow 模块
 本部分包含有关 **PSWorkflow** 模块的帮助主题，此模块包含支持 Windows PowerShell 工作流功能的 cmdlet。 **PSWorkflow** 模块随 Windows PowerShell 一起安装。

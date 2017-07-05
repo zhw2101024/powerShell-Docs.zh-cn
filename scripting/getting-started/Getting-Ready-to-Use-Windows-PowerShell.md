@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "准备好使用 Windows PowerShell"
-ms.technology: powershell
 ms.assetid: 6dc7052d-cc5a-4220-950f-98f963a2b587
-ms.openlocfilehash: 8090302903269cbaa77b9b8a7b64c339d66ae80d
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 32bae871574775165d12382deeca27ab24893544
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="getting-ready-to-use-windows-powershell"></a>准备好使用 Windows PowerShell
 安装并启动 Windows PowerShell 后，请考虑以下设置选项。 随时可以执行这些任务。

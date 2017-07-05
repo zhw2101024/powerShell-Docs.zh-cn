@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "Windows PowerShell 核心“关于”主题"
-ms.technology: powershell
 ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
-ms.openlocfilehash: 08f62a8e54e1342a01e76dafd02b745c59a1e3f8
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 6790850358a71b13e1057af8f99c6064c74f326b
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="windows-powershell-core-about-topics"></a>Windows PowerShell 核心“关于”主题
 本部分包含适用于所有 Windows PowerShell 模块的（“关于”）帮助主题。 有关其他模块的“关于”主题，请参阅特定模块的帮助主题。

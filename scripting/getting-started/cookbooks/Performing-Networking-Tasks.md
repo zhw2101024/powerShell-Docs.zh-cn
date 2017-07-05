@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "执行网络任务"
-ms.technology: powershell
 ms.assetid: a43cc55f-70c1-45c8-9467-eaad0d57e3b5
-ms.openlocfilehash: 1c938500da191c2791b3178971cdcea28f57aacd
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 4d7a91595b9d9d637ce915be2c2be9c20879dd8b
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="performing-networking-tasks"></a>执行网络任务
 由于 TCP/IP 是最常用的网络协议，因此大多数低级别网络协议管理任务都涉及 TCP/IP。 在本部分中，我们使用 Windows PowerShell 和 WMI 来执行这些任务。
@@ -31,7 +27,12 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=TRUE -C
 
 若要了解大括号出现的原因，请使用 Get-Member cmdlet 检查 **IPAddress** 属性：
 
-<pre>PS> Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=TRUE -ComputerName。 | Get-Member -Name IPAddress TypeName: System.Management.ManagementObject#root\cimv2\Win32_NetworkAdapter Configuration Name      MemberType Definition ----      ---------- ---------- IPAddress Property   System.String[] IPAddress {get;}</pre>
+<pre>PS> Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=TRUE -ComputerName . | Get-Member -Name IPAddress
+TypeName: System.Management.ManagementObject#root\cimv2\Win32_NetworkAdapter
+Configuration
+Name      MemberType Definition
+----      ---------- ----------
+IPAddress Property   System.String[] IPAddress {get;}</pre>
 
 每个网络适配器的 IPAddress 属性实际上是一个数组。 定义中的大括号指示 **IPAddress** 不是 **System.String** 值，而是由 **System.String** 值组成的数组。
 

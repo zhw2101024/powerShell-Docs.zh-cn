@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "使用注册表项"
-ms.technology: powershell
 ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
-ms.openlocfilehash: 8554bd1752ecddd87d70c2f31de357ce5da26ba5
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: efb2c016afa2212c2907c0740ad26c4e4cddd3af
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="working-with-registry-keys"></a>使用注册表项
 由于注册表项是 Windows PowerShell 驱动器上的项，因此使用它们的方法和使用文件及文件夹的方法非常相似。 一个关键区别在于，基于注册表的 Windows PowerShell 驱动器上的每个项都是一个容器，就像文件系统驱动器上有一个文件夹一样。 但是，注册表条目及其关联的值只是项的属性，而不是不同的项。

@@ -1,22 +1,18 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "ISE 对象模型层次结构"
-ms.technology: powershell
 ms.assetid: bc3300e4-9c17-4f00-a621-c8867126e3b3
-ms.openlocfilehash: 815d17ea6ca4a1a209b39d49ce1bd271e07621b4
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 0d0370ed9f64464038e643ae2cd241891fa74f33
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="the-ise-object-model-hierarchy"></a>ISE 对象模型层次结构
   本主题介绍了属于 Windows PowerShell 集成脚本环境 (ISE) 一部分的对象的层次结构。 在 Windows PowerShell 3.0 和 Windows PowerShell 4.0 中包含 Windows PowerShell ISE。 单击一个对象，使你转到定义对象的类的参考文档。
 
-##  <a name="a-namepsisea-psise-object"></a><a name="psISE"></a>**$psISE 对象**
+##  <a name="psISE"></a>**$psISE 对象**
  **$PsISE** 对象是 Windows PowerShell ISE 对象层次结构的[根对象](The-ObjectModelRoot-Object.md)。 它位于顶层，使以下对象可用于脚本编写：
 
 -   **[$psISE.CurrentFile](#currentfile)**
@@ -31,7 +27,7 @@ translationtype: HT
 
 -   **[$psISE.PowerShellTabs](#powershelltabs)**
 
-##  <a name="a-namecurrentfilea-psisecurrentfilethe-isefile-objectmd"></a><a name="CurrentFile"></a>**[$psISE.CurrentFile](The-ISEFile-Object.md)**
+##  <a name="CurrentFile"></a>**[$psISE.CurrentFile](The-ISEFile-Object.md)**
  **$PsISE.CurrentFile** 对象是 [ISEFile](The-ISEFile-Object.md) 类的实例，使以下对象可用于脚本编写：
 
 -   **[$psISE.CurrentFile.DisplayName](The-ISEFile-Object.md#Displayname)**
@@ -60,7 +56,7 @@ translationtype: HT
 
 -   **[IsUntitled](The-ISEFile-Object.md#IsUntitled)**
 
-##  <a name="a-namecurrentpowershelltaba-psisecurrentpowershelltabthe-powershelltab-objectmd"></a><a name="CurrentPowerShellTab"></a> **[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)**
+##  <a name="CurrentPowerShellTab"></a> **[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)**
  **$psISE.CurrentPowerShellTab** 对象是 [PowerShellTab](The-PowerShellTab-Object.md) 类的实例，使以下对象可用于脚本编写：
 
 -   **[$psISE.CurrentPowerShellTab.AddOnsMenu](The-ISEMenuItem-Object.md)**  此对象是 [ISEMenuItem](The-ISEMenuItem-Object.md) 类的实例，使以下对象可用于脚本编写：
@@ -117,7 +113,7 @@ translationtype: HT
 
 -   **[$psISE.CurrentPowerShellTab.VisibleVerticalAddOnTools](The-ISEAddOnToolCollection-Object.md)**
 
-##  <a name="a-namecurrentvisiblehorizontaltoola-psisecurrentvisiblehorizontaltool"></a><a name="CurrentVisibleHorizontalTool"></a> **$psISE.CurrentVisibleHorizontalTool**
+##  <a name="CurrentVisibleHorizontalTool"></a> **$psISE.CurrentVisibleHorizontalTool**
  **$PsISE.CurrentVisibleHorizontalTool** 对象是 [ISEAddOnTool](The-ISEAddOnTool-Object.md) 类的实例。 它表示已安装的外接程序工具，当前停靠在 Windows PowerShell ISE 窗口的顶部。 此对象使以下对象可用于脚本编写：
 
 -   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#Control)**
@@ -126,7 +122,7 @@ translationtype: HT
 
 -   **[$psISE.CurrentVisibleHorizontalTool.Name](The-ISEAddOnTool-Object.md#name)**
 
-##  <a name="a-namecurrentvisibleverticaltoola-psisecurrentvisibleverticaltool"></a><a name="CurrentVisibleVerticalTool"></a>**$psISE.CurrentVisibleVerticalTool**
+##  <a name="CurrentVisibleVerticalTool"></a>**$psISE.CurrentVisibleVerticalTool**
  **$PsISE.CurrentVisibleHorizontalTool** 对象是 [ISEAddOnTool](The-ISEAddOnTool-Object.md) 类的实例。 它表示已安装的外接程序工具，当前停靠在 Windows PowerShell ISE 窗口的右侧。 此对象使以下对象可用于脚本编写：
 
 -   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#Control)**
@@ -135,7 +131,7 @@ translationtype: HT
 
 -   **[$psISE.CurrentVisibleHorizontalTool.Name](The-ISEAddOnTool-Object.md#name)**
 
-##  <a name="a-nameoptionsa-psiseoptions"></a><a name="Options"></a>**$psISE.Options**
+##  <a name="Options"></a>**$psISE.Options**
  **$psISE.Options** 对象使以下对象可用于脚本编写：
 
 -   **[$psISE.Options.AutoSaveMinuteInterval](The-ISEOptions-Object.md#asmi)**
@@ -208,7 +204,7 @@ translationtype: HT
 
 -   **[$psISE.Options.Zoom](The-ISEOptions-Object.md#z)**
 
-##  <a name="a-namepowershelltabsa-psisepowershelltabsthe-powershelltabcollection-objectmd"></a><a name="PowerShellTabs"></a>**[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)**
+##  <a name="PowerShellTabs"></a>**[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)**
  **$PsISE.PowerShellTabs** 对象是 [PowerShellTabCollection](The-PowerShellTabCollection-Object.md) 类的实例。 它是所有当前打开的 PowerShell 选项卡的集合，表示本地计算机上或在已连接的远程计算机上可用的 Windows PowerShell 运行环境。 集合中的每个成员均为 [PowerShellTab](The-PowerShellTab-Object.md) 类的实例。
 
 ## <a name="see-also"></a>另请参阅

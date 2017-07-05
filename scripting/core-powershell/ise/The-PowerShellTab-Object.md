@@ -1,24 +1,20 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "PowerShellTab 对象"
-ms.technology: powershell
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
-ms.openlocfilehash: 89258180377c6649c213e442b1f2d64872aaa1b4
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: d4e9374202d352a30b3eb46bcf1e4e40dea49822
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab 对象
   **PowerShellTab** 对象代表 Windows PowerShell 运行时环境。
 
 ## <a name="methods"></a>方法
 
-###  <a name="a-nameinvokea-invoke-script-"></a><a name="invoke"></a>调用\(脚本\)
+###  <a name="invoke"></a>调用\(脚本\)
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  在 PowerShell 选项卡中运行给定的脚本。
@@ -72,7 +68,7 @@ measure-command {$psISE.PowerShellTabs[1].InvokeSynchronous("sleep 10",$false,50
 
 ## <a name="properties"></a>“属性”
 
-###  <a name="a-nameaddonsmenua-addonsmenu"></a><a name="AddOnsMenu"></a> AddOnsMenu
+###  <a name="AddOnsMenu"></a> AddOnsMenu
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取 PowerShell 选项卡的“加载项”菜单。
@@ -90,7 +86,7 @@ $parentAdded.SubMenus.Add("_Dir",{dir},"Alt+D")
 $psISE.CurrentPowerShellTab.AddOnsMenu
 ```
 
-###  <a name="a-namecanexecutea-caninvoke"></a><a name="CanExecute"></a> CanInvoke
+###  <a name="CanExecute"></a> CanInvoke
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读布尔属性，如果可以使用 [Invoke( Script )](#invoke) 方法调用脚本，则返回 **$true** 值。
@@ -109,7 +105,7 @@ $secondTab.CanInvoke
 
 ```
 
-###  <a name="a-namecommandpanea-consolepane"></a><a name="Commandpane"></a> Consolepane
+###  <a name="Commandpane"></a> Consolepane
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。  在 Windows PowerShell ISE 2.0 中，这命名为 **CommandPane**。
 
  获取“控制台”窗格 [editor](../ise/The-ISEEditor-Object.md) 对象的只读属性。
@@ -120,7 +116,7 @@ $psISE.CurrentPowerShellTab.ConsolePane
 
 ```
 
-###  <a name="a-namedisplaynamea-displayname"></a><a name="Displayname"></a> DisplayName
+###  <a name="Displayname"></a> DisplayName
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  读写属性，可获取或设置 PowerShell 选项卡上显示的文本。 默认情况下，选项卡命名为“PowerShell #”，其中 # 表示数字。
@@ -131,7 +127,7 @@ $newTab = $psise.PowerShellTabs.Add()
 $newTab.DisplayName="Brand New Tab"
 ```
 
-###  <a name="a-nameexpandedscripta-expandedscript"></a><a name="ExpandedScript"></a> ExpandedScript
+###  <a name="ExpandedScript"></a> ExpandedScript
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  读写布尔属性，可确定“脚本”窗格是展开还是隐藏的。
@@ -142,7 +138,7 @@ $PSise.CurrentPowerShellTab.ExpandedScript=!$PSise.CurrentPowerShellTab.Expanded
 
 ```
 
-###  <a name="a-namefilesa-files"></a><a name="Files"></a>文件
+###  <a name="Files"></a>文件
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取 PowerShell 选项卡中打开的[脚本文件集合](../ise/The-ISEFileCollection-Object.md)。
@@ -154,7 +150,7 @@ $newFile.Editor.Text = "a`r`nb"
 $newFile.Editor.LineCount
 ```
 
-###  <a name="a-nameoutputa-output"></a><a name="Output"></a>输出
+###  <a name="Output"></a>输出
   此功能存在于 Windows PowerShell ISE 2.0 中，但已在更高版本的 ISE 中删除或重命名。  在更高版本的 Windows PowerShell ISE 中，你可以将 **ConsolePane** 对象用于相同的目的。
 
  只读属性，可获取当前[编辑器](../ise/The-ISEEditor-Object.md)的“输出”窗格。
@@ -164,7 +160,7 @@ $newFile.Editor.LineCount
 $psise.CurrentPowerShellTab.output.clear()
 ```
 
-###  <a name="a-nameprompta-prompt"></a><a name="Prompt"></a>提示
+###  <a name="Prompt"></a>提示
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取当前提示文本。 注意：**Prompt** 函数可以被用户的配置文件覆盖。 如果结果不止一个简单的字符串，则此属性不会返回任何内容。
@@ -174,7 +170,7 @@ $psise.CurrentPowerShellTab.output.clear()
 $psISE.CurrentPowerShellTab.Prompt
 ```
 
-###  <a name="a-nameshowcommandsa-showcommands"></a><a name="ShowCommands"></a> ShowCommands
+###  <a name="ShowCommands"></a> ShowCommands
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。 
 
  读写属性，指示当前是否显示“命令”窗格。
@@ -186,7 +182,7 @@ $a = $psISE.CurrentPowerShellTab.ShowCommands
 if (!$a) {$psISE.CurrentPowerShellTab.ShowCommands=$True}
 ```
 
-###  <a name="a-namestatustexta-statustext"></a><a name="StatusText"></a> StatusText
+###  <a name="StatusText"></a> StatusText
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取 **PowerShellTab** 状态文本。
@@ -196,7 +192,7 @@ if (!$a) {$psISE.CurrentPowerShellTab.ShowCommands=$True}
 $psISE.CurrentPowerShellTab.StatusText
 ```
 
-###  <a name="a-namehorizontaladdontoolspaneopeneda-horizontaladdontoolspaneopened"></a><a name="HorizontalAddOnToolsPaneOpened"></a> HorizontalAddOnToolsPaneOpened
+###  <a name="HorizontalAddOnToolsPaneOpened"></a> HorizontalAddOnToolsPaneOpened
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。 
 
  只读属性，指示水平“加载项”工具窗格当前是否打开。
@@ -206,7 +202,7 @@ $psISE.CurrentPowerShellTab.StatusText
 $psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened
 ```
 
-###  <a name="a-nameverticaladdontoolspaneopeneda-verticaladdontoolspaneopened"></a><a name="VerticalAddOnToolsPaneOpened"></a> **VerticalAddOnToolsPaneOpened**
+###  <a name="VerticalAddOnToolsPaneOpened"></a> **VerticalAddOnToolsPaneOpened**
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。 
 
  只读属性，指示竖直“加载项”工具窗格当前是否打开。

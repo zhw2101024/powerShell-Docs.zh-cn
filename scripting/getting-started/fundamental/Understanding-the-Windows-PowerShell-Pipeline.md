@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "了解 Windows PowerShell 管道"
-ms.technology: powershell
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: fc11e3452da5990000a62cca773a49d498344b20
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 6d152e52d2fcfb9dd592eb9ac40500615f2186cb
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="understanding-the-windows-powershell-pipeline"></a>了解 Windows PowerShell 管道
 在 Windows PowerShell 中，管道的作用几乎随处可见。 尽管你会在屏幕上看到文本，但 Windows PowerShell 不通过管道在命令之间传递文本。 而是通过管道传递对象。

@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "如何在 Windows PowerShell ISE 中编写和运行脚本"
-ms.technology: powershell
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: 2478db382639ef315574bb7c79faec7cf2ae1c96
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 871a4b6f4575af4f823a6957dc971335497320a4
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中编写和运行脚本
 本主题说明如何在脚本窗格中创建、编辑、运行以及保存脚本。
@@ -22,7 +18,7 @@ translationtype: HT
 
 -   [如何保存脚本](#bkmk_3)
 
-## <a name="a-namebkmk1ahow-to-create-and-run-scripts"></a><a name="bkmk_1"></a>如何创建和运行脚本
+## <a name="bkmk_1"></a>如何创建和运行脚本
 可以在脚本窗格中打开和编辑 Windows PowerShell® 文件。 Windows PowerShell® 中的相关特定文件类型有脚本文件 (.ps1)、脚本数据文件 (.psd1) 和脚本模块文件 (.psm1)。 这些文件类型在脚本窗格编辑器中是经语法颜色设置的。 可能在脚本窗格中打开的其他常见文件类型有配置文件 (.ps1xml)、XML 文件和文本文件。
 
 > [!NOTE]
@@ -58,7 +54,7 @@ translationtype: HT
 ### <a name="to-stop-a-running-script"></a>停止正在运行的脚本
 在工具栏上，单击“**停止操作**”，按 CTRL+BREAK，或者在“**文件**”菜单上，单击“**停止操作**”。 按 **CTRL+C** 也适用，除非当前已选定文本，在这种情况下 **CTRL+C** 将映射为所选文本的副本函数。
 
-## <a name="a-namebkmk2ahow-to-write-and-edit-text-in-the-script-pane"></a><a name="bkmk_2"></a>如何在脚本窗格中编写和编辑文本
+## <a name="bkmk_2"></a>如何在脚本窗格中编写和编辑文本
 使用以下步骤来在脚本窗格中编辑文本。 你可以复制、剪切、粘贴、查找和替换文本。 还可以撤消和重做刚执行的上一个操作。 执行这些操作的键盘快捷方式与用于所有 Windows 应用程序的相同。
 
 ### <a name="to-enter-text-in-the-script-pane"></a>在脚本窗格中输入文本
@@ -107,7 +103,7 @@ translationtype: HT
 ### <a name="to-redo-an-action-in-the-script-pane"></a>重做脚本窗格中的操作
 按 **CTRL+Y** 或在工具栏上，单击“**重做**”图标，或在“**编辑**”菜单上，单击“**重做**”。
 
-## <a name="a-namebkmk3ahow-to-save-a-script"></a><a name="bkmk_3"></a>如何保存脚本
+## <a name="bkmk_3"></a>如何保存脚本
 使用以下步骤来保存并命名脚本。 脚本名称旁将出现一个星号，用于标记更改后尚未保存的文件。 保存该文件后，星号将消失。
 
 ### <a name="to-save-a-script"></a>保存脚本

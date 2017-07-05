@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "ISEAddOnToolCollection 对象"
-ms.technology: powershell
 ms.assetid: 634eab89-0845-4016-974b-361b09bb8f7b
-ms.openlocfilehash: 35327fafed0f6c6b1303f3bc99e9be8a9db4f61a
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 09088c9e7307a26b86e82f2dc10d2648213c6bd2
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="the-iseaddontoolcollection-object"></a>ISEAddOnToolCollection 对象
   **ISEAddOnToolCollection** 对象是 **ISEAddOnTool** 对象的集合。 示例是 **$psISE.CurrentPowerShellTab.VerticalAddOnTools** 对象。

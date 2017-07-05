@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "Microsoft.PowerShell.Core 模块"
-ms.technology: powershell
 ms.assetid: caa21265-653d-4ba0-9691-b6c0310b9c3d
-ms.openlocfilehash: 96209d5535039700be2bf72db4116aca27db24a5
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: c5a3c8f08f8d3051226b1d8bb56fb8f9ffa9949a
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="microsoftpowershellcore-module"></a>Microsoft.PowerShell.Core 模块
 本部分包含有关 **Microsoft.PowerShell.Core** 模块的帮助主题。 **Microsoft.PowerShell.Core** 模块随 Windows PowerShell 一起安装。

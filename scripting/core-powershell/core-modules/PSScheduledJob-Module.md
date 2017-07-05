@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "PSScheduledJob 模块"
-ms.technology: powershell
 ms.assetid: 9ab43b8d-3f4d-48fe-a274-9116f1bc4b60
-ms.openlocfilehash: e2d340d44e0ace402cd006db7c379284a71ce0d7
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 54f5cde176843b75c5f5de728144d748895492ec
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="psscheduledjob-module"></a>PSScheduledJob 模块
 本部分包含有关 **PSScheduledJob** 模块的帮助主题，该模块可管理 Windows PowerShell 中的计划作业。 此模块随 Windows PowerShell 一起安装。

@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "获取有关命令的信息"
-ms.technology: powershell
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
-ms.openlocfilehash: e8ce2c403e023f4ae8f2f308d400e66859b7b200
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 98e449110860ea81939d6ec0b7b1a8534a2da2aa
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="getting-information-about-commands"></a>获取有关命令的信息
 Windows PowerShell **Get-Command** cmdlet 获取在当前会话中可用的所有命令。 当在 Windows PowerShell 提示符下键入 **Get-Command** 时，将看到类似于以下内容的输出：

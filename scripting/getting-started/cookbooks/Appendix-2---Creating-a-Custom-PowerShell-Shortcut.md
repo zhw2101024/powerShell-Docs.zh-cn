@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "附录 2 - 创建自定义 PowerShell 快捷方式"
-ms.technology: powershell
 ms.assetid: 5d4fd421-5d43-4ec7-86fd-acfe887b066e
-ms.openlocfilehash: 299c0721162621b72d032e0bb5603d535d341fb9
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 31fdc388ae8859191f75c3c4120667cdbeff1669
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="appendix-2---creating-a-custom-powershell-shortcut"></a>附录 2 - 创建自定义 PowerShell 快捷方式
 下面的过程描述如何创建对多个方便的选项进行了自定义的 Windows PowerShell 快捷方式。

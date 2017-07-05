@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "在早期版本的 Windows 上启动 Windows PowerShell"
-ms.technology: powershell
 ms.assetid: 57125436-3d1e-4e7f-b5c4-8f0ecb49d642
-ms.openlocfilehash: ac7cacef0b2ee9e17355db7f60e5050ddb76c986
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: cb56fded1e67a4f4219d210dd95078314e855b1a
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="starting-windows-powershell-on-earlier-versions-of-windows"></a>在早期版本的 Windows 上启动 Windows PowerShell
 本部分介绍了如何在 Windows® 7、Windows Server® 2008 R2 和 Windows Server® 2008 上启动 Windows PowerShell 和 Windows PowerShell 集成脚本环境 (ISE)。 还介绍了如何在 Windows Server® 2008 R2 和 Windows Server® 2008 上的 Windows PowerShell 2.0 中启用 Windows PowerShell ISE 的可选功能。

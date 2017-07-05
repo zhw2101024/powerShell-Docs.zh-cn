@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "Microsoft.PowerShell.Management 模块"
-ms.technology: powershell
 ms.assetid: 03d69ab7-89d8-4cff-863e-d5f3864fee5a
-ms.openlocfilehash: ca0e729e9382c82ae6db82043f02bfb83a382bbf
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 5597844ec475f872d814bce464c2b05d2988e4a2
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="microsoftpowershellmanagement-module"></a>Microsoft.PowerShell.Management 模块
 本部分包含有关 **Microsoft.PowerShell.Management** 模块的帮助主题。 **Microsoft.PowerShell.Management** 模块随 Windows PowerShell 一起安装。

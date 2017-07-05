@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "PowerShellGet 模块"
-ms.technology: powershell
 ms.assetid: e4d6867f-a32a-4564-9e43-409babee97a7
-ms.openlocfilehash: 036319dff3e4c5e957e2f71bbcb57378ac35318f
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 24b392cf71a1644b995ff3ebdb8361f394d21ccc
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="powershellget-module"></a>PowerShellGet 模块
 本部分包含有关 **PowerShellGet** 模块的帮助主题。 **PowerShellGet** 模块使用 Windows PowerShell 5.0 和更高版本的 Windows PowerShell 安装。

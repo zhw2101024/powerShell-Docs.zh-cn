@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "如何在 Windows PowerShell ISE 中调试脚本"
-ms.technology: powershell
 ms.assetid: 6dc6d8f9-8978-46e9-a92f-169af37e2817
-ms.openlocfilehash: 8574754ccdf4717d29c4076f88d41691501da471
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: db8847e2cc9abeec729ed8d939fc170529a93846
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中调试脚本
 本主题介绍如何通过使用 Windows PowerShell® 集成脚本环境 (ISE) 直观调试功能来调试本地计算机上的脚本。
@@ -21,7 +17,7 @@ translationtype: HT
 [如何在调试过程中步越、步入和步出](#bkmk_3)
 [如何在调试时显示变量的值](#bkmk_4)
 
-## <a name="a-namebkmk1ahow-to-manage-breakpoints"></a><a name="bkmk_1"></a>如何管理断点
+## <a name="bkmk_1"></a>如何管理断点
 断点是脚本中你想要操作暂停的指定位置，这样你可以检查变量的当前状态和脚本运行的环境。 一旦你的脚本被断点暂停，你可以在控制台窗格中运行命令来检查你的脚本状态。  你可以输出变量或运行其他命令。 甚至可以修改对正在运行的脚本的上下文可见的任何变量的值。 检查完你想要查看的内容后，可以恢复该脚本的运行。
 
 可以在 Windows PowerShell 调试环境中设置三种类型的断点：
@@ -72,7 +68,7 @@ Remove-PSBreakpoint -Id 2
 Get-PSBreakpoint | Remove-PSBreakpoint
 ```
 
-### <a name="a-namebkmkdisableadisable-a-breakpoint"></a><a name="bkmk_disable"></a>禁用断点
+### <a name="bkmk_disable"></a>禁用断点
 禁用断点不会将断点移除；只是会将其关闭，直至启用。  若要禁用特定行断点，右键单击你想要禁用的行断点所在的行，然后单击“**切换断点**”。 或者，单击你想要禁用的断点所在的行，然后按 **F9**，或在“调试”菜单上，单击“禁用断点”。 以下脚本是如何通过使用 [Disable-PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) cmdlet 从控制台窗格中移除具有指定 ID 的断点的示例。
 
 ``` PowerShell
@@ -106,7 +102,7 @@ Enable-PSBreakpoint -Id 0, 1, 5
 Get-PSBreakpoint | Enable-PSBreakpoint
 ```
 
-## <a name="a-namebkmk2ahow-to-manage-a-debugging-session"></a><a name="bkmk_2"></a>如何管理调试会话
+## <a name="bkmk_2"></a>如何管理调试会话
 开始调试之前，必须设置一个或多个断点。 你不能设置一个断点，除非已保存你想要调试的脚本。 有关如何设置断点的说明，请参阅[如何管理断点](#bkmk_1)或 [Set-PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420)。 开始调试后，将无法编辑脚本，除非停止调试。 运行之前，将自动保存设置有一个或多个断点的脚本。
 
 ### <a name="to-start-debugging"></a>启动调试
@@ -123,7 +119,7 @@ Get-PSBreakpoint | Enable-PSBreakpoint
 ### <a name="to-stop-debugging"></a>停止调试
 按 **SHIFT-F5**，或在“**调试**”菜单上，单击“**停止调试器**”，或者，在控制台窗格中，键入 **Q**，然后按 **ENTER**。
 
-## <a name="a-namebkmk3ahow-to-step-over-step-into-and-step-out-while-debugging"></a><a name="bkmk_3"></a>如何在调试过程中步越、步入和步出
+## <a name="bkmk_3"></a>如何在调试过程中步越、步入和步出
 单步执行是一次运行一条语句的过程。 你可以在一个代码行上停止，然后检查变量的值和系统状态。 下表描述了常见的调试任务，如步越、步入和步出。
 
 | 调试任务 | 说明 | 如何在 PowerShell ISE 中完成它 |
@@ -133,7 +129,7 @@ Get-PSBreakpoint | Enable-PSBreakpoint
 | **步出** | 跳出当前函数，如果函数是嵌套的则返回上一级。 如果在主正文中，脚本将执行到末尾，或到下一个断点。 将执行跳过的语句，但不会单步遍历。 | 按 **SHIFT+F11**，或在“**调试**”菜单上，单击“**步出**”，或者，在控制台窗格中，键入 **O**，然后按 **ENTER**。 |
 | **继续** | 继续执行到结束，或到下一个断点。 将执行已跳过的函数和调用，但不会进行单步遍历。 | 按 **F5**，或在“**调试**”菜单上，单击“**运行/继续**”，或者，在控制台窗格中，键入 **C**，然后按 **ENTER**。 |
 
-## <a name="a-namebkmk4ahow-to-display-the-values-of-variables-while-debugging"></a><a name="bkmk_4"></a>如何在调试时显示变量的值
+## <a name="bkmk_4"></a>如何在调试时显示变量的值
 单步遍历代码时，可以在脚本中显示变量的当前值。
 
 ### <a name="to-display-the-values-of-standard-variables"></a>显示标准变量的值

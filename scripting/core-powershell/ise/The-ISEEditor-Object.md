@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "ISEEditor 对象"
-ms.technology: powershell
 ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
-ms.openlocfilehash: f4bc79e88dfe528b27817670232a445c4e0c610e
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 41f2a6f7684275ad9d6d967ea67b64ca02c1c100
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="the-iseeditor-object"></a>ISEEditor 对象
   **ISEEditor** 对象是 Microsoft.PowerShell.Host.ISE.ISEEditor 类的实例。 控制台窗格是 **ISEEditor** 对象。 每个 [ISEFile](The-ISEFile-Object.md) 对象都有一个关联的 **ISEEditor** 对象。 以下各节列出了 **ISEEditor** 对象的方法和属性。
@@ -138,7 +134,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 
 ## <a name="properties"></a>“属性”
 
-###  <a name="a-namecangotomatcha-cangotomatch"></a><a name="CanGoToMatch"></a> CanGoToMatch
+###  <a name="CanGoToMatch"></a> CanGoToMatch
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。 
 
  只读布尔值属性，可指示将脱字号插入小括号、中括号还是大括号（即 \(\)、\[\]、{}）旁边。 如果脱字号直接位于开始字符之前或直接位于结束字符之后，则此属性值是 **$true**。 否则，是**$false**。
@@ -148,7 +144,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 $psISE.CurrentFile.Editor.CanGoToMatch
 ```
 
-###  <a name="a-namecaretcolumna-caretcolumn"></a><a name="CaretColumn"></a> CaretColumn
+###  <a name="CaretColumn"></a> CaretColumn
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取对应于脱字号位置的列号。
@@ -158,7 +154,7 @@ $psISE.CurrentFile.Editor.CanGoToMatch
 $psISE.CurrentFile.Editor.CaretColumn
 ```
 
-###  <a name="a-namecaretlinea-caretline"></a><a name="CaretLine"></a> CaretLine
+###  <a name="CaretLine"></a> CaretLine
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取包含脱字号的行号。
@@ -168,7 +164,7 @@ $psISE.CurrentFile.Editor.CaretColumn
 $psISE.CurrentFile.Editor.CaretLine
 ```
 
-###  <a name="a-namecaretlinetexta-caretlinetext"></a><a name="CaretLineText"></a> CaretLineText
+###  <a name="CaretLineText"></a> CaretLineText
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取包含脱字号的完整文本行。
@@ -178,7 +174,7 @@ $psISE.CurrentFile.Editor.CaretLine
 $psISE.CurrentFile.Editor.CaretLineText
 ```
 
-###  <a name="a-namelinecounta-linecount"></a><a name="LineCount"></a> LineCount
+###  <a name="LineCount"></a> LineCount
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取编辑器中的行计数。
@@ -188,21 +184,21 @@ $psISE.CurrentFile.Editor.CaretLineText
 $psISE.CurrentFile.Editor.LineCount
 ```
 
-###  <a name="a-nameselectedtexta-selectedtext"></a><a name="SelectedText"></a> SelectedText
+###  <a name="SelectedText"></a> SelectedText
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取编辑器中的所选文本。
 
  请参阅本主题稍后介绍的[脚本示例](#example)。
 
-###  <a name="a-nametexta-text"></a><a name="Text"></a>文本
+###  <a name="Text"></a>文本
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  读写属性，可获取或设置编辑器中的文本。
 
  请参阅本主题稍后介绍的[脚本示例](#example)。
 
-##  <a name="a-nameexamplea-scripting-example"></a><a name="example"></a>脚本示例
+##  <a name="example"></a>脚本示例
 
 ```PowerShell
 # This illustrates how you can use the length of a line to

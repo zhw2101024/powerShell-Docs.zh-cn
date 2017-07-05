@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "使用注册表条目"
-ms.technology: powershell
 ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc
-ms.openlocfilehash: 261c1c5fd0a85ce2d2830e34e9de92f0de4b9ff2
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 039203a1a6549d4ba33424a278e4803a5e143d4d
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="working-with-registry-entries"></a>使用注册表条目
 因为注册表条目是项的属性而无法直接浏览，因此我们在使用它们时需要采取略有不同的方式。
