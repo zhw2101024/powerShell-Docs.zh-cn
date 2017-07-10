@@ -1,23 +1,24 @@
 ---
-title: "DSC WindowsProcess 资源"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 7e8c0d39d4f49d09acef79d789ee54f158e465f8
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "DSC WindowsProcess 资源"
+ms.openlocfilehash: c34d3cb1d4d9b899b45fba7b4b148a7c977f5365
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess 资源
+<a id="dsc-windowsprocess-resource" class="xliff"></a>
+# DSC WindowsProcess 资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) 中的 **WindowsProcess** 资源提供了用于在目标节点上配置进程的机制。
 
-## <a name="syntax"></a>语法
+<a id="syntax" class="xliff"></a>
+## 语法
 
 ```
 WindowsProcess [string] #ResourceName
@@ -34,7 +35,8 @@ WindowsProcess [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>“属性”
+<a id="properties" class="xliff"></a>
+## “属性”
 |  属性  |  说明   | 
 |---|---| 
 | 参数| 指示要原样传递到进程的参数字符串 如果需要传递多个参数，请将它们全部放在此字符串中。| 

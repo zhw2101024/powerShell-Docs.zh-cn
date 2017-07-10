@@ -1,4 +1,16 @@
-# <a name="creating-and-connecting-to-a-jea-endpoint"></a>创建并连接到 JEA 终结点
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,安装程序"
+ms.openlocfilehash: c3645a6ba83081bd5ac31a13af0f67f6538db22a
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
+---
+<a id="creating-and-connecting-to-a-jea-endpoint" class="xliff"></a>
+# 创建并连接到 JEA 终结点
 若要创建 JEA 终结点，需要创建并注册一个专门配置 PowerShell 会话配置文件，可以使用 **New-PSSessionConfigurationFile** cmdlet 生成该文件。
 
 ```powershell
@@ -130,11 +142,13 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc" 
 ```
 
-## <a name="connect-to-a-jea-endpoint"></a>连接到 JEA 终结点
-连接到 JEA 终结点与连接到任何其他 PowerShell 终结点的工作原理相同。  只需将 JEA 终结点命名为与 **New-PSSession**、**Invoke-Command ** 或 **Enter-PSSession** 的“ConfigurationName”参数相同即可。
+<a id="connect-to-a-jea-endpoint" class="xliff"></a>
+## 连接到 JEA 终结点
+连接到 JEA 终结点与连接到任何其他 PowerShell 终结点的工作原理相同。  只需将 JEA 终结点命名为与 **New-PSSession**、**Invoke-Command**  或 **Enter-PSSession** 的“ConfigurationName”参数相同即可。
 
 ```powershell
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
 如果已连接到 JEA 会话，运行你有权访问的列在允许列表中的“角色功能”将会受限。
  如果尝试运行任何不允许你的角色运行的命令，将会遇到错误。
+

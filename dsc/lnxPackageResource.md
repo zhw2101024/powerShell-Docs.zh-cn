@@ -1,21 +1,22 @@
 ---
-title: "适用于 Linux 的 DSC nxPackage 资源"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 31867cc7af96a3d8d527f5906d77bed5206940b4
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "适用于 Linux 的 DSC nxPackage 资源"
+ms.openlocfilehash: 11019b1cd12f23b0b498b7cb9a06e02c46c3c279
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-for-linux-nxpackage-resource"></a>适用于 Linux 的 DSC nxPackage 资源
+<a id="dsc-for-linux-nxpackage-resource" class="xliff"></a>
+# 适用于 Linux 的 DSC nxPackage 资源
 
 PowerShell Desired State Configuration (DSC) 中的 **nxPackage** 资源提供了在 Linux 节点上管理程序包的机制。
 
-## <a name="syntax"></a>语法
+<a id="syntax" class="xliff"></a>
+## 语法
 
 ```
 nxPackage <string> #ResourceName
@@ -32,7 +33,8 @@ nxPackage <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>“属性”
+<a id="properties" class="xliff"></a>
+## “属性”
 
 |  属性 |  说明 | 
 |---|---|
@@ -45,7 +47,8 @@ nxPackage <string> #ResourceName
 | ReturnCode| 预期的返回代码。 如果实际返回代码与此处提供的预期值不匹配，则配置将返回错误。| 
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 **ID** 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-## <a name="example"></a>示例
+<a id="example" class="xliff"></a>
+## 示例
 
 以下示例将确保使用“Yum”程序包管理器在 Linux 计算机上安装了名为“httpd”的程序包。
 

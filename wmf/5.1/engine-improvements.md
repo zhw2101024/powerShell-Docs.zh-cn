@@ -1,23 +1,23 @@
 ---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,安装程序"
 title: "WMF 5.1 中的 PowerShell 引擎改进"
-ms.date: 2016-07-13
-keywords: PowerShell, DSC, WMF
-description: 
-ms.topic: article
-author: keithb
-manager: dongill
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: c8ad4ac8f3c7bf705114edc06c1b85846336dfff
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
-translationtype: HT
+ms.openlocfilehash: 6c8000ccfc59ab46de95dc4f67161e12a5a41199
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-#<a name="powershell-engine-improvements"></a>PowerShell 引擎改进
+<a id="powershell-engine-improvements" class="xliff"></a>
+#PowerShell 引擎改进
 
 在 WMF 5.1 中，实现了针对核心 PowerShell 引擎的以下改进：
 
 
-## <a name="performance"></a>性能 ##
+<a id="performance" class="xliff"></a>
+## 性能 ##
 
 性能在一些重要方面得到了改进：
 
@@ -40,3 +40,4 @@ translationtype: HT
 
 另一个显著更改是 PowerShell 如何为系统上安装的模块缓存导出的命令和其他信息。 以前，此缓存存储在目录 `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\CommandAnalysis` 中。 在 WMF 5.1 中，此缓存是单个文件 `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\ModuleAnalysisCache`。
 有关详细信息，请参阅[模块分析缓存](scenarios-features.md#module-analysis-cache)。
+

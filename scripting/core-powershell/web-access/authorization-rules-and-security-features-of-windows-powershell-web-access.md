@@ -1,18 +1,15 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "Windows PowerShell Web 访问的授权规则和安全功能"
-ms.technology: powershell
-ms.openlocfilehash: f2ed4355536ed92048dde66617d36d36958fd75f
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 706830f618173879185f5b84570fdc7782434d59
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
-# <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 访问的授权规则和安全功能
+<a id="authorization-rules-and-security-features-of-windows-powershell-web-access" class="xliff"></a>
+# Windows PowerShell Web 访问的授权规则和安全功能
 
 更新时间： 2013年 6 月 24日
 
@@ -27,7 +24,7 @@ translationtype: HT
 
 安装 Windows PowerShell Web 访问和配置网关后，用户可在浏览器中打开登录页面，但他们无法登录，直到 Windows PowerShell Web 访问管理员明确授予用户访问权限。 Windows PowerShell Web 访问的访问控制通过使用下表所述的 Windows PowerShell cmdlet 集进行管理。 没有相当的 GUI 可用于添加或管理授权规则。 有关 Windows PowerShell Web 访问 cmdlet 的更多详细信息，请参阅 cmdlet 参考主题 [Windows PowerShell Web 访问 Cmdlet](https://technet.microsoft.com/library/hh918342.aspx)。
 
-管理员可为 Windows PowerShell Web 访问定义 0-*n* 条身份验证规则。 默认的安全性较为严格，而非宽松；零条身份验证规则意味着无用户可访问任何内容。
+管理员可以为 Windows PowerShell Web 访问定义 0-n 条身份验证规则。 默认的安全性较为严格，而非宽松；零条身份验证规则意味着无用户可访问任何内容。
 
 Windows Server 2012 R2 中的 Add-PswaAuthorizationRule 和 Test-PswaAuthorizationRule 包含一个 Credential 参数，该参数允许你从远程计算机或在活动的 Windows PowerShell Web 访问会话中添加和测试 Windows PowerShell Web 访问授权规则。 与其他具有 Credential 参数的 Windows PowerShell cmdlet 一样，你可以指定一个 PSCredential 对象作为该参数的值。 若要创建一个包含要传递到远程计算机的凭据的 PSCredential 对象，请运行 [Get-Credential](https://technet.microsoft.com/library/hh849815.aspx) cmdlet。
 
@@ -187,7 +184,7 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即星号 ( \* )。
 </colgroup>
 <thead>
 <tr class="header">
-<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意 </span></th>
+<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意</span></th>
 </tr>
 </thead>
 <tbody>
@@ -197,7 +194,8 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即星号 ( \* )。
 </tbody>
 </table>
 
-#### <a name="to-add-a-restrictive-authorization-rule"></a>添加受限的授权规则
+<a id="to-add-a-restrictive-authorization-rule" class="xliff"></a>
+#### 添加受限的授权规则
 
 1.  使用提升的用户权限执行以下操作之一打开 Windows PowerShell 会话。
 
@@ -221,7 +219,8 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即星号 ( \* )。
 
 4.  确保通过运行 **Get-PswaAuthorizationRule** cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt; 创建了该规则。 例如，**Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214**。
 
-#### <a name="to-remove-an-authorization-rule"></a>删除授权规则
+<a id="to-remove-an-authorization-rule" class="xliff"></a>
+#### 删除授权规则
 
 1.  如果尚未打开 Windows PowerShell 会话，请参阅本部分中[添加非受限的授权规则](#BKMK_arar)的步骤 1。
 

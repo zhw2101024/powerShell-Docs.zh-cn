@@ -1,23 +1,24 @@
 ---
+ms.date: 2017-06-12
+author: eslesar
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
 title: "DSC PackageManagement 资源"
-ms.date: 
-keywords: powershell,DSC
-description: 
-ms.topic: article
-author: brywang-msft
-manager: kriscv
-ms.prod: powershell
-ms.openlocfilehash: 33775be230a4e92e22784d991338510510f69889
-ms.sourcegitcommit: 89e7ae30faff5f96641fc72764bdc76e0e257bc2
-translationtype: HT
+ms.openlocfilehash: a984fbf5db561a696d89b60dde8b92096c6e4924
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-packagemanagement-resource"></a>DSC PackageManagement 资源
+<a id="dsc-packagemanagement-resource" class="xliff"></a>
+# DSC PackageManagement 资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) 中的 **PackageManagement** 资源提供了一种在目标节点上安装或卸载程序包管理包的机制。 此资源需要 http://PowerShellGallery.com 中的 **PackageManagement** 模块。
 
-## <a name="syntax"></a>语法
+<a id="syntax" class="xliff"></a>
+## 语法
 
 ```
 PackageManagement [string] #ResourceName
@@ -34,7 +35,8 @@ PackageManagement [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>“属性”
+<a id="properties" class="xliff"></a>
+## “属性”
 |  属性  |  说明   | 
 |---|---| 
 | 名称| 指定要安装或卸载的包名称。| 
@@ -47,14 +49,16 @@ PackageManagement [string] #ResourceName
 | ProviderName| 指定将用作包搜索限定范围的包提供程序名称。 可通过运行 Get-PackageProvider cmdlet 获取包提供程序名称。| 
 | AdditionalParameters| 以哈希表的形式传递的提供程序特定参数。 例如，对于 NuGet 提供程序，可以传递 DestinationPath 等附加参数。| 
 
-## <a name="additional-parameters"></a>附加参数
+<a id="additional-parameters" class="xliff"></a>
+## 附加参数
 下表列出了 AdditionalParameters 属性的选项。
 |  参数  | 说明   | 
 |---|---|
 | DestinationPath| 供提供程序使用，如内置的 Nuget 提供程序。 指定要在其中安装包的文件位置。|
 | InstallationPolicy| 供提供程序使用，如内置的 Nuget 提供程序。 确定是否信任包的源。 可取值为“Untrusted”或“Trusted”。|
 
-## <a name="example"></a>示例
+<a id="example" class="xliff"></a>
+## 示例
 
 此示例使用 **PackageManagement** DSC 资源安装 **JQuery** NuGet 包和 **GistProvider** PowerShell 模块。 此示例先确保已指定相应的包源，然后定义 **JQuery** 和 **GistProvider** 包的预期状态（分别为 NuGet 和 PowerShell）。
 
@@ -97,3 +101,4 @@ Configuration PackageTest
     }
 }
 ```
+

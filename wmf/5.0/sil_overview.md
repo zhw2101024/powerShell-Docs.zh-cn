@@ -1,6 +1,18 @@
-# <a name="software-inventory-logging-sil"></a>软件清单日志记录 (SIL)
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,安装程序"
+ms.openlocfilehash: 4a2dfd651f1c74e7441e5f5e357c1c26453adc07
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
+---
+<a id="software-inventory-logging-sil" class="xliff"></a>
+# 软件清单日志记录 (SIL)
 
-**重要信息：***当在已经运行 SIL 的 Windows Server 2012 R2 Server 上安装 WMF 5.0 时，WMF 安装后，有必要运行 Start-SilLogging cmdlet，因为安装进程会错误地停止“软件清单日志记录”功能。*
+**重要提示：***当在已经运行 SIL 的 Windows Server 2012 R2 Server 上安装 WMF 5.0 时，WMF 安装后，有必要运行 Start-SilLogging cmdlet，因为安装进程会错误地停止“软件清单日志记录”功能。*
 
 “软件清单日志记录”有助于降低获取服务器上本地安装的有关 Microsoft 软件的准确信息时存在的运营成本，尤其适用于这些软件分布在 IT 环境中的多台服务器上的情形（假设已安装该软件并在 IT 环境中运行）。 假设已设置一条日志，则可以将此数据转发到聚合服务器，并通过使用统一的自动化进程将日志数据收集到一个位置。
 
@@ -9,3 +21,4 @@
 该功能在执行过程中不会将其中的任何数据发送到 Microsoft。 软件清单日志记录数据和功能仅供服务器软件的已授权所有者和管理员使用。
 
 有关软件清单日志记录 cmdlet 的详细信息和文档，请参阅 <http://technet.microsoft.com/library/dn383584.aspx> 中的 Windows Server 2012 R2 在线资源。
+

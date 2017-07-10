@@ -1,23 +1,22 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: "psget_publish 模块"
-ms.technology: powershell
-ms.openlocfilehash: a21351837d0cc63e56254911a1a436175a2734cd
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: "库,powershell,cmdlet,psget"
+title: Publish-Module
+ms.openlocfilehash: 53fca3d6756ebf698023152ce5b58b45eb0ef757
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="publish-module"></a>Publish-Module
+<a id="publish-module" class="xliff"></a>
+# Publish-Module
 
 将指定模块从本机计算机发布到联机库。
 
-## <a name="description"></a>说明
+<a id="description" class="xliff"></a>
+## 说明
 
 **Publish-Module** cmdlet 使用 API 密钥（作为用户配置文件的一部分存储于库中）将模块发布到基于 NuGet 的联机库。 可根据模块的名称或包含模块的文件夹路径指定要发布的模块。
 
@@ -29,16 +28,19 @@ RequiredVersion 参数允许指定要发布的模块的确切版本。
 Path 参数也支持具有版本文件夹的模块基准路径。
 Publish-Module cmdlet 上的 Force 开关参数会在不提示的情况下启动 NuGet.exe。
 
-## <a name="cmdlet-syntax"></a>Cmdlet 语法
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet 语法
 ```powershell
 Get-Command -Name Publish-Module -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet 联机帮助参考
 
 [Publish-Module](http://go.microsoft.com/fwlink/?LinkID=398575)
 
-## <a name="example-commands"></a>示例命令
+<a id="example-commands" class="xliff"></a>
+## 示例命令
 
 ```powershell
 ContosoServer module with different versions to be published.
@@ -70,9 +72,11 @@ _------ ---- ---------- -----------
 2.0 ContosoServer LocalRepo ContosoServer module
 ```
 
-## <a name="publishing-a-module-with-dependencies"></a>发布模块及其依赖项
+<a id="publishing-a-module-with-dependencies" class="xliff"></a>
+## 发布模块及其依赖项
 
-### <a name="create-a-module-with-dependencies-and-version-range-specified-in-requiredmodules-property-of-its-module-manifest"></a>创建一个模块，其依赖项和版本范围在其模块清单的 RequiredModules 属性中指定。
+<a id="create-a-module-with-dependencies-and-version-range-specified-in-requiredmodules-property-of-its-module-manifest" class="xliff"></a>
+### 创建一个模块，其依赖项和版本范围在其模块清单的 RequiredModules 属性中指定。
 
 **注意：**
   - \* 仅在 MaximumVersion 中受支持，并且还应处于版本字符串的末尾处。 
@@ -86,13 +90,15 @@ PS C:\windows\system32> cd C:\MyModules\ModuleWithDependencies
 PS C:\MyModules\ModuleWithDependencies> New-ModuleManifest -Path .\ModuleWithDependencies.psd1 -ModuleVersion 1.0 -RequiredModules $requiredModules -Description 'ModuleWithDependencies demo module'
 ```
 
-### <a name="publish-modulewithdependencies-module-with-dependencies-to-the-repository"></a>将 ModuleWithDependencies 模块及其依赖项发布到存储库中。
+<a id="publish-modulewithdependencies-module-with-dependencies-to-the-repository" class="xliff"></a>
+### 将 ModuleWithDependencies 模块及其依赖项发布到存储库中。
 
 ```powershell
 PS C:\MyModules\ModuleWithDependencies> Publish-Module -Path C:\MyModules\ModuleWithDependencies -Repository LocalRepo
 ```
 
-### <a name="find-modulewithdependencies-module-with-its-dependencies-by-specifying--includedependencies"></a>通过指定 -IncludeDependencies 查找 Find ModuleWithDependencies 模块及其依赖项
+<a id="find-modulewithdependencies-module-with-its-dependencies-by-specifying--includedependencies" class="xliff"></a>
+### 通过指定 -IncludeDependencies 查找 Find ModuleWithDependencies 模块及其依赖项
 
 ```powershell
 PS C:\MyModules\ModuleWithDependencies> Find-Module -Name ModuleWithDependencies -Repository LocalRepo -IncludeDependencies
@@ -104,7 +110,8 @@ Version    Name                                Type       Repository           D
 1.5        RequiredModule2                     Module     localrepo            RequiredModule2 module
 ```
 
-### <a name="install-the-modulewithdependencies-module-with-dependencies"></a>安装 ModuleWithDependencies 模块及其依赖项。
+<a id="install-the-modulewithdependencies-module-with-dependencies" class="xliff"></a>
+### 安装 ModuleWithDependencies 模块及其依赖项。
 注意，依赖项的安装过程中，需遵循版本范围。
 
 ```powershell
@@ -121,7 +128,8 @@ Version    Name                                Type       Repository           D
 1.5        RequiredModule2                     Module     localrepo            RequiredModule2 module
 ```
 
-### <a name="contents-of-modulewithdependencies2-module-manifest-file"></a>ModuleWithDependencies2 模块清单文件的内容
+<a id="contents-of-modulewithdependencies2-module-manifest-file" class="xliff"></a>
+### ModuleWithDependencies2 模块清单文件的内容
 
 ```powershell
 @{
@@ -176,7 +184,8 @@ PrivateData = @{
 ```
 
 
-### <a name="external-dependencies"></a>外部依赖关系
+<a id="external-dependencies" class="xliff"></a>
+### 外部依赖关系
 某些模块依赖项可进行外部托管，在这种情况下应该将它们添加到模块清单 PSData 部分中的 ExternalModuleDependencies 条目中。
 
 如果“SnippetPx”在存储库上不可用，将引发以下错误。

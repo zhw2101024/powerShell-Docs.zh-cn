@@ -1,23 +1,24 @@
 ---
+ms.date: 2017-06-12
+author: eslesar
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
 title: "DSC PackageManagementSource 资源"
-ms.date: 
-keywords: powershell,DSC
-description: 
-ms.topic: article
-author: brywang-msft
-manager: kriscv
-ms.prod: powershell
-ms.openlocfilehash: 22e61490e7b3f98335334a2703ec9639cbdaa87e
-ms.sourcegitcommit: 89e7ae30faff5f96641fc72764bdc76e0e257bc2
-translationtype: HT
+ms.openlocfilehash: 80d157aff5bf7685a797baaf6a26215f02473096
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-packagemanagementsource-resource"></a>DSC PackageManagementSource 资源
+<a id="dsc-packagemanagementsource-resource" class="xliff"></a>
+# DSC PackageManagementSource 资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) 中的 **PackageManagementSource** 资源提供了一种在目标节点上注册或取消注册程序包管理源的机制。 **以这种方式注册的程序包管理源在系统上下文中注册，可供系统帐户或 DSC 引擎使用。** 此资源需要 http://PowerShellGallery.com 中的 **PackageManagement** 模块。
 
-## <a name="syntax"></a>语法
+<a id="syntax" class="xliff"></a>
+## 语法
 
 ```
 PSModule [string] #ResourceName
@@ -31,7 +32,8 @@ PSModule [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>“属性”
+<a id="properties" class="xliff"></a>
+## “属性”
 |  属性  |  说明   | 
 |---|---| 
 | 名称| 指定要在系统上注册或取消注册的包源名称。| 
@@ -41,7 +43,8 @@ PSModule [string] #ResourceName
 | SourceUri| 指定包源的 URI。| 
 | SourceCredential| 提供远程源上程序包的访问权限。| 
 
-## <a name="example"></a>示例
+<a id="example" class="xliff"></a>
+## 示例
 
 此示例使用 **PackageManagementSource** DSC 资源注册 http://nuget.org 包源。
 
@@ -58,3 +61,4 @@ Configuration PackageManagementSourceTest
     }
 }
 ```
+

@@ -1,18 +1,17 @@
 ---
-manager: carmonm
-ms.topic: article
+ms.date: 2017-06-12
 author: rpsqrd
-ms.author: ryanpu
-ms.prod: powershell
-keywords: powershell,cmdlet,jea
-ms.date: 2017-03-07
+ms.topic: conceptual
+keywords: "jea,powershell,安全性"
 title: "Just Enough Administration 概述"
-ms.technology: powershell
-ms.openlocfilehash: 2206ccbbcf5996b1bf8db9a46acab2f18f8020dd
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.openlocfilehash: a664a8ad44916f8112f7ef7bac145a54b83f126d
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="just-enough-administration"></a>Just Enough Administration
+<a id="just-enough-administration" class="xliff"></a>
+# Just Enough Administration
 
 Just Enough Administration (JEA) 是一项安全技术，委派的管理员可通过它执行可通过 PowerShell 处理的任意操作。
 使用 JEA，你可以：
@@ -38,7 +37,8 @@ JEA 可通过采用最小特权原则来帮助解决此问题。
 更棒的是，将 JEA 会话配置为使用具有临时特权的虚拟帐户时，你的 DNS 管理员可以使用非管理员凭据连接到服务器并仍可运行通常需要管理员权限的命令。
 此功能使你能够从具有广泛权限的本地/域管理员角色删除用户，而不是谨慎控制他们能够在每台计算机上执行的操作。
 
-## <a name="get-started-with-jea"></a>JEA 入门
+<a id="get-started-with-jea" class="xliff"></a>
+## JEA 入门
 
 可以立即在运行 Windows Server 2016 或 Windows 10 的任何计算机上开始使用 JEA。
 还可以使用 Windows Management Framework 更新在较早的操作系统上运行 JEA。
@@ -52,6 +52,8 @@ JEA 可通过采用最小特权原则来帮助解决此问题。
 - [安全注意事项](security-considerations.md) - 了解最佳安全方案和 JEA 配置选项的含义。
 - [JEA 审核和报告](audit-and-report.md) - 了解如何审核和报告 JEA 终结点。
 
-## <a name="samples-and-dsc-resource"></a>示例和 DSC 资源
+<a id="samples-and-dsc-resource" class="xliff"></a>
+## 示例和 DSC 资源
 
 示例 JEA 配置和 JEA DSC 资源可以在 [JEA GitHub 存储库](https://github.com/PowerShell/JEA)中找到。
+

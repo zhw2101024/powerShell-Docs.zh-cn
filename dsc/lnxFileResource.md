@@ -1,21 +1,22 @@
 ---
-title: "适用于 Linux nxFile 资源的 DSC"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 2ba44df5dd6c91371cbbfe95d48184a4ff4a7738
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "适用于 Linux nxFile 资源的 DSC"
+ms.openlocfilehash: 14f1ae31a8409b8874d76a91b8b29595e30fbb46
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-for-linux-nxfile-resource"></a>适用于 Linux nxFile 资源的 DSC
+<a id="dsc-for-linux-nxfile-resource" class="xliff"></a>
+# 适用于 Linux nxFile 资源的 DSC
 
 PowerShell Desired State Configuration (DSC) 中的 **nxFile** 资源提供了管理 Linux 节点上的文件和目录的机制。
 
-## <a name="syntax"></a>语法
+<a id="syntax" class="xliff"></a>
+## 语法
 
 ```
 nxFile <string> #ResourceName
@@ -37,7 +38,8 @@ nxFile <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>“属性”
+<a id="properties" class="xliff"></a>
+## “属性”
 
 |  属性 |  说明 | 
 |---|---|
@@ -54,7 +56,8 @@ nxFile <string> #ResourceName
 | 模式| 以八进制或符号表示法指定资源的所需权限。 （例如，777 或 rwxrwxrwx）。 如果使用符号表示法，不需提供指示文件或目录的第一个字符。| 
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 **ID** 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-## <a name="additional-information"></a>其他信息
+<a id="additional-information" class="xliff"></a>
+## 其他信息
 
 
 Linux 和 Windows 在文本文件中默认使用不同的换行符，这可能会导致在 Linux 计算机上使用 __nxFile__ 配置某些文件时产生意外结果。 有多种管理 Linux 文件内容，同时避免由意外换行符引起问题的方法：
@@ -132,7 +135,8 @@ nxFile resolvConf
 }
 ```
 
-## <a name="example"></a>示例
+<a id="example" class="xliff"></a>
+## 示例
 
 以下示例可确保目录 `/opt/mydir` 存在，并且具有指定内容的文件存在于此目录中。
 

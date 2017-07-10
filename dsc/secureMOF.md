@@ -1,17 +1,17 @@
 ---
-title: "保护 MOF 文件"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 395ebe88fcf1f4d79c4eb91bf10c63c82cb1d799
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "保护 MOF 文件"
+ms.openlocfilehash: 70dec03f3b883eb88661e27c411248b8e1bb2177
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="securing-the-mof-file"></a>保护 MOF 文件
+<a id="securing-the-mof-file" class="xliff"></a>
+# 保护 MOF 文件
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
@@ -19,7 +19,8 @@ DSC 通过将包含配置信息的 MOF 文件发送到各个节点，告知目�
 
 >**注意：**本主题讨论用于加密的证书。 对于加密，自签名证书就已足够，因为私钥始终保密，而加密并不表示信任该文档。 自签名证书*不*得用于身份验证目的。 应使用来自受信任的证书颁发机构 (CA) 的证书进行任何身份验证。
 
-## <a name="prerequisites"></a>必备条件
+<a id="prerequisites" class="xliff"></a>
+## 必备条件
 
 要成功加密所用凭据以保护 DSC 配置，请确保你有以下各项：
 
@@ -28,7 +29,8 @@ DSC 通过将包含配置信息的 MOF 文件发送到各个节点，告知目�
 * **每个目标节点的个人存储区中均保存了可加密的证书**。 在 Windows PowerShell 中，该存储区的路径为 Cert:\LocalMachine\My。 本主题中的示例使用“工作站身份验证”模板，你可以在[默认证书模板](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx)中找到它（以及其他证书模板）。
 * 如果你将在计算机而不是目标节点上运行此配置，请**导出证书的公钥**，然后将其导入到你将要从中运行配置的计算机。 请确保仅导出**公**钥；保护私钥安全。
 
-## <a name="overall-process"></a>整体过程
+<a id="overall-process" class="xliff"></a>
+## 整体过程
 
  1. 设置证书、密钥和指纹，确保每个目标节点具有证书的副本，且配置计算机具有公钥和指纹。
  2. 创建包含公钥的路径和指纹的配置数据块。
@@ -37,7 +39,8 @@ DSC 通过将包含配置信息的 MOF 文件发送到各个节点，告知目�
 
 ![Diagram1](images/CredentialEncryptionDiagram1.png)
 
-## <a name="certificate-requirements"></a>证书要求
+<a id="certificate-requirements" class="xliff"></a>
+## 证书要求
 
 若要执行凭据加密，公钥证书必须在受用于创作 DSC 配置的计算机**信任**的_目标节点_上可用。
 若要将此公钥证书用于 DSC 凭据加密，它需具有以下特定要求：
@@ -54,7 +57,8 @@ DSC 通过将包含配置信息的 MOF 文件发送到各个节点，告知目�
   
 _目标节点_上满足这些条件的任何现有证书都可以用于保护 DSC 凭据。
 
-## <a name="certificate-creation"></a>证书创建
+<a id="certificate-creation" class="xliff"></a>
+## 证书创建
 
 可以采用两种方法创建和使用所需的加密证书（公钥-私钥对）。
 
@@ -64,7 +68,8 @@ _目标节点_上满足这些条件的任何现有证书都可以用于保护 DS
 建议使用方法 1，因为用于解密 MOF 中凭据的私钥始终停留在目标节点上。
 
 
-### <a name="creating-the-certificate-on-the-target-node"></a>在目标节点上创建证书
+<a id="creating-the-certificate-on-the-target-node" class="xliff"></a>
+### 在目标节点上创建证书
 
 私钥必须是保密的，因为它可用于解密**目标节点**上的 MOF。为此，最简单的方法是在**目标节点**上创建私钥证书，并将**公钥证书**复制到用于将 DSC 配置编写到 MOF 文件中的计算机内。
 以下示例：
@@ -72,7 +77,8 @@ _目标节点_上满足这些条件的任何现有证书都可以用于保护 DS
  2. 在**目标节点**上导出公钥证书。
  3. 将公钥证书导入到**创作节点**上**我的**证书存储。
 
-#### <a name="on-the-target-node-create-and-export-the-certificate"></a>在目标节点上：创建并导出证书
+<a id="on-the-target-node-create-and-export-the-certificate" class="xliff"></a>
+#### 在目标节点上：创建并导出证书
 >创作节点：Windows Server 2016 和 Windows 10
 
 ```powershell
@@ -117,13 +123,15 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 一旦导出完成，需要将 ```DscPublicKey.cer``` 复制到**创作节点**。
 
-#### <a name="on-the-authoring-node-import-the-certs-public-key"></a>在创作节点上：导入证书的公钥
+<a id="on-the-authoring-node-import-the-certs-public-key" class="xliff"></a>
+#### 在创作节点上：导入证书的公钥
 ```powershell
 # Import to the my store
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-### <a name="creating-the-certificate-on-the-authoring-node"></a>在创作节点上创建证书
+<a id="creating-the-certificate-on-the-authoring-node" class="xliff"></a>
+### 在创作节点上创建证书
 或者，可以在**创作节点**上创建加密证书，并与**私钥**以 PFX 文件导出，然后在**目标节点**上导入。
 这是当前用于在 _Nano Server_ 上实现 DSC 凭据加密的方法。
 尽管 PFX 使用密码保护，但在传输过程中也应保证其安全性。
@@ -134,7 +142,8 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
  4. 将私钥证书导入到**目标节点**上的根证书存取。
    - 必须将其添加到根存储，以便受到**目标节点**的信任。
 
-#### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>在创作节点上：创建并导出证书
+<a id="on-the-authoring-node-create-and-export-the-certificate" class="xliff"></a>
+#### 在创作节点上：创建并导出证书
 >目标节点：Windows Server 2016 和 Windows 10
 
 ```powershell
@@ -187,14 +196,16 @@ $cert | Remove-Item -Force
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-#### <a name="on-the-target-node-import-the-certs-private-key-as-a-trusted-root"></a>在目标节点上：将证书的私钥导入为受信任的根
+<a id="on-the-target-node-import-the-certs-private-key-as-a-trusted-root" class="xliff"></a>
+#### 在目标节点上：将证书的私钥导入为受信任的根
 ```powershell
 # Import to the root store so that it is trusted
 $mypwd = ConvertTo-SecureString -String "YOUR_PFX_PASSWD" -Force -AsPlainText
 Import-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -CertStoreLocation Cert:\LocalMachine\Root -Password $mypwd > $null
 ```
 
-## <a name="configuration-data"></a>配置数据
+<a id="configuration-data" class="xliff"></a>
+## 配置数据
 
 配置数据块定义在哪个目标节点上进行操作、是否加密凭据、加密方式以及其他信息。 有关配置数据块的详细信息，请参阅[分隔配置和环境数据](configData.md)。
 
@@ -228,7 +239,8 @@ $ConfigData= @{
 ```
 
 
-## <a name="configuration-script"></a>配置脚本
+<a id="configuration-script" class="xliff"></a>
+## 配置脚本
 
 在配置脚本中，使用 `PsCredential` 参数确保凭据存储时间尽可能短。 运行提供的示例时，DSC 将提示你输入凭据，然后使用配置数据块中与目标节点相关联的 CertificateFile 加密 MOF 文件。 此代码示例将文件从受保护共享复制到用户。
 
@@ -254,7 +266,8 @@ configuration CredentialEncryptionExample
 }
 ```
 
-## <a name="setting-up-decryption"></a>设置加密
+<a id="setting-up-decryption" class="xliff"></a>
+## 设置加密
 
 必须使用 CertificateID 资源验证证书的指纹，从而告知每个目标节点上的本地配置管理器用于解密凭据的证书，[`Start-DscConfiguration`](https://technet.microsoft.com/en-us/library/dn521623.aspx) 方可生效。 此示例函数将查找适当的本地证书（你可能需要对它进行自定义，以便它准确地找到你想使用的证书）：
 
@@ -301,11 +314,12 @@ configuration CredentialEncryptionExample
 }
 ```
 
-## <a name="running-the-configuration"></a>运行配置
+<a id="running-the-configuration" class="xliff"></a>
+## 运行配置
 
 此时，你可以运行配置，此操作将输出两个文件：
 
- * *.meta.mof 文件，它将本地配置管理器配置为使用存储在本地计算机存储区上且由其指纹进行标识的证书来解密凭据。[`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/en-us/library/dn521621.aspx) 应用 *.meta.mof 文件。
+ * *.meta.mof 文件，它将本地配置管理器配置为使用存储在本地计算机存储区上、并由其指纹标识的证书来解密凭据。 [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/en-us/library/dn521621.aspx) 应用 *.meta.mof 文件。
  * 实际应用配置的 MOF 文件。 Start-DscConfiguration 应用配置。
 
 这些命令将完成这些步骤：
@@ -326,7 +340,8 @@ Start-DscConfiguration .\CredentialEncryptionExample -wait -Verbose
 
 有关使用 DSC 请求服务器应用 DSC 配置的详细信息，请参阅[设置 DSC 请求客户端](pullClient.md)。
 
-## <a name="credential-encryption-module-example"></a>凭据加密模块示例
+<a id="credential-encryption-module-example" class="xliff"></a>
+## 凭据加密模块示例
 
 以下是包含所有步骤的完整示例，以及用于导出和复制公钥的帮助程序 cmdlet：
 

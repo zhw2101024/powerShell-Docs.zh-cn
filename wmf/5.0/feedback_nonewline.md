@@ -1,4 +1,16 @@
-# <a name="nonewline-parameter"></a>NoNewLine 参数
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,安装程序"
+ms.openlocfilehash: 8c6a7d55e40f64bde6c2a2074ca3adb9cd210322
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
+---
+<a id="nonewline-parameter" class="xliff"></a>
+# NoNewLine 参数
 **Out-file**、**Add-content**和 **Set-content** 现在具有新的 **–NoNewline** 开关，它将在输出后直接省略换行。
 ```PowerShell
 PS C:\> "This is " | Out-File -FilePath Example.txt -NoNewline
@@ -27,3 +39,4 @@ a single
 
 sentence.
 ```
+

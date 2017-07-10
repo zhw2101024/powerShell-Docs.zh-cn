@@ -1,25 +1,24 @@
 ---
-title: "DSC Group 资源"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: db2a12141ab1eaca73bf958b5a27ef2a356d5b8f
-ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "DSC Group 资源"
+ms.openlocfilehash: 6fb6c5f9593687d7204ff31fddd9bca978ed2707
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2017
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-group-resource"></a>DSC Group 资源
+<a id="dsc-group-resource" class="xliff"></a>
+# DSC Group 资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) 中的 Group 资源提供了管理目标节点上的本地组的机制。
 
-## <a name="syntax"></a>语法
+<a id="syntax" class="xliff"></a>
+## 语法
 ```
 Group [string] #ResourceName
 {
@@ -34,7 +33,8 @@ Group [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>“属性”
+<a id="properties" class="xliff"></a>
+## “属性”
 
 |  属性  |  说明   | 
 |---|---| 
@@ -47,7 +47,8 @@ Group [string] #ResourceName
 | MembersToInclude| 使用此属性将成员添加到组的现有成员资格中。 此属性的值是一组形式为 *Domain*\\*UserName* 的字符串。 如果你在配置中设置此属性，请勿使用 **Members** 属性。 这样做会导致错误生成。| 
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 __ResourceName__、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"``。| 
 
-## <a name="example-1"></a>示例 1
+<a id="example-1" class="xliff"></a>
+## 示例 1
 
 下面的示例展示了如何确保名为“TestGroup”的组不存在。 
 
@@ -60,7 +61,8 @@ Group GroupExample
     GroupName = "TestGroup"
 }
 ```
-## <a name="example-2"></a>示例 2
+<a id="example-2" class="xliff"></a>
+## 示例 2
 以下示例演示如何将 Active Directory 用户添加到属于多计算机实验室版本（已在其中对本地管理员帐户使用 PSCredential）的本地管理员组。 因为这也适用于域管理帐户（域升级后），接下来我们需要将此现有的 PSCredential 转换为域友好的凭据，以便能够在成员服务器上将域用户添加到本地管理员组。
 
 ```powershell
@@ -90,7 +92,8 @@ Group AddADUserToLocalAdminGroup
         }
 ```
 
-## <a name="example-3"></a>示例 3
+<a id="example-3" class="xliff"></a>
+## 示例 3
 下面的示例展示了如何确保服务器 TigerTeamSource.Contoso.Com 上的本地组 TigerTeamAdmins 不包含特定域帐户 Contoso\JerryG。  
 
 ```powershell
@@ -109,3 +112,4 @@ Configuration SecureTigerTeamSrouce
   }
 }
 ```
+

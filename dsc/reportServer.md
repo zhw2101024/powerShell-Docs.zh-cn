@@ -1,17 +1,17 @@
 ---
-title: "使用 DSC 报表服务器"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 17b56a0ce25d3154e21f18269926a0c41aae833b
-ms.sourcegitcommit: d7b28f28a09caa7fa48b0f66c5c437f128ce316f
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "使用 DSC 报表服务器"
+ms.openlocfilehash: dd61d6ffff43ac2d1ec663b566e39dfc7d6c6565
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="using-a-dsc-report-server"></a>使用 DSC 报表服务器
+<a id="using-a-dsc-report-server" class="xliff"></a>
+# 使用 DSC 报表服务器
 
 > 适用于：Windows PowerShell 5.0
 
@@ -19,7 +19,8 @@ translationtype: HT
 
 可将节点的本地配置管理器 (LCM) 配置为向请求服务器发送有关其配置状态的报表，然后即可查询该服务器以检索此数据。 每当节点检查和应用配置时，它都会将报表发送到报表服务器。 这些报表存储在服务器上的数据库中，可通过调用报告 Web 服务进行检索。 每个报表中包含所应用的配置、配置是否成功、所使用的资源、引发的所有错误以及开始时间和结束时间等信息。
 
-## <a name="configuring-a-node-to-send-reports"></a>将节点配置为发送报表
+<a id="configuring-a-node-to-send-reports" class="xliff"></a>
+## 将节点配置为发送报表
 
 使用节点上 LCM 配置中的 **ReportServerWeb** 块可指示节点将报表发送到服务器（若要了解如何配置 LCM，请参阅[配置本地配置管理器](metaConfig.md)）。 必须将节点向其发送报表的服务器设置为 Web 请求服务器（不能将报表发送到 SMB 共享）。 有关设置请求服务器的信息，请参阅[设置 DSC 请求服务器](pullServer.md)。 报表服务器可以是节点从中请求配置和获取资源的同一服务，也可以是不同服务。
  
@@ -92,7 +93,8 @@ PullClientConfig
 
 >**注意：**在设置请求服务器时可以将 Web 服务命名为任何所需内容，但是 **ServerURL** 属性必须与服务名称匹配。
 
-## <a name="getting-report-data"></a>获取报表数据
+<a id="getting-report-data" class="xliff"></a>
+## 获取报表数据
 
 发送到请求服务器的报表将被输入该服务器上的数据库。 通过调用 Web 服务即可使用这些报表。 若要检索特定节点的报表，请通过以下形式向报表 Web 服务发送 HTTP 请求：`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId= 'MyNodeAgentId')/Reports`。其中 `MyNodeAgentId` 是要为其获取报表的节点的 AgentId。 可通过在节点上调用 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) 来获取相应节点的 AgentID。
 
@@ -113,7 +115,8 @@ function GetReport
 }
 ```
     
-## <a name="viewing-report-data"></a>查看报表数据
+<a id="viewing-report-data" class="xliff"></a>
+## 查看报表数据
 
 如果将变量设置为 **GetReport** 函数的结果，就可以查看所返回数组元素中的各个字段：
 
@@ -220,7 +223,8 @@ InDesiredState    : True
 
 请注意，这些示例旨在让你了解如何使用报表数据。 有关在 PowerShell 中使用 JSON 的介绍，请参阅 [Playing with JSON and PowerShell（使用 JSON 和 PowerShell）](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/)。
 
-## <a name="see-also"></a>另请参阅
+<a id="see-also" class="xliff"></a>
+## 另请参阅
 - [配置本地配置管理器](metaConfig.md)
 - [设置 DSC Web 请求服务器](pullServer.md)
 - [使用配置名称设置请求客户端](pullClientConfigNames.md)

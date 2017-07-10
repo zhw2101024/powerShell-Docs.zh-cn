@@ -1,17 +1,17 @@
 ---
-title: "用于从请求服务器查询节点信息的 DSC 函数。"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 02bb8458796d60991a05a8250f3bf8f3261ffce1
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "用于从请求服务器查询节点信息的 DSC 函数。"
+ms.openlocfilehash: 307fd46f113797c75c6ad2211ec86af30104de36
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-function-to-query-node-information-from-pull-server"></a>用于从请求服务器查询节点信息的 DSC 函数。
+<a id="dsc-function-to-query-node-information-from-pull-server" class="xliff"></a>
+# 用于从请求服务器查询节点信息的 DSC 函数。
 
 ```powershell
 function QueryNodeInformation

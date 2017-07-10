@@ -1,37 +1,39 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: "psget_publish 模块"
-ms.technology: powershell
-ms.openlocfilehash: 2619738ba76ed3b3c84d1a77771531ebd6955d6f
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: "库,powershell,cmdlet,psget"
+title: Publish-Script
+ms.openlocfilehash: 0d2fd87645d2286e87e68198844adce8909739cb
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="publish-script"></a>Publish-Script
+<a id="publish-script" class="xliff"></a>
+# Publish-Script
 
 Publish-Script cmdlet 会将指定的脚本发布到联机库。
 
-## <a name="description"></a>说明
+<a id="description" class="xliff"></a>
+## 说明
 
 Publish-Script cmdlet 可发布包含诸如 Version、Guid、Author 和 Description 等有效元数据的脚本文件。Publish-Script cmdlet 上的 Force 开关参数会在不提示的情况下启动 NuGet.exe。
 
-## <a name="cmdlet-syntax"></a>Cmdlet 语法
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet 语法
 
 ```powershell
 Get-Command -Name Publish-Script -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet 联机帮助参考
 
 [Publish-Script](http://go.microsoft.com/fwlink/?LinkId=619788)
 
-## <a name="example-commands"></a>示例命令
+<a id="example-commands" class="xliff"></a>
+## 示例命令
 
 ```powershell
 # Publish the really basic script file with required metadata

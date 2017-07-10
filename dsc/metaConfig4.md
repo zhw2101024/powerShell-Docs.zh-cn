@@ -1,23 +1,24 @@
 ---
-title: "Windows PowerShell 4.0 Desired State Configuration 本地配置管理器 (LCM)"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: cec3aaf4e57d1efc3e29880e4a7f078bd1840901
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "Windows PowerShell 4.0 Desired State Configuration 本地配置管理器 (LCM)"
+ms.openlocfilehash: 2e6e4731bdf6d7de6d13fc7f9b81698a192247e4
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="windows-powershell-40-desired-state-configuration-local-configuration-manager-lcm"></a>Windows PowerShell 4.0 Desired State Configuration 本地配置管理器 (LCM)
+<a id="windows-powershell-40-desired-state-configuration-local-configuration-manager-lcm" class="xliff"></a>
+# Windows PowerShell 4.0 Desired State Configuration 本地配置管理器 (LCM)
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 本地配置管理器是 Windows PowerShell Desired State Configuration (DSC) 引擎。 它在所有的目标节点上运行，负责调用 DSC 配置脚本中包含的配置资源。 本主题列出了本地配置管理器的属性，并介绍如何在目标节点上修改本地配置管理器设置。
 
-## <a name="local-configuration-manager-properties"></a>本地配置管理器属性
+<a id="local-configuration-manager-properties" class="xliff"></a>
+## 本地配置管理器属性
 以下列出了可以设置或检索的本地配置管理器属性。
  
 * **AllowModuleOverwrite**：控制是否允许从配置服务器下载的新配置覆盖目标节点上的旧配置。 可能的值为 True 和 False。
@@ -35,7 +36,8 @@ translationtype: HT
 * **RefreshFrequencyMins**：设置“请求”服务器后使用。 表示本地配置管理器与“请求”服务器联系以下载当前配置的频率（以分钟为单位）。 可将此值设置为与 ConfigurationModeFrequencyMins 结合使用。 当 RefreshMode 设置为 PULL 时，目标节点按 RefreshFrequencyMins 所设置的时间间隔与“请求”服务器联系并下载当前配置。 一致性引擎将在由 ConfigurationModeFrequencyMins 设置的时间间隔将下载的最新配置应用到目标节点。 若 RefreshFrequencyMins 未设置为 ConfigurationModeFrequencyMins 的整倍数，系统将会向上进行舍入。 默认值为 30。
 * **RefreshMode**：可能的值为 **Push**（默认值）和 **Pull**。 在“推送”配置下，必须在每个目标节点上放置配置文件（可使用任何客户端计算机进行此操作）。 在“请求”模式下，必须为本地配置管理器设置“请求”服务器，以便其联系和访问配置文件。
 
-### <a name="example-of-updating-local-configuration-manager-settings"></a>更新本地配置管理器设置的示例
+<a id="example-of-updating-local-configuration-manager-settings" class="xliff"></a>
+### 更新本地配置管理器设置的示例
 
 可以通过在节点块内包含 **LocalConfigurationManager** 块来更新目标节点的本地配置管理器设置，如以下示例中所示。
 

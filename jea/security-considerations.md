@@ -1,18 +1,17 @@
 ---
-manager: carmonm
-ms.topic: article
+ms.date: 2017-06-12
 author: rpsqrd
-ms.author: ryanpu
-ms.prod: powershell
-keywords: powershell,cmdlet,jea
-ms.date: 2017-03-07
+ms.topic: conceptual
+keywords: "jea,powershell,安全性"
 title: "JEA 安全注意事项"
-ms.technology: powershell
-ms.openlocfilehash: 02384465e3c1b6d9633cc346ba88a2566fea1af1
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.openlocfilehash: f85b342625d4dba0890619ef9680eaccbbde5224
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="jea-security-considerations"></a>JEA 安全注意事项
+<a id="jea-security-considerations" class="xliff"></a>
+# JEA 安全注意事项
 
 > 适用于：Windows PowerShell 5.0
 
@@ -23,7 +22,8 @@ JEA 通过减少计算机上的永久管理员数量来帮助改善安全状况�
 
 本主题详细介绍了 JEA 安全模型和最佳做法。
 
-## <a name="run-as-account"></a>运行方式帐户
+<a id="run-as-account" class="xliff"></a>
+## 运行方式帐户
 
 每个 JEA 终结点都有一个指定的“运行方式”帐户，该帐户是执行连接用户的操作所采用的帐户。
 此帐户在[会话配置文件](session-configurations.md)中是可配置的，并且你选择的帐户对终结点的安全性意义重大。
@@ -81,7 +81,8 @@ JEA 终结点配置为使用 gMSA 帐户时，所有 JEA 用户的操作将显�
 
 由于将操作追溯到特定用户存在难度并且缺少将用户映射到角色的支持，因此不应该对 JEA 终结点使用 RunAsCredential。
 
-## <a name="winrm-endpoint-acl"></a>WinRM 终结点 ACL
+<a id="winrm-endpoint-acl" class="xliff"></a>
+## WinRM 终结点 ACL
 
 与常规 PowerShell 远程终结点一样，每个 JEA 终结点在 WinRM 配置中都设有单独的访问控制列表 (ACL)，控制哪些用户可以通过 JEA 终结点的身份验证。
 如果配置错误，受信任的用户可能无法访问 JEA 终结点和/或不受信任的用户可能获得访问权限。
@@ -115,7 +116,8 @@ CONTOSO\JEA_Lev2 AccessAllowed
 可以通过运行 `Get-PSSessionCapability` 来审核 JEA 终结点中的用户权限。
 有关审核用户有权访问 JEA 终结点中的哪些命令的详细信息，请查看[有关 JEA 的审核和报告](audit-and-report.md)。
 
-## <a name="least-privilege-roles"></a>最小特权角色
+<a id="least-privilege-roles" class="xliff"></a>
+## 最小特权角色
 
 设计 JEA 角色时，务必记住后台运行的虚拟或组托管服务帐户通常具有不受限制的访问权限，以管理本地计算机。
 JEA 角色功能通过限制可使用该特权运行上下文的命令和应用程序帮助限制使用该帐户的目的。
@@ -144,7 +146,8 @@ JEA 角色功能通过限制可使用该特权运行上下文的命令和应用�
 
 避免在角色功能中使用通配符，并确保定期[审计有效用户权限](audit-and-report.md#check-effective-rights-for-a-specific-user)可了解用户有权访问哪些命令。
 
-## <a name="jea-does-not-protect-against-admins"></a>JEA 不阻止管理员
+<a id="jea-does-not-protect-against-admins" class="xliff"></a>
+## JEA 不阻止管理员
 
 JEA 核心原则之一是允许非管理员执行某些管理员任务。
 JEA 不阻止已经具有管理员权限的用户。
@@ -155,3 +158,4 @@ JEA 不阻止已经具有管理员权限的用户。
 
 一种常见做法是使用 JEA 进行常规的日常维护，并且获得“及时”特许访问权限解决方案，使用户在紧急情况下能够临时成为本地管理员。
 这有助于确保用户不会成为系统的永久管理员，只有当且仅当他们完成记录这些权限使用情况的工作流时，才能获得这些权限。
+

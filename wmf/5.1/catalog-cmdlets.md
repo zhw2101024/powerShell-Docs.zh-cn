@@ -1,22 +1,22 @@
 ---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,安装程序"
 title: "目录 cmdlet"
-ms.date: 2016-07-13
-keywords: PowerShell, DSC, WMF
-description: 
-ms.topic: article
-author: keithb
-manager: carolz
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: 6986e7b8543ce38c0330e6428ac908ca7f126e08
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: 88ca8a3366f7b1d83ba2596d7ae1230427797cf4
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="catalog-cmdlets"></a>目录 Cmdlet  
+<a id="catalog-cmdlets" class="xliff"></a>
+# 目录 Cmdlet  
 
 我们在 [Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx) 模块中新增了两个新 cmdlet 来生成和验证 windows 目录文件。  
 
-## <a name="new-filecatalog"></a>New-FileCatalog 
+<a id="new-filecatalog" class="xliff"></a>
+## New-FileCatalog 
 --------------------------------
 
 `New-FileCatalog` 用于为文件夹和文件集合创建 Windows 目录文件。 目录文件包含指定路径中的所有文件的哈希值。 用户可分发文件夹集合以及代表这些文件夹的对应目录文件。 内容接收方可使用目录文件，验证创建目录后是否对文件夹进行了任何更改。    
@@ -39,7 +39,8 @@ New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersio
 若要验证目录文件（上面示例中的 Pester.cat 文件）的完整性，应使用 [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet 对其进行签名。   
 
 
-## <a name="test-filecatalog"></a>Test-FileCatalog 
+<a id="test-filecatalog" class="xliff"></a>
+## Test-FileCatalog 
 --------------------------------
 
 `Test-FileCatalog` 用于验证代表一组文件夹的目录。 
@@ -51,3 +52,4 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 ![](../images/TestFileCatalog.jpg)
 
 此 cmdlet 将在目录文件中找到的所有文件的哈希值及其相对路径与保存到磁盘的值相比较。 如果它检测到文件哈希值和路径之间存在任何不匹配，将返回状态 `ValidationFailed`。 用户可使用 `Detailed` 切换检索所有该信息。 目录的签名状态将在 `Signature` 字段中显示，该结果与针对目录文件调用 [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) cmdlet 的结果相同。 用户也可使用 `FilesToSkip` 参数在验证过程中跳过任何文件。 
+

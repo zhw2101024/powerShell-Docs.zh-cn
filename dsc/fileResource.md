@@ -1,17 +1,17 @@
 ---
-title: "DSC File 资源"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: ba625f5130e806b3b8e14a0f6ed91fd5a1aabc54
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "DSC File 资源"
+ms.openlocfilehash: f16bfbc31489ef7d1b0e5e4ec3a4f30069c24c79
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-file-resource"></a>DSC File 资源
+<a id="dsc-file-resource" class="xliff"></a>
+# DSC File 资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
@@ -20,7 +20,8 @@ Windows PowerShell Desired State Configuration (DSC) 中的 File 资源提供了
 >**注意：**如果 **MatchSource** 属性设为 **$false**（这是默认值），那么第一次应用配置时将缓存要复制的内容。 
 >配置的后续应用将不再检查由 **SourcePath** 指定的路径中的已更新文件和/或文件夹。 如果想要每次应用配置时检查 **SourcePath** 中文件和/或文件夹的更新，请将 **MatchSource** 设为 **$true**。 
 
-## <a name="syntax"></a>语法
+<a id="syntax" class="xliff"></a>
+## 语法
 ```
 File [string] #ResourceName
 {
@@ -39,7 +40,8 @@ File [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>“属性”
+<a id="properties" class="xliff"></a>
+## “属性”
 
 |  属性  |  说明   | 
 |---|---| 
@@ -56,7 +58,8 @@ File [string] #ResourceName
 | 类型| 指示正在配置的资源是目录还是文件。 将此属性设置为“Directory”可指示该资源是一个目录。 将其设置为“File”可指示该资源是一个文件。 默认值为“File”。| 
 | MatchSource| 如果设置的默认值为 __$false__，则将在首次运用此配置时将源中的任何文件（如文件 A、B 和 C）添加到目标中。 如果已添加新文件 (D) 到源中，则即使稍后重新应用配置也不会将其添加到目标中。 如果值为 __$true__，则每当应用此配置时，在源上随后找到的新文件（如本示例中的文件 D）将会被添加到目标中。 默认值为 **$false**。| 
 
-## <a name="example"></a>示例
+<a id="example" class="xliff"></a>
+## 示例
 
 以下示例表明了如何使用 File 资源以确保源计算机（如“请求”服务器）上具有路径 `C:\Users\Public\Documents\DSCDemo\DemoSource` 的目录（以及所有子目录）也存在于目标节点上。 此外，完成时也会将确认消息写入日志，并包含用于确保记录操作前运行文件检查操作的声明。
 

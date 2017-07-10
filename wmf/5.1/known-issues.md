@@ -1,36 +1,39 @@
 ---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,安装程序"
 title: "WMF 5.1 中的已知问题"
-ms.date: 2016-07-13
-keywords: PowerShell, DSC, WMF
-description: 
-ms.topic: article
-author: krishna
-manager: dongill
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: 260a3bc443302f2d582f455aafb30ed717d95c84
-ms.sourcegitcommit: cfe32f213819ae76de05da564c3e2c4b7ecfda2f
-translationtype: HT
+ms.openlocfilehash: 93113962781f1cc84a80f8f97f56ffd7622fec6b
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="known-issues-in-wmf-51"></a>WMF 5.1 中的已知问题 #
+<a id="known-issues-in-wmf-51" class="xliff"></a>
+# WMF 5.1 中的已知问题 #
 
 > 注意：此信息可能随时发生更改。
 
-## <a name="starting-powershell-shortcut-as-administrator"></a>以管理员身份启动 PowerShell 快捷方式
+<a id="starting-powershell-shortcut-as-administrator" class="xliff"></a>
+## 以管理员身份启动 PowerShell 快捷方式
 在安装 WMF 时，如果尝试以管理员身份通过该快捷方式启动 PowerShell，可能会显示“未指定的错误”消息。
 以非管理员身份重新打开快捷方式，快捷方式现在甚至可以管理员身份工作。
 
-## <a name="pester"></a>Pester
+<a id="pester" class="xliff"></a>
+## Pester
 在本版本中，在 Nano 服务器上使用 Pester 时应注意两个问题：
 
 * 由于 FULL CLR 和 CORE CLR 之间的差异，针对 Pester 自身运行测试可能导致一些失败。 特别是，Validate 方法不可用于 XmlDocument 类型。 众所周知，尝试验证 NUnit 输出日志的架构的六个测试都将失败。 
 * 一个代码覆盖率测试失败的原因是当前 Nano 服务器中不存在 *WindowsFeature* DSC 资源。 但是，这些故障通常是无害的，可以放心地忽略。
 
-## <a name="operation-validation"></a>操作验证 
+<a id="operation-validation" class="xliff"></a>
+## 操作验证 
 
 * 由于帮助 URI 不起作用，针对 Microsoft.PowerShell.Operation.Validation 模块的 Update-Help 将失败
 
-## <a name="dsc-after-uninstall-wmf"></a>卸载 WMF 后的 DSC 
+<a id="dsc-after-uninstall-wmf" class="xliff"></a>
+## 卸载 WMF 后的 DSC 
 * 卸载 WMF 不会从配置文件夹中删除 DSC MOF 文档。 如果 MOF 文档包含在较旧系统中不可用的较新属性，DSC 将无法正常工作。 在这种情况下，请从提升的 PowerShell 控制台运行以下脚本，以清理 DSC 状态。
  ```PowerShell
     $PreviousDSCStates = @("$env:windir\system32\configuration\*.mof",
@@ -42,7 +45,8 @@ translationtype: HT
     $PreviousDSCStates | Remove-Item -ErrorAction SilentlyContinue -Verbose
  ```  
 
-## <a name="jea-virtual-accounts"></a>JEA 虚拟帐户
+<a id="jea-virtual-accounts" class="xliff"></a>
+## JEA 虚拟帐户
 升级到 WMF 5.1 后，在 WMF 5.0 中配置为使用虚拟帐户的 JEA 终结点和会话配置不会配置为使用虚拟帐户。
 也就是说，在 JEA 会话中运行的命令将在连接用户的身份（而不是临时管理员帐户）下运行，这可能会导致用户无法运行需要提升的权限的命令。
 若要还原虚拟帐户，需要先取消注册，然后重新注册使用虚拟帐户的所有会话配置。
@@ -63,3 +67,4 @@ Register-PSSessionConfiguration -Name $jea.Name -Path $pssc.FullName -Force
 # Ensure the access policies remain the same
 Set-PSSessionConfiguration -Name $newjea.Name -SecurityDescriptorSddl $jea.SecurityDescriptorSddl
 ```
+

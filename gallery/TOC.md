@@ -8,6 +8,9 @@
 ### [具有兼容 PSEditions 的项](psgallery/psgallery_pseditions.md)
 ### [文件列表视图](psgallery/psgallery_filelist_feature.md)
 ### [部署到 Azure 自动化](psgallery/psgallery_deploy_to_azure_automation.md)
+### [创建 PowerShell 库帐户](psgallery/psgallery_creating_an_account.md)
+### [创建和发布项](psgallery/Creating-and-Publishing-an-item.md)
+### [发布指南和最佳做法](psgallery/psgallery-PublishingGuidelines.md)
 ### [取消列出项](psgallery/psgallery_unlist_items.md)
 ### [删除项](psgallery/Deleting-Items.md)
 ### [管理项所有者](psgallery/Managing-Item-Owners.md)
@@ -15,8 +18,11 @@
 ### [争议解决](psgallery/psgallery_dispute_resolution.md)
 ### [联系项所有者](psgallery/psgallery_contacting_item_owners.md)
 ### [联系管理员](psgallery/psgallery_contacting_administrators.md)
+### [通过社交媒体或发表评论提供反馈](psgallery/psgallery-SocialMediaFeedback.md)
 
 # [PowerShellGet](psget/overview.md)
+## [获取 PowerShellGet 模块](psget/get_psget_module.md)
+
 ## 模块
 ### [查找模块](psget/module/psget_find-module.md)
 ### [查找 DSC 资源](psget/module/psget_find-dscresource.md)

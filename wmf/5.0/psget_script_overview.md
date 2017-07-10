@@ -1,4 +1,16 @@
-# <a name="powershell-script-discovery-install-and-management-with-powershellget"></a>使用 PowerShellGet 进行 PowerShell 脚本发现、安装和管理
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,安装程序"
+ms.openlocfilehash: a5d1bff0b39cbbac7d83c44c232a2721c340caa8
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
+---
+<a id="powershell-script-discovery-install-and-management-with-powershellget" class="xliff"></a>
+# 使用 PowerShellGet 进行 PowerShell 脚本发现、安装和管理
 
 在 WMF 5.0 RTM 版本中已将 PowerShell 脚本共享功能添加到了 PowerShellGet。
 以下新的 cmdlet 将被添加到 PowerShellGet 模块以支持 PowerShell 脚本。
@@ -66,3 +78,4 @@ Function Update-ScriptFileInfo 1.0.0.1 PowerShellGet
 
 **Publish-Script** -LiteralPath &lt;string&gt; \[-NuGetApiKey &lt;string&gt;\] \[-Repository &lt;string&gt;\] \[-WhatIf\] \[-Confirm\] \[&lt;CommonParameters&gt;\]
 ```
+

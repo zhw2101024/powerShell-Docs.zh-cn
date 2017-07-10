@@ -1,23 +1,22 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_find rolecapability
-ms.technology: powershell
-ms.openlocfilehash: 3f005bf0a9201c3762ca6399a78d4ff983409656
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: "库,powershell,cmdlet,psget"
+title: Find-RoleCapability
+ms.openlocfilehash: 77c5b492d9681fa05315401fba410c508af1d13b
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="find-rolecapability"></a>Find-RoleCapability
+<a id="find-rolecapability" class="xliff"></a>
+# Find-RoleCapability
 
 在模块中查找角色功能。
 
-## <a name="description"></a>说明
+<a id="description" class="xliff"></a>
+## 说明
 Find-RoleCapability cmdlet 查找模块中的 PowerShell 角色功能。 Find-RoleCapability 在已注册的存储库中搜索模块。 对于此 cmdlet 查找的每个角色功能，它将返回 PSGetRoleCapabilityInfo 对象。 可以将 PSGetRoleCapabilityInfo 对象传递给 Install-Module cmdlet 以安装包含角色功能的模块。
 PowerShell 角色功能定义在 Just Enough Administration (JEA) 终结点中可供用户使用的命令、应用程序等。 角色功能由扩展名为“.psrc”的文件定义。
 
@@ -30,16 +29,19 @@ PowerShell 角色功能定义在 Just Enough Administration (JEA) 终结点中�
 - Find-RoleCapability 可使用 -Filter 参数对存储库特定搜索语言进行筛选。
 - Find-RoleCapability 可以从所有或少数已注册存储库中对模块进行筛选。
 
-## <a name="cmdlet-syntax"></a>Cmdlet 语法
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet 语法
 ```powershell
 Get-Command -Name Find-RoleCapability -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet 联机帮助参考
 
 [Find-RoleCapability](http://go.microsoft.com/fwlink/?LinkId=718029)
 
-## <a name="example-commands"></a>示例命令
+<a id="example-commands" class="xliff"></a>
+## 示例命令
 ```powershell
 
 # Find a specific role capability

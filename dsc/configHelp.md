@@ -1,17 +1,17 @@
 ---
-title: "编写 DSC 配置的帮助"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 099755bf8dc41adfedf77de451dbcdf390c298e9
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "编写 DSC 配置的帮助"
+ms.openlocfilehash: bcf5c4b1af3cfd8d2e6376c1b7344c7babcaba9a
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="writing-help-for-dsc-configurations"></a>编写 DSC 配置的帮助
+<a id="writing-help-for-dsc-configurations" class="xliff"></a>
+# 编写 DSC 配置的帮助
 
 >适用于：Windows PowerShell 5.0
 
@@ -61,7 +61,8 @@ configuration HelpSample1
 }
 ```
 
-## <a name="viewing-configuration-help"></a>查看配置帮助
+<a id="viewing-configuration-help" class="xliff"></a>
+## 查看配置帮助
 
 若要查看有关配置的帮助，请使用带有函数名称的 **Get-help** cmdlet，或键入后跟 `-?` 的函数名称。 下面展示了在传递给 **Get-Help** 时上一个函数的输出：
 
@@ -92,6 +93,7 @@ REMARKS
     For technical information, type: "get-help HelpSample1 -full".
 ```
 
-## <a name="see-also"></a>另请参阅
+<a id="see-also" class="xliff"></a>
+## 另请参阅
 * [DSC 配置](configurations.md)
 

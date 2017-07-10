@@ -1,4 +1,16 @@
-# <a name="mof-documents-are-encrypted-by-default"></a>MOF 文档默认加密
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,安装程序"
+ms.openlocfilehash: d19f3c47af858eb18a39847050f80ffa013c59bb
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
+---
+<a id="mof-documents-are-encrypted-by-default" class="xliff"></a>
+# MOF 文档默认加密
 
 配置文档包含敏感信息。 在以前版本的 DSC 中，你需要分发和管理证书以确保配置中的凭据安全。 对于许多人来说，这是一项重大的管理负担，即使为此大费周章，仍会余下某些尚未（且无法）确保安全配置信息。 
 
@@ -9,3 +21,4 @@
 如果你已将证书方法用于加密密码，或者你的密码需要额外的安全性，[基于证书加密的现有方法](https://msdn.microsoft.com/en-us/powershell/dsc/securemof)将继续发挥作用。 将得到使用 DPAPI 完全加密的 MOF 文档，并在其中对密码额外进行了加密。
 
 这种加密仅适用于配置 MOF 文档（例如 pending.mof、current.mof、previous.mof 和部分 MOF）。 仍以纯文本格式保存元配置 MOF，因为它们不太可能包含机密信息。
+

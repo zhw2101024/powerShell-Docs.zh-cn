@@ -1,4 +1,16 @@
-# <a name="system-requirements"></a>系统要求
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,安装程序"
+ms.openlocfilehash: e4e5c6fff2eea12b9cfbba325d5519f6266218e8
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
+---
+<a id="system-requirements" class="xliff"></a>
+# 系统要求
 
 - 先安装最新 Windows 更新，再安装 WMF 5.0 RTM。
 - 你仅可以在以下操作系统上安装 WMF 5.0 RTM：
@@ -11,15 +23,18 @@
     | Windows 8.1 | Pro，企业 | | **x64：**  [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) </br> **x86：**  [Win8.1-KB3134758-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717963)|
     | Windows 7 SP1 | 全部 | 已安装 [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) 和 [ NET framework 4.5 或更高版本](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx) | **x64：**  [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)  </br> **x86：**  [Win7-KB3134760-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717962)|
 
-# <a name="installation-instructions"></a>安装说明
+<a id="installation-instructions" class="xliff"></a>
+# 安装说明
 
-### <a name="to-install-wmf-50-from-windows-explorer-or-file-explorer"></a>从 Windows 资源管理器（或文件资源管理器）安装 WMF 5.0：
+<a id="to-install-wmf-50-from-windows-explorer-or-file-explorer" class="xliff"></a>
+### 从 Windows 资源管理器（或文件资源管理器）安装 WMF 5.0：
 
 1. 导航到在其中下载了 MSU 文件的文件夹。
 
 2. 双击 MSU 以运行它。
 
-### <a name="to-install-wmf-50-from-command-prompt"></a>从“命令提示符”安装 WMF 5.0：
+<a id="to-install-wmf-50-from-command-prompt" class="xliff"></a>
+### 从“命令提示符”安装 WMF 5.0：
 
 1. 下载适用于计算机体系结构的正确程序包后，使用提升的用户权限（以管理员身份运行）打开“命令提示符”窗口。 在 Windows Server 2012 R2、Windows Server 2012 或 Windows Server 2008 R2 SP1 的服务器核心安装选项上，命令提示符默认使用提升的用户权限打开。
 
@@ -32,7 +47,8 @@
     - 在正在运行 Windows 8.1 x86 的计算机上，运行 **Win8.1-KB3134758-x86.msu /quiet**。
     - 在正在运行 Windows 7 SP1 x86 的计算机上，运行 **Win7-KB3134760-x86.msu /quiet**。
 
-### <a name="additional-installation-notes-for-windows-server-2008-r2-sp1-and-windows-7-sp1"></a>Windows Server 2008 R2 SP1 和 Windows 7 SP1 的其他安装说明：
+<a id="additional-installation-notes-for-windows-server-2008-r2-sp1-and-windows-7-sp1" class="xliff"></a>
+### Windows Server 2008 R2 SP1 和 Windows 7 SP1 的其他安装说明：
 
 确保已满足以下必备条件：
 - 已安装最新服务包。
@@ -55,9 +71,11 @@ Windows Server 2008 R2 SP1 和 Windows 7 SP1 系统内置了 PowerShell 2.0、Wi
 
 Windows PowerShell Desired State Configuration (DSC) 依赖 WinRM。 在 Windows Server 2008 R2 SP1 和 Windows 7 SP1 上默认不启用 WinRM。 若要启用 WinRM，请在 Windows PowerShell 提升的会话中运行 **Set-WSManQuickConfig**。
 
-# <a name="uninstallation-instructions"></a>卸载说明
+<a id="uninstallation-instructions" class="xliff"></a>
+# 卸载说明
 
-### <a name="using-command-prompt"></a>使用命令提示符
+<a id="using-command-prompt" class="xliff"></a>
+### 使用命令提示符
 
 1.  打开“命令提示符”。
 
@@ -76,7 +94,8 @@ wusa /uninstall /kb:3134759
 wusa /uninstall /kb:3134760
 ```
 
-### <a name="using-control-panel"></a>使用控制面板。
+<a id="using-control-panel" class="xliff"></a>
+### 使用控制面板。
 
 1.  打开“控制面板”。
 
@@ -85,3 +104,4 @@ wusa /uninstall /kb:3134760
 3.  单击“查看已安装的更新”。
 
 4.  从已安装的更新列表中选择“Windows Management Framework 5.0”。 这对应于 *KB3134758*、*KB3134759* 或 *KB3134760*。 单击“卸载”。
+

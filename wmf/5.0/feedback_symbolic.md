@@ -1,12 +1,26 @@
-# <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a>使用改进的 Item cmdlet 与符号链接交互
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,安装程序"
+ms.openlocfilehash: fbc537cacb8dd58ab989a0bb71cd942cedae844c
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
+---
+<a id="interact-with-symbolic-links-using-improved-item-cmdlets" class="xliff"></a>
+# 使用改进的 Item cmdlet 与符号链接交互
 
 为支持符号链接，扩展了 **\*-Item** 和几个相关 cmdlet。 现可使用 **New-Item** 在简单的单行中创建符号链接。 你将注意到，Item 相关的 cmdlet（**Remove-Item、Get-ChildItem**）的行为与以前非常相似。
 
 以下为新功能的一些用例：
 
-## <a name="new-item"></a>NEW-ITEM
+<a id="new-item" class="xliff"></a>
+## NEW-ITEM
 
-### <a name="symbolic-link-files"></a>符号链接文件
+<a id="symbolic-link-files" class="xliff"></a>
+### 符号链接文件
 
 ```powershell
 # Create a new symbolic link file named MySymLinkFile.txt in C:\Temp which links to $pshome\profile.ps1
@@ -20,7 +34,8 @@ New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkFile.txt -Value $pshome\p
 New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkFile.txt -Value $pshome\profile.ps1
 ```
 
-### <a name="symbolic-link-directories"></a>符号链接目录
+<a id="symbolic-link-directories" class="xliff"></a>
+### 符号链接目录
 
 ```powershell
 # Create a new symbolic link directory named MySymLinkDir in C:\Temp which links to the $pshome folder
@@ -35,21 +50,24 @@ New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkDir -Value $pshome
 New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkDir -Value $pshome
 ```
 
-### <a name="hard-links"></a>硬链接
+<a id="hard-links" class="xliff"></a>
+### 硬链接
 
 ```powershell
 New-Item -ItemType HardLink -Path C:\Temp -Name MyHardLinkFile.txt -Value $pshome\profile.ps1
 # Same combinations of Path and Name allowed as described above
 ```
 
-### <a name="directory-junctions"></a>目录联接
+<a id="directory-junctions" class="xliff"></a>
+### 目录联接
 
 ```powershell
 New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome
 # Same combinations of Path and Name allowed as described above
 ```
 
-## <a name="get-childitem"></a>GET-CHILDITEM
+<a id="get-childitem" class="xliff"></a>
+## GET-CHILDITEM
 
 ```powershell
 # Append link type column to Mode property and display with Get-ChildItem
@@ -100,7 +118,8 @@ SpecialBuild: False
 Language:
 ```
 
-## <a name="remove-item"></a>REMOVE-ITEM
+<a id="remove-item" class="xliff"></a>
+## REMOVE-ITEM
 
 ```powershell
 # Works like any other item type
@@ -113,3 +132,4 @@ Remove-Item C:\Temp\MySymLinkDir
 # Removes the files in the target directory and MySymLinkDir
 Remove-Item C:\Temp\MySymLinkDir -Force
 ```
+

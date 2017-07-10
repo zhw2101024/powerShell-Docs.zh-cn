@@ -1,4 +1,16 @@
-# <a name="import-dscresource-keyword-supports--moduleversion-parameter"></a>Import-DscResource 关键字支持 -ModuleVersion 参数
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,安装程序"
+ms.openlocfilehash: b839b476bb4ef7f8d73b158d61f0e8cbc1265e60
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
+---
+<a id="import-dscresource-keyword-supports--moduleversion-parameter" class="xliff"></a>
+# Import-DscResource 关键字支持 -ModuleVersion 参数
 
 我们向创作 DSC 配置时可用的 `Import-DscResource` 动态关键字添加了一个新参数。 现在，配置作者可以明确指定从中加载 DSC 资源的模块版本。 该关键字的新语法为：
 

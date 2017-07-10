@@ -1,18 +1,17 @@
 ---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,安装程序"
 title: "社区资源"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC, WMF
-description: 
-ms.topic: article
-author: keithb
-manager: dongill
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: 82e6539484aa11bb370f3011bb12ea51f9d55047
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
-translationtype: HT
+ms.openlocfilehash: 1a4b49f0773c7d54b6dbb504a9d44cae7e0ef924
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="community-resources"></a>社区资源 #
+<a id="community-resources" class="xliff"></a>
+# 社区资源 #
 > 注意：此信息是预发布版本，可能会进行更改。
 
 PowerShell 团队欢迎并鼓励客户提供产品反馈并支持用户通过多种方法联系我们。

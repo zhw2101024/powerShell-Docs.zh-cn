@@ -1,4 +1,16 @@
-# <a name="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter"></a>Set-DscLocalConfigurationManager cmdlet 支持 -force 参数
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,安装程序"
+ms.openlocfilehash: 0aff3ff1fe12fbc7acce20cf7c802f58ace77bb9
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
+---
+<a id="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter" class="xliff"></a>
+# Set-DscLocalConfigurationManager cmdlet 支持 -force 参数
 
 我们已添加对 Set-DscLocalConfigurationManager cmdlet 新参数的支持。 当其他操作（比如一致性检查）在后台运行时，这将允许用户切实重置元配置，因为它将导致停止所有运行中的操作。
 
@@ -36,3 +48,4 @@ VERBOSE: \[DEV-10586-465\]: LCM: \[ End Set \] in 0.1410 seconds.
 VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Set-DscLocalConfigurationManager finished in 0.421 seconds.
 ```
+

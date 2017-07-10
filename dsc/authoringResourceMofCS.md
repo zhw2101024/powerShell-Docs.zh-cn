@@ -1,17 +1,17 @@
 ---
-title: "在 C 中创作 DSC 资源`"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: df330cede5466f4d8da3b4be0057f6a822d15f00
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "在 C 中创作 DSC 资源`"
+ms.openlocfilehash: 502a4f42f685642d0966a8ee1ee745902005d61c
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="authoring-a-dsc-resource-in-c"></a>在 C 中创作 DSC 资源`#`
+<a id="authoring-a-dsc-resource-in-c" class="xliff"></a>
+# 在 C 中创作 DSC 资源`#`
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
@@ -19,10 +19,12 @@ translationtype: HT
 
 除在 C# 中用 cmdlet 实现资源外，创建 MOF 架构、创建文件夹结构、导入和使用自定义 DSC 资源的过程都与[使用 MOF 编写自定义 DSC 资源](authoringResourceMOF.md)中介绍的相同。
 
-## <a name="writing-a-cmdlet-based-resource"></a>编写基于 cmdlet 的资源
+<a id="writing-a-cmdlet-based-resource" class="xliff"></a>
+## 编写基于 cmdlet 的资源
 此示例中，我们将实现一个管理文本文件及其内容的简单资源。
 
-### <a name="writing-the-mof-schema"></a>编写 MOF 架构
+<a id="writing-the-mof-schema" class="xliff"></a>
+### 编写 MOF 架构
 
 下面是 MOF 资源的定义。
 
@@ -36,8 +38,10 @@ class MSFT_XDemoFile : OMI_BaseResource
 };
 ```
 
-### <a name="setting-up-the-visual-studio-project"></a>设置 Visual Studio 项目
-#### <a name="setting-up-a-cmdlet-project"></a>设置 cmdlet 项目
+<a id="setting-up-the-visual-studio-project" class="xliff"></a>
+### 设置 Visual Studio 项目
+<a id="setting-up-a-cmdlet-project" class="xliff"></a>
+#### 设置 cmdlet 项目
 
 1. 打开 Visual Studio
 1. 创建 C# 项目并命名。
@@ -46,7 +50,8 @@ class MSFT_XDemoFile : OMI_BaseResource
 1. 将 System.Automation.Management.dll 的程序集引用添加到项目。
 1. 更改程序集名称，使其与资源名称一致。 在本示例中，程序集应该被命名为 **MSFT_XDemoFile**。
 
-### <a name="writing-the-cmdlet-code"></a>编写 cmdlet 代码
+<a id="writing-the-cmdlet-code" class="xliff"></a>
+### 编写 cmdlet 代码
 
 下列 C# 代码会实现 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** cmdlet。
 
@@ -264,7 +269,8 @@ namespace cSharpDSCResourceExample
 }
 ```
 
-### <a name="deploying-the-resource"></a>部署资源
+<a id="deploying-the-resource" class="xliff"></a>
+### 部署资源
 
 应将已编译的 dll 文件保存在与基于脚本的资源相类似的文件结构中。 下面是此资源的文件夹结构。
 
@@ -279,9 +285,12 @@ $env: psmodulepath (folder)
                 |- MSFT_XDemoFile.schema.mof (file, required)
 ```
 
-### <a name="see-also"></a>另请参阅
-#### <a name="concepts"></a>概念
+<a id="see-also" class="xliff"></a>
+### 另请参阅
+<a id="concepts" class="xliff"></a>
+#### 概念
 [使用 MOF 编写自定义 DSC 资源](authoringResourceMOF.md)
-#### <a name="other-resources"></a>其他资源
+<a id="other-resources" class="xliff"></a>
+#### 其他资源
 [编写 Windows PowerShell Cmdlet](https://msdn.microsoft.com/en-us/library/dd878294.aspx)
 

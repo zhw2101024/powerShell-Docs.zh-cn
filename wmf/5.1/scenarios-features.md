@@ -1,22 +1,22 @@
 ---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,安装程序"
 title: "WMF 5.1 中的新方案和功能"
-ms.date: 2016-07-13
-keywords: PowerShell, DSC, WMF
-description: 
-ms.topic: article
-author: keithb
-manager: dongill
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: 1ea650d5dd69251c0407133f649ea8efb1315dd2
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
-translationtype: HT
+ms.openlocfilehash: 02c27711c886916da56bb382b1bc0187f1e30805
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="new-scenarios-and-features-in-wmf-51"></a>WMF 5.1 中的新方案和功能 #
+<a id="new-scenarios-and-features-in-wmf-51" class="xliff"></a>
+# WMF 5.1 中的新方案和功能 #
 
 > 注意：此信息是预发布版本，可能会进行更改。
 
-## <a name="powershell-editions"></a>PowerShell 版本 ##
+<a id="powershell-editions" class="xliff"></a>
+## PowerShell 版本 ##
 从版本 5.1 开始，PowerShell 以表现出不同功能集和平台兼容性的不同版本提供。
 
 - **桌面版：**以 .NET Framework 为基础构建，提供与面向在完整功能 Windows 版本（如服务器核心和 Windows 桌面）上运行的 PowerShell 版本的脚本和模块的兼容性。
@@ -28,11 +28,13 @@ translationtype: HT
 - [按 CompatiblePSEditions 筛选 Get-Module 结果]()
 - [阻止脚本执行，除非在 PowerShell 的兼容版本上运行]()
 
-## <a name="catalog-cmdlets"></a>目录 Cmdlet  
+<a id="catalog-cmdlets" class="xliff"></a>
+## 目录 Cmdlet  
 
 在 [Microsoft.PowerShell.Security](https://technet.microsoft.com/en-us/library/hh847877.aspx) 模块中新增了两个新 cmdlet；这两个 cmdlet 可用于生成和验证 Windows 目录文件。  
 
-###<a name="new-filecatalog"></a>New-FileCatalog 
+<a id="new-filecatalog" class="xliff"></a>
+###New-FileCatalog 
 --------------------------------
 
 New-FileCatalog 用于为文件夹和文件集合创建 Windows 目录文件。 该目录文件包含指定路径中的所有文件的哈希值。 用户可以分发文件夹集合以及代表这些文件夹的对应的目录文件。 该信息对于验证自目录创建以来是否对文件夹进行了任何更改很有用。    
@@ -53,7 +55,8 @@ New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersio
 若要验证目录文件（上面示例中的 Pester.cat 文件）的完整性，应使用 [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet 对其进行签名。   
 
 
-###<a name="test-filecatalog"></a>Test-FileCatalog 
+<a id="test-filecatalog" class="xliff"></a>
+###Test-FileCatalog 
 --------------------------------
 
 Test-FileCatalog 用于验证代表一组文件夹的目录。 
@@ -67,7 +70,8 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 此 cmdlet 将目录中找到的所有文件的哈希值及其相对路径与磁盘中的进行比较。 如果它检测到文件哈希值和路径之间存在任何不匹配，将返回状态 ValidationFailed。 用户可通过使用 *-Detailed* 参数检索所有这些信息。 它还在“签名”属性中显示目录的签名状态，该结果与针对目录文件调用 [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) cmdlet 的结果相同。 用户也可以使用 -FilesToSkip 参数在验证过程中跳过任何文件。 
 
 
-## <a name="module-analysis-cache"></a>模块分析缓存 ##
+<a id="module-analysis-cache" class="xliff"></a>
+## 模块分析缓存 ##
 从 WMF 5.1 开始，PowerShell 针对用于缓存有关模块的数据（如它导出的命令）的文件提供了控制。
 
 默认情况下，此缓存存储在文件 `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache` 中。
@@ -94,7 +98,8 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
 此环境变量的设置会在当前进程中立即生效。
 
-##<a name="specifying-module-version"></a>指定模块版本
+<a id="specifying-module-version" class="xliff"></a>
+##指定模块版本
 
 在 WMF 5.1 中，`using module` 的行为方式与 PowerShell 中其他与模块相关的构造相同。 以前无法指定特定模块版本；如果有多个版本存在，则这会导致错误。
 
@@ -108,7 +113,9 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 * 如果有多个版本的模块，则 PowerShell 会使用与 `Import-Module` **相同的解析逻辑**，不会返回错误 - - 行为与 `Import-Module` 和 `Import-DscResource` 相同。
 
 
-##<a name="improvements-to-pester"></a>针对 Pester 的改进
+<a id="improvements-to-pester" class="xliff"></a>
+##针对 Pester 的改进
 在 WMF 5.1 中，PowerShell 随附的 Pester 版本从 3.3.5 更新到 3.4.0，并且添加了一个提交：https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e，从而改善了 Nano 服务器上的 Pester 的行为。 
 
 你可以通过检查 https://github.com/pester/Pester/blob/master/CHANGELOG.md 上的 ChangeLog.md 文件查看从版本 3.3.5 到 3.4.0 的更改
+

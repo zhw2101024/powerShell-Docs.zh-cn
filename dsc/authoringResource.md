@@ -1,23 +1,24 @@
 ---
-title: "构建自定义 Windows PowerShell Desired State Configuration 资源"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: fe2697de322be99e9b5dfe79090fda4082a73623
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "构建自定义 Windows PowerShell Desired State Configuration 资源"
+ms.openlocfilehash: 75b494db4ee6e381491decb11d35b60105217a0f
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="build-custom-windows-powershell-desired-state-configuration-resources"></a>构建自定义 Windows PowerShell Desired State Configuration 资源
+<a id="build-custom-windows-powershell-desired-state-configuration-resources" class="xliff"></a>
+# 构建自定义 Windows PowerShell Desired State Configuration 资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) 具有可用于配置环境的内置资源。 （有关详细信息，请参阅[内置 Windows PowerShell Desired State Configuration 资源](builtInResource.md)。）本主题通过特定信息和示例概述了与主题相关的开发资源和链接。
 
-## <a name="dsc-resource-components"></a>DSC 资源组件
+<a id="dsc-resource-components" class="xliff"></a>
+## DSC 资源组件
 
 DSC 资源是一个 Windows PowerShell 模块。 该模块既包含资源的架构（可配置属性的定义）又包含资源的实现（执行配置指定的实际工作的代码）。 可在 MOF 文件中定义 DSC 资源架构，由脚本模块执行实现。 从版本 5 开始支持 PowerShell 类，因此架构和实现都可以在类中定义。 以下主题对如何创建 DSC 资源进行了更详细的介绍。
 

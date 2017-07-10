@@ -1,29 +1,30 @@
 ---
-title: "DSC WindowsOptionalFeature 资源"
-ms.date: 2016-05-24
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 26d140d68760ec92b3b6cbc31d0735eaaf671d9c
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "DSC WindowsOptionalFeature 资源"
+ms.openlocfilehash: 388fbe1bc430098d6680902e0b5643243fbf7f4c
+ms.sourcegitcommit: 79e8f03afb8d0b0bb0a167e56464929b27f51990
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/26/2017
 ---
-# <a name="dsc-windowsoptionalfeature-resource"></a>DSC WindowsOptionalFeature 资源
+<a id="dsc-windowsoptionalfeature-resource" class="xliff"></a>
+# DSC WindowsOptionalFeature 资源
 
 > 适用于：Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) 中的 **WindowsOptionalFeature** 资源提供了确保在目标节点上启用可选功能的机制。
 
-## <a name="syntax"></a>语法
+<a id="syntax" class="xliff"></a>
+## 语法
 
 ```
 WindowsOptionalFeature [string] #ResourceName
 {
     Name = [string]
-    [ Ensure = [string] { Absent | Present }  ]
+    [ Ensure = [string] { Enable | Disable }  ]
     [ Source = [string] ]
     [ NoWindowsUpdateCheck = [bool] ]
     [ RemoveFilesOnDisable = [bool] ]
@@ -34,12 +35,13 @@ WindowsOptionalFeature [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>“属性”
+<a id="properties" class="xliff"></a>
+## “属性”
 
 |  属性  |  说明   | 
 |---|---| 
 | 名称| 指示要确保启用或禁用的功能的名称。| 
-| Ensure| 指定是否启用功能。 若要确保启用功能，请将此属性设置为“Present”。若要确保禁用功能，请将此属性设为“Absent”。|
+| Ensure| 指定是否启用功能。 若要确保启用功能，请将此属性设置为“启用”。若要确保禁用功能，请将此属性设为“禁用”。|
 | 源| 未实现。|
 | NoWindowsUpdateCheck| 指定 DISM 在搜索源文件以启用功能时是否联系 Windows 更新 (WU)。 如果为 $true，则 DISM 不联系 WU。|
 | RemoveFilesOnDisable| 设置为 **$true** 可在功能禁用时（即，**Ensure** 设置为“Absent”时）删除与之关联的所有文件。|

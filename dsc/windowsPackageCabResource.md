@@ -1,28 +1,84 @@
 ---
-title: "DSC WindowsPackageCab 资源"
-ms.date: 2017-04-07
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: carmonmills
-ms.prod: powershell
-ms.openlocfilehash: 2e7ddc6f0ddd60f2395236981202c33040534e75
-ms.sourcegitcommit: 1002c473b88abb209e4188bb626d93675c3614e2
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "DSC WindowsPackageCab 资源"
+ms.openlocfilehash: 9b1bf3cb95abcbe46976ae0fd328280a3a8d7f28
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-windowspackagecab-resource"></a>DSC WindowsPackageCab 资源
+<a id="dsc-windowspackagecab-resource" class="xliff"></a>
+# DSC WindowsPackageCab 资源
 
-> 适用于：Windows PowerShell 5.0 及更高版本
+> 适用于：Windows PowerShell 5.1 及更高版本
 
+Windows PowerShell Desired State Configuration (DSC) 中的 WindowsPackageCab 资源提供了一种机制，用于在目标节点上安装或卸载 Windows Cabinet (.cab) 程序包。
 
-## <a name="syntax"></a>语法
-
-
-
-## <a name="properties"></a>“属性”
+目标节点必须已安装 DISM PowerShell 模块。 有关信息，请参阅[在 Windows PowerShell 中使用 DISM](https://msdn.microsoft.com/en-us/windows/hardware/commercialize/manufacture/desktop/use-dism-in-windows-powershell-s14)。 
 
 
+<a id="syntax" class="xliff"></a>
+## 语法
 
+```
+{
+    Name = [string]
+    Ensure = [string] { Absent | Present }
+    SourcePath = [string]
+    [ LogPath = [string] ]
+    [ DependsOn = [string[]] ]
+}
+```
 
-## <a name="example"></a>示例
+<a id="properties" class="xliff"></a>
+## “属性”
+
+|  属性  |  说明   | 
+|---|---| 
+| 名称| 指明要确保其处于特定状态的程序包的名称。| 
+| Ensure| 指示程序包是否已安装。 将此属性设置为“Absent”以确保未安装程序包（如果已安装则卸载程序包）。 将其设置为“Present”（默认值）以确保已安装程序包。|
+| 路径| 指示程序包所在的路径。| 
+| LogPath| 指示你希望提供程序用于保存安装或卸载程序包的日志文件的完整路径。| 
+| DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"``。| 
+
+<a id="example" class="xliff"></a>
+## 示例
+
+下面的示例配置需要使用输入参数，并确保安装了 `$Name` 参数指定的.cab 文件。
+
+```powershell
+Configuration Sample_WindowsPackageCab
+{
+    param
+    (
+        [Parameter (Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
+        [String]
+        $Name,
+
+        [Parameter (Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
+        [String]
+        $SourcePath,
+
+        [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
+        [String]
+        $LogPath
+    )
+
+    Import-DscResource -ModuleName 'PSDscResources'
+
+    WindowsPackageCab WindowsPackageCab1
+    {
+        Name = $Name
+        Ensure = 'Present'
+        SourcePath = $SourcePath
+        LogPath = $LogPath
+    }
+}
+```
+

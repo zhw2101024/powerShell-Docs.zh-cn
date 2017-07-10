@@ -1,23 +1,24 @@
 ---
-title: "DSC Archive 资源"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 77398d26f59975469e7c752a8d7f4f8bbbe4f553
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "DSC Archive 资源"
+ms.openlocfilehash: 035f7cc1b7f21f7a0df2d72db0ba83bc0688356c
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-archive-resource"></a>DSC Archive 资源
+<a id="dsc-archive-resource" class="xliff"></a>
+# DSC Archive 资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) 中的 Archive 资源提供了在指定路径下解压缩存档 (.zip) 文件的机制。
 
-## <a name="syntax"></a>语法 
+<a id="syntax" class="xliff"></a>
+## 语法 
 ```MOF
 Archive [string] #ResourceName
 {
@@ -31,7 +32,8 @@ Archive [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>“属性”
+<a id="properties" class="xliff"></a>
+## “属性”
 
 |  属性  |  说明   | 
 |---|---| 
@@ -43,7 +45,8 @@ Archive [string] #ResourceName
 | 验证| 使用校验和属性来确定存档是否和签名匹配。 如果指定校验和不指定验证，则配置会失败。 如果指定验证不指定校验和，则默认使用 SHA-256 校验和。| 
 | Force| 某些文件操作（如覆盖文件或删除不为空的目录）将导致错误。 使用 Force 属性覆盖此类错误。 默认值为 False。| 
 
-## <a name="example"></a>示例
+<a id="example" class="xliff"></a>
+## 示例
 
 下面的示例将演示如何使用存档资源来确保名为 Test.zip 的存档文件的内容存在，并将内容提取至指定的目标位置。
 

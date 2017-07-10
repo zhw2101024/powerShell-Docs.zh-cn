@@ -1,17 +1,18 @@
 ---
-title: "DSC GroupSet 资源"
-ms.date: 2016-05-16
-keywords: "powershell, DSC, 内置, 资源"
-description: "提供了管理目标节点上的本地组的机制。"
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 6e5ea98febfe7541f35a84c37df73df580654340
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+description: "提供了管理目标节点上的本地组的机制。"
+title: "DSC GroupSet 资源"
+ms.openlocfilehash: 0907a968bfc660adc873c28e8be6572d1d5cb993
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-groupset-resource"></a>DSC GroupSet 资源
+<a id="dsc-groupset-resource" class="xliff"></a>
+# DSC GroupSet 资源
 
 > 适用于：Windows PowerShell 5.0
 
@@ -19,7 +20,8 @@ Windows PowerShell Desired State Configuration (DSC) 中的 **GroupSet** 资源�
 
 当你要对多个组添加和/或删除相同成员列表、删除多个组或添加具有相同成员列表的多个组时，请使用此资源。
 
-##<a name="syntax"></a>语法##
+<a id="syntax" class="xliff"></a>
+##语法##
 ```
 Group [string] #ResourceName
 {
@@ -32,7 +34,8 @@ Group [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>“属性”
+<a id="properties" class="xliff"></a>
+## “属性”
 
 |  属性  |  说明   | 
 |---|---| 
@@ -44,7 +47,8 @@ Group [string] #ResourceName
 | MembersToInclude| 使用此属性将成员添加到组的现有成员资格中。 此属性的值是一组形式为 *Domain*\\*UserName* 的字符串。 如果你在配置中设置此属性，请勿使用 **Members** 属性。 这样做会导致错误生成。| 
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 __ResourceName__、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"``。| 
 
-## <a name="example-1"></a>示例 1
+<a id="example-1" class="xliff"></a>
+## 示例 1
 
 下面的示例演示如何确保名为“myGroup”和“myOtherGroup”的两个组存在。 
 

@@ -1,26 +1,24 @@
 ---
-manager: carmonm
-ms.topic: article
+ms.date: 2017-06-12
 author: rpsqrd
-ms.author: ryanpu
-ms.prod: powershell
-keywords: powershell,cmdlet,jea
-ms.date: 2016-12-05
+ms.topic: conceptual
+keywords: "jea,powershell,安全性"
 title: "使用 JEA"
-ms.technology: powershell
-ms.openlocfilehash: 62e5f74d60b2fd09e302ecc12996f97e90b73f2f
-ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.openlocfilehash: 9996a432bca27240e0f08adf932126ced116985d
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2017
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="using-jea"></a>使用 JEA
+<a id="using-jea" class="xliff"></a>
+# 使用 JEA
 
 > 适用于：Windows PowerShell 5.0
 
 本主题介绍连接和使用 JEA 终结点的各种方式。
 
-## <a name="using-jea-interactively"></a>以交互方式使用 JEA
+<a id="using-jea-interactively" class="xliff"></a>
+## 以交互方式使用 JEA
 
 如果你正在测试 JEA 配置或具有需要用户执行的简单任务，可以采用与进行常规 PowerShell 远程处理会话相同的方式使用 JEA。
 对于复杂的远程处理任务，建议改为使用[隐式远程处理](#using-jea-with-implicit-remoting)，允许用户在本地处理数据对象，以方便用户进行操作。
@@ -64,7 +62,8 @@ Start-VM -VMName 'SQL01'
 
 对于增加此方法难度的更复杂的命令调用，请考虑使用包含所需功能的[隐式远程处理](#using-jea-with-implicit-remoting)或[创建自定义函数](role-capabilities.md#creating-custom-functions)。
 
-## <a name="using-jea-with-implicit-remoting"></a>将 JEA 与隐式远程处理配合使用
+<a id="using-jea-with-implicit-remoting" class="xliff"></a>
+## 将 JEA 与隐式远程处理配合使用
 
 PowerShell 支持备用远程处理模型，在此模型中，用户可以将代理 cmdlet 从远程计算机导入本地计算机，并且可以如同本地命令一样与之交互。
 这称为隐式远程处理，[这篇 *Hey, Scripting Guy!*《你好，脚本专家！》博客文章](https://blogs.technet.microsoft.com/heyscriptingguy/2013/09/08/remoting-the-implicit-way/)中对此进行了详细介绍。
@@ -113,7 +112,8 @@ Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredComman
 还可以使用 [Export-pssession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession) 通过隐式远程处理保留代理 cmdlet。
 有关隐式远程处理的详细信息，请参阅 [Import-PSSession](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/import-pssession) 和 [Import-Module](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/import-module) 的帮助文档。
 
-## <a name="using-jea-programatically"></a>以编程方式使用 JEA
+<a id="using-jea-programatically" class="xliff"></a>
+## 以编程方式使用 JEA
 
 JEA 还可用于自动化系统和用户应用程序，例如内部的支持人员应用和 Web 站点。
 该方法和生成与非约束 PowerShell 终结点进行会话的应用所用的方法相同，同时警告程序应该注意 JEA 将限制可在远程会话中运行的命令。
@@ -171,7 +171,8 @@ using (Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo))
 }
 ```
 
-## <a name="using-jea-with-powershell-direct"></a>将 JEA 与 PowerShell Direct 配合使用
+<a id="using-jea-with-powershell-direct" class="xliff"></a>
+## 将 JEA 与 PowerShell Direct 配合使用
 
 Windows 10 和 Windows Server 2016 中的 Hyper-V 提供 [PowerShell Direct](https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/vmsession) 功能，以便 Hyper-V 管理员可以使用 PowerShell 管理虚拟机，无论虚拟机上的网络配置或远程管理设置如何。
 
@@ -193,3 +194,4 @@ Enter-PSSession -VMId $vm.VMId -ConfigurationName 'NICMaintenance' -Credential '
 请注意，默认情况下，即使是没有特权的用户，也仍可登录 Windows 计算机（包括使用不受限制的 PowerShell）。
 这将使他们能够浏览（某些）文件系统，并深入了解操作系统环境。
 若要将 Hyper-V 管理员限制为只能通过将 PowerShell Direct 与 JEA 结合使用来访问 VM，则需要拒绝向 Hyper-V 管理员的 JEA 帐户授予本地登录权限。
+

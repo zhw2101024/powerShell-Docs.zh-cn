@@ -1,17 +1,17 @@
 ---
-title: "使用配置名称设置请求客户端"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 03db9843209038f7a14b46cf8a27316f1c63a819
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "使用配置名称设置请求客户端"
+ms.openlocfilehash: 9bfcac87300d30a59b66e60ed24add32e2420e21
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="setting-up-a-pull-client-using-configuration-names"></a>使用配置名称设置请求客户端
+<a id="setting-up-a-pull-client-using-configuration-names" class="xliff"></a>
+# 使用配置名称设置请求客户端
 
 > 适用于：Windows PowerShell 5.0
 
@@ -73,7 +73,8 @@ Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigNames –Ve
 对于 SMB 请求服务器，你仍必须使用 **ConfigurationID**。
 有关使用 **ConfigurationID** 配置请求服务器的信息，请参阅[使用配置 ID 设置请求客户端](PullClientConfigNames.md)
 
-## <a name="resource-and-report-servers"></a>资源和报表服务器
+<a id="resource-and-report-servers" class="xliff"></a>
+## 资源和报表服务器
 
 如果你在 LCM 配置中只指定 **ConfigurationRepositoryWeb** 或 **ConfigurationRepositoryShare** 块（如同上一个示例所示），请求客户端会从指定服务器请求资源，但不会向它发送报表。
 虽然你可以将一个请求服务器用于配置、资源和报告，但必须创建 **ReportRepositoryWeb** 块来设置报表。
@@ -148,7 +149,9 @@ configuration PullClientConfigNames
 PullClientConfigNames
 ```
 
-## <a name="see-also"></a>另请参阅
+<a id="see-also" class="xliff"></a>
+## 另请参阅
 
 * [使用配置 ID 设置请求客户端](PullClientConfigNames.md)
 * [设置 DSC Web 请求服务器](pullServer.md)
+

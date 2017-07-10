@@ -1,25 +1,24 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
+ms.topic: reference
+keywords: "库,powershell,cmdlet,psget"
 title: modulewithpseditionsupport
-ms.technology: powershell
-ms.openlocfilehash: 042df39b52cfb1cce9a44689ca40b42763321853
-ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
-translationtype: HT
+ms.openlocfilehash: 8122756b78e18fe55daef5c46dc299b87ddcaf1a
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="modules-with-compatible-powershell-editions"></a>具有兼容的 PowerShell 版本的模块
+<a id="modules-with-compatible-powershell-editions" class="xliff"></a>
+# 具有兼容的 PowerShell 版本的模块
 从版本 5.1 开始，PowerShell 以表现出不同功能集和平台兼容性的不同版本提供。
 
 - **桌面版：**以 .NET Framework 为基础构建，提供与面向在完整功能 Windows 版本（如服务器核心和 Windows 桌面）上运行的 PowerShell 版本的脚本和模块的兼容性。
 - **核心版：**以 .NET Core 为基础构建，提供与面向在缩减功能 Windows 版本（如 Nano Server 和 Windows IoT）上运行的 PowerShell 版本的脚本和模块的兼容性。
 
-## <a name="the-running-edition-of-powershell-is-shown-in-the-psedition-property-of-psversiontable"></a>正在运行的 PowerShell 版本显示在 $PSVersionTable.的 PSEdition 属性中。
+<a id="the-running-edition-of-powershell-is-shown-in-the-psedition-property-of-psversiontable" class="xliff"></a>
+## 正在运行的 PowerShell 版本显示在 $PSVersionTable.的 PSEdition 属性中。
 ```powershell
 $PSVersionTable
 
@@ -35,7 +34,8 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
 
-## <a name="module-authors-can-declare-their-modules-to-be-compatible-with-one-or-more-powershell-editions-using-the-compatiblepseditions-module-manifest-key-this-key-is-only-supported-on-powershell-51-or-later"></a>模块作者可使用 CompatiblePSEditions 模块清单键声明其模块，使其与一个或多个 PowerShell 版本兼容。 仅 PowerShell 5.1 或更高版本支持该键。
+<a id="module-authors-can-declare-their-modules-to-be-compatible-with-one-or-more-powershell-editions-using-the-compatiblepseditions-module-manifest-key-this-key-is-only-supported-on-powershell-51-or-later" class="xliff"></a>
+## 模块作者可使用 CompatiblePSEditions 模块清单键声明其模块，使其与一个或多个 PowerShell 版本兼容。 仅 PowerShell 5.1 或更高版本支持该键。
 注意 使用 CompatiblePSEditions 键指定模块清单后，该清单无法导入到较低版本的 PowerShell。
 
 ```powershell
@@ -71,15 +71,18 @@ Core
 
 ```
 
-## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a>模块作者可发布面向 PowerShell 的两个版本（Desktop 和 Core）或其中之一的单一模块 
+<a id="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core" class="xliff"></a>
+## 模块作者可发布面向 PowerShell 的两个版本（Desktop 和 Core）或其中之一的单一模块 
 
 由于模块作者必须使用 $PSEdition 变量在 RootModule 或模块清单中添加所需的逻辑，因此单一模块可同时在 Desktop 和 Core 版本上运行。
 模块可以有两套以 CoreCLR 和 FullCLR 为目标的已编译 DLL。
 以下是两种使用逻辑打包模块来加载合适的 dll 的选项。
 
-### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>选项 1：打包面向多个版本和多个 PowerShell 版本的模块
+<a id="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell" class="xliff"></a>
+### 选项 1：打包面向多个版本和多个 PowerShell 版本的模块
 
-#### <a name="module-folder-contents"></a>模块文件夹内容
+<a id="module-folder-contents" class="xliff"></a>
+#### 模块文件夹内容
 - Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll 
 - Microsoft.Windows.PowerShell.ScriptAnalyzer.dll 
 - PSScriptAnalyzer.psd1
@@ -98,7 +101,8 @@ Core
 - Settings\ScriptingStyle.psd1
 - Settings\ScriptSecurity.psd1
 
-#### <a name="contents-of-psscriptanalyzerpsd1-file"></a>PSScriptAnalyzer.psd1 文件内容
+<a id="contents-of-psscriptanalyzerpsd1-file" class="xliff"></a>
+#### PSScriptAnalyzer.psd1 文件内容
 
 ```powershell
 @{
@@ -116,7 +120,8 @@ ModuleVersion = '1.6.1'
 }
 ```
 
-#### <a name="contents-of-psscriptanalyzerpsm1-file"></a>PSScriptAnalyzer.psm1 文件内容
+<a id="contents-of-psscriptanalyzerpsm1-file" class="xliff"></a>
+#### PSScriptAnalyzer.psm1 文件内容
 以下逻辑基于当前版本加载所需程序集。
 
 ```powershell
@@ -153,7 +158,8 @@ $PSModule.OnRemove = {
 
 ```
 
-### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>选项 2：使用 PSD1 文件中的 $PSEdition 变量加载适当的 Dll 和嵌套/必需模块
+<a id="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules" class="xliff"></a>
+### 选项 2：使用 PSD1 文件中的 $PSEdition 变量加载适当的 Dll 和嵌套/必需模块
 
 在 PS 5.1 或更高版本中，模块清单文件中允许使用 $PSEdition 全局变量。
 使用此变量，模块作者可在模块清单文件中指定条件值。 可在受限语言模式或数据部分引用 $PSEdition 变量。 
@@ -161,7 +167,8 @@ $PSModule.OnRemove = {
 注意 通过 CompatiblePSEditions 键或使用 $PSEdition 变量指定模块清单后，该清单无法导入到较低版本的 PowerShell。
 
 
-#### <a name="sample-module-manifest-file-with-compatiblepseditions-key"></a>具有 CompatiblePSEditions 键的示例模块清单
+<a id="sample-module-manifest-file-with-compatiblepseditions-key" class="xliff"></a>
+#### 具有 CompatiblePSEditions 键的示例模块清单
 
 ```powershell
 @{ 
@@ -196,7 +203,8 @@ else # Desktop
 }
 ```
 
-#### <a name="module-contents"></a>模块内容
+<a id="module-contents" class="xliff"></a>
+#### 模块内容
 
 ```powershell
 
@@ -227,7 +235,8 @@ Mode                LastWriteTime         Length Name
 -a----         7/5/2016   1:35 PM              0 MyCoreClrRM.dl                                                                      
 ```
 
-## <a name="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditoncore"></a>PowerShell 库用户可使用 PSEdition_Desktop 和 PSEditon_Core 标记查找某特定 PowerShell 版本支持的模块列表。
+<a id="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditoncore" class="xliff"></a>
+## PowerShell 库用户可使用 PSEdition_Desktop 和 PSEditon_Core 标记查找某特定 PowerShell 版本支持的模块列表。
 不带 PSEdition_Desktop 和 PSEditon_Core 标记的模块可以在 PowerShell Desktop 版本上运行。
 
 ```powershell
@@ -241,8 +250,12 @@ Find-Module -Tag PSEditon_Core
 ```
 
 
-## <a name="more-details"></a>详细信息
-### <a name="scripts-with-pseditionsscriptscriptwithpseditionsupportmd"></a>[PSEditions 脚本](../script/scriptwithpseditionsupport.md)
-### <a name="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd"></a>[PowerShell 库的 PSEditions 支持](../../psgallery/psgallery_pseditions.md)
-### <a name="update-module-manifest-psgetupdate-modulemanifestmd"></a>[更新模块清单] (./psget_update-modulemanifest.md)
+<a id="more-details" class="xliff"></a>
+## 详细信息
+<a id="scripts-with-pseditionsscriptscriptwithpseditionsupportmd" class="xliff"></a>
+### [PSEditions 脚本](../script/scriptwithpseditionsupport.md)
+<a id="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd" class="xliff"></a>
+### [PowerShell 库的 PSEditions 支持](../../psgallery/psgallery_pseditions.md)
+<a id="update-module-manifest-psgetupdate-modulemanifestmd" class="xliff"></a>
+### [更新模块清单] (./psget_update-modulemanifest.md)
 

@@ -1,17 +1,17 @@
 ---
-title: "DSC Script 资源"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 56eb7ef230d84cc5f5679f39e13e2019205c65f5
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "DSC Script 资源"
+ms.openlocfilehash: 81718de0b0c8463189e33e565dc9ff39692dbe8b
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-script-resource"></a>DSC Script 资源
+<a id="dsc-script-resource" class="xliff"></a>
+# DSC Script 资源
 
  
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
@@ -27,7 +27,8 @@ Windows PowerShell Desired State Configuration (DSC) 中的 **Script** 资源提
 如果需要从 `GetScript`、`TestScript` 或者 `SetScript` 脚本块内的配置脚本使用变量，请使用 `$using:` 作用域（参见以下内容为例）。
 
 
-## <a name="syntax"></a>语法
+<a id="syntax" class="xliff"></a>
+## 语法
 
 ```
 Script [string] #ResourceName
@@ -40,7 +41,8 @@ Script [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>“属性”
+<a id="properties" class="xliff"></a>
+## “属性”
 
 |  属性  |  说明   | 
 |---|---| 
@@ -50,7 +52,8 @@ Script [string] #ResourceName
 | 凭据| 指示要用于运行此脚本的凭据（如果需要凭据）。| 
 | DependsOn| 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。
 
-## <a name="example-1"></a>示例 1
+<a id="example-1" class="xliff"></a>
+## 示例 1
 ```powershell
 $version = Get-Content 'version.txt'
 
@@ -72,7 +75,8 @@ Configuration ScriptTest
 }
 ```
 
-## <a name="example-2"></a>示例 2
+<a id="example-2" class="xliff"></a>
+## 示例 2
 ```powershell
 $version = Get-Content 'version.txt'
 
@@ -84,7 +88,7 @@ Configuration ScriptTest
     {
         GetScript = { 
             $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
-            return @{ 'Result' = "Version: $currentVersion" }
+            return @{ 'Version' = "$currentVersion" }
         }          
         TestScript = { 
             $state = $GetScript

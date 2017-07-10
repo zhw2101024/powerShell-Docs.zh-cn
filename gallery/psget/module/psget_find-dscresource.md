@@ -1,23 +1,22 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_find dscresource
-ms.technology: powershell
-ms.openlocfilehash: afd13e1dd791794d62be4601477bcc77448586c5
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: "库,powershell,cmdlet,psget"
+title: Find-DscResource
+ms.openlocfilehash: 37ba7925d6f73c453126f25e0818b3f8839d3b3b
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="find-dscresource"></a>Find-DscResource
+<a id="find-dscresource" class="xliff"></a>
+# Find-DscResource
 
 在模块中查找 DSC 资源。
 
-## <a name="description"></a>说明
+<a id="description" class="xliff"></a>
+## 说明
 
 Find-DscResource cmdlet 查找已注册的存储库中与指定条件匹配的模块中所包含的[所需状态配置 (DSC)](https://msdn.microsoft.com/en-us/PowerShell/dsc/overview) 资源。
 对于此 cmdlet 查找的每个模块，Find-DscResource 返回一个 PSGetDscResourceInfo 对象，可以将其通过管道传递到 Install-Module 以安装包含此 cmdlet 返回的资源的模块。
@@ -37,16 +36,19 @@ Desired State Configuration (DSC) 资源为 DSC 配置提供构建基块。 资�
 - Find-DscResource 可使用 -Filter 参数对存储库特定搜索语言进行筛选。
 - Find-DscResource 可从所有或少数已注册存储库中对模块进行筛选。
 
-## <a name="cmdlet-syntax"></a>Cmdlet 语法
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet 语法
 ```powershell
 Get-Command -Name Find-DscResource -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet 联机帮助参考
 
 [Find-DscResource](http://go.microsoft.com/fwlink/?LinkId=517196)
 
-## <a name="example-commands"></a>示例命令
+<a id="example-commands" class="xliff"></a>
+## 示例命令
 ```powershell
 
 # Find a specific DSC Resource

@@ -1,7 +1,20 @@
-# <a name="format-hex"></a>Format-Hex
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,安装程序"
+ms.openlocfilehash: 0749f942d542f0e10292a49a6bb1fe47c7fd53df
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
+---
+<a id="format-hex" class="xliff"></a>
+# Format-Hex
 **Format-Hex** 使你可以以十六进制格式查看文本或二进制数据；请参阅 [Format-Hex](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-hex)
 
-## <a name="example-1"></a>示例 1
+<a id="example-1" class="xliff"></a>
+## 示例 1
 以十六进制格式查看字符串内容。
 
 ```PowerShell
@@ -24,3 +37,4 @@ PS C:\> This is a very long line to force the line folding in Format-Hex cmdlet"
 
 PS C:\>
 ```
+

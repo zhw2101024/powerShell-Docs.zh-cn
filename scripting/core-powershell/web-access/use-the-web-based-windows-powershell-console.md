@@ -1,18 +1,15 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "使用基于 Web 的 Windows PowerShell 控制台"
-ms.technology: powershell
-ms.openlocfilehash: ea530d346ec36000da331b287f51d8f732947629
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 48ed1646c00f909c4e950f197f51a30205060ef0
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
-#  <a name="use-the-web-based-windows-powershell-console"></a>使用基于 Web 的 Windows PowerShell 控制台
+<a id="use-the-web-based-windows-powershell-console" class="xliff"></a>
+#  使用基于 Web 的 Windows PowerShell 控制台
 
 更新时间：2013年 6 月 24日
 
@@ -90,7 +87,8 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵组织 Windows PowerShell Web 访问网关网站的地址。 默认情况下，此网址的地址为 https://&lt;server_name&gt;/pswa。 在登录到 Windows PowerShell Web 访问之前，确保拥有想要管理的远程计算机的名称或 IP 地址。 你必须是远程计算机上的授权用户，并且必须将远程计算机配置为可远程管理。 有关将计算机配置为可远程管理的详细信息，请参阅[在 Windows PowerShell 中启用和使用远程命令](https://technet.microsoft.com/magazine/ff700227.aspx)。 将计算机配置为可远程管理的最简单方法是：在使用提升的用户权限打开的 Windows PowerShell 会话中（**以管理员身份运行**），在计算机上运行**Enable-PSRemoting -force** cmdlet。
 
-### <a name="to-sign-in-to-windows-powershell-web-access"></a>登录到 Windows PowerShell Web Access
+<a id="to-sign-in-to-windows-powershell-web-access" class="xliff"></a>
+### 登录到 Windows PowerShell Web Access
 
 1.  在 Internet 浏览器窗口或选项卡中打开 Windows PowerShell Web 访问网站。
 
@@ -278,11 +276,9 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
 </table>
 
 <a href="" id="BKMK_limits"></a>
-
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">
-基于 Web 的控制台的限制</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Web 控制台限制</span></a>
 
 ------------------------------------------------------------------------
 

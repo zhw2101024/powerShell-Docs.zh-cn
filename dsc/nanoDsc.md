@@ -1,17 +1,17 @@
 ---
-title: "使用 Nano Server 上的 DSC"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: a8faf242fcc8c72461d6cb7609a562fbb92dfdb9
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "使用 Nano Server 上的 DSC"
+ms.openlocfilehash: 2233106bfd07144132f95ea7957ebfa3248ca219
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="using-dsc-on-nano-server"></a>使用 Nano Server 上的 DSC
+<a id="using-dsc-on-nano-server" class="xliff"></a>
+# 使用 Nano Server 上的 DSC
 
 > 适用于：Windows PowerShell 5.0
 
@@ -24,7 +24,8 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 若要了解如何安装和使用 Nano Server，以及如何使用 PowerShell 远程处理来管理 Nano Server，请参阅 [Getting Started with Nano Server（Nano Server 入门）](https://technet.microsoft.com/en-us/library/mt126167.aspx)。
 
 
-## <a name="dsc-features-available-on-nano-server"></a>Nano Server 上可用的 DSC 功能
+<a id="dsc-features-available-on-nano-server" class="xliff"></a>
+## Nano Server 上可用的 DSC 功能
 
  由于与完整版的 Windows Server 相比，Nano Server 仅支持一组数量有限的 API，因此 Nano Server 上的 DSC 暂时没有与完整 SKU 上运行的 DSC 等同的完整功能。 Nano Server 上的 DSC 正处于积极开发中，且功能尚未完善。
  
@@ -113,7 +114,8 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
   * [用户](userResource.md)
   
 
-## <a name="dsc-features-not-available-on-nano-server"></a>Nano Server 上不可用的 DSC 功能
+<a id="dsc-features-not-available-on-nano-server" class="xliff"></a>
+## Nano Server 上不可用的 DSC 功能
 
 下面的 DSC 功能当前在 Nano 服务器上不可用：
 
@@ -121,10 +123,12 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 * 请求服务器 - 当前不能在 Nano Server 上设置请求服务器
 * 不在功能工作列表中的任何内容
 
-## <a name="using-custom-dsc-resources-on-nano-server"></a>在 Nano Server 上使用自定义 DSC 资源
+<a id="using-custom-dsc-resources-on-nano-server" class="xliff"></a>
+## 在 Nano Server 上使用自定义 DSC 资源
  
 由于 Nano Server 上仅可使用的有限的 Windows API 集和 CLR 库，因此在完整 CLR 版的 Windows 上运行的 DSC 资源并不一定适用于 Nano Server。 在部署任意 DSC 资源到生产环境之前，先完成端到端测试。
 
-## <a name="see-also"></a>另请参阅
+<a id="see-also" class="xliff"></a>
+## 另请参阅
 - [Nano Server 入门](https://technet.microsoft.com/en-us/library/mt126167.aspx)
 

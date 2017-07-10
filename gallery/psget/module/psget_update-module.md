@@ -1,23 +1,22 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: "psget_update 模块"
-ms.technology: powershell
-ms.openlocfilehash: 3f843bcf667bdb40f45613911647acf464cbbf29
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: "库,powershell,cmdlet,psget"
+title: Update-Module
+ms.openlocfilehash: 343c296dad2a3df35f13393b3796a1d484f5f535
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="update-module"></a>Update-Module
+<a id="update-module" class="xliff"></a>
+# Update-Module
 
 从联机库中下载指定模块的最新版本，并将其安装到本地计算机。
 
-## <a name="description"></a>说明
+<a id="description" class="xliff"></a>
+## 说明
 
 Update-Module cmdlet 安装通过在本地计算机上运行 Install-Module 从联机库中安装的 Windows PowerShell 模块的较新版本。
 
@@ -25,7 +24,8 @@ Update-Module cmdlet 安装通过在本地计算机上运行 Install-Module 从�
 
 运行 Update-Module（不使用 Name 参数）更新可在本地计算机上更新的所有模块。
 
-### <a name="notes"></a>注释
+<a id="notes" class="xliff"></a>
+### 注释
 
 - 此 cmdlet 在 Windows PowerShell 3.0 或更高版本的 Windows PowerShell、Windows 7 或 Windows 2008 R2 及 Windows 的更高版本上运行。
 - 如果未通过 Install-Modul 安装使用参数名称指定的模块，将出现错误。 只能通过运行 Install-Module 在从联机库安装的模块上运行 Update-Module。
@@ -33,17 +33,20 @@ Update-Module cmdlet 安装通过在本地计算机上运行 Install-Module 从�
 - 在 PowerShell 5.0 或更新的版本上，Update-Module 更新模块时会添加该模块的最新（或指定）版本，因此较旧和较新版本现将在同一目录中并存。 显示一个这些命令的输出示例将很有用。
 
 
-## <a name="cmdlet-syntax"></a>Cmdlet 语法
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet 语法
 ```powershell
 Get-Command -Name Update-Module -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet 联机帮助参考
 
 [Update-Module](http://go.microsoft.com/fwlink/?LinkID=398576)
 
 
-## <a name="example-commands"></a>示例命令
+<a id="example-commands" class="xliff"></a>
+## 示例命令
 
 ```powershell
 PS C:\\windows\\system32> Update-Module -Name ContosoServer -RequiredVersion 1.5
@@ -87,7 +90,8 @@ Version Name Repository Description
 ```
 
 
-###  <a name="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>更新 TestDepWithNestedRequiredModules1 模块及其依赖项。
+<a id="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies" class="xliff"></a>
+###  更新 TestDepWithNestedRequiredModules1 模块及其依赖项。
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -AllVersions
 

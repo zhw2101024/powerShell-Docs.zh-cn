@@ -1,20 +1,21 @@
 ---
-title: "对 Just Enough Administration (JEA) 的改进"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC, WMF, JEA
-description: 
-ms.topic: article
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,安装程序"
 contributor: ryanpu
-manager: dongill
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: 1b054b67bfd7b3660bac134bc8b023baf5644507
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+title: "对 Just Enough Administration (JEA) 的改进"
+ms.openlocfilehash: 2811b4deb3f4fca513791c7389ee5f9f877dbfe8
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="improvements-to-just-enough-administration-jea"></a>对 Just Enough Administration (JEA) 的改进
+<a id="improvements-to-just-enough-administration-jea" class="xliff"></a>
+# 对 Just Enough Administration (JEA) 的改进
 
-## <a name="constrained-file-copy-tofrom-jea-endpoints"></a>指向/来自 JEA 终结点的受约束的文件副本
+<a id="constrained-file-copy-tofrom-jea-endpoints" class="xliff"></a>
+## 指向/来自 JEA 终结点的受约束的文件副本
 
 现可将文件远程复制到 JEA 终结点或远程复制其中的文件，并确信连接用户不能复制你系统上的*任意*文件。
 这可通过配置 PSSC 文件为连接用户安装用户驱动器来实现。
@@ -47,7 +48,8 @@ Copy-Item -Path User:\SampleFile.txt -Destination . -FromSession $jeasession
 
 随后可编写自定义函数以处理用户驱动器中存储的数据，并将其提供“角色功能”文件中的用户。
 
-## <a name="support-for-group-managed-service-accounts"></a>支持组托管服务帐户
+<a id="support-for-group-managed-service-accounts" class="xliff"></a>
+## 支持组托管服务帐户
 
 在某些情况下，用户需在 JEA 会话中执行的任务可能需要访问本地计算机以外的资源 。
 当 JEA 会话配置为使用虚拟帐户时，任何接触此类资源的尝试都将来自本地计算机的 ID，而非虚拟帐户或已连接用户。
@@ -69,7 +71,8 @@ RunAsVirtualAccount = $false
 > 每个连接用户都将共享同一 gMSA 标识，这一标识可能拥有整个企业范围内的权限。
 > 选择使用 gMSA 时请格外小心；若可能，请始终优先使用限于本地计算机的虚拟帐户。
 
-## <a name="conditional-access-policies"></a>条件访问策略
+<a id="conditional-access-policies" class="xliff"></a>
+## 条件访问策略
 
 JEA 可很好地限制用户在连接到系统进行管理时可执行的操作；但如果你还想限制用户可使用 JEA 的*时间*，该如何操作？
 我们已向会话配置文件 (.pssc) 添加了配置选项，使你能够指定用户为建立 JEA 会话而必须归属的安全组。
@@ -91,6 +94,8 @@ RequiredGroups = @{ Or = '2FA-logon', 'smartcard-logon' }
 RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon' }}
 ```
 
-## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>已修复：Windows Server 2008 R2 现支持虚拟帐户
+<a id="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2" class="xliff"></a>
+## 已修复：Windows Server 2008 R2 现支持虚拟帐户
 在 WMF 5.1 中，现可在 Windows Server 2008 R2 上使用虚拟帐户，从而跨 Windows Server 2008 R2 - 2016 实现一致的配置和功能。
 在 Windows 7 上使用 JEA 时，虚拟帐户仍不受支持。
+

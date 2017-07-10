@@ -1,30 +1,32 @@
 ---
-title: "Desired State Configuration 快速入门"
-ms.date: 2017-03-13
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: carmonm
-ms.prod: powershell
-ms.openlocfilehash: 7b905a887c5ca6121d7bda246e241f3ffae80210
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "Desired State Configuration 快速入门"
+ms.openlocfilehash: 64c9cea7d65d0723e76c205aea104c3ec9423c1d
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
-# <a name="desired-state-configuration-quick-start"></a>Desired State Configuration 快速入门
+<a id="desired-state-configuration-quick-start" class="xliff"></a>
+# Desired State Configuration 快速入门
 
 本练习演示创建和应用 Desired State Configuration (DSC) 配置的完整过程。
 我们使用的示例可确保服务器启用了 `Web-Server`(IIS) 功能，并且该服务器的 `intetpub\wwwroot` 目录中存在一个简单“Hello World”网站的内容。
 
 有关什么是 DSC 及其工作原理的概述，请参阅[适用于决策者的 Desired State Configuration 概述](DscForEngineers.md)。
 
-## <a name="requirements"></a>要求
+<a id="requirements" class="xliff"></a>
+## 要求
 
 要运行此示例，需要运行 Windows Server 201 2或更高版本以及 PowerShell 4.0 或更高版本的计算机。
 
-## <a name="write-and-place-the-indexhtm-file"></a>编写并放置 index.htm 文件
+<a id="write-and-place-the-indexhtm-file" class="xliff"></a>
+## 编写并放置 index.htm 文件
 
 首先，创建用作网站内容的 HTML 文件。
 
@@ -41,7 +43,8 @@ translationtype: HT
 
 在之前创建的 `test` 文件夹中将它另存为 `index.htm`。 
 
-## <a name="write-the-configuration"></a>写入配置
+<a id="write-the-configuration" class="xliff"></a>
+## 写入配置
 
 [DSC 配置](configurations.md)是一个特殊的 PowerShell 功能，可定义用于配置一个或多个目标计算机（节点）的方式。
 
@@ -59,7 +62,7 @@ Configuration WebsiteTest {
         # The first resource block ensures that the Web-Server (IIS) feature is enabled.
         WindowsFeature WebServer {
             Ensure = "Present"
-            Name =    "Web-Server"
+            Name =  "Web-Server"
         }
 
         # The second resource block ensures that the website content copied to the website root folder.
@@ -81,7 +84,8 @@ Configuration WebsiteTest {
 此配置调用两个 [resource](resources.md)、[WindowsFeature](windowsFeatureResource.md) 和 [File](fileResource.md)。
 资源负责确保目标节点处于由配置定义的状态。
 
-## <a name="compile-the-configuration"></a>编译配置
+<a id="compile-the-configuration" class="xliff"></a>
+## 编译配置
 
 对于要应用于节点的 DSC 配置，必须首先将其编译为 MOF 文件。
 为此，你可以如运行功能一样运行配置。
@@ -108,7 +112,8 @@ Mode                LastWriteTime         Length Name
 结果是创建了一个名为 `WebsiteTest` 的新文件夹作为当前文件夹的子文件夹。
 `WebsiteTest` 文件夹包含一个名为 `localhost.mof` 的文件。 然后可将此文件应用于目标节点。
 
-## <a name="apply-the-configuration"></a>应用配置
+<a id="apply-the-configuration" class="xliff"></a>
+## 应用配置
 
 现在你已编译好 MOF，可以通过调用 [Start-DscConfiguration](/reference/5.1/PSDesiredStateConfiguration/Start-DscConfiguration.md) cmdlet 将配置应用于目标节点（在本例中为本地计算机）。
 
@@ -121,13 +126,15 @@ LCM 的工作是调用 DSC 资源以应用配置。
 Start-DscConfiguration .\WebsiteTest
 ```
 
-## <a name="test-the-configuration"></a>测试配置
+<a id="test-the-configuration" class="xliff"></a>
+## 测试配置
 
 你可以调用 [Get-DscConfigurationStatus](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus.md) cmdlet 查看配置是否成功。 
 
 此外，还可以直接测试结果，在本例中可通过浏览 Web 浏览器中的 `http://localhost/` 进行测试。 你将看到在本示例的第一步中所创建的“Hello World”HTML 页面。
 
-## <a name="next-steps"></a>后续步骤
+<a id="next-steps" class="xliff"></a>
+## 后续步骤
 
 - 在 [DSC 配置](configurations.md)中了解有关 DSC 配置的详细信息。
 - 查看哪些 DSC 资源可用，以及如何在 [DSC 资源](resources.md)中创建自定义 DSC 资源。

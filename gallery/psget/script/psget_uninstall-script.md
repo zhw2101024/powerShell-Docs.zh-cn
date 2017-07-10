@@ -1,36 +1,38 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: "psget_uninstall 脚本"
-ms.technology: powershell
-ms.openlocfilehash: 9cc6ee62720bfca858e7f783753adabe8a53fb29
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: "库,powershell,cmdlet,psget"
+title: Uninstall-Script
+ms.openlocfilehash: 7973524cf9268d629b5375f0726fe70164bdeddb
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="uninstall-script"></a>Uninstall-Script
+<a id="uninstall-script" class="xliff"></a>
+# Uninstall-Script
 
 卸载使用 PowerShellGet 安装的脚本文件。
 
-## <a name="description"></a>说明
+<a id="description" class="xliff"></a>
+## 说明
 
 Uninstall-Script cmdlet 卸载从联机存储库安装的指定脚本文件。
 
-## <a name="cmdlet-syntax"></a>Cmdlet 语法
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet 语法
 
 ```powershell
 Get-Command -Name Uninstall-Script -Module PowerShellGet -Syntax
 ```
-## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet 联机帮助参考
 
 [Uninstall-Script](http://go.microsoft.com/fwlink/?LinkId=619789)
 
-## <a name="example-commands"></a>示例命令
+<a id="example-commands" class="xliff"></a>
+## 示例命令
 
 ```powershell
 Get-InstalledScript | Uninstall-Script -WhatIf

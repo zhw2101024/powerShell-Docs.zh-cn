@@ -1,4 +1,16 @@
-# <a name="extract-and-parse-structured-objects-out-of-string"></a>提取和分析字符串外的结构化对象
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,安装程序"
+ms.openlocfilehash: 3413672e73705252225300a853c10a514500baa2
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
+---
+<a id="extract-and-parse-structured-objects-out-of-string" class="xliff"></a>
+# 提取和分析字符串外的结构化对象
 这也为 ConvertFrom-String cmdlet 引入了一些附加功能：
 
 -   默认情况下删除盘区文本属性。 可以将其包含于 -IncludeExtent 参数中。
@@ -8,7 +20,8 @@
 -   新 -UpdateTemplate 参数，用于将学习算法的结果保存到模板文件中的注释内。 这使得学习过程（速度最慢的阶段）成为一次性完成的过程。 使用包含已编码学习算法的模板来运行 Convert-String 现为近即时行为。
 
 
-<a name="extract-and-parse-structured-objects-out-of-string-content"></a>从字符串内容中提取并分析结构化对象
+<a id="extract-and-parse-structured-objects-out-of-string-content" class="xliff"></a>
+从字符串内容中提取并分析结构化对象
 ----------------------------------------------------------
 
 与 [Microsoft Research](http://research.microsoft.com/) 协作添加了一个新的 **ConvertFrom-String** cmdlet。
@@ -17,8 +30,7 @@
 
 默认情况下，分隔分析会在空格处将输入拆分，并为得到的组分配属性名称。 你可以自定义分隔符：
 
-> 1 \[C:\\temp\]
-> &gt;&gt;“Hello World”| ConvertFrom-String | Format-Table -Auto
+> 1 \[C:\\temp\] &gt;&gt; "Hello World" | ConvertFrom-String | Format-Table -Auto
 
 P1    P2
 --    --

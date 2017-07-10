@@ -1,6 +1,19 @@
-# <a name="powershellget-cmdlets-for-script-management"></a>用于脚本管理的 PowerShellGet cmdlet
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,安装程序"
+ms.openlocfilehash: 2d56df459a4e09a16ab16c02f7ca2744c779206f
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
+---
+<a id="powershellget-cmdlets-for-script-management" class="xliff"></a>
+# 用于脚本管理的 PowerShellGet cmdlet
 
-## <a name="find-script-cmdlet"></a>Find-Script cmdlet
+<a id="find-script-cmdlet" class="xliff"></a>
+## Find-Script cmdlet
 Find-Script cmdlet 可使用不同的搜索条件（如名称、标记、筛选器、命令名、版本范围、确切版本、所有版本及其依赖项和来自特定的或所有已注册的存储库）来发现脚本文件。
 
 示例用法：
@@ -139,7 +152,8 @@ Workflow {Test-WorkflowFromScript\_Fabrikam-ClientScript}
 Command {Test-FunctionFromScript\_Fabrikam-ClientScript, Test-WorkflowFromScript\_Fabrikam-ClientScript}
 ```
 
-## <a name="save-script-cmdlet"></a>Save-Script cmdlet
+<a id="save-script-cmdlet" class="xliff"></a>
+## Save-Script cmdlet
 Save-Script cmdlet 可通过将其保存到特定位置来查看脚本文件。
 ```powershell
 \# Save a script file to the specified location for the script analysis
@@ -152,7 +166,8 @@ Version Name Author Description
 1.5 Fabrikam-ClientScript manikb Description for the Fabrikam-ClientScript script
 ```
 
-## <a name="install-script-and-get-installedscript-cmdlets"></a>Install-Script cmdlet 和 Get-InstalledScript cmdlet
+<a id="install-script-and-get-installedscript-cmdlets" class="xliff"></a>
+## Install-Script cmdlet 和 Get-InstalledScript cmdlet
 Install-Script cmdlet 可用于将特定的脚本文件及其依赖项安装到指定的作用域。 默认情况下，脚本将安装到 AllUsers 作用域。 Get-InstalledScript cmdlet 可用于获取使用 Install-Script cmdlet 安装的脚本文件列表。
 
 使用注意事项：为了在安装脚本之后能够对其进行管理和定位，Install-script 将在 $home\Documents\WindowsPowerShell\Scripts 创建默认文件夹用于存储脚本，并将该文件夹添加到 PATH 环境。 如果担心修改路径会出现问题，请使用 Save-Script 而非 Install-Script。 Get InstalledScripts 和 Uninstall-Script 只能处理使用 Install-Script 放置在系统上的脚本。
@@ -333,7 +348,8 @@ Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
 Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
 
-## <a name="update-script-cmdlet"></a>Update-Script cmdlet
+<a id="update-script-cmdlet" class="xliff"></a>
+## Update-Script cmdlet
 Update-Script cmdlet 可对使用 Install-Script cmdlet 安装的脚本文件进行就地更新。
 ```powershell
 Install-Script -Name Fabrikam-Script -RequiredVersion 1.0 -Repository GalleryINT -Scope
@@ -375,7 +391,8 @@ Version Name Type Repository Description
 2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
 ```
 
-## <a name="uninstall-script-cmdlet"></a>Uninstall-Script cmdlet
+<a id="uninstall-script-cmdlet" class="xliff"></a>
+## Uninstall-Script cmdlet
 ```powershell
 Uninstall-Script cmdlet lets you to uninstall the installed script files.
 Get-InstalledScript | Uninstall-Script -WhatIf
@@ -412,7 +429,8 @@ At C:\\Program Files\\WindowsPowerShell\\Modules\\PowerShellGet\\1.0.0.1\\PSModu
 + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.GetPackage
 ```
 
-## <a name="new-scriptfileinfo-and-test-scriptfileinfo-cmdlets"></a>New-ScriptFileInfo cmdlet 和 Test-ScriptFileInfo cmdlet
+<a id="new-scriptfileinfo-and-test-scriptfileinfo-cmdlets" class="xliff"></a>
+## New-ScriptFileInfo cmdlet 和 Test-ScriptFileInfo cmdlet
 New-ScriptFileInfo cmdlet 可创建包含诸如 Version、Guid、Author 和 Description 等元数据的新脚本文件。Test-ScriptFileInfo cmdlet 可验证和获取脚本文件元数据。
 ```powershell
 \# Create a new script file with minimum required metadata values
@@ -564,7 +582,8 @@ DefinedFunctions : Demo-ScriptFunction
 DefinedWorkflows : Demo-ScriptWorkflow
 ```
 
-## <a name="update-scriptfileinfo-cmdlet"></a>Update-ScriptFileInfo cmdlet
+<a id="update-scriptfileinfo-cmdlet" class="xliff"></a>
+## Update-ScriptFileInfo cmdlet
 Update-ScriptFileInfo cmdlet 可更新现有的脚本文件元数据。
 ```powershell
 \# Use Update-ScriptFileInfo cmdlet to update the script metadata
@@ -575,7 +594,8 @@ Version Name Author Description
 2.0 Demo-ScriptWithComplet... manikb my new script file
 ```
 
-## <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a>支持脚本共享的 Register-PSRepository cmdlet 和 Set-PSRepository cmdlet
+<a id="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support" class="xliff"></a>
+## 支持脚本共享的 Register-PSRepository cmdlet 和 Set-PSRepository cmdlet
 使用 Register-PSRepository/Set-PSRepository cmdlet 将 **ScriptSourceLocation** 和 **ScriptPublishLocation** 添加到 PSRepository。
 ```powershell
 \# Register an GalleryINT repository with Scripts and Modules support
@@ -633,7 +653,8 @@ ScriptPublishLocation : https://MyGallery.com/api/v2/package/
 ProviderOptions : {}
 ```
 
-## <a name="publish-script-cmdlet"></a>Publish-Script cmdlet
+<a id="publish-script-cmdlet" class="xliff"></a>
+## Publish-Script cmdlet
 Publish-Script cmdlet 可发布包含诸如 Version、Guid、Author 和 Description 等有效元数据的脚本文件。
 ```powershell
 \# Publish the really basic script file with required metadata

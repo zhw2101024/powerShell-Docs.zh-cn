@@ -1,25 +1,25 @@
 ---
-manager: carmonm
-ms.topic: article
+ms.date: 2017-06-12
 author: rpsqrd
-ms.author: ryanpu
-ms.prod: powershell
-keywords: powershell,cmdlet,jea
-ms.date: 2016-12-05
+ms.topic: conceptual
+keywords: "jea,powershell,安全性"
 title: "注册 JEA 配置"
-ms.technology: powershell
-ms.openlocfilehash: 2dcf541f1ed9975a680b31ca5e00e0fbbbddb22e
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
-translationtype: HT
+ms.openlocfilehash: 0684a1c7acffbccbedab9dba4689611a24c8ae25
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="registering-jea-configurations"></a>注册 JEA 配置
+<a id="registering-jea-configurations" class="xliff"></a>
+# 注册 JEA 配置
 
 > 适用于：Windows PowerShell 5.0
 
 创建[角色功能](role-capabilities.md)和[会话配置文件](session-configurations.md)后，最后一步还需注册 JEA 终结点，然后才能使用 JEA。
 此过程将会话配置信息应用于系统，并使终结点可供用户和自动化引擎使用。
 
-## <a name="single-machine-configuration"></a>单个计算机配置
+<a id="single-machine-configuration" class="xliff"></a>
+## 单个计算机配置
 
 对于小型环境，可以通过使用 [Register-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) cmdlet 注册会话配置文件来部署 JEA。
 
@@ -58,7 +58,8 @@ Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' 
 如果注册成功，便可以开始[使用 JEA](using-jea.md)。
 可以随时删除会话配置文件；注册后不会再使用它。
 
-## <a name="multi-machine-configuration-with-dsc"></a>使用 DSC 的多台计算机配置
+<a id="multi-machine-configuration-with-dsc" class="xliff"></a>
+## 使用 DSC 的多台计算机配置
 
 如果要在多台计算机上部署 JEA，最简单的部署模型是使用 JEA [Desired State Configuration](https://msdn.microsoft.com/en-us/powershell/dsc/overview) 资源，在每台计算机上快速且一致地部署 JEA。
 
@@ -118,7 +119,8 @@ Configuration JEAMaintenance
 DSC 资源还可以替换默认的 Microsoft.PowerShell 远程处理终结点。
 如果这样做，资源将自动注册包含默认 WinRM ACL（允许远程管理用户和本地管理员组成员访问）且名为“Microsoft.PowerShell.Restricted”的备份非约束终结点。
 
-## <a name="unregistering-jea-configurations"></a>注销 JEA 配置
+<a id="unregistering-jea-configurations" class="xliff"></a>
+## 注销 JEA 配置
 
 若要删除系统上的 JEA 终结点，请使用 [Unregister-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Unregister-PSSessionConfiguration) cmdlet。
 注销 JEA 终结点将阻止新用户在系统上创建新的 JEA 会话。
@@ -134,6 +136,8 @@ Unregister-PSSessionConfiguration -Name 'ContosoMaintenance' -Force
 > 这将中断正在进行的大多数远程管理操作，包括其他 PowerShell 会话、WMI 调用和某些管理工具。
 > 请仅在计划的维护时段注销 PowerShell 终结点。
 
-## <a name="next-steps"></a>后续步骤
+<a id="next-steps" class="xliff"></a>
+## 后续步骤
 
 - [测试 JEA 终结点](using-jea.md)
+

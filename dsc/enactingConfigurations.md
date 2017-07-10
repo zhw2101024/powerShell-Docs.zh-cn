@@ -1,23 +1,24 @@
 ---
-title: "执行配置"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 7059d0a0ac3ad81353d1e758bc24fc236656c199
-ms.sourcegitcommit: 89e7ae30faff5f96641fc72764bdc76e0e257bc2
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "执行配置"
+ms.openlocfilehash: db82788650186eb82f67b30b24cd45b719bbe314
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="enacting-configurations"></a>执行配置
+<a id="enacting-configurations" class="xliff"></a>
+# 执行配置
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 有两种执行 PowerShell Desired State Configuration (DSC) 配置的方法：推送模式和请求模式。
 
-## <a name="push-mode"></a>推送模式
+<a id="push-mode" class="xliff"></a>
+## 推送模式
 
 ![推送模式](images/Push.png "推送模式的工作原理")
 
@@ -28,7 +29,8 @@ translationtype: HT
 > __注意__：默认情况下，DSC 运行配置作为后台作业。 若要以交互方式运行此配置，请使用 __-Wait__ 参数调用 [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx)。
 
 
-## <a name="pull-mode"></a>请求模式
+<a id="pull-mode" class="xliff"></a>
+## 请求模式
 
 ![拉取模式](images/Pull.png "拉取模式的工作原理")
 

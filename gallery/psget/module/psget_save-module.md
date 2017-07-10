@@ -1,36 +1,38 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: "psget_save 模块"
-ms.technology: powershell
-ms.openlocfilehash: 9e83f1eeeb8e4bee666aeb845702f6562a487d6b
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: "库,powershell,cmdlet,psget"
+title: Save-Module
+ms.openlocfilehash: 296c5c5ffc6f1e12da0162237e562b13b3679110
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="save-module"></a>Save-Module
+<a id="save-module" class="xliff"></a>
+# Save-Module
 
 在不安装的情况下本地保存模块。
 
-## <a name="description"></a>说明
+<a id="description" class="xliff"></a>
+## 说明
 
 Save-Module cmdlet 从指定的存储库本地保存模块便于进行检查。 未安装该模块。
 
-## <a name="cmdlet-syntax"></a>Cmdlet 语法
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet 语法
 ```powershell
 Get-Command -Name Save-Module -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet 联机帮助参考
 
 [Save-Module](http://go.microsoft.com/fwlink/?LinkId=531351)
 
-## <a name="example-commands"></a>示例命令
+<a id="example-commands" class="xliff"></a>
+## 示例命令
 
 ```powershell
 Save-Module -Repository MSPSGallery -Name ModuleWithDependencies2 -Path C:\MySavedModuleLocation

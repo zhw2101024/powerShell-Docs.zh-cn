@@ -1,21 +1,22 @@
 ---
-title: "适用于 Linux 的 DSC nxGroup 资源"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 2139e4462c0568c30b118ef6cb3ceef1717b52e6
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "适用于 Linux 的 DSC nxGroup 资源"
+ms.openlocfilehash: fcd1dfd3110b1358ed7ef9ca8d57154186b271f6
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-for-linux-nxgroup-resource"></a>适用于 Linux 的 DSC nxGroup 资源
+<a id="dsc-for-linux-nxgroup-resource" class="xliff"></a>
+# 适用于 Linux 的 DSC nxGroup 资源
 
 PowerShell Desired State Configuration (DSC) 中的 **nxGroup** 资源提供了在 Linux 节点上管理本地组的机制。
 
-## <a name="syntax"></a>语法
+<a id="syntax" class="xliff"></a>
+## 语法
 
 ```powershell
 nxGroup <string> #ResourceName
@@ -30,7 +31,8 @@ nxGroup <string> #ResourceName
 
 ```
 
-## <a name="properties"></a>“属性”
+<a id="properties" class="xliff"></a>
+## “属性”
 
 |  属性 |  说明 | 
 |---|---|
@@ -42,7 +44,8 @@ nxGroup <string> #ResourceName
 | PreferredGroupID| 尽量将组 ID 设置为提供的值。 如果组 ID 正在使用中，则使用下一个可用的组 ID。| 
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 **ID** 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-## <a name="example"></a>示例
+<a id="example" class="xliff"></a>
+## 示例
 
 以下示例可确保用户“monuser”存在且为组“DBusers”的成员。
 

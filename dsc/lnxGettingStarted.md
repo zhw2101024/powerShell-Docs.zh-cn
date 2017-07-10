@@ -1,21 +1,22 @@
 ---
-title: "适用于 Linux 的 Desired State Configuration (DSC) 入门"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: c585dc929e85a404aecfb1e9f06daf2dfaf21832
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "适用于 Linux 的 Desired State Configuration (DSC) 入门"
+ms.openlocfilehash: 2d4276a0ffcb4fd7b872cbc4771f86cb850c0b83
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>适用于 Linux 的 Desired State Configuration (DSC) 入门
+<a id="get-started-with-desired-state-configuration-dsc-for-linux" class="xliff"></a>
+# 适用于 Linux 的 Desired State Configuration (DSC) 入门
 
 本主题说明如何开始使用适用于 Linux 的 PowerShell Desired State Configuration (DSC)。 有关 DSC 的常规信息，请参阅 [Windows PowerShell Desired State Configuration 入门](overview.md)。
 
-## <a name="supported-linux-operation-system-versions"></a>支持的 Linux 操作系统版本
+<a id="supported-linux-operation-system-versions" class="xliff"></a>
+## 支持的 Linux 操作系统版本
 
 适用于 Linux 的 DSC 支持以下 Linux 操作系统版本。
 - CentOS 5、6 和 7 (x86/x64)
@@ -36,11 +37,13 @@ translationtype: HT
 | ctypes| Python CTypes 库| 必须与 Python 版本匹配| 
 | libcurl| cURL http 客户端库| 7.15.1| 
 
-## <a name="installing-dsc-for-linux"></a>安装适用于 Linux 的 DSC
+<a id="installing-dsc-for-linux" class="xliff"></a>
+## 安装适用于 Linux 的 DSC
 
 必须先安装[开放式管理基础结构 (OMI)](https://collaboration.opengroup.org/omi/)，才能安装适用于 Linux 的 DSC。
 
-### <a name="installing-omi"></a>安装 OMI
+<a id="installing-omi" class="xliff"></a>
+### 安装 OMI
 
 适用于 Linux 的 Desired State Configuration 需要开放式管理基础结构 (OMI) CIM 服务器 1.0.8.1 版。 可从 The Open Group：[Open Management Infrastructure (OMI)（开放式管理基础结构）](https://collaboration.opengroup.org/omi/)下载 OMI。
 
@@ -52,7 +55,8 @@ translationtype: HT
 
 `# sudo rpm -Uvh omiserver-1.0.8.ssl_100.rpm`
 
-### <a name="installing-dsc"></a>安装 DSC
+<a id="installing-dsc" class="xliff"></a>
+### 安装 DSC
 
 适用于 Linux 的 DSC 可在[此处](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest)下载。 
 
@@ -65,11 +69,13 @@ translationtype: HT
 `# sudo rpm -Uvh dsc-1.0.0-254.ssl_100.x64.rpm`
 
 
-## <a name="using-dsc-for-linux"></a>使用适用于 Linux 的 DSC
+<a id="using-dsc-for-linux" class="xliff"></a>
+## 使用适用于 Linux 的 DSC
 
 以下章节说明了如何在 Linux 计算机上创建和运行 DSC 配置。
 
-### <a name="creating-a-configuration-mof-document"></a>创建配置 MOF 文档
+<a id="creating-a-configuration-mof-document" class="xliff"></a>
+### 创建配置 MOF 文档
 
 使用 Windows PowerShell Configuration 关键字为 Linux 计算机创建配置，与为 Windows 计算机创建配置类似。 以下步骤描述了如何使用 Windows PowerShell 为 Linux 计算机创建配置文档。
 
@@ -105,7 +111,8 @@ Configuration ExampleConfiguration{
 ExampleConfiguration -OutputPath:"C:\temp" 
 ```
 
-### <a name="push-the-configuration-to-the-linux-computer"></a>将配置推送到 Linux 计算机
+<a id="push-the-configuration-to-the-linux-computer" class="xliff"></a>
+### 将配置推送到 Linux 计算机
 
 可使用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet 将配置文档（MOF 文件）推送到 Linux 计算机。 若要将此 cmdlet 和 [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379).aspx 或 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet 远程运用到 Linux 计算机，必须使用 CIMSession。 使用 [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) cmdlet 将 CIMSession 创建到 Linux 计算机中。
 
@@ -133,11 +140,13 @@ $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Aut
 
 `Start-DscConfiguration -Path:"C:\temp" -CimSession:$Sess -Wait -Verbose`
 
-### <a name="distribute-the-configuration-with-a-pull-server"></a>使用请求服务器分发配置
+<a id="distribute-the-configuration-with-a-pull-server" class="xliff"></a>
+### 使用请求服务器分发配置
 
 可使用请求服务器将配置分发到 Linux 计算机，与分发到 Windows 计算机类似。 有关使用请求服务器的指南，请参阅 [Windows PowerShell Desired State Configuration 请求服务器](pullServer.md)。 有关通过请求服务器使用 Linux 计算机其他信息和限制条件，请参阅“适用于 Linux 的 Desired State Configuration 发行说明”。
 
-### <a name="working-with-configurations-locally"></a>从本地进行配置
+<a id="working-with-configurations-locally" class="xliff"></a>
+### 从本地进行配置
 
 适用于 Linux 的 DSC 包括用于从本地 Linux 计算机进行配置的脚本。 这些脚本位于 `/opt/microsoft/dsc/Scripts` 中，包括以下内容：
 * GetDscConfiguration.py
@@ -176,7 +185,8 @@ $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Aut
 
 `# sudo ./SetDscLocalConfigurationManager.py –configurationmof /tmp/localhost.meta.mof`
 
-## <a name="powershell-desired-state-configuration-for-linux-log-files"></a>适用于 Linux 的 PowerShell Desired State Configuration 日志文件
+<a id="powershell-desired-state-configuration-for-linux-log-files" class="xliff"></a>
+## 适用于 Linux 的 PowerShell Desired State Configuration 日志文件
 
 为适用于 Linux 的.DSC 生成了以下日志文件。
 

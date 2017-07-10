@@ -1,21 +1,22 @@
 ---
-title: "适用于 Linux nxArchive 资源的 DSC"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 2edbc1d11dfc7c84369430688a8b0d773277e864
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "适用于 Linux nxArchive 资源的 DSC"
+ms.openlocfilehash: da647432e14d2a4a3ceb2a36c7dee2dbfd350116
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-for-linux-nxarchive-resource"></a>适用于 Linux nxArchive 资源的 DSC
+<a id="dsc-for-linux-nxarchive-resource" class="xliff"></a>
+# 适用于 Linux nxArchive 资源的 DSC
 
 PowerShell Desired State Configuration (DSC) 中的 **nxArchive** 资源提供了在 Linux 节点上特定路径中解压存档（.tar、.zip）文件的机制。
 
-## <a name="syntax"></a>语法
+<a id="syntax" class="xliff"></a>
+## 语法
 
 ```
 nxArchive <string> #ResourceName
@@ -29,7 +30,8 @@ nxArchive <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>“属性”
+<a id="properties" class="xliff"></a>
+## “属性”
 
 |  属性 |  说明 | 
 |---|---|
@@ -40,7 +42,8 @@ nxArchive <string> #ResourceName
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 **ID** 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。| 
 | Ensure| 确定是否要检查存档的内容是否位于**目标**上。 将此属性设置为“Present”可确保内容存在。 将其设置为“Absent”可确保内容不存在。 默认值为“Present”。| 
 
-## <a name="example"></a>示例
+<a id="example" class="xliff"></a>
+## 示例
 
 以下示例表明如何使用 **nxArchive** 资源来确保名为 `website.tar` 的存档文件的内容存在，并将内容提取到指定的目标位置。
 

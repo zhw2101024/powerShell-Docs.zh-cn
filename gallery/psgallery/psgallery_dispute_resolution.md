@@ -1,23 +1,22 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: "库,powershell,cmdlet,psgallery"
 title: psgallery_dispute_resolution
-ms.technology: powershell
-ms.openlocfilehash: b7a76a6d8746b4a22154f8a8c7dde89d61046116
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: 640d20371a51b08a5627b9beff1bb0ada4f06dd8
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dispute-resolution"></a>争议解决
+<a id="dispute-resolution" class="xliff"></a>
+# 争议解决
 
 本文档是推荐的争议解决过程，用于社区成员帮助解决与其他 PowerShell 库发布者的争议。
 
-## <a name="process"></a>进程
+<a id="process" class="xliff"></a>
+## 进程
 
 1. 请使用项详细信息页面上的“联系所有者”链接，联系你对其有争议的项的所有者。
 请友好并直接地阐述问题。
@@ -26,7 +25,8 @@ translationtype: HT
 PowerShellGallery.com 支持团队将介入，尝试解决此问题。
 
 
-## <a name="prohibited-use"></a>禁止的内容
+<a id="prohibited-use" class="xliff"></a>
+## 禁止的内容
 
 公共 PowerShell 库中不允许存在以下内容，并将不经讨论立即删除。  如删除项，将告知其所有者。
 

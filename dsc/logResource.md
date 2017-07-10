@@ -1,17 +1,17 @@
 ---
-title: "DSC Log 资源"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: fe905237f5f0672f6e5e0cd399e1b71058417d9c
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "DSC Log 资源"
+ms.openlocfilehash: 72c9c5a9b8e2a4ed4ce43cfd792572ce95b502b3
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-log-resource"></a>DSC Log 资源 
+<a id="dsc-log-resource" class="xliff"></a>
+# DSC Log 资源 
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
@@ -33,13 +33,15 @@ Log [string] #ResourceName
 
 [DSC 事件日志在哪里？](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs)
 
-## <a name="properties"></a>“属性”
+<a id="properties" class="xliff"></a>
+## “属性”
 |  属性  |  说明   | 
 |---|---| 
 | 消息| 指示要写入 Microsoft-Windows-Desired State Configuration/Analytic 事件日志的消息。| 
 | DependsOn | 指示必须先运行其他资源的配置，再写入此日志消息。 例如，如果你想要首先运行 ID 为 __ResourceName__、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-## <a name="example"></a>示例
+<a id="example" class="xliff"></a>
+## 示例
 
 下面的示例演示如何在 Microsoft-Windows-Desired State Configuration/Analytic 事件日志中纳入消息。
 

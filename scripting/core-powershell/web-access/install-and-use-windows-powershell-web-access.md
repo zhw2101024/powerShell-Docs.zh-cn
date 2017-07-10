@@ -1,18 +1,15 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "安装和使用 Windows PowerShell Web 访问"
-ms.technology: powershell
-ms.openlocfilehash: f2a908b670d1a0aba3ca0912aed0ff7e3c5bba1f
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: a860f7c22829da46f0458ea729fa0afd1fe4fb6f
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
-#  <a name="install-and-use-windows-powershell-web-access"></a>安装和使用 Windows PowerShell Web 访问
+<a id="install-and-use-windows-powershell-web-access" class="xliff"></a>
+#  安装和使用 Windows PowerShell Web 访问
 
 更新时间：2013 年 11 月 5 日
 
@@ -138,7 +135,8 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 ------------------------------------------------------------------------
 
-#### <a name="to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets"></a>使用 Windows PowerShell cmdlet 安装 Windows PowerShell Web 访问
+<a id="to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets" class="xliff"></a>
+#### 使用 Windows PowerShell cmdlet 安装 Windows PowerShell Web 访问
 
 1.  使用提升的用户权限执行以下操作之一打开 Windows PowerShell 会话。
 
@@ -225,7 +223,8 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 -   [使用 Install-PswaWebApplication 和 IIS 管理器，配置带有正版证书的 Windows PowerShell Web 访问网关](#BKMK_gencert)
 
-#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication"></a>使用 Install-PswaWebApplication，配置带有测试证书的 Windows PowerShell Web 访问网关。
+<a id="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication" class="xliff"></a>
+#### 使用 Install-PswaWebApplication，配置带有测试证书的 Windows PowerShell Web 访问网关。
 
 1.  执行以下操作之一，打开 Windows PowerShell 会话。
 
@@ -285,7 +284,8 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
     </tbody>
     </table>
 
-#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-install-pswawebapplication-and-iis-manager"></a>使用 Install-PswaWebApplication 和 IIS 管理器，配置带有正版证书的 Windows PowerShell Web 访问网关
+<a id="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-install-pswawebapplication-and-iis-manager" class="xliff"></a>
+#### 使用 Install-PswaWebApplication 和 IIS 管理器，配置带有正版证书的 Windows PowerShell Web 访问网关
 
 1.  执行以下操作之一，打开 Windows PowerShell 会话。
 
@@ -344,7 +344,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 <a href="" id="BKMK_step3"></a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步骤 3：配置受限的授权规则</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">第 3 步：配置受限的授权规则</span></a>
 
 ------------------------------------------------------------------------
 
@@ -352,7 +352,8 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 有关 Windows PowerShell Web 访问授权规则和安全性的详细信息，请参阅 [Windows PowerShell Web 访问的授权规则和安全功能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)。
 
-#### <a name="to-add-a-restrictive-authorization-rule"></a>添加受限的授权规则
+<a id="to-add-a-restrictive-authorization-rule" class="xliff"></a>
+#### 添加受限的授权规则
 
 1.  使用提升的用户权限执行以下操作之一打开 Windows PowerShell 会话。
 
@@ -394,7 +395,8 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 ------------------------------------------------------------------------
 
-#### <a name="to-install-windows-powershell-web-access-by-using-the-add-roles-and-features-wizard"></a>若要使用“添加角色和功能向导”安装 Windows PowerShell Web 访问
+<a id="to-install-windows-powershell-web-access-by-using-the-add-roles-and-features-wizard" class="xliff"></a>
+#### 若要使用“添加角色和功能向导”安装 Windows PowerShell Web 访问
 
 1.  如果服务器管理器已经打开，则继续执行下一步。 如果服务器管理器尚未打开，请执行以下任一操作打开它。
 
@@ -446,7 +448,8 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 -   
 
-#### <a name="to-use-iis-manager-to-configure-the-gateway-in-an-existing-website"></a>使用 IIS 管理器在现有的网站中配置网关
+<a id="to-use-iis-manager-to-configure-the-gateway-in-an-existing-website" class="xliff"></a>
+#### 使用 IIS 管理器在现有的网站中配置网关
 
 1.  通过执行以下操作之一，打开 IIS 管理器控制台。
 
@@ -508,7 +511,8 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
         c:\windows\system32\icacls.exe $authorizationFile
 
-#### <a name="to-use-iis-manager-to-configure-the-gateway-as-a-root-website-with-a-test-certificate"></a>使用 IIS 管理器，将网关配置为带有测试证书的根网站
+<a id="to-use-iis-manager-to-configure-the-gateway-as-a-root-website-with-a-test-certificate" class="xliff"></a>
+#### 使用 IIS 管理器，将网关配置为带有测试证书的根网站
 
 1.  通过执行以下操作之一，打开 IIS 管理器控制台。
 
@@ -586,7 +590,8 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 有关 Windows PowerShell Web 访问授权规则和安全性的详细信息，请参阅 [Windows PowerShell Web 访问的授权规则和安全功能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)。
 
-#### <a name="to-add-a-restrictive-authorization-rule"></a>添加受限的授权规则
+<a id="to-add-a-restrictive-authorization-rule" class="xliff"></a>
+#### 添加受限的授权规则
 
 1.  使用提升的用户权限执行以下操作之一打开 Windows PowerShell 会话。
 
@@ -621,7 +626,8 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 对于安全的生产环境，请始终使用证书颁发机构 (CA) 已签名的有效 SSL 证书。 本部分中的过程介绍如何从 CA 获取并应用有效的 SSL 证书。
 
-### <a name="to-configure-an-ssl-certificate-in-iis-manager"></a>在 IIS 管理器中配置 SSL 证书
+<a id="to-configure-an-ssl-certificate-in-iis-manager" class="xliff"></a>
+### 在 IIS 管理器中配置 SSL 证书
 
 1.  在 IIS 管理器树窗格中，选择已安装 Windows PowerShell Web 访问的服务器。
 

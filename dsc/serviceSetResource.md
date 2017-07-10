@@ -1,17 +1,17 @@
 ---
-title: "DSC ServiceSet 资源"
-ms.date: 2016-05-23
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 798609d7e1e7d88e7a9f76f5fff12f63c6109c76
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "DSC ServiceSet 资源"
+ms.openlocfilehash: 92fa4a442eb42e89195162b7831f1a96d40b84f5
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-serviceset-resource"></a>DSC ServiceSet 资源
+<a id="dsc-serviceset-resource" class="xliff"></a>
+# DSC ServiceSet 资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
@@ -20,7 +20,8 @@ Windows PowerShell Desired State Configuration (DSC) 中的 **ServiceSet** 资�
 
 要将一些服务配置为相同状态时，请使用此资源。
 
-## <a name="syntax"></a>语法
+<a id="syntax" class="xliff"></a>
+## 语法
 
 ```
 Service [string] #ResourceName
@@ -36,7 +37,8 @@ Service [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>“属性”
+<a id="properties" class="xliff"></a>
+## “属性”
 
 |  属性  |  说明   | 
 |---|---| 
@@ -50,7 +52,8 @@ Service [string] #ResourceName
 
 
 
-## <a name="example"></a>示例
+<a id="example" class="xliff"></a>
+## 示例
 
 以下配置启动“Windows 音频”和“远程桌面服务”服务。
 

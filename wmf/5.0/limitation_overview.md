@@ -1,6 +1,19 @@
-# <a name="known-issues-and-limitations"></a>已知问题和限制
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,安装程序"
+ms.openlocfilehash: e8620cdeb90792e86d091d3e19a169f9dfa690f9
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
+---
+<a id="known-issues-and-limitations" class="xliff"></a>
+# 已知问题和限制
 
-<a name="powershell-shortcuts-are-broken-when-used-for-the-first-time"></a>PowerShell 快捷方式在第一次使用时中断
+<a id="powershell-shortcuts-are-broken-when-used-for-the-first-time" class="xliff"></a>
+PowerShell 快捷方式在第一次使用时中断
 ------------------------------------------------------------
 
 **解决方法：**执行下列操作之一：
@@ -11,7 +24,8 @@
 执行以上任一操作后，即可使用 PowerShell 快捷方式。 这些操作仅需要执行一次。
 
 
-<a name="powershell-modules-and-dsc-resources-report-errors-about-executionpolicy-on-windows-7"></a>在运行 Windows 7 操作系统的计算机上，PowerShell 模块和 DSC 资源报告有关 ExecutionPolicy 的错误
+<a id="powershell-modules-and-dsc-resources-report-errors-about-executionpolicy-on-windows-7" class="xliff"></a>
+在运行 Windows 7 操作系统的计算机上，PowerShell 模块和 DSC 资源报告有关 ExecutionPolicy 的错误
 -------------------------------------------------------------------------------------
 在运行 Windows 7 操作系统的计算机上，使用 PowerShell 模块和 DSC 资源可能导致报告有关 ExecutionPolicy 的错误。
 
@@ -21,7 +35,8 @@
 Set-ExecutionPolicy RemoteSigned
 ```
 
-<a name="connecting-to-an-old-remote-exchange-endpoint-causes-a-crash"></a>连接到旧的远程 Exchange 终结点引发故障
+<a id="connecting-to-an-old-remote-exchange-endpoint-causes-a-crash" class="xliff"></a>
+连接到旧的远程 Exchange 终结点引发故障
 ------------------------------------------------------------
 
 旧的 Exchange 终结点重定向到新的终结点。 引发故障的重定向逻辑中存在 Bug。
@@ -29,14 +44,16 @@ Set-ExecutionPolicy RemoteSigned
 **解决方法：**直接连接到新终结点。
 
 
-<a name="software-inventory-logging-feature-is-erroneously-stopped-after-wmf-50-installation-on-windows-server-2012-r2"></a>在 Windows Server 2012 R2 上安装 WMF 5.0 后，错误地停止软件清单日志记录功能
+<a id="software-inventory-logging-feature-is-erroneously-stopped-after-wmf-50-installation-on-windows-server-2012-r2" class="xliff"></a>
+在 Windows Server 2012 R2 上安装 WMF 5.0 后，错误地停止软件清单日志记录功能
 -------------------------------------------------------------------------------------------------------------
 
 当在已运行 SIL 的 Windows Server 2012 R2 上安装 WMF 5.0 时，安装完成后错误地停止软件清单日志记录功能。
 
 **解决方法：**在 WMF 安装后立即运行 Start-SilLogging cmdlet，因为安装过程将错误地停止软件清单日志记录功能。
 
-<a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a>如果将 LiteralPath 和 -Recurse 一起使用，Get-ChildItem 将失效
+<a id="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together" class="xliff"></a>
+如果将 LiteralPath 和 -Recurse 一起使用，Get-ChildItem 将失效
 --------------------------------------------------------------------------
 
 如果目录名称包含无效的通配符，则将 -LiteralPath 和 -Recurse 一起使用时，Get-ChildItem 不会产生预期结果。
@@ -44,7 +61,8 @@ Set-ExecutionPolicy RemoteSigned
 **解决方法：**尽管不理想，但当前的解决方法是在脚本中实现递归，而不是依赖 cmdlet。
 
 
-<a name="sysprep-fails-after-wmf-50-installation"></a>Sysprep 在安装 WMF 5.0 后无法正常工作
+<a id="sysprep-fails-after-wmf-50-installation" class="xliff"></a>
+Sysprep 在安装 WMF 5.0 后无法正常工作
 ----------------------------------------
 
 该问题有两种解决方法，具体取决于正在运行的 Windows Server 版本。
@@ -105,3 +123,4 @@ Set-ExecutionPolicy RemoteSigned
       * 假定你编辑的 Generalize.xml 副本已复制到 C:\。
 
   10.   Generalize.xml 中现已更新解决方法。 请在启用通用选项的情况下运行 Sysprep。
+

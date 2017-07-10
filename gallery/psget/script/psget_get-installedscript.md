@@ -1,23 +1,22 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_get installedscript
-ms.technology: powershell
-ms.openlocfilehash: d755ed5dbcee279f943d56832ffd7689e4cc6f04
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: "库,powershell,cmdlet,psget"
+title: Get-InstalledScript
+ms.openlocfilehash: f35e57cdadd1448bd9032ab007d692003c4cf4a2
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="get-installedscript"></a>Get-InstalledScript
+<a id="get-installedscript" class="xliff"></a>
+# Get-InstalledScript
 
 获取计算机上的已安装脚本。
 
-## <a name="description"></a>说明
+<a id="description" class="xliff"></a>
+## 说明
 
 Get-InstalledScript cmdlet 获取计算机上的已安装 PowerShell 脚本。
 
@@ -30,17 +29,20 @@ Get-InstalledScript cmdlet 获取计算机上的已安装 PowerShell 脚本。
   - 如果未指定 RequiredVersion 参数，Get-InstalledScript 将返回等于或高于指定最低版本的已安装脚本的最新版本，若未指定最低版本，则返回脚本的最新版本。 
   - 如果指定了 RequiredVersion 参数，Get-InstalledScript 仅返回与指定版本完全匹配的已安装脚本版本。
 
-## <a name="cmdlet-syntax"></a>Cmdlet 语法
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet 语法
 
 ```powershell
 Get-Command -Name Get-InstalledScript -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet 联机帮助参考
 
 [Get-InstalledScript](http://go.microsoft.com/fwlink/?LinkId=619790)
 
-## <a name="example-commands"></a>示例命令
+<a id="example-commands" class="xliff"></a>
+## 示例命令
 
 ```powershell
 

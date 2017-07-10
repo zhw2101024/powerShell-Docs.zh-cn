@@ -1,30 +1,30 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: "库,powershell,cmdlet,psgallery"
 title: "管理项所有者"
-ms.technology: powershell
-ms.openlocfilehash: 36a3a3079bce642b16f0512ead2b0778b43e5d2d
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: fcd538148f9ff1ac96324b567d54d643f1756c93
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="managing-item-owners"></a>管理项所有者
+<a id="managing-item-owners" class="xliff"></a>
+# 管理项所有者
 
 由将项发布到库的人定义 PowerShell 中项的所有权。
 有时需要在初始项发布之外管理此元数据，这意味着所有者元数据需要是可变的，而项本身不需要。
 
 所有项所有者是对等的。 这意味着任何项所有者都可发布项的新版本。 这还意味着任何项所有者可以删除任何其他所有者。 每个所有者的权利相同。  
 
-## <a name="setting-an-items-initial-owner"></a>设置项的初始所有者 
+<a id="setting-an-items-initial-owner" class="xliff"></a>
+## 设置项的初始所有者 
 
 当新项发布到 PowerShell 库时，由发布项的用户定义初始所有者。 这根据 Publish-Module cmdlet 中使用谁的 API 密钥决定。
 
-## <a name="adding-owners"></a>添加所有者
+<a id="adding-owners" class="xliff"></a>
+## 添加所有者
 
 将项发布到 PowerShell 库后，可轻松邀请其他用户成为项的所有者。
 
@@ -43,7 +43,8 @@ translationtype: HT
 注意：“Authors”元数据是完全自由文本；仅“Owners”受控。
 
 
-## <a name="removing-owners"></a>删除所有者
+<a id="removing-owners" class="xliff"></a>
+## 删除所有者
 如果项具有多个所有者而需删除其中之一，过程很简单：
 
 1. 使用项的当前所有者的帐户[登录](https://powershellgallery.com/users/account/LogOn) PowerShell 库；
@@ -53,7 +54,8 @@ translationtype: HT
 
 
 
-## <a name="transferring-item-ownership"></a>转移项所有权
+<a id="transferring-item-ownership" class="xliff"></a>
+## 转移项所有权
 我们时而收到将项所有权从一个用户转移到另一个用户的支持请求，但你几乎始终可自己完成该操作。
 将所有权从一个用户转移到另一个用户只是以上两种功能的组合。
 
@@ -66,7 +68,8 @@ translationtype: HT
 * 使用错误帐户意外发布了项
 
 
-## <a name="orphaned-items"></a>孤立的项
+<a id="orphaned-items" class="xliff"></a>
+## 孤立的项
 最后一种情况曾经出现，但次数不多。
 项变得孤立，唯一的项所有者帐户不能用于添加新所有者。
 以下是本场景的一些示例：

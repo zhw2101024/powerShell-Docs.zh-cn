@@ -1,18 +1,15 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "Windows PowerShell Web 访问中的访问问题疑难解答"
-ms.technology: powershell
-ms.openlocfilehash: 26de977d2c85e26f445eecb1278e6a7278e7dfd6
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: c10e19b177110ff62d44f28b6a523380b55b79e0
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/08/2017
 ---
-#  <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Windows PowerShell Web 访问中的访问问题疑难解答
+<a id="troubleshooting-access-problems-in-windows-powershell-web-access" class="xliff"></a>
+#  Windows PowerShell Web 访问中的访问问题疑难解答
 
 更新时间： 2013年 6 月 24日
 
@@ -79,7 +76,7 @@ translationtype: HT
 <td><p>如果已在 Internet Explorer 中启用了增强的安全配置 (IE ESC)，你可以将 Windows PowerShell Web 访问网站添加到受信任的站点列表，或禁用 IE ESC。 你可以在服务器管理器中的“本地服务器”<strong></strong>页面上的“属性”<strong></strong>磁贴中禁用 IE ESC。</p></td>
 </tr>
 <tr class="even">
-<td><p>尝试当网关服务器为目标计算机且又位于工作组中时连接，会显示以下错误消息：“出现授权失败。”<strong> 请验证你是否被授权连接到目标计算机。</strong></p></td>
+<td><p>尝试当网关服务器为目标计算机且又位于工作组中时连接，会显示以下错误消息：“出现授权失败。”<strong>请确认是否已获准连接目标计算机。</strong></p></td>
 <td><p>当网关服务器也是目标服务器且位于工作组中时，指定下表所示的用户名、计算机名称以及用户组名。 不要使用点 (.) 自行表示计算机名称。</p>
 <div>
 <table>
@@ -102,26 +99,26 @@ translationtype: HT
 <tbody>
 <tr class="odd">
 <td><p>网关服务器位于域中</p></td>
-<td><p><em>Server_name</em>\<em>user_name</em>、Localhost\<em>user_name</em> 或 .\<em>user_name</em></p></td>
-<td><p><em>Server_name</em>\<em>user_group</em>、Localhost\<em>user_group</em> 或 .\<em>user_group</em></p></td>
+<td><p>Server_name<em></em>\user_name<em></em>、Localhost\user_name<em></em> 或 .\user_name<em></em></p></td>
+<td><p>Server_name<em></em>\user_group<em></em>、Localhost\user_group<em></em> 或 .\user_group<em></em></p></td>
 <td><p>网关服务器的完全限定名称或 Localhost</p></td>
-<td><p><em>Server_name</em>\<em>computer_group</em>、Localhost\<em>computer_group</em> 或 .\<em>computer_group</em></p></td>
+<td><p>Server_name<em></em>\computer_group<em></em>、Localhost\computer_group<em></em> 或 .\computer_group<em></em></p></td>
 </tr>
 <tr class="even">
 <td><p>网关服务器位于工作组中</p></td>
-<td><p><em>Server_name</em>\<em>user_name</em>、Localhost\<em>user_name</em> 或 .\<em>user_name</em></p></td>
-<td><p><em>Server_name</em>\<em>user_group</em>、Localhost\<em>user_group</em> 或 .\<em>user_group</em></p></td>
+<td><p>Server_name<em></em>\user_name<em></em>、Localhost\user_name<em></em> 或 .\user_name<em></em></p></td>
+<td><p>Server_name<em></em>\user_group<em></em>、Localhost\user_group<em></em> 或 .\user_group<em></em></p></td>
 <td><p>服务器名称</p></td>
-<td><p><em>Server_name</em>\<em>computer_group</em>、Localhost\<em>computer_group</em> 或 .\<em>computer_group</em></p></td>
+<td><p>Server_name<em></em>\computer_group<em></em>、Localhost\computer_group<em></em> 或 .\computer_group<em></em></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <p>以目标计算机身份登录到网关服务器，方法是使用以下格式之一的凭据。</p>
 <ul>
-<li><p><em>Server_name</em>\<em>user_name</em></p></li>
-<li><p>Localhost\<em>user_name</em></p></li>
-<li><p>.\<em>user_name</em></p></li>
+<li><p>Server_name<em></em>\user_name<em></em></p></li>
+<li><p>Localhost\user_name<em></em></p></li>
+<li><p>.\user_name<em></em></p></li>
 </ul></td>
 </tr>
 <tr class="odd">
