@@ -10,94 +10,86 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="install-script" class="xliff"></a>
-# Install-Script
+# <a name="install-script"></a><span data-ttu-id="ec635-103">Install-Script</span><span class="sxs-lookup"><span data-stu-id="ec635-103">Install-Script</span></span>
 
-将联机存储库中的 PowerShell 脚本文件安装到本地计算机。
-
-
-<a id="description" class="xliff"></a>
-## 说明
-
-Install-Script cmdlet 从存储库获取了脚本负载，验证负载为有效的 PowerShell 脚本，并将该脚本文件复制到指定的安装位置。
-
-Install-Script 针对其运行的默认存储库可通过 Register-PSRepository、Set-PSRepository、Unregister-PSRepository 和 Get-PSRepository cmdlet 进行配置。 针对多个存储库运行时，Install-Script 将准确地从第一个存储库中安装与指定搜索条件（Name、MinimumVersion 或 MaximumVersion）相匹配的第一个脚本。
+<span data-ttu-id="ec635-104">将联机存储库中的 PowerShell 脚本文件安装到本地计算机。</span><span class="sxs-lookup"><span data-stu-id="ec635-104">Installs the PowerShell script files from online repositories to the local computer.</span></span>
 
 
-Install-Script cmdlet 从联机库中下载一个或多个模块，对其进行验证并安装到本地计算机的指定安装范围。
+## <a name="description"></a><span data-ttu-id="ec635-105">说明</span><span class="sxs-lookup"><span data-stu-id="ec635-105">Description</span></span>
 
-Install-Script cmdlet 从联机库中获取满足指定条件的一个或多个模块，验证搜索结果是否为有效模块并将模块文件夹复制到安装位置。
+<span data-ttu-id="ec635-106">Install-Script cmdlet 从存储库获取了脚本负载，验证负载为有效的 PowerShell 脚本，并将该脚本文件复制到指定的安装位置。</span><span class="sxs-lookup"><span data-stu-id="ec635-106">The Install-Script cmdlet acquires a script payload from a repository, verifies that the payload is a valid PowerShell script, and copies the script file to a specified installation location.</span></span>
 
-如果未定义范围，或 Scope 参数的值为 AllUsers 时，会将模块安装到 %systemdrive%:\Program Files\WindowsPowerShell\Modules。 Scope 的值为 CurrentUser 时，会将模块安装到 $home\Documents\WindowsPowerShell\Modules。
-
-可根据指定模块的最低和确切版本筛选结果。
-
-- 对于 PowerShell 脚本文件，没有并行版本支持
-- 脚本依赖项安装支持
-- **不受信任提示：**从不受信任的存储库中安装模块需要得到用户的同意。
-- -Force 将重新安装已安装的模块
-- RequiredVersion 将指定版本安装于 SxS 中，将现有版本安装于 PowerShell version 5.0 或更新的版本中。
-
-Install-Module、Save-Module、Uninstall-Module、Install-Script、Save-Script 和 Uninstall-Script cmdlet 上的 -Name 中不支持通配符。
-
-<a id="scope" class="xliff"></a>
-### 作用域
-指定模块的安装范围。 此参数可接受的值是：AllUsers 和 CurrentUser。
-
-默认安装范围为 AllUsers。
-
-AllUsers 范围允许模块安装在计算机的所有用户都可访问的位置，即“$env: SystemDrive\Program Files\WindowsPowerShell\Modules”。
-
-CurrentUser 范围仅允许模块安装在“$home\Documents\WindowsPowerShell\Modules”，因此仅向当前用户提供该模块。
+<span data-ttu-id="ec635-107">Install-Script 针对其运行的默认存储库可通过 Register-PSRepository、Set-PSRepository、Unregister-PSRepository 和 Get-PSRepository cmdlet 进行配置。</span><span class="sxs-lookup"><span data-stu-id="ec635-107">The default repositories Install-Script operates against are configurable through the Register-PSRepository, Set-PSRepository, Unregister-PSRepository, and Get-PSRepository cmdlets.</span></span> <span data-ttu-id="ec635-108">针对多个存储库运行时，Install-Script 将准确地从第一个存储库中安装与指定搜索条件（Name、MinimumVersion 或 MaximumVersion）相匹配的第一个脚本。</span><span class="sxs-lookup"><span data-stu-id="ec635-108">When operating against multiple repositories, Install-Script installs the first script that matches the specified search criteria (Name, MinimumVersion, or MaximumVersion) from the first repository without any error.</span></span>
 
 
-指定脚本的安装范围。 有效值为：AllUsers 和 CurrentUser。 默认值为 CurrentUser。
+<span data-ttu-id="ec635-109">Install-Script cmdlet 从联机库中下载一个或多个模块，对其进行验证并安装到本地计算机的指定安装范围。</span><span class="sxs-lookup"><span data-stu-id="ec635-109">Install-Script cmdlet downloads one or more modules from an online gallery, validates and installs them on the local computer to the specified installation scope.</span></span>
 
-AllUsers 范围指定将脚本安装到 %systemdrive%:\ProgramFiles\WindowsPowerShell\Scripts，向所有用户提供该脚本。 CurrentUser 范围指定将脚本安装到 $home\Documents\WindowsPowerShell\Scripts，仅向当前用户提供该脚本。
+<span data-ttu-id="ec635-110">Install-Script cmdlet 从联机库中获取满足指定条件的一个或多个模块，验证搜索结果是否为有效模块并将模块文件夹复制到安装位置。</span><span class="sxs-lookup"><span data-stu-id="ec635-110">The Install-Script cmdlet gets one or more modules that meet specified criteria from an online gallery, verifies that search results are valid modules, and copies module folders to the installation location.</span></span>
 
+<span data-ttu-id="ec635-111">如果未定义范围，或 Scope 参数的值为 AllUsers 时，会将模块安装到 %systemdrive%:\Program Files\WindowsPowerShell\Modules。</span><span class="sxs-lookup"><span data-stu-id="ec635-111">When no scope is defined, or when the value of the Scope parameter is AllUsers, the module is installed to %systemdrive%:\Program Files\WindowsPowerShell\Modules.</span></span> <span data-ttu-id="ec635-112">Scope 的值为 CurrentUser 时，会将模块安装到 $home\Documents\WindowsPowerShell\Modules。</span><span class="sxs-lookup"><span data-stu-id="ec635-112">When the value of Scope is CurrentUser, the module is installed to $home\Documents\WindowsPowerShell\Modules.</span></span>
 
-<a id="nopathupdate" class="xliff"></a>
-## NoPathUpdate
+<span data-ttu-id="ec635-113">可根据指定模块的最低和确切版本筛选结果。</span><span class="sxs-lookup"><span data-stu-id="ec635-113">You can filter your results based on minimum and exact versions of specified modules.</span></span>
 
-- Install-Script cmdlet 上的 NoPathUpdate 开关参数绕过向 PATH 环境变量添加脚本安装位置的提示。
-- 只要使用指定了 –NoPathUpdate 的命令，结果就不会有提示，且不会更新 PATH（此处忽略 force）。
-- -Force（无 - NoPathUpdate）的结果不会有提示，并且会更新 PATH。
-- 如果未指定 –Force 和 –NoPathUpdate，则会向用户显示提示。
-- 以上全部内容仅适用于首次在给定范围中使用 Install-Script 时。
+- <span data-ttu-id="ec635-114">对于 PowerShell 脚本文件，没有并行版本支持</span><span class="sxs-lookup"><span data-stu-id="ec635-114">No Side-by-side version support for PowerShell Script files</span></span>
+- <span data-ttu-id="ec635-115">脚本依赖项安装支持</span><span class="sxs-lookup"><span data-stu-id="ec635-115">Script dependency installation support</span></span>
+- <span data-ttu-id="ec635-116">**不受信任提示：**从不受信任的存储库中安装模块需要得到用户的同意。</span><span class="sxs-lookup"><span data-stu-id="ec635-116">**Untrusted prompt:** User acceptance is required for installing the modules from an untrusted repository.</span></span>
+- <span data-ttu-id="ec635-117">-Force 将重新安装已安装的模块</span><span class="sxs-lookup"><span data-stu-id="ec635-117">-Force reinstalls the installed module</span></span>
+- <span data-ttu-id="ec635-118">RequiredVersion 将指定版本安装于 SxS 中，将现有版本安装于 PowerShell version 5.0 或更新的版本中。</span><span class="sxs-lookup"><span data-stu-id="ec635-118">RequiredVersion installs the specified version in SxS with existing versions on PowerShell version 5.0 or newer.</span></span>
 
+<span data-ttu-id="ec635-119">Install-Module、Save-Module、Uninstall-Module、Install-Script、Save-Script 和 Uninstall-Script cmdlet 上的 -Name 中不支持通配符。</span><span class="sxs-lookup"><span data-stu-id="ec635-119">Wildcards are not supported in -Name on Install-Module, Save-Module, Uninstall-Module, Install-Script, Save-Script, and Uninstall-Script cmdlets.</span></span>
 
-<a id="notes" class="xliff"></a>
-## 注释
+### <a name="scope"></a><span data-ttu-id="ec635-120">作用域</span><span class="sxs-lookup"><span data-stu-id="ec635-120">Scope</span></span>
+<span data-ttu-id="ec635-121">指定模块的安装范围。</span><span class="sxs-lookup"><span data-stu-id="ec635-121">Specifies the installation scope of the module.</span></span> <span data-ttu-id="ec635-122">此参数可接受的值是：AllUsers 和 CurrentUser。</span><span class="sxs-lookup"><span data-stu-id="ec635-122">The acceptable values for this parameter are: AllUsers and CurrentUser.</span></span>
 
-此 cmdlet 在 Windows PowerShell 3.0 或更高版本的 Windows PowerShell、Windows 7 或 Windows 2008 R2 及 Windows 的更高版本上运行。
+<span data-ttu-id="ec635-123">默认安装范围为 AllUsers。</span><span class="sxs-lookup"><span data-stu-id="ec635-123">The default installation scope is AllUsers.</span></span>
 
-如果不能导入已安装模块，（即，如果文件夹内，它没有名称相同的 .psm1、.psd1、或 .dll），安装将失败，除非将 Force 参数添加到命令。
+<span data-ttu-id="ec635-124">AllUsers 范围允许模块安装在计算机的所有用户都可访问的位置，即“$env: SystemDrive\Program Files\WindowsPowerShell\Modules”。</span><span class="sxs-lookup"><span data-stu-id="ec635-124">The AllUsers scope lets modules be installed in a location that is accessible to all users of the computer, that is, "$env:SystemDrive\Program Files\WindowsPowerShell\Modules".</span></span>
 
-如果计算机上的模块版本与为 Name 参数指定的值相匹配，且未添加 MinimumVersion 或 RequiredVersion 参数，则 Install-Script 将以无提示的方式继续且不安装该模块。 如果指定了 MinimumVersion 或 RequiredVersion 参数，且现有模块与该参数中的值不匹配，则会发生错误。 具体而言：如果当前安装的模块的版本低于 MinimumVersion 参数的值或不等于 RequiredVersion 参数的值，就会出错。 如果已安装模块的版本大于 MinimumVersion 参数的值或等于 RequiredVersion 参数的值，Install-Script 将以无提示方式继续且不安装该模块。
-
-如果联机库中不存在与指定名称相匹配的模块，则 Install-Script 将返回错误。
-
-若要安装多个模块，指定模块名称的一个数组（用逗号分隔）。 如果指定多个模块名称，则不能添加 MinimumVersion 或 RequiredVersion。
-
-默认情况下，模块将安装到 Program Files 文件夹中，避免在安装 Windows PowerShell Desired State Configuration (DSC) 资源时造成混淆。可通过管道将多个 PSGetItemInfo 对象传递到 Install-Script；这是在单个命令中指定安装多个模块的另一种方法。
-
-为防止运行包含恶意代码的模块，不会通过安装自动导入已安装的模块。 安全性最佳的做法是首次在模块中运行任何 cmdlet 或函数前，先评估模块代码。
+<span data-ttu-id="ec635-125">CurrentUser 范围仅允许模块安装在“$home\Documents\WindowsPowerShell\Modules”，因此仅向当前用户提供该模块。</span><span class="sxs-lookup"><span data-stu-id="ec635-125">The CurrentUser scope lets modules be installed only to "$home\Documents\WindowsPowerShell\Modules", so that the module is available only to the current user.</span></span>
 
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 语法
+<span data-ttu-id="ec635-126">指定脚本的安装范围。</span><span class="sxs-lookup"><span data-stu-id="ec635-126">Specifies the installation scope of the script.</span></span> <span data-ttu-id="ec635-127">有效值为：AllUsers 和 CurrentUser。</span><span class="sxs-lookup"><span data-stu-id="ec635-127">Valid values are: AllUsers and CurrentUser.</span></span> <span data-ttu-id="ec635-128">默认值为 CurrentUser。</span><span class="sxs-lookup"><span data-stu-id="ec635-128">The default is CurrentUser.</span></span>
+
+<span data-ttu-id="ec635-129">AllUsers 范围指定将脚本安装到 %systemdrive%:\ProgramFiles\WindowsPowerShell\Scripts，向所有用户提供该脚本。</span><span class="sxs-lookup"><span data-stu-id="ec635-129">The AllUsers scope specifies to install a script to %systemdrive%:\ProgramFiles\WindowsPowerShell\Scripts so that the script is available to all users.</span></span> <span data-ttu-id="ec635-130">CurrentUser 范围指定将脚本安装到 $home\Documents\WindowsPowerShell\Scripts，仅向当前用户提供该脚本。</span><span class="sxs-lookup"><span data-stu-id="ec635-130">The CurrentUser scope specifies to install the script in $home\Documents\WindowsPowerShell\Scripts so that the script is available only to the current user.</span></span>
+
+
+## <a name="nopathupdate"></a><span data-ttu-id="ec635-131">NoPathUpdate</span><span class="sxs-lookup"><span data-stu-id="ec635-131">NoPathUpdate</span></span>
+
+- <span data-ttu-id="ec635-132">Install-Script cmdlet 上的 NoPathUpdate 开关参数绕过向 PATH 环境变量添加脚本安装位置的提示。</span><span class="sxs-lookup"><span data-stu-id="ec635-132">NoPathUpdate switch parameter on Install-Script cmdlet bypasses the prompt for adding the script install location to the PATH environment variable.</span></span>
+- <span data-ttu-id="ec635-133">只要使用指定了 –NoPathUpdate 的命令，结果就不会有提示，且不会更新 PATH（此处忽略 force）。</span><span class="sxs-lookup"><span data-stu-id="ec635-133">Any use of the command WITH –NoPathUpdate specified will result in no prompt and the PATH NOT being updated (force is ignorable here).</span></span>
+- <span data-ttu-id="ec635-134">-Force（无 - NoPathUpdate）的结果不会有提示，并且会更新 PATH。</span><span class="sxs-lookup"><span data-stu-id="ec635-134">-Force without –NoPathUpdate will result in no prompt and the PATH will be updated.</span></span>
+- <span data-ttu-id="ec635-135">如果未指定 –Force 和 –NoPathUpdate，则会向用户显示提示。</span><span class="sxs-lookup"><span data-stu-id="ec635-135">If neither –Force or –NoPathUpdate are specified, the user will see the prompt.</span></span>
+- <span data-ttu-id="ec635-136">以上全部内容仅适用于首次在给定范围中使用 Install-Script 时。</span><span class="sxs-lookup"><span data-stu-id="ec635-136">All of this only applies the first time Install-Script is used in a given scope.</span></span>
+
+
+## <a name="notes"></a><span data-ttu-id="ec635-137">注释</span><span class="sxs-lookup"><span data-stu-id="ec635-137">Notes</span></span>
+
+<span data-ttu-id="ec635-138">此 cmdlet 在 Windows PowerShell 3.0 或更高版本的 Windows PowerShell、Windows 7 或 Windows 2008 R2 及 Windows 的更高版本上运行。</span><span class="sxs-lookup"><span data-stu-id="ec635-138">This cmdlet runs on Windows PowerShell 3.0 or later releases of Windows PowerShell, on Windows 7 or Windows 2008 R2 and later releases of Windows.</span></span>
+
+<span data-ttu-id="ec635-139">如果不能导入已安装模块，（即，如果文件夹内，它没有名称相同的 .psm1、.psd1、或 .dll），安装将失败，除非将 Force 参数添加到命令。</span><span class="sxs-lookup"><span data-stu-id="ec635-139">If an installed module cannot be imported (that is, if it does not have a .psm1, .psd1, or .dll of the same name within the folder), installation fails unless you add the Force parameter to your command.</span></span>
+
+<span data-ttu-id="ec635-140">如果计算机上的模块版本与为 Name 参数指定的值相匹配，且未添加 MinimumVersion 或 RequiredVersion 参数，则 Install-Script 将以无提示的方式继续且不安装该模块。</span><span class="sxs-lookup"><span data-stu-id="ec635-140">If a version of the module on the computer matches the value specified for the Name parameter, and you have not added the MinimumVersion or RequiredVersion parameter, Install-Script silently continues without installing that module.</span></span> <span data-ttu-id="ec635-141">如果指定了 MinimumVersion 或 RequiredVersion 参数，且现有模块与该参数中的值不匹配，则会发生错误。</span><span class="sxs-lookup"><span data-stu-id="ec635-141">If the MinimumVersion or RequiredVersion parameters are specified, and the existing module does not match the values in that parameter, then an error occurs.</span></span> <span data-ttu-id="ec635-142">具体而言：如果当前安装的模块的版本低于 MinimumVersion 参数的值或不等于 RequiredVersion 参数的值，就会出错。</span><span class="sxs-lookup"><span data-stu-id="ec635-142">To be more specific: if the version of the currently-installed module is either lower than the value of the MinimumVersion parameter, or not equal to the value of the RequiredVersion parameter, an error occurs.</span></span> <span data-ttu-id="ec635-143">如果已安装模块的版本大于 MinimumVersion 参数的值或等于 RequiredVersion 参数的值，Install-Script 将以无提示方式继续且不安装该模块。</span><span class="sxs-lookup"><span data-stu-id="ec635-143">If the version of the installed module is greater than the value of the MinimumVersion parameter, or equal to the value of the RequiredVersion parameter, Install-Script silently continues without installing that module.</span></span>
+
+<span data-ttu-id="ec635-144">如果联机库中不存在与指定名称相匹配的模块，则 Install-Script 将返回错误。</span><span class="sxs-lookup"><span data-stu-id="ec635-144">Install-Script returns an error if no module exists in the online gallery that matches the specified name.</span></span>
+
+<span data-ttu-id="ec635-145">若要安装多个模块，指定模块名称的一个数组（用逗号分隔）。</span><span class="sxs-lookup"><span data-stu-id="ec635-145">To install multiple modules, specify an array of the module names, separated by commas.</span></span> <span data-ttu-id="ec635-146">如果指定多个模块名称，则不能添加 MinimumVersion 或 RequiredVersion。</span><span class="sxs-lookup"><span data-stu-id="ec635-146">You cannot add MinimumVersion or RequiredVersion if you specify multiple module names.</span></span>
+
+<span data-ttu-id="ec635-147">默认情况下，模块将安装到 Program Files 文件夹中，避免在安装 Windows PowerShell Desired State Configuration (DSC) 资源时造成混淆。可通过管道将多个 PSGetItemInfo 对象传递到 Install-Script；这是在单个命令中指定安装多个模块的另一种方法。</span><span class="sxs-lookup"><span data-stu-id="ec635-147">By default, modules are installed to the Program Files folder, to prevent confusion when you are installing Windows PowerShell Desired State Configuration (DSC) resources.You can pipe multiple PSGetItemInfo objects to Install-Script; this is another way of specifying multiple modules to install in a single command.</span></span>
+
+<span data-ttu-id="ec635-148">为防止运行包含恶意代码的模块，不会通过安装自动导入已安装的模块。</span><span class="sxs-lookup"><span data-stu-id="ec635-148">To help prevent running modules that contain malicious code, installed modules are not automatically imported by installation.</span></span> <span data-ttu-id="ec635-149">安全性最佳的做法是首次在模块中运行任何 cmdlet 或函数前，先评估模块代码。</span><span class="sxs-lookup"><span data-stu-id="ec635-149">As a security best practice, evaluate module code before running any cmdlets or functions in a module for the first time.</span></span>
+
+
+## <a name="cmdlet-syntax"></a><span data-ttu-id="ec635-150">Cmdlet 语法</span><span class="sxs-lookup"><span data-stu-id="ec635-150">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Install-Script -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="ec635-151">Cmdlet 联机帮助参考</span><span class="sxs-lookup"><span data-stu-id="ec635-151">Cmdlet online help reference</span></span>
 
-[Install-Script](http://go.microsoft.com/fwlink/?LinkId=619784)
+[<span data-ttu-id="ec635-152">Install-Script</span><span class="sxs-lookup"><span data-stu-id="ec635-152">Install-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619784)
 
-<a id="example-commands" class="xliff"></a>
-## 示例命令
+## <a name="example-commands"></a><span data-ttu-id="ec635-153">示例命令</span><span class="sxs-lookup"><span data-stu-id="ec635-153">Example commands</span></span>
 
 ```powershell
 
@@ -291,7 +283,7 @@ Get-InstalledScript
 
 ```
 
-还可使用 Get-Command –Name <InstalledScriptFileName> 获取它。 第一次使用指定的作用域时，会将两个安装位置添加到 PATH 环境变量。
+<span data-ttu-id="ec635-154">还可使用 Get-Command –Name <InstalledScriptFileName> 获取它。</span><span class="sxs-lookup"><span data-stu-id="ec635-154">You can also use Get-Command –Name <InstalledScriptFileName> to get it.</span></span> <span data-ttu-id="ec635-155">第一次使用指定的作用域时，会将两个安装位置添加到 PATH 环境变量。</span><span class="sxs-lookup"><span data-stu-id="ec635-155">Two install locations are added to the PATH environment variable on first use of a specified scope.</span></span>
 ```powershell
 $env:Path -split ';'| Where-Object {$\_} | Select-Object -Last 2
 C:\\Program Files\\WindowsPowerShell\\Scripts
@@ -479,8 +471,7 @@ The scripts install location 'C:\Program Files\WindowsPowerShell\Scripts' is req
 
 ```
 
-<a id="install-script-cmdlet-in-pipeline-operations" class="xliff"></a>
-## 管道操作中的 Install-Script cmdlet
+## <a name="install-script-cmdlet-in-pipeline-operations"></a><span data-ttu-id="ec635-156">管道操作中的 Install-Script cmdlet</span><span class="sxs-lookup"><span data-stu-id="ec635-156">Install-Script cmdlet in pipeline operations</span></span>
 
 ```powershell
 
@@ -507,13 +498,11 @@ Get-InstalledModule
 
 ```
 
-<a id="side-by-side-version-support-on-powershell-50-or-newer" class="xliff"></a>
-## PowerShell 5.0 或更高版本上的并行版本支持
+## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a><span data-ttu-id="ec635-157">PowerShell 5.0 或更高版本上的并行版本支持</span><span class="sxs-lookup"><span data-stu-id="ec635-157">Side-by-Side Version Support on PowerShell 5.0 or newer</span></span>
 
-PowerShellGet 在 Windows PowerShell 5.0 或更新的版本中运行的 Install-Script、Update-Script 和 Publish-Script cmdlet 中对并行 (SxS) 模块版本提供支持。
+<span data-ttu-id="ec635-158">PowerShellGet 在 Windows PowerShell 5.0 或更新的版本中运行的 Install-Script、Update-Script 和 Publish-Script cmdlet 中对并行 (SxS) 模块版本提供支持。</span><span class="sxs-lookup"><span data-stu-id="ec635-158">PowerShellGet supports the side-by-side (SxS) module version support in Install-Script, Update-Script, and Publish-Script cmdlets that run in Windows PowerShell 5.0 or newer.</span></span>
 
-<a id="install-script-examples" class="xliff"></a>
-### Install-Script 示例
+### <a name="install-script-examples"></a><span data-ttu-id="ec635-159">Install-Script 示例</span><span class="sxs-lookup"><span data-stu-id="ec635-159">Install-Script examples</span></span>
 
 ```powershell
 # Install a version of the module
@@ -545,8 +534,7 @@ Version    Name                                Repository           Description
 
 ```
 
-<a id="install-module-with-its-dependencies" class="xliff"></a>
-## 安装模块及其依赖项
+## <a name="install-module-with-its-dependencies"></a><span data-ttu-id="ec635-160">安装模块及其依赖项</span><span class="sxs-lookup"><span data-stu-id="ec635-160">Install module with its dependencies</span></span>
 
 ```powershell
 
@@ -640,8 +628,7 @@ Version    Name                                Repository           Description
 
 ```
 
-<a id="error-scenarios" class="xliff"></a>
-## 错误方案
+## <a name="error-scenarios"></a><span data-ttu-id="ec635-161">错误方案</span><span class="sxs-lookup"><span data-stu-id="ec635-161">Error scenarios</span></span>
 
 ```powershell
 
@@ -659,8 +646,7 @@ Install-Script ContosoClient,ContosoServer -MinimumVersion 2.0
 
 ```
 
-<a id="installing-a-script-with-dependent-scripts-and-modules" class="xliff"></a>
-## 安装具有依赖脚本和模块的脚本
+## <a name="installing-a-script-with-dependent-scripts-and-modules"></a><span data-ttu-id="ec635-162">安装具有依赖脚本和模块的脚本</span><span class="sxs-lookup"><span data-stu-id="ec635-162">Installing a script with dependent scripts and modules</span></span>
 
 ```powershell
 # Installing a script with dependent scripts and modules
@@ -733,11 +719,10 @@ Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
 Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
 
-<a id="install-script-and-get-installedscript-cmdlets" class="xliff"></a>
-## Install-Script cmdlet 和 Get-InstalledScript cmdlet
-Install-Script cmdlet 可用于将特定的脚本文件及其依赖项安装到指定的作用域。 默认情况下，脚本将安装到 AllUsers 作用域。 Get-InstalledScript cmdlet 可用于获取使用 Install-Script cmdlet 安装的脚本文件列表。
+## <a name="install-script-and-get-installedscript-cmdlets"></a><span data-ttu-id="ec635-163">Install-Script cmdlet 和 Get-InstalledScript cmdlet</span><span class="sxs-lookup"><span data-stu-id="ec635-163">Install-Script and Get-InstalledScript cmdlets</span></span>
+<span data-ttu-id="ec635-164">Install-Script cmdlet 可用于将特定的脚本文件及其依赖项安装到指定的作用域。</span><span class="sxs-lookup"><span data-stu-id="ec635-164">Install-Script cmdlet lets you to install a specific script file along with its dependencies to the specified scope.</span></span> <span data-ttu-id="ec635-165">默认情况下，脚本将安装到 AllUsers 作用域。</span><span class="sxs-lookup"><span data-stu-id="ec635-165">By default, scripts are installed to the AllUsers scope.</span></span> <span data-ttu-id="ec635-166">Get-InstalledScript cmdlet 可用于获取使用 Install-Script cmdlet 安装的脚本文件列表。</span><span class="sxs-lookup"><span data-stu-id="ec635-166">Get-InstalledScript cmdlet lets you to get the list of script files which were installed using Install-Script cmdlet.</span></span>
 
-使用注意事项：为了在安装脚本之后能够对其进行管理和定位，Install-script 将在 $home\Documents\WindowsPowerShell\Scripts 创建默认文件夹用于存储脚本，并将该文件夹添加到 PATH 环境。 如果担心修改路径会出现问题，请使用 Save-Script 而非 Install-Script。 Get InstalledScripts 和 Uninstall-Script 只能处理使用 Install-Script 放置在系统上的脚本。
+<span data-ttu-id="ec635-167">使用注意事项：为了在安装脚本之后能够对其进行管理和定位，Install-script 将在 $home\Documents\WindowsPowerShell\Scripts 创建默认文件夹用于存储脚本，并将该文件夹添加到 PATH 环境。</span><span class="sxs-lookup"><span data-stu-id="ec635-167">Use note: To allow management and locating of scripts once they are installed, Install-script will create a default folder for storing scripts at $home\Documents\WindowsPowerShell\Scripts, and add that folder to your PATH environment.</span></span> <span data-ttu-id="ec635-168">如果担心修改路径会出现问题，请使用 Save-Script 而非 Install-Script。</span><span class="sxs-lookup"><span data-stu-id="ec635-168">If modifying the path is a concern, use Save-Script instead of Install-Script.</span></span> <span data-ttu-id="ec635-169">Get InstalledScripts 和 Uninstall-Script 只能处理使用 Install-Script 放置在系统上的脚本。</span><span class="sxs-lookup"><span data-stu-id="ec635-169">Get-InstalledScripts and Uninstall-Script can only work with scripts placed on the system using Install-Script.</span></span>
 ```powershell
 # Install locations for scripts:
 # Default scope is AllUsers.
@@ -793,7 +778,7 @@ InstalledLocation : C:\\Users\\manikb\\Documents\\WindowsPowerShell\\Scripts
 Installed script file is immediately available for usage.
 ```
 
-还可使用 Get-Command –Name <InstalledScriptFileName> 获取它。 第一次使用指定的作用域时，会将两个安装位置添加到 PATH 环境变量。
+<span data-ttu-id="ec635-170">还可使用 Get-Command –Name <InstalledScriptFileName> 获取它。</span><span class="sxs-lookup"><span data-stu-id="ec635-170">You can also use Get-Command –Name <InstalledScriptFileName> to get it.</span></span> <span data-ttu-id="ec635-171">第一次使用指定的作用域时，会将两个安装位置添加到 PATH 环境变量。</span><span class="sxs-lookup"><span data-stu-id="ec635-171">Two install locations are added to the PATH environment variable on first use of a specified scope.</span></span>
 ```powershell
 $env:Path -split ';'| Where-Object {$\_} | Select-Object -Last 2
 C:\\Program Files\\WindowsPowerShell\\Scripts

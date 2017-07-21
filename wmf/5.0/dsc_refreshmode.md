@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="additional-value-for-refreshmode-property" class="xliff"></a>
-# RefreshMode 属性的附加值
+# <a name="additional-value-for-refreshmode-property"></a><span data-ttu-id="7204e-102">RefreshMode 属性的附加值</span><span class="sxs-lookup"><span data-stu-id="7204e-102">Additional value for RefreshMode property</span></span>
 
-此版本引入了新的 `RefreshMode` 值 **Disabled**。 设置为此模式时，LCM 不进行文档管理。 有关详细信息，请参阅[配置本地配置管理器](https://msdn.microsoft.com/powershell/dsc/metaconfig)。
+<span data-ttu-id="7204e-103">此版本引入了新的 `RefreshMode` 值 **Disabled**。</span><span class="sxs-lookup"><span data-stu-id="7204e-103">This release introduces a new `RefreshMode` value, **Disabled**.</span></span> <span data-ttu-id="7204e-104">设置为此模式时，LCM 不进行文档管理。</span><span class="sxs-lookup"><span data-stu-id="7204e-104">When this mode is set, LCM does not do document management.</span></span> <span data-ttu-id="7204e-105">有关详细信息，请参阅[配置本地配置管理器](https://msdn.microsoft.com/powershell/dsc/metaconfig)。</span><span class="sxs-lookup"><span data-stu-id="7204e-105">For more information, see [Configuring the Local Configuration Manager](https://msdn.microsoft.com/powershell/dsc/metaconfig).</span></span>
 

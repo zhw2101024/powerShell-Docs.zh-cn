@@ -9,10 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="help-support-for-dsc-configurations" class="xliff"></a>
-# DSC 配置的帮助支持
+# <a name="help-support-for-dsc-configurations"></a><span data-ttu-id="ad34d-102">DSC 配置的帮助支持</span><span class="sxs-lookup"><span data-stu-id="ad34d-102">Help support for DSC configurations</span></span>
 
-现在，当你使用 `-?` 调用配置函数时，可以使用 DSC 配置内部基于注释的帮助，获取关于该配置使用情况的帮助：  
+<span data-ttu-id="ad34d-103">现在，当你使用 `-?` 调用配置函数时，可以使用 DSC 配置内部基于注释的帮助，获取关于该配置使用情况的帮助：</span><span class="sxs-lookup"><span data-stu-id="ad34d-103">You can now use comment-based help inside of DSC configurations and get help on usage of that configuration when calling the configuration function with `-?`:</span></span>  
 
-有关详细信息，请参阅[编写 DSC 配置的帮助](https://msdn.microsoft.com/powershell/dsc/confighelp)。
+<span data-ttu-id="ad34d-104">有关详细信息，请参阅[编写 DSC 配置的帮助](https://msdn.microsoft.com/powershell/dsc/confighelp)。</span><span class="sxs-lookup"><span data-stu-id="ad34d-104">For more information, see [Writing help for DSC configurations](https://msdn.microsoft.com/powershell/dsc/confighelp).</span></span>
 

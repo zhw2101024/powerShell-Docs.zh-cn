@@ -9,10 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="configure-dsc-lcm-with-new-meta-configuration-attribute" class="xliff"></a>
-# 使用新的元配置特性配置 DSC LCM
+# <a name="configure-dsc-lcm-with-new-meta-configuration-attribute"></a><span data-ttu-id="753ab-102">使用新的元配置特性配置 DSC LCM</span><span class="sxs-lookup"><span data-stu-id="753ab-102">Configure DSC LCM with new meta-configuration attribute</span></span>
 
-`DscLocalConfigurationManager` 特性将配置块指定为元配置，用于配置 DSC 本地配置管理器。 
+<span data-ttu-id="753ab-103">`DscLocalConfigurationManager` 特性将配置块指定为元配置，用于配置 DSC 本地配置管理器。</span><span class="sxs-lookup"><span data-stu-id="753ab-103">The `DscLocalConfigurationManager` attribute designates a configuration block as a meta-configuration, which is used to configure the DSC Local Configuration Manager.</span></span> 
 
-有关详细信息，请参阅[配置本地配置管理器](https://msdn.microsoft.com/powershell/dsc/metaconfig)。
+<span data-ttu-id="753ab-104">有关详细信息，请参阅[配置本地配置管理器](https://msdn.microsoft.com/powershell/dsc/metaconfig)。</span><span class="sxs-lookup"><span data-stu-id="753ab-104">For more information, see [Configuring the Local Configuration Manager](https://msdn.microsoft.com/powershell/dsc/metaconfig).</span></span>
 

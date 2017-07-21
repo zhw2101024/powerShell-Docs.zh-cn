@@ -10,11 +10,10 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-examples" class="xliff"></a>
-# DSC 示例
+# <a name="dsc-examples"></a><span data-ttu-id="ab5ec-103">DSC 示例</span><span class="sxs-lookup"><span data-stu-id="ab5ec-103">DSC examples</span></span>
 
-本部分包含 DSC 示例：
+<span data-ttu-id="ab5ec-104">本部分包含 DSC 示例：</span><span class="sxs-lookup"><span data-stu-id="ab5ec-104">This section contains DSC examples:</span></span>
 
-- [使用 DSC、Pester 和 Visual Studio Team Services 生成 CI-CD 管道](dscCiCd.md)
-- [分离配置和环境数据](separatingEnvData.md)
+- [<span data-ttu-id="ab5ec-105">使用 DSC、Pester 和 Visual Studio Team Services 生成 CI-CD 管道</span><span class="sxs-lookup"><span data-stu-id="ab5ec-105">Building a CI-CD pipeline with DSC, Pester, and Visual Studio Team Services</span></span>](dscCiCd.md)
+- [<span data-ttu-id="ab5ec-106">分离配置和环境数据</span><span class="sxs-lookup"><span data-stu-id="ab5ec-106">Separating configuration and environment data</span></span>](separatingEnvData.md)
 

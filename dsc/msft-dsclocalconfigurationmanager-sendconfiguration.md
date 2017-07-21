@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="sendconfiguration-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# MSFT_DSCLocalConfigurationManager 类的 SendConfiguration 方法
+# <a name="sendconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="ea30d-103">MSFT_DSCLocalConfigurationManager 类的 SendConfiguration 方法</span><span class="sxs-lookup"><span data-stu-id="ea30d-103">SendConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-将配置文档发送到托管节点并将其保存为挂起的更改。
+<span data-ttu-id="ea30d-104">将配置文档发送到托管节点并将其保存为挂起的更改。</span><span class="sxs-lookup"><span data-stu-id="ea30d-104">Sends the configuration document to the managed node and saves it as a pending change.</span></span>
 
-<a id="syntax" class="xliff"></a>
-语法
+<a name="syntax"></a><span data-ttu-id="ea30d-105">语法</span><span class="sxs-lookup"><span data-stu-id="ea30d-105">Syntax</span></span>
 ------
 
 ```mof
@@ -26,40 +24,35 @@ uint32 SendConfiguration(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-参数
+<a name="parameters"></a><span data-ttu-id="ea30d-106">参数</span><span class="sxs-lookup"><span data-stu-id="ea30d-106">Parameters</span></span>
 ----------
 
-ConfigurationData \[in\]  
-配置的环境数据。
+<span data-ttu-id="ea30d-107">ConfigurationData \[in\]</span><span class="sxs-lookup"><span data-stu-id="ea30d-107">*ConfigurationData* \[in\]</span></span>  
+<span data-ttu-id="ea30d-108">配置的环境数据。</span><span class="sxs-lookup"><span data-stu-id="ea30d-108">The environment data for the configuration.</span></span>
 
-force \[in\]  
-为 **true**，则强制停止配置。
+<span data-ttu-id="ea30d-109">force \[in\]</span><span class="sxs-lookup"><span data-stu-id="ea30d-109">*force* \[in\]</span></span>  
+<span data-ttu-id="ea30d-110">为 **true**，则强制停止配置。</span><span class="sxs-lookup"><span data-stu-id="ea30d-110">**true** to force the configuration to stop.</span></span>
 
-<a id="return-value" class="xliff"></a>
-## 返回值
+## <a name="return-value"></a><span data-ttu-id="ea30d-111">返回值</span><span class="sxs-lookup"><span data-stu-id="ea30d-111">Return value</span></span>
 ------------
 
-如果成功，则返回零；否则返回错误代码。
+<span data-ttu-id="ea30d-112">如果成功，则返回零；否则返回错误代码。</span><span class="sxs-lookup"><span data-stu-id="ea30d-112">Returns zero on success; otherwise returns an error code.</span></span>
 
-<a id="remarks" class="xliff"></a>
-## 备注
+## <a name="remarks"></a><span data-ttu-id="ea30d-113">备注</span><span class="sxs-lookup"><span data-stu-id="ea30d-113">Remarks</span></span>
 
-这是一种静态方法。
+<span data-ttu-id="ea30d-114">这是一种静态方法。</span><span class="sxs-lookup"><span data-stu-id="ea30d-114">This is a static method.</span></span>
 
-<a id="requirements" class="xliff"></a>
-## 要求
+## <a name="requirements"></a><span data-ttu-id="ea30d-115">要求</span><span class="sxs-lookup"><span data-stu-id="ea30d-115">Requirements</span></span>
 ------------
->**MOF：** DscCore.mof
+><span data-ttu-id="ea30d-116">**MOF：** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="ea30d-116">**MOF:** DscCore.mof</span></span>
 
->**命名空间**：Root\Microsoft\Windows\DesiredStateConfiguration
-
-
-<a id="see-also" class="xliff"></a>
-## 另请参阅
+><span data-ttu-id="ea30d-117">**命名空间**：Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="ea30d-117">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="ea30d-118">另请参阅</span><span class="sxs-lookup"><span data-stu-id="ea30d-118">See also</span></span>
+
+
+[<span data-ttu-id="ea30d-119">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="ea30d-119">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
 
 
  

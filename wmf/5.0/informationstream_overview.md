@@ -9,10 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="information-stream" class="xliff"></a>
-# 信息流
+# <a name="information-stream"></a><span data-ttu-id="6f04d-102">信息流</span><span class="sxs-lookup"><span data-stu-id="6f04d-102">Information Stream</span></span>
 
-现在可以使用新的结构化信息流在脚本及其主机之间传输结构化数据。 已将 **Write-Host** 更新为将其输出发出到信息流，你现在可以在信息流中捕获或抑制它。 新的 **Write-Information** cmdlet（以及相应的 WriteInformation API）与 **-InformationVariable** 和 **-InformationAction** 通用参数一起使用可以增加灵活性并启用更多功能。
+<span data-ttu-id="6f04d-103">现在可以使用新的结构化信息流在脚本及其主机之间传输结构化数据。</span><span class="sxs-lookup"><span data-stu-id="6f04d-103">A new structured Information stream can now be used to transmit structured data between a script and its host.</span></span> <span data-ttu-id="6f04d-104">已将 **Write-Host** 更新为将其输出发出到信息流，你现在可以在信息流中捕获或抑制它。</span><span class="sxs-lookup"><span data-stu-id="6f04d-104">**Write-Host** has also been updated to emit its output to the Information stream where you can now capture or silence it.</span></span> <span data-ttu-id="6f04d-105">新的 **Write-Information** cmdlet（以及相应的 WriteInformation API）与 **-InformationVariable** 和 **-InformationAction** 通用参数一起使用可以增加灵活性并启用更多功能。</span><span class="sxs-lookup"><span data-stu-id="6f04d-105">The new **Write-Information** cmdlet (along with a corresponding WriteInformation API) used with **-InformationVariable** and **-InformationAction** common parameters enables more flexibility and capability.</span></span>
 
 ```powershell
 PS C:\Users\demo> ## Here's a typical PowerShell script

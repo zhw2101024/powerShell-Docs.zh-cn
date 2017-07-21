@@ -33,10 +33,14 @@
 ### [服务资源](serviceResource.md)
 ### [ServiceSet 资源](serviceSetResource.md)
 ### [用户资源](userResource.md)
+### [WaitForAll 资源](waitForAllResource.md)
+### [WaitForAny 资源](waitForAnyResource.md)
+### [WaitForSome 资源](waitForSomeResource.md)
 ### [WindowsFeature 资源](windowsfeatureResource.md)
 ### [WindowsFeatureSet 资源](windowsFeatureSetResource.md)
 ### [WindowsOptionalFeature 资源](windowsOptionalFeatureResource.md)
 ### [WindowsOptionalFeatureSet 资源](windowsOptionalFeatureSetResource.md)
+### [WindowsPackageCab 资源](windowsPackageCabResource.md)
 ### [WindowsProcess 资源](windowsProcessResource.md)
 ## [创作自定义资源](authoringResource.md) 
 ### [基于 MOF 的自定义资源](authoringResourceMOF.md)
@@ -59,6 +63,10 @@
 ### [使用配置 ID 设置请求客户端](pullClientConfigID.md)
 ## [使用 DSC 报表服务器](reportServer.md)
 ## [请求服务器最佳做法](secureServer.md)
+
+# [DSC 示例](dscExamples.md)
+## [使用 DSC、Pester 和 Visual Studio Team Services 生成 CI/CD 管道](dscCiCd.md)
+## [分离配置和环境数据](separatingEnvData.md)
 
 # [DSC 故障排除](troubleshooting.md)
 

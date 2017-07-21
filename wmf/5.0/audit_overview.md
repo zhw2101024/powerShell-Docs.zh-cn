@@ -9,10 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="audit-powershell-usage-using-transcription-and-logging" class="xliff"></a>
-# 审核使用脚本和日志记录的 PowerShell 使用情况
+# <a name="audit-powershell-usage-using-transcription-and-logging"></a><span data-ttu-id="e3f03-102">审核使用脚本和日志记录的 PowerShell 使用情况</span><span class="sxs-lookup"><span data-stu-id="e3f03-102">Audit PowerShell Usage using Transcription and Logging</span></span>
 
-- [增强的脚本选项](audit_transcript.md)
-- [脚本跟踪和日志记录](audit_script.md)
-- [加密消息语法 (CMS) cmdlet](audit_cms.md)
+- [<span data-ttu-id="e3f03-103">增强的脚本选项</span><span class="sxs-lookup"><span data-stu-id="e3f03-103">Enhanced Transcription Options</span></span>](audit_transcript.md)
+- [<span data-ttu-id="e3f03-104">脚本跟踪和日志记录</span><span class="sxs-lookup"><span data-stu-id="e3f03-104">Script Tracing and Logging</span></span>](audit_script.md)
+- [<span data-ttu-id="e3f03-105">加密消息语法 (CMS) cmdlet</span><span class="sxs-lookup"><span data-stu-id="e3f03-105">Cryptographic Message Syntax (CMS) cmdlets</span></span>](audit_cms.md)
 

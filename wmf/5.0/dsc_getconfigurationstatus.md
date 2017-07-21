@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="details-about-configuration-status" class="xliff"></a>
-# 关于配置状态的详细信息
+# <a name="details-about-configuration-status"></a><span data-ttu-id="39272-102">关于配置状态的详细信息</span><span class="sxs-lookup"><span data-stu-id="39272-102">Details about Configuration Status</span></span>
 
-[Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) cmdlet 从目标节点中获取有关配置状态的信息。 有关详细信息，请参阅 [DSC 问题疑难解答](https://msdn.microsoft.com/powershell/dsc/troubleshooting)。
+<span data-ttu-id="39272-103">[Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) cmdlet 从目标节点中获取有关配置状态的信息。</span><span class="sxs-lookup"><span data-stu-id="39272-103">The [Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) cmdlet gets information about configuration status from a target node.</span></span> <span data-ttu-id="39272-104">有关详细信息，请参阅 [DSC 问题疑难解答](https://msdn.microsoft.com/powershell/dsc/troubleshooting)。</span><span class="sxs-lookup"><span data-stu-id="39272-104">For more information, see [Troubleshooting DSC](https://msdn.microsoft.com/powershell/dsc/troubleshooting).</span></span>
 

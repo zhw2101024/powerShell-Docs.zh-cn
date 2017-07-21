@@ -9,9 +9,8 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="modules-support-for-declaring-version-ranges-1-etc" class="xliff"></a>
-# 对声明版本范围的模块支持（1.* 等）
-现与 **-MaximumVersion** 结合的 **-MinimumVersion** 让用户能够在特定范围内获取/导入模块。 该参数还支持 **.***。 以下示例演示其工作原理：
+# <a name="modules-support-for-declaring-version-ranges-1-etc"></a><span data-ttu-id="890e3-102">对声明版本范围的模块支持（1.* 等）</span><span class="sxs-lookup"><span data-stu-id="890e3-102">Modules support for declaring version ranges (1.*, etc)</span></span>
+<span data-ttu-id="890e3-103">现与 **-MaximumVersion** 结合的 **-MinimumVersion** 让用户能够在特定范围内获取/导入模块。</span><span class="sxs-lookup"><span data-stu-id="890e3-103">Combined with **-MinimumVersion**, **-MaximumVersion** now allows user to get/import module within specific range.</span></span> <span data-ttu-id="890e3-104">该参数还支持 **.***。</span><span class="sxs-lookup"><span data-stu-id="890e3-104">The parameter also support **.***.</span></span> <span data-ttu-id="890e3-105">以下示例演示其工作原理：</span><span class="sxs-lookup"><span data-stu-id="890e3-105">The following example shows how it works:</span></span>
 
 ```PowerShell
 Now, you can combine **-MinimumVersion** and **-MaximumVersion** to import module within specific range:

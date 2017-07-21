@@ -10,41 +10,34 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="new-scriptfileinfo" class="xliff"></a>
-# New-ScriptFileInfo
+# <a name="new-scriptfileinfo"></a><span data-ttu-id="923db-103">New-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="923db-103">New-ScriptFileInfo</span></span>
 
-使用元数据创建脚本文件。
+<span data-ttu-id="923db-104">使用元数据创建脚本文件。</span><span class="sxs-lookup"><span data-stu-id="923db-104">Creates a script file with metadata.</span></span>
 
-<a id="description" class="xliff"></a>
-## 说明
+## <a name="description"></a><span data-ttu-id="923db-105">说明</span><span class="sxs-lookup"><span data-stu-id="923db-105">Description</span></span>
 
-New-ScriptFileInfo cmdlet 创建 PowerShell 脚本文件，包括有关脚本的元数据。
+<span data-ttu-id="923db-106">New-ScriptFileInfo cmdlet 创建 PowerShell 脚本文件，包括有关脚本的元数据。</span><span class="sxs-lookup"><span data-stu-id="923db-106">The New-ScriptFileInfo cmdlet creates a PowerShell script file, including metadata about the script.</span></span>
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a><span data-ttu-id="923db-107">Cmdlet 语法</span><span class="sxs-lookup"><span data-stu-id="923db-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name New-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="923db-108">Cmdlet 联机帮助参考</span><span class="sxs-lookup"><span data-stu-id="923db-108">Cmdlet online help reference</span></span>
 
-[New-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619792)
+[<span data-ttu-id="923db-109">New-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="923db-109">New-ScriptFileInfo</span></span>](http://go.microsoft.com/fwlink/?LinkId=619792)
 
-<a id="example-commands" class="xliff"></a>
-## 示例命令
+## <a name="example-commands"></a><span data-ttu-id="923db-110">示例命令</span><span class="sxs-lookup"><span data-stu-id="923db-110">Example commands</span></span>
 
-<a id="passthru-parameter" class="xliff"></a>
-### PassThru 参数
+### <a name="passthru-parameter"></a><span data-ttu-id="923db-111">PassThru 参数</span><span class="sxs-lookup"><span data-stu-id="923db-111">PassThru parameter</span></span>
 
 ```powershell
 New-ScriptFileInfo -Description "Script file description." -PassThru
 ```
 
-<a id="new-scriptfileinfo-cmdlet" class="xliff"></a>
-### New-ScriptFileInfo cmdlet
-New-ScriptFileInfo cmdlet 可创建包含诸如 Version、Guid、Author 和 Description 等元数据的新脚本文件。 
+### <a name="new-scriptfileinfo-cmdlet"></a><span data-ttu-id="923db-112">New-ScriptFileInfo cmdlet</span><span class="sxs-lookup"><span data-stu-id="923db-112">New-ScriptFileInfo cmdlet</span></span>
+<span data-ttu-id="923db-113">New-ScriptFileInfo cmdlet 可创建包含诸如 Version、Guid、Author 和 Description 等元数据的新脚本文件。</span><span class="sxs-lookup"><span data-stu-id="923db-113">New-ScriptFileInfo cmdlet lets you to create a new script file with metadata like Version, Guid, Author, and Description, etc.</span></span> 
 
 ```powershell
 # Create a new script file with minimum required metadata values

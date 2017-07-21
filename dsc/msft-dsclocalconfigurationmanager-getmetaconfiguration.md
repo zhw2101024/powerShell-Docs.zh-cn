@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="getmetaconfiguration-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# MSFT_DSCLocalConfigurationManager 类的 GetMetaConfiguration 方法
+# <a name="getmetaconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="0095e-103">MSFT_DSCLocalConfigurationManager 类的 GetMetaConfiguration 方法</span><span class="sxs-lookup"><span data-stu-id="0095e-103">GetMetaConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-获取用于控制配置代理的本地配置管理器设置。
+<span data-ttu-id="0095e-104">获取用于控制配置代理的本地配置管理器设置。</span><span class="sxs-lookup"><span data-stu-id="0095e-104">Gets the local Configuration Manager settings that are used to control the Configuration Agent.</span></span>
 
-<a id="syntax" class="xliff"></a>
-语法
+<a name="syntax"></a><span data-ttu-id="0095e-105">语法</span><span class="sxs-lookup"><span data-stu-id="0095e-105">Syntax</span></span>
 ------
 
 ```mof
@@ -25,37 +23,32 @@ uint32 GetMetaConfiguration(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-参数
+<a name="parameters"></a><span data-ttu-id="0095e-106">参数</span><span class="sxs-lookup"><span data-stu-id="0095e-106">Parameters</span></span>
 ----------
 
-MetaConfiguration \[out\]  
-在返回时包含定义设置的 **MSFT_DSCMetaConfiguration** 类的嵌入实例。
+<span data-ttu-id="0095e-107">MetaConfiguration \[out\]</span><span class="sxs-lookup"><span data-stu-id="0095e-107">*MetaConfiguration* \[out\]</span></span>  
+<span data-ttu-id="0095e-108">在返回时包含定义设置的 **MSFT_DSCMetaConfiguration** 类的嵌入实例。</span><span class="sxs-lookup"><span data-stu-id="0095e-108">On return, contains an embedded instance of the **MSFT_DSCMetaConfiguration** class that defines the settings.</span></span>
 
-<a id="return-value" class="xliff"></a>
-## 返回值
+## <a name="return-value"></a><span data-ttu-id="0095e-109">返回值</span><span class="sxs-lookup"><span data-stu-id="0095e-109">Return value</span></span>
 ------------
 
-如果成功，则返回零；否则返回错误代码。
+<span data-ttu-id="0095e-110">如果成功，则返回零；否则返回错误代码。</span><span class="sxs-lookup"><span data-stu-id="0095e-110">Returns zero on success; otherwise returns an error code.</span></span>
 
-<a id="remarks" class="xliff"></a>
-## 备注
+## <a name="remarks"></a><span data-ttu-id="0095e-111">备注</span><span class="sxs-lookup"><span data-stu-id="0095e-111">Remarks</span></span>
 
-这是一种静态方法。
+<span data-ttu-id="0095e-112">这是一种静态方法。</span><span class="sxs-lookup"><span data-stu-id="0095e-112">This is a static method.</span></span>
 
-<a id="requirements" class="xliff"></a>
-## 要求
+## <a name="requirements"></a><span data-ttu-id="0095e-113">要求</span><span class="sxs-lookup"><span data-stu-id="0095e-113">Requirements</span></span>
 ------------
->**MOF：** DscCore.mof
+><span data-ttu-id="0095e-114">**MOF：** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="0095e-114">**MOF:** DscCore.mof</span></span>
 
->**命名空间**：Root\Microsoft\Windows\DesiredStateConfiguration
-
-
-<a id="see-also" class="xliff"></a>
-## 另请参阅
+><span data-ttu-id="0095e-115">**命名空间**：Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="0095e-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="0095e-116">另请参阅</span><span class="sxs-lookup"><span data-stu-id="0095e-116">See also</span></span>
+
+
+[<span data-ttu-id="0095e-117">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="0095e-117">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
 
 
  

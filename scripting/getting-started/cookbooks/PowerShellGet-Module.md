@@ -9,14 +9,14 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/08/2017
 ---
-# <a name="powershellget-module"></a>PowerShellGet 模块
-本部分包含有关 **PowerShellGet** 模块的帮助主题。 **PowerShellGet** 模块使用 Windows PowerShell 5.0 和更高版本的 Windows PowerShell 安装。
+# <a name="powershellget-module"></a><span data-ttu-id="32bc7-103">PowerShellGet 模块</span><span class="sxs-lookup"><span data-stu-id="32bc7-103">PowerShellGet Module</span></span>
+<span data-ttu-id="32bc7-104">本部分包含有关 **PowerShellGet** 模块的帮助主题。</span><span class="sxs-lookup"><span data-stu-id="32bc7-104">This section contains the help topics for the **PowerShellGet** module.</span></span> <span data-ttu-id="32bc7-105">**PowerShellGet** 模块使用 Windows PowerShell 5.0 和更高版本的 Windows PowerShell 安装。</span><span class="sxs-lookup"><span data-stu-id="32bc7-105">The **PowerShellGet** module is installed with Windows PowerShell 5.0 and later releases of Windows PowerShell.</span></span>
 
-## <a name="help-topics"></a>帮助主题
-[PowerShellGet Cmdlet](http://technet.microsoft.com/library/dn807169.aspx)
+## <a name="help-topics"></a><span data-ttu-id="32bc7-106">帮助主题</span><span class="sxs-lookup"><span data-stu-id="32bc7-106">Help Topics</span></span>
+[<span data-ttu-id="32bc7-107">PowerShellGet Cmdlet</span><span class="sxs-lookup"><span data-stu-id="32bc7-107">PowerShellGet Cmdlets</span></span>](http://technet.microsoft.com/library/dn807169.aspx)
 
-## <a name="see-also"></a>另请参阅
-- [Windows PowerShell 5.0](../../core-powershell/core-modules/Windows-PowerShell-5.0.md)
-- [Windows PowerShell Core](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
-- [使用 Windows PowerShell 编写脚本](../fundamental/Scripting-with-Windows-PowerShell.md)
+## <a name="see-also"></a><span data-ttu-id="32bc7-108">另请参阅</span><span class="sxs-lookup"><span data-stu-id="32bc7-108">See Also</span></span>
+- [<span data-ttu-id="32bc7-109">Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="32bc7-109">Windows PowerShell 5.0</span></span>](../../core-powershell/core-modules/Windows-PowerShell-5.0.md)
+- [<span data-ttu-id="32bc7-110">Windows PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="32bc7-110">Windows PowerShell Core</span></span>](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
+- [<span data-ttu-id="32bc7-111">使用 Windows PowerShell 编写脚本</span><span class="sxs-lookup"><span data-stu-id="32bc7-111">Scripting with Windows PowerShell</span></span>](../fundamental/Scripting-with-Windows-PowerShell.md)
 

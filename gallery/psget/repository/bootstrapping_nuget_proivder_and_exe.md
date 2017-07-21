@@ -10,20 +10,18 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="bootstrap-both-nuget-provider-and-nugetexe-or-bootstrap-only-nuget-provider" class="xliff"></a>
-# 同时启动 NuGet 提供程序和 NuGet.exe 或仅启动 NuGet 提供程序
+# <a name="bootstrap-both-nuget-provider-and-nugetexe-or-bootstrap-only-nuget-provider"></a><span data-ttu-id="17521-103">同时启动 NuGet 提供程序和 NuGet.exe 或仅启动 NuGet 提供程序</span><span class="sxs-lookup"><span data-stu-id="17521-103">Bootstrap both NuGet provider and NuGet.exe or bootstrap only NuGet provider</span></span>
 
-最新的 NuGet 提供程序不包含 NuGet.exe。
-若要对模块或脚本执行发布操作，PowerShellGet 需要使用二进制可执行 NuGet.exe。
-对于其他所有操作（包括查找、安装、保存和卸载），只需要使用 NuGet 提供程序。
-PowerShellGet 中的逻辑可以同时启动 NuGet 提供程序和 NuGet.exe，也可以只启动 NuGet 提供程序。
-无论属于上述哪种情况，都应该仅显示一条提示消息。
-如果计算机未连接 Internet，用户或管理员必须将 NuGet 提供程序和/或 NuGet.exe 文件的受信任实例复制到已断开连接的计算机。
+<span data-ttu-id="17521-104">最新的 NuGet 提供程序不包含 NuGet.exe。</span><span class="sxs-lookup"><span data-stu-id="17521-104">NuGet.exe is not included in the latest NuGet provider.</span></span>
+<span data-ttu-id="17521-105">若要对模块或脚本执行发布操作，PowerShellGet 需要使用二进制可执行 NuGet.exe。</span><span class="sxs-lookup"><span data-stu-id="17521-105">For publish operations of either a module or script, PowerShellGet requires the binary executable NuGet.exe.</span></span>
+<span data-ttu-id="17521-106">对于其他所有操作（包括查找、安装、保存和卸载），只需要使用 NuGet 提供程序。</span><span class="sxs-lookup"><span data-stu-id="17521-106">Only the NuGet provider is required for all other operations, including *find*, *install*, *save*, and *uninstall*.</span></span>
+<span data-ttu-id="17521-107">PowerShellGet 中的逻辑可以同时启动 NuGet 提供程序和 NuGet.exe，也可以只启动 NuGet 提供程序。</span><span class="sxs-lookup"><span data-stu-id="17521-107">PowerShellGet includes logic to handle either a combined bootstrap of the NuGet provider and NuGet.exe, or bootstrap of only the NuGet provider.</span></span>
+<span data-ttu-id="17521-108">无论属于上述哪种情况，都应该仅显示一条提示消息。</span><span class="sxs-lookup"><span data-stu-id="17521-108">In either case, only a single prompt message should occur.</span></span>
+<span data-ttu-id="17521-109">如果计算机未连接 Internet，用户或管理员必须将 NuGet 提供程序和/或 NuGet.exe 文件的受信任实例复制到已断开连接的计算机。</span><span class="sxs-lookup"><span data-stu-id="17521-109">If the machine is not connected to the Internet, the user or an administrator must copy a trusted instance of the NuGet provider and/or the NuGet.exe file to the disconnected machine.</span></span>
 
->注意：自版本 6 起，NuGet 提供程序会随 PowerShell 一起安装。 [http://github.com/powershell/powershell](http://github.com/powershell/powershell)
+><span data-ttu-id="17521-110">注意：自版本 6 起，NuGet 提供程序会随 PowerShell 一起安装。</span><span class="sxs-lookup"><span data-stu-id="17521-110">**Note**: Starting with version 6, the NuGet provider is included in the installation of PowerShell.</span></span> [<span data-ttu-id="17521-111">http://github.com/powershell/powershell</span><span class="sxs-lookup"><span data-stu-id="17521-111">http://github.com/powershell/powershell</span></span>](http://github.com/powershell/powershell)
 
-<a id="resolving-error-when-the-nuget-provider-has-not-been-installed-on-a-machine-that-is-internet-connected" class="xliff"></a>
-## 修复在已连接 Internet 的计算机上尚未安装 NuGet 提供程序时出现的错误
+## <a name="resolving-error-when-the-nuget-provider-has-not-been-installed-on-a-machine-that-is-internet-connected"></a><span data-ttu-id="17521-112">修复在已连接 Internet 的计算机上尚未安装 NuGet 提供程序时出现的错误</span><span class="sxs-lookup"><span data-stu-id="17521-112">Resolving error when the NuGet provider has not been installed on a machine that is Internet connected</span></span>
 
 ```PowerShell
 PS C:\> Find-Module -Repository PSGallery -Verbose -Name Contoso
@@ -53,8 +51,7 @@ Version    Name                                Type       Repository           D
 -------    ----                                ----       ----------           -----------
 2.5        Contoso                             Module     PSGallery        Contoso module
 ```
-<a id="resolving-error-when-the-nuget-provider-is-available-and-nugetexe-is-not-available-during-the-publish-operation-on-a-machine-that-is-internet-connected" class="xliff"></a>
-## 修复在已连接 Internet 的计算机上执行发布操作期间 NuGet 提供程序可用但 NuGet.exe 不可用时出现的错误
+## <a name="resolving-error-when-the-nuget-provider-is-available-and-nugetexe-is-not-available-during-the-publish-operation-on-a-machine-that-is-internet-connected"></a><span data-ttu-id="17521-113">修复在已连接 Internet 的计算机上执行发布操作期间 NuGet 提供程序可用但 NuGet.exe 不可用时出现的错误</span><span class="sxs-lookup"><span data-stu-id="17521-113">Resolving error when the NuGet provider is available and NuGet.exe is not available during the publish operation on a machine that is Internet connected</span></span>
 
 ```PowerShell
 PS C:\> Publish-Module -Name Contoso -Repository PSGallery -Verbose
@@ -78,8 +75,7 @@ VERBOSE: Installing NuGet.exe.
 VERBOSE: Successfully published module 'Contoso' to the module publish location 'https://www.powershellgallery.com/api/v2/'. Please allow few minutes for 'Contoso' to show up in the search results.
 ```
 
-<a id="resolving-error-when-both-nuget-provider-and-nugetexe-are-not-available-during-the-publish-operation-on-a-machine-that-is-internet-connected" class="xliff"></a>
-## 修复在已连接 Internet 的计算机上执行发布操作期间 NuGet 提供程序和 NuGet.exe 均不可用时出现的错误
+## <a name="resolving-error-when-both-nuget-provider-and-nugetexe-are-not-available-during-the-publish-operation-on-a-machine-that-is-internet-connected"></a><span data-ttu-id="17521-114">修复在已连接 Internet 的计算机上执行发布操作期间 NuGet 提供程序和 NuGet.exe 均不可用时出现的错误</span><span class="sxs-lookup"><span data-stu-id="17521-114">Resolving error when both NuGet provider and NuGet.exe are not available during the publish operation on a machine that is Internet connected</span></span>
 
 ```PowerShell
 PS C:\> Publish-Module -Name Contoso -Repository PSGallery -Verbose
@@ -105,59 +101,57 @@ VERBOSE: Installing NuGet.exe.
 VERBOSE: Successfully published module 'Contoso' to the module publish location 'https://www.powershellgallery.com/api/v2/'. Please allow few minutes for 'Contoso' to show up in the search results.
 ```
 
-<a id="manually-bootstrapping-the-nuget-provider-on-a-machine-that-is-not-connected-to-the-internet" class="xliff"></a>
-## 在未连接 Internet 的计算机上手动启动 NuGet 提供程序
+## <a name="manually-bootstrapping-the-nuget-provider-on-a-machine-that-is-not-connected-to-the-internet"></a><span data-ttu-id="17521-115">在未连接 Internet 的计算机上手动启动 NuGet 提供程序</span><span class="sxs-lookup"><span data-stu-id="17521-115">Manually bootstrapping the NuGet provider on a machine that is not connected to the Internet</span></span>
 
-上面展示的进程假设计算机已连接 Internet，且能从公共位置下载文件。
-如果前提条件不成立，只能使用上面展示的进程启动计算机，再通过脱机受信任进程将提供程序手动复制到独立节点。
-此方案的最常见用例是当专用库可用于支持独立环境时。
+<span data-ttu-id="17521-116">上面展示的进程假设计算机已连接 Internet，且能从公共位置下载文件。</span><span class="sxs-lookup"><span data-stu-id="17521-116">The processes demonstrated above assume the machine is connected to the Internet and can download files from a public location.</span></span>
+<span data-ttu-id="17521-117">如果前提条件不成立，只能使用上面展示的进程启动计算机，再通过脱机受信任进程将提供程序手动复制到独立节点。</span><span class="sxs-lookup"><span data-stu-id="17521-117">If that is not possible, the only option is to bootstrap a machine using the processes given above, and manually copy the provider to the isolated node through an offline trusted process.</span></span>
+<span data-ttu-id="17521-118">此方案的最常见用例是当专用库可用于支持独立环境时。</span><span class="sxs-lookup"><span data-stu-id="17521-118">The most common use case for this scenario is when a private gallery is available to support an isolated environment.</span></span>
 
-在遵循上述进程启动已连接 Internet 的计算机后，提供程序文件位于以下位置：
+<span data-ttu-id="17521-119">在遵循上述进程启动已连接 Internet 的计算机后，提供程序文件位于以下位置：</span><span class="sxs-lookup"><span data-stu-id="17521-119">After following the process above to bootstrap an Internet connected machine, you will find provider files in the location:</span></span>
 ```
 C:\Program Files\PackageManagement\ProviderAssemblies\
 ```
 
-NuGet 提供程序的文件夹/文件结构为（版本号可能不同）：
+<span data-ttu-id="17521-120">NuGet 提供程序的文件夹/文件结构为（版本号可能不同）：</span><span class="sxs-lookup"><span data-stu-id="17521-120">The folder/file structure of the NuGet provider will be (possibly with a different version number):</span></span>
 
-NuGet<br>
---2.8.5.208<br>
-----Microsoft.PackageManagement.NuGetProvider.dll
+<span data-ttu-id="17521-121">NuGet</span><span class="sxs-lookup"><span data-stu-id="17521-121">NuGet</span></span><br>
+<span data-ttu-id="17521-122">--2.8.5.208</span><span class="sxs-lookup"><span data-stu-id="17521-122">--2.8.5.208</span></span><br>
+<span data-ttu-id="17521-123">----Microsoft.PackageManagement.NuGetProvider.dll</span><span class="sxs-lookup"><span data-stu-id="17521-123">----Microsoft.PackageManagement.NuGetProvider.dll</span></span>
 
-使用受信任进程将这些文件夹和文件复制到脱机计算机。
+<span data-ttu-id="17521-124">使用受信任进程将这些文件夹和文件复制到脱机计算机。</span><span class="sxs-lookup"><span data-stu-id="17521-124">Copy these folders and file using a trusted process to the offline machines.</span></span>
 
-<a id="manually-bootstrapping-nugetexe-to-support-publish-operations-on-a-machine-that-is-not-connected-to-the-internet" class="xliff"></a>
-## 在未连接 Internet 的计算机上手动启动 NuGet.exe 以支持发布操作
+## <a name="manually-bootstrapping-nugetexe-to-support-publish-operations-on-a-machine-that-is-not-connected-to-the-internet"></a><span data-ttu-id="17521-125">在未连接 Internet 的计算机上手动启动 NuGet.exe 以支持发布操作</span><span class="sxs-lookup"><span data-stu-id="17521-125">Manually bootstrapping NuGet.exe to support publish operations on a machine that is not connected to the Internet</span></span>
 
-除了手动启动 NuGet 提供程序的进程外，如果计算机将用于使用 Publish-Module 或 Publish-Script cmdlet 向专用库发布模块或脚本，必须使用相关进程启动 NuGet.exe 二进制可执行文件。
-此方案的最常见用例是当专用库可用于支持独立环境时。
-可通过两种方法获取 NuGet.exe 文件。
+<span data-ttu-id="17521-126">除了手动启动 NuGet 提供程序的进程外，如果计算机将用于使用 Publish-Module 或 Publish-Script cmdlet 向专用库发布模块或脚本，必须使用相关进程启动 NuGet.exe 二进制可执行文件。</span><span class="sxs-lookup"><span data-stu-id="17521-126">In addition to the process to manually bootstrap the NuGet provider, if the machine will be used to publish modules or scripts to a private gallery using the *Publish-Module* or *Publish-Script* cmdlets, the NuGet.exe binary executable file will be required.</span></span>
+<span data-ttu-id="17521-127">此方案的最常见用例是当专用库可用于支持独立环境时。</span><span class="sxs-lookup"><span data-stu-id="17521-127">The most common use case for this scenario is when a private gallery is available to support an isolated environment.</span></span>
+<span data-ttu-id="17521-128">可通过两种方法获取 NuGet.exe 文件。</span><span class="sxs-lookup"><span data-stu-id="17521-128">There are two options to obtain the NuGet.exe file.</span></span>
 
-一种方法是启动已连接 Internet 的计算机，并使用受信任进程将文件复制到脱机计算机。
-启动已连接 Internet 的计算机后，NuGet.exe 二进制文件位于以下两个文件夹之一：
+<span data-ttu-id="17521-129">一种方法是启动已连接 Internet 的计算机，并使用受信任进程将文件复制到脱机计算机。</span><span class="sxs-lookup"><span data-stu-id="17521-129">One option is to bootstrap a machine that is Internet connected and copy the files to the offline machines using a trusted process.</span></span>
+<span data-ttu-id="17521-130">启动已连接 Internet 的计算机后，NuGet.exe 二进制文件位于以下两个文件夹之一：</span><span class="sxs-lookup"><span data-stu-id="17521-130">After bootstrapping the Internet connected machine, the NuGet.exe binary will be located in one of two folders:</span></span>
 
-如果使用提升的权限（以管理员身份）执行 Publish-Module 或 Publish-Script cmdlet：
+<span data-ttu-id="17521-131">如果使用提升的权限（以管理员身份）执行 Publish-Module 或 Publish-Script cmdlet：</span><span class="sxs-lookup"><span data-stu-id="17521-131">If the *Publish-Module* or *Publish-Script* cmdlets were executed with elevated permissions (As an Administrator):</span></span>
 ```
 $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
 ```
 
-如果不使用提升的权限（以用户身份）执行这两个 cmdlet：
+<span data-ttu-id="17521-132">如果不使用提升的权限（以用户身份）执行这两个 cmdlet：</span><span class="sxs-lookup"><span data-stu-id="17521-132">If the cmdlets were executed as a user without elevated permissions:</span></span>
 ```
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
 
-第二种方法是从 NuGet.Org 网站下载 NuGet.exe：[https://dist.nuget.org/index.html](https://dist.nuget.org/index.html)<br>
-选择生产计算机的 NugGet 版本时，请确保版本高于 2.8.5.208，并确认版本是否已标记为“推荐”。
-如果使用浏览器下载，请务必取消阻止文件。
-为此，可以使用 Unblock-File cmdlet。
+<span data-ttu-id="17521-133">第二种方法是从 NuGet.Org 网站下载 NuGet.exe：[https://dist.nuget.org/index.html](https://dist.nuget.org/index.html)</span><span class="sxs-lookup"><span data-stu-id="17521-133">A second option is to download NuGet.exe from the NuGet.Org website: [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html)</span></span><br>
+<span data-ttu-id="17521-134">选择生产计算机的 NugGet 版本时，请确保版本高于 2.8.5.208，并确认版本是否已标记为“推荐”。</span><span class="sxs-lookup"><span data-stu-id="17521-134">When selecting a NugGet version for production machines, make sure it is later than 2.8.5.208, and identify the version that has been labeled "recommended".</span></span>
+<span data-ttu-id="17521-135">如果使用浏览器下载，请务必取消阻止文件。</span><span class="sxs-lookup"><span data-stu-id="17521-135">Remember to unblock the file if it was downloaded using a browser.</span></span>
+<span data-ttu-id="17521-136">为此，可以使用 Unblock-File cmdlet。</span><span class="sxs-lookup"><span data-stu-id="17521-136">This can be performed by using the *Unblock-File* cmdlet.</span></span>
 
-无论属于上述哪种情况，都可以将 NuGet.exe 文件复制到 $env:path 中的任意位置，但标准位置为：
+<span data-ttu-id="17521-137">无论属于上述哪种情况，都可以将 NuGet.exe 文件复制到 $env:path 中的任意位置，但标准位置为：</span><span class="sxs-lookup"><span data-stu-id="17521-137">In either case, the NuGet.exe file can be copied to any location in *$env:path*, but the standard locations are:</span></span>
 
-若要让可执行文件可用，以便所有用户都可以使用 Publish-Module 和 Publish-Script cmdlet：
+<span data-ttu-id="17521-138">若要让可执行文件可用，以便所有用户都可以使用 Publish-Module 和 Publish-Script cmdlet：</span><span class="sxs-lookup"><span data-stu-id="17521-138">To make the executable available so that all users can use *Publish-Module* and *Publish-Script* cmdlets:</span></span>
 ```
 $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
 ```
 
-若要让可执行文件仅对特定用户可用，请仅将文件复制到相应用户配置文件内的位置：
+<span data-ttu-id="17521-139">若要让可执行文件仅对特定用户可用，请仅将文件复制到相应用户配置文件内的位置：</span><span class="sxs-lookup"><span data-stu-id="17521-139">To make the executable available to only a specific user, copy to the location within only that user's profile:</span></span>
 ```
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```

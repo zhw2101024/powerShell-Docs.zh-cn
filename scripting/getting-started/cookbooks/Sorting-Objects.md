@@ -9,16 +9,16 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/08/2017
 ---
-# <a name="sorting-objects"></a>对对象进行排序
-可以通过使用 **Sort-Object** cmdlet 组织已显示的数据，使其更易于扫描。 **Sort-Object** 依据一个或多个属性的名称进行排序，并返回按这些属性的值进行排序的数据。
+# <a name="sorting-objects"></a><span data-ttu-id="1579f-103">对对象进行排序</span><span class="sxs-lookup"><span data-stu-id="1579f-103">Sorting Objects</span></span>
+<span data-ttu-id="1579f-104">可以通过使用 **Sort-Object** cmdlet 组织已显示的数据，使其更易于扫描。</span><span class="sxs-lookup"><span data-stu-id="1579f-104">We can organize displayed data to make it easier to scan by using the **Sort-Object** cmdlet.</span></span> <span data-ttu-id="1579f-105">**Sort-Object** 依据一个或多个属性的名称进行排序，并返回按这些属性的值进行排序的数据。</span><span class="sxs-lookup"><span data-stu-id="1579f-105">**Sort-Object** takes the name of one or more properties to sort on, and returns data sorted by the values of those properties.</span></span>
 
-请考虑列出 Win32_SystemDriver 实例的问题。 如果想要依次按 **State** 和 **Name** 进行排序，可键入：
+<span data-ttu-id="1579f-106">请考虑列出 Win32_SystemDriver 实例的问题。</span><span class="sxs-lookup"><span data-stu-id="1579f-106">Consider the problem of listing Win32_SystemDriver instances.</span></span> <span data-ttu-id="1579f-107">如果想要依次按 **State** 和 **Name** 进行排序，可键入：</span><span class="sxs-lookup"><span data-stu-id="1579f-107">If we want to sort by **State** and then by **Name**, we can do it by typing:</span></span>
 
 ```
 Get-WmiObject -Class Win32_SystemDriver | Sort-Object -Property State,Name | Format-Table -Property Name,State,Started,DisplayName -AutoSize -Wrap
 ```
 
-虽然显示的内容较长，但是你可以看到具有相同状态的项组合在一起：
+<span data-ttu-id="1579f-108">虽然显示的内容较长，但是你可以看到具有相同状态的项组合在一起：</span><span class="sxs-lookup"><span data-stu-id="1579f-108">Although this is a lengthy display, you can see items with the same state grouped together:</span></span>
 
 ```
 Name           State   Started DisplayName
@@ -34,7 +34,7 @@ aec            Stopped   False Microsoft Kernel Acoustic Echo Canceller
 ...
 ```
 
-也可通过指定 **Descending** 参数按相反顺序对对象进行排序。 这将反转排序顺序，即按反向字母顺序对名称进行排序，按降序大小对数字进行排序。
+<span data-ttu-id="1579f-109">也可通过指定 **Descending** 参数按相反顺序对对象进行排序。</span><span class="sxs-lookup"><span data-stu-id="1579f-109">You can also sort the objects in reverse order by specifying the **Descending** parameter.</span></span> <span data-ttu-id="1579f-110">这将反转排序顺序，即按反向字母顺序对名称进行排序，按降序大小对数字进行排序。</span><span class="sxs-lookup"><span data-stu-id="1579f-110">This reverses the sort order so that names are sorted in reverse alphabetical order and numbers are sorted by descending size.</span></span>
 
 ```
 PS> Get-WmiObject -Class Win32_SystemDriver | Sort-Object -Property State,Name -Descending | Format-Table -Property Name,State,Started,DisplayName -AutoSize -Wrap

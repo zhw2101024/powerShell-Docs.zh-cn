@@ -9,10 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="cryptographic-message-syntax-cms-cmdlets" class="xliff"></a>
-# 加密消息语法 (CMS) cmdlet
+# <a name="cryptographic-message-syntax-cms-cmdlets"></a><span data-ttu-id="5d73b-102">加密消息语法 (CMS) cmdlet</span><span class="sxs-lookup"><span data-stu-id="5d73b-102">Cryptographic Message Syntax (CMS) cmdlets</span></span>
 
-加密消息语法 cmdlet 对使用 IETF 标准格式加密保护消息的内容提供加密和解密支持，如 [RFC5652](http://tools.ietf.org/html/rfc5652).中所述。
+<span data-ttu-id="5d73b-103">加密消息语法 cmdlet 对使用 IETF 标准格式加密保护消息的内容提供加密和解密支持，如 [RFC5652](http://tools.ietf.org/html/rfc5652).中所述。</span><span class="sxs-lookup"><span data-stu-id="5d73b-103">The Cryptographic Message Syntax cmdlets support encryption and decryption of content using the IETF standard format for cryptographically protecting messages as documented by [RFC5652](http://tools.ietf.org/html/rfc5652).</span></span>
 
 ```powershell
 Get-CmsMessage [-Content] <string>
@@ -27,13 +26,13 @@ Unprotect-CmsMessage [-Path] <string> [[-To] <CmsMessageRecipient[]>] [-IncludeC
 Unprotect-CmsMessage [-LiteralPath] <string> [[-To] <CmsMessageRecipient[]>] [-IncludeContext]
 ```
 
-CMS 加密标准采用公钥加密系统，其中用来加密内容的密匙（*公匙*）和用来解密内容的密匙（*私匙*）是分离的。
+<span data-ttu-id="5d73b-104">CMS 加密标准采用公钥加密系统，其中用来加密内容的密匙（*公匙*）和用来解密内容的密匙（*私匙*）是分离的。</span><span class="sxs-lookup"><span data-stu-id="5d73b-104">The CMS encryption standard implements public key cryptography, where the keys used to encrypt content (the *public key*) and the keys used to decrypt content (the *private key*) are separate.</span></span>
 
-公匙可以广泛共享，它不是敏感数据。 如果用此公匙加密了任何内容，只有你的私匙可以解密它。 有关公钥加密的详细信息，请参阅：<http://en.wikipedia.org/wiki/Public-key_cryptography>。
+<span data-ttu-id="5d73b-105">公匙可以广泛共享，它不是敏感数据。</span><span class="sxs-lookup"><span data-stu-id="5d73b-105">Your public key can be shared widely, and is not sensitive data.</span></span> <span data-ttu-id="5d73b-106">如果用此公匙加密了任何内容，只有你的私匙可以解密它。</span><span class="sxs-lookup"><span data-stu-id="5d73b-106">If any content is encrypted with this public key, only your private key can decrypt it.</span></span> <span data-ttu-id="5d73b-107">有关公钥加密的详细信息，请参阅：<http://en.wikipedia.org/wiki/Public-key_cryptography>。</span><span class="sxs-lookup"><span data-stu-id="5d73b-107">For more information about Public Key Cryptography, see: <http://en.wikipedia.org/wiki/Public-key_cryptography>.</span></span>
 
-若要在 PowerShell 中进行识别，加密证书需要唯一的密匙用法标识符 (EKU) 将它们识别为数据加密证书（如“代码签名”标识符、“加密邮件”标识符）。
+<span data-ttu-id="5d73b-108">若要在 PowerShell 中进行识别，加密证书需要唯一的密匙用法标识符 (EKU) 将它们识别为数据加密证书（如“代码签名”标识符、“加密邮件”标识符）。</span><span class="sxs-lookup"><span data-stu-id="5d73b-108">To be recognized in PowerShell, encryption certificates require a unique key usage identifier (EKU) to identify them as data encryption certificates (like the identifiers for 'Code Signing', 'Encrypted Mail').</span></span>
 
-下面是创建适用于文档加密的证书的示例：
+<span data-ttu-id="5d73b-109">下面是创建适用于文档加密的证书的示例：</span><span class="sxs-lookup"><span data-stu-id="5d73b-109">Here is an example of creating a certificate that is good for Document Encryption:</span></span>
 
 ```powershell
 (Change the text in **Subject** to your name, email, or other identifier), and put in a file (i.e.: DocumentEncryption.inf):
@@ -57,12 +56,12 @@ ValidityPeriodUnits = "1000"
 %szOID\_ENHANCED\_KEY\_USAGE% = "{text}%szOID\_DOCUMENT\_ENCRYPTION%"
 ```
 
-然后运行：
+<span data-ttu-id="5d73b-110">然后运行：</span><span class="sxs-lookup"><span data-stu-id="5d73b-110">Then run:</span></span>
 ```powershell
 certreq -new DocumentEncryption.inf DocumentEncryption.cer
 ```
 
-现在你可以加密和解密内容：
+<span data-ttu-id="5d73b-111">现在你可以加密和解密内容：</span><span class="sxs-lookup"><span data-stu-id="5d73b-111">And you can now encrypt and decrypt content:</span></span>
 
 ```powershell
 $protected = "Hello World" | Protect-CmsMessage -To "\*me@somewhere.com\*[](mailto:*leeholm@microsoft.com*)"
@@ -82,14 +81,14 @@ $protected | Unprotect-CmsMessage
 Hello World
 ```
 
-类型 **CMSMessageRecipient** 的所有参数都支持下列格式的标识符：
-- 实际证书（从证书提供程序检索到的）
-- 指向包含证书的文件的路径
-- 指向包含证书的目录的路径
-- 证书的指纹（用于在证书存储区查找）
-- 证书的使用者名称（用于在证书存储区查找）
+<span data-ttu-id="5d73b-112">类型 **CMSMessageRecipient** 的所有参数都支持下列格式的标识符：</span><span class="sxs-lookup"><span data-stu-id="5d73b-112">Any parameter of type **CMSMessageRecipient** supports identifiers in the following formats:</span></span>
+- <span data-ttu-id="5d73b-113">实际证书（从证书提供程序检索到的）</span><span class="sxs-lookup"><span data-stu-id="5d73b-113">An actual certificate (as retrieved from the certificate provider)</span></span>
+- <span data-ttu-id="5d73b-114">指向包含证书的文件的路径</span><span class="sxs-lookup"><span data-stu-id="5d73b-114">Path to the a file containing the certificate</span></span>
+- <span data-ttu-id="5d73b-115">指向包含证书的目录的路径</span><span class="sxs-lookup"><span data-stu-id="5d73b-115">Path to a directory containing the certificate</span></span>
+- <span data-ttu-id="5d73b-116">证书的指纹（用于在证书存储区查找）</span><span class="sxs-lookup"><span data-stu-id="5d73b-116">Thumbprint of the certificate (used to look in the certificate store)</span></span>
+- <span data-ttu-id="5d73b-117">证书的使用者名称（用于在证书存储区查找）</span><span class="sxs-lookup"><span data-stu-id="5d73b-117">Subject name of the certificate (used to look in the certificate store)</span></span>
 
-若要在证书提供程序中查看文档加密证书，可以使用 **-DocumentEncryptionCert** 动态参数：
+<span data-ttu-id="5d73b-118">若要在证书提供程序中查看文档加密证书，可以使用 **-DocumentEncryptionCert** 动态参数：</span><span class="sxs-lookup"><span data-stu-id="5d73b-118">To view document encryption certificates in the certificate provider, you can use the **-DocumentEncryptionCert** dynamic parameter:</span></span>
 
 ```powershell
 dir -DocumentEncryptionCert

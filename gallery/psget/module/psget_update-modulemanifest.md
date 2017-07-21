@@ -10,38 +10,32 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="update-modulemanifest" class="xliff"></a>
-# Update-ModuleManifest
-更新模块清单文件。
+# <a name="update-modulemanifest"></a><span data-ttu-id="0f1bb-103">Update-ModuleManifest</span><span class="sxs-lookup"><span data-stu-id="0f1bb-103">Update-ModuleManifest</span></span>
+<span data-ttu-id="0f1bb-104">更新模块清单文件。</span><span class="sxs-lookup"><span data-stu-id="0f1bb-104">Updates a module manifest file.</span></span>
 
-<a id="description" class="xliff"></a>
-## 说明
+## <a name="description"></a><span data-ttu-id="0f1bb-105">说明</span><span class="sxs-lookup"><span data-stu-id="0f1bb-105">Description</span></span>
 
-Update-ModuleManifest cmdlet 更新模块清单 (.psd1) 文件。
+<span data-ttu-id="0f1bb-106">Update-ModuleManifest cmdlet 更新模块清单 (.psd1) 文件。</span><span class="sxs-lookup"><span data-stu-id="0f1bb-106">The Update-ModuleManifest cmdlet updates a module manifest (.psd1) file.</span></span>
 
-<a id="notes" class="xliff"></a>
-### 注释
-    - DscResourcesToExport 仅在最新的 PowerShell 5.0 版本上才受支持。 如果你正在较低版本的 PowerShell 上运行，我们将无法更新该字段。
+### <a name="notes"></a><span data-ttu-id="0f1bb-107">注释</span><span class="sxs-lookup"><span data-stu-id="0f1bb-107">Notes</span></span>
+    - <span data-ttu-id="0f1bb-108">DscResourcesToExport 仅在最新的 PowerShell 5.0 版本上才受支持。</span><span class="sxs-lookup"><span data-stu-id="0f1bb-108">DscResourcesToExport is only supported on the latest PowerShell version 5.0.</span></span> <span data-ttu-id="0f1bb-109">如果你正在较低版本的 PowerShell 上运行，我们将无法更新该字段。</span><span class="sxs-lookup"><span data-stu-id="0f1bb-109">We won’t be able to update the field if you are running on lower versions of PowerShell.</span></span>
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a><span data-ttu-id="0f1bb-110">Cmdlet 语法</span><span class="sxs-lookup"><span data-stu-id="0f1bb-110">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Update-ModuleManifest -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="0f1bb-111">Cmdlet 联机帮助参考</span><span class="sxs-lookup"><span data-stu-id="0f1bb-111">Cmdlet online help reference</span></span>
 
-[Update-ModuleManifest](http://go.microsoft.com/fwlink/?LinkId=619311)
+[<span data-ttu-id="0f1bb-112">Update-ModuleManifest</span><span class="sxs-lookup"><span data-stu-id="0f1bb-112">Update-ModuleManifest</span></span>](http://go.microsoft.com/fwlink/?LinkId=619311)
 
-<a id="example-commands" class="xliff"></a>
-## 示例命令
+## <a name="example-commands"></a><span data-ttu-id="0f1bb-113">示例命令</span><span class="sxs-lookup"><span data-stu-id="0f1bb-113">Example commands</span></span>
 
-此新的 cmdlet 用于通过输入属性值帮助更新清单文件。 它会接收 New-ModuleManifest 接收的所有参数。
+<span data-ttu-id="0f1bb-114">此新的 cmdlet 用于通过输入属性值帮助更新清单文件。</span><span class="sxs-lookup"><span data-stu-id="0f1bb-114">This new cmdlet is used to help update manifest file with input property values.</span></span> <span data-ttu-id="0f1bb-115">它会接收 New-ModuleManifest 接收的所有参数。</span><span class="sxs-lookup"><span data-stu-id="0f1bb-115">It takes all parameters that New-ModuleManifest does.</span></span>
 
-我们注意到，许多模块作者想要在诸如 FunctionsToExport 和 CmdletsToExport 等导出值中指定“\*”。在将模块发布到 PowerShell 库期间，未指定的函数和命令将无法正确填充到库上。 因此，我们建议模块作者使用合适的值更新自己的清单。
+<span data-ttu-id="0f1bb-116">我们注意到，许多模块作者想要在诸如 FunctionsToExport 和 CmdletsToExport 等导出值中指定“\*”。在将模块发布到 PowerShell 库期间，未指定的函数和命令将无法正确填充到库上。</span><span class="sxs-lookup"><span data-stu-id="0f1bb-116">We notice that a lot of module authors would like to specify “\*” in exported values such as FunctionsToExport, CmdletsToExport, etc. During module publishing to PowerShell Gallery, unspecified functions and commands will not be populated properly onto the Gallery.</span></span> <span data-ttu-id="0f1bb-117">因此，我们建议模块作者使用合适的值更新自己的清单。</span><span class="sxs-lookup"><span data-stu-id="0f1bb-117">Therefore, we suggest module authors update their manifests with proper values.</span></span>
 
-如果你的模块已导出属性，Update-ModuleManifest 将使用来自导出函数、cmdlet、变量等中的信息填充指定的清单文件。
+<span data-ttu-id="0f1bb-118">如果你的模块已导出属性，Update-ModuleManifest 将使用来自导出函数、cmdlet、变量等中的信息填充指定的清单文件。</span><span class="sxs-lookup"><span data-stu-id="0f1bb-118">If you have modules that have exported properties, Update-ModuleManifest will fill the specified manifest file with information from exported functions, cmdlets, variables etc:</span></span>
 ```powershell
 Get-Content -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
 @{
@@ -65,7 +59,7 @@ AliasesToExport = '*'
 }
 ```
 
-使用 Update-ModuleManifest 之后：
+<span data-ttu-id="0f1bb-119">使用 Update-ModuleManifest 之后：</span><span class="sxs-lookup"><span data-stu-id="0f1bb-119">After Update-ModuleManifest:</span></span>
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
 Get-Content -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
@@ -90,13 +84,13 @@ CmdletsToExport = 'Test-PSGetTestCmdlet'
 }
 ```
 
-对于每个模块，还存在与之关联的元数据字段。 为了在 PowrShell 库中正确显示元数据，你可以使用 Update-ModuleManifest 在 PrivateData 下填充这些字段。
+<span data-ttu-id="0f1bb-120">对于每个模块，还存在与之关联的元数据字段。</span><span class="sxs-lookup"><span data-stu-id="0f1bb-120">For each module, there are also metadata fields associated with it.</span></span> <span data-ttu-id="0f1bb-121">为了在 PowrShell 库中正确显示元数据，你可以使用 Update-ModuleManifest 在 PrivateData 下填充这些字段。</span><span class="sxs-lookup"><span data-stu-id="0f1bb-121">In order to display metadata properly on PowrShell Gallery, you can use Update-ModuleManifest to populate those fields under PrivateData.</span></span>
 
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1" -Tags "Tag1" -LicenseUri "http://license.com" -ProjectUri "http://project.com" -IconUri "http://icon.com" -ReleaseNotes "Test module"
 ```
 
-来自清单文件模板的 PrivateData 哈希表具有以下属性
+<span data-ttu-id="0f1bb-122">来自清单文件模板的 PrivateData 哈希表具有以下属性</span><span class="sxs-lookup"><span data-stu-id="0f1bb-122">PrivateData hashtable from the manifest file template has the following properties</span></span>
 
 ```powershell
 # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.

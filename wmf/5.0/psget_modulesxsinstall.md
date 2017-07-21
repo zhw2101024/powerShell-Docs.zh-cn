@@ -9,13 +9,12 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="side-by-side-version-support-on-powershell-50-or-newer" class="xliff"></a>
-# PowerShell 5.0 或更高版本上的并行版本支持
+# <a name="side-by-side-version-support-on-powershell-50-or-newer"></a><span data-ttu-id="4a3e8-102">PowerShell 5.0 或更高版本上的并行版本支持</span><span class="sxs-lookup"><span data-stu-id="4a3e8-102">Side-by-Side Version Support on PowerShell 5.0 or newer</span></span>
 
-现在，在 Windows PowerShell 5.0 或更高版本运行的 Install-Module cmdlet、Update-Module cmdlet 和 Publish-Module cmdlet 中有了对并行 (SxS) 模块版本的支持。
-此外，我们还将 -RequiredVersion 参数添加到了 Publish-Module cmdlet 中以指定要发布的版本。 Path 参数现在支持具有版本文件夹的模块基准路径。
+<span data-ttu-id="4a3e8-103">现在，在 Windows PowerShell 5.0 或更高版本运行的 Install-Module cmdlet、Update-Module cmdlet 和 Publish-Module cmdlet 中有了对并行 (SxS) 模块版本的支持。</span><span class="sxs-lookup"><span data-stu-id="4a3e8-103">There is now side-by-side (SxS) module version support in Install-Module, Update-Module, and Publish-Module cmdlets that run in Windows PowerShell 5.0 or newer.</span></span>
+<span data-ttu-id="4a3e8-104">此外，我们还将 -RequiredVersion 参数添加到了 Publish-Module cmdlet 中以指定要发布的版本。</span><span class="sxs-lookup"><span data-stu-id="4a3e8-104">Also, we have added a -RequiredVersion parameter to the Publish-Module cmdlet to specify the version to be published.</span></span> <span data-ttu-id="4a3e8-105">Path 参数现在支持具有版本文件夹的模块基准路径。</span><span class="sxs-lookup"><span data-stu-id="4a3e8-105">The Path parameter now supports the module base path with the version folder.</span></span>
 
-**Install-Module 示例：**
+<span data-ttu-id="4a3e8-106">**Install-Module 示例：**</span><span class="sxs-lookup"><span data-stu-id="4a3e8-106">**Install-Module examples:**</span></span>
 ```powershell
 PS C:\\windows\\system32&gt; Install-Module -Name PSScriptAnalyzer -RequiredVersion 1.1.0 -Repository PSGallery
 PS C:\\windows\\system32&gt; Get-Module -ListAvailable -Name PSScriptAnalyzer | Format-List Name,Version,ModuleBase

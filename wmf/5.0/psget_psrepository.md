@@ -9,15 +9,14 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="register-a-powershell-repository" class="xliff"></a>
-# 注册 PowerShell 存储库
-你可以配置 PowerShellGet 以针对内部存储库进行操作。 可通过使用以下附加内容完成此配置：
-- Register-PSRepository：为当前用户注册存储库。
-- Unregister-PSRepository：为当前用户删除已注册的存储库。
-- Set-PSRepository：为已注册的存储库设置值。
-- Get-PSRepository：为当前用户获取所有已注册的存储库。
+# <a name="register-a-powershell-repository"></a><span data-ttu-id="44840-102">注册 PowerShell 存储库</span><span class="sxs-lookup"><span data-stu-id="44840-102">Register a PowerShell Repository</span></span>
+<span data-ttu-id="44840-103">你可以配置 PowerShellGet 以针对内部存储库进行操作。</span><span class="sxs-lookup"><span data-stu-id="44840-103">You can configure PowerShellGet to operate against internal repositories.</span></span> <span data-ttu-id="44840-104">可通过使用以下附加内容完成此配置：</span><span class="sxs-lookup"><span data-stu-id="44840-104">This is done by using the following additions:</span></span>
+- <span data-ttu-id="44840-105">Register-PSRepository：为当前用户注册存储库。</span><span class="sxs-lookup"><span data-stu-id="44840-105">Register-PSRepository: Registers a repository for the current user.</span></span>
+- <span data-ttu-id="44840-106">Unregister-PSRepository：为当前用户删除已注册的存储库。</span><span class="sxs-lookup"><span data-stu-id="44840-106">Unregister-PSRepository: Removes a registered repository for the current user.</span></span>
+- <span data-ttu-id="44840-107">Set-PSRepository：为已注册的存储库设置值。</span><span class="sxs-lookup"><span data-stu-id="44840-107">Set-PSRepository: Set values for a registered repository.</span></span>
+- <span data-ttu-id="44840-108">Get-PSRepository：为当前用户获取所有已注册的存储库。</span><span class="sxs-lookup"><span data-stu-id="44840-108">Get-PSRepository: Get all registered repositories for the current user.</span></span>
 
-注册存储库后，可以使用 Find-Module 和 Install-Module 对它进行操作。
+<span data-ttu-id="44840-109">注册存储库后，可以使用 Find-Module 和 Install-Module 对它进行操作。</span><span class="sxs-lookup"><span data-stu-id="44840-109">After a repository is registered, you can use Find-Module and Install-Module to work with it.</span></span>
 
 ```powershell
 \#Register a default repository

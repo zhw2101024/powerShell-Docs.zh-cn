@@ -9,11 +9,10 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="powershell-script-discovery-install-and-management-with-powershellget" class="xliff"></a>
-# 使用 PowerShellGet 进行 PowerShell 脚本发现、安装和管理
+# <a name="powershell-script-discovery-install-and-management-with-powershellget"></a><span data-ttu-id="5a826-102">使用 PowerShellGet 进行 PowerShell 脚本发现、安装和管理</span><span class="sxs-lookup"><span data-stu-id="5a826-102">PowerShell Script Discovery, Install and Management with PowerShellGet</span></span>
 
-在 WMF 5.0 RTM 版本中已将 PowerShell 脚本共享功能添加到了 PowerShellGet。
-以下新的 cmdlet 将被添加到 PowerShellGet 模块以支持 PowerShell 脚本。
+<span data-ttu-id="5a826-103">在 WMF 5.0 RTM 版本中已将 PowerShell 脚本共享功能添加到了 PowerShellGet。</span><span class="sxs-lookup"><span data-stu-id="5a826-103">PowerShell Script sharing feature got added to the PowerShellGet in the WMF 5.0 RTM release.</span></span>
+<span data-ttu-id="5a826-104">以下新的 cmdlet 将被添加到 PowerShellGet 模块以支持 PowerShell 脚本。</span><span class="sxs-lookup"><span data-stu-id="5a826-104">The following new cmdlets are added to the PowerShellGet module for supporting the PowerShell Scripts.</span></span>
 ```powershell
 PS C:\\windows\\system32&gt; Get-Command \*script\* -Module PowerShellGet | Sort-Object -Property Noun, Verb
 CommandType Name Version Source
@@ -40,7 +39,7 @@ Function Update-ScriptFileInfo 1.0.0.1 PowerShellGet
 -   **Test-ScriptFileInfo** cmdlet lets you to validate and get the script file metadata.
 ```
 
-脚本共享 Cmdlet 的语法：
+<span data-ttu-id="5a826-105">脚本共享 Cmdlet 的语法：</span><span class="sxs-lookup"><span data-stu-id="5a826-105">Syntax of script sharing Cmdlets:</span></span>
 ```powershell
 **New-ScriptFileInfo** \[-Path\] &lt;string&gt; -Description &lt;string&gt; \[-Version &lt;version&gt;\] \[-Author &lt;string&gt;\] \[-Guid &lt;guid&gt;\] \[-CompanyName &lt;string&gt;\] \[-Copyright &lt;string&gt;\] \[-RequiredModules &lt;Object\[\]&gt;\] \[-ExternalModuleDependencies &lt;string\[\]&gt;\] \[-RequiredScripts &lt;string\[\]&gt;\] \[-ExternalScriptDependencies &lt;string\[\]&gt;\] \[-Tags &lt;string\[\]&gt;\] \[-ProjectUri &lt;uri&gt;\] \[-LicenseUri &lt;uri&gt;\] \[-IconUri &lt;uri&gt;\] \[-ReleaseNotes &lt;string\[\]&gt;\] \[-PassThru\] \[-Force\] \[-WhatIf\] \[-Confirm\] \[&lt;CommonParameters&gt;\]
 

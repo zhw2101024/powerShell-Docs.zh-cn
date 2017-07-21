@@ -10,44 +10,39 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="find-script" class="xliff"></a>
-# Find-Script
+# <a name="find-script"></a><span data-ttu-id="1091e-103">Find-Script</span><span class="sxs-lookup"><span data-stu-id="1091e-103">Find-Script</span></span>
 
-查找联机库中与指定条件相匹配的 PowerShell 脚本文件。
+<span data-ttu-id="1091e-104">查找联机库中与指定条件相匹配的 PowerShell 脚本文件。</span><span class="sxs-lookup"><span data-stu-id="1091e-104">Finds the PowerShell script files from an online gallery that match specified criteria.</span></span>
 
-<a id="description" class="xliff"></a>
-## 说明
+## <a name="description"></a><span data-ttu-id="1091e-105">说明</span><span class="sxs-lookup"><span data-stu-id="1091e-105">Description</span></span>
 
-Find-Script 在已注册存储库中发现了与指定条件相匹配的脚本文件。
-对于每个已发现的脚本，Find-Script 将返回 PSRepositoryItemInfo 对象，可根据需要将其通过管道传递到 Install-Script 以安装该脚本。
-Find-Script cmdlet 可使用不同的搜索条件（如名称、标记、筛选器、命令名、版本范围、确切版本、所有版本及其依赖项和来自特定的或所有已注册的存储库）来发现脚本文件。
+<span data-ttu-id="1091e-106">Find-Script 在已注册存储库中发现了与指定条件相匹配的脚本文件。</span><span class="sxs-lookup"><span data-stu-id="1091e-106">Find-Script discovers the script files from registered repositories that matches the specified criteria.</span></span>
+<span data-ttu-id="1091e-107">对于每个已发现的脚本，Find-Script 将返回 PSRepositoryItemInfo 对象，可根据需要将其通过管道传递到 Install-Script 以安装该脚本。</span><span class="sxs-lookup"><span data-stu-id="1091e-107">For each script found, Find-Script returns a PSRepositoryItemInfo object which can optionally be piped to Install-Script for installing the scripts.</span></span>
+<span data-ttu-id="1091e-108">Find-Script cmdlet 可使用不同的搜索条件（如名称、标记、筛选器、命令名、版本范围、确切版本、所有版本及其依赖项和来自特定的或所有已注册的存储库）来发现脚本文件。</span><span class="sxs-lookup"><span data-stu-id="1091e-108">Find-Script cmdlet lets you to discover the script files with different search criteria like name, tag, filter, command name, version range, exact version, all versions, including its dependencies and from specific or all registered repositories.</span></span>
 
-- Find-Script 可使用 -Command 和 -Includes 参数根据模块内容进行筛选。
-- Find-Script 可使用版本参数进行筛选：MinimumVersion、MaximumVersion、RequiredVersion、AllVersions。
-  - 这些参数彼此排斥，但 MinmimumVersion 和 MaximumVersion 除外。
-  - 这些版本参数只允许具有单个脚本名称，而不能具有任何通配符。
-  - 如果未指定 RequiredVersion 参数，Find-Script 将返回等于或高于指定最低版本的脚本的最新版本，若未指定最低版本，则返回脚本的最新版本。 
-  - 如果指定了 RequiredVersion 参数，Find-Script 仅返回与指定版本完全匹配的脚本版本。
-- Find-Script 可使用 -Tag 参数对脚本元数据进行筛选。
-- Find-Script 可使用 -Filter 参数对存储库特定搜索语言进行筛选。
-- Find-Script 可从所有或少数已注册存储库中对脚本进行筛选。
+- <span data-ttu-id="1091e-109">Find-Script 可使用 -Command 和 -Includes 参数根据模块内容进行筛选。</span><span class="sxs-lookup"><span data-stu-id="1091e-109">Find-Script can filter based on script contents with the -Command and -Includes parameters.</span></span>
+- <span data-ttu-id="1091e-110">Find-Script 可使用版本参数进行筛选：MinimumVersion、MaximumVersion、RequiredVersion、AllVersions。</span><span class="sxs-lookup"><span data-stu-id="1091e-110">Find-Script can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span></span>
+  - <span data-ttu-id="1091e-111">这些参数彼此排斥，但 MinmimumVersion 和 MaximumVersion 除外。</span><span class="sxs-lookup"><span data-stu-id="1091e-111">These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.</span></span>
+  - <span data-ttu-id="1091e-112">这些版本参数只允许具有单个脚本名称，而不能具有任何通配符。</span><span class="sxs-lookup"><span data-stu-id="1091e-112">These version parameters are allowed only with the single script name without any wildcards.</span></span>
+  - <span data-ttu-id="1091e-113">如果未指定 RequiredVersion 参数，Find-Script 将返回等于或高于指定最低版本的脚本的最新版本，若未指定最低版本，则返回脚本的最新版本。</span><span class="sxs-lookup"><span data-stu-id="1091e-113">If the RequiredVersion parameter is not specified, Find-Script returns the latest version of the script that is equal to or greater than the minimum version specified or the latest version of the script if no minimum version is specified.</span></span> 
+  - <span data-ttu-id="1091e-114">如果指定了 RequiredVersion 参数，Find-Script 仅返回与指定版本完全匹配的脚本版本。</span><span class="sxs-lookup"><span data-stu-id="1091e-114">If the RequiredVersion parameter is specified, Find-Script only returns the version of script that exactly matches the specified version.</span></span>
+- <span data-ttu-id="1091e-115">Find-Script 可使用 -Tag 参数对脚本元数据进行筛选。</span><span class="sxs-lookup"><span data-stu-id="1091e-115">Find-Script can filter on script metadata with the -Tag parameter.</span></span>
+- <span data-ttu-id="1091e-116">Find-Script 可使用 -Filter 参数对存储库特定搜索语言进行筛选。</span><span class="sxs-lookup"><span data-stu-id="1091e-116">Find-Script can filter on repository-specific search language with the -Filter parameter.</span></span>
+- <span data-ttu-id="1091e-117">Find-Script 可从所有或少数已注册存储库中对脚本进行筛选。</span><span class="sxs-lookup"><span data-stu-id="1091e-117">Find-Script can filter on scripts from all or few of the registered repositories.</span></span>
 
-**注意：**已注册的 PSRepository 应具有有效的 ScriptSourceLocation。 可使用 Set-PSRepository 设置 ScriptSourceLocation 值。
+<span data-ttu-id="1091e-118">**注意：**已注册的 PSRepository 应具有有效的 ScriptSourceLocation。</span><span class="sxs-lookup"><span data-stu-id="1091e-118">**NOTE:** Registered PSRepository should have a valid ScriptSourceLocation.</span></span> <span data-ttu-id="1091e-119">可使用 Set-PSRepository 设置 ScriptSourceLocation 值。</span><span class="sxs-lookup"><span data-stu-id="1091e-119">You can use the Set-PSRepository to set ScriptSourceLocation value.</span></span>
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a><span data-ttu-id="1091e-120">Cmdlet 语法</span><span class="sxs-lookup"><span data-stu-id="1091e-120">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Find-Script -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="1091e-121">Cmdlet 联机帮助参考</span><span class="sxs-lookup"><span data-stu-id="1091e-121">Cmdlet online help reference</span></span>
 
-[Find-Script](http://go.microsoft.com/fwlink/?LinkId=619785)
+[<span data-ttu-id="1091e-122">Find-Script</span><span class="sxs-lookup"><span data-stu-id="1091e-122">Find-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619785)
 
-<a id="example-commands" class="xliff"></a>
-## 示例命令
+## <a name="example-commands"></a><span data-ttu-id="1091e-123">示例命令</span><span class="sxs-lookup"><span data-stu-id="1091e-123">Example commands</span></span>
 
 ```powershell
 # Find a script from the registered repository with ScriptSourceLocation

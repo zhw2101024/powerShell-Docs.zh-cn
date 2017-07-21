@@ -9,10 +9,10 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/08/2017
 ---
-# <a name="appendix-1---compatibility-aliases"></a>附录 1 - 兼容性别名
-Windows PowerShell 具有几个转换别名，它们让 UNIX 和 Cmd 用户能够在 Windows PowerShell 中使用熟悉的命令名称的。 下表中显示的是最常见的别名，别名后带有 Windows PowerShell 命令和标准 Windows PowerShell 别名（如果存在）。
+# <a name="appendix-1---compatibility-aliases"></a><span data-ttu-id="f85c4-103">附录 1 - 兼容性别名</span><span class="sxs-lookup"><span data-stu-id="f85c4-103">Appendix 1 - Compatibility Aliases</span></span>
+<span data-ttu-id="f85c4-104">Windows PowerShell 具有几个转换别名，它们让 UNIX 和 Cmd 用户能够在 Windows PowerShell 中使用熟悉的命令名称的。</span><span class="sxs-lookup"><span data-stu-id="f85c4-104">Windows PowerShell has several transition aliases that allow UNIX and Cmd users to use familiar command names in Windows PowerShell.</span></span> <span data-ttu-id="f85c4-105">下表中显示的是最常见的别名，别名后带有 Windows PowerShell 命令和标准 Windows PowerShell 别名（如果存在）。</span><span class="sxs-lookup"><span data-stu-id="f85c4-105">The most common aliases are shown in the table below, along with the Windows PowerShell command behind the alias and the standard Windows PowerShell alias if one exists.</span></span>
 
-你可以通过使用 Get-Alias cmdlet 从 Windows PowerShell 内部找到任何别名指向的 Windows PowerShell 命令。 例如，键入 **get-alias cls**。
+<span data-ttu-id="f85c4-106">你可以通过使用 Get-Alias cmdlet 从 Windows PowerShell 内部找到任何别名指向的 Windows PowerShell 命令。</span><span class="sxs-lookup"><span data-stu-id="f85c4-106">You can find the Windows PowerShell command that any alias points to from within Windows PowerShell by using the Get-Alias cmdlet.</span></span> <span data-ttu-id="f85c4-107">例如，键入 **get-alias cls**。</span><span class="sxs-lookup"><span data-stu-id="f85c4-107">For example, type **get-alias cls**.</span></span>
 
 ```
 CommandType     Name                            Definition
@@ -20,17 +20,17 @@ CommandType     Name                            Definition
 Alias           cls                             Clear-Host
 ```
 
-|CMD 命令|UNIX 命令|PS 命令|PS 别名|
+|<span data-ttu-id="f85c4-108">CMD 命令</span><span class="sxs-lookup"><span data-stu-id="f85c4-108">CMD Command</span></span>|<span data-ttu-id="f85c4-109">UNIX 命令</span><span class="sxs-lookup"><span data-stu-id="f85c4-109">UNIX Command</span></span>|<span data-ttu-id="f85c4-110">PS 命令</span><span class="sxs-lookup"><span data-stu-id="f85c4-110">PS Command</span></span>|<span data-ttu-id="f85c4-111">PS 别名</span><span class="sxs-lookup"><span data-stu-id="f85c4-111">PS Alias</span></span>|
 |---------------|----------------|--------------|------------|
-|**dir**|**ls**|**Get-ChildItem**|**gci**|
-|**cls**|**clear**|**Clear-Host**（函数）|**cls**|
-|**del, erase, rmdir**|**rm**|**Remove-Item**|**ri**|
-|**copy**|**cp**|**Copy-Item**|**ci**|
-|**move**|**mv**|**Move-Item**|**mi**|
-|**rename**|**mv**|**Rename-Item**|**rni**|
-|**type**|**cat**|**Get-Content**|**gc**|
-|**cd**|**cd**|**Set-Location**|**sl**|
-|**md**|**mkdir**|**New-Item**|**ni**|
-|**pushd**|**pushd**|**Push-Location**|**pushd**|
-|**popd**|**popd**|**Pop-Location**|**popd**|
+|<span data-ttu-id="f85c4-112">**dir**</span><span class="sxs-lookup"><span data-stu-id="f85c4-112">**dir**</span></span>|<span data-ttu-id="f85c4-113">**ls**</span><span class="sxs-lookup"><span data-stu-id="f85c4-113">**ls**</span></span>|<span data-ttu-id="f85c4-114">**Get-ChildItem**</span><span class="sxs-lookup"><span data-stu-id="f85c4-114">**Get-ChildItem**</span></span>|<span data-ttu-id="f85c4-115">**gci**</span><span class="sxs-lookup"><span data-stu-id="f85c4-115">**gci**</span></span>|
+|<span data-ttu-id="f85c4-116">**cls**</span><span class="sxs-lookup"><span data-stu-id="f85c4-116">**cls**</span></span>|<span data-ttu-id="f85c4-117">**clear**</span><span class="sxs-lookup"><span data-stu-id="f85c4-117">**clear**</span></span>|<span data-ttu-id="f85c4-118">**Clear-Host**（函数）</span><span class="sxs-lookup"><span data-stu-id="f85c4-118">**Clear-Host** (function)</span></span>|<span data-ttu-id="f85c4-119">**cls**</span><span class="sxs-lookup"><span data-stu-id="f85c4-119">**cls**</span></span>|
+|<span data-ttu-id="f85c4-120">**del, erase, rmdir**</span><span class="sxs-lookup"><span data-stu-id="f85c4-120">**del, erase, rmdir**</span></span>|<span data-ttu-id="f85c4-121">**rm**</span><span class="sxs-lookup"><span data-stu-id="f85c4-121">**rm**</span></span>|<span data-ttu-id="f85c4-122">**Remove-Item**</span><span class="sxs-lookup"><span data-stu-id="f85c4-122">**Remove-Item**</span></span>|<span data-ttu-id="f85c4-123">**ri**</span><span class="sxs-lookup"><span data-stu-id="f85c4-123">**ri**</span></span>|
+|<span data-ttu-id="f85c4-124">**copy**</span><span class="sxs-lookup"><span data-stu-id="f85c4-124">**copy**</span></span>|<span data-ttu-id="f85c4-125">**cp**</span><span class="sxs-lookup"><span data-stu-id="f85c4-125">**cp**</span></span>|<span data-ttu-id="f85c4-126">**Copy-Item**</span><span class="sxs-lookup"><span data-stu-id="f85c4-126">**Copy-Item**</span></span>|<span data-ttu-id="f85c4-127">**ci**</span><span class="sxs-lookup"><span data-stu-id="f85c4-127">**ci**</span></span>|
+|<span data-ttu-id="f85c4-128">**move**</span><span class="sxs-lookup"><span data-stu-id="f85c4-128">**move**</span></span>|<span data-ttu-id="f85c4-129">**mv**</span><span class="sxs-lookup"><span data-stu-id="f85c4-129">**mv**</span></span>|<span data-ttu-id="f85c4-130">**Move-Item**</span><span class="sxs-lookup"><span data-stu-id="f85c4-130">**Move-Item**</span></span>|<span data-ttu-id="f85c4-131">**mi**</span><span class="sxs-lookup"><span data-stu-id="f85c4-131">**mi**</span></span>|
+|<span data-ttu-id="f85c4-132">**rename**</span><span class="sxs-lookup"><span data-stu-id="f85c4-132">**rename**</span></span>|<span data-ttu-id="f85c4-133">**mv**</span><span class="sxs-lookup"><span data-stu-id="f85c4-133">**mv**</span></span>|<span data-ttu-id="f85c4-134">**Rename-Item**</span><span class="sxs-lookup"><span data-stu-id="f85c4-134">**Rename-Item**</span></span>|<span data-ttu-id="f85c4-135">**rni**</span><span class="sxs-lookup"><span data-stu-id="f85c4-135">**rni**</span></span>|
+|<span data-ttu-id="f85c4-136">**type**</span><span class="sxs-lookup"><span data-stu-id="f85c4-136">**type**</span></span>|<span data-ttu-id="f85c4-137">**cat**</span><span class="sxs-lookup"><span data-stu-id="f85c4-137">**cat**</span></span>|<span data-ttu-id="f85c4-138">**Get-Content**</span><span class="sxs-lookup"><span data-stu-id="f85c4-138">**Get-Content**</span></span>|<span data-ttu-id="f85c4-139">**gc**</span><span class="sxs-lookup"><span data-stu-id="f85c4-139">**gc**</span></span>|
+|<span data-ttu-id="f85c4-140">**cd**</span><span class="sxs-lookup"><span data-stu-id="f85c4-140">**cd**</span></span>|<span data-ttu-id="f85c4-141">**cd**</span><span class="sxs-lookup"><span data-stu-id="f85c4-141">**cd**</span></span>|<span data-ttu-id="f85c4-142">**Set-Location**</span><span class="sxs-lookup"><span data-stu-id="f85c4-142">**Set-Location**</span></span>|<span data-ttu-id="f85c4-143">**sl**</span><span class="sxs-lookup"><span data-stu-id="f85c4-143">**sl**</span></span>|
+|<span data-ttu-id="f85c4-144">**md**</span><span class="sxs-lookup"><span data-stu-id="f85c4-144">**md**</span></span>|<span data-ttu-id="f85c4-145">**mkdir**</span><span class="sxs-lookup"><span data-stu-id="f85c4-145">**mkdir**</span></span>|<span data-ttu-id="f85c4-146">**New-Item**</span><span class="sxs-lookup"><span data-stu-id="f85c4-146">**New-Item**</span></span>|<span data-ttu-id="f85c4-147">**ni**</span><span class="sxs-lookup"><span data-stu-id="f85c4-147">**ni**</span></span>|
+|<span data-ttu-id="f85c4-148">**pushd**</span><span class="sxs-lookup"><span data-stu-id="f85c4-148">**pushd**</span></span>|<span data-ttu-id="f85c4-149">**pushd**</span><span class="sxs-lookup"><span data-stu-id="f85c4-149">**pushd**</span></span>|<span data-ttu-id="f85c4-150">**Push-Location**</span><span class="sxs-lookup"><span data-stu-id="f85c4-150">**Push-Location**</span></span>|<span data-ttu-id="f85c4-151">**pushd**</span><span class="sxs-lookup"><span data-stu-id="f85c4-151">**pushd**</span></span>|
+|<span data-ttu-id="f85c4-152">**popd**</span><span class="sxs-lookup"><span data-stu-id="f85c4-152">**popd**</span></span>|<span data-ttu-id="f85c4-153">**popd**</span><span class="sxs-lookup"><span data-stu-id="f85c4-153">**popd**</span></span>|<span data-ttu-id="f85c4-154">**Pop-Location**</span><span class="sxs-lookup"><span data-stu-id="f85c4-154">**Pop-Location**</span></span>|<span data-ttu-id="f85c4-155">**popd**</span><span class="sxs-lookup"><span data-stu-id="f85c4-155">**popd**</span></span>|
 

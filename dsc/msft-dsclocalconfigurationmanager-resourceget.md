@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="resourceget-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# MSFT_DSCLocalConfigurationManager 类的 ResourceGet 方法
+# <a name="resourceget-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="bf603-103">MSFT_DSCLocalConfigurationManager 类的 ResourceGet 方法</span><span class="sxs-lookup"><span data-stu-id="bf603-103">ResourceGet method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-直接调用 DSC 资源的 **Get** 方法。
+<span data-ttu-id="bf603-104">直接调用 DSC 资源的 **Get** 方法。</span><span class="sxs-lookup"><span data-stu-id="bf603-104">Directly calls the **Get** method of a DSC resource.</span></span>
 
-<a id="syntax" class="xliff"></a>
-语法
+<a name="syntax"></a><span data-ttu-id="bf603-105">语法</span><span class="sxs-lookup"><span data-stu-id="bf603-105">Syntax</span></span>
 ------
 
 ```mof
@@ -28,46 +26,41 @@ uint32 ResourceGet(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-参数
+<a name="parameters"></a><span data-ttu-id="bf603-106">参数</span><span class="sxs-lookup"><span data-stu-id="bf603-106">Parameters</span></span>
 ----------
 
-ResourceType \[in\]  
-要调用的资源的名称。
+<span data-ttu-id="bf603-107">ResourceType \[in\]</span><span class="sxs-lookup"><span data-stu-id="bf603-107">*ResourceType* \[in\]</span></span>  
+<span data-ttu-id="bf603-108">要调用的资源的名称。</span><span class="sxs-lookup"><span data-stu-id="bf603-108">The name of the resource to call.</span></span>
 
-ModuleName \[in\]  
-包含要调用的资源的模块名称。
+<span data-ttu-id="bf603-109">ModuleName \[in\]</span><span class="sxs-lookup"><span data-stu-id="bf603-109">*ModuleName* \[in\]</span></span>  
+<span data-ttu-id="bf603-110">包含要调用的资源的模块名称。</span><span class="sxs-lookup"><span data-stu-id="bf603-110">The name of the module that contains the resource to call.</span></span>
 
-resourceProperty \[in\]  
-分别在哈希表中将资源属性名称及其值指定为键和值。 使用 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) cmdlet 可以发现资源属性及其类型。
+<span data-ttu-id="bf603-111">resourceProperty \[in\]</span><span class="sxs-lookup"><span data-stu-id="bf603-111">*resourceProperty* \[in\]</span></span>  
+<span data-ttu-id="bf603-112">分别在哈希表中将资源属性名称及其值指定为键和值。</span><span class="sxs-lookup"><span data-stu-id="bf603-112">Specifies the resource property name and its value in a hash table as key and value, respectively.</span></span> <span data-ttu-id="bf603-113">使用 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) cmdlet 可以发现资源属性及其类型。</span><span class="sxs-lookup"><span data-stu-id="bf603-113">Use the [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) cmdlet to discover resource properties and their types.</span></span>
 
-configurations \[out\]  
-在返回时包含配置的嵌入实例。
+<span data-ttu-id="bf603-114">configurations \[out\]</span><span class="sxs-lookup"><span data-stu-id="bf603-114">*configurations* \[out\]</span></span>  
+<span data-ttu-id="bf603-115">在返回时包含配置的嵌入实例。</span><span class="sxs-lookup"><span data-stu-id="bf603-115">On return, contains an embedded instance of the configurations.</span></span>
 
-<a id="return-value" class="xliff"></a>
-## 返回值
+## <a name="return-value"></a><span data-ttu-id="bf603-116">返回值</span><span class="sxs-lookup"><span data-stu-id="bf603-116">Return value</span></span>
 ------------
 
-如果成功，则返回零；否则返回错误代码。
+<span data-ttu-id="bf603-117">如果成功，则返回零；否则返回错误代码。</span><span class="sxs-lookup"><span data-stu-id="bf603-117">Returns zero on success; otherwise returns an error code.</span></span>
 
-<a id="remarks" class="xliff"></a>
-## 备注
+## <a name="remarks"></a><span data-ttu-id="bf603-118">备注</span><span class="sxs-lookup"><span data-stu-id="bf603-118">Remarks</span></span>
 
-这是一种静态方法。
+<span data-ttu-id="bf603-119">这是一种静态方法。</span><span class="sxs-lookup"><span data-stu-id="bf603-119">This is a static method.</span></span>
 
-<a id="requirements" class="xliff"></a>
-## 要求
+## <a name="requirements"></a><span data-ttu-id="bf603-120">要求</span><span class="sxs-lookup"><span data-stu-id="bf603-120">Requirements</span></span>
 ------------
->**MOF：** DscCore.mof
+><span data-ttu-id="bf603-121">**MOF：** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="bf603-121">**MOF:** DscCore.mof</span></span>
 
->**命名空间**：Root\Microsoft\Windows\DesiredStateConfiguration
-
-
-<a id="see-also" class="xliff"></a>
-## 另请参阅
+><span data-ttu-id="bf603-122">**命名空间**：Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="bf603-122">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="bf603-123">另请参阅</span><span class="sxs-lookup"><span data-stu-id="bf603-123">See also</span></span>
+
+
+[<span data-ttu-id="bf603-124">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="bf603-124">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
 
 
  

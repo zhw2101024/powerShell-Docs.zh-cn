@@ -9,9 +9,8 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="declare-base-class" class="xliff"></a>
-# 声明基类
-可以将 Windows PowerShell 类声明为另一个 Windows PowerShell 类的基类型。
+# <a name="declare-base-class"></a><span data-ttu-id="80a27-102">声明基类</span><span class="sxs-lookup"><span data-stu-id="80a27-102">Declare Base Class</span></span>
+<span data-ttu-id="80a27-103">可以将 Windows PowerShell 类声明为另一个 Windows PowerShell 类的基类型。</span><span class="sxs-lookup"><span data-stu-id="80a27-103">You can declare a Windows PowerShell class as a base type for another Windows PowerShell class.</span></span>
 
 ```PowerShell
 class bar
@@ -27,7 +26,7 @@ class baz : bar {}
 [baz]::new().foo() # return 100500
 ```
 
-此外，还可以使用现有的.NET Framework 类型作为基类：
+<span data-ttu-id="80a27-104">此外，还可以使用现有的.NET Framework 类型作为基类：</span><span class="sxs-lookup"><span data-stu-id="80a27-104">You can also use existing .NET Framework types as base classes:</span></span>
 
 ```PowerShell
 class MyIntList : system.collections.generic.list[int]

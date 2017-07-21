@@ -9,13 +9,12 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="reporting-on-jea" class="xliff"></a>
-# JEA 报告
-要报告 JEA 配置的状态，可使用：
-1.  **Get-PSSessionConfiguration** 返回给定计算机上所有已注册终结点的列表。
-2.  **Get PSSessionCapability** 报告任意给定用户在特定终结点上具有的功能。
+# <a name="reporting-on-jea"></a><span data-ttu-id="9818a-102">JEA 报告</span><span class="sxs-lookup"><span data-stu-id="9818a-102">Reporting on JEA</span></span>
+<span data-ttu-id="9818a-103">要报告 JEA 配置的状态，可使用：</span><span class="sxs-lookup"><span data-stu-id="9818a-103">In order to report on the state of your JEA configuration, you can use:</span></span>
+1.  <span data-ttu-id="9818a-104">**Get-PSSessionConfiguration** 返回给定计算机上所有已注册终结点的列表。</span><span class="sxs-lookup"><span data-stu-id="9818a-104">**Get-PSSessionConfiguration** to return a list of all registered endpoints on a given machine.</span></span>
+2.  <span data-ttu-id="9818a-105">**Get PSSessionCapability** 报告任意给定用户在特定终结点上具有的功能。</span><span class="sxs-lookup"><span data-stu-id="9818a-105">**Get-PSSessionCapability** to report on the capabilities any given user has on a specific endpoint.</span></span>
 
-下面是 **Get-PSSessionCapability** 的一个示例：
+<span data-ttu-id="9818a-106">下面是 **Get-PSSessionCapability** 的一个示例：</span><span class="sxs-lookup"><span data-stu-id="9818a-106">Here’s an example of **Get-PSSessionCapability**:</span></span>
 ```powershell
 Get-PSSessionCapability -ConfigurationName Maintenance -Username "CONTOSO\JohnDoe"
 
@@ -41,7 +40,7 @@ Cmdlet          Restart-Service                                    3.0.0.0 Micro
 
 ```
 
-若要报告用户在 JEA 会话期间执行的_操作_，你可以：
-1. 为该 JEA 终结点启用“即时权限提升”脚本，并查询脚本目录以获取记录了每个用户的操作的完整日志。
-2. 打开 PowerShell 模块日志记录并检查 PowerShell 事件日志。
+<span data-ttu-id="9818a-107">若要报告用户在 JEA 会话期间执行的_操作_，你可以：</span><span class="sxs-lookup"><span data-stu-id="9818a-107">To report on the _actions_ users took during a JEA session, you can:</span></span>
+1. <span data-ttu-id="9818a-108">为该 JEA 终结点启用“即时权限提升”脚本，并查询脚本目录以获取记录了每个用户的操作的完整日志。</span><span class="sxs-lookup"><span data-stu-id="9818a-108">Enable the "over-the-shoulder" transcripts for that JEA endpoint and consult the transcript directory for a full log of each user's actions</span></span>
+2. <span data-ttu-id="9818a-109">打开 PowerShell 模块日志记录并检查 PowerShell 事件日志。</span><span class="sxs-lookup"><span data-stu-id="9818a-109">Turn on PowerShell module logging and inspect the PowerShell event logs.</span></span>
 

@@ -10,14 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="writing-help-for-dsc-configurations" class="xliff"></a>
-# 编写 DSC 配置的帮助
+# <a name="writing-help-for-dsc-configurations"></a><span data-ttu-id="9b48f-103">编写 DSC 配置的帮助</span><span class="sxs-lookup"><span data-stu-id="9b48f-103">Writing help for DSC configurations</span></span>
 
->适用于：Windows PowerShell 5.0
+><span data-ttu-id="9b48f-104">适用于：Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="9b48f-104">Applies To: Windows Windows PowerShell 5.0</span></span>
 
-可在 DSC 配置中使用基于注释的帮助。 若要访问帮助内容，用户可以使用 `-?` 调用配置函数或使用 [Get-Help](https://technet.microsoft.com/en-us/library/hh849696.aspx) cmdlet。 若要详细了解基于 PowerShell 注释的帮助内容，请参阅 [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/hh847834.aspx)。
+<span data-ttu-id="9b48f-105">可在 DSC 配置中使用基于注释的帮助。</span><span class="sxs-lookup"><span data-stu-id="9b48f-105">You can use comment-based help in DSC configurations.</span></span> <span data-ttu-id="9b48f-106">若要访问帮助内容，用户可以使用 `-?` 调用配置函数或使用 [Get-Help](https://technet.microsoft.com/en-us/library/hh849696.aspx) cmdlet。</span><span class="sxs-lookup"><span data-stu-id="9b48f-106">Users can access the help by calling the configuration function with `-?`, or by using the [Get-Help](https://technet.microsoft.com/en-us/library/hh849696.aspx) cmdlet.</span></span> <span data-ttu-id="9b48f-107">若要详细了解基于 PowerShell 注释的帮助内容，请参阅 [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/hh847834.aspx)。</span><span class="sxs-lookup"><span data-stu-id="9b48f-107">For more information about PowerShell comment-based help, see [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/hh847834.aspx).</span></span>
 
-下面的示例演示了一个脚本，它包含一个配置及其各自基于注释的帮助：
+<span data-ttu-id="9b48f-108">下面的示例演示了一个脚本，它包含一个配置及其各自基于注释的帮助：</span><span class="sxs-lookup"><span data-stu-id="9b48f-108">The following example shows a script that contains a configuration and comment-based help for it:</span></span>
 
 ```powershell
 <#
@@ -61,10 +60,9 @@ configuration HelpSample1
 }
 ```
 
-<a id="viewing-configuration-help" class="xliff"></a>
-## 查看配置帮助
+## <a name="viewing-configuration-help"></a><span data-ttu-id="9b48f-109">查看配置帮助</span><span class="sxs-lookup"><span data-stu-id="9b48f-109">Viewing configuration help</span></span>
 
-若要查看有关配置的帮助，请使用带有函数名称的 **Get-help** cmdlet，或键入后跟 `-?` 的函数名称。 下面展示了在传递给 **Get-Help** 时上一个函数的输出：
+<span data-ttu-id="9b48f-110">若要查看有关配置的帮助，请使用带有函数名称的 **Get-help** cmdlet，或键入后跟 `-?` 的函数名称。</span><span class="sxs-lookup"><span data-stu-id="9b48f-110">To view the help for a configuration, use the **Get-Help** cmdlet with the name of the function, or type the name of the function followed by `-?`.</span></span> <span data-ttu-id="9b48f-111">下面展示了在传递给 **Get-Help** 时上一个函数的输出：</span><span class="sxs-lookup"><span data-stu-id="9b48f-111">The following is the output of the previous function when passed to **Get-Help**:</span></span>
 
 ```powershell
 PS C:\> Get-Help HelpSample1
@@ -93,7 +91,6 @@ REMARKS
     For technical information, type: "get-help HelpSample1 -full".
 ```
 
-<a id="see-also" class="xliff"></a>
-## 另请参阅
-* [DSC 配置](configurations.md)
+## <a name="see-also"></a><span data-ttu-id="9b48f-112">另请参阅</span><span class="sxs-lookup"><span data-stu-id="9b48f-112">See Also</span></span>
+* [<span data-ttu-id="9b48f-113">DSC 配置</span><span class="sxs-lookup"><span data-stu-id="9b48f-113">DSC Configurations</span></span>](configurations.md)
 

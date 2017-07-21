@@ -10,28 +10,27 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="wmf-51-operating-system-compatibility" class="xliff"></a>
-# WMF 5.1 操作系统兼容性 #
+# <a name="wmf-51-operating-system-compatibility"></a><span data-ttu-id="1a0c2-103">WMF 5.1 操作系统兼容性</span><span class="sxs-lookup"><span data-stu-id="1a0c2-103">WMF 5.1 Operating System Compatibility</span></span> #
 
-> 注意：此信息是预发布版本，可能会进行更改。
+> <span data-ttu-id="1a0c2-104">注意：此信息是预发布版本，可能会进行更改。</span><span class="sxs-lookup"><span data-stu-id="1a0c2-104">Note: This information is preliminary and subject to change.</span></span>
 
-| 操作系统版本 | [WMF 5.1](https://aka.ms/wmf51download) | [WMF 5.0](https://aka.ms/wmf5download) | [WMF 4.0](https://aka.ms/wmf4download) |  [WMF 3.0](https://aka.ms/wmf3download) | [WMF 2.0](https://aka.ms/wmf2download) |
+| <span data-ttu-id="1a0c2-105">操作系统版本</span><span class="sxs-lookup"><span data-stu-id="1a0c2-105">Operating System Version</span></span> | [<span data-ttu-id="1a0c2-106">WMF 5.1</span><span class="sxs-lookup"><span data-stu-id="1a0c2-106">WMF 5.1</span></span>](https://aka.ms/wmf51download) | [<span data-ttu-id="1a0c2-107">WMF 5.0</span><span class="sxs-lookup"><span data-stu-id="1a0c2-107">WMF 5.0</span></span>](https://aka.ms/wmf5download) | [<span data-ttu-id="1a0c2-108">WMF 4.0</span><span class="sxs-lookup"><span data-stu-id="1a0c2-108">WMF 4.0</span></span>](https://aka.ms/wmf4download) |  [<span data-ttu-id="1a0c2-109">WMF 3.0</span><span class="sxs-lookup"><span data-stu-id="1a0c2-109">WMF 3.0</span></span>](https://aka.ms/wmf3download) | [<span data-ttu-id="1a0c2-110">WMF 2.0</span><span class="sxs-lookup"><span data-stu-id="1a0c2-110">WMF 2.0</span></span>](https://aka.ms/wmf2download) |
 | ------------------------ | ----------- | ----------- | ----------- | ------------ |  ------------- |
-| Windows Server 2016 | 内置提供* |  |  |  |  |
-| Windows 10 | 内置提供* | 内置提供*  | | | |  
-| Windows Server 2012 R2| 是 | 是 | 内置提供 |  |  |
-| Windows 8.1 | 是 | 是 |  内置提供 |  |  |
-| Windows Server 2012 | 是 | 是 | 是 |  内置提供 | |
-| Windows 8 |  |  |  | 内置提供 | |
-| Windows Server 2008 R2 SP1 | 是 | 是 | 是 |  是| 内置提供 |
-| Windows 7 SP1  | 是 | 是 | 是 | 是 | 内置提供 |
-| Windows Server 2008 SP2 | | | | 是 | 是 |
-| Windows Vista | | | | | 是 |
-| Windows Server 2003| | | |  | 是 |
-| Windows XP | | | |  | 是 |
+| <span data-ttu-id="1a0c2-111">Windows Server 2016</span><span class="sxs-lookup"><span data-stu-id="1a0c2-111">Windows Server 2016</span></span> | <span data-ttu-id="1a0c2-112">内置提供*</span><span class="sxs-lookup"><span data-stu-id="1a0c2-112">Ships in-box*</span></span> |  |  |  |  |
+| <span data-ttu-id="1a0c2-113">Windows 10</span><span class="sxs-lookup"><span data-stu-id="1a0c2-113">Windows 10</span></span> | <span data-ttu-id="1a0c2-114">内置提供*</span><span class="sxs-lookup"><span data-stu-id="1a0c2-114">Ships in-box*</span></span> | <span data-ttu-id="1a0c2-115">内置提供*</span><span class="sxs-lookup"><span data-stu-id="1a0c2-115">Ships in-box*</span></span>  | | | |  
+| <span data-ttu-id="1a0c2-116">Windows Server 2012 R2</span><span class="sxs-lookup"><span data-stu-id="1a0c2-116">Windows Server 2012 R2</span></span>| <span data-ttu-id="1a0c2-117">是</span><span class="sxs-lookup"><span data-stu-id="1a0c2-117">Yes</span></span> | <span data-ttu-id="1a0c2-118">是</span><span class="sxs-lookup"><span data-stu-id="1a0c2-118">Yes</span></span> | <span data-ttu-id="1a0c2-119">内置提供</span><span class="sxs-lookup"><span data-stu-id="1a0c2-119">Ships in-box</span></span> |  |  |
+| <span data-ttu-id="1a0c2-120">Windows 8.1</span><span class="sxs-lookup"><span data-stu-id="1a0c2-120">Windows 8.1</span></span> | <span data-ttu-id="1a0c2-121">是</span><span class="sxs-lookup"><span data-stu-id="1a0c2-121">Yes</span></span> | <span data-ttu-id="1a0c2-122">是</span><span class="sxs-lookup"><span data-stu-id="1a0c2-122">Yes</span></span> |  <span data-ttu-id="1a0c2-123">内置提供</span><span class="sxs-lookup"><span data-stu-id="1a0c2-123">Ships in-box</span></span> |  |  |
+| <span data-ttu-id="1a0c2-124">Windows Server 2012</span><span class="sxs-lookup"><span data-stu-id="1a0c2-124">Windows Server 2012</span></span> | <span data-ttu-id="1a0c2-125">是</span><span class="sxs-lookup"><span data-stu-id="1a0c2-125">Yes</span></span> | <span data-ttu-id="1a0c2-126">是</span><span class="sxs-lookup"><span data-stu-id="1a0c2-126">Yes</span></span> | <span data-ttu-id="1a0c2-127">是</span><span class="sxs-lookup"><span data-stu-id="1a0c2-127">Yes</span></span> |  <span data-ttu-id="1a0c2-128">内置提供</span><span class="sxs-lookup"><span data-stu-id="1a0c2-128">Ships in-box</span></span> | |
+| <span data-ttu-id="1a0c2-129">Windows 8</span><span class="sxs-lookup"><span data-stu-id="1a0c2-129">Windows 8</span></span> |  |  |  | <span data-ttu-id="1a0c2-130">内置提供</span><span class="sxs-lookup"><span data-stu-id="1a0c2-130">Ships in-box</span></span> | |
+| <span data-ttu-id="1a0c2-131">Windows Server 2008 R2 SP1</span><span class="sxs-lookup"><span data-stu-id="1a0c2-131">Windows Server 2008 R2 SP1</span></span> | <span data-ttu-id="1a0c2-132">是</span><span class="sxs-lookup"><span data-stu-id="1a0c2-132">Yes</span></span> | <span data-ttu-id="1a0c2-133">是</span><span class="sxs-lookup"><span data-stu-id="1a0c2-133">Yes</span></span> | <span data-ttu-id="1a0c2-134">是</span><span class="sxs-lookup"><span data-stu-id="1a0c2-134">Yes</span></span> |  <span data-ttu-id="1a0c2-135">是</span><span class="sxs-lookup"><span data-stu-id="1a0c2-135">Yes</span></span>| <span data-ttu-id="1a0c2-136">内置提供</span><span class="sxs-lookup"><span data-stu-id="1a0c2-136">Ships in-box</span></span> |
+| <span data-ttu-id="1a0c2-137">Windows 7 SP1</span><span class="sxs-lookup"><span data-stu-id="1a0c2-137">Windows 7 SP1</span></span>  | <span data-ttu-id="1a0c2-138">是</span><span class="sxs-lookup"><span data-stu-id="1a0c2-138">Yes</span></span> | <span data-ttu-id="1a0c2-139">是</span><span class="sxs-lookup"><span data-stu-id="1a0c2-139">Yes</span></span> | <span data-ttu-id="1a0c2-140">是</span><span class="sxs-lookup"><span data-stu-id="1a0c2-140">Yes</span></span> | <span data-ttu-id="1a0c2-141">是</span><span class="sxs-lookup"><span data-stu-id="1a0c2-141">Yes</span></span> | <span data-ttu-id="1a0c2-142">内置提供</span><span class="sxs-lookup"><span data-stu-id="1a0c2-142">Ships in-box</span></span> |
+| <span data-ttu-id="1a0c2-143">Windows Server 2008 SP2</span><span class="sxs-lookup"><span data-stu-id="1a0c2-143">Windows Server 2008 SP2</span></span> | | | | <span data-ttu-id="1a0c2-144">是</span><span class="sxs-lookup"><span data-stu-id="1a0c2-144">Yes</span></span> | <span data-ttu-id="1a0c2-145">是</span><span class="sxs-lookup"><span data-stu-id="1a0c2-145">Yes</span></span> |
+| <span data-ttu-id="1a0c2-146">Windows Vista</span><span class="sxs-lookup"><span data-stu-id="1a0c2-146">Windows Vista</span></span> | | | | | <span data-ttu-id="1a0c2-147">是</span><span class="sxs-lookup"><span data-stu-id="1a0c2-147">Yes</span></span> |
+| <span data-ttu-id="1a0c2-148">Windows Server 2003</span><span class="sxs-lookup"><span data-stu-id="1a0c2-148">Windows Server 2003</span></span>| | | |  | <span data-ttu-id="1a0c2-149">是</span><span class="sxs-lookup"><span data-stu-id="1a0c2-149">Yes</span></span> |
+| <span data-ttu-id="1a0c2-150">Windows XP</span><span class="sxs-lookup"><span data-stu-id="1a0c2-150">Windows XP</span></span> | | | |  | <span data-ttu-id="1a0c2-151">是</span><span class="sxs-lookup"><span data-stu-id="1a0c2-151">Yes</span></span> |
 
 
-关于“内置提供*”：Windows 10 RTM 原始版本中内附的 WMF 5.0 的功能。
-Windows Server 2016 和 Windows 10 Anniversary Edition 中均包括 WMF 5.1 的功能。 但 WMF 5.1 并不适用于这些操作系统版本，因为它是通过 Windows 更新提供更新的。
+<span data-ttu-id="1a0c2-152">关于“内置提供*”：Windows 10 RTM 原始版本中内附的 WMF 5.0 的功能。</span><span class="sxs-lookup"><span data-stu-id="1a0c2-152">About "Ships in-box*": The features of WMF 5.0 were included in the original Windows 10 RTM version.</span></span>
+<span data-ttu-id="1a0c2-153">Windows Server 2016 和 Windows 10 Anniversary Edition 中均包括 WMF 5.1 的功能。</span><span class="sxs-lookup"><span data-stu-id="1a0c2-153">The features of WMF 5.1 were included in Windows Server 2016 and Windows 10 Anniversary Edition.</span></span> <span data-ttu-id="1a0c2-154">但 WMF 5.1 并不适用于这些操作系统版本，因为它是通过 Windows 更新提供更新的。</span><span class="sxs-lookup"><span data-stu-id="1a0c2-154">WMF 5.1 is not applicable for these operating system versions, as the updates are provided via Windows Update.</span></span>
 
 

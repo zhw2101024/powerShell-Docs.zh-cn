@@ -9,10 +9,10 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/08/2017
 ---
-# <a name="pslocalaccount5-module"></a>PSLocalAccount5 模块
-本部分包含有关 **PSLocalAccounts5** 模块的帮助主题。
+# <a name="pslocalaccount5-module"></a><span data-ttu-id="6bac1-103">PSLocalAccount5 模块</span><span class="sxs-lookup"><span data-stu-id="6bac1-103">PSLocalAccount5 Module</span></span>
+<span data-ttu-id="6bac1-104">本部分包含有关 **PSLocalAccounts5** 模块的帮助主题。</span><span class="sxs-lookup"><span data-stu-id="6bac1-104">This section contains the help topics for the **PSLocalAccounts5** module.</span></span>
 
-## <a name="see-also"></a>另请参阅
-- [Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
-- [使用 Windows PowerShell 编写脚本](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+## <a name="see-also"></a><span data-ttu-id="6bac1-105">另请参阅</span><span class="sxs-lookup"><span data-stu-id="6bac1-105">See Also</span></span>
+- [<span data-ttu-id="6bac1-106">Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="6bac1-106">Windows PowerShell 5.0</span></span>](Windows-PowerShell-5.0.md)
+- [<span data-ttu-id="6bac1-107">使用 Windows PowerShell 编写脚本</span><span class="sxs-lookup"><span data-stu-id="6bac1-107">Scripting with Windows PowerShell</span></span>](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 

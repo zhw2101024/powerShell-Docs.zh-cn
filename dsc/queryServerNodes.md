@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-function-to-query-node-information-from-pull-server" class="xliff"></a>
-# 用于从请求服务器查询节点信息的 DSC 函数。
+# <a name="dsc-function-to-query-node-information-from-pull-server"></a><span data-ttu-id="dd7c9-103">用于从请求服务器查询节点信息的 DSC 函数。</span><span class="sxs-lookup"><span data-stu-id="dd7c9-103">DSC function to query node information from pull server.</span></span>
 
 ```powershell
 function QueryNodeInformation
@@ -40,9 +39,9 @@ Param (
 }
 ```
 
-用你的请求服务器的 URI 替换 `Uri` 参数。 如果你想要 XML 格式的节点信息，请将 `ContentType` 设置为 `application/xml`。
+<span data-ttu-id="dd7c9-104">用你的请求服务器的 URI 替换 `Uri` 参数。</span><span class="sxs-lookup"><span data-stu-id="dd7c9-104">Replace the `Uri` parameter with the URI for your pull server.</span></span> <span data-ttu-id="dd7c9-105">如果你想要 XML 格式的节点信息，请将 `ContentType` 设置为 `application/xml`。</span><span class="sxs-lookup"><span data-stu-id="dd7c9-105">If you want the node information in XML format, set `ContentType` to `application/xml`.</span></span>
 
-若要从 `$json` 参数检索节点信息，请使用以下内容：
+<span data-ttu-id="dd7c9-106">若要从 `$json` 参数检索节点信息，请使用以下内容：</span><span class="sxs-lookup"><span data-stu-id="dd7c9-106">To retrieve the node information from the `$json` parameter, use the following:</span></span>
 
 ```powershell
 $json = QueryNodeInformation –Uri http://localhost:7070/PSDSCComplianceServer.svc/Status 
