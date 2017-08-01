@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="creating-a-powershell-gallery-account" class="xliff"></a>
-## 创建 PowerShell 库帐户
+## <a name="creating-a-powershell-gallery-account"></a>创建 PowerShell 库帐户
 
 必须先创建 PowerShell 库帐户，然后才能将任何内容发布到 PowerShell 库。 必须将 PowerShell 库帐户与启用电子邮件的 Azure Active Directory 帐户或域名为 outlook.com、hotmail.com 等的 Microsoft 电子邮件帐户相关联。
 
@@ -26,8 +25,7 @@ ms.lasthandoff: 06/12/2017
 注意：帐户名称一旦创建便无法再进行更改。  
 请参阅[管理项所有者](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners)，了解与此相关的其他详细信息。
 
-<a id="recommended-practices-for-powershell-gallery-accounts" class="xliff"></a>
-## 适用于 PowerShell 库帐户的推荐做法
+## <a name="recommended-practices-for-powershell-gallery-accounts"></a>适用于 PowerShell 库帐户的推荐做法
 
 请务必确保可以主动监视对 PowerShell 库帐户使用的电子邮件帐户。
 将使用与 PowerShell 库帐户关联的电子邮件地址通过电子邮件的方式与 PowerShell 库项的所有者进行所有通信往来。
