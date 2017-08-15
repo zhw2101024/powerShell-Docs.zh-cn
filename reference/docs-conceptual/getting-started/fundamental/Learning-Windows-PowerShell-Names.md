@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "学习 Windows PowerShell 名称"
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
 ms.openlocfilehash: 28c821c4a617b6ac775dbdda8ade3d15c3f218c3
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="learning-windows-powershell-names"></a>学习 Windows PowerShell 名称
 学习命令和命令参数的名称是使用大多数命令行接口时重要的时间投入。 问题是模式非常少，因此学习的唯一方法是通过记住需要定期使用的每个命令和每个参数。

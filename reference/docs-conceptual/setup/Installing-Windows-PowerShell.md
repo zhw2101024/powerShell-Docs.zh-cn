@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "安装 Windows PowerShell"
 ms.assetid: 6fbb0409-5a54-48ec-95e6-7f8b7d8c4969
 ms.openlocfilehash: 2b4cdec52dfc98649a81ab2265a204fcdb0bd8d7
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="installing-windows-powershell"></a>安装 Windows PowerShell
 Windows® 8 和 Windows Server® 2012 包括 Windows PowerShell 3.0 及其所有先决条件。 系统还包括 Windows PowerShell 2.0 引擎，以实现与不能使用 Windows PowerShell 3.0 的主机程序的向后兼容性。

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "Windows PowerShell ISE 的键盘快捷方式"
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
 ms.openlocfilehash: 21c4b43b1ab94e2b533413362319ec42ac8a15aa
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE 的键盘快捷方式
 使用以下键盘快捷方式在 Windows PowerShell® 集成脚本环境 (ISE) 中执行操作。 Windows PowerShell ISE 可作为 Windows Server 和 Windows 客户端操作系统的一部分，但是也可作为 [Windows Management Framework 4.0 下载包](http://go.microsoft.com/fwlink/?LinkID=293881)的一部分安装在早期的 Windows 操作系统上。

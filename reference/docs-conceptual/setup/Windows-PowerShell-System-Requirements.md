@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "Windows PowerShell 系统要求"
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
 ms.openlocfilehash: 550d8adab18941da3204e0aea8fc8a70f890c289
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell 系统要求
 本主题列出了用于 Windows PowerShell 3.0、Windows PowerShell 4.0 和 Windows PowerShell 5.0，以及用于特殊功能（如 Windows PowerShell 集成脚本环境 (ISE)、CIM 命令和工作流）的系统要求。

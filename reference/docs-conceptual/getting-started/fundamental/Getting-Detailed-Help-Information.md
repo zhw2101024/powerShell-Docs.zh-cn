@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "获取详细的帮助信息"
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
 ms.openlocfilehash: 3260b5ec0a91749d3b7b126412137aa9d603ef0e
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="getting-detailed-help-information"></a>获取详细的帮助信息
 Windows PowerShell 包含了详细的帮助主题，其中解释了 Windows PowerShell 概念和 Windows PowerShell 语言。 还有针对每个 cmdlet 和提供程序的帮助主题，以及针对许多函数和脚本的帮助主题。

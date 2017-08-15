@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "运行远程命令"
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: a8645a348ebc25533f60cd049ed5872e49565b96
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.openlocfilehash: 755c3c4ac93219c1d0f75394d1c900e8b5fea4be
+ms.sourcegitcommit: ced46469e064736eeb1f5608abbc792ec69bdc92
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/08/2017
 ---
 # <a name="running-remote-commands"></a>运行远程命令
 你可以使用单个 Windows PowerShell 命令在一台或数百台计算机上运行命令。 Windows PowerShell 通过使用各种技术（包括 WMI、RPC 和 WS-Management）支持远程计算。
@@ -27,7 +27,7 @@ ms.lasthandoff: 06/08/2017
 
 -   [Get-HotFix](https://technet.microsoft.com/en-us/library/e1ef636f-5170-4675-b564-199d9ef6f101)
 
--   [Get-Process](https://technet.microsoft.com/en-us/library/dd347630.aspx)
+ -   [Get-Process](https://technet.microsoft.com/en-us/library/dd347630.aspx)
 
 -   [Get-Service](https://technet.microsoft.com/en-us/library/dd347591.aspx)
 
@@ -72,7 +72,7 @@ Exit-PSSession
 例如，若要在 Server01 和 Server02 远程计算机上运行 [Get-UICulture ](https://technet.microsoft.com/en-us/library/dd347742.aspx) 命令，请键入：
 
 ```
-Invoke-Command -ComputerName Server01, Server02 {Get-UICulture}
+Invoke-Command -ComputerName Server01, Server02 -ScriptBlock {Get-UICulture}
 ```
 
 输出将返回到你的计算机。
@@ -83,7 +83,6 @@ LCID    Name     DisplayName               PSComputerName
 1033    en-US    English (United States)   server01.corp.fabrikam.com
 1033    en-US    English (United States)   server02.corp.fabrikam.com
 ```
-
 有关 Invoke-Command cmdlet 的详细信息，请参阅 [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462)。
 
 ### <a name="run-a-script"></a>运行脚本
@@ -117,14 +116,14 @@ Invoke-Command -Session $s {$h = Get-HotFix}
 现在，你可以在后续命令中使用 $h 变量中的数据，例如以下命令。 结果将显示在本地计算机上。
 
 ```
-Invoke-Command -Session $s {$h | where {$_.installedby -ne "NTAUTHORITY\SYSTEM"}}
+Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}}
 ```
 
 ### <a name="advanced-remoting"></a>高级远程处理
 Windows PowerShell 远程管理就在此处开始。 通过使用随 Windows PowerShell 一起安装的 cmdlet，你可以从本地和远程端点建立和配置远程会话、创建自定义和受限制的会话、允许用户从实际在远程会话上隐式运行的远程会话中导入命令、配置远程会话的安全性等。
 
 为了便于远程配置，Windows PowerShell 包含了 WSMan 提供程序。 提供程序创建的 WSMAN: 驱动器使你可以在本地计算机和远程计算机上的配置设置层次结构之间导航。
-有关 WSMan 提供程序的详细信息，请参阅 [WSMan 提供程序](https://technet.microsoft.com/en-us/library/dd819476.aspx)和  [关于 WS-Management Cmdlet](https://technet.microsoft.com/en-us/library/dd819481.aspx)，或在 Windows PowerShell 控制台中键入“Get-Help wsman”。
+有关 WSMan 提供程序的详细信息，请参阅 [WSMan 提供程序](https://technet.microsoft.com/en-us/library/dd819476.aspx)和[关于 WS-Management Cmdlet](https://technet.microsoft.com/en-us/library/dd819481.aspx)，或在 Windows PowerShell 控制台中键入“Get-Help wsman”。
 
 有关更多信息，请参阅：
 - [有关远程的常见问题解答](https://technet.microsoft.com/en-us/library/dd315359.aspx)

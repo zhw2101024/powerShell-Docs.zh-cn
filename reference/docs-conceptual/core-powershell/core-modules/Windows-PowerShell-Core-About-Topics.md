@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "Windows PowerShell 核心“关于”主题"
 ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
 ms.openlocfilehash: 6790850358a71b13e1057af8f99c6064c74f326b
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="windows-powershell-core-about-topics"></a>Windows PowerShell 核心“关于”主题
 本部分包含适用于所有 Windows PowerShell 模块的（“关于”）帮助主题。 有关其他模块的“关于”主题，请参阅特定模块的帮助主题。

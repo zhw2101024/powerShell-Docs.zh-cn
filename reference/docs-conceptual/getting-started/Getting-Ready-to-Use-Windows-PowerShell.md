@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "准备好使用 Windows PowerShell"
 ms.assetid: 6dc7052d-cc5a-4220-950f-98f963a2b587
 ms.openlocfilehash: 32bae871574775165d12382deeca27ab24893544
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="getting-ready-to-use-windows-powershell"></a>准备好使用 Windows PowerShell
 安装并启动 Windows PowerShell 后，请考虑以下设置选项。 随时可以执行这些任务。

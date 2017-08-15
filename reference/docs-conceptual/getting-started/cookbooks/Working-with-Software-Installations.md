@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "使用软件安装"
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
 ms.openlocfilehash: 2078376a8be19c9ff8ecc44183eb89f14bc388ed
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="working-with-software-installations"></a>使用软件安装
 可以通过 WMI 的 **Win32_Product** 类访问旨在使用 Windows Installer 的应用程序，但当今使用的所有应用程序并非都使用 Windows Installer。 由于 Windows Installer 提供了最广泛的标准技术用于使用可安装的应用程序，因此我们将主要使用这些应用程序。 使用替代安装例程的应用程序通常不由 Windows Installer 管理。 用于使用这些应用程序的特定技术将取决于安装程序软件和应用程序开发人员做出的决策。

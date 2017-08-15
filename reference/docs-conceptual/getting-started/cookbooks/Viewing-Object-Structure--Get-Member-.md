@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "查看对象结构 (Get Member)"
 ms.assetid: a1819ed2-2ef3-453a-b2b0-f3589c550481
 ms.openlocfilehash: eaa6cc44ecab04c76b90418115f388f6ff30e437
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="viewing-object-structure-get-member"></a>查看对象结构 (Get-Member)
 由于对象在 Windows PowerShell 中扮演了如此重要的角色，因此存在几个用于处理任意对象类型的本机命令。 最重要的一个是 **Get-Member** 命令。

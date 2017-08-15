@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "Windows PowerShell 5.0 中的新增功能"
 ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
 ms.openlocfilehash: c172ac076d2cd69e8f1876ad47a51c233d8a4afb
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="what39s-new-in-windows-powershell"></a>Windows PowerShell 中的新增功能
 Windows PowerShell ® 5.0 包括了重要的新功能，这些功能可扩展其用途、提高其可用性，并使你能够更轻松、全面地控制和管理基于 Windows 的环境。

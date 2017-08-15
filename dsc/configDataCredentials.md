@@ -1,21 +1,19 @@
 ---
-ms.date: 2017-06-12
+ms.date: 2017-06-12T00:00:00.000Z
 author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "配置数据中的凭据选项"
-ms.openlocfilehash: 7fadce447c418b229a534e92d12bc2131365a37a
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: ec4eeb8e519158b2bf929b949e381cdba54f8928
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 07/27/2017
 ---
-<a id="credentials-options-in-configuration-data" class="xliff"></a>
-# 配置数据中的凭据选项
+# <a name="credentials-options-in-configuration-data"></a>配置数据中的凭据选项
 >适用于：Windows PowerShell 5.0
 
-<a id="plain-text-passwords-and-domain-users" class="xliff"></a>
-## 纯文本密码和域用户
+## <a name="plain-text-passwords-and-domain-users"></a>纯文本密码和域用户
 
 包含凭据但未加密的 DSC 配置会生成一条关于纯文本密码的错误信息。
 此外，使用域凭据时 DSC 会生成一个警告。
@@ -125,8 +123,7 @@ unencryptedPasswordDemo -ConfigurationData $ConfigurationData
 Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
 ```
 
-<a id="handling-credentials-in-dsc" class="xliff"></a>
-## 在 DSC 中处理凭据
+## <a name="handling-credentials-in-dsc"></a>在 DSC 中处理凭据
 
 默认情况下，DSC 配置资源以 `Local System` 运行。
 但某些资源需要凭据，例如 `Package` 资源需要使用特定用户帐户安装软件。
@@ -139,7 +136,7 @@ WMF 5.0 为所有资源都添加了自动 `PsDscRunAsCredential` 属性。 若�
 
 使用 ISE 中的 Intellisense (`CTRL+SPACE`) 或 `Get-DscResource -Name ResourceName -Syntax` 来查找资源的可用凭据属性。
 
-```PowerShell
+```powershell
 PS C:\> Get-DscResource -Name Group -Syntax
 Group [String] #ResourceName
 {
@@ -162,8 +159,7 @@ Group [String] #ResourceName
 
 有关 `PsDscRunAsCredential` 属性的详细信息，请参阅[使用用户凭据运行 DSC](runAsUser.md)。
 
-<a id="example-the-group-resource-credential-property" class="xliff"></a>
-## 示例：Group 资源 Credential 属性
+## <a name="example-the-group-resource-credential-property"></a>示例：Group 资源 Credential 属性
 
 DSC 在 `Local System` 下运行，因此它已经有权更改本地用户和组。
 如果添加的成员是本地帐户，则无需凭据。
@@ -173,12 +169,11 @@ DSC 在 `Local System` 下运行，因此它已经有权更改本地用户和组
 `Group` 资源的 `Credential` 属性是用于查询 Active Directory 的域帐户。
 大多数情况下这是个一般用户帐户，因为默认情况下用户可以*读取* Active Directory 中的大多数对象。
 
-<a id="example-configuration" class="xliff"></a>
-## 示例配置
+## <a name="example-configuration"></a>示例配置
 
 下面的示例代码使用 DSC 来填充带有域用户的本地组：
 
-```PowerShell
+```powershell
 Configuration DomainCredentialExample
 {
     param
@@ -229,8 +224,7 @@ for node 'localhost'.
 1.  错误消息说明不推荐使用纯文本密码
 2.  警告消息建议不要使用域凭据
 
-<a id="psdscallowplaintextpassword" class="xliff"></a>
-## PsDscAllowPlainTextPassword
+## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
 
 第一条错误消息具有一个带有文档的 URL。
 此链接说明如何使用 [ConfigurationData](https://msdn.microsoft.com/en-us/powershell/dsc/configdata) 结构和证书来加密密码。
@@ -238,7 +232,7 @@ for node 'localhost'.
 
 要强制使用纯文本密码，资源需要下列配置数据部分中的 `PsDscAllowPlainTextPassword` 关键字：
 
-```PowerShell
+```powershell
 Configuration DomainCredentialExample
 {
     param
@@ -275,8 +269,7 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 
 **因为存在重大安全风险，Microsoft 建议避免使用纯文本密码。**
 
-<a id="domain-credentials" class="xliff"></a>
-## 域凭据
+## <a name="domain-credentials"></a>域凭据
 
 再次运行示例配置脚本（加密或不加密），仍然生成警告消息说不推荐将域帐户用于凭据。
 使用本地帐户可消除泄露可用于其他服务器的域凭据的可能性。
@@ -286,13 +279,12 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 如果凭据的 `Username` 属性中有 \' 或 @，则 DSC 会将该凭据视为域帐户。
 用户名中域部分的“localhost”、“127.0.0.1”和“::1”除外。
 
-<a id="psdscallowdomainuser" class="xliff"></a>
-## PSDscAllowDomainUser
+## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
 
 在上述 DSC `Group` 资源示例中，查询 Active Directory 域*必须使用*域帐户。
 在这种情况下，将 `PSDscAllowDomainUser` 属性添加到 `ConfigurationData` 块中，操作如下：
 
-```PowerShell
+```powershell
 $cd = @{
     AllNodes = @(
         @{

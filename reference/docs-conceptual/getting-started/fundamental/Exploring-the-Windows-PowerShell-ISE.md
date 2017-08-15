@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "探究 Windows PowerShell ISE"
 ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
 ms.openlocfilehash: 979209d4b200728b7e78e341bb9595741d2b8e68
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>探究 Windows PowerShell ISE
 可以使用 Windows PowerShell® 集成脚本环境 (ISE) 来创建、运行及调试命令和脚本。 Windows PowerShell ISE 包含菜单栏、Windows PowerShell 选项卡、工具栏、脚本选项卡、脚本窗格、控制台窗格、状态栏、文字大小滑块和区分上下文的帮助。

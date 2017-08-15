@@ -1,27 +1,25 @@
 ---
-ms.date: 2017-06-12
+ms.date: 2017-06-12T00:00:00.000Z
 author: JKeithB
 ms.topic: reference
 keywords: "wmf,powershell,安装程序"
 title: "目录 cmdlet"
-ms.openlocfilehash: 88ca8a3366f7b1d83ba2596d7ae1230427797cf4
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: f0869e8c174ab127996866775ad20d056f877345
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 07/27/2017
 ---
-<a id="catalog-cmdlets" class="xliff"></a>
-# 目录 Cmdlet  
+# <a name="catalog-cmdlets"></a>目录 Cmdlet  
 
 我们在 [Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx) 模块中新增了两个新 cmdlet 来生成和验证 windows 目录文件。  
 
-<a id="new-filecatalog" class="xliff"></a>
-## New-FileCatalog 
+## <a name="new-filecatalog"></a>New-FileCatalog 
 --------------------------------
 
 `New-FileCatalog` 用于为文件夹和文件集合创建 Windows 目录文件。 目录文件包含指定路径中的所有文件的哈希值。 用户可分发文件夹集合以及代表这些文件夹的对应目录文件。 内容接收方可使用目录文件，验证创建目录后是否对文件夹进行了任何更改。    
 
-```PowerShell
+```powershell
 New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersion <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 我们支持创建目录版本 1 和 2。 版本 1 使用 SHA1 哈希算法来创建文件哈希值，版本 2 则使用 SHA256。 Windows Server 2008 R2 和 Windows 7 不支持目录版本 2。 如果使用的平台为 Windows 8、Windows Server 2012 及更高版本，则建议使用目录版本 2。  
@@ -39,13 +37,12 @@ New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersio
 若要验证目录文件（上面示例中的 Pester.cat 文件）的完整性，应使用 [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet 对其进行签名。   
 
 
-<a id="test-filecatalog" class="xliff"></a>
-## Test-FileCatalog 
+## <a name="test-filecatalog"></a>Test-FileCatalog 
 --------------------------------
 
 `Test-FileCatalog` 用于验证代表一组文件夹的目录。 
 
-```PowerShell
+```powershell
 Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-FilesToSkip <string[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 

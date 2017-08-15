@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "从管道中删除对象 (Where Object)"
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
 ms.openlocfilehash: 4140c4c3ebb26223d03ca139992fedf6e184a38b
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>从管道中删除对象 (Where-Object)
 在 Windows PowerShell 中，你通常会生成和传递比预期更多的对象到管道中。 可以通过使用 **Format** cmdlet 指定特定对象的属性进行显示，但是这对从显示中删除整个对象的问题没有任何帮助。 你可能希望在管道末尾之前筛选对象，以便你可以只对初始生成对象的子集执行操作。

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "使用 Windows PowerShell 进行管理"
 ms.assetid: db6334ec-ace6-436d-ab88-77aefc817511
 ms.openlocfilehash: fa87745b9be04d14de37a308d870b73c5a98cf83
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="using-windows-powershell-for-administration"></a>使用 Windows PowerShell 进行管理
 Windows PowerShell 的根本目标是通过交互方式或从脚本提供针对系统的更好的、更便捷的管理控制。 本章展示了针对使用 Windows PowerShell 管理 Windows 系统过程中许多特殊问题的解决方案。 虽然我们在 Windows PowerShell 用户指南中未讨论脚本或函数，但以后可以从脚本使用这些解决方案或将其用作函数。 我们将展示包括函数在内的示例，作为解决问题的解决方案的一部分。

@@ -1,17 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 2017-06-12T00:00:00.000Z
 contributor: manikb
 ms.topic: reference
 keywords: "库,powershell,cmdlet,psget"
 title: "启动 NuGet 提供程序和 EXE"
-ms.openlocfilehash: e1a24c99910467b00b1c22d50125c81c63b077ed
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 0036972eb9a0c20469da1aadafe223e6ec80f16a
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 07/27/2017
 ---
-<a id="bootstrap-both-nuget-provider-and-nugetexe-or-bootstrap-only-nuget-provider" class="xliff"></a>
-# 同时启动 NuGet 提供程序和 NuGet.exe 或仅启动 NuGet 提供程序
+# <a name="bootstrap-both-nuget-provider-and-nugetexe-or-bootstrap-only-nuget-provider"></a>同时启动 NuGet 提供程序和 NuGet.exe 或仅启动 NuGet 提供程序
 
 最新的 NuGet 提供程序不包含 NuGet.exe。
 若要对模块或脚本执行发布操作，PowerShellGet 需要使用二进制可执行 NuGet.exe。
@@ -22,10 +21,9 @@ PowerShellGet 中的逻辑可以同时启动 NuGet 提供程序和 NuGet.exe，�
 
 >注意：自版本 6 起，NuGet 提供程序会随 PowerShell 一起安装。 [http://github.com/powershell/powershell](http://github.com/powershell/powershell)
 
-<a id="resolving-error-when-the-nuget-provider-has-not-been-installed-on-a-machine-that-is-internet-connected" class="xliff"></a>
-## 修复在已连接 Internet 的计算机上尚未安装 NuGet 提供程序时出现的错误
+## <a name="resolving-error-when-the-nuget-provider-has-not-been-installed-on-a-machine-that-is-internet-connected"></a>修复在已连接 Internet 的计算机上尚未安装 NuGet 提供程序时出现的错误
 
-```PowerShell
+```powershell
 PS C:\> Find-Module -Repository PSGallery -Verbose -Name Contoso
 
 NuGet provider is required to continue
@@ -53,10 +51,9 @@ Version    Name                                Type       Repository           D
 -------    ----                                ----       ----------           -----------
 2.5        Contoso                             Module     PSGallery        Contoso module
 ```
-<a id="resolving-error-when-the-nuget-provider-is-available-and-nugetexe-is-not-available-during-the-publish-operation-on-a-machine-that-is-internet-connected" class="xliff"></a>
-## 修复在已连接 Internet 的计算机上执行发布操作期间 NuGet 提供程序可用但 NuGet.exe 不可用时出现的错误
+## <a name="resolving-error-when-the-nuget-provider-is-available-and-nugetexe-is-not-available-during-the-publish-operation-on-a-machine-that-is-internet-connected"></a>修复在已连接 Internet 的计算机上执行发布操作期间 NuGet 提供程序可用但 NuGet.exe 不可用时出现的错误
 
-```PowerShell
+```powershell
 PS C:\> Publish-Module -Name Contoso -Repository PSGallery -Verbose
 
 NuGet.exe is required to continue
@@ -78,10 +75,9 @@ VERBOSE: Installing NuGet.exe.
 VERBOSE: Successfully published module 'Contoso' to the module publish location 'https://www.powershellgallery.com/api/v2/'. Please allow few minutes for 'Contoso' to show up in the search results.
 ```
 
-<a id="resolving-error-when-both-nuget-provider-and-nugetexe-are-not-available-during-the-publish-operation-on-a-machine-that-is-internet-connected" class="xliff"></a>
-## 修复在已连接 Internet 的计算机上执行发布操作期间 NuGet 提供程序和 NuGet.exe 均不可用时出现的错误
+## <a name="resolving-error-when-both-nuget-provider-and-nugetexe-are-not-available-during-the-publish-operation-on-a-machine-that-is-internet-connected"></a>修复在已连接 Internet 的计算机上执行发布操作期间 NuGet 提供程序和 NuGet.exe 均不可用时出现的错误
 
-```PowerShell
+```powershell
 PS C:\> Publish-Module -Name Contoso -Repository PSGallery -Verbose
 
 NuGet.exe and NuGet provider are required to continue
@@ -105,8 +101,7 @@ VERBOSE: Installing NuGet.exe.
 VERBOSE: Successfully published module 'Contoso' to the module publish location 'https://www.powershellgallery.com/api/v2/'. Please allow few minutes for 'Contoso' to show up in the search results.
 ```
 
-<a id="manually-bootstrapping-the-nuget-provider-on-a-machine-that-is-not-connected-to-the-internet" class="xliff"></a>
-## 在未连接 Internet 的计算机上手动启动 NuGet 提供程序
+## <a name="manually-bootstrapping-the-nuget-provider-on-a-machine-that-is-not-connected-to-the-internet"></a>在未连接 Internet 的计算机上手动启动 NuGet 提供程序
 
 上面展示的进程假设计算机已连接 Internet，且能从公共位置下载文件。
 如果前提条件不成立，只能使用上面展示的进程启动计算机，再通过脱机受信任进程将提供程序手动复制到独立节点。
@@ -125,8 +120,7 @@ NuGet<br>
 
 使用受信任进程将这些文件夹和文件复制到脱机计算机。
 
-<a id="manually-bootstrapping-nugetexe-to-support-publish-operations-on-a-machine-that-is-not-connected-to-the-internet" class="xliff"></a>
-## 在未连接 Internet 的计算机上手动启动 NuGet.exe 以支持发布操作
+## <a name="manually-bootstrapping-nugetexe-to-support-publish-operations-on-a-machine-that-is-not-connected-to-the-internet"></a>在未连接 Internet 的计算机上手动启动 NuGet.exe 以支持发布操作
 
 除了手动启动 NuGet 提供程序的进程外，如果计算机将用于使用 Publish-Module 或 Publish-Script cmdlet 向专用库发布模块或脚本，必须使用相关进程启动 NuGet.exe 二进制可执行文件。
 此方案的最常见用例是当专用库可用于支持独立环境时。

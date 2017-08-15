@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "PSWorkflow 模块"
 ms.assetid: 117316fe-2f82-4fc9-b5dc-794ae9e3f258
 ms.openlocfilehash: 2a3325e03eb9409a58012e6c754157e86fd24378
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="psworkflow-module"></a>PSWorkflow 模块
 本部分包含有关 **PSWorkflow** 模块的帮助主题，此模块包含支持 Windows PowerShell 工作流功能的 cmdlet。 **PSWorkflow** 模块随 Windows PowerShell 一起安装。

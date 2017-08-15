@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "PowerShell 50 ISE 中的新增功能"
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
 ms.openlocfilehash: e772c31ae407e73a96364ffedf98057760037836
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Windows PowerShell ISE 中的新增功能
 本主题介绍已在 Windows PowerShell (R) 集成脚本环境 (ISE) 的各版本中引入的新增功能和更新功能。

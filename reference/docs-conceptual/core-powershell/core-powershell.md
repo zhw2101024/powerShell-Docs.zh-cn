@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "核心 PowerShell"
 ms.openlocfilehash: 056e64e79252a411ba553dcf9e795147a994731a
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 #  <a name="common-powershell"></a>常见 PowerShell
 本部分包含适用于 PowerShell 的所有参考材料和深入指南。  

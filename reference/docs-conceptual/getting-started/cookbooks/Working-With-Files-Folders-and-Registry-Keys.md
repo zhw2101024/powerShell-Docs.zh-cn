@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "使用文件、文件夹和注册表项"
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
 ms.openlocfilehash: 2bae8d6931c84bee4aa30a43742acd052b82d079
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>使用文件、文件夹和注册表项
 Windows PowerShell 使用名词 **Item** 来引用在 Windows PowerShell 驱动器上找到的项。 处理 Windows PowerShell FileSystem 提供程序时，**Item** 可能是文件、文件夹或 Windows PowerShell 驱动器。 列出并使用这些项是大部分管理设置中的关键基本任务，因此我们想要详细讨论这些任务。

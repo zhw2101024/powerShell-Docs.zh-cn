@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "启动 Windows PowerShell"
 ms.assetid: 59b649a2-c90c-4cf4-bf95-a740c59148e7
 ms.openlocfilehash: ec7ecc3214d727d55b41282fc5a5cb2e77cb84ba
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="starting-windows-powershell"></a>启动 Windows PowerShell
 PowerShell 是一个脚本引擎 dll，嵌入到多个主机中。  启动的最常见主机是交互式命令行 PowerShell.exe 和交互式脚本环境 PowerShell_ISE.exe。  

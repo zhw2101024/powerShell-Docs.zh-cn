@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "ISEAddOnToolCollection 对象"
 ms.assetid: 634eab89-0845-4016-974b-361b09bb8f7b
-ms.openlocfilehash: 09088c9e7307a26b86e82f2dc10d2648213c6bd2
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.openlocfilehash: ba8b4e0e3952226407f00dea8b32785633256089
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="the-iseaddontoolcollection-object"></a>ISEAddOnToolCollection 对象
   **ISEAddOnToolCollection** 对象是 **ISEAddOnTool** 对象的集合。 示例是 **$psISE.CurrentPowerShellTab.VerticalAddOnTools** 对象。
@@ -25,7 +25,7 @@ ms.lasthandoff: 06/08/2017
 
  **\[IsVisible\]** - 可选布尔值，如果设置为 **$true**，可立即在关联的工具窗格中看到附加工具。
 
-```PowerShell
+```powershell
 # Load a DLL with an add-on and then add it to the ISE
 [reflection.assembly]::LoadFile("c:\test\ISESimpleSolution\ISESimpleSolution.dll")
 $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSolution.Solution], $true)
@@ -38,7 +38,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 
  **Item** - Microsoft.PowerShell.Host.ISE.ISEAddOnTool，指定要从 Windows PowerShell ISE 删除的对象。
 
-```PowerShell
+```powershell
 # Load a DLL with an add-on and then add it to the ISE
 [reflection.assembly]::LoadFile("c:\test\ISESimpleSolution\ISESimpleSolution.dll")
 $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSolution.Solution], $true)
@@ -51,7 +51,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 
  **psTab** - Microsoft.PowerShell.Host.ISE.PowerShellTab，要选择的 PowerShell 选项卡。
 
-```PowerShell
+```powershell
       $newTab = $psISE.PowerShellTabs.Add()
 # Change the DisplayName of the new PowerShell tab. 
 $newTab.DisplayName="Brand New Tab"
@@ -64,7 +64,7 @@ $newTab.DisplayName="Brand New Tab"
 
  **psTab** - Microsoft.PowerShell.Host.ISE.PowerShellTab，要删除的 PowerShell 选项卡。
 
-```PowerShell
+```powershell
 $newTab = $psISE.PowerShellTabs.Add()
 Change the DisplayName of the new PowerShell tab. 
 $newTab.DisplayName="This tab will go away in 5 seconds" 

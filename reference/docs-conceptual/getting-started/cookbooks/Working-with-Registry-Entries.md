@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "使用注册表条目"
 ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc
 ms.openlocfilehash: 039203a1a6549d4ba33424a278e4803a5e143d4d
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="working-with-registry-entries"></a>使用注册表条目
 因为注册表条目是项的属性而无法直接浏览，因此我们在使用它们时需要采取略有不同的方式。

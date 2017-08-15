@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "执行网络任务"
 ms.assetid: a43cc55f-70c1-45c8-9467-eaad0d57e3b5
 ms.openlocfilehash: 4d7a91595b9d9d637ce915be2c2be9c20879dd8b
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="performing-networking-tasks"></a>执行网络任务
 由于 TCP/IP 是最常用的网络协议，因此大多数低级别网络协议管理任务都涉及 TCP/IP。 在本部分中，我们使用 Windows PowerShell 和 WMI 来执行这些任务。

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "管理 Windows PowerShell 驱动器"
 ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
 ms.openlocfilehash: 92fa70785bcaeac2bd75a5ada91f3adff4fa10eb
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="managing-windows-powershell-drives"></a>管理 Windows PowerShell 驱动器
 *Windows PowerShell 驱动器*是一个数据存储位置，你可以像访问 Windows PowerShell 中的文件系统驱动器那样访问它。 Windows PowerShell 提供程序将为你创建一些驱动器，例如文件系统驱动器（包括 C: 和 D:）、注册表驱动器（HKCU: 和 HKLM:）和证书驱动器 (Cert:)，你也可以创建自己的 Windows PowerShell 驱动器。 这些驱动器非常有用，但它们仅在 Windows PowerShell 内可用。 你无法通过使用其他 Windows 工具（如文件资源管理器或 Cmd.exe）访问它们。

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "如何在 Windows PowerShell ISE 中使用配置文件"
 ms.assetid: 0219626a-6da5-4acc-b630-d058e8b29cc6
-ms.openlocfilehash: 45d0187504ff2dc8f45824bf50aad39e55f7a224
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.openlocfilehash: 97fe9d241fa8a33e0c9b798a7408f06e3381530d
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="how-to-use-profiles-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中使用配置文件
 本主题说明如何使用 Windows PowerShell® 集成脚本环境 (ISE) 中的配置文件。 建议在执行本部分中的任务之前，先查看 [about_Profiles [v4]](https://technet.microsoft.com/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054(v=wps.630))，或在控制台窗格中键入 `Get-Help about_Profiles`，然后按 **Enter**。
@@ -38,28 +38,28 @@ Windows PowerShell ISE 支持适用于当前用户和所有用户的配置文件
 ## <a name="to-create-a-new-profile"></a>创建新的配置文件
 若要创建一个新的“当前用户，Windows PowerShell ISE”配置文件，请运行以下命令：
 
-```PowerShell
+```powershell
 if (!(Test-Path -Path $PROFILE )) 
 { New-Item -Type File -Path $PROFILE -Force }
 ```
 
 若要创建一个新的“所有用户，Windows PowerShell ISE”配置文件，请运行以下命令：
 
-```PowerShell
+```powershell
 if (!(Test-Path -Path $PROFILE.AllUsersCurrentHost)) 
 { New-Item -Type File -Path $PROFILE.AllUsersCurrentHost -Force }
 ```
 
 若要创建一个新的“当前用户，所有主机”配置文件，请运行以下命令：
 
-```PowerShell
+```powershell
 if (!(Test-Path -Path $PROFILE.CurrentUserAllHosts)) 
 { New-Item -Type File -Path $PROFILE.CurrentUserAllHosts -Force }
 ```
 
 若要创建一个新的“所有用户，所有主机”配置文件，请键入：
 
-```PowerShell
+```powershell
 if (!(Test-Path -Path $PROFILE.AllUsersAllHosts)) 
 { New-Item -Type File -Path $PROFILE.AllUsersAllHosts -Force }
 ```

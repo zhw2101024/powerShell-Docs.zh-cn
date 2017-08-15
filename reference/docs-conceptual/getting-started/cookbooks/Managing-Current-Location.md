@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "管理当前位置"
 ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
 ms.openlocfilehash: 20b3828d12587e675ed51863e5d96c37839b62d6
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="managing-current-location"></a>管理当前位置
 在文件资源管理器中导航文件夹系统时，你通常具有一个特定的工作位置（即当前打开的文件夹）。 通过单击当前文件夹中的项，可轻松对其进行操作。 对于命令行接口（例如 Cmd.exe），当你位于特定文件所在的相同文件夹中时，你可以通过指定一个相对较短的名称来访问它，而无需指定该文件的完整路径。 当前目录称为工作目录。

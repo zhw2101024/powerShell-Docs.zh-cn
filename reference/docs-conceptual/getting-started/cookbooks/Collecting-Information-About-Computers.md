@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "收集有关计算机的信息"
 ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
 ms.openlocfilehash: c0b7ec9ed7d2b07c66d2b1cf3342f971d71da481
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="collecting-information-about-computers"></a>收集有关计算机的信息
 **Get-WmiObject** 是常规系统管理任务最重要的 cmdlet。 所有关键子系统设置都通过 WMI 公开。 此外，WMI 将数据视为一个或多个项的集合中的对象。 由于 Windows PowerShell 也可以使用对象，且具有允许你以相同方式处理单个和多个对象的管道，因此通过泛型 WMI 访问可以非常轻易地执行某些高级任务。

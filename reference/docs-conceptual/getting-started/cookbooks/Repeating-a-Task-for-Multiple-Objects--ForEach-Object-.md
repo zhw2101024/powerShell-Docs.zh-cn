@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "为多个对象重复执行任务 (ForEach Object)"
 ms.assetid: 6697a12d-2470-4ed6-b5bb-c35e5d525eb6
 ms.openlocfilehash: 33ae2c76a512a651ba1b91d15d876608f0d43ccc
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>为多个对象重复执行任务 (ForEach-Object)
 **ForEach-Object** cmdlet 为当前管道对象使用脚本块和 $_ 描述符，以便你可以对管道中的每个对象运行命令。 这可用于执行某些复杂的任务。

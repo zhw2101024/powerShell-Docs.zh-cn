@@ -1,18 +1,17 @@
 ---
-ms.date: 2017-06-12
+ms.date: 2017-06-12T00:00:00.000Z
 author: JKeithB
 ms.topic: reference
 keywords: "wmf,powershell,安装程序"
-ms.openlocfilehash: 8c6a7d55e40f64bde6c2a2074ca3adb9cd210322
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 4d32ced8e75042f494477408424b97be8958854e
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 07/27/2017
 ---
-<a id="nonewline-parameter" class="xliff"></a>
-# NoNewLine 参数
+# <a name="nonewline-parameter"></a>NoNewLine 参数
 **Out-file**、**Add-content**和 **Set-content** 现在具有新的 **–NoNewline** 开关，它将在输出后直接省略换行。
-```PowerShell
+```powershell
 PS C:\> "This is " | Out-File -FilePath Example.txt -NoNewline
 
 PS C:\>; "a single " | Add-Content -Path Example.txt -NoNewline
@@ -24,7 +23,7 @@ PS C:\> Get-Content .\Example.txt
 This is a single sentence.
 ```
 如果不指定 **–NoNewline**，每个片段将出现在单独的行上：
-```PowerShell
+```powershell
 PS C:\> "This is " | Out-File -FilePath Example.txt
 
 PS C:\> "a single " | Add-Content -Path Example.txt
