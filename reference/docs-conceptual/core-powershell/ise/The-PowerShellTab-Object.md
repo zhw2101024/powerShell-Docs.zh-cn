@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "PowerShellTab 对象"
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
 ms.openlocfilehash: d4e9374202d352a30b3eb46bcf1e4e40dea49822
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab 对象
   **PowerShellTab** 对象代表 Windows PowerShell 运行时环境。
@@ -40,8 +40,7 @@ $psise.PowerShellTabs[1].Invoke({dir})
 
  **Script** - 要运行的脚本块的 System.Management.Automation.ScriptBlock 或字符串。
 
- **\[useNewScope\]** -  可选的布尔值，默认值为 **$true**
- 如果设置为 **$true**，则会新建作用域以在其中运行命令。 它不会修改该命令指定的 PowerShell 选项卡的运行时环境。
+ **\[useNewScope\]** -  可选的布尔值，默认值为 $true，如果设置为 $true，则会新建作用域以在其中运行命令。 它不会修改该命令指定的 PowerShell 选项卡的运行时环境。
 
  **\[millisecondsTimeout\]** - 可选整数，默认值为 **500**。
 如果在指定时间内未完成命令，则该命令将生成 **TimeoutException** 并显示消息“操作已超时。”

@@ -1,15 +1,14 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "使用基于 Web 的 Windows PowerShell 控制台"
 ms.openlocfilehash: 48ed1646c00f909c4e950f197f51a30205060ef0
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
-<a id="use-the-web-based-windows-powershell-console" class="xliff"></a>
-#  使用基于 Web 的 Windows PowerShell 控制台
+#  <a name="use-the-web-based-windows-powershell-console"></a>使用基于 Web 的 Windows PowerShell 控制台
 
 更新时间：2013年 6 月 24日
 
@@ -36,7 +35,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">支持的台式计算机浏览器</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">支持的台式计算机浏览器</span></a>
 
 ------------------------------------------------------------------------
 
@@ -52,7 +51,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">经过最小限度测试的移动设备或浏览器</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">经过最小限度测试的移动设备或浏览器</span></a>
 
 ------------------------------------------------------------------------
 
@@ -66,7 +65,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">浏览器要求</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">浏览器要求</span></a>
 
 ------------------------------------------------------------------------
 
@@ -80,15 +79,14 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 <a href="" id="BKMK_sign"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">登录到 Windows PowerShell Web 访问</span></a>
-<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">登录 Windows PowerShell Web 访问</span></a>
+<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="右键单击可以复制并共享此部分的链接"></a>
 
 ------------------------------------------------------------------------
 
 Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵组织 Windows PowerShell Web 访问网关网站的地址。 默认情况下，此网址的地址为 https://&lt;server_name&gt;/pswa。 在登录到 Windows PowerShell Web 访问之前，确保拥有想要管理的远程计算机的名称或 IP 地址。 你必须是远程计算机上的授权用户，并且必须将远程计算机配置为可远程管理。 有关将计算机配置为可远程管理的详细信息，请参阅[在 Windows PowerShell 中启用和使用远程命令](https://technet.microsoft.com/magazine/ff700227.aspx)。 将计算机配置为可远程管理的最简单方法是：在使用提升的用户权限打开的 Windows PowerShell 会话中（**以管理员身份运行**），在计算机上运行**Enable-PSRemoting -force** cmdlet。
 
-<a id="to-sign-in-to-windows-powershell-web-access" class="xliff"></a>
-### 登录到 Windows PowerShell Web Access
+### <a name="to-sign-in-to-windows-powershell-web-access"></a>登录到 Windows PowerShell Web Access
 
 1.  在 Internet 浏览器窗口或选项卡中打开 Windows PowerShell Web 访问网站。
 
@@ -126,8 +124,8 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
 
 <a href="" id="BKMK_timeout"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">注销和超时</span></a>
-<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">注销和超时</span></a>
+<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="右键单击可以复制并共享此部分的链接"></a>
 
 ------------------------------------------------------------------------
 
@@ -157,8 +155,8 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
 
 <a href="" id="BKMK_web"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">基于 Web 的 Windows PowerShell 控制台的不同之处</span></a>
-<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">基于 Web 的 Windows PowerShell 控制台的独特之处</span></a>
+<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="右键单击可以复制并共享此部分的链接"></a>
 
 ------------------------------------------------------------------------
 
@@ -166,7 +164,7 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">PowerShell.exe 的功能差异</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">PowerShell.exe 的功能差异</span></a>
 
 ------------------------------------------------------------------------
 
@@ -275,10 +273,12 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
 </tbody>
 </table>
 
-<a href="" id="BKMK_limits"></a>
+<a href="" id="BKMK_limits">
+</a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Web 控制台限制</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="
+折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Web 控制台限制</span></a>
 
 ------------------------------------------------------------------------
 
@@ -331,8 +331,8 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
 
         如要获取自定义控制台视图的其他示例，请参阅 [Windows PowerShell 团队博客](http://blogs.msdn.com/b/powershell/)。
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">另请参阅</span></a>
-<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">另请参阅</span></a>
+<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="右键单击可以复制并共享此部分的链接"></a>
 
 ------------------------------------------------------------------------
 

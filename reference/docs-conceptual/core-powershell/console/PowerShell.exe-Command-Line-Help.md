@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "PowerShell.exe 命令行帮助"
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: 9c56f09ac186b0c3a64cce6700740ca1ba6abd06
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.openlocfilehash: 4a14223dd024d967810a90dec10e416e4e35d6a2
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="powershellexe-command-line-help"></a>PowerShell.exe 命令行帮助
 启动 Windows PowerShell 会话。 可以使用 PowerShell.exe 从另一工具（如 Cmd.exe）的命令行启动 Windows PowerShell 会话，或在 Windows PowerShell 命令行中使用它来启动新会话。 使用参数自定义会话。
@@ -46,13 +46,12 @@ PowerShell[.exe] -Help | -? | /?
 ### <a name="-file-filepath-parameters"></a>-File <FilePath> \[<Parameters>]
 在本地作用域中运行指定的脚本（“dot-sourced”），以便脚本创建的函数和变量在当前会话中可用。 输入脚本文件路径和任何参数。 **File** 必须是命令中的最后一个参数，因为在 **File** 参数名称后键入的所有字符都会被解释为后跟脚本参数及其值的脚本文件路径。
 
-**File** 参数的值中可以包括脚本参数和参数值。 例如：`-File .\Get-Script.ps1 -Domain Central`
+**File** 参数的值中可以包括脚本参数和参数值。 例如：`-File .\Get-Script.ps1 -Domain Central`。请注意，传递给脚本的参数作为文字字符串（在当前 shell 的解释后）传递。
+例如，如果处于 cmd.exe，并要传递环境变量值，则使用 cmd.exe 语法：`powershell -File .\test.ps1 -Sample %windir%`。如果计划使用 PowerShell 语法，则在此示例中，脚本将收到文本“$env: windir”，而非该环境变量的值：`powershell -File .\test.ps1 -Sample $env:windir`
 
 通常，将包括或忽略脚本的开关参数。 例如，下面的命令使用 Get-Script.ps1 脚本文件的 **All** 参数：`-File .\Get-Script.ps1 -All`
 
-在极少数情况下，你可能需要为开关参数提供一个布尔值。 若要在 **File** 参数的值中为开关参数提供布尔值，请将参数名称和参数值括在大括号中，如下所示：`-File .\Get-Script.ps1 {-All:$False}`
-
-### <a name="-inputformat-text--xml"></a>-InputFormat {文本 |XML}
+### <a name="-inputformat-text--xml"></a>\-InputFormat {文本 |XML}
 描述发送到 Windows PowerShell 的数据格式。 有效值为“Text”（文本字符串）或“XML”（序列化 CLIXML 格式）。
 
 ### <a name="-mta"></a>-Mta
@@ -91,12 +90,13 @@ PowerShell[.exe] -Help | -? | /?
 
 ### <a name="-command"></a>-Command
 执行指定的命令和所有参数，就像从 Windows PowerShell 命令提示符下键入的命令一样，如果未指定 NoExit，则随后退出。
+实际上，`-Command` 后的任何文本都会作为单个命令行发送到 PowerShell，这与 `-File` 对发送到脚本的参数的处理方式不同。
 
 Command 的值可以为“-”、字符串。 或脚本块。 如果 Command 的值为“-”，则将从标准输入读取命令文本。
 
 脚本块必须括在大括号 ({}) 中。 只有在 Windows PowerShell 中运行 PowerShell.exe 时才能指定脚本块。 脚本的结果作为反序列化 XML 对象（而非活动对象）返回到父外壳程序。
 
-如果 Command 的值为字符串，则 **Command** 必须是该命令的最后一个参数，因为其后键入的所有字符都会被解释为它的参数。
+如果 Command 的值为字符串，则 Command 必须是该命令的最后一个参数，因为其后键入的所有字符都会被解释为它的参数。
 
 若要编写运行 Windows PowerShell 命令的字符串，请使用以下格式：
 

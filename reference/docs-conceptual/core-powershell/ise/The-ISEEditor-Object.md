@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "ISEEditor 对象"
 ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
-ms.openlocfilehash: 41f2a6f7684275ad9d6d967ea67b64ca02c1c100
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.openlocfilehash: c4effde470a7a76a21f983b172f0af651dfc5d11
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="the-iseeditor-object"></a>ISEEditor 对象
   **ISEEditor** 对象是 Microsoft.PowerShell.Host.ISE.ISEEditor 类的实例。 控制台窗格是 **ISEEditor** 对象。 每个 [ISEFile](The-ISEFile-Object.md) 对象都有一个关联的 **ISEEditor** 对象。 以下各节列出了 **ISEEditor** 对象的方法和属性。
@@ -19,7 +19,7 @@ ms.lasthandoff: 06/08/2017
 
  清除编辑器中的文本。
 
-```PowerShell
+```powershell
 # Clears the text in the Console pane.
 $psISE.CurrentPowerShellTab.ConsolePane.Clear()
 ```
@@ -29,10 +29,9 @@ $psISE.CurrentPowerShellTab.ConsolePane.Clear()
 
  滚动编辑器以使对应于指定 **lineNumber** 参数值的行可见。 如果指定的行号超出范围 1，即用于定义有效行号的最后一个行号，则会引发异常。
 
- **lineNumber**
- 要使其可见的行号。
+ **lineNumber** 要使其可见的行号。
 
-```PowerShell
+```powershell
 # Scrolls the text in the Script pane so that the fifth line is in view. 
 $psISE.CurrentFile.Editor.EnsureVisible(5)
 ```
@@ -42,7 +41,7 @@ $psISE.CurrentFile.Editor.EnsureVisible(5)
 
  将焦点设置到编辑器。
 
-```PowerShell
+```powershell
 # Sets focus to the Console pane. 
 $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 ```
@@ -52,13 +51,11 @@ $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 
  获取按行号指定的行的长度（整数形式）。
 
- **lineNumber**
- 要获取长度的行号。
+ **lineNumber** 要获取长度的行号。
 
- **Returns**
- 所指定行号的行的长度。
+ **Returns** 所指定行号的行的长度。
 
-```PowerShell
+```powershell
 # Gets the length of the first line in the text of the Command pane. 
 $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ```
@@ -68,7 +65,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  如果编辑器对象的 **CanGoToMatch** 属性是 **$true**，当脱字号直接位于左括号、中括号或大括号 - \(、\[、{ - 或直接位于右括号、中括号或大括号 - \)、\]、}。  脱字号位于开始字符之前或结束字符之后。 如果 **CanGoToMatch** 属性是 **$false**，则此方法不执行任何操作。 请参阅 [CanGoToMatch](#cangotomatch)。
 
-```PowerShell
+```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
 ```
 
@@ -101,7 +98,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  选择当前包含脱字号的整个文本行。
 
-```PowerShell
+```powershell
 # First, set the caret position on line 5.
 $psISE.CurrentFile.Editor.SetCaretPosition(5,1) 
 # Now select that entire line of text
@@ -117,7 +114,7 @@ $psISE.CurrentFile.Editor.SelectCaretLine()
 
  **columnNumber** - Integer 脱字号列号。
 
-```PowerShell
+```powershell
 # Set the CaretPosition.
 $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 ```
@@ -127,7 +124,7 @@ $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 
  使所有大纲部分展开或折叠。
 
-```PowerShell
+```powershell
 # Toggle the outlining expansion
 $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 ```
@@ -139,7 +136,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 
  只读布尔值属性，可指示将脱字号插入小括号、中括号还是大括号（即 \(\)、\[\]、{}）旁边。 如果脱字号直接位于开始字符之前或直接位于结束字符之后，则此属性值是 **$true**。 否则，是**$false**。
 
-```PowerShell
+```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace
 $psISE.CurrentFile.Editor.CanGoToMatch
 ```
@@ -149,7 +146,7 @@ $psISE.CurrentFile.Editor.CanGoToMatch
 
  只读属性，可获取对应于脱字号位置的列号。
 
-```PowerShell
+```powershell
 # Get the CaretColumn.
 $psISE.CurrentFile.Editor.CaretColumn
 ```
@@ -159,7 +156,7 @@ $psISE.CurrentFile.Editor.CaretColumn
 
  只读属性，可获取包含脱字号的行号。
 
-```PowerShell
+```powershell
 # Get the CaretLine.
 $psISE.CurrentFile.Editor.CaretLine
 ```
@@ -169,7 +166,7 @@ $psISE.CurrentFile.Editor.CaretLine
 
  只读属性，可获取包含脱字号的完整文本行。
 
-```PowerShell
+```powershell
 # Get all of the text on the line that contains the caret.
 $psISE.CurrentFile.Editor.CaretLineText
 ```
@@ -179,7 +176,7 @@ $psISE.CurrentFile.Editor.CaretLineText
 
  只读属性，可获取编辑器中的行计数。
 
-```PowerShell
+```powershell
 # Get the LineCount.
 $psISE.CurrentFile.Editor.LineCount
 ```
@@ -200,7 +197,7 @@ $psISE.CurrentFile.Editor.LineCount
 
 ##  <a name="example"></a>脚本示例
 
-```PowerShell
+```powershell
 # This illustrates how you can use the length of a line to
 # select the entire line and shows how you can make it lowercase. 
 # You must run this in the Console pane. It will not run in the Script pane.

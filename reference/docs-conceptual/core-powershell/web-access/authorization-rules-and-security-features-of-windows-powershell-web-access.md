@@ -1,15 +1,14 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "Windows PowerShell Web 访问的授权规则和安全功能"
 ms.openlocfilehash: 706830f618173879185f5b84570fdc7782434d59
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
-<a id="authorization-rules-and-security-features-of-windows-powershell-web-access" class="xliff"></a>
-# Windows PowerShell Web 访问的授权规则和安全功能
+# <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 访问的授权规则和安全功能
 
 更新时间： 2013年 6 月 24日
 
@@ -36,7 +35,7 @@ Windows PowerShell Web 访问身份验证规则是白名单规则。 每条规�
 </colgroup>
 <thead>
 <tr class="header">
-<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle"> 安全说明 </span></th>
+<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle">安全说明</span></th>
 </tr>
 </thead>
 <tbody>
@@ -112,7 +111,7 @@ Windows PowerShell Web 访问身份验证规则是白名单规则。 每条规�
 <a href="" id="BKMK_sec"></a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">安全</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">安全</span></a>
 
 ------------------------------------------------------------------------
 
@@ -165,10 +164,12 @@ Windows PowerShell Web 访问安全模型在基于 Web 控制台的最终用户�
 </tbody>
 </table>
 
-<a href="" id="BKMK_configrules"></a>
+<a href="" id="BKMK_configrules">
+</a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">配置授权规则</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="
+折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">配置授权规则</span></a>
 
 ------------------------------------------------------------------------
 
@@ -194,8 +195,7 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即星号 ( \* )。
 </tbody>
 </table>
 
-<a id="to-add-a-restrictive-authorization-rule" class="xliff"></a>
-#### 添加受限的授权规则
+#### <a name="to-add-a-restrictive-authorization-rule"></a>添加受限的授权规则
 
 1.  使用提升的用户权限执行以下操作之一打开 Windows PowerShell 会话。
 
@@ -219,8 +219,7 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即星号 ( \* )。
 
 4.  确保通过运行 **Get-PswaAuthorizationRule** cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt; 创建了该规则。 例如，**Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214**。
 
-<a id="to-remove-an-authorization-rule" class="xliff"></a>
-#### 删除授权规则
+#### <a name="to-remove-an-authorization-rule"></a>删除授权规则
 
 1.  如果尚未打开 Windows PowerShell 会话，请参阅本部分中[添加非受限的授权规则](#BKMK_arar)的步骤 1。
 
@@ -248,10 +247,12 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即星号 ( \* )。
     </tbody>
     </table>
 
-<a href="" id="BKMK_others"></a>
+<a href="" id="BKMK_others">
+</a>
 ####
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">其他授权规则方案示例</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="
+折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">其他授权规则方案示例</span></a>
 
 ------------------------------------------------------------------------
 
@@ -271,7 +272,7 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即星号 ( \* )。
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle"> 安全说明 </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle">安全说明</span></th>
     </tr>
     </thead>
     <tbody>
@@ -313,7 +314,7 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即星号 ( \* )。
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">对多个网站使用单一的授权规则集</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">对多个网站使用单一的授权规则集</span></a>
 
 ------------------------------------------------------------------------
 
@@ -323,8 +324,8 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即星号 ( \* )。
 
 <a href="" id="BKMK_sesmgmt"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">会话管理</span></a>
-<a href="/en-us/library/dn282394(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">会话管理</span></a>
+<a href="/en-us/library/dn282394(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="右键单击可以复制并共享此部分的链接"></a>
 
 ------------------------------------------------------------------------
 
@@ -334,7 +335,7 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即星号 ( \* )。
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">在登录页上设置默认参数</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">在登录页上设置默认参数</span></a>
 
 ------------------------------------------------------------------------
 
@@ -355,7 +356,7 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即星号 ( \* )。
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">超时和计划外断开连接</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">超时和计划外断开连接</span></a>
 
 ------------------------------------------------------------------------
 
@@ -365,8 +366,8 @@ Windows PowerShell Web 访问会话超时。 在 Windows Server 2012 上运行�
 
 如果网关服务器正在运行 Windows Server 2012 R2，Windows PowerShell Web 访问将允许用户稍后重新连接到已保存的会话，但是，如果是网络错误、计划外关机或其他故障导致会话断开连接，用户需在网关管理员指定的超时期过后，才能查看或重新连接到已保存的会话。
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">另请参阅</span></a>
-<a href="/en-us/library/dn282394(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">另请参阅</span></a>
+<a href="/en-us/library/dn282394(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="右键单击可以复制并共享此部分的链接"></a>
 
 ------------------------------------------------------------------------
 

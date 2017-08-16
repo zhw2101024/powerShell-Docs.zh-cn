@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "Windows PowerShell 术语表"
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: 9b8ff47a568b8a71cc51f50b3f3ba5ad3dab1ad1
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.openlocfilehash: 48e5d832ead720c8bc7753c94f757ddb21846fc9
+ms.sourcegitcommit: ced46469e064736eeb1f5608abbc792ec69bdc92
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/08/2017
 ---
 # <a name="windows-powershell-glossary"></a>Windows PowerShell 术语表
 
@@ -15,7 +15,7 @@ ms.lasthandoff: 06/08/2017
 |术语|定义|
 |--------|--------------|
 |二进制模块|一个 Windows PowerShell 模块，其根模块是一个二进制模块文件 (.dll)。 二进制模块可能包含或不包含模块清单。|
-|通用参数|一个参数，它由 Windows PowerShell 引擎添加到所有 cmdlet 和高级函数中。|
+|通用参数|一个参数，它由 Windows PowerShell 引擎添加到所有 cmdlet、高级函数和工作流中。|
 |使用点获取来源|在 Windows PowerShell 中，若要启动一个命令，可在该命令前键入一个点和一个空格。 采用点获取其来源的命令运行在当前范围而非新范围中。 命令创建的任何变量、别名、函数或驱动器都创建于当前范围，并在命令完成时提供给用户。|
 |动态模块|一个仅存在于内存中的模块。 New-Module 和 Import-PSSession cmdlet 会创建动态模块。|
 |动态参数|在某些情况下添加到 Windows PowerShell cmdlet、函数或脚本的一个参数。 Cmdlet、函数、提供程序和脚本可以添加动态参数。|

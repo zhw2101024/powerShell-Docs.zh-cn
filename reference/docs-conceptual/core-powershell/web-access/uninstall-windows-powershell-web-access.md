@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "卸载 Windows PowerShell Web 访问"
 ms.openlocfilehash: 7231d5eadceda8e3b28d9a81c2b5dcbe43680ff2
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 #  <a name="uninstall-windows-powershell-web-access"></a>卸载 Windows PowerShell Web 访问
 
@@ -24,8 +24,8 @@ ms.lasthandoff: 06/08/2017
 
 卸载 Windows PowerShell Web 访问并不卸载 IIS 或任何其他自动安装的功能，因为 Windows PowerShell Web 访问需要它们处于运行状态。 卸载过程保留了依赖 Windows PowerShell Web 访问的功能；必要时你可以单独卸载那些功能。
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">建议（快速）卸载</span></a>
-<a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">建议（快速）卸载</span></a>
+<a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="右键单击可以复制并共享此部分的链接"></a>
 
 ------------------------------------------------------------------------
 
@@ -33,7 +33,7 @@ ms.lasthandoff: 06/08/2017
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步骤 1：删除 Web 应用程序</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步骤 1：删除 Web 应用程序</span></a>
 
 ------------------------------------------------------------------------
 
@@ -57,7 +57,7 @@ ms.lasthandoff: 06/08/2017
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步骤 2：卸载 Windows PowerShell Web 访问</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步骤 2：卸载 Windows PowerShell Web 访问</span></a>
 
 ------------------------------------------------------------------------
 
@@ -83,8 +83,8 @@ ms.lasthandoff: 06/08/2017
 
 3.  删除完成后，验证你已删除 Windows PowerShell Web 访问，方法是打开服务管理器中的“所有服务器”页面，选择要删除其功能的服务器，然后在选定服务器的页面上查看“角色和功能”磁贴。 你也可以将选定的服务器作为目标运行 <span class="code">Get-WindowsFeature</span> cmdlet (Get-WindowsFeature -ComputerName &lt;*computer_name*&gt;)，以查看该服务器上安装的角色和功能的列表。
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">自定义卸载</span></a>
-<a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">自定义卸载</span></a>
+<a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="右键单击可以复制并共享此部分的链接"></a>
 
 ------------------------------------------------------------------------
 
@@ -92,7 +92,7 @@ ms.lasthandoff: 06/08/2017
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步骤 1：删除 Web 应用程序</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步骤 1：删除 Web 应用程序</span></a>
 
 ------------------------------------------------------------------------
 
@@ -132,7 +132,7 @@ ms.lasthandoff: 06/08/2017
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步骤 2：卸载 Windows PowerShell Web 访问</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步骤 2：卸载 Windows PowerShell Web 访问</span></a>
 
 ------------------------------------------------------------------------
 
@@ -154,8 +154,8 @@ ms.lasthandoff: 06/08/2017
 
 6.  在**确认删除选择**页面上，单击**删除**。
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">另请参阅</span></a>
-<a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">另请参阅</span></a>
+<a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="右键单击可以复制并共享此部分的链接"></a>
 
 ------------------------------------------------------------------------
 

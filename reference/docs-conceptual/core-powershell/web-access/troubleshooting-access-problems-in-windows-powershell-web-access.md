@@ -1,15 +1,14 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "Windows PowerShell Web 访问中的访问问题疑难解答"
 ms.openlocfilehash: c10e19b177110ff62d44f28b6a523380b55b79e0
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
-<a id="troubleshooting-access-problems-in-windows-powershell-web-access" class="xliff"></a>
-#  Windows PowerShell Web 访问中的访问问题疑难解答
+#  <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Windows PowerShell Web 访问中的访问问题疑难解答
 
 更新时间： 2013年 6 月 24日
 
@@ -132,8 +131,9 @@ ms.lasthandoff: 06/08/2017
 </tbody>
 </table>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">另请参阅</span></a>
-<a href="/en-us/library/dn282395(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="
+折叠"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">另请参阅</span></a>
+<a href="/en-us/library/dn282395(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="右键单击可以复制并共享此部分的链接"></a>
 
 ------------------------------------------------------------------------
 

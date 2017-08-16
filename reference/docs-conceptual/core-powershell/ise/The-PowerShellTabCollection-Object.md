@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "PowerShellTabCollection 对象"
 ms.assetid: 81f4bf4a-83bf-415e-8378-1703792fbb58
 ms.openlocfilehash: dcdc16ae126453b6ade64917ac4950cc05e5f8ad
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="the-powershelltabcollection-object"></a>PowerShellTabCollection 对象
   **PowerShellTab** 集合对象是 **PowerShellTab** 对象的集合。 每个 **PowerShellTab** 对象充当一个单独的运行时环境。 它是 Microsoft.PowerShell.Host.ISE.PowerShellTabs 类的实例。 例如 **$psISE.PowerShellTabs** 对象。
@@ -29,8 +29,7 @@ $newTab.DisplayName="Brand New Tab"
 
  删除由 **psTab** 参数指定的选项卡。
 
- **psTab**
-要删除的 PowerShell 选项卡。
+ **psTab** 要删除的 PowerShell 选项卡。
 
 ```
 
@@ -46,8 +45,7 @@ $psISE.PowerShellTabs.Remove($newTab)
 
  选择由 **psTab** 参数指定的 PowerShell 选项卡，以使它当前是处于活动状态的 PowerShell 选项卡。
 
- **psTab**
-要选择的 PowerShell 选项卡。
+ **psTab** 要选择的 PowerShell 选项卡。
 
 ```
 # Save the current tab in a variable and rename it
