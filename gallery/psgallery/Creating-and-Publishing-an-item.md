@@ -4,14 +4,13 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: "库,powershell,cmdlet,psgallery"
 title: "创建和发布项"
-ms.openlocfilehash: e71381d1a3efda73832fab6189bda26cee411d9e
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b6bcd3e923b77ad7d19a1d92aeb78222bff7ea7e
+ms.sourcegitcommit: e08f036021e9f115dbb52c697941706cc4ee51dd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 08/15/2017
 ---
-<a id="creating-and-publishing-an-item" class="xliff"></a>
-# 创建和发布项 
+# <a name="creating-and-publishing-an-item"></a>创建和发布项 
 在 PowerShell 库中，可以发布稳定的 PowerShell 模块、脚本和 DSC 资源，并与更广泛的 PowerShell 用户社区共享它们。    
 
 本文介绍了有关如何准备脚本或模块，并将其发布到 PowerShell 库的机制和重要步骤。
@@ -27,8 +26,7 @@ ms.lasthandoff: 06/12/2017
  
 PowerShell 库接受 PowerShell 模块和 PowerShell 脚本。 我们所指的 PowerShell 脚本是一个文件，并不属于较大模块。 
 
-<a id="powershell-gallery-account-and-api-key" class="xliff"></a>
-## PowerShell 库帐户和 API 密钥
+## <a name="powershell-gallery-account-and-api-key"></a>PowerShell 库帐户和 API 密钥
 请参阅[创建 PowerShell 库帐户](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_creating_an_account)，了解如何设置 PowerShell 库帐户。 
 
 创建帐户后，便可以获取发布项所需的 API 密钥。
@@ -36,8 +34,7 @@ PowerShell 库接受 PowerShell 模块和 PowerShell 脚本。 我们所指的 P
 
 请注意，必须安全处理 API 密钥，就像处理登录名和密码一样。 使用此密钥，你或其他任何人可以更新你在 PowerShell 库中拥有的全部项。 建议定期更新此密钥，具体方法为使用“我的帐户”页上的“重置密钥”。
 
-<a id="required-metadata-for-items-published-to-the-powershell-gallery" class="xliff"></a>
-## 发布到 PowerShell 库的项的相应元数据
+## <a name="required-metadata-for-items-published-to-the-powershell-gallery"></a>发布到 PowerShell 库的项的相应元数据
 
 PowerShell 库向库用户提供从脚本或模块清单的元数据字段中提取的信息。
 必须满足有关项清单所提供信息的一小组要求，才能创建或修改发布到 PowerShell 库中的项。 强烈建议查看[发布指南](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-PublishingGuidelines)中的“项元数据”部分，了解如何向用户提供最实用的项信息。 
@@ -62,8 +59,7 @@ PowerShell 库项的作者和所有者是相关概念，并非总是一致。
 * 将众所周知的团队名称（如 Azure SDK 团队）或 Microsoft Corporation 设为作者。
 
 
-<a id="pre-validate-your-item" class="xliff"></a>
-## 预验证项
+## <a name="pre-validate-your-item"></a>预验证项
 
 在将项发布到 PowerShell 库之前，需要对代码运行下面几个工具：
 
@@ -80,8 +76,7 @@ PowerShell 库项的作者和所有者是相关概念，并非总是一致。
 同样，[Test-ScriptFileInfo](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_test-scriptfileinfo) 可用于验证脚本中的元数据。必须先对与模块分开发布的每个脚本运行此命令，然后才能将其发布到 PowerShell 库中。 
 
 
-<a id="publishing-items" class="xliff"></a>
-## 发布项
+## <a name="publishing-items"></a>发布项
 
 必须使用 [Publish-Script](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_publish-script) 或 [Publish-Module](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/psget_publish-module) 将项发布到 PowerShell 库中。
 这两个命令都需要 
