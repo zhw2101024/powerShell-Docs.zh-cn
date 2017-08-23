@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12T00:00:00.000Z
+ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
 keywords: "wmf,powershell,安装程序"
 title: "WMF 5.1 中的新方案和功能"
-ms.openlocfilehash: 7340fb38a2f6992bb922a81ee2227754252899d7
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+ms.openlocfilehash: 430781c5c9a59fc544db4f94098313ae1e9cf610
+ms.sourcegitcommit: a6ee6e64d369ecf82c730411bed9750278fdb5c1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 08/18/2017
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>WMF 5.1 中的新方案和功能 #
 
@@ -99,7 +99,7 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
 在 WMF 5.1 中：
 
-* 可以使用 `ModuleSpecification` [哈希表](https://msdn.microsoft.com/en-us/library/jj136290(v=vs.85).aspx)。 此哈希表具有与 `Get-Module -FullyQualifiedName` 相同的格式。
+* 可以使用 [ModuleSpecification Constructor (Hashtable)](https://msdn.microsoft.com/library/jj136290)。 此哈希表具有与 `Get-Module -FullyQualifiedName` 相同的格式。
 
 **示例：** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 

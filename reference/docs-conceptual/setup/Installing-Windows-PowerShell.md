@@ -1,102 +1,99 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
-keywords: powershell,cmdlet
+ms.date: 2017-08-09
+keywords: "powershell, cmdlet, 下载, 安装, 设置, windows 10, windows 8.1, windows 8.0, windows 7"
 title: "安装 Windows PowerShell"
-ms.assetid: 6fbb0409-5a54-48ec-95e6-7f8b7d8c4969
-ms.openlocfilehash: 2b4cdec52dfc98649a81ab2265a204fcdb0bd8d7
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 7a1a4bff461e3012a06a82faf4015a05b8560895
+ms.sourcegitcommit: a6ee6e64d369ecf82c730411bed9750278fdb5c1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/18/2017
 ---
 # <a name="installing-windows-powershell"></a>安装 Windows PowerShell
-Windows® 8 和 Windows Server® 2012 包括 Windows PowerShell 3.0 及其所有先决条件。 系统还包括 Windows PowerShell 2.0 引擎，以实现与不能使用 Windows PowerShell 3.0 的主机程序的向后兼容性。
 
-本主题说明如何在早期系统上安装 Windows PowerShell 3.0，以及安装和启用所需的功能。
+从 Windows 7 SP1 和 Windows Server 2008 R2 SP1 开始，每个 Windows 中默认随附安装有 PowerShell。
 
-本主题包含下列部分：
+希望在计算机中安装 PowerShell 6 (beta) 的 Linux、macOS 和 Windows 用户需要：
 
--   [在 Windows 8 和 Windows Server 2012 上安装 Windows PowerShell](Installing-Windows-PowerShell.md#BKMK_InstallingOnWindows8andWindowsServer2012)
+1.  从 [GitHub](https://github.com/powershell/powershell#get-powershell) 获取适用于指定 OS 和版本的 PowerShell
+1.  按照安装说明操作
+  - [Linux](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md)
+  - [macOS](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#macos-1012)
+  - [Windows](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi)
 
--   [在 Windows 7 和 Windows Server 2008 R2 上安装 Windows PowerShell](Installing-Windows-PowerShell.md#BKMK_InstallingOnWindows7andWindowsServer2008R2)
+PowerShell 6 也可用于 Docker；请参阅 [Docker 安装](https://github.com/PowerShell/PowerShell/tree/master/docker)说明。
 
--   [在 Windows Server 2008 上安装 Windows PowerShell](Installing-Windows-PowerShell.md#BKMK_InstallingOnWindowsServer2008LH)
+## <a name="finding-powershell-in-windows-10-81-80-and-7"></a>在 Windows 10、8.1、8.0 和 7 中查找 PowerShell
 
--   [在 Server Core 上安装 Windows PowerShell](Installing-Windows-PowerShell.md#BKMK_InstallingOnServerCore)
+有时在 Windows 中查找 PowerShell 控制台或 ISE（集成脚本环境）并非易事，因为其位置会随不同的 Windows 版本而发生移动。
 
--   [部署 Windows PowerShell Web 访问](https://technet.microsoft.com/en-us/library/639d0eff-98a3-4124-b52c-26921ebd98b0)
+以下表格应有助于在使用的 Windows 版本中查找 PowerShell。
+此处列出的所有版本均为发布时的原始版本，没有进行任何更新。
 
--   [安装 Windows PowerShell 2.0 引擎](Installing-the-Windows-PowerShell-2.0-Engine.md)
+### <a name="for-console"></a>控制台
 
-## <a name="BKMK_InstallingOnWindows8andWindowsServer2012"></a>在 Windows 8 和 Windows Server 2012 上安装 Windows PowerShell
-Windows PowerShell 3.0 已安装和配置，并可供使用。 Windows PowerShell 集成脚本环境 (ISE) 已安装并已启用。 有关启动 Windows PowerShell 的信息，请参阅 [Starting Windows PowerShell on Windows 8](https://technet.microsoft.com/en-us/library/d7be1668-8617-4890-ad90-dd9765fbd2c3)（在 Windows 8 上启动 Windows PowerShell）和 [Starting Windows PowerShell on Windows Server 2012](https://technet.microsoft.com/library/hh831491.aspx#BKMK_powershell)（在 Windows Server 2012 上启动 Windows PowerShell）。
+版本 | 位置
+-- | --
+Windows 10 | 单击左下角的 Windows 图标，键入 PowerShell
+Windows 8.1、8.0 | 在开始屏幕上，键入 PowerShell。<br/>如果位于桌面，请单击左下角的 Windows 图标，键入 PowerShell
+Windows 7 SP1 | 单击左下角的 Windows 图标，在搜索框中键入 PowerShell
 
-## <a name="BKMK_InstallingOnWindows7andWindowsServer2008R2"></a>在 Windows 7 和 Windows Server 2008 R2 上安装 Windows PowerShell
-这些说明解释了如何在运行 Windows 7 Service Pack 1 和 Windows Server 2008 R2 Service Pack 1 的计算机上安装 Windows PowerShell 3.0。 下面是适用于运行 Windows Server 2008 R2 的 Server Core 安装选项的计算机的单独安装说明。
+### <a name="for-ise"></a>ISE
 
-#### <a name="getting-ready-to-install"></a>正在准备安装
+版本 | 位置
+-- | --
+Windows 10 | 单击左下角的 Windows 图标，键入 ISE
+Windows 8.1、8.0 | 在“开始”屏幕上，键入 PowerShell ISE。<br/>如果位于桌面，请单击左下角的 Windows 图标，键入 PowerShell ISE
+Windows 7 SP1 | 单击左下角的 Windows 图标，在搜索框中键入 PowerShell
 
--   安装 Windows Management Framework 3.0 之前，请卸载所有早期版本的 Windows Management Framework 3.0。
+## <a name="finding-powershell-in-windows-server-versions"></a>在 Windows Server 版本中查找 PowerShell
 
-#### <a name="to-install-windows-powershell-30"></a>安装 Windows PowerShell 3.0
+从 Windows Server 2008 R2 开始，安装操作系统可不包含图形用户界面 (GUI)。
+不含 GUI 的 Windows Server 版本名为“核心”版本，包含 GUI 的版本名为“桌面”版本。
 
-1.  从 Microsoft 下载中心 [http://go.microsoft.com/fwlink/?LinkID=212547](http://go.microsoft.com/fwlink/?LinkID=212547) 安装 Microsoft .NET Framework 4 (dotNetFx40_Full_setup.exe) 的完全安装版。
+### <a name="windows-server-core-editions"></a>Windows Server 核心版本
 
-    或者，从 Microsoft 下载中心 [http://go.microsoft.com/fwlink/?LinkID=242919](http://go.microsoft.com/fwlink/?LinkID=242919) 安装 Microsoft .NET Framework 4.5 (dotNetFx45_Full_setup.exe)。
+在所有核心版本中，登录到服务器时会显示 Windows 命令提示符窗口。
 
-2.  从 Microsoft 下载中心 [http://go.microsoft.com/fwlink/?LinkID=240290](http://go.microsoft.com/fwlink/?LinkID=240290) 安装 Windows Management Framework 3.0。
+键入 `powerhell` 并按“Enter”可在命令提示符会话内启动 PowerShell。 键入 `exit` 可终止 PowerShell 会话并返回命令提示符。
 
-有关启动 Windows PowerShell 3.0 的信息，请参阅[在早期版本的 Windows 上启动 Windows PowerShell](Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md)。
+### <a name="windows-server-desktop-editions"></a>Windows Server 桌面版本
 
-## <a name="BKMK_InstallingOnServerCore"></a>在 Server Core 上安装 Windows PowerShell
-这些说明解释了如何在运行 Windows Server 2008 R2 Service Pack 1 的 Server Core 安装选项的计算机上安装 Windows PowerShell 3.0。
+在所有桌面版本中，单击左下角的 Windows 图标，键入 PowerShell。
+将显示控制台和 ISE 选项。
 
-该过程的第一步使用部署映像服务和管理 (DISM) 命令来为 Server Core 和 Windows PowerShell 2.0 安装 Microsoft .NET Framework 2.0。 这些程序是在后续步骤中安装的 Windows Management Framework 3.0 的先决条件。
+上述规则的唯一例外是 Windows Server 2008 R2 SP1 中的 ISE；这种情况下，请单击左下角的 Windows 图标，键入 PowerShell ISE。
 
-#### <a name="getting-ready-to-install"></a>正在准备安装
+## <a name="how-to-check-the-version-of-powershell"></a>如何检查 PowerShell 版本
 
--   安装 Windows Management Framework 3.0 之前，请卸载所有早期版本的 Windows Management Framework 3.0。
+若要查看已安装的 PowerShell 版本，请启动 PowerShell 控制台（或 ISE），键入 `$PSVersionTable`，然后按“Enter”。
 
-#### <a name="to-install-windows-powershell-30"></a>安装 Windows PowerShell 3.0
+## <a name="upgrading-existing-windows-powershell"></a>升级现有 Windows PowerShell
 
-1.  启动 Cmd.exe
+PowerShell 安装包随附于 WMF 安装程序内。
+WMF 安装程序版本与 PowerShell 版本一致；不提供 Windows PowerShell 独立安装程序。
 
-2.  运行以下 DISM 命令。 这些命令用于安装 .NET Framework 2.0 和 Windows PowerShell 2.0。
+如需在 Windows 中更新现有 PowerShell 版本，请使用下表找到要更新至的 PowerShell 版本的安装程序。
 
-    ```
-    dism /online /enable-feature:NetFx2-ServerCore
-    dism /online /enable-feature:MicrosoftWindowsPowerShell
-    dism /online /enable-feature:NetFx2-ServerCore-WOW64
-    ```
+Windows | PS 3.0 | PS 4.0 | PS 5.0 | PS 5.1 |
+--|--|--|--|--|
+Windows 10（参见说明 1）<br/>Windows Server 2016 | - | - | - | 已安装
+Windows 8.1<br/>Windows Server 2012 R2 | - | 已安装 | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
+Windows 8<br/>Windows Server 2012 | 已安装 | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
+Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 
-3.  从 Microsoft 下载中心 [http://go.microsoft.com/fwlink/?LinkID=248450](http://go.microsoft.com/fwlink/?LinkID=248450) 为服务器核心安装 Microsoft .NET Framework 4.0 的完全安装版。
+> **说明 1**：
+  >>
+  >> Windows 10 初始版本中，由于已启用自动更新，因此 PowerShell 会从版本 5.0 更新至 5.1。
+  >>
+  >> 如果 Windows 10 原始版本未通过 Windows 更新进行更新，则 PowerShell 版本为 5.0。
 
-4.  从 Microsoft 下载中心 [http://go.microsoft.com/fwlink/?LinkID=240290](http://go.microsoft.com/fwlink/?LinkID=240290) 安装 Windows Management Framework 3.0。
+## <a name="need-azure-powershell"></a>需要 Azure PowerShell
 
-## <a name="BKMK_InstallingOnWindowsServer2008LH"></a>在 Windows Server 2008 上安装 Windows PowerShell
-这些说明解释了如何在运行 Windows Server 2008 Service Pack 2 的计算机上安装 Windows PowerShell 3.0。
+如需要 Azure PowerShell，请先参阅 [Azure PowerShell 概述](https://docs.microsoft.com/en-us/powershell/azure)。
 
-在 Windows Server 2008 系统上，Windows Management Framework（Windows PowerShell 2.0，KB 968930）是 Windows Management Framework 3.0 的先决条件。 “扩展的身份验证保护”功能可使计算机免受身份验证转发攻击，并允许你在创建远程会话时，使用 **UseSSL** 参数 若要安装 Windows PowerShell 3.0 和 Windows PowerShell 2.0 引擎，请使用以下过程。
-
-#### <a name="getting-ready-to-install"></a>正在准备安装
-
--   安装 Windows Management Framework 3.0 之前，请卸载所有早期版本的 Windows Management Framework 3.0。
-
-#### <a name="to-install-windows-powershell-30"></a>安装 Windows PowerShell 3.0
-
-1.  从 Microsoft 下载中心 [http://go.microsoft.com/fwlink/?LinkID=242910](http://go.microsoft.com/fwlink/?LinkID=242910) 安装具有 Service Pack 1 的 Microsoft .NET Framework 3.5。
-
-2.  从 Microsoft 下载中心 [http://go.microsoft.com/fwlink/?LinkId=243035](http://go.microsoft.com/fwlink/?LinkId=243035) 安装 Windows Management Framework （Windows PowerShell 2.0，KB 968930）。
-
-3.  从 Microsoft 下载中心 [http://go.microsoft.com/fwlink/?LinkID=212547](http://go.microsoft.com/fwlink/?LinkID=212547) 安装 Microsoft .NET Framework 4 (dotNetFx40_Full_setup.exe) 的完全安装版。
-
-    或者，从 Microsoft 下载中心 [http://go.microsoft.com/fwlink/?LinkID=242919](http://go.microsoft.com/fwlink/?LinkID=242919) 安装 Microsoft .NET Framework 4.5 (dotNetFx45_Full_setup.exe)。
-
-4.  从 [http://go.microsoft.com/fwlink/?LinkID=186398](http://go.microsoft.com/fwlink/?LinkID=186398) 安装“扩展的身份验证保护”(KB 968389)。
-
-5.  从 Microsoft 下载中心 [http://go.microsoft.com/fwlink/?LinkID=240290](http://go.microsoft.com/fwlink/?LinkID=240290) 安装 Windows Management Framework 3.0。
+或者，可能需要参阅[安装和配置 Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps)
 
 ## <a name="see-also"></a>另请参阅
-- [Windows PowerShell 系统要求](Windows-PowerShell-System-Requirements.md)
-- [启动 Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
 
+- [Windows PowerShell 系统要求](Windows-PowerShell-System-Requirements.md)
+- [启动 Windows PowerShell](Starting-Windows-PowerShell.md)
