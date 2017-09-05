@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "ISEEditor 对象"
 ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
-ms.openlocfilehash: c4effde470a7a76a21f983b172f0af651dfc5d11
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: e2ddb0de1089c832f130e1f5c7c8dcb199aca2fa
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="the-iseeditor-object"></a>ISEEditor 对象
   **ISEEditor** 对象是 Microsoft.PowerShell.Host.ISE.ISEEditor 类的实例。 控制台窗格是 **ISEEditor** 对象。 每个 [ISEFile](The-ISEFile-Object.md) 对象都有一个关联的 **ISEEditor** 对象。 以下各节列出了 **ISEEditor** 对象的方法和属性。
@@ -63,7 +63,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ### <a name="gotomatch"></a>GoToMatch\(\)
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。 
 
- 如果编辑器对象的 **CanGoToMatch** 属性是 **$true**，当脱字号直接位于左括号、中括号或大括号 - \(、\[、{ - 或直接位于右括号、中括号或大括号 - \)、\]、}。  脱字号位于开始字符之前或结束字符之后。 如果 **CanGoToMatch** 属性是 **$false**，则此方法不执行任何操作。 请参阅 [CanGoToMatch](#cangotomatch)。
+ 如果编辑器对象的 **CanGoToMatch** 属性是 **$true**，当脱字号直接位于左括号、中括号或大括号 - \(、\[、{ - 或直接位于右括号、中括号或大括号 - \)、\]、}。  脱字号位于开始字符之前或结束字符之后。 如果 **CanGoToMatch** 属性是 **$false**，则此方法不执行任何操作。 请参阅 [CanGoToMatch]()。
 
 ```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
@@ -76,7 +76,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **text** - String 要插入的文本。
 
- 请参阅本主题稍后介绍的[脚本示例](#example)。
+ 请参阅本主题稍后介绍的[脚本示例]()。
 
 ### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Select\( startLine, startColumn, endLine, endColumn \)
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
@@ -91,7 +91,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **endColumn** - Integer 所选内容的结束行中的列。
 
- 请参阅本主题稍后介绍的[脚本示例](#example)。
+ 请参阅本主题稍后介绍的[脚本示例]()。
 
 ### <a name="selectcaretline"></a>SelectCaretLine\(\)
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
@@ -186,14 +186,14 @@ $psISE.CurrentFile.Editor.LineCount
 
  只读属性，可获取编辑器中的所选文本。
 
- 请参阅本主题稍后介绍的[脚本示例](#example)。
+ 请参阅本主题稍后介绍的[脚本示例]()。
 
 ###  <a name="Text"></a>文本
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  读写属性，可获取或设置编辑器中的文本。
 
- 请参阅本主题稍后介绍的[脚本示例](#example)。
+ 请参阅本主题稍后介绍的[脚本示例]()。
 
 ##  <a name="example"></a>脚本示例
 

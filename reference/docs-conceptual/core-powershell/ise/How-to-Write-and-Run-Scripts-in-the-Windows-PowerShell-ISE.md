@@ -1,22 +1,22 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "如何在 Windows PowerShell ISE 中编写和运行脚本"
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: 871a4b6f4575af4f823a6957dc971335497320a4
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 577ecf96027618a0a8f98d5bcefe7ec949f337cc
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中编写和运行脚本
 本主题说明如何在脚本窗格中创建、编辑、运行以及保存脚本。
 
--   [如何创建和运行脚本](#bkmk_1)
+-   [如何创建和运行脚本]()
 
--   [如何在脚本窗格中编写和编辑文本](#bkmk_2)
+-   [如何在脚本窗格中编写和编辑文本]()
 
--   [如何保存脚本](#bkmk_3)
+-   [如何保存脚本]()
 
 ## <a name="bkmk_1"></a>如何创建和运行脚本
 可以在脚本窗格中打开和编辑 Windows PowerShell® 文件。 Windows PowerShell® 中的相关特定文件类型有脚本文件 (.ps1)、脚本数据文件 (.psd1) 和脚本模块文件 (.psm1)。 这些文件类型在脚本窗格编辑器中是经语法颜色设置的。 可能在脚本窗格中打开的其他常见文件类型有配置文件 (.ps1xml)、XML 文件和文本文件。
@@ -25,7 +25,7 @@ ms.lasthandoff: 08/03/2017
 > Windows PowerShell 执行策略确定你是否可以运行脚本并加载 Windows PowerShell 配置文件。 默认执行策略（受限）可以防止运行所有脚本，并防止加载配置文件。 若要将执行策略更改为允许加载和使用配置文件，请参阅 [Set-ExecutionPolicy[PSITPro5_Security]](https://technet.microsoft.com/en-us/library/5690a0e1-495b-4e63-8280-65ead7bf01ab) 和 [about_Signing [v4]](https://technet.microsoft.com/en-us/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d)。
 
 ### <a name="to-create-a-new-script-file"></a>创建新的脚本文件
-在工具栏上，单击“新建”，或在“文件”菜单上，单击“新建”。 创建的文件将出现在当前 PowerShell 选项卡下的新建文件选项卡中。 请记住，仅当有多个选项卡时，PowerShell 选项卡才可见。 默认情况下，将创建类型脚本文件 (.ps1)，但它可以使用新的名称和扩展名进行保存。 可以在同一个 PowerShell 选项卡中创建多个脚本文件。
+在工具栏上，单击“新建”，或在“文件”菜单上，单击“新建”。 创建的文件将出现在当前 PowerShell 选项卡下的新建文件选项卡中。请记住，仅当有多个选项卡时，PowerShell 选项卡才可见。 默认情况下，将创建类型脚本文件 (.ps1)，但它可以使用新的名称和扩展名进行保存。 可以在同一个 PowerShell 选项卡中创建多个脚本文件。
 
 ### <a name="to-open-an-existing-script"></a>打开现有的脚本
 在工具栏上，单击“打开…”，或在“文件”菜单上，单击“打开”。 在“打开”对话框中，选择想要打开的文件。 打开的文件将出现在新选项卡中。

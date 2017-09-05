@@ -1,21 +1,21 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "如何在 Windows PowerShell ISE 中调试脚本"
 ms.assetid: 6dc6d8f9-8978-46e9-a92f-169af37e2817
-ms.openlocfilehash: db8847e2cc9abeec729ed8d939fc170529a93846
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 2b8313c3f2ae1a8fb670099baa8950db49722330
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中调试脚本
 本主题介绍如何通过使用 Windows PowerShell® 集成脚本环境 (ISE) 直观调试功能来调试本地计算机上的脚本。
 
-[如何管理断点](#bkmk_1)
-[如何管理调试会话](#bkmk_2)
-[如何在调试过程中步越、步入和步出](#bkmk_3)
-[如何在调试时显示变量的值](#bkmk_4)
+[如何管理断点]()
+[如何管理调试会话]()
+[如何在调试过程中步越、步入和步出]()
+[如何在调试时显示变量的值]()
 
 ## <a name="bkmk_1"></a>如何管理断点
 断点是脚本中你想要操作暂停的指定位置，这样你可以检查变量的当前状态和脚本运行的环境。 一旦你的脚本被断点暂停，你可以在控制台窗格中运行命令来检查你的脚本状态。  你可以输出变量或运行其他命令。 甚至可以修改对正在运行的脚本的上下文可见的任何变量的值。 检查完你想要查看的内容后，可以恢复该脚本的运行。
@@ -51,7 +51,7 @@ Get-PSBreakpoint
 ```
 
 ### <a name="remove-a-breakpoint"></a>移除断点
-移除断点会将其删除。  如果你认为稍后还可能再次使用，请考虑改为[禁用](#bkmk_disable)。  右键单击你想要移除的断点所在的行，然后单击“**切换断点**”。 或者，单击你想要移除的断点所在的行，然后在“调试”菜单上，单击“切换断点”。 以下脚本是如何通过使用 [Remove-PSBreakpoint](https://technet.microsoft.com/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) cmdlet 从控制台窗格中移除具有指定 ID 的断点的示例。
+移除断点会将其删除。  如果你认为稍后还可能再次使用，请考虑改为[禁用]()。  右键单击你想要移除的断点所在的行，然后单击“**切换断点**”。 或者，单击你想要移除的断点所在的行，然后在“调试”菜单上，单击“切换断点”。 以下脚本是如何通过使用 [Remove-PSBreakpoint](https://technet.microsoft.com/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) cmdlet 从控制台窗格中移除具有指定 ID 的断点的示例。
 
 ``` PowerShell
 # This command deletes the breakpoint with breakpoint ID 2.
@@ -103,7 +103,7 @@ Get-PSBreakpoint | Enable-PSBreakpoint
 ```
 
 ## <a name="bkmk_2"></a>如何管理调试会话
-开始调试之前，必须设置一个或多个断点。 你不能设置一个断点，除非已保存你想要调试的脚本。 有关如何设置断点的说明，请参阅[如何管理断点](#bkmk_1)或 [Set-PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420)。 开始调试后，将无法编辑脚本，除非停止调试。 运行之前，将自动保存设置有一个或多个断点的脚本。
+开始调试之前，必须设置一个或多个断点。 你不能设置一个断点，除非已保存你想要调试的脚本。 有关如何设置断点的说明，请参阅[如何管理断点]()或 [Set-PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420)。 开始调试后，将无法编辑脚本，除非停止调试。 运行之前，将自动保存设置有一个或多个断点的脚本。
 
 ### <a name="to-start-debugging"></a>启动调试
 按 **F5** 或在工具栏上，单击“**运行脚本**”图标，或在“**调试**”菜单上，单击“**运行/继续**”。 脚本将一直运行，直到它遇到第一个断点。 它将在此处暂停操作，并突出显示它暂停时所在的行。

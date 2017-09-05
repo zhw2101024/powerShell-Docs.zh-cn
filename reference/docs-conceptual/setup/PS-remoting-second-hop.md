@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "在 PowerShell 远程处理中形成第二个跃点"
-ms.openlocfilehash: 620d78987fea86ac38d2b376926d0a5cefe59721
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: f3b8280819e43bd67bd608ffd0ba9484c2bbc26c
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>在 PowerShell 远程处理中形成第二个跃点
 
@@ -236,7 +236,7 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 
 JEA 允许限制管理员在 PowerShell 会话期间可以运行的命令。 它可用于解决第二个跃点问题。
 
-有关 JEA 的信息，请参阅 [Just Enough Administration](https://msdn.microsoft.com/powershell/jea/readme)。
+有关 JEA 的信息，请参阅 [Just Enough Administration](https://docs.microsoft.com/en-us/powershell/jea/overview)。
 
 ### <a name="pros"></a>优点
 
