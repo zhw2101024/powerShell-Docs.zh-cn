@@ -1,28 +1,28 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Windows PowerShell ISE 中的辅助功能"
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 1231271067f32ff888504344bc324b13aade9c33
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 05e7b8c3166b3530552d082dd4b0431dd7046b90
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE 中的辅助功能
 本主题介绍 Windows PowerShell® 集成脚本环境 (ISE) 的辅助功能，也许对你有所帮助。
 
-* [如何更改控制台和脚本窗格的大小和位置](#bkmk_1)
-* [编辑文本的键盘快捷方式](#bkmk_2)
-* [运行脚本的键盘快捷方式](#bkmk_3)
-* [自定义视图的键盘快捷方式](#bkmk_4)
-* [调试脚本的键盘快捷方式](#bkmk_5)
-* [Windows PowerShell 选项卡的键盘快捷方式](#bkmk_6)
-* [启动和退出的键盘快捷方式](#bkmk_7)
+* [如何更改控制台和脚本窗格的大小和位置]()
+* [编辑文本的键盘快捷方式]()
+* [运行脚本的键盘快捷方式]()
+* [自定义视图的键盘快捷方式]()
+* [调试脚本的键盘快捷方式]()
+* [Windows PowerShell 选项卡的键盘快捷方式]()
+* [启动和退出的键盘快捷方式]()
 
 Microsoft 致力于使其产品和服务更便于每个人使用。 下列主题提供有关使 Windows PowerShell ISE 更便于残障人士访问的功能、产品和服务的信息。
 
-Windows PowerShell ISE 支持高对比度模式。 为方便有视觉障碍的用户，通过用于管理断点的 cmdlet（例如 [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) 和 [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420)）提供断点信息。 有关详细信息，请参阅[如何在 Windows PowerShell ISE 中调试脚本](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md#bkmk_1)中的“如何管理断点”。 除了 Microsoft Windows 中的辅助功能和实用工具外，以下功能也能使残障人士更轻松地访问 Windows PowerShell ISE：
+Windows PowerShell ISE 支持高对比度模式。 为方便有视觉障碍的用户，通过用于管理断点的 cmdlet（例如 [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) 和 [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420)）提供断点信息。 有关详细信息，请参阅[如何在 Windows PowerShell ISE 中调试脚本](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)中的“如何管理断点”。 除了 Microsoft Windows 中的辅助功能和实用工具外，以下功能也能使残障人士更轻松地访问 Windows PowerShell ISE：
 
 -   键盘快捷方式
 

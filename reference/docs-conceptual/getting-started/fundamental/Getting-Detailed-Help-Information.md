@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "获取详细的帮助信息"
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 3260b5ec0a91749d3b7b126412137aa9d603ef0e
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: c786ce089073abccdf186dc1d9e8ee383f83655d
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="getting-detailed-help-information"></a>获取详细的帮助信息
 Windows PowerShell 包含了详细的帮助主题，其中解释了 Windows PowerShell 概念和 Windows PowerShell 语言。 还有针对每个 cmdlet 和提供程序的帮助主题，以及针对许多函数和脚本的帮助主题。
@@ -75,7 +75,7 @@ get-help get-childitem -parameter *
 get-help get-childitem -examples
 ```
 
-有关如何为你编写的 cmdlet 编写帮助主题的信息，请参阅 MSDN 中的“如何编写 Cmdlet 帮助”主题。
+有关如何为你编写的 cmdlet 编写帮助主题的信息，请参阅 MSDN 库中的 [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415)（如何编写 Cmdlet 帮助）主题。
 
 ## <a name="getting-conceptual-help"></a>获取概念帮助
 Get-Help cmdlet 也将显示有关 Windows PowerShell 中的概念主题（包括有关 Windows PowerShell 语言的主题）的信息。 概念主题以“about_”前缀开头，例如 about_line_editing。 （概念主题的名称必须用英文输入，即使在非英语版本的 Windows PowerShell 中也是如此。）
@@ -165,7 +165,7 @@ get-help add-computer
 Online version: http://go.microsoft.com/fwlink/?LinkID=135194
 ```
 
-有关如何为帮助主题提供在线支持的信息，请参阅 [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf) 和 MSDN（Microsoft 开发人员网络）库中的“如何编写 Cmdlet 帮助”([http://go.microsoft.com/fwlink/?LinkID=123415](http://go.microsoft.com/fwlink/?LinkID=123415))。
+有关如何为帮助主题提供在线支持的信息，请参阅 [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf) 和 MSDN 库中的 [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415)（如何编写 Cmdlet 帮助）。
 
 ## <a name="see-also"></a>另请参阅
 - [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)

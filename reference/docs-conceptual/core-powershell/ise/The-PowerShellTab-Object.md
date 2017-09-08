@@ -1,20 +1,20 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "PowerShellTab 对象"
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
-ms.openlocfilehash: d4e9374202d352a30b3eb46bcf1e4e40dea49822
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 482984272b2f1be027cf2be49bdfa2c6e2c52070
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab 对象
   **PowerShellTab** 对象代表 Windows PowerShell 运行时环境。
 
 ## <a name="methods"></a>方法
 
-###  <a name="invoke"></a>调用\(脚本\)
+### <a name="invoke-script-"></a>调用\(脚本\)
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  在 PowerShell 选项卡中运行给定的脚本。
@@ -52,7 +52,7 @@ $psISE.PowerShellTabs.SetSelectedPowerShellTab($psISE.PowerShellTabs[0])
 
 # Invoke a simple command on the other tab, in its own scope
 $psISE.PowerShellTabs[1].InvokeSynchronous('$x=1',$false)
-# You can switch to the other tab and type “$x” to see that the value is saved there.
+# You can switch to the other tab and type â€œ$xâ€ to see that the value is saved there.
 
 # This example sets a value in the other tab (in a different scope) 
 # and returns it through the pipeline to this tab to store in $a
@@ -67,7 +67,7 @@ measure-command {$psISE.PowerShellTabs[1].InvokeSynchronous("sleep 10",$false,50
 
 ## <a name="properties"></a>“属性”
 
-###  <a name="AddOnsMenu"></a> AddOnsMenu
+### <a name="addonsmenu"></a>AddOnsMenu
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取 PowerShell 选项卡的“加载项”菜单。
@@ -85,10 +85,10 @@ $parentAdded.SubMenus.Add("_Dir",{dir},"Alt+D")
 $psISE.CurrentPowerShellTab.AddOnsMenu
 ```
 
-###  <a name="CanExecute"></a> CanInvoke
+### <a name="caninvoke"></a>CanInvoke
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
- 只读布尔属性，如果可以使用 [Invoke( Script )](#invoke) 方法调用脚本，则返回 **$true** 值。
+ 只读布尔属性，如果可以使用 [Invoke( Script )]() 方法调用脚本，则返回 **$true** 值。
 
 ```
 # CanInvoke will be false if the PowerShell
@@ -104,7 +104,7 @@ $secondTab.CanInvoke
 
 ```
 
-###  <a name="Commandpane"></a> Consolepane
+### <a name="consolepane"></a>Consolepane
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。  在 Windows PowerShell ISE 2.0 中，这命名为 **CommandPane**。
 
  获取“控制台”窗格 [editor](../ise/The-ISEEditor-Object.md) 对象的只读属性。
@@ -115,10 +115,10 @@ $psISE.CurrentPowerShellTab.ConsolePane
 
 ```
 
-###  <a name="Displayname"></a> DisplayName
+### <a name="displayname"></a>DisplayName
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
- 读写属性，可获取或设置 PowerShell 选项卡上显示的文本。 默认情况下，选项卡命名为“PowerShell #”，其中 # 表示数字。
+ 读写属性，可获取或设置 PowerShell 选项卡上显示的文本。默认情况下，选项卡命名为“PowerShell #”，其中 # 表示数字。
 
 ```
 $newTab = $psise.PowerShellTabs.Add()
@@ -126,7 +126,7 @@ $newTab = $psise.PowerShellTabs.Add()
 $newTab.DisplayName="Brand New Tab"
 ```
 
-###  <a name="ExpandedScript"></a> ExpandedScript
+### <a name="expandedscript"></a>ExpandedScript
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  读写布尔属性，可确定“脚本”窗格是展开还是隐藏的。
@@ -137,7 +137,7 @@ $PSise.CurrentPowerShellTab.ExpandedScript=!$PSise.CurrentPowerShellTab.Expanded
 
 ```
 
-###  <a name="Files"></a>文件
+### <a name="files"></a>文件
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取 PowerShell 选项卡中打开的[脚本文件集合](../ise/The-ISEFileCollection-Object.md)。
@@ -149,7 +149,7 @@ $newFile.Editor.Text = "a`r`nb"
 $newFile.Editor.LineCount
 ```
 
-###  <a name="Output"></a>输出
+### <a name="output"></a>输出
   此功能存在于 Windows PowerShell ISE 2.0 中，但已在更高版本的 ISE 中删除或重命名。  在更高版本的 Windows PowerShell ISE 中，你可以将 **ConsolePane** 对象用于相同的目的。
 
  只读属性，可获取当前[编辑器](../ise/The-ISEEditor-Object.md)的“输出”窗格。
@@ -159,17 +159,17 @@ $newFile.Editor.LineCount
 $psise.CurrentPowerShellTab.output.clear()
 ```
 
-###  <a name="Prompt"></a>提示
+### <a name="prompt"></a>提示
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
- 只读属性，可获取当前提示文本。 注意：**Prompt** 函数可以被用户的配置文件覆盖。 如果结果不止一个简单的字符串，则此属性不会返回任何内容。
+ 只读属性，可获取当前提示文本。 注意：Prompt 函数可以被用户的配置文件覆盖。 如果结果不止一个简单的字符串，则此属性不会返回任何内容。
 
 ```
 # Gets the current prompt text.
 $psISE.CurrentPowerShellTab.Prompt
 ```
 
-###  <a name="ShowCommands"></a> ShowCommands
+### <a name="showcommands"></a>ShowCommands
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。 
 
  读写属性，指示当前是否显示“命令”窗格。
@@ -181,7 +181,7 @@ $a = $psISE.CurrentPowerShellTab.ShowCommands
 if (!$a) {$psISE.CurrentPowerShellTab.ShowCommands=$True}
 ```
 
-###  <a name="StatusText"></a> StatusText
+### <a name="statustext"></a>StatusText
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取 **PowerShellTab** 状态文本。
@@ -191,7 +191,7 @@ if (!$a) {$psISE.CurrentPowerShellTab.ShowCommands=$True}
 $psISE.CurrentPowerShellTab.StatusText
 ```
 
-###  <a name="HorizontalAddOnToolsPaneOpened"></a> HorizontalAddOnToolsPaneOpened
+### <a name="horizontaladdontoolspaneopened"></a>HorizontalAddOnToolsPaneOpened
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。 
 
  只读属性，指示水平“加载项”工具窗格当前是否打开。
@@ -201,7 +201,7 @@ $psISE.CurrentPowerShellTab.StatusText
 $psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened
 ```
 
-###  <a name="VerticalAddOnToolsPaneOpened"></a> **VerticalAddOnToolsPaneOpened**
+### <a name="verticaladdontoolspaneopened"></a>VerticalAddOnToolsPaneOpened
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。 
 
  只读属性，指示竖直“加载项”工具窗格当前是否打开。

@@ -5,11 +5,11 @@ ms.topic: conceptual
 keywords: "库,powershell,cmdlet,psgallery"
 description: "面向发行者的指南"
 title: "PowerShell 库发布指南和最佳做法"
-ms.openlocfilehash: 394e69e189761f3c5a4bb54dfa8df15c4ab240d6
-ms.sourcegitcommit: e63f09c005b6bbf39c3c001944f307c2b155765b
+ms.openlocfilehash: 85486c409382472420a67fc124bd07a30486cb62
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell 库发布指南和最佳做法
 
@@ -69,9 +69,9 @@ PSScriptAnalyzer 可发现 PowerShell 代码中存在的最常见问题，通常
 用户通常会忽略没有文档的项，因为只能通过阅读代码来了解项的用途和使用方式。
 MSDN 中的多篇文章都介绍了如何为 PowerShell 项提供文档，包括：
 
-* [如何编写 Cmdlet 帮助](https://msdn.microsoft.com/en-us/library/aa965353(VS.85).aspx)中介绍了有关如何提供帮助的指南
+* [如何编写 Cmdlet 帮助](https://go.microsoft.com/fwlink/?LinkID=123415)中介绍了有关如何提供帮助的指南
 * 创建 cmdlet 帮助，这是最适合任何 PowerShell 脚本、函数或 cmdlet 的方法。
-  若要了解如何创建 cmdlet 帮助，请从 MSDN (Microsoft Developer Network) 库中的[如何编写 Cmdlet 帮助](http://go.microsoft.com/fwlink/?LinkID=123415)入手。
+  若要了解如何创建 cmdlet 帮助，请从 MSDN 库中的 [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415)（如何编写 Cmdlet 帮助）入手。
   若要在脚本中添加帮助，请参阅[关于基于评论的帮助](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help)。
 * 许多模块还包括文本格式的文档，如 MarkDown 文件。
   当在 Markdown 作为一种广泛使用格式的 Github 中有项目网站时，这尤为有用。

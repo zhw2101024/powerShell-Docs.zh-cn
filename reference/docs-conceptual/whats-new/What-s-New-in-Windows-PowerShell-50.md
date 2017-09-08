@@ -1,33 +1,33 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Windows PowerShell 5.0 中的新增功能"
 ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
-ms.openlocfilehash: c172ac076d2cd69e8f1876ad47a51c233d8a4afb
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 24860f34f6e2ef655befd9916a651dd0274b2620
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="what39s-new-in-windows-powershell"></a>Windows PowerShell 中的新增功能
-Windows PowerShell ® 5.0 包括了重要的新功能，这些功能可扩展其用途、提高其可用性，并使你能够更轻松、全面地控制和管理基于 Windows 的环境。
+Windows PowerShell® 5.0 新增的重要功能可扩展其用途、提高其可用性，并使你能够更轻松、全面地控制和管理基于 Windows 的环境。
 
 Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows PowerShell 3.0 和 Windows PowerShell 2.0 设计的 cmdlet、提供程序、模块、管理单元、脚本、函数和配置文件通常适用于 Windows PowerShell 5.0，无需更改。
 
 # <a name="installing-windows-powershell"></a>安装 Windows PowerShell
-默认情况下，Windows PowerShell 5.0 安装在 Windows Server ® 2016 技术预览和 Windows 10 ® 上。 
+默认情况下，Windows PowerShell 5.0 安装在 Windows Server® 2016 技术预览和 Windows 10® 上。 
 
 若要在 Windows Server 2012 R2、Windows 8.1 企业版或 Windows 8.1 专业版上安装 Windows PowerShell 5.0，请下载并安装 [Windows Management Framework 5.0](http://aka.ms/wmf5download)。 请务必先阅读下载详细信息并确保满足所有系统要求，然后再安装 Windows Management Framework 5.0。
 
 ## <a name="in-this-topic"></a>本主题内容
 
--   [KB 3000850 中的 Windows PowerShell 4.0 DSC 更新](#BKMK_3000850)
+-   [KB 3000850 中的 Windows PowerShell 4.0 DSC 更新]()
 
--   [Windows PowerShell 5.0 中的新增功能](#BKMK_new50)
+-   [Windows PowerShell 5.0 中的新增功能]()
 
--   [Windows PowerShell 4.0 中的新增功能](#BKMK_wps4)
+-   [Windows PowerShell 4.0 中的新增功能]()
 
--   [Windows PowerShell 3.0 中的新增功能](#BKMK_wps3)
+-   [Windows PowerShell 3.0 中的新增功能]()
 
 ## <a name="BKMK_3000850"></a>2014 年 11 月更新汇总中的 Windows PowerShell 4.0 更新 (KB 3000850)
 针对 Windows PowerShell 4.0 中 Windows PowerShell Desired State Configuration (DSC) 的许多更新和改进均在 [2014 年 11 月 Windows RT 8.1、Windows 8.1 和 Windows Server 2012 R2 更新汇总](https://support.microsoft.com/kb/3000850/) (KB 3000850) 中提供。 你可以通过在 Windows PowerShell 中运行 `Get-Hotfix -Id KB3000850` 以确定你的系统上是否已安装 KB 3000850。
@@ -128,15 +128,15 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 
 ## <a name="BKMK_new50"></a>Windows PowerShell 5.0 中的新增功能
 
--   [Windows PowerShell 中的新增功能](#BKMK_newcore)
+-   [Windows PowerShell 中的新增功能]()
 
--   [Windows PowerShell Desired State Configuration 中的新增功能](#BKMK_newDSC)
+-   [Windows PowerShell Desired State Configuration 中的新增功能]()
 
--   [Windows PowerShell ISE 中的新增功能](#BKMK_newISE)
+-   [Windows PowerShell ISE 中的新增功能]()
 
--   [Windows PowerShell Web 服务中的新增功能](#BKMK_newOData)
+-   [Windows PowerShell Web 服务中的新增功能]()
 
--   [Windows PowerShell 5.0 中值得注意的 Bug 修复](#BKMK_5bugfix)
+-   [Windows PowerShell 5.0 中值得注意的 Bug 修复]()
 
 ### <a name="BKMK_newcore"></a>Windows PowerShell 中的新增功能
 
@@ -170,7 +170,7 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 
 -   Get-ChildItem 也有一个新的 -Depth 参数，可将该参数与 -Recurse 参数一起使用，以限制递归。 例如，Get-ChildItem -Recurse -Depth 2 从当前文件夹、当前文件夹中的所有子文件夹，以及子文件夹中的所有文件夹返回结果。
 
--   现在 Copy-Item 使你能够将文件或文件夹从一个 Windows PowerShell 会话复制到另一个会话中，意味着你可以将文件复制到已连接至远程计算机（包括运行 [Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx) 因而没有其他界面的计算机）的会话中。 若要复制文件，请将 PSSession ID 指定为新的 -FromSession 和 -ToSession 参数的值，并添加 -Path 和 -Destination 以分别指定源路径和目标位置。 例如，Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder。
+-   现在 Copy-Item 使你能够将文件或文件夹从一个 Windows PowerShell 会话复制到另一个会话中，这意味着你可以将文件复制到已连接至远程计算机（包括运行 [Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx) 因而没有其他界面的计算机）的会话中。 若要复制文件，请将 PSSession ID 指定为新的 -FromSession 和 -ToSession 参数的值，并添加 -Path 和 -Destination 以分别指定源路径和目标位置。 例如，Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder。
 
 -   除了控制台主机 (**powershell.exe**) 外，Windows PowerShell 转录已经得到改进以应用到所有主机应用程序（例如 Windows PowerShell ISE）。 脚本选项（包括启用 system-wide 脚本）可以通过启用“打开 PowerShell 脚本”组策略设置（位于 Administrative Templates/Windows Components/Windows PowerShell）来进行配置。
 
@@ -290,7 +290,7 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 
 ### <a name="BKMK_newISE"></a>Windows PowerShell ISE 中的新增功能
 
--   你现在可以通过运行 Enter-PSSession 在存储你希望编辑的文件的计算机上启动远程会话，然后运行 **PSEdit <path and file name on the remote computer>** 以在 Windows PowerShell ISE 的本地副本中编辑远程 Windows PowerShell 脚本和文件。 此功能实现轻松编辑存储在 Windows Server 的服务器核心安装选项（Windows PowerShell ISE 无法在其中运行）上的 Windows PowerShell 文件。
+-   现在可以通过运行 Enter-PSSession 在存储希望编辑的文件的计算机上启动远程会话，然后运行 PSEdit <path and file name on the remote computer> 以在 Windows PowerShell ISE 的本地副本中编辑远程 Windows PowerShell 脚本和文件。 此功能实现轻松编辑存储在 Windows Server 的服务器核心安装选项（Windows PowerShell ISE 无法在其中运行）上的 Windows PowerShell 文件。
 
 -   Windows PowerShell ISE 中现在支持 Start-Transcript cmdlet。
 
@@ -311,19 +311,19 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 ## <a name="BKMK_wps4"></a>Windows PowerShell 4.0 中的新增功能
 Windows PowerShell 4.0 可向后兼容。 为 Windows PowerShell 3.0 和 Windows PowerShell 2.0 设计的 Cmdlet、提供程序、模块、管理单元、脚本、函数和配置文件通常适用于 Windows PowerShell 4.0，无需更改。
 
-Windows PowerShell 4.0 默认安装在 Windows® 8.1 和 Windows Server 2012 R2 上。 若要在 Windows 7 SP1 或 Windows Server 2008 R2 上安装 Windows PowerShell 4.0，请下载并安装 [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855)。 请务必先阅读下载详细信息并确保满足所有系统要求，然后再安装 Windows Management Framework 4.0。
+默认情况下，Windows PowerShell 4.0 安装在 WindowsÂ® 8.1 和 Windows Server 2012 R2 上。 若要在 Windows 7 SP1 或 Windows Server 2008 R2 上安装 Windows PowerShell 4.0，请下载并安装 [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855)。 请务必先阅读下载详细信息并确保满足所有系统要求，然后再安装 Windows Management Framework 4.0。
 
--   [Windows PowerShell 中的新增功能](#BKMK_core)
+-   [Windows PowerShell 中的新增功能]()
 
--   [Windows PowerShell 集成脚本环境 (ISE) 中的新增功能](#BKMK_ise)
+-   [Windows PowerShell 集成脚本环境 (ISE) 中的新增功能]()
 
--   [Windows PowerShell 工作流中的新增功能](#BKMK_workflow)
+-   [Windows PowerShell 工作流中的新增功能]()
 
--   [Windows PowerShell Web 服务中的新增功能](#BKMK_psws)
+-   [Windows PowerShell Web 服务中的新增功能]()
 
--   [Windows PowerShell Web 访问中的新增功能](#BKMK_powwa)
+-   [Windows PowerShell Web 访问中的新增功能]()
 
--   [Windows PowerShell 4.0 中值得注意的 Bug 修复](#BKMK_bugs)
+-   [Windows PowerShell 4.0 中值得注意的 Bug 修复]()
 
 Windows PowerShell 4.0 包括以下新增功能。
 
@@ -379,7 +379,7 @@ Windows PowerShell 4.0 包括以下新增功能。
 
 -   参数绑定已得到显著增强，从而在 Tab 自动补全情况以外的其他情况下使用，例如用于当前运行空间中不存在的命令。
 
--   已向 Windows PowerShell 工作流添加对自定义容器活动的支持。 如果某个活动参数 **Activity\[]** 属于类型 **Activity**（或为泛型活动集合），并且用户已提供一个脚本块作为实际参数，则 Windows PowerShell 工作流会将该脚本块转换为 XAML，正如处理普通的 Windows PowerShell 脚本到工作流编译一样。
+-   已向 Windows PowerShell 工作流添加对自定义容器活动的支持。 如果某个活动形参属于类型 Activity、Activity\[] 或为泛型活动集合，并且用户已提供一个脚本块作为实参，则 Windows PowerShell 工作流会将该脚本块转换为 XAML，正如处理普通的 Windows PowerShell 脚本到工作流编译一样。
 
 -   在发生崩溃之后，Windows PowerShell 工作流会自动重新连接到托管的节点。
 
@@ -411,7 +411,7 @@ Windows PowerShell 4.0 包括以下新增功能。
 
 -   在基于 Web 的 Windows PowerShell Web 访问控制台中，你可以断开现有会话的连接，然后重新连接到这些会话。 基于 Web 的控制台中的“**保存**”按钮使你可以在不删除会话的情况下断开与它的连接，然后在下次重新连接到该会话。
 
--   默认参数可以显示在登录页上。 若要显示默认参数，请在名为 **web.config** 的文件中为显示在登录页的“**可选的连接设置**”区域中的所有设置配置值。 可以使用 **web.config** 文件来配置所有可选的连接设置（一组辅助或备用凭据除外）。
+-   默认参数可以显示在登录页上。 若要显示默认参数，请在名为 **web.config** 的文件中为显示在登录页的“**可选的连接设置**”区域中的所有设置配置值。可以使用 **web.config** 文件来配置所有可选的连接设置（一组辅助或备用凭据除外）。
 
 -   在 Windows Server 2012 R2 中，可以远程管理 Windows PowerShell Web 访问的授权规则。 **Add-PswaAuthorizationRule** 和 **Test-PswaAuthorizationRule** cmdlet 现在包含一个 Credential 参数，该参数使管理员能够从远程计算机或在 Windows PowerShell Web 访问会话中管理授权规则。
 
@@ -456,62 +456,62 @@ Windows PowerShell 4.0 包括以下新增功能。
 ## <a name="BKMK_wps3"></a>Windows PowerShell 3.0 中的新增功能
 Windows PowerShell 3.0 包括以下新增功能。
 
--   [Windows PowerShell 工作流](#BKMK_Workflow)
+-   [Windows PowerShell 工作流]()
 
--   [Windows PowerShell Web 访问](#BKMK_WebAccess)
+-   [Windows PowerShell Web 访问]()
 
--   [新的 Windows PowerShell ISE 功能](#BKMK_ISE)
+-   [新的 Windows PowerShell ISE 功能]()
 
--   [对 Microsoft .NET Framework 4.0 的支持](#BKMK_NET4)
+-   [对 Microsoft .NET Framework 4.0 的支持]()
 
--   [对 Windows 预安装环境的支持](#BKMK_WinPE)
+-   [对 Windows 预安装环境的支持]()
 
--   [断开连接的会话](#BKMK_Disconnected)
+-   [断开连接的会话]()
 
--   [稳定的会话连接](#BKMK_Robust)
+-   [稳定的会话连接]()
 
--   [可更新的帮助系统](#BKMK_UpHelp)
+-   [可更新的帮助系统]()
 
--   [增强的联机帮助](#BKMK_Online)
+-   [增强的联机帮助]()
 
--   [CIM 集成](#BKMK_CIM)
+-   [CIM 集成]()
 
--   [会话配置文件](#BKMK_ConfigFile)
+-   [会话配置文件]()
 
--   [计划作业和任务计划程序集成](#BKMK_ScheduledJob)
+-   [计划作业和任务计划程序集成]()
 
--   [Windows PowerShell 语言增强功能](#BKMK_Lang)
+-   [Windows PowerShell 语言增强功能]()
 
--   [新的核心 Cmdlet](#BKMK_Core)
+-   [新的核心 Cmdlet]()
 
--   [对现有核心 Cmdlet 和提供程序的改进](#BKMK_Prov)
+-   [对现有核心 Cmdlet 和提供程序的改进]()
 
--   [远程模块导入和发现](#BKMK_REM)
+-   [远程模块导入和发现]()
 
--   [增强的 Tab 自动补全](#BKMK_TAB)
+-   [增强的 Tab 自动补全]()
 
--   [模块自动加载](#BKMK_AutoLoad)
+-   [模块自动加载]()
 
--   [模块体验改进](#BKMK_MOD)
+-   [模块体验改进]()
 
--   [简化的命令发现](#BKMK_SIMPLE)
+-   [简化的命令发现]()
 
--   [改进的日志记录、诊断和组策略支持](#BKMK_LOG)
+-   [改进的日志记录、诊断和组策略支持]()
 
--   [格式设置和输出改进](#BKMK_OUT)
+-   [格式设置和输出改进]()
 
--   [增强的控制台主机体验](#BKMK_HOST)
+-   [增强的控制台主机体验]()
 
--   [新的 Cmdlet 和宿主 API](#BKMK_API)
+-   [新的 Cmdlet 和宿主 API]()
 
--   [性能改进](#BKMK_PERF)
+-   [性能改进]()
 
--   [运行身份和共享主机支持](#BKMK_RUNAS)
+-   [运行身份和共享主机支持]()
 
--   [特殊字符处理改进](#BKMK_CHAR)
+-   [特殊字符处理改进]()
 
 ### <a name="BKMK_Workflow"></a>Windows PowerShell 工作流
-Windows PowerShell® 工作流将 Windows Workflow Foundation 的强大功能引入到 Windows PowerShell 中。 你可以采用 XAML 或 Windows PowerShell 语言编写工作流，然后像运行 cmdlet 一样运行它们。 [Get-command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet 获取工作流命令，[Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet 获取工作流帮助。
+Windows PowerShellÂ® 工作流将 Windows Workflow Foundation 的强大功能引入到 Windows PowerShell 中。 你可以采用 XAML 或 Windows PowerShell 语言编写工作流，然后像运行 cmdlet 一样运行它们。 [Get-command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet 获取工作流命令，[Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet 获取工作流帮助。
 
 工作流是多计算机管理活动序列，其特点是长期运行、可重复、频繁、可并行化、可中断、可挂起并且可重启。 工作流可以从有意或意外中断（例如网络中断、Windows 重新启动或电源故障）中恢复。
 
@@ -538,7 +538,7 @@ Windows PowerShell® 工作流将 Windows Workflow Foundation 的强大功能引
 -   **工作流和连接限制。** 可以限制工作流执行和到节点的连接，从而实现可扩展性且高可用性的方案。
 
 ### <a name="BKMK_WebAccess"></a>Windows PowerShell Web 访问
-Windows PowerShell® Web 访问是一项 Windows Server 2012 功能，它允许用户在基于 Web 的控制台中运行 Windows PowerShell 命令和脚本。 使用基于 Web 的控制台的设备不需要安装 Windows PowerShell、远程管理软件或浏览器插件。 只需要正确配置的 Windows PowerShell Web 访问网关以及支持 JavaScript® 和接受 Cookie 的客户端设备浏览器。
+Windows PowerShell® Web 访问是一项 Windows Server 2012 功能，使用户可以在基于 Web 的控制台中运行 Windows PowerShell 命令和脚本。 使用基于 Web 的控制台的设备不需要安装 Windows PowerShell、远程管理软件或浏览器插件。 只需要正确配置的 Windows PowerShell Web 访问网关以及支持 JavaScript® 和接受 Cookie 的客户端设备浏览器。
 
 有关详细信息，请参阅[部署 Windows PowerShell Web 访问](http://go.microsoft.com/fwlink/p/?LinkID=221050)。
 
@@ -549,7 +549,7 @@ Windows PowerShell® Web 访问是一项 Windows Server 2012 功能，它允许�
 Windows PowerShell 是针对公共语言运行时 4.0 而构建的。 Cmdlet、脚本和工作流作者可以在 Windows PowerShell 中使用新的 Microsoft .NET Framework 4 类，其功能包括应用程序兼容性和部署、Managed Extensibility Framework、并行计算、网络、Windows Communication Foundation 和 Windows Workflow Foundation。
 
 ### <a name="BKMK_WinPE"></a>对 Windows 预安装环境的支持
-Windows PowerShell 3.0 是 Windows 8 的 Windows 预安装环境 (Windows PE) 4.0 中的可选组件。 Windows PE 是用于启动没有操作系统的计算机并使其为 Windows 安装做好准备的最小操作系统。 Windows PE 可用于对硬盘驱动器进行分区和格式设置、将磁盘映像复制到计算机，以及从网络共享启动 Windows 安装程序。 可以在 Windows PE 上使用 Windows PowerShell 3.0 来管理部署、诊断和恢复方案。
+Windows PowerShell 3.0 是 Windows 8 的 Windows 预安装环境 (Windows PE) 4.0 中的可选组件。 Windows PE 是一个微型操作系统，用于启动没有操作系统的计算机并使其为 Windows 安装做好准备。 Windows PE 可用于对硬盘驱动器进行分区和格式设置、将磁盘映像复制到计算机，以及从网络共享启动 Windows 安装程序。 可以在 Windows PE 上使用 Windows PowerShell 3.0 来管理部署、诊断和恢复方案。
 
 ### <a name="BKMK_Disconnected"></a>断开连接的会话
 从 Windows PowerShell 3.0 开始，你使用 New-PSSession cmdlet 创建的用户托管的永久会话（“Pssession”）将保存在远程计算机上。 它们将不再依赖于创建它们的会话。

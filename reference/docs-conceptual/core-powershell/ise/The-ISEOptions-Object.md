@@ -1,114 +1,22 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "ISEOptions 对象"
 ms.assetid: 75e2a76f-f3d1-490b-ad5d-e3829946aabb
-ms.openlocfilehash: 56bdd5999b46b6e29e762c2d9a2060cebe3a1299
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: a43628a216b0757e1bf7738439975ed1b081b9ec
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="the-iseoptions-object"></a>ISEOptions 对象
   **ISEOptions** 对象代表 Windows PowerShell ISE 的各种设置。 它是 **Microsoft.PowerShell.Host.ISE.ISEOptions** 类的实例。
 
  **ISEOptions** 对象提供以下方法和属性。
 
- **方法**
-
--   [RestoreDefaultConsoleTokenColors()](#rdctc)
-
--   [RestoreDefaults()](#rd)
-
--   [RestoreDefaultTokenColors()](#rdtc)
-
--   [RestoreDefaultXmlTokenColors()](#rdxtc)
-
- **属性**
-
--   [AutoSaveMinuteInterval](#asmi)
-
--   [CommandPaneBackgroundColor](#cpbc)
-
--   [CommandPaneUp](#cpu)
-
--   [ConsolePaneBackgroundColor](#conpbc)
-
--   [ConsolePaneForegroundColor](#conpfc)
-
--   [ConsolePaneTextBackgroundColor](#conptbc)
-
--   [ConsoleTokenColors](#contc)
-
--   [DebugBackgroundColor](#dbc)
-
--   [DebugForegroundColor](#dfc)
-
--   [DefaultOptions](#do)
-
--   [ErrorBackgroundColor](#ebc)
-
--   [ErrorForegroundColor](#efc)
-
--   [FontName](#fn)
-
--   [FontSize](#fs)
-
--   [IntellisenseTimeoutInSeconds](#itis)
-
--   [MruCount](#mc)
-
--   [OutputPaneBackgroundColor](#opbc)
-
--   [OutputPaneTextForegroundColor](#optfc)
-
--   [OutputPaneTextBackgroundColor](#optbc)
-
--   [ScriptPaneBackgroundColor](#spbc)
-
--   [ScriptPaneForegroundColor](#spfc)
-
--   [SelectedScriptPaneState](#ssps)
-
--   [ShowDefaultSnippets](#sds)
-
--   [ShowIntellisenseInConsolePane](#siicp)
-
--   [ShowIntellisenseInScriptPane](#siisp)
-
--   [ShowLineNumbers](#sln)
-
--   [ShowOutlining](#so)
-
--   [ShowToolBar](#stb)
-
--   [ShowWarningBeforeSavingOnRun](#swbsor)
-
--   [ShowWarningForDuplicateFiles](#swfdf)
-
--   [TokenColors](#tc)
-
--   [UseEnterToSelectInConsolePaneIntellisense](#uetsicpi)
-
--   [UseEnterToSelectInScriptPaneIntellisense](#uetsispi)
-
--   [UseLocalHelp](#ulh)
-
--   [VerboseBackgroundColor](#vbc)
-
--   [VerboseForegroundColor](#vfc)
-
--   [WarningBackgroundColor](#wbc)
-
--   [WarningForegroundColor](#wfc)
-
--   [XmlTokenColors](#xtc)
-
--   [缩放](#z)
-
 ## <a name="methods"></a>方法
 
-###  <a name="rdctc"></a> RestoreDefaultConsoleTokenColors\(\)
+###  <a name="restoredefaultconsoletokencolors"></a>RestoreDefaultConsoleTokenColors\(\)
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
  还原“控制台”窗格中的标记颜色的默认值。
@@ -119,7 +27,7 @@ $psISE.Options.ConsoleTokenColors["Command"] = "red"
 $psISE.Options.RestoreDefaultConsoleTokenColors()
 ```
 
-###  <a name="rd"></a> RestoreDefaults\(\)
+###  <a name="restoredefaults"></a>RestoreDefaults\(\)
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
  还原“控制台”窗格中的所有选项设置的默认值。 此外，它还重置提供标准复选框以防止再次显示消息的各种警告消息的行为。
@@ -130,7 +38,7 @@ $psISE.Options.ConsolePaneBackgroundColor = "orange"
 $psISE.Options.RestoreDefaults()
 ```
 
-###  <a name="rdtc"></a> RestoreDefaultTokenColors\(\)
+### <a name="restoredefaulttokencolors"></a>RestoreDefaultTokenColors\(\)
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
  还原“脚本”窗格中的标记颜色的默认值。
@@ -141,10 +49,10 @@ $psISE.Options.TokenColors["Comment"]="red"
 $psISE.Options.RestoreDefaultTokenColors()
 ```
 
-###  <a name="rdxtc"></a> RestoreDefaultXmlTokenColors\(\)
+### <a name="restoredefaultxmltokencolors"></a>RestoreDefaultXmlTokenColors\(\)
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
- 还原 Windows PowerShell ISE 中显示的 XML 元素的标记颜色的默认值。 另请参阅 [XmlTokenColors](#xtc)。
+ 还原 Windows PowerShell ISE 中显示的 XML 元素的标记颜色的默认值。 另请参阅 [XmlTokenColors]()。
 
 ```
 # Changes the color of the comments in XML data to red and then restores it to its default value.
@@ -154,7 +62,7 @@ $psISE.Options.RestoreDefaultXmlTokenColors()
 
 ## <a name="properties"></a>“属性”
 
-###  <a name="asmi"></a> AutoSaveMinuteInterval
+### <a name="autosaveminuteinterval"></a>AutoSaveMinuteInterval
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
  通过 Windows PowerShell ISE 指定文件自动保存操作之间的分钟数。 默认值为 2 分钟。 该值是一个整数。
@@ -164,8 +72,8 @@ $psISE.Options.RestoreDefaultXmlTokenColors()
 $psISE.Options.AutoSaveMinuteInterval = 3
 ```
 
-###  <a name="cpbc"></a> CommandPaneBackgroundColor
-  此功能存在于 Windows PowerShell ISE 2.0 中，但已在更高版本的 ISE 中删除或重命名。  对于更高版本，请参阅 [ConsolePaneBackgroundColor](#conpbc)。
+### <a name="commandpanebackgroundcolor"></a>CommandPaneBackgroundColor
+  此功能存在于 Windows PowerShell ISE 2.0 中，但已在更高版本的 ISE 中删除或重命名。  对于更高版本，请参阅 [ConsolePaneBackgroundColor]()。
 
  指定“命令”窗格的背景色。 它是 **System.Windows.Media.Color** 类的实例。
 
@@ -174,7 +82,7 @@ $psISE.Options.AutoSaveMinuteInterval = 3
 $psISE.Options.CommandPaneBackgroundColor = "orange"
 ```
 
-###  <a name="cpu"></a> CommandPaneUp
+### <a name="commandpaneup"></a>CommandPaneUp
   此功能存在于 Windows PowerShell ISE 2.0 中，但已在更高版本的 ISE 中删除或重命名。
 
  指定“命令”窗格是否位于“输出”窗格上方。
@@ -185,7 +93,7 @@ $psISE.Options.CommandPaneUp  = $true
 
 ```
 
-###  <a name="conpbc"></a> ConsolePaneBackgroundColor
+### <a name="consolepanebackgroundcolor"></a>CommandPaneBackgroundColor
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
  指定“控制台”窗格的背景色。 它是 **System.Windows.Media.Color** 类的实例。
@@ -195,7 +103,7 @@ $psISE.Options.CommandPaneUp  = $true
 $psISE.Options.ConsolePaneBackgroundColor = "red"
 ```
 
-###  <a name="conpfc"></a> ConsolePaneForegroundColor
+### <a name="consolepaneforegroundcolor"></a>ConsolePaneForegroundColor
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
  指定“控制台”窗格中文本的前景色。
@@ -206,7 +114,7 @@ $psISE.Options.ConsolePaneForegroundColor  = "yellow"
 
 ```
 
-###  <a name="conptbc"></a> ConsolePaneTextBackgroundColor
+### <a name="consolepanetextbackgroundcolor"></a>ConsolePaneTextBackgroundColor
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
  指定“控制台”窗格中文本的背景色。
@@ -216,10 +124,10 @@ $psISE.Options.ConsolePaneForegroundColor  = "yellow"
 $psISE.Options.ConsolePaneTextBackgroundColor = "pink"
 ```
 
-###  <a name="contc"></a> ConsoleTokenColors
+### <a name="consoletokencolors"></a>ConsoleTokenColors
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
- 指定 Windows PowerShell ISE“控制台”窗格中 IntelliSense 标记的颜色。 此属性是一个包含标记类型的名称/值对和“控制台”窗格颜色的字典对象。 若要更改“脚本”窗格中 IntelliSense 标记的颜色，请参阅 [TokenColors](#tc)。 若要将颜色重置为默认值，请参阅 [RestoreDefaultConsoleTokenColors()](#rdctc)。 可以针对以下项设置标记颜色：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。
+ 指定 Windows PowerShell ISE“控制台”窗格中 IntelliSense 标记的颜色。 此属性是一个包含标记类型的名称/值对和“控制台”窗格颜色的字典对象。 若要更改“脚本”窗格中 IntelliSense 标记的颜色，请参阅 [TokenColors]。 若要将颜色重置为默认值，请参阅 [RestoreDefaultConsoleTokenColors()]()。 可以针对以下项设置标记颜色：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。
 
 ```
 # Sets the color of commands to green.
@@ -229,7 +137,7 @@ $psISE.Options.ConsoleTokenColors["Keyword"] = "magenta"
 
 ```
 
-###  <a name="dbc"></a> DebugBackgroundColor
+### <a name="debugbackgroundcolor"></a>DebugBackgroundColor
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
  指定“控制台”窗格中显示的调试文本的背景色。 它是 **System.Windows.Media.Color** 类的实例。
@@ -239,7 +147,7 @@ $psISE.Options.ConsoleTokenColors["Keyword"] = "magenta"
 $psISE.Options.DebugBackgroundColor ='#0000FF'
 ```
 
-###  <a name="dfc"></a> DebugForegroundColor
+### <a name="debugforegroundcolor"></a>DebugForegroundColor
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
  指定“控制台”窗格中显示的调试文本的前景色。 它是 **System.Windows.Media.Color** 类的实例。
@@ -249,7 +157,7 @@ $psISE.Options.DebugBackgroundColor ='#0000FF'
 $psISE.Options.DebugForegroundColor ="yellow"
 ```
 
-###  <a name="do"></a> DefaultOptions
+### <a name="defaultoptions"></a>DefaultOptions
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
  指定使用重置方法时要使用的默认值的属性集合。
@@ -296,7 +204,7 @@ IntellisenseTimeoutInSeconds              : 3
 
 ```
 
-###  <a name="ebc"></a> ErrorBackgroundColor
+### <a name="errorbackgroundcolor"></a>ErrorBackgroundColor
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
  指定“控制台”窗格中显示的错误文本的背景色。 它是 **System.Windows.Media.Color** 类的实例。
@@ -306,7 +214,7 @@ IntellisenseTimeoutInSeconds              : 3
 $psISE.Options.ErrorBackgroundColor="black"
 ```
 
-###  <a name="efc"></a> ErrorForegroundColor
+### <a name="errorforegroundcolor"></a>ErrorForegroundColor
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
  指定“控制台”窗格中显示的错误文本的前景色。 它是 **System.Windows.Media.Color** 类的实例。
@@ -316,7 +224,7 @@ $psISE.Options.ErrorBackgroundColor="black"
 $psISE.Options.ErrorForegroundColor ="green"
 ```
 
-###  <a name="fn"></a> FontName
+### <a name="fontname"></a>FontName
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
  指定“脚本”窗格和“控制台”窗格中当前使用的字体名称。
@@ -326,7 +234,7 @@ $psISE.Options.ErrorForegroundColor ="green"
 $psISE.Options.FontName = "courier new"
 ```
 
-###  <a name="fs"></a> FontSize
+### <a name="fontsize"></a>FontSize
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
  以整数形式指定字体大小。 在“脚本”窗格、“命令”窗格以及“输出”窗格中使用。 值的有效范围是 8 至 32。
@@ -337,7 +245,7 @@ $psISE.Options.FontSize = 20
 
 ```
 
-###  <a name="itis"></a> IntellisenseTimeoutInSeconds
+### <a name="intellisensetimeoutinseconds"></a>IntellisenseTimeoutInSeconds
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
  指定 IntelliSense 用来尝试解决当前所键入文本的秒数。 该秒数之后，IntelliSense 将会超时，并使你能够继续键入。 默认值是 3 秒。 该值是一个整数。
@@ -347,7 +255,7 @@ $psISE.Options.FontSize = 20
 $psISE.Options.IntellisenseTimeoutInSeconds = 5
 ```
 
-###  <a name="mc"></a> MruCount
+### <a name="mrucount"></a>MruCount
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
  指定 Windows PowerShell ISE 跟踪并在**“文件打开”**菜单底部显示的最近打开的文件数。 默认值为 10。 该值是一个整数。
@@ -357,8 +265,8 @@ $psISE.Options.IntellisenseTimeoutInSeconds = 5
 $psISE.Options.MruCount = 5
 ```
 
-###  <a name="opbc"></a> OutputPaneBackgroundColor
-  此功能存在于 Windows PowerShell ISE 2.0 中，但已在更高版本的 ISE 中删除或重命名。  对于更高版本，请参阅 [ConsolePaneBackgroundColor](#conpbc)。
+### <a name="outputpanebackgroundcolor"></a>OutputPaneBackgroundColor
+  此功能存在于 Windows PowerShell ISE 2.0 中，但已在更高版本的 ISE 中删除或重命名。  对于更高版本，请参阅 [ConsolePaneBackgroundColor]()。
 
  读/写属性，可获取或设置“输出”窗格本身的背景色。 它是 **System.Windows.Media.Color** 类的实例。
 
@@ -368,8 +276,8 @@ $psISE.Options.OutputPaneForegroundColor = "gold"
 
 ```
 
-###  <a name="optfc"></a> OutputPaneTextForegroundColor
-  此功能存在于 Windows PowerShell ISE 2.0 中，但已在更高版本的 ISE 中删除或重命名。  对于更高版本，请参阅 [ConsolePaneForegroundColor](#conpfc)。
+### <a name="outputpanetextforegroundcolor"></a>OutputPaneTextForegroundColor
+  此功能存在于 Windows PowerShell ISE 2.0 中，但已在更高版本的 ISE 中删除或重命名。  对于更高版本，请参阅 [ConsolePaneForegroundColor]()。
 
  读/写属性，可更改 Windows PowerShell ISE 2.0 中“输出”窗格中的文本前景色。
 
@@ -379,8 +287,8 @@ $psISE.Options.OutputPaneTextForegroundColor  = "blue"
 
 ```
 
-###  <a name="optbc"></a> OutputPaneTextBackgroundColor
-  此功能存在于 Windows PowerShell ISE 2.0 中，但已在更高版本的 ISE 中删除或重命名。  对于更高版本，请参阅 [ConsolePaneTextBackgroundColor](#conptbc)。
+### <a name="outputpanetextbackgroundcolor"></a>OutputPaneTextBackgroundColor
+  此功能存在于 Windows PowerShell ISE 2.0 中，但已在更高版本的 ISE 中删除或重命名。  对于更高版本，请参阅 [ConsolePaneTextBackgroundColor]()。
 
  读/写属性，可更改“输出”窗格中的文本背景色。
 
@@ -389,7 +297,7 @@ $psISE.Options.OutputPaneTextForegroundColor  = "blue"
 $psISE.Options.OutputPaneTextBackgroundColor = "pink"
 ```
 
-###  <a name="spbc"></a> ScriptPaneBackgroundColor
+### <a name="scriptpanebackgroundcolor"></a>ScriptPaneBackgroundColor
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
  读/写属性，可获取或设置文件的背景色。 它是 **System.Windows.Media.Color** 类的实例。
@@ -397,15 +305,15 @@ $psISE.Options.OutputPaneTextBackgroundColor = "pink"
 ```
 
 # Sets the color of the script pane background to yellow.
-$psISE.Options.ScriptPaneBackgroundColor = ”yellow”
+$psISE.Options.ScriptPaneBackgroundColor = â€yellowâ€
 
 ```
 
-###  <a name="spfc"></a> ScriptPaneForegroundColor
+### <a name="scriptpaneforegroundcolor"></a>ScriptPaneForegroundColor
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
  读/写属性，可获取或设置“脚本”窗格中非脚本文件的前景色。
-若要设置脚本文件的前景色，请使用 [TokenColors](The-ISEOptions-Object.md#tc) 属性。
+若要设置脚本文件的前景色，请使用 [TokenColors]()The-ISEOptions-Object.md 属性。
 
 ```
 # Sets the foreground to color of non-script files in the script pane to green.
@@ -413,7 +321,7 @@ $psISE.Options.ScriptPaneBackgroundColor = "green"
 
 ```
 
-###  <a name="ssps"></a> SelectedScriptPaneState
+### <a name="selectedscriptpanestate"></a>SelectedScriptPaneState
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
  读/写属性，可获取或设置“脚本”窗格在显示屏上的位置。 字符串可以是“最大化”、“顶部”或“右侧”。
@@ -428,7 +336,7 @@ $psISE.Options.SelectedScriptPaneState = "Maximized"
 
 ```
 
-###  <a name="sds"></a> ShowDefaultSnippets
+### <a name="showdefaultsnippets"></a>ShowDefaultSnippets
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
  指定代码段的 **CTRL + J** 列表是否包括Windows PowerShell 中包含的初学者套件。 当设置为 **$false** 时，只有用户定义的代码段显示在 **CTRL + J** 列表中。 默认值为 **$true**。
@@ -438,7 +346,7 @@ $psISE.Options.SelectedScriptPaneState = "Maximized"
 $psISe.Options.ShowDefaultSnippets = $false
 ```
 
-###  <a name="siicp"></a> ShowIntellisenseInConsolePane
+### <a name="showintellisenseinconsolepane"></a>ShowIntellisenseInConsolePane
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
  指定 IntelliSense 是否在“控制台”窗格中提供语法、参数和值建议。 默认值为 **$true**。
@@ -448,7 +356,7 @@ $psISe.Options.ShowDefaultSnippets = $false
 $psISe.Options.ShowIntellisenseInConsolePane = $false
 ```
 
-###  <a name="siisp"></a> ShowIntellisenseInScriptPane
+### <a name="showintellisenseinscriptpane"></a>ShowIntellisenseInScriptPane
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
  指定 IntelliSense 是否在“脚本”窗格中提供语法、参数和值建议。 默认值为 **$true**。
@@ -458,7 +366,7 @@ $psISe.Options.ShowIntellisenseInConsolePane = $false
 $psISe.Options.ShowIntellisenseInScriptPane = $false
 ```
 
-###  <a name="sln"></a> ShowLineNumbers
+### <a name="showlinenumbers"></a>ShowLineNumbers
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
  指定“脚本”窗格是否在左边空白处显示行号。 默认值为 **$true**。
@@ -468,7 +376,7 @@ $psISe.Options.ShowIntellisenseInScriptPane = $false
 $psISe.Options.ShowLineNumbers = $false
 ```
 
-###  <a name="so"></a> ShowOutlining
+### <a name="showoutlining"></a>ShowOutlining
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
  指定“脚本”窗格中是否在左边空白处代码段的旁边显示可展开和折叠的括号。 如果显示，你可以单击文本块旁边的减号 \(-\) 图标将其折叠起来，或单击加号 \(+\) 图标展开文本块。 默认值为 **$true**。
@@ -478,7 +386,7 @@ $psISe.Options.ShowLineNumbers = $false
 $psISe.Options.ShowOutlining = $false
 ```
 
-###  <a name="stb"></a> ShowToolBar
+### <a name="showtoolbar"></a>ShowToolBar
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
  指定 ISE 工具栏是否显示在 Windows PowerShell ISE 窗口的顶部。 默认值为 **$true**。
@@ -488,7 +396,7 @@ $psISe.Options.ShowOutlining = $false
 $psISe.Options.ShowToolBar = $true
 ```
 
-###  <a name="swbsor"></a> ShowWarningBeforeSavingOnRun
+### <a name="showwarningbeforesavingonrun"></a>ShowWarningBeforeSavingOnRun
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
  指定在运行脚本之前自动保存该脚本是否显示警告消息。 默认值为 **$true**。
@@ -500,10 +408,10 @@ $psISE.Options.ShowWarningBeforeSavingOnRun=$true
 
 ```
 
-###  <a name="swfdf"></a> ShowWarningForDuplicateFiles
+### <a name="showwarningforduplicatefiles"></a>ShowWarningForDuplicateFiles
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
- 指定在不同 PowerShell 选项卡中打开同一个文件时是否显示警告消息。 如果设置为 **$true**，在多个选项卡打开同一个文件将显示此消息：“已在另一个 Windows PowerShell 选项卡中打开此文件的副本。 对此文件所做的更改将影响所有打开的副本。” 默认值为 **$true**。
+ 指定在不同 PowerShell 选项卡中打开同一个文件时是否显示警告消息。 如果设置为 **$true**，在多个选项卡打开同一个文件将显示此消息：“已在另一个 Windows PowerShell 选项卡中打开此文件的副本。对此文件所做的更改将影响所有打开的副本。” 默认值为 **$true**。
 
 ```
 # Enable the warning message when a file is
@@ -512,10 +420,10 @@ $psISE.Options.ShowWarningForDuplicateFiles = $true
 
 ```
 
-###  <a name="tc"></a> TokenColors
+### <a name="tokencolors"></a>TokenColors
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
- 指定 Windows PowerShell ISE“脚本”窗格中 IntelliSense 标记的颜色。 此属性是一个包含标记类型的名称/值对和“脚本”窗格颜色的字典对象。 若要更改“脚本”窗格中 IntelliSense 标记的颜色，请参阅 [ConsoleTokenColors](#contc)。 若要将颜色重置为默认值，请参阅 [RestoreDefaultTokenColors()](#rdtc)。 可以针对以下项设置标记颜色：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。
+ 指定 Windows PowerShell ISE“脚本”窗格中 IntelliSense 标记的颜色。 此属性是一个包含标记类型的名称/值对和“脚本”窗格颜色的字典对象。 若要更改“控制台”窗格中 IntelliSense 标记的颜色，请参阅 [ConsoleTokenColors]。 若要将颜色重置为默认值，请参阅 [RestoreDefaultTokenColors()]()。 可以针对以下项设置标记颜色：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。
 
 ```
 # Sets the color of commands to green.
@@ -525,7 +433,7 @@ $psISE.Options.TokenColors["Keyword"] = "magenta"
 
 ```
 
-###  <a name="uetsicpi"></a> UseEnterToSelectInConsolePaneIntellisense
+### <a name="useentertoselectinconsolepaneintellisense"></a>UseEnterToSelectInConsolePaneIntellisense
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
  指定是否可以使用 Enter 键选择 IntelliSense 在“控制台”窗格中提供的选项。 默认值为 **$true**。
@@ -536,7 +444,7 @@ $psISE.Options.UseEnterToSelectInConsolePaneIntellisense=$false
 
 ```
 
-###  <a name="uetsispi"></a> UseEnterToSelectInScriptPaneIntellisense
+### <a name="useentertoselectinscriptpaneintellisense"></a>UseEnterToSelectInScriptPaneIntellisense
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
  指定是否可以使用 Enter 键选择 IntelliSense 在“脚本”窗格中提供的选项。 默认值为 **$true**。
@@ -547,7 +455,7 @@ $psISE.Options.UseEnterToSelectInConsolePaneIntellisense=$true
 
 ```
 
-###  <a name="ulh"></a> UseLocalHelp
+### <a name="uselocalhelp"></a>UseLocalHelp
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
  指定将光标置于关键字中并按 F1 时是显示本地安装的帮助还是联机 TechNet 库帮助。 如果设置为 **$true**，那么弹出窗口会显示本地安装的帮助中的内容。 可以通过运行 `Update-Help` 命令安装帮助文件。 如果设置为 **$false**，则你的浏览器会在 TechNet 库中打开一个页面。
@@ -560,7 +468,7 @@ $psISE.Options.UseLocalHelp=$true
 
 ```
 
-###  <a name="vbc"></a> VerboseBackgroundColor
+### <a name="verbosebackgroundcolor"></a>VerboseBackgroundColor
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
  指定“控制台”窗格中显示的详细文本的背景色。 它是 **System.Windows.Media.Color** 对象。
@@ -570,17 +478,17 @@ $psISE.Options.UseLocalHelp=$true
 $psISE.Options.VerboseBackgroundColor ='#0000FF'
 ```
 
-###  <a name="vfc"></a> VerboseForegroundColor
+### <a name="verboseforegroundcolor"></a>VerboseForegroundColor
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
  指定“控制台”窗格中显示的详细文本的前景色。 它是 **System.Windows.Media.Color** 对象。
 
 ```
 # Changes the foreground color for verbose text to yellow.
-$psISE.Options.VerboseForegroundColor =”yellow”
+$psISE.Options.VerboseForegroundColor =â€yellowâ€
 ```
 
-###  <a name="wbc"></a> WarningBackgroundColor
+### <a name="warningbackgroundcolor"></a>WarningBackgroundColor
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
  指定“控制台”窗格中显示的警告文本的背景色。 它是 **System.Windows.Media.Color** 对象。
@@ -590,20 +498,20 @@ $psISE.Options.VerboseForegroundColor =”yellow”
 $psISE.Options.WarningBackgroundColor ='#0000FF'
 ```
 
-###  <a name="wfc"></a> WarningForegroundColor
+### <a name="warningforegroundcolor"></a>WarningForegroundColor
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
  指定“输出”窗格中显示的警告文本的前景色。 它是 **System.Windows.Media.Color** 对象。
 
 ```
 # Changes the foreground color for warning text to yellow.
-$psISE.Options.WarningForegroundColor =”yellow”
+$psISE.Options.WarningForegroundColor =â€yellowâ€
 ```
 
-###  <a name="xtc"></a> XmlTokenColors
+### <a name="xmltokencolors"></a>XmlTokenColors
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
- 指定包含标记类型的名称/值对以及 Windows PowerShell ISE 中显示的 XML 内容颜色的字典对象。 可以针对以下项设置标记颜色：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。 另请参阅 [RestoreDefaultXmlTokenColors()](#rdxtc)。
+ 指定包含标记类型的名称/值对以及 Windows PowerShell ISE 中显示的 XML 内容颜色的字典对象。 可以针对以下项设置标记颜色：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。 另请参阅 [RestoreDefaultXmlTokenColors()]()。
 
 ```
 # Sets the color of XML element names to green.
@@ -613,7 +521,7 @@ $psISE.Options.XmlTokenColors["Comment"] = "magenta"
 
 ```
 
-###  <a name="z"></a>缩放
+### <a name="zoom"></a>缩放
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
  在“控制台”和“脚本”窗格中指定文本的相对大小。 默认值为 100。 较小的值会导致 Windows PowerShell ISE 中的文本显示得较小，数字越大会导致文本显示得越大。 该值为一个整数，范围为 20 到 400。

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "查看对象结构 (Get Member)"
 ms.assetid: a1819ed2-2ef3-453a-b2b0-f3589c550481
-ms.openlocfilehash: eaa6cc44ecab04c76b90418115f388f6ff30e437
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 618f34bca7bfb76ce5d48ada642a687e279c8aad
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="viewing-object-structure-get-member"></a>查看对象结构 (Get-Member)
 由于对象在 Windows PowerShell 中扮演了如此重要的角色，因此存在几个用于处理任意对象类型的本机命令。 最重要的一个是 **Get-Member** 命令。
@@ -37,7 +37,7 @@ add_Disposed                   Method         System.Void add_Disposed(Event...
 ...
 ```
 
-我们可以通过筛选想要查看的元素，让这个冗长的信息列表更易于使用。 **Get-Member** 命令仅允许你列出属性成员。 属性的形式有数种。 如果我们将 **Get-MemberMemberType** 参数设置为值**属性**，则 cmdlet 将显示任何类型的属性。 生成的列表仍会很长，但较之前更易于管理：
+我们可以通过筛选想要查看的元素，让这个冗长的信息列表更易于使用。 **Get-Member** 命令仅允许你列出属性成员。 属性的形式有数种。 如果将 Get-Member MemberType 参数设置为值属性，则 cmdlet 将显示任何类型的属性。 生成的列表仍会很长，但较之前更易于管理：
 
 ```
 PS> Get-Process | Get-Member -MemberType Properties
@@ -65,7 +65,7 @@ Path                       ScriptProperty System.Object Path {get=$this.Main...
 一个进程有 60 多个属性。 对于任何已知的对象，Windows PowerShell 通常仅显示少许属性，这是因为显示所有属性会导致产生无法管理的信息量。
 
 > [!NOTE]
-> Windows PowerShell 通过使用存储在以 .format.ps1xml 结尾的 XML 文件中的信息来决定某种类型的对象的显示方式。 进程对象也即 .NET System.Diagnostics.Process 对象的格式设置数据存储在 PowerShellCore.format.ps1xml 中。
+> Windows PowerShell 通过使用存储在以 .format.ps1xml 结尾的 XML 文件中的信息来决定某种类型的对象的显示方式。 进程对象（即 .NET System.Diagnostics.Process 对象）的格式设置数据存储在 DotNetTypes.format.ps1xml 中。
 
 如果需要查看 Windows PowerShell 默认显示的属性之外的属性，则需要自己对输出数据进行格式化。 这可以通过使用格式 cmdlet 实现。
 

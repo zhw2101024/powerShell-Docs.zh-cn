@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "PowerShell 50 ISE 中的新增功能"
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: e772c31ae407e73a96364ffedf98057760037836
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: d816d717752579c79477daa35e7c0b15e944a6b7
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Windows PowerShell ISE 中的新增功能
-本主题介绍已在 Windows PowerShell (R) 集成脚本环境 (ISE) 的各版本中引入的新增功能和更新功能。
+本主题介绍已在 Windows PowerShell® 集成脚本环境 (ISE) 的各版本中引入的新增功能和更新功能。
 
 ## <a name="overview"></a>功能描述
 Windows PowerShell ISE 是一款主机应用程序，让你可以在直观的图形环境中编写、运行和测试脚本与模块。 其主要功能，如语法着色、Tab 自动补全、可视调试、Unicode 遵从和上下文相关帮助，将为你带来丰富的脚本编写体验。
@@ -22,16 +22,16 @@ Windows PowerShell ISE 是一款主机应用程序，让你可以在直观的图
 
 |特性/功能|Windows PowerShell ISE 4.0|Windows PowerShell ISE 3.0|Windows PowerShell ISE 2.0|
 |--------------------------|-----------------------------------------------|-----------------------------------------------|-----------------------------------------------|
-|**[IntelliSense](#BKMK_Intellisense)**|X|X||
-|**[代码段](#bkmk_snippets)**|X|X||
-|**[外接程序工具](#BKMK_AddOnTools)**|X|X||
-|**[重启管理器和自动保存](#BKMK_RestartMgr)**|X|X||
-|**[控制台窗格](#BKMK_ConsolePane)**|X|X||
-|**[最近使用的列表](#BKMK_MRU)**|X|X||
-|**[命令行开关](#BKMK_CommandLine)**|X|X||
-|**[新的编辑器功能](#BKMK_NewEditorFeatures)**|X|X||
-|**[新的帮助查看器窗口](#BKMK_NewHelpViewer)**|X|X||
-|**[Show-Command cmdlet](#BKMK_ShowCommand)**|X|X||
+|**[IntelliSense]()**|X|X||
+|**[代码段]()**|X|X||
+|**[外接程序工具]()**|X|X||
+|**[重启管理器和自动保存]()**|X|X||
+|**[控制台窗格]()**|X|X||
+|**[最近使用的列表]()**|X|X||
+|**[命令行开关]()**|X|X||
+|**[新的编辑器功能]()**|X|X||
+|**[新的帮助查看器窗口]()**|X|X||
+|**[Show-Command cmdlet]()**|X|X||
 
 ### <a name="BKMK_Intellisense"></a>IntelliSense
 **在 ISE 3.0 中添加**
@@ -175,7 +175,7 @@ Windows PowerShell ISE 2.0 不识别这些命令行开关。
 
 -   **分析错误显示** 分析错误用红色下划线指示。 当你将鼠标悬停在某个指示的错误上时，工具提示文本会显示在代码中发现的问题。
 
--   **缩放** 可以通过使用缩放滑块（位于 Windows PowerShell ISE 窗口右下角），或在控制台窗格中输入命令 **$psise.options.Zoom** 来设置控制台内容的缩放百分比。
+-   **缩放** 可通过使用缩放滑块（位于 Windows PowerShell ISE 窗口右下角），或在控制台窗格中输入命令 $psise.options.Zoom 来设置控制台内容的缩放百分比。
 
 -   **富文本复制和粘贴** 在 Windows PowerShell ISE 中将内容复制到剪贴板时，会保留原选定内容的字体、大小和颜色信息。
 
