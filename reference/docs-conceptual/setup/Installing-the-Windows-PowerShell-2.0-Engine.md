@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "安装 Windows PowerShell 2.0 引擎"
 ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
-ms.openlocfilehash: 37a300d2f0517a819f520c44f0eb92e168444890
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: ff6c2b52b8948472ace3ee35cd4c6aa2dbf46c25
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a>安装 Windows PowerShell 2.0 引擎
 本主题介绍了如何安装 Windows PowerShell 2.0 引擎。
@@ -25,46 +25,46 @@ Windows PowerShell 2.0 引擎是 Windows Server 2012 R2、Windows 8.1、Windows�
 
 #### <a name="to-turn-on-net-framework-35"></a>打开 .NET Framework 3.5
 
-1.  在“开始”屏幕上，键入“Windows 功能”。
+1. 在“开始”屏幕上，键入“Windows 功能”。
 
-2.  在“应用”工具栏上，单击“设置”，然后单击“打开或关闭 Windows 功能”。
+2. 在“应用”工具栏上，单击“设置”，然后单击“打开或关闭 Windows 功能”。
 
-3.  在“Windows 功能”框中，单击“.NET Framework 3.5（包括.NET 2.0 和 3.0）”以将其选中。
+3. 在“Windows 功能”框中，单击“.NET Framework 3.5（包括.NET 2.0 和 3.0）”以将其选中。
 
     当你选择“.NET Framework 3.5（包括.NET 2.0 和 3.0）”后，将填充该框，以指示仅选中功能的一部分。 但是，这对于 Windows PowerShell 2.0 引擎已经足够。
 
 #### <a name="to-turn-the-windows-powershell-20-engine-on-and-off"></a>打开或关闭 Windows PowerShell 2.0 引擎
 
-1.  在“开始”屏幕上，键入“Windows 功能”。
+1. 在“开始”屏幕上，键入“Windows 功能”。
 
-2.  在“应用”工具栏上，单击“设置”，然后单击“打开或关闭 Windows 功能”。
+2. 在“应用”工具栏上，单击“设置”，然后单击“打开或关闭 Windows 功能”。
 
-3.  在“Windows 功能”框中，展开“Windows PowerShell 2.0”节点，然后单击“Windows PowerShell 2.0 引擎”框来选择或清除它。
+3. 在“Windows 功能”框中，展开“Windows PowerShell 2.0”节点，然后单击“Windows PowerShell 2.0 引擎”框来选择或清除它。
 
 ## <a name="on-windows-server-2012-r2-and-windows-server-2012"></a>在 Windows Server 2012 R2 和 Windows Server 2012 上
 使用以下过程来添加 Windows PowerShell 2.0 引擎和 Microsoft .NET Framework 3.5 功能。 Windows PowerShell 2.0 引擎至少需要 Microsoft .NET Framework 2.0.50727。 Microsoft .NET Framework 3.5 满足此要求。
 
 #### <a name="to-add-the-net-framework-35-feature"></a>添加 .NET Framework 3.5 功能
 
-1.  在“服务器管理器”中，从“管理”菜单上，选择“添加角色和功能”。
+1. 在“服务器管理器”中，从“管理”菜单上，选择“添加角色和功能”。
 
     或者在“**服务器管理器**”中，单击“**所有服务器**”，右键单击某个服务器名称，然后选择“**添加角色和功能**”。
 
-2.  在“**安装类型**”页上，选择“**基于角色或基于功能的安装**”。
+2. 在“**安装类型**”页上，选择“**基于角色或基于功能的安装**”。
 
-3.  在“功能”页上，展开“.NET 3.5 Framework 功能”节点，然后选择“.NET Framework 3.5（包括 .NET 2.0 和 3.0）”。
+3. 在“功能”页上，展开“.NET 3.5 Framework 功能”节点，然后选择“.NET Framework 3.5（包括 .NET 2.0 和 3.0）”。
 
     Windows PowerShell 2.0 引擎不需要该节点下的其他选项。
 
 #### <a name="to-add-the-windows-powershell-20-engine-feature"></a>添加 Windows PowerShell 2.0 引擎功能
 
--   在“服务器管理器”中，从“管理”菜单上，选择“添加角色和功能”。
+- 在“服务器管理器”中，从“管理”菜单上，选择“添加角色和功能”。
 
     或者“**服务器管理器**”，单击“**所有服务器**”，右键单击服务器名称，然后选择“**添加角色和功能**”。
 
--   在“**安装类型**”页上，选择“**基于角色或基于功能的安装**”。
+- 在“**安装类型**”页上，选择“**基于角色或基于功能的安装**”。
 
--   在**功能**页上，展开**Windows PowerShell (已安装)**节点，然后选择**Windows PowerShell 2.0 引擎**。
+- 在**功能**页上，展开**Windows PowerShell (已安装)**节点，然后选择**Windows PowerShell 2.0 引擎**。
 
 有关启动 Windows PowerShell 2.0 引擎的信息，请参阅[启动 Windows PowerShell 2.0 引擎](Starting-the-Windows-PowerShell-2.0-Engine.md)。
 

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "启动 Windows PowerShell"
 ms.assetid: 59b649a2-c90c-4cf4-bf95-a740c59148e7
-ms.openlocfilehash: ec7ecc3214d727d55b41282fc5a5cb2e77cb84ba
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: a8dcf04078228624023387cea3ab8e81ee6eb0a4
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="starting-windows-powershell"></a>启动 Windows PowerShell
 PowerShell 是一个脚本引擎 dll，嵌入到多个主机中。  启动的最常见主机是交互式命令行 PowerShell.exe 和交互式脚本环境 PowerShell_ISE.exe。  
@@ -18,11 +18,11 @@ PowerShell 是一个脚本引擎 dll，嵌入到多个主机中。  启动的最
 
 包括以下主题：
 
--   [在早期版本的 Windows 上启动 Windows PowerShell](Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md)
+- [在早期版本的 Windows 上启动 Windows PowerShell](Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md)
 
--   [启动 32 位版本的 Windows PowerShell](Starting-the-32-Bit-Version-of-Windows-PowerShell.md)
+- [启动 32 位版本的 Windows PowerShell](Starting-the-32-Bit-Version-of-Windows-PowerShell.md)
 
--   [启动 Windows PowerShell 2.0 引擎](Starting-the-Windows-PowerShell-2.0-Engine.md)
+- [启动 Windows PowerShell 2.0 引擎](Starting-the-Windows-PowerShell-2.0-Engine.md)
 
 ## <a name="see-also"></a>另请参阅
 - [Windows PowerShell 系统要求](Windows-PowerShell-System-Requirements.md)

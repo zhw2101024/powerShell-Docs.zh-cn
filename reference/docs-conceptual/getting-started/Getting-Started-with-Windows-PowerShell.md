@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Windows PowerShell 入门"
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
-ms.openlocfilehash: 8dbdd5d7b2dcb80e5562ff0f0f211b2baf5357cf
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 93a4d4a6bc0ebef6b6af7f7f8af59dec865bcfa3
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="getting-started-with-windows-powershell"></a>Windows PowerShell 入门
 Windows PowerShell 是专门为系统管理员设计的 Windows 命令行 Shell。 Windows PowerShell 包括可以单独或组合使用的交互提示和脚本编写环境。
@@ -22,11 +22,11 @@ Windows PowerShell 引入了 cmdlet（读作“command-let”）的概念，它�
 
 本主题内容：
 
--   [Windows PowerShell 系统要求](../setup/Windows-PowerShell-System-Requirements.md)
+- [Windows PowerShell 系统要求](../setup/Windows-PowerShell-System-Requirements.md)
 
--   [安装 Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
+- [安装 Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
 
--   [启动 Windows PowerShell](../setup/Starting-Windows-PowerShell.md)
+- [启动 Windows PowerShell](../setup/Starting-Windows-PowerShell.md)
 
--   [准备好使用 Windows PowerShell](Getting-Ready-to-Use-Windows-PowerShell.md)
+- [准备好使用 Windows PowerShell](Getting-Ready-to-Use-Windows-PowerShell.md)
 

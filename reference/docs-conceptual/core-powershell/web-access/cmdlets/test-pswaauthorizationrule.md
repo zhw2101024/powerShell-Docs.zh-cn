@@ -8,26 +8,26 @@ keywords: powershell,cmdlet
 ms.date: 2016-12-12
 title: "测试 pswaauthorizationrule"
 ms.technology: powershell
-ms.openlocfilehash: 1b480b68c7ce2064f42281d8c5d76156a39e0222
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 900547301c815ba6fe3a9507f975503fec864e4e
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
-#  <a name="test-pswaauthorizationrule"></a>Test-PswaAuthorizationRule
+# <a name="test-pswaauthorizationrule"></a>Test-PswaAuthorizationRule
 
-##  <a name="synopsis"></a>简述
+## <a name="synopsis"></a>简述
 
 验证是否为特定用户、计算机或终结点设置了规则。
 
 ## <a name="syntax"></a>语法
 
-###  <a name="computername"></a>ComputerName
+### <a name="computername"></a>ComputerName
 ```
 Test-PswaAuthorizationRule [-UserName] <String> [-ComputerName] <String> [[-ConfigurationName] <String> ] [-Credential <PSCredential> ] [-Rule <PswaAuthorizationRule[]> ] [ <CommonParameters>]
 ```
 
-###  <a name="connectionuri"></a>ConnectionUri
+### <a name="connectionuri"></a>ConnectionUri
 ```
 Test-PswaAuthorizationRule [-UserName] <String> [-ConnectionUri] <Uri> [[-ConfigurationName] <String> ] [-Credential <PSCredential> ] [-Rule <PswaAuthorizationRule[]> ] [ <CommonParameters>]
 ```
@@ -130,13 +130,13 @@ Test-PswaAuthorizationRule 用于验证是否为特定用户、计算机或终�
 
 ## <a name="inputs"></a>输入
 
-###  <a name="microsoftmanagementpowershellwebaccesspswaauthorizationrule"></a>Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule\[\]
+### <a name="microsoftmanagementpowershellwebaccesspswaauthorizationrule"></a>Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule\[\]
 
 此 cmdlet 接受一组 PswaAuthorizationRule 对象作为输入。
 
-##  <a name="outputs"></a>输出
+## <a name="outputs"></a>输出
 
-###  <a name="microsoftmanagementpowershellwebaccesspswaauthorizationrule"></a>Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule\[\]
+### <a name="microsoftmanagementpowershellwebaccesspswaauthorizationrule"></a>Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule\[\]
 
 此 cmdlet 生成一组 PswaAuthorizationRule 对象作为输出。
 
@@ -158,9 +158,9 @@ Test-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserName contoso\mhan
 Test-PswaAuthorizationRule -UserName contoso\mhanson -ComputerName *
 ```
 
-##  <a name="related-topics"></a>相关主题
+## <a name="related-topics"></a>相关主题
 
--  [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
--  [Get-PswaAuthorizationRule](get-pswaauthorizationrule.md)
--  [Install-PswaWebApplication](install-pswawebapplication.md)
--  [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)
+- [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
+- [Get-PswaAuthorizationRule](get-pswaauthorizationrule.md)
+- [Install-PswaWebApplication](install-pswawebapplication.md)
+- [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)

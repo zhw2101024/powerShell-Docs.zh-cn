@@ -1,20 +1,20 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "PowerShell.exe 命令行帮助"
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: 4a14223dd024d967810a90dec10e416e4e35d6a2
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: b2236decb3295ee5b543f72f083e516c91fa4b5f
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="powershellexe-command-line-help"></a>PowerShell.exe 命令行帮助
 启动 Windows PowerShell 会话。 可以使用 PowerShell.exe 从另一工具（如 Cmd.exe）的命令行启动 Windows PowerShell 会话，或在 Windows PowerShell 命令行中使用它来启动新会话。 使用参数自定义会话。
 
 ## <a name="syntax"></a>语法
 
-```
+```syntax
 PowerShell[.exe]
        [-EncodedCommand <Base64EncodedCommand>]
        [-ExecutionPolicy <ExecutionPolicy>]

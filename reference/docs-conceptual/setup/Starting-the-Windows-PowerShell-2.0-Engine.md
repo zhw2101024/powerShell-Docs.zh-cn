@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "启动 Windows PowerShell 2.0 引擎"
 ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
-ms.openlocfilehash: 15f578e2fbf0b10afa307cde0a32123a8026a282
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 2e5c13cafdfd9fbe479fcad8ac81725cbd7ac3d9
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="starting-the-windows-powershell-20-engine"></a>启动 Windows PowerShell 2.0 引擎
 本部分介绍如何在包含 Windows PowerShell 2.0 引擎 的 Windows 8.1、Windows Server 2012 R2、Windows 8 和 Windows Server 2012 上，以及安装了 Windows PowerShell 2.0、Windows PowerShell 3.0 和 Windows PowerShell 4.0 的其他系统上启动 Windows PowerShell 2.0 引擎。
@@ -39,7 +39,7 @@ PowerShell.exe -Version 2
 
 #### <a name="to-start-a-remote-windows-powershell-20-session"></a>启动远程 Windows PowerShell 2.0 会话
 
-1.  若要创建需要 Windows PowerShell 2.0 引擎的会话配置，请使用 [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) cmdlet 的 **PSVersion** 参数，其值为“2.0”。 在计算机上的连接的“服务器端”或接收端运行此命令。
+1. 若要创建需要 Windows PowerShell 2.0 引擎的会话配置，请使用 [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) cmdlet 的 **PSVersion** 参数，其值为“2.0”。 在计算机上的连接的“服务器端”或接收端运行此命令。
 
     下面的示例命令在 Server01 计算机上创建 PS2 会话配置。 若要运行此命令，请使用**“以管理员身份运行”**选项启动 Windows PowerShell 4.0 或 Windows PowerShell 3.0。
 
@@ -47,7 +47,7 @@ PowerShell.exe -Version 2
     Register-PSSessionConfiguration -Name PS2 -PSVersion 2.0
     ```
 
-2.  若要在使用 PS2 会话配置的 Server01 计算机上创建会话，请使用创建远程会话的 cmdlet（例如 [New-PSSession](https://technet.microsoft.com/en-us/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) cmdlet）的 **ConfigurationName** 参数。
+2. 若要在使用 PS2 会话配置的 Server01 计算机上创建会话，请使用创建远程会话的 cmdlet（例如 [New-PSSession](https://technet.microsoft.com/en-us/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) cmdlet）的 **ConfigurationName** 参数。
 
     使用会话配置的会话启动时，Windows PowerShell 2.0 引擎会自动加载到该会话中。
 

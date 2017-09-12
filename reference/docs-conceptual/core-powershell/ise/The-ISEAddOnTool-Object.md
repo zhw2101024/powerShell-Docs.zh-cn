@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "ISEAddOnTool 对象"
 ms.assetid: ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3
-ms.openlocfilehash: 15f0cdd1425b9f87edeb0404fc385275e4a9d1d8
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: fe2a0f59c937ecd727a628f4baf9d44506d13c72
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="the-iseaddontool-object"></a>ISEAddOnTool 对象
   **ISEAddonTool** 对象表示已安装的可提供 Windows PowerShell ISE 附加功能的附加设备工具。 例如，“**命令**”工具，你可以通过单击“**查看**”，然后单击“**显示命令附加设备**”进行显示。 然后，你可以通过操作各种可用 **ISEAddOnTool** 对象来访问此工具。
@@ -21,7 +21,7 @@ ms.lasthandoff: 08/03/2017
 
 ## <a name="properties"></a>“属性”
 
-###  <a name="Control"></a>控件
+### <a name="control"></a>控件
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
  **Control** 属性提供对命令附加设备工具的大量详细信息的读取访问权限。
@@ -137,10 +137,10 @@ Dispatcher                  : System.Windows.Threading.Dispatcher
 
 ```
 
-###  <a name="IsVisible"></a>IsVisible
+### <a name="isvisible"></a>IsVisible
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
- 布尔值属性，指示附加设备工具当前是否在其已分配的窗格中可见。 如果可见，则可以将 **IsVisible** 属性设置为 **$false** 以隐藏工具，或将 **IsVisible** 属性设置为 **$true** 以使附加设备工具在其 PowerShell 选项卡上可见。 请注意，隐藏附加设备工具后，将无法再通过 **CurrentVisibleHorizontalTool** 或 **CurrentVisibleVerticalTool** 对象对其进行访问，因此无法使用该对象上的此属性使其可见。
+ 布尔值属性，指示附加设备工具当前是否在其已分配的窗格中可见。 如果可见，则可以将 **IsVisible** 属性设置为 **$false** 以隐藏工具，或将 **IsVisible** 属性设置为 **$true** 以使附加设备工具在其 PowerShell 选项卡上可见。请注意，隐藏附加设备工具后，将无法再通过 **CurrentVisibleHorizontalTool** 或 **CurrentVisibleVerticalTool** 对象对其进行访问，因此无法使用该对象上的此属性使其可见。
 
 ```
 # Hide the current tool in the vertical tool pane
@@ -150,7 +150,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools[0].IsVisible=$true
 
 ```
 
-###  <a name="name"></a> 名称
+### <a name="name"></a>名称
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
  只读属性，可获取附加设备工具的名称。

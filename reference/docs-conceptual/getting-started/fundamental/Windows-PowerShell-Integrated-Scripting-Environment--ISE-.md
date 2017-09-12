@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Windows PowerShell 集成脚本环境 (ISE)"
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: 93b3322ae5634d3611f3c2743e7460e266dc7ab8
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: e5c4e6ef002d6d6ede014a3147d1fed15f6d76d8
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell 集成脚本环境 (ISE)
 Windows PowerShell 集成脚本环境 (ISE) 是 Windows PowerShell 引擎和语言的两个主机之一。 借助它你可以采取 Windows PowerShell 控制台中不可用的方式来编写、运行并测试脚本。 ISE 添加了语法着色、Tab 自动补全、IntelliSense、可视调试和上下文相关帮助。
@@ -34,21 +34,21 @@ ISE 使你能够在控制台窗格中运行命令，但它也支持可用于同�
 
 **新编辑器功能**使创建并阅读代码更加容易：
 
--   **XML 语法着色**。 ISE 编辑器现在以对 Windows PowerShell 代码语法进行着色的相同方法对 XML 语法进行着色。
+- **XML 语法着色**。 ISE 编辑器现在以对 Windows PowerShell 代码语法进行着色的相同方法对 XML 语法进行着色。
 
--   **大括号匹配** Windows PowerShell ISE 突出显示匹配的大括号，帮助你确保与左大括号匹配的右大括号的数量正确。 使用 CTRL- \[ 以查找与光标所在的左大括号匹配的右大括号。
+- **大括号匹配** Windows PowerShell ISE 突出显示匹配的大括号，帮助你确保与左大括号匹配的右大括号的数量正确。 使用 CTRL- \[ 以查找与光标所在的左大括号匹配的右大括号。
 
--   **大纲视图**。 可以通过单击左边距中的加号和减号，折叠或展开代码部分。 这样会更容易地找到你在较长脚本中要查找的代码。
+- **大纲视图**。 可以通过单击左边距中的加号和减号，折叠或展开代码部分。 这样会更容易地找到你在较长脚本中要查找的代码。
 
--   **拖放式文字编辑**。 你可以选择文本块，并将其拖动到其他位置来移动它。 如果在拖动所选文本时按住 Ctrl 键，这样就成了复制而不是移动。
+- **拖放式文字编辑**。 你可以选择文本块，并将其拖动到其他位置来移动它。 如果在拖动所选文本时按住 Ctrl 键，这样就成了复制而不是移动。
 
--   **分析错误显示**。 Windows PowerShell 在你输入时会检查你的脚本。 如果它检测错误，会在有问题代码下面显示红色波浪线。 当你将鼠标悬停在指示的错误上时，工具提示会为你显示发现的问题。
+- **分析错误显示**。 Windows PowerShell 在你输入时会检查你的脚本。 如果它检测错误，会在有问题代码下面显示红色波浪线。 当你将鼠标悬停在指示的错误上时，工具提示会为你显示发现的问题。
 
--   **缩放**。 你可以通过使用 ISE 窗口右下角的滑块放大你的文本便于更轻松地阅读或是缩小文本以查看更大的图片。
+- **缩放**。 你可以通过使用 ISE 窗口右下角的滑块放大你的文本便于更轻松地阅读或是缩小文本以查看更大的图片。
 
--   **丰富的文本复制和粘贴**。 当你从 ISE 中复制到剪贴板时，所选文本的字体、大小和颜色信息都会被复制。
+- **丰富的文本复制和粘贴**。 当你从 ISE 中复制到剪贴板时，所选文本的字体、大小和颜色信息都会被复制。
 
--   **块选择**。 你可以通过在用鼠标选定脚本窗格中文本的同时按住 ALT 键，或通过按 **Alt+Shift+箭头**键来选定块状的文本块。
+- **块选择**。 你可以通过在用鼠标选定脚本窗格中文本的同时按住 ALT 键，或通过按 **Alt+Shift+箭头**键来选定块状的文本块。
 
 ### <a name="added-in-powershell-20-windows-server-2008-r2-windows-7"></a>PowerShell 2.0 中的新增功能（Windows Server 2008 R2、Windows 7）
 ISE 随 PowerShell v2.0 一同引入。

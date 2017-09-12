@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "使用文件、文件夹和注册表项"
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: 2bae8d6931c84bee4aa30a43742acd052b82d079
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 22a2390686659033bfd8b02a151b3397cfd46a22
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>使用文件、文件夹和注册表项
 Windows PowerShell 使用名词 **Item** 来引用在 Windows PowerShell 驱动器上找到的项。 处理 Windows PowerShell FileSystem 提供程序时，**Item** 可能是文件、文件夹或 Windows PowerShell 驱动器。 列出并使用这些项是大部分管理设置中的关键基本任务，因此我们想要详细讨论这些任务。
@@ -77,11 +77,11 @@ Get-ChildItem -Path C:\Windows -Force
 
 由于通配符匹配由 Windows PowerShell 引擎处理，因此接受通配符的所有 cmdlet 使用相同的表示法，并具有相同的匹配行为。 Windows PowerShell 通配符表示法包括：
 
--   星号 (\*) 匹配零个或多个出现的任何字符。
+- 星号 (\*) 匹配零个或多个出现的任何字符。
 
--   问号 (?) 完全匹配一个字符。
+- 问号 (?) 完全匹配一个字符。
 
--   左括号 (\[) 字符和右括号 (]) 字符括起一组要匹配的字符。
+- 左括号 (\[) 字符和右括号 (]) 字符括起一组要匹配的字符。
 
 下面是一些通配符规则工作原理的示例。
 

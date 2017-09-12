@@ -8,21 +8,21 @@ keywords: powershell,cmdlet
 ms.date: 2016-12-12
 title: "删除 pswaauthorizationrule"
 ms.technology: powershell
-ms.openlocfilehash: d316cb98efc730ed3e99f6a5dac2b969e3437129
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: a8304b68a446de0be98aa732304c71302fb8389e
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
-#  <a name="remove-pswaauthorizationrule"></a>Remove-PswaAuthorizationRule
+# <a name="remove-pswaauthorizationrule"></a>Remove-PswaAuthorizationRule
 
-##  <a name="synopsis"></a>简述
+## <a name="synopsis"></a>简述
 
 从 Windows PowerShell® Web 访问删除指定授权规则。
 
 ## <a name="syntax"></a>语法
 
-###  <a name="id"></a>ID
+### <a name="id"></a>ID
 ```
 Remove-PswaAuthorizationRule [-Id] <Int32[]> [-Force] [-Confirm] [-WhatIf] [ <CommonParameters>]
 ```
@@ -108,15 +108,15 @@ Remove-PswaAuthorizationRule [-Rule] <PswaAuthorizationRule[]> [-Force] [-Confir
 
 ## <a name="inputs"></a>输入
 
-###  <a name="int"></a>int\[\]
+### <a name="int"></a>int\[\]
 
 此 cmdlet 接受整数数组或接受 PswaAuthorizationRule 对象数组。
 
-###  <a name="pswaauthorizationrule"></a>PswaAuthorizationRule\[\]
+### <a name="pswaauthorizationrule"></a>PswaAuthorizationRule\[\]
 
 此 cmdlet 接受整数数组或接受 PswaAuthorizationRule 对象数组。
 
-##  <a name="outputs"></a>输出
+## <a name="outputs"></a>输出
 
 此 cmdlet 不会生成任何输出。
 
@@ -138,9 +138,9 @@ Remove-PswaAuthorizationRule –Id 2
 Get-PswaAuthorizationRule | Remove-PswaAuthorizationRule -Confirm
 ```
 
-##  <a name="related-topics"></a>相关主题
+## <a name="related-topics"></a>相关主题
 
--  [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
--  [Get-PswaAuthorizationRule](get-pswaauthorizationrule.md)
--  [Install-PswaWebApplication](install-pswawebapplication.md)
--  [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)
+- [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
+- [Get-PswaAuthorizationRule](get-pswaauthorizationrule.md)
+- [Install-PswaWebApplication](install-pswawebapplication.md)
+- [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)

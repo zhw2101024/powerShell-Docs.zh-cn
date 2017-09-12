@@ -1,20 +1,20 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "ISEMenuItem 对象"
 ms.assetid: a16660bd-0aee-46fd-ac17-3f022165d089
-ms.openlocfilehash: 33de866d706ec2b0894c5bfe49e07fee142b95c0
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 5561955040e56110a6af0619c286548f5812fb47
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="the-isemenuitem-object"></a>ISEMenuItem 对象
   **ISEMenuItem** 对象是 Microsoft.PowerShell.Host.ISE.ISEMenuItem 类的实例。 “**加载项**”菜单上的所有对象都是 **Microsoft.PowerShell.Host.ISE.ISEMenuItem** 类的实例。
 
 ## <a name="properties"></a>“属性”
 
-###  <a name="DisplayName"></a> DisplayName
+### <a name="displayname"></a>DisplayName
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取菜单项的显示名称。
@@ -27,7 +27,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName
 
 ```
 
-###  <a name="Action"></a> 操作
+### <a name="action"></a>操作
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取脚本块。 单击菜单项时，它将调用该操作。
@@ -42,7 +42,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action.Invoke()
 ```
 
-###  <a name="Shortcut"></a> 快捷方式
+### <a name="shortcut"></a>快捷方式
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取菜单项的 Windows 输入键盘快捷方式。
@@ -54,7 +54,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Al
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ```
 
-###  <a name="Submenus"></a> 子菜单
+### <a name="submenus"></a>子菜单
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取菜单项的[子菜单列表](The-ISEMenuItemCollection-Object.md)。
@@ -87,7 +87,5 @@ $parentAdded.SubMenus.Add("_Dir",{dir},"Alt+D")
 ## <a name="see-also"></a>另请参阅
 - [ISEMenuItemCollection 对象](The-ISEMenuItemCollection-Object.md) 
 - [Windows PowerShell ISE 脚本对象模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
-- [Windows PowerShell ISE 对象模型参考](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [Windows PowerShell ISE 对象模型参考](Windows-PowerShell-ISE-Object-Model-Reference.md)
 - [ISE 对象模型层次结构](The-ISE-Object-Model-Hierarchy.md)
-
-  

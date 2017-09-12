@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "管理 Windows PowerShell 驱动器"
 ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-ms.openlocfilehash: 92fa70785bcaeac2bd75a5ada91f3adff4fa10eb
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: e2908246bb584291f04b67dc8635caec93d3b72e
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="managing-windows-powershell-drives"></a>管理 Windows PowerShell 驱动器
 *Windows PowerShell 驱动器*是一个数据存储位置，你可以像访问 Windows PowerShell 中的文件系统驱动器那样访问它。 Windows PowerShell 提供程序将为你创建一些驱动器，例如文件系统驱动器（包括 C: 和 D:）、注册表驱动器（HKCU: 和 HKLM:）和证书驱动器 (Cert:)，你也可以创建自己的 Windows PowerShell 驱动器。 这些驱动器非常有用，但它们仅在 Windows PowerShell 内可用。 你无法通过使用其他 Windows 工具（如文件资源管理器或 Cmd.exe）访问它们。
@@ -86,11 +86,11 @@ ring>] [-OutBuffer <Int32>] [-WhatIf] [-Confirm]
 
 若要创建一个新的 Windows PowerShell 驱动器，你必须提供三个参数：
 
--   驱动器的名称（可使用任何有效的 Windows PowerShell 名称）
+- 驱动器的名称（可使用任何有效的 Windows PowerShell 名称）
 
--   PSProvider（将“FileSystem”用于文件系统位置，将“Registry”用于注册表位置）
+- PSProvider（将“FileSystem”用于文件系统位置，将“Registry”用于注册表位置）
 
--   根，即指向新驱动器的根目录的路径
+- 根，即指向新驱动器的根目录的路径
 
 例如，可以创建一个名为“Office”的驱动器，它将映射到包含你的计算机上的 Microsoft Office 应用程序的文件夹，例如 **C:\\Program Files\\Microsoft Office\\OFFICE11**。 若要创建该驱动器，请键入以下命令：
 

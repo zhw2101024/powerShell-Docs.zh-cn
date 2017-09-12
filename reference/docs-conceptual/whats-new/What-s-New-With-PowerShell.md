@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "PowerShell 的新增功能"
-ms.openlocfilehash: 146b6cbfb5903874d27872711369d517ade67a93
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: cfac61258fed00e369256e7061e440cccf43055f
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="what39s-new-with-powershell"></a>PowerShell 的新增功能
 Windows PowerShell® 5.0 包括了重要的新功能，这些功能可扩展其用途、提高其可用性，并使你能够更轻松、全面地控制和管理基于 Windows 的环境。  所需状态配置、安全性、性能、远程处理以及语言增强方面有重大改进。
@@ -17,13 +17,13 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 
 ## <a name="in-this-topic"></a>本主题内容
 
--   [PowerShell 5.0 中的新功能](What-s-New-in-Windows-PowerShell-50.md)
+- [PowerShell 5.0 中的新功能](What-s-New-in-Windows-PowerShell-50.md)
 
--   [PowerShell ISE 5.0 中的新功能](What-s-New-in-the-PowerShell-50-ISE.md)
+- [PowerShell ISE 5.0 中的新功能](What-s-New-in-the-PowerShell-50-ISE.md)
 
 <!--
--   New features in Windows PowerShell 4.0
+- New features in Windows PowerShell 4.0
 
--   New features in Windows PowerShell 3.0
+- New features in Windows PowerShell 3.0
 -->
 

@@ -8,13 +8,13 @@ keywords: powershell,cmdlet
 ms.date: 2016-12-12
 title: "Web 访问 cmdlet"
 ms.technology: powershell
-ms.openlocfilehash: ac8717c2aa97d0482b4d88f1b57d621d7ff47535
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: daebe2fe2cbccaf8d3f41d265d23dc45d3bb99b6
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
-#  <a name="windows-powershell-web-access-cmdlets"></a>Windows PowerShell Web 访问 Cmdlet
+# <a name="windows-powershell-web-access-cmdlets"></a>Windows PowerShell Web 访问 Cmdlet
 
 本参考提供所有特定于 Windows PowerShell® Web 访问 cmdlet 的 cmdlet 说明和语法。 本参考按 cmdlet 开头动词的字母顺序列出了这些 cmdlet。
 
@@ -54,13 +54,13 @@ ms.lasthandoff: 08/31/2017
 
 有关更多详细信息，你可以运行以下任何 cmdlet：
 
--  `Get-Help `&lt;cmdlet 名称&gt;` -Detailed`
--  `Get-Help `&lt;cmdlet 名称&gt;` -Examples`
--  `Get-Help `&lt;cmdlet 名称&gt;` -Full`
+- `Get-Help `&lt;cmdlet 名称&gt;` -Detailed`
+- `Get-Help `&lt;cmdlet 名称&gt;` -Examples`
+- `Get-Help `&lt;cmdlet 名称&gt;` -Full`
 
 ### <a name="more-information"></a>详细信息
 
 有关 PowerShell Web 访问的详细信息，请参阅以下内容：
 
--   [安装和使用 Windows PowerShell Web 访问](../install-and-use-windows-powershell-web-access.md)
+- [安装和使用 Windows PowerShell Web 访问](../install-and-use-windows-powershell-web-access.md)
 

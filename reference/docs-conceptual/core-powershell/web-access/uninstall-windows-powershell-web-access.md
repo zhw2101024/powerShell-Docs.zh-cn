@@ -2,13 +2,13 @@
 ms.date: 2017-08-23
 keywords: powershell,cmdlet
 title: "卸载 Windows PowerShell Web 访问"
-ms.openlocfilehash: 6b75eadb7264d7478fb3c9bc2b2ff355772ef4c2
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 7c71a245be244c1883598cdcddbf35e43c0fc7b0
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
-#  <a name="uninstall-windows-powershell-web-access"></a>卸载 Windows PowerShell Web 访问
+# <a name="uninstall-windows-powershell-web-access"></a>卸载 Windows PowerShell Web 访问
 
 更新时间：2013年 6 月 24日
 
@@ -55,7 +55,7 @@ ms.lasthandoff: 08/31/2017
 
 ### <a name="step-2-uninstall-windows-powershell-web-access-using-cmdlets"></a>步骤 2：使用 cmdlet 卸载 Windows PowerShell Web 访问
 
-1.  使用提升的用户权限执行以下操作之一打开 Windows PowerShell 会话。 如果会话已经打开，则继续执行下一步。
+1. 使用提升的用户权限执行以下操作之一打开 Windows PowerShell 会话。 如果会话已经打开，则继续执行下一步。
 
     -   在 Windows 桌面上，右键单击任务栏上的**Windows PowerShell**，然后单击**以管理员身份运行**。
 

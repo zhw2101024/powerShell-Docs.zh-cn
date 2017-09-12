@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "运行远程命令"
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: 755c3c4ac93219c1d0f75394d1c900e8b5fea4be
-ms.sourcegitcommit: ced46469e064736eeb1f5608abbc792ec69bdc92
+ms.openlocfilehash: c3bf002e7a3daa5afc8219dd846145808eef3c9b
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/08/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="running-remote-commands"></a>运行远程命令
 你可以使用单个 Windows PowerShell 命令在一台或数百台计算机上运行命令。 Windows PowerShell 通过使用各种技术（包括 WMI、RPC 和 WS-Management）支持远程计算。
@@ -17,25 +17,25 @@ ms.lasthandoff: 08/08/2017
 
 这些 cmdlet 包括：
 
--   [Restart-Computer](https://technet.microsoft.com/en-us/library/dd315301.aspx)
+- [Restart-Computer](https://technet.microsoft.com/en-us/library/dd315301.aspx)
 
--   [Test-Connection](https://technet.microsoft.com/en-us/library/dd315259.aspx)
+- [Test-Connection](https://technet.microsoft.com/en-us/library/dd315259.aspx)
 
--   [Clear-EventLog](https://technet.microsoft.com/en-us/library/dd347552.aspx)
+- [Clear-EventLog](https://technet.microsoft.com/en-us/library/dd347552.aspx)
 
--   [Get-EventLog](https://technet.microsoft.com/en-us/library/dd315250.aspx)
+- [Get-EventLog](https://technet.microsoft.com/en-us/library/dd315250.aspx)
 
--   [Get-HotFix](https://technet.microsoft.com/en-us/library/e1ef636f-5170-4675-b564-199d9ef6f101)
+- [Get-HotFix](https://technet.microsoft.com/en-us/library/e1ef636f-5170-4675-b564-199d9ef6f101)
 
  -   [Get-Process](https://technet.microsoft.com/en-us/library/dd347630.aspx)
 
--   [Get-Service](https://technet.microsoft.com/en-us/library/dd347591.aspx)
+- [Get-Service](https://technet.microsoft.com/en-us/library/dd347591.aspx)
 
--   [Set-Service](https://technet.microsoft.com/en-us/library/dd315324.aspx)
+- [Set-Service](https://technet.microsoft.com/en-us/library/dd315324.aspx)
 
--   [Get-WinEvent](https://technet.microsoft.com/en-us/library/dd315358.aspx)
+- [Get-WinEvent](https://technet.microsoft.com/en-us/library/dd315358.aspx)
 
--   [Get-WmiObject](https://technet.microsoft.com/en-us/library/dd315295.aspx)
+- [Get-WmiObject](https://technet.microsoft.com/en-us/library/dd315295.aspx)
 
 通常情况下，支持无需特殊配置即可进行远程处理的 cmdlet 具有 ComputerName 参数，但不具有 Session 参数。 若要在会话中查找这些 cmdlet，请键入：
 

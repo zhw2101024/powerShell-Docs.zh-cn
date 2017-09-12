@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "如何在 Windows PowerShell ISE 中使用配置文件"
 ms.assetid: 0219626a-6da5-4acc-b630-d058e8b29cc6
-ms.openlocfilehash: 6b16291b7025928a307380cbae75fcdbdb51a73d
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: f959aeb91eecc8056c91c56162ea9bff53537be9
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="how-to-use-profiles-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中使用配置文件
 本主题说明如何使用 Windows PowerShell® 集成脚本环境 (ISE) 中的配置文件。 建议在执行本部分中的任务之前，先查看 [about_Profiles [v4]](https://technet.microsoft.com/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054(v=wps.630))，或在控制台窗格中键入 `Get-Help about_Profiles`，然后按 **Enter**。
@@ -22,9 +22,9 @@ Windows PowerShell ISE 支持适用于当前用户和所有用户的配置文件
 
 你使用的配置文件取决于你如何使用 Windows PowerShell 和 Windows PowerShell ISE。
 
--   如果仅使用 Windows PowerShell ISE 运行 Windows PowerShell，那么将你的所有项保存在特定于 ISE 的其中一个配置文件中，如用于 Windows PowerShell ISE 的 CurrentUserCurrentHost 配置文件或用于 Windows PowerShell ISE 的 AllUsersCurrentHost 配置文件。
+- 如果仅使用 Windows PowerShell ISE 运行 Windows PowerShell，那么将你的所有项保存在特定于 ISE 的其中一个配置文件中，如用于 Windows PowerShell ISE 的 CurrentUserCurrentHost 配置文件或用于 Windows PowerShell ISE 的 AllUsersCurrentHost 配置文件。
 
--   如果你使用多个主机程序运行 Windows PowerShell，那么将你的函数、别名、变量和命令保存在影响所有主机程序的配置文件中（如 CurrentUserAllHosts 或 AllUsersAllHosts 配置文件），并将特定于 ISE 的功能（如颜色和字体自定义）保存在用于 Windows PowerShell ISE 配置文件的 CurrentUserCurrentHost 配置文件或用于 Windows PowerShell ISE 的 AllUsersCurrentHost 配置文件中。
+- 如果你使用多个主机程序运行 Windows PowerShell，那么将你的函数、别名、变量和命令保存在影响所有主机程序的配置文件中（如 CurrentUserAllHosts 或 AllUsersAllHosts 配置文件），并将特定于 ISE 的功能（如颜色和字体自定义）保存在用于 Windows PowerShell ISE 配置文件的 CurrentUserCurrentHost 配置文件或用于 Windows PowerShell ISE 的 AllUsersCurrentHost 配置文件中。
 
 以下是可以在 Windows PowerShell ISE 中创建和使用的配置文件。 每个配置文件都保存到自己特定的路径。
 
@@ -66,15 +66,15 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
 
 ## <a name="to-edit-a-profile"></a>编辑配置文件
 
-1.  若要打开配置文件，请使用指定你想要编辑的配置文件的变量运行 psedit 命令。 例如，若要打开“当前用户，Windows PowerShell ISE”配置文件，键入：`psEdit $PROFILE`
+1. 若要打开配置文件，请使用指定你想要编辑的配置文件的变量运行 psedit 命令。 例如，若要打开“当前用户，Windows PowerShell ISE”配置文件，键入：`psEdit $PROFILE`
 
-2.  将某些项添加到你的配置文件。 以下是帮助你入门的一些示例：
+2. 将某些项添加到你的配置文件。 以下是帮助你入门的一些示例：
 
-    -   若要将控制台窗格的默认背景色更改为蓝色，请在配置文件中键入：`$psISE.Options.OutputPaneBackground = 'blue'`。 有关 $psISE 变量的详细信息，请参阅 [Windows PowerShell ISE 对象模型参考]()。
+    -   若要将控制台窗格的默认背景色更改为蓝色，请在配置文件中键入：`$psISE.Options.OutputPaneBackground = 'blue'`。 有关 $psISE 变量的详细信息，请参阅 [Windows PowerShell ISE 对象模型参考](The-ISE-Object-Model-Hierarchy.md)。
 
     -   若要将字体大小更改为 20，请在配置文件中键入：`$psISE.Options.FontSize =20`
 
-3.  若要保存你的配置文件，请在“文件”菜单上单击“保存”。 下次打开 Windows PowerShell ISE 时，会应用你的自定义项。
+3. 若要保存你的配置文件，请在“文件”菜单上单击“保存”。 下次打开 Windows PowerShell ISE 时，会应用你的自定义项。
 
 ## <a name="see-also"></a>另请参阅
 - [about_Profiles [v4]](https://technet.microsoft.com/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054(v=wps.630))

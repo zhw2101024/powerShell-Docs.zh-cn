@@ -2,12 +2,11 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "ISEEditor 对象"
-ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
-ms.openlocfilehash: e2ddb0de1089c832f130e1f5c7c8dcb199aca2fa
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 149eda44fea5b02324442970324e3010015e7ae5
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="the-iseeditor-object"></a>ISEEditor 对象
   **ISEEditor** 对象是 Microsoft.PowerShell.Host.ISE.ISEEditor 类的实例。 控制台窗格是 **ISEEditor** 对象。 每个 [ISEFile](The-ISEFile-Object.md) 对象都有一个关联的 **ISEEditor** 对象。 以下各节列出了 **ISEEditor** 对象的方法和属性。
@@ -63,7 +62,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ### <a name="gotomatch"></a>GoToMatch\(\)
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。 
 
- 如果编辑器对象的 **CanGoToMatch** 属性是 **$true**，当脱字号直接位于左括号、中括号或大括号 - \(、\[、{ - 或直接位于右括号、中括号或大括号 - \)、\]、}。  脱字号位于开始字符之前或结束字符之后。 如果 **CanGoToMatch** 属性是 **$false**，则此方法不执行任何操作。 请参阅 [CanGoToMatch]()。
+ 如果编辑器对象的 **CanGoToMatch** 属性是 **$true**，当脱字号直接位于左括号、中括号或大括号 - \(、\[、{ - 或直接位于右括号、中括号或大括号 - \)、\]、}。  脱字号位于开始字符之前或结束字符之后。 如果 **CanGoToMatch** 属性是 **$false**，则此方法不执行任何操作。
 
 ```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
@@ -76,7 +75,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **text** - String 要插入的文本。
 
- 请参阅本主题稍后介绍的[脚本示例]()。
+ 请参阅本主题稍后介绍的[脚本示例](#-scripting-example)。
 
 ### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Select\( startLine, startColumn, endLine, endColumn \)
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
@@ -91,7 +90,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **endColumn** - Integer 所选内容的结束行中的列。
 
- 请参阅本主题稍后介绍的[脚本示例]()。
+ 请参阅本主题稍后介绍的[脚本示例](#-scripting-example)。
 
 ### <a name="selectcaretline"></a>SelectCaretLine\(\)
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
@@ -131,7 +130,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 
 ## <a name="properties"></a>“属性”
 
-###  <a name="CanGoToMatch"></a> CanGoToMatch
+### <a name="cangotomatch"></a>CanGoToMatch
   在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。 
 
  只读布尔值属性，可指示将脱字号插入小括号、中括号还是大括号（即 \(\)、\[\]、{}）旁边。 如果脱字号直接位于开始字符之前或直接位于结束字符之后，则此属性值是 **$true**。 否则，是**$false**。
@@ -141,7 +140,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 $psISE.CurrentFile.Editor.CanGoToMatch
 ```
 
-###  <a name="CaretColumn"></a> CaretColumn
+### <a name="caretcolumn"></a>CaretColumn
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取对应于脱字号位置的列号。
@@ -151,7 +150,7 @@ $psISE.CurrentFile.Editor.CanGoToMatch
 $psISE.CurrentFile.Editor.CaretColumn
 ```
 
-###  <a name="CaretLine"></a> CaretLine
+### <a name="caretline"></a>CaretLine
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取包含脱字号的行号。
@@ -161,7 +160,7 @@ $psISE.CurrentFile.Editor.CaretColumn
 $psISE.CurrentFile.Editor.CaretLine
 ```
 
-###  <a name="CaretLineText"></a> CaretLineText
+### <a name="caretlinetext"></a>CaretLineText
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取包含脱字号的完整文本行。
@@ -171,7 +170,7 @@ $psISE.CurrentFile.Editor.CaretLine
 $psISE.CurrentFile.Editor.CaretLineText
 ```
 
-###  <a name="LineCount"></a> LineCount
+### <a name="linecount"></a>LineCount
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取编辑器中的行计数。
@@ -181,21 +180,21 @@ $psISE.CurrentFile.Editor.CaretLineText
 $psISE.CurrentFile.Editor.LineCount
 ```
 
-###  <a name="SelectedText"></a> SelectedText
+### <a name="selectedtext"></a>SelectedText
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  只读属性，可获取编辑器中的所选文本。
 
- 请参阅本主题稍后介绍的[脚本示例]()。
+ 请参阅本主题稍后介绍的[脚本示例](#-scripting-example)。
 
-###  <a name="Text"></a>文本
+### <a name="text"></a>文本
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  读写属性，可获取或设置编辑器中的文本。
 
- 请参阅本主题稍后介绍的[脚本示例]()。
+ 请参阅本主题稍后介绍的[脚本示例](#-scripting-example)。
 
-##  <a name="example"></a>脚本示例
+## <a name="scripting-example"></a>脚本示例
 
 ```powershell
 # This illustrates how you can use the length of a line to

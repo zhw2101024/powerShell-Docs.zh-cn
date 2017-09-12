@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "使用 Windows PowerShell 编写脚本"
 ms.assetid: c425d27a-bb41-4947-8d73-ba5480bc8ee0
-ms.openlocfilehash: ac276938c71fa1627a2c9d3346269b89950184d9
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 693d1bb9329dbb280453fc16738eda63c466e156
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="scripting-with-windows-powershell"></a>使用 Windows PowerShell 编写脚本
 
@@ -17,10 +17,10 @@ Windows PowerShell 命令（称为 *cmdlets*）使你可以从命令行管理计
 
 Windows PowerShell 包括以下功能：
 
--   用于执行常见系统管理任务（例如管理注册表、服务、进程和事件日志）和使用 Windows Management Instrumentation (WMI) 的 Cmdlet。
--   基于任务的脚本语言以及对现有脚本和命令行工具的支持。
--   一致的设计。 由于 cmdlet 和系统数据存储使用常见语法和命名约定，因此可以轻松地共享数据并将来自一个 cmdlet 的输出用作对另一个 cmdlet 的输入，而无需重新设置格式或执行操作。
--   简化的基于命令的操作系统导航，使用户可以通过使用用于导航文件系统的相同技术来导航注册表和其他数据存储。
--   强大的对象操作功能。 可直接执行对象操作或将这些对象发送到其他工具或数据库。
--   可扩展接口。 独立软件供应商和企业开发人员可以构建用于管理其软件的自定义工具和实用工具。
+- 用于执行常见系统管理任务（例如管理注册表、服务、进程和事件日志）和使用 Windows Management Instrumentation (WMI) 的 Cmdlet。
+- 基于任务的脚本语言以及对现有脚本和命令行工具的支持。
+- 一致的设计。 由于 cmdlet 和系统数据存储使用常见语法和命名约定，因此可以轻松地共享数据并将来自一个 cmdlet 的输出用作对另一个 cmdlet 的输入，而无需重新设置格式或执行操作。
+- 简化的基于命令的操作系统导航，使用户可以通过使用用于导航文件系统的相同技术来导航注册表和其他数据存储。
+- 强大的对象操作功能。 可直接执行对象操作或将这些对象发送到其他工具或数据库。
+- 可扩展接口。 独立软件供应商和企业开发人员可以构建用于管理其软件的自定义工具和实用工具。
 

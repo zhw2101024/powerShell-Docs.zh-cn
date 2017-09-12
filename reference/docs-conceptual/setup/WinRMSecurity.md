@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: WinRMSecurity
-ms.openlocfilehash: a6adf61517708661e31a7387df5141f3c4f2c020
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 65cf12466c9dc8fc8b77d79b0d63a6ae61e64d60
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell 远程处理安全注意事项
 
@@ -18,7 +18,7 @@ PowerShell 远程处理使用 [Windows 远程管理 (WinRM)](https://msdn.micros
 
 PowerShell 远程处理不同于使用 cmdlet 的 **ComputerName** 参数在远程计算机上运行它，后者使用远程过程调用 (RPC) 作为其基础协议。
 
-##  <a name="powershell-remoting-default-settings"></a>PowerShell 远程处理默认设置
+## <a name="powershell-remoting-default-settings"></a>PowerShell 远程处理默认设置
 
 PowerShell 远程处理（和 WinRM）侦听以下端口：
 

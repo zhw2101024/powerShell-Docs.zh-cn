@@ -8,26 +8,26 @@ keywords: powershell,cmdlet
 ms.date: 2016-12-12
 title: "获取 pswaauthorizationrule"
 ms.technology: powershell
-ms.openlocfilehash: 43997320ec7ab779b2061a0af88f97db0b7e93d6
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: eb9f42ab4d9cec111e03a096b2f00740e97ee1b7
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
-#  <a name="get-pswaauthorizationrule"></a>Get-PswaAuthorizationRule
+# <a name="get-pswaauthorizationrule"></a>Get-PswaAuthorizationRule
 
-##  <a name="synopsis"></a>简述
+## <a name="synopsis"></a>简述
 
 返回一组 Windows PowerShell® Web 访问的授权规则。
 
-##  <a name="syntax"></a>语法
+## <a name="syntax"></a>语法
 
-###  <a name="id"></a>ID
+### <a name="id"></a>ID
 ```
 Get-PswaAuthorizationRule [[-Id] <Int32[]> ] [ <CommonParameters>]
 ```
 
-###  <a name="name"></a>名称
+### <a name="name"></a>名称
 ```
 Get-PswaAuthorizationRule [-RuleName] <String[]> [ <CommonParameters>]
 ```
@@ -72,17 +72,17 @@ Get-PswaAuthorizationRule cmdlet 将返回一组 Windows PowerShell® Web 访问
 
 ## <a name="inputs"></a>输入
 
-###  <a name="int"></a>int\[\]
+### <a name="int"></a>int\[\]
 
 此 cmdlet 接受整数数组或字符串值数组作为输入。
 
-###  <a name="string"></a>String\[\]
+### <a name="string"></a>String\[\]
 
 此 cmdlet 接受整数数组或字符串值数组作为输入。
 
-##  <a name="outputs"></a>输出
+## <a name="outputs"></a>输出
 
-###  <a name="microsoftmanagementpowershellwebaccesspswaauthorizationrule"></a>Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule\[\]
+### <a name="microsoftmanagementpowershellwebaccesspswaauthorizationrule"></a>Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule\[\]
 
 此 cmdlet 将生成一个 PswaAuthorizationRule 对象作为输出。
 
@@ -114,9 +114,9 @@ Get-PswaAuthorizationRule cmdlet 将返回一组 Windows PowerShell® Web 访问
     PS C:\> "rule1",0 | Get-PswaAuthorizationRule
 ```
 
-##  <a name="related-topics"></a>相关主题
+## <a name="related-topics"></a>相关主题
 
--  [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
--  [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)
--  [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)
--  [Install-PswaWebApplication](install-pswawebapplication.md)
+- [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
+- [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)
+- [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)
+- [Install-PswaWebApplication](install-pswawebapplication.md)
