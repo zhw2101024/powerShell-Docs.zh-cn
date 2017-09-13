@@ -3,16 +3,15 @@ ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
 keywords: "wmf,powershell,安装程序"
-ms.openlocfilehash: 9556f0d9a12807cbfe38aaade6798088f051596d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 60055b6755a31397c49686ea9ee1a69ada3516de
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 09/08/2017
 ---
-<a id="cryptographic-message-syntax-cms-cmdlets" class="xliff"></a>
-# 加密消息语法 (CMS) cmdlet
+# <a name="cryptographic-message-syntax-cms-cmdlets"></a>加密消息语法 (CMS) cmdlet
 
-加密消息语法 cmdlet 对使用 IETF 标准格式加密保护消息的内容提供加密和解密支持，如 [RFC5652](http://tools.ietf.org/html/rfc5652).中所述。
+加密消息语法 cmdlet 对使用 IETF 标准格式加密保护消息的内容提供加密和解密支持，如 [RFC5652](https://tools.ietf.org/html/rfc5652).中所述。
 
 ```powershell
 Get-CmsMessage [-Content] <string>
@@ -29,7 +28,7 @@ Unprotect-CmsMessage [-LiteralPath] <string> [[-To] <CmsMessageRecipient[]>] [-I
 
 CMS 加密标准采用公钥加密系统，其中用来加密内容的密匙（*公匙*）和用来解密内容的密匙（*私匙*）是分离的。
 
-公匙可以广泛共享，它不是敏感数据。 如果用此公匙加密了任何内容，只有你的私匙可以解密它。 有关公钥加密的详细信息，请参阅：<http://en.wikipedia.org/wiki/Public-key_cryptography>。
+公匙可以广泛共享，它不是敏感数据。 如果用此公匙加密了任何内容，只有你的私匙可以解密它。 有关详细信息，请参阅 [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography)（公钥加密）。
 
 若要在 PowerShell 中进行识别，加密证书需要唯一的密匙用法标识符 (EKU) 将它们识别为数据加密证书（如“代码签名”标识符、“加密邮件”标识符）。
 

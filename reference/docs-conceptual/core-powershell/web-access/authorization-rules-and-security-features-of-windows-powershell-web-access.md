@@ -2,11 +2,11 @@
 ms.date: 2017-06-27
 keywords: powershell,cmdlet
 title: "Windows PowerShell Web 访问的授权规则和安全功能"
-ms.openlocfilehash: 4b076ca1ecdab293f3acadc466d39ba3e7a6444f
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 6b50fdc0f2854d8af6147432fed1a155d26f57e7
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 访问的授权规则和安全功能
 
@@ -14,7 +14,7 @@ ms.lasthandoff: 08/31/2017
 
 适用于：Windows Server 2012 R2、Windows Server 2012
 
-在 Windows Server® 2012 R2 和 Windows Server® 2012 中的 Windows PowerShell® Web 访问具有受限制的安全模型。
+在 Windows Server 2012 R2 和 Windows Server 2012 中的 Windows PowerShell Web 访问具有受限的安全模型。
 必须向用户显式授予访问权限，他们才能登录 Windows PowerShell Web 访问网关和使用基于 Web 的 Windows PowerShell 控制台。
 
 ## <a name="configuring-authorization-rules-and-site-security"></a>配置授权规则和站点安全
@@ -48,7 +48,7 @@ Windows PowerShell Web 访问身份验证规则是白名单规则。
 如果用户无法通过任一上述的安全层，则会在浏览器窗口中看到一条常规的“拒绝访问”消息。
 虽然有关安全性的详细信息记录在网关服务器上，但是最终用户并不获得有关他们通过多少个安全层或无法在哪个安全层登录或身份验证的信息。
 
-有关如何配置授权规则的详细信息，请参阅本主题中的[配置授权规则]()。
+有关如何配置授权规则的详细信息，请参阅本主题中的[配置授权规则](#configuring-authorization-rules-and-site-security)。
 
 ### <a name="security"></a>安全
 
@@ -62,17 +62,17 @@ Windows PowerShell Web 访问管理员可通过其它配置在 IIS 管理器控�
 
 |层次|层|
 |-|-|
-|1|[IIS Web 服务器安全功能]()|
-|2|[Windows PowerShell Web 访问基于表单的网关身份验证]()|
-|3|[Windows PowerShell Web 访问授权规则]()|
-|4|[目标身份验证和授权规则]()|
+|1|[IIS Web 服务器安全功能](#iis-web-server-security-features)|
+|2|[Windows PowerShell Web 访问基于表单的网关身份验证](#windows-powershell-web-access-forms-based-gateway-authentication)|
+|3|[Windows PowerShell Web 访问授权规则](#windows-powershell-web-access-authorization-rules)|
+|4|[目标身份验证和授权规则](#target-authentication-and-authorization-rules)|
 
 有关各层的详细信息，可参阅下列标题：
 
 #### <a name="iis-web-server-security-features"></a>IIS Web 服务器安全功能
 
 Windows PowerShell Web 访问用户必须始终提供用户名和密码，以对其在网关上的帐户进行身份验证。
-但是，Windows PowerShell Web 访问管理员还可打开或关闭可选的客户端证书身份验证（要了解如何启用测试证书，以及随后如何配置正版证书，请参阅[安装和使用 Windows PowerShell Web 访问]()）。
+但是，Windows PowerShell Web 访问管理员还可打开或关闭可选的客户端证书身份验证（要了解如何启用测试证书，以及随后如何配置正版证书，请参阅[安装和使用 Windows PowerShell Web 访问](install-and-use-windows-powershell-web-access.md)）。
 
 可选的客户端证书功能要求最终用户除拥有其用户名和密码外，还须持有有效的客户端证书，这是 Web 服务器 (IIS) 配置的一部分。
 当启用客户端证书层时，Windows PowerShell Web 访问登录页面将提示用户提供有效的证书，然后再评估用户的登录凭据。
@@ -89,12 +89,12 @@ Windows PowerShell Web 访问登录页面需要一组凭据（用户名和密码
 如果用户不提供备用凭据，则照样可使用连接网关时所用的主要用户名和密码，连接目标计算机。
 
 在 Windows PowerShell Web 访问网关上对所需的凭据进行身份验证。
-这些凭据必须是本地 Windows PowerShell Web 访问网关服务器或 Active Directory® 中有效的用户帐户。
+这些凭据必须是本地 Windows PowerShell Web 访问网关服务器或 Active Directory 中有效的用户帐户。
 
 #### <a name="windows-powershell-web-access-authorization-rules"></a>Windows PowerShell Web 访问授权规则
 
 用户在网关上通过身份验证后，Windows PowerShell Web 访问将检查授权规则，以验证用户是否有权访问所需的目标计算机。
-成功授权后，用户的凭据将被传递到目标计算机。
+成功授权后，用户的凭据将传递到目标计算机。
 
 仅当用户通过网关的身份验证之后，以及用户在目标计算机上通过身份验证之前，评估这些规则。
 
@@ -129,7 +129,7 @@ Windows PowerShell Web 访问 cmdlet 支持只一个通配符，即星号 (\*)�
 
 > **注意**
 >
-> 有关使用授权规则授予用户访问权限以及帮助确保 Windows PowerShell Web 访问环境安全的更多方式，请参阅本主题中的[其他授权规则方案示例]()。
+> 有关使用授权规则授予用户访问权限以及帮助确保 Windows PowerShell Web 访问环境安全的更多方式，请参阅本主题中的[其他授权规则方案示例](#other-authorization-rule-scenario-examples)。
 
 #### <a name="to-add-a-restrictive-authorization-rule"></a>添加受限的授权规则
 
@@ -160,7 +160,7 @@ Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -
 
 #### <a name="to-remove-an-authorization-rule"></a>删除授权规则
 
-1. 如果尚未打开 Windows PowerShell 会话，请参阅本部分中[添加受限的授权规则]()的步骤 1。
+1. 如果尚未打开 Windows PowerShell 会话，请参阅本部分中[添加受限的授权规则](#to-add-a-restrictive-authorization-rule)的步骤 1。
 
 2. 键入以下内容，然后按 **Enter**，其中的*规则 ID* 代表要删除的规则的唯一 ID 号。
 
@@ -181,9 +181,9 @@ Remove-PswaAuthorizationRule -ID <rule ID>
 
 - 管理员创建名为 **PswaEndpoint** 的终结点，其中带有受限的运行空间。 然后管理员创建规则 (**\*,\*,PswaEndpoint**)，并将终结点分配给其他计算机。 规则可让所有用户访问所有带有终结点 **PswaEndpoint** 的计算机。 如果这只是在规则集中定义的授权规则，则不能访问不带有终结点的计算机。
 
--   管理员创建名为 **PswaEndpoint** 的终结点（其中带有受限的运行空间），并希望限制特定用户的访问权限。 管理员创建一组名为 **Level1Support** 的用户，并定义以下规则：**Level1Support,\*,PswaEndpoint**。 规则可让 **Level1Support** 组中的用户访问所有带有 **PswaEndpoint** 配置的计算机。 类似地，可限制对特定计算机组合的访问权限。
+- 管理员创建名为 **PswaEndpoint** 的终结点（其中带有受限的运行空间），并希望限制特定用户的访问权限。 管理员创建一组名为 **Level1Support** 的用户，并定义以下规则：**Level1Support,\*,PswaEndpoint**。 规则可让 **Level1Support** 组中的用户访问所有带有 **PswaEndpoint** 配置的计算机。 类似地，可限制对特定计算机组合的访问权限。
 
--   有些管理员为某些用户提供的访问权限要比其他用户多。 例如，管理员创建两个用户组，分别是 **Admins** 和 **BasicSupport**。 管理员还创建名为 **PswaEndpoint** 的终结点（其中带有受限的运行空间），并定义以下两条规则：**Admins,\*,\*** 和 **BasicSupport,\*,PswaEndpoint**。 第一条规则为**Admin**组中的所有用户提供访问所有计算机的权限，第二条规则为**BasicSupport**组中的所有用户仅提供访问那些带有**PswaEndpoint**的计算机的权限。
+- 有些管理员为某些用户提供的访问权限要比其他用户多。 例如，管理员创建两个用户组，分别是 **Admins** 和 **BasicSupport**。 管理员还创建名为 **PswaEndpoint** 的终结点（其中带有受限的运行空间），并定义以下两条规则：**Admins,\*,\*** 和 **BasicSupport,\*,PswaEndpoint**。 第一条规则为**Admin**组中的所有用户提供访问所有计算机的权限，第二条规则为**BasicSupport**组中的所有用户仅提供访问那些带有**PswaEndpoint**的计算机的权限。
 
 - 管理员已设置专用测试环境，希望可让所有授权的网络用户通过他们经常访问的网络访问所有计算机，并持有对所有他们经常访问的会话配置的访问权限。 因为这是专用测试环境，管理员创建了不安全的授权规则。
   - 管理员运行的 cmdlet `Add-PswaAuthorizationRule * * *`使用通配符 * **\*** 来表示所有用户、所有计算机和所有配置。
@@ -209,7 +209,7 @@ Add-PswaAuthorizationRule -userName PswaServer\chrisLocal -computerName srv1.con
 
   >**注意**：
   >
-  >如果网关和目标计算机位于不同的工作组或域中，则必须在两个工作组计算机之间、两个域之间或工作组和域之间建立信任关系。 不能使用 Windows PowerShell Web 访问授权规则 cmdlet 配置此关系。 授权规则不会定义计算机之间的信任关系，它们仅可授权用户连接到特定目标计算机和会话配置。 有关如何配置不同域之间信任关系的详细信息，请参阅[创建域和林信任](https://technet.microsoft.com/library/cc794775.aspx")。 有关如何向受信任主机列表中添加工作组计算机的详细信息，请参阅[使用服务器管理器进行远程管理](href="https://technet.microsoft.com/library/dd759202.aspx)
+  >如果网关和目标计算机位于不同的工作组或域中，则必须在两个工作组计算机之间、两个域之间或工作组和域之间建立信任关系。 不能使用 Windows PowerShell Web 访问授权规则 cmdlet 配置此关系。 授权规则不会定义计算机之间的信任关系，它们仅可授权用户连接到特定目标计算机和会话配置。 有关如何配置不同域之间信任关系的详细信息，请参阅[创建域和林信任](https://technet.microsoft.com/library/cc794775.aspx")。 有关如何向受信任主机列表中添加工作组计算机的详细信息，请参阅[使用服务器管理器进行远程管理](https://technet.microsoft.com/library/dd759202.aspx)
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>对多个网站使用单一的授权规则集
 
@@ -219,7 +219,7 @@ Add-PswaAuthorizationRule -userName PswaServer\chrisLocal -computerName srv1.con
 
 ## <a name="session-management"></a>会话管理
 
-默认情况下，Windows PowerShell Web 访问限制一名用户一次访问三个会话。 可在 IIS Manager 中编辑 Web 应用程序的 web.config 文件，使每名用户可访问不同数目的会话。
+默认情况下，Windows PowerShell Web 访问限制一名用户一次访问三个会话。 可在 IIS 管理器中编辑 Web 应用程序的 web.config 文件，使每名用户可访问不同数目的会话。
 web.config 文件的路径是 $Env:Windir\\Web\\PowerShellWebAccess\\wwwroot\\Web.config。
 
 默认情况下，如果编辑了任何设置，则会配置 IIS Web 服务器，以重启应用程序池。 例如，如果对 **web.config** 文件进行更改，则重新启动应用程序池。

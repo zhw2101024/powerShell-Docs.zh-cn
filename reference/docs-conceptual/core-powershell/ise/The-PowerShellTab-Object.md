@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "PowerShellTab 对象"
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
-ms.openlocfilehash: 482984272b2f1be027cf2be49bdfa2c6e2c52070
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 15d9a7474e4c2cf2a9ff8edb88802106489cdba1
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab 对象
   **PowerShellTab** 对象代表 Windows PowerShell 运行时环境。
@@ -20,7 +20,7 @@ ms.lasthandoff: 08/31/2017
  在 PowerShell 选项卡中运行给定的脚本。
 
 > [!NOTE]
->  此方法仅适用于其他 PowerShell 选项卡，不适用于运行它的 PowerShell 选项卡。 它不返回任何对象或值。 如果代码修改任何变量，则这些更改将仍保存在根据其调用该命令的选项卡上。
+> 此方法仅适用于其他 PowerShell 选项卡，不适用于运行它的 PowerShell 选项卡。 它不返回任何对象或值。 如果代码修改任何变量，则这些更改将仍保存在根据其调用该命令的选项卡上。
 
  **Script** - 要运行的脚本块的 System.Management.Automation.ScriptBlock 或字符串。
 
@@ -36,7 +36,7 @@ $psise.PowerShellTabs[1].Invoke({dir})
  在 PowerShell 选项卡中运行给定的脚本。
 
 > [!NOTE]
->  此方法仅适用于其他 PowerShell 选项卡，不适用于运行它的 PowerShell 选项卡。 运行脚本块，并且从该脚本返回的任何值将返回到从中调用该命令的运行环境。 如果命令运行所花费的时间大于指定的 **millesecondsTimeout** 值，则该命令将失败并出现异常：“操作已超时。”
+> 此方法仅适用于其他 PowerShell 选项卡，不适用于运行它的 PowerShell 选项卡。 运行脚本块，并且从该脚本返回的任何值将返回到从中调用该命令的运行环境。 如果命令运行所花费的时间大于指定的 **millesecondsTimeout** 值，则该命令将失败并出现异常：“操作已超时。”
 
  **Script** - 要运行的脚本块的 System.Management.Automation.ScriptBlock 或字符串。
 
@@ -52,7 +52,7 @@ $psISE.PowerShellTabs.SetSelectedPowerShellTab($psISE.PowerShellTabs[0])
 
 # Invoke a simple command on the other tab, in its own scope
 $psISE.PowerShellTabs[1].InvokeSynchronous('$x=1',$false)
-# You can switch to the other tab and type â€œ$xâ€ to see that the value is saved there.
+# You can switch to the other tab and type 'œ$x' to see that the value is saved there.
 
 # This example sets a value in the other tab (in a different scope) 
 # and returns it through the pipeline to this tab to store in $a
@@ -88,7 +88,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu
 ### <a name="caninvoke"></a>CanInvoke
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
- 只读布尔属性，如果可以使用 [Invoke( Script )]() 方法调用脚本，则返回 **$true** 值。
+ 只读布尔属性，如果可以使用 [Invoke( Script )](#invoke-script-) 方法调用脚本，则返回 **$true** 值。
 
 ```
 # CanInvoke will be false if the PowerShell
