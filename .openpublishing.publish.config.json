@@ -1,7 +1,5 @@
 {
   "build_entry_point": "docs",
-  "need_generate_pdf": false,
-  "need_generate_intellisense": false,
   "docsets_to_publish": [
     {
       "docset_name": "PowerShell_PowerShell-docs_dsc",
@@ -50,7 +48,7 @@
       "build_source_folder": "reference",
       "build_output_subfolder": "reference",
       "locale": "zh-cn",
-      "open_to_public_contributors": true,
+      "open_to_public_contributors": false,
       "type_mapping": {
         "Conceptual": "Content",
         "ManagedReference": "Content",
@@ -58,7 +56,18 @@
         "AzurePSModulePage": "Content"
       },
       "build_entry_point": "docs",
-      "template_folder": "_themes"
+      "template_folder": "_themes",
+      "customized_template_paths": [
+        "_dependentPackages/azurecli.plugins/azurecli"
+      ],
+      "customized_tasks": {
+        "docset_prebuild": [
+          "_dependentPackages/Microsoft.OpenPublishing.AzurePSPlugin/tools/Restructure.ps1"
+        ]
+      },
+      "monikerPath": [
+        "mapping/monikerMapping.json"
+      ]
     },
     {
       "docset_name": "PowerShell_PowerShell-docs_wmf",
@@ -75,13 +84,19 @@
       "template_folder": "_themes"
     }
   ],
-  "notification_subscribers": [],
+  "notification_subscribers": [
+    "CnE_Content_Brno@moravia.com",
+    "CnE_UE_Bugfixing_ENG@moravia.com"
+  ],
   "branches_to_filter": [
-    "master-oldev",
-    "live-oldev"
+    "live-oldev",
+    "live"
   ],
   "skip_source_output_uploading": false,
   "need_preview_pull_request": false,
+  "contribution_branch_mappings": {
+    "live-sxs": "live"
+  },
   "dependent_repositories": [
     {
       "path_to_root": "_themes",
@@ -99,7 +114,10 @@
       }
     }
   ],
+  "branch_target_mapping": {},
   "need_generate_pdf_url_template": false,
+  "need_generate_pdf": false,
+  "need_generate_intellisense": false,
   "dependent_packages": [
     {
       "path_to_root": "_dependentPackages/azurecli.plugins",
@@ -110,8 +128,8 @@
     {
       "id": "Microsoft.OpenPublishing.AzurePSPlugin",
       "path_to_root": "_dependentPackages/Microsoft.OpenPublishing.AzurePSPlugin",
-      "version": "latest-prerelease",
-      "nuget_feed": "https://www.myget.org/F/op-dev/api/v2"
+      "version": "latest",
+      "nuget_feed": "https://www.myget.org/F/op/api/v2"
     }
   ]
 }
