@@ -22,7 +22,7 @@ $PsISE.CurrentFile 对象是 [ISEFile](The-ISEFile-Object.md) 类的一个实例
 
 ## <a name="psisecurrentpowershelltabthe-powershelltab-objectmd"></a>[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)
 
-$psISE.CurrentPowerShellTab 对象是 [](The-PowerShellTab-Object.md) 类的一个实例。
+[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md) 对象是 类的一个实例。
 
 ## <a name="psisecurrentvisiblehorizontaltool"></a>$psISE.CurrentVisibleHorizontalTool
 
@@ -34,7 +34,7 @@ $psISE.CurrentPowerShellTab 对象是 [](The-PowerShellTab-Object.md) 类的一�
 **$PsISE.CurrentVisibleHorizontalTool** 对象是 [ISEAddOnTool](The-ISEAddOnTool-Object.md) 类的实例。
 它表示已安装的外接程序工具，当前停靠在 Windows PowerShell ISE 窗口的右侧。
 
-## <a name="psiseoptionsthe-iseoptions-objectmd"></a>$psISE.Options[](The-ISEOptions-Object.md)
+## <a name="psiseoptionsthe-iseoptions-objectmd"></a>[$psISE.Options](The-ISEOptions-Object.md)
 
 $PsISE.Options 对象是 [ISEOptions](The-ISEOptions-Object.md) 类的一个实例。
 ISEOptions 对象代表 Windows PowerShell ISE 的各种设置。
