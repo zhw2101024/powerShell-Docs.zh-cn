@@ -22,7 +22,7 @@ $PsISE.CurrentFile 对象是 [ISEFile](The-ISEFile-Object.md) 类的一个实例
 
 ## <a name="psisecurrentpowershelltabthe-powershelltab-objectmd"></a>[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)
 
-[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md) 对象是 类的一个实例。
+**$PsISE.CurrentPowerShellTab**对象是的一个实例[PowerShellTab](The-PowerShellTab-Object.md)类。
 
 ## <a name="psisecurrentvisiblehorizontaltool"></a>$psISE.CurrentVisibleHorizontalTool
 
