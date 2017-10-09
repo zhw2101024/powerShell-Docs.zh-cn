@@ -3,18 +3,18 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "ISEAddOnTool 对象"
 ms.assetid: ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3
-ms.openlocfilehash: fe2a0f59c937ecd727a628f4baf9d44506d13c72
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: b813fcac547c8069e84741081a3ceb00044bab87
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="the-iseaddontool-object"></a>ISEAddOnTool 对象
   **ISEAddonTool** 对象表示已安装的可提供 Windows PowerShell ISE 附加功能的附加设备工具。 例如，“**命令**”工具，你可以通过单击“**查看**”，然后单击“**显示命令附加设备**”进行显示。 然后，你可以通过操作各种可用 **ISEAddOnTool** 对象来访问此工具。
 
  每个附加设备工具可以与垂直窗格或水平窗格相关联。 垂直窗格停靠在 Windows PowerShell ISE 的右边缘。 水平窗格停靠在底部边缘。
 
- Windows PowerShell ISE 中的每个 PowerShell 选项卡上可以安装自己的附加设备工具集。 请参阅 [$psISE.CurrentPowerShellTab.HorizontalAddOnTools](The-ISEAddOnToolCollection-Object.md) 和 [$psISE.CurrentPowerShellTab.VerticalAddOnTools](The-ISEAddOnToolCollection-Object.md) 以访问可用于当前选定的选项卡或 [$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md) 集合对象中任何 **PowerShellTab** 对象上的相同属性的工具集合。
+ Windows PowerShell ISE 中的每个 PowerShell 选项卡上可以安装自己的附加设备工具集。 请参阅 [$psISE.CurrentPowerShellTab.HorizontalAddOnTools](The-PowerShellTab-Object.md) 和 [$psISE.CurrentPowerShellTab.VerticalAddOnTools](The-PowerShellTab-Object.md) 以访问可用于当前选定的选项卡或 [$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md) 集合对象中任何 **PowerShellTab** 对象上的相同属性的工具集合。
 
 ## <a name="methods"></a>方法
  没有特定于 Windows PowerShell ISE 的方法可用于此类的对象。

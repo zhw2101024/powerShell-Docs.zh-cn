@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "ISEEditor 对象"
-ms.openlocfilehash: 149eda44fea5b02324442970324e3010015e7ae5
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: c593eeebf0b9a94769841efd2aa78f84a3829ca5
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="the-iseeditor-object"></a>ISEEditor 对象
   **ISEEditor** 对象是 Microsoft.PowerShell.Host.ISE.ISEEditor 类的实例。 控制台窗格是 **ISEEditor** 对象。 每个 [ISEFile](The-ISEFile-Object.md) 对象都有一个关联的 **ISEEditor** 对象。 以下各节列出了 **ISEEditor** 对象的方法和属性。
@@ -75,7 +75,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **text** - String 要插入的文本。
 
- 请参阅本主题稍后介绍的[脚本示例](#-scripting-example)。
+ 请参阅本主题稍后介绍的[脚本示例](#scripting-example)。
 
 ### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Select\( startLine, startColumn, endLine, endColumn \)
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
@@ -90,7 +90,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **endColumn** - Integer 所选内容的结束行中的列。
 
- 请参阅本主题稍后介绍的[脚本示例](#-scripting-example)。
+ 请参阅本主题稍后介绍的[脚本示例](#scripting-example)。
 
 ### <a name="selectcaretline"></a>SelectCaretLine\(\)
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
@@ -185,14 +185,14 @@ $psISE.CurrentFile.Editor.LineCount
 
  只读属性，可获取编辑器中的所选文本。
 
- 请参阅本主题稍后介绍的[脚本示例](#-scripting-example)。
+ 请参阅本主题稍后介绍的[脚本示例](#scripting-example)。
 
 ### <a name="text"></a>文本
   在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
 
  读写属性，可获取或设置编辑器中的文本。
 
- 请参阅本主题稍后介绍的[脚本示例](#-scripting-example)。
+ 请参阅本主题稍后介绍的[脚本示例](#scripting-example)。
 
 ## <a name="scripting-example"></a>脚本示例
 

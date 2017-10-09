@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "基本 Cookbook 参考"
-ms.openlocfilehash: a745048eb47a983fa90616ccbd58184080706096
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: d6f0bf97c9491f1a4c9ba13aae837c17860aa6c7
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="basic-cookbooks-reference"></a>基本 Cookbook 参考
 
@@ -26,7 +26,6 @@ ms.lasthandoff: 09/08/2017
 - [多选列表框](Multiple-selection-List-Boxes.md)
 - [其他有用的脚本对象](Other-Useful-Scripting-Objects.md)
 - [执行网络任务](Performing-Networking-Tasks.md)
-- [PowerShellGet 模块](PowerShellGet-Module.md)
 - [使用 Out Cmdlet 重定向数据](Redirecting-Data-with-Out---Cmdlets.md)
 - [从管道中删除对象（Where 对象）](Removing-Objects-from-the-Pipeline--Where-Object-.md)
 - [为多个对象重复执行任务（ForEach 对象）](Repeating-a-Task-for-Multiple-Objects--ForEach-Object-.md)

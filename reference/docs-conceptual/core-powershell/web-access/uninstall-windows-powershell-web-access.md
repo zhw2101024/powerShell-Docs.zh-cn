@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: powershell,cmdlet
 title: "卸载 Windows PowerShell Web 访问"
-ms.openlocfilehash: 7c71a245be244c1883598cdcddbf35e43c0fc7b0
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: b6e6a2374e6b4b2be8742019c5f1e4d5b5d1abe3
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>卸载 Windows PowerShell Web 访问
 
@@ -20,10 +20,8 @@ ms.lasthandoff: 09/08/2017
 
 开始前，先通知基于 Web 控制台的用户，你准备删除网站。
 
-
-从网关服务器中卸载 Windows PowerShell Web 访问之前，运行 `Uninstall-PswaWebApplication` cmdlet 删除网站和 Windows PowerShell Web 访问 Web 应用程序，或使用 IIS Manager 程序，[通过使用 IIS Manager 删除 Windows PowerShell Web 访问网站和 Web 应用程序]()。
-
-卸载 Windows PowerShell Web 访问并不卸载 IIS 或任何其他自动安装的功能，因为 Windows PowerShell Web 访问需要它们处于运行状态。 卸载过程保留了依赖 Windows PowerShell Web 访问的功能；必要时你可以单独卸载那些功能。
+卸载 Windows PowerShell Web 访问并不卸载 IIS 或任何其他自动安装的功能，因为 Windows PowerShell Web 访问需要它们处于运行状态。
+卸载过程保留了依赖 Windows PowerShell Web 访问的功能；必要时你可以单独卸载那些功能。
 
 ## <a name="recommended-quick-uninstallation"></a>建议（快速）卸载
 

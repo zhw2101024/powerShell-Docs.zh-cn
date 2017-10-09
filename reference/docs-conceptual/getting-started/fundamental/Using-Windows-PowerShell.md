@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "使用 Windows PowerShell"
 ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
-ms.openlocfilehash: c942caa6cea3b24fe5e6442e28600363466380bd
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 874c6fc6f0b09b0f586725ed7df7bc68c31e1733
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="using-windows-powershell"></a>使用 Windows PowerShell
 Windows PowerShell® 是基于任务的命令行管理程序和脚本语言，专为进行系统管理而设计。 在 .NET Framework 的基础上构建的 Windows PowerShell 可帮助 IT 专业人士和高级用户控制和自动执行 Windows 操作系统以及在 Windows 上运行的应用程序的管理。
@@ -67,6 +67,3 @@ Windows PowerShell 是一系列相关脚本编写技术的一部分，这些技�
     有关 Windows PowerShell 中可更新的帮助系统的详细信息（包括如何在网络隔离的计算机上安装可更新帮助），请参阅 [about_Updatable_Help](http://technet.microsoft.com/library/hh847735.aspx)、[Save-Help](http://technet.microsoft.com/library/hh849724.aspx) 和[支持可更新的帮助](http://msdn.microsoft.com/library/hh852754.aspx)。
 
 - [Get-Help](http://technet.microsoft.com/library/hh849696(v=wps.630).aspx) cmdlet。 可用于了解在系统上安装的 cmdlet 和提供程序的 Windows PowerShell cmdlet。
-
-- 通过订阅到以下 RSS 源，可以获取有关已发布帮助文件的任何更新的通知：[http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions](http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions)。
-

@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "PowerShell 脚本"
-ms.openlocfilehash: 33e5ff3c84b6b34a3072a32165187a8bb811605c
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 8d2386dc49c59a106ecdddf0feabe3344834a86d
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -46,7 +46,6 @@ PowerShell 基本源代码目前在 GitHub 中可用，且对社区贡献开放�
 ## <a name="common-powershellcore-powershellcore-powershellmd"></a>[常见 PowerShell](core-powershell/core-powershell.md)
 本部分包含所有的引用材料 PowerShell。  
 本节包括：
-- [PowerShell 常见模块](core-powershell/core-modules.md)
 - [PowerShell 集成脚本环境 \(ISE\)](core-powershell/ise-guide.md)
 - [PowerShell 控制台窗口](core-powershell/console-guide.md)
 - [PowerShell 远程管理](core-powershell/Running-Remote-Commands.md)

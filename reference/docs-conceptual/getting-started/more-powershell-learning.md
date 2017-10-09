@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "更多 powershell 学习"
-ms.openlocfilehash: c1bc3c25c34aa4501eae15fb2b4f629a77e90006
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 32d7006010a4808a77d9800ec77c4352213d12b9
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="more-powershell-learning"></a>更多 PowerShell 学习
 
@@ -18,8 +18,8 @@ ms.lasthandoff: 09/08/2017
 
 - [Windows PowerShell Team Blog](http://blogs.msdn.com/b/powershell/)（Windows PowerShell 团队博客）。 直接来自 Windows PowerShell 产品团队的最佳学习资源。
 - [Windows PowerShell 客户连接](http://Connect.Microsoft.com/PowerShell)。 向 Windows PowerShell 团队提出建议、发送反馈或提交 bug。 你可以提交代码 bug、文档 bug 或本地化（语言翻译）bug。
-- [你好，脚本专家！博客](http://www.scriptingguys.com/blog)一周七天都会发布新内容，并且一直排在所有 Microsoft 博客的前五位。 这些文章以方案为核心，并且采用精彩且生动的方式编写。
-- [了解 PowerShell 页](http://www.scriptingguys.com/learnpowershell) 是在 TechNet 脚本中心上的 Windows PowerShell 中心。 此页面托管了一系列由 Microsoft 脚本专家 Ed Wilson 制作的初学者视频课程。 它还包含 Windows PowerShell 测验、社区内容链接等。
+- [你好，脚本专家！博客](https://blogs.technet.microsoft.com/heyscriptingguy/)一周七天都会发布新内容，并且一直排在所有 Microsoft 博客的前五位。 这些文章以方案为核心，并且采用精彩且生动的方式编写。
+- [了解 PowerShell 页](https://blogs.technet.microsoft.com/heyscriptingguy/2015/01/04/weekend-scripter-the-best-ways-to-learn-powershell/) 是在 TechNet 脚本中心上的 Windows PowerShell 中心。 此页面托管了一系列由 Microsoft 脚本专家 Ed Wilson 制作的初学者视频课程。 它还包含 Windows PowerShell 测验、社区内容链接等。
 - 有关于使用 Windows PowerShell 的问题？ 在[官方脚本专家论坛](http://social.technet.microsoft.com/forums/itcg/threads/)上与数百位兴趣相符的其他用户进行交流。
 - [Microsoft 脚本中心](https://technet.microsoft.com/scriptcenter)。 包含许多有用的 Windows PowerShell 资源的门户，其中包括[脚本中心存储库](http://gallery.technet.microsoft.com/scriptcenter/)。 了解脚本编写的最佳方法之一是查看实际示例。 搜索数以千计的 Windows PowerShell 脚本，它们都已准备就绪，你可以评估并改编这些脚本来满足你的需求。
 - 参与 Windows PowerShell 用户社区。 有关众多 Windows PowerShell 用户组（其中可能有一个距你很近）的位置信息，请参阅 [Script Center](https://technet.microsoft.com/scriptcenter/hh182567.aspx)（脚本中心社区页面）。 同时了解 Microsoft 脚本专家的社区活动的最新消息。
