@@ -3,26 +3,26 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Windows PowerShell ISE 中的辅助功能"
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: fce9e2e2f177174a7359351738a0e02201448fc6
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 505ec3aca84b5ad0b9d58a1ec84d80e3aa86db7a
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE 中的辅助功能
 本主题介绍 Windows PowerShell 集成脚本环境 (ISE) 的辅助功能，也许对你有所帮助。
 
-* [如何更改控制台和脚本窗格的大小和位置]()
-* [编辑文本的键盘快捷方式]()
-* [运行脚本的键盘快捷方式]()
-* [自定义视图的键盘快捷方式]()
-* [调试脚本的键盘快捷方式]()
-* [Windows PowerShell 选项卡的键盘快捷方式]()
-* [启动和退出的键盘快捷方式]()
+* [如何更改控制台和脚本窗格的大小和位置](#how-to-change-the-size-and-location-of-the-console-and-script-panes)
+* [编辑文本的键盘快捷方式](#keyboard-shortcuts-for-editing-text)
+* [运行脚本的键盘快捷方式](#keyboard-shortcuts-for-running-scripts)
+* [自定义视图的键盘快捷方式](#keyboard-shortcuts-for-customizing-the-view)
+* [调试脚本的键盘快捷方式](#keyboard-shortcuts-for-debugging-scripts)
+* [Windows PowerShell 选项卡的键盘快捷方式](#keyboard-shortcuts-for-windows-powershell-tabs)
+* [启动和退出的键盘快捷方式](#keyboard-shortcuts-for-starting-and-exiting)
 
 Microsoft 致力于使其产品和服务更便于每个人使用。 下列主题提供有关使 Windows PowerShell ISE 更便于残障人士访问的功能、产品和服务的信息。
 
-Windows PowerShell ISE 支持高对比度模式。 为方便有视觉障碍的用户，通过用于管理断点的 cmdlet（例如 [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) 和 [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420)）提供断点信息。 有关详细信息，请参阅[如何在 Windows PowerShell ISE 中调试脚本](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)中的“œ如何管理断点”。 除了 Microsoft Windows 中的辅助功能和实用工具外，以下功能也能使残障人士更轻松地访问 Windows PowerShell ISE：
+Windows PowerShell ISE 支持高对比度模式。 为方便有视觉障碍的用户，通过用于管理断点的 cmdlet（例如 [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) 和 [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420)）提供断点信息。 有关详细信息，请参阅[如何在 Windows PowerShell ISE 中调试脚本](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)中的“如何管理断点”。 除了 Microsoft Windows 中的辅助功能和实用工具外，以下功能也能使残障人士更轻松地访问 Windows PowerShell ISE：
 
 - 键盘快捷方式
 
@@ -113,7 +113,8 @@ Windows PowerShell ISE 支持高对比度模式。 为方便有视觉障碍的�
 |**移除所有断点**|CTRL+SHIFT+F9|脚本窗格，调试脚本时|
 |**停止调试器**|SHIFT+F5|脚本窗格，调试脚本时|
 
-> [!NOTE]
+> ![注意](../core-powershell/web-access/images/Note.jpeg)**注意**
+>
 > 在 Windows PowerShell ISE 中调试脚本时，也可以使用为 Windows PowerShell 控制台而设计的键盘快捷方式。 若要使用这些快捷方式，必须在控制台窗格中输入该快捷方式并按 ENTER。
 
 |操作|键盘快捷方式|用于|

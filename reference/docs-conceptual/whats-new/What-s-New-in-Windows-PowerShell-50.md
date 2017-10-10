@@ -2,15 +2,14 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Windows PowerShell 5.0 中的新增功能"
-ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
-ms.openlocfilehash: e3c4e840469f3a3caa28a887dc079839f053dc4d
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 3a412b35c593c99fb8ea8307b12ccc05871863f4
+ms.sourcegitcommit: e2360ac94fe4deb0ed0f5c8c8d9b293551ec8030
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 10/05/2017
 ---
-# <a name="what39s-new-in-windows-powershell"></a>Windows PowerShell 中的新增功能
-Windows PowerShell 5.0 包括了重要的新功能，这些功能可扩展其用途、提高其可用性，并使你能够更轻松、全面地控制和管理基于 Windows 的环境。
+# <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 中的新增功能
+Windows PowerShell 5.0 新增了大量功能，不仅扩展并提升了自身的用途和可用性，还方便用户能够更轻松、全面地控制和管理基于 Windows 的环境。
 
 Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows PowerShell 3.0 和 Windows PowerShell 2.0 设计的 cmdlet、提供程序、模块、管理单元、脚本、函数和配置文件通常适用于 Windows PowerShell 5.0，无需更改。
 
@@ -21,13 +20,10 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 
 ## <a name="in-this-topic"></a>本主题内容
 
-- [KB 3000850 中的 Windows PowerShell 4.0 DSC 更新]()
-
-- [Windows PowerShell 5.0 中的新增功能]()
-
-- [Windows PowerShell 4.0 中的新增功能]()
-
-- [Windows PowerShell 3.0 中的新增功能]()
+- [KB 3000850 中的 Windows PowerShell 4.0 DSC 更新](#windows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850)
+- [Windows PowerShell 5.0 中的新增功能](#new-features-in-windows-powershell-50)
+- [Windows PowerShell 4.0 中的新增功能](#new-features-in-windows-powershell-40)
+- [Windows PowerShell 3.0 中的新增功能](#new-features-in-windows-powershell-30)
 
 ## <a name="windows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850"></a>2014 年 11 月更新汇总中的 Windows PowerShell 4.0 更新 (KB 3000850)
 针对 Windows PowerShell 4.0 中 Windows PowerShell Desired State Configuration (DSC) 的许多更新和改进均在 [2014 年 11 月 Windows RT 8.1、Windows 8.1 和 Windows Server 2012 R2 更新汇总](https://support.microsoft.com/kb/3000850/) (KB 3000850) 中提供。 你可以通过在 Windows PowerShell 中运行 `Get-Hotfix -Id KB3000850` 以确定你的系统上是否已安装 KB 3000850。
@@ -128,15 +124,11 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 
 ## <a name="new-features-in-windows-powershell-50"></a>Windows PowerShell 5.0 中的新增功能
 
-- [Windows PowerShell 中的新增功能]()
-
-- [Windows PowerShell Desired State Configuration 中的新增功能]()
-
-- [Windows PowerShell ISE 中的新增功能]()
-
-- [Windows PowerShell Web 服务中的新增功能]()
-
-- [Windows PowerShell 5.0 中值得注意的 Bug 修复]()
+- [Windows PowerShell 中的新增功能](#new-features-in-windows-powershell)
+- [Windows PowerShell Desired State Configuration 中的新增功能](#new-features-in-windows-powershell-desired-state-configuration)
+- [Windows PowerShell ISE 中的新增功能](#new-features-in-windows-powershell-ise)
+- [Windows PowerShell Web 服务中的新增功能](#new-features-in-windows-powershell-web-services-management-odata-iis-extension)
+- [Windows PowerShell 5.0 中值得注意的 Bug 修复](#notable-bug-fixes-in-windows-powershell-50)
 
 ### <a name="new-features-in-windows-powershell"></a>Windows PowerShell 中的新增功能
 
@@ -170,7 +162,7 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 
 - Get-ChildItem 也有一个新的 -Depth 参数，可将该参数与 -Recurse 参数一起使用，以限制递归。 例如，Get-ChildItem -Recurse -Depth 2 从当前文件夹、当前文件夹中的所有子文件夹，以及子文件夹中的所有文件夹返回结果。
 
-- 现在 Copy-Item 使你能够将文件或文件夹从一个 Windows PowerShell 会话复制到另一个会话中，这意味着你可以将文件复制到已连接至远程计算机（包括运行 [Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx) 因而没有其他界面的计算机）的会话中。 若要复制文件，请将 PSSession ID 指定为新的 -FromSession 和 -ToSession 参数的值，并添加 -Path 和 -Destination 以分别指定源路径和目标位置。 例如，Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder。
+- 现在 Copy-Item 使你能够将文件或文件夹从一个 Windows PowerShell 会话复制到另一个会话中，意味着你可以将文件复制到已连接至远程计算机（包括运行 [Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx) 因而没有其他界面的计算机）的会话中。 若要复制文件，请将 PSSession ID 指定为新的 -FromSession 和 -ToSession 参数的值，并添加 -Path 和 -Destination 以分别指定源路径和目标位置。 例如，Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder。
 
 - 除了控制台主机 (**powershell.exe**) 外，Windows PowerShell 转录已经得到改进以应用到所有主机应用程序（例如 Windows PowerShell ISE）。 脚本选项（包括启用 system-wide 脚本）可以通过启用“打开 PowerShell 脚本”组策略设置（位于 Administrative Templates/Windows Components/Windows PowerShell）来进行配置。
 
@@ -313,17 +305,12 @@ Windows PowerShell 4.0 可向后兼容。 为 Windows PowerShell 3.0 和 Windows
 
 Windows PowerShell 4.0 默认安装在 Windows 8.1 和 Windows Server 2012 R2 上。 若要在 Windows 7 SP1 或 Windows Server 2008 R2 上安装 Windows PowerShell 4.0，请下载并安装 [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855)。 请务必先阅读下载详细信息并确保满足所有系统要求，然后再安装 Windows Management Framework 4.0。
 
-- [Windows PowerShell 中的新增功能]()
-
-- [Windows PowerShell 集成脚本环境 (ISE) 中的新增功能]()
-
-- [Windows PowerShell 工作流中的新增功能]()
-
-- [Windows PowerShell Web 服务中的新增功能]()
-
-- [Windows PowerShell Web 访问中的新增功能]()
-
-- [Windows PowerShell 4.0 中值得注意的 Bug 修复]()
+- [Windows PowerShell 中的新增功能](#new-features-in-windows-powershell-1)
+- [Windows PowerShell 集成脚本环境 (ISE) 中的新增功能](#new-features-in-windows-powershell-integrated-scripting-environment-ise)
+- [Windows PowerShell 工作流中的新增功能](#new-features-in-windows-powershell-workflow)
+- [Windows PowerShell Web 服务中的新增功能](#new-features-in-windows-powershell-web-services)
+- [Windows PowerShell Web 访问中的新增功能](#new-features-in-windows-powershell-web-access)
+- [Windows PowerShell 4.0 中值得注意的 Bug 修复](#notable-bug-fixes-in-windows-powershell-40)
 
 Windows PowerShell 4.0 包括以下新增功能。
 
@@ -456,59 +443,33 @@ Windows PowerShell 4.0 包括以下新增功能。
 ## <a name="new-features-in-windows-powershell-30"></a>Windows PowerShell 3.0 中的新增功能
 Windows PowerShell 3.0 包括以下新增功能。
 
-- [Windows PowerShell 工作流]()
-
-- [Windows PowerShell Web 访问]()
-
-- [新的 Windows PowerShell ISE 功能]()
-
-- [对 Microsoft .NET Framework 4.0 的支持]()
-
-- [对 Windows 预安装环境的支持]()
-
-- [断开连接的会话]()
-
-- [稳定的会话连接]()
-
-- [可更新的帮助系统]()
-
-- [增强的联机帮助]()
-
-- [CIM 集成]()
-
-- [会话配置文件]()
-
-- [计划作业和任务计划程序集成]()
-
-- [Windows PowerShell 语言增强功能]()
-
-- [新的核心 Cmdlet]()
-
-- [对现有核心 Cmdlet 和提供程序的改进]()
-
-- [远程模块导入和发现]()
-
-- [增强的 Tab 自动补全]()
-
-- [模块自动加载]()
-
-- [模块体验改进]()
-
-- [简化的命令发现]()
-
-- [改进的日志记录、诊断和组策略支持]()
-
-- [格式设置和输出改进]()
-
-- [增强的控制台主机体验]()
-
-- [新的 Cmdlet 和宿主 API]()
-
-- [性能改进]()
-
-- [运行身份和共享主机支持]()
-
-- [特殊字符处理改进]()
+- [Windows PowerShell 工作流](#windows-powershell-workflow)
+- [Windows PowerShell Web 访问](#windows-powershell-web-access)
+- [新的 Windows PowerShell ISE 功能](#new-windows-powershell-ise-features)
+- [对 Microsoft .NET Framework 4.0 的支持](#support-for-microsoft-net-framework-4)
+- [对 Windows 预安装环境的支持](#support-for-windows-preinstallation-environment)
+- [断开连接的会话](#disconnected-sessions)
+- [稳定的会话连接](#robust-session-connectivity)
+- [可更新的帮助系统](#updatable-help-system)
+- [增强的联机帮助](#enhanced-online-help)
+- [CIM 集成](#cim-integration)
+- [会话配置文件](#session-configuration-files)
+- [计划作业和任务计划程序集成](#scheduled-jobs-and-task-scheduler-integration)
+- [Windows PowerShell 语言增强功能](#windows-powershell-language-enhancements)
+- [新的核心 Cmdlet](#new-core-cmdlets)
+- [对现有核心 Cmdlet 和提供程序的改进](#improvements-to-existing-core-cmdlets-and-providers)
+- [远程模块导入和发现](#remote-module-import-and-discovery)
+- [增强的 Tab 自动补全](#enhanced-tab-completion)
+- [模块自动加载](#module-auto-loading)
+- [模块体验改进](#module-experience-improvements)
+- [简化的命令发现](#simplified-command-discovery)
+- [改进的日志记录、诊断和组策略支持](#improved-logging-diagnostics-and-group-policy-support)
+- [格式设置和输出改进](#formatting-and-output-improvements)
+- [增强的控制台主机体验](#enhanced-console-host-experience)
+- [新的 Cmdlet 和宿主 API](#new-cmdlet-and-hosting-apis)
+- [性能改进](#performance-improvements)
+- [运行身份和共享主机支持](#runas-and-shared-host-support)
+- [特殊字符处理改进](#special-character-handling-improvements)
 
 ### <a name="windows-powershell-workflow"></a>Windows PowerShell 工作流程
 Windows PowerShell 工作流将 Windows Workflow Foundation 的强大功能引入到 Windows PowerShell 中。 你可以采用 XAML 或 Windows PowerShell 语言编写工作流，然后像运行 cmdlet 一样运行它们。 [Get-command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet 获取工作流命令，[Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet 获取工作流帮助。
@@ -549,7 +510,7 @@ Windows PowerShell Web 访问是一项 Windows Server 2012 功能，它允许用
 Windows PowerShell 是针对公共语言运行时 4.0 而构建的。 Cmdlet、脚本和工作流作者可以在 Windows PowerShell 中使用新的 Microsoft .NET Framework 4 类，其功能包括应用程序兼容性和部署、Managed Extensibility Framework、并行计算、网络、Windows Communication Foundation 和 Windows Workflow Foundation。
 
 ### <a name="support-for-windows-preinstallation-environment"></a>对 Windows 预安装环境的支持
-Windows PowerShell 3.0 是 Windows 8 的 Windows 预安装环境 (Windows PE) 4.0 中的可选组件。 Windows PE 是一个微型操作系统，用于启动没有操作系统的计算机并使其为 Windows 安装做好准备。 Windows PE 可用于对硬盘驱动器进行分区和格式设置、将磁盘映像复制到计算机，以及从网络共享启动 Windows 安装程序。 可以在 Windows PE 上使用 Windows PowerShell 3.0 来管理部署、诊断和恢复方案。
+Windows PowerShell 3.0 是 Windows 8 的 Windows 预安装环境 (Windows PE) 4.0 中的可选组件。 Windows PE 是用于启动没有操作系统的计算机并使其为 Windows 安装做好准备的最小操作系统。 Windows PE 可用于对硬盘驱动器进行分区和格式设置、将磁盘映像复制到计算机，以及从网络共享启动 Windows 安装程序。 可以在 Windows PE 上使用 Windows PowerShell 3.0 来管理部署、诊断和恢复方案。
 
 ### <a name="disconnected-sessions"></a>断开连接的会话
 从 Windows PowerShell 3.0 开始，你使用 New-PSSession cmdlet 创建的用户托管的永久会话（“Pssession”）将保存在远程计算机上。 它们将不再依赖于创建它们的会话。
@@ -750,7 +711,6 @@ Windows PowerShell 3.0 包括对运行身份和共享主机功能的支持。
 为了改进 Windows PowerShell 3.0 解译和正确处理特殊字符的能力，用于处理路径中特殊字符的 **LiteralPath** 参数几乎对具有 **Path** 参数的所有 cmdlet 都有效，包括新增的 [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) 和 [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) cmdlet。 分析程序中还包括了特殊逻辑，用于改进对文件名和路径中的反撇号字符 (\`) 和方括号的处理。
 
 ## <a name="see-also"></a>另请参阅
-- [about_Windows_PowerShell_4.0](http://technet.microsoft.com/en-us/library/hh847833(v=wps.630).aspx)
-- [about_Windows_PowerShell_5.0](https://technet.microsoft.com/en-us/library/6d56fa88-371e-40c9-b2de-64a2a0cd49da)
+- [about_Windows_PowerShell_5.0](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
 - [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
 
