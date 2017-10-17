@@ -1,21 +1,21 @@
 ---
-ms.date: 2017-06-12T00:00:00.000Z
+ms.date: 2017-06-12
 author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "Desired State Configuration 快速入门"
-ms.openlocfilehash: e8a73296827297bab3229392c4193fed940c53bf
-ms.sourcegitcommit: 46feddbc753523f464f139b5d272794620072fc8
+ms.openlocfilehash: 295a78f3fd85464239d51d7be0defa04d2344689
+ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2017
+ms.lasthandoff: 10/13/2017
 ---
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 # <a name="desired-state-configuration-quick-start"></a>Desired State Configuration 快速入门
 
 本练习演示创建和应用 Desired State Configuration (DSC) 配置的完整过程。
-我们使用的示例可确保服务器启用了 `Web-Server`(IIS) 功能，并且该服务器的 `intetpub\wwwroot` 目录中存在一个简单“Hello World”网站的内容。
+我们使用的示例可确保服务器启用了 `Web-Server`(IIS) 功能，并且该服务器的 `intepub\wwwroot` 目录中存在一个简单“Hello World”网站的内容。
 
 有关什么是 DSC 及其工作原理的概述，请参阅[适用于决策者的 Desired State Configuration 概述](decisionMaker.md)。
 

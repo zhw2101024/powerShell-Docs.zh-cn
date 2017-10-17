@@ -5,11 +5,11 @@ ms.topic: conceptual
 keywords: "库,powershell,cmdlet,psgallery"
 description: "面向发行者的指南"
 title: "PowerShell 库发布指南和最佳做法"
-ms.openlocfilehash: 72b6ca4cb4815900a3fa48f965e581a6f6130123
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 882a33c00cc024ad2bbb05a3283e058a61035e3a
+ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell 库发布指南和最佳做法
 
@@ -32,12 +32,11 @@ ms.lasthandoff: 09/29/2017
 * 添加文档和示例
 * 及时响应反馈
 * 提供模块（而不是脚本）
-* 遵循 [SemVer](http://semver.org/) 指南进行版本控制
 * 提供项目网站链接
 * 随模块添加测试
 * 添加和/或链接到许可条款
 * 对代码进行签名
-* 遵循 SemVer 指南进行版本控制
+* 遵循 [SemVer](http://semver.org/) 指南进行版本控制
 * 使用“常见 PowerShell 库标记”中收录的常见标记
 * 使用本地存储库测试发布
 

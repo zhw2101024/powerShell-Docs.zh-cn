@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: powershell,cmdlet
 title: "安装和使用 Windows PowerShell Web 访问"
-ms.openlocfilehash: a4b812e2aa32450bc68f761e7b85e8f2ee2b34ee
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 63e25fa2b1fc7c0a2b57763e337c25ece17a3296
+ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>安装和使用 Windows PowerShell Web 访问
 
@@ -59,9 +59,9 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。
 ### <a name="minimally-tested-mobile-devices-or-browsers"></a>经过最小限度测试的移动设备或浏览器
 
 - Windows Phone 7 和 7.5
-- Google Android WebKit 3.1 Browser Android 2.2.1（内核 2.6）
+- Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
 - iPhone 操作系统 5.0.1 的 Apple Safari
-- 适用于 iPad 2 操作系统 5.0.1 的 Apple Safari
+- iPad 2 操作系统 5.0.1 的 Apple Safari
 
 ### <a name="browser-requirements"></a>浏览器要求
 
