@@ -1,35 +1,39 @@
 ---
-ms.date: 2017-06-12
-author: eslesar
+ms.date: 2017-10-11
+author: eslesar;mgreenegit
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "配置本地配置管理器"
-ms.openlocfilehash: 315b487e7b31c259c4c08e453b69d4548494ccd2
-ms.sourcegitcommit: fee03bb9802222078c8d5f6c8efb0698024406ed
+ms.openlocfilehash: 98470f45ca7c11ea63d68da7dec9fcd844f06192
+ms.sourcegitcommit: 9a5da3f739b1eebb81ede58bd4fc8037bad87224
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/26/2017
+ms.lasthandoff: 10/16/2017
 ---
-<a id="configuring-the-local-configuration-manager" class="xliff"></a>
-# 配置本地配置管理器
+# <a name="configuring-the-local-configuration-manager"></a>配置本地配置管理器
 
 > 适用于：Windows PowerShell 5.0
 
-本地配置管理器 (LCM) 是 Windows PowerShell Desired State Configuration (DSC) 的引擎。 LCM 在每个目标节点上运行，负责分析和执行发送到节点的配置。 它还负责 DSC 的许多方面，包括以下各方面。
+本地配置管理器 (LCM) 是 Desired State Configuration (DSC) 的引擎。
+LCM 在每个目标节点上运行，负责分析和执行发送到节点的配置。
+它还负责 DSC 的许多方面，包括以下各方面。
 
-* 确定刷新模式（推送或请求）。
-* 指定节点请求和执行配置的频率。
-* 将节点与请求服务器相关联。
-* 指定部分配置。
+- 确定刷新模式（推送或请求）。
+- 指定节点请求和执行配置的频率。
+- 将节点与请求服务相关联。
+- 指定部分配置。
 
-使用特殊类型的配置将 LCM 配置为指定以上各行为。 以下各节介绍如何配置 LCM。
+使用特殊类型的配置将 LCM 配置为指定以上各行为。
+以下各节介绍如何配置 LCM。
 
-> **注意**：本主题适用于 Windows PowerShell 5.0 中引入的 LCM。 有关在 Windows PowerShell 4.0 中配置 LCM 的信息，请参阅 [Windows PowerShell 4.0 Desired State Configuration 本地配置管理器](metaconfig4.md)。
+> **注意**：本主题适用于 Windows PowerShell 5.0 中引入的 LCM。
+有关在 Windows PowerShell 4.0 中配置 LCM 的信息，请参阅 [Windows PowerShell 4.0 Desired State Configuration 本地配置管理器](metaconfig4.md)。
 
-<a id="writing-and-enacting-an-lcm-configuration" class="xliff"></a>
-## 编写和执行 LCM 配置
+## <a name="writing-and-enacting-an-lcm-configuration"></a>编写和执行 LCM 配置
 
-若要配置 LCM，你需要创建并运行特殊类型的配置。 若要指定 LCM 配置，你可以使用 DscLocalConfigurationManager 特性。 下面演示将 LCM 设置为推送模式的简单配置。
+若要配置 LCM，请创建并运行应用 LCM 设置的特殊类型的配置。
+若要指定 LCM 配置，你可以使用 DscLocalConfigurationManager 特性。
+下面演示将 LCM 设置为推送模式的简单配置。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -45,106 +49,146 @@ configuration LCMConfig
 } 
 ```
 
-调用和运行配置来创建配置 MOF，与常规配置类似（有关创建配置 MOF 的信息，请参阅[编译配置](configurations.md#compiling-the-configuration)）。 与常规配置不同的是，不通过调用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet 来执行 LCM 配置。 而是通过调用 [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) cmdlet，将路径作为参数提供给配置 MOF。 执行配置后，可以通过调用 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) cmdlet 查看 LCM 的属性。
+将设置应用于 LCM 的过程与应用 DSC 配置的过程类似。
+创建 LCM 配置、将其编译为 MOF 文件，然后应用于节点。
+与 DSC 配置不同的是，不通过调用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet 来执行 LCM 配置。
+而是通过调用 [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx)，将路径作为参数提供给 LCM 配置 MOF。
+执行 LCM 配置后，可以通过调用 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) cmdlet 查看 LCM 的属性。
 
-LCM 配置只能包含有限组资源的块。 在上面的示例中，调用的唯一资源名为 **Settings**。 其他可用资源有：
+LCM 配置只能包含有限组资源的块。
+在上面的示例中，调用的唯一资源名为 **Settings**。
+其他可用资源有：
 
-* **ConfigurationRepositoryWeb**：指定用于配置的 HTTP 请求服务器。 
-* **ConfigurationRepositoryShare**：指定用于配置的 SMB 请求服务器。
-* **ResourceRepositoryWeb**：指定用于模块的 HTTP 请求服务器。
-* **ResourceRepositoryShare**：指定用于模块的 SMB 请求服务器。
-* **ReportServerWeb**：指定将报告发送到的 HTTP 请求服务器。
-* **PartialConfiguration**：指定部分配置。
+* **ConfigurationRepositoryWeb**：指定用于配置的 HTTP 请求服务。
+* **ConfigurationRepositoryShare**：指定用于配置的 SMB 共享。
+* **ResourceRepositoryWeb**：指定用于模块的 HTTP 请求服务。
+* **ResourceRepositoryShare**：指定用于模块的 SMB 共享。
+* **ReportServerWeb**：指定将报告发送到的 HTTP 请求服务。
+* **PartialConfiguration**：提供数据以启用部分配置。
 
-<a id="basic-settings" class="xliff"></a>
-## 基本设置
+## <a name="basic-settings"></a>基本设置
 
-不通过指定请求服务器和部分配置 LCM 的所有属性，而是在 **Settings** 块中进行配置。 **Settings** 块中提供下列属性。
+不通过指定请求服务终结点/路径和部分配置 LCM 的所有属性，而是在 Settings 块中进行配置。
+**Settings** 块中提供下列属性。
 
-|  属性  |  类型  |  说明   | 
-|----------- |------- |--------------- | 
-| ConfigurationModeFrequencyMins| UInt32| 检查和应用当前配置的时间间隔（以分钟为单位）。 如果将 ConfigurationMode 属性设置为 ApplyOnly，则将忽略此属性。 默认值为 15。| 
-| RebootNodeIfNeeded| 布尔| 将此设置为 __$true__，可在应用要求重启的设置后自动重启节点。 否则，你必须为要求重启的配置手动重启节点。 默认值为 __$false__。| 
-| ConfigurationMode| 字符串 | 指定 LCM 实际如何将配置应用到目标节点。 可取值为 __ApplyOnly__、__ApplyandMonitior__ 和 __ApplyandAutoCorrect__。 <ul><li>__ApplyOnly__：DSC 将应用配置，但若未向目标节点推送新配置或从服务器请求新配置，则它不会执行任何进一步操作。 首次应用新配置后，DSC 不会检查是否偏离以前配置的状态。 请注意，__ApplyOnly__ 生效前，DSC 将尝试应用配置，直到成功为止。 </li><li> __ApplyAndMonitor__：这是默认值。 LCM 将应用任意新配置。 首次应用新配置后，如果目标节点偏离期望状态，则 DSC 将在日志中报告差异。 请注意，__ApplyAndMonitor__ 生效前，DSC 将尝试应用配置，直到成功为止。</li><li>__ApplyAndAutoCorrect__：DSC 将应用任何新配置。 首次应用新配置后，如果目标节点偏离适当状态，则 DSC 将在日志中报告差异然后重新应用当前配置。</li></ul>| 
-| ActionAfterReboot| 字符串| 指定在应用配置期间重启后进行什么操作。 可取值为 __ContinueConfiguration__ 和 __StopConfiguration__。 <ul><li> __ContinueConfiguration__：在计算机重新启动后继续应用当前配置。 此为默认值</li><li>__StopConfiguration__：在计算机重新启动后停止当前配置。</li></ul>| 
-| RefreshMode| 字符串| 指定 LCM 如何获取配置。 可取值为 __Disabled__、__Push__ 和 __Pull__。 <ul><li>__Disabled__：DSC 配置对该节点禁用。</li><li> __Push__：通过调用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet 启动配置。 将配置立即应用到节点。 这是默认值。</li><li>__Pull：__将节点配置为从请求服务器定期检查配置。 如果此属性被设置为 __Pull__，你必须在 __ConfigurationRepositoryWeb__ 或 __ConfigurationRepositoryShare__ 块中指定请求服务器。 有关请求服务器的详细信息，请参阅[设置 DSC 请求服务器](pullServer.md)。</li></ul>|  
-| CertificateID| 字符串| 用于保护在配置中传递的凭据的证书指纹。 更多详细信息，请参阅 [Want to secure credentials in Windows PowerShell Desired State Configuration?（希望在 Windows PowerShell Desired State Configuration 中保护凭据？）](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)。| 
-| ConfigurationID| 字符串| 用于标识请求模式下要从请求服务器获取的配置文件的 GUID。 如果配置 MOF 名为 ConfigurationID.mof，那么节点将在拉取服务器上拉取配置。<br> __注意：__如果设置此属性，将无法使用 __RegistryKey__ 将节点注册到请求服务器。 有关详细信息，请参阅[使用配置名称设置请求客户端](pullClientConfigNames.md)。| 
-| RefreshFrequencyMins| Uint32| LCM 按此时间间隔（以分钟为单位）检查请求服务器以获取更新的配置。 如果 LCM 未配置为请求模式，则将忽略此值。 默认值为 30。| 
-| AllowModuleOverwrite| 布尔| 若允许从配置服务器下载的新配置覆盖目标节点上的旧配置，则为 __$TRUE__。 否则为 $FALSE。| 
+|  属性  |  类型  |  说明   |
+|----------- |------- |--------------- |
+| ActionAfterReboot| 字符串| 指定在应用配置期间重启后进行什么操作。 可取值为 __ContinueConfiguration__ 和 __StopConfiguration__。 <ul><li> __ContinueConfiguration__：在计算机重新启动后继续应用当前配置。 此为默认值</li><li>__StopConfiguration__：在计算机重新启动后停止当前配置。</li></ul>|
+| AllowModuleOverwrite| 布尔| 若允许从请求服务下载的新配置覆盖目标节点上的旧配置，则为 __$TRUE__。 否则为 $FALSE。|
+| CertificateID| 字符串| 用于保护在配置中传递的凭据的证书指纹。 更多详细信息，请参阅 [Want to secure credentials in Windows PowerShell Desired State Configuration?（希望在 Windows PowerShell Desired State Configuration 中保护凭据？）](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)。 <br> __注意：__如果使用 Azure 自动化 DSC 请求服务，则会自动进行管理。|
+| ConfigurationDownloadManagers| CimInstance[]| 已过时。 使用 __ConfigurationRepositoryWeb__ 和 __ConfigurationRepositoryShare__ 块定义配置请求服务终结点。|
+| ConfigurationID| 字符串| 用于向后兼容早期版本的请求服务。 用于标识要从请求服务获取的配置文件的 GUID。 如果配置 MOF 名为 ConfigurationID.mof，那么节点将在请求服务上请求配置。<br> __注意：__如果设置此属性，将无法使用 __RegistryKey__ 将节点注册到请求服务。 有关详细信息，请参阅[使用配置名称设置请求客户端](pullClientConfigNames.md)。|
+| ConfigurationMode| 字符串 | 指定 LCM 实际如何将配置应用到目标节点。 可取值为 __ApplyOnly__、__ApplyandMonitior__ 和 __ApplyandAutoCorrect__。 <ul><li>__ApplyOnly__：DSC 将应用配置，但若未向目标节点推送新配置或从服务请求新配置，则它不会执行任何进一步操作。 首次应用新配置后，DSC 不会检查是否偏离以前配置的状态。 请注意，__ApplyOnly__ 生效前，DSC 将尝试应用配置，直到成功为止。 </li><li> __ApplyAndMonitor__：这是默认值。 LCM 将应用任意新配置。 首次应用新配置后，如果目标节点偏离期望状态，则 DSC 将在日志中报告差异。 请注意，__ApplyAndMonitor__ 生效前，DSC 将尝试应用配置，直到成功为止。</li><li>__ApplyAndAutoCorrect__：DSC 将应用任何新配置。 首次应用新配置后，如果目标节点偏离适当状态，则 DSC 将在日志中报告差异然后重新应用当前配置。</li></ul>|
+| ConfigurationModeFrequencyMins| UInt32| 检查和应用当前配置的时间间隔（以分钟为单位）。 如果将 ConfigurationMode 属性设置为 ApplyOnly，则将忽略此属性。 默认值为 15。|
 | DebugMode| 字符串| 可取值为 __None__、__ForceModuleImport__ 和 __All__。 <ul><li>设置为 __None__ 可以使用缓存的资源。 这是默认值，应在生产方案中使用。</li><li>设置为 __ForceModuleImport__ 会导致 LCM 重载所有 DSC 资源模块，即使这些模块之前已被加载并缓存，也是如此。 这会影响 DSC 操作的性能，因为将在使用时重新加载每个模块。 通常在调试资源时使用此值</li><li>在此版本中，__All__ 等同于 __ForceModuleImport__</li></ul> |
-| ConfigurationDownloadManagers| CimInstance[]| 已过时。 使用 __ConfigurationRepositoryWeb__ 和 __ConfigurationRepositoryShare__ 块定义配置请求服务器。| 
-| ResourceModuleManagers| CimInstance[]| 已过时。 使用 __ResourceRepositoryWeb__ 和 __ResourceRepositoryShare__ 块定义资源请求服务器。| 
-| ReportManagers| CimInstance[]| 已过时。 使用 __ReportServerWeb__ 块定义报表请求服务器。| 
-| PartialConfigurations| CimInstance| 未实现。 不使用。| 
-| StatusRetentionTimeInDays | UInt32| LCM 保留当前配置状态的天数。| 
+| RebootNodeIfNeeded| 布尔| 将此设置为 __$true__，可在应用要求重启的设置后自动重启节点。 否则，你必须为要求重启的配置手动重启节点。 默认值为 __$false__。 若要在通过 DSC（例如 Windows Installer）以外的其他配置执行重启条件时使用此设置，请将此设置和 [xPendingReboot](https://github.com/powershell/xpendingreboot) 模块组合使用。|
+| RefreshMode| 字符串| 指定 LCM 如何获取配置。 可取值为 __Disabled__、__Push__ 和 __Pull__。 <ul><li>__Disabled__：DSC 配置对该节点禁用。</li><li> __Push__：通过调用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet 启动配置。 将配置立即应用到节点。 这是默认值。</li><li>__Pull：__将节点配置为从请求服务或 SMB 路径定期检查配置。 如果此属性被设置为 __Pull__，则必须在 __ConfigurationRepositoryWeb__ 或 __ConfigurationRepositoryShare__ 块中指定 HTTP（服务）或 SMB（共享）路径。</li></ul>|
+| RefreshFrequencyMins| Uint32| LCM 按此时间间隔（以分钟为单位）检查请求服务以获取更新的配置。 如果 LCM 未配置为请求模式，则将忽略此值。 默认值为 30。|
+| ReportManagers| CimInstance[]| 已过时。 使用 __ReportServerWeb__ 块定义终结点，以将报告数据发送到请求服务。|
+| ResourceModuleManagers| CimInstance[]| 已过时。 使用 __ResourceRepositoryWeb__ 和 __ResourceRepositoryShare__ 块分别定义请求服务 HTTP 终结点和 SMB 路径。|
+| PartialConfigurations| CimInstance| 未实现。 不使用。|
+| StatusRetentionTimeInDays | UInt32| LCM 保留当前配置状态的天数。|
 
-<a id="pull-servers" class="xliff"></a>
-## 请求服务器
+## <a name="pull-service"></a>请求服务
 
-请求服务器是一个 OData Web 服务或作为 DSC 文件的中心位置使用的 SMB 共享。 LCM 配置支持定义以下类型的请求服务器：
+DSC 设置允许通过请求配置和模块，并将报告数据发布到远程位置来管理节点。
+请求服务的当前选项包括：
 
-* **配置服务器**：DSC 配置的存储库。 使用 **ConfigurationRepositoryWeb**（对于基于 Web 的服务器）和 **ConfigurationRepositoryShare**（对于基于 SMB 的服务器）块定义配置服务器。
-* 资源服务器 - 打包为 PowerShell 模块的 DSC 资源存储库。 使用 **ResourceRepositoryWeb**（对于基于 Web 的服务器）和 **ResourceRepositoryShare**（对于基于 SMB 的服务器）块定义资源服务器。
-* 报表服务器 - DSC 将报表数据发送到的服务。 使用 **ReportServerWeb** 块定义报表服务器。 报表服务器必须是 Web 服务。
+- Azure 自动化 Desired State Configuration 服务
+- 在 Windows Server 上运行的请求服务实例
+- SMB 共享（不支持发布报告数据）
 
-有关设置和使用请求服务器的信息，请参阅[设置 DSC 请求服务器](pullServer.md)。
+LCM 配置支持定义以下类型的请求服务终结点：
 
-<a id="configuration-server-blocks" class="xliff"></a>
-## 配置服务器块
+- **配置服务器**：DSC 配置的存储库。 使用 **ConfigurationRepositoryWeb**（对于基于 Web 的服务器）和 **ConfigurationRepositoryShare**（对于基于 SMB 的服务器）块定义配置服务器。
+- **资源服务器**：打包为 PowerShell 模块的 DSC 资源存储库。 使用 **ResourceRepositoryWeb**（对于基于 Web 的服务器）和 **ResourceRepositoryShare**（对于基于 SMB 的服务器）块定义资源服务器。
+- **报表服务器**：DSC 将报表数据发送到的服务。 使用 **ReportServerWeb** 块定义报表服务器。 报表服务器必须是 Web 服务。
 
-若要定义基于 Web 的配置服务器，请创建 **ConfigurationRepositoryWeb** 块。 **ConfigurationRepositoryWeb** 定义以下属性。
+**建议的解决方案**和可用功能最多的选项是 [Azure 自动化 DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started)。
+
+Azure 服务可以在本地管理私有数据中心或 Azure 和 AWS 等公有云中的节点。
+对于服务器无法直接连接到 Internet 的私有环境，请考虑将出站流量限制为仅已发布的 Azure IP 范围（请参阅 [Azure 数据中心 IP 范围](https://www.microsoft.com/en-us/download/details.aspx?id=41653)）。
+
+在 Windows Server 的请求服务上目前暂不可用的在线服务功能包括：
+- 所有数据在传输和静止时均处于加密状态
+- 自动创建和管理客户端证书
+- 用于集中式管理[密码/凭据](https://docs.microsoft.com/en-us/azure/automation/automation-credentials)或[变量](https://docs.microsoft.com/en-us/azure/automation/automation-variables)（例如服务器名称或连接字符串）的机密存储
+- 集中式管理节点 [LCM 配置](metaConfig.md#basic-settings)
+- 将配置集中分配给客户端节点
+- 在投入生产之前，将配置更改发布到“Canary 组”用于测试
+- 图形报告
+  - DSC 资源粒度级别的状态详细信息
+  - 客户端计算机中用于故障排除的详细错误消息
+- [与 Azure Log Analytics 集成](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-diagnostics)用于警报，与自动化的任务，Android/iOS 应用集成用于报告和警报
+
+或者，有关在 Windows Server 上设置和使用 HTTP 请求服务的信息，请参阅[设置 DSC 请求服务器](pullServer.md)。
+请注意，这是一种有限的实现，仅具有存储配置/模块以及将报表数据捕获到本地数据库的基本功能。
+
+## <a name="configuration-server-blocks"></a>配置服务器块
+
+若要定义基于 Web 的配置服务器，请创建 **ConfigurationRepositoryWeb** 块。
+**ConfigurationRepositoryWeb** 定义以下属性。
 
 |属性|类型|说明|
 |---|---|---| 
 |AllowUnsecureConnection|布尔|设置为 **$TRUE** 以允许无需身份验证即可从节点连接到服务器。 设置为 **$FALSE** 以要求进行身份验证。|
 |CertificateID|字符串|用于向服务器进行身份验证的证书指纹。|
-|ConfigurationNames|string[]|目标节点将请求的配置名称的数组。 仅当通过 **RegistrationKey** 将节点注册到请求服务器后，才使用这些操作。 有关详细信息，请参阅[使用配置名称设置请求客户端](pullClientConfigNames.md)。|
-|RegistrationKey|字符串|用于将节点注册到请求服务器的 GUID。 有关详细信息，请参阅[使用配置名称设置请求客户端](pullClientConfigNames.md)。|
-|ServerURL|字符串|配置服务器的 URL。|
+|ConfigurationNames|string[]|目标节点将请求的配置名称的数组。 仅当通过 RegistrationKey 将节点注册到请求服务后，才使用这些操作。 有关详细信息，请参阅[使用配置名称设置请求客户端](pullClientConfigNames.md)。|
+|RegistrationKey|字符串|用于将节点注册到请求服务的 GUID。 有关详细信息，请参阅[使用配置名称设置请求客户端](pullClientConfigNames.md)。|
+|ServerURL|字符串|配置服务的 URL。|
 
-要定义基于 SMB 的配置服务器，请创建 **ConfigurationRepositoryShare** 块。 **ConfigurationRepositoryShare** 定义以下属性。
+提供简化本地节点的 ConfigurationRepositoryWeb 值配置的示例脚本 - 请参阅[生成 DSC 元配置](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+
+要定义基于 SMB 的配置服务器，请创建 **ConfigurationRepositoryShare** 块。
+**ConfigurationRepositoryShare** 定义以下属性。
 
 |属性|类型|说明|
 |---|---|---|
 |凭据|MSFT_Credential|用于对 SMB 共享进行身份验证的凭据。|
 |SourcePath|字符串|SMB 共享的路径。|
 
-<a id="resource-server-blocks" class="xliff"></a>
-## 资源服务器块
+## <a name="resource-server-blocks"></a>资源服务器块
 
-若要定义基于 Web 的资源服务器，请创建 **ResourceRepositoryWeb** 块。 **ResourceRepositoryWeb** 定义以下属性。
+若要定义基于 Web 的资源服务器，请创建 **ResourceRepositoryWeb** 块。
+**ResourceRepositoryWeb** 定义以下属性。
 
 |属性|类型|说明|
 |---|---|---|
 |AllowUnsecureConnection|布尔|设置为 **$TRUE** 以允许无需身份验证即可从节点连接到服务器。 设置为 **$FALSE** 以要求进行身份验证。|
 |CertificateID|字符串|用于向服务器进行身份验证的证书指纹。|
-|RegistrationKey|字符串|用于将节点标识到请求服务器的 GUID。 有关详细信息，请参阅“如何将节点注册到 DSC 请求服务器”。|
+|RegistrationKey|字符串|用于将节点标识到请求服务的 GUID。|
 |ServerURL|字符串|配置服务器的 URL。|
- 
-若要定义的基于 SMB 的资源服务器，请创建 **ResourceRepositoryShare** 块。 **ResourceRepositoryShare** 定义以下属性。
+
+提供简化本地节点的 ResourceRepositoryWeb 值配置的示例脚本 - 请参阅[生成 DSC 元配置](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+
+若要定义的基于 SMB 的资源服务器，请创建 **ResourceRepositoryShare** 块。
+**ResourceRepositoryShare** 定义以下属性。
 
 |属性|类型|说明|
 |---|---|---|
 |凭据|MSFT_Credential|用于对 SMB 共享进行身份验证的凭据。 有关传递凭据的示例，请参阅[设置 DSC SMB 请求服务器](pullServerSMB.md)|
 |SourcePath|字符串|SMB 共享的路径。|
 
-<a id="report-server-blocks" class="xliff"></a>
-## 报表服务器块
+## <a name="report-server-blocks"></a>报表服务器块
 
-报表服务器必须是 OData Web 服务。 若要定义报表服务器，请创建 **ReportServerWeb** 块。 **ReportServerWeb** 定义以下属性。
+若要定义报表服务器，请创建 **ReportServerWeb** 块。
+报表服务器角色与基于 SMB 的请求服务不兼容。
+**ReportServerWeb** 定义以下属性。
 
 |属性|类型|说明|
 |---|---|---|
 |AllowUnsecureConnection|布尔|设置为 **$TRUE** 以允许无需身份验证即可从节点连接到服务器。 设置为 **$FALSE** 以要求进行身份验证。|
 |CertificateID|字符串|用于向服务器进行身份验证的证书指纹。|
-|RegistrationKey|字符串|用于将节点标识到请求服务器的 GUID。 有关详细信息，请参阅“如何将节点注册到 DSC 请求服务器”。|
+|RegistrationKey|字符串|用于将节点标识到请求服务的 GUID。|
 |ServerURL|字符串|配置服务器的 URL。|
 
-<a id="partial-configurations" class="xliff"></a>
-## 部分配置
+提供简化本地节点的 ReportServerWeb 值配置的示例脚本 - 请参阅[生成 DSC 元配置](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
-若要定义部分配置，请创建 **PartialConfiguration** 块。 有关部分配置的详细信息，请参阅 [DSC 部分配置](partialConfigs.md)。 **PartialConfiguration** 定义以下属性。
+## <a name="partial-configurations"></a>部分配置
+
+若要定义部分配置，请创建 **PartialConfiguration** 块。
+有关部分配置的详细信息，请参阅 [DSC 部分配置](partialConfigs.md)。
+**PartialConfiguration** 定义以下属性。
 
 |属性|类型|说明|
 |---|---|---| 
@@ -152,23 +196,20 @@ LCM 配置只能包含有限组资源的块。 在上面的示例中，调用的
 |DependsOn|string{}|应用此部分配置之前必须完成的其他配置名称的列表。|
 |说明|字符串|用于描述部分配置的文本。|
 |ExclusiveResources|string[]|此部分配置专用的资源数组。|
-|RefreshMode|字符串|指定 LCM 如何获取此部分配置。 可取值为 __Disabled__、__Push__ 和 __Pull__。 <ul><li>__Disabled__：禁用此部分配置。</li><li> __Push__：通过调用 [Publish-DscConfiguration](https://technet.microsoft.com/en-us/library/mt517875.aspx) cmdlet 将部分配置推送到节点。 从服务器推送或请求该节点的所有部分配置后，可以通过调用 `Start-DscConfiguration –UseExisting` 来启动配置。 这是默认值。</li><li>__Pull：__将节点配置为从请求服务器定期检查部分配置。 如果将此属性设置为 __Pull__，则必须在 __ConfigurationSource__ 属性中指定请求服务器。 有关请求服务器的详细信息，请参阅[设置 DSC 请求服务器](pullServer.md)。</li></ul>|
-|ResourceModuleSource|string[]|可从中下载此部分配置所需资源的资源服务器的名称数组。 这些名称必须表示之前在 **ResourceRepositoryWeb** 和 **ResourceRepositoryShare** 块中定义的资源服务器。|
+|RefreshMode|字符串|指定 LCM 如何获取此部分配置。 可取值为 __Disabled__、__Push__ 和 __Pull__。 <ul><li>__Disabled__：禁用此部分配置。</li><li> __Push__：通过调用 [Publish-DscConfiguration](https://technet.microsoft.com/en-us/library/mt517875.aspx) cmdlet 将部分配置推送到节点。 从服务推送或请求该节点的所有部分配置后，可以通过调用 `Start-DscConfiguration –UseExisting` 来启动配置。 这是默认值。</li><li>__Pull：__将节点配置为从请求服务定期检查部分配置。 如果将此属性设置为 __Pull__，则必须在 __ConfigurationSource__ 属性中指定请求服务。 有关 Azure 自动化请求服务的详细信息，请参阅 [Azure 自动化 DSC 概述](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)。</li></ul>|
+|ResourceModuleSource|string[]|可从中下载此部分配置所需资源的资源服务器的名称数组。 这些名称必须表示之前在 ResourceRepositoryWeb 和 ResourceRepositoryShare 块中定义的服务终结点。|
 
-<a id="see-also" class="xliff"></a>
-## 另请参阅 
+__注意：__Azure 自动化 DSC 支持部分配置，但每个节点只能从每个自动化帐户中请求一个配置。
 
-<a id="concepts" class="xliff"></a>
-### 概念
-[Windows PowerShell Desired State Configuration 概述](overview.md)
+## <a name="see-also"></a>另请参阅 
+
+### <a name="concepts"></a>概念
+[Desired State Configuration 概述](overview.md)
  
-[设置 DSC 请求服务器](pullServer.md)
+[Azure 自动化 DSC 入门](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started)
 
-[Windows PowerShell 4.0 Desired State Configuration 本地配置管理器](metaConfig4.md)
+### <a name="other-resources"></a>其他资源
 
-<a id="other-resources" class="xliff"></a>
-### 其他资源
 [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx)
 
 [使用配置名称设置请求客户端](pullClientConfigNames.md)
-

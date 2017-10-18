@@ -19,6 +19,8 @@
 ### [联系项所有者](psgallery/psgallery_contacting_item_owners.md)
 ### [联系管理员](psgallery/psgallery_contacting_administrators.md)
 ### [通过社交媒体或发表评论提供反馈](psgallery/psgallery-SocialMediaFeedback.md)
+### [在项目详细信息中需要接受许可证](psgallery/psgallery_requires_license_acceptance.md)
+### [在部署到 Azure 自动化时需要接受许可证](psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md)
 
 # [PowerShellGet](psget/overview.md)
 ## [获取 PowerShellGet 模块](psget/get_psget_module.md)
@@ -36,6 +38,7 @@
 ### [更新模块清单](psget/module/psget_update-modulemanifest.md)
 ### [发布](psget/module/psget_publish-module.md)
 ### [PSEditions 模块](psget/module/modulewithpseditionsupport.md)
+### [需要接受许可证的模块](psget/module/RequireLicenseAcceptance.md)
 ### [疑难解答](psget/psget_cmdlets_troubleshooting.md)
 
 ## 脚本
@@ -50,6 +53,7 @@
 ### [更新脚本文件元数据](psget/script/psget_update-scriptfileinfo.md)
 ### [发布](psget/script/psget_publish-script.md)
 ### [PSEditions 脚本](psget/script/scriptwithpseditionsupport.md)
+### [需要为脚本接受许可证](psget/script/script_RequireLicenseAcceptance.md)
 
 ## 存储库管理
 ### [启动 NuGet 提供程序和 NuGet.exe](psget/repository/bootstrapping_nuget_proivder_and_exe.md)

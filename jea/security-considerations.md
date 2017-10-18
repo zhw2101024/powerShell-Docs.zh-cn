@@ -4,14 +4,13 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea,powershell,安全性"
 title: "JEA 安全注意事项"
-ms.openlocfilehash: f85b342625d4dba0890619ef9680eaccbbde5224
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 2dcce34113998a1c31709b6afe6d0a21c991e79d
+ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 10/13/2017
 ---
-<a id="jea-security-considerations" class="xliff"></a>
-# JEA 安全注意事项
+# <a name="jea-security-considerations"></a>JEA 安全注意事项
 
 > 适用于：Windows PowerShell 5.0
 
@@ -22,8 +21,7 @@ JEA 通过减少计算机上的永久管理员数量来帮助改善安全状况�
 
 本主题详细介绍了 JEA 安全模型和最佳做法。
 
-<a id="run-as-account" class="xliff"></a>
-## 运行方式帐户
+## <a name="run-as-account"></a>运行方式帐户
 
 每个 JEA 终结点都有一个指定的“运行方式”帐户，该帐户是执行连接用户的操作所采用的帐户。
 此帐户在[会话配置文件](session-configurations.md)中是可配置的，并且你选择的帐户对终结点的安全性意义重大。
@@ -70,7 +68,7 @@ gMSA 帐户所属的安全组（本地或域）定义 gMSA 的有效权限。
 JEA 终结点配置为使用 gMSA 帐户时，所有 JEA 用户的操作将显示来自同一个组托管服务帐户。
 将操作追溯到特定用户的唯一方法是标识 PowerShell 会话脚本中运行的命令集。
 
-在未指定运行方式帐户，并希望 PowerShell 使用连接用户的凭据在远程服务器上运行命令时使用**传递凭据**。
+在未指定运行方式帐户，并希望 PowerShell 使用连接用户的凭据在远程服务器上运行命令时使用传递凭据。
 *不*推荐 JEA 使用此配置，因为该配置要求向连接用户授予特权管理组的直接访问权限。
 如果连接用户已有管理员权限，他们可以完全避免 JEA，并通过其他非约束方式管理系统。
 有关详细信息，请参阅下节关于如何使 [JEA 不阻止管理员](#jea-does-not-protect-against-admins)的内容。
@@ -81,8 +79,7 @@ JEA 终结点配置为使用 gMSA 帐户时，所有 JEA 用户的操作将显�
 
 由于将操作追溯到特定用户存在难度并且缺少将用户映射到角色的支持，因此不应该对 JEA 终结点使用 RunAsCredential。
 
-<a id="winrm-endpoint-acl" class="xliff"></a>
-## WinRM 终结点 ACL
+## <a name="winrm-endpoint-acl"></a>WinRM 终结点 ACL
 
 与常规 PowerShell 远程终结点一样，每个 JEA 终结点在 WinRM 配置中都设有单独的访问控制列表 (ACL)，控制哪些用户可以通过 JEA 终结点的身份验证。
 如果配置错误，受信任的用户可能无法访问 JEA 终结点和/或不受信任的用户可能获得访问权限。
@@ -116,8 +113,7 @@ CONTOSO\JEA_Lev2 AccessAllowed
 可以通过运行 `Get-PSSessionCapability` 来审核 JEA 终结点中的用户权限。
 有关审核用户有权访问 JEA 终结点中的哪些命令的详细信息，请查看[有关 JEA 的审核和报告](audit-and-report.md)。
 
-<a id="least-privilege-roles" class="xliff"></a>
-## 最小特权角色
+## <a name="least-privilege-roles"></a>最小特权角色
 
 设计 JEA 角色时，务必记住后台运行的虚拟或组托管服务帐户通常具有不受限制的访问权限，以管理本地计算机。
 JEA 角色功能通过限制可使用该特权运行上下文的命令和应用程序帮助限制使用该帐户的目的。
@@ -146,8 +142,7 @@ JEA 角色功能通过限制可使用该特权运行上下文的命令和应用�
 
 避免在角色功能中使用通配符，并确保定期[审计有效用户权限](audit-and-report.md#check-effective-rights-for-a-specific-user)可了解用户有权访问哪些命令。
 
-<a id="jea-does-not-protect-against-admins" class="xliff"></a>
-## JEA 不阻止管理员
+## <a name="jea-does-not-protect-against-admins"></a>JEA 不阻止管理员
 
 JEA 核心原则之一是允许非管理员执行某些管理员任务。
 JEA 不阻止已经具有管理员权限的用户。
