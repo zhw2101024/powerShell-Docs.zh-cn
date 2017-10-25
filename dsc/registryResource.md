@@ -10,15 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/26/2017
 ---
-<a id="dsc-registry-resource" class="xliff"></a>
-# DSC Registry 资源
+# <a name="dsc-registry-resource"></a>DSC Registry 资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) 中的 **Registry** 资源提供了在目标节点上管理注册表项和值的机制。
 
-<a id="syntax" class="xliff"></a>
-## 语法
+## <a name="syntax"></a>语法
 
 ```
 Registry [string] #ResourceName
@@ -34,8 +32,7 @@ Registry [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-## “属性”
+## <a name="properties"></a>“属性”
 |  属性  |  说明   | 
 |---|---| 
 | 键| 指示要确保其特定状态的注册表项的路径。 路径必须包含配置单元。| 
@@ -63,8 +60,7 @@ Registry [string] #ResourceName
 
 <li>可扩展字符串 (REG_EXPAND_SZ)</li></ul>
 
-<a id="example" class="xliff"></a>
-## 示例
+## <a name="example"></a>示例
 此示例确保名为“ExampleKey”的键存在于 **HKEY\_LOCAL\_MACHINE** 配置单元中。
 ```powershell
 Configuration RegistryTest

@@ -1,5 +1,5 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "ISESnippetCollection 对象"
 ms.assetid: ae974955-4282-4cbc-8c42-0fff1904ef32

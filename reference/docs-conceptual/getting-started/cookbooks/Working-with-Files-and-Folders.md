@@ -1,5 +1,5 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "使用文件和文件夹"
 ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1

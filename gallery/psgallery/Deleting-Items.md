@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="deleting-items" class="xliff"></a>
-# 删除项
+# <a name="deleting-items"></a>删除项
 
 PowerShell 库不支持永久删除项，因为这会对依赖其仍可用的人造成中断。
 

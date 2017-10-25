@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="updates-to-fileinfo-object" class="xliff"></a>
-# 对 FileInfo 对象的更新
+# <a name="updates-to-fileinfo-object"></a>对 FileInfo 对象的更新
 文件版本信息可能会产生误导，尤其是在对文件进行了修补的情况下。 此版本的 WMF 5.0 向 FileInfo 对象添加了新的 **FileVersionRaw** 和 **ProductVersionRaw** 脚本属性。 以下是为 powershell.exe 显示的属性（假设 $pid 为 PowerShell 进程的 ID）：
 
 ```powershell

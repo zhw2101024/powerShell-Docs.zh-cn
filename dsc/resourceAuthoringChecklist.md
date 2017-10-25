@@ -10,11 +10,9 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="resource-authoring-checklist" class="xliff"></a>
-# 资源创作清单
+# <a name="resource-authoring-checklist"></a>资源创作清单
 此清单是创作新 DSC 资源时的最佳做法的列表。
-<a id="resource-module-contains-psd1-file-and-schemamof-for-every-resource" class="xliff"></a>
-## 资源模块包含用于所有资源的 .psd1 文件和 schema.mof 
+## <a name="resource-module-contains-psd1-file-and-schemamof-for-every-resource"></a>资源模块包含用于所有资源的 .psd1 文件和 schema.mof 
 检查资源是否具有正确的结构以及是否包含所有所需文件。 每个资源模块都应包含 .psd1 文件且每个非复合资源都应具有 schema.mof 文件。 未包含架构的资源不会被 **Get-DscResource** 列出且用户在针对 ISE 中的这些模块写入代码时不能使用 IntelliSense。 xRemoteFile 资源是 [xPSDesiredStateConfiguration 资源模块](https://github.com/PowerShell/xPSDesiredStateConfiguration)的一部分，其目录结构如下所示：
 
 
@@ -33,8 +31,7 @@ xPSDesiredStateConfiguration
     xPSDesiredStateConfiguration.psd1
 ```
 
-<a id="resource-and-schema-are-correct" class="xliff"></a>
-## 资源和架构正确##
+## <a name="resource-and-schema-are-correct"></a>资源和架构正确##
 验证资源架构 (*.schema.mof) 文件。 你可以使用 [DSC 资源设计器](https://www.powershellgallery.com/packages/xDSCResourceDesigner/)来帮助开发和测试架构。 请确保：
 - 属性类型正确（例如，不将字符串用于接受数值的属性，应改为使用 UInt32 或其他数值类型）
 - 按以下格式正确指定属性特性：([key], [required], [write], [read])
@@ -66,8 +63,7 @@ Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
 ```
 
-<a id="resource-loads-without-errors" class="xliff"></a>
-## 资源已加载，未出现错误 ##
+## <a name="resource-loads-without-errors"></a>资源已加载，未出现错误 ##
 检查是否可以成功地加载资源模块。
 你可以手动完成检查，方法是运行 `Import-Module <resource_module> -force ` 并确认未发生错误，或者可以编写自动化测试用例来进行检查。 如果选用后者，则可以在测试用例中遵循此结构：
 ```powershell
@@ -77,8 +73,7 @@ If ($error.count –ne 0) {
     Throw “Module was not imported correctly. Errors returned: $error”
 }
 ```
-<a id="resource-is-idempotent-in-the-positive-case" class="xliff"></a>
-## 在正向用例中资源是幂等的 
+## <a name="resource-is-idempotent-in-the-positive-case"></a>在正向用例中资源是幂等的 
 DSC 资源的基本特征之一是幂等性。 这意味着多次应用包含该资源的 DSC 配置将始终获得相同的结果。 例如，如果创建包含以下文件资源的配置：
 ```powershell
 File file {
@@ -90,8 +85,7 @@ File file {
 要确保资源是幂等的，可以在直接测试资源时重复调用 **Set-TargetResource**，或在进行端到端测试时多次调用 **Start-DscConfiguration**。 每次运行后结果都应是相同的。 
 
 
-<a id="test-user-modification-scenario" class="xliff"></a>
-## 测试用户修改场景 ##
+## <a name="test-user-modification-scenario"></a>测试用户修改场景 ##
 通过更改计算机的状态，然后重新运行 DSC，可以验证 **Set-TargetResource** 和 **Test-TargetResource** 是否正常工作。 以下是你要采取的步骤：
 1.  从未在所需状态的资源开始。
 2.  使用资源运行配置
@@ -107,30 +101,24 @@ File file {
 
 Get-TargetResource 应该返回资源的当前状态的详细信息。 确保对其进行测试，方法是在应用该配置之后调用 Get-DscConfiguration 并验证输出是否正确反映了计算机的当前状态。 请务必对它进行单独测试，因为在调用 Start-DscConfiguration 时此区域的任何问题都不会出现。
 
-<a id="call-getsettest-targetresource-functions-directly" class="xliff"></a>
-## 直接调用函数 **Get/Set/Test-TargetResource** ##
+## <a name="call-getsettest-targetresource-functions-directly"></a>直接调用函数 **Get/Set/Test-TargetResource** ##
 
 请确保对在资源中实现的 **Get/Set/Test-TargetResource** 函数进行测试，可通过直接调用它们并按预期方式进行验证完成此操作。
 
-<a id="verify-end-to-end-using-start-dscconfiguration" class="xliff"></a>
-## 使用 **Start-DscConfiguration** 进行端到端验证 ##
+## <a name="verify-end-to-end-using-start-dscconfiguration"></a>使用 **Start-DscConfiguration** 进行端到端验证 ##
 
 虽然通过直接调用 **Get/Set/Test-TargetResource** 函数对它们进行测试至关重要，但不是所有问题都能以这种方法发现。 你应该将测试的关注重心放在使用 **Start-DscConfiguration** 上或请求服务器上。 事实上，这就是用户使用资源的方式，所以不要低估此类测试的重要性。 可能的问题类型：
 - 由于 DSC 代理以服务方式运行，因此凭据/会话的行为可能不同。  请务必端到端地测试此处的任何功能。
 - 由 **Start-DscConfiguration** 输出的错误可能与在直接调用 **Set-TargetResource** 函数时显示的错误不同。
 
-<a id="test-compatability-on-all-dsc-supported-platforms" class="xliff"></a>
-## 在所有 DSC 支持的平台上测试兼容性 ##
+## <a name="test-compatability-on-all-dsc-supported-platforms"></a>在所有 DSC 支持的平台上测试兼容性 ##
 资源应适用于所有支持 DSC 的平台（Windows Server 2008 R2 或更高版本）。 在操作系统上安装最新的 WMF (Windows Management Framework) 以获取最新版本的 DSC。 如果资源按设计无法在部分平台上运作，则将返回特定的错误消息。 此外，确保资源检查你调用的 cmdlet 是否存在于特定的计算机上。 Windows Server 2012 添加了大量新 cmdlet，即使安装了 WMF，它们在 Windows Server 2008R2 上也不可用。 
 
-<a id="verify-on-windows-client-if-applicable" class="xliff"></a>
-## 在 Windows 客户端上验证（如果适用） ##
+## <a name="verify-on-windows-client-if-applicable"></a>在 Windows 客户端上验证（如果适用） ##
 一个非常常见的测试间隙在于，仅在 Windows 的服务器版本上验证资源。 许多资源也被设计用于客户端 SKU，因此如果你的情况也是这样的话，不要忘记在这些平台上测试它。 
-<a id="get-dscresource-lists-the-resource" class="xliff"></a>
-## Get-DSCResource 用于列出资源 ##
+## <a name="get-dscresource-lists-the-resource"></a>Get-DSCResource 用于列出资源 ##
 部署模块后，调用 Get-DscResource 将列出资源等作为结果。 如果无法在列表中找到你的资源，请确保该资源的 schema.mof 文件存在。 
-<a id="resource-module-contains-examples" class="xliff"></a>
-## 资源模块包含示例 ##
+## <a name="resource-module-contains-examples"></a>资源模块包含示例 ##
 创建高质量示例可以帮助其他人了解如何使用它。 这一点至关重要，因为许多用户会将示例代码视为文档。 
 - 首先，你应确定要在模块中包含的示例（至少你应涵盖资源的最重要用例）：
 - 如果模块包含几个需要一起用于端到端方案的资源，则最好将基本的端到端示例作为第一个示例。
@@ -188,8 +176,7 @@ Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg"
 - 对于每个示例，编写简短说明，解释它能做什么以及参数的意义。 
 - 确保示例涵盖了资源大部分重要方案，如果没有任何遗漏，验证它们是否都能执行且是否能让计算机达到所需状态。  
 
-<a id="error-messages-are-easy-to-understand-and-help-users-solve-problems" class="xliff"></a>
-## 错误消息要易于理解，以便帮助用户解决问题 ##
+## <a name="error-messages-are-easy-to-understand-and-help-users-solve-problems"></a>错误消息要易于理解，以便帮助用户解决问题 ##
 好的错误消息应具有以下特性：
 - 存在性：错误消息最大的问题在于它们经常不存在，因此应确保它们的确存在。 
 - 易于理解：人工可读，没有晦涩的错误代码
@@ -197,8 +184,7 @@ Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg"
 - 建设性：建议如何修复问题
 - 礼貌用语：不要责怪用户，也不要让用户感到难堪。请务必在端到端场景中验证错误（使用 **Start-DscConfiguration**），因为该验证结果可能与直接运行资源函数时返回的结果不同。 
 
-<a id="log-messages-are-easy-to-understand-and-informative-including-verbose-debug-and-etw-logs" class="xliff"></a>
-## 日志消息要易于理解且信息量大（包括 –verbose、–debug 和 ETW 日志） ##
+## <a name="log-messages-are-easy-to-understand-and-informative-including-verbose-debug-and-etw-logs"></a>日志消息要易于理解且信息量大（包括 –verbose、–debug 和 ETW 日志） ##
 确保由资源输出的日志易于理解且向用户提供有价值的信息。 资源应输出所有可能对用户有用的信息，但并不总是日志越多越好。 你应该避免冗余和输出不提供更多价值的数据 – 不要让人为了找到他们要找的内容而浏览成百上千条日志。 当然，针对此问题没有任何日志也是不可接受的解决方案。 
 
 测试时还应分析 verbose 和 debug 日志（通过合理使用 –verbose 和 –debug 开关运行 **Start-DscConfiguration**）以及 ETW 日志。 若要查看 DSC ETW 日志，请转到“事件查看器”并打开下列文件夹：Applications and Services- Microsoft - Windows - Desired State Configuration。  默认情况下设置有“操作”通道，但要确保在运行配置之前启用了“分析”通道和“调试”通道。 若要启用“分析”/“调试”通道，可以执行下面的脚本：
@@ -215,8 +201,7 @@ if($statusEnabled -eq $log.IsEnabled)
 }     
 Invoke-Expression $commandToExecute 
 ```
-<a id="resource-implementation-does-not-contain-hardcoded-paths" class="xliff"></a>
-## 资源实现不包含硬编码路径 ##
+## <a name="resource-implementation-does-not-contain-hardcoded-paths"></a>资源实现不包含硬编码路径 ##
 确保资源实现中没有硬编码路径，特别是如果它们表示语言时 (en-us)，或者当存在可以使用的系统变量时。
 如果资源需要访问特定路径，请使用环境变量而非硬编码路径，因为后者在其他计算机上可能有所不同。
 
@@ -232,11 +217,9 @@ $programFilesPath = "C:\Program Files (x86)"
 $tempPath = Join-Path $env:temp "MyResource"
 $programFilesPath = ${env:ProgramFiles(x86)} 
 ```
-<a id="resource-implementation-does-not-contain-user-information" class="xliff"></a>
-## 资源实现不包含用户信息 ##
+## <a name="resource-implementation-does-not-contain-user-information"></a>资源实现不包含用户信息 ##
 请确保代码中没有电子邮件名称、帐户信息或人员姓名。
-<a id="resource-was-tested-with-validinvalid-credentials" class="xliff"></a>
-## 已使用有效/无效凭据验证了资源 ##
+## <a name="resource-was-tested-with-validinvalid-credentials"></a>已使用有效/无效凭据验证了资源 ##
 如果资源将凭据作为参数：
 - 当本地系统（或远程资源计算机帐户）无访问权限时验证资源是否正常运行。
 - 使用为 Get、Set 和 Test 指定的凭据验证资源是否正常运行。 
@@ -245,22 +228,18 @@ $programFilesPath = ${env:ProgramFiles(x86)}
   - DFS 共享。
   - SAMBA 共享（如果希望支持 Linux。）
 
-<a id="resource-does-not-require-interactive-input" class="xliff"></a>
-## 资源不需要交互式输入 ##
+## <a name="resource-does-not-require-interactive-input"></a>资源不需要交互式输入 ##
 应自动执行 **Get/Set/Test-TargetResource** 函数，且不能在任何执行阶段等待用户输入（例如，不能在这些函数中使用 **Get-Credential**）。 如果需要提供用户的输入，应在编译阶段期间将它作为参数传递到配置。 
-<a id="resource-functionality-was-thoroughly-tested" class="xliff"></a>
-## 已全面测试资源功能 ##
+## <a name="resource-functionality-was-thoroughly-tested"></a>已全面测试资源功能 ##
 此清单包含要测试的重要项和/或经常丢失的项。 提供了一系列测试，主要是特定于你要测试的资源和此处未提及的测试。 不要忘记负面测试用例。 
-<a id="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script" class="xliff"></a>
-## 最佳做法：资源模块包含具有 ResourceDesignerTests.ps1 脚本的 Tests 文件夹 ##
+## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>最佳做法：资源模块包含具有 ResourceDesignerTests.ps1 脚本的 Tests 文件夹 ##
 对于给定模块中的所有资源，使用 **Test-xDscResource** 和 **Test-xDscSchema** 在资源模块中创建“Tests”文件夹、创建 ResourceDesignerTests.ps1 文件并添加测试是很好的做法。 通过这种方法你可以快速验证给定模块的所有资源的架构，并在发布前执行完整性检查。
 对于 xRemoteFile，ResourceTests.ps1 可能和以下情况一样简单：
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof 
 ```
-<a id="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema" class="xliff"></a>
-##最佳做法：Resource 文件夹包含用于生成架构的资源设计器脚本##
+##<a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>最佳做法：Resource 文件夹包含用于生成架构的资源设计器脚本##
 每个资源应包含生成资源的 mof 架构的资源设计器脚本。 该文件应位于 <ResourceName>\ResourceDesignerScripts 并命名为 Generate<ResourceName>Schema.ps1 对于 xRemoteFile 资源，该文件应命名为 GenerateXRemoteFileSchema.ps1 并包含:
 ```powershell 
 $DestinationPath = New-xDscResourceProperty -Name DestinationPath -Type String -Attribute Key -Description 'Path under which downloaded or copied file should be accessible after operation.'
@@ -273,8 +252,7 @@ $CertificateThumbprint = New-xDscResourceProperty -Name CertificateThumbprint -T
 
 New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Headers, $UserAgent, $Ensure, $Credential, $CertificateThumbprint) -ModuleName xPSDesiredStateConfiguration2 -FriendlyName xRemoteFile 
 ```
-<a id="best-practice-resource-supports--whatif" class="xliff"></a>
-## 最佳做法：资源支持 - whatif ##
+## <a name="best-practice-resource-supports--whatif"></a>最佳做法：资源支持 - whatif ##
 如果资源正在执行“危险”操作，最佳做法是实现 -whatif 功能。 完成后，请确保 whatif 输出正确地描述了在无 whatif 开关情况下执行命令时可能发生的操作。
 此外，验证当 –whatif 开关存在时操作未执行（未对节点的状态进行更改）。 例如，假设我们正在测试 File 资源。 下面是创建“test.txt”文件及其“test”内容的简单配置：
 ```powershell

@@ -9,11 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="class-based-dsc-resources" class="xliff"></a>
-# 基于类的 DSC 资源
+# <a name="class-based-dsc-resources"></a>基于类的 DSC 资源
 
-<a id="defining-dsc-resources-with-classes" class="xliff"></a>
-## 使用类定义 DSC 资源
+## <a name="defining-dsc-resources-with-classes"></a>使用类定义 DSC 资源
 
 根据反馈，我们已简化了编写基于类的 DSC 资源的操作，并且内容更易于理解。 基于类的 DSC 资源和 cmdlet DSC 资源提供程序之间的主要区别如下：
 

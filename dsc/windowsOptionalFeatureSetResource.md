@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/26/2017
 ---
-<a id="dsc-windowsoptionalfeatureset-resource" class="xliff"></a>
-# DSC WindowsOptionalFeatureSet 资源
+# <a name="dsc-windowsoptionalfeatureset-resource"></a>DSC WindowsOptionalFeatureSet 资源
 
 > 适用于：Windows PowerShell 5.0
 
@@ -19,8 +18,7 @@ Windows PowerShell Desired State Configuration (DSC) 中的 **WindowsOptionalFea
 
 要将一些 Windows 可选功能配置为相同状态时，请使用此资源。
 
-<a id="syntax" class="xliff"></a>
-## 语法
+## <a name="syntax"></a>语法
 
 ```
 WindowsOptionalFeature [string] #ResourceName
@@ -37,8 +35,7 @@ WindowsOptionalFeature [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-## “属性”
+## <a name="properties"></a>“属性”
 
 |  属性  |  说明   | 
 |---|---| 

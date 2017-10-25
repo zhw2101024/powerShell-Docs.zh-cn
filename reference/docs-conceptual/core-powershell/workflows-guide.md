@@ -1,5 +1,5 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "工作流指南"
 ms.openlocfilehash: 9eb5ae1d665ed6e4319ede62e7f7a27e6ce5b04f

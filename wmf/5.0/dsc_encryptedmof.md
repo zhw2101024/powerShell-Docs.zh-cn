@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="mof-documents-are-encrypted-by-default" class="xliff"></a>
-# MOF 文档默认加密
+# <a name="mof-documents-are-encrypted-by-default"></a>MOF 文档默认加密
 
 配置文档包含敏感信息。 在以前版本的 DSC 中，你需要分发和管理证书以确保配置中的凭据安全。 对于许多人来说，这是一项重大的管理负担，即使为此大费周章，仍会余下某些尚未（且无法）确保安全配置信息。 
 

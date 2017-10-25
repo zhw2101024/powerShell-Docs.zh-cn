@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="logic-for-preparing-the-module-dependencies-during-publish-operation" class="xliff"></a>
-# 在发布操作过程中准备模块依赖项的逻辑
+# <a name="logic-for-preparing-the-module-dependencies-during-publish-operation"></a>在发布操作过程中准备模块依赖项的逻辑
 1.  作为 RequiredModules 的一部分列出的模块将被视为依赖项。
 2.  作为 NestedModules（其模块基准不位于指定的模块基准下）的一部分列出的模块将被视为依赖项。
 

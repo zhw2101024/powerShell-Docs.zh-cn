@@ -1,5 +1,5 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "附录 1 - 兼容性别名"
 ms.assetid: 96ad921e-1a57-463e-8e60-424faf8b6ef8

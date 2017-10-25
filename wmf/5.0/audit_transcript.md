@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="enhanced-transcription-options" class="xliff"></a>
-# 增强的脚本选项
+# <a name="enhanced-transcription-options"></a>增强的脚本选项
 
 Windows PowerShell 脚本已经得到改进以应用到所有主机应用程序（例如 Windows PowerShell ISE）而不仅仅只是控制台主机 (powershell.exe)。
 

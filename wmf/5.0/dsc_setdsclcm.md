@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter" class="xliff"></a>
-# Set-DscLocalConfigurationManager cmdlet 支持 -force 参数
+# <a name="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter"></a>Set-DscLocalConfigurationManager cmdlet 支持 -force 参数
 
 我们已添加对 Set-DscLocalConfigurationManager cmdlet 新参数的支持。 当其他操作（比如一致性检查）在后台运行时，这将允许用户切实重置元配置，因为它将导致停止所有运行中的操作。
 

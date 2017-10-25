@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="writing-a-custom-dsc-resource-with-powershell-classes" class="xliff"></a>
-# 使用 PowerShell 类编写自定义 DSC 资源
+# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>使用 PowerShell 类编写自定义 DSC 资源
 
 > 适用于：Windows PowerShell 5.0
 
@@ -25,8 +24,7 @@ ms.lasthandoff: 06/12/2017
 
 >**请注意：**基于类的资源中不支持泛型集合。
 
-<a id="folder-structure-for-a-class-resource" class="xliff"></a>
-## 类资源的文件夹结构
+## <a name="folder-structure-for-a-class-resource"></a>类资源的文件夹结构
 
 想要使用 PowerShell 类实现 DSC 自定义资源，请创建下列文件夹结构。 在 **MyDscResource.psm1** 中定义类，并且在 **MyDscResource.psd1** 中定义模块清单。
 
@@ -37,8 +35,7 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
            MyDscResource.psd1 
 ```
 
-<a id="create-the-class" class="xliff"></a>
-## 创建类
+## <a name="create-the-class"></a>创建类
 
 使用类关键字创建 PowerShell 类。 使用 **DscResource()** 特性来指定类是 DSC 资源。 类的名称就是 DSC 资源的名称。
 
@@ -48,8 +45,7 @@ class FileResource {
 }
 ```
 
-<a id="declare-properties" class="xliff"></a>
-### 声明属性
+### <a name="declare-properties"></a>声明属性
 
 DSC 资源架构被定义为类的属性。 我们声明下列三个属性。
 
@@ -84,8 +80,7 @@ enum Ensure
 }
 ```
 
-<a id="implementing-the-methods" class="xliff"></a>
-### 实现该方法
+### <a name="implementing-the-methods"></a>实现该方法
 
 **Get()**、**Set()** 和 **Test()** 方法类似于脚本资源中的 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** 函数。
 
@@ -222,8 +217,7 @@ enum Ensure
     }
 ```
 
-<a id="the-complete-file" class="xliff"></a>
-### 完整文件
+### <a name="the-complete-file"></a>完整文件
 完整类文件如下。
 
 ```powershell
@@ -422,8 +416,7 @@ class FileResource
 ```
 
 
-<a id="create-a-manifest" class="xliff"></a>
-## 创建清单
+## <a name="create-a-manifest"></a>创建清单
 
 若要让基于类的资源对 DSC 引擎可用，你必须在清单文件中添加 **DscResourcesToExport** 声明，以指示模块导出资源。 我们的清单如下所示：
 
@@ -461,8 +454,7 @@ PowerShellVersion = '5.0'
 } 
 ```
 
-<a id="test-the-resource" class="xliff"></a>
-## 测试资源
+## <a name="test-the-resource"></a>测试资源
 
 如前面所述，将类和清单文件保存到文件夹结构中之后，就可以创建一个使用新资源的配置。 有关如何运行 DSC 配置的信息，请参阅[执行配置](enactingConfigurations.md)。 下面的配置将检查 `c:\test\test.txt` 的文件是否存在，如果不存在，则会从 `c:\test.txt` 进行复制（运行配置前应先创建 `c:\test.txt`）。
 
@@ -481,16 +473,14 @@ Test
 Start-DscConfiguration -Wait -Force Test
 ```
 
-<a id="supporting-psdscrunascredential" class="xliff"></a>
-## 支持 PsDscRunAsCredential
+## <a name="supporting-psdscrunascredential"></a>支持 PsDscRunAsCredential
 
 >注意：PowerShell 5.0 及更高版本支持 PsDscRunAsCredential。
 
 可以在 [DSC 配置](configurations.md)资源块中使用 PsDscRunAsCredential 属性，以指定应使用指定的一组凭据运行资源。
 有关详细信息，请参阅[使用用户凭据运行 DSC](runAsUser.md)。
 
-<a id="require-or-disallow-psdscrunascredential-for-your-resource" class="xliff"></a>
-### 需要或禁止对资源使用 PsDscRunAsCredential
+### <a name="require-or-disallow-psdscrunascredential-for-your-resource"></a>需要或禁止对资源使用 PsDscRunAsCredential
 
 DscResource() 属性需要使用可选的参数 RunAsCredential。
 此参数可取以下三个值之一：
@@ -508,8 +498,7 @@ class FileResource {
 }
 ```
 
-<a id="access-the-user-context" class="xliff"></a>
-### 访问用户上下文
+### <a name="access-the-user-context"></a>访问用户上下文
 
 若要从自定义资源访问用户上下文，可以使用自动变量 `$global:PsDscContext`。
 
@@ -521,9 +510,7 @@ if (PsDscContext.RunAsUser) {
 }
 ```
 
-<a id="see-also" class="xliff"></a>
-## 另请参阅
-<a id="concepts" class="xliff"></a>
-### 概念
+## <a name="see-also"></a>另请参阅
+### <a name="concepts"></a>概念
 [构建自定义 Windows PowerShell Desired State Configuration 资源](authoringResource.md)
 

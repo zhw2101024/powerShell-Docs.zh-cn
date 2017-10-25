@@ -10,40 +10,33 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="new-scriptfileinfo" class="xliff"></a>
-# New-ScriptFileInfo
+# <a name="new-scriptfileinfo"></a>New-ScriptFileInfo
 
 使用元数据创建脚本文件。
 
-<a id="description" class="xliff"></a>
-## 说明
+## <a name="description"></a>说明
 
 New-ScriptFileInfo cmdlet 创建 PowerShell 脚本文件，包括有关脚本的元数据。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a>Cmdlet 语法
 
 ```powershell
 Get-Command -Name New-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
 
 [New-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619792)
 
-<a id="example-commands" class="xliff"></a>
-## 示例命令
+## <a name="example-commands"></a>示例命令
 
-<a id="passthru-parameter" class="xliff"></a>
-### PassThru 参数
+### <a name="passthru-parameter"></a>PassThru 参数
 
 ```powershell
 New-ScriptFileInfo -Description "Script file description." -PassThru
 ```
 
-<a id="new-scriptfileinfo-cmdlet" class="xliff"></a>
-### New-ScriptFileInfo cmdlet
+### <a name="new-scriptfileinfo-cmdlet"></a>New-ScriptFileInfo cmdlet
 New-ScriptFileInfo cmdlet 可创建包含诸如 Version、Guid、Author 和 Description 等元数据的新脚本文件。 
 
 ```powershell

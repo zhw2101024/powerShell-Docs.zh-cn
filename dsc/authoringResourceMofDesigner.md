@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/29/2017
 ---
-<a id="using-the-resource-designer-tool" class="xliff"></a>
-# 使用资源设计器工具
+# <a name="using-the-resource-designer-tool"></a>使用资源设计器工具
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
@@ -21,8 +20,7 @@ ms.lasthandoff: 06/29/2017
 
 >**请注意**：**Install-Module** 包含在 **PowerShellGet** 模块中，后者纳入 PowerShell 5.0。 可在 [PackageManagement PowerShell 模块预览](https://www.microsoft.com/en-us/download/details.aspx?id=49186)中下载适用于 PowerShell 3.0 和 4.0 的 **PowerShellGet**。
 
-<a id="creating-resource-properties" class="xliff"></a>
-## 创建资源属性
+## <a name="creating-resource-properties"></a>创建资源属性
 我们首先要确定资源将公开的属性。 在此示例中，我们将通过以下属性来定义 Active Directory 用户。
  
 参数名称  说明
@@ -40,8 +38,7 @@ $DomainCredential = New-xDscResourceProperty –Name DomainCredential-Type PSCre
 $Password = New-xDscResourceProperty –Name Password -Type PSCredential -Attribute Write
 ```
 
-<a id="create-the-resource" class="xliff"></a>
-## 创建资源
+## <a name="create-the-resource"></a>创建资源
 
 创建好资源属性后，我们就可以调用 **New-xDscResource** cmdlet 来创建资源。 **New-xDscResource** cmdlet 采用了属性列表作为参数。 它还采用了应将模块创建于的路径、新资源的名称以及包含它的模块名称。 下面的 PowerShell 命令可以创建资源。
 
@@ -164,8 +161,7 @@ function Test-TargetResource
 Export-ModuleMember -Function *-TargetResource
 ```
 
-<a id="updating-the-resource" class="xliff"></a>
-## 更新资源
+## <a name="updating-the-resource"></a>更新资源
 
 如果需要添加或修改资源的参数列表，可以调用 **Update-xDscResource** cmdlet。 该 cmdlet 将使用新参数列表更新资源。 如果你已在资源脚本中添加逻辑，它将保持不变。
 
@@ -176,18 +172,14 @@ $lastLogon = New-xDscResourceProperty –Name LastLogon –Type Hashtable –Att
 Update-xDscResource –Name ‘Demo_ADUser’ –Property $UserName, $Ensure, $DomainCredential, $Password, $lastLogon -Force
 ```
 
-<a id="testing-a-resource-schema" class="xliff"></a>
-## 测试资源架构
+## <a name="testing-a-resource-schema"></a>测试资源架构
 
 资源设计器工具还公开了一个 cmdlet，可用于测试手动编写的 MOF 架构的有效性。 调用 **Test-xDscSchema** cmdlet，将 MOF 资源架构的路径作为参数传递。 该 cmdlet 将输出架构中的任何错误。
 
-<a id="see-also" class="xliff"></a>
-### 另请参阅
+### <a name="see-also"></a>另请参阅
 
-<a id="concepts" class="xliff"></a>
-#### 概念
+#### <a name="concepts"></a>概念
 [构建自定义 Windows PowerShell Desired State Configuration 资源](authoringResource.md)
 
-<a id="other-resources" class="xliff"></a>
-#### 其他资源
+#### <a name="other-resources"></a>其他资源
 [xDscResourceDesigner 模块](https://powershellgallery.com/packages/xDscResourceDesigner)

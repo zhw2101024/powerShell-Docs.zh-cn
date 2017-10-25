@@ -10,16 +10,14 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="providing-feedback-via-social-media-or-comments" class="xliff"></a>
-# 通过社交媒体或发表评论提供反馈
+# <a name="providing-feedback-via-social-media-or-comments"></a>通过社交媒体或发表评论提供反馈
 
 Powershell 库支持以下两种反馈方法，以便用户能够提供有关项的公共反馈：
 
 * 使用左侧边缘的链接，在 Facebook、LinkedIn 或 Twitter 社交媒体网站中“分享”项；
 * 使用评论功能对项发表评论，并允许作者查看已对项发表的评论。
 
-<a id="social-media-feedback" class="xliff"></a>
-## 社交媒体反馈
+## <a name="social-media-feedback"></a>社交媒体反馈
 对于 PowerShell 库中的每一项，网页左侧都有 Facebook、LinkedIn 和 Twitter 链接。   
 单击这些链接可以打开社交媒体网站，并能快速分享项链接。
 
@@ -29,8 +27,7 @@ Powershell 库支持以下两种反馈方法，以便用户能够提供有关项
 由于只显示分享次数，因此其他用户可以看作是“赞”相应项的次数。
 
 
-<a id="comments" class="xliff"></a>
-## 说明
+## <a name="comments"></a>说明
 PowerShell 库使用 LiveFyre 服务来允许用户对项发表评论。
 如果需要提供建议或反馈，用户可以使用此功能提供对项网页的所有访问者都可见的反馈。
 项所有者可以关注此反馈，并在有人发表评论时收到通知。 

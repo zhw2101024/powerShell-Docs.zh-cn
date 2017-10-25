@@ -10,16 +10,14 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="prerequisites" class="xliff"></a>
-# 必备条件
+# <a name="prerequisites"></a>必备条件
 
 > 适用于：Windows PowerShell 5.0
 
 Just Enough Administration 是 Windows PowerShell 5.0 及更高版本随附的功能。
 本主题介绍使用 JEA 必须满足的先决条件。
 
-<a id="install-jea" class="xliff"></a>
-## 安装 JEA
+## <a name="install-jea"></a>安装 JEA
 
 Windows PowerShell 5.0 及更高版本均包含 JEA 功能，但若要使用完整的功能，建议安装适用于系统的 PowerShell 最新版。
 下表介绍了 JEA 在 Windows Server 上的可用性：
@@ -47,8 +45,7 @@ Windows 7                 | 减少了功能<sup>1</sup>（如果 WMF 5.1 已安�
 <sup>2</sup>Windows 10 版本 1511 和 1603 不支持以下 JEA 功能：以组托管服务帐户身份运行、会话配置中的条件访问规则、用户驱动器以及向本地用户帐户授予访问权限。
 若要获取对这些功能的支持，请将 Windows 更新到 1607 版（周年更新）或更高版本。
 
-<a id="check-which-version-of-powershell-is-installed" class="xliff"></a>
-### 查看安装的 PowerShell 版本类型
+### <a name="check-which-version-of-powershell-is-installed"></a>查看安装的 PowerShell 版本类型
 
 若要查看系统上安装的 PowerShell 版本类型，请查看 Windows PowerShell 提示符中的 `$PSVersionTable` 变量。
 
@@ -63,8 +60,7 @@ Major  Minor  Build  Revision
 如果主要版本等于或大于 **5**，便可以使用 JEA。
 如果可能，为获得最佳体验，并有权访问所有最新功能，建议升级到 PowerShell **5.1** 版。
 
-<a id="install-windows-management-framework" class="xliff"></a>
-### 安装 Windows Management Framework
+### <a name="install-windows-management-framework"></a>安装 Windows Management Framework
 
 如果运行的是 PowerShell 较旧版本，需要使用最新的 Windows Management Framework (WMF) 更新来更新系统。
 可在[下载中心](https://aka.ms/WMF5)找到更新包和最新 WMF 发行说明的链接。
@@ -73,8 +69,7 @@ Major  Minor  Build  Revision
 
 Windows 10 用户需安装最新功能更新才能获取当前版本的 Windows PowerShell。
 
-<a id="enable-powershell-remoting" class="xliff"></a>
-## 启用 PowerShell 远程处理
+## <a name="enable-powershell-remoting"></a>启用 PowerShell 远程处理
 
 PowerShell 远程处理提供了构建 JEA 的基础。
 因此，有必要先确保系统已启用 PowerShell 远程处理并[受到适当保护](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)，然后才能使用 JEA。
@@ -86,8 +81,7 @@ PowerShell 远程处理提供了构建 JEA 的基础。
 Enable-PSRemoting
 ```
 
-<a id="enable-powershell-module-and-script-block-logging-optional" class="xliff"></a>
-## 启用 PowerShell 模块和脚本块日志记录（可选）
+## <a name="enable-powershell-module-and-script-block-logging-optional"></a>启用 PowerShell 模块和脚本块日志记录（可选）
 
 执行以下步骤将为系统上的所有 PowerShell 操作启用日志记录。
 PowerShell 模块日志记录不是 JEA 必需的，但强烈建议打开它，以确保在中心位置记录用户运行的命令。
@@ -108,14 +102,12 @@ PowerShell 模块日志记录不是 JEA 必需的，但强烈建议打开它，�
 
 也可通过“组策略”启用系统范围的 PowerShell 脚本。
 
-<a id="next-steps" class="xliff"></a>
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 
 - [创建角色功能文件](role-capabilities.md)
 - [创建会话配置文件](session-configurations.md)
 
-<a id="see-also" class="xliff"></a>
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [有关 PowerShell 远程处理和 WinRM 安全性的其他信息](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)
 - [PowerShell ♥ the Blue Team 关于安全的博客文章](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)

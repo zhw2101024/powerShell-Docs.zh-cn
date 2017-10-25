@@ -9,10 +9,8 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="generate-powershell-cmdlets-based-on-odata-endpoint" class="xliff"></a>
-# 基于 OData 终结点生成 PowerShell Cmdlet
-<a id="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint" class="xliff"></a>
-基于 OData 终结点生成 Windows PowerShell cmdlet
+# <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a>基于 OData 终结点生成 PowerShell Cmdlet
+<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>基于 OData 终结点生成 Windows PowerShell cmdlet
 --------------------------------------------------------------
 
 **Export-ODataEndpointProxy** 是一个 cmdlet，它基于给定的 OData 终结点公开的功能生成一组 Windows PowerShell cmdlet。
@@ -53,8 +51,7 @@ ipmo 'C:\Users\user\Generated.psd1'
 -   关联
 -   传输流数据
 
-<a id="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils" class="xliff"></a>
-基于 OData 终结点和 ODataUtils 生成 Windows PowerShell cmdlet
+<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils"></a>基于 OData 终结点和 ODataUtils 生成 Windows PowerShell cmdlet
 ------------------------------------------------------------------------------
 ODataUtils 模块允许从支持 OData 的 REST 终结点生成 Windows PowerShell cmdlet Microsoft.PowerShell.ODataUtils Windows PowerShell 模块中具有以下增量增强功能。
 -   将附加信息从服务器端终结点引导到客户端。

@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-for-linux-nxuser-resource" class="xliff"></a>
-# 适用于 Linux 的 DSC nxUser 资源
+# <a name="dsc-for-linux-nxuser-resource"></a>适用于 Linux 的 DSC nxUser 资源
 
 PowerShell Desired State Configuration (DSC) 中的 **nxUser** 资源提供了在 Linux 节点上管理本地用户的机制。
 
-<a id="syntax" class="xliff"></a>
-## 语法
+## <a name="syntax"></a>语法
 
 ```
 nxUser <string> #ResourceName
@@ -35,8 +33,7 @@ nxUser <string> #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-## “属性”
+## <a name="properties"></a>“属性”
 
 |  属性 |  指示要确保其特定状态的帐户名。 | 
 |---|---|
@@ -51,8 +48,7 @@ nxUser <string> #ResourceName
 | GroupID| 用户的主要组 ID| 
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为“ResourceName”、类型为“ResourceType”的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-<a id="example" class="xliff"></a>
-## 示例
+## <a name="example"></a>示例
 
 以下示例可确保用户“monuser”存在且为组“DBusers”的成员。
 

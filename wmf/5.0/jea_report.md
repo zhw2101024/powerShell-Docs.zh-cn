@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="reporting-on-jea" class="xliff"></a>
-# JEA 报告
+# <a name="reporting-on-jea"></a>JEA 报告
 要报告 JEA 配置的状态，可使用：
 1.  **Get-PSSessionConfiguration** 返回给定计算机上所有已注册终结点的列表。
 2.  **Get PSSessionCapability** 报告任意给定用户在特定终结点上具有的功能。

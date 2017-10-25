@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="network-switch-management-with-powershell" class="xliff"></a>
-# PowerShell 网络交换机管理
+# <a name="network-switch-management-with-powershell"></a>PowerShell 网络交换机管理
 
 **Get NetworkSwitchEthernetPort** cmdlet 现在返回以下包含实例的附加信息：
 
@@ -19,8 +18,7 @@ ms.lasthandoff: 06/12/2017
 - AccessVLAN – Access 模式中与此端口相关联的 VLAN 的 ID
 - TrunkedVLANList – Trunk 模式中与此端口相关联的 VLAN 的 ID 列表
 
-<a id="fundamental-network-switch-management-with-windows-powershell" class="xliff"></a>
-## Windows PowerShell 基本网络交换机管理
+## <a name="fundamental-network-switch-management-with-windows-powershell"></a>Windows PowerShell 基本网络交换机管理
 
 在 WMF 5.0 中引入的网络交换机 cmdlet 让你能够将交换机、虚拟 LAN (VLAN) 和基本第 2 层网络交换机端口配置应用到 Windows Server 2012 R2 徽标认证的网络交换机。 Microsoft 仍致力于支持[数据中心抽象](http://technet.microsoft.com/en-us/cloud/dal.aspx)层 (DAL) 的愿景，从而为这一领域中的客户和合作伙伴彰显价值。 通过使用这些 cmdlet，你可以执行：
 

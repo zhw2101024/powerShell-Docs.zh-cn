@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="report-abuse" class="xliff"></a>
-# 报告滥用行为
+# <a name="report-abuse"></a>报告滥用行为
 
 如果发现违反其中任何项的项，请单击该项详细信息页上的“报告不良信息”链接并提交报告。
 

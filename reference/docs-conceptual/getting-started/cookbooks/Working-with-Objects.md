@@ -1,5 +1,5 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "使用对象"
 ms.assetid: 7ecc94a4-015c-4459-ae58-85289ea09030

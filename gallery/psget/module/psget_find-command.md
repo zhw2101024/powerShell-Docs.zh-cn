@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="find-command" class="xliff"></a>
-# Find-Command
+# <a name="find-command"></a>Find-Command
 
 查找模块中的 PowerShell 命令。
 
-<a id="description" class="xliff"></a>
-## 说明
+## <a name="description"></a>说明
 Find-Command cmdlet 会查找 cmdlet、别名、函数和工作流等 PowerShell 命令。 Find-Command 搜索已注册存储库中的模块。
 对于此 cmdlet 找到的每个命令，将返回一个 PSGetCommandInfo 对象。 可将 PSGetCommandInfo 对象传递给 Install-Module cmdlet 以安装包含此命令的模块。
 
@@ -29,19 +27,16 @@ Find-Command cmdlet 会查找 cmdlet、别名、函数和工作流等 PowerShell
 - Find-Command 可使用 -Filter 参数对存储库特定搜索语言进行筛选。
 - Find-Command 可从所有或少数的已注册的存储库中对模块进行筛选。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a>Cmdlet 语法
 ```powershell
 Get-Command -Name Find-Command -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
 
 [Find-Command](http://go.microsoft.com/fwlink/?LinkId=733636)
 
-<a id="example-commands" class="xliff"></a>
-## 示例命令
+## <a name="example-commands"></a>示例命令
 ```powershell
 
 # Find a specific command

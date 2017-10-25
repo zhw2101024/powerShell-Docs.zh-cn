@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="direct-access-to-dsc-resource-methods" class="xliff"></a>
-# 直接访问 DSC 资源方法
+# <a name="direct-access-to-dsc-resource-methods"></a>直接访问 DSC 资源方法
 
 
 已添加 [Invoke-DscResource](https://technet.microsoft.com/en-us/library/mt517869.aspx) cmdlet，以允许对 DSC 资源及其方法（Get、Set 或 Test）的直接访问。 希望利用 DSC 资源的第三方可以使用它。

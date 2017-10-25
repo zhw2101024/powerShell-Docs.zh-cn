@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="import-dscresource-keyword-supports--moduleversion-parameter" class="xliff"></a>
-# Import-DscResource 关键字支持 -ModuleVersion 参数
+# <a name="import-dscresource-keyword-supports--moduleversion-parameter"></a>Import-DscResource 关键字支持 -ModuleVersion 参数
 
 我们向创作 DSC 配置时可用的 `Import-DscResource` 动态关键字添加了一个新参数。 现在，配置作者可以明确指定从中加载 DSC 资源的模块版本。 该关键字的新语法为：
 

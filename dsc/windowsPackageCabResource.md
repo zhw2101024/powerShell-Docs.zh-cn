@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-windowspackagecab-resource" class="xliff"></a>
-# DSC WindowsPackageCab 资源
+# <a name="dsc-windowspackagecab-resource"></a>DSC WindowsPackageCab 资源
 
 > 适用于：Windows PowerShell 5.1 及更高版本
 
@@ -20,8 +19,7 @@ Windows PowerShell Desired State Configuration (DSC) 中的 WindowsPackageCab �
 目标节点必须已安装 DISM PowerShell 模块。 有关信息，请参阅[在 Windows PowerShell 中使用 DISM](https://msdn.microsoft.com/en-us/windows/hardware/commercialize/manufacture/desktop/use-dism-in-windows-powershell-s14)。 
 
 
-<a id="syntax" class="xliff"></a>
-## 语法
+## <a name="syntax"></a>语法
 
 ```
 {
@@ -33,8 +31,7 @@ Windows PowerShell Desired State Configuration (DSC) 中的 WindowsPackageCab �
 }
 ```
 
-<a id="properties" class="xliff"></a>
-## “属性”
+## <a name="properties"></a>“属性”
 
 |  属性  |  说明   | 
 |---|---| 
@@ -44,8 +41,7 @@ Windows PowerShell Desired State Configuration (DSC) 中的 WindowsPackageCab �
 | LogPath| 指示你希望提供程序用于保存安装或卸载程序包的日志文件的完整路径。| 
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"``。| 
 
-<a id="example" class="xliff"></a>
-## 示例
+## <a name="example"></a>示例
 
 下面的示例配置需要使用输入参数，并确保安装了 `$Name` 参数指定的.cab 文件。
 

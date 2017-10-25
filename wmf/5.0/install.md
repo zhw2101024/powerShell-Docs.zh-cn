@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="installation-instructions" class="xliff"></a>
-# 安装说明
+# <a name="installation-instructions"></a>安装说明
 
 下载适用于你的操作系统和体系结构的正确程序包：
 

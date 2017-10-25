@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="get-childitem-has--depth-parameter" class="xliff"></a>
-# Get-ChildItem 具有 -Depth 参数
+# <a name="get-childitem-has--depth-parameter"></a>Get-ChildItem 具有 -Depth 参数
 **Get-ChildItem** 现在具有 **–Depth** 参数，你可以将其与 **–Recurse** 一起使用来限制递归：
 
 PS C:\\Users\\slee\\Downloads\\Example&gt; Get-ChildItem -Recurse -Depth 0

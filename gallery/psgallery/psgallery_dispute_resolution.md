@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dispute-resolution" class="xliff"></a>
-# 争议解决
+# <a name="dispute-resolution"></a>争议解决
 
 本文档是推荐的争议解决过程，用于社区成员帮助解决与其他 PowerShell 库发布者的争议。
 
-<a id="process" class="xliff"></a>
-## 进程
+## <a name="process"></a>进程
 
 1. 请使用项详细信息页面上的“联系所有者”链接，联系你对其有争议的项的所有者。
 请友好并直接地阐述问题。
@@ -25,8 +23,7 @@ ms.lasthandoff: 06/12/2017
 PowerShellGallery.com 支持团队将介入，尝试解决此问题。
 
 
-<a id="prohibited-use" class="xliff"></a>
-## 禁止的内容
+## <a name="prohibited-use"></a>禁止的内容
 
 公共 PowerShell 库中不允许存在以下内容，并将不经讨论立即删除。  如删除项，将告知其所有者。
 

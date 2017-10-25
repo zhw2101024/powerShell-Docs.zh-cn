@@ -10,32 +10,26 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="update-modulemanifest" class="xliff"></a>
-# Update-ModuleManifest
+# <a name="update-modulemanifest"></a>Update-ModuleManifest
 更新模块清单文件。
 
-<a id="description" class="xliff"></a>
-## 说明
+## <a name="description"></a>说明
 
 Update-ModuleManifest cmdlet 更新模块清单 (.psd1) 文件。
 
-<a id="notes" class="xliff"></a>
-### 注释
+### <a name="notes"></a>注释
     - DscResourcesToExport 仅在最新的 PowerShell 5.0 版本上才受支持。 如果你正在较低版本的 PowerShell 上运行，我们将无法更新该字段。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a>Cmdlet 语法
 ```powershell
 Get-Command -Name Update-ModuleManifest -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
 
 [Update-ModuleManifest](http://go.microsoft.com/fwlink/?LinkId=619311)
 
-<a id="example-commands" class="xliff"></a>
-## 示例命令
+## <a name="example-commands"></a>示例命令
 
 此新的 cmdlet 用于通过输入属性值帮助更新清单文件。 它会接收 New-ModuleManifest 接收的所有参数。
 

@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="wmf-51-operating-system-compatibility" class="xliff"></a>
-# WMF 5.1 操作系统兼容性 #
+# <a name="wmf-51-operating-system-compatibility"></a>WMF 5.1 操作系统兼容性 #
 
 > 注意：此信息是预发布版本，可能会进行更改。
 

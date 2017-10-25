@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="extract-and-parse-structured-objects-out-of-string" class="xliff"></a>
-# 提取和分析字符串外的结构化对象
+# <a name="extract-and-parse-structured-objects-out-of-string"></a>提取和分析字符串外的结构化对象
 这也为 ConvertFrom-String cmdlet 引入了一些附加功能：
 
 -   默认情况下删除盘区文本属性。 可以将其包含于 -IncludeExtent 参数中。
@@ -20,8 +19,7 @@ ms.lasthandoff: 06/12/2017
 -   新 -UpdateTemplate 参数，用于将学习算法的结果保存到模板文件中的注释内。 这使得学习过程（速度最慢的阶段）成为一次性完成的过程。 使用包含已编码学习算法的模板来运行 Convert-String 现为近即时行为。
 
 
-<a id="extract-and-parse-structured-objects-out-of-string-content" class="xliff"></a>
-从字符串内容中提取并分析结构化对象
+<a name="extract-and-parse-structured-objects-out-of-string-content"></a>从字符串内容中提取并分析结构化对象
 ----------------------------------------------------------
 
 与 [Microsoft Research](http://research.microsoft.com/) 协作添加了一个新的 **ConvertFrom-String** cmdlet。

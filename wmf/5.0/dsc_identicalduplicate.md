@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="allowing-for-identical-duplicate-resources-in-a-configuration" class="xliff"></a>
-# 允许配置中存在完全相同的重复资源
+# <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a>允许配置中存在完全相同的重复资源
 
 DSC 不允许配置内存在冲突的资源定义，也不处理这样的定义。 它不尝试解决冲突，只是无法正常工作。 随着复合资源中配置重用的利用率增加，冲突将更频繁地发生。 当冲突资源定义相同时，DSC 应为智能且允许此操作。 通过此版本，我们支持具有相同定义的多个资源实例：
 

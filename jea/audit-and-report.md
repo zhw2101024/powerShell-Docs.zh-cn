@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="auditing-and-reporting-on-jea" class="xliff"></a>
-# JEA 审核和报告
+# <a name="auditing-and-reporting-on-jea"></a>JEA 审核和报告
 
 > 适用于：Windows PowerShell 5.0
 
@@ -20,8 +19,7 @@ ms.lasthandoff: 06/12/2017
 
 本主题介绍了审核 JEA 终结点的各种方法。
 
-<a id="find-registered-jea-sessions-on-a-machine" class="xliff"></a>
-## 查找计算机上已注册的 JEA 会话
+## <a name="find-registered-jea-sessions-on-a-machine"></a>查找计算机上已注册的 JEA 会话
 
 若要查看计算机上注册了哪些 JEA 会话，可使用 [Get-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet。
 
@@ -50,8 +48,7 @@ $jea = Get-PSSessionConfiguration -Name 'JEAMaintenance'
 $jea.RoleDefinitions.GetEnumerator() | Select-Object Name, @{ Name = 'Role Capabilities'; Expression = { $_.Value.RoleCapabilities } }
 ```
 
-<a id="find-available-role-capabilities-on-the-machine" class="xliff"></a>
-## 查找计算机上可用的角色功能
+## <a name="find-available-role-capabilities-on-the-machine"></a>查找计算机上可用的角色功能
 
 如果角色功能文件存储于有效 PowerShell 模块中的“RoleCapabilities”文件夹中，则仅 JEA 可以使用该文件。
 通过搜索可用模块列表，可以查找计算机上可用的所有角色功能。
@@ -76,8 +73,7 @@ function Find-LocalRoleCapability {
 > [!NOTE]
 > 如果多个角色功能共享同一名称，则此函数的结果顺序无需是选择角色功能的顺序。
 
-<a id="check-effective-rights-for-a-specific-user" class="xliff"></a>
-## 查看特定用户的有效权限
+## <a name="check-effective-rights-for-a-specific-user"></a>查看特定用户的有效权限
 
 设置 JEA 终结点后，建议检查哪些命令对 JEA 会话中的特定用户适用。
 如果某个用户以当前组成员身份启动了一个 JEA 会话，可使用 [Get-PSSessionCapability](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Get-PSSessionCapability) 枚举适用于该用户的所有命令。
@@ -91,8 +87,7 @@ Get-PSSessionCapability -ConfigurationName 'JEAMaintenance' -Username 'CONTOSO\A
 使用实时 Privileged Access Management 系统允许用户临时隶属于安全组时，通常就是这种情况。
 始终仔细评估用户到角色的映射和每个角色的内容，以确保用户仅有权访问成功完成其作业所需的必要命令。
 
-<a id="powershell-event-logs" class="xliff"></a>
-## PowerShell 事件日志
+## <a name="powershell-event-logs"></a>PowerShell 事件日志
 
 如果在系统上启用了模块和/或脚本块日志记录，则可以针对每个用户在其 JEA 会话中运行的每条命令，在 Windows 事件日志中查找相应事件。
 若要查找这些事件，打开 Windows 事件查看器，导航到“Microsoft-Windows-PowerShell/Operational”事件日志，然后查找事件 ID 为 **4104** 的事件。
@@ -101,8 +96,7 @@ Get-PSSessionCapability -ConfigurationName 'JEAMaintenance' -Username 'CONTOSO\A
 对于 JEA 会话，这包括有关 **ConnectedUser**即创建 JEA 会话的实际用户和 **RunAsUser**（标识用于执行命令的 JEA 帐户）的重要信息。
 应用程序事件日志将显示 RunAsUser 正在进行的更改，因此启用记录或模块/脚本日志记录对跟踪用户的特定命令回调至关重要。
 
-<a id="application-event-logs" class="xliff"></a>
-## 应用程序事件日志
+## <a name="application-event-logs"></a>应用程序事件日志
 
 在与外部应用程序或服务交互的 JEA 会话中运行命令时，这些应用程序可能会将事件记录为其自己的事件日志。
 与 PowerShell 日志和脚本不同，其他日志记录机制不会捕获 JEA 会话的已连接用户，而只记录虚拟运行身份用户或组托管服务帐户。
@@ -111,8 +105,7 @@ Get-PSSessionCapability -ConfigurationName 'JEAMaintenance' -Username 'CONTOSO\A
 WinRM 日志还可帮助将应用程序事件日志中的运行身份用户与连接用户相关联。
 **Microsoft-Windows-Windows Remote Management/Operational** 日志中 ID 为 **193** 的事件记录了每次创建 JEA 会话时，连接用户和运行身份用户的安全标识符 (SID) 和帐户名称。
 
-<a id="session-transcripts" class="xliff"></a>
-## 会话脚本
+## <a name="session-transcripts"></a>会话脚本
 
 如果已将 JEA 配置为为每个用户会话创建脚本，每个用户操作的文本副本将存储在指定的文件夹中。
 
@@ -154,8 +147,7 @@ ParameterBindings 遵循每个 CommandInvocation，介绍使用该命令提供�
 每个命令的输出通常还会对 Out-Default 触发 CommandInvocation。 Out-Default 的 InputObject 是从命令返回的 PowerShell 对象。
 该对象的详细信息如下面几行所示，严格模拟用户将看到的内容。
 
-<a id="see-also" class="xliff"></a>
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [审核 JEA 会话中的用户操作](audit-and-report.md)
 - [PowerShell ♥ the Blue Team 关于安全的博客文章](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)

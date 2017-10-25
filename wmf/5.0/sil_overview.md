@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="software-inventory-logging-sil" class="xliff"></a>
-# 软件清单日志记录 (SIL)
+# <a name="software-inventory-logging-sil"></a>软件清单日志记录 (SIL)
 
 **重要提示：***当在已经运行 SIL 的 Windows Server 2012 R2 Server 上安装 WMF 5.0 时，WMF 安装后，有必要运行 Start-SilLogging cmdlet，因为安装进程会错误地停止“软件清单日志记录”功能。*
 

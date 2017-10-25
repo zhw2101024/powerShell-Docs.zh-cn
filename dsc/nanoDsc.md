@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="using-dsc-on-nano-server" class="xliff"></a>
-# 使用 Nano Server 上的 DSC
+# <a name="using-dsc-on-nano-server"></a>使用 Nano Server 上的 DSC
 
 > 适用于：Windows PowerShell 5.0
 
@@ -24,8 +23,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 若要了解如何安装和使用 Nano Server，以及如何使用 PowerShell 远程处理来管理 Nano Server，请参阅 [Getting Started with Nano Server（Nano Server 入门）](https://technet.microsoft.com/en-us/library/mt126167.aspx)。
 
 
-<a id="dsc-features-available-on-nano-server" class="xliff"></a>
-## Nano Server 上可用的 DSC 功能
+## <a name="dsc-features-available-on-nano-server"></a>Nano Server 上可用的 DSC 功能
 
  由于与完整版的 Windows Server 相比，Nano Server 仅支持一组数量有限的 API，因此 Nano Server 上的 DSC 暂时没有与完整 SKU 上运行的 DSC 等同的完整功能。 Nano Server 上的 DSC 正处于积极开发中，且功能尚未完善。
  
@@ -114,8 +112,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
   * [用户](userResource.md)
   
 
-<a id="dsc-features-not-available-on-nano-server" class="xliff"></a>
-## Nano Server 上不可用的 DSC 功能
+## <a name="dsc-features-not-available-on-nano-server"></a>Nano Server 上不可用的 DSC 功能
 
 下面的 DSC 功能当前在 Nano 服务器上不可用：
 
@@ -123,12 +120,10 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 * 请求服务器 - 当前不能在 Nano Server 上设置请求服务器
 * 不在功能工作列表中的任何内容
 
-<a id="using-custom-dsc-resources-on-nano-server" class="xliff"></a>
-## 在 Nano Server 上使用自定义 DSC 资源
+## <a name="using-custom-dsc-resources-on-nano-server"></a>在 Nano Server 上使用自定义 DSC 资源
  
 由于 Nano Server 上仅可使用的有限的 Windows API 集和 CLR 库，因此在完整 CLR 版的 Windows 上运行的 DSC 资源并不一定适用于 Nano Server。 在部署任意 DSC 资源到生产环境之前，先完成端到端测试。
 
-<a id="see-also" class="xliff"></a>
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 - [Nano Server 入门](https://technet.microsoft.com/en-us/library/mt126167.aspx)
 

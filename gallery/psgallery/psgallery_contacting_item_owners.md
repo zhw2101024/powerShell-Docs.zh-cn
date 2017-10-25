@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="contacting-item-owners" class="xliff"></a>
-# 联系项所有者
+# <a name="contacting-item-owners"></a>联系项所有者
 
 若要联系特定项的所有者，可导航到项详细信息页面。
 左侧菜单栏有“联系所有者”链接。

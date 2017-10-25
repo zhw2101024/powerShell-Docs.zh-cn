@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="script-tracing-and-logging" class="xliff"></a>
-# 脚本跟踪和日志记录
+# <a name="script-tracing-and-logging"></a>脚本跟踪和日志记录
 
 尽管 Windows PowerShell 已经具有 **LogPipelineExecutionDetails** 组策略设置用以记录 cmdlet 的调用，但 PowerShell 的脚本语言仍有许多你可能想记录和/或审核的功能。 新的“详细脚本跟踪”功能让你能够启用系统上使用的 Windows PowerShell 脚本的详细跟踪和分析。 在启用详细脚本跟踪后，Windows PowerShell 会将所有脚本块记录到 **Microsoft-Windows-PowerShell/Operational** 的 ETW 事件日志中。 如果一个脚本块创建了另一个脚本块（例如，一个在字符串上调用 Invoke-Expression cmdlet 的脚本），那么该结果脚本块也会被记录。
 

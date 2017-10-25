@@ -1,5 +1,5 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "对对象进行排序"
 ms.assetid: 8530caa8-3ed4-4c56-aed7-1295dd9ba199

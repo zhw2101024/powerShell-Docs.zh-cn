@@ -10,16 +10,14 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-service-resource" class="xliff"></a>
-# DSC Service 资源
+# <a name="dsc-service-resource"></a>DSC Service 资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 
 Windows PowerShell Desired State Configuration (DSC) 中的 **Service** 资源提供了在目标节点上管理服务的机制。
 
-<a id="syntax" class="xliff"></a>
-## 语法
+## <a name="syntax"></a>语法
 
 ```
 Service [string] #ResourceName
@@ -37,8 +35,7 @@ Service [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-## “属性”
+## <a name="properties"></a>“属性”
 
 |  属性  |  说明   | 
 |---|---| 
@@ -53,8 +50,7 @@ Service [string] #ResourceName
 | Ensure | 指示目标服务是否在系统中存在。 将此属性设置为 **Absent** 可确保目标服务不存在。 将它设置为 **Present**（默认值）可确保目标服务存在。|
 | 路径 | 指示新服务的二进制文件的路径。| 
 
-<a id="example" class="xliff"></a>
-## 示例
+## <a name="example"></a>示例
 
 ```powershell
 configuration ServiceTest

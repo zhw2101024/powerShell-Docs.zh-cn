@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="separation-of-configuration-resource-and-report-repositories" class="xliff"></a>
-# 配置、资源和报告存储库的分隔
+# <a name="separation-of-configuration-resource-and-report-repositories"></a>配置、资源和报告存储库的分隔
 
 在此版本中，你可以按需灵活地向一个或多个 DSC 请求服务器进行请求和报告。 可以单独定义每个终结点，因而你可以从一个位置请求配置，从另一个位置请求资源并报告给又一个位置。 
 

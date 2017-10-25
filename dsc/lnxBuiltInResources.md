@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="built-in-desired-state-configuration-resources-for-linux" class="xliff"></a>
-# 适用于 Linux 的内置 Desired State Configuration 资源
+# <a name="built-in-desired-state-configuration-resources-for-linux"></a>适用于 Linux 的内置 Desired State Configuration 资源
 
 资源是可用于编写 PowerShell Desired State Configuration (DSC) 脚本的构建基块。 适用于 Linux 的 DSC 附带了一套用于配置资源（如文件和文件夹、程序包、环境变量、服务和进程）的内置功能。
 
-<a id="built-in-resources" class="xliff"></a>
-## 内置资源 
+## <a name="built-in-resources"></a>内置资源 
 
 下表提供了关于主题的资源和链接列表，其中进行了详细介绍。
 

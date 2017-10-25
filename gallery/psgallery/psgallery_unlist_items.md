@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="unlisting-items" class="xliff"></a>
-# 取消列出项
+# <a name="unlisting-items"></a>取消列出项
 
 **为什么未显示从 PowerShell 库删除项的选项？**
 

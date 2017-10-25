@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="help-support-for-dsc-configurations" class="xliff"></a>
-# DSC 配置的帮助支持
+# <a name="help-support-for-dsc-configurations"></a>DSC 配置的帮助支持
 
 现在，当你使用 `-?` 调用配置函数时，可以使用 DSC 配置内部基于注释的帮助，获取关于该配置使用情况的帮助：  
 

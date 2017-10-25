@@ -10,11 +10,9 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="contact-gallery-administrators" class="xliff"></a>
-# 联系库管理员
+# <a name="contact-gallery-administrators"></a>联系库管理员
 
-<a id="when-to-contact-gallery-administrators" class="xliff"></a>
-## 什么情况下联系库管理员
+## <a name="when-to-contact-gallery-administrators"></a>什么情况下联系库管理员
 
 在以下情况下，你应联系库管理员：
 
@@ -24,8 +22,7 @@ ms.lasthandoff: 06/12/2017
 4. 你与其他用户之间发生项名称争议，而无法通过联系用户解决此问题。
 5. 库管理员已就库中的项联系过你，你想作出回应。
 
-<a id="how-to-contact-gallery-administrators" class="xliff"></a>
-## 如何联系库管理员
+## <a name="how-to-contact-gallery-administrators"></a>如何联系库管理员
 
 1. 向我们 (cgadmin@microsoft.com) 发送电子邮件。
 2. 如果你要报告项的滥用行为，可在左面板上的项信息下方找到“报告滥用行为”链接。

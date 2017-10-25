@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# MSFT_DSCLocalConfigurationManager 类的 TestConfiguration 方法
+# <a name="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类的 TestConfiguration 方法
 
 将配置文档发送到托管节点并针对该文档验证当前配置。
 
-<a id="syntax" class="xliff"></a>
-语法
+<a name="syntax"></a>语法
 ------
 
 ```mof
@@ -28,8 +26,7 @@ uint32 TestConfiguration(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-参数
+<a name="parameters"></a>参数
 ----------
 
 configurationData \[in\]  
@@ -44,27 +41,23 @@ ResourcesInDesiredState \[out\]
 ResourcesNotInDesiredState \[out\]  
 返回时，包含 **MSFT_ResourceNotInDesiredState** 类的嵌入实例，该类指定未在所需状态的资源。
 
-<a id="return-value" class="xliff"></a>
-## 返回值
+## <a name="return-value"></a>返回值
 ------------
 
 如果成功，则返回零；否则返回错误代码。
 
-<a id="remarks" class="xliff"></a>
-## 备注
+## <a name="remarks"></a>备注
 
 这是一种静态方法。
 
-<a id="requirements" class="xliff"></a>
-## 要求
+## <a name="requirements"></a>要求
 ------------
 >**MOF：** DscCore.mof
 
 >**命名空间**：Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-<a id="see-also" class="xliff"></a>
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

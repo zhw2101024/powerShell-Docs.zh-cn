@@ -10,15 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# MSFT_DSCLocalConfigurationManager 类
+# <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类
 
 控制配置文件的状态并使用配置代理应用配置的本地配置管理器 (LCM)。
 
 以下语法从托管对象格式 (MOF) 代码中简化，包括所有继承的属性。
 
-<a id="syntax" class="xliff"></a>
-## 语法
+## <a name="syntax"></a>语法
 ------
 
 ``` syntax
@@ -28,16 +26,14 @@ class MSFT_DSCLocalConfigurationManager
 };
 ```
 
-<a id="members" class="xliff"></a>
-## 成员
+## <a name="members"></a>成员
 -------
 
 **MSFT_DSCLocalConfigurationManager** 类拥有以下成员：
 
 -   [Methods][]
 
-<a id="methods" class="xliff"></a>
-### 方法
+### <a name="methods"></a>方法
 
 **MSFT_DSCLocalConfigurationManager** 类拥有这些方法。
 
@@ -67,8 +63,7 @@ class MSFT_DSCLocalConfigurationManager
 
  
 
-<a id="requirements" class="xliff"></a>
-## 要求
+## <a name="requirements"></a>要求
 ------------
 >**MOF：** DscCore.mof
 

@@ -10,29 +10,24 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="uninstall-script" class="xliff"></a>
-# Uninstall-Script
+# <a name="uninstall-script"></a>Uninstall-Script
 
 卸载使用 PowerShellGet 安装的脚本文件。
 
-<a id="description" class="xliff"></a>
-## 说明
+## <a name="description"></a>说明
 
 Uninstall-Script cmdlet 卸载从联机存储库安装的指定脚本文件。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a>Cmdlet 语法
 
 ```powershell
 Get-Command -Name Uninstall-Script -Module PowerShellGet -Syntax
 ```
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
 
 [Uninstall-Script](http://go.microsoft.com/fwlink/?LinkId=619789)
 
-<a id="example-commands" class="xliff"></a>
-## 示例命令
+## <a name="example-commands"></a>示例命令
 
 ```powershell
 Get-InstalledScript | Uninstall-Script -WhatIf

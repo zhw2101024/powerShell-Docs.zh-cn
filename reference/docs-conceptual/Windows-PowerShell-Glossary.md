@@ -1,5 +1,5 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Windows PowerShell 术语表"
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7

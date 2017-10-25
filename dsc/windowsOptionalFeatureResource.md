@@ -10,15 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/26/2017
 ---
-<a id="dsc-windowsoptionalfeature-resource" class="xliff"></a>
-# DSC WindowsOptionalFeature 资源
+# <a name="dsc-windowsoptionalfeature-resource"></a>DSC WindowsOptionalFeature 资源
 
 > 适用于：Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) 中的 **WindowsOptionalFeature** 资源提供了确保在目标节点上启用可选功能的机制。
 
-<a id="syntax" class="xliff"></a>
-## 语法
+## <a name="syntax"></a>语法
 
 ```
 WindowsOptionalFeature [string] #ResourceName
@@ -35,8 +33,7 @@ WindowsOptionalFeature [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-## “属性”
+## <a name="properties"></a>“属性”
 
 |  属性  |  说明   | 
 |---|---| 

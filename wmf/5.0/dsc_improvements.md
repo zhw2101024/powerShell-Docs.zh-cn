@@ -9,11 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="improvements-in-desired-state-configuration-dsc" class="xliff"></a>
-# Desired State Configuration (DSC) 中的改进
+# <a name="improvements-in-desired-state-configuration-dsc"></a>Desired State Configuration (DSC) 中的改进
 
-<a id="dsc-feedback-survey" class="xliff"></a>
-## DSC 反馈调查   
+## <a name="dsc-feedback-survey"></a>DSC 反馈调查   
 
 如果有时间使用此版本中引入的新的 PowerShell Desired State Configuration 特色和功能，请通过参与快速 [WMF 5.0 RTM 调查](https://www.surveymonkey.com/r/SGLQM5W)帮助我们继续改进产品。 通过调查，你可以共享关于这些新特色和功能的反馈。 
 

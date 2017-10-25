@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="how-to-resolve-warning-package-your-package-name-failed-to-download-issue" class="xliff"></a>
-## 如何解决“警告: 无法下载包‘你的包名称’”问题？
+## <a name="how-to-resolve-warning-package-your-package-name-failed-to-download-issue"></a>如何解决“警告: 无法下载包‘你的包名称’”问题？
 
 
 

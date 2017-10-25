@@ -10,12 +10,10 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="find-module" class="xliff"></a>
-# Find-Module
+# <a name="find-module"></a>Find-Module
 查找联机库中与指定条件相匹配的模块。
 
-<a id="description" class="xliff"></a>
-## 说明
+## <a name="description"></a>说明
 Find-Module 在已注册存储库中发现与指定条件相匹配的模块。
 对于每个找到的模块，Find-Module 将返回 PSRepositoryItemInfo 对象，可根据需要将其通过管道传递到 Install-Module 以安装该模块。
 
@@ -29,19 +27,16 @@ Find-Module 在已注册存储库中发现与指定条件相匹配的模块。
 - Find-Module 可使用 -Filter 参数对存储库特定搜索语言进行筛选。
 - Find-Module 可从所有或少数的已注册的存储库中对模块进行筛选。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a>Cmdlet 语法
 ```powershell
 Get-Command -Name Find-Module -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
 
 [Find-Module](http://go.microsoft.com/fwlink/?LinkID=398574)
 
-<a id="example-commands" class="xliff"></a>
-## 示例命令
+## <a name="example-commands"></a>示例命令
 ```powershell
 # Find a specific module
 Find-Module Azure

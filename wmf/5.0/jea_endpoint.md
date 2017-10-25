@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="creating-and-connecting-to-a-jea-endpoint" class="xliff"></a>
-# 创建并连接到 JEA 终结点
+# <a name="creating-and-connecting-to-a-jea-endpoint"></a>创建并连接到 JEA 终结点
 若要创建 JEA 终结点，需要创建并注册一个专门配置 PowerShell 会话配置文件，可以使用 **New-PSSessionConfigurationFile** cmdlet 生成该文件。
 
 ```powershell
@@ -142,8 +141,7 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc" 
 ```
 
-<a id="connect-to-a-jea-endpoint" class="xliff"></a>
-## 连接到 JEA 终结点
+## <a name="connect-to-a-jea-endpoint"></a>连接到 JEA 终结点
 连接到 JEA 终结点与连接到任何其他 PowerShell 终结点的工作原理相同。  只需将 JEA 终结点命名为与 **New-PSSession**、**Invoke-Command**  或 **Enter-PSSession** 的“ConfigurationName”参数相同即可。
 
 ```powershell

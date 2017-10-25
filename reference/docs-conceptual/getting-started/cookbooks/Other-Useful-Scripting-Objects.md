@@ -1,5 +1,5 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "其他有用的脚本对象"
 ms.assetid: 4d781196-720b-4ccc-90d2-c570e5e719f5

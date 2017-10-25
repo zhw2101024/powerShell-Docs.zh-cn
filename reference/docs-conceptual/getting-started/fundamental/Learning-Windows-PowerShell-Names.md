@@ -1,5 +1,5 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "学习 Windows PowerShell 名称"
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986

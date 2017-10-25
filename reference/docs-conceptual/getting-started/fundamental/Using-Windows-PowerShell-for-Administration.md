@@ -1,5 +1,5 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "使用 Windows PowerShell 进行管理"
 ms.assetid: db6334ec-ace6-436d-ab88-77aefc817511

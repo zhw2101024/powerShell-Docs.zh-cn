@@ -15,11 +15,9 @@ ms.lasthandoff: 06/12/2017
 >**注意：**本主题所述的 **DSCAutomationHostEnabled** 注册表项在 PowerShell 4.0 中不可用。
 有关如何在初始启动时于 PowerShell 4.0 中配置新虚拟机的信息，请参阅[想要在初始启动时使用 DSC 自动配置计算机？](https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
 
-<a id="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc" class="xliff"></a>
-# 初始启动时使用 DSC 配置虚拟机
+# <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>初始启动时使用 DSC 配置虚拟机
 
-<a id="requirements" class="xliff"></a>
-## 要求
+## <a name="requirements"></a>要求
 
 若要运行这些示例，则需要：
 
@@ -40,8 +38,7 @@ ms.lasthandoff: 06/12/2017
 >**注意：**可以将 `Pending.mof` 和 `MetaConfig.mof` 同时注入计算机。
 如果这两个文件都存在，则在 `MetaConfig.mof` 中指定的设置优先。
 
-<a id="inject-a-configuration-mof-document-into-a-vhd" class="xliff"></a>
-## 将配置 MOF 文档注入 VHD
+## <a name="inject-a-configuration-mof-document-into-a-vhd"></a>将配置 MOF 文档注入 VHD
 
 若要在初始启动时执行配置，可以将已编译的配置 MOF 文档注入 VHD 作为其 `Pending.mof` 文件。
 如果将 **DSCAutomationHostEnabled** 注册表项设置为 2（默认值），则在首次启动计算机时，DSC 将应用由 `Pending.mof` 定义的配置。
@@ -64,8 +61,7 @@ Configuration SampleIISInstall
 }
 ```
 
-<a id="to-inject-the-configuration-mof-document-on-the-vhd" class="xliff"></a>
-### 将配置 MOF 文档注入 VHD
+### <a name="to-inject-the-configuration-mof-document-on-the-vhd"></a>将配置 MOF 文档注入 VHD
 
 1. 通过调用 [Mount-VHD](https://technet.microsoft.com/library/hh848551.aspx) cmdlet，将 VHD 装入想要注入配置的位置。 例如：
 
@@ -98,8 +94,7 @@ Configuration SampleIISInstall
 7. 通过使用安装了 DSC MOF 文档的 VHD 创建 VM。 初始启动并安装操作系统之后，将安装 IIS。
 可以通过调用 [Get-WindowsFeature](https://technet.microsoft.com/library/jj205469.aspx) cmdlet 对此进行验证。
 
-<a id="inject-a-dsc-metaconfiguration-into-a-vhd" class="xliff"></a>
-## 将 DSC 元配置注入 VHD
+## <a name="inject-a-dsc-metaconfiguration-into-a-vhd"></a>将 DSC 元配置注入 VHD
 
 还可通过将元配置注入 VHD 作为其 `MetaConfig.mof` 文件，从而在初始启动时配置计算机以拉取配置（请参阅[配置本地配置管理器 (LCM)](metaConfig.md)）。
 如果将 **DSCAutomationHostEnabled** 注册表项设置为 2（默认值），则在首次启动计算机时，DSC 会将由 `MetaConfig.mof` 定义的元配置应用到 LCM。
@@ -130,8 +125,7 @@ configuration PullClientBootstrap
 }
 ```
 
-<a id="to-inject-the-metaconfiguration-mof-document-on-the-vhd" class="xliff"></a>
-### 将元配置 MOF 文档注入 VHD
+### <a name="to-inject-the-metaconfiguration-mof-document-on-the-vhd"></a>将元配置 MOF 文档注入 VHD
 
 1. 通过调用 [Mount-VHD](https://technet.microsoft.com/library/hh848551.aspx) cmdlet，将 VHD 装入想要注入元配置的位置。 例如：
 
@@ -169,8 +163,7 @@ configuration PullClientBootstrap
 初始启动并安装操作系统之后，DSC 将从请求服务器拉取配置，并安装 IIS。
 可以通过调用 [Get-WindowsFeature](https://technet.microsoft.com/library/jj205469.aspx) cmdlet 对此进行验证。
 
-<a id="disable-dsc-at-boot-time" class="xliff"></a>
-## 启动时，请禁用 DSC
+## <a name="disable-dsc-at-boot-time"></a>启动时，请禁用 DSC
 
 默认情况下，**HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DSCAutomationHostEnabled** 项的值设置为 2，这使得当计算机处于挂起或当前状态时 DSC 配置能够运行。 如果不希望配置在初始启动时运行，则需要将此项的值设置为 0：
 
@@ -205,8 +198,7 @@ configuration PullClientBootstrap
     reg unload HKLM\Vhd
     ```
 
-<a id="see-also" class="xliff"></a>
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 - [DSC 配置](configurations.md)
 - [DSCAutomationHostEnabled 注册表项](DSCAutomationHostEnabled.md)

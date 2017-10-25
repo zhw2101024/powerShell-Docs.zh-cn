@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="built-in-windows-powershell-desired-state-configuration-resources" class="xliff"></a>
-# 内置 Windows PowerShell Desired State Configuration 资源
+# <a name="built-in-windows-powershell-desired-state-configuration-resources"></a>内置 Windows PowerShell Desired State Configuration 资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 

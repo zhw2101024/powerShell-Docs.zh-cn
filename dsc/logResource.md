@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-log-resource" class="xliff"></a>
-# DSC Log 资源 
+# <a name="dsc-log-resource"></a>DSC Log 资源 
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
@@ -33,15 +32,13 @@ Log [string] #ResourceName
 
 [DSC 事件日志在哪里？](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs)
 
-<a id="properties" class="xliff"></a>
-## “属性”
+## <a name="properties"></a>“属性”
 |  属性  |  说明   | 
 |---|---| 
 | 消息| 指示要写入 Microsoft-Windows-Desired State Configuration/Analytic 事件日志的消息。| 
 | DependsOn | 指示必须先运行其他资源的配置，再写入此日志消息。 例如，如果你想要首先运行 ID 为 __ResourceName__、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-<a id="example" class="xliff"></a>
-## 示例
+## <a name="example"></a>示例
 
 下面的示例演示如何在 Microsoft-Windows-Desired State Configuration/Analytic 事件日志中纳入消息。
 

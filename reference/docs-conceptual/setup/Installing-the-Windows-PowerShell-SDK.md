@@ -1,5 +1,5 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "安装 Windows PowerShell SDK"
 ms.assetid: c3636b45-61aa-4720-85f0-58312c4fc8f9

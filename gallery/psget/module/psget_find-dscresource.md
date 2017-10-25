@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="find-dscresource" class="xliff"></a>
-# Find-DscResource
+# <a name="find-dscresource"></a>Find-DscResource
 
 在模块中查找 DSC 资源。
 
-<a id="description" class="xliff"></a>
-## 说明
+## <a name="description"></a>说明
 
 Find-DscResource cmdlet 查找已注册的存储库中与指定条件匹配的模块中所包含的[所需状态配置 (DSC)](https://msdn.microsoft.com/en-us/PowerShell/dsc/overview) 资源。
 对于此 cmdlet 查找的每个模块，Find-DscResource 返回一个 PSGetDscResourceInfo 对象，可以将其通过管道传递到 Install-Module 以安装包含此 cmdlet 返回的资源的模块。
@@ -36,19 +34,16 @@ Desired State Configuration (DSC) 资源为 DSC 配置提供构建基块。 资�
 - Find-DscResource 可使用 -Filter 参数对存储库特定搜索语言进行筛选。
 - Find-DscResource 可从所有或少数已注册存储库中对模块进行筛选。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a>Cmdlet 语法
 ```powershell
 Get-Command -Name Find-DscResource -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
 
 [Find-DscResource](http://go.microsoft.com/fwlink/?LinkId=517196)
 
-<a id="example-commands" class="xliff"></a>
-## 示例命令
+## <a name="example-commands"></a>示例命令
 ```powershell
 
 # Find a specific DSC Resource

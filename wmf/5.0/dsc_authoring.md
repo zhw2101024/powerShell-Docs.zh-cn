@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="authoring-improvements-using-powershell-ise" class="xliff"></a>
-# 使用 PowerShell ISE 创作改进
+# <a name="authoring-improvements-using-powershell-ise"></a>使用 PowerShell ISE 创作改进
 
 由于以下改进，现在在 Windows PowerShell ISE 中创作 DSC 配置的操作要容易得多：
 

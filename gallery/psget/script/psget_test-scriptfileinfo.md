@@ -10,30 +10,25 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="test-scriptfileinfo" class="xliff"></a>
-# Test-ScriptFileInfo
+# <a name="test-scriptfileinfo"></a>Test-ScriptFileInfo
 
 验证脚本文件的元数据注释块。
 
-<a id="description" class="xliff"></a>
-## 说明
+## <a name="description"></a>说明
 
 Test-ScriptFileInfo cmdlet 验证将使用 Publish-Script cmdlet.发布的脚本的开头部分的注释块。
 如果元数据注释块中有错误，则此 cmdlet 将返回错误的位置或更正方法的相关信息。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a>Cmdlet 语法
 
 ```powershell
 Get-Command -Name Test-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
 
 [Test-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619791)
 
-<a id="example-commands" class="xliff"></a>
-## 示例命令
+## <a name="example-commands"></a>示例命令
 ```powershell
 # Create a new script file with minimum required metadata values
 New-ScriptFileInfo -Path C:\ScriptSharingDemo\Demo-Script.ps1 -Description "Script file description goes here"

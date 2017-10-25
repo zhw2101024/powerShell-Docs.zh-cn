@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="register-a-powershell-repository" class="xliff"></a>
-# 注册 PowerShell 存储库
+# <a name="register-a-powershell-repository"></a>注册 PowerShell 存储库
 你可以配置 PowerShellGet 以针对内部存储库进行操作。 可通过使用以下附加内容完成此配置：
 - Register-PSRepository：为当前用户注册存储库。
 - Unregister-PSRepository：为当前用户删除已注册的存储库。

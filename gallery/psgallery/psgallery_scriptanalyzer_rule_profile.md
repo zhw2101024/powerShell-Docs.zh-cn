@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="scriptanazlyer-rule-profile-for-gallery" class="xliff"></a>
-# 库的 ScriptAnazlyer 规则配置文件
+# <a name="scriptanazlyer-rule-profile-for-gallery"></a>库的 ScriptAnazlyer 规则配置文件
 若要确保发布到 PowerShell 库中的项质量，可运行 [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) 规则确定提交的脚本中是否存在任何冲突。
 
 可在 ScriptAnalyzer [GitHub](https://github.com/PowerShell/PSScriptAnalyzer/blob/development/Engine/Settings/PSGallery.psd1) 页面上找到正在运行的规则列表。

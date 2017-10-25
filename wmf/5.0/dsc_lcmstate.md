@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="detailed-information-about-lcm-state" class="xliff"></a>
-# 关于 LCM 状态的详细信息
+# <a name="detailed-information-about-lcm-state"></a>关于 LCM 状态的详细信息
 
 我们在公开有关 LCM 状态的详细信息方面进行了改进。 Get-DscLocalConfigurationManager 返回的 LCMState 现在可以包含以下值：
 

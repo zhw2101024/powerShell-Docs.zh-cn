@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="writing-a-single-instance-dsc-resource-best-practice" class="xliff"></a>
-# 编写单实例 DSC 资源（最佳做法）
+# <a name="writing-a-single-instance-dsc-resource-best-practice"></a>编写单实例 DSC 资源（最佳做法）
 
 >**注意：**本主题介绍了在配置中定义仅允许单个配置实例的 DSC 资源的最佳做法。 目前还没有用于实现此操作的内置 DSC 功能。 将来可能会发生改变。
 

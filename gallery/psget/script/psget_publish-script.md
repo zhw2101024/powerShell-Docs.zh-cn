@@ -10,30 +10,25 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="publish-script" class="xliff"></a>
-# Publish-Script
+# <a name="publish-script"></a>Publish-Script
 
 Publish-Script cmdlet 会将指定的脚本发布到联机库。
 
-<a id="description" class="xliff"></a>
-## 说明
+## <a name="description"></a>说明
 
 Publish-Script cmdlet 可发布包含诸如 Version、Guid、Author 和 Description 等有效元数据的脚本文件。Publish-Script cmdlet 上的 Force 开关参数会在不提示的情况下启动 NuGet.exe。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a>Cmdlet 语法
 
 ```powershell
 Get-Command -Name Publish-Script -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
 
 [Publish-Script](http://go.microsoft.com/fwlink/?LinkId=619788)
 
-<a id="example-commands" class="xliff"></a>
-## 示例命令
+## <a name="example-commands"></a>示例命令
 
 ```powershell
 # Publish the really basic script file with required metadata

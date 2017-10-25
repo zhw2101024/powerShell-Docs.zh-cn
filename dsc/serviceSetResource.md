@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-serviceset-resource" class="xliff"></a>
-# DSC ServiceSet 资源
+# <a name="dsc-serviceset-resource"></a>DSC ServiceSet 资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
@@ -20,8 +19,7 @@ Windows PowerShell Desired State Configuration (DSC) 中的 **ServiceSet** 资�
 
 要将一些服务配置为相同状态时，请使用此资源。
 
-<a id="syntax" class="xliff"></a>
-## 语法
+## <a name="syntax"></a>语法
 
 ```
 Service [string] #ResourceName
@@ -37,8 +35,7 @@ Service [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-## “属性”
+## <a name="properties"></a>“属性”
 
 |  属性  |  说明   | 
 |---|---| 
@@ -52,8 +49,7 @@ Service [string] #ResourceName
 
 
 
-<a id="example" class="xliff"></a>
-## 示例
+## <a name="example"></a>示例
 
 以下配置启动“Windows 音频”和“远程桌面服务”服务。
 

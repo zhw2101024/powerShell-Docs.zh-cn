@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="getconfigurationstatus-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# MSFT_DSCLocalConfigurationManager 类的 GetConfigurationStatus 方法
+# <a name="getconfigurationstatus-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类的 GetConfigurationStatus 方法
 
 获取配置状态历史记录。
 
-<a id="syntax" class="xliff"></a>
-语法
+<a name="syntax"></a>语法
 ------
 
 ```mof
@@ -26,8 +24,7 @@ uint32 GetConfigurationStatus(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-参数
+<a name="parameters"></a>参数
 ----------
 
 All \[in\]  
@@ -36,27 +33,23 @@ All \[in\]
 configurationStatus \[out\]  
 返回时，包含定义设置的 **MSFT_DSCMetaConfiguration** 类的嵌入实例。
 
-<a id="return-value" class="xliff"></a>
-## 返回值
+## <a name="return-value"></a>返回值
 ------------
 
 如果成功，则返回零；否则返回错误代码。
 
-<a id="remarks" class="xliff"></a>
-## 备注
+## <a name="remarks"></a>备注
 
 这是一种静态方法。
 
-<a id="requirements" class="xliff"></a>
-## 要求
+## <a name="requirements"></a>要求
 ------------
 >**MOF：** DscCore.mof
 
 >**命名空间**：Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-<a id="see-also" class="xliff"></a>
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/22/2017
 ---
-<a id="jea-session-configurations" class="xliff"></a>
-# JEA 会话配置
+# <a name="jea-session-configurations"></a>JEA 会话配置
 
 > 适用于：Windows PowerShell 5.0
 
@@ -21,8 +20,7 @@ JEA 终结点通过在系统上采用特定方式创建和注册 PowerShell 会�
 
 本主题介绍如何创建 PowerShell 会话配置文件和注册 JEA 终结点。
 
-<a id="create-a-session-configuration-file" class="xliff"></a>
-## 创建会话配置文件
+## <a name="create-a-session-configuration-file"></a>创建会话配置文件
 
 若要注册 JEA 终结点，需要指定该终结点的配置方式。
 此处需考虑很多事项：最重要的是谁应具有访问 JEA 终结点的权限，其将分配有哪些角色，JEA 实际将使用哪个标识，以及 JEA 终结点将采用哪个名称。
@@ -56,14 +54,12 @@ PowerShell 提供程序均不可用，也不提供任何外部程序（可执行
 以下是要为 JEA 会话配置的其他几个字段。
 均在以下各节中有所介绍。
 
-<a id="choose-the-jea-identity" class="xliff"></a>
-### 选择 JEA 标识
+### <a name="choose-the-jea-identity"></a>选择 JEA 标识
 
 JEA 在后台运行已连接用户的命令时需要使用标识（即帐户）。
 用户决定 JEA 将在会话配置文件中使用哪个标识。
 
-<a id="local-virtual-account" class="xliff"></a>
-#### 本地虚拟帐户
+#### <a name="local-virtual-account"></a>本地虚拟帐户
 
 如果此 JEA 终结点支持的角色均用于管理本地计算机，并且本地管理员帐户足以成功运行命令，则应将 JEA 配置为使用本地虚拟帐户。
 虚拟帐户是特定用户所独有的临时帐户，仅在 PowerShell 会话的持续时间内有效。
@@ -86,8 +82,7 @@ RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
 
-<a id="group-managed-service-account" class="xliff"></a>
-#### 组托管服务帐户
+#### <a name="group-managed-service-account"></a>组托管服务帐户
 
 
 对于需要 JEA 用户访问其他计算机或 Web 服务等网络资源的应用场景，组托管服务帐户 (gMSA) 是更适合使用的标识。
@@ -110,13 +105,11 @@ GroupManagedServiceAccount = 'Domain\MyJEAgMSA'
 > 组托管服务帐户仅适用于 Windows PowerShell 5.1 或更高版本以及已加入域的计算机。
 
 
-<a id="more-information-about-run-as-users" class="xliff"></a>
-#### 有关以用户身份运行的详细信息
+#### <a name="more-information-about-run-as-users"></a>有关以用户身份运行的详细信息
 
 若要进一步了解运行方式标识及其如何影响 JEA 会话的安全性，可参阅[安全性注意事项](security-considerations.md)文章。
 
-<a id="session-transcripts" class="xliff"></a>
-### 会话脚本
+### <a name="session-transcripts"></a>会话脚本
 
 建议将 JEA 会话配置文件配置为自动记录用户会话的脚本。
 通过 PowerShell 会话脚本，可查看连接用户、向其分配的运行方式标识以及该用户运行的命令。
@@ -132,8 +125,7 @@ TranscriptDirectory = 'C:\ProgramData\JEAConfiguration\Transcripts'
 脚本由本地系统帐户写入到文件夹中，该帐户需要目录的读取和写入权限。
 标准用户不得具有文件夹的访问权限，一组数量有限的安全管理员须具有访问权限来进行脚本审核。
 
-<a id="user-drive" class="xliff"></a>
-### 用户驱动器
+### <a name="user-drive"></a>用户驱动器
 
 如果连接用户需要将文件复制到 JEA 终结点或从中复制文件才可运行命令，可在会话配置文件中启用用户驱动器。
 用户驱动器是映射到各连接用户的唯一文件夹的 [PSDrive](https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives)。
@@ -158,8 +150,7 @@ UserDriveMaximumSize = 524288000
 > [!NOTE]
 > 用户驱动器仅适用于 Windows PowerShell 5.1 或更高版本。
 
-<a id="role-definitions" class="xliff"></a>
-### 角色定义
+### <a name="role-definitions"></a>角色定义
 
 会话配置文件中的角色定义可定义*用户*到*角色*的映射。
 注册时，此字段中包含的所有用户或组都将获得到 JEA 终结点的权限。
@@ -186,8 +177,7 @@ RoleDefinitions = @{
 }
 ```
 
-<a id="role-capability-search-order" class="xliff"></a>
-### 角色功能搜索顺序
+### <a name="role-capability-search-order"></a>角色功能搜索顺序
 如上例所示，角色功能由角色功能文件的平面名称（不含扩展名的文件名）进行引用。
 如果多个角色功能适用于带相同平面名称的系统，PowerShell 将使用隐式搜索顺序选择有效的角色功能文件。
 它将**仅**向部分带同一名称的角色功能文件授予访问权限。
@@ -200,8 +190,7 @@ JEA 使用 `$env:PSModulePath` 环境变量来确定扫描角色功能文件的�
 
 当两个或多个角色功能共享同一名称时，角色功能搜索顺序是不确定的，因此**强烈建议**确保角色功能在计算机上具有唯一的名称。
 
-<a id="conditional-access-rules" class="xliff"></a>
-### 条件访问规则
+### <a name="conditional-access-rules"></a>条件访问规则
 
 RoleDefinitions 字段中包含的所有用户和组都将自动获得访问 JEA 终结点的权限。
 通过条件访问规则，可优化此访问权限并要求用户隶属于其他不会影响其所拥有角色的安全组。
@@ -226,21 +215,18 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 > [!NOTE]
 > 条件访问规则仅适用于 Windows PowerShell 5.1 或更高版本。
 
-<a id="other-properties" class="xliff"></a>
-### 其他属性
+### <a name="other-properties"></a>其他属性
 会话配置文件还可执行角色功能文件能实现的所有操作，但无法授予连接用户访问不同命令的权限。
 如果想要允许所有用户访问特定的 cmdlet、函数或提供程序，可直接在会话配置文件中执行此操作。
 有关会话配置文件中受支持属性的完整列表，请运行 `Get-Help New-PSSessionConfigurationFile -Full`。
 
-<a id="testing-a-session-configuration-file" class="xliff"></a>
-## 测试会话配置文件
+## <a name="testing-a-session-configuration-file"></a>测试会话配置文件
 
 可使用 [Test-PSSessionConfigurationFile](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/test-pssessionconfigurationfile) cmdlet 测试会话配置。
 如果已使用文本编辑器手动编辑 pssc 文件时，强烈建议测试会话配置文件以确保语法正确。
 如果会话配置文件未通过此测试，它将无法在系统上成功注册。
 
-<a id="sample-session-configuration-file" class="xliff"></a>
-## 示例会话配置文件
+## <a name="sample-session-configuration-file"></a>示例会话配置文件
 
 下面的完整示例演示了如何创建和验证 JEA 的会话配置。
 请注意，为了简便和易读，在 `$roles` 变量中创建和存储角色定义。
@@ -257,14 +243,12 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\JEACo
 Test-PSSessionConfigurationFile -Path .\JEAConfig.pssc # should yield True
 ```
 
-<a id="updating-session-configuration-files" class="xliff"></a>
-## 更新会话配置文件
+## <a name="updating-session-configuration-files"></a>更新会话配置文件
 
 如果需要更改 JEA 会话配置的属性（包括用户到角色的映射），需要[注销](register-jea.md#unregistering-jea-configurations)和[重新注册](register-jea.md) JEA 会话配置。
 重新注册 JEA 会话配置时，使用包含所需更改的更新后的 PowerShell 会话配置文件。
 
-<a id="next-steps" class="xliff"></a>
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 
 - [注册 JEA 配置](register-jea.md)
 - [创作 JEA 角色](role-capabilities.md)

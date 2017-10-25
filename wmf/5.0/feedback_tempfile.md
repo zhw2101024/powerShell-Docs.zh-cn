@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="new-temporaryfile" class="xliff"></a>
-# New-TemporaryFile
+# <a name="new-temporaryfile"></a>New-TemporaryFile
 有时必须在脚本中创建临时文件。 可以使用 **New-TemporaryFile** cmdlet 轻松实现此操作：
 
 PS C:\\&gt; $tempFile = New-TemporaryFile

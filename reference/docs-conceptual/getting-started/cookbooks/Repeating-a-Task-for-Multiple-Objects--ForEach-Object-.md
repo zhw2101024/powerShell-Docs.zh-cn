@@ -1,5 +1,5 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "为多个对象重复执行任务 (ForEach Object)"
 ms.assetid: 6697a12d-2470-4ed6-b5bb-c35e5d525eb6

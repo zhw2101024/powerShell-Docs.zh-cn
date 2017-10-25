@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="windows-management-framework-wmf-50-rtm-release-notes-overview" class="xliff"></a>
-# Windows Management Framework (WMF) 5.0 RTM 发行说明概述
+# <a name="windows-management-framework-wmf-50-rtm-release-notes-overview"></a>Windows Management Framework (WMF) 5.0 RTM 发行说明概述
 
 Windows Management Framework (WMF) 5.0 RTM 包含已从 WMF 4.0 中更新的功能。 WMF 5.0 RTM 仅可在 **Windows Server 2012 R2**、**Windows Server 2012**、**Windows Server 2008 R2**、**Windows 8.1** 和 **Windows 7 SP1** 上进行安装，并包含以下功能的更新版本或说明：
 

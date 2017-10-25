@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="script-with-compatible-powershell-editions" class="xliff"></a>
-# 具有兼容的 PowerShell 版本的脚本
+# <a name="script-with-compatible-powershell-editions"></a>具有兼容的 PowerShell 版本的脚本
 从版本 5.1 开始，PowerShell 以表现出不同功能集和平台兼容性的不同版本提供。
 
 - **桌面版：**以 .NET Framework 为基础构建，提供与面向在完整功能 Windows 版本（如服务器核心和 Windows 桌面）上运行的 PowerShell 版本的脚本和模块的兼容性。
@@ -63,10 +62,7 @@ Find-Script -Tag PSEditon_Core
 
 ```
 
-<a id="more-details" class="xliff"></a>
-## 详细信息
-<a id="modules-with-pseditionsmodulemodulewithpseditionsupportmd" class="xliff"></a>
-### [PSEditions 模块](../module/modulewithpseditionsupport.md)
-<a id="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd" class="xliff"></a>
-### [PowerShell 库的 PSEditions 支持](../../psgallery/psgallery_pseditions.md)
+## <a name="more-details"></a>详细信息
+### <a name="modules-with-pseditionsmodulemodulewithpseditionsupportmd"></a>[PSEditions 模块](../module/modulewithpseditionsupport.md)
+### <a name="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd"></a>[PowerShell 库的 PSEditions 支持](../../psgallery/psgallery_pseditions.md)
 

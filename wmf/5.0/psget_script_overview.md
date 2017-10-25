@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="powershell-script-discovery-install-and-management-with-powershellget" class="xliff"></a>
-# 使用 PowerShellGet 进行 PowerShell 脚本发现、安装和管理
+# <a name="powershell-script-discovery-install-and-management-with-powershellget"></a>使用 PowerShellGet 进行 PowerShell 脚本发现、安装和管理
 
 在 WMF 5.0 RTM 版本中已将 PowerShell 脚本共享功能添加到了 PowerShellGet。
 以下新的 cmdlet 将被添加到 PowerShellGet 模块以支持 PowerShell 脚本。

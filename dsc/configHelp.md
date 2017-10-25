@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="writing-help-for-dsc-configurations" class="xliff"></a>
-# 编写 DSC 配置的帮助
+# <a name="writing-help-for-dsc-configurations"></a>编写 DSC 配置的帮助
 
 >适用于：Windows PowerShell 5.0
 
@@ -61,8 +60,7 @@ configuration HelpSample1
 }
 ```
 
-<a id="viewing-configuration-help" class="xliff"></a>
-## 查看配置帮助
+## <a name="viewing-configuration-help"></a>查看配置帮助
 
 若要查看有关配置的帮助，请使用带有函数名称的 **Get-help** cmdlet，或键入后跟 `-?` 的函数名称。 下面展示了在传递给 **Get-Help** 时上一个函数的输出：
 
@@ -93,7 +91,6 @@ REMARKS
     For technical information, type: "get-help HelpSample1 -full".
 ```
 
-<a id="see-also" class="xliff"></a>
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 * [DSC 配置](configurations.md)
 

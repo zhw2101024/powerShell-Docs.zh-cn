@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="jea-role-capabilities" class="xliff"></a>
-# JEA 角色功能
+# <a name="jea-role-capabilities"></a>JEA 角色功能
 
 > 适用于：Windows PowerShell 5.0
 
@@ -20,8 +19,7 @@ ms.lasthandoff: 06/12/2017
 
 本主题介绍如何为 JEA 用户创建 PowerShell 角色功能文件。
 
-<a id="determine-which-commands-to-allow" class="xliff"></a>
-## 确定要允许的命令
+## <a name="determine-which-commands-to-allow"></a>确定要允许的命令
 
 创建角色功能文件时，首先要考虑分配有角色的用户将需要访问哪些内容。
 此需求收集过程可能需要一段时间，但非常必要。
@@ -41,16 +39,14 @@ ms.lasthandoff: 06/12/2017
 下面的一些示例介绍了在不受约束的状态下允许使用时可能被恶意使用的命令。
 请注意，此列表并非全面详尽，应在开始时谨慎使用。
 
-<a id="examples-of-potentially-dangerous-commands" class="xliff"></a>
-### 可能存在危险的命令示例
+### <a name="examples-of-potentially-dangerous-commands"></a>可能存在危险的命令示例
 
 风险 | 示例 | 相关命令
 -----|---------|-----------------
 向连接用户授予管理员特权以绕过 JEA | `Add-LocalGroupMember -Member 'CONTOSO\jdoe' -Group 'Administrators'` | `Add-ADGroupMember`、`Add-LocalGroupMember`、`net.exe`、`dsadd.exe`
 运行任意代码（如恶意软件、攻击或自定义脚本）以绕过保护 | `Start-Process -FilePath '\\san\share\malware.exe'` | `Start-Process`、`New-Service`、`Invoke-Item`、`Invoke-WmiMethod`、`Invoke-CimMethod`、`Invoke-Expression`、`Invoke-Command`、`New-ScheduledTask`、`Register-ScheduledJob`
 
-<a id="create-a-role-capability-file" class="xliff"></a>
-## 创建角色功能文件
+## <a name="create-a-role-capability-file"></a>创建角色功能文件
 
 可使用 [New-PSRoleCapabilityFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/New-PSRoleCapabilityFile) cmdlet 创建新的 PowerShell 角色功能文件。
 
@@ -61,8 +57,7 @@ New-PSRoleCapabilityFile -Path .\MyFirstJEARole.psrc
 可在文本编辑器中打开生成的角色功能文件，并进行修改以允许角色所需的命令。
 PowerShell 帮助文档包括文件配置方式的多个示例。
 
-<a id="allowing-powershell-cmdlets-and-functions" class="xliff"></a>
-### 允许 PowerShell cmdlet 和函数
+### <a name="allowing-powershell-cmdlets-and-functions"></a>允许 PowerShell cmdlet 和函数
 
 若要授权用户运行 PowerShell cmdlet 或函数，请将 cmdlet 或函数名称添加到 VisbibleCmdlets 或 VisibleFunctions 字段。
 如果不确定命令是 cmdlet 还是函数，可运行 `Get-Command <name>` 并查看输出中的“CommandType”属性。
@@ -118,8 +113,7 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 
 有关 ValidatePattern 的详细信息，请参阅[*你好，脚本专家*博文](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/)和 [PowerShell 正则表达式](https://technet.microsoft.com/en-us/library/hh847880.aspx)参考内容。
 
-<a id="allowing-external-commands-and-powershell-scripts" class="xliff"></a>
-### 允许使用外部命令和 PowerShell 脚本
+### <a name="allowing-external-commands-and-powershell-scripts"></a>允许使用外部命令和 PowerShell 脚本
 
 若要允许用户在 JEA 会话中运行可执行文件和 PowerShell 脚本 (.ps1)，必须在 VisibleExternalCommands 字段中添加每个程序的完整路径。
 
@@ -138,8 +132,7 @@ VisibleExternalCommands = 'C:\Windows\System32\whoami.exe', 'C:\Program Files\Co
 
 在 JEA 会话中向用户提供外部命令时，请始终指定可执行文件的完整路径，确保不会转而执行系统其他位置中名称相似（且可能恶意）的程序。
 
-<a id="allowing-access-to-powershell-providers" class="xliff"></a>
-### 允许访问 PowerShell 提供程序
+### <a name="allowing-access-to-powershell-providers"></a>允许访问 PowerShell 提供程序
 
 默认情况下，PowerShell 提供程序均不适用于 JEA 会话。
 
@@ -156,8 +149,7 @@ VisibleProviders = 'Registry'
 JEA 会话中可用的函数、cmdlet 和外部程序不遵从 JEA 的相同约束；默认情况下，它们可访问任意提供程序。
 如果需要将文件复制到 JEA 终结点/从中复制文件，还可考虑使用[用户驱动器](session-configurations.md#user-drive)。
 
-<a id="creating-custom-functions" class="xliff"></a>
-### 创建自定义函数
+### <a name="creating-custom-functions"></a>创建自定义函数
 
 可在角色功能文件中创作自定义函数，简化最终用户的复杂任务。
 如果需要 cmdlet 参数值的高级验证逻辑时，自定义函数也很有用。
@@ -195,8 +187,7 @@ JEA 会话中受约束的所有 cmdlet 在通过函数调用时的行为均相�
 如果正在编写大量自定义函数，将其放在 [PowerShell 脚本模块](https://msdn.microsoft.com/en-us/library/dd878340(v=vs.85).aspx)中可能会更容易。
 然后，与使用内置和第三方模块时一样，可使用 VisibleFunctions 字段使这些函数在 JEA 会话中可见。
 
-<a id="place-role-capabilities-in-a-module" class="xliff"></a>
-## 在模块中放置角色功能
+## <a name="place-role-capabilities-in-a-module"></a>在模块中放置角色功能
 
 为使 PowerShell 能找到角色功能文件，必须将其存储在 PowerShell 模块的“RoleCapabilities”文件夹中。
 该模块可存储在 `$env:PSModulePath` 环境变量所内附的任何文件夹中，但不得放置在 System32（针对内置模块保留）或者不受信用户可在其中修改文件的文件夹中。
@@ -219,8 +210,7 @@ Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 
 若要深入了解 PowerShell 模块、模块清单和 PSModulePath 环境变量，请参阅[了解 PowerShell 模块](https://msdn.microsoft.com/en-us/library/dd878324.aspx)。
 
-<a id="updating-role-capabilities" class="xliff"></a>
-## 更新角色功能
+## <a name="updating-role-capabilities"></a>更新角色功能
 
 
 只需保存对角色功能文件的更改，即可随时更新该文件。
@@ -233,8 +223,7 @@ Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 
 对于想要锁定角色功能访问权限的管理员，请确保本地系统具有角色功能文件的访问权限且包含相关模块。
 
-<a id="how-role-capabilities-are-merged" class="xliff"></a>
-## 如何合并角色功能
+## <a name="how-role-capabilities-are-merged"></a>如何合并角色功能
 
 用户在输入 JEA 会话时，可获取多个角色功能的访问权限，具体取决于[会话配置文件](session-configurations.md)中的角色映射。
 发生此情况时，JEA 将尝试为用户提供所有角色允许的*最宽松*的命令集。
@@ -288,8 +277,7 @@ $mergedAandB = @{
 例如，如果一个角色允许使用 `Remove-Item` cmdlet，而另一角色允许 `FileSystem` 提供程序，则 JEA 用户可能会删除计算机上的任意文件。
 有关确定用户有效权限的其他信息，可参阅[审核 JEA 主题](audit-and-report.md)。
 
-<a id="next-steps" class="xliff"></a>
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 
 - [创建会话配置文件](session-configurations.md)
 

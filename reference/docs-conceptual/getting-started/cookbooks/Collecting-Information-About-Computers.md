@@ -1,5 +1,5 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "收集有关计算机的信息"
 ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb

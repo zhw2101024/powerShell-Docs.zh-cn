@@ -9,25 +9,21 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="product-compatibility-status" class="xliff"></a>
-# 产品兼容性状态
+# <a name="product-compatibility-status"></a>产品兼容性状态
 
-<a id="compatible" class="xliff"></a>
-## 兼容：
+## <a name="compatible"></a>兼容：
 > 运行以下服务器应用程序的系统**可运行** Windows Management Framework 5.0：
 
 - Microsoft SharePoint Server 2013
 - System Center 2012 Configuration Manager
 
-<a id="not-tested" class="xliff"></a>
-## 未测试：
+## <a name="not-tested"></a>未测试：
 > 运行以下服务器应用程序的系统**未测试** Windows Management Framework 5.0：
 
 - Microsoft SharePoint Server 2010
 - System Center 2012 Virtual Machine Manager
 
-<a id="incompatible" class="xliff"></a>
-## 不兼容：
+## <a name="incompatible"></a>不兼容：
 > 运行以下服务器应用程序的系统**不应运行**  Windows Management Framework 5.0：
 
 - Microsoft Exchange Server 2013

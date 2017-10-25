@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="find-rolecapability" class="xliff"></a>
-# Find-RoleCapability
+# <a name="find-rolecapability"></a>Find-RoleCapability
 
 在模块中查找角色功能。
 
-<a id="description" class="xliff"></a>
-## 说明
+## <a name="description"></a>说明
 Find-RoleCapability cmdlet 查找模块中的 PowerShell 角色功能。 Find-RoleCapability 在已注册的存储库中搜索模块。 对于此 cmdlet 查找的每个角色功能，它将返回 PSGetRoleCapabilityInfo 对象。 可以将 PSGetRoleCapabilityInfo 对象传递给 Install-Module cmdlet 以安装包含角色功能的模块。
 PowerShell 角色功能定义在 Just Enough Administration (JEA) 终结点中可供用户使用的命令、应用程序等。 角色功能由扩展名为“.psrc”的文件定义。
 
@@ -29,19 +27,16 @@ PowerShell 角色功能定义在 Just Enough Administration (JEA) 终结点中�
 - Find-RoleCapability 可使用 -Filter 参数对存储库特定搜索语言进行筛选。
 - Find-RoleCapability 可以从所有或少数已注册存储库中对模块进行筛选。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 语法
+## <a name="cmdlet-syntax"></a>Cmdlet 语法
 ```powershell
 Get-Command -Name Find-RoleCapability -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 联机帮助参考
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 联机帮助参考
 
 [Find-RoleCapability](http://go.microsoft.com/fwlink/?LinkId=718029)
 
-<a id="example-commands" class="xliff"></a>
-## 示例命令
+## <a name="example-commands"></a>示例命令
 ```powershell
 
 # Find a specific role capability

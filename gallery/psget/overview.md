@@ -10,11 +10,9 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="powershellget-overview" class="xliff"></a>
-# PowerShellGet 概述
+# <a name="powershellget-overview"></a>PowerShellGet 概述
 
 PowerShellGet 模块包含用于发现、安装、更新和发布来自 https://www.PowerShellGallery.com 和其他专用存储库的模块、DSC 资源、角色功能和脚本等 PowerShell 项目的 cmdlet。
 
-<a id="powershellget-cmdlet-referencepsgetcmdletsreferencemd" class="xliff"></a>
-## [PowerShellGet cmdlet 参考](./psget_cmdlets_reference.md)
+## <a name="powershellget-cmdlet-referencepsgetcmdletsreferencemd"></a>[PowerShellGet cmdlet 参考](./psget_cmdlets_reference.md)
 

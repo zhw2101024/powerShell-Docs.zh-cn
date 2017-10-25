@@ -10,15 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-package-resource" class="xliff"></a>
-# DSC Package 资源
+# <a name="dsc-package-resource"></a>DSC Package 资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) 中的 **Package** 资源提供了在目标节点上安装或卸载程序包（如 Windows Installer 和 setup.exe 程序包）的机制。
 
-<a id="syntax" class="xliff"></a>
-## 语法
+## <a name="syntax"></a>语法
 
 ```
 Package [string] #ResourceName
@@ -35,8 +33,7 @@ Package [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-## “属性”
+## <a name="properties"></a>“属性”
 |  属性  |  说明   | 
 |---|---| 
 | 名称| 指示要确保其特定状态的程序包的名称。| 
@@ -49,8 +46,7 @@ Package [string] #ResourceName
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"``。| 
 | ReturnCode| 指示预期的返回代码。 如果实际返回代码与此处提供的预期值不匹配，则配置将返回错误。| 
 
-<a id="example" class="xliff"></a>
-## 示例
+## <a name="example"></a>示例
 
 此示例将运行位于指定路径且具有指定产品 ID 的 .msi 安装程序。
 

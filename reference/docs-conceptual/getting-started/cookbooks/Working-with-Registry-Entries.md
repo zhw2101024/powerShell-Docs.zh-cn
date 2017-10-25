@@ -1,5 +1,5 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "使用注册表条目"
 ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc

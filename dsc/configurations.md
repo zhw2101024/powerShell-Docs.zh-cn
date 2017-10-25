@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-configurations" class="xliff"></a>
-# DSC 配置
+# <a name="dsc-configurations"></a>DSC 配置
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
@@ -37,8 +36,7 @@ MyDscConfiguration
 
 将脚本保存为 .ps1 文件。
 
-<a id="configuration-syntax" class="xliff"></a>
-## 配置语法
+## <a name="configuration-syntax"></a>配置语法
 
 配置脚本由以下部分组成：
 
@@ -71,8 +69,7 @@ MyDscConfiguration
 
 在此示例中，在编译配置时将节点名称作为 **ComputerName** 参数进行传递，从而指定节点名称。 该名称默认为“localhost”。
 
-<a id="compiling-the-configuration" class="xliff"></a>
-## 正在编译配置
+## <a name="compiling-the-configuration"></a>正在编译配置
 
 必须将其编译为 MOF 文档才能执行配置。 你可通过调用配置（像调用 PowerShell 函数一样）以执行此操作。  
 此示例的最后一行仅包含配置名称，用于调用配置。
@@ -119,8 +116,7 @@ Mode                LastWriteTime         Length Name
 -a----       10/23/2015   4:32 PM           2842 MyTestNode.mof
 ```      
 
-<a id="using-dependson" class="xliff"></a>
-## 使用 DependsOn
+## <a name="using-dependson"></a>使用 DependsOn
 
 有效的 DSC 关键字为 **DependsOn**。 通常（但不一定总是），DSC 将按资源在配置中显示的顺序来应用这些资源。 但是，由 **DependsOn** 指定哪些资源依赖于其他资源，而 LCM 则确保这些资源的应用顺序正确（无论资源实例是以何种顺序定义的）。 例如，配置可能会指定**用户**资源实例依赖于**组**实例的存在：
 
@@ -144,8 +140,7 @@ Configuration DependsOnExample {
 DependsOnExample
 ```
 
-<a id="using-new-resources-in-your-configuration" class="xliff"></a>
-## 在配置中使用新的资源
+## <a name="using-new-resources-in-your-configuration"></a>在配置中使用新的资源
 
 如果运行了前面的示例，你可能注意到你已收到警告信息，提示你正在使用未显式导入的资源。
 现在，DSC 附带 12 种资源作为 PSDesiredStateConfiguration 模块的一部分。 外部模块中的其他资源须置于 `$env:PSModulePath` 中以便 LCM 能够识别。 新的 cmdlet - [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)，可用来确定哪些资源已安装在系统上并且可供 LCM 使用。 一旦这些模块已置于 `$env:PSModulePath` 中并由 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 正确识别，你仍需在配置中加载它们。 
@@ -154,8 +149,7 @@ DependsOnExample
 - **ModuleName** 是使用 **Import-DscResource** 的推荐方法。 它接受包含要导入资源的模块名称以及模块名称的字符串数组。 
 - **Name** 是要导入资源的名称。 这不是由 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 返回为“Name”的友好名称，而是定义资源架构时使用的类名（由 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 返回为 **ResourceType**）。 
 
-<a id="see-also" class="xliff"></a>
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 * [Windows PowerShell Desired State Configuration 概述](overview.md)
 * [DSC 资源](resources.md)
 * [配置本地配置管理器](metaConfig.md)

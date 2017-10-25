@@ -10,15 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-windowsfeature-resource" class="xliff"></a>
-# DSC WindowsFeature 资源。
+# <a name="dsc-windowsfeature-resource"></a>DSC WindowsFeature 资源。
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) 中的 **WindowsFeature** 资源提供了在目标节点上添加或删除角色和功能的机制。
 
-<a id="syntax" class="xliff"></a>
-## 语法
+## <a name="syntax"></a>语法
 
 ```
 WindowsFeature [string] #ResourceName
@@ -33,8 +31,7 @@ WindowsFeature [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-## “属性”
+## <a name="properties"></a>“属性”
 
 |  属性  |  说明   | 
 |---|---| 
@@ -46,8 +43,7 @@ WindowsFeature [string] #ResourceName
 | DependsOn| 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 __ResourceName__、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。| 
 | 源| 指示要用于安装的源文件的位置（如有必要）。| 
 
-<a id="example" class="xliff"></a>
-## 示例
+## <a name="example"></a>示例
 ```powershell
 WindowsFeature RoleExample
 {

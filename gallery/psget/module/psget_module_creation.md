@@ -10,10 +10,8 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="when-to-include-a-project-site-license-url-custom-icon" class="xliff"></a>
-## 何时包含项目网站、许可 URL、自定义图标？
+## <a name="when-to-include-a-project-site-license-url-custom-icon"></a>何时包含项目网站、许可 URL、自定义图标？
 
 
-<a id="what-is-minimum-powershell-version" class="xliff"></a>
-## 最低的 PowerShell 版本是？
+## <a name="what-is-minimum-powershell-version"></a>最低的 PowerShell 版本是？
 

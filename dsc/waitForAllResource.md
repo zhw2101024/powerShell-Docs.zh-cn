@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-waitforall-resource" class="xliff"></a>
-# DSC WaitForAll 资源
+# <a name="dsc-waitforall-resource"></a>DSC WaitForAll 资源
 
 > 适用于：Windows PowerShell 5.0 及更高版本
 
@@ -20,8 +19,7 @@ ms.lasthandoff: 06/12/2017
 如果由 ResourceName 属性指定的资源在 NodeName 属性定义的所有目标节点上都处于相应状态，那么此资源成功。
 
 
-<a id="syntax" class="xliff"></a>
-## 语法
+## <a name="syntax"></a>语法
 
 ```
 WaitForAll [string] #ResourceName
@@ -35,8 +33,7 @@ WaitForAll [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-## “属性”
+## <a name="properties"></a>“属性”
 
 |  属性  |  说明   | 
 |---|---| 
@@ -48,8 +45,7 @@ WaitForAll [string] #ResourceName
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 __ResourceName__、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。|
 
 
-<a id="example" class="xliff"></a>
-## 示例
+## <a name="example"></a>示例
 
 有关如何使用此资源的示例，请参阅[指定跨节点依赖关系](crossNodeDependencies.md)
 

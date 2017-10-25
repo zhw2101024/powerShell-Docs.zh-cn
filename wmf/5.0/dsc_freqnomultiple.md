@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="frequencies-for-refreshmode-and-configurationmode-dont-need-to-be-multiples-of-each-other" class="xliff"></a>
-# RefreshMode 和 ConfigurationMode 的频率无需为彼此的倍数
+# <a name="frequencies-for-refreshmode-and-configurationmode-dont-need-to-be-multiples-of-each-other"></a>RefreshMode 和 ConfigurationMode 的频率无需为彼此的倍数
 
 在以前版本的 DSC 中，LCM 将 `RefreshFrequencyMins` 和 `ConfigurationModeFrequencyMins` 作为彼此的倍数。 在 WMF 5.0 RTM 中，将独立处理这些属性。 
 

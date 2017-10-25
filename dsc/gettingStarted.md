@@ -10,14 +10,12 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="getting-started-with-powershell-desired-state-configuration" class="xliff"></a>
-# PowerShell Desired State Configuration 入门 #
+# <a name="getting-started-with-powershell-desired-state-configuration"></a>PowerShell Desired State Configuration 入门 #
 
 本指南介绍了如何开始创建 PowerShell Desired State Configuration文档并将其应用到计算机中。 假定你基本熟悉 PowerShell cmdlet、模块和函数。 
 
 
-<a id="create-a-configuration" class="xliff"></a>
-## 创建配置 ##
+## <a name="create-a-configuration"></a>创建配置 ##
 
 [**配置**](https://msdn.microsoft.com/en-us/powershell/dsc/configurations)是描述环境的文档。 环境中包含“**节点**”（通常是虚拟机或物理计算机）。 
 
@@ -40,8 +38,7 @@ configuration MyFirstConfiguration
 
 }
 ```
-<a id="parts-of-a-configuration" class="xliff"></a>
-## Configuration 部分 ##
+## <a name="parts-of-a-configuration"></a>Configuration 部分 ##
 **Configuration** 是已添加到 PowerShell 4.0 的关键字。 它表示一种由 Desired State Configuration.使用的特殊 PowerShell 函数。 在此示例中，该函数被命名为 myFirstConfiguration。 
 
 下一行是类似于导入模块的导入语句。 稍后将对其展开讨论。

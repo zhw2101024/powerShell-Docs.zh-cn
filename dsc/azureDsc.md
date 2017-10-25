@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="using-dsc-on-microsoft-azure" class="xliff"></a>
-# 在 Microsoft Azure 上使用 DSC
+# <a name="using-dsc-on-microsoft-azure"></a>在 Microsoft Azure 上使用 DSC
 
 通过 [Azure 所需状态配置扩展处理程序](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-extensions-dsc-overview)和 [Azure 自动化 DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview)，Microsoft Azure 中支持所需状态配置 (DSC)。
 
-<a id="azure-desired-state-configuration-extension-handler" class="xliff"></a>
-## Azure 所需状态配置扩展处理程序
+## <a name="azure-desired-state-configuration-extension-handler"></a>Azure 所需状态配置扩展处理程序
 
 Azure DSC 扩展允许通过 DSC 管理位于 Microsoft Azure 中的 VM。 有关详情，请参阅以下主题：
 
@@ -24,8 +22,7 @@ Azure DSC 扩展允许通过 DSC 管理位于 Microsoft Azure 中的 VM。 有�
 - [通过 Azure Resource Manager 模板实现 Windows VMSS 和所需状态配置](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-extensions-dsc-template)
 - [将凭据传递到 Azure DSC 扩展处理程序](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-extensions-dsc-credentials)
 
-<a id="azure-automation-dsc" class="xliff"></a>
-## Azure 自动化 DSC
+## <a name="azure-automation-dsc"></a>Azure 自动化 DSC
 
 通过 [Azure 自动化服务](https://azure.microsoft.com/services/automation/)，可从 Azure 内部管理 DSC 配置、资源和托管节点。 有关详情，请参阅以下主题：
 

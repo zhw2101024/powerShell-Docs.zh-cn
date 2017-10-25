@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/12/2017
 ---
-<a id="deploy-to-azure-automation" class="xliff"></a>
-部署到 Azure 自动化
+<a name="deploy-to-azure-automation"></a>部署到 Azure 自动化
 ===========================
 
 项详细信息页上的“部署到 Azure 自动化”按钮会将项从 PowerShell 库部署到 Azure 自动化。
