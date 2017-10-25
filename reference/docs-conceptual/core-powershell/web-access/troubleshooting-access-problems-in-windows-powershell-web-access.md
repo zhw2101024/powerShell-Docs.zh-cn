@@ -136,6 +136,6 @@ ms.lasthandoff: 08/31/2017
 
 ## <a name="see-also"></a><span data-ttu-id="d440b-192">另请参阅</span><span class="sxs-lookup"><span data-stu-id="d440b-192">See Also</span></span>
 
-- [<span data-ttu-id="d440b-193">Windows PowerShell Web 访问的授权规则和安全功能</span><span class="sxs-lookup"><span data-stu-id="d440b-193">Authorization Rules and Security Features of Windows PowerShell Web Access</span></span>](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
-- [<span data-ttu-id="d440b-194">使用基于 Web 的 Windows PowerShell 控制台</span><span class="sxs-lookup"><span data-stu-id="d440b-194">Use the Web-based Windows PowerShell Console</span></span>](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
+- <span data-ttu-id="d440b-193">[Windows PowerShell Web 访问的授权规则和安全功能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)</span><span class="sxs-lookup"><span data-stu-id="d440b-193">[Authorization Rules and Security Features of Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)</span></span>
+- <span data-ttu-id="d440b-194">[使用基于 Web 的 Windows PowerShell 控制台](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)</span><span class="sxs-lookup"><span data-stu-id="d440b-194">[Use the Web-based Windows PowerShell Console](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)</span></span>
 - [<span data-ttu-id="d440b-195">about_Remote_Requirements</span><span class="sxs-lookup"><span data-stu-id="d440b-195">about_Remote_Requirements</span></span>](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
