@@ -1,24 +1,21 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: powershell,cmdlet,gallery
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: "库,powershell,cmdlet,psgallery"
 title: psgalleryint_status
-ms.technology: powershell
-ms.openlocfilehash: 58f06ca061a4f171288e75b30698910c701f1da1
-ms.sourcegitcommit: ba8ed836799ef465e507fa1b8d341ba38459d863
-translationtype: HT
+ms.openlocfilehash: 0b2f1ebcb365fcd24438a028a9c8181449266a8b
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
 <a name="powershell-gallery-status"></a>PowerShell 库状态
 =========================
 
 ## <a name="03272017---resolved-unable-to-see-individual-module-and-script-pages"></a>2017/03/27/ - 已解决：无法查看单个模块和脚本页面
 
-__影响摘要__：指向 https://www.powershellgallery.com 上单个模块和脚本页面的直接链接已中断。 所有区域中均报告发生此问题。 这不会影响任意 PowerShellGet cmdlet，即 Install-Module、Install-Script、Update-Module、Update-Script、Publish-Module 和 Publish-Scirpt 继续运行。
+__影响摘要__：指向 https://www.powershellgallery.com 上单个模块和脚本页面的直接链接已中断。 所有区域中均报告发生此问题。 这不会影响任意 PowerShellGet cmdlet（即 Install-Module、Install-Script、Update-Module、Update-Script、Publish-Module 和 Publish-Script）继续运行。
 
 __根本原因__：工程师确定原因是将类似 Facebook 的社交媒体按钮设置在了页面上。  
 

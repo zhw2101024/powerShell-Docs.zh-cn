@@ -1,15 +1,14 @@
 ---
-title: "适用于 Linux 的 DSC nxService 资源"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 8443860628617eb56ce370be62f9618f19f78077
-ms.sourcegitcommit: 26f4e52f3dd008b51b7eae7b634f0216eec6200e
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "适用于 Linux 的 DSC nxService 资源"
+ms.openlocfilehash: be9f1f090eacc38bcdb77e53020d559bab72c156
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="dsc-for-linux-nxservice-resource"></a>适用于 Linux 的 DSC nxService 资源
 

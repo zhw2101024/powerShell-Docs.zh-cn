@@ -1,21 +1,20 @@
 ---
-title: "使用配置 ID 设置请求客户端"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 66702defb6f16740d93e020ebd22374b161efc5f
-ms.sourcegitcommit: 267688f61dcc76fd685c1c34a6c7bfd9be582046
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "使用配置 ID 设置请求客户端"
+ms.openlocfilehash: bb14bff95c626b65e2d0d0072c39e4c571cea4b0
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/27/2017
 ---
 # <a name="setting-up-a-pull-client-using-configuration-id"></a>使用配置 ID 设置请求客户端
 
 > 适用于：Windows PowerShell 5.0
 
-必须告知每个目标节点使用请求模式，并为其提供用于联系请求服务器以获取配置的 URL。 若要执行此操作，必须为本地配置管理器 (LCM) 配置所需信息。 若要配置 LCM，你需要创建一个使用 **DSCLocalConfigurationManager** 特性修饰的特殊类型配置。 有关配置 LCM 的详细信息，请参阅[配置本地配置管理器](metaConfig.md)。
+必须告知每个目标节点使用请求模式，并为其提供用于联系请求服务器以获取配置的 URL。 若要执行此操作，必须为本地配置管理器 (LCM) 配置所需信息。 若要配置 LCM，可创建一个使用 **DSCLocalConfigurationManager** 特性修饰的特殊类型配置。 有关配置 LCM 的详细信息，请参阅[配置本地配置管理器](metaConfig.md)。
 
 > **请注意**：本主题适用于 PowerShell 5.0。 有关在 PowerShell 4.0 中设置请求客户端的信息，请参阅[在 PowerShell 4.0 中使用配置 ID 设置请求客户端](pullClientConfigID4.md)
 

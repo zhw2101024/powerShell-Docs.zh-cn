@@ -1,72 +1,30 @@
 ---
-title: "分离配置和环境数据"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 27d9a259d119099c45d7ecd3a15cd26654071d42
-ms.sourcegitcommit: 26f4e52f3dd008b51b7eae7b634f0216eec6200e
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,配置,安装程序"
+title: "使用配置数据"
+ms.openlocfilehash: a70cd8f0f6c24eb02743b02d198cebcc3d775756
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="separating-configuration-and-environment-data"></a>分离配置和环境数据
+# <a name="using-configuration-data-in-dsc"></a>使用 DSC 中的配置数据
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 通过使用内置 DSC **ConfigurationData** 参数，可以定义可在配置中使用的数据。 这样一来，便可创建可用于多个节点或不同环境的单个配置。 例如，如果要开发应用程序，可将一个配置同时用于开发和生产环境，并使用配置数据指定每个环境的数据。
 
-让我们通过一个非常简单的示例来看看其工作方式。 我们将创建单个配置，确保一些节点上存在 **IIS**，另一些节点上存在 **Hyper-V**： 
+本主题介绍了 ConfigurationData 哈希表的结构。 有关如何使用配置数据的示例，请参阅[分离配置和环境数据](separatingEnvData.md)。
 
-```powershell
-Configuration MyDscConfiguration {
-    
-    Node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
-    {
-        WindowsFeature IISInstall {
-            Ensure = 'Present'
-            Name   = 'Web-Server'
-        }
-        
-    }
-    Node $AllNodes.Where($_.Role -eq "VMHost").NodeName
-    {
-        WindowsFeature HyperVInstall {
-            Ensure = 'Present'
-            Name   = 'Hyper-V'
-        }
-    }
-}
+## <a name="the-configurationdata-common-parameter"></a>ConfigurationData 常见参数
 
-$MyData = 
-@{
-    AllNodes =
-    @(
-        @{
-            NodeName    = 'VM-1'
-            Role = 'WebServer'
-        },
+DSC 配置使用在编译配置时指定的常见参数 ConfigurationData。 有关编译配置的信息，请参阅 [DSC 配置](configurations.md)。
 
-        @{
-            NodeName    = 'VM-2'
-            Role = 'VMHost'
-        }
-    )
-}
+**ConfigurationData** 参数是必须具有至少一个名为 **AllNodes** 的键的哈希表。 它还可以额外包含一个或多个键。
 
-MyDscConfiguration -ConfigurationData $MyData
-```
-
-此脚本的最后一行将配置编译成 MOF 文档，将 `$MyData` 作为值 **ConfigurationData** 参数传递。 `$MyData` 指定两个不同节点，每个都具有其自己的 `NodeName` 和 `Role`。 配置动态创建“节点”块，方法是采用来自 `$MyData`（特别是 `$AllNodes`）的节点的集合，并根据 `Role` 属性筛选该集合。
-
-现在让我们更深入详细地看看其工作方式。
-
-## <a name="the-configurationdata-parameter"></a>ConfigurationData 参数
-
-DSC 配置采用了你在编译配置时指定的名为 **ConfigurationData** 的参数。 有关编译配置的信息，请参阅 [DSC 配置](configurations.md)。
-
-**ConfigurationData** 参数是必须具有至少一个名为 **AllNodes** 的键的哈希表。 它也可具有其他键：
+>注意：除了名为“AllNodes”的键之外，本主题中的示例还额外使用一个名为“`NonNodeData`”的键。不过，可以额外添加任意数量的键，并能根据需要随意命名这些键。
 
 ```powershell
 $MyData = 
@@ -172,7 +130,7 @@ $MyData =
 
 ## <a name="defining-the-configurationdata-hashtable"></a>定义 ConfigurationData 哈希表
 
-可将 **ConfigurationData** 定义为作为配置所属的相同脚本文件中的变量（如前例所示），或定义为单独的 .psd1 文件中的变量。 若要在 .psd1 文件中定义 **ConfigurationData**，则创建仅包含表示配置数据的哈希表的文件。
+可以将 ConfigurationData 定义为与配置同属一个脚本文件的变量（如上面的示例所示），也可以定义为单独的 `.psd1` 文件中的变量。 若要在 `.psd1` 文件中定义 ConfigurationData，请创建仅包含表示配置数据的哈希表的文件。
 
 例如，可创建一个名为 `MyData.psd1` 的文件，此文件包含以下内容：
 
@@ -193,6 +151,25 @@ $MyData =
 }
 ```
 
+## <a name="compiling-a-configuration-with-configuration-data"></a>编译包含配置数据的配置
+
+若要编译已为其定义配置数据的配置，请将配置数据作为 ConfigurationData 参数值进行传递。
+
+这将为 AllNodes 数组中的每一条目都创建一个 MOF 文件。
+每个 MOF 文件都使用相应数组条目的 `NodeName` 属性进行命名。
+
+例如，如果将配置数据定义为位于上面的 `MyData.psd1` 文件中，编译配置将创建 `VM-1.mof` 和 `VM-2.mof` 文件。
+
+### <a name="compiling-a-configuration-with-configuration-data-using-a-variable"></a>使用变量编译包含配置数据的配置
+
+若要使用定义为与配置同属一个 `.ps1` 文件的变量的配置数据，请在编译配置时将变量名称作为 ConfigurationData 参数值进行传递：
+
+```powershell
+MyDscConfiguration -ConfigurationData $MyData
+```
+
+### <a name="compiling-a-configuration-with-configuration-data-using-a-data-file"></a>使用数据文件编译包含配置数据的配置
+
 若要使用 .psd1 文件中定义的配置数据，可在编译配置时，将该文件的路径和名称作为 **ConfigurationData** 参数的值传递：
 
 ```powershell
@@ -207,149 +184,14 @@ DSC 提供三种可在配置脚本中使用的特殊变量：**$AllNodes**、**$
 - **Node** 指使用 **.Where()** 或 **.ForEach()** 筛选 **AllNodes** 集合后，该集合中的特定项。
 - **ConfigurationData** 指编译配置时，作为参数传递的整个哈希表。
 
-## <a name="devops-example"></a>DevOps 示例
+## <a name="using-non-node-data"></a>使用非节点数据
 
-让我们看一下使用单个配置设置网站的开发和生产环境的完整示例。 在开发环境中，IIS 和 SQL Server 安装在单个节点上。 在生产环境中，IIS 和 SQL Server 安装在不同的节点上。 我们将使用配置数据 .psd1 文件来指定两个不同环境的数据。
+如上面的示例所示，除了必需的 AllNodes 键之外，ConfigurationData 哈希表还可以额外包含一个或多个键。
+本主题中的示例只额外使用了一个名为“`NonNodeData`”的节点。 不过，可以额外定义任何数量的键，并能根据需要随意命名这些键。
 
- ### <a name="configuration-data-file"></a>配置数据文件
-
-将在名为 `DevProdEnvData.psd1` 的文件中定义开发和生产环境数据，如下所示：
-
-```powershell
-@{
-
-    AllNodes = @(
-
-        @{
-            NodeName        = "*"
-            SQLServerName   = "MySQLServer"
-            SqlSource       = "C:\Software\Sql"
-            DotNetSrc       = "C:\Software\sxs"
-        },
-
-        @{
-            NodeName        = "Prod-SQL"
-            Role            = "MSSQL"
-        },
-
-        @{
-            NodeName        = "Prod-IIS"
-            Role            = "Web"
-            SiteContents    = "C:\Website\Prod\SiteContents\"
-            SitePath        = "\\Prod-IIS\Website\"
-        },
-
-        @{
-            NodeName         = "Dev"
-            Role             = "MSSQL", "Web"
-            SiteContents     = "C:\Website\Dev\SiteContents\"
-            SitePath         = "\\Dev\Website\"
-
-        }
-
-    )
-
-}
-```
-
-### <a name="configuration-script-file"></a>配置脚本文件
-
-现在，在配置（在 .ps1 文件中定义）中，根据其角色（`MSSQL` 和/或 `Dev`）筛选在 `DevProdEnvData.psd1` 中定义的节点并进行相应配置。 在开发环境中，SQL Server 和 IIS 位于同一个节点上，而在生产环境中，SQL Server 和 IIS 位于两个不同节点上。 站点内容也是不同的，具体由 `SiteContents` 属性指定。
-
-在配置脚本末尾，调用配置（将其编译为 MOF 文档），将 `DevProdEnvData.psd1` 作为 `$ConfigurationData` 参数传递。
-
->**注意：**此配置要求在目标节点上安装模块 `xSqlPs` 和 `xWebAdministration`。
-
-```powershell
-Configuration MyWebApp
-{
-    Import-DscResource -Module PSDesiredStateConfiguration
-    Import-DscResource -Module xSqlPs
-    Import-DscResource -Module xWebAdministration
-
-    Node $AllNodes.Where{$_.Role -contains "MSSQL"}.Nodename
-   {
-        # Install prerequisites
-        WindowsFeature installdotNet35
-        {            
-            Ensure      = "Present"
-            Name        = "Net-Framework-Core"
-            Source      = "c:\software\sxs"
-        }
-
-        # Install SQL Server
-        xSqlServerInstall InstallSqlServer
-        {
-            InstanceName = $Node.SQLServerName
-            SourcePath   = $Node.SqlSource
-            Features     = "SQLEngine,SSMS"
-            DependsOn    = "[WindowsFeature]installdotNet35"
-
-        }
-   }
-
-   Node $AllNodes.Where($_.Role -contains "Web").NodeName
-   {
-        # Install the IIS role
-        WindowsFeature IIS
-        {
-            Ensure       = 'Present'
-            Name         = 'Web-Server'
-        }
-
-        # Install the ASP .NET 4.5 role
-        WindowsFeature AspNet45
-        {
-            Ensure       = 'Present'
-            Name         = 'Web-Asp-Net45'
-
-        }
-
-        # Stop the default website
-        xWebsite DefaultSite 
-        {
-            Ensure       = 'Present'
-            Name         = 'Default Web Site'
-            State        = 'Stopped'
-            PhysicalPath = 'C:\inetpub\wwwroot'
-            DependsOn    = '[WindowsFeature]IIS'
-
-        }
-
-        # Copy the website content
-        File WebContent
-
-        {
-            Ensure          = 'Present'
-            SourcePath      = $Node.SiteContents
-            DestinationPath = $Node.SitePath
-            Recurse         = $true
-            Type            = 'Directory'
-            DependsOn       = '[WindowsFeature]AspNet45'
-
-        }       
-
-
-        # Create the new Website
-
-        xWebsite NewWebsite
-
-        {
-
-            Ensure          = 'Present'
-            Name            = $WebSiteName
-            State           = 'Started'
-            PhysicalPath    = $Node.SitePath
-            DependsOn       = '[File]WebContent'
-        }
-
-    }
-
-}
-
-MyWebApp -ConfigurationData DevProdEnvData.psd1
-```
+有关使用非节点数据的示例，请参阅[分离配置和环境数据](separatingEnvData.md)。
 
 ## <a name="see-also"></a>另请参阅
 - [配置数据中的凭据选项](configDataCredentials.md)
 - [DSC 配置](configurations.md)
+

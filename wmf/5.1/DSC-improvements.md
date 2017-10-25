@@ -1,18 +1,14 @@
 ---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,安装程序"
 title: "WMF 5.1 中的 DSC 改进"
-ms.date: 2016-07-13
-keywords: PowerShell, DSC, WMF
-description: 
-ms.topic: article
-author: keithb
-manager: dongill
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: 4c5dfaaf368097c18a2788a9df15632ce116dbbb
-ms.sourcegitcommit: ee407927101c3b166cc200a39a6ea786a1c21f95
+ms.openlocfilehash: ce897dab2344455453e9bf2d0b5a897f9abb4392
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2017
+ms.lasthandoff: 07/27/2017
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 中的 Desired State Configuration (DSC) 改进
 
@@ -53,13 +49,13 @@ ms.lasthandoff: 05/08/2017
 
 请参阅以下快照：
 
-•    本地配置设置，定义了节点可以接收的部分配置。
+•   本地配置设置，定义了节点可以接收的部分配置。
 
 ![示例 metaconfiguration](../images/MetaConfigPartialOne.png)
 
-•    部分配置定义示例 
+•   部分配置定义示例 
 
-```PowerShell
+```powershell
 Configuration PartialOne
 {
     Node('localhost')
@@ -74,11 +70,11 @@ Configuration PartialOne
 PartialOne
 ```
 
-•    生成的 MOF 文件中嵌入的“ConfigurationName”。
+•   生成的 MOF 文件中嵌入的“ConfigurationName”。
 
 ![生成的 mof 文件示例](../images/PartialGeneratedMof.png)
 
-•    拉取配置存储库中的文件名 
+•   拉取配置存储库中的文件名 
 
 ![配置存储库中的文件名](../images/PartialInConfigRepository.png)
 
@@ -86,7 +82,7 @@ Azure 自动化服务名称生成的 MOF 文件名为 `<ConfigurationName>.<Node
 
 这样将无法从 Azure 自动化服务中提取一个部分配置。
 
-```PowerShell
+```powershell
 Configuration PartialOne
 {
     Node('localhost')
@@ -105,7 +101,7 @@ PartialOne
 
 下面的元配置将节点设置为可以在本地管理，也可以由 Azure 自动化服务管理。
 
-```PowerShell
+```powershell
   [DscLocalConfigurationManager()]
    Configuration RegistrationMetaConfig
    {
@@ -209,7 +205,7 @@ InstallWindowsFeature -ConfigurationData $configData
 ####<a name="pull"></a>请求
 节点的 LocalConfigurationManager 根据其当前设置执行模块和配置的签名验证。 默认情况下，签名验证处于禁用状态。 你可以将 SignatureValidation 块添加到节点的元配置定义来启用签名验证，如下所示：
 
-```PowerShell
+```powershell
 [DSCLocalConfigurationManager()]
 Configuration EnableSignatureValidation
 {
@@ -263,7 +259,7 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 
 * 启用针对节点的签名验证。
 
-```PowerShell
+```powershell
 [DSCLocalConfigurationManager()]
 Configuration EnableSignatureValidation
 {
@@ -282,7 +278,7 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 ``` 
 * 创建示例配置文件。
 
-```PowerShell
+```powershell
 # Sample configuration
 Configuration Test
 {
@@ -298,7 +294,7 @@ Test
 
 * 尝试将未签名的配置文件推送到节点。 
 
-```PowerShell
+```powershell
 Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
 ``` 
 ![ErrorUnsignedMofPushed](../images/PushUnsignedMof.png)
