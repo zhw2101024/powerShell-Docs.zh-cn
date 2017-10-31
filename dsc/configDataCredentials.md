@@ -4,26 +4,26 @@ author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "配置数据中的凭据选项"
-ms.openlocfilehash: ec4eeb8e519158b2bf929b949e381cdba54f8928
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+ms.openlocfilehash: 94ff541fc517254ef2876c424307513eaf1d362a
+ms.sourcegitcommit: 28e71b0ae868014523631fec3f5417de751944f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 10/25/2017
 ---
-# <a name="credentials-options-in-configuration-data"></a><span data-ttu-id="2f6b0-103">配置数据中的凭据选项</span><span class="sxs-lookup"><span data-stu-id="2f6b0-103">Credentials Options in Configuration Data</span></span>
-><span data-ttu-id="2f6b0-104">适用于：Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="2f6b0-104">Applies To: Windows PowerShell 5.0</span></span>
+# <a name="credentials-options-in-configuration-data"></a><span data-ttu-id="78bac-103">配置数据中的凭据选项</span><span class="sxs-lookup"><span data-stu-id="78bac-103">Credentials Options in Configuration Data</span></span>
+><span data-ttu-id="78bac-104">适用于：Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="78bac-104">Applies To: Windows PowerShell 5.0</span></span>
 
-## <a name="plain-text-passwords-and-domain-users"></a><span data-ttu-id="2f6b0-105">纯文本密码和域用户</span><span class="sxs-lookup"><span data-stu-id="2f6b0-105">Plain Text Passwords and Domain Users</span></span>
+## <a name="plain-text-passwords-and-domain-users"></a><span data-ttu-id="78bac-105">纯文本密码和域用户</span><span class="sxs-lookup"><span data-stu-id="78bac-105">Plain Text Passwords and Domain Users</span></span>
 
-<span data-ttu-id="2f6b0-106">包含凭据但未加密的 DSC 配置会生成一条关于纯文本密码的错误信息。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-106">DSC configurations containing a credential without encryption will generate an error messages about plain text passwords.</span></span>
-<span data-ttu-id="2f6b0-107">此外，使用域凭据时 DSC 会生成一个警告。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-107">Also, DSC will generate a warning when using domain credentials.</span></span>
-<span data-ttu-id="2f6b0-108">要禁止显示这些错误和警告信息，可以使用 DSC 配置数据关键字：</span><span class="sxs-lookup"><span data-stu-id="2f6b0-108">To suppress these error and warning messages use the DSC configuration data keywords:</span></span>
-* <span data-ttu-id="2f6b0-109">**PsDscAllowPlainTextPassword**</span><span class="sxs-lookup"><span data-stu-id="2f6b0-109">**PsDscAllowPlainTextPassword**</span></span>
-* <span data-ttu-id="2f6b0-110">**PsDscAllowDomainUser**</span><span class="sxs-lookup"><span data-stu-id="2f6b0-110">**PsDscAllowDomainUser**</span></span>
+<span data-ttu-id="78bac-106">包含凭据但未加密的 DSC 配置会生成一条关于纯文本密码的错误信息。</span><span class="sxs-lookup"><span data-stu-id="78bac-106">DSC configurations containing a credential without encryption will generate an error message about plain text passwords.</span></span>
+<span data-ttu-id="78bac-107">此外，使用域凭据时 DSC 会生成一个警告。</span><span class="sxs-lookup"><span data-stu-id="78bac-107">Also, DSC will generate a warning when using domain credentials.</span></span>
+<span data-ttu-id="78bac-108">要禁止显示这些错误和警告信息，可以使用 DSC 配置数据关键字：</span><span class="sxs-lookup"><span data-stu-id="78bac-108">To suppress these error and warning messages use the DSC configuration data keywords:</span></span>
+* <span data-ttu-id="78bac-109">**PsDscAllowPlainTextPassword**</span><span class="sxs-lookup"><span data-stu-id="78bac-109">**PsDscAllowPlainTextPassword**</span></span>
+* <span data-ttu-id="78bac-110">**PsDscAllowDomainUser**</span><span class="sxs-lookup"><span data-stu-id="78bac-110">**PsDscAllowDomainUser**</span></span>
 
-><span data-ttu-id="2f6b0-111">**注意：**使用纯文本密码不安全。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-111">**Note:** Using plaintext passwords is not secure.</span></span> <span data-ttu-id="2f6b0-112">建议使用此主题后面部分讨论的方法保护凭据。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-112">Securing credentials by using the techniques covered later in this topic is recommended.</span></span>
+><span data-ttu-id="78bac-111">注意：</span><span class="sxs-lookup"><span data-stu-id="78bac-111">**Notes:**</span></span> <p><span data-ttu-id="78bac-112">存储/传输未加密的纯文本密码通常是不安全的。</span><span class="sxs-lookup"><span data-stu-id="78bac-112">Storing/transmitting plaintext passwords unencrypted is generally not secure.</span></span> <span data-ttu-id="78bac-113">建议使用此主题后面部分讨论的方法保护凭据。</span><span class="sxs-lookup"><span data-stu-id="78bac-113">Securing credentials by using the techniques covered later in this topic is recommended.</span></span></p> <p><span data-ttu-id="78bac-114">Azure Automation DSC 服务可用于集中管理要在配置中编译并安全存储的凭据。</span><span class="sxs-lookup"><span data-stu-id="78bac-114">The Azure Automation DSC service allows you to centrally manage credentials to be compiled in configurations and stored securely.</span></span>  <span data-ttu-id="78bac-115">相关信息，请参阅：[编译 DSC 配置/凭据资产](https://docs.microsoft.com/en-in/azure/automation/automation-dsc-compile#credential-assets)</span><span class="sxs-lookup"><span data-stu-id="78bac-115">For information, see: [Compiling DSC Configurations / Credential Assets](https://docs.microsoft.com/en-in/azure/automation/automation-dsc-compile#credential-assets)</span></span></p>
 
-<span data-ttu-id="2f6b0-113">下面是关于传递纯文本凭据的示例：</span><span class="sxs-lookup"><span data-stu-id="2f6b0-113">The following is an example of passing plain text credentials:</span></span>
+<span data-ttu-id="78bac-116">下面是关于传递纯文本凭据的示例：</span><span class="sxs-lookup"><span data-stu-id="78bac-116">The following is an example of passing plain text credentials:</span></span>
 
 ```powershell
 #Prompt user for their credentials
@@ -123,18 +123,19 @@ unencryptedPasswordDemo -ConfigurationData $ConfigurationData
 Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
 ```
 
-## <a name="handling-credentials-in-dsc"></a><span data-ttu-id="2f6b0-114">在 DSC 中处理凭据</span><span class="sxs-lookup"><span data-stu-id="2f6b0-114">Handling Credentials in DSC</span></span>
+## <a name="handling-credentials-in-dsc"></a><span data-ttu-id="78bac-117">在 DSC 中处理凭据</span><span class="sxs-lookup"><span data-stu-id="78bac-117">Handling Credentials in DSC</span></span>
 
-<span data-ttu-id="2f6b0-115">默认情况下，DSC 配置资源以 `Local System` 运行。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-115">DSC configuration resources run as `Local System` by default.</span></span>
-<span data-ttu-id="2f6b0-116">但某些资源需要凭据，例如 `Package` 资源需要使用特定用户帐户安装软件。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-116">However, some resources need a credential, for example when the `Package` resource needs to install software under a specific user account.</span></span>
+<span data-ttu-id="78bac-118">默认情况下，DSC 配置资源以 `Local System` 运行。</span><span class="sxs-lookup"><span data-stu-id="78bac-118">DSC configuration resources run as `Local System` by default.</span></span>
+<span data-ttu-id="78bac-119">但某些资源需要凭据，例如 `Package` 资源需要使用特定用户帐户安装软件。</span><span class="sxs-lookup"><span data-stu-id="78bac-119">However, some resources need a credential, for example when the `Package` resource needs to install software under a specific user account.</span></span>
 
-<span data-ttu-id="2f6b0-117">早期的资源使用硬编码 `Credential` 属性名称来处理此问题。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-117">Earlier resources used a hard-coded `Credential` property name to handle this.</span></span>
-<span data-ttu-id="2f6b0-118">WMF 5.0 为所有资源都添加了自动 `PsDscRunAsCredential` 属性。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-118">WMF 5.0 added an automatic `PsDscRunAsCredential` property for all resources.</span></span> <span data-ttu-id="2f6b0-119">若要了解如何使用 `PsDscRunAsCredential`，请参阅[使用用户凭据运行 DSC](runAsUser.md)。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-119">For information about using `PsDscRunAsCredential`, see [Running DSC with user credentials](runAsUser.md).</span></span>
-<span data-ttu-id="2f6b0-120">较新的资源和自定义资源可以使用此自动属性，而不必为凭据创建其自身属性。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-120">Newer resources and custom resources can use this automatic property instead of creating their own property for credentials.</span></span>
+<span data-ttu-id="78bac-120">早期的资源使用硬编码 `Credential` 属性名称来处理此问题。</span><span class="sxs-lookup"><span data-stu-id="78bac-120">Earlier resources used a hard-coded `Credential` property name to handle this.</span></span>
+<span data-ttu-id="78bac-121">WMF 5.0 为所有资源都添加了自动 `PsDscRunAsCredential` 属性。</span><span class="sxs-lookup"><span data-stu-id="78bac-121">WMF 5.0 added an automatic `PsDscRunAsCredential` property for all resources.</span></span>
+<span data-ttu-id="78bac-122">若要了解如何使用 `PsDscRunAsCredential`，请参阅[使用用户凭据运行 DSC](runAsUser.md)。</span><span class="sxs-lookup"><span data-stu-id="78bac-122">For information about using `PsDscRunAsCredential`, see [Running DSC with user credentials](runAsUser.md).</span></span>
+<span data-ttu-id="78bac-123">较新的资源和自定义资源可以使用此自动属性，而不必为凭据创建其自身属性。</span><span class="sxs-lookup"><span data-stu-id="78bac-123">Newer resources and custom resources can use this automatic property instead of creating their own property for credentials.</span></span>
 
-<span data-ttu-id="2f6b0-121">请注意，由于某种原因，某些资源的设计将使用多个凭据，这些凭据有其自己的凭据属性。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-121">*Note that the design of some resources are to use multiple credentials for a specific reason, and they will have their own credential properties.*</span></span>
+><span data-ttu-id="78bac-124">请注意：由于某种原因，某些资源的设计将使用多个凭据，这些凭据有其自己的凭据属性。</span><span class="sxs-lookup"><span data-stu-id="78bac-124">**Note:** the design of some resources are to use multiple credentials for a specific reason, and they will have their own credential properties.</span></span>
 
-<span data-ttu-id="2f6b0-122">使用 ISE 中的 Intellisense (`CTRL+SPACE`) 或 `Get-DscResource -Name ResourceName -Syntax` 来查找资源的可用凭据属性。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-122">To find the available credential properties on a resource use either `Get-DscResource -Name ResourceName -Syntax` or the Intellisense in the ISE (`CTRL+SPACE`).</span></span>
+<span data-ttu-id="78bac-125">使用 ISE 中的 Intellisense (`CTRL+SPACE`) 或 `Get-DscResource -Name ResourceName -Syntax` 来查找资源的可用凭据属性。</span><span class="sxs-lookup"><span data-stu-id="78bac-125">To find the available credential properties on a resource use either `Get-DscResource -Name ResourceName -Syntax` or the Intellisense in the ISE (`CTRL+SPACE`).</span></span>
 
 ```powershell
 PS C:\> Get-DscResource -Name Group -Syntax
@@ -152,26 +153,26 @@ Group [String] #ResourceName
 }
 ```
 
-<span data-ttu-id="2f6b0-123">此示例使用来自 `PSDesiredStateConfiguration` 内置 DSC 资源模块中的 [Group](https://msdn.microsoft.com/en-us/powershell/dsc/groupresource) 资源。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-123">This example uses a [Group](https://msdn.microsoft.com/en-us/powershell/dsc/groupresource) resource from the `PSDesiredStateConfiguration` built-in DSC resource module.</span></span>
-<span data-ttu-id="2f6b0-124">它可以创建本地组并添加或删除成员。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-124">It can create local groups and add or remove members.</span></span>
-<span data-ttu-id="2f6b0-125">它同时接受 `Credential` 属性和自动 `PsDscRunAsCredential` 属性。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-125">It accepts both the `Credential` property and the automatic `PsDscRunAsCredential` property.</span></span>
-<span data-ttu-id="2f6b0-126">但是该资源只使用 `Credential` 属性。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-126">However, the resource only uses the `Credential` property.</span></span>
+<span data-ttu-id="78bac-126">此示例使用来自 `PSDesiredStateConfiguration` 内置 DSC 资源模块中的 [Group](https://msdn.microsoft.com/en-us/powershell/dsc/groupresource) 资源。</span><span class="sxs-lookup"><span data-stu-id="78bac-126">This example uses a [Group](https://msdn.microsoft.com/en-us/powershell/dsc/groupresource) resource from the `PSDesiredStateConfiguration` built-in DSC resource module.</span></span>
+<span data-ttu-id="78bac-127">它可以创建本地组并添加或删除成员。</span><span class="sxs-lookup"><span data-stu-id="78bac-127">It can create local groups and add or remove members.</span></span>
+<span data-ttu-id="78bac-128">它同时接受 `Credential` 属性和自动 `PsDscRunAsCredential` 属性。</span><span class="sxs-lookup"><span data-stu-id="78bac-128">It accepts both the `Credential` property and the automatic `PsDscRunAsCredential` property.</span></span>
+<span data-ttu-id="78bac-129">但是该资源只使用 `Credential` 属性。</span><span class="sxs-lookup"><span data-stu-id="78bac-129">However, the resource only uses the `Credential` property.</span></span>
 
-<span data-ttu-id="2f6b0-127">有关 `PsDscRunAsCredential` 属性的详细信息，请参阅[使用用户凭据运行 DSC](runAsUser.md)。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-127">For more information about the `PsDscRunAsCredential` property, see [Running DSC with user credentials](runAsUser.md).</span></span>
+<span data-ttu-id="78bac-130">有关 `PsDscRunAsCredential` 属性的详细信息，请参阅[使用用户凭据运行 DSC](runAsUser.md)。</span><span class="sxs-lookup"><span data-stu-id="78bac-130">For more information about the `PsDscRunAsCredential` property, see [Running DSC with user credentials](runAsUser.md).</span></span>
 
-## <a name="example-the-group-resource-credential-property"></a><span data-ttu-id="2f6b0-128">示例：Group 资源 Credential 属性</span><span class="sxs-lookup"><span data-stu-id="2f6b0-128">Example: The Group resource Credential property</span></span>
+## <a name="example-the-group-resource-credential-property"></a><span data-ttu-id="78bac-131">示例：Group 资源 Credential 属性</span><span class="sxs-lookup"><span data-stu-id="78bac-131">Example: The Group resource Credential property</span></span>
 
-<span data-ttu-id="2f6b0-129">DSC 在 `Local System` 下运行，因此它已经有权更改本地用户和组。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-129">DSC runs under `Local System`, so it already has permissions to change local users and groups.</span></span>
-<span data-ttu-id="2f6b0-130">如果添加的成员是本地帐户，则无需凭据。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-130">If the member added is a local account, then no credential is necessary.</span></span>
-<span data-ttu-id="2f6b0-131">如果 `Group` 资源要添加一个域帐户到本地组，则需要凭据。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-131">If the `Group` resource adds a domain account to the local group, then a credential is necessary.</span></span>
+<span data-ttu-id="78bac-132">DSC 在 `Local System` 下运行，因此它已经有权更改本地用户和组。</span><span class="sxs-lookup"><span data-stu-id="78bac-132">DSC runs under `Local System`, so it already has permissions to change local users and groups.</span></span>
+<span data-ttu-id="78bac-133">如果添加的成员是本地帐户，则无需凭据。</span><span class="sxs-lookup"><span data-stu-id="78bac-133">If the member added is a local account, then no credential is necessary.</span></span>
+<span data-ttu-id="78bac-134">如果 `Group` 资源要添加一个域帐户到本地组，则需要凭据。</span><span class="sxs-lookup"><span data-stu-id="78bac-134">If the `Group` resource adds a domain account to the local group, then a credential is necessary.</span></span>
 
-<span data-ttu-id="2f6b0-132">不允许匿名查询 Active Directory。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-132">Anonymous queries to Active Directory are not allowed.</span></span>
-<span data-ttu-id="2f6b0-133">`Group` 资源的 `Credential` 属性是用于查询 Active Directory 的域帐户。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-133">The `Credential` property of the `Group` resource is the domain account used to query Active Directory.</span></span>
-<span data-ttu-id="2f6b0-134">大多数情况下这是个一般用户帐户，因为默认情况下用户可以*读取* Active Directory 中的大多数对象。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-134">For most purposes this could be a generic user account, because by default users can *read* most of the objects in Active Directory.</span></span>
+<span data-ttu-id="78bac-135">不允许匿名查询 Active Directory。</span><span class="sxs-lookup"><span data-stu-id="78bac-135">Anonymous queries to Active Directory are not allowed.</span></span>
+<span data-ttu-id="78bac-136">`Group` 资源的 `Credential` 属性是用于查询 Active Directory 的域帐户。</span><span class="sxs-lookup"><span data-stu-id="78bac-136">The `Credential` property of the `Group` resource is the domain account used to query Active Directory.</span></span>
+<span data-ttu-id="78bac-137">大多数情况下这是个一般用户帐户，因为默认情况下用户可以*读取* Active Directory 中的大多数对象。</span><span class="sxs-lookup"><span data-stu-id="78bac-137">For most purposes this could be a generic user account, because by default users can *read* most of the objects in Active Directory.</span></span>
 
-## <a name="example-configuration"></a><span data-ttu-id="2f6b0-135">示例配置</span><span class="sxs-lookup"><span data-stu-id="2f6b0-135">Example Configuration</span></span>
+## <a name="example-configuration"></a><span data-ttu-id="78bac-138">示例配置</span><span class="sxs-lookup"><span data-stu-id="78bac-138">Example Configuration</span></span>
 
-<span data-ttu-id="2f6b0-136">下面的示例代码使用 DSC 来填充带有域用户的本地组：</span><span class="sxs-lookup"><span data-stu-id="2f6b0-136">The following example code uses DSC to populate a local group with a domain user:</span></span>
+<span data-ttu-id="78bac-139">下面的示例代码使用 DSC 来填充带有域用户的本地组：</span><span class="sxs-lookup"><span data-stu-id="78bac-139">The following example code uses DSC to populate a local group with a domain user:</span></span>
 
 ```powershell
 Configuration DomainCredentialExample
@@ -197,7 +198,7 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred
 ```
 
-<span data-ttu-id="2f6b0-137">此代码生成了错误和警告消息：</span><span class="sxs-lookup"><span data-stu-id="2f6b0-137">This code generates both an error and warning message:</span></span>
+<span data-ttu-id="78bac-140">此代码生成了错误和警告消息：</span><span class="sxs-lookup"><span data-stu-id="78bac-140">This code generates both an error and warning message:</span></span>
 
 ```
 ConvertTo-MOFInstance : System.InvalidOperationException error processing
@@ -220,17 +221,17 @@ In order to suppress the warning, you can add a property named
 for node 'localhost'.
 ```
 
-<span data-ttu-id="2f6b0-138">此示例有两个问题：</span><span class="sxs-lookup"><span data-stu-id="2f6b0-138">This example has two issues:</span></span>
-1.  <span data-ttu-id="2f6b0-139">错误消息说明不推荐使用纯文本密码</span><span class="sxs-lookup"><span data-stu-id="2f6b0-139">An error explains that plain text passwords are not recommended</span></span>
-2.  <span data-ttu-id="2f6b0-140">警告消息建议不要使用域凭据</span><span class="sxs-lookup"><span data-stu-id="2f6b0-140">A warning advises against using a domain credential</span></span>
+<span data-ttu-id="78bac-141">此示例有两个问题：</span><span class="sxs-lookup"><span data-stu-id="78bac-141">This example has two issues:</span></span>
+1.  <span data-ttu-id="78bac-142">错误消息说明不推荐使用纯文本密码</span><span class="sxs-lookup"><span data-stu-id="78bac-142">An error explains that plain text passwords are not recommended</span></span>
+2.  <span data-ttu-id="78bac-143">警告消息建议不要使用域凭据</span><span class="sxs-lookup"><span data-stu-id="78bac-143">A warning advises against using a domain credential</span></span>
 
-## <a name="psdscallowplaintextpassword"></a><span data-ttu-id="2f6b0-141">PsDscAllowPlainTextPassword</span><span class="sxs-lookup"><span data-stu-id="2f6b0-141">PsDscAllowPlainTextPassword</span></span>
+## <a name="psdscallowplaintextpassword"></a><span data-ttu-id="78bac-144">PsDscAllowPlainTextPassword</span><span class="sxs-lookup"><span data-stu-id="78bac-144">PsDscAllowPlainTextPassword</span></span>
 
-<span data-ttu-id="2f6b0-142">第一条错误消息具有一个带有文档的 URL。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-142">The first error message has a URL with documentation.</span></span>
-<span data-ttu-id="2f6b0-143">此链接说明如何使用 [ConfigurationData](https://msdn.microsoft.com/en-us/powershell/dsc/configdata) 结构和证书来加密密码。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-143">This link explains how to encrypt passwords using a [ConfigurationData](https://msdn.microsoft.com/en-us/powershell/dsc/configdata) structure and a certificate.</span></span>
-<span data-ttu-id="2f6b0-144">有关证书和 DSC 的详细信息，[请阅读此文章](http://aka.ms/certs4dsc)。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-144">For more information on certificates and DSC [read this post](http://aka.ms/certs4dsc).</span></span>
+<span data-ttu-id="78bac-145">第一条错误消息具有一个带有文档的 URL。</span><span class="sxs-lookup"><span data-stu-id="78bac-145">The first error message has a URL with documentation.</span></span>
+<span data-ttu-id="78bac-146">此链接说明如何使用 [ConfigurationData](https://msdn.microsoft.com/en-us/powershell/dsc/configdata) 结构和证书来加密密码。</span><span class="sxs-lookup"><span data-stu-id="78bac-146">This link explains how to encrypt passwords using a [ConfigurationData](https://msdn.microsoft.com/en-us/powershell/dsc/configdata) structure and a certificate.</span></span>
+<span data-ttu-id="78bac-147">有关证书和 DSC 的详细信息，[请阅读此文章](http://aka.ms/certs4dsc)。</span><span class="sxs-lookup"><span data-stu-id="78bac-147">For more information on certificates and DSC [read this post](http://aka.ms/certs4dsc).</span></span>
 
-<span data-ttu-id="2f6b0-145">要强制使用纯文本密码，资源需要下列配置数据部分中的 `PsDscAllowPlainTextPassword` 关键字：</span><span class="sxs-lookup"><span data-stu-id="2f6b0-145">To force a plain text password, the resource requires the `PsDscAllowPlainTextPassword` keyword in the configuration data section as follows:</span></span>
+<span data-ttu-id="78bac-148">要强制使用纯文本密码，资源需要下列配置数据部分中的 `PsDscAllowPlainTextPassword` 关键字：</span><span class="sxs-lookup"><span data-stu-id="78bac-148">To force a plain text password, the resource requires the `PsDscAllowPlainTextPassword` keyword in the configuration data section as follows:</span></span>
 
 ```powershell
 Configuration DomainCredentialExample
@@ -265,24 +266,25 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
-<span data-ttu-id="2f6b0-146">*请注意 `NodeName` 不等同于星号，特定节点名称为必需项。*</span><span class="sxs-lookup"><span data-stu-id="2f6b0-146">*Note that `NodeName` cannot equal asterisk, a specific node name is mandatory.*</span></span>
+><span data-ttu-id="78bac-149">请注意：`NodeName` 不等同于星号，必须指定具体的节点名称。</span><span class="sxs-lookup"><span data-stu-id="78bac-149">**Note:** `NodeName` cannot equal asterisk, a specific node name is mandatory.</span></span>
 
-<span data-ttu-id="2f6b0-147">**因为存在重大安全风险，Microsoft 建议避免使用纯文本密码。**</span><span class="sxs-lookup"><span data-stu-id="2f6b0-147">**Microsoft advises to avoid plain text passwords due to the significant security risk.**</span></span>
+<span data-ttu-id="78bac-150">**因为存在重大安全风险，Microsoft 建议避免使用纯文本密码。**</span><span class="sxs-lookup"><span data-stu-id="78bac-150">**Microsoft advises to avoid plain text passwords due to the significant security risk.**</span></span>
+<span data-ttu-id="78bac-151">使用 Azure Automation DSC 服务时例外，原因是数据始终加密存储（传输中、服务中静态或节点中静态）。</span><span class="sxs-lookup"><span data-stu-id="78bac-151">An exception would be when using the Azure Automation DSC service, only because the data is always stored encrypted (in transit, at rest in the service, and at rest on the node).</span></span>
 
-## <a name="domain-credentials"></a><span data-ttu-id="2f6b0-148">域凭据</span><span class="sxs-lookup"><span data-stu-id="2f6b0-148">Domain Credentials</span></span>
+## <a name="domain-credentials"></a><span data-ttu-id="78bac-152">域凭据</span><span class="sxs-lookup"><span data-stu-id="78bac-152">Domain Credentials</span></span>
 
-<span data-ttu-id="2f6b0-149">再次运行示例配置脚本（加密或不加密），仍然生成警告消息说不推荐将域帐户用于凭据。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-149">Running the example configuration script again (with or without encryption), still generates the warning that using a domain account for a credential is not recommended.</span></span>
-<span data-ttu-id="2f6b0-150">使用本地帐户可消除泄露可用于其他服务器的域凭据的可能性。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-150">Using a local account eliminates potential exposure of domain credentials that could be used on other servers.</span></span>
+<span data-ttu-id="78bac-153">再次运行示例配置脚本（加密或不加密），仍然生成警告消息说不推荐将域帐户用于凭据。</span><span class="sxs-lookup"><span data-stu-id="78bac-153">Running the example configuration script again (with or without encryption), still generates the warning that using a domain account for a credential is not recommended.</span></span>
+<span data-ttu-id="78bac-154">使用本地帐户可消除泄露可用于其他服务器的域凭据的可能性。</span><span class="sxs-lookup"><span data-stu-id="78bac-154">Using a local account eliminates potential exposure of domain credentials that could be used on other servers.</span></span>
 
-<span data-ttu-id="2f6b0-151">**对 DSC 资源使用凭据时，应尽可能选择本地帐户而非域帐户。**</span><span class="sxs-lookup"><span data-stu-id="2f6b0-151">**When using credentials with DSC resources, prefer a local account over a domain account when possible.**</span></span>
+<span data-ttu-id="78bac-155">**对 DSC 资源使用凭据时，应尽可能选择本地帐户而非域帐户。**</span><span class="sxs-lookup"><span data-stu-id="78bac-155">**When using credentials with DSC resources, prefer a local account over a domain account when possible.**</span></span>
 
-<span data-ttu-id="2f6b0-152">如果凭据的 `Username` 属性中有 \' 或 @，则 DSC 会将该凭据视为域帐户。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-152">If there is a '\' or '@' in the `Username` property of the credential, then DSC will treat it as a domain account.</span></span>
-<span data-ttu-id="2f6b0-153">用户名中域部分的“localhost”、“127.0.0.1”和“::1”除外。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-153">There is an exception for "localhost", "127.0.0.1", and "::1" in the domain portion of the user name.</span></span>
+<span data-ttu-id="78bac-156">如果凭据的 `Username` 属性中有 \' 或 @，则 DSC 会将该凭据视为域帐户。</span><span class="sxs-lookup"><span data-stu-id="78bac-156">If there is a '\' or '@' in the `Username` property of the credential, then DSC will treat it as a domain account.</span></span>
+<span data-ttu-id="78bac-157">用户名中域部分的“localhost”、“127.0.0.1”和“::1”除外。</span><span class="sxs-lookup"><span data-stu-id="78bac-157">There is an exception for "localhost", "127.0.0.1", and "::1" in the domain portion of the user name.</span></span>
 
-## <a name="psdscallowdomainuser"></a><span data-ttu-id="2f6b0-154">PSDscAllowDomainUser</span><span class="sxs-lookup"><span data-stu-id="2f6b0-154">PSDscAllowDomainUser</span></span>
+## <a name="psdscallowdomainuser"></a><span data-ttu-id="78bac-158">PSDscAllowDomainUser</span><span class="sxs-lookup"><span data-stu-id="78bac-158">PSDscAllowDomainUser</span></span>
 
-<span data-ttu-id="2f6b0-155">在上述 DSC `Group` 资源示例中，查询 Active Directory 域*必须使用*域帐户。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-155">In the DSC `Group` resource example above, querying an Active Directory domain *requires* a domain account.</span></span>
-<span data-ttu-id="2f6b0-156">在这种情况下，将 `PSDscAllowDomainUser` 属性添加到 `ConfigurationData` 块中，操作如下：</span><span class="sxs-lookup"><span data-stu-id="2f6b0-156">In this case add the `PSDscAllowDomainUser` property to the `ConfigurationData` block as follows:</span></span>
+<span data-ttu-id="78bac-159">在上述 DSC `Group` 资源示例中，查询 Active Directory 域*必须使用*域帐户。</span><span class="sxs-lookup"><span data-stu-id="78bac-159">In the DSC `Group` resource example above, querying an Active Directory domain *requires* a domain account.</span></span>
+<span data-ttu-id="78bac-160">在这种情况下，将 `PSDscAllowDomainUser` 属性添加到 `ConfigurationData` 块中，操作如下：</span><span class="sxs-lookup"><span data-stu-id="78bac-160">In this case add the `PSDscAllowDomainUser` property to the `ConfigurationData` block as follows:</span></span>
 
 ```powershell
 $cd = @{
@@ -297,5 +299,4 @@ $cd = @{
 }
 ```
 
-<span data-ttu-id="2f6b0-157">现在配置脚本生成的 MOF 文件将不再出现错误或警告消息。</span><span class="sxs-lookup"><span data-stu-id="2f6b0-157">Now the configuration script will generate the MOF file with no errors or warnings.</span></span>
-
+<span data-ttu-id="78bac-161">现在配置脚本生成的 MOF 文件将不再出现错误或警告消息。</span><span class="sxs-lookup"><span data-stu-id="78bac-161">Now the configuration script will generate the MOF file with no errors or warnings.</span></span>
