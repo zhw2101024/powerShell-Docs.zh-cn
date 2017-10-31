@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "配置数据中的凭据选项"
-ms.openlocfilehash: ec4eeb8e519158b2bf929b949e381cdba54f8928
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+ms.openlocfilehash: 94ff541fc517254ef2876c424307513eaf1d362a
+ms.sourcegitcommit: 28e71b0ae868014523631fec3f5417de751944f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 10/25/2017
 ---
 # <a name="credentials-options-in-configuration-data"></a>配置数据中的凭据选项
 >适用于：Windows PowerShell 5.0
@@ -21,7 +21,7 @@ ms.lasthandoff: 07/27/2017
 * **PsDscAllowPlainTextPassword**
 * **PsDscAllowDomainUser**
 
->**注意：**使用纯文本密码不安全。 建议使用此主题后面部分讨论的方法保护凭据。
+>注意： <p>存储/传输未加密的纯文本密码通常是不安全的。 建议使用此主题后面部分讨论的方法保护凭据。</p> <p>Azure Automation DSC 服务可用于集中管理要在配置中编译并安全存储的凭据。  相关信息，请参阅：[编译 DSC 配置/凭据资产](https://docs.microsoft.com/en-in/azure/automation/automation-dsc-compile#credential-assets)</p>
 
 下面是关于传递纯文本凭据的示例：
 
@@ -129,10 +129,11 @@ Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
 但某些资源需要凭据，例如 `Package` 资源需要使用特定用户帐户安装软件。
 
 早期的资源使用硬编码 `Credential` 属性名称来处理此问题。
-WMF 5.0 为所有资源都添加了自动 `PsDscRunAsCredential` 属性。 若要了解如何使用 `PsDscRunAsCredential`，请参阅[使用用户凭据运行 DSC](runAsUser.md)。
+WMF 5.0 为所有资源都添加了自动 `PsDscRunAsCredential` 属性。
+若要了解如何使用 `PsDscRunAsCredential`，请参阅[使用用户凭据运行 DSC](runAsUser.md)。
 较新的资源和自定义资源可以使用此自动属性，而不必为凭据创建其自身属性。
 
-请注意，由于某种原因，某些资源的设计将使用多个凭据，这些凭据有其自己的凭据属性。
+>请注意：由于某种原因，某些资源的设计将使用多个凭据，这些凭据有其自己的凭据属性。
 
 使用 ISE 中的 Intellisense (`CTRL+SPACE`) 或 `Get-DscResource -Name ResourceName -Syntax` 来查找资源的可用凭据属性。
 
@@ -265,9 +266,10 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
-*请注意 `NodeName` 不等同于星号，特定节点名称为必需项。*
+>请注意：`NodeName` 不等同于星号，必须指定具体的节点名称。
 
 **因为存在重大安全风险，Microsoft 建议避免使用纯文本密码。**
+使用 Azure Automation DSC 服务时例外，原因是数据始终加密存储（传输中、服务中静态或节点中静态）。
 
 ## <a name="domain-credentials"></a>域凭据
 
@@ -298,4 +300,3 @@ $cd = @{
 ```
 
 现在配置脚本生成的 MOF 文件将不再出现错误或警告消息。
-

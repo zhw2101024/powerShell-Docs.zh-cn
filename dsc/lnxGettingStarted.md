@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "适用于 Linux 的 Desired State Configuration (DSC) 入门"
-ms.openlocfilehash: f88167cd039077574c3a84aa07ba78186adfa181
-ms.sourcegitcommit: 9a5da3f739b1eebb81ede58bd4fc8037bad87224
+ms.openlocfilehash: fd4820d27de5958a325032ca3fc202a521c131b4
+ms.sourcegitcommit: 28e71b0ae868014523631fec3f5417de751944f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2017
+ms.lasthandoff: 10/25/2017
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>适用于 Linux 的 Desired State Configuration (DSC) 入门
 
@@ -18,11 +18,11 @@ ms.lasthandoff: 10/16/2017
 
 适用于 Linux 的 DSC 支持以下 Linux 操作系统版本。
 - CentOS 5、6 和 7 (x86/x64)
-- Debian GNU/Linux 6 和 7 (x86/x64)
+- Debian GNU/Linux 6、7 和 8 (x86/x64)
 - Oracle Linux 5、6 和 7 (x86/x64)
 - Red Hat Enterprise Linux Server 5、6 和 7 (x86/x64)
 - SUSE Linux Enterprise Server 10、11 和 12 (x86/x64)
-- Ubuntu Server 12.04 LTS 和 14.04 LTS (x86/x64)
+- Ubuntu Server 12.04 LTS、14.04 LTS 和 16.04 LTS (x86/x64)
 
 下表说明了适用于 Linux 的 DSC 所需的程序包依赖项。
 
