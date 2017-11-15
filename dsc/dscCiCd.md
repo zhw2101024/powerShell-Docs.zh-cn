@@ -4,13 +4,13 @@ author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "使用 DSC 生成持续集成和连续部署管道"
-ms.openlocfilehash: 6d21faef6e58068456c6c454b4d50b7a9415850b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 60b41c5d279560d0121372e593879fe03cd52f7a
+ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 11/07/2017
 ---
-# <a name="building-a-continuous-integration-and-continuous-deplyoment-pipeline-with-dsc"></a>使用 DSC 生成持续集成和连续部署管道
+# <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>使用 DSC 生成持续集成和连续部署管道
 
 此示例展示了如何使用 PowerShell、DSC、Pester 和 Visual Studio Team Foundation Server (TFS) 生成持续集成/连续部署 (CI/CD) 管道。
 
