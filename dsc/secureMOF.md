@@ -1,22 +1,31 @@
 ---
-ms.date: 2017-06-12
+ms.date: 2017-10-31
 author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "保护 MOF 文件"
-ms.openlocfilehash: dc900f53c954637a407fbd026d24d20c2fdabf6e
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: f4ef2962710c7458ac947bf33270175a09de643c
+ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="securing-the-mof-file"></a>保护 MOF 文件
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
-DSC 通过将包含配置信息的 MOF 文件发送到各个节点，告知目标节点应有的配置，本地配置管理器 (LCM) 在这些节点上实施所需配置。 由于此文件包含配置的详细信息，因此确保其安全非常重要。 为此，你可以将 LCM 设置为检查用户凭据。 本主题介绍如何通过证书加密将这些凭据安全传输到目标节点。
+DSC 通过应用存储于 MOF 文件中的信息来管理服务器节点的配置，其中本地配置管理器 (LCM) 在该文件中实现所需的结束状态。
+由于此文件包含配置的详细信息，因此确保其安全非常重要。
+本主题介绍如何确保目标节点已加密文件。
 
->**注意：**本主题讨论用于加密的证书。 对于加密，自签名证书就已足够，因为私钥始终保密，而加密并不表示信任该文档。 自签名证书*不*得用于身份验证目的。 应使用来自受信任的证书颁发机构 (CA) 的证书进行任何身份验证。
+自 PowerShell 版本 5.0 起，若将 MOF 文件应用于使用 Start-DSCConfiguration cmdlet 的节点，则默认情况下整个 MOF 文件都将被加密。
+仅在使用请求服务协议实现解决方案（如果证书未被托管）时，才需用到本文所述相关过程，以确保目标节点下载的配置在被应用之前可由系统解密和读取（例如 Windows Server 中可用的请求服务）。
+注册到 [Azure 自动化 DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) 的节点将自动安装证书并使其由服务进行托管，无需承担管理开销。
+
+>**注意：**本主题讨论用于加密的证书。
+>对于加密，自签名证书就已足够，因为私钥始终保密，而加密并不表示信任该文档。
+>自签名证书*不*得用于身份验证目的。
+>应使用来自受信任的证书颁发机构 (CA) 的证书进行任何身份验证。
 
 ## <a name="prerequisites"></a>必备条件
 
