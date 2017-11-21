@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "使用 DSC 生成持续集成和连续部署管道"
-ms.openlocfilehash: 60b41c5d279560d0121372e593879fe03cd52f7a
-ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
+ms.openlocfilehash: baa56088d83fba56d3a19cff7954d3081f341f9a
+ms.sourcegitcommit: 60c6f9d8cf316e6d5b285854e6e5641ac7648f3f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>使用 DSC 生成持续集成和连续部署管道
 
@@ -353,7 +353,7 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
     **\Integration\**
     ```
 
-1. 将“目标文件夹”设置为“`$(BuildArtifactStagingDirectory)\`”
+1. 将“目标文件夹”设置为“`$(Build.ArtifactStagingDirectory)\`”
 
 此步骤将生成和测试脚本复制到临时目录，以便它们可以在下一步中作为生成项目发布。
 
