@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "DSC WindowsFeature 资源。"
-ms.openlocfilehash: a3433577a122f6c7e31360e094a089f6ceef77c2
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b4f50cb9ee172600b1811175e9cf67f6a7ed2d55
+ms.sourcegitcommit: cd5a1f054cbf9eb95c5242a995f9741e031ddb24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="dsc-windowsfeature-resource"></a>DSC WindowsFeature 资源。
 
@@ -35,7 +35,7 @@ WindowsFeature [string] #ResourceName
 
 |  属性  |  说明   | 
 |---|---| 
-| 名称| 指示想确保添加或删除的角色或功能的名称。 此参数与来自 [Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx) cmdlet 的 __Name__ 属性一样，并非该角色或功能的显示名称。| 
+| 名称| 指示想确保添加或删除的角色或功能的名称。 此参数与来自 [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) cmdlet 的 __Name__ 属性一样，并非该角色或功能的显示名称。| 
 | 凭据| 指示要用于添加或删除角色或功能的凭据。| 
 | Ensure| 指示是否已添加角色或功能。 若要确保添加了角色或功能，请将此属性设置为“Present”。若要确保删除了角色或功能，请将此属性设为“Absent”。| 
 | IncludeAllSubFeature| 将此属性设置为 __$true__ 以确保所有必需子功能的状态均为你通过 __Name__ 属性指定的功能的状态。| 
