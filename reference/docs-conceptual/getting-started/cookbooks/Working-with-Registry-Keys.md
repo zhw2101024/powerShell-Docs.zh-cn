@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "使用注册表项"
 ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
-ms.openlocfilehash: efb2c016afa2212c2907c0740ad26c4e4cddd3af
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: e7c16fe5f03330da3ea8f60b141d9e35eed474b9
+ms.sourcegitcommit: cd5a1f054cbf9eb95c5242a995f9741e031ddb24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="working-with-registry-keys"></a>使用注册表项
 由于注册表项是 Windows PowerShell 驱动器上的项，因此使用它们的方法和使用文件及文件夹的方法非常相似。 一个关键区别在于，基于注册表的 Windows PowerShell 驱动器上的每个项都是一个容器，就像文件系统驱动器上有一个文件夹一样。 但是，注册表条目及其关联的值只是项的属性，而不是不同的项。
@@ -49,7 +49,7 @@ Get-ChildItem HKCU:
 Get-ChildItem -Path hkcu:\ -Recurse
 ```
 
-**Get-ChildItem** 可以通过其 **Path**、**Filter**、**Include** 和 **Exclude** 参数执行复杂的筛选功能，但这些参数通常只基于名称。 还可以通过使用 **Where-Object**cmdlet 基于项的其他属性执行复杂的筛选。 下面的命令用于查找不止只有一个子项并且刚好具有 4 个值的 HKCU:\\Software 中的所有项：
+**Get-ChildItem** 可以通过其 **Path**、**Filter**、**Include** 和 **Exclude** 参数执行复杂的筛选功能，但这些参数通常只基于名称。 还可以通过使用 Where-Object cmdlet 基于项的其他属性执行复杂的筛选。 下面的命令用于查找不止只有一个子项并且刚好具有 4 个值的 HKCU:\\Software 中的所有项：
 
 ```
 Get-ChildItem -Path HKCU:\Software -Recurse | Where-Object -FilterScript {($_.SubKeyCount -le 1) -and ($_.ValueCount -eq 4) }
