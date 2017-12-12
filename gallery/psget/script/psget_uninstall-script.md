@@ -4,30 +4,30 @@ contributor: manikb
 ms.topic: reference
 keywords: "库,powershell,cmdlet,psget"
 title: Uninstall-Script
-ms.openlocfilehash: 7973524cf9268d629b5375f0726fe70164bdeddb
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 41f2b88ee81cf9f8c1a8c415ed658f29f4f08c3b
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
-# <a name="uninstall-script"></a><span data-ttu-id="90f91-103">Uninstall-Script</span><span class="sxs-lookup"><span data-stu-id="90f91-103">Uninstall-Script</span></span>
+# <a name="uninstall-script"></a><span data-ttu-id="dc522-103">Uninstall-Script</span><span class="sxs-lookup"><span data-stu-id="dc522-103">Uninstall-Script</span></span>
 
-<span data-ttu-id="90f91-104">卸载使用 PowerShellGet 安装的脚本文件。</span><span class="sxs-lookup"><span data-stu-id="90f91-104">Uninstalls a script file which was installed using PowerShellGet.</span></span>
+<span data-ttu-id="dc522-104">卸载使用 PowerShellGet 安装的脚本文件。</span><span class="sxs-lookup"><span data-stu-id="dc522-104">Uninstalls a script file which was installed using PowerShellGet.</span></span>
 
-## <a name="description"></a><span data-ttu-id="90f91-105">说明</span><span class="sxs-lookup"><span data-stu-id="90f91-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="dc522-105">说明</span><span class="sxs-lookup"><span data-stu-id="dc522-105">Description</span></span>
 
-<span data-ttu-id="90f91-106">Uninstall-Script cmdlet 卸载从联机存储库安装的指定脚本文件。</span><span class="sxs-lookup"><span data-stu-id="90f91-106">The Uninstall-Script cmdlet uninstalls the specified script files which were installed from the online repository.</span></span>
+<span data-ttu-id="dc522-106">Uninstall-Script cmdlet 卸载从联机存储库安装的指定脚本文件。</span><span class="sxs-lookup"><span data-stu-id="dc522-106">The Uninstall-Script cmdlet uninstalls the specified script files which were installed from the online repository.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="90f91-107">Cmdlet 语法</span><span class="sxs-lookup"><span data-stu-id="90f91-107">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="dc522-107">Cmdlet 语法</span><span class="sxs-lookup"><span data-stu-id="dc522-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Uninstall-Script -Module PowerShellGet -Syntax
 ```
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="90f91-108">Cmdlet 联机帮助参考</span><span class="sxs-lookup"><span data-stu-id="90f91-108">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="dc522-108">Cmdlet 联机帮助参考</span><span class="sxs-lookup"><span data-stu-id="dc522-108">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="90f91-109">Uninstall-Script</span><span class="sxs-lookup"><span data-stu-id="90f91-109">Uninstall-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619789)
+[<span data-ttu-id="dc522-109">Uninstall-Script</span><span class="sxs-lookup"><span data-stu-id="dc522-109">Uninstall-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619789)
 
-## <a name="example-commands"></a><span data-ttu-id="90f91-110">示例命令</span><span class="sxs-lookup"><span data-stu-id="90f91-110">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="dc522-110">示例命令</span><span class="sxs-lookup"><span data-stu-id="dc522-110">Example commands</span></span>
 
 ```powershell
 Get-InstalledScript | Uninstall-Script -WhatIf
@@ -66,5 +66,11 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 + CategoryInfo : ObjectNotFound: (Microsoft.Power...lets.GetPackage:GetPackage) [Get-Package], Exception
 + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.GetPackage
+
+# Uninstall a specified prerelease version of a script
+Uninstall-Script Required-Script1 -RequiredVersion 2.5.0-alpha -AllowPrerelease -Verbose
+VERBOSE: Performing the operation "Uninstall-Script" on target "Version '2.5.0-alpha' of script 'Required-Script1'".
+VERBOSE: Successfully uninstalled the script 'Required-Script1' from script base 'C:\Users\manikb\Documents\WindowsPowerShell\Scripts'.
+
 ```
 
