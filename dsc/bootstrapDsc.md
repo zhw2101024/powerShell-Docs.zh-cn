@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "初始启动时使用 DSC 配置虚拟机"
-ms.openlocfilehash: a3592c50fa7f2232538fbec07129fac86c1d00b5
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: c793e36eb9caa194104f9dda2aa1d335b21b676c
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
 >适用于：Windows PowerShell 5.0
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 06/12/2017
 
 若要运行这些示例，则需要：
 
-- 要使用的可启动 VHD。 可以在   [TechNet 评估中心](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016)下载具有 Windows Server 2016 评估副本的 ISO。 可以在[创建可启动虚拟硬盘](https://technet.microsoft.com/en-us/library/gg318049.aspx)处找到有关如何从 ISO 映像创建 VHD 的说明。
+- 要使用的可启动 VHD。 可以在 [TechNet 评估中心](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016)下载具有 Windows Server 2016 评估副本的 ISO。 可以在[创建可启动虚拟硬盘](https://technet.microsoft.com/en-us/library/gg318049.aspx)处找到有关如何从 ISO 映像创建 VHD 的说明。
 - 已启用 Hyper-V 的主计算机。 有关信息，请参阅 [Hyper-V 概述](https://technet.microsoft.com/library/hh831531.aspx)。
 
 通过使用 DSC，可以在初始启动时对计算机实现软件安装和配置的自动化。
@@ -83,7 +83,7 @@ Configuration SampleIISInstall
 通过使用 [Move-Item](https://technet.microsoft.comlibrary/hh849852.aspx) cmdlet，重命名该文件并将其移动到 VHD 上的正确位置，作为 `Pending.mof`。 例如：
 
     ```powershell
-        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\Sytem32\Configuration\Pending.mof
+        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\System32\Configuration\Pending.mof
     ```
 6. 通过调用 [Dismount-VHD](https://technet.microsoft.com/library/hh848562.aspx) cmdlet 卸除 VHD。 例如：
 
