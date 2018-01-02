@@ -39,6 +39,7 @@
 ### [发布](psget/module/psget_publish-module.md)
 ### [PSEditions 模块](psget/module/modulewithpseditionsupport.md)
 ### [需要接受许可证的模块](psget/module/RequireLicenseAcceptance.md)
+### [预发行版本](psget/module/PreReleaseModule.md)
 ### [疑难解答](psget/psget_cmdlets_troubleshooting.md)
 
 ## 脚本
@@ -54,7 +55,7 @@
 ### [发布](psget/script/psget_publish-script.md)
 ### [PSEditions 脚本](psget/script/scriptwithpseditionsupport.md)
 ### [需要为脚本接受许可证](psget/script/script_RequireLicenseAcceptance.md)
-
+### [预发行版本](psget/script/PreReleaseScript.md)
 ## 存储库管理
 ### [启动 NuGet 提供程序和 NuGet.exe](psget/repository/bootstrapping_nuget_proivder_and_exe.md)
 ### [注册存储库](psget/repository/psget_register-psrepository.md)
