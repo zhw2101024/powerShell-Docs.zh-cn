@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "在 PowerShell 远程处理中形成第二个跃点"
-ms.openlocfilehash: f3b8280819e43bd67bd608ffd0ba9484c2bbc26c
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 2518409369a75a49b975b9b944320c1878819421
+ms.sourcegitcommit: 1a0a0928c1e3cae4e8df8d79b0737bd7ed6b4e47
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>在 PowerShell 远程处理中形成第二个跃点
 
@@ -256,12 +256,12 @@ JEA 允许限制管理员在 PowerShell 会话期间可以运行的命令。 它
 - 无需特殊服务器配置。
 - 适用于任何运行 WMF 2.0 或更高版本的服务器。
 
-## <a name="cons"></a>缺点
+### <a name="cons"></a>缺点
 
 - 需要繁琐的代码技术。
 - 运行 WMF 2.0 时，需要不同的语法将参数传递到远程会话。
 
-## <a name="example"></a>示例
+### <a name="example"></a>示例
 
 以下示例演示了如何在 **Invoke-command** 脚本块中传递凭据：
 
