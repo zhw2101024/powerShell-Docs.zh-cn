@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "适用于决策者的 Desired State Configuration 概述"
-ms.openlocfilehash: e39ab5138b20653e46ac35fa32b99d268f96b2df
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 1800acfa9edae4f65e34db380ff719ad4c034921
+ms.sourcegitcommit: 60f06a06c2fce63024f3f4cbd7657b1dfe7fcb1a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>适用于决策者的 Desired State Configuration 概述
 
@@ -34,7 +34,7 @@ DSC 也内置了监视和报告。 如果系统不再相容，DSC 会引发警�
 
 ## <a name="desired-state-configuration-and-devops"></a>Desired State Configuration 和 DevOps
 
-[DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) 是人员、技术和区域性的组合，便于快速部署和迭代。 DSC 设计时就心怀 DevOps。 使单个配置定义环境意味着，开发人员可将其要求编码到配置中，并将该配置签入源控件，而操作小组可轻松部署代码，无需经历易出错的手动流程。 
+[DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) 结合了人员、流程和工具，方便实现快速部署和迭代，旨在向内外部最终用户传递价值。 DSC 设计时就心怀 DevOps。 使单个配置定义环境意味着，开发人员可将其要求编码到配置中，并将该配置签入源控件，而操作小组可轻松部署代码，无需经历易出错的手动流程。 
 
 配置也是[数据驱动](https://msdn.microsoft.com/en-us/powershell/dsc/configdata)的，便于操作小组识别和更改环境，无需开发人员介入。 
 

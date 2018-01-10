@@ -4,11 +4,11 @@ author: eslesar;mgreenegit
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "配置本地配置管理器"
-ms.openlocfilehash: 98470f45ca7c11ea63d68da7dec9fcd844f06192
-ms.sourcegitcommit: 9a5da3f739b1eebb81ede58bd4fc8037bad87224
+ms.openlocfilehash: 6ca527aae263637bbca5a064e0d770fe9384d679
+ms.sourcegitcommit: ea01285a3aa7818d67d4761fbd8793b9b66bd5f7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="configuring-the-local-configuration-manager"></a>配置本地配置管理器
 

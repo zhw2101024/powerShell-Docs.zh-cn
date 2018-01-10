@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "使用配置数据"
-ms.openlocfilehash: a70cd8f0f6c24eb02743b02d198cebcc3d775756
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 60c6c2d5694a03275e1a08522bdcf4b1bc5bb068
+ms.sourcegitcommit: 60f06a06c2fce63024f3f4cbd7657b1dfe7fcb1a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="using-configuration-data-in-dsc"></a>使用 DSC 中的配置数据
 
@@ -153,7 +153,7 @@ $MyData =
 
 ## <a name="compiling-a-configuration-with-configuration-data"></a>编译包含配置数据的配置
 
-若要编译已为其定义配置数据的配置，请将配置数据作为 ConfigurationData 参数值进行传递。
+若要编译已为其定义配置数据的配置，请以 ConfigurationData 参数值的形式传递配置数据。
 
 这将为 AllNodes 数组中的每一条目都创建一个 MOF 文件。
 每个 MOF 文件都使用相应数组条目的 `NodeName` 属性进行命名。
@@ -187,7 +187,7 @@ DSC 提供三种可在配置脚本中使用的特殊变量：**$AllNodes**、**$
 ## <a name="using-non-node-data"></a>使用非节点数据
 
 如上面的示例所示，除了必需的 AllNodes 键之外，ConfigurationData 哈希表还可以额外包含一个或多个键。
-本主题中的示例只额外使用了一个名为“`NonNodeData`”的节点。 不过，可以额外定义任何数量的键，并能根据需要随意命名这些键。
+本主题中的示例只额外使用了一个节点，并将它命名为“`NonNodeData`”。 不过，可以额外定义任意数量的键，并能根据需要随意命名这些键。
 
 有关使用非节点数据的示例，请参阅[分离配置和环境数据](separatingEnvData.md)。
 
