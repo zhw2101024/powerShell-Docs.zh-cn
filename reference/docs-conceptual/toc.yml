@@ -11,8 +11,6 @@
               href: core-powershell/console/powershell.exe-command-line-help.md
             - name: 使用选项卡扩展
               href: core-powershell/console/using-tab-expansion.md
-        - name: 控制台指南
-          href: core-powershell/console-guide.md
         - name: ISE
           href: core-powershell/ise/introducing-the-windows-powershell-ise.md
           items:
@@ -70,8 +68,6 @@
               href: core-powershell/ise/using-the-windows-powershell-ise.md
             - name: Windows PowerShell ISE 对象模型参考
               href: core-powershell/ise/windows-powershell-ise-object-model-reference.md
-        - name: ISE 指南
-          href: core-powershell/ise-guide.md
         - name: Visual Studio Code
           items:
             - name: 使用 Visual Studio Code
@@ -211,8 +207,6 @@
           href: getting-started/getting-started-with-windows-powershell.md
         - name: 更多 PowerShell 学习
           href: getting-started/more-powershell-learning.md
-        - name: 了解概念参考
-          href: getting-started/understanding-concepts-reference.md
     - name: 安装
       href: ''
       items:
