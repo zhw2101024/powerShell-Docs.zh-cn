@@ -3,70 +3,82 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "运行远程命令"
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: 5cf9690b8fe4549a99186f172cb6f0de156a4dea
-ms.sourcegitcommit: c5251755c4442487f99ff74fadf7e37bbf039089
+ms.openlocfilehash: 43f07abd642e7de235647fa151537c46ebe86cae
+ms.sourcegitcommit: 6aed37d7f0c9652ae09bb8c11928da7e4783ed7f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/10/2018
 ---
-# <a name="running-remote-commands"></a><span data-ttu-id="5bdff-103">运行远程命令</span><span class="sxs-lookup"><span data-stu-id="5bdff-103">Running Remote Commands</span></span>
-<span data-ttu-id="5bdff-104">你可以使用单个 Windows PowerShell 命令在一台或数百台计算机上运行命令。</span><span class="sxs-lookup"><span data-stu-id="5bdff-104">You can run commands on one or hundreds of computers with a single Windows PowerShell command.</span></span> <span data-ttu-id="5bdff-105">Windows PowerShell 通过使用各种技术（包括 WMI、RPC 和 WS-Management）支持远程计算。</span><span class="sxs-lookup"><span data-stu-id="5bdff-105">Windows PowerShell supports remote computing by using various technologies, including WMI, RPC, and WS-Management.</span></span>
+# <a name="running-remote-commands"></a><span data-ttu-id="e9e43-103">运行远程命令</span><span class="sxs-lookup"><span data-stu-id="e9e43-103">Running Remote Commands</span></span>
 
-## <a name="remoting-without-configuration"></a><span data-ttu-id="5bdff-106">无需配置即可进行远程处理</span><span class="sxs-lookup"><span data-stu-id="5bdff-106">Remoting Without Configuration</span></span>
-<span data-ttu-id="5bdff-107">许多 Windows PowerShell cmdlet 都具有 ComputerName 参数，此参数可使你在一台或多台远程计算机上收集数据和更改设置。</span><span class="sxs-lookup"><span data-stu-id="5bdff-107">Many Windows PowerShell cmdlets have the ComputerName parameter that enables you to collect data and change settings on one or more remote computers.</span></span> <span data-ttu-id="5bdff-108">它们使用各种通信技术，并且许多 cmdlet 在 Windows PowerShell 支持的所有 Windows 操作系统上都有效，而无需任何特殊配置。</span><span class="sxs-lookup"><span data-stu-id="5bdff-108">They use a variety of communication technologies and many work on all Windows operating systems that Windows PowerShell supports without any special configuration.</span></span>
+<span data-ttu-id="e9e43-104">你可以使用单个 Windows PowerShell 命令在一台或数百台计算机上运行命令。</span><span class="sxs-lookup"><span data-stu-id="e9e43-104">You can run commands on one or hundreds of computers with a single Windows PowerShell command.</span></span> <span data-ttu-id="e9e43-105">Windows PowerShell 通过使用各种技术（包括 WMI、RPC 和 WS-Management）支持远程计算。</span><span class="sxs-lookup"><span data-stu-id="e9e43-105">Windows PowerShell supports remote computing by using various technologies, including WMI, RPC, and WS-Management.</span></span>
 
-<span data-ttu-id="5bdff-109">这些 cmdlet 包括：</span><span class="sxs-lookup"><span data-stu-id="5bdff-109">These cmdlets include:</span></span>
-* [<span data-ttu-id="5bdff-110">Restart-Computer</span><span class="sxs-lookup"><span data-stu-id="5bdff-110">Restart-Computer</span></span>](https://go.microsoft.com/fwlink/?LinkId=821625)
-* [<span data-ttu-id="5bdff-111">Test-Connection</span><span class="sxs-lookup"><span data-stu-id="5bdff-111">Test-Connection</span></span>](https://go.microsoft.com/fwlink/?LinkId=821646)
-* [<span data-ttu-id="5bdff-112">Clear-EventLog</span><span class="sxs-lookup"><span data-stu-id="5bdff-112">Clear-EventLog</span></span>](https://go.microsoft.com/fwlink/?LinkId=821568)
-* [<span data-ttu-id="5bdff-113">Get-EventLog</span><span class="sxs-lookup"><span data-stu-id="5bdff-113">Get-EventLog</span></span>](https://go.microsoft.com/fwlink/?LinkId=821585)
-* [<span data-ttu-id="5bdff-114">Get-HotFix</span><span class="sxs-lookup"><span data-stu-id="5bdff-114">Get-HotFix</span></span>](https://go.microsoft.com/fwlink/?LinkId=821586)
-  - [<span data-ttu-id="5bdff-115">Get-Process</span><span class="sxs-lookup"><span data-stu-id="5bdff-115">Get-Process</span></span>](https://go.microsoft.com/fwlink/?linkid=821590)
-* [<span data-ttu-id="5bdff-116">Get-Service</span><span class="sxs-lookup"><span data-stu-id="5bdff-116">Get-Service</span></span>](https://go.microsoft.com/fwlink/?LinkId=821593)
-* [<span data-ttu-id="5bdff-117">Set-Service</span><span class="sxs-lookup"><span data-stu-id="5bdff-117">Set-Service</span></span>](https://go.microsoft.com/fwlink/?LinkId=821633)
-* [<span data-ttu-id="5bdff-118">Get-WinEvent</span><span class="sxs-lookup"><span data-stu-id="5bdff-118">Get-WinEvent</span></span>](https://go.microsoft.com/fwlink/?linkid=821529)
-* [<span data-ttu-id="5bdff-119">Get-WmiObject</span><span class="sxs-lookup"><span data-stu-id="5bdff-119">Get-WmiObject</span></span>](https://go.microsoft.com/fwlink/?LinkId=821595)
+## <a name="remoting-in-powershell-core"></a><span data-ttu-id="e9e43-106">在 PowerShell Core 中进行远程处理</span><span class="sxs-lookup"><span data-stu-id="e9e43-106">Remoting in PowerShell Core</span></span>
 
-<span data-ttu-id="5bdff-120">通常情况下，支持无需特殊配置即可进行远程处理的 cmdlet 具有 ComputerName 参数，但不具有 Session 参数。</span><span class="sxs-lookup"><span data-stu-id="5bdff-120">Typically, cmdlets that support remoting without special configuration have the ComputerName parameter and do not have the Session parameter.</span></span> <span data-ttu-id="5bdff-121">若要在会话中查找这些 cmdlet，请键入：</span><span class="sxs-lookup"><span data-stu-id="5bdff-121">To find these cmdlets in your session, type:</span></span>
+<span data-ttu-id="e9e43-107">PowerShell 在 Windows、macOS 和 Linux 上的新版本 PowerShell Core 支持 WMI、WS-Management 和 SSH 远程处理。</span><span class="sxs-lookup"><span data-stu-id="e9e43-107">PowerShell Core, the newer edition of PowerShell on Windows, macOS, and Linux, supports WMI, WS-Management, and SSH remoting.</span></span>
+<span data-ttu-id="e9e43-108">（不再支持 RPC。）</span><span class="sxs-lookup"><span data-stu-id="e9e43-108">(RPC is no longer supported.)</span></span>
+
+<span data-ttu-id="e9e43-109">有关设置详细信息，请参阅：</span><span class="sxs-lookup"><span data-stu-id="e9e43-109">For more information on setting this up, see:</span></span>
+
+* <span data-ttu-id="e9e43-110">[SSH Remoting in PowerShell Core][ssh-remoting]</span><span class="sxs-lookup"><span data-stu-id="e9e43-110">[SSH Remoting in PowerShell Core][ssh-remoting]</span></span>
+* <span data-ttu-id="e9e43-111">[WinRM Remoting in PowerShell Core][winrm-remoting]</span><span class="sxs-lookup"><span data-stu-id="e9e43-111">[WinRM Remoting in PowerShell Core][winrm-remoting]</span></span>
+
+## <a name="remoting-without-configuration"></a><span data-ttu-id="e9e43-112">无需配置即可进行远程处理</span><span class="sxs-lookup"><span data-stu-id="e9e43-112">Remoting Without Configuration</span></span>
+<span data-ttu-id="e9e43-113">许多 Windows PowerShell cmdlet 都具有 ComputerName 参数，此参数可使你在一台或多台远程计算机上收集数据和更改设置。</span><span class="sxs-lookup"><span data-stu-id="e9e43-113">Many Windows PowerShell cmdlets have the ComputerName parameter that enables you to collect data and change settings on one or more remote computers.</span></span> <span data-ttu-id="e9e43-114">它们使用各种通信技术，并且许多 cmdlet 在 Windows PowerShell 支持的所有 Windows 操作系统上都有效，而无需任何特殊配置。</span><span class="sxs-lookup"><span data-stu-id="e9e43-114">They use a variety of communication technologies and many work on all Windows operating systems that Windows PowerShell supports without any special configuration.</span></span>
+
+<span data-ttu-id="e9e43-115">这些 cmdlet 包括：</span><span class="sxs-lookup"><span data-stu-id="e9e43-115">These cmdlets include:</span></span>
+
+* [<span data-ttu-id="e9e43-116">Restart-Computer</span><span class="sxs-lookup"><span data-stu-id="e9e43-116">Restart-Computer</span></span>](https://go.microsoft.com/fwlink/?LinkId=821625)
+* [<span data-ttu-id="e9e43-117">Test-Connection</span><span class="sxs-lookup"><span data-stu-id="e9e43-117">Test-Connection</span></span>](https://go.microsoft.com/fwlink/?LinkId=821646)
+* [<span data-ttu-id="e9e43-118">Clear-EventLog</span><span class="sxs-lookup"><span data-stu-id="e9e43-118">Clear-EventLog</span></span>](https://go.microsoft.com/fwlink/?LinkId=821568)
+* [<span data-ttu-id="e9e43-119">Get-EventLog</span><span class="sxs-lookup"><span data-stu-id="e9e43-119">Get-EventLog</span></span>](https://go.microsoft.com/fwlink/?LinkId=821585)
+* [<span data-ttu-id="e9e43-120">Get-HotFix</span><span class="sxs-lookup"><span data-stu-id="e9e43-120">Get-HotFix</span></span>](https://go.microsoft.com/fwlink/?LinkId=821586)
+* [<span data-ttu-id="e9e43-121">Get-Process</span><span class="sxs-lookup"><span data-stu-id="e9e43-121">Get-Process</span></span>](https://go.microsoft.com/fwlink/?linkid=821590)
+* [<span data-ttu-id="e9e43-122">Get-Service</span><span class="sxs-lookup"><span data-stu-id="e9e43-122">Get-Service</span></span>](https://go.microsoft.com/fwlink/?LinkId=821593)
+* [<span data-ttu-id="e9e43-123">Set-Service</span><span class="sxs-lookup"><span data-stu-id="e9e43-123">Set-Service</span></span>](https://go.microsoft.com/fwlink/?LinkId=821633)
+* [<span data-ttu-id="e9e43-124">Get-WinEvent</span><span class="sxs-lookup"><span data-stu-id="e9e43-124">Get-WinEvent</span></span>](https://go.microsoft.com/fwlink/?linkid=821529)
+* [<span data-ttu-id="e9e43-125">Get-WmiObject</span><span class="sxs-lookup"><span data-stu-id="e9e43-125">Get-WmiObject</span></span>](https://go.microsoft.com/fwlink/?LinkId=821595)
+
+<span data-ttu-id="e9e43-126">通常情况下，支持无需特殊配置即可进行远程处理的 cmdlet 具有 ComputerName 参数，但不具有 Session 参数。</span><span class="sxs-lookup"><span data-stu-id="e9e43-126">Typically, cmdlets that support remoting without special configuration have the ComputerName parameter and do not have the Session parameter.</span></span> <span data-ttu-id="e9e43-127">若要在会话中查找这些 cmdlet，请键入：</span><span class="sxs-lookup"><span data-stu-id="e9e43-127">To find these cmdlets in your session, type:</span></span>
 
 ```
 Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parameters.keys -notcontains "Session"}
 ```
 
-## <a name="windows-powershell-remoting"></a><span data-ttu-id="5bdff-122">Windows PowerShell 远程处理</span><span class="sxs-lookup"><span data-stu-id="5bdff-122">Windows PowerShell Remoting</span></span>
-<span data-ttu-id="5bdff-123">Windows PowerShell 远程处理，它使用 WS-Management 协议，并且使你可以在一台或多台远程计算机上运行任何 Windows PowerShell 命令。</span><span class="sxs-lookup"><span data-stu-id="5bdff-123">Windows PowerShell remoting, which uses the WS-Management protocol, lets you run any Windows PowerShell command on one or many remote computers.</span></span> <span data-ttu-id="5bdff-124">它使你可以建立持久连接、启动 1:1 交互会话并在多台计算机上运行脚本。</span><span class="sxs-lookup"><span data-stu-id="5bdff-124">It lets you establish persistent connections, start 1:1 interactive sessions, and run scripts on multiple computers.</span></span>
+## <a name="windows-powershell-remoting"></a><span data-ttu-id="e9e43-128">Windows PowerShell 远程处理</span><span class="sxs-lookup"><span data-stu-id="e9e43-128">Windows PowerShell Remoting</span></span>
+<span data-ttu-id="e9e43-129">Windows PowerShell 远程处理，它使用 WS-Management 协议，并且使你可以在一台或多台远程计算机上运行任何 Windows PowerShell 命令。</span><span class="sxs-lookup"><span data-stu-id="e9e43-129">Windows PowerShell remoting, which uses the WS-Management protocol, lets you run any Windows PowerShell command on one or many remote computers.</span></span> <span data-ttu-id="e9e43-130">它使你可以建立持久连接、启动 1:1 交互会话并在多台计算机上运行脚本。</span><span class="sxs-lookup"><span data-stu-id="e9e43-130">It lets you establish persistent connections, start 1:1 interactive sessions, and run scripts on multiple computers.</span></span>
 
-<span data-ttu-id="5bdff-125">若要使用 Windows PowerShell 远程处理，必须配置远程计算机以进行远程管理。</span><span class="sxs-lookup"><span data-stu-id="5bdff-125">To use Windows PowerShell remoting, the remote computer must be configured for remote management.</span></span> <span data-ttu-id="5bdff-126">有关详细信息（包括说明），请参阅[关于远程要求](https://technet.microsoft.com/en-us/library/dd315349.aspx)。</span><span class="sxs-lookup"><span data-stu-id="5bdff-126">For more information, including instructions, see [About Remote Requirements](https://technet.microsoft.com/en-us/library/dd315349.aspx).</span></span>
+<span data-ttu-id="e9e43-131">若要使用 Windows PowerShell 远程处理，必须配置远程计算机以进行远程管理。</span><span class="sxs-lookup"><span data-stu-id="e9e43-131">To use Windows PowerShell remoting, the remote computer must be configured for remote management.</span></span> <span data-ttu-id="e9e43-132">有关详细信息（包括说明），请参阅[关于远程要求](https://technet.microsoft.com/en-us/library/dd315349.aspx)。</span><span class="sxs-lookup"><span data-stu-id="e9e43-132">For more information, including instructions, see [About Remote Requirements](https://technet.microsoft.com/en-us/library/dd315349.aspx).</span></span>
 
-<span data-ttu-id="5bdff-127">配置了 Windows PowerShell 远程处理后，有许多远程处理策略可供你使用。</span><span class="sxs-lookup"><span data-stu-id="5bdff-127">After you have configured Windows PowerShell remoting, many remoting strategies are available to you.</span></span> <span data-ttu-id="5bdff-128">此文档的其余部分只列出了其中的一部分。</span><span class="sxs-lookup"><span data-stu-id="5bdff-128">The remainder of this document lists just a few of them.</span></span> <span data-ttu-id="5bdff-129">有关详细信息，请参阅 [About Remote（关于远程）](https://technet.microsoft.com/en-us/library/dd347744.aspx)和 [About Remote FAQ（关于远程 FAQ）](https://technet.microsoft.com/en-us/library/dd347744.aspx)。</span><span class="sxs-lookup"><span data-stu-id="5bdff-129">For more information, see [About Remote](https://technet.microsoft.com/en-us/library/dd347744.aspx) and [About Remote FAQ](https://technet.microsoft.com/en-us/library/dd347744.aspx).</span></span>
+<span data-ttu-id="e9e43-133">配置了 Windows PowerShell 远程处理后，有许多远程处理策略可供你使用。</span><span class="sxs-lookup"><span data-stu-id="e9e43-133">After you have configured Windows PowerShell remoting, many remoting strategies are available to you.</span></span> <span data-ttu-id="e9e43-134">此文档的其余部分只列出了其中的一部分。</span><span class="sxs-lookup"><span data-stu-id="e9e43-134">The remainder of this document lists just a few of them.</span></span> <span data-ttu-id="e9e43-135">有关详细信息，请参阅 [About Remote（关于远程）](https://technet.microsoft.com/en-us/library/dd347744.aspx)和 [About Remote FAQ（关于远程 FAQ）](https://technet.microsoft.com/en-us/library/dd347744.aspx)。</span><span class="sxs-lookup"><span data-stu-id="e9e43-135">For more information, see [About Remote](https://technet.microsoft.com/en-us/library/dd347744.aspx) and [About Remote FAQ](https://technet.microsoft.com/en-us/library/dd347744.aspx).</span></span>
 
-### <a name="start-an-interactive-session"></a><span data-ttu-id="5bdff-130">启动交互会话</span><span class="sxs-lookup"><span data-stu-id="5bdff-130">Start an Interactive Session</span></span>
-<span data-ttu-id="5bdff-131">若要使用单台远程计算机启动交互会话，请使用 [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) cmdlet。</span><span class="sxs-lookup"><span data-stu-id="5bdff-131">To start an interactive session with a single remote computer, use the [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) cmdlet.</span></span>
-<span data-ttu-id="5bdff-132">例如，若要使用 Server01 远程计算器启动交互会话，请键入：</span><span class="sxs-lookup"><span data-stu-id="5bdff-132">For example, to start an interactive session with the Server01 remote computer, type:</span></span>
+### <a name="start-an-interactive-session"></a><span data-ttu-id="e9e43-136">启动交互会话</span><span class="sxs-lookup"><span data-stu-id="e9e43-136">Start an Interactive Session</span></span>
+<span data-ttu-id="e9e43-137">若要使用单台远程计算机启动交互会话，请使用 [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) cmdlet。</span><span class="sxs-lookup"><span data-stu-id="e9e43-137">To start an interactive session with a single remote computer, use the [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) cmdlet.</span></span>
+<span data-ttu-id="e9e43-138">例如，若要使用 Server01 远程计算器启动交互会话，请键入：</span><span class="sxs-lookup"><span data-stu-id="e9e43-138">For example, to start an interactive session with the Server01 remote computer, type:</span></span>
 
 ```
 Enter-PSSession Server01
 ```
 
-<span data-ttu-id="5bdff-133">命令提示符更改为显示你连接到的计算机的名称。</span><span class="sxs-lookup"><span data-stu-id="5bdff-133">The command prompt changes to display the name of the computer to which you are connected.</span></span> <span data-ttu-id="5bdff-134">此后，你在提示符中键入的任何命令都将在远程计算机上运行，并且结果将显示在本地计算机上。</span><span class="sxs-lookup"><span data-stu-id="5bdff-134">From then on, any commands that you type at the prompt run on the remote computer and the results are displayed on the local computer.</span></span>
+<span data-ttu-id="e9e43-139">命令提示符更改为显示你连接到的计算机的名称。</span><span class="sxs-lookup"><span data-stu-id="e9e43-139">The command prompt changes to display the name of the computer to which you are connected.</span></span> <span data-ttu-id="e9e43-140">此后，你在提示符中键入的任何命令都将在远程计算机上运行，并且结果将显示在本地计算机上。</span><span class="sxs-lookup"><span data-stu-id="e9e43-140">From then on, any commands that you type at the prompt run on the remote computer and the results are displayed on the local computer.</span></span>
 
-<span data-ttu-id="5bdff-135">若要结束交互会话，请键入：</span><span class="sxs-lookup"><span data-stu-id="5bdff-135">To end the interactive session, type:</span></span>
+<span data-ttu-id="e9e43-141">若要结束交互会话，请键入：</span><span class="sxs-lookup"><span data-stu-id="e9e43-141">To end the interactive session, type:</span></span>
 
 ```
 Exit-PSSession
 ```
 
-<span data-ttu-id="5bdff-136">有关 Enter-PSSession 和 Exit-PSSession cmdlet 的详细信息，请参阅 [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) 和 [Exit-PSSession](https://go.microsoft.com/fwlink/?LinkID=821478)。</span><span class="sxs-lookup"><span data-stu-id="5bdff-136">For more information about the Enter-PSSession and Exit-PSSession cmdlets, see [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) and [Exit-PSSession](https://go.microsoft.com/fwlink/?LinkID=821478).</span></span>
+<span data-ttu-id="e9e43-142">有关 Enter-PSSession 和 Exit-PSSession cmdlet 的详细信息，请参阅 [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) 和 [Exit-PSSession](https://go.microsoft.com/fwlink/?LinkID=821478)。</span><span class="sxs-lookup"><span data-stu-id="e9e43-142">For more information about the Enter-PSSession and Exit-PSSession cmdlets, see [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) and [Exit-PSSession](https://go.microsoft.com/fwlink/?LinkID=821478).</span></span>
 
-### <a name="run-a-remote-command"></a><span data-ttu-id="5bdff-137">运行远程命令</span><span class="sxs-lookup"><span data-stu-id="5bdff-137">Run a Remote Command</span></span>
-<span data-ttu-id="5bdff-138">若要在一台或多台远程计算机上运行任何命令，请使用 [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493) cmdlet。</span><span class="sxs-lookup"><span data-stu-id="5bdff-138">To run any command on one or many remote computers, use the [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493) cmdlet.</span></span>
-<span data-ttu-id="5bdff-139">例如，若要在 Server01 和 Server02 远程计算机上运行 [Get-UICulture ](https://go.microsoft.com/fwlink/?LinkId=821806) 命令，请键入：</span><span class="sxs-lookup"><span data-stu-id="5bdff-139">For example, to run a [Get-UICulture](https://go.microsoft.com/fwlink/?LinkId=821806) command on the Server01 and Server02 remote computers, type:</span></span>
+### <a name="run-a-remote-command"></a><span data-ttu-id="e9e43-143">运行远程命令</span><span class="sxs-lookup"><span data-stu-id="e9e43-143">Run a Remote Command</span></span>
+<span data-ttu-id="e9e43-144">若要在一台或多台远程计算机上运行任何命令，请使用 [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493) cmdlet。</span><span class="sxs-lookup"><span data-stu-id="e9e43-144">To run any command on one or many remote computers, use the [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493) cmdlet.</span></span>
+<span data-ttu-id="e9e43-145">例如，若要在 Server01 和 Server02 远程计算机上运行 [Get-UICulture ](https://go.microsoft.com/fwlink/?LinkId=821806) 命令，请键入：</span><span class="sxs-lookup"><span data-stu-id="e9e43-145">For example, to run a [Get-UICulture](https://go.microsoft.com/fwlink/?LinkId=821806) command on the Server01 and Server02 remote computers, type:</span></span>
 
 ```
 Invoke-Command -ComputerName Server01, Server02 -ScriptBlock {Get-UICulture}
 ```
 
-<span data-ttu-id="5bdff-140">输出将返回到你的计算机。</span><span class="sxs-lookup"><span data-stu-id="5bdff-140">The output is returned to your computer.</span></span>
+<span data-ttu-id="e9e43-146">输出将返回到你的计算机。</span><span class="sxs-lookup"><span data-stu-id="e9e43-146">The output is returned to your computer.</span></span>
 
 ```
 LCID    Name     DisplayName               PSComputerName
@@ -74,64 +86,67 @@ LCID    Name     DisplayName               PSComputerName
 1033    en-US    English (United States)   server01.corp.fabrikam.com
 1033    en-US    English (United States)   server02.corp.fabrikam.com
 ```
-<span data-ttu-id="5bdff-141">有关 Invoke-Command cmdlet 的详细信息，请参阅 [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493)。</span><span class="sxs-lookup"><span data-stu-id="5bdff-141">For more information about the Invoke-Command cmdlet, see [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493).</span></span>
+<span data-ttu-id="e9e43-147">有关 Invoke-Command cmdlet 的详细信息，请参阅 [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493)。</span><span class="sxs-lookup"><span data-stu-id="e9e43-147">For more information about the Invoke-Command cmdlet, see [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493).</span></span>
 
-### <a name="run-a-script"></a><span data-ttu-id="5bdff-142">运行脚本</span><span class="sxs-lookup"><span data-stu-id="5bdff-142">Run a Script</span></span>
-<span data-ttu-id="5bdff-143">若要在一台或多台远程计算机上运行脚本，请使用 Invoke-Command cmdlet 的 FilePath 参数。</span><span class="sxs-lookup"><span data-stu-id="5bdff-143">To run a script on one or many remote computers, use the FilePath parameter of the Invoke-Command cmdlet.</span></span> <span data-ttu-id="5bdff-144">该脚本必须在你的本地计算机上或可由其访问。</span><span class="sxs-lookup"><span data-stu-id="5bdff-144">The script must be on or accessible to your local computer.</span></span> <span data-ttu-id="5bdff-145">结果将返回到你的本地计算机。</span><span class="sxs-lookup"><span data-stu-id="5bdff-145">The results are returned to your local computer.</span></span>
+### <a name="run-a-script"></a><span data-ttu-id="e9e43-148">运行脚本</span><span class="sxs-lookup"><span data-stu-id="e9e43-148">Run a Script</span></span>
+<span data-ttu-id="e9e43-149">若要在一台或多台远程计算机上运行脚本，请使用 Invoke-Command cmdlet 的 FilePath 参数。</span><span class="sxs-lookup"><span data-stu-id="e9e43-149">To run a script on one or many remote computers, use the FilePath parameter of the Invoke-Command cmdlet.</span></span> <span data-ttu-id="e9e43-150">该脚本必须在你的本地计算机上或可由其访问。</span><span class="sxs-lookup"><span data-stu-id="e9e43-150">The script must be on or accessible to your local computer.</span></span> <span data-ttu-id="e9e43-151">结果将返回到你的本地计算机。</span><span class="sxs-lookup"><span data-stu-id="e9e43-151">The results are returned to your local computer.</span></span>
 
-<span data-ttu-id="5bdff-146">例如，以下命令在 Server01 和 Server02 远程计算机上运行 DiskCollect.ps1 脚本。</span><span class="sxs-lookup"><span data-stu-id="5bdff-146">For example, the following command runs the DiskCollect.ps1 script on the Server01 and Server02 remote computers.</span></span>
+<span data-ttu-id="e9e43-152">例如，以下命令在 Server01 和 Server02 远程计算机上运行 DiskCollect.ps1 脚本。</span><span class="sxs-lookup"><span data-stu-id="e9e43-152">For example, the following command runs the DiskCollect.ps1 script on the Server01 and Server02 remote computers.</span></span>
 
 ```
 Invoke-Command -ComputerName Server01, Server02 -FilePath c:\Scripts\DiskCollect.ps1
 ```
 
-<span data-ttu-id="5bdff-147">有关 Invoke-Command cmdlet 的详细信息，请参阅 [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493)。</span><span class="sxs-lookup"><span data-stu-id="5bdff-147">For more information about the Invoke-Command cmdlet, see [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493).</span></span>
+<span data-ttu-id="e9e43-153">有关 Invoke-Command cmdlet 的详细信息，请参阅 [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493)。</span><span class="sxs-lookup"><span data-stu-id="e9e43-153">For more information about the Invoke-Command cmdlet, see [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493).</span></span>
 
-### <a name="establish-a-persistent-connection"></a><span data-ttu-id="5bdff-148">建立持久连接</span><span class="sxs-lookup"><span data-stu-id="5bdff-148">Establish a Persistent Connection</span></span>
-<span data-ttu-id="5bdff-149">若要运行一系列共享数据的相关命令，请在远程计算机上创建会话，然后使用 Invoke-Command cmdlet 在你创建的会话中运行命令。</span><span class="sxs-lookup"><span data-stu-id="5bdff-149">To run a series of related commands that share data, create a session on the remote computer and then use the Invoke-Command cmdlet to run commands in the session that you create.</span></span> <span data-ttu-id="5bdff-150">若要创建远程会话，请使用 New-PSSession cmdlet。</span><span class="sxs-lookup"><span data-stu-id="5bdff-150">To create a remote session, use the New-PSSession cmdlet.</span></span>
+### <a name="establish-a-persistent-connection"></a><span data-ttu-id="e9e43-154">建立持久连接</span><span class="sxs-lookup"><span data-stu-id="e9e43-154">Establish a Persistent Connection</span></span>
+<span data-ttu-id="e9e43-155">若要运行一系列共享数据的相关命令，请在远程计算机上创建会话，然后使用 Invoke-Command cmdlet 在你创建的会话中运行命令。</span><span class="sxs-lookup"><span data-stu-id="e9e43-155">To run a series of related commands that share data, create a session on the remote computer and then use the Invoke-Command cmdlet to run commands in the session that you create.</span></span> <span data-ttu-id="e9e43-156">若要创建远程会话，请使用 New-PSSession cmdlet。</span><span class="sxs-lookup"><span data-stu-id="e9e43-156">To create a remote session, use the New-PSSession cmdlet.</span></span>
 
-<span data-ttu-id="5bdff-151">例如，以下命令在 Server01 计算机上创建远程会话，在 Server02 计算机上创建另一个远程会话。</span><span class="sxs-lookup"><span data-stu-id="5bdff-151">For example, the following command creates a remote session on the Server01 computer and another remote session on the Server02 computer.</span></span> <span data-ttu-id="5bdff-152">它将会话对象保存在 $s 变量中。</span><span class="sxs-lookup"><span data-stu-id="5bdff-152">It saves the session objects in the $s variable.</span></span>
+<span data-ttu-id="e9e43-157">例如，以下命令在 Server01 计算机上创建远程会话，在 Server02 计算机上创建另一个远程会话。</span><span class="sxs-lookup"><span data-stu-id="e9e43-157">For example, the following command creates a remote session on the Server01 computer and another remote session on the Server02 computer.</span></span> <span data-ttu-id="e9e43-158">它将会话对象保存在 $s 变量中。</span><span class="sxs-lookup"><span data-stu-id="e9e43-158">It saves the session objects in the $s variable.</span></span>
 
 ```
 $s = New-PSSession -ComputerName Server01, Server02
 ```
 
-<span data-ttu-id="5bdff-153">建立会话后，你可以在这些会话中运行任何命令。</span><span class="sxs-lookup"><span data-stu-id="5bdff-153">Now that the sessions are established, you can run any command in them.</span></span> <span data-ttu-id="5bdff-154">此外，由于会话是持久的，因此你可以在一个命令中收集数据，在后续命令中使用它。</span><span class="sxs-lookup"><span data-stu-id="5bdff-154">And because the sessions are persistent, you can collect data in one command and use it in a subsequent command.</span></span>
+<span data-ttu-id="e9e43-159">建立会话后，你可以在这些会话中运行任何命令。</span><span class="sxs-lookup"><span data-stu-id="e9e43-159">Now that the sessions are established, you can run any command in them.</span></span> <span data-ttu-id="e9e43-160">此外，由于会话是持久的，因此你可以在一个命令中收集数据，在后续命令中使用它。</span><span class="sxs-lookup"><span data-stu-id="e9e43-160">And because the sessions are persistent, you can collect data in one command and use it in a subsequent command.</span></span>
 
-<span data-ttu-id="5bdff-155">例如，下面的命令在 $s 变量中的会话中运行 Get-Hotfix 命令，并且它将结果保存在 $h 变量中。</span><span class="sxs-lookup"><span data-stu-id="5bdff-155">For example, the following command runs a Get-HotFix command in the sessions in the $s variable and it saves the results in the $h variable.</span></span> <span data-ttu-id="5bdff-156">将在 $s 中的每个会话中创建 $h 变量，但它不会存在于本地会话中。</span><span class="sxs-lookup"><span data-stu-id="5bdff-156">The $h variable is created in each of the sessions in $s, but it does not exist in the local session.</span></span>
+<span data-ttu-id="e9e43-161">例如，下面的命令在 $s 变量中的会话中运行 Get-Hotfix 命令，并且它将结果保存在 $h 变量中。</span><span class="sxs-lookup"><span data-stu-id="e9e43-161">For example, the following command runs a Get-HotFix command in the sessions in the $s variable and it saves the results in the $h variable.</span></span> <span data-ttu-id="e9e43-162">将在 $s 中的每个会话中创建 $h 变量，但它不会存在于本地会话中。</span><span class="sxs-lookup"><span data-stu-id="e9e43-162">The $h variable is created in each of the sessions in $s, but it does not exist in the local session.</span></span>
 
 ```
 Invoke-Command -Session $s {$h = Get-HotFix}
 ```
 
-<span data-ttu-id="5bdff-157">现在，你可以在后续命令中使用 $h 变量中的数据，例如以下命令。</span><span class="sxs-lookup"><span data-stu-id="5bdff-157">Now you can use the data in the $h variable in subsequent commands, such as the following one.</span></span> <span data-ttu-id="5bdff-158">结果将显示在本地计算机上。</span><span class="sxs-lookup"><span data-stu-id="5bdff-158">The results are displayed on the local computer.</span></span>
+<span data-ttu-id="e9e43-163">现在，你可以在后续命令中使用 $h 变量中的数据，例如以下命令。</span><span class="sxs-lookup"><span data-stu-id="e9e43-163">Now you can use the data in the $h variable in subsequent commands, such as the following one.</span></span> <span data-ttu-id="e9e43-164">结果将显示在本地计算机上。</span><span class="sxs-lookup"><span data-stu-id="e9e43-164">The results are displayed on the local computer.</span></span>
 
 ```
 Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}}
 ```
 
-### <a name="advanced-remoting"></a><span data-ttu-id="5bdff-159">高级远程处理</span><span class="sxs-lookup"><span data-stu-id="5bdff-159">Advanced Remoting</span></span>
-<span data-ttu-id="5bdff-160">Windows PowerShell 远程管理就在此处开始。</span><span class="sxs-lookup"><span data-stu-id="5bdff-160">Windows PowerShell remote management just begins here.</span></span> <span data-ttu-id="5bdff-161">通过使用随 Windows PowerShell 一起安装的 cmdlet，你可以从本地和远程端点建立和配置远程会话、创建自定义和受限制的会话、允许用户从实际在远程会话上隐式运行的远程会话中导入命令、配置远程会话的安全性等。</span><span class="sxs-lookup"><span data-stu-id="5bdff-161">By using the cmdlets installed with Windows PowerShell, you can establish and configure remote sessions both from the local and remote ends, create customized and restricted sessions, allow users to import commands from a remote session that actually run implicitly on the remote session, configure the security of a remote session, and much more.</span></span>
+### <a name="advanced-remoting"></a><span data-ttu-id="e9e43-165">高级远程处理</span><span class="sxs-lookup"><span data-stu-id="e9e43-165">Advanced Remoting</span></span>
+<span data-ttu-id="e9e43-166">Windows PowerShell 远程管理就在此处开始。</span><span class="sxs-lookup"><span data-stu-id="e9e43-166">Windows PowerShell remote management just begins here.</span></span> <span data-ttu-id="e9e43-167">通过使用随 Windows PowerShell 一起安装的 cmdlet，你可以从本地和远程端点建立和配置远程会话、创建自定义和受限制的会话、允许用户从实际在远程会话上隐式运行的远程会话中导入命令、配置远程会话的安全性等。</span><span class="sxs-lookup"><span data-stu-id="e9e43-167">By using the cmdlets installed with Windows PowerShell, you can establish and configure remote sessions both from the local and remote ends, create customized and restricted sessions, allow users to import commands from a remote session that actually run implicitly on the remote session, configure the security of a remote session, and much more.</span></span>
 
-<span data-ttu-id="5bdff-162">为了便于远程配置，Windows PowerShell 包含了 WSMan 提供程序。</span><span class="sxs-lookup"><span data-stu-id="5bdff-162">To facilitate remote configuration, Windows PowerShell includes a WSMan provider.</span></span> <span data-ttu-id="5bdff-163">提供程序创建的 WSMAN: 驱动器使你可以在本地计算机和远程计算机上的配置设置层次结构之间导航。</span><span class="sxs-lookup"><span data-stu-id="5bdff-163">The WSMAN: drive that the provider creates lets you navigate through a hierarchy of configuration settings on the local computer and remote computers.</span></span>
-<span data-ttu-id="5bdff-164">有关 WSMan 提供程序的详细信息，请参阅 [WSMan 提供程序](https://technet.microsoft.com/en-us/library/dd819476.aspx)和[关于 WS-Management Cmdlet](https://technet.microsoft.com/en-us/library/dd819481.aspx)，或在 Windows PowerShell 控制台中键入“Get-Help wsman”。</span><span class="sxs-lookup"><span data-stu-id="5bdff-164">For more information about the WSMan provider, see  [WSMan Provider](https://technet.microsoft.com/en-us/library/dd819476.aspx) and [About WS-Management Cmdlets](https://technet.microsoft.com/en-us/library/dd819481.aspx), or in the Windows PowerShell console, type "Get-Help wsman".</span></span>
+<span data-ttu-id="e9e43-168">为了便于远程配置，Windows PowerShell 包含了 WSMan 提供程序。</span><span class="sxs-lookup"><span data-stu-id="e9e43-168">To facilitate remote configuration, Windows PowerShell includes a WSMan provider.</span></span> <span data-ttu-id="e9e43-169">提供程序创建的 WSMAN: 驱动器使你可以在本地计算机和远程计算机上的配置设置层次结构之间导航。</span><span class="sxs-lookup"><span data-stu-id="e9e43-169">The WSMAN: drive that the provider creates lets you navigate through a hierarchy of configuration settings on the local computer and remote computers.</span></span>
+<span data-ttu-id="e9e43-170">有关 WSMan 提供程序的详细信息，请参阅 [WSMan 提供程序](https://technet.microsoft.com/en-us/library/dd819476.aspx)和[关于 WS-Management Cmdlet](https://technet.microsoft.com/en-us/library/dd819481.aspx)，或在 Windows PowerShell 控制台中键入“Get-Help wsman”。</span><span class="sxs-lookup"><span data-stu-id="e9e43-170">For more information about the WSMan provider, see  [WSMan Provider](https://technet.microsoft.com/en-us/library/dd819476.aspx) and [About WS-Management Cmdlets](https://technet.microsoft.com/en-us/library/dd819481.aspx), or in the Windows PowerShell console, type "Get-Help wsman".</span></span>
 
-<span data-ttu-id="5bdff-165">有关更多信息，请参阅：</span><span class="sxs-lookup"><span data-stu-id="5bdff-165">For more information, see:</span></span>
-- [<span data-ttu-id="5bdff-166">有关远程的常见问题解答</span><span class="sxs-lookup"><span data-stu-id="5bdff-166">About Remote FAQ</span></span>](https://technet.microsoft.com/en-us/library/dd315359.aspx)
-- [<span data-ttu-id="5bdff-167">Register-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="5bdff-167">Register-PSSessionConfiguration</span></span>](https://go.microsoft.com/fwlink/?LinkId=821508)
-- [<span data-ttu-id="5bdff-168">Import-PSSession</span><span class="sxs-lookup"><span data-stu-id="5bdff-168">Import-PSSession</span></span>](https://go.microsoft.com/fwlink/?LinkId=821821)
+<span data-ttu-id="e9e43-171">有关更多信息，请参阅：</span><span class="sxs-lookup"><span data-stu-id="e9e43-171">For more information, see:</span></span>
+- [<span data-ttu-id="e9e43-172">有关远程的常见问题解答</span><span class="sxs-lookup"><span data-stu-id="e9e43-172">About Remote FAQ</span></span>](https://technet.microsoft.com/en-us/library/dd315359.aspx)
+- [<span data-ttu-id="e9e43-173">Register-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="e9e43-173">Register-PSSessionConfiguration</span></span>](https://go.microsoft.com/fwlink/?LinkId=821508)
+- [<span data-ttu-id="e9e43-174">Import-PSSession</span><span class="sxs-lookup"><span data-stu-id="e9e43-174">Import-PSSession</span></span>](https://go.microsoft.com/fwlink/?LinkId=821821)
 
-<span data-ttu-id="5bdff-169">有关远程处理错误的帮助，请参阅 [about_Remote_Troubleshooting](https://technet.microsoft.com/en-us/library/dd347642.aspx)。</span><span class="sxs-lookup"><span data-stu-id="5bdff-169">For help with remoting errors, see [about_Remote_Troubleshooting](https://technet.microsoft.com/en-us/library/dd347642.aspx).</span></span>
+<span data-ttu-id="e9e43-175">有关远程处理错误的帮助，请参阅 [about_Remote_Troubleshooting](https://technet.microsoft.com/en-us/library/dd347642.aspx)。</span><span class="sxs-lookup"><span data-stu-id="e9e43-175">For help with remoting errors, see [about_Remote_Troubleshooting](https://technet.microsoft.com/en-us/library/dd347642.aspx).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="5bdff-170">另请参阅</span><span class="sxs-lookup"><span data-stu-id="5bdff-170">See Also</span></span>
-- [<span data-ttu-id="5bdff-171">about_Remote</span><span class="sxs-lookup"><span data-stu-id="5bdff-171">about_Remote</span></span>](https://technet.microsoft.com/en-us/library/9b4a5c87-9162-4adf-bdfe-fbc80b9b8970)
-- [<span data-ttu-id="5bdff-172">about_Remote_FAQ</span><span class="sxs-lookup"><span data-stu-id="5bdff-172">about_Remote_FAQ</span></span>](https://technet.microsoft.com/en-us/library/e23702fd-9415-4a98-9975-390a4d3adc42)
-- [<span data-ttu-id="5bdff-173">about_Remote_Requirements</span><span class="sxs-lookup"><span data-stu-id="5bdff-173">about_Remote_Requirements</span></span>](https://technet.microsoft.com/en-us/library/da213949-134c-4741-b307-81f4492ba1bd)
-- [<span data-ttu-id="5bdff-174">about_Remote_Troubleshooting</span><span class="sxs-lookup"><span data-stu-id="5bdff-174">about_Remote_Troubleshooting</span></span>](https://technet.microsoft.com/en-us/library/2f890148-8578-49ed-85ea-79a489dd6317)
-- [<span data-ttu-id="5bdff-175">about_PSSessions</span><span class="sxs-lookup"><span data-stu-id="5bdff-175">about_PSSessions</span></span>](https://technet.microsoft.com/en-us/library/7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
-- [<span data-ttu-id="5bdff-176">about_WS-Management_Cmdlets</span><span class="sxs-lookup"><span data-stu-id="5bdff-176">about_WS-Management_Cmdlets</span></span>](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
-- [<span data-ttu-id="5bdff-177">Invoke-Command</span><span class="sxs-lookup"><span data-stu-id="5bdff-177">Invoke-Command</span></span>](https://go.microsoft.com/fwlink/?LinkId=821493)
-- [<span data-ttu-id="5bdff-178">Import-PSSession</span><span class="sxs-lookup"><span data-stu-id="5bdff-178">Import-PSSession</span></span>](https://go.microsoft.com/fwlink/?LinkId=821821)
-- [<span data-ttu-id="5bdff-179">New-PSSession</span><span class="sxs-lookup"><span data-stu-id="5bdff-179">New-PSSession</span></span>](https://go.microsoft.com/fwlink/?LinkId=821498)
-- [<span data-ttu-id="5bdff-180">Register-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="5bdff-180">Register-PSSessionConfiguration</span></span>](https://go.microsoft.com/fwlink/?LinkId=821508)
-- [<span data-ttu-id="5bdff-181">WSMan 提供程序</span><span class="sxs-lookup"><span data-stu-id="5bdff-181">WSMan Provider</span></span>](https://technet.microsoft.com/en-us/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
+## <a name="see-also"></a><span data-ttu-id="e9e43-176">另请参阅</span><span class="sxs-lookup"><span data-stu-id="e9e43-176">See Also</span></span>
+- [<span data-ttu-id="e9e43-177">about_Remote</span><span class="sxs-lookup"><span data-stu-id="e9e43-177">about_Remote</span></span>](https://technet.microsoft.com/en-us/library/9b4a5c87-9162-4adf-bdfe-fbc80b9b8970)
+- [<span data-ttu-id="e9e43-178">about_Remote_FAQ</span><span class="sxs-lookup"><span data-stu-id="e9e43-178">about_Remote_FAQ</span></span>](https://technet.microsoft.com/en-us/library/e23702fd-9415-4a98-9975-390a4d3adc42)
+- [<span data-ttu-id="e9e43-179">about_Remote_Requirements</span><span class="sxs-lookup"><span data-stu-id="e9e43-179">about_Remote_Requirements</span></span>](https://technet.microsoft.com/en-us/library/da213949-134c-4741-b307-81f4492ba1bd)
+- [<span data-ttu-id="e9e43-180">about_Remote_Troubleshooting</span><span class="sxs-lookup"><span data-stu-id="e9e43-180">about_Remote_Troubleshooting</span></span>](https://technet.microsoft.com/en-us/library/2f890148-8578-49ed-85ea-79a489dd6317)
+- [<span data-ttu-id="e9e43-181">about_PSSessions</span><span class="sxs-lookup"><span data-stu-id="e9e43-181">about_PSSessions</span></span>](https://technet.microsoft.com/en-us/library/7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
+- [<span data-ttu-id="e9e43-182">about_WS-Management_Cmdlets</span><span class="sxs-lookup"><span data-stu-id="e9e43-182">about_WS-Management_Cmdlets</span></span>](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
+- [<span data-ttu-id="e9e43-183">Invoke-Command</span><span class="sxs-lookup"><span data-stu-id="e9e43-183">Invoke-Command</span></span>](https://go.microsoft.com/fwlink/?LinkId=821493)
+- [<span data-ttu-id="e9e43-184">Import-PSSession</span><span class="sxs-lookup"><span data-stu-id="e9e43-184">Import-PSSession</span></span>](https://go.microsoft.com/fwlink/?LinkId=821821)
+- [<span data-ttu-id="e9e43-185">New-PSSession</span><span class="sxs-lookup"><span data-stu-id="e9e43-185">New-PSSession</span></span>](https://go.microsoft.com/fwlink/?LinkId=821498)
+- [<span data-ttu-id="e9e43-186">Register-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="e9e43-186">Register-PSSessionConfiguration</span></span>](https://go.microsoft.com/fwlink/?LinkId=821508)
+- [<span data-ttu-id="e9e43-187">WSMan 提供程序</span><span class="sxs-lookup"><span data-stu-id="e9e43-187">WSMan Provider</span></span>](https://technet.microsoft.com/en-us/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
+
+[wsman-remoting]: WSMan-Remoting-in-PowerShell-Core.md
+[ssh-resmoting]: SSH-Remoting-in-PowerShell-Core.md
