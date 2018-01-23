@@ -1,22 +1,21 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "DSC Archive 资源"
-ms.openlocfilehash: 035f7cc1b7f21f7a0df2d72db0ba83bc0688356c
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 0e9515f801888233148afcf1dbaebf85b28a6d79
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
-# <a name="dsc-archive-resource"></a><span data-ttu-id="487f8-103">DSC Archive 资源</span><span class="sxs-lookup"><span data-stu-id="487f8-103">DSC Archive Resource</span></span>
+# <a name="dsc-archive-resource"></a><span data-ttu-id="1030b-103">DSC Archive 资源</span><span class="sxs-lookup"><span data-stu-id="1030b-103">DSC Archive Resource</span></span>
 
-> <span data-ttu-id="487f8-104">适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="487f8-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="1030b-104">适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="1030b-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="487f8-105">Windows PowerShell Desired State Configuration (DSC) 中的 Archive 资源提供了在指定路径下解压缩存档 (.zip) 文件的机制。</span><span class="sxs-lookup"><span data-stu-id="487f8-105">The Archive resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to unpack archive (.zip) files at a specific path.</span></span>
+<span data-ttu-id="1030b-105">Windows PowerShell Desired State Configuration (DSC) 中的 Archive 资源提供了在指定路径下解压缩存档 (.zip) 文件的机制。</span><span class="sxs-lookup"><span data-stu-id="1030b-105">The Archive resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to unpack archive (.zip) files at a specific path.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="487f8-106">语法</span><span class="sxs-lookup"><span data-stu-id="487f8-106">Syntax</span></span> 
+## <a name="syntax"></a><span data-ttu-id="1030b-106">语法</span><span class="sxs-lookup"><span data-stu-id="1030b-106">Syntax</span></span>
 ```MOF
 Archive [string] #ResourceName
 {
@@ -30,27 +29,27 @@ Archive [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="487f8-107">“属性”</span><span class="sxs-lookup"><span data-stu-id="487f8-107">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="1030b-107">“属性”</span><span class="sxs-lookup"><span data-stu-id="1030b-107">Properties</span></span>
 
-|  <span data-ttu-id="487f8-108">属性</span><span class="sxs-lookup"><span data-stu-id="487f8-108">Property</span></span>  |  <span data-ttu-id="487f8-109">说明</span><span class="sxs-lookup"><span data-stu-id="487f8-109">Description</span></span>   | 
-|---|---| 
-| <span data-ttu-id="487f8-110">目标</span><span class="sxs-lookup"><span data-stu-id="487f8-110">Destination</span></span>| <span data-ttu-id="487f8-111">指定你想将存档内容提取至哪个位置。</span><span class="sxs-lookup"><span data-stu-id="487f8-111">Specifies the location where you want to ensure the archive contents are extracted.</span></span>| 
-| <span data-ttu-id="487f8-112">路径</span><span class="sxs-lookup"><span data-stu-id="487f8-112">Path</span></span>| <span data-ttu-id="487f8-113">指定存档文件的源路径。</span><span class="sxs-lookup"><span data-stu-id="487f8-113">Specifies the source path of the archive file.</span></span>| 
-| <span data-ttu-id="487f8-114">Checksum</span><span class="sxs-lookup"><span data-stu-id="487f8-114">__Checksum__</span></span>| <span data-ttu-id="487f8-115">定义当确定两个文件是否相同时使用的类型。</span><span class="sxs-lookup"><span data-stu-id="487f8-115">Defines the type to use when determining whether two files are the same.</span></span> <span data-ttu-id="487f8-116">如果未指定__校验和__，则只是文件或目录名用于比较。</span><span class="sxs-lookup"><span data-stu-id="487f8-116">If __Checksum__ is not specified, only the file or directory name is used for comparison.</span></span> <span data-ttu-id="487f8-117">有效值包括：SHA-1、SHA-256、SHA-512、createdDate、modifiedDate、none（默认）。</span><span class="sxs-lookup"><span data-stu-id="487f8-117">Valid values include: SHA-1, SHA-256, SHA-512, createdDate, modifiedDate, none (default).</span></span> <span data-ttu-id="487f8-118">如果指定__校验和__不指定__验证__，则配置会失败。</span><span class="sxs-lookup"><span data-stu-id="487f8-118">If you specify __Checksum__ without __Validate__, the configuration will fail.</span></span>| 
-| <span data-ttu-id="487f8-119">Ensure</span><span class="sxs-lookup"><span data-stu-id="487f8-119">Ensure</span></span>| <span data-ttu-id="487f8-120">确定是否要检查存档的内容是否位于__目标__上。</span><span class="sxs-lookup"><span data-stu-id="487f8-120">Determines whether to check if the content of the archive exists at the __Destination__.</span></span> <span data-ttu-id="487f8-121">将此属性设置为 __Present__ 可确保内容存在。</span><span class="sxs-lookup"><span data-stu-id="487f8-121">Set this property to __Present__ to ensure the contents exist.</span></span> <span data-ttu-id="487f8-122">将其设置为 __Absent__ 可确保内容不存在。</span><span class="sxs-lookup"><span data-stu-id="487f8-122">Set it to __Absent__ to ensure they do not exist.</span></span> <span data-ttu-id="487f8-123">默认值为 __Present__。</span><span class="sxs-lookup"><span data-stu-id="487f8-123">The default value is __Present__.</span></span>| 
-| <span data-ttu-id="487f8-124">DependsOn</span><span class="sxs-lookup"><span data-stu-id="487f8-124">DependsOn</span></span> | <span data-ttu-id="487f8-125">指示必须先运行其他资源的配置，再配置此资源。</span><span class="sxs-lookup"><span data-stu-id="487f8-125">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="487f8-126">例如，如果你想要首先运行 ID 为 ResourceName、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。</span><span class="sxs-lookup"><span data-stu-id="487f8-126">For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>| 
-| <span data-ttu-id="487f8-127">验证</span><span class="sxs-lookup"><span data-stu-id="487f8-127">Validate</span></span>| <span data-ttu-id="487f8-128">使用校验和属性来确定存档是否和签名匹配。</span><span class="sxs-lookup"><span data-stu-id="487f8-128">Uses the Checksum property to determine if the archive matches the signature.</span></span> <span data-ttu-id="487f8-129">如果指定校验和不指定验证，则配置会失败。</span><span class="sxs-lookup"><span data-stu-id="487f8-129">If you specify Checksum without Validate, the configuration will fail.</span></span> <span data-ttu-id="487f8-130">如果指定验证不指定校验和，则默认使用 SHA-256 校验和。</span><span class="sxs-lookup"><span data-stu-id="487f8-130">If you specify Validate without Checksum, a SHA-256 checksum is used by default.</span></span>| 
-| <span data-ttu-id="487f8-131">Force</span><span class="sxs-lookup"><span data-stu-id="487f8-131">Force</span></span>| <span data-ttu-id="487f8-132">某些文件操作（如覆盖文件或删除不为空的目录）将导致错误。</span><span class="sxs-lookup"><span data-stu-id="487f8-132">Certain file operations (such as overwriting a file or deleting a directory that is not empty) will result in an error.</span></span> <span data-ttu-id="487f8-133">使用 Force 属性覆盖此类错误。</span><span class="sxs-lookup"><span data-stu-id="487f8-133">Using the Force property overrides such errors.</span></span> <span data-ttu-id="487f8-134">默认值为 False。</span><span class="sxs-lookup"><span data-stu-id="487f8-134">The default value is False.</span></span>| 
+|  <span data-ttu-id="1030b-108">属性</span><span class="sxs-lookup"><span data-stu-id="1030b-108">Property</span></span>  |  <span data-ttu-id="1030b-109">说明</span><span class="sxs-lookup"><span data-stu-id="1030b-109">Description</span></span>   |
+|---|---|
+| <span data-ttu-id="1030b-110">目标</span><span class="sxs-lookup"><span data-stu-id="1030b-110">Destination</span></span>| <span data-ttu-id="1030b-111">指定你想将存档内容提取至哪个位置。</span><span class="sxs-lookup"><span data-stu-id="1030b-111">Specifies the location where you want to ensure the archive contents are extracted.</span></span>|
+| <span data-ttu-id="1030b-112">路径</span><span class="sxs-lookup"><span data-stu-id="1030b-112">Path</span></span>| <span data-ttu-id="1030b-113">指定存档文件的源路径。</span><span class="sxs-lookup"><span data-stu-id="1030b-113">Specifies the source path of the archive file.</span></span>|
+| <span data-ttu-id="1030b-114">Checksum</span><span class="sxs-lookup"><span data-stu-id="1030b-114">__Checksum__</span></span>| <span data-ttu-id="1030b-115">定义当确定两个文件是否相同时使用的类型。</span><span class="sxs-lookup"><span data-stu-id="1030b-115">Defines the type to use when determining whether two files are the same.</span></span> <span data-ttu-id="1030b-116">如果未指定__校验和__，则只是文件或目录名用于比较。</span><span class="sxs-lookup"><span data-stu-id="1030b-116">If __Checksum__ is not specified, only the file or directory name is used for comparison.</span></span> <span data-ttu-id="1030b-117">有效值包括：SHA-1、SHA-256、SHA-512、createdDate、modifiedDate、none（默认）。</span><span class="sxs-lookup"><span data-stu-id="1030b-117">Valid values include: SHA-1, SHA-256, SHA-512, createdDate, modifiedDate, none (default).</span></span> <span data-ttu-id="1030b-118">如果指定__校验和__不指定__验证__，则配置会失败。</span><span class="sxs-lookup"><span data-stu-id="1030b-118">If you specify __Checksum__ without __Validate__, the configuration will fail.</span></span>|
+| <span data-ttu-id="1030b-119">Ensure</span><span class="sxs-lookup"><span data-stu-id="1030b-119">Ensure</span></span>| <span data-ttu-id="1030b-120">确定是否要检查存档的内容是否位于__目标__上。</span><span class="sxs-lookup"><span data-stu-id="1030b-120">Determines whether to check if the content of the archive exists at the __Destination__.</span></span> <span data-ttu-id="1030b-121">将此属性设置为 __Present__ 可确保内容存在。</span><span class="sxs-lookup"><span data-stu-id="1030b-121">Set this property to __Present__ to ensure the contents exist.</span></span> <span data-ttu-id="1030b-122">将其设置为 __Absent__ 可确保内容不存在。</span><span class="sxs-lookup"><span data-stu-id="1030b-122">Set it to __Absent__ to ensure they do not exist.</span></span> <span data-ttu-id="1030b-123">默认值为 __Present__。</span><span class="sxs-lookup"><span data-stu-id="1030b-123">The default value is __Present__.</span></span>|
+| <span data-ttu-id="1030b-124">DependsOn</span><span class="sxs-lookup"><span data-stu-id="1030b-124">DependsOn</span></span> | <span data-ttu-id="1030b-125">指示必须先运行其他资源的配置，再配置此资源。</span><span class="sxs-lookup"><span data-stu-id="1030b-125">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="1030b-126">例如，如果你想要首先运行 ID 为 ResourceName、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。</span><span class="sxs-lookup"><span data-stu-id="1030b-126">For example, if the ID of the resource configuration script block that you want to run first is ResourceName and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>|
+| <span data-ttu-id="1030b-127">验证</span><span class="sxs-lookup"><span data-stu-id="1030b-127">Validate</span></span>| <span data-ttu-id="1030b-128">使用校验和属性来确定存档是否和签名匹配。</span><span class="sxs-lookup"><span data-stu-id="1030b-128">Uses the Checksum property to determine if the archive matches the signature.</span></span> <span data-ttu-id="1030b-129">如果指定校验和不指定验证，则配置会失败。</span><span class="sxs-lookup"><span data-stu-id="1030b-129">If you specify Checksum without Validate, the configuration will fail.</span></span> <span data-ttu-id="1030b-130">如果指定验证不指定校验和，则默认使用 SHA-256 校验和。</span><span class="sxs-lookup"><span data-stu-id="1030b-130">If you specify Validate without Checksum, a SHA-256 checksum is used by default.</span></span>|
+| <span data-ttu-id="1030b-131">Force</span><span class="sxs-lookup"><span data-stu-id="1030b-131">Force</span></span>| <span data-ttu-id="1030b-132">某些文件操作（如覆盖文件或删除不为空的目录）将导致错误。</span><span class="sxs-lookup"><span data-stu-id="1030b-132">Certain file operations (such as overwriting a file or deleting a directory that is not empty) will result in an error.</span></span> <span data-ttu-id="1030b-133">使用 Force 属性覆盖此类错误。</span><span class="sxs-lookup"><span data-stu-id="1030b-133">Using the Force property overrides such errors.</span></span> <span data-ttu-id="1030b-134">默认值为 False。</span><span class="sxs-lookup"><span data-stu-id="1030b-134">The default value is False.</span></span>|
 
-## <a name="example"></a><span data-ttu-id="487f8-135">示例</span><span class="sxs-lookup"><span data-stu-id="487f8-135">Example</span></span>
+## <a name="example"></a><span data-ttu-id="1030b-135">示例</span><span class="sxs-lookup"><span data-stu-id="1030b-135">Example</span></span>
 
-<span data-ttu-id="487f8-136">下面的示例将演示如何使用存档资源来确保名为 Test.zip 的存档文件的内容存在，并将内容提取至指定的目标位置。</span><span class="sxs-lookup"><span data-stu-id="487f8-136">The following example shows how to use the Archive resource to ensure that the contents of an archive file called Test.zip exist and are extracted at a given destination.</span></span>
+<span data-ttu-id="1030b-136">下面的示例将演示如何使用存档资源来确保名为 Test.zip 的存档文件的内容存在，并将内容提取至指定的目标位置。</span><span class="sxs-lookup"><span data-stu-id="1030b-136">The following example shows how to use the Archive resource to ensure that the contents of an archive file called Test.zip exist and are extracted at a given destination.</span></span>
 
 ```
 Archive ArchiveExample {
     Ensure = "Present"  # You can also set Ensure to "Absent"
     Path = "C:\Users\Public\Documents\Test.zip"
     Destination = "C:\Users\Public\Documents\ExtractionPath"
-} 
+}
 ```
 
