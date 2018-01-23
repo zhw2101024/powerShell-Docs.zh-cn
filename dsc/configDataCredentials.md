@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "配置数据中的凭据选项"
-ms.openlocfilehash: 94ff541fc517254ef2876c424307513eaf1d362a
-ms.sourcegitcommit: 28e71b0ae868014523631fec3f5417de751944f3
+ms.openlocfilehash: 15cdb29127d9774c58e1d6518bbba56273e7defd
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="credentials-options-in-configuration-data"></a>配置数据中的凭据选项
 >适用于：Windows PowerShell 5.0
@@ -21,7 +20,10 @@ ms.lasthandoff: 10/25/2017
 * **PsDscAllowPlainTextPassword**
 * **PsDscAllowDomainUser**
 
->注意： <p>存储/传输未加密的纯文本密码通常是不安全的。 建议使用此主题后面部分讨论的方法保护凭据。</p> <p>Azure Automation DSC 服务可用于集中管理要在配置中编译并安全存储的凭据。  相关信息，请参阅：[编译 DSC 配置/凭据资产](https://docs.microsoft.com/en-in/azure/automation/automation-dsc-compile#credential-assets)</p>
+> [!NOTE]
+> 存储/传输未加密的纯文本密码通常是不安全的。 建议使用此主题后面部分讨论的方法保护凭据。
+> Azure Automation DSC 服务可用于集中管理要在配置中编译并安全存储的凭据。
+> 相关信息，请参阅：[编译 DSC 配置/凭据资产](/azure/automation/automation-dsc-compile#credential-assets)
 
 下面是关于传递纯文本凭据的示例：
 
@@ -133,7 +135,8 @@ WMF 5.0 为所有资源都添加了自动 `PsDscRunAsCredential` 属性。
 若要了解如何使用 `PsDscRunAsCredential`，请参阅[使用用户凭据运行 DSC](runAsUser.md)。
 较新的资源和自定义资源可以使用此自动属性，而不必为凭据创建其自身属性。
 
->请注意：由于某种原因，某些资源的设计将使用多个凭据，这些凭据有其自己的凭据属性。
+> [!NOTE]
+> 由于某种原因，某些资源的设计将使用多个凭据，这些凭据有其自己的凭据属性。
 
 使用 ISE 中的 Intellisense (`CTRL+SPACE`) 或 `Get-DscResource -Name ResourceName -Syntax` 来查找资源的可用凭据属性。
 
@@ -222,8 +225,8 @@ for node 'localhost'.
 ```
 
 此示例有两个问题：
-1.  错误消息说明不推荐使用纯文本密码
-2.  警告消息建议不要使用域凭据
+1. 错误消息说明不推荐使用纯文本密码
+2. 警告消息建议不要使用域凭据
 
 ## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
 
@@ -266,9 +269,11 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
->请注意：`NodeName` 不等同于星号，必须指定具体的节点名称。
+> [!NOTE]
+> `NodeName` 不等同于星号，必须指定具体的节点名称。
 
 **因为存在重大安全风险，Microsoft 建议避免使用纯文本密码。**
+
 使用 Azure Automation DSC 服务时例外，原因是数据始终加密存储（传输中、服务中静态或节点中静态）。
 
 ## <a name="domain-credentials"></a>域凭据

@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "DSC User 资源"
-ms.openlocfilehash: a4e4e8af4fcfe5c997c460613174d8583261dedf
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: c1b8487d9adc899950d185036ada3a2fa3747417
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 #<a name="dsc-user-resource"></a>DSC 用户资源#
 

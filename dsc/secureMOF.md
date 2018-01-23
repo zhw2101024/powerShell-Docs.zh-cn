@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-10-31
-author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "保护 MOF 文件"
-ms.openlocfilehash: ed9d259e2cd963560ad6f5b60702c54e2fa36900
-ms.sourcegitcommit: cd5a1f054cbf9eb95c5242a995f9741e031ddb24
+ms.openlocfilehash: fdb8fa17e9b5e92b56e0a62bf850529c241eee41
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="securing-the-mof-file"></a>保护 MOF 文件
 
@@ -81,7 +80,7 @@ _目标节点_上满足这些条件的任何现有证书都可以用于保护 DS
  3. 将公钥证书导入到**创作节点**上**我的**证书存储。
 
 #### <a name="on-the-target-node-create-and-export-the-certificate"></a>在目标节点上：创建并导出证书
->创作节点：Windows Server 2016 和 Windows 10
+>目标节点：Windows Server 2016 和 Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -91,7 +90,7 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 一旦导出完成，需要将 ```DscPublicKey.cer``` 复制到**创作节点**。
 
->创作节点：Windows Server 2012 R2/Windows 8.1 及更早版本
+>目标节点：Windows Server 2012 R2/Windows 8.1 及更早版本
 
 因为 Windows 10 和 Windows Server 2016 之前版本的 Windows 操作系统上的 New-SelfSignedCertificate cmdlet 不支持 **Type** 参数，因此在这些操作系统上创建此证书需要其他方法。
 在这种情况下，可以使用 ```makecert.exe``` 或者 ```certutil.exe``` 来创建证书。
@@ -109,7 +108,6 @@ New-SelfsignedCertificateEx `
     -FriendlyName 'DSC Credential Encryption certificate' `
     -Exportable `
     -StoreLocation 'LocalMachine' `
-    -StoreName 'My' `
     -KeyLength 2048 `
     -ProviderName 'Microsoft Enhanced Cryptographic Provider v1.0' `
     -AlgorithmName 'RSA' `

@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "构建自定义 Windows PowerShell Desired State Configuration 资源"
-ms.openlocfilehash: 75b494db4ee6e381491decb11d35b60105217a0f
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 4751bcaab1996ee3164bd2a2f430c3b188712860
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="build-custom-windows-powershell-desired-state-configuration-resources"></a>构建自定义 Windows PowerShell Desired State Configuration 资源
 
@@ -20,9 +19,9 @@ Windows PowerShell Desired State Configuration (DSC) 具有可用于配置环境
 
 DSC 资源是一个 Windows PowerShell 模块。 该模块既包含资源的架构（可配置属性的定义）又包含资源的实现（执行配置指定的实际工作的代码）。 可在 MOF 文件中定义 DSC 资源架构，由脚本模块执行实现。 从版本 5 开始支持 PowerShell 类，因此架构和实现都可以在类中定义。 以下主题对如何创建 DSC 资源进行了更详细的介绍。
 
-* [使用 MOF 编写自定义 DSC 资源](authoringResourceMOF.md) 
-* [在 C# 中实现 DSC 资源](authoringResourceMofCS.md) 
-* [使用 PowerShell 类编写自定义 DSC 资源](authoringResourceClass.md) 
-* [复合资源：将 DSC 配置用作资源](authoringResourceComposite.md) 
-* [使用资源设计器工具](authoringResourceMofDesigner.md) 
+* [使用 MOF 编写自定义 DSC 资源](authoringResourceMOF.md)
+* [在 C# 中实现 DSC 资源](authoringResourceMofCS.md)
+* [使用 PowerShell 类编写自定义 DSC 资源](authoringResourceClass.md)
+* [复合资源：将 DSC 配置用作资源](authoringResourceComposite.md)
+* [使用资源设计器工具](authoringResourceMofDesigner.md)
 

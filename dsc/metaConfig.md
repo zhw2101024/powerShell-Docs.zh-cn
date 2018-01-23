@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-10-11
-author: eslesar;mgreenegit
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "配置本地配置管理器"
-ms.openlocfilehash: 6ca527aae263637bbca5a064e0d770fe9384d679
-ms.sourcegitcommit: ea01285a3aa7818d67d4761fbd8793b9b66bd5f7
+ms.openlocfilehash: 947bc17347204f6f15a24f83b449582afe65a4ee
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="configuring-the-local-configuration-manager"></a>配置本地配置管理器
 
@@ -46,7 +45,7 @@ configuration LCMConfig
             RefreshMode = 'Push'
         }
     }
-} 
+}
 ```
 
 将设置应用于 LCM 的过程与应用 DSC 配置的过程类似。
@@ -130,7 +129,7 @@ Azure 服务可以在本地管理私有数据中心或 Azure 和 AWS 等公有�
 **ConfigurationRepositoryWeb** 定义以下属性。
 
 |属性|类型|说明|
-|---|---|---| 
+|---|---|---|
 |AllowUnsecureConnection|布尔|设置为 **$TRUE** 以允许无需身份验证即可从节点连接到服务器。 设置为 **$FALSE** 以要求进行身份验证。|
 |CertificateID|字符串|用于向服务器进行身份验证的证书指纹。|
 |ConfigurationNames|string[]|目标节点将请求的配置名称的数组。 仅当通过 RegistrationKey 将节点注册到请求服务后，才使用这些操作。 有关详细信息，请参阅[使用配置名称设置请求客户端](pullClientConfigNames.md)。|
@@ -191,7 +190,7 @@ Azure 服务可以在本地管理私有数据中心或 Azure 和 AWS 等公有�
 **PartialConfiguration** 定义以下属性。
 
 |属性|类型|说明|
-|---|---|---| 
+|---|---|---|
 |ConfigurationSource|string[]|以前在 ConfigurationRepositoryWeb 和 ConfigurationRepositoryShare 块中定义的配置服务器的名称数组，将从其中拉取部分配置。|
 |DependsOn|string{}|应用此部分配置之前必须完成的其他配置名称的列表。|
 |说明|字符串|用于描述部分配置的文本。|
@@ -201,11 +200,11 @@ Azure 服务可以在本地管理私有数据中心或 Azure 和 AWS 等公有�
 
 __注意：__Azure 自动化 DSC 支持部分配置，但每个节点只能从每个自动化帐户中请求一个配置。
 
-## <a name="see-also"></a>另请参阅 
+## <a name="see-also"></a>另请参阅
 
 ### <a name="concepts"></a>概念
 [Desired State Configuration 概述](overview.md)
- 
+
 [Azure 自动化 DSC 入门](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started)
 
 ### <a name="other-resources"></a>其他资源

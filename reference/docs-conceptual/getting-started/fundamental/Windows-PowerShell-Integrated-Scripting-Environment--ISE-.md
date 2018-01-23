@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Windows PowerShell 集成脚本环境 (ISE)"
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: 6bddb953a7f17e220f92d357eb59dfedc5496272
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 66f36371cbb8ad8523aa1e1e3cd791cc692194c9
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell 集成脚本环境 (ISE)
 Windows PowerShell 集成脚本环境 (ISE) 是 Windows PowerShell 引擎和语言的两个主机之一。 借助它你可以采取 Windows PowerShell 控制台中不可用的方式来编写、运行并测试脚本。 ISE 添加了语法着色、Tab 自动补全、IntelliSense、可视调试和上下文相关帮助。
@@ -63,5 +63,5 @@ ISE 随 PowerShell v2.0 一同引入。
 > 由于 Windows PowerShell ISE 需要图形用户界面，因此你无法在 Windows Server 的 Server Core 选项上运行它。
 
 ## <a name="see-also"></a>另请参阅
-- [使用 Windows PowerShell 集成脚本环境](Using-the-Windows-PowerShell-ISE.md)
+- [使用 Windows PowerShell 集成脚本环境](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 
