@@ -13,7 +13,7 @@ Windows PowerShell 使用 .NET Framework 运行时承载 PowerShell 引擎。
 
 .NET Core 和 .NET Framework 之间共享的 API 定义为 [.NET Standard][] 的一部分。
 
-有关这将如何影响 PowerShell Core 和 Windows PowerShell 之间模块/脚本兼容性的详细信息，请参阅 [Windows PowerShell 向后兼容性][#backwards-compatibility-with-windows-powershell]
+有关这将如何影响 PowerShell Core 和 Windows PowerShell 之间模块/脚本兼容性的详细信息，请参阅 [Windows PowerShell 向后兼容性](#backwards-compatibility-with-windows-powershell).
 
 ## <a name="support-for-macos-and-linux"></a>支持 macOS 和 Linux
 
