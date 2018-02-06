@@ -148,7 +148,7 @@ Add-WindowsPSModulePath
 
 PowerShell Core 已对我们支持的所有主要平台（包括多个 Linux 发行版、Windows Server Core 和 Nano Server）添加了 Docker 容器支持。
 
-关于完整列表，请查看 Docker Hub][docker-hub] 上对 [`microsoft/powershell` 的标记。
+关于完整列表，请查看 [`microsoft/powershell` Docker Hub][docker-hub] 上对的标记。
 有关 Docker 和 PowerShell Core 的详细信息，请参阅 GitHub 上的 [Docker][]。
 
 ## <a name="ssh-based-powershell-remoting"></a>基于 SSH 的 PowerShell 远程处理
@@ -234,7 +234,7 @@ PowerShell Core 更改默认编码以符合更广泛的生态系统。
 - 已添加三个新自动变量，用以确定特定 OS 中是否正在运行 PowerShell：`$IsWindows`、`$IsMacOs` 和 `$IsLinux`。
 - 已将 `GitCommitId` 添加到 PowerShell Core 横幅。
   现在启动 PowerShell 时无需运行 `$PSVersionTable` 即可获取版本！ (#3916)（感谢 @iSazonov！）
-- 已在 `$PSHome` 中添加名为 `PowerShellProperties.json` 的 JSON 配置文件，用以存储某些启动之前所需的设置（例如 `ExecutionPolicy`）。
+- 已在 `$PSHome` 中添加名为 `powershell.config.json` 的 JSON 配置文件，用以存储某些启动之前所需的设置（例如 `ExecutionPolicy`）。
 - 运行 Windows EXE 时请勿阻止管道
 - 已支持 COM 集合的枚举。 (#4553)
 
