@@ -11,6 +11,7 @@
 ### [创建 PowerShell 库帐户](psgallery/psgallery_creating_an_account.md)
 ### [创建和发布项](psgallery/Creating-and-Publishing-an-item.md)
 ### [发布指南和最佳做法](psgallery/psgallery-PublishingGuidelines.md)
+### [项清单和库 UI](psgallery/psgallery_ItemManifestAffectingUI.md)
 ### [取消列出项](psgallery/psgallery_unlist_items.md)
 ### [删除项](psgallery/Deleting-Items.md)
 ### [管理项所有者](psgallery/Managing-Item-Owners.md)
