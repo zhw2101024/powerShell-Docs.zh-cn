@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Windows PowerShell 基础知识"
 ms.assetid: 6b3cbbc8-060c-4877-b00b-7300dbbe4e28
-ms.openlocfilehash: 7b5cdfce876aa7d5559fe772379829011b275a02
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: bd17786d2d8690b89a2d107e0da98ee45f5b2ff7
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="windows-powershell-basics"></a>Windows PowerShell 基础知识
 图形用户界面采用大多数计算机用户熟悉的一些基本概念。 用户凭借对这些界面的熟悉度来完成任务。 操作系统为用户提供可浏览项的图形表现形式，通常含有访问特定功能的下拉菜单以及访问特定于上下文的功能的上下文菜单。
@@ -18,13 +18,10 @@ ms.lasthandoff: 09/08/2017
 
 Windows PowerShell 旨在充分利用用户对 CLI 一直以来所了解的知识。 在本节中，我们将谈论可用于快速了解 Windows PowerShell 的基本工具和概念。 其中包括：
 
-- 使用 Get-Command
+- 使用 [Get-Command](/powershell/module/Microsoft.PowerShell.Core/get-command)
 
-- 使用 Cmd.exe 和 UNIX 命令
+- 使用 [Cmd.exe](/windows-server/administration/windows-commands/cmd) 和 [UNIX 命令](/windows/wsl/reference)
 
-- 使用外部命令
+- [使用 Tab-Completion](../../core-powershell/console/using-tab-expansion.md)
 
-- 使用 Tab-Completion
-
-- 使用 Get-Help
-
+- [使用 Get-Help](./getting-detailed-help-information.md)

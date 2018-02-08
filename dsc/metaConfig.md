@@ -3,11 +3,11 @@ ms.date: 2017-10-11
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "配置本地配置管理器"
-ms.openlocfilehash: 947bc17347204f6f15a24f83b449582afe65a4ee
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 81434b57e453ba7b64cc32dffdf309da16ef8882
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="configuring-the-local-configuration-manager"></a>配置本地配置管理器
 
@@ -77,7 +77,7 @@ LCM 配置只能包含有限组资源的块。
 | CertificateID| 字符串| 用于保护在配置中传递的凭据的证书指纹。 更多详细信息，请参阅 [Want to secure credentials in Windows PowerShell Desired State Configuration?（希望在 Windows PowerShell Desired State Configuration 中保护凭据？）](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)。 <br> __注意：__如果使用 Azure 自动化 DSC 请求服务，则会自动进行管理。|
 | ConfigurationDownloadManagers| CimInstance[]| 已过时。 使用 __ConfigurationRepositoryWeb__ 和 __ConfigurationRepositoryShare__ 块定义配置请求服务终结点。|
 | ConfigurationID| 字符串| 用于向后兼容早期版本的请求服务。 用于标识要从请求服务获取的配置文件的 GUID。 如果配置 MOF 名为 ConfigurationID.mof，那么节点将在请求服务上请求配置。<br> __注意：__如果设置此属性，将无法使用 __RegistryKey__ 将节点注册到请求服务。 有关详细信息，请参阅[使用配置名称设置请求客户端](pullClientConfigNames.md)。|
-| ConfigurationMode| 字符串 | 指定 LCM 实际如何将配置应用到目标节点。 可取值为 __ApplyOnly__、__ApplyandMonitior__ 和 __ApplyandAutoCorrect__。 <ul><li>__ApplyOnly__：DSC 将应用配置，但若未向目标节点推送新配置或从服务请求新配置，则它不会执行任何进一步操作。 首次应用新配置后，DSC 不会检查是否偏离以前配置的状态。 请注意，__ApplyOnly__ 生效前，DSC 将尝试应用配置，直到成功为止。 </li><li> __ApplyAndMonitor__：这是默认值。 LCM 将应用任意新配置。 首次应用新配置后，如果目标节点偏离期望状态，则 DSC 将在日志中报告差异。 请注意，__ApplyAndMonitor__ 生效前，DSC 将尝试应用配置，直到成功为止。</li><li>__ApplyAndAutoCorrect__：DSC 将应用任何新配置。 首次应用新配置后，如果目标节点偏离适当状态，则 DSC 将在日志中报告差异然后重新应用当前配置。</li></ul>|
+| ConfigurationMode| 字符串 | 指定 LCM 实际如何将配置应用到目标节点。 可能的值为 __ApplyOnly__、__ApplyAndMonitor__ 和 __ApplyAndAutoCorrect__。 <ul><li>__ApplyOnly__：DSC 将应用配置，但若未向目标节点推送新配置或从服务请求新配置，则它不会执行任何进一步操作。 首次应用新配置后，DSC 不会检查是否偏离以前配置的状态。 请注意，__ApplyOnly__ 生效前，DSC 将尝试应用配置，直到成功为止。 </li><li> __ApplyAndMonitor__：这是默认值。 LCM 将应用任意新配置。 首次应用新配置后，如果目标节点偏离期望状态，则 DSC 将在日志中报告差异。 请注意，__ApplyAndMonitor__ 生效前，DSC 将尝试应用配置，直到成功为止。</li><li>__ApplyAndAutoCorrect__：DSC 将应用任何新配置。 首次应用新配置后，如果目标节点偏离适当状态，则 DSC 将在日志中报告差异然后重新应用当前配置。</li></ul>|
 | ConfigurationModeFrequencyMins| UInt32| 检查和应用当前配置的时间间隔（以分钟为单位）。 如果将 ConfigurationMode 属性设置为 ApplyOnly，则将忽略此属性。 默认值为 15。|
 | DebugMode| 字符串| 可取值为 __None__、__ForceModuleImport__ 和 __All__。 <ul><li>设置为 __None__ 可以使用缓存的资源。 这是默认值，应在生产方案中使用。</li><li>设置为 __ForceModuleImport__ 会导致 LCM 重载所有 DSC 资源模块，即使这些模块之前已被加载并缓存，也是如此。 这会影响 DSC 操作的性能，因为将在使用时重新加载每个模块。 通常在调试资源时使用此值</li><li>在此版本中，__All__ 等同于 __ForceModuleImport__</li></ul> |
 | RebootNodeIfNeeded| 布尔| 将此设置为 __$true__，可在应用要求重启的设置后自动重启节点。 否则，你必须为要求重启的配置手动重启节点。 默认值为 __$false__。 若要在通过 DSC（例如 Windows Installer）以外的其他配置执行重启条件时使用此设置，请将此设置和 [xPendingReboot](https://github.com/powershell/xpendingreboot) 模块组合使用。|
