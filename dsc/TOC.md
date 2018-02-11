@@ -108,7 +108,7 @@
 
 # DSC 请求模型
 
-## [设置 Web 请求服务器](pullServer.md)
+## [DSC 拉取服务](pullServer.md)
 
 ## [设置 DSC SMB 请求服务器](pullServerSMB.md)
 
