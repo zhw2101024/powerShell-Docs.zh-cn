@@ -4,10 +4,10 @@ keywords: powershell,cmdlet
 title: "Windows PowerShell ISE 脚本对象模型"
 ms.assetid: 69b047d0-da79-413e-b948-8e45d05d1f85
 ms.openlocfilehash: 705378c927fcd8d38c2a697584aad771d7bd6c49
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 02/08/2018
 ---
 # <a name="the-windows-powershell-ise-scripting-object-model"></a>Windows PowerShell ISE 脚本对象模型
   Windows PowerShell® 集成脚本环境 (ISE) 通过基础的脚本对象模型公开其功能，该模型能使用户写入可以操作 Windows PowerShell ISE 的各种可视化和功能方面的 Windows PowerShell 脚本。 脚本对象及其属性和方法专门针对此用途进行定义。

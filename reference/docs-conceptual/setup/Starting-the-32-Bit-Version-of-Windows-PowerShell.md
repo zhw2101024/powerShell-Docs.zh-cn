@@ -4,10 +4,10 @@ keywords: powershell,cmdlet
 title: "启动 32 位版本的 Windows PowerShell"
 ms.assetid: 12b31890-2609-4a76-8c24-0ebe78084f50
 ms.openlocfilehash: d682ce45ebc92cda3a9008ab608bacf9ef8eba57
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 02/08/2018
 ---
 # <a name="starting-the-32-bit-version-of-windows-powershell"></a>启动 32 位版本的 Windows PowerShell
 在 64 位计算机 (**Windows PowerShell (x86)**) 上安装 Windows PowerShell 时，除 64 位版之外，还将安装 32 位版本的 Windows PowerShell。 运行 Windows PowerShell 时，默认运行 64 位版。

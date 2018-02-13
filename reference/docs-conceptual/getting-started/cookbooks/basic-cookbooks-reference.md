@@ -3,10 +3,10 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "基本 Cookbook 参考"
 ms.openlocfilehash: d6f0bf97c9491f1a4c9ba13aae837c17860aa6c7
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 02/08/2018
 ---
 # <a name="basic-cookbooks-reference"></a>基本 Cookbook 参考
 

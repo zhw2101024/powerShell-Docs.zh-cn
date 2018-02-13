@@ -4,10 +4,10 @@ keywords: powershell,cmdlet
 title: "使用 Windows PowerShell"
 ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
 ms.openlocfilehash: 874c6fc6f0b09b0f586725ed7df7bc68c31e1733
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 02/08/2018
 ---
 # <a name="using-windows-powershell"></a>使用 Windows PowerShell
 Windows PowerShell® 是基于任务的命令行管理程序和脚本语言，专为进行系统管理而设计。 在 .NET Framework 的基础上构建的 Windows PowerShell 可帮助 IT 专业人士和高级用户控制和自动执行 Windows 操作系统以及在 Windows 上运行的应用程序的管理。
