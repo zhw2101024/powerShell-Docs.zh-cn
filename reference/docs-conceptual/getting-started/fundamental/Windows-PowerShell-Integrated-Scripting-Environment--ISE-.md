@@ -3,26 +3,31 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Windows PowerShell 集成脚本环境 (ISE)"
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: 66f36371cbb8ad8523aa1e1e3cd791cc692194c9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 6a2d2bada2d8d6a1d5bedffc7b1b28fe9472544a
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell 集成脚本环境 (ISE)
+
 Windows PowerShell 集成脚本环境 (ISE) 是 Windows PowerShell 引擎和语言的两个主机之一。 借助它你可以采取 Windows PowerShell 控制台中不可用的方式来编写、运行并测试脚本。 ISE 添加了语法着色、Tab 自动补全、IntelliSense、可视调试和上下文相关帮助。
 
 ISE 使你能够在控制台窗格中运行命令，但它也支持可用于同时查看脚本的源代码的窗格和可以插入到 ISE 中的其他工具。 甚至可以同时打开多个脚本窗口，当你正调试的脚本使用其他脚本或模块中定义的函数时，这将特别有用。
 
 ## <a name="whats-new"></a>新增功能
+
 以下是最新的 PowerShell 版本中已添加到 ISE 的一些功能。
 
 ### <a name="added-in-powershell-30-windows-server-2012-windows-8"></a>PowerShell 3.0 中的新添功能（Windows Server 2012、Windows 8）
+
 **IntelliSense** 通过在你进行键入时，显示匹配的 cmdlet、参数、参数值、文件或文件夹来自动完成你的命令。
 
 **代码片段**是代码的一小部分，它可以轻松插入到你编写的脚本中。 有用的代码片段的集合包含在框中，你可以通过使用 **New-Snippet** cmdlet 添加更多的代码片段。
 
-向 ISE 添加功能的**附加工具**可以通过编写与 [Windows PowerShell ISE 脚本对象模型](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)相交互的代码进行创建。 这些工具可以在选项卡式窗格中显示控件，或在后台以不可见的方式工作。 **命令**附加工具是一个好例子，包含在 3.0 版及更高版本中，可显示可用命令及其帮助的列表。
+向 ISE 添加功能的**附加工具**可以通过编写与 [Windows PowerShell ISE 脚本对象模型](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md)相交互的代码进行创建。
+
+这些工具可以在选项卡式窗格中显示控件，或在后台以不可见的方式工作。 **命令**附加工具是一个好例子，包含在 3.0 版及更高版本中，可显示可用命令及其帮助的列表。
 
 **重启管理器和自动保存**每两分钟会自动保存你的脚本，有助于避免在发生崩溃或意外重启时造成的工作丢失。
 
@@ -51,17 +56,16 @@ ISE 使你能够在控制台窗格中运行命令，但它也支持可用于同�
 - **块选择**。 你可以通过在用鼠标选定脚本窗格中文本的同时按住 ALT 键，或通过按 **Alt+Shift+箭头**键来选定块状的文本块。
 
 ### <a name="added-in-powershell-20-windows-server-2008-r2-windows-7"></a>PowerShell 2.0 中的新增功能（Windows Server 2008 R2、Windows 7）
+
 ISE 随 PowerShell v2.0 一同引入。
 
 ## <a name="requirements-for-running-the-windows-powershell-ise"></a>运行 Windows PowerShell ISE 的要求
-可以在任何运行 Windows PowerShell v2.0 或更高版本的 Windows 计算机上使用 ISE。
-每个 Windows 和 Windows Server 版本都包含一个 Windows PowerShell 和 ISE 版本，但你可以通过安装 Windows Management Framework 升级至最新的可用版本。
-运行此搜索以查找最新的可用版本：[下载](http://www.microsoft.com/en-us/search/DownloadResults.aspx?q=%22windows%20management%20framework%22%20PowerShell&sortby=Relevancy~Descending)。
-请注意：任何标记为“预览版”的条目都是预发布的代码，并不具备完整的功能。
+
+可以在任何运行 Windows PowerShell v2.0 或更高版本的 Windows 计算机上使用 ISE。 每个 Windows 和 Windows Server 版本都包含一个 Windows PowerShell 和 ISE 版本，但你可以通过安装 Windows Management Framework (WMF) 升级至最新的可用版本。 有关详细信息，请参阅 [WMF](/powershell/wmf/readme) 文档。
 
 > [!NOTE]
 > 由于 Windows PowerShell ISE 需要图形用户界面，因此你无法在 Windows Server 的 Server Core 选项上运行它。
 
 ## <a name="see-also"></a>另请参阅
-- [使用 Windows PowerShell 集成脚本环境](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 
+[Windows PowerShell ISE 脚本对象模型的用途](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)

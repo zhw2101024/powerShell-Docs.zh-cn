@@ -2,16 +2,18 @@
 ms.date: 2017-10-12
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
-title: "Windows PowerShell 4.0 Desired State Configuration 本地配置管理器 (LCM)"
-ms.openlocfilehash: 6ff8fa75f8ed33dc8da5285373ec1f3858cfa917
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: "在早期版本的 Windows PowerShell 中配置本地配置管理器"
+ms.openlocfilehash: 65eb2a8d5a99e977cf2f3dbd726240ec2d5a6142
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 02/09/2018
 ---
-# <a name="windows-powershell-40-desired-state-configuration-local-configuration-manager-lcm"></a>Windows PowerShell 4.0 Desired State Configuration 本地配置管理器 (LCM)
+# <a name="configuring-the-local-configuration-manager-in-previous-versions-of-windows-powershell"></a>在早期版本的 Windows PowerShell 中配置本地配置管理器
 
 >适用于：Windows PowerShell 4.0
+
+**有关 Windows PowerShell 5.0 和更高版本的信息，请参阅[配置本地配置管理器](metaConfig.md)。**
 
 本地配置管理器是 Windows PowerShell Desired State Configuration (DSC) 引擎。
 它在所有的目标节点上运行，负责调用 DSC 配置脚本中包含的配置资源。

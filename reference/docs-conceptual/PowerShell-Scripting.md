@@ -2,54 +2,60 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "PowerShell 脚本"
-ms.openlocfilehash: 8d2386dc49c59a106ecdddf0feabe3344834a86d
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 9214b9e40ff6c181f921f89ef78406af20c30e5f
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="powershell"></a>PowerShell
 
-基于 .NET Framework 构建，Windows PowerShell 是一种基于任务的命令行外壳和脚本语言；专门面向系统管理员和高级用户，可快速自动化多个操作系统（Linux、macOS、Unix 和 Windows）和这些操作系统上运行的应用程序相关进程的管理。
+PowerShell 在 .NET Framework 基础之上构建，是一种基于任务的命令行 Shell 脚本语言；专门面向系统管理员和高级用户，可快速自动化多个操作系统（Linux、macOS、Unix 和 Windows）和这些操作系统上运行的应用程序相关进程的管理。
 
-### <a name="powershell-is-now-open-source"></a>PowerShell 现在是开放源代码
+## <a name="powershell-is-open-source"></a>PowerShell 是开放源代码
 
-PowerShell 基本源代码目前在 GitHub 中可用，且对社区贡献开放，请参阅 [PowerShell](https://github.com/powershell/powershell)。
+PowerShell 基本源代码目前在 GitHub 中提供，且对社区贡献开放。 请参阅 [GitHub 上的 PowerShell 源](https://github.com/powershell/powershell)。
 
 可开始使用 [get PowerShell](https://github.com/PowerShell/PowerShell#get-powershell)（获取 PowerShell）中所需的位数。
 或者快速查看[入门](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell)
 
-> **注意：**  
-> GitHub 中所有有关 PowerShell 的链接都将转至 GitHub。
+## <a name="powershell-design-goals"></a>PowerShell 设计目标
+Windows PowerShell 旨在通过消除长期存在的问题和添加新功能改进命令行和脚本环境。
 
-# <a name="documentation"></a>文档
+### <a name="discoverability"></a>可发现性
+Windows PowerShell 使它的功能更易发现。 例如，若要查找用于查看和更改 Windows 服务的 cmdlet 列表，请键入：
 
-文档集围绕以下 4 个主要部分进行组织：
+```
+Get-Command *-Service
+```
 
-## <a name="whats-new-with-powershellwhats-newwhat-s-new-with-powershellmd"></a>[PowerShell 的新增功能](whats-new/What-s-New-With-PowerShell.md)
-本部分介绍了关于产品的所有公告（按版本和发布版分类）。
+找到完成任务的 cmdlet 后，可通过使用 Get-Help cmdlet 了解有关该 cmdlet 的详细信息。 例如，若要显示有关 Get-Service cmdlet 的帮助，请键入：
 
-## <a name="powershell-setupsetupsetup-referencemd"></a>[安装 PowerShell ](setup/setup-reference.md)
-本部分介绍了如何在受支持的环境中安装 PowerShell 所有版本。  
+```
+Get-Help Get-Service
+```
+大多数 cmdlet 会发出对象，这些对象可获得操作，然后再呈现为显示文本。 若要全面了解该 cmdlet 的输出，请将其输出通过管道传递给 Get-Member cmdlet。 例如，下面的命令显示了有关 Get-Service cmdlet 所输出对象的成员的信息。
 
-此外，还介绍了如何配置安全性、可访问性、远程访问和管理、工作流以及 Web 访问。
+```
+Get-Service | Get-Member
+```
 
-## <a name="getting-started-with-powershellgetting-startedgetting-started-with-windows-powershellmd"></a>[PowerShell 快速入门](getting-started/Getting-Started-with-Windows-PowerShell.md)
-本部分针对 PowerShell 新用户介绍了使用该产品的所有所需信息。  
-本部分内容：
-- [准备好使用 Windows PowerShell](getting-started/Getting-Ready-to-Use-Windows-PowerShell.md)，说明了安装 PowerShell 所需的必要步骤，以便试用“PowerShell 快速入门”部分中介绍的所有代码段和命令。
-- [基本概念](getting-started/fundamental-concepts.md)指南，解释了 PowerShell 的含义和开始使用该产品所需的基本概念。
-- 一系列“[了解&lt;概念&gt;](getting-started/understanding-concepts-reference.md)”主题，介绍了 PowerShell 的基本知识。
-- 一系列“[&lt;用法&gt;基本指南](getting-started/cookbooks/basic-cookbooks-reference.md)”主题，介绍了关于文件、文件系统、注册表、进程、服务和相似的日常主题的标准任务执行方法。
-- 有关[了解 PowerShell](getting-started/more-powershell-learning.md)的其他资源的系统化指南。
+### <a name="consistency"></a>一致性
+管理系统是一项复杂的任务，具有一致的接口的工具有助于控制固有的复杂性。 遗憾的是，命令行工具和可脚本化 COM 对象的一致性均未知。
 
-## <a name="common-powershellcore-powershellcore-powershellmd"></a>[常见 PowerShell](core-powershell/core-powershell.md)
-本部分包含所有的引用材料 PowerShell。  
-本节包括：
-- [PowerShell 集成脚本环境 \(ISE\)](core-powershell/ise-guide.md)
-- [PowerShell 控制台窗口](core-powershell/console-guide.md)
-- [PowerShell 远程管理](core-powershell/Running-Remote-Commands.md)
-- [PowerShell 工作流](core-powershell/workflows-guide.md)
-- [PowerShell Web 访问](core-powershell/web-access.md)
-- [PowerShell 术语表](Windows-PowerShell-Glossary.md)
+Windows PowerShell 的一致性是其主要资产之一。 例如，如果了解如何使用 Sort-Object cmdlet，你可以利用这一知识对任何 cmdlet 的输出进行排序。 不需要了解每个 cmdlet 的不同排序例程。
 
+此外，cmdlet 开发人员无需为其 cmdlet 设计排序功能。 Windows PowerShell 将给它们一个提供基本功能的框架，并强制它们在接口的多个方面保持一致。 该框架消除了通常留给开发人员的某些选择，但它也因而使得开发可靠的和易于使用的 cmdlet 变得简单得多。
+
+### <a name="interactive-and-scripting-environments"></a>交互式脚本编写环境
+Windows PowerShell 是一个组合的交互式脚本编写环境，它允许你访问命令行工具和 COM 对象，还让你能够使用 .NET Framework 类库 (FCL) 的强大功能。
+
+此环境改进了 Windows 命令提示，它将提供具有多个命令行工具的交互式环境。 它还改进了 Windows 脚本宿主 (WSH) 脚本，让你可以使用多个命令行工具和 COM 自动化对象，但不提供交互式环境。
+
+通过组合使用以上所有功能，Windows PowerShell 将扩展交互用户和脚本编写者的能力，并使系统管理更可控。
+
+### <a name="object-orientation"></a>面向对象
+尽管通过在文本框中键入命令可以与 Windows PowerShell 交互，但 Windows PowerShell 仍以对象（而不是文本）为基础。 命令的输出是一个对象。 可以将输出对象发送给另一个命令以作为其输入。 因此，Windows PowerShell 将为曾使用其他 shell 的用户提供熟悉的界面，同时引入新的强大命令行范例。 它让你能够发送对象而不是文本，从而扩展了在命令之间发送数据的概念。
+
+### <a name="easy-transition-to-scripting"></a>轻松转换到脚本
+Windows PowerShell 让你能够从以交互方式键入命令转换到创建和运行脚本。 可以在 Windows PowerShell 命令提示符处键入命令，从而发现执行某项任务的命令。 然后，你可以在将这些命令保存到副本或历史记录中，然后将其复制到文件以用作脚本。

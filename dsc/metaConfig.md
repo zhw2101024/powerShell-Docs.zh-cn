@@ -3,11 +3,11 @@ ms.date: 2017-10-11
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "配置本地配置管理器"
-ms.openlocfilehash: 81434b57e453ba7b64cc32dffdf309da16ef8882
-ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
+ms.openlocfilehash: b8e0749cf2f67e395e9fd8eaf9cde33b97c0cb67
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="configuring-the-local-configuration-manager"></a>配置本地配置管理器
 
@@ -25,8 +25,8 @@ LCM 在每个目标节点上运行，负责分析和执行发送到节点的配�
 使用特殊类型的配置将 LCM 配置为指定以上各行为。
 以下各节介绍如何配置 LCM。
 
-> **注意**：本主题适用于 Windows PowerShell 5.0 中引入的 LCM。
-有关在 Windows PowerShell 4.0 中配置 LCM 的信息，请参阅 [Windows PowerShell 4.0 Desired State Configuration 本地配置管理器](metaconfig4.md)。
+Windows PowerShell 5.0 引入了全新的设置来管理本地配置管理器。
+有关在 Windows PowerShell 4.0 中配置 LCM 的信息，请参阅[在早期版本的 Windows PowerShell 中配置本地配置管理器](metaconfig4.md)。
 
 ## <a name="writing-and-enacting-an-lcm-configuration"></a>编写和执行 LCM 配置
 
@@ -90,38 +90,13 @@ LCM 配置只能包含有限组资源的块。
 
 ## <a name="pull-service"></a>请求服务
 
-DSC 设置允许通过请求配置和模块，并将报告数据发布到远程位置来管理节点。
-请求服务的当前选项包括：
-
-- Azure 自动化 Desired State Configuration 服务
-- 在 Windows Server 上运行的请求服务实例
-- SMB 共享（不支持发布报告数据）
-
 LCM 配置支持定义以下类型的请求服务终结点：
 
 - **配置服务器**：DSC 配置的存储库。 使用 **ConfigurationRepositoryWeb**（对于基于 Web 的服务器）和 **ConfigurationRepositoryShare**（对于基于 SMB 的服务器）块定义配置服务器。
 - **资源服务器**：打包为 PowerShell 模块的 DSC 资源存储库。 使用 **ResourceRepositoryWeb**（对于基于 Web 的服务器）和 **ResourceRepositoryShare**（对于基于 SMB 的服务器）块定义资源服务器。
 - **报表服务器**：DSC 将报表数据发送到的服务。 使用 **ReportServerWeb** 块定义报表服务器。 报表服务器必须是 Web 服务。
 
-**建议的解决方案**和可用功能最多的选项是 [Azure 自动化 DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started)。
-
-Azure 服务可以在本地管理私有数据中心或 Azure 和 AWS 等公有云中的节点。
-对于服务器无法直接连接到 Internet 的私有环境，请考虑将出站流量限制为仅已发布的 Azure IP 范围（请参阅 [Azure 数据中心 IP 范围](https://www.microsoft.com/en-us/download/details.aspx?id=41653)）。
-
-在 Windows Server 的请求服务上目前暂不可用的在线服务功能包括：
-- 所有数据在传输和静止时均处于加密状态
-- 自动创建和管理客户端证书
-- 用于集中式管理[密码/凭据](https://docs.microsoft.com/en-us/azure/automation/automation-credentials)或[变量](https://docs.microsoft.com/en-us/azure/automation/automation-variables)（例如服务器名称或连接字符串）的机密存储
-- 集中式管理节点 [LCM 配置](metaConfig.md#basic-settings)
-- 将配置集中分配给客户端节点
-- 在投入生产之前，将配置更改发布到“Canary 组”用于测试
-- 图形报告
-  - DSC 资源粒度级别的状态详细信息
-  - 客户端计算机中用于故障排除的详细错误消息
-- [与 Azure Log Analytics 集成](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-diagnostics)用于警报，与自动化的任务，Android/iOS 应用集成用于报告和警报
-
-或者，有关在 Windows Server 上设置和使用 HTTP 请求服务的信息，请参阅[设置 DSC 请求服务器](pullServer.md)。
-请注意，这是一种有限的实现，仅具有存储配置/模块以及将报表数据捕获到本地数据库的基本功能。
+有关请求服务的更多详细信息，请参阅 [Desired State Configuration 请求服务](pullServer.md)。
 
 ## <a name="configuration-server-blocks"></a>配置服务器块
 
