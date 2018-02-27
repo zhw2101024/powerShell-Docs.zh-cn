@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Windows PowerShell 术语表"
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: 48e5d832ead720c8bc7753c94f757ddb21846fc9
-ms.sourcegitcommit: ced46469e064736eeb1f5608abbc792ec69bdc92
+ms.openlocfilehash: 872ceb342cc72477c5142ce28a9b3b66e32bb84f
+ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/08/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="windows-powershell-glossary"></a>Windows PowerShell 术语表
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 08/08/2017
 |主机|Windows PowerShell 引擎用于与用户进行通信的接口。 例如，主机指定 Windows PowerShell 和用户之间处理提示的方式。|
 |主机应用程序|将 Windows PowerShell 引擎加载到其进程中并使用它执行操作的程序。|
 |输入处理方法|Cmdlet 可用于处理其以输入形式所接收的记录的一种方法。 输入处理方法包括 BeginProcessing 方法、ProcessRecord 方法、EndProcessing 方法以及 StopProcessing 方法。|
-|清单模块|一个 Windows PowerShell 模块，它具有一个清单且其 ModulesToProcess 项为空。|
+|清单模块|一个 Windows PowerShell 模块，它具有一个清单且其 RootModule 项为空。|
 |模块清单|一个 Windows PowerShell 数据文件 (.psd1)，描述模块的内容并控制模块的处理方式。|
 |模块会话状态|包含 Windows PowerShell 模块公用和专用数据的会话状态。 此会话状态中的私有数据不可供 Windows PowerShell 会话的用户使用。|
 |非终止错误|不能阻止 Windows PowerShell 继续处理命令的错误。|
@@ -33,7 +33,7 @@ ms.lasthandoff: 08/08/2017
 |管|在 Windows PowerShell 中，将前一个命令的结果作为输入发送到管道中的下一个命令。|
 |管道|一系列由管道运算符 (&#124;) (ASCII 124) 连接的命令。 每个管道运算符将前一个命令的结果作为输入发送到下一个命令。|
 |PSSession|一种由用户创建、管理和关闭的 Windows PowerShell 会话类型。|
-|根模块|模块清单中在 ModuleToProcess 项中指定的模块。|
+|根模块|在模块清单的 RootModule 项中指定的模块。|
 |运行空间|在 Windows PowerShell 中，在其中执行管道中每个命令的操作环境。|
 |脚本块|在 Windows PowerShell 编程语言中，可作为单个单元使用的语句或表达式的一个集合。 脚本块可以接受参数并返回值。|
 |脚本模块|一个 Windows PowerShell 模块，其根模块是一个脚本模块文件 (.psm1)。 脚本模块可能包含或不包含模块清单。|
@@ -45,7 +45,7 @@ ms.lasthandoff: 08/08/2017
 |类型文件|一个 Windows PowerShell XML 文件，它具有 .ps1xml 扩展名且扩展 Windows PowerShell 中 Microsoft.NET Framework 类型的属性。|
 |动作|在 Windows PowerShell cmdlet 名称中连字符前面的单词。 它说明该 cmdlet 将执行的操作。|
 |Windows PowerShell|为 IT 管理员提供全面控制以及实现系统管理任务自动化的一个命令行 Shell 和基于任务的脚本技术。|
-|Windows PowerShell 命令|导致操作被执行的管道中的元素。 Windows PowerShell 命令可以在键盘上输入或以编程方式调用。|
+|Windows PowerShell 命令|导致操作被执行的管道中的元素。Windows PowerShell 命令可以在键盘上输入或以编程方式调用。|
 |Windows PowerShell 数据文件|具有 .psd1 文件扩展名的文本文件。 Windows PowerShell 将数据文件用于多种用途，例如存储模块清单数据和存储用于脚本国际化的已翻译的字符串。|
 |Windows PowerShell 驱动器|一个提供直接访问数据存储的虚拟驱动器。 它可以由 Windows PowerShell 提供程序定义或是在命令行中创建。 在命令行创建的驱动器是特定于会话的驱动器，并在会话关闭时丢失。|
 |Windows PowerShell 集成脚本环境 (ISE)|一个 Windows PowerShell 主机应用程序，使你能够运行命令并在友好、语法着色、符合 Unicode 的环境中编写、测试和调试脚本。|

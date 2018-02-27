@@ -2,25 +2,16 @@
 ms.date: 2017-08-09
 keywords: "powershell, cmdlet, 下载, 安装, 设置, windows 10, windows 8.1, windows 8.0, windows 7"
 title: "安装 Windows PowerShell"
-ms.openlocfilehash: ec8f09087a5c5f2e7ea6237faa01ea3f447ad1f3
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+ms.openlocfilehash: dffb6ec11ce265ebc4e6bc91f631650e1af5868d
+ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="installing-windows-powershell"></a>安装 Windows PowerShell
+从 Windows 7 SP1 和 Windows Server 2008 R2 SP1 开始，每个 Windows 中默认随附安装有 Windows PowerShell。
 
-从 Windows 7 SP1 和 Windows Server 2008 R2 SP1 开始，每个 Windows 中默认随附安装有 PowerShell。
-
-希望在计算机中安装 PowerShell 6 (beta) 的 Linux、macOS 和 Windows 用户需要：
-
-1. 从 [GitHub](https://github.com/powershell/powershell#get-powershell) 获取适用于指定 OS 和版本的 PowerShell
-1. 按照安装说明操作
-  - [Linux](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md)
-  - [macOS](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md)
-  - [Windows](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi)
-
-PowerShell 6 也可用于 Docker；请参阅 [Docker 安装](https://github.com/PowerShell/PowerShell/tree/master/docker)说明。
+如果你对 PowerShell 6 及更高版本感兴趣，则需要安装 PowerShell Core 而不是 Windows PowerShell。 关于相应的信息，请参阅[在 Windows 上安装 PowerShell Core](Installing-PowerShell-Core-on-Windows.md)。
 
 ## <a name="finding-powershell-in-windows-10-81-80-and-7"></a>在 Windows 10、8.1、8.0 和 7 中查找 PowerShell
 
@@ -65,7 +56,7 @@ Windows 7 SP1 | 单击左下角的 Windows 图标，在搜索框中键入 PowerS
 
 ## <a name="how-to-check-the-version-of-powershell"></a>如何检查 PowerShell 版本
 
-若要查看已安装的 PowerShell 版本，请启动 PowerShell 控制台（或 ISE），键入 `$PSVersionTable`，然后按“Enter”。
+若要查看已安装的 PowerShell 版本，请启动 PowerShell 控制台（或 ISE），键入 `$PSVersionTable`，然后按“Enter”。 查找 `PSVersion` 值。
 
 ## <a name="upgrading-existing-windows-powershell"></a>升级现有 Windows PowerShell
 
