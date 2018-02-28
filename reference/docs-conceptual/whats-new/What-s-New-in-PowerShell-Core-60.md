@@ -124,7 +124,7 @@ PowerShell Core 还包含一个启发式方法，通过该方法可在常用文�
 在许多情况下，通过社区的帮助，我们已添加了一些新功能和针对 cmdlet 的 bug 修补程序。
 在某些情况下，由于基础 .NET 层中缺失依赖项，因此功能已被删除或者不可用。
 
-大多随附 Windows 的模块（例如 `DnsClient`、`Hyper-V`、`NetTCPIP`、`Storage` 等）以及其他一些 Microsoft 产品（包括 Azure 和 Office）尚未显式移植到 .NET Core。
+大多随附 Windows 的模块（例如 `DnsClient`、`Hyper-V``NetTCPIP`、`Storage` 等）以及其他一些 Microsoft 产品（包括 Azure 和 Office）尚未显式移植到 .NET Core。
 PowerShell 团队正与这些产品组以及团队开展协作，以验证并将现有模块迁移到 PowerShell Core。
 通过使用 .NET Standard 和 [CDXML][]，其中许多传统 Windows PowerShell 模块看似确实可在 PowerShell Core 中运行，但是它们尚未经过正式验证，且不受正式支持。
 
@@ -235,7 +235,7 @@ PowerShell Core 更改默认编码以符合更广泛的生态系统。
 - 已将 `GitCommitId` 添加到 PowerShell Core 横幅。
   现在启动 PowerShell 时无需运行 `$PSVersionTable` 即可获取版本！ (#3916)（感谢 @iSazonov！）
 - 已在 `$PSHome` 中添加名为 `powershell.config.json` 的 JSON 配置文件，用以存储某些启动之前所需的设置（例如 `ExecutionPolicy`）。
-- 运行 Windows EXE 时不会阻止管道
+- 运行 Windows EXE 时请勿阻止管道
 - 已支持 COM 集合的枚举。 (#4553)
 
 ## <a name="cmdlet-updates"></a>Cmdlet 更新
@@ -361,8 +361,8 @@ PowerShell Core 更改默认编码以符合更广泛的生态系统。
   - OS 平台 (`$PSVersionTable.OSDescription`)
   - PowerShell 确切版本 (`$PSVersionTable.GitCommitId`)
 
-如果需要选择退出此遥测，只需删除 `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY`。
-删除该文件将免除所有遥测，即便是首次运行 PowerShell 也不例外。
+如果你想选择退出此遥测，只需删除 `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` 或使用以下值之一创建 `POWERSHELL_TELEMETRY_OPTOUT` 环境变量：`true`、`1` 或 `yes`。
+删除此文件或创建变量将免除所有遥测，即便是首次运行 PowerShell 也不例外。
 我们还计划将此遥测数据和从遥测中收集的见解公开在[社区仪表盘][community-dashboard]中。
 如需详细了解我们如何使用此数据，请阅读本[博客文章][telemetry-blog]。
 
