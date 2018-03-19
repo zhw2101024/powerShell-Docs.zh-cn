@@ -1,0 +1,18 @@
+- name: 概述
+  href: overview.md
+- name: 部署 JEA
+  items:
+    - name: 必备条件
+      href: prerequisites.md
+    - name: 角色功能
+      href: role-capabilities.md
+    - name: 会话配置
+      href: session-configurations.md
+    - name: 注册 JEA
+      href: register-jea.md
+    - name: 使用 JEA
+      href: using-jea.md
+    - name: 安全注意事项
+      href: security-considerations.md
+    - name: JEA 审核和报告
+      href: audit-and-report.md

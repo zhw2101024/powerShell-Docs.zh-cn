@@ -1,0 +1,128 @@
+- name: 概述
+  href: readme.md
+  items:
+    - name: 库
+      items:
+        - name: 开始使用
+          href: psgallery/psgallery_gettingstarted.md
+        - name: 运行状况
+          href: psgallery/psgallery_status.md
+        - name: 有关库的常见问题
+          href: psgallery/psgallery_faqs.md
+        - name: 库“项”选项卡
+          href: psgallery/psgallery_items_tab.md
+        - name: 库搜索语法
+          href: psgallery/psgallery_search_syntax.md
+        - name: 具有兼容 PSEditions 的项
+          href: psgallery/psgallery_pseditions.md
+        - name: 文件列表视图
+          href: psgallery/psgallery_filelist_feature.md
+        - name: 部署到 Azure 自动化
+          href: psgallery/psgallery_deploy_to_azure_automation.md
+        - name: 创建 PowerShellGallery 帐户
+          href: psgallery/psgallery_creating_an_account.md
+        - name: 创建和发布项目
+          href: psgallery/Creating-and-Publishing-an-item.md
+        - name: 发布指南和最佳做法
+          href: psgallery/psgallery-PublishingGuidelines.md
+        - name: 项清单和库 UI
+          href: psgallery/psgallery_ItemManifestAffectingUI.md
+        - name: 取消列出项
+          href: psgallery/psgallery_unlist_items.md
+        - name: 删除项
+          href: psgallery/Deleting-Items.md
+        - name: 管理项所有者
+          href: psgallery/Managing-Item-Owners.md
+        - name: 报告滥用行为
+          href: psgallery/psgallery_report_abuse.md
+        - name: 争议解决
+          href: psgallery/psgallery_dispute_resolution.md
+        - name: 联系项所有者
+          href: psgallery/psgallery_contacting_item_owners.md
+        - name: 联系管理员
+          href: psgallery/psgallery_contacting_administrators.md
+        - name: 通过社交媒体或发表评论提供反馈
+          href: psgallery/psgallery-SocialMediaFeedback.md
+        - name: 在项目详细信息中需要接受许可证
+          href: psgallery/psgallery_requires_license_acceptance.md
+        - name: 在部署到 Azure 自动化时需要接受许可证
+          href: psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md
+- name: PowerShellGet
+  href: psget/overview.md
+  items:
+    - name: 获取 PowerShellGet 模块
+      href: psget/get_psget_module.md
+    - name: 模块
+      items:
+        - name: 查找模块
+          href: psget/module/psget_find-module.md
+        - name: 查找 DSC 资源
+          href: psget/module/psget_find-dscresource.md
+        - name: 查找角色功能
+          href: psget/module/psget_find-rolecapability.md
+        - name: 查找命令
+          href: psget/module/psget_find-command.md
+        - name: 保存
+          href: psget/module/psget_save-module.md
+        - name: 安装
+          href: psget/module/psget_install-module.md
+        - name: 更新
+          href: psget/module/psget_update-module.md
+        - name: 卸载
+          href: psget/module/psget_uninstall-module.md
+        - name: 获取已安装的模块
+          href: psget/module/psget_get-installedmodule.md
+        - name: 更新模块清单
+          href: psget/module/psget_update-modulemanifest.md
+        - name: 发布
+          href: psget/module/psget_publish-module.md
+        - name: PSEditions 模块
+          href: psget/module/modulewithpseditionsupport.md
+        - name: 需要接受许可证的模块
+          href: psget/module/RequireLicenseAcceptance.md
+        - name: 预发行版本
+          href: psget/module/PreReleaseModule.md
+        - name: 疑难解答
+          href: psget/psget_cmdlets_troubleshooting.md
+    - name: 脚本
+      items:
+        - name: 查找
+          href: psget/script/psget_find-script.md
+        - name: 保存
+          href: psget/script/psget_save-script.md
+        - name: 安装
+          href: psget/script/psget_install-script.md
+        - name: 更新
+          href: psget/script/psget_update-script.md
+        - name: 卸载
+          href: psget/script/psget_uninstall-script.md
+        - name: 获取已安装的脚本
+          href: psget/script/psget_get-installedscript.md
+        - name: 使用元数据创建脚本文件
+          href: psget/script/psget_new-scriptfileinfo.md
+        - name: 测试脚本文件元数据
+          href: psget/script/psget_test-scriptfileinfo.md
+        - name: 更新脚本文件元数据
+          href: psget/script/psget_update-scriptfileinfo.md
+        - name: 发布
+          href: psget/script/psget_publish-script.md
+        - name: PSEditions 脚本
+          href: psget/script/scriptwithpseditionsupport.md
+        - name: 需要为脚本接受许可证
+          href: psget/script/script_RequireLicenseAcceptance.md
+        - name: 预发行版本
+          href: psget/script/PreReleaseScript.md
+    - name: 存储库管理
+      items:
+        - name: 启动 NuGet 提供程序和 NuGet.exe
+          href: psget/repository/bootstrapping_nuget_proivder_and_exe.md
+        - name: 注册存储库
+          href: psget/repository/psget_register-psrepository.md
+        - name: 列出已注册的存储库
+          href: psget/repository/psget_get-psrepository.md
+        - name: 修改已注册的存储库
+          href: psget/repository/psget_set-psrepository.md
+        - name: 取消注册存储库
+          href: psget/repository/psget_unregister-psrepository.md
+    - name: PackageManagement Cmdlet
+      href: psget/oneget/PackageManagement_cmdlets.md

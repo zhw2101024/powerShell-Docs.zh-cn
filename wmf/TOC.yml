@@ -1,0 +1,209 @@
+- name: Windows Management Framework (WMF) 概述
+  href: README.md
+- name: WMF 5.1
+  href: 5.1/release-notes.md
+  items:
+    - name: 新方案和功能
+      href: 5.1/scenarios-features.md
+      items:
+        - name: Desired State Configuration (DSC) 中的改进
+          href: 5.1/DSC-improvements.md
+        - name: PowerShell 控制台中的改进
+          href: 5.1/console-improvements.md
+        - name: PowerShell 引擎中的改进
+          href: 5.1/engine-improvements.md
+        - name: 程序包管理中的改进
+          href: 5.1/package-management-improvements.md
+        - name: JEA 中的改进
+          href: 5.1/jea-improvements.md
+        - name: 目录 cmdlet
+          href: 5.1/catalog-cmdlets.md
+        - name: WMF 5.1 中修复的 bug
+          href: 5.1/bugfixes.md
+    - name: 安装和配置
+      href: 5.1/install-configure.md
+    - name: 已知问题
+      href: 5.1/known-issues.md
+    - name: 兼容性
+      href: 5.1/Compatibility.md
+    - name: 产品兼容性
+      href: 5.1/productincompat.md
+- name: WMF 5.0
+  href: 5.0/releasenotes.md
+  items:
+    - name: 安装详细信息
+      href: 5.0/requirements.md
+    - name: 已知问题和限制
+      href: 5.0/limitation_overview.md
+      items:
+        - name: Desired State Configuration (DSC) 已知问题
+          href: 5.0/limitation_dsc.md
+    - name: 产品兼容性状态
+      href: 5.0/productincompat.md
+    - name: 由 WMF 5.0 启用的方案
+      href: ''
+      items:
+        - name: Just Enough Administration (JEA)
+          href: 5.0/jea_overview.md
+          items:
+            - name: 创建并连接到 JEA 终结点
+              href: 5.0/jea_endpoint.md
+            - name: JEA 报告
+              href: 5.0/jea_report.md
+        - name: 使用 PowerShell 类创建自定义类型
+          href: 5.0/class_overview.md
+          items:
+            - name: 定义自定义类型
+              href: 5.0/class_newtype.md
+            - name: 声明基类
+              href: 5.0/class_base.md
+            - name: 声明已实现的接口
+              href: 5.0/class_interface.md
+            - name: 调用基类构造函数
+              href: 5.0/class_baseconstructor.md
+            - name: 调用基类方法
+              href: 5.0/class_basemethod.md
+        - name: PowerShell 脚本调试中的改进
+          href: 5.0/debug_overview.md
+        - name: Desired State Configuration (DSC) 中的改进
+          href: 5.0/dsc_improvements.md
+          items:
+            - name: 配置
+              href: ''
+              items:
+                - name: 指定跨节点依赖关系
+                  href: 5.0/dsc_waitfor.md
+                - name: 已加密 MOF
+                  href: 5.0/dsc_encryptedmof.md
+                - name: DSC 配置的帮助支持
+                  href: 5.0/dsc_confighelp.md
+                - name: 使用 PowerShell ISE 创作改进
+                  href: 5.0/dsc_authoring.md
+                - name: 配置中完全相同的重复资源的限额
+                  href: 5.0/dsc_identicalduplicate.md
+                - name: Import-DscResource 关键字支持 -ModuleVersion 参数
+                  href: 5.0/dsc_importdscresource.md
+                - name: 对 Configuration 关键字的 WOW64 支持
+                  href: 5.0/dsc_wow64.md
+            - name: 资源
+              href: ''
+              items:
+                - name: 基于类的 DSC 资源
+                  href: 5.0/dsc_classbasedresource.md
+                - name: DSC 资源脚本调试
+                  href: 5.0/dsc_resourcedebugging.md
+                - name: 对 DSC 资源的自动 RunAs 支持
+                  href: 5.0/dsc_runas.md
+                - name: 对 DSC 资源的并行版本控制支持
+                  href: 5.0/dsc_sxsresource.md
+                - name: 新的随机资源
+                  href: 5.0/dsc_newresources.md
+            - name: 本地 Configuration Manager
+              href: ''
+              items:
+                - name: 使用多个配置片段配置节点
+                  href: 5.0/dsc_partialconfig.md
+                  items:
+                    - name: 对混合 RefreshMode 的支持
+                      href: 5.0/dsc_partialconfig_mixedmode.md
+                - name: 使用新的属性配置 DSC 引擎
+                  href: 5.0/dsc_metaconfiguration.md
+                - name: 关于 LCM 状态的详细信息
+                  href: 5.0/dsc_lcmstate.md
+                - name: RefreshMode 和 ConfigurationMode 的频率无需是彼此的倍数
+                  href: 5.0/dsc_freqnomultiple.md
+                - name: RefreshMode 属性的附加值
+                  href: 5.0/dsc_refreshmode.md
+            - name: Cmdlet
+              href: ''
+              items:
+                - name: 关于配置状态的详细信息
+                  href: 5.0/dsc_getconfigurationstatus.md
+                - name: Test-DscConfiguration Cmdlet 支持引用配置
+                  href: 5.0/dsc_testconfiguration.md
+                - name: 直接访问 DSC 资源方法
+                  href: 5.0/dsc_directaccess.md
+                - name: 传递配置文档而不应用
+                  href: 5.0/dsc_publishconfig.md
+                - name: 删除 DSC 文档
+                  href: 5.0/dsc_removeconfigdoc.md
+                - name: 统一且一致的状态和状态表示形式
+                  href: 5.0/dsc_statestatus.md
+                - name: Set-DscLocalConfigurationManager Cmdlet 支持 -Force 参数
+                  href: 5.0/dsc_setdsclcm.md
+            - name: 请求模式
+              href: ''
+              items:
+                - name: DSC 配置的按需请求
+                  href: 5.0/dsc_updateconfig.md
+                - name: 节点和配置 ID 的分离
+                  href: 5.0/dsc_nodeid.md
+                - name: 配置、资源和报告存储库的分隔
+                  href: 5.0/dsc_repository.md
+                - name: 向中央位置报告配置状态
+                  href: 5.0/dsc_reporting.md
+        - name: 审核使用脚本和日志记录的 PowerShell 使用情况
+          href: 5.0/audit_overview.md
+          items:
+            - name: 增强的脚本选项
+              href: 5.0/audit_transcript.md
+            - name: 脚本跟踪和日志记录
+              href: 5.0/audit_script.md
+            - name: 加密消息语法 (CMS) Cmdlet
+              href: 5.0/audit_cms.md
+        - name: 使用 PackageManagement 进行软件发现、安装和盘存
+          href: 5.0/oneget_overview.md
+          items:
+            - name: PackageManagement Cmdlet
+              href: 5.0/oneget_cmdlets.md
+        - name: 使用 PowerShellGet 进行 PowerShell 模块发现、安装和盘存
+          href: 5.0/psget_module_overview.md
+          items:
+            - name: 注册 PowerShell 存储库
+              href: 5.0/psget_psrepository.md
+            - name: PowerShell 5.0 或更高版本上的并行版本支持
+              href: 5.0/psget_modulesxsinstall.md
+            - name: 模块依赖项的安装
+              href: 5.0/psget_moduledependency.md
+            - name: 用于模块管理的 PowerShellGet Cmdlet
+              href: 5.0/psget_modulecmdlets.md
+        - name: 使用 PowerShellGet 进行 PowerShell 脚本发现、安装和管理
+          href: 5.0/psget_script_overview.md
+          items:
+            - name: 用于脚本管理的 PowerShellGet cmdlet
+              href: 5.0/psget_scriptcmdlets.md
+        - name: 根据社区反馈的新增和更新的 Cmdlet
+          href: 5.0/feedback_cmdlets.md
+          items:
+            - name: 使用项 Cmdlet 的符号链接
+              href: 5.0/feedback_symbolic.md
+            - name: 存档 Cmdlet
+              href: 5.0/feedback_archive.md
+            - name: 剪贴板 Cmdlet
+              href: 5.0/feedback_clipboard.md
+            - name: Convert-String
+              href: 5.0/feedback_convertstring.md
+            - name: 提取和分析字符串外的结构化对象
+              href: 5.0/feedback_convertfromString.md
+            - name: Format-Hex
+              href: 5.0/feedback_formathex.md
+            - name: NoNewLine 参数
+              href: 5.0/feedback_nonewline.md
+            - name: New-TemporaryFile
+              href: 5.0/feedback_tempfile.md
+            - name: New-Guid
+              href: 5.0/feedback_newguid.md
+            - name: Get-ChildItem 具有 -Depth 参数
+              href: 5.0/feedback_getchilditem.md
+            - name: 对 FileInfo 对象的更新
+              href: 5.0/feedback_fileinfo.md
+            - name: 对声明版本范围的模块支持（1.* 等）
+              href: 5.0/feedback_moduleversionranges.md
+        - name: 信息流
+          href: 5.0/informationstream_overview.md
+        - name: 基于 OData 终结点生成 PowerShell Cmdlet
+          href: 5.0/odata_overview.md
+        - name: PowerShell 网络交换机管理
+          href: 5.0/networkswitch_overview.md
+        - name: 软件清单日志记录 (SIL)
+          href: 5.0/sil_overview.md
