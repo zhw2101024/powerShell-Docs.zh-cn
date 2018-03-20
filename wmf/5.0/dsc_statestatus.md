@@ -4,10 +4,10 @@ author: JKeithB
 ms.topic: reference
 keywords: "wmf,powershell,安装程序"
 ms.openlocfilehash: 32f8e20889ddc526def4b925e8d0761a2e851e19
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
-ms.translationtype: HT
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>统一且一致的状态和状态表示形式
 
