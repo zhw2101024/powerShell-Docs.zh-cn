@@ -2,11 +2,11 @@
 ms.date: 2017-06-27
 keywords: powershell,cmdlet
 title: "Windows PowerShell Web 访问的授权规则和安全功能"
-ms.openlocfilehash: 6b50fdc0f2854d8af6147432fed1a155d26f57e7
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 19e4aa1bb55178ec2634af0771afe2db5db3423c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 访问的授权规则和安全功能
 
@@ -24,7 +24,7 @@ Windows PowerShell Web 访问的访问控制通过使用下表所述的一组 Wi
 没有相当的 GUI 可用于添加或管理授权规则。
 请参阅 [Windows PowerShell Web 访问 Cmdlet](cmdlets/web-access-cmdlets.md)。
 
-管理员可以为 Windows PowerShell Web 访问定义 0-n 条身份验证规则。
+管理员可为 Windows PowerShell Web 访问定义 0-*n* 条身份验证规则。
 默认的安全性较为严格，而非宽松；零条身份验证规则意味着无用户可访问任何内容。
 
 Windows Server 2012 R2 中的 [Add-PswaAuthorizationRule](cmdlets/add-pswaauthorizationrule.md) 和 [Test-PswaAuthorizationRule](cmdlets/test-pswaauthorizationrule.md) 包含一个 Credential 参数，该参数使你可从远程计算机或在活动的 Windows PowerShell Web 访问会话中添加和测试 Windows PowerShell Web 访问授权规则。
@@ -32,7 +32,7 @@ Windows Server 2012 R2 中的 [Add-PswaAuthorizationRule](cmdlets/add-pswaauthor
 若要创建一个包含要传递到远程计算机的凭据的 PSCredential 对象，请运行 [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential) cmdlet。
 
 Windows PowerShell Web 访问身份验证规则是白名单规则。
-每条规则定义了用户、目标计算机和特定的 Windows PowerShell [会话配置](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations)（也称作终结点或运行空间）在特定目标计算机上的允许连接。
+每条规则定义了用户、目标计算机和特定的 Windows PowerShell [会话配置](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations)（也称作终结点或运行空间）在特定目标计算机上的允许连接。
 有关运行空间的说明，请参阅 [Beginning Use of PowerShell Runspaces](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)（PowerShell 运行空间入门）
 
 > **安全说明**
@@ -103,7 +103,7 @@ Windows PowerShell Web 访问登录页面需要一组凭据（用户名和密码
 Windows PowerShell Web 访问的最后安全层是目标计算机自身的安全配置。
 用户必须持有在目标计算机上配置的适当访问权限，并且按照 Windows PowerShell Web 访问授权规则，运行通过 Windows PowerShell Web 访问影响目标计算机的 Windows PowerShell 基于 Web 的控制台。
 
-该层提供相同的安全机制；如果用户尝试通过运行 [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Enter-PSSession) 或 [New-PSSession](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/new-pssession) cmdlet，为 Windows PowerShell 中的目标计算机创建远程 Windows PowerShell 会话，此类机制将评估连接尝试。
+该层提供相同的安全机制；如果用户尝试通过运行 [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Enter-PSSession) 或 [New-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/new-pssession) cmdlet，为 Windows PowerShell 中的目标计算机创建远程 Windows PowerShell 会话，此类机制将评估连接尝试。
 
 默认情况下，Windows PowerShell Web 访问使用主要用户名和密码，在网关和目标计算机上进行身份验证。
 在标题为“可选的连接设置”部分，基于 Web 的登录页面为用户提供一个为目标计算机提供其他凭据的选项（如有必要）。
@@ -186,7 +186,7 @@ Remove-PswaAuthorizationRule -ID <rule ID>
 - 有些管理员为某些用户提供的访问权限要比其他用户多。 例如，管理员创建两个用户组，分别是 **Admins** 和 **BasicSupport**。 管理员还创建名为 **PswaEndpoint** 的终结点（其中带有受限的运行空间），并定义以下两条规则：**Admins,\*,\*** 和 **BasicSupport,\*,PswaEndpoint**。 第一条规则为**Admin**组中的所有用户提供访问所有计算机的权限，第二条规则为**BasicSupport**组中的所有用户仅提供访问那些带有**PswaEndpoint**的计算机的权限。
 
 - 管理员已设置专用测试环境，希望可让所有授权的网络用户通过他们经常访问的网络访问所有计算机，并持有对所有他们经常访问的会话配置的访问权限。 因为这是专用测试环境，管理员创建了不安全的授权规则。
-  - 管理员运行的 cmdlet `Add-PswaAuthorizationRule * * *`使用通配符 **\*** 来表示所有用户、所有计算机和所有配置。
+  - 管理员运行的 cmdlet `Add-PswaAuthorizationRule * * *`使用通配符 * **\*** 来表示所有用户、所有计算机和所有配置。
   - 此规则与下列各项等效：`Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`。
 
   >**注意**：

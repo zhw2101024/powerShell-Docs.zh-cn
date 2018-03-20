@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "MSFT_DSCLocalConfigurationManager 类的 ResourceTest 方法"
-ms.openlocfilehash: 3c88f74c5f623502e8cbe0d7aa7390fca75569a9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 799b1cd91dfacf25c0e5e734ca96d20a776103f0
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="resourcetest-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类的 ResourceTest 方法
 
@@ -35,7 +35,7 @@ ModuleName \[in\]
 包含要调用的资源的模块名称。
 
 resourceProperty \[in\]  
-分别在哈希表中将资源属性名称及其值指定为键和值。 使用 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) cmdlet 可以发现资源属性及其类型。
+分别在哈希表中将资源属性名称及其值指定为键和值。 使用 [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) cmdlet 可以发现资源属性及其类型。
 
 InDesiredState \[out\]  
 返回时，如果目标节点处于所需状态，会将此属性设置为 **true**。

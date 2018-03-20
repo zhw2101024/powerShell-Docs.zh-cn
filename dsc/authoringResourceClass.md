@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "使用 PowerShell 类编写自定义 DSC 资源"
-ms.openlocfilehash: b24351a49ca11dac4687efdce39d400bfd00f399
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 53757f965c51fee699409b5a8ecda802dda9801f
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>使用 PowerShell 类编写自定义 DSC 资源
 
@@ -69,7 +69,7 @@ DSC 资源架构被定义为类的属性。 我们声明下列三个属性。
 - **DscProperty(NotConfigurable)**：属性为只读属性。 使用此特性标记的属性不能通过配置进行设置，但出现时使用 **Get()** 方法进行填充。
 - **DscProperty()**：属性可配置，但不是必需的。
 
-**$Path** 和 **$SourcePath** 属性都是字符串。 **$CreationTime** 是一个 [DateTime](https://technet.microsoft.com/en-us/library/system.datetime.aspx) 属性。 **$Ensure** 属性是枚举类，定义如下。
+**$Path** 和 **$SourcePath** 属性都是字符串。 **$CreationTime** 是一个 [DateTime](https://technet.microsoft.com/library/system.datetime.aspx) 属性。 **$Ensure** 属性是枚举类，定义如下。
 
 ```powershell
 enum Ensure 

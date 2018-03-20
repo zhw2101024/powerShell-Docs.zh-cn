@@ -4,11 +4,11 @@ contributor: manikb
 ms.topic: reference
 keywords: "库,powershell,cmdlet,psget"
 title: Find-DscResource
-ms.openlocfilehash: 37ba7925d6f73c453126f25e0818b3f8839d3b3b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 6c5713f122d48e9c9d5e0aa45dc14047afc56102
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="find-dscresource"></a>Find-DscResource
 
@@ -16,7 +16,7 @@ ms.lasthandoff: 06/12/2017
 
 ## <a name="description"></a>说明
 
-Find-DscResource cmdlet 查找已注册的存储库中与指定条件匹配的模块中所包含的[所需状态配置 (DSC)](https://msdn.microsoft.com/en-us/PowerShell/dsc/overview) 资源。
+Find-DscResource cmdlet 查找已注册的存储库中与指定条件匹配的模块中所包含的[所需状态配置 (DSC)](https://msdn.microsoft.com/PowerShell/dsc/overview) 资源。
 对于此 cmdlet 查找的每个模块，Find-DscResource 返回一个 PSGetDscResourceInfo 对象，可以将其通过管道传递到 Install-Module 以安装包含此 cmdlet 返回的资源的模块。
 
 DSC 是 Windows PowerShell 中的新管理平台，可用于部署和管理软件服务的配置数据，并管理这些服务的运行的环境。

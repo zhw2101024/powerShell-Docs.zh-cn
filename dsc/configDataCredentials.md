@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "配置数据中的凭据选项"
-ms.openlocfilehash: 15cdb29127d9774c58e1d6518bbba56273e7defd
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 6ddf82c2b63309255ec3187d650677a6c3c2afb0
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="credentials-options-in-configuration-data"></a>配置数据中的凭据选项
 >适用于：Windows PowerShell 5.0
@@ -156,7 +156,7 @@ Group [String] #ResourceName
 }
 ```
 
-此示例使用来自 `PSDesiredStateConfiguration` 内置 DSC 资源模块中的 [Group](https://msdn.microsoft.com/en-us/powershell/dsc/groupresource) 资源。
+此示例使用来自 `PSDesiredStateConfiguration` 内置 DSC 资源模块中的 [Group](https://msdn.microsoft.com/powershell/dsc/groupresource) 资源。
 它可以创建本地组并添加或删除成员。
 它同时接受 `Credential` 属性和自动 `PsDscRunAsCredential` 属性。
 但是该资源只使用 `Credential` 属性。
@@ -231,7 +231,7 @@ for node 'localhost'.
 ## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
 
 第一条错误消息具有一个带有文档的 URL。
-此链接说明如何使用 [ConfigurationData](https://msdn.microsoft.com/en-us/powershell/dsc/configdata) 结构和证书来加密密码。
+此链接说明如何使用 [ConfigurationData](https://msdn.microsoft.com/powershell/dsc/configdata) 结构和证书来加密密码。
 有关证书和 DSC 的详细信息，[请阅读此文章](http://aka.ms/certs4dsc)。
 
 要强制使用纯文本密码，资源需要下列配置数据部分中的 `PsDscAllowPlainTextPassword` 关键字：

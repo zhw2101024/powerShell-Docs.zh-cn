@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "分离配置和环境数据"
-ms.openlocfilehash: cf0d4a12efe4998176d3c80841740c5f9d9a103b
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 18b18d805ac248b29526862591df5f0ff785937b
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="separating-configuration-and-environment-data"></a>分离配置和环境数据
 
@@ -143,7 +143,7 @@ Configuration MyWebApp
     Import-DscResource -Module xSqlPs
     Import-DscResource -Module xWebAdministration
 
-    Node $AllNodes.Where{$_.Role -contains "MSSQL"}.Nodename
+    Node $AllNodes.Where{$_.Role -contains "MSSQL"}.NodeName
    {
         # Install prerequisites
         WindowsFeature installdotNet35

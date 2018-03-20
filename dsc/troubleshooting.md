@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "DSC 故障排除"
-ms.openlocfilehash: 4141e1f3304460dcaf310ce603fdc5d9550a5069
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: cdb11a80daecec0e0d01071752612663ac69ac6d
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="troubleshooting-dsc"></a>DSC 故障排除
 
@@ -21,7 +21,7 @@ Windows PowerShell Desired State Configuration (DSC) 依赖 WinRM。 在 Windows
 
 ## <a name="using-get-dscconfigurationstatus"></a>使用 Get-DscConfigurationStatus
 
-[Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx) cmdlet 从目标节点中获取有关配置状态的信息。 将返一个回富对象，它包含有关配置运行成功与否的高级信息。 你可以深入探究该对象，以查明有关配置运行的详细信息，例如：
+[Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) cmdlet 从目标节点中获取有关配置状态的信息。 将返一个回富对象，它包含有关配置运行成功与否的高级信息。 你可以深入探究该对象，以查明有关配置运行的详细信息，例如：
 
 * 失败的所有资源
 * 请求重新启动的任何资源
@@ -621,5 +621,5 @@ onlyProperty                            PSComputerName
 * [构建自定义 Windows PowerShell Desired State Configuration 资源](authoringResource.md)
 
 ### <a name="other-resources"></a>其他资源
-* [Windows PowerShell Desired State Configuration Cmdlet](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)
+* [Windows PowerShell Desired State Configuration Cmdlet](https://technet.microsoft.com/library/dn521624(v=wps.630).aspx)
 

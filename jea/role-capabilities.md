@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea,powershell,安全性"
 title: "JEA 角色功能"
-ms.openlocfilehash: 10f5f390daccbb012be6ee7272041e777810ee12
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 083cab3b44348168fe20e8355f5076b28be78702
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="jea-role-capabilities"></a>JEA 角色功能
 
@@ -86,7 +86,7 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 ```
 
 > [!NOTE]
-> 即使限制可用参数，仍始终允许使用[常用 PowerShell 参数](https://technet.microsoft.com/en-us/library/hh847884.aspx)。
+> 即使限制可用参数，仍始终允许使用[常用 PowerShell 参数](https://technet.microsoft.com/library/hh847884.aspx)。
 > 不可在参数字段中明确列出这些参数。
 
 下表介绍自定义可见 cmdlet 或函数的各种方式。
@@ -111,7 +111,7 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 
 若如此操作，ValidatePattern 将覆盖 ValidateSet。
 
-有关 ValidatePattern 的详细信息，请参阅[*你好，脚本专家*博文](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/)和 [PowerShell 正则表达式](https://technet.microsoft.com/en-us/library/hh847880.aspx)参考内容。
+有关 ValidatePattern 的详细信息，请参阅[*你好，脚本专家*博文](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/)和 [PowerShell 正则表达式](https://technet.microsoft.com/library/hh847880.aspx)参考内容。
 
 ### <a name="allowing-external-commands-and-powershell-scripts"></a>允许使用外部命令和 PowerShell 脚本
 
@@ -128,7 +128,7 @@ VisibleExternalCommands = 'C:\Windows\System32\whoami.exe', 'C:\Program Files\Co
 例如，考虑文件服务器管理员的角色，该管理员想要查看本地计算机托管的网络共享。
 一种检查方法是使用 `net share`。
 但是，允许 net.exe 会带来很大风险，因为管理员可轻松使用该命令获取 `net group Administrators unprivilegedjeauser /add` 的管理员权限。
-更好的方法是允许使用 [Get-SmbShare](https://technet.microsoft.com/en-us/library/jj635704.aspx)，该命令可实现相同的结果，但作用域更受限制。
+更好的方法是允许使用 [Get-SmbShare](https://technet.microsoft.com/library/jj635704.aspx)，该命令可实现相同的结果，但作用域更受限制。
 
 在 JEA 会话中向用户提供外部命令时，请始终指定可执行文件的完整路径，确保不会转而执行系统其他位置中名称相似（且可能恶意）的程序。
 

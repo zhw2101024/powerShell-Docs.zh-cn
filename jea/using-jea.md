@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea,powershell,安全性"
 title: "使用 JEA"
-ms.openlocfilehash: 9996a432bca27240e0f08adf932126ced116985d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: f0c22bf0f823b9fafa203e7f98049a6a6b3b7c05
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="using-jea"></a>使用 JEA
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 06/12/2017
 - 在该计算机上注册的 JEA 终结点名称
 - 该计算机有权访问 JEA 终结点的凭据
 
-获取该信息后，可以使用 [New-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/New-PSSession) 或 [Enter-PSSession](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/enter-pssession) 开始 JEA 会话。
+获取该信息后，可以使用 [New-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/New-PSSession) 或 [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/enter-pssession) 开始 JEA 会话。
 
 ```powershell
 $nonAdminCred = Get-Credential
@@ -107,7 +107,7 @@ Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredComman
 ```
 
 还可以使用 [Export-pssession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession) 通过隐式远程处理保留代理 cmdlet。
-有关隐式远程处理的详细信息，请参阅 [Import-PSSession](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/import-pssession) 和 [Import-Module](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/import-module) 的帮助文档。
+有关隐式远程处理的详细信息，请参阅 [Import-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/import-pssession) 和 [Import-Module](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/import-module) 的帮助文档。
 
 ## <a name="using-jea-programatically"></a>以编程方式使用 JEA
 

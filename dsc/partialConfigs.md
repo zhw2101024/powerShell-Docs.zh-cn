@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "PowerShell Desired State Configuration 部分配置"
-ms.openlocfilehash: 66791bb7b14898d292b9da38dd27ba45b7c75d88
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 4401ea80cffd09f4b92c9fcca16d5dcad7f6a327
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell Desired State Configuration 部分配置
 
@@ -18,10 +18,10 @@ ms.lasthandoff: 01/17/2018
 可以在推送模式、请求模式或两种模式的组合下使用部分配置。
 
 ## <a name="partial-configurations-in-push-mode"></a>推送模式下的部分配置
-若要在推送模式下使用部分配置，你需要在目标节点上配置 LCM 以接收部分配置。 必须使用 Publish-DSCConfiguration cmdlet 将每个部分配置推送到目标。 然后，目标节点将部分配置组合成为单个配置。你可以通过调用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet 来应用配置。
+若要在推送模式下使用部分配置，你需要在目标节点上配置 LCM 以接收部分配置。 必须使用 Publish-DSCConfiguration cmdlet 将每个部分配置推送到目标。 然后，目标节点将部分配置组合成为单个配置。你可以通过调用 [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet 来应用配置。
 
 ### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>针对推送模式部分配置来配置 LCM
-若要针对推送模式下的部分配置来配置 LCM，你可以为每个部分配置创建带有一个 **PartialConfiguration** 块的 **DSCLocalConfigurationManager** 配置。 有关配置 LCM 的详细信息，请参阅 [Windows 配置本地配置管理器](https://technet.microsoft.com/en-us/library/mt421188.aspx)。 下面的示例显示了需要两个部分配置的 LCM 配置：一个用于部署操作系统，另一个用于部署和配置 SharePoint。
+若要针对推送模式下的部分配置来配置 LCM，你可以为每个部分配置创建带有一个 **PartialConfiguration** 块的 **DSCLocalConfigurationManager** 配置。 有关配置 LCM 的详细信息，请参阅 [Windows 配置本地配置管理器](https://technet.microsoft.com/library/mt421188.aspx)。 下面的示例显示了需要两个部分配置的 LCM 配置：一个用于部署操作系统，另一个用于部署和配置 SharePoint。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -51,7 +51,7 @@ PartialConfigDemo
 
 ### <a name="publishing-and-starting-push-mode-partial-configurations"></a>发布和启动推送模式部分配置
 
-然后，可以对每个配置调用 [Publish-DSCConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration)，将包含配置文档的文件夹作为 **Path** 参数进行传递。 `Publish-DSCConfiguration`将配置 MOF 文件放置到目标节点。 发布两个配置后，即可在目标节点上调用 `Start-DSCConfiguration –UseExisting`。
+然后，可以对每个配置调用 [Publish-DSCConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration)，将包含配置文档的文件夹作为 **Path** 参数进行传递。 `Publish-DSCConfiguration`将配置 MOF 文件放置到目标节点。 发布两个配置后，即可在目标节点上调用 `Start-DSCConfiguration –UseExisting`。
 
 例如，如果你在创作节点上编译了以下配置 MOF 文档：
 
@@ -96,7 +96,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 17     Job17           Configuratio... Running       True            TestVM            Start-DscConfiguration...
 ```
 
->**注意：**运行 [Publish-DSCConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) cmdlet 的用户必须在目标节点上拥有管理员权限。
+>**注意：**运行 [Publish-DSCConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) cmdlet 的用户必须在目标节点上拥有管理员权限。
 
 ## <a name="partial-configurations-in-pull-mode"></a>请求模式下的部分配置
 
@@ -377,5 +377,5 @@ SharePointConfig
 **概念**
 [Windows PowerShell Desired State Configuration 请求服务器](pullServer.md) 
 
-[Windows 配置本地配置管理器](https://technet.microsoft.com/en-us/library/mt421188.aspx) 
+[Windows 配置本地配置管理器](https://technet.microsoft.com/library/mt421188.aspx) 
 

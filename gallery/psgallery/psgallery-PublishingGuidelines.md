@@ -5,11 +5,11 @@ ms.topic: conceptual
 keywords: "库,powershell,cmdlet,psgallery"
 description: "面向发行者的指南"
 title: "PowerShell 库发布指南和最佳做法"
-ms.openlocfilehash: 882a33c00cc024ad2bbb05a3283e058a61035e3a
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 25bbe31bcc805808c311829598e3c29991f72aad
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell 库发布指南和最佳做法
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 10/13/2017
 下面的指南介绍了高质量 PowerShell 库项有哪些关键要素、哪些是最重要的可选清单设置、如何使用初始审阅者的反馈和 [Powershell 脚本分析器](https://aka.ms/psscriptanalyzer)改进代码、如何对模块进行版本控制，以及有关如何使用已共享内容的文档、测试和示例。
 本文档的大部分内容遵循有关发布[高质量 DSC 资源模块](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md)的指南。
 
-有关将项发布到 PowerShell 库的机制，请参阅[创建和发布项](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/creating-and-publishing-an-item)。
+有关将项发布到 PowerShell 库的机制，请参阅[创建和发布项](https://msdn.microsoft.com/powershell/gallery/psgallery/creating-and-publishing-an-item)。
 
 欢迎随时提供有关这些指南的反馈。 如有任何反馈，请在我们的 [Github 文档存储库](https://github.com/powershell/powershell-docs/)中记录待解决问题。
 
@@ -71,7 +71,7 @@ MSDN 中的多篇文章都介绍了如何为 PowerShell 项提供文档，包括
 * [如何编写 Cmdlet 帮助](https://go.microsoft.com/fwlink/?LinkID=123415)中介绍了有关如何提供帮助的指南
 * 创建 cmdlet 帮助，这是最适合任何 PowerShell 脚本、函数或 cmdlet 的方法。
   若要了解如何创建 cmdlet 帮助，请从 MSDN 库中的 [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415)（如何编写 Cmdlet 帮助）入手。
-  若要在脚本中添加帮助，请参阅[关于基于评论的帮助](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help)。
+  若要在脚本中添加帮助，请参阅[关于基于评论的帮助](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help)。
 * 许多模块还包括文本格式的文档，如 MarkDown 文件。
   当在 Markdown 作为一种广泛使用格式的 Github 中有项目网站时，这尤为有用。
   最佳做法是使用 [Github 式 Markdown](https://help.github.com/categories/writing-on-github/)

@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "如何在 Windows PowerShell ISE 中调试脚本"
-ms.openlocfilehash: 0ec520dfcba5e4562258256570f140e618e77cdb
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: d37fb6cdcd5782cf8eff89c2b124b7c81fdaca71
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中调试脚本
 
@@ -42,7 +42,7 @@ Set-PSBreakpoint -Script sample.ps1 -Variable Server
 在“调试”菜单上，单击“列表断点”。 以下脚本是如何通过使用 [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) cmdlet 从控制台窗格中列出所有断点的示例。
 
 ``` PowerShell
-# This command lists all breakpoints in the current session. 
+# This command lists all breakpoints in the current session.
 Get-PSBreakpoint
 ```
 
@@ -82,7 +82,7 @@ Disable-PSBreakpoint -Id 0
 禁用断点不会将断点移除；只是会将其关闭，直至启用。  若要禁用在当前会话中的所有断点，在“调试”菜单上，单击“禁用所有断点”。 以下脚本是如何通过使用 [Disable-PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) cmdlet 从控制台窗格中禁用所有断点的示例。
 
 ``` PowerShell
-# This command disables all breakpoints in the current session. 
+# This command disables all breakpoints in the current session.
 # You can abbreviate this command as: "gbp | dbp".
 Get-PSBreakpoint | Disable-PSBreakpoint
 ```
@@ -99,13 +99,13 @@ Enable-PSBreakpoint -Id 0, 1, 5
 若要启用在当前会话中定义的所有断点，在“调试”菜单上，单击“启用所有断点”。 以下脚本是如何通过使用 [Enable-PSBreakpoint](https://technet.microsoft.com/library/739e1091-3b3f-405f-a428-bec7543e5df0) cmdlet 从控制台窗格中启用所有断点的示例。
 
 ``` PowerShell
-# This command enables all breakpoints in the current session. 
+# This command enables all breakpoints in the current session.
 # You can abbreviate the command by using their aliases: "gbp | ebp".
 Get-PSBreakpoint | Enable-PSBreakpoint
 ```
 
 ## <a name="how-to-manage-a-debugging-session"></a>如何管理调试会话
-开始调试之前，必须设置一个或多个断点。 你不能设置一个断点，除非已保存你想要调试的脚本。 有关如何设置断点的说明，请参阅[如何管理断点](#how-to-manage-breakpoints)或 [Set-PSBreakpoint](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/set-psbreakpoint)。 开始调试后，将无法编辑脚本，除非停止调试。 运行之前，将自动保存设置有一个或多个断点的脚本。
+开始调试之前，必须设置一个或多个断点。 你不能设置一个断点，除非已保存你想要调试的脚本。 有关如何设置断点的说明，请参阅[如何管理断点](#how-to-manage-breakpoints)或 [Set-PSBreakpoint](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-psbreakpoint)。 开始调试后，将无法编辑脚本，除非停止调试。 运行之前，将自动保存设置有一个或多个断点的脚本。
 
 ### <a name="to-start-debugging"></a>启动调试
 按 **F5** 或在工具栏上，单击“**运行脚本**”图标，或在“**调试**”菜单上，单击“**运行/继续**”。 脚本将一直运行，直到它遇到第一个断点。 它将在此处暂停操作，并突出显示它暂停时所在的行。
@@ -174,5 +174,4 @@ C:\ps-test\MyScript.ps1
 ```
 
 ## <a name="see-also"></a>另请参阅
-- [使用 Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
-
+- [探究 Windows PowerShell ISE](../../getting-started/fundamental/exploring-the-windows-powershell-ise.md)

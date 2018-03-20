@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea,powershell,安全性"
 title: "JEA 先决条件"
-ms.openlocfilehash: 75d5db2ba446df1d461050d187dc1495a22fef18
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: e6ee16e34eb9f1f0b2f3601c1aa9e90ab4f785f1
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="prerequisites"></a>必备条件
 
@@ -72,7 +72,7 @@ Windows 10 用户需安装最新功能更新才能获取当前版本的 Windows 
 ## <a name="enable-powershell-remoting"></a>启用 PowerShell 远程处理
 
 PowerShell 远程处理提供了构建 JEA 的基础。
-因此，有必要先确保系统已启用 PowerShell 远程处理并[受到适当保护](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)，然后才能使用 JEA。
+因此，有必要先确保系统已启用 PowerShell 远程处理并[受到适当保护](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity)，然后才能使用 JEA。
 
 在 Windows Server 2012、2012 R2 和 2016 中，默认启用 PowerShell 远程处理。
 可通过在提升的 PowerShell 窗口中运行以下命令来启用 PowerShell 远程处理。
@@ -109,6 +109,6 @@ PowerShell 模块日志记录不是 JEA 必需的，但强烈建议打开它，�
 
 ## <a name="see-also"></a>另请参阅
 
-- [有关 PowerShell 远程处理和 WinRM 安全性的其他信息](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)
+- [有关 PowerShell 远程处理和 WinRM 安全性的其他信息](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity)
 - [PowerShell ♥ the Blue Team 关于安全的博客文章](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
 

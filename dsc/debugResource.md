@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "调试 DSC 资源"
-ms.openlocfilehash: 35eb990705bab8190172df899c64c9f34452aa4b
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c9534deb755e2d3ce59dbb44e55b58b59af2e7f4
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="debugging-dsc-resources"></a>调试 DSC 资源
 
@@ -16,9 +16,9 @@ ms.lasthandoff: 01/17/2018
 在 PowerShell 5.0 中，Desired State Configuraiton (DSC) 引入了一项新功能，允许你在应用配置时调试 DSC 资源。
 
 ## <a name="enabling-dsc-debugging"></a>启用 DSC 调试
-必须通过调用 [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx) cmdlet 启用调试后，才能调试资源。 此 cmdlet 采用强制参数，**BreakAll**。 
+必须通过调用 [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx) cmdlet 启用调试后，才能调试资源。 此 cmdlet 采用强制参数，**BreakAll**。 
 
-你可通过查看调用 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) 的结果以验证是否已启用调试。
+你可通过查看调用 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx) 的结果以验证是否已启用调试。
 
 以下 PowerShell 输出显式了启用调试的结果：
 
@@ -59,7 +59,7 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
-编译配置后，通过调用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) 启用该配置。 当本地配置管理器 (LCM) 调用配置中的首个资源时，配置会停止运行。 如果你使用 `-Verbose` 和 `-Wait` 参数，输出会显示你需要输入才能启动调试的各行内容。
+编译配置后，通过调用 [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) 启用该配置。 当本地配置管理器 (LCM) 调用配置中的首个资源时，配置会停止运行。 如果你使用 `-Verbose` 和 `-Wait` 参数，输出会显示你需要输入才能启动调试的各行内容。
 
 ```powershell
 Start-DscConfiguration .\PSWebAccess -Wait -Verbose
@@ -96,7 +96,7 @@ Debug-Runspace -Id 9
 
 ## <a name="disabling-dsc-debugging"></a>禁用 DSC 调试
 
-在调用 [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx) 后，对 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) 的所有调用都会导致配置中断调试器。 若要让配置正常运行，必须通过调用 [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) cmdlet 来禁用调试。
+在调用 [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx) 后，对 [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) 的所有调用都会导致配置中断调试器。 若要让配置正常运行，必须通过调用 [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) cmdlet 来禁用调试。
 
 >**注意：**重启不会更改 LCM 的调试状态。 如果调试已启用，那么启动配置仍会在重启后中断调试器。
 

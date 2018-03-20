@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "DSC ServiceSet 资源"
-ms.openlocfilehash: 9556a1d513c3819a36c1161e3b35388ca1eb66f9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 2488dda5212ccb717f7fd5d59ad62ec135ad13d5
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-serviceset-resource"></a>DSC ServiceSet 资源
 
@@ -38,7 +38,7 @@ Service [string] #ResourceName
 
 |  属性  |  说明   | 
 |---|---| 
-| 名称| 指示服务名称。 请注意，有时它与显示名称不同。 你可以使用 [Get-Service](https://technet.microsoft.com/en-us/library/hh849804.aspx) cmdlet 获取服务及其当前状态的列表。|
+| 名称| 指示服务名称。 请注意，有时它与显示名称不同。 你可以使用 [Get-Service](https://technet.microsoft.com/library/hh849804.aspx) cmdlet 获取服务及其当前状态的列表。|
 | StartupType| 设置服务的启动类型。 允许用于此属性的值有：**Automatic**、**Disabled** 和 **Manual**。|  
 | BuiltInAccount| 指示要用于服务的登录帐户。 允许用于此属性的值有：**LocalService**、**LocalSystem** 和 **NetworkService**。| 
 | State| 指示你要确保服务所处的状态：**Stopped** 或 **Running**。| 

@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "获取详细的帮助信息"
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: c786ce089073abccdf186dc1d9e8ee383f83655d
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 67e02b503acf4d683c5a190d6642dea384bbfad2
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="getting-detailed-help-information"></a>获取详细的帮助信息
 Windows PowerShell 包含了详细的帮助主题，其中解释了 Windows PowerShell 概念和 Windows PowerShell 语言。 还有针对每个 cmdlet 和提供程序的帮助主题，以及针对许多函数和脚本的帮助主题。
@@ -15,7 +15,7 @@ Windows PowerShell 包含了详细的帮助主题，其中解释了 Windows Powe
 可以在命令提示符下显示这些帮助主题，或在 Microsoft TechNet 库中查看这些主题的最近更新的版本。 许多托管 Windows PowerShell 的程序（如 Windows PowerShell 集成脚本环境）提供了其他帮助功能，如区分上下文的帮助和编译的帮助文件 (.chm)。
 
 ## <a name="getting-help-for-cmdlets"></a>获取有关 Cmdlet 的帮助
-若要获取有关 Windows PowerShell cmdlet 的帮助，请使用 [Get-Help [m2]](https://technet.microsoft.com/en-us/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2) cmdlet。 例如，若要获取 [Get-ChildItem [m2]](https://technet.microsoft.com/en-us/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc) cmdlet 的帮助，请键入：
+若要获取有关 Windows PowerShell cmdlet 的帮助，请使用 [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2) cmdlet。 例如，若要获取 [Get-ChildItem [m2]](https://technet.microsoft.com/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc) cmdlet 的帮助，请键入：
 
 ```
 get-help get-childitem
@@ -171,5 +171,5 @@ Online version: http://go.microsoft.com/fwlink/?LinkID=135194
 - [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)
 - [about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af)
 - [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
-- [Get-Help [m2]](https://technet.microsoft.com/en-us/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)
+- [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)
 

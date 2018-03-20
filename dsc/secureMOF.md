@@ -3,11 +3,11 @@ ms.date: 2017-10-31
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "保护 MOF 文件"
-ms.openlocfilehash: fdb8fa17e9b5e92b56e0a62bf850529c241eee41
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 1bb257f3237344f32c9035f3836dd317b75eef0a
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="securing-the-mof-file"></a>保护 MOF 文件
 
@@ -19,7 +19,7 @@ DSC 通过应用存储于 MOF 文件中的信息来管理服务器节点的配�
 
 自 PowerShell 版本 5.0 起，若将 MOF 文件应用于使用 Start-DSCConfiguration cmdlet 的节点，则默认情况下整个 MOF 文件都将被加密。
 仅在使用请求服务协议实现解决方案（如果证书未被托管）时，才需用到本文所述相关过程，以确保目标节点下载的配置在被应用之前可由系统解密和读取（例如 Windows Server 中可用的请求服务）。
-注册到 [Azure 自动化 DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) 的节点将自动安装证书并使其由服务进行托管，无需承担管理开销。
+注册到 [Azure 自动化 DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) 的节点将自动安装证书并使其由服务进行托管，无需承担管理开销。
 
 >**注意：**本主题讨论用于加密的证书。
 >对于加密，自签名证书就已足够，因为私钥始终保密，而加密并不表示信任该文档。
@@ -262,7 +262,7 @@ configuration CredentialEncryptionExample
 
 ## <a name="setting-up-decryption"></a>设置加密
 
-必须使用 CertificateID 资源验证证书的指纹，从而告知每个目标节点上的本地配置管理器用于解密凭据的证书，[`Start-DscConfiguration`](https://technet.microsoft.com/en-us/library/dn521623.aspx) 方可生效。 此示例函数将查找适当的本地证书（你可能需要对它进行自定义，以便它准确地找到你想使用的证书）：
+必须使用 CertificateID 资源验证证书的指纹，从而告知每个目标节点上的本地配置管理器用于解密凭据的证书，[`Start-DscConfiguration`](https://technet.microsoft.com/library/dn521623.aspx) 方可生效。 此示例函数将查找适当的本地证书（你可能需要对它进行自定义，以便它准确地找到你想使用的证书）：
 
 ```powershell
 # Get the certificate that works for encryption 
@@ -311,7 +311,7 @@ configuration CredentialEncryptionExample
 
 此时，你可以运行配置，此操作将输出两个文件：
 
- * *.meta.mof 文件，它将本地配置管理器配置为使用存储在本地计算机存储区上、并由其指纹标识的证书来解密凭据。 [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/en-us/library/dn521621.aspx) 应用 *.meta.mof 文件。
+ * *.meta.mof 文件，它将本地配置管理器配置为使用存储在本地计算机存储区上、并由其指纹标识的证书来解密凭据。 [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) 应用 *.meta.mof 文件。
  * 实际应用配置的 MOF 文件。 Start-DscConfiguration 应用配置。
 
 这些命令将完成这些步骤：

@@ -2,8 +2,8 @@
 
 本主题向发布者提供有关如何修改其 PowerShell 库发布的清单，以便影响 PowerShellGet cmdlet 和 PowerShell 库 UI 的功能的摘要信息。 此内容按照更改将出现的位置进行组织，从中心部分开始，然后是左侧的导航区域。 有一个涵盖标记的详细信息部分，它标识重要标记以及一些较常用的标记。 有两个提供清单示例的主题： 
 
-* 有关模块，请参阅[更新模块清单](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/psget_update-modulemanifest)
-* 有关脚本，请参阅[使用元数据创建脚本文件](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/psget_new-scriptfileinfo)
+* 有关模块，请参阅[更新模块清单](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest)
+* 有关脚本，请参阅[使用元数据创建脚本文件](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo)
 
 ## <a name="powershell-gallery-feature-elements-controlled-by-the-manifest"></a>由清单控制的 PowerShell 库功能元素
 

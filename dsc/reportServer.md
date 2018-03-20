@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "使用 DSC 报表服务器"
-ms.openlocfilehash: 31b0df7d9baf30d93154d6a28b21f32fc052bc06
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: fdf16a2de6aea46844d3812029fae474e80ae6ac
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="using-a-dsc-report-server"></a>使用 DSC 报表服务器
 
@@ -92,7 +92,7 @@ PullClientConfig
 
 ## <a name="getting-report-data"></a>获取报表数据
 
-发送到请求服务器的报表将被输入该服务器上的数据库。 通过调用 Web 服务即可使用这些报表。 若要检索特定节点的报表，请通过以下形式向报表 Web 服务发送 HTTP 请求：`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId= 'MyNodeAgentId')/Reports`。其中 `MyNodeAgentId` 是要为其获取报表的节点的 AgentId。 可通过在节点上调用 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) 来获取相应节点的 AgentID。
+发送到请求服务器的报表将被输入该服务器上的数据库。 通过调用 Web 服务即可使用这些报表。 若要检索特定节点的报表，请通过以下形式向报表 Web 服务发送 HTTP 请求：`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId= 'MyNodeAgentId')/Reports`。其中 `MyNodeAgentId` 是要为其获取报表的节点的 AgentId。 可通过在节点上调用 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx) 来获取相应节点的 AgentID。
 
 报表将返回为 JSON 对象数组。
 

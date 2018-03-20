@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea,powershell,安全性"
 title: "注册 JEA 配置"
-ms.openlocfilehash: 0684a1c7acffbccbedab9dba4689611a24c8ae25
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: d6b007fed97be6470bfe4cf4d42f72cb4edc3a45
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="registering-jea-configurations"></a>注册 JEA 配置
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 06/12/2017
 
 ## <a name="single-machine-configuration"></a>单个计算机配置
 
-对于小型环境，可以通过使用 [Register-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) cmdlet 注册会话配置文件来部署 JEA。
+对于小型环境，可以通过使用 [Register-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) cmdlet 注册会话配置文件来部署 JEA。
 
 在开始之前，请确保已满足以下先决条件：
 - 已创建一个或多个角色，并已将其放置于有效 PowerShell 模块的“RoleCapabilities”文件夹中。
@@ -28,7 +28,7 @@ ms.lasthandoff: 06/12/2017
 
 还需选择 JEA 终结点名称。
 用户要连接到使用 JEA 的系统时，将需要 JEA 终结点名称。
-可使用 [Get-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet 查看系统上现有终结点的名称。
+可使用 [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet 查看系统上现有终结点的名称。
 Windows 通常随附以“microsoft”开头的终结点。
 连接到远程 PowerShell 终结点时，使用的是默认终结点“microsoft.powershell”。
 

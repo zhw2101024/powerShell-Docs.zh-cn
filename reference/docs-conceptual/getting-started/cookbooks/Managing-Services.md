@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "管理服务"
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
-ms.openlocfilehash: 9fd6c8bcfecc99756188409629ddf94b880aab91
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 1e83566b1cb3c0c9c3c78a5877e52552ee51b0e9
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="managing-services"></a>管理服务
 有八个专为各种服务任务设计的核心 Service cmdlet。 我们将只查看列出和更改服务的运行状态，但是你可以通过使用 **Get-Help \&#42;-Service** 获取 Service cmdlet 列表，还可以使用 **Get-Help<Cmdlet-Name>**（例如 **Get-Help New-Service**）找到每个 Service cmdlet 的信息。
@@ -138,11 +138,11 @@ Set-Service cmdlet 更改本地或远程计算机上服务的属性。 因为服
 
 若要在 Windows Vista 及 Windows 的更高版本上使用 Set-Service，请使用“以管理员身份运行”选项打开 Windows PowerShell。
 
-有关详细信息，请参阅 [Set-Service [m2]](https://technet.microsoft.com/en-us/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
+有关详细信息，请参阅 [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
 
 ## <a name="see-also"></a>另请参阅
 - [Get-Service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
-- [Set-Service [m2]](https://technet.microsoft.com/en-us/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
+- [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
 - [Restart-Service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
 - [Suspend-Service [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)
 

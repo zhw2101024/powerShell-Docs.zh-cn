@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: powershell,cmdlet
 title: "使用基于 Web 的 Windows PowerShell 控制台"
-ms.openlocfilehash: 31ab17f1a1ea1353abc6f770285a2dca70da446d
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: a6c9812253309ba1225141cfd48d0f1c8b8785b5
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>使用基于 Web 的 Windows PowerShell 控制台
 
@@ -58,7 +58,7 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
 
 在登录到 Windows PowerShell Web 访问之前，确保拥有想要管理的远程计算机的名称或 IP 地址。
 你必须是远程计算机上的授权用户，并且必须将远程计算机配置为可远程管理。
-有关将计算机配置为可远程管理的详细信息，请参阅[在 Windows PowerShell 中启用和使用远程命令](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting)。
+有关将计算机配置为可远程管理的详细信息，请参阅[在 Windows PowerShell 中启用和使用远程命令](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting)。
 
 将计算机配置为可远程管理的最简单方法是：在使用提升的用户权限打开的 Windows PowerShell 会话中（**以管理员身份运行**），在计算机上运行**Enable-PSRemoting -force** cmdlet。
 
@@ -74,7 +74,7 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
     > - 如果目标计算机是网关服务器，则可在“计算机名”字段中指定 `localhost`。
     > - 如果目标计算机是网关服务器，并且该网关服务器在工作组中，则必须在“用户名”字段中使用 `<workgroup name>\<user_name>`。 可在“计算机名”字段中使用 `localhost`。
 
-1. “可选的连接设置”部分涉及你想要管理的远程计算机的授权要求。 有关与可选的连接设置等效的参数的详细信息，请参阅 [Enter-PSSession](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession) cmdlet 帮助。
+1. “可选的连接设置”部分涉及你想要管理的远程计算机的授权要求。 有关与可选的连接设置等效的参数的详细信息，请参阅 [Enter-PSSession](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession) cmdlet 帮助。
 
     一般情况下，你用于通过 Windows PowerShell Web 访问网关的凭据与你想要管理的远程计算机所识别的凭据是一样的。 但是，如果你想要使用不同的凭据管理你在步骤 2 中指定的远程计算机，请展开“可选的连接设置”部分，并提供备用凭据。 否则，请跳到步骤 6。
 

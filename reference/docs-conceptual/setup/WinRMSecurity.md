@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: WinRMSecurity
-ms.openlocfilehash: 65cf12466c9dc8fc8b77d79b0d63a6ae61e64d60
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 0522844fded847a3fd45c1b3890a141357edb2b2
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell 远程处理安全注意事项
 
@@ -14,7 +14,7 @@ PowerShell 远程处理是管理 Windows 系统的推荐方式。 在 Windows Se
 
 ## <a name="what-is-powershell-remoting"></a>PowerShell 远程处理是什么？
 
-PowerShell 远程处理使用 [Windows 远程管理 (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426.aspx)（这是 [Web Services for Management (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) 协议的 Microsoft 实现），允许用户在远程计算机上运行 PowerShell 命令。 你可以在[运行远程命令](https://technet.microsoft.com/en-us/library/dd819505.aspx)处找到有关使用 PowerShell 远程处理的详细信息。
+PowerShell 远程处理使用 [Windows 远程管理 (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx)（这是 [Web Services for Management (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) 协议的 Microsoft 实现），允许用户在远程计算机上运行 PowerShell 命令。 你可以在[运行远程命令](https://technet.microsoft.com/library/dd819505.aspx)处找到有关使用 PowerShell 远程处理的详细信息。
 
 PowerShell 远程处理不同于使用 cmdlet 的 **ComputerName** 参数在远程计算机上运行它，后者使用远程过程调用 (RPC) 作为其基础协议。
 
@@ -33,7 +33,7 @@ PowerShell 远程处理（和 WinRM）侦听以下端口：
 
 ## <a name="process-isolation"></a>进程隔离
 
-PowerShell 远程处理使用 [Windows 远程管理 (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426)来实现计算机之间的通信。 WinRM 作为网络服务帐户下的服务运行，并生成以用户帐户运行的隔离进程以托管 PowerShell 实例。 以一个用户身份运行的 PowerShell 实例无权访问以其他用户身份运行 PowerShell 实例的进程。
+PowerShell 远程处理使用 [Windows 远程管理 (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426)来实现计算机之间的通信。 WinRM 作为网络服务帐户下的服务运行，并生成以用户帐户运行的隔离进程以托管 PowerShell 实例。 以一个用户身份运行的 PowerShell 实例无权访问以其他用户身份运行 PowerShell 实例的进程。
 
 ## <a name="event-logs-generated-by-powershell-remoting"></a>PowerShell 远程处理生成的事件日志
 
@@ -50,10 +50,10 @@ FireEye 提供了良好的事件日志和其他由 PowerShell 远程处理会话
 
 身份验证确认客户端到服务器（理想情况下，从服务器到客户端）的身份。
     
-当客户端连接到使用其计算机名称（即 server01 或 server01.contoso.com）的域服务器时，默认身份验证协议为 [Kerberos](https://msdn.microsoft.com/en-us/library/windows/desktop/aa378747.aspx)。
+当客户端连接到使用其计算机名称（即 server01 或 server01.contoso.com）的域服务器时，默认身份验证协议为 [Kerberos](https://msdn.microsoft.com/library/windows/desktop/aa378747.aspx)。
 Kerberos 保证用户标识和服务器标识，而不发送任何种类的可重用的凭据。
 
-当客户端使用其 IP 地址连接到域服务器，或连接到工作组服务器时，不能进行 Kerberos 身份验证。 在这种情况下，PowerShell 远程处理依赖的是 [NTLM 身份验证协议](https://msdn.microsoft.com/en-us/library/windows/desktop/aa378749.aspx)。 NTLM 身份验证协议可在不发送任何种类的可代理凭据的情况下确保用户标识。 为了证明用户标识，NTLM 协议要求客户端和服务器通过用户的密码计算会话密钥，而不自行交换密码。 由于服务器通常不知道用户的密码，因此它会与域控制器进行通信，域控制器不仅知道用户的密码，还为服务器计算会话密钥。 
+当客户端使用其 IP 地址连接到域服务器，或连接到工作组服务器时，不能进行 Kerberos 身份验证。 在这种情况下，PowerShell 远程处理依赖的是 [NTLM 身份验证协议](https://msdn.microsoft.com/library/windows/desktop/aa378749.aspx)。 NTLM 身份验证协议可在不发送任何种类的可代理凭据的情况下确保用户标识。 为了证明用户标识，NTLM 协议要求客户端和服务器通过用户的密码计算会话密钥，而不自行交换密码。 由于服务器通常不知道用户的密码，因此它会与域控制器进行通信，域控制器不仅知道用户的密码，还为服务器计算会话密钥。 
       
 但 NTLM 协议不能保证服务器标识。 如同所有使用 NTLM 进行身份验证的协议一样，如果攻击者有权访问已加入域的计算机的帐户，则可以调用域控制器来计算 NTLM 会话密钥，从而模拟服务器。
 

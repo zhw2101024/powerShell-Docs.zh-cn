@@ -3,14 +3,14 @@ ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
 keywords: "wmf,powershell,安装程序"
-ms.openlocfilehash: 6e0493a75e02efd81e833760f941f98566235efe
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+ms.openlocfilehash: c8ad7c6c6ec992c8b6891ff657536797164562a8
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="format-hex"></a>Format-Hex
-**Format-Hex** 使你可以以十六进制格式查看文本或二进制数据；请参阅 [Format-Hex](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-hex)
+**Format-Hex** 使你可以以十六进制格式查看文本或二进制数据；请参阅 [Format-Hex](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)
 
 ## <a name="example-1"></a>示例 1
 以十六进制格式查看字符串内容。

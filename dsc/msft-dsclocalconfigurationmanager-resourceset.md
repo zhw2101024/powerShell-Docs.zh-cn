@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "MSFT_DSCLocalConfigurationManager 类的 ResourceSet 方法"
-ms.openlocfilehash: 7291641098578226449f8cbd360da0a3f9842598
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 3486ef559102929f8d05994a4bf6e45d49a0c140
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="resourceset-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类的 ResourceSet 方法
 
@@ -35,7 +35,7 @@ ModuleName \[in\]
 包含要调用的资源的模块名称。
 
 resourceProperty \[in\]  
-分别在哈希表中将资源属性名称及其值指定为键和值。 使用 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) cmdlet 可以发现资源属性及其类型。
+分别在哈希表中将资源属性名称及其值指定为键和值。 使用 [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) cmdlet 可以发现资源属性及其类型。
 
 RebootRequired \[out\]  
 返回时，如果目标节点需要重启，会将此属性设置为 **true**。

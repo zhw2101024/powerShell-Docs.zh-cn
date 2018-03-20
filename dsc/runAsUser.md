@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "使用用户凭据运行 DSC"
-ms.openlocfilehash: 7b57732679e4fb29112a3ca7fe64cba2bda67207
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 11c13d852b506be3e202b798d135eba73d84cfe0
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="running-dsc-with-user-credentials"></a>使用用户凭据运行 DSC 
 
@@ -16,8 +16,8 @@ ms.lasthandoff: 01/17/2018
 可以通过在配置中使用 **PsDscRunAsCredential** 属性，在指定的一组凭据之下运行 DSC 资源。 默认情况下，DSC 以系统帐户身份运行每个资源。
 有时需要以用户身份运行，例如在特定用户上下文中安装 MSI 程序包、设置用户的注册表项、访问用户的特定本地目录或访问网络共享。
 
-每个 DSC 资源都具有 **PsDscRunAsCredential** 属性，它可以设置为任何用户凭据（[PSCredential](https://msdn.microsoft.com/en-us/library/ms572524(v=VS.85).aspx) 对象）。
-凭据可以硬编码为配置中属性的值，你也可以将值设置为 [Get-Credential](https://technet.microsoft.com/en-us/library/hh849815.aspx)，这会在编译配置时提示用户输入凭据（有关编译配置的信息，请参阅[配置](configurations.md)）。
+每个 DSC 资源都具有 **PsDscRunAsCredential** 属性，它可以设置为任何用户凭据（[PSCredential](https://msdn.microsoft.com/library/ms572524(v=VS.85).aspx) 对象）。
+凭据可以硬编码为配置中属性的值，你也可以将值设置为 [Get-Credential](https://technet.microsoft.com/library/hh849815.aspx)，这会在编译配置时提示用户输入凭据（有关编译配置的信息，请参阅[配置](configurations.md)）。
 
 >**注意：**在 PowerShell 5.0 中，不支持在调用复合资源的配置中使用 **PsDscRunAsCredential** 属性。 
 >在 PowerShell 5.1 中，支持在调用复合资源的配置中使用 **PsDscRunAsCredential** 属性。

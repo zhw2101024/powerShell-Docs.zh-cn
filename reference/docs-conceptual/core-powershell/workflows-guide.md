@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "工作流指南"
-ms.openlocfilehash: 9eb5ae1d665ed6e4319ede62e7f7a27e6ce5b04f
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: d99f23e281b8a1229c4577c3d6c3a93e4ba4973e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="psworkflow-module"></a>PSWorkflow 模块
 本部分包含有关 **PSWorkflow** 模块的帮助主题，此模块包含支持 Windows PowerShell 工作流功能的 cmdlet。 **PSWorkflow** 模块随 Windows PowerShell 一起安装。
@@ -14,9 +14,9 @@ ms.lasthandoff: 08/03/2017
 ## <a name="help-topics"></a>帮助主题
 [工作流 Cmdlet](http://go.microsoft.com/fwlink/?LinkID=245865)
 
-[about_Workflows](https://technet.microsoft.com/en-us/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)
+[about_Workflows](https://technet.microsoft.com/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)
 
-[about_WorkflowCommonParameters](https://technet.microsoft.com/en-us/library/119f968e-618e-439c-b76c-cdd17e6df27c)
+[about_WorkflowCommonParameters](https://technet.microsoft.com/library/119f968e-618e-439c-b76c-cdd17e6df27c)
 
 [about_ActivityCommonParameters](https://technet.microsoft.com/en-us/library/8ca60664-37c6-4257-a723-e3c41dd10122)
 

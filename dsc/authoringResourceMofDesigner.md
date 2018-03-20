@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "使用资源设计器工具"
-ms.openlocfilehash: c21602e219b5830877cc211e092e93bb7fc8ad9c
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c39b48f67d3874ee3cd2f2704aeb7390fa186fe4
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="using-the-resource-designer-tool"></a>使用资源设计器工具
 
@@ -15,7 +15,7 @@ ms.lasthandoff: 01/17/2018
 
 资源设计器工具是一组由 **xDscResourceDesigner** 模块公开的 cmdlet，它使 Windows PowerShell Desired State Configuration (DSC) 的创建更加轻松简单。 此资源中的 cmdlet 能帮助你创建新资源的 MOF 架构、脚本模块和目录结构。 有关 DSC 资源的详细信息，请参阅[构建自定义 Windows PowerShell Desired State Configuration 资源](authoringResource.md)。
 在本主题中，我们将创建一个管理 Active Directory 用户的 DSC 资源。
-使用 [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) cmdlet 安装 **xDscResourceDesigner** 模块。
+使用 [Install-Module](https://technet.microsoft.com/library/dn807162.aspx) cmdlet 安装 **xDscResourceDesigner** 模块。
 
 >**请注意**：**Install-Module** 包含在 **PowerShellGet** 模块中，后者纳入 PowerShell 5.0。 可在 [PackageManagement PowerShell 模块预览](https://www.microsoft.com/en-us/download/details.aspx?id=49186)中下载适用于 PowerShell 3.0 和 4.0 的 **PowerShellGet**。
 

@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "请求服务器最佳做法"
-ms.openlocfilehash: 045f98475d6182b329ecf048038a98e933684a82
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 3d0ab969b7a0de9d428becc4b9bdb124a7a44c2c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="pull-server-best-practices"></a>请求服务器最佳做法
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 01/17/2018
 ## <a name="abstract"></a>摘要
 
 本文档旨在为规划 Windows PowerShell 所需状态配置请求服务器实现的任何人提供官方指南。 请求服务器是只应花费几分钟进行部署的简单服务。 虽然本文档会提供可以在部署中使用的技术操作方法指南，不过本文档的价值是作为最佳做法以及在部署之前要考虑的事项的参考。
-读者应基本熟悉 DSC 以及用于描述在 DSC 部署中包含的组件的术语。 有关详细信息，请参阅 [Windows PowerShell 所需状态配置概述](https://technet.microsoft.com/en-us/library/dn249912.aspx)主题。
+读者应基本熟悉 DSC 以及用于描述在 DSC 部署中包含的组件的术语。 有关详细信息，请参阅 [Windows PowerShell 所需状态配置概述](https://technet.microsoft.com/library/dn249912.aspx)主题。
 因为 DSC 预计会随着云一起发展，所以包括请求服务器在内的基础技术也预计会进行发展并引入新功能。 本文档在附录中包含一个版本表，该表提供了对以前版本的参考以及对展望未来的解决方案的参考，以鼓励进行前瞻性设计。
 
 本文档的两个主要部分：
@@ -43,7 +43,7 @@ Windows PowerShell 为所需状态配置提供了一组语言扩展，可以用�
 ### <a name="pull-server-role"></a>请求服务器角色  
 请求服务器提供了一个集中化服务来存储可供目标节点访问的配置。
  
-请求服务器角色可以作为 Web 服务器实例或 SMB 文件共享进行部署。 Web 服务器功能包含一个 OData 接口，并且可以选择包含供目标节点在应用配置时报告返回成功或失败确认的功能。 此功能在存在大量目标节点的环境中非常有用。 配置目标节点（也称为客户端）以指向请求服务器之后，最新配置数据和任何所需脚本会进行下载并应用。 这可以作为一次性部署或作为反复出现的作业（这也使得请求服务器成为用于大规模管理更改的重要资产）来进行。 有关详细信息，请参阅 [Windows PowerShell 所需状态配置请求服务器](https://technet.microsoft.com/en-us/library/dn249913.aspx)和[推送和请求配置模式](https://technet.microsoft.com/en-us/library/dn249913.aspx)。
+请求服务器角色可以作为 Web 服务器实例或 SMB 文件共享进行部署。 Web 服务器功能包含一个 OData 接口，并且可以选择包含供目标节点在应用配置时报告返回成功或失败确认的功能。 此功能在存在大量目标节点的环境中非常有用。 配置目标节点（也称为客户端）以指向请求服务器之后，最新配置数据和任何所需脚本会进行下载并应用。 这可以作为一次性部署或作为反复出现的作业（这也使得请求服务器成为用于大规模管理更改的重要资产）来进行。 有关详细信息，请参阅 [Windows PowerShell 所需状态配置请求服务器](https://technet.microsoft.com/library/dn249913.aspx)和[推送和请求配置模式](https://technet.microsoft.com/library/dn249913.aspx)。
 
 ## <a name="configuration-planning"></a>配置规划
 

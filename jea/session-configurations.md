@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea,powershell,安全性"
 title: "JEA 会话配置"
-ms.openlocfilehash: 0a8931ae15caf04a3639ab46f130e5f5b0498d8c
-ms.sourcegitcommit: 0733db9a05e89e6a23f6b52b9edd784fcbe8beec
+ms.openlocfilehash: c475a90a59d91b074f954cfb656b00142444c052
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/22/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="jea-session-configurations"></a>JEA 会话配置
 
@@ -38,7 +38,7 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEA
 
 可在任意文本编辑器中打开会话配置文件。
 `-SessionType RestrictedRemoteServer` 字段指示 JEA 将使用该会话配置进行安全管理。
-通过此方式配置的会话将在 [NoLanguage 模式](https://technet.microsoft.com/en-us/library/dn433292.aspx)下运行，并且只包含以下 8 个默认命令（和别名）：
+通过此方式配置的会话将在 [NoLanguage 模式](https://technet.microsoft.com/library/dn433292.aspx)下运行，并且只包含以下 8 个默认命令（和别名）：
 
 - Clear-Host (cls, clear)
 - Exit-PSSession (exsn, exit)
@@ -128,7 +128,7 @@ TranscriptDirectory = 'C:\ProgramData\JEAConfiguration\Transcripts'
 ### <a name="user-drive"></a>用户驱动器
 
 如果连接用户需要将文件复制到 JEA 终结点或从中复制文件才可运行命令，可在会话配置文件中启用用户驱动器。
-用户驱动器是映射到各连接用户的唯一文件夹的 [PSDrive](https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives)。
+用户驱动器是映射到各连接用户的唯一文件夹的 [PSDrive](https://msdn.microsoft.com/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives)。
 此文件夹充当将文件复制到系统/从中复制文件的空间，但不提供访问完整文件系统或公开 FileSystem 提供程序的权限。
 用户驱动器内容在会话之间持续存在，以便应对网络连接可能中断的情况。
 

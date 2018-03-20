@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "DSC 配置"
-ms.openlocfilehash: 3fd2846d0fbfb0ae9baa44cde66afe1f5be65cf7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 14db60126fd6c3d11d425a28c749a8e8b81122ca
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-configurations"></a>DSC 配置
 
@@ -62,7 +62,7 @@ Configuration MyDscConfiguration {
         }
     }
 }
-MyDscConfiguration -ComputerName <MyComputer>
+MyDscConfiguration -ComputerName $ComputerName
 
 ```
 
@@ -141,11 +141,11 @@ Configuration DependsOnExample {
 ## <a name="using-new-resources-in-your-configuration"></a>在配置中使用新的资源
 
 如果运行了前面的示例，你可能注意到你已收到警告信息，提示你正在使用未显式导入的资源。
-现在，DSC 附带 12 种资源作为 PSDesiredStateConfiguration 模块的一部分。 外部模块中的其他资源须置于 `$env:PSModulePath` 中以便 LCM 能够识别。 新的 cmdlet - [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)，可用来确定哪些资源已安装在系统上并且可供 LCM 使用。 一旦这些模块已置于 `$env:PSModulePath` 中并由 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 正确识别，你仍需在配置中加载它们。 
+现在，DSC 附带 12 种资源作为 PSDesiredStateConfiguration 模块的一部分。 外部模块中的其他资源须置于 `$env:PSModulePath` 中以便 LCM 能够识别。 新的 cmdlet - [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx)，可用来确定哪些资源已安装在系统上并且可供 LCM 使用。 一旦这些模块已置于 `$env:PSModulePath` 中并由 [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) 正确识别，你仍需在配置中加载它们。 
 **Import-DscResource** 是仅可在**配置**块中识别的动态关键字（即它不是 cmdlet）。 
 **Import-DscResource** 支持两种参数：
 - **ModuleName** 是使用 **Import-DscResource** 的推荐方法。 它接受包含要导入资源的模块名称以及模块名称的字符串数组。 
-- **Name** 是要导入资源的名称。 这不是由 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 返回为“Name”的友好名称，而是定义资源架构时使用的类名（由 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 返回为 **ResourceType**）。 
+- **Name** 是要导入资源的名称。 这不是由 [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) 返回为“Name”的友好名称，而是定义资源架构时使用的类名（由 [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) 返回为 **ResourceType**）。 
 
 ## <a name="see-also"></a>另请参阅
 * [Windows PowerShell Desired State Configuration 概述](overview.md)

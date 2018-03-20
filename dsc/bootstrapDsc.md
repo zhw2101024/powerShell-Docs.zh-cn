@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "初始启动时使用 DSC 配置虚拟机"
-ms.openlocfilehash: 76c990ee7c98ea47d1fc3d7bd955ce6a993e28a6
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: ff06aafa6db49d93a9b42e38ac7c3e9a11657bd5
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 >适用于：Windows PowerShell 5.0
 
@@ -20,7 +20,7 @@ ms.lasthandoff: 01/17/2018
 
 若要运行这些示例，则需要：
 
-- 要使用的可启动 VHD。 可以在 [TechNet 评估中心](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016)下载具有 Windows Server 2016 评估副本的 ISO。 可以在[创建可启动虚拟硬盘](https://technet.microsoft.com/en-us/library/gg318049.aspx)处找到有关如何从 ISO 映像创建 VHD 的说明。
+- 要使用的可启动 VHD。 可以在 [TechNet 评估中心](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016)下载具有 Windows Server 2016 评估副本的 ISO。 可以在[创建可启动虚拟硬盘](https://technet.microsoft.com/library/gg318049.aspx)处找到有关如何从 ISO 映像创建 VHD 的说明。
 - 已启用 Hyper-V 的主计算机。 有关信息，请参阅 [Hyper-V 概述](https://technet.microsoft.com/library/hh831531.aspx)。
 
 通过使用 DSC，可以在初始启动时对计算机实现软件安装和配置的自动化。
