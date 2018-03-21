@@ -3,17 +3,17 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "设置 DSC SMB 请求服务器"
-ms.openlocfilehash: 427dc8d858bd12e420fbde03b33a66f33cd654dc
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: ff3faeb1952e6116cf97b1aaf8f125d8931dd35e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>设置 DSC SMB 请求服务器
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
-DSC [SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx) 请求服务器是计算机托管 SMB 文件共享，可在目标节点提出请求时向它们提供 DSC 配置文件和 DSC 资源。
+DSC [SMB](https://technet.microsoft.com/library/hh831795.aspx) 请求服务器是计算机托管 SMB 文件共享，可在目标节点提出请求时向它们提供 DSC 配置文件和 DSC 资源。
 
 若要将 SMB 请求服务器用于 DSC，必须执行以下操作：
 - 在运行 PowerShell 4.0 或更高版本的服务器上设置一个 SMB 文件共享
@@ -25,7 +25,7 @@ DSC [SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx) 请求服�
 
 ### <a name="install-the-xsmbshare-resource"></a>安装 xSmbShare 资源
 
-调用 [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) cmdlet 可以安装 **xSmbShare** 模块。
+调用 [Install-Module](https://technet.microsoft.com/library/dn807162.aspx) cmdlet 可以安装 **xSmbShare** 模块。
 >**请注意**：**Install-Module** 包含在 **PowerShellGet** 模块中，后者纳入 PowerShell 5.0。 可在 [PackageManagement PowerShell 模块预览](https://www.microsoft.com/en-us/download/details.aspx?id=49186)中下载适用于 PowerShell 3.0 和 4.0 的 **PowerShellGet**。 **xSmbShare** 包含 DSC 资源 **xSmbShare**，后者可用于创建 SMB 文件共享。
 
 ### <a name="create-the-directory-and-file-share"></a>创建目录和文件共享
@@ -208,7 +208,7 @@ $ConfigurationData = @{
 特别感谢以下人员：
 
 - Mike F. Robbins，其有关将 SMB 用于 DSC 的文章帮助告知本主题中的内容。 他的博客是 [Mike F Robbins](http://mikefrobbins.com/)。
-- Serge Nikalaichyk，他是 **cNtfsAccessControl** 模块的作者。 此模块的源代码位于 https://github.com/SNikalaichyk/cNtfsAccessControl。
+- Serge Nikalaichyk，他是 **cNtfsAccessControl** 模块的作者。 此模块的来源位于 https://github.com/SNikalaichyk/cNtfsAccessControl。
 
 ## <a name="see-also"></a>另请参阅
 - [Windows PowerShell Desired State Configuration 概述](overview.md)

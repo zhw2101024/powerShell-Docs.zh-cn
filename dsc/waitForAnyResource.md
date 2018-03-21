@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,配置,安装程序"
 title: "DSC WaitForAny 资源"
-ms.openlocfilehash: 795c005c67c196ef9afb08af790fe2a1695392ec
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 43922dbcccb6d06d7d9edfcf16ce4eb107e9d4e6
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-waitforany-resource"></a>DSC WaitForAny 资源
 
@@ -36,7 +36,7 @@ WaitForAny [string] #ResourceName
 
 |  属性  |  说明   | 
 |---|---| 
-| ResourceName| 要依赖的资源名称。| 
+| ResourceName| 要依赖的资源名称。 如果此资源属于不同的配置，请将名称的格式设置为“[__ResourceType__]__ResourceName__::[__ConfigurationName__]::[__ConfigurationName__]”| 
 | NodeName| 要依赖的资源的目标节点。| 
 | RetryIntervalSec| 重试前等待的秒数。 最小值为 1。| 
 | RetryCount| 重试次数上限。| 

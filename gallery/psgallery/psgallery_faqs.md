@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: "库,powershell,cmdlet,psgallery"
 title: psgallery_faqs
-ms.openlocfilehash: 80aaaa5e50e1bd85b93df721a4859e3020d1f315
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b856c44f3733d4a7c236d901edb391091d9d546e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="frequently-asked-questions"></a>常见问题
 
@@ -18,7 +18,7 @@ PowerShell 模块是包含某些 PowerShell 功能的可重复使用程序包。
 
 ## <a name="what-is-a-powershell-script"></a>PowerShell 脚本是什么？
 
-PowerShell 脚本是存储在.ps1 文件中的一系列命令，用于启用重用和共享。 PowerShell 工作流也是 PowerShell 脚本，可概述任务组和提供这些任务的序列。 有关详细信息，请访问 [Getting Started with PowerShell Workflow](https://technet.microsoft.com/en-us/library/jj134242.aspx)（PowerShell 工作流入门）。
+PowerShell 脚本是存储在.ps1 文件中的一系列命令，用于启用重用和共享。 PowerShell 工作流也是 PowerShell 脚本，可概述任务组和提供这些任务的序列。 有关详细信息，请访问 [Getting Started with PowerShell Workflow](https://technet.microsoft.com/library/jj134242.aspx)（PowerShell 工作流入门）。
 
 ## <a name="how-are-powershell-scripts-different-from-powershell-modules"></a>PowerShell 脚本 与 PowerShell 模块有何不同？
 
@@ -39,16 +39,16 @@ PowerShell 脚本是存储在.ps1 文件中的一系列命令，用于启用重�
 
 出现该错误的原因可能如下：
 
-- **指定的 API 密钥无效。**
+- 指定的 API 密钥无效。
      请确保帐户中指定了有效的 API 密钥。 若要获取 API 密钥，请查看个人资料页。
-- **指定的项名称不属于你。**
+- 指定的项名称不属于你。
      如果已确认 API 密钥无误，则可能是因为已存在一个具有与你尝试使用的名称相同的项。 该项可能未被其所有者列出，这种情况下，该项不会出现在任何搜索结果中。 若要确定具有相同名称的项是否已经存在，请打开浏览器并导航至该项的详细信息页：`https://www.powershellgallery.com/packages/<itemName>`。 例如，直接导航至 `https://www.powershellgallery.com/packages/pester` 将进入 Pester 模块的详细信息页上，无论其列出与否。 如果具有冲突名称的项已经存在且未被列出，可：
     - 选择其他项名称。
     - 联系现有项的所有者。
 
 ## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>为什么昨天可使用个人帐户登录而现在却无法登陆？
 
-请注意库帐户不会适应主电子邮件别名的更改。 有关详细信息，请参阅 [Microsoft 电子邮件别名](https://windows.microsoft.com/en-us/windows/outlook/add-alias-account)。
+请注意库帐户不会适应主电子邮件别名的更改。 有关详细信息，请参阅 [Microsoft 电子邮件别名](https://windows.microsoft.com/windows/outlook/add-alias-account)。
 
 ## <a name="why-dont-i-see-all-the-gallery-items-when-i-select-all-the-category-checkboxes-on-the-items-tab"></a>为什么选中“项”选项卡上所有“类别”复选框时没有显示所有库项？
 
@@ -156,7 +156,7 @@ PowerShell 库是 [NuGet Gallery](https://www.nuget.org/)（NuGet 库）的修�
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** 也需要 .NET Framework 4.5 或更高版本。 你可从[此处](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx)安装 .NET Framework 4.5 或更高版本。
+**PowerShellGet** 也需要 .NET Framework 4.5 或更高版本。 你可从[此处](https://msdn.microsoft.com/library/5a4x27ek.aspx)安装 .NET Framework 4.5 或更高版本。
 
 ## <a name="is-it-possible-to-reserve-names-for-items-that-will-be-published-in-future"></a>是否可保留将来要发布的项的名称？
 

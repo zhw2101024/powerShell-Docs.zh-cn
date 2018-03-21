@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: powershell,cmdlet
 title: "安装和使用 Windows PowerShell Web 访问"
-ms.openlocfilehash: 63e25fa2b1fc7c0a2b57763e337c25ece17a3296
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 2ad7a701dbb464088d6ed47d49a8dc3fb9b911f8
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>安装和使用 Windows PowerShell Web 访问
 
@@ -29,7 +29,7 @@ Windows PowerShell Web 访问安装和配置过程包含三个步骤：
 1. [配置受限的授权规则](#configure-a-restrictive-authorization-rule)
 
 安装和配置 Windows PowerShell Web Access 前，我们建议你阅读该完整指南，其中包括有关如何安装、保护和卸载 Windows PowerShell Web 访问的说明。
-[使用基于 Web 的 Windows PowerShell 控制台](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)主题介绍了用户如何登录基于 Web 的控制台，并涵盖基于 Web 的 Windows PowerShell 控制台与 **powershell.exe** 控制台之间的限制和差异。 基于 Web 的控制台的最终用户应阅读[使用基于 Web 的 Windows PowerShell 控制台](use-the-web-based-windows-powershell-console.md)部分，但无需阅读本指南的其余部分。
+[使用基于 Web 的 Windows PowerShell 控制台](https://technet.microsoft.com/library/hh831417(v=ws.11).aspx)主题介绍了用户如何登录基于 Web 的控制台，并涵盖基于 Web 的 Windows PowerShell 控制台与 **powershell.exe** 控制台之间的限制和差异。 基于 Web 的控制台的最终用户应阅读[使用基于 Web 的 Windows PowerShell 控制台](use-the-web-based-windows-powershell-console.md)部分，但无需阅读本指南的其余部分。
 
 本主题并不提供详尽的 IIS Web Server 操作指导；仅描述配置 Windows PowerShell Web 访问网关所必需的步骤。 有关配置和保护 IIS 中的网站安全的详细信息，请参阅“另请参阅”部分中的 IIS 文档资源。
 
@@ -213,7 +213,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。
 
     - 在 Windows **开始**屏幕上，右键单击**Windows PowerShell**，然后单击**以管理员身份运行**。
 
-2. 使用会话配置限制用户访问的可选步骤：验证要在规则中使用的会话配置已存在。 如果尚未创建这些配置，则使用 [about_Session_Configuration_Files](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations) 中用于创建会话配置的说明。
+2. 使用会话配置限制用户访问的可选步骤：验证要在规则中使用的会话配置已存在。 如果尚未创建这些配置，则使用 [about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations) 中用于创建会话配置的说明。
 
 3. 键入以下命令，然后按**Enter**。
 
@@ -277,7 +277,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。
 
 2. 为 Windows PowerShell Web 访问创建新的应用程序池。 在 IIS 管理器树窗格中展开网关服务器的节点，选择“应用程序池”，然后单击“操作”窗格中的“添加应用程序池”。
 
-3. 为新的应用程序池添加名称 **pswa_pool**，或提供其他名称。 单击“确定”。
+3. 为新的应用程序池添加名称 **pswa_pool**，或提供其他名称。 单击**确定**。
 
 4. 在 IIS 管理器树窗格中，展开已安装 Windows PowerShell Web 访问的服务器的节点，直到“站点”文件夹可见。 选择“站点”文件夹。
 
@@ -287,7 +287,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。
 
 7. 在“应用程序池”字段中，选择在步骤 3 中创建的应用程序池。
 
-8. 在“物理路径”字段中，浏览到应用程序的位置。 你可使用默认的位置，即 %windir%/Web/PowerShellWebAccess/wwwroot。 单击“确定”。
+8. 在“物理路径”字段中，浏览到应用程序的位置。 你可使用默认的位置，即 %windir%/Web/PowerShellWebAccess/wwwroot。 单击**确定**。
 
 9. 请按照本主题中的“在 IIS Manager 中配置 SSL 证书程序](#to-configure-an-ssl-certificate-in-iis-Manager)”所述的步骤操作。
 
@@ -297,7 +297,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。
 
 11. 在客户端设备上打开浏览器会话。 有关受支持的浏览器和设备的详细信息，请参阅本主题中的[浏览器和客户端设备支持](#browser-and-client-device-support)。
 
-12. 打开新的 Windows PowerShell Web 访问网站 https://\<gateway-server-name/pswa\>。
+12. 打开新的 Windows PowerShell Web 访问网站 https://\<gateway-server-name\>/pswa。
 
     浏览器应显示 Windows PowerShell Web 访问控制台登录页面。
 
@@ -340,7 +340,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。
 
     如果其他网站已经使用 443，或你有其他更改端口号的安全原因，则更改默认端口。 如果在你的网关服务器上运行的其他网站使用你所选的端口，当你在“添加网站”对话框中单击“确定”时，将会显示一条警告信息。 必须使用未使用的端口运行 Windows PowerShell Web 访问。
 
-9. 此外，如果你的组织有需要，请指定你的组织和用户都接受的主机名称，例如 **www.contoso.com**。单击“确定”。
+9. 此外，如果你的组织有需要，请指定你的组织和用户都接受的主机名称，例如 **www.contoso.com**。单击**确定**。
 
 10. 为提高生产环境的安全性，我们强烈建议提供证书颁发机构已签名的有效证书。 你必须提供 SSL 证书，因为用户仅可通过 HTTPS 网站连接到 Windows PowerShell Web 访问。 有关如何获得证书的详细信息，请参阅本主题中的[在 IIS Manager 中配置 SSL 证书](#to-configure-an-ssl-certificate-in-iis-Manager)。
 
@@ -385,7 +385,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。
 
 2. ![安全说明](images/SecurityNote.jpeg) 使用会话配置限制用户访问的可选步骤：
 
-    确保规则中已经存在你要使用的会话配置。 如果尚未创建这些配置，则使用 [about_Session_Configuration_Files](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations) 中用于创建会话配置的说明。
+    确保规则中已经存在你要使用的会话配置。 如果尚未创建这些配置，则使用 [about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations) 中用于创建会话配置的说明。
 
 3. 键入以下命令，然后按**Enter**。
 

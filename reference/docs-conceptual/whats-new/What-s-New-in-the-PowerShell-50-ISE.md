@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "PowerShell 50 ISE 中的新增功能"
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 89dcc905ce200d06029e148c9675269e6f518fa3
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 9fd25a4759602bebf2b5df2c17d0c816a15e5e2b
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Windows PowerShell ISE 中的新增功能
 本主题介绍已在 Windows PowerShell (R) 集成脚本环境 (ISE) 的各版本中引入的新增功能和更新功能。
@@ -15,7 +15,7 @@ ms.lasthandoff: 09/29/2017
 ## <a name="feature-description"></a>功能描述
 Windows PowerShell ISE 是一款主机应用程序，让你可以在直观的图形环境中编写、运行和测试脚本与模块。 其主要功能，如语法着色、Tab 自动补全、可视调试、Unicode 遵从和上下文相关帮助，将为你带来丰富的脚本编写体验。
 
-有关 Windows PowerShell ISE 的概述，请参阅 [Windows PowerShell 集成脚本环境概述](https://technet.microsoft.com/en-us/library/3c1892c2-bf84-4cb6-af26-1f453be9e671)。
+有关 Windows PowerShell ISE 的概述，请参阅 [Windows PowerShell 集成脚本环境概述](https://technet.microsoft.com/library/3c1892c2-bf84-4cb6-af26-1f453be9e671)。
 
 ## <a name="new-and-changed-functionality-in-windows-powershell-ise"></a>Windows PowerShell ISE 中的新增功能和更改功能
 下表列出了 Windows PowerShell 中此版本的 Windows PowerShell ISE 的新增功能和更改功能。
@@ -222,7 +222,7 @@ Show-Command 是新的 Windows PowerShell ISE 3.0。
 ## <a name="see-also"></a>另请参阅
 有关在 Windows PowerShell 中使用 Windows PowerShell ISE 的详细信息，请参阅以下链接。
 
-- [使用 Windows PowerShell 集成脚本环境](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+- [浏览 Windows PowerShell 集成脚本环境](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
 - [TechNet Wiki 上的 ISE](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
 - [脚本中心](http://technet.microsoft.com/scriptcenter/default)
 

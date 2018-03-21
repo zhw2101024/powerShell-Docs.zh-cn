@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: "库,powershell,cmdlet,psgallery"
 title: "创建 PowerShell 库帐户"
-ms.openlocfilehash: e21575320f220c1ba7ecd9bd464a814b3ebf49d9
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 5af38884d819cb9c600a061109233614bd33666f
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 ## <a name="creating-a-powershell-gallery-account"></a>创建 PowerShell 库帐户
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 06/12/2017
 登录后，系统便会提示创建 PowerShell 库帐户的用户名。 查看链接的使用条款和隐私策略，输入用户名，再单击“注册”。
 
 注意：帐户名称一旦创建便无法再进行更改。  
-请参阅[管理项所有者](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners)，了解与此相关的其他详细信息。
+请参阅[管理项所有者](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners)，了解与此相关的其他详细信息。
 
 ## <a name="recommended-practices-for-powershell-gallery-accounts"></a>适用于 PowerShell 库帐户的推荐做法
 
@@ -35,5 +35,5 @@ ms.lasthandoff: 06/12/2017
 在许多情况下，都不会定期监视此帐户。 在这种情况下，最佳做法是使用 Outlook 转发功能将电子邮件转发到另一个帐户（通常是组织内受项所有者监视的帐户）。
 
 如果项有多个关联的所有者，那么来自 PowerShell 库的所有通信都会发送给全部所有者。
-请参阅[管理项所有者](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners)，详细了解如何向项添加所有者。 
+请参阅[管理项所有者](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners)，详细了解如何向项添加所有者。 
 

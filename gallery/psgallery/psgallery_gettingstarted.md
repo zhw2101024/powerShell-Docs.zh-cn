@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: "库,powershell,cmdlet,psgallery"
 title: psgallery_gettingstarted
-ms.openlocfilehash: d13c23cd6f9cce433cd3fe1ad5f2d00e3ef0527c
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 2117712b0081db4a21f8480b458a499ed84dc512
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="get-started-with-the-powershell-gallery"></a>PowerShell 库入门
 
@@ -103,7 +103,7 @@ CurrentUser` 参数，脚本将安装到 `$env:USERPROFILE\Documents\WindowsPowe
 
 若要将项从 PowerShell 库部署到 Azure 自动化，请单击项详细信息页上的“部署到 Azure 自动化”。 这会将你重定向到 Azure 管理门户，在此可使用 Azure 帐户凭据登录。 请注意，部署具有依赖关系的项会将所有依赖关系部署到 Azure 自动化。 通过将 **AzureAutomationNotSupported** 标记添加到项元数据可禁用“部署到 Azure 自动化”按钮。
 
-若要了解有关 Azure 自动化的详细信息，请参阅 [Azure 自动化网站](http://azure.microsoft.com/en-us/services/automation/)。
+若要了解有关 Azure 自动化的详细信息，请参阅 [Azure 自动化网站](http://azure.microsoft.com/services/automation/)。
 
 ## <a name="updating-items-from-the-powershell-gallery"></a>更新来自 PowerShell 库中的项
 

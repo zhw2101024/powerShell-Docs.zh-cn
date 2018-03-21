@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
 keywords: "wmf,powershell,安装程序"
-ms.openlocfilehash: f39328b240a36deb40d484c4aedb889cee91dc8d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: ad1d19eeb70a19cd3d1493b9a09b115af755feb4
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Desired State Configuration (DSC) 已知问题和限制
 
@@ -16,7 +16,7 @@ ms.lasthandoff: 06/12/2017
 
 在 WMF 4.0 和 WMF 5.0 预览版本中，DSC 不允许配置中的密码长度超过 121 个字符。 尽管使用较长的强密码更好，但 DSC 强制使用短密码。 此项重大更改使 DSC 配置中的密码可为任意长度。
 
-**解决方法：**使用数据加密或密钥加密密钥用法和文档加密增强型密钥用法 (1.3.6.1.4.1.311.80.1) 重新创建证书。 Technet 文章 <https://technet.microsoft.com/en-us/library/dn807171.aspx> 中提供了详细信息。
+**解决方法：**使用数据加密或密钥加密密钥用法和文档加密增强型密钥用法 (1.3.6.1.4.1.311.80.1) 重新创建证书。 Technet 文章 <https://technet.microsoft.com/library/dn807171.aspx> 提供了更多信息。
 
 
 <a name="dsc-cmdlets-may-fail-after-installing-wmf-50-rtm"></a>安装 WMF 5.0 RTM 后 DSC cmdlet 可能失败
