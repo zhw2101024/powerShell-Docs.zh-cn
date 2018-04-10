@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "使用选项卡扩展"
+title: 使用选项卡扩展
 ms.assetid: c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
-ms.openlocfilehash: 8412bd97a95719f07b16c6671d3b8801bbfab8e3
-ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
+ms.openlocfilehash: 3d047bf0691c8a304d7637aa50fba6ae99709a82
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-tab-expansion"></a>使用选项卡扩展
+
 命令行 Shell 通常提供一种方法来自动完成长文件或命令的名称，从而加快命令输入并给出提示。 Windows PowerShell 允许通过按下 **Tab** 键来填充文件名称和 cmdlet 名称。
 
 > [!NOTE]
@@ -45,4 +46,3 @@ PS> Get-Content C:\windows\actsetup.log
 
 > [!NOTE]
 > 选项卡扩展进程的一个限制是选项卡始终解释为尝试完成单词。 如果将命令示例复制并粘贴到 PowerShell 控制台，请确保该示例不包含选项卡；如果包含选项卡，则结果将不可预测并且几乎不会得到预期的结果。
-

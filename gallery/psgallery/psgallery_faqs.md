@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
-keywords: "库,powershell,cmdlet,psgallery"
+keywords: 库,powershell,cmdlet,psgallery
 title: psgallery_faqs
-ms.openlocfilehash: b856c44f3733d4a7c236d901edb391091d9d546e
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: f00372d75b3e73bdc1499c3a2c8895bffb0902f9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="frequently-asked-questions"></a>常见问题
 
@@ -169,4 +169,3 @@ PowerShell 库是 [NuGet Gallery](https://www.nuget.org/)（NuGet 库）的修�
 ## <a name="how-do-i-deal-with-an-item-owner-who-is-violating-my-item-license"></a>如何处理违反项许可证的项所有者？
 
 我们鼓励 PowerShell 社区解决项所有者之间可能出现的任何争议。  PowerShellGallery.com 管理员进行调解之前，我们希望你遵循我们精心指定的[争议解决过程](psgallery_dispute_resolution.md)。
-

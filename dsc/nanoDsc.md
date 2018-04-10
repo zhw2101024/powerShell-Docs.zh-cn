@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "使用 Nano Server 上的 DSC"
-ms.openlocfilehash: c8f3669ee9c2ed6107c14ba9f4460d82276e1932
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,配置,安装程序
+title: 使用 Nano Server 上的 DSC
+ms.openlocfilehash: 9ebc1f046893c360538009b5ecbcfb6456f92bbb
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-dsc-on-nano-server"></a>使用 Nano Server 上的 DSC
 
@@ -25,22 +25,22 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 ## <a name="dsc-features-available-on-nano-server"></a>Nano Server 上可用的 DSC 功能
 
  由于与完整版的 Windows Server 相比，Nano Server 仅支持一组数量有限的 API，因此 Nano Server 上的 DSC 暂时没有与完整 SKU 上运行的 DSC 等同的完整功能。 Nano Server 上的 DSC 正处于积极开发中，且功能尚未完善。
- 
- 下面的 DSC 功能当前在 Nano Server 上均可用： 
+
+ 下面的 DSC 功能当前在 Nano Server 上均可用：
 
 
 * 推送和请求模式
 
-* 完整版 Windows Server 上存在的所有 DSC cmdlet，包括： 
+* 完整版 Windows Server 上存在的所有 DSC cmdlet，包括：
   * [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx)
-  * [Set-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn521621.aspx)     
+  * [Set-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn521621.aspx)
   * [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx)
-  * [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx)       
+  * [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx)
   * [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx)
   * [Stop-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143542.aspx)
   * [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx)
-  * [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx)      
-  * [Publish-DscConfiguraiton](https://technet.microsoft.com/en-us/library/mt517875.aspx) 
+  * [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx)
+  * [Publish-DscConfiguraiton](https://technet.microsoft.com/en-us/library/mt517875.aspx)
   * [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541.aspx)
   * [Restore-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407383.aspx)
   * [Remove-DscConfigurationDocument](https://technet.microsoft.com/en-us/library/mt143544.aspx)
@@ -48,7 +48,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
   * [Invoke-DscResource](https://technet.microsoft.com/en-us/library/mt517869.aspx)
   * [Find-DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
   * [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)
-  * [New-DscChecksum](https://technet.microsoft.com/en-us/library/dn521622.aspx)    
+  * [New-DscChecksum](https://technet.microsoft.com/en-us/library/dn521622.aspx)
 
 * 编译配置（请参阅 [DSC 配置](configurations.md)）
 
@@ -61,10 +61,10 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 * 基于类的资源（请参阅[使用 PowerShell 类编写自定义 DSC 资源](authoringResourceClass.md)）
 
 * 调试 DSC 资源（见[调试 DSC 资源](debugresource.md)）
-  
+
   **问题：**在资源使用 PsDscRunAsCredential 时不起作用（请参阅[使用用户凭据运行 DSC](runAsUser.md)）
 
-* [指定跨节点依赖关系](crossNodeDependencies.md) 
+* [指定跨节点依赖关系](crossNodeDependencies.md)
 
 * [资源版本控制](sxsResource.md)
 
@@ -72,7 +72,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 
 * [部分配置（请求和推送）](partialConfigs.md)
 
-* [向请求服务器报告](reportServer.md) 
+* [向请求服务器报告](reportServer.md)
 
 * MOF 加密
 
@@ -97,32 +97,32 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 * 实现部分功能的资源
   * [组](groupResource.md)
   * GroupSet
-  
+
   **问题：**如果调用两次特定实例（运行相同的配置两次），上面的资源失败
-  
+
   * [服务](serviceResource.md)
   * ServiceSet
-  
+
   **问题：**仅对处于正在启动/停止（状态）的服务有效。 如果有人尝试更改其他服务属性（如 startuptype、credentials、description 等），则会失败。 引发的错误类似于：
-  
+
   找不到类型 [management.managementobject]: 请验证包含此类型的程序集是否已加载。
-  
+
 * 无法实现功能的资源
   * [用户](userResource.md)
-  
+
 
 ## <a name="dsc-features-not-available-on-nano-server"></a>Nano Server 上不可用的 DSC 功能
 
 下面的 DSC 功能当前在 Nano 服务器上不可用：
 
-* 使用加密的密码解密 MOF 文档 
+* 使用加密的密码解密 MOF 文档
 * 请求服务器 - 当前不能在 Nano Server 上设置请求服务器
 * 不在功能工作列表中的任何内容
 
 ## <a name="using-custom-dsc-resources-on-nano-server"></a>在 Nano Server 上使用自定义 DSC 资源
- 
-由于 Nano Server 上仅可使用的有限的 Windows API 集和 CLR 库，因此在完整 CLR 版的 Windows 上运行的 DSC 资源并不一定适用于 Nano Server。 在部署任意 DSC 资源到生产环境之前，先完成端到端测试。
+
+由于 Nano Server 上仅可使用的有限的 Windows API 集和 CLR 库，因此在完整 CLR 版的 Windows 上运行的 DSC 资源并不一定适用于 Nano Server。
+在部署任意 DSC 资源到生产环境之前，先完成端到端测试。
 
 ## <a name="see-also"></a>另请参阅
 - [Nano Server 入门](https://technet.microsoft.com/library/mt126167.aspx)
-

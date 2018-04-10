@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-09
-keywords: "powershell, cmdlet, 下载, 安装, 设置, windows 10, windows 8.1, windows 8.0, windows 7"
-title: "安装 Windows PowerShell"
-ms.openlocfilehash: dffb6ec11ce265ebc4e6bc91f631650e1af5868d
-ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
+ms.date: 08/09/2017
+keywords: powershell, cmdlet, 下载, 安装, 设置, windows 10, windows 8.1, windows 8.0, windows 7
+title: 安装 Windows PowerShell
+ms.openlocfilehash: 320b271ce49768f8865c79c5c72749befe306fa4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="installing-windows-powershell"></a>安装 Windows PowerShell
 从 Windows 7 SP1 和 Windows Server 2008 R2 SP1 开始，每个 Windows 中默认随附安装有 Windows PowerShell。
@@ -45,7 +45,8 @@ Windows 7 SP1 | 单击左下角的 Windows 图标，在搜索框中键入 PowerS
 
 在所有核心版本中，登录到服务器时会显示 Windows 命令提示符窗口。
 
-键入 `powershell` 并按“Enter”可在命令提示符会话内启动 PowerShell。 键入 `exit` 可终止 PowerShell 会话并返回命令提示符。
+键入 `powershell` 并按“Enter”可在命令提示符会话内启动 PowerShell。
+键入 `exit` 可终止 PowerShell 会话并返回命令提示符。
 
 ### <a name="windows-server-desktop-editions"></a>Windows Server 桌面版本
 

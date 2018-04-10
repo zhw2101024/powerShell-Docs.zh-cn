@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "初始启动时使用 DSC 配置虚拟机"
-ms.openlocfilehash: ff06aafa6db49d93a9b42e38ac7c3e9a11657bd5
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,配置,安装程序
+title: 初始启动时使用 DSC 配置虚拟机
+ms.openlocfilehash: e6ff83b9a09f93277904c80e8e52f3db5e818739
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 >适用于：Windows PowerShell 5.0
 
@@ -90,7 +90,8 @@ Configuration SampleIISInstall
     Dismount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
     ```
 
-7. 通过使用安装了 DSC MOF 文档的 VHD 创建 VM。 初始启动并安装操作系统之后，将安装 IIS。
+7. 通过使用安装了 DSC MOF 文档的 VHD 创建 VM。
+初始启动并安装操作系统之后，将安装 IIS。
 可以通过调用 [Get-WindowsFeature](https://technet.microsoft.com/library/jj205469.aspx) cmdlet 对此进行验证。
 
 ## <a name="inject-a-dsc-metaconfiguration-into-a-vhd"></a>将 DSC 元配置注入 VHD
@@ -203,4 +204,3 @@ configuration PullClientBootstrap
 - [DSCAutomationHostEnabled 注册表项](DSCAutomationHostEnabled.md)
 - [配置本地配置管理器 (LCM)](metaConfig.md)
 - [设置 DSC Web 请求服务器](pullServer.md)
-

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
-keywords: "jea,powershell,安全性"
-title: "JEA 先决条件"
-ms.openlocfilehash: e6ee16e34eb9f1f0b2f3601c1aa9e90ab4f785f1
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: jea,powershell,安全性
+title: JEA 先决条件
+ms.openlocfilehash: 92a74d89a0e982e9f45e69d92b261756de33c038
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="prerequisites"></a>必备条件
 
@@ -111,4 +111,3 @@ PowerShell 模块日志记录不是 JEA 必需的，但强烈建议打开它，�
 
 - [有关 PowerShell 远程处理和 WinRM 安全性的其他信息](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity)
 - [PowerShell ♥ the Blue Team 关于安全的博客文章](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
-

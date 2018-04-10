@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "库,powershell,cmdlet,psget"
-title: "获取 PowerShellGet 模块"
-ms.openlocfilehash: 7224cf5d71b98d51ca22c47a00ca382d34864bfb
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: 库,powershell,cmdlet,psget
+title: 获取 PowerShellGet 模块
+ms.openlocfilehash: a392f795d8c065ff881bc6cc113e63a1f18bcb44
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 <a name="get-powershellget-module"></a>获取 PowerShellGet 模块
 ========================
@@ -20,7 +20,7 @@ ms.lasthandoff: 03/15/2018
 - [PowerShell 6](https://github.com/PowerShell/PowerShell/releases)
 
 ### <a name="get-powershellget-module-for-powershell-versions-30-and-40"></a>获取适用于 PowerShell 版本 3.0 和 4.0 的 PowerShellGet 模块
-- [PackageManagement MSI](http://go.microsoft.com/fwlink/?LinkID=746217&clcid=0x409) 
+- [PackageManagement MSI](http://go.microsoft.com/fwlink/?LinkID=746217&clcid=0x409)
 
 ### <a name="get-the-latest-version-from-powershell-gallery"></a>从 PowerShell 库获取最新版本
 
@@ -30,7 +30,7 @@ Install-PackageProvider Nuget –Force
 Exit
 ```
 
-#### <a name="for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget"></a>对于使用 PowerShell 5.0（或更高版本）的系统，可以安装最新的 PowerShellGet 
+#### <a name="for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget"></a>对于使用 PowerShell 5.0（或更高版本）的系统，可以安装最新的 PowerShellGet
 - 若要在 Windows 10、Windows Server 2016、任何安装了 WMF 5.0 或 5.1 的系统或任何安装了 PowerShell 6 的系统上执行此操作，请通过提升的 PowerShell 会话运行以下命令。
 ```powershell
 Install-Module –Name PowerShellGet –Force
@@ -59,3 +59,4 @@ Exit
 ```powershell
 Copy-Item "C:\LocalFolder\PowerShellGet\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\" -Recurse -Force
 Copy-Item "C:\LocalFolder\PackageManagement\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\" -Recurse -Force
+```

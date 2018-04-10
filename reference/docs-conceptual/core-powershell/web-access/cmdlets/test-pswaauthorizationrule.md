@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
-title: "测试 pswaauthorizationrule"
+ms.date: 12/12/2016
+title: 测试 pswaauthorizationrule
 ms.technology: powershell
-ms.openlocfilehash: fb2937397616160c70b056e412e42fb8ff4c2f27
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: ed6d56b2f3c4ee4ac410cdaadda312bffe506ee9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="test-pswaauthorizationrule"></a>Test-PswaAuthorizationRule
 
@@ -47,7 +47,7 @@ Test-PswaAuthorizationRule 用于验证是否为特定用户、计算机或终�
 
 指定要测试的计算机的名称。
 
-|||  
+|||
 |-|-|
 | 别名                              | 无                                 |
 | 是否必需？                            | true                                 |
@@ -60,7 +60,7 @@ Test-PswaAuthorizationRule 用于验证是否为特定用户、计算机或终�
 
 指定要测试的 Windows PowerShell 会话配置的名称（又称为终结点或运行空间）。
 
-|||  
+|||
 |-|-|
 | 别名                              | 无                                 |
 | 是否必需？                            | false                                |
@@ -73,7 +73,7 @@ Test-PswaAuthorizationRule 用于验证是否为特定用户、计算机或终�
 
 指定要测试的连接 URI。
 
-|||  
+|||
 |-|-|
 | 别名                              | 无                                 |
 | 是否必需？                            | true                                 |
@@ -86,7 +86,7 @@ Test-PswaAuthorizationRule 用于验证是否为特定用户、计算机或终�
 
 为要用于测试 Windows PowerShell Web 访问授权规则的用户帐户指定 PSCredential 对象。 如果不添加此参数，cmdlet 将使用当前登录的用户帐户。 要获取 PSCredential 对象（用于以远程方式测试授权规则），请运行 [Get-Credential cmdlet](http://go.microsoft.com/fwlink/?LinkID=293936)。
 
-|||  
+|||
 |-|-|
 | 别名                              | 无                                 |
 | 是否必需？                            | false                                |
@@ -99,7 +99,7 @@ Test-PswaAuthorizationRule 用于验证是否为特定用户、计算机或终�
 
 指定要测试的规则子集。 如果此参数未指定，则此 cmdlet 将针对所有授权规则进行测试。
 
-|||  
+|||
 |-|-|
 | 别名                              | 无                                 |
 | 是否必需？                            | false                                |
@@ -112,7 +112,7 @@ Test-PswaAuthorizationRule 用于验证是否为特定用户、计算机或终�
 
 指定要测试的用户的名称。
 
-|||  
+|||
 |-|-|
 | 别名                              | 无                                 |
 | 是否必需？                            | true                                 |

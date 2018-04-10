@@ -1,18 +1,18 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "准备好使用 Windows PowerShell"
+title: 准备好使用 Windows PowerShell
 ms.assetid: 6dc7052d-cc5a-4220-950f-98f963a2b587
-ms.openlocfilehash: de09c74e938f11a130864b1620d6c169006a27be
-ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
+ms.openlocfilehash: 5e095984286ff89958dc0a4e3d27e40eae5b2c5e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="getting-ready-to-use-windows-powershell"></a>准备好使用 Windows PowerShell
 安装并启动 Windows PowerShell 后，请考虑以下设置选项。 随时可以执行这些任务。
 
-- **安装帮助文件。** Windows PowerShell 3.0 中包含的 cmdlet 不附带帮助文件。 但是，可以使用 [Update-Help](/powershell/module/microsoft.powershell.core/update-help) cmdlet 在计算机上下载并安装最新帮助文件。 安装文件后，可以使用 [Get-Help](/powershell/module/microsoft.powershell.core/get-help) cmdlet 在命令行右侧显示它们。 有关详细信息，请参阅 [about_Updatable_Help](/powershell/module/microsoft.powershell.core/about/about_execution_policies)。
+- **安装帮助文件。** Windows PowerShell 3.0 中包含的 cmdlet 不附带帮助文件。 但是，可以使用 [Update-Help](/powershell/module/microsoft.powershell.core/update-help) cmdlet 在计算机上下载并安装最新帮助文件。 安装文件后，可以使用 [Get-Help](/powershell/module/microsoft.powershell.core/get-help) cmdlet 在命令行右侧显示它们。 有关详细信息，请参阅 [about_Updatable_Help](/powershell/module/microsoft.powershell.core/about/about_updatable_help)。
 
     如果决定不安装帮助文件，你仍可以在线阅读帮助主题。 若要打开任何 cmdlet 帮助主题的在线版本，请键入：`Get-Help <CmdletName> -Online`。 若要浏览 Windows PowerShell 帮助主题，请参阅 [PowerShell 文档](/powershell/scripting)。
 
@@ -25,4 +25,3 @@ ms.lasthandoff: 11/07/2017
 ## <a name="see-also"></a>另请参阅
 - [安装 Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
 - [启动 Windows PowerShell](/powershell/scripting/setup/starting-windows-powershell)
-

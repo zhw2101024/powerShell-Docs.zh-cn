@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
-keywords: "库,powershell,cmdlet,psgallery"
+keywords: 库,powershell,cmdlet,psgallery
 title: psgallery_dispute_resolution
-ms.openlocfilehash: 640d20371a51b08a5627b9beff1bb0ada4f06dd8
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 424013229418efddeb0fe56828aece418630d91b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dispute-resolution"></a>争议解决
 
@@ -39,4 +39,3 @@ PowerShellGallery.com 支持团队将介入，尝试解决此问题。
 如果你发现有项违反以上任意一条，可单击项详细信息页面上的“报告滥用行为”链接并提交报告。
 
 **此策略可能会发生变更，具体取决于 PowerShell 库。**
-

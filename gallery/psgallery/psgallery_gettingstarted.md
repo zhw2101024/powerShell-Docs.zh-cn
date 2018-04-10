@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
-keywords: "库,powershell,cmdlet,psgallery"
+keywords: 库,powershell,cmdlet,psgallery
 title: psgallery_gettingstarted
-ms.openlocfilehash: 2117712b0081db4a21f8480b458a499ed84dc512
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 599b148e141ba4205a7c774581e737a5d54bfae1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-started-with-the-powershell-gallery"></a>PowerShell 库入门
 
@@ -33,7 +33,7 @@ PowerShellGet 还需要 [NuGet 提供程序](http://go.microsoft.com/fwlink/?Lin
 
 也可以运行 `Install-PackageProvider -Name NuGet -Force`，以自动下载和安装 NuGet 提供程序。
 
-  
+
 如果 NuGet 版本低于 2.8.5.201，则需调用以下 PowerShell cmdlet 来安装并切换到 NuGet 最新版本。
 
 1.  `Install-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force`
@@ -42,7 +42,7 @@ PowerShellGet 还需要 [NuGet 提供程序](http://go.microsoft.com/fwlink/?Lin
 
 有关详细信息，请参阅 <http://oneget.org/>。
 
-  
+
 注意：由于打包格式的更改，建议更新到最新版本的 PowerShellGet 和 PackageManagement 来安装最近已更新的项。 PowerShellGet 包含在 Windows 10 中，可在[此处](http://go.microsoft.com/fwlink/?LinkID=624830&clcid=0x409)了解详细信息。
 PowerShellGet 也是 Windows Management Framework (WMF) 5.0 的一部分，可在[此处](http://go.microsoft.com/fwlink/?LinkId=398175)进行下载。
 
@@ -118,4 +118,3 @@ CurrentUser` 参数，脚本将安装到 `$env:USERPROFILE\Documents\WindowsPowe
 若要确定已安装 PowerShell 库中的哪些模块，请运行 [Get-InstalledModule](https://go.microsoft.com/fwlink/?LinkId=526863) cmdlet。 该命令会列出系统上所有已直接从 PowerShell 库安装的模块。
 
 同样，若要确定已安装 PowerShell 库中的哪些脚本，请运行 [Get-InstalledScript](https://go.microsoft.com/fwlink/?LinkId=619790) cmdlet。 此命令会列出系统上所有已直接从 PowerShell 库安装的脚本。
-

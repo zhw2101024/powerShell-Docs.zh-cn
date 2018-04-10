@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,安装程序"
-ms.openlocfilehash: 2c3cc6d5d226daf22c7ee83a1b7068d6a08b7f45
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,安装程序
+ms.openlocfilehash: b440ea4a8208d5c576fa566a19e2de377bf5f475
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="script-tracing-and-logging"></a>脚本跟踪和日志记录
 
@@ -52,7 +52,7 @@ function SuperDecrypt
 {
     param($script)
     $bytes = [Convert]::FromBase64String($script)
-             
+
     ## XOR “encryption”
     $xorKey = 0x42
     for($counter = 0; $counter -lt $bytes.Length; $counter++)
@@ -107,4 +107,3 @@ $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 ```
 
 正如所有日志系统都有一个有限的保留缓存区（即 ETW 日志）一样，针对此基础结构的一个攻击就是，用虚假事件充斥日志以隐藏早期的证据。 若要避免这种攻击，请确保具有某种形式的事件日志集合设置（即 Windows 事件转发，[通过 Windows 事件日志监视发现攻击者](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf)）以尽快将事件日志从计算机中移除。
-

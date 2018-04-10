@@ -1,18 +1,20 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "Windows PowerShell ISE 的键盘快捷方式"
+title: Windows PowerShell ISE 的键盘快捷方式
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
-ms.openlocfilehash: 21c4b43b1ab94e2b533413362319ec42ac8a15aa
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: e17fee4cf0cc8ac7aa0bb36acde3b452919312d0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE 的键盘快捷方式
+
 使用以下键盘快捷方式在 Windows PowerShell® 集成脚本环境 (ISE) 中执行操作。 Windows PowerShell ISE 可作为 Windows Server 和 Windows 客户端操作系统的一部分，但是也可作为 [Windows Management Framework 4.0 下载包](http://go.microsoft.com/fwlink/?LinkID=293881)的一部分安装在早期的 Windows 操作系统上。
 
 ## <a name="keyboard-shortcuts-for-editing-text"></a>编辑文本的键盘快捷方式
+
 编辑文本时可以使用以下键盘快捷方式。
 
 |操作|键盘快捷方式|用于|
@@ -34,6 +36,7 @@ ms.lasthandoff: 08/03/2017
 |**撤消**|CTRL+Z|脚本窗格、命令窗格|
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>运行脚本的键盘快捷方式
+
 在脚本窗格中运行脚本时，可使用以下键盘快捷方式。
 
 |操作|键盘快捷方式|
@@ -47,6 +50,7 @@ ms.lasthandoff: 08/03/2017
 |**Tab**（切换到上一个脚本）|CTRL+SHIFT+TAB **注意：**单击 Tab 键切换到上一个脚本适用于仅打开一个 Windows PowerShell 选项卡或打开多个 Windows PowerShell 选项卡，但焦点在脚本窗格中的情况。|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>自定义视图的键盘快捷方式
+
 可以使用以下键盘快捷方式在 Windows PowerShell ISE 中自定义视图。 可从应用程序中的所有窗格对它们进行访问。
 
 |操作|键盘快捷方式|
@@ -63,6 +67,7 @@ ms.lasthandoff: 08/03/2017
 |**缩小**|CTRL+减号|
 
 ## <a name="keyboard-shortcuts-for-debugging-scripts"></a>用于调试脚本的键盘快捷方式
+
 调试脚本时，可使用以下键盘快捷方式。
 
 |操作|键盘快捷方式|用于|
@@ -93,6 +98,7 @@ ms.lasthandoff: 08/03/2017
 |**显示控制台调试命令**|H 或 ?|控制台窗格，调试脚本时|
 
 ## <a name="keyboard-shortcuts-for-windows-powershell-tabs"></a>Windows PowerShell 选项卡的键盘快捷方式
+
 使用 Windows PowerShell 选项卡时，可使用以下键盘快捷方式。
 
 |操作|键盘快捷方式|
@@ -103,6 +109,7 @@ ms.lasthandoff: 08/03/2017
 |**下一个 Windows PowerShell 选项卡**|CTRL+TAB。 此快捷键仅在所有 Windows PowerShell 选项卡上都未打开任何文件时可用。|
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>启动和退出的键盘快捷方式
+
 可以使用以下键盘快捷方式来启动 Windows PowerShell 控制台 (PowerShell.exe) 或退出 Windows PowerShell ISE。
 
 |操作|键盘快捷方式|
@@ -111,5 +118,5 @@ ms.lasthandoff: 08/03/2017
 |**启动 PowerShell.exe**（Windows PowerShell 控制台）|CTRL+SHIFT+P|
 
 ## <a name="see-also"></a>另请参阅
-- [PowerShell 杂志：Windows PowerShell ISE 键盘快捷键的完整列表](http://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)
 
+- [PowerShell 杂志：Windows PowerShell ISE 键盘快捷键的完整列表](http://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)

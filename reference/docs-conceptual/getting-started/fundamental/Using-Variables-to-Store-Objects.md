@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "使用变量存储对象"
+title: 使用变量存储对象
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-ms.openlocfilehash: 9a95d421fa2686608a565987c16fecc41c3c6d20
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: e52f0a344d0ad13db42b34bed912d584c99b0e30
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-variables-to-store-objects"></a>使用变量存储对象
 PowerShell 处理对象。 PowerShell 允许创建实质上是命名对象的变量以保留输出以供以后使用。 如果你习惯在其他 Shell 中处理变量，请记住，PowerShell 变量是对象，而非文本。
@@ -97,4 +97,3 @@ C:\WINDOWS
 ```
 
 还可以从 PowerShell 内部创建和修改环境变量。 从 Windows PowerShell 访问的环境变量遵循针对 Windows 中其他环境变量的一般规则。
-

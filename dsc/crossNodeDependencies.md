@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "指定跨节点依赖关系"
-ms.openlocfilehash: f4411161d819d96803f57600646409d5bfe827b9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,配置,安装程序
+title: 指定跨节点依赖关系
+ms.openlocfilehash: c563563118c4df8aeee442d3b30b79f7b7700fc7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="specifying-cross-node-dependencies"></a>指定跨节点依赖关系
 
@@ -17,7 +17,7 @@ DSC 提供特殊的资源，**WaitForAll**、**WaitForAny** 和 **WaitForSome**�
 
 * **WaitForAll**：如果指定的资源在 **NodeName** 属性中定义的所有目标节点上处于所需状态，则该资源成功。
 * **WaitForAny**：如果指定的资源在**NodeName** 属性中定义的至少一个目标节点上处于所需状态，则该资源成功。
-* **WaitForSome**：指定除 **NodeName** 属性之外的 **NodeCount** 属性。 如果资源在 **NodeName** 属性定义的节点（数量下限由 **NodeCount** 指定）上处于所需的状态，则资源成功。 
+* **WaitForSome**：指定除 **NodeName** 属性之外的 **NodeCount** 属性。 如果资源在 **NodeName** 属性定义的节点（数量下限由 **NodeCount** 指定）上处于所需的状态，则资源成功。
 
 ## <a name="using-waitforxxxx-resources"></a>使用 WaitForXXXX 资源
 
@@ -35,13 +35,13 @@ Configuration JoinDomain
     {
         WindowsFeature InstallAD
         {
-            Ensure = 'Present' 
-            Name = 'AD-Domain-Services' 
+            Ensure = 'Present'
+            Name = 'AD-Domain-Services'
         }
 
-        xADDomain NewDomain 
-        { 
-            DomainName = 'Contoso.com'            
+        xADDomain NewDomain
+        {
+            DomainName = 'Contoso.com'
             DomainAdministratorCredential = (Get-Credential)
             SafemodeAdministratorPassword = (Get-Credential)
             DatabasePath = "C:\Windows\NTDS"
@@ -79,4 +79,3 @@ Configuration JoinDomain
 * [DSC 配置](configurations.md)
 * [DSC 资源](resources.md)
 * [配置本地配置管理器](metaConfig.md)
-

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "库,powershell,cmdlet,psget"
+keywords: 库,powershell,cmdlet,psget
 title: Register-PSRepository
-ms.openlocfilehash: badac5dc1157bbfa79058630c5c2f260d2151bd8
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 7a7d1bf56a87161f6ec735399b15b19f317282b6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="register-psrepository"></a>Register-PSRepository
 
@@ -16,7 +16,7 @@ ms.lasthandoff: 09/29/2017
 
 ## <a name="description"></a>说明
 
-Register-PSRepository cmdlet 为 PowerShell 模块注册联机库。 注册存储库后，可从 Find-Module、Install-Module 和 Publish-Module cmdlet 中引用它。 已注册的存储库将成为 Find-Module 和 Install-Module 中的默认存储库。 
+Register-PSRepository cmdlet 为 PowerShell 模块注册联机库。 注册存储库后，可从 Find-Module、Install-Module 和 Publish-Module cmdlet 中引用它。 已注册的存储库将成为 Find-Module 和 Install-Module 中的默认存储库。
 
 已注册的存储库是特定于用户的存储库。 它们不是在整个系统范围上下文中注册的。
 
@@ -33,7 +33,8 @@ Get-Command -Name Register-PSRepository -Module PowerShellGet -Syntax
 ## <a name="example-commands"></a>示例命令
 
 ### <a name="register-a-powershell-repository"></a>注册 PowerShell 存储库
-可将 PowerShellGet 配置为针对内部存储库进行工作。 注册存储库后，可以使用 Find-Module 和 Install-Module 对它进行操作。
+可将 PowerShellGet 配置为针对内部存储库进行工作。
+注册存储库后，可以使用 Find-Module 和 Install-Module 对它进行操作。
 
 ```powershell
 # Register a default repository
@@ -114,4 +115,3 @@ ScriptPublishLocation : https://customgallery.cloudapp.net/api/v2/package/
 ProviderOptions : {}
 
 ```
-

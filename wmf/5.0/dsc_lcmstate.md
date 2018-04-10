@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,安装程序"
-ms.openlocfilehash: 4fc146f84588d368ac3eb819e3acb4cb8c5d8793
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,安装程序
+ms.openlocfilehash: baa35e9acd24d6f6155acf617a0d2c2210742af7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="detailed-information-about-lcm-state"></a>关于 LCM 状态的详细信息
 
@@ -19,4 +19,3 @@ ms.lasthandoff: 06/12/2017
 * **PendingConfiguration**
 
 我们还添加了 LCMStateDetail 属性，它包含有关状态的详细信息。
-

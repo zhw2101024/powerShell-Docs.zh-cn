@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "适用于 Linux nxEnvironment 资源的 DSC"
-ms.openlocfilehash: 61e0c7e77e486cea878351f1929d73f1f80710d8
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,配置,安装程序
+title: 适用于 Linux nxEnvironment 资源的 DSC
+ms.openlocfilehash: 6d1d5e578e9a7ddda0e70063f86867de2e87a52e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxenvironment-resource"></a>适用于 Linux nxEnvironment 资源的 DSC
 
@@ -29,13 +29,13 @@ nxEnvironment <string> #ResourceName
 
 ## <a name="properties"></a>“属性”
 
-|  属性 |  说明 | 
+|  属性 |  说明 |
 |---|---|
-| 名称| 指示指示你想要确保其特定状态的环境变量的名称。| 
-| 值| 要分配给环境变量的值。| 
-| Ensure| 确定是否要检查变量是否存在。 将此属性设置为“Present”可确保该变量存在。 将其设置为“Absent”可确保该变量不存在。 默认值为“Present”。| 
-| 路径| 定义正在配置的环境变量。 如果变量是 **Path**，则将此属性设置为 **$true**；否则将其设置为 **$false**。 默认值为 **$false**。 如果正在配置的变量是 **Path**，则通过 **Value** 属性提供的值将被附加到现有值。| 
-| DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 **ID** 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。| 
+| 名称| 指示指示你想要确保其特定状态的环境变量的名称。|
+| 值| 要分配给环境变量的值。|
+| Ensure| 确定是否要检查变量是否存在。 将此属性设置为“Present”可确保该变量存在。 将其设置为“Absent”可确保该变量不存在。 默认值为“Present”。|
+| 路径| 定义正在配置的环境变量。 如果变量是 **Path**，则将此属性设置为 **$true**；否则将其设置为 **$false**。 默认值为 **$false**。 如果正在配置的变量是 **Path**，则通过 **Value** 属性提供的值将被附加到现有值。|
+| DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 **ID** 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。|
 
 ## <a name="additional-information"></a>其他信息
 
@@ -47,7 +47,7 @@ nxEnvironment <string> #ResourceName
 以下示例说明如何使用 **nxEnvironment** 资源来确保 **TestEnvironmentVariable** 存在且具有值“Test-Value”。 如果不存在，则将创建 **TestEnvironmentVariable**。
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 
 nxEnvironment EnvironmentExample
@@ -57,5 +57,3 @@ nxEnvironment EnvironmentExample
     Value = “TestValue”
 }
 ```
-
-

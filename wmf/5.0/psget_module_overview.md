@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,安装程序"
-ms.openlocfilehash: 2c7e718bc518b332cb4303ef73b1bf5c924ca471
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,安装程序
+ms.openlocfilehash: 82b8046d5cbb47300f090ce2ffbf3c279ed19458
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a>使用 PowerShellGet 进行 PowerShell 模块发现、安装和盘存
- 
+
 此版本的 WMF 中包括了 PowerShellGet：
 -   Find-Module 可以使用 -Tag 参数对模块元数据进行筛选
 -   Find-Module 可以使用 -Filter 参数对存储库特定搜索语言进行筛选
@@ -60,4 +60,3 @@ Find-Module -Filter RBAC -Repository PSGallery
     -   Get-InstalledModule
     -   Uninstall-Module
     -   Save-Module
-    

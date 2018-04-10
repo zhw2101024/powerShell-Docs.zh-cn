@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "库,powershell,cmdlet,psget"
+keywords: 库,powershell,cmdlet,psget
 title: Get-InstalledModule
-ms.openlocfilehash: 6f485d04503ea6d9a51a68ae7ec3d0dc2e6facab
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: f82d8f3b6b6a9283deef44c2705b97d4717b634c
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-installedmodule"></a>Get-InstalledModule
 
@@ -24,7 +24,7 @@ Get InstalledModule cmdlet 获取计算机上使用 Install-Module cmdlet 安装
 - Get-InstalledModule 可使用版本参数进行筛选：MinimumVersion、MaximumVersion、RequiredVersion、AllVersions。
   - 这些参数彼此排斥，但 MinmimumVersion 和 MaximumVersion 除外。
   - 这些版本参数只允许具有单个模块名称，而不能具有任何通配符。
-  - 如果未指定 RequiredVersion 参数，Get InstalledModule 将返回等于或高于指定最低版本的已安装模块的最新版本，若未指定最低版本，则返回模块的最新版本。 
+  - 如果未指定 RequiredVersion 参数，Get InstalledModule 将返回等于或高于指定最低版本的已安装模块的最新版本，若未指定最低版本，则返回模块的最新版本。
   - 如果指定了 RequiredVersion 参数，Get InstalledModule 只返回与指定版本完全匹配的已安装模块版本。
 
 ## <a name="cmdlet-syntax"></a>Cmdlet 语法
@@ -126,4 +126,3 @@ Name          InstalledDate         UpdatedDate
 ----          -------------         -----------
 ContosoServer 2/29/2016 11:59:14 AM 2/29/2016 12:00:15 PM
 ```
-

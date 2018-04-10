@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "MSFT_DSCLocalConfigurationManager 类"
-ms.openlocfilehash: b2d2ce000988f2c10ab04c4ba5a4650bd3c75ec7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,配置,安装程序
+title: MSFT_DSCLocalConfigurationManager 类
+ms.openlocfilehash: 598bd7490043975d9d965c12a7337fb3475b3ded
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类
 
@@ -38,41 +38,32 @@ class MSFT_DSCLocalConfigurationManager
 
 |方法 |说明 |
 |:--- |:---|
-| [ApplyConfiguration](msft-dsclocalconfigurationmanager-applyconfiguration.md)| 使用配置代理应用处于挂起状态的配置。| 
-| [DisableDebugConfiguration](msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)| 禁用 DSC 资源调试。| 
-| [EnableDebugConfiguration](msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)| 启用 DSC 资源调试。| 
-| [GetConfiguration](msft-dsclocalconfigurationmanager-getconfiguration.md)| 将配置文档发送到托管节点，并使用配置代理的 **Get** 方法以应用配置。| 
-| [GetConfigurationResultOutput](msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md)| 获取与特定作业相关的配置代理输出。| 
-| [GetConfigurationStatus](msft-dsclocalconfigurationmanager-getconfigurationstatus.md)| 获取配置状态历史记录。| 
-| [GetMetaConfiguration](msft-dsclocalconfigurationmanager-getmetaconfiguration.md)| 获取用于控制配置代理的 LCM 设置。| 
-| [PerformRequiredConfigurationChecks](msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md)| 启动一致性检查。| 
-| [RemoveConfiguration](msft-dsclocalconfigurationmanager-removeconfiguration.md)| 删除配置文件。| 
-| [ResourceGet](msft-dsclocalconfigurationmanager-resourceget.md)| 直接调用 DSC 资源的 **Get** 方法。| 
-| [ResourceSet](msft-dsclocalconfigurationmanager-resourceset.md)| 直接调用 DSC 资源的 **Set** 方法。| 
-| [ResourceTest](msft-dsclocalconfigurationmanager-resourcetest.md)| 直接调用 DSC 资源的 **Test** 方法。| 
-| [RollBack](msft-dsclocalconfigurationmanager-rollback.md)| 回滚到以前的配置。| 
-| [SendConfiguration](msft-dsclocalconfigurationmanager-sendconfiguration.md)| 将配置文档发送到托管节点并将其保存为挂起的更改。| 
-| [SendConfigurationApply](msft-dsclocalconfigurationmanager-sendconfigurationapply.md)| 将配置文档发送到托管节点，并使用配置代理应用配置。| 
-| [SendConfigurationApplyAsync](msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)| 将配置文档发送到托管节点，并开始使用配置代理应用配置。 使用 GetConfigurationResultOutput 检索结果输出。| 
-| [SendMetaConfigurationApply](msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md)| 设置用于控制配置代理的 LCM 设置。| 
-| [StopConfiguration](msft-dsclocalconfigurationmanager-stopconfiguration.md)| 停止正在进行的配置。| 
-| [TestConfiguration](msft-dsclocalconfigurationmanager-testconfiguration.md)| 将配置文档发送到托管节点并针对该文档验证当前配置。| 
+| [ApplyConfiguration](msft-dsclocalconfigurationmanager-applyconfiguration.md)| 使用配置代理应用处于挂起状态的配置。|
+| [DisableDebugConfiguration](msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)| 禁用 DSC 资源调试。|
+| [EnableDebugConfiguration](msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)| 启用 DSC 资源调试。|
+| [GetConfiguration](msft-dsclocalconfigurationmanager-getconfiguration.md)| 将配置文档发送到托管节点，并使用配置代理的 **Get** 方法以应用配置。|
+| [GetConfigurationResultOutput](msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md)| 获取与特定作业相关的配置代理输出。|
+| [GetConfigurationStatus](msft-dsclocalconfigurationmanager-getconfigurationstatus.md)| 获取配置状态历史记录。|
+| [GetMetaConfiguration](msft-dsclocalconfigurationmanager-getmetaconfiguration.md)| 获取用于控制配置代理的 LCM 设置。|
+| [PerformRequiredConfigurationChecks](msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md)| 启动一致性检查。|
+| [RemoveConfiguration](msft-dsclocalconfigurationmanager-removeconfiguration.md)| 删除配置文件。|
+| [ResourceGet](msft-dsclocalconfigurationmanager-resourceget.md)| 直接调用 DSC 资源的 **Get** 方法。|
+| [ResourceSet](msft-dsclocalconfigurationmanager-resourceset.md)| 直接调用 DSC 资源的 **Set** 方法。|
+| [ResourceTest](msft-dsclocalconfigurationmanager-resourcetest.md)| 直接调用 DSC 资源的 **Test** 方法。|
+| [RollBack](msft-dsclocalconfigurationmanager-rollback.md)| 回滚到以前的配置。|
+| [SendConfiguration](msft-dsclocalconfigurationmanager-sendconfiguration.md)| 将配置文档发送到托管节点并将其保存为挂起的更改。|
+| [SendConfigurationApply](msft-dsclocalconfigurationmanager-sendconfigurationapply.md)| 将配置文档发送到托管节点，并使用配置代理应用配置。|
+| [SendConfigurationApplyAsync](msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)| 将配置文档发送到托管节点，并开始使用配置代理应用配置。 使用 GetConfigurationResultOutput 检索结果输出。|
+| [SendMetaConfigurationApply](msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md)| 设置用于控制配置代理的 LCM 设置。|
+| [StopConfiguration](msft-dsclocalconfigurationmanager-stopconfiguration.md)| 停止正在进行的配置。|
+| [TestConfiguration](msft-dsclocalconfigurationmanager-testconfiguration.md)| 将配置文档发送到托管节点并针对该文档验证当前配置。|
 
 
 
- 
+
 
 ## <a name="requirements"></a>要求
 ------------
 >**MOF：** DscCore.mof
 
 >**命名空间**：Root\Microsoft\Windows\DesiredStateConfiguration
-
-
-
- 
-
- 
-
-
-

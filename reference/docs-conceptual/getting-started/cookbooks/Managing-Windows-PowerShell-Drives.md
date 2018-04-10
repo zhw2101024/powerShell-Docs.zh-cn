@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "管理 Windows PowerShell 驱动器"
+title: 管理 Windows PowerShell 驱动器
 ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-ms.openlocfilehash: e2908246bb584291f04b67dc8635caec93d3b72e
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: cfc5418e9d2efb1a786817e1b941d75e22291742
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="managing-windows-powershell-drives"></a>管理 Windows PowerShell 驱动器
+
 *Windows PowerShell 驱动器*是一个数据存储位置，你可以像访问 Windows PowerShell 中的文件系统驱动器那样访问它。 Windows PowerShell 提供程序将为你创建一些驱动器，例如文件系统驱动器（包括 C: 和 D:）、注册表驱动器（HKCU: 和 HKLM:）和证书驱动器 (Cert:)，你也可以创建自己的 Windows PowerShell 驱动器。 这些驱动器非常有用，但它们仅在 Windows PowerShell 内可用。 你无法通过使用其他 Windows 工具（如文件资源管理器或 Cmd.exe）访问它们。
 
 Windows PowerShell 可针对适用于 Windows PowerShell 驱动器的命令使用名词 **PSDrive**。 有关 Windows PowerShell 会话中的 Windows PowerShell 驱动器列表，请使用 **Get-PSDrive** cmdlet。
@@ -39,6 +40,7 @@ Variable   Variable
 
 ```
 PS> Get-Command -Name Get-PSDrive -Syntax
+
 Get-PSDrive [[-Name] <String[]>] [-Scope <String>] [-PSProvider <String[]>] [-V
 erbose] [-Debug] [-ErrorAction <ActionPreference>] [-ErrorVariable <String>] [-
 OutVariable <String>] [-OutBuffer <Int32>]
@@ -58,26 +60,34 @@ D          FileSystem    D:\
 
 若要查看表示注册表配置单元的 Windows PowerShell 驱动器，请使用 **PSProvider** 参数来仅显示受 Windows PowerShell Registry 提供程序支持的 Windows PowerShell 驱动器：
 
-<pre>PS> Get-PSDrive -PSProvider Registry
+```
+PS> Get-PSDrive -PSProvider Registry
+
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
 HKCU       Registry      HKEY_CURRENT_USER
-HKLM       Registry      HKEY_LOCAL_MACHINE</pre>
+HKLM       Registry      HKEY_LOCAL_MACHINE
+```
 
 你还可以将标准 Location cmdlet 与 Windows PowerShell 驱动器结合使用：
 
-<pre>PS> Set-Location HKLM:\SOFTWARE
+```
+PS> Set-Location HKLM:\SOFTWARE
 PS> Push-Location .\Microsoft
 PS> Get-Location
+
 Path
 ----
-HKLM:\SOFTWARE\Microsoft</pre>
+HKLM:\SOFTWARE\Microsoft
+```
 
 ### <a name="adding-new-windows-powershell-drives-new-psdrive"></a>添加新的 Windows PowerShell 驱动器 (New-PSDrive)
+
 你可以通过使用 **New-PSDrive** 命令添加自己的 Windows PowerShell 驱动器。 若要获取 **New-PSDrive** 命令的语法，请使用 **Syntax** 参数输入 **Get-Command** 命令：
 
 ```
 PS> Get-Command -Name New-PSDrive -Syntax
+
 New-PSDrive [-Name] <String> [-PSProvider] <String> [-Root] <String> [-Descript
 ion <String>] [-Scope <String>] [-Credential <PSCredential>] [-Verbose] [-Debug
 ] [-ErrorAction <ActionPreference>] [-ErrorVariable <String>] [-OutVariable <St
@@ -110,11 +120,14 @@ Office     FileSystem    C:\Program Files\Microsoft Offic...
 
 Windows PowerShell 驱动器可以使许多任务变得更简单。 例如，Windows 注册表中的某些最重要的项的路径长度非常长，难以访问且难以记住这些路径。 关键的配置信息位于 **HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion**。 若要查看和更改 CurrentVersion 注册表项中的项，你可以创建一个其根在该项中的 Windows PowerShell 驱动器，方法是键入：
 
-<pre>PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\W
+```
+PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\W
 indows\CurrentVersion
+
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
-cvkey      Registry      HKLM\Software\Microsoft\Windows\...</pre>
+cvkey      Registry      HKLM\Software\Microsoft\Windows\...
+```
 
 然后，你可以像对任何其他驱动器一样，将位置更改为 **cvkey:** 驱动器：
 
@@ -122,26 +135,30 @@ cvkey      Registry      HKLM\Software\Microsoft\Windows\...</pre>
 
 或者：
 
-<pre>PS> Set-Location cvkey: -PassThru
+```
+PS> Set-Location cvkey: -PassThru
+
 Path
 ----
-cvkey:\</pre>
+cvkey:\
+```
 
 New-PsDrive cmdlet 仅将新的驱动器添加到当前 Windows PowerShell 会话中。 如果关闭 Windows PowerShell 窗口，则会丢失新的驱动器。 若要保存 Windows PowerShell 驱动器，请使用 Export-Console cmdlet 导出当前 Windows PowerShell 会话，然后使用 PowerShell.exe **PSConsoleFile** 参数来将其导入。 或者，将新的驱动器添加到 Windows PowerShell 配置文件中。
 
 ### <a name="deleting-windows-powershell-drives-remove-psdrive"></a>删除 Windows PowerShell 驱动器 (Remove-PSDrive)
+
 你可以通过使用 **Remove-PSDrive** cmdlet 从 Windows PowerShell 中删除驱动器。 **Remove-PSDrive** cmdlet 易于使用；若要删除特定 Windows PowerShell 驱动器，只需提供 Windows PowerShell 驱动器名称。
 
 例如，如果已添加 **Office:** Windows PowerShell 驱动器（如 **New-PSDrive** 主题中所示），则可以通过键入以下内容将其删除：
 
-```
-PS> Remove-PSDrive -Name Office
+```powershell
+Remove-PSDrive -Name Office
 ```
 
 若要删除 **cvkey:** Windows PowerShell 驱动器（同样，如 **New-PSDrive** 主题中所示），请使用以下命令：
 
-```
-PS> Remove-PSDrive -Name cvkey
+```powershell
+Remove-PSDrive -Name cvkey
 ```
 
 可以轻松删除 Windows PowerShell 驱动器，但是如果你位于该驱动器中，则无法删除它。 例如：
@@ -155,5 +172,5 @@ At line:1 char:15
 ```
 
 ### <a name="adding-and-removing-drives-outside-windows-powershell"></a>添加和删除 Windows PowerShell 之外的驱动器
-Windows PowerShell 检测在 Windows 中添加或删除的文件系统驱动器，包括映射的网络驱动器、附加的 USB 驱动器，以及通过使用 **net use** 命令或来自 Windows 脚本宿主 (WSH) 脚本的 **WScript.NetworkMapNetworkDrive** 和 **RemoveNetworkDrive** 方法删除的驱动器。
 
+Windows PowerShell 检测在 Windows 中添加或删除的文件系统驱动器，包括映射的网络驱动器、附加的 USB 驱动器，以及通过使用 **net use** 命令或来自 Windows 脚本宿主 (WSH) 脚本的 **WScript.NetworkMapNetworkDrive** 和 **RemoveNetworkDrive** 方法删除的驱动器。

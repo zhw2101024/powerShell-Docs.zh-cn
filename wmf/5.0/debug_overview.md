@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,安装程序"
-ms.openlocfilehash: aaf1809277f072c82e5a1a862ea64b75586e32d1
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,安装程序
+ms.openlocfilehash: dee5e8206c61d79faadf8573a82c74d4ac0fb8e0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="improvements-in-powershell-script-debugging"></a>PowerShell 脚本调试中的改进
 
@@ -53,4 +53,3 @@ Windows PowerShell ISE 现在可以通过运行 PSEdit 命令，在远程会话�
 
 -   Enter-PSHostProcess
 -   Exit-PSHostProcess
-

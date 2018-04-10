@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-27
+ms.date: 06/27/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell Web 访问的授权规则和安全功能
-ms.openlocfilehash: 19e4aa1bb55178ec2634af0771afe2db5db3423c
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 0e765ae90661a054ca9bae71d0f6d449cccb185d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 访问的授权规则和安全功能
 
@@ -186,7 +186,7 @@ Remove-PswaAuthorizationRule -ID <rule ID>
 - 有些管理员为某些用户提供的访问权限要比其他用户多。 例如，管理员创建两个用户组，分别是 **Admins** 和 **BasicSupport**。 管理员还创建名为 **PswaEndpoint** 的终结点（其中带有受限的运行空间），并定义以下两条规则：**Admins,\*,\*** 和 **BasicSupport,\*,PswaEndpoint**。 第一条规则为**Admin**组中的所有用户提供访问所有计算机的权限，第二条规则为**BasicSupport**组中的所有用户仅提供访问那些带有**PswaEndpoint**的计算机的权限。
 
 - 管理员已设置专用测试环境，希望可让所有授权的网络用户通过他们经常访问的网络访问所有计算机，并持有对所有他们经常访问的会话配置的访问权限。 因为这是专用测试环境，管理员创建了不安全的授权规则。
-  - 管理员运行的 cmdlet `Add-PswaAuthorizationRule * * *`使用通配符 **\*** 来表示所有用户、所有计算机和所有配置。
+  - 管理员运行的 cmdlet `Add-PswaAuthorizationRule * * *`使用通配符 * **\*** 来表示所有用户、所有计算机和所有配置。
   - 此规则与下列各项等效：`Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`。
 
   >**注意**：

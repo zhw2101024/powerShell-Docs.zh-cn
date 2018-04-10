@@ -1,19 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "DSC 配置"
-ms.openlocfilehash: 14db60126fd6c3d11d425a28c749a8e8b81122ca
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,配置,安装程序
+title: DSC 配置
+ms.openlocfilehash: 8b44fd9a715c217ee198ea343cdffbfab1193625
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-configurations"></a>DSC 配置
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
-DSC 配置是定义某一特殊类型函数的 PowerShell 脚本。 若要定义配置，你可使用 PowerShell 关键字 **Configuration**。
+DSC 配置是定义某一特殊类型函数的 PowerShell 脚本。
+若要定义配置，你可使用 PowerShell 关键字 **Configuration**。
 
 ```powershell
 Configuration MyDscConfiguration {
@@ -70,21 +71,22 @@ MyDscConfiguration -ComputerName $ComputerName
 
 ## <a name="compiling-the-configuration"></a>正在编译配置
 
-必须将其编译为 MOF 文档才能执行配置。 你可通过调用配置（像调用 PowerShell 函数一样）以执行此操作。  
+必须将其编译为 MOF 文档才能执行配置。
+你可通过调用配置（像调用 PowerShell 函数一样）以执行此操作。
 此示例的最后一行仅包含配置名称，用于调用配置。
 
->**注意：**若要调用配置，该函数必须在全局范围内（与任何其他 PowerShell 函数一样）。 
->可通过以下方式来实现此操作：对脚本执行“dot-source”操作，或者使用 F5 或单击 ISE 中的“运行脚本”按钮以运行配置脚本。 
+>**注意：**若要调用配置，该函数必须在全局范围内（与任何其他 PowerShell 函数一样）。
+>可通过以下方式来实现此操作：对脚本执行“dot-source”操作，或者使用 F5 或单击 ISE 中的“运行脚本”按钮以运行配置脚本。
 >若要对脚本执行“dot-source”操作，请运行命令 `. .\myConfig.ps1`，其中 `myConfig.ps1` 是包含配置的脚本文件的名称。
 
 调用配置时，它会：
 
-- 解析所有变量 
+- 解析所有变量
 - 在当前目录中使用与配置相同的名称创建文件夹。
-- 在新目录中创建名为 _NodeName_.mof 的文件，其中 _NodeName_ 为配置的目标节点名称。 
+- 在新目录中创建名为 _NodeName_.mof 的文件，其中 _NodeName_ 为配置的目标节点名称。
     如果有多个节点，则将为每个节点创建 MOF 文件。
 
->**请注意**：此 MOF 文件包含目标节点的所有配置信息。 因此，务必确保其安全性。 
+>**请注意**：此 MOF 文件包含目标节点的所有配置信息。 因此，务必确保其安全性。
 >有关详细信息，请参阅[保护 MOF 文件](secureMOF.md)。
 
 编译上述第一个配置会形成以下文件夹结构：
@@ -96,10 +98,10 @@ MyDscConfiguration
 
 ```
     Directory: C:\users\default\Documents\DSC Configurations\MyDscConfiguration
-Mode                LastWriteTime         Length Name                                                                                              
-----                -------------         ------ ----                                                                                         
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
 -a----       10/23/2015   4:32 PM           2842 localhost.mof
-```  
+```
 
 如果配置采用了参数（如示例 2 所述），则需在编译时提供该参数。 其形式如下：
 
@@ -110,14 +112,16 @@ MyDscConfiguration -ComputerName 'MyTestNode'
 
 ```
     Directory: C:\users\default\Documents\DSC Configurations\MyDscConfiguration
-Mode                LastWriteTime         Length Name                                                                                              
-----                -------------         ------ ----                                                                                         
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
 -a----       10/23/2015   4:32 PM           2842 MyTestNode.mof
-```      
+```
 
 ## <a name="using-dependson"></a>使用 DependsOn
 
-有效的 DSC 关键字为 **DependsOn**。 通常（但不一定总是），DSC 将按资源在配置中显示的顺序来应用这些资源。 但是，由 **DependsOn** 指定哪些资源依赖于其他资源，而 LCM 则确保这些资源的应用顺序正确（无论资源实例是以何种顺序定义的）。 例如，配置可能会指定**用户**资源实例依赖于**组**实例的存在：
+有效的 DSC 关键字为 **DependsOn**。 通常（但不一定总是），DSC 将按资源在配置中显示的顺序来应用这些资源。
+但是，由 **DependsOn** 指定哪些资源依赖于其他资源，而 LCM 则确保这些资源的应用顺序正确（无论资源实例是以何种顺序定义的）。
+例如，配置可能会指定**用户**资源实例依赖于**组**实例的存在：
 
 ```powershell
 Configuration DependsOnExample {
@@ -141,14 +145,16 @@ Configuration DependsOnExample {
 ## <a name="using-new-resources-in-your-configuration"></a>在配置中使用新的资源
 
 如果运行了前面的示例，你可能注意到你已收到警告信息，提示你正在使用未显式导入的资源。
-现在，DSC 附带 12 种资源作为 PSDesiredStateConfiguration 模块的一部分。 外部模块中的其他资源须置于 `$env:PSModulePath` 中以便 LCM 能够识别。 新的 cmdlet - [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx)，可用来确定哪些资源已安装在系统上并且可供 LCM 使用。 一旦这些模块已置于 `$env:PSModulePath` 中并由 [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) 正确识别，你仍需在配置中加载它们。 
-**Import-DscResource** 是仅可在**配置**块中识别的动态关键字（即它不是 cmdlet）。 
+现在，DSC 附带 12 种资源作为 PSDesiredStateConfiguration 模块的一部分。
+外部模块中的其他资源须置于 `$env:PSModulePath` 中以便 LCM 能够识别。
+新的 cmdlet - [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx)，可用来确定哪些资源已安装在系统上并且可供 LCM 使用。
+一旦这些模块已置于 `$env:PSModulePath` 中并由 [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) 正确识别，你仍需在配置中加载它们。
+**Import-DscResource** 是仅可在**配置**块中识别的动态关键字（即它不是 cmdlet）。
 **Import-DscResource** 支持两种参数：
-- **ModuleName** 是使用 **Import-DscResource** 的推荐方法。 它接受包含要导入资源的模块名称以及模块名称的字符串数组。 
-- **Name** 是要导入资源的名称。 这不是由 [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) 返回为“Name”的友好名称，而是定义资源架构时使用的类名（由 [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) 返回为 **ResourceType**）。 
+- **ModuleName** 是使用 **Import-DscResource** 的推荐方法。 它接受包含要导入资源的模块名称以及模块名称的字符串数组。
+- **Name** 是要导入资源的名称。 这不是由 [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) 返回为“Name”的友好名称，而是定义资源架构时使用的类名（由 [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) 返回为 **ResourceType**）。
 
 ## <a name="see-also"></a>另请参阅
 * [Windows PowerShell Desired State Configuration 概述](overview.md)
 * [DSC 资源](resources.md)
 * [配置本地配置管理器](metaConfig.md)
-

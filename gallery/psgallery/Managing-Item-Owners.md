@@ -1,23 +1,25 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
-keywords: "库,powershell,cmdlet,psgallery"
-title: "管理项所有者"
-ms.openlocfilehash: fcd538148f9ff1ac96324b567d54d643f1756c93
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: 库,powershell,cmdlet,psgallery
+title: 管理项所有者
+ms.openlocfilehash: e550b74ebde00cfbb154dbf4fb1fa4ae0582e029
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="managing-item-owners"></a>管理项所有者
 
 由将项发布到库的人定义 PowerShell 中项的所有权。
 有时需要在初始项发布之外管理此元数据，这意味着所有者元数据需要是可变的，而项本身不需要。
 
-所有项所有者是对等的。 这意味着任何项所有者都可发布项的新版本。 这还意味着任何项所有者可以删除任何其他所有者。 每个所有者的权利相同。  
+所有项所有者是对等的。
+这意味着任何项所有者都可发布项的新版本。 这还意味着任何项所有者可以删除任何其他所有者。
+每个所有者的权利相同。
 
-## <a name="setting-an-items-initial-owner"></a>设置项的初始所有者 
+## <a name="setting-an-items-initial-owner"></a>设置项的初始所有者
 
 当新项发布到 PowerShell 库时，由发布项的用户定义初始所有者。 这根据 Publish-Module cmdlet 中使用谁的 API 密钥决定。
 
@@ -78,4 +80,3 @@ PowerShell 库管理员可以访问任何项的“管理所有者”链接。
 如果我们确定你应为该项的所有者，我们将使用该项的“管理所有者”链接，向你发送成为所有者的邀请。
 我们将仅在验证你应为所有者后才执行此操作，此过程因具体情况而异。
 通常，我们将使用项的项目 URL 设法联系项目所有者，但我们也可能使用 Twitter、电子邮件或其他方式联系项目所有者。
-

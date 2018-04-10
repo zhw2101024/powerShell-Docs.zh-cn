@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "使用静态类和方法"
+title: 使用静态类和方法
 ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
-ms.openlocfilehash: fe41c7d6b45564e7b5bc2b922a18587c9745e26d
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 0f2b02c3a40365ad0335118b057a4e548c9f6535
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-static-classes-and-methods"></a>使用静态类和方法
 不是所有 .NET Framework 类都可使用 **New-Object** 来创建。 例如，如果你尝试使用 **New-Object** 创建 **System.Environment** 或 **System.Math** 对象，你将收到以下错误消息：
@@ -18,6 +18,7 @@ New-Object : Constructor not found. Cannot find an appropriate constructor for
 type System.Environment.
 At line:1 char:11
 + New-Object  <<<< System.Environment
+
 PS> New-Object System.Math
 New-Object : Constructor not found. Cannot find an appropriate constructor for
 type System.Math.
@@ -88,6 +89,7 @@ TickCount                               ExitCode
 现在我们可以从 System.Environment 选择要查看的属性。
 
 #### <a name="displaying-static-properties-of-systemenvironment"></a>显示 System.Environment 的静态属性
+
 System.Environment 的属性也是静态的，并且必须使用与常规属性不同的方式进行指定。 我们使用 **::** 向 Windows PowerShell 指示我们要使用静态方法或属性。 若要查看用于启动 Windows PowerShell 的命令，我们通过键入以下内容来检查 **CommandLine** 属性：
 
 ```
@@ -113,6 +115,7 @@ False
 ```
 
 ### <a name="doing-math-with-systemmath"></a>使用 System.Math 做数学
+
 System.Math 静态类可用于执行某些数学运算。 **System.Math** 的大多数重要成员是方法，我们可以用过使用 **Get-Member** 来显示它们。
 
 > [!NOTE]
@@ -181,4 +184,3 @@ PS> [System.Math]::Truncate(9.3)
 PS> [System.Math]::Truncate(-9.3)
 -9
 ```
-

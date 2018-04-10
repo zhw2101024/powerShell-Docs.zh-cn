@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "了解重要的 Windows PowerShell 概念"
+title: 了解重要的 Windows PowerShell 概念
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: 1ffcfefcc7ffc7c98ba4d1e3ccc9a59cd9b0baac
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 07ceaa2f3e6a192c6281cb4c99aed4c3f66afc7e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="understanding-important-windows-powershell-concepts"></a>了解重要的 Windows PowerShell 概念
 Windows PowerShell 设计集成了很多不同环境的概念。 具有特定 Shell 或编程环境方面经验的人会对其中几种比较熟悉，但很少有人了解全部概念。 查看其中一些概念可获得有关 Shell 的有用概述。
@@ -20,7 +20,7 @@ Windows PowerShell 设计集成了很多不同环境的概念。 具有特定 Sh
 ### <a name="the-command-family-is-extensible"></a>命令系列是可扩展的
 接口（比如 Cmd.exe）不提供可直接扩展内置命令集的方法。 你可以创建在 Cmd.exe 中运行的外部命令行工具，但这些外部工具没有服务（例如帮助集成），并且 Cmd.exe 不能自动了解它们是有效命令。
 
-Windows PowerShell 中的本机二进制命令称为 *cmdlet*（读作 command-lets），可以通过创建 cmdlet 和使用管理单元向 Windows PowerShell 添加 cmdlet 来进行扩充。 已对 Windows PowerShell *管理单元*进行编译，就像任何其他接口中的二进制工具一样。 可以使用它们将 Windows PowerShell 提供程序以及新的 cmdlet 添加到 Shell 中。
+Windows PowerShell 中的本机二进制命令称为 *cmdlet*（读作 command-lets），可以通过创建 cmdlet 和使用管理单元向 Windows PowerShell 添加 cmdlet 来进行扩充。已对 Windows PowerShell *管理单元*进行编译，就像任何其他接口中的二进制工具一样。 可以使用它们将 Windows PowerShell 提供程序以及新的 cmdlet 添加到 Shell 中。
 
 由于 Windows PowerShell 内部命令的特殊性质，我们将视其为 *cmdlet*。
 
@@ -43,4 +43,3 @@ Windows PowerShell 中的本机二进制命令称为 *cmdlet*（读作 command-l
 Windows PowerShell 所具有的语法功能和关键字与 C# 编程语言中所使用的十分类似，因为 Windows PowerShell 是基于 .NET Framework。 如果你对 C# 语言感兴趣，那么学习 Windows PowerShell 会让 C# 语言的学习变得更加容易。
 
 如果你不是 C# 程序员，这种相似性就不重要了。 但是，如果你已经熟悉了 C#，这种相似性就可以使 Windows PowerShell 的学习变得容易许多。
-

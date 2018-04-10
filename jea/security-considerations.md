@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
-keywords: "jea,powershell,安全性"
-title: "JEA 安全注意事项"
-ms.openlocfilehash: 69bbe50fb1a7580c32d657a0f084cc80c28825c7
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: jea,powershell,安全性
+title: JEA 安全注意事项
+ms.openlocfilehash: 1b83a73c047b056a4cc094d7e4b0bbf31f75f53a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="jea-security-considerations"></a>JEA 安全注意事项
 
@@ -153,4 +153,3 @@ JEA 不阻止已经具有管理员权限的用户。
 
 一种常见做法是使用 JEA 进行常规的日常维护，并且获得“及时”特许访问权限解决方案，使用户在紧急情况下能够临时成为本地管理员。
 这有助于确保用户不会成为系统的永久管理员，只有当且仅当他们完成记录这些权限使用情况的工作流时，才能获得这些权限。
-

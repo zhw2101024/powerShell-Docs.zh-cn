@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "在 PowerShell 4.0 中使用配置 ID 设置请求客户端"
-ms.openlocfilehash: 2449a4ddfea5c0ee7096ad7478e80166eb095bbe
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,配置,安装程序
+title: 在 PowerShell 4.0 中使用配置 ID 设置请求客户端
+ms.openlocfilehash: 7074d842b7b99ef3fb6498b6dbc1e561b14caf16
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="setting-up-a-pull-client-using-configuration-id-in-powershell-40"></a>在 PowerShell 4.0 中使用配置 ID 设置请求客户端
 
@@ -18,28 +18,28 @@ ms.lasthandoff: 01/17/2018
 下面的脚本将 LCM 配置为从名为“PullServer”的服务器请求配置：
 
 ```powershell
-Configuration SimpleMetaConfigurationForPull 
-{ 
-    LocalConfigurationManager 
-    { 
+Configuration SimpleMetaConfigurationForPull
+{
+    LocalConfigurationManager
+    {
         ConfigurationID = "1C707B86-EF8E-4C29-B7C1-34DA2190AE24";
         RefreshMode = "PULL";
         DownloadManagerName = "WebDownloadManager";
         RebootNodeIfNeeded = $true;
         RefreshFrequencyMins = 30;
-        ConfigurationModeFrequencyMins = 30; 
+        ConfigurationModeFrequencyMins = 30;
         ConfigurationMode = "ApplyAndAutoCorrect";
         DownloadManagerCustomData = @{ServerUrl = "http://PullServer:8080/PSDSCPullServer/PSDSCPullServer.svc"; AllowUnsecureConnection = “TRUE”}
-    } 
-} 
+    }
+}
 SimpleMetaConfigurationForPull -Output "."
 ```
 
-在该脚本中，**DownloadManagerCustomData** 传递请求服务器的 URL 并（在本示例中）允许不安全的连接。 
+在该脚本中，**DownloadManagerCustomData** 传递请求服务器的 URL 并（在本示例中）允许不安全的连接。
 
 此脚本运行后，将创建名为 **SimpleMetaConfigurationForPull** 的新输出文件夹，并在其中放入元配置 MOF 文件。
 
-若要应用配置，请将 **Set-DscLocalConfigurationManager** 用于 **ComputerName**（使用“localhost”）和 **Path**（目标节点的 localhost.meta.mof 文件的位置路径）的参数。 例如： 
+若要应用配置，请将 **Set-DscLocalConfigurationManager** 用于 **ComputerName**（使用“localhost”）和 **Path**（目标节点的 localhost.meta.mof 文件的位置路径）的参数。 例如：
 ```powershell
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path . –Verbose.
 ```
@@ -53,20 +53,20 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path . –Verbose.
 **DscFileDownloadManager** 采用 **SourcePath** 属性，而不是 **ServerUrl**。 下面的脚本将 LCM 配置为从“CONTOSO-SERVER”服务器上的“SmbDscShare”SMB 共享请求配置：
 
 ```powershell
-Configuration SimpleMetaConfigurationForPull 
-{ 
-    LocalConfigurationManager 
-    { 
+Configuration SimpleMetaConfigurationForPull
+{
+    LocalConfigurationManager
+    {
         ConfigurationID = "1C707B86-EF8E-4C29-B7C1-34DA2190AE24";
         RefreshMode = "PULL";
         DownloadManagerName = "DscFileDownloadManager";
         RebootNodeIfNeeded = $true;
         RefreshFrequencyMins = 30;
-        ConfigurationModeFrequencyMins = 30; 
+        ConfigurationModeFrequencyMins = 30;
         ConfigurationMode = "ApplyAndAutoCorrect";
         DownloadManagerCustomData = @{ServerUrl = "\\CONTOSO-SERVER\SmbDscShare"}
-    } 
-} 
+    }
+}
 SimpleMetaConfigurationForPull -Output "."
 ```
 
@@ -74,4 +74,3 @@ SimpleMetaConfigurationForPull -Output "."
 
 - [设置 DSC Web 请求服务器](pullServer.md)
 - [设置 DSC SMB 请求服务器](pullServerSMB.md)
-

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "库,powershell,cmdlet,psget"
+keywords: 库,powershell,cmdlet,psget
 title: Publish-Module
-ms.openlocfilehash: 53fca3d6756ebf698023152ce5b58b45eb0ef757
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 8b73be2814678ce143cc5b53e2b8103b3297eb6a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="publish-module"></a>Publish-Module
 
@@ -72,7 +72,7 @@ _------ ---- ---------- -----------
 ### <a name="create-a-module-with-dependencies-and-version-range-specified-in-requiredmodules-property-of-its-module-manifest"></a>创建一个模块，其依赖项和版本范围在其模块清单的 RequiredModules 属性中指定。
 
 **注意：**
-  - \* 仅在 MaximumVersion 中受支持，并且还应处于版本字符串的末尾处。 
+  - \* 仅在 MaximumVersion 中受支持，并且还应处于版本字符串的末尾处。
   - \* 在版本对象中由 999999999 替代。
 
 ```powershell
@@ -180,4 +180,3 @@ PrivateData = @{
 ```powershell
 Publish-PSArtifactUtility : PowerShellGet cannot resolve the module dependency 'SnippetPx' of the module 'TypePx' on the repository 'LocalRepo'. Verify that the dependent module 'SnippetPx' is available in the repository 'LocalRepo'. If this dependent 'SnippetPx' is managed externally, add it to the ExternalModuleDependencies entry in the PSData section of the module manifest.
 ```
-

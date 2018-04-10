@@ -1,19 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "直接调用 DSC 资源方法"
-ms.openlocfilehash: 68344d1be5c41e5ce4660e0a62019fa0a52c2541
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,配置,安装程序
+title: 直接调用 DSC 资源方法
+ms.openlocfilehash: dbf0a4ada4c6cc2e7d65698b87a5a29a2ea84781
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="calling-dsc-resource-methods-directly"></a>直接调用 DSC 资源方法
 
 >适用于：Windows PowerShell 5.0
 
-你可以使用 [Invoke-DscResource](https://technet.microsoft.com/library/mt517869.aspx) cmdlet 直接调用 DSC 资源的函数或方法（基于 MOF 资源的 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** 函数，或基于类的资源的 **Get**、**Set** 和 **Test** 方法）。 这可为想要使用 DSC 资源的第三方所用，也可以作为开发资源时非常有用的工具。 
+你可以使用 [Invoke-DscResource](https://technet.microsoft.com/library/mt517869.aspx) cmdlet 直接调用 DSC 资源的函数或方法（基于 MOF 资源的 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** 函数，或基于类的资源的 **Get**、**Set** 和 **Test** 方法）。
+这可为想要使用 DSC 资源的第三方所用，也可以作为开发资源时非常有用的工具。
 
 此 cmdlet 通常与元配置属性 `refreshMode = 'Disabled'` 组合使用，但无论 **refreshMode** 设置为何值，都可以使用它。
 
@@ -51,7 +52,6 @@ $result.ItemValue | fl
 >**注意：**不支持直接调用复合资源方法。 请改为调用构成复合资源的基础资源的方法。
 
 ## <a name="see-also"></a>另请参阅
-- [使用 MOF 编写自定义 DSC 资源](authoringResourceMOF.md) 
+- [使用 MOF 编写自定义 DSC 资源](authoringResourceMOF.md)
 - [使用 PowerShell 类编写自定义 DSC 资源](authoringResourceClass.md)
 - [调试 DSC 资源](debugResource.md)
-

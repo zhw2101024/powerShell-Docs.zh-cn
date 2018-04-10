@@ -1,22 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,安装程序"
-ms.openlocfilehash: c3645a6ba83081bd5ac31a13af0f67f6538db22a
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,安装程序
+ms.openlocfilehash: 9065315ef39129e6a28234d972fe350fd5e7e11d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="creating-and-connecting-to-a-jea-endpoint"></a>创建并连接到 JEA 终结点
 若要创建 JEA 终结点，需要创建并注册一个专门配置 PowerShell 会话配置文件，可以使用 **New-PSSessionConfigurationFile** cmdlet 生成该文件。
 
 ```powershell
-New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc" 
+New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-这将创建一个如下所示的会话配置文件： 
+这将创建一个如下所示的会话配置文件：
 ```powershell
 @{
 
@@ -52,7 +52,7 @@ RoleDefinitions = @{
     'CONTOSO\NonAdmin_Operators' = @{
         'RoleCapabilities' = 'Maintenance' } }
 
-} 
+}
 ```
 在创建 JEA 终结点时，必须设置以下命令的参数（以及文件中的相应密钥）：
 1.  将 SessionType 设置为 RestrictedRemoteServer
@@ -64,7 +64,7 @@ RoleDefinitions = @{
 RoleDefinition 字段定义哪些组有权访问哪些角色功能。  “角色功能”是一个文件，它定义将向连接用户公开的一组功能。  你可以使用 **New-PSRoleCapabilityFile** 命令创建“角色功能”。
 
 ```powershell
-New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc" 
+New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc"
 ```
 
 这将生成一个模板角色功能，如下所示：
@@ -128,7 +128,7 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 # Assemblies to load when applied to a session
 # AssembliesToLoad = 'System.Web', 'System.OtherAssembly, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 
-} 
+}
 
 ```
 要想 JEA 会话配置能使用角色功能，则必须在名为“RoleCapabilities”的目录中将其保存为有效的 PowerShell 模块。 如果需要，一个模块可以有多个角色功能文件。
@@ -138,7 +138,7 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 最后，完成会话和相关“角色功能”的自定义配置后，通过运行 **Register-PSSessionConfiguration** 注册此会话配置并创建终结点。
 
 ```powershell
-Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc" 
+Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
 ## <a name="connect-to-a-jea-endpoint"></a>连接到 JEA 终结点
@@ -149,4 +149,3 @@ Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
 如果已连接到 JEA 会话，运行你有权访问的列在允许列表中的“角色功能”将会受限。
  如果尝试运行任何不允许你的角色运行的命令，将会遇到错误。
-

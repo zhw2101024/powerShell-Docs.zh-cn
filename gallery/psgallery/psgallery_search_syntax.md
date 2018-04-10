@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
-keywords: "库,powershell,cmdlet,psgallery"
+keywords: 库,powershell,cmdlet,psgallery
 title: psgallery_search_syntax
-ms.openlocfilehash: 409ae607557af760f9cec4e3c54f39e51b5fac18
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 337b4b1e702994fcbc456eb31a2d8632f5220d09
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="gallery-search-syntax"></a>库搜索语法
 
@@ -49,7 +49,7 @@ PowerShell 库提供文本搜索框，可以在其中使用单词、短语和关
 “Id”筛选器是一个子字符串匹配，因此，如果搜索以下内容：
 
     Id:"azure"
-    
+
 你将得到如“AzureRM.Profile”和“Azure.Storage”等结果。
 
 你也可以搜索单个字段中的多个关键字。 或混合和匹配字段。
@@ -71,7 +71,7 @@ PowerShell 库提供文本搜索框，可以在其中使用单词、短语和关
     Functions:"Update-AzureRM"
 
 搜索具有指定 cmdlet 的所有项。
-    
+
     Cmdlets:"Get-AzureRmEnvironment"
 
 搜索具有指定 DSC 资源名称的所有项。
@@ -88,8 +88,7 @@ PowerShell 库提供文本搜索框，可以在其中使用单词、短语和关
 最后，如果你使用不支持的字段（如“commands”），我们将忽略该字段并搜索所有字段。 因此以下查询
 
     commands:blobs storage
-    
+
 的解释与此查询完全相同：
 
     blobs storage
-

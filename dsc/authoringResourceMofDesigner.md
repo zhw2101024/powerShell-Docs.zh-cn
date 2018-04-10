@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "使用资源设计器工具"
-ms.openlocfilehash: c39b48f67d3874ee3cd2f2704aeb7390fa186fe4
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,配置,安装程序
+title: 使用资源设计器工具
+ms.openlocfilehash: e0282671861755a5f147de4d07783a4680024ec5
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-the-resource-designer-tool"></a>使用资源设计器工具
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="creating-resource-properties"></a>创建资源属性
 我们首先要确定资源将公开的属性。 在此示例中，我们将通过以下属性来定义 Active Directory 用户。
- 
+
 参数名称  说明
 * **UserName**：唯一标识用户的键属性。
 * **Ensure**：指定用户帐户应该为 Present 还是 Absent。 此参数只有两个可能的值。
@@ -33,7 +33,7 @@ ms.lasthandoff: 03/15/2018
 ```powershell
 $UserName = New-xDscResourceProperty –Name UserName -Type String -Attribute Key
 $Ensure = New-xDscResourceProperty –Name Ensure -Type String -Attribute Write –ValidateSet “Present”, “Absent”
-$DomainCredential = New-xDscResourceProperty –Name DomainCredential-Type PSCredential -Attribute Write
+$DomainCredential = New-xDscResourceProperty –Name DomainCredential -Type PSCredential -Attribute Write
 $Password = New-xDscResourceProperty –Name Password -Type PSCredential -Attribute Write
 ```
 

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "适用于 Linux 的 DSC nxUser 资源"
-ms.openlocfilehash: 93e2b12af076fce687e045e3043c94fa82d61861
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,配置,安装程序
+title: 适用于 Linux 的 DSC nxUser 资源
+ms.openlocfilehash: 222bd2191cf5c5f0a90ba947275ffde47d22ec86
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxuser-resource"></a>适用于 Linux 的 DSC nxUser 资源
 
@@ -34,25 +34,25 @@ nxUser <string> #ResourceName
 
 ## <a name="properties"></a>“属性”
 
-|  属性 |  指示要确保其特定状态的帐户名。 | 
+|  属性 |  指示要确保其特定状态的帐户名。 |
 |---|---|
-| UserName| 指定你想确保其中文件或目录状态的位置。| 
-| Ensure| 指定帐户是否存在。 将此属性设置为“Present”以确保该帐户存在，将其设置为“Absent”以确保该帐户不存在。| 
-| FullName| 包含用于用户帐户的完整名称的字符串。| 
-| 说明| 用户帐户的说明。| 
-| 密码| 适用于 Linux 计算机的形式的用户密码哈希。 通常情况下，这是加盐的 SHA-256 或 SHA-512 哈希。 在 Debian 和 Ubuntu Linux 上，可以使用 mkpasswd 命令生成此值。 对于其他 Linux 发行版本，可以使用 Python 加密库的加密方法生成此哈希。| 
-| 禁用| 指示帐户是否已启用。 将此属性设置为 **$true** 以确已禁用保此帐户，将其设置为 **$false** 以确保已启用此帐户。| 
-| PasswordChangeRequired| 指示用户是否可以更改密码。 将此属性设置为 **$true** 以确保用户无法更改密码，将其设置为 **$false** 以允许用户更改密码。 默认值为 **$false**。 仅当创建以前不存在的用户帐户时，才会计算此属性。| 
-| HomeDirectory| 用户的主目录| 
-| GroupID| 用户的主要组 ID| 
-| DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为“ResourceName”、类型为“ResourceType”的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。| 
+| UserName| 指定你想确保其中文件或目录状态的位置。|
+| Ensure| 指定帐户是否存在。 将此属性设置为“Present”以确保该帐户存在，将其设置为“Absent”以确保该帐户不存在。|
+| FullName| 包含用于用户帐户的完整名称的字符串。|
+| 说明| 用户帐户的说明。|
+| 密码| 适用于 Linux 计算机的形式的用户密码哈希。 通常情况下，这是加盐的 SHA-256 或 SHA-512 哈希。 在 Debian 和 Ubuntu Linux 上，可以使用 mkpasswd 命令生成此值。 对于其他 Linux 发行版本，可以使用 Python 加密库的加密方法生成此哈希。|
+| 禁用| 指示帐户是否已启用。 将此属性设置为 **$true** 以确已禁用保此帐户，将其设置为 **$false** 以确保已启用此帐户。|
+| PasswordChangeRequired| 指示用户是否可以更改密码。 将此属性设置为 **$true** 以确保用户无法更改密码，将其设置为 **$false** 以允许用户更改密码。 默认值为 **$false**。 仅当创建以前不存在的用户帐户时，才会计算此属性。|
+| HomeDirectory| 用户的主目录|
+| GroupID| 用户的主要组 ID|
+| DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为“ResourceName”、类型为“ResourceType”的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。|
 
 ## <a name="example"></a>示例
 
 以下示例可确保用户“monuser”存在且为组“DBusers”的成员。
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 Node $node {
 nxUser UserExample{
@@ -62,13 +62,12 @@ nxUser UserExample{
    Ensure = "Present"
    HomeDirectory = "/home/monuser"
 }
- 
+
 nxGroup GroupExample{
    GroupName = "DBusers"
    Ensure = "Present"
    MembersToInclude = "monuser"
-   DependsOn = "[nxUser]UserExample"            
+   DependsOn = "[nxUser]UserExample"
 }
 }
 ```
-

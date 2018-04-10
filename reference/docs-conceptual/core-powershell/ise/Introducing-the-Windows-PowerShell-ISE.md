@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "Windows PowerShell ISE 简介"
-ms.openlocfilehash: 7b529c9da7c91c6ca699c70f2674c8bc8734dd33
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+title: Windows PowerShell ISE 简介
+ms.openlocfilehash: b09e64d0258d11f1f16f96b319ef232ebdfa0c49
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="introducing-the-windows-powershell-ise"></a>Windows PowerShell ISE 简介
 
@@ -20,13 +20,13 @@ Windows PowerShell 集成脚本环境 (ISE) 是 Windows PowerShell 的主机应�
 
 Windows PowerShell ISE 允许你自定义其外观的某些方面。 它还具有自己的 Windows PowerShell 配置文件，你可以在其中存储在 Windows PowerShell ISE 中使用的函数、别名、变量和命令。
 
-### <a name="to-start-the-windows-powershell-ise"></a>启动 Windows PowerShell ISE
+## <a name="to-start-the-windows-powershell-ise"></a>启动 Windows PowerShell ISE
 
 执行下列操作之一：
 
 - 单击“开始”，依次指向“所有程序”和“Windows PowerShell V2”，然后单击 **Windows PowerShell ISE**。
 - 在 Windows PowerShell console Cmd.exe 或“运行”框中，键入 **powershell_ise.exe**。
 
-### <a name="to-get-help-in-the-windows-powershell-ise"></a>在 Windows PowerShell ISE 中获取帮助
+## <a name="to-get-help-in-the-windows-powershell-ise"></a>在 Windows PowerShell ISE 中获取帮助
 
 在“帮助”菜单上，单击“Windows PowerShell 帮助”。 或者，按 F1。 打开的文件介绍了 Windows PowerShell ISE 和 Windows PowerShell，其中包括 Get-Help cmdlet 中提供的所有帮助。

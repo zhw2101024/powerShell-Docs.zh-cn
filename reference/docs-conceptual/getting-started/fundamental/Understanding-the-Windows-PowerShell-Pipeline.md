@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "了解 Windows PowerShell 管道"
+title: 了解 Windows PowerShell 管道
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: 6d152e52d2fcfb9dd592eb9ac40500615f2186cb
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: c3f1d17432cf3a77c0f5ecae137a4233a28a19d7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="understanding-the-windows-powershell-pipeline"></a>了解 Windows PowerShell 管道
 在 Windows PowerShell 中，管道的作用几乎随处可见。 尽管你会在屏幕上看到文本，但 Windows PowerShell 不通过管道在命令之间传递文本。 而是通过管道传递对象。
@@ -61,4 +61,3 @@ Windows PowerShell 在管道通信中不使用文本运行命令，而是使用�
 假设从 Windows PowerShell 命令输出的信息比我们在控制台窗口中看到的多，该如何检索不可见的元素呢？ 如何查看额外的数据？ 并且如果你想以不同于 Windows PowerShell 通常使用的格式来查看数据，应该怎么做？
 
 本章的其余部分将讨论如何发现特定 Windows PowerShell 对象的结构，同时选择特定项并将其设置为更易显示的格式，以及如何将此信息发送至备用输出位置，比如文件和打印机。
-

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
-keywords: "jea,powershell,安全性"
-title: "JEA 审核和报告"
-ms.openlocfilehash: 57148bc3753bdd751bfa21fc3198aca3f8654849
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: jea,powershell,安全性
+title: JEA 审核和报告
+ms.openlocfilehash: 7fc670c77b5fbf9bce8fb55dd99a2f9a984100d2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="auditing-and-reporting-on-jea"></a>JEA 审核和报告
 
@@ -144,11 +144,11 @@ Running  Dns                DNS Server
 ParameterBindings 遵循每个 CommandInvocation，介绍使用该命令提供的每个参数和值。
 在上述示例中，你可以看到针对“Get-Service”向“Name”参数提供了值“Dns”。
 
-每个命令的输出通常还会对 Out-Default 触发 CommandInvocation。 Out-Default 的 InputObject 是从命令返回的 PowerShell 对象。
+每个命令的输出通常还会对 Out-Default 触发 CommandInvocation。
+Out-Default 的 InputObject 是从命令返回的 PowerShell 对象。
 该对象的详细信息如下面几行所示，严格模拟用户将看到的内容。
 
 ## <a name="see-also"></a>另请参阅
 
 - [审核 JEA 会话中的用户操作](audit-and-report.md)
 - [PowerShell ♥ the Blue Team 关于安全的博客文章](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
-

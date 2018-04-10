@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "使用 Windows PowerShell 编写脚本"
+title: 使用 Windows PowerShell 编写脚本
 ms.assetid: c425d27a-bb41-4947-8d73-ba5480bc8ee0
-ms.openlocfilehash: 693d1bb9329dbb280453fc16738eda63c466e156
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 9bb420a3d725d3fa925b79452bbbcc542bf9f4db
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="scripting-with-windows-powershell"></a>使用 Windows PowerShell 编写脚本
 
@@ -23,4 +23,3 @@ Windows PowerShell 包括以下功能：
 - 简化的基于命令的操作系统导航，使用户可以通过使用用于导航文件系统的相同技术来导航注册表和其他数据存储。
 - 强大的对象操作功能。 可直接执行对象操作或将这些对象发送到其他工具或数据库。
 - 可扩展接口。 独立软件供应商和企业开发人员可以构建用于管理其软件的自定义工具和实用工具。
-

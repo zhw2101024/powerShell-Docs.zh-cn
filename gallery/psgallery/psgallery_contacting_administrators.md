@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
-keywords: "库,powershell,cmdlet,psgallery"
+keywords: 库,powershell,cmdlet,psgallery
 title: psgallery_contacting_administrators
-ms.openlocfilehash: a405fb5f5517c86900d07ad09f980b96ba8e2fe8
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 6091d247ca5674fbecf6e00131e18fe6686f1d25
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="contact-gallery-administrators"></a>联系库管理员
 
@@ -27,4 +27,3 @@ ms.lasthandoff: 06/12/2017
 1. 向我们 (cgadmin@microsoft.com) 发送电子邮件。
 2. 如果你要报告项的滥用行为，可在左面板上的项信息下方找到“报告滥用行为”链接。
 3. 有关库的其他常规问题，请将问题提交到 [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell)
-

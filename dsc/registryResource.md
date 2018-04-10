@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "DSC Registry 资源"
-ms.openlocfilehash: 1e73e4275c0d9db5d8fac7641514ea8190f719ca
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,配置,安装程序
+title: DSC Registry 资源
+ms.openlocfilehash: fcd24b1dd729dbb0abd697a4a628dce01fdd5422
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-registry-resource"></a>DSC Registry 资源
 
@@ -32,16 +32,16 @@ Registry [string] #ResourceName
 ```
 
 ## <a name="properties"></a>“属性”
-|  属性  |  说明   | 
-|---|---| 
-| 键| 指示要确保其特定状态的注册表项的路径。 路径必须包含配置单元。| 
-| ValueName| 指示注册表值的名称。 若要添加或删除注册表项，请将此属性指定为空字符串，无需指定 ValueType 或 ValueData。 若要修改或删除注册表项的默认值，请将此属性指定为空字符串，同时指定 ValueType 或 ValueData。| 
-| Ensure| 指示项和值是否存在。 将此属性设置为“Present”以确保其存在。 将此属性设置为“Absent”以确保其不存在。 默认值为“Present”。| 
-| Force| 如果指定的注册表项存在，__Force__ 将用新值覆盖它。 如果删除包含子项的注册表项，这必须是 $true| 
-| Hex| 指示是否以十六进制格式表示数据。 如果指定此项，则以十六进制格式显示 DWORD/QWORD 值数据。 对其他类型无效。 默认值为 __$false__。| 
-| DependsOn| 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 __ResourceName__、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。| 
-| ValueData| 注册表值的数据。| 
-| ValueType| 指示值的类型。 支持的类型有： 
+|  属性  |  说明   |
+|---|---|
+| 键| 指示要确保其特定状态的注册表项的路径。 路径必须包含配置单元。|
+| ValueName| 指示注册表值的名称。 若要添加或删除注册表项，请将此属性指定为空字符串，无需指定 ValueType 或 ValueData。 若要修改或删除注册表项的默认值，请将此属性指定为空字符串，同时指定 ValueType 或 ValueData。|
+| Ensure| 指示项和值是否存在。 将此属性设置为“Present”以确保其存在。 将此属性设置为“Absent”以确保其不存在。 默认值为“Present”。|
+| Force| 如果指定的注册表项存在，__Force__ 将用新值覆盖它。 如果删除包含子项的注册表项，这必须是 $true|
+| Hex| 指示是否以十六进制格式表示数据。 如果指定此项，则以十六进制格式显示 DWORD/QWORD 值数据。 对其他类型无效。 默认值为 __$false__。|
+| DependsOn| 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 __ResourceName__、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。|
+| ValueData| 注册表值的数据。|
+| ValueType| 指示值的类型。 支持的类型有：
 <ul><li>字符串 (REG_SZ)</li>
 
 
@@ -76,6 +76,3 @@ Configuration RegistryTest
 
 >**注意：**要在 **HKEY\_CURRENT\_USER** 配置单元中更改注册表设置，需要使用用户凭据运行配置，而不是将配置作为系统运行。
 >可以使用 **PsDscRunAsCredential** 属性来指定配置的用户凭据。 有关示例，请参阅[使用用户凭据运行 DSC](runAsUser.md)
-
-
-

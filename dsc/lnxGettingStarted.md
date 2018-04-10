@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "适用于 Linux 的 Desired State Configuration (DSC) 入门"
-ms.openlocfilehash: 4fd8460bc5d2564cab291904b60a1a0c26c3e5a7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,配置,安装程序
+title: 适用于 Linux 的 Desired State Configuration (DSC) 入门
+ms.openlocfilehash: b2f35ebe84dfd9f68ca07e7630534be59f8a1aa3
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>适用于 Linux 的 Desired State Configuration (DSC) 入门
 
@@ -25,14 +25,14 @@ ms.lasthandoff: 01/17/2018
 
 下表说明了适用于 Linux 的 DSC 所需的程序包依赖项。
 
-|  所需程序包 |  说明 |  最低版本 | 
+|  所需程序包 |  说明 |  最低版本 |
 |---|---|---|
-| glibc| GNU 库| 2…4 – 31.30| 
-| python| Python| 2.4 – 3.4| 
-| omiserver| 开放式管理基础结构| 1.0.8.1| 
-| openssl| OpenSSL 库| 0.9.8 或 1.0| 
-| ctypes| Python CTypes 库| 必须与 Python 版本匹配| 
-| libcurl| cURL http 客户端库| 7.15.1| 
+| glibc| GNU 库| 2…4 – 31.30|
+| python| Python| 2.4 – 3.4|
+| omiserver| 开放式管理基础结构| 1.0.8.1|
+| openssl| OpenSSL 库| 0.9.8 或 1.0|
+| ctypes| Python CTypes 库| 必须与 Python 版本匹配|
+| libcurl| cURL http 客户端库| 7.15.1|
 
 ## <a name="installing-dsc-for-linux"></a>安装适用于 Linux 的 DSC
 
@@ -52,12 +52,12 @@ ms.lasthandoff: 01/17/2018
 
 ### <a name="installing-dsc"></a>安装 DSC
 
-适用于 Linux 的 DSC 可在[此处](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest)下载。 
+适用于 Linux 的 DSC 可在[此处](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest)下载。
 
 若要安装 DSC，请安装适用于 Linux 系统（.rpm 或.deb）和 OpenSSL 版本（ssl_098 或 ssl_100）以及体系结构 (x64/x86) 的程序包。 RPM 程序包适用于 CentOS、Red Hat Enterprise Linux、SUSE Linux Enterprise Server 和 Oracle Linux。 DEB 程序包适用于 Debian GNU/Linux 和 Ubuntu Server。 ssl_098 程序包适用于安装了 OpenSSL 0.9.8 的计算机，而 ssl_100 程序包适用于安装了 OpenSSL 1.0 的计算机。
 
 > **注意**：若要确定安装的 OpenSSL 版本，请运行 openssl version 命令。
- 
+
 运行以下命令以在 CentOS 7 x64 系统上安装 DSC。
 
 `# sudo rpm -Uvh dsc-1.0.0-254.ssl_100.x64.rpm`
@@ -74,10 +74,10 @@ ms.lasthandoff: 01/17/2018
 1. 导入 nx 模块。 此 nx Windows PowerShell 模块包含适用于 Linux 的 DSC 内置资源的架构，必须将其安装到本地计算机上并导入到配置中。
 
     -若要安装 nx 模块，请将 nx 模块目录复制到 `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` 或 `$PSHOME\Modules` 中。 该 nx 模块包含在适用于 Linux 的 DSC 安装包 (MSI) 中。 若要在配置中导入 nx 模块，请使用 __Import-DSCResource__ 命令：
-    
+
 ```powershell
 Configuration ExampleConfiguration{
-   
+
     Import-DSCResource -Module nx
 
 }
@@ -86,9 +86,9 @@ Configuration ExampleConfiguration{
 
 ```powershell
 Configuration ExampleConfiguration{
-   
+
     Import-DscResource -Module nx
- 
+
     Node  "linuxhost.contoso.com"{
     nxFile ExampleFile {
 
@@ -100,7 +100,7 @@ Configuration ExampleConfiguration{
 
     }
 }
-ExampleConfiguration -OutputPath:"C:\temp" 
+ExampleConfiguration -OutputPath:"C:\temp"
 ```
 
 ### <a name="push-the-configuration-to-the-linux-computer"></a>将配置推送到 Linux 计算机
@@ -117,8 +117,8 @@ $Credential = Get-Credential -UserName:"root" -Message:"Enter Password:"
 #$opt = New-CimSessionOption -UseSsl:$true -SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true
 
 #Options for a trusted SSL certificate
-$opt = New-CimSessionOption -UseSsl:$true 
-$Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90 
+$opt = New-CimSessionOption -UseSsl:$true
+$Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90
 ```
 
 > **注意**：
@@ -162,7 +162,7 @@ $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Aut
 
 `# sudo ./RemoveModule.py cnx_Resource`
 
-* StartDscLocalConfigurationManager.py 
+* StartDscLocalConfigurationManager.py
 
  将配置 MOF 文件应用于计算机。 与 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet 类似。 需要待应用的配置 MOF 的路径。
 
@@ -182,4 +182,3 @@ $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Aut
 |---|---|---|
 |omiserver.log|/var/opt/omi/log|与 OMI CIM 服务器操作相关的消息。|
 |dsc.log|/var/opt/omi/log|与本地配置管理器 (LCM) 操作和 DSC 资源操作相关的消息。|
-

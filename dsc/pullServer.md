@@ -1,13 +1,13 @@
 ---
-ms.date: 2018-02-02
+ms.date: 02/02/2018
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "DSC 请求服务"
-ms.openlocfilehash: d5e24dcc093c73d8ebbaa618517193dacc4f2aaf
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+keywords: dsc,powershell,配置,安装程序
+title: DSC 请求服务
+ms.openlocfilehash: 1547092d5ea6733296bf89f05dd96f70c0a000ac
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration 请求服务
 
@@ -67,7 +67,7 @@ Windows Server 中提供的请求服务是 IIS 中的一项 Web 服务，当目�
 设置 Web 请求服务器的最简单方法是使用包含在 xPSDesiredStateConfiguration 模块中的 xWebService 资源。
 下列步骤说明如何使用设置 Web 服务的配置中的资源。
 
-1. 调用 [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) 以安装 **xPSDesiredStateConfiguration** 模块。 **请注意**：**Install-Module** 包含在 **PowerShellGet** 模块中，后者纳入 PowerShell 5.0。 可在 [PackageManagement PowerShell 模块预览](https://www.microsoft.com/en-us/download/details.aspx?id=49186)中下载适用于 PowerShell 3.0 和 4.0 的 **PowerShellGet**。 
+1. 调用 [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) 以安装 **xPSDesiredStateConfiguration** 模块。 **请注意**：**Install-Module** 包含在 **PowerShellGet** 模块中，后者纳入 PowerShell 5.0。 可在 [PackageManagement PowerShell 模块预览](https://www.microsoft.com/en-us/download/details.aspx?id=49186)中下载适用于 PowerShell 3.0 和 4.0 的 **PowerShellGet**。
 1. 从受信任的证书颁发机构（在所在组织或公共颁发机构中）获取 DSC 请求服务器的 SSL 证书。 从颁发机构收到的证书通常采用 PFX 格式。 采用默认位置（应是 CERT:\LocalMachine\My），在将成为请求服务器的节点上安装证书。 记下证书指纹。
 1. 选择要用作注册密钥的 GUID。 若要使用 PowerShell 生成一个，请在 PS 提示符处输入以下命令，然后按 Enter：“``` [guid]::newGuid()```”或“```New-Guid```”。 此密钥将由客户端节点用作共享密钥，以便在注册过程中进行身份验证。 有关详细信息，请参阅下面的“注册密钥”部分。
 1. 在 PowerShell ISE 中，启动 (F5) 以下配置脚本（包含于 **xPSDesiredStateConfiguration** 模块的示例文件夹中，名为 Sample_xDscWebService.ps1）。 此脚本会设置请求服务器。
@@ -127,7 +127,7 @@ Windows Server 中提供的请求服务是 IIS 中的一项 Web 服务，当目�
 1. 运行配置，将 SSL 证书的指纹作为 **certificateThumbPrint** 参数进行传递，并将 GUID 注册密钥作为 **RegistrationKey** 参数进行传递：
 
 ```powershell
-    # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store 
+    # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store
     # and then copy the thumbprint for the appropriate certificate by reviewing the certificate subjects
     dir Cert:\LocalMachine\my
 
@@ -142,7 +142,7 @@ Windows Server 中提供的请求服务是 IIS 中的一项 Web 服务，当目�
 #### <a name="registration-key"></a>注册密钥
 
 若要允许客户端节点注册到服务器以便使用配置名称代替配置 ID，需将以上配置创建的注册密钥保存在 `C:\Program Files\WindowsPowerShell\DscService` 中名为 `RegistrationKeys.txt` 的文件中。 注册密钥会在初始注册过程中充当由客户端用于请求服务器的共享密钥。 注册成功完成之后，客户端会生成用于唯一地向请求服务器进行身份验证的自签名证书。 此证书的指纹在本地进行存储，并与请求服务器的 URL 关联。
-> **注意**：PowerShell 4.0 中不支持注册密钥。 
+> **注意**：PowerShell 4.0 中不支持注册密钥。
 
 为了配置节点以便向请求服务器进行身份验证，注册密钥需要处于将向此请求服务器注册的任何目标节点的元配置中。 请注意，以下元配置中的 **RegistrationKey** 会在目标计算机成功注册之后删除，并且值“140a952b-b9d6-406b-b416-e0f759c9c0e4”必须与请求服务器上的 RegistrationKeys.txt 文件中存储的值匹配。 请始终安全地处理注册密钥值，因为知道它便可以向请求服务器注册任何目标计算机。
 
@@ -155,7 +155,7 @@ configuration PullClientConfigID
         Settings
         {
             RefreshMode          = 'Pull'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded   = $true
         }
 
@@ -223,8 +223,8 @@ WMF 5.0 中包含 DSC 资源的模块默认格式是 {Module Folder}\{Module Ver
 
     ```powershell
         # Example 1 - Package all versions of given modules installed locally and MOF files are in c:\LocalDepot
-         $moduleList = @("xWebAdministration", "xPhp") 
-         Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList 
+         $moduleList = @("xWebAdministration", "xPhp")
+         Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList
 
          # Example 2 - Package modules and mof documents from c:\LocalDepot
          Publish-DSCModuleAndMof -Source C:\LocalDepot -Force

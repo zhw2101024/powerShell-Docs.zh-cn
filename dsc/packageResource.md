@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "DSC Package 资源"
-ms.openlocfilehash: 68b996e0f51e60bc178c27e3a71f07fb7220f847
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,配置,安装程序
+title: DSC Package 资源
+ms.openlocfilehash: cfa9d53d5ea588b0ec97e5503302a451caa09e03
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-package-resource"></a>DSC Package 资源
 
@@ -33,17 +33,17 @@ Package [string] #ResourceName
 ```
 
 ## <a name="properties"></a>“属性”
-|  属性  |  说明   | 
-|---|---| 
-| 名称| 指示要确保其特定状态的程序包的名称。| 
-| 路径| 指示程序包所在的路径。| 
-| ProductId| 指示唯一标识程序包的产品 ID。| 
-| 参数| 列出按照原样传输到程序包的参数字符串。| 
-| 凭据| 提供远程源上程序包的访问权限。 此属性不用于安装程序包。 程序包始终安装在本地系统上。| 
-| Ensure| 指示程序包是否已安装。 将此属性设置为“Absent”以确保未安装程序包（如果已安装则卸载程序包）。 将其设置为“Present”（默认值）以确保已安装程序包。| 
-| LogPath| 指示你希望提供程序用于保存安装或卸载程序包的日志文件的完整路径。| 
-| DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"``。| 
-| ReturnCode| 指示预期的返回代码。 如果实际返回代码与此处提供的预期值不匹配，则配置将返回错误。| 
+|  属性  |  说明   |
+|---|---|
+| 名称| 指示要确保其特定状态的程序包的名称。|
+| 路径| 指示程序包所在的路径。|
+| ProductId| 指示唯一标识程序包的产品 ID。|
+| 参数| 列出按照原样传输到程序包的参数字符串。|
+| 凭据| 提供远程源上程序包的访问权限。 此属性不用于安装程序包。 程序包始终安装在本地系统上。|
+| Ensure| 指示程序包是否已安装。 将此属性设置为“Absent”以确保未安装程序包（如果已安装则卸载程序包）。 将其设置为“Present”（默认值）以确保已安装程序包。|
+| LogPath| 指示你希望提供程序用于保存安装或卸载程序包的日志文件的完整路径。|
+| DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"``。|
+| ReturnCode| 指示预期的返回代码。 如果实际返回代码与此处提供的预期值不匹配，则配置将返回错误。|
 
 ## <a name="example"></a>示例
 
@@ -58,7 +58,6 @@ Configuration PackageTest
         Path        = "$Env:SystemDrive\TestFolder\TestProject.msi"
         Name        = "TestPackage"
         ProductId   = "ACDDCDAF-80C6-41E6-A1B9-8ABD8A05027E"
-    } 
+    }
 }
 ```
-

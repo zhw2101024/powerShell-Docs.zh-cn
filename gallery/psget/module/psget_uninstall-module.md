@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "库,powershell,cmdlet,psget"
+keywords: 库,powershell,cmdlet,psget
 title: Uninstall-Module
-ms.openlocfilehash: 3c4d8faa63aba6b4434d42a19a219baf84122591
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 90f26e64a8a6bc95faf444b1d3ce82a8e3bbefc1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="uninstall-module"></a>Uninstall-Module
 
@@ -16,7 +16,8 @@ ms.lasthandoff: 06/12/2017
 
 ## <a name="description"></a>说明
 
-Uninstall-Module cmdlet 卸载本地计算机中的指定模块。 如果其他某些模块在此模块上具有依赖项，则无法卸载它。
+Uninstall-Module cmdlet 卸载本地计算机中的指定模块。
+如果其他某些模块在此模块上具有依赖项，则无法卸载它。
 Uninstall-Module cmdlet 还会验证正在卸载的模块是否正在使用中。 若该模块正在使用中，将引发错误。
 
 ## <a name="cmdlet-syntax"></a>Cmdlet 语法
@@ -126,4 +127,3 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm
    , Exception
     + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.UninstallPackage
 ```
-

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: Farehar
 ms.topic: conceptual
-keywords: "库, powershell, psgallery"
+keywords: 库, powershell, psgallery
 title: psgallery_require_license_acceptance
-ms.openlocfilehash: c07f6cc16e40d5cf1bf8d687c2d124b248009760
-ms.sourcegitcommit: cd66d4f49ea762a31887af2c72d087b219ddbe10
+ms.openlocfilehash: 16036377eb3df715fc5e87e93866f3946d68105e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 04/09/2018
 ---
 <a name="require-license-acceptance"></a>需要接受许可证
 ===========================
@@ -17,7 +17,7 @@ ms.lasthandoff: 10/11/2017
 
 ![需要接受许可证](Images/RequireLicenseAcceptance.png)
 
-通过 PowerShellGet 安装、保存或更新模块或部署到 Azure 自动化时，用户将收到接受许可证的提示。 
+通过 PowerShellGet 安装、保存或更新模块或部署到 Azure 自动化时，用户将收到接受许可证的提示。
 
 ## <a name="more-details"></a>详细信息
 ### <a name="require-license-acceptance-in-powershellgetpsgetmodulerequirelicenseacceptancemd"></a>[在 PowerShellGet 中需要接受许可证](../psget/module/RequireLicenseAcceptance.md)

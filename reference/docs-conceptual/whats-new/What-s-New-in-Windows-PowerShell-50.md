@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "Windows PowerShell 5.0 中的新增功能"
-ms.openlocfilehash: 3a412b35c593c99fb8ea8307b12ccc05871863f4
-ms.sourcegitcommit: e2360ac94fe4deb0ed0f5c8c8d9b293551ec8030
+title: Windows PowerShell 5.0 中的新增功能
+ms.openlocfilehash: f1134a37e7027b00c948ce1db186a21dc5a311c6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/05/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 中的新增功能
 Windows PowerShell 5.0 新增了大量功能，不仅扩展并提升了自身的用途和可用性，还方便用户能够更轻松、全面地控制和管理基于 Windows 的环境。
@@ -14,7 +14,7 @@ Windows PowerShell 5.0 新增了大量功能，不仅扩展并提升了自身的
 Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows PowerShell 3.0 和 Windows PowerShell 2.0 设计的 cmdlet、提供程序、模块、管理单元、脚本、函数和配置文件通常适用于 Windows PowerShell 5.0，无需更改。
 
 # <a name="installing-windows-powershell"></a>安装 Windows PowerShell
-默认情况下，Windows PowerShell 5.0 安装在 Windows Server 2016 技术预览和 Windows 10 上。 
+默认情况下，Windows PowerShell 5.0 安装在 Windows Server 2016 技术预览和 Windows 10 上。
 
 若要在 Windows Server 2012 R2、Windows 8.1 企业版或 Windows 8.1 专业版上安装 Windows PowerShell 5.0，请下载并安装 [Windows Management Framework 5.0](http://aka.ms/wmf5download)。 请务必先阅读下载详细信息并确保满足所有系统要求，然后再安装 Windows Management Framework 5.0。
 
@@ -713,4 +713,3 @@ Windows PowerShell 3.0 包括对运行身份和共享主机功能的支持。
 ## <a name="see-also"></a>另请参阅
 - [about_Windows_PowerShell_5.0](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
 - [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
-

@@ -67,7 +67,7 @@ PowerShell Core 在 [MIT 许可][] 下发布。
 首先，从 PowerShell 库安装 `WindowsPSModulePath` 模块：
 
 ```powershell
-# Add `-Scope CurrentUser` if you're installing as non-admin 
+# Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 

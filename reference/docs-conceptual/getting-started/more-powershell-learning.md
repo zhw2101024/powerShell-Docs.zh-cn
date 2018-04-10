@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "更多 powershell 学习"
-ms.openlocfilehash: 32d7006010a4808a77d9800ec77c4352213d12b9
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+title: 更多 powershell 学习
+ms.openlocfilehash: bed263df0ff52ec687bc7a644470f0397d0106ff
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="more-powershell-learning"></a>更多 PowerShell 学习
 
-学习 PowerShell 的其他资源  
+学习 PowerShell 的其他资源
 
 ## <a name="resources-for-windows-powershell-users"></a>面向 Windows PowerShell 用户的资源
 
@@ -51,4 +51,3 @@ ms.lasthandoff: 09/29/2017
 
 - [Windows PowerShell SDK](http://go.microsoft.com/fwlink/p/?LinkID=89595)。 提供参考内容。
 - [Windows PowerShell 程序员指南](http://go.microsoft.com/fwlink/p/?LinkID=89596)。 提供教程。 还包含有关基本 Windows PowerShell 概念的信息。
-

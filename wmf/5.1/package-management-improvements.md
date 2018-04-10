@@ -1,33 +1,33 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,安装程序"
+keywords: wmf,powershell,安装程序
 contributor: jianyunt, quoctruong
-title: "WMF 5.1 中对包管理的改进"
-ms.openlocfilehash: b55a1742530b7cd48d60d79b7d4866ebee80a3b6
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: WMF 5.1 中对包管理的改进
+ms.openlocfilehash: d8b66cc101a6d963b484bba26a1bcd7f71437536
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="improvements-to-package-management-in-wmf-51"></a>WMF 5.1 中对包管理的改进#
 
 ## <a name="improvements-in-packagemanagement"></a>包管理中的改进 ##
-以下是 WMF 5.1 中所做的修复： 
+以下是 WMF 5.1 中所做的修复：
 
 ### <a name="version-alias"></a>版本别名
 
-**情形**：如果在系统上安装了包 P1 的版本 1.0 和 2.0，并且要卸载版本 1.0，则会运行 `Uninstall-Package -Name P1 -Version 1.0`，并且预计在运行该 cmdlet 之后将卸载版本 1.0。 但是结果是卸载了版本 2.0。  
-    
+**情形**：如果在系统上安装了包 P1 的版本 1.0 和 2.0，并且要卸载版本 1.0，则会运行 `Uninstall-Package -Name P1 -Version 1.0`，并且预计在运行该 cmdlet 之后将卸载版本 1.0。 但是结果是卸载了版本 2.0。
+
 出现此问题是因为 `-Version` 参数是 `-MinimumVersion` 参数的别名。 当 PackageManagement 查找具有最低版本 1.0 的合格包时，它会返回最新版本。 在正常情况下需要此行为，因为查找最新版本通常是所需结果。 但是，它不应该应用于 `Uninstall-Package` 情况。
-    
-**解决方案**：在 PackageManagement（也称为 OneGet）和 PowerShellGet 中完全删除了 `-Version` 别名。 
+
+**解决方案**：在 PackageManagement（也称为 OneGet）和 PowerShellGet 中完全删除了 `-Version` 别名。
 
 ### <a name="multiple-prompts-for-bootstrapping-the-nuget-provider"></a>多个用于启动 NuGet 提供程序的提示
 
-**情形**：在计算机上首次运行 `Find-Module`、`Install-Module` 或其他 PackageManagement cmdlet 时，PackageManagement 会尝试启动 NuGet 提供程序。 它这样做是因为 PowerShellGet 提供程序还使用 NuGet 提供程序来下载 PowerShell 模块。 PackageManagement 随后会提示用户输入安装 NuGet 提供程序的权限。 用户选择“yes”进行启动之后，会安装最新版本的 NuGet 提供程序。 
-    
+**情形**：在计算机上首次运行 `Find-Module`、`Install-Module` 或其他 PackageManagement cmdlet 时，PackageManagement 会尝试启动 NuGet 提供程序。 它这样做是因为 PowerShellGet 提供程序还使用 NuGet 提供程序来下载 PowerShell 模块。 PackageManagement 随后会提示用户输入安装 NuGet 提供程序的权限。 用户选择“yes”进行启动之后，会安装最新版本的 NuGet 提供程序。
+
 但是在某些情况下，当在计算机上安装了旧版本的 NuGet 提供程序时，较旧版本的 NuGet 有时会先加载到 PowerShell 会话中（这是 PackageManagement 中的争用条件）。 但是 PowerShellGet 需要更新版本的 NuGet 提供程序才可正常运行，因此 PowerShellGet 会要求 PackageManagement 再次启动 NuGet 提供程序。 这会导致出现多个用于启动 NuGet 提供程序的提示。
 
 **解决方案**：在 WMF 5.1 中，PackageManagement 加载最新版本的 NuGet 提供程序，以避免出现多个要求启动 NuGet 提供程序的提示。
@@ -68,4 +68,3 @@ Find-Package -Source <SourceWithCredential> -Credential (Get-Credential)
 ``` PowerShell
 Find-Package -Source http://www.nuget.org/api/v2/ -Proxy http://www.myproxyserver.com -ProxyCredential (Get-Credential)
 ```
-

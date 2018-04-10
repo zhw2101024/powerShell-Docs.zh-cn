@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: powershell,cmdlet
-title: "使用基于 Web 的 Windows PowerShell 控制台"
-ms.openlocfilehash: a6c9812253309ba1225141cfd48d0f1c8b8785b5
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: 使用基于 Web 的 Windows PowerShell 控制台
+ms.openlocfilehash: 3ef2b39279745ffe78fa928247e8a1fb76519ba0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>使用基于 Web 的 Windows PowerShell 控制台
 
@@ -18,15 +18,18 @@ Windows PowerShell Web 访问使用户可登录到安全的网站，以使用 Wi
 
 由于 Windows PowerShell 控制台在 Web 浏览器中运行，因此可以在众多客户端设备中打开；它几乎适用于所有能运行 Web 浏览器的设备。
 
-基于 Web 的 Windows PowerShell 控制台以用户在登录过程中指定的远程计算机为目标。 
+基于 Web 的 Windows PowerShell 控制台以用户在登录过程中指定的远程计算机为目标。
 
 本主题描述如何登录以及开始使用 Windows PowerShell Web 访问基于 Web 的控制台。
 
-本主题不描述如何使用 Windows PowerShell 或运行 cmdlet 或脚本。 有关如何使用 Windows PowerShell 和脚本资源的信息，请参阅本主题结尾的[另请参阅](#see-also)部分。
+本主题不描述如何使用 Windows PowerShell 或运行 cmdlet 或脚本。
+有关如何使用 Windows PowerShell 和脚本资源的信息，请参阅本主题结尾的[另请参阅](#see-also)部分。
 
 ## <a name="supported-browsers-and-client-devices"></a>受支持的浏览器和客户端设备
 
-Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏览器未正式受到支持，但许多此类浏览器均可运行基于 Web 的 Windows PowerShell 控制台。 其他接受 Cookies、运行 JavaScript 和 HTTPS 网站的浏览器有望投入使用，但尚未接受正式测试。
+Windows PowerShell Web 访问支持以下 Internet 浏览器。
+虽然移动浏览器未正式受到支持，但许多此类浏览器均可运行基于 Web 的 Windows PowerShell 控制台。
+其他接受 Cookies、运行 JavaScript 和 HTTPS 网站的浏览器有望投入使用，但尚未接受正式测试。
 
 ### <a name="supported-desktop-computer-browsers"></a>受支持的台式计算机浏览器
 

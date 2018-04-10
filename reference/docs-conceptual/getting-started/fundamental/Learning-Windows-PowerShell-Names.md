@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "学习 Windows PowerShell 名称"
+title: 学习 Windows PowerShell 名称
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 28c821c4a617b6ac775dbdda8ade3d15c3f218c3
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 381aa619a41ccacb2ff3a4cdbc2b75b7f04282d1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="learning-windows-powershell-names"></a>学习 Windows PowerShell 名称
 学习命令和命令参数的名称是使用大多数命令行接口时重要的时间投入。 问题是模式非常少，因此学习的唯一方法是通过记住需要定期使用的每个命令和每个参数。
@@ -57,7 +57,7 @@ Cmdlet          Resume-Service                  Resume-Service [-Name] <Stri...
 Cmdlet          Set-Service                     Set-Service [-Name] <String>...
 Cmdlet          Start-Service                   Start-Service [-Name] <Strin...
 Cmdlet          Stop-Service                    Stop-Service [-Name] <String...
-Cmdlet          Suspend-Service                 Suspend-Service [-Name] <Str... 
+Cmdlet          Suspend-Service                 Suspend-Service [-Name] <Str...
 ...
 ```
 
@@ -91,4 +91,3 @@ Windows PowerShell 具有一些名为“通用参数”的参数。 因为这些
 对于类似的参数，Windows PowerShell 核心 cmdlet 使用标准名称。 尽管不强制使用参数名称，但是具有明确的用法指南支持标准化。
 
 例如，本指南建议使用例如 **ComputerName** 等名称命名指示计算机的参数，而不使用 Server、Host、System、Node 或其他常见的备选单词。 重要的建议参数名称有 **Force**、**Exclude**、**Include**、**PassThru**、**Path** 和 **CaseSensitive**。
-

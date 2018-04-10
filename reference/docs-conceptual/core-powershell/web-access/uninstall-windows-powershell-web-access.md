@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: powershell,cmdlet
-title: "卸载 Windows PowerShell Web 访问"
-ms.openlocfilehash: b6e6a2374e6b4b2be8742019c5f1e4d5b5d1abe3
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+title: 卸载 Windows PowerShell Web 访问
+ms.openlocfilehash: 22c874d766445dccedd8494097daf16c30fa66ff
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>卸载 Windows PowerShell Web 访问
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 09/29/2017
 
 - Windows PowerShell Web 访问 Web 应用程序
 - Windows PowerShell Web 访问功能
- 
+
 方法是使用 Windows PowerShell cmdlet。
 
 ### <a name="step-1-delete-the-web-application-using-cmdlets"></a>步骤 1：使用 cmdlet 删除 Web 应用程序
@@ -96,9 +96,9 @@ ms.lasthandoff: 09/29/2017
 
 > ![警告注意](images/SecurityNote.jpeg)**注意**：
 >
-> 在卸载过程中未删除证书。 
+> 在卸载过程中未删除证书。
 >
-> 如果你创建了自签名的证书或使用测试证书，现想将它删除，则可在 IIS 管理器中删除该证书。 
+> 如果你创建了自签名的证书或使用测试证书，现想将它删除，则可在 IIS 管理器中删除该证书。
 
 ### <a name="step-2-uninstall-windows-powershell-web-access-using-the-remove-roles-and-features-wizard"></a>步骤 2：使用“删除角色和功能向导”卸载 Windows PowerShell Web 访问
 

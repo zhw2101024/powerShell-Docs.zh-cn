@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "使用具有多个版本的资源"
-ms.openlocfilehash: 5ca4eadfe23a4675e1b81b86d4274d7f113228fe
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,配置,安装程序
+title: 使用具有多个版本的资源
+ms.openlocfilehash: 9e5b989be3f33fb9151f76cecb6d5f700b1e36c9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-resources-with-multiple-versions"></a>使用具有多个版本的资源
 
@@ -62,7 +62,7 @@ configuration VersionTest
             DomainAdministratorCredential = Get-Credential
         }
      }
-}     
+}
 ```
 
 >注意：Import-DscResource 的 ModuleVersion 参数在 PowerShell 4.0 中不可用。 在 PowerShell 4.0 中，你可以将模块规范对象传递到 Import-DscResource 的 ModuleName 参数，从而指定模块版本。 模块规范对象是包含 ModuleName 和 RequiredVersion 键的哈希表。 例如：
@@ -81,7 +81,7 @@ configuration VersionTest
             DomainAdministratorCredential = Get-Credential
         }
      }
-}     
+}
 ```
 
 此操作在 PowerShell 5.0 中也有效，但建议使用 **ModuleVersion** 参数。
@@ -89,4 +89,3 @@ configuration VersionTest
 ## <a name="see-also"></a>另请参阅
 * [DSC 配置](configurations.md)
 * [DSC 资源](resources.md)
-

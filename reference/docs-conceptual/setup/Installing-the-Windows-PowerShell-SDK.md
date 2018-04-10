@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "安装 Windows PowerShell SDK"
+title: 安装 Windows PowerShell SDK
 ms.assetid: c3636b45-61aa-4720-85f0-58312c4fc8f9
-ms.openlocfilehash: c6acba828e469e716c80603ec2432176652a7280
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 830b054c2cf2b49d935d3d96b79effa7131f6db2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>安装 Windows PowerShell SDK
 
@@ -266,4 +266,3 @@ cmdlet 可接受一个或多个进程名称，并返回匹配的进程。
 演示如何覆盖内容方法以支持对 Clear-Content、Get-Content 和 Set-Content cmdlet 的调用。
 当用户需要管理数据存储区中的项的内容时，应实现这些方法。
 此示例中的提供程序派生自 [NavigationCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider.aspx) 类，并实现 [IContentCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.icontentcmdletprovider.aspx) 接口。
-

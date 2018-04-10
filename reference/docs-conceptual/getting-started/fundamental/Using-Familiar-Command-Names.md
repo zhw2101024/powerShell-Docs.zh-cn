@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "使用熟悉的命令名称"
+title: 使用熟悉的命令名称
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: 5e72e721bdb9d48684092344a0169907e7e25d40
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 37fc6dfad5a2f1363254744141dcab1e13aa5066
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-familiar-command-names"></a>使用熟悉的命令名称
 使用称为*别名*的机制，Windows PowerShell 允许用户通过备用名称引用命令。 别名允许具有其他 Shell 经验的用户重复使用其已知的常见命令名称在 Windows PowerShell 中执行类似操作。 虽然我们不会详细讨论 Windows PowerShell 别名，但当你开始使用 Windows PowerShell 时，你仍可以使用它们。
@@ -67,4 +67,3 @@ Set-Alias : Alias is not writeable because alias gi is read-only or constant and
 At line:1 char:10
 + Set-Alias  <<<< -Name gi -Value Get-Item
 ```
-

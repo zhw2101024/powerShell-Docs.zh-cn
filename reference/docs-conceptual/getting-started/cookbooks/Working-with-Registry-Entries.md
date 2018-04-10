@@ -1,18 +1,20 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "使用注册表条目"
+title: 使用注册表条目
 ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc
-ms.openlocfilehash: 039203a1a6549d4ba33424a278e4803a5e143d4d
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: bffdf80931fc4dc570b584623487077dc5d449dc
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="working-with-registry-entries"></a>使用注册表条目
+
 因为注册表条目是项的属性而无法直接浏览，因此我们在使用它们时需要采取略有不同的方式。
 
 ### <a name="listing-registry-entries"></a>列出注册表条目
+
 可采用许多不同的方法检查注册表条目。 最简单的方法是获取与某个项相关联的属性名称。 例如，若要查看注册表项 **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion** **Get-Item**。 注册表项具有一个通用名称为“Property”的属性，它是项中的注册表条目的列表。 以下命令选择 Property 属性并扩展这些项，以便它们可在列表中显示：
 
 ```
@@ -52,13 +54,13 @@ PF_AccessoriesName  : Accessories
 
 你可以将“**.**”表示法用于引用当前位置。 你可以先使用 **Set-Location** 更改为 **CurrentVersion** 注册表容器：
 
-```
+```powershell
 Set-Location -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
 另外，你可以将内置 HKLM PSDrive 与 **Set-Location** 结合使用：
 
-```
+```powershell
 Set-Location -Path hklm:\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
@@ -76,6 +78,7 @@ ProgramFilesDir     : C:\Program Files
 路径扩展的工作方式与其在文件系统中的工作方式相同，因此在此位置中，你可以通过使用 **Get-ItemProperty -Path ..\\Help** 来获取 **HKLM:\\SOFTWARE\\Microsoft\\Windows\\Help** 的 **ItemProperty** 列表。
 
 ### <a name="getting-a-single-registry-entry"></a>获取单个注册表条目
+
 如果你希望在注册表项中检索特定条目，可以使用几种可能的方法之一。 此示例在 **HKEY_LOCAL_MACHINE\\\\Microsoft\\Windows\\CurrentVersion** 中查找 **DevicePath** 的值。
 
 通过使用 **Get-ItemProperty**，可使用 **Path** 参数指定项的名称，使用 **Name** 参数指定 **DevicePath** 条目的名称。
@@ -117,6 +120,7 @@ PS> (New-Object -ComObject WScript.Shell).RegRead("HKLM\SOFTWARE\Microsoft\Windo
 ```
 
 ### <a name="creating-new-registry-entries"></a>创建新注册表条目
+
 若要将名为“PowerShellPath”的新条目添加到 **CurrentVersion** 项，请将 **New-ItemProperty** 与该项的路径、条目名称和条目的值一起使用。 对于此示例，我们将采用 Windows PowerShell 变量 **$PSHome** 的值，该变量可存储 Windows PowerShell 的安装目录的路径。
 
 你可以通过使用以下命令来将新条目添加到项，该命令还会返回有关新条目的信息：
@@ -148,30 +152,31 @@ PowerShellPath : C:\Program Files\Windows PowerShell\v1.0
 > [!NOTE]
 > 你可以通过为 **Path** 参数指定一组值来将注册表条目添加到多个位置：
 
-```
+```powershell
 New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion, HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -PropertyType String -Value $PSHome
 ```
 
 你还可以替代预先存在的注册表条目值，方法是将 **Force** 参数添加到任何 **New-ItemProperty** 命令。
 
 ### <a name="renaming-registry-entries"></a>重命名注册表条目
+
 若要将 **PowerShellPath** 条目重命名为“PSHome”，请使用 **Rename-ItemProperty**：
 
-```
+```powershell
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome
 ```
 
 若要显示重命名的值，请将 **PassThru** 参数添加到该命令。
 
-```
+```powershell
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome -passthru
 ```
 
 ### <a name="deleting-registry-entries"></a>删除注册表条目
+
 若要删除 PSHome 和 PowerShellPath 注册表条目，请使用 **Remove-ItemProperty**：
 
-```
+```powershell
 Remove-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PSHome
 Remove-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath
 ```
-

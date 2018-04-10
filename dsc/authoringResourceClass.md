@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "使用 PowerShell 类编写自定义 DSC 资源"
-ms.openlocfilehash: 53757f965c51fee699409b5a8ecda802dda9801f
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,配置,安装程序
+title: 使用 PowerShell 类编写自定义 DSC 资源
+ms.openlocfilehash: 23669a6db17855e8d69aa0144c541bb4c799a9eb
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>使用 PowerShell 类编写自定义 DSC 资源
 
@@ -30,8 +30,8 @@ ms.lasthandoff: 03/15/2018
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
     |- MyDscResource (folder)
-        |- MyDscResource.psm1 
-           MyDscResource.psd1 
+        |- MyDscResource.psm1
+           MyDscResource.psd1
 ```
 
 ## <a name="create-the-class"></a>创建类
@@ -72,10 +72,10 @@ DSC 资源架构被定义为类的属性。 我们声明下列三个属性。
 **$Path** 和 **$SourcePath** 属性都是字符串。 **$CreationTime** 是一个 [DateTime](https://technet.microsoft.com/library/system.datetime.aspx) 属性。 **$Ensure** 属性是枚举类，定义如下。
 
 ```powershell
-enum Ensure 
-{ 
-    Absent 
-    Present 
+enum Ensure
+{
+    Absent
+    Present
 }
 ```
 
@@ -83,7 +83,7 @@ enum Ensure
 
 **Get()**、**Set()** 和 **Test()** 方法类似于脚本资源中的 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** 函数。
 
-此代码还包括 CopyFile() 函数，是一个可将文件从 **$SourcePath** 复制到 **$Path** 的 helper 函数。 
+此代码还包括 CopyFile() 函数，是一个可将文件从 **$SourcePath** 复制到 **$Path** 的 helper 函数。
 
 ```powershell
 
@@ -450,7 +450,7 @@ PowerShellVersion = '5.0'
 
 # Name of the Windows PowerShell host required by this module
 # PowerShellHostName = ''
-} 
+}
 ```
 
 ## <a name="test-the-resource"></a>测试资源
@@ -466,7 +466,7 @@ Configuration Test
         Path = "C:\test\test.txt"
         SourcePath = "c:\test.txt"
         Ensure = "Present"
-    } 
+    }
 }
 Test
 Start-DscConfiguration -Wait -Force Test
@@ -512,4 +512,3 @@ if (PsDscContext.RunAsUser) {
 ## <a name="see-also"></a>另请参阅
 ### <a name="concepts"></a>概念
 [构建自定义 Windows PowerShell Desired State Configuration 资源](authoringResource.md)
-

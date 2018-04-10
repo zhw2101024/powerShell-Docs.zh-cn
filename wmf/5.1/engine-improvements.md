@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,安装程序"
-title: "WMF 5.1 中的 PowerShell 引擎改进"
-ms.openlocfilehash: 6c8000ccfc59ab46de95dc4f67161e12a5a41199
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,安装程序
+title: WMF 5.1 中的 PowerShell 引擎改进
+ms.openlocfilehash: 3c69c4e13f64683f743eb78b0c9e177ff5b3a771
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 #<a name="powershell-engine-improvements"></a>PowerShell 引擎改进
 
@@ -20,9 +20,9 @@ ms.lasthandoff: 06/12/2017
 性能在一些重要方面得到了改进：
 
 - 启动
-- 向 ForEach-Object 和 Where-Object 这类 cmdlet 进行管道传递的速度大约提供了 50% 
+- 向 ForEach-Object 和 Where-Object 这类 cmdlet 进行管道传递的速度大约提供了 50%
 
-一些示例改进（结果可能因你的硬件而异）： 
+一些示例改进（结果可能因你的硬件而异）：
 
 | 方案 | 5.0 时间（毫秒） | 5.1 时间（毫秒） |
 | -------- | :---------------: | :---------------: |
@@ -30,12 +30,13 @@ ms.lasthandoff: 06/12/2017
 | PowerShell 首次运行：`powershell -command "Unknown-Command"` | 30000 | 13000 |
 | 构建的命令分析缓存：`powershell -command "Unknown-Command"` | 7000 | 520 |
 | <code>1..1000000 &#124; % { }</code> | 1400 | 750 |
-  
-> 注意：与启动相关的更改可能会影响某些不支持的方案。 
-> PowerShell 不再读取文件 `$pshome\*.ps1xml` -- 这些文件已转换为 C#，以避免处理 XML 文件的某些文件和 CPU 开销。 
-这些文件仍存在，以同时支持 V2，因此如果更改文件内容，则不会对 V5 产生任何影响，只会影响 V2。 
+
+> 注意：与启动相关的更改可能会影响某些不支持的方案。
+> PowerShell 不再读取文件 `$pshome\*.ps1xml` -- 这些文件已转换为 C#，以避免处理 XML 文件的某些文件和 CPU 开销。
+这些文件仍存在，以同时支持 V2，因此如果更改文件内容，则不会对 V5 产生任何影响，只会影响 V2。
 请注意，更改这些文件的内容从来都不是受支持的方案。
 
-另一个显著更改是 PowerShell 如何为系统上安装的模块缓存导出的命令和其他信息。 以前，此缓存存储在目录 `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\CommandAnalysis` 中。 在 WMF 5.1 中，此缓存是单个文件 `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\ModuleAnalysisCache`。
+另一个显著更改是 PowerShell 如何为系统上安装的模块缓存导出的命令和其他信息。
+以前，此缓存存储在目录 `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\CommandAnalysis` 中。
+在 WMF 5.1 中，此缓存是单个文件 `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\ModuleAnalysisCache`。
 有关详细信息，请参阅[模块分析缓存](scenarios-features.md#module-analysis-cache)。
-

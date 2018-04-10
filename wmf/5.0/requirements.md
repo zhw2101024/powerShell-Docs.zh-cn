@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,安装程序"
-ms.openlocfilehash: 510e1baa2933932cfd4c3bcb4e0973f3eb8095f3
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: wmf,powershell,安装程序
+ms.openlocfilehash: 7e24bb4ee4d0658b0619f7f008e3740f647f124f
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="system-requirements"></a>系统要求
 
@@ -55,7 +55,7 @@ ms.lasthandoff: 03/15/2018
 Windows Server 2008 R2 SP1 和 Windows 7 SP1 系统内置了 PowerShell 2.0、WinRM 和 WMI。 在发布 Windows Server 2008 R2 SP1 和 Windows 7 SP1 之后，发布了更新这些内置组件的 WMF 3.0 和 WMF 4.0 程序包。 安装/卸载 WMF 3.0 和 WMF 4.0 程序包在以下升级路径中发现了一些问题：
 
 - 内置 --> WMF 4.0。
-- 内置 --> WMF 3.0 --> WMF4.0。 
+- 内置 --> WMF 3.0 --> WMF4.0。
 
 我们在 WMF 4.0 程序包中修复了这些问题。 因此，对于在 Windows Server 2008 R2 SP1 和 Windows 7 SP1 上安装 WMF 5.0，WMF 4.0 是先决条件。 下面是如果在升级到 WMF 5.0 之前未安装 WMF 4.0，可能会遇到的特定问题：
 
@@ -96,4 +96,3 @@ wusa /uninstall /kb:3134760
 3.  单击“查看已安装的更新”。
 
 4.  从已安装的更新列表中选择“Windows Management Framework 5.0”。 这对应于 *KB3134758*、*KB3134759* 或 *KB3134760*。 单击“卸载”。
-

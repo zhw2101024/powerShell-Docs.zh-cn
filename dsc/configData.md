@@ -1,106 +1,112 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "使用配置数据"
-ms.openlocfilehash: b56a3f970b0b5121585dc4ed2f32da3243b980bd
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,配置,安装程序
+title: 使用配置数据
+ms.openlocfilehash: 19544494a547a06d87701b38585844cb11d03e33
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-configuration-data-in-dsc"></a>使用 DSC 中的配置数据
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
-通过使用内置 DSC **ConfigurationData** 参数，可以定义可在配置中使用的数据。 这样一来，便可创建可用于多个节点或不同环境的单个配置。 例如，如果要开发应用程序，可将一个配置同时用于开发和生产环境，并使用配置数据指定每个环境的数据。
+通过使用内置 DSC **ConfigurationData** 参数，可以定义可在配置中使用的数据。
+这样一来，便可创建可用于多个节点或不同环境的单个配置。
+例如，如果要开发应用程序，可将一个配置同时用于开发和生产环境，并使用配置数据指定每个环境的数据。
 
-本主题介绍了 ConfigurationData 哈希表的结构。 有关如何使用配置数据的示例，请参阅[分离配置和环境数据](separatingEnvData.md)。
+本主题介绍了 ConfigurationData 哈希表的结构。
+有关如何使用配置数据的示例，请参阅[分离配置和环境数据](separatingEnvData.md)。
 
 ## <a name="the-configurationdata-common-parameter"></a>ConfigurationData 常见参数
 
-DSC 配置使用在编译配置时指定的常见参数 ConfigurationData。 有关编译配置的信息，请参阅 [DSC 配置](configurations.md)。
+DSC 配置使用在编译配置时指定的常见参数 ConfigurationData。
+有关编译配置的信息，请参阅 [DSC 配置](configurations.md)。
 
-**ConfigurationData** 参数是必须具有至少一个名为 **AllNodes** 的键的哈希表。 它还可以额外包含一个或多个键。
+**ConfigurationData** 参数是必须具有至少一个名为 **AllNodes** 的键的哈希表。
+它还可以额外包含一个或多个键。
 
 >注意：除了名为“AllNodes”的键之外，本主题中的示例还额外使用一个名为“`NonNodeData`”的键。不过，可以额外添加任意数量的键，并能根据需要随意命名这些键。
 
 ```powershell
-$MyData = 
+$MyData =
 @{
     AllNodes = @()
-    NonNodeData = ""   
+    NonNodeData = ""
 }
 ```
 
 **AllNodes** 键的值是一个数组。 此数组的每个元素也是必须具有至少一个名为 **NodeName** 的键的哈希表：
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName = "VM-1"
         },
 
- 
+
         @{
             NodeName = "VM-2"
         },
 
- 
+
         @{
             NodeName = "VM-3"
         }
     );
 
-    NonNodeData = ""   
+    NonNodeData = ""
 }
 ```
 
 也可以将其他键添加到每个哈希表：
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName = "VM-1"
             Role     = "WebServer"
         },
 
- 
+
         @{
             NodeName = "VM-2"
             Role     = "SQLServer"
         },
 
- 
+
         @{
             NodeName = "VM-3"
             Role     = "WebServer"
         }
     );
 
-    NonNodeData = ""   
+    NonNodeData = ""
 }
 ```
 
-若要将属性应用到所有节点，可创建 **NodeName** 为 `*` 的 **AllNodes** 数组的成员。 例如，若要让每个节点具有 `LogPath` 属性，可以执行如下操作：
+若要将属性应用到所有节点，可创建 **NodeName** 为 `*` 的 **AllNodes** 数组的成员。
+例如，若要让每个节点具有 `LogPath` 属性，可以执行如下操作：
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName     = "*"
             LogPath      = "C:\Logs"
         },
 
- 
+
         @{
             NodeName     = "VM-1"
             Role         = "WebServer"
@@ -108,13 +114,13 @@ $MyData =
             SiteName     = "Website1"
         },
 
- 
+
         @{
             NodeName     = "VM-2"
             Role         = "SQLServer"
         },
 
- 
+
         @{
             NodeName     = "VM-3"
             Role         = "WebServer"
@@ -129,7 +135,8 @@ $MyData =
 
 ## <a name="defining-the-configurationdata-hashtable"></a>定义 ConfigurationData 哈希表
 
-可以将 ConfigurationData 定义为与配置同属一个脚本文件的变量（如上面的示例所示），也可以定义为单独的 `.psd1` 文件中的变量。 若要在 `.psd1` 文件中定义 ConfigurationData，请创建仅包含表示配置数据的哈希表的文件。
+可以将 ConfigurationData 定义为与配置同属一个脚本文件的变量（如上面的示例所示），也可以定义为单独的 `.psd1` 文件中的变量。
+若要在 `.psd1` 文件中定义 ConfigurationData，请创建仅包含表示配置数据的哈希表的文件。
 
 例如，可创建一个名为 `MyData.psd1` 的文件，此文件包含以下内容：
 
@@ -186,11 +193,11 @@ DSC 提供三种可在配置脚本中使用的特殊变量：**$AllNodes**、**$
 ## <a name="using-non-node-data"></a>使用非节点数据
 
 如上面的示例所示，除了必需的 AllNodes 键之外，ConfigurationData 哈希表还可以额外包含一个或多个键。
-本主题中的示例只额外使用了一个节点，并将它命名为“`NonNodeData`”。 不过，可以额外定义任意数量的键，并能根据需要随意命名这些键。
+本主题中的示例只额外使用了一个节点，并将它命名为“`NonNodeData`”。
+不过，可以额外定义任意数量的键，并能根据需要随意命名这些键。
 
 有关使用非节点数据的示例，请参阅[分离配置和环境数据](separatingEnvData.md)。
 
 ## <a name="see-also"></a>另请参阅
 - [配置数据中的凭据选项](configDataCredentials.md)
 - [DSC 配置](configurations.md)
-

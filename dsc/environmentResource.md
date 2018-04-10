@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "DSC Environment 资源"
-ms.openlocfilehash: 9c166d719ba3f168c936278acd6fb5fb7658613e
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,配置,安装程序
+title: DSC Environment 资源
+ms.openlocfilehash: 4f024afe2d70c13e19406745ec7fd69821ab229b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-environment-resource"></a>DSC Environment 资源
 
@@ -29,13 +29,13 @@ Environment [string] #ResourceName
 
 ## <a name="properties"></a>“属性”
 
-|  属性  |  说明   | 
-|---|---| 
-| 名称| 指示指示你想要确保其特定状态的环境变量的名称。| 
-| Ensure| 指示变量是否存在。 如果不存在此变量，将此属性设置为 __Present__ 以创建环境变量；如果已存在此变量，则确保其值与通过 __Value__ 属性提供的值相匹配。 如果存在该变量，将其设置为 __Absent__ 可将其删除。| 
-| 路径| 定义正在配置的环境变量。 如果变量是 __Path__，则将此属性设置为 __$true__；否则将其设置为 __$false__。 默认值为 __$false__。 如果正在配置的变量是 __Path__，则通过 __Value__ 属性提供的值将被附加到现有值。| 
-| DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 __ResourceName__、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。| 
-| 值| 要分配给环境变量的值。| 
+|  属性  |  说明   |
+|---|---|
+| 名称| 指示指示你想要确保其特定状态的环境变量的名称。|
+| Ensure| 指示变量是否存在。 如果不存在此变量，将此属性设置为 __Present__ 以创建环境变量；如果已存在此变量，则确保其值与通过 __Value__ 属性提供的值相匹配。 如果存在该变量，将其设置为 __Absent__ 可将其删除。|
+| 路径| 定义正在配置的环境变量。 如果变量是 __Path__，则将此属性设置为 __$true__；否则将其设置为 __$false__。 默认值为 __$false__。 如果正在配置的变量是 __Path__，则通过 __Value__ 属性提供的值将被附加到现有值。|
+| DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 __ResourceName__、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。|
+| 值| 要分配给环境变量的值。|
 
 ## <a name="example"></a>示例
 
@@ -49,4 +49,3 @@ Environment EnvironmentExample
     Value = "TestValue"
 }
 ```
-

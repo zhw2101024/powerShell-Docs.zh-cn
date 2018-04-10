@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "库,powershell,cmdlet,psget"
+keywords: 库,powershell,cmdlet,psget
 title: scriptwithpseditionsupport
-ms.openlocfilehash: e6994b994cb15903560f3dd89c21383fb2cd367d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 18ce2d729199e0587ef92993db7fec44ef744ec7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="script-with-compatible-powershell-editions"></a>具有兼容的 PowerShell 版本的脚本
 从版本 5.1 开始，PowerShell 以表现出不同功能集和平台兼容性的不同版本提供。
@@ -65,4 +65,3 @@ Find-Script -Tag PSEditon_Core
 ## <a name="more-details"></a>详细信息
 ### <a name="modules-with-pseditionsmodulemodulewithpseditionsupportmd"></a>[PSEditions 模块](../module/modulewithpseditionsupport.md)
 ### <a name="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd"></a>[PowerShell 库的 PSEditions 支持](../../psgallery/psgallery_pseditions.md)
-

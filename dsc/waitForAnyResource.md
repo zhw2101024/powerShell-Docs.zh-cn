@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "DSC WaitForAny 资源"
-ms.openlocfilehash: 43922dbcccb6d06d7d9edfcf16ce4eb107e9d4e6
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,配置,安装程序
+title: DSC WaitForAny 资源
+ms.openlocfilehash: 3d73c16397d9a18805184e6a5bb8561483144898
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-waitforany-resource"></a>DSC WaitForAny 资源
 
@@ -26,7 +26,7 @@ WaitForAny [string] #ResourceName
     ResourceName = [string]
     NodeName = [string]
     [ RetryIntervalSec = [Uint64] ]
-    [ RetryCount = [Uint32] ] 
+    [ RetryCount = [Uint32] ]
     [ ThrottleLimit = [Uint32]]
     [ DependsOn = [string[]] ]
 }
@@ -34,17 +34,16 @@ WaitForAny [string] #ResourceName
 
 ## <a name="properties"></a>“属性”
 
-|  属性  |  说明   | 
-|---|---| 
-| ResourceName| 要依赖的资源名称。 如果此资源属于不同的配置，请将名称的格式设置为“[__ResourceType__]__ResourceName__::[__ConfigurationName__]::[__ConfigurationName__]”| 
-| NodeName| 要依赖的资源的目标节点。| 
-| RetryIntervalSec| 重试前等待的秒数。 最小值为 1。| 
-| RetryCount| 重试次数上限。| 
-| ThrottleLimit| 同时连接的计算机数量。 默认值为 new-cimsession default。| 
+|  属性  |  说明   |
+|---|---|
+| ResourceName| 要依赖的资源名称。 如果此资源属于不同的配置，请将名称的格式设置为“[__ResourceType__]__ResourceName__::[__ConfigurationName__]::[__ConfigurationName__]”|
+| NodeName| 要依赖的资源的目标节点。|
+| RetryIntervalSec| 重试前等待的秒数。 最小值为 1。|
+| RetryCount| 重试次数上限。|
+| ThrottleLimit| 同时连接的计算机数量。 默认值为 new-cimsession default。|
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 __ResourceName__、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。|
 
 
 ## <a name="example"></a>示例
 
 有关如何使用此资源的示例，请参阅[指定跨节点依赖关系](crossNodeDependencies.md)
-

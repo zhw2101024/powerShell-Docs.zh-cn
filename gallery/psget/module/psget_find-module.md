@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "库,powershell,cmdlet,psget"
+keywords: 库,powershell,cmdlet,psget
 title: Find-Module
-ms.openlocfilehash: 65c466909c007ed08c3fa978f78483983b00ba73
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+ms.openlocfilehash: 03dff4454a31638df564568ef51eec158685c8e9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="find-module"></a>Find-Module
 查找联机库中与指定条件相匹配的模块。
@@ -21,7 +21,7 @@ Find-Module 在已注册存储库中发现与指定条件相匹配的模块。
 - Find-Module 可使用版本参数 MinimumVersion、MaximumVersion、RequiredVersion、AllVersions 进行筛选。
   - 这些参数彼此排斥，但 MinmimumVersion 和 MaximumVersion 除外。
   - 这些版本参数只允许具有单个模块名称，而不能具有任何通配符。
-  - 如果未指定 RequiredVersion 参数，Find-Module 将返回等于或高于指定的最低版本的最新版本的模块或最新版本的模块（若未指定最低版本）。 
+  - 如果未指定 RequiredVersion 参数，Find-Module 将返回等于或高于指定的最低版本的最新版本的模块或最新版本的模块（若未指定最低版本）。
   - 如果已指定 RequiredVersion 参数，则 Find-Module 只返回完全匹配指定版本的模块。
 - Find-Module 可以使用 -Tag 参数对模块元数据进行筛选
 - Find-Module 可使用 -Filter 参数对存储库特定搜索语言进行筛选。
@@ -54,7 +54,7 @@ Find-Module -Name AzureRM*
 # Find all versions of a module
 Find-Module -Name PSReadline -AllVersions
 
-# Find a module with -MinimumVersion. 
+# Find a module with -MinimumVersion.
 # With MinimumVersion we can find a module whose version is greate than or equal to the specified MinimumVersion value.
 Find-Module -Name PSReadline -MinimumVersion 1.0.0.12
 
@@ -142,4 +142,3 @@ PackageManagementProvider  : NuGet
 AdditionalMetadata         : {downloadCount, description, copyright, FileList...}
 
 ```
-

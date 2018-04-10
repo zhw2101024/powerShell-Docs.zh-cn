@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "在 PowerShell 远程处理中形成第二个跃点"
-ms.openlocfilehash: 726b4d1b7a41e9e344347543ecde26da6547bcf3
-ms.sourcegitcommit: fff6c0522508eeb408cb055ba4c9337a2759b392
+title: 在 PowerShell 远程处理中形成第二个跃点
+ms.openlocfilehash: 893b4353c4244dc96c4b234bb4062b583a5cd36d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>在 PowerShell 远程处理中形成第二个跃点
 
@@ -55,7 +55,7 @@ ms.lasthandoff: 02/23/2018
 
 ## <a name="kerberos-constrained-delegation"></a>Kerberos 约束委派
 
-可以使用旧的约束委派（而非基于资源的委派）形成第二个跃点。 
+可以使用旧的约束委派（而非基于资源的委派）形成第二个跃点。
 
 >**注意：**无法委派具有**敏感帐户，不能被委派**属性集的 Active Directory 帐户。 有关详细信息，请参阅 [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)（安全聚焦：对特权帐户分析“敏感帐户，不能被委派”）和 [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)（Kerberos 身份验证工具和设置）
 
@@ -89,7 +89,7 @@ ms.lasthandoff: 02/23/2018
 
 - 要求 Windows Server 2012 或更高版本。
 - 不支持 WinRM 的第二个跃点。
-- 需要权限才能更新对象和服务主体名称 (SPN)。 
+- 需要权限才能更新对象和服务主体名称 (SPN)。
 
 ### <a name="example"></a>示例
 
@@ -108,8 +108,8 @@ PS C:\> Import-Module ActiveDirectory
 ```powershell
 PS C:\> Get-Command -ParameterName PrincipalsAllowedToDelegateToAccount
 
-CommandType Name                 ModuleName     
------------ ----                 ----------     
+CommandType Name                 ModuleName
+----------- ----                 ----------
 Cmdlet      New-ADComputer       ActiveDirectory
 Cmdlet      New-ADServiceAccount ActiveDirectory
 Cmdlet      New-ADUser           ActiveDirectory
@@ -123,10 +123,10 @@ Cmdlet      Set-ADUser           ActiveDirectory
 现在，我们来设置用于表示服务器的变量：
 
 ```powershell
-# Set up variables for reuse            
-$ServerA = $env:COMPUTERNAME            
-$ServerB = Get-ADComputer -Identity ServerB            
-$ServerC = Get-ADComputer -Identity ServerC            
+# Set up variables for reuse
+$ServerA = $env:COMPUTERNAME
+$ServerB = Get-ADComputer -Identity ServerB
+$ServerC = Get-ADComputer -Identity ServerC
 ```
 
 默认情况下，WinRM（由此还有 PowerShell 远程处理）作为计算机帐户运行。 可通过查看 `winrm` 服务的 **StartName** 属性看到：
@@ -140,22 +140,22 @@ StartName : NT AUTHORITY\NetworkService
 为了 _ServerC_ 允许来自 _ServerB_ 上的 PowerShell 远程处理会话的委派，我们通过将 _ServerC_ 上的 **PrincipalsAllowedToDelegateToAccount** 参数设为 _ServerB_ 的计算机对象来授予权限：
 
 ```powershell
-# Grant resource-based Kerberos constrained delegation            
-Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $ServerB            
-            
-# Check the value of the attribute directly            
-$x = Get-ADComputer -Identity $ServerC -Properties msDS-AllowedToActOnBehalfOfOtherIdentity            
-$x.'msDS-AllowedToActOnBehalfOfOtherIdentity'.Access            
-            
-# Check the value of the attribute indirectly            
+# Grant resource-based Kerberos constrained delegation
+Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $ServerB
+
+# Check the value of the attribute directly
+$x = Get-ADComputer -Identity $ServerC -Properties msDS-AllowedToActOnBehalfOfOtherIdentity
+$x.'msDS-AllowedToActOnBehalfOfOtherIdentity'.Access
+
+# Check the value of the attribute indirectly
 Get-ADComputer -Identity $ServerC -Properties PrincipalsAllowedToDelegateToAccount
 ```
 
 Kerberos [密钥分发中心 (KDC)](https://msdn.microsoft.com/library/windows/desktop/aa378170(v=vs.85).aspx) 缓存拒绝访问尝试（负缓存）长达 15 分钟。 如果 _ServerB_ 先前已尝试访问 _ServerC_，则需要通过调用以下命令清除 _ServerB_ 上的缓存：
 
 ```powershell
-Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {            
-    klist purge -li 0x3e7            
+Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
+    klist purge -li 0x3e7
 }
 ```
 
@@ -164,14 +164,14 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 清除缓存之后，可以通过 _ServerB_ 到 _ServerC_成功运行来自 _ServerA_ 的代码：
 
 ```powershell
-# Capture a credential            
-$cred = Get-Credential Contoso\Alice            
-            
-# Test kerberos double hop            
-Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {            
-    Test-Path \\$($using:ServerC.Name)\C$            
-    Get-Process lsass -ComputerName $($using:ServerC.Name)            
-    Get-EventLog -LogName System -Newest 3 -ComputerName $($using:ServerC.Name)            
+# Capture a credential
+$cred = Get-Credential Contoso\Alice
+
+# Test kerberos double hop
+Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
+    Test-Path \\$($using:ServerC.Name)\C$
+    Get-Process lsass -ComputerName $($using:ServerC.Name)
+    Get-EventLog -LogName System -Newest 3 -ComputerName $($using:ServerC.Name)
 }
 ```
 
@@ -180,13 +180,13 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 若要允许多个服务器向 _ServerC_ 委派凭据，在 _ServerC_ 上将 **PrincipalsAllowedToDelegateToAccount** 参数的值设为数组：
 
 ```powershell
-# Set up variables for each server            
-$ServerB1 = Get-ADComputer -Identity ServerB1            
-$ServerB2 = Get-ADComputer -Identity ServerB2            
-$ServerB3 = Get-ADComputer -Identity ServerB3            
-$ServerC  = Get-ADComputer -Identity ServerC            
-            
-# Grant resource-based Kerberos constrained delegation            
+# Set up variables for each server
+$ServerB1 = Get-ADComputer -Identity ServerB1
+$ServerB2 = Get-ADComputer -Identity ServerB2
+$ServerB3 = Get-ADComputer -Identity ServerB3
+$ServerC  = Get-ADComputer -Identity ServerC
+
+# Grant resource-based Kerberos constrained delegation
 Set-ADComputer -Identity $ServerC `
     -PrincipalsAllowedToDelegateToAccount @($ServerB1,$ServerB2,$ServerB3)
 ```
@@ -194,9 +194,9 @@ Set-ADComputer -Identity $ServerC `
 如果想要跨域形成第二个跃点，添加 _ServerB_ 所属域的域控制器的完全限定域名 (FQDN)：
 
 ```powershell
-# For ServerC in Contoso domain and ServerB in other domain            
-$ServerB = Get-ADComputer -Identity ServerB -Server dc1.alpineskihouse.com            
-$ServerC = Get-ADComputer -Identity ServerC            
+# For ServerC in Contoso domain and ServerB in other domain
+$ServerB = Get-ADComputer -Identity ServerB -Server dc1.alpineskihouse.com
+$ServerC = Get-ADComputer -Identity ServerC
 Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $ServerB
 ```
 
@@ -266,24 +266,15 @@ JEA 允许限制管理员在 PowerShell 会话期间可以运行的命令。 它
 以下示例演示了如何在 **Invoke-command** 脚本块中传递凭据：
 
 ```powershell
-# This works without delegation, passing fresh creds            
-# Note $Using:Cred in nested request            
-$cred = Get-Credential Contoso\Administrator            
-Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {            
-    hostname            
-    Invoke-Command -ComputerName ServerC -Credential $Using:cred -ScriptBlock {hostname}            
+# This works without delegation, passing fresh creds
+# Note $Using:Cred in nested request
+$cred = Get-Credential Contoso\Administrator
+Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {
+    hostname
+    Invoke-Command -ComputerName ServerC -Credential $Using:cred -ScriptBlock {hostname}
 }
 ```
 
 ## <a name="see-also"></a>另请参阅
 
 [PowerShell 远程处理安全注意事项](WinRMSecurity.md)
-
-
-
-
-
-
-
-
- 

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "DSC ServiceSet 资源"
-ms.openlocfilehash: 2488dda5212ccb717f7fd5d59ad62ec135ad13d5
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,配置,安装程序
+title: DSC ServiceSet 资源
+ms.openlocfilehash: a7516120f0c4bc1c91031adc8aabf6a59b845246
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-serviceset-resource"></a>DSC ServiceSet 资源
 
@@ -30,21 +30,21 @@ Service [string] #ResourceName
     [ Ensure = [string] { Absent | Present }  ]
     [ Credential = [PSCredential] ]
     [ DependsOn = [string[]] ]
-    
+
 }
 ```
 
 ## <a name="properties"></a>“属性”
 
-|  属性  |  说明   | 
-|---|---| 
+|  属性  |  说明   |
+|---|---|
 | 名称| 指示服务名称。 请注意，有时它与显示名称不同。 你可以使用 [Get-Service](https://technet.microsoft.com/library/hh849804.aspx) cmdlet 获取服务及其当前状态的列表。|
-| StartupType| 设置服务的启动类型。 允许用于此属性的值有：**Automatic**、**Disabled** 和 **Manual**。|  
-| BuiltInAccount| 指示要用于服务的登录帐户。 允许用于此属性的值有：**LocalService**、**LocalSystem** 和 **NetworkService**。| 
-| State| 指示你要确保服务所处的状态：**Stopped** 或 **Running**。| 
+| StartupType| 设置服务的启动类型。 允许用于此属性的值有：**Automatic**、**Disabled** 和 **Manual**。|
+| BuiltInAccount| 指示要用于服务的登录帐户。 允许用于此属性的值有：**LocalService**、**LocalSystem** 和 **NetworkService**。|
+| State| 指示你要确保服务所处的状态：**Stopped** 或 **Running**。|
 | Ensure| 指示服务是否在系统中存在。 将此属性设置为 **Absent** 可确保服务不存在。 将它设置为 **Present**（默认值）可确保目标服务存在。|
-| 凭据| 指示服务资源将在其下运行的帐户的凭据。 此属性与 **BuiltinAccount** 属性不能一起使用。| 
-| DependsOn| 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 *ResourceName*、类型为 *ResourceType* 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。| 
+| 凭据| 指示服务资源将在其下运行的帐户的凭据。 此属性与 **BuiltinAccount** 属性不能一起使用。|
+| DependsOn| 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 *ResourceName*、类型为 *ResourceType* 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。|
 
 
 
@@ -64,8 +64,7 @@ configuration ServiceSetTest
             Name        = @("TermService", "Audiosrv")
             StartupType = "Manual"
             State       = "Running"
-        } 
+        }
     }
 }
 ```
-

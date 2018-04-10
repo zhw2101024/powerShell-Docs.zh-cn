@@ -1,17 +1,17 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
-title: "添加 pswaauthorizationrule"
+ms.date: 12/12/2016
+title: 添加 pswaauthorizationrule
 ms.technology: powershell
 schema: 2.0.0
-ms.openlocfilehash: 71954fc115daee4c05662d11baa2bc6a0a417896
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 07ddd4df6a776f3ef6763242f8682747b9b97061
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -62,7 +62,7 @@ Add-PswaAuthorizationRule cmdlet 向 Windows PowerShell® Web 访问授权规则
 
 指定 Active Directory 域服务 (AD DS) 中计算机组的名称，或指定此规则授予访问权限的本地组名称。
 
-|||  
+|||
 |-|-|
 | 别名                              | 无                                 |
 | 是否必需？                            | true                                 |
@@ -75,7 +75,7 @@ Add-PswaAuthorizationRule cmdlet 向 Windows PowerShell® Web 访问授权规则
 
 指定此规则授予访问权限的计算机名。
 
-|||  
+|||
 |-|-|
 | 别名                              | 无                                 |
 | 是否必需？                            | true                                 |
@@ -88,7 +88,7 @@ Add-PswaAuthorizationRule cmdlet 向 Windows PowerShell® Web 访问授权规则
 
 指定此规则授予访问权限的 Windows PowerShell 会话配置的名称（又称为运行空间）。
 
-|||  
+|||
 |-|-|
 | 别名                              | 无                                 |
 | 是否必需？                            | true                                 |
@@ -101,7 +101,7 @@ Add-PswaAuthorizationRule cmdlet 向 Windows PowerShell® Web 访问授权规则
 
 为要用于更改 Windows PowerShell Web 访问授权规则的用户帐户指定 PSCredential 对象。 如果不添加此参数，cmdlet 将使用当前登录的用户帐户。 要获取 PSCredential 对象（用于以远程方式添加授权规则），请运行 [Get-Credential cmdlet](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential)。
 
-|||  
+|||
 |-|-|
 | 别名                              | 无                                 |
 | 是否必需？                            | false                                |
@@ -115,7 +115,7 @@ Add-PswaAuthorizationRule cmdlet 向 Windows PowerShell® Web 访问授权规则
 强制运行命令而不要求用户确认。
 此外，在输入简单或短计算机名时（例如不是域名的名称，或不是完全限定的名称），系统还会出现确认提示。 该确认请求旨在保证安全，仅当计算机在工作组中时，才可使用简单名称来添加计算机。
 
-|||  
+|||
 |-|-|
 | 别名                              | 无                                 |
 | 是否必需？                            | false                                |
@@ -128,7 +128,7 @@ Add-PswaAuthorizationRule cmdlet 向 Windows PowerShell® Web 访问授权规则
 
 为此规则指定友好名称。
 
-|||  
+|||
 |-|-|
 | 别名                              | 无                                 |
 | 是否必需？                            | false                                |
@@ -141,7 +141,7 @@ Add-PswaAuthorizationRule cmdlet 向 Windows PowerShell® Web 访问授权规则
 
 指定 AD DS 中一个或多个用户组的名称，或指定此规则授予访问权限的本地组名称。
 
-|||  
+|||
 |-|-|
 | 别名                              | 无                                 |
 | 是否必需？                            | true                                 |
@@ -155,7 +155,7 @@ Add-PswaAuthorizationRule cmdlet 向 Windows PowerShell® Web 访问授权规则
 指定此规则向其授予访问权限的一个或多个用户。 用户名可以是网关计算机上的本地用户帐户，也可以是 AD DS 中的用户。
 格式为 `domain\user` 或 `computer\user`。
 
-|||  
+|||
 |-|-|
 | 别名                              | 无                                 |
 | 是否必需？                            | true                                 |
@@ -217,9 +217,9 @@ Add-PswaAuthorizationRule –UserName contoso\user1, contoso\user2, contoso\user
 此示例说明如何按属性名从管道为所有参数获取值。
 
 ````PowerShell
-$o = New-Object -TypeName PSObject | 
-    Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru | 
-    Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru | 
+$o = New-Object -TypeName PSObject |
+    Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru |
+    Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru |
     Add-Member -Type NoteProperty -Name "ConfigurationName" -Value "Microsoft.PowerShell" –PassThru
 
 $o | Add-PswaAuthorizationRule -UserName contoso\user1 -ConfigurationName Microsoft.PowerShell

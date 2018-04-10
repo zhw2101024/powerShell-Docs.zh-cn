@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "适用于 Linux nxFile 资源的 DSC"
-ms.openlocfilehash: 7ee8a37ee63a70b1c8c69dc79dfbc77c1f583234
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,配置,安装程序
+title: 适用于 Linux nxFile 资源的 DSC
+ms.openlocfilehash: 41b5ebde299c47b38d7a6e7f71607332b24ca0e4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>适用于 Linux nxFile 资源的 DSC
 
@@ -37,20 +37,20 @@ nxFile <string> #ResourceName
 
 ## <a name="properties"></a>“属性”
 
-|  属性 |  说明 | 
+|  属性 |  说明 |
 |---|---|
-| DestinationPath| 指定你想确保其中文件或目录状态的位置。| 
-| SourcePath| 指定要从其中复制文件或文件夹资源的路径。 此路径可以是本地路径，或者 `http/https/ftp` URL。 只有在 **Type** 属性的值为文件时，才支持远程 `http/https/ftp` URL。| 
-| Ensure| 确定是否要检查该文件是否存在。 将此属性设置为“Present”可确保该文件存在。 将其设置为“Absent”可确保该文件不存在。 默认值为“Present”。| 
-| 类型| 指定正在配置的资源是目录还是文件。 将此属性设置为“directory”可指示该资源是一个目录。 将其设置为“file”可指示该资源是一个文件。 默认值为“file”。| 
-| 目录| 指定文件的内容，例如特定字符串。| 
-| 校验和| 定义当确定两个文件是否相同时使用的类型。 如果未指定**校验和**，则只是文件或目录名用于比较。 值为：“ctime”、“mtime”或“md5”。| 
-| Recurse| 指示是否包含子目录。 将此属性设置为 **$true** 以指示你想要包含子目录。 默认值为 **$false**。 **注意：**只有将 **Type** 属性设置为目录时，此属性才有效。| 
-| Force| 某些文件操作（如覆盖文件或删除不为空的目录）将导致错误。 使用 **Force** 属性覆盖此类错误。 默认值为 **$false**。| 
-| 链接| 指定符号链接的所需行为。 将此属性设置为“follow”可跟随符号链接，并对链接目标进行操作（例如 复制文件而不是链接）。 将此属性设置为“manage”可对此链接进行操作（例如 复制链接本身）。 将此属性设置为“ignore”可忽略符号链接。| 
-| 组| 拥有此文件或目录的**组**名称。| 
-| 模式| 以八进制或符号表示法指定资源的所需权限。 （例如，777 或 rwxrwxrwx）。 如果使用符号表示法，不需提供指示文件或目录的第一个字符。| 
-| DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 **ID** 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。| 
+| DestinationPath| 指定你想确保其中文件或目录状态的位置。|
+| SourcePath| 指定要从其中复制文件或文件夹资源的路径。 此路径可以是本地路径，或者 `http/https/ftp` URL。 只有在 **Type** 属性的值为文件时，才支持远程 `http/https/ftp` URL。|
+| Ensure| 确定是否要检查该文件是否存在。 将此属性设置为“Present”可确保该文件存在。 将其设置为“Absent”可确保该文件不存在。 默认值为“Present”。|
+| 类型| 指定正在配置的资源是目录还是文件。 将此属性设置为“directory”可指示该资源是一个目录。 将其设置为“file”可指示该资源是一个文件。 默认值为“file”。|
+| 目录| 指定文件的内容，例如特定字符串。|
+| 校验和| 定义当确定两个文件是否相同时使用的类型。 如果未指定**校验和**，则只是文件或目录名用于比较。 值为：“ctime”、“mtime”或“md5”。|
+| Recurse| 指示是否包含子目录。 将此属性设置为 **$true** 以指示你想要包含子目录。 默认值为 **$false**。 **注意：**只有将 **Type** 属性设置为目录时，此属性才有效。|
+| Force| 某些文件操作（如覆盖文件或删除不为空的目录）将导致错误。 使用 **Force** 属性覆盖此类错误。 默认值为 **$false**。|
+| 链接| 指定符号链接的所需行为。 将此属性设置为“follow”可跟随符号链接，并对链接目标进行操作（例如 复制文件而不是链接）。 将此属性设置为“manage”可对此链接进行操作（例如 复制链接本身）。 将此属性设置为“ignore”可忽略符号链接。|
+| 组| 拥有此文件或目录的**组**名称。|
+| 模式| 以八进制或符号表示法指定资源的所需权限。 （例如，777 或 rwxrwxrwx）。 如果使用符号表示法，不需提供指示文件或目录的第一个字符。|
+| DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 **ID** 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。|
 
 ## <a name="additional-information"></a>其他信息
 
@@ -67,11 +67,11 @@ nxFile resolvConf
 {
     SourcePath = "http://10.185.85.11/conf/resolv.conf"
     DestinationPath = "/etc/resolv.conf"
-    Mode = "644"        
+    Mode = "644"
     Type = "file"
-    
+
 }
-        
+
 }
 ```
 
@@ -89,7 +89,7 @@ $Contents = Get-Content C:\temp\resolv.conf
 nxFile resolvConf
 {
     DestinationPath = "/etc/resolv.conf"
-    Mode = "644"        
+    Mode = "644"
     Type = "file"
     Contents = "$Contents"
 }
@@ -122,10 +122,10 @@ $Contents = LinuxString $Contents
 nxFile resolvConf
 {
     DestinationPath = "/etc/resolv.conf"
-    Mode = "644"        
+    Mode = "644"
     Type = "file"
     Contents = $Contents
-    
+
 }
 }
 ```
@@ -135,7 +135,7 @@ nxFile resolvConf
 以下示例可确保目录 `/opt/mydir` 存在，并且具有指定内容的文件存在于此目录中。
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 Node $node {
 nxFile DirectoryExample
@@ -151,10 +151,9 @@ nxFile FileExample
     Destinationpath = "/opt/mydir/myfile"
     Contents=@"
 #!/bin/bash`necho "hello world"`n
-"@ 
+"@
     Mode = “755”
     DependsOn = "[nxFile]DirectoryExample"
-} 
+}
 }
 ```
-

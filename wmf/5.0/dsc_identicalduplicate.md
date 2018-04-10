@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,安装程序"
-ms.openlocfilehash: d3a625d05eaf4e7448b4abf90499f6a94e2f7718
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,安装程序
+ms.openlocfilehash: d5ba6a5c5ba8ff54a4f4d6ba07cf04124baf65ef
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a>允许配置中存在完全相同的重复资源
 
@@ -52,7 +52,7 @@ Configuration WebApplication
 }
 ```
 
-在早期版本中，如果试图确保已安装“Web-Server”角色，由于 WindowsFeature FE_IIS 和 WindowsFeature Worker_IIS 实例之间的冲突，将造成编译失败。 请注意，这两个配置中所配置的*所有*属性完全相同。 由于这两个资源中的*所有*属性完全相同，现在这将使成功编译。 
+在早期版本中，如果试图确保已安装“Web-Server”角色，由于 WindowsFeature FE_IIS 和 WindowsFeature Worker_IIS 实例之间的冲突，将造成编译失败。 请注意，这两个配置中所配置的*所有*属性完全相同。 由于这两个资源中的*所有*属性完全相同，现在这将使成功编译。
 
 如果两个资源的任何属性之间有所不同，则不会将他们视为相同且编译将失败：
 
@@ -96,4 +96,3 @@ Configuration WebApplication
 ```
 
 这个非常相似的配置将失败，因为 WindowsFeature FE_IIS 和 WindowsFeature Worker_IIS 资源由于不再完全相同而发生冲突。
-

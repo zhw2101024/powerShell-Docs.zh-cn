@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,安装程序"
-title: "已知问题或限制记录的示例模板"
-ms.openlocfilehash: b93393b2c84e76a301e6406d1388e82e95a2959c
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,安装程序
+title: 已知问题或限制记录的示例模板
+ms.openlocfilehash: cecf31127aaa1942471877a2056230ab592bd095
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 >注意：提供建议的描述性标题和简短说明
 
@@ -22,4 +22,3 @@ ms.lasthandoff: 06/12/2017
 ```powershell
 Set-ExecutionPolicy RemoteSigned
 ```
-

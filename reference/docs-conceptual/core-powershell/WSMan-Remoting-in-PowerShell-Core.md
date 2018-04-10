@@ -1,4 +1,4 @@
-# <a name="ws-management-wsman-remoting-in-powershell-core"></a>PowerShell Core 中的 WS-Management (WSMan) 远程处理 
+# <a name="ws-management-wsman-remoting-in-powershell-core"></a>PowerShell Core 中的 WS-Management (WSMan) 远程处理
 
 ## <a name="instructions-to-create-a-remoting-endpoint"></a>有关创建远程处理终结点的说明
 
@@ -28,19 +28,19 @@
 
 #### <a name="executed-by-the-instance-of-powershell-that-it-will-register"></a>由其将注册的 PowerShell 实例执行
 
-``` powershell
+```powershell
 Install-PowerShellRemoting.ps1
 ```
 
 #### <a name="executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register"></a>由代表其注册实例的另一 PowerShell 实例执行
 
-``` powershell
+```powershell
 <path to powershell>\Install-PowerShellRemoting.ps1 -PowerShellHome "<absolute path to the instance's $PSHOME>"
 ```
 
 例如：
 
-``` powershell
+```powershell
 Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 .\Install-PowerShellRemoting.ps1 -PowerShellHome "C:\Program Files\PowerShell\6.0.0\"
 ```
@@ -51,7 +51,7 @@ Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 
 指定 `-ConfigurationName "some endpoint name"`，从而针对新 PowerShell 终结点创建一个 PowerShell 会话。 若要连接到上述示例中的 PowerShell 实例，请使用以下任意一种方式：
 
-``` powershell
+```powershell
 New-PSSession ... -ConfigurationName "powershell.6.0.0"
 Enter-PSSession ... -ConfigurationName "powershell.6.0.0"
 ```

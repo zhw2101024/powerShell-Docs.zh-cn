@@ -1,21 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,安装程序"
-ms.openlocfilehash: c7318552969c44f3b79f82efd71e6a72bfabef6b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,安装程序
+ms.openlocfilehash: 85e9206ffef76fb4bd7714d847888e6e5bbcc4ec
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 中的新语言功能 
+# <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 中的新语言功能
 
 PowerShell 5.0 引入了以下 Windows PowerShell 中的新语言元素：
 
 ## <a name="class-keyword"></a>Class 关键字
 
-**class** 关键字定义了一个新类。 这是真正的 .NET Framework 类型。 Class 成员是公开的，但仅在模块作用域内公开。
+**class** 关键字定义了一个新类。 这是真正的 .NET Framework 类型。
+Class 成员是公开的，但仅在模块作用域内公开。
 不能引用类型名称作为字符串（例如，`New-Object` 不起作用），并且在此版本中，也不能在该类定义的脚本/模块外部使用类型文本（例如，`[MyClass]`）。
 
 ```powershell
@@ -64,11 +65,11 @@ PowerShell 用于分析指定的模块的根模块，搜索包含 **DscResource*
 
 ## <a name="implementingassembly"></a>ImplementingAssembly
 
-已将新字段 **ImplementingAssembly** 添加到了 ModuleInfo。 如果脚本模块定义类，或者二进制模块的加载程序集，则会将此字段设置为为脚本模块创建的动态程序集。 当 ModuleType = Manifest 时，不会对该字段进行设置。 
+已将新字段 **ImplementingAssembly** 添加到了 ModuleInfo。 如果脚本模块定义类，或者二进制模块的加载程序集，则会将此字段设置为为脚本模块创建的动态程序集。 当 ModuleType = Manifest 时，不会对该字段进行设置。
 
 **ImplementingAssembly** 字段上的反射可发现模块中的资源。 这意味着你可以发现用 PowerShell 或其他托管语言编写的资源。
 
-具有初始值设定项的字段：      
+具有初始值设定项的字段：
 
 ```powershell
 [int] $i = 5
@@ -86,11 +87,11 @@ static [int] $count = 0
 $s = "hello"
 ```
 
-所有成员都是公开的。 
+所有成员都是公开的。
 
 ## <a name="constructors-and-instantiation"></a>构造函数和实例化
 
-Windows PowerShell 类具有很多构造函数。它们具有与其类相同的名称。 这些构造函数可进行重载。 支持静态构造函数。 在运行构造函数中的任何代码之前，将初始化具有初始化表达式的属性。 静态属性在静态构造函数的主体之前进行初始化，而实例属性则在非静态构造函数的主体之前进行初始化。 目前，没有用于从另一个构造函数中调用某个构造函数的语法（例如，C\# 语法“: this()”）。 解决方法是定义一种常用的 Init 方法。 
+Windows PowerShell 类具有很多构造函数。它们具有与其类相同的名称。 这些构造函数可进行重载。 支持静态构造函数。 在运行构造函数中的任何代码之前，将初始化具有初始化表达式的属性。 静态属性在静态构造函数的主体之前进行初始化，而实例属性则在非静态构造函数的主体之前进行初始化。 目前，没有用于从另一个构造函数中调用某个构造函数的语法（例如，C\# 语法“: this()”）。 解决方法是定义一种常用的 Init 方法。
 
 下面是此版本中的实例化类的方法。
 
@@ -151,12 +152,12 @@ class MyClass
 
 ```powershell
 $b = [MyClass]::new()
-$b.DoSomething(42) 
+$b.DoSomething(42)
 ```
 
 还支持重载方法（即，那些与现有方法命名相同，但由其指定的值进行区分的方法）。
 
-## <a name="properties"></a>“属性” 
+## <a name="properties"></a>“属性”
 
 所有属性都是公开的。 属性要求使用换行符或分号。 如果未指定任何对象类型，则该属性类型是对象。
 
@@ -210,7 +211,8 @@ $v -eq $d # true
 
 ## <a name="end-to-end-example"></a>端到端示例
 
-下面的示例创建了几个新的自定义类来实现 HTML 动态样式表语言 (DSL)。 然后，由于不能在模块的范围之外使用类型，因此，该示例还添加了帮助程序函数来创建特定的元素类型作为元素类的一部分（如标题样式和表）。
+下面的示例创建了几个新的自定义类来实现 HTML 动态样式表语言 (DSL)。
+然后，由于不能在模块的范围之外使用类型，因此，该示例还添加了帮助程序函数来创建特定的元素类型作为元素类的一部分（如标题样式和表）。
 
 ```powershell
 # Classes that define the structure of the document
@@ -220,7 +222,7 @@ class Html
     [string] $docType
     [HtmlHead] $Head
     [Element[]] $Body
-    
+
     [string] Render()
     {
         $text = "<html>`n<head>`n"
@@ -334,4 +336,3 @@ function Style
 #
 function Html ([HTML] $doc) { return $doc }
 ```
-

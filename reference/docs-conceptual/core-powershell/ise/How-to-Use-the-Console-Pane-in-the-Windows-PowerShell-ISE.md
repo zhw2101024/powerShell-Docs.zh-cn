@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "如何在 Windows PowerShell ISE 中使用控制台窗格"
+title: 如何在 Windows PowerShell ISE 中使用控制台窗格
 ms.assetid: 44d67705-87c7-4a69-a53e-6471fdebb757
-ms.openlocfilehash: 59e97bbc12269d855c4f3715171636647d4cc634
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 5bbbdd3b1f0324ff1a4f2298459f58640c4dc9a6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="how-to-use-the-console-pane-in-the-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中使用控制台窗格
+
 Windows PowerShell 集成脚本环境 (ISE) 的“控制台”窗格的运行方式和独立的 Windows PowerShell ISE 控制台窗口完全一样。
 
 若要在控制台窗格中运行命令，请键入命令，然后按 ENTER 键。 若要输入多个命令并且你想要按顺序执行这些命令，请在命令之间键入 SHIFT+ENTER。 有关键入命令的帮助，请参阅[如何在脚本窗格和控制台窗格中使用 Tab 自动补全](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)。
@@ -25,5 +26,5 @@ Windows PowerShell 集成脚本环境 (ISE) 的“控制台”窗格的运行方
 - 清除控制台窗格中的所有文本。 若要清除控制台窗格，你可以单击工具栏上的“**清除控制台窗格**”或运行 **Clear-Host** 命令或其别名 **cls**。
 
 ## <a name="see-also"></a>另请参阅
-- [使用 Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
 
+- [Windows PowerShell ISE 简介](Introducing-the-Windows-PowerShell-ISE.md)

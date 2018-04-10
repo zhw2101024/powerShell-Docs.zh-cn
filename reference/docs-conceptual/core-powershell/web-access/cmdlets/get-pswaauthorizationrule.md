@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
-title: "获取 pswaauthorizationrule"
+ms.date: 12/12/2016
+title: 获取 pswaauthorizationrule
 ms.technology: powershell
-ms.openlocfilehash: 003195457660a18b9bbed065181b6d8c23835348
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 74c044c329d8b6a305b86c9056a7041fb5fd046b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-pswaauthorizationrule"></a>Get-PswaAuthorizationRule
 
@@ -41,7 +41,7 @@ Get-PswaAuthorizationRule cmdlet 将返回一组 Windows PowerShell® Web 访问
 
 指定此 cmdlet 应获取的规则标识符 (ID)。 如果不指定任何 ID，则此 cmdlet 将返回所有授权规则。
 
-|||  
+|||
 |-|-|
 | 别名                              | 无                                 |
 | 是否必需？                            | false                                |
@@ -54,7 +54,7 @@ Get-PswaAuthorizationRule cmdlet 将返回一组 Windows PowerShell® Web 访问
 
 指定要检索的授权规则名称。 此参数将返回与此数组中的字符串规则名称完全匹配的任何规则。
 
-|||  
+|||
 |-|-|
 | 别名                              | 无                                 |
 | 是否必需？                            | true                                 |

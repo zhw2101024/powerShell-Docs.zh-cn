@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: powershell,cmdlet
-title: "Windows PowerShell Web 访问中的访问问题疑难解答"
-ms.openlocfilehash: 6e51df3f4c6ac196c855ad918a91394d02c7d75e
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Windows PowerShell Web 访问中的访问问题疑难解答
+ms.openlocfilehash: ef476d8e386e5380cb2c9dda69180dfce8748bf4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Windows PowerShell Web 访问中的访问问题疑难解答
 
@@ -130,7 +130,7 @@ ComputerName | 服务器名称
 授权规则不支持域名形式的 IPv6 地址。
 
 若要使用 IPv6 地址指定目标计算机，请在授权规则中使用原始 IPv6 地址（包含冒号）。
-支持域和数值（带有冒号）IPv6 地址作为 Windows PowerShell Web 访问登录页面而非授权规则中的目标计算机名称。 
+支持域和数值（带有冒号）IPv6 地址作为 Windows PowerShell Web 访问登录页面而非授权规则中的目标计算机名称。
 
 有关 IPv6 地址的详细信息，请参阅 [How IPv6 Works](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx)（IPv6 的工作原理）。
 

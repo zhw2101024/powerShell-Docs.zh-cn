@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "调试 DSC 资源"
-ms.openlocfilehash: c9534deb755e2d3ce59dbb44e55b58b59af2e7f4
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,配置,安装程序
+title: 调试 DSC 资源
+ms.openlocfilehash: 6a1f4b04a11185c2cfe9be26324bd66ed13ca7dd
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="debugging-dsc-resources"></a>调试 DSC 资源
 
@@ -16,7 +16,8 @@ ms.lasthandoff: 03/15/2018
 在 PowerShell 5.0 中，Desired State Configuraiton (DSC) 引入了一项新功能，允许你在应用配置时调试 DSC 资源。
 
 ## <a name="enabling-dsc-debugging"></a>启用 DSC 调试
-必须通过调用 [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx) cmdlet 启用调试后，才能调试资源。 此 cmdlet 采用强制参数，**BreakAll**。 
+必须通过调用 [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx) cmdlet 启用调试后，才能调试资源。
+此 cmdlet 采用强制参数，**BreakAll**。
 
 你可通过查看调用 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx) 的结果以验证是否已启用调试。
 
@@ -42,7 +43,8 @@ PS C:\DebugTest>
 
 
 ## <a name="starting-a-configuration-with-debug-enabled"></a>启用调试时启动配置
-若要调试 DSC 资源，首先需启动调用该资源的配置。 针对此示例，我们将查看调用 [WindowsFeature](windowsfeatureResource.md) 资源的简单配置以确保安装了“WindowsPowerShellWebAccess”功能：
+若要调试 DSC 资源，首先需启动调用该资源的配置。
+针对此示例，我们将查看调用 [WindowsFeature](windowsfeatureResource.md) 资源的简单配置以确保安装了“WindowsPowerShellWebAccess”功能：
 
 ```powershell
 Configuration PSWebAccess
@@ -59,7 +61,9 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
-编译配置后，通过调用 [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) 启用该配置。 当本地配置管理器 (LCM) 调用配置中的首个资源时，配置会停止运行。 如果你使用 `-Verbose` 和 `-Wait` 参数，输出会显示你需要输入才能启动调试的各行内容。
+编译配置后，通过调用 [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) 启用该配置。
+当本地配置管理器 (LCM) 调用配置中的首个资源时，配置会停止运行。
+如果你使用 `-Verbose` 和 `-Wait` 参数，输出会显示你需要输入才能启动调试的各行内容。
 
 ```powershell
 Start-DscConfiguration .\PSWebAccess -Wait -Verbose
@@ -68,31 +72,36 @@ Manager,'namespaceName' = root/Microsoft/Windows/DesiredStateConfiguration'.
 VERBOSE: An LCM method call arrived from computer TEST-SRV with user sid S-1-5-21-2127521184-1604012920-1887927527-108583.
 VERBOSE: An LCM method call arrived from computer TEST-SRV with user sid S-1-5-21-2127521184-1604012920-1887927527-108583.
 VERBOSE: [TEST-SRV]: LCM:  [ Start  Set      ]
-WARNING: [TEST-SRV]:                            [DSCEngine] Warning LCM is in Debug 'ResourceScriptBreakAll' mode.  Resource script processing will 
+WARNING: [TEST-SRV]:                            [DSCEngine] Warning LCM is in Debug 'ResourceScriptBreakAll' mode.  Resource script processing will
 be stopped to wait for PowerShell script debugger to attach.
 VERBOSE: [TEST-SRV]:                            [DSCEngine] Importing the module C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateCo
 nfiguration\DscResources\MSFT_RoleResource\MSFT_RoleResource.psm1 in force mode.
 VERBOSE: [TEST-SRV]: LCM:  [ Start  Resource ]  [[WindowsFeature]PSWA]
 VERBOSE: [TEST-SRV]: LCM:  [ Start  Test     ]  [[WindowsFeature]PSWA]
 VERBOSE: [TEST-SRV]:                            [[WindowsFeature]PSWA] Importing the module MSFT_RoleResource in force mode.
-WARNING: [TEST-SRV]:                            [[WindowsFeature]PSWA] Resource is waiting for PowerShell script debugger to attach. 
+WARNING: [TEST-SRV]:                            [[WindowsFeature]PSWA] Resource is waiting for PowerShell script debugger to attach.
 Use the following commands to begin debugging this resource script:
 Enter-PSSession -ComputerName TEST-SRV -Credential <credentials>
 Enter-PSHostProcess -Id 9000 -AppDomainName DscPsPluginWkr_AppDomain
 Debug-Runspace -Id 9
 ```
-此时，LCM 已调用该资源，并到达第一个断点。 输出中的最后三行表明了如何附加到进程并启动调试资源脚本。
+此时，LCM 已调用该资源，并到达第一个断点。
+输出中的最后三行表明了如何附加到进程并启动调试资源脚本。
 
 ## <a name="debugging-the-resource-script"></a>调试资源脚本
 
-启动 PowerShell ISE 的新实例。 在控制台窗格中，输入 `Start-DscConfiguration` 输出中最后三行的内容作为命令，将 `<credentials>` 替换为有效的用户凭据。 你现在应看到类似于下面这样的提示：
+启动 PowerShell ISE 的新实例。
+在控制台窗格中，输入 `Start-DscConfiguration` 输出中最后三行的内容作为命令，将 `<credentials>` 替换为有效的用户凭据。
+你现在应看到类似于下面这样的提示：
 
 ```powershell
 [TEST-SRV]: [DBG]: [Process:9000]: [RemoteHost]: PS C:\DebugTest>>
 ```
 
 资源脚本会在脚本窗格中打开，调试器会在 **Test-TargetResource** 函数（基于类的资源的 **Test()** 方法）的第一行停止运行。
-现在可以在 ISE 中使用调试命令来单步执行资源脚本、查看变量值、查看调用堆栈等等。 若要了解如何在 PowerShell ISE 中进行调试，请参阅 [How to Debug Scripts in Windows PowerShell ISE（如何在 Windows PowerShell ISE 中调试脚本）](https://technet.microsoft.com/en-us/library/dd819480.aspx)。 请记住，资源脚本（或类）中的每行都会设置为断点。
+现在可以在 ISE 中使用调试命令来单步执行资源脚本、查看变量值、查看调用堆栈等等。
+若要了解如何在 PowerShell ISE 中进行调试，请参阅 [How to Debug Scripts in Windows PowerShell ISE（如何在 Windows PowerShell ISE 中调试脚本）](https://technet.microsoft.com/en-us/library/dd819480.aspx)。
+请记住，资源脚本（或类）中的每行都会设置为断点。
 
 ## <a name="disabling-dsc-debugging"></a>禁用 DSC 调试
 
@@ -102,6 +111,5 @@ Debug-Runspace -Id 9
 
 
 ## <a name="see-also"></a>另请参阅
-- [使用 MOF 编写自定义 DSC 资源](authoringResourceMOF.md) 
+- [使用 MOF 编写自定义 DSC 资源](authoringResourceMOF.md)
 - [使用 PowerShell 类编写自定义 DSC 资源](authoringResourceClass.md)
-

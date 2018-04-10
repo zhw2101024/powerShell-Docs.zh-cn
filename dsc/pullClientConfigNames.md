@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "使用配置名称设置请求客户端"
-ms.openlocfilehash: 11de53fc349ce0ebacf0d4855d82fa8a22d55c99
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,配置,安装程序
+title: 使用配置名称设置请求客户端
+ms.openlocfilehash: dd0526b118b404854b1e9b445ca50bdaafdd01c7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="setting-up-a-pull-client-using-configuration-names"></a>使用配置名称设置请求客户端
 
@@ -150,4 +150,3 @@ PullClientConfigNames
 
 * [使用配置 ID 设置请求客户端](PullClientConfigNames.md)
 * [设置 DSC Web 请求服务器](pullServer.md)
-

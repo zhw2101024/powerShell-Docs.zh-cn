@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "Windows PowerShell 术语表"
+title: Windows PowerShell 术语表
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: 872ceb342cc72477c5142ce28a9b3b66e32bb84f
-ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
+ms.openlocfilehash: fd15667939fd9b3ea705806686b626645519588a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="windows-powershell-glossary"></a>Windows PowerShell 术语表
 
@@ -55,4 +55,3 @@ ms.lasthandoff: 02/19/2018
 |Windows PowerShell 脚本文件|具有 .ps1 扩展名且包含以 Windows PowerShell 语言编写的脚本的文件。|
 |Windows PowerShell 管理单元|定义一组可以添加到 Windows PowerShell 环境中的 cmdlet、提供程序和 Microsoft .NET Framework 的资源。|
 |Windows PowerShell 工作流程|工作流是一系列经过编程的连接步骤，会执行长期运行的任务，或是需要在多个设备或托管节点之间协调多个步骤。 Windows PowerShell 工作流使 IT 专业人员和开发人员可以按工作流的形式创作多设备管理活动序列，或工作流中的单个任务。 Windows PowerShell 工作流使你能够调整 Windows PowerShell 脚本和 XAML 并将其作为工作流运行。|
-

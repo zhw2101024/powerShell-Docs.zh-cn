@@ -1,17 +1,19 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "工作流指南"
-ms.openlocfilehash: d99f23e281b8a1229c4577c3d6c3a93e4ba4973e
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: 工作流指南
+ms.openlocfilehash: 2a32e7b6a92f68b96dc2865c558713e9520a584e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="psworkflow-module"></a>PSWorkflow 模块
+
 本部分包含有关 **PSWorkflow** 模块的帮助主题，此模块包含支持 Windows PowerShell 工作流功能的 cmdlet。 **PSWorkflow** 模块随 Windows PowerShell 一起安装。
 
 ## <a name="help-topics"></a>帮助主题
+
 [工作流 Cmdlet](http://go.microsoft.com/fwlink/?LinkID=245865)
 
 [about_Workflows](https://technet.microsoft.com/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)
@@ -33,4 +35,3 @@ ms.lasthandoff: 03/15/2018
 [about_Suspend-Workflow](https://technet.microsoft.com/en-us/library/be2ded75-1eca-493e-96c1-758f92b5f199)
 
 [PowerShell 工作流实用程序 Cmdlet](https://technet.microsoft.com/en-us/library/a5a32019-0d68-4041-935f-1b1cacaf6d3d)
-

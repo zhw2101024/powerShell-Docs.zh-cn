@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "Windows PowerShell 系统要求"
+title: Windows PowerShell 系统要求
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 33824eac4de28de97990ffa1ea2500e61e03e847
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: a15b5b33b5296befae833e520cfdfbd41a07b122
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell 系统要求
 本主题列出了用于 Windows PowerShell 3.0、Windows PowerShell 4.0 和 Windows PowerShell 5.0，以及用于特殊功能（如 Windows PowerShell 集成脚本环境 (ISE)、CIM 命令和工作流）的系统要求。
@@ -125,4 +125,3 @@ Windows PowerShell 2.0、Windows PowerShell 3.0 和 Windows PowerShell 4.0 在 W
 - [Windows PowerShell 入门](../getting-started/Getting-Started-with-Windows-PowerShell.md)
 - [安装 Windows PowerShell](Installing-Windows-PowerShell.md)
 - [启动 Windows PowerShell](Starting-Windows-PowerShell.md)
-

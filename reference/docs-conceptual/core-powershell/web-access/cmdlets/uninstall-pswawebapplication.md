@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
-title: "卸载 pswawebapplication"
+ms.date: 12/12/2016
+title: 卸载 pswawebapplication
 ms.technology: powershell
-ms.openlocfilehash: cc54c94426d754ff2d3bf658e3e92083f02cd6c7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 139c8358a24e54dec630f8c78737728330ba4aa2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="uninstall-pswawebapplication"></a>Uninstall-PswaWebApplication
 
@@ -36,7 +36,7 @@ Uninstall-PswaWebApplication cmdlet 将卸载 Windows PowerShell Web 应用程�
 指示由 Install\_PswaWebApplication cmdlet（包含 UseTestCertificate 参数）创建的测试证书已被删除。
 仅删除与 Install-PswaWebApplication 创建的 cmdlet 具有相同名称的测试证书。
 
-|||  
+|||
 |-|-|
 | 别名                              | 无                                 |
 | 是否必需？                            | false                                |
@@ -49,7 +49,7 @@ Uninstall-PswaWebApplication cmdlet 将卸载 Windows PowerShell Web 应用程�
 
 指定要卸载的 Web 应用程序的名称。
 
-|||  
+|||
 |-|-|
 | 别名                              | 无                                 |
 | 是否必需？                            | false                                |
@@ -62,7 +62,7 @@ Uninstall-PswaWebApplication cmdlet 将卸载 Windows PowerShell Web 应用程�
 
 指定安装 Web 应用程序的网站的名称。
 
-|||  
+|||
 |-|-|
 | 别名                              | 无                                 |
 | 是否必需？                            | false                                |
@@ -75,7 +75,7 @@ Uninstall-PswaWebApplication cmdlet 将卸载 Windows PowerShell Web 应用程�
 
 运行 cmdlet 之前提示你进行确认。
 
-|||  
+|||
 |-|-|
 | 是否必需？                            | false                                |
 | 位置在哪里？                            | named                                |
@@ -88,7 +88,7 @@ Uninstall-PswaWebApplication cmdlet 将卸载 Windows PowerShell Web 应用程�
 显示如果运行 cmdlet 则会发生什么情况。
 cmdlet 未运行。
 
-|||  
+|||
 |-|-|
 | 是否必需？                            | false                                |
 | 位置在哪里？                            | named                                |

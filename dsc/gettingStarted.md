@@ -1,22 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "PowerShell Desired State Configuration 入门"
-ms.openlocfilehash: 04404696bef128805e4f1c191711eaab33cf7e4c
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,配置,安装程序
+title: PowerShell Desired State Configuration 入门
+ms.openlocfilehash: b5aff5008db5a5e45b77d8094b0e48ad98dc63fa
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="getting-started-with-powershell-desired-state-configuration"></a>PowerShell Desired State Configuration 入门 #
 
-本指南介绍了如何开始创建 PowerShell Desired State Configuration文档并将其应用到计算机中。 假定你基本熟悉 PowerShell cmdlet、模块和函数。 
+本指南介绍了如何开始创建 PowerShell Desired State Configuration文档并将其应用到计算机中。 假定你基本熟悉 PowerShell cmdlet、模块和函数。
 
 
 ## <a name="create-a-configuration"></a>创建配置 ##
 
-[**配置**](https://msdn.microsoft.com/powershell/dsc/configurations)是描述环境的文档。 环境中包含“**节点**”（通常是虚拟机或物理计算机）。 
+[**配置**](https://msdn.microsoft.com/powershell/dsc/configurations)是描述环境的文档。 环境中包含“**节点**”（通常是虚拟机或物理计算机）。
 
 配置会以各种形式出现。 创建新配置最简单方法就是创建 .ps1（PowerShell 脚本）文件。 若要执行此操作，请打开首选编辑器。 PowerShell ISE 是一个不错的选择，因为它本身了解 DSC。 将以下内容另存为 PS1：
 
@@ -32,21 +32,21 @@ configuration MyFirstConfiguration
             Name = "IIS"
 
         }
-        
+
     }
 
 }
 ```
 ## <a name="parts-of-a-configuration"></a>Configuration 部分 ##
-**Configuration** 是已添加到 PowerShell 4.0 的关键字。 它表示一种由 Desired State Configuration.使用的特殊 PowerShell 函数。 在此示例中，该函数被命名为 myFirstConfiguration。 
+**Configuration** 是已添加到 PowerShell 4.0 的关键字。 它表示一种由 Desired State Configuration.使用的特殊 PowerShell 函数。 在此示例中，该函数被命名为 myFirstConfiguration。
 
 下一行是类似于导入模块的导入语句。 稍后将对其展开讨论。
 
-“节点”定义此配置将对其进行操作的计算机名称。 尽管此配置是本地编辑的，但是这些配置可访问并配置远程节点。 
+“节点”定义此配置将对其进行操作的计算机名称。 尽管此配置是本地编辑的，但是这些配置可访问并配置远程节点。
 
-节点可以是计算机名称或 IP 地址。 单个配置文档中可有多个节点。 使用[配置数据](https://msdn.microsoft.com/powershell/dsc/configdata)，你也可将相同的配置应用到多个节点。 在这种情况下，该节点是“localhost” - 表示本地计算机。 
+节点可以是计算机名称或 IP 地址。 单个配置文档中可有多个节点。 使用[配置数据](https://msdn.microsoft.com/powershell/dsc/configdata)，你也可将相同的配置应用到多个节点。 在这种情况下，该节点是“localhost” - 表示本地计算机。
 
-下一项是[**资源**](https://msdn.microsoft.com/powershell/dsc/resources)。 资源是配置的构建基块。 每个资源都是定义计算机单方面实现逻辑的模块。 可通过在 PowerShell 中运行 **Get-DscResource** 查看计算机上的每个资源。 资源必须存在于本地计算机中并通过 **Import-DscResource**（位于此配置的第二行）导入后，才可在配置中使用它们。 
+下一项是[**资源**](https://msdn.microsoft.com/powershell/dsc/resources)。 资源是配置的构建基块。 每个资源都是定义计算机单方面实现逻辑的模块。 可通过在 PowerShell 中运行 **Get-DscResource** 查看计算机上的每个资源。 资源必须存在于本地计算机中并通过 **Import-DscResource**（位于此配置的第二行）导入后，才可在配置中使用它们。
 
 **执行配置**
 
@@ -63,8 +63,7 @@ myFirstConfiguration
 ```powershell
 Start-DscConfiguration -Path ./myFirstConfiguration
 ```
-这将创建可访问配置中节点的 PowerShell 作业，并对其进行配置。 若要查看作业输出，请使用 -Wait。 
+这将创建可访问配置中节点的 PowerShell 作业，并对其进行配置。 若要查看作业输出，请使用 -Wait。
 ```powershell
 Start-DscConfiguration -Path ./myFirstConfiguration -Wait
 ```
-

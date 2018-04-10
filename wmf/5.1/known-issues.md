@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,安装程序"
-title: "WMF 5.1 中的已知问题"
-ms.openlocfilehash: bb8967a55ec32f0ce21812e065725985010bfc8e
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+keywords: wmf,powershell,安装程序
+title: WMF 5.1 中的已知问题
+ms.openlocfilehash: 467a191f40d85bfca7c794915d6274a9a1b201e7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="known-issues-in-wmf-51"></a>WMF 5.1 中的已知问题 #
 
@@ -21,14 +21,14 @@ ms.lasthandoff: 07/27/2017
 ## <a name="pester"></a>Pester
 在本版本中，在 Nano 服务器上使用 Pester 时应注意两个问题：
 
-* 由于 FULL CLR 和 CORE CLR 之间的差异，针对 Pester 自身运行测试可能导致一些失败。 特别是，Validate 方法不可用于 XmlDocument 类型。 众所周知，尝试验证 NUnit 输出日志的架构的六个测试都将失败。 
+* 由于 FULL CLR 和 CORE CLR 之间的差异，针对 Pester 自身运行测试可能导致一些失败。 特别是，Validate 方法不可用于 XmlDocument 类型。 众所周知，尝试验证 NUnit 输出日志的架构的六个测试都将失败。
 * 一个代码覆盖率测试失败的原因是当前 Nano 服务器中不存在 *WindowsFeature* DSC 资源。 但是，这些故障通常是无害的，可以放心地忽略。
 
-## <a name="operation-validation"></a>操作验证 
+## <a name="operation-validation"></a>操作验证
 
 * 由于帮助 URI 不起作用，针对 Microsoft.PowerShell.Operation.Validation 模块的 Update-Help 将失败
 
-## <a name="dsc-after-uninstall-wmf"></a>卸载 WMF 后的 DSC 
+## <a name="dsc-after-uninstall-wmf"></a>卸载 WMF 后的 DSC
 * 卸载 WMF 不会从配置文件夹中删除 DSC MOF 文档。 如果 MOF 文档包含在较旧系统中不可用的较新属性，DSC 将无法正常工作。 在这种情况下，请从提升的 PowerShell 控制台运行以下脚本，以清理 DSC 状态。
  ```powershell
     $PreviousDSCStates = @("$env:windir\system32\configuration\*.mof",
@@ -38,7 +38,7 @@ ms.lasthandoff: 07/27/2017
            )
 
     $PreviousDSCStates | Remove-Item -ErrorAction SilentlyContinue -Verbose
- ```  
+ ```
 
 ## <a name="jea-virtual-accounts"></a>JEA 虚拟帐户
 升级到 WMF 5.1 后，在 WMF 5.0 中配置为使用虚拟帐户的 JEA 终结点和会话配置不会配置为使用虚拟帐户。
@@ -61,4 +61,3 @@ Register-PSSessionConfiguration -Name $jea.Name -Path $pssc.FullName -Force
 # Ensure the access policies remain the same
 Set-PSSessionConfiguration -Name $newjea.Name -SecurityDescriptorSddl $jea.SecurityDescriptorSddl
 ```
-

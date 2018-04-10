@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "PowerShell 50 ISE 中的新增功能"
+title: PowerShell 50 ISE 中的新增功能
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 9fd25a4759602bebf2b5df2c17d0c816a15e5e2b
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 35b825cfa6ea720d0af3537c5d1b16c5ececb701
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Windows PowerShell ISE 中的新增功能
 本主题介绍已在 Windows PowerShell (R) 集成脚本环境 (ISE) 的各版本中引入的新增功能和更新功能。
@@ -225,4 +225,3 @@ Show-Command 是新的 Windows PowerShell ISE 3.0。
 - [浏览 Windows PowerShell 集成脚本环境](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
 - [TechNet Wiki 上的 ISE](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
 - [脚本中心](http://technet.microsoft.com/scriptcenter/default)
-

@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-25
+ms.date: 08/25/2017
 keywords: powershell,cmdlet
-title: "ObjectModelRoot 对象"
-ms.openlocfilehash: eb3424ff147c35364fa08543d59ebd30f6d2d857
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+title: ObjectModelRoot 对象
+ms.openlocfilehash: 2670321ebac1eac4ecc8457afb796f9f260da471
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="the-objectmodelroot-object"></a>ObjectModelRoot 对象
 
@@ -17,7 +17,7 @@ Windows PowerShell® 集成脚本环境 (ISE) 中的主体根对象（**$psISE**
 
 ### <a name="currentfile"></a>CurrentFile
 
-> 在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
+> 在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
 只读属性，可获取与该主机对象相关联的当前具有焦点的文件。
 
@@ -35,24 +35,23 @@ Windows PowerShell® 集成脚本环境 (ISE) 中的主体根对象（**$psISE**
 
 ### <a name="currentvisibleverticaltool"></a>CurrentVisibleVerticalTool
 
-> 在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
+> 在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
 只读属性，可获取位于编辑器右侧竖直工具窗格中、当前可见的 Windows PowerShell ISE 加载项工具。
 
 ### <a name="options"></a>选项
 
-> 在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
+> 在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
 只读属性，可获取可以更改 Windows PowerShell ISE 中设置的各种选项。
 
 ### <a name="powershelltabs"></a>PowerShellTabs
 
-> 在 Windows PowerShell ISE 2.0 和更高版本中受支持。 
+> 在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
 只读属性，可获取 Windows PowerShell ISE 中打开的 PowerShell 选项卡的集合。 默认情况下，此对象包含一个 PowerShell 选项卡。但是，可以将更多 PowerShell 选项卡添加到此对象中，方法是通过使用脚本或者使用 Windows PowerShell ISE 中的菜单。
 
 ## <a name="see-also"></a>另请参阅
 
-- [Windows PowerShell ISE 脚本对象模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [Windows PowerShell ISE 对象模型参考](Windows-PowerShell-ISE-Object-Model-Reference.md)
+- [Windows PowerShell ISE 脚本对象模型的用途](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [ISE 对象模型层次结构](The-ISE-Object-Model-Hierarchy.md)

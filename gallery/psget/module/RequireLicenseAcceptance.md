@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-09
+ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: RequireLicenseAcceptance
-ms.openlocfilehash: 260ccc1ee52d09a640e88203c5644f20f9723d6f
-ms.sourcegitcommit: cd66d4f49ea762a31887af2c72d087b219ddbe10
+ms.openlocfilehash: d78f8cb7f84869880e9a88a0f0407d18dc5c64cb
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="modules-requiring-license-acceptance"></a>需要接受许可证的模块
 
@@ -17,7 +17,7 @@ ms.lasthandoff: 10/11/2017
 ## <a name="publish-requirements-for-modules"></a>发布模块的要求
 
 需要用户接受许可证的模块应满足以下要求：
-    
+
 - 模块清单的 PSData 部分应包含 RequireLicenseAcceptance = $True。
 - 模块应在根目录中包含 license.txt 文件。
 - 模块清单应包含许可证 URI。
@@ -31,13 +31,13 @@ ms.lasthandoff: 10/11/2017
     - **Save-Module：**将把模块复制到用户系统中
     - **Install-Module：**将把模块复制到用户系统的适当文件夹中（基于作用域）
     - **Update-Module：**将更新该模块。
-  - 如果拒绝许可证。 
+  - 如果拒绝许可证。
     - 操作将被取消。
 - 所有 cmdlet 都会检查表明需要接受许可证的元数据（requireLicenseAcceptance 和格式版本）
   - 如果客户端的格式版本早于 2.0，操作将失败，并要求用户更新客户端。
   - 如果使用早于 2.0 的版本格式发布模块，将忽略 requireLicenseAcceptance 标记。
 
-    
+
  ## <a name="module-dependencies"></a>模块依赖项
 - 在安装/保存/更新操作期间，如果依赖模块（依赖于该模块的其他内容）需要接受许可证，则将需要接受许可证行为（上述）。
 - 如果在系统中安装模块时已在本地目录中列出模块版本，我们将绕过许可证检查。
@@ -59,7 +59,7 @@ PrivateData = @{
         # Flag to indicate whether the module requires explicit user acceptance
         RequireLicenseAcceptance = $true
     } # End of PSData hashtable
-    
+
  } # End of PrivateData hashtable
 ```
 此命令会更新清单文件，并将 RequireLicenseAcceptance 标记设置为 true。
@@ -78,7 +78,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 
 ```
 此命令显示了 license.txt 文件中的许可证，并提示用户接受许可证。
@@ -117,7 +117,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 ### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>示例 6：安装模块以及需要接受许可证和 -AcceptLicense 的依赖项
@@ -147,7 +147,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 此命令显示了 license.txt 文件中的许可证，并提示用户接受许可证。
 
@@ -172,7 +172,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 此命令显示了 license.txt 文件中的许可证，并提示用户接受许可证。
 

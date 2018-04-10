@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,安装程序"
-ms.openlocfilehash: b839b476bb4ef7f8d73b158d61f0e8cbc1265e60
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,安装程序
+ms.openlocfilehash: a3b176101bebf7081febd8629bddcfa0ae1e7540
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="import-dscresource-keyword-supports--moduleversion-parameter"></a>Import-DscResource 关键字支持 -ModuleVersion 参数
 
@@ -19,7 +19,7 @@ Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName(s)>] [-Mod
 
 * **Name**：要导入的一个或多个资源的名称。
 * **ModuleName**：要导入的一个或多个模块的模块名称或 ModuleSpecification 对象。
-* **ModuleVersion**：要导入的模块的版本。 如果使用 ModuleName，则它只能表示一个模块的名称。 
+* **ModuleVersion**：要导入的模块的版本。 如果使用 ModuleName，则它只能表示一个模块的名称。
 
 在 Windows PowerShell ISE 中，它与 IntelliSense 一起出现：
 
@@ -28,4 +28,3 @@ Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName(s)>] [-Mod
 **注意**：`–ModuleVersion` 参数只能与 `–ModuleName` 参数结合使用。 它不能与仅使用 `–Name` 参数的资源名称一起使用。
 
 在此之前，加载 DSC 资源时指定模块版本的唯一方法是通过使用模块规范对象，例如：`–ModuleName @{ModuleName="UserConfigProvider";ModuleVersion="3.0"}`
-

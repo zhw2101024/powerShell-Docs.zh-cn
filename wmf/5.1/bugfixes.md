@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,安装程序"
-title: "WMF 5.1 中的 Bug 修复"
-ms.openlocfilehash: 137095f50f9f926d3488ff9c1ce8270ddbda63eb
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,安装程序
+title: WMF 5.1 中的 Bug 修复
+ms.openlocfilehash: dfd9ead447edfe9b7bdae23be14785df4b182bbc
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="bug-fixes-in-wmf-51"></a>WMF 5.1 中的 Bug 修复#
 
@@ -18,9 +18,11 @@ WMF 5.1 中修复了以下值得注意的 bug：
 
 ### <a name="module-auto-discovery-fully-honors-envpsmodulepath"></a>模块自动发现完全遵循 `$env:PSModulePath` ###
 
-WMF 3 中引入了模块自动发现（调用命令时自动加载模块而无需使用显式 Import-Module）。 引入时，PowerShell 会在使用 `$env:PSModulePath` 之前检查 `$PSHome\Modules` 中的命令。
+WMF 3 中引入了模块自动发现（调用命令时自动加载模块而无需使用显式 Import-Module）。
+引入时，PowerShell 会在使用 `$env:PSModulePath` 之前检查 `$PSHome\Modules` 中的命令。
 
-WMF 5.1 将此行为更改为完全遵循 `$env:PSModulePath`。 这允许定义 PowerShell 提供的命令（例如 `Get-ChildItem`）的用户创作模块自动加载并正确重写内置命令。
+WMF 5.1 将此行为更改为完全遵循 `$env:PSModulePath`。
+这允许定义 PowerShell 提供的命令（例如 `Get-ChildItem`）的用户创作模块自动加载并正确重写内置命令。
 
 ### <a name="file-redirection-no-longer-hard-codes--encoding-unicode"></a>文件重定向不再硬编码 `-Encoding Unicode` ###
 
@@ -40,7 +42,8 @@ WMF 5.1 中已修复了此 bug。
 
 ### <a name="fixed-some-issues-with-com-objects"></a>修复了与 COM 对象相关的一些问题 ###
 
-WMF 5.0 引入了一个新 COM 绑定器，用于对 COM 对象调用方法和访问 COM 对象的属性。 这一新绑定器显著提高了性能，但是同样引入了一些 bug，在 WMF 5.1 中已修复了它们。
+WMF 5.0 引入了一个新 COM 绑定器，用于对 COM 对象调用方法和访问 COM 对象的属性。
+这一新绑定器显著提高了性能，但是同样引入了一些 bug，在 WMF 5.1 中已修复了它们。
 
 #### <a name="argument-conversions-were-not-always-performed-correctly"></a>参数转换并不总是正确执行 ####
 
@@ -75,8 +78,9 @@ $x = Get-COMDictionary
 
 ### <a name="ordered-was-not-allowed-inside-classes"></a>不允许在类中使用 `[ordered]` ###
 
-WMF 5.0 引入了会对类中使用的类型文本进行验证的类。  
-`[ordered]` 类似于类型文本，但不是真正的 .NET 类型。 WMF 5.0 错误地对类中的 `[ordered]` 报告错误：
+WMF 5.0 引入了会对类中使用的类型文本进行验证的类。
+`[ordered]` 类似于类型文本，但不是真正的 .NET 类型。
+WMF 5.0 错误地对类中的 `[ordered]` 报告错误：
 
 ```
 class CThing
@@ -95,7 +99,8 @@ class CThing
 
 WMF 5.1 通过返回有关最新版本主题的帮助来解决此问题。
 
-`Get-Help` 不提供某种方法，这种方法用于指定希望获取相关帮助的版本。 若要解决此问题，请导航到模块目录，然后使用工具（如自己喜爱的编辑器）来直接查看帮助。 
+`Get-Help` 不提供某种方法，这种方法用于指定希望获取相关帮助的版本。
+若要解决此问题，请导航到模块目录，然后使用工具（如自己喜爱的编辑器）来直接查看帮助。
 
 ### <a name="powershellexe-reading-from-stdin-stopped-working"></a>从 STDIN 中读取的 powershell.exe 停止运行
 
@@ -109,4 +114,3 @@ PowerShell 使用 WMI 查询来检查是否是通过组策略启动，以免导�
 WMI 查询最终将 tzres.mui.dll 注入系统中的每个进程，因为 WMI Win32_Process 类会尝试检索本地时区信息。
 这会导致 wmiprvse（WMI 提供程序主机）出现 CPU 大峰值。
 解决方法是使用 Win32 API 调用来获取相同信息，而不是使用 WMI。
-
