@@ -1,33 +1,33 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "库,powershell,cmdlet,psget"
+keywords: 库,powershell,cmdlet,psget
 title: Save-Module
-ms.openlocfilehash: acea38b0eebc58dafda0ab58b91dc6a70ffffd3b
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+ms.openlocfilehash: c9078afb03dc074ee3831c2c395c0f1e6c4ffa38
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="save-module"></a><span data-ttu-id="0ad50-103">Save-Module</span><span class="sxs-lookup"><span data-stu-id="0ad50-103">Save-Module</span></span>
+# <a name="save-module"></a><span data-ttu-id="09cb3-103">Save-Module</span><span class="sxs-lookup"><span data-stu-id="09cb3-103">Save-Module</span></span>
 
-<span data-ttu-id="0ad50-104">在不安装的情况下本地保存模块。</span><span class="sxs-lookup"><span data-stu-id="0ad50-104">Saves a module locally without installing it.</span></span>
+<span data-ttu-id="09cb3-104">在不安装的情况下本地保存模块。</span><span class="sxs-lookup"><span data-stu-id="09cb3-104">Saves a module locally without installing it.</span></span>
 
-## <a name="description"></a><span data-ttu-id="0ad50-105">说明</span><span class="sxs-lookup"><span data-stu-id="0ad50-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="09cb3-105">说明</span><span class="sxs-lookup"><span data-stu-id="09cb3-105">Description</span></span>
 
-<span data-ttu-id="0ad50-106">Save-Module cmdlet 从指定的存储库本地保存模块便于进行检查。</span><span class="sxs-lookup"><span data-stu-id="0ad50-106">The Save-Module cmdlet saves a module locally from the specified repository for inspection.</span></span> <span data-ttu-id="0ad50-107">未安装该模块。</span><span class="sxs-lookup"><span data-stu-id="0ad50-107">The module is not installed.</span></span>
+<span data-ttu-id="09cb3-106">Save-Module cmdlet 从指定的存储库本地保存模块便于进行检查。</span><span class="sxs-lookup"><span data-stu-id="09cb3-106">The Save-Module cmdlet saves a module locally from the specified repository for inspection.</span></span> <span data-ttu-id="09cb3-107">未安装该模块。</span><span class="sxs-lookup"><span data-stu-id="09cb3-107">The module is not installed.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="0ad50-108">Cmdlet 语法</span><span class="sxs-lookup"><span data-stu-id="0ad50-108">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="09cb3-108">Cmdlet 语法</span><span class="sxs-lookup"><span data-stu-id="09cb3-108">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Save-Module -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="0ad50-109">Cmdlet 联机帮助参考</span><span class="sxs-lookup"><span data-stu-id="0ad50-109">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="09cb3-109">Cmdlet 联机帮助参考</span><span class="sxs-lookup"><span data-stu-id="09cb3-109">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="0ad50-110">Save-Module</span><span class="sxs-lookup"><span data-stu-id="0ad50-110">Save-Module</span></span>](http://go.microsoft.com/fwlink/?LinkId=531351)
+[<span data-ttu-id="09cb3-110">Save-Module</span><span class="sxs-lookup"><span data-stu-id="09cb3-110">Save-Module</span></span>](http://go.microsoft.com/fwlink/?LinkId=531351)
 
-## <a name="example-commands"></a><span data-ttu-id="0ad50-111">示例命令</span><span class="sxs-lookup"><span data-stu-id="0ad50-111">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="09cb3-111">示例命令</span><span class="sxs-lookup"><span data-stu-id="09cb3-111">Example commands</span></span>
 
 ```powershell
 Save-Module -Repository MSPSGallery -Name ModuleWithDependencies2 -Path C:\MySavedModuleLocation
@@ -64,4 +64,3 @@ Install-Module -Name ContosoServer -Path C:\MySavedModuleLocation -AllowPrerelea
 
 
 ```
-

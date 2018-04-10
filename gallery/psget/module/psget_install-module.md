@@ -1,71 +1,71 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "库,powershell,cmdlet,psget"
+keywords: 库,powershell,cmdlet,psget
 title: Install-Module
-ms.openlocfilehash: c066f4b34a03206cc0f31e9d40144fd719d9e305
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+ms.openlocfilehash: 960e3a85a0f915dd9da00f6456550a335c619cea
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="install-module"></a><span data-ttu-id="0fd45-103">Install-Module</span><span class="sxs-lookup"><span data-stu-id="0fd45-103">Install-Module</span></span>
+# <a name="install-module"></a><span data-ttu-id="2b814-103">Install-Module</span><span class="sxs-lookup"><span data-stu-id="2b814-103">Install-Module</span></span>
 
-<span data-ttu-id="0fd45-104">将联机存储库中的 PowerShell 模块安装到本地计算机。</span><span class="sxs-lookup"><span data-stu-id="0fd45-104">Installs the PowerShell modules from online repositories to the local computer.</span></span>
+<span data-ttu-id="2b814-104">将联机存储库中的 PowerShell 模块安装到本地计算机。</span><span class="sxs-lookup"><span data-stu-id="2b814-104">Installs the PowerShell modules from online repositories to the local computer.</span></span>
 
-## <a name="description"></a><span data-ttu-id="0fd45-105">说明</span><span class="sxs-lookup"><span data-stu-id="0fd45-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="2b814-105">说明</span><span class="sxs-lookup"><span data-stu-id="2b814-105">Description</span></span>
 
-<span data-ttu-id="0fd45-106">Install-Module cmdlet 从联机库中下载一个或多个模块，对其进行验证并安装到本地计算机的指定安装范围。</span><span class="sxs-lookup"><span data-stu-id="0fd45-106">Install-Module cmdlet downloads one or more modules from an online gallery, validates and installs them on the local computer to the specified installation scope.</span></span>
+<span data-ttu-id="2b814-106">Install-Module cmdlet 从联机库中下载一个或多个模块，对其进行验证并安装到本地计算机的指定安装范围。</span><span class="sxs-lookup"><span data-stu-id="2b814-106">Install-Module cmdlet downloads one or more modules from an online gallery, validates and installs them on the local computer to the specified installation scope.</span></span>
 
-<span data-ttu-id="0fd45-107">Install-Module cmdlet 从联机库中获取满足指定条件的一个或多个模块，验证搜索结果是否为有效模块并将模块文件夹复制到安装位置。</span><span class="sxs-lookup"><span data-stu-id="0fd45-107">The Install-Module cmdlet gets one or more modules that meet specified criteria from an online gallery, verifies that search results are valid modules, and copies module folders to the installation location.</span></span>
+<span data-ttu-id="2b814-107">Install-Module cmdlet 从联机库中获取满足指定条件的一个或多个模块，验证搜索结果是否为有效模块并将模块文件夹复制到安装位置。</span><span class="sxs-lookup"><span data-stu-id="2b814-107">The Install-Module cmdlet gets one or more modules that meet specified criteria from an online gallery, verifies that search results are valid modules, and copies module folders to the installation location.</span></span>
 
-<span data-ttu-id="0fd45-108">如果未定义范围，或 Scope 参数的值为 AllUsers 时，会将模块安装到 %systemdrive%:\Program Files\WindowsPowerShell\Modules。</span><span class="sxs-lookup"><span data-stu-id="0fd45-108">When no scope is defined, or when the value of the Scope parameter is AllUsers, the module is installed to %systemdrive%:\Program Files\WindowsPowerShell\Modules.</span></span> <span data-ttu-id="0fd45-109">Scope 的值为 CurrentUser 时，会将模块安装到 $home\Documents\WindowsPowerShell\Modules。</span><span class="sxs-lookup"><span data-stu-id="0fd45-109">When the value of Scope is CurrentUser, the module is installed to $home\Documents\WindowsPowerShell\Modules.</span></span>
+<span data-ttu-id="2b814-108">如果未定义范围，或 Scope 参数的值为 AllUsers 时，会将模块安装到 %systemdrive%:\Program Files\WindowsPowerShell\Modules。</span><span class="sxs-lookup"><span data-stu-id="2b814-108">When no scope is defined, or when the value of the Scope parameter is AllUsers, the module is installed to %systemdrive%:\Program Files\WindowsPowerShell\Modules.</span></span> <span data-ttu-id="2b814-109">Scope 的值为 CurrentUser 时，会将模块安装到 $home\Documents\WindowsPowerShell\Modules。</span><span class="sxs-lookup"><span data-stu-id="2b814-109">When the value of Scope is CurrentUser, the module is installed to $home\Documents\WindowsPowerShell\Modules.</span></span>
 
-<span data-ttu-id="0fd45-110">可根据指定模块的最低和确切版本筛选结果。</span><span class="sxs-lookup"><span data-stu-id="0fd45-110">You can filter your results based on minimum and exact versions of specified modules.</span></span>
+<span data-ttu-id="2b814-110">可根据指定模块的最低和确切版本筛选结果。</span><span class="sxs-lookup"><span data-stu-id="2b814-110">You can filter your results based on minimum and exact versions of specified modules.</span></span>
 
-- <span data-ttu-id="0fd45-111">PowerShell 5.0 或更高版本上的并行版本支持</span><span class="sxs-lookup"><span data-stu-id="0fd45-111">Side-by-side version support on Windows PowerShell 5.0 or newer</span></span>
-- <span data-ttu-id="0fd45-112">模块依赖项安装支持</span><span class="sxs-lookup"><span data-stu-id="0fd45-112">Module dependency installation support</span></span>
-- <span data-ttu-id="0fd45-113">**不受信任提示：**从不受信任的存储库中安装模块需要得到用户的同意。</span><span class="sxs-lookup"><span data-stu-id="0fd45-113">**Untrusted prompt:**User acceptance is required for installing the modules from an untrusted repository.</span></span>
-- <span data-ttu-id="0fd45-114">-Force 将重新安装已安装的模块</span><span class="sxs-lookup"><span data-stu-id="0fd45-114">-Force reinstalls the installed module</span></span>
-- <span data-ttu-id="0fd45-115">RequiredVersion 将指定版本安装于 SxS 中，将现有版本安装于 PowerShell version 5.0 或更新的版本中。</span><span class="sxs-lookup"><span data-stu-id="0fd45-115">RequiredVersion installs the specified version in SxS with existing versions on PowerShell version 5.0 or newer.</span></span>
+- <span data-ttu-id="2b814-111">PowerShell 5.0 或更高版本上的并行版本支持</span><span class="sxs-lookup"><span data-stu-id="2b814-111">Side-by-side version support on Windows PowerShell 5.0 or newer</span></span>
+- <span data-ttu-id="2b814-112">模块依赖项安装支持</span><span class="sxs-lookup"><span data-stu-id="2b814-112">Module dependency installation support</span></span>
+- <span data-ttu-id="2b814-113">**不受信任提示：**从不受信任的存储库中安装模块需要得到用户的同意。</span><span class="sxs-lookup"><span data-stu-id="2b814-113">**Untrusted prompt:**User acceptance is required for installing the modules from an untrusted repository.</span></span>
+- <span data-ttu-id="2b814-114">-Force 将重新安装已安装的模块</span><span class="sxs-lookup"><span data-stu-id="2b814-114">-Force reinstalls the installed module</span></span>
+- <span data-ttu-id="2b814-115">RequiredVersion 将指定版本安装于 SxS 中，将现有版本安装于 PowerShell version 5.0 或更新的版本中。</span><span class="sxs-lookup"><span data-stu-id="2b814-115">RequiredVersion installs the specified version in SxS with existing versions on PowerShell version 5.0 or newer.</span></span>
 
-### <a name="scope"></a><span data-ttu-id="0fd45-116">作用域</span><span class="sxs-lookup"><span data-stu-id="0fd45-116">Scope</span></span>
-<span data-ttu-id="0fd45-117">指定模块的安装范围。</span><span class="sxs-lookup"><span data-stu-id="0fd45-117">Specifies the installation scope of the module.</span></span> <span data-ttu-id="0fd45-118">此参数可接受的值是：AllUsers 和 CurrentUser。</span><span class="sxs-lookup"><span data-stu-id="0fd45-118">The acceptable values for this parameter are: AllUsers and CurrentUser.</span></span>
+### <a name="scope"></a><span data-ttu-id="2b814-116">作用域</span><span class="sxs-lookup"><span data-stu-id="2b814-116">Scope</span></span>
+<span data-ttu-id="2b814-117">指定模块的安装范围。</span><span class="sxs-lookup"><span data-stu-id="2b814-117">Specifies the installation scope of the module.</span></span> <span data-ttu-id="2b814-118">此参数可接受的值是：AllUsers 和 CurrentUser。</span><span class="sxs-lookup"><span data-stu-id="2b814-118">The acceptable values for this parameter are: AllUsers and CurrentUser.</span></span>
 
-<span data-ttu-id="0fd45-119">默认安装范围为 AllUsers。</span><span class="sxs-lookup"><span data-stu-id="0fd45-119">The default installation scope is AllUsers.</span></span>
+<span data-ttu-id="2b814-119">默认安装范围为 AllUsers。</span><span class="sxs-lookup"><span data-stu-id="2b814-119">The default installation scope is AllUsers.</span></span>
 
-<span data-ttu-id="0fd45-120">AllUsers 范围允许模块安装在计算机的所有用户都可访问的位置，即“$env: SystemDrive\Program Files\WindowsPowerShell\Modules”。</span><span class="sxs-lookup"><span data-stu-id="0fd45-120">The AllUsers scope lets modules be installed in a location that is accessible to all users of the computer, that is, "$env:SystemDrive\Program Files\WindowsPowerShell\Modules".</span></span>
+<span data-ttu-id="2b814-120">AllUsers 范围允许模块安装在计算机的所有用户都可访问的位置，即“$env: SystemDrive\Program Files\WindowsPowerShell\Modules”。</span><span class="sxs-lookup"><span data-stu-id="2b814-120">The AllUsers scope lets modules be installed in a location that is accessible to all users of the computer, that is, "$env:SystemDrive\Program Files\WindowsPowerShell\Modules".</span></span>
 
-<span data-ttu-id="0fd45-121">CurrentUser 范围仅允许模块安装在“$home\Documents\WindowsPowerShell\Modules”，因此仅向当前用户提供该模块。</span><span class="sxs-lookup"><span data-stu-id="0fd45-121">The CurrentUser scope lets modules be installed only to "$home\Documents\WindowsPowerShell\Modules", so that the module is available only to the current user.</span></span>
+<span data-ttu-id="2b814-121">CurrentUser 范围仅允许模块安装在“$home\Documents\WindowsPowerShell\Modules”，因此仅向当前用户提供该模块。</span><span class="sxs-lookup"><span data-stu-id="2b814-121">The CurrentUser scope lets modules be installed only to "$home\Documents\WindowsPowerShell\Modules", so that the module is available only to the current user.</span></span>
 
-## <a name="notes"></a><span data-ttu-id="0fd45-122">注释</span><span class="sxs-lookup"><span data-stu-id="0fd45-122">Notes</span></span>
+## <a name="notes"></a><span data-ttu-id="2b814-122">注释</span><span class="sxs-lookup"><span data-stu-id="2b814-122">Notes</span></span>
 
-<span data-ttu-id="0fd45-123">此 cmdlet 在 Windows PowerShell 3.0 或更高版本的 Windows PowerShell、Windows 7 或 Windows 2008 R2 及 Windows 的更高版本上运行。</span><span class="sxs-lookup"><span data-stu-id="0fd45-123">This cmdlet runs on Windows PowerShell 3.0 or later releases of Windows PowerShell, on Windows 7 or Windows 2008 R2 and later releases of Windows.</span></span>
+<span data-ttu-id="2b814-123">此 cmdlet 在 Windows PowerShell 3.0 或更高版本的 Windows PowerShell、Windows 7 或 Windows 2008 R2 及 Windows 的更高版本上运行。</span><span class="sxs-lookup"><span data-stu-id="2b814-123">This cmdlet runs on Windows PowerShell 3.0 or later releases of Windows PowerShell, on Windows 7 or Windows 2008 R2 and later releases of Windows.</span></span>
 
-<span data-ttu-id="0fd45-124">如果不能导入已安装模块，（即，如果文件夹内，它没有名称相同的 .psm1、.psd1、或 .dll），安装将失败，除非将 Force 参数添加到命令。</span><span class="sxs-lookup"><span data-stu-id="0fd45-124">If an installed module cannot be imported (that is, if it does not have a .psm1, .psd1, or .dll of the same name within the folder), installation fails unless you add the Force parameter to your command.</span></span>
+<span data-ttu-id="2b814-124">如果不能导入已安装模块，（即，如果文件夹内，它没有名称相同的 .psm1、.psd1、或 .dll），安装将失败，除非将 Force 参数添加到命令。</span><span class="sxs-lookup"><span data-stu-id="2b814-124">If an installed module cannot be imported (that is, if it does not have a .psm1, .psd1, or .dll of the same name within the folder), installation fails unless you add the Force parameter to your command.</span></span>
 
-<span data-ttu-id="0fd45-125">如果计算机上的模块版本与为 Name 参数指定的值相匹配，且未添加 MinimumVersion 或 RequiredVersion 参数，则 Install-Module 将以无提示的方式继续且不安装该模块。</span><span class="sxs-lookup"><span data-stu-id="0fd45-125">If a version of the module on the computer matches the value specified for the Name parameter, and you have not added the MinimumVersion or RequiredVersion parameter, Install-Module silently continues without installing that module.</span></span> <span data-ttu-id="0fd45-126">如果指定了 MinimumVersion 或 RequiredVersion 参数，且现有模块与该参数中的值不匹配，则会发生错误。</span><span class="sxs-lookup"><span data-stu-id="0fd45-126">If the MinimumVersion or RequiredVersion parameters are specified, and the existing module does not match the values in that parameter, then an error occurs.</span></span> <span data-ttu-id="0fd45-127">具体而言：如果当前安装的模块的版本低于 MinimumVersion 参数的值或不等于 RequiredVersion 参数的值，就会出错。</span><span class="sxs-lookup"><span data-stu-id="0fd45-127">To be more specific: if the version of the currently-installed module is either lower than the value of the MinimumVersion parameter, or not equal to the value of the RequiredVersion parameter, an error occurs.</span></span> <span data-ttu-id="0fd45-128">如果已安装模块的版本大于 MinimumVersion 参数的值或等于 RequiredVersion 参数的值，Install-Module 将以无提示方式继续且不安装该模块。</span><span class="sxs-lookup"><span data-stu-id="0fd45-128">If the version of the installed module is greater than the value of the MinimumVersion parameter, or equal to the value of the RequiredVersion parameter, Install-Module silently continues without installing that module.</span></span>
+<span data-ttu-id="2b814-125">如果计算机上的模块版本与为 Name 参数指定的值相匹配，且未添加 MinimumVersion 或 RequiredVersion 参数，则 Install-Module 将以无提示的方式继续且不安装该模块。</span><span class="sxs-lookup"><span data-stu-id="2b814-125">If a version of the module on the computer matches the value specified for the Name parameter, and you have not added the MinimumVersion or RequiredVersion parameter, Install-Module silently continues without installing that module.</span></span> <span data-ttu-id="2b814-126">如果指定了 MinimumVersion 或 RequiredVersion 参数，且现有模块与该参数中的值不匹配，则会发生错误。</span><span class="sxs-lookup"><span data-stu-id="2b814-126">If the MinimumVersion or RequiredVersion parameters are specified, and the existing module does not match the values in that parameter, then an error occurs.</span></span> <span data-ttu-id="2b814-127">具体而言：如果当前安装的模块的版本低于 MinimumVersion 参数的值或不等于 RequiredVersion 参数的值，就会出错。</span><span class="sxs-lookup"><span data-stu-id="2b814-127">To be more specific: if the version of the currently-installed module is either lower than the value of the MinimumVersion parameter, or not equal to the value of the RequiredVersion parameter, an error occurs.</span></span> <span data-ttu-id="2b814-128">如果已安装模块的版本大于 MinimumVersion 参数的值或等于 RequiredVersion 参数的值，Install-Module 将以无提示方式继续且不安装该模块。</span><span class="sxs-lookup"><span data-stu-id="2b814-128">If the version of the installed module is greater than the value of the MinimumVersion parameter, or equal to the value of the RequiredVersion parameter, Install-Module silently continues without installing that module.</span></span>
 
-<span data-ttu-id="0fd45-129">如果联机库中不存在与指定名称相匹配的模块，则 Install-Module 将返回错误。</span><span class="sxs-lookup"><span data-stu-id="0fd45-129">Install-Module returns an error if no module exists in the online gallery that matches the specified name.</span></span>
+<span data-ttu-id="2b814-129">如果联机库中不存在与指定名称相匹配的模块，则 Install-Module 将返回错误。</span><span class="sxs-lookup"><span data-stu-id="2b814-129">Install-Module returns an error if no module exists in the online gallery that matches the specified name.</span></span>
 
-<span data-ttu-id="0fd45-130">若要安装多个模块，指定模块名称的一个数组（用逗号分隔）。</span><span class="sxs-lookup"><span data-stu-id="0fd45-130">To install multiple modules, specify an array of the module names, separated by commas.</span></span> <span data-ttu-id="0fd45-131">如果指定多个模块名称，则不能添加 MinimumVersion 或 RequiredVersion。</span><span class="sxs-lookup"><span data-stu-id="0fd45-131">You cannot add MinimumVersion or RequiredVersion if you specify multiple module names.</span></span>
+<span data-ttu-id="2b814-130">若要安装多个模块，指定模块名称的一个数组（用逗号分隔）。</span><span class="sxs-lookup"><span data-stu-id="2b814-130">To install multiple modules, specify an array of the module names, separated by commas.</span></span> <span data-ttu-id="2b814-131">如果指定多个模块名称，则不能添加 MinimumVersion 或 RequiredVersion。</span><span class="sxs-lookup"><span data-stu-id="2b814-131">You cannot add MinimumVersion or RequiredVersion if you specify multiple module names.</span></span>
 
-<span data-ttu-id="0fd45-132">默认情况下，模块将安装到 Program Files 文件夹中，避免在安装 Windows PowerShell Desired State Configuration (DSC) 资源时造成混淆。可通过管道将多个 PSGetItemInfo 对象传递到 Install-Module；这是在单个命令中指定安装多个模块的另一种方法。</span><span class="sxs-lookup"><span data-stu-id="0fd45-132">By default, modules are installed to the Program Files folder, to prevent confusion when you are installing Windows PowerShell Desired State Configuration (DSC) resources.You can pipe multiple PSGetItemInfo objects to Install-Module; this is another way of specifying multiple modules to install in a single command.</span></span>
+<span data-ttu-id="2b814-132">默认情况下，模块将安装到 Program Files 文件夹中，避免在安装 Windows PowerShell Desired State Configuration (DSC) 资源时造成混淆。可通过管道将多个 PSGetItemInfo 对象传递到 Install-Module；这是在单个命令中指定安装多个模块的另一种方法。</span><span class="sxs-lookup"><span data-stu-id="2b814-132">By default, modules are installed to the Program Files folder, to prevent confusion when you are installing Windows PowerShell Desired State Configuration (DSC) resources.You can pipe multiple PSGetItemInfo objects to Install-Module; this is another way of specifying multiple modules to install in a single command.</span></span>
 
-<span data-ttu-id="0fd45-133">为防止运行包含恶意代码的模块，不会通过安装自动导入已安装的模块。</span><span class="sxs-lookup"><span data-stu-id="0fd45-133">To help prevent running modules that contain malicious code, installed modules are not automatically imported by installation.</span></span> <span data-ttu-id="0fd45-134">安全性最佳的做法是首次在模块中运行任何 cmdlet 或函数前，先评估模块代码。</span><span class="sxs-lookup"><span data-stu-id="0fd45-134">As a security best practice, evaluate module code before running any cmdlets or functions in a module for the first time.</span></span>
+<span data-ttu-id="2b814-133">为防止运行包含恶意代码的模块，不会通过安装自动导入已安装的模块。</span><span class="sxs-lookup"><span data-stu-id="2b814-133">To help prevent running modules that contain malicious code, installed modules are not automatically imported by installation.</span></span> <span data-ttu-id="2b814-134">安全性最佳的做法是首次在模块中运行任何 cmdlet 或函数前，先评估模块代码。</span><span class="sxs-lookup"><span data-stu-id="2b814-134">As a security best practice, evaluate module code before running any cmdlets or functions in a module for the first time.</span></span>
 
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="0fd45-135">Cmdlet 语法</span><span class="sxs-lookup"><span data-stu-id="0fd45-135">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="2b814-135">Cmdlet 语法</span><span class="sxs-lookup"><span data-stu-id="2b814-135">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Install-Module -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="0fd45-136">Cmdlet 联机帮助参考</span><span class="sxs-lookup"><span data-stu-id="0fd45-136">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="2b814-136">Cmdlet 联机帮助参考</span><span class="sxs-lookup"><span data-stu-id="2b814-136">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="0fd45-137">Install-Module</span><span class="sxs-lookup"><span data-stu-id="0fd45-137">Install-Module</span></span>](http://go.microsoft.com/fwlink/?LinkID=398573)
+[<span data-ttu-id="2b814-137">Install-Module</span><span class="sxs-lookup"><span data-stu-id="2b814-137">Install-Module</span></span>](http://go.microsoft.com/fwlink/?LinkID=398573)
 
-## <a name="example-commands"></a><span data-ttu-id="0fd45-138">示例命令</span><span class="sxs-lookup"><span data-stu-id="0fd45-138">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="2b814-138">示例命令</span><span class="sxs-lookup"><span data-stu-id="2b814-138">Example commands</span></span>
 
 ```powershell
 
@@ -109,10 +109,10 @@ Install-Module ContosoClient -WhatIf
 Install-Module ContosoClient -Force
 
 # Install a module with dependencies
-Install-Module -Name 
+Install-Module -Name
 ```
 
-## <a name="install-module-cmdlet-in-pipeline-operations"></a><span data-ttu-id="0fd45-139">管道操作中的 Install-Module cmdlet</span><span class="sxs-lookup"><span data-stu-id="0fd45-139">Install-Module cmdlet in pipeline operations</span></span>
+## <a name="install-module-cmdlet-in-pipeline-operations"></a><span data-ttu-id="2b814-139">管道操作中的 Install-Module cmdlet</span><span class="sxs-lookup"><span data-stu-id="2b814-139">Install-Module cmdlet in pipeline operations</span></span>
 
 ```powershell
 
@@ -128,8 +128,8 @@ Find-Module -Name "MyDSC*" | Install-Module -Scope CurrentUser
 Find-Command -Repository "INT" -Name Get-ContosoClient,Get-ContosoServer | Install-Module
 Get-InstalledModule
 
-# This command finds the resource named MyResource and passes it to the Install-Module cmdlet by using the pipeline operator. The Install-Module cmdlet installs the module for the resource. 
-# If you pipe multiple resources to the Install-Module cmdlet from the same module, Install-Module attempts to install the module only once. 
+# This command finds the resource named MyResource and passes it to the Install-Module cmdlet by using the pipeline operator. The Install-Module cmdlet installs the module for the resource.
+# If you pipe multiple resources to the Install-Module cmdlet from the same module, Install-Module attempts to install the module only once.
 Find-DscResource -Name "MyResource" | Install-Module
 Get-InstalledModule
 
@@ -139,11 +139,11 @@ Get-InstalledModule
 
 ```
 
-## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a><span data-ttu-id="0fd45-140">PowerShell 5.0 或更高版本上的并行版本支持</span><span class="sxs-lookup"><span data-stu-id="0fd45-140">Side-by-Side Version Support on PowerShell 5.0 or newer</span></span>
+## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a><span data-ttu-id="2b814-140">PowerShell 5.0 或更高版本上的并行版本支持</span><span class="sxs-lookup"><span data-stu-id="2b814-140">Side-by-Side Version Support on PowerShell 5.0 or newer</span></span>
 
-<span data-ttu-id="0fd45-141">PowerShellGet 在 Windows PowerShell 5.0 或更新的版本中运行的 Install-Module cmdlet、Update-Module cmdlet 和 Publish-Module cmdlet 中对并行 (SxS) 模块版本提供支持。</span><span class="sxs-lookup"><span data-stu-id="0fd45-141">PowerShellGet supports the side-by-side (SxS) module version support in Install-Module, Update-Module, and Publish-Module cmdlets that run in Windows PowerShell 5.0 or newer.</span></span>
+<span data-ttu-id="2b814-141">PowerShellGet 在 Windows PowerShell 5.0 或更新的版本中运行的 Install-Module cmdlet、Update-Module cmdlet 和 Publish-Module cmdlet 中对并行 (SxS) 模块版本提供支持。</span><span class="sxs-lookup"><span data-stu-id="2b814-141">PowerShellGet supports the side-by-side (SxS) module version support in Install-Module, Update-Module, and Publish-Module cmdlets that run in Windows PowerShell 5.0 or newer.</span></span>
 
-### <a name="install-module-examples"></a><span data-ttu-id="0fd45-142">Install-Module 示例</span><span class="sxs-lookup"><span data-stu-id="0fd45-142">Install-Module examples</span></span>
+### <a name="install-module-examples"></a><span data-ttu-id="2b814-142">Install-Module 示例</span><span class="sxs-lookup"><span data-stu-id="2b814-142">Install-Module examples</span></span>
 
 ```powershell
 # Install a version of the module
@@ -158,7 +158,7 @@ ModuleBase : C:\Program Files\WindowsPowerShell\Modules\PSScriptAnalyzer\1.1.0
 Install-Module -Name PSScriptAnalyzer -RequiredVersion 1.1.1 -Repository PSGallery
 Get-Module -ListAvailable -Name PSScriptAnalyzer | Format-List Name,Version,ModuleBase
 
-Name       : PSScriptAnalyzer 
+Name       : PSScriptAnalyzer
 Version    : 1.1.1
 ModuleBase : C:\Program Files\WindowsPowerShell\Modules\PSScriptAnalyzer\1.1.1
 Name       : PSScriptAnalyzer
@@ -169,13 +169,13 @@ ModuleBase : C:\Program Files\WindowsPowerShell\Modules\PSScriptAnalyzer\1.1.0
 Get-InstalledModule -Name PSScriptAnalyzer -AllVersions
 Version    Name                                Repository           Description
 -------    ----                                ----------           -----------
-1.1.0      PSScriptAnalyzer                    PSGallery            PSScriptAnalyzer provides script analysis... 
+1.1.0      PSScriptAnalyzer                    PSGallery            PSScriptAnalyzer provides script analysis...
 1.1.1      PSScriptAnalyzer                    PSGallery            PSScriptAnalyzer provides script analysis...
 
 
 ```
 
-## <a name="install-module-with-its-dependencies"></a><span data-ttu-id="0fd45-143">安装模块及其依赖项</span><span class="sxs-lookup"><span data-stu-id="0fd45-143">Install module with its dependencies</span></span>
+## <a name="install-module-with-its-dependencies"></a><span data-ttu-id="2b814-143">安装模块及其依赖项</span><span class="sxs-lookup"><span data-stu-id="2b814-143">Install module with its dependencies</span></span>
 
 ```powershell
 
@@ -269,7 +269,7 @@ Version    Name                                Repository           Description
 
 ```
 
-## <a name="error-scenarios"></a><span data-ttu-id="0fd45-144">错误方案</span><span class="sxs-lookup"><span data-stu-id="0fd45-144">Error scenarios</span></span>
+## <a name="error-scenarios"></a><span data-ttu-id="2b814-144">错误方案</span><span class="sxs-lookup"><span data-stu-id="2b814-144">Error scenarios</span></span>
 
 ```powershell
 
@@ -286,4 +286,3 @@ Install-Module ContosoClient,ContosoServer -RequiredVersion 2.0
 Install-Module ContosoClient,ContosoServer -MinimumVersion 2.0
 
 ```
-

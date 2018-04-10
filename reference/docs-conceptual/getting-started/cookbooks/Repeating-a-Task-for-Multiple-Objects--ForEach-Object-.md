@@ -1,18 +1,19 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "为多个对象重复执行任务 (ForEach Object)"
+title: 为多个对象重复执行任务 (ForEach Object)
 ms.assetid: 6697a12d-2470-4ed6-b5bb-c35e5d525eb6
-ms.openlocfilehash: 33ae2c76a512a651ba1b91d15d876608f0d43ccc
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 8b8002af3ade0905421760ce29cdc84b084236e9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="repeating-a-task-for-multiple-objects-foreach-object"></a><span data-ttu-id="cfccf-103">为多个对象重复执行任务 (ForEach-Object)</span><span class="sxs-lookup"><span data-stu-id="cfccf-103">Repeating a Task for Multiple Objects (ForEach-Object)</span></span>
-<span data-ttu-id="cfccf-104">**ForEach-Object** cmdlet 为当前管道对象使用脚本块和 $_ 描述符，以便你可以对管道中的每个对象运行命令。</span><span class="sxs-lookup"><span data-stu-id="cfccf-104">The **ForEach-Object** cmdlet uses script blocks and the $_ descriptor for the current pipeline object to let you run a command on each object in the pipeline.</span></span> <span data-ttu-id="cfccf-105">这可用于执行某些复杂的任务。</span><span class="sxs-lookup"><span data-stu-id="cfccf-105">This can be used to perform some complicated tasks.</span></span>
+# <a name="repeating-a-task-for-multiple-objects-foreach-object"></a><span data-ttu-id="bd9fe-103">为多个对象重复执行任务 (ForEach-Object)</span><span class="sxs-lookup"><span data-stu-id="bd9fe-103">Repeating a Task for Multiple Objects (ForEach-Object)</span></span>
 
-<span data-ttu-id="cfccf-106">一种有帮助的情况就是操纵数据使其更为有用。</span><span class="sxs-lookup"><span data-stu-id="cfccf-106">One situation where this can be useful is manipulating data to make it more useful.</span></span> <span data-ttu-id="cfccf-107">例如，WMI 的 Win32_LogicalDisk 类可用于返回每个本地磁盘的可用空间信息。</span><span class="sxs-lookup"><span data-stu-id="cfccf-107">For example, the Win32_LogicalDisk class from WMI can be used to return free space information for each local disk.</span></span> <span data-ttu-id="cfccf-108">返回以字节表示的数据，但是，这也将增加阅读的难度：</span><span class="sxs-lookup"><span data-stu-id="cfccf-108">The data is returned in terms of bytes, however, which makes it difficult to read:</span></span>
+<span data-ttu-id="bd9fe-104">**ForEach-Object** cmdlet 为当前管道对象使用脚本块和 $_ 描述符，以便你可以对管道中的每个对象运行命令。</span><span class="sxs-lookup"><span data-stu-id="bd9fe-104">The **ForEach-Object** cmdlet uses script blocks and the $_ descriptor for the current pipeline object to let you run a command on each object in the pipeline.</span></span> <span data-ttu-id="bd9fe-105">这可用于执行某些复杂的任务。</span><span class="sxs-lookup"><span data-stu-id="bd9fe-105">This can be used to perform some complicated tasks.</span></span>
+
+<span data-ttu-id="bd9fe-106">一种有帮助的情况就是操纵数据使其更为有用。</span><span class="sxs-lookup"><span data-stu-id="bd9fe-106">One situation where this can be useful is manipulating data to make it more useful.</span></span> <span data-ttu-id="bd9fe-107">例如，WMI 的 Win32_LogicalDisk 类可用于返回每个本地磁盘的可用空间信息。</span><span class="sxs-lookup"><span data-stu-id="bd9fe-107">For example, the Win32_LogicalDisk class from WMI can be used to return free space information for each local disk.</span></span> <span data-ttu-id="bd9fe-108">返回以字节表示的数据，但是，这也将增加阅读的难度：</span><span class="sxs-lookup"><span data-stu-id="bd9fe-108">The data is returned in terms of bytes, however, which makes it difficult to read:</span></span>
 
 ```
 PS> Get-WmiObject -Class Win32_LogicalDisk
@@ -25,27 +26,26 @@ Size         : 203912880128
 VolumeName   : Local Disk
 ```
 
-<span data-ttu-id="cfccf-109">我们可以通过将每个值除以 1024 两次来将 FreeSpace 值转换为兆字节；第一次除法后，该数据将以千字节为单位，而完成第二次除法后，该值则以兆字节为单位。</span><span class="sxs-lookup"><span data-stu-id="cfccf-109">We can convert the FreeSpace value to megabytes by dividing each value by 1024 twice; after the first division, the data is in kilobytes, and after the second division it is megabytes.</span></span> <span data-ttu-id="cfccf-110">你可通过键入以下内容在 ForEach-Object 脚本块中实现此操作：</span><span class="sxs-lookup"><span data-stu-id="cfccf-110">You can do that in a ForEach-Object script block by typing:</span></span>
+<span data-ttu-id="bd9fe-109">我们可以通过将每个值除以 1024 两次来将 FreeSpace 值转换为兆字节；第一次除法后，该数据将以千字节为单位，而完成第二次除法后，该值则以兆字节为单位。</span><span class="sxs-lookup"><span data-stu-id="bd9fe-109">We can convert the FreeSpace value to megabytes by dividing each value by 1024 twice; after the first division, the data is in kilobytes, and after the second division it is megabytes.</span></span> <span data-ttu-id="bd9fe-110">你可通过键入以下内容在 ForEach-Object 脚本块中实现此操作：</span><span class="sxs-lookup"><span data-stu-id="bd9fe-110">You can do that in a ForEach-Object script block by typing:</span></span>
 
 ```
-Get-WmiObject -Class Win32_LogicalDisk | ForEach-Object -Process {($_.FreeSpace)/1024.0/1024.0}
+PS> Get-WmiObject -Class Win32_LogicalDisk | ForEach-Object -Process {($_.FreeSpace)/1024.0/1024.0}
 48318.01171875
 ```
 
-<span data-ttu-id="cfccf-111">遗憾的是，该输出现在是没有关联标签的数据。</span><span class="sxs-lookup"><span data-stu-id="cfccf-111">Unfortunately, the output is now data with no associated label.</span></span> <span data-ttu-id="cfccf-112">因为这样的 WMI 属性为只读，所以不能直接转换 FreeSpace。</span><span class="sxs-lookup"><span data-stu-id="cfccf-112">Because WMI properties such as this are read-only, you cannot directly convert FreeSpace.</span></span> <span data-ttu-id="cfccf-113">如果键入以下内容：</span><span class="sxs-lookup"><span data-stu-id="cfccf-113">If you type this:</span></span>
+<span data-ttu-id="bd9fe-111">遗憾的是，该输出现在是没有关联标签的数据。</span><span class="sxs-lookup"><span data-stu-id="bd9fe-111">Unfortunately, the output is now data with no associated label.</span></span> <span data-ttu-id="bd9fe-112">因为这样的 WMI 属性为只读，所以不能直接转换 FreeSpace。</span><span class="sxs-lookup"><span data-stu-id="bd9fe-112">Because WMI properties such as this are read-only, you cannot directly convert FreeSpace.</span></span> <span data-ttu-id="bd9fe-113">如果键入以下内容：</span><span class="sxs-lookup"><span data-stu-id="bd9fe-113">If you type this:</span></span>
 
-```
+```powershell
 Get-WmiObject -Class Win32_LogicalDisk | ForEach-Object -Process {$_.FreeSpace = ($_.FreeSpace)/1024.0/1024.0}
 ```
 
-<span data-ttu-id="cfccf-114">则将收到错误消息：</span><span class="sxs-lookup"><span data-stu-id="cfccf-114">You get an error message:</span></span>
+<span data-ttu-id="bd9fe-114">则将收到错误消息：</span><span class="sxs-lookup"><span data-stu-id="bd9fe-114">You get an error message:</span></span>
 
-```
+```output
 "FreeSpace" is a ReadOnly property.
 At line:1 char:70
 + Get-WmiObject -Class Win32_LogicalDisk | ForEach-Object -Process {$_.F <<<< r
 eeSpace = ($_.FreeSpace)/1024.0/1024.0}
 ```
 
-<span data-ttu-id="cfccf-115">可以通过使用一些高级技术重新组织数据，但更简单的方法是通过使用 **Select-Object** 创建新对象。</span><span class="sxs-lookup"><span data-stu-id="cfccf-115">You could reorganize the data by using some advanced techniques, but a simpler approach is to create a new object, by using **Select-Object**.</span></span>
-
+<span data-ttu-id="bd9fe-115">可以通过使用一些高级技术重新组织数据，但更简单的方法是通过使用 **Select-Object** 创建新对象。</span><span class="sxs-lookup"><span data-stu-id="bd9fe-115">You could reorganize the data by using some advanced techniques, but a simpler approach is to create a new object, by using **Select-Object**.</span></span>

@@ -1,164 +1,164 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
-title: "测试 pswaauthorizationrule"
+ms.date: 12/12/2016
+title: 测试 pswaauthorizationrule
 ms.technology: powershell
-ms.openlocfilehash: fb2937397616160c70b056e412e42fb8ff4c2f27
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: ed6d56b2f3c4ee4ac410cdaadda312bffe506ee9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="test-pswaauthorizationrule"></a><span data-ttu-id="6ac70-103">Test-PswaAuthorizationRule</span><span class="sxs-lookup"><span data-stu-id="6ac70-103">Test-PswaAuthorizationRule</span></span>
+# <a name="test-pswaauthorizationrule"></a><span data-ttu-id="798b3-103">Test-PswaAuthorizationRule</span><span class="sxs-lookup"><span data-stu-id="798b3-103">Test-PswaAuthorizationRule</span></span>
 
-## <a name="synopsis"></a><span data-ttu-id="6ac70-104">简述</span><span class="sxs-lookup"><span data-stu-id="6ac70-104">SYNOPSIS</span></span>
+## <a name="synopsis"></a><span data-ttu-id="798b3-104">简述</span><span class="sxs-lookup"><span data-stu-id="798b3-104">SYNOPSIS</span></span>
 
-<span data-ttu-id="6ac70-105">验证是否为特定用户、计算机或终结点设置了规则。</span><span class="sxs-lookup"><span data-stu-id="6ac70-105">Verifies whether a rule exists for a specified user, computer, or endpoint.</span></span>
+<span data-ttu-id="798b3-105">验证是否为特定用户、计算机或终结点设置了规则。</span><span class="sxs-lookup"><span data-stu-id="798b3-105">Verifies whether a rule exists for a specified user, computer, or endpoint.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="6ac70-106">语法</span><span class="sxs-lookup"><span data-stu-id="6ac70-106">SYNTAX</span></span>
+## <a name="syntax"></a><span data-ttu-id="798b3-106">语法</span><span class="sxs-lookup"><span data-stu-id="798b3-106">SYNTAX</span></span>
 
-### <a name="computername"></a><span data-ttu-id="6ac70-107">ComputerName</span><span class="sxs-lookup"><span data-stu-id="6ac70-107">ComputerName</span></span>
+### <a name="computername"></a><span data-ttu-id="798b3-107">ComputerName</span><span class="sxs-lookup"><span data-stu-id="798b3-107">ComputerName</span></span>
 ```
 Test-PswaAuthorizationRule [-UserName] <String> [-ComputerName] <String> [[-ConfigurationName] <String> ] [-Credential <PSCredential> ] [-Rule <PswaAuthorizationRule[]> ] [ <CommonParameters>]
 ```
 
-### <a name="connectionuri"></a><span data-ttu-id="6ac70-108">ConnectionUri</span><span class="sxs-lookup"><span data-stu-id="6ac70-108">ConnectionUri</span></span>
+### <a name="connectionuri"></a><span data-ttu-id="798b3-108">ConnectionUri</span><span class="sxs-lookup"><span data-stu-id="798b3-108">ConnectionUri</span></span>
 ```
 Test-PswaAuthorizationRule [-UserName] <String> [-ConnectionUri] <Uri> [[-ConfigurationName] <String> ] [-Credential <PSCredential> ] [-Rule <PswaAuthorizationRule[]> ] [ <CommonParameters>]
 ```
 
-## <a name="description"></a><span data-ttu-id="6ac70-109">说明</span><span class="sxs-lookup"><span data-stu-id="6ac70-109">DESCRIPTION</span></span>
+## <a name="description"></a><span data-ttu-id="798b3-109">说明</span><span class="sxs-lookup"><span data-stu-id="798b3-109">DESCRIPTION</span></span>
 
-<span data-ttu-id="6ac70-110">Test-PswaAuthorizationRule 用于验证是否为特定用户、计算机或终结点设置了规则。</span><span class="sxs-lookup"><span data-stu-id="6ac70-110">The **Test-PswaAuthorizationRule** cmdlet verifies whether a rule exists for a specified user, computer, or endpoint.</span></span>
-<span data-ttu-id="6ac70-111">此 cmdlet 还可用于测试授权规则，以验证某个特定用户、计算机或终结点的访问请求是否被授权。</span><span class="sxs-lookup"><span data-stu-id="6ac70-111">This cmdlet can also be used to test authorization rules, to validate that a particular user, computer or endpoint access request is authorized.</span></span>
-<span data-ttu-id="6ac70-112">默认情况下，此 cmdlet 评估授权文件中的所有规则。</span><span class="sxs-lookup"><span data-stu-id="6ac70-112">By default, this cmdlet evaluates all rules in the authorization file.</span></span>
-<span data-ttu-id="6ac70-113">但是，可指定一个用于测试的规则子集。</span><span class="sxs-lookup"><span data-stu-id="6ac70-113">However, you can specify a subset of rules to test.</span></span>
+<span data-ttu-id="798b3-110">Test-PswaAuthorizationRule 用于验证是否为特定用户、计算机或终结点设置了规则。</span><span class="sxs-lookup"><span data-stu-id="798b3-110">The **Test-PswaAuthorizationRule** cmdlet verifies whether a rule exists for a specified user, computer, or endpoint.</span></span>
+<span data-ttu-id="798b3-111">此 cmdlet 还可用于测试授权规则，以验证某个特定用户、计算机或终结点的访问请求是否被授权。</span><span class="sxs-lookup"><span data-stu-id="798b3-111">This cmdlet can also be used to test authorization rules, to validate that a particular user, computer or endpoint access request is authorized.</span></span>
+<span data-ttu-id="798b3-112">默认情况下，此 cmdlet 评估授权文件中的所有规则。</span><span class="sxs-lookup"><span data-stu-id="798b3-112">By default, this cmdlet evaluates all rules in the authorization file.</span></span>
+<span data-ttu-id="798b3-113">但是，可指定一个用于测试的规则子集。</span><span class="sxs-lookup"><span data-stu-id="798b3-113">However, you can specify a subset of rules to test.</span></span>
 
-<span data-ttu-id="6ac70-114">可使用此 cmdlet 对身份验证失败进行故障排除。</span><span class="sxs-lookup"><span data-stu-id="6ac70-114">You can use this cmdlet to help troubleshoot authentication failures.</span></span>
+<span data-ttu-id="798b3-114">可使用此 cmdlet 对身份验证失败进行故障排除。</span><span class="sxs-lookup"><span data-stu-id="798b3-114">You can use this cmdlet to help troubleshoot authentication failures.</span></span>
 
-<span data-ttu-id="6ac70-115">此 cmdlet 的参数对应于 Windows PowerShell®Web 访问登录页上的字段。</span><span class="sxs-lookup"><span data-stu-id="6ac70-115">The parameters for this cmdlet correspond to fields on the Windows PowerShell® Web Access sign-on page.</span></span>
+<span data-ttu-id="798b3-115">此 cmdlet 的参数对应于 Windows PowerShell®Web 访问登录页上的字段。</span><span class="sxs-lookup"><span data-stu-id="798b3-115">The parameters for this cmdlet correspond to fields on the Windows PowerShell® Web Access sign-on page.</span></span>
 
-## <a name="parameters"></a><span data-ttu-id="6ac70-116">参数</span><span class="sxs-lookup"><span data-stu-id="6ac70-116">PARAMETERS</span></span>
+## <a name="parameters"></a><span data-ttu-id="798b3-116">参数</span><span class="sxs-lookup"><span data-stu-id="798b3-116">PARAMETERS</span></span>
 
-### <a name="-computername-ltstringgt"></a><span data-ttu-id="6ac70-117">-ComputerName &lt;String&gt;</span><span class="sxs-lookup"><span data-stu-id="6ac70-117">-ComputerName &lt;String&gt;</span></span>
+### <a name="-computername-ltstringgt"></a><span data-ttu-id="798b3-117">-ComputerName &lt;String&gt;</span><span class="sxs-lookup"><span data-stu-id="798b3-117">-ComputerName &lt;String&gt;</span></span>
 
-<span data-ttu-id="6ac70-118">指定要测试的计算机的名称。</span><span class="sxs-lookup"><span data-stu-id="6ac70-118">Specifies the name of the computer to test.</span></span>
+<span data-ttu-id="798b3-118">指定要测试的计算机的名称。</span><span class="sxs-lookup"><span data-stu-id="798b3-118">Specifies the name of the computer to test.</span></span>
 
-|||  
+|||
 |-|-|
-| <span data-ttu-id="6ac70-119">别名</span><span class="sxs-lookup"><span data-stu-id="6ac70-119">Aliases</span></span>                              | <span data-ttu-id="6ac70-120">无</span><span class="sxs-lookup"><span data-stu-id="6ac70-120">none</span></span>                                 |
-| <span data-ttu-id="6ac70-121">是否必需？</span><span class="sxs-lookup"><span data-stu-id="6ac70-121">Required?</span></span>                            | <span data-ttu-id="6ac70-122">true</span><span class="sxs-lookup"><span data-stu-id="6ac70-122">true</span></span>                                 |
-| <span data-ttu-id="6ac70-123">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="6ac70-123">Position?</span></span>                            | <span data-ttu-id="6ac70-124">2</span><span class="sxs-lookup"><span data-stu-id="6ac70-124">2</span></span>                                    |
-| <span data-ttu-id="6ac70-125">默认值</span><span class="sxs-lookup"><span data-stu-id="6ac70-125">Default Value</span></span>                        | <span data-ttu-id="6ac70-126">无</span><span class="sxs-lookup"><span data-stu-id="6ac70-126">none</span></span>                                 |
-| <span data-ttu-id="6ac70-127">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="6ac70-127">Accept Pipeline Input?</span></span>               | <span data-ttu-id="6ac70-128">false</span><span class="sxs-lookup"><span data-stu-id="6ac70-128">false</span></span>                                |
-| <span data-ttu-id="6ac70-129">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="6ac70-129">Accept Wildcard Characters?</span></span>          | <span data-ttu-id="6ac70-130">false</span><span class="sxs-lookup"><span data-stu-id="6ac70-130">false</span></span>                                |
+| <span data-ttu-id="798b3-119">别名</span><span class="sxs-lookup"><span data-stu-id="798b3-119">Aliases</span></span>                              | <span data-ttu-id="798b3-120">无</span><span class="sxs-lookup"><span data-stu-id="798b3-120">none</span></span>                                 |
+| <span data-ttu-id="798b3-121">是否必需？</span><span class="sxs-lookup"><span data-stu-id="798b3-121">Required?</span></span>                            | <span data-ttu-id="798b3-122">true</span><span class="sxs-lookup"><span data-stu-id="798b3-122">true</span></span>                                 |
+| <span data-ttu-id="798b3-123">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="798b3-123">Position?</span></span>                            | <span data-ttu-id="798b3-124">2</span><span class="sxs-lookup"><span data-stu-id="798b3-124">2</span></span>                                    |
+| <span data-ttu-id="798b3-125">默认值</span><span class="sxs-lookup"><span data-stu-id="798b3-125">Default Value</span></span>                        | <span data-ttu-id="798b3-126">无</span><span class="sxs-lookup"><span data-stu-id="798b3-126">none</span></span>                                 |
+| <span data-ttu-id="798b3-127">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="798b3-127">Accept Pipeline Input?</span></span>               | <span data-ttu-id="798b3-128">false</span><span class="sxs-lookup"><span data-stu-id="798b3-128">false</span></span>                                |
+| <span data-ttu-id="798b3-129">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="798b3-129">Accept Wildcard Characters?</span></span>          | <span data-ttu-id="798b3-130">false</span><span class="sxs-lookup"><span data-stu-id="798b3-130">false</span></span>                                |
 
-### <a name="-configurationname-ltstringgt"></a><span data-ttu-id="6ac70-131">-ConfigurationName &lt;String&gt;</span><span class="sxs-lookup"><span data-stu-id="6ac70-131">-ConfigurationName &lt;String&gt;</span></span>
+### <a name="-configurationname-ltstringgt"></a><span data-ttu-id="798b3-131">-ConfigurationName &lt;String&gt;</span><span class="sxs-lookup"><span data-stu-id="798b3-131">-ConfigurationName &lt;String&gt;</span></span>
 
-<span data-ttu-id="6ac70-132">指定要测试的 Windows PowerShell 会话配置的名称（又称为终结点或运行空间）。</span><span class="sxs-lookup"><span data-stu-id="6ac70-132">Specifies the name of the Windows PowerShell session configuration, also known as endpoint or runspace, to test.</span></span>
+<span data-ttu-id="798b3-132">指定要测试的 Windows PowerShell 会话配置的名称（又称为终结点或运行空间）。</span><span class="sxs-lookup"><span data-stu-id="798b3-132">Specifies the name of the Windows PowerShell session configuration, also known as endpoint or runspace, to test.</span></span>
 
-|||  
+|||
 |-|-|
-| <span data-ttu-id="6ac70-133">别名</span><span class="sxs-lookup"><span data-stu-id="6ac70-133">Aliases</span></span>                              | <span data-ttu-id="6ac70-134">无</span><span class="sxs-lookup"><span data-stu-id="6ac70-134">none</span></span>                                 |
-| <span data-ttu-id="6ac70-135">是否必需？</span><span class="sxs-lookup"><span data-stu-id="6ac70-135">Required?</span></span>                            | <span data-ttu-id="6ac70-136">false</span><span class="sxs-lookup"><span data-stu-id="6ac70-136">false</span></span>                                |
-| <span data-ttu-id="6ac70-137">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="6ac70-137">Position?</span></span>                            | <span data-ttu-id="6ac70-138">3</span><span class="sxs-lookup"><span data-stu-id="6ac70-138">3</span></span>                                    |
-| <span data-ttu-id="6ac70-139">默认值</span><span class="sxs-lookup"><span data-stu-id="6ac70-139">Default Value</span></span>                        | <span data-ttu-id="6ac70-140">无</span><span class="sxs-lookup"><span data-stu-id="6ac70-140">none</span></span>                                 |
-| <span data-ttu-id="6ac70-141">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="6ac70-141">Accept Pipeline Input?</span></span>               | <span data-ttu-id="6ac70-142">false</span><span class="sxs-lookup"><span data-stu-id="6ac70-142">false</span></span>                                |
-| <span data-ttu-id="6ac70-143">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="6ac70-143">Accept Wildcard Characters?</span></span>          | <span data-ttu-id="6ac70-144">false</span><span class="sxs-lookup"><span data-stu-id="6ac70-144">false</span></span>                                |
+| <span data-ttu-id="798b3-133">别名</span><span class="sxs-lookup"><span data-stu-id="798b3-133">Aliases</span></span>                              | <span data-ttu-id="798b3-134">无</span><span class="sxs-lookup"><span data-stu-id="798b3-134">none</span></span>                                 |
+| <span data-ttu-id="798b3-135">是否必需？</span><span class="sxs-lookup"><span data-stu-id="798b3-135">Required?</span></span>                            | <span data-ttu-id="798b3-136">false</span><span class="sxs-lookup"><span data-stu-id="798b3-136">false</span></span>                                |
+| <span data-ttu-id="798b3-137">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="798b3-137">Position?</span></span>                            | <span data-ttu-id="798b3-138">3</span><span class="sxs-lookup"><span data-stu-id="798b3-138">3</span></span>                                    |
+| <span data-ttu-id="798b3-139">默认值</span><span class="sxs-lookup"><span data-stu-id="798b3-139">Default Value</span></span>                        | <span data-ttu-id="798b3-140">无</span><span class="sxs-lookup"><span data-stu-id="798b3-140">none</span></span>                                 |
+| <span data-ttu-id="798b3-141">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="798b3-141">Accept Pipeline Input?</span></span>               | <span data-ttu-id="798b3-142">false</span><span class="sxs-lookup"><span data-stu-id="798b3-142">false</span></span>                                |
+| <span data-ttu-id="798b3-143">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="798b3-143">Accept Wildcard Characters?</span></span>          | <span data-ttu-id="798b3-144">false</span><span class="sxs-lookup"><span data-stu-id="798b3-144">false</span></span>                                |
 
-### <a name="-connectionuri-lturigt"></a><span data-ttu-id="6ac70-145">-ConnectionUri &lt;Uri&gt;</span><span class="sxs-lookup"><span data-stu-id="6ac70-145">-ConnectionUri &lt;Uri&gt;</span></span>
+### <a name="-connectionuri-lturigt"></a><span data-ttu-id="798b3-145">-ConnectionUri &lt;Uri&gt;</span><span class="sxs-lookup"><span data-stu-id="798b3-145">-ConnectionUri &lt;Uri&gt;</span></span>
 
-<span data-ttu-id="6ac70-146">指定要测试的连接 URI。</span><span class="sxs-lookup"><span data-stu-id="6ac70-146">Specifies the connection URI to test.</span></span>
+<span data-ttu-id="798b3-146">指定要测试的连接 URI。</span><span class="sxs-lookup"><span data-stu-id="798b3-146">Specifies the connection URI to test.</span></span>
 
-|||  
+|||
 |-|-|
-| <span data-ttu-id="6ac70-147">别名</span><span class="sxs-lookup"><span data-stu-id="6ac70-147">Aliases</span></span>                              | <span data-ttu-id="6ac70-148">无</span><span class="sxs-lookup"><span data-stu-id="6ac70-148">none</span></span>                                 |
-| <span data-ttu-id="6ac70-149">是否必需？</span><span class="sxs-lookup"><span data-stu-id="6ac70-149">Required?</span></span>                            | <span data-ttu-id="6ac70-150">true</span><span class="sxs-lookup"><span data-stu-id="6ac70-150">true</span></span>                                 |
-| <span data-ttu-id="6ac70-151">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="6ac70-151">Position?</span></span>                            | <span data-ttu-id="6ac70-152">2</span><span class="sxs-lookup"><span data-stu-id="6ac70-152">2</span></span>                                    |
-| <span data-ttu-id="6ac70-153">默认值</span><span class="sxs-lookup"><span data-stu-id="6ac70-153">Default Value</span></span>                        | <span data-ttu-id="6ac70-154">无</span><span class="sxs-lookup"><span data-stu-id="6ac70-154">none</span></span>                                 |
-| <span data-ttu-id="6ac70-155">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="6ac70-155">Accept Pipeline Input?</span></span>               | <span data-ttu-id="6ac70-156">false</span><span class="sxs-lookup"><span data-stu-id="6ac70-156">false</span></span>                                |
-| <span data-ttu-id="6ac70-157">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="6ac70-157">Accept Wildcard Characters?</span></span>          | <span data-ttu-id="6ac70-158">false</span><span class="sxs-lookup"><span data-stu-id="6ac70-158">false</span></span>                                |
+| <span data-ttu-id="798b3-147">别名</span><span class="sxs-lookup"><span data-stu-id="798b3-147">Aliases</span></span>                              | <span data-ttu-id="798b3-148">无</span><span class="sxs-lookup"><span data-stu-id="798b3-148">none</span></span>                                 |
+| <span data-ttu-id="798b3-149">是否必需？</span><span class="sxs-lookup"><span data-stu-id="798b3-149">Required?</span></span>                            | <span data-ttu-id="798b3-150">true</span><span class="sxs-lookup"><span data-stu-id="798b3-150">true</span></span>                                 |
+| <span data-ttu-id="798b3-151">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="798b3-151">Position?</span></span>                            | <span data-ttu-id="798b3-152">2</span><span class="sxs-lookup"><span data-stu-id="798b3-152">2</span></span>                                    |
+| <span data-ttu-id="798b3-153">默认值</span><span class="sxs-lookup"><span data-stu-id="798b3-153">Default Value</span></span>                        | <span data-ttu-id="798b3-154">无</span><span class="sxs-lookup"><span data-stu-id="798b3-154">none</span></span>                                 |
+| <span data-ttu-id="798b3-155">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="798b3-155">Accept Pipeline Input?</span></span>               | <span data-ttu-id="798b3-156">false</span><span class="sxs-lookup"><span data-stu-id="798b3-156">false</span></span>                                |
+| <span data-ttu-id="798b3-157">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="798b3-157">Accept Wildcard Characters?</span></span>          | <span data-ttu-id="798b3-158">false</span><span class="sxs-lookup"><span data-stu-id="798b3-158">false</span></span>                                |
 
-### <a name="-credential-ltpscredentialgt"></a><span data-ttu-id="6ac70-159">-Credential &lt;PSCredential&gt;</span><span class="sxs-lookup"><span data-stu-id="6ac70-159">-Credential &lt;PSCredential&gt;</span></span>
+### <a name="-credential-ltpscredentialgt"></a><span data-ttu-id="798b3-159">-Credential &lt;PSCredential&gt;</span><span class="sxs-lookup"><span data-stu-id="798b3-159">-Credential &lt;PSCredential&gt;</span></span>
 
-<span data-ttu-id="6ac70-160">为要用于测试 Windows PowerShell Web 访问授权规则的用户帐户指定 PSCredential 对象。</span><span class="sxs-lookup"><span data-stu-id="6ac70-160">Specifies a **PSCredential** object for a user account that you want to use to test Windows PowerShell Web Access authorization rules.</span></span> <span data-ttu-id="6ac70-161">如果不添加此参数，cmdlet 将使用当前登录的用户帐户。</span><span class="sxs-lookup"><span data-stu-id="6ac70-161">If you do not add this parameter, the cmdlet uses the currently logged-on user account.</span></span> <span data-ttu-id="6ac70-162">要获取 PSCredential 对象（用于以远程方式测试授权规则），请运行 [Get-Credential cmdlet](http://go.microsoft.com/fwlink/?LinkID=293936)。</span><span class="sxs-lookup"><span data-stu-id="6ac70-162">To get a **PSCredential** object, which is required to test authorization rules remotely, run the [Get-Credential](http://go.microsoft.com/fwlink/?LinkID=293936) cmdlet.</span></span>
+<span data-ttu-id="798b3-160">为要用于测试 Windows PowerShell Web 访问授权规则的用户帐户指定 PSCredential 对象。</span><span class="sxs-lookup"><span data-stu-id="798b3-160">Specifies a **PSCredential** object for a user account that you want to use to test Windows PowerShell Web Access authorization rules.</span></span> <span data-ttu-id="798b3-161">如果不添加此参数，cmdlet 将使用当前登录的用户帐户。</span><span class="sxs-lookup"><span data-stu-id="798b3-161">If you do not add this parameter, the cmdlet uses the currently logged-on user account.</span></span> <span data-ttu-id="798b3-162">要获取 PSCredential 对象（用于以远程方式测试授权规则），请运行 [Get-Credential cmdlet](http://go.microsoft.com/fwlink/?LinkID=293936)。</span><span class="sxs-lookup"><span data-stu-id="798b3-162">To get a **PSCredential** object, which is required to test authorization rules remotely, run the [Get-Credential](http://go.microsoft.com/fwlink/?LinkID=293936) cmdlet.</span></span>
 
-|||  
+|||
 |-|-|
-| <span data-ttu-id="6ac70-163">别名</span><span class="sxs-lookup"><span data-stu-id="6ac70-163">Aliases</span></span>                              | <span data-ttu-id="6ac70-164">无</span><span class="sxs-lookup"><span data-stu-id="6ac70-164">none</span></span>                                 |
-| <span data-ttu-id="6ac70-165">是否必需？</span><span class="sxs-lookup"><span data-stu-id="6ac70-165">Required?</span></span>                            | <span data-ttu-id="6ac70-166">false</span><span class="sxs-lookup"><span data-stu-id="6ac70-166">false</span></span>                                |
-| <span data-ttu-id="6ac70-167">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="6ac70-167">Position?</span></span>                            | <span data-ttu-id="6ac70-168">named</span><span class="sxs-lookup"><span data-stu-id="6ac70-168">named</span></span>                                |
-| <span data-ttu-id="6ac70-169">默认值</span><span class="sxs-lookup"><span data-stu-id="6ac70-169">Default Value</span></span>                        | <span data-ttu-id="6ac70-170">无</span><span class="sxs-lookup"><span data-stu-id="6ac70-170">none</span></span>                                 |
-| <span data-ttu-id="6ac70-171">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="6ac70-171">Accept Pipeline Input?</span></span>               | <span data-ttu-id="6ac70-172">false</span><span class="sxs-lookup"><span data-stu-id="6ac70-172">false</span></span>                                |
-| <span data-ttu-id="6ac70-173">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="6ac70-173">Accept Wildcard Characters?</span></span>          | <span data-ttu-id="6ac70-174">false</span><span class="sxs-lookup"><span data-stu-id="6ac70-174">false</span></span>                                |
+| <span data-ttu-id="798b3-163">别名</span><span class="sxs-lookup"><span data-stu-id="798b3-163">Aliases</span></span>                              | <span data-ttu-id="798b3-164">无</span><span class="sxs-lookup"><span data-stu-id="798b3-164">none</span></span>                                 |
+| <span data-ttu-id="798b3-165">是否必需？</span><span class="sxs-lookup"><span data-stu-id="798b3-165">Required?</span></span>                            | <span data-ttu-id="798b3-166">false</span><span class="sxs-lookup"><span data-stu-id="798b3-166">false</span></span>                                |
+| <span data-ttu-id="798b3-167">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="798b3-167">Position?</span></span>                            | <span data-ttu-id="798b3-168">named</span><span class="sxs-lookup"><span data-stu-id="798b3-168">named</span></span>                                |
+| <span data-ttu-id="798b3-169">默认值</span><span class="sxs-lookup"><span data-stu-id="798b3-169">Default Value</span></span>                        | <span data-ttu-id="798b3-170">无</span><span class="sxs-lookup"><span data-stu-id="798b3-170">none</span></span>                                 |
+| <span data-ttu-id="798b3-171">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="798b3-171">Accept Pipeline Input?</span></span>               | <span data-ttu-id="798b3-172">false</span><span class="sxs-lookup"><span data-stu-id="798b3-172">false</span></span>                                |
+| <span data-ttu-id="798b3-173">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="798b3-173">Accept Wildcard Characters?</span></span>          | <span data-ttu-id="798b3-174">false</span><span class="sxs-lookup"><span data-stu-id="798b3-174">false</span></span>                                |
 
-### <a name="-rule-ltpswaauthorizationrulegt"></a><span data-ttu-id="6ac70-175">-Rule &lt;PswaAuthorizationRule\[\]&gt;</span><span class="sxs-lookup"><span data-stu-id="6ac70-175">-Rule &lt;PswaAuthorizationRule\[\]&gt;</span></span>
+### <a name="-rule-ltpswaauthorizationrulegt"></a><span data-ttu-id="798b3-175">-Rule &lt;PswaAuthorizationRule\[\]&gt;</span><span class="sxs-lookup"><span data-stu-id="798b3-175">-Rule &lt;PswaAuthorizationRule\[\]&gt;</span></span>
 
-<span data-ttu-id="6ac70-176">指定要测试的规则子集。</span><span class="sxs-lookup"><span data-stu-id="6ac70-176">Specifies a subset of rules to test.</span></span> <span data-ttu-id="6ac70-177">如果此参数未指定，则此 cmdlet 将针对所有授权规则进行测试。</span><span class="sxs-lookup"><span data-stu-id="6ac70-177">If this parameter is not specified, then this cmdlet tests against all authorization rules.</span></span>
+<span data-ttu-id="798b3-176">指定要测试的规则子集。</span><span class="sxs-lookup"><span data-stu-id="798b3-176">Specifies a subset of rules to test.</span></span> <span data-ttu-id="798b3-177">如果此参数未指定，则此 cmdlet 将针对所有授权规则进行测试。</span><span class="sxs-lookup"><span data-stu-id="798b3-177">If this parameter is not specified, then this cmdlet tests against all authorization rules.</span></span>
 
-|||  
+|||
 |-|-|
-| <span data-ttu-id="6ac70-178">别名</span><span class="sxs-lookup"><span data-stu-id="6ac70-178">Aliases</span></span>                              | <span data-ttu-id="6ac70-179">无</span><span class="sxs-lookup"><span data-stu-id="6ac70-179">none</span></span>                                 |
-| <span data-ttu-id="6ac70-180">是否必需？</span><span class="sxs-lookup"><span data-stu-id="6ac70-180">Required?</span></span>                            | <span data-ttu-id="6ac70-181">false</span><span class="sxs-lookup"><span data-stu-id="6ac70-181">false</span></span>                                |
-| <span data-ttu-id="6ac70-182">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="6ac70-182">Position?</span></span>                            | <span data-ttu-id="6ac70-183">named</span><span class="sxs-lookup"><span data-stu-id="6ac70-183">named</span></span>                                |
-| <span data-ttu-id="6ac70-184">默认值</span><span class="sxs-lookup"><span data-stu-id="6ac70-184">Default Value</span></span>                        | <span data-ttu-id="6ac70-185">无</span><span class="sxs-lookup"><span data-stu-id="6ac70-185">none</span></span>                                 |
-| <span data-ttu-id="6ac70-186">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="6ac70-186">Accept Pipeline Input?</span></span>               | <span data-ttu-id="6ac70-187">True (ByValue)</span><span class="sxs-lookup"><span data-stu-id="6ac70-187">True (ByValue)</span></span>                       |
-| <span data-ttu-id="6ac70-188">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="6ac70-188">Accept Wildcard Characters?</span></span>          | <span data-ttu-id="6ac70-189">false</span><span class="sxs-lookup"><span data-stu-id="6ac70-189">false</span></span>                                |
+| <span data-ttu-id="798b3-178">别名</span><span class="sxs-lookup"><span data-stu-id="798b3-178">Aliases</span></span>                              | <span data-ttu-id="798b3-179">无</span><span class="sxs-lookup"><span data-stu-id="798b3-179">none</span></span>                                 |
+| <span data-ttu-id="798b3-180">是否必需？</span><span class="sxs-lookup"><span data-stu-id="798b3-180">Required?</span></span>                            | <span data-ttu-id="798b3-181">false</span><span class="sxs-lookup"><span data-stu-id="798b3-181">false</span></span>                                |
+| <span data-ttu-id="798b3-182">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="798b3-182">Position?</span></span>                            | <span data-ttu-id="798b3-183">named</span><span class="sxs-lookup"><span data-stu-id="798b3-183">named</span></span>                                |
+| <span data-ttu-id="798b3-184">默认值</span><span class="sxs-lookup"><span data-stu-id="798b3-184">Default Value</span></span>                        | <span data-ttu-id="798b3-185">无</span><span class="sxs-lookup"><span data-stu-id="798b3-185">none</span></span>                                 |
+| <span data-ttu-id="798b3-186">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="798b3-186">Accept Pipeline Input?</span></span>               | <span data-ttu-id="798b3-187">True (ByValue)</span><span class="sxs-lookup"><span data-stu-id="798b3-187">True (ByValue)</span></span>                       |
+| <span data-ttu-id="798b3-188">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="798b3-188">Accept Wildcard Characters?</span></span>          | <span data-ttu-id="798b3-189">false</span><span class="sxs-lookup"><span data-stu-id="798b3-189">false</span></span>                                |
 
-### <a name="-username-ltstringgt"></a><span data-ttu-id="6ac70-190">-UserName &lt;String&gt;</span><span class="sxs-lookup"><span data-stu-id="6ac70-190">-UserName &lt;String&gt;</span></span>
+### <a name="-username-ltstringgt"></a><span data-ttu-id="798b3-190">-UserName &lt;String&gt;</span><span class="sxs-lookup"><span data-stu-id="798b3-190">-UserName &lt;String&gt;</span></span>
 
-<span data-ttu-id="6ac70-191">指定要测试的用户的名称。</span><span class="sxs-lookup"><span data-stu-id="6ac70-191">Specifies the name of the user to test.</span></span>
+<span data-ttu-id="798b3-191">指定要测试的用户的名称。</span><span class="sxs-lookup"><span data-stu-id="798b3-191">Specifies the name of the user to test.</span></span>
 
-|||  
+|||
 |-|-|
-| <span data-ttu-id="6ac70-192">别名</span><span class="sxs-lookup"><span data-stu-id="6ac70-192">Aliases</span></span>                              | <span data-ttu-id="6ac70-193">无</span><span class="sxs-lookup"><span data-stu-id="6ac70-193">none</span></span>                                 |
-| <span data-ttu-id="6ac70-194">是否必需？</span><span class="sxs-lookup"><span data-stu-id="6ac70-194">Required?</span></span>                            | <span data-ttu-id="6ac70-195">true</span><span class="sxs-lookup"><span data-stu-id="6ac70-195">true</span></span>                                 |
-| <span data-ttu-id="6ac70-196">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="6ac70-196">Position?</span></span>                            | <span data-ttu-id="6ac70-197">1</span><span class="sxs-lookup"><span data-stu-id="6ac70-197">1</span></span>                                    |
-| <span data-ttu-id="6ac70-198">默认值</span><span class="sxs-lookup"><span data-stu-id="6ac70-198">Default Value</span></span>                        | <span data-ttu-id="6ac70-199">无</span><span class="sxs-lookup"><span data-stu-id="6ac70-199">none</span></span>                                 |
-| <span data-ttu-id="6ac70-200">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="6ac70-200">Accept Pipeline Input?</span></span>               | <span data-ttu-id="6ac70-201">false</span><span class="sxs-lookup"><span data-stu-id="6ac70-201">false</span></span>                                |
-| <span data-ttu-id="6ac70-202">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="6ac70-202">Accept Wildcard Characters?</span></span>          | <span data-ttu-id="6ac70-203">false</span><span class="sxs-lookup"><span data-stu-id="6ac70-203">false</span></span>                                |
+| <span data-ttu-id="798b3-192">别名</span><span class="sxs-lookup"><span data-stu-id="798b3-192">Aliases</span></span>                              | <span data-ttu-id="798b3-193">无</span><span class="sxs-lookup"><span data-stu-id="798b3-193">none</span></span>                                 |
+| <span data-ttu-id="798b3-194">是否必需？</span><span class="sxs-lookup"><span data-stu-id="798b3-194">Required?</span></span>                            | <span data-ttu-id="798b3-195">true</span><span class="sxs-lookup"><span data-stu-id="798b3-195">true</span></span>                                 |
+| <span data-ttu-id="798b3-196">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="798b3-196">Position?</span></span>                            | <span data-ttu-id="798b3-197">1</span><span class="sxs-lookup"><span data-stu-id="798b3-197">1</span></span>                                    |
+| <span data-ttu-id="798b3-198">默认值</span><span class="sxs-lookup"><span data-stu-id="798b3-198">Default Value</span></span>                        | <span data-ttu-id="798b3-199">无</span><span class="sxs-lookup"><span data-stu-id="798b3-199">none</span></span>                                 |
+| <span data-ttu-id="798b3-200">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="798b3-200">Accept Pipeline Input?</span></span>               | <span data-ttu-id="798b3-201">false</span><span class="sxs-lookup"><span data-stu-id="798b3-201">false</span></span>                                |
+| <span data-ttu-id="798b3-202">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="798b3-202">Accept Wildcard Characters?</span></span>          | <span data-ttu-id="798b3-203">false</span><span class="sxs-lookup"><span data-stu-id="798b3-203">false</span></span>                                |
 
-### <a name="ltcommonparametersgt"></a><span data-ttu-id="6ac70-204">&lt;CommonParameters&gt;</span><span class="sxs-lookup"><span data-stu-id="6ac70-204">&lt;CommonParameters&gt;</span></span>
+### <a name="ltcommonparametersgt"></a><span data-ttu-id="798b3-204">&lt;CommonParameters&gt;</span><span class="sxs-lookup"><span data-stu-id="798b3-204">&lt;CommonParameters&gt;</span></span>
 
-<span data-ttu-id="6ac70-205">此 cmdlet 支持通用参数：-Verbose、-Debug、-ErrorAction、-ErrorVariable、-OutBuffer 和 -OutVariable。</span><span class="sxs-lookup"><span data-stu-id="6ac70-205">This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable.</span></span>
-<span data-ttu-id="6ac70-206">有关详细信息，请参阅 [about_CommonParameters](http://go.microsoft.com/fwlink/p/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="6ac70-206">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/p/?LinkID=113216).</span></span>
+<span data-ttu-id="798b3-205">此 cmdlet 支持通用参数：-Verbose、-Debug、-ErrorAction、-ErrorVariable、-OutBuffer 和 -OutVariable。</span><span class="sxs-lookup"><span data-stu-id="798b3-205">This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable.</span></span>
+<span data-ttu-id="798b3-206">有关详细信息，请参阅 [about_CommonParameters](http://go.microsoft.com/fwlink/p/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="798b3-206">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/p/?LinkID=113216).</span></span>
 
-## <a name="inputs"></a><span data-ttu-id="6ac70-207">输入</span><span class="sxs-lookup"><span data-stu-id="6ac70-207">INPUTS</span></span>
+## <a name="inputs"></a><span data-ttu-id="798b3-207">输入</span><span class="sxs-lookup"><span data-stu-id="798b3-207">INPUTS</span></span>
 
-### <a name="microsoftmanagementpowershellwebaccesspswaauthorizationrule"></a><span data-ttu-id="6ac70-208">Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule\[\]</span><span class="sxs-lookup"><span data-stu-id="6ac70-208">Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule\[\]</span></span>
+### <a name="microsoftmanagementpowershellwebaccesspswaauthorizationrule"></a><span data-ttu-id="798b3-208">Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule\[\]</span><span class="sxs-lookup"><span data-stu-id="798b3-208">Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule\[\]</span></span>
 
-<span data-ttu-id="6ac70-209">此 cmdlet 接受一组 PswaAuthorizationRule 对象作为输入。</span><span class="sxs-lookup"><span data-stu-id="6ac70-209">This cmdlet accepts an array of PswaAuthorizationRule objects as input.</span></span>
+<span data-ttu-id="798b3-209">此 cmdlet 接受一组 PswaAuthorizationRule 对象作为输入。</span><span class="sxs-lookup"><span data-stu-id="798b3-209">This cmdlet accepts an array of PswaAuthorizationRule objects as input.</span></span>
 
-## <a name="outputs"></a><span data-ttu-id="6ac70-210">输出</span><span class="sxs-lookup"><span data-stu-id="6ac70-210">OUTPUTS</span></span>
+## <a name="outputs"></a><span data-ttu-id="798b3-210">输出</span><span class="sxs-lookup"><span data-stu-id="798b3-210">OUTPUTS</span></span>
 
-### <a name="microsoftmanagementpowershellwebaccesspswaauthorizationrule"></a><span data-ttu-id="6ac70-211">Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule\[\]</span><span class="sxs-lookup"><span data-stu-id="6ac70-211">Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule\[\]</span></span>
+### <a name="microsoftmanagementpowershellwebaccesspswaauthorizationrule"></a><span data-ttu-id="798b3-211">Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule\[\]</span><span class="sxs-lookup"><span data-stu-id="798b3-211">Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule\[\]</span></span>
 
-<span data-ttu-id="6ac70-212">此 cmdlet 生成一组 PswaAuthorizationRule 对象作为输出。</span><span class="sxs-lookup"><span data-stu-id="6ac70-212">This cmdlet produces an array of PswaAuthorizationRule objects as output.</span></span>
+<span data-ttu-id="798b3-212">此 cmdlet 生成一组 PswaAuthorizationRule 对象作为输出。</span><span class="sxs-lookup"><span data-stu-id="798b3-212">This cmdlet produces an array of PswaAuthorizationRule objects as output.</span></span>
 
-## <a name="examples"></a><span data-ttu-id="6ac70-213">示例</span><span class="sxs-lookup"><span data-stu-id="6ac70-213">EXAMPLES</span></span>
+## <a name="examples"></a><span data-ttu-id="798b3-213">示例</span><span class="sxs-lookup"><span data-stu-id="798b3-213">EXAMPLES</span></span>
 
-### <a name="example-1"></a><span data-ttu-id="6ac70-214">示例 1</span><span class="sxs-lookup"><span data-stu-id="6ac70-214">EXAMPLE 1</span></span>
+### <a name="example-1"></a><span data-ttu-id="798b3-214">示例 1</span><span class="sxs-lookup"><span data-stu-id="798b3-214">EXAMPLE 1</span></span>
 
-<span data-ttu-id="6ac70-215">此示例测试所有授权规则，以显示所有允许用户 contoso\\mhanson 连接到计算机 srv2 的规则，并使用名为 test 的 Windows PowerShell 会话配置。</span><span class="sxs-lookup"><span data-stu-id="6ac70-215">This example tests all authorization rules in order to display all the rules that allow the user *contoso\\mhanson* to connect to the computer *srv2* and use a Windows PowerShell session configuration named *test*.</span></span>
+<span data-ttu-id="798b3-215">此示例测试所有授权规则，以显示所有允许用户 contoso\\mhanson 连接到计算机 srv2 的规则，并使用名为 test 的 Windows PowerShell 会话配置。</span><span class="sxs-lookup"><span data-stu-id="798b3-215">This example tests all authorization rules in order to display all the rules that allow the user *contoso\\mhanson* to connect to the computer *srv2* and use a Windows PowerShell session configuration named *test*.</span></span>
 
 ```
 Test-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserName contoso\mhanson -ConfigurationName test
 ```
 
-### <a name="example-2"></a><span data-ttu-id="6ac70-216">示例 2</span><span class="sxs-lookup"><span data-stu-id="6ac70-216">EXAMPLE 2</span></span>
+### <a name="example-2"></a><span data-ttu-id="798b3-216">示例 2</span><span class="sxs-lookup"><span data-stu-id="798b3-216">EXAMPLE 2</span></span>
 
-<span data-ttu-id="6ac70-217">此示例测试所有授权规则，以检查在用户 contoso\\mhanson 上应用了哪些授权规则。</span><span class="sxs-lookup"><span data-stu-id="6ac70-217">This example tests all authorization rules to check which authorization rules apply to the user *contoso\\mhanson*.</span></span>
+<span data-ttu-id="798b3-217">此示例测试所有授权规则，以检查在用户 contoso\\mhanson 上应用了哪些授权规则。</span><span class="sxs-lookup"><span data-stu-id="798b3-217">This example tests all authorization rules to check which authorization rules apply to the user *contoso\\mhanson*.</span></span>
 
 ```
 Test-PswaAuthorizationRule -UserName contoso\mhanson -ComputerName *
 ```
 
-## <a name="related-topics"></a><span data-ttu-id="6ac70-218">相关主题</span><span class="sxs-lookup"><span data-stu-id="6ac70-218">Related topics</span></span>
+## <a name="related-topics"></a><span data-ttu-id="798b3-218">相关主题</span><span class="sxs-lookup"><span data-stu-id="798b3-218">Related topics</span></span>
 
-- [<span data-ttu-id="6ac70-219">Add-PswaAuthorizationRule</span><span class="sxs-lookup"><span data-stu-id="6ac70-219">Add-PswaAuthorizationRule</span></span>](add-pswaauthorizationrule.md)
-- [<span data-ttu-id="6ac70-220">Get-PswaAuthorizationRule</span><span class="sxs-lookup"><span data-stu-id="6ac70-220">Get-PswaAuthorizationRule</span></span>](get-pswaauthorizationrule.md)
-- [<span data-ttu-id="6ac70-221">Install-PswaWebApplication</span><span class="sxs-lookup"><span data-stu-id="6ac70-221">Install-PswaWebApplication</span></span>](install-pswawebapplication.md)
-- [<span data-ttu-id="6ac70-222">Remove-PswaAuthorizationRule</span><span class="sxs-lookup"><span data-stu-id="6ac70-222">Remove-PswaAuthorizationRule</span></span>](remove-pswaauthorizationrule.md)
+- [<span data-ttu-id="798b3-219">Add-PswaAuthorizationRule</span><span class="sxs-lookup"><span data-stu-id="798b3-219">Add-PswaAuthorizationRule</span></span>](add-pswaauthorizationrule.md)
+- [<span data-ttu-id="798b3-220">Get-PswaAuthorizationRule</span><span class="sxs-lookup"><span data-stu-id="798b3-220">Get-PswaAuthorizationRule</span></span>](get-pswaauthorizationrule.md)
+- [<span data-ttu-id="798b3-221">Install-PswaWebApplication</span><span class="sxs-lookup"><span data-stu-id="798b3-221">Install-PswaWebApplication</span></span>](install-pswawebapplication.md)
+- [<span data-ttu-id="798b3-222">Remove-PswaAuthorizationRule</span><span class="sxs-lookup"><span data-stu-id="798b3-222">Remove-PswaAuthorizationRule</span></span>](remove-pswaauthorizationrule.md)

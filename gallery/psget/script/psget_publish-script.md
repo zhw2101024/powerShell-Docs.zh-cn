@@ -1,34 +1,34 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "库,powershell,cmdlet,psget"
+keywords: 库,powershell,cmdlet,psget
 title: Publish-Script
-ms.openlocfilehash: 0d2fd87645d2286e87e68198844adce8909739cb
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 6e273a4bacd2bf150a6fa6c4436c3c34f41078ad
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="publish-script"></a><span data-ttu-id="a5e3d-103">Publish-Script</span><span class="sxs-lookup"><span data-stu-id="a5e3d-103">Publish-Script</span></span>
+# <a name="publish-script"></a><span data-ttu-id="18e6b-103">Publish-Script</span><span class="sxs-lookup"><span data-stu-id="18e6b-103">Publish-Script</span></span>
 
-<span data-ttu-id="a5e3d-104">Publish-Script cmdlet 会将指定的脚本发布到联机库。</span><span class="sxs-lookup"><span data-stu-id="a5e3d-104">The Publish-Script cmdlet publishes the specified script to the online gallery.</span></span>
+<span data-ttu-id="18e6b-104">Publish-Script cmdlet 会将指定的脚本发布到联机库。</span><span class="sxs-lookup"><span data-stu-id="18e6b-104">The Publish-Script cmdlet publishes the specified script to the online gallery.</span></span>
 
-## <a name="description"></a><span data-ttu-id="a5e3d-105">说明</span><span class="sxs-lookup"><span data-stu-id="a5e3d-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="18e6b-105">说明</span><span class="sxs-lookup"><span data-stu-id="18e6b-105">Description</span></span>
 
-<span data-ttu-id="a5e3d-106">Publish-Script cmdlet 可发布包含诸如 Version、Guid、Author 和 Description 等有效元数据的脚本文件。Publish-Script cmdlet 上的 Force 开关参数会在不提示的情况下启动 NuGet.exe。</span><span class="sxs-lookup"><span data-stu-id="a5e3d-106">Publish-Script cmdlet lets you to publish your script file with valid metadata like Version, Guid, Author, and Description, etc. Force switch parameter on Publish-Script cmdlet bootstraps the NuGet.exe without prompting.</span></span>
+<span data-ttu-id="18e6b-106">Publish-Script cmdlet 可发布包含诸如 Version、Guid、Author 和 Description 等有效元数据的脚本文件。Publish-Script cmdlet 上的 Force 开关参数会在不提示的情况下启动 NuGet.exe。</span><span class="sxs-lookup"><span data-stu-id="18e6b-106">Publish-Script cmdlet lets you to publish your script file with valid metadata like Version, Guid, Author, and Description, etc. Force switch parameter on Publish-Script cmdlet bootstraps the NuGet.exe without prompting.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="a5e3d-107">Cmdlet 语法</span><span class="sxs-lookup"><span data-stu-id="a5e3d-107">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="18e6b-107">Cmdlet 语法</span><span class="sxs-lookup"><span data-stu-id="18e6b-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Publish-Script -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="a5e3d-108">Cmdlet 联机帮助参考</span><span class="sxs-lookup"><span data-stu-id="a5e3d-108">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="18e6b-108">Cmdlet 联机帮助参考</span><span class="sxs-lookup"><span data-stu-id="18e6b-108">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="a5e3d-109">Publish-Script</span><span class="sxs-lookup"><span data-stu-id="a5e3d-109">Publish-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619788)
+[<span data-ttu-id="18e6b-109">Publish-Script</span><span class="sxs-lookup"><span data-stu-id="18e6b-109">Publish-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619788)
 
-## <a name="example-commands"></a><span data-ttu-id="a5e3d-110">示例命令</span><span class="sxs-lookup"><span data-stu-id="a5e3d-110">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="18e6b-110">示例命令</span><span class="sxs-lookup"><span data-stu-id="18e6b-110">Example commands</span></span>
 
 ```powershell
 # Publish the really basic script file with required metadata
@@ -75,4 +75,3 @@ PackageManagementProvider : NuGet
 AdditionalMetadata : {description, developmentDependency, tags, PackageManagementProvider...}
 
 ```
-

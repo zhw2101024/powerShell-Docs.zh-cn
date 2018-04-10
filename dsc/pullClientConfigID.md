@@ -1,23 +1,23 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "使用配置 ID 设置请求客户端"
-ms.openlocfilehash: 6e3dda1de0bfbf52fb876fdcd2dd2e99da4583dd
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,配置,安装程序
+title: 使用配置 ID 设置请求客户端
+ms.openlocfilehash: 93e533fd4e729e1af0124ad69ca7e384e1cb3aa4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="setting-up-a-pull-client-using-configuration-id"></a><span data-ttu-id="f269b-103">使用配置 ID 设置请求客户端</span><span class="sxs-lookup"><span data-stu-id="f269b-103">Setting up a pull client using configuration ID</span></span>
+# <a name="setting-up-a-pull-client-using-configuration-id"></a><span data-ttu-id="d74d4-103">使用配置 ID 设置请求客户端</span><span class="sxs-lookup"><span data-stu-id="d74d4-103">Setting up a pull client using configuration ID</span></span>
 
-> <span data-ttu-id="f269b-104">适用于：Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="f269b-104">Applies To: Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="d74d4-104">适用于：Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="d74d4-104">Applies To: Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="f269b-105">必须告知每个目标节点使用请求模式，并为其提供用于联系请求服务器以获取配置的 URL。</span><span class="sxs-lookup"><span data-stu-id="f269b-105">Each target node has to be told to use pull mode and given the URL where it can contact the pull server to get configurations.</span></span> <span data-ttu-id="f269b-106">若要执行此操作，必须为本地配置管理器 (LCM) 配置所需信息。</span><span class="sxs-lookup"><span data-stu-id="f269b-106">To do this, you have to configure the Local Configuration Manager (LCM) with the necessary information.</span></span> <span data-ttu-id="f269b-107">若要配置 LCM，可创建一个使用 **DSCLocalConfigurationManager** 特性修饰的特殊类型配置。</span><span class="sxs-lookup"><span data-stu-id="f269b-107">To configure the LCM, you create a special type of configuration, decorated with the **DSCLocalConfigurationManager** attribute.</span></span> <span data-ttu-id="f269b-108">有关配置 LCM 的详细信息，请参阅[配置本地配置管理器](metaConfig.md)。</span><span class="sxs-lookup"><span data-stu-id="f269b-108">For more information about configuring the LCM, see [Configuring the Local Configuration Manager](metaConfig.md).</span></span>
+<span data-ttu-id="d74d4-105">必须告知每个目标节点使用请求模式，并为其提供用于联系请求服务器以获取配置的 URL。</span><span class="sxs-lookup"><span data-stu-id="d74d4-105">Each target node has to be told to use pull mode and given the URL where it can contact the pull server to get configurations.</span></span> <span data-ttu-id="d74d4-106">若要执行此操作，必须为本地配置管理器 (LCM) 配置所需信息。</span><span class="sxs-lookup"><span data-stu-id="d74d4-106">To do this, you have to configure the Local Configuration Manager (LCM) with the necessary information.</span></span> <span data-ttu-id="d74d4-107">若要配置 LCM，可创建一个使用 **DSCLocalConfigurationManager** 特性修饰的特殊类型配置。</span><span class="sxs-lookup"><span data-stu-id="d74d4-107">To configure the LCM, you create a special type of configuration, decorated with the **DSCLocalConfigurationManager** attribute.</span></span> <span data-ttu-id="d74d4-108">有关配置 LCM 的详细信息，请参阅[配置本地配置管理器](metaConfig.md)。</span><span class="sxs-lookup"><span data-stu-id="d74d4-108">For more information about configuring the LCM, see [Configuring the Local Configuration Manager](metaConfig.md).</span></span>
 
-> <span data-ttu-id="f269b-109">**请注意**：本主题适用于 PowerShell 5.0。</span><span class="sxs-lookup"><span data-stu-id="f269b-109">**Note**: This topic applies to PowerShell 5.0.</span></span> <span data-ttu-id="f269b-110">有关在 PowerShell 4.0 中设置请求客户端的信息，请参阅[在 PowerShell 4.0 中使用配置 ID 设置请求客户端](pullClientConfigID4.md)</span><span class="sxs-lookup"><span data-stu-id="f269b-110">For information on setting up a pull client in PowerShell 4.0, see [Setting up a pull client using configuration ID in PowerShell 4.0](pullClientConfigID4.md)</span></span>
+> <span data-ttu-id="d74d4-109">**请注意**：本主题适用于 PowerShell 5.0。</span><span class="sxs-lookup"><span data-stu-id="d74d4-109">**Note**: This topic applies to PowerShell 5.0.</span></span> <span data-ttu-id="d74d4-110">有关在 PowerShell 4.0 中设置请求客户端的信息，请参阅[在 PowerShell 4.0 中使用配置 ID 设置请求客户端](pullClientConfigID4.md)</span><span class="sxs-lookup"><span data-stu-id="d74d4-110">For information on setting up a pull client in PowerShell 4.0, see [Setting up a pull client using configuration ID in PowerShell 4.0](pullClientConfigID4.md)</span></span>
 
-<span data-ttu-id="f269b-111">下面的脚本将 LCM 配置为从名为“CONTOSO-PullSrv”的服务器请求配置。</span><span class="sxs-lookup"><span data-stu-id="f269b-111">The following script configures the LCM to pull configurations from a server named "CONTOSO-PullSrv".</span></span>
+<span data-ttu-id="d74d4-111">下面的脚本将 LCM 配置为从名为“CONTOSO-PullSrv”的服务器请求配置。</span><span class="sxs-lookup"><span data-stu-id="d74d4-111">The following script configures the LCM to pull configurations from a server named "CONTOSO-PullSrv".</span></span>
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -29,32 +29,32 @@ configuration PullClientConfigID
         {
             RefreshMode = 'Pull'
             ConfigurationID = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded = $true
         }
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
-            
-        }      
+
+        }
     }
 }
 PullClientConfigID
 ```
 
-<span data-ttu-id="f269b-112">在该脚本中，**ConfigurationRepositoryWeb** 块定义了请求服务器。</span><span class="sxs-lookup"><span data-stu-id="f269b-112">In the script, the **ConfigurationRepositoryWeb** block defines the pull server.</span></span> <span data-ttu-id="f269b-113">**ServerURL**</span><span class="sxs-lookup"><span data-stu-id="f269b-113">The **ServerURL**</span></span>
+<span data-ttu-id="d74d4-112">在该脚本中，**ConfigurationRepositoryWeb** 块定义了请求服务器。</span><span class="sxs-lookup"><span data-stu-id="d74d4-112">In the script, the **ConfigurationRepositoryWeb** block defines the pull server.</span></span> <span data-ttu-id="d74d4-113">**ServerURL**</span><span class="sxs-lookup"><span data-stu-id="d74d4-113">The **ServerURL**</span></span>
 
-<span data-ttu-id="f269b-114">此脚本运行后，将创建名为 **PullClientConfigID** 的新输出文件夹，并在其中放入元配置 MOF 文件。</span><span class="sxs-lookup"><span data-stu-id="f269b-114">After this script runs, it creates a new output folder named **PullClientConfigID** and puts a metaconfiguration MOF file there.</span></span> <span data-ttu-id="f269b-115">在本例中，会将元配置 MOF 文件命名为 `localhost.meta.mof`。</span><span class="sxs-lookup"><span data-stu-id="f269b-115">In this case, the metaconfiguration MOF file will be named `localhost.meta.mof`.</span></span>
+<span data-ttu-id="d74d4-114">此脚本运行后，将创建名为 **PullClientConfigID** 的新输出文件夹，并在其中放入元配置 MOF 文件。</span><span class="sxs-lookup"><span data-stu-id="d74d4-114">After this script runs, it creates a new output folder named **PullClientConfigID** and puts a metaconfiguration MOF file there.</span></span> <span data-ttu-id="d74d4-115">在本例中，会将元配置 MOF 文件命名为 `localhost.meta.mof`。</span><span class="sxs-lookup"><span data-stu-id="d74d4-115">In this case, the metaconfiguration MOF file will be named `localhost.meta.mof`.</span></span>
 
-<span data-ttu-id="f269b-116">若要应用配置，请调用 **Set-DscLocalConfigurationManager** cmdlet，并将 **Path** 设置为元配置 MOF 文件的位置。</span><span class="sxs-lookup"><span data-stu-id="f269b-116">To apply the configuration, call the **Set-DscLocalConfigurationManager** cmdlet, with the **Path** set to the location of the metaconfiguration MOF file.</span></span> <span data-ttu-id="f269b-117">例如：`Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigID –Verbose.`</span><span class="sxs-lookup"><span data-stu-id="f269b-117">For example: `Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigID –Verbose.`</span></span>
+<span data-ttu-id="d74d4-116">若要应用配置，请调用 **Set-DscLocalConfigurationManager** cmdlet，并将 **Path** 设置为元配置 MOF 文件的位置。</span><span class="sxs-lookup"><span data-stu-id="d74d4-116">To apply the configuration, call the **Set-DscLocalConfigurationManager** cmdlet, with the **Path** set to the location of the metaconfiguration MOF file.</span></span> <span data-ttu-id="d74d4-117">例如：`Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigID –Verbose.`</span><span class="sxs-lookup"><span data-stu-id="d74d4-117">For example: `Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigID –Verbose.`</span></span>
 
-## <a name="configuration-id"></a><span data-ttu-id="f269b-118">配置 ID</span><span class="sxs-lookup"><span data-stu-id="f269b-118">Configuration ID</span></span>
+## <a name="configuration-id"></a><span data-ttu-id="d74d4-118">配置 ID</span><span class="sxs-lookup"><span data-stu-id="d74d4-118">Configuration ID</span></span>
 
-<span data-ttu-id="f269b-119">此脚本将 LCM 的 **ConfigurationID** 属性设置为之前为此目的创建的 GUID（你可以通过使用 **New-Guid** cmdlet 创建 GUID）。</span><span class="sxs-lookup"><span data-stu-id="f269b-119">The script sets the **ConfigurationID** property of LCM to a GUID that had been previously created for this purpose (you can create a GUID by using the **New-Guid** cmdlet).</span></span> <span data-ttu-id="f269b-120">LCM 使用 **ConfigurationID** 在请求服务器上查找相应配置。</span><span class="sxs-lookup"><span data-stu-id="f269b-120">The **ConfigurationID** is what the LCM uses to find the appropriate configuration on the pull server.</span></span> <span data-ttu-id="f269b-121">请求服务器上的配置 MOF 文件必须命名为 _ConfigurationID_.mof，其中 _ConfigurationID_ 是目标节点上 LCM 的 **ConfigurationID** 属性值。</span><span class="sxs-lookup"><span data-stu-id="f269b-121">The configuration MOF file on the pull server must be named _ConfigurationID_.mof, where _ConfigurationID_ is the value of the **ConfigurationID** property of the target node's LCM.</span></span>
+<span data-ttu-id="d74d4-119">此脚本将 LCM 的 **ConfigurationID** 属性设置为之前为此目的创建的 GUID（你可以通过使用 **New-Guid** cmdlet 创建 GUID）。</span><span class="sxs-lookup"><span data-stu-id="d74d4-119">The script sets the **ConfigurationID** property of LCM to a GUID that had been previously created for this purpose (you can create a GUID by using the **New-Guid** cmdlet).</span></span> <span data-ttu-id="d74d4-120">LCM 使用 **ConfigurationID** 在请求服务器上查找相应配置。</span><span class="sxs-lookup"><span data-stu-id="d74d4-120">The **ConfigurationID** is what the LCM uses to find the appropriate configuration on the pull server.</span></span> <span data-ttu-id="d74d4-121">请求服务器上的配置 MOF 文件必须命名为 _ConfigurationID_.mof，其中 _ConfigurationID_ 是目标节点上 LCM 的 **ConfigurationID** 属性值。</span><span class="sxs-lookup"><span data-stu-id="d74d4-121">The configuration MOF file on the pull server must be named _ConfigurationID_.mof, where _ConfigurationID_ is the value of the **ConfigurationID** property of the target node's LCM.</span></span>
 
-## <a name="smb-pull-server"></a><span data-ttu-id="f269b-122">SMB 请求服务器</span><span class="sxs-lookup"><span data-stu-id="f269b-122">SMB pull server</span></span>
+## <a name="smb-pull-server"></a><span data-ttu-id="d74d4-122">SMB 请求服务器</span><span class="sxs-lookup"><span data-stu-id="d74d4-122">SMB pull server</span></span>
 
-<span data-ttu-id="f269b-123">若要将客户端设置为从 SMB 服务器请求配置，请使用 **ConfigurationRepositoryShare** 块。</span><span class="sxs-lookup"><span data-stu-id="f269b-123">To set up a client to pull configurations from an SMB server, use a **ConfigurationRepositoryShare** block.</span></span> <span data-ttu-id="f269b-124">在 **ConfigurationRepositoryShare** 块中，可以通过设置 **SourcePath** 属性指定服务器的路径。</span><span class="sxs-lookup"><span data-stu-id="f269b-124">In a **ConfigurationRepositoryShare** block, you specify the path to the server by setting the **SourcePath** property.</span></span> <span data-ttu-id="f269b-125">以下元配置将目标节点配置为从名为 **SMBPullServer** 的 SMB 请求服务器请求配置。</span><span class="sxs-lookup"><span data-stu-id="f269b-125">The following metaconfiguration configures the target node to pull from an SMB pull server named **SMBPullServer**.</span></span>
+<span data-ttu-id="d74d4-123">若要将客户端设置为从 SMB 服务器请求配置，请使用 **ConfigurationRepositoryShare** 块。</span><span class="sxs-lookup"><span data-stu-id="d74d4-123">To set up a client to pull configurations from an SMB server, use a **ConfigurationRepositoryShare** block.</span></span> <span data-ttu-id="d74d4-124">在 **ConfigurationRepositoryShare** 块中，可以通过设置 **SourcePath** 属性指定服务器的路径。</span><span class="sxs-lookup"><span data-stu-id="d74d4-124">In a **ConfigurationRepositoryShare** block, you specify the path to the server by setting the **SourcePath** property.</span></span> <span data-ttu-id="d74d4-125">以下元配置将目标节点配置为从名为 **SMBPullServer** 的 SMB 请求服务器请求配置。</span><span class="sxs-lookup"><span data-stu-id="d74d4-125">The following metaconfiguration configures the target node to pull from an SMB pull server named **SMBPullServer**.</span></span>
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -66,24 +66,24 @@ configuration PullClientConfigID
         {
             RefreshMode = 'Pull'
             ConfigurationID = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded = $true
         }
         ConfigurationRepositoryShare SMBPullServer
         {
             SourcePath = '\\SMBPullServer\PullSource'
-            
-        }     
+
+        }
     }
 }
 PullClientConfigID
 ```
 
-## <a name="resource-and-report-servers"></a><span data-ttu-id="f269b-126">资源和报表服务器</span><span class="sxs-lookup"><span data-stu-id="f269b-126">Resource and report servers</span></span>
+## <a name="resource-and-report-servers"></a><span data-ttu-id="d74d4-126">资源和报表服务器</span><span class="sxs-lookup"><span data-stu-id="d74d4-126">Resource and report servers</span></span>
 
-<span data-ttu-id="f269b-127">如果你在 LCM 配置中只指定 **ConfigurationRepositoryWeb** 或 **ConfigurationRepositoryShare** 块（如同上一个示例所示），请求客户端会从指定服务器请求资源，但不会向它发送报表。</span><span class="sxs-lookup"><span data-stu-id="f269b-127">If you specify only a **ConfigurationRepositoryWeb** or **ConfigurationRepositoryShare** block in your LCM configuration (as in the previous example), the pull client will pull resources from the specified server, but it will not send reports to it.</span></span> <span data-ttu-id="f269b-128">虽然你可以将一个请求服务器用于配置、资源和报告，但必须创建 **ReportRepositoryWeb** 块来设置报表。</span><span class="sxs-lookup"><span data-stu-id="f269b-128">You can use a single pull server for configurations, resources, and reporting, but you have to create a **ReportRepositoryWeb** block to set up reporting.</span></span> 
+<span data-ttu-id="d74d4-127">如果你在 LCM 配置中只指定 **ConfigurationRepositoryWeb** 或 **ConfigurationRepositoryShare** 块（如同上一个示例所示），请求客户端会从指定服务器请求资源，但不会向它发送报表。</span><span class="sxs-lookup"><span data-stu-id="d74d4-127">If you specify only a **ConfigurationRepositoryWeb** or **ConfigurationRepositoryShare** block in your LCM configuration (as in the previous example), the pull client will pull resources from the specified server, but it will not send reports to it.</span></span> <span data-ttu-id="d74d4-128">虽然你可以将一个请求服务器用于配置、资源和报告，但必须创建 **ReportRepositoryWeb** 块来设置报表。</span><span class="sxs-lookup"><span data-stu-id="d74d4-128">You can use a single pull server for configurations, resources, and reporting, but you have to create a **ReportRepositoryWeb** block to set up reporting.</span></span>
 
-<span data-ttu-id="f269b-129">下面的示例展示了将客户端设置为请求配置和资源并将报表数据发送到一个请求服务器的元配置。</span><span class="sxs-lookup"><span data-stu-id="f269b-129">The following example shows a metaconfiguration that sets up a client to pull configurations and resources, and send reporting data, to a single pull server.</span></span>
+<span data-ttu-id="d74d4-129">下面的示例展示了将客户端设置为请求配置和资源并将报表数据发送到一个请求服务器的元配置。</span><span class="sxs-lookup"><span data-stu-id="d74d4-129">The following example shows a metaconfiguration that sets up a client to pull configurations and resources, and send reporting data, to a single pull server.</span></span>
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -95,17 +95,17 @@ configuration PullClientConfigID
         {
             RefreshMode = 'Pull'
             ConfigurationID = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded = $true
         }
 
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
-            
+
         }
-        
-        
+
+
         ReportServerWeb CONTOSO-PullSrv
         {
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
@@ -115,9 +115,9 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-<span data-ttu-id="f269b-130">还可以为资源和报告指定不同的请求服务器。</span><span class="sxs-lookup"><span data-stu-id="f269b-130">You can also specify different pull servers for resources and reporting.</span></span> <span data-ttu-id="f269b-131">若要指定资源服务器，请使用 **ResourceRepositoryWeb**（适用于 Web 请求服务器）或 **ResourceRepositoryShare**（适用于 SMB 请求服务器）块。</span><span class="sxs-lookup"><span data-stu-id="f269b-131">To specify a resource server, you use either a **ResourceRepositoryWeb** (for a web pull server) or a **ResourceRepositoryShare** block (for an SMB pull server).</span></span>
-<span data-ttu-id="f269b-132">若要指定报表服务器，请使用 **ReportRepositoryWeb** 块。</span><span class="sxs-lookup"><span data-stu-id="f269b-132">To specify a report server, you use a **ReportRepositoryWeb** block.</span></span> <span data-ttu-id="f269b-133">报表服务器不能为 SMB 服务器。</span><span class="sxs-lookup"><span data-stu-id="f269b-133">A report server cannot be an SMB server.</span></span>
-<span data-ttu-id="f269b-134">以下元配置将请求客户端配置为从 **CONTOSO-PullSrv** 获取其配置、从 **CONTOSO-ResourceSrv** 获取资源、将状态报告发送到 **CONTOSO-ReportSrv**：</span><span class="sxs-lookup"><span data-stu-id="f269b-134">The following metaconfiguration configures a pull client to get its configurations from **CONTOSO-PullSrv** and its resources from **CONTOSO-ResourceSrv**, and to send status reports to **CONTOSO-ReportSrv**:</span></span>
+<span data-ttu-id="d74d4-130">还可以为资源和报告指定不同的请求服务器。</span><span class="sxs-lookup"><span data-stu-id="d74d4-130">You can also specify different pull servers for resources and reporting.</span></span> <span data-ttu-id="d74d4-131">若要指定资源服务器，请使用 **ResourceRepositoryWeb**（适用于 Web 请求服务器）或 **ResourceRepositoryShare**（适用于 SMB 请求服务器）块。</span><span class="sxs-lookup"><span data-stu-id="d74d4-131">To specify a resource server, you use either a **ResourceRepositoryWeb** (for a web pull server) or a **ResourceRepositoryShare** block (for an SMB pull server).</span></span>
+<span data-ttu-id="d74d4-132">若要指定报表服务器，请使用 **ReportRepositoryWeb** 块。</span><span class="sxs-lookup"><span data-stu-id="d74d4-132">To specify a report server, you use a **ReportRepositoryWeb** block.</span></span> <span data-ttu-id="d74d4-133">报表服务器不能为 SMB 服务器。</span><span class="sxs-lookup"><span data-stu-id="d74d4-133">A report server cannot be an SMB server.</span></span>
+<span data-ttu-id="d74d4-134">以下元配置将请求客户端配置为从 **CONTOSO-PullSrv** 获取其配置、从 **CONTOSO-ResourceSrv** 获取资源、将状态报告发送到 **CONTOSO-ReportSrv**：</span><span class="sxs-lookup"><span data-stu-id="d74d4-134">The following metaconfiguration configures a pull client to get its configurations from **CONTOSO-PullSrv** and its resources from **CONTOSO-ResourceSrv**, and to send status reports to **CONTOSO-ReportSrv**:</span></span>
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -129,16 +129,16 @@ configuration PullClientConfigID
         {
             RefreshMode = 'Pull'
             ConfigurationID = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded = $true
         }
 
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
-            
+
         }
-        
+
         ResourceRepositoryWeb CONTOSO-ResourceSrv
         {
             ServerURL = 'https://CONTOSO-REsourceSrv:8080/PSDSCPullServer.svc'
@@ -153,7 +153,6 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-## <a name="see-also"></a><span data-ttu-id="f269b-135">另请参阅</span><span class="sxs-lookup"><span data-stu-id="f269b-135">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d74d4-135">另请参阅</span><span class="sxs-lookup"><span data-stu-id="d74d4-135">See Also</span></span>
 
-* [<span data-ttu-id="f269b-136">使用配置名称设置请求客户端</span><span class="sxs-lookup"><span data-stu-id="f269b-136">Setting up a pull client with configuration names</span></span>](pullClientConfigNames.md)
-
+* [<span data-ttu-id="d74d4-136">使用配置名称设置请求客户端</span><span class="sxs-lookup"><span data-stu-id="d74d4-136">Setting up a pull client with configuration names</span></span>](pullClientConfigNames.md)

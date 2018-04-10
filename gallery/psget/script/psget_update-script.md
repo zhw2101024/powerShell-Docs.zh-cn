@@ -1,33 +1,33 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "库,powershell,cmdlet,psget"
+keywords: 库,powershell,cmdlet,psget
 title: Update-Script
-ms.openlocfilehash: 8067a502e4ecfa61c5a4347d4e9f74c7437f6502
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+ms.openlocfilehash: 23e558a063689d263f68d34ec3b154be1c77ae89
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="update-script"></a><span data-ttu-id="46126-103">Update-Script</span><span class="sxs-lookup"><span data-stu-id="46126-103">Update-Script</span></span>
+# <a name="update-script"></a><span data-ttu-id="7f833-103">Update-Script</span><span class="sxs-lookup"><span data-stu-id="7f833-103">Update-Script</span></span>
 
-<span data-ttu-id="46126-104">Update-Script cmdlet 可对使用 Install-Script cmdlet 安装的脚本文件进行就地更新。</span><span class="sxs-lookup"><span data-stu-id="46126-104">Update-Script cmdlet lets you to do in-place update of the script files which were installed using Install-Script cmdlet.</span></span>
+<span data-ttu-id="7f833-104">Update-Script cmdlet 可对使用 Install-Script cmdlet 安装的脚本文件进行就地更新。</span><span class="sxs-lookup"><span data-stu-id="7f833-104">Update-Script cmdlet lets you to do in-place update of the script files which were installed using Install-Script cmdlet.</span></span>
 
-## <a name="description"></a><span data-ttu-id="46126-105">说明</span><span class="sxs-lookup"><span data-stu-id="46126-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="7f833-105">说明</span><span class="sxs-lookup"><span data-stu-id="7f833-105">Description</span></span>
 
-<span data-ttu-id="46126-106">Update-Script cmdlet 更新存储库中指定的脚本，该存储库是该脚本先前从其安装的存储库。</span><span class="sxs-lookup"><span data-stu-id="46126-106">The Update-Script cmdlet updates the specified script from the repository from which it was previously installed.</span></span>
+<span data-ttu-id="7f833-106">Update-Script cmdlet 更新存储库中指定的脚本，该存储库是该脚本先前从其安装的存储库。</span><span class="sxs-lookup"><span data-stu-id="7f833-106">The Update-Script cmdlet updates the specified script from the repository from which it was previously installed.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="46126-107">Cmdlet 语法</span><span class="sxs-lookup"><span data-stu-id="46126-107">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="7f833-107">Cmdlet 语法</span><span class="sxs-lookup"><span data-stu-id="7f833-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Update-Script -Module PowerShellGet -Syntax
 ```
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="46126-108">Cmdlet 联机帮助参考</span><span class="sxs-lookup"><span data-stu-id="46126-108">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="7f833-108">Cmdlet 联机帮助参考</span><span class="sxs-lookup"><span data-stu-id="7f833-108">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="46126-109">Update-Script</span><span class="sxs-lookup"><span data-stu-id="46126-109">Update-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619787)
+[<span data-ttu-id="7f833-109">Update-Script</span><span class="sxs-lookup"><span data-stu-id="7f833-109">Update-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619787)
 
-## <a name="example-commands"></a><span data-ttu-id="46126-110">示例命令</span><span class="sxs-lookup"><span data-stu-id="46126-110">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="7f833-110">示例命令</span><span class="sxs-lookup"><span data-stu-id="7f833-110">Example commands</span></span>
 ```powershell
 Install-Script -Name Fabrikam-Script -RequiredVersion 1.0 -Repository GalleryINT -Scope
 Get-InstalledScript -Name Fabrikam-Script
@@ -74,4 +74,3 @@ Version Name Type Repository Description
 2.5 Required-Script2 Script GalleryINT Description for the Required-Script2 script
 2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
 ```
-

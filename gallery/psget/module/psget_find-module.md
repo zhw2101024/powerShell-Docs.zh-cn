@@ -1,42 +1,42 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "库,powershell,cmdlet,psget"
+keywords: 库,powershell,cmdlet,psget
 title: Find-Module
-ms.openlocfilehash: 65c466909c007ed08c3fa978f78483983b00ba73
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+ms.openlocfilehash: 03dff4454a31638df564568ef51eec158685c8e9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="find-module"></a><span data-ttu-id="bf147-103">Find-Module</span><span class="sxs-lookup"><span data-stu-id="bf147-103">Find-Module</span></span>
-<span data-ttu-id="bf147-104">查找联机库中与指定条件相匹配的模块。</span><span class="sxs-lookup"><span data-stu-id="bf147-104">Finds modules from an online gallery that match specified criteria.</span></span>
+# <a name="find-module"></a><span data-ttu-id="f746c-103">Find-Module</span><span class="sxs-lookup"><span data-stu-id="f746c-103">Find-Module</span></span>
+<span data-ttu-id="f746c-104">查找联机库中与指定条件相匹配的模块。</span><span class="sxs-lookup"><span data-stu-id="f746c-104">Finds modules from an online gallery that match specified criteria.</span></span>
 
-## <a name="description"></a><span data-ttu-id="bf147-105">说明</span><span class="sxs-lookup"><span data-stu-id="bf147-105">Description</span></span>
-<span data-ttu-id="bf147-106">Find-Module 在已注册存储库中发现与指定条件相匹配的模块。</span><span class="sxs-lookup"><span data-stu-id="bf147-106">Find-Module discovers the modules from registered repositories that matches the specified criteria.</span></span>
-<span data-ttu-id="bf147-107">对于每个找到的模块，Find-Module 将返回 PSRepositoryItemInfo 对象，可根据需要将其通过管道传递到 Install-Module 以安装该模块。</span><span class="sxs-lookup"><span data-stu-id="bf147-107">For each module found, Find-Module returns a PSRepositoryItemInfo object which can optionally be piped to Install-Module for installing the modules.</span></span>
+## <a name="description"></a><span data-ttu-id="f746c-105">说明</span><span class="sxs-lookup"><span data-stu-id="f746c-105">Description</span></span>
+<span data-ttu-id="f746c-106">Find-Module 在已注册存储库中发现与指定条件相匹配的模块。</span><span class="sxs-lookup"><span data-stu-id="f746c-106">Find-Module discovers the modules from registered repositories that matches the specified criteria.</span></span>
+<span data-ttu-id="f746c-107">对于每个找到的模块，Find-Module 将返回 PSRepositoryItemInfo 对象，可根据需要将其通过管道传递到 Install-Module 以安装该模块。</span><span class="sxs-lookup"><span data-stu-id="f746c-107">For each module found, Find-Module returns a PSRepositoryItemInfo object which can optionally be piped to Install-Module for installing the modules.</span></span>
 
-- <span data-ttu-id="bf147-108">Find-Module 可使用 -Command、-DscResource、 -RoleCapability 和 -Includes 参数根据模块内容进行筛选。</span><span class="sxs-lookup"><span data-stu-id="bf147-108">Find-Module can filter based on module contents with the -Command, -DscResource, -RoleCapability and -Includes parameters.</span></span>
-- <span data-ttu-id="bf147-109">Find-Module 可使用版本参数 MinimumVersion、MaximumVersion、RequiredVersion、AllVersions 进行筛选。</span><span class="sxs-lookup"><span data-stu-id="bf147-109">Find-Module can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span></span>
-  - <span data-ttu-id="bf147-110">这些参数彼此排斥，但 MinmimumVersion 和 MaximumVersion 除外。</span><span class="sxs-lookup"><span data-stu-id="bf147-110">These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.</span></span>
-  - <span data-ttu-id="bf147-111">这些版本参数只允许具有单个模块名称，而不能具有任何通配符。</span><span class="sxs-lookup"><span data-stu-id="bf147-111">These version parameters are allowed only with the single module name without any wildcards.</span></span>
-  - <span data-ttu-id="bf147-112">如果未指定 RequiredVersion 参数，Find-Module 将返回等于或高于指定的最低版本的最新版本的模块或最新版本的模块（若未指定最低版本）。</span><span class="sxs-lookup"><span data-stu-id="bf147-112">If the RequiredVersion parameter is not specified, Find-Module returns the latest version of the module that is equal to or greater than the minimum version specified or the latest version of the module if no minimum version is specified.</span></span> 
-  - <span data-ttu-id="bf147-113">如果已指定 RequiredVersion 参数，则 Find-Module 只返回完全匹配指定版本的模块。</span><span class="sxs-lookup"><span data-stu-id="bf147-113">If the RequiredVersion parameter is specified, Find-Module only returns the version of module that exactly matches the specified version.</span></span>
-- <span data-ttu-id="bf147-114">Find-Module 可以使用 -Tag 参数对模块元数据进行筛选</span><span class="sxs-lookup"><span data-stu-id="bf147-114">Find-Module can filter on module metadata with the -Tag parameter</span></span>
-- <span data-ttu-id="bf147-115">Find-Module 可使用 -Filter 参数对存储库特定搜索语言进行筛选。</span><span class="sxs-lookup"><span data-stu-id="bf147-115">Find-Module can filter on repository-specific search language with the -Filter parameter.</span></span>
-- <span data-ttu-id="bf147-116">Find-Module 可从所有或少数的已注册的存储库中对模块进行筛选。</span><span class="sxs-lookup"><span data-stu-id="bf147-116">Find-Module can filter on modules from all or few of the registered repositories.</span></span>
+- <span data-ttu-id="f746c-108">Find-Module 可使用 -Command、-DscResource、 -RoleCapability 和 -Includes 参数根据模块内容进行筛选。</span><span class="sxs-lookup"><span data-stu-id="f746c-108">Find-Module can filter based on module contents with the -Command, -DscResource, -RoleCapability and -Includes parameters.</span></span>
+- <span data-ttu-id="f746c-109">Find-Module 可使用版本参数 MinimumVersion、MaximumVersion、RequiredVersion、AllVersions 进行筛选。</span><span class="sxs-lookup"><span data-stu-id="f746c-109">Find-Module can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span></span>
+  - <span data-ttu-id="f746c-110">这些参数彼此排斥，但 MinmimumVersion 和 MaximumVersion 除外。</span><span class="sxs-lookup"><span data-stu-id="f746c-110">These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.</span></span>
+  - <span data-ttu-id="f746c-111">这些版本参数只允许具有单个模块名称，而不能具有任何通配符。</span><span class="sxs-lookup"><span data-stu-id="f746c-111">These version parameters are allowed only with the single module name without any wildcards.</span></span>
+  - <span data-ttu-id="f746c-112">如果未指定 RequiredVersion 参数，Find-Module 将返回等于或高于指定的最低版本的最新版本的模块或最新版本的模块（若未指定最低版本）。</span><span class="sxs-lookup"><span data-stu-id="f746c-112">If the RequiredVersion parameter is not specified, Find-Module returns the latest version of the module that is equal to or greater than the minimum version specified or the latest version of the module if no minimum version is specified.</span></span>
+  - <span data-ttu-id="f746c-113">如果已指定 RequiredVersion 参数，则 Find-Module 只返回完全匹配指定版本的模块。</span><span class="sxs-lookup"><span data-stu-id="f746c-113">If the RequiredVersion parameter is specified, Find-Module only returns the version of module that exactly matches the specified version.</span></span>
+- <span data-ttu-id="f746c-114">Find-Module 可以使用 -Tag 参数对模块元数据进行筛选</span><span class="sxs-lookup"><span data-stu-id="f746c-114">Find-Module can filter on module metadata with the -Tag parameter</span></span>
+- <span data-ttu-id="f746c-115">Find-Module 可使用 -Filter 参数对存储库特定搜索语言进行筛选。</span><span class="sxs-lookup"><span data-stu-id="f746c-115">Find-Module can filter on repository-specific search language with the -Filter parameter.</span></span>
+- <span data-ttu-id="f746c-116">Find-Module 可从所有或少数的已注册的存储库中对模块进行筛选。</span><span class="sxs-lookup"><span data-stu-id="f746c-116">Find-Module can filter on modules from all or few of the registered repositories.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="bf147-117">Cmdlet 语法</span><span class="sxs-lookup"><span data-stu-id="bf147-117">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="f746c-117">Cmdlet 语法</span><span class="sxs-lookup"><span data-stu-id="f746c-117">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Find-Module -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="bf147-118">Cmdlet 联机帮助参考</span><span class="sxs-lookup"><span data-stu-id="bf147-118">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="f746c-118">Cmdlet 联机帮助参考</span><span class="sxs-lookup"><span data-stu-id="f746c-118">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="bf147-119">Find-Module</span><span class="sxs-lookup"><span data-stu-id="bf147-119">Find-Module</span></span>](http://go.microsoft.com/fwlink/?LinkID=398574)
+[<span data-ttu-id="f746c-119">Find-Module</span><span class="sxs-lookup"><span data-stu-id="f746c-119">Find-Module</span></span>](http://go.microsoft.com/fwlink/?LinkID=398574)
 
-## <a name="example-commands"></a><span data-ttu-id="bf147-120">示例命令</span><span class="sxs-lookup"><span data-stu-id="bf147-120">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="f746c-120">示例命令</span><span class="sxs-lookup"><span data-stu-id="f746c-120">Example commands</span></span>
 ```powershell
 # Find a specific module
 Find-Module Azure
@@ -54,7 +54,7 @@ Find-Module -Name AzureRM*
 # Find all versions of a module
 Find-Module -Name PSReadline -AllVersions
 
-# Find a module with -MinimumVersion. 
+# Find a module with -MinimumVersion.
 # With MinimumVersion we can find a module whose version is greate than or equal to the specified MinimumVersion value.
 Find-Module -Name PSReadline -MinimumVersion 1.0.0.12
 
@@ -142,4 +142,3 @@ PackageManagementProvider  : NuGet
 AdditionalMetadata         : {downloadCount, description, copyright, FileList...}
 
 ```
-
