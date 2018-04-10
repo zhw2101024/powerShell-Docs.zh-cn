@@ -1,15 +1,18 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "ISE 对象模型层次结构"
-ms.openlocfilehash: 2df6d40f39dbe14bd3f46a6400cde4a6e91052ef
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+title: ISE 对象模型层次结构
+ms.openlocfilehash: 0159707b1050c412a74da3d3ca02a46cea982556
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="the-ise-object-model-hierarchy"></a>ISE 对象模型层次结构
-本主题介绍了属于 Windows PowerShell 集成脚本环境 (ISE) 一部分的对象的层次结构。 在 Windows PowerShell 3.0 和 Windows PowerShell 4.0 中包含 Windows PowerShell ISE。 单击一个对象，使你转到定义对象的类的参考文档。
+
+本主题介绍了属于 Windows PowerShell 集成脚本环境 (ISE) 一部分的对象的层次结构。
+在 Windows PowerShell 3.0 和 Windows PowerShell 4.0 中包含 Windows PowerShell ISE。
+单击一个对象，使你转到定义对象的类的参考文档。
 
 ## <a name="psise-object"></a>$psISE 对象
 
@@ -43,8 +46,10 @@ ISEOptions 对象代表 Windows PowerShell ISE 的各种设置。
 ## <a name="psisepowershelltabsthe-powershelltabcollection-objectmd"></a>[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)
 
 **$PsISE.PowerShellTabs** 对象是 [PowerShellTabCollection](The-PowerShellTabCollection-Object.md) 类的实例。
-它是所有当前打开的 PowerShell 选项卡的集合，表示本地计算机上或在已连接的远程计算机上可用的 Windows PowerShell 运行环境。 集合中的每个成员均为 [PowerShellTab](The-PowerShellTab-Object.md) 类的实例。
+它是所有当前打开的 PowerShell 选项卡的集合，表示本地计算机上或在已连接的远程计算机上可用的 Windows PowerShell 运行环境。
+集合中的每个成员均为 [PowerShellTab](The-PowerShellTab-Object.md) 类的实例。
 
 ## <a name="see-also"></a>另请参阅
-- [Windows PowerShell ISE 脚本对象模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [Windows PowerShell ISE 对象模型参考](Windows-PowerShell-ISE-Object-Model-Reference.md)
+
+- [Windows PowerShell ISE 脚本对象模型的用途](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [ISE 对象模型层次结构](The-ISE-Object-Model-Hierarchy.md)
