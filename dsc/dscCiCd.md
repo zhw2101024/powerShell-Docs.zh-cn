@@ -1,19 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "使用 DSC 生成持续集成和连续部署管道"
-ms.openlocfilehash: 5f7583fb93b69bbe4103b34b79b3a859c9cee8a9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,配置,安装程序
+title: 使用 DSC 生成持续集成和连续部署管道
+ms.openlocfilehash: a3803a8e6fe6ff1b93758a73ccd54754d7bb2a84
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>使用 DSC 生成持续集成和连续部署管道
 
 此示例展示了如何使用 PowerShell、DSC、Pester 和 Visual Studio Team Foundation Server (TFS) 生成持续集成/连续部署 (CI/CD) 管道。
 
-生成和配置管道后，可以用它来完全部署、配置和测试 DNS 服务器及关联的主机记录。 此过程模拟了将用于开发环境的管道第一部分。
+生成和配置管道后，可以用它来完全部署、配置和测试 DNS 服务器及关联的主机记录。
+此过程模拟了将用于开发环境的管道第一部分。
 
 自动 CI/CD 管道有助于更快、更可靠地更新软件，确保所有代码都经过测试，并确保最新版代码始终可用。
 
@@ -36,7 +37,7 @@ ms.lasthandoff: 01/17/2018
 
 客户端计算机必须是安装以下项的 Windows 计算机：
 - [Git](https://git-scm.com/)
-- 从 https://github.com/PowerShell/Demo_CI 克隆的本地 git 存储库
+- 从 https://github.com/PowerShell/Demo_CI 克隆的本地 Git 存储库
 - 文本编辑器（如 [Visual Studio Code](https://code.visualstudio.com/)）
 
 ### <a name="tfssrv1"></a>TFSSrv1
@@ -60,7 +61,7 @@ ms.lasthandoff: 01/17/2018
 ### <a name="testagent2"></a>TestAgent2
 
 这是托管此示例配置的网站的计算机。
-此计算机必须运行 [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016)。 
+此计算机必须运行 [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016)。
 
 ## <a name="add-the-code-to-tfs"></a>将代码添加到 TFS
 
@@ -156,7 +157,8 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 
 请务必在执行 CI 时使用配置数据定义节点，因为节点信息可能会在不同环境中进行切换，而使用配置数据则可以轻松更改节点信息，无需更改配置代码。
 
-在第一个资源块中，配置调用 [WindowsFeature](windowsFeatureResource.md)，以确保启用 DNS 功能。 后面的资源块调用 [xDnsServer](https://github.com/PowerShell/xDnsServer) 模块中的资源，以配置主要区域和 DNS 记录。
+在第一个资源块中，配置调用 [WindowsFeature](windowsFeatureResource.md)，以确保启用 DNS 功能。
+后面的资源块调用 [xDnsServer](https://github.com/PowerShell/xDnsServer) 模块中的资源，以配置主要区域和 DNS 记录。
 
 请注意，这两个 `xDnsRecord` 块包装在循环访问配置数据数组的 `foreach` 循环中。
 再强调一遍，配置数据是由 `DevEnv.ps1` 脚本创建，接下来我们将对此进行分析。
@@ -199,7 +201,8 @@ Return New-DscConfigurationDataDocument -RawEnvData $DevEnvironment -OutputPath 
 ### <a name="the-psake-build-script"></a>psake 生成脚本
 
 在 `Build.ps1`（位于 Demo_CI 存储库的根目录 `./InfraDNS/Build.ps1`）中定义的 [psake](https://github.com/psake/psake) 生成脚本定义了生成任务。
-它还定义了每个任务依赖的其他任务。 调用时，psake 脚本可确保指定的任务（或名为“`Default`”的任务，如果未指定的话）能够正常运行，并确保所有依赖项也能正常运行（这具有递归性，以便依赖项的依赖项也能正常运行，依此类推）。
+它还定义了每个任务依赖的其他任务。
+调用时，psake 脚本可确保指定的任务（或名为“`Default`”的任务，如果未指定的话）能够正常运行，并确保所有依赖项也能正常运行（这具有递归性，以便依赖项的依赖项也能正常运行，依此类推）。
 
 在此示例中，`Default` 任务被定义为：
 
@@ -422,10 +425,3 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 此示例配置 DNS 服务器 `TestAgent1`，以便 URL `www.contoso.com` 解析为 `TestAgent2`，但实际并不部署网站。
 存储库中的 `WebApp` 文件夹下提供了执行此操作的相关框架。
 可以使用所提供的存根来创建 psake 脚本、Pester 测试和 DSC 配置，从而部署自己的网站。
-
-
-
-
-
-
-

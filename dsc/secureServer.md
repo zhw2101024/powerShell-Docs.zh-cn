@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "请求服务器最佳做法"
-ms.openlocfilehash: 3d0ab969b7a0de9d428becc4b9bdb124a7a44c2c
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,配置,安装程序
+title: 请求服务器最佳做法
+ms.openlocfilehash: 7de523ad16aee77d87ec4d3334d296997020aa19
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="pull-server-best-practices"></a>请求服务器最佳做法
 
@@ -17,8 +17,8 @@ ms.lasthandoff: 03/15/2018
 
 | |文档信息|
 |:---|:---|
-作者 | Michael Greene  
-审阅者 | Ben Gelens、Ravikanth Chaganti、Aleksandar Nikolic  
+作者 | Michael Greene
+审阅者 | Ben Gelens、Ravikanth Chaganti、Aleksandar Nikolic
 已发布 | 2015 年 4 月
 
 ## <a name="abstract"></a>摘要
@@ -31,8 +31,8 @@ ms.lasthandoff: 03/15/2018
 
  - 配置规划
  - 安装指南
- 
-### <a name="versions-of-the-windows-management-framework"></a>Windows Management Framework 的版本 
+
+### <a name="versions-of-the-windows-management-framework"></a>Windows Management Framework 的版本
 本文档中的信息旨在应用于 Windows Management Framework 5.0。 虽然部署和操作请求服务器无需 WMF 5.0，不过版本 5.0 是本文档的重点。
 
 ### <a name="windows-powershell-desired-state-configuration"></a>Windows PowerShell 所需状态配置
@@ -40,10 +40,11 @@ ms.lasthandoff: 03/15/2018
 
 Windows PowerShell 为所需状态配置提供了一组语言扩展，可以用于创建和管理声明性配置。
 
-### <a name="pull-server-role"></a>请求服务器角色  
+### <a name="pull-server-role"></a>请求服务器角色
 请求服务器提供了一个集中化服务来存储可供目标节点访问的配置。
- 
-请求服务器角色可以作为 Web 服务器实例或 SMB 文件共享进行部署。 Web 服务器功能包含一个 OData 接口，并且可以选择包含供目标节点在应用配置时报告返回成功或失败确认的功能。 此功能在存在大量目标节点的环境中非常有用。 配置目标节点（也称为客户端）以指向请求服务器之后，最新配置数据和任何所需脚本会进行下载并应用。 这可以作为一次性部署或作为反复出现的作业（这也使得请求服务器成为用于大规模管理更改的重要资产）来进行。 有关详细信息，请参阅 [Windows PowerShell 所需状态配置请求服务器](https://technet.microsoft.com/library/dn249913.aspx)和[推送和请求配置模式](https://technet.microsoft.com/library/dn249913.aspx)。
+
+请求服务器角色可以作为 Web 服务器实例或 SMB 文件共享进行部署。 Web 服务器功能包含一个 OData 接口，并且可以选择包含供目标节点在应用配置时报告返回成功或失败确认的功能。 此功能在存在大量目标节点的环境中非常有用。
+配置目标节点（也称为客户端）以指向请求服务器之后，最新配置数据和任何所需脚本会进行下载并应用。 这可以作为一次性部署或作为反复出现的作业（这也使得请求服务器成为用于大规模管理更改的重要资产）来进行。 有关详细信息，请参阅 [Windows PowerShell 所需状态配置请求服务器](https://technet.microsoft.com/library/dn249913.aspx)和[推送和请求配置模式](https://technet.microsoft.com/library/dn249913.aspx)。
 
 ## <a name="configuration-planning"></a>配置规划
 
@@ -59,7 +60,9 @@ Windows PowerShell 为所需状态配置提供了一组语言扩展，可以用�
 
 ### <a name="wmf"></a>WMF
 
-Windows Server 2012 R2 包括一种名为 DSC 服务的功能。 DSC 服务功能提供请求服务器功能，包括支持 OData 终结点的二进制文件。 WMF 包含在 Windows Server 中，在各个 Windows Server 版本之间进行敏捷更新。 [新版本的 WMF 5.0](http://aka.ms/wmf5latest) 可能包含对 DSC 服务功能的更新。 因此，最佳做法是下载最新版本的 WMF 并查看发行说明以确定该版本是否包含对 DSC 服务功能的更新。 还应查看指示更新或方案的设计状态是列为稳定还是试验性的发行说明部分。 若要允许实现敏捷发行周期，各个功能可以声明为稳定，这指示功能已准备就绪，可以在生产环境中使用（即使 WMF 是以预览版发行）。
+Windows Server 2012 R2 包括一种名为 DSC 服务的功能。 DSC 服务功能提供请求服务器功能，包括支持 OData 终结点的二进制文件。
+WMF 包含在 Windows Server 中，在各个 Windows Server 版本之间进行敏捷更新。 [新版本的 WMF 5.0](http://aka.ms/wmf5latest) 可能包含对 DSC 服务功能的更新。 因此，最佳做法是下载最新版本的 WMF 并查看发行说明以确定该版本是否包含对 DSC 服务功能的更新。 还应查看指示更新或方案的设计状态是列为稳定还是试验性的发行说明部分。
+若要允许实现敏捷发行周期，各个功能可以声明为稳定，这指示功能已准备就绪，可以在生产环境中使用（即使 WMF 是以预览版发行）。
 历史上一直通过 WMF 版本进行更新的其他功能（请参阅 WMF 发行说明以了解进一步详细信息）：
 
  - Windows PowerShell Windows PowerShell 集成脚本
@@ -77,7 +80,7 @@ Windows Server 2012 R2 包括一种名为 DSC 服务的功能。 DSC 服务功�
 Install-Module xPSDesiredStateConfiguration
 ```
 
-**PowerShellGet** 模块会将该模块下载到： 
+**PowerShellGet** 模块会将该模块下载到：
 
 `C:\Program Files\Windows PowerShell\Modules`
 
@@ -93,10 +96,7 @@ Install-Module xPSDesiredStateConfiguration
 
 物理和虚拟服务器上都支持请求服务器部署。 请求服务器的大小调整要求与 Windows Server 2012 R2 的要求保持一致。
 
-CPU：1.4 GHz 64 位处理器  
-内存：512 MB  
-磁盘空间：32 GB  
-网络：千兆位以太网适配器  
+CPU：1.4 GHz 64 位处理器；内存：512MB；磁盘空间：32GB；网络：千兆位以太网适配器
 
 规划任务|
 ---|
@@ -107,15 +107,22 @@ CPU：1.4 GHz 64 位处理器
 
 ### <a name="accounts"></a>帐户
 
-部署请求服务器实例没有服务帐户要求。 不过在一些情况下，网站可能会在本地用户帐户的上下文中运行。 例如，如果需要访问用于网站内容的存储共享并且承载存储共享的 Windows Server 或设备未加入域。
+部署请求服务器实例没有服务帐户要求。
+不过在一些情况下，网站可能会在本地用户帐户的上下文中运行。
+例如，如果需要访问用于网站内容的存储共享并且承载存储共享的 Windows Server 或设备未加入域。
 
 ### <a name="dns-records"></a>DNS 记录
 
-将客户端配置为使用请求服务器环境时，需要使用某个服务器名称。 在测试环境中，通常使用服务器主机名，如果 DNS 名称解析不可用，则可以使用服务器的 IP 地址。 在生产环境中或是在旨在表示生产部署的实验室环境中，最佳做法是创建 DNS CNAME 记录。
+将客户端配置为使用请求服务器环境时，需要使用某个服务器名称。
+在测试环境中，通常使用服务器主机名，如果 DNS 名称解析不可用，则可以使用服务器的 IP 地址。
+在生产环境中或是在旨在表示生产部署的实验室环境中，最佳做法是创建 DNS CNAME 记录。
 
-DNS CNAME 使你可以创建别名以引用主机 (A) 记录。 附加名称记录的用途是在将来需要更改时提高灵活性。 CNAME 可以帮助隔离客户端配置，以便对服务器环境进行的更改（如替换请求服务器或添加其他请求服务器）无需对客户端配置进行对应更改。
+DNS CNAME 使你可以创建别名以引用主机 (A) 记录。
+附加名称记录的用途是在将来需要更改时提高灵活性。
+CNAME 可以帮助隔离客户端配置，以便对服务器环境进行的更改（如替换请求服务器或添加其他请求服务器）无需对客户端配置进行对应更改。
 
-为 DNS 记录选择名称时，请记住解决方案体系结构。 如果使用负载平衡，则用于在 HTTPS 上保护流量安全的证书需要共享与 DNS 记录相同的名称。 
+为 DNS 记录选择名称时，请记住解决方案体系结构。
+如果使用负载平衡，则用于在 HTTPS 上保护流量安全的证书需要共享与 DNS 记录相同的名称。
 
 方案 |最佳做法
 :---|:---
@@ -134,7 +141,8 @@ DNS CNAME 使你可以创建别名以引用主机 (A) 记录。 附加名称记�
 
 ### <a name="public-key-infrastructure"></a>公钥基础结构
 
-当前大多数组织都要求网络流量（特别是包含诸如如何配置服务器这类敏感数据的流量）在传输过程必须进行验证和/或加密。 虽然可以使用 HTTP（采用明文方便进行客户端请求）部署请求服务器，不过最佳做法是使用 HTTPS 保护流量安全。 可以使用 DSC 资源 **xPSDesiredStateConfiguration** 中的一组参数将服务配置为使用 HTTPS。
+当前大多数组织都要求网络流量（特别是包含诸如如何配置服务器这类敏感数据的流量）在传输过程必须进行验证和/或加密。
+虽然可以使用 HTTP（采用明文方便进行客户端请求）部署请求服务器，不过最佳做法是使用 HTTPS 保护流量安全。 可以使用 DSC 资源 **xPSDesiredStateConfiguration** 中的一组参数将服务配置为使用 HTTPS。
 
 保护请求服务器的 HTTPS 流量安全的证书要求与保护任何其他 HTTPS 网站并无不同。 Windows Server 证书服务中的 **Web 服务器**模板满足所需功能。
 
@@ -149,9 +157,11 @@ DNS CNAME 使你可以创建别名以引用主机 (A) 记录。 附加名称记�
 
 ### <a name="choosing-an-architecture"></a>选择体系结构
 
-可以使用 IIS 上承载的 Web 服务或 SMB 文件共享部署请求服务器。 在大多数情况下，Web 服务选项会提供更高灵活性。 HTTPS 流量经常会穿越网络边界，而在各个网络之间通常会筛选或阻止 SMB 流量。 Web 服务还提供选项以包含一致性服务器或 Web 报表管理器（在本文档的将来版本将讨论这两个主题），从而为客户端提供一种机制，用于将状态报告返回给服务器以便集中查看。 SMB 针对策略规定不应利用 Web 服务器的环境，以及使得不需要 Web 服务器角色的其他环境要求提供了一个选项。 在任一情况下，请记住评估签名和加密流量的要求。 HTTPS、SMB 签名和 IPSEC 策略都是值得考虑的选项。
+可以使用 IIS 上承载的 Web 服务或 SMB 文件共享部署请求服务器。 在大多数情况下，Web 服务选项会提供更高灵活性。 HTTPS 流量经常会穿越网络边界，而在各个网络之间通常会筛选或阻止 SMB 流量。 Web 服务还提供选项以包含一致性服务器或 Web 报表管理器（在本文档的将来版本将讨论这两个主题），从而为客户端提供一种机制，用于将状态报告返回给服务器以便集中查看。
+SMB 针对策略规定不应利用 Web 服务器的环境，以及使得不需要 Web 服务器角色的其他环境要求提供了一个选项。
+在任一情况下，请记住评估签名和加密流量的要求。 HTTPS、SMB 签名和 IPSEC 策略都是值得考虑的选项。
 
-#### <a name="load-balancing"></a>负载平衡  
+#### <a name="load-balancing"></a>负载平衡
 与 Web 服务进行交互的客户端会针对在单个响应中返回的信息发出请求。 无需连续请求，因此负载平衡平台无需确保在任何时间点都在单台服务器上维持会话。
 
 规划任务|
@@ -166,11 +176,11 @@ DNS CNAME 使你可以创建别名以引用主机 (A) 记录。 附加名称记�
 
 ### <a name="staging-configurations-and-modules-on-the-pull-server"></a>请求服务器上的暂存配置和模块
 
-作为配置规划的一部分，你需要考虑请求服务器会承载的 DSC 托管模块和配置。 为进行配置规划，需要基本了解如何准备内容并将它部署到请求服务器，这十分重要。 
+作为配置规划的一部分，你需要考虑请求服务器会承载的 DSC 托管模块和配置。 为进行配置规划，需要基本了解如何准备内容并将它部署到请求服务器，这十分重要。
 
-将来，此部分会进行扩展并包含在 DSC 请求服务器的操作指南中。  该指南会讨论使用自动化随时间推移管理模块和配置的日常过程。 
+将来，此部分会进行扩展并包含在 DSC 请求服务器的操作指南中。  该指南会讨论使用自动化随时间推移管理模块和配置的日常过程。
 
-#### <a name="dsc-modules"></a>DSC 模块  
+#### <a name="dsc-modules"></a>DSC 模块
 请求配置的客户端需要所需 DSC 模块。 请求服务器的功能是按需自动将 DSC 模块分发到客户端。 如果你是首次部署请求服务器（可能作为实验室或概念证明），则可能要依赖于可从公共存储库（如 PowerShell 库或用于 DSC 模块的 PowerShell.org GitHub 存储库）获取的 DSC 模块。
 
 请务必记住，即使是对于受信任的联机源（如 PowerShell 库），从公共存储库下载的任何模块在用于生产之前，都应由具有 PowerShell 经验并了解使用模块的环境的人员进行检查。 完成此任务期间，这是检查模块中是否存在可以删除的任何其他负载（如文档和示例脚本）的好时机。 这会在通过网络将模块从服务器下载到客户端时，减少每个客户端在其第一个请求中的网络带宽。
@@ -194,7 +204,8 @@ New-DscCheckSum -ConfigurationPath .\ -OutPath .\
 
 #### <a name="dsc-configurations"></a>DSC 配置
 
-请求服务器的用途是提供一种集中式机制，用于将 DSC 配置分发到客户端节点。 配置作为 MOF 文档存储在服务器上。 每个文档都使用唯一的 GUID 进行命名。 客户端配置为与请求服务器连接时，还会向它们提供它们应请求的配置的 GUID。 这一通过 GUID 引用配置的系统可保证全局唯一性，并且十分灵活，以便配置可按照每个节点的粒度进行应用，或作为跨应具有相同配置的多台服务器的角色配置。
+请求服务器的用途是提供一种集中式机制，用于将 DSC 配置分发到客户端节点。 配置作为 MOF 文档存储在服务器上。
+每个文档都使用唯一的 GUID 进行命名。 客户端配置为与请求服务器连接时，还会向它们提供它们应请求的配置的 GUID。 这一通过 GUID 引用配置的系统可保证全局唯一性，并且十分灵活，以便配置可按照每个节点的粒度进行应用，或作为跨应具有相同配置的多台服务器的角色配置。
 
 #### <a name="guids"></a>GUID
 
@@ -289,26 +300,26 @@ Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
 #      * Automatically load certificate from Certificate Authority
 #      * Locate Modules and Configuration data on remote SMB share
 #      * Manage state of default websites in IIS
-    
+
 param (
-        [Parameter(Mandatory=$true)] 
-        [ValidateNotNullorEmpty()] 
+        [Parameter(Mandatory=$true)]
+        [ValidateNotNullorEmpty()]
         [System.String] $ServerName,
         [System.String] $DomainName,
         [System.String] $CARootName,
         [System.String] $CAServerFQDN,
         [System.String] $CertSubject,
         [System.String] $SMBShare,
-        [Parameter(Mandatory=$true)] 
-        [ValidateNotNullorEmpty()] 
+        [Parameter(Mandatory=$true)]
+        [ValidateNotNullorEmpty()]
         [PsCredential] $Credential
     )
-    
+
 Configuration PullServer {
     Import-DscResource -ModuleName xPSDesiredStateConfiguration, xWebAdministration, xCertificate, xComputerManagement
     Node localhost
     {
-            
+
         # Configure the server to automatically corret configuration drift including reboots if needed.
         LocalConfigurationManager
         {
@@ -316,14 +327,14 @@ Configuration PullServer {
             RebootNodeifNeeded = $node.RebootNodeifNeeded
             CertificateId = $node.Thumbprint
         }
-    
+
         # Remove all GUI interfaces so the server has minimum running footprint.
         WindowsFeature ServerCore
         {
             Ensure = 'Absent'
             Name = 'User-Interfaces-Infra'
         }
-    
+
         # Set the server name and if needed, join a domain. If not joining a domain, remove the DomainName parameter.
         xComputer DomainJoin
         {
@@ -331,7 +342,7 @@ Configuration PullServer {
             DomainName = $Node.DomainName
             Credential = $Node.Credential
         }
-    
+
         # The next series of settings disable SSL and enable TLS, for environments where that is required by policy.
         Registry TLS1_2ServerEnabled
         {
@@ -373,14 +384,14 @@ Configuration PullServer {
             ValueData = 0
             ValueType = 'Dword'
         }
-    
+
         # Install the Windows Server DSC Service feature
         WindowsFeature DSCServiceFeature
         {
             Ensure = 'Present'
             Name = 'DSC-Service'
         }
-    
+
         # If using a certificate from a local Active Directory Enterprise Root Certificate Authority, complete a request and install the certificate
         xCertReq SSLCert
         {
@@ -390,7 +401,7 @@ Configuration PullServer {
             AutoRenew = $Node.AutoRenew
             Credential = $Node.Credential
         }
-    
+
         # Use the DSC resource to simplify deployment of the web service.  You might also consider modifying the default port, possibly leveraging port 443 in environments where that is enforced as a standard.
         xDSCWebService PSDSCPullServer
         {
@@ -405,10 +416,10 @@ Configuration PullServer {
             State = 'Started'
             DependsOn = '[WindowsFeature]DSCServiceFeature'
         }
-    
+
         # Validate web config file contains current DB settings
         xWebConfigKeyValue CorrectDBProvider
-        { 
+        {
             ConfigSection = 'AppSettings'
             Key = 'dbprovider'
             Value = 'System.Data.OleDb'
@@ -416,17 +427,17 @@ Configuration PullServer {
             DependsOn = '[xDSCWebService]PSDSCPullServer'
         }
         xWebConfigKeyValue CorrectDBConnectionStr
-        { 
+        {
             ConfigSection = 'AppSettings'
             Key = 'dbconnectionstr'
             Value = 'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Program Files\WindowsPowerShell\DscService\Devices.mdb;'
             WebsitePath = 'IIS:\sites\PSDSCPullServer'
             DependsOn = '[xDSCWebService]PSDSCPullServer'
         }
-    
+
         # Stop the default website
-        xWebsite StopDefaultSite  
-        { 
+        xWebsite StopDefaultSite
+        {
             Ensure = 'Present'
             Name = 'Default Web Site'
             State = 'Stopped'
@@ -456,8 +467,8 @@ $configData = @{
 PullServer -ConfigurationData $configData -OutputPath 'C:\PullServerConfig\'
 Set-DscLocalConfigurationManager -ComputerName localhost -Path 'C:\PullServerConfig\'
 Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
-    
-# .\Script.ps1 -ServerName web1 -domainname 'test.pha' -carootname 'test-dc01-ca' -caserverfqdn 'dc01.test.pha' -certsubject 'CN=service.test.pha' -smbshare '\\sofs1.test.pha\share' 
+
+# .\Script.ps1 -ServerName web1 -domainname 'test.pha' -carootname 'test-dc01-ca' -caserverfqdn 'dc01.test.pha' -certsubject 'CN=service.test.pha' -smbshare '\\sofs1.test.pha\share'
 ```
 
 
@@ -468,7 +479,7 @@ Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
 function Verify-DSCPullServer ($fqdn) {
     ([xml](invoke-webrequest "https://$($fqdn):8080/psdscpullserver.svc" | % Content)).service.workspace.collection.href
 }
-Verify-DSCPullServer 'INSERT SERVER FQDN' 
+Verify-DSCPullServer 'INSERT SERVER FQDN'
 
 Expected Result:
 Action
@@ -485,14 +496,14 @@ Configuration PullClient {
     $ID,
     $Server
     )
-        LocalConfigurationManager 
-                { 
+        LocalConfigurationManager
+                {
                     ConfigurationID = $ID;
                     RefreshMode = 'PULL';
                     DownloadManagerName = 'WebDownloadManager';
                     RebootNodeIfNeeded = $true;
                     RefreshFrequencyMins = 30;
-                    ConfigurationModeFrequencyMins = 15; 
+                    ConfigurationModeFrequencyMins = 15;
                     ConfigurationMode = 'ApplyAndAutoCorrect';
                     DownloadManagerCustomData = @{ServerUrl = "http://"+$Server+":8080/PSDSCPullServer.svc"; AllowUnsecureConnection = $true}
                 }
@@ -504,13 +515,13 @@ Set-DscLocalConfigurationManager -ComputerName 'Localhost' -Path 'C:\DSCConfig\'
 
 ## <a name="additional-references-snippets-and-examples"></a>其他参考、代码段和示例
 
-此示例演示如何手动启动客户端连接（需要 WMF5）以进行测试。 
+此示例演示如何手动启动客户端连接（需要 WMF5）以进行测试。
 
 ```powershell
 Update-DSCConfiguration –Wait -Verbose
 ```
 
-[Add-DnsServerResourceRecordName](http://bit.ly/1G1H31L) cmdlet 用于将一种类型的 CNAME 记录添加到 DNS 区域。 
+[Add-DnsServerResourceRecordName](http://bit.ly/1G1H31L) cmdlet 用于将一种类型的 CNAME 记录添加到 DNS 区域。
 
 用于[创建校验和以及将 DSC MOF 发布到 SMB 请求服务器](http://bit.ly/1E46BhI)的 PowerShell 函数会自动生成所需校验和，然后将 MOF 配置文件和校验和文件都复制到 SMB 请求服务器。
 
@@ -518,10 +529,7 @@ Update-DSCConfiguration –Wait -Verbose
 
 在包含 OData Web 服务的请求服务器部署过程中，会存储数据文件以创建信息。 文件的类型取决于操作系统，如下所述。
 
- - **Windows Server 2012**  
-文件类型始终是 .mdb
- - **Windows Server 2012 R2**  
-文件类型默认为 .edb，除非在配置中指定 .mdb
+ - **Windows Server 2012**：文件类型始终为 .mdb
+ - **Windows Server 2012 R2**：文件类型默认为 .edb，除非在配置中指定了 .mdb
 
 在用于安装请求服务器的[高级示例脚本](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts)中，还会找到有关如何自动控制 web.config 文件设置以防止文件类型所导致的任何可能错误的示例。
-

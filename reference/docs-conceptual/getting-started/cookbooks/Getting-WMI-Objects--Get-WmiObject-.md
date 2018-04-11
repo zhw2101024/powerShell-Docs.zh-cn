@@ -1,20 +1,22 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "获取 WMI 对象 (Get WmiObject)"
+title: 获取 WMI 对象 (Get WmiObject)
 ms.assetid: f0ddfc7d-6b5e-4832-82de-2283597ea70d
-ms.openlocfilehash: fbaac2797dd62eb03a2be581b3b5f8be6dafc0ad
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 67922426ae3f13ef5f4c70bc70bb3ce1594d3d05
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="getting-wmi-objects-get-wmiobject"></a>获取 WMI 对象 (Get-WmiObject)
 
 ## <a name="getting-wmi-objects-get-wmiobject"></a>获取 WMI 对象 (Get-WmiObject)
+
 Windows Management Instrumentation (WMI) 是 Windows 系统管理的核心技术，因为它以统一的方式公开大量信息。 由于 WMI 可实现的效果，用于访问 WMI 对象的 Windows PowerShell cmdlet **Get-WmiObject** 是进行实际工作最有用的对象之一。 我们将讨论如何使用 Get-WmiObject 访问 WMI 对象以及如何使用 WMI 对象执行特定操作。
 
 ### <a name="listing-wmi-classes"></a>列出 WMI 类
+
 大多数 WMI 用户遇到的第一个问题就是尝试了解 WMI 可执行的操作。 WMI 类描述了可管理的资源。 有成百上千的 WMI 类，其中一些包含数十个属性。
 
 **Get-WmiObject** 通过使 WMI 可发现来解决此问题。 通过键入以下内容，可以获取在本地计算机上可用的 WMI 类的列表：
@@ -48,7 +50,7 @@ __ProviderRegistration                  __ObjectProviderRegistration
 
 连接到本地系统时，甚至可以包括 ComputerName。 可以将本地计算机的名称、其 IP 地址（或环回地址 127.0.0.1） 或 WMI 样式“.”作为计算机名。 如果在名为 Admin01 且 IP 地址为 192.168.1.90 计算机上运行 Windows PowerShell，以下所有命令将返回该计算机的 WMI 类列表：
 
-```
+```powershell
 Get-WmiObject -List
 Get-WmiObject -List -ComputerName .
 Get-WmiObject -List -ComputerName Admin01
@@ -68,6 +70,7 @@ __Provider                              __Win32Provider
 ```
 
 ### <a name="displaying-wmi-class-details"></a>显示 WMI 类详细信息
+
 如果已知 WMI 类的名称，即可使用它获取信息。 例如，常用于检索有关计算机信息的 WMI 类之一 **Win32_OperatingSystem**。
 
 ```
@@ -83,7 +86,7 @@ Version         : 5.1.2600
 
 尽管我们显示了所有参数，但可以用更简洁的方式表达该命令。 连接到本地系统时不需要使用 **ComputerName** 参数。 我们显示它是为了演示最常见的情况以及提醒与参数有关的事项。 **Namespace** 默认为 root/cimv2，也可以省略。 最后，大多数 cmdlet 都允许省略通用参数的名称。 使用 Get-WmiObject 时，如果未指定第一个参数的名称，则 Windows PowerShell 会将其视为 **Class** 参数。 这意味着最后一个命令可能是通过键入以下内容发出的：
 
-```
+```powershell
 Get-WmiObject Win32_OperatingSystem
 ```
 
@@ -105,6 +108,7 @@ BuildNumber                               Property   System.String BuildNumb...
 ```
 
 #### <a name="displaying-non-default-properties-with-format-cmdlets"></a>通过 Format Cmdlet 显示非默认属性
+
 如果需要 **Win32_OperatingSystem** 类中所包含的默不显示的信息，可以通过用 **Format** cmdlet 显示它们。 例如，如果你想显示可用内存数据，请键入：
 
 ```
@@ -116,7 +120,7 @@ TotalVirtualMemorySize TotalVisibleMemory FreePhysicalMemory FreeVirtualMemory F
 ```
 
 > [!NOTE]
-> 由于通配符可与 Format-Table 中的属性名称配合使用，因此最终的管道元素可缩减为 Format-Table -Property TotalV,Free
+> 由于通配符支持 Format-Table 中的属性名，因此最终管道元素可缩减为 Format-Table -Property Total,Free**
 
 通过键入以下内容将内存数据的格式设置为列表可提高其可读性：
 
@@ -129,4 +133,3 @@ FreePhysicalMemory     : 301876
 FreeVirtualMemory      : 2056724
 FreeSpaceInPagingFiles : 1556644
 ```
-

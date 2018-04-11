@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "MSFT_DSCLocalConfigurationManager 类的 GetConfigurationStatus 方法"
-ms.openlocfilehash: a41e7a15fc935c2cd5fd4cb66d0ab13509d5d4e0
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,配置,安装程序
+title: MSFT_DSCLocalConfigurationManager 类的 GetConfigurationStatus 方法
+ms.openlocfilehash: dde4ac003b346018561481e05ca7374475f9ff1d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="getconfigurationstatus-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类的 GetConfigurationStatus 方法
 
@@ -26,11 +26,9 @@ uint32 GetConfigurationStatus(
 <a name="parameters"></a>参数
 ----------
 
-All \[in\]  
-如果此方法应返回计算机上运行的所有配置的相关信息（包括配置应用程序和一致性检查），则为 **true**。
+All \[in\]：如果此方法应返回计算机上运行的所有配置的相关信息（包括配置应用程序和一致性检查），则为 true。
 
-configurationStatus \[out\]  
-返回时，包含定义设置的 **MSFT_DSCMetaConfiguration** 类的嵌入实例。
+configurationStatus \[out\]：返回响应时，包含定义设置的 MSFT_DSCConfigurationStatus 类的嵌入实例。
 
 ## <a name="return-value"></a>返回值
 ------------
@@ -52,11 +50,3 @@ configurationStatus \[out\]
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

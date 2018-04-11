@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "MSFT_DSCLocalConfigurationManager 类的 GetConfigurationResultOutput 方法"
-ms.openlocfilehash: f6106bb28dc20004b5bbb6df2d8e719cf0c453f0
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,配置,安装程序
+title: MSFT_DSCLocalConfigurationManager 类的 GetConfigurationResultOutput 方法
+ms.openlocfilehash: f4c2ddaa37cdafeff1a442f3f1fa656788a1c6c8
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类的 GetConfigurationResultOutput 方法
 
@@ -27,14 +27,11 @@ uint32 GetConfigurationResultOutput(
 <a name="parameters"></a>参数
 ----------
 
-jobId \[in\]  
-要为其获取输出数据的作业 ID。
+jobId \[in\]：要为其获取输出数据的作业的 ID。
 
-resumeOutputBookmark \[in\]  
-指定输出应从上一个书签中延续。
+resumeOutputBookmark \[in\]：指定输出应接着上一书签。
 
-output \[out\]  
-指定作业的输出。
+output \[out\]：指定作业的输出。
 
 ## <a name="return-value"></a>返回值
 ------------
@@ -56,10 +53,3 @@ output \[out\]
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
- 
-
- 
-
-
-

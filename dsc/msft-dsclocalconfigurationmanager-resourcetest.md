@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "MSFT_DSCLocalConfigurationManager 类的 ResourceTest 方法"
-ms.openlocfilehash: 799b1cd91dfacf25c0e5e734ca96d20a776103f0
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,配置,安装程序
+title: MSFT_DSCLocalConfigurationManager 类的 ResourceTest 方法
+ms.openlocfilehash: f03a034329a9cde5cd44dbaf42ba1789c2b8f4f9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="resourcetest-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类的 ResourceTest 方法
 
@@ -28,17 +28,13 @@ uint32 ResourceTest(
 <a name="parameters"></a>参数
 ----------
 
-ResourceType \[in\]  
-要调用的资源的名称。
+ResourceType \[in\]：要调用的资源的名称。
 
-ModuleName \[in\]  
-包含要调用的资源的模块名称。
+ModuleName \[in\]：包含要调用资源的模块名称。
 
-resourceProperty \[in\]  
-分别在哈希表中将资源属性名称及其值指定为键和值。 使用 [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) cmdlet 可以发现资源属性及其类型。
+resourceProperty \[in\]：在哈希表中分别将资源属性名及其值指定为键和值。 使用 [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) cmdlet 可以发现资源属性及其类型。
 
-InDesiredState \[out\]  
-返回时，如果目标节点处于所需状态，会将此属性设置为 **true**。
+InDesiredState \[out\]：返回响应时，如果目标节点处于所需状态，便会将此属性设置为 true。
 
 ## <a name="return-value"></a>返回值
 ------------
@@ -60,11 +56,3 @@ InDesiredState \[out\]
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

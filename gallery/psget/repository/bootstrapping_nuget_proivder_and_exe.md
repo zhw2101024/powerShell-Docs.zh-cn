@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "库,powershell,cmdlet,psget"
-title: "启动 NuGet 提供程序和 EXE"
-ms.openlocfilehash: 0036972eb9a0c20469da1aadafe223e6ec80f16a
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+keywords: 库,powershell,cmdlet,psget
+title: 启动 NuGet 提供程序和 EXE
+ms.openlocfilehash: 1c8d99491aec6d2a598facb909c1f36f4bb979e7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="bootstrap-both-nuget-provider-and-nugetexe-or-bootstrap-only-nuget-provider"></a>同时启动 NuGet 提供程序和 NuGet.exe 或仅启动 NuGet 提供程序
 
@@ -83,7 +83,7 @@ PS C:\> Publish-Module -Name Contoso -Repository PSGallery -Verbose
 NuGet.exe and NuGet provider are required to continue
 PowerShellGet requires NuGet.exe and NuGet provider version '2.8.5.201' or newer to interact with the NuGet-based repositories. Do you want PowerShellGet to install both NuGet.exe and NuGet provider now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): N
-Publish-Module : PowerShellGet requires NuGet.exe and NuGet provider version '2.8.5.201' or newer to interact with the NuGet-based repositories. Please ensure that '2.8.5.201' or newer version of NuGet provider is installed and NuGet.exe is available under 
+Publish-Module : PowerShellGet requires NuGet.exe and NuGet provider version '2.8.5.201' or newer to interact with the NuGet-based repositories. Please ensure that '2.8.5.201' or newer version of NuGet provider is installed and NuGet.exe is available under
 one of the paths specified in PATH environment variable value.
 At line:1 char:1
 + Publish-Module -Name Contoso -Repository PSGallery -Verbose
@@ -155,4 +155,3 @@ $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
 ```
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
-

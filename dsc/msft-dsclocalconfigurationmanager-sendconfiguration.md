@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,配置,安装程序"
-title: "MSFT_DSCLocalConfigurationManager 类的 SendConfiguration 方法"
-ms.openlocfilehash: 72c59b5aad293fa561146e5ad6822f27f40f321f
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,配置,安装程序
+title: MSFT_DSCLocalConfigurationManager 类的 SendConfiguration 方法
+ms.openlocfilehash: 07ae48dd456e68be4ad0b09127ba9801359fd101
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="sendconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类的 SendConfiguration 方法
 
@@ -26,11 +26,9 @@ uint32 SendConfiguration(
 <a name="parameters"></a>参数
 ----------
 
-ConfigurationData \[in\]  
-配置的环境数据。
+ConfigurationData \[in\]：配置的环境数据。
 
-force \[in\]  
-为 **true**，则强制停止配置。
+force \[in\]：若为 true，强制停止配置。
 
 ## <a name="return-value"></a>返回值
 ------------
@@ -52,11 +50,3 @@ force \[in\]
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

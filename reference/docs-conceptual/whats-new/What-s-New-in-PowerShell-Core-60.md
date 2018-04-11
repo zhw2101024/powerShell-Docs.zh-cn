@@ -124,7 +124,7 @@ PowerShell Core 还包含一个启发式方法，通过该方法可在常用文�
 在许多情况下，通过社区的帮助，我们已添加了一些新功能和针对 cmdlet 的 bug 修补程序。
 在某些情况下，由于基础 .NET 层中缺失依赖项，因此功能已被删除或者不可用。
 
-大多随附 Windows 的模块（例如 `DnsClient`、`Hyper-V`、`NetTCPIP`、`Storage` 等）以及其他一些 Microsoft 产品（包括 Azure 和 Office）尚未显式移植到 .NET Core。
+大多随附 Windows 的模块（例如 `DnsClient`、`Hyper-V``NetTCPIP`、`Storage` 等）以及其他一些 Microsoft 产品（包括 Azure 和 Office）尚未显式移植到 .NET Core。
 PowerShell 团队正与这些产品组以及团队开展协作，以验证并将现有模块迁移到 PowerShell Core。
 通过使用 .NET Standard 和 [CDXML][]，其中许多传统 Windows PowerShell 模块看似确实可在 PowerShell Core 中运行，但是它们尚未经过正式验证，且不受正式支持。
 
@@ -133,7 +133,7 @@ PowerShell 团队正与这些产品组以及团队开展协作，以验证并将
 首先，从 PowerShell 库安装 `WindowsPSModulePath` 模块：
 
 ```powershell
-# Add `-Scope CurrentUser` if you're installing as non-admin 
+# Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 
@@ -160,7 +160,7 @@ PowerShell Core 已对我们支持的所有主要平台（包括多个 Linux 发
 
 如需详细了解如何配置和使用基于 SSH 的远程处理，请参阅[通过 SSH 进行 PowerShell 远程处理][ssh-remoting]。
 
-## <a name="default-encoding-is-utf-8-without-a-bom"></a>默认编码现为不具有 BOM 的 UTF-8
+## <a name="default-encoding-is-utf-8-without-a-bom-except-for-new-modulemanifest"></a>默认编码为 UTF-8（不使用 BOM），但 New-ModuleManifest 除外
 
 以前，`Get-Content`、`Set-Content` 等 Windows PowerShell cmdlet 使用不同的编码，例如 ASCII 和 UTF-16。
 混合使用未指定编码的 cmdlet 时，编码默认的变动会导致问题。
@@ -179,7 +179,6 @@ PowerShell Core 更改默认编码以符合更广泛的生态系统。
 - Format-Hex
 - Get-Content
 - Import-Csv
-- New-ModuleManifest
 - Out-File
 - Select-String
 - Send-MailMessage
@@ -190,6 +189,8 @@ PowerShell Core 更改默认编码以符合更广泛的生态系统。
 `$OutputEncoding` 的默认值也已更改为 UTF-8。
 
 作为最佳做法，应该使用 `-Encoding` 参数在脚本中显示设置编码以生成确定的跨平台行为。
+
+`New-ModuleManifest` cmdlet 没有 Encoding 参数。 如果模块清单 (.psd1) 文件是使用 `New-ModuleManifest` cmdlet 创建而成，清单编码视环境而定：如果是在 Linux 上运行的 PowerShell Core，编码为 UTF-8（不使用 BOM）；否则，编码为 UTF-16（使用 BOM）。 (#3940)
 
 ## <a name="support-backgrounding-of-pipelines-with-ampersand--3360"></a>有 `&` 的管道的支持背景 (#3360)
 
@@ -225,7 +226,7 @@ PowerShell Core 更改默认编码以符合更广泛的生态系统。
   - `GitCommitId`：这是 Git 分支的 Git 提交 ID 或在其中生成 PowerShell 的标记。
     在已发布版本中，它可能与 `PSVersion` 相同。
   - `OS`：这是 `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription` 返回的 OS 版本字符串
-  - `Platform`：该属性由 `[System.Environment]::OSVersion.Platform` 返回。它在 Windows 上设置为 `Win32NT`，在 macOS 上为 `MacOSX`，在 Linux 上为 `Unix`。
+  - `Platform`：该属性由 `[System.Environment]::OSVersion.Platform` 返回。它在 Windows 上设置为 `Win32NT`，在 macOS 上为 `Unix`，在 Linux 上为 `Unix`。
 - 已从 `$PSVersionTable` 删除 `BuildVersion` 属性。
   此属性与 Windows 内部版本密切相关。
   我们建议使用 `GitCommitId` 检索 PowerShell Core 的确切内部版本。 (#3877)（感谢 @iSazonov！）
@@ -235,7 +236,7 @@ PowerShell Core 更改默认编码以符合更广泛的生态系统。
 - 已将 `GitCommitId` 添加到 PowerShell Core 横幅。
   现在启动 PowerShell 时无需运行 `$PSVersionTable` 即可获取版本！ (#3916)（感谢 @iSazonov！）
 - 已在 `$PSHome` 中添加名为 `powershell.config.json` 的 JSON 配置文件，用以存储某些启动之前所需的设置（例如 `ExecutionPolicy`）。
-- 运行 Windows EXE 时不会阻止管道
+- 运行 Windows EXE 时请勿阻止管道
 - 已支持 COM 集合的枚举。 (#4553)
 
 ## <a name="cmdlet-updates"></a>Cmdlet 更新

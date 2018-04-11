@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
-title: "Web 访问 cmdlet"
+ms.date: 12/12/2016
+title: Web 访问 cmdlet
 ms.technology: powershell
-ms.openlocfilehash: 54821c318b165461ec613678a39c4e3b500dfd0e
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 6930fd6a08de69078576fb0d0fbabb04e05d0814
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="windows-powershell-web-access-cmdlets"></a>Windows PowerShell Web 访问 Cmdlet
 
@@ -46,9 +46,7 @@ ms.lasthandoff: 01/17/2018
 >
 > `Get-Command –Module PowerShellWebAccess` cmdlet。
 
-有关其中任何一种 cmdlet 或其语法的详细信息，请使用：  
-`Get-Help `&lt;cmdlet 名称&gt;  
-其中 &lt;cmdlet name&gt; 是要了解的 cmdlet 的名称。
+若要详细了解任一 cmdlet 或其语法，请使用 `Get-Help `&lt;cmdlet 名称&gt;（其中，&lt;cmdlet 名称&gt; 是要探究的 cmdlet 的名称）。
 
 有关更多详细信息，你可以运行以下任何 cmdlet：
 
@@ -61,4 +59,3 @@ ms.lasthandoff: 01/17/2018
 有关 PowerShell Web 访问的详细信息，请参阅以下内容：
 
 - [安装和使用 Windows PowerShell Web 访问](../install-and-use-windows-powershell-web-access.md)
-
