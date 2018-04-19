@@ -1,0 +1,8 @@
+# <a name="powershell-core-on-arm"></a><span data-ttu-id="d0c64-101">ARM 上的 PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="d0c64-101">PowerShell Core on ARM</span></span>
+
+<span data-ttu-id="d0c64-102">现在，在实验性、不受支持状态下，PowerShell Core 可用于一些 ARM 设备，包括 Windows 10 ARM32/ARM64 和 Raspbian。</span><span class="sxs-lookup"><span data-stu-id="d0c64-102">Today, PowerShell Core works on some ARM devices, including both Windows 10 ARM32/ARM64 and Raspbian, in an experimental, unsupported state.</span></span>
+
+<span data-ttu-id="d0c64-103">若要详细了解如何安装这些不受支持的实验性内部版本，请在 GitHub 上查看有关 [Windows 10 IoT](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#deploying-on-windows-iot) 和 [Raspbian](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#raspbian) 的安装说明。</span><span class="sxs-lookup"><span data-stu-id="d0c64-103">For more information on installing these unsupported, experimental builds, check out our installation instructions on GitHub for [Windows 10 IoT](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#deploying-on-windows-iot) and [Raspbian](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#raspbian).</span></span>
+
+<span data-ttu-id="d0c64-104">随着 ARM64 的改进，此处将提供更多相关信息。</span><span class="sxs-lookup"><span data-stu-id="d0c64-104">More information will be available here as our ARM64 story progresses.</span></span>
+<span data-ttu-id="d0c64-105">敬请关注！</span><span class="sxs-lookup"><span data-stu-id="d0c64-105">Stay tuned!</span></span>
