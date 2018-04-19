@@ -3,28 +3,28 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用文件和文件夹
 ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
-ms.openlocfilehash: e47ea00c9d90d7e04a7af0cb1348849410a6e357
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 6b1fcd438570c8708aa87e4b213f33474921d5f8
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="working-with-files-and-folders"></a>使用文件和文件夹
 
-在 Windows PowerShell 驱动器中导航和操作其上面的项类似于操作 Windows 物理磁盘驱动器上的文件和文件夹。 本节我们将讨论如何处理特定文件和文件夹操作任务。
+在 Windows PowerShell 驱动器中导航和操作其上面的项类似于操作 Windows 物理磁盘驱动器上的文件和文件夹。 本节讨论如何使用 PowerShell 处理特定文件和文件夹操作任务。
 
 ### <a name="listing-all-the-files-and-folders-within-a-folder"></a>列出某个文件夹内的所有文件和文件夹
 
 可以通过使用 **Get-ChildItem** 直接获取某个文件夹中的所有项目。 添加可选的 **Force** 参数以显示隐藏项或系统项。 例如，此命令将显示 Windows PowerShell 驱动器 C（它与 Windows 物理驱动器 C 相同）的直观内容：
 
 ```powershell
-Get-ChildItem -Force C:\
+Get-ChildItem -Path C:\ -Force
 ```
 
 该命令将仅列出直接包含的项，类似于使用 Cmd.exe 的 **DIR** 命令或 UNIX shell 中的 **ls**。 为了显示包含的项，你还需要指定 **-Recurse** 参数。 （这可能需要相当长的时间才能完成。）列出 C 驱动器上的所有内容：
 
 ```powershell
-Get-ChildItem -Force C:\ -Recurse
+Get-ChildItem -Path C:\ -Force -Recurse
 ```
 
 **Get-ChildItem** 可以使用其 **Path**、**Filter**、**Include** 和 **Exclude** 参数筛选项，但那些通常只基于名称。 还可以通过使用 **Where-Object** 基于项的其他属性执行复杂的筛选。
@@ -40,33 +40,33 @@ Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -Fi
 复制通过 **Copy-Item** 完成。 以下命令用于将 C:\\boot.ini 备份到 C:\\boot.bak：
 
 ```powershell
-Copy-Item -Path c:\boot.ini -Destination c:\boot.bak
+Copy-Item -Path C:\boot.ini -Destination C:\boot.bak
 ```
 
 如果目标文件已存在，则复制尝试失败。 若要覆盖预先存在的目标，请使用 Force 参数：
 
 ```powershell
-Copy-Item -Path c:\boot.ini -Destination c:\boot.bak -Force
+Copy-Item -Path C:\boot.ini -Destination C:\boot.bak -Force
 ```
 
 即使当目标为只读时，该命令也有效。
 
-复制文件夹的操作方式与此相同。 此命令用于以递归方式将文件夹 C:\\temp\\test1 复制到新文件夹 c:\\temp\\DeleteMe：
+复制文件夹的操作方式与此相同。 此命令用于以递归方式将文件夹 C:\\temp\\test1 复制到新文件夹 C:\\temp\\DeleteMe：
 
 ```powershell
-Copy-Item C:\temp\test1 -Recurse c:\temp\DeleteMe
+Copy-Item C:\temp\test1 -Recurse C:\temp\DeleteMe
 ```
 
 还可以复制选定的项。 以下命令用于将 c:\\data 中任意位置包含的所有 .txt 文件复制到 c:\\temp\\text：
 
 ```powershell
-Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination c:\temp\text
+Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination C:\temp\text
 ```
 
 你仍然可以使用其他工具执行文件系统复制。 XCOPY、ROBOCOPY 和 COM 对象（如 **Scripting.FileSystemObject**）都适用于 Windows PowerShell。 例如，可以使用 Windows Script Host **Scripting.FileSystem COM** 类将 C:\\boot.ini 备份到 C:\\boot.bak：
 
 ```powershell
-(New-Object -ComObject Scripting.FileSystemObject).CopyFile('c:\boot.ini', 'c:\boot.bak')
+(New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
 ```
 
 ### <a name="creating-files-and-folders"></a>创建文件和文件夹
@@ -90,7 +90,7 @@ New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
 你可以使用 **Remove-Item** 删除包含的项，但如果项包含任何其他内容，系统将提示你确认该删除。 例如，如果尝试删除包含其他项的文件夹 C:\\temp\\DeleteMe，则在删除该文件夹之前 Windows PowerShell 会提示你确认：
 
 ```
-Remove-Item C:\temp\DeleteMe
+Remove-Item -Path C:\temp\DeleteMe
 
 Confirm
 The item at C:\temp\DeleteMe has children and the -recurse parameter was not
@@ -103,7 +103,7 @@ sure you want to continue?
 如果不希望系统针对每个包含的项都提示你，则指定 **Recurse** 参数：
 
 ```powershell
-Remove-Item C:\temp\DeleteMe -Recurse
+Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
 ### <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>将本地文件夹映射为 Windows 可访问驱动器

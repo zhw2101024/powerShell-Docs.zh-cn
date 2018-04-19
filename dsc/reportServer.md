@@ -3,15 +3,18 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,配置,安装程序
 title: 使用 DSC 报表服务器
-ms.openlocfilehash: e239414dc30c7458c509392792d4775d04f2311a
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 49e022d3c3c1e117eac4cb3c874ca8dcfe628237
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="using-a-dsc-report-server"></a>使用 DSC 报表服务器
 
 > 适用于：Windows PowerShell 5.0
+
+> [!IMPORTANT]
+> 请求服务器（Windows 功能 DSC-Service）是 Windows Server 的一个受支持组件，不过目前没有提供新功能的计划。 建议开始将托管客户端转换至 [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)（包括 Windows Server 上的请求服务器以外的功能）或[此处](pullserver.md#community-solutions-for-pull-service)列出的社区解决方案之一。
 
 >**注意：**本主题中描述的报表服务器在 PowerShell 4.0 中不可用。
 
