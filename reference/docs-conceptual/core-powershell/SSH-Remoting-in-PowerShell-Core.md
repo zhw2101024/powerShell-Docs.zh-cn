@@ -242,7 +242,7 @@ GitCommitId                    v6.0.0-alpha.17
 1. sudo 命令对以 Linux 计算机为目标的远程会话不起作用。
 
 [PowerShell Core for Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
-[Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH
+[Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
 [安装]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
 [适用于 Linux 的 PowerShell]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
