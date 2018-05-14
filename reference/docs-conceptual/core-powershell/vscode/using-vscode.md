@@ -25,7 +25,7 @@
 > [!IMPORTANT]
 > 在 macOS 上，必须安装 OpenSSL 后 PowerShell 扩展方可正常运行。
 > 实现此要求的最简单方法是安装 [Homebrew](http://brew.sh/)，然后运行 `brew install openssl`。
-> PowerShell 扩展现在可以成功加载。
+> VS Code 现可成功加载 PowerShell 扩展。
 
 - **Windows**：按照[在 Windows 上运行 VS Code](https://code.visualstudio.com/docs/setup/windows) 页面上的安装说明进行操作
 
@@ -38,8 +38,8 @@
 
 - 通过按 Ctrl+P（Mac 上为 Cmd+P）启动“Quick Open”。
 - 在“Quick Open”中，键入 `ext install powershell` 并按 Enter。
-- 侧边栏上将打开“扩展”视图。 从 Microsoft 中选择 PowerShell 扩展。
-  此时会显示与下图相似的界面：
+- “扩展”视图随即在侧边栏上打开。 从 Microsoft 中选择 PowerShell 扩展。
+  应看到如下内容：
 
   ![VSCode](../../images/vscode.png)
 
@@ -55,10 +55,10 @@
 
 #### <a name="using-a-specific-installed-version-of-powershell"></a>使用 PowerShell 特定安装版
 
-如果需要通过 Visual Studio Code 使用 PowerShell 的特定安装版，则需要将新的变量添加到用户设置文件。
+如果要通过 Visual Studio Code 使用 PowerShell 的特定安装版，则需要将新的变量添加到用户设置文件。
 
 1. 单击“文件”->“首选项”->“设置”
-1. 此时将出现两个编辑器。
+1. 此时会出现两个编辑器窗格。
    在最右侧窗格 (`settings.json`) 中，将对应于以下 OS 的设置插入到花括号（`{` 和 `}`）之间的某处，并将 <version> 替换为安装的 PowerShell 版本：
 
   ```json
@@ -96,7 +96,7 @@
 
 从 Visual Studio Code 版本 1.9 开始，无需打开包含 PowerShell 脚本的文件夹即可调试 PowerShell 脚本。
 只需单击“文件”->“打开文件...”打开 PowerShell 脚本文件，在行上设一个断点（按 F9），然后按 F5 即可开始调试。
-此时会出现“调试”操作窗格，通过该窗格可以中断调试器、执行、继续和停止调试。
+此时应出现“调试”操作窗格，通过该窗格可以中断调试器、执行、继续和停止调试。
 
 ### <a name="workspace-debugging"></a>工作区调试
 
@@ -153,7 +153,7 @@
 ```
 
 这表示常见调试方案。
-但是，在编辑器中打开此文件时，将会显示“添加配置...”按钮。
+但是，在编辑器中打开此文件时，会显示“添加配置...”按钮。
 按此按钮可添加更多 PowerShell 调试配置。 其中可添加的一个便捷配置是“PowerShell: Launch Script”。
 通过此配置，可以使用可选参数指定特定文件，无论编辑器中哪个文件处于活动状态，无论何时按 F5 时，此文件都会启动。
 

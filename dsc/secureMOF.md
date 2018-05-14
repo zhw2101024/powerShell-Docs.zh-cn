@@ -3,11 +3,11 @@ ms.date: 10/31/2017
 ms.topic: conceptual
 keywords: dsc,powershell,配置,安装程序
 title: 保护 MOF 文件
-ms.openlocfilehash: 80ef37ef1bdcb0a8b0ad343b4eab99f1bc66e116
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 00a33a5d628921bcd04aa904a1aa8ee4345af48f
+ms.sourcegitcommit: 4a841ebda3339ae2477e0f5f5be8c01740221232
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="securing-the-mof-file"></a>保护 MOF 文件
 
@@ -137,7 +137,7 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
  1. 在**创作节点**上创建证书
  2. 在**创作节点**上导出证书（包括私钥）。
  3. 从**创作节点**中删除私钥，但将公钥证书保留在**我的**存储。
- 4. 将私钥证书导入到**目标节点**上的根证书存取。
+ 4. 将私钥证书导入到目标节点上的 My(Personal) 证书存储。
    - 必须将其添加到根存储，以便受到**目标节点**的信任。
 
 #### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>在创作节点上：创建并导出证书
