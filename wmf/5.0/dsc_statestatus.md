@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: 9a8c261c01a7970f2e7f89172007768b63295673
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: MT
+ms.openlocfilehash: 272843efb68c42105af6eb88ad6a95b581da47ae
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>统一且一致的状态和状态表示形式
 
