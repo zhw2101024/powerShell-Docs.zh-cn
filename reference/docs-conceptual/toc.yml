@@ -154,14 +154,20 @@
     - name: 新增功能
       href: ''
       items:
-        - name: PowerShell 的新增功能
-          href: whats-new/what-s-new-with-powershell.md
-        - name: Windows PowerShell 5.0 中的最近更新
-          href: whats-new/what-s-new-in-windows-powershell-50.md
-        - name: PowerShell 5.0 ISE 中的最近更新
-          href: whats-new/what-s-new-in-the-powershell-50-ise.md
         - name: PowerShell Core 6.0 中的最近更新
           href: whats-new/what-s-new-in-powershell-core-60.md
+          items:
+            - name: PowerShell Core 6.0 中的重大更改
+              href: whats-new/breaking-changes-ps6.md
+            - name: PowerShell Core 6.0 中的已知问题
+              href: whats-new/known-issues-ps6.md
+        - name: PowerShell 5.0 的新增功能
+          href: whats-new/what-s-new-with-powershell.md
+          items:
+            - name: Windows PowerShell 5.0 中的最近更新
+              href: whats-new/what-s-new-in-windows-powershell-50.md
+            - name: PowerShell 5.0 ISE 中的最近更新
+              href: whats-new/what-s-new-in-the-powershell-50-ise.md
     - name: PowerShell Core 支持生命周期
       href: PowerShell-Core-Support.md
     - name: 了解详细信息
