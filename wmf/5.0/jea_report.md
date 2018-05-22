@@ -1,20 +1,18 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: 2af56be1915c148809f52cd9040c45da160ae0a2
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 7982acc111e95b4167f948314f176d53f39d3620
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
-# <a name="reporting-on-jea"></a><span data-ttu-id="4605f-102">JEA 报告</span><span class="sxs-lookup"><span data-stu-id="4605f-102">Reporting on JEA</span></span>
-<span data-ttu-id="4605f-103">要报告 JEA 配置的状态，可使用：</span><span class="sxs-lookup"><span data-stu-id="4605f-103">In order to report on the state of your JEA configuration, you can use:</span></span>
-1.  <span data-ttu-id="4605f-104">**Get-PSSessionConfiguration** 返回给定计算机上所有已注册终结点的列表。</span><span class="sxs-lookup"><span data-stu-id="4605f-104">**Get-PSSessionConfiguration** to return a list of all registered endpoints on a given machine.</span></span>
-2.  <span data-ttu-id="4605f-105">**Get PSSessionCapability** 报告任意给定用户在特定终结点上具有的功能。</span><span class="sxs-lookup"><span data-stu-id="4605f-105">**Get-PSSessionCapability** to report on the capabilities any given user has on a specific endpoint.</span></span>
+# <a name="reporting-on-jea"></a><span data-ttu-id="6a299-102">JEA 报告</span><span class="sxs-lookup"><span data-stu-id="6a299-102">Reporting on JEA</span></span>
+<span data-ttu-id="6a299-103">要报告 JEA 配置的状态，可使用：</span><span class="sxs-lookup"><span data-stu-id="6a299-103">In order to report on the state of your JEA configuration, you can use:</span></span>
+1.  <span data-ttu-id="6a299-104">**Get-PSSessionConfiguration** 返回给定计算机上所有已注册终结点的列表。</span><span class="sxs-lookup"><span data-stu-id="6a299-104">**Get-PSSessionConfiguration** to return a list of all registered endpoints on a given machine.</span></span>
+2.  <span data-ttu-id="6a299-105">**Get PSSessionCapability** 报告任意给定用户在特定终结点上具有的功能。</span><span class="sxs-lookup"><span data-stu-id="6a299-105">**Get-PSSessionCapability** to report on the capabilities any given user has on a specific endpoint.</span></span>
 
-<span data-ttu-id="4605f-106">下面是 **Get-PSSessionCapability** 的一个示例：</span><span class="sxs-lookup"><span data-stu-id="4605f-106">Here’s an example of **Get-PSSessionCapability**:</span></span>
+<span data-ttu-id="6a299-106">下面是 **Get-PSSessionCapability** 的一个示例：</span><span class="sxs-lookup"><span data-stu-id="6a299-106">Here’s an example of **Get-PSSessionCapability**:</span></span>
 ```powershell
 Get-PSSessionCapability -ConfigurationName Maintenance -Username "CONTOSO\JohnDoe"
 
@@ -40,6 +38,6 @@ Cmdlet          Restart-Service                                    3.0.0.0 Micro
 
 ```
 
-<span data-ttu-id="4605f-107">若要报告用户在 JEA 会话期间执行的_操作_，你可以：</span><span class="sxs-lookup"><span data-stu-id="4605f-107">To report on the _actions_ users took during a JEA session, you can:</span></span>
-1. <span data-ttu-id="4605f-108">为该 JEA 终结点启用“即时权限提升”脚本，并查询脚本目录以获取记录了每个用户的操作的完整日志。</span><span class="sxs-lookup"><span data-stu-id="4605f-108">Enable the "over-the-shoulder" transcripts for that JEA endpoint and consult the transcript directory for a full log of each user's actions</span></span>
-2. <span data-ttu-id="4605f-109">打开 PowerShell 模块日志记录并检查 PowerShell 事件日志。</span><span class="sxs-lookup"><span data-stu-id="4605f-109">Turn on PowerShell module logging and inspect the PowerShell event logs.</span></span>
+<span data-ttu-id="6a299-107">若要报告用户在 JEA 会话期间执行的_操作_，你可以：</span><span class="sxs-lookup"><span data-stu-id="6a299-107">To report on the _actions_ users took during a JEA session, you can:</span></span>
+1. <span data-ttu-id="6a299-108">为该 JEA 终结点启用“即时权限提升”脚本，并查询脚本目录以获取记录了每个用户的操作的完整日志。</span><span class="sxs-lookup"><span data-stu-id="6a299-108">Enable the "over-the-shoulder" transcripts for that JEA endpoint and consult the transcript directory for a full log of each user's actions</span></span>
+2. <span data-ttu-id="6a299-109">打开 PowerShell 模块日志记录并检查 PowerShell 事件日志。</span><span class="sxs-lookup"><span data-stu-id="6a299-109">Turn on PowerShell module logging and inspect the PowerShell event logs.</span></span>

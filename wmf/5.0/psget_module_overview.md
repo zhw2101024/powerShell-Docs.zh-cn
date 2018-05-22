@@ -1,24 +1,22 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: 82b8046d5cbb47300f090ce2ffbf3c279ed19458
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 9efc640dfda7e08e59d2c56746facd9658b1f9de
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
-# <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a><span data-ttu-id="1fe52-102">使用 PowerShellGet 进行 PowerShell 模块发现、安装和盘存</span><span class="sxs-lookup"><span data-stu-id="1fe52-102">PowerShell Module Discovery, Install and Inventory with PowerShellGet</span></span>
+# <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a><span data-ttu-id="985ff-102">使用 PowerShellGet 进行 PowerShell 模块发现、安装和盘存</span><span class="sxs-lookup"><span data-stu-id="985ff-102">PowerShell Module Discovery, Install and Inventory with PowerShellGet</span></span>
 
-<span data-ttu-id="1fe52-103">此版本的 WMF 中包括了 PowerShellGet：</span><span class="sxs-lookup"><span data-stu-id="1fe52-103">PowerShellGet is included in this release of WMF:</span></span>
--   <span data-ttu-id="1fe52-104">Find-Module 可以使用 -Tag 参数对模块元数据进行筛选</span><span class="sxs-lookup"><span data-stu-id="1fe52-104">Find-Module can filter on module metadata with the -Tag parameter</span></span>
--   <span data-ttu-id="1fe52-105">Find-Module 可以使用 -Filter 参数对存储库特定搜索语言进行筛选</span><span class="sxs-lookup"><span data-stu-id="1fe52-105">Find-Module can filter on repository-specific search language with the -Filter parameter</span></span>
--   <span data-ttu-id="1fe52-106">Find-Module 可以使用 -Command、-DscResource 和 -Includes 参数根据模块内容进行筛选</span><span class="sxs-lookup"><span data-stu-id="1fe52-106">Find-Module can filter based on module contents with the -Command, -DscResource, and -Includes parameters</span></span>
--   <span data-ttu-id="1fe52-107">Find-DscResource 可以发现存储库中的单个 DSC 资源</span><span class="sxs-lookup"><span data-stu-id="1fe52-107">Find-DscResource allows discovery of individual DSC resources in repositories</span></span>
--   <span data-ttu-id="1fe52-108">支持使用 NuGet 从文件共享安装，且支持发布到文件共享</span><span class="sxs-lookup"><span data-stu-id="1fe52-108">Support for installing from and publishing to file shares with NuGet</span></span>
+<span data-ttu-id="985ff-103">此版本的 WMF 中包括了 PowerShellGet：</span><span class="sxs-lookup"><span data-stu-id="985ff-103">PowerShellGet is included in this release of WMF:</span></span>
+-   <span data-ttu-id="985ff-104">Find-Module 可以使用 -Tag 参数对模块元数据进行筛选</span><span class="sxs-lookup"><span data-stu-id="985ff-104">Find-Module can filter on module metadata with the -Tag parameter</span></span>
+-   <span data-ttu-id="985ff-105">Find-Module 可以使用 -Filter 参数对存储库特定搜索语言进行筛选</span><span class="sxs-lookup"><span data-stu-id="985ff-105">Find-Module can filter on repository-specific search language with the -Filter parameter</span></span>
+-   <span data-ttu-id="985ff-106">Find-Module 可以使用 -Command、-DscResource 和 -Includes 参数根据模块内容进行筛选</span><span class="sxs-lookup"><span data-stu-id="985ff-106">Find-Module can filter based on module contents with the -Command, -DscResource, and -Includes parameters</span></span>
+-   <span data-ttu-id="985ff-107">Find-DscResource 可以发现存储库中的单个 DSC 资源</span><span class="sxs-lookup"><span data-stu-id="985ff-107">Find-DscResource allows discovery of individual DSC resources in repositories</span></span>
+-   <span data-ttu-id="985ff-108">支持使用 NuGet 从文件共享安装，且支持发布到文件共享</span><span class="sxs-lookup"><span data-stu-id="985ff-108">Support for installing from and publishing to file shares with NuGet</span></span>
 
-## <a name="example-commands"></a><span data-ttu-id="1fe52-109">示例命令</span><span class="sxs-lookup"><span data-stu-id="1fe52-109">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="985ff-109">示例命令</span><span class="sxs-lookup"><span data-stu-id="985ff-109">Example commands</span></span>
 ```powershell
 \# Find all modules with tags Azure or DSC
 Find-Module -Tag Azure, DSC
@@ -53,10 +51,10 @@ Find-Module -Filter Cookbook -Repository PSGallery
 Find-Module -Filter RBAC -Repository PSGallery
 ```
 
-## <a name="new-features-in-powershellget"></a><span data-ttu-id="1fe52-110">PowerShellGet 中的新增功能</span><span class="sxs-lookup"><span data-stu-id="1fe52-110">New features in PowerShellGet</span></span>
--   <span data-ttu-id="1fe52-111">PowerShell 5.0 或更高版本上的并行版本支持</span><span class="sxs-lookup"><span data-stu-id="1fe52-111">Side-by-side version support on Windows PowerShell 5.0 or newer</span></span>
--   <span data-ttu-id="1fe52-112">模块依赖项安装支持</span><span class="sxs-lookup"><span data-stu-id="1fe52-112">Module dependency installation support</span></span>
--   <span data-ttu-id="1fe52-113">三个新的 cmdlet</span><span class="sxs-lookup"><span data-stu-id="1fe52-113">Three new cmdlets</span></span>
-    -   <span data-ttu-id="1fe52-114">Get-InstalledModule</span><span class="sxs-lookup"><span data-stu-id="1fe52-114">Get-InstalledModule</span></span>
-    -   <span data-ttu-id="1fe52-115">Uninstall-Module</span><span class="sxs-lookup"><span data-stu-id="1fe52-115">Uninstall-Module</span></span>
-    -   <span data-ttu-id="1fe52-116">Save-Module</span><span class="sxs-lookup"><span data-stu-id="1fe52-116">Save-Module</span></span>
+## <a name="new-features-in-powershellget"></a><span data-ttu-id="985ff-110">PowerShellGet 中的新增功能</span><span class="sxs-lookup"><span data-stu-id="985ff-110">New features in PowerShellGet</span></span>
+-   <span data-ttu-id="985ff-111">PowerShell 5.0 或更高版本上的并行版本支持</span><span class="sxs-lookup"><span data-stu-id="985ff-111">Side-by-side version support on Windows PowerShell 5.0 or newer</span></span>
+-   <span data-ttu-id="985ff-112">模块依赖项安装支持</span><span class="sxs-lookup"><span data-stu-id="985ff-112">Module dependency installation support</span></span>
+-   <span data-ttu-id="985ff-113">三个新的 cmdlet</span><span class="sxs-lookup"><span data-stu-id="985ff-113">Three new cmdlets</span></span>
+    -   <span data-ttu-id="985ff-114">Get-InstalledModule</span><span class="sxs-lookup"><span data-stu-id="985ff-114">Get-InstalledModule</span></span>
+    -   <span data-ttu-id="985ff-115">Uninstall-Module</span><span class="sxs-lookup"><span data-stu-id="985ff-115">Uninstall-Module</span></span>
+    -   <span data-ttu-id="985ff-116">Save-Module</span><span class="sxs-lookup"><span data-stu-id="985ff-116">Save-Module</span></span>

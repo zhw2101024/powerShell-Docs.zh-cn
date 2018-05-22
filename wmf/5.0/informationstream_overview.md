@@ -1,17 +1,15 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: 41a676939cb45e780b572b8e718ae315d641d4f8
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 6dadbe9c41ed0a61839ef94fe0a950fe501941ee
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
-# <a name="information-stream"></a><span data-ttu-id="80746-102">信息流</span><span class="sxs-lookup"><span data-stu-id="80746-102">Information Stream</span></span>
+# <a name="information-stream"></a><span data-ttu-id="4e963-102">信息流</span><span class="sxs-lookup"><span data-stu-id="4e963-102">Information Stream</span></span>
 
-<span data-ttu-id="80746-103">现在可以使用新的结构化信息流在脚本及其主机之间传输结构化数据。</span><span class="sxs-lookup"><span data-stu-id="80746-103">A new structured Information stream can now be used to transmit structured data between a script and its host.</span></span> <span data-ttu-id="80746-104">已将 **Write-Host** 更新为将其输出发出到信息流，你现在可以在信息流中捕获或抑制它。</span><span class="sxs-lookup"><span data-stu-id="80746-104">**Write-Host** has also been updated to emit its output to the Information stream where you can now capture or silence it.</span></span> <span data-ttu-id="80746-105">新的 **Write-Information** cmdlet（以及相应的 WriteInformation API）与 **-InformationVariable** 和 **-InformationAction** 通用参数一起使用可以增加灵活性并启用更多功能。</span><span class="sxs-lookup"><span data-stu-id="80746-105">The new **Write-Information** cmdlet (along with a corresponding WriteInformation API) used with **-InformationVariable** and **-InformationAction** common parameters enables more flexibility and capability.</span></span>
+<span data-ttu-id="4e963-103">现在可以使用新的结构化信息流在脚本及其主机之间传输结构化数据。</span><span class="sxs-lookup"><span data-stu-id="4e963-103">A new structured Information stream can now be used to transmit structured data between a script and its host.</span></span> <span data-ttu-id="4e963-104">已将 **Write-Host** 更新为将其输出发出到信息流，你现在可以在信息流中捕获或抑制它。</span><span class="sxs-lookup"><span data-stu-id="4e963-104">**Write-Host** has also been updated to emit its output to the Information stream where you can now capture or silence it.</span></span> <span data-ttu-id="4e963-105">新的 **Write-Information** cmdlet（以及相应的 WriteInformation API）与 **-InformationVariable** 和 **-InformationAction** 通用参数一起使用可以增加灵活性并启用更多功能。</span><span class="sxs-lookup"><span data-stu-id="4e963-105">The new **Write-Information** cmdlet (along with a corresponding WriteInformation API) used with **-InformationVariable** and **-InformationAction** common parameters enables more flexibility and capability.</span></span>
 
 ```powershell
 PS C:\Users\demo> ## Here's a typical PowerShell script
