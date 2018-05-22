@@ -2,11 +2,11 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: PowerShell 脚本
-ms.openlocfilehash: 3304ecc3129b710a003725715803a03b68f79b45
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 7de5a3f3149d8d464b34101d94a5f9430d9b0f23
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -25,18 +25,18 @@ Windows PowerShell 旨在通过消除长期存在的问题和添加新功能改�
 ### <a name="discoverability"></a>可发现性
 Windows PowerShell 使它的功能更易发现。 例如，若要查找用于查看和更改 Windows 服务的 cmdlet 列表，请键入：
 
-```
+```powershell
 Get-Command *-Service
 ```
 
 找到完成任务的 cmdlet 后，可通过使用 Get-Help cmdlet 了解有关该 cmdlet 的详细信息。 例如，若要显示有关 Get-Service cmdlet 的帮助，请键入：
 
-```
+```powershell
 Get-Help Get-Service
 ```
 大多数 cmdlet 会发出对象，这些对象可获得操作，然后再呈现为显示文本。 若要全面了解该 cmdlet 的输出，请将其输出通过管道传递给 Get-Member cmdlet。 例如，下面的命令显示了有关 Get-Service cmdlet 所输出对象的成员的信息。
 
-```
+```powershell
 Get-Service | Get-Member
 ```
 

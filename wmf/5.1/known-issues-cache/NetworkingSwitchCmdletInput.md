@@ -1,15 +1,14 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,安装程序
+ms.topic: conceptual
 contributor: vaibch
 title: 网络交换机管理器 cmdlet 失败
-ms.openlocfilehash: 626809513e7a8f1aa2c47a48c74e69ca4077f598
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 197a25411a82e5d256a9420706535d5411991f1b
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 网络交换机管理器 cmdlet 可用于通过 WSMAN 管理网络交换机。
 此模块的几个 cmdlet 可接受管道中的值。

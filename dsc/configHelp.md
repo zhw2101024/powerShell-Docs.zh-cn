@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,配置,安装程序
 title: 编写 DSC 配置的帮助
-ms.openlocfilehash: c80c5c9007f0094396edf7bd11780495a90950ec
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 316fd69ab1eae66ebe141b2575a05b502fc261ea
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="writing-help-for-dsc-configurations"></a>编写 DSC 配置的帮助
 

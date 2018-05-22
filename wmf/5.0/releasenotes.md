@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: 91169a92d2d4c20ddb6e509183423ad428bc68b9
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: eb3be6ef8a0fb8e611178206cbc817ac34b40f3e
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="windows-management-framework-wmf-50-rtm-release-notes-overview"></a>Windows Management Framework (WMF) 5.0 RTM 发行说明概述
 
@@ -23,4 +21,4 @@ Windows Management Framework (WMF) 5.0 RTM 包含已从 WMF 4.0 中更新的功�
 
 WMF 5.0 RTM 替换 [WMF 5.0 产品预览版](http://blogs.msdn.com/b/powershell/archive/2015/08/31/windows-management-framework-5-0-production-preview-is-now-available.aspx)。 不必卸载 WMF 5.0 产品预览版便可安装 WMF 5.0 RTM，但在安装 WMF 5.0 RTM 之前你必须卸载所有其他旧版本的 WMF 5.0 预览版。
 
-*注意：*如果你正在运行 Windows 10，你可以通过更新 Windows 10 的十一月更新版（1511 版本）获取 WMF 5.0 RTM 中可用的相同功能集。 如果你尚未更新 Windows 10 系统，选择“开始”按钮，然后选择“设置”>“更新和安全”>“Windows 更新”>“检查更新”。
+*注意：* 如果你正在运行 Windows 10，你可以通过更新 Windows 10 的十一月更新版（1511 版本）获取 WMF 5.0 RTM 中可用的相同功能集。 如果你尚未更新 Windows 10 系统，选择“开始”按钮，然后选择“设置”>“更新和安全”>“Windows 更新”>“检查更新”。

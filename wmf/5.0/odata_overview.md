@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: a8947844df0da167961c64e1e09d5075960c95de
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 01d4989711c22db20431876c52740afb350caad0
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a>基于 OData 终结点生成 PowerShell Cmdlet
 <a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>基于 OData 终结点生成 Windows PowerShell cmdlet

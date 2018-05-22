@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: 89e996942cdc2609c670e8e5ba2c576ff6342a9c
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 02aebbd2557298b1b88229fdf5f67bdd08cea452
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="powershellget-cmdlets-for-module-management"></a>用于模块管理的 PowerShellGet Cmdlet
 
@@ -72,7 +70,7 @@ New-ModuleManifest -Path 'C:\Program Files\WindowsPowerShell\Modules\TestDepWith
 -NestedModules $NestedRequiredModules -RequiredModules $RequiredModules -ModuleVersion "1.0" -Description "TestDepWithNestedRequiredModules1 module"
 ```
 
-###  <a name="publish-two-versions-10-and-20-of-the-testdepwithnestedrequiredmodules1-module-with-dependencies-to-the-repository"></a>将具有依赖项的 TestDepWithNestedRequiredModules1 模块的两个版本（**“1.0”**和**“2.0”**）发布到存储库中。
+###  <a name="publish-two-versions-10-and-20-of-the-testdepwithnestedrequiredmodules1-module-with-dependencies-to-the-repository"></a>将具有依赖项的 TestDepWithNestedRequiredModules1 模块的两个版本（**“1.0”** 和 **“2.0”**）发布到存储库中。
 ```powershell
 Publish-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -NuGetApiKey "MyNuGet-ApiKey-For-LocalRepo"
 ```
@@ -287,4 +285,4 @@ PrivateData = @{
     } # End of PSData hashtable
 } # End of PrivateData hashtable
 ```
-***注意：***DscResourcesToExport 仅在最新的 PowerShell 5.0 版本上才受支持。 如果你正在之前的 PowerShell 版本上运行，我们将无法更新字段。
+***注意：*** DscResourcesToExport 仅在最新的 PowerShell 5.0 版本上才受支持。 如果你正在之前的 PowerShell 版本上运行，我们将无法更新字段。

@@ -1,17 +1,16 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,配置,安装程序
 title: 初始启动时使用 DSC 配置虚拟机
-ms.openlocfilehash: e6ff83b9a09f93277904c80e8e52f3db5e818739
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: d6dd997e607152d09d24b55370bb2f85810b333e
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 >适用于：Windows PowerShell 5.0
 
->**注意：**本主题所述的 **DSCAutomationHostEnabled** 注册表项在 PowerShell 4.0 中不可用。
+>**注意：** 本主题所述的 **DSCAutomationHostEnabled** 注册表项在 PowerShell 4.0 中不可用。
 有关如何在初始启动时于 PowerShell 4.0 中配置新虚拟机的信息，请参阅[想要在初始启动时使用 DSC 自动配置计算机？](https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
 
 # <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>初始启动时使用 DSC 配置虚拟机
@@ -34,7 +33,7 @@ ms.lasthandoff: 04/09/2018
 - 将 DSC 元配置注入 VHD
 - 启动时，请禁用 DSC
 
->**注意：**可以将 `Pending.mof` 和 `MetaConfig.mof` 同时注入计算机。
+>**注意：** 可以将 `Pending.mof` 和 `MetaConfig.mof` 同时注入计算机。
 如果这两个文件都存在，则在 `MetaConfig.mof` 中指定的设置优先。
 
 ## <a name="inject-a-configuration-mof-document-into-a-vhd"></a>将配置 MOF 文档注入 VHD

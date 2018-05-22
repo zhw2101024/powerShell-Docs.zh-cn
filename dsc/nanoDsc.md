@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,配置,安装程序
 title: 使用 Nano Server 上的 DSC
-ms.openlocfilehash: 9ebc1f046893c360538009b5ecbcfb6456f92bbb
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 9e26c525b48e8656a3479db9c0a760eaeb8cf58a
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="using-dsc-on-nano-server"></a>使用 Nano Server 上的 DSC
 
@@ -52,7 +51,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 
 * 编译配置（请参阅 [DSC 配置](configurations.md)）
 
-  **问题：**在配置编译期间密码加密不起作用（请参阅[保护 MOF 文件](securemof.md)）。
+  **问题：** 在配置编译期间密码加密不起作用（请参阅[保护 MOF 文件](securemof.md)）。
 
 * 编译元配置（请参阅[配置本地配置管理器](metaConfig.md)）
 
@@ -62,7 +61,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 
 * 调试 DSC 资源（见[调试 DSC 资源](debugresource.md)）
 
-  **问题：**在资源使用 PsDscRunAsCredential 时不起作用（请参阅[使用用户凭据运行 DSC](runAsUser.md)）
+  **问题：** 在资源使用 PsDscRunAsCredential 时不起作用（请参阅[使用用户凭据运行 DSC](runAsUser.md)）
 
 * [指定跨节点依赖关系](crossNodeDependencies.md)
 
@@ -98,12 +97,12 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
   * [组](groupResource.md)
   * GroupSet
 
-  **问题：**如果调用两次特定实例（运行相同的配置两次），上面的资源失败
+  **问题：** 如果调用两次特定实例（运行相同的配置两次），上面的资源失败
 
   * [服务](serviceResource.md)
   * ServiceSet
 
-  **问题：**仅对处于正在启动/停止（状态）的服务有效。 如果有人尝试更改其他服务属性（如 startuptype、credentials、description 等），则会失败。 引发的错误类似于：
+  **问题：** 仅对处于正在启动/停止（状态）的服务有效。 如果有人尝试更改其他服务属性（如 startuptype、credentials、description 等），则会失败。 引发的错误类似于：
 
   找不到类型 [management.managementobject]: 请验证包含此类型的程序集是否已加载。
 

@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,配置,安装程序
 title: 适用于 Linux nxFile 资源的 DSC
-ms.openlocfilehash: 41b5ebde299c47b38d7a6e7f71607332b24ca0e4
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: f1eb98092049ae837d144ccf99a84fe5614144e0
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>适用于 Linux nxFile 资源的 DSC
 
@@ -45,7 +44,7 @@ nxFile <string> #ResourceName
 | 类型| 指定正在配置的资源是目录还是文件。 将此属性设置为“directory”可指示该资源是一个目录。 将其设置为“file”可指示该资源是一个文件。 默认值为“file”。|
 | 目录| 指定文件的内容，例如特定字符串。|
 | 校验和| 定义当确定两个文件是否相同时使用的类型。 如果未指定**校验和**，则只是文件或目录名用于比较。 值为：“ctime”、“mtime”或“md5”。|
-| Recurse| 指示是否包含子目录。 将此属性设置为 **$true** 以指示你想要包含子目录。 默认值为 **$false**。 **注意：**只有将 **Type** 属性设置为目录时，此属性才有效。|
+| Recurse| 指示是否包含子目录。 将此属性设置为 **$true** 以指示你想要包含子目录。 默认值为 **$false**。 **注意：** 只有将 **Type** 属性设置为目录时，此属性才有效。|
 | Force| 某些文件操作（如覆盖文件或删除不为空的目录）将导致错误。 使用 **Force** 属性覆盖此类错误。 默认值为 **$false**。|
 | 链接| 指定符号链接的所需行为。 将此属性设置为“follow”可跟随符号链接，并对链接目标进行操作（例如 复制文件而不是链接）。 将此属性设置为“manage”可对此链接进行操作（例如 复制链接本身）。 将此属性设置为“ignore”可忽略符号链接。|
 | 组| 拥有此文件或目录的**组**名称。|

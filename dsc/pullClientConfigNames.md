@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,配置,安装程序
 title: 使用配置名称设置请求客户端
-ms.openlocfilehash: 7c8f204cc646e52ad5e953d6c7ad9e4e906d8a5b
-ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
+ms.openlocfilehash: d71376d84b9d4b0e74fdccab4b9249b2ca4263cb
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="setting-up-a-pull-client-using-configuration-names"></a>使用配置名称设置请求客户端
 
@@ -58,7 +57,7 @@ PullClientConfigNames
 **ConfigurationNames** 属性是指定用于客户端节点的配置的名称的数组。
 在请求服务器上，必须将此客户端节点的配置 MOF 文件命名为 *ConfigurationNames*.mof，其中 *ConfigurationNames* 的值与你在此元配置中设置的 **ConfigurationNames** 属性的值相匹配。
 
->**注意：**如果你在 **ConfigurationNames** 中指定多个值，则必须也在你的配置中指定 **PartialConfiguration** 块。
+>**注意：** 如果你在 **ConfigurationNames** 中指定多个值，则必须也在你的配置中指定 **PartialConfiguration** 块。
 有关部分配置的信息，请参阅 [PowerShell Desired State Configuration 部分配置](partialConfigs.md)。
 
 此脚本运行后，将创建名为 **PullClientConfigNames** 的新输出文件夹，并在其中放入元配置 MOF 文件。

@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,配置,安装程序
 title: 使用用户凭据运行 DSC
-ms.openlocfilehash: 37e6ff64c9c6d3960653d417e22a6c93c653230c
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: b2992ad562dea375aba980611312c7b96a23189c
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="running-dsc-with-user-credentials"></a>使用用户凭据运行 DSC
 
@@ -20,7 +19,7 @@ ms.lasthandoff: 04/09/2018
 每个 DSC 资源都具有 **PsDscRunAsCredential** 属性，它可以设置为任何用户凭据（[PSCredential](https://msdn.microsoft.com/library/ms572524(v=VS.85).aspx) 对象）。
 凭据可以硬编码为配置中属性的值，你也可以将值设置为 [Get-Credential](https://technet.microsoft.com/library/hh849815.aspx)，这会在编译配置时提示用户输入凭据（有关编译配置的信息，请参阅[配置](configurations.md)）。
 
->**注意：**在 PowerShell 5.0 中，不支持在调用复合资源的配置中使用 **PsDscRunAsCredential** 属性。
+>**注意：** 在 PowerShell 5.0 中，不支持在调用复合资源的配置中使用 **PsDscRunAsCredential** 属性。
 >在 PowerShell 5.1 中，支持在调用复合资源的配置中使用 **PsDscRunAsCredential** 属性。
 
 >**注意：****PsDscRunAsCredential** 属性在 PowerShell 4.0 中不可用。
@@ -62,5 +61,5 @@ $configData = @{
 
 ChangeCmdBackGroundColor -ConfigurationData $configData
 ```
->**注意：**此示例假定你在 `C:\publicKeys\targetNode.cer` 上具有有效证书，并且该证书的指纹是显示的值。
+>**注意：** 此示例假定你在 `C:\publicKeys\targetNode.cer` 上具有有效证书，并且该证书的指纹是显示的值。
 >若要了解如何在 DSC 配置 MOF 文件中加密凭据，请参阅[保护 MOF 文件](secureMOF.md)。

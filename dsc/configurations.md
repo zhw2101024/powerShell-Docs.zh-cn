@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,配置,安装程序
 title: DSC 配置
-ms.openlocfilehash: ffeb953048c0a65352618d2ab141ee10ead4c663
-ms.sourcegitcommit: a9aa5e8d0fab0cbb3e4e6cff0e3ca8c0339ab4e6
+ms.openlocfilehash: d98bf0e85c12103d9b1eeded155bab1af364bd4c
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="dsc-configurations"></a>DSC 配置
 
@@ -75,7 +74,7 @@ MyDscConfiguration -ComputerName $ComputerName
 可通过调用配置（像调用 PowerShell 函数一样）来执行此操作。
 此示例的最后一行仅包含配置名称，用于调用配置。
 
->**注意：**若要调用配置，该函数必须在全局范围内（与任何其他 PowerShell 函数一样）。
+>**注意：** 若要调用配置，该函数必须在全局范围内（与任何其他 PowerShell 函数一样）。
 >可通过以下方式来实现此操作：对脚本执行“dot-source”操作，或者使用 F5 或单击 ISE 中的“运行脚本”按钮以运行配置脚本。
 >若要对脚本执行“dot-source”操作，请运行命令 `. .\myConfig.ps1`，其中 `myConfig.ps1` 是包含配置的脚本文件的名称。
 

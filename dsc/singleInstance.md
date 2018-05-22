@@ -1,17 +1,16 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,配置,安装程序
 title: 编写单实例 DSC 资源（最佳做法）
-ms.openlocfilehash: fc118fd8b0d91d2001030769ac7e3c6321972905
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 9494964b1b13eaa082ad5cbc279b4586bb7211cc
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="writing-a-single-instance-dsc-resource-best-practice"></a>编写单实例 DSC 资源（最佳做法）
 
->**注意：**本主题介绍了在配置中定义仅允许单个配置实例的 DSC 资源的最佳做法。 目前还没有用于实现此操作的内置 DSC 功能。 将来可能会发生改变。
+>**注意：** 本主题介绍了在配置中定义仅允许单个配置实例的 DSC 资源的最佳做法。 目前还没有用于实现此操作的内置 DSC 功能。 将来可能会发生改变。
 
 在一些情况下，你不希望允许在配置中多次使用某一资源。 例如，在 [xTimeZone](https://github.com/PowerShell/xTimeZone) 资源的早期实现中，配置可以多次调用资源，在每个资源块中将时区设置为不同的设置：
 

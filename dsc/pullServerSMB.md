@@ -1,13 +1,12 @@
 ---
 ms.date: 04/11/2018
-ms.topic: conceptual
 keywords: dsc,powershell,配置,安装程序
 title: 设置 DSC SMB 请求服务器
-ms.openlocfilehash: e4e313746e95af86c5d17a8de0549451b1399b6c
-ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
+ms.openlocfilehash: 92c03c99afd612fa2b5475e8c26991ff080584e9
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>设置 DSC SMB 请求服务器
 
@@ -134,7 +133,7 @@ Import-DscResource -ModuleName cNtfsAccessControl
 
 所有配置 MOF 文件都必须命名为 _ConfigurationID_.mof，其中 _ConfigurationID_ 是目标节点的 LCM 的 **ConfigurationID** 属性值。 若要详细了解如何设置请求客户端，请参阅[使用配置 ID 设置请求客户端](pullClientConfigID.md)。
 
->**注意：**如果你使用的是 SMB 请求服务器，则必须使用配置 ID。 SMB 不支持配置名称。
+>**注意：** 如果你使用的是 SMB 请求服务器，则必须使用配置 ID。 SMB 不支持配置名称。
 
 每个资源模块都需要进行压缩并按照 `{Module Name}_{Module Version}.zip` 模式进行命名。 例如，一个名为 xWebAdminstration 并且模块版本为 3.1.2.0 的模块会命名为“xWebAdministration_3.2.1.0.zip”。 每个版本的模块都必须包含在单个 zip 文件中。 由于每个 zip 文件中只有单个版本的资源，因此不支持在 WMF 5.0 中添加的可在单个目录中支持多个模块版本的模块格式。 也就是说，在打包 DSC 资源模块以供请求服务器使用之前，必须对目录结构稍作更改。 WMF 5.0 中包含 DSC 资源的模块默认格式是 {Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\'。 为请求服务器进行打包之前，只需删除 **{Module version}** 文件夹，以便路径成为 {Module Folder}\DscResources\{DSC Resource Folder}\'。 进行此更改之后，按上文所述压缩文件夹，并将这些 zip 文件置于 SMB 共享文件夹中。
 
@@ -153,9 +152,9 @@ Import-DscResource -ModuleName cNtfsAccessControl
 
 有关配置 LCM 的详细信息，请参阅[使用配置 ID 设置请求客户端](pullClientConfigID.md)。
 
->**注意：**为简单起见，此示例使用 **PSDscAllowPlainTextPassword** 以允许将明文密码传递到 **Credential** 参数。 有关更安全传递凭据的信息，请参阅[配置数据中的凭据选项](configDataCredentials.md)。
+>**注意：** 为简单起见，此示例使用 **PSDscAllowPlainTextPassword** 以允许将明文密码传递到 **Credential** 参数。 有关更安全传递凭据的信息，请参阅[配置数据中的凭据选项](configDataCredentials.md)。
 
->**注意：**即使仅请求资源，也需在 SMB 请求服务器的 metaconfiguration **设置**块中指定 **ConfigurationID**。
+>**注意：** 即使仅请求资源，也需在 SMB 请求服务器的 metaconfiguration **设置**块中指定 **ConfigurationID**。
 
 ```powershell
 $secpasswd = ConvertTo-SecureString “Pass1Word” -AsPlainText -Force

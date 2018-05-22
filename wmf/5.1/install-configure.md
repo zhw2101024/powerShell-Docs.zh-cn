@@ -1,15 +1,14 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
+ms.topic: conceptual
 keywords: wmf,powershell,安装程序
 contributor: keithb
 title: 安装和配置 WMF 5.1
-ms.openlocfilehash: e747487873c7c15c2bea3fca7136630ab2b572f7
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: e5c7968744a442b4be9f1e43a45e91429a6d6165
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="install-and-configure-wmf-51"></a>安装和配置 WMF 5.1 #
 
@@ -35,7 +34,7 @@ ms.lasthandoff: 04/09/2018
 
 ## <a name="install-wmf-51-for-windows-server-2008-r2-and-windows-7"></a>安装适用于 Windows Server 2008 R2 和 Windows 7 的 WMF 5.1
 
-> **注意：**针对 Windows Server 2008 R2 和 Windows 7 的安装说明发生变化，不同于其他包的安装说明。 下文中介绍了针对 Windows Server 2012 R2、Windows Server 2012 和 Windows 8.1 的安装说明。
+> **注意：** 针对 Windows Server 2008 R2 和 Windows 7 的安装说明发生变化，不同于其他包的安装说明。 下文中介绍了针对 Windows Server 2012 R2、Windows Server 2012 和 Windows 8.1 的安装说明。
 
 **在 Windows Server 2008 R2 和 Windows 7 上安装 WMF 5.1**
 

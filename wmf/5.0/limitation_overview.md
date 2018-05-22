@@ -1,20 +1,18 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: 306241bc5ec854c0e2ed835009a79b21fc249f14
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 4b006d2ac812abf1f281b6b4e382c2760f92a95c
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="known-issues-and-limitations"></a>已知问题和限制
 
 <a name="powershell-shortcuts-are-broken-when-used-for-the-first-time"></a>PowerShell 快捷方式在第一次使用时中断
 ------------------------------------------------------------
 
-**解决方法：**执行下列操作之一：
+**解决方法：** 执行下列操作之一：
 
 1.  右键单击 PowerShell 快捷方式。 选择“Windows PowerShell”以在非提升模式下启动。
 2.  右键单击 PowerShell 快捷方式。 右键单击“Windows PowerShell”并选择“以管理员身份运行”，以在提升模式下启动。
@@ -26,7 +24,7 @@ ms.lasthandoff: 04/09/2018
 -------------------------------------------------------------------------------------
 在运行 Windows 7 操作系统的计算机上，使用 PowerShell 模块和 DSC 资源可能导致报告有关 ExecutionPolicy 的错误。
 
-**解决方法：**通过在提升的 PowerShell 会话中运行以下命令（以管理员身份运行），将 ExecutionPolicy 设置为 RemoteSigned：
+**解决方法：** 通过在提升的 PowerShell 会话中运行以下命令（以管理员身份运行），将 ExecutionPolicy 设置为 RemoteSigned：
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned
@@ -37,7 +35,7 @@ Set-ExecutionPolicy RemoteSigned
 
 旧的 Exchange 终结点重定向到新的终结点。 引发故障的重定向逻辑中存在 Bug。
 
-**解决方法：**直接连接到新终结点。
+**解决方法：** 直接连接到新终结点。
 
 
 <a name="software-inventory-logging-feature-is-erroneously-stopped-after-wmf-50-installation-on-windows-server-2012-r2"></a>在 Windows Server 2012 R2 上安装 WMF 5.0 后，错误地停止软件清单日志记录功能
@@ -45,14 +43,14 @@ Set-ExecutionPolicy RemoteSigned
 
 当在已运行 SIL 的 Windows Server 2012 R2 上安装 WMF 5.0 时，安装完成后错误地停止软件清单日志记录功能。
 
-**解决方法：**在 WMF 安装后立即运行 Start-SilLogging cmdlet，因为安装过程将错误地停止软件清单日志记录功能。
+**解决方法：** 在 WMF 安装后立即运行 Start-SilLogging cmdlet，因为安装过程将错误地停止软件清单日志记录功能。
 
 <a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a>如果将 LiteralPath 和 -Recurse 一起使用，Get-ChildItem 将失效
 --------------------------------------------------------------------------
 
 如果目录名称包含无效的通配符，则将 -LiteralPath 和 -Recurse 一起使用时，Get-ChildItem 不会产生预期结果。
 
-**解决方法：**尽管不理想，但当前的解决方法是在脚本中实现递归，而不是依赖 cmdlet。
+**解决方法：** 尽管不理想，但当前的解决方法是在脚本中实现递归，而不是依赖 cmdlet。
 
 
 <a name="sysprep-fails-after-wmf-50-installation"></a>Sysprep 在安装 WMF 5.0 后无法正常工作

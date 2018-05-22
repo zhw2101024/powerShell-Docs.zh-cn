@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: cedda61241df4965fe5db723f03e3497f046fa44
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: e4588e8c69efb965cd33c273ad09a8bef8e9bf16
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a>提取和分析字符串外的结构化对象
 这也为 ConvertFrom-String cmdlet 引入了一些附加功能：

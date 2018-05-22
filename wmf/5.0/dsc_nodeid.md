@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: 6d94de2d3f2c551219d8fbe5badb6e5bb913d796
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 6c036c2d8f97e559d20dd3ac40133fa06f5dab08
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="separation-of-node-and-configuration-ids"></a>节点和配置 ID 的分离
 
@@ -20,6 +18,6 @@ ms.lasthandoff: 04/09/2018
 * 唯一标识单个节点的代理 ID
 * 仅在目标节点第一次连接到请求服务器时出现的注册步骤
 
-**注意：**这些特色和功能是添加进来的，它们不取代现有的请求功能和概念。 你可以将这些新功能或将较旧的功能用于此版本中发布的新请求服务器。
+**注意：** 这些特色和功能是添加进来的，它们不取代现有的请求功能和概念。 你可以将这些新功能或将较旧的功能用于此版本中发布的新请求服务器。
 
 有关详细信息，请参阅[使用配置名称设置请求客户端](https://msdn.microsoft.com/powershell/dsc/pullclientconfignames)

@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,配置,安装程序
 title: 使用 DSC 报表服务器
-ms.openlocfilehash: 49e022d3c3c1e117eac4cb3c874ca8dcfe628237
-ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
+ms.openlocfilehash: 143e0bdd9b637cee87a676ed327fe6ff3a7fd719
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="using-a-dsc-report-server"></a>使用 DSC 报表服务器
 
@@ -16,7 +15,7 @@ ms.lasthandoff: 04/16/2018
 > [!IMPORTANT]
 > 请求服务器（Windows 功能 DSC-Service）是 Windows Server 的一个受支持组件，不过目前没有提供新功能的计划。 建议开始将托管客户端转换至 [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)（包括 Windows Server 上的请求服务器以外的功能）或[此处](pullserver.md#community-solutions-for-pull-service)列出的社区解决方案之一。
 
->**注意：**本主题中描述的报表服务器在 PowerShell 4.0 中不可用。
+>**注意：** 本主题中描述的报表服务器在 PowerShell 4.0 中不可用。
 
 可将节点的本地配置管理器 (LCM) 配置为向请求服务器发送有关其配置状态的报表，然后即可查询该服务器以检索此数据。 每当节点检查和应用配置时，它都会将报表发送到报表服务器。 这些报表存储在服务器上的数据库中，可通过调用报告 Web 服务进行检索。 每个报表中包含所应用的配置、配置是否成功、所使用的资源、引发的所有错误以及开始时间和结束时间等信息。
 
@@ -91,7 +90,7 @@ configuration PullClientConfig
 PullClientConfig
 ```
 
->**注意：**在设置请求服务器时可以将 Web 服务命名为任何所需内容，但是 **ServerURL** 属性必须与服务名称匹配。
+>**注意：** 在设置请求服务器时可以将 Web 服务命名为任何所需内容，但是 **ServerURL** 属性必须与服务名称匹配。
 
 ## <a name="getting-report-data"></a>获取报表数据
 

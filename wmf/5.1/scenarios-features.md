@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
+ms.topic: conceptual
 keywords: wmf,powershell,安装程序
 title: WMF 5.1 中的新方案和功能
-ms.openlocfilehash: 8edea99731df44349c8bcff113a8163ba5401ccd
-ms.sourcegitcommit: a9aa5e8d0fab0cbb3e4e6cff0e3ca8c0339ab4e6
+ms.openlocfilehash: 77b439e61c5802f8ddbc4a0f39923cc8c0c36fe9
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>WMF 5.1 中的新方案和功能
 
@@ -18,8 +17,8 @@ ms.lasthandoff: 04/27/2018
 
 从 5.1 版本开始，PowerShell 在具有不同功能集和平台兼容性的不同版本中可用。
 
-- **桌面版：**以 .NET Framework 为基础构建，提供与面向在完整功能 Windows 版本（如服务器核心和 Windows 桌面）上运行的 PowerShell 版本的脚本和模块的兼容性。
-- **核心版：**以 .NET Core 为基础构建，提供与面向在缩减功能 Windows 版本（如 Nano Server 和 Windows IoT）上运行的 PowerShell 版本的脚本和模块的兼容性。
+- **桌面版：** 以 .NET Framework 为基础构建，提供与面向在完整功能 Windows 版本（如服务器核心和 Windows 桌面）上运行的 PowerShell 版本的脚本和模块的兼容性。
+- **核心版：** 以 .NET Core 为基础构建，提供与面向在缩减功能 Windows 版本（如 Nano Server 和 Windows IoT）上运行的 PowerShell 版本的脚本和模块的兼容性。
 
 **详细了解如何使用 PowerShell 版本**
 

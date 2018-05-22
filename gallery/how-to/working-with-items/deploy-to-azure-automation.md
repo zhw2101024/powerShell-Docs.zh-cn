@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
 contributor: JKeithB
-ms.topic: conceptual
 keywords: 库,powershell,cmdlet,psgallery
 title: 部署到 Azure 自动化
-ms.openlocfilehash: 1efdc289228d3a6962302d12ccf44143ce63a806
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: ced67809387a85e089259edf6b091d68e58ba6a7
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="deploy-to-azure-automation"></a>部署到 Azure 自动化
 

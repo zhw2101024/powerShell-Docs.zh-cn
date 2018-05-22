@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,配置,安装程序
 title: DSC File 资源
-ms.openlocfilehash: 7964eabe5f4585600ae80f3e5ff7439c0d954769
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 86a5dcd97b4163b3780038c815d3de5a523ce4bf
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="dsc-file-resource"></a>DSC File 资源
 
@@ -15,7 +14,7 @@ ms.lasthandoff: 04/09/2018
 
 Windows PowerShell Desired State Configuration (DSC) 中的 File 资源提供了管理目标节点上的文件和文件夹的机制。
 
->**注意：**如果 **MatchSource** 属性设为 **$false**（这是默认值），那么第一次应用配置时将缓存要复制的内容。
+>**注意：** 如果 **MatchSource** 属性设为 **$false**（这是默认值），那么第一次应用配置时将缓存要复制的内容。
 >配置的后续应用将不再检查由 **SourcePath** 指定的路径中的已更新文件和/或文件夹。 如果想要每次应用配置时检查 **SourcePath** 中文件和/或文件夹的更新，请将 **MatchSource** 设为 **$true**。
 
 ## <a name="syntax"></a>语法
@@ -48,7 +47,7 @@ File [string] #ResourceName
 | 凭据| 指示需要进行访问时访问资源（例如源文件）所需的凭据。|
 | Ensure| 指示文件或目录是否存在。 将此属性设置为“Absent”可确保该文件或目录不存在。 将其设置为“Present”可确保该文件或目录确实存在。 默认值为“Present”。|
 | Force| 某些文件操作（如覆盖文件或删除不为空的目录）将导致错误。 使用 Force 属性覆盖此类错误。 默认值为 __$false__。|
-| Recurse| 指示是否包含子目录。 将此属性设置为 __$true__ 以指示你想要包含子目录。 默认值为 __$false__。 **注意：**只有将 Type 属性设置为 Directory 时，此属性才有效。|
+| Recurse| 指示是否包含子目录。 将此属性设置为 __$true__ 以指示你想要包含子目录。 默认值为 __$false__。 **注意：** 只有将 Type 属性设置为 Directory 时，此属性才有效。|
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 __ResourceName__、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。|
 | SourcePath| 指示要从其中复制文件或文件夹资源的路径。|
 | 类型| 指示正在配置的资源是目录还是文件。 将此属性设置为“Directory”可指示该资源是一个目录。 将其设置为“File”可指示该资源是一个文件。 默认值为“File”。|

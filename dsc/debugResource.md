@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,配置,安装程序
 title: 调试 DSC 资源
-ms.openlocfilehash: 6a1f4b04a11185c2cfe9be26324bd66ed13ca7dd
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 30d49768fc2301b5306d0001e157d60e2e991883
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="debugging-dsc-resources"></a>调试 DSC 资源
 
@@ -107,7 +106,7 @@ Debug-Runspace -Id 9
 
 在调用 [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx) 后，对 [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) 的所有调用都会导致配置中断调试器。 若要让配置正常运行，必须通过调用 [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) cmdlet 来禁用调试。
 
->**注意：**重启不会更改 LCM 的调试状态。 如果调试已启用，那么启动配置仍会在重启后中断调试器。
+>**注意：** 重启不会更改 LCM 的调试状态。 如果调试已启用，那么启动配置仍会在重启后中断调试器。
 
 
 ## <a name="see-also"></a>另请参阅

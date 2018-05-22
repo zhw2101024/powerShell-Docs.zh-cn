@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,配置,安装程序
 title: 直接调用 DSC 资源方法
-ms.openlocfilehash: dbf0a4ada4c6cc2e7d65698b87a5a29a2ea84781
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 3ec3a3a8da615f45f3fdd28b1c1e46e312507ed5
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="calling-dsc-resource-methods-directly"></a>直接调用 DSC 资源方法
 
@@ -49,7 +48,7 @@ $result = Invoke-DscResource -Name File -Method Get -Property @{
 $result.ItemValue | fl
 ```
 
->**注意：**不支持直接调用复合资源方法。 请改为调用构成复合资源的基础资源的方法。
+>**注意：** 不支持直接调用复合资源方法。 请改为调用构成复合资源的基础资源的方法。
 
 ## <a name="see-also"></a>另请参阅
 - [使用 MOF 编写自定义 DSC 资源](authoringResourceMOF.md)
