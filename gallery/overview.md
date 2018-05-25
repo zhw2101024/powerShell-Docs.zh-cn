@@ -1,14 +1,4 @@
----
-ms.date: 06/12/2017
-contributor: JKeithB
-ms.topic: conceptual
-keywords: 库,powershell,cmdlet,psgallery,psget
-title: PowerShell 库
-ms.openlocfilehash: cffb2f0182ffe9072f9fbbc7f4cdfcf28de276db
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/10/2018
+ 和 --- ms.date：2017 年 06 月 12 日 参与者：JKeithB 关键字：gallery，powershell，cmdlet，psgallery，psget 标题：PowerShell 库
 ---
 # <a name="the-powershell-gallery"></a>PowerShell 库
 
@@ -28,9 +18,9 @@ PowerShellGet 模块包含用于发现、安装、更新和发布来自 [PowerSh
 
 ## <a name="supported-operating-systems"></a>受支持的操作系统
 
-**PowerShellGet** 模块需要 **PowerShell 3.0 或更高版本**。
+PowerShellGet 模块需要 Windows PowerShell 3.0 或更高版本或 PowerShell Core 6.0 或更高版本。
 
-因此，**PowerShellGet** 需要以下操作系统之一：
+针对以下操作系统提供对应的 Windows PowerShell 版本：
 
 - Windows 10
 - Windows 8.1 专业版
@@ -41,6 +31,10 @@ PowerShellGet 模块包含用于发现、安装、更新和发布来自 [PowerSh
 - Windows Server 2008 R2 SP1
 
 **PowerShellGet** 也需要 .NET Framework 4.5 或更高版本。 你可从[此处](https://msdn.microsoft.com/library/5a4x27ek.aspx)安装 .NET Framework 4.5 或更高版本。
+
+PowerShell Core 支持多个操作系统。 请参阅[本文](https://blogs.msdn.microsoft.com/powershell/2018/01/10/powershell-core-6-0-generally-available-ga-and-supported/)获取完整列表。
+
+许多托管在库中的模块都支持不同的操作系统并具有附加要求。 有关详细信息，请参阅模块文档。
 
 ## <a name="got-a-question-have-feedback"></a>遇到问题？ 有反馈？
 

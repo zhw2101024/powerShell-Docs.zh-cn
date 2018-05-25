@@ -1,15 +1,14 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
+ms.topic: conceptual
 keywords: wmf,powershell,安装程序
 contributor: ryanpu
 title: 对 Just Enough Administration (JEA) 的改进
-ms.openlocfilehash: c80472fa4372331bf2cf9ab0b7513021354d1408
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 47a58a6fae9f3a41ec527ec1f77ac1c196336669
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>对 Just Enough Administration (JEA) 的改进
 
@@ -50,7 +49,7 @@ Copy-Item -Path User:\SampleFile.txt -Destination . -FromSession $jeasession
 
 在某些情况下，用户需在 JEA 会话中执行的任务可能需要访问本地计算机以外的资源 。
 当 JEA 会话配置为使用虚拟帐户时，任何接触此类资源的尝试都将来自本地计算机的 ID，而非虚拟帐户或已连接用户。
-TP5 现已开始支持在[组托管服务帐户](https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx)上下文中运行 JEA，从而大大简化了使用域标识来访问网络资源的过程。
+TP5 现已开始支持在 [组托管服务帐户](https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx)) 上下文中运行 JEA，从而大大简化了使用域标识来访问网络资源的过程。
 
 若要将 JEA 会话配置为在 gMSA 帐户下运行，请在 PSSC 文件中使用以下新密钥：
 
@@ -64,7 +63,7 @@ GroupManagedServiceAccount = 'myGMSAforJEA'
 RunAsVirtualAccount = $false
 ```
 
-> **注意：**组托管服务帐户不会隔离虚拟帐户或限制其范围。
+> **注意：** 组托管服务帐户不会隔离虚拟帐户或限制其范围。
 > 每个连接用户都将共享同一 gMSA 标识，这一标识可能拥有整个企业范围内的权限。
 > 选择使用 gMSA 时请格外小心；若可能，请始终优先使用限于本地计算机的虚拟帐户。
 

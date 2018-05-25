@@ -1,6 +1,13 @@
-
 ---
-ms.date :  2017/06/12 参与者:  manikb ms.topic:  参考关键字:  gallery,powershell,cmdlet,psget 标题:  启动 NuGet
+ms.date: 06/12/2017
+contributor: manikb
+keywords: 库,powershell,cmdlet,psget
+title: 正在启动 NuGet
+ms.openlocfilehash: f707e23737361ee7f82a16150402c9e719ee0ae1
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>启动 NuGet 提供程序和 NuGet.exe
 
