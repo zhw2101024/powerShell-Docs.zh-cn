@@ -1,11 +1,11 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: 272843efb68c42105af6eb88ad6a95b581da47ae
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 7b4e4dbeaf9c3c48e7b2dfc74435dfa2cd9c7ea7
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>统一且一致的状态和状态表示形式
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 05/16/2018
 
 下表说明了在使用典型方案时产生的状态和与状态关联属性。
 
-| **方案**                    | **LCMState\***       | **状态** | **请求重新启动**  | **ResourcesInDesiredState**  | **ResourcesNotInDesiredState** |
+| 方案                    | LCMState       | 状态 | 请求重新启动  | ResourcesInDesiredState  | ResourcesNotInDesiredState |
 |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
 | S**^**                          | 空闲                 | Success    | $false        | S                            | $null                          |
 | F**^**                          | PendingConfiguration | 失败    | $false        | $null                        | F                              |
@@ -46,11 +46,13 @@ $ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
 
 $ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
 ```
+
 ## <a name="enhancement-in-get-dscconfigurationstatus-cmdlet"></a>Get-DscConfigurationStatus cmdlet 中的增强功能
 
 在此版本中，对 Get DscConfigurationStatus cmdlet 进行了几处改进。 以前，该 cmdlet 返回的对象的 StartDate 属性是 String 类型。 现在，它是 Datetime 类型，从而可以根据 Datetime 对象的内部属性更轻松地进行复杂选择和筛选。
+
 ```powershell
-(Get-DscConfigurationStatus).StartDate | fl \*
+(Get-DscConfigurationStatus).StartDate | fl *
 DateTime : Friday, November 13, 2015 1:39:44 PM
 Date : 11/13/2015 12:00:00 AM
 Day : 13
@@ -68,14 +70,16 @@ Year : 2015
 ```
 
 以下示例返回与今天处于一周中同一天的日子里产生的所有 DSC 操作记录。
+
 ```powershell
-(Get-DscConfigurationStatus –All) | where { $\_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
+(Get-DscConfigurationStatus –All) | where { $_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
 ```
 
 将消除不更改节点配置的操作（即只读操作）的记录。 因此，Test-DscConfiguration、Get-DscConfiguration 操作将不再掺杂在从 Get-DscConfigurationStatus cmdlet 返回的对象中。
 元配置设置操作的记录将添加到 Get-DscConfigurationStatus cmdlet 的返回结果中。
 
 下面是从 Get-DscConfigurationStatus –All cmdlet 返回结果的示例。
+
 ```powershell
 All configuration operations:
 
@@ -89,12 +93,15 @@ Success 11/13/2015 11:20:44 AM LocalConfigurationManager False
 ```
 
 ## <a name="enhancement-in-get-dsclocalconfigurationmanager-cmdlet"></a>Get-DscLocalConfigurationManager cmdlet 中的增强功能
+
 新字段 LCMStateDetail 已添加到从 Get-DscLocalConfigurationManager cmdlet 返回的对象。 LCMState 为“忙碌”时，填充此字段。 它可以通过以下 cmdlet 来检索：
+
 ```powershell
 (Get-DscLocalConfigurationManager).LCMStateDetail
 ```
 
 下面是对需要两次重新启动远程节点的配置所进行持续监视的示例输出。
+
 ```powershell
 Start a configuration that requires two reboots
 
