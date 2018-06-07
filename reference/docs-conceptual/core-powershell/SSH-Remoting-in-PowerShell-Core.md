@@ -131,7 +131,7 @@ SSH 子系统用于在远程计算机上创建 PowerShell 进程，且 SSH 服�
     - 添加 PowerShell 子系统项
 
     ```
-    Subsystem powershell /usr/local/bin/powershell -sshs -NoLogo -NoProfile
+    Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
     ```
 
     - 启用密钥身份验证（可选）
