@@ -3,21 +3,22 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 从管道中删除对象 (Where Object)
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-ms.openlocfilehash: 2d89defdb1b234a9d0021fc06e1f05a95bb1bce9
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 46f210e1418098f4809174cd975ab8d783580285
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34753832"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>从管道中删除对象 (Where-Object)
 
 在 Windows PowerShell 中，你通常会生成和传递比预期更多的对象到管道中。 可以通过使用 **Format** cmdlet 指定特定对象的属性进行显示，但是这对从显示中删除整个对象的问题没有任何帮助。 你可能希望在管道末尾之前筛选对象，以便你可以只对初始生成对象的子集执行操作。
 
-Windows PowerShell 包括 **Where-Object** cmdlet，它可让你在管道中测试每个对象，并且仅沿管道传递满足特定测试条件的对象。 将从管道中删除未通过测试的对象。 提供测试条件作为 **Where-ObjectFilterScript** 参数的值。
+借助 Windows PowerShell 中的 `Where-Object` cmdlet，可以测试管道中的每个对象，并沿管道仅传递满足特定测试条件的对象。 将从管道中删除未通过测试的对象。 测试条件以 `Where-Object` FilterScript 参数值的形式提供。
 
 ### <a name="performing-simple-tests-with-where-object"></a>使用 Where-Object 执行简单测试
 
-**FilterScript** 的值是一个*脚本块* - 由大括号 {} 括起来的一个或多个 Windows PowerShell 命令，其计算结果为 True 或 False。 这些脚本块可能非常简单，但是创建它们需要了解有关 Windows PowerShell 的另一个概念，即比较运算符。 比较运算符比较其每一侧显示的项。 比较运算符以“-”字符开头，后跟名称。 基本比较运算符适用于几乎任何类型的对象。 更高级的比较运算符可能仅适用于文本或数组。
+FilterScript 值是计算结果为 True 或 False 的脚本块，即由大括号 {} 括起来的一个或多个 Windows PowerShell 命令。 这些脚本块可能非常简单，但是创建它们需要了解有关 Windows PowerShell 的另一个概念，即比较运算符。 比较运算符比较其每一侧显示的项。 比较运算符以“-”字符开头，后跟名称。 基本比较运算符适用于几乎任何类型的对象。 更高级的比较运算符可能仅适用于文本或数组。
 
 > [!NOTE]
 > 默认情况下，在处理文本时，Windows PowerShell 比较运算符不区分大小写。
