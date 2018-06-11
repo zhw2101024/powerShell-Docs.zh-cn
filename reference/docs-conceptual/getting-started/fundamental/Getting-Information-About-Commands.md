@@ -58,7 +58,7 @@ Get-Command *
 若要获取其他类型的本机命令，请使用 **Get-Command cmdlet** 的 **CommandType** 参数。
 
 > [!NOTE]
-> 星号 (\*) 用于 Windows PowerShell 命令参数中的通配符匹配。 \* 表示“匹配一个或多个任意字符”。 你可以键入 **Get-Command a\&#42;**查找所有以字母“a”开头的命令。 与 Cmd.exe 中的通配符匹配不同，Windows PowerShell 的通配符还将匹配句点。
+> 星号 (\*) 用于 Windows PowerShell 命令参数中的通配符匹配。 \* 表示“匹配一个或多个任意字符”。 你可以键入 `Get-Command a*` 查找所有以字母“a”开头的命令。 与 Cmd.exe 中的通配符匹配不同，Windows PowerShell 的通配符还将匹配句点。
 
 若要获取命令别名（即命令的已分配昵称），请键入：
 
