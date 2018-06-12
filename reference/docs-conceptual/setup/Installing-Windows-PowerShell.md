@@ -2,11 +2,12 @@
 ms.date: 08/09/2017
 keywords: powershell, cmdlet, 下载, 安装, 设置, windows 10, windows 8.1, windows 8.0, windows 7
 title: 安装 Windows PowerShell
-ms.openlocfilehash: 320b271ce49768f8865c79c5c72749befe306fa4
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 89f0f689ebfcd34dd4c8ec3824ec8ab4bddc34d9
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34482992"
 ---
 # <a name="installing-windows-powershell"></a>安装 Windows PowerShell
 从 Windows 7 SP1 和 Windows Server 2008 R2 SP1 开始，每个 Windows 中默认随附安装有 Windows PowerShell。
@@ -81,9 +82,9 @@ Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.c
 
 ## <a name="need-azure-powershell"></a>需要 Azure PowerShell
 
-如需要 Azure PowerShell，请先参阅 [Azure PowerShell 概述](https://docs.microsoft.com/en-us/powershell/azure)。
+如需要 Azure PowerShell，请先参阅 [Azure PowerShell 概述](https://docs.microsoft.com/powershell/azure)。
 
-或者，可能需要参阅[安装和配置 Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps)
+或者，可能需要参阅[安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps)
 
 ## <a name="see-also"></a>另请参阅
 

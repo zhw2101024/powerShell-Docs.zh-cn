@@ -2,11 +2,12 @@
 ms.date: 06/27/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell Web 访问的授权规则和安全功能
-ms.openlocfilehash: 0e765ae90661a054ca9bae71d0f6d449cccb185d
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 1b4d4339efda78a5cb719921a9cb06881d119930
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483128"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 访问的授权规则和安全功能
 
@@ -112,7 +113,7 @@ Windows PowerShell Web 访问的最后安全层是目标计算机自身的安全
 授权规则可让用户访问特定的会话配置。
 可以为 Windows PowerShell Web 访问创建受限的运行空间或会话配置，并可让特定用户在登录到 Windows PowerShell Web 访问时仅连接到特定的会话配置。
 可使用访问控制列表 (ACL) 确定哪个用户具有访问特定终结点的权限，并使用本部分中的授权规则进一步限制特定用户组合访问终结点的权限。
-有关受限运行空间的详细信息，请参阅 [Creating a constrained runspace](https://msdn.microsoft.com/en-us/library/dn614668)（创建受限运行空间）。
+有关受限运行空间的详细信息，请参阅 [Creating a constrained runspace](https://msdn.microsoft.com/library/dn614668)（创建受限运行空间）。
 
 ### <a name="configuring-authorization-rules"></a>配置授权规则
 
@@ -122,7 +123,7 @@ Windows PowerShell Web 访问的最后安全层是目标计算机自身的安全
 
 如果计划使用自定义会话配置以允许特定用户仅在 Windows PowerShell Web 访问的限制运行空间中运行，则可先创建自定义会话配置，然后再添加参考这些配置的授权规则。
 无法使用 Windows PowerShell Web 访问 cmdlet 创建自定义会话配置。
-有关创建自定义会话配置的详细信息，请参阅 [about_Session_Configuration_Files](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files)。
+有关创建自定义会话配置的详细信息，请参阅 [about_Session_Configuration_Files](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files)。
 
 Windows PowerShell Web 访问 cmdlet 支持只一个通配符，即星号 (\*)。
 字符串中的通配符不受支持；根据属性（用户、计算机或会话配置）使用单个星号。
@@ -142,7 +143,7 @@ Windows PowerShell Web 访问 cmdlet 支持只一个通配符，即星号 (\*)�
 2. 使用会话配置限制用户访问的可选步骤：
 
     确保规则中已存在要使用的会话配置。
-如果尚未创建这些配置，则使用 [about_Session_Configuration_Files](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files) 中用于创建会话配置的说明。
+如果尚未创建这些配置，则使用 [about_Session_Configuration_Files](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files) 中用于创建会话配置的说明。
 
 3. 本授权规则允许特定用户通过他们通常访问的网络访问一台计算机，以及可让特定用户拥有对满足用户常见脚本和 cmdlet 需求的特定会话配置的权限。 键入以下命令，然后按**Enter**。
 
@@ -186,7 +187,7 @@ Remove-PswaAuthorizationRule -ID <rule ID>
 - 有些管理员为某些用户提供的访问权限要比其他用户多。 例如，管理员创建两个用户组，分别是 **Admins** 和 **BasicSupport**。 管理员还创建名为 **PswaEndpoint** 的终结点（其中带有受限的运行空间），并定义以下两条规则：**Admins,\*,\*** 和 **BasicSupport,\*,PswaEndpoint**。 第一条规则为**Admin**组中的所有用户提供访问所有计算机的权限，第二条规则为**BasicSupport**组中的所有用户仅提供访问那些带有**PswaEndpoint**的计算机的权限。
 
 - 管理员已设置专用测试环境，希望可让所有授权的网络用户通过他们经常访问的网络访问所有计算机，并持有对所有他们经常访问的会话配置的访问权限。 因为这是专用测试环境，管理员创建了不安全的授权规则。
-  - 管理员运行的 cmdlet `Add-PswaAuthorizationRule * * *`使用通配符 **\*** 来表示所有用户、所有计算机和所有配置。
+  - 管理员运行的 cmdlet `Add-PswaAuthorizationRule * * *`使用通配符 * **\*** 来表示所有用户、所有计算机和所有配置。
   - 此规则与下列各项等效：`Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`。
 
   >**注意**：
@@ -253,6 +254,6 @@ Windows PowerShell Web 访问会话超时。在 Windows Server 2012 上运行的
 
 ## <a name="see-also"></a>另请参阅
 
-- [安装和使用 Windows PowerShell Web 访问](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
+- [安装和使用 Windows PowerShell Web 访问](https://technet.microsoft.com/library/hh831611(v=ws.11).aspx)
 - [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 - [Windows PowerShell Web 访问 Cmdlet](cmdlets/web-access-cmdlets.md)

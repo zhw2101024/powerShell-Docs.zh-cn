@@ -1,4 +1,14 @@
- 和 --- ms.date：2017 年 06 月 12 日 参与者：JKeithB 关键字：gallery，powershell，cmdlet，psgallery，psget 标题：PowerShell 库
+---
+ms.date: 06/12/2017
+contributor: JKeithB
+keywords: 库,powershell,cmdlet,psgallery,psget
+title: PowerShell 库
+ms.openlocfilehash: dc7e8dd7e4d96d8424a62cb3256c3164b63a3684
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34482924"
 ---
 # <a name="the-powershell-gallery"></a>PowerShell 库
 

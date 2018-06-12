@@ -3,11 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell ISE 中的辅助功能
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 65d159905660f4f3e025b385626679e02a785fd7
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 272dd502ff9d220e82236c93cbffaf4e12054cfe
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34482975"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE 中的辅助功能
 
@@ -27,7 +28,7 @@ Windows PowerShell ISE 支持高对比度模式。 为方便有视觉障碍的�
 
 - 键盘快捷方式
 
-- 语法着色表和使用 [$psISE.Options](https://technet.microsoft.com/en-us/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) 脚本对象修改多个其他颜色设置的能力。
+- 语法着色表和使用 [$psISE.Options](https://technet.microsoft.com/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) 脚本对象修改多个其他颜色设置的能力。
 
 - 文字大小更改
 
@@ -84,8 +85,8 @@ Windows PowerShell ISE 支持高对比度模式。 为方便有视觉障碍的�
 |**运行**|F5|
 |**运行选定内容**|F8|
 |**停止执行**|CTRL+BREAK。 可以在上下文不明确时（未选定任何文本时）使用 CTRL+C。|
-|**Tab**（切换到下一个脚本）|CTRL+TAB **注意：**仅当打开单个 PowerShell 选项卡时，或打开多个 PowerShell 选项卡而焦点位于脚本窗格中时，切换到下一个脚本才有效。|
-|**Tab**（切换到上一个脚本）|CTRL+SHIFT+TAB **注意：**仅当打开单个 PowerShell 选项卡时，或打开多个 PowerShell 选项卡而焦点位于脚本窗格中时，切换到上一个脚本才有效。|
+|**Tab**（切换到下一个脚本）|CTRL+TAB **注意：** 仅当打开单个 PowerShell 选项卡时，或打开多个 PowerShell 选项卡而焦点位于脚本窗格中时，切换到下一个脚本才有效。|
+|**Tab**（切换到上一个脚本）|CTRL+SHIFT+TAB **注意：** 仅当打开单个 PowerShell 选项卡时，或打开多个 PowerShell 选项卡而焦点位于脚本窗格中时，切换到上一个脚本才有效。|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>自定义视图的键盘快捷方式
 

@@ -3,11 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 启动 Windows PowerShell 2.0 引擎
 ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
-ms.openlocfilehash: 585e1003554362d11fe99414bd3e80c497799a88
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 618745ff4865dd046acf46487e87c3ca0e324f95
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34482958"
 ---
 # <a name="starting-the-windows-powershell-20-engine"></a>启动 Windows PowerShell 2.0 引擎
 
@@ -37,21 +38,21 @@ PowerShell.exe -Version 2
 
 这是一项高级任务，通常由系统管理员执行。
 
-以下过程使用 [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) cmdlet 的 **PSVersion** 参数来创建使用 Windows PowerShell 2.0 引擎的会话配置。 你还可以使用 [New-PSSessionConfigurationFile](https://technet.microsoft.com/en-us/library/5f3e3633-6e90-479c-aea9-ba45a1954866) cmdlet 的 **PowerShellVersion** 参数为加载 Windows PowerShell 2.0 引擎的会话创建会话配置文件，此外，你可以使用 [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) 参数的 **PSVersion** 参数将会话配置更改为使用 Windows PowerShell 2.0 引擎。
+以下过程使用 [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) cmdlet 的 **PSVersion** 参数来创建使用 Windows PowerShell 2.0 引擎的会话配置。 你还可以使用 [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) cmdlet 的 **PowerShellVersion** 参数为加载 Windows PowerShell 2.0 引擎的会话创建会话配置文件，此外，你可以使用 [Set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) 参数的 **PSVersion** 参数将会话配置更改为使用 Windows PowerShell 2.0 引擎。
 
-有关会话配置文件的详细信息，请参阅 [about_Session_Configuration_Files](https://technet.microsoft.com/en-us/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8)。有关会话配置（包括安装和安全性）的信息，请参阅 [about_Session_Configurations[v4]](https://technet.microsoft.com/en-us/library/a2fbe12a-350c-4d04-be50-24102824e3ab)。
+有关会话配置文件的详细信息，请参阅 [about_Session_Configuration_Files](https://technet.microsoft.com/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8)。有关会话配置（包括安装和安全性）的信息，请参阅 [about_Session_Configurations[v4]](https://technet.microsoft.com/library/a2fbe12a-350c-4d04-be50-24102824e3ab)。
 
 #### <a name="to-start-a-remote-windows-powershell-20-session"></a>启动远程 Windows PowerShell 2.0 会话
 
-1. 若要创建需要 Windows PowerShell 2.0 引擎的会话配置，请使用 [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) cmdlet 的 **PSVersion** 参数，其值为“2.0”。 在计算机上的连接的“服务器端”或接收端运行此命令。
+1. 若要创建需要 Windows PowerShell 2.0 引擎的会话配置，请使用 [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) cmdlet 的 **PSVersion** 参数，其值为“2.0”。 在计算机上的连接的“服务器端”或接收端运行此命令。
 
-   下面的示例命令在 Server01 计算机上创建 PS2 会话配置。 若要运行此命令，请使用**“以管理员身份运行”**选项启动 Windows PowerShell 4.0 或 Windows PowerShell 3.0。
+   下面的示例命令在 Server01 计算机上创建 PS2 会话配置。 若要运行此命令，请使用 **“以管理员身份运行”** 选项启动 Windows PowerShell 4.0 或 Windows PowerShell 3.0。
 
    ```powershell
    Register-PSSessionConfiguration -Name PS2 -PSVersion 2.0
    ```
 
-2. 若要在使用 PS2 会话配置的 Server01 计算机上创建会话，请使用创建远程会话的 cmdlet（例如 [New-PSSession](https://technet.microsoft.com/en-us/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) cmdlet）的 **ConfigurationName** 参数。
+2. 若要在使用 PS2 会话配置的 Server01 计算机上创建会话，请使用创建远程会话的 cmdlet（例如 [New-PSSession](https://technet.microsoft.com/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) cmdlet）的 **ConfigurationName** 参数。
 
    使用会话配置的会话启动时，Windows PowerShell 2.0 引擎会自动加载到该会话中。
 
@@ -63,7 +64,7 @@ PowerShell.exe -Version 2
 
 ## <a name="how-to-start-a-background-job-with-the-windows-powershell-20-engine"></a>如何使用 Windows PowerShell 2.0 引擎启动后台作业
 
-若要使用 Windows PowerShell 2.0 引擎启动后台作业，请使用 [Start-Job](https://technet.microsoft.com/en-us/library/2bc04935-0deb-4ec0-b856-d7290cca6442) cmdlet 的**PSVersion** 参数。
+若要使用 Windows PowerShell 2.0 引擎启动后台作业，请使用 [Start-Job](https://technet.microsoft.com/library/2bc04935-0deb-4ec0-b856-d7290cca6442) cmdlet 的**PSVersion** 参数。
 
 下面的命令使用 Windows PowerShell 2.0 引擎启动后台作业
 

@@ -2,11 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: WinRMSecurity
-ms.openlocfilehash: e390a84b6f7a1932afdad84c7b09ce7da2ec5370
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 43e77067e301cdf1b792cb0d24b72ee0abb3349a
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34482941"
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell 远程处理安全注意事项
 
@@ -29,7 +30,7 @@ PowerShell 远程处理（和 WinRM）侦听以下端口：
 
 在专用网络上，默认的 PowerShell 远程处理 Windows 防火墙规则接受所有连接。 在公用网络上，默认 Windows 防火墙规则仅允许来自同一子网内的 PowerShell 远程处理连接。 必须明确地更改该规则，以将 PowerShell 远程处理打开到公用网络上的所有连接。
 
->**警告：**公用网络的防火墙规则旨在保护计算机免于潜在的恶意外部连接尝试。 请谨慎删除此规则。
+>**警告：** 公用网络的防火墙规则旨在保护计算机免于潜在的恶意外部连接尝试。 请谨慎删除此规则。
 
 ## <a name="process-isolation"></a>进程隔离
 
@@ -71,7 +72,7 @@ Kerberos 保证用户标识和服务器标识，而不发送任何种类的可�
 
 ### <a name="ongoing-communication"></a>正在进行的通信
 
-初始身份验证完成后，[PowerShell 远程处理协议](https://msdn.microsoft.com/en-us/library/dd357801.aspx)会使用每会话 AES-256 对称密钥对所有正在进行的通信进行加密。
+初始身份验证完成后，[PowerShell 远程处理协议](https://msdn.microsoft.com/library/dd357801.aspx)会使用每会话 AES-256 对称密钥对所有正在进行的通信进行加密。
 
 
 ## <a name="making-the-second-hop"></a>形成第二个跃点

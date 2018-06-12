@@ -2,11 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 使用基于 Web 的 Windows PowerShell 控制台
-ms.openlocfilehash: 3ef2b39279745ffe78fa928247e8a1fb76519ba0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 5d29a6f97fddf4b329fcc7097cf7d40d47d22cca
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483145"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>使用基于 Web 的 Windows PowerShell 控制台
 
@@ -81,7 +82,7 @@ Windows PowerShell Web 访问管理员应为你提供一个 URL，该 URL 是贵
 
     一般情况下，你用于通过 Windows PowerShell Web 访问网关的凭据与你想要管理的远程计算机所识别的凭据是一样的。 但是，如果你想要使用不同的凭据管理你在步骤 2 中指定的远程计算机，请展开“可选的连接设置”部分，并提供备用凭据。 否则，请跳到步骤 6。
 
-1. 如果 Windows PowerShell Web 访问管理员已经为 Windows PowerShell Web 访问用户创建了自定义会话配置，则在“配置名称”字段中键入会话配置名称。 有关会话配置的详细信息，请参阅 [about_Session_Configurations](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations)。
+1. 如果 Windows PowerShell Web 访问管理员已经为 Windows PowerShell Web 访问用户创建了自定义会话配置，则在“配置名称”字段中键入会话配置名称。 有关会话配置的详细信息，请参阅 [about_Session_Configurations](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations)。
 
 1. 除非 Windows PowerShell Web 访问管理员指示你以其他方式处理，否则将“身份验证类型”设置保持为“默认”。
 

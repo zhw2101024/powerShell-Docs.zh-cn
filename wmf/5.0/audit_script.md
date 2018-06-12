@@ -1,11 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: 2627b9d02788bd31a5384587406df533faf2cfaf
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b8f175cee0a1de501b64890fdc2798f4f6421a14
+ms.sourcegitcommit: 2ffb9fa92129c2001379ca2c17646466721f7165
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/09/2018
+ms.locfileid: "35251477"
 ---
 # <a name="script-tracing-and-logging"></a>脚本跟踪和日志记录
 
@@ -104,4 +105,4 @@ $sortedScripts = $created | sort { $_.Properties[0].Value }
 $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 ```
 
-正如所有日志系统都有一个有限的保留缓存区（即 ETW 日志）一样，针对此基础结构的一个攻击就是，用虚假事件充斥日志以隐藏早期的证据。 若要避免这种攻击，请确保具有某种形式的事件日志集合设置（即 Windows 事件转发，[通过 Windows 事件日志监视发现攻击者](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf)）以尽快将事件日志从计算机中移除。
+正如所有日志系统都有一个有限的保留缓存区（即 ETW 日志）一样，针对此基础结构的一个攻击就是，用虚假事件充斥日志以隐藏早期的证据。 若要避免这种攻击，请确保具有某种形式的事件日志集合设置（即 Windows 事件转发，[通过 Windows 事件日志监视发现攻击者](https://www.iad.gov/iad/library/reports/spotting-the-adversary-with-windows-event-log-monitoring.cfm)）以尽快将事件日志从计算机中移除。

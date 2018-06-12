@@ -2,11 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell 5.0 中的新增功能
-ms.openlocfilehash: f1134a37e7027b00c948ce1db186a21dc5a311c6
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: f5a27c0541e21b379f88b318cbe09a0344c1b372
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483179"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 中的新增功能
 Windows PowerShell 5.0 新增了大量功能，不仅扩展并提升了自身的用途和可用性，还方便用户能够更轻松、全面地控制和管理基于 Windows 的环境。
@@ -316,7 +317,7 @@ Windows PowerShell 4.0 包括以下新增功能。
 
 ### <a name="new-features-in-windows-powershell"></a>Windows PowerShell 中的新增功能
 
-- **Windows PowerShell Desired State Configuration** (DSC) 是 Windows PowerShell 4.0 中的新管理系统，可为软件服务和运行这些服务的环境部署和管理配置数据。 有关 DSC 的详细信息，请参阅 [Windows PowerShell Desired State Configuration 入门](https://technet.microsoft.com/en-us/library/c134aa32-b085-4656-9a89-955d8ff768d0)。
+- **Windows PowerShell Desired State Configuration** (DSC) 是 Windows PowerShell 4.0 中的新管理系统，可为软件服务和运行这些服务的环境部署和管理配置数据。 有关 DSC 的详细信息，请参阅 [Windows PowerShell Desired State Configuration 入门](https://technet.microsoft.com/library/c134aa32-b085-4656-9a89-955d8ff768d0)。
 
 - **Save-Help** 使你能够为安装在远程计算机上的模块保存帮助。 可以使用 Save-Help 从连接了 Internet 的客户端（不必在其上安装需要帮助的所有模块）下载模块“帮助”，然后将已保存的“帮助”复制到远程共享文件夹或无法访问 Internet 的远程计算机。
 
@@ -472,7 +473,7 @@ Windows PowerShell 3.0 包括以下新增功能。
 - [特殊字符处理改进](#special-character-handling-improvements)
 
 ### <a name="windows-powershell-workflow"></a>Windows PowerShell 工作流程
-Windows PowerShell 工作流将 Windows Workflow Foundation 的强大功能引入到 Windows PowerShell 中。 你可以采用 XAML 或 Windows PowerShell 语言编写工作流，然后像运行 cmdlet 一样运行它们。 [Get-command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet 获取工作流命令，[Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet 获取工作流帮助。
+Windows PowerShell 工作流将 Windows Workflow Foundation 的强大功能引入到 Windows PowerShell 中。 你可以采用 XAML 或 Windows PowerShell 语言编写工作流，然后像运行 cmdlet 一样运行它们。 [Get-command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet 获取工作流命令，[Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet 获取工作流帮助。
 
 工作流是多计算机管理活动序列，其特点是长期运行、可重复、频繁、可并行化、可中断、可挂起并且可重启。 工作流可以从有意或意外中断（例如网络中断、Windows 重新启动或电源故障）中恢复。
 
@@ -504,7 +505,7 @@ Windows PowerShell Web 访问是一项 Windows Server 2012 功能，它允许用
 有关详细信息，请参阅[部署 Windows PowerShell Web 访问](http://go.microsoft.com/fwlink/p/?LinkID=221050)。
 
 ### <a name="new-windows-powershell-ise-features"></a>新的 Windows PowerShell ISE 功能
-对于 Windows PowerShell 3.0 来说，Windows PowerShell 集成脚本环境 (ISE) 具有许多新增功能，包括 IntelliSense、显示命令窗口、统一的控制台窗格、代码段、大括号匹配、展开/折叠部分、自动保存、最近使用的项列表、批量复制、块复制，以及对编写 Windows PowerShell 脚本工作流的完全支持。 有关详细信息，请参阅 [about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)。
+对于 Windows PowerShell 3.0 来说，Windows PowerShell 集成脚本环境 (ISE) 具有许多新增功能，包括 IntelliSense、显示命令窗口、统一的控制台窗格、代码段、大括号匹配、展开/折叠部分、自动保存、最近使用的项列表、批量复制、块复制，以及对编写 Windows PowerShell 脚本工作流的完全支持。 有关详细信息，请参阅 [about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)。
 
 ### <a name="support-for-microsoft-net-framework-4"></a>对 Microsoft .NET Framework 4 的支持
 Windows PowerShell 是针对公共语言运行时 4.0 而构建的。 Cmdlet、脚本和工作流作者可以在 Windows PowerShell 中使用新的 Microsoft .NET Framework 4 类，其功能包括应用程序兼容性和部署、Managed Extensibility Framework、并行计算、网络、Windows Communication Foundation 和 Windows Workflow Foundation。
@@ -517,9 +518,9 @@ Windows PowerShell 3.0 是 Windows 8 的 Windows 预安装环境 (Windows PE) 4.
 
 你现在可以在不中断在会话中运行的命令的情况下断开与该会话的连接。 你可以关闭该会话并关闭计算机。 稍后，你可以从相同或不同计算机上的另一个会话重新连接到该会话。
 
-[Get-PSSession](https://technet.microsoft.com/en-us/library/b2b10531-d0df-4746-b877-e75c09955cb6) cmdlet 的 **ComputerName** 参数现在可获取连接到计算机的所有用户会话，即使这些会话是在其他计算机上的其他会话中启动的。 你可以连接到这些会话、获取命令结果、启动新的命令，然后断开与该会话的连接。
+[Get-PSSession](https://technet.microsoft.com/library/b2b10531-d0df-4746-b877-e75c09955cb6) cmdlet 的 **ComputerName** 参数现在可获取连接到计算机的所有用户会话，即使这些会话是在其他计算机上的其他会话中启动的。 你可以连接到这些会话、获取命令结果、启动新的命令，然后断开与该会话的连接。
 
-已添加新的 cmdlet 以支持断开连接的会话功能，其中包括 [Disconnect-PSSession](https://technet.microsoft.com/en-us/library/f8f95111-612f-4cba-9098-77904b0473d8)、[Connect-PSSession](https://technet.microsoft.com/en-us/library/b803dd29-f208-4079-80d4-db04d778f060)和 Receive-PSSession，并且已向管理 PSSession 的 cmdlet 添加了新的参数，例如 [Invoke-Command](https://technet.microsoft.com/en-us/library/906b4b41-7da8-4330-9363-e7164e5e6970) cmdlet 的 **InDisconnectedSession** 参数。
+已添加新的 cmdlet 以支持断开连接的会话功能，其中包括 [Disconnect-PSSession](https://technet.microsoft.com/library/f8f95111-612f-4cba-9098-77904b0473d8)、[Connect-PSSession](https://technet.microsoft.com/library/b803dd29-f208-4079-80d4-db04d778f060)和 Receive-PSSession，并且已向管理 PSSession 的 cmdlet 添加了新的参数，例如 [Invoke-Command](https://technet.microsoft.com/library/906b4b41-7da8-4330-9363-e7164e5e6970) cmdlet 的 **InDisconnectedSession** 参数。
 
 仅当连接的源端（“客户端”）和终端（“服务器”）上的计算机都运行的是 Windows PowerShell 3.0 时，才支持“断开连接的会话”功能。
 
@@ -531,17 +532,17 @@ Windows PowerShell 3.0 可检测到客户端和服务器之间的意外连接损
 这些功能提供了更加可靠且更易恢复的远程体验，并允许用户执行需要稳定会话的长期运行的任务，例如工作流。
 
 ### <a name="updatable-help-system"></a>可更新的帮助系统
-现在，你可以为模块中的 cmdlet 下载更新的帮助文件。 [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) cmdlet 可标识最新的帮助文件、从 Internet 下载这些文件、对其进行解压缩和验证，然后将其安装在模块正确的特定于语言的目录中。
+现在，你可以为模块中的 cmdlet 下载更新的帮助文件。 [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) cmdlet 可标识最新的帮助文件、从 Internet 下载这些文件、对其进行解压缩和验证，然后将其安装在模块正确的特定于语言的目录中。
 
 若要使用更新的帮助文件，只需键入 `Get-Help`。 你无需重启 Windows 或 Windows PowerShell。 若要为 $pshome 目录中的模块更新帮助，请使用“以管理员身份运行”选项启动 Windows PowerShell。
 
-为了支持没有 Internet 访问权限的用户和防火墙外的用户，新的 [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) cmdlet 会将帮助文件下载到文件系统目录中，例如文件共享。 然后，用户可以使用 [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) cmdlet 从文件共享中获取更新的帮助文件。
+为了支持没有 Internet 访问权限的用户和防火墙外的用户，新的 [Save-Help](https://technet.microsoft.com/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) cmdlet 会将帮助文件下载到文件系统目录中，例如文件共享。 然后，用户可以使用 [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) cmdlet 从文件共享中获取更新的帮助文件。
 
-你可以使用 [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) cmdlet 来更新所有受支持 UI 区域性中所有或特定模块的帮助文件。 你甚至可以将 [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) 命令放入到你的 Windows PowerShell 配置文件中。 默认情况下，Windows PowerShell 每天下载模块帮助文件的次数不超过一次。
+你可以使用 [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) cmdlet 来更新所有受支持 UI 区域性中所有或特定模块的帮助文件。 你甚至可以将 [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) 命令放入到你的 Windows PowerShell 配置文件中。 默认情况下，Windows PowerShell 每天下载模块帮助文件的次数不超过一次。
 
-Windows 8 和 Windows Server 2012 模块不包含帮助文件。 若要下载最新的帮助文件，请键入 `Update-Help`。 有关详细信息，请键入 `Get-Help`（不带参数）或请参阅 [about_Updatable_Help](https://technet.microsoft.com/en-us/library/10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe)。
+Windows 8 和 Windows Server 2012 模块不包含帮助文件。 若要下载最新的帮助文件，请键入 `Update-Help`。 有关详细信息，请键入 `Get-Help`（不带参数）或请参阅 [about_Updatable_Help](https://technet.microsoft.com/library/10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe)。
 
-当计算机上未安装 cmdlet 的帮助文件时，[Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet 现在将显示自动生成的帮助。 自动生成的帮助中包含有关使用 [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) cmdlet 下载帮助文件的命令语法和指令。
+当计算机上未安装 cmdlet 的帮助文件时，[Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet 现在将显示自动生成的帮助。 自动生成的帮助中包含有关使用 [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) cmdlet 下载帮助文件的命令语法和指令。
 
 任何模块作者都可为其模块提供“可更新的帮助”。 你可以将帮助文件包含在模块中并使用“可更新的帮助”来更新它们，或忽略帮助文件并使用“可更新的帮助”来安装它们。 有关支持可更新的帮助的详细信息，请参阅 MSDN 中的[支持可更新的帮助](http://go.microsoft.com/FWLink/?LinkID=242129)。
 
@@ -579,22 +580,22 @@ Windows PowerShell 3.0 中包括对通用信息模型 (CIM) 的支持，CIM 为�
 
 在以前版本的 Windows PowerShell 中，仅为那些可以编写 C# 程序或复杂启动脚本的用户提供此级别的控制。 现在，计算机上“管理员”组中的任何成员都可以通过使用配置文件来自定义会话配置。
 
-若要创建会话配置文件，请使用 [New-PSSessionConfigurationFile](https://technet.microsoft.com/en-us/library/5f3e3633-6e90-479c-aea9-ba45a1954866) cmdlet。 若要将该会话配置文件应用到某个会话配置，请使用 [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) cmdlet 或 [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) cmdlet。
+若要创建会话配置文件，请使用 [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) cmdlet。 若要将该会话配置文件应用到某个会话配置，请使用 [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) cmdlet 或 [Set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) cmdlet。
 
-有关详细信息，请参阅 [about_Session_Configuration_Files](https://technet.microsoft.com/en-us/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8) 和 [New-PSSessionConfigurationFile](https://technet.microsoft.com/en-us/library/5f3e3633-6e90-479c-aea9-ba45a1954866)。
+有关详细信息，请参阅 [about_Session_Configuration_Files](https://technet.microsoft.com/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8) 和 [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866)。
 
 ### <a name="scheduled-jobs-and-task-scheduler-integration"></a>计划作业和任务计划程序集成
 现在可以计划 Windows PowerShell 后台作业，并在 Windows PowerShell 和任务计划程序中对其进行管理。
 
 Windows PowerShell 计划作业是 Windows PowerShell 后台作业和“任务计划程序”任务的有用结合。
 
-与 Windows PowerShell 后台作业一样，计划作业以异步方式在后台运行。 可以通过使用作业 cmdlet（例如 [Start-Job](https://technet.microsoft.com/en-us/library/2bc04935-0deb-4ec0-b856-d7290cca6442) 和 [Get-Job](https://technet.microsoft.com/en-us/library/1352c534-7193-46ca-9ab1-0c5219a661ad)）来管理的已完成的计划作业实例。
+与 Windows PowerShell 后台作业一样，计划作业以异步方式在后台运行。 可以通过使用作业 cmdlet（例如 [Start-Job](https://technet.microsoft.com/library/2bc04935-0deb-4ec0-b856-d7290cca6442) 和 [Get-Job](https://technet.microsoft.com/library/1352c534-7193-46ca-9ab1-0c5219a661ad)）来管理的已完成的计划作业实例。
 
 与“任务计划程序”任务一样，你可以按一次性或重复计划运行计划作业，或者根据操作或事件运行它们。 你可以在“任务计划程序”中查看和管理计划作业、按需启用和禁用它们、将其作为模板运行或使用，并设置启动作业的条件。
 
 此外，计划作业还附带用于管理它们的一组自定义 cmdlet。 这些 cmdlet 使你能够创建、编辑、管理、禁用和重新启用计划作业，创建计划作业触发器并设置计划作业选项。
 
-有关计划作业的详细信息，请参阅 [about_Scheduled_Jobs](https://technet.microsoft.com/en-us/library/3b546629-703c-4939-b44f-52dd567bce92)。
+有关计划作业的详细信息，请参阅 [about_Scheduled_Jobs](https://technet.microsoft.com/library/3b546629-703c-4939-b44f-52dd567bce92)。
 
 ### <a name="windows-powershell-language-enhancements"></a>Windows PowerShell 语言增强功能
 Windows PowerShell 3.0 包括许多功能，旨在使其语言更简单、更易于使用并避免常见错误。 改进包括属性枚举、标量对象上的计数和长度属性、新的重定向运算符、$Using 作用域修饰符、PSItem 自动变量、灵活的脚本格式设置、变量特性、简化的特性参数、数字命令名称、停止分析运算符、改进的数组展开、新的位运算符、有序词典、PSCustomObject 强制转换和改进的基于注释的帮助。
@@ -641,21 +642,21 @@ Windows PowerShell 提供程序也已得到明显改进，包括 Certificate 提
 ### <a name="remote-module-import-and-discovery"></a>远程模块导入和发现
 Windows PowerShell 3.0 扩展了远程计算机上的模块发现、导入和隐式远程功能。 Module cmdlet 可通过使用 Windows PowerShell 远程处理获取远程计算机上的模块，并将其导入到远程或本地计算机中。 通过将在远程计算机上隐式运行的命令导入到本地计算机中，新的 CIM 会话支持使你能够使用 CIM 和 WMI 来管理非 Windows 计算机。
 
-有关详细信息，请参阅 [Get-Module](https://technet.microsoft.com/en-us/library/2cccd4c4-9a21-4c77-b691-984ee57242e1) cmdlet 和 [Import-Module](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade) cmdlet 的帮助主题。
+有关详细信息，请参阅 [Get-Module](https://technet.microsoft.com/library/2cccd4c4-9a21-4c77-b691-984ee57242e1) cmdlet 和 [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) cmdlet 的帮助主题。
 
 ### <a name="enhanced-tab-completion"></a>增强的 Tab 自动补全
 Windows PowerShell 控制台中的 Tab 自动补全现在可以自动补全 cmdlet 的名称、参数、参数值、枚举、.NET Frameworks 类型、COM 对象、隐藏的目录等等。 Tab 自动补全功能是基于新的分析程序和抽象语法树彻底重写的，旨在支持更多方案，包括内存中的分析树和中间部分 Tab 自动补全。
 
 ### <a name="module-auto-loading"></a>模块自动加载
-[Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet 现在可从安装在计算机上的所有模块中获取所有的 cmdlet 和函数，即使模块未导入到当前会话中。
+[Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet 现在可从安装在计算机上的所有模块中获取所有的 cmdlet 和函数，即使模块未导入到当前会话中。
 
 当你获得所需的 cmdlet 时，可以在不导入任何模块的情况下立即使用它。 现在，当你使用模块中的任何 cmdlet 时，Windows PowerShell 模块都会自动导入。 不再需要搜索模块并将其导入即可使用其 cmdlet。
 
-可使用以下方法触发模块的自动导入：在命令中使用该 cmdlet，对不带通配符的 cmdlet 运行 **Get-Command** 或对不带通配符的 cmdlet 运行 [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a)。
+可使用以下方法触发模块的自动导入：在命令中使用该 cmdlet，对不带通配符的 cmdlet 运行 **Get-Command** 或对不带通配符的 cmdlet 运行 [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a)。
 
 可以通过使用 **$PSModuleAutoLoadingPreference** 首选项变量来启用、禁用和配置模块的自动导入。
 
-有关详细信息，请参阅 [about_Modules [v4]](https://technet.microsoft.com/en-us/library/94f57429-a539-4aee-bb0d-205cd7e801f9)、[about_Preference_Variables [v4]](https://technet.microsoft.com/en-us/library/31344314-be29-4286-b039-afa5460cbe8b) 以及有关 [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) 和 [Import-Module](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade) cmdlet 的帮助主题。
+有关详细信息，请参阅 [about_Modules [v4]](https://technet.microsoft.com/library/94f57429-a539-4aee-bb0d-205cd7e801f9)、[about_Preference_Variables [v4]](https://technet.microsoft.com/library/31344314-be29-4286-b039-afa5460cbe8b) 以及有关 [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) 和 [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) cmdlet 的帮助主题。
 
 ### <a name="module-experience-improvements"></a>模块体验改进
 Windows PowerShell 3.0 将高级功能支持引入了模块，包括以下新增功能。
@@ -672,16 +673,16 @@ Windows PowerShell 3.0 将高级功能支持引入了模块，包括以下新增
 
 6. 改进了模块要求，包括附带版本和 GUID 的完全限定的所需模块和所需模块的自动导入
 
-7. 更安静、更流畅地操作 [New-ModuleManifest](https://technet.microsoft.com/en-us/library/512adced-f42f-4e88-ba7c-834fc9e5d047) cmdlet。
+7. 更安静、更流畅地操作 [New-ModuleManifest](https://technet.microsoft.com/library/512adced-f42f-4e88-ba7c-834fc9e5d047) cmdlet。
 
 8. 为 #Requires 新增了 **Module** 参数
 
-9. 使用 **MinimumVersion** 和 **RequiredVersion** 参数改进了 [Import-Module](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade) cmdlet。
+9. 使用 **MinimumVersion** 和 **RequiredVersion** 参数改进了 [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) cmdlet。
 
 ### <a name="simplified-command-discovery"></a>简化的命令发现
-你不再需要导入所有模块即可发现可用于会话的命令。 在 Windows PowerShell 3.0 中，[Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet 从所有安装的模块中获取所有的命令。 而且，如果你使用了某个命令，则导出该命令的模块会自动导入到你的会话中。
+你不再需要导入所有模块即可发现可用于会话的命令。 在 Windows PowerShell 3.0 中，[Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet 从所有安装的模块中获取所有的命令。 而且，如果你使用了某个命令，则导出该命令的模块会自动导入到你的会话中。
 
-新的 [Show-Command](https://technet.microsoft.com/en-us/library/65bba50b-91a8-49d5-80a2-a30fc684ba41) cmdlet 是专门为新手设计的。 你可以在窗口中搜索命令。 你可以查看所有命令或按模块筛选、通过单击按钮导入模块、使用文本框和下拉列表来构造一个有效命令，然后复制或运行该命令，而无需离开窗口。
+新的 [Show-Command](https://technet.microsoft.com/library/65bba50b-91a8-49d5-80a2-a30fc684ba41) cmdlet 是专门为新手设计的。 你可以在窗口中搜索命令。 你可以查看所有命令或按模块筛选、通过单击按钮导入模块、使用文本框和下拉列表来构造一个有效命令，然后复制或运行该命令，而无需离开窗口。
 
 ### <a name="improved-logging-diagnostics-and-group-policy-support"></a>改进的日志记录、诊断和组策略支持
 借助对 Windows 事件跟踪 (ETW) 日志、模块中可编辑的 **LogPipelineExecutionDetails** 属性和“打开模块日志记录”组策略设置的支持，Windows PowerShell 3.0 改进了对命令和模块的日志记录和跟踪支持。 你现在可以通过显示日志属性从日志详细信息中获取参数值。
@@ -692,13 +693,13 @@ Windows PowerShell 3.0 将高级功能支持引入了模块，包括以下新增
 ### <a name="enhanced-console-host-experience"></a>增强的控制台主机体验
 在 Windows PowerShell 3.0 中，Windows PowerShell 控制台主机程序具有一些新增功能，其中默认包括单线程单元。 通过“文件资源管理器”中的新“使用 PowerShell 运行”选项，你只需通过右键单击即可在不受限制的会话中运行脚本。 新的控制台主机启动逻辑可更快地启动 Windows PowerShell，而且你可以使用新的字体个性化旧的控制台窗口体验。
 
-有关详细信息，请参阅 [about_Run_With_PowerShell](https://technet.microsoft.com/en-us/library/c9d9ca5f-eff9-4409-be9d-e43b5b4087eb)。
+有关详细信息，请参阅 [about_Run_With_PowerShell](https://technet.microsoft.com/library/c9d9ca5f-eff9-4409-be9d-e43b5b4087eb)。
 
 ### <a name="new-cmdlet-and-hosting-apis"></a>新的 Cmdlet 和宿主 API
 新的 Cmdlet API 和宿主 API 包括公用高级语法树 (AST) API、管道分页 API、嵌套管道、运行空间池 Tab 自动补全、Windows RT、cmdlet 特性 Obsolete 以及 FunctionInfo 对象的 Verb 和 Noun 属性。
 
 ### <a name="performance-improvements"></a>性能改进
-Windows PowerShell 中明显的性能改进体现在新的语言分析程序（构建在 .NET Framework 4 中的动态语言运行时 (DLR) 基础之上），以及运行时脚本编译、引擎可靠性改进和对 [Get-ChildItem](https://technet.microsoft.com/en-us/library/75cf79bb-4db6-4a67-8c36-3d20754e2190) 算法的更改（可提高其性能，尤其是在搜索网络共享时）。
+Windows PowerShell 中明显的性能改进体现在新的语言分析程序（构建在 .NET Framework 4 中的动态语言运行时 (DLR) 基础之上），以及运行时脚本编译、引擎可靠性改进和对 [Get-ChildItem](https://technet.microsoft.com/library/75cf79bb-4db6-4a67-8c36-3d20754e2190) 算法的更改（可提高其性能，尤其是在搜索网络共享时）。
 
 ### <a name="runas-and-shared-host-support"></a>运行身份和共享主机支持
 Windows PowerShell 3.0 包括对运行身份和共享主机功能的支持。
@@ -708,8 +709,8 @@ Windows PowerShell 3.0 包括对运行身份和共享主机功能的支持。
 **SharedHost** 功能允许多台计算机上的多个用户同时连接到工作流会话并监视工作流进度。 用户可以在一台计算机上启动工作流，然后连接到另一台计算机上的工作流会话，而无需断开会话与原始计算机的连接。 用户必须具有相同的权限，并且必须使用相同的会话配置。 有关详细信息，请参阅 Windows PowerShell 工作流入门中的“运行 Windows PowerShell 工作流”。
 
 ### <a name="special-character-handling-improvements"></a>特殊字符处理改进
-为了改进 Windows PowerShell 3.0 解译和正确处理特殊字符的能力，用于处理路径中特殊字符的 **LiteralPath** 参数几乎对具有 **Path** 参数的所有 cmdlet 都有效，包括新增的 [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) 和 [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) cmdlet。 分析程序中还包括了特殊逻辑，用于改进对文件名和路径中的反撇号字符 (\`) 和方括号的处理。
+为了改进 Windows PowerShell 3.0 解译和正确处理特殊字符的能力，用于处理路径中特殊字符的 **LiteralPath** 参数几乎对具有 **Path** 参数的所有 cmdlet 都有效，包括新增的 [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) 和 [Save-Help](https://technet.microsoft.com/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) cmdlet。 分析程序中还包括了特殊逻辑，用于改进对文件名和路径中的反撇号字符 (\`) 和方括号的处理。
 
 ## <a name="see-also"></a>另请参阅
-- [about_Windows_PowerShell_5.0](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
+- [about_Windows_PowerShell_5.0](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
 - [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
