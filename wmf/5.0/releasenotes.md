@@ -1,13 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: eb3be6ef8a0fb8e611178206cbc817ac34b40f3e
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a6366e18b4b6478bfab89475bc6975e6491da9f7
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34482856"
 ---
 # <a name="windows-management-framework-wmf-50-rtm-release-notes-overview"></a>Windows Management Framework (WMF) 5.0 RTM 发行说明概述
+
+**WMF 5.0 已被 WMF 5.1 取代。使用 WMF 5.0 的用户必须升级到 WMF 5.1 才能接受支持。请按照 [WMF 5.1 安装说明](../5.1/install-configure.md)** 进行操作
 
 Windows Management Framework (WMF) 5.0 RTM 包含已从 WMF 4.0 中更新的功能。 WMF 5.0 RTM 仅可在 **Windows Server 2012 R2**、**Windows Server 2012**、**Windows Server 2008 R2**、**Windows 8.1** 和 **Windows 7 SP1** 上进行安装，并包含以下功能的更新版本或说明：
 

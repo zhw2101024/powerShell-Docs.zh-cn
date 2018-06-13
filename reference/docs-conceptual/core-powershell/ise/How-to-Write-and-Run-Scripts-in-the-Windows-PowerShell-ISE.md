@@ -3,11 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 如何在 Windows PowerShell ISE 中编写和运行脚本
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: 4b8a9c0c3a710f3b3b9b6077c3c84e174a141db2
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 4d7c5352ef1dac6f63a50433676068f83a920db5
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483111"
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中编写和运行脚本
 
@@ -130,7 +131,7 @@ ms.lasthandoff: 04/09/2018
 
 ### <a name="to-save-a-script-in-ascii-encoding"></a>以 ASCII 编码保存脚本
 
-默认情况下，Windows PowerShell ISE 将新的脚本文件 (.ps1)、脚本数据文件 (.psd1) 和脚本模块文件 (.psm1) 保存为 Unicode (BigEndianUnicode)。若要以另一种编码保存脚本，如 ASCII (ANSI)，请对 [$psISE.CurrentFile](https://technet.microsoft.com/en-us/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile) 对象使用 Save 或 SaveAs 方法。
+默认情况下，Windows PowerShell ISE 将新的脚本文件 (.ps1)、脚本数据文件 (.psd1) 和脚本模块文件 (.psm1) 保存为 Unicode (BigEndianUnicode)。若要以另一种编码保存脚本，如 ASCII (ANSI)，请对 [$psISE.CurrentFile](https://technet.microsoft.com/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile) 对象使用 Save 或 SaveAs 方法。
 
 以下命令使用 ASCII 编码将新脚本保存为 MyScript.ps1。
 

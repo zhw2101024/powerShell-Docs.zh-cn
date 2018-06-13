@@ -74,7 +74,7 @@ SSH 子系统用于在远程计算机上创建 PowerShell 进程，且 SSH 服�
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>在 Linux (Ubuntu 14.04) 计算机上安装
 
-1. 从 GitHub 安装[适用于 Linux 的 PowerShell] 最新版本
+1. 从 GitHub 安装[适用于 Linux 的 PowerShell Core] 最新版本
 1. 按需安装 [Ubuntu SSH]
 
     ```bash
@@ -109,7 +109,7 @@ SSH 子系统用于在远程计算机上创建 PowerShell 进程，且 SSH 服�
 
 ## <a name="setup-on-macos-machine"></a>在 MacOS 计算器上安装
 
-1. 安装[适用于 MacOS 的 PowerShell] 最新版本
+1. 安装[适用于 MacOS 的 PowerShell Core] 最新版本
     - 按照以下步骤确保已启用 SSH 远程处理：
       - 打开 `System Preferences`
       - 单击 `Sharing`
@@ -241,9 +241,9 @@ GitCommitId                    v6.0.0-alpha.17
 
 1. sudo 命令对以 Linux 计算机为目标的远程会话不起作用。
 
-[PowerShell Core for Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
+[PowerShell Core for Windows]: ../setup/installing-powershell-core-on-windows.md#msi
+[适用于 Linux 的 PowerShell Core]: ../setup/installing-powershell-core-on-linux.md#ubuntu-1404
+[适用于 MacOS 的 PowerShell Core]: ../setup/installing-powershell-core-on-macos.md
 [Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
 [安装]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
-[适用于 Linux 的 PowerShell]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
-[适用于 MacOS 的 PowerShell]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
