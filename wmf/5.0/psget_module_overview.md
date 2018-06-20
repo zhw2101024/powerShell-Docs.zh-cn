@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222167"
 ---
 # <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a><span data-ttu-id="985ff-102">使用 PowerShellGet 进行 PowerShell 模块发现、安装和盘存</span><span class="sxs-lookup"><span data-stu-id="985ff-102">PowerShell Module Discovery, Install and Inventory with PowerShellGet</span></span>
 

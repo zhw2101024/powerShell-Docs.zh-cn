@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953117"
 ---
 # <a name="starting-windows-powershell"></a><span data-ttu-id="100d7-103">启动 Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="100d7-103">Starting Windows PowerShell</span></span>
 <span data-ttu-id="100d7-104">PowerShell 是一个脚本引擎 dll，嵌入到多个主机中。</span><span class="sxs-lookup"><span data-stu-id="100d7-104">PowerShell is a scripting engine dll which is embedded into multiple hosts.</span></span>  <span data-ttu-id="100d7-105">启动的最常见主机是交互式命令行 PowerShell.exe 和交互式脚本环境 PowerShell_ISE.exe。</span><span class="sxs-lookup"><span data-stu-id="100d7-105">The most common host you will start are the interactive command line PowerShell.exe and the Interactive Scripting Environment PowerShell_ISE.exe.</span></span>

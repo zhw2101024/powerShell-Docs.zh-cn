@@ -7,6 +7,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952947"
 ---
 # <a name="uninstall-windows-powershell-web-access"></a><span data-ttu-id="33308-103">卸载 Windows PowerShell Web 访问</span><span class="sxs-lookup"><span data-stu-id="33308-103">Uninstall Windows PowerShell Web Access</span></span>
 

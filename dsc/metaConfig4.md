@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189374"
 ---
 # <a name="configuring-the-local-configuration-manager-in-previous-versions-of-windows-powershell"></a><span data-ttu-id="972b1-103">在早期版本的 Windows PowerShell 中配置本地配置管理器</span><span class="sxs-lookup"><span data-stu-id="972b1-103">Configuring the Local Configuration Manager in Previous Versions of Windows PowerShell</span></span>
 

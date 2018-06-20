@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219525"
 ---
 # <a name="register-a-powershell-repository"></a><span data-ttu-id="b803a-102">注册 PowerShell 存储库</span><span class="sxs-lookup"><span data-stu-id="b803a-102">Register a PowerShell Repository</span></span>
 <span data-ttu-id="b803a-103">你可以配置 PowerShellGet 以针对内部存储库进行操作。</span><span class="sxs-lookup"><span data-stu-id="b803a-103">You can configure PowerShellGet to operate against internal repositories.</span></span> <span data-ttu-id="b803a-104">可通过使用以下附加内容完成此配置：</span><span class="sxs-lookup"><span data-stu-id="b803a-104">This is done by using the following additions:</span></span>

@@ -7,6 +7,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953440"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a><span data-ttu-id="1af37-103">Windows PowerShell Web 访问中的访问问题疑难解答</span><span class="sxs-lookup"><span data-stu-id="1af37-103">Troubleshooting Access Problems in Windows PowerShell Web Access</span></span>
 

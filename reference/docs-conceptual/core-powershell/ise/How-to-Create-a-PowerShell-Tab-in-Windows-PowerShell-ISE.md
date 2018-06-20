@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950040"
 ---
 # <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a><span data-ttu-id="d89cb-103">如何在 Windows PowerShell ISE 中创建 PowerShell 选项卡</span><span class="sxs-lookup"><span data-stu-id="d89cb-103">How to Create a PowerShell Tab in Windows PowerShell ISE</span></span>
 

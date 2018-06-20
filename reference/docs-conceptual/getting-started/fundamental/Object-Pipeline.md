@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30948204"
 ---
 # <a name="object-pipeline"></a><span data-ttu-id="a1c6a-103">对象管道</span><span class="sxs-lookup"><span data-stu-id="a1c6a-103">Object Pipeline</span></span>
 <span data-ttu-id="a1c6a-104">管道的行为就像一系列连接的管道段一样。</span><span class="sxs-lookup"><span data-stu-id="a1c6a-104">Pipelines act like a series of connected segments of pipe.</span></span> <span data-ttu-id="a1c6a-105">沿着管道移动的项会通过每个管道段。</span><span class="sxs-lookup"><span data-stu-id="a1c6a-105">Items moving along the pipeline pass through each segment.</span></span> <span data-ttu-id="a1c6a-106">若要在 Windows PowerShell 中创建管道，请使用管道运算符“|”将命令连接在一起。</span><span class="sxs-lookup"><span data-stu-id="a1c6a-106">To create a pipeline in Windows PowerShell, you connect commands together with the pipe operator "|".</span></span> <span data-ttu-id="a1c6a-107">每个命令的输出都将被用作下一命令的输入。</span><span class="sxs-lookup"><span data-stu-id="a1c6a-107">The output of each command is used as input to the next command.</span></span>

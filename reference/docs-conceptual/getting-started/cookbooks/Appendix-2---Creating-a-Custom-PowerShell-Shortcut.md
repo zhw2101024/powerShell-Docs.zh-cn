@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30949258"
 ---
 # <a name="appendix-2---creating-a-custom-powershell-shortcut"></a><span data-ttu-id="d1430-103">附录 2 - 创建自定义 PowerShell 快捷方式</span><span class="sxs-lookup"><span data-stu-id="d1430-103">Appendix 2 - Creating a Custom PowerShell Shortcut</span></span>
 

@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190309"
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a><span data-ttu-id="ca131-103">WMF 5.1 中的新方案和功能</span><span class="sxs-lookup"><span data-stu-id="ca131-103">New Scenarios and Features in WMF 5.1</span></span>
 

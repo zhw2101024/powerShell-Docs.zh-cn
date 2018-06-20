@@ -9,6 +9,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188677"
 ---
 <span data-ttu-id="3ccd9-103">网络交换机管理器 cmdlet 可用于通过 WSMAN 管理网络交换机。</span><span class="sxs-lookup"><span data-stu-id="3ccd9-103">The Network Switch Manager cmdlets can be used to manage network switches over WSMAN.</span></span>
 <span data-ttu-id="3ccd9-104">此模块的几个 cmdlet 可接受管道中的值。</span><span class="sxs-lookup"><span data-stu-id="3ccd9-104">A few cmdlets of this module are capable of accepting values from pipelines.</span></span>

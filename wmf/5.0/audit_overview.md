@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225464"
 ---
 # <a name="audit-powershell-usage-using-transcription-and-logging"></a><span data-ttu-id="c7df2-102">审核使用脚本和日志记录的 PowerShell 使用情况</span><span class="sxs-lookup"><span data-stu-id="c7df2-102">Audit PowerShell Usage using Transcription and Logging</span></span>
 

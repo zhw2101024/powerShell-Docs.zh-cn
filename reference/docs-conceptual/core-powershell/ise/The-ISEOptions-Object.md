@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953644"
 ---
 # <a name="the-iseoptions-object"></a><span data-ttu-id="e1ebe-103">ISEOptions 对象</span><span class="sxs-lookup"><span data-stu-id="e1ebe-103">The ISEOptions Object</span></span>
 
@@ -274,7 +275,7 @@ $psISE.Options.IntellisenseTimeoutInSeconds = 5
 
 <span data-ttu-id="e1ebe-187">在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。</span><span class="sxs-lookup"><span data-stu-id="e1ebe-187">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="e1ebe-188">指定 Windows PowerShell ISE 跟踪并在**“文件打开”**菜单底部显示的最近打开的文件数。</span><span class="sxs-lookup"><span data-stu-id="e1ebe-188">Specifies the number of recently opened files that Windows PowerShell ISE tracks and displays at the bottom of the **File Open** menu.</span></span> <span data-ttu-id="e1ebe-189">默认值为 10。</span><span class="sxs-lookup"><span data-stu-id="e1ebe-189">The default value is 10.</span></span> <span data-ttu-id="e1ebe-190">该值是一个整数。</span><span class="sxs-lookup"><span data-stu-id="e1ebe-190">The value is an integer.</span></span>
+<span data-ttu-id="e1ebe-188">指定 Windows PowerShell ISE 跟踪并在 **“文件打开”** 菜单底部显示的最近打开的文件数。</span><span class="sxs-lookup"><span data-stu-id="e1ebe-188">Specifies the number of recently opened files that Windows PowerShell ISE tracks and displays at the bottom of the **File Open** menu.</span></span> <span data-ttu-id="e1ebe-189">默认值为 10。</span><span class="sxs-lookup"><span data-stu-id="e1ebe-189">The default value is 10.</span></span> <span data-ttu-id="e1ebe-190">该值是一个整数。</span><span class="sxs-lookup"><span data-stu-id="e1ebe-190">The value is an integer.</span></span>
 
 ```powershell
 # Changes the number of recently used files that appear at the bottom of the File Open menu to 5.

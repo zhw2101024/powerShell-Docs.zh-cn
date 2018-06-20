@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218427"
 ---
 # <a name="side-by-side-module-versioning-support-for-dsc-resources"></a><span data-ttu-id="2ac1b-102">对 DSC 资源的并行模块版本控制支持</span><span class="sxs-lookup"><span data-stu-id="2ac1b-102">Side-By-Side Module Versioning Support for DSC Resources</span></span>
 

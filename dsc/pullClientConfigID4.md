@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34187760"
 ---
 # <a name="setting-up-a-pull-client-using-configuration-id-in-powershell-40"></a><span data-ttu-id="79556-103">在 PowerShell 4.0 中使用配置 ID 设置请求客户端</span><span class="sxs-lookup"><span data-stu-id="79556-103">Setting up a pull client using configuration ID in PowerShell 4.0</span></span>
 

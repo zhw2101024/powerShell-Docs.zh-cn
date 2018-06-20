@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225736"
 ---
 # <a name="scriptanalyzer-rule-profile-for-gallery"></a><span data-ttu-id="1dd46-103">库的 ScriptAnazlyer 规则配置文件</span><span class="sxs-lookup"><span data-stu-id="1dd46-103">ScriptAnalyzer rule profile for Gallery</span></span>
 

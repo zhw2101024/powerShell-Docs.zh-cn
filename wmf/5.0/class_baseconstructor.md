@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225600"
 ---
 # <a name="call-base-class-constructor"></a><span data-ttu-id="3b2b4-102">调用基类构造函数</span><span class="sxs-lookup"><span data-stu-id="3b2b4-102">Call Base Class Constructor</span></span>
 

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221844"
 ---
 # <a name="class-based-dsc-resources"></a><span data-ttu-id="9e0a7-102">基于类的 DSC 资源</span><span class="sxs-lookup"><span data-stu-id="9e0a7-102">Class-based DSC Resources</span></span>
 

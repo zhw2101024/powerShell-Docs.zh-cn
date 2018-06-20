@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189527"
 ---
 # <a name="creating-and-publishing-an-item"></a><span data-ttu-id="f8403-103">创建和发布项</span><span class="sxs-lookup"><span data-stu-id="f8403-103">Creating and publishing an item</span></span>
 

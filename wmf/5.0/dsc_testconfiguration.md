@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34187555"
 ---
 # <a name="test-dscconfiguration-cmdlet-supports-reference-configurations"></a><span data-ttu-id="68825-102">Test-DscConfiguration cmdlet 支持引用配置</span><span class="sxs-lookup"><span data-stu-id="68825-102">Test-DscConfiguration cmdlet supports Reference Configurations</span></span>
 

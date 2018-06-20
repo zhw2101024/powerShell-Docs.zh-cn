@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189935"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a><span data-ttu-id="27808-104">Azure Desired State Configuration 扩展版本历史记录</span><span class="sxs-lookup"><span data-stu-id="27808-104">Azure Desired State Configuration extension version history</span></span>
 

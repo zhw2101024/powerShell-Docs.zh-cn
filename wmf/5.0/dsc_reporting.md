@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225515"
 ---
 # <a name="report-configuration-status-to-central-location"></a><span data-ttu-id="a6911-102">向中央位置报告配置状态</span><span class="sxs-lookup"><span data-stu-id="a6911-102">Report Configuration Status to Central Location</span></span>
 

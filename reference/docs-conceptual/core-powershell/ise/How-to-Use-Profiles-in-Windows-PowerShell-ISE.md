@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951216"
 ---
 # <a name="how-to-use-profiles-in-windows-powershell-ise"></a><span data-ttu-id="786b9-103">如何在 Windows PowerShell ISE 中使用配置文件</span><span class="sxs-lookup"><span data-stu-id="786b9-103">How to Use Profiles in Windows PowerShell ISE</span></span>
 

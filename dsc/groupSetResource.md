@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222347"
 ---
 # <a name="dsc-groupset-resource"></a><span data-ttu-id="e4c93-104">DSC GroupSet 资源</span><span class="sxs-lookup"><span data-stu-id="e4c93-104">DSC GroupSet Resource</span></span>
 

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219542"
 ---
 # <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a><span data-ttu-id="6a434-102">基于 OData 终结点生成 PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="6a434-102">Generate PowerShell Cmdlets based on OData Endpoint</span></span>
 <a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a><span data-ttu-id="6a434-103">基于 OData 终结点生成 Windows PowerShell cmdlet</span><span class="sxs-lookup"><span data-stu-id="6a434-103">Generate Windows PowerShell cmdlets based on an OData endpoint</span></span>

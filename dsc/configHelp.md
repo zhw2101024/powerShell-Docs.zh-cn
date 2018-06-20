@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222657"
 ---
 # <a name="writing-help-for-dsc-configurations"></a><span data-ttu-id="70929-103">编写 DSC 配置的帮助</span><span class="sxs-lookup"><span data-stu-id="70929-103">Writing help for DSC configurations</span></span>
 

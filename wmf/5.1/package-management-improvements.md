@@ -9,6 +9,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34187453"
 ---
 # <a name="improvements-to-package-management-in-wmf-51"></a><span data-ttu-id="cbbb6-103">WMF 5.1 中对包管理的改进#</span><span class="sxs-lookup"><span data-stu-id="cbbb6-103">Improvements to Package Management in WMF 5.1#</span></span>
 

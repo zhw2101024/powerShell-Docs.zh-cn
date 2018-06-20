@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218342"
 ---
 # <a name="side-by-side-version-support-on-powershell-50-or-newer"></a><span data-ttu-id="c2afa-102">PowerShell 5.0 或更高版本上的并行版本支持</span><span class="sxs-lookup"><span data-stu-id="c2afa-102">Side-by-Side Version Support on PowerShell 5.0 or newer</span></span>
 

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189765"
 ---
 # <a name="prerequisites"></a><span data-ttu-id="895bf-103">必备条件</span><span class="sxs-lookup"><span data-stu-id="895bf-103">Prerequisites</span></span>
 

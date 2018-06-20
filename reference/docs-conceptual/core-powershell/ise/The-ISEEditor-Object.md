@@ -7,6 +7,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952607"
 ---
 # <a name="the-iseeditor-object"></a><span data-ttu-id="97110-103">ISEEditor 对象</span><span class="sxs-lookup"><span data-stu-id="97110-103">The ISEEditor Object</span></span>
 
@@ -146,7 +147,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 
 <span data-ttu-id="97110-157">在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。</span><span class="sxs-lookup"><span data-stu-id="97110-157">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="97110-158">只读布尔值属性，可指示将脱字号插入小括号、中括号还是大括号（即 \(\)、\[\]、{}）旁边。</span><span class="sxs-lookup"><span data-stu-id="97110-158">The read-only Boolean property to indicate whether the caret is next to a parenthesis, bracket, or brace - \(\), \[\], {}.</span></span> <span data-ttu-id="97110-159">如果脱字号直接位于开始字符之前或直接位于结束字符之后，则此属性值是 **$true**。</span><span class="sxs-lookup"><span data-stu-id="97110-159">If the caret is immediately before the opening character or immediately after the closing character of a pair, then this property value is **$true**.</span></span> <span data-ttu-id="97110-160">否则，是**$false**。</span><span class="sxs-lookup"><span data-stu-id="97110-160">Otherwise, it is **$false**.</span></span>
+<span data-ttu-id="97110-158">只读布尔值属性，可指示将脱字号插入小括号、中括号还是大括号（即 \(\)、\[\]、{}）旁边。</span><span class="sxs-lookup"><span data-stu-id="97110-158">The read-only Boolean property to indicate whether the caret is next to a parenthesis, bracket, or brace - \(\), \[\], {}.</span></span> <span data-ttu-id="97110-159">如果脱字号直接位于开始字符之前或直接位于结束字符之后，则此属性值是 **$true**。</span><span class="sxs-lookup"><span data-stu-id="97110-159">If the caret is immediately before the opening character or immediately after the closing character of a pair, then this property value is **$true**.</span></span> <span data-ttu-id="97110-160">否则，是 **$false**。</span><span class="sxs-lookup"><span data-stu-id="97110-160">Otherwise, it is **$false**.</span></span>
 
 ```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace

@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221929"
 ---
 ><span data-ttu-id="42c4b-103">注意：提供建议的描述性标题和简短说明</span><span class="sxs-lookup"><span data-stu-id="42c4b-103">Note: provide a proposed descriptive title and a brief description</span></span>
 

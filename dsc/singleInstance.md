@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218348"
 ---
 # <a name="writing-a-single-instance-dsc-resource-best-practice"></a><span data-ttu-id="690ad-103">编写单实例 DSC 资源（最佳做法）</span><span class="sxs-lookup"><span data-stu-id="690ad-103">Writing a single-instance DSC resource (best practice)</span></span>
 

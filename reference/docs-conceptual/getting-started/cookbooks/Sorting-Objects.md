@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30949972"
 ---
 # <a name="sorting-objects"></a><span data-ttu-id="a9c50-103">对对象进行排序</span><span class="sxs-lookup"><span data-stu-id="a9c50-103">Sorting Objects</span></span>
 

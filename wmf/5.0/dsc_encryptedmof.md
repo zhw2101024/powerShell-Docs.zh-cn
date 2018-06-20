@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222330"
 ---
 # <a name="mof-documents-are-encrypted-by-default"></a><span data-ttu-id="59472-102">MOF 文档默认加密</span><span class="sxs-lookup"><span data-stu-id="59472-102">MOF Documents Are Encrypted By Default</span></span>
 

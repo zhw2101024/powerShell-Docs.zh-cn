@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952335"
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a><span data-ttu-id="0fe70-103">安装 Windows PowerShell 2.0 引擎</span><span class="sxs-lookup"><span data-stu-id="0fe70-103">Installing the Windows PowerShell 2.0 Engine</span></span>
 <span data-ttu-id="0fe70-104">本主题介绍了如何安装 Windows PowerShell 2.0 引擎。</span><span class="sxs-lookup"><span data-stu-id="0fe70-104">This topic explains how to install the Windows PowerShell 2.0 Engine.</span></span>
@@ -64,7 +65,7 @@ ms.lasthandoff: 04/09/2018
 
 - <span data-ttu-id="0fe70-143">在“**安装类型**”页上，选择“**基于角色或基于功能的安装**”。</span><span class="sxs-lookup"><span data-stu-id="0fe70-143">On the **Installation Type** page, select **Role-based or feature-based installation**.</span></span>
 
-- <span data-ttu-id="0fe70-144">在**功能**页上，展开**Windows PowerShell (已安装)**节点，然后选择**Windows PowerShell 2.0 引擎**。</span><span class="sxs-lookup"><span data-stu-id="0fe70-144">On the **Features** page, expand the **Windows PowerShell (Installed)** node and select **Windows PowerShell 2.0 Engine**.</span></span>
+- <span data-ttu-id="0fe70-144">在**功能**页上，展开**Windows PowerShell (已安装)** 节点，然后选择**Windows PowerShell 2.0 引擎**。</span><span class="sxs-lookup"><span data-stu-id="0fe70-144">On the **Features** page, expand the **Windows PowerShell (Installed)** node and select **Windows PowerShell 2.0 Engine**.</span></span>
 
 <span data-ttu-id="0fe70-145">有关启动 Windows PowerShell 2.0 引擎的信息，请参阅[启动 Windows PowerShell 2.0 引擎](Starting-the-Windows-PowerShell-2.0-Engine.md)。</span><span class="sxs-lookup"><span data-stu-id="0fe70-145">For information about starting the Windows PowerShell 2.0 Engine, see [Starting the Windows PowerShell 2.0 Engine](Starting-the-Windows-PowerShell-2.0-Engine.md).</span></span>
 

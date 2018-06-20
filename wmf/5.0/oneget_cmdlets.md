@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221946"
 ---
 # <a name="packagemanagement-cmdlets"></a><span data-ttu-id="58843-102">PackageManagement Cmdlet</span><span class="sxs-lookup"><span data-stu-id="58843-102">PackageManagement Cmdlets</span></span>
 <span data-ttu-id="58843-103">这是 PackageManagement 用以支持软件发现、安装和盘存 (SDII) 的核心。</span><span class="sxs-lookup"><span data-stu-id="58843-103">This is the core of PackageManagement to support software discovery, installation, and inventory (SDII).</span></span> <span data-ttu-id="58843-104">尝试进行这些操作试用以下 cmdlet：</span><span class="sxs-lookup"><span data-stu-id="58843-104">Try out the cmdlets for these operations:</span></span>

@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952488"
 ---
 # <a name="managing-processes-with-process-cmdlets"></a><span data-ttu-id="fa439-103">使用 Process Cmdlet 管理进程</span><span class="sxs-lookup"><span data-stu-id="fa439-103">Managing Processes with Process Cmdlets</span></span>
 

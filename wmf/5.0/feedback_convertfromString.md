@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189561"
 ---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a><span data-ttu-id="55824-102">提取和分析字符串外的结构化对象</span><span class="sxs-lookup"><span data-stu-id="55824-102">Extract and Parse Structured Objects out of String</span></span>
 <span data-ttu-id="55824-103">这也为 ConvertFrom-String cmdlet 引入了一些附加功能：</span><span class="sxs-lookup"><span data-stu-id="55824-103">This also introduces some additional functionality for the ConvertFrom-String cmdlet:</span></span>

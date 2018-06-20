@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221878"
 ---
 # <a name="using-dsc-on-microsoft-azure"></a><span data-ttu-id="4516e-103">在 Microsoft Azure 上使用 DSC</span><span class="sxs-lookup"><span data-stu-id="4516e-103">Using DSC on Microsoft Azure</span></span>
 

@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950526"
 ---
 # <a name="windows-powershell-basics"></a><span data-ttu-id="9defe-103">Windows PowerShell 基础知识</span><span class="sxs-lookup"><span data-stu-id="9defe-103">Windows PowerShell Basics</span></span>
 <span data-ttu-id="9defe-104">图形用户界面采用大多数计算机用户熟悉的一些基本概念。</span><span class="sxs-lookup"><span data-stu-id="9defe-104">Graphical user interfaces use some basic concepts that are well known to most computer users.</span></span> <span data-ttu-id="9defe-105">用户凭借对这些界面的熟悉度来完成任务。</span><span class="sxs-lookup"><span data-stu-id="9defe-105">Users rely on the familiarity of those interfaces to accomplish tasks.</span></span> <span data-ttu-id="9defe-106">操作系统为用户提供可浏览项的图形表现形式，通常含有访问特定功能的下拉菜单以及访问特定于上下文的功能的上下文菜单。</span><span class="sxs-lookup"><span data-stu-id="9defe-106">Operating systems present users with a graphical representation of items that can be browsed, usually with drop-down menus for accessing specific functionality and context menus for accessing context-specific functionality.</span></span>

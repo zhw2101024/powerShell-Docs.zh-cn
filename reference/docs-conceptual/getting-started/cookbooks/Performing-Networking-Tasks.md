@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954120"
 ---
 # <a name="performing-networking-tasks"></a><span data-ttu-id="c6757-103">执行网络任务</span><span class="sxs-lookup"><span data-stu-id="c6757-103">Performing Networking Tasks</span></span>
 

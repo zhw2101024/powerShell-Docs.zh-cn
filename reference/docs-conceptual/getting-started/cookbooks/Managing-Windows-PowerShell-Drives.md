@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951862"
 ---
 # <a name="managing-windows-powershell-drives"></a><span data-ttu-id="f2b34-103">管理 Windows PowerShell 驱动器</span><span class="sxs-lookup"><span data-stu-id="f2b34-103">Managing Windows PowerShell Drives</span></span>
 

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225617"
 ---
 # <a name="dsc-function-to-query-node-information-from-pull-server"></a><span data-ttu-id="cd554-103">用于从请求服务器查询节点信息的 DSC 函数。</span><span class="sxs-lookup"><span data-stu-id="cd554-103">DSC function to query node information from pull server.</span></span>
 

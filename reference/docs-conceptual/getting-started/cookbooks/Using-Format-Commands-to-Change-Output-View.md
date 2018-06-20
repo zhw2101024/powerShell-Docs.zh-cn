@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952777"
 ---
 # <a name="using-format-commands-to-change-output-view"></a><span data-ttu-id="a8a1c-103">使用格式命令更改输出视图</span><span class="sxs-lookup"><span data-stu-id="a8a1c-103">Using Format Commands to Change Output View</span></span>
 
@@ -91,7 +92,7 @@ Id          : 3448
 
 #### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a><span data-ttu-id="a8a1c-125">通过将 Format-List 与通配符搭配使用获取详细信息</span><span class="sxs-lookup"><span data-stu-id="a8a1c-125">Getting Detailed Information by Using Format-List with Wildcards</span></span>
 
-<span data-ttu-id="a8a1c-126">**Format-List** cmdlet 使你可以将通配符用作其 **Property** 参数的值。</span><span class="sxs-lookup"><span data-stu-id="a8a1c-126">The **Format-List** cmdlet lets you use a wildcard as the value of its **Property** parameter.</span></span> <span data-ttu-id="a8a1c-127">这样便可以显示详细信息。</span><span class="sxs-lookup"><span data-stu-id="a8a1c-127">This lets you display detailed information.</span></span> <span data-ttu-id="a8a1c-128">通常情况下，对象包含的信息比你需要的多，这就是默认情况下 Windows PowerShell 不显示所有属性值的原因。</span><span class="sxs-lookup"><span data-stu-id="a8a1c-128">Often, objects include more information than you need, which is why Windows PowerShell does not show all property values by default.</span></span> <span data-ttu-id="a8a1c-129">若要显示对象的全部属性，则使用 **Format-List-Property \&#42;**命令。</span><span class="sxs-lookup"><span data-stu-id="a8a1c-129">To show all of properties of an object, use the **Format-List -Property \&#42;** command.</span></span> <span data-ttu-id="a8a1c-130">下面的命令针对单个进程生成超过 60 行的输出：</span><span class="sxs-lookup"><span data-stu-id="a8a1c-130">The following command generates over 60 lines of output for a single process:</span></span>
+<span data-ttu-id="a8a1c-126">**Format-List** cmdlet 使你可以将通配符用作其 **Property** 参数的值。</span><span class="sxs-lookup"><span data-stu-id="a8a1c-126">The **Format-List** cmdlet lets you use a wildcard as the value of its **Property** parameter.</span></span> <span data-ttu-id="a8a1c-127">这样便可以显示详细信息。</span><span class="sxs-lookup"><span data-stu-id="a8a1c-127">This lets you display detailed information.</span></span> <span data-ttu-id="a8a1c-128">通常情况下，对象包含的信息比你需要的多，这就是默认情况下 Windows PowerShell 不显示所有属性值的原因。</span><span class="sxs-lookup"><span data-stu-id="a8a1c-128">Often, objects include more information than you need, which is why Windows PowerShell does not show all property values by default.</span></span> <span data-ttu-id="a8a1c-129">若要显示对象的全部属性，则使用 **Format-List-Property \&#42;** 命令。</span><span class="sxs-lookup"><span data-stu-id="a8a1c-129">To show all of properties of an object, use the **Format-List -Property \&#42;** command.</span></span> <span data-ttu-id="a8a1c-130">下面的命令针对单个进程生成超过 60 行的输出：</span><span class="sxs-lookup"><span data-stu-id="a8a1c-130">The following command generates over 60 lines of output for a single process:</span></span>
 
 ```powershell
 Get-Process -Name powershell | Format-List -Property *

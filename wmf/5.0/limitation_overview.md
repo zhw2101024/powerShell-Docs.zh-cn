@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34186824"
 ---
 # <a name="known-issues-and-limitations"></a><span data-ttu-id="6dedc-102">已知问题和限制</span><span class="sxs-lookup"><span data-stu-id="6dedc-102">Known Issues and Limitations</span></span>
 

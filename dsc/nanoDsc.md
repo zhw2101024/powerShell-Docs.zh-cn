@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190241"
 ---
 # <a name="using-dsc-on-nano-server"></a><span data-ttu-id="5c2f5-103">使用 Nano Server 上的 DSC</span><span class="sxs-lookup"><span data-stu-id="5c2f5-103">Using DSC on Nano Server</span></span>
 
