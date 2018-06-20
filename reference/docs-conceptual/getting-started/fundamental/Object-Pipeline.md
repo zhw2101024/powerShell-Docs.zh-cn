@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30948204"
 ---
 # <a name="object-pipeline"></a>对象管道
 管道的行为就像一系列连接的管道段一样。 沿着管道移动的项会通过每个管道段。 若要在 Windows PowerShell 中创建管道，请使用管道运算符“|”将命令连接在一起。 每个命令的输出都将被用作下一命令的输入。

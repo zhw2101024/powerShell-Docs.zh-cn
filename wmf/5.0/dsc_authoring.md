@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218240"
 ---
 # <a name="authoring-improvements-using-powershell-ise"></a>使用 PowerShell ISE 创作改进
 

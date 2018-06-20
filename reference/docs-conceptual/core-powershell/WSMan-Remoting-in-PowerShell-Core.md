@@ -45,7 +45,7 @@ Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 .\Install-PowerShellRemoting.ps1 -PowerShellHome "C:\Program Files\PowerShell\6.0.0\"
 ```
 
-**注意：**该远程处理注册脚本将重新启动 WinRM，因此该脚本运行后所有现有 PSRP 会话会立即终止。 如果在远程会话期间运行，则会终止连接。
+**注意：** 该远程处理注册脚本将重新启动 WinRM，因此该脚本运行后所有现有 PSRP 会话会立即终止。 如果在远程会话期间运行，则会终止连接。
 
 ## <a name="how-to-connect-to-the-new-endpoint"></a>如何连接到新的终结点
 

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221997"
 ---
 # <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a>使用改进的 Item cmdlet 与符号链接交互
 

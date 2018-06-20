@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953321"
 ---
 # <a name="using-variables-to-store-objects"></a>使用变量存储对象
 PowerShell 处理对象。 PowerShell 允许创建实质上是命名对象的变量以保留输出以供以后使用。 如果你习惯在其他 Shell 中处理变量，请记住，PowerShell 变量是对象，而非文本。

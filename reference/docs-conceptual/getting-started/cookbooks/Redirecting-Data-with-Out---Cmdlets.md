@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952114"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a>使用 Out-* Cmdlet 重定向数据
 

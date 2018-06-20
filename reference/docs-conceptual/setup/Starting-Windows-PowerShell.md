@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953117"
 ---
 # <a name="starting-windows-powershell"></a>启动 Windows PowerShell
 PowerShell 是一个脚本引擎 dll，嵌入到多个主机中。  启动的最常见主机是交互式命令行 PowerShell.exe 和交互式脚本环境 PowerShell_ISE.exe。

@@ -2,17 +2,17 @@
 
 ## <a name="msi"></a>MSI
 
-若要在 Windows 客户端或 Windows Server（适用于 Windows 7 SP1、Server 2008 R2 以及更高版本）上安装 PowerShell，请从 GitHub [版本][]页面下载 MSI 包。
+若要在 Windows 客户端或 Windows Server（适用于 Windows 7 SP1、Server 2008 R2 以及更高版本）上安装 PowerShell，请从 GitHub [版本][] 页面下载 MSI 包。
 
-MSI 文件类似于 `PowerShell-6.0.0.<buildversion>.<os-arch>.msi`
+MSI 文件类似于 `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 下载后，双击安装程序并按照提示进行操作。
 
 安装后会向“开始”菜单添加快捷方式。
 
-- 默认情况下，包安装位置为 `$env:ProgramFiles\PowerShell\`
-- 可以通过“开始”菜单或 `$env:ProgramFiles\PowerShell\pwsh.exe` 启动 PowerShell
+- 默认情况下，包安装位置为 `$env:ProgramFiles\PowerShell\<version>`
+- 可以通过“开始”菜单或 `$env:ProgramFiles\PowerShell\<version>\pwsh.exe` 启动 PowerShell
 
 ### <a name="prerequisites"></a>必备条件
 
@@ -126,8 +126,8 @@ Nano Server 是“无外设”OS。 可以使用两种不同的方法部署核�
 PowerShell Core 同时支持采用 WSMan 和 SSH 的 PowerShell 远程处理协议 (PSRP)。
 有关更多信息，请参阅：
 
-- [在 PowerShell Core 中进行 SSH 远程处理][ssh-remoting]
-- [在 PowerShell Core 中进行 WSMan 远程处理][wsman-remoting]
+- [SSH Remoting in PowerShell Core][ssh-remoting]
+- [PowerShell Core 中的 WSMan 远程处理][wsman-remoting]
 
 ## <a name="artifact-installation-instructions"></a>项目安装说明
 
@@ -140,8 +140,4 @@ PowerShell Core 同时支持采用 WSMan 和 SSH 的 PowerShell 远程处理协�
 3. 将 zip 文件解压到 `bin` 目录
 4. `./bin/pwsh.exe`
 
-<!-- [download-center]: TODO -->
-[版本]: https://github.com/PowerShell/PowerShell/releases
-[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
-[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+<!-- [download-center]: TODO --> [版本]：https://github.com/PowerShell/PowerShell/releases [ssh-remoting]：../core-powershell/SSH-Remoting-in-PowerShell-Core.md [wsman-remoting]：../core-powershell/WSMan-Remoting-in-PowerShell-Core.md [AppVeyor]：https://ci.appveyor.com/project/PowerShell/powershell

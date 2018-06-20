@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30949479"
 ---
 # <a name="getting-started-with-windows-powershell"></a>Windows PowerShell 入门
 Windows PowerShell 是专门为系统管理员设计的 Windows 命令行 Shell。 Windows PowerShell 包括可以单独或组合使用的交互提示和脚本编写环境。

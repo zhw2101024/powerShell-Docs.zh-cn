@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34220336"
 ---
 # <a name="on-demand-pull-of-dsc-configurations"></a>DSC 配置的按需请求
 

@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952335"
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a>安装 Windows PowerShell 2.0 引擎
 本主题介绍了如何安装 Windows PowerShell 2.0 引擎。
@@ -64,7 +65,7 @@ Windows PowerShell 2.0 引擎是 Windows Server 2012 R2、Windows 8.1、Windows�
 
 - 在“**安装类型**”页上，选择“**基于角色或基于功能的安装**”。
 
-- 在**功能**页上，展开**Windows PowerShell (已安装)**节点，然后选择**Windows PowerShell 2.0 引擎**。
+- 在**功能**页上，展开**Windows PowerShell (已安装)** 节点，然后选择**Windows PowerShell 2.0 引擎**。
 
 有关启动 Windows PowerShell 2.0 引擎的信息，请参阅[启动 Windows PowerShell 2.0 引擎](Starting-the-Windows-PowerShell-2.0-Engine.md)。
 

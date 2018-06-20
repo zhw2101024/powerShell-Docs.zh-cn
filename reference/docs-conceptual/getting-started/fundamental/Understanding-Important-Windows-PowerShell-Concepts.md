@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951080"
 ---
 # <a name="understanding-important-windows-powershell-concepts"></a>了解重要的 Windows PowerShell 概念
 Windows PowerShell 设计集成了很多不同环境的概念。 具有特定 Shell 或编程环境方面经验的人会对其中几种比较熟悉，但很少有人了解全部概念。 查看其中一些概念可获得有关 Shell 的有用概述。

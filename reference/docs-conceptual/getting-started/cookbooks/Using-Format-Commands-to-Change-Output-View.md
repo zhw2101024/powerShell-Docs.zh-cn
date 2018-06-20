@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952777"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>使用格式命令更改输出视图
 
@@ -91,7 +92,7 @@ Id          : 3448
 
 #### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>通过将 Format-List 与通配符搭配使用获取详细信息
 
-**Format-List** cmdlet 使你可以将通配符用作其 **Property** 参数的值。 这样便可以显示详细信息。 通常情况下，对象包含的信息比你需要的多，这就是默认情况下 Windows PowerShell 不显示所有属性值的原因。 若要显示对象的全部属性，则使用 **Format-List-Property \&#42;**命令。 下面的命令针对单个进程生成超过 60 行的输出：
+**Format-List** cmdlet 使你可以将通配符用作其 **Property** 参数的值。 这样便可以显示详细信息。 通常情况下，对象包含的信息比你需要的多，这就是默认情况下 Windows PowerShell 不显示所有属性值的原因。 若要显示对象的全部属性，则使用 **Format-List-Property \&#42;** 命令。 下面的命令针对单个进程生成超过 60 行的输出：
 
 ```powershell
 Get-Process -Name powershell | Format-List -Property *

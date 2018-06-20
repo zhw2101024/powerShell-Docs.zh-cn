@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950961"
 ---
 # <a name="getting-ready-to-use-windows-powershell"></a>准备好使用 Windows PowerShell
 安装并启动 Windows PowerShell 后，请考虑以下设置选项。 随时可以执行这些任务。

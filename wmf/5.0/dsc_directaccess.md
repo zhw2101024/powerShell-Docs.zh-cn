@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225549"
 ---
 # <a name="direct-access-to-dsc-resource-methods"></a>直接访问 DSC 资源方法
 

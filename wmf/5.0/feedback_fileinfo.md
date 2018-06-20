@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225634"
 ---
 # <a name="updates-to-fileinfo-object"></a>对 FileInfo 对象的更新
 文件版本信息可能会产生误导，尤其是在对文件进行了修补的情况下。 此版本的 WMF 5.0 向 FileInfo 对象添加了新的 **FileVersionRaw** 和 **ProductVersionRaw** 脚本属性。 以下是为 powershell.exe 显示的属性（假设 $pid 为 PowerShell 进程的 ID）：

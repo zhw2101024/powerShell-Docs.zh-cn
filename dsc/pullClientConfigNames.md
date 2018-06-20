@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188085"
 ---
 # <a name="setting-up-a-pull-client-using-configuration-names"></a>使用配置名称设置请求客户端
 

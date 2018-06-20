@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953644"
 ---
 # <a name="the-iseoptions-object"></a>ISEOptions 对象
 
@@ -274,7 +275,7 @@ $psISE.Options.IntellisenseTimeoutInSeconds = 5
 
 在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
-指定 Windows PowerShell ISE 跟踪并在**“文件打开”**菜单底部显示的最近打开的文件数。 默认值为 10。 该值是一个整数。
+指定 Windows PowerShell ISE 跟踪并在 **“文件打开”** 菜单底部显示的最近打开的文件数。 默认值为 10。 该值是一个整数。
 
 ```powershell
 # Changes the number of recently used files that appear at the bottom of the File Open menu to 5.

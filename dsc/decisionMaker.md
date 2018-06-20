@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189867"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>适用于决策者的 Desired State Configuration 概述
 

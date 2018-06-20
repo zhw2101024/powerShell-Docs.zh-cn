@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951063"
 ---
 # <a name="understanding-the-windows-powershell-pipeline"></a>了解 Windows PowerShell 管道
 在 Windows PowerShell 中，管道的作用几乎随处可见。 尽管你会在屏幕上看到文本，但 Windows PowerShell 不通过管道在命令之间传递文本。 而是通过管道传递对象。

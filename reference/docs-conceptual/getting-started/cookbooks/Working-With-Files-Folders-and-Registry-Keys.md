@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952301"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>使用文件、文件夹和注册表项
 

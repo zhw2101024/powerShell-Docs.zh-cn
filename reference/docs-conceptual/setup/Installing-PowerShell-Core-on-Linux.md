@@ -1,6 +1,6 @@
 # <a name="installing-powershell-core-on-linux"></a>在 Linux 上安装 PowerShell Core
 
-支持 [Ubuntu 14.04][u14]、[Ubuntu 16.04][u16]、[Ubuntu 17.04][u17]、[Debian 8][deb8]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[OpenSUSE 42.2][opensuse]、[Fedora 25][fed25]、[Fedora 26][fed26] 和 [Arch Linux][arch]。
+支持 [Ubuntu 14.04][u14]、[Ubuntu 16.04][u16]、[Ubuntu 17.04][u17]、[Debian 8][deb8]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[OpenSUSE 42.2][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora] 和 [Arch Linux][arch]。
 
 对于不受正式支持的 Linux 分发版，可以尝试使用 [PowerShell AppImage][lai]。
 还可以尝试直接使用 Linux [`tar.gz` archive][tar] 部署 PowerShell 二进制文件，但是需要在各个步骤中基于 OS 设置所需的依赖项。
@@ -16,8 +16,7 @@ GitHub [版本][]页面上提供有所有可用包。
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
 [opensuse]: #opensuse-422
-[fed25]: #fedora-25
-[fed26]: #fedora-26
+[fedora]: #fedora
 [arch]: #arch-linux
 [lai]: #linux-appimage
 [tar]: #binary-archives
@@ -408,58 +407,9 @@ sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v
 sudo zypper remove powershell
 ```
 
-## <a name="fedora-25"></a>Fedora 25
+## <a name="fedora"></a>Fedora
 
-### <a name="installation-via-package-repository-preferred---fedora-25"></a>通过包存储库安装（首选）- Fedora 25
-
-为简化安装（和更新），已将适用于 Linux 的 PowerShell Core 发布到正式的 Microsoft 存储库。
-
-```sh
-# Register the Microsoft signature key
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-
-# Register the Microsoft RedHat repository
-curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo
-
-# Update the list of products
-sudo dnf update
-
-# Install PowerShell
-sudo dnf install -y powershell
-
-# Start PowerShell
-pwsh
-```
-
-### <a name="installation-via-direct-download---fedora-25"></a>通过直接下载进行安装 - Fedora 25
-
-从[版本][]页中将 RPM 包 `powershell-6.0.2-1.rhel.7.x86_64.rpm` 下载到 Fedora 计算机。
-
-```sh
-wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
-```
-
-然后在终端中执行以下命令：
-
-```sh
-sudo dnf install powershell-6.0.2-1.rhel.7.x86_64.rpm
-```
-
-无需该中间下载步骤也可安装 RPM：
-
-```sh
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
-```
-
-### <a name="uninstallation---fedora-25"></a>卸载 - Fedora 25
-
-```sh
-sudo dnf remove powershell
-```
-
-## <a name="fedora-26"></a>Fedora 26
-
-### <a name="installation-via-package-repository-preferred---fedora-26"></a>通过包存储库安装（首选）- Fedora 26
+### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a>通过包存储库安装（首选）- Fedora 27、Fedora 28
 
 为简化安装（和更新），已将适用于 Linux 的 PowerShell Core 发布到正式的 Microsoft 存储库。
 
@@ -483,14 +433,13 @@ sudo dnf install -y powershell
 pwsh
 ```
 
-### <a name="installation-via-direct-download---fedora-26"></a>通过直接下载进行安装 - Fedora 26
+### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>通过直接下载进行安装 - Fedora 27、Fedora 28
 
 从[版本][]页中将 RPM 包 `powershell-6.0.2-1.rhel.7.x86_64.rpm` 下载到 Fedora 计算机。
 
 然后在终端中执行以下命令：
 
 ```sh
-sudo dnf update
 sudo dnf install compat-openssl10
 sudo dnf install powershell-6.0.2-1.rhel.7.x86_64.rpm
 ```
@@ -498,12 +447,11 @@ sudo dnf install powershell-6.0.2-1.rhel.7.x86_64.rpm
 无需该中间下载步骤也可安装 RPM：
 
 ```sh
-sudo dnf update
 sudo dnf install compat-openssl10
 sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---fedora-26"></a>卸载 - Fedora 26
+### <a name="uninstallation---fedora-27-fedora-28"></a>卸载 - Fedora 27、Fedora 28
 
 ```sh
 sudo dnf remove powershell
@@ -642,8 +590,8 @@ PowerShell 为所有 Linux 分发版生成可移植二进制文件。
 | Ubuntu 17.04       | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu57 |
 | Debian 8 (Jessie)  | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu52 |
 | Debian 9 (Stretch) | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.2、libicu57 |
-| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 <br> Fedora 25 | libunwind、libcurl、openssl-libs、libicu |
-| Fedora 26          | libunwind、libcurl、openssl-libs、libicu、compat-openssl10 |
+| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 | libunwind、libcurl、openssl-libs、libicu |
+| Fedora 27 <br> Fedora 28 | libunwind、libcurl、openssl-libs、libicu、compat-openssl10 |
 
 若要在不受正式支持的 Linux 分发版上部署 PowerShell 二进制文件，则需在各个步骤中安装目标 OS 的必要依赖项。
 例如，[Amazon Linux dockerfile][amazon-dockerfile] 应先安装依赖项，然后提取 Linux `tar.gz` 存档。

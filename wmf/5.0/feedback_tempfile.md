@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34217985"
 ---
 # <a name="new-temporaryfile"></a>New-TemporaryFile
 有时必须在脚本中创建临时文件。 可以使用 **New-TemporaryFile** cmdlet 轻松实现此操作：

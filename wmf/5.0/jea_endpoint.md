@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188422"
 ---
 # <a name="creating-and-connecting-to-a-jea-endpoint"></a>创建并连接到 JEA 终结点
 若要创建 JEA 终结点，需要创建并注册一个专门配置 PowerShell 会话配置文件，可以使用 **New-PSSessionConfigurationFile** cmdlet 生成该文件。

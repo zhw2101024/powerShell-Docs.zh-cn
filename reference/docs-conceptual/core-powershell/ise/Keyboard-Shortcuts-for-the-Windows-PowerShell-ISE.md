@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953814"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE 的键盘快捷方式
 
@@ -46,8 +47,8 @@ ms.lasthandoff: 04/09/2018
 |**运行**|F5|
 |**运行选定内容**|F8|
 |**停止执行**|CTRL+BREAK。 可以在上下文不明确时（未选定任何文本时）使用 CTRL+C。|
-|**Tab**（切换到下一个脚本）|CTRL+TAB **注意：**单击 Tab 键切换到下一个脚本仅适用于你打开一个 Windows PowerShell 选项卡或打开多个 Windows PowerShell 选项卡，但焦点在脚本窗格中的情况。|
-|**Tab**（切换到上一个脚本）|CTRL+SHIFT+TAB **注意：**单击 Tab 键切换到上一个脚本适用于仅打开一个 Windows PowerShell 选项卡或打开多个 Windows PowerShell 选项卡，但焦点在脚本窗格中的情况。|
+|**Tab**（切换到下一个脚本）|CTRL+TAB **注意：** 单击 Tab 键切换到下一个脚本仅适用于你打开一个 Windows PowerShell 选项卡或打开多个 Windows PowerShell 选项卡，但焦点在脚本窗格中的情况。|
+|**Tab**（切换到上一个脚本）|CTRL+SHIFT+TAB **注意：** 单击 Tab 键切换到上一个脚本适用于仅打开一个 Windows PowerShell 选项卡或打开多个 Windows PowerShell 选项卡，但焦点在脚本窗格中的情况。|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>自定义视图的键盘快捷方式
 

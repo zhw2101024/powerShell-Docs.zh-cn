@@ -7,6 +7,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952607"
 ---
 # <a name="the-iseeditor-object"></a>ISEEditor 对象
 
@@ -146,7 +147,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 
 在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
-只读布尔值属性，可指示将脱字号插入小括号、中括号还是大括号（即 \(\)、\[\]、{}）旁边。 如果脱字号直接位于开始字符之前或直接位于结束字符之后，则此属性值是 **$true**。 否则，是**$false**。
+只读布尔值属性，可指示将脱字号插入小括号、中括号还是大括号（即 \(\)、\[\]、{}）旁边。 如果脱字号直接位于开始字符之前或直接位于结束字符之后，则此属性值是 **$true**。 否则，是 **$false**。
 
 ```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221946"
 ---
 # <a name="packagemanagement-cmdlets"></a>PackageManagement Cmdlet
 这是 PackageManagement 用以支持软件发现、安装和盘存 (SDII) 的核心。 尝试进行这些操作试用以下 cmdlet：

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219576"
 ---
 # <a name="powershell-script-discovery-install-and-management-with-powershellget"></a>使用 PowerShellGet 进行 PowerShell 脚本发现、安装和管理
 

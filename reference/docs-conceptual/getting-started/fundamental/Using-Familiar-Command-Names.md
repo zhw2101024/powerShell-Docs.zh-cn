@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952675"
 ---
 # <a name="using-familiar-command-names"></a>使用熟悉的命令名称
 使用称为*别名*的机制，Windows PowerShell 允许用户通过备用名称引用命令。 别名允许具有其他 Shell 经验的用户重复使用其已知的常见命令名称在 Windows PowerShell 中执行类似操作。 虽然我们不会详细讨论 Windows PowerShell 别名，但当你开始使用 Windows PowerShell 时，你仍可以使用它们。

@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954324"
 ---
 # <a name="using-windows-powershell-for-administration"></a>使用 Windows PowerShell 进行管理
 Windows PowerShell 的根本目标是通过交互方式或从脚本提供针对系统的更好的、更便捷的管理控制。 本章展示了针对使用 Windows PowerShell 管理 Windows 系统过程中许多特殊问题的解决方案。 虽然我们在 Windows PowerShell 用户指南中未讨论脚本或函数，但以后可以从脚本使用这些解决方案或将其用作函数。 我们将展示包括函数在内的示例，作为解决问题的解决方案的一部分。
