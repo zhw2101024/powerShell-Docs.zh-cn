@@ -13,7 +13,7 @@
               href: setup/Installing-PowerShell-Core-on-Linux.md
             - name: 在 macOS 上安装 PowerShell Core
               href: setup/Installing-PowerShell-Core-on-macOS.md
-            - name: ARM 上的 PowerShell Core
+            - name: 在 ARM 上安装 PowerShell Core
               href: setup/PowerShell-Core-on-ARM.md
         - name: Windows PowerShell
           href: ''

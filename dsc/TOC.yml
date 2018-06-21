@@ -161,6 +161,8 @@
           href: lnxGroupResource.md
         - name: nxPackage 资源
           href: lnxPackageResource.md
+        - name: nxScript 资源
+          href: lnxScriptResource.md
         - name: nxService 资源
           href: lnxServiceResource.md
         - name: nxSshAuthorizedKeys 资源
