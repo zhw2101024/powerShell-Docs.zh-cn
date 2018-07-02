@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,安装程序
 title: WMF 5.1 中的新方案和功能
-ms.openlocfilehash: 77b439e61c5802f8ddbc4a0f39923cc8c0c36fe9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b00069aad7422f86d1462a62a6c4bc8a91e46705
+ms.sourcegitcommit: 50b66cada6943784b8d3c103cebc3c1e3e286a16
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190309"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090357"
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>WMF 5.1 中的新方案和功能
 
@@ -25,12 +25,12 @@ ms.locfileid: "34190309"
 
 - [使用 $PSVersionTable 确定正在运行的 PowerShell 版本](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
 - [使用 PSEdition 参数按 CompatiblePSEditions 筛选 Get-Module 结果](/powershell/module/microsoft.powershell.core/get-module)
-- [阻止脚本执行，除非在 PowerShell 的兼容版本上运行](/powershell/gallery/psget/script/scriptwithpseditionsupport)
-- [声明模块与特定 PowerShell 版本的兼容性](/powershell/gallery/psget/module/modulewithpseditionsupport)
+- [阻止脚本执行，除非在 PowerShell 的兼容版本上运行](/powershell/gallery/concepts/script-psedition-support)
+- [声明模块与特定 PowerShell 版本的兼容性](/powershell/gallery/concepts/module-psedition-support)
 
 ## <a name="catalog-cmdlets"></a>目录 Cmdlet
 
-在 [Microsoft.PowerShell.Security](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security) 模块中新增了两个新 cmdlet；这两个 cmdlet 可用于生成和验证 Windows 目录文件。
+在 [Microsoft.PowerShell.Security](/powershell/module/microsoft.powershell.security) 模块中新增了两个新 cmdlet；这两个 cmdlet 可用于生成和验证 Windows 目录文件。
 
 ### <a name="new-filecatalog"></a>New-FileCatalog
 --------------------------------
@@ -57,7 +57,7 @@ Windows Server 2008 R2 或 Windows 7 不支持目录版本 2。
 
 ![](../images/CatalogFile2.jpg)
 
-若要验证目录文件（上面示例中的 Pester.cat 文件）的完整性，应使用 [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet 对其进行签名。
+若要验证目录文件（上面示例中的 Pester.cat 文件）的完整性，应使用 [Set-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) cmdlet 对其进行签名。
 
 ### <a name="test-filecatalog"></a>Test-FileCatalog
 --------------------------------
@@ -73,7 +73,7 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 此 cmdlet 将目录中找到的所有文件的哈希值及其相对路径与磁盘中的进行比较。
 如果它检测到文件哈希值和路径之间存在任何不匹配，将返回状态 ValidationFailed。
 用户可通过使用 *-Detailed* 参数检索所有这些信息。
-它还在“签名”属性中显示目录的签名状态，该结果与针对目录文件调用 [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) cmdlet 的结果相同。
+它还在“签名”属性中显示目录的签名状态，该结果与针对目录文件调用 [Get-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Get-AuthenticodeSignature) cmdlet 的结果相同。
 用户也可以使用 -FilesToSkip 参数在验证过程中跳过任何文件。
 
 ## <a name="module-analysis-cache"></a>模块分析缓存
@@ -115,7 +115,7 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
 在 WMF 5.1 中：
 
-- 可以使用 [ModuleSpecification Constructor (Hashtable)](https://msdn.microsoft.com/library/jj136290)。
+- 可以使用 [ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_)。
 此哈希表具有与 `Get-Module -FullyQualifiedName` 相同的格式。
 
 **示例：** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
