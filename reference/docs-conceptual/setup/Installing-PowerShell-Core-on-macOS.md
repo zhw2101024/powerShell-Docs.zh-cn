@@ -36,8 +36,7 @@ brew cask upgrade powershell
 ```
 
 > [!NOTE]
-> 可能会从 PowerShell (pwsh) 主机调用上面的命令，但是调用后必须退出 PowerShell 并重新启动以完成升级。
-> 然后刷新 $PSVersionTable 中显示的值。
+> 可从 PowerShell (pwsh) 主机调用上面的命令，但是调用后必须退出 PowerShell 并重启以完成升级，并刷新 $PSVersionTable 中显示的值。
 
 [brew]: http://brew.sh/
 [cask]: https://caskroom.github.io/
@@ -98,7 +97,7 @@ sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 
 ## <a name="paths"></a>路径
 
-* `$PSHOME` 是 `/opt/microsoft/powershell/6.0.0/`
+* `$PSHOME` 是 `/usr/local/microsoft/powershell/6.0.2/`
 * 将从 `~/.config/powershell/profile.ps1` 中读取用户配置文件
 * 将从 `$PSHOME/profile.ps1` 中读取默认配置文件
 * 将从 `~/.local/share/powershell/Modules` 中读取用户模块
@@ -112,7 +111,7 @@ sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 PowerShell 采用 macOS 上的 [XDG Base Directory 规范][xdg-bds]。
 
 由于 macOS 派生自 BSD，因此前缀为 `/usr/local`而不是 `/opt`。
-因此，`$PSHOME` 为 `/usr/local/microsoft/powershell/6.0.0/`，且 symlink 位于 `/usr/local/bin/pwsh` 中。
+因此，`$PSHOME` 为 `/usr/local/microsoft/powershell/6.0.2/`，且 symlink 位于 `/usr/local/bin/pwsh` 中。
 
 [版本]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

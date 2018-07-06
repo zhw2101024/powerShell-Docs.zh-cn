@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 使用配置数据
-ms.openlocfilehash: d42c43fddb54050adcbac949e7f67f3b41b540f1
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 9b0b213e2d71bfdb473fd98f8080de5c874c70e2
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189680"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940372"
 ---
 # <a name="using-configuration-data-in-dsc"></a>使用 DSC 中的配置数据
 
->适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
+> 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 通过使用内置 DSC **ConfigurationData** 参数，可以定义可在配置中使用的数据。
 这样一来，便可创建可用于多个节点或不同环境的单个配置。
@@ -25,10 +25,11 @@ ms.locfileid: "34189680"
 DSC 配置使用在编译配置时指定的常见参数 ConfigurationData。
 有关编译配置的信息，请参阅 [DSC 配置](configurations.md)。
 
-**ConfigurationData** 参数是必须具有至少一个名为 **AllNodes** 的键的哈希表。
+ConfigurationData 参数是必须具有至少一个名为 AllNodes 的键的哈希表。
 它还可以额外包含一个或多个键。
 
->注意：除了名为“AllNodes”的键之外，本主题中的示例还额外使用一个名为“`NonNodeData`”的键。不过，可以额外添加任意数量的键，并能根据需要随意命名这些键。
+> [!NOTE]
+> 除了名为“AllNodes”的键之外，本主题中的示例还额外使用一个名为 `NonNodeData` 的键。不过，可以额外添加任意数量的键，并能根据需要随意命名这些键。
 
 ```powershell
 $MyData =
@@ -188,6 +189,7 @@ DSC 提供三种可在配置脚本中使用的特殊变量：**$AllNodes**、**$
 
 - **$AllNodes** 指 **ConfigurationData** 中定义的整个节点集合。 可使用 **.Where()** 和 **.ForEach()** 筛选 **AllNodes** 集合。
 - **Node** 指使用 **.Where()** 或 **.ForEach()** 筛选 **AllNodes** 集合后，该集合中的特定项。
+  - 可阅读 [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md) 了解有关这些方法的详细信息
 - **ConfigurationData** 指编译配置时，作为参数传递的整个哈希表。
 
 ## <a name="using-non-node-data"></a>使用非节点数据
@@ -199,5 +201,6 @@ DSC 提供三种可在配置脚本中使用的特殊变量：**$AllNodes**、**$
 有关使用非节点数据的示例，请参阅[分离配置和环境数据](separatingEnvData.md)。
 
 ## <a name="see-also"></a>另请参阅
+
 - [配置数据中的凭据选项](configDataCredentials.md)
 - [DSC 配置](configurations.md)

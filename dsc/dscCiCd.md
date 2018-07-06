@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 使用 DSC 生成持续集成和连续部署管道
-ms.openlocfilehash: ce0f2ed79f5f96a1c38e0beaf32529aba7538963
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: faeef5022cbd984cab0620b69db19de8b84cca0e
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190547"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940338"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>使用 DSC 生成持续集成和连续部署管道
 
@@ -36,6 +36,7 @@ ms.locfileid: "34190547"
 将在这台计算机上执行生成和运行此示例所需的全部工作。
 
 客户端计算机必须是安装以下项的 Windows 计算机：
+
 - [Git](https://git-scm.com/)
 - 从 https://github.com/PowerShell/Demo_CI 克隆的本地 Git 存储库
 - 文本编辑器（如 [Visual Studio Code](https://code.visualstudio.com/)）
@@ -73,21 +74,22 @@ ms.locfileid: "34190547"
 1. 在客户端计算机上的 Web 浏览器中，转到 TFS 服务器。
 1. 在 TFS 中，[新建名为“Demo_CI”的团队项目](https://www.visualstudio.com/en-us/docs/setup-admin/create-team-project)。
 
-    请务必将“版本控制”设置为“Git”。
+   请务必将“版本控制”设置为“Git”。
 1. 在客户端计算机上运行以下命令，添加对刚刚在 TFS 中创建的存储库的远程控制：
 
-    `git remote add tfs <YourTFSRepoURL>`
+   `git remote add tfs <YourTFSRepoURL>`
 
-    其中，`<YourTFSRepoURL>` 是在上一步中创建的 TFS 存储库的克隆 URL。
+   其中，`<YourTFSRepoURL>` 是在上一步中创建的 TFS 存储库的克隆 URL。
 
-    如果不知道在何处找到此 URL，请参阅[克隆现有 Git 存储库](https://www.visualstudio.com/en-us/docs/git/tutorial/clone)。
+   如果不知道在何处找到此 URL，请参阅[克隆现有 Git 存储库](https://www.visualstudio.com/en-us/docs/git/tutorial/clone)。
 1. 运行以下命令，将代码从本地存储库推送到 TFS 存储库：
 
-    `git push tfs --all`
+   `git push tfs --all`
 1. 此时，TFS 存储库将填充有 Demo_CI 代码。
 
->注意：此示例使用 Git 存储库 `ci-cd-example` 分支中的代码。
->请务必将此分支指定为 TFS 项目和创建的 CI/CD 触发器的默认分支。
+> [!NOTE]
+> 此示例使用 Git 存储库 `ci-cd-example` 分支中的代码。
+> 请务必将此分支指定为 TFS 项目和创建的 CI/CD 触发器的默认分支。
 
 ## <a name="understanding-the-code"></a>了解代码
 
@@ -154,6 +156,8 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 ```
 
 此语句可查找所有定义为在 `DevEnv.ps1` 脚本创建的[配置数据](configData.md)中担任 `DNSServer` 角色的节点。
+
+可阅读 [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md) 了解有关 `Where` 方法的详细信息
 
 请务必在执行 CI 时使用配置数据定义节点，因为节点信息可能会在不同环境中进行切换，而使用配置数据则可以轻松更改节点信息，无需更改配置代码。
 
@@ -348,12 +352,12 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 
 1. 将以下代码行添加到“内容”：
 
-    ```
-    initiate.ps1
-    **\deploy.ps1
-    **\Acceptance\**
-    **\Integration\**
-    ```
+   ```
+   initiate.ps1
+   **\deploy.ps1
+   **\Acceptance\**
+   **\Integration\**
+   ```
 
 1. 将“目标文件夹”设置为“`$(Build.ArtifactStagingDirectory)\`”
 
