@@ -2,14 +2,15 @@
 ms.date: 08/09/2017
 keywords: powershell, cmdlet, 下载, 安装, 设置, windows 10, windows 8.1, windows 8.0, windows 7
 title: 安装 Windows PowerShell
-ms.openlocfilehash: 89f0f689ebfcd34dd4c8ec3824ec8ab4bddc34d9
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: e703d3444b1d661c482b314781cf9a1cb16ef7ed
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482992"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893515"
 ---
 # <a name="installing-windows-powershell"></a>安装 Windows PowerShell
+
 从 Windows 7 SP1 和 Windows Server 2008 R2 SP1 开始，每个 Windows 中默认随附安装有 Windows PowerShell。
 
 如果你对 PowerShell 6 及更高版本感兴趣，则需要安装 PowerShell Core 而不是 Windows PowerShell。 关于相应的信息，请参阅[在 Windows 上安装 PowerShell Core](Installing-PowerShell-Core-on-Windows.md)。
@@ -74,19 +75,20 @@ Windows 8.1<br/>Windows Server 2012 R2 | - | 已安装 | [WMF 5.0](https://www.m
 Windows 8<br/>Windows Server 2012 | 已安装 | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 
-> **说明 1**：
-  >>
-  >> Windows 10 初始版本中，由于已启用自动更新，因此 PowerShell 会从版本 5.0 更新至 5.1。
-  >>
-  >> 如果 Windows 10 原始版本未通过 Windows 更新进行更新，则 PowerShell 版本为 5.0。
+> [!NOTE]
+>
+> Windows 10 初始版本中，由于已启用自动更新，因此 PowerShell 会从版本 5.0 更新至 5.1。
+>
+> 如果 Windows 10 原始版本未通过 Windows 更新进行更新，则 PowerShell 版本为 5.0。
 
 ## <a name="need-azure-powershell"></a>需要 Azure PowerShell
 
-如需要 Azure PowerShell，请先参阅 [Azure PowerShell 概述](https://docs.microsoft.com/powershell/azure)。
+如需要 Azure PowerShell，请先参阅 [Azure PowerShell 概述](/powershell/azure/overview)。
 
-或者，可能需要参阅[安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps)
+或者，可能需要参阅[安装和配置 Azure PowerShell](/powershell/azure/install-azurerm-ps)
 
 ## <a name="see-also"></a>另请参阅
 
-- [Windows PowerShell 系统要求](Windows-PowerShell-System-Requirements.md)
-- [启动 Windows PowerShell](Starting-Windows-PowerShell.md)
+[Windows PowerShell 系统要求](Windows-PowerShell-System-Requirements.md)
+
+[启动 Windows PowerShell](Starting-Windows-PowerShell.md)

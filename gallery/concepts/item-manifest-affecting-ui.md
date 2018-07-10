@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: 影响 PowerShell 库 UI 的项清单值
-ms.openlocfilehash: 39522396b179c54b981e6292cddacec27b32506c
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: fd5e48f8cc36795742ae597fc7715f7377605b6f
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34048194"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893471"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>影响 PowerShell 库 UI 的项清单值
 
@@ -16,8 +16,8 @@ ms.locfileid: "34048194"
 此内容按照更改将出现的位置进行组织，从中心部分开始，然后是左侧的导航区域。 有一个涵盖标记的详细信息部分，它标识重要标记以及一些较常用的标记。
 有两个提供清单示例的主题：
 
-- 有关模块，请参阅[更新模块清单](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest)
-- 有关脚本，请参阅[使用元数据创建脚本文件](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo)
+- 有关模块，请参阅[更新模块清单](/powershell/module/powershellget/Update-ModuleManifest)
+- 有关脚本，请参阅[使用元数据创建脚本文件](/powershell/module/powershellget/New-ScriptFileInfo)
 
 ## <a name="powershell-gallery-feature-elements-controlled-by-the-manifest"></a>由清单控制的 PowerShell 库功能元素
 
@@ -27,11 +27,11 @@ ms.locfileid: "34048194"
 | UI 元素 | 说明 | 模块 | 脚本 |
 | --- | --- | --- | --- |
 | **标题** | 这是发布到库的项的名称  | 否 | 否 |
-| **版本** | 显示的版本是元数据中的版本字符串以及预发布版本（如果已指定）。 模块清单中版本的主要部分是 ModuleVersion。 对于脚本，它被标识为 .VERSION。 如果指定了预发布版本字符串，则会将其追加到模块的 ModuleVersion，或者指定为脚本的 .VERSION 的一部分。 有一个用于指定[模块](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/prereleasemodule)和[脚本](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/prereleasescript)中的预发布字符串的文档 | 是 | 是 |
+| **版本** | 显示的版本是元数据中的版本字符串以及预发布版本（如果已指定）。 模块清单中版本的主要部分是 ModuleVersion。 对于脚本，它被标识为 .VERSION。 如果指定了预发布版本字符串，则会将其追加到模块的 ModuleVersion，或者指定为脚本的 .VERSION 的一部分。 有一个用于指定[模块](/powershell/gallery/concepts/module-prerelease-support)和[脚本](/powershell/gallery/concepts/script-prerelease-support)中的预发布字符串的文档 | 是 | 是 |
 | **描述** | 这是模块清单中的描述，在脚本文件清单中是 .DESCRIPTION | 是 | 是 |
-| **需要接受许可证** | 模块可以通过以下方式要求用户接受许可证：使用 RequireLicenseAcceptance = $true 修改模块清单，提供 LicenseURI，并提供模块文件夹的根目录中的 license.txt 文件。 [需要接受许可证](https://docs.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_requires_license_acceptance)主题提供了其他信息。 | 是 | 否 |
+| **需要接受许可证** | 模块可以通过以下方式要求用户接受许可证：使用 RequireLicenseAcceptance = $true 修改模块清单，提供 LicenseURI，并提供模块文件夹的根目录中的 license.txt 文件。 [需要接受许可证](/powershell/gallery/how-to/working-with-items/items-that-require-license-acceptance)主题提供了其他信息。 | 是 | 否 |
 | **发行说明** | 对于模块，此信息可从 PSData\PrivateData 下的 ReleaseNotes 部分获得。 在脚本清单中，它是 .RELEASENOTES 元素。 | 是 | 是 |
-| **所有者** | 所有者是可以更新 PowerShell 库中项的用户列表。 所有者列表不包含在项清单中。 其他文档描述如何[管理项所有者](https://docs.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners)。 | 否 | 否 |
+| **所有者** | 所有者是可以更新 PowerShell 库中项的用户列表。 所有者列表不包含在项清单中。 其他文档描述如何[管理项所有者](/powershell/gallery/how-to/publishing-items/managing-item-owners)。 | 否 | 否 |
 | **作者** | 这作为作者包含在模块清单中，作为 .AUTHOR 包含在脚本清单中。 作者字段通常用于指定与项关联的公司或组织。 | 是 | 是 |
 | **版权** | 这是模块清单中的版权字段和脚本清单中的 .COPYRIGHT。 | 是 | 是 |
 | **文件列表** | 将文件列表发布到 PowerShell 库时可从包中获得。 不可通过清单信息对其进行控制。 注意：PowerShell 库中的每个项列出了一个附加的 .nuspec 文件，在系统上安装对应项后该文件不存在。 这是对应项的 Nuget 包清单，可能会被忽略。 | 否 | 否 |
@@ -41,7 +41,7 @@ ms.locfileid: "34048194"
 | **DSC 资源** | 对于将在 PowerShell 版本 5.0 及更高版本上使用的模块，这可使用 DscResourcesToExport 在清单中提供。 如果模块要在 PowerShell 4 中使用，则不应使用 DSCResourcesToExport，因为它不是受支持的清单键。 （DSC 在 PowerShell 4 之前不可用。） | 是 | 否 |
 | **工作流** | 工作流作为脚本发布到 PowerShell 库，并在代码中标识为工作流（有关示例，请参阅 [Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1)）。 这不可由清单进行控制。 | 否 | 否 |
 | **角色功能** | 当发布到 PowerShell 库的模块包含一个或多个由 JEA 使用的角色功能 (.psrc) 文件时，将会列出此元素。 有关[角色功能](https://docs.microsoft.com/en-us/powershell/jea/role-capabilities)的更多详细信息，请参阅 JEA 文档。 | 是 | 否 |
-| **PowerShell 版本** | 这在脚本或模块清单中指定。 对于设计用于 PowerShell 5.0 及更低版本的模块，这使用标记进行控制。 对于桌面，使用标记 PSEdition_Desktop；对于核心，使用标记 PSEdition_Core。 对于仅在 PowerShell 5.1 及更高版本中使用的模块，主清单中存在 CompatiblePSEditions 键。 有关更多详细信息，请查看 [PowerShell Get 文档](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/modulewithpseditionsupport)中的 PS 版本功能。 | 是 | 是 |
+| **PowerShell 版本** | 这在脚本或模块清单中指定。 对于设计用于 PowerShell 5.0 及更低版本的模块，这使用标记进行控制。 对于桌面，使用标记 PSEdition_Desktop；对于核心，使用标记 PSEdition_Core。 对于仅在 PowerShell 5.1 及更高版本中使用的模块，主清单中存在 CompatiblePSEditions 键。 有关更多详细信息，请查看 [PowerShell Get 文档](/powershell/gallery/concepts/module-psedition-support)中的 PS 版本功能。 | 是 | 是 |
 | **依赖项** | 依赖项是 PowerShell 库中的模块，它们在模块中被声明为 RequiredModules，在脚本清单中被声明为 #Requires –Module（名称）。 | 是 | 是 |
 | **最低 Powershell 版本** | 这可以在模块清单中指定为 PowerShellVersion | 是 | 否 |
 | **版本历史记录** | 版本历史记录反映对 PowerShell 库中模块的更新。 如果使用“删除”功能隐藏项的版本，则除项所有者以外，该版本将不会显示在版本历史记录中。 | 否 | 否 |
@@ -83,7 +83,6 @@ PowerShell 库编辑项页允许发布者更改为某项显示的若干字段，
 以下是截至 2017 年 12 月 14 日一些最常用的标记，可供参考。
 在某些情况下，在标记旁边列出了类似但可能不太理想的选项。
 最佳做法是使用“首选标记”，因为这样将导致较少的噪音，并为使用者带来更好的搜索结果。
-
 
 | **首选标记** | **替代项和说明** |
 | --- | --- |

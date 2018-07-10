@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: MSFT_DSCLocalConfigurationManager 类
-ms.openlocfilehash: 615f2998b11a0a927d3868d852e0d408f500c86d
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 7f6aaf209601e99b0120407eb301d32fcfda9eb8
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188829"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892267"
 ---
 # <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类
 
@@ -16,9 +16,8 @@ ms.locfileid: "34188829"
 以下语法从托管对象格式 (MOF) 代码中简化，包括所有继承的属性。
 
 ## <a name="syntax"></a>语法
-------
 
-``` syntax
+```
 [ClassVersion("1.0.0"), dynamic, provider("dsccore"), AMENDMENT]
 class MSFT_DSCLocalConfigurationManager
 {
@@ -26,11 +25,10 @@ class MSFT_DSCLocalConfigurationManager
 ```
 
 ## <a name="members"></a>成员
--------
 
 **MSFT_DSCLocalConfigurationManager** 类拥有以下成员：
 
--   [Methods][]
+- [Methods][]
 
 ### <a name="methods"></a>方法
 
@@ -58,12 +56,8 @@ class MSFT_DSCLocalConfigurationManager
 | [StopConfiguration](msft-dsclocalconfigurationmanager-stopconfiguration.md)| 停止正在进行的配置。|
 | [TestConfiguration](msft-dsclocalconfigurationmanager-testconfiguration.md)| 将配置文档发送到托管节点并针对该文档验证当前配置。|
 
-
-
-
-
 ## <a name="requirements"></a>要求
-------------
->**MOF：** DscCore.mof
 
->**命名空间**：Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF：** DscCore.mof
+
+**命名空间**：Root\Microsoft\Windows\DesiredStateConfiguration

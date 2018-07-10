@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: MSFT_DSCLocalConfigurationManager 类的 SendConfigurationApply 方法
-ms.openlocfilehash: c578f4f52d3ea70e7bcf683ac204d6e484d4630d
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: da3a08307122ab38ee4a6fd5d4a9b97579a988f7
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222150"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893165"
 ---
 # <a name="sendconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类的 SendConfigurationApply 方法
 
 将配置文档发送到托管节点，并使用配置代理应用配置。
 
-<a name="syntax"></a>语法
-------
+## <a name="syntax"></a>语法
 
 ```mof
 uint32 SendConfigurationApply(
@@ -23,15 +22,13 @@ uint32 SendConfigurationApply(
 );
 ```
 
-<a name="parameters"></a>参数
-----------
+## <a name="parameters"></a>参数
 
 ConfigurationData \[in\]：配置的环境数据。
 
 force \[in\]：若为 true，强制停止配置。
 
 ## <a name="return-value"></a>返回值
-------------
 
 如果成功，则返回零；否则返回错误代码。
 
@@ -40,13 +37,11 @@ force \[in\]：若为 true，强制停止配置。
 这是一种静态方法。
 
 ## <a name="requirements"></a>要求
-------------
->**MOF：** DscCore.mof
 
->**命名空间**：Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF：** DscCore.mof
 
+**命名空间**：Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>另请参阅
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
