@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: 库,powershell,cmdlet,psget
 title: 正在启动 NuGet
-ms.openlocfilehash: f707e23737361ee7f82a16150402c9e719ee0ae1
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a935b6862f3912a4b419ca00b4d4dd5aab9c20fc
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221793"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892695"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>启动 NuGet 提供程序和 NuGet.exe
 
@@ -19,13 +19,16 @@ PowerShellGet 中的逻辑可以同时启动 NuGet 提供程序和 NuGet.exe，�
 无论属于上述哪种情况，都应该仅显示一条提示消息。
 如果计算机未连接 Internet，用户或管理员必须将 NuGet 提供程序和/或 NuGet.exe 文件的受信任实例复制到已断开连接的计算机。
 
->注意：自版本 6 起，NuGet 提供程序会随 PowerShell 一起安装。 [http://github.com/powershell/powershell](http://github.com/powershell/powershell)
+> [!NOTE]
+> 自版本 6 起，NuGet 提供程序会随 PowerShell 一起安装。 [http://github.com/powershell/powershell](http://github.com/powershell/powershell)
 
 ## <a name="resolving-error-when-the-nuget-provider-has-not-been-installed-on-a-machine-that-is-internet-connected"></a>修复在已连接 Internet 的计算机上尚未安装 NuGet 提供程序时出现的错误
 
 ```powershell
-PS> Find-Module -Repository PSGallery -Verbose -Name Contoso
+Find-Module -Repository PSGallery -Verbose -Name Contoso
+```
 
+```output
 NuGet provider is required to continue
 PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based repositories. The NuGet provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies' or
 'C:\Users\manikb\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to install and import the NuGet provider
@@ -37,9 +40,13 @@ At line:1 char:1
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidOperation: (:) [Find-Module], InvalidOperationException
    + FullyQualifiedErrorId : CouldNotInstallNuGetProvider,Find-Module
+```
 
-PS> Find-Module -Repository PSGallery -Verbose -Name Contoso
+```powershell
+Find-Module -Repository PSGallery -Verbose -Name Contoso
+```
 
+```output
 NuGet provider is required to continue
 PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based repositories. The NuGet provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies' or
 'C:\Users\manikb\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to install and import the NuGet provider
@@ -55,8 +62,10 @@ Version    Name                                Type       Repository           D
 ## <a name="resolving-error-when-the-nuget-provider-is-available-and-nugetexe-is-not-available-during-the-publish-operation-on-a-machine-that-is-internet-connected"></a>修复在已连接 Internet 的计算机上执行发布操作期间 NuGet 提供程序可用但 NuGet.exe 不可用时出现的错误
 
 ```powershell
-PS> Publish-Module -Name Contoso -Repository PSGallery -Verbose
+Publish-Module -Name Contoso -Repository PSGallery -Verbose
+```
 
+```output
 NuGet.exe is required to continue
 PowerShellGet requires NuGet.exe to publish an item to the NuGet-based repositories. NuGet.exe must be available under one of the paths specified in PATH environment variable value. Do you want PowerShellGet to install NuGet.exe now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): N
@@ -67,8 +76,13 @@ At line:1 char:1
     + CategoryInfo          : InvalidOperation: (:) [Publish-Module], InvalidOperationException
     + FullyQualifiedErrorId : CouldNotInstallNuGetExe,Publish-Module
 
-PS> Publish-Module -Name Contoso -Repository PSGallery -Verbose
+```
 
+```powershell
+Publish-Module -Name Contoso -Repository PSGallery -Verbose
+```
+
+```output
 NuGet.exe is required to continue
 PowerShellGet requires NuGet.exe to publish an item to the NuGet-based repositories. NuGet.exe must be available under one of the paths specified in PATH environment variable value. Do you want PowerShellGet to install NuGet.exe now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
@@ -79,8 +93,10 @@ VERBOSE: Successfully published module 'Contoso' to the module publish location 
 ## <a name="resolving-error-when-both-nuget-provider-and-nugetexe-are-not-available-during-the-publish-operation-on-a-machine-that-is-internet-connected"></a>修复在已连接 Internet 的计算机上执行发布操作期间 NuGet 提供程序和 NuGet.exe 均不可用时出现的错误
 
 ```powershell
-PS> Publish-Module -Name Contoso -Repository PSGallery -Verbose
+Publish-Module -Name Contoso -Repository PSGallery -Verbose
+```
 
+```output
 NuGet.exe and NuGet provider are required to continue
 PowerShellGet requires NuGet.exe and NuGet provider version '2.8.5.201' or newer to interact with the NuGet-based repositories. Do you want PowerShellGet to install both NuGet.exe and NuGet provider now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): N
@@ -92,8 +108,13 @@ At line:1 char:1
     + CategoryInfo          : InvalidOperation: (:) [Publish-Module], InvalidOperationException
     + FullyQualifiedErrorId : CouldNotInstallNuGetBinaries,Publish-Module
 
-PS> Publish-Module -Name Contoso -Repository PSGallery -Verbose
+```
 
+```powershell
+Publish-Module -Name Contoso -Repository PSGallery -Verbose
+```
+
+```output
 NuGet.exe and NuGet provider are required to continue
 PowerShellGet requires NuGet.exe and NuGet provider version '2.8.5.201' or newer to interact with the NuGet-based repositories. Do you want PowerShellGet to install both NuGet.exe and NuGet provider now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
@@ -116,48 +137,50 @@ C:\Program Files\PackageManagement\ProviderAssemblies\
 
 NuGet 提供程序的文件夹/文件结构为（版本号可能不同）：
 
-NuGet<br>
---2.8.5.208<br>
+```
+NuGet
+--2.8.5.208
 ----Microsoft.PackageManagement.NuGetProvider.dll
+```
 
 使用受信任进程将这些文件夹和文件复制到脱机计算机。
 
 ## <a name="manually-bootstrapping-nugetexe-to-support-publish-operations-on-a-machine-that-is-not-connected-to-the-internet"></a>在未连接 Internet 的计算机上手动启动 NuGet.exe 以支持发布操作
 
-除了手动启动 NuGet 提供程序的进程外，如果计算机将用于使用 Publish-Module 或 Publish-Script cmdlet 向专用库发布模块或脚本，必须使用相关进程启动 NuGet.exe 二进制可执行文件。
+除了手动启动 NuGet 提供程序的进程外，如果计算机将用于使用 `Publish-Module` 或 `Publish-Script` cmdlet 向专用库发布模块或脚本，则必须使用相关进程启动 NuGet.exe 二进制可执行文件。
+
 此方案的最常见用例是当专用库可用于支持独立环境时。
 可通过两种方法获取 NuGet.exe 文件。
 
 一种方法是启动已连接 Internet 的计算机，并使用受信任进程将文件复制到脱机计算机。
 启动已连接 Internet 的计算机后，NuGet.exe 二进制文件位于以下两个文件夹之一：
 
-如果使用提升的权限（以管理员身份）执行 Publish-Module 或 Publish-Script cmdlet：
+如果使用提升的权限（以管理员身份）执行 `Publish-Module` 或 `Publish-Script` cmdlet：
 
-```
+```powershell
 $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
 ```
 
 如果不使用提升的权限（以用户身份）执行这两个 cmdlet：
 
-```
+```powershell
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
 
-第二种方法是从 NuGet.Org 网站下载 NuGet.exe：[https://dist.nuget.org/index.html](https://dist.nuget.org/index.html)<br>
-选择生产计算机的 NugGet 版本时，请确保版本高于 2.8.5.208，并确认版本是否已标记为“推荐”。
+第二个选择是从 NuGet.Org 网站下载 NuGet.exe：[https://dist.nuget.org/index.html](https://www.nuget.org/downloads) 选择生产计算机的 NugGet 版本时，请确保版本高于 2.8.5.208，并确认版本是否已标记为“推荐”。
 如果使用浏览器下载，请务必取消阻止文件。
-为此，可以使用 Unblock-File cmdlet。
+为此，可以使用 `Unblock-File` cmdlet。
 
-无论属于上述哪种情况，都可以将 NuGet.exe 文件复制到 $env:path 中的任意位置，但标准位置为：
+无论属于上述哪种情况，都可以将 NuGet.exe 文件复制到 `$env:path` 中的任意位置，但标准位置为：
 
-若要让可执行文件可用，以便所有用户都可以使用 Publish-Module 和 Publish-Script cmdlet：
+若要让可执行文件可用，以便所有用户都可以使用 `Publish-Module` 和 `Publish-Script` cmdlet：
 
-```
+```powershell
 $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
 ```
 
 若要让可执行文件仅对特定用户可用，请仅将文件复制到相应用户配置文件内的位置：
 
-```
+```powershell
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```

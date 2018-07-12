@@ -2,28 +2,28 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
 title: WMF 5.1 中的控制台改进
-ms.openlocfilehash: fb689002caf42203d760f11acc64e52cfa681069
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a8e82e2f973916c2ed5007eba90ee6f2b7a9a769
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189306"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892920"
 ---
-# <a name="console-improvements-in-wmf-51"></a>WMF 5.1 中的控制台改进#
+# <a name="console-improvements-in-wmf-51"></a>WMF 5.1 中的控制台改进
 
 ## <a name="powershell-console-improvements"></a>PowerShell 控制台改进
 
 在 WMF 5.1 中对 powershell.exe 进行了以下更改以改进控制台体验：
 
-###<a name="vt100-support"></a>VT100 支持
+### <a name="vt100-support"></a>VT100 支持
 
-Windows 10 添加了对 [VT100 转义序列](https://msdn.microsoft.com/en-us/library/windows/desktop/mt638032(v=vs.85).aspx)的支持。
+Windows 10 添加了对 [VT100 转义序列](/windows/console/console-virtual-terminal-sequences)的支持。
 计算表宽度时，PowerShell 会忽略某些 VT100 格式设置转义序列。
 
 PowerShell 还添加了一个新 API，它可以在格式设置代码中用于确定是否支持 VT100。
 例如：
 
-```
+```powershell
 if ($host.UI.SupportsVirtualTerminal)
 {
     $esc = [char]0x1b
@@ -34,7 +34,8 @@ else
     "A default hello"
 }
 ```
-下面是一个完整[示例](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7)，可以用于突出显示来自 Select-String 的匹配项。
+
+下面是一个完整[示例](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7)，可用于突出显示来自 `Select-String` 的匹配项。
 将该示例保存在名为 `MatchInfo.format.ps1xml` 的文件中，随后若要在配置文件或其他位置使用它，请运行 `Update-FormatData -Prepend MatchInfo.format.ps1xml`。
 
 请注意，VT100 转义序列仅从 Windows 10 Aniversary 更新开始受支持；它们在早期系统上不受支持。

@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: 库,powershell,cmdlet,psget
 title: 具有兼容的 PowerShell 版本的模块
-ms.openlocfilehash: fbbfda2f913d54c3e69c0724fea4d977923279c1
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 653cfa82be9d0150da8d8765c96e35be99497262
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189510"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892315"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>具有兼容的 PowerShell 版本的模块
 
@@ -21,7 +21,9 @@ ms.locfileid: "34189510"
 
 ```powershell
 $PSVersionTable
+```
 
+```output
 Name                           Value
 ----                           -----
 PSVersion                      5.1.14300.1000
@@ -36,41 +38,54 @@ SerializationVersion           1.1.0.1
 
 ## <a name="module-authors-can-declare-their-modules-to-be-compatible-with-one-or-more-powershell-editions-using-the-compatiblepseditions-module-manifest-key-this-key-is-only-supported-on-powershell-51-or-later"></a>模块作者可使用 CompatiblePSEditions 模块清单键声明其模块，使其与一个或多个 PowerShell 版本兼容。 仅 PowerShell 5.1 或更高版本支持该键。
 
-注意 使用 CompatiblePSEditions 键指定模块清单后，该清单无法导入到较低版本的 PowerShell。
+> [!NOTE]
+> 使用 CompatiblePSEditions 键指定模块清单后，该清单无法导入到较低版本的 PowerShell。
 
 ```powershell
 New-ModuleManifest -Path .\TestModuleWithEdition.psd1 -CompatiblePSEditions Desktop,Core -PowerShellVersion 5.1
 $ModuleInfo = Test-ModuleManifest -Path .\TestModuleWithEdition.psd1
 $ModuleInfo.CompatiblePSEditions
+```
+
+```output
 Desktop
 Core
+```
 
+```powershell
 $ModuleInfo | Get-Member CompatiblePSEditions
+```
 
+```output
    TypeName: System.Management.Automation.PSModuleInfo
 
 Name                 MemberType Definition
 ----                 ---------- ----------
 CompatiblePSEditions Property   System.Collections.Generic.IEnumerable[string] CompatiblePSEditions {get;}
-
 ```
 
 可通过 PowerShell 版本筛选列表来获取一列可用模块。
 
 ```powershell
 Get-Module -ListAvailable -PSEdition Desktop
+```
 
+```output
     Directory: C:\Program Files\WindowsPowerShell\Modules
 
 
 ModuleType Version    Name                                ExportedCommands
 ---------- -------    ----                                ----------------
 Manifest   1.0        ModuleWithPSEditions
+```
 
+```powershell
 Get-Module -ListAvailable -PSEdition Core | % CompatiblePSEditions
+```
+
+```output
 Desktop
 Core
-
 ```
 
 ## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a>模块作者可发布面向 PowerShell 的两个版本（Desktop 和 Core）或其中之一的单一模块
@@ -162,8 +177,8 @@ $PSModule.OnRemove = {
 在 PS 5.1 或更高版本中，模块清单文件中允许使用 $PSEdition 全局变量。
 使用此变量，模块作者可在模块清单文件中指定条件值。 可在受限语言模式或数据部分引用 $PSEdition 变量。
 
-注意 通过 CompatiblePSEditions 键或使用 $PSEdition 变量指定模块清单后，该清单无法导入到较低版本的 PowerShell。
-
+> [!NOTE]
+> 通过 CompatiblePSEditions 键或使用 $PSEdition 变量指定模块清单后，该清单无法导入到较低版本的 PowerShell。
 
 #### <a name="sample-module-manifest-file-with-compatiblepseditions-key"></a>具有 CompatiblePSEditions 键的示例模块清单
 
@@ -203,9 +218,10 @@ else # Desktop
 #### <a name="module-contents"></a>模块内容
 
 ```powershell
+dir -Recurse
+```
 
-PS C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions> dir -Recurse
-
+```output
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions
 
 Mode                LastWriteTime         Length Name
@@ -245,9 +261,10 @@ Find-Module -Tag PSEdition_Core
 
 ```
 
-
 ## <a name="more-details"></a>详细信息
 
-- [PSEditions 脚本](script-psedition-support.md)
-- [PowerShell 库的 PSEditions 支持](../how-to/finding-items/searching-by-psedition.md)
-- [更新模块清单] (/powershell/module/powershellget/update-modulemanifest)
+[PSEditions 脚本](script-psedition-support.md)
+
+[PowerShell 库的 PSEditions 支持](../how-to/finding-items/searching-by-psedition.md)
+
+[更新模块清单](/powershell/module/powershellget/update-modulemanifest)

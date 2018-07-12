@@ -3,19 +3,19 @@ ms.date: 03/27/2018
 contributor: JKeithB
 keywords: 库, powershell, psgallery, GDPR
 title: PowerShell 库 GDPR 符合性
-ms.openlocfilehash: dca1a82952c284980a84caafa13b2807e47e25a0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 14b82fa07df52f02f0d7577cb0eef70faa4285a2
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189748"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893240"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>PowerShell 库 GDPR 符合性
 
 ## <a name="overview"></a>概述
 
 2018 年 5 月，名为“一般数据保护条例 (GDPR)”的欧洲隐私法将生效。
-GDPR 针对向欧盟 (EU) 居民提供产品和服务或收集和分析 EU 居民相关数据的公司、政府机构、非营利组织和其他组织，设置了新的规则。
+GDPR 规定了公司、政府机构、公益组织以及负责以下事务的其他组织需要遵守的新规则：为欧盟民众提供商品和服务，或收集和分析与欧盟民众相关的数据。
 GDPR 的适用对象不受地理位置限制。
 
 > [!NOTE]
@@ -25,9 +25,9 @@ GDPR 的适用对象不受地理位置限制。
 
 PowerShell 库存储以下可能由用户提供的信息，信息中可能包含个人信息：
 
-* PowerShell 库帐户
-* 发布到 PowerShell 库的项
-* 与 PowerShell 库团队的电子邮件通信
+- PowerShell 库帐户
+- 发布到 PowerShell 库的项
+- 与 PowerShell 库团队的电子邮件通信
 
 大多数用户不创建 PowerShell 库帐户。
 除非要发布项或使用 PowerShell 库中的“联系所有者”功能，否则不需要帐户。
@@ -45,15 +45,15 @@ PowerShell 库存储以下可能由用户提供的信息，信息中可能包含
 
 电子邮件通信可能包括以下任一项：
 
-* 如果代码分析扫描检测到发布到 PowerShell 库的项有问题，电子邮件将发送到 PowerShell 库项目的所有者
-* 任何人使用“联系我们”页面中的电子邮件地址 (cgadmin@microsoft.com) 向 PowerShell 库团队发送电子邮件
-* 注册用户使用 PowerShell 库中的“联系所有者”功能，向 PowerShell 库中某个项目的所有者发送电子邮件
+- 如果代码分析扫描检测到发布到 PowerShell 库的项有问题，电子邮件将发送到 PowerShell 库项目的所有者
+- 任何人使用“联系我们”页面中的电子邮件地址 ([cgadmin@microsoft.com](mailto:cgadmin@microsoft.com)) 向 PowerShell 库团队发送电子邮件
+- 注册用户使用 PowerShell 库中的“联系所有者”功能，向 PowerShell 库中某个项目的所有者发送电子邮件
 
 PowerShell 库发送和接收的电子邮件具有 90 天的保留策略，以支持 PowerShell 库中发现恶意代码时进行可能的安全调查。
 根据策略，电子邮件会在 90 天后删除。
 
 可以请求过去 90 天里，你的电子邮件地址和 PowerShell 库发送和接收的所有电子邮件副本。
-若要请求此通信，请将电子邮件发送到 cgadmin@microsoft.com，标题为“有关此帐户的电子邮件 DSR 请求”。
+若要请求此通信，请将电子邮件发送到 [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com)，并使用标题“有关此帐户的电子邮件 DSR 请求”。
 请在邮件正文中说明你要请求的信息（例如，请发送此电子邮件地址发送或接收的所有电子邮件）。请求日期前 90 天与你的电子邮件地址有关的所有电子邮件将在 7 个工作日内发送。
 
 ### <a name="powershell-gallery-account-information"></a>PowerShell 库帐户信息
@@ -78,13 +78,13 @@ PowerShell 库发送和接收的电子邮件具有 90 天的保留策略，以�
 可使用以下 PowerShell 命令来下载该脚本：
 
 ```powershell
-Save-Script GetPSGalleryItemsForAuthor -path <local folder location> -repository psgallery
+Save-Script Get-repository psgallery
 ```
 
 可通过运行以下 PowerShell 命令直接运行该脚本：
 
 ```powershell
-cd <local folder location >
+# cd <local folder location>
 .\GetPSGalleryItemsForAuthor.ps1
 ```
 
@@ -95,9 +95,9 @@ cd <local folder location >
 若要删除 PowerShell 库帐户或你在 PowerShell 库中拥有的项，请发送电子邮件到 cgadmin@microsoft.com ，标题为“有关此帐户的项目的 GDPR 请求”。
 请在邮件正文中说明要删除哪些信息。 例如：
 
-* 请删除我的项“项称名”的版本 x.y.z
-* 请删除我的项“项名称”的所有版本
-* 请删除我的 PowerShell 库帐户
+- 请删除我的项“项称名”的版本 x.y.z
+- 请删除我的项“项名称”的所有版本
+- 请删除我的 PowerShell 库帐户
 
 PowerShell 库管理员将在 7 个工作日内回复。
 在发送请求后的 30 天内，将删除指定的项。

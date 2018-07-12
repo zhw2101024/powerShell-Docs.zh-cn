@@ -22,19 +22,19 @@
 
 - **macOS**：请按照[在 macOS 上运行 VS Code](https://code.visualstudio.com/docs/setup/mac) 页面上的安装说明进行操作
 
-> [!IMPORTANT]
-> 在 macOS 上，必须安装 OpenSSL 后 PowerShell 扩展方可正常运行。
-> 实现此要求的最简单方法是安装 [Homebrew](http://brew.sh/)，然后运行 `brew install openssl`。
-> VS Code 现可成功加载 PowerShell 扩展。
+  > [!IMPORTANT]
+  > 在 macOS 上，必须安装 OpenSSL 后 PowerShell 扩展方可正常运行。
+  > 实现此要求的最简单方法是安装 [Homebrew](http://brew.sh/)，然后运行 `brew install openssl`。
+  > VS Code 现可成功加载 PowerShell 扩展。
 
 - **Windows**：按照[在 Windows 上运行 VS Code](https://code.visualstudio.com/docs/setup/windows) 页面上的安装说明进行操作
 
 ### <a name="2-installing-powershell-extension"></a>2.安装 PowerShell 扩展
 
 - 按照如下方式启动 Visual Studio Code 应用：
-    - **Windows**：在 PowerShell 会话中键入 `code`
-    - **Linux**：在终端中键入 `code`
-    - **macOS**：在终端中键入 `code`
+  - **Windows**：在 PowerShell 会话中键入 `code`
+  - **Linux**：在终端中键入 `code`
+  - **macOS**：在终端中键入 `code`
 
 - 通过按 Ctrl+P（Mac 上为 Cmd+P）启动“Quick Open”。
 - 在“Quick Open”中，键入 `ext install powershell` 并按 Enter。
@@ -58,10 +58,10 @@
 如果要通过 Visual Studio Code 使用 PowerShell 的特定安装版，则需要将新的变量添加到用户设置文件。
 
 1. 单击“文件”->“首选项”->“设置”
-1. 此时会出现两个编辑器窗格。
+2. 此时会出现两个编辑器窗格。
    在最右侧窗格 (`settings.json`) 中，将对应于以下 OS 的设置插入到花括号（`{` 和 `}`）之间的某处，并将 <version> 替换为安装的 PowerShell 版本：
 
-  ```json
+   ```json
     // On Windows:
     "powershell.powerShellExePath": "c:/Program Files/PowerShell/<version>/pwsh.exe"
 
@@ -70,9 +70,10 @@
 
     // On macOS:
     "powershell.powerShellExePath": "/usr/local/microsoft/powershell/<version>/pwsh"
-  ```
-1. 将设置替换为所需 PowerShell 可执行文件的路径
-1. 保存设置文件并重启 Visual Studio Code
+   ```
+
+3. 将设置替换为所需 PowerShell 可执行文件的路径
+4. 保存设置文件并重启 Visual Studio Code
 
 #### <a name="configuration-settings-for-visual-studio-code"></a>Visual Studio Code 的配置设置
 
@@ -112,19 +113,19 @@
 - 在调试器中启动交互会话
 - 将调试器附加到 PowerShell 主机进程
 
-按照以下步骤创建调试配置文件：
+  按照以下步骤创建调试配置文件：
 
-1. 按 Ctrl+Shift+D（Mac 上为 Cmd+Shift+D）打开“调试”视图。
-1. 按工具栏中的“配置”齿轮图标。
-1. Visual Studio Code 将提示“选择环境”。
-   选择“PowerShell”。
+  1. 按 Ctrl+Shift+D（Mac 上为 Cmd+Shift+D）打开“调试”视图。
+  2. 按工具栏中的“配置”齿轮图标。
+  3. Visual Studio Code 将提示“选择环境”。
+  选择“PowerShell”。
 
-   执行此操作时，Visual Studio Code 会在工作区文件夹的根中创建一个目录和一个“.vscode\launch.json”文件。
-   这是调试配置的存储位置。 如果文件位于 Git 存储库中，则通常需要提交 launch.json 文件。
-   launch.json 文件的内容为：
+  执行此操作时，Visual Studio Code 会在工作区文件夹的根中创建一个目录和一个“.vscode\launch.json”文件。
+  这是调试配置的存储位置。 如果文件位于 Git 存储库中，则通常需要提交 launch.json 文件。
+  launch.json 文件的内容为：
 
-```json
-{
+  ```json
+  {
     "version": "0.2.0",
     "configurations": [
         {
@@ -149,19 +150,21 @@
             "cwd": "${workspaceRoot}"
         }
     ]
-}
-```
+  }
+  ```
 
-这表示常见调试方案。
-但是，在编辑器中打开此文件时，会显示“添加配置...”按钮。
-按此按钮可添加更多 PowerShell 调试配置。 其中可添加的一个便捷配置是“PowerShell: Launch Script”。
-通过此配置，可以使用可选参数指定特定文件，无论编辑器中哪个文件处于活动状态，无论何时按 F5 时，此文件都会启动。
+  这表示常见调试方案。
+  但是，在编辑器中打开此文件时，会显示“添加配置...”按钮。
+  按此按钮可添加更多 PowerShell 调试配置。 其中可添加的一个便捷配置是“PowerShell: Launch Script”。
+  通过此配置，可以使用可选参数指定特定文件，无论编辑器中哪个文件处于活动状态，无论何时按 F5 时，此文件都会启动。
 
-调试配置建立后，可以在“调试”视图工具栏中的调试配置下拉列表中选择要在调试会话中使用的配置。
+  调试配置建立后，可以在“调试”视图工具栏中的调试配置下拉列表中选择要在调试会话中使用的配置。
 
-以下博客可能提供有关将 PowerShell 扩展用于 Visual Studio Code 的有用帮助
+  以下博客可能提供有关将 PowerShell 扩展用于 Visual Studio Code 的有用帮助
 
-- Visual Studio Code：[PowerShell 扩展][ps-extension]
+Visual Studio Code：
+
+- [PowerShell 扩展插件][ps-extension]
 - [在 Visual Studio Code 中编写和调试 PowerShell 脚本][debug]
 - [Visual Studio Code 调试指南][vscode-guide]
 - [在 Visual Studio Code 中调试 PowerShell][ps-vscode]
@@ -176,15 +179,15 @@
 [install-pscore-macos]:  ../../setup/Installing-PowerShell-Core-on-macOS.md
 [install-pscore-windows]: ../../setup/Installing-PowerShell-Core-on-Windows.md
 [install-winps]: ../../setup/Installing-Windows-PowerShell.md
-[ps-extension]:https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/
-[debug]:https://blogs.msdn.microsoft.com/powershell/2015/11/16/announcing-powershell-language-support-for-visual-studio-code-and-more/
-[vscode-guide]:https://johnpapa.net/debugging-with-visual-studio-code/
-[ps-vscode]:https://github.com/PowerShell/vscode-powershell/tree/master/examples
-[getting-started]:https://blogs.technet.microsoft.com/heyscriptingguy/2016/12/05/get-started-with-powershell-development-in-visual-studio-code/
-[editing-part1]:https://blogs.technet.microsoft.com/heyscriptingguy/2017/01/11/visual-studio-code-editing-features-for-powershell-development-part-1/
-[editing-part2]:https://blogs.technet.microsoft.com/heyscriptingguy/2017/01/12/visual-studio-code-editing-features-for-powershell-development-part-2/
-[debugging-part1]:https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/06/debugging-powershell-script-in-visual-studio-code-part-1/
-[debugging-part2]:https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/13/debugging-powershell-script-in-visual-studio-code-part-2/
+[ps-extension]: https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/
+[debug]: https://blogs.msdn.microsoft.com/powershell/2015/11/16/announcing-powershell-language-support-for-visual-studio-code-and-more/
+[vscode-guide]: https://johnpapa.net/debugging-with-visual-studio-code/
+[ps-vscode]: https://github.com/PowerShell/vscode-powershell/tree/master/examples
+[getting-started]: https://blogs.technet.microsoft.com/heyscriptingguy/2016/12/05/get-started-with-powershell-development-in-visual-studio-code/
+[editing-part1]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/01/11/visual-studio-code-editing-features-for-powershell-development-part-1/
+[editing-part2]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/01/12/visual-studio-code-editing-features-for-powershell-development-part-2/
+[debugging-part1]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/06/debugging-powershell-script-in-visual-studio-code-part-1/
+[debugging-part2]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/13/debugging-powershell-script-in-visual-studio-code-part-2/
 
 ## <a name="powershell-extension-for-visual-studio-code"></a>适用于 Visual Studio Code 的 PowerShell 扩展
 

@@ -2,21 +2,21 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 使用 DSC 报表服务器
-ms.openlocfilehash: 143e0bdd9b637cee87a676ed327fe6ff3a7fd719
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: bcd414e9cc6d3b321676aaab6bbc3ca1b02e80aa
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188541"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893131"
 ---
 # <a name="using-a-dsc-report-server"></a>使用 DSC 报表服务器
 
-> 适用于：Windows PowerShell 5.0
+适用于：Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > 请求服务器（Windows 功能 DSC-Service）是 Windows Server 的一个受支持组件，不过目前没有提供新功能的计划。 建议开始将托管客户端转换至 [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)（包括 Windows Server 上的请求服务器以外的功能）或[此处](pullserver.md#community-solutions-for-pull-service)列出的社区解决方案之一。
-
->**注意：** 本主题中描述的报表服务器在 PowerShell 4.0 中不可用。
+>
+> **注意**：本主题中描述的报表服务器在 PowerShell 4.0 中不可用。
 
 可将节点的本地配置管理器 (LCM) 配置为向请求服务器发送有关其配置状态的报表，然后即可查询该服务器以检索此数据。 每当节点检查和应用配置时，它都会将报表发送到报表服务器。 这些报表存储在服务器上的数据库中，可通过调用报告 Web 服务进行检索。 每个报表中包含所应用的配置、配置是否成功、所使用的资源、引发的所有错误以及开始时间和结束时间等信息。
 
@@ -56,6 +56,7 @@ configuration ReportClientConfig
         }
     }
 }
+
 ReportClientConfig
 ```
 
@@ -91,11 +92,12 @@ configuration PullClientConfig
 PullClientConfig
 ```
 
->**注意：** 在设置请求服务器时可以将 Web 服务命名为任何所需内容，但是 **ServerURL** 属性必须与服务名称匹配。
+> [!NOTE]
+> 在设置请求服务器时可以将 Web 服务命名为任何所需形式，但是 ServerURL 属性必须与服务名称匹配。
 
 ## <a name="getting-report-data"></a>获取报表数据
 
-发送到请求服务器的报表将被输入该服务器上的数据库。 通过调用 Web 服务即可使用这些报表。 若要检索特定节点的报表，请通过以下形式向报表 Web 服务发送 HTTP 请求：`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId= 'MyNodeAgentId')/Reports`。其中 `MyNodeAgentId` 是要为其获取报表的节点的 AgentId。 可通过在节点上调用 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx) 来获取相应节点的 AgentID。
+发送到请求服务器的报表将被输入该服务器上的数据库。 通过调用 Web 服务即可使用这些报表。 若要检索特定节点的报表，请通过以下形式向报表 Web 服务发送 HTTP 请求：`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`。其中 `MyNodeAgentId` 是要为其获取报表的节点的 AgentId。 可通过在节点上调用 [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) 来获取相应节点的 AgentID。
 
 报表将返回为 JSON 对象数组。
 
@@ -104,7 +106,12 @@ PullClientConfig
 ```powershell
 function GetReport
 {
-    param($AgentId = "$((glcm).AgentId)", $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCPullServer.svc")
+    param
+    (
+        $AgentId = "$((glcm).AgentId)", 
+        $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCPullServer.svc"
+    )
+
     $requestUri = "$serviceURL/Nodes(AgentId= '$AgentId')/Reports"
     $request = Invoke-WebRequest -Uri $requestUri  -ContentType "application/json;odata=minimalmetadata;streaming=true;charset=utf-8" `
                -UseBasicParsing -Headers @{Accept = "application/json";ProtocolVersion = "2.0"} `
@@ -121,8 +128,9 @@ function GetReport
 ```powershell
 $reports = GetReport
 $reports[1]
+```
 
-
+```output
 JobId                : 019dfbe5-f99f-11e5-80c6-001dd8b8065c
 OperationType        : Consistency
 RefreshMode          : Pull
@@ -168,7 +176,9 @@ $reportMostRecent = $reportsByStartTime[0]
 ```powershell
 $statusData = $reportMostRecent.StatusData | ConvertFrom-Json
 $statusData
+```
 
+```output
 StartDate                  : 2016-04-04T11:21:41.2990000-07:00
 IPV6Addresses              : {2001:4898:d8:f2f2:852b:b255:b071:283b, fe80::852b:b255:b071:283b%12, ::2000:0:0:0, ::1...}
 DurationInSeconds          : 25
@@ -205,7 +215,9 @@ Mode                       : Pull
 
 ```powershell
 $statusData.ResourcesInDesiredState
+```
 
+```output
 SourceInfo        : C:\ReportTest\Sample_xFirewall_AddFirewallRule.ps1::16::9::Archive
 ModuleName        : PSDesiredStateConfiguration
 DurationInSeconds : 2.672
@@ -222,6 +234,9 @@ InDesiredState    : True
 请注意，这些示例旨在让你了解如何使用报表数据。 有关在 PowerShell 中使用 JSON 的介绍，请参阅 [Playing with JSON and PowerShell（使用 JSON 和 PowerShell）](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/)。
 
 ## <a name="see-also"></a>另请参阅
-- [配置本地配置管理器](metaConfig.md)
-- [设置 DSC Web 请求服务器](pullServer.md)
-- [使用配置名称设置请求客户端](pullClientConfigNames.md)
+
+[配置本地配置管理器](metaConfig.md)
+
+[设置 DSC Web 请求服务器](pullServer.md)
+
+[使用配置名称设置请求客户端](pullClientConfigNames.md)

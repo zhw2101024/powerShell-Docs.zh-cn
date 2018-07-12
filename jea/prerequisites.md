@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: JEA 先决条件
-ms.openlocfilehash: a5cf5519b30b24d44c12bdeedcf4cd763e2edbde
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: acc16c0c7eec357b621c0706a66b8752ae5578cd
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189765"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893029"
 ---
 # <a name="prerequisites"></a>必备条件
 
@@ -49,8 +49,10 @@ Windows 7                 | 减少了功能<sup>1</sup>（如果 WMF 5.1 已安�
 若要查看系统上安装的 PowerShell 版本类型，请查看 Windows PowerShell 提示符中的 `$PSVersionTable` 变量。
 
 ```powershell
-PS C:\> $PSVersionTable.PSVersion
+$PSVersionTable.PSVersion
+```
 
+```output
 Major  Minor  Build  Revision
 -----  -----  -----  --------
 5      1      14393  1000
@@ -62,7 +64,7 @@ Major  Minor  Build  Revision
 ### <a name="install-windows-management-framework"></a>安装 Windows Management Framework
 
 如果运行的是 PowerShell 较旧版本，需要使用最新的 Windows Management Framework (WMF) 更新来更新系统。
-可在[下载中心](https://aka.ms/WMF5)找到更新包和最新 WMF 发行说明的链接。
+可在[下载中心](https://blogs.msdn.microsoft.com/powershell/2016/02/24/windows-management-framework-wmf-5-0-rtm-packages-has-been-republished/)找到更新包和最新 WMF 发行说明的链接。
 
 强烈建议在升级所有服务器前，测试工作负荷与 WMF 的兼容性。
 
@@ -71,7 +73,7 @@ Windows 10 用户需安装最新功能更新才能获取当前版本的 Windows 
 ## <a name="enable-powershell-remoting"></a>启用 PowerShell 远程处理
 
 PowerShell 远程处理提供了构建 JEA 的基础。
-因此，有必要先确保系统已启用 PowerShell 远程处理并[受到适当保护](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity)，然后才能使用 JEA。
+因此，有必要先确保系统已启用 PowerShell 远程处理并[受到适当保护](/powershell/scripting/setup/winrmsecurity)，然后才能使用 JEA。
 
 在 Windows Server 2012、2012 R2 和 2016 中，默认启用 PowerShell 远程处理。
 可通过在提升的 PowerShell 窗口中运行以下命令来启用 PowerShell 远程处理。
@@ -92,21 +94,23 @@ PowerShell 模块日志记录不是 JEA 必需的，但强烈建议打开它，�
 3. 双击“打开模块日志记录”
 4. 单击“启用”
 5. 在“选项”部分中，单击“模块名称”旁的“显示”
-6. 在弹出窗口中键入“**\***”。 这将指示 PowerShell 记录来自所有模块的命令。
+6. 在弹出窗口中键入 `\*`。 这将指示 PowerShell 记录来自所有模块的命令。
 7. 单击“确定”设置策略
 8. 双击“打开 PowerShell 脚本块日志记录”
 9. 单击“启用”
 10. 单击“确定”设置策略
-11. （仅在已加入域的计算机上）运行 **gpupdate** 或等待组策略处理更新后的策略，然后应用相应设置
+11. （仅在已加入域的计算机上）运行 `gpupdate` 或等待组策略处理更新后的策略，然后应用相应设置
 
 也可通过“组策略”启用系统范围的 PowerShell 脚本。
 
 ## <a name="next-steps"></a>后续步骤
 
-- [创建角色功能文件](role-capabilities.md)
-- [创建会话配置文件](session-configurations.md)
+[创建角色功能文件](role-capabilities.md)
+
+[创建会话配置文件](session-configurations.md)
 
 ## <a name="see-also"></a>另请参阅
 
-- [有关 PowerShell 远程处理和 WinRM 安全性的其他信息](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity)
-- [PowerShell ♥ the Blue Team 关于安全的博客文章](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
+[有关 PowerShell 远程处理和 WinRM 安全性的其他信息](/powershell/scripting/setup/winrmsecurity)
+
+[PowerShell ♥ the Blue Team 关于安全的博客文章](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)

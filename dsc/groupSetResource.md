@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 description: 提供了管理目标节点上的本地组的机制。
 title: DSC GroupSet 资源
-ms.openlocfilehash: 3d6fdcaef6053964d3fb3b709a5263d291a7c840
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 487a76ca7703b2c57b940b4c5bd176eada6c8019
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222347"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892420"
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet 资源
 
@@ -18,7 +18,8 @@ Windows PowerShell Desired State Configuration (DSC) 中的 **GroupSet** 资源�
 
 当你要对多个组添加和/或删除相同成员列表、删除多个组或添加具有相同成员列表的多个组时，请使用此资源。
 
-##<a name="syntax"></a>语法##
+## <a name="syntax"></a>语法
+
 ```
 Group [string] #ResourceName
 {
@@ -43,7 +44,7 @@ Group [string] #ResourceName
 | MembersToInclude| 使用此属性将成员添加到组的现有成员资格中。 此属性的值是一组形式为 *Domain*\\*UserName* 的字符串。 如果你在配置中设置此属性，请勿使用 **Members** 属性。 这样做会导致错误生成。|
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 __ResourceName__、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"``。|
 
-## <a name="example-1"></a>示例 1
+## <a name="example-1-ensuring-groups-are-present"></a>示例 1：确保组存在
 
 下面的示例演示如何确保名为“myGroup”和“myOtherGroup”的两个组存在。
 
@@ -73,8 +74,8 @@ $cd = @{
     )
 }
 
-
 GroupSetTest -ConfigurationData $cd
 ```
 
->**注意：** 为简单起见，此示例使用纯文本凭据。 有关如何在配置 MOF 文件中加密凭据的信息，请参阅[保护 MOF 文件](secureMOF.md)。
+> [!NOTE] 
+> 为简单起见，此示例使用纯文本凭据。 有关如何在配置 MOF 文件中加密凭据的信息，请参阅[保护 MOF 文件](secureMOF.md)。

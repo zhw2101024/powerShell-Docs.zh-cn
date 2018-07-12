@@ -4,12 +4,12 @@ keywords: powershell,cmdlet
 ms.date: 12/12/2016
 title: Add-PswaAuthorizationRule
 schema: 2.0.0
-ms.openlocfilehash: b8020f8b034ab24d79a96da3908e9b63bf017cd9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a5e55611ac59ff5bfecee59ba2b7d7669d08f840
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190377"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893733"
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -20,21 +20,25 @@ ms.locfileid: "34190377"
 ## <a name="syntax"></a>语法
 
 ### <a name="usergroupnamecomputergroupname"></a>UserGroupNameComputerGroupName
+
 ```
 Add-PswaAuthorizationRule -ComputerGroupName <String> -ConfigurationName <String> -UserGroupName <String[]> [-Credential <PSCredential> ] [-Force] [-RuleName <String> ] [ <CommonParameters>]
 ```
 
 ### <a name="usergroupnamecomputername"></a>UserGroupNameComputerName
+
 ```
 Add-PswaAuthorizationRule -ComputerName <String> -ConfigurationName <String> -UserGroupName <String[]> [-Credential <PSCredential> ] [-Force] [-RuleName <String> ] [ <CommonParameters>]
 ```
 
 ### <a name="usernamecomputergroupname"></a>UserNameComputerGroupName
+
 ```
 Add-PswaAuthorizationRule [-UserName] <String[]> -ComputerGroupName <String> -ConfigurationName <String> [-Credential <PSCredential> ] [-Force] [-RuleName <String> ] [ <CommonParameters>]
 ```
 
 ### <a name="usernamecomputername"></a>UserNameComputerName
+
 ```
 Add-PswaAuthorizationRule [-UserName] <String[]> [-ComputerName] <String> [-ConfigurationName] <String> [-Credential <PSCredential> ] [-Force] [-RuleName <String> ] [ <CommonParameters>]
 ```
@@ -56,7 +60,7 @@ Add-PswaAuthorizationRule cmdlet 向 Windows PowerShell® Web 访问授权规则
 
 ## <a name="parameters"></a>参数
 
-### <a name="-computergroupnameltstringgt"></a>-ComputerGroupName&lt;String&gt;
+### <a name="-computergroupname-string"></a>-ComputerGroupName \<String\>
 
 指定 Active Directory 域服务 (AD DS) 中计算机组的名称，或指定此规则授予访问权限的本地组名称。
 
@@ -69,7 +73,7 @@ Add-PswaAuthorizationRule cmdlet 向 Windows PowerShell® Web 访问授权规则
 | 是否接受管道输入？               | True (ByPropertyName)                |
 | 是否接受通配符？          | false                                |
 
-### <a name="-computernameltstringgt"></a>-ComputerName&lt;String&gt;
+### <a name="-computername-string"></a>-ComputerName \<String\>
 
 指定此规则授予访问权限的计算机名。
 
@@ -82,7 +86,7 @@ Add-PswaAuthorizationRule cmdlet 向 Windows PowerShell® Web 访问授权规则
 | 是否接受管道输入？               | True (ByPropertyName)                |
 | 是否接受通配符？          | false                                |
 
-### <a name="-configurationnameltstringgt"></a>-ConfigurationName&lt;String&gt;
+### <a name="-configurationname-string"></a>-ConfigurationName \<String\>
 
 指定此规则授予访问权限的 Windows PowerShell 会话配置的名称（又称为运行空间）。
 
@@ -95,7 +99,7 @@ Add-PswaAuthorizationRule cmdlet 向 Windows PowerShell® Web 访问授权规则
 | 是否接受管道输入？               | True (ByPropertyName)                |
 | 是否接受通配符？          | false                                |
 
-### <a name="-credentialltpscredentialgt"></a>-Credential&lt;PSCredential&gt;
+### <a name="-credential--pscredential"></a>-Credential  \<PSCredential\>
 
 为要用于更改 Windows PowerShell Web 访问授权规则的用户帐户指定 PSCredential 对象。 如果不添加此参数，cmdlet 将使用当前登录的用户帐户。 要获取 PSCredential 对象（用于以远程方式添加授权规则），请运行 [Get-Credential cmdlet](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential)。
 
@@ -122,7 +126,7 @@ Add-PswaAuthorizationRule cmdlet 向 Windows PowerShell® Web 访问授权规则
 | 是否接受管道输入？               | false                                |
 | 是否接受通配符？          | false                                |
 
-### <a name="-rulenameltstringgt"></a>-RuleName&lt;String&gt;
+### <a name="-rulename-string"></a>-RuleName \<String\>
 
 为此规则指定友好名称。
 
@@ -135,7 +139,7 @@ Add-PswaAuthorizationRule cmdlet 向 Windows PowerShell® Web 访问授权规则
 | 是否接受管道输入？               | True (ByPropertyName)                |
 | 是否接受通配符？          | false                                |
 
-### <a name="-usergroupnameltstringgt"></a>-UserGroupName&lt;String\[\]&gt;
+### <a name="-usergroupname-string"></a>-UserGroupName \<String\[\]\>
 
 指定 AD DS 中一个或多个用户组的名称，或指定此规则授予访问权限的本地组名称。
 
@@ -148,7 +152,7 @@ Add-PswaAuthorizationRule cmdlet 向 Windows PowerShell® Web 访问授权规则
 | 是否接受管道输入？               | True (ByPropertyName)                |
 | 是否接受通配符？          | false                                |
 
-### <a name="-usernameltstringgt"></a>-UserName&lt;String\[\]&gt;
+### <a name="-username-string"></a>-UserName \<String\[\]\>
 
 指定此规则向其授予访问权限的一个或多个用户。 用户名可以是网关计算机上的本地用户帐户，也可以是 AD DS 中的用户。
 格式为 `domain\user` 或 `computer\user`。
@@ -162,7 +166,7 @@ Add-PswaAuthorizationRule cmdlet 向 Windows PowerShell® Web 访问授权规则
 | 是否接受管道输入？               | True (ByValue, ByPropertyName)       |
 | 是否接受通配符？          | false                                |
 
-### <a name="ltcommonparametersgt"></a>&lt;CommonParameters&gt;
+###  <a name="commonparameters"></a>\<CommonParameters\>
 
 此 cmdlet 支持通用参数：-Verbose、-Debug、-ErrorAction、-ErrorVariable、-OutBuffer 和 -OutVariable。
 有关详细信息，请参阅 [about_CommonParameters](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_commonparameters)。
@@ -196,7 +200,7 @@ Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\
 
 ### <a name="example-2"></a>示例 2
 
-此示例在 srv2 上为名为 contoso\\user1、contoso\\user2 和 contoso\\user3 用户中的用户，授予默认 Windows PowerShell 会话配置访问权限 `Microsoft.PowerShell`。 此 cmdlet 将创建三条规则（每人一条）。
+此示例在 srv2 上为名为 `contoso\user1`、`contoso\user2` 和 `contoso\user3` 用户中的用户，授予默认 Windows PowerShell 会话配置访问权限 `Microsoft.PowerShell`。 此 cmdlet 将创建三条规则（每人一条）。
 
 ```PowerShell
 Add-PswaAuthorizationRule –UserName contoso\user1, contoso\user2, contoso\user3 –ComputerName srv2.contoso.com -ConfigurationName Microsoft.PowerShell
@@ -206,7 +210,7 @@ Add-PswaAuthorizationRule –UserName contoso\user1, contoso\user2, contoso\user
 
 此示例将说明如何通过管道输入用户名值。
 
-```
+```powershell
 "contoso\user1","contoso\user2" | Add-pswaAuthorizationRule –ComputerName srv2.contoso.com –ConfigurationName Microsoft.PowerShell
 ```
 
@@ -225,11 +229,11 @@ $o | Add-PswaAuthorizationRule -UserName contoso\user1 -ConfigurationName Micros
 
 ### <a name="example-5"></a>示例 5
 
-此示例将添加一条规则，允许名为 PswaServer\\ChrisLocal 的本地用户访问名为 srv1.contoso.com 的服务器。
+此示例将添加一条规则，允许名为 `PswaServer\ChrisLocal` 的本地用户访问名为 srv1.contoso.com 的服务器。
 
 此示例对网关位于工作组，目标计算机位于域中的方案进行了说明。 授权规则适用于网关上的本地用户。 在 Windows PowerShell Web 访问登录页中，要成功进行身份验证，用户必须在“可选连接设置”中提供备用凭据组。 网关服务器使用一组额外的凭据，在服务器名为 srv1.contoso.com 的目标计算机上对用户进行身份验证。
 
-````
+````powershell
 Add-PswaAuthorizationRule –UserName PswaServer\ChrisLocal –ComputerName srv1.contoso.com –ConfigurationName Microsoft.PowerShell
 ````
 
@@ -245,10 +249,16 @@ Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *
 
 ## <a name="see-also"></a>另请参阅
 
-- [Get-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592891(v=wps.630).aspx)
-- [Remove-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592893(v=wps.630).aspx)
-- [Test-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592892(v=wps.630).aspx)
-- [Install-PswaWebApplication](https://technet.microsoft.com/en-us/library/jj592894(v=wps.630).aspx)
-- [Add-Member](http://go.microsoft.com/fwlink/p/?LinkId=113280)
-- [New-Object](http://go.microsoft.com/fwlink/p/?LinkId=113355)
-- [Get-Credential](http://go.microsoft.com/fwlink/?LinkID=293936)
+[Get-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592891(v=wps.630).aspx)
+
+[Remove-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592893(v=wps.630).aspx)
+
+[Test-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592892(v=wps.630).aspx)
+
+[Install-PswaWebApplication](https://technet.microsoft.com/en-us/library/jj592894(v=wps.630).aspx)
+
+[Add-Member](http://go.microsoft.com/fwlink/p/?LinkId=113280)
+
+[New-Object](http://go.microsoft.com/fwlink/p/?LinkId=113355)
+
+[Get-Credential](http://go.microsoft.com/fwlink/?LinkID=293936)

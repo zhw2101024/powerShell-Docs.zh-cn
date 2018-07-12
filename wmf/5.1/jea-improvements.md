@@ -4,12 +4,12 @@ ms.topic: conceptual
 keywords: wmf,powershell,安装程序
 contributor: ryanpu
 title: 对 Just Enough Administration (JEA) 的改进
-ms.openlocfilehash: 47a58a6fae9f3a41ec527ec1f77ac1c196336669
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 79271e77a539764e7a18842efd919413cdc8ab9f
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222411"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892712"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>对 Just Enough Administration (JEA) 的改进
 
@@ -18,7 +18,7 @@ ms.locfileid: "34222411"
 现可将文件远程复制到 JEA 终结点或远程复制其中的文件，并确信连接用户不能复制你系统上的*任意*文件。
 这可通过配置 PSSC 文件为连接用户安装用户驱动器来实现。
 用户驱动器是新的 PSDrive，是每个连接用户特有的并跨会话保持。
-当复制项用于将文件复制到 JEA 会话或从中复制时，其被限制为仅允许访问用户驱动器。
+当 `Copy-Item` 用于将文件复制到 JEA 会话或从中复制时，其被限制为仅允许访问用户驱动器。
 将文件复制到任何其他 PSDrive 的尝试会失败。
 
 若要在 JEA 会话配置文件中设置用户驱动器，请使用以下新字段：
@@ -30,7 +30,7 @@ UserDriveMaximumSize = 10485760    # 10 MB
 
 将在 `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER` 处创建支持用户驱动器的文件夹
 
-若要利用用户驱动器，并将文件复制到配置为公开用户驱动器的 JEA 终结点或从中复制文件，请使用复制项上的 `-ToSession` 和 `-FromSession` 参数。
+若要利用用户驱动器，并将文件复制到配置为公开用户驱动器的 JEA 终结点或从中复制文件，请使用 `Copy-Item` 上的 `-ToSession` 和 `-FromSession` 参数。
 
 ```powershell
 # Connect to the JEA endpoint
@@ -64,7 +64,8 @@ GroupManagedServiceAccount = 'myGMSAforJEA'
 RunAsVirtualAccount = $false
 ```
 
-> **注意：** 组托管服务帐户不会隔离虚拟帐户或限制其范围。
+> [!NOTE]
+> 组托管服务帐户不会隔离虚拟帐户或限制其范围。
 > 每个连接用户都将共享同一 gMSA 标识，这一标识可能拥有整个企业范围内的权限。
 > 选择使用 gMSA 时请格外小心；若可能，请始终优先使用限于本地计算机的虚拟帐户。
 
@@ -91,5 +92,6 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 ```
 
 ## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>已修复：Windows Server 2008 R2 现支持虚拟帐户
+
 在 WMF 5.1 中，现可在 Windows Server 2008 R2 上使用虚拟帐户，从而跨 Windows Server 2008 R2 - 2016 实现一致的配置和功能。
 在 Windows 7 上使用 JEA 时，虚拟帐户仍不受支持。

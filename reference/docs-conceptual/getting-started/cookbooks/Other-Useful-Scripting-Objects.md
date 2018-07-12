@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 其他有用的脚本对象
 ms.assetid: 4d781196-720b-4ccc-90d2-c570e5e719f5
-ms.openlocfilehash: 0e87e9919199e011ab5abec5b07dccc8494ad64a
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 2ae9bc1864daedbcb0070c5f3862a6c98f8db2d4
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30949819"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893274"
 ---
 # <a name="other-useful-scripting-objects"></a>其他有用的脚本对象
 
@@ -33,14 +33,14 @@ $psUnsupportedConsoleApplications
 
 ### <a name="pslocalhelp"></a>$psLocalHelp
 
-这是维护帮助主题和本地已编译的 HTML 帮助文件中和其关联链接之间的上下文相关映射的字典对象。 它用于查找有关某个特定主题的本地帮助。 你可以添加或删除此列表中的主题。 下面的代码示例显示了 **$psLocalHelp** 中包含的一些示例键值对。
+这是维护帮助主题和本地已编译的 HTML 帮助文件中和其关联链接之间的上下文相关映射的字典对象。 它用于查找有关某个特定主题的本地帮助。 你可以添加或删除此列表中的主题。 下面的代码示例显示了 `$psLocalHelp` 中包含的一些示例键值对。
 
 ```powershell
 # See the local help map
 $psLocalHelp | Format-List
 ```
 
-### <a name="sample-output"></a>示例输出
+### <a name="pslocalhelp-sample-output"></a>$psLocalHelp 示例输出
 
 |||
 |-|-|
@@ -61,14 +61,14 @@ $psLocalHelp.Add("get-myNoun", "c:\MyFolder\MyHelpChm.chm::/html/0198854a-1298-5
 $psOnlineHelp | Format-List
 ```
 
-### <a name="sample-output"></a>示例输出
+## <a name="psonilnehelp-sample-output"></a>$psOnilneHelp 示例输出
 
 |||
 |-|-|
 |键：Add-Computer|值：http://go.microsoft.com/fwlink/p/?LinkID=135194|
 |键：Add-Content|值：http://go.microsoft.com/fwlink/p/?LinkID=113278|
 
- 下面的脚本将向该列表添加一个条目。
+下面的脚本将向该列表添加一个条目。
 
 ```powershell
 $psOnlineHelp.Add("get-myNoun", "http://www.mydomain.com/MyNoun.html")
@@ -76,4 +76,4 @@ $psOnlineHelp.Add("get-myNoun", "http://www.mydomain.com/MyNoun.html")
 
 ## <a name="see-also"></a>另请参阅
 
-- [Windows PowerShell ISE 脚本对象模型的用途](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+[Windows PowerShell ISE 脚本对象模型的用途](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)

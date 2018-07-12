@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 适用于 Linux 的 Desired State Configuration (DSC) 入门
-ms.openlocfilehash: 0534cede979eb2917adb608dba622539fe4bdc45
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: d5a4a17fbcffbbbd6df3dd902dbd104769b7d17e
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189425"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893590"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>适用于 Linux 的 Desired State Configuration (DSC) 入门
 
@@ -16,6 +16,7 @@ ms.locfileid: "34189425"
 ## <a name="supported-linux-operation-system-versions"></a>支持的 Linux 操作系统版本
 
 适用于 Linux 的 DSC 支持以下 Linux 操作系统版本。
+
 - CentOS 5、6 和 7 (x86/x64)
 - Debian GNU/Linux 6、7 和 8 (x86/x64)
 - Oracle Linux 5、6 和 7 (x86/x64)
@@ -44,7 +45,8 @@ ms.locfileid: "34189425"
 
 若要安装 OMI，请安装适用于 Linux 系统（.rpm 或.deb）和 OpenSSL 版本（ssl_098 或 ssl_100）以及体系结构 (x64/x86) 的程序包。 RPM 程序包适用于 CentOS、Red Hat Enterprise Linux、SUSE Linux Enterprise Server 和 Oracle Linux。 DEB 程序包适用于 Debian GNU/Linux 和 Ubuntu Server。 ssl_098 程序包适用于安装了 OpenSSL 0.9.8 的计算机，而 ssl_100 程序包适用于安装了 OpenSSL 1.0 的计算机。
 
-> **注意**：若要确定安装的 OpenSSL 版本，请运行 `openssl version` 命令。
+> [!NOTE]
+> 若要确定安装的 OpenSSL 版本，请运行 `openssl version` 命令。
 
 运行以下命令以在 CentOS 7 x64 系统上安装 OMI。
 
@@ -52,16 +54,16 @@ ms.locfileid: "34189425"
 
 ### <a name="installing-dsc"></a>安装 DSC
 
-适用于 Linux 的 DSC 可在[此处](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest)下载。
+适用于 Linux 的 DSC 可在[此处](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/tag/v1.1.1-294)下载。
 
 若要安装 DSC，请安装适用于 Linux 系统（.rpm 或.deb）和 OpenSSL 版本（ssl_098 或 ssl_100）以及体系结构 (x64/x86) 的程序包。 RPM 程序包适用于 CentOS、Red Hat Enterprise Linux、SUSE Linux Enterprise Server 和 Oracle Linux。 DEB 程序包适用于 Debian GNU/Linux 和 Ubuntu Server。 ssl_098 程序包适用于安装了 OpenSSL 0.9.8 的计算机，而 ssl_100 程序包适用于安装了 OpenSSL 1.0 的计算机。
 
-> **注意**：若要确定安装的 OpenSSL 版本，请运行 openssl version 命令。
+> [!NOTE]
+> 若要确定安装的 OpenSSL 版本，请运行 openssl version 命令。
 
 运行以下命令以在 CentOS 7 x64 系统上安装 DSC。
 
 `# sudo rpm -Uvh dsc-1.0.0-254.ssl_100.x64.rpm`
-
 
 ## <a name="using-dsc-for-linux"></a>使用适用于 Linux 的 DSC
 
@@ -73,39 +75,41 @@ ms.locfileid: "34189425"
 
 1. 导入 nx 模块。 此 nx Windows PowerShell 模块包含适用于 Linux 的 DSC 内置资源的架构，必须将其安装到本地计算机上并导入到配置中。
 
-    -若要安装 nx 模块，请将 nx 模块目录复制到 `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` 或 `$PSHOME\Modules` 中。 该 nx 模块包含在适用于 Linux 的 DSC 安装包 (MSI) 中。 若要在配置中导入 nx 模块，请使用 __Import-DSCResource__ 命令：
+   - 若要安装 nx 模块，请将 nx 模块目录复制到 `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` 或 `$PSHOME\Modules` 中。 该 nx 模块包含在适用于 Linux 的 DSC 安装包 (MSI) 中。 若要在配置中导入 nx 模块，请使用 `Import-DSCResource` 命令：
 
-```powershell
-Configuration ExampleConfiguration{
+   ```powershell
+   Configuration ExampleConfiguration{
 
     Import-DSCResource -Module nx
 
-}
-```
+   }
+   ```
+
 2. 定义配置并生成配置文档：
 
-```powershell
-Configuration ExampleConfiguration{
+   ```powershell
+   Configuration ExampleConfiguration
+   {
+        Import-DscResource -Module nx
 
-    Import-DscResource -Module nx
+        Node  "linuxhost.contoso.com"
+        {
+            nxFile ExampleFile 
+            {
+                DestinationPath = "/tmp/example"
+                Contents = "hello world `n"
+                Ensure = "Present"
+                Type = "File"
+            }
+        }
+   }
 
-    Node  "linuxhost.contoso.com"{
-    nxFile ExampleFile {
-
-        DestinationPath = "/tmp/example"
-        Contents = "hello world `n"
-        Ensure = "Present"
-        Type = "File"
-    }
-
-    }
-}
-ExampleConfiguration -OutputPath:"C:\temp"
-```
+   ExampleConfiguration -OutputPath:"C:\temp"
+   ```
 
 ### <a name="push-the-configuration-to-the-linux-computer"></a>将配置推送到 Linux 计算机
 
-可使用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet 将配置文档（MOF 文件）推送到 Linux 计算机。 若要将此 cmdlet 和 [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx) 或 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet 远程运用到 Linux 计算机，必须使用 CIMSession。 使用 [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) cmdlet 将 CIMSession 创建到 Linux 计算机中。
+可使用 [Start-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Start-DscConfiguration) cmdlet 将配置文档（MOF 文件）推送到 Linux 计算机。 若要将此 cmdlet 和 [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) 或 [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-DscConfiguration) cmdlet 远程运用到 Linux 计算机，必须使用 CIMSession。 使用 [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) cmdlet 将 CIMSession 创建到 Linux 计算机中。
 
 以下代码表明了如何创建适用于 Linux 的 DSC CIMSession。
 
@@ -121,11 +125,11 @@ $opt = New-CimSessionOption -UseSsl:$true
 $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90
 ```
 
-> **注意**：
-* 对于“推送”模式，用户凭据必须是 Linux 计算机上的根用户。
-* 适用于 Linux 的 DSC 仅支持 SSL/TLS 连接，使用 New-CimSession 时必须将 –UseSSL 参数设置为 $true。
-* 在 `/opt/omi/etc/omiserver.conf` 文件中通过 pemfile 和 keyfile 属性指定（DSC 的）OMI 使用的 SSL 证书。
-如果 [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) cmdlet 运行于的 Windows 计算机不信任此证书，你可以通过以下 CIMSession 选项选择忽略证书验证：`-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`。
+> [!NOTE]
+> 对于“推送”模式，用户凭据必须是 Linux 计算机上的根用户。
+> 适用于 Linux 的 DSC 仅支持 SSL/TLS 连接，使用 `New-CimSession` 时必须将 –UseSSL 参数设置为 $true。
+> 在 `/opt/omi/etc/omiserver.conf` 文件中通过 pemfile 和 keyfile 属性指定（DSC 的）OMI 使用的 SSL 证书。
+> 如果 [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) cmdlet 运行于的 Windows 计算机不信任此证书，你可以通过以下 CIMSession 选项选择忽略证书验证：`-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`。
 
 运行以下命令以将 DSC 配置推送到 Linux 节点。
 
@@ -138,39 +142,40 @@ $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Aut
 ### <a name="working-with-configurations-locally"></a>从本地进行配置
 
 适用于 Linux 的 DSC 包括用于从本地 Linux 计算机进行配置的脚本。 这些脚本位于 `/opt/microsoft/dsc/Scripts` 中，包括以下内容：
-* GetDscConfiguration.py
 
- 返回应用于此计算机的当前配置。 与 Windows PowerShell cmdlet Get-DscConfiguration cmdlet 类似。
+- GetDscConfiguration.py
+
+返回应用于此计算机的当前配置。 与使用 Windows PowerShell cmdlet `Get-DscConfiguration` cmdlet 类似。
 
 `# sudo ./GetDscConfiguration.py`
 
-* GetDscLocalConfigurationManager.py
+- GetDscLocalConfigurationManager.py
 
- 返回应用于此计算机的当前元配置。 与 cmdlet [Get-DSCLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) cmdlet 类似。
+返回应用于此计算机的当前元配置。 与 cmdlet [Get-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) cmdlet 类似。
 
 `# sudo ./GetDscLocalConfigurationManager.py`
 
-* InstallModule.py
+- InstallModule.py
 
- 安装自定义 DSC 资源模块。 需要包含模块共享对象库和架构 MOF 文件的 .zip 文件的路径。
+安装自定义 DSC 资源模块。 需要包含模块共享对象库和架构 MOF 文件的 .zip 文件的路径。
 
 `# sudo ./InstallModule.py /tmp/cnx_Resource.zip`
 
-* RemoveModule.py
+- RemoveModule.py
 
- 删除自定义 DSC 资源模块。 需要待删除模块的名称。
+删除自定义 DSC 资源模块。 需要待删除模块的名称。
 
 `# sudo ./RemoveModule.py cnx_Resource`
 
-* StartDscLocalConfigurationManager.py
+- StartDscLocalConfigurationManager.py
 
- 将配置 MOF 文件应用于计算机。 与 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet 类似。 需要待应用的配置 MOF 的路径。
+将配置 MOF 文件应用于计算机。 与 [Start-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Start-DscConfiguration) cmdlet 类似。 需要待应用的配置 MOF 的路径。
 
 `# sudo ./StartDscLocalConfigurationManager.py –configurationmof /tmp/localhost.mof`
 
-* SetDscLocalConfigurationManager.py
+- SetDscLocalConfigurationManager.py
 
- 将元配置 MOF 文件应用于计算机。 与 [Set-DSCLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) cmdlet 类似。 需要待应用的元配置 MOF 的路径。
+将元配置 MOF 文件应用于计算机。 与 [Set-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) cmdlet 类似。 需要待应用的元配置 MOF 的路径。
 
 `# sudo ./SetDscLocalConfigurationManager.py –configurationmof /tmp/localhost.meta.mof`
 
@@ -180,5 +185,5 @@ $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Aut
 
 |日志文件|Directory|说明|
 |---|---|---|
-|omiserver.log|/var/opt/omi/log|与 OMI CIM 服务器操作相关的消息。|
-|dsc.log|/var/opt/omi/log|与本地配置管理器 (LCM) 操作和 DSC 资源操作相关的消息。|
+|omiserver.log|`/var/opt/omi/log`|与 OMI CIM 服务器操作相关的消息。|
+|dsc.log|`/var/opt/omi/log`|与本地配置管理器 (LCM) 操作和 DSC 资源操作相关的消息。|

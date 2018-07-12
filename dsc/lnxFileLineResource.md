@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 适用于 Linux nxFileLine 资源的 DSC
-ms.openlocfilehash: 6b927839c23478aa9916a5d23836b31fccc58484
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: f2a989dd3a6746948e09ba94e279c02be8ebe2de
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219627"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893291"
 ---
 # <a name="dsc-for-linux-nxfileline-resource"></a>适用于 Linux nxFileLine 资源的 DSC
 
@@ -31,7 +31,7 @@ nxFileLine <string> #ResourceName
 |  属性 |  说明 |
 |---|---|
 | 文件路径| 要管理其在目标节点上的行的文件的完整路径。|
-| ContainsLine| 要确保存在于文件中的行。 如果此行不存在于文件中，则将其追加到该文件中。 **ContainsLine** 为必填项，但是如不需要，则可将设置为空字符串 (ContainsLine = ' ')。|
+| ContainsLine| 要确保存在于文件中的行。 如果此行不存在于文件中，则将其追加到该文件中。 ContainsLine 为必填项，但是如不需要，则可将其设置为空字符串 (`ContainsLine = ""`)。|
 | DoesNotContainPattern| 不应存在于此文件中的行的正则表达式模式。 将从文件中删除任何存在于此文件中并与正则表达式相匹配的行。|
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 **ID** 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。|
 
@@ -39,8 +39,8 @@ nxFileLine <string> #ResourceName
 
 此示例演示如何使用 **nxFileLine** 资源来配置 `/etc/sudoers` 文件，从而确保将用户 monuser 配置为“not requiretty”。
 
-```
-Import-DSCResource -Module nx
+```powershell
+Import-DscResource -Module nx
 
 nxFileLine DoNotRequireTTY
 {
