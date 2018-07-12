@@ -3,22 +3,22 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 其他有用的脚本对象
 ms.assetid: 4d781196-720b-4ccc-90d2-c570e5e719f5
-ms.openlocfilehash: 0e87e9919199e011ab5abec5b07dccc8494ad64a
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 2ae9bc1864daedbcb0070c5f3862a6c98f8db2d4
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30949819"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893274"
 ---
-# <a name="other-useful-scripting-objects"></a><span data-ttu-id="9a21c-103">其他有用的脚本对象</span><span class="sxs-lookup"><span data-stu-id="9a21c-103">Other Useful Scripting Objects</span></span>
+# <a name="other-useful-scripting-objects"></a><span data-ttu-id="53002-103">其他有用的脚本对象</span><span class="sxs-lookup"><span data-stu-id="53002-103">Other Useful Scripting Objects</span></span>
 
-<span data-ttu-id="9a21c-104">以下对象提供 Windows PowerShell ISE 中的其他脚本编写功能。</span><span class="sxs-lookup"><span data-stu-id="9a21c-104">The following objects provide additional scripting functionality in Windows PowerShell ISE.</span></span> <span data-ttu-id="9a21c-105">它们不属于 **$psISE** 层次结构。</span><span class="sxs-lookup"><span data-stu-id="9a21c-105">They are not part of the **$psISE** hierarchy.</span></span>
+<span data-ttu-id="53002-104">以下对象提供 Windows PowerShell ISE 中的其他脚本编写功能。</span><span class="sxs-lookup"><span data-stu-id="53002-104">The following objects provide additional scripting functionality in Windows PowerShell ISE.</span></span> <span data-ttu-id="53002-105">它们不属于 **$psISE** 层次结构。</span><span class="sxs-lookup"><span data-stu-id="53002-105">They are not part of the **$psISE** hierarchy.</span></span>
 
-## <a name="useful-scripting-objects"></a><span data-ttu-id="9a21c-106">有用的脚本对象</span><span class="sxs-lookup"><span data-stu-id="9a21c-106">Useful Scripting objects</span></span>
+## <a name="useful-scripting-objects"></a><span data-ttu-id="53002-106">有用的脚本对象</span><span class="sxs-lookup"><span data-stu-id="53002-106">Useful Scripting objects</span></span>
 
-### <a name="psunsupportedconsoleapplications"></a><span data-ttu-id="9a21c-107">$psUnsupportedConsoleApplications</span><span class="sxs-lookup"><span data-stu-id="9a21c-107">$psUnsupportedConsoleApplications</span></span>
+### <a name="psunsupportedconsoleapplications"></a><span data-ttu-id="53002-107">$psUnsupportedConsoleApplications</span><span class="sxs-lookup"><span data-stu-id="53002-107">$psUnsupportedConsoleApplications</span></span>
 
-<span data-ttu-id="9a21c-108">在 Windows PowerShell ISE 如何与控制台应用程序交互方面存在一些限制。</span><span class="sxs-lookup"><span data-stu-id="9a21c-108">There are some limitations on how Windows PowerShell ISE interacts with console applications.</span></span> <span data-ttu-id="9a21c-109">需要用户干预的命令或自动化脚本可能无法像从 Windows PowerShell 控制台那样工作。</span><span class="sxs-lookup"><span data-stu-id="9a21c-109">A command or an automation script that requires user intervention might not work the way it works from the Windows PowerShell console.</span></span> <span data-ttu-id="9a21c-110">你可能想阻止这些命令或脚本在 Windows PowerShell ISE 命令窗格中运行。</span><span class="sxs-lookup"><span data-stu-id="9a21c-110">You might want to block these commands or scripts from running in the Windows PowerShell ISE Command pane.</span></span> <span data-ttu-id="9a21c-111">**$PsUnsupportedConsoleApplications** 对象保留此类命令的列表。</span><span class="sxs-lookup"><span data-stu-id="9a21c-111">The **$psUnsupportedConsoleApplications** object keeps a list of such commands.</span></span> <span data-ttu-id="9a21c-112">如果你尝试运行此列表中的命令，你将收到它们不受支持的消息。</span><span class="sxs-lookup"><span data-stu-id="9a21c-112">If you try to run the commands in this list, you get a message that they are not supported.</span></span> <span data-ttu-id="9a21c-113">下面的脚本将向该列表添加一个条目。</span><span class="sxs-lookup"><span data-stu-id="9a21c-113">The following script adds an entry to the list.</span></span>
+<span data-ttu-id="53002-108">在 Windows PowerShell ISE 如何与控制台应用程序交互方面存在一些限制。</span><span class="sxs-lookup"><span data-stu-id="53002-108">There are some limitations on how Windows PowerShell ISE interacts with console applications.</span></span> <span data-ttu-id="53002-109">需要用户干预的命令或自动化脚本可能无法像从 Windows PowerShell 控制台那样工作。</span><span class="sxs-lookup"><span data-stu-id="53002-109">A command or an automation script that requires user intervention might not work the way it works from the Windows PowerShell console.</span></span> <span data-ttu-id="53002-110">你可能想阻止这些命令或脚本在 Windows PowerShell ISE 命令窗格中运行。</span><span class="sxs-lookup"><span data-stu-id="53002-110">You might want to block these commands or scripts from running in the Windows PowerShell ISE Command pane.</span></span> <span data-ttu-id="53002-111">**$PsUnsupportedConsoleApplications** 对象保留此类命令的列表。</span><span class="sxs-lookup"><span data-stu-id="53002-111">The **$psUnsupportedConsoleApplications** object keeps a list of such commands.</span></span> <span data-ttu-id="53002-112">如果你尝试运行此列表中的命令，你将收到它们不受支持的消息。</span><span class="sxs-lookup"><span data-stu-id="53002-112">If you try to run the commands in this list, you get a message that they are not supported.</span></span> <span data-ttu-id="53002-113">下面的脚本将向该列表添加一个条目。</span><span class="sxs-lookup"><span data-stu-id="53002-113">The following script adds an entry to the list.</span></span>
 
 ```powershell
 # List the unsupported commands
@@ -31,49 +31,49 @@ $psUnsupportedConsoleApplications.Add('Mycommand')
 $psUnsupportedConsoleApplications
 ```
 
-### <a name="pslocalhelp"></a><span data-ttu-id="9a21c-114">$psLocalHelp</span><span class="sxs-lookup"><span data-stu-id="9a21c-114">$psLocalHelp</span></span>
+### <a name="pslocalhelp"></a><span data-ttu-id="53002-114">$psLocalHelp</span><span class="sxs-lookup"><span data-stu-id="53002-114">$psLocalHelp</span></span>
 
-<span data-ttu-id="9a21c-115">这是维护帮助主题和本地已编译的 HTML 帮助文件中和其关联链接之间的上下文相关映射的字典对象。</span><span class="sxs-lookup"><span data-stu-id="9a21c-115">This is a dictionary object that maintains a context-sensitive mapping between Help topics and their associated links in the local compiled HTML Help file.</span></span> <span data-ttu-id="9a21c-116">它用于查找有关某个特定主题的本地帮助。</span><span class="sxs-lookup"><span data-stu-id="9a21c-116">It is used to locate the local Help for a particular topic.</span></span> <span data-ttu-id="9a21c-117">你可以添加或删除此列表中的主题。</span><span class="sxs-lookup"><span data-stu-id="9a21c-117">You can add or delete topics from this list.</span></span> <span data-ttu-id="9a21c-118">下面的代码示例显示了 **$psLocalHelp** 中包含的一些示例键值对。</span><span class="sxs-lookup"><span data-stu-id="9a21c-118">The following code example shows some example key-value pairs that are contained in **$psLocalHelp**.</span></span>
+<span data-ttu-id="53002-115">这是维护帮助主题和本地已编译的 HTML 帮助文件中和其关联链接之间的上下文相关映射的字典对象。</span><span class="sxs-lookup"><span data-stu-id="53002-115">This is a dictionary object that maintains a context-sensitive mapping between Help topics and their associated links in the local compiled HTML Help file.</span></span> <span data-ttu-id="53002-116">它用于查找有关某个特定主题的本地帮助。</span><span class="sxs-lookup"><span data-stu-id="53002-116">It is used to locate the local Help for a particular topic.</span></span> <span data-ttu-id="53002-117">你可以添加或删除此列表中的主题。</span><span class="sxs-lookup"><span data-stu-id="53002-117">You can add or delete topics from this list.</span></span> <span data-ttu-id="53002-118">下面的代码示例显示了 `$psLocalHelp` 中包含的一些示例键值对。</span><span class="sxs-lookup"><span data-stu-id="53002-118">The following code example shows some example key-value pairs that are contained in `$psLocalHelp`.</span></span>
 
 ```powershell
 # See the local help map
 $psLocalHelp | Format-List
 ```
 
-### <a name="sample-output"></a><span data-ttu-id="9a21c-119">示例输出</span><span class="sxs-lookup"><span data-stu-id="9a21c-119">Sample Output</span></span>
+### <a name="pslocalhelp-sample-output"></a><span data-ttu-id="53002-119">$psLocalHelp 示例输出</span><span class="sxs-lookup"><span data-stu-id="53002-119">$psLocalHelp Sample Output</span></span>
 
 |||
 |-|-|
-|<span data-ttu-id="9a21c-120">键：Add-Computer</span><span class="sxs-lookup"><span data-stu-id="9a21c-120">Key : Add-Computer</span></span>|<span data-ttu-id="9a21c-121">值：WindowsPowerShellHelp.chm::/html/093f660c-b8d5-43cf-aa0c-54e5e54e76f9.htm</span><span class="sxs-lookup"><span data-stu-id="9a21c-121">Value : WindowsPowerShellHelp.chm::/html/093f660c-b8d5-43cf-aa0c-54e5e54e76f9.htm</span></span>|
-|<span data-ttu-id="9a21c-122">键：Add-Content</span><span class="sxs-lookup"><span data-stu-id="9a21c-122">Key : Add-Content</span></span>|<span data-ttu-id="9a21c-123">值：WindowsPowerShellHelp.chm::/html/0c836a1b-f389-4e9a-9325-0f415686d194.htm</span><span class="sxs-lookup"><span data-stu-id="9a21c-123">Value : WindowsPowerShellHelp.chm::/html/0c836a1b-f389-4e9a-9325-0f415686d194.htm</span></span>|
+|<span data-ttu-id="53002-120">键：Add-Computer</span><span class="sxs-lookup"><span data-stu-id="53002-120">Key : Add-Computer</span></span>|<span data-ttu-id="53002-121">值：WindowsPowerShellHelp.chm::/html/093f660c-b8d5-43cf-aa0c-54e5e54e76f9.htm</span><span class="sxs-lookup"><span data-stu-id="53002-121">Value : WindowsPowerShellHelp.chm::/html/093f660c-b8d5-43cf-aa0c-54e5e54e76f9.htm</span></span>|
+|<span data-ttu-id="53002-122">键：Add-Content</span><span class="sxs-lookup"><span data-stu-id="53002-122">Key : Add-Content</span></span>|<span data-ttu-id="53002-123">值：WindowsPowerShellHelp.chm::/html/0c836a1b-f389-4e9a-9325-0f415686d194.htm</span><span class="sxs-lookup"><span data-stu-id="53002-123">Value : WindowsPowerShellHelp.chm::/html/0c836a1b-f389-4e9a-9325-0f415686d194.htm</span></span>|
 
-<span data-ttu-id="9a21c-124">下面的脚本将向该列表添加一个条目。</span><span class="sxs-lookup"><span data-stu-id="9a21c-124">The following script adds an entry to the list.</span></span>
+<span data-ttu-id="53002-124">下面的脚本将向该列表添加一个条目。</span><span class="sxs-lookup"><span data-stu-id="53002-124">The following script adds an entry to the list.</span></span>
 
 ```powershell
 $psLocalHelp.Add("get-myNoun", "c:\MyFolder\MyHelpChm.chm::/html/0198854a-1298-57ae-aa0c-87b5e5a84712.htm")
 ```
 
-### <a name="psonlinehelp"></a><span data-ttu-id="9a21c-125">$psOnlineHelp</span><span class="sxs-lookup"><span data-stu-id="9a21c-125">$psOnlineHelp</span></span>
+### <a name="psonlinehelp"></a><span data-ttu-id="53002-125">$psOnlineHelp</span><span class="sxs-lookup"><span data-stu-id="53002-125">$psOnlineHelp</span></span>
 
-<span data-ttu-id="9a21c-126">这是维护帮助主题的主题标题和其关联外部 URL 之间的上下文相关映射的字典对象。</span><span class="sxs-lookup"><span data-stu-id="9a21c-126">This is a dictionary object that maintains a context-sensitive mapping between topic titles of Help topics and their associated external URLs.</span></span> <span data-ttu-id="9a21c-127">它用于查找 Web 上有关某个特定主题的帮助。</span><span class="sxs-lookup"><span data-stu-id="9a21c-127">It is used to locate the Help for a particular topic on the web.</span></span> <span data-ttu-id="9a21c-128">你可以添加或删除此列表中的主题。</span><span class="sxs-lookup"><span data-stu-id="9a21c-128">You can add or delete topics from this list.</span></span>
+<span data-ttu-id="53002-126">这是维护帮助主题的主题标题和其关联外部 URL 之间的上下文相关映射的字典对象。</span><span class="sxs-lookup"><span data-stu-id="53002-126">This is a dictionary object that maintains a context-sensitive mapping between topic titles of Help topics and their associated external URLs.</span></span> <span data-ttu-id="53002-127">它用于查找 Web 上有关某个特定主题的帮助。</span><span class="sxs-lookup"><span data-stu-id="53002-127">It is used to locate the Help for a particular topic on the web.</span></span> <span data-ttu-id="53002-128">你可以添加或删除此列表中的主题。</span><span class="sxs-lookup"><span data-stu-id="53002-128">You can add or delete topics from this list.</span></span>
 
 ```powershell
 $psOnlineHelp | Format-List
 ```
 
-### <a name="sample-output"></a><span data-ttu-id="9a21c-129">示例输出</span><span class="sxs-lookup"><span data-stu-id="9a21c-129">Sample Output</span></span>
+## <a name="psonilnehelp-sample-output"></a><span data-ttu-id="53002-129">$psOnilneHelp 示例输出</span><span class="sxs-lookup"><span data-stu-id="53002-129">$psOnilneHelp Sample Output</span></span>
 
 |||
 |-|-|
-|<span data-ttu-id="9a21c-130">键：Add-Computer</span><span class="sxs-lookup"><span data-stu-id="9a21c-130">Key : Add-Computer</span></span>|<span data-ttu-id="9a21c-131">值：http://go.microsoft.com/fwlink/p/?LinkID=135194</span><span class="sxs-lookup"><span data-stu-id="9a21c-131">Value : http://go.microsoft.com/fwlink/p/?LinkID=135194</span></span>|
-|<span data-ttu-id="9a21c-132">键：Add-Content</span><span class="sxs-lookup"><span data-stu-id="9a21c-132">Key : Add-Content</span></span>|<span data-ttu-id="9a21c-133">值：http://go.microsoft.com/fwlink/p/?LinkID=113278</span><span class="sxs-lookup"><span data-stu-id="9a21c-133">Value : http://go.microsoft.com/fwlink/p/?LinkID=113278</span></span>|
+|<span data-ttu-id="53002-130">键：Add-Computer</span><span class="sxs-lookup"><span data-stu-id="53002-130">Key : Add-Computer</span></span>|<span data-ttu-id="53002-131">值：http://go.microsoft.com/fwlink/p/?LinkID=135194</span><span class="sxs-lookup"><span data-stu-id="53002-131">Value : http://go.microsoft.com/fwlink/p/?LinkID=135194</span></span>|
+|<span data-ttu-id="53002-132">键：Add-Content</span><span class="sxs-lookup"><span data-stu-id="53002-132">Key : Add-Content</span></span>|<span data-ttu-id="53002-133">值：http://go.microsoft.com/fwlink/p/?LinkID=113278</span><span class="sxs-lookup"><span data-stu-id="53002-133">Value : http://go.microsoft.com/fwlink/p/?LinkID=113278</span></span>|
 
- <span data-ttu-id="9a21c-134">下面的脚本将向该列表添加一个条目。</span><span class="sxs-lookup"><span data-stu-id="9a21c-134">The following script adds an entry to the list.</span></span>
+<span data-ttu-id="53002-134">下面的脚本将向该列表添加一个条目。</span><span class="sxs-lookup"><span data-stu-id="53002-134">The following script adds an entry to the list.</span></span>
 
 ```powershell
 $psOnlineHelp.Add("get-myNoun", "http://www.mydomain.com/MyNoun.html")
 ```
 
-## <a name="see-also"></a><span data-ttu-id="9a21c-135">另请参阅</span><span class="sxs-lookup"><span data-stu-id="9a21c-135">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="53002-135">另请参阅</span><span class="sxs-lookup"><span data-stu-id="53002-135">See Also</span></span>
 
-- [<span data-ttu-id="9a21c-136">Windows PowerShell ISE 脚本对象模型的用途</span><span class="sxs-lookup"><span data-stu-id="9a21c-136">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+[<span data-ttu-id="53002-136">Windows PowerShell ISE 脚本对象模型的用途</span><span class="sxs-lookup"><span data-stu-id="53002-136">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
