@@ -19,7 +19,7 @@ ms.locfileid: "30949224"
 
 若要从可用选择中自动填充文件名或路径，键入部分名称并按下 **Tab** 键。 PowerShell 会自动将名称扩展至找到的第一个匹配项。 重复按下 **Tab** 将循环浏览所有可用选择。
 
-cmdlet 名称的 Tab 键扩展稍有不同。 若要在 cmdlet 名称上使用 Tab 键扩充，键入名称的整个第一部分（即谓词），然后是后跟的连字符。 你可以填入名称的更多内容以进行部分匹配。 例如，如果键入 get-co 然后按下 Tab 键，PowerShell 会自动将其扩展为 Get-Command cmdlet（注意，还会将字母的大小写改为标准形式）。 如果再次按下 Tab 键，PowerShell 会将此替换为另一个唯一匹配的 cmdlet 名称，Get-Content。
+名称的 Tab 键扩展稍有不同。 若要在 cmdlet 名称上使用 Tab 键扩充，键入名称的整个第一部分（即谓词），然后是后跟的连字符。 你可以填入名称的更多内容以进行部分匹配。 例如，如果键入 get-co 然后按下 Tab 键，PowerShell 会自动将其扩展为 Get-Command cmdlet（注意，还会将字母的大小写改为标准形式）。 如果再次按下 Tab 键，PowerShell 会将此替换为另一个唯一匹配的 cmdlet 名称，Get-Content。
 
 你可以在同一行上重复使用 Tab 键扩展。 例如，你可以通过输入以下内容在 **Get-Content** cmdlet 的名称上使用 Tab 键扩展：
 
