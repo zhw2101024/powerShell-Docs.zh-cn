@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell Web 访问的授权规则和安全功能
-ms.openlocfilehash: a3a743d83ae3e387ee51056042c98753104e925e
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 14bb18cfc5d9826523a239aede42307a7688eaf5
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893716"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094239"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 访问的授权规则和安全功能
 
@@ -163,9 +163,8 @@ Get-PswaAuthorizationRule `
 
 - 管理员已设置专用测试环境，希望可让所有授权的网络用户通过他们经常访问的网络访问所有计算机，并持有对所有他们经常访问的会话配置的访问权限。 因为这是专用测试环境，管理员创建了不安全的授权规则。 - 管理员运行的 cmdlet `Add-PswaAuthorizationRule * * *`，使用通配符 **\*** 来表示所有用户、所有计算机和所有配置。 - 此规则与下列各项等效：`Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`。
 
-  >[!NOTE]
-  >
-  >此规则不建议在安全的环境中使用，它可绕过 Windows PowerShell Web 访问提供的授权规则安全层。
+  > [!NOTE]
+  > 此规则不建议在安全的环境中使用，它可绕过 Windows PowerShell Web 访问提供的授权规则安全层。
 
 - 管理员必须允许用户连接到同时包含工作组和域的环境中的目标计算机，其中工作组计算机偶尔用于连接到域中的目标计算机，域中的计算机偶尔用于连接到工作组中的目标计算机。 管理员具有工作组中的网关服务器 *PswaServer*，并且目标计算机 *srv1.contoso.com* 位于域中。 用户 *Chris* 既是工作组网关服务器又是目标计算机上的授权本地用户。 他在工作组服务器上的用户名为 *chrisLocal*，他在目标计算机上的用户名为 *contoso\\chris*。 若要授权 Chris 可访问 srv1.contoso.com，管理员会添加以下规则。
 
@@ -180,10 +179,9 @@ Add-PswaAuthorizationRule -userName PswaServer\chrisLocal `
 
 1. 工作组网关服务器上的身份验证，方法是向授权规则添加采用 *server_name*\\*user_name* 格式的用户名
 
-2. 目标计算机上的身份验证，方法是使用“可选连接设置”区域的登录页面中提供的备用凭据
+1. 目标计算机上的身份验证，方法是使用“可选连接设置”区域的登录页面中提供的备用凭据
 
    > [!NOTE]
-   >
    > 如果网关和目标计算机位于不同的工作组或域中，则必须在两个工作组计算机之间、两个域之间或工作组和域之间建立信任关系。 不能使用 Windows PowerShell Web 访问授权规则 cmdlet 配置此关系。 授权规则不会定义计算机之间的信任关系，它们仅可授权用户连接到特定目标计算机和会话配置。 有关如何配置不同域之间信任关系的详细信息，请参阅[创建域和林信任](https://technet.microsoft.com/library/cc794775.aspx")。
    > 有关如何向受信任主机列表中添加工作组计算机的详细信息，请参阅[使用服务器管理器进行远程管理](https://technet.microsoft.com/library/dd759202.aspx)
 

@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 安装和使用 Windows PowerShell Web 访问
-ms.openlocfilehash: d60670954d6ab6998e905382383d60ead1129d31
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: c14da421e372f6c4c4f203b16bbd37f28a9ba255
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893750"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094256"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>安装和使用 Windows PowerShell Web 访问
 
@@ -330,29 +330,29 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。
 
    - 在 Windows“开始”屏幕上，键入“Internet 信息服务 (IIS) 管理器”名称的任何部分。 当它在“应用程序”结果中显示时，单击快捷方式。
 
-2. 在 IIS 管理器树窗格中，展开已安装 Windows PowerShell Web 访问的服务器的节点，直到“站点”文件夹可见。 选择“站点”文件夹。
+1. 在 IIS 管理器树窗格中，展开已安装 Windows PowerShell Web 访问的服务器的节点，直到“站点”文件夹可见。 选择“站点”文件夹。
 
-3. 在**操作**窗格中，单击**添加网站**。
+1. 在**操作**窗格中，单击**添加网站**。
 
-4. 键入网站的名称，例如**Windows PowerShell Web 访问**。
+1. 键入网站的名称，例如**Windows PowerShell Web 访问**。
 
-5. 新网站的应用程序池自动创建。 若果使用其他应用程序池，请单击“选择”，以选择与新网站相关的应用程序池。 在**选择应用程序池**对话框中选择备用的应用程序池，然后单击**确定**。
+1. 新网站的应用程序池自动创建。 若果使用其他应用程序池，请单击“选择”，以选择与新网站相关的应用程序池。 在**选择应用程序池**对话框中选择备用的应用程序池，然后单击**确定**。
 
-6. 在“物理路径”文本框中，导航到 %*windir%*/Web/PowerShellWebAccess/wwwroot。
+1. 在“物理路径”文本框中，导航到 %*windir%*/Web/PowerShellWebAccess/wwwroot。
 
-7. 在**绑定**区域的**类型**字段中，选择**https**。
+1. 在**绑定**区域的**类型**字段中，选择**https**。
 
-8. 向网站分配一个不再被其他网站或应用程序使用的端口号。 若要定位打开的端口，你可在“命令提示符”窗口中运行 **netstat** 命令。 默认端口号为 443。
+1. 向网站分配一个不再被其他网站或应用程序使用的端口号。 若要定位打开的端口，你可在“命令提示符”窗口中运行 **netstat** 命令。 默认端口号为 443。
 
    如果其他网站已经使用 443，或你有其他更改端口号的安全原因，则更改默认端口。 如果在你的网关服务器上运行的其他网站使用你所选的端口，当你在“添加网站”对话框中单击“确定”时，将会显示一条警告信息。 必须使用未使用的端口运行 Windows PowerShell Web 访问。
 
-9. 此外，如果你的组织有需要，请指定你的组织和用户都接受的主机名称，例如 **www.contoso.com**。 单击**确定**。
+1. 此外，如果你的组织有需要，请指定你的组织和用户都接受的主机名称，例如 **www.contoso.com**。 单击**确定**。
 
-10. 为提高生产环境的安全性，我们强烈建议提供证书颁发机构已签名的有效证书。 你必须提供 SSL 证书，因为用户仅可通过 HTTPS 网站连接到 Windows PowerShell Web 访问。 有关如何获得证书的详细信息，请参阅本主题中的[在 IIS Manager 中配置 SSL 证书](#to-configure-an-ssl-certificate-in-iis-Manager)。
+1. 为提高生产环境的安全性，我们强烈建议提供证书颁发机构已签名的有效证书。 你必须提供 SSL 证书，因为用户仅可通过 HTTPS 网站连接到 Windows PowerShell Web 访问。 有关如何获得证书的详细信息，请参阅本主题中的[在 IIS Manager 中配置 SSL 证书](#to-configure-an-ssl-certificate-in-iis-Manager)。
 
-11. 单击“确定”关闭“添加网站”对话框。
+1. 单击“确定”关闭“添加网站”对话框。
 
-12. 在使用提升的用户权限打开的 Windows PowerShell 会话（以管理员身份运行）中，运行以下脚本（其中 *application_pool_name* 表示你在步骤 4 中创建的应用程序池的名称），以便向应用程序池提供授权文件的访问权限。
+1. 在使用提升的用户权限打开的 Windows PowerShell 会话（以管理员身份运行）中，运行以下脚本（其中 _application_pool_name_ 表示你在步骤 4 中创建的应用程序池的名称），以便向应用程序池提供授权文件的访问权限。
 
     ```    
     $applicationPoolName = "<application_pool_name>"
@@ -366,11 +366,11 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。
     c:\windows\system32\icacls.exe $authorizationFile
     ```
 
-13. 利用在 IIS 管理器树窗格中选择的新网站，单击“操作”  窗格中的“启动”  ，以启动网站。
+1. 利用在 IIS 管理器树窗格中选择的新网站，单击“操作”  窗格中的“启动”  ，以启动网站。
 
-14. 在客户端设备上打开浏览器会话。 有关受支持的浏览器和设备的详细信息，请参阅本文档中的[浏览器和客户端设备支持](#browser-and-client-device-support)。
+1. 在客户端设备上打开浏览器会话。 有关受支持的浏览器和设备的详细信息，请参阅本文档中的[浏览器和客户端设备支持](#browser-and-client-device-support)。
 
-15. 打开新的 Windows PowerShell Web 访问网站。
+1. 打开新的 Windows PowerShell Web 访问网站。
 
     因为根网站指向 Windows PowerShell Web 访问文件夹，所以打开 https://\<gateway_server_name\>时，浏览器应显示 Windows PowerShell Web 访问登录网页。 你无需向 URL 添加 **/pswa**。
 
@@ -393,11 +393,11 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。
 
    - 在 Windows **开始**屏幕上，右键单击**Windows PowerShell**，然后单击**以管理员身份运行**。
 
-2. ![安全说明](images/SecurityNote.jpeg) 使用会话配置限制用户访问的可选步骤：
+1. ![安全说明](images/SecurityNote.jpeg) 使用会话配置限制用户访问的可选步骤：
 
    确保规则中已经存在你要使用的会话配置。 如果尚未创建这些配置，则使用 [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations) 中用于创建会话配置的说明。
 
-3. 键入以下命令，然后按**Enter**。
+1. 键入以下命令，然后按**Enter**。
 
    Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
@@ -407,7 +407,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。
 
    Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4. 验证是否已通过运行 `Get-PswaAuthorizationRule` cmdlet 或 `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>` 创建了规则。
+1. 验证是否已通过运行 `Get-PswaAuthorizationRule` cmdlet 或 `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>` 创建了规则。
 
    例如，`Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`。
 
@@ -421,9 +421,9 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。
 
 1. 在 IIS 管理器树窗格中，选择已安装 Windows PowerShell Web 访问的服务器。
 
-2. 在内容窗格中，双击**服务器证书**。
+1. 在内容窗格中，双击**服务器证书**。
 
-3. 在“操作”窗格中，执行以下操作之一。 有关在 IIS 中配置服务器证书的详细信息，请参阅[在 IIS 7 中配置服务器证书](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10))。
+1. 在“操作”窗格中，执行以下操作之一。 有关在 IIS 中配置服务器证书的详细信息，请参阅[在 IIS 7 中配置服务器证书](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10))。
 
    - 单击“导入”，以从网络上的位置中导入现有的有效证书。
 
@@ -433,11 +433,11 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。
 
    - 单击“创建自签名的证书”，以创建你可立即使用的证书，必要时稍后再由 CA 签名。 为自签名的证书指定一个友好名称，例如 **Windows PowerShell Web 访问**。 此选项被视为不安全的，仅建议在专用测试环境中使用。
 
-4. 创建或获得证书后，在 IIS 管理器树窗格中选择要应用证书的网站（如默认网站），然后单击“操作”窗格中的“绑定”。
+1. 创建或获得证书后，在 IIS 管理器树窗格中选择要应用证书的网站（如默认网站），然后单击“操作”窗格中的“绑定”。
 
-5. 如果尚未显示，则在“添加网站绑定”对话框中，向网站添加 **https** 绑定。 如果使用的不是自签名的证书，请从本程序的步骤 3 中指定主机名称。 如果使用的是自签名的证书，则无需执行此步骤。
+1. 如果尚未显示，则在“添加网站绑定”对话框中，向网站添加 **https** 绑定。 如果使用的不是自签名的证书，请从本程序的步骤 3 中指定主机名称。 如果使用的是自签名的证书，则无需执行此步骤。
 
-6. 选择要使用或在步骤 3 中创建的证书，然后单击**确定**。
+1. 选择要使用或在步骤 3 中创建的证书，然后单击**确定**。
 
 ## <a name="using-the-web-based-windows-powershell-console"></a>使用基于 Web 的 Windows PowerShell 控制台
 
