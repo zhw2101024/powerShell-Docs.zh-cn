@@ -46,8 +46,8 @@ SSH 子系统用于在远程计算机上创建 PowerShell 进程，且 SSH 服�
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. 按照 [安装] 说明从 GitHub 安装 [Win32 OpenSSH] 最新版本
-3. 编辑 Win32 OpenSSH 安装位置中的 sshd_config 文件
+1. 按照 [安装] 说明从 GitHub 安装 [Win32 OpenSSH] 最新版本
+1. 编辑 Win32 OpenSSH 安装位置中的 sshd_config 文件
    - 确保已启用密码身份验证
 
    ```
@@ -59,8 +59,8 @@ SSH 子系统用于在远程计算机上创建 PowerShell 进程，且 SSH 服�
     ```
 
     > [!NOTE]
-    OpenSSH for Windows 中存在一个 bug，使空格在子系统可执行路径中无效。
-    请参阅 [GitHub 上的此问题以了解详细信息](https://github.com/PowerShell/Win32-OpenSSH/issues/784)。
+    > OpenSSH for Windows 中存在一个 bug，使空格在子系统可执行路径中无效。
+    > 请参阅 [GitHub 上的此问题以了解详细信息](https://github.com/PowerShell/Win32-OpenSSH/issues/784)。
 
     一种解决方案是创建不包含空格的 Powershell 安装目录 symlink：
 
@@ -84,27 +84,27 @@ SSH 子系统用于在远程计算机上创建 PowerShell 进程，且 SSH 服�
    PubkeyAuthentication yes
    ```
 
-4. 重启 sshd 服务
+1. 重启 sshd 服务
 
    ```powershell
    Restart-Service sshd
    ```
 
-5. 将 OpenSSH 的安装路径添加到 Path Env Variable
+1. 将 OpenSSH 的安装路径添加到 Path Env Variable
    - 这应该沿着 `C:\Program Files\OpenSSH\` 行
    - 这样可找到 ssh.exe
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>在 Linux (Ubuntu 14.04) 计算机上安装
 
 1. 从 GitHub 安装 [适用于 Linux 的 PowerShell Core] 最新版本
-2. 按需安装 [Ubuntu SSH]
+1. 按需安装 [Ubuntu SSH]
 
    ```bash
    sudo apt install openssh-client
    sudo apt install openssh-server
    ```
 
-3. 编辑 /etc/ssh 位置中的 sshd_config 文件
+1. 编辑 /etc/ssh 位置中的 sshd_config 文件
    - 确保已启用密码身份验证
 
    ```
@@ -123,7 +123,7 @@ SSH 子系统用于在远程计算机上创建 PowerShell 进程，且 SSH 服�
    PubkeyAuthentication yes
    ```
 
-4. 重启 sshd 服务
+1. 重启 sshd 服务
 
    ```bash
    sudo service sshd restart
@@ -137,7 +137,7 @@ SSH 子系统用于在远程计算机上创建 PowerShell 进程，且 SSH 服�
      - 单击 `Sharing`
      - 检查 `Remote Login` - 应为 `Remote Login: On`
      - 允许相应用户访问
-2. 编辑 `/private/etc/ssh/sshd_config` 位置中的 `sshd_config` 文件
+1. 编辑 `/private/etc/ssh/sshd_config` 位置中的 `sshd_config` 文件
    - 使用常用编辑器或者
 
      ```bash
@@ -162,7 +162,7 @@ SSH 子系统用于在远程计算机上创建 PowerShell 进程，且 SSH 服�
      PubkeyAuthentication yes
      ```
 
-3. 重启 sshd 服务
+1. 重启 sshd 服务
 
    ```bash
    sudo launchctl stop com.openssh.sshd

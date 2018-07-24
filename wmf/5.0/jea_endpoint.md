@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: 66db78cfb136f22cad9078d7113dad085ee667a5
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e4910e95a417da61661aaddd98b2dc7da9f98a3d
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188422"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093712"
 ---
 # <a name="creating-and-connecting-to-a-jea-endpoint"></a>创建并连接到 JEA 终结点
 若要创建 JEA 终结点，需要创建并注册一个专门配置 PowerShell 会话配置文件，可以使用 **New-PSSessionConfigurationFile** cmdlet 生成该文件。
@@ -128,8 +128,8 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 # AssembliesToLoad = 'System.Web', 'System.OtherAssembly, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 
 }
-
 ```
+
 要想 JEA 会话配置能使用角色功能，则必须在名为“RoleCapabilities”的目录中将其保存为有效的 PowerShell 模块。 如果需要，一个模块可以有多个角色功能文件。
 
 若要开始配置当用户接到 JEA 会话时可以访问哪些 cmdlet、函数、别名和脚本，请在注释模板后将你自己的规则添加到“角色功能”文件。 要深入了解如何配置“角色功能”，请查看完整的[体验指南](http://aka.ms/JEA)。
@@ -141,10 +141,12 @@ Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfi
 ```
 
 ## <a name="connect-to-a-jea-endpoint"></a>连接到 JEA 终结点
+
 连接到 JEA 终结点与连接到任何其他 PowerShell 终结点的工作原理相同。  只需将 JEA 终结点命名为与 **New-PSSession**、**Invoke-Command**  或 **Enter-PSSession** 的“ConfigurationName”参数相同即可。
 
 ```powershell
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
+
 如果已连接到 JEA 会话，运行你有权访问的列在允许列表中的“角色功能”将会受限。
  如果尝试运行任何不允许你的角色运行的命令，将会遇到错误。

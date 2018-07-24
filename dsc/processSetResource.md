@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: DSC ProcessSet 资源
-ms.openlocfilehash: 412cf1076996126f0d9b7a9a8ebbc9bdb7ecf377
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: d18d2c96239abd83cea735e0fbce198d0456cea6
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189918"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093984"
 ---
 # <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess 资源
 
@@ -33,6 +33,7 @@ WindowsProcess [string] #ResourceName
 ```
 
 ## <a name="properties"></a>“属性”
+
 |  属性  |  说明   |
 |---|---|
 | 参数| 包含要原样传递到进程的参数的字符串。 如果需要传递多个参数，请将它们全部放在此字符串中。|

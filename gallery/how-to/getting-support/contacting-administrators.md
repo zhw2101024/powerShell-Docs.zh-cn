@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 title: 联系库管理员
-ms.openlocfilehash: 6673b1a8e92312f343d6f809b4a708c400ef20f2
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: c919848e93a1f061ac0bf7dec8ef568e41212ef7
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218886"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093815"
 ---
 # <a name="contact-gallery-administrators"></a>联系库管理员
 
@@ -24,6 +24,6 @@ ms.locfileid: "34218886"
 
 ## <a name="how-to-contact-gallery-administrators"></a>如何联系库管理员
 
-1. 向我们 (cgadmin@microsoft.com) 发送电子邮件。
+1. 向我们 (<cgadmin@microsoft.com>) 发送电子邮件。
 2. 如果你要报告项的滥用行为，可在左面板上的项信息下方找到“报告滥用行为”链接。
 3. 有关库的其他常规问题，请将问题提交到 [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell)

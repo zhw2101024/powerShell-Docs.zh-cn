@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 配置数据中的凭据选项
-ms.openlocfilehash: 2c6685f3b6992537d1652f172cf926b85dd634c6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 12bb8d8ce5fc4685e583e74d411b098320ac4fd4
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190037"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093671"
 ---
 # <a name="credentials-options-in-configuration-data"></a>配置数据中的凭据选项
 >适用于：Windows PowerShell 5.0
@@ -273,8 +273,6 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 > `NodeName` 不等同于星号，必须指定具体的节点名称。
 
 **因为存在重大安全风险，Microsoft 建议避免使用纯文本密码。**
-
-使用 Azure Automation DSC 服务时例外，原因是数据始终加密存储（传输中、服务中静态或节点中静态）。
 
 ## <a name="domain-credentials"></a>域凭据
 

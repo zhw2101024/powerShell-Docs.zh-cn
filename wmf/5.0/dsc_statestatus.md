@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: 0e8d0cb1e4afa7bc791d45bfb0b981654cb09ed5
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: b279d388754c5ee42215f21317f7b3d8089b7608
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892563"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093875"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>统一且一致的状态和状态表示形式
 
@@ -15,11 +15,11 @@ ms.locfileid: "37892563"
 根据下列规则再次访问并统一了 LCM 状态和 DSC 操作状态的表示形式：
 
 1. Notprocessed 资源不会影响 LCM 状态和 DSC 状态。
-2. 一旦 LCM 遇到请求重新启动的资源，它将停止处理更多资源。
-3. 直到实重新启动实际发生，请求重新启动的资源才处于所需状态。
-4. 出现失败的资源后，LCM 将继续处理更多资源（只要这些资源不依赖于失败的资源）。
-5. `Get-DscConfigurationStatus` cmdlet 返回的总体状态是所有资源状态的超集。
-6. PendingReboot 状态是 PendingConfiguration 状态的超集。
+1. 一旦 LCM 遇到请求重新启动的资源，它将停止处理更多资源。
+1. 直到实重新启动实际发生，请求重新启动的资源才处于所需状态。
+1. 出现失败的资源后，LCM 将继续处理更多资源（只要这些资源不依赖于失败的资源）。
+1. `Get-DscConfigurationStatus` cmdlet 返回的总体状态是所有资源状态的超集。
+1. PendingReboot 状态是 PendingConfiguration 状态的超集。
 
    下表说明了在使用典型方案时产生的状态和与状态关联属性。
 

@@ -3,12 +3,12 @@ ms.date: 09/26/2017
 contributor: keithb
 keywords: 库,powershell,cmdlet,psget
 title: 预发行模块版本
-ms.openlocfilehash: 2a4fcd40353450e5ba03910984c5a05772a93d0d
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 371aae7eed4afe341755133c5ee2d356cd5876e0
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189833"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093773"
 ---
 # <a name="prerelease-module-versions"></a>预发行模块版本
 
@@ -108,7 +108,6 @@ C:\windows\system32> Get-InstalledModule TestPackage
 Version         Name                                Repository           Description
 -------         ----                                ----------           -----------
 1.9.0-alpha     TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
-
 ```
 
 如果模块仅仅是因为指定的预发行版而有所区别，则不支持并行安装该模块的各版本。 使用 PowerShellGet 安装模块时，通过使用 ModuleVersion 创建文件夹名称，并行安装同一模块的不同版本。 不含预发行版字符串的 ModuleVersion 可用作文件夹名称。 用户安装 MyModule 的 2.5.0-alpha 版本时，会安装到 MyModule\2.5.0 文件夹。 如果用户之后安装 2.5.0-beta，则 2.5.0-beta 版本会覆盖文件夹 MyModule\2.5.0 的内容。 此方法的一个优点是安装生产就绪版本后无需卸载预发行版本。 以下示例展示了期望的效果：
