@@ -31,24 +31,47 @@ PowerShell Core 的版本 6.x 分支（例如 6.0、6.1、6.2 等）大约每六
 
 ## <a name="supported-platforms"></a>支持平台
 
-PowerShell Core 在以下平台上受到正式支持：
+请参阅下表，了解所用 PowerShell Core 版本正式支持哪些平台。
 
-* Windows 7、8.1 和 10
-* Windows Server 2008 R2、2012 R2、2016
-* [Windows Server 半年频道][semi-annual]
-* Ubuntu 14.04、16.04 和 17.04
-* Debian 8.7+ 和 9
-* CentOS 7
-* Red Hat Enterprise Linux 7
-* OpenSUSE 42.2
-* Fedora 27、28
-* macOS 10.12+
+我们社区也为某些平台提供包，但这些平台不受正式支持。
+这些包在表中标记为 `Community`。
 
-我们社区也为以下平台提供包，但是它们不受正式支持：
+列为 `Experimental` 的平台不受正式支持，但可用于实验和反馈。
 
-* Arch Linux
-* Kali Linux
-* AppImage（可在多个 Linux 平台上运行）
+|                                                   | 6.0         | 6.1         |
+|---------------------------------------------------|:-----------:|:-----------:|
+| Windows 7、8.1 和 10                            | 支持   | 支持   |
+| Windows Server 2008 R2、2012 R2、2016             | 支持   | 支持   |
+| [Windows Server 半年频道][semi-annual] | 支持   | 支持   |
+| Ubuntu 14.04 和 16.04                           | 支持   | 支持   |
+| Ubuntu 17.10 和 18.04                           |             | 支持   |
+| Debian 8.7+ 和 9                                | 支持   | 支持   |
+| CentOS 7                                          | 支持   | 支持   |
+| Red Hat Enterprise Linux 7                        | 支持   | 支持   |
+| OpenSUSE 42.2                                     | 支持   | 支持   |
+| Fedora 27                                         | 支持   | 支持   |
+| Fedora 28                                         |             | 支持   |
+| macOS 10.12+                                      | 支持   | 支持   |
+| Arch                                              | 社区   | 社区   |
+| Raspbian                                          | 实验| 社区   |
+| Kali                                              | 社区   | 社区   |
+| AppImage（可在多个 Linux 平台上运行）     | 社区   | 社区   |
+
+## <a name="platform-which-are-out-of-support"></a>不受支持的平台
+
+如果平台版本达到平台所有者定义的生命周期终止，PowerShell Core 也会不再支持相应平台版本。 以前发布的包对需要访问的客户仍可用，但将不再提供任何种类的正式支持和更新。
+
+因此，分发所有者不再支持以下版本，它们不受支持。
+
+| 操作系统       | 版本 | 生命周期终止                                                                                 |
+|----------|---------|---------------------------------------------------------------------------------------------|
+| Fedora   | 26      | [2018 年 5 月](https://fedoramagazine.org/fedora-26-end-life/)                                  |
+| Fedora   | 25      | [2017 年 12 月](https://fedoramagazine.org/fedora-25-end-life/)                             |
+| Fedora   | 24      | [2017 年 8 月](https://fedoramagazine.org/fedora-24-eol/)                                    |
+| OpenSUSE | 42.2    | [2018 年 1 月](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
+| OpenSUSE | 42.1    | [2017 年 5 月](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
+| Ubuntu   | 17.04   | [2018 年 1 月](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| Ubuntu   | 16.10   | [2017 年 7 月](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
 
 ## <a name="notes-on-licensing"></a>有关许可的说明
 

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 适用于 Linux 的 DSC nxService 资源
-ms.openlocfilehash: 9cab889368469f2c854a387b919aea58a49f2210
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: ab6544762862c9b2477e92f0d782b13afb96f2c9
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187712"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093562"
 ---
 # <a name="dsc-for-linux-nxservice-resource"></a>适用于 Linux 的 DSC nxService 资源
 
@@ -19,11 +19,10 @@ PowerShell Desired State Configuration (DSC) 中的 **nxService** 资源提供�
 nxService <string> #ResourceName
 {
     Name = <string>
-    [ Controller = <string> { init | upstart | systemd }  ]
+    [ Controller = <string> { init | upstart | systemd } ]
     [ Enabled = <bool> ]
     [ State = <string> { Running | Stopped } ]
     [ DependsOn = <string[]> ]
-
 }
 ```
 
@@ -36,26 +35,24 @@ nxService <string> #ResourceName
 | State| 指示服务是否正在运行。 将此属性设置为“Stopped”以确保该服务不在运行。 将其设置为“Running”以确保该服务正在运行。|
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 **ID** 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。|
 
-
 ## <a name="additional-information"></a>其他信息
 
 **nxService** 资源不会为不存在的服务创建服务定义或脚本。 你可使用 PowerShell Desired State Configuration **nxFile** 资源管理服务定义文件或脚本是否存在或管理其内容。
 
 ## <a name="example"></a>示例
 
-以下示例显示了已注册 **SystemD** 服务控制器的“httpd”服务（适用于 Apache HTTP 服务器）的配置。
+下面的示例展示了已向 SystemD 服务控制器注册的“httpd”服务（适用于 Apache HTTP 服务器）的配置。
 
-```
+```powershell
 Import-DSCResource -Module nx
 
 Node $node {
-#Apache Service
-nxService ApacheService
-{
-Name = "httpd"
-State = "running"
-Enabled = $true
-Controller = "systemd"
-}
+    #Apache Service
+    nxService ApacheService {
+        Name = 'httpd'
+        State = 'running'
+        Enabled = $true
+        Controller = 'systemd'
+    }
 }
 ```

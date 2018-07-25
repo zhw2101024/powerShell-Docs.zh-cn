@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 适用于 Linux 的 DSC nxGroup 资源
-ms.openlocfilehash: 9651f3affc9b040a7ef8e7bf8d5ab4cebcca8128
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: c61b6ab4a8c56d085b5297dcfc7582187d54f946
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221980"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093596"
 ---
 # <a name="dsc-for-linux-nxgroup-resource"></a>适用于 Linux 的 DSC nxGroup 资源
 
@@ -15,17 +15,16 @@ PowerShell Desired State Configuration (DSC) 中的 **nxGroup** 资源提供了�
 
 ## <a name="syntax"></a>语法
 
-```powershell
+```
 nxGroup <string> #ResourceName
 {
     GroupName = <string>
-    [ Ensure = <string> { Absent | Present }  ]
+    [ Ensure = <string> { Absent | Present } ]
     [ Members = <string[]> ]
-    [ MebersToInclude = <string[]>]
+    [ MembersToInclude = <string[]> ]
     [ MembersToExclude = <string[]> ]
     [ DependsOn = <string[]> ]
 }
-
 ```
 
 ## <a name="properties"></a>“属性”
@@ -38,30 +37,29 @@ nxGroup <string> #ResourceName
 | MembersToInclude| 指定要确保是该组成员的用户。|
 | MembersToExclude| 指定要确保不是该组成员的用户。|
 | PreferredGroupID| 尽量将组 ID 设置为提供的值。 如果组 ID 正在使用中，则使用下一个可用的组 ID。|
-| DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 **ID** 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。|
+| DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 **ID** 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = '[ResourceType]ResourceName'`。|
 
 ## <a name="example"></a>示例
 
-以下示例可确保用户“monuser”存在且为组“DBusers”的成员。
+下面的示例确保用户“monuser”存在，且为组“DBusers”的成员。
 
-```
+```powershell
 Import-DSCResource -Module nx
 
 Node $node {
+    nxUser UserExample {
+       UserName = 'monuser'
+       Description = 'Monitoring user'
+       Password = '$6$fZAne/Qc$MZejMrOxDK0ogv9SLiBP5J5qZFBvXLnDu8HY1Oy7ycX.Y3C7mGPUfeQy3A82ev3zIabhDQnj2ayeuGn02CqE/0'
+       Ensure = 'Present'
+       HomeDirectory = '/home/monuser'
+    }
 
-nxUser UserExample{
-   UserName = "monuser"
-   Description = "Monitoring user"
-   Password  =    '$6$fZAne/Qc$MZejMrOxDK0ogv9SLiBP5J5qZFBvXLnDu8HY1Oy7ycX.Y3C7mGPUfeQy3A82ev3zIabhDQnj2ayeuGn02CqE/0'
-   Ensure = "Present"
-   HomeDirectory = "/home/monuser"
-}
-
-nxGroup GroupExample{
-   GroupName = "DBusers"
-   Ensure = "Present"
-   MembersToInclude = "monuser"
-   DependsOn = "[nxUser]UserExample"
-}
+    nxGroup GroupExample {
+       GroupName = 'DBusers'
+       Ensure = 'Present'
+       MembersToInclude = 'monuser'
+       DependsOn = '[nxUser]UserExample'
+    }
 }
 ```

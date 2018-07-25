@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: 影响 PowerShell 库 UI 的项清单值
-ms.openlocfilehash: fd5e48f8cc36795742ae597fc7715f7377605b6f
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 00350d3558e2bfa487fb116304956ffa7291ee05
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893471"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093967"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>影响 PowerShell 库 UI 的项清单值
 
@@ -84,65 +84,67 @@ PowerShell 库编辑项页允许发布者更改为某项显示的若干字段，
 在某些情况下，在标记旁边列出了类似但可能不太理想的选项。
 最佳做法是使用“首选标记”，因为这样将导致较少的噪音，并为使用者带来更好的搜索结果。
 
-| **首选标记** | **替代项和说明** |
+| 首选标记 | 可选标记和备注 |
 | --- | --- |
-| **Azure** |  |
-| **DSC** | DesiredStateConfiguration 太长，因此不够理想 |
-| **ResourceManager** | ARM 用于描述处理器组，不应该用于 Azure 资源管理器 | **DSCResourceKit** |  |
-| **SQL** |  |
-| **AWS** |  |
-| **DSCResource** |  |
-| **Automation** |  |
-| **REST** |  |
-| **ActiveDirectory** | 当前不会单独使用 AD  |
-| **SQLServer** |  |
-| **DBA** |  |
-| **安全** | Defense 不太精确 |
-| **Database** | Databases（复数）不太可取 |
-| **DevOps** |  |
-| **Windows** |  |
-| **Build** |  |
-| **Deployment** | Deploy 某种程度上不太常用 |
-| **Cloud** |  |
-| **GIT** |  |
-| **Test** | Testing 不太可取 |
-| **VersionControl** | Version 不太精确，但使用更频繁  |
-| **Logging** | Logging 首选用作一项操作 |
-| **日志** | Log 首选用作一件东西 |
-| **Backup** |  |
-| **IaaS** |  |
-| **Linux** |  |
-| **IIS** |  |
-| **AzureAutomation** |  |
-| **Storage** |  |
-| **GitHub** |  |
-| **Json** |  |
-| **Exchange** |  |
-| **Network** | Networking 非常相似，不经常使用 |
-| **SharePoint** |  |
-| **Reporting** | Reporting 是一项操作，Report 是一件东西 |
-| **Report** | Report 是一件东西 |
-| **WinRM** |  |
-| **Monitoring** |  |
-| **VSTS** |  |
-| **Excel** |  |
-| **Google** |  |
-| **Color** |  |
-| **DNS** |  |
-| **Office365** | 拼写出 Office 是可取的。 O365 虽然更短，但不经常使用 | **Gitlab** |  |
-| **Pester** |  |
-| **AzureAD** |  |
-| **HTML** |  |
-| **Hyper-V** | HyperV 很少用作标记 |
-| **Configuration** |  |
-| **ChatOps** |  |
-| **PackageManagement** |  |
-| **WMI** |  |
-| **Firewall** |  |
-| **Docker** |  |
-| **Appveyor** |  |
-| **AzureRm** | 主要用于 AzureRM 模块 |
-| **Zip** |  |
-| **MSI** |  |
-| **Mac** |  |
-| **PoshBot** |  |
+| Azure |  |
+| DSC | DesiredStateConfiguration 太长，因此不够理想 |
+| ResourceManager | ARM 用于描述处理器组，不应该用于 Azure 资源管理器 |
+| DSCResourceKit |  |
+| SQL |  |
+| AWS |  |
+| DSCResource |  |
+| 自动化 |  |
+| REST |  |
+| ActiveDirectory | 当前不会单独使用 AD  |
+| SQLServer |  |
+| DBA |  |
+| 安全 | Defense 不太精确 |
+| 数据库 | Databases（复数）不太可取 |
+| DevOps |  |
+| Windows |  |
+| Build |  |
+| 部署 | Deploy 某种程度上不太常用 |
+| 云 |  |
+| GIT |  |
+| 测试 | Testing 不太可取 |
+| VersionControl | Version 不太精确，但使用更频繁  |
+| 日志记录 | Logging 首选用作一项操作 |
+| 日志 | Log 首选用作一件东西 |
+| 备份 |  |
+| IaaS |  |
+| Linux |  |
+| IIS |  |
+| AzureAutomation |  |
+| 存储 |  |
+| GitHub |  |
+| Json |  |
+| Exchange |  |
+| Network (网络) | Networking 非常相似，不经常使用 |
+| SharePoint |  |
+| 报告 | Reporting 是一项操作，Report 是一件东西 |
+| 报告 | Report 是一件东西 |
+| WinRM |  |
+| 监视 |  |
+| VSTS |  |
+| Excel |  |
+| Google |  |
+| Color |  |
+| DNS |  |
+| Office365 | 拼写出 Office 是可取的。 O365 虽然更短，但不经常使用 |
+| Gitlab |  |
+| Pester |  |
+| AzureAD |  |
+| HTML |  |
+| Hyper-V | HyperV 很少用作标记 |
+| 配置 |  |
+| ChatOps |  |
+| PackageManagement |  |
+| WMI |  |
+| 防火墙 |  |
+| Docker |  |
+| Appveyor |  |
+| AzureRm | 主要用于 AzureRM 模块 |
+| Zip |  |
+| MSI |  |
+| Mac |  |
+| PoshBot |  |

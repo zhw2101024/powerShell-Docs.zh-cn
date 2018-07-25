@@ -2,36 +2,34 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: DSC 配置
-ms.openlocfilehash: d98bf0e85c12103d9b1eeded155bab1af364bd4c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 171068acb51f44e31c81e63f6640222ef71bee38
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188439"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093688"
 ---
 # <a name="dsc-configurations"></a>DSC 配置
 
->适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
+> 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 DSC 配置是定义某一特殊类型函数的 PowerShell 脚本。
 若要定义配置，你可使用 PowerShell 关键字 **Configuration**。
 
 ```powershell
 Configuration MyDscConfiguration {
-
     Node "TEST-PC1" {
         WindowsFeature MyFeatureInstance {
-            Ensure = "Present"
-            Name =  "RSAT"
+            Ensure = 'Present'
+            Name = 'RSAT'
         }
         WindowsFeature My2ndFeatureInstance {
-            Ensure = "Present"
-            Name = "Bitlocker"
+            Ensure = 'Present'
+            Name = 'Bitlocker'
         }
     }
 }
 MyDscConfiguration
-
 ```
 
 将脚本保存为 .ps1 文件。
@@ -48,23 +46,21 @@ MyDscConfiguration
 
 ```powershell
 Configuration MyDscConfiguration {
-
     param(
-        [string[]]$ComputerName="localhost"
+        [string[]]$ComputerName='localhost'
     )
     Node $ComputerName {
         WindowsFeature MyFeatureInstance {
-            Ensure = "Present"
-            Name =  "RSAT"
+            Ensure = 'Present'
+            Name = 'RSAT'
         }
         WindowsFeature My2ndFeatureInstance {
-            Ensure = "Present"
-            Name = "Bitlocker"
+            Ensure = 'Present'
+            Name = 'Bitlocker'
         }
     }
 }
 MyDscConfiguration -ComputerName $ComputerName
-
 ```
 
 在此示例中，指定节点名称，具体方法为在编译配置时以 ComputerName 参数的形式传递节点名称。 该名称默认为“localhost”。
@@ -75,19 +71,21 @@ MyDscConfiguration -ComputerName $ComputerName
 可通过调用配置（像调用 PowerShell 函数一样）来执行此操作。
 此示例的最后一行仅包含配置名称，用于调用配置。
 
->**注意：** 若要调用配置，该函数必须在全局范围内（与任何其他 PowerShell 函数一样）。
->可通过以下方式来实现此操作：对脚本执行“dot-source”操作，或者使用 F5 或单击 ISE 中的“运行脚本”按钮以运行配置脚本。
->若要对脚本执行“dot-source”操作，请运行命令 `. .\myConfig.ps1`，其中 `myConfig.ps1` 是包含配置的脚本文件的名称。
+> [!NOTE]
+> 函数必须在全局范围内（与其他任何 PowerShell 函数一样），才能调用配置。
+> 可通过以下方式来实现此操作：对脚本执行“dot-source”操作，或者使用 F5 或单击 ISE 中的“运行脚本”按钮以运行配置脚本。
+> 若要对脚本执行“dot-source”操作，请运行命令 `. .\myConfig.ps1`，其中 `myConfig.ps1` 是包含配置的脚本文件的名称。
 
 调用配置时，它会：
 
 - 解析所有变量
 - 在当前目录中使用与配置相同的名称创建文件夹。
 - 在新目录中创建名为 _NodeName_.mof 的文件，其中 _NodeName_ 为配置的目标节点名称。
-    如果有多个节点，则将为每个节点创建 MOF 文件。
+  如果有多个节点，则将为每个节点创建 MOF 文件。
 
->**请注意**：此 MOF 文件包含目标节点的所有配置信息。 因此，务必确保其安全性。
->有关详细信息，请参阅[保护 MOF 文件](secureMOF.md)。
+> [!NOTE]
+> MOF 文件包含目标节点的所有配置信息。 因此，务必确保其安全性。
+> 有关详细信息，请参阅[保护 MOF 文件](secureMOF.md)。
 
 编译上述第一个配置会形成以下文件夹结构：
 
@@ -127,19 +125,18 @@ Mode                LastWriteTime         Length Name
 Configuration DependsOnExample {
     Node Test-PC1 {
         Group GroupExample {
-            Ensure = "Present"
-            GroupName = "TestGroup"
+            Ensure = 'Present'
+            GroupName = 'TestGroup'
         }
 
         User UserExample {
-            Ensure = "Present"
-            UserName = "TestUser"
-            FullName = "TestUser"
-            DependsOn = "[Group]GroupExample"
+            Ensure = 'Present'
+            UserName = 'TestUser'
+            FullName = 'TestUser'
+            DependsOn = '[Group]GroupExample'
         }
     }
 }
-
 ```
 
 ## <a name="using-new-resources-in-your-configuration"></a>在配置中使用新的资源
@@ -151,10 +148,12 @@ Configuration DependsOnExample {
 一旦这些模块已置于 `$env:PSModulePath` 中并由 [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) 正确识别，你仍需在配置中加载它们。
 **Import-DscResource** 是仅可在**配置**块中识别的动态关键字（即它不是 cmdlet）。
 **Import-DscResource** 支持两种参数：
+
 - **ModuleName** 是使用 **Import-DscResource** 的推荐方法。 它接受包含要导入资源的模块名称以及模块名称的字符串数组。
 - **Name** 是要导入资源的名称。 这不是由 [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) 返回为“Name”的友好名称，而是定义资源架构时使用的类名（由 [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) 返回为 **ResourceType**）。
 
 ## <a name="see-also"></a>另请参阅
-* [Windows PowerShell Desired State Configuration 概述](overview.md)
-* [DSC 资源](resources.md)
-* [配置本地配置管理器](metaConfig.md)
+
+- [Windows PowerShell Desired State Configuration 概述](overview.md)
+- [DSC 资源](resources.md)
+- [配置本地配置管理器](metaConfig.md)
