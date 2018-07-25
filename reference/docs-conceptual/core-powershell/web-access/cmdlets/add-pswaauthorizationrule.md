@@ -4,12 +4,12 @@ keywords: powershell,cmdlet
 ms.date: 12/12/2016
 title: Add-PswaAuthorizationRule
 schema: 2.0.0
-ms.openlocfilehash: a5e55611ac59ff5bfecee59ba2b7d7669d08f840
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: a8904ac36f7fd9fe3c649ad4ca709a98c31b63c3
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893733"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094222"
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -192,7 +192,9 @@ Add-PswaAuthorizationRule cmdlet 向 Windows PowerShell® Web 访问授权规则
 ### <a name="example-1"></a>示例 1
 
 此示例授予对 SMAdmins 组中的用户在 srv2 上的会话配置 PSWAEndpoint（一个受限运行空间）的访问权限。
-注意：该计算机名必须是完全限定的域名 (FQDN)。 管理员定义受限制的会话配置或运行空间，这是一系列可供最终用户运行的有限 cmdlet 和任务。 定义受限制的运行空间可阻止用户访问不在允许的 Windows PowerShell® 运行空间中的其他计算机，提高连接安全性。 有关会话配置的详细信息，请参阅 [about_Session_Configurations](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) 或[安装和使用 Windows PowerShell Web 访问](../install-and-use-windows-powershell-web-access.md)。
+
+> [!NOTE]
+> 该计算机名必须是完全限定的域名 (FQDN)。 管理员定义受限制的会话配置或运行空间，这是一系列可供最终用户运行的有限 cmdlet 和任务。 定义受限制的运行空间可阻止用户访问不在允许的 Windows PowerShell® 运行空间中的其他计算机，提高连接安全性。 有关会话配置的详细信息，请参阅 [about_Session_Configurations](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) 或[安装和使用 Windows PowerShell Web 访问](../install-and-use-windows-powershell-web-access.md)。
 
 ```PowerShell
 Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\SMAdmins -ConfigurationName PSWAEndpoint
@@ -241,7 +243,9 @@ Add-PswaAuthorizationRule –UserName PswaServer\ChrisLocal –ComputerName srv1
 
 此示例允许全体用户访问所有计算机中的全部终结点。
 这实际上关闭了授权规则。
-注意：出于安全敏感部署的考虑，除测试环境或对安全要求不高的部署之外，不建议使用 `*` 通配符。
+
+> [!NOTE]
+> 出于安全敏感部署的考虑，除测试环境或对安全要求不高的部署之外，不建议使用通配符 `*`。
 
 ````PowerShell
 Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *

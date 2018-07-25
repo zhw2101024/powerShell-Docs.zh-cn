@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: DSC 故障排除
-ms.openlocfilehash: c08f91b514aae438578fa278228fe5ec879a4012
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1e8bfdf3540e65e3be94bf6a9b04e7d3b14ff044
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190003"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094062"
 ---
 # <a name="troubleshooting-dsc"></a>DSC 故障排除
 
@@ -24,10 +24,10 @@ Windows PowerShell Desired State Configuration (DSC) 依赖 WinRM。 在 Windows
 [Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) cmdlet 从目标节点中获取有关配置状态的信息。
 将返一个回富对象，它包含有关配置运行成功与否的高级信息。 你可以深入探究该对象，以查明有关配置运行的详细信息，例如：
 
-* 失败的所有资源
-* 请求重新启动的任何资源
-* 配置运行时的元配置设置
-* 等。
+- 失败的所有资源
+- 请求重新启动的任何资源
+- 配置运行时的元配置设置
+- 等。
 
 下面的参数集将返回上次配置运行的状态信息：
 
@@ -118,8 +118,8 @@ Consistency engine was run successfully.
 
 以特定结构记录 DSC 事件，该结构让用户可以通过一个 DSC 作业聚合事件。 该结构如下所示：
 
-**作业 ID：<Guid>**
-**<Event Message>**
+**作业 ID：\<Guid\>**
+**\<事件消息\>**
 
 ## <a name="gathering-events-from-a-single-dsc-operation"></a>通过单个 DSC 操作收集事件
 
@@ -281,7 +281,6 @@ ComputerName   SequenceId TimeCreated           Result   JobID                  
 SRV1   1          6/23/2016 9:37:52 AM  Failure  9701aadf-395e-11e6-9165-00155d390509  {@{Message=; TimeC...
 SRV1   2          6/23/2016 9:36:54 AM  Failure  7e8e2d6e-395c-11e6-9165-00155d390509  {@{Message=; TimeC...
 SRV1   3          6/23/2016 9:36:54 AM  Success  af72c6aa-3960-11e6-9165-00155d390509  {@{Message=Operati...
-
 ```
 
 也可通过使用 `Newest` 参数指定你只需要最近操作的结果：
@@ -618,10 +617,13 @@ onlyProperty                            PSComputerName
 ## <a name="see-also"></a>另请参阅
 
 ### <a name="reference"></a>引用
-* [DSC Log 资源](logResource.md)
+
+- [DSC Log 资源](logResource.md)
 
 ### <a name="concepts"></a>概念
-* [构建自定义 Windows PowerShell Desired State Configuration 资源](authoringResource.md)
+
+- [构建自定义 Windows PowerShell Desired State Configuration 资源](authoringResource.md)
 
 ### <a name="other-resources"></a>其他资源
-* [Windows PowerShell Desired State Configuration Cmdlet](https://technet.microsoft.com/library/dn521624(v=wps.630).aspx)
+
+- [Windows PowerShell Desired State Configuration Cmdlet](https://technet.microsoft.com/library/dn521624(v=wps.630).aspx)

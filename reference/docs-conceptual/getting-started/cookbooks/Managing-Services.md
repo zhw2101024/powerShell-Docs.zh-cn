@@ -3,16 +3,16 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 管理服务
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
-ms.openlocfilehash: f3231d1922568e552534f3d3face3864d1610d65
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: e2388f5d73a320a69faae0772c8403a7d77f8b52
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30951192"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094164"
 ---
 # <a name="managing-services"></a>管理服务
 
-有八个专为各种服务任务设计的核心 Service cmdlet。 我们将只查看列出和更改服务的运行状态，但是你可以通过使用 **Get-Help \&#42;-Service** 获取 Service cmdlet 列表，还可以使用 **Get-Help<Cmdlet-Name>**（例如 **Get-Help New-Service**）找到每个 Service cmdlet 的信息。
+有八个专为各种服务任务设计的核心 Service cmdlet。 我们仅会侦听和更高服务的运行状态，但你可以使用 Get-Help \*-Service 获取服务 cmdlet 列表并通过使用 Get-Help \<Cmdlet-Name\>（例如 Get-Help New-Service）找到每个服务 cmdlet 的相关信息。
 
 ## <a name="getting-services"></a>获取服务
 
