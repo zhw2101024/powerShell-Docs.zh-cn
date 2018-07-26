@@ -1,0 +1,10 @@
+- name: PowerShell
+  tocHref: /powershell/
+  topicHref: /powershell
+  items:
+    - name: 编写脚本
+      tocHref: /powershell/scripting/
+      topicHref: /powershell/scripting/index
+    - name: 编写脚本
+      tocHref: /powershell/module/
+      topicHref: /powershell/scripting/index
