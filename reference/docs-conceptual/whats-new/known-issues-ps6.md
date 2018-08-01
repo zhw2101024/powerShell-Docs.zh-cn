@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell, 核心
 title: PowerShell 6.0 的已知问题
-ms.openlocfilehash: 7fa6b9935ae75b62df72609b8a9ec16246b1c610
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: e3e718be903ff2223064d5790d3d0fe554ef04cd
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893682"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267994"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell 6.0 的已知问题
 
@@ -102,8 +102,8 @@ Linux/macOS 上的 PowerShell 目前无法创建约束管理 (JEA) 远程处理�
 
 下表列出了 Linux/macOS 上的 PowerShell 中已知不起作用的命令。
 
-|命令 |操作状态 | 注释|
-|---------|------------------|------|
+|命令|操作状态|注释|
+|--------|-----------------|-----|
 |`Get-Service`、`New-Service`、`Restart-Service`、`Resume-Service`、`Set-Service`、`Start-Service`、`Stop-Service`、`Suspend-Service`|不可用。|不会识别这些命令。 应在将来的版本中解决此问题。|
 |`Get-Acl`、`Set-Acl`|不可用。|不会识别这些命令。 应在将来的版本中解决此问题。|
 |`Get-AuthenticodeSignature`、`Set-AuthenticodeSignature`|不可用。|不会识别这些命令。 应在将来的版本中解决此问题。|
