@@ -3,18 +3,18 @@ ms.topic: reference
 keywords: powershell,cmdlet
 ms.date: 12/12/2016
 title: Install-PswaWebApplication
-ms.openlocfilehash: 68455d9490f7d5c33c1a928ac262a76a78ad7128
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 29e074b75eeb387640831229c63142e6dd5e991a
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189595"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268293"
 ---
 # <a name="install-pswawebapplication"></a>Install-PswaWebApplication
 
 ## <a name="synopsis"></a>简述
 
-在 IIS 中配置 Windows PowerShell® Web 访问 Web 应用程序。
+在 IIS 中配置 Windows PowerShell Web 访问 Web 应用程序。
 
 ## <a name="syntax"></a>语法
 
@@ -25,7 +25,8 @@ Install-PswaWebApplication [[-WebApplicationName] <String> ] [-UseTestCertificat
 
 ## <a name="description"></a>说明
 
-使用 Install-PswaWebApplication cmdlet 来配置 Windows PowerShell Web 访问 Web 应用程序。 此 cmdlet 用于安装 Web 应用程序，并将其与网站相关联，可选择使用 useTestCertificate 参数创建测试 SSL 证书。 出于安全考虑，Web 管理员不应在生产环境中使用测试证书。
+使用 Install-PswaWebApplication cmdlet 来配置 Windows PowerShell Web 访问 Web 应用程序。
+此 cmdlet 用于安装 Web 应用程序，并将其与网站相关联，可选择使用 useTestCertificate 参数创建测试 SSL 证书。 出于安全考虑，Web 管理员不应在生产环境中使用测试证书。
 
 ## <a name="parameters"></a>参数
 
@@ -42,7 +43,7 @@ Install-PswaWebApplication [[-WebApplicationName] <String> ] [-UseTestCertificat
 | 是否接受管道输入？               | false                                |
 | 是否接受通配符？          | false                                |
 
-### <a name="-webapplicationnameltstringgt"></a>-WebApplicationName&lt;String&gt;
+### <a name="-webapplicationname"></a>-WebApplicationName
 
 指定 Web 应用程序的名称。 该名称将显示在 Windows PowerShell Web 访问 URL 的末尾。
 
@@ -55,7 +56,7 @@ Install-PswaWebApplication [[-WebApplicationName] <String> ] [-UseTestCertificat
 | 是否接受管道输入？               | false                                |
 | 是否接受通配符？          | false                                |
 
-### <a name="-websitenameltstringgt"></a>-WebSiteName&lt;String&gt;
+### <a name="-websitename"></a>-WebSiteName
 
 指定要在其上安装此 Windows PowerShell Web 访问 Web 应用程序的 Web 服务器 (IIS) 网站名称。
 
@@ -95,8 +96,7 @@ cmdlet 未运行。
 
 ### <a name="ltcommonparametersgt"></a>&lt;CommonParameters&gt;
 
-此 cmdlet 支持通用参数：-Verbose、-Debug、-ErrorAction、-ErrorVariable、-OutBuffer 和 -OutVariable。
-有关详细信息，请参阅 [about_CommonParameters](http://go.microsoft.com/fwlink/p/?LinkID=113216)。
+此 cmdlet 支持通用参数：-Verbose、-Debug、-ErrorAction、-ErrorVariable、-OutBuffer 和 -OutVariable。 有关详细信息，请参阅 [about_CommonParameters](http://go.microsoft.com/fwlink/p/?LinkID=113216)。
 
 ## <a name="inputs"></a>输入
 

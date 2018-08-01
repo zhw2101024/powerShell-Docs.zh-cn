@@ -48,7 +48,7 @@ PowerShell Core 的版本 6.x 分支（例如 6.0、6.1、6.2 等）大约每六
 | Debian 8.7+ 和 9                                | 支持   | 支持   |
 | CentOS 7                                          | 支持   | 支持   |
 | Red Hat Enterprise Linux 7                        | 支持   | 支持   |
-| OpenSUSE 42.2                                     | 支持   | 支持   |
+| OpenSUSE 42.3                                     | 支持   | 支持   |
 | Fedora 27                                         | 支持   | 支持   |
 | Fedora 28                                         |             | 支持   |
 | macOS 10.12+                                      | 支持   | 支持   |
