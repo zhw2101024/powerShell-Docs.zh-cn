@@ -3,12 +3,12 @@ ms.date: 10/17/2017
 contributor: keithb
 keywords: 库,powershell,cmdlet,psget
 title: 预发行版脚本
-ms.openlocfilehash: 7d4cec9d2b4ee5ad0b19ad5d9c68bb68747abd57
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 14ae1968e5ee73260b6eae05b11185069d047e93
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093842"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268460"
 ---
 # <a name="prerelease-versions-of-scripts"></a>预发行版脚本
 
@@ -48,7 +48,7 @@ PowerShellGet 对脚本的预发行版本的支持比模块更容易。 仅 Powe
 - 此时仅支持 SemVer v1.0.0 预发行字符串，因此预发行后缀不得包含句点或 + [.+]，而在 SemVer 2.0 中允许包含
 - 支持的预发行版字符串的示例包括：-alpha、-alpha1、-BETA、-update20171020
 
-__预发行版本控制对排序顺序和安装文件夹的影响__
+### <a name="prerelease-versioning-impact-on-sort-order-and-installation-folders"></a>预发行版本控制对排序顺序和安装文件夹的影响
 
 使用预发行版本时，排序顺序会发生更改，这在发布到 PowerShell 库时，以及使用 PowerShellGet 命令安装脚本时非常重要。 如果两个脚本版本都具有该版本号，则排序顺序基于连字符后面的字符串部分。 因此，2.5.0-alpha 版低于 2.5.0-beta 版，而 2.5.0-beta 版低于 2.5.0-gamma 版。 如果两个脚本具有相同的版本号，并且只有一个脚本具有预发行版字符串，则不具有预发行版后缀的脚本会假定为生产就绪版本，在排序时的版本要比预发行版本高。 例如，在比较 2.5.0 和 2.5.0-beta 版本时，2.5.0 版本会视为两者中更高的版本。
 
@@ -61,7 +61,7 @@ __预发行版本控制对排序顺序和安装文件夹的影响__
 PowerShellGet 脚本命令中这种情况的唯一例外是 Get-InstalledScript，以及某些情况下的 Uninstall-Script。
 
 - Get-InstalledScript 始终在版本字符串中自动显示预发行信息（如存在）。
-- Uninstall-Script 在未指定任何版本时默认卸载最新版本的脚本。 该行为尚未更改。 但是，如果预发行版本是使用 -RequiredVersion 指定的，则需要 -AllowPrerelease。
+- Uninstall-Script 在未指定任何版本时默认卸载最新版本的脚本。 该行为尚未更改。 但是，如果预发行版本是使用 `-RequiredVersion` 指定的，则需要 `-AllowPrerelease`。
 
 ## <a name="examples"></a>示例
 
@@ -83,13 +83,13 @@ Version        Name                                Repository           Descript
 # To install a prerelease, you must specify -AllowPrerelease. Specifying a prerelease version string is not sufficient.
 
 C:\windows\system32> Install-Script TestPackage -RequiredVersion 1.9.0-alpha
+
 PackageManagement\Find-Package : No match was found for the specified search criteria and script name 'TestPackage'.
 Try Get-PSRepository to see all available registered script repositories.
 At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.6.0\PSModule.psm1:1455 char:3
 +         PackageManagement\Find-Package @PSBoundParameters | Microsoft ...
 +         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : ObjectNotFound: (Microsoft.Power...ets.FindPackage:FindPackage) [Find-Package], Exceptio
-   n
+    + CategoryInfo          : ObjectNotFound: (Microsoft.Power...ets.FindPackage:FindPackage)[Find-Package], Exception
     + FullyQualifiedErrorId : NoMatchFoundForCriteria,Microsoft.PowerShell.PackageManagement.Cmdlets.FindPackage
 
 # The previous command failed because -AllowPrerelease was not specified.

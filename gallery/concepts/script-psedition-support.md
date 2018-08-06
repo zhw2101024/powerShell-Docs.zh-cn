@@ -3,18 +3,19 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: 库,powershell,cmdlet,psget
 title: 具有兼容的 PowerShell 版本的脚本
-ms.openlocfilehash: 386e65295641fb6932c13047246742531aeaec64
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 0ab655ff1c5dd0f48ec41a16ad394251b6c70748
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093654"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267807"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>具有兼容的 PowerShell 版本的脚本
 
 从版本 5.1 开始，PowerShell 以表现出不同功能集和平台兼容性的不同版本提供。
 
 - **桌面版：** 以 .NET Framework 为基础构建，提供与面向在完整功能 Windows 版本（如服务器核心和 Windows 桌面）上运行的 PowerShell 版本的脚本和模块的兼容性。
+
 - **核心版：** 以 .NET Core 为基础构建，提供与面向在缩减功能 Windows 版本（如 Nano Server 和 Windows IoT）上运行的 PowerShell 版本的脚本和模块的兼容性。
 
 正在运行的 PowerShell 版本显示在 $PSVersionTable.的 PSEdition 属性中。
@@ -34,7 +35,7 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
 
-脚本编写者可以防止执行脚本，除非它使用 #requires 语句的 PSEdition 参数在 PowerShell 的兼容版本上运行。
+脚本编写者可以防止执行脚本，除非它使用 `#requires` 语句的 PSEdition 参数在 PowerShell 的兼容版本上运行。
 
 ```powershell
 Set-Content C:\script.ps1 -Value "#requires -PSEdition Core

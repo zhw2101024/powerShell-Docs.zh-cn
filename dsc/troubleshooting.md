@@ -2,27 +2,26 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: DSC 故障排除
-ms.openlocfilehash: 1e8bfdf3540e65e3be94bf6a9b04e7d3b14ff044
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 93a2f3728968882f78d4c050238d226b71c11ca5
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094062"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268188"
 ---
 # <a name="troubleshooting-dsc"></a>DSC 故障排除
 
->适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
+适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 本主题介绍出现问题时 DSC 故障排除的方法。
 
 ## <a name="winrm-dependency"></a>WinRM 依赖关系
 
-Windows PowerShell Desired State Configuration (DSC) 依赖 WinRM。 在 Windows Server 2008 R2 和 Windows 7 上默认不启用 WinRM。 若要启用 WinRM，在 Windows PowerShell 提升的会话中运行 ```Set-WSManQuickConfig```。
+Windows PowerShell Desired State Configuration (DSC) 依赖 WinRM。 在 Windows Server 2008 R2 和 Windows 7 上默认不启用 WinRM。 若要启用 WinRM，在 Windows PowerShell 提升的会话中运行 `Set-WSManQuickConfig`。
 
 ## <a name="using-get-dscconfigurationstatus"></a>使用 Get-DscConfigurationStatus
 
-[Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) cmdlet 从目标节点中获取有关配置状态的信息。
-将返一个回富对象，它包含有关配置运行成功与否的高级信息。 你可以深入探究该对象，以查明有关配置运行的详细信息，例如：
+[Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) cmdlet 从目标节点中获取有关配置状态的信息。 将返一个回富对象，它包含有关配置运行成功与否的高级信息。 你可以深入探究该对象，以查明有关配置运行的详细信息，例如：
 
 - 失败的所有资源
 - 请求重新启动的任何资源
@@ -31,20 +30,20 @@ Windows PowerShell Desired State Configuration (DSC) 依赖 WinRM。 在 Windows
 
 下面的参数集将返回上次配置运行的状态信息：
 
-```powershell
-Get-DscConfigurationStatus  [-CimSession <CimSession[]>]
-                            [-ThrottleLimit <int>]
-                            [-AsJob]
-                            [<CommonParameters>]
+```
+Get-DscConfigurationStatus [-CimSession <CimSession[]>]
+                           [-ThrottleLimit <int>]
+                           [-AsJob]
+                           [<CommonParameters>]
 ```
 下面的参数集将返回之前所有配置运行的状态信息：
 
-```powershell
-Get-DscConfigurationStatus  -All
-                            [-CimSession <CimSession[]>]
-                            [-ThrottleLimit <int>]
-                            [-AsJob]
-                            [<CommonParameters>]
+```
+Get-DscConfigurationStatus -All
+                           [-CimSession <CimSession[]>]
+                           [-ThrottleLimit <int>]
+                           [-AsJob]
+                           [<CommonParameters>]
 ```
 
 ## <a name="example"></a>示例
@@ -54,35 +53,36 @@ PS C:\> $Status = Get-DscConfigurationStatus
 
 PS C:\> $Status
 
-Status      StartDate               Type            Mode    RebootRequested     NumberOfResources
-------      ---------               ----            ----    ---------------     -----------------
-Failure     11/24/2015  3:44:56     Consistency     Push    True                36
+Status         StartDate                Type            Mode    RebootRequested        NumberOfResources
+------        ---------                ----            ----    ---------------        -----------------
+Failure        11/24/2015  3:44:56     Consistency        Push    True                36
 
 PS C:\> $Status.ResourcesNotInDesiredState
 
-ConfigurationName       :   MyService
-DependsOn               :
-ModuleName              :   PSDesiredStateConfiguration
-ModuleVersion           :   1.1
-PsDscRunAsCredential    :
-ResourceID              :   [File]ServiceDll
-SourceInfo              :   c:\git\CustomerService\Configs\MyCustomService.ps1::5::34::File
-DurationInSeconds       :   0.19
-Error                   :   SourcePath must be accessible for current configuration. The related file/directory is:
-                            \\Server93\Shared\contosoApp.dll. The related ResourceID is [File]ServiceDll
-FinalState              :
-InDesiredState          :   False
-InitialState            :
-InstanceName            :   ServiceDll
-RebootRequested         :   False
-ReosurceName            :   File
-StartDate               :   11/24/2015  3:44:56
-PSComputerName          :
+ConfigurationName     :    MyService
+DependsOn             :
+ModuleName            :    PSDesiredStateConfiguration
+ModuleVersion         :    1.1
+PsDscRunAsCredential  :
+ResourceID            :    [File]ServiceDll
+SourceInfo            :    c:\git\CustomerService\Configs\MyCustomService.ps1::5::34::File
+DurationInSeconds     :    0.19
+Error                 :    SourcePath must be accessible for current configuration. The related file/directory is:
+                           \\Server93\Shared\contosoApp.dll. The related ResourceID is [File]ServiceDll
+FinalState            :
+InDesiredState        :    False
+InitialState          :
+InstanceName          :    ServiceDll
+RebootRequested       :    False
+ReosurceName          :    File
+StartDate             :    11/24/2015  3:44:56
+PSComputerName        :
 ```
 
 ## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a>脚本不运行：使用 DSC 日志来诊断脚本错误
 
-与所有 Windows 软件一样，DSC 将错误和事件记录在[日志](https://msdn.microsoft.com/library/windows/desktop/aa363632.aspx)中，可以通过[事件查看器](http://windows.microsoft.com/windows/what-information-event-logs-event-viewer)查看。 检查这些日志可以帮助你了解某一特定操作失败的原因，以及如何防止将来出现故障。 编写配置脚本可能会很棘手，因此，为了在创作时更轻松地跟踪错误，请在 DSC Analytic 事件日志中使用 DSC Log 资源跟踪配置的进度。
+与所有 Windows 软件一样，DSC 将错误和事件记录在[日志](https://msdn.microsoft.com/library/windows/desktop/aa363632.aspx)中，可以通过[事件查看器](http://windows.microsoft.com/windows/what-information-event-logs-event-viewer)查看。
+检查这些日志可以帮助你了解某一特定操作失败的原因，以及如何防止将来出现故障。 编写配置脚本可能会很棘手，因此，为了在创作时更轻松地跟踪错误，请在 DSC Analytic 事件日志中使用 DSC Log 资源跟踪配置的进度。
 
 ## <a name="where-are-dsc-event-logs"></a>DSC 事件日志在哪里？
 
@@ -92,16 +92,19 @@ PSComputerName          :
 
 ```
 PS C:\> Get-WinEvent -LogName "Microsoft-Windows-Dsc/Operational"
+
    ProviderName: Microsoft-Windows-DSC
+
 TimeCreated                     Id LevelDisplayName Message
 -----------                     -- ---------------- -------
 11/17/2014 10:27:23 PM        4102 Information      Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 ```
 
-如上所示，DSC 的主日志名称为 **Microsoft->Windows->DSC**（为简洁起见，此处未显示 Windows 下的其他日志名称）。 将主名称追加到通道名称，以创建完整的日志名称。 DSC 引擎主要写入三种类型的日志：[运行、分析和调试日志](https://technet.microsoft.com/library/cc722404.aspx)。 分析和调试日志默认处于关闭状态，因此你应该在事件查看器中启用它们。 若要进行此操作，请在 Windows PowerShell 中输入 Show-EventLog 以打开事件查看器，或依次单击“开始”、“控制面板”、“管理工具”以及“事件查看器”。 在事件查看器中的“查看”菜单上，单击“显示分析和调试日志”。         分析通道的日志名称为 **Microsoft-Windows-Dsc/Analytic**，而调试通道为 **Microsoft-Windows-Dsc/Debug**。 你还可以通过 [wevtutil](https://technet.microsoft.com/library/cc732848.aspx) 实用程序启用日志，如下面的示例中所示。
+如上所示，DSC 的主日志名称为 Microsoft->Windows->DSC（为简洁起见，此处未显示 Windows 下的其他日志名称）。 将主名称追加到通道名称，以创建完整的日志名称。 DSC 引擎主要写入三种类型的日志：[运行、分析和调试日志](https://technet.microsoft.com/library/cc722404.aspx)。 分析和调试日志默认处于关闭状态，因此你应该在事件查看器中启用它们。 若要进行此操作，请在 Windows PowerShell 中输入 Show-EventLog 以打开事件查看器，或依次单击“开始”、“控制面板”、“管理工具”以及“事件查看器”。
+在事件查看器中的“查看”菜单上，单击“显示分析和调试日志”。         分析通道的日志名称为 **Microsoft-Windows-Dsc/Analytic**，而调试通道为 **Microsoft-Windows-Dsc/Debug**。 你还可以通过 [wevtutil](https://technet.microsoft.com/library/cc732848.aspx) 实用程序启用日志，如下面的示例中所示。
 
 ```powershell
-wevtutil.exe set-log “Microsoft-Windows-Dsc/Analytic” /q:true /e:true
+wevtutil.exe set-log "Microsoft-Windows-Dsc/Analytic" /q:true /e:true
 ```
 
 ## <a name="what-do-dsc-logs-contain"></a>DSC 日志包含哪些内容？
@@ -118,8 +121,10 @@ Consistency engine was run successfully.
 
 以特定结构记录 DSC 事件，该结构让用户可以通过一个 DSC 作业聚合事件。 该结构如下所示：
 
-**作业 ID：\<Guid\>**
-**\<事件消息\>**
+```
+Job ID : <Guid>
+<Event Message>
+```
 
 ## <a name="gathering-events-from-a-single-dsc-operation"></a>通过单个 DSC 操作收集事件
 
@@ -130,8 +135,8 @@ DSC 事件日志包含由各种 DSC 操作生成的事件。 但是，你通常�
  Step 1 : Enable analytic and debug DSC channels (Operational channel is enabled by default)
 ###########################################################################>
 
-wevtutil.exe set-log “Microsoft-Windows-Dsc/Analytic” /q:true /e:true
-wevtutil.exe set-log “Microsoft-Windows-Dsc/Debug” /q:True /e:true
+wevtutil.exe set-log "Microsoft-Windows-Dsc/Analytic" /q:true /e:true
+wevtutil.exe set-log "Microsoft-Windows-Dsc/Debug" /q:True /e:true
 
 <##########################################################################
  Step 2 : Perform the required DSC operation (Below is an example, you could run any DSC operation instead)
@@ -163,8 +168,11 @@ Count Name                      Group
 ----- ----                      -----
    48 {1A776B6A-5BAC-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
    40 {E557E999-5BA8-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
+
 PS C:\> $SeparateDscOperations[0].Group
+
    ProviderName: Microsoft-Windows-DSC
+
 TimeCreated                     Id LevelDisplayName Message
 -----------                     -- ---------------- -------
 12/2/2013 3:47:29 PM          4115 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...
@@ -192,6 +200,7 @@ TimeCreated                     Id LevelDisplayName Message
 
 ```
 PS C:\> $SeparateDscOperations | Where-Object {$_.Group.LevelDisplayName -contains "Error"}
+
 Count Name                      Group
 ----- ----                      -----
    38 {5BCA8BE7-5BB6-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
@@ -204,6 +213,7 @@ Count Name                      Group
 ```powershell
 PS C:\> $DateLatest = (Get-Date).AddMinutes(-30)
 PS C:\> $SeparateDscOperations | Where-Object {$_.Group.TimeCreated -gt $DateLatest}
+
 Count Name                      Group
 ----- ----                      -----
     1 {6CEC5B09-5BB0-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord}
@@ -211,9 +221,10 @@ Count Name                      Group
 
 ### <a name="3-messages-from-the-latest-operation"></a>3：来自最新操作的消息
 
-最新操作存储在数组组 `$SeparateDscOperations` 的第一个索引中。 查询索引 0 的组消息将返回最新操作的所有消息：
+最新操作存储在数组组 `$SeparateDscOperations` 的第一个索引中。
+查询索引 0 的组消息将返回最新操作的所有消息：
 
-```powershelll
+```powershell
 PS C:\> $SeparateDscOperations[0].Group.Message
 Job {5BCA8BE7-5BB6-11E3-BF41-00155D553612} :
 Running consistency engine.
@@ -239,6 +250,7 @@ Displaying messages from built-in DSC resources:
 PS C:\> $myFailedEvent = ($SeparateDscOperations[0].Group | Where-Object {$_.LevelDisplayName -eq "Error"})
 
 PS C:\> $myFailedEvent.Message
+
 Job {5BCA8BE7-5BB6-11E3-BF41-00155D553612} :
 DSC Engine Error :
  Error Message Current configuration does not exist. Execute Start-DscConfiguration command with -Path pa
@@ -265,13 +277,11 @@ TimeCreated                     Id LevelDisplayName Message
 
 ## <a name="using-xdscdiagnostics-to-analyze-dsc-logs"></a>使用 xDscDiagnostics 分析 DSC 日志
 
-**xDscDiagnostics** 是由几个函数组成的 PowerShell 模块，这些函数可以帮助你分析计算机上的 DSC 失败。 这些函数可以帮助你确定因过去的 DSC 操作而起的所有本地事件，或（具有有效凭据的）远程计算机上的 DSC 事件。 此处使用了“DSC 操作”这一术语来定义单个唯一的 DSC 执行过程。 例如，`Test-DscConfiguration` 将是一个单独的 DSC 操作。 同样，DSC 中每个其他 cmdlet （如 `Get-DscConfiguration`、`Start-DscConfiguration` 等）可各自识别为单独的 DSC 操作。 在 [xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics) 中对函数进行了解释。
-可通过运行 `Get-Help <cmdlet name>` 获取帮助。
+**xDscDiagnostics** 是由几个函数组成的 PowerShell 模块，这些函数可以帮助你分析计算机上的 DSC 失败。 这些函数可以帮助你确定因过去的 DSC 操作而起的所有本地事件，或（具有有效凭据的）远程计算机上的 DSC 事件。 此处使用了“DSC 操作”这一术语来定义单个唯一的 DSC 执行过程。 例如，`Test-DscConfiguration` 将是一个单独的 DSC 操作。 同样，DSC 中每个其他 cmdlet （如 `Get-DscConfiguration`、`Start-DscConfiguration` 等）可各自识别为单独的 DSC 操作。 在 [xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics) 中对函数进行了解释。 可通过运行 `Get-Help <cmdlet name>` 获取帮助。
 
 ### <a name="getting-details-of-dsc-operations"></a>获取 DSC 操作的详细信息
 
-可通过 `Get-xDscOperation` 函数查找在一台或多台计算机上运行的 DSC 操作的结果，并返回一个包含每个 DSC 操作所产生事件的集合的对象。
-例如，在下面的输出中，运行了三个命令。 第一个命令成功，另外两个失败。 在 `Get-xDscOperation` 的输出中总结了这些结果。
+可通过 `Get-xDscOperation` 函数查找在一台或多台计算机上运行的 DSC 操作的结果，并返回一个包含每个 DSC 操作所产生事件的集合的对象。 例如，在下面的输出中，运行了三个命令。 第一个命令成功，另外两个失败。 在 `Get-xDscOperation` 的输出中总结了这些结果。
 
 ```powershell
 PS C:\DiagnosticsTest> Get-xDscOperation
@@ -300,7 +310,8 @@ SRV1   5          6/23/2016 4:36:51 PM  Success                                 
 
 `Trace-xDscOperation` cmdlet 将返回一个对象，其中包含事件集合、其事件类型以及特定 DSC 操作生成的消息输出。 通常情况下，使用 `Get-xDscOperation` 在任何操作中查找故障时，将跟踪该操作以查明导致故障的事件。
 
-使用  `SequenceID` 参数以获取某个特定计算机的某个特定操作的事件。 例如，如果你指定 9 的 `SequenceID`，则 `Trace-xDscOperaion` 获取 DSC 操作的跟踪（自上一次操作的第 9 个）：
+使用 `SequenceID` 参数以获取某个特定计算机的某个特定操作的事件。
+例如，如果你指定 9 的 `SequenceID`，则 `Trace-xDscOperaion` 获取 DSC 操作的跟踪（自上一次操作的第 9 个）：
 
 ```powershell
 PS C:\DiagnosticsTest> Trace-xDscOperation -SequenceID 9
@@ -367,7 +378,7 @@ PS C:\DiagnosticsTest> $Trace.Event
 
 此操作将显示与 `Get-WinEvent` cmdlet 相同的结果，例如以下输出中的结果：
 
-```powershell
+```output
    ProviderName: Microsoft-Windows-DSC
 
 TimeCreated                     Id LevelDisplayName Message
@@ -410,6 +421,7 @@ TimeCreated                     Id LevelDisplayName Message
 ```powershell
 New-NetFirewallRule -Name "Service RemoteAdmin" -DisplayName "Remote" -Action Allow
 ```
+
 现在可以在你的调用中将计算机指定到 `Trace-xDscOperation`：
 
 ```powershell
@@ -451,7 +463,8 @@ SRV2   ANALYTIC     6/24/2016 11:36:56 AM Deleting file from C:\Windows\System32
 
 ## <a name="my-resources-wont-update-how-to-reset-the-cache"></a>资源不更新：如何重置缓存
 
-出于效率考虑，DSC 引擎将缓存作为 PowerShell 模块实现的资源。 但是，当你同时创作和测试资源时，这可能导致问题，因为在重启进程前，DSC 将始终加载缓存的版本。 使 DSC 加载较新版本的唯一方法是显式终止承载 DSC 引擎的进程。
+出于效率考虑，DSC 引擎将缓存作为 PowerShell 模块实现的资源。
+但是，当你同时创作和测试资源时，这可能导致问题，因为在重启进程前，DSC 将始终加载缓存的版本。 使 DSC 加载较新版本的唯一方法是显式终止承载 DSC 引擎的进程。
 
 同样，当你运行 `Start-DscConfiguration` 时，在添加和修改自定义资源之后，重启计算机之前可能无法执行修改。 这是因为 DSC 在 WMI 提供程序主机进程 (WmiPrvSE) 中运行，且通常情况下将有 WmiPrvSE 的多个实例同时运行。 重启时，将重新启动主机进程并清除缓存。
 
@@ -479,10 +492,11 @@ Get-Process -Id $dscProcessID | Stop-Process
 
 下列演示表明了 `DebugMode` 可以如何自动刷新缓存。 首先，让我们看一下默认配置：
 
-```
+```powershell
 PS C:\> Get-DscLocalConfigurationManager
+```
 
-
+```output
 AllowModuleOverwrite           : False
 CertificateID                  :
 ConfigurationID                :
@@ -550,7 +564,7 @@ Configuration ConfigTestDebugMode
 ConfigTestDebugMode
 ```
 
-你将看到文件“**$env:SystemDrive\OutputFromTestProviderDebugMode.txt**”的内容为 **1**。
+你将看到文件的内容：`$env:SystemDrive\OutputFromTestProviderDebugMode.txt` 为 1。
 
 现在，使用以下脚本更新提供程序代码：
 
@@ -587,7 +601,7 @@ function Test-TargetResource
 "@ | Out-File -FilePath "C:\Program Files\WindowsPowerShell\Modules\MyPowerShellModules\DSCResources\TestProviderDebugMode\TestProviderDebugMode.psm1
 ```
 
-此脚本将生成一个随机数，并相应地更新提供程序代码。 将 `DebugMode` 设置为 false 后，文件“**$env:SystemDrive\OutputFromTestProviderDebugMode.txt**”的内容未发生更改。
+此脚本将生成一个随机数，并相应地更新提供程序代码。 将 `DebugMode` 设置为 false 后，文件“$env:SystemDrive\OutputFromTestProviderDebugMode.txt”的内容未发生更改。
 
 现在，在配置脚本中将 `DebugMode` 设置为 **TRUE**：
 

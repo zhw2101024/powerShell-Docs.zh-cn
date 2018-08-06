@@ -2,12 +2,12 @@
 ms.date: 06/20/2018
 keywords: dsc,powershell,配置,安装程序
 title: DSC PackageManagement 资源
-ms.openlocfilehash: 281aee13eb005f00b23c97870eaefaa332d9c232
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 18cbbfe0715c82dcfdf4a5fb6ee36ee814e43d3b
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892495"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268086"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC PackageManagement 资源
 
@@ -39,8 +39,8 @@ PackageManagement [string] #ResourceName
 
 ## <a name="properties"></a>“属性”
 
-|  属性  |  说明   |
-|---|---|
+| 属性 | 说明 |
+| --- | --- |
 | 名称| 指定要安装或卸载的包名称。|
 | AdditionalParameters| 传递给 `Get-Package -AdditionalArguments` 的参数的提供程序特定哈希表。 例如，对于 NuGet 提供程序，可以传递 DestinationPath 等附加参数。|
 | Ensure| 确定是要安装还是要卸载包。|
@@ -54,10 +54,11 @@ PackageManagement [string] #ResourceName
 ## <a name="additional-parameters"></a>附加参数
 
 下表列出了 AdditionalParameters 属性的选项。
-|  参数  | 说明   |
-|---|---|
+
+| 参数 | 说明 |
+| --- | --- |
 | DestinationPath| 供提供程序使用，如内置的 Nuget 提供程序。 指定要在其中安装包的文件位置。|
-| InstallationPolicy| 供提供程序使用，如内置的 Nuget 提供程序。 确定是否信任包的源。 可取值为“Untrusted”或“Trusted”。|
+| InstallationPolicy| 供提供程序使用，如内置的 Nuget 提供程序。 确定是否信任包的源。 其中之一：`Untrusted`、`Trusted`。|
 
 ## <a name="example"></a>示例
 

@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: DSC Registry 资源
-ms.openlocfilehash: b77710d7a6fc599949e78c17af309ad88a1a0872
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 8d74473d167b70182c3a16c1d39d2a9e797afb1b
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093579"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267715"
 ---
 # <a name="dsc-registry-resource"></a>DSC Registry 资源
 
-> 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
+适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) 中的 **Registry** 资源提供了在目标节点上管理注册表项和值的机制。
 
@@ -33,8 +33,8 @@ Registry [string] #ResourceName
 
 ## <a name="properties"></a>“属性”
 
-|  属性  |  说明   |
-|---|---|
+| 属性 | 说明 |
+| --- | --- |
 | 键| 指示要确保其特定状态的注册表项的路径。 路径必须包含配置单元。|
 | ValueName| 指示注册表值的名称。 若要添加或删除注册表项，请将此属性指定为空字符串，无需指定 ValueType 或 ValueData。 若要修改或删除注册表项的默认值，请将此属性指定为空字符串，同时指定 ValueType 或 ValueData。|
 | Ensure| 指示项和值是否存在。 将此属性设置为“Present”以确保其存在。 将此属性设置为“Absent”以确保其不存在。 默认值为“Present”。|
@@ -62,4 +62,4 @@ Configuration RegistryTest
 ```
 
 > [!NOTE]
-> 必须使用用户凭据运行配置，而不是以系统身份运行，才能在 HKEY\_CURRENT\_USER 配置单元中更改注册表设置。 可以使用 **PsDscRunAsCredential** 属性来指定配置的用户凭据。 有关示例，请参阅[使用用户凭据运行 DSC](runAsUser.md)。
+> 必须使用用户凭据运行配置，而不是以系统身份运行，才能在 `HKEY\CURRENT\USER` 配置单元中更改注册表设置。 可以使用 **PsDscRunAsCredential** 属性来指定配置的用户凭据。 有关示例，请参阅[使用用户凭据运行 DSC](runAsUser.md)。

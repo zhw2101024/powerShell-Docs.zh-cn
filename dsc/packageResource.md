@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: DSC Package 资源
-ms.openlocfilehash: 3046ba7d57776a996a0b917348a0e863db6cd0c8
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 9285df71a303c9a53dd50d450272575a64e962e7
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093797"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268664"
 ---
 # <a name="dsc-package-resource"></a>DSC Package 资源
 
-> 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
+适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) 中的 **Package** 资源提供了在目标节点上安装或卸载程序包（如 Windows Installer 和 setup.exe 程序包）的机制。
 
@@ -34,8 +34,8 @@ Package [string] #ResourceName
 
 ## <a name="properties"></a>“属性”
 
-|  属性  |  说明   |
-|---|---|
+| 属性 | 说明 |
+| --- | --- |
 | 名称| 指示要确保其特定状态的程序包的名称。|
 | 路径| 指示程序包所在的路径。|
 | ProductId| 指示唯一标识程序包的产品 ID。|
@@ -43,7 +43,7 @@ Package [string] #ResourceName
 | 凭据| 提供远程源上程序包的访问权限。 此属性不用于安装程序包。 程序包始终安装在本地系统上。|
 | Ensure| 指示程序包是否已安装。 将此属性设置为“Absent”以确保未安装程序包（如果已安装则卸载程序包）。 将其设置为“Present”（默认值）以确保已安装程序包。|
 | LogPath| 指示你希望提供程序用于保存安装或卸载程序包的日志文件的完整路径。|
-| DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"``。|
+| DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。|
 | ReturnCode| 指示预期的返回代码。 如果实际返回代码与此处提供的预期值不匹配，则配置将返回错误。|
 
 ## <a name="example"></a>示例

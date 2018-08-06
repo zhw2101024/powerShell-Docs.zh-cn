@@ -1,6 +1,6 @@
 # <a name="installing-powershell-core-on-linux"></a>在 Linux 上安装 PowerShell Core
 
-支持 [Ubuntu 14.04][u14]、[Ubuntu 16.04][u16]、[Ubuntu 17.10][u17]、[Debian 8][deb8]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[OpenSUSE 42.2][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora] 和 [Arch Linux][arch]。
+支持 [Ubuntu 14.04][u14]、[Ubuntu 16.04][u16]、[Ubuntu 17.10][u17]、[Debian 8][deb8]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[OpenSUSE 42.3][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora] 和 [Arch Linux][arch]。
 
 对于不受正式支持的 Linux 分发版，可以尝试使用 [PowerShell AppImage][lai]。
 还可以尝试直接使用 Linux [`tar.gz` archive][tar] 部署 PowerShell 二进制文件，但是需要在各个步骤中基于 OS 设置所需的依赖项。
@@ -11,11 +11,12 @@ GitHub [版本][]页面上提供有所有可用包。
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
 [u17]: #ubuntu-1710
+[u18]: #ubuntu-1804
 [deb8]: #debian-8
 [deb9]: #debian-9
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
-[opensuse]: #opensuse-422
+[opensuse]: #opensuse-423
 [fedora]: #fedora
 [arch]: #arch-linux
 [lai]: #linux-appimage
@@ -29,7 +30,7 @@ GitHub [版本][]页面上提供有所有可用包。
 
 下面是使用各种包管理器安装稳定包和预览包的命令表：
 
-|Distrobution|稳定包命令 | 预览包命令 |
+|分配|稳定包命令 | 预览包命令 |
 |---------------|---------------|-----------------|
 | Ubuntu、Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
 | CentOS、RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
@@ -205,7 +206,7 @@ sudo apt-get update
 sudo apt-get install -y powershell-preview
 
 # Start PowerShell
-pwsh
+pwsh-preview
 ```
 
 作为超级用户注册 Microsoft 存储库一次后，仅需使用 `sudo apt-get upgrade powershell` 将其更新即可。
@@ -225,7 +226,7 @@ sudo apt-get install -f
 > `dpkg -i` 命令失败，未满足依赖项。
 > 下一命令 `apt-get install -f` 解决此类问题，然后完成 PowerShell 包配置。
 
-### <a name="uninstallation---ubuntu-1710"></a>卸载 - Ubuntu 17.10
+### <a name="uninstallation---ubuntu-1804"></a>卸载 - Ubuntu 18.04
 
 ```sh
 sudo apt-get remove powershell
@@ -416,7 +417,7 @@ sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0
 sudo yum remove powershell
 ```
 
-## <a name="opensuse-422"></a>OpenSUSE 42.2
+## <a name="opensuse-423"></a>OpenSUSE 42.3
 
 安装 PowerShell Core 时，`zypper` 可能报告以下错误：
 
@@ -434,7 +435,7 @@ zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
 
 然后在安装 PowerShell 包时选择 `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies` 解决方案。
 
-### <a name="installation-via-package-repository-preferred---opensuse-422"></a>通过包存储库安装（首选）- OpenSUSE 42.2
+### <a name="installation-via-package-repository-preferred---opensuse-423"></a>通过包存储库安装（首选）- OpenSUSE 42.3
 
 为简化安装（和更新），已将适用于 Linux 的 PowerShell Core 发布到正式的 Microsoft 存储库。
 
@@ -442,8 +443,8 @@ zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
 # Register the Microsoft signature key
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 
-# Add the Microsoft Product feed
-curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/zypp/repos.d/microsoft.repo
+# Add the Microsoft Repository
+zypper ar https://packages.microsoft.com/rhel/7/prod/
 
 # Update the list of products
 sudo zypper update
@@ -455,7 +456,7 @@ sudo zypper install powershell
 pwsh
 ```
 
-### <a name="installation-via-direct-download---opensuse-422"></a>通过直接下载进行安装 - OpenSUSE 42.2
+### <a name="installation-via-direct-download---opensuse-423"></a>通过直接下载进行安装 - OpenSUSE 42.3
 
 从[版本][]页中将 RPM 包 `powershell-6.0.2-1.rhel.7.x86_64.rpm` 下载到 OpenSUSE 计算机。
 
@@ -471,7 +472,7 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---opensuse-422"></a>卸载 - OpenSUSE 42.2
+### <a name="uninstallation---opensuse-423"></a>卸载 - OpenSUSE 42.3
 
 ```sh
 sudo zypper remove powershell
@@ -676,7 +677,7 @@ PowerShell 为所有 Linux 分发版生成可移植二进制文件。
 | Ubuntu 18.04       | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu60 |
 | Debian 8 (Jessie)  | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu52 |
 | Debian 9 (Stretch) | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.2、libicu57 |
-| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 | libunwind、libcurl、openssl-libs、libicu |
+| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE OpenSUSE 42.3 | libunwind、libcurl、openssl-libs、libicu |
 | Fedora 27 <br> Fedora 28 | libunwind、libcurl、openssl-libs、libicu、compat-openssl10 |
 
 若要在不受正式支持的 Linux 分发版上部署 PowerShell 二进制文件，则需在各个步骤中安装目标 OS 的必要依赖项。
