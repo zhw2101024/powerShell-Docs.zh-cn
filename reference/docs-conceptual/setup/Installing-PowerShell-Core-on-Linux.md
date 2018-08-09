@@ -1,8 +1,19 @@
+---
+title: 在 Linux 上安装 PowerShell Core
+description: 介绍如何在各种 Linux 分发上安装 PowerShell Core
+ms.date: 08/06/2018
+ms.openlocfilehash: a6b0e3003f84ea6dc99cffcc7edf1b5b6963aa21
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587442"
+---
 # <a name="installing-powershell-core-on-linux"></a>在 Linux 上安装 PowerShell Core
 
-支持 [Ubuntu 14.04][u14]、[Ubuntu 16.04][u16]、[Ubuntu 17.10][u17]、[Debian 8][deb8]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[OpenSUSE 42.3][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora] 和 [Arch Linux][arch]。
+支持 [Ubuntu 14.04][u14]、[Ubuntu 16.04][u16]、[Ubuntu 18.10][u18]、[Debian 8][deb8]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[OpenSUSE 42.3][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora] 和 [Arch Linux][arch]。
 
-对于不受正式支持的 Linux 分发版，可以尝试使用 [PowerShell AppImage][lai]。
+对于未获得官方支持的 Linux 分发，可尝试使用 [PowerShell Snap 包][snap]。
 还可以尝试直接使用 Linux [`tar.gz` archive][tar] 部署 PowerShell 二进制文件，但是需要在各个步骤中基于 OS 设置所需的依赖项。
 
 GitHub [版本][]页面上提供有所有可用包。
@@ -10,7 +21,7 @@ GitHub [版本][]页面上提供有所有可用包。
 
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
-[u17]: #ubuntu-1710
+[u18]: #ubuntu-1810
 [u18]: #ubuntu-1804
 [deb8]: #debian-8
 [deb9]: #debian-9
@@ -19,7 +30,7 @@ GitHub [版本][]页面上提供有所有可用包。
 [opensuse]: #opensuse-423
 [fedora]: #fedora
 [arch]: #arch-linux
-[lai]: #linux-appimage
+[snap]: #snap-package
 [tar]: #binary-archives
 
 ## <a name="installing-preview-releases"></a>安装预览版本
@@ -132,56 +143,6 @@ sudo apt-get install -f
 sudo apt-get remove powershell
 ```
 
-## <a name="ubuntu-1710"></a>Ubuntu 17.10
-
-> [!NOTE]
-> `6.1.0-preview.2` 后添加了对 Ubuntu 17.04 的支持
-
-### <a name="installation-via-package-repository---ubuntu-1710"></a>通过包存储库安装 - Ubuntu 17.10
-
-为简化安装（和更新），已将适用于 Linux 的 PowerShell Core 发布到包存储库。
-这是首选方法。
-
-```sh
-# Import the public repository GPG keys
-curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-
-# Register the Microsoft Ubuntu repository
-sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/17.10/prod.list
-
-# Update the list of products
-sudo apt-get update
-
-# Install PowerShell
-sudo apt-get install -y powershell
-
-# Start PowerShell
-pwsh
-```
-
-作为超级用户注册 Microsoft 存储库一次后，仅需使用 `sudo apt-get upgrade powershell` 将其更新即可。
-
-### <a name="installation-via-direct-download---ubuntu-1710"></a>通过直接下载进行安装 - Ubuntu 17.10
-
-从[版本][]页中将 Debian 包 `powershell_6.0.2-1.ubuntu.17.10_amd64.deb` 下载到 Ubuntu 计算机。
-
-然后在终端中执行以下命令：
-
-```sh
-sudo dpkg -i powershell_6.0.2-1.ubuntu.17.10_amd64.deb
-sudo apt-get install -f
-```
-
-> [!NOTE]
-> `dpkg -i` 命令失败，未满足依赖项。
-> 下一命令 `apt-get install -f` 解决此类问题，然后完成 PowerShell 包配置。
-
-### <a name="uninstallation---ubuntu-1710"></a>卸载 - Ubuntu 17.10
-
-```sh
-sudo apt-get remove powershell
-```
-
 ## <a name="ubuntu-1804"></a>Ubuntu 18.04
 
 > [!NOTE]
@@ -231,6 +192,14 @@ sudo apt-get install -f
 ```sh
 sudo apt-get remove powershell
 ```
+
+## <a name="ubuntu-1810"></a>Ubuntu 18.10
+
+> [!NOTE]
+> 自 `6.1.0-preview.3` 起添加了对 Ubuntu 18.10 的支持。
+> 18.10 是一个每日内部版本，因此它仅可用于社区。
+
+支持通过 `snapd` 按 18.10 版上进行安装。 有关完整说明，请参阅 [Snap 包][snap]；
 
 ## <a name="debian-8"></a>Debian 8
 
@@ -550,6 +519,33 @@ AUR 中的包由社区维护，并无正式支持。
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
+
+## <a name="snap-package"></a>Snap 包
+
+### <a name="getting-snapd"></a>获取 snapd
+
+需具备 `snapd` 才能运行 Snap。  按照[这些说明](https://docs.snapcraft.io/core/install)确保你已安装 `snapd`。
+
+### <a name="installation-via-snap"></a>通过 Snap 进行安装
+
+为简化安装（和更新），已向 [Snap 存储](https://snapcraft.io/store)发布 PowerShell Core for Linux。
+这是首选方法。
+
+```sh
+# Install PowerShell
+sudo snap install powershell-preview --classic
+
+# Start PowerShell
+pwsh-preview
+```
+
+安装 Snap 后将自动升级，但你可使用 `sudo snap refresh powershell-preview` 触发升级。
+
+### <a name="uninstallation"></a>卸载
+
+```sh
+sudo snap remove powershell-preview
+```
 
 ## <a name="linux-appimage"></a>Linux AppImage
 

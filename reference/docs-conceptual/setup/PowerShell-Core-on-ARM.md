@@ -1,3 +1,14 @@
+---
+title: 在 ARM 上安装 PowerShell Core
+description: 在基于 ARM 的系统上安装 PowerShell Core
+ms.date: 08/06/2018
+ms.openlocfilehash: 1f41df9120461da55e35dfe4c2ec4ddefbc5b36e
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587357"
+---
 # <a name="powershell-core-on-arm"></a>ARM 上的 PowerShell Core
 
 现在，PowerShell Core 可用于一些 ARM 设备，包括 Windows 10 ARM32/ARM64 和 Raspbian。

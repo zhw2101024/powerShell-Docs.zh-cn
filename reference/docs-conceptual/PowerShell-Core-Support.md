@@ -1,3 +1,14 @@
+---
+title: PowerShell Core 支持生命周期
+description: 用于管理 PowerShell Core 支持的策略
+ms.date: 08/06/2018
+ms.openlocfilehash: 2e0ca1b9c133e6f316a40aff13365d0489059165
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587153"
+---
 # <a name="powershell-core-support-lifecycle"></a>PowerShell Core 支持生命周期
 
 PowerShell Core 是独特的工具和组件集，该集从 Windows PowerShell 单独传输、安装和配置。
@@ -44,7 +55,8 @@ PowerShell Core 的版本 6.x 分支（例如 6.0、6.1、6.2 等）大约每六
 | Windows Server 2008 R2、2012 R2、2016             | 支持   | 支持   |
 | [Windows Server 半年频道][semi-annual] | 支持   | 支持   |
 | Ubuntu 14.04 和 16.04                           | 支持   | 支持   |
-| Ubuntu 17.10 和 18.04                           |             | 支持   |
+| Ubuntu 18.04                                      |             | 支持   |
+| Ubuntu 18.10（使用 Snap 包）                   |             | 社区   |
 | Debian 8.7+ 和 9                                | 支持   | 支持   |
 | CentOS 7                                          | 支持   | 支持   |
 | Red Hat Enterprise Linux 7                        | 支持   | 支持   |
@@ -56,6 +68,10 @@ PowerShell Core 的版本 6.x 分支（例如 6.0、6.1、6.2 等）大约每六
 | Raspbian                                          | 实验| 社区   |
 | Kali                                              | 社区   | 社区   |
 | AppImage（可在多个 Linux 平台上运行）     | 社区   | 社区   |
+| [Snap 包](https://snapcraft.io/powershell)   | 查看注释    | 查看注释    |
+
+> [!NOTE]
+> 将试验 Snap 包一段时间。  在我们确信 Snap 不会引入新的支持问题后，将支持你当前运行此包的分发。
 
 ## <a name="platform-which-are-out-of-support"></a>不受支持的平台
 
@@ -65,13 +81,14 @@ PowerShell Core 的版本 6.x 分支（例如 6.0、6.1、6.2 等）大约每六
 
 | 操作系统       | 版本 | 生命周期终止                                                                                 |
 |----------|---------|---------------------------------------------------------------------------------------------|
-| Fedora   | 26      | [2018 年 5 月](https://fedoramagazine.org/fedora-26-end-life/)                                  |
-| Fedora   | 25      | [2017 年 12 月](https://fedoramagazine.org/fedora-25-end-life/)                             |
 | Fedora   | 24      | [2017 年 8 月](https://fedoramagazine.org/fedora-24-eol/)                                    |
-| OpenSUSE | 42.2    | [2018 年 1 月](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
+| Fedora   | 25      | [2017 年 12 月](https://fedoramagazine.org/fedora-25-end-life/)                             |
+| Fedora   | 26      | [2018 年 5 月](https://fedoramagazine.org/fedora-26-end-life/)                                  |
 | OpenSUSE | 42.1    | [2017 年 5 月](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
-| Ubuntu   | 17.04   | [2018 年 1 月](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| OpenSUSE | 42.2    | [2018 年 1 月](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
 | Ubuntu   | 16.10   | [2017 年 7 月](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
+| Ubuntu   | 17.04   | [2018 年 1 月](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| Ubuntu   | 17.10   | [2018 年 7 月](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
 
 ## <a name="notes-on-licensing"></a>有关许可的说明
 

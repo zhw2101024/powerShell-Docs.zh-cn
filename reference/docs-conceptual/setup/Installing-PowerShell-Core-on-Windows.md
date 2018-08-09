@@ -1,3 +1,14 @@
+---
+title: 在 Windows 上安装 PowerShell Core
+description: 介绍如何在 Windows 上安装 PowerShell Core
+ms.date: 08/06/2018
+ms.openlocfilehash: 84c158b97519194888cf031c57a2a4634120c456
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587112"
+---
 # <a name="installing-powershell-core-on-windows"></a>在 Windows 上安装 PowerShell Core
 
 ## <a name="msi"></a>MSI

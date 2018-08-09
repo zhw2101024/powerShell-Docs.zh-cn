@@ -1,3 +1,14 @@
+---
+title: PowerShell Core 中的 WS-Management (WSMan) 远程处理
+description: 在 PowerShell Core 中使用 WSMan 进行远程处理
+ms.date: 08/06/2018
+ms.openlocfilehash: ce58ed88f59f32b0f83951e55de36e829f7fa3f4
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587340"
+---
 # <a name="ws-management-wsman-remoting-in-powershell-core"></a>PowerShell Core 中的 WS-Management (WSMan) 远程处理
 
 ## <a name="instructions-to-create-a-remoting-endpoint"></a>有关创建远程处理终结点的说明
