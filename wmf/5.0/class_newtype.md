@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: 9aa7e92632c671751020687ddbfc374eeda7148b
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a96a4a58dafa01fb43f5bdffb52ef833816148e7
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189408"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587289"
 ---
 # <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 中的新语言功能
 
@@ -308,7 +308,7 @@ $bodyText += $Properties.foreach{TH $_}
 # Add the rows
 $bodyText += foreach ($row in $Data)
     {
-        TR (-join $Properties.Foreach{ TD ($row.$\_) } )
+        TR (-join $Properties.Foreach{ TD ($row.$_) } )
     }
 
     $table = [Element] @{
