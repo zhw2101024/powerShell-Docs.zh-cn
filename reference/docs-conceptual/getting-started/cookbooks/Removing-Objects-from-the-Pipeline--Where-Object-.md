@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 从管道中删除对象 (Where Object)
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-ms.openlocfilehash: 46f210e1418098f4809174cd975ab8d783580285
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: c060b93a3823be26ad6c7757acc633bb4fc2fcfa
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34753832"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587136"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>从管道中删除对象 (Where-Object)
 
@@ -38,7 +38,7 @@ FilterScript 值是计算结果为 True 或 False 的脚本块，即由大括号
 |-contains|包含|1,2,3 -contains 1|
 |-notcontains|不包含|1,2,3 -notcontains 4|
 
-Where-Object 脚本块使用特殊变量“$_”来指代管道中的当前对象。 以下是其工作原理示例。 如果你有一个数字列表，且希望仅返回小于 3 的数字，则可使用 Where-Object 通过键入以下内容来筛选数字：
+Where-Object 脚本块使用特殊变量 `$_` 来指代管道中的当前对象。 以下是其工作原理示例。 如果你有一个数字列表，且希望仅返回小于 3 的数字，则可使用 Where-Object 通过键入以下内容来筛选数字：
 
 ```
 PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
@@ -48,7 +48,7 @@ PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
 
 ### <a name="filtering-based-on-object-properties"></a>基于对象属性进行筛选
 
-既然 $_ 指代当前管道对象，我们就可以访问其属性以进行测试。
+由于 `$_` 指代当前管道对象，因此可以访问它的属性进行测试。
 
 例如，我们可以看看 WMI 中的 Win32_SystemDriver 类。 一个特定的系统上可能有数百个系统驱动程序，但是你可能只对特定一些系统驱动程序感兴趣，例如那些当前正在运行的程序。 如果你使用 Get-Member 查看 Win32_SystemDriver 成员（**Get-WmiObject -Class Win32_SystemDriver | Get-Member -MemberType 属性**），你将发现相关属性为 State，并且在驱动程序运行时，它的值为“Running”。 你可以筛选系统驱动程序，通过键入以下内容仅选择正在运行的驱动程序：
 
