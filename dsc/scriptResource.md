@@ -1,29 +1,19 @@
 ---
-ms.date: 06/12/2017
+ms.date: 08/24/2018
 keywords: dsc,powershell,配置,安装程序
 title: DSC Script 资源
-ms.openlocfilehash: 1163d454972d8ee519d1c55b77bb85979faf3536
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: ef84239820a44aab2a028f7f0fe17653a851b72e
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189442"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43133887"
 ---
 # <a name="dsc-script-resource"></a>DSC Script 资源
 
+> 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.x
 
-> 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
-
-Windows PowerShell Desired State Configuration (DSC) 中的 **Script** 资源提供了在目标节点上运行 Windows PowerShell 脚本的机制。 `Script` 资源具有 `GetScript`、`SetScript` 和 `TestScript` 属性。 应将这些属性设置为将在每个目标节点上运行的脚本块。
-
-`GetScript` 脚本块应返回表示当前节点状态的哈希表。 哈希表必须只包含一个键 `Result`，并且值必须属于 `String` 类型。 它不需要返回任何内容。 DSC 不与此脚本块的输出执行任何操作。
-
-`TestScript` 脚本块应确定当前节点是否需要进行修改。 如果节点是最新的，它应返回 `$true`。 如果节点的配置已过期，它应返回 `$false`，并且应使用 `SetScript` 脚本块进行更新。 `TestScript` 脚本块由 DSC 调用。
-
-`SetScript` 脚本块应修改该节点。 如果 `TestScript` 块返回 `$false`，则其由 DSC 调用。
-
-如果需要从 `GetScript`、`TestScript` 或者 `SetScript` 脚本块内的配置脚本使用变量，请使用 `$using:` 作用域（参见以下内容为例）。
-
+Windows PowerShell Desired State Configuration (DSC) 中的 **Script** 资源提供了在目标节点上运行 Windows PowerShell 脚本的机制。 脚本资源使用 `GetScript``SetScript` 和 `TestScript` 属性，这些属性包含定义以执行相应的 DSC 状态操作的脚本块。
 
 ## <a name="syntax"></a>语法
 
@@ -38,37 +28,68 @@ Script [string] #ResourceName
 }
 ```
 
+> [!NOTE]
+> 将 `GetScript`、`TestScript` 和 `SetScript` 块存储为字符串。
+
 ## <a name="properties"></a>“属性”
 
-|  属性  |  说明   |
-|---|---|
-| GetScript| 提供调用 [Get-DscConfiguration](https://technet.microsoft.com/library/dn407379.aspx) cmdlet 时运行的 Windows PowerShell 脚本块。 此块必须返回一个哈希表。 哈希表必须只包含一个键 **Result**，并且值必须属于 **String** 类型。|
-| SetScript| 提供 Windows PowerShell 脚本块。 调用 [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet 时，将首先运行 **TestScript** 块。 如果 **TestScript** 块返回 **$false**，则将运行 **SetScript** 块。 如果 **TestScript** 块返回 **$true**，**SetScript** 块将不会运行。|
-| TestScript| 提供 Windows PowerShell 脚本块。 调用 [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet 时，将运行此块。 如果它返回 **$false**，将运行 SetScript 块。 如果它返回 **$true**，将不运行 SetScript 块。 调用 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet 时，也将运行 **TestScript** 块。 但是，在这种情况下，无论 TestScript 返回何值，都不会运行 **SetScript**。 如果实际配置与当前所需状态配置相匹配，**TestScript** 块必返回 True，如果不匹配，则返回 False。 （当前所需状态配置是在使用 DSC 的节点上执行的最后一个配置。）|
-| 凭据| 指示要用于运行此脚本的凭据（如果需要凭据）。|
-| DependsOn| 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。
+|属性|说明|
+|--------|-----------|
+|GetScript|一个返回节点当前状态的脚本块。|
+|SetScript|DSC 在节点未处于所需状态时用于强制执行符合性的脚本块。|
+|TestScript|一个用于确定节点是否处于所需状态的脚本块。|
+|凭据| 指示要用于运行此脚本的凭据（如果需要凭据）。|
+|DependsOn| 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。
 
-## <a name="example-1"></a>示例 1
+### <a name="getscript"></a>GetScript
+
+DSC 不使用来自 `GetScript` 的输出。 [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) cmdlet 执行 `GetScript` 以检索节点的当前状态。 `GetScript` 不需要返回值。 如果指定返回值，则它必须是包含值为 `String` 的 Result 键的 `hashtable`。
+
+### <a name="testscript"></a>TestScript
+
+DSC 执行 `TestScript` 以确定是否应运行 `SetScript`。 如果 `TestScript` 返回 `$false`，则 DSC 执行 `SetScript` 以使节点恢复到所需状态。 它必须返回一个 `boolean` 值。 `$true` 的结果表示节点是符合的，不应执行 `SetScript`。
+
+[Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-DscConfiguration) cmdlet 执行 `TestScript` 以检索节点是否符合脚本资源。 但是，在这种情况下，无论 `TestScript` 块返回什么，`SetScript` 都不会运行。
+
+> [!NOTE]
+> `TestScript` 的所有输出都是其返回值的一部分。 PowerShell 将未压缩的输出视为非零，这意味着无论节点的状态如何，`TestScript` 都将返回 `$true`。
+> 这会导致不可预测的结果和误报，并导致在故障排除时出现问题。
+
+### <a name="setscript"></a>SetScript
+
+`SetScript` 修改节点以强制执行所需的状态。 如果 `TestScript` 脚本块返回 `$false`，则其由 DSC 调用。 `SetScript` 应该没有返回值。
+
+## <a name="examples"></a>示例
+
+### <a name="example-1-write-sample-text-using-a-script-resource"></a>示例 1：使用脚本资源编写示例文本
+
+此示例测试每个节点上是否存在 `C:\TempFolder\TestFile.txt`。 如果它不存在，则使用 `SetScript` 创建它。 `GetScript` 返回文件的内容，并且不使用其返回值。
+
 ```powershell
 Configuration ScriptTest
 {
     Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
 
-    Script ScriptExample
+    Node localhost
     {
-        SetScript =
+        Script ScriptExample
         {
-            $sw = New-Object System.IO.StreamWriter("C:\TempFolder\TestFile.txt")
-            $sw.WriteLine("Some sample string")
-            $sw.Close()
+            SetScript = {
+                $sw = New-Object System.IO.StreamWriter("C:\TempFolder\TestFile.txt")
+                $sw.WriteLine("Some sample string")
+                $sw.Close()
+            }
+            TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
+            GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }
         }
-        TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
-        GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }
     }
 }
 ```
 
-## <a name="example-2"></a>示例 2
+### <a name="example-2-compare-version-information-using-a-script-resource"></a>示例 2：使用脚本资源比较版本信息
+
+此示例从创作计算机上的文本文件中检索符合的版本信息，并将其存储在 `$version` 变量中。 在生成节点的 MOF 文件时，DSC 将每个脚本块中的 `$using:version` 变量替换为 `$version` 变量的值。 在执行期间，符合的版本存储在每个节点上的文本文件中，并在后续执行时进行比较和更新。
+
 ```powershell
 $version = Get-Content 'version.txt'
 
@@ -76,27 +97,30 @@ Configuration ScriptTest
 {
     Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
 
-    Script UpdateConfigurationVersion
+    Node localhost
     {
-        GetScript = {
-            $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
-            return @{ 'Result' = "$currentVersion" }
-        }
-        TestScript = {
-            $state = $GetScript
-            if( $state['Result'] -eq $using:version )
-            {
-                Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
-                return $true
+        Script UpdateConfigurationVersion
+        {
+            GetScript = {
+                $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+                return @{ 'Result' = "$currentVersion" }
             }
-            Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
-            return $false
-        }
-        SetScript = {
-            $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+            TestScript = {
+                # Create and invoke a scriptblock using the $GetScript automatic variable, which contains a string representation of the GetScript.
+                $state = [scriptblock]::Create($GetScript).Invoke()
+
+                if( $state['Result'] -eq $using:version )
+                {
+                    Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
+                    return $true
+                }
+                Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
+                return $false
+            }
+            SetScript = {
+                $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+            }
         }
     }
 }
 ```
-
-此资源正在将配置的版本写入文本文件。 此版本在客户端计算机上可用，但不在任何节点上，因此必须通过 PowerShell 的 `using` 作用域将其传递到每个 `Script` 资源的脚本块。 生成节点的 MOF 文件时，将从客户端计算机上的文本文件读取 `$version` 变量的值。 DSC 将每个脚本块中的 `$using:version` 变量替换为 `$version` 变量的值。

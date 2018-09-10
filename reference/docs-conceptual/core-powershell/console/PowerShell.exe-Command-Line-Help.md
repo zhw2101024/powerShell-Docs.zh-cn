@@ -1,14 +1,14 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/14/2018
 keywords: powershell,cmdlet
 title: PowerShell.exe 命令行帮助
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: 60b6a7e310821a4092b0972b7abbdae0e2d5f738
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: c7f35511e876e8e5189d8a2b949555603d43f731
+ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952573"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "43133068"
 ---
 # <a name="powershellexe-command-line-help"></a>PowerShell.exe 命令行帮助
 
@@ -49,12 +49,9 @@ PowerShell[.exe] -Help | -? | /?
 
 ### <a name="-file-filepath-parameters"></a>-File <FilePath> \[<Parameters>]
 
-在本地作用域中运行指定的脚本（“dot-sourced”），以便脚本创建的函数和变量在当前会话中可用。 输入脚本文件路径和任何参数。 **File** 必须是命令中的最后一个参数，因为在 **File** 参数名称后键入的所有字符都会被解释为后跟脚本参数及其值的脚本文件路径。
+在本地作用域中运行指定的脚本（“dot-sourced”），以便脚本创建的函数和变量在当前会话中可用。 输入脚本文件路径和任何参数。 “文件”必须是命令中的最后一个参数。 在 -File 参数之后键入的所有值都被视为脚本文件路径和传递到该脚本的参数。
 
-**File** 参数的值中可以包括脚本参数和参数值。 例如：`-File .\Get-Script.ps1 -Domain Central`。请注意，传递给脚本的参数作为文字字符串（在当前 shell 的解释后）传递。
-例如，如果处于 cmd.exe，并要传递环境变量值，则使用 cmd.exe 语法：`powershell -File .\test.ps1 -Sample %windir%`。如果计划使用 PowerShell 语法，则在此示例中，脚本将收到文本“$env: windir”，而非该环境变量的值：`powershell -File .\test.ps1 -Sample $env:windir`
-
-通常，将包括或忽略脚本的开关参数。 例如，下面的命令使用 Get-Script.ps1 脚本文件的 **All** 参数：`-File .\Get-Script.ps1 -All`
+传递给脚本的参数作为文字字符串（在当前 shell 的解释后）传递。 例如，如果处于 cmd.exe，并要传递环境变量值，则使用 cmd.exe 语法：`powershell -File .\test.ps1 -Sample %windir%`。在此示例中，脚本将收到文本字符串 `$env:windir`，而非该环境变量的值：`powershell -File .\test.ps1 -Sample $env:windir`
 
 ### <a name="-inputformat-text--xml"></a>\-InputFormat {文本 |XML}
 
@@ -98,7 +95,7 @@ PowerShell[.exe] -Help | -? | /?
 
 如果未安装 PowerShell 3.0，则唯一的有效值为“2.0”。 将忽略其他值。
 
-有关详细信息，请参阅“[安装 Windows PowerShell](../../setup/installing-windows-powershell.md)”。
+有关详细信息，请参阅[安装 Windows PowerShell](../../setup/installing-windows-powershell.md)。
 
 ### <a name="-windowstyle-window-style"></a>-WindowStyle <Window style>
 
@@ -106,8 +103,8 @@ PowerShell[.exe] -Help | -? | /?
 
 ### <a name="-command"></a>-Command
 
-执行指定的命令（和所有参数），就像从 PowerShell 命令提示符下键入的命令一样，如果未指定 NoExit，则随后退出。
-实际上，`-Command` 后的任何文本都会作为单个命令行发送到 PowerShell，这与 `-File` 对发送到脚本的参数的处理方式不同。
+执行指定的命令（和所有参数），就像是在 PowerShell 命令提示符下键入的命令一样。 在执行后，除非指定 `-NoExit` 参数，否则 PowerShell 会退出。
+`-Command` 后面的任何文本都会作为单个命令行发送到 PowerShell。 这与 `-File` 处理发送到脚本的参数的方式不同。
 
 Command 的值可以为“-”、字符串。 或脚本块。 如果 Command 的值为“-”，则将从标准输入读取命令文本。
 
@@ -121,11 +118,11 @@ Command 的值可以为“-”、字符串。 或脚本块。 如果 Command 的
 "& {<command>}"
 ```
 
-其中，引号指示一个字符串，调用运算符 (&) 用于执行命令。
+引号指示一个字符串，调用运算符 (&) 用于执行命令。
 
 ### <a name="-help---"></a>-Help、-?、/?
 
-显示此消息。 如果要在 PowerShell 中键入 PowerShell.exe 命令，请以连字符 (-) 作为命令参数的前缀，不要使用正斜杠 (/)。 你可以在 Cmd.exe 中使用连字符或正斜杠。
+显示 powershell.exe 的语法。 如果要在 PowerShell 中键入 PowerShell.exe 命令，请以连字符 (-) 作为命令参数的前缀，不要使用正斜杠 (/)。 你可以在 Cmd.exe 中使用连字符或正斜杠。
 
 > [!NOTE]
 > 疑难解答注释：在 PowerShell 2.0 中，在 Windows PowerShell 控制台中启动某些程序将失败，LastExitCode 为 0xc0000142。

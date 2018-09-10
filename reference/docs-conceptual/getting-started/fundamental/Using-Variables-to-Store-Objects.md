@@ -1,21 +1,22 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: 使用变量存储对象
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-ms.openlocfilehash: e52f0a344d0ad13db42b34bed912d584c99b0e30
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: f4254199facb914c68a487b281b30070c35550a1
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953321"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353212"
 ---
 # <a name="using-variables-to-store-objects"></a>使用变量存储对象
-PowerShell 处理对象。 PowerShell 允许创建实质上是命名对象的变量以保留输出以供以后使用。 如果你习惯在其他 Shell 中处理变量，请记住，PowerShell 变量是对象，而非文本。
 
-始终使用初始字符 $ 指定变量，并且可以在其名称中包含任何字母数字字符或下划线。
+PowerShell 处理对象。 使用 PowerShell 可以创建称为“变量”的命名对象。
+变量名称可以包含下划线字符，也可以是任何字母数字字符。 在 PowerShell 中使用时，始终使用变量名称后跟的 \$ 字符指定变量。
 
-### <a name="creating-a-variable"></a>创建变量
+## <a name="creating-a-variable"></a>创建变量
+
 可以通过键入有效的变量名称来创建变量：
 
 ```
@@ -23,13 +24,14 @@ PS> $loc
 PS>
 ```
 
-这将不返回任何结果，因为 **$loc** 不具有值。 你可以在同一步骤中创建变量并为其赋值。 PowerShell 仅当变量不存在时才创建变量；否则，它会将指定的值赋给现有变量。 若要将你的当前位置存储在变量 **$loc**中，请键入：
+此示例不会返回任何结果，因为 `$loc` 不具有值。 你可以在同一步骤中创建变量并为其赋值。 如果不存在，PowerShell 将仅创建变量。
+否则，它将指定的值分配给现有变量。 下面的示例将当前位置存储在变量 `$loc` 中：
 
-```
+```powershell
 $loc = Get-Location
 ```
 
-当你键入此命令时，不会显示任何输出，因为已将输出发送给 $loc。 在 PowerShell 中，未定向的数据将始终发送到屏幕，所显示的输出正是这一事实的副作用。 键入 $loc 将显示你的当前位置：
+键入此命令时，PowerShell 不会显示任何输出。 PowerShell 将“Get-Location”的输出发送到 `$loc`。 在 PowerShell 中，未分配或未重定向的数据将发送到屏幕。 键入 `$loc` 将显示当前位置：
 
 ```
 PS> $loc
@@ -39,9 +41,9 @@ Path
 C:\temp
 ```
 
-你可以使用 **Get-Member** 来显示有关变量内容的信息。 通过管道将 $loc 传递至 Get-Member 会向你显示这是一个 **PathInfo** 对象，就像 Get-Location 的输出一样：
+可以使用 `Get-Member` 显示有关变量内容的信息。 `Get-Member` 表示 `$loc` 是 PathInfo 对象，类似于来自 `Get-Location` 的输出：
 
-```
+```powershell
 PS> $loc | Get-Member -MemberType Property
 
    TypeName: System.Management.Automation.PathInfo
@@ -54,47 +56,47 @@ Provider     Property   System.Management.Automation.ProviderInfo Provider {...
 ProviderPath Property   System.String ProviderPath {get;}
 ```
 
-### <a name="manipulating-variables"></a>操作变量
+## <a name="manipulating-variables"></a>操作变量
+
 PowerShell 提供多个用以操作变量的命令。 你可以通过键入以下内容看到可读形式的完整列表：
 
-```
+```powershell
 Get-Command -Noun Variable | Format-Table -Property Name,Definition -AutoSize -Wrap
 ```
 
-除了你在当前的 PowerShell 会话中创建的变量，还存在多个系统定义的变量。 可以使用 Remove-Variable cmdlet 来清除所有不受 PowerShell 控制的变量。 键入以下命令来清除所有变量：
+PowerShell 还会创建系统定义的多个变量。 可以使用 `Remove-Variable` cmdlet 来删除当前会话中所有不受 PowerShell 控制的变量。 键入以下命令来清除所有变量：
 
-```
+```powershell
 Remove-Variable -Name * -Force -ErrorAction SilentlyContinue
 ```
 
-这将生成你在下方看到的确认提示。
+运行上述命令后，`Get-Variable` cmdlet 显示 PowerShell 系统变量。
 
-```
-Confirm
-Are you sure you want to perform this action?
-Performing operation "Remove Variable" on Target "Name: Error".
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help
-(default is "Y"):A
-```
+PowerShell 还会创建一个变量驱动器。 使用下面的示例显示使用变量驱动器的所有 PowerShell 变量：
 
-然后，如果运行 Get-Variable cmdlet，则会看到其余的 PowerShell 变量。 由于还存在一个变量 PowerShell 驱动器，也可以通过键入以下内容显示所有的 PowerShell 变量：
-
-```
+```powershell
 Get-ChildItem variable:
 ```
 
-### <a name="using-cmdexe-variables"></a>使用 Cmd.exe 变量
-虽然 PowerShell 不是 Cmd.exe，但它在命令 Shell 环境中运行，并且可以在 Windows 的任何环境中使用相同的可用变量。 这些变量通过名为 **env** 的驱动器进行公开： 你可以通过键入以下内容查看这些变量：
+## <a name="using-cmdexe-variables"></a>使用 cmd.exe 变量
 
-```
+PowerShell 可以使用任何 Windows 进程可用的相同环境变量，其中包括 cmd.exe。 这些变量通过名为 `env:` 的驱动器公开。 可以通过键入以下命令查看这些变量：
+
+```powershell
 Get-ChildItem env:
 ```
 
-虽然标准变量 cmdlet 并不用于处理 **env:** 变量，但你仍可以通过指定 **env:** 前缀来使用它们。 例如，若要查看操作系统根目录，可以通过键入以下内容从 PowerShell 内部使用命令 Shell %SystemRoot% 变量：
+标准 `*-Variable` cmdlet 未设计为使用环境变量。 使用 `env:` 驱动器前缀访问环境变量。 例如，cmd.exe 中的 %SystemRoot% 变量包含操作系统的根目录名称。 在 PowerShell 中，使用 `$env:SystemRoot` 可访问相同的值。
 
 ```
 PS> $env:SystemRoot
 C:\WINDOWS
 ```
 
-还可以从 PowerShell 内部创建和修改环境变量。 从 Windows PowerShell 访问的环境变量遵循针对 Windows 中其他环境变量的一般规则。
+还可以从 PowerShell 内部创建和修改环境变量。 PowerShell 中的环境变量遵循操作系统中其他地方使用的环境变量的相同规则。 下面的示例创建一个新的环境变量：
+
+```powershell
+$env:LIB_PATH='/usr/local/lib'
+```
+
+尽管没有要求，但环境变量名称通常使用全部大写字母。
