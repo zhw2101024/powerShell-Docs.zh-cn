@@ -2,22 +2,22 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 适用于决策者的 Desired State Configuration 概述
-ms.openlocfilehash: 70fc5c55266970165dc16eac85f6b850cf409d64
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 7c36aa5fadeab8bcb381f316288d102b5ce402e2
+ms.sourcegitcommit: ac20e0faaa37142e9c6e4507a21df2f4a3fdbece
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189867"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44339831"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>适用于决策者的 Desired State Configuration 概述
 
-本文档描述了使用 PowerShell Desired State Configuration (DSC) 的商业利益。 它不是技术指南。
+本文介绍使用 Windows PowerShell Desired State Configuration (DSC) 给业务带来的好处。 它不是技术指南。
 
 ## <a name="what-is-desired-state-configuration"></a>什么是 Desired State Configuration？
 
-Windows PowerShell Desired State Configuration (DSC) 是基于开放标准的内置于 Windows 中的配置管理平台。 DSC 足够灵活以在部署生命周期的各个阶段（开发、测试、预生产、生产）及扩展期间可靠而一致地运转。
+PowerShell Desired State Configuration 是基于开放标准的内置于 Windows 中的配置管理平台。 DSC 足够灵活以在部署生命周期的各个阶段（开发、测试、预生产、生产）及扩展期间可靠而一致地运转。
 
-DSC 以[配置](https://msdn.microsoft.com/powershell/dsc/configurations)为中心。
+DSC 以[配置](configurations.md)为中心。
 配置是易读的文档，描述了由具有特定特征的计算机（“节点”）组成的环境。
 这些特性可简单可复杂，或如确保特定 Windows 功能已启用般简单，或如部署 SharePoint 般复杂。
 
@@ -39,22 +39,21 @@ DSC 也内置了监视和报告。
 
 ## <a name="desired-state-configuration-and-devops"></a>Desired State Configuration 和 DevOps
 
-[DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) 结合了人员、流程和工具，方便实现快速部署和迭代，旨在向内外部最终用户传递价值。
-DSC 设计时就心怀 DevOps。
+DSC 设计时考虑到 [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx)后者结合了人员、流程和工具，方便实现快速部署和迭代，旨在向内外部最终用户传递价值。
 使单个配置定义环境意味着，开发人员可将其要求编码到配置中，并将该配置签入源控件，而操作小组可轻松部署代码，无需经历易出错的手动流程。
 
-配置也是[数据驱动](https://msdn.microsoft.com/powershell/dsc/configdata)的，便于操作小组识别和更改环境，无需开发人员介入。
+配置也是[数据驱动](configData.md)的，便于操作人员识别和更改环境，无需开发人员介入。
 
 ## <a name="desired-state-configuration-on--and-off-premises"></a>本地和非本地 Desired State Configuration
 
 DSC 可用于管理本地和非本地部署。
-对于本地解决方案，DSC 拥有[请求服务器](https://msdn.microsoft.com/powershell/dsc/pullserver)，可用于集中式管理计算机并报告其状态。
+针对本地解决方案，DSC 拥有[请求服务器](pullServer.md)，可用于集中式管理计算机并报告其状态。
 针对云解决方案，只要 Windows 可用 DSC 就可用。
 Desired State Configuration 还内置有来自 Azure 的特定产品/服务，例如 [Azure 自动化](https://azure.microsoft.com/en-us/documentation/services/automation/)，它可实现 DSC 报告的集中化。
 
 ## <a name="dsc-and-compatibility"></a>DSC 和兼容性
 
 尽管 DSC 在 Windows Server 2012 R2 中引入，但下层操作系统可通过 Windows Management Framework (WMF) 程序包使用它。
-有关 WMF 的详细信息，可查看 [PowerShell 主页](https://msdn.microsoft.com/en-us/powershell/)。
+有关 WMF 的详细信息，可查看 [PowerShell 主页](/powershell/)。
 
-DSC 还可以用于管理 Linux。 有关详细信息，请参阅[适用于 Linux 的 DSC 入门](https://msdn.microsoft.com/en-us/powershell/dsc/lnxgettingstarted)。
+DSC 还可以用于管理 Linux。 有关详细信息，请参阅[适用于 Linux 的 DSC 入门](lnxGettingStarted.md)。
