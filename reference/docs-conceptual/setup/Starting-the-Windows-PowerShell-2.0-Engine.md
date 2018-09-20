@@ -14,7 +14,7 @@ ms.locfileid: "34482958"
 
 本部分介绍如何在包含 Windows PowerShell 2.0 引擎 的 Windows 8.1、Windows Server 2012 R2、Windows 8 和 Windows Server 2012 上，以及安装了 Windows PowerShell 2.0、Windows PowerShell 3.0 和 Windows PowerShell 4.0 的其他系统上启动 Windows PowerShell 2.0 引擎。
 
-Windows PowerShell 4.0 和 Windows PowerShell 3.0 旨在能够与 Windows PowerShell 2.0 向后兼容。 为 Windows PowerShell 2.0 编写的 Cmdlet、提供程序、管理单元、模块以及脚本无需更改，即可在 Windows PowerShell 4.0 和 Windows PowerShell 3.0 中运行。 但是，由于 Microsoft.NET framework 4 中的运行时激活策略的更改，为 Windows PowerShell 2.0 编写并使用公共语言运行时 (CLR) 2.0 编译的 Windows PowerShell 主机程序在使用 CLR 4.0 编译的 Windows PowerShell 3.0 或 Windows PowerShell 4.0 中未进行修改时，将无法运行。 Windows PowerShell 2.0 引擎仅在当前脚本或主机程序无法运行时使用，因为它与 Windows PowerShell 4.0、Windows PowerShell 3.0 或 Microsoft .NET Framework 4 不兼容。 这种情况很少见。
+Windows PowerShell 4.0 和 Windows PowerShell 3.0 旨在能够与 Windows PowerShell 2.0 向后兼容。 为 Windows PowerShell 2.0 编写的 Cmdlet、提供程序、管理单元、模块以及脚本无需更改，即可在 Windows PowerShell 4.0 和 Windows PowerShell 3.0 中运行。 但是，由于 Microsoft.NET framework 4 中的运行时激活策略的更改，如果使用 CLR 4.0 编译的 Windows PowerShell 3.0 或 Windows PowerShell 4.0 中未进行修改，为 Windows PowerShell 2.0 编写并使用公共语言运行时 (CLR) 2.0 编译的 Windows PowerShell 主机程序将无法运行。 Windows PowerShell 2.0 引擎仅在当前脚本或主机程序无法运行时使用，因为它与 Windows PowerShell 4.0、Windows PowerShell 3.0 或 Microsoft .NET Framework 4 不兼容。 这种情况很少见。
 
 许多需要 Windows PowerShell 2.0 引擎的程序将自动启动。 这些说明适用于极少数需要手动启动该引擎的情况。
 
