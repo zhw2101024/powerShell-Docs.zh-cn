@@ -4,220 +4,220 @@ keywords: powershell,cmdlet
 ms.date: 12/12/2016
 title: Add-PswaAuthorizationRule
 schema: 2.0.0
-ms.openlocfilehash: bcf897730881551ec16ce970de6a1330961b67e6
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: fe2b71dcfa870ba3f92484ae3fd3c45b3107a1bc
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268259"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523070"
 ---
-# <a name="add-pswaauthorizationrule"></a><span data-ttu-id="8876f-103">Add-PswaAuthorizationRule</span><span class="sxs-lookup"><span data-stu-id="8876f-103">Add-PswaAuthorizationRule</span></span>
+# <a name="add-pswaauthorizationrule"></a><span data-ttu-id="e0009-103">Add-PswaAuthorizationRule</span><span class="sxs-lookup"><span data-stu-id="e0009-103">Add-PswaAuthorizationRule</span></span>
 
-## <a name="synopsis"></a><span data-ttu-id="8876f-104">简述</span><span class="sxs-lookup"><span data-stu-id="8876f-104">SYNOPSIS</span></span>
+## <a name="synopsis"></a><span data-ttu-id="e0009-104">简述</span><span class="sxs-lookup"><span data-stu-id="e0009-104">SYNOPSIS</span></span>
 
-<span data-ttu-id="8876f-105">向 Windows PowerShell Web 访问授权规则集添加新的授权规则。</span><span class="sxs-lookup"><span data-stu-id="8876f-105">Adds a new authorization rule to the Windows PowerShell Web Access authorization rule set.</span></span>
+<span data-ttu-id="e0009-105">向 Windows PowerShell Web 访问授权规则集添加新的授权规则。</span><span class="sxs-lookup"><span data-stu-id="e0009-105">Adds a new authorization rule to the Windows PowerShell Web Access authorization rule set.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="8876f-106">语法</span><span class="sxs-lookup"><span data-stu-id="8876f-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="e0009-106">语法</span><span class="sxs-lookup"><span data-stu-id="e0009-106">Syntax</span></span>
 
-### <a name="usergroupnamecomputergroupname"></a><span data-ttu-id="8876f-107">UserGroupNameComputerGroupName</span><span class="sxs-lookup"><span data-stu-id="8876f-107">UserGroupNameComputerGroupName</span></span>
+### <a name="usergroupnamecomputergroupname"></a><span data-ttu-id="e0009-107">UserGroupNameComputerGroupName</span><span class="sxs-lookup"><span data-stu-id="e0009-107">UserGroupNameComputerGroupName</span></span>
 
 ```
 Add-PswaAuthorizationRule -ComputerGroupName <String> -ConfigurationName <String> -UserGroupName <String[]> [-Credential <PSCredential> ] [-Force] [-RuleName <String> ] [ <CommonParameters>]
 ```
 
-### <a name="usergroupnamecomputername"></a><span data-ttu-id="8876f-108">UserGroupNameComputerName</span><span class="sxs-lookup"><span data-stu-id="8876f-108">UserGroupNameComputerName</span></span>
+### <a name="usergroupnamecomputername"></a><span data-ttu-id="e0009-108">UserGroupNameComputerName</span><span class="sxs-lookup"><span data-stu-id="e0009-108">UserGroupNameComputerName</span></span>
 
 ```
 Add-PswaAuthorizationRule -ComputerName <String> -ConfigurationName <String> -UserGroupName <String[]> [-Credential <PSCredential> ] [-Force] [-RuleName <String> ] [ <CommonParameters>]
 ```
 
-### <a name="usernamecomputergroupname"></a><span data-ttu-id="8876f-109">UserNameComputerGroupName</span><span class="sxs-lookup"><span data-stu-id="8876f-109">UserNameComputerGroupName</span></span>
+### <a name="usernamecomputergroupname"></a><span data-ttu-id="e0009-109">UserNameComputerGroupName</span><span class="sxs-lookup"><span data-stu-id="e0009-109">UserNameComputerGroupName</span></span>
 
 ```
 Add-PswaAuthorizationRule [-UserName] <String[]> -ComputerGroupName <String> -ConfigurationName <String> [-Credential <PSCredential> ] [-Force] [-RuleName <String> ] [ <CommonParameters>]
 ```
 
-### <a name="usernamecomputername"></a><span data-ttu-id="8876f-110">UserNameComputerName</span><span class="sxs-lookup"><span data-stu-id="8876f-110">UserNameComputerName</span></span>
+### <a name="usernamecomputername"></a><span data-ttu-id="e0009-110">UserNameComputerName</span><span class="sxs-lookup"><span data-stu-id="e0009-110">UserNameComputerName</span></span>
 
 ```
 Add-PswaAuthorizationRule [-UserName] <String[]> [-ComputerName] <String> [-ConfigurationName] <String> [-Credential <PSCredential> ] [-Force] [-RuleName <String> ] [ <CommonParameters>]
 ```
 
-## <a name="description"></a><span data-ttu-id="8876f-111">说明</span><span class="sxs-lookup"><span data-stu-id="8876f-111">DESCRIPTION</span></span>
+## <a name="description"></a><span data-ttu-id="e0009-111">说明</span><span class="sxs-lookup"><span data-stu-id="e0009-111">DESCRIPTION</span></span>
 
-<span data-ttu-id="8876f-112">Add-PswaAuthorizationRule cmdlet 向 Windows PowerShell(r) Web 访问授权规则集添加新的授权规则。</span><span class="sxs-lookup"><span data-stu-id="8876f-112">The **Add-PswaAuthorizationRule** cmdlet adds a new authorization rule to the Windows PowerShell(r) Web Access authorization rule set.</span></span>
+<span data-ttu-id="e0009-112">Add-PswaAuthorizationRule cmdlet 向 Windows PowerShell(r) Web 访问授权规则集添加新的授权规则。</span><span class="sxs-lookup"><span data-stu-id="e0009-112">The **Add-PswaAuthorizationRule** cmdlet adds a new authorization rule to the Windows PowerShell(r) Web Access authorization rule set.</span></span>
 
-<span data-ttu-id="8876f-113">必须为此规则指定用户、计算机和 Windows PowerShell 终结点。</span><span class="sxs-lookup"><span data-stu-id="8876f-113">You must specify the users, computers, and Windows PowerShell endpoints for this rule.</span></span> <span data-ttu-id="8876f-114">既可通过个人用户帐户和计算机名称来指定用户和计算机，也可通过指定组来完成此操作。</span><span class="sxs-lookup"><span data-stu-id="8876f-114">You can specify both users and computers either by individual user accounts and computer names, or by specifying groups.</span></span>
+<span data-ttu-id="e0009-113">必须为此规则指定用户、计算机和 Windows PowerShell 终结点。</span><span class="sxs-lookup"><span data-stu-id="e0009-113">You must specify the users, computers, and Windows PowerShell endpoints for this rule.</span></span> <span data-ttu-id="e0009-114">既可通过个人用户帐户和计算机名称来指定用户和计算机，也可通过指定组来完成此操作。</span><span class="sxs-lookup"><span data-stu-id="e0009-114">You can specify both users and computers either by individual user accounts and computer names, or by specifying groups.</span></span>
 
-<span data-ttu-id="8876f-115">对于已加入 Active Directory 域的计算机，cmdlet 将使用计算机的安全标识符 (SID) 来创建该规则。</span><span class="sxs-lookup"><span data-stu-id="8876f-115">For a computer that is joined to an Active Directory domain, the cmdlet uses the security identifier (SID) of the computer to create the rule.</span></span> <span data-ttu-id="8876f-116">这允许你在登录页的“计算机名”字段中使用短名称、完全限定的域名 (FQDN) 或 IP 地址。</span><span class="sxs-lookup"><span data-stu-id="8876f-116">This allows you to use a short name, a fully qualified domain name (FQDN), or an IP address for the **Computer Name** field on the sign-in page.</span></span>
+<span data-ttu-id="e0009-115">对于已加入 Active Directory 域的计算机，cmdlet 将使用计算机的安全标识符 (SID) 来创建该规则。</span><span class="sxs-lookup"><span data-stu-id="e0009-115">For a computer that is joined to an Active Directory domain, the cmdlet uses the security identifier (SID) of the computer to create the rule.</span></span> <span data-ttu-id="e0009-116">这允许你在登录页的“计算机名”字段中使用短名称、完全限定的域名 (FQDN) 或 IP 地址。</span><span class="sxs-lookup"><span data-stu-id="e0009-116">This allows you to use a short name, a fully qualified domain name (FQDN), or an IP address for the **Computer Name** field on the sign-in page.</span></span>
 
-<span data-ttu-id="8876f-117">对于未加入 Active Directory 域的计算机，cmdlet 将使用管理员提供的计算机名来创建规则。</span><span class="sxs-lookup"><span data-stu-id="8876f-117">For a computer that is not joined to an Active Directory domain, the cmdlet creates the rule using the computer name provided by the administrator.</span></span> <span data-ttu-id="8876f-118">要成功连接到此计算机，最终用户必须提供与规则中出现的完全一致的计算机名。</span><span class="sxs-lookup"><span data-stu-id="8876f-118">To successfully connect to this machine, the end user must provide the computer name exactly as it appears in the rule.</span></span>
+<span data-ttu-id="e0009-117">对于未加入 Active Directory 域的计算机，cmdlet 将使用管理员提供的计算机名来创建规则。</span><span class="sxs-lookup"><span data-stu-id="e0009-117">For a computer that is not joined to an Active Directory domain, the cmdlet creates the rule using the computer name provided by the administrator.</span></span> <span data-ttu-id="e0009-118">要成功连接到此计算机，最终用户必须提供与规则中出现的完全一致的计算机名。</span><span class="sxs-lookup"><span data-stu-id="e0009-118">To successfully connect to this machine, the end user must provide the computer name exactly as it appears in the rule.</span></span>
 
-<span data-ttu-id="8876f-119">如果网络上出现多个具有相同名称的计算机，则短名称可解析为多台计算机。</span><span class="sxs-lookup"><span data-stu-id="8876f-119">If there are multiple computers with the same name on the network, then short name can resolve to more than one computer.</span></span> <span data-ttu-id="8876f-120">这可能在创建连接时造成多义性。</span><span class="sxs-lookup"><span data-stu-id="8876f-120">This can lead to ambiguity when establishing a connection.</span></span> <span data-ttu-id="8876f-121">例如，如果名为“Server1”的工作组计算机具有一条规则，与此同时，在网络中又加入一个名为 server1.contoso.com 的新计算机，则成功通过授权规则进行了验证，且 Windows PowerShell Web 访问尝试与名为“Server1”的计算机创建连接。</span><span class="sxs-lookup"><span data-stu-id="8876f-121">For example, if a rule exists for the workgroup computer named "*Server1*" and a new computer named *server1.contoso.com* is joined to the network, validation using the authorization rules succeeds and Windows PowerShell Web Access attempts to establish a connection to the computer named "*Server1*".</span></span> <span data-ttu-id="8876f-122">则无法保证所连接的对象是指定的工作组计算机；该操作有可能连接到工作组，也有可能连接到名为“Server1”的域计算机。</span><span class="sxs-lookup"><span data-stu-id="8876f-122">It is not guaranteed that the connection is established with the specified workgroup computer; the attempt could be made on either the workgroup or the domain computer named "*Server1*".</span></span> <span data-ttu-id="8876f-123">要减少多义性，建议尽量为目标计算机使用 FQDN 来创建授权规则。</span><span class="sxs-lookup"><span data-stu-id="8876f-123">To reduce ambiguity, it is recommended that you use the FQDN for the destination computer whenever possible to create an authorization rule.</span></span>
+<span data-ttu-id="e0009-119">如果网络上出现多个具有相同名称的计算机，则短名称可解析为多台计算机。</span><span class="sxs-lookup"><span data-stu-id="e0009-119">If there are multiple computers with the same name on the network, then short name can resolve to more than one computer.</span></span> <span data-ttu-id="e0009-120">这可能在创建连接时造成多义性。</span><span class="sxs-lookup"><span data-stu-id="e0009-120">This can lead to ambiguity when establishing a connection.</span></span> <span data-ttu-id="e0009-121">例如，如果名为“Server1”的工作组计算机具有一条规则，与此同时，在网络中又加入一个名为 server1.contoso.com 的新计算机，则成功通过授权规则进行了验证，且 Windows PowerShell Web 访问尝试与名为“Server1”的计算机创建连接。</span><span class="sxs-lookup"><span data-stu-id="e0009-121">For example, if a rule exists for the workgroup computer named "*Server1*" and a new computer named *server1.contoso.com* is joined to the network, validation using the authorization rules succeeds and Windows PowerShell Web Access attempts to establish a connection to the computer named "*Server1*".</span></span> <span data-ttu-id="e0009-122">则无法保证所连接的对象是指定的工作组计算机；该操作有可能连接到工作组，也有可能连接到名为“Server1”的域计算机。</span><span class="sxs-lookup"><span data-stu-id="e0009-122">It is not guaranteed that the connection is established with the specified workgroup computer; the attempt could be made on either the workgroup or the domain computer named "*Server1*".</span></span> <span data-ttu-id="e0009-123">要减少多义性，建议尽量为目标计算机使用 FQDN 来创建授权规则。</span><span class="sxs-lookup"><span data-stu-id="e0009-123">To reduce ambiguity, it is recommended that you use the FQDN for the destination computer whenever possible to create an authorization rule.</span></span>
 
-<span data-ttu-id="8876f-124">授权规则评估 Windows PowerShell Web 访问用户的主登录凭据，而非备用凭据（有关备用凭据集，请前往登录页中的“可选连接设置”查看）。</span><span class="sxs-lookup"><span data-stu-id="8876f-124">The authorization rules evaluate the primary sign-in credential of the Windows PowerShell Web Access users, not the alternate credentials (the second set of credentials found in the **Optional connection settings** section of the sign-in page).</span></span> <span data-ttu-id="8876f-125">有关以下内容的示例，请参阅示例 6。</span><span class="sxs-lookup"><span data-stu-id="8876f-125">For an example of this, see Example 6.</span></span>
+<span data-ttu-id="e0009-124">授权规则评估 Windows PowerShell Web 访问用户的主登录凭据，而非备用凭据（有关备用凭据集，请前往登录页中的“可选连接设置”查看）。</span><span class="sxs-lookup"><span data-stu-id="e0009-124">The authorization rules evaluate the primary sign-in credential of the Windows PowerShell Web Access users, not the alternate credentials (the second set of credentials found in the **Optional connection settings** section of the sign-in page).</span></span> <span data-ttu-id="e0009-125">有关以下内容的示例，请参阅示例 6。</span><span class="sxs-lookup"><span data-stu-id="e0009-125">For an example of this, see Example 6.</span></span>
 
-## <a name="parameters"></a><span data-ttu-id="8876f-126">参数</span><span class="sxs-lookup"><span data-stu-id="8876f-126">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="e0009-126">参数</span><span class="sxs-lookup"><span data-stu-id="e0009-126">Parameters</span></span>
 
-### <a name="-computergroupname-string"></a><span data-ttu-id="8876f-127">-ComputerGroupName \<String\></span><span class="sxs-lookup"><span data-stu-id="8876f-127">-ComputerGroupName \<String\></span></span>
+### <a name="-computergroupname-string"></a><span data-ttu-id="e0009-127">-ComputerGroupName \<String\></span><span class="sxs-lookup"><span data-stu-id="e0009-127">-ComputerGroupName \<String\></span></span>
 
-<span data-ttu-id="8876f-128">指定 Active Directory 域服务 (AD DS) 中计算机组的名称，或指定此规则授予访问权限的本地组名称。</span><span class="sxs-lookup"><span data-stu-id="8876f-128">Specifies the name of a computer group in Active Directory Domain Services (AD DS) or local groups to which this rule grants access.</span></span>
-
-|||
-|-|-|
-| <span data-ttu-id="8876f-129">别名</span><span class="sxs-lookup"><span data-stu-id="8876f-129">Aliases</span></span>                     | <span data-ttu-id="8876f-130">无</span><span class="sxs-lookup"><span data-stu-id="8876f-130">none</span></span>                  |
-| <span data-ttu-id="8876f-131">是否必需？</span><span class="sxs-lookup"><span data-stu-id="8876f-131">Required?</span></span>                   | <span data-ttu-id="8876f-132">true</span><span class="sxs-lookup"><span data-stu-id="8876f-132">true</span></span>                  |
-| <span data-ttu-id="8876f-133">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="8876f-133">Position?</span></span>                   | <span data-ttu-id="8876f-134">named</span><span class="sxs-lookup"><span data-stu-id="8876f-134">named</span></span>                 |
-| <span data-ttu-id="8876f-135">默认值</span><span class="sxs-lookup"><span data-stu-id="8876f-135">Default Value</span></span>               | <span data-ttu-id="8876f-136">无</span><span class="sxs-lookup"><span data-stu-id="8876f-136">none</span></span>                  |
-| <span data-ttu-id="8876f-137">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="8876f-137">Accept Pipeline Input?</span></span>      | <span data-ttu-id="8876f-138">True (ByPropertyName)</span><span class="sxs-lookup"><span data-stu-id="8876f-138">True (ByPropertyName)</span></span> |
-| <span data-ttu-id="8876f-139">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="8876f-139">Accept Wildcard Characters?</span></span> | <span data-ttu-id="8876f-140">false</span><span class="sxs-lookup"><span data-stu-id="8876f-140">false</span></span>                 |
-
-### <a name="-computername-string"></a><span data-ttu-id="8876f-141">-ComputerName \<String\></span><span class="sxs-lookup"><span data-stu-id="8876f-141">-ComputerName \<String\></span></span>
-
-<span data-ttu-id="8876f-142">指定此规则授予访问权限的计算机名。</span><span class="sxs-lookup"><span data-stu-id="8876f-142">Specifies the computer name to which this rule grants access.</span></span>
+<span data-ttu-id="e0009-128">指定 Active Directory 域服务 (AD DS) 中计算机组的名称，或指定此规则授予访问权限的本地组名称。</span><span class="sxs-lookup"><span data-stu-id="e0009-128">Specifies the name of a computer group in Active Directory Domain Services (AD DS) or local groups to which this rule grants access.</span></span>
 
 |||
 |-|-|
-| <span data-ttu-id="8876f-143">别名</span><span class="sxs-lookup"><span data-stu-id="8876f-143">Aliases</span></span>                     | <span data-ttu-id="8876f-144">无</span><span class="sxs-lookup"><span data-stu-id="8876f-144">none</span></span>                  |
-| <span data-ttu-id="8876f-145">是否必需？</span><span class="sxs-lookup"><span data-stu-id="8876f-145">Required?</span></span>                   | <span data-ttu-id="8876f-146">true</span><span class="sxs-lookup"><span data-stu-id="8876f-146">true</span></span>                  |
-| <span data-ttu-id="8876f-147">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="8876f-147">Position?</span></span>                   | <span data-ttu-id="8876f-148">named</span><span class="sxs-lookup"><span data-stu-id="8876f-148">named</span></span>                 |
-| <span data-ttu-id="8876f-149">默认值</span><span class="sxs-lookup"><span data-stu-id="8876f-149">Default Value</span></span>               | <span data-ttu-id="8876f-150">无</span><span class="sxs-lookup"><span data-stu-id="8876f-150">none</span></span>                  |
-| <span data-ttu-id="8876f-151">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="8876f-151">Accept Pipeline Input?</span></span>      | <span data-ttu-id="8876f-152">True (ByPropertyName)</span><span class="sxs-lookup"><span data-stu-id="8876f-152">True (ByPropertyName)</span></span> |
-| <span data-ttu-id="8876f-153">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="8876f-153">Accept Wildcard Characters?</span></span> | <span data-ttu-id="8876f-154">false</span><span class="sxs-lookup"><span data-stu-id="8876f-154">false</span></span>                 |
+| <span data-ttu-id="e0009-129">别名</span><span class="sxs-lookup"><span data-stu-id="e0009-129">Aliases</span></span>                     | <span data-ttu-id="e0009-130">无</span><span class="sxs-lookup"><span data-stu-id="e0009-130">none</span></span>                  |
+| <span data-ttu-id="e0009-131">是否必需？</span><span class="sxs-lookup"><span data-stu-id="e0009-131">Required?</span></span>                   | <span data-ttu-id="e0009-132">true</span><span class="sxs-lookup"><span data-stu-id="e0009-132">true</span></span>                  |
+| <span data-ttu-id="e0009-133">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="e0009-133">Position?</span></span>                   | <span data-ttu-id="e0009-134">named</span><span class="sxs-lookup"><span data-stu-id="e0009-134">named</span></span>                 |
+| <span data-ttu-id="e0009-135">默认值</span><span class="sxs-lookup"><span data-stu-id="e0009-135">Default Value</span></span>               | <span data-ttu-id="e0009-136">无</span><span class="sxs-lookup"><span data-stu-id="e0009-136">none</span></span>                  |
+| <span data-ttu-id="e0009-137">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="e0009-137">Accept Pipeline Input?</span></span>      | <span data-ttu-id="e0009-138">True (ByPropertyName)</span><span class="sxs-lookup"><span data-stu-id="e0009-138">True (ByPropertyName)</span></span> |
+| <span data-ttu-id="e0009-139">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="e0009-139">Accept Wildcard Characters?</span></span> | <span data-ttu-id="e0009-140">false</span><span class="sxs-lookup"><span data-stu-id="e0009-140">false</span></span>                 |
 
-### <a name="-configurationname-string"></a><span data-ttu-id="8876f-155">-ConfigurationName \<String\></span><span class="sxs-lookup"><span data-stu-id="8876f-155">-ConfigurationName \<String\></span></span>
+### <a name="-computername-string"></a><span data-ttu-id="e0009-141">-ComputerName \<String\></span><span class="sxs-lookup"><span data-stu-id="e0009-141">-ComputerName \<String\></span></span>
 
-<span data-ttu-id="8876f-156">指定此规则授予访问权限的 Windows PowerShell 会话配置的名称（又称为运行空间）。</span><span class="sxs-lookup"><span data-stu-id="8876f-156">Specifies the name of the Windows PowerShell session configuration, also known as runspace, to which this rule grants access.</span></span>
-
-|||
-|-|-|
-| <span data-ttu-id="8876f-157">别名</span><span class="sxs-lookup"><span data-stu-id="8876f-157">Aliases</span></span>                     | <span data-ttu-id="8876f-158">无</span><span class="sxs-lookup"><span data-stu-id="8876f-158">none</span></span>                  |
-| <span data-ttu-id="8876f-159">是否必需？</span><span class="sxs-lookup"><span data-stu-id="8876f-159">Required?</span></span>                   | <span data-ttu-id="8876f-160">true</span><span class="sxs-lookup"><span data-stu-id="8876f-160">true</span></span>                  |
-| <span data-ttu-id="8876f-161">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="8876f-161">Position?</span></span>                   | <span data-ttu-id="8876f-162">named</span><span class="sxs-lookup"><span data-stu-id="8876f-162">named</span></span>                 |
-| <span data-ttu-id="8876f-163">默认值</span><span class="sxs-lookup"><span data-stu-id="8876f-163">Default Value</span></span>               | <span data-ttu-id="8876f-164">无</span><span class="sxs-lookup"><span data-stu-id="8876f-164">none</span></span>                  |
-| <span data-ttu-id="8876f-165">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="8876f-165">Accept Pipeline Input?</span></span>      | <span data-ttu-id="8876f-166">True (ByPropertyName)</span><span class="sxs-lookup"><span data-stu-id="8876f-166">True (ByPropertyName)</span></span> |
-| <span data-ttu-id="8876f-167">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="8876f-167">Accept Wildcard Characters?</span></span> | <span data-ttu-id="8876f-168">false</span><span class="sxs-lookup"><span data-stu-id="8876f-168">false</span></span>                 |
-
-### <a name="-credential--pscredential"></a><span data-ttu-id="8876f-169">-Credential  \<PSCredential\></span><span class="sxs-lookup"><span data-stu-id="8876f-169">-Credential  \<PSCredential\></span></span>
-
-<span data-ttu-id="8876f-170">为要用于更改 Windows PowerShell Web 访问授权规则的用户帐户指定 PSCredential 对象。</span><span class="sxs-lookup"><span data-stu-id="8876f-170">Specifies a **PSCredential** object for a user account that you want to use to change Windows PowerShell Web Access authorization rules.</span></span> <span data-ttu-id="8876f-171">如果不添加此参数，cmdlet 将使用当前登录的用户帐户。</span><span class="sxs-lookup"><span data-stu-id="8876f-171">If you do not add this parameter, the cmdlet uses the currently logged-on user account.</span></span> <span data-ttu-id="8876f-172">要获取 PSCredential 对象（用于以远程方式添加授权规则），请运行 [Get-Credential cmdlet](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential)。</span><span class="sxs-lookup"><span data-stu-id="8876f-172">To get a **PSCredential** object, which is required to add authorization rules remotely, run the [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential) cmdlet.</span></span>
+<span data-ttu-id="e0009-142">指定此规则授予访问权限的计算机名。</span><span class="sxs-lookup"><span data-stu-id="e0009-142">Specifies the computer name to which this rule grants access.</span></span>
 
 |||
 |-|-|
-| <span data-ttu-id="8876f-173">别名</span><span class="sxs-lookup"><span data-stu-id="8876f-173">Aliases</span></span>                     | <span data-ttu-id="8876f-174">无</span><span class="sxs-lookup"><span data-stu-id="8876f-174">none</span></span>  |
-| <span data-ttu-id="8876f-175">是否必需？</span><span class="sxs-lookup"><span data-stu-id="8876f-175">Required?</span></span>                   | <span data-ttu-id="8876f-176">false</span><span class="sxs-lookup"><span data-stu-id="8876f-176">false</span></span> |
-| <span data-ttu-id="8876f-177">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="8876f-177">Position?</span></span>                   | <span data-ttu-id="8876f-178">named</span><span class="sxs-lookup"><span data-stu-id="8876f-178">named</span></span> |
-| <span data-ttu-id="8876f-179">默认值</span><span class="sxs-lookup"><span data-stu-id="8876f-179">Default Value</span></span>               | <span data-ttu-id="8876f-180">无</span><span class="sxs-lookup"><span data-stu-id="8876f-180">none</span></span>  |
-| <span data-ttu-id="8876f-181">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="8876f-181">Accept Pipeline Input?</span></span>      | <span data-ttu-id="8876f-182">false</span><span class="sxs-lookup"><span data-stu-id="8876f-182">false</span></span> |
-| <span data-ttu-id="8876f-183">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="8876f-183">Accept Wildcard Characters?</span></span> | <span data-ttu-id="8876f-184">false</span><span class="sxs-lookup"><span data-stu-id="8876f-184">false</span></span> |
+| <span data-ttu-id="e0009-143">别名</span><span class="sxs-lookup"><span data-stu-id="e0009-143">Aliases</span></span>                     | <span data-ttu-id="e0009-144">无</span><span class="sxs-lookup"><span data-stu-id="e0009-144">none</span></span>                  |
+| <span data-ttu-id="e0009-145">是否必需？</span><span class="sxs-lookup"><span data-stu-id="e0009-145">Required?</span></span>                   | <span data-ttu-id="e0009-146">true</span><span class="sxs-lookup"><span data-stu-id="e0009-146">true</span></span>                  |
+| <span data-ttu-id="e0009-147">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="e0009-147">Position?</span></span>                   | <span data-ttu-id="e0009-148">named</span><span class="sxs-lookup"><span data-stu-id="e0009-148">named</span></span>                 |
+| <span data-ttu-id="e0009-149">默认值</span><span class="sxs-lookup"><span data-stu-id="e0009-149">Default Value</span></span>               | <span data-ttu-id="e0009-150">无</span><span class="sxs-lookup"><span data-stu-id="e0009-150">none</span></span>                  |
+| <span data-ttu-id="e0009-151">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="e0009-151">Accept Pipeline Input?</span></span>      | <span data-ttu-id="e0009-152">True (ByPropertyName)</span><span class="sxs-lookup"><span data-stu-id="e0009-152">True (ByPropertyName)</span></span> |
+| <span data-ttu-id="e0009-153">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="e0009-153">Accept Wildcard Characters?</span></span> | <span data-ttu-id="e0009-154">false</span><span class="sxs-lookup"><span data-stu-id="e0009-154">false</span></span>                 |
 
-### <a name="-force"></a><span data-ttu-id="8876f-185">-Force</span><span class="sxs-lookup"><span data-stu-id="8876f-185">-Force</span></span>
+### <a name="-configurationname-string"></a><span data-ttu-id="e0009-155">-ConfigurationName \<String\></span><span class="sxs-lookup"><span data-stu-id="e0009-155">-ConfigurationName \<String\></span></span>
 
-<span data-ttu-id="8876f-186">强制运行命令而不要求用户确认。</span><span class="sxs-lookup"><span data-stu-id="8876f-186">Forces the command to run without asking for user confirmation.</span></span> <span data-ttu-id="8876f-187">此外，在输入简单或短计算机名时（例如不是域名的名称，或不是完全限定的名称），系统还会出现确认提示。</span><span class="sxs-lookup"><span data-stu-id="8876f-187">In addition, it also prompts for confirmation when you enter a simple or short computer name (such as a name that is not a domain name or is not fully qualified).</span></span> <span data-ttu-id="8876f-188">该确认请求旨在保证安全，仅当计算机在工作组中时，才可使用简单名称来添加计算机。</span><span class="sxs-lookup"><span data-stu-id="8876f-188">Confirmation is requested for security reasons, so that you can use the simple name to add a computer only if the computer is in a workgroup.</span></span>
-
-|||
-|-|-|
-| <span data-ttu-id="8876f-189">别名</span><span class="sxs-lookup"><span data-stu-id="8876f-189">Aliases</span></span>                              | <span data-ttu-id="8876f-190">无</span><span class="sxs-lookup"><span data-stu-id="8876f-190">none</span></span>                                 |
-| <span data-ttu-id="8876f-191">是否必需？</span><span class="sxs-lookup"><span data-stu-id="8876f-191">Required?</span></span>                            | <span data-ttu-id="8876f-192">false</span><span class="sxs-lookup"><span data-stu-id="8876f-192">false</span></span>                                |
-| <span data-ttu-id="8876f-193">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="8876f-193">Position?</span></span>                            | <span data-ttu-id="8876f-194">named</span><span class="sxs-lookup"><span data-stu-id="8876f-194">named</span></span>                                |
-| <span data-ttu-id="8876f-195">默认值</span><span class="sxs-lookup"><span data-stu-id="8876f-195">Default Value</span></span>                        | <span data-ttu-id="8876f-196">无</span><span class="sxs-lookup"><span data-stu-id="8876f-196">none</span></span>                                 |
-| <span data-ttu-id="8876f-197">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="8876f-197">Accept Pipeline Input?</span></span>               | <span data-ttu-id="8876f-198">false</span><span class="sxs-lookup"><span data-stu-id="8876f-198">false</span></span>                                |
-| <span data-ttu-id="8876f-199">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="8876f-199">Accept Wildcard Characters?</span></span>          | <span data-ttu-id="8876f-200">false</span><span class="sxs-lookup"><span data-stu-id="8876f-200">false</span></span>                                |
-
-### <a name="-rulename-string"></a><span data-ttu-id="8876f-201">-RuleName \<String\></span><span class="sxs-lookup"><span data-stu-id="8876f-201">-RuleName \<String\></span></span>
-
-<span data-ttu-id="8876f-202">为此规则指定友好名称。</span><span class="sxs-lookup"><span data-stu-id="8876f-202">Specifies the friendly name for this rule.</span></span>
+<span data-ttu-id="e0009-156">指定此规则授予访问权限的 Windows PowerShell 会话配置的名称（又称为运行空间）。</span><span class="sxs-lookup"><span data-stu-id="e0009-156">Specifies the name of the Windows PowerShell session configuration, also known as runspace, to which this rule grants access.</span></span>
 
 |||
 |-|-|
-| <span data-ttu-id="8876f-203">别名</span><span class="sxs-lookup"><span data-stu-id="8876f-203">Aliases</span></span>                              | <span data-ttu-id="8876f-204">无</span><span class="sxs-lookup"><span data-stu-id="8876f-204">none</span></span>                                 |
-| <span data-ttu-id="8876f-205">是否必需？</span><span class="sxs-lookup"><span data-stu-id="8876f-205">Required?</span></span>                            | <span data-ttu-id="8876f-206">false</span><span class="sxs-lookup"><span data-stu-id="8876f-206">false</span></span>                                |
-| <span data-ttu-id="8876f-207">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="8876f-207">Position?</span></span>                            | <span data-ttu-id="8876f-208">named</span><span class="sxs-lookup"><span data-stu-id="8876f-208">named</span></span>                                |
-| <span data-ttu-id="8876f-209">默认值</span><span class="sxs-lookup"><span data-stu-id="8876f-209">Default Value</span></span>                        | <span data-ttu-id="8876f-210">无</span><span class="sxs-lookup"><span data-stu-id="8876f-210">none</span></span>                                 |
-| <span data-ttu-id="8876f-211">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="8876f-211">Accept Pipeline Input?</span></span>               | <span data-ttu-id="8876f-212">True (ByPropertyName)</span><span class="sxs-lookup"><span data-stu-id="8876f-212">True (ByPropertyName)</span></span>                |
-| <span data-ttu-id="8876f-213">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="8876f-213">Accept Wildcard Characters?</span></span>          | <span data-ttu-id="8876f-214">false</span><span class="sxs-lookup"><span data-stu-id="8876f-214">false</span></span>                                |
+| <span data-ttu-id="e0009-157">别名</span><span class="sxs-lookup"><span data-stu-id="e0009-157">Aliases</span></span>                     | <span data-ttu-id="e0009-158">无</span><span class="sxs-lookup"><span data-stu-id="e0009-158">none</span></span>                  |
+| <span data-ttu-id="e0009-159">是否必需？</span><span class="sxs-lookup"><span data-stu-id="e0009-159">Required?</span></span>                   | <span data-ttu-id="e0009-160">true</span><span class="sxs-lookup"><span data-stu-id="e0009-160">true</span></span>                  |
+| <span data-ttu-id="e0009-161">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="e0009-161">Position?</span></span>                   | <span data-ttu-id="e0009-162">named</span><span class="sxs-lookup"><span data-stu-id="e0009-162">named</span></span>                 |
+| <span data-ttu-id="e0009-163">默认值</span><span class="sxs-lookup"><span data-stu-id="e0009-163">Default Value</span></span>               | <span data-ttu-id="e0009-164">无</span><span class="sxs-lookup"><span data-stu-id="e0009-164">none</span></span>                  |
+| <span data-ttu-id="e0009-165">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="e0009-165">Accept Pipeline Input?</span></span>      | <span data-ttu-id="e0009-166">True (ByPropertyName)</span><span class="sxs-lookup"><span data-stu-id="e0009-166">True (ByPropertyName)</span></span> |
+| <span data-ttu-id="e0009-167">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="e0009-167">Accept Wildcard Characters?</span></span> | <span data-ttu-id="e0009-168">false</span><span class="sxs-lookup"><span data-stu-id="e0009-168">false</span></span>                 |
 
-### <a name="-usergroupname-string"></a><span data-ttu-id="8876f-215">-UserGroupName \<String\[\]\></span><span class="sxs-lookup"><span data-stu-id="8876f-215">-UserGroupName \<String\[\]\></span></span>
+### <a name="-credential--pscredential"></a><span data-ttu-id="e0009-169">-Credential  \<PSCredential\></span><span class="sxs-lookup"><span data-stu-id="e0009-169">-Credential  \<PSCredential\></span></span>
 
-<span data-ttu-id="8876f-216">指定 AD DS 中一个或多个用户组的名称，或指定此规则授予访问权限的本地组名称。</span><span class="sxs-lookup"><span data-stu-id="8876f-216">Specifies the name of one or more user groups in AD DS or local groups to which this rule grants access.</span></span>
-
-|||
-|-|-|
-| <span data-ttu-id="8876f-217">别名</span><span class="sxs-lookup"><span data-stu-id="8876f-217">Aliases</span></span>                              | <span data-ttu-id="8876f-218">无</span><span class="sxs-lookup"><span data-stu-id="8876f-218">none</span></span>                                 |
-| <span data-ttu-id="8876f-219">是否必需？</span><span class="sxs-lookup"><span data-stu-id="8876f-219">Required?</span></span>                            | <span data-ttu-id="8876f-220">true</span><span class="sxs-lookup"><span data-stu-id="8876f-220">true</span></span>                                 |
-| <span data-ttu-id="8876f-221">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="8876f-221">Position?</span></span>                            | <span data-ttu-id="8876f-222">named</span><span class="sxs-lookup"><span data-stu-id="8876f-222">named</span></span>                                |
-| <span data-ttu-id="8876f-223">默认值</span><span class="sxs-lookup"><span data-stu-id="8876f-223">Default Value</span></span>                        | <span data-ttu-id="8876f-224">无</span><span class="sxs-lookup"><span data-stu-id="8876f-224">none</span></span>                                 |
-| <span data-ttu-id="8876f-225">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="8876f-225">Accept Pipeline Input?</span></span>               | <span data-ttu-id="8876f-226">True (ByPropertyName)</span><span class="sxs-lookup"><span data-stu-id="8876f-226">True (ByPropertyName)</span></span>                |
-| <span data-ttu-id="8876f-227">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="8876f-227">Accept Wildcard Characters?</span></span>          | <span data-ttu-id="8876f-228">false</span><span class="sxs-lookup"><span data-stu-id="8876f-228">false</span></span>                                |
-
-### <a name="-username-string"></a><span data-ttu-id="8876f-229">-UserName \<String\[\]\></span><span class="sxs-lookup"><span data-stu-id="8876f-229">-UserName \<String\[\]\></span></span>
-
-<span data-ttu-id="8876f-230">指定此规则向其授予访问权限的一个或多个用户。</span><span class="sxs-lookup"><span data-stu-id="8876f-230">Specifies one or more users to which this rule grants access.</span></span> <span data-ttu-id="8876f-231">用户名可以是网关计算机上的本地用户帐户，也可以是 AD DS 中的用户。</span><span class="sxs-lookup"><span data-stu-id="8876f-231">The user name can be a local user account on the gateway computer or a user in AD DS.</span></span> <span data-ttu-id="8876f-232">格式为 `domain\user` 或 `computer\user`。</span><span class="sxs-lookup"><span data-stu-id="8876f-232">The format is `domain\user` or `computer\user`.</span></span>
+<span data-ttu-id="e0009-170">为要用于更改 Windows PowerShell Web 访问授权规则的用户帐户指定 PSCredential 对象。</span><span class="sxs-lookup"><span data-stu-id="e0009-170">Specifies a **PSCredential** object for a user account that you want to use to change Windows PowerShell Web Access authorization rules.</span></span> <span data-ttu-id="e0009-171">如果不添加此参数，cmdlet 将使用当前登录的用户帐户。</span><span class="sxs-lookup"><span data-stu-id="e0009-171">If you do not add this parameter, the cmdlet uses the currently logged-on user account.</span></span> <span data-ttu-id="e0009-172">要获取 PSCredential 对象（用于以远程方式添加授权规则），请运行 [Get-Credential cmdlet](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential)。</span><span class="sxs-lookup"><span data-stu-id="e0009-172">To get a **PSCredential** object, which is required to add authorization rules remotely, run the [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential) cmdlet.</span></span>
 
 |||
 |-|-|
-| <span data-ttu-id="8876f-233">别名</span><span class="sxs-lookup"><span data-stu-id="8876f-233">Aliases</span></span>                              | <span data-ttu-id="8876f-234">无</span><span class="sxs-lookup"><span data-stu-id="8876f-234">none</span></span>                                 |
-| <span data-ttu-id="8876f-235">是否必需？</span><span class="sxs-lookup"><span data-stu-id="8876f-235">Required?</span></span>                            | <span data-ttu-id="8876f-236">true</span><span class="sxs-lookup"><span data-stu-id="8876f-236">true</span></span>                                 |
-| <span data-ttu-id="8876f-237">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="8876f-237">Position?</span></span>                            | <span data-ttu-id="8876f-238">1</span><span class="sxs-lookup"><span data-stu-id="8876f-238">1</span></span>                                    |
-| <span data-ttu-id="8876f-239">默认值</span><span class="sxs-lookup"><span data-stu-id="8876f-239">Default Value</span></span>                        | <span data-ttu-id="8876f-240">无</span><span class="sxs-lookup"><span data-stu-id="8876f-240">none</span></span>                                 |
-| <span data-ttu-id="8876f-241">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="8876f-241">Accept Pipeline Input?</span></span>               | <span data-ttu-id="8876f-242">True (ByValue, ByPropertyName)</span><span class="sxs-lookup"><span data-stu-id="8876f-242">True (ByValue, ByPropertyName)</span></span>       |
-| <span data-ttu-id="8876f-243">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="8876f-243">Accept Wildcard Characters?</span></span>          | <span data-ttu-id="8876f-244">false</span><span class="sxs-lookup"><span data-stu-id="8876f-244">false</span></span>                                |
+| <span data-ttu-id="e0009-173">别名</span><span class="sxs-lookup"><span data-stu-id="e0009-173">Aliases</span></span>                     | <span data-ttu-id="e0009-174">无</span><span class="sxs-lookup"><span data-stu-id="e0009-174">none</span></span>  |
+| <span data-ttu-id="e0009-175">是否必需？</span><span class="sxs-lookup"><span data-stu-id="e0009-175">Required?</span></span>                   | <span data-ttu-id="e0009-176">false</span><span class="sxs-lookup"><span data-stu-id="e0009-176">false</span></span> |
+| <span data-ttu-id="e0009-177">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="e0009-177">Position?</span></span>                   | <span data-ttu-id="e0009-178">named</span><span class="sxs-lookup"><span data-stu-id="e0009-178">named</span></span> |
+| <span data-ttu-id="e0009-179">默认值</span><span class="sxs-lookup"><span data-stu-id="e0009-179">Default Value</span></span>               | <span data-ttu-id="e0009-180">无</span><span class="sxs-lookup"><span data-stu-id="e0009-180">none</span></span>  |
+| <span data-ttu-id="e0009-181">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="e0009-181">Accept Pipeline Input?</span></span>      | <span data-ttu-id="e0009-182">false</span><span class="sxs-lookup"><span data-stu-id="e0009-182">false</span></span> |
+| <span data-ttu-id="e0009-183">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="e0009-183">Accept Wildcard Characters?</span></span> | <span data-ttu-id="e0009-184">false</span><span class="sxs-lookup"><span data-stu-id="e0009-184">false</span></span> |
 
-###  <a name="commonparameters"></a><span data-ttu-id="8876f-245">\<CommonParameters\></span><span class="sxs-lookup"><span data-stu-id="8876f-245">\<CommonParameters\></span></span>
+### <a name="-force"></a><span data-ttu-id="e0009-185">-Force</span><span class="sxs-lookup"><span data-stu-id="e0009-185">-Force</span></span>
 
-<span data-ttu-id="8876f-246">此 cmdlet 支持通用参数：</span><span class="sxs-lookup"><span data-stu-id="8876f-246">This cmdlet supports the common parameters:</span></span>
+<span data-ttu-id="e0009-186">强制运行命令而不要求用户确认。</span><span class="sxs-lookup"><span data-stu-id="e0009-186">Forces the command to run without asking for user confirmation.</span></span> <span data-ttu-id="e0009-187">此外，在输入简单或短计算机名时（例如不是域名的名称，或不是完全限定的名称），系统还会出现确认提示。</span><span class="sxs-lookup"><span data-stu-id="e0009-187">In addition, it also prompts for confirmation when you enter a simple or short computer name (such as a name that is not a domain name or is not fully qualified).</span></span> <span data-ttu-id="e0009-188">该确认请求旨在保证安全，仅当计算机在工作组中时，才可使用简单名称来添加计算机。</span><span class="sxs-lookup"><span data-stu-id="e0009-188">Confirmation is requested for security reasons, so that you can use the simple name to add a computer only if the computer is in a workgroup.</span></span>
 
-<span data-ttu-id="8876f-247">-Verbose、-Debug、-ErrorAction、-ErrorVariable、-OutBuffer 和 -OutVariable。</span><span class="sxs-lookup"><span data-stu-id="8876f-247">-Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable.</span></span>
-<span data-ttu-id="8876f-248">有关详细信息，请参阅 [about_CommonParameters](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_commonparameters)。</span><span class="sxs-lookup"><span data-stu-id="8876f-248">For more information, see [about_CommonParameters](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_commonparameters).</span></span>
+|||
+|-|-|
+| <span data-ttu-id="e0009-189">别名</span><span class="sxs-lookup"><span data-stu-id="e0009-189">Aliases</span></span>                              | <span data-ttu-id="e0009-190">无</span><span class="sxs-lookup"><span data-stu-id="e0009-190">none</span></span>                                 |
+| <span data-ttu-id="e0009-191">是否必需？</span><span class="sxs-lookup"><span data-stu-id="e0009-191">Required?</span></span>                            | <span data-ttu-id="e0009-192">false</span><span class="sxs-lookup"><span data-stu-id="e0009-192">false</span></span>                                |
+| <span data-ttu-id="e0009-193">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="e0009-193">Position?</span></span>                            | <span data-ttu-id="e0009-194">named</span><span class="sxs-lookup"><span data-stu-id="e0009-194">named</span></span>                                |
+| <span data-ttu-id="e0009-195">默认值</span><span class="sxs-lookup"><span data-stu-id="e0009-195">Default Value</span></span>                        | <span data-ttu-id="e0009-196">无</span><span class="sxs-lookup"><span data-stu-id="e0009-196">none</span></span>                                 |
+| <span data-ttu-id="e0009-197">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="e0009-197">Accept Pipeline Input?</span></span>               | <span data-ttu-id="e0009-198">false</span><span class="sxs-lookup"><span data-stu-id="e0009-198">false</span></span>                                |
+| <span data-ttu-id="e0009-199">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="e0009-199">Accept Wildcard Characters?</span></span>          | <span data-ttu-id="e0009-200">false</span><span class="sxs-lookup"><span data-stu-id="e0009-200">false</span></span>                                |
 
-## <a name="inputs"></a><span data-ttu-id="8876f-249">输入</span><span class="sxs-lookup"><span data-stu-id="8876f-249">INPUTS</span></span>
+### <a name="-rulename-string"></a><span data-ttu-id="e0009-201">-RuleName \<String\></span><span class="sxs-lookup"><span data-stu-id="e0009-201">-RuleName \<String\></span></span>
 
-### <a name="string"></a><span data-ttu-id="8876f-250">字符串</span><span class="sxs-lookup"><span data-stu-id="8876f-250">String</span></span>
+<span data-ttu-id="e0009-202">为此规则指定友好名称。</span><span class="sxs-lookup"><span data-stu-id="e0009-202">Specifies the friendly name for this rule.</span></span>
 
-<span data-ttu-id="8876f-251">此 cmdlet 接受字符串或字符串数组作为输入。</span><span class="sxs-lookup"><span data-stu-id="8876f-251">This cmdlet accepts a string or an array of strings as input.</span></span>
+|||
+|-|-|
+| <span data-ttu-id="e0009-203">别名</span><span class="sxs-lookup"><span data-stu-id="e0009-203">Aliases</span></span>                              | <span data-ttu-id="e0009-204">无</span><span class="sxs-lookup"><span data-stu-id="e0009-204">none</span></span>                                 |
+| <span data-ttu-id="e0009-205">是否必需？</span><span class="sxs-lookup"><span data-stu-id="e0009-205">Required?</span></span>                            | <span data-ttu-id="e0009-206">false</span><span class="sxs-lookup"><span data-stu-id="e0009-206">false</span></span>                                |
+| <span data-ttu-id="e0009-207">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="e0009-207">Position?</span></span>                            | <span data-ttu-id="e0009-208">named</span><span class="sxs-lookup"><span data-stu-id="e0009-208">named</span></span>                                |
+| <span data-ttu-id="e0009-209">默认值</span><span class="sxs-lookup"><span data-stu-id="e0009-209">Default Value</span></span>                        | <span data-ttu-id="e0009-210">无</span><span class="sxs-lookup"><span data-stu-id="e0009-210">none</span></span>                                 |
+| <span data-ttu-id="e0009-211">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="e0009-211">Accept Pipeline Input?</span></span>               | <span data-ttu-id="e0009-212">True (ByPropertyName)</span><span class="sxs-lookup"><span data-stu-id="e0009-212">True (ByPropertyName)</span></span>                |
+| <span data-ttu-id="e0009-213">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="e0009-213">Accept Wildcard Characters?</span></span>          | <span data-ttu-id="e0009-214">false</span><span class="sxs-lookup"><span data-stu-id="e0009-214">false</span></span>                                |
 
-### <a name="string"></a><span data-ttu-id="8876f-252">String\[\]</span><span class="sxs-lookup"><span data-stu-id="8876f-252">String\[\]</span></span>
+### <a name="-usergroupname-string"></a><span data-ttu-id="e0009-215">-UserGroupName \<String\[\]\></span><span class="sxs-lookup"><span data-stu-id="e0009-215">-UserGroupName \<String\[\]\></span></span>
 
-<span data-ttu-id="8876f-253">此 cmdlet 接受字符串或字符串数组作为输入。</span><span class="sxs-lookup"><span data-stu-id="8876f-253">This cmdlet accepts a string or an array of strings as input.</span></span>
+<span data-ttu-id="e0009-216">指定 AD DS 中一个或多个用户组的名称，或指定此规则授予访问权限的本地组名称。</span><span class="sxs-lookup"><span data-stu-id="e0009-216">Specifies the name of one or more user groups in AD DS or local groups to which this rule grants access.</span></span>
 
-## <a name="outputs"></a><span data-ttu-id="8876f-254">输出</span><span class="sxs-lookup"><span data-stu-id="8876f-254">Outputs</span></span>
+|||
+|-|-|
+| <span data-ttu-id="e0009-217">别名</span><span class="sxs-lookup"><span data-stu-id="e0009-217">Aliases</span></span>                              | <span data-ttu-id="e0009-218">无</span><span class="sxs-lookup"><span data-stu-id="e0009-218">none</span></span>                                 |
+| <span data-ttu-id="e0009-219">是否必需？</span><span class="sxs-lookup"><span data-stu-id="e0009-219">Required?</span></span>                            | <span data-ttu-id="e0009-220">true</span><span class="sxs-lookup"><span data-stu-id="e0009-220">true</span></span>                                 |
+| <span data-ttu-id="e0009-221">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="e0009-221">Position?</span></span>                            | <span data-ttu-id="e0009-222">named</span><span class="sxs-lookup"><span data-stu-id="e0009-222">named</span></span>                                |
+| <span data-ttu-id="e0009-223">默认值</span><span class="sxs-lookup"><span data-stu-id="e0009-223">Default Value</span></span>                        | <span data-ttu-id="e0009-224">无</span><span class="sxs-lookup"><span data-stu-id="e0009-224">none</span></span>                                 |
+| <span data-ttu-id="e0009-225">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="e0009-225">Accept Pipeline Input?</span></span>               | <span data-ttu-id="e0009-226">True (ByPropertyName)</span><span class="sxs-lookup"><span data-stu-id="e0009-226">True (ByPropertyName)</span></span>                |
+| <span data-ttu-id="e0009-227">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="e0009-227">Accept Wildcard Characters?</span></span>          | <span data-ttu-id="e0009-228">false</span><span class="sxs-lookup"><span data-stu-id="e0009-228">false</span></span>                                |
 
-### <a name="microsoftmanagementpowershellwebaccesspswaauthorizationrule"></a><span data-ttu-id="8876f-255">Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule</span><span class="sxs-lookup"><span data-stu-id="8876f-255">Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule</span></span>
+### <a name="-username-string"></a><span data-ttu-id="e0009-229">-UserName \<String\[\]\></span><span class="sxs-lookup"><span data-stu-id="e0009-229">-UserName \<String\[\]\></span></span>
 
-<span data-ttu-id="8876f-256">此 cmdlet 将返回授权规则对象。</span><span class="sxs-lookup"><span data-stu-id="8876f-256">This cmdlet returns the an authorization rule object.</span></span>
+<span data-ttu-id="e0009-230">指定此规则向其授予访问权限的一个或多个用户。</span><span class="sxs-lookup"><span data-stu-id="e0009-230">Specifies one or more users to which this rule grants access.</span></span> <span data-ttu-id="e0009-231">用户名可以是网关计算机上的本地用户帐户，也可以是 AD DS 中的用户。</span><span class="sxs-lookup"><span data-stu-id="e0009-231">The user name can be a local user account on the gateway computer or a user in AD DS.</span></span> <span data-ttu-id="e0009-232">格式为 `domain\user` 或 `computer\user`。</span><span class="sxs-lookup"><span data-stu-id="e0009-232">The format is `domain\user` or `computer\user`.</span></span>
 
-## <a name="examples"></a><span data-ttu-id="8876f-257">示例</span><span class="sxs-lookup"><span data-stu-id="8876f-257">EXAMPLES</span></span>
+|||
+|-|-|
+| <span data-ttu-id="e0009-233">别名</span><span class="sxs-lookup"><span data-stu-id="e0009-233">Aliases</span></span>                              | <span data-ttu-id="e0009-234">无</span><span class="sxs-lookup"><span data-stu-id="e0009-234">none</span></span>                                 |
+| <span data-ttu-id="e0009-235">是否必需？</span><span class="sxs-lookup"><span data-stu-id="e0009-235">Required?</span></span>                            | <span data-ttu-id="e0009-236">true</span><span class="sxs-lookup"><span data-stu-id="e0009-236">true</span></span>                                 |
+| <span data-ttu-id="e0009-237">位置在哪里？</span><span class="sxs-lookup"><span data-stu-id="e0009-237">Position?</span></span>                            | <span data-ttu-id="e0009-238">1</span><span class="sxs-lookup"><span data-stu-id="e0009-238">1</span></span>                                    |
+| <span data-ttu-id="e0009-239">默认值</span><span class="sxs-lookup"><span data-stu-id="e0009-239">Default Value</span></span>                        | <span data-ttu-id="e0009-240">无</span><span class="sxs-lookup"><span data-stu-id="e0009-240">none</span></span>                                 |
+| <span data-ttu-id="e0009-241">是否接受管道输入？</span><span class="sxs-lookup"><span data-stu-id="e0009-241">Accept Pipeline Input?</span></span>               | <span data-ttu-id="e0009-242">True (ByValue, ByPropertyName)</span><span class="sxs-lookup"><span data-stu-id="e0009-242">True (ByValue, ByPropertyName)</span></span>       |
+| <span data-ttu-id="e0009-243">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="e0009-243">Accept Wildcard Characters?</span></span>          | <span data-ttu-id="e0009-244">false</span><span class="sxs-lookup"><span data-stu-id="e0009-244">false</span></span>                                |
 
-### <a name="example-1"></a><span data-ttu-id="8876f-258">示例 1</span><span class="sxs-lookup"><span data-stu-id="8876f-258">EXAMPLE 1</span></span>
+###  <a name="commonparameters"></a><span data-ttu-id="e0009-245">\<CommonParameters\></span><span class="sxs-lookup"><span data-stu-id="e0009-245">\<CommonParameters\></span></span>
 
-<span data-ttu-id="8876f-259">此示例授予对 SMAdmins 组中的用户在 srv2 上的会话配置 PSWAEndpoint（一个受限运行空间）的访问权限。</span><span class="sxs-lookup"><span data-stu-id="8876f-259">This example grants access to the session configuration _PSWAEndpoint_, a restricted runspace, on _srv2_ for users in the _SMAdmins_ group.</span></span>
+<span data-ttu-id="e0009-246">此 cmdlet 支持通用参数：</span><span class="sxs-lookup"><span data-stu-id="e0009-246">This cmdlet supports the common parameters:</span></span>
+
+<span data-ttu-id="e0009-247">-Verbose、-Debug、-ErrorAction、-ErrorVariable、-OutBuffer 和 -OutVariable。</span><span class="sxs-lookup"><span data-stu-id="e0009-247">-Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable.</span></span>
+<span data-ttu-id="e0009-248">有关详细信息，请参阅 [about_CommonParameters](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_commonparameters)。</span><span class="sxs-lookup"><span data-stu-id="e0009-248">For more information, see [about_CommonParameters](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_commonparameters).</span></span>
+
+## <a name="inputs"></a><span data-ttu-id="e0009-249">输入</span><span class="sxs-lookup"><span data-stu-id="e0009-249">INPUTS</span></span>
+
+### <a name="string"></a><span data-ttu-id="e0009-250">字符串</span><span class="sxs-lookup"><span data-stu-id="e0009-250">String</span></span>
+
+<span data-ttu-id="e0009-251">此 cmdlet 接受字符串或字符串数组作为输入。</span><span class="sxs-lookup"><span data-stu-id="e0009-251">This cmdlet accepts a string or an array of strings as input.</span></span>
+
+### <a name="string"></a><span data-ttu-id="e0009-252">String\[\]</span><span class="sxs-lookup"><span data-stu-id="e0009-252">String\[\]</span></span>
+
+<span data-ttu-id="e0009-253">此 cmdlet 接受字符串或字符串数组作为输入。</span><span class="sxs-lookup"><span data-stu-id="e0009-253">This cmdlet accepts a string or an array of strings as input.</span></span>
+
+## <a name="outputs"></a><span data-ttu-id="e0009-254">输出</span><span class="sxs-lookup"><span data-stu-id="e0009-254">Outputs</span></span>
+
+### <a name="microsoftmanagementpowershellwebaccesspswaauthorizationrule"></a><span data-ttu-id="e0009-255">Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule</span><span class="sxs-lookup"><span data-stu-id="e0009-255">Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule</span></span>
+
+<span data-ttu-id="e0009-256">此 cmdlet 将返回授权规则对象。</span><span class="sxs-lookup"><span data-stu-id="e0009-256">This cmdlet returns the an authorization rule object.</span></span>
+
+## <a name="examples"></a><span data-ttu-id="e0009-257">示例</span><span class="sxs-lookup"><span data-stu-id="e0009-257">EXAMPLES</span></span>
+
+### <a name="example-1"></a><span data-ttu-id="e0009-258">示例 1</span><span class="sxs-lookup"><span data-stu-id="e0009-258">EXAMPLE 1</span></span>
+
+<span data-ttu-id="e0009-259">此示例授予对 SMAdmins 组中的用户在 srv2 上的会话配置 PSWAEndpoint（一个受限运行空间）的访问权限。</span><span class="sxs-lookup"><span data-stu-id="e0009-259">This example grants access to the session configuration _PSWAEndpoint_, a restricted runspace, on _srv2_ for users in the _SMAdmins_ group.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="8876f-260">该计算机名必须是完全限定的域名 (FQDN)。</span><span class="sxs-lookup"><span data-stu-id="8876f-260">The computer name must be a fully qualified domain name (FQDN).</span></span> <span data-ttu-id="8876f-261">管理员定义受限制的会话配置或运行空间，这是一系列可供最终用户运行的有限 cmdlet 和任务。</span><span class="sxs-lookup"><span data-stu-id="8876f-261">Administrators define a restricted session configuration or runspace, which is a limited range of cmdlets and tasks that end users can run.</span></span> <span data-ttu-id="8876f-262">定义受限制的运行空间可阻止用户访问不在允许的 Windows PowerShell(r) 运行空间中的其他计算机，提高连接安全性。</span><span class="sxs-lookup"><span data-stu-id="8876f-262">Defining a restricted runspace can prevent users from accessing other computers that are not in the allowed Windows PowerShell(r) runspace, thus offering a more secure connection.</span></span> <span data-ttu-id="8876f-263">有关会话配置的详细信息，请参阅 [about_Session_Configurations](/powershell/module/microsoft.powershell.core/about/about_session_configurations) 或[安装和使用 Windows PowerShell Web 访问](../install-and-use-windows-powershell-web-access.md)。</span><span class="sxs-lookup"><span data-stu-id="8876f-263">For more information on session configurations, see [about_Session_Configurations](/powershell/module/microsoft.powershell.core/about/about_session_configurations) or [Install and Use Windows PowerShell Web Access](../install-and-use-windows-powershell-web-access.md).</span></span>
+> <span data-ttu-id="e0009-260">该计算机名必须是完全限定的域名 (FQDN)。</span><span class="sxs-lookup"><span data-stu-id="e0009-260">The computer name must be a fully qualified domain name (FQDN).</span></span> <span data-ttu-id="e0009-261">管理员定义受限制的会话配置或运行空间，这是一系列可供最终用户运行的有限 cmdlet 和任务。</span><span class="sxs-lookup"><span data-stu-id="e0009-261">Administrators define a restricted session configuration or runspace, which is a limited range of cmdlets and tasks that end users can run.</span></span> <span data-ttu-id="e0009-262">定义受限制的运行空间可阻止用户访问不在允许的 Windows PowerShell(r) 运行空间中的其他计算机，提高连接安全性。</span><span class="sxs-lookup"><span data-stu-id="e0009-262">Defining a restricted runspace can prevent users from accessing other computers that are not in the allowed Windows PowerShell(r) runspace, thus offering a more secure connection.</span></span> <span data-ttu-id="e0009-263">有关会话配置的详细信息，请参阅 [about_Session_Configurations](/powershell/module/microsoft.powershell.core/about/about_session_configurations) 或[安装和使用 Windows PowerShell Web 访问](../install-and-use-windows-powershell-web-access.md)。</span><span class="sxs-lookup"><span data-stu-id="e0009-263">For more information on session configurations, see [about_Session_Configurations](/powershell/module/microsoft.powershell.core/about/about_session_configurations) or [Install and Use Windows PowerShell Web Access](../install-and-use-windows-powershell-web-access.md).</span></span>
 
 ```powershell
 Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\SMAdmins -ConfigurationName PSWAEndpoint
 ```
 
-### <a name="example-2"></a><span data-ttu-id="8876f-264">示例 2</span><span class="sxs-lookup"><span data-stu-id="8876f-264">EXAMPLE 2</span></span>
+### <a name="example-2"></a><span data-ttu-id="e0009-264">示例 2</span><span class="sxs-lookup"><span data-stu-id="e0009-264">EXAMPLE 2</span></span>
 
-<span data-ttu-id="8876f-265">此示例在 srv2 上为名为 `contoso\user1`、`contoso\user2` 和 `contoso\user3` 用户中的用户，授予默认 Windows PowerShell 会话配置访问权限 `Microsoft.PowerShell`。</span><span class="sxs-lookup"><span data-stu-id="8876f-265">This example grants access to the default Windows PowerShell session configuration, `Microsoft.PowerShell`, on *srv2* for users in the users named `contoso\user1`, `contoso\user2`, and `contoso\user3`.</span></span> <span data-ttu-id="8876f-266">此 cmdlet 将创建三条规则（每人一条）。</span><span class="sxs-lookup"><span data-stu-id="8876f-266">This cmdlet creates three rules (1 per person).</span></span>
+<span data-ttu-id="e0009-265">此示例在 srv2 上为名为 `contoso\user1`、`contoso\user2` 和 `contoso\user3` 用户中的用户，授予默认 Windows PowerShell 会话配置访问权限 `Microsoft.PowerShell`。</span><span class="sxs-lookup"><span data-stu-id="e0009-265">This example grants access to the default Windows PowerShell session configuration, `Microsoft.PowerShell`, on *srv2* for users in the users named `contoso\user1`, `contoso\user2`, and `contoso\user3`.</span></span> <span data-ttu-id="e0009-266">此 cmdlet 将创建三条规则（每人一条）。</span><span class="sxs-lookup"><span data-stu-id="e0009-266">This cmdlet creates three rules (1 per person).</span></span>
 
 ```powershell
 Add-PswaAuthorizationRule -UserName contoso\user1, contoso\user2, contoso\user3 -ComputerName srv2.contoso.com -ConfigurationName Microsoft.PowerShell
 ```
 
-### <a name="example-3"></a><span data-ttu-id="8876f-267">示例 3</span><span class="sxs-lookup"><span data-stu-id="8876f-267">EXAMPLE 3</span></span>
+### <a name="example-3"></a><span data-ttu-id="e0009-267">示例 3</span><span class="sxs-lookup"><span data-stu-id="e0009-267">EXAMPLE 3</span></span>
 
-<span data-ttu-id="8876f-268">此示例将说明如何通过管道输入用户名值。</span><span class="sxs-lookup"><span data-stu-id="8876f-268">This example illustrates how to input user name values via the pipeline.</span></span>
+<span data-ttu-id="e0009-268">此示例将说明如何通过管道输入用户名值。</span><span class="sxs-lookup"><span data-stu-id="e0009-268">This example illustrates how to input user name values via the pipeline.</span></span>
 
 ```powershell
 "contoso\user1","contoso\user2" | Add-pswaAuthorizationRule -ComputerName srv2.contoso.com -ConfigurationName Microsoft.PowerShell
 ```
 
-### <a name="example-4"></a><span data-ttu-id="8876f-269">示例 4</span><span class="sxs-lookup"><span data-stu-id="8876f-269">EXAMPLE 4</span></span>
+### <a name="example-4"></a><span data-ttu-id="e0009-269">示例 4</span><span class="sxs-lookup"><span data-stu-id="e0009-269">EXAMPLE 4</span></span>
 
-<span data-ttu-id="8876f-270">此示例说明如何按属性名从管道为所有参数获取值。</span><span class="sxs-lookup"><span data-stu-id="8876f-270">This example illustrates how all parameters take values from pipeline by property name.</span></span>
+<span data-ttu-id="e0009-270">此示例说明如何按属性名从管道为所有参数获取值。</span><span class="sxs-lookup"><span data-stu-id="e0009-270">This example illustrates how all parameters take values from pipeline by property name.</span></span>
 
 ````powershell
 $o = New-Object -TypeName PSObject |
@@ -228,39 +228,39 @@ $o = New-Object -TypeName PSObject |
 $o | Add-PswaAuthorizationRule -UserName contoso\user1 -ConfigurationName Microsoft.PowerShell
 ````
 
-### <a name="example-5"></a><span data-ttu-id="8876f-271">示例 5</span><span class="sxs-lookup"><span data-stu-id="8876f-271">EXAMPLE 5</span></span>
+### <a name="example-5"></a><span data-ttu-id="e0009-271">示例 5</span><span class="sxs-lookup"><span data-stu-id="e0009-271">EXAMPLE 5</span></span>
 
-<span data-ttu-id="8876f-272">此示例将添加一条规则，允许名为 `PswaServer\ChrisLocal` 的本地用户访问名为 srv1.contoso.com 的服务器。</span><span class="sxs-lookup"><span data-stu-id="8876f-272">This example adds a rule to allow the local user named `PswaServer\ChrisLocal` access to the server named **srv1.contoso.com**.</span></span>
+<span data-ttu-id="e0009-272">此示例将添加一条规则，允许名为 `PswaServer\ChrisLocal` 的本地用户访问名为 srv1.contoso.com 的服务器。</span><span class="sxs-lookup"><span data-stu-id="e0009-272">This example adds a rule to allow the local user named `PswaServer\ChrisLocal` access to the server named **srv1.contoso.com**.</span></span>
 
-<span data-ttu-id="8876f-273">此示例对网关位于工作组，目标计算机位于域中的方案进行了说明。</span><span class="sxs-lookup"><span data-stu-id="8876f-273">This example illustrates a scenario where the gateway is in a workgroup and the destination computer is in a domain.</span></span> <span data-ttu-id="8876f-274">授权规则适用于网关上的本地用户。</span><span class="sxs-lookup"><span data-stu-id="8876f-274">The authorization rule applies to the local users on the gateway.</span></span> <span data-ttu-id="8876f-275">在 Windows PowerShell Web 访问登录页中，要成功进行身份验证，用户必须在“可选连接设置”中提供备用凭据组。</span><span class="sxs-lookup"><span data-stu-id="8876f-275">On the Windows PowerShell Web Access sign-in page, to successfully authenticate, the user must provide a second set of credentials in the **Optional connection settings** area.</span></span> <span data-ttu-id="8876f-276">网关服务器使用一组额外的凭据，在服务器名为 srv1.contoso.com 的目标计算机上对用户进行身份验证。</span><span class="sxs-lookup"><span data-stu-id="8876f-276">The gateway server uses the additional set of credentials to authenticate the user on the destination computer, a server named *srv1.contoso.com*.</span></span>
+<span data-ttu-id="e0009-273">此示例对网关位于工作组，目标计算机位于域中的方案进行了说明。</span><span class="sxs-lookup"><span data-stu-id="e0009-273">This example illustrates a scenario where the gateway is in a workgroup and the destination computer is in a domain.</span></span> <span data-ttu-id="e0009-274">授权规则适用于网关上的本地用户。</span><span class="sxs-lookup"><span data-stu-id="e0009-274">The authorization rule applies to the local users on the gateway.</span></span> <span data-ttu-id="e0009-275">在 Windows PowerShell Web 访问登录页中，要成功进行身份验证，用户必须在“可选连接设置”中提供备用凭据组。</span><span class="sxs-lookup"><span data-stu-id="e0009-275">On the Windows PowerShell Web Access sign-in page, to successfully authenticate, the user must provide a second set of credentials in the **Optional connection settings** area.</span></span> <span data-ttu-id="e0009-276">网关服务器使用一组额外的凭据，在服务器名为 srv1.contoso.com 的目标计算机上对用户进行身份验证。</span><span class="sxs-lookup"><span data-stu-id="e0009-276">The gateway server uses the additional set of credentials to authenticate the user on the destination computer, a server named *srv1.contoso.com*.</span></span>
 
 ````powershell
 Add-PswaAuthorizationRule -UserName PswaServer\ChrisLocal -ComputerName srv1.contoso.com -ConfigurationName Microsoft.PowerShell
 ````
 
-### <a name="example-6"></a><span data-ttu-id="8876f-277">示例 6</span><span class="sxs-lookup"><span data-stu-id="8876f-277">EXAMPLE 6</span></span>
+### <a name="example-6"></a><span data-ttu-id="e0009-277">示例 6</span><span class="sxs-lookup"><span data-stu-id="e0009-277">EXAMPLE 6</span></span>
 
-<span data-ttu-id="8876f-278">此示例允许全体用户访问所有计算机中的全部终结点。</span><span class="sxs-lookup"><span data-stu-id="8876f-278">This example allows all users access to all endpoints on all computers.</span></span> <span data-ttu-id="8876f-279">这实际上关闭了授权规则。</span><span class="sxs-lookup"><span data-stu-id="8876f-279">This essentially turns off authorization rules.</span></span>
+<span data-ttu-id="e0009-278">此示例允许全体用户访问所有计算机中的全部终结点。</span><span class="sxs-lookup"><span data-stu-id="e0009-278">This example allows all users access to all endpoints on all computers.</span></span> <span data-ttu-id="e0009-279">这实际上关闭了授权规则。</span><span class="sxs-lookup"><span data-stu-id="e0009-279">This essentially turns off authorization rules.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="8876f-280">出于安全敏感部署的考虑，除测试环境或对安全要求不高的部署之外，不建议使用通配符 `*`。</span><span class="sxs-lookup"><span data-stu-id="8876f-280">Use of the `*` wildcard character is not recommended for security-sensitive deployments and should only be considered for test environments or used in deployments where security can be relaxed.</span></span>
+> <span data-ttu-id="e0009-280">出于安全敏感部署的考虑，除测试环境或对安全要求不高的部署之外，不建议使用通配符 `*`。</span><span class="sxs-lookup"><span data-stu-id="e0009-280">Use of the `*` wildcard character is not recommended for security-sensitive deployments and should only be considered for test environments or used in deployments where security can be relaxed.</span></span>
 
 ````powershell
 Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *
 ````
 
-## <a name="see-also"></a><span data-ttu-id="8876f-281">另请参阅</span><span class="sxs-lookup"><span data-stu-id="8876f-281">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e0009-281">另请参阅</span><span class="sxs-lookup"><span data-stu-id="e0009-281">See Also</span></span>
 
-<span data-ttu-id="8876f-282">[Get-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592891(v=wps.630).aspx)</span><span class="sxs-lookup"><span data-stu-id="8876f-282">[Get-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592891(v=wps.630).aspx)</span></span>
+<span data-ttu-id="e0009-282">[Get-PswaAuthorizationRule](https://technet.microsoft.com/library/jj592891(v=wps.630).aspx)</span><span class="sxs-lookup"><span data-stu-id="e0009-282">[Get-PswaAuthorizationRule](https://technet.microsoft.com/library/jj592891(v=wps.630).aspx)</span></span>
 
-<span data-ttu-id="8876f-283">[Remove-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592893(v=wps.630).aspx)</span><span class="sxs-lookup"><span data-stu-id="8876f-283">[Remove-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592893(v=wps.630).aspx)</span></span>
+<span data-ttu-id="e0009-283">[Remove-PswaAuthorizationRule](https://technet.microsoft.com/library/jj592893(v=wps.630).aspx)</span><span class="sxs-lookup"><span data-stu-id="e0009-283">[Remove-PswaAuthorizationRule](https://technet.microsoft.com/library/jj592893(v=wps.630).aspx)</span></span>
 
-<span data-ttu-id="8876f-284">[Test-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592892(v=wps.630).aspx)</span><span class="sxs-lookup"><span data-stu-id="8876f-284">[Test-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592892(v=wps.630).aspx)</span></span>
+<span data-ttu-id="e0009-284">[Test-PswaAuthorizationRule](https://technet.microsoft.com/library/jj592892(v=wps.630).aspx)</span><span class="sxs-lookup"><span data-stu-id="e0009-284">[Test-PswaAuthorizationRule](https://technet.microsoft.com/library/jj592892(v=wps.630).aspx)</span></span>
 
-<span data-ttu-id="8876f-285">[Install-PswaWebApplication](https://technet.microsoft.com/en-us/library/jj592894(v=wps.630).aspx)</span><span class="sxs-lookup"><span data-stu-id="8876f-285">[Install-PswaWebApplication](https://technet.microsoft.com/en-us/library/jj592894(v=wps.630).aspx)</span></span>
+<span data-ttu-id="e0009-285">[Install-PswaWebApplication](https://technet.microsoft.com/library/jj592894(v=wps.630).aspx)</span><span class="sxs-lookup"><span data-stu-id="e0009-285">[Install-PswaWebApplication](https://technet.microsoft.com/library/jj592894(v=wps.630).aspx)</span></span>
 
-[<span data-ttu-id="8876f-286">Add-Member</span><span class="sxs-lookup"><span data-stu-id="8876f-286">Add-Member</span></span>](http://go.microsoft.com/fwlink/p/?LinkId=113280)
+[<span data-ttu-id="e0009-286">Add-Member</span><span class="sxs-lookup"><span data-stu-id="e0009-286">Add-Member</span></span>](http://go.microsoft.com/fwlink/p/?LinkId=113280)
 
-[<span data-ttu-id="8876f-287">New-Object</span><span class="sxs-lookup"><span data-stu-id="8876f-287">New-Object</span></span>](http://go.microsoft.com/fwlink/p/?LinkId=113355)
+[<span data-ttu-id="e0009-287">New-Object</span><span class="sxs-lookup"><span data-stu-id="e0009-287">New-Object</span></span>](http://go.microsoft.com/fwlink/p/?LinkId=113355)
 
-[<span data-ttu-id="8876f-288">Get-Credential</span><span class="sxs-lookup"><span data-stu-id="8876f-288">Get-Credential</span></span>](http://go.microsoft.com/fwlink/?LinkID=293936)
+[<span data-ttu-id="e0009-288">Get-Credential</span><span class="sxs-lookup"><span data-stu-id="e0009-288">Get-Credential</span></span>](http://go.microsoft.com/fwlink/?LinkID=293936)
