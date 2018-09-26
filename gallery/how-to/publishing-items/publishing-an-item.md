@@ -3,19 +3,19 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 title: 创建和发布项
-ms.openlocfilehash: 7c2a2be6986bf65c168d7c3960366fac4ee31301
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: c5027c5fb357bb187611880ba75610a8f33074e0
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189527"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522956"
 ---
 # <a name="creating-and-publishing-an-item"></a>创建和发布项
 
 在 PowerShell 库中，可以发布稳定的 PowerShell 模块、脚本和 DSC 资源，并与更广泛的 PowerShell 用户社区共享它们。
 
 本文介绍了有关如何准备脚本或模块，并将其发布到 PowerShell 库的机制和重要步骤。
-强烈建议查看[发布指南](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-PublishingGuidelines)，了解如何确保发布的项将为更广泛的 PowerShell 库用户所接受。
+强烈建议查看[发布指南](https://msdn.microsoft.com/powershell/gallery/psgallery/psgallery-PublishingGuidelines)，了解如何确保发布的项将为更广泛的 PowerShell 库用户所接受。
 
 若要将项发布到 PowerShell 库，至少必须符合以下要求：
 
@@ -30,7 +30,7 @@ PowerShell 库接受 PowerShell 模块和 PowerShell 脚本。
 
 ## <a name="powershell-gallery-account-and-api-key"></a>PowerShell 库帐户和 API 密钥
 
-请参阅[创建 PowerShell 库帐户](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_creating_an_account)，了解如何设置 PowerShell 库帐户。
+请参阅[创建 PowerShell 库帐户](https://msdn.microsoft.com/powershell/gallery/psgallery/psgallery_creating_an_account)，了解如何设置 PowerShell 库帐户。
 
 创建帐户后，便可以获取发布项所需的 API 密钥。
 使用此帐户登录后，用户名将显示在 PowerShell 库页面（而不是注册页）的顶部。
@@ -44,9 +44,9 @@ PowerShell 库接受 PowerShell 模块和 PowerShell 脚本。
 
 PowerShell 库向库用户提供从脚本或模块清单的元数据字段中提取的信息。
 必须满足有关项清单所提供信息的一小组要求，才能创建或修改发布到 PowerShell 库中的项。
-强烈建议查看[发布指南](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-PublishingGuidelines)中的“项元数据”部分，了解如何向用户提供最实用的项信息。
+强烈建议查看[发布指南](https://msdn.microsoft.com/powershell/gallery/psgallery/psgallery-PublishingGuidelines)中的“项元数据”部分，了解如何向用户提供最实用的项信息。
 
-[New-ModuleManifest](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/ModuleManifest-Reference) 和 [New-ScriptFileInfo](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_new-scriptfileinfo) cmdlet 将创建清单模板，内含所有清单元素的占位符。
+[New-ModuleManifest](https://msdn.microsoft.com/powershell/gallery/psget/module/ModuleManifest-Reference) 和 [New-ScriptFileInfo](https://msdn.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo) cmdlet 将创建清单模板，内含所有清单元素的占位符。
 
 这两个清单都包含两个对发布非常重要的部分，即主键数据和 PrivateData 的 PSData 区域。PowerShell 模块清单中的主键数据是 PrivateData 部分之外的所有数据。
 主键集合已绑定到在使用的 PowerShell 版本，并且不支持未定义的主键。
@@ -86,14 +86,14 @@ PowerShell 脚本分析器会列出标识为“错误”、“警告”和“信
 库运营团队会联系项所有者来修复已发现的错误。
 
 如果 PowerShell 库基础结构无法读取项中的清单信息，将无法发布此项。
-[Test-ModuleManifest](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/test-modulemanifest) 可捕获导致已安装的模块不可用的常见问题。 必须先对每个模块运行此命令，然后才能将其发布到 PowerShell 库中。
+[Test-ModuleManifest](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/test-modulemanifest) 可捕获导致已安装的模块不可用的常见问题。 必须先对每个模块运行此命令，然后才能将其发布到 PowerShell 库中。
 
-同样，[Test-ScriptFileInfo](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_test-scriptfileinfo) 可用于验证脚本中的元数据。必须先对与模块分开发布的每个脚本运行此命令，然后才能将其发布到 PowerShell 库中。
+同样，[Test-ScriptFileInfo](https://msdn.microsoft.com/powershell/gallery/psget/script/psget_test-scriptfileinfo) 可用于验证脚本中的元数据。必须先对与模块分开发布的每个脚本运行此命令，然后才能将其发布到 PowerShell 库中。
 
 
 ## <a name="publishing-items"></a>发布项
 
-必须使用 [Publish-Script](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_publish-script) 或 [Publish-Module](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/psget_publish-module) 将项发布到 PowerShell 库中。
+必须使用 [Publish-Script](https://msdn.microsoft.com/powershell/gallery/psget/script/psget_publish-script) 或 [Publish-Module](https://msdn.microsoft.com/powershell/gallery/psget/module/psget_publish-module) 将项发布到 PowerShell 库中。
 这两个命令都需要
 
 - 将发布的项的路径。 对于模块，使用为模块指定的文件夹。 如果指定的文件夹包含同一模块的多个版本，必须指定 RequiredVersion。

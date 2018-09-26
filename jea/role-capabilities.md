@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: JEA 角色功能
-ms.openlocfilehash: 0531baa284e66a42a162329ea20ecfdca6d0b526
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: bd0a995adc60e50049ff99d6b23e7c2aeb745a18
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190530"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522933"
 ---
 # <a name="jea-role-capabilities"></a>JEA 角色功能
 
@@ -181,9 +181,9 @@ FunctionDefinitions = @{
 
 Select-Object 是所有 JEA 会话中受约束的默认 cmdlet，不允许选择对象的任意属性。
 若要在函数中使用不受约束的 Select-Object，必须通过指定 FQMN 显式请求完整的实现。
-JEA 会话中受约束的所有 cmdlet 在通过函数调用时的行为均相同，且符合 PowerShell 的[命令优先顺序](https://msdn.microsoft.com/en-us/powershell/reference/3.0/microsoft.powershell.core/about/about_command_precedence)。
+JEA 会话中受约束的所有 cmdlet 在通过函数调用时的行为均相同，且符合 PowerShell 的[命令优先顺序](https://msdn.microsoft.com/powershell/reference/3.0/microsoft.powershell.core/about/about_command_precedence)。
 
-如果正在编写大量自定义函数，将其放在 [PowerShell 脚本模块](https://msdn.microsoft.com/en-us/library/dd878340(v=vs.85).aspx)中可能会更容易。
+如果正在编写大量自定义函数，将其放在 [PowerShell 脚本模块](https://msdn.microsoft.com/library/dd878340(v=vs.85).aspx)中可能会更容易。
 然后，与使用内置和第三方模块时一样，可使用 VisibleFunctions 字段使这些函数在 JEA 会话中可见。
 
 ## <a name="place-role-capabilities-in-a-module"></a>在模块中放置角色功能
@@ -207,7 +207,7 @@ New-Item -ItemType Directory $rcFolder
 Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 ```
 
-若要深入了解 PowerShell 模块、模块清单和 PSModulePath 环境变量，请参阅[了解 PowerShell 模块](https://msdn.microsoft.com/en-us/library/dd878324.aspx)。
+若要深入了解 PowerShell 模块、模块清单和 PSModulePath 环境变量，请参阅[了解 PowerShell 模块](https://msdn.microsoft.com/library/dd878324.aspx)。
 
 ## <a name="updating-role-capabilities"></a>更新角色功能
 

@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 description: 面向发行者的指南
 title: PowerShell 库发布指南和最佳做法
-ms.openlocfilehash: 3aca76f8904c7eb64e5c96ae4f0f26014e0d2609
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 11207a312f916506f855c0e6e292752f72fc04c1
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190326"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523006"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell 库发布指南和最佳做法
 
@@ -172,12 +172,12 @@ PowerShell 支持通过以下两种主要方法来验证代码签名：
 - 对模块进行目录签名
 
 对 PowerShell 文件进行签名是一种由来已久的方法，可确保在执行的代码是由可靠的源生成，并且尚未经过修改。
-[关于签名](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_signing)主题详细介绍了如何对 PowerShell 脚本文件进行签名。
+[关于签名](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_signing)主题详细介绍了如何对 PowerShell 脚本文件进行签名。
 总而言之，可以向 PowerShell 在加载脚本时验证的任何 .PS1 文件添加签名。
-可以使用[执行策略](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_execution_policies) cmdlet 来约束 PowerShell，以确保使用已签名脚本。
+可以使用[执行策略](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_execution_policies) cmdlet 来约束 PowerShell，以确保使用已签名脚本。
 
 对模块进行目录签名是 PowerShell 版本 5.1 中新增的功能。
-[目录 Cmdlet](https://msdn.microsoft.com/en-us/powershell/wmf/5.1/catalog-cmdlets) 主题中介绍了如何对模块进行签名。
+[目录 Cmdlet](https://msdn.microsoft.com/powershell/wmf/5.1/catalog-cmdlets) 主题中介绍了如何对模块进行签名。
 总而言之，对模块进行目录签名是通过创建目录文件（其中包含模块中每个文件的哈希值），再对此文件进行签名完成的。
 PowerShellGet publish-module、install-module、save-module 和 update-module cmdlet 将检查签名，以确保签名是有效的，再确认每项的哈希值是否与目录中的值一致。
 如果在系统中安装了旧版模块，install-module 将确认新版本的签名颁发机构是否与之前安装的版本一致。

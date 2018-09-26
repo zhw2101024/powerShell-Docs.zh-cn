@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,安装程序
 title: 目录 cmdlet
-ms.openlocfilehash: 7eaca09667af0eb5d719f23e987bb112e8514978
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: ec5fc866fe27a894b23b93d3ea46ad9c0cba288e
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189061"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522882"
 ---
 # <a name="catalog-cmdlets"></a>目录 Cmdlet
 
-我们在 [Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx) 模块中新增了两个新 cmdlet 来生成和验证 windows 目录文件。
+我们在 [Microsoft.Powershell.Secuity](https://technet.microsoft.com/library/hh847877.aspx) 模块中新增了两个新 cmdlet 来生成和验证 windows 目录文件。
 
 ## <a name="new-filecatalog"></a>New-FileCatalog
 --------------------------------
@@ -49,5 +49,5 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 ![](../images/TestFileCatalog.jpg)
 
 此 cmdlet 将在目录文件中找到的所有文件的哈希值及其相对路径与保存到磁盘的值相比较。 如果它检测到文件哈希值和路径之间存在任何不匹配，将返回状态 `ValidationFailed`。
-用户可使用 `Detailed` 切换检索所有该信息。 目录的签名状态将在 `Signature` 字段中显示，该结果与针对目录文件调用 [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) cmdlet 的结果相同。
+用户可使用 `Detailed` 切换检索所有该信息。 目录的签名状态将在 `Signature` 字段中显示，该结果与针对目录文件调用 [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) cmdlet 的结果相同。
 用户也可使用 `FilesToSkip` 参数在验证过程中跳过任何文件。

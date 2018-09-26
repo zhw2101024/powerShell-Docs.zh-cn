@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: 注册 JEA 配置
-ms.openlocfilehash: cda899b20378b0183a3d88ecfd593aaf7356e967
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 2c4a8f64c966903a6eb8fcabe4cd25ae7f98b2c4
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188507"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522830"
 ---
 # <a name="registering-jea-configurations"></a>注册 JEA 配置
 
@@ -57,7 +57,7 @@ Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' 
 
 ## <a name="multi-machine-configuration-with-dsc"></a>使用 DSC 的多台计算机配置
 
-如果要在多台计算机上部署 JEA，最简单的部署模型是使用 JEA [Desired State Configuration](https://msdn.microsoft.com/en-us/powershell/dsc/overview) 资源，在每台计算机上快速且一致地部署 JEA。
+如果要在多台计算机上部署 JEA，最简单的部署模型是使用 JEA [Desired State Configuration](https://msdn.microsoft.com/powershell/dsc/overview) 资源，在每台计算机上快速且一致地部署 JEA。
 
 若要使用 DSC 部署 JEA，需要确保满足以下先决条件：
 - 已创作一个或多个角色功能并已将其添加到有效的 PowerShell 模块。
@@ -110,7 +110,7 @@ Configuration JEAMaintenance
 }
 ```
 
-随后可在系统上通过[直接调用本地配置管理器](https://msdn.microsoft.com/en-us/powershell/dsc/metaconfig)或更新[请求服务器配置](https://msdn.microsoft.com/en-us/powershell/dsc/pullserver)应用此配置。
+随后可在系统上通过[直接调用本地配置管理器](https://msdn.microsoft.com/powershell/dsc/metaconfig)或更新[请求服务器配置](https://msdn.microsoft.com/powershell/dsc/pullserver)应用此配置。
 
 DSC 资源还可以替换默认的 Microsoft.PowerShell 远程处理终结点。
 如果这样做，资源将自动注册包含默认 WinRM ACL（允许远程管理用户和本地管理员组成员访问）且名为“Microsoft.PowerShell.Restricted”的备份非约束终结点。

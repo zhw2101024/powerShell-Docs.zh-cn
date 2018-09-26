@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: 使用 JEA
-ms.openlocfilehash: 891e4be4c3fadceeff5ede7ac5cab04a5f80e5c1
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 539d280aff0b2656a5e9c710acfa468057753027
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190071"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522984"
 ---
 # <a name="using-jea"></a>使用 JEA
 
@@ -106,14 +106,14 @@ Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredComman
 ```
 
 还可以使用 [Export-pssession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession) 通过隐式远程处理保留代理 cmdlet。
-有关隐式远程处理的详细信息，请参阅 [Import-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/import-pssession) 和 [Import-Module](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/import-module) 的帮助文档。
+有关隐式远程处理的详细信息，请参阅 [Import-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/import-pssession) 和 [Import-Module](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/import-module) 的帮助文档。
 
 ## <a name="using-jea-programatically"></a>以编程方式使用 JEA
 
 JEA 还可用于自动化系统和用户应用程序，例如内部的支持人员应用和 Web 站点。
 该方法和生成与非约束 PowerShell 终结点进行会话的应用所用的方法相同，同时警告程序应该注意 JEA 将限制可在远程会话中运行的命令。
 
-对于简单的一次性任务，可以使用 [Invoke-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/invoke-command) 来运行使用 JEA 的一组命令。
+对于简单的一次性任务，可以使用 [Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command) 来运行使用 JEA 的一组命令。
 
 ```powershell
 Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'JEAMaintenance' -ScriptBlock { Get-Process; Get-Service }
@@ -126,14 +126,14 @@ $allowedCommands = Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'J
 $allowedCommands | Where-Object { $_.CommandType -in 'Function', 'Cmdlet' } | Format-Table Name, Parameters
 ```
 
-如果要生成 C# 应用，可以通过在 [WSManConnectionInfo](https://msdn.microsoft.com/en-us/library/system.management.automation.runspaces.wsmanconnectioninfo(v=vs.85).aspx) 对象中指定配置名称来创建与 JEA 会话连接的 PowerShell 运行空间。
+如果要生成 C# 应用，可以通过在 [WSManConnectionInfo](https://msdn.microsoft.com/library/system.management.automation.runspaces.wsmanconnectioninfo(v=vs.85).aspx) 对象中指定配置名称来创建与 JEA 会话连接的 PowerShell 运行空间。
 
 ```csharp
 
 // using System.Management.Automation;
 var computerName = "SERVER01";
 var configName   = "JEAMaintenance";
-var creds        = // create a PSCredential object here (https://msdn.microsoft.com/en-us/library/system.management.automation.pscredential(v=vs.85).aspx)
+var creds        = // create a PSCredential object here (https://msdn.microsoft.com/library/system.management.automation.pscredential(v=vs.85).aspx)
 
 WSManConnectionInfo connectionInfo = new WSManConnectionInfo(
                     false,                 // Use SSL
@@ -168,7 +168,7 @@ using (Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo))
 
 ## <a name="using-jea-with-powershell-direct"></a>将 JEA 与 PowerShell Direct 配合使用
 
-Windows 10 和 Windows Server 2016 中的 Hyper-V 提供 [PowerShell Direct](https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/vmsession) 功能，以便 Hyper-V 管理员可以使用 PowerShell 管理虚拟机，无论虚拟机上的网络配置或远程管理设置如何。
+Windows 10 和 Windows Server 2016 中的 Hyper-V 提供 [PowerShell Direct](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/vmsession) 功能，以便 Hyper-V 管理员可以使用 PowerShell 管理虚拟机，无论虚拟机上的网络配置或远程管理设置如何。
 
 可以将 PowerShell Direct 与 JEA 配合使用，向 Hyper-V 管理员提供对 VM 有限的访问权限，这在失去与 VM 的网络连接并需要数据中心管理员来修复网络设置时十分有用。
 

@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,安装程序
 title: WMF 5.1 中的 DSC 改进
-ms.openlocfilehash: 32bdde6d43d17cc76c454fe10b00097753a9eebe
-ms.sourcegitcommit: 2d9cf1ccb9a653db7726a408ebcb65530dcb1522
+ms.openlocfilehash: 92f82d62550e105a187fd7c0c58b49367c646a7e
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2018
-ms.locfileid: "34309536"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523007"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 中的 Desired State Configuration (DSC) 改进
 
@@ -154,7 +154,7 @@ Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
 
 ## <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>在 DSC 复合资源中使用 PsDscRunAsCredential
 
-我们新增了对 DSC [复合](https://msdn.microsoft.com/en-us/powershell/dsc/authoringresourcecomposite)资源使用 [PsDscRunAsCredential](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) 的支持。
+我们新增了对 DSC [复合](https://msdn.microsoft.com/powershell/dsc/authoringresourcecomposite)资源使用 [PsDscRunAsCredential](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) 的支持。
 
 现在可以在使用配置内的复合资源时，指定 PsDscRunAsCredential 值。
 如果指定了该值，则可以 RunAs 用户身份运行复合资源内部的所有资源。
@@ -162,7 +162,7 @@ Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
 RunAs 凭据可以传播到复合资源层次结构的任一级别。
 如果复合资源内的任何资源指定了自己的 PsDscRunAsCredential 值，那么会在配置编译期间生成合并错误。
 
-本示例演示了在 PSDesiredStateConfiguration 模块中包含的 [WindowsFeatureSet](https://msdn.microsoft.com/en-us/powershell/wmf/dsc_newresources) 复合资源中该属性的使用。
+本示例演示了在 PSDesiredStateConfiguration 模块中包含的 [WindowsFeatureSet](https://msdn.microsoft.com/powershell/wmf/dsc_newresources) 复合资源中该属性的使用。
 
 ```powershell
 Configuration InstallWindowsFeature
