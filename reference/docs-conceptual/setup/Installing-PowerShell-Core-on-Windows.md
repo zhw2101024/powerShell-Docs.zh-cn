@@ -2,12 +2,12 @@
 title: 在 Windows 上安装 PowerShell Core
 description: 介绍如何在 Windows 上安装 PowerShell Core
 ms.date: 08/06/2018
-ms.openlocfilehash: 595f12efd060406264a1a4efb9d54035da06ffe3
-ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
+ms.openlocfilehash: 2b21908c38796117308f2ac1219db00ff9086408
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45557172"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48850973"
 ---
 # <a name="installing-powershell-core-on-windows"></a>在 Windows 上安装 PowerShell Core
 
@@ -63,14 +63,14 @@ Windows IoT 已经附带了 Windows PowerShell，我们将使用它来部署 Pow
 
    ```powershell
    Enter-PSSession $s
-   cd u:\users\administrator\downloads
+   Set-Location u:\users\administrator\downloads
    Expand-Archive .\PowerShell-6.1.0-win-arm32.zip
    ```
 
 4. 在 PowerShell Core 6 中设置远程处理
 
    ```powershell
-   cd .\PowerShell-6.1.0-win-arm32
+   Set-Location .\PowerShell-6.1.0-win-arm32
    # Be sure to use the -PowerShellHome parameter otherwise it'll try to create a new
    # endpoint with Windows PowerShell 5.1
    .\Install-PowerShellRemoting.ps1 -PowerShellHome .
