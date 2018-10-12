@@ -2,12 +2,12 @@
 title: 通过 SSH 进行 PowerShell 远程处理
 description: 在 PowerShell Core 中使用 SSH 进行远程处理
 ms.date: 08/14/2018
-ms.openlocfilehash: 1de034d667aa9a377e5460e7eb474402c690cb42
-ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
+ms.openlocfilehash: 451a55a588381cc9bec265895b2bfad6b6f6e73c
+ms.sourcegitcommit: a652b12a0b87cdd0c8eb76381ae015467dd7b8cd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "43133109"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46134274"
 ---
 # <a name="powershell-remoting-over-ssh"></a>通过 SSH 进行 PowerShell 远程处理
 
@@ -167,6 +167,14 @@ WinRM 为 PowerShell 远程会话提供可靠的托管模型。 这种实现基�
    sudo launchctl stop com.openssh.sshd
    sudo launchctl start com.openssh.sshd
    ```
+
+## <a name="authentication"></a>身份验证
+
+通过 SSH 进行 PowerShell 远程处理依赖于 SSH 客户端和 SSH 服务之间的身份验证交换，并且本身不实现任何身份验证方案。
+这意味着任何配置的身份验证方案（包括多重身份验证）都由 SSH 处理，并且独立于 PowerShell。
+例如，可以将 SSH 服务配置为需要公钥身份验证以及一次性密码，从而增加安全性。
+多重身份验证的配置不在本文档的讨论范围。
+若要了解如何正确配置多重身份验证，请参阅相关的 SSH 文档，并在尝试将其用于 PowerShell 远程处理之前先在 PowerShell 之外验证它的运行效果。
 
 ## <a name="powershell-remoting-example"></a>PowerShell 远程处理示例
 

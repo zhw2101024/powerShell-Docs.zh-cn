@@ -2,12 +2,12 @@
 title: 在 Linux 上安装 PowerShell Core
 description: 介绍如何在各种 Linux 分发上安装 PowerShell Core
 ms.date: 08/06/2018
-ms.openlocfilehash: 0a1f30ef75a0feeb97df9a35a08d6b0d3edaeccf
-ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
+ms.openlocfilehash: acd88f686ce6a657c9ccda9d2615d4ab355ddcbe
+ms.sourcegitcommit: 601609575a3214ea7086a3bcb586ae0d1df3d418
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "43133073"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46532946"
 ---
 # <a name="installing-powershell-core-on-linux"></a>在 Linux 上安装 PowerShell Core
 
@@ -56,11 +56,11 @@ GitHub [版本][]页面上提供有所有可用包。
 这是首选方法。
 
 ```sh
-# Import the public repository GPG keys
-curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+# Download the Microsoft repository GPG keys
+wget -q https://packages.microsoft.com/config/ubuntu/14.04/packages-microsoft-prod.deb
 
-# Register the Microsoft Ubuntu repository
-curl https://packages.microsoft.com/config/ubuntu/14.04/prod.list | sudo tee /etc/apt/sources.list.d/microsoft.list
+# Register the Microsoft repository GPG keys
+sudo dpkg -i packages-microsoft-prod.deb
 
 # Update the list of products
 sudo apt-get update
@@ -77,13 +77,13 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1404"></a>通过直接下载进行安装 - Ubuntu 14.04
 
-从以下位置将 Debian 包 `powershell_6.0.3-1.ubuntu.14.04_amd64.deb` 下载到 Ubuntu 计算机：
+从以下位置将 Debian 包 `powershell_6.1.0-1.ubuntu.14.04_amd64.deb` 下载到 Debian 计算机：
 [版本][]页。
 
 然后在终端中执行以下命令：
 
 ```sh
-sudo dpkg -i powershell_6.0.3-1.ubuntu.14.04_amd64.deb
+sudo dpkg -i powershell_6.1.0-1.ubuntu.14.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -105,11 +105,11 @@ sudo apt-get remove powershell
 这是首选方法。
 
 ```sh
-# Import the public repository GPG keys
-curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+# Download the Microsoft repository GPG keys
+wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
 
-# Register the Microsoft Ubuntu repository
-sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/16.04/prod.list
+# Register the Microsoft repository GPG keys
+sudo dpkg -i packages-microsoft-prod.deb
 
 # Update the list of products
 sudo apt-get update
@@ -125,13 +125,13 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>通过 Direct Download 的安装 - Ubuntu 16.04
 
-从以下位置将 Debian 包 `powershell_6.0.3-1.ubuntu.16.04_amd64.deb` 下载到 Ubuntu 计算机：
+从以下位置将 Debian 包 `powershell_6.1.0-1.ubuntu.16.04_amd64.deb` 下载到 Debian 计算机：
 [版本][]页。
 
 然后在终端中执行以下命令：
 
 ```sh
-sudo dpkg -i powershell_6.0.3-1.ubuntu.16.04_amd64.deb
+sudo dpkg -i powershell_6.1.0-1.ubuntu.16.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -156,33 +156,33 @@ sudo apt-get remove powershell
 这是首选方法。
 
 ```sh
-# Import the public repository GPG keys
-curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+# Download the Microsoft repository GPG keys
+wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
 
-# Register the Microsoft Ubuntu repository
-sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/18.04/prod.list
+# Register the Microsoft repository GPG keys
+sudo dpkg -i packages-microsoft-prod.deb
 
 # Update the list of products
 sudo apt-get update
 
 # Install PowerShell
-sudo apt-get install -y powershell-preview
+sudo apt-get install -y powershell
 
 # Start PowerShell
-pwsh-preview
+pwsh
 ```
 
 作为超级用户注册 Microsoft 存储库一次后，仅需使用 `sudo apt-get upgrade powershell` 将其更新即可。
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>通过直接下载安装 - Ubuntu 18.04
 
-从以下位置将 Debian 包 `powershell_6.1.0-preview.3-1.ubuntu.18.04_amd64.deb` 下载到 Ubuntu 计算机：
+从以下位置将 Debian 包 `powershell_6.1.0-1.ubuntu.18.04_amd64.deb` 下载到 Debian 计算机：
 [版本][]页。
 
 然后在终端中执行以下命令：
 
 ```sh
-sudo dpkg -i powershell_6.1.0-preview.3-1.ubuntu.18.04_amd64.deb
+sudo dpkg -i powershell_6.1.0-1.ubuntu.18.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -236,13 +236,13 @@ pwsh
 
 ### <a name="installation-via-direct-download---debian-8"></a>通过直接下载进行安装 - Debian 8
 
-从以下位置将 Debian 包 `powershell_6.0.3-1.debian.8_amd64.deb` 下载到 Debian 计算机：
+从以下位置将 Debian 包 `powershell_6.1.0-1.debian.8_amd64.deb` 下载到 Debian 计算机：
 [版本][]页。
 
 然后在终端中执行以下命令：
 
 ```sh
-sudo dpkg -i powershell_6.0.3-1.debian.8_amd64.deb
+sudo dpkg -i powershell_6.1.0-1.debian.8_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -288,13 +288,13 @@ pwsh
 
 ### <a name="installation-via-direct-download---debian-9"></a>通过直接下载进行安装 - Debian 9
 
-从以下位置将 Debian 包 `powershell_6.0.3-1.debian.9_amd64.deb` 下载到 Debian 计算机：
+从以下位置将 Debian 包 `powershell_6.1.0-1.debian.9_amd64.deb` 下载到 Debian 计算机：
 [版本][]页。
 
 然后在终端中执行以下命令：
 
 ```sh
-sudo dpkg -i powershell_6.0.3-1.debian.9_amd64.deb
+sudo dpkg -i powershell_6.1.0-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -328,19 +328,19 @@ pwsh
 
 ### <a name="installation-via-direct-download---centos-7"></a>通过直接下载进行安装 - CentOS 7
 
-使用 [CentOS 7][] 从以下位置将 RPM 包 `powershell-6.0.3-1.rhel.7.x86_64.rpm` 下载到 CentOS 计算机：
+使用 [CentOS 7][] 从以下位置将 RPM 包 `powershell-6.1.0-1.rhel.7.x86_64.rpm` 下载到 CentOS 计算机：
 [版本][]页。
 
 然后在终端中执行以下命令：
 
 ```sh
-sudo yum install powershell-6.0.3-1.rhel.7.x86_64.rpm
+sudo yum install powershell-6.1.0-1.rhel.7.x86_64.rpm
 ```
 
 无需该中间下载步骤也可安装 RPM：
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0.3/powershell-6.0.3-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---centos-7"></a>卸载 - CentOS 7
@@ -372,19 +372,19 @@ pwsh
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>通过直接下载进行安装 - Red Hat Enterprise Linux (RHEL) 7
 
-从以下位置将 RPM 包 `powershell-6.0.3-1.rhel.7.x86_64.rpm` 下载到 Red Hat Enterprise Linux 计算机：
+从以下位置将 RPM 包 `powershell-6.1.0-1.rhel.7.x86_64.rpm` 下载到 Fedora 计算机：
 [版本][]页。
 
 然后在终端中执行以下命令：
 
 ```sh
-sudo yum install powershell-6.0.3-1.rhel.7.x86_64.rpm
+sudo yum install powershell-6.1.0-1.rhel.7.x86_64.rpm
 ```
 
 无需该中间下载步骤也可安装 RPM：
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0.3/powershell-6.0.3-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a>卸载 - Red Hat Enterprise Linux (RHEL) 7
@@ -398,9 +398,9 @@ sudo yum remove powershell
 安装 PowerShell Core 时，`zypper` 可能报告以下错误：
 
 ```Output
-Problem: nothing provides libcurl needed by powershell-6.0.1-1.rhel.7.x86_64
- Solution 1: do not install powershell-6.0.1-1.rhel.7.x86_64
- Solution 2: break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies
+Problem: nothing provides libcurl needed by powershell-6.1.0-1.rhel.7.x86_64
+ Solution 1: do not install powershell-6.1.0-1.rhel.7.x86_64
+ Solution 2: break powershell-6.1.0-1.rhel.7.x86_64 by ignoring some of its dependencies
 ```
 
 在这种情况下，通过检查以下命令将 `libcurl4` 包显示为已安装来验证存在兼容的 `libcurl` 库：
@@ -409,7 +409,7 @@ Problem: nothing provides libcurl needed by powershell-6.0.1-1.rhel.7.x86_64
 zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
 ```
 
-然后在安装 PowerShell 包时选择 `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies` 解决方案。
+然后在安装 PowerShell 包时选择 `break powershell-6.1.0-1.rhel.7.x86_64 by ignoring some of its dependencies` 解决方案。
 
 ### <a name="installation-via-package-repository-preferred---opensuse-423"></a>通过包存储库安装（首选）- OpenSUSE 42.3
 
@@ -434,18 +434,18 @@ pwsh
 
 ### <a name="installation-via-direct-download---opensuse-423"></a>通过直接下载进行安装 - OpenSUSE 42.3
 
-从[版本][]页中将 RPM 包 `powershell-6.0.3-1.rhel.7.x86_64.rpm` 下载到 OpenSUSE 计算机。
+从[版本][]页中将 RPM 包 `powershell-6.1.0-1.rhel.7.x86_64.rpm` 下载到 OpenSUSE 计算机。
 
 ```sh
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo zypper install powershell-6.0.3-1.rhel.7.x86_64.rpm
+sudo zypper install powershell-6.1.0-1.rhel.7.x86_64.rpm
 ```
 
 无需该中间下载步骤也可安装 RPM：
 
 ```sh
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v6.0.3/powershell-6.0.3-1.rhel.7.x86_64.rpm
+sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---opensuse-423"></a>卸载 - OpenSUSE 42.3
@@ -485,21 +485,21 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>通过直接下载进行安装 - Fedora 27、Fedora 28
 
-从以下位置将 RPM 包 `powershell-6.0.3-1.rhel.7.x86_64.rpm` 下载到 Fedora 计算机：
+从以下位置将 RPM 包 `powershell-6.1.0-1.rhel.7.x86_64.rpm` 下载到 Fedora 计算机：
 [版本][]页。
 
 然后在终端中执行以下命令：
 
 ```sh
 sudo dnf install compat-openssl10
-sudo dnf install powershell-6.0.3-1.rhel.7.x86_64.rpm
+sudo dnf install powershell-6.1.0-1.rhel.7.x86_64.rpm
 ```
 
 无需该中间下载步骤也可安装 RPM：
 
 ```sh
 sudo dnf install compat-openssl10
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---fedora-27-fedora-28"></a>卸载 - Fedora 27、Fedora 28
@@ -532,7 +532,8 @@ AUR 中的包由社区维护，并无正式支持。
 
 ### <a name="getting-snapd"></a>获取 snapd
 
-需具备 `snapd` 才能运行 Snap。  按照[这些说明](https://docs.snapcraft.io/core/install)确保你已安装 `snapd`。
+需具备 `snapd` 才能运行 Snap。
+按照[这些说明](https://docs.snapcraft.io/core/install)确保你已安装 `snapd`。
 
 ### <a name="installation-via-snap"></a>通过 Snap 进行安装
 
@@ -555,30 +556,10 @@ pwsh-preview
 sudo snap remove powershell-preview
 ```
 
-## <a name="linux-appimage"></a>Linux AppImage
-
-> [!NOTE]
-> AppImage 支持是实验性的
-
-使用新的 Linux 分发版时，请从[版本][]页中将 AppImage `powershell-6.0.1-x86_64.AppImage`下载到 Linux 计算机。
-
-然后在终端中执行以下命令：
-
-```bash
-chmod a+x powershell-6.0.1-x86_64.AppImage
-./powershell-6.0.1-x86_64.AppImage
-```
-
-通过 [AppImage][] 无需安装即可运行 PowerShell。
-此款可移植应用程序将 PowerShell 及其依赖项（包括 .NET Core 的系统依赖项）捆绑到一个统一包中。
-此包为单个二进制文件，独立于用户的 Linux 分发版运行。
-
-[appimage]: http://appimage.org/
-
 ## <a name="kali"></a>Kali
 
 > [!NOTE]
-> Kali 支持是实验性的。
+> Kali 支持目前无法使用。 请改用 [Snap 包][snap]。
 
 ### <a name="installation"></a>安装
 
@@ -589,23 +570,10 @@ wget http://security.debian.org/debian-security/pool/updates/main/o/openssl/libs
 sudo dpkg -i libssl1.0.0_1.0.1t-1+deb8u6_amd64.deb
 
 # Install PowerShell
-sudo dpkg -i powershell_6.0.3-1.ubuntu.16.04_amd64.deb
+sudo dpkg -i powershell_6.1.0-1.ubuntu.16.04_amd64.deb
 
 # Start PowerShell
 pwsh
-```
-
-### <a name="run-powershell-in-latest-kali-kali-gnulinux-rolling-without-installing-it"></a>在最新版 Kali (Kali GNU/Linux Rolling) 中无需安装即可运行 PowerShell
-
-```sh
-# Grab the latest App Image
-wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-x86_64.AppImage
-
-# Make executable
-chmod a+x powershell-6.0.2-x86_64.AppImage
-
-# Start PowerShell
-./powershell-6.0.2-x86_64.AppImage
 ```
 
 ### <a name="uninstallation---kali"></a>卸载 - Kali
@@ -632,13 +600,13 @@ sudo dpkg -r powershell_6.0.2-1.ubuntu.16.04_amd64.deb
 sudo apt-get install libunwind8
 
 # Grab the latest tar.gz
-wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.3/powershell-6.0.3-linux-arm32.tar.gz
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-linux-arm32.tar.gz
 
 # Make folder to put powershell
 mkdir ~/powershell
 
 # Unpack the tar.gz file
-tar -xvf ./powershell-6.0.3-linux-arm32.tar.gz -C ~/powershell
+tar -xvf ./powershell-6.1.0-linux-arm32.tar.gz -C ~/powershell
 
 # Start PowerShell
 ~/powershell/pwsh
@@ -695,19 +663,19 @@ PowerShell 为所有 Linux 分发版生成可移植二进制文件。
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-linux-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-linux-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /opt/microsoft/powershell/6.0.2
+sudo mkdir -p /opt/microsoft/powershell/6.1.0
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/6.0.2
+sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/6.1.0
 
 # Set execute permissions
-sudo chmod +x /opt/microsoft/powershell/6.0.2/pwsh
+sudo chmod +x /opt/microsoft/powershell/6.1.0/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /opt/microsoft/powershell/6.0.2/pwsh /usr/bin/pwsh
+sudo ln -s /opt/microsoft/powershell/6.1.0/pwsh /usr/bin/pwsh
 ```
 
 ### <a name="uninstalling-binary-archives"></a>卸载二进制存档
@@ -718,7 +686,7 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 
 ## <a name="paths"></a>路径
 
-* `$PSHOME` 是 `/opt/microsoft/powershell/6.0.3/`
+* `$PSHOME` 是 `/opt/microsoft/powershell/6.1.0/`
 * 将从 `~/.config/powershell/profile.ps1` 中读取用户配置文件
 * 将从 `$PSHOME/profile.ps1` 中读取默认配置文件
 * 将从 `~/.local/share/powershell/Modules` 中读取用户模块

@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: 影响 PowerShell 库 UI 的项清单值
-ms.openlocfilehash: 60415193129fe040b53d35b1f8701408cfc4989d
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: e7e9910504a665e464add0a83454cec64c1a0937
+ms.sourcegitcommit: 601609575a3214ea7086a3bcb586ae0d1df3d418
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268171"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46532964"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>影响 PowerShell 库 UI 的项清单值
 
@@ -44,6 +44,8 @@ ms.locfileid: "39268171"
 | **版本历史记录** | 版本历史记录反映对 PowerShell 库中模块的更新。 如果使用“删除”功能隐藏项的版本，则除项所有者以外，该版本将不会显示在版本历史记录中。 | 否 | 否 |
 | **项目网站** | 通过指定 ProjectURI，为模块清单的 Privatedata\PSData 部分中的模块提供项目网站。 在脚本清单中，通过指定 .PROJECTURI 对其进行控制。 | 是 | 是 |
 | **许可证** | 通过指定 LicenseURI，为模块清单的 Privatedata\PSData 部分中的模块提供许可证链接。 在脚本清单中，通过指定 .LICENSEURI 对其进行控制。 请务必注意，如果许可证未通过 LicenseURI 或未在模块内提供，则 PowerShell 库的使用条款将指定该项的使用条款。 有关详细信息，请参阅使用条款。 | 是 | 是 |
+| **图标** | 通过在脚本清单或模块清单的 Privatedata-PSData 部分中提供 IconURI 标志，可以为 PowerShell 库中的任何项指定图标。 IconURI 应指向具有透明背景的 32x32 图像。 URI 必须是直接图像 URL，不得转到包含图像的网页或 PowerShell 库包中的文件。 | 是 | 是 |
+
 
 ## <a name="editing-item-details"></a>编辑项详细信息
 

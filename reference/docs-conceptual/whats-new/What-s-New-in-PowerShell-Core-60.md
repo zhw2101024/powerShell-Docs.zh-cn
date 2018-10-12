@@ -2,12 +2,12 @@
 title: PowerShell Core 6.0 中的最近更新
 description: PowerShell Core 6.0 中发布的新功能和更改
 ms.date: 08/06/2018
-ms.openlocfilehash: f0cddad223528cd0f2b4f392faeb6e08e1050c51
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
+ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587238"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46289236"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>PowerShell Core 6.0 中的最近更新
 
@@ -80,7 +80,7 @@ PowerShell 现在官方支持 macOS 和 Linux，包括：
   - 历史记录保存路径位于 `~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
   - 用户模块路径位于 `~/.local/share/powershell/Modules`
 - 支持 Unix 上包含冒号的文件名称和文件夹名称。 (#4959)
-- 支持具有逗号的脚本名称或完整路径。 (#4136)（感谢 @TimCurwick！）
+- 支持具有逗号的脚本名称或完整路径。 (#4136)（感谢 [@TimCurwick](https://github.com/TimCurwick)！）
 - 检测何时使用 `-LiteralPath` 阻止导航 cmdlet 的通配符扩展。 (#5038)
 - 已更新 `Get-ChildItem`，使之更类似于 *nix `ls -R` 和 Windows `DIR /S` 本机命令。
   `Get-ChildItem` 现在返回递归搜索期间遇到的符号链接，并且不会搜索这些链接指向的目录。 (#3780)
@@ -118,7 +118,7 @@ PowerShell Core 的二进制名称已从 `powershell(.exe)` 更改为 `pwsh(.exe
   但是，尝试运行 `pwsh.exe -Command Get-Command` 等命令时，此更改会要求显示指定 `-c` 或 `-Command`。 (#4019)
 - PowerShell Core 接受 `-i`（或 `-Interactive`）切换表示交互式 shell。 (#3558) 这使 PowerShell 可用作 Unix 平台上的默认 shell。
 - 已将参数 `-importsystemmodules` 和 `-psconsoleFile` 从 `pwsh.exe` 中删除。 (#4995)
-- 已更改 `pwsh -version` 和 `pwsh.exe` 内置帮助，以与其他本机工具保持统一。 (#4958 & #4931)（感谢 @iSazonov）
+- 已更改 `pwsh -version` 和 `pwsh.exe` 内置帮助，以与其他本机工具保持统一。 (#4958 & #4931)（感谢 [@iSazonov](https://github.com/iSazonov)）
 - `-File` 和 `-Command` 的无效参数错误消息以及退出代码与 Unix 标准一致 (#4573)
 - 已在 Windows 上添加 `-WindowStyle` 参数。 (#4573) 同样，非 Windows 平台上基于包的安装更新现为就地更新。
 
@@ -214,21 +214,21 @@ PowerShell Core 更改默认编码以符合更广泛的生态系统。
 
 ## <a name="semantic-versioning"></a>语义化版本控制
 
-- 已使 `SemanticVersion` 与 `SemVer 2.0` 兼容。 (#5037)（感谢 @iSazonov！）
-- 为与 SemVer 符合，已将 `New-ModuleManifest` 中的默认 `ModuleVersion` 更改为 `0.0.1`。 (#4842)（感谢 @LDSpits）
-- 已添加 `semver` 作为 `System.Management.Automation.SemanticVersion` 的类型加速器。 (#4142)（感谢 @oising！）
+- 已使 `SemanticVersion` 与 `SemVer 2.0` 兼容。 (#5037)（感谢 [@iSazonov](https://github.com/iSazonov)）
+- 为与 SemVer 符合，已将 `New-ModuleManifest` 中的默认 `ModuleVersion` 更改为 `0.0.1`。 (#4842)（感谢 [@LDSpits](https://github.com/LDSpits)）
+- 已添加 `semver` 作为 `System.Management.Automation.SemanticVersion` 的类型加速器。 (#4142)（感谢 [@oising](https://github.com/oising)！）
 - 已支持比较 `SemanticVersion` 实例和仅使用 `Major` 和 `Minor` 版本值构建的 `Version` 实例。
 
 ## <a name="language-updates"></a>语言更新
 
-- 实现 Unicode 转义分析，由此用户可使用 Unicode 字符作为参数、字符串或变量名称。 (#3958)（感谢 @rkeithhill！）
+- 实现 Unicode 转义分析，由此用户可使用 Unicode 字符作为参数、字符串或变量名称。 (#3958)（感谢 [@rkeithhill](https://github.com/rkeithhill)！）
 - 已为 ESC 添加新的转义字符：`` `e``
-- 已添加将枚举转换为字符串的支持 (#4318)（感谢 @KirkMunro！）
+- 已添加将枚举转换为字符串的支持 (#4318)（感谢 [@KirkMunro](https://github.com/KirkMunro)！）
 - 已修复将单个元素数组转换为泛型集合的问题。 (#3170)
-- 已向 `..` 运算符添加字符范围重载，因此 `'a'..'z'` 会从“A”到“Z”返回字符。 (#5026)（感谢 @IISResetMe！）
+- 已向 `..` 运算符添加字符范围重载，因此 `'a'..'z'` 会从“A”到“Z”返回字符。 (#5026)（感谢 [@IISResetMe](https://github.com/IISResetMe)）
 - 已修复变量赋值，从而避免覆盖只读变量
 - 对脚本 cmdlet 加点时会将自动变量的局部变量推送到“DottedScopes”(#4709)
-- 支持在拆分运算符中使用“Singleline, Multiline”选项 (#4721)（感谢 @iSazonov）
+- 支持在拆分运算符中使用“Singleline, Multiline”选项 (#4721)（感谢 [@iSazonov](https://github.com/iSazonov)）
 
 ## <a name="engine-updates"></a>引擎更新
 
@@ -240,12 +240,12 @@ PowerShell Core 更改默认编码以符合更广泛的生态系统。
   - `Platform`：该属性由 `[System.Environment]::OSVersion.Platform` 返回。它在 Windows 上设置为 `Win32NT`，在 macOS 上为 `Unix`，在 Linux 上为 `Unix`。
 - 已从 `$PSVersionTable` 删除 `BuildVersion` 属性。
   此属性与 Windows 内部版本密切相关。
-  我们建议使用 `GitCommitId` 检索 PowerShell Core 的确切内部版本。 (#3877)（感谢 @iSazonov！）
+  我们建议使用 `GitCommitId` 检索 PowerShell Core 的确切内部版本。 (#3877)（感谢 [@iSazonov](https://github.com/iSazonov)！）
 - 已从 `$PSVersionTable` 删除 `ClrVersion` 属性。
   此属性与 .NET Core 不相关，.NET Core 中此前保留该属性仅是针对一些不适用于 PowerShell 的特定旧用途。
 - 已添加三个新自动变量，用以确定特定 OS 中是否正在运行 PowerShell：`$IsWindows`、`$IsMacOs` 和 `$IsLinux`。
 - 已将 `GitCommitId` 添加到 PowerShell Core 横幅。
-  现在启动 PowerShell 时无需运行 `$PSVersionTable` 即可获取版本！ (#3916)（感谢 @iSazonov！）
+  现在启动 PowerShell 时无需运行 `$PSVersionTable` 即可获取版本！ (#3916)（感谢 [@iSazonov](https://github.com/iSazonov)！）
 - 已在 `$PSHome` 中添加名为 `powershell.config.json` 的 JSON 配置文件，用以存储某些启动之前所需的设置（例如 `ExecutionPolicy`）。
 - 运行 Windows EXE 时请勿阻止管道
 - 已支持 COM 集合的枚举。 (#4553)
@@ -255,93 +255,93 @@ PowerShell Core 更改默认编码以符合更广泛的生态系统。
 ### <a name="new-cmdlets"></a>新 cmdlet
 
 - 已将 `Get-Uptime` 添加到 `Microsoft.PowerShell.Utility`。
-- 添加 `Remove-Alias` 命令。 (#5143)（感谢 @PowershellNinja！）
-- 已将 `Remove-Service` 添加到管理模块。 (#4858)（感谢 @joandrsn！）
+- 添加 `Remove-Alias` 命令。 (#5143)（感谢 [@PowershellNinja](https://github.com/PowershellNinja)）
+- 已将 `Remove-Service` 添加到管理模块。 (#4858)（感谢 [@joandrsn](https://github.com/joandrsn)）
 
 ### <a name="web-cmdlets"></a>Web cmdlet
 
-- 已添加对 web cmdlet 的证书身份验证支持。 (#4646)（感谢 @markekraus）
-- 已将内容标头支持添加至 web cmdlet。 (#4494 & #4640)（感谢 @markekraus）
-- 已将多链接标头支持添加到 Web Cmdlet。 (#5265) （感谢 @markekraus！）
+- 已添加对 web cmdlet 的证书身份验证支持。 (#4646)（感谢 [@markekraus](https://github.com/markekraus)）
+- 已将内容标头支持添加至 web cmdlet。 (#4494 & #4640)（感谢 [@markekraus](https://github.com/markekraus)）
+- 已将多链接标头支持添加到 Web Cmdlet。 (#5265)（感谢 [@markekraus](https://github.com/markekraus)！）
 - 支持 web cmdlet 中的链接标头分页 (#3828)
   - 对于 `Invoke-WebRequest`，当响应包括链接标头时，我们创建一个 RelationLink 属性作为表示 URL 和 `rel` 属性的字典，并确保 URL 是绝对的，从而使其更易于开发人员使用。
   - 对于 `Invoke-RestMethod`，当响应包括链接标头时，我们公开 `-FollowRelLink` 切换以自动跟踪 `next` `rel` 链接，直至其不再存在或者选中可选的 `-MaximumFollowRelLink` 参数值。
-- 已向 web cmdlet 添加 `-CustomMethod` 参数，从而支持非标准方法谓词。 (#3142)（感谢 @Lee303！）
-- 已向 Web Cmdlet 添加 `SslProtocol` 支持。 (#5329)（感谢 @markekraus！）
-- 已向 web cmdlet 添加 Multipart 支持。 (#4782)（感谢 @markekraus）
-- 已向 web cmdlet 添加 `-NoProxy`，从而使其忽略系统范围的代理设置。 (#3447)（感谢 @TheFlyingCorpse）
-- Web Cmdlet 的用户代理现在会报告 OS 平台 (#4937)（感谢 @LDSpits）
+- 已向 web cmdlet 添加 `-CustomMethod` 参数，从而支持非标准方法谓词。 (#3142)（感谢 [@Lee303](https://github.com/Lee303)！）
+- 已向 Web Cmdlet 添加 `SslProtocol` 支持。 (#5329)（感谢 [@markekraus](https://github.com/markekraus)！）
+- 已向 web cmdlet 添加 Multipart 支持。 (#4782)（感谢 [@markekraus](https://github.com/markekraus)）
+- 已向 web cmdlet 添加 `-NoProxy`，从而使其忽略系统范围的代理设置。 (#3447)（感谢 [@TheFlyingCorpse](https://github.com/TheFlyingCorpse)！）
+- Web Cmdlet 的用户代理现在会报告 OS 平台 (#4937)（感谢 [@LDSpits](https://github.com/LDSpits)）
 - 已将 `-SkipHeaderValidation` 切换添加至 web cmdlet，无需验证标头值即可添加标头。 (#4085)
 - 现支持 web cmdlet 不必验证服务器的 HTTPS 证书（如果需要）。
-- 已将身份验证参数添加到 web cmdlet。 (#5052)（感谢 @markekraus）
+- 已将身份验证参数添加到 web cmdlet。 (#5052)（感谢 [@markekraus](https://github.com/markekraus)）
   - 已添加可提供如下三个选项的 `-Authentication`：Basic、OAuth和 Bearer。
   - 已添加 `-Token`，以便获取 OAuth 和 Bearer 选项的持有者令牌。
   - 已添加 `-AllowUnencryptedAuthentication`，以便绕过对除 HTTPS 以外的任何传输方案所提供的身份验证。
-- 已将 `-ResponseHeadersVariable` 添加至 `Invoke-RestMethod`以便支持捕获响应标头。 (#4888)（感谢 @markekraus）
+- 已将 `-ResponseHeadersVariable` 添加至 `Invoke-RestMethod`以便支持捕获响应标头。 (#4888)（感谢 [@markekraus](https://github.com/markekraus)）
 - 修复 web cmdlet，以在响应状态代码不成功时将 HTTP 响应包含在异常中。 (#3201)
-- 已将 web cmdlet `UserAgent` 从 `WindowsPowerShell` 更改为 `PowerShell`。 (#4914)（感谢 @markekraus）
+- 已将 web cmdlet `UserAgent` 从 `WindowsPowerShell` 更改为 `PowerShell`。 (#4914)（感谢 [@markekraus](https://github.com/markekraus)）
 - 已将显式 `ContentType` 检测添加到 `Invoke-RestMethod` (#4692)
-- 已修复 web cmdlet `-SkipHeaderValidation`，以便可适用于非标准用户代理标头。 (#4479 & #4512)（感谢 @markekraus）
+- 已修复 web cmdlet `-SkipHeaderValidation`，以便可适用于非标准用户代理标头。 (#4479 & #4512)（感谢 [@markekraus](https://github.com/markekraus)）
 
 ### <a name="json-cmdlets"></a>JSON cmdlet
 
-- 已将 `-AsHashtable` 添加到 `ConvertFrom-Json` 以返回 `Hashtable`。 (#5043)（感谢 @bergmeister！）
+- 已将 `-AsHashtable` 添加到 `ConvertFrom-Json` 以返回 `Hashtable`。 (#5043)（感谢 [@bergmeister](https://github.com/bergmeister)！）
 - 使用具有 `ConvertTo-Json` 输出的更美观的格式化程序。 (#2787)（感谢 @kittholland！）
 - 已将 `Jobject` 序列化支持添加到 `ConvertTo-Json`。 (#5141)
 - 已修复 `ConvertFrom-Json`，以便从管道对共同构建完整 JSON 字符串的字符数组进行反序列化。
   这修复了某些情况下换行符中断 JSON 分析的问题。 (#3823)
 - 已删除为 `System.Array` 定义的 `AliasProperty "Count"`。
-  这删除了某些 `ConvertFrom-Json` 输出上的外部 `Count` 属性。 (#3231)（感谢 @PetSerAl！）
+  这删除了某些 `ConvertFrom-Json` 输出上的外部 `Count` 属性。 (#3231)（感谢 [@PetSerAl](https://github.com/PetSerAl)！）
 
 ### <a name="csv-cmdlets"></a>CSV cmdlet
 
-- 添加了对 `Import-Csv` 和 `ConvertFrom-Csv` 的 `PSTypeName` 支持。 (#5389)（感谢 @markekraus！）
-- `Import-Csv` 现已支持将 `CR`、`LF` 和 `CRLF` 作为行分隔符。 (#5363)（感谢 @iSazonov）
-- `-NoTypeInformation` 现在作为 `Export-Csv` 和 `ConvertTo-Csv` 上的默认值。 (#5164)（感谢 @markekraus）
+- 添加了对 `Import-Csv` 和 `ConvertFrom-Csv` 的 `PSTypeName` 支持。 (#5389)（感谢 [@markekraus](https://github.com/markekraus)！）
+- `Import-Csv` 现已支持将 `CR`、`LF` 和 `CRLF` 作为行分隔符。 (#5363)（感谢 [@iSazonov](https://github.com/iSazonov)！）
+- `-NoTypeInformation` 现在作为 `Export-Csv` 和 `ConvertTo-Csv` 上的默认值。 (#5164)（感谢 [@markekraus](https://github.com/markekraus)）
 
 ### <a name="service-cmdlets"></a>服务 cmdlet
 
-- 将属性 `UserName`、`Description`、`DelayedAutoStart`、`BinaryPathName` 和 `StartupType` 添加到 `Get-Service` 返回的 `ServiceController` 对象。 (#4907)（感谢 @joandrsn）
-- 添加了在 `Set-Service` 命令上设置属性的功能。 (#4844)（感谢 @joandrsn）
+- 将属性 `UserName`、`Description`、`DelayedAutoStart`、`BinaryPathName` 和 `StartupType` 添加到 `Get-Service` 返回的 `ServiceController` 对象。 (#4907)（感谢 [@joandrsn](https://github.com/joandrsn)）
+- 添加了在 `Set-Service` 命令上设置属性的功能。 (#4844)（感谢 [@joandrsn](https://github.com/joandrsn)）
 
 ### <a name="other-cmdlets"></a>其他 cmdlet
 
 - 已将参数添加到 `Get-ChildItem` 所调用的 `-FollowSymlink` 中，它按需遍历 symlink，并检查链接循环。 (#4020)
-- 更新 `Add-Type` 以支持 `CSharpVersion7`。 (#3933)（感谢 @iSazonov）
+- 更新 `Add-Type` 以支持 `CSharpVersion7`。 (#3933)（感谢 [@iSazonov](https://github.com/iSazonov)）
 - 删除由于使用不受支持的 API 而产生的 `Microsoft.PowerShell.LocalAccounts` 模块，直至找到更佳解决方案。 (#4302)
 - 删除由于使用不受支持的 API 而在 `Microsoft.PowerShell.Diagnostics` 中产生的 `*-Counter`，直至找到更佳解决方案。 (#4303)
 - 添加对 `Invoke-Item -Path <folder>` 的支持。 (#4262)
-- 将 `-Extension` 和 `-LeafBase` 切换添加到 `Split-Path`，从而可拆分文件名扩展名和文件名其余部分之间的路径。 (#2721)（感谢 @powercode！）
+- 将 `-Extension` 和 `-LeafBase` 切换添加到 `Split-Path`，从而可拆分文件名扩展名和文件名其余部分之间的路径。 (#2721)（感谢 [@powercode](https://github.com/powercode)！）
 - 已将参数 `-Top` 和 `-Bottom` 添加到顶部/底部 N 排序的 `Sort-Object`
-- 通过将 `CodeProperty "Parent"` 添加到 `System.Diagnostics.Process` 公开进程的父进程。 (#2850)（感谢 @powercode！）
+- 通过将 `CodeProperty "Parent"` 添加到 `System.Diagnostics.Process` 公开进程的父进程。 (#2850)（感谢 [@powercode](https://github.com/powercode)！）
 - 对于 `Get-Process` 的内存列使用 MB 而不是 KB
-- 为 `Out-String` 添加了 `-NoNewLine` 切换。 (#5056)（感谢 @raghav710）
+- 为 `Out-String` 添加了 `-NoNewLine` 切换。 (#5056)（感谢 [@raghav710](https://github.com/raghav710)）
 - `Move-Item` cmdlet 遵循 `-Include`、`-Exclude` 和 `-Filter` 参数。 (#3878)
 - 允许将 `*` 用于 `Remove-Item` 的注册表路径中。 (#4866)
 - 已将 `-Title` 添加到 `Get-Credential`，并统一化跨平台之间的提示体验。
 - 已将 `-TimeOut` 参数添加到 `Test-Connection`。 (#2492)
 - `Get-AuthenticodeSignature` cmdlet 现可获取文件签名时间戳。 (#4061)
 - 已从 `Get-Help` 中删除不受支持的 `-ShowWindow` 切换。 (#4903)
-- 修复了 `Get-Content -Delimiter`，使得所返回的数组元素中不包含分隔符 (#3706)（感谢 @mklement0）
-- 将 `Meta`、`Charset` 和 `Transitional` 参数添加到 `ConvertTo-HTML` (#4184)（感谢 @ergo3114）
+- 修复了 `Get-Content -Delimiter`，使得所返回的数组元素中不包含分隔符 (#3706)（感谢 [@mklement0](https://github.com/mklement0)）
+- 将 `Meta`、`Charset` 和 `Transitional` 参数添加到 `ConvertTo-HTML` (#4184)（感谢 [@ergo3114](https://github.com/ergo3114)）
 - 将 `WindowsUBR` 和 `WindowsVersion` 属性添加到 `Get-ComputerInfo` 结果
 - 将 `-Group` 参数添加到 `Get-Verb`
-- 将 `ShouldProcess` 支持添加到 `New-FileCatalog` 和 `Test-FileCatalog`（修复了 `-WhatIf` 和 `-Confirm`）。 (#3074)（感谢 @iSazonov！）
-- 将 `-WhatIf` 切换添加到 `Start-Process` cmdlet (#4735)（感谢 @sarithsutha）
+- 将 `ShouldProcess` 支持添加到 `New-FileCatalog` 和 `Test-FileCatalog`（修复了 `-WhatIf` 和 `-Confirm`）。 (#3074)（感谢 [@iSazonov](https://github.com/iSazonov)！）
+- 将 `-WhatIf` 切换添加到 `Start-Process` cmdlet (#4735)（感谢 [@sarithsutha](https://github.com/sarithsutha)）
 - 将 `ValidateNotNullOrEmpty` 添加到多个现有参数。
 
 ## <a name="tab-completion"></a>Tab 自动补全
 
-- 改进了基于运行时变量值的 tab 自动补全中的类型推理。 (#2744)（感谢 @powercode！）这支持在类似如下的情况中进行 tab 自动补全：
+- 改进了基于运行时变量值的 tab 自动补全中的类型推理。 (#2744)（感谢 [@powercode](https://github.com/powercode)！）这支持在类似如下的情况中进行 tab 自动补全：
 
   ```powershell
   $p = Get-Process
   $p | Foreach-Object Prio<tab>
   ```
 
-- 为 `Select-Object` 的 `-Property` 添加了 Hashtable tab 自动补全。 (#3625)（感谢 @powercode）
-- 对 `-ExcludeProperty` 和 `Select-Object` 的 `-ExpandProperty` 支持参数自动补全。 (#3443)（感谢 @iSazonov！）
-- 修复了 tab 自动补全中的 bug，以使 `native.exe --<tab>` 调用到本机完成程序。 (#3633)（感谢 @powercode！）
+- 为 `Select-Object` 的 `-Property` 添加了 Hashtable tab 自动补全。 (#3625)（感谢 [@powercode](https://github.com/powercode)）
+- 对 `-ExcludeProperty` 和 `Select-Object` 的 `-ExpandProperty` 支持参数自动补全。 (#3443)（感谢 [@iSazonov](https://github.com/iSazonov)！）
+- 修复了 tab 自动补全中的 bug，以使 `native.exe --<tab>` 调用到本机完成程序。 (#3633)（感谢 [@powercode](https://github.com/powercode)！）
 
 ## <a name="breaking-changes"></a>重大更改
 
@@ -373,14 +373,14 @@ PowerShell Core 更改默认编码以符合更广泛的生态系统。
   - OS 平台 (`$PSVersionTable.OSDescription`)
   - PowerShell 确切版本 (`$PSVersionTable.GitCommitId`)
 
-如果你想选择退出此遥测，只需删除 `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` 或使用以下值之一创建 `POWERSHELL_TELEMETRY_OPTOUT` 环境变量：`true`、`1` 或 `yes`。
-删除此文件或创建变量将免除所有遥测，即便是首次运行 PowerShell 也不例外。
+如果想选择退出此遥测，只需使用以下值之一创建 `POWERSHELL_TELEMETRY_OPTOUT` 环境变量：`true`、`1` 或 `yes`。
+创建该变量会绕过所有遥测，即便在首次运行 PowerShell 之前也不例外。
 我们还计划将此遥测数据和从遥测中收集的见解公开在[社区仪表盘][community-dashboard]中。
 如需详细了解我们如何使用此数据，请阅读本[博客文章][telemetry-blog]。
 
 [github]: https://github.com/PowerShell/PowerShell
 [.NET Core 2.0]: https://docs.microsoft.com/dotnet/core/
-[.NET Standard]: https://docs.microsoft.com/en-us/dotnet/standard/net-standard
+[.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [os_log]: https://developer.apple.com/documentation/os/logging
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md

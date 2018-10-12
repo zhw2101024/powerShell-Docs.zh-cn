@@ -3,16 +3,20 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 title: PowerShell 库入门
-ms.openlocfilehash: 83974698152e75efac66ea725a9c220486676d6f
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 39998df1a2bf9363dd008dc96a802157c8d691d7
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190156"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523008"
 ---
 # <a name="get-started-with-the-powershell-gallery"></a>PowerShell 库入门
 
-从 PowerShell 库将项下载到系统需要 [PowerShellGet](/powershell/module/powershellget) 模块。 可在以下任何一项中找到 PowerShellGet 模块。 从 PowerShell 库下载项时无需登录。
+在 PowerShell 库安装项的正确方法是使用 [PowerShellGet](/powershell/module/powershellget) 模块中的 cmdlet。 从 PowerShell 库下载项时无需登录。
+
+> [!NOTE]
+> 可直接从 PowerShell 库下载包，但不推荐此方法。 有关详细信息，请参阅[手动包下载](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/how-to/working-with-items/manual-download.md)。  
+
 
 ## <a name="discovering-items-from-the-powershell-gallery"></a>从 PowerShell 库中发现项
 
@@ -40,7 +44,8 @@ ms.locfileid: "34190156"
 
 如果发现发布的项不可信，请单击该项页面上的“举报不良信息”。
 
-如果运行 [Find-Module][] 或 [Find-Script][]，则可在返回的 PSGetModuleInfo 对象中查看该数据。 例如，运行 `Find-Module -Name PSReadLine -Repository PSGallery |Get-Member` 会返回库中 PSReadLine 模块的相关数据。
+如果运行 [Find-Module][] 或 [Find-Script][]，则可在返回的 PSGetModuleInfo 对象中查看该数据。 例如，运行 `Find-Module -Name PSReadLine -Repository PSGallery |Get-Member`
+返回库中 PSReadLine 模块的数据。
 
 ## <a name="downloading-items-from-the-powershell-gallery"></a>从 PowerShell 库中下载项
 
