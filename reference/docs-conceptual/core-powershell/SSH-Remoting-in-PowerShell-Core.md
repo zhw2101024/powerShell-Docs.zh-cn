@@ -2,42 +2,42 @@
 title: 通过 SSH 进行 PowerShell 远程处理
 description: 在 PowerShell Core 中使用 SSH 进行远程处理
 ms.date: 08/14/2018
-ms.openlocfilehash: 1de034d667aa9a377e5460e7eb474402c690cb42
-ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
+ms.openlocfilehash: 451a55a588381cc9bec265895b2bfad6b6f6e73c
+ms.sourcegitcommit: a652b12a0b87cdd0c8eb76381ae015467dd7b8cd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "43133109"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46134274"
 ---
-# <a name="powershell-remoting-over-ssh"></a><span data-ttu-id="0305a-103">通过 SSH 进行 PowerShell 远程处理</span><span class="sxs-lookup"><span data-stu-id="0305a-103">PowerShell Remoting Over SSH</span></span>
+# <a name="powershell-remoting-over-ssh"></a><span data-ttu-id="9d22a-103">通过 SSH 进行 PowerShell 远程处理</span><span class="sxs-lookup"><span data-stu-id="9d22a-103">PowerShell Remoting Over SSH</span></span>
 
-## <a name="overview"></a><span data-ttu-id="0305a-104">概述</span><span class="sxs-lookup"><span data-stu-id="0305a-104">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="9d22a-104">概述</span><span class="sxs-lookup"><span data-stu-id="9d22a-104">Overview</span></span>
 
-<span data-ttu-id="0305a-105">PowerShell 远程处理通常使用 WinRM 进行连接协商和数据传输。</span><span class="sxs-lookup"><span data-stu-id="0305a-105">PowerShell remoting normally uses WinRM for connection negotiation and data transport.</span></span> <span data-ttu-id="0305a-106">SSH 现在可用于 Linux 和 Windows 平台，并允许进行真正的多平台 PowerShell 远程处理。</span><span class="sxs-lookup"><span data-stu-id="0305a-106">SSH is now available for Linux and Windows platforms and allows true multiplatform PowerShell remoting.</span></span>
+<span data-ttu-id="9d22a-105">PowerShell 远程处理通常使用 WinRM 进行连接协商和数据传输。</span><span class="sxs-lookup"><span data-stu-id="9d22a-105">PowerShell remoting normally uses WinRM for connection negotiation and data transport.</span></span> <span data-ttu-id="9d22a-106">SSH 现在可用于 Linux 和 Windows 平台，并允许进行真正的多平台 PowerShell 远程处理。</span><span class="sxs-lookup"><span data-stu-id="9d22a-106">SSH is now available for Linux and Windows platforms and allows true multiplatform PowerShell remoting.</span></span>
 
-<span data-ttu-id="0305a-107">WinRM 为 PowerShell 远程会话提供可靠的托管模型。</span><span class="sxs-lookup"><span data-stu-id="0305a-107">WinRM provides a robust hosting model for PowerShell remote sessions.</span></span> <span data-ttu-id="0305a-108">这种实现基于 SSH 的远程处理目前不支持远程终结点配置和 JEA (Just Enough Administration)。</span><span class="sxs-lookup"><span data-stu-id="0305a-108">which this implementation SSH-based remoting doesn't currently support remote endpoint configuration and JEA (Just Enough Administration).</span></span>
+<span data-ttu-id="9d22a-107">WinRM 为 PowerShell 远程会话提供可靠的托管模型。</span><span class="sxs-lookup"><span data-stu-id="9d22a-107">WinRM provides a robust hosting model for PowerShell remote sessions.</span></span> <span data-ttu-id="9d22a-108">这种实现基于 SSH 的远程处理目前不支持远程终结点配置和 JEA (Just Enough Administration)。</span><span class="sxs-lookup"><span data-stu-id="9d22a-108">which this implementation SSH-based remoting doesn't currently support remote endpoint configuration and JEA (Just Enough Administration).</span></span>
 
-<span data-ttu-id="0305a-109">通过 SSH 远程处理可以在 Windows 和 Linux 计算机之间执行基础的 PowerShell 会话远程处理。</span><span class="sxs-lookup"><span data-stu-id="0305a-109">SSH remoting lets you do basic PowerShell session remoting between Windows and Linux machines.</span></span> <span data-ttu-id="0305a-110">SSH 远程处理在目标计算机上创建一个 PowerShell 托管进程作为 SSH 子系统。</span><span class="sxs-lookup"><span data-stu-id="0305a-110">SSH Remoting creates a PowerShell host process on the target machine as an SSH subsystem.</span></span>
-<span data-ttu-id="0305a-111">最终，我们将实现常规托管模型（类似于 WinRM）以支持终结点配置和 JEA。</span><span class="sxs-lookup"><span data-stu-id="0305a-111">Eventually we'll implement a general hosting model, similar to WinRM, to support endpoint configuration and JEA.</span></span>
+<span data-ttu-id="9d22a-109">通过 SSH 远程处理可以在 Windows 和 Linux 计算机之间执行基础的 PowerShell 会话远程处理。</span><span class="sxs-lookup"><span data-stu-id="9d22a-109">SSH remoting lets you do basic PowerShell session remoting between Windows and Linux machines.</span></span> <span data-ttu-id="9d22a-110">SSH 远程处理在目标计算机上创建一个 PowerShell 托管进程作为 SSH 子系统。</span><span class="sxs-lookup"><span data-stu-id="9d22a-110">SSH Remoting creates a PowerShell host process on the target machine as an SSH subsystem.</span></span>
+<span data-ttu-id="9d22a-111">最终，我们将实现常规托管模型（类似于 WinRM）以支持终结点配置和 JEA。</span><span class="sxs-lookup"><span data-stu-id="9d22a-111">Eventually we'll implement a general hosting model, similar to WinRM, to support endpoint configuration and JEA.</span></span>
 
-<span data-ttu-id="0305a-112">`New-PSSession`、`Enter-PSSession` 和 `Invoke-Command` cmdlet 现具有新的参数集，以支持这个新的远程处理连接。</span><span class="sxs-lookup"><span data-stu-id="0305a-112">The `New-PSSession`, `Enter-PSSession`, and `Invoke-Command` cmdlets now have a new parameter set to support this new remoting connection.</span></span>
+<span data-ttu-id="9d22a-112">`New-PSSession`、`Enter-PSSession` 和 `Invoke-Command` cmdlet 现具有新的参数集，以支持这个新的远程处理连接。</span><span class="sxs-lookup"><span data-stu-id="9d22a-112">The `New-PSSession`, `Enter-PSSession`, and `Invoke-Command` cmdlets now have a new parameter set to support this new remoting connection.</span></span>
 
 ```
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-<span data-ttu-id="0305a-113">若要创建远程会话，请使用 `HostName` 参数指定目标计算机并通过 `UserName` 提供用户名。</span><span class="sxs-lookup"><span data-stu-id="0305a-113">To create a remote session, you specify the target machine with the `HostName` parameter and provide the user name with `UserName`.</span></span> <span data-ttu-id="0305a-114">当以交互方式运行 cmdlet 时，系统会提示输入密码。</span><span class="sxs-lookup"><span data-stu-id="0305a-114">When running the cmdlets interactively, you're prompted for a password.</span></span> <span data-ttu-id="0305a-115">还可以通过带有 `KeyFilePath` 参数的私钥文件来使用 SSH 密钥身份验证。</span><span class="sxs-lookup"><span data-stu-id="0305a-115">You can also, use SSH key authentication using a private key file with the `KeyFilePath` parameter.</span></span>
+<span data-ttu-id="9d22a-113">若要创建远程会话，请使用 `HostName` 参数指定目标计算机并通过 `UserName` 提供用户名。</span><span class="sxs-lookup"><span data-stu-id="9d22a-113">To create a remote session, you specify the target machine with the `HostName` parameter and provide the user name with `UserName`.</span></span> <span data-ttu-id="9d22a-114">当以交互方式运行 cmdlet 时，系统会提示输入密码。</span><span class="sxs-lookup"><span data-stu-id="9d22a-114">When running the cmdlets interactively, you're prompted for a password.</span></span> <span data-ttu-id="9d22a-115">还可以通过带有 `KeyFilePath` 参数的私钥文件来使用 SSH 密钥身份验证。</span><span class="sxs-lookup"><span data-stu-id="9d22a-115">You can also, use SSH key authentication using a private key file with the `KeyFilePath` parameter.</span></span>
 
-## <a name="general-setup-information"></a><span data-ttu-id="0305a-116">常规安装信息</span><span class="sxs-lookup"><span data-stu-id="0305a-116">General setup information</span></span>
+## <a name="general-setup-information"></a><span data-ttu-id="9d22a-116">常规安装信息</span><span class="sxs-lookup"><span data-stu-id="9d22a-116">General setup information</span></span>
 
-<span data-ttu-id="0305a-117">必须在所有计算机上安装 SSH。</span><span class="sxs-lookup"><span data-stu-id="0305a-117">SSH must be installed on all machines.</span></span> <span data-ttu-id="0305a-118">SSH 客户端 (`ssh.exe`) 和服务器 (`sshd.exe`) 皆应安装，以便远程到计算机或从计算机进行远程。</span><span class="sxs-lookup"><span data-stu-id="0305a-118">Install both the SSH client (`ssh.exe`) and server (`sshd.exe`) so that you can remote to and from the machines.</span></span> <span data-ttu-id="0305a-119">对于 Windows，请[从 GitHub 安装 Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases)。</span><span class="sxs-lookup"><span data-stu-id="0305a-119">For Windows, install [Win32 OpenSSH from GitHub](https://github.com/PowerShell/Win32-OpenSSH/releases).</span></span>
-<span data-ttu-id="0305a-120">对于 Linux，请安装适用于平台的 SSH（包括 sshd 服务器）。</span><span class="sxs-lookup"><span data-stu-id="0305a-120">For Linux, install SSH (including sshd server) appropriate to your platform.</span></span> <span data-ttu-id="0305a-121">此外，需要从 GitHub 安装 PowerShell Core 以获取 SSH 远程处理功能。</span><span class="sxs-lookup"><span data-stu-id="0305a-121">You also need to install PowerShell Core from GitHub to get the SSH remoting feature.</span></span> <span data-ttu-id="0305a-122">必须配置 SSH 服务器以创建 SSH 子系统来托管远程计算机上的 PowerShell 进程。</span><span class="sxs-lookup"><span data-stu-id="0305a-122">The SSH server must be configured to create an SSH subsystem to host a PowerShell process on the remote machine.</span></span> <span data-ttu-id="0305a-123">还必须配置启用密码或基于密钥的身份验证。</span><span class="sxs-lookup"><span data-stu-id="0305a-123">You also must configure enable password or key-based authentication.</span></span>
+<span data-ttu-id="9d22a-117">必须在所有计算机上安装 SSH。</span><span class="sxs-lookup"><span data-stu-id="9d22a-117">SSH must be installed on all machines.</span></span> <span data-ttu-id="9d22a-118">SSH 客户端 (`ssh.exe`) 和服务器 (`sshd.exe`) 皆应安装，以便远程到计算机或从计算机进行远程。</span><span class="sxs-lookup"><span data-stu-id="9d22a-118">Install both the SSH client (`ssh.exe`) and server (`sshd.exe`) so that you can remote to and from the machines.</span></span> <span data-ttu-id="9d22a-119">对于 Windows，请[从 GitHub 安装 Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases)。</span><span class="sxs-lookup"><span data-stu-id="9d22a-119">For Windows, install [Win32 OpenSSH from GitHub](https://github.com/PowerShell/Win32-OpenSSH/releases).</span></span>
+<span data-ttu-id="9d22a-120">对于 Linux，请安装适用于平台的 SSH（包括 sshd 服务器）。</span><span class="sxs-lookup"><span data-stu-id="9d22a-120">For Linux, install SSH (including sshd server) appropriate to your platform.</span></span> <span data-ttu-id="9d22a-121">此外，需要从 GitHub 安装 PowerShell Core 以获取 SSH 远程处理功能。</span><span class="sxs-lookup"><span data-stu-id="9d22a-121">You also need to install PowerShell Core from GitHub to get the SSH remoting feature.</span></span> <span data-ttu-id="9d22a-122">必须配置 SSH 服务器以创建 SSH 子系统来托管远程计算机上的 PowerShell 进程。</span><span class="sxs-lookup"><span data-stu-id="9d22a-122">The SSH server must be configured to create an SSH subsystem to host a PowerShell process on the remote machine.</span></span> <span data-ttu-id="9d22a-123">还必须配置启用密码或基于密钥的身份验证。</span><span class="sxs-lookup"><span data-stu-id="9d22a-123">You also must configure enable password or key-based authentication.</span></span>
 
-## <a name="set-up-on-windows-machine"></a><span data-ttu-id="0305a-124">在 Windows 计算机上设置</span><span class="sxs-lookup"><span data-stu-id="0305a-124">Set up on Windows Machine</span></span>
+## <a name="set-up-on-windows-machine"></a><span data-ttu-id="9d22a-124">在 Windows 计算机上设置</span><span class="sxs-lookup"><span data-stu-id="9d22a-124">Set up on Windows Machine</span></span>
 
-1. <span data-ttu-id="0305a-125">安装 [适用于 Windows 的 PowerShell Core] 的最新版本</span><span class="sxs-lookup"><span data-stu-id="0305a-125">Install the latest version of [PowerShell Core for Windows]</span></span>
+1. <span data-ttu-id="9d22a-125">安装 [适用于 Windows 的 PowerShell Core] 的最新版本</span><span class="sxs-lookup"><span data-stu-id="9d22a-125">Install the latest version of [PowerShell Core for Windows]</span></span>
 
-   - <span data-ttu-id="0305a-126">可以通过查看 `New-PSSession` 参数集来判断它是否具有 SSH 远程处理支持</span><span class="sxs-lookup"><span data-stu-id="0305a-126">You can tell if it has the SSH remoting support by looking at the parameter sets for `New-PSSession`</span></span>
+   - <span data-ttu-id="9d22a-126">可以通过查看 `New-PSSession` 参数集来判断它是否具有 SSH 远程处理支持</span><span class="sxs-lookup"><span data-stu-id="9d22a-126">You can tell if it has the SSH remoting support by looking at the parameter sets for `New-PSSession`</span></span>
 
    ```powershell
    Get-Command New-PSSession -syntax
@@ -47,10 +47,10 @@ ms.locfileid: "43133109"
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. <span data-ttu-id="0305a-127">按照 [安装] 说明从 GitHub 安装 [Win32 OpenSSH] 最新版本</span><span class="sxs-lookup"><span data-stu-id="0305a-127">Install the latest [Win32 OpenSSH] build from GitHub using the [installation] instructions</span></span>
-3. <span data-ttu-id="0305a-128">编辑 Win32 OpenSSH 安装位置中的 sshd_config 文件</span><span class="sxs-lookup"><span data-stu-id="0305a-128">Edit the sshd_config file at the location where you installed Win32 OpenSSH</span></span>
+2. <span data-ttu-id="9d22a-127">按照 [安装] 说明从 GitHub 安装 [Win32 OpenSSH] 最新版本</span><span class="sxs-lookup"><span data-stu-id="9d22a-127">Install the latest [Win32 OpenSSH] build from GitHub using the [installation] instructions</span></span>
+3. <span data-ttu-id="9d22a-128">编辑 Win32 OpenSSH 安装位置中的 sshd_config 文件</span><span class="sxs-lookup"><span data-stu-id="9d22a-128">Edit the sshd_config file at the location where you installed Win32 OpenSSH</span></span>
 
-   - <span data-ttu-id="0305a-129">确保已启用密码身份验证</span><span class="sxs-lookup"><span data-stu-id="0305a-129">Make sure password authentication is enabled</span></span>
+   - <span data-ttu-id="9d22a-129">确保已启用密码身份验证</span><span class="sxs-lookup"><span data-stu-id="9d22a-129">Make sure password authentication is enabled</span></span>
 
      ```
      PasswordAuthentication yes
@@ -61,116 +61,124 @@ ms.locfileid: "43133109"
      ```
 
      > [!NOTE]
-     > <span data-ttu-id="0305a-130">OpenSSH for Windows 中存在一个 bug，使空格在子系统可执行路径中无效。</span><span class="sxs-lookup"><span data-stu-id="0305a-130">There is a bug in OpenSSH for Windows that prevents spaces from working in subsystem executable paths.</span></span> <span data-ttu-id="0305a-131">有关详细信息，请参阅[此 GitHub 问题](https://github.com/PowerShell/Win32-OpenSSH/issues/784)。</span><span class="sxs-lookup"><span data-stu-id="0305a-131">For more information, see [this GitHub issue](https://github.com/PowerShell/Win32-OpenSSH/issues/784).</span></span>
+     > <span data-ttu-id="9d22a-130">OpenSSH for Windows 中存在一个 bug，使空格在子系统可执行路径中无效。</span><span class="sxs-lookup"><span data-stu-id="9d22a-130">There is a bug in OpenSSH for Windows that prevents spaces from working in subsystem executable paths.</span></span> <span data-ttu-id="9d22a-131">有关详细信息，请参阅[此 GitHub 问题](https://github.com/PowerShell/Win32-OpenSSH/issues/784)。</span><span class="sxs-lookup"><span data-stu-id="9d22a-131">For more information, see [this GitHub issue](https://github.com/PowerShell/Win32-OpenSSH/issues/784).</span></span>
 
-     <span data-ttu-id="0305a-132">一种解决方案是创建不包含空格的 Powershell 安装目录 symlink：</span><span class="sxs-lookup"><span data-stu-id="0305a-132">One solution is to create a symlink to the Powershell installation directory that doesn't have spaces:</span></span>
+     <span data-ttu-id="9d22a-132">一种解决方案是创建不包含空格的 Powershell 安装目录 symlink：</span><span class="sxs-lookup"><span data-stu-id="9d22a-132">One solution is to create a symlink to the Powershell installation directory that doesn't have spaces:</span></span>
 
      ```powershell
      mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.4"
      ```
 
-     <span data-ttu-id="0305a-133">然后将其输入子系统：</span><span class="sxs-lookup"><span data-stu-id="0305a-133">and then enter it in the subsystem:</span></span>
+     <span data-ttu-id="9d22a-133">然后将其输入子系统：</span><span class="sxs-lookup"><span data-stu-id="9d22a-133">and then enter it in the subsystem:</span></span>
 
      ```
      Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
      ```
 
-   - <span data-ttu-id="0305a-134">启用密钥身份验证（可选）</span><span class="sxs-lookup"><span data-stu-id="0305a-134">Optionally enable key authentication</span></span>
+   - <span data-ttu-id="9d22a-134">启用密钥身份验证（可选）</span><span class="sxs-lookup"><span data-stu-id="9d22a-134">Optionally enable key authentication</span></span>
 
      ```
      PubkeyAuthentication yes
      ```
 
-4. <span data-ttu-id="0305a-135">重启 sshd 服务</span><span class="sxs-lookup"><span data-stu-id="0305a-135">Restart the sshd service</span></span>
+4. <span data-ttu-id="9d22a-135">重启 sshd 服务</span><span class="sxs-lookup"><span data-stu-id="9d22a-135">Restart the sshd service</span></span>
 
    ```powershell
    Restart-Service sshd
    ```
 
-5. <span data-ttu-id="0305a-136">将 OpenSSH 的安装路径添加到 Path 环境变量。</span><span class="sxs-lookup"><span data-stu-id="0305a-136">Add the path where OpenSSH is installed to your Path environment variable.</span></span> <span data-ttu-id="0305a-137">例如，`C:\Program Files\OpenSSH\`。</span><span class="sxs-lookup"><span data-stu-id="0305a-137">For example, `C:\Program Files\OpenSSH\`.</span></span> <span data-ttu-id="0305a-138">通过此条目可找到 ssh.exe。</span><span class="sxs-lookup"><span data-stu-id="0305a-138">This entry allows for the ssh.exe to be found.</span></span>
+5. <span data-ttu-id="9d22a-136">将 OpenSSH 的安装路径添加到 Path 环境变量。</span><span class="sxs-lookup"><span data-stu-id="9d22a-136">Add the path where OpenSSH is installed to your Path environment variable.</span></span> <span data-ttu-id="9d22a-137">例如，`C:\Program Files\OpenSSH\`。</span><span class="sxs-lookup"><span data-stu-id="9d22a-137">For example, `C:\Program Files\OpenSSH\`.</span></span> <span data-ttu-id="9d22a-138">通过此条目可找到 ssh.exe。</span><span class="sxs-lookup"><span data-stu-id="9d22a-138">This entry allows for the ssh.exe to be found.</span></span>
 
-## <a name="set-up-on-linux-ubuntu-1404-machine"></a><span data-ttu-id="0305a-139">在 Linux (Ubuntu 14.04) 计算机上设置</span><span class="sxs-lookup"><span data-stu-id="0305a-139">Set up on Linux (Ubuntu 14.04) Machine</span></span>
+## <a name="set-up-on-linux-ubuntu-1404-machine"></a><span data-ttu-id="9d22a-139">在 Linux (Ubuntu 14.04) 计算机上设置</span><span class="sxs-lookup"><span data-stu-id="9d22a-139">Set up on Linux (Ubuntu 14.04) Machine</span></span>
 
-1. <span data-ttu-id="0305a-140">从 GitHub 安装 [适用于 Linux 的 PowerShell Core] 最新版本</span><span class="sxs-lookup"><span data-stu-id="0305a-140">Install the latest [PowerShell Core for Linux] build from GitHub</span></span>
-2. <span data-ttu-id="0305a-141">按需安装 [Ubuntu SSH]</span><span class="sxs-lookup"><span data-stu-id="0305a-141">Install [Ubuntu SSH] as needed</span></span>
+1. <span data-ttu-id="9d22a-140">从 GitHub 安装 [适用于 Linux 的 PowerShell Core] 最新版本</span><span class="sxs-lookup"><span data-stu-id="9d22a-140">Install the latest [PowerShell Core for Linux] build from GitHub</span></span>
+2. <span data-ttu-id="9d22a-141">按需安装 [Ubuntu SSH]</span><span class="sxs-lookup"><span data-stu-id="9d22a-141">Install [Ubuntu SSH] as needed</span></span>
 
    ```bash
    sudo apt install openssh-client
    sudo apt install openssh-server
    ```
 
-3. <span data-ttu-id="0305a-142">编辑 /etc/ssh 位置中的 sshd_config 文件</span><span class="sxs-lookup"><span data-stu-id="0305a-142">Edit the sshd_config file at location /etc/ssh</span></span>
+3. <span data-ttu-id="9d22a-142">编辑 /etc/ssh 位置中的 sshd_config 文件</span><span class="sxs-lookup"><span data-stu-id="9d22a-142">Edit the sshd_config file at location /etc/ssh</span></span>
 
-   - <span data-ttu-id="0305a-143">确保已启用密码身份验证</span><span class="sxs-lookup"><span data-stu-id="0305a-143">Make sure password authentication is enabled</span></span>
+   - <span data-ttu-id="9d22a-143">确保已启用密码身份验证</span><span class="sxs-lookup"><span data-stu-id="9d22a-143">Make sure password authentication is enabled</span></span>
 
    ```
    PasswordAuthentication yes
    ```
 
-   - <span data-ttu-id="0305a-144">添加 PowerShell 子系统项</span><span class="sxs-lookup"><span data-stu-id="0305a-144">Add a PowerShell subsystem entry</span></span>
+   - <span data-ttu-id="9d22a-144">添加 PowerShell 子系统项</span><span class="sxs-lookup"><span data-stu-id="9d22a-144">Add a PowerShell subsystem entry</span></span>
 
    ```
    Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
    ```
 
-   - <span data-ttu-id="0305a-145">启用密钥身份验证（可选）</span><span class="sxs-lookup"><span data-stu-id="0305a-145">Optionally enable key authentication</span></span>
+   - <span data-ttu-id="9d22a-145">启用密钥身份验证（可选）</span><span class="sxs-lookup"><span data-stu-id="9d22a-145">Optionally enable key authentication</span></span>
 
    ```
    PubkeyAuthentication yes
    ```
 
-4. <span data-ttu-id="0305a-146">重启 sshd 服务</span><span class="sxs-lookup"><span data-stu-id="0305a-146">Restart the sshd service</span></span>
+4. <span data-ttu-id="9d22a-146">重启 sshd 服务</span><span class="sxs-lookup"><span data-stu-id="9d22a-146">Restart the sshd service</span></span>
 
    ```bash
    sudo service sshd restart
    ```
 
-## <a name="set-up-on-macos-machine"></a><span data-ttu-id="0305a-147">在 MacOS 计算器上设置</span><span class="sxs-lookup"><span data-stu-id="0305a-147">Set up on MacOS Machine</span></span>
+## <a name="set-up-on-macos-machine"></a><span data-ttu-id="9d22a-147">在 MacOS 计算器上设置</span><span class="sxs-lookup"><span data-stu-id="9d22a-147">Set up on MacOS Machine</span></span>
 
-1. <span data-ttu-id="0305a-148">安装 [适用于 MacOS 的 PowerShell Core] 的最新版本</span><span class="sxs-lookup"><span data-stu-id="0305a-148">Install the latest [PowerShell Core for MacOS] build</span></span>
+1. <span data-ttu-id="9d22a-148">安装 [适用于 MacOS 的 PowerShell Core] 的最新版本</span><span class="sxs-lookup"><span data-stu-id="9d22a-148">Install the latest [PowerShell Core for MacOS] build</span></span>
 
-   - <span data-ttu-id="0305a-149">按照以下步骤确保已启用 SSH 远程处理：</span><span class="sxs-lookup"><span data-stu-id="0305a-149">Make sure SSH Remoting is enabled by following these steps:</span></span>
-     - <span data-ttu-id="0305a-150">打开 `System Preferences`</span><span class="sxs-lookup"><span data-stu-id="0305a-150">Open `System Preferences`</span></span>
-     - <span data-ttu-id="0305a-151">单击 `Sharing`</span><span class="sxs-lookup"><span data-stu-id="0305a-151">Click on `Sharing`</span></span>
-     - <span data-ttu-id="0305a-152">检查 `Remote Login` - 应为 `Remote Login: On`</span><span class="sxs-lookup"><span data-stu-id="0305a-152">Check `Remote Login` - Should say `Remote Login: On`</span></span>
-     - <span data-ttu-id="0305a-153">允许相应用户访问</span><span class="sxs-lookup"><span data-stu-id="0305a-153">Allow access to appropriate users</span></span>
+   - <span data-ttu-id="9d22a-149">按照以下步骤确保已启用 SSH 远程处理：</span><span class="sxs-lookup"><span data-stu-id="9d22a-149">Make sure SSH Remoting is enabled by following these steps:</span></span>
+     - <span data-ttu-id="9d22a-150">打开 `System Preferences`</span><span class="sxs-lookup"><span data-stu-id="9d22a-150">Open `System Preferences`</span></span>
+     - <span data-ttu-id="9d22a-151">单击 `Sharing`</span><span class="sxs-lookup"><span data-stu-id="9d22a-151">Click on `Sharing`</span></span>
+     - <span data-ttu-id="9d22a-152">检查 `Remote Login` - 应为 `Remote Login: On`</span><span class="sxs-lookup"><span data-stu-id="9d22a-152">Check `Remote Login` - Should say `Remote Login: On`</span></span>
+     - <span data-ttu-id="9d22a-153">允许相应用户访问</span><span class="sxs-lookup"><span data-stu-id="9d22a-153">Allow access to appropriate users</span></span>
 
-2. <span data-ttu-id="0305a-154">编辑 `/private/etc/ssh/sshd_config` 位置中的 `sshd_config` 文件</span><span class="sxs-lookup"><span data-stu-id="0305a-154">Edit the `sshd_config` file at location `/private/etc/ssh/sshd_config`</span></span>
+2. <span data-ttu-id="9d22a-154">编辑 `/private/etc/ssh/sshd_config` 位置中的 `sshd_config` 文件</span><span class="sxs-lookup"><span data-stu-id="9d22a-154">Edit the `sshd_config` file at location `/private/etc/ssh/sshd_config`</span></span>
 
-   - <span data-ttu-id="0305a-155">使用常用编辑器或者</span><span class="sxs-lookup"><span data-stu-id="0305a-155">Use your favorite editor or</span></span>
+   - <span data-ttu-id="9d22a-155">使用常用编辑器或者</span><span class="sxs-lookup"><span data-stu-id="9d22a-155">Use your favorite editor or</span></span>
 
      ```bash
      sudo nano /private/etc/ssh/sshd_config
      ```
 
-   - <span data-ttu-id="0305a-156">确保已启用密码身份验证</span><span class="sxs-lookup"><span data-stu-id="0305a-156">Make sure password authentication is enabled</span></span>
+   - <span data-ttu-id="9d22a-156">确保已启用密码身份验证</span><span class="sxs-lookup"><span data-stu-id="9d22a-156">Make sure password authentication is enabled</span></span>
 
      ```
      PasswordAuthentication yes
      ```
 
-   - <span data-ttu-id="0305a-157">添加 PowerShell 子系统项</span><span class="sxs-lookup"><span data-stu-id="0305a-157">Add a PowerShell subsystem entry</span></span>
+   - <span data-ttu-id="9d22a-157">添加 PowerShell 子系统项</span><span class="sxs-lookup"><span data-stu-id="9d22a-157">Add a PowerShell subsystem entry</span></span>
 
      ```
      Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
      ```
 
-   - <span data-ttu-id="0305a-158">启用密钥身份验证（可选）</span><span class="sxs-lookup"><span data-stu-id="0305a-158">Optionally enable key authentication</span></span>
+   - <span data-ttu-id="9d22a-158">启用密钥身份验证（可选）</span><span class="sxs-lookup"><span data-stu-id="9d22a-158">Optionally enable key authentication</span></span>
 
      ```
      PubkeyAuthentication yes
      ```
 
-3. <span data-ttu-id="0305a-159">重启 sshd 服务</span><span class="sxs-lookup"><span data-stu-id="0305a-159">Restart the sshd service</span></span>
+3. <span data-ttu-id="9d22a-159">重启 sshd 服务</span><span class="sxs-lookup"><span data-stu-id="9d22a-159">Restart the sshd service</span></span>
 
    ```bash
    sudo launchctl stop com.openssh.sshd
    sudo launchctl start com.openssh.sshd
    ```
 
-## <a name="powershell-remoting-example"></a><span data-ttu-id="0305a-160">PowerShell 远程处理示例</span><span class="sxs-lookup"><span data-stu-id="0305a-160">PowerShell Remoting Example</span></span>
+## <a name="authentication"></a><span data-ttu-id="9d22a-160">身份验证</span><span class="sxs-lookup"><span data-stu-id="9d22a-160">Authentication</span></span>
 
-<span data-ttu-id="0305a-161">测试远程处理最简单的方法是在单个计算机上进行测试。</span><span class="sxs-lookup"><span data-stu-id="0305a-161">The easiest way to test remoting is to try it on a single machine.</span></span> <span data-ttu-id="0305a-162">在本示例中，我们创建返回到同一 Linux 计算机上的远程会话。</span><span class="sxs-lookup"><span data-stu-id="0305a-162">In this example, we create a remote session back to the same Linux machine.</span></span> <span data-ttu-id="0305a-163">我们交互式使用 PowerShell cmdlet，这样我们可看到 SSH 提示我们验证主机计算机并要求提供密码。</span><span class="sxs-lookup"><span data-stu-id="0305a-163">We are using PowerShell cmdlets interactively so we see prompts from SSH asking to verify the host computer and prompting for a password.</span></span> <span data-ttu-id="0305a-164">可以在 Windows 计算机上执行相同的操作以确保远程处理正常工作。</span><span class="sxs-lookup"><span data-stu-id="0305a-164">You can do the same thing on a Windows machine to ensure remoting is working.</span></span> <span data-ttu-id="0305a-165">然后，通过更改主机名在计算机之间进行远程处理。</span><span class="sxs-lookup"><span data-stu-id="0305a-165">Then remote between machines by changing the host name.</span></span>
+<span data-ttu-id="9d22a-161">通过 SSH 进行 PowerShell 远程处理依赖于 SSH 客户端和 SSH 服务之间的身份验证交换，并且本身不实现任何身份验证方案。</span><span class="sxs-lookup"><span data-stu-id="9d22a-161">PowerShell remoting over SSH relies on the authentication exchange between the SSH client and SSH service and does not implement any authentication schemes itself.</span></span>
+<span data-ttu-id="9d22a-162">这意味着任何配置的身份验证方案（包括多重身份验证）都由 SSH 处理，并且独立于 PowerShell。</span><span class="sxs-lookup"><span data-stu-id="9d22a-162">This means that any configured authentication schemes including multi-factor authentication is handled by SSH and independent of PowerShell.</span></span>
+<span data-ttu-id="9d22a-163">例如，可以将 SSH 服务配置为需要公钥身份验证以及一次性密码，从而增加安全性。</span><span class="sxs-lookup"><span data-stu-id="9d22a-163">For example, you can configure the SSH service to require public key authentication as well as a one-time password for added security.</span></span>
+<span data-ttu-id="9d22a-164">多重身份验证的配置不在本文档的讨论范围。</span><span class="sxs-lookup"><span data-stu-id="9d22a-164">Configuration of multi-factor authentication is outside the scope of this documentation.</span></span>
+<span data-ttu-id="9d22a-165">若要了解如何正确配置多重身份验证，请参阅相关的 SSH 文档，并在尝试将其用于 PowerShell 远程处理之前先在 PowerShell 之外验证它的运行效果。</span><span class="sxs-lookup"><span data-stu-id="9d22a-165">Refer to documentation for SSH on how to correctly configure multi-factor authentication and validate it works outside of PowerShell before attempting to use it with PowerShell remoting.</span></span>
+
+## <a name="powershell-remoting-example"></a><span data-ttu-id="9d22a-166">PowerShell 远程处理示例</span><span class="sxs-lookup"><span data-stu-id="9d22a-166">PowerShell Remoting Example</span></span>
+
+<span data-ttu-id="9d22a-167">测试远程处理最简单的方法是在单个计算机上进行测试。</span><span class="sxs-lookup"><span data-stu-id="9d22a-167">The easiest way to test remoting is to try it on a single machine.</span></span> <span data-ttu-id="9d22a-168">在本示例中，我们创建返回到同一 Linux 计算机上的远程会话。</span><span class="sxs-lookup"><span data-stu-id="9d22a-168">In this example, we create a remote session back to the same Linux machine.</span></span> <span data-ttu-id="9d22a-169">我们交互式使用 PowerShell cmdlet，这样我们可看到 SSH 提示我们验证主机计算机并要求提供密码。</span><span class="sxs-lookup"><span data-stu-id="9d22a-169">We are using PowerShell cmdlets interactively so we see prompts from SSH asking to verify the host computer and prompting for a password.</span></span> <span data-ttu-id="9d22a-170">可以在 Windows 计算机上执行相同的操作以确保远程处理正常工作。</span><span class="sxs-lookup"><span data-stu-id="9d22a-170">You can do the same thing on a Windows machine to ensure remoting is working.</span></span> <span data-ttu-id="9d22a-171">然后，通过更改主机名在计算机之间进行远程处理。</span><span class="sxs-lookup"><span data-stu-id="9d22a-171">Then remote between machines by changing the host name.</span></span>
 
 ```powershell
 #
@@ -295,20 +303,20 @@ GitCommitId                    v6.0.0-alpha.17
 [WinVM2]: PS C:\Users\PSRemoteUser\Documents>
 ```
 
-### <a name="known-issues"></a><span data-ttu-id="0305a-166">已知问题</span><span class="sxs-lookup"><span data-stu-id="0305a-166">Known Issues</span></span>
+### <a name="known-issues"></a><span data-ttu-id="9d22a-172">已知问题</span><span class="sxs-lookup"><span data-stu-id="9d22a-172">Known Issues</span></span>
 
-<span data-ttu-id="0305a-167">sudo 命令对 Linux 计算机上的远程会话不起作用。</span><span class="sxs-lookup"><span data-stu-id="0305a-167">The sudo command doesn't work in remote session to Linux machine.</span></span>
+<span data-ttu-id="9d22a-173">sudo 命令对 Linux 计算机上的远程会话不起作用。</span><span class="sxs-lookup"><span data-stu-id="9d22a-173">The sudo command doesn't work in remote session to Linux machine.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="0305a-168">另请参阅</span><span class="sxs-lookup"><span data-stu-id="0305a-168">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9d22a-174">另请参阅</span><span class="sxs-lookup"><span data-stu-id="9d22a-174">See Also</span></span>
 
-[<span data-ttu-id="0305a-169">PowerShell Core for Windows</span><span class="sxs-lookup"><span data-stu-id="0305a-169">PowerShell Core for Windows</span></span>](../setup/installing-powershell-core-on-windows.md#msi)
+[<span data-ttu-id="9d22a-175">PowerShell Core for Windows</span><span class="sxs-lookup"><span data-stu-id="9d22a-175">PowerShell Core for Windows</span></span>](../setup/installing-powershell-core-on-windows.md#msi)
 
-[<span data-ttu-id="0305a-170">适用于 Linux 的 PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="0305a-170">PowerShell Core for Linux</span></span>](../setup/installing-powershell-core-on-linux.md#ubuntu-1404)
+[<span data-ttu-id="9d22a-176">适用于 Linux 的 PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="9d22a-176">PowerShell Core for Linux</span></span>](../setup/installing-powershell-core-on-linux.md#ubuntu-1404)
 
-[<span data-ttu-id="0305a-171">适用于 MacOS 的 PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="0305a-171">PowerShell Core for MacOS</span></span>](../setup/installing-powershell-core-on-macos.md)
+[<span data-ttu-id="9d22a-177">适用于 MacOS 的 PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="9d22a-177">PowerShell Core for MacOS</span></span>](../setup/installing-powershell-core-on-macos.md)
 
-[<span data-ttu-id="0305a-172">Win32 OpenSSH</span><span class="sxs-lookup"><span data-stu-id="0305a-172">Win32 OpenSSH</span></span>](https://github.com/PowerShell/Win32-OpenSSH/releases)
+[<span data-ttu-id="9d22a-178">Win32 OpenSSH</span><span class="sxs-lookup"><span data-stu-id="9d22a-178">Win32 OpenSSH</span></span>](https://github.com/PowerShell/Win32-OpenSSH/releases)
 
-[<span data-ttu-id="0305a-173">安装</span><span class="sxs-lookup"><span data-stu-id="0305a-173">installation</span></span>](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)
+[<span data-ttu-id="9d22a-179">安装</span><span class="sxs-lookup"><span data-stu-id="9d22a-179">installation</span></span>](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)
 
-[<span data-ttu-id="0305a-174">Ubuntu SSH</span><span class="sxs-lookup"><span data-stu-id="0305a-174">Ubuntu SSH</span></span>](https://help.ubuntu.com/lts/serverguide/openssh-server.html)
+[<span data-ttu-id="9d22a-180">Ubuntu SSH</span><span class="sxs-lookup"><span data-stu-id="9d22a-180">Ubuntu SSH</span></span>](https://help.ubuntu.com/lts/serverguide/openssh-server.html)

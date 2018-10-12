@@ -1,42 +1,35 @@
 ---
-ms.date: 06/12/2017
+ms.date: 09/11/2018
 contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 title: 创建 PowerShell 库帐户
-ms.openlocfilehash: 4a44b51967ea8acdd331f6b3c682fc5884bd2f54
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 08d18310d9e18b00bd9e22efcc552dfd29f8982c
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219559"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522816"
 ---
-## <a name="creating-a-powershell-gallery-account"></a><span data-ttu-id="d7887-103">创建 PowerShell 库帐户</span><span class="sxs-lookup"><span data-stu-id="d7887-103">Creating a PowerShell Gallery account</span></span>
+# <a name="creating-a-powershell-gallery-account"></a><span data-ttu-id="ad832-103">创建 PowerShell 库帐户</span><span class="sxs-lookup"><span data-stu-id="ad832-103">Creating a PowerShell Gallery account</span></span>
 
-<span data-ttu-id="d7887-104">必须先创建 PowerShell 库帐户，然后才能将任何内容发布到 PowerShell 库。</span><span class="sxs-lookup"><span data-stu-id="d7887-104">A PowerShell Gallery account must be established before publishing anything to the PowerShell Gallery.</span></span>
-<span data-ttu-id="d7887-105">必须将 PowerShell 库帐户与启用电子邮件的 Azure Active Directory 帐户或域名为 outlook.com、hotmail.com 等的 Microsoft 电子邮件帐户相关联。</span><span class="sxs-lookup"><span data-stu-id="d7887-105">The PowerShell Gallery accounts must be linked to an Azure Active Directory email-enabled account, or a Microsoft email account (with a domain of outlook.com, hotmail.com, etc.)</span></span>
+<span data-ttu-id="ad832-104">在将任何内容发布到 PowerShell 库之前，必须先创建 PowerShell 库帐户。</span><span class="sxs-lookup"><span data-stu-id="ad832-104">You must create a PowerShell Gallery account before publishing anything to the PowerShell Gallery.</span></span>
+<span data-ttu-id="ad832-105">必须将 PowerShell 库帐户链接到启用电子邮件的登录帐户。</span><span class="sxs-lookup"><span data-stu-id="ad832-105">PowerShell Gallery accounts must be linked to an email-enabled login account.</span></span> <span data-ttu-id="ad832-106">此帐户可为 Azure Active Directory 帐户或 Microsoft ID，例如 outlook.com 或 hotmail.com 的电子邮件帐户。</span><span class="sxs-lookup"><span data-stu-id="ad832-106">This account can be an Azure Active Directory account or a Microsoft ID, like an email account from outlook.com or hotmail.com.</span></span>
 
-<span data-ttu-id="d7887-106">若要创建 PowerShell 库帐户，请转到 https://PowerShellGallery.com，再单击“注册”（见下图）。</span><span class="sxs-lookup"><span data-stu-id="d7887-106">To create a PowerShell Gallery account, go to https://PowerShellGallery.com and click on "Register" (see the image below).</span></span>
+<span data-ttu-id="ad832-107">要创建 PowerShell 库帐户，请转到 [https://PowerShellGallery.com](https://PowerShellGallery.com)，然后单击“登录”，如下图所示。</span><span class="sxs-lookup"><span data-stu-id="ad832-107">To create a PowerShell Gallery account, go to [https://PowerShellGallery.com](https://PowerShellGallery.com) and click on **Sign in** as shown in the following image.</span></span>
 
-![注册新帐户](../../Images/CreatingAccount-Register.png)
+![注册新帐户](../../Images/CreateAccount-Register.png)
 
-<span data-ttu-id="d7887-108">若要使用 Azure Active Directory 帐户，请在下一页中选择“工作或学校帐户”，并使用帐户登录。</span><span class="sxs-lookup"><span data-stu-id="d7887-108">In the next page, to use an Azure Active Directory account, select "Work or School Account", and log in with your account.</span></span>
-<span data-ttu-id="d7887-109">若要使用 Microsoft 帐户（如域名为 Hotmail.com 或 Outlook.com 的帐户），请选择“个人帐户”并登录。</span><span class="sxs-lookup"><span data-stu-id="d7887-109">To use a Microsoft account - such as one in a Hotmail.com or Outlook.com domain - choose "Personal Account", and log in.</span></span>
+<span data-ttu-id="ad832-109">若要使用 Azure Active Directory 帐户，请选择“工作或学校帐户”，并使用帐户登录。</span><span class="sxs-lookup"><span data-stu-id="ad832-109">To use an Azure Active Directory account, select **Work or School Account**, and sign in with your account.</span></span> <span data-ttu-id="ad832-110">若要使用 Microsoft ID，请选择“个人帐户”并登录。</span><span class="sxs-lookup"><span data-stu-id="ad832-110">To use a Microsoft ID, choose **Personal Account** and sign in.</span></span>
 
-<span data-ttu-id="d7887-110">登录后，系统便会提示创建 PowerShell 库帐户的用户名。</span><span class="sxs-lookup"><span data-stu-id="d7887-110">Once you have logged in, you will be prompted to create a username for the PowerShell Gallery.</span></span>
-<span data-ttu-id="d7887-111">查看链接的使用条款和隐私策略，输入用户名，再单击“注册”。</span><span class="sxs-lookup"><span data-stu-id="d7887-111">Review the Terms of Use and Privacy Policy that are linked in, enter a username, and then click Register.</span></span>
+<span data-ttu-id="ad832-111">接下来系统便会提示创建 PowerShell 库帐户的用户名。</span><span class="sxs-lookup"><span data-stu-id="ad832-111">Next, you are prompted to create a username for the PowerShell Gallery.</span></span> <span data-ttu-id="ad832-112">查看使用条款和隐私策略，输入用户名，然后单击“注册”。</span><span class="sxs-lookup"><span data-stu-id="ad832-112">Review the Terms of Use and Privacy Policy, enter a username, and then click **Register**.</span></span>
 
-<span data-ttu-id="d7887-112">注意：帐户名称一旦创建便无法再进行更改。</span><span class="sxs-lookup"><span data-stu-id="d7887-112">Note: This account name cannot be changed once it is created.</span></span>
-<span data-ttu-id="d7887-113">请参阅[管理项所有者](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners)，了解与此相关的其他详细信息。</span><span class="sxs-lookup"><span data-stu-id="d7887-113">See [Managing Item Owners](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners) for additional details related to this.</span></span>
+> [!NOTE]
+> <span data-ttu-id="ad832-113">帐户名称一旦创建便无法再进行更改。</span><span class="sxs-lookup"><span data-stu-id="ad832-113">The account name cannot be changed once it is created.</span></span> <span data-ttu-id="ad832-114">有关详细信息，请参阅[管理项所有者](managing-item-owners.md)。</span><span class="sxs-lookup"><span data-stu-id="ad832-114">For more information, see [Managing Item Owners](managing-item-owners.md).</span></span>
 
-## <a name="recommended-practices-for-powershell-gallery-accounts"></a><span data-ttu-id="d7887-114">适用于 PowerShell 库帐户的推荐做法</span><span class="sxs-lookup"><span data-stu-id="d7887-114">Recommended Practices for PowerShell Gallery Accounts</span></span>
+## <a name="recommended-practices-for-powershell-gallery-accounts"></a><span data-ttu-id="ad832-115">适用于 PowerShell 库帐户的推荐做法</span><span class="sxs-lookup"><span data-stu-id="ad832-115">Recommended practices for PowerShell Gallery accounts</span></span>
 
-<span data-ttu-id="d7887-115">请务必确保可以主动监视对 PowerShell 库帐户使用的电子邮件帐户。</span><span class="sxs-lookup"><span data-stu-id="d7887-115">It is important that the email account used with your PowerShell Gallery account be actively monitored.</span></span>
-<span data-ttu-id="d7887-116">将使用与 PowerShell 库帐户关联的电子邮件地址通过电子邮件的方式与 PowerShell 库项的所有者进行所有通信往来。</span><span class="sxs-lookup"><span data-stu-id="d7887-116">All communiction with owners of PowerShell Gallery items is through the email using the address associated with your PowerShell Gallery account.</span></span>
-<span data-ttu-id="d7887-117">如果我们无法联系项所有者，在某些情况下，运营团队可能需要删除项。</span><span class="sxs-lookup"><span data-stu-id="d7887-117">If we are unable to contact an item owner, the Operations team may be required to delete an item under some circumstances.</span></span>
+<span data-ttu-id="ad832-116">请务必确保可主动监视对 PowerShell 库帐户使用的电子邮件帐户。</span><span class="sxs-lookup"><span data-stu-id="ad832-116">It's important to actively monitor the email account used with your PowerShell Gallery account.</span></span> <span data-ttu-id="ad832-117">与 PowerShell 库项所有者的所有通信均通过此电子邮件地址进行。</span><span class="sxs-lookup"><span data-stu-id="ad832-117">All communication with owners of PowerShell Gallery items is through this email address.</span></span> <span data-ttu-id="ad832-118">若 PowerShell 库运营团队无法联系项所有者，我们可能需要删除项。</span><span class="sxs-lookup"><span data-stu-id="ad832-118">If the PowerShell Gallery Operations team is unable to contact an item owner, we may be required to delete an item.</span></span>
 
-<span data-ttu-id="d7887-118">出于此目的，发布到 PowerShell 库的组织通常都会在 Outlook.com 或其他 Microsoft 帐户域中创建唯一帐户。</span><span class="sxs-lookup"><span data-stu-id="d7887-118">Organizations that publish to the PowerShell Gallery often create a unique account for that purpose in Outlook.com, or another Microsoft account domain.</span></span>
-<span data-ttu-id="d7887-119">在许多情况下，都不会定期监视此帐户。</span><span class="sxs-lookup"><span data-stu-id="d7887-119">In many cases that account is not regularly monitored.</span></span>
-<span data-ttu-id="d7887-120">在这种情况下，最佳做法是使用 Outlook 转发功能将电子邮件转发到另一个帐户（通常是组织内受项所有者监视的帐户）。</span><span class="sxs-lookup"><span data-stu-id="d7887-120">A best practice in that case is to use Outlook Forwarding to send email to another account, typically one within the organization, that will be monitored by the item owner(s).</span></span>
+<span data-ttu-id="ad832-119">出于此目的，发布到 PowerShell 库的组织通常会创建唯一外部帐户。</span><span class="sxs-lookup"><span data-stu-id="ad832-119">Organizations that publish to the PowerShell Gallery often create a unique external account for that purpose.</span></span> <span data-ttu-id="ad832-120">我们建议使用电子邮件转发功能将通知转发到组织内的地址。</span><span class="sxs-lookup"><span data-stu-id="ad832-120">We recommend you use email forwarding to forward notifications to an address within your organization.</span></span>
 
-<span data-ttu-id="d7887-121">如果项有多个关联的所有者，那么来自 PowerShell 库的所有通信都会发送给全部所有者。</span><span class="sxs-lookup"><span data-stu-id="d7887-121">If there are multiple owners associated with an item, all communications that come from the PowerShell Gallery will go to all owners.</span></span>
-<span data-ttu-id="d7887-122">请参阅[管理项所有者](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners)，详细了解如何向项添加所有者。</span><span class="sxs-lookup"><span data-stu-id="d7887-122">See [Managing Item Owners](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners) for additional details on adding owners to an item.</span></span>
+<span data-ttu-id="ad832-121">当多个所有者与项关联时，所有 PowerShell 库向所有所有者发送通知。</span><span class="sxs-lookup"><span data-stu-id="ad832-121">When multiple owners are associated with an item, all PowerShell Gallery notifications are sent to all owners.</span></span> <span data-ttu-id="ad832-122">有关详细信息，请参阅[管理项所有者](managing-item-owners.md)。</span><span class="sxs-lookup"><span data-stu-id="ad832-122">For more information, see [Managing Item Owners](managing-item-owners.md).</span></span>
