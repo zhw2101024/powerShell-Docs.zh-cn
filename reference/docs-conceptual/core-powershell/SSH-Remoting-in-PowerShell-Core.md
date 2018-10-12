@@ -2,12 +2,12 @@
 title: 通过 SSH 进行 PowerShell 远程处理
 description: 在 PowerShell Core 中使用 SSH 进行远程处理
 ms.date: 08/14/2018
-ms.openlocfilehash: 451a55a588381cc9bec265895b2bfad6b6f6e73c
-ms.sourcegitcommit: a652b12a0b87cdd0c8eb76381ae015467dd7b8cd
+ms.openlocfilehash: 84c3896fe28847beb03e930f933bb4a9dfad397f
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46134274"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851231"
 ---
 # <a name="powershell-remoting-over-ssh"></a>通过 SSH 进行 PowerShell 远程处理
 
@@ -35,7 +35,7 @@ WinRM 为 PowerShell 远程会话提供可靠的托管模型。 这种实现基�
 
 ## <a name="set-up-on-windows-machine"></a>在 Windows 计算机上设置
 
-1. 安装 [适用于 Windows 的 PowerShell Core] 的最新版本
+1. 安装 [PowerShell Core for Windows](../setup/installing-powershell-core-on-windows.md#msi) 的最新版本
 
    - 可以通过查看 `New-PSSession` 参数集来判断它是否具有 SSH 远程处理支持
 
@@ -47,7 +47,7 @@ WinRM 为 PowerShell 远程会话提供可靠的托管模型。 这种实现基�
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. 按照 [安装] 说明从 GitHub 安装 [Win32 OpenSSH] 最新版本
+2. 按照[安装](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)说明从 GitHub 安装 [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases) 最新版本
 3. 编辑 Win32 OpenSSH 安装位置中的 sshd_config 文件
 
    - 确保已启用密码身份验证
@@ -91,8 +91,8 @@ WinRM 为 PowerShell 远程会话提供可靠的托管模型。 这种实现基�
 
 ## <a name="set-up-on-linux-ubuntu-1404-machine"></a>在 Linux (Ubuntu 14.04) 计算机上设置
 
-1. 从 GitHub 安装 [适用于 Linux 的 PowerShell Core] 最新版本
-2. 按需安装 [Ubuntu SSH]
+1. 从 GitHub 安装[适用于 Linux 的 PowerShell Core](../setup/installing-powershell-core-on-linux.md#ubuntu-1404) 最新版本
+2. 按需安装 [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)
 
    ```bash
    sudo apt install openssh-client
@@ -127,7 +127,7 @@ WinRM 为 PowerShell 远程会话提供可靠的托管模型。 这种实现基�
 
 ## <a name="set-up-on-macos-machine"></a>在 MacOS 计算器上设置
 
-1. 安装 [适用于 MacOS 的 PowerShell Core] 的最新版本
+1. 安装[适用于 MacOS 的 PowerShell Core](../setup/installing-powershell-core-on-macos.md) 最新版本
 
    - 按照以下步骤确保已启用 SSH 远程处理：
      - 打开 `System Preferences`
@@ -316,7 +316,5 @@ sudo 命令对 Linux 计算机上的远程会话不起作用。
 [适用于 MacOS 的 PowerShell Core](../setup/installing-powershell-core-on-macos.md)
 
 [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases)
-
-[安装](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)
 
 [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)

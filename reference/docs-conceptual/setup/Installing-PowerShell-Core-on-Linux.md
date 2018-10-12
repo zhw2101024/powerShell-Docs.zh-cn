@@ -2,12 +2,12 @@
 title: 在 Linux 上安装 PowerShell Core
 description: 介绍如何在各种 Linux 分发上安装 PowerShell Core
 ms.date: 08/06/2018
-ms.openlocfilehash: acd88f686ce6a657c9ccda9d2615d4ab355ddcbe
-ms.sourcegitcommit: 601609575a3214ea7086a3bcb586ae0d1df3d418
+ms.openlocfilehash: d60e1d5a89b6907b67c19b8cfcde969be156bd60
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46532946"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851283"
 ---
 # <a name="installing-powershell-core-on-linux"></a>在 Linux 上安装 PowerShell Core
 
@@ -558,19 +558,22 @@ sudo snap remove powershell-preview
 
 ## <a name="kali"></a>Kali
 
-> [!NOTE]
-> Kali 支持目前无法使用。 请改用 [Snap 包][snap]。
-
 ### <a name="installation"></a>安装
 
 ```sh
 # Download & Install prerequisites
-sudo apt-get install libunwind8 libicu55
-wget http://security.debian.org/debian-security/pool/updates/main/o/openssl/libssl1.0.0_1.0.1t-1+deb8u6_amd64.deb
-sudo dpkg -i libssl1.0.0_1.0.1t-1+deb8u6_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/i/icu/libicu57_57.1-9_amd64.deb
+dpkg -i libicu57_57.1-9_amd64.deb
+apt-get update && apt-get install -y curl gnupg apt-transport-https
 
-# Install PowerShell
-sudo dpkg -i powershell_6.1.0-1.ubuntu.16.04_amd64.deb
+# Add Microsoft public repository key to APT
+curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
+
+# Add Microsoft package repository to the source list
+echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main" | tee /etc/apt/sources.list.d/powershell.list
+
+# Install PowerShell package
+apt-get update && apt-get install -y powershell
 
 # Start PowerShell
 pwsh
@@ -579,7 +582,8 @@ pwsh
 ### <a name="uninstallation---kali"></a>卸载 - Kali
 
 ```sh
-sudo dpkg -r powershell_6.0.2-1.ubuntu.16.04_amd64.deb
+# Uninstall PowerShell package
+apt-get remove -y powershell
 ```
 
 ## <a name="raspbian"></a>Raspbian
