@@ -22,12 +22,12 @@ PowerShell 支持别名以通过备用名称引用命令。 别名允许具有�
 
 |||||
 |-|-|-|-|
-|cat|dir|装载|rm|
+|cat|dir|mount|rm|
 |cd|echo|move|rmdir|
 |chdir|erase|popd|sleep|
 |clear|h|ps|sort|
 |cls|history|pushd|tee|
-|copy|kill|pwd|类型|
+|copy|kill|pwd|type|
 |del|lp|r|write|
 |diff|ls|ren||
 
@@ -55,11 +55,11 @@ PowerShell 别名尝试兼顾清晰度和简洁性。 PowerShell 为常见名词
 | 名词或谓词 | 缩写 |
 |--------------|--------------|
 | Get          | g            |
-| 设置          | s            |
-| 项         | i            |
-| 位置     | l            |
-| 命令      | cm           |
-| 别名        | al           |
+| Set          | s            |
+| Item         | i            |
+| Location     | l            |
+| Command      | cm           |
+| Alias        | al           |
 
 了解简写名称后，这些别名是可以理解的。
 
