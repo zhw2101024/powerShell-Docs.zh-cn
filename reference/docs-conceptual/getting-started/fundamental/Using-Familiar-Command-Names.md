@@ -63,7 +63,7 @@ PowerShell 别名尝试兼顾清晰度和简洁性。 PowerShell 为常见名词
 
 了解简写名称后，这些别名是可以理解的。
 
-| Cmdlet 名称    | 别名 |
+| Cmdlet 名称    | Alias |
 |----------------|-------|
 | `Get-Item `    | gi    |
 | `Set-Item`     | si    |
