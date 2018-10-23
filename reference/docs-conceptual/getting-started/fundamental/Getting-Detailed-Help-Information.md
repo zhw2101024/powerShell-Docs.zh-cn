@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: 获取详细的帮助信息
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 88f0357b935a7c75df07d667e3f2f2d0e493f89d
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: d2578604ec7c01c0b2734bd180e1babaca58b153
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134028"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851266"
 ---
 # <a name="getting-detailed-help-information"></a>获取详细的帮助信息
 
@@ -149,7 +149,7 @@ Get-Help c:\ps-test\TestScript.ps1
 若要在线获取帮助，请使用 `Get-Help` cmdlet 的 Online 参数。 PowerShell 附带的所有帮助文章（包括提供程序帮助和概念(关于)帮助文章），都可以在 [PowerShell](/powershell/scripting/powershell-scripting) 文档中在线获取。
 
 > [!NOTE]
-> 不能将 Online  参数用于概念 (about_*) 或提供程序帮助文章。
+> 不能将 Online  参数用于概念 (about_\*) 或提供程序帮助文章。
 > 在线帮助一个可选功能，并不适用于每一个 cmdlet、函数或脚本。
 
 例如，若要获取有关 `Get-ChildItem` cmdlett 的帮助文章的在线版本，请键入：
