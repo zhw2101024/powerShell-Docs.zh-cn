@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: powershell,cmdlet
 title: 了解重要的 PowerShell 概念
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: 577ea0764a172e1821bc492417d8b4e546e31b0b
-ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
+ms.openlocfilehash: fad64563d1a7a6abd4f0e430331f81f91f43d312
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43353188"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48850991"
 ---
 # <a name="understanding-important-powershell-concepts"></a>了解重要的 PowerShell 概念
 
@@ -23,7 +23,7 @@ PowerShell 设计集成了很多不同环境的概念。 具有 shell 或编程�
 
 ## <a name="the-command-family-is-extensible"></a>命令系列是可扩展的
 
-接口（比如 cmd.exe）不提供可直接扩展内置命令集的方法。 可以创建在 cmd.exe 中运行的外部命令行工具。 但这些外部工具不包含服务，例如帮助集成。 cmd.exe 不会自动知道这些外部工具是有效命令。
+接口（如 cmd.exe）不提供可直接扩展内置命令集的方法。 可以创建在 cmd.exe 中运行的外部命令行工具。 但这些外部工具不包含服务，例如帮助集成。 cmd.exe 不会自动知道这些外部工具是否为有效命令。
 
 PowerShell 中的本机命令称为 cmdlet（读作 command-let）。 可以使用编译的代码或脚本创建自己的 cmdlet 模块和函数。 模块可以向 shell 添加 cmdlet 和提供程序。 PowerShell 还支持类似于 UNIX shell 脚本和 cmd.exe 批处理文件的脚本。
 

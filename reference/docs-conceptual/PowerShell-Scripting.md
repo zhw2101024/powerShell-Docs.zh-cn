@@ -2,16 +2,16 @@
 ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: PowerShell 脚本
-ms.openlocfilehash: 754805148dc815a12c5c77e4894fb598c6927f7e
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 8a152ab338d42f861b7ff38de44d68db14262abb
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43133987"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851180"
 ---
 # <a name="powershell"></a>PowerShell
 
-PowerShell 是构建于 .NET Framework 上的基于任务的命令行 shell 和脚本语言。
+PowerShell 是构建于 .NET 上基于任务的命令行 shell 和脚本语言。
 PowerShell 可帮助系统管理员和高级用户快速自动执行用于管理操作系统（Linux、macOS 和 Windows）和流程的任务。
 
 使用 PowerShell 命令可以从命令行管理计算机。 PowerShell 提供程序可让你访问数据存储（如注册表和证书存储），与你访问文件系统一样方便。 PowerShell 具有丰富的表达式分析器和完全开发的脚本语言。

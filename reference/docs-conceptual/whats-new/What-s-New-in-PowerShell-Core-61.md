@@ -2,12 +2,12 @@
 title: PowerShell Core 6.1 中的新增内容
 description: PowerShell Core 6.1 中发布的新功能和更改
 ms.date: 09/13/2018
-ms.openlocfilehash: 5e2fe3c819ed638b2c14d7d40e08b7c32953147f
-ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
+ms.openlocfilehash: 4e39780a0ff446993005bba6284741f3b4b02549
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46289219"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851301"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 中的新增内容
 
@@ -197,11 +197,11 @@ Markdown 是创建可读明文文档的标准，其基本格式可以呈现为 H
 
 ## <a name="remoting-improvements"></a>远程处理的改进
 
-### <a name="powershell-direct-tries-to-use-powershell-core-first"></a>PowerShell Direct 尝试先使用 PowerShell Core
+### <a name="powershell-direct-for-containers-tries-to-use-powershell-core-first"></a>适用于容器的 PowerShell Direct 尝试先使用 PowerShell Core
 
-[PowerShell Direct ](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) 是 PowerShell 和 Hyper-V 的一项功能，允许在没有网络连接或其他远程管理服务的情况下连接到 Hyper-V VM。
+[PowerShell Direct ](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) 是 PowerShell 和 Hyper-V 的一项功能，允许在没有网络连接或其他远程管理服务的情况下连接到 Hyper-V VM 或容器。
 
-在过去，PowerShell Direct 使用 VM 上的收件箱 Windows PowerShell 实例进行连接。
+在过去，PowerShell Direct 使用容器上的收件箱 Windows PowerShell 实例进行连接。
 现在，PowerShell Direct 先尝试使用 `PATH` 环境变量上任何可用的 `pwsh.exe` 进行连接。
 如果 `pwsh.exe` 不可用，PowerShell Direct 则会回退为使用 `powershell.exe`。
 
@@ -310,45 +310,44 @@ PS /etc>
 ### <a name="new-methodsproperties-on-pscustomobject"></a>`PSCustomObject` 上的新方法/属性
 
 感谢 [@iSazonov](https://github.com/iSazonov) 的帮助，我们为 `PSCustomObject` 添加了新的方法和属性。
-`PSCustomObject` 现在包含 `Count`/`Length` 属性，用于指定项目数。
-
-这两个示例都返回 `2`此为集合中 `PSCustomObjects` 的数量。
+`PSCustomObject` 现在包括类似于其他对象的 `Count`/`Length` 属性。
 
 ```powershell
-@(
-[pscustomobject]@{foo = '1'},
-[pscustomobject]@{bar = '2' }).Length
+$PSCustomObject = [pscustomobject]@{foo = 1}
+
+$PSCustomObject.Length
+```
+
+```Output
+1
 ```
 
 ```powershell
-@(
-[pscustomobject]@{foo = '1'},
-[pscustomobject]@{bar = '2' }).Count
+$PSCustomObject.Count
+```
+
+```Output
+1
 ```
 
 此工作还包括 `ForEach` 和 `Where` 方法，这些方法允许对 `PSCustomObject` 项进行操作和筛选：
 
 ```powershell
-@(
->> [pscustomobject]@{foo = 1},
->> [pscustomobject]@{foo = 2 }).ForEach({$_.foo+1})
+$PSCustomObject.ForEach({$_.foo + 1})
 ```
 
 ```Output
 2
-3
 ```
 
 ```powershell
-@(
->> [pscustomobject]@{foo = 1},
->> [pscustomobject]@{foo = 2 }).Where({$_.foo -gt 1})
+$PSCustomObject.Where({$_.foo -gt 0})
 ```
 
 ```Output
 foo
 ---
-  2
+  1
 ```
 
 ### `Where-Object -Not`
@@ -507,7 +506,7 @@ PowerShell Core 在启动时会向 Microsoft 发送基本的遥测数据。 该�
 
 为了防止使用未加密的流量，Unix 平台上的 PowerShell 远程处理现在需要使用 NTLM/Negotiate 或 HTTPS。
 
-有关这些更改的详细信息，请查看 [PR #6799](https://github.com/PowerShell/PowerShell/pull/6799)。
+有关这些更改的详细信息，请查看 [Issue #6779](https://github.com/PowerShell/PowerShell/issues/6779)（问题 #6779）。
 
 ### <a name="removed-visualbasic-as-a-supported-language-in-add-type"></a>已在 Add-Type 中删除作为受支持语言的 `VisualBasic`
 

@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 description: 面向发行者的指南
 title: PowerShell 库发布指南和最佳做法
-ms.openlocfilehash: 11207a312f916506f855c0e6e292752f72fc04c1
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: 2ddeae9fdb33a58f97bfeb66079541bb7c5791b1
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523006"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851163"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell 库发布指南和最佳做法
 
@@ -39,6 +39,7 @@ ms.locfileid: "45523006"
 - 遵循 [SemVer](http://semver.org/) 指南进行版本控制
 - 使用“常见 PowerShell 库标记”中收录的常见标记
 - 使用本地存储库测试发布
+- 使用 PowerShellGet 发布
 
 下面的各个部分简要介绍了上述每种最佳做法。
 
@@ -215,6 +216,12 @@ PowerShell 库的设计目标不是成为用于测试发布过程的目标。
 有关测试发布的另外一点：在操作团队的帮助下才能删除发布到 PowerShell 库的任何项目，该团队会确认任何项都不依赖于要发布的项。
 考虑到该原因，我们不支持将 PowerShell 库作为测试目标，并将与进行此操作的任何发布者联系。
 
+## <a name="use-powershellget-to-publish"></a>使用 PowerShellGet 发布
+
+在使用 PowerShell 库时，强烈建议发布者使用 Publish-Module 和 Publish-Script cmdlet。 创建 PowerShellGet 的目的是，让你无需记住在发布到 PowerShell 库时有关安装的重要详细信息。 有时，发布者会选择跳过 PowerShellGet 并使用 NuGet 客户端或 PackageManagement cmdlet，而不是 Publish-Module。 这会使很多详细信息轻易被漏掉，进而导致各种支持请求。
+
+如果某种原因致使你无法使用 Publish-Module 或 Publish-Script，请告知我们。 在 PowerShellGet GitHub 存储库中发布一个问题，并提供导致你选择 NuGet 或 PackageManagement 的详细信息。 
+
 ## <a name="recommended-workflow"></a>建议的工作流
 
 我们已总结出适用于在 PowerShell 库中发布的项的最成功方法，如下所述：
@@ -229,3 +236,4 @@ PowerShell 库的设计目标不是成为用于测试发布过程的目标。
 - 决定是否要对项进行代码签名
 - 如果认为项目可用于生产环境，请将 1.0.0 版本发布到 PowerShell 库中
 - 继续收集反馈，并根据用户输入循环访问代码
+

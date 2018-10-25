@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 如何在脚本窗格和控制台窗格中使用 Tab 自动补全
 ms.assetid: 3b752c3c-0bd0-4eca-a2d3-2d5a37fd9d84
-ms.openlocfilehash: e1f8146b6113a82fd3d857c98550ec2e459715a4
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 24a3f00987ff5ca4bf82d1a3206857ec3c4b3f09
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30954919"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851129"
 ---
 # <a name="how-to-use-tab-completion-in-the-script-pane-and-console-pane"></a>如何在脚本窗格和控制台窗格中使用 Tab 自动补全
 
@@ -23,7 +23,7 @@ ms.locfileid: "30954919"
 
 ## <a name="to-automatically-complete-a-cmdlet-parameter-entry"></a>自动完成 cmdlet 参数输入
 
-在命令窗格或脚本窗格中，键入 cmdlet 后跟一个破折号，然后按 TAB 键。
+在命令窗格或脚本窗格中，键入 cmdlet 后跟一个短划线，然后按 TAB 键。
 
 例如，键入 `Get-Process -`，然后多次按 TAB 键以显示 cmdlet 的每个参数。
 

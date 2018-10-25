@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 更改计算机状态
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: 4b5b4adb349dd8036117c364ed2ebb1ffaf8c88f
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: f2fadcedaeddfa6f8b9dd4d70738ee062b907d61
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39267879"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851077"
 ---
 # <a name="changing-computer-state"></a>更改计算机状态
 
@@ -52,14 +52,20 @@ shutdown.exe -l
 
 也可以直接从 Windows PowerShell 执行关闭或重启操作。
 
-若要关闭计算机，请使用 stop-computer 命令
+要关闭计算机，请使用 Stop-Computer 命令
 
 ```powershell
-stop-computer
+Stop-Computer
 ```
 
-若要重启操作系统，请使用 restart-computer 命令
+要重启操作系统，请使用 Restart-Computer 命令
 
 ```powershell
-restart-computer
+Restart-Computer
+```
+
+要强制立即重新启动计算机，请使用 -Force 参数。
+
+```powershell
+Restart-Computer -Force
 ```
