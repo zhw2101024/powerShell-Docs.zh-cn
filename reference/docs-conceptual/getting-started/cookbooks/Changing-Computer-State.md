@@ -3,63 +3,69 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 更改计算机状态
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: 4b5b4adb349dd8036117c364ed2ebb1ffaf8c88f
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: f2fadcedaeddfa6f8b9dd4d70738ee062b907d61
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39267879"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851077"
 ---
-# <a name="changing-computer-state"></a><span data-ttu-id="84d64-103">更改计算机状态</span><span class="sxs-lookup"><span data-stu-id="84d64-103">Changing Computer State</span></span>
+# <a name="changing-computer-state"></a><span data-ttu-id="651d6-103">更改计算机状态</span><span class="sxs-lookup"><span data-stu-id="651d6-103">Changing Computer State</span></span>
 
-<span data-ttu-id="84d64-104">若要在 Windows PowerShell 中重置计算机，请使用标准命令行工具或 WMI 类。</span><span class="sxs-lookup"><span data-stu-id="84d64-104">To reset a computer in Windows PowerShell, use either a standard command-line tool or a WMI class.</span></span> <span data-ttu-id="84d64-105">尽管你使用 Windows PowerShell 仅仅是为了运行该工具，但了解如何在 Windows PowerShell 中更改计算机的电源状态将阐明有关在 Windows PowerShell 中使用外部工具的一些重要详细信息。</span><span class="sxs-lookup"><span data-stu-id="84d64-105">Although you are using Windows PowerShell only to run the tool, learning how to change a computer's power state in Windows PowerShell illustrates some of the important details about working with external tools in Windows PowerShell.</span></span>
+<span data-ttu-id="651d6-104">若要在 Windows PowerShell 中重置计算机，请使用标准命令行工具或 WMI 类。</span><span class="sxs-lookup"><span data-stu-id="651d6-104">To reset a computer in Windows PowerShell, use either a standard command-line tool or a WMI class.</span></span> <span data-ttu-id="651d6-105">尽管你使用 Windows PowerShell 仅仅是为了运行该工具，但了解如何在 Windows PowerShell 中更改计算机的电源状态将阐明有关在 Windows PowerShell 中使用外部工具的一些重要详细信息。</span><span class="sxs-lookup"><span data-stu-id="651d6-105">Although you are using Windows PowerShell only to run the tool, learning how to change a computer's power state in Windows PowerShell illustrates some of the important details about working with external tools in Windows PowerShell.</span></span>
 
-### <a name="locking-a-computer"></a><span data-ttu-id="84d64-106">锁定计算机</span><span class="sxs-lookup"><span data-stu-id="84d64-106">Locking a Computer</span></span>
+### <a name="locking-a-computer"></a><span data-ttu-id="651d6-106">锁定计算机</span><span class="sxs-lookup"><span data-stu-id="651d6-106">Locking a Computer</span></span>
 
-<span data-ttu-id="84d64-107">使用标准可用工具直接锁定计算机的唯一方法是调用 **user32.dll** 中的 **LockWorkstation()** 函数：</span><span class="sxs-lookup"><span data-stu-id="84d64-107">The only way to lock a computer directly with the standard available tools is to call the **LockWorkstation()** function in **user32.dll**:</span></span>
+<span data-ttu-id="651d6-107">使用标准可用工具直接锁定计算机的唯一方法是调用 **user32.dll** 中的 **LockWorkstation()** 函数：</span><span class="sxs-lookup"><span data-stu-id="651d6-107">The only way to lock a computer directly with the standard available tools is to call the **LockWorkstation()** function in **user32.dll**:</span></span>
 
 ```
 rundll32.exe user32.dll,LockWorkStation
 ```
 
-<span data-ttu-id="84d64-108">此命令将立即锁定工作站。</span><span class="sxs-lookup"><span data-stu-id="84d64-108">This command immediately locks the workstation.</span></span> <span data-ttu-id="84d64-109">它使用 *rundll32.exe*，后者运行 Windows DLL（并保存其库以便重复使用）以运行 user32.dll（Windows 管理函数的库）。</span><span class="sxs-lookup"><span data-stu-id="84d64-109">It uses *rundll32.exe*, which runs Windows DLLs (and saves their libraries for repeated use) to run user32.dll, a library of Windows management functions.</span></span>
+<span data-ttu-id="651d6-108">此命令将立即锁定工作站。</span><span class="sxs-lookup"><span data-stu-id="651d6-108">This command immediately locks the workstation.</span></span> <span data-ttu-id="651d6-109">它使用 *rundll32.exe*，后者运行 Windows DLL（并保存其库以便重复使用）以运行 user32.dll（Windows 管理函数的库）。</span><span class="sxs-lookup"><span data-stu-id="651d6-109">It uses *rundll32.exe*, which runs Windows DLLs (and saves their libraries for repeated use) to run user32.dll, a library of Windows management functions.</span></span>
 
-<span data-ttu-id="84d64-110">如果在启用了“快速用户切换”时锁定工作站（例如在 Windows XP 中），则计算机将显示用户登录屏幕，而不会启动当前用户的屏幕保护程序。</span><span class="sxs-lookup"><span data-stu-id="84d64-110">When you lock a workstation while Fast User Switching is enabled, such as on Windows XP, the computer displays the user logon screen rather than starting the current user's screensaver.</span></span>
+<span data-ttu-id="651d6-110">如果在启用了“快速用户切换”时锁定工作站（例如在 Windows XP 中），则计算机将显示用户登录屏幕，而不会启动当前用户的屏幕保护程序。</span><span class="sxs-lookup"><span data-stu-id="651d6-110">When you lock a workstation while Fast User Switching is enabled, such as on Windows XP, the computer displays the user logon screen rather than starting the current user's screensaver.</span></span>
 
-<span data-ttu-id="84d64-111">若要关闭终端服务器上的特定会话，请使用 **tsshutdn.exe** 命令行工具。</span><span class="sxs-lookup"><span data-stu-id="84d64-111">To shut down particular sessions on a Terminal Server, use the **tsshutdn.exe** command-line tool.</span></span>
+<span data-ttu-id="651d6-111">若要关闭终端服务器上的特定会话，请使用 **tsshutdn.exe** 命令行工具。</span><span class="sxs-lookup"><span data-stu-id="651d6-111">To shut down particular sessions on a Terminal Server, use the **tsshutdn.exe** command-line tool.</span></span>
 
-### <a name="logging-off-the-current-session"></a><span data-ttu-id="84d64-112">注销当前会话</span><span class="sxs-lookup"><span data-stu-id="84d64-112">Logging Off the Current Session</span></span>
+### <a name="logging-off-the-current-session"></a><span data-ttu-id="651d6-112">注销当前会话</span><span class="sxs-lookup"><span data-stu-id="651d6-112">Logging Off the Current Session</span></span>
 
-<span data-ttu-id="84d64-113">可以使用多种不同的方法来注销本地系统上的会话。</span><span class="sxs-lookup"><span data-stu-id="84d64-113">You can use several different techniques to log off of a session on the local system.</span></span> <span data-ttu-id="84d64-114">最简单的方法是使用远程桌面/终端服务命令行工具 **logoff.exe**（若要了解有关详细信息，请在 Windows PowerShell 提示符处键入 **logoff /?**）。</span><span class="sxs-lookup"><span data-stu-id="84d64-114">The simplest way is to use the Remote Desktop/Terminal Services command-line tool, **logoff.exe** (For details, at the Windows PowerShell prompt, type **logoff /?**).</span></span> <span data-ttu-id="84d64-115">若要注销当前活动会话，请键入 **logoff** 而不带参数。</span><span class="sxs-lookup"><span data-stu-id="84d64-115">To log off the current active session, type **logoff** with no arguments.</span></span>
+<span data-ttu-id="651d6-113">可以使用多种不同的方法来注销本地系统上的会话。</span><span class="sxs-lookup"><span data-stu-id="651d6-113">You can use several different techniques to log off of a session on the local system.</span></span> <span data-ttu-id="651d6-114">最简单的方法是使用远程桌面/终端服务命令行工具 **logoff.exe**（若要了解有关详细信息，请在 Windows PowerShell 提示符处键入 **logoff /?**）。</span><span class="sxs-lookup"><span data-stu-id="651d6-114">The simplest way is to use the Remote Desktop/Terminal Services command-line tool, **logoff.exe** (For details, at the Windows PowerShell prompt, type **logoff /?**).</span></span> <span data-ttu-id="651d6-115">若要注销当前活动会话，请键入 **logoff** 而不带参数。</span><span class="sxs-lookup"><span data-stu-id="651d6-115">To log off the current active session, type **logoff** with no arguments.</span></span>
 
-<span data-ttu-id="84d64-116">你还可以使用具 **shutdown.exe** 工具及其 logoff 选项：</span><span class="sxs-lookup"><span data-stu-id="84d64-116">You can also use the **shutdown.exe** tool with its logoff option:</span></span>
+<span data-ttu-id="651d6-116">你还可以使用具 **shutdown.exe** 工具及其 logoff 选项：</span><span class="sxs-lookup"><span data-stu-id="651d6-116">You can also use the **shutdown.exe** tool with its logoff option:</span></span>
 
 ```
 shutdown.exe -l
 ```
 
-<span data-ttu-id="84d64-117">第三个选项是使用 WMI。</span><span class="sxs-lookup"><span data-stu-id="84d64-117">A third option is to use WMI.</span></span> <span data-ttu-id="84d64-118">Win32_OperatingSystem 类具有 Win32Shutdown 方法。</span><span class="sxs-lookup"><span data-stu-id="84d64-118">The Win32_OperatingSystem class has a Win32Shutdown method.</span></span> <span data-ttu-id="84d64-119">调用具有 0 标志的方法将启动注销：</span><span class="sxs-lookup"><span data-stu-id="84d64-119">Invoking the method with the 0 flag initiates logoff:</span></span>
+<span data-ttu-id="651d6-117">第三个选项是使用 WMI。</span><span class="sxs-lookup"><span data-stu-id="651d6-117">A third option is to use WMI.</span></span> <span data-ttu-id="651d6-118">Win32_OperatingSystem 类具有 Win32Shutdown 方法。</span><span class="sxs-lookup"><span data-stu-id="651d6-118">The Win32_OperatingSystem class has a Win32Shutdown method.</span></span> <span data-ttu-id="651d6-119">调用具有 0 标志的方法将启动注销：</span><span class="sxs-lookup"><span data-stu-id="651d6-119">Invoking the method with the 0 flag initiates logoff:</span></span>
 
 ```powershell
 (Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(0)
 ```
 
-<span data-ttu-id="84d64-120">若要了解有关详细信息和 Win32Shutdown 方法的其他功能，请参阅 MSDN 中的“Win32_OperatingSystem 类的 Win32Shutdown 方法”。</span><span class="sxs-lookup"><span data-stu-id="84d64-120">For more information, and to find other features of the Win32Shutdown method, see "Win32Shutdown Method of the Win32_OperatingSystem Class" in MSDN.</span></span>
+<span data-ttu-id="651d6-120">若要了解有关详细信息和 Win32Shutdown 方法的其他功能，请参阅 MSDN 中的“Win32_OperatingSystem 类的 Win32Shutdown 方法”。</span><span class="sxs-lookup"><span data-stu-id="651d6-120">For more information, and to find other features of the Win32Shutdown method, see "Win32Shutdown Method of the Win32_OperatingSystem Class" in MSDN.</span></span>
 
-### <a name="shutting-down-or-restarting-a-computer"></a><span data-ttu-id="84d64-121">关闭或重启计算机</span><span class="sxs-lookup"><span data-stu-id="84d64-121">Shutting Down or Restarting a Computer</span></span>
+### <a name="shutting-down-or-restarting-a-computer"></a><span data-ttu-id="651d6-121">关闭或重启计算机</span><span class="sxs-lookup"><span data-stu-id="651d6-121">Shutting Down or Restarting a Computer</span></span>
 
-<span data-ttu-id="84d64-122">关闭和重启计算机通常是相同类型的任务。</span><span class="sxs-lookup"><span data-stu-id="84d64-122">Shutting down and restarting computers are generally the same types of task.</span></span> <span data-ttu-id="84d64-123">关闭计算机的工具通常也可以重启计算机，反之亦然。</span><span class="sxs-lookup"><span data-stu-id="84d64-123">Tools that shut down a computer will generally restart it as well—and vice versa.</span></span> <span data-ttu-id="84d64-124">从 Windows PowerShell 重启计算机有两个直接的选项。</span><span class="sxs-lookup"><span data-stu-id="84d64-124">There are two straightforward options for restarting a computer from Windows PowerShell.</span></span> <span data-ttu-id="84d64-125">使用 Tsshutdn.exe 或 Shutdown.exe 及其相应参数。</span><span class="sxs-lookup"><span data-stu-id="84d64-125">Use either Tsshutdn.exe or Shutdown.exe with appropriate arguments.</span></span> <span data-ttu-id="84d64-126">你可以从 **tsshutdn.exe /?**</span><span class="sxs-lookup"><span data-stu-id="84d64-126">You can get detailed usage information from **tsshutdn.exe /?**</span></span> <span data-ttu-id="84d64-127">或 **shutdown.exe /?** 获取详细的使用情况信息。</span><span class="sxs-lookup"><span data-stu-id="84d64-127">or **shutdown.exe /?**.</span></span>
+<span data-ttu-id="651d6-122">关闭和重启计算机通常是相同类型的任务。</span><span class="sxs-lookup"><span data-stu-id="651d6-122">Shutting down and restarting computers are generally the same types of task.</span></span> <span data-ttu-id="651d6-123">关闭计算机的工具通常也可以重启计算机，反之亦然。</span><span class="sxs-lookup"><span data-stu-id="651d6-123">Tools that shut down a computer will generally restart it as well—and vice versa.</span></span> <span data-ttu-id="651d6-124">从 Windows PowerShell 重启计算机有两个直接的选项。</span><span class="sxs-lookup"><span data-stu-id="651d6-124">There are two straightforward options for restarting a computer from Windows PowerShell.</span></span> <span data-ttu-id="651d6-125">使用 Tsshutdn.exe 或 Shutdown.exe 及其相应参数。</span><span class="sxs-lookup"><span data-stu-id="651d6-125">Use either Tsshutdn.exe or Shutdown.exe with appropriate arguments.</span></span> <span data-ttu-id="651d6-126">你可以从 **tsshutdn.exe /?**</span><span class="sxs-lookup"><span data-stu-id="651d6-126">You can get detailed usage information from **tsshutdn.exe /?**</span></span> <span data-ttu-id="651d6-127">或 **shutdown.exe /?** 获取详细的使用情况信息。</span><span class="sxs-lookup"><span data-stu-id="651d6-127">or **shutdown.exe /?**.</span></span>
 
-<span data-ttu-id="84d64-128">也可以直接从 Windows PowerShell 执行关闭或重启操作。</span><span class="sxs-lookup"><span data-stu-id="84d64-128">You can also perform shutdown and restart operations directly from Windows PowerShell as well.</span></span>
+<span data-ttu-id="651d6-128">也可以直接从 Windows PowerShell 执行关闭或重启操作。</span><span class="sxs-lookup"><span data-stu-id="651d6-128">You can also perform shutdown and restart operations directly from Windows PowerShell as well.</span></span>
 
-<span data-ttu-id="84d64-129">若要关闭计算机，请使用 stop-computer 命令</span><span class="sxs-lookup"><span data-stu-id="84d64-129">To shut down the computer, use the stop-computer command</span></span>
+<span data-ttu-id="651d6-129">要关闭计算机，请使用 Stop-Computer 命令</span><span class="sxs-lookup"><span data-stu-id="651d6-129">To shut down the computer, use the Stop-Computer command</span></span>
 
 ```powershell
-stop-computer
+Stop-Computer
 ```
 
-<span data-ttu-id="84d64-130">若要重启操作系统，请使用 restart-computer 命令</span><span class="sxs-lookup"><span data-stu-id="84d64-130">To restart the operating system, use the restart-computer command</span></span>
+<span data-ttu-id="651d6-130">要重启操作系统，请使用 Restart-Computer 命令</span><span class="sxs-lookup"><span data-stu-id="651d6-130">To restart the operating system, use the Restart-Computer command</span></span>
 
 ```powershell
-restart-computer
+Restart-Computer
+```
+
+<span data-ttu-id="651d6-131">要强制立即重新启动计算机，请使用 -Force 参数。</span><span class="sxs-lookup"><span data-stu-id="651d6-131">To force an immediate restart of the computer, use the -Force parameter.</span></span>
+
+```powershell
+Restart-Computer -Force
 ```
