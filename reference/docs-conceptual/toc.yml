@@ -181,14 +181,10 @@ items:
     href: getting-started/cookbooks/changing-computer-state.md
   - name: 收集有关计算机的信息
     href: getting-started/cookbooks/collecting-information-about-computers.md
-  - name: 创建 .NET 和 COM 对象 - New-Object
-    href: getting-started/cookbooks/creating-.net-and-com-objects--new-object-.md
   - name: 创建自定义输入框
     href: getting-started/cookbooks/creating-a-custom-input-box.md
   - name: 创建图形日期选取器
     href: getting-started/cookbooks/creating-a-graphical-date-picker.md
-  - name: 获取 WMI 对象 - Get-WmiObject
-    href: getting-started/cookbooks/getting-wmi-objects--get-wmiobject-.md
   - name: 管理当前位置
     href: getting-started/cookbooks/managing-current-location.md
   - name: 使用 Process Cmdlet 管理进程
@@ -207,20 +203,10 @@ items:
     href: getting-started/cookbooks/performing-networking-tasks.md
   - name: 使用 Out-* Cmdlet 重定向数据
     href: getting-started/cookbooks/redirecting-data-with-out---cmdlets.md
-  - name: 从管道中删除对象 - Where-Object
-    href: getting-started/cookbooks/removing-objects-from-the-pipeline--where-object-.md
-  - name: 为多个对象重复执行任务 - ForEach-Object
-    href: getting-started/cookbooks/repeating-a-task-for-multiple-objects--foreach-object-.md
   - name: 从列表框中选择项
     href: getting-started/cookbooks/selecting-items-from-a-list-box.md
-  - name: 选择对象部件 - Select-Object
-    href: getting-started/cookbooks/selecting-parts-of-objects--select-object-.md
-  - name: 对对象进行排序
-    href: getting-started/cookbooks/sorting-objects.md
   - name: 使用格式命令更改输出视图
     href: getting-started/cookbooks/using-format-commands-to-change-output-view.md
-  - name: 使用静态类和方法
-    href: getting-started/cookbooks/using-static-classes-and-methods.md
   - name: 查看对象结构 - Get-Member
     href: getting-started/cookbooks/viewing-object-structure--get-member-.md
   - name: 使用文件和文件夹
@@ -229,6 +215,21 @@ items:
     href: getting-started/cookbooks/working-with-files-folders-and-registry-keys.md
   - name: 使用对象
     href: getting-started/cookbooks/working-with-objects.md
+    items:
+    - name: 获取 WMI 对象 - Get-WmiObject
+      href: getting-started/cookbooks/getting-wmi-objects--get-wmiobject-.md
+    - name: 创建 .NET 和 COM 对象 - New-Object
+      href: getting-started/cookbooks/creating-.net-and-com-objects--new-object-.md
+    - name: 从管道中删除对象 - Where-Object
+      href: getting-started/cookbooks/removing-objects-from-the-pipeline--where-object-.md
+    - name: 选择对象部件 - Select-Object
+      href: getting-started/cookbooks/selecting-parts-of-objects--select-object-.md
+    - name: 对对象进行排序
+      href: getting-started/cookbooks/sorting-objects.md
+    - name: 为多个对象重复执行任务 - ForEach-Object
+      href: getting-started/cookbooks/repeating-a-task-for-multiple-objects--foreach-object-.md
+    - name: 使用静态类和方法
+      href: getting-started/cookbooks/using-static-classes-and-methods.md
   - name: 使用打印机
     href: getting-started/cookbooks/working-with-printers.md
   - name: 使用注册表条目
@@ -241,9 +242,9 @@ items:
     href: getting-started/cookbooks/appendix-1---compatibility-aliases.md
   - name: 附录 2 - 创建自定义 PowerShell 快捷方式
     href: getting-started/cookbooks/appendix-2---creating-a-custom-powershell-shortcut.md
-ms.openlocfilehash: 426f1336debdcd8b74b9e1954cebe49bfa7c82ea
-ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
+ms.openlocfilehash: e1cc2802354cbb58a8d4cc19903a62339aa333b5
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45557137"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225737"
