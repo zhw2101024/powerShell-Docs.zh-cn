@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 使用 PowerShell 类编写自定义 DSC 资源
-ms.openlocfilehash: f2500bfb41302cbeaf3cb9d23b843f26f01c1d5b
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a8f08323f2cced8a17de4224bea94a54ba5ef0cd
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189459"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50226077"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>使用 PowerShell 类编写自定义 DSC 资源
 

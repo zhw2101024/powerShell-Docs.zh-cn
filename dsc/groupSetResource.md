@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 description: 提供了管理目标节点上的本地组的机制。
 title: DSC GroupSet 资源
-ms.openlocfilehash: 487a76ca7703b2c57b940b4c5bd176eada6c8019
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 6fa8e9637da896848e859dc60a42add12e973b34
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892420"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50226111"
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet 资源
 
