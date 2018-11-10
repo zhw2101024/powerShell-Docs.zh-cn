@@ -3,21 +3,21 @@ ms.date: 10/17/2017
 contributor: keithb
 keywords: 库,powershell,cmdlet,psget
 title: 预发行版脚本
-ms.openlocfilehash: 14ae1968e5ee73260b6eae05b11185069d047e93
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: 4e7eab682008ed57163c51fe3a61a744b347bef2
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268460"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002729"
 ---
 # <a name="prerelease-versions-of-scripts"></a>预发行版脚本
 
-从版本 1.6.0 开始，PowerShellGet 和 PowerShell 库都支持将 1.0.0 以上的版本标记为预发行版。 在此功能之前，预发行项仅限于以 0 开头的版本。 这些功能的目标是为 [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) 版本控制约定提供更好的支持，并且不会破坏 PowerShell 版本 3 及更高版本或 PowerShellGet 现有版本的向后兼容性。 本主题重点介绍特定于脚本的功能。 模块的等效功能在[预发行模块版本](module-prerelease-support.md)主题中介绍。 使用这些功能，发布服务器可以将脚本标识为 2.5.0-alpha 版，随后可发布用于取代预发行版本的 2.5.0 生产就绪版。
+从版本 1.6.0 开始，PowerShellGet 和 PowerShell 库都支持将 1.0.0 以上的版本标记为预发行版。 在此功能之前，预发行包仅限于以 0 开头的版本。 这些功能的目标是为 [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) 版本控制约定提供更好的支持，并且不会破坏 PowerShell 版本 3 及更高版本或 PowerShellGet 现有版本的向后兼容性。 本主题重点介绍特定于脚本的功能。 模块的等效功能在[预发行模块版本](module-prerelease-support.md)主题中介绍。 使用这些功能，发布服务器可以将脚本标识为 2.5.0-alpha 版，随后可发布用于取代预发行版本的 2.5.0 生产就绪版。
 
 在高级别中，预发行版脚本功的能包括：
 
-- 将预发行版字符串后缀添加到脚本清单中的版本字符串。 当脚本发布到 PowerShell 库后，会从清单中提取此数据，用于标识预发行项。
-- 获取预发行项要求将 -AllowPrerelease 标志添加到 PowerShellGet 命令 Find-Script、Install-Script、Update-Script 和 Save-Script。 如果未指定标志，则不会显示预发行项。
+- 将预发行版字符串后缀添加到脚本清单中的版本字符串。 当脚本发布到 PowerShell 库后，会从清单中提取此数据，用于标识预发行包。
+- 获取预发行包要求将 -AllowPrerelease 标记添加到 PowerShellGet 命令 Find-Script、Install-Script、Update-Script 和 Save-Script。 如果未指定标记，则不会显示预发行包。
 - Find-Script、Get-InstalledScript 显示的脚本版本，以及在 PowerShell 库中显示的脚本版本在显示时会附加预发行版字符串，如 2.5.0-alpha。
 
 以下介绍了这些功能的详细信息。
@@ -54,9 +54,9 @@ PowerShellGet 对脚本的预发行版本的支持比模块更容易。 仅 Powe
 
 在发布到 PowerShell 库时，默认情况下，发布的脚本版本必须高于 PowerShell 库中以前发布的任何版本。 发布服务器可能会使用 2.5.0-beta 或不具有预发行版后缀的 2.5.0 更新版本 2.5.0-alpha。
 
-## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>使用 PowerShellGet 命令查找和获取预发行项
+## <a name="finding-and-acquiring-prerelease-packages-using-powershellget-commands"></a>使用 PowerShellGet 命令查找和获取预发行包
 
-使用 PowerShellGet Find-Script、Install-Script、Update-Script 和 Save-Script 命令处理预发行项需要添加 -AllowPrerelease 标志。 如果已指定 -AllowPrerelease，则会包括预发行项（如存在）。 如果未指定 -AllowPrerelease 标志，则不会显示预发行项。
+使用 PowerShellGet Find-Script、Install-Script、Update-Script 和 Save-Script 命令处理预发行包需要添加 -AllowPrerelease 标记。 如果已指定 -AllowPrerelease，则会包括预发行包（如存在）。 如果未指定 -AllowPrerelease 标记，则不会显示预发行包。
 
 PowerShellGet 脚本命令中这种情况的唯一例外是 Get-InstalledScript，以及某些情况下的 Uninstall-Script。
 

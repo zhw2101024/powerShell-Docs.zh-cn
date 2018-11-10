@@ -3,21 +3,21 @@ ms.date: 09/26/2017
 contributor: keithb
 keywords: 库,powershell,cmdlet,psget
 title: 预发行模块版本
-ms.openlocfilehash: 9c3ddb623fbcb7f4b3453dd70cdc56a8dc2e9f6a
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: f58b5adfeba7ed06d231c76accbd52508c7d67d6
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268613"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002763"
 ---
 # <a name="prerelease-module-versions"></a>预发行模块版本
 
-从版本 1.6.0 开始，PowerShellGet 和 PowerShell 库都支持将 1.0.0 以上的版本标记为预发行版。 在此功能之前，预发行项仅限于以 0 开头的版本。 这些功能的目标是为 [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) 版本控制约定提供更好的支持，并且不会破坏 PowerShell 版本 3 及更高版本或 PowerShellGet 现有版本的向后兼容性。 本主题重点介绍特定于模块的功能。 脚本的等效功能在[预发行版脚本](script-prerelease-support.md)主题中介绍。 使用这些功能，发布服务器可以将模块或脚本标识为版本 2.5.0-alpha，随后可发布用于取代预发行版本的生产就绪版本 2.5.0。
+从版本 1.6.0 开始，PowerShellGet 和 PowerShell 库都支持将 1.0.0 以上的版本标记为预发行版。 在此功能之前，预发行包仅限于以 0 开头的版本。 这些功能的目标是为 [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) 版本控制约定提供更好的支持，并且不会破坏 PowerShell 版本 3 及更高版本或 PowerShellGet 现有版本的向后兼容性。 本主题重点介绍特定于模块的功能。 脚本的等效功能在[预发行版脚本](script-prerelease-support.md)主题中介绍。 使用这些功能，发布服务器可以将模块或脚本标识为版本 2.5.0-alpha，随后可发布用于取代预发行版本的生产就绪版本 2.5.0。
 
 在高级别中，预发行模块的功能包括：
 
-- 在模块清单的 PSData 部分添加预发行版字符串将模块标识为预发行版本。 当模块发布到 PowerShell 库后，会从清单中提取此数据，用于标识预发行项。
-- 获取预发行项需要将 `-AllowPrerelease` 标志添加到 PowerShellGet 命令 `Find-Module`、`Install-Module`、`Update-Module` 和 `Save-Module`。 如果未指定标志，则不会显示预发行项。
+- 在模块清单的 PSData 部分添加预发行版字符串将模块标识为预发行版本。 当模块发布到 PowerShell 库后，会从清单中提取此数据，用于标识预发行包。
+- 获取预发行包需要将 `-AllowPrerelease` 标记添加到 PowerShellGet 命令 `Find-Module`、`Install-Module`、`Update-Module` 和 `Save-Module`。 如果未指定标记，则不会显示预发行包。
 - `Find-Module`、`Get-InstalledModule` 显示的模块版本及在 PowerShell 库中显示的模块版本将显示为附加了预发行版字符串的单个字符串，如 2.5.0-alpha。
 
 以下介绍了这些功能的详细信息。
@@ -51,7 +51,7 @@ PowerShellGet 对预发行版本的支持要求在模块清单中使用两个字
 
 - ModuleVersion 为 Major.Minor.Build 的 3 段时，可能只指定预发行版字符串。 这符合 SemVer v1.0.0 的要求。
 - 连字符是内部版本号和预发行版字符串之间的分隔符。 连字符只能作为第一个字符包含在预发行版字符串中。
-- 预发行版字符串可以只包含 ASCII 字母数字 [0-9A-Za-z-]。 预发行版字符串最好以 alpha 字符开头，这样在扫描项列表时，可以更轻松地辨认这是预发行版本。
+- 预发行版字符串可以只包含 ASCII 字母数字 [0-9A-Za-z-]。 预发行版字符串最好以 alpha 字符开头，这样在扫描包列表时，可以更轻松地辨认这是预发行版本。
 - 此时仅支持 SemVer v1.0.0 预发行字符串。 预发行版字符串不得包含句点或 + [.+]，而在 SemVer 2.0 中允许包含。
 - 支持的预发行版字符串的示例包括：-alpha、-alpha1、-BETA、-update20171020
 
@@ -61,9 +61,9 @@ PowerShellGet 对预发行版本的支持要求在模块清单中使用两个字
 
 在发布到 PowerShell 库时，默认情况下，发布的模块版本必须高于 PowerShell 库中以前发布的任何版本。
 
-## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>使用 PowerShellGet 命令查找和获取预发行项
+## <a name="finding-and-acquiring-prerelease-packages-using-powershellget-commands"></a>使用 PowerShellGet 命令查找和获取预发行包
 
-使用 PowerShellGet Find-Module、Install-Module、Update-Module 和 Save-Module 命令处理预发行项需要添加 -AllowPrerelease 标志。 如果已指定 -AllowPrerelease，则会包括预发行项（如存在）。 如果未指定 -AllowPrerelease 标志，则不会显示预发行项。
+使用 PowerShellGet Find-Module、Install-Module、Update-Module 和 Save-Module 命令处理预发行包需要添加 -AllowPrerelease 标记。 如果已指定 -AllowPrerelease，则会包括预发行包（如存在）。 如果未指定 -AllowPrerelease 标记，则不会显示预发行包。
 
 PowerShellGet 模块命令中这种情况的唯一例外是 Get-InstalledModule，以及某些情况下的 Uninstall-Module。
 

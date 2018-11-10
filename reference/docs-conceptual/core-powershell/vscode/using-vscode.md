@@ -2,12 +2,12 @@
 title: 使用 Visual Studio Code 进行 PowerShell 开发
 description: 使用 Visual Studio Code 进行 PowerShell 开发
 ms.date: 08/06/2018
-ms.openlocfilehash: 8fbaba826624199d06fe4fdc785998e0135d7fe7
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 9c06ce72c39d08e75fcb7e5cf9d5f92ae5dd8ed9
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134094"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225788"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>使用 Visual Studio Code 进行 PowerShell 开发
 
@@ -124,12 +124,11 @@ ms.locfileid: "43134094"
 - 在调试器中启动交互会话
 - 将调试器附加到 PowerShell 主机进程
 
-  按照以下步骤创建调试配置文件：
+按照以下步骤创建调试配置文件：
 
   1. 按 Ctrl+Shift+D（Mac 上为 Cmd+Shift+D）打开“调试”视图。
   2. 按工具栏中的“配置”齿轮图标。
-  3. Visual Studio Code 将提示“选择环境”。
-  选择“PowerShell”。
+  3. Visual Studio Code 将提示“选择环境”。 选择“PowerShell”。
 
   执行此操作时，Visual Studio Code 会在工作区文件夹的根中创建一个目录和一个“.vscode\launch.json”文件。
   这是调试配置的存储位置。 如果文件位于 Git 存储库中，则通常需要提交 launch.json 文件。
@@ -171,9 +170,7 @@ ms.locfileid: "43134094"
 
   调试配置建立后，可以在“调试”视图工具栏中的调试配置下拉列表中选择要在调试会话中使用的配置。
 
-  以下博客可能提供有关将 PowerShell 扩展用于 Visual Studio Code 的有用帮助
-
-Visual Studio Code：
+以下博客提供有关将 PowerShell 扩展用于 Visual Studio Code 的有用入门帮助：
 
 - [PowerShell 扩展插件][ps-extension]
 - [在 Visual Studio Code 中编写和调试 PowerShell 脚本][debug]

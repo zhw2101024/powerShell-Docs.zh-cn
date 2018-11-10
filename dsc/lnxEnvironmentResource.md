@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 适用于 Linux nxEnvironment 资源的 DSC
-ms.openlocfilehash: 3c9f39760e0fba7fac060f29f9e808a3a434401f
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 763ec560faa6adaf42aef3c21c9045be95f780bc
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189476"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225975"
 ---
 # <a name="dsc-for-linux-nxenvironment-resource"></a>适用于 Linux nxEnvironment 资源的 DSC
 
-PowerShell Desired State Configuration (DSC) 中的 **nxEnvironment** 资源提供了管理 Linux 节点上系统环境变量的机制。
+PowerShell Desired State Configuration (DSC) 中的 nxEnvironment 资源提供了管理 Linux 节点上系统环境变量的机制。
 
 ## <a name="syntax"></a>语法
 

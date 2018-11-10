@@ -1,13 +1,13 @@
 ---
 title: 在 macOS 上安装 PowerShell Core
 description: 介绍如何在 macOS 上安装 PowerShell Core
-ms.date: 08/06/2018
-ms.openlocfilehash: 042c933dfa83f3ab52e315036e4f817145116d00
-ms.sourcegitcommit: aa41249f153bbc6e11667ade60c878980c15abc6
+ms.date: 11/02/2018
+ms.openlocfilehash: 162e841bf71d708e9db84ea1bb2dbef13924783b
+ms.sourcegitcommit: f4247d3f91d06ec392c4cd66921ce7d0456a2bd9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45611481"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "50998497"
 ---
 # <a name="installing-powershell-core-on-macos"></a>在 macOS 上安装 PowerShell Core
 
@@ -15,10 +15,14 @@ PowerShell Core 支持 macOS 10.12 和更高版本。
 GitHub [版本][]页面上提供有所有可用包。
 安装包以后，从终端运行 `pwsh`。
 
-## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>通过 Homebrew 在 macOS 10.12 或更高版本上安装最新的稳定版本
+## <a name="about-brew"></a>关于 Brew
 
 [Homebrew][brew] 是 macOS 的首选包管理器。
 如果未找到 `brew` 命令，则需要按照[说明][brew]安装 Homebrew。
+
+## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>通过 Homebrew 在 macOS 10.12 或更高版本上安装最新的稳定版本
+
+有关 Brew 的信息，请参阅[关于 Brew](#about-brew)。
 
 现在，可以开始安装 PowerShell：
 
@@ -40,15 +44,13 @@ brew cask upgrade powershell
 ```
 
 > [!NOTE]
-> 可能会从 PowerShell (pwsh) 主机调用上面的命令，但是调用后必须退出 PowerShell 并重新启动以完成升级。
-> 然后刷新 $PSVersionTable 中显示的值。
+> 可从 PowerShell (pwsh) 主机调用上面的命令，但是调用后必须退出 PowerShell 并重启以完成升级，并刷新 $PSVersionTable 中显示的值。
 
 [brew]: http://brew.sh/
 
 ## <a name="installation-of-latest-preview-release-via-homebrew-on-macos-1012-or-higher"></a>通过 Homebrew 在 macOS 10.12 或更高版本上安装最新的预览版
 
-[Homebrew][brew] 是 macOS 的首选包管理器。
-如果未找到 `brew` 命令，则需要按照[说明][brew]安装 Homebrew。
+有关 Brew 的信息，请参阅[关于 Brew](#about-brew)。
 
 安装 Homebrew 后，安装 PowerShell 就变得很容易。
 首先，安装 [Cask-Versions ][cask-versions]，通过它可安装替代版本的 cask 包：
@@ -91,6 +93,8 @@ brew cask upgrade powershell-preview
 sudo installer -pkg powershell-6.1.0-osx-x64.pkg -target /
 ```
 
+安装 [OpenSSL](#install-openssl)，因为这是执行 PowerShell 远程处理和 CIM 操作所必需的。
+
 ## <a name="binary-archives"></a>二进制存档
 
 已对 macOS 平台提供 PowerShell 二进制 `tar.gz` 存档，以启用高级部署方案。
@@ -112,6 +116,41 @@ sudo chmod +x /usr/local/microsoft/powershell/6.1.0/pwsh
 
 # Create the symbolic link that points to pwsh
 sudo ln -s /usr/local/microsoft/powershell/6.1.0/pwsh /usr/local/bin/pwsh
+```
+
+安装 [OpenSSL](#install-openssl)，因为这是执行 PowerShell 远程处理和 CIM 操作所必需的。
+
+## <a name="installing-dependencies"></a>安装依赖关系
+
+### <a name="install-xcode-command-line-tools"></a>安装 XCode 命令行工具
+
+```shell
+xcode-select -install
+```
+
+### <a name="install-openssl"></a>安装 OpenSSL
+
+PowerShell 远程处理和 CIM 操作均需要 OpenSSL。  可以通过 MacPorts 或 Brew 进行安装。
+
+#### <a name="install-openssl-via-brew"></a>通过 Brew 安装 OpenSSL
+
+有关 Brew 的信息，请参阅[关于 Brew](#about-brew)。
+
+运行 `brew install openssl` 以安装 OpenSSL。
+
+#### <a name="install-openssl-via-macports"></a>通过 MacPorts 安装 OpenSSL
+
+1. 安装 [XCode 命令行工具](#install-xcode-command-line-tools)
+1. 安装 MacPorts。
+   如需说明，请参阅[安装指南](https://guide.macports.org/chunked/installing.macports.html)。
+1. 通过运行 `sudo port selfupdate` 更新 MacPorts
+1. 通过运行 `sudo port upgrade outdated` 升级 MacPorts 包
+1. 通过运行 `sudo port instal openssl` 安装 OpenSSL
+1. 链接库，以便 PowerShell 可以使用它。
+
+```shell
+sudo mkdir -p /usr/local/opt/openssl
+sudo ln -s /opt/local/lib /usr/local/opt/openssl/lib
 ```
 
 ## <a name="uninstalling-powershell-core"></a>卸载 PowerShell Core
@@ -149,7 +188,7 @@ sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 PowerShell 采用 macOS 上的 [XDG Base Directory 规范][xdg-bds]。
 
 由于 macOS 派生自 BSD，因此前缀为 `/usr/local`而不是 `/opt`。
-因此，`$PSHOME` 为 `/usr/local/microsoft/powershell/6.1.0/`，且 symlink 位于 `/usr/local/bin/pwsh` 中。
+因此，`$PSHOME` 为 `/usr/local/microsoft/powershell/6.1.0/`，且符号链接位于 `/usr/local/bin/pwsh` 中。
 
 ## <a name="additional-resources"></a>其他资源
 

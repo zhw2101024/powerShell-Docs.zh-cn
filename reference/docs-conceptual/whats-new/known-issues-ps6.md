@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell, 核心
 title: PowerShell 6.0 的已知问题
-ms.openlocfilehash: e3e718be903ff2223064d5790d3d0fe554ef04cd
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
+ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39267994"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49450990"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell 6.0 的已知问题
 
@@ -90,9 +90,9 @@ Linux/macOS 上的 PowerShell 目前无法创建约束管理 (JEA) 远程处理�
 
 ### <a name="sudo-exec-and-powershell"></a>`sudo`、`exec` 和 PowerShell
 
-由于 PowerShell 在内存（如 Python 或 Ruby）中运行大多数命令，不能直接将 sudo 与 PowerShell 内置项一起使用。（当然，可以从 sudo 运行 `powershell`。）如果需要使用 sudo（例如，`sudo `Set-Date` 8/18/2016`）从 PowerShell 内运行 PowerShell cmdlet，则要执行 `sudo powershell `Set-Date` 8/18/2016`。 同样，不能直接执行 PowerShell 内置项。 而必须执行 `exec powershell item_to_exec`。
+由于 PowerShell 在内存（如 Python 或 Ruby）中运行大多数命令，不能直接将 sudo 与 PowerShell 内置项一起使用。（当然，可以从 sudo 运行 `pwsh`。）如果需要使用 sudo（例如，`sudo Set-Date 8/18/2016`）从 PowerShell 内运行 PowerShell cmdlet，则要执行 `sudo pwsh Set-Date 8/18/2016`。 同样，不能直接执行 PowerShell 内置项。 而必须执行 `exec pwsh item_to_exec`。
 
-此问题目前作为 #3232 的一部分进行跟踪。
+此问题目前作为 [#3232](https://github.com/PowerShell/PowerShell/issues/3232) 的一部分进行跟踪。
 
 ### <a name="missing-cmdlets"></a>缺少 Cmdlet
 

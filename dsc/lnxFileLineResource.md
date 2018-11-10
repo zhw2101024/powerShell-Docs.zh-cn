@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 适用于 Linux nxFileLine 资源的 DSC
-ms.openlocfilehash: f2a989dd3a6746948e09ba94e279c02be8ebe2de
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 6a91db25638b09659adfabcec78f91bcb2e69dd9
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893291"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225584"
 ---
 # <a name="dsc-for-linux-nxfileline-resource"></a>适用于 Linux nxFileLine 资源的 DSC
 
-PowerShell Desired State Configuration (DSC) 中的 **nxFileLine** 资源提供了管理 Linux 节点上配置文件中的行的机制。
+PowerShell Desired State Configuration (DSC) 中的 nxFileLine 资源提供了管理 Linux 节点上配置文件中的行的机制。
 
 ## <a name="syntax"></a>语法
 

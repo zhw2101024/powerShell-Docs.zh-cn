@@ -3,18 +3,18 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: 需要接受许可证的模块
-ms.openlocfilehash: 93f92f6e83bcf18a40c3d89eb39a154e16ca5063
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 369e32d5278a2e1bf1d3f2ae67f670c524b9f878
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893104"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002661"
 ---
 # <a name="modules-requiring-license-acceptance"></a>需要接受许可证的模块
 
 ## <a name="synopsis"></a>简述
 
-某些模块发布者的法律部门需要客户在从 PowerShell 库安装其模块之前，必须明确接受许可证。 如果用户使用 PowerShellGet 安装、更新或保存模块（无论是以直接方式还是作为另一个项的依赖项），并且该模块需要用户同意许可证，则用户必须表示其接受学科正，否则操作将失败。
+某些模块发布者的法律部门需要客户在从 PowerShell 库安装其模块之前，必须明确接受许可证。 如果用户使用 PowerShellGet 安装、更新或保存模块（无论是以直接方式还是作为另一个包的依赖项），并且该模块需要用户同意许可证，则用户必须表示其接受许可证，否则操作将失败。
 
 ## <a name="publish-requirements-for-modules"></a>发布模块的要求
 
@@ -43,7 +43,7 @@ ms.locfileid: "37893104"
 
 - 在安装/保存/更新操作期间，如果依赖模块（依赖于该模块的其他内容）需要接受许可证，则将需要接受许可证行为（上述）。
 - 如果在系统中安装模块时已在本地目录中列出模块版本，我们将绕过许可证检查。
-- 在安装/保存/更新操作期间，如果依赖模块需要许可证，且接受许可证并未发生，则操作将失败，并遵循项安装/保存/更新失败的正常流程。
+- 在安装/保存/更新操作期间，如果依赖模块需要许可证，且接受许可证并未发生，则操作将失败，并遵循包安装/保存/更新失败的正常流程。
 
 ## <a name="impact-on--force"></a>对 -Force 的影响
 
@@ -219,6 +219,6 @@ Update-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
 
 [需要为脚本接受许可证](./script-license-acceptance.md)
 
-[PowerShellGallery 上的需要接受许可证支持](../how-to/working-with-items/items-that-require-license-acceptance.md)
+[PowerShellGallery 上的需要接受许可证支持](../how-to/working-with-packages/packages-that-require-license-acceptance.md)
 
-[在部署到 Azure 自动化时需要接受许可证](../how-to/working-with-items/deploy-to-azure-automation.md)
+[在部署到 Azure 自动化时需要接受许可证](../how-to/working-with-packages/deploy-to-azure-automation.md)

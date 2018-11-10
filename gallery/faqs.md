@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 title: PowerShell 库常见问题解答
-ms.openlocfilehash: e377e71cf5eeb1f8b73430cc0b97527eac970cff
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3fa52892ce50491c040251baae8b4ae4ee3dcba0
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190428"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002866"
 ---
 # <a name="frequently-asked-questions"></a>常见问题
 
@@ -29,30 +29,30 @@ PowerShell 脚本是存储在.ps1 文件中的一系列命令，用于启用重�
 
 ## <a name="how-can-i-publish-to-the-powershell-gallery"></a>如何发布到 PowerShell 库？
 
-必须在 PowerShell 库中注册帐户后才可将项发布到库中。 原因是发布项需要注册时提供的 NuGetApiKey。 若要注册，请使用个人、工作或学校帐户登录到 PowerShell 库。 第一次登录时需要一次性注册过程。 此后，个人资料页上会提供 NuGetApiKey。
+必须先在 PowerShell 库中注册帐户，然后才能将包发布到库中。 这是因为发布包需要注册时提供的 NuGetApiKey。 若要注册，请使用个人、工作或学校帐户登录到 PowerShell 库。 第一次登录时需要一次性注册过程。 此后，个人资料页上会提供 NuGetApiKey。
 
-在库中注册后，使用 [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 或 [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet 将项发布到库中。 有关如何运行这些 cmdlet 的详细信息，请访问“发布”选项卡，或阅读 [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 和 [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 文档。
+在库中注册后，使用 [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 或 [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet 将包发布到库中。 有关如何运行这些 cmdlet 的详细信息，请访问“发布”选项卡，或阅读 [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 和 [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 文档。
 
-**安装或保存项无需注册或登录到库。**
+安装或保存包无需注册或登录到库。
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-an-item-to-the-powershell-gallery-what-does-that-mean"></a>尝试将项发布到 PowerShell 库时，出现“无法处理请求。 ‘指定的 API 密钥无效或无权限访问指定的包。’。 远程服务器返回错误：(403) 已禁止。” 错误。 这是什么意思？
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>尝试将项发布到 PowerShell 库时，出现“无法处理请求。 ‘指定的 API 密钥无效或无权限访问指定的包。’。 远程服务器返回错误：(403) 已禁止。” 错误。 这是什么意思？
 
 出现该错误的原因可能如下：
 
 - 指定的 API 密钥无效。
      请确保帐户中指定了有效的 API 密钥。 若要获取 API 密钥，请查看个人资料页。
-- 指定的项名称不属于你。
-     如果已确认 API 密钥无误，则可能是因为已存在一个具有与你尝试使用的名称相同的项。 该项可能未被其所有者列出，这种情况下，该项不会出现在任何搜索结果中。 若要确定具有相同名称的项是否已经存在，请打开浏览器并导航至该项的详细信息页：`https://www.powershellgallery.com/packages/<itemName>`。 例如，直接导航至 `https://www.powershellgallery.com/packages/pester` 将进入 Pester 模块的详细信息页上，无论其列出与否。 如果具有冲突名称的项已经存在且未被列出，可：
-    - 选择其他项名称。
-    - 联系现有项的所有者。
+- 指定的包名称不属于你。
+     如果已确认 API 密钥正确无误，则可能是因为已存在一个具有与你尝试使用的名称相同的包。 该包可能被其所有者取消列出，在这种情况下，该包不会出现在任何搜索结果中。 若要确定具有相同名称的包已经存在，请打开浏览器并导航至该包的详细信息页：`https://www.powershellgallery.com/packages/<packageName>`。 例如，直接导航至 `https://www.powershellgallery.com/packages/pester` 将进入 Pester 模块的详细信息页上，无论其列出与否。 如果具有冲突名称的包已经存在且被取消列出，则可以执行以下操作：
+    - 选择其他包名称。
+    - 联系现有包的所有者。
 
 ## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>为什么昨天可使用个人帐户登录而现在却无法登陆？
 
 请注意库帐户不会适应主电子邮件别名的更改。 有关详细信息，请参阅 [Microsoft 电子邮件别名](https://windows.microsoft.com/windows/outlook/add-alias-account)。
 
-## <a name="why-dont-i-see-all-the-gallery-items-when-i-select-all-the-category-checkboxes-on-the-items-tab"></a>为什么选中“项”选项卡上所有“类别”复选框时没有显示所有库项？
+## <a name="why-dont-i-see-all-the-gallery-packages-when-i-select-all-the-category-checkboxes-on-the-packages-tab"></a>为什么选中“包”选项卡上所有“类别”复选框时没有显示所有库包？
 
-选中“类别”复选框表示“查看此类别中所有的项”。 仅会显示所选类别中的项。 同样，选中所有的“类别”复选框表示“查看所有类别中的所有项”。 但库中的一些项不属于任何列出的类别，因而不会显示在结果中。 若要查看库中的所有项，请取消选中所有类别，或再次选择“项”选项卡。
+选中“类别”复选框即表示“我想查看此类别中所有的包”。 仅会显示所选类别中的包。 同样，选中所有的“类别”复选框即表示“我想查看所有类别中所有的包”。 但库中的一些包不属于所列出的任何类别，因而不会显示在结果中。 若要查看库中的所有包，请取消选中所有类别，或再次选择“包”选项卡。
 
 ## <a name="what-are-the-requirements-to-publish-a-module-to-the-powershell-gallery"></a>将模块发布到 PowerShell 库中有什么要求？
 
@@ -82,7 +82,7 @@ PowerShell 脚本是存储在.ps1 文件中的一系列命令，用于启用重�
 
 ## <a name="how-do-i-search"></a>如何搜索？
 
-在文本框中键入要查找的内容。 例如，如要查找与 Azure SQL 相关的模块，只需键入“azure sql”。 搜索引擎会在所有已发布的项（包括标题、说明和元数据）中查找这些关键字。 然后，根据加权质量分，搜索引擎将显示最接近的匹配。 你也可以在以下字段的搜索查询中使用 field:"value" 语法按指定字段进行搜索：
+在文本框中键入要查找的内容。 例如，如要查找与 Azure SQL 相关的模块，只需键入“azure sql”。 搜索引擎会在所有已发布的包（包括标题、说明和元数据）中查找这些关键字。 然后，根据加权质量分，搜索引擎将显示最接近的匹配。 你也可以在以下字段的搜索查询中使用 field:"value" 语法按指定字段进行搜索：
 
 - 标记
 - 功能
@@ -112,7 +112,7 @@ PowerShell 脚本是存储在.ps1 文件中的一系列命令，用于启用重�
 
 PackageManagement 是使用任何程序包管理器的一个公共接口。 最后，无论是处理 PowerShell 模块、MSI、Ruby gem、NuGet 包还是 Perl 模块，都可使用 PackageManagement 命令（Find-Package 和 Install-Package）进行查找和安装。 每个插入 PackageManagement 的程序包管理器都具有一个程序包提供程序，因而 PackageManagement 可实现该操作。 提供程序完成所有的实际工作；它们从存储库中提取内容，并本地安装内容。 通常，程序包提供程序环绕处理给定程序包类型的现有程序包管理器工具。
 
-PowerShellGet 是 PowerShell 项的程序包管理器。 存在一个通过 PackageManagement 揭示 PowerShellGet 功能的 PSModule 程序包提供程序。 因此，可运行 [Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 或 Install-Package -Provider PSModule 来从 PowerShell 库安装模块。 特定 PowerShellGet 功能（包括 [Update-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 和 [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)）无法通过 PackageManagement 命令访问。
+PowerShellGet 是 PowerShell 包的包管理器。 存在一个通过 PackageManagement 揭示 PowerShellGet 功能的 PSModule 程序包提供程序。 因此，可运行 [Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 或 Install-Package -Provider PSModule 来从 PowerShell 库安装模块。 特定 PowerShellGet 功能（包括 [Update-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 和 [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)）无法通过 PackageManagement 命令访问。
 
 总之，PowerShellGet 仅侧重于提供优质 PowerShell 内容的程序包管理体验。 PackageManagement 侧重于通过一组工具公开所有的包管理体验。 如对此回答不满意，可在本文档底部的 **PackageManagement 与 PowerShellGet 有何关联？** 部分中查看更详尽的回答。
 
@@ -158,14 +158,14 @@ PowerShell 库是 [NuGet Gallery](https://www.nuget.org/)（NuGet 库）的修�
 
 **PowerShellGet** 也需要 .NET Framework 4.5 或更高版本。 你可从[此处](https://msdn.microsoft.com/library/5a4x27ek.aspx)安装 .NET Framework 4.5 或更高版本。
 
-## <a name="is-it-possible-to-reserve-names-for-items-that-will-be-published-in-future"></a>是否可保留将来要发布的项的名称？
+## <a name="is-it-possible-to-reserve-names-for-packages-that-will-be-published-in-future"></a>能否保留将来要发布的包的名称？
 
-不能抢占项名称。 如果认为现有项占用的名称更适合你的项，可尝试[联系项的所有者](./how-to/working-with-items/contacting-item-owners.md)。 如果数周内未获得回复，可联系支持人员，PowerShell 库团队将进行查看。
+不能抢占包名称。 如果认为现有包占用的名称更适合你的包，可尝试[联系包的所有者](./how-to/working-with-packages/contacting-package-owners.md)。 如果数周内未获得回复，可联系支持人员，PowerShell 库团队将进行查看。
 
-## <a name="how-do-i-claim-ownership-for-items-"></a>如何索取项的所有权？
+## <a name="how-do-i-claim-ownership-for-packages"></a>如何索取包的所有权？
 
-有关详细信息，请查看 PowerShellGallery.com 上的[管理项所有者](./how-to/publishing-items/managing-item-owners.md)。
+有关详细信息，请查看 PowerShellGallery.com 上的[管理包所有者](./how-to/publishing-packages/managing-package-owners.md)。
 
-## <a name="how-do-i-deal-with-an-item-owner-who-is-violating-my-item-license"></a>如何处理违反项许可证的项所有者？
+## <a name="how-do-i-deal-with-a-package-owner-who-is-violating-my-package-license"></a>如何处理违反包许可证的包所有者？
 
-我们鼓励 PowerShell 社区解决项所有者之间可能出现的任何争议。  PowerShellGallery.com 管理员进行调解之前，我们希望你遵循我们精心指定的[争议解决过程](./how-to/getting-support/dispute-resolution.md)。
+我们鼓励 PowerShell 社区一起解决包所有者之间可能出现的任何争议。  PowerShellGallery.com 管理员进行调解之前，我们希望你遵循我们精心指定的[争议解决过程](./how-to/getting-support/dispute-resolution.md)。

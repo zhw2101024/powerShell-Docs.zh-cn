@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 title: 联系库管理员
-ms.openlocfilehash: 71c8aa15ac0c6ec57e7e1bfe3cb20cac7e2c6b29
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: f9197dfbf0cedb642259f554b42ec6f63eae30a4
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268647"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002166"
 ---
 # <a name="contact-gallery-administrators"></a>联系库管理员
 
@@ -16,14 +16,14 @@ ms.locfileid: "39268647"
 
 在以下情况下，你应联系库管理员：
 
-1. 你需要删除你已发布的项。
+1. 需要删除已发布的包。
 2. 你需要获得有关你的帐户的帮助。
-3. 你想要报告库中项出现的问题。
-4. 你与其他用户之间发生项名称争议，而无法通过联系用户解决此问题。
-5. 库管理员已就库中的项联系过你，你想作出回应。
+3. 想要报告库中包存在的问题。
+4. 你与其他用户之间存在包名称争议，而无法通过联系用户解决此问题。
+5. 库管理员已就库中的包联系过你，你想作出回应。
 
 ## <a name="how-to-contact-gallery-administrators"></a>如何联系库管理员
 
 1. 向我们 (cgadmin@microsoft.com) 发送电子邮件。
-2. 如果你要报告项的滥用行为，可在左面板上的项信息下方找到“报告滥用行为”链接。
+2. 如果要报告包的滥用行为，可在左面板上的包信息下方找到“报告滥用行为”链接。
 3. 有关库的其他常规问题，请将问题提交到 [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell)

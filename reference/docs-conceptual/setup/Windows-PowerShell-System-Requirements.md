@@ -3,22 +3,44 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell 系统要求
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 74c65a97a30227997c48a23c42b0431189f9ed76
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 5e1fdb9cb4f10fd71c2d2daf693cb359fddcc5bc
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483043"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002712"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell 系统要求
-本主题列出了用于 Windows PowerShell 3.0、Windows PowerShell 4.0 和 Windows PowerShell 5.0，以及用于特殊功能（如 Windows PowerShell 集成脚本环境 (ISE)、CIM 命令和工作流）的系统要求。
+本主题列出了用于 Windows PowerShell 3.0、Windows PowerShell 4.0、Windows PowerShell 5.0 和 Windows PowerShell 5.1 以及用于特殊功能（如 Windows PowerShell 集成脚本环境 (ISE)、CIM 命令和工作流）的系统要求。
 
 Windows® 8.1 和 Windows Server® 2012 R2 包括所有必需的程序。 本主题主要面向 Windows 早期版本的用户。
 
 ## <a name="operating-system-requirements"></a>操作系统要求
-Windows PowerShell 5.0 在以下 Windows 版本上运行。
+Windows PowerShell 5.1 在以下 Windows 版本上运行。
+
+- Windows Server 2019，默认安装
 
 - Windows Server 2016，默认安装
+
+- Windows Server 2012 R2，安装 [Windows Management Framework 5.1](https://aka.ms/wmf5download) 以运行 Windows PowerShell 5.1
+
+- Windows Server 2012，安装 [Windows Management Framework 5.1](https://aka.ms/wmf5download) 以运行 Windows PowerShell 5.0
+
+- Windows Server 2008 R2 Service Pack 1，安装 [Windows Management Framework 5.1](https://aka.ms/wmf5download) 以运行 Windows PowerShell 5.1
+
+- Windows 10 版本 1607 和更高版本 - 默认安装
+
+- Windows 10 版本 1507、1511 - 安装 [Windows Management Framework 5.1](https://aka.ms/wmf5download) 以运行 Windows PowerShell 5.1
+
+- Windows 8.1，安装 [Windows Management Framework 5.1](https://aka.ms/wmf5download) 以运行 Windows PowerShell 5.1
+
+- Windows 7 Service Pack 1，安装 [Windows Management Framework 5.1](https://aka.ms/wmf5download) 以运行 Windows PowerShell 5.1
+
+Windows PowerShell 5.0 （已被 Windows PowerShell 5.1 取代）在以下版本的 Windows 上运行。
+
+- Windows Server 2019，默认安装更高版本
+
+- Windows Server 2016，默认安装更高版本
 
 - Windows Server 2012 R2，安装 [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) 以运行 Windows PowerShell 5.0
 
@@ -26,7 +48,11 @@ Windows PowerShell 5.0 在以下 Windows 版本上运行。
 
 - Windows Server 2008 R2 Service Pack 1，安装 [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) 以运行 Windows PowerShell 5.0
 
-- Windows 8.1
+- Windows 10 版本 1607 和更高版本 - 默认安装更高版本
+
+- Windows 10 版本 1507、1511 - 默认安装
+
+- Windows 8.1，安装 [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) 以运行 Windows PowerShell 5.0
 
 - Windows 7 Service Pack 1，安装 [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) 以运行 Windows PowerShell 5.0
 
@@ -53,6 +79,8 @@ Windows PowerShell 3.0 在以下 Windows 版本上运行。
 - Windows Server 2008 Service Pack 2，安装 [Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) 以运行 Windows PowerShell 3.0
 
 ## <a name="microsoft-net-framework-requirements"></a>Microsoft .NET Framework 要求
+Windows PowerShell 5.1 需要完全安装 Microsoft .NET Framework 4.5。 Windows 8.1 和 Windows Server 2012 R2 默认包括 Microsoft.NET Framework 4.5。
+
 Windows PowerShell 5.0 需要完全安装 Microsoft .NET Framework 4.5。 Windows 8.1 和 Windows Server 2012 R2 默认包括 Microsoft.NET Framework 4.5。
 
 Windows PowerShell 4.0 需要完全安装 Microsoft .NET Framework 4.5。 Windows 8.1 和 Windows Server 2012 R2 默认包括 Microsoft.NET Framework 4.5。

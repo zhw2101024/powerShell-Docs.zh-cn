@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 适用于 Linux 的 DSC nxUser 资源
-ms.openlocfilehash: ca77bcd1f23a78ddb9e2ac988e4aadfec504bbbe
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1b02be1559957585a2a1733630cb93440e8182f9
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218920"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50226026"
 ---
 # <a name="dsc-for-linux-nxuser-resource"></a>适用于 Linux 的 DSC nxUser 资源
 
-PowerShell Desired State Configuration (DSC) 中的 **nxUser** 资源提供了在 Linux 节点上管理本地用户的机制。
+PowerShell Desired State Configuration (DSC) 中的 nxUser 资源提供了在 Linux 节点上管理本地用户的机制。
 
 ## <a name="syntax"></a>语法
 

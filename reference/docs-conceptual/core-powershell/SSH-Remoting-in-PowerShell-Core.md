@@ -2,12 +2,12 @@
 title: 通过 SSH 进行 PowerShell 远程处理
 description: 在 PowerShell Core 中使用 SSH 进行远程处理
 ms.date: 08/14/2018
-ms.openlocfilehash: 84c3896fe28847beb03e930f933bb4a9dfad397f
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: 842e67e96661bca8be54aab33cbc11aa23dbd1c0
+ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851231"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49451059"
 ---
 # <a name="powershell-remoting-over-ssh"></a>通过 SSH 进行 PowerShell 远程处理
 
@@ -15,7 +15,7 @@ ms.locfileid: "48851231"
 
 PowerShell 远程处理通常使用 WinRM 进行连接协商和数据传输。 SSH 现在可用于 Linux 和 Windows 平台，并允许进行真正的多平台 PowerShell 远程处理。
 
-WinRM 为 PowerShell 远程会话提供可靠的托管模型。 这种实现基于 SSH 的远程处理目前不支持远程终结点配置和 JEA (Just Enough Administration)。
+WinRM 为 PowerShell 远程会话提供可靠的托管模型。 基于 SSH 的远程处理目前不支持远程终结点配置和 JEA (Just Enough Administration)。
 
 通过 SSH 远程处理可以在 Windows 和 Linux 计算机之间执行基础的 PowerShell 会话远程处理。 SSH 远程处理在目标计算机上创建一个 PowerShell 托管进程作为 SSH 子系统。
 最终，我们将实现常规托管模型（类似于 WinRM）以支持终结点配置和 JEA。
@@ -48,7 +48,7 @@ WinRM 为 PowerShell 远程会话提供可靠的托管模型。 这种实现基�
    ```
 
 2. 按照[安装](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)说明从 GitHub 安装 [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases) 最新版本
-3. 编辑 Win32 OpenSSH 安装位置中的 sshd_config 文件
+3. 编辑位于 `%ProgramData%\ssh` 的 sshd_config 文件。
 
    - 确保已启用密码身份验证
 
@@ -57,7 +57,7 @@ WinRM 为 PowerShell 远程会话提供可靠的托管模型。 这种实现基�
      ```
 
      ```
-     Subsystem    powershell c:/program files/powershell/6.0.4/pwsh.exe -sshs -NoLogo -NoProfile
+     Subsystem    powershell c:/program files/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
      ```
 
      > [!NOTE]
@@ -66,7 +66,7 @@ WinRM 为 PowerShell 远程会话提供可靠的托管模型。 这种实现基�
      一种解决方案是创建不包含空格的 Powershell 安装目录 symlink：
 
      ```powershell
-     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.4"
+     mklink /D c:\pwsh "C:\Program Files\PowerShell\6"
      ```
 
      然后将其输入子系统：

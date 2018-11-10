@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: 注册 JEA 配置
-ms.openlocfilehash: 2c4a8f64c966903a6eb8fcabe4cd25ae7f98b2c4
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: 160aa95283da57a10aad5fdd4043adb1354a5db5
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522830"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002900"
 ---
 # <a name="registering-jea-configurations"></a>注册 JEA 配置
 
 > 适用于：Windows PowerShell 5.0
 
 创建[角色功能](role-capabilities.md)和[会话配置文件](session-configurations.md)后，最后一步还需注册 JEA 终结点，然后才能使用 JEA。
-此过程将会话配置信息应用于系统，并使终结点可供用户和自动化引擎使用。
+向系统注册 JEA 终结点，使终结点可供用户和自动化引擎使用。
 
 ## <a name="single-machine-configuration"></a>单个计算机配置
 
@@ -53,7 +53,7 @@ Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' 
 > 建议先脱机操作任何生产计算机，然后再运行命令，以避免中断业务操作。
 
 如果注册成功，便可以开始[使用 JEA](using-jea.md)。
-可以随时删除会话配置文件；注册后不会再使用它。
+可以随时删除会话配置文件；注册终结点后不会再使用它。
 
 ## <a name="multi-machine-configuration-with-dsc"></a>使用 DSC 的多台计算机配置
 
@@ -63,11 +63,11 @@ Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' 
 - 已创作一个或多个角色功能并已将其添加到有效的 PowerShell 模块。
 - 包含角色的 PowerShell 模块存储在每台计算机可访问的（只读）文件共享中。
 - 已确定会话配置设置。 使用 JEA DSC 资源时，无需创建会话配置文件。
-- 已获得可在每台计算机上执行管理操作的凭据，或有权访问用于管理计算机的 DSC 请求服务器。
+- 已获得可在每台计算机上执行管理操作的凭据，或有权访问用于管理计算机的 DSC 拉取服务器。
 - 已下载 [JEA DSC 资源](https://github.com/PowerShell/JEA/tree/master/DSC%20Resource)
 
 在目标计算机上创建 JEA 终结点的 DSC 配置，如果正在使用请求服务器，也可在请求服务器上操作。
-在此配置中，将使用 JustEnoughAdministration DSC 资源来设置会话配置文件和文件资源，以从文件共享通过角色功能进行复制。
+在此配置中，使用 JustEnoughAdministration DSC 资源来设置会话配置文件和文件资源，以从文件共享通过角色功能进行复制。
 
 下列属性可使用 DSC 资源进行配置：
 - 角色定义
@@ -127,7 +127,7 @@ Unregister-PSSessionConfiguration -Name 'ContosoMaintenance' -Force
 ```
 
 > [!WARNING]
-> 注销 JEA 终结点将导致重启 WinRM 服务。
+> 注销 JEA 终结点将导致 WinRM 服务重启。
 > 这将中断正在进行的大多数远程管理操作，包括其他 PowerShell 会话、WMI 调用和某些管理工具。
 > 请仅在计划的维护时段注销 PowerShell 终结点。
 

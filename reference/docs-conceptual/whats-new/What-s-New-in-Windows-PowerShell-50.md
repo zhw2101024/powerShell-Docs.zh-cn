@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell 5.0 中的新增功能
-ms.openlocfilehash: f5a27c0541e21b379f88b318cbe09a0344c1b372
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 7a2ef581f2cd867b35533597d4942fd5bfc94570
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483179"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225805"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 中的新增功能
 Windows PowerShell 5.0 新增了大量功能，不仅扩展并提升了自身的用途和可用性，还方便用户能够更轻松、全面地控制和管理基于 Windows 的环境。
@@ -163,7 +163,7 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 
 - Get-ChildItem 也有一个新的 -Depth 参数，可将该参数与 -Recurse 参数一起使用，以限制递归。 例如，Get-ChildItem -Recurse -Depth 2 从当前文件夹、当前文件夹中的所有子文件夹，以及子文件夹中的所有文件夹返回结果。
 
-- 现在 Copy-Item 使你能够将文件或文件夹从一个 Windows PowerShell 会话复制到另一个会话中，意味着你可以将文件复制到已连接至远程计算机（包括运行 [Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx) 因而没有其他界面的计算机）的会话中。 若要复制文件，请将 PSSession ID 指定为新的 -FromSession 和 -ToSession 参数的值，并添加 -Path 和 -Destination 以分别指定源路径和目标位置。 例如，Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder。
+- 现在 Copy-Item 使你能够将文件或文件夹从一个 Windows PowerShell 会话复制到另一个会话中，意味着可以将文件复制到已连接至远程计算机（包括运行 [Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx) 因而没有其他界面的计算机）的会话中。 若要复制文件，请将 PSSession ID 指定为新的 -FromSession 和 -ToSession 参数的值，并添加 -Path 和 -Destination 以分别指定源路径和目标位置。 例如，Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder。
 
 - 除了控制台主机 (**powershell.exe**) 外，Windows PowerShell 转录已经得到改进以应用到所有主机应用程序（例如 Windows PowerShell ISE）。 脚本选项（包括启用 system-wide 脚本）可以通过启用“打开 PowerShell 脚本”组策略设置（位于 Administrative Templates/Windows Components/Windows PowerShell）来进行配置。
 
@@ -511,7 +511,7 @@ Windows PowerShell Web 访问是一项 Windows Server 2012 功能，它允许用
 Windows PowerShell 是针对公共语言运行时 4.0 而构建的。 Cmdlet、脚本和工作流作者可以在 Windows PowerShell 中使用新的 Microsoft .NET Framework 4 类，其功能包括应用程序兼容性和部署、Managed Extensibility Framework、并行计算、网络、Windows Communication Foundation 和 Windows Workflow Foundation。
 
 ### <a name="support-for-windows-preinstallation-environment"></a>对 Windows 预安装环境的支持
-Windows PowerShell 3.0 是 Windows 8 的 Windows 预安装环境 (Windows PE) 4.0 中的可选组件。 Windows PE 是用于启动没有操作系统的计算机并使其为 Windows 安装做好准备的最小操作系统。 Windows PE 可用于对硬盘驱动器进行分区和格式设置、将磁盘映像复制到计算机，以及从网络共享启动 Windows 安装程序。 可以在 Windows PE 上使用 Windows PowerShell 3.0 来管理部署、诊断和恢复方案。
+Windows PowerShell 3.0 是 Windows 8 的 Windows 预安装环境 (Windows PE) 4.0 中的可选组件。 Windows PE 是用于启动没有操作系统的计算机并使其为 Windows 安装做好准备的最小操作系统。 Windows PE 可以用于对硬盘驱动器进行分区和格式设置、将磁盘映像复制到计算机，以及从网络共享启动 Windows 安装程序。 可以在 Windows PE 上使用 Windows PowerShell 3.0 来管理部署、诊断和恢复方案。
 
 ### <a name="disconnected-sessions"></a>断开连接的会话
 从 Windows PowerShell 3.0 开始，你使用 New-PSSession cmdlet 创建的用户托管的永久会话（“Pssession”）将保存在远程计算机上。 它们将不再依赖于创建它们的会话。
@@ -582,7 +582,7 @@ Windows PowerShell 3.0 中包括对通用信息模型 (CIM) 的支持，CIM 为�
 
 若要创建会话配置文件，请使用 [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) cmdlet。 若要将该会话配置文件应用到某个会话配置，请使用 [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) cmdlet 或 [Set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) cmdlet。
 
-有关详细信息，请参阅 [about_Session_Configuration_Files](https://technet.microsoft.com/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8) 和 [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866)。
+有关详细信息，请参阅 [about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configuration_files?view=powershell-5.0) 和 [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866)。
 
 ### <a name="scheduled-jobs-and-task-scheduler-integration"></a>计划作业和任务计划程序集成
 现在可以计划 Windows PowerShell 后台作业，并在 Windows PowerShell 和任务计划程序中对其进行管理。
@@ -656,7 +656,7 @@ Windows PowerShell 控制台中的 Tab 自动补全现在可以自动补全 cmdl
 
 可以通过使用 **$PSModuleAutoLoadingPreference** 首选项变量来启用、禁用和配置模块的自动导入。
 
-有关详细信息，请参阅 [about_Modules [v4]](https://technet.microsoft.com/library/94f57429-a539-4aee-bb0d-205cd7e801f9)、[about_Preference_Variables [v4]](https://technet.microsoft.com/library/31344314-be29-4286-b039-afa5460cbe8b) 以及有关 [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) 和 [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) cmdlet 的帮助主题。
+有关详细信息，请参阅 [about_Modules](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-5.0)、[about_Preference_Variables [v4]](https://technet.microsoft.com/library/31344314-be29-4286-b039-afa5460cbe8b) 以及有关 [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) 和 [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) cmdlet 的帮助主题。
 
 ### <a name="module-experience-improvements"></a>模块体验改进
 Windows PowerShell 3.0 将高级功能支持引入了模块，包括以下新增功能。

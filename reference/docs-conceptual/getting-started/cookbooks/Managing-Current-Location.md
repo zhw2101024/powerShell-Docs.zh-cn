@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 管理当前位置
 ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
-ms.openlocfilehash: 8d529bf4a85553b95a9cab2739016859662486f2
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: d1ebc9507a45841e6d4d8219e45c002990e1328c
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952216"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225771"
 ---
 # <a name="managing-current-location"></a>管理当前位置
 
@@ -119,7 +119,7 @@ C:\Documents and Settings\PowerUser
 Push-Location -Path "Local Settings"
 ```
 
-然后，你可以将“本地设置”位置推送到堆栈上，并将其移动到临时文件夹，方法是通过键入：
+然后，可以将“本地设置”位置推送到堆栈上，并将其移动到临时文件夹，方法是通过键入：
 
 ```powershell
 Push-Location -Path Temp

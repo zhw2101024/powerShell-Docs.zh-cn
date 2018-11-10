@@ -3,12 +3,12 @@ ms.date: 09/05/2018
 contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 title: PowerShell 库帐户设置
-ms.openlocfilehash: dd7b8b3a99b5b7fbfec5d7f82b81dd6d5cfb906c
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: ebe784ec5aae5ff3a4d444d12a168ef38aaef65f
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523127"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002780"
 ---
 # <a name="powershell-gallery-account-settings"></a>PowerShell 库帐户设置
 
@@ -34,7 +34,7 @@ PowerShell 库提供了以下帐户设置：
 PowerShell 库提供了以下通知选项：
 
 - 用户可通过 PowerShell 库与我联系
-- 使用我的帐户向 PowerShell 库推送项时通知我
+- 使用我的帐户向 PowerShell 库推送包时通知我
 
 ![更改电子邮件地址](../../Images/PSGallery_AccountEmailOptions.png)
 

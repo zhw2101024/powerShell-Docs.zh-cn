@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 10/30/2018
 keywords: dsc,powershell,配置,安装程序
 title: DSC 故障排除
-ms.openlocfilehash: 93a2f3728968882f78d4c050238d226b71c11ca5
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: 04fb1e9016c508d0e514b51b3cfd6e6f6d5c4974
+ms.sourcegitcommit: 9cabc119f4d59598e12d4a36238a311349082ff0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268188"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50410008"
 ---
 # <a name="troubleshooting-dsc"></a>DSC 故障排除
 
@@ -503,7 +503,7 @@ ConfigurationID                :
 ConfigurationMode              : ApplyAndMonitor
 ConfigurationModeFrequencyMins : 30
 Credential                     :
-DebugMode                      : False
+DebugMode                      : {None}
 DownloadManagerCustomData      :
 DownloadManagerName            :
 LocalConfigurationManagerState : Ready
@@ -513,7 +513,7 @@ RefreshMode                    : PUSH
 PSComputerName                 :
 ```
 
-你可以看到 `DebugMode` 设置为 **FALSE**。
+可以看到 `DebugMode` 设置为“无”。
 
 若要设置 `DebugMode` 演示，请使用以下 PowerShell 资源：
 
@@ -603,12 +603,12 @@ function Test-TargetResource
 
 此脚本将生成一个随机数，并相应地更新提供程序代码。 将 `DebugMode` 设置为 false 后，文件“$env:SystemDrive\OutputFromTestProviderDebugMode.txt”的内容未发生更改。
 
-现在，在配置脚本中将 `DebugMode` 设置为 **TRUE**：
+现在，在配置脚本中将 `DebugMode` 设置为“ForceModuleImport”：
 
 ```powershell
 LocalConfigurationManager
 {
-    DebugMode = $true
+    DebugMode = "ForceModuleImport"
 }
 ```
 
