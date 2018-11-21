@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 使用配置数据
-ms.openlocfilehash: 9b0b213e2d71bfdb473fd98f8080de5c874c70e2
-ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
-ms.translationtype: HT
+ms.openlocfilehash: f2d25b9ced805fb4c91378ebfe840104eb6ce52a
+ms.sourcegitcommit: 91786b03704fbd2d185f674df0bc67faddfb6288
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36940372"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51619171"
 ---
 # <a name="using-configuration-data-in-dsc"></a>使用 DSC 中的配置数据
 
@@ -185,12 +185,13 @@ MyDscConfiguration -ConfigurationData .\MyData.psd1
 
 ## <a name="using-configurationdata-variables-in-a-configuration"></a>在配置中使用 ConfigurationData 变量
 
-DSC 提供三种可在配置脚本中使用的特殊变量：**$AllNodes**、**$Node** 和 **$ConfigurationData**。
+DSC 提供了以下可配置在脚本中使用的特殊变量：
 
 - **$AllNodes** 指 **ConfigurationData** 中定义的整个节点集合。 可使用 **.Where()** 和 **.ForEach()** 筛选 **AllNodes** 集合。
+- **ConfigurationData** 指编译配置时，作为参数传递的整个哈希表。
+- **MyTypeName**包含[配置](configurations.md)中使用变量名称。 例如，在配置`MyDscConfiguration`，则`$MyTypeName`值为`MyDscConfiguration`。
 - **Node** 指使用 **.Where()** 或 **.ForEach()** 筛选 **AllNodes** 集合后，该集合中的特定项。
   - 可阅读 [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md) 了解有关这些方法的详细信息
-- **ConfigurationData** 指编译配置时，作为参数传递的整个哈希表。
 
 ## <a name="using-non-node-data"></a>使用非节点数据
 
