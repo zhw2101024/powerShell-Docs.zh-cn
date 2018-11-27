@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell Web 访问的授权规则和安全功能
-ms.openlocfilehash: e9bed3900263a51b1b8236a3c3430154a5d11886
-ms.sourcegitcommit: 31a221d982305c7f999b1afeb15e3629e9620de8
-ms.translationtype: HT
+ms.openlocfilehash: 95c61d3a0431cda9dee738d1c9f5ec843c1209f3
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "43133107"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52321071"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 访问的授权规则和安全功能
 
@@ -20,19 +20,19 @@ ms.locfileid: "43133107"
 ## <a name="configuring-authorization-rules-and-site-security"></a>配置授权规则和站点安全
 
 安装 Windows PowerShell Web 访问和配置网关后，用户可在浏览器中打开登录页面，但他们无法登录，直到 Windows PowerShell Web 访问管理员明确授予用户访问权限。 Windows PowerShell Web 访问的访问控制通过使用下表所述的一组 Windows PowerShell cmdlet 进行管理。 没有相当的 GUI 可用于添加或管理授权规则。
-请参阅 [Windows PowerShell Web 访问 Cmdlet](cmdlets/web-access-cmdlets.md)。
+请参阅 [Windows PowerShell Web 访问 Cmdlet](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)。
 
 管理员可为 Windows PowerShell Web 访问定义 `{0-n}` 条身份验证规则。 默认的安全性较为严格，而非宽松；零条身份验证规则意味着无用户可访问任何内容。
 
-Windows Server 2012 R2 中的 [Add-PswaAuthorizationRule](cmdlets/add-pswaauthorizationrule.md) 和 [Test-PswaAuthorizationRule](cmdlets/test-pswaauthorizationrule.md) 包含一个 Credential 参数，该参数使你可从远程计算机或在活动的 Windows PowerShell Web 访问会话中添加和测试 Windows PowerShell Web 访问授权规则。 与其他具有 Credential 参数的 Windows PowerShell cmdlet 一样，你可以指定一个 PSCredential 对象作为该参数的值。 若要创建一个包含要传递到远程计算机的凭据的 PSCredential 对象，请运行 [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential) cmdlet。
+Windows Server 2012 R2 中的 [Add-PswaAuthorizationRule](/powershell/module/powershellwebaccess/add-pswaauthorizationrule?view=winserver2012r2-ps) 和 [Test-PswaAuthorizationRule](/powershell/module/powershellwebaccess/test-pswaauthorizationrule?view=winserver2012r2-ps) 包含一个 Credential 参数，该参数使你可从远程计算机或在活动的 Windows PowerShell Web 访问会话中添加和测试 Windows PowerShell Web 访问授权规则。 与其他具有 Credential 参数的 Windows PowerShell cmdlet 一样，你可以指定一个 PSCredential 对象作为该参数的值。 若要创建一个包含要传递到远程计算机的凭据的 PSCredential 对象，请运行 [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential) cmdlet。
 
-Windows PowerShell Web 访问身份验证规则是白名单规则。 每条规则定义了用户、目标计算机和特定的 Windows PowerShell [会话配置](/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations)（也称作终结点或运行空间）在特定目标计算机上的允许连接。
+Windows PowerShell Web 访问身份验证规则是白名单规则。 每条规则定义了用户、目标计算机和特定的 Windows PowerShell [会话配置](/powershell/module/microsoft.powershell.core/about/about_session_configurations?view=powershell-5.1)（_也称作终结点或运行空间_）在特定目标计算机上的允许连接。
 有关运行空间的说明，请参阅 [Beginning Use of PowerShell Runspaces](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)（PowerShell 运行空间入门）
 
 > [!IMPORTANT]
 > 用户仅需要一条可访问的规则。 如果用户有权从基于 Web 的控制台访问一台具有所有语言访问权限或仅可访问 Windows PowerShell 远程管理 cmdlet 的计算机，用户可登录（或跳到）其他与第一台目标计算机连接的计算机。 配置 Windows PowerShell Web 访问的最安全方法是仅允许用户访问受限制的会话配置，从而可让用户完成他们通常需要远程执行的特定任务。
 
-[Windows PowerShell Web 访问 Cmdlet](cmdlets/web-access-cmdlets.md)中引用的 cmdlet 可用于创建一组访问规则，供授权 Windows PowerShell Web 访问网关上的用户时使用。 规则与目标计算机上的访问控制列表 (ACL) 有所不同，它提高了 Web 访问的安全性。 有关安全性的详细信息如以下部分所述。
+[Windows PowerShell Web 访问 Cmdlet](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)中引用的 cmdlet 可用于创建一组访问规则，供授权 Windows PowerShell Web 访问网关上的用户时使用。 规则与目标计算机上的访问控制列表 (ACL) 有所不同，它提高了 Web 访问的安全性。 有关安全性的详细信息如以下部分所述。
 
 如果用户无法通过任一上述的安全层，则会在浏览器窗口中看到一条常规的“拒绝访问”消息。 虽然有关安全性的详细信息记录在网关服务器上，但是最终用户并不获得有关他们通过多少个安全层或无法在哪个安全层登录或身份验证的信息。
 
@@ -229,4 +229,4 @@ Windows PowerShell Web 访问会话超时。在 Windows Server 2012 上运行的
 
 [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 
-[Windows PowerShell Web 访问 Cmdlet](cmdlets/web-access-cmdlets.md)
+[Windows PowerShell Web 访问 Cmdlet](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)

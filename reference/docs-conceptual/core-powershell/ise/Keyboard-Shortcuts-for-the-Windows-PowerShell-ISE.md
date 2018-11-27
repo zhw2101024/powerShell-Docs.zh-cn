@@ -3,16 +3,16 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell ISE 的键盘快捷方式
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
-ms.openlocfilehash: e17fee4cf0cc8ac7aa0bb36acde3b452919312d0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: 1abae849ce599b586357fd2a8db46c608932bd4e
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953814"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320799"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE 的键盘快捷方式
 
-使用以下键盘快捷方式在 Windows PowerShell® 集成脚本环境 (ISE) 中执行操作。 Windows PowerShell ISE 可作为 Windows Server 和 Windows 客户端操作系统的一部分，但是也可作为 [Windows Management Framework 4.0 下载包](http://go.microsoft.com/fwlink/?LinkID=293881)的一部分安装在早期的 Windows 操作系统上。
+使用以下键盘快捷方式在 Windows PowerShell® 集成脚本环境 (ISE) 中执行操作。 Windows PowerShell ISE 可作为 Windows Server 和 Windows 客户端操作系统的一部分，但是也可作为 [Windows Management Framework 4.0 下载包](https://go.microsoft.com/fwlink/?LinkID=293881)的一部分安装在早期的 Windows 操作系统上。
 
 ## <a name="keyboard-shortcuts-for-editing-text"></a>编辑文本的键盘快捷方式
 
@@ -120,4 +120,4 @@ ms.locfileid: "30953814"
 
 ## <a name="see-also"></a>另请参阅
 
-- [PowerShell 杂志：Windows PowerShell ISE 键盘快捷键的完整列表](http://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)
+- [PowerShell 杂志：Windows PowerShell ISE 键盘快捷键的完整列表](https://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)
