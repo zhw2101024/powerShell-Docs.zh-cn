@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 使用基于 Web 的 Windows PowerShell 控制台
-ms.openlocfilehash: 5d29a6f97fddf4b329fcc7097cf7d40d47d22cca
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
-ms.translationtype: HT
+ms.openlocfilehash: 2bb9c6ef486ef32012a15f9890997cf2fa6a3a0b
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483145"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320646"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>使用基于 Web 的 Windows PowerShell 控制台
 
@@ -169,7 +169,7 @@ Alt+F7 | 清空命令历史记录列表
 
     如果尝试通过使用 Windows PowerShell Web 访问来创建或运行新的会话，你会遇到双跃点（或从第一个连接到第二台计算机之间的连接）限制。 Windows PowerShell Web 访问使用远程运行空间，目前，**PowerShell.exe** 不支持建立从远程运行空间到第二台计算机的远程连接。 例如，如果尝试使用 Enter-PSSession cmdlet 从现有的连接连接到第二台远程计算机，你会遇到各种错误，例如“无法获得网络资源”。
 
-    若要避免双跃点错误，管理员应在组织的网络环境中配置 CredSSP 身份验证。 有关如何配置 CredSSP 身份验证的详细信息，请参阅 Microsoft 网站上的[适用于第二跃点远程处理的 CredSSP](http://blogs.msdn.com/b/powershell/archive/2008/06/05/credssp-for-second-hop-remoting-part-i-domain-account.aspx)。 当你想要管理第二台远程计算机时，你还可提供显式凭据；隐式凭据不可能接受第二跃点。
+    若要避免双跃点错误，管理员应在组织的网络环境中配置 CredSSP 身份验证。 有关如何配置 CredSSP 身份验证的详细信息，请参阅 Microsoft 网站上的[适用于第二跃点远程处理的 CredSSP](https://blogs.msdn.com/b/powershell/archive/2008/06/05/credssp-for-second-hop-remoting-part-i-domain-account.aspx)。 当你想要管理第二台远程计算机时，你还可提供显式凭据；隐式凭据不可能接受第二跃点。
 
 - 远程处理
 
@@ -224,12 +224,12 @@ Alt+F7 | 清空命令历史记录列表
 
         你可以使用类似的方式更改控制台的高度。
 
-        如要获取自定义控制台视图的其他示例，请参阅 [Windows PowerShell 团队博客](http://blogs.msdn.com/b/powershell/)。
+        如要获取自定义控制台视图的其他示例，请参阅 [Windows PowerShell 团队博客](https://blogs.msdn.com/b/powershell/)。
 
 ## <a name="see-also"></a>另请参阅
 
 - [Windows PowerShell cmdlet 参考资料](https://technet.microsoft.com/library/ee407531(ws.10).aspx)
 - [Microsoft TechNet 上的 Windows PowerShell](https://technet.microsoft.com/library/bb978526.aspx)
-- [TechNet 脚本中心储存库](http://gallery.technet.microsoft.com/scriptcenter)
+- [TechNet 脚本中心储存库](https://gallery.technet.microsoft.com/scriptcenter)
 - [脚本中心 -“嗨, 脚本专家!”](https://technet.microsoft.com/scriptcenter)
-- [Windows PowerShell 团队博客](http://blogs.msdn.com/b/powershell/)
+- [Windows PowerShell 团队博客](https://blogs.msdn.com/b/powershell/)

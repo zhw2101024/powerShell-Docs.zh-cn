@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: 29b11e8b11f27fc5be60ea8c5cd56138326b3998
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
-ms.translationtype: HT
+ms.openlocfilehash: 1556d1e07a3a085346f2cdc48ef6888ad18687ad
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522815"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320459"
 ---
 # <a name="powershellget-cmdlets-for-module-management"></a>用于模块管理的 PowerShellGet Cmdlet
 
@@ -47,14 +47,14 @@ ms.locfileid: "45522815"
 ```powershell
 Find-Module -Repository LocalRepo -Name RequiredModule1,RequiredModule2,RequiredModule3,NestedRequiredModule1,NestedRequiredModule2,NestedRequiredModule3 | Sort-Object -Property Name
 
-Version    Name                     Repository    Description
--------    ----                     ----------    -----------
-2.5        NestedRequiredModule1    LocalRepo     NestedRequiredModule1 module
-2.5        NestedRequiredModule2    LocalRepo     NestedRequiredModule2 module
-2.0        NestedRequiredModule3    LocalRepo     NestedRequiredModule3 module
-2.5        RequiredModule1          LocalRepo     RequiredModule1 module
-2.5        RequiredModule2          LocalRepo     RequiredModule2 module
-2.0        RequiredModule3          LocalRepo     RequiredModule3 module
+Version    Name                     Repository    Description
+-------    ----                     ----------    -----------
+2.5        NestedRequiredModule1    LocalRepo     NestedRequiredModule1 module
+2.5        NestedRequiredModule2    LocalRepo     NestedRequiredModule2 module
+2.0        NestedRequiredModule3    LocalRepo     NestedRequiredModule3 module
+2.5        RequiredModule1          LocalRepo     RequiredModule1 module
+2.5        RequiredModule2          LocalRepo     RequiredModule2 module
+2.0        RequiredModule3          LocalRepo     RequiredModule3 module
 ```
 
 ### <a name="create-a-module-with-dependencies-that-are-specified-in-the-requiredmodules-and-nestedmodules-properties-of-its-module-manifest"></a>创建一个模块，其中依赖项在其模块清单的 RequiredModules 和 NestedModules 属性中进行指定。
@@ -80,15 +80,15 @@ Publish-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -Nu
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo –IncludeDependencies -MaximumVersion "1.0"
 
-Version    Name                                Repository  Description
--------    ----                                ----------  -----------
-1.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
-2.5        RequiredModule1                     LocalRepo   RequiredModule1 module
-2.5        RequiredModule2                     LocalRepo   RequiredModule2 module
-2.0        RequiredModule3                     LocalRepo   RequiredModule3 module
-2.5        NestedRequiredModule1               LocalRepo   NestedRequiredModule1 module
-2.5        NestedRequiredModule2               LocalRepo   NestedRequiredModule2 module
-2.0        NestedRequiredModule3               LocalRepo   NestedRequiredModule3 module
+Version    Name                                Repository  Description
+-------    ----                                ----------  -----------
+1.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
+2.5        RequiredModule1                     LocalRepo   RequiredModule1 module
+2.5        RequiredModule2                     LocalRepo   RequiredModule2 module
+2.0        RequiredModule3                     LocalRepo   RequiredModule3 module
+2.5        NestedRequiredModule1               LocalRepo   NestedRequiredModule1 module
+2.5        NestedRequiredModule2               LocalRepo   NestedRequiredModule2 module
+2.0        NestedRequiredModule3               LocalRepo   NestedRequiredModule3 module
 ```
 
 ### <a name="use-find-module-metadata-to-find-the-module-dependencies"></a>使用 Find-Module 元数据查找模块依赖项。
@@ -135,41 +135,41 @@ CanonicalId PowerShellGet:NestedRequiredModule3/2.5#http://psget/psGallery/api/v
 Install-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -RequiredVersion "1.0"
 Get-InstalledModule
 
-Version    Name                    Repository   Description
--------    ----                    ----------   -----------
-1.0        NestedRequiredModule1   LocalRepo    NestedRequiredModule1 module
-2.5        NestedRequiredModule2   LocalRepo    NestedRequiredModule2 module
-2.0        NestedRequiredModule3   LocalRepo    NestedRequiredModule3 module
-1.0        RequiredModule1         LocalRepo    RequiredModule1 module
-2.5        RequiredModule2                    LocalRepo    RequiredModule2 module
-2.0        RequiredModule3                    LocalRepo    RequiredModule3 module
-1.0        TestDepWithNestedRequiredModules1  LocalRepo    TestDepWithNestedRequiredModules1 module
+Version    Name                    Repository   Description
+-------    ----                    ----------   -----------
+1.0        NestedRequiredModule1   LocalRepo    NestedRequiredModule1 module
+2.5        NestedRequiredModule2   LocalRepo    NestedRequiredModule2 module
+2.0        NestedRequiredModule3   LocalRepo    NestedRequiredModule3 module
+1.0        RequiredModule1         LocalRepo    RequiredModule1 module
+2.5        RequiredModule2                    LocalRepo    RequiredModule2 module
+2.0        RequiredModule3                    LocalRepo    RequiredModule3 module
+1.0        TestDepWithNestedRequiredModules1  LocalRepo    TestDepWithNestedRequiredModules1 module
 ```
 
 ###  <a name="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>更新 TestDepWithNestedRequiredModules1 模块及其依赖项。
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -AllVersions
 
-Version    Name                                Repository  Description
--------    ----                                ----------  -----------
-1.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
-2.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
+Version    Name                                Repository  Description
+-------    ----                                ----------  -----------
+1.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
+2.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
 
 Update-Module -Name TestDepWithNestedRequiredModules1 -RequiredVersion 2.0
 Get-InstalledModule
 
-Version    Name                                Repository  Description
--------    ----                                ----------  -----------
-1.0        NestedRequiredModule1               LocalRepo   NestedRequiredModule1 module
-2.5        NestedRequiredModule2               LocalRepo   NestedRequiredModule2 module
-2.0        NestedRequiredModule3               LocalRepo   NestedRequiredModule3 module
-2.5        NestedRequiredModule3               LocalRepo   NestedRequiredModule3 module
-1.0        RequiredModule1                     LocalRepo   RequiredModule1 module
-2.5        RequiredModule2                     LocalRepo   RequiredModule2 module
-2.0        RequiredModule3                     LocalRepo   RequiredModule3 module
-2.5        RequiredModule3                     LocalRepo   RequiredModule3 module
-1.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
-2.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
+Version    Name                                Repository  Description
+-------    ----                                ----------  -----------
+1.0        NestedRequiredModule1               LocalRepo   NestedRequiredModule1 module
+2.5        NestedRequiredModule2               LocalRepo   NestedRequiredModule2 module
+2.0        NestedRequiredModule3               LocalRepo   NestedRequiredModule3 module
+2.5        NestedRequiredModule3               LocalRepo   NestedRequiredModule3 module
+1.0        RequiredModule1                     LocalRepo   RequiredModule1 module
+2.5        RequiredModule2                     LocalRepo   RequiredModule2 module
+2.0        RequiredModule3                     LocalRepo   RequiredModule3 module
+2.5        RequiredModule3                     LocalRepo   RequiredModule3 module
+1.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
+2.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
 ```
 
 ###  <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a>运行 Uninstall-Module cmdlet 以卸载通过使用 PowerShellGet 安装的模块。
@@ -257,7 +257,7 @@ CmdletsToExport = 'Test-PSGetTestCmdlet'
 }
 ```
 
-对于每个模块，还存在与之关联的元数据字段。 为了在 PowrShell 库中正确显示元数据，你可以使用 Update-ModuleManifest 在 PrivateData 下填充这些字段。
+对于每个模块，还存在与之关联的元数据字段。 若要在 PowerShell 库上正确显示元数据，可以使用 Update-modulemanifest 以 PrivateData 下填充这些字段。
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1" -Tags "Tag1" -LicenseUri "http://license.com" -ProjectUri "http://project.com" -IconUri "http://icon.com" -ReleaseNotes "Test module"
 ```

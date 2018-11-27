@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: ISEFile 对象
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
-ms.openlocfilehash: 276e8f04a827e18999b5b3ecb08f47de4f4b23b1
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: 24549720b8bc35435882533b0eb138de432ede65
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30951386"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320867"
 ---
 # <a name="the-isefile-object"></a>ISEFile 对象
 
@@ -22,7 +22,7 @@ ms.locfileid: "30951386"
 
 将该文件保存到磁盘。
 
-**\[saveEncoding\]** - 可选 [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)，用于已保存文件的可选字符编码参数。 默认值是 **UTF8**。
+**\[saveEncoding\]** - 可选 [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx)，用于已保存文件的可选字符编码参数。 默认值是 **UTF8**。
 
 ### <a name="exceptions"></a>例外
 
@@ -48,7 +48,7 @@ $myfile.Encoding
 
 **filename** - 字符串要用于保存该文件的名称。
 
-**\[saveEncoding\]** - 可选 [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)，用于已保存文件的可选字符编码参数。 默认值是 **UTF8**。
+**\[saveEncoding\]** - 可选 [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx)，用于已保存文件的可选字符编码参数。 默认值是 **UTF8**。
 
 ### <a name="exceptions"></a>例外
 

@@ -3,16 +3,16 @@ ms.date: 08/24/2018
 keywords: powershell,cmdlet
 title: 了解 PowerShell 名称
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: a4f7e12c2b30e8ae6d1cf5a125d613d2d7558c34
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
-ms.translationtype: HT
+ms.openlocfilehash: 6ed1f99513f00c174147876e1982c0d12869cacb
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851249"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320476"
 ---
 # <a name="learning-powershell-names"></a>了解 PowerShell 名称
 
-学习命令和参数的名称需要在了解大多数命令行接口方面投入大量的时间。 问题是模式很少。 记忆是学习需要定期使用的命令和参数的唯一方法。
+学习命令和参数的名称需要在了解大多数命令行接口方面投入大量的时间。 问题是模式很少。 记忆是若要了解命令和参数，您需要定期使用的唯一方法。
 
 使用新命令或参数时，不能总是使用已经知道的内容。 必须找到并了解一个新名称。 按照惯例，命令行界面从一小组工具开始，并随着增量添加而增长。 这就很容易理解命令行界面为什么没有标准结构。
 这似乎是命令名称的逻辑，因为每个命令都是一个单独的工具。 PowerShell 有一种更好的方法来处理命令名称。

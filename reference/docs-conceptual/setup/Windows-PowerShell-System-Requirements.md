@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell 系统要求
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 5e1fdb9cb4f10fd71c2d2daf693cb359fddcc5bc
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
-ms.translationtype: HT
+ms.openlocfilehash: 8850cf26b0313dfb8898ccb66b4767d695860d4c
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002712"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320731"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell 系统要求
 本主题列出了用于 Windows PowerShell 3.0、Windows PowerShell 4.0、Windows PowerShell 5.0 和 Windows PowerShell 5.1 以及用于特殊功能（如 Windows PowerShell 集成脚本环境 (ISE)、CIM 命令和工作流）的系统要求。
@@ -87,9 +87,9 @@ Windows PowerShell 4.0 需要完全安装 Microsoft .NET Framework 4.5。 Window
 
 Windows PowerShell 3.0 需要完全安装 Microsoft .NET Framework 4。 默认情况下，Windows 8 和 Windows Server 2012 中包含了满足此要求的 Microsoft .NET Framework 4.5。
 
-若要安装 Microsoft .NET Framework 4.5 (dotNetFx45_Full_setup.exe)，请参阅 Microsoft 下载中心的 [Microsoft .NET Framework 4.5](http://go.microsoft.com/fwlink/?LinkID=242919)。
+若要安装 Microsoft .NET Framework 4.5 (dotNetFx45_Full_setup.exe)，请参阅 Microsoft 下载中心的 [Microsoft .NET Framework 4.5](https://go.microsoft.com/fwlink/?LinkID=242919)。
 
-若要安装 Microsoft .NET Framework 4 (dotNetFx40_Full_setup.exe) 的完全安装，请参阅 Microsoft 下载中心的 [Microsoft .NET Framework 4 (Web Installer)](http://go.microsoft.com/fwlink/?LinkID=212931)。
+若要安装 Microsoft .NET Framework 4 (dotNetFx40_Full_setup.exe) 的完全安装，请参阅 Microsoft 下载中心的 [Microsoft .NET Framework 4 (Web Installer)](https://go.microsoft.com/fwlink/?LinkID=212931)。
 
 ## <a name="windows-management-framework-40"></a>Windows Management Framework 4.0
 Windows PowerShell 5.0 要求在 Windows Server 2008 R2 SP1 和 Windows 7 SP1 上预先安装 Windows Management Framework 4.0。
@@ -138,7 +138,7 @@ Windows PowerShell 2.0 引擎至少需要 Microsoft .NET Framework 2.0.50727。 
 ## <a name="windows-preinstallation-environment"></a>Windows 预安装环境
 Windows PowerShell 2.0、Windows PowerShell 3.0 和 Windows PowerShell 4.0 在 Windows 预安装环境 (Windows PE) 中运行。 但是，不支持以下 cmdlet。
 
-- [后台智能传输服务 (BITS) Cmdlet](http://go.microsoft.com/fwlink/?LinkId=257514)
+- [后台智能传输服务 (BITS) Cmdlet](https://go.microsoft.com/fwlink/?LinkId=257514)
 
 - [Get-EventLog](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
 

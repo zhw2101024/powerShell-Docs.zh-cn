@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: PowerShell 50 ISE 中的新增功能
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 35b825cfa6ea720d0af3537c5d1b16c5ececb701
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: f05e3f3f95c8ceec6e843b8a1c79e6f092e1b87b
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953576"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320578"
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Windows PowerShell ISE 中的新增功能
 本主题介绍已在 Windows PowerShell (R) 集成脚本环境 (ISE) 的各版本中引入的新增功能和更新功能。
@@ -63,7 +63,7 @@ Intellisense 是一个自动完成辅助功能，是 Windows PowerShell ISE 的�
 ### <a name="add-on-tools"></a>附加工具
 **在 PowerShell 3.0 中添加**
 
-Windows PowerShell ISE 现在支持附加工具，这些工具是通过使用对象模型添加的 Windows Presentation Foundation (WPF) 控件。 附加工具可以在控制台中显示为垂直或水平窗格。 窗格中的多个附加工具会显示为选项卡式控件。 你还可以添加或删除由 Microsoft 以外的参与方创建的附加工具。 有关如何导入或删除附加工具的详细信息，请参阅 [Windows PowerShell ISE 操作](http://technet.microsoft.com/library/cc732148.aspx)。
+Windows PowerShell ISE 现在支持附加工具，这些工具是通过使用对象模型添加的 Windows Presentation Foundation (WPF) 控件。 附加工具可以在控制台中显示为垂直或水平窗格。 窗格中的多个附加工具会显示为选项卡式控件。 你还可以添加或删除由 Microsoft 以外的参与方创建的附加工具。 有关如何导入或删除附加工具的详细信息，请参阅 [Windows PowerShell ISE 操作](https://technet.microsoft.com/library/cc732148.aspx)。
 
 **更改增添了什么价值？**
 
@@ -224,5 +224,5 @@ Show-Command 是新的 Windows PowerShell ISE 3.0。
 有关在 Windows PowerShell 中使用 Windows PowerShell ISE 的详细信息，请参阅以下链接。
 
 - [浏览 Windows PowerShell 集成脚本环境](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
-- [TechNet Wiki 上的 ISE](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
-- [脚本中心](http://technet.microsoft.com/scriptcenter/default)
+- [TechNet Wiki 上的 ISE](https://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
+- [脚本中心](https://technet.microsoft.com/scriptcenter/default)

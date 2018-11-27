@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用 Out Cmdlet 重定向数据
 ms.assetid: 2a4acd33-041d-43a5-a3e9-9608a4c52b0c
-ms.openlocfilehash: 3ca7984e831a995e80cbd8a4d83ae9225c2a4f4c
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: f08879f436ce751b176af020aba21e90f09aa61f
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952114"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52321003"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a>使用 Out-* Cmdlet 重定向数据
 
@@ -97,7 +97,7 @@ default=multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
 
 **Out-Null** cmdlet 旨在用于立即放弃接收的任何输入。 这对放弃收到的不利于运行命令的不必要数据很有用。 键入下面的命令时，该命令不会返回任何内容：
 
-```powreshell
+```powershell
 Get-Command | Out-Null
 ```
 

@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 安装和使用 Windows PowerShell Web 访问
-ms.openlocfilehash: d718d9b286a8a2189f44f10983cdc0061e41d4b9
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
-ms.translationtype: HT
+ms.openlocfilehash: a129dfeb61531a1f4d333af3e872d16defa1d12f
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48851318"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320680"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>安装和使用 Windows PowerShell Web 访问
 
@@ -25,7 +25,7 @@ Windows PowerShell Web 访问在 Windows Server 2012 中首次引入，充当 Wi
 
 Windows PowerShell Web 访问安装和配置过程包含三个步骤：
 
-1. [安装 Windows PowerShell Web 访问](#install-windows-powershell-web-access)
+1. [安装 Windows PowerShell Web 访问](#install-windows-powershell-web-access-using-powershell-cmdlets)
 1. [配置网关](#configure-the-gateway)
 1. [配置受限的授权规则](#configure-a-restrictive-authorization-rule)
 
@@ -58,10 +58,10 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 ### <a name="minimally-tested-mobile-devices-or-browsers"></a>经过最小限度测试的移动设备或浏览器
 
-- Windows Phone 7 和 7.5
-- Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
+- Windows Phone 7 和 7.5
+- Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
 - iPhone 操作系统 5.0.1 的 Apple Safari
-- iPad 2 操作系统 5.0.1 的 Apple Safari
+- iPad 2 操作系统 5.0.1 的 Apple Safari
 
 ### <a name="browser-requirements"></a>浏览器要求
 
@@ -75,7 +75,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 通过使用 Windows PowerShell cmdlet 或从服务器管理器中打开的“添加角色和功能向导”，你可以在运行 Windows Server 2012 R2 或 Windows Server 2012 的服务器上安装 Windows PowerShell Web 访问网关。 对于快速安装和配置，使用 Windows PowerShell cmdlet，如本部分中所述。
 
-1. [安装 Windows PowerShell Web 访问](#install-Windows-powershell-web-access)
+1. [安装 Windows PowerShell Web 访问](#install-windows-powershell-web-access-using-powershell-cmdlets)
 1. [配置网关](#configure-the-gateway)
 1. [配置受限的授权规则](#configure-a-restrictive-authorization-rule)
 
@@ -189,7 +189,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 ### <a name="configure-a-restrictive-authorization-rule"></a>配置受限的授权规则
 
-安装 Windows PowerShell Web 访问和配置网关后，用户可在浏览器中打开登录页面，但他们无法登录，直到 Windows PowerShell Web 访问管理员明确授予用户访问权限。 Windows PowerShell Web 访问的访问控制通过使用下表所述的 Windows PowerShell cmdlet 集进行管理。 没有相当的 GUI 可用于添加或管理授权规则。 有关 Windows PowerShell Web 访问 cmdlet 的更多详细信息，请参阅 cmdlet 参考主题 [Windows PowerShell Web 访问 Cmdlet](cmdlets/web-access-cmdlets.md)。
+安装 Windows PowerShell Web 访问和配置网关后，用户可在浏览器中打开登录页面，但他们无法登录，直到 Windows PowerShell Web 访问管理员明确授予用户访问权限。 Windows PowerShell Web 访问的访问控制通过使用下表所述的 Windows PowerShell cmdlet 集进行管理。 没有相当的 GUI 可用于添加或管理授权规则。 有关 Windows PowerShell Web 访问 cmdlet 的更多详细信息，请参阅 cmdlet 参考主题 [Windows PowerShell Web 访问 Cmdlet](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)。
 
 有关 Windows PowerShell Web 访问授权规则和安全性的详细信息，请参阅 [Windows PowerShell Web 访问的授权规则和安全功能](authorization-rules-and-security-features-of-windows-powershell-web-access.md)。
 
@@ -360,7 +360,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 ### <a name="configuring-a-restrictive-authorization-rule"></a>配置受限的授权规则
 
-安装 Windows PowerShell Web 访问和配置网关后，用户可在浏览器中打开登录页面，但他们无法登录，直到 Windows PowerShell Web 访问管理员明确授予用户访问权限。 Windows PowerShell Web 访问的访问控制通过使用下表所述的 Windows PowerShell cmdlet 集进行管理。 没有相当的 GUI 可用于添加或管理授权规则。 有关 Windows PowerShell Web 访问 cmdlet 的更多详细信息，请参阅 cmdlet 参考主题 [Windows PowerShell Web 访问 Cmdlet](cmdlets/web-access-cmdlets.md)。
+安装 Windows PowerShell Web 访问和配置网关后，用户可在浏览器中打开登录页面，但他们无法登录，直到 Windows PowerShell Web 访问管理员明确授予用户访问权限。 Windows PowerShell Web 访问的访问控制通过使用下表所述的 Windows PowerShell cmdlet 集进行管理。 没有相当的 GUI 可用于添加或管理授权规则。 有关 Windows PowerShell Web 访问 cmdlet 的更多详细信息，请参阅 cmdlet 参考主题 [Windows PowerShell Web 访问 Cmdlet](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)。
 
 有关 Windows PowerShell Web 访问授权规则和安全性的详细信息，请参阅 [Windows PowerShell Web 访问的授权规则和安全功能](authorization-rules-and-security-features-of-windows-powershell-web-access.md)。
 
@@ -404,7 +404,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 1. 在“操作”窗格中，执行以下操作之一。 有关在 IIS 中配置服务器证书的详细信息，请参阅[在 IIS 7 中配置服务器证书](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10))。
 
    - 单击“导入”，以从网络上的位置中导入现有的有效证书。
-   - 单击“创建证书请求”，以请求证书颁发机构颁发的证书，例如 [VeriSign](http://www.verisign.com/)、[Thawte](https://www.thawte.com/) 或 [GeoTrust](https://www.geotrust.com/)。 证书的公用名必须与申请的主机头相匹配。
+   - 单击“创建证书请求”，以请求证书颁发机构颁发的证书，例如 [VeriSign](https://www.verisign.com/)、[Thawte](https://www.thawte.com/) 或 [GeoTrust](https://www.geotrust.com/)。 证书的公用名必须与申请的主机头相匹配。
 
      例如，如果客户端浏览器申请 `http://www.contoso.com/`，则公用名也必须是 `http://www.contoso.com/`。 这是向 Windows PowerShell Web 访问网关提供证书的最安全的推荐方案。
 

@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell 集成脚本环境 (ISE)
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: d116ec107c2d07e9fd55ee974008b3636b4ab049
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: a5fcc8c813349d0b85cc3af29047424fe787d168
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952063"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320510"
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell 集成脚本环境 (ISE)
 
@@ -62,7 +62,7 @@ ISE 随 PowerShell v2.0 一同引入。
 
 ## <a name="requirements-for-running-the-windows-powershell-ise"></a>运行 Windows PowerShell ISE 的要求
 
-可以在任何运行 Windows PowerShell v2.0 或更高版本的 Windows 计算机上使用 ISE。 每个 Windows 和 Windows Server 版本都包含一个 Windows PowerShell 和 ISE 版本，但你可以通过安装 Windows Management Framework (WMF) 升级至最新的可用版本。 有关详细信息，请参阅 [WMF](/powershell/wmf/readme) 文档。
+可以在任何运行 Windows PowerShell v2.0 或更高版本的 Windows 计算机上使用 ISE。 每个 Windows 和 Windows Server 版本都包含一个 Windows PowerShell 和 ISE 版本，但你可以通过安装 Windows Management Framework (WMF) 升级至最新的可用版本。 有关详细信息，请参阅 [WMF](/powershell/wmf) 文档。
 
 > [!NOTE]
 > 由于 Windows PowerShell ISE 需要图形用户界面，因此你无法在 Windows Server 的 Server Core 选项上运行它。

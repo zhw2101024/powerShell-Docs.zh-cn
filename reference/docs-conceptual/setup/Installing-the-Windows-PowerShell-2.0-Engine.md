@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 安装 Windows PowerShell 2.0 引擎
 ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
-ms.openlocfilehash: 0b3282a1a67886509e749af0f499c47fe7a99411
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: fb5ed1a5508ddca6925e9281a53caf5e6701870f
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952335"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320493"
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a>安装 Windows PowerShell 2.0 引擎
 本主题介绍了如何安装 Windows PowerShell 2.0 引擎。
@@ -70,7 +70,7 @@ Windows PowerShell 2.0 引擎是 Windows Server 2012 R2、Windows 8.1、Windows�
 有关启动 Windows PowerShell 2.0 引擎的信息，请参阅[启动 Windows PowerShell 2.0 引擎](Starting-the-Windows-PowerShell-2.0-Engine.md)。
 
 ## <a name="on-earlier-systems"></a>在较早的系统上
-在 Windows 7、Windows Server 2008 R2 和 Windows Server 2012 上安装 Windows PowerShell 4.0 的 [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) 程序包中包括 Windows PowerShell 2.0 引擎。 Windows PowerShell 2.0 引擎已启用并可供使用（若需要），而无需其他安装、设置或配置。
+在 Windows 7、Windows Server 2008 R2 和 Windows Server 2012 上安装 Windows PowerShell 4.0 的 [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkID=293881) 程序包中包括 Windows PowerShell 2.0 引擎。 Windows PowerShell 2.0 引擎已启用并可供使用（若需要），而无需其他安装、设置或配置。
 
 在 Windows 7、Windows Server 2008 R2 和 Windows Server 2008 上安装 Windows PowerShell 3.0 的 Windows Management Framework 3.0 程序包中包括 Windows PowerShell 2.0 引擎。 Windows PowerShell 2.0 引擎已启用并可供使用（若需要），而无需其他安装、设置或配置。
 

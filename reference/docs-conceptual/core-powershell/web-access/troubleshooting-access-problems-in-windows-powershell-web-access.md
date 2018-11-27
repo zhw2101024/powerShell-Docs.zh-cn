@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell Web 访问中的访问问题疑难解答
-ms.openlocfilehash: ef476d8e386e5380cb2c9dda69180dfce8748bf4
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: c9b98c7a1685679eb88b718de0351154cb84e92e
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953440"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320986"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Windows PowerShell Web 访问中的访问问题疑难解答
 
@@ -49,7 +49,7 @@ ms.locfileid: "30953440"
 
 #### <a name="workaround"></a>解决方法
 
-1. [安装并运行 Internet Explorer 10](http://ie.microsoft.com/testdrive/info/downloads/Default.html)
+1. [安装并运行 Internet Explorer 10](https://ie.microsoft.com/testdrive/info/downloads/Default.html)
 1. 将 Internet Explorer“文档模式”设置更改为“IE10 标准”。
    1. 按 F12 打开“开发人员工具”控制台。
    1. 在 Internet Explorer 10 中，单击“浏览器模式”，然后选择“Internet Explorer 10”。
