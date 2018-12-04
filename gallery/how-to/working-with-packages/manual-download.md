@@ -3,16 +3,16 @@ ms.date: 09/11/2018
 contributor: JKeithB
 keywords: 库, powershell, psgallery
 title: 手动包下载
-ms.openlocfilehash: 0952aa4ec474850af5219fb2e0e9ee3e954b0f9a
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
-ms.translationtype: HT
+ms.openlocfilehash: 57baa14089b803f58c42ccb54553ecace841e34b
+ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003664"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52742816"
 ---
 # <a name="manual-package-download"></a>手动包下载
 
-Powershell 库支持直接下载网站中的包而无需使用 PowerShellGet cmdlet。 此包将作为 NuGet 包 (.nupkg) 文件下载，然后可轻松将其复制到内部存储库。
+Powershell 库支持直接下载网站中的包而无需使用 PowerShellGet cmdlet。 您可以为 NuGet 包 (.nupkg) 文件，然后将复制到内部存储库下载任何包。
 
 > [!NOTE]
 > 手动包下载并非旨在替代 Install-Module cmdlet。
@@ -45,7 +45,7 @@ NuGet 包文件包含以下特定于 NuGet 的元素，这些元素不是原始�
 1. 将 NuGet 包的内容提取到本地文件夹。
 2. 从文件夹中删除特定于 NuGet 的元素。
 3. 重命名文件夹。 默认文件夹名称通常是 `<name>.<version>`。 若将模块标记为预发布版本，则版本可包含“预发行版”。 将文件夹重命名为模块名称。 例如，将“azurerm.storage.5.0.4-预览版”重命名为“azurerm.storage”。
-4. 将文件夹复制到 PSModulePath。
+4. 将文件夹复制到一个文件夹中`$env:PSModulePath value`。 `$env:PSModulePath` 是以分号分隔一系列 PowerShell 的模块应查找的路径。
 
 > [!IMPORTANT]
 > 手动下载不包括模块所需的任何依赖项。 若包具有依赖项，则必须在系统上安装它们才能使此模块正常工作。 PowerShell 库显示包所需的所有依赖项。

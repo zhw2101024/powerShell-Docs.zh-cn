@@ -3,22 +3,23 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 title: 库搜索语法
-ms.openlocfilehash: 9aadb6771c85845cc3fa05cb56f0194b060d1c1b
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
-ms.translationtype: HT
+ms.openlocfilehash: aabcaa1f1b5b641ab5033c9ba2e358477c84a23b
+ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003665"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52742850"
 ---
 # <a name="gallery-search-syntax"></a>库搜索语法
 
-PowerShell 库提供文本搜索框，可以在其中使用单词、短语和关键字表达式来缩小搜索结果的范围。
+您可以搜索 PowerShell 库使用[PowerShell 库的 web 站点](https://www.powershellgallery.com/)。
+PowerShell 库网站上提供文本搜索框，其中使用单词、 短语和关键字表达式来缩小搜索结果。
 
 ## <a name="search-by-keywords"></a>按关键字搜索
 
     dsc azure sql
 
-“搜索”将最大程度地查找包含所有 3 个关键字的相关文档，并返回匹配的文档。
+搜索尝试查找包含所有 3 个关键字的相关文档，并返回匹配的文档。
 
 ## <a name="search-using-phrases-and-keywords"></a>使用短语和关键字进行搜索
 
@@ -37,10 +38,9 @@ PowerShell 库提供文本搜索框，可以在其中使用单词、短语和关
 
 ## <a name="examples"></a>示例
 
-    ID:"PSReadline"
-    id:"AzureRM.Profile"
-
-分别在其 ID 字段中查找具有“PSReadline”或“AzureRM.Profile”的包。
+    ID:PSReadline
+    
+查找包含"PSReadline"id 的程序包。
 
     Id:"AzureRM.Profile"
 
@@ -50,40 +50,35 @@ PowerShell 库提供文本搜索框，可以在其中使用单词、短语和关
 
     Id:"azure"
 
-你将得到如“AzureRM.Profile”和“Azure.Storage”等结果。
+这提供了结果，包括 AzureRM.Profile 和 Azure.Storage。
 
-你也可以搜索单个字段中的多个关键字。 或混合和匹配字段。
+你也可以搜索单个字段中的多个关键字。 
 
     id:azure tags:intellisense
-    id:azure id:storage
 
-并且，你可以执行短语搜索：
+还可以执行短语搜索使用双引号引起来：
 
     id:"azure.storage"
 
-
 搜索具有 DSC 标记的所有包。
 
-    Tags:"DSC"
+    Tags:DSC
 
 搜索具有指定函数的所有包。
 
-    Functions:"Update-AzureRM"
+    Functions:Get-TreeSize
 
 搜索具有指定 cmdlet 的所有包。
 
-    Cmdlets:"Get-AzureRmEnvironment"
+    Cmdlets:Get-AzureRmEnvironment
 
 搜索具有指定 DSC 资源名称的所有包。
 
-    DscResources:"xArchive"
+    DscResources:xArchive
 
 搜索具有指定 PowerShellVersion 的所有包
 
-    PowerShellVersion:"5.0"
-    PowerShellVersion:"3.0"
-    PowerShellVersion:"2.0"
-
+    PowerShellVersion:2.0
 
 最后，如果你使用不支持的字段（如“commands”），我们将忽略该字段并搜索所有字段。 因此以下查询
 
