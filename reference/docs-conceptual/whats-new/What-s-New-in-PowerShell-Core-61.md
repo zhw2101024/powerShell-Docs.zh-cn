@@ -4,7 +4,7 @@ description: PowerShell Core 6.1 中发布的新功能和更改
 ms.date: 09/13/2018
 ms.openlocfilehash: 4e39780a0ff446993005bba6284741f3b4b02549
 ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
-ms.translationtype: HT
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/08/2018
 ms.locfileid: "48851301"
@@ -35,10 +35,10 @@ ms.locfileid: "48851301"
 
 Windows兼容包使 PowerShell Core 能使用 Windows 10 2018 年 10 月更新和 Windows Server 2019 附带的 1900 多个 cmdlet。
 
-## <a name="support-for-application-whitelisting"></a>对应用程序白名单的支持
+## <a name="support-for-application-whitelisting"></a>对应用程序允许列表的支持
 
-PowerShell Core 6.1 与支持 [AppLocker](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) 和 [Device Guard](https://docs.microsoft.com/en-us/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) 应用程序白名单的 Windows PowerShell 5.1 具有奇偶一致性。
-应用程序白名单允许使用 PowerShell [受限语言模式](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/)精确地控制允许执行的二进制文件。
+PowerShell Core 6.1 与支持 [AppLocker](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) 和 [Device Guard](https://docs.microsoft.com/en-us/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) 应用程序允许列表的 Windows PowerShell 5.1 具有奇偶一致性。
+根据应用程序允许列表，可使用 PowerShell [受限语言模式](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/)精确地控制允许执行的二进制文件。
 
 ## <a name="performance-improvements"></a>性能改进
 
@@ -199,7 +199,7 @@ Markdown 是创建可读明文文档的标准，其基本格式可以呈现为 H
 
 ### <a name="powershell-direct-for-containers-tries-to-use-powershell-core-first"></a>适用于容器的 PowerShell Direct 尝试先使用 PowerShell Core
 
-[PowerShell Direct ](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) 是 PowerShell 和 Hyper-V 的一项功能，允许在没有网络连接或其他远程管理服务的情况下连接到 Hyper-V VM 或容器。
+[PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) 是 PowerShell 和 Hyper-V 的一项功能，允许在没有网络连接或其他远程管理服务的情况下连接到 Hyper-V VM 或容器。
 
 在过去，PowerShell Direct 使用容器上的收件箱 Windows PowerShell 实例进行连接。
 现在，PowerShell Direct 先尝试使用 `PATH` 环境变量上任何可用的 `pwsh.exe` 进行连接。
@@ -506,7 +506,7 @@ PowerShell Core 在启动时会向 Microsoft 发送基本的遥测数据。 该�
 
 为了防止使用未加密的流量，Unix 平台上的 PowerShell 远程处理现在需要使用 NTLM/Negotiate 或 HTTPS。
 
-有关这些更改的详细信息，请查看 [Issue #6779](https://github.com/PowerShell/PowerShell/issues/6779)（问题 #6779）。
+有关这些更改的详细信息，请查看[问题 #6779](https://github.com/PowerShell/PowerShell/issues/6779)。
 
 ### <a name="removed-visualbasic-as-a-supported-language-in-add-type"></a>已在 Add-Type 中删除作为受支持语言的 `VisualBasic`
 

@@ -26,7 +26,7 @@ ms.locfileid: "52321071"
 
 Windows Server 2012 R2 中的 [Add-PswaAuthorizationRule](/powershell/module/powershellwebaccess/add-pswaauthorizationrule?view=winserver2012r2-ps) 和 [Test-PswaAuthorizationRule](/powershell/module/powershellwebaccess/test-pswaauthorizationrule?view=winserver2012r2-ps) 包含一个 Credential 参数，该参数使你可从远程计算机或在活动的 Windows PowerShell Web 访问会话中添加和测试 Windows PowerShell Web 访问授权规则。 与其他具有 Credential 参数的 Windows PowerShell cmdlet 一样，你可以指定一个 PSCredential 对象作为该参数的值。 若要创建一个包含要传递到远程计算机的凭据的 PSCredential 对象，请运行 [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential) cmdlet。
 
-Windows PowerShell Web 访问身份验证规则是白名单规则。 每条规则定义了用户、目标计算机和特定的 Windows PowerShell [会话配置](/powershell/module/microsoft.powershell.core/about/about_session_configurations?view=powershell-5.1)（_也称作终结点或运行空间_）在特定目标计算机上的允许连接。
+Windows PowerShell Web 访问身份验证规则是允许列表规则。 每条规则定义了用户、目标计算机和特定的 Windows PowerShell [会话配置](/powershell/module/microsoft.powershell.core/about/about_session_configurations?view=powershell-5.1)（_也称作终结点或运行空间_）在特定目标计算机上的允许连接。
 有关运行空间的说明，请参阅 [Beginning Use of PowerShell Runspaces](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)（PowerShell 运行空间入门）
 
 > [!IMPORTANT]
