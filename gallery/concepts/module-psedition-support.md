@@ -3,19 +3,19 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: 库,powershell,cmdlet,psget
 title: 具有兼容的 PowerShell 版本的模块
-ms.openlocfilehash: 0a95b47b506fbdddbb98b455a1d10d0f08ce402b
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
-ms.translationtype: HT
+ms.openlocfilehash: bda924393d37ea1596fbf0d813c10cbdea33c218
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002678"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655321"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>具有兼容的 PowerShell 版本的模块
 
 从版本 5.1 开始，PowerShell 以表现出不同功能集和平台兼容性的不同版本提供。
 
-- **桌面版：** 以 .NET Framework 为基础构建，提供与面向在完整功能 Windows 版本（如服务器核心和 Windows 桌面）上运行的 PowerShell 版本的脚本和模块的兼容性。
-- **核心版：** 以 .NET Core 为基础构建，提供与面向在缩减功能 Windows 版本（如 Nano Server 和 Windows IoT）上运行的 PowerShell 版本的脚本和模块的兼容性。
+- Desktop Edition.NET Framework 上构建，并提供与面向新版的 Server Core 等的 Windows 和 Windows 桌面的完整占用空间减小版本上运行的 PowerShell 脚本和模块的兼容性。
+- **核心版：**.NET Core 上生成，并提供与面向版本的 Nano Server 等的 Windows 和 Windows IoT 的占用空间减少的版本上运行的 PowerShell 脚本和模块的兼容性。
 
 正在运行的 PowerShell 版本显示在 `$PSVersionTable` 的 PSEdition 属性中。
 
@@ -96,7 +96,7 @@ Core
 
 由于模块作者必须使用 $PSEdition 变量在 RootModule 或模块清单中添加所需的逻辑，因此单一模块可同时在 Desktop 和 Core 版本上运行。 模块可以有两套以 CoreCLR 和 FullCLR 为目标的已编译 DLL。 以下是两种使用逻辑打包模块来加载合适的 dll 的选项。
 
-### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>选项 1：打包面向多个版本和多个 PowerShell 版本的模块
+### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>选项 1：打包面向多个版本和多个版本的 PowerShell 模块
 
 模块文件夹内容
 
@@ -174,7 +174,7 @@ $PSModule.OnRemove = {
 }
 ```
 
-### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>选项 2：使用 PSD1 文件中的 $PSEdition 变量加载适当的 Dll 和嵌套/必需模块
+### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>选项 2：使用 PSD1 文件中 $PSEdition 变量加载适当的 Dll 和嵌套/必需模块
 
 在 PS 5.1 或更高版本中，模块清单文件中允许使用 $PSEdition 全局变量。 使用此变量，模块作者可在模块清单文件中指定条件值。 可在受限语言模式或数据部分引用 $PSEdition 变量。
 
@@ -260,6 +260,6 @@ Find-Module -Tag PSEdition_Core
 
 [PSEditions 脚本](script-psedition-support.md)
 
-[PowerShell 库的 PSEditions 支持](../how-to/finding-packages/searching-by-psedition.md)
+[PowerShell 库的 PSEditions 支持](../how-to/finding-packages/searching-by-compatibility.md)
 
 [更新模块清单](/powershell/module/powershellget/update-modulemanifest)

@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell, 核心
 title: PowerShell 6.0 的重大更改
-ms.openlocfilehash: 60ce7a1676403bb08b57bf852ba725acde86a30c
-ms.sourcegitcommit: 2d9cf1ccb9a653db7726a408ebcb65530dcb1522
-ms.translationtype: HT
+ms.openlocfilehash: d477a9b27e8d5df6653ee40f8b606879b60a80c7
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2018
-ms.locfileid: "34309600"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655440"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>PowerShell 6.0 的重大更改
 
@@ -271,3 +271,4 @@ Web Cmdlet 的基础 .NET API 已更改为 `System.Net.Http.HttpClient`。 此�
 - 不再采用 `System.Net.ServicePointManager` 设置。
 - 目前在 macOS 上尚无基于证书的身份验证。
 - 通过 `http://` URI 使用 `-Credential` 将导致错误。 使用 `https://` URI 或提供 `-AllowUnencryptedAuthentication` 参数来阻止此错误。
+- `-MaximumRedirection` 现在生成一个终止错误时重定向尝试超过而不是返回的最后一个重定向结果提供的限制。

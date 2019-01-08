@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 description: 面向发行者的指南
 title: PowerShell 库发布指南和最佳做法
-ms.openlocfilehash: 7e9eca8d3372ddf0b94ab42e125991b857456551
-ms.sourcegitcommit: aa1129cc2b0ae6e18918b2b0ea70c74915ed019b
-ms.translationtype: HT
+ms.openlocfilehash: a996a820d6bd52e796a41659c6f468662dbff0f4
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235399"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655389"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell 库发布指南和最佳做法
 
@@ -33,6 +33,7 @@ ms.locfileid: "50235399"
 - 及时响应反馈
 - 提供模块（而不是脚本）
 - 提供项目网站链接
+- 标记兼容 PSEdition(s) 和平台包 
 - 随模块添加测试
 - 添加和/或链接到许可条款
 - 对代码进行签名
@@ -92,8 +93,8 @@ Examples\RegistryResource 文件夹下的 [PSDscResource 模块](https://www.pow
 
 PowerShell 库支持以下两种反馈方法：
 
-- 联系人所有者：这样，用户可以向包所有者发送电子邮件。 作为包所有者，请务必监视用于 PowerShell 库包的电子邮件地址，并及时响应所提出的问题。 这种方法有一个缺点，就是只有用户和所有者才能看到通信，因此所有者可能需要多次回答同一问题。
-- 评论：包网页的底部有“评论”字段。
+- 联系人所有者：这允许用户向包所有者发送一封电子邮件。 作为包所有者，请务必监视用于 PowerShell 库包的电子邮件地址，并及时响应所提出的问题。 这种方法有一个缺点，就是只有用户和所有者才能看到通信，因此所有者可能需要多次回答同一问题。
+- 说明在包的底部页是一个注释字段。
   此系统的优点是，其他用户可以看到评论和响应，这样就减少了必须回答每个问题的次数。
   强烈建议包所有者关注对每个包发表的评论。
 若要详细了解如何执行此操作，请参阅[通过社交媒体或发表评论提供反馈](../how-to/working-with-packages/social-media-feedback.md)。
@@ -134,6 +135,16 @@ PowerShell 库中的许多包在 GitHub 中进行开发，而其他包则由具�
         ProjectUri = 'https://github.com/powershell/powershell'
 
 提供 ProjectURI 时，PowerShell 库在包网页的左侧添加项目网站链接。
+
+## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>标记兼容 PSEdition(s) 和平台包 
+
+使用以下标记演示对用户包适用于其环境：
+
+- PSEdition_Desktop:使用 Windows PowerShell 兼容的包 
+- PSEdition_Core:与 Powershell Core 兼容的包 
+- Windows与在 Windows 操作系统兼容的包
+- Linux使用 Linux 操作系统兼容的包 
+- macOS 10.12+与在 Mac 操作系统兼容的包
 
 ## <a name="include-tests"></a>添加测试
 
