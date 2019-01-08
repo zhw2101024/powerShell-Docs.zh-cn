@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: JEA 会话配置
-ms.openlocfilehash: bdf3659357045203d90e8083613e51cce657da1a
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
-ms.translationtype: HT
+ms.openlocfilehash: 1b598522d43b2c1a26a739a67cee5181b21a7c32
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522940"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655457"
 ---
 # <a name="jea-session-configurations"></a>JEA 会话配置
 
@@ -80,6 +80,8 @@ RunAsVirtualAccount = $true
 RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
+> [!NOTE]
+> 虚拟帐户作为服务在本地服务器安全策略中暂时授予登录名。  如果指定 VirtualAccountGroups 之一已被授予此权限的策略中，将无法再添加并从策略中删除单个虚拟帐户。  这可以是仔细审核对域控制器安全策略的修订的域控制器等方案中非常有用。  这是仅可用在 2018 年 11 月 Windows Server 2016 或更高版本的汇总和 Windows Server 2019 年 1 月 2019年使用或更高版本的汇总。
 
 #### <a name="group-managed-service-account"></a>组托管服务帐户
 
