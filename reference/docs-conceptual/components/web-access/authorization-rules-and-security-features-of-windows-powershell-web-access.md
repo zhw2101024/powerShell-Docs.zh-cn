@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 title: Windows PowerShell Web 访问的授权规则和安全功能
 ms.openlocfilehash: 95c61d3a0431cda9dee738d1c9f5ec843c1209f3
 ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/14/2018
 ms.locfileid: "53400512"
@@ -156,7 +156,7 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即星号 ( \* )。
 - 管理员创建名为 **PswaEndpoint** 的终结点，其中带有受限的运行空间。 然后管理员创建规则 `*,*,PswaEndpoint`，并将终结点分配给其他计算机。 规则可让所有用户访问所有带有终结点 **PswaEndpoint** 的计算机。
   如果这只是在规则集中定义的授权规则，则不能访问不带有终结点的计算机。
 
-- 管理员创建名为 **PswaEndpoint** 的终结点（其中带有受限的运行空间），并希望限制特定用户的访问权限。 管理员创建一组名为 Level1Support** 的用户，并定义以下规则：**Level1Support，\*，PswaEndpoint**。 规则可让 **Level1Support** 组中的用户访问所有带有 **PswaEndpoint** 配置的计算机。 类似地，可限制对特定计算机组合的访问权限。
+- 管理员创建名为 **PswaEndpoint** 的终结点（其中带有受限的运行空间），并希望限制特定用户的访问权限。 管理员创建一组名为 **Level1Support** 的用户，并定义以下规则：**Level1Support,\*,PswaEndpoint**。 规则可让 **Level1Support** 组中的用户访问所有带有 **PswaEndpoint** 配置的计算机。 类似地，可限制对特定计算机组合的访问权限。
 
 - 有些管理员为某些用户提供的访问权限要比其他用户多。 例如，管理员创建两个用户组，分别是 **Admins** 和 **BasicSupport**。 管理员还创建名为 PswaEndpoint 的终结点（其中带有受限的运行空间），并定义以下两项规则：**Admins,\*,\*** 和 **BasicSupport,\*,PswaEndpoint**. 第一条规则为**Admin**组中的所有用户提供访问所有计算机的权限，第二条规则为**BasicSupport**组中的所有用户仅提供访问那些带有**PswaEndpoint**的计算机的权限。
 
