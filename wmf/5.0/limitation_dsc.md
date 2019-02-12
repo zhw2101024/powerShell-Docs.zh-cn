@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: 76aa4a372602d78e013b2138eb6409304a4dfb76
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
-ms.translationtype: HT
+ms.openlocfilehash: ac17333145fd8bd05aea7d32b13d95fdd0421504
+ms.sourcegitcommit: 10c347a8c3dcbf8962295601834f5ba85342a87b
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190054"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55887559"
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Desired State Configuration (DSC) 已知问题和限制
 
-<a name="breaking-change-certificates-used-to-encryptdecrypt-passwords-in-dsc-configurations-may-not-work-after-installing-wmf-50-rtm"></a>重大更改：DSC 配置中用于对密码进行加密/解密的证书在安装 WMF 5.0 RTM 后可能失效
+<a name="breaking-change-certificates-used-to-encryptdecrypt-passwords-in-dsc-configurations-may-not-work-after-installing-wmf-50-rtm"></a>重大更改：使用证书来加密/解密密码在 DSC 配置中的安装 WMF 5.0 RTM 后可能失效
 --------------------------------------------------------------------------------------------------------------------------------
 
 在 WMF 4.0 和 WMF 5.0 预览版本中，DSC 不允许配置中的密码长度超过 121 个字符。 尽管使用较长的强密码更好，但 DSC 强制使用短密码。 此项重大更改使 DSC 配置中的密码可为任意长度。
 
-**解决方法：** 使用数据加密或密钥加密密钥用法和文档加密增强型密钥用法 (1.3.6.1.4.1.311.80.1) 重新创建证书。 Technet 文章 <https://technet.microsoft.com/library/dn807171.aspx> 提供了更多信息。
+**解决方法：** 重新创建具有数据加密或密钥加密密钥使用情况和文档加密增强型密钥用法 (1.3.6.1.4.1.311.80.1) 的证书。 Technet 文章 <https://technet.microsoft.com/library/dn807171.aspx> 提供了更多信息。
 
 
 <a name="dsc-cmdlets-may-fail-after-installing-wmf-50-rtm"></a>安装 WMF 5.0 RTM 后 DSC cmdlet 可能失败
@@ -28,7 +28,7 @@ ms.locfileid: "34190054"
     + PSComputerName : localhost
 ```
 
-**解决方法：** 通过在提升的 PowerShell 会话中运行以下命令（以管理员身份运行）来删除 DSCEngineCache.mof：
+**解决方法：** 通过在提升的 PowerShell 会话 （以管理员身份运行） 中运行以下命令来删除 DSCEngineCache.mof:
 
 ```powershell
 Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
@@ -37,7 +37,7 @@ Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 
 <a name="dsc-cmdlets-may-not-work-if-wmf-50-rtm-is-installed-on-top-of-wmf-50-production-preview"></a>如果在 WMF 5.0 生产预览版的基础上安装 WMF 5.0 RTM，DSC cmdlet 可能失效
 ------------------------------------------------------
-**解决方法：** 在提升的 PowerShell 会话中运行以下命令（以管理员身份运行）：
+**解决方法：** 在提升的 PowerShell 会话 （以管理员身份运行） 中运行以下命令：
 ```powershell
     mofcomp $env:windir\system32\wbem\DscCoreConfProv.mof
 ```
@@ -48,21 +48,21 @@ Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 
 如果 LCM 处于 DebugMode，按 Ctrl+C 来停止 Get-DscConfiguration 处理可能导致 LCM 进入不稳定状态，从而导致大部分 DSC cmdlet 失效。
 
-**解决方法：** 不要在调试 Get-DscConfiguration cmdlet 时按 Ctrl+C。
+**解决方法：** 不在调试 Get-dscconfiguration cmdlet 时按 CTRL + C。
 
 
-<a name="stop-dscconfiguration-may-hang-in-debugmode"></a>在 DebugMode 中，Stop-DscConfiguration 可能挂起
+<a name="stop-dscconfiguration-may-not-respond-in-debugmode"></a>在 DebugMode 中可能不响应停止 DscConfiguration
 ------------------------------------------------------------------------------------------------------------------------
-如果 LCM 处于 DebugMode，则当试图停止由 Get-DscConfiguration 启动的操作时，Stop-DscConfiguration 可能挂起
+如果 LCM 处于 DebugMode，试图停止操作由 Get-dscconfiguration 启动时，Stop-dscconfiguration 可能不响应
 
-**解决方法：** 按[调试 DSC 资源](https://msdn.microsoft.com/powershell/dsc/debugresource)部分中所述完成由 Get-DscConfiguration 所启动操作的调试。
+**解决方法：** 完成调试部分中所述，由 Get-dscconfiguration 启动操作[调试 DSC 资源](https://msdn.microsoft.com/powershell/dsc/debugresource)。
 
 
 <a name="no-verbose-error-messages-are-shown-in-debugmode"></a>DebugMode 中不显示详细错误消息
 -----------------------------------------------------------------------------------
 如果 LCM 处于 DebugMode，DSC 资源中将不显示详细错误消息。
 
-**解决方法：** 禁用 *DebugMode* 以从资源中查看详细消息
+**解决方法：** 禁用*DebugMode*若要查看来自资源的详细消息
 
 
 <a name="invoke-dscresource-operations-cannot-be-retrieved-by-get-dscconfigurationstatus-cmdlet"></a>Get-DscConfigurationStatus cmdlet 无法检索 Invoke-DscResource 操作
@@ -88,7 +88,7 @@ Invoke-DscResource cmdlet 不按 LCM 或 DSC 资源生成详细、警告和错�
 <a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>与 Invoke-DscResource 一起使用时，无法轻松调试 DSC 资源
 -----------------------------------------------------------------------
 LCM 在调试模式下运行时（请参阅 [调试 DSC 资源](https://msdn.microsoft.com/powershell/dsc/debugresource)以了解详细信息），Invoke-DscResource cmdlet 不会给出有关连接到运行空间以进行调试的信息。
-**解决方法：** 使用 cmdlet **Get-PSHostProcessInfo**、**Enter-PSHostProcess**、**Get-Runspace** 和 **Debug-Runspace** 来发现并连接到运行空间，以便调试 DSC 资源。
+**解决方法：** 发现并附加到使用 cmdlet 的运行空间**Get-pshostprocessinfo**， **Enter-pshostprocess** ， **Get-runspace**和**Debug-runspace**调试 DSC 资源。
 
 ```powershell
 # Find all the processes hosting PowerShell
@@ -121,7 +121,7 @@ Debug-Runspace -Id 2
 
 对于部署到单个节点上的多个部分配置，相同的资源名称可能导致运行时错误。
 
-**解决方法：** 即使对不同部分配置中的相同资源也使用不同的名称。
+**解决方法：** 在不同的部分配置中使用不同的甚至相同的资源名称。
 
 
 <a name="start-dscconfiguration-useexisting-does-not-work-with--credential"></a>Start-DscConfiguration –UseExisting 不可与 -Credential 一起使用
@@ -168,7 +168,7 @@ Start-DscConfiguration -UseExisting -CimSession $session
 <a name="psdscrunascredential-is-not-supported-for-dsc-composite-resources"></a>不支持将 PsDscRunAsCredential 用于 DSC 复合资源
 ----------------------------------------------------------------
 
-**解决方法：** 尽可能使用 Credential 属性。 示例 ServiceSet 和 WindowsFeatureSet
+**解决方法：** 如果可用，请使用 Credential 属性。 示例 ServiceSet 和 WindowsFeatureSet
 
 
 <a name="get-dscresource--syntax-does-not-reflect-psdscrunascredential-correctly"></a>*Get-DscResource -Syntax* 不能正确地反映 PsDscRunAsCredential
@@ -196,7 +196,7 @@ At C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
     + FullyQualifiedErrorId : PSInvalidOperationException,ImportClassResourcesFromModule
 ```
 
-**解决方法：** 通过定义 *ModuleSpecification* 对象将所需版本导入到 `-ModuleName`，`RequiredVersion` 密钥按如下所示指定：
+**解决方法：** 通过定义导入所需的版本*ModuleSpecification*对象传递给`-ModuleName`与`RequiredVersion`密钥，如下所示指定：
 ``` PowerShell
 Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}
 ```
@@ -204,12 +204,12 @@ Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'
 <a name="some-dsc-resources-like-registry-resource-may-start-to-take-a-long-time-to-process-the-request"></a>一些 DSC 资源，如注册表资源可能开始需要较长时间处理请求。
 --------------------------------------------------------------------------------------------------------------------------------
 
-**解决方案 1：** 创建定期清理以下文件夹的计划任务。
+**解决方案 1:** 创建计划任务定期清理以下文件夹。
 ``` PowerShell
 $env:windir\system32\config\systemprofile\AppData\Local\Microsoft\Windows\PowerShell\CommandAnalysis
 ```
 
-“”**解决方案 2：** 更改 DSC 配置以在配置结束时清理 *CommandAnalysis* 文件夹。
+**解决方案 2:** 更改要清理的 DSC 配置*CommandAnalysis*配置末尾处的文件夹。
 ``` PowerShell
 Configuration $configName
 {

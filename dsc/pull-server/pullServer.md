@@ -2,12 +2,12 @@
 ms.date: 04/11/2018
 keywords: dsc,powershell,配置,安装程序
 title: DSC 请求服务
-ms.openlocfilehash: 659a8f8b2ce7d34058e789c5de336dc1f1f2abb2
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: bcde871f0f7f107daca47c29419c36451e779f94
+ms.sourcegitcommit: 10c347a8c3dcbf8962295601834f5ba85342a87b
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400473"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55887627"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration 请求服务
 
@@ -103,6 +103,7 @@ Windows Server 中提供的请求服务是 IIS 中的一项 Web 服务，当目�
             [string] $RegistrationKey   # A guid that clients use to initiate conversation with pull server
         )
 
+        Import-DSCResource -ModuleName PSDesiredStateConfiguration
         Import-DSCResource -ModuleName xPSDesiredStateConfiguration
 
         Node $NodeName
@@ -126,6 +127,7 @@ Windows Server 中提供的请求服务是 IIS 中的一项 Web 服务，当目�
                 DependsOn               = "[WindowsFeature]DSCServiceFeature"
                 RegistrationKeyPath     = "$env:PROGRAMFILES\WindowsPowerShell\DscService"
                 AcceptSelfSignedCertificates = $true
+                UseSecurityBestPractices     = $true
                 Enable32BitAppOnWin64   = $false
             }
 
