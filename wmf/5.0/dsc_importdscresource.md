@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
 ms.openlocfilehash: 46a278b83edb9d8e3d75b0874603710d416be3b5
-ms.sourcegitcommit: f4247d3f91d06ec392c4cd66921ce7d0456a2bd9
-ms.translationtype: HT
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "50998514"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676149"
 ---
 # <a name="import-dscresource-keyword-supports--moduleversion-parameter"></a>Import-DscResource 关键字支持 -ModuleVersion 参数
 

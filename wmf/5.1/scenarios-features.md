@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,安装程序
 title: WMF 5.1 中的新方案和功能
 ms.openlocfilehash: b00069aad7422f86d1462a62a6c4bc8a91e46705
-ms.sourcegitcommit: 50b66cada6943784b8d3c103cebc3c1e3e286a16
-ms.translationtype: HT
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37090357"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677207"
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>WMF 5.1 中的新方案和功能
 
@@ -124,6 +124,6 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
 ## <a name="improvements-to-pester"></a>针对 Pester 的改进
 
-在 WMF 5.1 中，PowerShell 随附的 Pester 版本从 3.3.5 更新到 3.4.0，并且添加了一个提交：https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e，从而改善了 Nano 服务器上的 Pester 的行为。
+在 WMF 5.1 中，PowerShell 随附的 Pester 版本从 3.3.5 更新到 3.4.0，并且添加了一个提交： https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e，从而改善了 Nano 服务器上的 Pester 的行为。
 
 可以通过在 https://github.com/pester/Pester/blob/master/CHANGELOG.md 处检查 ChangeLog.md 文件查看版本 3.3.5 到 3.4.0 的更改

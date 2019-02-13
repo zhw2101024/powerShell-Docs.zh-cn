@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 在 PowerShell 远程处理中形成第二个跃点
 ms.openlocfilehash: 06ca43e3e0524d89ec6f66f6553c4c75072beaf3
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400469"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676163"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>在 PowerShell 远程处理中形成第二个跃点
 
@@ -24,7 +24,7 @@ ms.locfileid: "53400469"
 
 可以使用[凭据安全支持提供程序(CredSSP)](https://msdn.microsoft.com/library/windows/desktop/bb931352.aspx) 进行身份验证。 CredSSP 会将凭据缓存在远程服务器 (_ServerB_) 上，因此使用它会给你带来凭据被盗攻击的风险。 如果远程计算机被攻破，攻击者将有权访问用户的凭据。 默认情况下，CredSSP 在客户端和服务器计算机上都处于禁用状态。 应该仅在最受信任的环境中启用 CredSSP。 例如，连接到域控制器的域管理员，因为域控制器是高度可信任的。
 
-有关安全问题时使用 CredSSP 进行 PowerShell 远程处理的详细信息，请参阅[意外破坏：注意 CredSSP](https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp)。
+若要详细了解在使用 CredSSP 进行 PowerShell 远程处理时需要注意的安全问题，请参阅 [Accidental Sabotage: Beware of CredSSP（非蓄意破坏：当心 CredSSP）](https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp)。
 
 有关凭据被盗攻击的详细信息，请参阅[缓解哈希传递 (PtH) 攻击和其他凭据被盗](https://www.microsoft.com/en-us/download/details.aspx?id=36036)。
 
@@ -43,7 +43,7 @@ ms.locfileid: "53400469"
 
 还可以使用 Kerberos 非约束委派来形成第二个跃点。 但是，此方法无法控制使用委派凭据的位置。
 
->**注意：** 无法委派具有“敏感帐户，不能被委派”属性集的 Active Directory 帐户。 有关详细信息，请参阅[注重于安全性：对特权帐户分析敏感帐户，不能被委派](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)和[Kerberos 身份验证工具和设置](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
+>**注意：** 无法委派具有**敏感帐户，不能被委派**属性集的 Active Directory 帐户。 有关详细信息，请参阅 [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)（安全聚焦：对特权帐户分析“敏感帐户，不能被委派”）和 [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)（Kerberos 身份验证工具和设置）
 
 ### <a name="pros"></a>优点
 
@@ -58,7 +58,7 @@ ms.locfileid: "53400469"
 
 可以使用旧的约束委派（而非基于资源的委派）形成第二个跃点。
 
->**注意：** 无法委派具有“敏感帐户，不能被委派”属性集的 Active Directory 帐户。 有关详细信息，请参阅[注重于安全性：对特权帐户分析敏感帐户，不能被委派](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)和[Kerberos 身份验证工具和设置](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
+>**注意：** 无法委派具有**敏感帐户，不能被委派**属性集的 Active Directory 帐户。 有关详细信息，请参阅 [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)（安全聚焦：对特权帐户分析“敏感帐户，不能被委派”）和 [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)（Kerberos 身份验证工具和设置）
 
 ### <a name="pros"></a>优点
 
@@ -76,7 +76,7 @@ ms.locfileid: "53400469"
 通过使用（Windows Server 2012 中引入的）基于资源的 Kerberos 约束委派，在资源驻留的服务器对象上配置凭据委派。
 在上述第二个跃点场景中，配置 _ServerC_ 以指定从何处接受委派凭据。
 
->**注意：** 无法委派具有“敏感帐户，不能被委派”属性集的 Active Directory 帐户。 有关详细信息，请参阅[注重于安全性：对特权帐户分析敏感帐户，不能被委派](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)和[Kerberos 身份验证工具和设置](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
+>**注意：** 无法委派具有**敏感帐户，不能被委派**属性集的 Active Directory 帐户。 有关详细信息，请参阅 [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)（安全聚焦：对特权帐户分析“敏感帐户，不能被委派”）和 [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)（Kerberos 身份验证工具和设置）
 
 ### <a name="pros"></a>优点
 

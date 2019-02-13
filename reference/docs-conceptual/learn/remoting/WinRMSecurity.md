@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: WinRMSecurity
 ms.openlocfilehash: 59717e4806857e6760de523335bbee6028da8e84
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400455"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677437"
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell 远程处理安全注意事项
 
@@ -30,7 +30,7 @@ PowerShell 远程处理（和 WinRM）侦听以下端口：
 
 在专用网络上，默认的 PowerShell 远程处理 Windows 防火墙规则接受所有连接。 在公用网络上，默认 Windows 防火墙规则仅允许来自同一子网内的 PowerShell 远程处理连接。 必须明确地更改该规则，以将 PowerShell 远程处理打开到公用网络上的所有连接。
 
->警告公用网络的防火墙规则旨在保护计算机免受潜在的恶意外部连接尝试。 请谨慎删除此规则。
+>**警告：** 公用网络的防火墙规则旨在保护计算机免于潜在的恶意外部连接尝试。 请谨慎删除此规则。
 
 ## <a name="process-isolation"></a>进程隔离
 
