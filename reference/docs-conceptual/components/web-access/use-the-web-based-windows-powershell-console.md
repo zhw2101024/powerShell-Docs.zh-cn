@@ -3,17 +3,17 @@ ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 使用基于 Web 的 Windows PowerShell 控制台
 ms.openlocfilehash: 2bb9c6ef486ef32012a15f9890997cf2fa6a3a0b
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400929"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677062"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>使用基于 Web 的 Windows PowerShell 控制台
 
-更新日期：2013 年 6 月 24 日
+更新时间：2013年 6 月 24日
 
-适用于：Windows Server 2012 R2、 Windows Server 2012
+适用于：Windows Server 2012 R2、Windows Server 2012
 
 Windows PowerShell Web 访问使用户可登录到安全的网站，以使用 Windows PowerShell 会话、cmdlet 和脚本管理远程计算机。
 

@@ -3,11 +3,11 @@ title: PowerShell Core 6.0 中的最近更新
 description: PowerShell Core 6.0 中发布的新功能和更改
 ms.date: 08/06/2018
 ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
-ms.translationtype: HT
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46289236"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676863"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>PowerShell Core 6.0 中的最近更新
 
@@ -274,7 +274,7 @@ PowerShell Core 更改默认编码以符合更广泛的生态系统。
 - 已将 `-SkipHeaderValidation` 切换添加至 web cmdlet，无需验证标头值即可添加标头。 (#4085)
 - 现支持 web cmdlet 不必验证服务器的 HTTPS 证书（如果需要）。
 - 已将身份验证参数添加到 web cmdlet。 (#5052)（感谢 [@markekraus](https://github.com/markekraus)）
-  - 已添加可提供如下三个选项的 `-Authentication`：Basic、OAuth和 Bearer。
+  - 添加`-Authentication`提供三个选项：基本、 OAuth 和 Bearer。
   - 已添加 `-Token`，以便获取 OAuth 和 Bearer 选项的持有者令牌。
   - 已添加 `-AllowUnencryptedAuthentication`，以便绕过对除 HTTPS 以外的任何传输方案所提供的身份验证。
 - 已将 `-ResponseHeadersVariable` 添加至 `Invoke-RestMethod`以便支持捕获响应标头。 (#4888)（感谢 [@markekraus](https://github.com/markekraus)）

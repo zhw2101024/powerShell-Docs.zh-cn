@@ -3,15 +3,15 @@ ms.date: 08/24/2018
 keywords: dsc,powershell,配置,安装程序
 title: DSC Script 资源
 ms.openlocfilehash: ef84239820a44aab2a028f7f0fe17653a851b72e
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047191"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676176"
 ---
 # <a name="dsc-script-resource"></a>DSC Script 资源
 
-> 适用于：Windows PowerShell 4.0 中，Windows PowerShell 5.x
+> 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.x
 
 Windows PowerShell Desired State Configuration (DSC) 中的 **Script** 资源提供了在目标节点上运行 Windows PowerShell 脚本的机制。 脚本资源使用 `GetScript``SetScript` 和 `TestScript` 属性，这些属性包含定义以执行相应的 DSC 状态操作的脚本块。
 

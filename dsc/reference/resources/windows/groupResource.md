@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: DSC Group 资源
 ms.openlocfilehash: 9894150f6f749fc23efd4ce2b155b18788557d1d
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047130"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677323"
 ---
 # <a name="dsc-group-resource"></a>DSC Group 资源
 
-> 适用于：Windows PowerShell 4.0 中，Windows PowerShell 5.0
+> 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) 中的 Group 资源提供了管理目标节点上的本地组的机制。
 
@@ -36,7 +36,7 @@ Group [string] #ResourceName
 |  属性  |  说明   |
 |---|---|
 | GroupName| 要确保其处于特定状态的组的名称。|
-| 凭据| 访问远程资源所需的凭据。 **注意**：此帐户必须拥有相应的 Active Directory 权限，才能将所有非本地帐户添加到组中；否则，在目标节点上执行配置时会发生错误。
+| 凭据| 访问远程资源所需的凭据。 **注意**：此帐户必须拥有相应的 Active Directory 权限，才能将所有非本地帐户添加到组中；否则，在目标节点上执行配置时会生成错误。
 | 说明| 组的说明。|
 | Ensure| 指示该组是否存在。 将其属性设置为“Absent”可确保组不存在。 将其设置为"Present"（默认值）可确保组存在。|
 | 成员| 使用此属性将当前的组成员身份替换为指定成员。 此属性的值是一组形式为 *Domain*\\*UserName* 的字符串。 如果你在配置中设置此属性，请勿使用 **MembersToExclude** 或 **MembersToInclude** 属性。 这样会生成错误。|

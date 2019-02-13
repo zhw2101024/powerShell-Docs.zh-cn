@@ -2,18 +2,18 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 安装和使用 Windows PowerShell Web 访问
-ms.openlocfilehash: a129dfeb61531a1f4d333af3e872d16defa1d12f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 5517347560b25f032baa77ecc2d769fb1e74ba4f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400794"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676031"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>安装和使用 Windows PowerShell Web 访问
 
 更新日期：2013 年 11 月 5 日 (编辑：2017 年 8 月
 
-适用于：Windows Server 2012 R2、 Windows Server 2012
+适用于：Windows Server 2012 R2、Windows Server 2012
 
 ## <a name="introduction"></a>简介
 
@@ -136,7 +136,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
    - Path: /pswa
    - ApplicationPool: pswa_pool
    - EnabledProtocols: http
-   - PhysicalPath：`%*windir*%/Web/PowerShellWebAccess/wwwroot`
+   - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
    示例：`Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate`
 
@@ -161,7 +161,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
    - Path: /pswa
    - ApplicationPool: pswa_pool
    - EnabledProtocols: http
-   - PhysicalPath：`%*windir*%/Web/PowerShellWebAccess/wwwroot`
+   - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
 3. 通过执行以下操作之一，打开 IIS 管理器控制台。
 
@@ -200,7 +200,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
    - 在 Windows 桌面上，右键单击任务栏上的**Windows PowerShell**，然后单击**以管理员身份运行**。
    - 在 Windows **开始**屏幕上，右键单击**Windows PowerShell**，然后单击**以管理员身份运行**。
 
-2. 使用会话配置限制用户访问的可选步骤：确保规则中已经存在你要使用的会话配置。 如果尚未创建这些配置，则使用 [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations) 中用于创建会话配置的说明。
+2. 使用会话配置限制用户访问的可选步骤：验证要在规则中使用的会话配置已存在。 如果尚未创建这些配置，则使用 [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations) 中用于创建会话配置的说明。
 
 3. 键入以下命令，然后按**Enter**。
 
@@ -271,7 +271,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 7. 在“应用程序池”字段中，选择在步骤 3 中创建的应用程序池。
 
-8. 在“物理路径”字段中，浏览到应用程序的位置。 可以使用默认位置 `%windir%/Web/PowerShellWebAccess/wwwroot`。 单击**确定**。
+8. 在“物理路径”字段中，浏览到应用程序的位置。 可以使用默认位置 `$env:windir/Web/PowerShellWebAccess/wwwroot`。 单击**确定**。
 
 9. 按照本主题中的过程[在 IIS 管理器中配置 SSL 证书](#to-configure-an-ssl-certificate-in-iis-Manager)中的步骤执行。
 
@@ -318,7 +318,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 1. 新网站的应用程序池自动创建。 若果使用其他应用程序池，请单击“选择”，以选择与新网站相关的应用程序池。 在**选择应用程序池**对话框中选择备用的应用程序池，然后单击**确定**。
 
-1. 在“物理路径”文本框中，导航到 %*windir%*/Web/PowerShellWebAccess/wwwroot。
+1. 在中**物理路径**文字框中，导航到 %windir%/web/powershellwebaccess/wwwroot。
 
 1. 在**绑定**区域的**类型**字段中，选择**https**。
 

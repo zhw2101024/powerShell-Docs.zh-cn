@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: e7198999c17b5c0d77724a82b322e6485065225e
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
-ms.translationtype: HT
+ms.openlocfilehash: 7e87ed4bc9a86be52d4d06d3e87386a1111227c5
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482839"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677190"
 ---
 # <a name="software-inventory-logging-sil"></a>软件清单日志记录 (SIL)
 

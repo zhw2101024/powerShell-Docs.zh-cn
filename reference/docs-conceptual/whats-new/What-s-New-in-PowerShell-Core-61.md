@@ -2,12 +2,12 @@
 title: PowerShell Core 6.1 中的新增内容
 description: PowerShell Core 6.1 中发布的新功能和更改
 ms.date: 09/13/2018
-ms.openlocfilehash: 4e39780a0ff446993005bba6284741f3b4b02549
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: 1b41368bee92850e3593ebf4f5b8a469c4282d98
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851301"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677378"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 中的新增内容
 
@@ -37,7 +37,7 @@ Windows兼容包使 PowerShell Core 能使用 Windows 10 2018 年 10 月更新�
 
 ## <a name="support-for-application-whitelisting"></a>对应用程序允许列表的支持
 
-PowerShell Core 6.1 与支持 [AppLocker](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) 和 [Device Guard](https://docs.microsoft.com/en-us/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) 应用程序允许列表的 Windows PowerShell 5.1 具有奇偶一致性。
+PowerShell Core 6.1 与支持 [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) 和 [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) 应用程序允许列表的 Windows PowerShell 5.1 具有奇偶一致性。
 根据应用程序允许列表，可使用 PowerShell [受限语言模式](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/)精确地控制允许执行的二进制文件。
 
 ## <a name="performance-improvements"></a>性能改进
@@ -209,7 +209,7 @@ Markdown 是创建可读明文文档的标准，其基本格式可以呈现为 H
 
 `Enable-PSRemoting` 现在创建两个远程会话配置：
 
-- 一个用于 PowerShell 的主要版本。 例如：`PowerShell.6`。 根据“系统范围”的 PowerShell 6 会话配置，次要版本更新可依赖于此终结点
+- 一个用于 PowerShell 的主要版本。 例如，`PowerShell.6`。 根据“系统范围”的 PowerShell 6 会话配置，次要版本更新可依赖于此终结点
 - 一个版本特定的会话配置，例如：`PowerShell.6.1.0`
 
 如果要在同一台计算机上安装并访问多个 PowerShell 6 版本，则此行为会很有帮助。

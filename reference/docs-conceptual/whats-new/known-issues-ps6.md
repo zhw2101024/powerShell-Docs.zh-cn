@@ -3,11 +3,11 @@ ms.date: 05/17/2018
 keywords: powershell, 核心
 title: PowerShell 6.0 的已知问题
 ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
-ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
-ms.translationtype: HT
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49450990"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677139"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell 6.0 的已知问题
 
@@ -107,7 +107,7 @@ Linux/macOS 上的 PowerShell 目前无法创建约束管理 (JEA) 远程处理�
 |`Get-Service`、`New-Service`、`Restart-Service`、`Resume-Service`、`Set-Service`、`Start-Service`、`Stop-Service`、`Suspend-Service`|不可用。|不会识别这些命令。 应在将来的版本中解决此问题。|
 |`Get-Acl`、`Set-Acl`|不可用。|不会识别这些命令。 应在将来的版本中解决此问题。|
 |`Get-AuthenticodeSignature`、`Set-AuthenticodeSignature`|不可用。|不会识别这些命令。 应在将来的版本中解决此问题。|
-|`Wait-Process`|可用，无法正常工作。 |例如，“Start-Process gvim -PassThru | Wait-Process”无效；它无法等待进程。|
+|`Wait-Process`|可用，无法正常工作。 |例如，`Start-Process gvim -PassThru | Wait-Process` 无效；它无法等待进程。|
 |`Register-PSSessionConfiguration`、`Unregister-PSSessionConfiguration`、`Get-PSSessionConfiguration`|可用，但不起作用。|写入错误消息，指示命令不起作用。 应在将来的版本中解决这些问题。|
 |`Get-Event`、`New-Event`、`Register-EngineEvent`、`Register-WmiEvent`、`Remove-Event`、`Unregister-Event`|可用，但没有可用的事件源。|PowerShell 事件命令存在，但与命令一起使用的大部分事件源（例如 System.Timers.Timer）在 Linux 上不可用，使得 Alpha 版本中的命令无效。|
 |`Set-ExecutionPolicy`|可用，但不起作用。|返回消息，指示在此平台上不受支持。 执行策略是以用户为中心的“安全带”，有助于防止用户犯下代价昂贵的错误。 这不是安全边界。|

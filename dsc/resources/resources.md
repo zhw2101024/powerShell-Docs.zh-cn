@@ -3,15 +3,15 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,配置,安装程序
 title: DSC 资源
 ms.openlocfilehash: 1f77b5e6630a2e3de6e1d1a05638f94d2df039ae
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54046685"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676942"
 ---
 # <a name="dsc-resources"></a>DSC 资源
 
->适用于：Windows PowerShell 4.0 中，Windows PowerShell 5.0
+>适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 Desired State Configuration (DSC) 资源为 DSC 配置提供构建基块。 资源公开可配置的属性（架构），并包含本地配置管理器 (LCM) 调用以“使其如此”的 PowerShell 脚本函数。
 
@@ -128,7 +128,7 @@ Windows 内置资源
 * [WindowsFeatureSet 资源](../reference/resources/windows/windowsFeatureSetResource.md)
 * [WindowsOptionalFeature 资源](../reference/resources/windows/windowsOptionalFeatureResource.md)
 * [WindowsOptionalFeatureSet 资源](../reference/resources/windows/windowsOptionalFeatureSetResource.md)
-* [WindowsPackageCabResource 资源](../reference/resources/windows/windowsPackageCabResource.md)
+* [WindowsPackageCabResource Resource](../reference/resources/windows/windowsPackageCabResource.md)
 * [WindowsProcess 资源](../reference/resources/windows/windowsProcessResource.md)
 
 [跨节点依赖关系](../configurations/crossNodeDependencies.md)资源
@@ -140,7 +140,7 @@ Windows 内置资源
 包管理资源
 
 * [PackageManagement 资源](../reference/resources/packagemanagement/PackageManagementDscResource.md)
-* [PackageManagementSource 资源](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
+* [PackageManagementSource Resource](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
 
 Linux 资源
 

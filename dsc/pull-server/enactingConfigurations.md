@@ -2,16 +2,16 @@
 ms.date: 10/16/2017
 keywords: dsc,powershell,配置,安装程序
 title: 执行配置
-ms.openlocfilehash: 4a6e7e511446ab27307683ad3d5676391e7c791c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 2a40f2055dda78cc0cb6cb05a5e14dce48be9d00
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400974"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676081"
 ---
 # <a name="enacting-configurations"></a>执行配置
 
->适用于：Windows PowerShell 4.0 中，Windows PowerShell 5.0
+>适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 有两种执行 PowerShell Desired State Configuration (DSC) 配置的方法：推送模式和请求模式。
 
@@ -48,6 +48,6 @@ LCM 会按其 RefreshModeFrequency 属性指定的时间间隔来定期检查请
 
 以下主题说明了请求服务和客户端：
 
-- [Azure Automation DSC 概述](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)
+- [Azure Automation DSC 概述](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
 - [设置 SMB 请求服务器](pullServerSMB.md)
 - [配置请求客户端](pullClientConfigID.md)

@@ -2,12 +2,12 @@
 title: 通过 SSH 进行 PowerShell 远程处理
 description: 在 PowerShell Core 中使用 SSH 进行远程处理
 ms.date: 08/14/2018
-ms.openlocfilehash: b5c6bd70841e270c2c128601612c07af9d9aa6e4
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.openlocfilehash: 87ab967a30782a6ac4d86737cd1702a0ebd6ebc5
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655287"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677246"
 ---
 # <a name="powershell-remoting-over-ssh"></a>通过 SSH 进行 PowerShell 远程处理
 
@@ -47,7 +47,7 @@ WinRM 为 PowerShell 远程会话提供可靠的托管模型。 基于 SSH 的�
    ```
 
 2. 安装最新的 Win32 OpenSSH。 有关安装说明，请参阅[OpenSSH 安装](/windows-server/administration/openssh/openssh_install_firstuse)。
-3. 编辑`sshd_config`文件位于`%ProgramData%\ssh`。
+3. 编辑`sshd_config`文件位于`$env:ProgramData\ssh`。
 
    - 确保已启用密码身份验证
 
@@ -314,6 +314,6 @@ sudo 命令对 Linux 计算机上的远程会话不起作用。
 
 [适用于 MacOS 的 PowerShell Core](../../install/installing-powershell-core-on-macos.md)
 
-[Windows 的 OpenSSH](/windows-server/administration/openssh/openssh_overview)
+[OpenSSH for Windows](/windows-server/administration/openssh/openssh_overview)
 
 [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)

@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery,psget
 title: 使用本地 PSRepositories
 ms.openlocfilehash: 94824ea584c097838b24c6f2cd02407b6147a781
-ms.sourcegitcommit: 91786b03704fbd2d185f674df0bc67faddfb6288
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51619191"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677449"
 ---
 # <a name="working-with-local-powershellget-repositories"></a>使用本地 PowerShellGet 存储库
 
@@ -23,7 +23,7 @@ PowerShellGet 模块支持存储库之外 PowerShell 库。
 
 ## <a name="local-repository-types"></a>本地存储库类型
 
-有两种方法来创建本地 PSRepository: NuGet 服务器或文件共享。 每种类型都有优点和缺点：
+有两种方法来创建本地 PSRepository:NuGet 服务器或文件共享。 每种类型都有优点和缺点：
 
 NuGet 服务器
 

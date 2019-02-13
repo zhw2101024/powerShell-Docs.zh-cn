@@ -3,17 +3,17 @@ ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 卸载 Windows PowerShell Web 访问
 ms.openlocfilehash: 22c874d766445dccedd8494097daf16c30fa66ff
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400994"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677416"
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>卸载 Windows PowerShell Web 访问
 
-更新日期：2013 年 6 月 24 日
+更新时间：2013年 6 月 24日
 
-适用于：Windows Server 2012 R2、 Windows Server 2012
+适用于：Windows Server 2012 R2、Windows Server 2012
 
 本主题中的步骤说明了如何从已安装 Windows PowerShell Web 访问网站的网关服务器中删除该网站及其应用程序。
 

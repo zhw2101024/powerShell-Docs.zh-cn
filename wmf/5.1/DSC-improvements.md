@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,安装程序
 title: WMF 5.1 中的 DSC 改进
 ms.openlocfilehash: 92f82d62550e105a187fd7c0c58b49367c646a7e
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
-ms.translationtype: HT
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523007"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676027"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 中的 Desired State Configuration (DSC) 改进
 
@@ -206,12 +206,12 @@ InstallWindowsFeature -ConfigurationData $configData
 ### <a name="how-to-sign-configuration-and-module"></a>如何对配置和模块进行签名
 
 ***
-* 配置文件 (.MOF)：已扩展现有的 PowerShell cmdlet [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) 用于支持 MOF 文件签名。
-* 模块：使用以下步骤对相应的模块目录进行签名，从而完成模块签名：
-    1. 创建目录文件：目录文件包含加密哈希或指纹的集合。
+* 配置文件 (。Mof):现有的 PowerShell cmdlet [Set-authenticodesignature](https://technet.microsoft.com/library/hh849819.aspx)扩展来支持 MOF 文件签名。
+* 模块签名的模块是通过签名对应的模块目录，使用以下步骤：
+    1. 创建一个目录文件：目录文件包含加密哈希或指纹的集合。
        每个指纹对应于模块中包含的一个文件。
        增加了新的 cmdlet [New-FileCatalog](https://technet.microsoft.com/library/cc732148.aspx)，支持用户为其模块创建目录文件。
-    2. 对目录文件进行签名：使用 [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) 对目录文件进行签名。
+    2. 目录文件进行签名：使用[Set-authenticodesignature](https://technet.microsoft.com/library/hh849819.aspx)目录文件进行签名。
     3. 将目录文件放在模块文件夹中。
 按照约定，模块目录文件应放在与模块同名的模块文件夹下面。
 

@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: 6c036c2d8f97e559d20dd3ac40133fa06f5dab08
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
-ms.translationtype: HT
+ms.openlocfilehash: 7a1725e3858c59a6d31699add22b042359c48463
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188279"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676854"
 ---
 # <a name="separation-of-node-and-configuration-ids"></a>节点和配置 ID 的分离
 

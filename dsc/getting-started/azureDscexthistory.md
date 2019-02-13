@@ -4,11 +4,11 @@ ms.date: 06/21/2018
 keywords: dsc, powershell, azure, 扩展
 title: Azure DSC 扩展版本历史记录
 ms.openlocfilehash: 2c076e3beccc15e99af2327820916d7a4d28da68
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400846"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677411"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Azure Desired State Configuration 扩展版本历史记录
 
@@ -204,7 +204,7 @@ ms.locfileid: "53400846"
 
 - **发布日期：** 2016 年 4 月 21 日
 - **OS 支持：** Windows Server 2016 Technical Preview，Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2 SP1
-- **WMF 支持：** WMF 5.0 RTM、 WMF 4.0
+- **WMF 支持：** WMF 5.0 RTM、WMF 4.0
 - **环境：** Azure
 - **备注：** 此版本使用包括在 Windows Server 2016 Technical Preview 中的 DSC；对于其他 Windows OS，它将安装 [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/)（安装 WMF 需要重启）。
 - **新功能：**
@@ -215,7 +215,7 @@ ms.locfileid: "53400846"
 
 - **发布日期：** 2016 年 3 月 14 日
 - **OS 支持：** Windows Server 2016 Technical Preview，Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2 SP1
-- **WMF 支持：** WMF 5.0 RTM、 WMF 4.0
+- **WMF 支持：** WMF 5.0 RTM、WMF 4.0
 - **环境：** Azure
 - **备注：** 此版本使用包括在 Windows Server 2016 Technical Preview 中的 DSC；对于其他 Windows OS，它将安装 [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/)（安装 WMF 需要重启）。
 - **新功能：**
@@ -228,7 +228,7 @@ ms.locfileid: "53400846"
 
 - **发布日期：** 2016 年 2 月 25日日
 - **OS 支持：** Windows Server 2016 Technical Preview，Windows Server 2012 R2、 Windows Server 2012、 Windows Server 2008 R2 SP1
-- **WMF 支持：** WMF 5.0 RTM、 WMF 4.0
+- **WMF 支持：** WMF 5.0 RTM、WMF 4.0
 - **环境：** Azure
 - **备注：** 此版本使用包括在 Windows Server 2016 Technical Preview 中的 DSC；对于其他 Windows OS，它将安装 [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/)（安装 WMF 需要重启）。
 - **新功能：**

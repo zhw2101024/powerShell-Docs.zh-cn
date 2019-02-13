@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 使用 MOF 编写自定义 DSC 资源
-ms.openlocfilehash: 2dcdeb49b50e23bc8b9d87293ebb8d8ec5e7b57d
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 5917e20769e750042a9855649ff5bec36ad14eb4
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400380"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677331"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>使用 MOF 编写自定义 DSC 资源
 
-> 适用于：Windows PowerShell 4.0 中，Windows PowerShell 5.0
+> 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 在本主题中，我们将在 MOF 文件中定义 Windows PowerShell Desired State Configuration (DSC) 自定义资源的架构，并在 Windows PowerShell 脚本文件中实现资源。 此自定义资源被用于创建和维护网站。
 
@@ -69,7 +69,7 @@ class Demo_IISWebsite : OMI_BaseResource
 
 资源脚本实现资源的逻辑。 在此模块中必须包含三个分别名为 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** 的函数。 三个函数采用的参数集都必须与你为资源创建的 MOF 架构中定义的属性集一致。 在此文档中，这组属性被称为“资源属性”。 将这三个函数保存在名为 <ResourceName>.psm1 的文件中。 在以下示例中，函数被保存在名为 Demo_IISWebsite.psm1 的文件中。
 
-> **注意**：在资源上多次运行相同的配置脚本时，你应该不会收到错误报告，并且资源的状态应该与运行一次脚本的状态相同。 要达到此目的，请确保 **Get-TargetResource** 和 **Test-TargetResource** 函数没有改变资源，并且确保在具有相同参数值的序列中多次调用 **Set-TargetResource** 函数始终等效于调用其一次。
+> **请注意**：在资源上多次运行相同的配置脚本时，你应该不会收到错误报告，并且资源应该与运行一次脚本保持同样的状态。 要达到此目的，请确保 **Get-TargetResource** 和 **Test-TargetResource** 函数没有改变资源，并且确保在具有相同参数值的序列中多次调用 **Set-TargetResource** 函数始终等效于调用其一次。
 
 在 **Get-TargetResource** 函数的实现中，使用作为参数而提供的键资源属性值来检查指定资源实例的状态。 此函数必须返回列举了所有作为键的资源属性的哈希表，并返回这些属性的实际值作为对应值。 以下代码是一个示例。
 
@@ -214,7 +214,7 @@ $result
 }
 ```
 
-**注意**：为方便调试，请在上述三个函数的实现中使用 **Write-Verbose** cmdlet。
+**请注意**：为方便调试，请在上述三个函数的实现中使用 **Write-Verbose** cmdlet。
 >此 cmdlet 将文本写入详细消息流。
 >默认情况下，不显示详细消息流，但你可以通过更改 **$VerbosePreference** 变量的值或通过在 DSC cmdlets = new 中使用 **Verbose** 参数来显示该流。
 
@@ -290,3 +290,16 @@ if (PsDscContext.RunAsUser) {
     Write-Verbose "User: $PsDscContext.RunAsUser";
 }
 ```
+
+## <a name="rebooting-the-node"></a>重新启动节点
+
+如果而执行的操作在`Set-TargetResource`函数需要重新启动，则可以使用全局标志告知 LCM 重启节点。 此重新启动之后立即发生`Set-TargetResource`函数完成。
+
+在你`Set-TargetResource`函数中，添加以下代码行。
+
+```powershell
+# Include this line if the resource requires a system reboot.
+$global:DSCMachineStatus = 1
+```
+
+LCM 重新启动节点，以便**RebootNodeIfNeeded**标志需要设置为`$true`。 **ActionAfterReboot**还应设置设置为**ContinueConfiguration**，这是默认设置。 有关配置 LCM 的详细信息，请参阅[配置本地配置管理器](../managing-nodes/metaConfig.md)，或[配置本地配置管理器 (v4)](../managing-nodes/metaConfig4.md)。

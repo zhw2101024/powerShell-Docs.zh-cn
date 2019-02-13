@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 使用配置数据
 ms.openlocfilehash: f2d25b9ced805fb4c91378ebfe840104eb6ce52a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400428"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676116"
 ---
 # <a name="using-configuration-data-in-dsc"></a>使用 DSC 中的配置数据
 
-> 适用于：Windows PowerShell 4.0 中，Windows PowerShell 5.0
+> 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 通过使用内置 DSC **ConfigurationData** 参数，可以定义可在配置中使用的数据。
 这样一来，便可创建可用于多个节点或不同环境的单个配置。

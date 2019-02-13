@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: MSFT_DSCLocalConfigurationManager 类
 ms.openlocfilehash: 7f6aaf209601e99b0120407eb301d32fcfda9eb8
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047179"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676255"
 ---
 # <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类
 
@@ -58,6 +58,6 @@ class MSFT_DSCLocalConfigurationManager
 
 ## <a name="requirements"></a>要求
 
-MOF**DscCore.mof
+**MOF：** DscCore.mof
 
--NamespaceRoot\Microsoft\Windows\DesiredStateConfiguration
+**命名空间**：Root\Microsoft\Windows\DesiredStateConfiguration

@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell 5.0 中的新增功能
-ms.openlocfilehash: 9bd18b37b53890713faeeabc634876e5f48725da
-ms.sourcegitcommit: 7ed6ff9a3ce0b8b485d12dc2f5107c23d4b6e68b
+ms.openlocfilehash: 06088e4a974ed4fb2a245fb9acfa780710a8ccc4
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52978889"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677484"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 中的新增功能
 Windows PowerShell 5.0 新增了大量功能，不仅扩展并提升了自身的用途和可用性，还方便用户能够更轻松、全面地控制和管理基于 Windows 的环境。
@@ -140,7 +140,8 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 - 已将 FullyQualifiedName 参数添加到 Import-Module 和 Remove-Module cmdlet 中，用于支持存储单个模块的多个版本。
 - Save-Help、Update-Help、Import-PSSession、Export-PSSession 和 Get-Command 拥有一个新的参数，ModuleSpecification 类型的 FullyQualifiedModule。 添加此参数以按模块的完全限定名称来指定它。
 - **$PSVersionTable.PSVersion** 的值已更新为 5.0。
-
+- WMF 5.0 (PowerShell 5.0) 包括**Pester**模块。  Pester 是创建单元测试框架的 PowerShell。 它提供了可用于创建你的脚本的测试的几个简单易用的关键字。 
+ 
 ### <a name="new-features-in-windows-powershell-desired-state-configuration"></a>Windows PowerShell Desired State Configuration 中的新增功能
 
 - Windows PowerShell 语言增强功能使你能够通过使用类来定义 Windows PowerShell Desired State Configuration (DSC) 资源。 Import-DscResource 现在是一个真正的动态关键字；Windows PowerShell 分析指定模块的根模块，搜索包含 DscResource 特性的类。 现在可使用类来定义 DSC 资源，其中既不需要模块文件夹中的 MOF 文件，也不需要模块文件夹中的 DSCResource 子文件夹。 Windows PowerShell 模块文件可以包含多个 DSC 资源类。
@@ -166,7 +167,7 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 - Windows PowerShell 现在包括对 DSC 配置的自定义帮助的支持，该帮助是由通过将 \[CmdletBinding()] 添加到生成的配置函数来定义的。
 - 新的 **DscLocalConfigurationManager** 特性将配置块设指定为元配置，用于配置 DSC 本地配置管理器。 此特性将配置限制为仅包含配置 DSC 本地配置管理器的项。 在处理期间，此配置生成 \*.meta.mof 文件，然后通过运行 Set-DscLocalConfigurationManager cmdlet 将其发送到相应的目标节点。
 - Windows PowerShell 5.0 中现允许部分配置。 可以将配置文档以片段的形式传递到节点。 对于要接收配置文档的多个片段的节点，必须将其本地配置管理器首先设置为指定预期片段
-- 跨计算机同步是 Windows PowerShell 5.0 中 DSC 中的新增功能。 通过使用内置 WaitFor\* 资源（**WaitForAll**、**WaitForAny** 和 **WaitForSome**），你现可在配置运行期间指定跨计算机的依赖关系，而无需外部业务流程。 以下资源通过 WS-Man 协议使用 CIM 连接进行节点到节点同步。 一项配置可以等待特定于另一台计算机的资源状态发生更改。
+- 跨计算机同步是 Windows PowerShell 5.0 中 DSC 中的新增功能。 通过使用内置 WaitFor\* 资源（**WaitForAll**、**WaitForAny** 和 **WaitForSome**），你现可在配置运行期间指定跨计算机的依赖关系，而无需外部业务流程。 以下资源通过 WS-Man 协议使用 CIM 连接进行节点到节点同步。 配置可以等待另一台计算机特定的资源状态更改。
 - Just Enough Administration (JEA) 是一个新的委派安全性功能，它利用 DSC 和 Windows PowerShell 受限运行空间以帮助保护企业免于数据丢失或员工（有意或无意）造成的泄露。 有关 JEA 的详细信息（包括可下载 xJEA DSC 资源的位置），请参阅 [Just Enough Administration, Step by Step（Just Enough Administration 分步说明）](https://blogs.technet.com/b/privatecloud/archive/2014/05/14/just-enough-administration-step-by-step.aspx)。
 - 以下新的 cmdlet 已添加到 PSDesiredStateConfiguration 模块中。
   - 新的 Get-DscConfigurationStatus cmdlet 从目标节点中获取有关配置状态的高级信息。 你可以获取最近的状态或所有配置。
@@ -177,7 +178,7 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 
 ### <a name="new-features-in-windows-powershell-ise"></a>Windows PowerShell ISE 中的新增功能
 
-- 你现在可以通过运行 Enter-PSSession 在存储你希望编辑的文件的计算机上启动远程会话，然后运行 PSEdit <path and file name on the remote computer> 以在 Windows PowerShell ISE 的本地副本中编辑远程 Windows PowerShell 脚本和文件。 此功能实现轻松编辑存储在 Windows Server 的服务器核心安装选项（Windows PowerShell ISE 无法在其中运行）上的 Windows PowerShell 文件。
+- 你现在可以通过运行 Enter-pssession 在存储你想要编辑的文件的计算机上启动远程会话，然后运行编辑远程 Windows PowerShell 脚本和 Windows PowerShell ISE 的本地副本中的文件**PSEdit \<在远程计算机上的路径和文件名称\>**。 此功能实现轻松编辑存储在 Windows Server 的服务器核心安装选项（Windows PowerShell ISE 无法在其中运行）上的 Windows PowerShell 文件。
 - Windows PowerShell ISE 中现在支持 Start-Transcript cmdlet。
 - 现在可以在 Windows PowerShell ISE 中调试远程脚本。
 - 新的菜单命令 **Break All** (Ctrl+B) 会强行进入本地和远程运行的脚本的调试器中。
@@ -221,7 +222,7 @@ Windows PowerShell 4.0 包括以下新增功能。
 - 已向 **Enable-JobTrigger** 和 **Disable-JobTrigger** cmdlet 添加新参数：**Passthru**。 Passthru 参数显示通过你的命令创建或修改的所有对象。
 - **Add-Computer** 和 **Remove-Computer** cmdlet 中用于指定工作组的参数名称现在是一致的。 这两个 cmdlet 现在都使用 **WorkgroupName** 参数。
 - 已添加新的通用参数：**PipelineVariable**。 PipelineVariable 使你能够将某个通过管道传送的命令的结果（或该命令的一部分）另存为可通过管道的其余部分传递的一个变量。
-- 现在支持使用方法语法筛选集合。 这意味着，现在可以通过使用简化的语法（类似于 Where() 或 Where-Object 的语法）采用方法调用的格式来筛选对象集合。 以下是一个示例：(Get-Process).where({$_.Name -match 'powershell'})
+- 现在支持使用方法语法筛选集合。 这意味着，现在可以通过使用简化的语法（类似于 Where() 或 Where-Object 的语法）采用方法调用的格式来筛选对象集合。 以下为一个示例：(Get-Process).where({$_.Name -match 'powershell'})
 - **Get-Process** cmdlet 具有一个新的开关参数：**IncludeUserName**。
 - 已添加新 cmdlet **Get-FileHash**，该 cmdlet 可返回采用几种格式之一的指定文件的文件哈希。
 - 在 Windows PowerShell 4.0 中，如果某个模块在其清单中使用了 **DefaultCommandPrefix** 键，或者如果用户导入了一个带有 **Prefix** 参数的模块，则该模块的 **ExportedCommands** 属性将显示该模块中带有前缀的命令。 当你使用模块限定语法 ModuleName\\CommandName 来运行这些命令时，命令名称必须包含前缀。
@@ -315,7 +316,7 @@ Windows PowerShell 3.0 包括以下新增功能。
 
 ### <a name="windows-powershell-workflow"></a>Windows PowerShell 工作流程
 
-Windows PowerShell 工作流将 Windows Workflow Foundation 的强大功能引入到 Windows PowerShell 中。 你可以采用 XAML 或 Windows PowerShell 语言编写工作流，然后像运行 cmdlet 一样运行它们。 [Get-command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet 获取工作流命令，[Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet 获取工作流帮助。
+Windows PowerShell 工作流将 Windows Workflow Foundation 的强大功能引入到 Windows PowerShell 中。 你可以采用 XAML 或 Windows PowerShell 语言编写工作流，然后像运行 cmdlet 一样运行它们。 [Get-command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet 可获取工作流命令并[Get-help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet 可获取工作流的帮助。
 
 工作流是多计算机管理活动序列，其特点是长期运行、可重复、频繁、可并行化、可中断、可挂起并且可重启。 工作流可以从有意或意外中断（例如网络中断、Windows 重新启动或电源故障）中恢复。
 

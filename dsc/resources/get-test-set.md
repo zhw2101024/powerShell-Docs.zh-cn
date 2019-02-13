@@ -1,17 +1,17 @@
 ---
 ms.date: 12/12/2018
 keywords: dsc,powershell,配置,安装程序
-title: 获取测试设置
-ms.openlocfilehash: e46710954679bf20f4536c6efbcbd4dafd9e629e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+title: Get-Test-Set
+ms.openlocfilehash: 6d059518a49926bc5fb56e37e7d3d4d2c66bddec
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400464"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677355"
 ---
-# <a name="get-test-set"></a>获取测试设置
+# <a name="get-test-set"></a>Get-Test-Set
 
->适用于：Windows PowerShell 4.0 中，Windows PowerShell 5.0
+>适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 ![获取、测试并设置](/media/get-test-set.png)
 
@@ -237,6 +237,6 @@ VERBOSE: Time taken for configuration job to complete is 1.379 seconds
 
 ## <a name="see-also"></a>另请参阅
 
-- [Azure Automation DSC 概述](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)
+- [Azure Automation DSC 概述](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
 - [设置 SMB 请求服务器](../pull-server/pullServerSMB.md)
 - [配置请求客户端](../pull-server/pullClientConfigID.md)

@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 将凭据与 DSC 资源结合使用
 ms.openlocfilehash: af54c286ce744cd7db0b0e2d05087f60cdf1a33c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400830"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677166"
 ---
 # <a name="use-credentials-with-dsc-resources"></a>将凭据与 DSC 资源结合使用
 
-> 适用于：Windows PowerShell 5.0 中，Windows PowerShell 5.1
+> 适用于：Windows PowerShell 5.0 和 Windows PowerShell 5.1
 
 可以通过在配置中使用 **PsDscRunAsCredential** 属性，在指定的一组凭据之下运行 DSC 资源。
 默认情况下，DSC 以系统帐户身份运行每个资源。

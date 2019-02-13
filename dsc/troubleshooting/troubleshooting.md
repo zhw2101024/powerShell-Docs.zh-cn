@@ -3,11 +3,11 @@ ms.date: 10/30/2018
 keywords: dsc,powershell,配置,安装程序
 title: DSC 故障排除
 ms.openlocfilehash: e1f36bbc97569ac0d65f003ee08f52ec174a4520
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400841"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676192"
 ---
 # <a name="troubleshooting-dsc"></a>DSC 故障排除
 
@@ -194,7 +194,7 @@ TimeCreated                     Id LevelDisplayName Message
 
 可以用 [Where-object](/powershell/module/microsoft.powershell.core/where-object) 提取变量 `$SeparateDscOperations` 中的数据。 在以下五种情况下，可能需要提取数据以解决 DSC 问题：
 
-### <a name="1-operations-failures"></a>1：操作失败
+### <a name="1-operations-failures"></a>1：操作故障
 
 所有事件都具有[严重性级别](/windows/desktop/WES/defining-severity-levels)。 此信息可用于标识错误事件：
 

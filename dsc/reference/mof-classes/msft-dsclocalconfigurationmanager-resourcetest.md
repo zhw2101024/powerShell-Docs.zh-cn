@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: MSFT_DSCLocalConfigurationManager 类的 ResourceTest 方法
 ms.openlocfilehash: e7645b0c6b93b96cb01f72c1c92d468f7642ea13
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047173"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676919"
 ---
 # <a name="resourcetest-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类的 ResourceTest 方法
 
@@ -44,9 +44,9 @@ InDesiredState \[out\]：返回响应时，如果目标节点处于所需状态�
 
 ## <a name="requirements"></a>要求
 
-MOF**DscCore.mof
+**MOF：** DscCore.mof
 
--NamespaceRoot\Microsoft\Windows\DesiredStateConfiguration
+**命名空间**：Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>另请参阅
 

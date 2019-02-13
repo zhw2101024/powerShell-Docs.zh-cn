@@ -3,11 +3,11 @@ ms.date: 12/14/2018
 keywords: powershell,cmdlet
 title: 编写可移植模块
 ms.openlocfilehash: 38a93b5b030d58784b91292e2cd060b3a2c19a00
-ms.sourcegitcommit: d396d0e4cfe3d279f399c17e7337380a31d373ac
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53747715"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677425"
 ---
 # <a name="portable-modules"></a>可移植的模块
 
@@ -178,7 +178,7 @@ FavoriteNumber FavoritePet
 
 [PowerShell 标准][]库是所有的 PowerShell 版本大于或等于该标准的版本中提供的 PowerShell Api 的正式规范。
 
-例如， [PowerShell 5.1 标准][]兼容 Windows PowerShell 5.1 和 PowerShell Core 6.0 或更高版本。
+例如， [PowerShell Standard 5.1][]兼容 Windows PowerShell 5.1 和 PowerShell Core 6.0 或更高版本。
 
 我们建议你使用 PowerShell 标准库模块编译。 该库可确保 Api 的可用性和在 Windows PowerShell 和 PowerShell Core 6 中实现。
 PowerShell 标准旨在始终是向前兼容。 使用 PowerShell 标准库 5.1 构建的模块将始终与将来版本的 PowerShell 兼容。
@@ -262,7 +262,7 @@ PowerShell 标准旨在始终是向前兼容。 使用 PowerShell 标准库 5.1 
 [.NET CLI]: /dotnet/core/tools/?tabs=netcore2x
 [.NET Standard]: /dotnet/standard/net-standard
 [PowerShell 标准]: https://github.com/PowerShell/PowerShellStandard
-[PowerShell 5.1 标准]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
+[PowerShell Standard 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
 [PowerShell 库]: https://www.powershellgallery.com
 [.NET 可移植性分析器]: https://github.com/Microsoft/dotnet-apiport
 [CompatiblePSEditions]: /powershell/gallery/concepts/module-psedition-support

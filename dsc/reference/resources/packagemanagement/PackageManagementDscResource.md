@@ -3,15 +3,15 @@ ms.date: 06/20/2018
 keywords: dsc,powershell,配置,安装程序
 title: DSC PackageManagement 资源
 ms.openlocfilehash: 18cbbfe0715c82dcfdf4a5fb6ee36ee814e43d3b
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047181"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677170"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC PackageManagement 资源
 
-适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0 中，Windows PowerShell 5.1
+适用于：Windows PowerShell 4.0、Windows PowerShell 5.0 和 Windows PowerShell 5.1
 
 Windows PowerShell Desired State Configuration (DSC) 中的 **PackageManagement** 资源提供了一种在目标节点上安装或卸载程序包管理包的机制。 此资源需要 [http://PowerShellGallery.com](http://PowerShellGallery.com) 中的 PackageManagement 模块。
 

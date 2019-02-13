@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 内置 Windows PowerShell Desired State Configuration 资源
 ms.openlocfilehash: 56a2fec5862530d428d5d96c4200d1913af79876
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047050"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676252"
 ---
 # <a name="built-in-windows-powershell-desired-state-configuration-resources"></a>内置 Windows PowerShell Desired State Configuration 资源
 
-> 适用于：Windows PowerShell 4.0 中，Windows PowerShell 5.0
+> 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) 附带有一组内置配置资源。 下表提供了按字母排序的关于主题的资源和链接列表，其中进行了详细介绍。 如果你需要创建其他资源，请参阅[构建自定义 Windows PowerShell Desired State Configuration 资源](../../../resources/authoringResource.md)
 

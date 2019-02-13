@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: MSFT_DSCLocalConfigurationManager 类的 ResourceGet 方法
 ms.openlocfilehash: 1b74adf2327af2e0f9416f1d00eac4e3b75e9013
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047063"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677357"
 ---
 # <a name="resourceget-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类的 ResourceGet 方法
 
@@ -44,9 +44,9 @@ configurations \[out\]：返回响应时，包含配置的嵌入实例。
 
 ## <a name="requirements"></a>要求
 
-MOF**DscCore.mof
+**MOF：** DscCore.mof
 
--NamespaceRoot\Microsoft\Windows\DesiredStateConfiguration
+**命名空间**：Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>另请参阅
 
