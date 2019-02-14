@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: dsc，powershell、 资源、 库、 安装程序
 title: 安全其他 DSC 资源
 ms.openlocfilehash: ecaf176230ccd934b57b1c27d72ff83e6ba906e9
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400834"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677031"
 ---
 # <a name="install-additional-dsc-resources"></a>安全其他 DSC 资源
 
@@ -39,7 +39,7 @@ OOB 资源允许常见操作的良好起点。 如果 OOB 资源不能满足您�
 
 ## <a name="installing-powershellget"></a>安装 PowerShellGet
 
-若要确定是否已有**PowerShell**获取，或若要获取安装的帮助，请参阅以下指南：[安装 PowerShellGet](/powershell/gallery/installing-psget)
+若要确定是否已有**PowerShell**获取，或若要获取安装的帮助，请参阅以下指南：[安装 PowerShellGet](/powershell/gallery/installing-psget)。
 
 ## <a name="finding-dsc-resources-using-powershellget"></a>查找 DSC 资源使用 PowerShellGet
 

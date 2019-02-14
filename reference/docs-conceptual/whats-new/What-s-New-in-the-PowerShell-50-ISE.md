@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: PowerShell 50 ISE 中的新增功能
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: f05e3f3f95c8ceec6e843b8a1c79e6f092e1b87b
-ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.openlocfilehash: 2d953bc4553de7720c590304d29750b84a1ef3b2
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52320578"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677383"
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Windows PowerShell ISE 中的新增功能
 本主题介绍已在 Windows PowerShell (R) 集成脚本环境 (ISE) 的各版本中引入的新增功能和更新功能。
@@ -147,11 +147,11 @@ Windows PowerShell ISE 2.0 具有单独的命令和输出窗格。
 
 如果从命令行（通过键入 **powershell_ise.exe**）启动 Windows PowerShell ISE，则可以添加下列新的命令行开关。
 
-- -NoProfile：在不运行 **$profile** 的情况下启动 Windows PowerShell ISE
+- *-NoProfile*： 启动 Windows PowerShell ISE 而无需运行 **$profile**
 
 - -Help：显示帮助窗口
 
-- -mta：在多线程的单元模式下启动 Windows PowerShell ISE。 Windows PowerShell ISE 的默认操作模式是单线程的单元模式，或 *-sta*。
+- *-mta*： 在多线程的单元模式下启动 Windows PowerShell ISE。 Windows PowerShell ISE 的默认操作模式是单线程的单元模式，或 *-sta*。
 
 **更改增添了什么价值？**
 
@@ -176,7 +176,7 @@ Windows PowerShell ISE 2.0 不识别这些命令行开关。
 
 - **分析错误显示** 分析错误用红色下划线指示。 当你将鼠标悬停在某个指示的错误上时，工具提示文本会显示在代码中发现的问题。
 
-- 缩放：可以通过使用缩放滑块（位于 Windows PowerShell ISE 窗口右下角），或在控制台窗格中输入命令 $psise.options.Zoom 来设置控制台内容的缩放百分比。
+- **缩放**：若要设置控制台内容的缩放百分比，可以使用缩放滑块（位于 Windows PowerShell ISE 窗口右下角），也可以在控制台窗格中输入命令 $psise.options.Zoom。
 
 - **富文本复制和粘贴** 在 Windows PowerShell ISE 中将内容复制到剪贴板时，会保留原选定内容的字体、大小和颜色信息。
 
