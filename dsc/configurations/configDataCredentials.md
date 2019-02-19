@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 配置数据中的凭据选项
 ms.openlocfilehash: 2a326e45bbbad7bd2362b66b88bf61b98df7b02e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
+ms.lasthandoff: 02/18/2019
 ms.locfileid: "55677030"
 ---
 # <a name="credentials-options-in-configuration-data"></a>配置数据中的凭据选项
@@ -25,7 +25,7 @@ ms.locfileid: "55677030"
 > [!NOTE]
 > 存储/传输未加密的纯文本密码通常是不安全的。 建议使用此主题后面部分讨论的方法保护凭据。
 > Azure Automation DSC 服务可用于集中管理要在配置中编译并安全存储的凭据。
-> 有关详细信息，请参阅：[编译 DSC 配置 / 凭据资产](/azure/automation/automation-dsc-compile#credential-assets)
+> 相关信息，请参阅：[编译 DSC 配置/凭据资产](/azure/automation/automation-dsc-compile#credential-assets)
 
 ## <a name="handling-credentials-in-dsc"></a>在 DSC 中处理凭据
 
@@ -65,7 +65,7 @@ Group [String] #ResourceName
 
 有关 `PsDscRunAsCredential` 属性的详细信息，请参阅[使用用户凭据运行 DSC](runAsUser.md)。
 
-## <a name="example-the-group-resource-credential-property"></a>例如：Group 资源 Credential 属性
+## <a name="example-the-group-resource-credential-property"></a>示例：Group 资源 Credential 属性
 
 DSC 在 `Local System` 下运行，因此它已经有权更改本地用户和组。
 如果添加的成员是本地帐户，则无需凭据。
