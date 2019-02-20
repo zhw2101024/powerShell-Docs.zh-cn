@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 description: 面向发行者的指南
 title: PowerShell 库发布指南和最佳做法
-ms.openlocfilehash: a996a820d6bd52e796a41659c6f468662dbff0f4
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.openlocfilehash: 64c3d607b13dce64f70f138fdee849e5baaf85df
+ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655389"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56265563"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell 库发布指南和最佳做法
 
@@ -93,8 +93,8 @@ Examples\RegistryResource 文件夹下的 [PSDscResource 模块](https://www.pow
 
 PowerShell 库支持以下两种反馈方法：
 
-- 联系人所有者：这允许用户向包所有者发送一封电子邮件。 作为包所有者，请务必监视用于 PowerShell 库包的电子邮件地址，并及时响应所提出的问题。 这种方法有一个缺点，就是只有用户和所有者才能看到通信，因此所有者可能需要多次回答同一问题。
-- 说明在包的底部页是一个注释字段。
+- 联系人所有者：这样，用户可以向包所有者发送电子邮件。 作为包所有者，请务必监视用于 PowerShell 库包的电子邮件地址，并及时响应所提出的问题。 这种方法有一个缺点，就是只有用户和所有者才能看到通信，因此所有者可能需要多次回答同一问题。
+- 评论：包网页的底部有“评论”字段。
   此系统的优点是，其他用户可以看到评论和响应，这样就减少了必须回答每个问题的次数。
   强烈建议包所有者关注对每个包发表的评论。
 若要详细了解如何执行此操作，请参阅[通过社交媒体或发表评论提供反馈](../how-to/working-with-packages/social-media-feedback.md)。
@@ -140,11 +140,11 @@ PowerShell 库中的许多包在 GitHub 中进行开发，而其他包则由具�
 
 使用以下标记演示对用户包适用于其环境：
 
-- PSEdition_Desktop:使用 Windows PowerShell 兼容的包 
-- PSEdition_Core:与 Powershell Core 兼容的包 
-- Windows与在 Windows 操作系统兼容的包
-- Linux使用 Linux 操作系统兼容的包 
-- macOS 10.12+与在 Mac 操作系统兼容的包
+- 使用 Windows PowerShell 兼容的 PSEdition_Desktop： 包 
+- 与 Powershell Core 兼容的 PSEdition_Core： 包 
+- Windows： 兼容 Windows 操作系统与相应的包
+- 使用 Linux 操作系统兼容的 Linux： 包 
+- MacOS： 兼容 Mac 操作系统与相应的包
 
 ## <a name="include-tests"></a>添加测试
 
@@ -203,7 +203,7 @@ PowerShellGet publish-module、install-module、save-module 和 update-module cm
 - 版本应为 3 个用句点隔开的数字块，如 0.1.1 或 4.11.192
 - 以“0”开头的版本表明包尚无法用于生产，当 0 为唯一使用的数字时，第一个数字只应以“0”开头
 - 第一个数字块中的更改（例如，从 1.9.9999 更改为 2.0.0）表明为主要和重大版本更改
-- 第二个数字块中的更改（例如，从 1.01 更改为 1.02）表明为功能级更改，如将新的 cmdlet 添加到模块
+- 第二个数字的变化（例如，从 1.1 变成 1.2）表示功能级变更，如将新的 cmdlet 添加到模块中
 - 第三个数字块中的更改表明为非重大更改，如新参数、更新后的示例或新测试
 - 列出版本时，PowerShell 会将版本作为字符串进行排序，因此 1.01.0 将被视为大于 1.001.0
 
