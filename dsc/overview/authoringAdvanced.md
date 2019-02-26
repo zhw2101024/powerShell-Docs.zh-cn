@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
-title: 用于组合和协作的高级 DSC 创作
-ms.openlocfilehash: 3e40ba94de0a53c1c9663553c4ec443b5e0df3fd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+title: 了解 CI/CD 管道中的 DSC 角色
+ms.openlocfilehash: 7aec414b3d8e61d1daa1ce796184ac34dbbb43ce
+ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677258"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56803372"
 ---
-# <a name="advanced-dsc-authoring-for-composition-and-collaboration"></a>用于组合和协作的高级 DSC 创作
+# <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>了解 CI/CD 管道中的 DSC 角色
 
 本文介绍了可用于组合配置和资源的方法类型。
 每种方案的目标都是相同的，即在首选多个配置时降低复杂性以达到服务器部署最终状态。
