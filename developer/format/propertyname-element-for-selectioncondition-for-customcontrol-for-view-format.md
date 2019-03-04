@@ -1,0 +1,60 @@
+---
+title: PropertyName 元素的视图 （格式） 的 CustomControl SelectionCondition |Microsoft Docs
+ms.custom: ''
+ms.date: 09/13/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.topic: article
+ms.assetid: fc48a417-2083-46d4-ac38-16c12e65b6b9
+caps.latest.revision: 7
+ms.openlocfilehash: e08037d5d051d3be51e90193c7e87cc2e738f78a
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "56860963"
+---
+# <a name="propertyname-element-for-selectioncondition-for-customcontrol-for-view-format"></a>PropertyName Element for SelectionCondition for CustomControl for View (Format)
+
+指定触发条件的.NET 属性。 存在此属性时或当计算结果为`true`、 满足该条件，以及使用该定义。 定义自定义控件视图时，将使用此元素。
+
+视图 （格式） 的视图 （格式） 的视图 (CustomControl CustomEntries CustomEntry 元素 CustomControl CustomEntries 元素的配置元素 （格式） ViewDefinitions 元素 （格式） 视图元素 （格式） CustomControl 元素格式） 的视图 （格式） 的视图 （格式） 的视图 （格式） 属性名的 CustomControl EntrySelectedBy SelectionCondition 元素 CustomControl CustomEntry EntrySelectedBy 元素 CustomControl CustomEntry CustomItem 元素元素的视图 （格式） 的 CustomControl SelectionCondition
+
+## <a name="syntax"></a>语法
+
+```xml
+<PropertyName>.NetTypeProperty</PropertyName>
+```
+
+## <a name="attributes-and-elements"></a>属性和元素
+
+以下各节描述了特性、 子元素和父元素的`PropertyName`元素。
+
+### <a name="attributes"></a>特性
+
+无。
+
+### <a name="child-elements"></a>子元素
+
+无。
+
+### <a name="parent-elements"></a>父元素
+
+|元素|描述|
+|-------------|-----------------|
+|[为视图 （格式） 的 CustomControl EntrySelectedBy SelectionCondition 元素](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)|定义必须存在要使用的控件定义的条件。|
+
+## <a name="text-value"></a>文本值
+
+指定.NET 属性名称。
+
+## <a name="remarks"></a>备注
+
+选择条件必须指定至少一个属性名或脚本，但不能同时指定。 有关如何使用选择条件的详细信息，请参阅[定义显示数据的条件](./defining-conditions-for-displaying-data.md)。
+
+## <a name="see-also"></a>另请参阅
+
+[为视图 （格式） 的 CustomControl EntrySelectedBy SelectionCondition 元素](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)
+
+[编写 PowerShell 格式设置文件](./writing-a-powershell-formatting-file.md)

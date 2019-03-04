@@ -1,0 +1,66 @@
+---
+title: 展开元素 （格式） |Microsoft Docs
+ms.custom: ''
+ms.date: 09/13/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.topic: article
+ms.assetid: faa0314b-f6f1-44fd-ad2b-b00cbe38923f
+caps.latest.revision: 9
+ms.openlocfilehash: 8b924c989133b47e4d95d8429778003c76595d58
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "56858573"
+---
+# <a name="expand-element-format"></a>Expand Element (Format)
+
+指定如何为此定义扩展的集合对象。
+
+配置元素 （格式） DefaultSettings 元素 （格式） EnumerableExpansions 元素 （格式） EnumerableExpansion 元素 （格式） 展开元素 （格式）
+
+## <a name="syntax"></a>语法
+
+```xml
+<Expand>EnumOnly, CoreOnly, Both</Expand>
+```
+
+## <a name="attributes-and-elements"></a>属性和元素
+
+以下各节描述了特性、 子元素和父元素的`Expand`元素。
+
+### <a name="attributes"></a>属性
+
+无。
+
+### <a name="child-elements"></a>子元素
+
+无。
+
+### <a name="parent-elements"></a>父元素
+
+|元素|说明|
+|-------------|-----------------|
+|[EnumerableExpansion 元素 （格式）](./enumerableexpansion-element-format.md)|定义如何特定对象在视图中显示时进行扩展的.NET 集合。|
+
+## <a name="text-value"></a>文本值
+
+指定以下值之一：
+
+- EnumOnly:仅显示属性的对象的集合中。
+
+- CoreOnly:仅显示属性的集合对象。
+
+- 两者：集合和集合对象的属性中显示的对象的属性。
+
+## <a name="remarks"></a>备注
+
+此元素用于定义如何显示集合对象和集合中的对象。 在这种情况下，集合对象是指任何支持的对象**System.Collections.ICollection**接口。
+
+默认行为是仅显示属性的对象的集合中。
+
+## <a name="see-also"></a>另请参阅
+
+[编写 PowerShell 格式设置文件](./writing-a-powershell-formatting-file.md)
