@@ -2,12 +2,12 @@
 title: 使用 Visual Studio Code 进行 PowerShell 开发
 description: 使用 Visual Studio Code 进行 PowerShell 开发
 ms.date: 08/06/2018
-ms.openlocfilehash: 3101fa57896996a696385801303333e4a6406d20
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 1e9b9d811a39656327af2810bd6dc8aaf3fde3a4
+ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
 ms.translationtype: MTE95
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400383"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251381"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>使用 Visual Studio Code 进行 PowerShell 开发
 
@@ -64,6 +64,24 @@ ms.locfileid: "53400383"
 若要关闭文件，则单击文件名旁的“x”。
 若要退出 Visual Studio Code，请单击“文件”->“退出”。
 
+### <a name="installing-the-powershell-extension-on-restricted-systems"></a>受限制的系统上安装 PowerShell 扩展
+
+某些系统设置要求要检查的所有代码签名并都需要手动批准在系统上运行的 PowerShell 编辑器服务的方式。
+如果你已安装 PowerShell 扩展但到达之类的错误，更改执行策略的组策略更新为可能的原因：
+
+```
+Language server startup failed.
+```
+
+若要手动批准 PowerShell 编辑器服务，因此适用于 VSCode 的 PowerShell 扩展，请打开 PowerShell 提示符并运行：
+
+```powershell
+Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellEditorServices\PowerShellEditorServices.psd1
+```
+
+系统会提示使用"执行操作要运行此不受信任的发布服务器上的软件？"
+类型`R`运行该文件。 然后，打开 Visual Studio Code，并检查 PowerShell 扩展工作正常。 如果仍有问题入门，让我们知道上[GitHub](https://github.com/PowerShell/vscode-powershell/issues)。
+
 #### <a name="using-a-specific-installed-version-of-powershell"></a>使用 PowerShell 特定安装版
 
 如果要通过 Visual Studio Code 使用 PowerShell 的特定安装版，则需要将新的变量添加到用户设置文件。
@@ -98,17 +116,28 @@ ms.locfileid: "53400383"
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
     "omnisharp.projectLoadTimeout": 120,
-    "files.trimTrailingWhitespace": true
+    "files.trimTrailingWhitespace": true,
+    "files.encoding": "utf8bom",
+    "files.autoGuessEncoding": true
 }
 ```
+
+如果不希望这些设置会影响所有文件类型，VSCode 还允许每种语言的配置。 创建语言特定的设置将设置放在`[<language-name>]`字段。 例如：
+
+```json
+"[powershell]": {
+    "files.encoding": "utf8bom",
+    "files.autoGuessEncoding": true
+}
+```
+
+详细了解文件编码在 VS Code 中，请参阅[了解文件编码](understanding-file-encoding.md)。
 
 ## <a name="debugging-with-visual-studio-code"></a>使用 Visual Studio Code 进行调试
 
 ### <a name="no-workspace-debugging"></a>无工作区调试
 
-从 Visual Studio Code 版本 1.9 开始，无需打开包含 PowerShell 脚本的文件夹即可调试 PowerShell 脚本。
-只需单击“文件”->“打开文件...”打开 PowerShell 脚本文件，在行上设一个断点（按 F9），然后按 F5 即可开始调试。
-此时应出现“调试”操作窗格，通过该窗格可以中断调试器、执行、继续和停止调试。
+从 Visual Studio Code 版本 1.9 开始，无需打开包含 PowerShell 脚本的文件夹即可调试 PowerShell 脚本。 打开 PowerShell 脚本文件与**文件-> 打开文件...**，行 （按 F9） 上设置断点，然后按 F5 启动调试。 此时应出现“调试”操作窗格，通过该窗格可以中断调试器、执行、继续和停止调试。
 
 ### <a name="workspace-debugging"></a>工作区调试
 
@@ -165,7 +194,7 @@ ms.locfileid: "53400383"
 
   这表示常见调试方案。
   但是，在编辑器中打开此文件时，会显示“添加配置...”按钮。
-  按此按钮可添加更多 PowerShell 调试配置。 若要添加的一个便捷配置是**PowerShell:启动脚本**。
+  按此按钮可添加更多 PowerShell 调试配置。 其中可添加的一个便捷配置是“PowerShell: Launch Script”。
   通过此配置，可以使用可选参数指定特定文件，无论编辑器中哪个文件处于活动状态，无论何时按 F5 时，此文件都会启动。
 
   调试配置建立后，可以在“调试”视图工具栏中的调试配置下拉列表中选择要在调试会话中使用的配置。
