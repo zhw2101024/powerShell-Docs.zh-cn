@@ -8,25 +8,23 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3611d66b-19da-4477-ac05-2e5e68312f51
 caps.latest.revision: 6
-ms.openlocfilehash: 77d0871953950374d2eece65bead0f2075b1138b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 432105db021bd19f467f6a275b3ea9038fa82d5b
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857283"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429850"
 ---
-# <a name="runspace03-vbnet-code-sample"></a><span data-ttu-id="47c76-102">RunSpace03 (VB.NET) 代码示例</span><span class="sxs-lookup"><span data-stu-id="47c76-102">RunSpace03 (VB.NET) Code Sample</span></span>
+# <a name="runspace03-vbnet-code-sample"></a><span data-ttu-id="c694c-102">RunSpace03 (VB.NET) 代码示例</span><span class="sxs-lookup"><span data-stu-id="c694c-102">RunSpace03 (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="47c76-103">下面是 VB.NET 源代码的控制台应用程序中所述[创建一个指定脚本的控制台应用程序，运行](http://msdn.microsoft.com/en-us/a93e6006-36db-4bcc-b9da-c5bebf4ffd68)。</span><span class="sxs-lookup"><span data-stu-id="47c76-103">Here is the VB.NET source code for the console application described in [Creating a Console Application That Runs a Specified Script](http://msdn.microsoft.com/en-us/a93e6006-36db-4bcc-b9da-c5bebf4ffd68).</span></span> <span data-ttu-id="47c76-104">此示例使用[System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)类，以执行检索进程信息的列表的进程名称传递到该脚本的脚本。</span><span class="sxs-lookup"><span data-stu-id="47c76-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that retrieves process information for the list of process names passed into the script.</span></span> <span data-ttu-id="47c76-105">它演示如何将输入的对象传递给脚本以及如何检索错误对象和输出对象。</span><span class="sxs-lookup"><span data-stu-id="47c76-105">It shows how to pass input objects to a script and how to retrieve error objects as well as the output objects.</span></span>
-<span data-ttu-id="47c76-106">下面是 VB.NET 源代码的控制台应用程序中所述[创建一个指定脚本的控制台应用程序，运行](http://msdn.microsoft.com/en-us/a93e6006-36db-4bcc-b9da-c5bebf4ffd68)。</span><span class="sxs-lookup"><span data-stu-id="47c76-106">Here is the VB.NET source code for the console application described in [Creating a Console Application That Runs a Specified Script](http://msdn.microsoft.com/en-us/a93e6006-36db-4bcc-b9da-c5bebf4ffd68).</span></span> <span data-ttu-id="47c76-107">此示例使用[System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)类，以执行检索进程信息的列表的进程名称传递到该脚本的脚本。</span><span class="sxs-lookup"><span data-stu-id="47c76-107">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that retrieves process information for the list of process names passed into the script.</span></span> <span data-ttu-id="47c76-108">它演示如何将输入的对象传递给脚本以及如何检索错误对象和输出对象。</span><span class="sxs-lookup"><span data-stu-id="47c76-108">It shows how to pass input objects to a script and how to retrieve error objects as well as the output objects.</span></span>
+<span data-ttu-id="c694c-103">下面是 VB.NET 源代码的控制台应用程序中所述[创建一个指定脚本的控制台应用程序，运行](http://msdn.microsoft.com/en-us/a93e6006-36db-4bcc-b9da-c5bebf4ffd68)。</span><span class="sxs-lookup"><span data-stu-id="c694c-103">Here is the VB.NET source code for the console application described in [Creating a Console Application That Runs a Specified Script](http://msdn.microsoft.com/en-us/a93e6006-36db-4bcc-b9da-c5bebf4ffd68).</span></span> <span data-ttu-id="c694c-104">此示例使用[System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)类，以执行检索进程信息的列表的进程名称传递到该脚本的脚本。</span><span class="sxs-lookup"><span data-stu-id="c694c-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that retrieves process information for the list of process names passed into the script.</span></span> <span data-ttu-id="c694c-105">它演示如何将输入的对象传递给脚本以及如何检索错误对象和输出对象。</span><span class="sxs-lookup"><span data-stu-id="c694c-105">It shows how to pass input objects to a script and how to retrieve error objects as well as the output objects.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="47c76-109">通过使用 Windows 软件开发工具包适用于 Windows Vista 和 Microsoft.NET Framework 3.0 运行时组件，可以为此示例下载 VB.NET 源文件 (runspace03.vb)。</span><span class="sxs-lookup"><span data-stu-id="47c76-109">You can download the VB.NET source file (runspace03.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="47c76-110">有关下载说明，请参阅[如何安装 Windows PowerShell 和下载 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。</span><span class="sxs-lookup"><span data-stu-id="47c76-110">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span></span>
-> <span data-ttu-id="47c76-111">通过使用 Windows 软件开发工具包适用于 Windows Vista 和 Microsoft.NET Framework 3.0 运行时组件，可以为此示例下载 VB.NET 源文件 (runspace03.vb)。</span><span class="sxs-lookup"><span data-stu-id="47c76-111">You can download the VB.NET source file (runspace03.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="47c76-112">有关下载说明，请参阅[如何安装 Windows PowerShell 和下载 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。</span><span class="sxs-lookup"><span data-stu-id="47c76-112">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span></span>
+> <span data-ttu-id="c694c-106">通过使用 Windows 软件开发工具包适用于 Windows Vista 和 Microsoft.NET Framework 3.0 运行时组件，可以为此示例下载 VB.NET 源文件 (runspace03.vb)。</span><span class="sxs-lookup"><span data-stu-id="c694c-106">You can download the VB.NET source file (runspace03.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="c694c-107">有关下载说明，请参阅[如何安装 Windows PowerShell 和下载 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。</span><span class="sxs-lookup"><span data-stu-id="c694c-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span></span>
 >
-> <span data-ttu-id="47c76-113">已下载的源文件中有 **\<PowerShell 示例 >** 目录。</span><span class="sxs-lookup"><span data-stu-id="47c76-113">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
+> <span data-ttu-id="c694c-108">已下载的源文件中有 **\<PowerShell 示例 >** 目录。</span><span class="sxs-lookup"><span data-stu-id="c694c-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="47c76-114">代码示例</span><span class="sxs-lookup"><span data-stu-id="47c76-114">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="c694c-109">代码示例</span><span class="sxs-lookup"><span data-stu-id="c694c-109">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -108,8 +106,8 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace03.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace01/Runspace03.vb#L09-L83 "Runspace03.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="47c76-115">另请参阅</span><span class="sxs-lookup"><span data-stu-id="47c76-115">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c694c-110">另请参阅</span><span class="sxs-lookup"><span data-stu-id="c694c-110">See Also</span></span>
 
-[<span data-ttu-id="47c76-116">Windows PowerShell 程序员指南</span><span class="sxs-lookup"><span data-stu-id="47c76-116">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
+[<span data-ttu-id="c694c-111">Windows PowerShell 程序员指南</span><span class="sxs-lookup"><span data-stu-id="c694c-111">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
 
-[<span data-ttu-id="47c76-117">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="47c76-117">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="c694c-112">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="c694c-112">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
