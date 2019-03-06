@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide, providers
 ms.assetid: 863e48e9-7206-4c6a-a59a-2ab2d30396bc
 caps.latest.revision: 5
-ms.openlocfilehash: a114a4b0d5a5bfcc0d072f83f0e59ca6d329a172
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 286df63e75d6372cb41c974e60e79b02bd13686e
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862403"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429663"
 ---
 # <a name="how-to-create-a-windows-powershell-provider"></a>如何创建 Windows PowerShell 提供程序
 
@@ -34,7 +34,6 @@ Windows PowerShell 提供了多个提供程序 （例如 FileSystem 提供程序
 ## <a name="accessing-the-stored-data-using-windows-powershell-paths"></a>访问存储的数据使用 Windows PowerShell 路径
 
 Windows PowerShell 提供程序都可以访问 Windows PowerShell 运行时和以编程方式通过使用 Windows PowerShell 路径的命令。 大多数情况下，这些路径用于直接通过提供程序访问数据。 但是，某些路径可被解析为提供程序内部的路径，允许使用 Windows PowerShell 应用程序编程接口 (Api) 来访问数据的 cmdlet。 有关 Windows PowerShell 提供程序如何在 Windows PowerShell 中运行的详细信息，请参阅[Windows PowerShell 的工作原理](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)。
-Windows PowerShell 提供程序都可以访问 Windows PowerShell 运行时和以编程方式通过使用 Windows PowerShell 路径的命令。 大多数情况下，这些路径用于直接通过提供程序访问数据。 但是，某些路径可被解析为提供程序内部的路径，允许使用 Windows PowerShell 应用程序编程接口 (Api) 来访问数据的 cmdlet。 有关 Windows PowerShell 提供程序如何在 Windows PowerShell 中运行的详细信息，请参阅[Windows PowerShell 的工作原理](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)。
 
 ## <a name="exposing-provider-cmdlets-using-windows-powershell-drives"></a>公开提供程序 Cmdlet 使用 Windows PowerShell 驱动器
 
@@ -48,7 +47,7 @@ Windows PowerShell 提供程序公开其支持的 cmdlet 使用虚拟 Windows Po
 
 - 每个驱动器会保留其自己的当前工作位置，这样就允许用户驱动器之间切换时保留上下文。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>本部分内容
 
 下表列出了包含相互关联的代码示例的主题。 从开始第二个主题，基本的 Windows PowerShell 提供程序可以初始化，并通过 Windows PowerShell 运行时未初始化、 下一主题将添加用于访问数据的功能、 下一主题将添加用于处理数据 （功能存储的数据中的项），依次类推。
 
@@ -64,8 +63,6 @@ Windows PowerShell 提供程序公开其支持的 cmdlet 使用虚拟 Windows Po
 |[创建 Windows PowerShell 属性提供程序](./creating-a-windows-powershell-property-provider.md)|本主题演示如何创建 Windows PowerShell 提供程序，允许用户用来处理数据存储区中的项的属性。|
 
 ## <a name="see-also"></a>另请参阅
-
-[Windows PowerShell 的工作原理](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 
 [Windows PowerShell 的工作原理](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 

@@ -8,20 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3611d66b-19da-4477-ac05-2e5e68312f51
 caps.latest.revision: 6
-ms.openlocfilehash: 77d0871953950374d2eece65bead0f2075b1138b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 432105db021bd19f467f6a275b3ea9038fa82d5b
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857283"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429850"
 ---
 # <a name="runspace03-vbnet-code-sample"></a>RunSpace03 (VB.NET) 代码示例
 
 下面是 VB.NET 源代码的控制台应用程序中所述[创建一个指定脚本的控制台应用程序，运行](http://msdn.microsoft.com/en-us/a93e6006-36db-4bcc-b9da-c5bebf4ffd68)。 此示例使用[System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)类，以执行检索进程信息的列表的进程名称传递到该脚本的脚本。 它演示如何将输入的对象传递给脚本以及如何检索错误对象和输出对象。
-下面是 VB.NET 源代码的控制台应用程序中所述[创建一个指定脚本的控制台应用程序，运行](http://msdn.microsoft.com/en-us/a93e6006-36db-4bcc-b9da-c5bebf4ffd68)。 此示例使用[System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)类，以执行检索进程信息的列表的进程名称传递到该脚本的脚本。 它演示如何将输入的对象传递给脚本以及如何检索错误对象和输出对象。
 
 > [!NOTE]
-> 通过使用 Windows 软件开发工具包适用于 Windows Vista 和 Microsoft.NET Framework 3.0 运行时组件，可以为此示例下载 VB.NET 源文件 (runspace03.vb)。 有关下载说明，请参阅[如何安装 Windows PowerShell 和下载 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 > 通过使用 Windows 软件开发工具包适用于 Windows Vista 和 Microsoft.NET Framework 3.0 运行时组件，可以为此示例下载 VB.NET 源文件 (runspace03.vb)。 有关下载说明，请参阅[如何安装 Windows PowerShell 和下载 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 >
 > 已下载的源文件中有 **\<PowerShell 示例 >** 目录。

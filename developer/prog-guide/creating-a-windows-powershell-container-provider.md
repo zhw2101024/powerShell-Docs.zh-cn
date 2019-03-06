@@ -11,12 +11,12 @@ helpviewer_keywords:
 - container providers [PowerShell Programmer's Guide]
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
-ms.openlocfilehash: 8c111f8f2943043e4ad2a6a8677db4afe1b3cdab
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e0d83a742eae2bcde2e691860a5f2b3e5862d2de
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863163"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430022"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>创建 Windows PowerShell 容器提供程序
 
@@ -25,7 +25,6 @@ ms.locfileid: "56863163"
 适用于多级别数据存储区的提供程序称为 Windows PowerShell 容器提供程序。 但是，请注意只有在没有一个容器 （没有嵌套的容器） 中它的项时，可以使用 Windows PowerShell 容器提供程序。 如果有嵌套的容器，则必须实现一个 Windows PowerShell 导航提供程序。 有关实现 Windows PowerShell 导航提供程序的详细信息，请参阅[创建一个 Windows PowerShell 导航提供程序](./creating-a-windows-powershell-navigation-provider.md)。
 
 > [!NOTE]
-> 您可以下载C#Microsoft Windows 软件开发工具包适用于 Windows Vista 和.NET Framework 3.0 运行时组件使用此提供程序的源文件 (AccessDBSampleProvider04.cs)。 有关下载说明，请参阅[如何安装 Windows PowerShell 和下载 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 > 您可以下载C#Microsoft Windows 软件开发工具包适用于 Windows Vista 和.NET Framework 3.0 运行时组件使用此提供程序的源文件 (AccessDBSampleProvider04.cs)。 有关下载说明，请参阅[如何安装 Windows PowerShell 和下载 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 >
 > 已下载的源文件中有 **\<PowerShell 示例 >** 目录。
@@ -418,7 +417,6 @@ protected override bool HasChildItems( string path )
 ## <a name="building-the-windows-powershell-provider"></a>生成 Windows PowerShell 提供程序
 
 请参阅[如何注册 Cmdlet、 提供程序，和托管应用程序](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
-请参阅[如何注册 Cmdlet、 提供程序，和托管应用程序](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
 
 ## <a name="testing-the-windows-powershell-provider"></a>测试 Windows PowerShell 提供程序
 
@@ -537,8 +535,6 @@ Windows PowerShell 提供程序具有已注册到 Windows PowerShell，可以通
 [实现项 Windows PowerShell 提供程序](./creating-a-windows-powershell-item-provider.md)
 
 [实现导航 Windows PowerShell 提供程序](./creating-a-windows-powershell-navigation-provider.md)
-
-[如何注册 Cmdlet、 提供程序，和托管应用程序](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [如何注册 Cmdlet、 提供程序，和托管应用程序](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 

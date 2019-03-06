@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a6b8303d-e868-4dd0-bbbb-ed2e6d8f2f76
 caps.latest.revision: 6
-ms.openlocfilehash: 720d0f3adb697a80536dbb13cb2920c7206246e8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 6060c535f07814e4977b72068927205cefe6d012
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857803"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429918"
 ---
 # <a name="runspace03-code-samples"></a>RunSpace03 代码示例
 
@@ -21,13 +21,12 @@ ms.locfileid: "56857803"
 
 > [!NOTE]
 > 您可以下载C#源代码文件 (runspace03.cs) 和 Microsoft Windows 软件开发工具包适用于 Windows Vista 和 Microsoft.NET Framework 3.0 运行时组件使用此示例的 VB.NET 源文件 (runspace03.vb)。 有关下载说明，请参阅[如何安装 Windows PowerShell 和下载 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
-> 您可以下载C#源代码文件 (runspace03.cs) 和 Microsoft Windows 软件开发工具包适用于 Windows Vista 和 Microsoft.NET Framework 3.0 运行时组件使用此示例的 VB.NET 源文件 (runspace03.vb)。 有关下载说明，请参阅[如何安装 Windows PowerShell 和下载 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 >
 > 已下载的源文件中有 **\<PowerShell 示例 >** 目录。
 
 有关完整的示例代码，请参阅以下主题。
 
-|语言|主题|
+|Language|主题|
 |--------------|-----------|
 |C#|[RunSpace03 (C#) 代码示例](./runspace03-csharp-code-sample.md)|
 |VB.NET|[RunSpace03 (VB.NET) 代码示例](./runspace03-vb-net-code-sample.md)|

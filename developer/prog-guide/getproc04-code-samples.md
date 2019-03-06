@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: c00afd46-758a-4aec-b865-2c9d8f6a17ad
 caps.latest.revision: 5
-ms.openlocfilehash: d679bc8cbdb026e072628d3e0c5704de2eec7af9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b9b42c818981090496f7b14a1cb8bdec14a5d5bb
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855443"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429714"
 ---
 # <a name="getproc04-code-samples"></a>GetProc04 代码示例
 
@@ -21,13 +21,12 @@ ms.locfileid: "56855443"
 
 > [!NOTE]
 > 您可以下载C#使用 Microsoft Windows 软件开发工具包适用于 Windows Vista 和.NET Framework 3.0 运行时组件此 Get-proc cmdlet 的源文件 (getprov04.cs)。 有关下载说明，请参阅[如何安装 Windows PowerShell 和下载 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
-> 您可以下载C#使用 Microsoft Windows 软件开发工具包适用于 Windows Vista 和.NET Framework 3.0 运行时组件此 Get-proc cmdlet 的源文件 (getprov04.cs)。 有关下载说明，请参阅[如何安装 Windows PowerShell 和下载 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 >
 > 已下载的源文件中有 **\<PowerShell 示例 >** 目录。
 
 有关完整的示例代码，请参阅以下主题。
 
-|语言|主题|
+|Language|主题|
 |--------------|-----------|
 |C#|[GetProc04 (C#) Sample Code](./getproc04-csharp-sample-code.md)|
 |VB.NET|[GetProc04 (VB.NET) Sample Code](./getproc04-vb-net-sample-code.md)|

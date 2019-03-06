@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], property provider
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
-ms.openlocfilehash: ade8fbd38e4f4a675e825b0d8850af0379c9d211
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 4ed15dabffa933dee9becf2f839887eb9108775d
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858893"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430003"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>创建 Windows PowerShell 属性提供程序
 
 本主题介绍如何创建提供程序，使用户用来处理数据存储区中的项的属性。 因此，这种类型的提供程序被称为 Windows PowerShell 属性提供程序。 例如，注册表提供程序提供的 Windows PowerShell 句柄注册表项值作为注册表项的属性。 这种类型的提供程序必须添加[System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) .NET 类的实现的接口。
 
 > [!NOTE]
-> Windows PowerShell 提供了可用于开发 Windows PowerShell 提供程序的模板文件。 TemplateProvider.cs 文件是适用于 Microsoft Windows 软件开发工具包适用于 Windows Vista 和.NET Framework 3.0 运行时组件。 有关下载说明，请参阅[如何安装 Windows PowerShell 和下载 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 > Windows PowerShell 提供了可用于开发 Windows PowerShell 提供程序的模板文件。 TemplateProvider.cs 文件是适用于 Microsoft Windows 软件开发工具包适用于 Windows Vista 和.NET Framework 3.0 运行时组件。 有关下载说明，请参阅[如何安装 Windows PowerShell 和下载 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 >
 > 下载的模板现已推出 **\<PowerShell 示例 >** 目录。 应使此文件的副本并使用该副本进行创建新的 Windows PowerShell 提供程序，删除不需要任何功能。
@@ -150,7 +149,6 @@ ms.locfileid: "56858893"
 ## <a name="building-the-windows-powershell-provider"></a>生成 Windows PowerShell 提供程序
 
 请参阅[如何注册 Cmdlet、 提供程序，和托管应用程序](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
-请参阅[如何注册 Cmdlet、 提供程序，和托管应用程序](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
 
 ## <a name="see-also"></a>另请参阅
 
@@ -159,9 +157,5 @@ ms.locfileid: "56858893"
 [设计您的 Windows PowerShell 提供程序](./designing-your-windows-powershell-provider.md)
 
 [扩展对象类型和格式设置](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[扩展对象类型和格式设置](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[如何注册 Cmdlet、 提供程序，和托管应用程序](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [如何注册 Cmdlet、 提供程序，和托管应用程序](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
