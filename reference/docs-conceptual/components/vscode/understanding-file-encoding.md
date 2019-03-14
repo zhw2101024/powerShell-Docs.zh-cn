@@ -2,12 +2,12 @@
 title: 了解 VSCode 和 PowerShell 中的文件编码
 description: 配置文件在 VSCode 和 PowerShell 中编码
 ms.date: 02/28/2019
-ms.openlocfilehash: f3b133b4bee7688821a5960429e2f26b69b01e12
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
-ms.translationtype: MTE95
+ms.openlocfilehash: 9cf445ebd0c2bb2dbdf4438f02dafe3df3a5d1e2
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251467"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429799"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>了解 VSCode 和 PowerShell 中的文件编码
 
@@ -68,7 +68,7 @@ At C:\Users\<User>\<OneDrive>\Development\PowerShell\Scripts\Send-EmailUsingSmtp
 PowerShell 扩展中通过多种方式使用脚本进行交互：
 
 1. 当脚本将在 VSCode 中编辑时，内容 vscode 发送到该扩展。 [语言服务器协议][]要求此内容在 utf-8 中传输。 因此，不可能的扩展，以获取编码错误。
-2. 脚本执行时直接在集成控制台中，它们是从文件中读取 powershell 直接。 从 VSCode 的 Tf PowerShell 编码不同，某些内容可能会出现以下错误。
+2. 脚本执行时直接在集成控制台中，它们是从文件中读取 powershell 直接。 如果 PowerShell 的编码不同于 VSCode 的可能会出错此处。
 3. 将在 VSCode 中打开的脚本引用了未在 VSCode 中打开的另一个脚本，该扩展将回退到从文件系统加载该脚本的内容。 PowerShell 扩展默认为 utf-8 编码，但使用[字节顺序标记][]，或 BOM，检测，以选择正确的编码。
 
 假设采用无 BOM 式格式的编码时出现问题 (如[utf-8][]与没有 BOM 和[Windows-1252][])。
@@ -112,7 +112,7 @@ VSCode 的默认编码为 utf-8 而无需 BOM。
 - `utf8bom`: [Utf-8]与物料清单
 - `utf16le`: Little endian [utf-16]
 - `utf16be`: Big endian [utf-16]
-- `windows1252`: [Windows-1252]
+- `windows1252`：[Windows-1252]
 
 应为此获取下拉列表中，在 GUI 视图中，或查看 JSON 中的其完成。
 

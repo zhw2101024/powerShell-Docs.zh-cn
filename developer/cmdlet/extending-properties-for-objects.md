@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f33ff3e9-213c-44aa-92ab-09450e65c676
 caps.latest.revision: 11
-ms.openlocfilehash: dcab755f565cd176c85ef6b9c719bceae10301b4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: be31d03b02394cb1694909cf7b65bbc2a29f6976
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854523"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795430"
 ---
 # <a name="extending-properties-for-objects"></a>扩展对象的属性
 
@@ -101,7 +101,6 @@ ms.locfileid: "56854523"
 
 ## <a name="property-sets"></a>属性集
 
-属性集定义扩展集的名称，可以引用的属性的组。 例如，`Property`的参数[Format-table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) cmdlet 可以指定特定的属性设置为显示。 当指定了属性集时，显示属于集的那些属性。
 属性集定义扩展集的名称，可以引用的属性的组。 例如，`Property`的参数[Format-table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) cmdlet 可以指定特定的属性设置为显示。 当指定了属性集时，显示属于集的那些属性。
 
 可以为对象定义的属性集的数量没有限制。 但是，必须在 PSStandardMembers 成员组中指定用于定义对象的默认显示属性的属性集。 在 Types.ps1xml 类型文件中，默认属性集名称包括 DefaultDisplayProperty、 DefaultDisplayPropertySet 和 DefaultKeyPropertySet。 您将添加到 PSStandardMembers 成员集的任何其他属性集将被忽略。

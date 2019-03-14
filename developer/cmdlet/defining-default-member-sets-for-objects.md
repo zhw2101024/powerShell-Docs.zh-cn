@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 77f94326-8ffe-4d40-bd2a-b79fb0b4a4e5
 caps.latest.revision: 8
-ms.openlocfilehash: e8185eb7221a3be0445eddc537dbca89478c74f2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2d634e7638ec0e0117d65ca0b2d08e68f0068a03
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859793"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794903"
 ---
 # <a name="defining-default-member-sets-for-objects"></a>定义对象的默认成员集
 
@@ -21,7 +21,6 @@ Windows PowerShell 使用 PSStandardMembers 成员集来定义对象的默认属
 
 ## <a name="member-set-for-systemdiagnosticsprocess"></a>System.Diagnostics.Process 的成员集
 
-在以下示例中，PSStandardMembers 成员集定义 DefaultDisplayPropertySet 属性设置为[System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)对象。 设置此属性由[Format-list](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet。
 在以下示例中，PSStandardMembers 成员集定义 DefaultDisplayPropertySet 属性设置为[System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)对象。 设置此属性由[Format-list](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet。
 
 ```xml
@@ -44,7 +43,6 @@ Windows PowerShell 使用 PSStandardMembers 成员集来定义对象的默认属
   </MemberSet>
 ```
 
-下面的输出显示返回的默认属性[Format-list](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet。 仅`Id`， `Handles`， `CPU`，和`Name`对于每个进程对象返回的属性。
 下面的输出显示返回的默认属性[Format-list](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet。 仅`Id`， `Handles`， `CPU`，和`Name`对于每个进程对象返回的属性。
 
 ```powershell

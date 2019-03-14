@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0a49e3c4-6a1b-404c-aefc-134e5ce3d108
 caps.latest.revision: 11
-ms.openlocfilehash: 3d9edb9d2af8ab15764d97256f49f674255e7ee7
-ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
+ms.openlocfilehash: 63bcdc6b273b47f8eb743928d2eaa5ef91470df5
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56863793"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794410"
 ---
 # <a name="host05-sample"></a>Host05 示例
 
-此示例演示如何生成基于控制台的交互式主机应用程序，从命令行读取并执行命令，然后将结果显示到控制台。 此主机应用程序还支持通过使用 [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) 和 [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlet 调用远程计算机。
 此示例演示如何生成基于控制台的交互式主机应用程序，从命令行读取并执行命令，然后将结果显示到控制台。 此主机应用程序还支持通过使用 [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) 和 [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlet 调用远程计算机。
 
 ## <a name="requirements"></a>要求
@@ -44,7 +43,6 @@ ms.locfileid: "56863793"
 
 - 实现[System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection)接口。
 
-- 实现[System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession)接口以支持通过使用交互式远程处理[Enter-pssession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession)和[Exit-pssession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlet。
 - 实现[System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession)接口以支持通过使用交互式远程处理[Enter-pssession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession)和[Exit-pssession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlet。
 
 ## <a name="example"></a>示例

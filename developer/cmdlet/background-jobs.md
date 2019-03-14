@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a0ef5ac9-8254-4832-ace8-84b356c10f08
 caps.latest.revision: 13
-ms.openlocfilehash: 9aff23647e55e8c9c41c54e5b62cedc15fb28a2d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ff4fe159eedc47fc69f4d783cd90d2b0e888c0d5
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857163"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794699"
 ---
 # <a name="background-jobs"></a>后台作业
 
@@ -21,7 +21,6 @@ ms.locfileid: "56857163"
 
 ## <a name="background-jobs-child-jobs-and-the-job-repository"></a>后台作业、 子作业和作业存储库
 
-支持后台作业的 cmdlet 返回的作业对象定义的作业。 ( [Start-job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) cmdlet 也会返回作业对象。)在此定义中包含的作业，用于指定作业、 状态信息，以及子作业的标识符名称。 该作业不执行任何工作。 每个后台作业具有至少一个子作业，因为子作业执行的实际工作。 当您运行某个 cmdlet，以便作为后台作业执行工作时，该 cmdlet 必须添加作业和子作业到公共存储库，称为*作业存储库*。
 支持后台作业的 cmdlet 返回的作业对象定义的作业。 ( [Start-job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) cmdlet 也会返回作业对象。)在此定义中包含的作业，用于指定作业、 状态信息，以及子作业的标识符名称。 该作业不执行任何工作。 每个后台作业具有至少一个子作业，因为子作业执行的实际工作。 当您运行某个 cmdlet，以便作为后台作业执行工作时，该 cmdlet 必须添加作业和子作业到公共存储库，称为*作业存储库*。
 
 有关如何在命令行处理后台作业的详细信息，请参阅：

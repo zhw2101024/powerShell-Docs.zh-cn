@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 93a00463-af58-41c8-b088-450909fa1d05
 caps.latest.revision: 6
-ms.openlocfilehash: 4929a5b1c9f73bb12b6df975e03fc529db3565ef
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d69e8a734aa96ff9b7911815fb43b81103548b59
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863313"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794342"
 ---
 # <a name="how-to-set-helpinfo-xml-version-numbers"></a>如何设置 HelpInfo XML 版本号
 
@@ -21,7 +21,6 @@ ms.locfileid: "56863313"
 
 ## <a name="how-to-set-helpinfo-xml-version-numbers"></a>如何设置 HelpInfo XML 版本号
 
-HelpInfo XML 文件中的版本号是至关重要的可更新帮助的操作。 [Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help)并[Save-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet 下载新的帮助文件，仅当 UI 区域性中的远程 HelpInfo XML 文件的版本号大于该 UI 区域性中的版本号本地 HelpInfo XML，或不存在本地 HelpInfo XML 文件。
 HelpInfo XML 文件中的版本号是至关重要的可更新帮助的操作。 [Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help)并[Save-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet 下载新的帮助文件，仅当 UI 区域性中的远程 HelpInfo XML 文件的版本号大于该 UI 区域性中的版本号本地 HelpInfo XML，或不存在本地 HelpInfo XML 文件。
 
 HelpInfo XML 文件使用中定义的四部分版本号**System.Version**的 Microsoft.NET Framework 类。 格式是`N1.N2.N3.N4`。 模块作者可以使用任何版本编号的允许的方案**System.Version**类。 可更新的帮助时，需要仅版本号的 UI 区域性增加该 UI 区域性的 CAB 文件的新版本上载到由指定的位置**HelpContentURI** HelpInfo XML 文件中的元素。

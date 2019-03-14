@@ -1,17 +1,15 @@
 ---
-ms.date: 04/11/2018
+ms.date: 03/04/2019
 keywords: dsc,powershell,配置,安装程序
 title: DSC 请求服务
-ms.openlocfilehash: bcde871f0f7f107daca47c29419c36451e779f94
-ms.sourcegitcommit: 10c347a8c3dcbf8962295601834f5ba85342a87b
-ms.translationtype: MTE95
+ms.openlocfilehash: 64c22bc021666026ae58a4c4fb4e3d31b25bae5c
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55887627"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429952"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration 请求服务
-
-> 适用于：Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > 请求服务器（Windows 功能 DSC-Service）是 Windows Server 的一个受支持组件，不过目前没有提供新功能的计划。 建议开始将托管客户端转换至 [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)（包括 Windows Server 上的请求服务器以外的功能）或[此处](pullserver.md#community-solutions-for-pull-service)列出的社区解决方案之一。
@@ -35,6 +33,7 @@ Azure 服务可以在本地管理私有数据中心或 Azure 和 AWS 等公有�
 对于服务器无法直接连接到 Internet 的私有环境，请考虑将出站流量限制为仅已发布的 Azure IP 范围（请参阅 [Azure 数据中心 IP 范围](https://www.microsoft.com/en-us/download/details.aspx?id=41653)）。
 
 在 Windows Server 的请求服务上目前暂不可用的在线服务功能包括：
+
 - 所有数据在传输和静止时均处于加密状态
 - 自动创建和管理客户端证书
 - 用于集中式管理[密码/凭据](/azure/automation/automation-credentials)或[变量](/azure/automation/automation-variables)（例如服务器名称或连接字符串）的机密存储
@@ -57,7 +56,7 @@ Windows Server 中提供的请求服务是 IIS 中的一项 Web 服务，当目�
 使用请求服务器的要求：
 
 - 运行的服务器：
-  - WMF/PowerShell 5.0 或更高版本
+  - WMF/PowerShell 4.0 或更高版本
   - IIS 服务器角色
   - DSC 服务
 - 理想情况下，可通过某些方式生成证书，以便保护传递给目标节点上本地配置管理器 (LCM) 的凭据
@@ -71,11 +70,11 @@ Windows Server 中提供的请求服务是 IIS 中的一项 Web 服务，当目�
 |---------|---------|---------|---------|
 |MDB     |ESENT（默认）、MDB |ESENT（默认）、MDB|ESENT（默认）、SQL Server、MDB
 
-从 [Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) 的版本 17090 开始，SQL Server 成为了请求服务（Windows Feature DSC-Service）的支持选项。  这为缩放未迁移至 [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) 的大型 DSC 环境提供了新选项。
+从 [Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) 的版本 17090 开始，SQL Server 成为了请求服务（Windows Feature DSC-Service）的支持选项。 这为缩放未迁移至 [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) 的大型 DSC 环境提供了新选项。
 
 > **注意**：SQL Server 支持不会添加到 WMF 5.1 的以前版本（或更早版本）中，仅在 17090 版本或更高版本的 Windows Server 上提供。
 
-若要将请求服务器配置为使用 SQL Server，可将“SqlProvider”设为 `$true`并将“SqlConnectionString”设为有效的 SQL Server 连接字符串。  有关详细信息，请参阅 [SqlClient 连接字符串](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings)。
+若要将请求服务器配置为使用 SQL Server，可将“SqlProvider”设为 `$true`并将“SqlConnectionString”设为有效的 SQL Server 连接字符串。 有关详细信息，请参阅 [SqlClient 连接字符串](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings)。
 若要查看使用 xDscWebService 的 SQL Server 配置的示例，请先阅读[使用 xDscWebService 资源](#using-the-xdscwebservice-resource)，再查看 [GitHub 上的 Sample_xDscWebServiceRegistration_UseSQLProvider.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1)。
 
 ### <a name="using-the-xdscwebservice-resource"></a>使用 xDscWebService 资源
@@ -83,10 +82,14 @@ Windows Server 中提供的请求服务是 IIS 中的一项 Web 服务，当目�
 设置 Web 请求服务器的最简单方法是使用包含在 xPSDesiredStateConfiguration 模块中的 xDscWebService 资源。
 下列步骤说明如何使用设置 Web 服务的配置中的资源。
 
-1. 调用 [Install-Module](/powershell/module/PowershellGet/Install-Module) 以安装 **xPSDesiredStateConfiguration** 模块。 **注意**：**安装模块**已被纳入**PowerShellGet**模块，后者纳入 PowerShell 5.0。 可在 [PackageManagement PowerShell 模块预览](https://www.microsoft.com/en-us/download/details.aspx?id=49186)中下载适用于 PowerShell 3.0 和 4.0 的 **PowerShellGet**。
-1. 从受信任的证书颁发机构（在所在组织或公共颁发机构中）获取 DSC 请求服务器的 SSL 证书。 从颁发机构收到的证书通常采用 PFX 格式。 采用默认位置（应是 CERT:\LocalMachine\My），在将成为请求服务器的节点上安装证书。 记下证书指纹。
-1. 选择要用作注册密钥的 GUID。 若要使用 PowerShell 生成一个，请在 PS 提示符处输入以下命令，然后按 Enter：“``` [guid]::newGuid()```”或“```New-Guid```”。 此密钥将由客户端节点用作共享密钥，以便在注册过程中进行身份验证。 有关详细信息，请参阅下面的“注册密钥”部分。
-1. 在 PowerShell ISE 中，启动 (F5) 以下配置脚本（包含在 xPSDesiredStateConfiguration 模块的示例文件夹中，名为 Sample_xDscWebServiceRegistration.ps1）。 此脚本会设置请求服务器。
+1. 调用 [Install-Module](/powershell/module/PowershellGet/Install-Module) 以安装 **xPSDesiredStateConfiguration** 模块。
+   > [!NOTE]
+   > **安装模块**已被纳入**PowerShellGet**模块，后者纳入 PowerShell 5.0。 可在 [PackageManagement PowerShell 模块预览](https://www.microsoft.com/en-us/download/details.aspx?id=49186)中下载适用于 PowerShell 3.0 和 4.0 的 **PowerShellGet**。
+2. 从受信任的证书颁发机构（在所在组织或公共颁发机构中）获取 DSC 请求服务器的 SSL 证书。 从颁发机构收到的证书通常采用 PFX 格式。
+3. 节点将成为默认位置，它应该是中的 DSC 拉取服务器上安装证书`CERT:\LocalMachine\My`。
+   - 记下证书指纹。
+4. 选择要用作注册密钥的 GUID。 若要使用 PowerShell 生成一个，请在 PS 提示符处输入以下命令，然后按 Enter：` [guid]::newGuid()` 或 `New-Guid`。 此密钥将由客户端节点用作共享密钥，以便在注册过程中进行身份验证。 有关详细信息，请参阅下面的“注册密钥”部分。
+5. 在 PowerShell ISE 中，启动 (F5) 以下配置脚本 (包含的示例文件夹中**xPSDesiredStateConfiguration**作为模块`Sample_xDscWebServiceRegistration.ps1`)。 此脚本会设置请求服务器。
 
     ```powershell
     configuration Sample_xDscWebServiceRegistration
@@ -142,7 +145,7 @@ Windows Server 中提供的请求服务是 IIS 中的一项 Web 服务，当目�
     }
     ```
 
-1. 运行配置，将 SSL 证书的指纹作为 **certificateThumbPrint** 参数进行传递，并将 GUID 注册密钥作为 **RegistrationKey** 参数进行传递：
+6. 运行配置，将 SSL 证书的指纹作为 **certificateThumbPrint** 参数进行传递，并将 GUID 注册密钥作为 **RegistrationKey** 参数进行传递：
 
     ```powershell
     # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store
@@ -159,9 +162,11 @@ Windows Server 中提供的请求服务是 IIS 中的一项 Web 服务，当目�
 #### <a name="registration-key"></a>注册密钥
 
 若要允许客户端节点注册到服务器以便使用配置名称代替配置 ID，需将以上配置创建的注册密钥保存在 `C:\Program Files\WindowsPowerShell\DscService` 中名为 `RegistrationKeys.txt` 的文件中。 注册密钥会在初始注册过程中充当由客户端用于请求服务器的共享密钥。 注册成功完成之后，客户端会生成用于唯一地向请求服务器进行身份验证的自签名证书。 此证书的指纹在本地进行存储，并与请求服务器的 URL 关联。
-> **注意**：在 PowerShell 4.0 中不支持注册密钥。
 
-为了配置节点以便向请求服务器进行身份验证，注册密钥需要处于将向此请求服务器注册的任何目标节点的元配置中。 请注意，以下元配置中的 **RegistrationKey** 会在目标计算机成功注册之后删除，并且值“140a952b-b9d6-406b-b416-e0f759c9c0e4”必须与请求服务器上的 RegistrationKeys.txt 文件中存储的值匹配。 请始终安全地处理注册密钥值，因为知道它便可以向请求服务器注册任何目标计算机。
+> [!NOTE]
+> 在 PowerShell 4.0 中不支持注册密钥。
+
+为了配置节点以便向请求服务器进行身份验证，注册密钥需要处于将向此请求服务器注册的任何目标节点的元配置中。 请注意， **RegistrationKey**在下面的元配置之后目标计算机成功注册，并且值必须与匹配中存储的值删除`RegistrationKeys.txt`请求服务器上的文件 (140a952b-b9d6-406b-b416-e0f759c9c0e4 对于此示例)。 请始终安全地处理注册密钥值，因为知道它便可以向请求服务器注册任何目标计算机。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -204,12 +209,14 @@ configuration Sample_MetaConfigurationToRegisterWithLessSecurePullServer
 Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $RegistrationKey -OutputPath c:\Configs\TargetNodes
 ```
 
-> **注意**：**ReportServerWeb**部分允许将报表数据发送到请求服务器。
+> [!NOTE]
+> **ReportServerWeb**部分允许将报表数据发送到请求服务器。
 
 元配置文件中缺少 **ConfigurationID** 属性暗示请求服务器支持 V2 版本的请求服务器协议，因此需要初始注册。
 相反，存在 **ConfigurationID** 意味着使用 V1 版本的请求服务器协议，不会进行注册处理。
 
->**注意**：在推送方案中，当前版本中存在一个 bug，因此需要在元配置文件中为绝不会向请求服务器注册的节点定义 ConfigurationID 属性。 这会强制使用 V1 请求服务器协议，避免注册失败消息。
+> [!NOTE]
+> 在推送方案中，当前版本中存在一个 bug，因此需要在元配置文件中为绝不会向请求服务器注册的节点定义 ConfigurationID 属性。 这会强制使用 V1 请求服务器协议，避免注册失败消息。
 
 ## <a name="placing-configurations-and-resources"></a>放置配置和资源
 
@@ -219,12 +226,13 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 ### <a name="dsc-resource-module-package-format"></a>DSC 资源模块程序包格式
 
 每个资源模块都需要进行压缩并按照 `{Module Name}_{Module Version}.zip` 模式进行命名。
-例如，一个名为 xWebAdminstration 并且模块版本为 3.1.2.0 的模块会命名为“xWebAdministration_3.2.1.0.zip”。
+
+例如，名为 xWebAdminstration 并且模块版本为 3.1.2.0 的模块的模块将被命名为`xWebAdministration_3.2.1.0.zip`。
 每个版本的模块都必须包含在单个 zip 文件中。
 由于每个 zip 文件中只有单个版本的资源，因此不支持在 WMF 5.0 中添加的可在单个目录中支持多个模块版本的模块格式。
 这意味着在打包 DSC 资源模块以便用于请求服务器之前，需要对目录结构进行少量更改。
-WMF 5.0 中包含 DSC 资源的模块默认格式是 {Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\'。
-为请求服务器进行打包之前，删除 {Module version} 文件夹，让路径变为 {Module Folder}\DscResources\{DSC Resource Folder}\'。
+包含 WMF 5.0 中 DSC 资源的模块的默认格式为 `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`。
+请求服务器进行打包之前，删除 **{模块版本}** 文件夹，以便路径成为`{Module Folder}\DscResources\{DSC Resource Folder}\`。
 进行此更改之后，按上文所述压缩文件夹，并将这些 zip 文件置于 **ModulePath** 文件夹中。
 
 使用 `New-DscChecksum {module zip file}` 可为新添加的模块创建校验和文件。
@@ -238,13 +246,16 @@ WMF 5.0 中包含 DSC 资源的模块默认格式是 {Module Folder}\{Module Ver
 如果指定文件夹中存在多个配置 MOF 文件，则将为该文件夹中的每个配置分别创建校验和。
 将 MOF 文件及其关联校验和文件置于 ConfigurationPath 文件夹中。
 
->**注意**：如果以任何方式更改配置 MOF 文件，则还必须重新创建校验和文件。
+> [!NOTE]
+> 如果以任何方式更改配置 MOF 文件，则还必须重新创建校验和文件。
 
 ### <a name="tooling"></a>工具
 
 为了使请求服务器的设置、验证和管理更加容易，以下工具作为示例包含在最新版本的 xPSDesiredStateConfiguration 模块中：
 
-1. 该模块有助于打包 DSC 资源模块和配置文件以便在请求服务器上使用。 [PublishModulesAndMofsToPullServer.psm1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/DSCPullServerSetup/PublishModulesAndMofsToPullServer.psm1). 以下示例：
+1. 该模块有助于打包 DSC 资源模块和配置文件以便在请求服务器上使用。
+   [PublishModulesAndMofsToPullServer.psm1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/DSCPullServerSetup/PublishModulesAndMofsToPullServer.psm1).
+   以下示例：
 
     ```powershell
         # Example 1 - Package all versions of given modules installed locally and MOF files are in c:\LocalDepot
@@ -278,5 +289,5 @@ DSC 社区已创作多个解决方案来实现请求服务协议。
 - [Windows PowerShell Desired State Configuration 概述](../overview/overview.md)
 - [执行配置](enactingConfigurations.md)
 - [使用 DSC 报表服务器](reportServer.md)
-- [[MS-DSCPM]:Desired State Configuration 请求模型协议](https://msdn.microsoft.com/library/dn393548.aspx)
-- [[MS-DSCPM]:Desired State Configuration 请求模型协议 Errata](https://msdn.microsoft.com/library/mt612824.aspx)
+- [[MS-DSCPM]：Desired State Configuration 请求模型协议](https://msdn.microsoft.com/library/dn393548.aspx)
+- [[MS-DSCPM]：Desired State Configuration 请求模型协议 Errata](https://msdn.microsoft.com/library/mt612824.aspx)

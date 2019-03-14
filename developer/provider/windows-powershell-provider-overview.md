@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
 caps.latest.revision: 13
-ms.openlocfilehash: 31ee7222c35e82ee58d6d56f710792dbc5cb24d7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0d4addc0a064873701ae15c204dbd335f3374ab7
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858623"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795617"
 ---
 # <a name="windows-powershell-provider-overview"></a>Windows PowerShell 提供程序概述
 
-Windows PowerShell 提供程序允许将任何数据存储，就好像已装载的驱动器进行公开与文件系统类似。 例如，内置的注册表提供程序，可像你可以导航导航注册表`c`您的计算机的驱动器。 一个提供程序还可以重写`Item`cmdlet (例如， `Get-Item`，`Set-Item`等)，以便可以将数据存储区中的数据视为文件并且导航文件系统时，将被视为目录。 有关提供程序和驱动器，以及在 Windows PowerShell 中的内置提供程序的详细信息，请参阅[about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers)。
 Windows PowerShell 提供程序允许将任何数据存储，就好像已装载的驱动器进行公开与文件系统类似。 例如，内置的注册表提供程序，可像你可以导航导航注册表`c`您的计算机的驱动器。 一个提供程序还可以重写`Item`cmdlet (例如， `Get-Item`，`Set-Item`等)，以便可以将数据存储区中的数据视为文件并且导航文件系统时，将被视为目录。 有关提供程序和驱动器，以及在 Windows PowerShell 中的内置提供程序的详细信息，请参阅[about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers)。
 
 ## <a name="providers-and-drives"></a>提供程序和驱动器

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3e064048-2b94-4365-bdb7-f1ee7c0a7fd7
 caps.latest.revision: 6
-ms.openlocfilehash: f2f319a3cab4b4bd91e9b634dda57d58a6476b62
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cecc6c26ccaece06462ddd74b53534137fcf3037
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854733"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794257"
 ---
 # <a name="how-to-test-updatable-help"></a>如何测试可更新帮助
 
@@ -21,7 +21,6 @@ ms.locfileid: "56854733"
 
 ## <a name="using-verbose-to-detect-errors"></a>使用详细，以检测错误
 
-上传后的 HelpInfo XML 文件和你的模块的 CAB 文件，通过运行测试文件[Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help)命令**Verbose**参数。 **Verbose**参数指示`Update-Help`报告中读取其操作的关键步骤**HelpInfoUri**密钥验证解包的 CAB 文件中的文件类型在模块清单中并将文件放在特定于语言的模块目录中。
 上传后的 HelpInfo XML 文件和你的模块的 CAB 文件，通过运行测试文件[Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help)命令**Verbose**参数。 **Verbose**参数指示`Update-Help`报告中读取其操作的关键步骤**HelpInfoUri**密钥验证解包的 CAB 文件中的文件类型在模块清单中并将文件放在特定于语言的模块目录中。
 
 解析所有详细消息时，运行`Update-Help`命令**调试**参数。 此参数应检测到可更新帮助文件的任何剩余问题。

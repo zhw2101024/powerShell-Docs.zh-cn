@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5d4c8f84-ebd2-4405-bb10-cfc5400d4ad6
 caps.latest.revision: 6
-ms.openlocfilehash: 35efd36fd70c209e3cbeb9eff0ddf978615fffd6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 49344d32dfcef36a904772b4a7237646a63cb12a
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854263"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794631"
 ---
 # <a name="windows-powershell-formatting-files"></a>Windows PowerShell 格式设置文件
 
@@ -26,13 +26,10 @@ DotNetTypes.Format.ps1xml 定义其他.NET 对象，例如 CultureInfo、 FileVe
 FileSystem.Format.ps1xml 定义文件系统对象，如文件和目录对象的显示。
 
 通过使用不同的视图的 Help.Format.ps1xml 定义[Get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet，如详细，完整备份、 参数和示例视图。
-定义使用的不同视图[Get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet，如详细，完整备份、 参数和示例视图。
 
 PowerShellCore.Format.ps1xml 定义生成的 Windows PowerShell 核心 cmdlet，例如通过返回的对象的对象的显示[Get-member](/powershell/module/Microsoft.PowerShell.Utility/Get-Member)并[Get-history](/powershell/module/Microsoft.PowerShell.Core/Get-History) cmdlet。
-定义生成的 Windows PowerShell 核心 cmdlet，例如通过返回的对象的对象显示[Get-member](/powershell/module/Microsoft.PowerShell.Utility/Get-Member)并[Get-history](/powershell/module/Microsoft.PowerShell.Core/Get-History) cmdlet。
 
 PowerShellTrace.Format.ps1xml 定义的跟踪对象，如生成的显示[Trace-command](/powershell/module/Microsoft.PowerShell.Utility/Trace-Command) cmdlet。
-定义跟踪对象，如生成的显示[Trace-command](/powershell/module/Microsoft.PowerShell.Utility/Trace-Command) cmdlet。
 
 Registry.Format.ps1xml 定义等项和项对象的注册表对象的显示。
 

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - ValidateLength attribute
 ms.assetid: 82fe3a35-a94b-4bc1-ad9e-dfc5f1e788b3
 caps.latest.revision: 13
-ms.openlocfilehash: 1e8364c78abba5272007019550ffcb2cedaf9fd0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3a4c5f279ce8587eeb5d583376ea3d2286210b83
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858863"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794325"
 ---
 # <a name="validatelength-attribute-declaration"></a>ValidateLength 属性声明
 
@@ -37,7 +37,6 @@ ValidateLength 属性指定的最小值和最大字符数为 cmdlet 参数自变
 
 ## <a name="remarks"></a>备注
 
-- 有关如何声明此属性的详细信息，请参阅[如何声明输入验证规则](http://msdn.microsoft.com/en-us/544c2100-62ba-4be4-b2a2-cc0d4e4fc45b)。
 - 有关如何声明此属性的详细信息，请参阅[如何声明输入验证规则](http://msdn.microsoft.com/en-us/544c2100-62ba-4be4-b2a2-cc0d4e4fc45b)。
 
 - 如果不使用此特性，相应参数自变量可以是任意长度。

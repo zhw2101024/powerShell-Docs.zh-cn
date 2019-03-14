@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7674636e-a0f2-4587-bfc5-dd3e6ce5489e
 caps.latest.revision: 6
-ms.openlocfilehash: 8874cc18416937c4d3cb30d801f2714410304c8c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5b6ae54ee6c843996c875189b6ee553be5e4f614
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860873"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794376"
 ---
 # <a name="how-updatable-help-works"></a>可更新帮助的工作原理
 
@@ -21,7 +21,6 @@ ms.locfileid: "56860873"
 
 ## <a name="the-update-help-process"></a>更新帮助进程
 
-下面列出的操作[Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet 时的用户运行更新特定的 UI 区域性中的模块的帮助文件的命令。
 下面列出的操作[Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet 时的用户运行更新特定的 UI 区域性中的模块的帮助文件的命令。
 
 1. `Update-Help` 从指定的值的位置获取远程 HelpInfo XML 文件**HelpInfoURI**密钥模块清单中，然后验证针对该架构文件。 (若要查看架构，请参阅[HelpInfo XML 架构](./helpinfo-xml-schema.md)。)然后`Update-Help`模块目录中的模块的用户的计算机上的本地 HelpInfo XML 文件。
@@ -36,7 +35,6 @@ ms.locfileid: "56860873"
 
 ## <a name="the-save-help-process"></a>保存帮助进程
 
-下面列出的操作[Save-help](/powershell/module/Microsoft.PowerShell.Core/Save-Help)并[Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet 时的用户运行命令以更新文件共享中的帮助文件，然后使用这些文件在更新的帮助文件用户的计算机。
 下面列出的操作[Save-help](/powershell/module/Microsoft.PowerShell.Core/Save-Help)并[Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet 时的用户运行命令以更新文件共享中的帮助文件，然后使用这些文件在更新的帮助文件用户的计算机。
 
 `Save-Help` Cmdlet 执行以下操作以响应命令以将模块的帮助文件保存在指定的文件共享**DestinationPath**参数。

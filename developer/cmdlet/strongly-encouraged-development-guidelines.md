@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
 caps.latest.revision: 13
-ms.openlocfilehash: 2bf2447eba07b74f8cc14c9820fc1c1774370b2f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c11e50913d2654b786e0e8cfeaf41454999bf75e
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854003"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794960"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>强烈建议的开发指南
 
@@ -107,7 +107,6 @@ Cmdlet 需要接收的它必须运行的数据的参数和参数，可指示用�
 
 #### <a name="support-arrays-for-parameters"></a>支持的参数数组
 
-通常情况下，用户必须执行针对多个自变量相同的操作。 对于这些用户，cmdlet 应作为参数输入，以便用户可以将参数传递给 Windows PowerShell 变量作为参数接受一个数组。 例如， [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet 用于标识要检索的进程的名称的字符串数组。
 通常情况下，用户必须执行针对多个自变量相同的操作。 对于这些用户，cmdlet 应作为参数输入，以便用户可以将参数传递给 Windows PowerShell 变量作为参数接受一个数组。 例如， [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet 用于标识要检索的进程的名称的字符串数组。
 
 #### <a name="support-the-passthru-parameter"></a>支持 PassThru 参数
