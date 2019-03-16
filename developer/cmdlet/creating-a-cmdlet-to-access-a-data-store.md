@@ -8,64 +8,64 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 6171f96d66d0b2aa0fd9cb2a939768287c4bcb87
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 28d55874960f9a64b986204411d38319ef1d0da7
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859383"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059518"
 ---
-# <a name="creating-a-cmdlet-to-access-a-data-store"></a><span data-ttu-id="12504-102">创建用于访问数据存储的 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="12504-102">Creating a Cmdlet to Access a Data Store</span></span>
+# <a name="creating-a-cmdlet-to-access-a-data-store"></a><span data-ttu-id="c8188-102">创建用于访问数据存储的 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="c8188-102">Creating a Cmdlet to Access a Data Store</span></span>
 
-<span data-ttu-id="12504-103">本部分介绍如何创建访问存储的数据，通过 Windows PowerShell 提供程序的 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="12504-103">This section describes how to create a cmdlet that accesses stored data by way of a Windows PowerShell provider.</span></span> <span data-ttu-id="12504-104">此类型的 cmdlet 使用 Windows PowerShell 运行时的 Windows PowerShell 提供程序基础结构，因此，必须在 cmdlet 类派生自[System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基类。</span><span class="sxs-lookup"><span data-stu-id="12504-104">This type of cmdlet uses the Windows PowerShell provider infrastructure of the Windows PowerShell runtime and, therefore, the cmdlet class must derive from the [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) base class.</span></span>
+<span data-ttu-id="c8188-103">本部分介绍如何创建访问存储的数据，通过 Windows PowerShell 提供程序的 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="c8188-103">This section describes how to create a cmdlet that accesses stored data by way of a Windows PowerShell provider.</span></span> <span data-ttu-id="c8188-104">此类型的 cmdlet 使用 Windows PowerShell 运行时的 Windows PowerShell 提供程序基础结构，因此，必须在 cmdlet 类派生自[System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基类。</span><span class="sxs-lookup"><span data-stu-id="c8188-104">This type of cmdlet uses the Windows PowerShell provider infrastructure of the Windows PowerShell runtime and, therefore, the cmdlet class must derive from the [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) base class.</span></span>
 
-<span data-ttu-id="12504-105">此处所述选择 Str cmdlet 可以找到并选择文件或对象中的字符串。</span><span class="sxs-lookup"><span data-stu-id="12504-105">The Select-Str cmdlet described here can locate and select strings in a file or object.</span></span> <span data-ttu-id="12504-106">可以通过显式指定用于标识字符串模式`Path`参数的 cmdlet 或隐式通过`Script`参数。</span><span class="sxs-lookup"><span data-stu-id="12504-106">The patterns used to identify the string can be specified explicitly through the `Path` parameter of the cmdlet or implicitly through the `Script` parameter.</span></span>
+<span data-ttu-id="c8188-105">此处所述选择 Str cmdlet 可以找到并选择文件或对象中的字符串。</span><span class="sxs-lookup"><span data-stu-id="c8188-105">The Select-Str cmdlet described here can locate and select strings in a file or object.</span></span> <span data-ttu-id="c8188-106">可以通过显式指定用于标识字符串模式`Path`参数的 cmdlet 或隐式通过`Script`参数。</span><span class="sxs-lookup"><span data-stu-id="c8188-106">The patterns used to identify the string can be specified explicitly through the `Path` parameter of the cmdlet or implicitly through the `Script` parameter.</span></span>
 
-<span data-ttu-id="12504-107">Cmdlet 旨在用于使用任何 Windows PowerShell 提供程序派生自[System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)。</span><span class="sxs-lookup"><span data-stu-id="12504-107">The cmdlet is designed to use any Windows PowerShell provider that derives from [System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider).</span></span> <span data-ttu-id="12504-108">例如，该 cmdlet 可以指定 FileSystem 提供程序或提供的 Windows PowerShell Variable 提供程序。</span><span class="sxs-lookup"><span data-stu-id="12504-108">For example, the cmdlet can specify the FileSystem provider or the Variable provider that is provided by Windows PowerShell.</span></span> <span data-ttu-id="12504-109">有关详细信息 aboutWindows PowerShell 提供程序，请参阅[设计 Windows PowerShell 提供程序](../prog-guide/designing-your-windows-powershell-provider.md)。</span><span class="sxs-lookup"><span data-stu-id="12504-109">For more information aboutWindows PowerShell providers, see [Designing Your Windows PowerShell provider](../prog-guide/designing-your-windows-powershell-provider.md).</span></span>
+<span data-ttu-id="c8188-107">Cmdlet 旨在用于使用任何 Windows PowerShell 提供程序派生自[System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)。</span><span class="sxs-lookup"><span data-stu-id="c8188-107">The cmdlet is designed to use any Windows PowerShell provider that derives from [System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider).</span></span> <span data-ttu-id="c8188-108">例如，该 cmdlet 可以指定 FileSystem 提供程序或提供的 Windows PowerShell Variable 提供程序。</span><span class="sxs-lookup"><span data-stu-id="c8188-108">For example, the cmdlet can specify the FileSystem provider or the Variable provider that is provided by Windows PowerShell.</span></span> <span data-ttu-id="c8188-109">有关详细信息 aboutWindows PowerShell 提供程序，请参阅[设计 Windows PowerShell 提供程序](../prog-guide/designing-your-windows-powershell-provider.md)。</span><span class="sxs-lookup"><span data-stu-id="c8188-109">For more information aboutWindows PowerShell providers, see [Designing Your Windows PowerShell provider](../prog-guide/designing-your-windows-powershell-provider.md).</span></span>
 
-<span data-ttu-id="12504-110">在本部分中的主题包括：</span><span class="sxs-lookup"><span data-stu-id="12504-110">Topics in this section include the following:</span></span>
+<span data-ttu-id="c8188-110">在本部分中的主题包括：</span><span class="sxs-lookup"><span data-stu-id="c8188-110">Topics in this section include the following:</span></span>
 
-- [<span data-ttu-id="12504-111">定义在 Cmdlet 类</span><span class="sxs-lookup"><span data-stu-id="12504-111">Defining the Cmdlet Class</span></span>](#Defining-the-Cmdlet-Class)
+- [<span data-ttu-id="c8188-111">定义在 Cmdlet 类</span><span class="sxs-lookup"><span data-stu-id="c8188-111">Defining the Cmdlet Class</span></span>](#Defining-the-Cmdlet-Class)
 
-- [<span data-ttu-id="12504-112">定义参数进行数据访问</span><span class="sxs-lookup"><span data-stu-id="12504-112">Defining Parameters for Data Access</span></span>](#Declaring-the-Path-Parameter)
+- [<span data-ttu-id="c8188-112">定义参数进行数据访问</span><span class="sxs-lookup"><span data-stu-id="c8188-112">Defining Parameters for Data Access</span></span>](#Declaring-the-Path-Parameter)
 
-- [<span data-ttu-id="12504-113">重写输入处理方法</span><span class="sxs-lookup"><span data-stu-id="12504-113">Overriding Input Processing Methods</span></span>](#Overriding-Input-Processing-Methods)
+- [<span data-ttu-id="c8188-113">重写输入处理方法</span><span class="sxs-lookup"><span data-stu-id="c8188-113">Overriding Input Processing Methods</span></span>](#Overriding-Input-Processing-Methods)
 
-- [<span data-ttu-id="12504-114">访问内容</span><span class="sxs-lookup"><span data-stu-id="12504-114">Accessing Content</span></span>](#Accessing-Content)
+- [<span data-ttu-id="c8188-114">访问内容</span><span class="sxs-lookup"><span data-stu-id="c8188-114">Accessing Content</span></span>](#Accessing-Content)
 
-- [<span data-ttu-id="12504-115">代码示例</span><span class="sxs-lookup"><span data-stu-id="12504-115">Code Sample</span></span>](#Code-Sample)
+- [<span data-ttu-id="c8188-115">代码示例</span><span class="sxs-lookup"><span data-stu-id="c8188-115">Code Sample</span></span>](#Code-Sample)
 
-- [<span data-ttu-id="12504-116">定义对象类型和格式设置</span><span class="sxs-lookup"><span data-stu-id="12504-116">Defining Object Types and Formatting</span></span>](#Declaring-Search-Support-Parameters)
+- [<span data-ttu-id="c8188-116">定义对象类型和格式设置</span><span class="sxs-lookup"><span data-stu-id="c8188-116">Defining Object Types and Formatting</span></span>](#Declaring-Search-Support-Parameters)
 
-- [<span data-ttu-id="12504-117">生成该 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="12504-117">Building the Cmdlet</span></span>](#Building-the-Cmdlet)
+- [<span data-ttu-id="c8188-117">生成该 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="c8188-117">Building the Cmdlet</span></span>](#Building-the-Cmdlet)
 
-- [<span data-ttu-id="12504-118">测试 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="12504-118">Testing the Cmdlet</span></span>](#Testing-the-Cmdlet)
+- [<span data-ttu-id="c8188-118">测试 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="c8188-118">Testing the Cmdlet</span></span>](#Testing-the-Cmdlet)
 
-## <a name="defining-the-cmdlet-class"></a><span data-ttu-id="12504-119">定义在 Cmdlet 类</span><span class="sxs-lookup"><span data-stu-id="12504-119">Defining the Cmdlet Class</span></span>
+## <a name="defining-the-cmdlet-class"></a><span data-ttu-id="c8188-119">定义在 Cmdlet 类</span><span class="sxs-lookup"><span data-stu-id="c8188-119">Defining the Cmdlet Class</span></span>
 
-<span data-ttu-id="12504-120">Cmdlet 创建的第一步是始终命名 cmdlet 和实现该 cmdlet 的.NET 类声明。</span><span class="sxs-lookup"><span data-stu-id="12504-120">The first step in cmdlet creation is always naming the cmdlet and declaring the .NET class that implements the cmdlet.</span></span> <span data-ttu-id="12504-121">此 cmdlet 检测到某些字符串，因此在此处选择谓词名称为"Select"，定义由[System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon)类。</span><span class="sxs-lookup"><span data-stu-id="12504-121">This cmdlet detects certain strings, so the verb name chosen here is "Select", defined by the [System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) class.</span></span> <span data-ttu-id="12504-122">因为该 cmdlet 对字符串使用名词名称"Str"。</span><span class="sxs-lookup"><span data-stu-id="12504-122">The noun name "Str" is used because the cmdlet acts upon strings.</span></span> <span data-ttu-id="12504-123">在以下声明中，请注意 cmdlet 动词和名词名称将反映在 cmdlet 类的名称。</span><span class="sxs-lookup"><span data-stu-id="12504-123">In the declaration below, note that the cmdlet verb and noun name are reflected in the name of the cmdlet class.</span></span> <span data-ttu-id="12504-124">有关已批准的 cmdlet 谓词的详细信息，请参阅[Cmdlet 的动词名称](./approved-verbs-for-windows-powershell-commands.md)。</span><span class="sxs-lookup"><span data-stu-id="12504-124">For more information about approved cmdlet verbs, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).</span></span>
+<span data-ttu-id="c8188-120">Cmdlet 创建的第一步是始终命名 cmdlet 和实现该 cmdlet 的.NET 类声明。</span><span class="sxs-lookup"><span data-stu-id="c8188-120">The first step in cmdlet creation is always naming the cmdlet and declaring the .NET class that implements the cmdlet.</span></span> <span data-ttu-id="c8188-121">此 cmdlet 检测到某些字符串，因此在此处选择谓词名称为"Select"，定义由[System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon)类。</span><span class="sxs-lookup"><span data-stu-id="c8188-121">This cmdlet detects certain strings, so the verb name chosen here is "Select", defined by the [System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) class.</span></span> <span data-ttu-id="c8188-122">因为该 cmdlet 对字符串使用名词名称"Str"。</span><span class="sxs-lookup"><span data-stu-id="c8188-122">The noun name "Str" is used because the cmdlet acts upon strings.</span></span> <span data-ttu-id="c8188-123">在以下声明中，请注意 cmdlet 动词和名词名称将反映在 cmdlet 类的名称。</span><span class="sxs-lookup"><span data-stu-id="c8188-123">In the declaration below, note that the cmdlet verb and noun name are reflected in the name of the cmdlet class.</span></span> <span data-ttu-id="c8188-124">有关已批准的 cmdlet 谓词的详细信息，请参阅[Cmdlet 的动词名称](./approved-verbs-for-windows-powershell-commands.md)。</span><span class="sxs-lookup"><span data-stu-id="c8188-124">For more information about approved cmdlet verbs, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).</span></span>
 
-<span data-ttu-id="12504-125">此 cmdlet 的.NET 类必须派生自[System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基类，因为它提供了 Windows PowerShell 运行时来公开 Windows PowerShell 提供程序所需的支持基础结构。</span><span class="sxs-lookup"><span data-stu-id="12504-125">The .NET class for this cmdlet must derive from the [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) base class, because it provides the support needed by the Windows PowerShell runtime to expose the Windows PowerShell provider infrastructure.</span></span> <span data-ttu-id="12504-126">请注意，此 cmdlet 还可以使用的.NET Framework 正则表达式类，如下所示[System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex)。</span><span class="sxs-lookup"><span data-stu-id="12504-126">Note that this cmdlet also makes use of the .NET Framework regular expressions classes, such as [System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex).</span></span>
+<span data-ttu-id="c8188-125">此 cmdlet 的.NET 类必须派生自[System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基类，因为它提供了 Windows PowerShell 运行时来公开 Windows PowerShell 提供程序所需的支持基础结构。</span><span class="sxs-lookup"><span data-stu-id="c8188-125">The .NET class for this cmdlet must derive from the [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) base class, because it provides the support needed by the Windows PowerShell runtime to expose the Windows PowerShell provider infrastructure.</span></span> <span data-ttu-id="c8188-126">请注意，此 cmdlet 还可以使用的.NET Framework 正则表达式类，如下所示[System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex)。</span><span class="sxs-lookup"><span data-stu-id="c8188-126">Note that this cmdlet also makes use of the .NET Framework regular expressions classes, such as [System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex).</span></span>
 
-<span data-ttu-id="12504-127">以下代码是此选择 Str cmdlet 的类定义。</span><span class="sxs-lookup"><span data-stu-id="12504-127">The following code is the class definition for this Select-Str cmdlet.</span></span>
+<span data-ttu-id="c8188-127">以下代码是此选择 Str cmdlet 的类定义。</span><span class="sxs-lookup"><span data-stu-id="c8188-127">The following code is the class definition for this Select-Str cmdlet.</span></span>
 
 ```csharp
 [Cmdlet(VerbsCommon.Select, "Str", DefaultParameterSetName="PatternParameterSet")]
 public class SelectStringCommand : PSCmdlet
 ```
 
-<span data-ttu-id="12504-128">此 cmdlet 定义了一个默认参数集通过添加`DefaultParameterSetName`类声明的属性关键字。</span><span class="sxs-lookup"><span data-stu-id="12504-128">This cmdlet defines a default parameter set by adding the `DefaultParameterSetName` attribute keyword to the class declaration.</span></span> <span data-ttu-id="12504-129">默认参数集`PatternParameterSet`情况下使用`Script`未指定参数。</span><span class="sxs-lookup"><span data-stu-id="12504-129">The default parameter set `PatternParameterSet` is used when the `Script` parameter is not specified.</span></span> <span data-ttu-id="12504-130">有关此参数集的详细信息，请参阅`Pattern`和`Script`参数下一节中的讨论。</span><span class="sxs-lookup"><span data-stu-id="12504-130">For more information about this parameter set, see the `Pattern` and `Script` parameter discussion in the following section.</span></span>
+<span data-ttu-id="c8188-128">此 cmdlet 定义了一个默认参数集通过添加`DefaultParameterSetName`类声明的属性关键字。</span><span class="sxs-lookup"><span data-stu-id="c8188-128">This cmdlet defines a default parameter set by adding the `DefaultParameterSetName` attribute keyword to the class declaration.</span></span> <span data-ttu-id="c8188-129">默认参数集`PatternParameterSet`情况下使用`Script`未指定参数。</span><span class="sxs-lookup"><span data-stu-id="c8188-129">The default parameter set `PatternParameterSet` is used when the `Script` parameter is not specified.</span></span> <span data-ttu-id="c8188-130">有关此参数集的详细信息，请参阅`Pattern`和`Script`参数下一节中的讨论。</span><span class="sxs-lookup"><span data-stu-id="c8188-130">For more information about this parameter set, see the `Pattern` and `Script` parameter discussion in the following section.</span></span>
 
-## <a name="defining-parameters-for-data-access"></a><span data-ttu-id="12504-131">定义参数进行数据访问</span><span class="sxs-lookup"><span data-stu-id="12504-131">Defining Parameters for Data Access</span></span>
+## <a name="defining-parameters-for-data-access"></a><span data-ttu-id="c8188-131">定义参数进行数据访问</span><span class="sxs-lookup"><span data-stu-id="c8188-131">Defining Parameters for Data Access</span></span>
 
-<span data-ttu-id="12504-132">此 cmdlet 定义允许用户访问和检查存储的数据的多个参数。</span><span class="sxs-lookup"><span data-stu-id="12504-132">This cmdlet defines several parameters that allow the user to access and examine stored data.</span></span> <span data-ttu-id="12504-133">这些参数包括`Path`参数，用于指示数据存储的位置`Pattern`参数，用于在搜索中，指定要使用的模式和支持搜索的执行方式的其他几个参数。</span><span class="sxs-lookup"><span data-stu-id="12504-133">These parameters include a `Path` parameter that indicates the location of the data store, a `Pattern` parameter that specifies the pattern to be used in the search, and several other parameters that support how the search is performed.</span></span>
+<span data-ttu-id="c8188-132">此 cmdlet 定义允许用户访问和检查存储的数据的多个参数。</span><span class="sxs-lookup"><span data-stu-id="c8188-132">This cmdlet defines several parameters that allow the user to access and examine stored data.</span></span> <span data-ttu-id="c8188-133">这些参数包括`Path`参数，用于指示数据存储的位置`Pattern`参数，用于在搜索中，指定要使用的模式和支持搜索的执行方式的其他几个参数。</span><span class="sxs-lookup"><span data-stu-id="c8188-133">These parameters include a `Path` parameter that indicates the location of the data store, a `Pattern` parameter that specifies the pattern to be used in the search, and several other parameters that support how the search is performed.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="12504-134">定义参数的基础知识的详细信息，请参阅[添加该进程的命令行输入的参数](./adding-parameters-that-process-command-line-input.md)。</span><span class="sxs-lookup"><span data-stu-id="12504-134">For more information about the basics of defining parameters, see [Adding Parameters that Process Command Line Input](./adding-parameters-that-process-command-line-input.md).</span></span>
+> <span data-ttu-id="c8188-134">定义参数的基础知识的详细信息，请参阅[添加该进程的命令行输入的参数](./adding-parameters-that-process-command-line-input.md)。</span><span class="sxs-lookup"><span data-stu-id="c8188-134">For more information about the basics of defining parameters, see [Adding Parameters that Process Command Line Input](./adding-parameters-that-process-command-line-input.md).</span></span>
 
-### <a name="declaring-the-path-parameter"></a><span data-ttu-id="12504-135">路径参数声明</span><span class="sxs-lookup"><span data-stu-id="12504-135">Declaring the Path Parameter</span></span>
+### <a name="declaring-the-path-parameter"></a><span data-ttu-id="c8188-135">路径参数声明</span><span class="sxs-lookup"><span data-stu-id="c8188-135">Declaring the Path Parameter</span></span>
 
-<span data-ttu-id="12504-136">若要查找的数据存储，此 cmdlet 必须使用 Windows PowerShell 路径来标识用于访问数据存储区的 Windows PowerShell 提供程序。</span><span class="sxs-lookup"><span data-stu-id="12504-136">To locate the data store, this cmdlet must use a Windows PowerShell path to identify the Windows PowerShell provider that is designed to access the data store.</span></span> <span data-ttu-id="12504-137">因此，它定义`Path`参数的类型字符串数组，以指示提供程序的位置。</span><span class="sxs-lookup"><span data-stu-id="12504-137">Therefore, it defines a `Path` parameter of type string array to indicate the location of the provider.</span></span>
+<span data-ttu-id="c8188-136">若要查找的数据存储，此 cmdlet 必须使用 Windows PowerShell 路径来标识用于访问数据存储区的 Windows PowerShell 提供程序。</span><span class="sxs-lookup"><span data-stu-id="c8188-136">To locate the data store, this cmdlet must use a Windows PowerShell path to identify the Windows PowerShell provider that is designed to access the data store.</span></span> <span data-ttu-id="c8188-137">因此，它定义`Path`参数的类型字符串数组，以指示提供程序的位置。</span><span class="sxs-lookup"><span data-stu-id="c8188-137">Therefore, it defines a `Path` parameter of type string array to indicate the location of the provider.</span></span>
 
 ```csharp
 [Parameter(
@@ -86,15 +86,15 @@ public string[] Path
 private string[] paths;
 ```
 
-<span data-ttu-id="12504-138">请注意，此参数属于两个不同的参数集，它具有一个别名。</span><span class="sxs-lookup"><span data-stu-id="12504-138">Note that this parameter belongs to two different parameter sets and that it has an alias.</span></span>
+<span data-ttu-id="c8188-138">请注意，此参数属于两个不同的参数集，它具有一个别名。</span><span class="sxs-lookup"><span data-stu-id="c8188-138">Note that this parameter belongs to two different parameter sets and that it has an alias.</span></span>
 
-<span data-ttu-id="12504-139">两个[System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)特性声明`Path`参数属于`ScriptParameterSet`和`PatternParameterSet`。</span><span class="sxs-lookup"><span data-stu-id="12504-139">Two [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attributes declare that the `Path` parameter belongs to the `ScriptParameterSet` and the `PatternParameterSet`.</span></span> <span data-ttu-id="12504-140">有关参数集的详细信息，请参阅[添加到 Cmdlet 的参数集](./adding-parameter-sets-to-a-cmdlet.md)。</span><span class="sxs-lookup"><span data-stu-id="12504-140">For more information about parameter sets, see [Adding Parameter Sets to a Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).</span></span>
+<span data-ttu-id="c8188-139">两个[System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)特性声明`Path`参数属于`ScriptParameterSet`和`PatternParameterSet`。</span><span class="sxs-lookup"><span data-stu-id="c8188-139">Two [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attributes declare that the `Path` parameter belongs to the `ScriptParameterSet` and the `PatternParameterSet`.</span></span> <span data-ttu-id="c8188-140">有关参数集的详细信息，请参阅[添加到 Cmdlet 的参数集](./adding-parameter-sets-to-a-cmdlet.md)。</span><span class="sxs-lookup"><span data-stu-id="c8188-140">For more information about parameter sets, see [Adding Parameter Sets to a Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).</span></span>
 
-<span data-ttu-id="12504-141">[System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute)特性声明`PSPath`别名以供`Path`参数。</span><span class="sxs-lookup"><span data-stu-id="12504-141">The [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) attribute declares a `PSPath` alias for the `Path` parameter.</span></span> <span data-ttu-id="12504-142">为了与访问 Windows PowerShell 提供程序的其他 cmdlet 保持一致，强烈建议声明此别名。</span><span class="sxs-lookup"><span data-stu-id="12504-142">Declaring this alias is strongly recommended for consistency with other cmdlets that access Windows PowerShell providers.</span></span> <span data-ttu-id="12504-143">详细信息 aboutWindows PowerShell 路径，请参阅"PowerShell 路径概念"中的[Windows PowerShell 的工作原理](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)。</span><span class="sxs-lookup"><span data-stu-id="12504-143">For more information aboutWindows PowerShell paths, see "PowerShell Path Concepts" in [How Windows PowerShell Works](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).</span></span>
+<span data-ttu-id="c8188-141">[System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute)特性声明`PSPath`别名以供`Path`参数。</span><span class="sxs-lookup"><span data-stu-id="c8188-141">The [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) attribute declares a `PSPath` alias for the `Path` parameter.</span></span> <span data-ttu-id="c8188-142">为了与访问 Windows PowerShell 提供程序的其他 cmdlet 保持一致，强烈建议声明此别名。</span><span class="sxs-lookup"><span data-stu-id="c8188-142">Declaring this alias is strongly recommended for consistency with other cmdlets that access Windows PowerShell providers.</span></span> <span data-ttu-id="c8188-143">详细信息 aboutWindows PowerShell 路径，请参阅"PowerShell 路径概念"中的[Windows PowerShell 的工作原理](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)。</span><span class="sxs-lookup"><span data-stu-id="c8188-143">For more information aboutWindows PowerShell paths, see "PowerShell Path Concepts" in [How Windows PowerShell Works](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).</span></span>
 
-### <a name="declaring-the-pattern-parameter"></a><span data-ttu-id="12504-144">声明的模式参数</span><span class="sxs-lookup"><span data-stu-id="12504-144">Declaring the Pattern Parameter</span></span>
+### <a name="declaring-the-pattern-parameter"></a><span data-ttu-id="c8188-144">声明的模式参数</span><span class="sxs-lookup"><span data-stu-id="c8188-144">Declaring the Pattern Parameter</span></span>
 
-<span data-ttu-id="12504-145">若要指定要搜索的模式，此 cmdlet 声明`Pattern`是一个字符串数组的参数。</span><span class="sxs-lookup"><span data-stu-id="12504-145">To specify the patterns to search for, this cmdlet declares a `Pattern` parameter that is an array of strings.</span></span> <span data-ttu-id="12504-146">数据存储中找到任何模式，则会返回正面结果。</span><span class="sxs-lookup"><span data-stu-id="12504-146">A positive result is returned when any of the patterns are found in the data store.</span></span> <span data-ttu-id="12504-147">请注意，这些模式可以编译到一个数组的已编译的正则表达式或通配符模式用于文本搜索的数组。</span><span class="sxs-lookup"><span data-stu-id="12504-147">Note that these patterns can be compiled into an array of compiled regular expressions or an array of wildcard patterns used for literal searches.</span></span>
+<span data-ttu-id="c8188-145">若要指定要搜索的模式，此 cmdlet 声明`Pattern`是一个字符串数组的参数。</span><span class="sxs-lookup"><span data-stu-id="c8188-145">To specify the patterns to search for, this cmdlet declares a `Pattern` parameter that is an array of strings.</span></span> <span data-ttu-id="c8188-146">数据存储中找到任何模式，则会返回正面结果。</span><span class="sxs-lookup"><span data-stu-id="c8188-146">A positive result is returned when any of the patterns are found in the data store.</span></span> <span data-ttu-id="c8188-147">请注意，这些模式可以编译到一个数组的已编译的正则表达式或通配符模式用于文本搜索的数组。</span><span class="sxs-lookup"><span data-stu-id="c8188-147">Note that these patterns can be compiled into an array of compiled regular expressions or an array of wildcard patterns used for literal searches.</span></span>
 
 ```csharp
 [Parameter(
@@ -111,13 +111,13 @@ private Regex[] regexPattern;
 private WildcardPattern[] wildcardPattern;
 ```
 
-<span data-ttu-id="12504-148">如果指定此参数，此 cmdlet 将使用默认参数集`PatternParameterSet`。</span><span class="sxs-lookup"><span data-stu-id="12504-148">When this parameter is specified, the cmdlet uses the default parameter set `PatternParameterSet`.</span></span> <span data-ttu-id="12504-149">在这种情况下，cmdlet 将使用此处指定要选择字符串的模式。</span><span class="sxs-lookup"><span data-stu-id="12504-149">In this case, the cmdlet uses the patterns specified here to select strings.</span></span> <span data-ttu-id="12504-150">与此相反，`Script`参数还可以用于提供脚本包含的模式。</span><span class="sxs-lookup"><span data-stu-id="12504-150">In contrast, the `Script` parameter could also be used to provide a script that contains the patterns.</span></span> <span data-ttu-id="12504-151">`Script`和`Pattern`参数定义两个单独的参数集，以使它们互相排斥。</span><span class="sxs-lookup"><span data-stu-id="12504-151">The `Script` and `Pattern` parameters define two separate parameter sets, so they are mutually exclusive.</span></span>
+<span data-ttu-id="c8188-148">如果指定此参数，此 cmdlet 将使用默认参数集`PatternParameterSet`。</span><span class="sxs-lookup"><span data-stu-id="c8188-148">When this parameter is specified, the cmdlet uses the default parameter set `PatternParameterSet`.</span></span> <span data-ttu-id="c8188-149">在这种情况下，cmdlet 将使用此处指定要选择字符串的模式。</span><span class="sxs-lookup"><span data-stu-id="c8188-149">In this case, the cmdlet uses the patterns specified here to select strings.</span></span> <span data-ttu-id="c8188-150">与此相反，`Script`参数还可以用于提供脚本包含的模式。</span><span class="sxs-lookup"><span data-stu-id="c8188-150">In contrast, the `Script` parameter could also be used to provide a script that contains the patterns.</span></span> <span data-ttu-id="c8188-151">`Script`和`Pattern`参数定义两个单独的参数集，以使它们互相排斥。</span><span class="sxs-lookup"><span data-stu-id="c8188-151">The `Script` and `Pattern` parameters define two separate parameter sets, so they are mutually exclusive.</span></span>
 
-### <a name="declaring-search-support-parameters"></a><span data-ttu-id="12504-152">声明搜索支持参数</span><span class="sxs-lookup"><span data-stu-id="12504-152">Declaring Search Support Parameters</span></span>
+### <a name="declaring-search-support-parameters"></a><span data-ttu-id="c8188-152">声明搜索支持参数</span><span class="sxs-lookup"><span data-stu-id="c8188-152">Declaring Search Support Parameters</span></span>
 
-<span data-ttu-id="12504-153">此 cmdlet 定义了以下可用于修改该 cmdlet 的搜索功能的支持参数。</span><span class="sxs-lookup"><span data-stu-id="12504-153">This cmdlet defines the following support parameters that can be used to modify the search capabilities of the cmdlet.</span></span>
+<span data-ttu-id="c8188-153">此 cmdlet 定义了以下可用于修改该 cmdlet 的搜索功能的支持参数。</span><span class="sxs-lookup"><span data-stu-id="c8188-153">This cmdlet defines the following support parameters that can be used to modify the search capabilities of the cmdlet.</span></span>
 
-<span data-ttu-id="12504-154">`Script`参数指定可用于提供备用的搜索机制 cmdlet 的脚本块。</span><span class="sxs-lookup"><span data-stu-id="12504-154">The `Script` parameter specifies a script block that can be used to provide an alternate search mechanism for the cmdlet.</span></span> <span data-ttu-id="12504-155">该脚本必须包含用于匹配的模式，并返回[System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject)对象。</span><span class="sxs-lookup"><span data-stu-id="12504-155">The script must contain the patterns used for matching and return a [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) object.</span></span> <span data-ttu-id="12504-156">请注意，此参数也是唯一的参数，用于标识`ScriptParameterSet`参数集。</span><span class="sxs-lookup"><span data-stu-id="12504-156">Note that this parameter is also the unique parameter that identifies the `ScriptParameterSet` parameter set.</span></span> <span data-ttu-id="12504-157">当 Windows PowerShell 运行时发现此参数时，它使用属于的参数`ScriptParameterSet`参数集。</span><span class="sxs-lookup"><span data-stu-id="12504-157">When the Windows PowerShell runtime sees this parameter, it uses only parameters that belong to the `ScriptParameterSet` parameter set.</span></span>
+<span data-ttu-id="c8188-154">`Script`参数指定可用于提供备用的搜索机制 cmdlet 的脚本块。</span><span class="sxs-lookup"><span data-stu-id="c8188-154">The `Script` parameter specifies a script block that can be used to provide an alternate search mechanism for the cmdlet.</span></span> <span data-ttu-id="c8188-155">该脚本必须包含用于匹配的模式，并返回[System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject)对象。</span><span class="sxs-lookup"><span data-stu-id="c8188-155">The script must contain the patterns used for matching and return a [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) object.</span></span> <span data-ttu-id="c8188-156">请注意，此参数也是唯一的参数，用于标识`ScriptParameterSet`参数集。</span><span class="sxs-lookup"><span data-stu-id="c8188-156">Note that this parameter is also the unique parameter that identifies the `ScriptParameterSet` parameter set.</span></span> <span data-ttu-id="c8188-157">当 Windows PowerShell 运行时发现此参数时，它使用属于的参数`ScriptParameterSet`参数集。</span><span class="sxs-lookup"><span data-stu-id="c8188-157">When the Windows PowerShell runtime sees this parameter, it uses only parameters that belong to the `ScriptParameterSet` parameter set.</span></span>
 
 ```csharp
 [Parameter(
@@ -132,7 +132,7 @@ public ScriptBlock Script
 ScriptBlock script;
 ```
 
-<span data-ttu-id="12504-158">`SimpleMatch`参数是一个开关参数，该值指示是否该 cmdlet 将它们提供显式匹配模式。</span><span class="sxs-lookup"><span data-stu-id="12504-158">The `SimpleMatch` parameter is a switch parameter that indicates whether the cmdlet is to explicitly match the patterns as they are supplied.</span></span> <span data-ttu-id="12504-159">当用户指定了在命令行参数 (`true`)，该 cmdlet 使用的模式，因为它们将提供。</span><span class="sxs-lookup"><span data-stu-id="12504-159">When the user specifies the parameter at the command line (`true`), the cmdlet uses the patterns as they are supplied.</span></span> <span data-ttu-id="12504-160">如果未指定参数 (`false`)，此 cmdlet 将使用正则表达式。</span><span class="sxs-lookup"><span data-stu-id="12504-160">If the parameter is not specified (`false`), the cmdlet uses regular expressions.</span></span> <span data-ttu-id="12504-161">此参数的默认值是`false`。</span><span class="sxs-lookup"><span data-stu-id="12504-161">The default for this parameter is `false`.</span></span>
+<span data-ttu-id="c8188-158">`SimpleMatch`参数是一个开关参数，该值指示是否该 cmdlet 将它们提供显式匹配模式。</span><span class="sxs-lookup"><span data-stu-id="c8188-158">The `SimpleMatch` parameter is a switch parameter that indicates whether the cmdlet is to explicitly match the patterns as they are supplied.</span></span> <span data-ttu-id="c8188-159">当用户指定了在命令行参数 (`true`)，该 cmdlet 使用的模式，因为它们将提供。</span><span class="sxs-lookup"><span data-stu-id="c8188-159">When the user specifies the parameter at the command line (`true`), the cmdlet uses the patterns as they are supplied.</span></span> <span data-ttu-id="c8188-160">如果未指定参数 (`false`)，此 cmdlet 将使用正则表达式。</span><span class="sxs-lookup"><span data-stu-id="c8188-160">If the parameter is not specified (`false`), the cmdlet uses regular expressions.</span></span> <span data-ttu-id="c8188-161">此参数的默认值是`false`。</span><span class="sxs-lookup"><span data-stu-id="c8188-161">The default for this parameter is `false`.</span></span>
 
 ```csharp
 [Parameter]
@@ -144,7 +144,7 @@ public SwitchParameter SimpleMatch
 private bool simpleMatch;
 ```
 
-<span data-ttu-id="12504-162">`CaseSensitive`参数是一个开关参数，指示是否执行区分大小写的搜索。</span><span class="sxs-lookup"><span data-stu-id="12504-162">The `CaseSensitive` parameter is a switch parameter that indicates whether a case-sensitive search is performed.</span></span> <span data-ttu-id="12504-163">当用户指定了在命令行参数 (`true`)，此 cmdlet 检查为大写和小写字符进行比较时模式。</span><span class="sxs-lookup"><span data-stu-id="12504-163">When the user specifies the parameter at the command line (`true`), the cmdlet checks for the uppercase and lowercase of characters when comparing patterns.</span></span> <span data-ttu-id="12504-164">如果未指定参数 (`false`)，该 cmdlet 不区分大写字母和小写字母。</span><span class="sxs-lookup"><span data-stu-id="12504-164">If the parameter is not specified (`false`), the cmdlet does not distinguish between uppercase and lowercase.</span></span> <span data-ttu-id="12504-165">例如"MyFile"和"myfile"都将返回作为正命中数。</span><span class="sxs-lookup"><span data-stu-id="12504-165">For example "MyFile" and "myfile" would both be returned as positive hits.</span></span> <span data-ttu-id="12504-166">此参数的默认值是`false`。</span><span class="sxs-lookup"><span data-stu-id="12504-166">The default for this parameter is `false`.</span></span>
+<span data-ttu-id="c8188-162">`CaseSensitive`参数是一个开关参数，指示是否执行区分大小写的搜索。</span><span class="sxs-lookup"><span data-stu-id="c8188-162">The `CaseSensitive` parameter is a switch parameter that indicates whether a case-sensitive search is performed.</span></span> <span data-ttu-id="c8188-163">当用户指定了在命令行参数 (`true`)，此 cmdlet 检查为大写和小写字符进行比较时模式。</span><span class="sxs-lookup"><span data-stu-id="c8188-163">When the user specifies the parameter at the command line (`true`), the cmdlet checks for the uppercase and lowercase of characters when comparing patterns.</span></span> <span data-ttu-id="c8188-164">如果未指定参数 (`false`)，该 cmdlet 不区分大写字母和小写字母。</span><span class="sxs-lookup"><span data-stu-id="c8188-164">If the parameter is not specified (`false`), the cmdlet does not distinguish between uppercase and lowercase.</span></span> <span data-ttu-id="c8188-165">例如"MyFile"和"myfile"都将返回作为正命中数。</span><span class="sxs-lookup"><span data-stu-id="c8188-165">For example "MyFile" and "myfile" would both be returned as positive hits.</span></span> <span data-ttu-id="c8188-166">此参数的默认值是`false`。</span><span class="sxs-lookup"><span data-stu-id="c8188-166">The default for this parameter is `false`.</span></span>
 
 ```csharp
 [Parameter]
@@ -156,7 +156,7 @@ public SwitchParameter CaseSensitive
 private bool caseSensitive;
 ```
 
-<span data-ttu-id="12504-167">`Exclude`和`Include`参数标识显式排除或包含在搜索中的项。</span><span class="sxs-lookup"><span data-stu-id="12504-167">The `Exclude` and `Include` parameters identify items that are explicitly excluded from or included in the search.</span></span> <span data-ttu-id="12504-168">默认情况下，该 cmdlet 将数据存储区中搜索的所有项。</span><span class="sxs-lookup"><span data-stu-id="12504-168">By default, the cmdlet will search all items in the data store.</span></span> <span data-ttu-id="12504-169">但是，若要执行该 cmdlet 将搜索范围限制，可以用于显式指示要包括在搜索的项这些参数，或省略。</span><span class="sxs-lookup"><span data-stu-id="12504-169">However, to limit the search performed by the cmdlet, these parameters can be used to explicitly indicate items to be included in the search or omitted.</span></span>
+<span data-ttu-id="c8188-167">`Exclude`和`Include`参数标识显式排除或包含在搜索中的项。</span><span class="sxs-lookup"><span data-stu-id="c8188-167">The `Exclude` and `Include` parameters identify items that are explicitly excluded from or included in the search.</span></span> <span data-ttu-id="c8188-168">默认情况下，该 cmdlet 将数据存储区中搜索的所有项。</span><span class="sxs-lookup"><span data-stu-id="c8188-168">By default, the cmdlet will search all items in the data store.</span></span> <span data-ttu-id="c8188-169">但是，若要执行该 cmdlet 将搜索范围限制，可以用于显式指示要包括在搜索的项这些参数，或省略。</span><span class="sxs-lookup"><span data-stu-id="c8188-169">However, to limit the search performed by the cmdlet, these parameters can be used to explicitly indicate items to be included in the search or omitted.</span></span>
 
 ```csharp
 [Parameter]
@@ -193,15 +193,15 @@ internal string[] includeStrings = null;
 internal WildcardPattern[] include = null;
 ```
 
-### <a name="declaring-parameter-sets"></a><span data-ttu-id="12504-170">声明参数集</span><span class="sxs-lookup"><span data-stu-id="12504-170">Declaring Parameter Sets</span></span>
+### <a name="declaring-parameter-sets"></a><span data-ttu-id="c8188-170">声明参数集</span><span class="sxs-lookup"><span data-stu-id="c8188-170">Declaring Parameter Sets</span></span>
 
-<span data-ttu-id="12504-171">此 cmdlet 使用两个参数集 (`ScriptParameterSet`和`PatternParameterSet`，这是默认) 作为数据访问中使用的两个参数集的名称。</span><span class="sxs-lookup"><span data-stu-id="12504-171">This cmdlet uses two parameter sets (`ScriptParameterSet` and `PatternParameterSet`, which is thedefault) as the names of two parameter sets used in data access.</span></span> <span data-ttu-id="12504-172">`PatternParameterSet` 是默认参数集，当使用`Pattern`指定参数。</span><span class="sxs-lookup"><span data-stu-id="12504-172">`PatternParameterSet` is the default parameter set and is used when the `Pattern` parameter is specified.</span></span> <span data-ttu-id="12504-173">`ScriptParameterSet` 当用户指定备用的搜索机制，通过使用`Script`参数。</span><span class="sxs-lookup"><span data-stu-id="12504-173">`ScriptParameterSet` is used when the user specifies an alternate search mechanism through the `Script` parameter.</span></span> <span data-ttu-id="12504-174">有关参数集的详细信息，请参阅[添加到 Cmdlet 的参数集](./adding-parameter-sets-to-a-cmdlet.md)。</span><span class="sxs-lookup"><span data-stu-id="12504-174">For more information about parameter sets, see [Adding Parameter Sets to a Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).</span></span>
+<span data-ttu-id="c8188-171">此 cmdlet 使用两个参数集 (`ScriptParameterSet`和`PatternParameterSet`，这是默认设置) 作为数据访问中使用的两个参数集的名称。</span><span class="sxs-lookup"><span data-stu-id="c8188-171">This cmdlet uses two parameter sets (`ScriptParameterSet` and `PatternParameterSet`, which is the default) as the names of two parameter sets used in data access.</span></span> <span data-ttu-id="c8188-172">`PatternParameterSet` 是默认参数集，当使用`Pattern`指定参数。</span><span class="sxs-lookup"><span data-stu-id="c8188-172">`PatternParameterSet` is the default parameter set and is used when the `Pattern` parameter is specified.</span></span> <span data-ttu-id="c8188-173">`ScriptParameterSet` 当用户指定备用的搜索机制，通过使用`Script`参数。</span><span class="sxs-lookup"><span data-stu-id="c8188-173">`ScriptParameterSet` is used when the user specifies an alternate search mechanism through the `Script` parameter.</span></span> <span data-ttu-id="c8188-174">有关参数集的详细信息，请参阅[添加到 Cmdlet 的参数集](./adding-parameter-sets-to-a-cmdlet.md)。</span><span class="sxs-lookup"><span data-stu-id="c8188-174">For more information about parameter sets, see [Adding Parameter Sets to a Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).</span></span>
 
-## <a name="overriding-input-processing-methods"></a><span data-ttu-id="12504-175">重写输入处理方法</span><span class="sxs-lookup"><span data-stu-id="12504-175">Overriding Input Processing Methods</span></span>
+## <a name="overriding-input-processing-methods"></a><span data-ttu-id="c8188-175">重写输入处理方法</span><span class="sxs-lookup"><span data-stu-id="c8188-175">Overriding Input Processing Methods</span></span>
 
-<span data-ttu-id="12504-176">一个或多个输入处理方法，必须重写 Cmdlet [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)类。</span><span class="sxs-lookup"><span data-stu-id="12504-176">Cmdlets must override one or more of the input processing methods for the [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) class.</span></span> <span data-ttu-id="12504-177">输入的处理方法的详细信息，请参阅[创建第一个 Cmdlet](./creating-a-cmdlet-without-parameters.md)。</span><span class="sxs-lookup"><span data-stu-id="12504-177">For more information about the input processing methods, see [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md).</span></span>
+<span data-ttu-id="c8188-176">一个或多个输入处理方法，必须重写 Cmdlet [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)类。</span><span class="sxs-lookup"><span data-stu-id="c8188-176">Cmdlets must override one or more of the input processing methods for the [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) class.</span></span> <span data-ttu-id="c8188-177">输入的处理方法的详细信息，请参阅[创建第一个 Cmdlet](./creating-a-cmdlet-without-parameters.md)。</span><span class="sxs-lookup"><span data-stu-id="c8188-177">For more information about the input processing methods, see [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md).</span></span>
 
-<span data-ttu-id="12504-178">此 cmdlet 将重写[System.Management.Automation.Cmdlet.Beginprocessing\*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法生成一个数组已编译的正则表达式在启动时。</span><span class="sxs-lookup"><span data-stu-id="12504-178">This cmdlet overrides the [System.Management.Automation.Cmdlet.Beginprocessing\*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) method to build an array of compiled regular expressions at startup.</span></span> <span data-ttu-id="12504-179">这会增加不使用简单匹配的搜索期间的性能。</span><span class="sxs-lookup"><span data-stu-id="12504-179">This increases performance during searches that do not use simple matching.</span></span>
+<span data-ttu-id="c8188-178">此 cmdlet 将重写[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法生成一个数组已编译的正则表达式在启动时。</span><span class="sxs-lookup"><span data-stu-id="c8188-178">This cmdlet overrides the [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) method to build an array of compiled regular expressions at startup.</span></span> <span data-ttu-id="c8188-179">这会增加不使用简单匹配的搜索期间的性能。</span><span class="sxs-lookup"><span data-stu-id="c8188-179">This increases performance during searches that do not use simple matching.</span></span>
 
 ```csharp
 protected override void BeginProcessing()
@@ -280,7 +280,7 @@ protected override void BeginProcessing()
 }// End of function BeginProcessing().
 ```
 
-<span data-ttu-id="12504-180">此 cmdlet 还将重写[System.Management.Automation.Cmdlet.Processrecord\*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法来处理用户进行命令行的字符串选择。</span><span class="sxs-lookup"><span data-stu-id="12504-180">This cmdlet also overrides the [System.Management.Automation.Cmdlet.Processrecord\*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method to process the string selections that the user makes on the command line.</span></span> <span data-ttu-id="12504-181">写入字符串所选内容的结果的自定义对象的形式通过调用私有**MatchString**方法。</span><span class="sxs-lookup"><span data-stu-id="12504-181">It writes the results of string selection in the form of a custom object by calling a private **MatchString** method.</span></span>
+<span data-ttu-id="c8188-180">此 cmdlet 还将重写[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法来处理用户进行命令行的字符串选择。</span><span class="sxs-lookup"><span data-stu-id="c8188-180">This cmdlet also overrides the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method to process the string selections that the user makes on the command line.</span></span> <span data-ttu-id="c8188-181">写入字符串所选内容的结果的自定义对象的形式通过调用私有**MatchString**方法。</span><span class="sxs-lookup"><span data-stu-id="c8188-181">It writes the results of string selection in the form of a custom object by calling a private **MatchString** method.</span></span>
 
 ```csharp
 protected override void ProcessRecord()
@@ -301,7 +301,7 @@ protected override void ProcessRecord()
     {
       WriteVerbose("Processing path " + path.Path);
 
-      // Check if the path represens one of the items to be
+      // Check if the path represents one of the items to be
       // excluded. If so, continue to next path.
       if (!MeetsIncludeExcludeCriteria(path.ProviderPath))
          continue;
@@ -357,7 +357,7 @@ protected override void ProcessRecord()
           }
           else
           {
-            // Add the block(line) that did notmatch to the
+            // Add the block(line) that did not match to the
             // collection of non matches , which will be stored
             // in the SessionState variable $NonMatches
             nonMatches.Add(items[0]);
@@ -389,15 +389,15 @@ protected override void ProcessRecord()
 }// End of protected override void ProcessRecord().
 ```
 
-## <a name="accessing-content"></a><span data-ttu-id="12504-182">访问内容</span><span class="sxs-lookup"><span data-stu-id="12504-182">Accessing Content</span></span>
+## <a name="accessing-content"></a><span data-ttu-id="c8188-182">访问内容</span><span class="sxs-lookup"><span data-stu-id="c8188-182">Accessing Content</span></span>
 
-<span data-ttu-id="12504-183">Cmdlet 必须打开 Windows PowerShell 路径，以便它可以访问数据所指示的提供程序。</span><span class="sxs-lookup"><span data-stu-id="12504-183">Your cmdlet must open the provider indicated by the Windows PowerShell path so that it can access the data.</span></span> <span data-ttu-id="12504-184">[System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState)对象的运行空间用于访问该提供程序，而[System.Management.Automation.Pscmdlet.Invokeprovider\*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider)属性cmdlet 用于打开提供程序。</span><span class="sxs-lookup"><span data-stu-id="12504-184">The [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) object for the runspace is used for access to the provider, while the [System.Management.Automation.Pscmdlet.Invokeprovider\*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) property of the cmdlet is used to open the provider.</span></span> <span data-ttu-id="12504-185">检索由提供内容的访问权限[System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics)打开提供程序的对象。</span><span class="sxs-lookup"><span data-stu-id="12504-185">Access to content is provided by retrieval of the [System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) object for the provider  opened.</span></span>
+<span data-ttu-id="c8188-183">Cmdlet 必须打开 Windows PowerShell 路径，以便它可以访问数据所指示的提供程序。</span><span class="sxs-lookup"><span data-stu-id="c8188-183">Your cmdlet must open the provider indicated by the Windows PowerShell path so that it can access the data.</span></span> <span data-ttu-id="c8188-184">[System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState)对象的运行空间用于访问该提供程序，而[System.Management.Automation.PSCmdlet.Invokeprovider\*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider)属性cmdlet 用于打开提供程序。</span><span class="sxs-lookup"><span data-stu-id="c8188-184">The [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) object for the runspace is used for access to the provider, while the [System.Management.Automation.PSCmdlet.Invokeprovider\*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) property of the cmdlet is used to open the provider.</span></span> <span data-ttu-id="c8188-185">检索由提供内容的访问权限[System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics)打开提供程序的对象。</span><span class="sxs-lookup"><span data-stu-id="c8188-185">Access to content is provided by retrieval of the [System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) object for the provider opened.</span></span>
 
-<span data-ttu-id="12504-186">此示例选择 Str cmdlet 使用[System.Management.Automation.Providerintrinsics.Content\*](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content)属性公开要扫描的内容。</span><span class="sxs-lookup"><span data-stu-id="12504-186">This sample Select-Str cmdlet uses the [System.Management.Automation.Providerintrinsics.Content\*](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) property to expose the content to scan.</span></span> <span data-ttu-id="12504-187">然后，它可以调用[System.Management.Automation.Contentcmdletproviderintrinsics.Getreader\*](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader)方法，并传递所需的 Windows PowerShell 路径。</span><span class="sxs-lookup"><span data-stu-id="12504-187">It can then call the [System.Management.Automation.Contentcmdletproviderintrinsics.Getreader\*](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) method, passing the required Windows PowerShell path.</span></span>
+<span data-ttu-id="c8188-186">此示例选择 Str cmdlet 使用[System.Management.Automation.Providerintrinsics.Content\*](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content)属性公开要扫描的内容。</span><span class="sxs-lookup"><span data-stu-id="c8188-186">This sample Select-Str cmdlet uses the [System.Management.Automation.Providerintrinsics.Content\*](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) property to expose the content to scan.</span></span> <span data-ttu-id="c8188-187">然后，它可以调用[System.Management.Automation.Contentcmdletproviderintrinsics.Getreader\*](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader)方法，并传递所需的 Windows PowerShell 路径。</span><span class="sxs-lookup"><span data-stu-id="c8188-187">It can then call the [System.Management.Automation.Contentcmdletproviderintrinsics.Getreader\*](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) method, passing the required Windows PowerShell path.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="12504-188">代码示例</span><span class="sxs-lookup"><span data-stu-id="12504-188">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="c8188-188">代码示例</span><span class="sxs-lookup"><span data-stu-id="c8188-188">Code Sample</span></span>
 
-<span data-ttu-id="12504-189">下面的代码显示了此选择 Str cmdlet 的此版本的实现。</span><span class="sxs-lookup"><span data-stu-id="12504-189">The following code shows the implementation of this version of this Select-Str cmdlet.</span></span> <span data-ttu-id="12504-190">请注意，此代码包括在 cmdlet 类，使用该 cmdlet 的私有方法和 Windows PowerShell 管理单元中使用的代码以注册该 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="12504-190">Note that this code includes the cmdlet class, private methods used by the cmdlet, and the Windows PowerShell snap-in code used to register the cmdlet.</span></span> <span data-ttu-id="12504-191">有关注册该 cmdlet 的详细信息，请参阅[构建 Cmdlet](#Building-the-Cmdlet)。</span><span class="sxs-lookup"><span data-stu-id="12504-191">For more information about registering the cmdlet, see [Building the Cmdlet](#Building-the-Cmdlet).</span></span>
+<span data-ttu-id="c8188-189">下面的代码显示了此选择 Str cmdlet 的此版本的实现。</span><span class="sxs-lookup"><span data-stu-id="c8188-189">The following code shows the implementation of this version of this Select-Str cmdlet.</span></span> <span data-ttu-id="c8188-190">请注意，此代码包括在 cmdlet 类，使用该 cmdlet 的私有方法和 Windows PowerShell 管理单元中使用的代码以注册该 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="c8188-190">Note that this code includes the cmdlet class, private methods used by the cmdlet, and the Windows PowerShell snap-in code used to register the cmdlet.</span></span> <span data-ttu-id="c8188-191">有关注册该 cmdlet 的详细信息，请参阅[构建 Cmdlet](#Building-the-Cmdlet)。</span><span class="sxs-lookup"><span data-stu-id="c8188-191">For more information about registering the cmdlet, see [Building the Cmdlet](#Building-the-Cmdlet).</span></span>
 
 ```csharp
 //
@@ -436,7 +436,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// This parameter must specify a PowerShell that indicates the
     /// PowerShell provider that is used to access the objects to be
     /// searched for matching patterns. This parameter should also have
-    /// a PSPath alias to provide consistancy with other cmdlets that use
+    /// a PSPath alias to provide consistency with other cmdlets that use
     /// PowerShell providers.
     /// </summary>
     /// <value>Path of the object(s) to search.</value>
@@ -517,7 +517,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// <summary>
     /// Declare a switch parameter that specifies if a case-sensitive
     /// search is performed.  If not (default), a case-insensitive search
-    /// is perfored.
+    /// is performed.
     /// </summary>
     /// <value>If True, a case-sensitive search is made.</value>
     [Parameter]
@@ -689,7 +689,7 @@ namespace Microsoft.Samples.PowerShell.Commands
         {
           WriteVerbose("Processing path " + path.Path);
 
-          // Check if the path represens one of the items to be
+          // Check if the path represents one of the items to be
           // excluded. If so, continue to next path.
           if (!MeetsIncludeExcludeCriteria(path.ProviderPath))
              continue;
@@ -745,7 +745,7 @@ namespace Microsoft.Samples.PowerShell.Commands
               }
               else
               {
-                // Add the block(line) that did notmatch to the
+                // Add the block(line) that did not match to the
                 // collection of non matches , which will be stored
                 // in the SessionState variable $NonMatches
                 nonMatches.Add(items[0]);
@@ -874,7 +874,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// <summary>
     /// Check whether the supplied name meets the include/exclude criteria.
     /// That is - it's on the include list if the include list was
-    /// specified, and not on the exclude list if the explude list was specified.
+    /// specified, and not on the exclude list if the exclude list was specified.
     /// </summary>
     /// <param name="path">path to validate</param>
     /// <returns>True if the path is acceptable.</returns>
@@ -1078,7 +1078,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     }
 
     /// <summary>
-    /// Specifiy the description of the PowerShell snap-in.
+    /// Specify the description of the PowerShell snap-in.
     /// </summary>
     public override string Description
     {
@@ -1106,21 +1106,21 @@ namespace Microsoft.Samples.PowerShell.Commands
 } //namespace Microsoft.Samples.PowerShell.Commands;
 ```
 
-## <a name="building-the-cmdlet"></a><span data-ttu-id="12504-192">生成该 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="12504-192">Building the Cmdlet</span></span>
+## <a name="building-the-cmdlet"></a><span data-ttu-id="c8188-192">生成该 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="c8188-192">Building the Cmdlet</span></span>
 
-<span data-ttu-id="12504-193">实现一个 cmdlet 之后, 您必须注册它使用 Windows PowerShell 通过 Windows PowerShell 管理单元。</span><span class="sxs-lookup"><span data-stu-id="12504-193">After implementing a cmdlet, you must register it with Windows PowerShell through a Windows PowerShell snap-in.</span></span> <span data-ttu-id="12504-194">有关注册 cmdlet 的详细信息，请参阅[如何注册 Cmdlet、 提供商和主机应用程序](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。</span><span class="sxs-lookup"><span data-stu-id="12504-194">For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).</span></span>
+<span data-ttu-id="c8188-193">实现一个 cmdlet 之后, 您必须注册它使用 Windows PowerShell 通过 Windows PowerShell 管理单元。</span><span class="sxs-lookup"><span data-stu-id="c8188-193">After implementing a cmdlet, you must register it with Windows PowerShell through a Windows PowerShell snap-in.</span></span> <span data-ttu-id="c8188-194">有关注册 cmdlet 的详细信息，请参阅[如何注册 Cmdlet、 提供商和主机应用程序](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。</span><span class="sxs-lookup"><span data-stu-id="c8188-194">For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).</span></span>
 
-## <a name="testing-the-cmdlet"></a><span data-ttu-id="12504-195">测试 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="12504-195">Testing the Cmdlet</span></span>
+## <a name="testing-the-cmdlet"></a><span data-ttu-id="c8188-195">测试 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="c8188-195">Testing the Cmdlet</span></span>
 
-<span data-ttu-id="12504-196">当已使用 Windows PowerShell 注册你的 cmdlet 时，可以通过运行命令行上测试它。</span><span class="sxs-lookup"><span data-stu-id="12504-196">When your cmdlet has been registered with Windows PowerShell, you can test it by running it on the command line.</span></span> <span data-ttu-id="12504-197">以下过程可以用于测试示例选择 Str cmdlet。</span><span class="sxs-lookup"><span data-stu-id="12504-197">The following procedure can be used to test the sample Select-Str cmdlet.</span></span>
+<span data-ttu-id="c8188-196">当已使用 Windows PowerShell 注册你的 cmdlet 时，可以通过运行命令行上测试它。</span><span class="sxs-lookup"><span data-stu-id="c8188-196">When your cmdlet has been registered with Windows PowerShell, you can test it by running it on the command line.</span></span> <span data-ttu-id="c8188-197">以下过程可以用于测试示例选择 Str cmdlet。</span><span class="sxs-lookup"><span data-stu-id="c8188-197">The following procedure can be used to test the sample Select-Str cmdlet.</span></span>
 
-1. <span data-ttu-id="12504-198">启动 Windows PowerShell，并搜索".NET"的表达式具有的行的匹配项的说明文件。</span><span class="sxs-lookup"><span data-stu-id="12504-198">Start Windows PowerShell, and search the Notes file for occurrences of lines with the expression ".NET".</span></span> <span data-ttu-id="12504-199">请注意，仅当路径由多个单词是必需的路径的名称周围的引号。</span><span class="sxs-lookup"><span data-stu-id="12504-199">Note that the quotation marks around the name of the path are required only if the path consists of more than one word.</span></span>
+1. <span data-ttu-id="c8188-198">启动 Windows PowerShell，并搜索".NET"的表达式具有的行的匹配项的说明文件。</span><span class="sxs-lookup"><span data-stu-id="c8188-198">Start Windows PowerShell, and search the Notes file for occurrences of lines with the expression ".NET".</span></span> <span data-ttu-id="c8188-199">请注意，仅当路径由多个单词是必需的路径的名称周围的引号。</span><span class="sxs-lookup"><span data-stu-id="c8188-199">Note that the quotation marks around the name of the path are required only if the path consists of more than one word.</span></span>
 
     ```powershell
     select-str -Path "notes" -Pattern ".NET" -SimpleMatch=$false
     ```
 
-    <span data-ttu-id="12504-200">将显示以下输出。</span><span class="sxs-lookup"><span data-stu-id="12504-200">The following output appears.</span></span>
+    <span data-ttu-id="c8188-200">将显示以下输出。</span><span class="sxs-lookup"><span data-stu-id="c8188-200">The following output appears.</span></span>
 
     ```output
     IgnoreCase   : True
@@ -1135,13 +1135,13 @@ namespace Microsoft.Samples.PowerShell.Commands
     Pattern      : .NET
     ```
 
-2. <span data-ttu-id="12504-201">"结束"跟任何其他文本搜索词的行的匹配项的说明文件。</span><span class="sxs-lookup"><span data-stu-id="12504-201">Search the Notes file for occurrences of lines with the word "over", followed by any other text.</span></span> <span data-ttu-id="12504-202">`SimpleMatch`参数正在使用的默认值`false`。</span><span class="sxs-lookup"><span data-stu-id="12504-202">The `SimpleMatch` parameter is using the default value of `false`.</span></span> <span data-ttu-id="12504-203">搜索不区分大小写因为`CaseSensitive`参数设置为`false`。</span><span class="sxs-lookup"><span data-stu-id="12504-203">The search is case-insensitive because the `CaseSensitive` parameter is set to `false`.</span></span>
+2. <span data-ttu-id="c8188-201">"结束"跟任何其他文本搜索词的行的匹配项的说明文件。</span><span class="sxs-lookup"><span data-stu-id="c8188-201">Search the Notes file for occurrences of lines with the word "over", followed by any other text.</span></span> <span data-ttu-id="c8188-202">`SimpleMatch`参数正在使用的默认值`false`。</span><span class="sxs-lookup"><span data-stu-id="c8188-202">The `SimpleMatch` parameter is using the default value of `false`.</span></span> <span data-ttu-id="c8188-203">搜索不区分大小写因为`CaseSensitive`参数设置为`false`。</span><span class="sxs-lookup"><span data-stu-id="c8188-203">The search is case-insensitive because the `CaseSensitive` parameter is set to `false`.</span></span>
 
     ```powershell
     select-str -Path notes -Pattern "over*" -SimpleMatch -CaseSensitive:$false
     ```
 
-    <span data-ttu-id="12504-204">将显示以下输出。</span><span class="sxs-lookup"><span data-stu-id="12504-204">The following output appears.</span></span>
+    <span data-ttu-id="c8188-204">将显示以下输出。</span><span class="sxs-lookup"><span data-stu-id="c8188-204">The following output appears.</span></span>
 
     ```output
     IgnoreCase   : True
@@ -1156,13 +1156,13 @@ namespace Microsoft.Samples.PowerShell.Commands
     Pattern      : over*
     ```
 
-3. <span data-ttu-id="12504-205">搜索作为模式使用正则表达式的说明文件。</span><span class="sxs-lookup"><span data-stu-id="12504-205">Search the Notes file using a regular expression as the pattern.</span></span> <span data-ttu-id="12504-206">该 cmdlet 将搜索字母字符和空格括在括号中。</span><span class="sxs-lookup"><span data-stu-id="12504-206">The cmdlet searches for alphabetical characters and blank spaces enclosed in parentheses.</span></span>
+3. <span data-ttu-id="c8188-205">搜索作为模式使用正则表达式的说明文件。</span><span class="sxs-lookup"><span data-stu-id="c8188-205">Search the Notes file using a regular expression as the pattern.</span></span> <span data-ttu-id="c8188-206">该 cmdlet 将搜索字母字符和空格括在括号中。</span><span class="sxs-lookup"><span data-stu-id="c8188-206">The cmdlet searches for alphabetical characters and blank spaces enclosed in parentheses.</span></span>
 
     ```powershell
     select-str -Path notes -Pattern "\([A-Za-z:blank:]" -SimpleMatch:$false
     ```
 
-    <span data-ttu-id="12504-207">将显示以下输出。</span><span class="sxs-lookup"><span data-stu-id="12504-207">The following output appears.</span></span>
+    <span data-ttu-id="c8188-207">将显示以下输出。</span><span class="sxs-lookup"><span data-stu-id="c8188-207">The following output appears.</span></span>
 
     ```output
     IgnoreCase   : True
@@ -1177,13 +1177,13 @@ namespace Microsoft.Samples.PowerShell.Commands
     Pattern      : \([A-Za-z:blank:]
     ```
 
-4. <span data-ttu-id="12504-208">执行区分大小写搜索便笺文件的"参数"一词的匹配项。</span><span class="sxs-lookup"><span data-stu-id="12504-208">Perform a case-sensitive search of the Notes file for occurrences of the word "Parameter".</span></span>
+4. <span data-ttu-id="c8188-208">执行区分大小写搜索便笺文件的"参数"一词的匹配项。</span><span class="sxs-lookup"><span data-stu-id="c8188-208">Perform a case-sensitive search of the Notes file for occurrences of the word "Parameter".</span></span>
 
     ```powershell
     select-str -Path notes -Pattern Parameter -CaseSensitive
     ```
 
-    <span data-ttu-id="12504-209">将显示以下输出。</span><span class="sxs-lookup"><span data-stu-id="12504-209">The following output appears.</span></span>
+    <span data-ttu-id="c8188-209">将显示以下输出。</span><span class="sxs-lookup"><span data-stu-id="c8188-209">The following output appears.</span></span>
 
     ```output
     IgnoreCase   : False
@@ -1198,13 +1198,13 @@ namespace Microsoft.Samples.PowerShell.Commands
     Pattern      : Parameter
     ```
 
-5. <span data-ttu-id="12504-210">搜索 variable 提供程序随 Windows PowerShell 具有从 0 到 9 的数字值的变量。</span><span class="sxs-lookup"><span data-stu-id="12504-210">Search the variable provider shipped with Windows PowerShell for variables that have numerical values from 0 through 9.</span></span>
+5. <span data-ttu-id="c8188-210">搜索 variable 提供程序随 Windows PowerShell 具有从 0 到 9 的数字值的变量。</span><span class="sxs-lookup"><span data-stu-id="c8188-210">Search the variable provider shipped with Windows PowerShell for variables that have numerical values from 0 through 9.</span></span>
 
     ```powershell
     select-str -Path * -Pattern "[0-9]"
     ```
 
-    <span data-ttu-id="12504-211">将显示以下输出。</span><span class="sxs-lookup"><span data-stu-id="12504-211">The following output appears.</span></span>
+    <span data-ttu-id="c8188-211">将显示以下输出。</span><span class="sxs-lookup"><span data-stu-id="c8188-211">The following output appears.</span></span>
 
     ```output
     IgnoreCase   : True
@@ -1214,13 +1214,13 @@ namespace Microsoft.Samples.PowerShell.Commands
     Pattern      : [0-9]
     ```
 
-6. <span data-ttu-id="12504-212">使用脚本块的字符串"Pos"SelectStrCommandSample.cs 文件中搜索。</span><span class="sxs-lookup"><span data-stu-id="12504-212">Use a script block to search the file SelectStrCommandSample.cs for the string "Pos".</span></span> <span data-ttu-id="12504-213">**Cmatch**函数的脚本执行不区分大小写的模式匹配。</span><span class="sxs-lookup"><span data-stu-id="12504-213">The **cmatch** function for the script performs a case-insensitive pattern match.</span></span>
+6. <span data-ttu-id="c8188-212">使用脚本块的字符串"Pos"SelectStrCommandSample.cs 文件中搜索。</span><span class="sxs-lookup"><span data-stu-id="c8188-212">Use a script block to search the file SelectStrCommandSample.cs for the string "Pos".</span></span> <span data-ttu-id="c8188-213">**Cmatch**函数的脚本执行不区分大小写的模式匹配。</span><span class="sxs-lookup"><span data-stu-id="c8188-213">The **cmatch** function for the script performs a case-insensitive pattern match.</span></span>
 
     ```powershell
     select-str -Path "SelectStrCommandSample.cs" -Script { if ($args[0] -cmatch "Pos"){ return $true } return $false }
     ```
 
-    <span data-ttu-id="12504-214">将显示以下输出。</span><span class="sxs-lookup"><span data-stu-id="12504-214">The following output appears.</span></span>
+    <span data-ttu-id="c8188-214">将显示以下输出。</span><span class="sxs-lookup"><span data-stu-id="c8188-214">The following output appears.</span></span>
 
     ```output
     IgnoreCase   : True
@@ -1230,18 +1230,18 @@ namespace Microsoft.Samples.PowerShell.Commands
     Pattern      :
     ```
 
-## <a name="see-also"></a><span data-ttu-id="12504-215">另请参阅</span><span class="sxs-lookup"><span data-stu-id="12504-215">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c8188-215">另请参阅</span><span class="sxs-lookup"><span data-stu-id="c8188-215">See Also</span></span>
 
-[<span data-ttu-id="12504-216">如何创建 Windows PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="12504-216">How to Create a Windows PowerShell Cmdlet</span></span>](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[<span data-ttu-id="c8188-216">如何创建 Windows PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="c8188-216">How to Create a Windows PowerShell Cmdlet</span></span>](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
 
-[<span data-ttu-id="12504-217">创建第一个 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="12504-217">Creating Your First Cmdlet</span></span>](./creating-a-cmdlet-without-parameters.md)
+[<span data-ttu-id="c8188-217">创建第一个 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="c8188-217">Creating Your First Cmdlet</span></span>](./creating-a-cmdlet-without-parameters.md)
 
-[<span data-ttu-id="12504-218">创建一个 Cmdlet 来修改系统</span><span class="sxs-lookup"><span data-stu-id="12504-218">Creating a Cmdlet that Modifies the System</span></span>](./creating-a-cmdlet-that-modifies-the-system.md)
+[<span data-ttu-id="c8188-218">创建一个 Cmdlet 来修改系统</span><span class="sxs-lookup"><span data-stu-id="c8188-218">Creating a Cmdlet that Modifies the System</span></span>](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[<span data-ttu-id="12504-219">设计 Windows PowerShell 提供程序</span><span class="sxs-lookup"><span data-stu-id="12504-219">Design Your Windows PowerShell Provider</span></span>](../prog-guide/designing-your-windows-powershell-provider.md)
+[<span data-ttu-id="c8188-219">设计 Windows PowerShell 提供程序</span><span class="sxs-lookup"><span data-stu-id="c8188-219">Design Your Windows PowerShell Provider</span></span>](../prog-guide/designing-your-windows-powershell-provider.md)
 
-[<span data-ttu-id="12504-220">Windows PowerShell 的工作原理</span><span class="sxs-lookup"><span data-stu-id="12504-220">How Windows PowerShell Works</span></span>](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[<span data-ttu-id="c8188-220">Windows PowerShell 的工作原理</span><span class="sxs-lookup"><span data-stu-id="c8188-220">How Windows PowerShell Works</span></span>](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 
-[<span data-ttu-id="12504-221">如何注册 Cmdlet、 提供程序，和托管应用程序</span><span class="sxs-lookup"><span data-stu-id="12504-221">How to Register Cmdlets, Providers, and Host Applications</span></span>](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[<span data-ttu-id="c8188-221">如何注册 Cmdlet、 提供程序，和托管应用程序</span><span class="sxs-lookup"><span data-stu-id="c8188-221">How to Register Cmdlets, Providers, and Host Applications</span></span>](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
-[<span data-ttu-id="12504-222">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="12504-222">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="c8188-222">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="c8188-222">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)

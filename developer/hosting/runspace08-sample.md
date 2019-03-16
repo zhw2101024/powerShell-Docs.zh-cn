@@ -8,38 +8,38 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1100d91d-249d-4af7-9854-2d6a423ac2f4
 caps.latest.revision: 7
-ms.openlocfilehash: ac010ee94752458c31b5b3b26c9ac17e0c56c4ad
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 70577a6a42ce26e9791360fa30baae9d7a492daf
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860793"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057733"
 ---
-# <a name="runspace08-sample"></a><span data-ttu-id="f984b-102">Runspace08 示例</span><span class="sxs-lookup"><span data-stu-id="f984b-102">Runspace08 Sample</span></span>
+# <a name="runspace08-sample"></a><span data-ttu-id="e0a12-102">Runspace08 示例</span><span class="sxs-lookup"><span data-stu-id="e0a12-102">Runspace08 Sample</span></span>
 
-<span data-ttu-id="f984b-103">此示例演示如何将命令和参数添加到的管道[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)对象以及如何以同步方式运行命令。</span><span class="sxs-lookup"><span data-stu-id="f984b-103">This sample shows how to add commands and arguments to the pipeline of a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object and how to run the commands synchronously.</span></span>
+<span data-ttu-id="e0a12-103">此示例演示如何将命令和参数添加到的管道[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)对象以及如何以同步方式运行命令。</span><span class="sxs-lookup"><span data-stu-id="e0a12-103">This sample shows how to add commands and arguments to the pipeline of a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object and how to run the commands synchronously.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="f984b-104">要求</span><span class="sxs-lookup"><span data-stu-id="f984b-104">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="e0a12-104">要求</span><span class="sxs-lookup"><span data-stu-id="e0a12-104">Requirements</span></span>
 
-<span data-ttu-id="f984b-105">此示例要求 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="f984b-105">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="e0a12-105">此示例要求 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="e0a12-105">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="f984b-106">说明</span><span class="sxs-lookup"><span data-stu-id="f984b-106">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="e0a12-106">说明</span><span class="sxs-lookup"><span data-stu-id="e0a12-106">Demonstrates</span></span>
 
-<span data-ttu-id="f984b-107">此示例将演示如下。</span><span class="sxs-lookup"><span data-stu-id="f984b-107">This sample demonstrates the following.</span></span>
+<span data-ttu-id="e0a12-107">此示例将演示如下。</span><span class="sxs-lookup"><span data-stu-id="e0a12-107">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="f984b-108">创建[System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace)通过使用对象[System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory)类。</span><span class="sxs-lookup"><span data-stu-id="f984b-108">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object by using the [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) class.</span></span>
+- <span data-ttu-id="e0a12-108">创建[System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace)通过使用对象[System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory)类。</span><span class="sxs-lookup"><span data-stu-id="e0a12-108">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object by using the [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) class.</span></span>
 
-- <span data-ttu-id="f984b-109">创建[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)使用运行空间的对象。</span><span class="sxs-lookup"><span data-stu-id="f984b-109">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
+- <span data-ttu-id="e0a12-109">创建[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)使用运行空间的对象。</span><span class="sxs-lookup"><span data-stu-id="e0a12-109">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
 
-- <span data-ttu-id="f984b-110">将 cmdlet 添加到的管道[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)对象。</span><span class="sxs-lookup"><span data-stu-id="f984b-110">Adding cmdlets to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="e0a12-110">将 cmdlet 添加到的管道[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)对象。</span><span class="sxs-lookup"><span data-stu-id="e0a12-110">Adding cmdlets to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="f984b-111">以同步方式运行 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="f984b-111">Running the cmdlets synchronously.</span></span>
+- <span data-ttu-id="e0a12-111">以同步方式运行 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="e0a12-111">Running the cmdlets synchronously.</span></span>
 
-- <span data-ttu-id="f984b-112">从属性中提取[System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject)命令返回的对象。</span><span class="sxs-lookup"><span data-stu-id="f984b-112">Extracting properties from the [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
+- <span data-ttu-id="e0a12-112">从属性中提取[System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject)命令返回的对象。</span><span class="sxs-lookup"><span data-stu-id="e0a12-112">Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
 
-## <a name="example"></a><span data-ttu-id="f984b-113">示例</span><span class="sxs-lookup"><span data-stu-id="f984b-113">Example</span></span>
+## <a name="example"></a><span data-ttu-id="e0a12-113">示例</span><span class="sxs-lookup"><span data-stu-id="e0a12-113">Example</span></span>
 
-<span data-ttu-id="f984b-114">此示例运行时[Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)并[Sort-object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlet 通过使用[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)对象。</span><span class="sxs-lookup"><span data-stu-id="f984b-114">This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+<span data-ttu-id="e0a12-114">此示例运行时[Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)并[Sort-object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlet 通过使用[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)对象。</span><span class="sxs-lookup"><span data-stu-id="e0a12-114">This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -120,6 +120,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="f984b-115">另请参阅</span><span class="sxs-lookup"><span data-stu-id="f984b-115">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e0a12-115">另请参阅</span><span class="sxs-lookup"><span data-stu-id="e0a12-115">See Also</span></span>
 
-[<span data-ttu-id="f984b-116">编写 Windows PowerShell 主机应用程序</span><span class="sxs-lookup"><span data-stu-id="f984b-116">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="e0a12-116">编写 Windows PowerShell 主机应用程序</span><span class="sxs-lookup"><span data-stu-id="e0a12-116">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)

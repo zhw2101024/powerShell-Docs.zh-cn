@@ -8,44 +8,44 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9c90d268-730b-4e73-9dfd-5f288c27aed0
 caps.latest.revision: 8
-ms.openlocfilehash: 09ec385827f8f6b4d1289a8caa4c1edf64f6ba43
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 74d7c9e9cb0d7ce829635e6aff994473e09e7479
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853063"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057206"
 ---
-# <a name="runspace11-sample"></a><span data-ttu-id="676fc-102">Runspace11 示例</span><span class="sxs-lookup"><span data-stu-id="676fc-102">Runspace11 Sample</span></span>
+# <a name="runspace11-sample"></a><span data-ttu-id="8cc9f-102">Runspace11 示例</span><span class="sxs-lookup"><span data-stu-id="8cc9f-102">Runspace11 Sample</span></span>
 
-<span data-ttu-id="676fc-103">此示例演示如何使用[System.Management.Automation.Proxycommand](/dotnet/api/System.Management.Automation.ProxyCommand)类，以创建可调用现有 cmdlet 但限制可用参数集的代理命令。</span><span class="sxs-lookup"><span data-stu-id="676fc-103">This sample shows how to use the [System.Management.Automation.Proxycommand](/dotnet/api/System.Management.Automation.ProxyCommand) class to create a proxy command that calls an existing cmdlet, but restricts the set of available parameters.</span></span> <span data-ttu-id="676fc-104">然后，代理命令被添加到用来创建受限运行空间的初始会话状态。</span><span class="sxs-lookup"><span data-stu-id="676fc-104">The proxy command is then added to an initial session state that is used to create a constrained runspace.</span></span> <span data-ttu-id="676fc-105">这意味着用户只能通过该代理命令使用该 cmdlet 的功能。</span><span class="sxs-lookup"><span data-stu-id="676fc-105">This means that the user can access the functionality of the cmdlet only through the proxy command.</span></span>
+<span data-ttu-id="8cc9f-103">此示例演示如何使用[System.Management.Automation.Proxycommand](/dotnet/api/System.Management.Automation.ProxyCommand)类，以创建可调用现有 cmdlet 但限制可用参数集的代理命令。</span><span class="sxs-lookup"><span data-stu-id="8cc9f-103">This sample shows how to use the [System.Management.Automation.Proxycommand](/dotnet/api/System.Management.Automation.ProxyCommand) class to create a proxy command that calls an existing cmdlet, but restricts the set of available parameters.</span></span> <span data-ttu-id="8cc9f-104">然后，代理命令被添加到用来创建受限运行空间的初始会话状态。</span><span class="sxs-lookup"><span data-stu-id="8cc9f-104">The proxy command is then added to an initial session state that is used to create a constrained runspace.</span></span> <span data-ttu-id="8cc9f-105">这意味着用户只能通过该代理命令使用该 cmdlet 的功能。</span><span class="sxs-lookup"><span data-stu-id="8cc9f-105">This means that the user can access the functionality of the cmdlet only through the proxy command.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="676fc-106">要求</span><span class="sxs-lookup"><span data-stu-id="676fc-106">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="8cc9f-106">要求</span><span class="sxs-lookup"><span data-stu-id="8cc9f-106">Requirements</span></span>
 
-<span data-ttu-id="676fc-107">此示例要求 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="676fc-107">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="8cc9f-107">此示例要求 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="8cc9f-107">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="676fc-108">说明</span><span class="sxs-lookup"><span data-stu-id="676fc-108">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="8cc9f-108">说明</span><span class="sxs-lookup"><span data-stu-id="8cc9f-108">Demonstrates</span></span>
 
-<span data-ttu-id="676fc-109">此示例将演示如下。</span><span class="sxs-lookup"><span data-stu-id="676fc-109">This sample demonstrates the following.</span></span>
+<span data-ttu-id="8cc9f-109">此示例将演示如下。</span><span class="sxs-lookup"><span data-stu-id="8cc9f-109">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="676fc-110">创建[System.Management.Automation.Commandmetadata](/dotnet/api/System.Management.Automation.CommandMetadata)描述现有 cmdlet 的元数据的对象。</span><span class="sxs-lookup"><span data-stu-id="676fc-110">Creating a [System.Management.Automation.Commandmetadata](/dotnet/api/System.Management.Automation.CommandMetadata) object that describes the metadata of an existing cmdlet.</span></span>
+- <span data-ttu-id="8cc9f-110">创建[System.Management.Automation.Commandmetadata](/dotnet/api/System.Management.Automation.CommandMetadata)描述现有 cmdlet 的元数据的对象。</span><span class="sxs-lookup"><span data-stu-id="8cc9f-110">Creating a [System.Management.Automation.Commandmetadata](/dotnet/api/System.Management.Automation.CommandMetadata) object that describes the metadata of an existing cmdlet.</span></span>
 
-- <span data-ttu-id="676fc-111">创建[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)对象。</span><span class="sxs-lookup"><span data-stu-id="676fc-111">Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="8cc9f-111">创建[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)对象。</span><span class="sxs-lookup"><span data-stu-id="8cc9f-111">Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="676fc-112">修改 cmdlet 元数据中删除该 cmdlet 的参数。</span><span class="sxs-lookup"><span data-stu-id="676fc-112">Modifying the cmdlet metadata to remove a parameter of the cmdlet.</span></span>
+- <span data-ttu-id="8cc9f-112">修改 cmdlet 元数据中删除该 cmdlet 的参数。</span><span class="sxs-lookup"><span data-stu-id="8cc9f-112">Modifying the cmdlet metadata to remove a parameter of the cmdlet.</span></span>
 
-- <span data-ttu-id="676fc-113">添加到 cmdlet [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)对象并将该 cmdlet 为私有。</span><span class="sxs-lookup"><span data-stu-id="676fc-113">Adding the cmdlet to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object and making the cmdlet private.</span></span>
+- <span data-ttu-id="8cc9f-113">添加到 cmdlet [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)对象并将该 cmdlet 为私有。</span><span class="sxs-lookup"><span data-stu-id="8cc9f-113">Adding the cmdlet to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object and making the cmdlet private.</span></span>
 
-- <span data-ttu-id="676fc-114">创建代理函数可调用现有 cmdlet，但公开仅一组受限的参数。</span><span class="sxs-lookup"><span data-stu-id="676fc-114">Creating a proxy function that calls the existing cmdlet, but exposes only a restricted set of parameters.</span></span>
+- <span data-ttu-id="8cc9f-114">创建代理函数可调用现有 cmdlet，但公开仅一组受限的参数。</span><span class="sxs-lookup"><span data-stu-id="8cc9f-114">Creating a proxy function that calls the existing cmdlet, but exposes only a restricted set of parameters.</span></span>
 
-- <span data-ttu-id="676fc-115">将代理函数添加到初始会话状态。</span><span class="sxs-lookup"><span data-stu-id="676fc-115">Adding the proxy function to the initial session state.</span></span>
+- <span data-ttu-id="8cc9f-115">将代理函数添加到初始会话状态。</span><span class="sxs-lookup"><span data-stu-id="8cc9f-115">Adding the proxy function to the initial session state.</span></span>
 
-- <span data-ttu-id="676fc-116">创建[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)对象，它使用[System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace)对象。</span><span class="sxs-lookup"><span data-stu-id="676fc-116">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.</span></span>
+- <span data-ttu-id="8cc9f-116">创建[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)对象，它使用[System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace)对象。</span><span class="sxs-lookup"><span data-stu-id="8cc9f-116">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.</span></span>
 
-- <span data-ttu-id="676fc-117">调用专用 cmdlet 和代理函数使用[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)对象，以演示受限运行空间。</span><span class="sxs-lookup"><span data-stu-id="676fc-117">Calling the private cmdlet and the proxy function using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object to demonstrate the constrained runspace.</span></span>
+- <span data-ttu-id="8cc9f-117">调用专用 cmdlet 和代理函数使用[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)对象，以演示受限运行空间。</span><span class="sxs-lookup"><span data-stu-id="8cc9f-117">Calling the private cmdlet and the proxy function using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object to demonstrate the constrained runspace.</span></span>
 
-## <a name="example"></a><span data-ttu-id="676fc-118">示例</span><span class="sxs-lookup"><span data-stu-id="676fc-118">Example</span></span>
+## <a name="example"></a><span data-ttu-id="8cc9f-118">示例</span><span class="sxs-lookup"><span data-stu-id="8cc9f-118">Example</span></span>
 
-<span data-ttu-id="676fc-119">这将创建用于演示受限运行空间的专用 cmdlet 的代理命令。</span><span class="sxs-lookup"><span data-stu-id="676fc-119">This creates a proxy command for a private cmdlet to demonstrate a constrained runspace.</span></span>
+<span data-ttu-id="8cc9f-119">这将创建用于演示受限运行空间的专用 cmdlet 的代理命令。</span><span class="sxs-lookup"><span data-stu-id="8cc9f-119">This creates a proxy command for a private cmdlet to demonstrate a constrained runspace.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -146,7 +146,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
     /// </remarks>
     private static void Main()
     {
-      // Create a default initial session state. The default inital session state
+      // Create a default initial session state. The default initial session state
       // includes all the elements that are provided by Windows PowerShell.
       InitialSessionState iss = InitialSessionState.CreateDefault();
 
@@ -157,7 +157,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
       // Make the cmdlet private so that it is not accessible.
       cmdletEntry.Visibility = SessionStateEntryVisibility.Private;
 
-      // Set the language mode of the initial session state to NoLanguge to
+      // Set the language mode of the initial session state to NoLanguage to
       //prevent users from using language features. Only the invocation of
       // public commands is allowed.
       iss.LanguageMode = PSLanguageMode.NoLanguage;
@@ -244,6 +244,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="676fc-120">另请参阅</span><span class="sxs-lookup"><span data-stu-id="676fc-120">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8cc9f-120">另请参阅</span><span class="sxs-lookup"><span data-stu-id="8cc9f-120">See Also</span></span>
 
-[<span data-ttu-id="676fc-121">编写 Windows PowerShell 主机应用程序</span><span class="sxs-lookup"><span data-stu-id="676fc-121">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="8cc9f-121">编写 Windows PowerShell 主机应用程序</span><span class="sxs-lookup"><span data-stu-id="8cc9f-121">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)

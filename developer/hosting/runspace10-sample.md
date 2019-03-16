@@ -8,40 +8,40 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7c265084-e072-46ca-9844-c3c0e275d6b0
 caps.latest.revision: 7
-ms.openlocfilehash: eb3624bea589e2ab0d7b4f76874e073b942c001f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fdf0036c68b608d254ed928ae9ac58616a856200
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862153"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059501"
 ---
-# <a name="runspace10-sample"></a><span data-ttu-id="354ff-102">Runspace10 示例</span><span class="sxs-lookup"><span data-stu-id="354ff-102">Runspace10 Sample</span></span>
+# <a name="runspace10-sample"></a><span data-ttu-id="82e63-102">Runspace10 示例</span><span class="sxs-lookup"><span data-stu-id="82e63-102">Runspace10 Sample</span></span>
 
-<span data-ttu-id="354ff-103">此示例演示如何创建默认初始会话状态，如何将添加到 cmdlet [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)、 如何创建使用初始会话状态的运行空间以及如何运行通过使用命令[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)对象。</span><span class="sxs-lookup"><span data-stu-id="354ff-103">This sample shows how to create a default initial session state, how to add a cmdlet to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState), how to create a runspace that uses the initial session state, and how to run the command by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+<span data-ttu-id="82e63-103">此示例演示如何创建默认初始会话状态，如何将添加到 cmdlet [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)、 如何创建使用初始会话状态的运行空间以及如何运行通过使用命令[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)对象。</span><span class="sxs-lookup"><span data-stu-id="82e63-103">This sample shows how to create a default initial session state, how to add a cmdlet to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState), how to create a runspace that uses the initial session state, and how to run the command by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="354ff-104">要求</span><span class="sxs-lookup"><span data-stu-id="354ff-104">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="82e63-104">要求</span><span class="sxs-lookup"><span data-stu-id="82e63-104">Requirements</span></span>
 
-<span data-ttu-id="354ff-105">此示例要求 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="354ff-105">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="82e63-105">此示例要求 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="82e63-105">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="354ff-106">说明</span><span class="sxs-lookup"><span data-stu-id="354ff-106">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="82e63-106">说明</span><span class="sxs-lookup"><span data-stu-id="82e63-106">Demonstrates</span></span>
 
-<span data-ttu-id="354ff-107">此示例将演示如下。</span><span class="sxs-lookup"><span data-stu-id="354ff-107">This sample demonstrates the following.</span></span>
+<span data-ttu-id="82e63-107">此示例将演示如下。</span><span class="sxs-lookup"><span data-stu-id="82e63-107">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="354ff-108">创建[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)对象。</span><span class="sxs-lookup"><span data-stu-id="354ff-108">Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="82e63-108">创建[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)对象。</span><span class="sxs-lookup"><span data-stu-id="82e63-108">Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="354ff-109">将 cmdlet （由主机应用程序定义） 添加到[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)对象。</span><span class="sxs-lookup"><span data-stu-id="354ff-109">Adding a cmdlet (defined by the Host application) to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="82e63-109">将 cmdlet （由主机应用程序定义） 添加到[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)对象。</span><span class="sxs-lookup"><span data-stu-id="82e63-109">Adding a cmdlet (defined by the Host application) to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="354ff-110">创建[System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace)使用对象的对象。</span><span class="sxs-lookup"><span data-stu-id="354ff-110">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object that uses the object.</span></span>
+- <span data-ttu-id="82e63-110">创建[System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace)使用对象的对象。</span><span class="sxs-lookup"><span data-stu-id="82e63-110">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object that uses the object.</span></span>
 
-- <span data-ttu-id="354ff-111">创建[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)对象，它使用[System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace)对象。</span><span class="sxs-lookup"><span data-stu-id="354ff-111">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.</span></span>
+- <span data-ttu-id="82e63-111">创建[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)对象，它使用[System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace)对象。</span><span class="sxs-lookup"><span data-stu-id="82e63-111">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.</span></span>
 
-- <span data-ttu-id="354ff-112">将命令添加到的管道[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)对象。</span><span class="sxs-lookup"><span data-stu-id="354ff-112">Adding the command to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="82e63-112">将命令添加到的管道[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)对象。</span><span class="sxs-lookup"><span data-stu-id="82e63-112">Adding the command to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="354ff-113">从属性中提取[System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject)命令返回的对象。</span><span class="sxs-lookup"><span data-stu-id="354ff-113">Extracting properties from the [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
+- <span data-ttu-id="82e63-113">从属性中提取[System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject)命令返回的对象。</span><span class="sxs-lookup"><span data-stu-id="82e63-113">Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
 
-## <a name="example"></a><span data-ttu-id="354ff-114">示例</span><span class="sxs-lookup"><span data-stu-id="354ff-114">Example</span></span>
+## <a name="example"></a><span data-ttu-id="82e63-114">示例</span><span class="sxs-lookup"><span data-stu-id="82e63-114">Example</span></span>
 
-<span data-ttu-id="354ff-115">此示例将创建使用的运行空间[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)对象定义的运行空间打开时可用的元素。</span><span class="sxs-lookup"><span data-stu-id="354ff-115">This sample creates a runspace that uses an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened.</span></span> <span data-ttu-id="354ff-116">在此示例中，Get-proc cmdlet （由主机应用程序定义） 添加到初始会话状态，并且通过使用以同步方式运行 cmdlet [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)对象。</span><span class="sxs-lookup"><span data-stu-id="354ff-116">In this sample, the Get-Proc cmdlet (defined by the Host application) is added to the initial session state, and the cmdlet is run synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+<span data-ttu-id="82e63-115">此示例将创建使用的运行空间[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)对象定义的运行空间打开时可用的元素。</span><span class="sxs-lookup"><span data-stu-id="82e63-115">This sample creates a runspace that uses an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened.</span></span> <span data-ttu-id="82e63-116">在此示例中，Get-proc cmdlet （由主机应用程序定义） 添加到初始会话状态，并且通过使用以同步方式运行 cmdlet [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)对象。</span><span class="sxs-lookup"><span data-stu-id="82e63-116">In this sample, the Get-Proc cmdlet (defined by the Host application) is added to the initial session state, and the cmdlet is run synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -155,6 +155,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="354ff-117">另请参阅</span><span class="sxs-lookup"><span data-stu-id="354ff-117">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="82e63-117">另请参阅</span><span class="sxs-lookup"><span data-stu-id="82e63-117">See Also</span></span>
 
-[<span data-ttu-id="354ff-118">编写 Windows PowerShell 主机应用程序</span><span class="sxs-lookup"><span data-stu-id="354ff-118">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="82e63-118">编写 Windows PowerShell 主机应用程序</span><span class="sxs-lookup"><span data-stu-id="82e63-118">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)

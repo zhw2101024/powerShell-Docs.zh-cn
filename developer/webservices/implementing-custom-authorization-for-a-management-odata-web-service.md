@@ -8,20 +8,20 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ae37e3f3-5fd6-4ff6-bf66-a249ff96822b
 caps.latest.revision: 7
-ms.openlocfilehash: 5d6ad7f62c451a0013f6c52b294fac9abd0b4bf1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2afa0e79d9de781149f31a45666d13f98ca10a26
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862583"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057886"
 ---
-# <a name="implementing-custom-authorization-for-a-management-odata-web-service"></a><span data-ttu-id="84316-102">实现管理 OData Web 服务的自定义授权</span><span class="sxs-lookup"><span data-stu-id="84316-102">Implementing Custom Authorization for a Management OData web service</span></span>
+# <a name="implementing-custom-authorization-for-a-management-odata-web-service"></a><span data-ttu-id="18f12-102">实现管理 OData Web 服务的自定义授权</span><span class="sxs-lookup"><span data-stu-id="18f12-102">Implementing Custom Authorization for a Management OData web service</span></span>
 
-<span data-ttu-id="84316-103">使用 Windows PowerShell Web 服务需要第三方实现[Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)接口来公开 Windows PowerShell cmdlet。</span><span class="sxs-lookup"><span data-stu-id="84316-103">Using the Windows PowerShell Web Service requires a third party to implement the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface to expose Windows PowerShell cmdlets.</span></span> <span data-ttu-id="84316-104">此接口执行到 web 服务的用户授权。</span><span class="sxs-lookup"><span data-stu-id="84316-104">This interface performs user authorization to the web service.</span></span> <span data-ttu-id="84316-105">编写代码来实现接口之后，必须编译到要在 web 应用程序中使用的 DLL。</span><span class="sxs-lookup"><span data-stu-id="84316-105">After writing the code to implement the interface, you must compile it into a DLL to be used in the web application.</span></span>
+<span data-ttu-id="18f12-103">使用 Windows PowerShell Web 服务需要第三方实现[Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)接口来公开 Windows PowerShell cmdlet。</span><span class="sxs-lookup"><span data-stu-id="18f12-103">Using the Windows PowerShell Web Service requires a third party to implement the [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface to expose Windows PowerShell cmdlets.</span></span> <span data-ttu-id="18f12-104">此接口执行到 web 服务的用户授权。</span><span class="sxs-lookup"><span data-stu-id="18f12-104">This interface performs user authorization to the web service.</span></span> <span data-ttu-id="18f12-105">编写代码来实现接口之后，必须编译到要在 web 应用程序中使用的 DLL。</span><span class="sxs-lookup"><span data-stu-id="18f12-105">After writing the code to implement the interface, you must compile it into a DLL to be used in the web application.</span></span>
 
-## <a name="pass-through-authorization"></a><span data-ttu-id="84316-106">直通授权</span><span class="sxs-lookup"><span data-stu-id="84316-106">Pass-through authorization</span></span>
+## <a name="pass-through-authorization"></a><span data-ttu-id="18f12-106">直通授权</span><span class="sxs-lookup"><span data-stu-id="18f12-106">Pass-through authorization</span></span>
 
-<span data-ttu-id="84316-107">最简单的方法实现[Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)接口是授权的所有用户的直通实现。</span><span class="sxs-lookup"><span data-stu-id="84316-107">The simplest way to implement the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface is a pass-through implementation that authorizes all users.</span></span> <span data-ttu-id="84316-108">此示例提供了不安全和 s 仅作为 llustration 如何实现该接口提供。</span><span class="sxs-lookup"><span data-stu-id="84316-108">This example provides no security, and s provided only as an llustration of how to implement the interface.</span></span> <span data-ttu-id="84316-109">实现[Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)接口必须重写两个方法：[Microsoft.Management.Odata.Customauthorization.Authorizeuser\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)并[Microsoft.Management.Odata.Customauthorization.Getmembershipid\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId)。</span><span class="sxs-lookup"><span data-stu-id="84316-109">An implementation of the  [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface must override two methods: [Microsoft.Management.Odata.Customauthorization.Authorizeuser\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) and [Microsoft.Management.Odata.Customauthorization.Getmembershipid\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId).</span></span> <span data-ttu-id="84316-110">在此示例中， [Microsoft.Management.Odata.Customauthorization.Authorizeuser\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)始终返回**System.Security.Principal.WindowsIdentity**对象与当前用户相关联.</span><span class="sxs-lookup"><span data-stu-id="84316-110">In this example, the [Microsoft.Management.Odata.Customauthorization.Authorizeuser\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) always returns the **System.Security.Principal.WindowsIdentity** object associated with the current user.</span></span>
+<span data-ttu-id="18f12-107">最简单的方法实现[Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)接口是授权的所有用户的直通实现。</span><span class="sxs-lookup"><span data-stu-id="18f12-107">The simplest way to implement the [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface is a pass-through implementation that authorizes all users.</span></span> <span data-ttu-id="18f12-108">此示例提供了不安全和 s 仅作为举例说明了如何实现该接口提供。</span><span class="sxs-lookup"><span data-stu-id="18f12-108">This example provides no security, and s provided only as an illustration of how to implement the interface.</span></span> <span data-ttu-id="18f12-109">实现[Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)接口必须重写两个方法：[Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)并[Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId)。</span><span class="sxs-lookup"><span data-stu-id="18f12-109">An implementation of the  [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface must override two methods: [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) and [Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId).</span></span> <span data-ttu-id="18f12-110">在此示例中， [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)始终返回**System.Security.Principal.WindowsIdentity**对象与当前用户相关联。</span><span class="sxs-lookup"><span data-stu-id="18f12-110">In this example, the [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) always returns the **System.Security.Principal.WindowsIdentity** object associated with the current user.</span></span>
 
 ```csharp
 namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPERLINK "VBScript:u(%227%22,30)" OData. HYPERLINK "VBScript:u(%227%22,36)" BasicPlugins
@@ -68,7 +68,7 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
         /// <summary>
 
-        /// Default managemnet system state key
+        /// Default management system state key
 
         /// </summary>
 
@@ -132,9 +132,9 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
 ```
 
-### <a name="role-based-authorization"></a><span data-ttu-id="84316-111">基于角色的授权</span><span class="sxs-lookup"><span data-stu-id="84316-111">Role-based authorization</span></span>
+### <a name="role-based-authorization"></a><span data-ttu-id="18f12-111">基于角色的授权</span><span class="sxs-lookup"><span data-stu-id="18f12-111">Role-based authorization</span></span>
 
-<span data-ttu-id="84316-112">下面的示例实现基于角色的授权策略。</span><span class="sxs-lookup"><span data-stu-id="84316-112">The following example implements a role-based authorization policy.</span></span> <span data-ttu-id="84316-113">驻留在 web.config 的主应用程序目录中的 XML 文件和 MOF 和 XML 映射架构文件中定义策略。</span><span class="sxs-lookup"><span data-stu-id="84316-113">The policy is defined in an XML file that resides in the main application directory with the web.config and MOF and XML mapping schema files.</span></span> <span data-ttu-id="84316-114">有关如何配置授权架构文件的信息，请参阅[基于配置的角色的授权](./configuring-role-based-authorization.md)。</span><span class="sxs-lookup"><span data-stu-id="84316-114">For information about how to configure the authorization schema file, see [Configuring Role-based Authorization](./configuring-role-based-authorization.md).</span></span> <span data-ttu-id="84316-115">该示例的第一个部分实现[Microsoft.Management.Odata.Customauthorization.Authorizeuser\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)并[Microsoft.Management.Odata.Customauthorization.Getmembershipid\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId)方法。</span><span class="sxs-lookup"><span data-stu-id="84316-115">The first part of the sample implements the [Microsoft.Management.Odata.Customauthorization.Authorizeuser\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) and [Microsoft.Management.Odata.Customauthorization.Getmembershipid\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) methods.</span></span> <span data-ttu-id="84316-116">在这种情况下，接口方法调用方法`RbacSystem`执行的检查用户的权限的实际工作的类 （定义如下）。</span><span class="sxs-lookup"><span data-stu-id="84316-116">In this case, the interface methods call methods in the `RbacSystem` class (defined below) that do the actual work of checking the permissions for the user.</span></span>
+<span data-ttu-id="18f12-112">下面的示例实现基于角色的授权策略。</span><span class="sxs-lookup"><span data-stu-id="18f12-112">The following example implements a role-based authorization policy.</span></span> <span data-ttu-id="18f12-113">驻留在 web.config 的主应用程序目录中的 XML 文件和 MOF 和 XML 映射架构文件中定义策略。</span><span class="sxs-lookup"><span data-stu-id="18f12-113">The policy is defined in an XML file that resides in the main application directory with the web.config and MOF and XML mapping schema files.</span></span> <span data-ttu-id="18f12-114">有关如何配置授权架构文件的信息，请参阅[基于配置的角色的授权](./configuring-role-based-authorization.md)。</span><span class="sxs-lookup"><span data-stu-id="18f12-114">For information about how to configure the authorization schema file, see [Configuring Role-based Authorization](./configuring-role-based-authorization.md).</span></span> <span data-ttu-id="18f12-115">该示例的第一个部分实现[Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)并[Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId)方法。</span><span class="sxs-lookup"><span data-stu-id="18f12-115">The first part of the sample implements the [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) and [Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) methods.</span></span> <span data-ttu-id="18f12-116">在这种情况下，接口方法调用方法`RbacSystem`执行的检查用户的权限的实际工作的类 （定义如下）。</span><span class="sxs-lookup"><span data-stu-id="18f12-116">In this case, the interface methods call methods in the `RbacSystem` class (defined below) that do the actual work of checking the permissions for the user.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
@@ -189,7 +189,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 }
 ```
 
-<span data-ttu-id="84316-117">以下示例创建一个类，用以分析 XML 文件中的授权策略。</span><span class="sxs-lookup"><span data-stu-id="84316-117">The following example creates a class that parses authorization policy in the XML file.</span></span>
+<span data-ttu-id="18f12-117">以下示例创建一个类，用以分析 XML 文件中的授权策略。</span><span class="sxs-lookup"><span data-stu-id="18f12-117">The following example creates a class that parses authorization policy in the XML file.</span></span>
 
 ```csharp
 //-----------------------------------------------------------------------
@@ -209,7 +209,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 
     /// <summary>
     /// Keeps Configuration for the RbacSystem
-    /// It reads the RacSystem configuration for configuratin file and creates RbacConfiguration
+    /// It reads the RacSystem configuration for configuration file and creates RbacConfiguration
     /// </summary>
     [Serializable]
     [XmlRoot("RbacConfiguration")]
@@ -374,7 +374,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 }
 ```
 
- <span data-ttu-id="84316-118">下面的类分别表示组和用户。</span><span class="sxs-lookup"><span data-stu-id="84316-118">The following classes represent groups and users, respectively.</span></span>
+ <span data-ttu-id="18f12-118">下面的类分别表示组和用户。</span><span class="sxs-lookup"><span data-stu-id="18f12-118">The following classes represent groups and users, respectively.</span></span>
 
 ```csharp
 //-----------------------------------------------------------------------
@@ -719,7 +719,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
             /// Indicates whether the current object is equal to another object of the object type.
             /// </summary>
             /// <param name="other">Other object instance</param>
-            /// <returns>true, if both instace are same else false</returns>
+            /// <returns>true, if both instance are same else false</returns>
             public override bool Equals(object other)
             {
                 return this.Equals(other as RbacUserInfo);
@@ -738,4 +738,4 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 }
 ```
 
-<span data-ttu-id="84316-119">最后，RbacSystem 类实现方法，检查用户的权限的工作并返回与方法的实现中定义的授权状态[Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)接口。</span><span class="sxs-lookup"><span data-stu-id="84316-119">Finally, the RbacSystem class implements methods that do the work of checking the permissions for the user and return the authorization status to the methods defined in the implementation of the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface.</span></span>
+<span data-ttu-id="18f12-119">最后，RbacSystem 类实现方法，检查用户的权限的工作并返回与方法的实现中定义的授权状态[Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)接口。</span><span class="sxs-lookup"><span data-stu-id="18f12-119">Finally, the RbacSystem class implements methods that do the work of checking the permissions for the user and return the authorization status to the methods defined in the implementation of the [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface.</span></span>
