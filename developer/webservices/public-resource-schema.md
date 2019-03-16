@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e67298ee-a773-4402-8afb-d97ad0e030e5
 caps.latest.revision: 4
-ms.openlocfilehash: a9204ca7b28fc5792ef9bd18f6b0b24964de7386
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c7e20ff0f36e8cab2d414ff2e5924b3359ad9c60
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859543"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057240"
 ---
 # <a name="public-resource-schema"></a>公共资源架构
 
@@ -21,7 +21,7 @@ ms.locfileid: "56859543"
 
 ## <a name="defining-a-resource"></a>定义资源
 
-每个资源对应于 Windows PowerShell cmdlet 返回一个对象。 在 publc 资源 MOF 文件中，通过声明一个类来定义资源。 类包含对应于该对象的属性的属性。 例如，在以下示例中， [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)类由以下 MOF。
+每个资源对应于 Windows PowerShell cmdlet 返回一个对象。 在公共资源的 MOF 文件中，通过声明一个类来定义资源。 类包含对应于该对象的属性的属性。 例如，在以下示例中， [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)类由以下 MOF。
 
 ```csharp
 class PswsTest_Process
@@ -55,7 +55,7 @@ class PswsTest_ProcessModule
 };
 ```
 
-若要声明为复杂类型的实体属性，将其声明为`string`类型具有`EmbeddedInstance`限定符，包括复杂类型的名称。 以下示例 hshows 属性声明的`PswsTest_ProcessModule`上一示例中声明的类型。
+若要声明为复杂类型的实体属性，将其声明为`string`类型具有`EmbeddedInstance`限定符，包括复杂类型的名称。 下面的示例演示的属性声明`PswsTest_ProcessModule`上一示例中声明的类型。
 
 ```csharp
 [Required, EmbeddedInstance("PswsTest_ProcessModule")] String Modules[];
@@ -63,7 +63,7 @@ class PswsTest_ProcessModule
 
 ### <a name="associating-entities"></a>将实体相关联
 
-可以使用关联和 AssocationClass 限定符将关联的两个实体。 有关详细信息，请参阅[相关联的管理 OData 实体](./associating-management-odata-entities.md)。
+可以使用关联和关联类限定符将关联的两个实体。 有关详细信息，请参阅[相关联的管理 OData 实体](./associating-management-odata-entities.md)。
 
 ### <a name="derived-types"></a>派生的类型
 
@@ -72,17 +72,16 @@ class PswsTest_ProcessModule
 ```csharp
 Class Product {
 
-[Key] String ProductName;
+    [Key] String ProductName;
 
 };
 
 Class DairyProduct : Product {
 
-Uint16 PercentFat;
+    Uint16 PercentFat;
 };
 Class POPProduct : Product {
 
-Boolean IsCarbonated;
+    Boolean IsCarbonated;
 };
-
 ```

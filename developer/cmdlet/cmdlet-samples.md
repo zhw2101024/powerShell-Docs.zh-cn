@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b99d53fc-0af9-426b-82ce-09955e031d4b
 caps.latest.revision: 13
-ms.openlocfilehash: d919d4ad8554e762230c1448d81b50e27c38ba99
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0fa4a5f804586c51ae6a36121f9aab041b0989cc
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863363"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058039"
 ---
 # <a name="cmdlet-samples"></a>Cmdlet 示例
 
 本部分介绍 Windows PowerShell 2.0 SDK 中提供的示例代码。 可以将代码复制从主题中本部分中，或打开随 SDK 一起安装的源文件。 [Windows PowerShell 2.0 软件开发工具包 (SDK)](https://www.microsoft.com/en-us/download/details.aspx?id=2560)提供自述文件、 源文件，以及每个示例的 Visual Studio 项目文件。 已安装 sdk，可以找到下面的示例`<Drive>:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`文件夹。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>本部分内容
 
 [GetProcessSample01 示例](./getprocesssample01-sample.md)此示例演示如何编写检索本地计算机上的进程的 cmdlet。
 
@@ -39,7 +39,7 @@ ms.locfileid: "56863363"
 
 [StopProcessSample04 示例](./stopprocesssample04-sample.md)此示例演示如何编写声明参数集，指定默认参数集，它可以接受输入的对象的 cmdlet。
 
-[Events01 示例](./events01-sample.md)此示例演示如何创建 cmdlet 引发的事件，则允许用户注册[System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher)。 此 cmdlet 的用户可以例如，注册特定目录下创建一个文件时要执行的操作。 此示例从派生[Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)基类。
+[Events01 示例](./events01-sample.md)此示例演示如何创建 cmdlet 引发的事件，则允许用户注册[System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher)。 此 cmdlet 的用户可以例如，注册特定目录下创建一个文件时要执行的操作。 此示例从派生[Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)基类。
 
 ## <a name="see-also"></a>另请参阅
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 64718f8e-de60-4fb7-894d-2975b5257ff6
 caps.latest.revision: 4
-ms.openlocfilehash: ecc0c5c817074782b6c796b24af98639e493880c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 8e1d2feff0665f169966f7d5e99540088e66bdfb
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853083"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056220"
 ---
 # <a name="scheduling-jobs-with-the-powershell-api"></a>使用 PowerShell API 的计划作业
 
@@ -42,9 +42,9 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
 
 通过创建参数字典定义的 PowerShell 作业。 支持以下参数：
 
-|参数名称|描述|
+|参数名称|说明|
 |--------------------|-----------------|
-|**名称**|作业的名称。|
+|**Name**|作业的名称。|
 |**ScriptBock**|指定对作业功能的 PowerShell 脚本块。|
 |**FilePath**|包含 PowerShell 脚本块来指定作业的文件的路径。|
 |**InitializationScript**|PowerShell 脚本块的初始化作业。|
@@ -188,7 +188,7 @@ namespace Microsoft.Samples.PowerShell.ScheduledJob
                 // Wait for Task Scheduler to run the PowerShell job.
                 // This should happen in 20 seconds and then the job takes about 5 seconds to run.
                 // If PowerShell job task doesn't run try increasing the trigger time in the
-                // ScheduledJobTrigger object. 
+                // ScheduledJobTrigger object.
                 // You can run this task manually from the Task Scheduler UI.
                 for (int count = 1; count < 31; ++count)
                 {
@@ -205,8 +205,8 @@ namespace Microsoft.Samples.PowerShell.ScheduledJob
                 // job store and the directory location is the current user local app
                 // data ($env:LOCALAPPDATA).
                 // This job store can be accessed through the ScheduledJobSourceAdapter class.
-                ScheduledJobSourceAdapter schedJobSourceAdpater = new ScheduledJobSourceAdapter();
-                IList<Job2> jobRuns = schedJobSourceAdpater.GetJobs();
+                ScheduledJobSourceAdapter schedJobSourceAdapter = new ScheduledJobSourceAdapter();
+                IList<Job2> jobRuns = schedJobSourceAdapter.GetJobs();
                 foreach (var jobRun in jobRuns)
                 {
                     // Check for jobs in finished state.

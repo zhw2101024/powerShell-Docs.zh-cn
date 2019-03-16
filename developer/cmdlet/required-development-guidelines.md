@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 41d2b308-a36a-496f-8542-666b6a21eedc
 caps.latest.revision: 19
-ms.openlocfilehash: a4b228be91bba27670b26fe21e765ae942afe968
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3f6bcd2e4ef4d9c404b3a5deeaa9f25d3fa42ec1
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860713"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056509"
 ---
 # <a name="required-development-guidelines"></a>必需的开发指南
 
@@ -107,7 +107,7 @@ Cmdlet 属性中指定的谓词必须来自已识别组提供的 Windows PowerSh
 |%|百分比符号|
 |+|加号|
 |=|等号|
-|~|tilda|
+|~|波形符|
 
 ### <a name="parameters-names-that-cannot-be-used-rd03"></a>不能使用的参数名称 (RD03)
 
@@ -122,9 +122,9 @@ Windows PowerShell 提供了一组通用的所有 cmdlet 参数加上在特定�
 > [!NOTE]
 > 如果在 cmdlet 类 Cmdlet 属性指示该 cmdlet 支持调用[System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法，并且该 cmdlet 无法调用[System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法，用户可能意外修改系统。
 
-使用[System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)系统进行任何修改的方法。 用户首选项和`Whatif`参数控制[System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 与此相反， [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)调用具有潜在危险的修改，执行其他检查。 此方法不受任何用户首选项或`Whatif`参数。 如果你的 cmdlet 调用[System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，它应具有`Force`参数跳过对这两种方法的调用和，继续执行该操作。 这非常重要，因为它允许您以非交互式脚本和主机中使用的 cmdlet。
+使用[System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)系统进行任何修改的方法。 用户首选项和`WhatIf`参数控制[System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 与此相反， [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)调用具有潜在危险的修改，执行其他检查。 此方法不受任何用户首选项或`WhatIf`参数。 如果你的 cmdlet 调用[System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，它应具有`Force`参数跳过对这两种方法的调用和，继续执行该操作。 这非常重要，因为它允许您以非交互式脚本和主机中使用的 cmdlet。
 
-如果你 cmdlet 支持这些调用，用户可以确定是否应实际执行该操作。 例如， [Stop-process](/powershell/module/microsoft.powershell.management/stop-process) cmdlet 可调用[System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法之前停止的一组关键进程，包括 Winlogon，系统和Spoolsrv 进程。
+如果你 cmdlet 支持这些调用，用户可以确定是否应实际执行该操作。 例如， [Stop-process](/powershell/module/microsoft.powershell.management/stop-process) cmdlet 可调用[System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法之前停止的一组关键进程，包括 Winlogon，系统和Spoolsv 进程。
 
 支持这些方法的详细信息，请参阅[请求确认](./requesting-confirmation-from-cmdlets.md)。
 

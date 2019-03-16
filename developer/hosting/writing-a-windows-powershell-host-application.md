@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 81aeafad-dbc3-4712-8bb9-e6a417be260f
 caps.latest.revision: 15
-ms.openlocfilehash: 2039e181becd1b39fc3d6cf0cdbcf0c20e9fc206
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2df5a59833fcdd58c6b2afbb4882111592fb3d76
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863173"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056424"
 ---
 # <a name="writing-a-windows-powershell-host-application"></a>编写 Windows PowerShell 主机应用程序
 
@@ -21,7 +21,7 @@ ms.locfileid: "56863173"
 
 以下主题说明如何创建托管的应用程序
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>本部分内容
 
 [Windows PowerShell 主机快速入门](./windows-powershell-host-quickstart.md)提供说明和代码示例来帮助你开始创建托管应用程序。
 
@@ -29,7 +29,7 @@ ms.locfileid: "56863173"
 
 [添加和调用命令](./adding-and-invoking-commands.md)介绍了如何创建和运行命令管道中在主机应用程序...
 
-[创建远程运行空间](./creating-remote-runspaces.md)Expains 如何连接到远程计算机的运行空间。
+[创建远程运行空间](./creating-remote-runspaces.md)介绍了如何连接到远程计算机的运行空间。
 
 [创建自定义用户界面](./creating-a-custom-user-interface.md)介绍自定义用户接口，并提供了指向示例。
 

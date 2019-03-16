@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], property provider
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
-ms.openlocfilehash: 4ed15dabffa933dee9becf2f839887eb9108775d
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 6ec0752a9ae06c5c2cdd1a1851caeeff52d8eb74
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57430003"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055149"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>创建 Windows PowerShell 属性提供程序
 
@@ -66,7 +66,7 @@ ms.locfileid: "57430003"
 
 若要检索属性，该提供程序必须实现[System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)方法，以支持来自调用`Get-ItemProperty`cmdlet。 此方法检索位于指定的提供程序内部路径 （完全限定的） 处的项的属性。
 
-`providerSpecificPickList`参数指示要检索的属性。 如果此参数为`null`或为空，该方法应检索的所有属性。 此外， [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)的实例将写入[System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject)表示的对象检索到的属性的属性包。 该方法应返回任何内容。
+`providerSpecificPickList`参数指示要检索的属性。 如果此参数为`null`或为空，该方法应检索的所有属性。 此外， [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)的实例将写入[System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject)表示的对象检索到的属性的属性包。 该方法应返回任何内容。
 
 建议的实现[System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)选取列表中支持的每个元素的属性名的通配符扩展。 若要执行此操作，请使用[System.Management.Automation.Wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern)类来执行通配符模式匹配。
 
@@ -92,7 +92,7 @@ ms.locfileid: "57430003"
 
 ## <a name="setting-properties"></a>设置属性
 
-若要设置的属性，Windows PowerShell 属性提供程序必须实现[System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)方法，以支持来自调用`Set-ItemProperty`cmdlet。 此方法在指定的路径，设置项的一个或多个属性，并覆盖所需的提供的属性。 [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)还将写入的实例[System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject)对象，表示更新后的一个属性包属性。
+若要设置的属性，Windows PowerShell 属性提供程序必须实现[System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)方法，以支持来自调用`Set-ItemProperty`cmdlet。 此方法在指定的路径，设置项的一个或多个属性，并覆盖所需的提供的属性。 [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)还将写入的实例[System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject)对象，表示更新后的一个属性包属性。
 
 下面是的默认实现[System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) TemplateProvider.cs 文件提供的 Windows PowerShell 中。
 
@@ -106,9 +106,9 @@ ms.locfileid: "57430003"
 
 - 默认情况下，重写此方法应检索除非用户隐藏的对象的读取器[System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)属性设置为`true`。 如果路径表示对用户隐藏的项写入错误和[System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)设置为`false`。
 
-- 实现[System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)方法应调用[System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)和到数据存储进行任何更改之前验证它的返回值。 此方法用于确认操作的执行时更改为系统状态，例如，重命名文件。 [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)发送要更改为具有 Windows PowerShell 运行时，可处理任何命令行设置或首选项变量中的用户的资源的名称确定应显示的内容。
+- 实现[System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)方法应调用[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ，并向数据存储区进行任何更改之前验证它的返回值。 此方法用于确认操作的执行时更改为系统状态，例如，重命名文件。 [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)发送给用户，使用 Windows PowerShell 运行时，可处理任何命令行设置或首选项变量在确定要更改的资源的名称应显示的内容。
 
-  在调用[System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)返回`true`，则可以进行具有潜在危险的系统修改， [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)方法应调用[System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)方法。 此方法将一条确认消息发送到用户允许其他反馈，以指示应继续执行该操作。
+  在调用[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)返回`true`，则可以进行具有潜在危险的系统修改， [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)方法应调用[System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)方法。 此方法将一条确认消息发送到用户允许其他反馈，以指示应继续执行该操作。
 
 ## <a name="attaching-dynamic-parameters-for-the-set-itemproperty-cmdlet"></a>Set-itemproperty cmdlet 附加动态参数
 
@@ -134,9 +134,9 @@ ms.locfileid: "57430003"
 
 - 默认情况下，重写此方法应检索除非用户隐藏的对象的读取器[System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)属性设置为`true`。 如果路径表示对用户隐藏的项写入错误和[System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)设置为`false`。
 
-- 实现[System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)方法应调用[System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)和到数据存储进行任何更改之前验证它的返回值。 此方法用于更改系统状态，例如清除内容之前确认执行操作。 [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)发送要更改对用户来说，与 Windows PowerShell 运行时将考虑在内的任何命令行设置或首选项变量中的资源的名称确定应显示的内容。
+- 实现[System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)方法应调用[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)和到数据存储进行任何更改之前验证它的返回值。 此方法用于更改系统状态，例如清除内容之前确认执行操作。 [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)发送要更改对用户来说，与 Windows PowerShell 运行时将考虑在内的任何命令行设置或首选项变量中的资源的名称确定应显示的内容。
 
-  在调用[System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)返回`true`，则可以进行具有潜在危险的系统修改， [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)方法应调用[System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)方法。 此方法将一条确认消息发送到用户允许其他反馈，以指示应继续执行该具有潜在危险的操作。
+  在调用[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)返回`true`，则可以进行具有潜在危险的系统修改， [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)方法应调用[System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)方法。 此方法将一条确认消息发送到用户允许其他反馈，以指示应继续执行该具有潜在危险的操作。
 
 ## <a name="attaching-dynamic-parameters-to-the-clear-itemproperty-cmdlet"></a>附加到 Clear-itemproperty Cmdlet 的动态参数
 

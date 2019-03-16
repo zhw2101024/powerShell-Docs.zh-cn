@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 524fd900-c0fe-4d13-87f2-14903a8fd5a4
 caps.latest.revision: 5
-ms.openlocfilehash: 2d2d6a32ac910ecc0fc3b6f1e78cdde54c21b427
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bf0a73267b3cad1f50d983ebed53318ec98180e0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858303"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056458"
 ---
 # <a name="writing-a-container-provider"></a>编写容器提供程序
 
@@ -44,7 +44,7 @@ ms.locfileid: "56858303"
 
 ### <a name="implementing-getchilditems"></a>实现 GetChildItems
 
-PowerShell 引擎调用[System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法时用户调用[Microsoft.Powershell.Commands.Get Childitem](/dotnet/api/Microsoft.PowerShell.Commands.Get-ChildItem)cmdlet。 此方法获取指定路径处的项的子级的项。
+PowerShell 引擎调用[System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法时用户调用[Microsoft.PowerShell.Commands.Get Childitem](/dotnet/api/Microsoft.PowerShell.Commands.Get-ChildItem)cmdlet。 此方法获取指定路径处的项的子级的项。
 
 在访问数据库示例中的行为[System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法取决于指定项的类型。 如果该项是驱动器，然后子级是，并且该方法从数据库中返回的表的集。 如果指定的项是一个表，然后子级都将表中的行。 如果该项是一个行，然后它没有任何子级，并且该方法返回仅该行。 所有子项目都发送回的 PowerShell 引擎[System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)方法。
 
@@ -155,7 +155,7 @@ protected override void GetChildNames(string path,
 
 ### <a name="implementing-newitem"></a>实现 NewItem
 
-[System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法在指定路径中创建指定类型的新项。 PowerShell 引擎调用此方法，当用户调用[Microsoft.Powershell.Commands.New 项](/dotnet/api/Microsoft.PowerShell.Commands.New-Item)cmdlet。
+[System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法在指定路径中创建指定类型的新项。 PowerShell 引擎调用此方法，当用户调用[Microsoft.PowerShell.Commands.New 项](/dotnet/api/Microsoft.PowerShell.Commands.New-Item)cmdlet。
 
 在此示例中，该方法实现逻辑来确定的路径和类型匹配。 也就是说，正下方的驱动器 （数据库），可以创建仅一个表并仅行可以在下表中创建。 如果指定的路径和项类型不匹配以这种方式，该方法将引发异常。
 
@@ -333,7 +333,7 @@ protected override void NewItem(string path, string type,
 
 ### <a name="implementing-copyitem"></a>实现 CopyItem
 
-[System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)将指定的项复制到指定的路径。 PowerShell 引擎调用此方法，当用户调用[Microsoft.Powershell.Commands.Copy 项](/dotnet/api/Microsoft.PowerShell.Commands.Copy-Item)cmdlet。 此方法也可以是递归的复制所有项子级除了本身的项。
+[System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)将指定的项复制到指定的路径。 PowerShell 引擎调用此方法，当用户调用[Microsoft.PowerShell.Commands.Copy 项](/dotnet/api/Microsoft.PowerShell.Commands.Copy-Item)cmdlet。 此方法也可以是递归的复制所有项子级除了本身的项。
 
 类似于[System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法，此方法将执行逻辑，以确保指定的项被复制到其中的路径的正确类型。 例如，如果目标路径是一个表，要复制的项必须是一行。
 
@@ -466,7 +466,7 @@ protected override void CopyItem(string path, string copyPath, bool recurse)
 
 ### <a name="implementing-removeitem"></a>实现 RemoveItem
 
-[System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)方法移除位于指定路径处的项。 PowerShell 引擎调用此方法，当用户调用[Microsoft.Powershell.Commands.Remove 项](/dotnet/api/Microsoft.PowerShell.Commands.Remove-Item)cmdlet。
+[System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)方法移除位于指定路径处的项。 PowerShell 引擎调用此方法，当用户调用[Microsoft.PowerShell.Commands.Remove 项](/dotnet/api/Microsoft.PowerShell.Commands.Remove-Item)cmdlet。
 
 ```csharp
 protected override void RemoveItem(string path, bool recurse)

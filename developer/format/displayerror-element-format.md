@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 45c45800-a87d-456e-b07c-12d4d8c27c67
 caps.latest.revision: 8
-ms.openlocfilehash: 431e5d8407b9f689a5224b329d8c7b52802e19e1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2c6a3d678ca68dc0d189f6ab981fdea5fef894cb
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854913"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056475"
 ---
 # <a name="displayerror-element-format"></a>DisplayError Element (Format)
 
 指定当出错时显示一段数据显示 #ERR 的字符串。
 
-配置元素 （格式） DefaultSettings 元素 （格式） DisplayError 元素 (Frmat)
+配置元素 （格式） DefaultSettings 元素 （格式） DisplayError 元素 （格式）
 
 ## <a name="syntax"></a>语法
 
@@ -31,7 +31,7 @@ ms.locfileid: "56854913"
 
 以下各节描述了特性、 子元素和父元素的`DisplayError`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
@@ -41,7 +41,7 @@ ms.locfileid: "56854913"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[DefaultSettings 元素 （格式）](./defaultsettings-element-format.md)|定义应用于的格式设置文件的所有视图的常见设置。|
 

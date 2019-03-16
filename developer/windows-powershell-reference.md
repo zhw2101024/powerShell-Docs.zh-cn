@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell SDK
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
-ms.openlocfilehash: dfda6cb68b089a30a156760345420ee80d1d3ae9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 86595ebaac32318a4e3b9a3c4b295c73fb2e1c75
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862103"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055489"
 ---
 # <a name="windows-powershell-reference"></a>Windows PowerShell 参考
 
@@ -47,10 +47,10 @@ Windows PowerShell SDK，除了以下资源提供的详细信息。
 
 [System.Management.Automation.Provider](/dotnet/api/System.Management.Automation.Provider)此命名空间包含类、 枚举和实现 Windows PowerShell 提供程序所需的接口。 具体而言， [System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)类是从所有 Windows PowerShell 提供程序类必须派生的基类。
 
-[Microsoft.Powershell.Commands](/dotnet/api/Microsoft.PowerShell.Commands)此命名空间包含的 cmdlet 和提供程序通过 Windows PowerShell 实现的类。 同样，建议您创建*YourName*。命令为您实现这些 cmdlet 的命名空间。
+[Microsoft.PowerShell.Commands](/dotnet/api/Microsoft.PowerShell.Commands)此命名空间包含的 cmdlet 和提供程序通过 Windows PowerShell 实现的类。 同样，建议您创建*YourName*。命令为您实现这些 cmdlet 的命名空间。
 
 [System.Management.Automation.Host](/dotnet/api/System.Management.Automation.Host)此命名空间包含类、 枚举和接口，此 cmdlet 将使用来定义用户与 Windows PowerShell 之间的交互。
 
-[System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal)此命名空间包含由其他命名空间类的基类。 例如， [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute)类是基类[System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute)类。
+[System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal)此命名空间包含由其他命名空间类的基类。 例如， [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute)类是基类[System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)类。
 
 [System.Management.Automation.Runspaces](/dotnet/api/System.Management.Automation.Runspaces)此命名空间包含类、 枚举和接口用于创建 Windows PowerShell 运行空间。 在此上下文中，Windows PowerShell 运行空间是在其中一个或多个 Windows PowerShell 管道调用 cmdlet 的上下文。 也就是说，cmdlet 适用的 Windows PowerShell 运行空间上下文中。 有关详细信息 aboutWindows PowerShell 运行空间，请参阅[Windows PowerShell 运行空间](http://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9)。

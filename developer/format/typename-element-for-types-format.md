@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0595b99e-b438-4240-b47b-555cf0316f33
 caps.latest.revision: 15
-ms.openlocfilehash: 4f463ac6b70a00f628c5b93b112c5fa510ff3bfb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bd5baa03c2050b2c3bbe1d7697c253d923175d39
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853573"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057920"
 ---
 # <a name="typename-element-for-types-format"></a>TypeName Element for Types (Format)
 
@@ -31,7 +31,7 @@ ms.locfileid: "56853573"
 
 以下各节描述了特性、 子元素和父元素的`TypeName`元素。 至少一个`TypeName`元素必须包含在选择集中。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
@@ -41,7 +41,7 @@ ms.locfileid: "56853573"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[类型元素 （格式）](./types-element-for-selectionset-format.md)|定义集内所选内容的.NET 对象。|
 
@@ -83,4 +83,4 @@ ms.locfileid: "56853573"
 
 [类型元素 （格式）](./types-element-for-selectionset-format.md)
 
-[编写 Windows PowDefining 的一组 ObjecterShell 格式设置文件](./writing-a-powershell-formatting-file.md)
+[编写 Windows PowerShell 格式设置文件](./writing-a-powershell-formatting-file.md)

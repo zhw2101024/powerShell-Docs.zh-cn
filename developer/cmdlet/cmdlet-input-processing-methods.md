@@ -10,12 +10,12 @@ helpviewer_keywords:
 - virtual methods (PowerShell SDK]
 ms.assetid: b0bb8172-c9fa-454b-9f1b-57c3fe60671b
 caps.latest.revision: 12
-ms.openlocfilehash: 7f8d25e03707052b1d5b62e245caae360da11d0b
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 065214647dfa6d376b727930fe75140911095faf
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794937"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059365"
 ---
 # <a name="cmdlet-input-processing-methods"></a>Cmdlet 输入处理方法
 
@@ -63,7 +63,7 @@ protected override void ProcessRecord()
 
 Cmdlet 应重写[System.Management.Automation.Cmdlet.Endprocessing%2A？Displayproperty =](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)方法添加有效的 cmdlet 已处理的所有记录的任何后续处理操作。 例如，你的 cmdlet 可能需要在完成后清理对象变量处理。
 
-当 Windows PowerShell 处理命令管道时，Windows PowerShell 调用此方法一次管道中的 cmdlet 的每个实例。 但是，务必记住，Windows PowerShell 运行时将不会调用[System.Management.Automation.Cmdlet.Endprocessing%2A？Displayproperty =](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)方法，如果该 cmdlet 通过其输入处理正中取消或如果终止该 cmdlet 的任何部分中会发生错误。 出于此原因，应实现完整的 cmdlet，需要对象清理[System.Idisposable](/dotnet/api/System.IDisposable)模式，包括一个终结器，以便在运行时可以同时调用[System.Management.Automation.Cmdlet.Endprocessing%2A？Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)并[System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose)末尾的处理方法。 有关 Windows PowerShell 如何调用命令管道的详细信息，请参阅[Cmdlet 处理生命周期](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5)。
+当 Windows PowerShell 处理命令管道时，Windows PowerShell 调用此方法一次管道中的 cmdlet 的每个实例。 但是，务必记住，Windows PowerShell 运行时将不会调用[System.Management.Automation.Cmdlet.Endprocessing%2A？Displayproperty =](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)方法，如果该 cmdlet 通过其输入处理正中取消或如果终止该 cmdlet 的任何部分中会发生错误。 出于此原因，应实现完整的 cmdlet，需要对象清理[System.IDisposable](/dotnet/api/System.IDisposable)模式，包括一个终结器，以便在运行时可以同时调用[System.Management.Automation.Cmdlet.Endprocessing%2A？Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)并[System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose)末尾的处理方法。 有关 Windows PowerShell 如何调用命令管道的详细信息，请参阅[Cmdlet 处理生命周期](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5)。
 
 下面的代码演示一种实现[System.Management.Automation.Cmdlet.Processrecord%2A？Displayproperty =](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0)方法。
 
@@ -88,6 +88,6 @@ protected override void EndProcessing()
 
 [System.Management.Automation.Cmdlet.Endprocessing%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)
 
-[System.Idisposable](/dotnet/api/System.IDisposable)
+[System.IDisposable](/dotnet/api/System.IDisposable)
 
 [Windows PowerShell Shell SDK](../windows-powershell-reference.md)

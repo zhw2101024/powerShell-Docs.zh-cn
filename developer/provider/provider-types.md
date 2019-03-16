@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e523a8e1-42e4-4633-887f-fb74b3464561
 caps.latest.revision: 12
-ms.openlocfilehash: 25b604621c90f1aa88bc1eea365e47db66e98c3d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 37689571eb1650e5991af2e7002cd037ae99dd68
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858403"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057954"
 ---
 # <a name="provider-types"></a>提供程序类型
 
@@ -65,7 +65,7 @@ ms.locfileid: "56858403"
 
 [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)类定义以下方法用于实现特定的提供程序 cmdlet。 在大多数情况下，若要支持提供程序 cmdlet 必须覆盖方法，用于 Windows PowerShell 引擎调用以调用 cmdlet，如`CopyItem`方法`Copy-Item`cmdlet，并 （可选） 你可以覆盖之类的第二个方法`CopyItemDynamicParameters`，用于将动态参数添加到该 cmdlet。
 
-- [System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)并[System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters)方法定义您的提供程序如何支持`Copy-Item`提供程序 cmdlet。 此 cmdlet 允许用户将项从一个位置复制到另一个。
+- [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)并[System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters)方法定义您的提供程序如何支持`Copy-Item`提供程序 cmdlet。 此 cmdlet 允许用户将项从一个位置复制到另一个。
 
 - [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)和[System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters)方法定义您的提供程序如何支持`Get-ChildItem`提供程序 cmdlet。 此 cmdlet 允许用户检索父项的子项。
 

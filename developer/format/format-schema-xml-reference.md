@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ac6f7aaa-d0cc-4c7b-a341-85e736174579
 caps.latest.revision: 21
-ms.openlocfilehash: 4dfe27a5105d82fa18e35f965f92fad16d390a2a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 437b3d6bb62fdd3a74f3392ec71df360c01a1974
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857783"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056645"
 ---
 # <a name="format-schema-xml-reference"></a>格式架构 XML 参考
 
 在本部分中的主题介绍使用格式化文件 （Format.ps1xml 文件） 的 XML 元素。 格式设置文件定义的.NET 对象的显示方式;它们不会更改对象本身。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>本部分内容
 
 [TableControl （格式） 的 TableColumnHeader 的对齐方式元素](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)定义如何显示列标题中的数据。
 
@@ -81,7 +81,7 @@ ms.locfileid: "56857783"
 
 [DefaultSettings 元素 （格式）](./defaultsettings-element-format.md)定义将应用于的格式设置文件的所有视图的常见设置。 常用的设置包括显示错误，表定义如何将扩展集合，和的详细信息中的文本换行。
 
-[DisplayError 元素 (Frmat)](./displayerror-element-format.md)指定出错时显示一段数据显示 #ERR 的字符串。
+[DisplayError 元素 （格式）](./displayerror-element-format.md)指定出错时显示一段数据显示 #ERR 的字符串。
 
 [配置 （格式） 的控件的 CustomEntry EntrySelectedBy 元素](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)定义使用公共控件或要在使用此控件中必须存在的条件的定义的.NET 类型。 定义可由格式设置文件中的所有视图的公共控件时，将都使用此元素。
 
@@ -235,7 +235,7 @@ ms.locfileid: "56857783"
 
 [GroupBy （格式） 的 SelectionCondition PropertyName 元素](./propertyname-element-for-selectioncondition-for-groupby-format.md)指定触发条件的.NET 属性。 存在此属性时或当计算结果为`true`、 满足该条件，以及使用该定义。 定义如何显示一组新对象时，将使用此元素。
 
-[有关 ListEntry （格式） 的 EmtrySelectedBy SelectionCondition PropertyName 元素](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)指定触发条件的.NET 属性。 存在此属性时或当计算结果为`true`、 满足该条件，以及使用列表项。
+[有关 ListEntry （格式） 的 EntrySelectedBy SelectionCondition PropertyName 元素](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)指定触发条件的.NET 属性。 存在此属性时或当计算结果为`true`、 满足该条件，以及使用列表项。
 
 [有关 TableRowEntry （格式） 的 EntrySelectedBy SelectionCondition PropertyName 元素](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md)指定触发条件的.NET 属性。 存在此属性时或当计算结果为`true`、 满足该条件，以及使用的表项。
 
@@ -363,7 +363,7 @@ ms.locfileid: "56857783"
 
 [TableRowEntries 元素 （格式）](./tablerowentries-element-for-tablecontrol-format.md)定义的表的行。
 
-[TableRowEntry 元素 （格式）](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)定义的表的行中显示的数据。
+[TableRowEntry 元素 （格式）](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)定义的表的行中显示的数据。
 
 [文本元素用于配置 （格式） 的控件的 CustomItem](./text-element-for-customitem-for-controls-for-configuration-format.md)添加到控件，如标签，显示的数据的指定文本方括号括起的数据和数据的缩进。 定义可由格式设置文件中的所有视图的公共控件时，将都使用此元素。
 
@@ -427,7 +427,7 @@ ms.locfileid: "56857783"
 
 [Width 元素 （格式）](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)定义列的宽度 （以字符为单位）。
 
-[包装元素 （格式）](./wrap-element-for-tablerowentry-for-tablecontrl-format.md)指定在下一行显示超过列宽的文本。
+[包装元素 （格式）](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)指定在下一行显示超过列宽的文本。
 
 [WrapTables 元素 （格式）](./wraptables-element-format.md)指定的表单元中的数据移动到下一行数据是否超过了列的宽度。
 

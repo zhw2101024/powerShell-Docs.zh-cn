@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
 caps.latest.revision: 13
-ms.openlocfilehash: c11e50913d2654b786e0e8cfeaf41454999bf75e
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 0906d0d37c66b8c1538a0b2e9e0f1ff2fba12ac0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794960"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057716"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>强烈建议的开发指南
 
@@ -101,7 +101,7 @@ Cmdlet 需要接收的它必须运行的数据的参数和参数，可指示用�
 
 #### <a name="parameters-that-take-true-and-false"></a>参数采用 True 和 False
 
-如果你参数仅采用`true`并`false`，此参数定义为类型[System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter)。 开关参数被视为`true`当命令中指定。 如果在命令中不包括参数，则 Windows PowerShell 会考虑参数的值`false`。 未定义布尔参数。
+如果你参数仅采用`true`并`false`，此参数定义为类型[System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)。 开关参数被视为`true`当命令中指定。 如果在命令中不包括参数，则 Windows PowerShell 会考虑参数的值`false`。 未定义布尔参数。
 
 如果参数需要 3 个值之间进行区分： $true、 $false 和"未指定"，然后定义类型可以为 Null 的参数\<bool >。  需要第三，"未指定"的值通常发生在该 cmdlet 可以修改对象的布尔属性。 在这种情况下"未指定"意味着若要更改属性的当前值。
 
@@ -111,7 +111,7 @@ Cmdlet 需要接收的它必须运行的数据的参数和参数，可指示用�
 
 #### <a name="support-the-passthru-parameter"></a>支持 PassThru 参数
 
-默认情况下，许多 cmdlet 修改的系统，如[Stop-process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) cmdlet，充当"接收器"的对象并不返回结果。 这些 cmdlet 应实现`PassThru`参数强制 cmdlet 返回的对象。 当`PassThru`指定参数，该 cmdlet 返回一个对象使用调用[System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法。 例如，以下命令停止 Calc 进程，并将生成进程传递到管道。
+默认情况下，许多 cmdlet 修改的系统，如[Stop-process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) cmdlet，充当"接收器"的对象并不返回结果。 这些 cmdlet 应实现`PassThru`参数强制 cmdlet 返回的对象。 当`PassThru`指定参数，该 cmdlet 返回一个对象使用调用[System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法。 例如，以下命令停止 Calc 进程，并将生成进程传递到管道。
 
 ```powershell
 Stop-Process calc -passthru
@@ -135,21 +135,21 @@ Windows PowerShell 运行时，用户可以指定如何处理到每个调用的�
 
 #### <a name="support-the-writewarning-writeverbose-and-writedebug-methods"></a>支持 WriteWarning、 WriteVerbose 和 WriteDebug 方法
 
-Cmdlet 应调用[System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)方法，该 cmdlet 时要执行的操作可能产生意外的结果。 例如，一个 cmdlet 应调用此方法，如果该 cmdlet 将覆盖只读文件。
+Cmdlet 应调用[System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)方法，该 cmdlet 时要执行的操作可能产生意外的结果。 例如，一个 cmdlet 应调用此方法，如果该 cmdlet 将覆盖只读文件。
 
-Cmdlet 应调用[System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法时用户需要深入了解有关该 cmdlet 的用途。 例如，如果 cmdlet 作者大家都有可能需要有关该 cmdlet 正在执行什么操作的详细信息的情况下 cmdlet 应调用此信息。
+Cmdlet 应调用[System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法时用户需要深入了解有关该 cmdlet 的用途。 例如，如果 cmdlet 作者大家都有可能需要有关该 cmdlet 正在执行什么操作的详细信息的情况下 cmdlet 应调用此信息。
 
-该 cmdlet 应调用[System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)时开发人员或产品的支持工程师必须了解什么损坏了 cmdlet 操作的方法。 没有必要 cmdlet 来调用[System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法中调用的相同代码[System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法因为`Debug`参数提供了这两组信息。
+该 cmdlet 应调用[System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)时开发人员或产品的支持工程师必须了解什么损坏了 cmdlet 操作的方法。 没有必要 cmdlet 来调用[System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法中调用的相同代码[System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法因为`Debug`参数提供了这两组信息。
 
 #### <a name="support-writeprogress-for-operations-that-take-a-long-time"></a>支持 WriteProgress 需要很长时间的操作
 
-Cmdlet 操作的需要很长时间才能完成，不能在后台运行应支持进度报告通过定期调用[System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)方法。
+Cmdlet 操作的需要很长时间才能完成，不能在后台运行应支持进度报告通过定期调用[System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)方法。
 
 #### <a name="use-the-host-interfaces"></a>使用主机接口
 
-有时，cmdlet 必须直接与用户通信而不是通过使用各种编写或应支持的方法[System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)类。 在这种情况下，该 cmdlet 应派生自[System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)类并使用[System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host)属性。 此属性支持不同级别的通信类型，包括 PromptForChoice、 提示和 WriteLine/ReadLine 类型。 最特定的级别，它还提供可读取和写入单个键以及处理缓冲区的方式。
+有时，cmdlet 必须直接与用户通信而不是通过使用各种编写或应支持的方法[System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)类。 在这种情况下，该 cmdlet 应派生自[System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)类并使用[System.Management.Automation.PSCmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host)属性。 此属性支持不同级别的通信类型，包括 PromptForChoice、 提示和 WriteLine/ReadLine 类型。 最特定的级别，它还提供可读取和写入单个键以及处理缓冲区的方式。
 
-除非 cmdlet 专门用于生成图形用户界面 (GUI)，它应不绕过主机通过使用[System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host)属性。 为生成 GUI 而设计的 cmdlet 的一个示例是[Out-gridview](/powershell/module/Microsoft.PowerShell.Utility/Out-GridView) cmdlet。
+除非 cmdlet 专门用于生成图形用户界面 (GUI)，它应不绕过主机通过使用[System.Management.Automation.PSCmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host)属性。 为生成 GUI 而设计的 cmdlet 的一个示例是[Out-gridview](/powershell/module/Microsoft.PowerShell.Utility/Out-GridView) cmdlet。
 
 > [!NOTE]
 > 不应使用 Cmdlet [System.Console](/dotnet/api/System.Console) API。
@@ -174,15 +174,15 @@ Windows PowerShell 路径是用于规范化的命名空间的访问权限的机�
 
 如果该 cmdlet 读取或写入的数据必须是一个文件，该 cmdlet 应接受 Windows PowerShell 路径输入，而应该使用 cmdlet [System.Management.Automation.Sessionstate.Path](/dotnet/api/System.Management.Automation.SessionState.Path)属性来转换 Windows为文件系统识别的路径的 PowerShell 路径。 特定机制包括以下方法：
 
-- [System.Management.Automation.Pscmdlet.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
+- [System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pscmdlet.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
+- [System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pathintrinsics.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
+- [System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pathintrinsics.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
+- [System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
 
-如果该 cmdlet 读取或写入的数据仅是一组字符串而不是文件，该 cmdlet 应使用的提供程序的内容信息 (`Content`成员) 来读取和写入。 从获取此信息[System.Management.Automation.Provider.Cmdletprovider.Invokeprovider*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider)属性。 这些机制允许参与的读取和写入数据的其他数据存储。
+如果该 cmdlet 读取或写入的数据仅是一组字符串而不是文件，该 cmdlet 应使用的提供程序的内容信息 (`Content`成员) 来读取和写入。 从获取此信息[System.Management.Automation.Provider.CmdletProvider.InvokeProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider)属性。 这些机制允许参与的读取和写入数据的其他数据存储。
 
 #### <a name="support-wildcard-characters"></a>支持通配符字符
 
@@ -206,11 +206,11 @@ Windows PowerShell 路径是用于规范化的命名空间的访问权限的机�
 
 由 cmdlet 返回的预先存在.NET Framework 对象经常缺少某些重要或不方便使用的成员所需的脚本开发人员或用户。 这些缺少的成员可以是用于显示和创建正确的成员名称，以便该对象可以正确地传递给管道尤为重要。 创建自定义的 Types.ps1xml 文件，以记录这些必需的成员。 在创建此文件时，我们建议以下命名约定： *< Your_Product_Name >*。Types.ps1xml。
 
-例如，可以添加`Mode`编写脚本属性设置为[System.IO.Fileinfo](/dotnet/api/System.IO.FileInfo)要更清楚地显示文件的属性类型。 此外，还可以添加`Count`别名属性设置为[System.Array](/dotnet/api/System.Array)类型才允许使用一致的该属性名称 (而不是`Length`)。
+例如，可以添加`Mode`编写脚本属性设置为[System.IO.FileInfo](/dotnet/api/System.IO.FileInfo)要更清楚地显示文件的属性类型。 此外，还可以添加`Count`别名属性设置为[System.Array](/dotnet/api/System.Array)类型才允许使用一致的该属性名称 (而不是`Length`)。
 
 ##### <a name="implement-the-icomparable-interface"></a>实现 IComparable 接口
 
-实现[System.Icomparable](/dotnet/api/System.IComparable)输出的所有对象的接口。 这允许要轻松地输送到不同的排序和分析 cmdlet 的输出对象。
+实现[System.IComparable](/dotnet/api/System.IComparable)输出的所有对象的接口。 这允许要轻松地输送到不同的排序和分析 cmdlet 的输出对象。
 
 ##### <a name="update-display-information"></a>更新显示信息
 
@@ -230,11 +230,11 @@ Windows PowerShell 路径是用于规范化的命名空间的访问权限的机�
 
 #### <a name="support-the-processrecord-method"></a>支持 ProcessRecord 方法
 
-若要接受管道中前一个 cmdlet 中的所有记录，你的 cmdlet 必须实现[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法。 Windows PowerShell 调用此方法多次，一次发送到你的 cmdlet 的每个记录。
+若要接受管道中前一个 cmdlet 中的所有记录，你的 cmdlet 必须实现[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法。 Windows PowerShell 调用此方法多次，一次发送到你的 cmdlet 的每个记录。
 
 ### <a name="write-single-records-to-the-pipeline-sc03"></a>单个记录写入管道 (SC03)
 
-当一个 cmdlet 返回对象时，该 cmdlet 应写入对象立即生成它们。 该 cmdlet 不应阻止它们以便它们缓冲到组合数组。 然后，作为输入接收对象的 cmdlet 将能够处理、 显示或处理和显示的输出对象而不会延迟。 Cmdlet 将生成输出对象应调用一次一个地[System.Management.Automation.Cmdlet.Writeobject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法。 在批处理中生成输出对象 （例如，因为基础 API 返回的输出对象数组） 的 cmdlet 应调用[System.Managemet.Automation.Cmdlet.Writeobject](/dotnet/api/System.Managemet.Automation.Cmdlet.WriteObject)方法与第二个参数设置到`true`。
+当一个 cmdlet 返回对象时，该 cmdlet 应写入对象立即生成它们。 该 cmdlet 不应阻止它们以便它们缓冲到组合数组。 然后，作为输入接收对象的 cmdlet 将能够处理、 显示或处理和显示的输出对象而不会延迟。 Cmdlet 将生成输出对象应调用一次一个地[System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法。 在批处理中生成输出对象 （例如，因为基础 API 返回的输出对象数组） 的 cmdlet 应调用[System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法与第二个参数设置到`true`。
 
 ### <a name="make-cmdlets-case-insensitive-and-case-preserving-sc04"></a>使 Cmdlet 不区分大小写和保留大小写的 (SC04)
 

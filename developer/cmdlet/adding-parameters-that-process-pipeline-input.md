@@ -8,15 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - cmdlets [PowerShell Programmer's Guide], pipeline input
-- parameters [PowerShell Programer's Guide], pipeline input
+- parameters [PowerShell Programmer's Guide], pipeline input
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
-ms.openlocfilehash: c790d20a792bcdb4a34485e53375560e129433a8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bd52dc8aee7975d0899083a5c2f595b17690dc33
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854533"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054750"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>添加用于处理管道输入的参数
 
@@ -93,7 +93,7 @@ End Property
 
 如果你的 cmdlet 是处理管道输入，则需要重写相应的输入处理方法。 中引入的基本输入的处理方法[创建第一个 Cmdlet](./creating-a-cmdlet-without-parameters.md)。
 
-此 Get-proc cmdlet 覆盖[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法以处理`Name`参数输入提供的用户或脚本。 如果未提供名称，此方法将获取每个请求的进程名称或所有进程的进程。 请注意，在[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)，在调用[System.Management.Automation.Cmdlet.Writeobject%28System.Object%2Csystem.Boolean%29](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29)是将输出对象发送到管道的输出机制。 此调用，第二个参数`enumerateCollection`，设置为`true`告诉 Windows PowerShell 运行时，若要枚举的进程对象的数组和一个进程一次写入命令行。
+此 Get-proc cmdlet 覆盖[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法以处理`Name`参数输入提供的用户或脚本。 如果未提供名称，此方法将获取每个请求的进程名称或所有进程的进程。 请注意，在[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)，在调用[System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29)是输出机制，用于将输出发送到管道对象。 此调用，第二个参数`enumerateCollection`，设置为`true`告诉 Windows PowerShell 运行时，若要枚举的进程对象的数组和一个进程一次写入命令行。
 
 ```csharp
 protected override void ProcessRecord()

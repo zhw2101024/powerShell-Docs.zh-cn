@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
 caps.latest.revision: 8
-ms.openlocfilehash: 2f3bb481722363557c93ebbc5e6df62baeff2555
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e0550dacc33f45f45ba105ca5cb4d2e5b5d675fb
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862003"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056050"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>向 Cmdlet 添加非终止错误报告
 
-Cmdlet 可以通过调用报告非终止错误[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法和仍继续运行当前的输入对象或更多传入管道对象。 本部分介绍如何创建 cmdlet，它报告从其输入的处理方法的非终止错误。
+Cmdlet 可以通过调用报告非终止错误[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法和仍继续运行当前的输入对象或更多传入管道对象。 本部分介绍如何创建 cmdlet，它报告从其输入的处理方法的非终止错误。
 
-非终止错误 （以及终止错误） 必须通过该 cmdlet [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)标识错误的对象。 由名为"错误标识符。"的唯一字符串标识每个错误记录 指定定义常量的标识符，除了每个错误的类别[System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)枚举。 用户可以查看根据其类别设置的错误`$ErrorView`"CategoryView"变量。
+非终止错误 （以及终止错误） 必须通过该 cmdlet [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)标识错误的对象。 由名为"错误标识符。"的唯一字符串标识每个错误记录 指定定义常量的标识符，除了每个错误的类别[System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)枚举。 用户可以查看根据其类别设置的错误`$ErrorView`"CategoryView"变量。
 
 错误记录的详细信息，请参阅[Windows PowerShell 错误记录](./windows-powershell-error-records.md)。
 
@@ -101,11 +101,11 @@ End Property
 > [!NOTE]
 > 你的 cmdlet 应尽可能独立处理每条记录。
 
-此 Get-proc cmdlet 覆盖[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法以处理`Name`输入提供的用户或脚本的参数。 如果未提供名称，此方法将获取每个请求的进程名称或所有进程的进程。 此替代的详细信息中提供了[创建第一个 Cmdlet](./creating-a-cmdlet-without-parameters.md)。
+此 Get-proc cmdlet 覆盖[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法以处理`Name`输入提供的用户或脚本的参数。 如果未提供名称，此方法将获取每个请求的进程名称或所有进程的进程。 此替代的详细信息中提供了[创建第一个 Cmdlet](./creating-a-cmdlet-without-parameters.md)。
 
 #### <a name="things-to-remember-when-reporting-errors"></a>要记住时报告错误的事项
 
-[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) cmdlet 将写入错误需要在其核心异常时传递给对象。 确定要使用的异常时，请遵循.NET 准则。 基本上，如果错误是在语义上与现有异常不同，该 cmdlet 应使用或派生自该异常。 否则，它应派生的新异常或直接从异常层次结构[System.Exception](/dotnet/api/System.Exception)类。
+[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) cmdlet 将写入错误需要在其核心异常时传递给对象。 确定要使用的异常时，请遵循.NET 准则。 基本上，如果错误是在语义上与现有异常不同，该 cmdlet 应使用或派生自该异常。 否则，它应派生的新异常或直接从异常层次结构[System.Exception](/dotnet/api/System.Exception)类。
 
 创建错误标识符 （通过 ErrorRecord 类的 FullyQualifiedErrorId 属性访问） 时请记住以下。
 
@@ -135,7 +135,7 @@ End Property
 
 ## <a name="reporting-nonterminating-errors"></a>报告非终止错误
 
-输入处理方法之一可以向输出流使用报告非终止错误[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法。 下面是一个代码示例演示对调用此 Get-proc cmdlet [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)从在重写中的[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法。 在这种情况下，如果该 cmdlet 找不到指定的进程标识符的过程进行调用。
+输入处理方法之一可以向输出流使用报告非终止错误[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法。 下面是一个代码示例演示对调用此 Get-proc cmdlet [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)从在重写中的[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法。 在这种情况下，如果该 cmdlet 找不到指定的进程标识符的过程进行调用。
 
 ```csharp
 protected override void ProcessRecord()

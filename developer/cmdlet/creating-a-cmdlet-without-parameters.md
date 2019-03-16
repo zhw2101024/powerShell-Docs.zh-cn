@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: 75a45e539b45b50714951f2b992d9ecf69de4664
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c380b28570c955de6f41152fd617f5c1b0f9e4bd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860643"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054690"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>创建不具有参数的 Cmdlet
 
@@ -70,7 +70,7 @@ Public Class GetProcCommand
     Inherits Cmdlet
 ```
 
-请注意，上一步类定义中， [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute)属性，使用语法`[Cmdlet(verb, noun, ...)]`，用于标识此类作为一个 cmdlet。 这是唯一的必需的属性为所有的 cmdlet，并允许 Windows PowerShell 运行时，若要正确地调用它们。 可以设置属性关键字，以进一步声明类，如有必要。 请注意，我们的示例 GetProcCommand 类的特性声明声明了仅 Get-proc cmdlet 的名词和动词名称。
+请注意，上一步类定义中， [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)属性，使用语法`[Cmdlet(verb, noun, ...)]`，用于标识此类作为一个 cmdlet。 这是唯一的必需的属性为所有的 cmdlet，并允许 Windows PowerShell 运行时，若要正确地调用它们。 可以设置属性关键字，以进一步声明类，如有必要。 请注意，我们的示例 GetProcCommand 类的特性声明声明了仅 Get-proc cmdlet 的名词和动词名称。
 
 > [!NOTE]
 > 对于所有 Windows PowerShell 属性类，可以设置的关键字对应于特性类的属性。
@@ -78,27 +78,27 @@ Public Class GetProcCommand
 命名该 cmdlet 的类，很好的做法，以反映类名称中的 cmdlet 名称。 若要执行此操作，使用窗体"VerbNounCommand"，并替换动词和名词的 cmdlet 名称中使用"谓词"和"名词"。 示例 Get-proc cmdlet 以前的类定义中所示，定义一个名为 GetProcCommand，派生自类[System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)基类。
 
 > [!IMPORTANT]
-> 如果你想要定义一个 cmdlet，直接访问 Windows PowerShell 运行时，.NET 类应派生自[System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基类。 有关此类的详细信息，请参阅[创建该定义的参数集的一个 Cmdlet](./adding-parameter-sets-to-a-cmdlet.md)。
+> 如果你想要定义一个 cmdlet，直接访问 Windows PowerShell 运行时，.NET 类应派生自[System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基类。 有关此类的详细信息，请参阅[创建该定义的参数集的一个 Cmdlet](./adding-parameter-sets-to-a-cmdlet.md)。
 
 > [!NOTE]
 > Cmdlet 类必须显式标记为公共。 未标记为公共的类将默认为内部和 Windows PowerShell 运行时将不会找到。
 
-使用 Windows PowerShell [Microsoft.Powershell.Commands](/dotnet/api/Microsoft.PowerShell.Commands)其 cmdlet 类的命名空间。 建议将 cmdlet 类放置在你的 API 命名空间，例如，xxx.PS.Commands 命令命名空间。
+使用 Windows PowerShell [Microsoft.PowerShell.Commands](/dotnet/api/Microsoft.PowerShell.Commands)其 cmdlet 类的命名空间。 建议将 cmdlet 类放置在你的 API 命名空间，例如，xxx.PS.Commands 命令命名空间。
 
 ## <a name="overriding-an-input-processing-method"></a>重写方法的处理的输入
 
 [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)类提供了三个主要的输入的处理方法，你的 cmdlet 必须在至少一个替代。 有关 Windows PowerShell 如何处理记录的详细信息，请参阅[Windows PowerShell 的工作原理](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)。
 
-对于所有类型的输入，Windows PowerShell 运行时调用[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)启用处理。 如果你的 cmdlet 必须执行一些预处理或安装程序，它可以执行此操作通过重写此方法。
+对于所有类型的输入，Windows PowerShell 运行时调用[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)启用处理。 如果你的 cmdlet 必须执行一些预处理或安装程序，它可以执行此操作通过重写此方法。
 
 > [!NOTE]
 > Windows PowerShell 使用术语"记录"来描述调用 cmdlet 时提供的参数值的组。
 
-如果你的 cmdlet 接受管道输入，则必须重写[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，并选择性地[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。 例如，一个 cmdlet 可能会替代这两种方法，如果收集使用的所有输入[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) ，然后输入作为一个整体，而不是一个元素一次，作为运行`Sort-Object`cmdlet 的用途。
+如果你的 cmdlet 接受管道输入，则必须重写[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，并选择性地[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。 例如，一个 cmdlet 可能会替代这两种方法，如果收集使用的所有输入[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) ，然后输入作为一个整体，而不是一个元素一次，作为运行`Sort-Object`cmdlet 的用途。
 
-如果你的 cmdlet 不接受管道输入，应重写[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。 注意： 此方法经常用来代替到[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)时该 cmdlet 不能作用于一个元素一次排序 cmdlet 的情况一样。
+如果你的 cmdlet 不接受管道输入，应重写[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。 注意： 此方法经常用来代替到[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)时该 cmdlet 不能作用于一个元素一次排序 cmdlet 的情况一样。
 
-此示例 Get-proc cmdlet 必须接收管道输入，因为它将替代[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，并使用的默认实现[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)并[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)。 [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)替代检索进程，并将其写入到命令行中使用[System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法。
+此示例 Get-proc cmdlet 必须接收管道输入，因为它将替代[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，并使用的默认实现[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)并[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)。 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)替代检索进程，并将其写入到命令行中使用[System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法。
 
 ```csharp
 protected override void ProcessRecord()
@@ -136,14 +136,14 @@ End Sub 'ProcessRecord
 
 - 输入处理方法，还可以从在管道上的上游 cmdlet 的输出对象接收输入。 有关详细信息，请参阅[创建到进程管道输入 Cmdlet](./adding-parameters-that-process-pipeline-input.md)。 请注意 cmdlet 可以接收来自命令行组成的输入和管道源。
 
-- 对于较长时间，或根本不可能不会返回下游 cmdlet。 因此，处理您的 cmdlet 中的方法的输入应不持有的锁期间调用到[System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)，尤其是为其范围超出 cmdlet 实例的锁。
+- 对于较长时间，或根本不可能不会返回下游 cmdlet。 因此，处理您的 cmdlet 中的方法的输入应不持有的锁期间调用到[System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)，尤其是为其范围超出 cmdlet 实例的锁。
 
 > [!IMPORTANT]
 > Cmdlet 应永远不会调用[System.Console.Writeline*](/dotnet/api/System.Console.WriteLine)或其等效项。
 
-- Cmdlet 可能具有对象变量来完成后清理处理 (例如，如果该表已打开的文件句柄[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法，并保留句柄打开供使用[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord))。 务必要记住 Windows PowerShell 运行时不会始终调用[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法，应执行对象清理。
+- Cmdlet 可能具有对象变量来完成后清理处理 (例如，如果该表已打开的文件句柄[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法，并保留句柄打开供使用[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord))。 务必要记住 Windows PowerShell 运行时不会始终调用[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法，应执行对象清理。
 
-例如， [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)如果正中取消该 cmdlet，或者如果终止该 cmdlet 的任何部分中会发生错误可能不会调用。 因此，需要对象清理 cmdlet 应实现的完整[System.Idisposable](/dotnet/api/System.IDisposable)模式，以便在运行时可以调用都包括终结器， [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)并[System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose)处理结束时。
+例如， [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)如果正中取消该 cmdlet，或者如果终止该 cmdlet 的任何部分中会发生错误可能不会调用。 因此，需要对象清理 cmdlet 应实现的完整[System.IDisposable](/dotnet/api/System.IDisposable)模式，以便在运行时可以调用都包括终结器， [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)并[System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose)处理结束时。
 
 ## <a name="code-sample"></a>代码示例
 

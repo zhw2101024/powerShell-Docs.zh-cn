@@ -10,12 +10,12 @@ applies_to:
 - Windows PowerShell 3.0
 ms.assetid: 3f7388a9-9fa8-42bc-b294-538c9a01e30a
 caps.latest.revision: 12
-ms.openlocfilehash: 4e962890fa1d5c282a02a89f0ae2e263844c635e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f2dfb9642ba2dde38124142b659b425bbbb00f37
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856963"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057597"
 ---
 # <a name="updatable-help-overview"></a>可更新帮助概述
 
@@ -31,7 +31,9 @@ Windows PowerShell 帮助主题是 Windows PowerShell 体验的重要组成部�
 
 可更新帮助中包括以下功能。
 
-- [Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet，后者将确定用户是否具有最新的帮助文件的模块和，如果没有，请从 Internet 下载最新帮助文件、 解压缩它们，并将其上安装正确的模块子目录中用户的计算机。 用户可以使用[Get-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet 立即查看新安装的帮助主题。 它们不需要重新启动 Windows PowerShell。
+- [Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet，后者将确定用户是否具有最新的帮助文件的模块和，如果没有，请从 Internet 下载最新帮助文件、 解压缩它们，并将其上安装正确的模块子目录中用户的计算机。
+  用户可以使用[Get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet 立即查看新安装的帮助主题。
+  它们不需要重新启动 PowerShell。
 
 - [Save-help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) cmdlet，后者将下载最新的帮助文件从 Internet，并将其保存在文件系统目录中。 用户可以使用`Update-Help`cmdlet 从文件系统目录中，获取帮助文件并解压缩并在用户计算机上的模块子目录中对其进行安装。 `Save-Help` Cmdlet 旨在具有有限的用户或没有 Internet 访问权限，适用于企业的首选限制 Internet 访问权限。
 

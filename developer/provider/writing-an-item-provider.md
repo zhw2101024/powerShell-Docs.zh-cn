@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 606c880c-6cf1-4ea6-8730-dbf137bfabff
 caps.latest.revision: 5
-ms.openlocfilehash: e3289e9336b863b5e0998a2beb29353c82a31f79
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9285a2f0e673de8b86084157423512bdeeda109d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856703"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058177"
 ---
 # <a name="writing-an-item-provider"></a>编写项提供程序
 
@@ -46,7 +46,7 @@ ms.locfileid: "56856703"
 
 ### <a name="implementing-getitem"></a>实现 GetItem
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)当用户调用时，PowerShell 引擎将调用[Microsoft.Powershell.Commands.Get 项](/dotnet/api/Microsoft.PowerShell.Commands.Get-Item)cmdlet 将提供程序。 该方法返回位于指定路径处的项。 在访问数据库示例中，该方法检查该项是否为驱动器本身，而在数据库或数据库中的行中的表。 该方法将项发送到 PowerShell 引擎，通过调用[System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)方法。
+[System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)当用户调用时，PowerShell 引擎将调用[Microsoft.PowerShell.Commands.Get 项](/dotnet/api/Microsoft.PowerShell.Commands.Get-Item)cmdlet 将提供程序。 该方法返回位于指定路径处的项。 在访问数据库示例中，该方法检查该项是否为驱动器本身，而在数据库或数据库中的行中的表。 该方法将项发送到 PowerShell 引擎，通过调用[System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)方法。
 
 ```csharp
 protected override void GetItem(string path)
@@ -85,7 +85,7 @@ protected override void GetItem(string path)
 
 ### <a name="implementing-setitem"></a>实现 SetItem
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) PowerShell 引擎调用由调用方法，当用户调用[Microsoft.Powershell.Commands.Set 项](/dotnet/api/Microsoft.PowerShell.Commands.Set-Item)cmdlet. 它在指定的路径设置项的值。
+[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) PowerShell 引擎调用由调用方法，当用户调用[Microsoft.PowerShell.Commands.Set 项](/dotnet/api/Microsoft.PowerShell.Commands.Set-Item)cmdlet. 它在指定的路径设置项的值。
 
 在访问数据库示例中，则最好设置项的值，仅当该项目是一个行，因此该方法将引发[NotSupportedException](http://msdn.microsoft.com/library/system.notsupportedexception\(v=vs.110\).aspx)时此项不是行。
 
@@ -145,7 +145,7 @@ protected override void SetItem(string path, object values)
 
 ### <a name="implementing-itemexists"></a>实现 ItemExists
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) PowerShell 引擎通过调用方法，当用户调用[Microsoft.Powershell.Commands.Test 路径](/dotnet/api/Microsoft.PowerShell.Commands.Test-Path)cmdlet。 该方法确定在指定的路径是否存在某个项。 如果存在此项，该方法将其传递给 PowerShell 引擎通过调用[System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)。
+[System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) PowerShell 引擎通过调用方法，当用户调用[Microsoft.PowerShell.Commands.Test 路径](/dotnet/api/Microsoft.PowerShell.Commands.Test-Path)cmdlet。 该方法确定在指定的路径是否存在某个项。 如果存在此项，该方法将其传递给 PowerShell 引擎通过调用[System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)。
 
 ```csharp
 protected override bool ItemExists(string path)

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6d6d43fa-c900-4e2f-952d-deccd584236f
 caps.latest.revision: 11
-ms.openlocfilehash: 0d7bbfd8be3bf2bd1af75a45ca4db016dfb6bff6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 6142350e3843a5feddcb5cee8901bbfa607d8d4c
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857953"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055967"
 ---
 # <a name="typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format"></a>TypeName Element for SelectionCondition for EntrySelectedBy for WideControl (Format)
 
@@ -31,7 +31,7 @@ ms.locfileid: "56857953"
 
 以下各节描述了特性、 子元素和父元素的`TypeName`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
@@ -41,7 +41,7 @@ ms.locfileid: "56857953"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[WideEntry （格式） 的 EntrySelectedBy SelectionCondition 元素](./selectioncondition-element-for-entryselectedby-for-widecontrol-format.md)|定义要使用此宽条目中必须存在的条件。|
 
@@ -57,7 +57,7 @@ ms.locfileid: "56857953"
 
 ## <a name="see-also"></a>另请参阅
 
-[时发生较宽的视图](./creating-a-wide-view.md)
+[创建较宽的视图](./creating-a-wide-view.md)
 
 [定义何时显示数据的条件](./defining-conditions-for-displaying-data.md)
 

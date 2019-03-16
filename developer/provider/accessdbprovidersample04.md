@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ee3a7e56-7331-4f71-9ecb-7a59b8021c68
 caps.latest.revision: 10
-ms.openlocfilehash: fd013384a4b588bcdb397d7771425fe5c031c48f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d9109e8d5b69a25ad52b90bcaff9628b01067211
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856693"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057614"
 ---
 # <a name="accessdbprovidersample04"></a>AccessDBProviderSample04
 
@@ -30,7 +30,7 @@ ms.locfileid: "56856693"
 
 - 定义提供程序类派生自[System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)类。
 
-- 覆盖[System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法，若要更改的行为`Copy-Item`这样用户就可以将项从一个位置复制到另一个 cmdlet。 (此示例不会显示如何添加将动态参数为`Copy-Item`cmdlet。)
+- 覆盖[System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法，若要更改的行为`Copy-Item`这样用户就可以将项从一个位置复制到另一个 cmdlet。 (此示例不会显示如何添加将动态参数为`Copy-Item`cmdlet。)
 
 - 覆盖[System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法，以更改 Get ChildItems cmdlet，这样用户就可以检索父项的子项的行为. （此示例不显示如何将动态参数添加到 Get ChildItems cmdlet）。
 

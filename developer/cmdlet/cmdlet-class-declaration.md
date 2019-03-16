@@ -11,19 +11,19 @@ helpviewer_keywords:
 - declaring cmdlets [PowerShell SDK]
 ms.assetid: 1fcc4c5e-0c75-496c-a712-5f844e310576
 caps.latest.revision: 14
-ms.openlocfilehash: 3e410087438ac99526049f99e5c768c017a29848
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3168275423dc65fcb2e41dedd9bea275ede58397
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854443"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055081"
 ---
 # <a name="cmdlet-class-declaration"></a>Cmdlet 类声明
 
 通过指定 Microsoft.NET Framework 类声明为 cmdlet **Cmdlet**作为元数据类的属性。 ( **Cmdlet**属性是唯一的必需的属性的所有 cmdlet 为)。 当指定**Cmdlet**属性，则必须指定标识向用户 cmdlet 的动词-名词对。 并且，必须说明该 cmdlet 支持的 Windows PowerShell 功能。 详细了解用于指定的声明语法**Cmdlet**属性，请参阅[Cmdlet 特性声明](./cmdlet-attribute-declaration.md)。
 
 > [!NOTE]
-> **Cmdlet**属性定义由[System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute)类。 此类的属性对应于声明属性时，将使用的声明参数。
+> **Cmdlet**属性定义由[System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)类。 此类的属性对应于声明属性时，将使用的声明参数。
 
 ## <a name="nouns"></a>名词
 
@@ -57,7 +57,7 @@ Cmdlet 名称中的名词必须是具体而言，对于泛型名词，如*server
 
 ## <a name="see-also"></a>另请参阅
 
-[System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute)
+[System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)
 
 [CmdletAttribute Declaration](./cmdlet-attribute-declaration.md)
 

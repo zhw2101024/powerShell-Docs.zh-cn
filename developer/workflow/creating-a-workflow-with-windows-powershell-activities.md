@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
-ms.openlocfilehash: 65d04c526ef7aa112da82adb924c0789731f3850
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 98cac43698b3f537ee318cd2570b2174631665a7
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853463"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055421"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>创建具有 Windows PowerShell 活动的工作流
 
@@ -33,9 +33,9 @@ ms.locfileid: "56853463"
 
 2. 创建名为的参数`ComputerName`使用的参数类型为`String[]`。 此参数表示要检查并加入的计算机的名称。
 
-3. 创建名为的参数`DomainCred`类型的[System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)。 此参数表示有权将计算机加入到域的域帐户的域凭据。
+3. 创建名为的参数`DomainCred`类型的[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)。 此参数表示有权将计算机加入到域的域帐户的域凭据。
 
-4. 创建名为的参数`MachineCred`类型的[System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)。 此参数表示要检查并加入的计算机上管理员的凭据。
+4. 创建名为的参数`MachineCred`类型的[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)。 此参数表示要检查并加入的计算机上管理员的凭据。
 
 5. 添加**ParallelForEach**内的活动**序列**活动。 输入`comp`并`ComputerName`中的文本框，以便循环，循环访问的元素`ComputerName`数组。
 

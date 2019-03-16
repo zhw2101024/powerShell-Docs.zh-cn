@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1f405afb-70b5-4fe0-9986-bc07401d93fd
 caps.latest.revision: 23
-ms.openlocfilehash: 832527ea4b042812c39934cd7e124201c6dc2ea4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 862f942facafff6cea66c4f8f1040772c6a62ec3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861493"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057359"
 ---
 # <a name="creating-a-table-view"></a>创建表视图
 
@@ -95,7 +95,7 @@ Running  Appinfo            Application Information
 
 2. [TableColumnHeader](./tablecolumnheader-element-format.md)元素定义的表的列的顶部显示的内容。 你想显示的标头的顺序指定这些元素。
 
-   可以使用这些元素的数目，但数没有限制[TableColumnHeader](./tablecolumnheader-element-format.md)在表视图中的元素的数目必须相等[TableRowEntry](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)您使用的元素。
+   可以使用这些元素的数目，但数没有限制[TableColumnHeader](./tablecolumnheader-element-format.md)在表视图中的元素的数目必须相等[TableRowEntry](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)您使用的元素。
 
 3. [标签](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)元素指定显示的文本。 此元素是可选的。
 
@@ -136,7 +136,7 @@ Running  Appinfo            Application Information
 
 - [EntrySelectedBy](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)元素指定所显示的特定定义的对象。 此元素是可选的仅当定义多个需要[TableRowEntry](./listentry-element-for-listcontrol-format.md)元素，用于显示不同的对象。
 
-- [包装](./wrap-element-for-tablerowentry-for-tablecontrl-format.md)元素指定，在下一行显示超过列宽的文本。 默认情况下，超过列宽的文本将被截断。
+- [包装](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)元素指定，在下一行显示超过列宽的文本。 默认情况下，超过列宽的文本将被截断。
 
 - [TableColumnItems](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)元素定义的属性或其值显示的行中的脚本。
 

@@ -13,18 +13,18 @@ helpviewer_keywords:
 - errors [PowerShell SDK]
 ms.assetid: 0dce97c0-bd9a-4691-8ca3-e8d5dea902c5
 caps.latest.revision: 11
-ms.openlocfilehash: aac6b7b6ac8a0fad15194b6d3f92c434524fabdb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2f185e415e3effc2cf09a282ca1167e3bcfb7d6a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855073"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054401"
 ---
 # <a name="error-reporting-concepts"></a>错误报告概念
 
 Windows PowerShell 提供了两种机制用于报告错误： 一种机制*终止错误*和另一种可*非终止性错误*。 务必为你的 cmdlet 报告错误正确，以便运行 cmdlet 的主机应用程序可以以适当的方式作出反应。
 
-你的 cmdlet 应调用[System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)方法在出错时却没有或不应允许该 cmdlet 可以继续处理其输入的对象。 你的 cmdlet 应调用[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法来报告非终止性错误，该 cmdlet 可以继续处理输入的对象时。 这两种方法提供主机应用程序可用于调查该错误的原因的错误记录。
+你的 cmdlet 应调用[System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)方法在出错时却没有或不应允许该 cmdlet 可以继续处理其输入的对象。 你的 cmdlet 应调用[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法来报告非终止性错误，该 cmdlet 可以继续处理输入的对象时。 这两种方法提供主机应用程序可用于调查该错误的原因的错误记录。
 
 使用以下准则来确定错误是否终止或非终止错误。
 
@@ -42,7 +42,7 @@ Windows PowerShell 提供了两种机制用于报告错误： 一种机制*终�
 
 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
-[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
+[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
 
 [Windows PowerShell 错误记录](./windows-powershell-error-records.md)
 

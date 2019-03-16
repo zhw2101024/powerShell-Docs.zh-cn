@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2a48de31-7961-4b0e-b58b-93466e38370b
 caps.latest.revision: 6
-ms.openlocfilehash: 86a0e8b7e8967280daa57faf5c323efcd3b1368b
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 5c5168ffd74c15066b914ad1b39d9ead947c5e7f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794189"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054180"
 ---
 # <a name="loading-and-exporting-formatting-data"></a>加载和导出格式设置数据
 
@@ -27,7 +27,7 @@ ms.locfileid: "57794189"
 
 - 可以创建引用格式设置文件的模块清单。 模块，可打包你设置用于发布的文件的格式。 使用[New-modulemanifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet 来创建清单，并[导入模块](/powershell/module/Microsoft.PowerShell.Core/Import-Module)cmdlet 将模块加载到当前会话。 有关模块的详细信息，请参阅[编写 Windows PowerShell 模块](../module/writing-a-windows-powershell-module.md)。
 
-- 您可以创建一个单元引用格式设置文件。 使用[System.Management.Automation.Pssnapin.Formats](/dotnet/api/System.Management.Automation.PSSnapIn.Formats)引用格式设置文件。 强烈建议使用包 cmdlet 的模块和任何关联的格式设置和类型的文件来分发它。 有关模块的详细信息，请参阅[编写 Windows PowerShell 模块](../module/writing-a-windows-powershell-module.md)。
+- 您可以创建一个单元引用格式设置文件。 使用[System.Management.Automation.PSSnapIn.Formats](/dotnet/api/System.Management.Automation.PSSnapIn.Formats)引用格式设置文件。 强烈建议使用包 cmdlet 的模块和任何关联的格式设置和类型的文件来分发它。 有关模块的详细信息，请参阅[编写 Windows PowerShell 模块](../module/writing-a-windows-powershell-module.md)。
 
 - 如果以编程方式调用命令时，您可以将格式设置文件条目添加到其中运行的命令的初始会话状态的运行空间。 若要添加的格式设置文件所使用的.NET 类型的详细信息，请参阅[System.Management.Automation.Runspaces.Sessionstateformatentry？Displayproperty =](/dotnet/api/System.Management.Automation.Runspaces.SessionStateFormatEntry)类。
 

@@ -15,12 +15,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmer's Guide], creating
 ms.assetid: da0b32f8-7b51-440e-a061-3177b5759e0e
 caps.latest.revision: 9
-ms.openlocfilehash: e010e28ec705932063bb418b260a1087fc3eef9e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fb113086ce89e4becff9bcaf3232905fde2bf610
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856003"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055914"
 ---
 # <a name="adding-parameters-that-process-command-line-input"></a>添加用于处理命令行输入的参数
 
@@ -147,7 +147,7 @@ public string[] Name
 
 如果你的 cmdlet 将处理命令行输入，则必须重写相应的输入处理方法。 中引入的基本输入的处理方法[创建第一个 Cmdlet](./creating-a-cmdlet-without-parameters.md)。
 
-**Get-proc** cmdlet 将重写[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法以处理`Name`参数输入提供的用户或脚本。 如果未提供名称，此方法获取每个请求的进程名称，或全部进程的进程。 请注意，在[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)，在调用[System.Management.Automation.Cmdlet.Writeobject%28System.Object%2Csystem.Boolean%29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)是输出机制，用于将输出发送到管道对象。 此调用，第二个参数`enumerateCollection`，设置为`true`以通知 Windows PowerShell 运行时枚举的进程对象的输出数组和一个进程一次写入命令行。
+**Get-proc** cmdlet 将重写[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法以处理`Name`参数输入提供的用户或脚本。 如果未提供名称，此方法获取每个请求的进程名称，或全部进程的进程。 请注意，在[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)，在调用[System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)是输出机制，用于将输出发送到管道对象。 此调用，第二个参数`enumerateCollection`，设置为`true`以通知 Windows PowerShell 运行时枚举的进程对象的输出数组和一个进程一次写入命令行。
 
 ```csharp
 protected override void ProcessRecord()

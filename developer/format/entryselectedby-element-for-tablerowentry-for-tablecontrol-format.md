@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 49623fcf-1238-4d20-a7ce-238d47d9d565
 caps.latest.revision: 15
-ms.openlocfilehash: e18564c10898c73128e0a4bc7d077e7c7ffb1c22
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9302bfed0324773cb98d698acdcf608f34ee19c1
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862323"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058753"
 ---
 # <a name="entryselectedby-element-for-tablerowentry--for-tablecontrol-format"></a>EntrySelectedBy Element for TableRowEntry for TableControl (Format)
 
@@ -35,13 +35,13 @@ ms.locfileid: "56862323"
 
 以下各节描述了特性、 子元素和父元素的`EntrySelectedBy`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[TableControl （格式） 的 EntrySelectedBy SelectionCondition 元素](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)|可选元素。<br /><br /> 定义必须存在要使用此表视图定义的条件。|
 |[TableControl （格式） 的 EntrySelectedBy SelectionSetName 元素](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)|可选元素。<br /><br /> 指定一组使用此表视图定义的.NET 类型。|
@@ -49,9 +49,9 @@ ms.locfileid: "56862323"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
-|[TableControl （格式） 的 TableRowEntry 元素](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)|定义表的行中显示的数据。|
+|[TableControl （格式） 的 TableRowEntry 元素](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|定义表的行中显示的数据。|
 
 ## <a name="remarks"></a>备注
 
@@ -89,7 +89,7 @@ ms.locfileid: "56862323"
 
 [TableControl （格式） 的 EntrySelectedBy SelectionSetName 元素](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)
 
-[TableControl （格式） 的 TableRowEntry 元素](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+[TableControl （格式） 的 TableRowEntry 元素](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
 [TableControl （格式） 的 EntrySelectedBy 的 TypeName 元素](./typename-element-for-entryselectedby-for-tablecontrol-format.md)
 

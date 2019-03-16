@@ -12,12 +12,12 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: d1546ab0b0e6b5502f35c92c01ce148211c53db2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 174d3a6860790295e1b73f32d9c1bad46b653917
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855793"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055642"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>创建 Windows PowerShell 驱动器提供程序
 
@@ -61,7 +61,7 @@ ms.locfileid: "56855793"
 
 所有 Windows PowerShell 提供程序被都视为无状态的这意味着您的驱动器提供程序，需要创建时它将调用您的提供程序通过 Windows PowerShell 运行时所需的任何状态信息。
 
-对于此驱动器提供程序中，状态信息包括作为驱动器信息的一部分保留数据库的连接。 下面是代码显示如何将此信息存储在[即 System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)对象，描述驱动器：
+对于此驱动器提供程序中，状态信息包括作为驱动器信息的一部分保留数据库的连接。 下面是代码显示如何将此信息存储在[即 System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)对象，描述驱动器：
 
 [!code-csharp[AccessDBProviderSample02.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L130-L151 "AccessDBProviderSample02.cs")]
 
@@ -73,15 +73,15 @@ ms.locfileid: "56855793"
 
 重写此方法应执行以下操作：
 
-- 确认[System.Management.Automation.Psdriveinfo.Root*](/dotnet/api/System.Management.Automation.PSDriveInfo.Root)成员存在，并且可进行数据存储区的连接。
+- 确认[System.Management.Automation.PSDriveinfo.Root*](/dotnet/api/System.Management.Automation.PSDriveInfo.Root)成员存在，并且可进行数据存储区的连接。
 
 - 创建驱动器，并填充连接成员支持`New-PSDrive`cmdlet。
 
-- 验证[即 System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)建议驱动器的对象。
+- 验证[即 System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)建议驱动器的对象。
 
-- 修改[即 System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)对象，它描述与任何所需的性能或可靠性信息的驱动器或调用方使用驱动器提供额外的数据。
+- 修改[即 System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)对象，它描述与任何所需的性能或可靠性信息的驱动器或调用方使用驱动器提供额外的数据。
 
-- 处理使用的故障[System.Management.Automation.Provider.Cmdletprovider.Writeerror*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError)方法，然后返回`null`。
+- 处理使用的故障[System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError)方法，然后返回`null`。
 
   此方法返回的驱动器信息传递到方法或它的特定于提供程序的版本。
 

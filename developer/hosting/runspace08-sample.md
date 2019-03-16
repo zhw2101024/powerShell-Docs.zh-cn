@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1100d91d-249d-4af7-9854-2d6a423ac2f4
 caps.latest.revision: 7
-ms.openlocfilehash: ac010ee94752458c31b5b3b26c9ac17e0c56c4ad
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 70577a6a42ce26e9791360fa30baae9d7a492daf
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860793"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057733"
 ---
 # <a name="runspace08-sample"></a>Runspace08 示例
 
@@ -35,7 +35,7 @@ ms.locfileid: "56860793"
 
 - 以同步方式运行 cmdlet。
 
-- 从属性中提取[System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject)命令返回的对象。
+- 从属性中提取[System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject)命令返回的对象。
 
 ## <a name="example"></a>示例
 

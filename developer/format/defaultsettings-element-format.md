@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 41c56499-ee20-4821-830a-478fdcc33f83
 caps.latest.revision: 11
-ms.openlocfilehash: 59cc0514087cc52438e0d1271b8b77a7799eb32c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bc95c62222eb2806f92499257a397c2e4ec5dbab
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855663"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059059"
 ---
 # <a name="defaultsettings-element-format"></a>DefaultSettings Element (Format)
 
@@ -37,15 +37,15 @@ ms.locfileid: "56855663"
 
 以下各节描述了特性、 子元素和父元素的`DefaultSettings`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
-|[DisplayError 元素 (Frmat)](./displayerror-element-format.md)|可选元素。<br /><br /> 指定在显示的一段数据的同时发生错误时显示的字符串 #ERR。|
+|[DisplayError 元素 （格式）](./displayerror-element-format.md)|可选元素。<br /><br /> 指定在显示的一段数据的同时发生错误时显示的字符串 #ERR。|
 |[EnumerableExpansions 元素 （格式）](./enumerableexpansions-element-format.md)|可选元素。<br /><br /> 定义.NET 对象时它们显示在视图中展开的不同方法。|
 |[PropertyCountForTable （格式）](./propertycountfortable-element-format.md)|可选元素。<br /><br /> 指定对象必须具有要在表视图中显示该对象的属性的最小数目。|
 |[ShowError 元素 （格式）](./showerror-element-format.md)|可选元素。<br /><br /> 指定在出错时显示一段数据时，显示完整的错误记录。|
@@ -53,7 +53,7 @@ ms.locfileid: "56855663"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[配置元素](./configuration-element-format.md)|表示格式设置文件的顶级元素。|
 
@@ -63,7 +63,7 @@ ms.locfileid: "56855663"
 
 [配置元素](./configuration-element-format.md)
 
-[DisplayError 元素 (Frmat)](./displayerror-element-format.md)
+[DisplayError 元素 （格式）](./displayerror-element-format.md)
 
 [EnumerableExpansions 元素 （格式）](./enumerableexpansions-element-format.md)
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6602730d-3892-4656-80c7-7bca2d14337f
 caps.latest.revision: 14
-ms.openlocfilehash: 59921a92661482b8d518b82f490c9879643543bb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f5781c0c03aca41d01a44598a9a8c00d6d21d2fd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859863"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059569"
 ---
 # <a name="types-of-cmdlet-parameters"></a>Cmdlet 参数的类型
 
@@ -91,13 +91,13 @@ private string userName;
 
 ## <a name="switch-parameters"></a>开关参数
 
-Windows PowerShell 提供了[System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter)允许你定义一个参数的值的类型自动设置为`false`如果 cmdlet 时未指定此参数调用。 只要可能，使用代替布尔参数的开关参数。
+Windows PowerShell 提供了[System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)允许你定义一个参数的值的类型自动设置为`false`如果 cmdlet 时未指定此参数调用。 只要可能，使用代替布尔参数的开关参数。
 
 请考虑下面的示例。 默认情况下，多个 Windows PowerShell cmdlet 不将传递管道向下的输出对象。 但是，这些 cmdlet 具有`PassThru`开关重写默认行为的参数。 如果`PassThru`调用这些 cmdlet 时指定参数，该 cmdlet 将返回到管道输出对象。
 
-如果需要该参数具有默认值为`true`时在调用中未指定参数，请考虑反转参数的意义上说。 有关示例，而不是将参数属性设置为布尔值`true`，将属性声明为[System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter)类型，然后设置的参数的默认值`false`.
+如果需要该参数具有默认值为`true`时在调用中未指定参数，请考虑反转参数的意义上说。 有关示例，而不是将参数属性设置为布尔值`true`，将属性声明为[System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)类型，然后设置的参数的默认值`false`.
 
-若要定义一个开关参数，将属性声明为[System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter)类型，如下面的示例中所示。
+若要定义一个开关参数，将属性声明为[System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)类型，如下面的示例中所示。
 
 ```csharp
 [Parameter(Position = 1)]

@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e1a13100-41a4-4847-9f07-458c85783505
 caps.latest.revision: 6
-ms.openlocfilehash: a7ee550527ec1cb00b4ed83478992c7ab54dbdb6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 925ef86e61801f5a66f89dd25e0756f00dd35155
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861703"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054775"
 ---
 # <a name="frame-element-for-customitem-for-customcontrol-for-view-format"></a>Frame Element for CustomItem for CustomControl for View (Format)
 
 定义如何显示数据，如向左或向右移位数据。 定义自定义控件视图时，将使用此元素。
 
-配置元素 （格式） ViewDefinitions 元素 （格式） 视图元素 （格式） CustomControl 元素 （格式） CustomEntries 元素 CustomControl 视图 （格式） 的视图 （格式） CustomItem 元素 CustomEntries CustomEntry 元素CustomEntry CutomControlView （格式） 的视图 （格式） 的 CustomControl CustomItem 框架元素
+配置元素 （格式） ViewDefinitions 元素 （格式） 视图元素 （格式） CustomControl 元素 （格式） CustomEntries 元素 CustomControl 视图 （格式） 的视图 （格式） CustomItem 元素 CustomEntries CustomEntry 元素CustomEntry CustomControlView （格式） 的视图 （格式） 的 CustomControl CustomItem 框架元素
 
 ## <a name="syntax"></a>语法
 
@@ -37,13 +37,13 @@ ms.locfileid: "56861703"
 
 以下各节描述了特性、 子元素和父元素的`Frame`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |`CustomItem Element`|所需的元素|
 |[FirstLineHanging 元素](./firstlinehanging-element-for-frame-for-customcontrol-for-view-format.md)|可选元素。<br /><br /> 指定向左移动数据的第一行的字符数。|
@@ -53,7 +53,7 @@ ms.locfileid: "56861703"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[视图 （格式） 的 CustomEntry CustomItem 元素](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)|定义由控件显示的数据和显示方式。|
 

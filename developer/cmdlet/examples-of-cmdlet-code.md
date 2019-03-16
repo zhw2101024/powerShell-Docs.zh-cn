@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6fed2f68-ce6d-4a8f-bf21-f94f27a155c2
 caps.latest.revision: 9
-ms.openlocfilehash: 39c0814faf72cdb4b24730acb2ae429a2f465b32
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 936728d64f30a08fb9e2fa9ccef103683594aa3e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863123"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056248"
 ---
 # <a name="examples-of-cmdlet-code"></a>Cmdlet 代码示例
 
@@ -22,7 +22,7 @@ ms.locfileid: "56863123"
 > [!IMPORTANT]
 > 如果您想编写 cmdlet 的分步说明，请参阅[编写的 Cmdlet 的教程](./tutorials-for-writing-cmdlets.md)。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>本部分内容
 
 [如何编写简单的 Cmdlet](./how-to-write-a-simple-cmdlet.md)此示例中显示的 cmdlet 代码的基本结构。
 
@@ -38,7 +38,7 @@ ms.locfileid: "56863123"
 
 [如何重写输入处理方法](./how-to-override-input-processing-methods.md)这些示例显示用于重写 BeginProcessing、 ProcessRecord 和 EndProcessing 方法的基本结构。
 
-[如何支持 ShouldProcess 调用](./how-to-request-confirmations.md)此示例演示如何[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)和[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法应从调用中的 cmdlet。
+[如何支持 ShouldProcess 调用](./how-to-request-confirmations.md)此示例演示如何[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)并[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)在 cmdlet 内，应从调用的方法。
 
 [如何支持事务](./how-to-support-transactions.md)此示例演示如何以指示该 cmdlet 支持事务以及如何实现在一个事务内使用此 cmdlet 时执行的操作。
 

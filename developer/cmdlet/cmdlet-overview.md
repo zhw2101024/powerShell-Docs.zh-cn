@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], described
 ms.assetid: 0aa32589-4447-4ead-a5dd-a3be99113140
 caps.latest.revision: 21
-ms.openlocfilehash: a53b1ada46ad614af3522e6cc11e187afb76e7b1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f8a8c9300d1ac811c7fbbf7050dd24f78306db8f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855313"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056662"
 ---
 # <a name="cmdlet-overview"></a>Cmdlet 概述
 
@@ -46,9 +46,9 @@ Windows PowerShell cmdlet 文档中经常使用以下术语：
 
 - **动态参数**:添加到该 cmdlet 在运行时参数。 通常情况下，动态参数添加到该 cmdlet 时另一个参数设置为特定值。 有关动态参数的详细信息，请参阅[Cmdlet 的动态参数](./cmdlet-dynamic-parameters.md)。
 
-- **输入处理方法**:Cmdlet 可用于处理其以输入形式所接收的记录的一种方法。 输入的处理方法包括[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法， [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法时， [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法，并[System.Management.Automation.Cmdlet.Stopprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing)方法。 当实现一个 cmdlet 时，您必须重写的至少一个[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)， [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)，和[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。 通常情况下， [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法是您重写，因为调用 cmdlet 所处理的每条记录的方法。 与此相反， [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法并[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法调用一次来执行预处理或后处理的记录。 有关这些方法的详细信息，请参阅[输入处理方法](./cmdlet-input-processing-methods.md)。
+- **输入处理方法**:Cmdlet 可用于处理其以输入形式所接收的记录的一种方法。 输入的处理方法包括[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法， [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法， [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法，并[System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing)方法。 当实现一个 cmdlet 时，您必须重写的至少一个[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)， [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)，并且[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。 通常情况下， [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法是您重写，因为调用 cmdlet 所处理的每条记录的方法。 与此相反， [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法并[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法调用一次来执行预处理或后处理的记录。 有关这些方法的详细信息，请参阅[输入处理方法](./cmdlet-input-processing-methods.md)。
 
-- **ShouldProcess 功能**:Windows PowerShell，可创建该 cmdlet 对系统进行更改之前提示用户提供反馈的 cmdlet。 若要使用此功能，该 cmdlet 必须声明它时声明 Cmdlet 特性和必须调用该 cmdlet 支持 ShouldProcess 功能[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)和[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)从输入处理方法中的方法。 有关如何支持 ShouldProcess 功能的详细信息，请参阅[请求确认](./requesting-confirmation-from-cmdlets.md)。
+- **ShouldProcess 功能**:Windows PowerShell，可创建该 cmdlet 对系统进行更改之前提示用户提供反馈的 cmdlet。 若要使用此功能，该 cmdlet 必须声明它时声明 Cmdlet 特性和必须调用该 cmdlet 支持 ShouldProcess 功能[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)和[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)从输入处理方法中的方法。 有关如何支持 ShouldProcess 功能的详细信息，请参阅[请求确认](./requesting-confirmation-from-cmdlets.md)。
 
 - **事务**:逻辑组将被视为单个任务的命令。 如果组中的任何命令失败，并且用户可以选择接受或拒绝在事务中执行的操作，则任务自动失败。 若要参与事务，该 cmdlet 必须声明其支持事务，在声明 Cmdlet 属性。 在 Windows PowerShell 2.0 中引入了对事务的支持。 有关事务的详细信息，请参阅[Windows PowerShell 事务](http://msdn.microsoft.com/en-us/74d7bac7-bc53-49f1-a47a-272e8da84710)。
 
@@ -72,21 +72,21 @@ Windows PowerShell 支持从以下两个基类派生的 cmdlet。
 
 - 大多数 cmdlet 基于.NET Framework 类派生自[System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)基类。 从此类派生允许 cmdlet 在 Windows PowerShell 运行时上使用依赖项的最小集。 这有两个好处。 第一个优点是更小，cmdlet 对象并且不太可能更改 Windows PowerShell 运行时的影响。 第二个好处是，如果有必要，您可以直接创建 cmdlet 对象的实例，然后而通过 Windows PowerShell 运行时调用它不是直接调用它。
 
-- 更复杂 cmdlet 基于.NET Framework 类派生自[System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基类。 从此类派生可使您更多访问 Windows PowerShell 运行时。 此访问权限允许您 cmdlet 来调用脚本，来访问提供程序，并访问当前会话状态。 （若要访问当前会话状态，获取和设置会话变量和首选项。）但是，从此类派生会增加 cmdlet 对象的大小，这意味着你的 cmdlet 更紧密地耦合到当前版本的 Windows PowerShell 运行时。
+- 更复杂 cmdlet 基于.NET Framework 类派生自[System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基类。 从此类派生可使您更多访问 Windows PowerShell 运行时。 此访问权限允许您 cmdlet 来调用脚本，来访问提供程序，并访问当前会话状态。 （若要访问当前会话状态，获取和设置会话变量和首选项。）但是，从此类派生会增加 cmdlet 对象的大小，这意味着你的 cmdlet 更紧密地耦合到当前版本的 Windows PowerShell 运行时。
 
-一般情况下，除非需要对 Windows PowerShell 运行时的扩展访问权限，否则您应派生自[System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)类。 但是，Windows PowerShell 运行时具有 cmdlet 执行的广泛的日志记录的功能。 如果审核模型依赖于此日志记录，则可以禁止你从另一个 cmdlet 中的 cmdlet 执行通过派生自[System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)类。
+一般情况下，除非需要对 Windows PowerShell 运行时的扩展访问权限，否则您应派生自[System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)类。 但是，Windows PowerShell 运行时具有 cmdlet 执行的广泛的日志记录的功能。 如果审核模型依赖于此日志记录，则可以禁止你从另一个 cmdlet 中的 cmdlet 执行通过派生自[System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)类。
 
 ## <a name="input-processing-methods"></a>输入处理方法
 
 [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)类提供了以下用于处理记录的虚拟方法。 一个或多个的前三个方法，则必须重写所有派生的 cmdlet 类：
 
-- [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing):用于为 cmdlet 提供可选的一次性预处理功能。
+- [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing):用于为 cmdlet 提供可选的一次性预处理功能。
 
-- [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord):用于为 cmdlet 提供按记录处理功能。 [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)可能调用方法的次数，或根本不，具体取决于该 cmdlet 的输入的任何数字。
+- [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord):用于为 cmdlet 提供按记录处理功能。 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)可能调用方法的次数，或根本不，具体取决于该 cmdlet 的输入的任何数字。
 
-- [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing):用于为 cmdlet 提供可选的一次性后处理功能。
+- [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing):用于为 cmdlet 提供可选的一次性后处理功能。
 
-- [System.Management.Automation.Cmdlet.Stopprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing):用于用户异步停止 cmdlet （例如，通过按 CTRL + C） 时停止处理。
+- [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing):用于用户异步停止 cmdlet （例如，通过按 CTRL + C） 时停止处理。
 
 有关这些方法的详细信息，请参阅[Cmdlet 输入处理方法](./cmdlet-input-processing-methods.md)。
 

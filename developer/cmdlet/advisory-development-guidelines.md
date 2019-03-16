@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
-ms.openlocfilehash: 97a2d3587f8f69edc92150474e94a620ff9a2f71
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 871a74a084da3c7ec36767b7195461e0e7290cb9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854543"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056560"
 ---
 # <a name="advisory-development-guidelines"></a>咨询性的开发指南
 
@@ -61,7 +61,7 @@ ms.locfileid: "56854543"
 
 ### <a name="handle-credentials-through-windows-powershell-ad03"></a>处理通过 Windows PowerShell (AD03) 的凭据
 
-Cmdlet 应定义`Credential`参数以表示凭据。 此参数必须属于类型[System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) ，且必须使用凭据特性声明定义。 未直接提供完整的凭据时，此支持会自动提示用户的用户名、 密码，或两个。 有关凭据属性的详细信息，请参阅[凭据特性声明](./credential-attribute-declaration.md)。
+Cmdlet 应定义`Credential`参数以表示凭据。 此参数必须属于类型[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential) ，且必须使用凭据特性声明定义。 未直接提供完整的凭据时，此支持会自动提示用户的用户名、 密码，或两个。 有关凭据属性的详细信息，请参阅[凭据特性声明](./credential-attribute-declaration.md)。
 
 ### <a name="support-encoding-parameters-ad04"></a>支持编码的参数 (AD04)
 
@@ -89,17 +89,17 @@ Cmdlet 应定义`Credential`参数以表示凭据。 此参数必须属于类型
 
 ### <a name="if-no-pipeline-input-override-the-beginprocessing-method-ac02"></a>如果没有管道输入重写 BeginProcessing 方法 (AC02)
 
-如果你的 cmdlet 不接受来自管道的输入，应在实现处理[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法。 使用此方法允许 Windows PowerShell 来维护 cmdlet 之间进行排序。 在管道中的剩余 cmdlet 获得机会开始其处理之前，在管道中的第一个 cmdlet 始终返回其对象。
+如果你的 cmdlet 不接受来自管道的输入，应在实现处理[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法。 使用此方法允许 Windows PowerShell 来维护 cmdlet 之间进行排序。 在管道中的剩余 cmdlet 获得机会开始其处理之前，在管道中的第一个 cmdlet 始终返回其对象。
 
 ### <a name="to-handle-stop-requests-override-the-stopprocessing-method-ac03"></a>若要处理停止请求数，重写 StopProcessing 方法 (AC03)
 
-重写[System.Management.Automation.Cmdlet.Stopprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing)方法，以便你的 cmdlet 可以处理停止信号。 某些 cmdlet 需要很长时间才能完成其操作，可让 Windows PowerShell 运行时，例如当该 cmdlet 将阻止中长时间运行的 RPC 调用的线程的调用之间传递很长时间。 这包括对进行调用的 cmdlet [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法，为[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法，和其他反馈可能需要很长时间才能完成的机制。 这种情况下用户可能需要将停止信号发送到这些 cmdlet。
+重写[System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing)方法，以便你的 cmdlet 可以处理停止信号。 某些 cmdlet 需要很长时间才能完成其操作，可让 Windows PowerShell 运行时，例如当该 cmdlet 将阻止中长时间运行的 RPC 调用的线程的调用之间传递很长时间。 这包括对进行调用的 cmdlet [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法，为[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法，和其他反馈可能需要很长时间才能完成的机制。 这种情况下用户可能需要将停止信号发送到这些 cmdlet。
 
 ### <a name="implement-the-idisposable-interface-ac04"></a>实现 IDisposable 接口 (AC04)
 
-如果你的 cmdlet 具有 （写入到管道） 的未释放的对象由[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法中，你的 cmdlet 可能需要其他对象可供使用。 例如，如果你 cmdlet 会打开文件句柄中的其[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法，并保留该句柄打开以供[System.Management.Automation.Cmdlet.Processrecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，此句柄必须处理结束时关闭。
+如果你的 cmdlet 具有 （写入到管道） 的未释放的对象由[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法中，你的 cmdlet 可能需要其他对象可供使用。 例如，如果你 cmdlet 会打开文件句柄中的其[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法，并保留该句柄打开以供[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，此句柄必须处理结束时关闭。
 
-Windows PowerShell 运行时不会始终调用[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。 例如， [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)可能不调用方法，如果该 cmdlet 通过其操作期间取消或如果终止该 cmdlet 的任何部分中会发生错误。 因此，需要对象清理的 cmdlet 的.NET Framework 类应实现的完整[System.Idisposable](/dotnet/api/System.IDisposable)接口模式，以便 Windows PowerShell 运行时可以调用都包括终结器，[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)并[System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose)末尾的处理方法。
+Windows PowerShell 运行时不会始终调用[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。 例如， [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)可能不调用方法，如果该 cmdlet 通过其操作期间取消或如果终止该 cmdlet 的任何部分中会发生错误。 因此，需要对象清理的 cmdlet 的.NET Framework 类应实现的完整[System.IDisposable](/dotnet/api/System.IDisposable)接口模式，以便 Windows PowerShell 运行时可以调用都包括终结器，[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)并[System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose)末尾的处理方法。
 
 ### <a name="use-serialization-friendly-parameter-types-ac05"></a>使用适合于序列化的参数类型 (AC05)
 
@@ -117,7 +117,7 @@ Windows PowerShell 运行时不会始终调用[System.Management.Automation.Cmdl
 
 - PSPrimitiveDictionary
 
-- SwitchParmeter
+- SwitchParameter
 
 - PSListModifier
 

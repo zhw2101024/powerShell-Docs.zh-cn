@@ -14,12 +14,12 @@ helpviewer_keywords:
 - error records [PowerShell], non-terminating
 ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
 caps.latest.revision: 8
-ms.openlocfilehash: 7b54fc220a66a47c25b3e8cba644882d31713cb7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 45f5934314a2871ceb921c7a66b9dfb658d0bd99
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857683"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057937"
 ---
 # <a name="cmdlet-error-reporting"></a>Cmdlet 错误报告
 
@@ -43,7 +43,7 @@ Cmdlet 应报告以不同的方式根据错误是否终止错误的错误或非�
 
 ## <a name="reporting-nonterminating-errors"></a>报告非终止错误
 
-非终止错误的报告应始终进行中的 cmdlet 的实现[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法， [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，或[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。 这些类型的错误报告通过调用[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)反过来将错误记录发送到错误流的方法。
+非终止错误的报告应始终进行中的 cmdlet 的实现[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法， [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，或[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。 这些类型的错误报告通过调用[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)反过来将错误记录发送到错误流的方法。
 
 ## <a name="reporting-terminating-errors"></a>报告的终止错误
 
@@ -53,7 +53,7 @@ Cmdlet 应报告以不同的方式根据错误是否终止错误的错误或非�
 
 ## <a name="error-records"></a>错误记录
 
-Windows PowerShell 描述使用非终止错误条件[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象。 每个[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象提供错误类别信息、 可选目标对象，以及有关错误条件的详细信息。
+Windows PowerShell 描述使用非终止错误条件[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象。 每个[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象提供错误类别信息、 可选目标对象，以及有关错误条件的详细信息。
 
 ### <a name="error-identifiers"></a>错误标识符
 
@@ -61,7 +61,7 @@ Windows PowerShell 描述使用非终止错误条件[System.Management.Automatio
 
 指定错误标识符时，应遵循以下准则。
 
-- 不同且非常具体的错误标识符分配到不同的代码路径。 调用每个代码路径[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)或[System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)应具有其自己的错误标识符。
+- 不同且非常具体的错误标识符分配到不同的代码路径。 调用每个代码路径[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)或[System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)应具有其自己的错误标识符。
 
 - 错误标识符应是唯一的 CLR 异常类型的终止性和非终止错误。
 

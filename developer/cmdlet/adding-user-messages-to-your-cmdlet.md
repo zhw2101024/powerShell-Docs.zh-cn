@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: ffc08d2713c4bfc0938b2e07146102af8b5467d2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5b3a5f5d5d02c7d5a3c1d622ec1a3740739c694f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855983"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055030"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>向 Cmdlet 添加用户消息
 
@@ -82,7 +82,7 @@ Cmdlet 可以编写多种类型的可由 Windows PowerShell 运行时向用户�
 
 Cmdlet 创建的第一步是始终命名 cmdlet 和实现该 cmdlet 的.NET 类声明。 任何类型的 cmdlet 可以从其输入处理方法; 这些方法中编写用户通知因此，一般情况下，您可以命名使用任何谓词，指示该 cmdlet 将执行哪些系统修改此 cmdlet。 有关已批准的 cmdlet 谓词的详细信息，请参阅[Cmdlet 的动词名称](./approved-verbs-for-windows-powershell-commands.md)。
 
-停止进程 cmdlet 专门用于修改系统;因此， [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) .NET 类的声明必须包括`SupportsShouldProcess`属性关键字，并设置为`true`。
+停止进程 cmdlet 专门用于修改系统;因此， [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) .NET 类的声明必须包括`SupportsShouldProcess`属性关键字，并设置为`true`。
 
 以下代码是此停止进程 cmdlet 类的定义。 有关此定义的详细信息，请参阅[创建一个 Cmdlet 来修改系统](./creating-a-cmdlet-that-modifies-the-system.md)。
 
@@ -141,16 +141,16 @@ private bool passThru;
 
 ## <a name="overriding-an-input-processing-method"></a>重写方法的处理的输入
 
-你的 cmdlet 必须重写方法的处理的输入，则将其最常[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)。 此停止进程 cmdlet 覆盖[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)输入处理方法。 在停止进程 cmdlet 的此实现中，调用都要写入详细消息、 调试消息和警告消息。
+你的 cmdlet 必须重写方法的处理的输入，则将其最常[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)。 此停止进程 cmdlet 覆盖[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)输入处理方法。 在停止进程 cmdlet 的此实现中，调用都要写入详细消息、 调试消息和警告消息。
 
 > [!NOTE]
-> 有关如何调用此方法的详细信息[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)并[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，请参阅[创建一个 Cmdlet 来修改系统](./creating-a-cmdlet-that-modifies-the-system.md)。
+> 有关如何调用此方法的详细信息[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)并[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，请参阅[创建一个 Cmdlet 来修改系统](./creating-a-cmdlet-that-modifies-the-system.md)。
 
 ## <a name="writing-a-verbose-message"></a>写入详细消息
 
-[System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法用于编写与特定的错误情况无关的常规用户级别信息。 然后，系统管理员可以使用该信息以继续处理其他命令。 此外，根据需要使用此方法编写的任何信息应该被本地化。
+[System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法用于编写与特定的错误情况无关的常规用户级别信息。 然后，系统管理员可以使用该信息以继续处理其他命令。 此外，根据需要使用此方法编写的任何信息应该被本地化。
 
-此停止进程 cmdlet 中的以下代码显示了两次调用[System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法的重写从[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法。
+此停止进程 cmdlet 中的以下代码显示了两次调用[System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法的重写从[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法。
 
 ```csharp
 message = String.Format("Attempting to stop process \"{0}\".", name);
@@ -166,14 +166,14 @@ WriteVerbose(message);
 
 ## <a name="writing-a-debug-message"></a>写入调试消息
 
-[System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法用于编写可用于排除该 cmdlet 的操作的问题的调试消息。 从输入处理方法进行调用。
+[System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法用于编写可用于排除该 cmdlet 的操作的问题的调试消息。 从输入处理方法进行调用。
 
 > [!NOTE]
-> Windows PowerShell 还定义`Debug`参数显示两者详细和调试信息。 如果你的 cmdlet 支持此参数，它不需要调用[System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)中调用的相同代码[System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).
+> Windows PowerShell 还定义`Debug`参数显示两者详细和调试信息。 如果你的 cmdlet 支持此参数，它不需要调用[System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)中调用的相同代码[System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).
 
-以下两个部分的示例停止进程 cmdlet 中的代码显示调用[System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法的重写从[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法。
+以下两个部分的示例停止进程 cmdlet 中的代码显示调用[System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法的重写从[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法。
 
-此调试消息写入之前[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)调用。
+此调试消息写入之前[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)调用。
 
 ```csharp
 message =
@@ -182,7 +182,7 @@ message =
 WriteDebug(message);
 ```
 
-此调试消息写入之前[System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)调用。
+此调试消息写入之前[System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)调用。
 
 ```csharp
 message =
@@ -192,15 +192,15 @@ WriteDebug(message);
 WriteObject(process);
 ```
 
-Windows PowerShell 会自动将任何路由[System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)对跟踪基础结构和 cmdlet 的调用。 这样，方法调用，而无需执行任何额外的开发工作中该 cmdlet 追溯到宿主应用程序、 文件或调试器。 以下命令行条目实现跟踪操作。
+Windows PowerShell 会自动将任何路由[System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)对跟踪基础结构和 cmdlet 的调用。 这样，方法调用，而无需执行任何额外的开发工作中该 cmdlet 追溯到宿主应用程序、 文件或调试器。 以下命令行条目实现跟踪操作。
 
 **PS > 跟踪表达式停止的进程的文件 proc.log-命令停止进程记事本**
 
 ## <a name="writing-a-warning-message"></a>编写一条警告消息
 
-[System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)方法用于该 cmdlet 时要执行的操作可能具有意外的结果，例如，覆盖只读文件写入一条警告。
+[System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)方法用于该 cmdlet 时要执行的操作可能具有意外的结果，例如，覆盖只读文件写入一条警告。
 
-示例停止进程 cmdlet 从下面的代码演示在调用[System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)方法的重写从[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法。
+示例停止进程 cmdlet 从下面的代码演示在调用[System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)方法的重写从[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法。
 
 ```csharp
  if (criticalProcess)
@@ -214,10 +214,10 @@ Windows PowerShell 会自动将任何路由[System.Management.Automation.Cmdlet.
 
 ## <a name="writing-a-progress-message"></a>写入进度消息
 
-[System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)用于 cmdlet 操作需要较长的时间才能完成时写入进度消息。 调用[System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)将传递[System.Management.Automation.Progressrecord](/dotnet/api/System.Management.Automation.ProgressRecord)发送到主机应用程序向用户呈现的对象。
+[System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)用于 cmdlet 操作需要较长的时间才能完成时写入进度消息。 调用[System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)将传递[System.Management.Automation.Progressrecord](/dotnet/api/System.Management.Automation.ProgressRecord)发送到主机应用程序向用户呈现的对象。
 
 > [!NOTE]
-> 此停止进程 cmdlet 不包括调用[System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)方法。
+> 此停止进程 cmdlet 不包括调用[System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)方法。
 
 以下代码是编写尝试将项复制一个 cmdlet 的进度消息的示例。
 

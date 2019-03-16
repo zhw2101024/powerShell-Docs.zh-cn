@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e199bba3-90d3-41ca-9d78-cb502e58508d
 caps.latest.revision: 6
-ms.openlocfilehash: c8b3f907a80d1f6125a5ac04236245503db76ed0
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.openlocfilehash: 9b4d83aeaf45eab1365dec5fbf48c3c796ed5bde
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251296"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057123"
 ---
 # <a name="security-parameters"></a>安全性参数
 
@@ -29,7 +29,7 @@ ms.locfileid: "57251296"
 |**CertStoreLocation**<br>数据类型：字符串|实现此参数，以便用户可以指定证书存储区的位置。 该位置通常是文件路径。|
 |**CertSubjectName**<br>数据类型：字符串|实现此参数，以便用户可以指定证书的颁发者或，以便用户可以指定子字符串。|
 |**CertUsage**<br>数据类型：字符串|实现此参数以指定的密钥用法或增强型密钥用法。 可以表示密钥的位掩码，有点，对象标识符 (OID)，或一个字符串。|
-|**凭据**<br>数据类型：[System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)|实现此参数，使该 cmdlet 将自动提示用户输入用户名或密码。 如果未直接提供完整的凭据，则会显示两个提示。|
+|**凭据**<br>数据类型：[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)|实现此参数，使该 cmdlet 将自动提示用户输入用户名或密码。 如果未直接提供完整的凭据，则会显示两个提示。|
 |**CSPName**<br>数据类型：字符串|实现此参数，以便用户可以指定证书服务提供商 (CSP) 的名称。|
 |**CSPType**<br>数据类型：整数|实现此参数，以便用户可以指定 CSP 的类型。|
 |**组**<br>数据类型：字符串|实现此参数，以便用户可以指定用于访问权限的主体的集合。 有关详细信息，请参阅的说明**主体**参数。|

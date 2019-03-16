@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e082c2e3-12ce-4032-9caf-bf6b2e0dcf81
 caps.latest.revision: 23
-ms.openlocfilehash: 67e041756974dcd84e15cdb4edaf91be45122e28
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: eaa927ec90df6053843f5c942357fed4c7dee966
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859203"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059484"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>如何编写 PowerShell 模块清单
 
@@ -65,7 +65,7 @@ ms.locfileid: "56859203"
 
 下表描述了可以在模块清单中的元素
 
-|元素|默认值|描述|
+|元素|默认值|说明|
 |-------------|-------------|-----------------|
 |RootModule<br /><br /> 类型： 字符串|' '|脚本模块或二进制模块文件与此清单相关联。 以前版本的 PowerShell 称为 ModuleToProcess 此元素。<br /><br /> 可能的根模块的类型可以为空 (这会使这**清单**模块)，脚本模块的名称 (.psm1，这样，您**脚本**模块)，或二进制模块 （.exe 或.dll 的名称这使它成为**二进制**模块)。 在此元素中放置一个模块清单 (.psd1) 或脚本文件 (.ps1) 的名称会导致错误发生。|
 |ModuleVersion<br /><br /> 类型： 字符串|1.0|此模块的版本号。 字符串必须能够将转换为 [System.Version]。 也就是说，#。 #。 #。 #。 #。 `Import-Module` 将加载找到的第一个模块 **$psModulePath** ，其中的名称匹配，但至少高 ModuleVersion，作为`-MinimumVersion`参数。 若要导入特定版本，请使用`-RequiredVersion`参数，而是。<br /><br /> 示例： `ModuleVersion = '1.0'`|
@@ -73,11 +73,11 @@ ms.locfileid: "56859203"
 |作者<br /><br /> 类型： 字符串|无|此模块的作者。<br /><br /> 示例： `Author = 'AuthorNameHere'`|
 |CompanyName<br /><br /> 类型： 字符串|Unknown|公司或供应商联系，此模块。<br /><br /> 示例： `CompanyName = 'Fabrikam'`|
 |版权<br /><br /> 类型： 字符串|（c) [currentYear] [作者]。 保留所有权利。|此模块的版权声明。<br /><br /> 示例： `Copyright = '2016 AuthorName. All rights reserved.'`|
-|描述<br /><br /> 类型： 字符串|' '|此模块提供的功能的说明。<br /><br /> 示例： `Description = 'This is a description of a module.'`|
+|说明<br /><br /> 类型： 字符串|' '|此模块提供的功能的说明。<br /><br /> 示例： `Description = 'This is a description of a module.'`|
 |PowerShellVersion<br /><br /> 类型： 字符串|' '|此模块所需的 Windows PowerShell 引擎的最低版本。 当前有效的值为 1.0、 2.0、 3.0、 4.0 和 5.0。<br /><br /> 示例： `PowerShellVersion = '5.0'`|
 |PowerShellHostName<br /><br /> 类型： 字符串|' '|指定 Windows PowerShell 主机所需的模块的名称。 通过 Windows PowerShell 提供此名称。 若要在程序中查找主机程序的名称，请键入： `$host.name` 。<br /><br /> 示例： `PowerShellHostName = 'Windows PowerShell ISE Host'`|
 |PowerShellHostVersion<br /><br /> 类型： 字符串|' '|此模块所需的 Windows PowerShell 主机的最低版本。<br /><br /> 示例： `PowerShellHostVersion = '2.0'`|
-|DotNetFrameworkVersion<br /><br /> 类型： 字符串|' '|此模块所需的 Microsoft.NET Framework 最低版本。<br /><br /> 示例： `DotNetFrameorkVersion = '3.5'`|
+|DotNetFrameworkVersion<br /><br /> 类型： 字符串|' '|此模块所需的 Microsoft.NET Framework 最低版本。<br /><br /> 示例： `DotNetFrameworkVersion = '3.5'`|
 |CLRVersion<br /><br /> 类型： 字符串|' '|公共语言运行时 (CLR) 所需的此模块的最低版本。<br /><br /> 示例： `CLRVersion = '3.5'`|
 |ProcessorArchitecture<br /><br /> 类型： 字符串|' '|处理器体系结构 （无、 X86 Amd64） 所需的此模块。 有效值为 x86、AMD64、IA64 和 None（未知或未指定）。<br /><br /> 示例： `ProcessorArchitecture = 'x86'`|
 |RequiredModules<br /><br /> 类型: [字符串 []]|@()|必须导入到全局环境之前导入此模块的模块。 这将加载列出，除非它们已加载任何模块。 （例如，某些模块可能已加载的另一个模块。）。 还有可能要指定特定版本进行加载时，使用`RequiredVersion`而非`ModuleVersion`。 当使用`ModuleVersion`它会加载最少的指定的版本可用的最新版本。<br /><br /> 示例： `RequiredModules = @(@{ModuleName="myDependentModule", ModuleVersion="2.0",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> 示例： `RequiredModules = @(@{ModuleName="myDependentModule", RequiredVersion="1.5",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|

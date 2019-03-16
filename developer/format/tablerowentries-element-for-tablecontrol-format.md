@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d10b68ca-256c-4c58-b503-73f7777b39ae
 caps.latest.revision: 15
-ms.openlocfilehash: d93750f919c1075f173dc9ac70324cc003e36879
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 88de19be02de4933f892e02093403a82ccdd5788
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862183"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055727"
 ---
 # <a name="tablerowentries-element-for-tablecontrol-format"></a>TableRowEntries Element for TableControl (Format)
 
@@ -33,19 +33,19 @@ ms.locfileid: "56862183"
 
 以下各节描述的特性、 子元素和父元素的`TableRowEntries`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
-|[TableControl （格式） 的 TableRowEntries TableRowEntry 元素](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)|必需的元素。<br /><br /> 定义表的行中显示的数据。|
+|[TableControl （格式） 的 TableRowEntries TableRowEntry 元素](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|必需的元素。<br /><br /> 定义表的行中显示的数据。|
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[TableControl 元素 （格式）](./tablecontrol-element-format.md)|定义一个视图，以表格式。|
 
@@ -84,6 +84,6 @@ ms.locfileid: "56862183"
 
 [TableControl 元素 （格式）](./tablecontrol-element-format.md)
 
-[TableRowEntry 元素 （格式）](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+[TableRowEntry 元素 （格式）](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
 [编写 PowerShell 格式设置文件](./writing-a-powershell-formatting-file.md)

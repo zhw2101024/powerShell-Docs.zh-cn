@@ -8,23 +8,23 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2a65b964-5bc6-4ade-a66b-b6afa7351ce7
 caps.latest.revision: 9
-ms.openlocfilehash: d77e4daf25bfcd5e76c184f6dbdb619368627bfa
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 32ebf2531237bfd1042310ccc4155193a58401fd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857223"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058770"
 ---
 # <a name="interpreting-errorrecord-objects"></a>解释 ErrorRecord 对象
 
-在大多数情况下， [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象表示的命令或脚本生成一个非终止错误。 终止错误还可以指定其他信息中通过 ErrorRecord [System.Management.Automation.Icontainserrorrecord](/dotnet/api/System.Management.Automation.IContainsErrorRecord)接口。
+在大多数情况下， [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象表示的命令或脚本生成一个非终止错误。 终止错误还可以指定其他信息中通过 ErrorRecord [System.Management.Automation.Icontainserrorrecord](/dotnet/api/System.Management.Automation.IContainsErrorRecord)接口。
 
-如果你想要编写错误处理程序在您的脚本或主机用于处理特定错误的执行过程中发生命令或脚本，您必须解释[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象，以确定是否它表示要处理的错误的类。
+如果你想要编写错误处理程序在您的脚本或主机用于处理特定错误的执行过程中发生命令或脚本，您必须解释[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象，以确定是否它表示要处理的错误的类。
 
 当一个 cmdlet 遇到终止或非终止错误时，它应创建错误记录描述错误条件。 主机应用程序必须调查这些错误记录，并执行任何操作将会减少错误。 主机应用程序还必须调查错误记录为非终止错误，无法处理一条记录，但可以继续，并它必须调查导致停止管道的终止错误的错误记录。
 
 > [!NOTE]
-> 对于终止错误，该 cmdlet 的调用[System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)方法。 对于非终止性错误，该 cmdlet 的调用[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法。
+> 对于终止错误，该 cmdlet 的调用[System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)方法。 对于非终止性错误，该 cmdlet 的调用[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法。
 
 ## <a name="error-record-design"></a>错误记录设计
 
@@ -44,13 +44,13 @@ ms.locfileid: "56857223"
 
 ### <a name="the-error-category"></a>错误类别
 
-错误记录的错误类别是由提供的预定义常量之一[System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)枚举。 此信息是可通过[System.Management.Automation.Errorrecord.Categoryinfo*](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo)的属性[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象。
+错误记录的错误类别是由提供的预定义常量之一[System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)枚举。 此信息是可通过[System.Management.Automation.ErrorRecord.CategoryInfo](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo)的属性[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象。
 
 CloseError、 OpenError、 InvalidType、 ReadError 和 WriteError 类别和其他错误类别，可以指定该 cmdlet。 主机应用程序可以使用的错误类别捕获的错误组。
 
 ### <a name="the-exception"></a>异常
 
-错误记录中包含的异常提供的 cmdlet，可通过访问[System.Management.Automation.Errorrecord.Exception*](/dotnet/api/System.Management.Automation.ErrorRecord.Exception)属性的[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象。
+错误记录中包含的异常提供的 cmdlet，可通过访问[System.Management.Automation.ErrorRecord.Exception*](/dotnet/api/System.Management.Automation.ErrorRecord.Exception)属性的[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象。
 
 主机应用程序可以使用`is`关键字来标识异常的特定类或派生类。 最好是为 branch 异常类型，如下面的示例中所示。
 
@@ -70,23 +70,23 @@ FQID 旨在作为单个字符串进行检查。 但是，存在情况设计错�
 
 ### <a name="other-information"></a>其他信息
 
-[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象还可能会提供描述的环境发生了错误的信息。 此信息包括错误详细信息、 调用信息和错误发生时正在处理的目标对象等项。 尽管此信息可供主机应用程序，它是通常不用于识别的错误。 此信息将可通过以下属性：
+[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象还可能会提供描述的环境发生了错误的信息。 此信息包括错误详细信息、 调用信息和错误发生时正在处理的目标对象等项。 尽管此信息可供主机应用程序，它是通常不用于识别的错误。 此信息将可通过以下属性：
 
-[System.Management.Automation.Errorrecord.Errordetails*](/dotnet/api/System.Management.Automation.ErrorRecord.ErrorDetails)
+[System.Management.Automation.ErrorRecord.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorRecord.ErrorDetails)
 
-[System.Management.Automation.Errorrecord.Invocationinfo*](/dotnet/api/System.Management.Automation.ErrorRecord.InvocationInfo)
+[System.Management.Automation.ErrorRecord.InvocationInfo](/dotnet/api/System.Management.Automation.ErrorRecord.InvocationInfo)
 
-[System.Management.Automation.Errorrecord.Targetobject*](/dotnet/api/System.Management.Automation.ErrorRecord.TargetObject)
+[System.Management.Automation.ErrorRecord.TargetObject](/dotnet/api/System.Management.Automation.ErrorRecord.TargetObject)
 
 ## <a name="see-also"></a>另请参阅
 
-[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)
+[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)
 
 [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)
 
 [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)
 
-[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
+[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
 
 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 

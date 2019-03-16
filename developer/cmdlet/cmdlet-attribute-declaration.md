@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Cmdlet attribute
 ms.assetid: 1d323332-f773-4c0e-8a69-2aada765afb2
 caps.latest.revision: 12
-ms.openlocfilehash: 2bc03aaade1f18d48f65ecf5f9ee437ffaf07f92
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 6887467ad5ccafe6edf8f03f531b4750133aa9e9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863423"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058022"
 ---
 # <a name="cmdlet-attribute-declaration"></a>Cmdlet 属性声明
 
@@ -36,9 +36,9 @@ Cmdlet 属性标识为 cmdlet 的 Microsoft.NET Framework 类和指定的谓词�
 
 `NounName` ([System.String](/dotnet/api/System.String)) 所需。 指定 cmdlet 名词。 此名词指定 cmdlet 作用于的资源。 有关 cmdlet 名词的详细信息，请参阅[Cmdlet 声明](./cmdlet-class-declaration.md)并[强烈推荐的开发指南](./strongly-encouraged-development-guidelines.md)。
 
-`SupportsShouldProcess` ([System.Boolean](/dotnet/api/System.Boolean)) 可选的命名参数。 `True` 指示该 cmdlet 支持调用[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法，为该 cmdlet 提供了一种方法来执行更改系统的操作前提示用户。 `False`默认值，指示该 cmdlet 不支持调用[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 确认请求的详细信息，请参阅[请求确认](./requesting-confirmation-from-cmdlets.md)。
+`SupportsShouldProcess` ([System.Boolean](/dotnet/api/System.Boolean)) 可选的命名参数。 `True` 指示该 cmdlet 支持调用[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法，为该 cmdlet 提供了一种方法来执行更改系统的操作前提示用户。 `False`默认值，指示该 cmdlet 不支持调用[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 确认请求的详细信息，请参阅[请求确认](./requesting-confirmation-from-cmdlets.md)。
 
-`ConfirmImpact` ([System.Management.Automation.Confirmimpact](/dotnet/api/System.Management.Automation.ConfirmImpact)) 可选的命名参数。 指定该 cmdlet 的操作时应通过调用确认[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) （默认为 Medium） cmdlet 的 ConfirmImpact 值等于或大于的值时只会调用`$ConfirmPreference`变量。 应指定此参数仅当`SupportsShouldProcess`指定参数。
+`ConfirmImpact` ([System.Management.Automation.Confirmimpact](/dotnet/api/System.Management.Automation.ConfirmImpact)) 可选的命名参数。 指定该 cmdlet 的操作时应通过调用确认[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) （默认为 Medium） cmdlet 的 ConfirmImpact 值等于或大于的值时只会调用`$ConfirmPreference`变量。 应指定此参数仅当`SupportsShouldProcess`指定参数。
 
 `DefaultParameterSetName` ([System.String](/dotnet/api/System.String)) 可选的命名参数。 指定 Windows PowerShell 运行时尝试使用时不能确定哪个参数设置为使用默认参数集。 请注意，可以设置必需参数的唯一参数的每个参数，从而消除这种情况。
 
@@ -54,9 +54,9 @@ Cmdlet 属性标识为 cmdlet 的 Microsoft.NET Framework 类和指定的谓词�
 
 **VerbName-NounName**
 
-- 更改资源在 Windows PowerShell 之外的所有 cmdlet 应都包括`SupportsShouldProcess`关键字声明 Cmdlet 属性，它允许该 cmdlet 将调用[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法之前该 cmdlet 将执行其操作。 如果[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)调用返回`false`，不应执行操作。 有关生成的确认请求的详细信息[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)调用，请参阅[请求确认](./requesting-confirmation-from-cmdlets.md)。
+- 更改资源在 Windows PowerShell 之外的所有 cmdlet 应都包括`SupportsShouldProcess`关键字声明 Cmdlet 属性，它允许该 cmdlet 将调用[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法之前该 cmdlet 将执行其操作。 如果[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)调用返回`false`，不应执行操作。 有关生成的确认请求的详细信息[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)调用，请参阅[请求确认](./requesting-confirmation-from-cmdlets.md)。
 
-`Confirm`并`WhatIf`cmdlet 参数是仅适用于支持的 cmdlet [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)调用。
+`Confirm`并`WhatIf`cmdlet 参数是仅适用于支持的 cmdlet [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)调用。
 
 ## <a name="example"></a>示例
 

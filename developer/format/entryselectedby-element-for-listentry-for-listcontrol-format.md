@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0f7a74e9-764d-46ce-ab8e-8b9314ce1659
 caps.latest.revision: 12
-ms.openlocfilehash: 723619e67612b859d0acbab37eecd82141adf923
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 442565d25f60ae8e04501f3f9ffba35d486fbc8a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854943"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054928"
 ---
 # <a name="entryselectedby-element-for-listentry-for-listcontrol-format"></a>EntrySelectedBy Element for ListEntry for ListControl (Format)
 
@@ -35,21 +35,21 @@ ms.locfileid: "56854943"
 
 以下各节描述了特性、 子元素和父元素的`EntrySelectedBy`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[ListControl （格式） 的 EntrySelectedBy SelectionCondition 元素](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)|可选元素。<br /><br /> 定义必须存在要使用此列表视图定义的条件。|
-|[ListControl （格式） 的 EnrtySelectedBy SelectionSetName 元素](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)|可选元素。<br /><br /> 指定一组使用此列表视图定义的.NET 类型。|
+|[ListControl （格式） 的 EntrySelectedBy SelectionSetName 元素](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)|可选元素。<br /><br /> 指定一组使用此列表视图定义的.NET 类型。|
 |[ListControl （格式） 的 EntrySelectedBy 的 TypeName 元素](./typename-element-for-entryselectedby-for-listcontrol-format.md)|可选元素。<br /><br /> 指定将使用此列表视图定义的.NET 类型。|
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[ListControl （格式） 的 ListEntry 元素](./listentry-element-for-listcontrol-format.md)|定义列表的行的显示方式。|
 
@@ -79,7 +79,7 @@ ms.locfileid: "56854943"
 
 [ListControl （格式） 的 EntrySelectedBy SelectionCondition 元素](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)
 
-[ListControl （格式） 的 EnrtySelectedBy SelectionSetName 元素](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+[ListControl （格式） 的 EntrySelectedBy SelectionSetName 元素](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
 [ListControl （格式） 的 EntrySelectedBy 的 TypeName 元素](./typename-element-for-entryselectedby-for-listcontrol-format.md)
 

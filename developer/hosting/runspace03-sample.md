@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 31df99d7-6954-4fdc-b6f5-06ecba094f43
 caps.latest.revision: 8
-ms.openlocfilehash: fe513a47908fc3020895fcb26f1840faad76210a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 39495f7813aecf5d0210866fc11f94557fdb0cd9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857293"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058991"
 ---
 # <a name="runspace03-sample"></a>Runspace03 示例
 
@@ -35,7 +35,7 @@ ms.locfileid: "56857293"
 
 - 以同步方式运行脚本。
 
-- 使用[System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject)对象以提取和显示从脚本返回的对象的属性。
+- 使用[System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject)对象以提取和显示从脚本返回的对象的属性。
 
 - 检索和显示运行该脚本时生成的错误记录。
 

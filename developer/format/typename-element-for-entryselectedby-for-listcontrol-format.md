@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 33c7345c-b808-4c1e-bd54-cb870b407432
 caps.latest.revision: 14
-ms.openlocfilehash: 3f0c0ba1fe85d70557e67a30b3a9a59a33043475
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0f7216d4dcc0380bceb47ea7c15b3d4a7e5ceeb2
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856103"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059688"
 ---
 # <a name="typename-element-for-entryselectedby-for-listcontrol-format"></a>TypeName Element for EntrySelectedBy for ListControl (Format)
 
@@ -31,7 +31,7 @@ ms.locfileid: "56856103"
 
 以下各节描述了特性、 子元素和父元素的`TypeName`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
@@ -41,7 +41,7 @@ ms.locfileid: "56856103"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[ListEntry （格式） 的 EntrySelectedBy 元素](./entryselectedby-element-for-listentry-for-listcontrol-format.md)|定义使用此列表项或要使用此项必须存在的条件的.NET 类型。|
 
@@ -74,6 +74,6 @@ ms.locfileid: "56856103"
 
 [ListEntry （格式） 的 EntrySelectedBy 元素](./entryselectedby-element-for-listentry-for-listcontrol-format.md)
 
-[ListEntry （格式） 的 EnrtySelectedBy SelectionSetName 元素](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+[ListEntry （格式） 的 EntrySelectedBy SelectionSetName 元素](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
 [编写 PowerShell 格式设置文件](./writing-a-powershell-formatting-file.md)

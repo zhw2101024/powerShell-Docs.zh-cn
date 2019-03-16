@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7196f039-2f6a-41fd-b252-5b1623ebb9f9
 caps.latest.revision: 11
-ms.openlocfilehash: 59dfd40b95d5088a711eb89cf101eb31a4b159f5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 09183a538c179f19347c3f1ed45b4ad38c2ca451
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856083"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054503"
 ---
 # <a name="label-element-for-tablecolumnheader-for-tablecontrol-format"></a>Label Element for TableColumnHeader for TableControl (Format)
 
 定义显示在某一列顶部的标签。 定义表视图时，将使用此元素。
 
-配置元素 （格式） ViewDefinitions 元素 （格式） 视图元素 （格式） TableControl 元素 （格式） TableHeaders 元素 TableControl （格式） 标签元素 TableHeaders TableControl （格式） TableColumnHeader 元素TableColumnHeader 为 TablControl （格式） 的
+配置元素 （格式） ViewDefinitions 元素 （格式） 视图元素 （格式） TableControl 元素 （格式） TableHeaders 元素 TableControl （格式） 标签元素 TableHeaders TableControl （格式） TableColumnHeader 元素TableControl （格式） 的 TableColumnHeader
 
 ## <a name="syntax"></a>语法
 
@@ -32,7 +32,7 @@ ms.locfileid: "56856083"
 
 以下各节描述了特性、 子元素和父元素的`Label`元素。 每个列所允许只有一个标签。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
@@ -42,7 +42,7 @@ ms.locfileid: "56856083"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[TableControl （格式） 的 TableHeaders TableColumnHeader 元素](./tablecolumnheader-element-format.md)|定义标签、 宽度和表的列的数据的对齐方式。|
 

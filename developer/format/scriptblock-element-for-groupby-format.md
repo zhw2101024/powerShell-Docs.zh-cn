@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 30183927-6f0e-4717-b6f5-f07a6e134cfb
 caps.latest.revision: 6
-ms.openlocfilehash: 41a6aaa24e5850bd390c8e3b6505cc88fc80b7b5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f2f6b9af7740b1231881294c2f32bf97b5a1568b
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856203"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054419"
 ---
 # <a name="scriptblock-element-for-groupby-format"></a>ScriptBlock Element for GroupBy (Format)
 
@@ -24,14 +24,14 @@ ms.locfileid: "56856203"
 ## <a name="syntax"></a>语法
 
 ```xml
-<ScriptBolck>ScriptToEvaluate</ScriptBlock>
+<ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
 ## <a name="attributes-and-elements"></a>属性和元素
 
 以下各节描述了特性、 子元素和父元素的`ScriptBlock`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
@@ -41,7 +41,7 @@ ms.locfileid: "56856203"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[视图 （格式） 的 GroupBy 元素](./groupby-element-for-view-format.md)|定义一组.NET 对象的显示方式。|
 

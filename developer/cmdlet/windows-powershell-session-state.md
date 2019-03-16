@@ -11,12 +11,12 @@ helpviewer_keywords:
 - session state [PowerShell]
 ms.assetid: 74912940-2b10-4a76-b174-6d035d71c02b
 caps.latest.revision: 8
-ms.openlocfilehash: 5d4effb508c9f2544832dad557671520cb0a7ac7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fa207130bbb120750780bb0aa9b32150a32daaa2
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862983"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059535"
 ---
 # <a name="windows-powershell-session-state"></a>Windows PowerShell 会话状态
 
@@ -46,11 +46,11 @@ ms.locfileid: "56862983"
 
 ## <a name="accessing-session-state-data-within-cmdlets"></a>访问在 Cmdlet 中的会话状态数据
 
-Cmdlet 可以访问会话状态数据可以通过间接[System.Management.Automation.Pscmdlet.Sessionstate*](/dotnet/api/System.Management.Automation.PSCmdlet.SessionState)属性的 cmdlet 类或直接通过[System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState)类。 [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState)类提供了可用于调查的会话状态数据的不同类型的属性。
+Cmdlet 可以访问会话状态数据可以通过间接[System.Management.Automation.PSCmdlet.Sessionstate*](/dotnet/api/System.Management.Automation.PSCmdlet.SessionState)属性的 cmdlet 类或直接通过[System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState)类。 [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState)类提供了可用于调查的会话状态数据的不同类型的属性。
 
 ## <a name="see-also"></a>另请参阅
 
-[System.Management.Automation.Pscmdlet.Sessionstate](/dotnet/api/System.Management.Automation.PSCmdlet.SessionState)
+[System.Management.Automation.PSCmdlet.Sessionstate](/dotnet/api/System.Management.Automation.PSCmdlet.SessionState)
 
 [System.Management.Automation.Sessionstate?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.SessionState)
 

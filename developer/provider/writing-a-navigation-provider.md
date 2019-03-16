@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 98bcfda0-6ee2-46f5-bbc7-5fab8b780d6a
 caps.latest.revision: 5
-ms.openlocfilehash: a789b392bddd344ad583c93a1a55302329df9917
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f449c17e4c373c42f8a1d96fa9075940111c65bc
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863533"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056579"
 ---
 # <a name="writing-a-navigation-provider"></a>编写导航提供程序
 
@@ -132,7 +132,7 @@ protected override string GetParentPath(string path, string root)
 
 ### <a name="implementing-makepath"></a>实现 MakePath
 
-[System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)方法加入指定的父路径和指定的子路径来创建提供程序内部的路径 （的路径的信息类型，提供程序可以支持，请参阅[Windows PowerShell 提供程序概述](./windows-powershell-provider-overview.md)。 PowerShell 引擎调用此方法，当用户调用[Microsoft.Powershell.Commands.Join 路径](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path)cmdlet。
+[System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)方法加入指定的父路径和指定的子路径来创建提供程序内部的路径 （的路径的信息类型，提供程序可以支持，请参阅[Windows PowerShell 提供程序概述](./windows-powershell-provider-overview.md)。 PowerShell 引擎调用此方法，当用户调用[Microsoft.PowerShell.Commands.Join 路径](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path)cmdlet。
 
 ```csharp
 protected override string MakePath(string parent, string child)
@@ -221,7 +221,7 @@ protected override string NormalizeRelativePath(string path,
 
 ### <a name="implementing-moveitem"></a>实现 MoveItem
 
-[System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)方法将项从指定的路径移动到指定的目标路径。 PowerShell 引擎调用此方法，当用户调用[Microsoft.Powershell.Commands.Move 项](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item)cmdlet。
+[System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)方法将项从指定的路径移动到指定的目标路径。 PowerShell 引擎调用此方法，当用户调用[Microsoft.PowerShell.Commands.Move 项](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item)cmdlet。
 
 ```csharp
 protected override void MoveItem(string path, string destination)

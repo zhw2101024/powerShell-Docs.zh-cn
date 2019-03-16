@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
-ms.openlocfilehash: 3edbcabeff0c8d84831823df11749d152b347566
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c9963819f1842d1245735dabc487babaa566c160
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863333"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057155"
 ---
 # <a name="events01-sample"></a>Events01 示例
 
-此示例演示如何创建由引发的事件，则允许用户注册一个 cmdlet [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher)。 此 cmdlet，用户可以注册在特定目录下创建一个文件时要执行的操作。 此示例从派生[Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)基类。
+此示例演示如何创建由引发的事件，则允许用户注册一个 cmdlet [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher)。 此 cmdlet，用户可以注册在特定目录下创建一个文件时要执行的操作。 此示例从派生[Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)基类。
 
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>如何通过使用 Visual Studio 生成该示例。
 
@@ -78,7 +78,7 @@ A file was created in the TEMP directory
 
 此示例将演示如下。
 
-- 如何编写事件注册的 cmdlet。 该 cmdlet 派生[Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)类，该类提供支持公共参数的寄存器-* 事件 cmdlet。 派生自的 Cmdlet [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)只需定义其特定的参数，并覆盖`GetSourceObject`和`GetSourceObjectEventName`抽象方法。
+- 如何编写事件注册的 cmdlet。 该 cmdlet 派生[Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)类，该类提供支持公共参数的寄存器-* 事件 cmdlet。 派生自的 Cmdlet [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)只需定义其特定的参数，并覆盖`GetSourceObject`和`GetSourceObjectEventName`抽象方法。
 
 ## <a name="example"></a>示例
 

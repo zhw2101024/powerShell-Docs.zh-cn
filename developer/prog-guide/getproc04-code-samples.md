@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: c00afd46-758a-4aec-b865-2c9d8f6a17ad
 caps.latest.revision: 5
-ms.openlocfilehash: b9b42c818981090496f7b14a1cb8bdec14a5d5bb
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 67081528ebe14fbb082091c1b9500de82069b48f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429714"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054639"
 ---
 # <a name="getproc04-code-samples"></a>GetProc04 代码示例
 
-以下是 GetProc04 示例 cmdlet 的代码示例。 这是`Get-Process`cmdlet 示例中所述[添加非终止错误报告给您 Cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md)。 这`Get-Process`cmdlet 可调用[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法只要检索进程信息时将引发无效操作异常。
+以下是 GetProc04 示例 cmdlet 的代码示例。 这是`Get-Process`cmdlet 示例中所述[添加非终止错误报告给您 Cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md)。 这`Get-Process`cmdlet 可调用[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法只要检索进程信息时将引发无效操作异常。
 
 > [!NOTE]
 > 您可以下载C#使用 Microsoft Windows 软件开发工具包适用于 Windows Vista 和.NET Framework 3.0 运行时组件此 Get-proc cmdlet 的源文件 (getprov04.cs)。 有关下载说明，请参阅[如何安装 Windows PowerShell 和下载 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。

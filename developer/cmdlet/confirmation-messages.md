@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a886a26d-7730-4586-aeac-fd3f0bc60b88
 caps.latest.revision: 8
-ms.openlocfilehash: 75214a3fe4bc019836f75db19fb873bd081f200f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 229725b5b9f1f0082592dcebe11564fd2f630ce1
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861413"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059467"
 ---
 # <a name="confirmation-messages"></a>确认消息
 
-以下是可以根据的变体显示的不同的确认消息[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)和[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)调用的方法。
+以下是可以根据的变体显示的不同的确认消息[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)和[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)调用的方法。
 
 > [!IMPORTANT]
 > 有关演示如何请求确认的示例代码，请参阅[如何请求确认](./how-to-request-confirmations.md)。
@@ -33,7 +33,7 @@ Performing operation "Test-RequestConfirmationTemplate1" on Target "MyResource".
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
 ```
 
-如果用户选择**是**或**全部**确认请求 （如下面的示例所示），调用[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法进行，这将导致第二个要在显示确认消息。
+如果用户选择**是**或**全部**确认请求 （如下面的示例所示），调用[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法进行，这将导致第二个要在显示确认消息。
 
 ```output
 Confirm
@@ -57,7 +57,7 @@ Performing operation "MyAction" on Target "MyResource".
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
 ```
 
-如果用户选择**是**或**全部**到前面的消息调用[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法进行，这将导致若要显示的第二个确认消息。
+如果用户选择**是**或**全部**到前面的消息调用[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法进行，这将导致若要显示的第二个确认消息。
 
 ```output
 Confirm

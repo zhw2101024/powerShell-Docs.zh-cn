@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
-ms.openlocfilehash: f7899713dd273b793017adfa0a20b3ff3352b62a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 7c2bfca50de4645676eafc01bbf23d9797e8b758
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862163"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059773"
 ---
 # <a name="installing-a-powershell-module"></a>安装 PowerShell 模块
 
@@ -160,7 +160,7 @@ C:\Program Files
 
 ```powershell
 $p = [Environment]::GetEnvironmentVariable("PSModulePath")
-$p += "C:\Program Files\Fabrikam Technolgies\Fabrikam Manager\Modules\"
+$p += "C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
@@ -228,7 +228,7 @@ $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
-完成，这些步骤后**ListAvailable**的参数[Get-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet 将获取这两个 Fabrikam 模块。 若要导入特定的模块，请使用`MiminumVersion`或`RequiredVersion`的参数[导入模块](/powershell/module/Microsoft.PowerShell.Core/Import-Module)cmdlet。
+完成，这些步骤后**ListAvailable**的参数[Get-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet 将获取这两个 Fabrikam 模块。 若要导入特定的模块，请使用`MinimumVersion`或`RequiredVersion`的参数[导入模块](/powershell/module/Microsoft.PowerShell.Core/Import-Module)cmdlet。
 
 如果这两个模块导入到同一会话中，并且模块包含具有相同名称的 cmdlet，最后一个导入的 cmdlet 是在会话中有效。
 
