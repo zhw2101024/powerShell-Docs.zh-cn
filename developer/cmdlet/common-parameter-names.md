@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0db9f54c-4014-4450-9e81-c9f5fe562a0e
 caps.latest.revision: 12
-ms.openlocfilehash: a421d151ac3fdbb763668dd6fbf775f5b91a833f
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
+ms.openlocfilehash: c65deeda6b2ef1b52de55035dc606259a7f2d232
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56863643"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059654"
 ---
 # <a name="common-parameter-names"></a>常见参数名称
 
-本主题中所述的参数嘿*通用参数*。 它们由 Windows PowerShell 运行时添加到 cmdlet，并不能声明为 cmdlet。
+本主题中所述的参数*通用参数*。 它们由 Windows PowerShell 运行时添加到 cmdlet，并不能声明为 cmdlet。
 
 > [!NOTE]
 > 这些参数也会添加到提供程序 cmdlet 和函数使用修饰`CmdletBinding`属性。
@@ -30,7 +30,7 @@ ms.locfileid: "56863643"
 
 数据类型：SwitchParameter
 
-此参数指定是否程序员级别调试消息，可以显示在命令行。 这些消息用于故障排除的 cmdlet，该操作，并通过调用生成[System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法。 调试消息不需要本地化。
+此参数指定是否程序员级别调试消息，可以显示在命令行。 这些消息用于故障排除的 cmdlet，该操作，并通过调用生成[System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法。 调试消息不需要本地化。
 
 ### <a name="erroraction-alias-ea"></a>ErrorAction (别名： ea)
 
@@ -60,7 +60,7 @@ ms.locfileid: "56863643"
 
 数据类型：SwitchParameter
 
-此参数指定是否该 cmdlet 将写入可以显示在命令行的解释性消息。 这些消息用于提供给用户，更多帮助，并通过调用生成[System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法。
+此参数指定是否该 cmdlet 将写入可以显示在命令行的解释性消息。 这些消息用于提供给用户，更多帮助，并通过调用生成[System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法。
 
 ### <a name="warningaction-alias-wa"></a>WarningAction (别名： 华盛顿州)
 
