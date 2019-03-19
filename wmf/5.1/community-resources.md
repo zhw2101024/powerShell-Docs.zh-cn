@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,安装程序
 title: 社区资源
-ms.openlocfilehash: 144fa655d4c14656246bc6c86e7c43f1ea8dca3c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a26f6eefeb3beb41575675b3dd4077f056606a70
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219362"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794869"
 ---
-# <a name="community-resources"></a>社区资源 #
-> 注意：此信息是预发布版本，可能会进行更改。
+# <a name="community-resources"></a>社区资源
+> 注意：该信息是预发布版本，可能会进行更改。
 
 PowerShell 团队欢迎并鼓励客户提供产品反馈并支持用户通过多种方法联系我们。
 你可以通过下面列出的任何方法向我们提供反馈，但建议首先使用 PowerShell 主页上的链接。
