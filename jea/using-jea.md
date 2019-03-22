@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: 使用 JEA
-ms.openlocfilehash: 539d280aff0b2656a5e9c710acfa468057753027
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: fa3d3a3c8bc0090ec9ad788585ec5df933134173
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522984"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054673"
 ---
 # <a name="using-jea"></a>使用 JEA
 
@@ -108,7 +108,7 @@ Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredComman
 还可以使用 [Export-pssession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession) 通过隐式远程处理保留代理 cmdlet。
 有关隐式远程处理的详细信息，请参阅 [Import-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/import-pssession) 和 [Import-Module](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/import-module) 的帮助文档。
 
-## <a name="using-jea-programatically"></a>以编程方式使用 JEA
+## <a name="using-jea-programmatically"></a>以编程方式使用 JEA
 
 JEA 还可用于自动化系统和用户应用程序，例如内部的支持人员应用和 Web 站点。
 该方法和生成与非约束 PowerShell 终结点进行会话的应用所用的方法相同，同时警告程序应该注意 JEA 将限制可在远程会话中运行的命令。
@@ -129,7 +129,6 @@ $allowedCommands | Where-Object { $_.CommandType -in 'Function', 'Cmdlet' } | Fo
 如果要生成 C# 应用，可以通过在 [WSManConnectionInfo](https://msdn.microsoft.com/library/system.management.automation.runspaces.wsmanconnectioninfo(v=vs.85).aspx) 对象中指定配置名称来创建与 JEA 会话连接的 PowerShell 运行空间。
 
 ```csharp
-
 // using System.Management.Automation;
 var computerName = "SERVER01";
 var configName   = "JEAMaintenance";

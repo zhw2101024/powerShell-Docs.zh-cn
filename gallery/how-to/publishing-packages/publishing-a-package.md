@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 title: 创建和发布项
-ms.openlocfilehash: 70696535a3bf540ff75a2dc43bca80cb1adf8f45
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
-ms.translationtype: MTE95
+ms.openlocfilehash: 0e0f871b5d43508735e396224fdfd1a29b1e91c0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012528"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055472"
 ---
 # <a name="creating-and-publishing-an-item"></a>创建和发布项
 
@@ -22,7 +22,7 @@ ms.locfileid: "54012528"
 - 确保项中包含相应的元数据
 - 使用预验证工具确保项可供发布
 - 使用 Publish-Module 和 Publish-Script 命令将项发布到 PowerShell 库
-- 响应问题或疑虑项相关
+- 解决与项相关的问题或疑问
 
 PowerShell 库接受 PowerShell 模块和 PowerShell 脚本。 我们所指的 PowerShell 脚本是一个文件，并不属于较大模块。
 
@@ -32,7 +32,7 @@ PowerShell 库接受 PowerShell 模块和 PowerShell 脚本。 我们所指的 P
 
 创建帐户后，便可以获取发布项所需的 API 密钥。 使用此帐户登录后，用户名将显示在 PowerShell 库页面（而不是注册页）的顶部。 单击用户名将转到“我的帐户”页，可以在其中找到 API 密钥。
 
-注意：必须将登录名和密码作为安全地处理 API 密钥。
+注意：必须安全处理 API 密钥，就像处理登录名和密码一样。
 使用此密钥，你或其他任何人可以更新你在 PowerShell 库中拥有的全部项。
 建议定期更新此密钥，具体方法为使用“我的帐户”页上的“重置密钥”。
 
@@ -43,18 +43,18 @@ PowerShell 库向库用户提供从脚本或模块清单的元数据字段中提
 
 [New-ModuleManifest](/powershell/module/microsoft.powershell.core/new-modulemanifest) 和 [New-ScriptFileInfo](/powershell/module/PowerShellGet/New-ScriptFileInfo) cmdlet 将创建清单模板，内含所有清单元素的占位符。
 
-这两个清单具有非常重要的发布，PrivateData 的主键数据和 PSData 区域的两个部分。 PowerShell 模块清单中的主键数据是 PrivateData 部分之外的所有内容。 主键集合已绑定到在使用的 PowerShell 版本，并且不支持未定义的主键。 由于 PrivateData 支持添加新键，因此 PowerShell 库的专有元素位于 PSData 中。
+这两个清单具有对发布非常重要的两个部分，即主键数据和 PrivateData 的 PSData 区域。 PowerShell 模块清单中的主键数据是 PrivateData 部分之外的所有内容。 主键集合已绑定到在使用的 PowerShell 版本，并且不支持未定义的主键。 由于 PrivateData 支持添加新键，因此 PowerShell 库的专有元素位于 PSData 中。
 
 
 对于要发布到 PowerShell 库的项，需要填写的最重要清单元素包括：
 
 - 脚本或模块名称 - 这些提取自脚本的 .PS1 名称或模块的 .PSD1 名称。
-- 版本-这是必需的主键，格式应遵循 SemVer 指南。 有关详细信息，请参阅最佳实践。
-- 作者-这是必需的主键，包含要与项关联的名称。
-请参阅作者和所有者下面。
+- 版本 - 这是必需的主键，格式应遵循 SemVer 指南。 有关详细信息，请参阅“最佳做法”。
+- 作者 - 这是必需的主键，包含要与项相关联的名称。
+请参阅下面的“作者和所有者”。
 - 说明 - 此为必需的主键，用于简要说明该项的用途和任何使用要求
 - ProjectURI - 此为强烈建议填写的 PSData URI 字段，提供指向 Github 存储库或类似可以对项进行开发的位置的链接
-- 标记-它是强建议标记您基于其兼容 PSEditions 和当前平台的包。 有关详细信息，请参阅[发布指南](../../concepts/publishing-guidelines.md#tag-your-package-with-the-compatible-pseditions-and-platforms)。
+- 标记 - 强烈建议基于包与 PSEditions 和平台的兼容性来标记包。 有关详细信息，请参阅[发布指南](../../concepts/publishing-guidelines.md#tag-your-package-with-the-compatible-pseditions-and-platforms)。
 
 PowerShell 库项的作者和所有者是相关概念，并非总是一致。 项所有者是拥有 PowerShell 库帐户且有权维护项的用户。 可能有多个可以更新任意项的所有者。 只能从 PowerShell 库获取所有者。如果将项从一个系统复制到另一个系统，将会丢失所有者。 由于作者是清单数据中内置的字符串，因此始终是项的一部分。 对于 Microsoft 产品项，建议如下：
 
@@ -87,14 +87,14 @@ PowerShell 库项的作者和所有者是相关概念，并非总是一致。 �
 
 由于命令行中的其他大多数选项都应位于要发布的项的清单数据中，因此无需在命令中指定这些选项。
 
-为了避免出错，强烈建议在发布之前尝试使用 -Whatif -Verbose 运行命令。 这将节省相当多的时间，因为每次将项发布到 PowerShell 库时，都必须更新项的清单部分中的版本号。
+为了避免出错，强烈建议在发布之前尝试使用 -WhatIf -Verbose 运行命令。 这将节省相当多的时间，因为每次将项发布到 PowerShell 库时，都必须更新项的清单部分中的版本号。
 
-将示例：
+示例有：
 
-* `Publish-Module -Path ".\MyModule" -NugetAPIKey "GUID" -Whatif -Verbose`
-* `Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -Whatif -Verbose`
+* `Publish-Module -Path ".\MyModule" -NugetAPIKey "GUID" -WhatIf -Verbose`
+* `Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -WhatIf -Verbose`
 
-仔细检查输出，如果没有看到任何错误或警告，请重复运行命令，而不使用 -Whatif。
+仔细检查输出，如果没有看到任何错误或警告，请重复运行命令，而不使用 -WhatIf。
 
 发布到 PowerShell 库的所有项都会进行病毒扫描，并会使用 PowerShell 脚本分析器进行分析。 此时发现的所有问题都会发回给发布者予以解决。
 

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 设置 DSC请求客户端
-ms.openlocfilehash: b7cd6dc0087eb8368c5467df4c3c7266ed704451
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 54c68ac26e5388260e252ce01418170e26ddecde
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677282"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054248"
 ---
 # <a name="setting-up-a-dsc-pull-client"></a>设置 DSC请求客户端
 
@@ -23,4 +23,5 @@ ms.locfileid: "55677282"
 * [使用配置名称设置请求客户端](pullClientConfigNames.md)
 * [使用配置 ID 设置请求客户端](pullClientConfigID.md)
 
-> **注意**：这些主题适用于 PowerShell 5.0。 有关在 PowerShell 4.0 中设置请求客户端的信息，请参阅[在 PowerShell 4.0 中使用配置 ID 设置请求客户端](pullClientConfigID4.md)。
+> [!NOTE]
+> 这些主题适用于 PowerShell 5.0。 有关在 PowerShell 4.0 中设置请求客户端的信息，请参阅[在 PowerShell 4.0 中使用配置 ID 设置请求客户端](pullClientConfigID4.md)。

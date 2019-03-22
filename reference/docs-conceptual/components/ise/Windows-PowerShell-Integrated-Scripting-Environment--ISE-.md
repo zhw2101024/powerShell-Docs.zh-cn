@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell 集成脚本环境 (ISE)
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: a5fcc8c813349d0b85cc3af29047424fe787d168
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 3002c2cb7213b1c2d7201dddf5ff3c0651fad767
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400367"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054707"
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell 集成脚本环境 (ISE)
 
@@ -34,7 +34,7 @@ ISE 使你能够在控制台窗格中运行命令，但它也支持可用于同�
 
 **最近使用列表**现在是“打开文件”菜单的一部分，方便打开你最常使用的文件。
 
-**合并的控制台窗格**。 在以前的 ISE 版本中有独立的“命令”和“输出”窗格。 它们现在合并成单一的窗格，可以更直接地模仿你在 Windows Powershell 控制台中所见的内容。
+**合并的控制台窗格**。 在以前的 ISE 版本中有独立的“命令”和“输出”窗格。 它们现在合并成单一的窗格，可以更直接地模仿你在 Windows PowerShell 控制台中所见的内容。
 
 **命令行开关**。 几个新的命令行开关使你更好地控制 ISE 的工作方式。 -NoProfile 无需运行配置文件脚本即可启动 ISE。 -Help 与 ISE 一起使用可打开帮助窗口。 -mta 以“多线程单元模式”启动 ISE。 默认为单线程。
 

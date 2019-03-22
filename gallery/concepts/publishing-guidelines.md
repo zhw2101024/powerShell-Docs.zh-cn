@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 description: 面向发行者的指南
 title: PowerShell 库发布指南和最佳做法
-ms.openlocfilehash: 64c3d607b13dce64f70f138fdee849e5baaf85df
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
-ms.translationtype: MTE95
+ms.openlocfilehash: 25c359c7acbe7430762a275d8cc4a28f527ec57a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56265563"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056492"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell 库发布指南和最佳做法
 
@@ -33,7 +33,7 @@ ms.locfileid: "56265563"
 - 及时响应反馈
 - 提供模块（而不是脚本）
 - 提供项目网站链接
-- 标记兼容 PSEdition(s) 和平台包 
+- 使用兼容 PSEdition 和平台对包进行标记
 - 随模块添加测试
 - 添加和/或链接到许可条款
 - 对代码进行签名
@@ -136,15 +136,15 @@ PowerShell 库中的许多包在 GitHub 中进行开发，而其他包则由具�
 
 提供 ProjectURI 时，PowerShell 库在包网页的左侧添加项目网站链接。
 
-## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>标记兼容 PSEdition(s) 和平台包 
+## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>使用兼容 PSEdition 和平台对包进行标记
 
-使用以下标记演示对用户包适用于其环境：
+使用以下标记可向用户演示适用于其环境的包：
 
-- 使用 Windows PowerShell 兼容的 PSEdition_Desktop： 包 
-- 与 Powershell Core 兼容的 PSEdition_Core： 包 
-- Windows： 兼容 Windows 操作系统与相应的包
-- 使用 Linux 操作系统兼容的 Linux： 包 
-- MacOS： 兼容 Mac 操作系统与相应的包
+- PSEdition_Desktop：与 Windows PowerShell 兼容的包
+- PSEdition_Core：与 PowerShell Core 兼容的包
+- Windows：与 Windows 操作系统兼容的包
+- Linux：与 Linux 操作系统兼容的包
+- MacOS：与 Mac 操作系统兼容的包
 
 ## <a name="include-tests"></a>添加测试
 
@@ -251,4 +251,3 @@ PowerShell 库的设计目标不是成为用于测试发布过程的目标。
 - 决定是否要对包进行代码签名
 - 如果认为项目可用于生产环境，请将 1.0.0 版本发布到 PowerShell 库中
 - 继续收集反馈，并根据用户输入循环访问代码
-

@@ -2,32 +2,32 @@
 ms.date: 1/17/2019
 keywords: dsc,powershell,配置,安装程序
 title: 重新启动节点
-ms.openlocfilehash: 33ecd98aa62c3dc94a8ff2213fd3e68bf0c05cb7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 015b82a32caefc420973651c72e272fd85baf880
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676834"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054724"
 ---
 # <a name="reboot-a-node"></a>重新启动节点
 
 > [!NOTE]
-> 本主题讨论了如何重新启动节点。 为了使重新启动才能成功**ActionAfterReboot**并**RebootNodeIfNeeded** LCM 设置需要正确配置。
-> 若要了解有关本地配置管理器设置信息，请参阅[配置本地配置管理器](../managing-nodes/metaConfig.md)，或[配置本地配置管理器 (v4)](../managing-nodes/metaConfig4.md)。
+> 本主题讨论如何重新启动节点。 若要使重新启动成功，需要正确配置 ActionAfterReboot 和 RebootNodeIfNeeded LCM 设置。
+> 若要了解本地配置管理器设置，请参阅[配置本地配置管理器](../managing-nodes/metaConfig.md)或[配置本地配置管理器 (v4)](../managing-nodes/metaConfig4.md)。
 
-节点可以重启从在资源中，通过使用`$global:DSCMachineStatus`标志。 此标志设置为`1`中`Set-TargetResource`函数强制重启后的，直接节点的 LCM**设置**当前资源的方法。 使用此标志**xPendingReboot**资源检测到重新启动处于挂起状态之外 DSC。
+可以使用 `$global:DSCMachineStatus` 标志，从资源中重新启动节点。 在 `Set-TargetResource` 函数中将此标志设置为 `1` 会强制 LCM 在当前资源的 Set 方法之后直接重新启动节点。 使用此标志时，xPendingReboot 资源会检测重新启动是否在 DSC 外部挂起。
 
-你[配置](configurations.md)可能会执行需要重新启动的节点的步骤。 这可能包括以下内容：
+[配置](configurations.md)可能会执行需要重新启动节点的步骤。 这可能包括诸如以下这类情况：
 
-- Windows: 更新
-- 软件安装
-- 重命名文件
+- Windows 更新
+- 安装软件
+- 文件重命名
 - 计算机重命名
 
-**XPendingReboot**资源检查特定计算机位置，以确定重新启动处于挂起状态。 如果节点需要重新启动 DSC，之外**xPendingReboot**资源集`$global:DSCMachineStatus`标记，用于`1`强制重新启动，并且解决挂起的条件。
+xPendingReboot 资源会检查特定计算机位置，以确定重新启动是否挂起。 如果节点需要在 DSC 外部重新启动，则 xPendingReboot 资源会将 `$global:DSCMachineStatus` 标志设置为 `1`，从而强制重新启动并解决挂起条件。
 
 > [!NOTE]
-> 任何 DSC 资源可以指示重启节点中设置此标志的 LCM`Set-TargetResource`函数。 有关详细信息，请参阅[编写自定义 DSC 资源使用 MOF](../resources/authoringResourceMOF.md)。
+> 任何 DSC 资源都可以通过在 `Set-TargetResource` 函数中设置此标志，来指示 LCM 重新启动节点。 有关详细信息，请参阅[使用 MOF 编写自定义 DSC 资源](../resources/authoringResourceMOF.md)。
 
 ## <a name="syntax"></a>语法
 
@@ -49,22 +49,22 @@ xPendingReboot [String] #ResourceName
 
 | 属性 | 说明 |
 | --- | --- |
-| 名称| 必需的参数，它必须是唯一的资源配置内的每个实例。|
-| SkipComponentBasedServicing | 由基于组件的服务组件触发的跳过重新启动。 |
-| SkipWindowsUpdate | 由 Windows Update 触发的跳过重新启动。|
-| SkipPendingFileRename | 跳过挂起文件重命名的重新启动。 |
-| SkipCcmClientSDK | 由 ConfigMgr 客户端触发的跳过重新启动。 |
-| SkipComputerRename | 跳过重新进行启动的计算机重命名。 |
-| PSDSCRunAsCredential | 在 v5 中受支持。 作为指定的用户执行资源。 |
+| 名称| 必需参数，对配置中资源的每个实例必须唯一。|
+| SkipComponentBasedServicing | 跳过由基于组件的服务组件触发的重新启动。 |
+| SkipWindowsUpdate | 跳过由 Windows 更新触发的重新启动。|
+| SkipPendingFileRename | 跳过挂起文件重命名重新启动。 |
+| SkipCcmClientSDK | 跳过由 ConfigMgr 客户端触发的重新启动。 |
+| SkipComputerRename | 跳过由计算机重命名触发的重新启动。 |
+| PSDSCRunAsCredential | 在 v5 中受支持。 以指定用户身份执行资源。 |
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。 有关详细信息，请参阅[使用 DependsOn](resource-depends-on.md)|
 
 ## <a name="example"></a>示例
 
-下面的示例将安装 Microsoft Exchange 使用[xExchange](https://github.com/PowerShell/xExchange)资源。
-在安装中，整个**xPendingReboot**资源用于重新启动节点。
+下面的示例使用 [xExchange](https://github.com/PowerShell/xExchange) 资源安装 Microsoft Exchange。
+在整个安装过程中，xPendingReboot 资源用于重新启动节点。
 
 > [!NOTE]
-> 此示例需要具有权限才能向林中添加 Exchange server 的帐户的凭据。 有关在 DSC 中使用凭据的详细信息，请参阅[在 DSC 中处理凭据](../configurations/configDataCredentials.md)
+> 此示例需要有权向林中添加 Exchange 服务器的帐户的凭据。 有关在 DSC 中使用凭据的详细信息，请参阅[在 DSC 中处理凭据](../configurations/configDataCredentials.md)
 
 ```powershell
 $ConfigurationData = @{
@@ -130,11 +130,11 @@ Configuration Example
 ```
 
 > [!NOTE]
-> 此示例假定已配置本地配置管理器，以允许重新启动并继续重新启动后的配置。
+> 此示例假设已将本地配置管理器配置为允许重新启动并在重新启动之后继续配置。
 
 ## <a name="where-to-download"></a>下载位置
 
-您可以下载本主题的以下位置，或使用 PowerShell 库中使用的资源。
+可以在以下位置或使用 PowerShell 库下载本主题中使用的资源。
 
 - [xPendingReboot](https://github.com/PowerShell/xPendingReboot)
 - [xExchange](https://github.com/PowerShell/xExchange)

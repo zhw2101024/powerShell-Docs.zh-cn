@@ -2,16 +2,16 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 安装和使用 Windows PowerShell Web 访问
-ms.openlocfilehash: 5517347560b25f032baa77ecc2d769fb1e74ba4f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 53558f9be5065c7f630f06e535ddab4d7ad72d9e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676031"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056713"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>安装和使用 Windows PowerShell Web 访问
 
-更新日期：2013 年 11 月 5 日 (编辑：2017 年 8 月
+更新日期：2013 年 11 月 5 日（编辑：2017 年 8 月 23 日）
 
 适用于：Windows Server 2012 R2、Windows Server 2012
 
@@ -97,7 +97,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -IncludeManagementTools -Restart`
 
    > [!NOTE]
-   > 使用 Windows PowerShell cmdlet 安装 Windows PowerShell Web 访问在默认情况下不会添加 Web 服务器 (IIS) 管理工具。 如果希望在相同的服务器上安装管理工具并用作 Windows PowerShell Web 访问网关，请将 `-IncludeManagementTools` 参数添加到安装命令（如本步骤所述）。 如果通过远程计算机管理 Windows PowerShell Web 访问网站，请安装 IIS Manager 管理单元，方法是在希望通过其管理网关的计算机上安装[适用于 Windows 8.1 的远程服务器管理工具](https://www.microsoft.com/en-us/download/details.aspx?id=39296)或[适用于 Windows 8 的远程服务器管理工具](https://www.microsoft.com/en-us/download/details.aspx?id=28972)。
+   > 使用 Windows PowerShell cmdlet 安装 Windows PowerShell Web 访问在默认情况下不会添加 Web 服务器 (IIS) 管理工具。 如果希望在相同的服务器上安装管理工具并用作 Windows PowerShell Web 访问网关，请将 `-IncludeManagementTools` 参数添加到安装命令（如本步骤所述）。 如果你通过远程计算机管理 Windows PowerShell Web 访问网站，请安装 IIS 管理器管理单元，方法是在你想通过其管理网关的计算机上安装[适用于 Windows 8.1 的远程服务器管理工具](https://www.microsoft.com/en-us/download/details.aspx?id=39296)或[适用于 Windows 8 的远程服务器管理工具](https://www.microsoft.com/en-us/download/details.aspx?id=28972)。
 
    若要在离线的 VHD 上安装角色和功能，你必须添加 `-ComputerName` 参数和 `-VHD` 参数。 `-ComputerName` 参数含有安装 VHD 的服务器名称， `-VHD` 参数含有 VHD 在指定服务器上的路径。
 
@@ -178,7 +178,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 7. 在**添加网站绑定**对话框中，在**类型**字段，选择**https**。
 
 8. 在“SSL 证书”字段中，从下拉菜单中选择你的已签名证书。
-   单击**确定**。 有关如何获得证书的详细信息，请参阅本主题中的[在 IIS 管理器中配置 SSL 证书](#to-configure-an-ssl-certificate-in-iis-Manager)。
+   单击**确定**。 有关如何获得证书的详细信息，请参阅本主题中的[在 IIS 管理器中配置 SSL 证书](#to-configure-an-ssl-certificate-in-iis-manager)。
 
    现可配置 Windows PowerShell Web 访问 Web 应用程序，以便使用已签名的 SSL 证书。
 
@@ -200,7 +200,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
    - 在 Windows 桌面上，右键单击任务栏上的**Windows PowerShell**，然后单击**以管理员身份运行**。
    - 在 Windows **开始**屏幕上，右键单击**Windows PowerShell**，然后单击**以管理员身份运行**。
 
-2. 使用会话配置限制用户访问的可选步骤：验证要在规则中使用的会话配置已存在。 如果尚未创建这些配置，则使用 [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations) 中用于创建会话配置的说明。
+2. 使用会话配置限制用户访问的可选步骤：确保规则中已经存在你要使用的会话配置。 如果尚未创建这些配置，则使用 [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations) 中用于创建会话配置的说明。
 
 3. 键入以下命令，然后按**Enter**。
 
@@ -273,7 +273,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 8. 在“物理路径”字段中，浏览到应用程序的位置。 可以使用默认位置 `$env:windir/Web/PowerShellWebAccess/wwwroot`。 单击**确定**。
 
-9. 按照本主题中的过程[在 IIS 管理器中配置 SSL 证书](#to-configure-an-ssl-certificate-in-iis-Manager)中的步骤执行。
+9. 按照本主题中的过程 [在 IIS 管理器中配置 SSL 证书](#to-configure-an-ssl-certificate-in-iis-manager) 中的步骤执行。
 
 10. ![](images/SecurityNote.jpeg) 可选安全步骤：
 
@@ -318,7 +318,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 1. 新网站的应用程序池自动创建。 若果使用其他应用程序池，请单击“选择”，以选择与新网站相关的应用程序池。 在**选择应用程序池**对话框中选择备用的应用程序池，然后单击**确定**。
 
-1. 在中**物理路径**文字框中，导航到 %windir%/web/powershellwebaccess/wwwroot。
+1. 在“物理路径”文本框中，导航到 %windir%/Web/PowerShellWebAccess/wwwroot。
 
 1. 在**绑定**区域的**类型**字段中，选择**https**。
 
@@ -329,7 +329,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 1. 此外，如果你的组织有需要，请指定一个对组织和用户都有意义的主机名称，例如 **`www.contoso.com`**。 单击**确定**。
 
-1. 为提高生产环境的安全性，我们强烈建议提供证书颁发机构已签名的有效证书。 你必须提供 SSL 证书，因为用户仅可通过 HTTPS 网站连接到 Windows PowerShell Web 访问。 有关如何获得证书的详细信息，请参阅本主题中的[在 IIS Manager 中配置 SSL 证书](#to-configure-an-ssl-certificate-in-iis-Manager)。
+1. 为提高生产环境的安全性，我们强烈建议提供证书颁发机构已签名的有效证书。 你必须提供 SSL 证书，因为用户仅可通过 HTTPS 网站连接到 Windows PowerShell Web 访问。 有关如何获得证书的详细信息，请参阅本主题中的[在 IIS 管理器中配置 SSL 证书](#to-configure-an-ssl-certificate-in-iis-manager)。
 
 1. 单击“确定”关闭“添加网站”对话框。
 

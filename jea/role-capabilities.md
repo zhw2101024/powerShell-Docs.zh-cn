@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: JEA 角色功能
-ms.openlocfilehash: bd0a995adc60e50049ff99d6b23e7c2aeb745a18
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: b93d206680de485d6cb7a8cb26d63afda5bf8421
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522933"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055047"
 ---
 # <a name="jea-role-capabilities"></a>JEA 角色功能
 
@@ -58,7 +58,7 @@ PowerShell 帮助文档包括文件配置方式的多个示例。
 
 ### <a name="allowing-powershell-cmdlets-and-functions"></a>允许 PowerShell cmdlet 和函数
 
-若要授权用户运行 PowerShell cmdlet 或函数，请将 cmdlet 或函数名称添加到 VisbibleCmdlets 或 VisibleFunctions 字段。
+若要授权用户运行 PowerShell cmdlet 或函数，请将 cmdlet 或函数名称添加到 VisibleCmdlets 或 VisibleFunctions 字段。
 如果不确定命令是 cmdlet 还是函数，可运行 `Get-Command <name>` 并查看输出中的“CommandType”属性。
 
 ```powershell
@@ -100,7 +100,6 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'}, @{ Name = 'Param2' }}`               | 允许用户使用 `Param1` 和/或 `Param2` 参数运行 `My-Func`。 可向参数提供任何值。
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}`  | 允许用户使用 `Param1` 参数运行 `My-Func`。 仅可向该参数提供“Value1”和“Value2”。
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`     | 允许用户使用 `Param1` 参数运行 `My-Func`。 可向参数提供以“contoso”开头的任意值。
-
 
 > [!WARNING]
 > 最佳的安全做法是，建议在定义可见 cmdlet 或函数时不要使用通配符。
@@ -171,7 +170,6 @@ FunctionDefinitions = @{
 > [!IMPORTANT]
 > 不要忘记向 **VisibleFunctions** 字段添加自定义函数的名称，使其可由 JEA 用户运行。
 
-
 自定义函数的主体（脚本块）在系统的默认语言模式下运行，不受 JEA 的语言约束。
 这意味着函数可访问文件系统和注册表，并可运行角色功能文件中隐藏的命令。
 使用参数时，请注意避免允许运行任意代码，并避免直接将用户输入传输到 `Invoke-Expression` 等 cmdlet 中。
@@ -211,14 +209,12 @@ Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 
 ## <a name="updating-role-capabilities"></a>更新角色功能
 
-
 只需保存对角色功能文件的更改，即可随时更新该文件。
 角色功能更新后启动的任意新 JEA 会话均可反映出修订后的功能。
 
 这就是有必要控制角色功能文件夹的访问权限的原因。
 应该只有高度受信任的管理员才可更改角色功能文件。
 如果不受信任的用户可更改角色功能文件，则其可轻松为自己授予 cmdlet 访问权限，便于提升自身权限。
-
 
 对于想要锁定角色功能访问权限的管理员，请确保本地系统具有角色功能文件的访问权限且包含相关模块。
 
@@ -256,16 +252,14 @@ $roleB = @{
                      @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Server' } }
 }
 
-# Resulting permisisons for a user who belongs to both role A and B
-# - The constraint in role B for the DisplayName parameter on Get-Service is ignored becuase of rule #4
+# Resulting permissions for a user who belongs to both role A and B
+# - The constraint in role B for the DisplayName parameter on Get-Service is ignored because of rule #4
 # - The ValidateSets for Restart-Service are merged because both roles use ValidateSet on the same parameter per rule #5
 $mergedAandB = @{
     VisibleCmdlets = 'Get-Service',
                      @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DNS Server' } }
 }
 ```
-
-
 
 **VisibleExternalCommands, VisibleAliases, VisibleProviders, ScriptsToProcess**
 

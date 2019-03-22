@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 使用 DSC 报表服务器
-ms.openlocfilehash: 8647f80c311ee49a5cc4d57360472386e01b044e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 73208477a74ff3c615d7d515fcad555beabe8f32
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400898"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58059263"
 ---
 # <a name="using-a-dsc-report-server"></a>使用 DSC 报表服务器
 
@@ -16,7 +16,8 @@ ms.locfileid: "53400898"
 > [!IMPORTANT]
 > 请求服务器（Windows 功能 DSC-Service）是 Windows Server 的一个受支持组件，不过目前没有提供新功能的计划。 建议开始将托管客户端转换至 [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)（包括 Windows Server 上的请求服务器以外的功能）或[此处](pullserver.md#community-solutions-for-pull-service)列出的社区解决方案之一。
 >
-> **注意**：本主题中描述的报表服务器在 PowerShell 4.0 中不可用。
+> [!NOTE]
+> 本主题中描述的报表服务器在 PowerShell 4.0 中不可用。
 
 可将节点的本地配置管理器 (LCM) 配置为向请求服务器发送有关其配置状态的报表，然后即可查询该服务器以检索此数据。 每当节点检查和应用配置时，它都会将报表发送到报表服务器。 这些报表存储在服务器上的数据库中，可通过调用报告 Web 服务进行检索。 每个报表中包含所应用的配置、配置是否成功、所使用的资源、引发的所有错误以及开始时间和结束时间等信息。
 
@@ -97,7 +98,7 @@ PullClientConfig
 
 ## <a name="getting-report-data"></a>获取报表数据
 
-发送到请求服务器的报表将被输入该服务器上的数据库。 通过调用 Web 服务即可使用这些报表。 若要检索特定节点的报表，请向报表 web 服务采用以下格式发送 HTTP 请求： `http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
+发送到请求服务器的报表将被输入该服务器上的数据库。 通过调用 Web 服务即可使用这些报表。 若要检索特定节点的报表，请通过以下形式向报表 Web 服务发送 HTTP 请求：`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
 其中 `MyNodeAgentId` 是你想要获取其报表的节点的 AgentId。 可通过在节点上调用 [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) 来获取相应节点的 AgentID。
 
 报表将返回为 JSON 对象数组。

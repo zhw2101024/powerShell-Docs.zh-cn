@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: JEA 会话配置
-ms.openlocfilehash: 1b598522d43b2c1a26a739a67cee5181b21a7c32
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
-ms.translationtype: MTE95
+ms.openlocfilehash: b98726ea7ed3aabdfd05034c3b70118e327160cd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655457"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056578"
 ---
 # <a name="jea-session-configurations"></a>JEA 会话配置
 
@@ -80,8 +80,9 @@ RunAsVirtualAccount = $true
 RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
+
 > [!NOTE]
-> 虚拟帐户作为服务在本地服务器安全策略中暂时授予登录名。  如果指定 VirtualAccountGroups 之一已被授予此权限的策略中，将无法再添加并从策略中删除单个虚拟帐户。  这可以是仔细审核对域控制器安全策略的修订的域控制器等方案中非常有用。  这是仅可用在 2018 年 11 月 Windows Server 2016 或更高版本的汇总和 Windows Server 2019 年 1 月 2019年使用或更高版本的汇总。
+> 虚拟帐户在本地服务器安全策略中被临时授予“作为服务登录”的权限。  如果指定的 VirtualAccountGroups 之一已在策略中被授予此权限，则无法对策略添加和删除单个虚拟帐户。  对于会仔细审核域控制器安全策略修订的域控制器这类情形，这可能会十分有用。  这仅在具有 2018 年 11 月或更高版本汇总的 Windows Server 2016 和具有 2019 年 1 月或更高版本汇总的 Windows Server 2019 中可用。
 
 #### <a name="group-managed-service-account"></a>组托管服务帐户
 
@@ -104,7 +105,6 @@ GroupManagedServiceAccount = 'Domain\MyJEAgMSA'
 
 > [!NOTE]
 > 组托管服务帐户仅适用于 Windows PowerShell 5.1 或更高版本以及已加入域的计算机。
-
 
 #### <a name="more-information-about-run-as-users"></a>有关以用户身份运行的详细信息
 
@@ -179,6 +179,7 @@ RoleDefinitions = @{
 ```
 
 ### <a name="role-capability-search-order"></a>角色功能搜索顺序
+
 如上例所示，角色功能由角色功能文件的平面名称（不含扩展名的文件名）进行引用。
 如果多个角色功能适用于带相同平面名称的系统，PowerShell 将使用隐式搜索顺序选择有效的角色功能文件。
 它将**仅**向部分带同一名称的角色功能文件授予访问权限。
@@ -217,6 +218,7 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 > 条件访问规则仅适用于 Windows PowerShell 5.1 或更高版本。
 
 ### <a name="other-properties"></a>其他属性
+
 会话配置文件还可执行角色功能文件能实现的所有操作，但无法授予连接用户访问不同命令的权限。
 如果想要允许所有用户访问特定的 cmdlet、函数或提供程序，可直接在会话配置文件中执行此操作。
 有关会话配置文件中受支持属性的完整列表，请运行 `Get-Help New-PSSessionConfigurationFile -Full`。

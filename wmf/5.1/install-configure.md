@@ -4,15 +4,14 @@ ms.topic: conceptual
 keywords: wmf,powershell,安装程序
 contributor: keithb
 title: 安装和配置 WMF 5.1
-ms.openlocfilehash: e5c7968744a442b4be9f1e43a45e91429a6d6165
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: c439d0851189a89a81fa38194632dc54475a001d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676207"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055980"
 ---
-# <a name="install-and-configure-wmf-51"></a>安装和配置 WMF 5.1 #
-
+# <a name="install-and-configure-wmf-51"></a>安装和配置 WMF 5.1
 
 ## <a name="download-and-install-the-wmf-51-package"></a>下载和安装 WMF 5.1 包
 
@@ -35,7 +34,8 @@ ms.locfileid: "55676207"
 
 ## <a name="install-wmf-51-for-windows-server-2008-r2-and-windows-7"></a>安装适用于 Windows Server 2008 R2 和 Windows 7 的 WMF 5.1
 
-> **注意：** 针对 Windows Server 2008 R2 和 Windows 7 的安装说明发生变化，不同于其他包的安装说明。 下文中介绍了针对 Windows Server 2012 R2、Windows Server 2012 和 Windows 8.1 的安装说明。
+> [!NOTE]
+> 针对 Windows Server 2008 R2 和 Windows 7 的安装说明发生变化，不同于其他包的安装说明。 下文中介绍了针对 Windows Server 2012 R2、Windows Server 2012 和 Windows 8.1 的安装说明。
 
 **在 Windows Server 2008 R2 和 Windows 7 上安装 WMF 5.1**
 
@@ -50,8 +50,8 @@ ms.locfileid: "55676207"
 
 Install-WMF5.1.ps1 采用以下参数，以简化在 Windows Server 2008 R2 和 Windows 7 上自动执行安装：
 
-- AcceptEula如果包括此参数，则最终用户许可协议将自动接受，并将不会显示。
-- AllowRestart:如果指定 AcceptEula 后，才可以使用此参数。 如果包含此参数，并且在安装 WMF 5.1 后需要重启，将在安装完成后不发出提示就立即重启计算机。
+- AcceptEula：如果包含此参数，将会自动接受但不显示 EULA。
+- AllowRestart：只有在指定 AcceptEula 后，才能使用此参数。 如果包含此参数，并且在安装 WMF 5.1 后需要重启，将在安装完成后不发出提示就立即重启计算机。
 
 **Windows Server 2008 R2 SP1 和 Windows 7 SP1 的 WMF 5.1 系统必备**
 
@@ -67,8 +67,8 @@ Windows PowerShell Desired State Configuration (DSC) 依赖 WinRM。
 在 Windows Server 2008 R2 和 Windows 7 上默认不启用 WinRM。
 若要启用 WinRM，在 Windows PowerShell 提升的会话中运行 `Set-WSManQuickConfig`。
 
-
 ## <a name="install-wmf-51-for-windows-server-2012-r2-windows-server-2012-and-windows-81"></a>安装适用于 Windows Server 2012 R2、Windows Server 2012 和 Windows 8.1 的 WMF 5.1
+
 **在 Windows 资源管理器（或 Windows Server 2012 R2 或 Windows 8.1 中的文件资源管理器）中安装**
 
 1. 导航到在其中下载了 MSU 文件的文件夹。

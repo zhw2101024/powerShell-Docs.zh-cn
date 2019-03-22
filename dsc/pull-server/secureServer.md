@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 请求服务器最佳做法
-ms.openlocfilehash: da67f8fd793878b097ffb260afad0fcf5c69bb04
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677115"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58057699"
 ---
 # <a name="pull-server-best-practices"></a>请求服务器最佳做法
 
@@ -16,7 +16,7 @@ ms.locfileid: "55677115"
 > [!IMPORTANT]
 > 请求服务器（Windows 功能 DSC-Service）是 Windows Server 的一个受支持组件，不过目前没有提供新功能的计划。 建议开始将托管客户端转换至 [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)（包括 Windows Server 上的请求服务器以外的功能）或[此处](pullserver.md#community-solutions-for-pull-service)列出的社区解决方案之一。
 
-摘要：本文档旨在包括过程和可扩展性，以帮助为解决方案准备的工程师。 详细信息应提供由客户确定，然后由产品团队验证的最佳做法，以确保建议面向未来并且可视为是稳定的。
+摘要：本文档旨在包括用于帮助为解决方案进行准备的工程师的过程和可扩展性。 详细信息应提供由客户确定，然后由产品团队验证的最佳做法，以确保建议面向未来并且可视为是稳定的。
 
 | |文档信息|
 |:---|:---|
@@ -64,7 +64,7 @@ Windows PowerShell 为所需状态配置提供了一组语言扩展，可以用�
 
 ### <a name="software-downloads"></a>软件下载
 
-除了从 Windows 更新安装最新内容，还有两个下载内容被视为用于部署 DSC 请求服务器的最佳做法：Windows Management Framework 和 DSC 模块自动执行请求服务器设置的最新版本。
+除了从 Windows 更新安装最新内容，还有两个下载被视为用于部署 DSC 请求服务器的最佳做法：Windows Management Framework 的最新版本，以及一个用于自动执行请求服务器预配的 DSC 模块。
 
 ### <a name="wmf"></a>WMF
 
@@ -104,7 +104,7 @@ Install-Module xPSDesiredStateConfiguration
 
 物理和虚拟服务器上都支持请求服务器部署。 请求服务器的大小调整要求与 Windows Server 2012 R2 的要求保持一致。
 
-CPU：1.4 GHz 64 位处理器; 内存：200 MB 磁盘空间32 GB 网络：千兆以太网适配器
+CPU：1.4 GHz 64 位处理器 内存：512 MB 磁盘空间：32 GB 网络：千兆位以太网适配器
 
 规划任务|
 ---|
@@ -260,7 +260,7 @@ Install-Module xPSDesiredStateConfiguration
 
 用于部署 DSC 请求服务器的最佳方法是使用 DSC 配置脚本。 本文档提供的脚本包括仅配置 DSC Web 服务的基本配置和配置 Windows Server 端到端（包括 DSC Web 服务）的高级设置。
 
-注意：当前`xPSDesiredStateConfiguation`DSC 模块要求服务器是 EN-US 区域设置。
+注意：当前 `xPSDesiredStateConfiguration` DSC 模块要求服务器是 EN-US 区域设置。
 
 ### <a name="basic-configuration-for-windows-server-2012"></a>适用于 Windows Server 2012 的基本配置
 

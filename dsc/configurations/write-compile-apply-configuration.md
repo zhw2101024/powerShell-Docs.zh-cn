@@ -1,32 +1,32 @@
 ---
 ms.date: 12/12/2018
-keywords: dsc，powershell、 配置、 服务、 安装程序
+keywords: dsc,powershell,配置,服务,设置
 title: 编写、编译和应用配置
-ms.openlocfilehash: fa4d98fd12202439ba7025fd8af3fa398653ca05
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: c884af9d92ac375457d6eb75d815ae9a9159e273
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676115"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795413"
 ---
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 # <a name="write-compile-and-apply-a-configuration"></a>编写、编译和应用配置
 
 本练习演示创建和应用 Desired State Configuration (DSC) 配置的完整过程。
-在以下示例中，您将学习如何编写和应用非常简单的配置。 配置将确保在本地计算机上存在的"HelloWorld.txt"文件。 如果您删除该文件，DSC 将重新创建它的下一步的时间，它会更新。
+在以下示例中，你将学习如何编写和应用一个非常简单的配置。 该配置会确保本地计算机上存在“HelloWorld.txt”文件。 如果删除该文件，则 DSC 会在下次更新时重新创建它。
 
-什么是 DSC 及其工作原理的概述，请参阅[面向开发人员 Desired State Configuration 概述](../overview/overview.md)。
+有关什么是 DSC 及其工作原理的概述，请参阅[面向开发人员的 Desired State Configuration 概述](../overview/overview.md)。
 
 ## <a name="requirements"></a>要求
 
-若要运行此示例中，将需要运行 PowerShell 4.0 或更高版本的计算机。
+要运行此示例，需要运行 PowerShell 4.0 或更高版本的计算机。
 
 ## <a name="write-the-configuration"></a>写入配置
 
 DSC [配置](configurations.md)是一个特殊的 PowerShell 功能，可定义用于配置一个或多个目标计算机（节点）的方式。
 
-在 PowerShell ISE 中或其他 PowerShell 编辑器中，键入以下命令：
+在 PowerShell ISE 或其他 PowerShell 编辑器中，键入以下内容：
 
 ```powershell
 Configuration HelloWorld {
@@ -47,20 +47,22 @@ Configuration HelloWorld {
 }
 ```
 
-将文件另存"HelloWorld.ps1"。
+将文件保存为“HelloWorld.ps1”。
 
-定义配置就像定义函数。 **节点**块指定要配置的目标节点，在本示例中为 `localhost`。
+定义配置类似于定义函数。 **节点**块指定要配置的目标节点，在本示例中为 `localhost`。
 
-配置调用其中一个[资源](../resources/resources.md)，则`File`资源。 资源负责确保目标节点处于由配置定义的状态。
+配置会调用一个[资源](../resources/resources.md)（`File` 资源）。 资源负责确保目标节点处于由配置定义的状态。
 
 ## <a name="compile-the-configuration"></a>编译配置
 
 对于要应用于节点的 DSC 配置，必须首先将其编译为 MOF 文件。
-运行配置，如某个函数，将编译一个".mof"文件对于定义的每个节点`Node`块。
-若要运行此配置，需要对*点获取来源*到当前作用域"HelloWorld.ps1"脚本。
-有关详细信息，请参阅[about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing)。
+与函数类似，运行配置会为 `Node` 块定义的每个节点编译一个“.mof”文件。
+若要运行配置，需要使用点将“HelloWorld.ps1”脚本的来源获取到当前范围中。
+有关详细信息，请参阅 [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing)。
 
-*使用点获取来源*通过在你在其中存储它之后, 的路径中键入"HelloWorld.ps1"脚本`. `（点、 空间）。 然后，可以通过调用类似于函数运行您的配置。
+<!-- markdownlint-disable MD038 -->
+通过在 `. `（点，空格）后键入用于存储“HelloWorld.ps1”脚本的路径，来使用点获取其来源。 随后可以通过调用配置（类似于函数）来运行它。
+<!-- markdownlint-enable MD038 -->
 
 ```powershell
 . C:\Scripts\WebsiteTest.ps1
@@ -82,13 +84,13 @@ Mode                LastWriteTime         Length Name
 
 现在你已编译好 MOF，可以通过调用 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet 将配置应用于目标节点（在本例中为本地计算机）。
 
-`Start-DscConfiguration` Cmdlet 会告诉[本地配置管理器 (LCM)](../managing-nodes/metaConfig.md)，DSC，以应用配置的引擎。
+`Start-DscConfiguration` cmdlet 通知作为 DSC 引擎的[本地配置管理器 (LCM)](../managing-nodes/metaConfig.md) 应用配置。
 LCM 的工作是调用 DSC 资源以应用配置。
 
-使用下面的代码来执行`Start-DSCConfiguration`cmdlet。 指定的目录路径为存储在"localhost.mof"`-Path`参数。 `Start-DSCConfiguration` Cmdlet 的任何指定的目录中查找"\<computername\>.mof"文件。 `Start-DSCConfiguration` Cmdlet 尝试将会在每个".mof"文件应用于指定的文件名 （"localhost"、"server01"、"dc-02"等） 的计算机名。
+使用下面的代码执行 `Start-DSCConfiguration` cmdlet。 向 `-Path` 参数指定用于存储“localhost.mof”的目录路径。 `Start-DSCConfiguration` Cmdlet 在指定的目录中查找任何“\<computername\>.mof”文件。 `Start-DSCConfiguration` Cmdlet 尝试将找到的每个“.mof”文件应用于通过文件名指定的计算机名（“localhost”、“server01”、“dc-02”等）。
 
 > [!NOTE]
-> 如果`-Wait`未指定参数，`Start-DSCConfiguration`创建后台作业来执行该操作。 指定`-Verbose`参数，可观看**Verbose**操作的输出。 `-Wait`和`-Verbose`是这两个可选参数。
+> 如果未指定 `-Wait` 参数，则 `Start-DSCConfiguration` 会创建后台作业来执行操作。 通过指定 `-Verbose` 参数可以观察操作的详细输出。 `-Wait` 和 `-Verbose` 是可选参数。
 
 ```powershell
 Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
@@ -96,11 +98,11 @@ Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
 
 ## <a name="test-the-configuration"></a>测试配置
 
-一次`Start-DSCConfiguration`cmdlet 完成后，你应看到一个"HelloWorld.txt"文件中指定的位置。 你可以验证包含内容[Get-content](/powershell/module/microsoft.powershell.management/get-content) cmdlet。
+`Start-DSCConfiguration` cmdlet 完成后，便应在指定的位置看到“HelloWorld.txt”文件。 可以使用 [Get-content](/powershell/module/microsoft.powershell.management/get-content) cmdlet 验证内容。
 
-此外可以*测试*使用当前状态[Test-dscconfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)。
+还可以使用 [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) 测试当前状态。
 
-如果节点是当前符合应用的配置，输出应为"True"。
+如果节点当前符合所应用的配置，则输出应为“True”。
 
 ```powershell
 Test-DSCConfiguration
@@ -120,7 +122,7 @@ Hello World from DSC!
 
 ## <a name="re-applying-the-configuration"></a>重新应用配置
 
-若要查看您再次获取应用的配置，可以删除您的配置创建的文本文件。 使用`Start-DSCConfiguration`cmdlet 与`-UseExisting`参数。 `-UseExisting`参数指示`Start-DSCConfiguration`重新应用"current.mof"文件，它表示最新成功应用配置。
+若要再次应用配置，可以删除配置所创建的文本文件。 将 `Start-DSCConfiguration` cmdlet 与 `-UseExisting` 参数一起使用。 `-UseExisting` 参数指示 `Start-DSCConfiguration` 重新应用“current.mof”文件，它表示最近成功应用的配置。
 
 ```powershell
 Remove-Item -Path C:\Temp\HelloWorld.txt

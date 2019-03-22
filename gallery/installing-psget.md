@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: 库,powershell,cmdlet,psget
 title: 安装 PowerShellGet
-ms.openlocfilehash: 5c51cb1c7ea2538cc5f8503ce6c5d80edda70e15
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: 23a53a9117c9f6a7ad157b635cd7ff4b3b3444c5
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002206"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054813"
 ---
 # <a name="installing-powershellget"></a>安装 PowerShellGet
 
@@ -57,7 +57,7 @@ ms.locfileid: "50002206"
   Exit
   ```
 
-- 确保未在其他任何进程中加载 PowerShellGet 和 PackageManagment 模块。
+- 确保未在其他任何进程中加载 PowerShellGet 和 PackageManagement 模块。
 - 删除 `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` 和 `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` 文件夹的内容。
 - 使用提升的权限重新打开 PS 控制台，再运行以下命令。
 

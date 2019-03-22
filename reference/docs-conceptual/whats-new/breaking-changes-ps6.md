@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell, 核心
 title: PowerShell 6.0 的重大更改
-ms.openlocfilehash: d477a9b27e8d5df6653ee40f8b606879b60a80c7
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
-ms.translationtype: MTE95
+ms.openlocfilehash: 975c978629f81f0f13a235c3d304e5ec03bae6d0
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655440"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795685"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>PowerShell 6.0 的重大更改
 
@@ -65,6 +65,10 @@ ms.locfileid: "53655440"
 ### <a name="-counter-cmdlets"></a>`*-Counter` cmdlet
 
 由于使用了不受支持的 API 而从 PowerShell Core 中删除 `*-Counter`，直至找到更佳解决方案。
+
+### <a name="-eventlog-cmdlets"></a>`*-EventLog` cmdlet
+
+由于使用了不受支持的 API 而从 PowerShell Core 中了删除 `*-EventLog`。 直到找到更佳解决方案。 `Get-WinEvent` 和 `Create-WinEvent` 可用于在 Windows 上获取和创建事件。
 
 ## <a name="enginelanguage-changes"></a>引擎/语言更改
 
@@ -179,9 +183,9 @@ PowerShell 中的命名应与我们的命名保持一致，并符合 Apple 对 m
 
 由于不受支持的 API，会删除 `LocalAccounts` 模块和 `Diagnostics` 模块中的 `Counter` cmdlet，直到找到更好的解决方案。
 
-### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>使用 bool 参数执行 powershell 脚本不起作用 [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
+### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>使用 bool 参数执行 PowerShell 脚本不起作用 [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
 
-以前，使用 powershell.exe（现在使用 `pwsh.exe`）执行 PowerShell 脚本，使用 `-File` 无法将 $true/$false 作为参数值进行传递。 添加了支持将 $true/$false 作为参数的解析值。 由于当前记录的语法不起作用，也支持开关值。
+以前，使用 powershell.exe（现在使用 pwsh.exe）执行 PowerShell 脚本，使用 `-File` 无法将 `$true`/`$false` 作为参数值进行传递。 添加了支持将 `$true`/`$false` 作为参数的解析值。 由于当前记录的语法不起作用，也支持开关值。
 
 ### <a name="remove-clrversion-property-from-psversiontable-4027httpsgithubcompowershellpowershellissues4027"></a>从 `$PSVersionTable` 删除 `ClrVersion` 属性 [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
 
@@ -193,7 +197,7 @@ PowerShell 中的命名应与我们的命名保持一致，并符合 Apple 对 m
 
 ### <a name="implement-unicode-escape-parsing-3958httpsgithubcompowershellpowershellissues3958"></a>实现 Unicode 转义分析 [#3958](https://github.com/PowerShell/PowerShell/issues/3958)
 
-将 `` `u#### `` 或 `` `u{####} `` 转换为相应的 Unicode 字符。 若要输出文本 `` `u ``，转义反引号：``` ``u ```。
+将 `` `u####`` 或 `` `u{####}`` 转换为相应的 Unicode 字符。 若要输出文本 `` `u``，转义反引号：``` ``u```。
 
 ### <a name="change-new-modulemanifest-encoding-to-utf8nobom-on-non-windows-platforms-3940httpsgithubcompowershellpowershellissues3940"></a>在非 Windows 平台上将 `New-ModuleManifest` 编码更改为 `UTF8NoBOM` [#3940](https://github.com/PowerShell/PowerShell/issues/3940)
 
@@ -271,4 +275,4 @@ Web Cmdlet 的基础 .NET API 已更改为 `System.Net.Http.HttpClient`。 此�
 - 不再采用 `System.Net.ServicePointManager` 设置。
 - 目前在 macOS 上尚无基于证书的身份验证。
 - 通过 `http://` URI 使用 `-Credential` 将导致错误。 使用 `https://` URI 或提供 `-AllowUnencryptedAuthentication` 参数来阻止此错误。
-- `-MaximumRedirection` 现在生成一个终止错误时重定向尝试超过而不是返回的最后一个重定向结果提供的限制。
+- 现在当重定向尝试超过提供的限制时，`-MaximumRedirection` 会生成终止错误时，而不是返回最后一次重定向的结果。

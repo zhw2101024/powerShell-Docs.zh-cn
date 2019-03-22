@@ -2,18 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 调试 DSC 资源
-ms.openlocfilehash: 9b2e7dd9b42332b869c4d7fabb21bd4b5a6b8800
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: c088e13a25ba31ceebaf52b2d24b5d32b96ae2fc
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400448"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055574"
 ---
 # <a name="debugging-dsc-resources"></a>调试 DSC 资源
 
 > 适用于：Windows PowerShell 5.0
 
-在 PowerShell 5.0 中，Desired State Configuraiton (DSC) 引入了一项新功能，允许你在应用配置时调试 DSC 资源。
+在 PowerShell 5.0 中，Desired State Configuration (DSC) 引入了一项新功能，允许你在应用配置时调试 DSC 资源。
 
 ## <a name="enabling-dsc-debugging"></a>启用 DSC 调试
 必须通过调用 [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug) cmdlet 启用调试后，才能调试资源。

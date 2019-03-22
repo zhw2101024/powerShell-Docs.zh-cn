@@ -2,24 +2,24 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,配置,安装程序
 title: 使用 DependsOn 的资源依赖项
-ms.openlocfilehash: 0d060f7d99bd261b0766028b245d4d32a5e1c349
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 5ea08c76c203188f41513ad0cc1f4571579b4172
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400443"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055693"
 ---
 # <a name="resource-dependencies-using-dependson"></a>使用 DependsOn 的资源依赖项
 
-当你编写[配置](configurations.md)，添加[资源块](../resources/resources.md)目标节点的方面进行配置。 在继续添加资源块，你的配置会变得相当大且难以管理。 此类难题之一是资源块的应用的顺序。 通常在配置中定义它们的顺序应用资源。 随着你的配置更大、 更复杂的增长，可以使用`DependsOn`项以更改的资源通过指定的资源依赖于另一个资源的应用的顺序。
+编写[配置](configurations.md)时，会添加[资源块](../resources/resources.md)以配置目标节点的各个方面。 随着继续添加资源块，配置可能会变得相当大，且难以管理。 这类难题之一是资源块的应用顺序。 通常按照在配置中定义资源的顺序来应用它们。 随着配置越来越大且越复杂，可以使用 `DependsOn` 键更改资源的应用顺序，具体方法是指定一个资源依赖于另一个资源。
 
-`DependsOn`可以在任何资源块中使用密钥。 它定义与其他资源键相同的键/值机制。 `DependsOn`密钥需要使用以下语法的字符串数组。
+`DependsOn` 键可以在任何资源块中使用。 其定义使用与其他资源键相同的键/值机制。 `DependsOn` 键需要具有以下语法的字符串数组。
 
 ```
-DependsOn = '[<Resource Type>]<Resoure Name>', '[<Resource Type>]<Resource Name'
+DependsOn = '[<Resource Type>]<Resource Name>', '[<Resource Type>]<Resource Name'
 ```
 
-下面的示例配置防火墙规则后启用和配置的公共配置文件。
+下面的示例在启用和配置公用配置文件之后配置防火墙规则。
 
 ```powershell
 # Install the NetworkingDSC module to configure firewall rules and profiles.
@@ -60,7 +60,7 @@ Configuration ConfigureFirewall
 ConfigureFirewall -OutputPath C:\Temp\
 ```
 
-时应用配置时，将始终首先不管按什么顺序资源块定义配置防火墙配置文件。 如果应用配置时，一定要注意现有配置，因此如果需要，可以还原在目标节点。
+应用配置时，会始终首先配置防火墙配置文件，无论定义资源块的顺序如何。 如果应用配置，请务必注意目标节点现有配置，以便在需要时可以还原。
 
 ```
 PS> Start-DSCConfiguration -Verbose -Wait -Path C:\Temp\ -ComputerName localhost
@@ -118,13 +118,13 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Time taken for configuration job to complete is 15.385 seconds
 ```
 
-这还可以确保，如果**FirewallProfile**资源因任何原因而失败**防火墙**块不会执行，即使它第一次定义。 `DependsOn`密钥允许更灵活地分组资源块，并确保资源在执行之前是否解析依赖项。
+这还可确保如果 FirewallProfile 资源因任何原因而失败，则 Firewall 块不会执行，即使是先定义它。 通过 `DependsOn` 键可以更灵活地对资源块进行分组，并确保在资源执行之前解析依赖关系。
 
-在更高级的配置，您还可以使用[跨节点依赖关系](crossNodeDependencies.md)以便进行更精细控制 （例如，确保域控制器配置将客户端加入到域之前）。
+在更高级的配置中，还可以使用[跨节点依赖关系](crossNodeDependencies.md)以便进行更精细的控制（例如，确保在将客户端加入域之前配置域控制器）。
 
 ## <a name="cleaning-up"></a>清理
 
-如果应用上面的配置，可以反转密钥来撤消任何更改。 在上述示例中，设置**已启用**密钥为 false 将禁用防火墙规则和配置文件。 根据需要以匹配目标节点的以前的配置的状态，应修改该示例。
+如果应用上面的配置，则可以反转键来撤消任何更改。 在上面的示例中，将 Enabled 键设置为 false 会禁用防火墙规则和配置文件。 应根据需要修改该示例以匹配目标节点以前的已配置状态。
 
 ```powershell
         Firewall Firewall

@@ -2,12 +2,12 @@
 title: 在 Linux 上安装 PowerShell Core
 description: 介绍如何在各种 Linux 分发上安装 PowerShell Core
 ms.date: 08/06/2018
-ms.openlocfilehash: 2ab9beb19e5f90b392413eee31e3fed317e267b0
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
-ms.translationtype: MTE95
+ms.openlocfilehash: 718be0f03f136d6eb7d78fff51abdc36f6a8f0c2
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56265529"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795719"
 ---
 # <a name="installing-powershell-core-on-linux"></a>在 Linux 上安装 PowerShell Core
 
@@ -195,7 +195,7 @@ sudo apt-get remove powershell
 ## <a name="ubuntu-1810"></a>Ubuntu 18.10
 
 > [!NOTE]
-> 因为 18.10[过渡发布](https://www.ubuntu.com/about/release-cycle)，它才[社区支持](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6)。
+> 因为 18.10 是[过渡版本](https://www.ubuntu.com/about/release-cycle)，所以它仅[支持社区](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6)。
 
 支持通过 `snapd` 按 18.10 版上进行安装。 有关完整说明，请参阅 [Snap 包][snap]；
 
@@ -669,7 +669,7 @@ PowerShell 为所有 Linux 分发版生成可移植二进制文件。
 若要在不受正式支持的 Linux 分发版上部署 PowerShell 二进制文件，则需在各个步骤中安装目标 OS 的必要依赖项。
 例如，[Amazon Linux dockerfile][amazon-dockerfile] 应先安装依赖项，然后提取 Linux `tar.gz` 存档。
 
-[amazon-dockerfile]: https://github.com/PowerShell/PowerShell/blob/master/docker/community/amazonlinux/Dockerfile
+[amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
 
 ### <a name="installation---binary-archives"></a>安装 - 二进制存档
 

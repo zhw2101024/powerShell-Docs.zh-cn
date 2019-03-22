@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 使用 Nano Server 上的 DSC
-ms.openlocfilehash: fd81fe56d16100f45d9ee2dfd8fdc303c2a6c17a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: ac5eaf3885788f40e12e4f0a0f19025668280f7e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400461"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054656"
 ---
 # <a name="using-dsc-on-nano-server"></a>使用 Nano Server 上的 DSC
 
@@ -38,7 +38,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 - [Stop-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Stop-DscConfiguration)
 - [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration)
 - [Test-DscConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)
-- [Publish-DscConfiguraiton](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration)
+- [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration)
 - [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration)
 - [Restore-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Restore-DscConfiguration)
 - [Remove-DscConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument)
@@ -50,7 +50,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 
 - 编译配置（请参阅 [DSC 配置](../configurations/configurations.md)）
 
-  **问题 #1629**密码加密 (请参阅[保护 MOF 文件](../pull-server/secureMOF.md)) 在配置期间，编译不起作用。
+  **问题：** 在配置编译期间密码加密不起作用（请参阅[保护 MOF 文件](../pull-server/secureMOF.md)）。
 
 - 编译元配置（请参阅[配置本地配置管理器](../managing-nodes/metaConfig.md)）
 
@@ -60,7 +60,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 
 - 调试 DSC 资源（见[调试 DSC 资源](../troubleshooting/debugResource.md)）
 
-  **问题 #1629**如果资源使用 PsDscRunAsCredential 不起作用 (请参阅[使用用户凭据运行 DSC](../configurations/runAsUser.md))
+  **问题：** 在资源使用 PsDscRunAsCredential 时不起作用（请参阅[使用用户凭据运行 DSC](../configurations/runAsUser.md)）
 
 - [指定跨节点依赖关系](../configurations/crossNodeDependencies.md)
 
@@ -97,12 +97,12 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 - **组**
 - **GroupSet**
 
-  **问题 #1629**上面的资源失败，如果调用了两次特定实例 （运行两次相同的配置）
+  **问题：** 如果调用两次特定实例（运行相同的配置两次），上面的资源失败
 
 - **服务**
 - **ServiceSet**
 
-  **问题 #1629**仅适用于启动/停止 （状态） 的服务。 如果有人尝试更改其他服务属性（如 startuptype、credentials、description 等），则会失败。 引发的错误类似于：
+  **问题：** 仅对处于正在启动/停止（状态）的服务有效。 如果有人尝试更改其他服务属性（如 startuptype、credentials、description 等），则会失败。 引发的错误类似于：
 
   找不到类型 [management.managementobject]: 请验证包含此类型的程序集是否已加载。
 

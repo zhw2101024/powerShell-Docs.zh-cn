@@ -4,16 +4,17 @@ ms.topic: conceptual
 keywords: wmf,powershell,安装程序
 contributor: jianyunt, quoctruong
 title: WMF 5.1 中对包管理的改进
-ms.openlocfilehash: adcddcc94022f4961f3dd23c2cd56f2a8720049b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 30ef59ed9dc0d56636d85cc6e53523a9a73963a4
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677427"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794274"
 ---
-# <a name="improvements-to-package-management-in-wmf-51"></a>WMF 5.1 中对包管理的改进#
+# <a name="improvements-to-package-management-in-wmf-51"></a>WMF 5.1 中对包管理的改进
 
-## <a name="improvements-in-packagemanagement"></a>包管理中的改进 ##
+## <a name="improvements-in-packagemanagement"></a>包管理中的改进
+
 以下是 WMF 5.1 中所做的修复：
 
 ### <a name="version-alias"></a>版本别名
@@ -30,7 +31,7 @@ ms.locfileid: "55677427"
 
 但是在某些情况下，当在计算机上安装了旧版本的 NuGet 提供程序时，较旧版本的 NuGet 有时会先加载到 PowerShell 会话中（这是 PackageManagement 中的争用条件）。 但是 PowerShellGet 需要更新版本的 NuGet 提供程序才可正常运行，因此 PowerShellGet 会要求 PackageManagement 再次启动 NuGet 提供程序。 这会导致出现多个用于启动 NuGet 提供程序的提示。
 
-**解决方案**：在 wmf 5.1 中，PackageManagement 加载最新版本的 NuGet 提供程序，以避免出现多个提示用于启动 NuGet 提供程序。
+**解决方案**：在 WMF 5.1 中，PackageManagement 加载最新版本的 NuGet 提供程序，以避免出现多个要求启动 NuGet 提供程序的提示。
 
 还可以通过手动删除旧版本的 NuGet 提供程序（NuGet-Anycpu.exe，如果在 $env:ProgramFiles\PackageManagement\ProviderAssemblies $env:LOCALAPPDATA\PackageManagement\ProviderAssemblies 中存在）来解决此问题
 
@@ -41,7 +42,7 @@ ms.locfileid: "55677427"
 
 **情形**：在 WMF 5.0 中，PackageManagement 不支持仅具有 Intranet（但没有 Internet）访问的计算机。
 
-**解决方案**：在 WMF 5.1 中，可以按照这些步骤允许 Intranet 计算机使用 PackageManagement:
+**解决方案**：在 WMF 5.1 中，可以按照以下步骤允许 Intranet 计算机使用 PackageManagement：
 
 1. 使用 `Install-PackageProvider -Name NuGet`，通过具有 Internet 连接的其他计算机下载 NuGet 提供程序。
 
@@ -61,6 +62,7 @@ ms.locfileid: "55677427"
 ``` PowerShell
 Find-Package -Source <SourceWithCredential> -Credential (Get-Credential)
 ```
+
 ### <a name="support-for-using-packagemanagement-behind-a-proxy"></a>支持在代理后面使用 PackageManagement
 
 在 WMF 5.1 中，PackageManagement 现在采用新的代理参数 `-ProxyCredential` 和 `-Proxy`。 使用这些参数可以向 PackageManagement cmdlets 指定代理 URL 和凭据。 默认情况下，会使用系统代理设置。 例如：

@@ -2,18 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: DSC WaitForAny 资源
-ms.openlocfilehash: 39e90f0df3459b8891ed46e02ae82c45a285e7f5
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.openlocfilehash: 55869f665837b422c006f4cfb3e91366fac60362
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047165"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58058804"
 ---
 # <a name="dsc-waitforany-resource"></a>DSC WaitForAny 资源
 
 > 适用于：Windows PowerShell 5.1 及更高版本
 
-可以在 [DSC 配置](../../../configurations/configurations.md)中的节点块内使用 WaitForSome Desired State Configuration (DSC) 资源，以指定依赖其他节点上的配置。
+可以在 [DSC 配置](../../../configurations/configurations.md)中的节点块内使用 WaitForAny Desired State Configuration (DSC) 资源，以指定依赖其他节点上的配置。
 
 如果由 ResourceName 属性指定的资源在 NodeName 属性定义的任意目标节点上处于相应状态，那么此资源成功。
 

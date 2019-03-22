@@ -2,12 +2,12 @@
 title: 通过 SSH 进行 PowerShell 远程处理
 description: 在 PowerShell Core 中使用 SSH 进行远程处理
 ms.date: 08/14/2018
-ms.openlocfilehash: 87ab967a30782a6ac4d86737cd1702a0ebd6ebc5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 1d7bcb69c7e784bf745cb5c2633106ea53f6226a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677246"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056526"
 ---
 # <a name="powershell-remoting-over-ssh"></a>通过 SSH 进行 PowerShell 远程处理
 
@@ -30,7 +30,7 @@ WinRM 为 PowerShell 远程会话提供可靠的托管模型。 基于 SSH 的�
 
 ## <a name="general-setup-information"></a>常规安装信息
 
-必须在所有计算机上安装 SSH。 SSH 客户端 (`ssh.exe`) 和服务器 (`sshd.exe`) 皆应安装，以便远程到计算机或从计算机进行远程。 有关 Windows OpenSSH 现已适用于 Windows 10 生成 1809年和 Windows Server 2019。 有关详细信息，请参阅[OpenSSH 的 Windows](/windows-server/administration/openssh/openssh_overview)。 对于 Linux，请安装适用于平台的 SSH（包括 sshd 服务器）。 此外，需要从 GitHub 安装 PowerShell Core 以获取 SSH 远程处理功能。 必须配置 SSH 服务器以创建 SSH 子系统来托管远程计算机上的 PowerShell 进程。 还必须配置启用密码或基于密钥的身份验证。
+必须在所有计算机上安装 SSH。 SSH 客户端 (`ssh.exe`) 和服务器 (`sshd.exe`) 皆应安装，以便远程到计算机或从计算机进行远程。 OpenSSH for Windows 现已在 Windows 10 内部版本 1809 和 Windows Server 2019 中可用。 有关详细信息，请参阅 [OpenSSH for Windows](/windows-server/administration/openssh/openssh_overview)。 对于 Linux，请安装适用于平台的 SSH（包括 sshd 服务器）。 此外，需要从 GitHub 安装 PowerShell Core 以获取 SSH 远程处理功能。 必须配置 SSH 服务器以创建 SSH 子系统来托管远程计算机上的 PowerShell 进程。 还必须配置启用密码或基于密钥的身份验证。
 
 ## <a name="set-up-on-windows-machine"></a>在 Windows 计算机上设置
 
@@ -46,8 +46,8 @@ WinRM 为 PowerShell 远程会话提供可靠的托管模型。 基于 SSH 的�
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. 安装最新的 Win32 OpenSSH。 有关安装说明，请参阅[OpenSSH 安装](/windows-server/administration/openssh/openssh_install_firstuse)。
-3. 编辑`sshd_config`文件位于`$env:ProgramData\ssh`。
+2. 安装最新 Win32 OpenSSH。 有关安装说明，请参阅 [OpenSSH 的安装](/windows-server/administration/openssh/openssh_install_firstuse)。
+3. 编辑位于 `$env:ProgramData\ssh` 的 `sshd_config` 文件。
 
    - 确保已启用密码身份验证
 
@@ -62,7 +62,7 @@ WinRM 为 PowerShell 远程会话提供可靠的托管模型。 基于 SSH 的�
      > [!NOTE]
      > OpenSSH for Windows 中存在一个 bug，使空格在子系统可执行路径中无效。 有关详细信息，请参阅[此 GitHub 问题](https://github.com/PowerShell/Win32-OpenSSH/issues/784)。
 
-     一种解决方案是创建不包含空格的 Powershell 安装目录 symlink：
+     一种解决方案是创建不包含空格的 PowerShell 安装目录 symlink：
 
      ```powershell
      mklink /D c:\pwsh "C:\Program Files\PowerShell\6"

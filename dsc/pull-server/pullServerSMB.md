@@ -2,12 +2,12 @@
 ms.date: 04/11/2018
 keywords: dsc,powershell,配置,安装程序
 title: 设置 DSC SMB 请求服务器
-ms.openlocfilehash: 722120369df9ff383a02c69111e0bacf2e2e76a5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 9d087a08861b2f4683e81efd1e25f857b8b75e07
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676185"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58057750"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>设置 DSC SMB 请求服务器
 
@@ -59,7 +59,7 @@ Configuration SmbShare
         {
             Name = 'DscSmbShare'
             Path = 'C:\DscSmbShare'
-            FullAccess = 'admininstrator'
+            FullAccess = 'administrator'
             ReadAccess = 'myDomain\Contoso-Server$'
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'
@@ -69,14 +69,14 @@ Configuration SmbShare
 }
 ```
 
-此配置会创建该目录`C:\DscSmbShare`，如果它尚不存在，然后将该目录用作 SMB 文件共享。 **FullAccess**应授予给任何需要写入或从文件共享中删除的帐户。 **ReadAccess**必须授予给所有从共享获取配置和/或 DSC 资源的客户端节点。
+该配置会创建目录 `C:\DscSmbShare`（如果尚未存在），随后将该目录用作 SMB 文件共享。 应将 FullAccess 授予给任何需要对文件共享进行写入或删除的帐户。 必须将 ReadAccess 授予给任何从共享获取配置和/或 DSC 资源的客户端节点。
 
 > [!NOTE]
-> DSC 以系统帐户默认运行，因此计算机本身必须有权访问共享。
+> DSC 在默认情况下作为系统帐户进行运行，因此计算机本身必须有权访问共享。
 
 ### <a name="give-file-system-access-to-the-pull-client"></a>向请求客户端授予文件系统访问权限
 
-向客户端节点授予 **ReadAccess** 可允许该节点访问 SMB 共享，但不允许其访问此共享中的文件或文件夹。 你必须显式授予客户端节点访问 SMB 共享文件夹和子文件夹。 我们可以使用 [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) 模块中包含的 **cNtfsPermissionEntry** 资源进行添加，对 DSC 执行此操作。 下面的配置添加了 **cNtfsPermissionEntry** 块，用于向请求客户端授予 ReadAndExecute 访问权限：
+向客户端节点授予 **ReadAccess** 可允许该节点访问 SMB 共享，但不允许其访问此共享中的文件或文件夹。 必须向客户端节点明确授予对 SMB 共享文件夹和子文件夹的访问权限。 我们可以使用 [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) 模块中包含的 **cNtfsPermissionEntry** 资源进行添加，对 DSC 执行此操作。 下面的配置添加了 **cNtfsPermissionEntry** 块，用于向请求客户端授予 ReadAndExecute 访问权限：
 
 ```powershell
 Configuration DSCSMB
@@ -135,7 +135,7 @@ Configuration DSCSMB
 > [!NOTE]
 > 如果你使用的是 SMB 请求服务器，则必须使用配置 ID。 SMB 不支持配置名称。
 
-每个资源模块都需要进行压缩并按照 `{Module Name}_{Module Version}.zip` 模式进行命名。 例如，一个名为 xWebAdminstration 并且模块版本为 3.1.2.0 的模块会命名为“xWebAdministration_3.2.1.0.zip”。 每个版本的模块都必须包含在单个 zip 文件中。 不支持单独的 zip 文件中的模块的版本。 在打包 DSC 资源模块以便用于请求服务器之前, 需要对目录结构进行少量更改。
+每个资源模块都需要进行压缩并按照 `{Module Name}_{Module Version}.zip` 模式进行命名。 例如，一个名为 xWebAdminstration 并且模块版本为 3.1.2.0 的模块会命名为“xWebAdministration_3.2.1.0.zip”。 每个版本的模块都必须包含在单个 zip 文件中。 不支持 zip 文件中存在不同版本的模块。 在打包 DSC 资源模块以供请求服务器使用之前，必须对目录结构稍作更改。
 
 包含 WMF 5.0 中 DSC 资源的模块的默认格式为 `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`。
 
@@ -207,7 +207,7 @@ $ConfigurationData = @{
 
 ## <a name="acknowledgements"></a>致谢
 
-特别感谢下列人员：
+特别感谢以下人员：
 
 - Mike F. Robbins，其有关将 SMB 用于 DSC 的文章帮助告知本主题中的内容。 他的博客是 [Mike F Robbins](http://mikefrobbins.com/)。
 - Serge Nikalaichyk，他是 **cNtfsAccessControl** 模块的作者。 此模块的来源位于 [cNtfsAccessControl](https://github.com/SNikalaichyk/cNtfsAccessControl)。

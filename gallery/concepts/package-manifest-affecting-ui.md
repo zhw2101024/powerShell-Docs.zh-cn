@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: 影响 PowerShell 库 UI 的包清单值
-ms.openlocfilehash: dcba56d9f7edf0c08a3b9e3f2326b39a6b3be3fa
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
-ms.translationtype: MTE95
+ms.openlocfilehash: cedf81df8de29c54ef559a800d654305029491ec
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655339"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58058209"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>影响 PowerShell 库 UI 的包清单值
 
@@ -40,7 +40,7 @@ ms.locfileid: "53655339"
 | **角色功能** | 当发布到 PowerShell 库的模块包含一个或多个由 JEA 使用的角色功能 (.psrc) 文件时，将会列出此元素。 有关[角色功能](/powershell/jea/role-capabilities)的更多详细信息，请参阅 JEA 文档。 | 是 | 否 |
 | **PowerShell 版本** | 这在脚本或模块清单中指定。 对于设计用于 PowerShell 5.0 及更低版本的模块，这使用标记进行控制。 对于桌面，使用标记 PSEdition_Desktop；对于核心，使用标记 PSEdition_Core。 对于仅在 PowerShell 5.1 及更高版本中使用的模块，主清单中存在 CompatiblePSEditions 键。 有关更多详细信息，请查看 [PowerShell Get 文档](module-psedition-support.md)中的 PS 版本功能。 | 是 | 是 |
 | **依赖项** | 依赖项是 PowerShell 库中的模块，它们在模块中被声明为 RequiredModules，在脚本清单中被声明为 #Requires –Module（名称）。 | 是 | 是 |
-| **最低 Powershell 版本** | 这可以在模块清单中指定为 PowerShellVersion | 是 | 否 |
+| **最低 PowerShell 版本** | 这可以在模块清单中指定为 PowerShellVersion | 是 | 否 |
 | **版本历史记录** | 版本历史记录反映对 PowerShell 库中模块的更新。 如果使用“删除”功能隐藏包的版本，则除包所有者以外，该版本将不会显示在版本历史记录中。 | 否 | 否 |
 | **项目网站** | 通过指定 ProjectURI，为模块清单的 Privatedata\PSData 部分中的模块提供项目网站。 在脚本清单中，通过指定 .PROJECTURI 对其进行控制。 | 是 | 是 |
 | **许可证** | 通过指定 LicenseURI，为模块清单的 Privatedata\PSData 部分中的模块提供许可证链接。 在脚本清单中，通过指定 .LICENSEURI 对其进行控制。 请务必注意，如果许可证未通过 LicenseURI 或未在模块内提供，则 PowerShell 库的使用条款将指定该包的使用条款。 有关详细信息，请参阅使用条款。 | 是 | 是 |

@@ -2,12 +2,12 @@
 ms.date: 08/24/2018
 keywords: dsc,powershell,配置,安装程序
 title: DSC Script 资源
-ms.openlocfilehash: ef84239820a44aab2a028f7f0fe17653a851b72e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 86dfb74bf52d8907686bb955fd722f4fb8b9131b
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676176"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054741"
 ---
 # <a name="dsc-script-resource"></a>DSC Script 资源
 
@@ -61,7 +61,7 @@ DSC 执行 `TestScript` 以确定是否应运行 `SetScript`。 如果 `TestScri
 
 ## <a name="examples"></a>示例
 
-### <a name="example-1-write-sample-text-using-a-script-resource"></a>示例 1：编写使用脚本资源的示例文本
+### <a name="example-1-write-sample-text-using-a-script-resource"></a>示例 1：使用脚本资源编写示例文本
 
 此示例测试每个节点上是否存在 `C:\TempFolder\TestFile.txt`。 如果它不存在，则使用 `SetScript` 创建它。 `GetScript` 返回文件的内容，并且不使用其返回值。
 
@@ -86,7 +86,7 @@ Configuration ScriptTest
 }
 ```
 
-### <a name="example-2-compare-version-information-using-a-script-resource"></a>示例 2：使用脚本资源的版本信息进行比较
+### <a name="example-2-compare-version-information-using-a-script-resource"></a>示例 2：使用脚本资源比较版本信息
 
 此示例从创作计算机上的文本文件中检索符合的版本信息，并将其存储在 `$version` 变量中。 在生成节点的 MOF 文件时，DSC 将每个脚本块中的 `$using:version` 变量替换为 `$version` 变量的值。 在执行期间，符合的版本存储在每个节点上的文本文件中，并在后续执行时进行比较和更新。
 

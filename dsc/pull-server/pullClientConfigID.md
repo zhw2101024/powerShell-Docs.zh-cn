@@ -1,33 +1,34 @@
 ---
 ms.date: 12/12/2018
 keywords: dsc,powershell,配置,安装程序
-title: 设置请求客户端使用配置 Id 在 PowerShell 5.0 及更高版本
-ms.openlocfilehash: 8d8cf478f9127e1b7005d1b9e832e84b11612c9c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+title: 在 PowerShell 5.0 及更高版本中使用配置 ID 设置请求客户端
+ms.openlocfilehash: 14db98d240bc87aca3ee985db08c14b7c65d8bb8
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400773"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055710"
 ---
-# <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>设置请求客户端使用配置 Id 在 PowerShell 5.0 及更高版本
+# <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>在 PowerShell 5.0 及更高版本中使用配置 ID 设置请求客户端
 
 > 适用于：Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > 请求服务器（Windows 功能 DSC-Service）是 Windows Server 的一个受支持组件，不过目前没有提供新功能的计划。 建议开始将托管客户端转换至 [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)（包括 Windows Server 上的请求服务器以外的功能）或[此处](pullserver.md#community-solutions-for-pull-service)列出的社区解决方案之一。
 
-设置请求客户端之前, 应设置请求服务器。 但此顺序不是必需的它帮助进行故障排除，并帮助您确保注册成功。 若要设置请求服务器，可以使用以下指南：
+设置请求客户端之前，应设置请求服务器。 虽然此顺序不是必需的，不过它帮助进行故障排除，并帮助确保注册成功。 若要设置请求服务器，可以使用以下指南：
 
 - [设置 DSC SMB 拉取服务器](pullServerSmb.md)
 - [设置 DSC HTTP 拉取服务器](pullServer.md)
 
-每个目标节点可以配置为下载的配置，资源，并甚至报告其状态。 以下各节显示如何使用 SMB 共享或 HTTP DSC 请求服务器配置请求客户端。 节点的 LCM 刷新时，它将访问配置的位置下载任何已分配的配置。 如果在节点上不存在任何所需的资源，因此它将自动从配置的位置下载它们。 如果使用配置节点[报表服务器](reportServer.md)，然后，它将报告操作的状态。
+每个目标节点都可以配置为下载配置、资源，甚至是报告其状态。 以下各部分演示如何使用 SMB 共享或 HTTP DSC 请求服务器配置请求客户端。 节点的 LCM 刷新时，它会访问配置的位置以下载任何已分配的配置。 如果有任何所需资源在节点上不存在，则它会自动从配置的位置下载它们。 如果使用[报表服务器](reportServer.md)配置节点，则它随后会报告操作的状态。
 
-> **注意**：本主题适用于 PowerShell 5.0。 有关在 PowerShell 4.0 中设置请求客户端的信息，请参阅[在 PowerShell 4.0 中使用配置 ID 设置请求客户端](pullClientConfigID4.md)
+> [!NOTE]
+> 本主题适用于 PowerShell 5.0。 有关在 PowerShell 4.0 中设置请求客户端的信息，请参阅[在 PowerShell 4.0 中使用配置 ID 设置请求客户端](pullClientConfigID4.md)
 
 ## <a name="configure-the-pull-client-lcm"></a>配置请求客户端 LCM
 
-执行任何下面的示例创建名为的新输出文件夹**PullClientConfigID**并放入元配置 MOF 文件。 在本例中，会将元配置 MOF 文件命名为 `localhost.meta.mof`。
+执行以下任何示例会创建名为 PullClientConfigID 的新输出文件夹，并在其中放入元配置 MOF 文件。 在本例中，会将元配置 MOF 文件命名为 `localhost.meta.mof`。
 
 若要应用配置，请调用 **Set-DscLocalConfigurationManager** cmdlet，并将 **Path** 设置为元配置 MOF 文件的位置。 例如：
 
@@ -37,19 +38,19 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientC
 
 ## <a name="configuration-id"></a>配置 ID
 
-以下集示例**ConfigurationID**属性将 lcm **Guid** ，之前创建实现此目的。 LCM 使用 **ConfigurationID** 在请求服务器上查找相应配置。 请求服务器上的配置 MOF 文件必须命名为 `ConfigurationID.mof`，其中 *ConfigurationID* 是目标节点上 LCM 的 **ConfigurationID** 属性值。 有关详细信息请参阅[请求服务器 (v4/v5) 的发布配置](publishConfigs.md)。
+以下示例将 LCM 的 ConfigurationID 属性设置为之前为此目的创建的 Guid。 LCM 使用 **ConfigurationID** 在请求服务器上查找相应配置。 请求服务器上的配置 MOF 文件必须命名为 `ConfigurationID.mof`，其中 *ConfigurationID* 是目标节点上 LCM 的 **ConfigurationID** 属性值。 有关详细信息，请参阅[将配置发布到请求服务器 (v4/v5)](publishConfigs.md)。
 
-您可以创建一个随机**Guid**使用的示例，或通过使用[新建 Guid](/powershell/module/microsoft.powershell.utility/new-guid) cmdlet。
+可以使用以下示例，或使用 [New-Guid](/powershell/module/microsoft.powershell.utility/new-guid) cmdlet 创建随机 Guid。
 
 ```powershell
 [System.Guid]::NewGuid()
 ```
 
-有关使用详细信息**Guid**在环境中，请参阅[规划 Guid](/powershell/dsc/secureserver#guids)。
+有关在环境中使用 Guid 的详细信息，请参阅[规划 Guid](/powershell/dsc/secureserver#guids)。
 
-## <a name="set-up-a-pull-client-to-download-configurations"></a>设置请求客户端下载配置
+## <a name="set-up-a-pull-client-to-download-configurations"></a>设置请求客户端以下载配置
 
-必须在配置每个客户端**拉取**模式和存储其配置为其提供拉取服务器 url。 若要执行此操作，必须为本地配置管理器 (LCM) 配置所需信息。 若要配置 LCM，可创建一个使用 **DSCLocalConfigurationManager** 特性修饰的特殊类型配置。 有关配置 LCM 的详细信息，请参阅[配置本地配置管理器](../managing-nodes/metaConfig.md)。
+必须在“请求”模式下配置每个客户端，并向其提供存储其配置的请求服务器 url。 若要执行此操作，必须为本地配置管理器 (LCM) 配置所需信息。 若要配置 LCM，可创建一个使用 **DSCLocalConfigurationManager** 特性修饰的特殊类型配置。 有关配置 LCM 的详细信息，请参阅[配置本地配置管理器](../managing-nodes/metaConfig.md)。
 
 ### <a name="http-dsc-pull-server"></a>HTTP DSC 请求服务器
 
@@ -79,11 +80,11 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-在该脚本中，**ConfigurationRepositoryWeb** 块定义了请求服务器。 **ServerUrl**指定 DSC 拉取的 url
+在该脚本中，**ConfigurationRepositoryWeb** 块定义了请求服务器。 ServerUrl 指定 DSC 请求的 url
 
 ### <a name="smb-share"></a>SMB 共享
 
-以下脚本将 LCM 请求配置为从 SMB 共享`\\SMBPullServer\Pull`。
+下面的脚本将 LCM 配置为从 SMB 共享 `\\SMBPullServer\Pull` 请求配置。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -108,18 +109,18 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-在脚本中， **ConfigurationRepositoryShare**块定义请求服务器，在这种情况下，即只是 SMB 共享。
+在该脚本中，ConfigurationRepositoryShare 块定义请求服务器（在此例中只是 SMB 共享）。
 
-## <a name="set-up-a-pull-client-to-download-resources"></a>设置请求客户端下载资源
+## <a name="set-up-a-pull-client-to-download-resources"></a>设置请求客户端以下载资源
 
-如果仅指定**ConfigurationRepositoryWeb**或**ConfigurationRepositoryShare**块 （与前面的示例） 在 LCM 配置中，请求客户端将请求从同一个资源它将检索其配置的位置。 此外可以指定不同的资源的位置。 若要指定资源位置作为单独的服务器，请使用**ResourceRepositoryWeb**块。 若要指定资源位置为 SMB 共享，请使用**ResourceRepositoryShare**块。
+如果你在 LCM 配置中只指定 ConfigurationRepositoryWeb 或 ConfigurationRepositoryShare 块（如前面的示例所示），则请求客户端会从用于检索配置的相同位置请求资源。 还可以为资源指定不同的位置。 若要将资源位置指定为单独的服务器，请使用 ResourceRepositoryWeb 块。 若要将资源位置指定为 SMB 共享，请使用 ResourceRepositoryShare 块。
 
 > [!NOTE]
-> 你可以组合**ConfigurationRepositoryWeb**与**ResourceRepositoryShare**或**ConfigurationRepositoryShare**与**ResourceRepositoryWeb**. 下面未显示的此示例。
+> 可以将 ConfigurationRepositoryWeb 与 ResourceRepositoryShare，或是 ConfigurationRepositoryShare 与 ResourceRepositoryWeb 组合使用。 下面未显示这类用法的示例。
 
 ### <a name="http-dsc-pull-server"></a>HTTP DSC 请求服务器
 
-以下元配置将请求客户端以获取从其配置**Contoso-pullsrv**和从其资源**Contoso-resourcesrv**。
+以下元配置将请求客户端配置为从 CONTOSO-PullSrv 获取其配置，并从 CONTOSO-ResourceSrv 获取其资源。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -152,7 +153,7 @@ PullClientConfigID
 
 ### <a name="smb-share"></a>SMB 共享
 
-下面的示例演示从 SMB 共享请求配置为将客户端设置的元配置`\\SMBPullServer\Configurations`，并从 SMB 共享的资源`\\SMBPullServer\Resources`。
+下面的示例演示一个元配置，它将客户端设置为从 SMB 共享 `\\SMBPullServer\Configurations` 请求配置，并从 SMB 共享 `\\SMBPullServer\Resources` 请求资源。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -182,9 +183,9 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-#### <a name="automatically-download-resources-in-push-mode"></a>自动下载在推送模式下的资源
+#### <a name="automatically-download-resources-in-push-mode"></a>在推送模式下自动下载资源
 
-从 PowerShell 5.0 开始，请求客户端可以下载模块从 SMB 共享，即使为配置**推送**模式。 这是情况下不需要设置拉取服务器中尤其有用。 **ResourceRepositoryShare**而无需指定可使用块**ConfigurationRepositoryShare**。 下面的示例显示了将客户端设置提取资源从 SMB 共享的元配置`\\SMBPullServer\Resources`。 当该节点是**按下**配置时，它将自动下载任何所需的资源，从指定的共享。
+从 PowerShell 5.0 开始，请求客户端可以从 SMB 共享下载模块，即使是针对推送模式进行配置也是如此。 这在不想设置请求服务器的情形中特别有用。 ResourceRepositoryShare 块可以在不指定 ConfigurationRepositoryShare 的情况下进行使用。 下面的示例演示一个元配置，它将客户端设置为从 SMB 共享 `\\SMBPullServer\Resources` 请求资源。 向节点推送配置时，它会从指定共享自动下载任何所需资源。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -207,9 +208,9 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-## <a name="set-up-a-pull-client-to-report-status"></a>设置请求客户端报告状态
+## <a name="set-up-a-pull-client-to-report-status"></a>设置请求客户端以报告状态
 
-默认情况下，节点不会向已配置的请求服务器发送报表。 虽然你可以将一个请求服务器用于配置、资源和报告，但必须创建 **ReportRepositoryWeb** 块来设置报表。
+默认情况下，节点不会向已配置的请求服务器发送报告。 虽然你可以将一个请求服务器用于配置、资源和报告，但必须创建 **ReportRepositoryWeb** 块来设置报表。
 
 ### <a name="http-dsc-pull-server"></a>HTTP DSC 请求服务器
 
@@ -286,7 +287,7 @@ PullClientConfigID
 
 ## <a name="next-steps"></a>后续步骤
 
-配置请求客户端之后，可以使用以下指南以执行后续步骤：
+配置请求客户端之后，可以使用以下指南执行后续步骤：
 
 - [将配置发布到拉取服务器 (v4/v5)](publishConfigs.md)
 - [打包资源并将其上传到拉取服务器 (v4)](package-upload-resources.md)

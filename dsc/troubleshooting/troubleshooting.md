@@ -2,16 +2,16 @@
 ms.date: 10/30/2018
 keywords: dsc,powershell,配置,安装程序
 title: DSC 故障排除
-ms.openlocfilehash: e1f36bbc97569ac0d65f003ee08f52ec174a4520
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 5ee1b68f4f769426fea3c8e10738c3bb6ef94480
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676192"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58059739"
 ---
 # <a name="troubleshooting-dsc"></a>DSC 故障排除
 
-适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
+适用于：_Windows PowerShell 4.0 和 Windows PowerShell 5.0_
 
 本主题介绍出现问题时 DSC 故障排除的方法。
 
@@ -74,7 +74,7 @@ InDesiredState        :    False
 InitialState          :
 InstanceName          :    ServiceDll
 RebootRequested       :    False
-ReosurceName          :    File
+ResourceName          :    File
 StartDate             :    11/24/2015  3:44:56
 PSComputerName        :
 ```
@@ -86,7 +86,7 @@ PSComputerName        :
 
 ## <a name="where-are-dsc-event-logs"></a>DSC 事件日志在哪里？
 
-在事件查看器中，DSC 事件位于：**应用程序和服务日志/Microsoft/Windows/Desired State Configuration**
+在事件查看器中，DSC 事件位于：**Applications and Services Logs/Microsoft/Windows/Desired State Configuration**
 
 也可以运行相应的 PowerShell cmdlet ([Get-WinEvent](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)) 以查看事件日志：
 
@@ -100,7 +100,7 @@ TimeCreated                     Id LevelDisplayName Message
 11/17/2014 10:27:23 PM        4102 Information      Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 ```
 
-如上所示，DSC 的主日志名称为 Microsoft->Windows->DSC（为简洁起见，此处未显示 Windows 下的其他日志名称）。 将主名称追加到通道名称，以创建完整的日志名称。 DSC 引擎主要写入三种类型的日志：[运行、 分析和调试日志](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11))。 分析和调试日志默认处于关闭状态，因此你应该在事件查看器中启用它们。 若要进行此操作，请在 Windows PowerShell 中输入 Show-EventLog 以打开事件查看器，或依次单击“开始”、“控制面板”、“管理工具”以及“事件查看器”。
+如上所示，DSC 的主日志名称为 Microsoft->Windows->DSC（为简洁起见，此处未显示 Windows 下的其他日志名称）。 将主名称追加到通道名称，以创建完整的日志名称。 DSC 引擎主要写入三种类型的日志：[运行、分析和调试日志](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11))。 分析和调试日志默认处于关闭状态，因此你应该在事件查看器中启用它们。 若要进行此操作，请在 Windows PowerShell 中输入 Show-EventLog 以打开事件查看器，或依次单击“开始”、“控制面板”、“管理工具”以及“事件查看器”。
 在事件查看器中的“查看”菜单上，单击“显示分析和调试日志”。         分析通道的日志名称为 **Microsoft-Windows-Dsc/Analytic**，而调试通道为 **Microsoft-Windows-Dsc/Debug**。 你还可以通过 [wevtutil](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11)) 实用程序启用日志，如下面的示例中所示。
 
 ```powershell
@@ -194,7 +194,7 @@ TimeCreated                     Id LevelDisplayName Message
 
 可以用 [Where-object](/powershell/module/microsoft.powershell.core/where-object) 提取变量 `$SeparateDscOperations` 中的数据。 在以下五种情况下，可能需要提取数据以解决 DSC 问题：
 
-### <a name="1-operations-failures"></a>1：操作故障
+### <a name="1-operations-failures"></a>1：操作失败
 
 所有事件都具有[严重性级别](/windows/desktop/WES/defining-severity-levels)。 此信息可用于标识错误事件：
 
@@ -327,7 +327,7 @@ SRV1   OPERATIONAL  6/24/2016 10:51:54 AM Job runs under the following LCM setti
 SRV1   OPERATIONAL  6/24/2016 10:51:54 AM Operation Consistency Check or Pull completed successfully.
 ```
 
-传递**GUID**分配给特定 DSC 操作 (如返回`Get-xDscOperation`cmdlet) 来获取该 DSC 操作的事件详细信息：
+传递分配给特定 DSC 操作（由 `Get-xDscOperation` cmdlet 返回）的 GUID 以获取 DSC 操作的事件详细信息：
 
 ```powershell
 PS C:\DiagnosticsTest> Trace-xDscOperation -JobID 9e0bfb6b-3a3a-11e6-9165-00155d390509

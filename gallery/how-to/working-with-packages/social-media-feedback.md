@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 title: 通过社交媒体或发表评论提供反馈
-ms.openlocfilehash: a7cdcc2ff2c18fb606d077adf0bdecf57c90703f
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: a27a2fc7cf54835cb53b11382c20d1354345a5a3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003661"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054996"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>通过社交媒体或发表评论提供反馈
 
-Powershell 库支持以下两种反馈方法，以便用户能够提供有关包的公共反馈：
+PowerShell 库支持以下两种反馈方法，以便用户能够提供有关包的公共反馈：
 
 - 使用左侧边缘的链接，在 Facebook、LinkedIn 或 Twitter 社交媒体网站中“分享”包；
 - 使用评论功能对包发表评论，并允许作者查看已对包发表的评论。
@@ -27,7 +27,6 @@ Powershell 库支持以下两种反馈方法，以便用户能够提供有关包
 如果用户认为需要向他人推荐包，建议执行上述操作。
 PowerShell 库将检查每个用于“分享”包的社交媒体网站，并显示相应包在每个社交媒体网站中的分享次数。
 由于只显示分享次数，因此其他用户可以看作是“赞”相应包的次数。
-
 
 ## <a name="comments"></a>说明
 
