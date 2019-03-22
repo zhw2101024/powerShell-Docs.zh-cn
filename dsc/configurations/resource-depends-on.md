@@ -2,24 +2,24 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,配置,安装程序
 title: 使用 DependsOn 的资源依赖项
-ms.openlocfilehash: 0d060f7d99bd261b0766028b245d4d32a5e1c349
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 5ea08c76c203188f41513ad0cc1f4571579b4172
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400443"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055693"
 ---
-# <a name="resource-dependencies-using-dependson"></a><span data-ttu-id="67ff0-103">使用 DependsOn 的资源依赖项</span><span class="sxs-lookup"><span data-stu-id="67ff0-103">Resource dependencies using DependsOn</span></span>
+# <a name="resource-dependencies-using-dependson"></a><span data-ttu-id="a5635-103">使用 DependsOn 的资源依赖项</span><span class="sxs-lookup"><span data-stu-id="a5635-103">Resource dependencies using DependsOn</span></span>
 
-<span data-ttu-id="67ff0-104">当你编写[配置](configurations.md)，添加[资源块](../resources/resources.md)目标节点的方面进行配置。</span><span class="sxs-lookup"><span data-stu-id="67ff0-104">When you write [Configurations](configurations.md), you add [Resource blocks](../resources/resources.md) to configure aspects of a target Node.</span></span> <span data-ttu-id="67ff0-105">在继续添加资源块，你的配置会变得相当大且难以管理。</span><span class="sxs-lookup"><span data-stu-id="67ff0-105">As you continue to add Resource blocks, your Configurations can grow quite large and cumbersome to manage.</span></span> <span data-ttu-id="67ff0-106">此类难题之一是资源块的应用的顺序。</span><span class="sxs-lookup"><span data-stu-id="67ff0-106">One such challenge is the applied order of your resource blocks.</span></span> <span data-ttu-id="67ff0-107">通常在配置中定义它们的顺序应用资源。</span><span class="sxs-lookup"><span data-stu-id="67ff0-107">Typically resources are applied in the order they are defined within the Configuration.</span></span> <span data-ttu-id="67ff0-108">随着你的配置更大、 更复杂的增长，可以使用`DependsOn`项以更改的资源通过指定的资源依赖于另一个资源的应用的顺序。</span><span class="sxs-lookup"><span data-stu-id="67ff0-108">As your Configuration grows larger and more complex, you can use the `DependsOn` key to change the applied order of your resources by specifying that a resource depends on another resource.</span></span>
+<span data-ttu-id="a5635-104">编写[配置](configurations.md)时，会添加[资源块](../resources/resources.md)以配置目标节点的各个方面。</span><span class="sxs-lookup"><span data-stu-id="a5635-104">When you write [Configurations](configurations.md), you add [Resource blocks](../resources/resources.md) to configure aspects of a target Node.</span></span> <span data-ttu-id="a5635-105">随着继续添加资源块，配置可能会变得相当大，且难以管理。</span><span class="sxs-lookup"><span data-stu-id="a5635-105">As you continue to add Resource blocks, your Configurations can grow quite large and cumbersome to manage.</span></span> <span data-ttu-id="a5635-106">这类难题之一是资源块的应用顺序。</span><span class="sxs-lookup"><span data-stu-id="a5635-106">One such challenge is the applied order of your resource blocks.</span></span> <span data-ttu-id="a5635-107">通常按照在配置中定义资源的顺序来应用它们。</span><span class="sxs-lookup"><span data-stu-id="a5635-107">Typically resources are applied in the order they are defined within the Configuration.</span></span> <span data-ttu-id="a5635-108">随着配置越来越大且越复杂，可以使用 `DependsOn` 键更改资源的应用顺序，具体方法是指定一个资源依赖于另一个资源。</span><span class="sxs-lookup"><span data-stu-id="a5635-108">As your Configuration grows larger and more complex, you can use the `DependsOn` key to change the applied order of your resources by specifying that a resource depends on another resource.</span></span>
 
-<span data-ttu-id="67ff0-109">`DependsOn`可以在任何资源块中使用密钥。</span><span class="sxs-lookup"><span data-stu-id="67ff0-109">The `DependsOn` key can be used in any Resource block.</span></span> <span data-ttu-id="67ff0-110">它定义与其他资源键相同的键/值机制。</span><span class="sxs-lookup"><span data-stu-id="67ff0-110">It is defined with the same key/value mechanism as other Resource keys.</span></span> <span data-ttu-id="67ff0-111">`DependsOn`密钥需要使用以下语法的字符串数组。</span><span class="sxs-lookup"><span data-stu-id="67ff0-111">The `DependsOn` key expects an array of strings with the following syntax.</span></span>
+<span data-ttu-id="a5635-109">`DependsOn` 键可以在任何资源块中使用。</span><span class="sxs-lookup"><span data-stu-id="a5635-109">The `DependsOn` key can be used in any Resource block.</span></span> <span data-ttu-id="a5635-110">其定义使用与其他资源键相同的键/值机制。</span><span class="sxs-lookup"><span data-stu-id="a5635-110">It is defined with the same key/value mechanism as other Resource keys.</span></span> <span data-ttu-id="a5635-111">`DependsOn` 键需要具有以下语法的字符串数组。</span><span class="sxs-lookup"><span data-stu-id="a5635-111">The `DependsOn` key expects an array of strings with the following syntax.</span></span>
 
 ```
-DependsOn = '[<Resource Type>]<Resoure Name>', '[<Resource Type>]<Resource Name'
+DependsOn = '[<Resource Type>]<Resource Name>', '[<Resource Type>]<Resource Name'
 ```
 
-<span data-ttu-id="67ff0-112">下面的示例配置防火墙规则后启用和配置的公共配置文件。</span><span class="sxs-lookup"><span data-stu-id="67ff0-112">The following example configures a firewall rule after enabling and configuring the public profile.</span></span>
+<span data-ttu-id="a5635-112">下面的示例在启用和配置公用配置文件之后配置防火墙规则。</span><span class="sxs-lookup"><span data-stu-id="a5635-112">The following example configures a firewall rule after enabling and configuring the public profile.</span></span>
 
 ```powershell
 # Install the NetworkingDSC module to configure firewall rules and profiles.
@@ -60,7 +60,7 @@ Configuration ConfigureFirewall
 ConfigureFirewall -OutputPath C:\Temp\
 ```
 
-<span data-ttu-id="67ff0-113">时应用配置时，将始终首先不管按什么顺序资源块定义配置防火墙配置文件。</span><span class="sxs-lookup"><span data-stu-id="67ff0-113">When you apply the Configuration, the firewall profile will always be configured first regardless of which order the Resource blocks are defined.</span></span> <span data-ttu-id="67ff0-114">如果应用配置时，一定要注意现有配置，因此如果需要，可以还原在目标节点。</span><span class="sxs-lookup"><span data-stu-id="67ff0-114">If you apply the Configuration, be sure to note your target Nodes existing Configuration so you can revert if desired.</span></span>
+<span data-ttu-id="a5635-113">应用配置时，会始终首先配置防火墙配置文件，无论定义资源块的顺序如何。</span><span class="sxs-lookup"><span data-stu-id="a5635-113">When you apply the Configuration, the firewall profile will always be configured first regardless of which order the Resource blocks are defined.</span></span> <span data-ttu-id="a5635-114">如果应用配置，请务必注意目标节点现有配置，以便在需要时可以还原。</span><span class="sxs-lookup"><span data-stu-id="a5635-114">If you apply the Configuration, be sure to note your target Nodes existing Configuration so you can revert if desired.</span></span>
 
 ```
 PS> Start-DSCConfiguration -Verbose -Wait -Path C:\Temp\ -ComputerName localhost
@@ -118,13 +118,13 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Time taken for configuration job to complete is 15.385 seconds
 ```
 
-<span data-ttu-id="67ff0-115">这还可以确保，如果**FirewallProfile**资源因任何原因而失败**防火墙**块不会执行，即使它第一次定义。</span><span class="sxs-lookup"><span data-stu-id="67ff0-115">This also ensures that if the **FirewallProfile** resource fails for any reason, the **Firewall** block will not execute even though it was defined first.</span></span> <span data-ttu-id="67ff0-116">`DependsOn`密钥允许更灵活地分组资源块，并确保资源在执行之前是否解析依赖项。</span><span class="sxs-lookup"><span data-stu-id="67ff0-116">The `DependsOn` key allows more flexibility in grouping resource blocks and ensuring that dependencies are resolved before a Resource executes.</span></span>
+<span data-ttu-id="a5635-115">这还可确保如果 FirewallProfile 资源因任何原因而失败，则 Firewall 块不会执行，即使是先定义它。</span><span class="sxs-lookup"><span data-stu-id="a5635-115">This also ensures that if the **FirewallProfile** resource fails for any reason, the **Firewall** block will not execute even though it was defined first.</span></span> <span data-ttu-id="a5635-116">通过 `DependsOn` 键可以更灵活地对资源块进行分组，并确保在资源执行之前解析依赖关系。</span><span class="sxs-lookup"><span data-stu-id="a5635-116">The `DependsOn` key allows more flexibility in grouping resource blocks and ensuring that dependencies are resolved before a Resource executes.</span></span>
 
-<span data-ttu-id="67ff0-117">在更高级的配置，您还可以使用[跨节点依赖关系](crossNodeDependencies.md)以便进行更精细控制 （例如，确保域控制器配置将客户端加入到域之前）。</span><span class="sxs-lookup"><span data-stu-id="67ff0-117">In more advanced Configurations, you can also use [Cross Node Dependency](crossNodeDependencies.md) to allow even more granular control (For example, ensuring a domain controller is configured before joining a client to the domain).</span></span>
+<span data-ttu-id="a5635-117">在更高级的配置中，还可以使用[跨节点依赖关系](crossNodeDependencies.md)以便进行更精细的控制（例如，确保在将客户端加入域之前配置域控制器）。</span><span class="sxs-lookup"><span data-stu-id="a5635-117">In more advanced Configurations, you can also use [Cross Node Dependency](crossNodeDependencies.md) to allow even more granular control (For example, ensuring a domain controller is configured before joining a client to the domain).</span></span>
 
-## <a name="cleaning-up"></a><span data-ttu-id="67ff0-118">清理</span><span class="sxs-lookup"><span data-stu-id="67ff0-118">Cleaning Up</span></span>
+## <a name="cleaning-up"></a><span data-ttu-id="a5635-118">清理</span><span class="sxs-lookup"><span data-stu-id="a5635-118">Cleaning Up</span></span>
 
-<span data-ttu-id="67ff0-119">如果应用上面的配置，可以反转密钥来撤消任何更改。</span><span class="sxs-lookup"><span data-stu-id="67ff0-119">If you applied the Configuration above, you can reverse keys to undo any changes.</span></span> <span data-ttu-id="67ff0-120">在上述示例中，设置**已启用**密钥为 false 将禁用防火墙规则和配置文件。</span><span class="sxs-lookup"><span data-stu-id="67ff0-120">In the above example, setting the **Enabled** key to false will disable the firewall rule and profile.</span></span> <span data-ttu-id="67ff0-121">根据需要以匹配目标节点的以前的配置的状态，应修改该示例。</span><span class="sxs-lookup"><span data-stu-id="67ff0-121">You should modify the example as needed to match your target Node's previous configured state.</span></span>
+<span data-ttu-id="a5635-119">如果应用上面的配置，则可以反转键来撤消任何更改。</span><span class="sxs-lookup"><span data-stu-id="a5635-119">If you applied the Configuration above, you can reverse keys to undo any changes.</span></span> <span data-ttu-id="a5635-120">在上面的示例中，将 Enabled 键设置为 false 会禁用防火墙规则和配置文件。</span><span class="sxs-lookup"><span data-stu-id="a5635-120">In the above example, setting the **Enabled** key to false will disable the firewall rule and profile.</span></span> <span data-ttu-id="a5635-121">应根据需要修改该示例以匹配目标节点以前的已配置状态。</span><span class="sxs-lookup"><span data-stu-id="a5635-121">You should modify the example as needed to match your target Node's previous configured state.</span></span>
 
 ```powershell
         Firewall Firewall
@@ -141,6 +141,6 @@ VERBOSE: Time taken for configuration job to complete is 15.385 seconds
         }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="67ff0-122">另请参阅</span><span class="sxs-lookup"><span data-stu-id="67ff0-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a5635-122">另请参阅</span><span class="sxs-lookup"><span data-stu-id="a5635-122">See also</span></span>
 
-- [<span data-ttu-id="67ff0-123">使用跨节点依赖关系</span><span class="sxs-lookup"><span data-stu-id="67ff0-123">Use Cross Node Dependencies</span></span>](./crossNodeDependencies.md)
+- [<span data-ttu-id="a5635-123">使用跨节点依赖关系</span><span class="sxs-lookup"><span data-stu-id="a5635-123">Use Cross Node Dependencies</span></span>](./crossNodeDependencies.md)
