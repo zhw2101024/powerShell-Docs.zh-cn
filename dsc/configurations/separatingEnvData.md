@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 分离配置和环境数据
-ms.openlocfilehash: 24a92e5e4f15959498b57a1488a688d5548f3585
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 305a766fec81d4ea4afce187756188b067a2048b
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400413"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794920"
 ---
 # <a name="separating-configuration-and-environment-data"></a>分离配置和环境数据
 
->适用于：Windows PowerShell 4.0 中，Windows PowerShell 5.0
+>适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 通过使用配置数据，可将 DSC 配置中使用的数据与配置本身分离。
 这样做可将单个配置用于多个环境。
@@ -88,7 +88,7 @@ Mode                LastWriteTime         Length Name
 
 让我们看一下使用单个配置设置网站的开发和生产环境的完整示例。 在开发环境中，IIS 和 SQL Server 安装在单个节点上。 在生产环境中，IIS 和 SQL Server 安装在不同的节点上。 我们将使用配置数据 .psd1 文件来指定两个不同环境的数据。
 
- ### <a name="configuration-data-file"></a>配置数据文件
+### <a name="configuration-data-file"></a>配置数据文件
 
 将在名为 `DevProdEnvData.psd1` 的文件中定义开发和生产环境数据，如下所示：
 
@@ -135,7 +135,7 @@ Mode                LastWriteTime         Length Name
 
 在配置脚本末尾，调用配置（将其编译为 MOF 文档），将 `DevProdEnvData.psd1` 作为 `$ConfigurationData` 参数传递。
 
->**注意：** 此配置需要模块`xSqlPs`和`xWebAdministration`要安装在目标节点上。
+>**注意：** 此配置要求在目标节点上安装模块 `xSqlPs` 和 `xWebAdministration`。
 
 让我们在名为 `MyWebApp.ps1` 的文件中定义配置：
 

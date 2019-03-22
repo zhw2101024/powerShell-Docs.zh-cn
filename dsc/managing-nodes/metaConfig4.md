@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,配置,安装程序
 title: 在早期版本的 Windows PowerShell 中配置本地配置管理器
-ms.openlocfilehash: 945d2dc95304a347ec26f2f66f5a17bfefb90997
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: cea32c9aa8144bc52f3d44f2ad852f577f6a5e6d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677516"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055302"
 ---
 # <a name="configuring-the-local-configuration-manager-in-previous-versions-of-windows-powershell"></a>在早期版本的 Windows PowerShell 中配置本地配置管理器
 
@@ -25,29 +25,29 @@ ms.locfileid: "55677516"
 
 - **AllowModuleOverwrite**：控制是否允许从配置服务下载的新配置覆盖目标节点上的旧配置。 可能的值为 True 和 False。
 - **CertificateID**:用于保护在配置中传递的凭据的证书指纹。 更多详细信息，请参阅 [Want to secure credentials in Windows PowerShell Desired State Configuration?（希望在 Windows PowerShell Desired State Configuration 中保护凭据？）](https://blogs.msdn.microsoft.com/powershell/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration/)。
-- **ConfigurationID**： 指示用于从请求服务获取特定配置文件的 GUID。 GUID 可确保访问正确的配置文件。
-- **ConfigurationMode**： 指定本地配置管理器实际如何配置应用到目标节点。 可以有下列值：
+- **ConfigurationID**：指示用于从请求服务获取特定配置文件的 GUID。 GUID 可确保访问正确的配置文件。
+- **ConfigurationMode**：指定本地配置管理器实际如何将配置应用到目标节点。 可以有下列值：
   - **ApplyOnly**：使用此选项，DSC 将应用配置，但在检测到新配置之前不会执行任何进一步操作。检测新配置的方式可以是向目标节点直接发送新配置；也可以是连接请求服务后，DSC 检查请求服务时发现新配置。 如果目标节点的配置偏离，则不执行任何操作。
-  - **ApplyAndMonitor**：使用此选项 （这是默认值），DSC 会应用任何新配置，由你直接发送到目标节点，或者在请求服务上发现。 此后，如果目标节点的配置偏离配置文件，DSC 将在日志中报告差异。 有关 DSC 日志记录的详细信息，请参阅 [Using Event Logs to Diagnose Errors in Desired State Configuration（在 Desired State Configuration 中使用事件日志诊断错误）](http://blogs.msdn.com/b/powershell/archive/2014/01/03/using-event-logs-to-diagnose-errors-in-desired-state-configuration.aspx)。
-  - **ApplyAndAutoCorrect**： 使用此选项，DSC 会应用任意新配置，由你直接发送到目标节点，或者在请求服务上发现。 此后，如果目标节点的配置偏离配置文件，DSC 将在日志中报告差异，并尝试调整目标节点配置，使其与配置文件相容。
-- **ConfigurationModeFrequencyMins**： 表示 DSC 的后台应用程序尝试在目标节点上执行当前配置的频率 （以分钟为单位）。 默认值为 15。 可将此值设置为与 RefreshMode 结合使用。 当 RefreshMode 设置为 PULL 时，目标节点按 RefreshFrequencyMins 所设置的时间间隔与配置服务联系并下载当前配置。 无论 RefreshMode 值如何，一致性引擎都会在由 ConfigurationModeFrequencyMins 设置的时间间隔将下载的最新配置应用到目标节点。 RefreshFrequencyMins 应设置为 ConfigurationModeFrequencyMins 的整倍数。
+  - **ApplyAndMonitor**：使用此选项（默认），DSC 会应用任何由你直接发送到目标节点的或者在请求服务上发现的新配置。 此后，如果目标节点的配置偏离配置文件，DSC 将在日志中报告差异。 有关 DSC 日志记录的详细信息，请参阅 [Using Event Logs to Diagnose Errors in Desired State Configuration（在 Desired State Configuration 中使用事件日志诊断错误）](http://blogs.msdn.com/b/powershell/archive/2014/01/03/using-event-logs-to-diagnose-errors-in-desired-state-configuration.aspx)。
+  - **ApplyAndAutoCorrect**：使用此选项，DSC 会应用任何由你直接发送到目标节点的或者在请求服务上发现的新配置。 此后，如果目标节点的配置偏离配置文件，DSC 将在日志中报告差异，并尝试调整目标节点配置，使其与配置文件相容。
+- **ConfigurationModeFrequencyMins**：表示 DSC 的后台应用程序尝试在目标节点上执行当前配置的频率（以分钟为单位）。 默认值为 15。 可将此值设置为与 RefreshMode 结合使用。 当 RefreshMode 设置为 PULL 时，目标节点按 RefreshFrequencyMins 所设置的时间间隔与配置服务联系并下载当前配置。 无论 RefreshMode 值如何，一致性引擎都会在由 ConfigurationModeFrequencyMins 设置的时间间隔将下载的最新配置应用到目标节点。 RefreshFrequencyMins 应设置为 ConfigurationModeFrequencyMins 的整倍数。
 - **Credential**：指示访问远程资源（例如联系配置服务）所需的凭据（与 Get-Credential 相同）。
-- **DownloadManagerCustomData**:表示包含特定于下载管理器的自定义数据的数组。
-- **DownloadManagerName**:指示配置和模块下载管理器的名称。
-- **RebootNodeIfNeeded**： 将其设置为`$true`以使资源重新启动节点使用`$global:DSCMachineStatus`标志。 否则，你必须为要求重启的配置手动重启节点。 默认值为 `$false`。 若要在通过 DSC（例如 Windows Installer）以外的其他配置执行重启条件时使用此设置，请将此设置和 [xPendingReboot](https://github.com/powershell/xpendingreboot) 模块组合使用。
-- **RefreshFrequencyMins**： 已设置请求服务时使用。 表示本地配置管理器联系请求服务下载当前配置的频率（以分钟为单位）。 可将此值设置为与 ConfigurationModeFrequencyMins 结合使用。 当 RefreshMode 设置为 PULL 时，目标节点按 RefreshFrequencyMins 所设置的时间间隔与请求服务联系并下载当前配置。 一致性引擎将在由 ConfigurationModeFrequencyMins 设置的时间间隔将下载的最新配置应用到目标节点。 若 RefreshFrequencyMins 未设置为 ConfigurationModeFrequencyMins 的整倍数，系统将会向上进行舍入。 默认值为 30。
-- **RefreshMode**： 可能的值为**推送**（默认值） 和**拉取**。 在“推送”配置下，必须在每个目标节点上放置配置文件（可使用任何客户端计算机进行此操作）。 在“请求”模式下，必须为本地配置管理器设置请求服务，以便其联系和访问配置文件。
+- **DownloadManagerCustomData**：表示包含特定于下载管理器的自定义数据的数组。
+- **DownloadManagerName**：指示配置和模块下载管理器的名称。
+- **RebootNodeIfNeeded**：将此设置为 `$true` 可使资源使用 `$global:DSCMachineStatus` 标志重新启动节点。 否则，你必须为要求重启的配置手动重启节点。 默认值为 `$false`。 若要在通过 DSC（例如 Windows Installer）以外的其他配置执行重启条件时使用此设置，请将此设置和 [xPendingReboot](https://github.com/powershell/xpendingreboot) 模块组合使用。
+- **RefreshFrequencyMins**：设置请求服务后使用。 表示本地配置管理器联系请求服务下载当前配置的频率（以分钟为单位）。 可将此值设置为与 ConfigurationModeFrequencyMins 结合使用。 当 RefreshMode 设置为 PULL 时，目标节点按 RefreshFrequencyMins 所设置的时间间隔与请求服务联系并下载当前配置。 一致性引擎将在由 ConfigurationModeFrequencyMins 设置的时间间隔将下载的最新配置应用到目标节点。 若 RefreshFrequencyMins 未设置为 ConfigurationModeFrequencyMins 的整倍数，系统将会向上进行舍入。 默认值为 30。
+- **RefreshMode**：可能的值为 Push（默认值）和 Pull。 在“推送”配置下，必须在每个目标节点上放置配置文件（可使用任何客户端计算机进行此操作）。 在“请求”模式下，必须为本地配置管理器设置请求服务，以便其联系和访问配置文件。
 
 > [!NOTE]
-> LCM 启动**ConfigurationModeFrequencyMins**周期基于：
+> LCM 基于以下条件启动 ConfigurationModeFrequencyMins 周期：
 >
-> - 使用应用的新的元配置 `Set-DscLocalConfigurationManager`
-> - 重新启动计算机
+> - 使用 `Set-DscLocalConfigurationManager` 应用新的元配置
+> - 计算机重新启动
 >
-> 有关其中计时器进程遇到故障，将在 30 秒内检测到的将重新启动循环的任何情况。
-> 并发操作可能会延迟周期从正在启动，如果此操作的持续时间超过配置的周期频率下, 一个计时器不会启动。
+> 对于计时器进程遇到故障的任何状况，会在 30 秒内检测到该状况，并且会重新启动周期。
+> 并发操作可能会延迟周期启动，如果此操作的持续时间超过配置的频率，则下一个计时器不会启动。
 >
-> 示例中，需配置 15 分钟的请求频率和拉取发生在 T1。  节点未完成工作的 16 分钟。  第一个 15 分钟周期将被忽略，并且下一个请求会发生在 T1 + 15 + 15。
+> 例如，元配置以 15 分钟请求频率进行配置，请求会在 T1 进行。  节点未在 16 分钟内完成工作。  第一个 15 分钟周期会被忽略，下一个请求会在 T1+15+15 进行。
 
 ### <a name="example-of-updating-local-configuration-manager-settings"></a>更新本地配置管理器设置的示例
 
@@ -87,7 +87,8 @@ ExampleConfig -OutputPath "c:\users\public\dsc"
 Set-DscLocalConfigurationManager -Path "c:\users\public\dsc"
 ```
 
-> **注意**：调用以上示例中的配置时，必须为 Path 参数指定与 OutputPath 参数相同的路径。
+> [!NOTE]
+> 调用以上示例中的配置时，必须为 **Path** 参数指定与 **OutputPath** 参数相同的路径。
 
 若要查看当前本地配置管理器设置，可以使用 **Get-DscLocalConfigurationManager** cmdlet。
 如果不带任何参数调用此 cmdlet，默认情况下它将获取其运行于的节点上的本地配置管理器设置。
