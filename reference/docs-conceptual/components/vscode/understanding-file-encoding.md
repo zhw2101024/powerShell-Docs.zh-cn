@@ -2,12 +2,12 @@
 title: 了解 VSCode 和 PowerShell 中的文件编码
 description: 在 VSCode 和 PowerShell 中配置文件编码
 ms.date: 02/28/2019
-ms.openlocfilehash: 73e766832d56a08bd5ef16df11899a0aab0badae
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: ec06d8f5d446a92e6cd9d2d70b11260d1d0afda8
+ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795107"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320398"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>了解 VSCode 和 PowerShell 中的文件编码
 
@@ -60,8 +60,8 @@ At C:\Users\<User>\<OneDrive>\Development\PowerShell\Scripts\Send-EmailUsingSmtp
 - `â€”`（而不是 `—`）
 - `Ã„2`（而不是 `Ä`）
 - `Â`（而不是 ` `（不间断空格））
-- `Ã©`（而不是 `é`
-<!-- markdownlint-enable MD038 -->）
+- `Ã©`（而不是 `é`）
+<!-- markdownlint-enable MD038 -->
 
 此便捷[参考](https://www.i18nqa.com/debug/utf8-debug.html)列出了指示 UTF-8/Windows-1252 编码问题的常见模式。
 
@@ -215,7 +215,7 @@ ISE 应遵循 BOM，但也可以使用反射来[设置编码](https://bensonxion
 ### <a name="source-control-software"></a>源代码管理软件
 
 一些源代码管理工具（如 git）会忽略编码；git 只跟踪字节。
-其他工具（如 TFS 或 Mercurial）可能不会忽略编码。 甚至一些基于 git 的工具也依赖于文本解码。
+其他工具（如 Azure DevOps 或 Mercurial）可能不会忽略编码。 甚至一些基于 git 的工具也依赖于文本解码。
 
 在这种情况下，请确保：
 
