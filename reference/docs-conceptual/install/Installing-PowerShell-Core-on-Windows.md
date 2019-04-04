@@ -2,18 +2,18 @@
 title: 在 Windows 上安装 PowerShell Core
 description: 介绍如何在 Windows 上安装 PowerShell Core
 ms.date: 08/06/2018
-ms.openlocfilehash: 7c109c7e1848af2349092c1e70fe4a7a25be54b8
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 450a38a1ef2e2890059094774fcc3f2ad4fcda6e
+ms.sourcegitcommit: 8dd4394cf867005a8b9ef0bb74b744c964fbc332
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400825"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58748955"
 ---
 # <a name="installing-powershell-core-on-windows"></a>在 Windows 上安装 PowerShell Core
 
 ## <a name="msi"></a>MSI
 
-若要在 Windows 客户端或 Windows Server（适用于 Windows 7 SP1、Server 2008 R2 以及更高版本）上安装 PowerShell，请从 GitHub [版本][]页面下载 MSI 包。
+若要在 Windows 客户端或 Windows Server（适用于 Windows 7 SP1、Server 2008 R2 以及更高版本）上安装 PowerShell，请从 GitHub [版本][]页面下载 MSI 包。  向下滚动到要安装的版本的“资产”部分。  “资产”部分可能处于折叠状态，因此可能需要单击使其展开。
 
 MSI 文件类似于 `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
@@ -56,7 +56,7 @@ Windows IoT 已经附带了 Windows PowerShell，我们将使用它来部署 Pow
    # change the destination to however you had partitioned it with sufficient
    # space for the zip and the unzipped contents
    # the path should be local to the device
-   Copy-Item .\PowerShell-6.1.0-win-arm32.zip -Destination u:\users\administrator\Downloads -ToSession $s
+   Copy-Item .\PowerShell-<version>-win-<os-arch>.zip -Destination u:\users\administrator\Downloads -ToSession $s
    ```
 
 3. 连接到设备并展开存档
@@ -64,13 +64,13 @@ Windows IoT 已经附带了 Windows PowerShell，我们将使用它来部署 Pow
    ```powershell
    Enter-PSSession $s
    Set-Location u:\users\administrator\downloads
-   Expand-Archive .\PowerShell-6.1.0-win-arm32.zip
+   Expand-Archive .\PowerShell-<version>-win-<os-arch>.zip
    ```
 
 4. 在 PowerShell Core 6 中设置远程处理
 
    ```powershell
-   Set-Location .\PowerShell-6.1.0-win-arm32
+   Set-Location .\PowerShell-<version>-win-<os-arch>
    # Be sure to use the -PowerShellHome parameter otherwise it'll try to create a new
    # endpoint with Windows PowerShell 5.1
    .\Install-PowerShellRemoting.ps1 -PowerShellHome .
@@ -81,7 +81,7 @@ Windows IoT 已经附带了 Windows PowerShell，我们将使用它来部署 Pow
 
    ```powershell
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
-   Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.6.1.0
+   Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.<version>
    ```
 
 ## <a name="deploying-on-nano-server"></a>在 Nano Server 上进行部署

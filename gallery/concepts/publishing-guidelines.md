@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 description: 面向发行者的指南
 title: PowerShell 库发布指南和最佳做法
-ms.openlocfilehash: 25c359c7acbe7430762a275d8cc4a28f527ec57a
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 1cd0140cc208949e13d23331b23a58ffc374430b
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58056492"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623902"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell 库发布指南和最佳做法
 
@@ -145,6 +145,9 @@ PowerShell 库中的许多包在 GitHub 中进行开发，而其他包则由具�
 - Windows：与 Windows 操作系统兼容的包
 - Linux：与 Linux 操作系统兼容的包
 - MacOS：与 Mac 操作系统兼容的包
+
+使用兼容平台标记包之后，该包将包含在搜索结果左窗格上的“库”搜索筛选器中。 如果在 GitHub 上托管包，则在标记包时，还可以充分利用 [PowerShell 库兼容性护盾](https://img.shields.io/powershellgallery/p/:packageName.svg) 
+![兼容性护盾](https://img.shields.io/powershellgallery/p/CosmosDB.svg)。  
 
 ## <a name="include-tests"></a>添加测试
 

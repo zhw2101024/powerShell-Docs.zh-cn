@@ -2,12 +2,12 @@
 ms.date: 03/04/2019
 keywords: dsc,powershell,配置,安装程序
 title: DSC 请求服务
-ms.openlocfilehash: 00e01e6c71226e6bde48b221e4e4fcf5f346feb4
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 3cb2ca09111100f39589072a0d8e7010f9188efb
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58056764"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623936"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration 请求服务
 

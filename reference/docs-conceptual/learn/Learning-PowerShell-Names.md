@@ -3,16 +3,16 @@ ms.date: 08/24/2018
 keywords: powershell,cmdlet
 title: 了解 PowerShell 命令名称
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 3f8ef2648709c4bb5d2eacf30fe9d8fb4f032c13
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
-ms.translationtype: MTE95
+ms.openlocfilehash: 8d50ca03f98ed4ca8f9c09c83ae57afbf0d7888d
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012460"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623715"
 ---
 # <a name="learning-powershell-command-names"></a>了解 PowerShell 命令名称
 
-学习命令和参数的名称需要在了解大多数命令行接口方面投入大量的时间。 问题是模式很少。 记忆是若要了解命令和参数，您需要定期使用的唯一方法。
+学习命令和参数的名称需要在了解大多数命令行接口方面投入大量的时间。 问题是模式很少。 记忆是了解需要定期使用的命令和参数的唯一方法。
 
 使用新命令或参数时，不能总是使用已经知道的内容。 必须找到并了解一个新名称。 按照惯例，命令行界面从一小组工具开始，并随着增量添加而增长。 这就很容易理解命令行界面为什么没有标准结构。
 这似乎是命令名称的逻辑，因为每个命令都是一个单独的工具。 PowerShell 有一种更好的方法来处理命令名称。
@@ -25,7 +25,7 @@ ms.locfileid: "54012460"
 若要列出在 DC01 上运行的任务，请使用 /S 参数和不带反斜杠的计算机名称。 例如，`tasklist /S DC01`。
 
 > [!NOTE]
-> 在 PowerShell v6 之前，`sc` 是 `Set-Content` cmdlet 的别名。 若要运行 sc.exe 命令，必须包含此文件扩展名。
+> 在 PowerShell v6 之前，`sc` 是 `Set-Content` cmdlet 的别名。 因此，若要在 v6 之前的 PowerShell 版本中运行 sc.exe 命令，必须使用包含文件扩展名 exe的完整文件名 sc.exe。
 
 服务和进程是计算机上具有明确定义的生命周期的可管理元素的示例。 你可能想要启动或停止服务或进程，或获取所有当前正在运行的服务或进程的列表。 虽然它们之间存在重要的技术差异，但在服务和进程上执行的操作在概念上是相同的。 此外，通过指定参数自定义操作所做的选择从概念上讲也是相似的。
 

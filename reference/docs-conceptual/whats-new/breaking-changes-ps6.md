@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell, 核心
 title: PowerShell 6.0 的重大更改
-ms.openlocfilehash: 975c978629f81f0f13a235c3d304e5ec03bae6d0
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795685"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623919"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>PowerShell 6.0 的重大更改
 
@@ -61,6 +61,15 @@ ms.locfileid: "57795685"
 ### <a name="microsoftpowershelllocalaccounts"></a>Microsoft.PowerShell.LocalAccounts
 
 由于使用了不受支持的 API 而从 PowerShell Core 中删除 `Microsoft.PowerShell.LocalAccounts`，直至找到更佳解决方案。
+
+### <a name="-computer-cmdlets"></a>`*-Computer` cmdlet
+
+由于使用了不受支持的 API，从 PowerShell Core 中删除了以下 cmdlet，直至找到更佳解决方案。
+
+- Add-Computer
+- Checkpoint-Computer
+- Remove-Computer
+- Restore-Computer
 
 ### <a name="-counter-cmdlets"></a>`*-Counter` cmdlet
 
