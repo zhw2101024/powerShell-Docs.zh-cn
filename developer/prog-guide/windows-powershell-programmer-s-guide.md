@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
-ms.openlocfilehash: 1f7b5b60b202f4de0cf3d44b65057f5edd41f2b0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
+ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860043"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920384"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell 程序员&#39;指南
 
@@ -101,7 +101,7 @@ Windows PowerShell 定义其代码命令、 提供程序，以及使用.NET Fram
 |-----------|----------------|
 |[如何创建 Windows PowerShell 提供程序](./how-to-create-a-windows-powershell-provider.md)|本部分介绍如何生成 Windows PowerShell 的 Windows PowerShell 提供程序。|
 |[如何创建 Windows PowerShell 主机应用程序](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|本部分介绍如何编写操作的运行空间的主机应用程序以及如何编写实现自己的自定义主机的主机应用程序。|
-|[如何创建一个 Windows PowerShell 管理单元](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|本部分介绍如何创建管理单元，用于注册的程序集中的所有 cmdlet 和提供程序以及如何创建自定义管理单元中。|
+|[如何创建 Windows PowerShell 管理单元](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|本部分介绍如何创建管理单元，用于注册的程序集中的所有 cmdlet 和提供程序以及如何创建自定义管理单元中。|
 |[如何创建控制台 Shell](./how-to-create-a-console-shell.md)|本部分介绍如何创建不可扩展的控制台 shell。|
 |[Windows PowerShell 概念](./windows-powershell-concepts.md)|本部分包含可帮助您了解 Windows PowerShell 从开发人员的角度来看的概念性信息。|
 
