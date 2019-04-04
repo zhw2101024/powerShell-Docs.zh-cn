@@ -1,10 +1,15 @@
 ---
 ms.date: 08/12/2017
 ms.topic: conceptual
-keywords: 'wmf,powershell,安装程序'
+keywords: wmf,powershell,安装程序
 title: WMF 5.1 发行说明
+ms.openlocfilehash: dd68f101e6f21256f966f7472dabc273a475a25e
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795328"
 ---
-
 # <a name="windows-management-framework-wmf-51"></a><span data-ttu-id="c3c69-103">Windows Management Framework (WMF) 5.1</span><span class="sxs-lookup"><span data-stu-id="c3c69-103">Windows Management Framework (WMF) 5.1</span></span>
 
 <span data-ttu-id="c3c69-104">WMF 使用户能够将现有的 Windows 系统更新至随 Windows Server 2016 一起发行的 PowerShell、WMI、WinRM 和软件清单日志记录 (SIL) 组件的版本。</span><span class="sxs-lookup"><span data-stu-id="c3c69-104">WMF provides users with the ability to update existing Windows systems to the versions of PowerShell, WMI, WinRM, and Software Inventory Logging (SIL) components that were released with Windows Server 2016.</span></span>
