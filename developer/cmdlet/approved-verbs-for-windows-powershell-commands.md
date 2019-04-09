@@ -12,12 +12,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], verb names
 ms.assetid: 2d4e58a9-05bc-437c-86b9-d8d55cba7d48
 caps.latest.revision: 36
-ms.openlocfilehash: d8a0561d6fbb4447a691c434e0518e3e16ce41e7
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
+ms.openlocfilehash: 4475b3f5e15826efbe8bab867011985cd7e2e1ae
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56863663"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293344"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>PowerShell 命令的已批准的谓词
 
@@ -60,7 +60,7 @@ PowerShell cmdlet 的名称以及其派生的 Microsoft.NET Framework 类使用�
 
 以下类似谓词表示不同的操作。
 
-### <a name="new-vs-set"></a>新 vs。设置
+### <a name="new-vs-set"></a>新 vs。Set
 `New`谓词用于创建新的资源。
 `Set`谓词用于修改现有资源，（可选） 创建资源，如果它不存在，例如`Set-Variable`cmdlet。
 
@@ -94,7 +94,7 @@ PowerShell cmdlet 的名称以及其派生的 Microsoft.NET Framework 类使用�
 |[退出](/dotnet/api/System.Management.Automation.VerbsCommon.Exit)(ex)|将当前的环境或上下文设置为最近使用的上下文。 例如， `Exit-PSSession` cmdlet 将用户放在用于启动交互式会话的会话中。 此谓词搭配`Enter`。|对于此操作，不要使用如 Pop 或缩小的谓词。|
 |[查找](/dotnet/api/System.Management.Automation.VerbsCommon.Find)(fd)|查找为未知，隐式、 可选的或指定的容器中的对象。||
 |[格式](/dotnet/api/System.Management.Automation.VerbsCommon.Format)(f)|排列指定的窗体或布局中的对象。||
-|[获取](/dotnet/api/System.Management.Automation.VerbsCommon.Get)(g)|指定检索的资源的操作。 此谓词搭配`Set`。|对于此操作，不要使用动词，如读取、 打开、 猫、 类型、 Dir、 获取、 转储、 采集、 检查、 查找或搜索此操作。|
+|[获取](/dotnet/api/System.Management.Automation.VerbsCommon.Get)(g)|指定检索的资源的操作。 此谓词搭配`Set`。|对于此操作，不要使用动词，如读取、 打开、 猫、 类型、 Dir、 获取、 转储、 采集、 检查、 查找或搜索。|
 |[隐藏](/dotnet/api/System.Management.Automation.VerbsCommon.Hide)(h)|使资源无法检测到。 例如，其名称中包含隐藏谓词的 cmdlet 可能会从用户隐藏服务。 此谓词搭配`Show`。|对于此操作，不要使用如阻止谓词。|
 |[加入](/dotnet/api/System.Management.Automation.VerbsCommon.Join)(j)|将资源合并到一个资源。 例如， `Join-Path` cmdlet 结合了具有一个其子路径，以创建单一路径的路径。 此谓词搭配`Split`。|对于此操作，不要使用动词，如组合、 Unite、 连接或关联。|
 |[锁](/dotnet/api/System.Management.Automation.VerbsCommon.Lock)(lk)|保护资源。 此谓词搭配`Unlock`。|对于此操作，不要使用动词，如限制或 Secure。|
@@ -149,7 +149,7 @@ PowerShell cmdlet 的名称以及其派生的 Microsoft.NET Framework 类使用�
 |[ConvertFrom](/dotnet/api/System.Management.Automation.VerbsData.ConvertFrom) (cf)|将一种主要类型的输入 （cmdlet 名词指示输入） 转换为一个或多个支持的输出类型。|对于此操作，不要使用动词，如导出、 输出或扩展。|
 |[ConvertTo](/dotnet/api/System.Management.Automation.VerbsData.ConvertTo) (ct)|将转换从一个或多个类型的输入 （cmdlet 名词指示输出类型） 的主输出类型。|对于此操作，不要使用动词，如导入，输入，或在。|
 |[卸除](/dotnet/api/System.Management.Automation.VerbsData.Dismount)(dm)|分离的命名的实体从一个位置。 此谓词搭配`Mount`。|对于此操作，不要使用动词，如卸载或取消链接。|
-|[编辑](/dotnet/api/System.Management.Automation.VerbsData.Edit)(ed)|通过添加或删除内容修改现有数据。|对于此操作，请不要用于动词，如更改、 更新或修改此操作。|
+|[编辑](/dotnet/api/System.Management.Automation.VerbsData.Edit)(ed)|通过添加或删除内容修改现有数据。|对于此操作，不要使用动词，如更改、 更新或修改。|
 |[展开](/dotnet/api/System.Management.Automation.VerbsData.Expand)(en)|将压缩的资源的数据还原到其原始状态。 此谓词搭配`Compress`。|对于此操作，不要使用动词，如分解或 Uncompress。|
 |[导出](/dotnet/api/System.Management.Automation.VerbsData.Export)(ep)|封装的主要输入到永久性数据存储，如文件或交换格式。 此谓词搭配`Import`。|对于此操作，不要使用动词，如提取或备份。|
 |[组](/dotnet/api/System.Management.Automation.VerbsData.Group)(gp)|排列，或将一个或多个资源相关联。|对于此操作，不要使用动词，如聚合，准备、 关联或关联。|
