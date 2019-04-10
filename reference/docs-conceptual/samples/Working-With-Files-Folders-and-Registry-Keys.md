@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用文件、文件夹和注册表项
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: a09b127d4ba37d33cb4c0f0ce0819e645fd4b137
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: cd20cc50b573435ba80b52b51e164e60625dc1b6
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401022"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293089"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>使用文件、文件夹和注册表项
 
 Windows PowerShell 使用名词 **Item** 来引用在 Windows PowerShell 驱动器上找到的项。 处理 Windows PowerShell FileSystem 提供程序时，**Item** 可能是文件、文件夹或 Windows PowerShell 驱动器。 列出并使用这些项是大部分管理设置中的关键基本任务，因此我们想要详细讨论这些任务。
 
-### <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>枚举文件、文件夹和注册表项 (Get-ChildItem)
+## <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>枚举文件、文件夹和注册表项 (Get-ChildItem)
 
 由于从特定位置获取项的集合是很常见的任务，因此 **Get-ChildItem** cmdlet 专门用于返回在容器（例如某个文件夹）中找到的所有项。
 
@@ -42,7 +42,7 @@ Get-Command -Name Get-ChildItem -Syntax
 
 可以混合并匹配这些参数以获取高度自定义的输出。
 
-#### <a name="listing-all-contained-items--recurse"></a>列出所有包含的项 (-Recurse)
+### <a name="listing-all-contained-items--recurse"></a>列出所有包含的项 (-Recurse)
 
 若要查看 Windows 文件夹内的项和子文件夹内包含的任何项，请使用 **Get-ChildItem** 的 **Recurse** 参数。 此列出操作显示 Windows 文件夹内的所有内容及其子文件夹中的项。 例如：
 
@@ -57,7 +57,7 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-#### <a name="filtering-items-by-name--name"></a>按名称筛选项 (-Name)
+### <a name="filtering-items-by-name--name"></a>按名称筛选项 (-Name)
 
 若要仅显示项的名称，请使用 **Get-Childitem** 的 **Name** 参数：
 
@@ -69,7 +69,7 @@ assembly
 ...
 ```
 
-#### <a name="forcibly-listing-hidden-items--force"></a>强制列出隐藏的项 (-Force)
+### <a name="forcibly-listing-hidden-items--force"></a>强制列出隐藏的项 (-Force)
 
 正常情况下在文件资源管理器或 Cmd.exe 中不可见的项不会在 **Get-ChildItem** 命令的输出中显示。 若要显示隐藏的项，请使用 **Get-ChildItem** 的 **Force** 参数。 例如：
 
@@ -79,7 +79,7 @@ Get-ChildItem -Path C:\Windows -Force
 
 此参数的名称为 Force，因为你可以强制替代 **Get-ChildItem** 命令的正常行为。 Force 是一个广泛使用的参数，此参数可强制执行 cmdlet 通常不会执行的操作，尽管它不会执行任何危害系统安全的操作。
 
-#### <a name="matching-item-names-with-wildcards"></a>使用通配符匹配项名称
+### <a name="matching-item-names-with-wildcards"></a>使用通配符匹配项名称
 
 **Get-ChildItem** 命令支持要列出的项路径中的通配符。
 
@@ -122,7 +122,7 @@ Get-ChildItem -Path C:\Windows\x*
 Get-ChildItem -Path C:\Windows\[xz]*
 ```
 
-#### <a name="excluding-items--exclude"></a>排除项 (-Exclude)
+### <a name="excluding-items--exclude"></a>排除项 (-Exclude)
 
 你可以通过使用 Get-ChildItem 的 **Exclude** 参数来排除特定项。 这可让你在单个声明中执行复杂的筛选。
 
@@ -147,7 +147,7 @@ Mode                LastWriteTime     Length Name
 -a---        2004-08-04   8:00 AM      18432 wtsapi32.dll
 ```
 
-#### <a name="mixing-get-childitem-parameters"></a>混合使用 Get-ChildItem 参数
+### <a name="mixing-get-childitem-parameters"></a>混合使用 Get-ChildItem 参数
 
 你可以在同一命令中使用 **Get-ChildItem** cmdlet 的多个参数。 在混合使用参数之前，请确保你了解通配符匹配。 例如，以下命令不会返回任何结果：
 

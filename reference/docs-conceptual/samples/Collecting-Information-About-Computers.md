@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 收集有关计算机的信息
 ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
-ms.openlocfilehash: 99125ef701705c20d4e955c79eaa3469ce4d58fb
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: d837684108656e17ebf26189bd4841c5de01051c
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400410"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293157"
 ---
 # <a name="collecting-information-about-computers"></a>收集有关计算机的信息
 
@@ -22,7 +22,7 @@ CimCmdlets 模块中的 cmdlet 是对常规系统管理任务最重要的 cmdlet
 你可以指定与可以通过 WMI 访问的任意计算机相关联的名称或 IP 地址。
 若要检索有关本地计算机的信息，可以省略 ComputerName 参数。
 
-### <a name="listing-desktop-settings"></a>列出桌面设置
+## <a name="listing-desktop-settings"></a>列出桌面设置
 
 我们将首先处理用于收集有关本地计算机上桌面信息的命令。
 
@@ -44,7 +44,7 @@ Get-CimInstance -ClassName Win32_Desktop -ComputerName . | Select-Object -Exclud
 
 若要筛选掉元数据，请使用管道运算符 (|)，将 `Get-CimInstance` 命令的结果发送到 `Select-Object -ExcludeProperty "CIM*"`。
 
-### <a name="listing-bios-information"></a>列出 BIOS 信息
+## <a name="listing-bios-information"></a>列出 BIOS 信息
 
 WMI Win32_BIOS 类返回有关本地计算机上系统 BIOS 的高度压缩的完整信息：
 
@@ -52,7 +52,7 @@ WMI Win32_BIOS 类返回有关本地计算机上系统 BIOS 的高度压缩的�
 Get-CimInstance -ClassName Win32_BIOS -ComputerName .
 ```
 
-### <a name="listing-processor-information"></a>列出处理器信息
+## <a name="listing-processor-information"></a>列出处理器信息
 
 可以通过使用 WMI 的 **Win32_Processor** 类检索常规处理器信息 ，尽管很可能需要筛选信息：
 
@@ -70,7 +70,7 @@ SystemType
 X86-based PC
 ```
 
-### <a name="listing-computer-manufacturer-and-model"></a>列出计算机制造商和型号
+## <a name="listing-computer-manufacturer-and-model"></a>列出计算机制造商和型号
 
 **Win32_ComputerSystem** 中也提供了计算机型号信息。
 标准显示输出不需要任何筛选便可提供 OEM 数据：
@@ -88,7 +88,7 @@ MyPC Jane Doe         WORKGROUP 804765696           DA243A-ABA 6415cl NA910 Comp
 像这种来自命令的输出（它直接从某个硬件返回信息）仅相当于你拥有的数据。
 某些信息未由硬件制造商正确配置，因此可能不可用。
 
-### <a name="listing-installed-hotfixes"></a>列出已安装的修补程序
+## <a name="listing-installed-hotfixes"></a>列出已安装的修补程序
 
 可以通过使用 **Win32_QuickFixEngineering** 列出所有已安装的修补程序：
 
@@ -143,7 +143,7 @@ HotFixId
 KB4048951
 ```
 
-### <a name="listing-operating-system-version-information"></a>列出操作系统版本信息
+## <a name="listing-operating-system-version-information"></a>列出操作系统版本信息
 
 **Win32_OperatingSystem** 类属性包括版本和服务包信息。
 你可以明确仅选择这些属性，以从 **Win32_OperatingSystem** 获取版本信息摘要：
@@ -167,7 +167,7 @@ ServicePackMajorVersion : 0
 ServicePackMinorVersion : 0
 ```
 
-### <a name="listing-local-users-and-owner"></a>列出本地用户和所有者
+## <a name="listing-local-users-and-owner"></a>列出本地用户和所有者
 
 本地常规用户信息（许可的用户数、当前用户数和所有者名称）可通过选择 Win32_OperatingSystem 类的属性找到。
 你可以明确选择使属性显示如下：
@@ -182,7 +182,7 @@ Get-CimInstance -ClassName Win32_OperatingSystem -ComputerName . | Select-Object
 Get-CimInstance -ClassName Win32_OperatingSystem -ComputerName . | Select-Object -Property *user*
 ```
 
-### <a name="getting-available-disk-space"></a>获取可用磁盘空间
+## <a name="getting-available-disk-space"></a>获取可用磁盘空间
 
 若要查看本地驱动器的磁盘空间和可用空间，可以使用 Win32_LogicalDisk WMI 类。
 仅需要查看具有 DriveType 3（WMI 将此值用作固定硬盘）的实例。
@@ -203,7 +203,7 @@ FreeSpace 109839607808
 Size      326846914560
 ```
 
-### <a name="getting-logon-session-information"></a>获取登录会话信息
+## <a name="getting-logon-session-information"></a>获取登录会话信息
 
 可通过 Win32_LogonSession WMI 类获取有关与用户相关联的登录会话的常规信息：
 
@@ -211,7 +211,7 @@ Size      326846914560
 Get-CimInstance -ClassName Win32_LogonSession -ComputerName .
 ```
 
-### <a name="getting-the-user-logged-on-to-a-computer"></a>获取登录到计算机的用户
+## <a name="getting-the-user-logged-on-to-a-computer"></a>获取登录到计算机的用户
 
 可以使用 Win32_ComputerSystem 显示已登录到特定计算机系统的用户。
 此命令将仅返回登录到系统桌面的用户：
@@ -220,7 +220,7 @@ Get-CimInstance -ClassName Win32_LogonSession -ComputerName .
 Get-CimInstance -ClassName Win32_ComputerSystem -Property UserName -ComputerName .
 ```
 
-### <a name="getting-local-time-from-a-computer"></a>获取计算机的本地时间
+## <a name="getting-local-time-from-a-computer"></a>获取计算机的本地时间
 
 可以通过使用 Win32_LocalTime WMI 类检索指定计算机上的当前本地时间。
 
@@ -240,7 +240,7 @@ Year         : 2017
 PSComputerName : .
 ```
 
-### <a name="displaying-service-status"></a>显示服务状态
+## <a name="displaying-service-status"></a>显示服务状态
 
 若要查看指定计算机上所有服务的状态，可以本地使用 `Get-Service` cmdlet。
 对于远程系统，可以使用 Win32_Service WMI 类。

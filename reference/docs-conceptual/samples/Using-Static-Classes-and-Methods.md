@@ -3,14 +3,15 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用静态类和方法
 ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
-ms.openlocfilehash: 0f2b02c3a40365ad0335118b057a4e548c9f6535
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: e4caff63a1ec7295b6fe450c2915baf0cc7e31af
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400986"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293106"
 ---
 # <a name="using-static-classes-and-methods"></a>使用静态类和方法
+
 不是所有 .NET Framework 类都可使用 **New-Object** 来创建。 例如，如果你尝试使用 **New-Object** 创建 **System.Environment** 或 **System.Math** 对象，你将收到以下错误消息：
 
 ```
@@ -29,10 +30,12 @@ At line:1 char:11
 
 之所以发生这些错误，是因为无法从这些类创建新的对象。 这些类是不更改状态的方法和属性的引用库。 你无需创建这些类，只需要使用它们。 这样的类和方法称为*静态类*，因为它们不会被创建、销毁或更改。 为了明确这一点，我们将提供静态类的使用示例。
 
-### <a name="getting-environment-data-with-systemenvironment"></a>使用 System.Environment 获取环境数据
+## <a name="getting-environment-data-with-systemenvironment"></a>使用 System.Environment 获取环境数据
+
 通常，在 Windows PowerShell 中使用对象的第一步是使用 Get-Member 找出其所包含的成员。 使用静态类，进程会稍有不同，因为实际类不是对象。
 
-#### <a name="referring-to-the-static-systemenvironment-class"></a>引用静态的 System.Environment 类
+### <a name="referring-to-the-static-systemenvironment-class"></a>引用静态的 System.Environment 类
+
 可以通过使用方括号将类名称括起来以引用静态类。 例如，可以通过在括号内键入名称来引用 **System.Environment**。 执行此操作会显示某些泛型类型的信息：
 
 ```
@@ -89,7 +92,7 @@ TickCount                               ExitCode
 
 现在我们可以从 System.Environment 选择要查看的属性。
 
-#### <a name="displaying-static-properties-of-systemenvironment"></a>显示 System.Environment 的静态属性
+### <a name="displaying-static-properties-of-systemenvironment"></a>显示 System.Environment 的静态属性
 
 System.Environment 的属性也是静态的，并且必须使用与常规属性不同的方式进行指定。 我们使用 **::** 向 Windows PowerShell 指示我们要使用静态方法或属性。 若要查看用于启动 Windows PowerShell 的命令，我们通过键入以下内容来检查 **CommandLine** 属性：
 
@@ -115,7 +118,7 @@ PS> [System.Environment]::HasShutdownStarted
 False
 ```
 
-### <a name="doing-math-with-systemmath"></a>使用 System.Math 做数学
+## <a name="doing-math-with-systemmath"></a>使用 System.Math 做数学
 
 System.Math 静态类可用于执行某些数学运算。 **System.Math** 的大多数重要成员是方法，我们可以用过使用 **Get-Member** 来显示它们。
 

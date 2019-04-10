@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用打印机
 ms.assetid: 4f29ead3-f83b-4706-ac3e-f2154ff38dc5
-ms.openlocfilehash: 5638629fdf79371c8eff9ee9194b642034250fff
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 77ebb26369b6a40e9c8c7bbbc52347d614cbf083
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401017"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59292987"
 ---
 # <a name="working-with-printers"></a>使用打印机
 
 你可以通过 Windows PowerShell 使用 WMI 和 WSH 中的 WScript.Network COM 对象来管理打印机。 我们将结合这两种工具来演示特定任务。
 
-### <a name="listing-printer-connections"></a>列出打印机连接
+## <a name="listing-printer-connections"></a>列出打印机连接
 
 列出计算机上安装的打印机的最简单方法是使用 WMI **Win32_Printer** 类：
 
@@ -30,7 +30,7 @@ Get-WmiObject -Class Win32_Printer -ComputerName
 
 由于此命令返回的端口名和打印机设备名的简单字符串集合没有任何可以区分的标签，因此并不容易解释。
 
-### <a name="adding-a-network-printer"></a>添加网络打印机
+## <a name="adding-a-network-printer"></a>添加网络打印机
 
 若要添加新的网络打印机，请使用 **WScript.Network**：
 
@@ -38,7 +38,7 @@ Get-WmiObject -Class Win32_Printer -ComputerName
 (New-Object -ComObject WScript.Network).AddWindowsPrinterConnection("\\Printserver01\Xerox5")
 ```
 
-### <a name="setting-a-default-printer"></a>设置默认打印机
+## <a name="setting-a-default-printer"></a>设置默认打印机
 
 若要使用 WMI 设置默认打印机，请在 **Win32_Printer** 集合中查找打印机，然后调用 **SetDefaultPrinter** 方法：
 
@@ -52,7 +52,7 @@ Get-WmiObject -Class Win32_Printer -ComputerName
 (New-Object -ComObject WScript.Network).SetDefaultPrinter('HP LaserJet 5Si')
 ```
 
-### <a name="removing-a-printer-connection"></a>删除打印机连接
+## <a name="removing-a-printer-connection"></a>删除打印机连接
 
 若要删除打印机连接，请使用 **WScript.Network RemovePrinterConnection** 方法：
 

@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 从管道中删除对象 (Where Object)
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-ms.openlocfilehash: c060b93a3823be26ad6c7757acc633bb4fc2fcfa
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 1f7d064c7bf2dd551ea96b29762fbccad8174084
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401010"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293140"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>从管道中删除对象 (Where-Object)
 
@@ -16,7 +16,7 @@ ms.locfileid: "53401010"
 
 借助 Windows PowerShell 中的 `Where-Object` cmdlet，可以测试管道中的每个对象，并沿管道仅传递满足特定测试条件的对象。 将从管道中删除未通过测试的对象。 测试条件以 `Where-Object` FilterScript 参数值的形式提供。
 
-### <a name="performing-simple-tests-with-where-object"></a>使用 Where-Object 执行简单测试
+## <a name="performing-simple-tests-with-where-object"></a>使用 Where-Object 执行简单测试
 
 FilterScript 值是计算结果为 True 或 False 的脚本块，即由大括号 {} 括起来的一个或多个 Windows PowerShell 命令。 这些脚本块可能非常简单，但是创建它们需要了解有关 Windows PowerShell 的另一个概念，即比较运算符。 比较运算符比较其每一侧显示的项。 比较运算符以“-”字符开头，后跟名称。 基本比较运算符适用于几乎任何类型的对象。 更高级的比较运算符可能仅适用于文本或数组。
 
@@ -46,7 +46,7 @@ PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
 2
 ```
 
-### <a name="filtering-based-on-object-properties"></a>基于对象属性进行筛选
+## <a name="filtering-based-on-object-properties"></a>基于对象属性进行筛选
 
 由于 `$_` 指代当前管道对象，因此可以访问它的属性进行测试。
 

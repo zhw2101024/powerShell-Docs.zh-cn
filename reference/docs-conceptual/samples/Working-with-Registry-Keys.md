@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用注册表项
 ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
-ms.openlocfilehash: a9d08f2f6b5803980dec45a4e266ad66879c8c8d
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: e7b497ec2fccf9ba3934439a9c1e9be3cf70a705
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401096"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293180"
 ---
 # <a name="working-with-registry-keys"></a>使用注册表项
 
 由于注册表项是 Windows PowerShell 驱动器上的项，因此使用它们的方法和使用文件及文件夹的方法非常相似。 一个关键区别在于，基于注册表的 Windows PowerShell 驱动器上的每个项都是一个容器，就像文件系统驱动器上有一个文件夹一样。 但是，注册表条目及其关联的值只是项的属性，而不是不同的项。
 
-### <a name="listing-all-subkeys-of-a-registry-key"></a>列出注册表项的所有子项
+## <a name="listing-all-subkeys-of-a-registry-key"></a>列出注册表项的所有子项
 
 可以通过使用 **Get-ChildItem** 直接显示某个注册表项中的所有项目。 添加可选的 **Force** 参数以显示隐藏项或系统项。 例如，以下命令将直接显示 Windows PowerShell 驱动器 HKCU（对应于 HKEY_CURRENT_USER 注册表 Hive）中的项：
 
@@ -58,7 +58,7 @@ Get-ChildItem -Path hkcu:\ -Recurse
 Get-ChildItem -Path HKCU:\Software -Recurse | Where-Object -FilterScript {($_.SubKeyCount -le 1) -and ($_.ValueCount -eq 4) }
 ```
 
-### <a name="copying-keys"></a>复制项
+## <a name="copying-keys"></a>复制项
 
 复制通过 **Copy-Item** 完成。 下面的命令将 HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion 及其所有属性复制到 HKCU:\\，从而创建名为“CurrentVersion”的新项：
 
@@ -74,7 +74,7 @@ Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination h
 
 你仍然可以使用已有的其他可用工具执行文件系统复制。 任何注册表编辑工具（包括 reg.exe、regini.exe 和 regedit.exe）以及支持注册表编辑的 COM 对象（如 WScript.Shell 和 WMI 的 StdRegProv 类）均可用于 Windows PowerShell。
 
-### <a name="creating-keys"></a>创建项
+## <a name="creating-keys"></a>创建项
 
 在注册表中创建新项比在文件系统中创建新项简单。 由于所有注册表项都是容器，因此，你无需指定项类型；只需提供一个明确的路径即可，如：
 
@@ -88,7 +88,7 @@ New-Item -Path hkcu:\software_DeleteMe
 New-Item -Path Registry::HKCU_DeleteMe
 ```
 
-### <a name="deleting-keys"></a>删除项
+## <a name="deleting-keys"></a>删除项
 
 从本质而言，删除项对所有提供程序都是相同的。 以下命令将以无提示方式删除项：
 
@@ -97,7 +97,7 @@ Remove-Item -Path hkcu:\Software_DeleteMe
 Remove-Item -Path 'hkcu:\key with spaces in the name'
 ```
 
-### <a name="removing-all-keys-under-a-specific-key"></a>删除特定项下的所有项
+## <a name="removing-all-keys-under-a-specific-key"></a>删除特定项下的所有项
 
 可以通过使用 **Remove-Item** 删除包含的项，但如果项包含任何其他内容，系统将提示你确认该删除。 例如，如果我们尝试删除我们创建的 HKCU:\\CurrentVersion 子项，我们将看到：
 

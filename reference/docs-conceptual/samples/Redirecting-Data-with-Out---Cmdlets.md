@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用 Out Cmdlet 重定向数据
 ms.assetid: 2a4acd33-041d-43a5-a3e9-9608a4c52b0c
-ms.openlocfilehash: f08879f436ce751b176af020aba21e90f09aa61f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 7c601b09cc53524eb55014b8ea19a5d79cb98b0e
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400417"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293293"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a>使用 Out-* Cmdlet 重定向数据
 
@@ -68,7 +68,7 @@ Name    : explorer
 > [!NOTE]
 > 所有 **Out** cmdlet 都使用对控制台窗口有效的格式（包括行长度限制）将输出呈现为文本。
 
-#### <a name="paging-console-output-out-host"></a>分页控制台输出 (Out-Host)
+## <a name="paging-console-output-out-host"></a>分页控制台输出 (Out-Host)
 
 默认情况下，Windows PowerShell 将数据发送到主机窗口，这正是 Out-Host cmdlet 的用途。 Out-Host cmdlet 的主要用途是对数据进行分页，如前面所述。 例如，下面的命令使用 Out-Host 对 Get-Command cmdlet 的输出进行分页：
 
@@ -93,7 +93,7 @@ default=multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
 ...
 ```
 
-#### <a name="discarding-output-out-null"></a>放弃输出 (Out-Null)
+## <a name="discarding-output-out-null"></a>放弃输出 (Out-Null)
 
 **Out-Null** cmdlet 旨在用于立即放弃接收的任何输入。 这对放弃收到的不利于运行命令的不必要数据很有用。 键入下面的命令时，该命令不会返回任何内容：
 
@@ -111,7 +111,7 @@ At line:1 char:12
 + Get-Command  <<<< Is-NotACommand | Out-Null
 ```
 
-#### <a name="printing-data-out-printer"></a>打印数据 (Out-Printer)
+## <a name="printing-data-out-printer"></a>打印数据 (Out-Printer)
 
 可以通过使用 **Out-Printer** cmdlet 打印数据。 如果未提供打印机名称，则 **Out-Printer** cmdlet 将使用默认打印机。 可以通过指定其显示名称使用任何基于 Windows 的打印机。 无需使用任何类型的打印机端口映射，甚至无需使用真正的物理打印机。 例如，如果安装了 Microsoft Office 文档映像工具，则可通过键入以下内容将数据发送到映像文件：
 
@@ -119,7 +119,7 @@ At line:1 char:12
 Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Writer'
 ```
 
-#### <a name="saving-data-out-file"></a>保存数据 (Out-File)
+## <a name="saving-data-out-file"></a>保存数据 (Out-File)
 
 可以使用 **Out-File** cmdlet 将输出发送到文件而不是控制台窗口。 下面的命令行将进程列表发送到文件 **C:\\temp\\processlist.txt**：
 
