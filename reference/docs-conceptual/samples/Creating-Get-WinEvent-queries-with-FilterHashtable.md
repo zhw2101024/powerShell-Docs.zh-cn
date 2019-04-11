@@ -1,12 +1,12 @@
 ---
 ms.date: 3/18/2019
 title: 使用 FilterHashtable 创建 Get-WinEvent 查询
-ms.openlocfilehash: fae01cc8be5c1805e2aae008e1f21ed387efa325
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+ms.openlocfilehash: 28ba3c99a297944003a28eaba7de34b77d9df536
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320452"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293276"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>使用 FilterHashtable 创建 Get-WinEvent 查询
 
@@ -29,12 +29,12 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="blog-posts-about-enumeration"></a>关于枚举的博客文章
+## <a name="blog-posts-about-enumeration"></a>关于枚举的博客文章
 
 本文提供了如何在哈希表中使用枚举值的相关信息。 有关枚举的详细信息，请参阅“脚本专家”博客文章。 若要创建用于返回枚举值的函数，请参阅[枚举和值](https://devblogs.microsoft.com/scripting/hey-scripting-guy-weekend-scripter-enumerations-and-values)。
 有关详细信息，请参阅[关于枚举的“脚本专家”系列博客文章](https://devblogs.microsoft.com/scripting/?s=about+enumeration)。
 
-### <a name="hash-table-keyvalue-pairs"></a>哈希表键值对
+## <a name="hash-table-keyvalue-pairs"></a>哈希表键值对
 
 若要生成高效查询，请将 `Get-WinEvent` cmdlet 和 FilterHashtable 参数结合使用。
 FilterHashtable 允许哈希表作为筛选器，以从 Windows 事件日志获取特定信息。 哈希表将使用键值对。 有关哈希表的详细信息，请参阅 [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables)。
@@ -48,12 +48,12 @@ FilterHashtable 参数的文档也包含这些键值对。
 
 下表显示了键名称、数据类型以及数据值是否接受通配符。
 
-| 项名称     | 值数据类型    | 是否接受通配符？ |
+| 键名称     | 值数据类型    | 是否接受通配符？ |
 |------------- | ------------------ | ---------------------------- |
 | LogName      | `<String[]>`       | 是 |
 | ProviderName | `<String[]>`       | 是 |
 | 路径         | `<String[]>`       | 否  |
-| 关键字     | `<Long[]>`         | 否  |
+| Keywords     | `<Long[]>`         | 否  |
 | ID           | `<Int32[]>`        | 否  |
 | 层次        | `<Int32[]>`        | 否  |
 | StartTime    | `<DateTime>`       | 否  |
@@ -62,7 +62,7 @@ FilterHashtable 参数的文档也包含这些键值对。
 | 数据         | `<String[]>`       | 否  |
 | *            | `<String[]>`       | 否  |
 
-### <a name="building-a-query-with-a-hash-table"></a>使用哈希表生成查询
+## <a name="building-a-query-with-a-hash-table"></a>使用哈希表生成查询
 
 若要验证结果并解决问题，它帮助生成一次包含一个键值对的哈希表。 查询从“Application”日志获取数据。 哈希表等效于 `Get-WinEvent –LogName Application`。
 
@@ -89,7 +89,7 @@ Get-WinEvent -FilterHashtable @{
 
 若查询需要从存档的事件日志获取数据，请使用 Path 键。 Path 值指定日志文件的完整路径。 有关详细信息，请参阅“脚本专家”博客文章[使用 PowerShell 分析保存的事件日志以查找错误](https://devblogs.microsoft.com/scripting/use-powershell-to-parse-saved-event-logs-for-errors)。
 
-### <a name="using-enumerated-values-in-a-hash-table"></a>在哈希表中使用枚举值
+## <a name="using-enumerated-values-in-a-hash-table"></a>在哈希表中使用枚举值
 
 Keywords 是哈希表中的下一个键。 Keywords 数据类型是一个包含大量数字的 `[long]` 值类型的数组。 使用下面的命令查找 `[long]` 的最大值：
 
@@ -156,7 +156,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-#### <a name="keywords-static-property-value-optional"></a>Keywords 静态属性值（可选）
+### <a name="keywords-static-property-value-optional"></a>Keywords 静态属性值（可选）
 
 枚举 Keywords 键，但可以在哈希表查询中使用静态属性名称。
 必须使用 Value__ 属性将属性名称转换为值，而非使用返回值。
@@ -172,7 +172,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="filtering-by-event-id"></a>按事件 ID 筛选
+## <a name="filtering-by-event-id"></a>按事件 ID 筛选
 
 若要获取更多特定数据，请按事件 ID 筛选查询的结果。哈希表将“事件 ID”引用为键 ID，其值为特定的“事件 ID”。“Windows 事件查看器”将显示“事件 ID”。此示例使用“事件 ID 1023”。
 
@@ -187,7 +187,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="filtering-by-level"></a>按级别筛选
+## <a name="filtering-by-level"></a>按级别筛选
 
 若要进一步优化结果并仅包含属于错误的事件，请使用 Level 键。
 “Windows 事件查看器”将 Level 显示为字符串值，但它们是枚举值。 在哈希表中使用包含字符串值的 Level 键时，将显示错误消息。
@@ -221,7 +221,7 @@ Level 键的名称和枚举值如下所示：
 | 信息  |   4   |
 | 警告        |   3   |
 | 错误          |   2   |
-| 关键       |   1   |
+| 严重       |   1   |
 | LogAlways      |   0   |
 
 完成的查询的哈希表包括 Level 键和值 2。
@@ -236,7 +236,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-#### <a name="level-static-property-in-enumeration-optional"></a>枚举中的 Level 静态属性（可选）
+### <a name="level-static-property-in-enumeration-optional"></a>枚举中的 Level 静态属性（可选）
 
 枚举 Level 键，但可以在哈希表查询中使用静态属性名称。
 必须使用 Value__ 属性将属性名称转换为值，而非使用返回值。

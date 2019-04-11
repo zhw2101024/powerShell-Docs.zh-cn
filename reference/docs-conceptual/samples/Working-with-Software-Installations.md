@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用软件安装
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
-ms.openlocfilehash: bb97ad37c4295351c0fc2e3c6e1209c8dd673f06
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 9369e3c5ac670895cd4fbd3ebc895c50efd02051
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401094"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293214"
 ---
 # <a name="working-with-software-installations"></a>使用软件安装
 
@@ -17,7 +17,7 @@ ms.locfileid: "53401094"
 > [!NOTE]
 > 通常不能使用此处讨论的技术来管理通过将应用程序文件复制到计算机安装的应用程序。 你可以使用在“使用文件和文件夹”部分中讨论的技术将这些应用程序作为文件和文件夹进行管理。
 
-### <a name="listing-windows-installer-applications"></a>列出 Windows Installer 应用程序
+## <a name="listing-windows-installer-applications"></a>列出 Windows Installer 应用程序
 
 若要列出随 Windows Installer 一起在本地或远程系统上安装的应用程序，请使用以下简单的 WMI 查询：
 
@@ -85,7 +85,7 @@ Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
 
 尽管我们现在有多种方法来查看使用 Windows Installer 进行安装的应用程序，但我们还没有考虑其他应用程序。 由于大多数标准应用程序都向 Windows 注册了其卸载程序，我们通过在 Windows 注册表中查找它们便可以在本地对其进行处理。
 
-### <a name="listing-all-uninstallable-applications"></a>列出所有可卸载的应用程序
+## <a name="listing-all-uninstallable-applications"></a>列出所有可卸载的应用程序
 
 尽管无法保证找到系统上的每个应用程序，但可以在“添加或删除程序”对话框中显示的列表中查找所有程序。 “添加或删除程序”在以下注册表项中查找这些应用程序：
 
@@ -142,7 +142,7 @@ SKC  VC Name                           Property
   0  24 {E38C00D0-A68B-4318-A8A6-F7... {AuthorizedCDFPrefix, Comments, Conta...
 ```
 
-### <a name="installing-applications"></a>安装应用程序
+## <a name="installing-applications"></a>安装应用程序
 
 可以使用 **Win32_Product** 类远程或本地安装 Windows Installer 程序包。
 
@@ -157,7 +157,7 @@ SKC  VC Name                           Property
 
 不使用 Windows Installer 技术的应用程序可能具有可用于自动部署的特定于应用程序的方法。 若要确定是否存在用于部署自动化的方法，请查看应用程序的文档或咨询应用程序供应商的支持系统。 在某些情况下，即使应用程序供应商没有专门为安装自动化设计应用程序，安装程序软件制造商也可能会使用一些技术进行自动化。
 
-### <a name="removing-applications"></a>删除应用程序
+## <a name="removing-applications"></a>删除应用程序
 
 通过使用 Windows PowerShell 删除 Windows Installer 程序包与安装程序包的方式大致相同。 下面是一个根据其名称选择要卸载的程序包的示例；在某些情况下，使用 **IdentifyingNumber** 进行筛选可能会更容易：
 
@@ -179,7 +179,7 @@ Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue('Displ
 
 但是，如果不进行一些修改，这些字符串可能无法直接在 Windows PowerShell 提示符下使用。
 
-### <a name="upgrading-windows-installer-applications"></a>升级 Windows Installer 应用程序
+## <a name="upgrading-windows-installer-applications"></a>升级 Windows Installer 应用程序
 
 若要升级应用程序，你需要知道应用程序的名称和应用程序升级包的路径。 借助这些信息，你可以使用单个 Windows PowerShell 命令升级应用程序：
 

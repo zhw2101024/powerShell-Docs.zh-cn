@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 直接操作项
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: 5f5b6cf4a777229029743b9d9967030effc58215
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 4caa7d2e0eecff9783556062d8503fe10e616fe5
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676226"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293259"
 ---
 # <a name="manipulating-items-directly"></a>直接操作项
 
@@ -32,7 +32,7 @@ Cmdlet          Rename-Item                     Rename-Item [-Path] <String>...
 Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 ```
 
-### <a name="creating-new-items-new-item"></a>创建新项 (New-Item)
+## <a name="creating-new-items-new-item"></a>创建新项 (New-Item)
 
 若要在文件系统中创建新项，请使用 **New-Item** cmdlet。 包含带有项的路径的 **Path** 参数，以及值为“file”或“directory”的 **ItemType** 参数。
 
@@ -75,7 +75,7 @@ SKC  VC Name                           Property
 
 在键入注册表路径时，请确保在 Windows PowerShell 驱动器名称中包含冒号 (**:**)，如 HKLM: 和 HKCU:。 如果不带冒号，则 Windows PowerShell 无法识别路径中的驱动器名称。
 
-### <a name="why-registry-values-are-not-items"></a>为什么注册表值不是项
+## <a name="why-registry-values-are-not-items"></a>为什么注册表值不是项
 
 当你使用 **Get-ChildItem** cmdlet 查找注册表项中的项时，你将永远不会看到实际的注册表条目或其值。
 
@@ -93,9 +93,9 @@ SKC  VC Name                           Property
   3   0 OptionalComponents             {}
 ```
 
-尽管将注册表条目视为项会很方便，但无法确保指定的注册表条目路径是唯一的。 路径表示法不区分名为 **Run** 的注册表子项和 **Run** 子项中的 **(Default)** 注册表条目。 此外，由于注册表项名称可以包含反斜杠字符 (**\\**)，因此如果注册表项是项目，则无法使用路径表示法区分名为 **Windows\\CurrentVersion\\Run** 的注册表项和此路径中的子项。
+尽管将注册表条目视为项会很方便，但无法确保指定的注册表条目路径是唯一的。 路径表示法不区分名为 **Run** 的注册表子项和 **Run** 子项中的 **(Default)** 注册表条目。 此外，由于注册表条目名称可以包含反斜杠字符 (\\)，因此如果注册表条目是项，则无法使用路径表示法区分名为 Windows\\CurrentVersion\\Run 的注册表条目和此路径中的子项。
 
-### <a name="renaming-existing-items-rename-item"></a>重命名现有项 (Rename-Item)
+## <a name="renaming-existing-items-rename-item"></a>重命名现有项 (Rename-Item)
 
 若要更改文件或文件夹的名称，请使用 **Rename-Item** cmdlet。 以下命令将 **file1.txt** 文件的名称更改为 **fileOne.txt**。
 
@@ -112,7 +112,7 @@ At line:1 char:12
 + Rename-Item  <<<< -Path C:\temp\New.Directory\fileOne c:\temp\fileOne.txt
 ```
 
-### <a name="moving-items-move-item"></a>移动项 (Move-Item)
+## <a name="moving-items-move-item"></a>移动项 (Move-Item)
 
 若要移动文件或文件夹，请使用 **Move-Item** cmdlet。
 
@@ -128,7 +128,7 @@ Mode                LastWriteTime     Length Name
 d----        2006-05-18  12:14 PM            New.Directory
 ```
 
-### <a name="copying-items-copy-item"></a>复制项 (Copy-Item)
+## <a name="copying-items-copy-item"></a>复制项 (Copy-Item)
 
 如果你熟悉其他 shell 中的复制操作，你可能会发现 Windows PowerShell 中的 **Copy-Item** cmdlet 行为不正常。 当你将项从一个位置复制到另一个位置时，默认情况下 Copy-Item 不会复制其内容。
 
@@ -167,7 +167,7 @@ Mode                LastWriteTime     Length Name
 -a---        2006-05-18  11:44 AM          0 file1
 ```
 
-### <a name="deleting-items-remove-item"></a>删除项 (Remove-Item)
+## <a name="deleting-items-remove-item"></a>删除项 (Remove-Item)
 
 若要删除文件和文件夹，请使用 **Remove-Item** cmdlet。 可进行重要且不可逆更改的 Windows PowerShell cmdlet（例如 **Remove-Item**）在你输入其命令时通常将提示你进行确认。 例如，如果你尝试删除 **New.Directory** 文件夹，系统将提示你确认命令，因为该文件夹中包含文件：
 
@@ -188,7 +188,7 @@ specified. If you continue, all children will be removed with the item. Are you
 Remove-Item C:\temp\New.Directory -Recurse
 ```
 
-### <a name="executing-items-invoke-item"></a>执行项 (Invoke-Item)
+## <a name="executing-items-invoke-item"></a>执行项 (Invoke-Item)
 
 Windows PowerShell 使用 **Invoke-Item** cmdlet 针对文件或文件夹执行默认操作。 此默认操作由注册表中的默认应用程序处理程序确定；效果与在文件资源管理器中双击该项的效果相同。
 

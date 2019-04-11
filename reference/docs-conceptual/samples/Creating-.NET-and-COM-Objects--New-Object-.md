@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 创建 .NET 和 COM 对象 (New Object)
 ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
-ms.openlocfilehash: 1ffd8d4afa419ec0c24321e44aa4a2f41a9bee44
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: ef8215303aacd90536d3c2ae57bc3629e202f318
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401101"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293361"
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>创建 .NET 和 COM 对象 (New-Object)
 
 存在具有 .NET Framework 和 COM 接口的软件组件，使用它们可执行许多系统管理任务。 Windows PowerShell 允许你使用这些组件，因此你将不限于执行可通过使用 cmdlet 执行的任务。 Windows PowerShell 初始版本中的许多 cmdlet 对远程计算机无效。 我们将演示如何通过直接从 Windows PowerShell 使用 .NET Framework **System.Diagnostics.EventLog** 类在管理事件日志时绕过此限制。
 
-### <a name="using-new-object-for-event-log-access"></a>使用 New-Object 进行事件日志访问
+## <a name="using-new-object-for-event-log-access"></a>使用 New-Object 进行事件日志访问
 
 .NET Framework 类库包括一个名为 **System.Diagnostics.EventLog** 的类，该类可用于管理事件日志。 可以通过使用具有 **TypeName** 参数的 **New-Object** cmdlet 创建 .NET Framework 类的新实例。 例如，以下命令将创建事件日志引用：
 
@@ -27,7 +27,7 @@ PS> New-Object -TypeName System.Diagnostics.EventLog
 
 尽管该命令创建了 EventLog 类的实例，但该实例不包含任何数据。 这是因为我们未指定特定的事件日志。 如何获取真正的事件日志？
 
-#### <a name="using-constructors-with-new-object"></a>将构造函数与 New-Object 一起使用
+### <a name="using-constructors-with-new-object"></a>将构造函数与 New-Object 一起使用
 
 若要引用特定的事件日志，需要指定日志的名称。 **New-Object** 具有 **ArgumentList** 参数。 作为值传递到此形参的实参将由对象的特殊的启动方法使用。 此方法叫做*构造函数*，因为它将用于构造对象。 例如，若要对获取应用程序日志的引用，请指定字符串“Application”作为实参：
 
@@ -42,7 +42,7 @@ Max(K) Retain OverflowAction        Entries Name
 > [!NOTE]
 > 由于大多数 .NET Framework 核心类都包含在 System 命名空间中，所以如果 Windows PowerShell 找不到你指定的类型名称的匹配项，它将自动尝试查找你在 System 命名空间中指定的类。 这意味着你可以指定 Diagnostics.EventLog 而不指定 System.Diagnostics.EventLog。
 
-#### <a name="storing-objects-in-variables"></a>在变量中存储对象
+### <a name="storing-objects-in-variables"></a>在变量中存储对象
 
 你可能需要存储对对象的引用，以便在当前的 Shell 中使用。 尽管 Windows PowerShell 允许使用管道执行大量操作，减少了对变量的需求，但有时在变量中存储对对象的引用可以更方便地操纵这些对象。
 
@@ -62,7 +62,7 @@ PS> $AppLog
   16,384      7 OverwriteOlder          2,160 Application
 ```
 
-#### <a name="accessing-a-remote-event-log-with-new-object"></a>使用 New-Object 访问远程事件日志
+### <a name="accessing-a-remote-event-log-with-new-object"></a>使用 New-Object 访问远程事件日志
 
 上一节中使用的命令以本地计算机为目标；**Get-EventLog** cmdlet 可做到这一点。 若要访问远程计算机上的应用程序日志，必须同时将日志名称和计算机名称（或 IP 地址）作为参数提供。
 
@@ -77,7 +77,7 @@ PS> $RemoteAppLog
 
 我们已经有了对存储在 $RemoteAppLog 变量中的事件日志的引用，那么可以对它执行什么任务呢？
 
-#### <a name="clearing-an-event-log-with-object-methods"></a>使用对象方法清除事件日志
+### <a name="clearing-an-event-log-with-object-methods"></a>使用对象方法清除事件日志
 
 对象通常具有可调用以执行任务的方法。 可以使用 **Get-Member** 来显示与对象关联的方法。 下面的命令和已选的输出将显示 EventLog 类的一些方法：
 
@@ -118,12 +118,12 @@ PS> $RemoteAppLog
      512      7 OverwriteOlder              0 Application
 ```
 
-### <a name="creating-com-objects-with-new-object"></a>使用 New-Object 创建 COM 对象
+## <a name="creating-com-objects-with-new-object"></a>使用 New-Object 创建 COM 对象
 可以使用 **New-Object** 来处理组件对象模型 (COM) 组件。 组件的范围从 Windows 脚本宿主 (WSH) 包含的各种库到 ActiveX 应用程序（如大多数系统上安装的 Internet Explorer）。
 
 **New-Object** 使用 .NET Framework 运行时可调用的包装器创建 COM 对象，因此调用 COM 对象时它与 .NET Framework 具有相同的限制。 若要创建 COM 对象，需要为 **ComObject** 参数指定要使用的 COM 类的编程标识符（或 *ProgId*）。 COM 用途限制的全面讨论和确定系统上可用的 ProgId 已超出本用户指南的范围，但来自环境的大多数已知对象（如 WSH）都可在 Windows PowerShell 内使用。
 
-可以通过指定以下 progid 来创建 WSH 对象：**WScript.Shell**， **WScript.Network**， **Scripting.Dictionary**，并且**Scripting.FileSystemObject**。 以下命令将创建这些对象：
+可以通过指定以下 progid 来创建 WSH 对象：WScript.Shell、WScript.Network、Scripting.Dictionary 和 Scripting.FileSystemObject。 以下命令将创建这些对象：
 
 ```powershell
 New-Object -ComObject WScript.Shell
@@ -134,7 +134,7 @@ New-Object -ComObject Scripting.FileSystemObject
 
 尽管在 Windows PowerShell 中可通过其他方法使用这些类的大多数功能，但使用 WSH 类执行某些任务（如创建快捷方式）仍更加简单。
 
-### <a name="creating-a-desktop-shortcut-with-wscriptshell"></a>使用 WScript.Shell 创建桌面快捷方式
+## <a name="creating-a-desktop-shortcut-with-wscriptshell"></a>使用 WScript.Shell 创建桌面快捷方式
 
 可以使用 COM 对象快速执行的一个任务是创建快捷方式。 假设你想要在桌面上创建链接到 Windows PowerShell 主文件夹的快捷方式。 首先需要创建对 **WScript.Shell** 的引用，我们会将其存储在名为 **$WshShell** 的变量中：
 
@@ -203,7 +203,7 @@ $lnk.TargetPath = $PSHome
 $lnk.Save()
 ```
 
-### <a name="using-internet-explorer-from-windows-powershell"></a>从 Windows PowerShell 使用 Internet Explorer
+## <a name="using-internet-explorer-from-windows-powershell"></a>从 Windows PowerShell 使用 Internet Explorer
 
 使用 COM 可以使许多应用程序（包括 Microsoft Office 系列应用程序和 Internet Explorer）自动执行。 Internet Explorer 阐明了有关使用基于 COM 的应用程序的一些典型方法和涉及的问题。
 
@@ -262,7 +262,7 @@ Remove-Variable ie
 > [!NOTE]
 > 删除对 ActiveX 可执行文件的引用时，它会退出还是继续运行没有通用标准。 具体取决于不同情况（如应用程序是否可见、已编辑的文档是否正在其中运行甚至 Windows PowerShell 是否仍在运行），应用程序可能退出也可能不退出。 因此，应该为想要在 Windows PowerShell 中使用的每个 ActiveX 可执行文件测试终止行为。
 
-### <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>获取有关 .NET Framework 包装的 COM 对象的警告
+## <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>获取有关 .NET Framework 包装的 COM 对象的警告
 
 在某些情况下，COM 对象可能具有相关联的 .NET Framework *运行时可调用包装器*（或称 RCW），它将由 **New-Object** 使用。 因为 RCW 的行为可能与普通 COM 对象的行为不同，所以 **New-Object** 具有 **Strict** 参数，它将对访问 RCW 进行警告。 如果指定 **Strict** 参数然后创建使用 RCW 的 COM 对象，你会收到一条警告消息：
 

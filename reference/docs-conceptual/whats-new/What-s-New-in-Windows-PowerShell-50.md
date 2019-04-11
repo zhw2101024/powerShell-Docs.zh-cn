@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell 5.0 中的新增功能
-ms.openlocfilehash: a21e6af9f23ac8bb3ddf84dbfa67a67f3ff93b24
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: b2cb729948d4b53c5ea9a536dbeda04c7cb50997
+ms.sourcegitcommit: 9194e603ac242ae733839eb773e4af7360fdd044
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58055098"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59363524"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 中的新增功能
 
@@ -127,7 +127,7 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 - 新的 New-TemporaryFile cmdlet 使你能够创建临时文件作为脚本的一部分。 默认情况下，新的临时文件创建在 ```C:\Users\<user name>\AppData\Local\Temp``` 中。
 - Out-File、Add-Content 和 Set-Content cmdlet 现在有一个新的 -NoNewline 参数，使用该参数将在输出后省略新的行。
 - New-Guid cmdlet 利用 .NET Framework Guid 类以生成 GUID，这在当你正在编写脚本或 DSC 资源时很有用。
-- 由于文件版本信息可能会产生误导（尤其是在修补文件后），因此新的 FileVersionRaw 和 ProductVersionRaw 脚本属性可用于 FileInfo 对象。 例如，可以运行以下命令以显示 powershell.exe 这些属性的值，其中 $pid 包含 Windows PowerShell 正运行会话的进程 ID：```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
+- 由于文件版本信息可能会产生误导（尤其是在修补文件后），因此新的 FileVersionRaw 和 ProductVersionRaw 脚本属性可用于 FileInfo 对象。 例如，你可以运行以下命令以显示 powershell.exe 的这些属性的值，其中 $pid 包括了 Windows PowerShell 正运行会话的进程 ID：  ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
 - 新的 Enter-PSHostProcess 和 Exit-PSHostProcess cmdlet 使你能够在独立于正在 Windows PowerShell 控制台中运行的当前进程的进程中调试 Windows PowerShell 脚本。 运行 Enter-PSHostProcess 以输入或附上一个特定的进程 ID，然后运行 Get-Runspace 以返回进程内活动的运行空间。 当你完成进程内的脚本调试后，运行 Exit-PSHostProcess 从进程中分离出来。
 - 已将一个新的 Wait-Debugger cmdlet 添加到了 [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) 模块中。 在脚本中运行下一个语句时，可运行 Wait-Debugger 以停止调试器中的脚本。
 - Windows PowerShell 工作流调试器现在支持命令或 Tab 自动补全，并且你可以调试嵌套的工作流函数。 现在，可以按 **Ctrl+Break** 进入正在运行的脚本、本地和远程会话以及工作流脚本中的调试器。
@@ -210,7 +210,7 @@ Windows PowerShell 4.0 默认安装在 Windows 8.1 和 Windows Server 2012 R2 �
 
 Windows PowerShell 4.0 包括以下新增功能。
 
-### <a name="new-features-in-windows-powershell"></a>Windows PowerShell 中的新增功能
+### <a name="a-namenew-features-in-windows-powershell-1-new-features-in-windows-powershell"></a><a name="new-features-in-windows-powershell-1" />Windows PowerShell 中的新增功能
 
 - **Windows PowerShell Desired State Configuration** (DSC) 是 Windows PowerShell 4.0 中的新管理系统，可为软件服务和运行这些服务的环境部署和管理配置数据。 有关 DSC 的详细信息，请参阅 [Windows PowerShell Desired State Configuration 入门](https://technet.microsoft.com/library/c134aa32-b085-4656-9a89-955d8ff768d0)。
 - **Save-Help** 使你能够为安装在远程计算机上的模块保存帮助。 可以使用 Save-Help 从连接了 Internet 的客户端（不必在其上安装需要帮助的所有模块）下载模块“帮助”，然后将已保存的“帮助”复制到远程共享文件夹或无法访问 Internet 的远程计算机。
@@ -230,7 +230,7 @@ Windows PowerShell 4.0 包括以下新增功能。
 - 已添加新 cmdlet **Get-FileHash**，该 cmdlet 可返回采用几种格式之一的指定文件的文件哈希。
 - 在 Windows PowerShell 4.0 中，如果某个模块在其清单中使用了 **DefaultCommandPrefix** 键，或者如果用户导入了一个带有 **Prefix** 参数的模块，则该模块的 **ExportedCommands** 属性将显示该模块中带有前缀的命令。 当你使用模块限定语法 ModuleName\\CommandName 来运行这些命令时，命令名称必须包含前缀。
 - **$PSVersionTable.PSVersion** 的值已更新为 4.0。
-- **Where()** 运算符行为已更改。 不再支持接受采用 `"Property -CompareOperator Value"` 格式的字符串表达式的 `Collection.Where('property -match name')`。 但是，**Where()** 运算符可接受采用脚本块格式的字符串表达式；仍支持此行为。
+- **Where()** 运算符行为已更改。 `Collection.Where('property -match name')` 不再支持接受采用 `"Property -CompareOperator Value"` 格式的字符串表达式。 但是，**Where()** 运算符可接受采用脚本块格式的字符串表达式；仍支持此行为。
 
 ### <a name="new-features-in-windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell 集成脚本环境 (ISE) 中的新增功能
 
@@ -289,7 +289,7 @@ Windows PowerShell 4.0 包括以下新增功能。
 
 Windows PowerShell 3.0 包括以下新增功能。
 
-- [Windows PowerShell 工作流](#windows-powershell-workflow)
+- [Windows PowerShell 工作流程](#windows-powershell-workflow)
 - [Windows PowerShell Web 访问](#windows-powershell-web-access)
 - [新的 Windows PowerShell ISE 功能](#new-windows-powershell-ise-features)
 - [对 Microsoft .NET Framework 4.0 的支持](#support-for-microsoft-net-framework-4)

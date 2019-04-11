@@ -2,12 +2,12 @@
 title: PowerShell Core 6.1 中的新增内容
 description: PowerShell Core 6.1 中发布的新功能和更改
 ms.date: 09/13/2018
-ms.openlocfilehash: 1b41368bee92850e3593ebf4f5b8a469c4282d98
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: fe1e892d4a13a7758f5405867fdd7488c059f5cc
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677378"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293310"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 中的新增内容
 
@@ -67,7 +67,7 @@ Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Ob
 | 时间 (秒)   | 12.170                 | 8.493               | 7.08                |
 | 加快 (%) | N/A                    | 30.2%               | 16.6%               |
 
-在从 Windows PowerShell 回归后，`Import-Csv` 的速度也显著提升了。
+`Import-Csv` 在从 Windows PowerShell 回归后，速度也显著提升了。
 以下示例使用具有 26,616 行和 6 列的测试 CSV：
 
 ```powershell
@@ -210,7 +210,7 @@ Markdown 是创建可读明文文档的标准，其基本格式可以呈现为 H
 `Enable-PSRemoting` 现在创建两个远程会话配置：
 
 - 一个用于 PowerShell 的主要版本。 例如，`PowerShell.6`。 根据“系统范围”的 PowerShell 6 会话配置，次要版本更新可依赖于此终结点
-- 一个版本特定的会话配置，例如：`PowerShell.6.1.0`
+- 一个版本特定的会话配置，例如： `PowerShell.6.1.0`
 
 如果要在同一台计算机上安装并访问多个 PowerShell 6 版本，则此行为会很有帮助。
 
@@ -434,11 +434,11 @@ $certThumbPrint = (Get-PfxCertificate -FilePath $certFile -Password $certPass ).
 
 我们已在 Windows PowerShell 中包括以下类型加速器，以便更轻松地处理它们对应的类型：
 
-- `[adsi]`: `System.DirectoryServices.DirectoryEntry`
-- `[adsisearcher]`: `System.DirectoryServices.DirectorySearcher`
-- `[wmi]`: `System.Management.ManagementObject`
-- `[wmiclass]`: `System.Management.ManagementClass`
-- `[wmisearcher]`: `System.Management.ManagementObjectSearcher`
+- `[adsi]`： `System.DirectoryServices.DirectoryEntry`
+- `[adsisearcher]`： `System.DirectoryServices.DirectorySearcher`
+- `[wmi]`： `System.Management.ManagementObject`
+- `[wmiclass]`： `System.Management.ManagementClass`
+- `[wmisearcher]`： `System.Management.ManagementObjectSearcher`
 
 这些类型的加速器未包含在 PowerShell 6 中，但已添加到在 Windows 上运行的 PowerShell 6.1 中。
 
@@ -516,3 +516,10 @@ Visual Basic 很少与 `Add-Type` 一起使用。 我们已删除此功能以减
 ### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a>已清理 `CommandTypes.Workflow` 和 `WorkflowInfoCleaned` 的使用
 
 有关这些更改的详细信息，请查看 [PR #6708](https://github.com/PowerShell/PowerShell/pull/6708)。
+
+### <a name="group-object-now-sorts-the-groups"></a>组对象现在对组进行排序
+
+作为性能改进的一部分，`Group-Object` 现在返回组的已排序列表。
+虽然不应依赖于顺序，但如果想要第一组，则可能会被此更改所破坏。 我们认为这种性能改进是值得更改的，因为依赖于以前行为的影响很小。
+
+有关此更改的详细信息，请参阅[问题 #7409](https://github.com/PowerShell/PowerShell/issues/7409)。

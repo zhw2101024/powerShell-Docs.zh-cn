@@ -2,12 +2,12 @@
 ms.date: 08/24/2018
 keywords: dsc,powershell,配置,安装程序
 title: DSC Script 资源
-ms.openlocfilehash: 86dfb74bf52d8907686bb955fd722f4fb8b9131b
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 4eee5625add4d96ade7ababf7f534f597a26712d
+ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58054741"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920350"
 ---
 # <a name="dsc-script-resource"></a>DSC Script 资源
 
@@ -68,7 +68,7 @@ DSC 执行 `TestScript` 以确定是否应运行 `SetScript`。 如果 `TestScri
 ```powershell
 Configuration ScriptTest
 {
-    Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
+    Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
 
     Node localhost
     {
@@ -95,7 +95,7 @@ $version = Get-Content 'version.txt'
 
 Configuration ScriptTest
 {
-    Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
+    Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
 
     Node localhost
     {
