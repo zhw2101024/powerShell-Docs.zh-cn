@@ -2,43 +2,57 @@
 title: 在 Windows 上安装 PowerShell Core
 description: 介绍如何在 Windows 上安装 PowerShell Core
 ms.date: 08/06/2018
-ms.openlocfilehash: 450a38a1ef2e2890059094774fcc3f2ad4fcda6e
-ms.sourcegitcommit: 8dd4394cf867005a8b9ef0bb74b744c964fbc332
+ms.openlocfilehash: 910ee5a653fc1703bfddaf6367225f3b654d600f
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58748955"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293004"
 ---
 # <a name="installing-powershell-core-on-windows"></a>在 Windows 上安装 PowerShell Core
 
-## <a name="msi"></a>MSI
+有多种方法可以在 Windows 中安装 PowerShell Core。
 
-若要在 Windows 客户端或 Windows Server（适用于 Windows 7 SP1、Server 2008 R2 以及更高版本）上安装 PowerShell，请从 GitHub [版本][]页面下载 MSI 包。  向下滚动到要安装的版本的“资产”部分。  “资产”部分可能处于折叠状态，因此可能需要单击使其展开。
+## <a name="prerequisites"></a>必备条件
 
-MSI 文件类似于 `PowerShell-<version>-win-<os-arch>.msi`
+若要通过 WSMan 启用 PowerShell 远程处理，需要满足以下先决条件：
+
+- 在 Windows 10 之前的 Windows 版本上安装[通用 C 运行时](https://www.microsoft.com/download/details.aspx?id=50410)。 可通过直接下载或 Windows 更新进行安装。 经完全修补（含可选包）且受支持的系统中已安装有通用 C 运行时。
+- 在 Windows 7 和 Windows Server 2008 R2 上安装 Windows Management Framework (WMF) 4.0 或更高版本。
+
+## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />安装 MSI 包
+
+若要在 Windows 客户端或 Windows Server（适用于 Windows 7 SP1、Server 2008 R2 以及更高版本）上安装 PowerShell，请从 GitHub [版本][] 页面下载 MSI 包。 向下滚动到要安装的版本的“资产”部分。 “资产”部分可能处于折叠状态，因此可能需要单击使其展开。
+
+MSI 文件类似于 - `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 下载后，双击安装程序并按照提示进行操作。
 
-安装后会向“开始”菜单添加快捷方式。
+安装程序在 Windows“开始”菜单中创建一个快捷方式。
 
 - 默认情况下，包安装位置为 `$env:ProgramFiles\PowerShell\<version>`
-- 可以通过“开始”菜单或 `$env:ProgramFiles\PowerShell\<version>\pwsh.exe` 启动 PowerShell
+- 可以通过“开始”菜单启动 PowerShell 或 `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
-### <a name="prerequisites"></a>必备条件
+### <a name="administrative-install-from-the-command-line"></a>通过命令行进行管理安装
 
-若要通过 WSMan 启用 PowerShell 远程处理，需要满足以下先决条件：
+可以通过命令行安装 MSI 包。 这样，管理员可以部署包而无需用户交互。 适用于 PowerShell 的 MSI 包包含下列属性以控制安装选项：
 
-- 在 Windows 10 之前的 Windows 版本上安装[通用 C 运行时](https://www.microsoft.com/download/details.aspx?id=50410)。
-  可通过直接下载或 Windows 更新进行安装。
-  经完全修补（含可选包）且受支持的系统中已安装有通用 C 运行时。
-- 在 Windows 7 和 Windows Server 2008 R2 上安装 Windows Management Framework (WMF) 4.0 或更高版本。
+- **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** - 此属性控制向 Windows 资源管理器中的上下文菜单添加“打开 PowerShell”项的选项。
+- **ENABLE_PSREMOTING** - 此属性控制用于在安装过程中启用 PowerShell 远程处理的选项。
+- **REGISTER_MANIFEST** - 此属性控制用于注册 Windows 事件日志记录清单的选项。
 
-## <a name="zip"></a>ZIP
+下面的示例演示如何在启用所有安装选项的情况下以无提示方式安装 PowerShell Core。
 
-提供有 PowerShell 二进制 ZIP 存档，从而支持高级部署方案。
-请注意，使用 ZIP 存档时，不同于使用 MSI，你无法获取 MSI 先决条件检查。
-因此，为使通过 WSMan 进行的远程处理可在低于 Windows 10 的 Windows 版本上正常运行，则需确保满足[先决条件](#prerequisites)。
+```powershell
+msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+```
+
+有关 Msiexec.exe 命令行选项的完整列表，请参阅[命令行选项](/windows/desktop/Msi/command-line-options)。
+
+## <a name="a-idzip-installing-the-zip-package"></a><a id="zip" />安装 ZIP 包
+
+提供有 PowerShell 二进制 ZIP 存档，从而支持高级部署方案。 请注意，使用 ZIP 存档时，不同于使用 MSI，你无法获取 MSI 先决条件检查。 要使通过 WSMan 的远程处理正常工作，请确保满足[先决条件](#prerequisites)。
 
 ## <a name="deploying-on-windows-iot"></a>在 Windows IoT 上部署
 
@@ -132,28 +146,12 @@ Nano Server 是“无外设”OS。 可以使用两种不同的方法部署核�
 
 - 如果需要基于 WSMan 的远程处理，请按照说明使用[“另一种实例技术”](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register)创建远程处理终结点。
 
-## <a name="instructions-to-create-a-remoting-endpoint"></a>有关创建远程处理终结点的说明
+## <a name="how-to-create-a-remoting-endpoint"></a>如何创建远程处理终结点
 
-PowerShell Core 同时支持采用 WSMan 和 SSH 的 PowerShell 远程处理协议 (PSRP)。
-有关更多信息，请参阅：
+PowerShell Core 同时支持采用 WSMan 和 SSH 的 PowerShell 远程处理协议 (PSRP)。 有关更多信息，请参阅：
 
-- [在 PowerShell Core 中进行 SSH 远程处理][ssh-remoting]
-- [在 PowerShell Core 中进行 WSMan 远程处理][wsman-remoting]
-
-## <a name="artifact-installation-instructions"></a>项目安装说明
-
-我们使用 [AppVeyor][] 在每个 CI 版本上发布具有 CoreCLR 位的存档。
-
-若要从 CoreCLR 项目中安装 PowerShell Core：
-
-1. 从特定版本的“项目”选项卡下载 ZIP 包。
-2. 解除阻止 ZIP 文件：右键单击“文件资源管理器”->“属性”->“选中‘解除阻止’框”->“应用”
-3. 将 zip 文件解压到 `bin` 目录
-4. `./bin/pwsh.exe`
+- [SSH Remoting in PowerShell Core][ssh-remoting]
+- [PowerShell Core 中的 WSMan 远程处理][wsman-remoting]
 
 <!-- [download-center]: TODO -->
-
-[版本]: https://github.com/PowerShell/PowerShell/releases
-[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
-[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+[版本]： https://github.com/PowerShell/PowerShell/releases [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md [wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
