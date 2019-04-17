@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 创建图形日期选取器
 ms.assetid: c1cb722c-41e9-4baa-be83-59b4653222e9
-ms.openlocfilehash: 6dd43a3b1f4c67633ad1755de3db88eb8c6772c8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: d3b24af935e781a8a36fc346a6108baaed37b6db
+ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677066"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59506795"
 ---
 # <a name="creating-a-graphical-date-picker"></a>创建图形日期选取器
 
@@ -22,101 +22,110 @@ ms.locfileid: "55677066"
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
-$form = New-Object Windows.Forms.Form
+$form = New-Object Windows.Forms.Form -Property @{
+    StartPosition = [Windows.Forms.FormStartPosition]::CenterScreen
+    Size          = New-Object Drawing.Size 243, 230
+    Text          = 'Select a Date'
+    Topmost       = $true
+}
 
-$form.Text = 'Select a Date'
-$form.Size = New-Object Drawing.Size @(243,230)
-$form.StartPosition = 'CenterScreen'
-
-$calendar = New-Object System.Windows.Forms.MonthCalendar
-$calendar.ShowTodayCircle = $false
-$calendar.MaxSelectionCount = 1
+$calendar = New-Object Windows.Forms.MonthCalendar -Property @{
+    ShowTodayCircle   = $false
+    MaxSelectionCount = 1
+}
 $form.Controls.Add($calendar)
 
-$OKButton = New-Object System.Windows.Forms.Button
-$OKButton.Location = New-Object System.Drawing.Point(38,165)
-$OKButton.Size = New-Object System.Drawing.Size(75,23)
-$OKButton.Text = 'OK'
-$OKButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
+$OKButton = New-Object Windows.Forms.Button -Property @{
+    Location     = New-Object Drawing.Point 38, 165
+    Size         = New-Object Drawing.Size 75, 23
+    Text         = 'OK'
+    DialogResult = [Windows.Forms.DialogResult]::OK
+}
 $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 
-$CancelButton = New-Object System.Windows.Forms.Button
-$CancelButton.Location = New-Object System.Drawing.Point(113,165)
-$CancelButton.Size = New-Object System.Drawing.Size(75,23)
-$CancelButton.Text = 'Cancel'
-$CancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
+$CancelButton = New-Object Windows.Forms.Button -Property @{
+    Location     = New-Object Drawing.Point 113, 165
+    Size         = New-Object Drawing.Size 75, 23
+    Text         = 'Cancel'
+    DialogResult = [Windows.Forms.DialogResult]::Cancel
+}
 $form.CancelButton = $CancelButton
 $form.Controls.Add($CancelButton)
 
-$form.Topmost = $true
-
 $result = $form.ShowDialog()
 
-if ($result -eq [System.Windows.Forms.DialogResult]::OK)
-{
+if ($result -eq [Windows.Forms.DialogResult]::OK) {
     $date = $calendar.SelectionStart
     Write-Host "Date selected: $($date.ToShortDateString())"
 }
 ```
 
-该脚本首先加载两个 .NET Framework 类：**System.Drawing** 和 **System.Windows.Forms**。 然后，启动 .NET Framework 类 **Windows.Forms.Form** 的新实例；它提供一个可以开始添加控件的空白窗体或窗口。
+该脚本首先加载两个 .NET Framework 类：System.Drawing 和 System.Windows.Forms。
+然后，启动 .NET Framework 类 **Windows.Forms.Form** 的新实例；它提供一个可以开始添加控件的空白窗体或窗口。
 
 ```powershell
-$form = New-Object Windows.Forms.Form
+$form = New-Object Windows.Forms.Form -Property @{
+    StartPosition = [Windows.Forms.FormStartPosition]::CenterScreen
+    Size          = New-Object Drawing.Size 243, 230
+    Text          = 'Select a Date'
+    Topmost       = $true
+}
 ```
 
-在创建 Form 类的实例后，为此类的三个属性赋值。
+此示例使用 Property 属性和 hashtable 将值分配给此类的四个属性。
 
-- **文本。** 这将成为该窗口的标题。
+1. **StartPosition**：如果未添加此属性，Windows 将在窗体打开时选择一个位置。
+   通过将此属性设置为 CenterScreen，可使窗体在每次加载时都自动显示在屏幕中间。
 
-- **大小。** 这是窗体的大小（以像素为单位）。 上述脚本创建的窗体大小为宽 243 像素、高 230 像素。
+2. **Size**：这是窗体的大小（以像素为单位）。
+   上述脚本创建的窗体大小为宽 243 像素、高 230 像素。
 
-- **StartingPosition。** 在上述脚本中，此可选属性将设置为 **CenterScreen**。 如果未添加此属性，Windows 将在窗体打开时选择一个位置。 通过将 **StartingPosition** 设置为 **CenterScreen**，可使窗体在每次加载时都自动显示在屏幕中间。
+3. **Text**：这将成为该窗口的标题。
+
+4. **Topmost**：通过将此属性设置为 `$true`，可以强制此窗口在其他已打开的窗口和对话框之上打开。
+
+接下来，在窗体中创建并添加一个日历控件。
+在此示例中，当前日期未突出显示或带圆圈。
+用户一次只可以在日历上选择一天。
 
 ```powershell
-$form.Text = 'Select a Date'
-$form.Size = New-Object Drawing.Size @(243,230)
-$form.StartPosition = 'CenterScreen'
-```
-
-接下来，在窗体中创建并添加一个日历控件。 在此示例中，当前日期未突出显示或带圆圈。 用户一次只可以在日历上选择一天。
-
-```powershell
-$calendar = New-Object System.Windows.Forms.MonthCalendar
-$calendar.ShowTodayCircle = $false
-$calendar.MaxSelectionCount = 1
+$calendar = New-Object Windows.Forms.MonthCalendar -Property @{
+    ShowTodayCircle   = $false
+    MaxSelectionCount = 1
+}
 $form.Controls.Add($calendar)
 ```
 
-接下来，为窗体创建“确定”按钮。 指定“确定”按钮的大小和行为。 在此示例中，按钮位置为距窗体上边缘 165 像素，距左边缘 38 像素。 按钮高度为 23 像素，按钮长度为 75 像素。 此脚本使用预定义的 Windows 窗体类型确定按钮行为。
+接下来，为窗体创建“确定”按钮。
+指定“确定”按钮的大小和行为。
+在此示例中，按钮位置为距窗体上边缘 165 像素，距左边缘 38 像素。
+按钮高度为 23 像素，按钮长度为 75 像素。
+此脚本使用预定义的 Windows 窗体类型确定按钮行为。
 
 ```powershell
-$OKButton = New-Object System.Windows.Forms.Button
-$OKButton.Location = New-Object System.Drawing.Point(38,165)
-$OKButton.Size = New-Object System.Drawing.Size(75,23)
-$OKButton.Text = 'OK'
-$OKButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
+$OKButton = New-Object Windows.Forms.Button -Property @{
+    Location     = New-Object Drawing.Point 38, 165
+    Size         = New-Object Drawing.Size 75, 23
+    Text         = 'OK'
+    DialogResult = [Windows.Forms.DialogResult]::OK
+}
 $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-采用相同方式创建“取消”按钮。 “取消”按钮距窗口上边缘 165 像素，但距左边缘 113 像素。
+采用相同方式创建“取消”按钮。
+“取消”按钮距窗口上边缘 165 像素，但距左边缘 113 像素。
 
 ```powershell
-$CancelButton = New-Object System.Windows.Forms.Button
-$CancelButton.Location = New-Object System.Drawing.Point(113,165)
-$CancelButton.Size = New-Object System.Drawing.Size(75,23)
-$CancelButton.Text = 'Cancel'
-$CancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
+$CancelButton = New-Object Windows.Forms.Button -Property @{
+    Location     = New-Object Drawing.Point 113, 165
+    Size         = New-Object Drawing.Size 75, 23
+    Text         = 'Cancel'
+    DialogResult = [Windows.Forms.DialogResult]::Cancel
+}
 $form.CancelButton = $CancelButton
 $form.Controls.Add($CancelButton)
-```
-
-将 Topmost 属性设置为 $True，以强制此窗口在其他已打开的窗口和对话框之上打开。
-
-```powershell
-$form.Topmost = $true
 ```
 
 添加以下代码行以在 Windows 中显示该窗体。
@@ -125,11 +134,11 @@ $form.Topmost = $true
 $result = $form.ShowDialog()
 ```
 
-最后，**If** 块内的代码指示在用户在日历上选择某一天，然后单击“确定”按钮或按“Enter”键后，Windows 应如何处理该窗体。 Windows PowerShell 向用户显示选定的日期。
+最后，`if` 块内的代码指示在用户在日历上选择某一天，然后单击“确定”按钮或按“Enter”键后，Windows 应如何处理该窗体。
+Windows PowerShell 向用户显示选定的日期。
 
 ```powershell
-if ($result -eq [System.Windows.Forms.DialogResult]::OK)
-{
+if ($result -eq [Windows.Forms.DialogResult]::OK) {
     $date = $calendar.SelectionStart
     Write-Host "Date selected: $($date.ToShortDateString())"
 }
@@ -139,4 +148,4 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 - [脚本编写人员，你好：为什么这些 PowerShell GUI 示例不起作用呢？](https://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub：Dave Wyatt 的 WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell 每周提示：创建图形日期选取器](https://technet.microsoft.com/library/ff730942.aspx)
+- [本周 Windows PowerShell 提示：创建图形日期选取器](https://technet.microsoft.com/library/ff730942.aspx)

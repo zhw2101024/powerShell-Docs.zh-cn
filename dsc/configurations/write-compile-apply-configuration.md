@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,配置,服务,设置
 title: 编写、编译和应用配置
-ms.openlocfilehash: c884af9d92ac375457d6eb75d815ae9a9159e273
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 947308efa165543571801c88a922daf44fa88be0
+ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795413"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59506812"
 ---
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
@@ -65,8 +65,8 @@ Configuration HelloWorld {
 <!-- markdownlint-enable MD038 -->
 
 ```powershell
-. C:\Scripts\WebsiteTest.ps1
-HelloWolrd
+. C:\Scripts\HelloWorld.ps1
+HelloWorld
 ```
 
 此操作生成以下输出：
@@ -90,7 +90,7 @@ LCM 的工作是调用 DSC 资源以应用配置。
 使用下面的代码执行 `Start-DSCConfiguration` cmdlet。 向 `-Path` 参数指定用于存储“localhost.mof”的目录路径。 `Start-DSCConfiguration` Cmdlet 在指定的目录中查找任何“\<computername\>.mof”文件。 `Start-DSCConfiguration` Cmdlet 尝试将找到的每个“.mof”文件应用于通过文件名指定的计算机名（“localhost”、“server01”、“dc-02”等）。
 
 > [!NOTE]
-> 如果未指定 `-Wait` 参数，则 `Start-DSCConfiguration` 会创建后台作业来执行操作。 通过指定 `-Verbose` 参数可以观察操作的详细输出。 `-Wait` 和 `-Verbose` 是可选参数。
+> 如果未指定 `-Wait` 参数，则 `Start-DSCConfiguration` 会创建后台作业来执行操作。 通过指定 `-Verbose` 参数可以观察操作的详细输出。 `-Wait`和 `-Verbose` 是可选参数。
 
 ```powershell
 Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait

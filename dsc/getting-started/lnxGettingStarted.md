@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 适用于 Linux 的 Desired State Configuration (DSC) 入门
-ms.openlocfilehash: 69f087434455aae8e97ea07c79c52e493412d134
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: a18b226d4b2d8b8e1ba8b4168ec6ad8f73c73c42
+ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400445"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59506829"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>适用于 Linux 的 Desired State Configuration (DSC) 入门
 
@@ -41,7 +41,7 @@ ms.locfileid: "53400445"
 
 ### <a name="installing-omi"></a>安装 OMI
 
-适用于 Linux 的 Desired State Configuration 需要开放式管理基础结构 (OMI) CIM 服务器版本 1.0.8.1 或更高版本。 可从 The Open Group 下载 OMI:[开放式管理基础结构 (OMI)](https://github.com/Microsoft/omi)。
+适用于 Linux 的 Desired State Configuration 需要开放式管理基础结构 (OMI) CIM 服务器版本 1.0.8.1 或更高版本。 可以从国际开放标准组织下载 OMI：[开放式管理基础结构 (OMI)](https://github.com/Microsoft/omi)。
 
 若要安装 OMI，请安装适用于 Linux 系统（.rpm 或.deb）和 OpenSSL 版本（ssl_098 或 ssl_100）以及体系结构 (x64/x86) 的程序包。 RPM 程序包适用于 CentOS、Red Hat Enterprise Linux、SUSE Linux Enterprise Server 和 Oracle Linux。 DEB 程序包适用于 Debian GNU/Linux 和 Ubuntu Server。 ssl_098 程序包适用于安装了 OpenSSL 0.9.8 的计算机，而 ssl_100 程序包适用于安装了 OpenSSL 1.0 的计算机。
 
@@ -115,25 +115,25 @@ ms.locfileid: "53400445"
 
 ```powershell
 $Node = "ostc-dsc-01"
-$Credential = Get-Credential -UserName:"root" -Message:"Enter Password:"
+$Credential = Get-Credential -UserName "root" -Message "Enter Password:"
 
 #Ignore SSL certificate validation
-#$opt = New-CimSessionOption -UseSsl:$true -SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true
+#$opt = New-CimSessionOption -UseSsl $true -SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true
 
 #Options for a trusted SSL certificate
-$opt = New-CimSessionOption -UseSsl:$true
-$Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90
+$opt = New-CimSessionOption -UseSsl $true
+$Sess=New-CimSession -Credential $credential -ComputerName $Node -Port 5986 -Authentication basic -SessionOption $opt -OperationTimeoutSec 90
 ```
 
 > [!NOTE]
 > 对于“推送”模式，用户凭据必须是 Linux 计算机上的根用户。
 > 适用于 Linux 的 DSC 仅支持 SSL/TLS 连接，使用 `New-CimSession` 时必须将 –UseSSL 参数设置为 $true。
 > 在 `/opt/omi/etc/omiserver.conf` 文件中通过 pemfile 和 keyfile 属性指定（DSC 的）OMI 使用的 SSL 证书。
-> 如果 [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) cmdlet 运行于的 Windows 计算机不信任此证书，你可以通过以下 CIMSession 选项选择忽略证书验证：`-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`。
+> 如果正在运行 [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) cmdlet 的 Windows 计算机不信任此证书，你可以通过以下 CIMSession 选项选择忽略证书验证： `-SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true`
 
 运行以下命令以将 DSC 配置推送到 Linux 节点。
 
-`Start-DscConfiguration -Path:"C:\temp" -CimSession:$Sess -Wait -Verbose`
+`Start-DscConfiguration -Path:"C:\temp" -CimSession $Sess -Wait -Verbose`
 
 ### <a name="distribute-the-configuration-with-a-pull-server"></a>使用请求服务器分发配置
 
@@ -185,5 +185,5 @@ $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Aut
 
 |日志文件|Directory|说明|
 |---|---|---|
-|omiserver.log|`/var/opt/omi/log`|与 OMI CIM 服务器操作相关的消息。|
-|dsc.log|`/var/opt/omi/log`|与本地配置管理器 (LCM) 操作和 DSC 资源操作相关的消息。|
+|**omiserver.log**|`/var/opt/omi/log`|与 OMI CIM 服务器操作相关的消息。|
+|**dsc.log**|`/var/opt/omi/log`|与本地配置管理器 (LCM) 操作和 DSC 资源操作相关的消息。|
