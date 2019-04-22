@@ -22,7 +22,7 @@ PowerShell 支持别名以通过备用名称引用命令。 别名允许具有�
 
 |||||
 |-|-|-|-|
-|cat|dir|装载|rm|
+|cat|dir|mount|rm|
 |cd|echo|move|rmdir|
 |chdir|erase|popd|sleep|
 |clear|h|ps|sort|
