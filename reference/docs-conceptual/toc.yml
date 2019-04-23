@@ -1,259 +1,254 @@
-items:
 - name: 概述
   href: overview.md
 - name: 安装
   items:
-  - name: 安装各种版本的 PowerShell
-    href: install/installing-powershell.md
-  - name: PowerShell Core
-    items:
-    - name: 在 Windows 上安装 PowerShell Core
-      href: install/installing-powershell-core-on-windows.md
-    - name: 在 Linux 上安装 PowerShell Core
-      href: install/installing-powershell-core-on-linux.md
-    - name: 在 macOS 上安装 PowerShell Core
-      href: install/installing-powershell-core-on-macos.md
-    - name: 在 ARM 上安装 PowerShell Core
-      href: install/powershell-core-on-arm.md
-  - name: Windows PowerShell
-    items:
-    - name: 安装 Windows PowerShell
-      href: install/installing-windows-powershell.md
-    - name: 安装 Windows PowerShell 2.0 引擎
-      href: install/installing-the-windows-powershell-2.0-engine.md
-    - name: Windows PowerShell 系统要求
-      href: install/windows-powershell-system-requirements.md
+    - name: 安装各种版本的 PowerShell
+      href: install/installing-powershell.md
+    - name: PowerShell Core
+      items:
+        - name: 在 Windows 上安装 PowerShell Core
+          href: install/installing-powershell-core-on-windows.md
+        - name: 在 Linux 上安装 PowerShell Core
+          href: install/installing-powershell-core-on-linux.md
+        - name: 在 macOS 上安装 PowerShell Core
+          href: install/installing-powershell-core-on-macos.md
+        - name: 在 ARM 上安装 PowerShell Core
+          href: install/powershell-core-on-arm.md
+    - name: Windows PowerShell
+      items:
+        - name: 安装 Windows PowerShell
+          href: install/installing-windows-powershell.md
+        - name: 安装 Windows PowerShell 2.0 引擎
+          href: install/installing-the-windows-powershell-2.0-engine.md
+        - name: Windows PowerShell 系统要求
+          href: install/windows-powershell-system-requirements.md
 - name: 入门
   items:
-  - name: PowerShell 入门
-    href: getting-started/getting-started-with-windows-powershell.md
-  - name: 启动 Windows PowerShell
-    href: getting-started/starting-windows-powershell.md
-  - name: 启动 Windows PowerShell 2.0 引擎
-    href: getting-started/starting-the-windows-powershell-2.0-engine.md
+    - name: PowerShell 入门
+      href: getting-started/getting-started-with-windows-powershell.md
+    - name: 启动 Windows PowerShell
+      href: getting-started/starting-windows-powershell.md
+    - name: 启动 Windows PowerShell 2.0 引擎
+      href: getting-started/starting-the-windows-powershell-2.0-engine.md
 - name: 了解 PowerShell
   items:
-  - name: 了解重要的 PowerShell 概念
-    href: learn/understanding-important-powershell-concepts.md
-  - name: 了解 PowerShell 名称
-    href: learn/learning-powershell-names.md
-  - name: 使用熟悉的命令名称
-    href: learn/using-familiar-command-names.md
-  - name: 获取详细的帮助信息
-    href: learn/getting-detailed-help-information.md
-  - name: 获取有关命令的信息
-    href: learn/getting-information-about-commands.md
-  - name: 使用变量存储对象
-    href: learn/using-variables-to-store-objects.md
-  - name: 了解 PowerShell 管道
-    href: learn/understanding-the-powershell-pipeline.md
-  - name: 更多 PowerShell 学习
-    href: learn/more-powershell-learning.md
-  - name: 编写可移植模块
-    href: learn/writing-portable-modules.md
-  - name: PowerShell 远程处理
-    items:
-    - name: 运行远程命令
-      href: learn/remoting/running-remote-commands.md
-    - name: 通过 SSH 进行 PowerShell 远程处理
-      href: learn/remoting/ssh-remoting-in-powershell-core.md
-    - name: PowerShell Core 中的 WS-Management (WSMan) 远程处理
-      href: learn/remoting/wsman-remoting-in-powershell-core.md
-    - name: WinRM 安全性
-      href: learn/remoting/winrmsecurity.md
-    - name: 在 PowerShell 远程处理中形成第二个跃点
-      href: learn/remoting/ps-remoting-second-hop.md
-  - name: 术语表
-    href: learn/windows-powershell-glossary.md
+    - name: 了解重要的 PowerShell 概念
+      href: learn/understanding-important-powershell-concepts.md
+    - name: 了解 PowerShell 名称
+      href: learn/learning-powershell-names.md
+    - name: 使用熟悉的命令名称
+      href: learn/using-familiar-command-names.md
+    - name: 获取详细的帮助信息
+      href: learn/getting-detailed-help-information.md
+    - name: 获取有关命令的信息
+      href: learn/getting-information-about-commands.md
+    - name: 使用变量存储对象
+      href: learn/using-variables-to-store-objects.md
+    - name: 了解 PowerShell 管道
+      href: learn/understanding-the-powershell-pipeline.md
+    - name: 更多 PowerShell 学习
+      href: learn/more-powershell-learning.md
+    - name: 编写可移植模块
+      href: learn/writing-portable-modules.md
+    - name: PowerShell 远程处理
+      items:
+        - name: 运行远程命令
+          href: learn/remoting/running-remote-commands.md
+        - name: 通过 SSH 进行 PowerShell 远程处理
+          href: learn/remoting/ssh-remoting-in-powershell-core.md
+        - name: PowerShell Core 中的 WS-Management (WSMan) 远程处理
+          href: learn/remoting/wsman-remoting-in-powershell-core.md
+        - name: WinRM 安全性
+          href: learn/remoting/winrmsecurity.md
+        - name: 在 PowerShell 远程处理中形成第二个跃点
+          href: learn/remoting/ps-remoting-second-hop.md
+    - name: 术语表
+      href: learn/windows-powershell-glossary.md
 - name: 组件数
   items:
-  - name: 控制台
-    items:
-    - name: PowerShell.exe 命令行帮助
-      href: components/console/powershell.exe-command-line-help.md
-    - name: 使用选项卡扩展
-      href: components/console/using-tab-expansion.md
-  - name: ISE
-    items:
-    - name: Windows PowerShell ISE 简介
-      href: components/ise/introducing-the-windows-powershell-ise.md
-    - name: Windows PowerShell 集成脚本环境 (ISE)
-      href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
-    - name: 使用 Windows PowerShell ISE
+    - name: 控制台
       items:
-      - name: 探究 Windows PowerShell ISE
-        href: components/ise/exploring-the-windows-powershell-ise.md
-      - name: 如何在 Windows PowerShell ISE 中创建 PowerShell 选项卡
-        href: components/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
-      - name: 如何在 Windows PowerShell ISE 中调试脚本
-        href: components/ise/how-to-debug-scripts-in-windows-powershell-ise.md
-      - name: 如何在 Windows PowerShell ISE 中使用配置文件
-        href: components/ise/how-to-use-profiles-in-windows-powershell-ise.md
-      - name: 如何在脚本窗格和控制台窗格中使用 Tab 自动补全
-        href: components/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
-      - name: 如何在 Windows PowerShell ISE 中使用控制台窗格
-        href: components/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
-      - name: 如何在 Windows PowerShell ISE 中编写和运行脚本
-        href: components/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
-      - name: Windows PowerShell ISE 的键盘快捷方式
-        href: components/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
-      - name: Windows PowerShell ISE 中的辅助功能
-        href: components/ise/accessibility-in-windows-powershell-ise.md
-    - name: ISE 脚本对象模块
+        - name: PowerShell.exe 命令行帮助
+          href: components/console/powershell.exe-command-line-help.md
+        - name: 使用选项卡扩展
+          href: components/console/using-tab-expansion.md
+    - name: ISE
       items:
-      - name: Windows PowerShell ISE 脚本对象模型的用途
-        href: components/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md
-      - name: ISE 对象模型层次结构
-        href: components/ise/object-model/the-ise-object-model-hierarchy.md
-      - name: ObjectModelRoot 对象
-        href: components/ise/object-model/the-objectmodelroot-object.md
-      - name: ISEAddOnToolCollection 对象
-        href: components/ise/object-model/the-iseaddontoolcollection-object.md
-      - name: ISEAddOnTool 对象
-        href: components/ise/object-model/the-iseaddontool-object.md
-      - name: ISEEditor 对象
-        href: components/ise/object-model/the-iseeditor-object.md
-      - name: ISEFileCollection 对象
-        href: components/ise/object-model/the-isefilecollection-object.md
-      - name: ISEFile 对象
-        href: components/ise/object-model/the-isefile-object.md
-      - name: ISEMenuItemCollection 对象
-        href: components/ise/object-model/the-isemenuitemcollection-object.md
-      - name: ISEMenuItem 对象
-        href: components/ise/object-model/the-isemenuitem-object.md
-      - name: ISEOptions 对象
-        href: components/ise/object-model/the-iseoptions-object.md
-      - name: ISESnippetCollection 对象
-        href: components/ise/object-model/the-isesnippetcollection-object.md
-      - name: ISESnippet 对象
-        href: components/ise/object-model/the-isesnippetobject.md
-      - name: PowerShellTabCollection 对象
-        href: components/ise/object-model/the-powershelltabcollection-object.md
-      - name: PowerShellTab 对象
-        href: components/ise/object-model/the-powershelltab-object.md
-  - name: Visual Studio Code
-    items:
-    - name: 使用 Visual Studio Code
-      href: components/vscode/using-vscode.md
-    - name: 如何复制 Visual Studio Code 中的 ISE 体验
-      href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
-    - name: 使用 Visual Studio Code 进行远程编辑和调试
-      href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
-    - name: 了解 VSCode 和 PowerShell 中的文件编码
-      href: components/vscode/understanding-file-encoding.md
-  - name: Web 访问
-    items:
-    - name: 授权规则和安全功能
-      href: components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
-    - name: 安装
-      href: components/web-access/install-and-use-windows-powershell-web-access.md
-    - name: 有关访问问题的疑难解答
-      href: components/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
-    - name: 卸载 Windows PowerShell Web 访问
-      href: components/web-access/uninstall-windows-powershell-web-access.md
-    - name: 使用基于 Web 的 PowerShell 控制台
-      href: components/web-access/use-the-web-based-windows-powershell-console.md
-  - name: 工作流指南
-    href: components/workflows-guide.md
+        - name: Windows PowerShell ISE 简介
+          href: components/ise/introducing-the-windows-powershell-ise.md
+        - name: Windows PowerShell 集成脚本环境 (ISE)
+          href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
+        - name: 使用 Windows PowerShell ISE
+          items:
+            - name: 探究 Windows PowerShell ISE
+              href: components/ise/exploring-the-windows-powershell-ise.md
+            - name: 如何在 Windows PowerShell ISE 中创建 PowerShell 选项卡
+              href: components/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
+            - name: 如何在 Windows PowerShell ISE 中调试脚本
+              href: components/ise/how-to-debug-scripts-in-windows-powershell-ise.md
+            - name: 如何在 Windows PowerShell ISE 中使用配置文件
+              href: components/ise/how-to-use-profiles-in-windows-powershell-ise.md
+            - name: 如何在脚本窗格和控制台窗格中使用 Tab 自动补全
+              href: components/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
+            - name: 如何在 Windows PowerShell ISE 中使用控制台窗格
+              href: components/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
+            - name: 如何在 Windows PowerShell ISE 中编写和运行脚本
+              href: components/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
+            - name: Windows PowerShell ISE 的键盘快捷方式
+              href: components/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
+            - name: Windows PowerShell ISE 中的辅助功能
+              href: components/ise/accessibility-in-windows-powershell-ise.md
+        - name: ISE 脚本对象模块
+          items:
+            - name: Windows PowerShell ISE 脚本对象模型的用途
+              href: components/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md
+            - name: ISE 对象模型层次结构
+              href: components/ise/object-model/the-ise-object-model-hierarchy.md
+            - name: ObjectModelRoot 对象
+              href: components/ise/object-model/the-objectmodelroot-object.md
+            - name: ISEAddOnToolCollection 对象
+              href: components/ise/object-model/the-iseaddontoolcollection-object.md
+            - name: ISEAddOnTool 对象
+              href: components/ise/object-model/the-iseaddontool-object.md
+            - name: ISEEditor 对象
+              href: components/ise/object-model/the-iseeditor-object.md
+            - name: ISEFileCollection 对象
+              href: components/ise/object-model/the-isefilecollection-object.md
+            - name: ISEFile 对象
+              href: components/ise/object-model/the-isefile-object.md
+            - name: ISEMenuItemCollection 对象
+              href: components/ise/object-model/the-isemenuitemcollection-object.md
+            - name: ISEMenuItem 对象
+              href: components/ise/object-model/the-isemenuitem-object.md
+            - name: ISEOptions 对象
+              href: components/ise/object-model/the-iseoptions-object.md
+            - name: ISESnippetCollection 对象
+              href: components/ise/object-model/the-isesnippetcollection-object.md
+            - name: ISESnippet 对象
+              href: components/ise/object-model/the-isesnippetobject.md
+            - name: PowerShellTabCollection 对象
+              href: components/ise/object-model/the-powershelltabcollection-object.md
+            - name: PowerShellTab 对象
+              href: components/ise/object-model/the-powershelltab-object.md
+    - name: Visual Studio Code
+      items:
+        - name: 使用 Visual Studio Code
+          href: components/vscode/using-vscode.md
+        - name: 如何复制 Visual Studio Code 中的 ISE 体验
+          href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
+        - name: 使用 Visual Studio Code 进行远程编辑和调试
+          href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
+        - name: 了解 VSCode 和 PowerShell 中的文件编码
+          href: components/vscode/understanding-file-encoding.md
+    - name: Web 访问
+      items:
+        - name: 授权规则和安全功能
+          href: components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
+        - name: 安装
+          href: components/web-access/install-and-use-windows-powershell-web-access.md
+        - name: 有关访问问题的疑难解答
+          href: components/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
+        - name: 卸载 Windows PowerShell Web 访问
+          href: components/web-access/uninstall-windows-powershell-web-access.md
+        - name: 使用基于 Web 的 PowerShell 控制台
+          href: components/web-access/use-the-web-based-windows-powershell-console.md
+    - name: 工作流指南
+      href: components/workflows-guide.md
 - name: 新增功能
   items:
-  - name: PowerShell Core 6.x 中的新增功能
-    items:
-    - name: PowerShell Core 6.1 中的最近更新
-      href: whats-new/what-s-new-in-powershell-core-61.md
-    - name: PowerShell Core 6.0 中的最近更新
-      href: whats-new/what-s-new-in-powershell-core-60.md
-    - name: PowerShell Core 6.0 中的重大更改
-      href: whats-new/breaking-changes-ps6.md
-    - name: PowerShell Core 6.0 中的已知问题
-      href: whats-new/known-issues-ps6.md
-  - name: PowerShell 5.x 中的新增功能
-    items:
-    - name: PowerShell 5.0 的新增功能
-      href: whats-new/what-s-new-with-powershell.md
-    - name: Windows PowerShell 5.0 中的最近更新
-      href: whats-new/what-s-new-in-windows-powershell-50.md
-    - name: PowerShell 5.0 ISE 中的最近更新
-      href: whats-new/what-s-new-in-the-powershell-50-ise.md
+    - name: PowerShell Core 6.x 中的新增功能
+      items:
+        - name: PowerShell Core 6.2 中的最近更新
+          href: whats-new/what-s-new-in-powershell-core-62.md
+        - name: PowerShell Core 6.1 中的最近更新
+          href: whats-new/what-s-new-in-powershell-core-61.md
+        - name: PowerShell Core 6.0 中的最近更新
+          href: whats-new/what-s-new-in-powershell-core-60.md
+        - name: PowerShell Core 6.0 中的重大更改
+          href: whats-new/breaking-changes-ps6.md
+        - name: PowerShell Core 6.0 中的已知问题
+          href: whats-new/known-issues-ps6.md
+    - name: PowerShell 5.x 中的新增功能
+      items:
+        - name: PowerShell 5.0 的新增功能
+          href: whats-new/what-s-new-with-powershell.md
+        - name: Windows PowerShell 5.0 中的最近更新
+          href: whats-new/what-s-new-in-windows-powershell-50.md
+        - name: PowerShell 5.0 ISE 中的最近更新
+          href: whats-new/what-s-new-in-the-powershell-50-ise.md
 - name: PowerShell Core 支持生命周期
   href: powershell-support-lifecycle.md
 - name: 示例脚本
   items:
-  - name: 管理示例脚本
-    href: samples/sample-scripts-for-administration.md
-  - name: 更改计算机状态
-    href: samples/changing-computer-state.md
-  - name: 收集有关计算机的信息
-    href: samples/collecting-information-about-computers.md
-  - name: 使用 FilterHashtable 创建 Get-WinEvent 查询
-    href: samples/creating-get-winEvent-queries-with-filterhashtable.md
-  - name: 创建 UI 元素
-    items:
-    - name: 创建自定义输入框
-      href: samples/creating-a-custom-input-box.md
-    - name: 创建图形日期选取器
-      href: samples/creating-a-graphical-date-picker.md
-    - name: 多选列表框
-      href: samples/multiple-selection-list-boxes.md
-    - name: 从列表框中选择项
-      href: samples/selecting-items-from-a-list-box.md
-  - name: 从正在运行的进程解码 PowerShell 命令
-    href: samples/decode-powershell-command-from-a-running-process.md
-  - name: 管理当前位置
-    href: samples/managing-current-location.md
-  - name: 使用 Process Cmdlet 管理进程
-    href: samples/managing-processes-with-process-cmdlets.md
-  - name: 管理服务
-    href: samples/managing-services.md
-  - name: 管理 Windows PowerShell 驱动器
-    href: samples/managing-windows-powershell-drives.md
-  - name: 直接操作项
-    href: samples/manipulating-items-directly.md
-  - name: 执行网络任务
-    href: samples/performing-networking-tasks.md
-  - name: 使用 Out-* cmdlet 重定向数据
-    href: samples/redirecting-data-with-out---cmdlets.md
-  - name: 使用格式命令更改输出视图
-    href: samples/using-format-commands-to-change-output-view.md
-  - name: 使用文件和文件夹
-    href: samples/working-with-files-and-folders.md
-  - name: 使用文件、文件夹和注册表项
-    href: samples/working-with-files-folders-and-registry-keys.md
-  - name: 使用对象
-    items:
-    - name: 获取 WMI 对象 - Get-WmiObject
-      href: samples/getting-wmi-objects--get-wmiobject-.md
-    - name: 创建 .NET 和 COM 对象 - New-Object
-      href: samples/creating-.net-and-com-objects--new-object-.md
-    - name: 从管道中删除对象 - Where-Object
-      href: samples/removing-objects-from-the-pipeline--where-object-.md
-    - name: 选择对象部件 - Select-Object
-      href: samples/selecting-parts-of-objects--select-object-.md
-    - name: 对对象进行排序
-      href: samples/sorting-objects.md
-    - name: 为多个对象重复执行任务 - ForEach-Object
-      href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
-    - name: 使用静态类和方法
-      href: samples/using-static-classes-and-methods.md
-    - name: 查看对象结构 - Get-Member
-      href: samples/viewing-object-structure--get-member-.md
-  - name: 使用打印机
-    href: samples/working-with-printers.md
-  - name: 使用注册表条目
-    href: samples/working-with-registry-entries.md
-  - name: 使用注册表项
-    href: samples/working-with-registry-keys.md
-  - name: 使用软件安装
-    href: samples/working-with-software-installations.md
-  - name: 其他有用的脚本对象
-    href: samples/other-useful-scripting-objects.md
-  - name: 附录 1 - 兼容性别名
-    href: samples/appendix-1---compatibility-aliases.md
-  - name: 附录 2 - 创建自定义 PowerShell 快捷方式
-    href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
-ms.openlocfilehash: 3894ca88d01d4f84742321445b0b1e962631c10d
-ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58920452"
+    - name: 管理示例脚本
+      href: samples/sample-scripts-for-administration.md
+    - name: 更改计算机状态
+      href: samples/changing-computer-state.md
+    - name: 收集有关计算机的信息
+      href: samples/collecting-information-about-computers.md
+    - name: 使用 FilterHashtable 创建 Get-WinEvent 查询
+      href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+    - name: 创建 UI 元素
+      items:
+        - name: 创建自定义输入框
+          href: samples/creating-a-custom-input-box.md
+        - name: 创建图形日期选取器
+          href: samples/creating-a-graphical-date-picker.md
+        - name: 多选列表框
+          href: samples/multiple-selection-list-boxes.md
+        - name: 从列表框中选择项
+          href: samples/selecting-items-from-a-list-box.md
+    - name: 从正在运行的进程解码 PowerShell 命令
+      href: samples/decode-powershell-command-from-a-running-process.md
+    - name: 管理当前位置
+      href: samples/managing-current-location.md
+    - name: 使用 Process Cmdlet 管理进程
+      href: samples/managing-processes-with-process-cmdlets.md
+    - name: 管理服务
+      href: samples/managing-services.md
+    - name: 管理 Windows PowerShell 驱动器
+      href: samples/managing-windows-powershell-drives.md
+    - name: 直接操作项
+      href: samples/manipulating-items-directly.md
+    - name: 执行网络任务
+      href: samples/performing-networking-tasks.md
+    - name: 使用 Out-* cmdlet 重定向数据
+      href: samples/redirecting-data-with-out---cmdlets.md
+    - name: 使用格式命令更改输出视图
+      href: samples/using-format-commands-to-change-output-view.md
+    - name: 使用文件和文件夹
+      href: samples/working-with-files-and-folders.md
+    - name: 使用文件、文件夹和注册表项
+      href: samples/working-with-files-folders-and-registry-keys.md
+    - name: 使用对象
+      items:
+        - name: 获取 WMI 对象 - Get-WmiObject
+          href: samples/getting-wmi-objects--get-wmiobject-.md
+        - name: 创建 .NET 和 COM 对象 - New-Object
+          href: samples/creating-.net-and-com-objects--new-object-.md
+        - name: 从管道中删除对象 - Where-Object
+          href: samples/removing-objects-from-the-pipeline--where-object-.md
+        - name: 选择对象部件 - Select-Object
+          href: samples/selecting-parts-of-objects--select-object-.md
+        - name: 对对象进行排序
+          href: samples/sorting-objects.md
+        - name: 为多个对象重复执行任务 - ForEach-Object
+          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
+        - name: 使用静态类和方法
+          href: samples/using-static-classes-and-methods.md
+        - name: 查看对象结构 - Get-Member
+          href: samples/viewing-object-structure--get-member-.md
+    - name: 使用打印机
+      href: samples/working-with-printers.md
+    - name: 使用注册表条目
+      href: samples/working-with-registry-entries.md
+    - name: 使用注册表项
+      href: samples/working-with-registry-keys.md
+    - name: 使用软件安装
+      href: samples/working-with-software-installations.md
+    - name: 其他有用的脚本对象
+      href: samples/other-useful-scripting-objects.md
+    - name: 附录 1 - 兼容性别名
+      href: samples/appendix-1---compatibility-aliases.md
+    - name: 附录 2 - 创建自定义 PowerShell 快捷方式
+      href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
