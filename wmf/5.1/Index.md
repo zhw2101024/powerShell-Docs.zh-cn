@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,安装程序
 title: WMF 5.1 发行说明
 ms.openlocfilehash: dd68f101e6f21256f966f7472dabc273a475a25e
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795328"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057275"
 ---
 # <a name="windows-management-framework-wmf-51"></a>Windows Management Framework (WMF) 5.1
 
