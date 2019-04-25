@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
 ms.openlocfilehash: 0d3a87f3a9c3409656ea7f7263723436e1f9d48f
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892794"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057319"
 ---
 # <a name="installation-of-module-dependencies"></a>模块依赖项的安装
 

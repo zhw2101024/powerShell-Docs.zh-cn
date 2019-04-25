@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: DSC ProcessSet 资源
 ms.openlocfilehash: 91a2d5b562864addcb8e11062916d291448bbf57
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047056"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077103"
 ---
 # <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess 资源
 

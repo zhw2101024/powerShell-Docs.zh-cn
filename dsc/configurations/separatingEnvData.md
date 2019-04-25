@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 分离配置和环境数据
 ms.openlocfilehash: 305a766fec81d4ea4afce187756188b067a2048b
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080027"
 ---
 # <a name="separating-configuration-and-environment-data"></a>分离配置和环境数据
 

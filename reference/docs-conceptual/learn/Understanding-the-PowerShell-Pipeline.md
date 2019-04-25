@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: 了解 PowerShell 管道
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
 ms.openlocfilehash: 05ab98b7261f4d41ade1788a924193eccda6318c
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623953"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086436"
 ---
 # <a name="understanding-pipelines"></a>了解管道
 

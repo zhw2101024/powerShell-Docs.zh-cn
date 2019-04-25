@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: 使用 Out Cmdlet 重定向数据
 ms.assetid: 2a4acd33-041d-43a5-a3e9-9608a4c52b0c
 ms.openlocfilehash: 7c601b09cc53524eb55014b8ea19a5d79cb98b0e
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293293"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086147"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a>使用 Out-* Cmdlet 重定向数据
 

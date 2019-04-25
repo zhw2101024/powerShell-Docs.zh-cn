@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: 5e17b0a78f6e860c6144d2e81c426bb26126a85f
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: f655cd7aa9b14bd38924d55c8f1246b55ef83756
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222445"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085841"
 ---
 # <a name="enhanced-transcription-options"></a>增强的脚本选项
 

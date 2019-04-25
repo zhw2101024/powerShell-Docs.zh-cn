@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: 了解重要的 PowerShell 概念
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
 ms.openlocfilehash: fad64563d1a7a6abd4f0e430331f81f91f43d312
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400364"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058584"
 ---
 # <a name="understanding-important-powershell-concepts"></a>了解重要的 PowerShell 概念
 

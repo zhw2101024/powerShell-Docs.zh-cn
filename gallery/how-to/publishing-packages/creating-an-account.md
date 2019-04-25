@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 title: 创建 PowerShell 库帐户
 ms.openlocfilehash: e4cf73edb03267cff6bbcc0cf3b754225e45be9f
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003671"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084196"
 ---
 # <a name="creating-a-powershell-gallery-account"></a>创建 PowerShell 库帐户
 

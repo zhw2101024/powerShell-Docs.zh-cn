@@ -3,11 +3,11 @@ title: PowerShell Core 支持生命周期
 description: 用于管理 PowerShell Core 支持的策略
 ms.date: 08/06/2018
 ms.openlocfilehash: 178e5c43520f9a392ca219b9f785eb18b1ec5436
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623852"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086950"
 ---
 # <a name="powershell-core-support-lifecycle"></a>PowerShell Core 支持生命周期
 

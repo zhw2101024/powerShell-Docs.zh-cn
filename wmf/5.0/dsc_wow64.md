@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: d8ff24b0aba55e1ef964ee05db14b2fddadafdf0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 5d0065fb3d65c5ccc520bcabc76f0e23d4265818
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222011"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058040"
 ---
 # <a name="wow64-support-for-configuration-keyword"></a>对 Configuration 关键字的 WOW64 支持
 

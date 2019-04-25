@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 适用于 Linux 的 Desired State Configuration (DSC) 入门
 ms.openlocfilehash: a18b226d4b2d8b8e1ba8b4168ec6ad8f73c73c42
-ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59506829"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079684"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>适用于 Linux 的 Desired State Configuration (DSC) 入门
 
@@ -129,7 +129,7 @@ $Sess=New-CimSession -Credential $credential -ComputerName $Node -Port 5986 -Aut
 > 对于“推送”模式，用户凭据必须是 Linux 计算机上的根用户。
 > 适用于 Linux 的 DSC 仅支持 SSL/TLS 连接，使用 `New-CimSession` 时必须将 –UseSSL 参数设置为 $true。
 > 在 `/opt/omi/etc/omiserver.conf` 文件中通过 pemfile 和 keyfile 属性指定（DSC 的）OMI 使用的 SSL 证书。
-> 如果正在运行 [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) cmdlet 的 Windows 计算机不信任此证书，你可以通过以下 CIMSession 选项选择忽略证书验证： `-SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true`
+> 如果 [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) cmdlet 运行于的 Windows 计算机不信任此证书，你可以通过以下 CIMSession 选项选择忽略证书验证：`-SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true`。
 
 运行以下命令以将 DSC 配置推送到 Linux 节点。
 
@@ -185,5 +185,5 @@ $Sess=New-CimSession -Credential $credential -ComputerName $Node -Port 5986 -Aut
 
 |日志文件|Directory|说明|
 |---|---|---|
-|**omiserver.log**|`/var/opt/omi/log`|与 OMI CIM 服务器操作相关的消息。|
-|**dsc.log**|`/var/opt/omi/log`|与本地配置管理器 (LCM) 操作和 DSC 资源操作相关的消息。|
+|omiserver.log|`/var/opt/omi/log`|与 OMI CIM 服务器操作相关的消息。|
+|dsc.log|`/var/opt/omi/log`|与本地配置管理器 (LCM) 操作和 DSC 资源操作相关的消息。|

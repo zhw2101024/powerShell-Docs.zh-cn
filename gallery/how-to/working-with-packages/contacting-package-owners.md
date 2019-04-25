@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 title: 与包所有者联系
 ms.openlocfilehash: 1adb0cfefc9e9c3f447e7345eaf0b088a04a452b
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084056"
 ---
 # <a name="contacting-package-owners"></a>与包所有者联系
 

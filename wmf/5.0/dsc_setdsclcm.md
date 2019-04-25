@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: b8c3cbc056bb085e8319637571e7a2ce5cd77685
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: f30f43265d9daa47383e42f0f8abf4844365ea6d
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187055"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057938"
 ---
 # <a name="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter"></a>Set-DscLocalConfigurationManager cmdlet 支持 -force 参数
 

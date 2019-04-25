@@ -3,11 +3,11 @@ title: 在 Linux 上安装 PowerShell Core
 description: 介绍如何在各种 Linux 分发上安装 PowerShell Core
 ms.date: 08/06/2018
 ms.openlocfilehash: 06194550f4e73f9dd38f8cdc25f6c7f698cafce2
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293327"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086555"
 ---
 # <a name="installing-powershell-core-on-linux"></a>在 Linux 上安装 PowerShell Core
 
@@ -75,8 +75,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1404"></a>通过直接下载进行安装 - Ubuntu 14.04
 
-下载 Debian 包
-`powershell_6.2.0-1.ubuntu.14.04_amd64.deb`
+从以下位置将 Debian 包 `powershell_6.2.0-1.ubuntu.14.04_amd64.deb` 下载到 Debian 计算机：
 [版本][]页。
 
 然后在终端中执行以下命令：
@@ -124,8 +123,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>通过 Direct Download 的安装 - Ubuntu 16.04
 
-下载 Debian 包
-`powershell_6.2.0-1.ubuntu.16.04_amd64.deb`
+从以下位置将 Debian 包 `powershell_6.2.0-1.ubuntu.16.04_amd64.deb` 下载到 Debian 计算机：
 [版本][]页。
 
 然后在终端中执行以下命令：
@@ -176,8 +174,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>通过直接下载安装 - Ubuntu 18.04
 
-下载 Debian 包
-`powershell_6.2.0-1.ubuntu.18.04_amd64.deb`
+从以下位置将 Debian 包 `powershell_6.2.0-1.ubuntu.18.04_amd64.deb` 下载到 Debian 计算机：
 [版本][]页。
 
 然后在终端中执行以下命令：
@@ -266,8 +263,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---debian-9"></a>通过直接下载进行安装 - Debian 9
 
-下载 Debian 包
-`powershell_6.2.0-1.debian.9_amd64.deb`
+从以下位置将 Debian 包 `powershell_6.2.0-1.debian.9_amd64.deb` 下载到 Debian 计算机：
 [版本][]页。
 
 然后在终端中执行以下命令：
@@ -307,8 +303,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---centos-7"></a>通过直接下载进行安装 - CentOS 7
 
-使用 [CentOS 7][] 下载 RPM 包
-`powershell-6.2.0-1.rhel.7.x86_64.rpm`
+使用 [CentOS 7][] 从以下位置将 RPM 包 `powershell-6.2.0-1.rhel.7.x86_64.rpm` 下载到 CentOS 计算机：
 [版本][]页。
 
 然后在终端中执行以下命令：
@@ -352,8 +347,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>通过直接下载进行安装 - Red Hat Enterprise Linux (RHEL) 7
 
-下载 RPM 包
-`powershell-6.2.0-1.rhel.7.x86_64.rpm`
+从以下位置将 RPM 包 `powershell-6.2.0-1.rhel.7.x86_64.rpm` 下载到 Fedora 计算机：
 [版本][]页。
 
 然后在终端中执行以下命令：
@@ -463,8 +457,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>通过直接下载进行安装 - Fedora 27、Fedora 28
 
-下载 RPM 包
-`powershell-6.2.0-1.rhel.7.x86_64.rpm`
+从以下位置将 RPM 包 `powershell-6.2.0-1.rhel.7.x86_64.rpm` 下载到 Fedora 计算机：
 [版本][]页。
 
 然后在终端中执行以下命令：
@@ -511,7 +504,7 @@ AUR 中的包由社区维护，并无正式支持。
 
 ### <a name="getting-snapd"></a>获取 snapd
 
-`snapd` 运行 Snap 的必备条件。
+需具备 `snapd` 才能运行 Snap。
 按照[这些说明](https://docs.snapcraft.io/core/install)确保你已安装 `snapd`。
 
 ### <a name="installation-via-snap"></a>通过 Snap 进行安装
@@ -688,11 +681,11 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ## <a name="paths"></a>路径
 
 * `$PSHOME` 是 `/opt/microsoft/powershell/6.2.0/`
-* 将从以下位置读取用户配置文件 `~/.config/powershell/profile.ps1`
-* 将从以下位置读取默认配置文件 `$PSHOME/profile.ps1`
-* 将从以下位置读取用户模块 `~/.local/share/powershell/Modules`
-* 将从以下位置读取共享模块 `/usr/local/share/powershell/Modules`
-* 将从以下位置读取默认模块 `$PSHOME/Modules`
+* 将从 `~/.config/powershell/profile.ps1` 中读取用户配置文件
+* 将从 `$PSHOME/profile.ps1` 中读取默认配置文件
+* 将从 `~/.local/share/powershell/Modules` 中读取用户模块
+* 将从 `/usr/local/share/powershell/Modules` 中读取共享模块
+* 将从 `$PSHOME/Modules` 中读取默认模块
 * PSReadline 历史记录将记录到 `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 配置文件采用 PowerShell 的每个主机配置，所以默认主机特定配置文件位于相同位置下的 `Microsoft.PowerShell_profile.ps1` 中。

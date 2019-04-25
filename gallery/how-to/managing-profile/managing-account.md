@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 title: PowerShell 库帐户设置
 ms.openlocfilehash: ebe784ec5aae5ff3a4d444d12a168ef38aaef65f
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002780"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084424"
 ---
 # <a name="powershell-gallery-account-settings"></a>PowerShell 库帐户设置
 

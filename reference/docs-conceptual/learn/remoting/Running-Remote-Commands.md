@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: 运行远程命令
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
 ms.openlocfilehash: 2001b5509acde6ec4259bb1442944958a67aa66f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401006"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058907"
 ---
 # <a name="running-remote-commands"></a>运行远程命令
 

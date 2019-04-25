@@ -3,11 +3,11 @@ title: 通过 SSH 进行 PowerShell 远程处理
 description: 在 PowerShell Core 中使用 SSH 进行远程处理
 ms.date: 08/14/2018
 ms.openlocfilehash: 1d7bcb69c7e784bf745cb5c2633106ea53f6226a
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58056526"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086385"
 ---
 # <a name="powershell-remoting-over-ssh"></a>通过 SSH 进行 PowerShell 远程处理
 

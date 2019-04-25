@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 适用于 Linux 的 DSC nxScript 资源
 ms.openlocfilehash: 339968512ab1c16c4c3785a3a19b00c3fbbf9ea1
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047138"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077817"
 ---
 # <a name="dsc-for-linux-nxscript-resource"></a>适用于 Linux 的 DSC nxScript 资源
 

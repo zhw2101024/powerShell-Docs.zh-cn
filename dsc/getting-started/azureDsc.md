@@ -3,11 +3,11 @@ ms.date: 03/15/2018
 keywords: dsc,powershell,配置,安装程序
 title: 在 Microsoft Azure 上使用 DSC
 ms.openlocfilehash: 54a317a415ff12c3d270897f414cba88716f0728
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400360"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079874"
 ---
 # <a name="using-dsc-on-microsoft-azure"></a>在 Microsoft Azure 上使用 DSC
 

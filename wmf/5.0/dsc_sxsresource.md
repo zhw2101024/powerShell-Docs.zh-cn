@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: 0543afbc72148b1ba713e59655126c069b16ef33
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 5b31fe833fb0f9d0f3f2733e777e4608a697d583
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218427"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057909"
 ---
 # <a name="side-by-side-module-versioning-support-for-dsc-resources"></a>对 DSC 资源的并行模块版本控制支持
 

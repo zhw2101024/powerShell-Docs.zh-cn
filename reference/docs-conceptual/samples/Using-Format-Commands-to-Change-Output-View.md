@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: 使用格式命令更改输出视图
 ms.assetid: 63515a06-a6f7-4175-a45e-a0537f4f6d05
 ms.openlocfilehash: fba37b1d0479bf605d8f2171da27cd1bceb9976e
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293038"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058261"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>使用格式命令更改输出视图
 

@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: 83a8e7a31284a5112fb0f2c5a2f712d31fbe83d7
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3c6a409a53ee88528a2109d8b007663d7fcc5288
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225702"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057864"
 ---
 # <a name="configure-dsc-lcm-with-new-meta-configuration-attribute"></a>使用新的元配置特性配置 DSC LCM
 

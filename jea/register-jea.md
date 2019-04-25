@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: 注册 JEA 配置
 ms.openlocfilehash: 6fa0ce434c8e70eb718545e99417bfe034cda6bf
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58059433"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084821"
 ---
 # <a name="registering-jea-configurations"></a>注册 JEA 配置
 

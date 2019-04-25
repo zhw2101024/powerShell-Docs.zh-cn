@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: 11b5e36f703c242e0bc820ab19d11d39305fa90c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 61c5df1b64cb9c54f9c7372a56e77abf319658dd
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187905"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085111"
 ---
 # <a name="network-switch-management-with-powershell"></a>PowerShell 网络交换机管理
 

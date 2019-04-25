@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: 收集有关计算机的信息
 ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
 ms.openlocfilehash: d837684108656e17ebf26189bd4841c5de01051c
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293157"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058329"
 ---
 # <a name="collecting-information-about-computers"></a>收集有关计算机的信息
 

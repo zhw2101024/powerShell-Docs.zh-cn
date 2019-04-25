@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: JEA 审核和报告
 ms.openlocfilehash: 2388c735840d8d3683aa8bc9869b9fb0371e5902
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084073"
 ---
 # <a name="auditing-and-reporting-on-jea"></a>JEA 审核和报告
 

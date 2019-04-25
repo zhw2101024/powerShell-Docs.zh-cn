@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: Windows PowerShell 入门
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
 ms.openlocfilehash: 8a158427d319e43ec011898fe4e1826d48d5b951
-ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52320833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086572"
 ---
 # <a name="getting-started-with-windows-powershell"></a>Windows PowerShell 入门
 Windows PowerShell 是专门为系统管理员设计的 Windows 命令行 Shell。 Windows PowerShell 包括可以单独或组合使用的交互提示和脚本编写环境。

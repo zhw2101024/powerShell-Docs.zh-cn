@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: 如何在 Windows PowerShell ISE 中使用配置文件
 ms.assetid: 0219626a-6da5-4acc-b630-d058e8b29cc6
 ms.openlocfilehash: b319aa089c2a4a7008acd9850f15342dac70aee2
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400805"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057509"
 ---
 # <a name="how-to-use-profiles-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中使用配置文件
 

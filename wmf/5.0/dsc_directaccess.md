@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: 8149c8b107592c0557389f8ef3414c7d2183e586
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 72a28844f70333ecdb0846d86e27a4ff63999d34
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058159"
 ---
 # <a name="direct-access-to-dsc-resource-methods"></a>直接访问 DSC 资源方法
 

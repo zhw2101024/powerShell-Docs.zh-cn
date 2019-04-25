@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: 如何在 Windows PowerShell ISE 中创建 PowerShell 选项卡
 ms.assetid: c10c18c7-9ece-4fd0-83dc-a19c53d4fd83
 ms.openlocfilehash: 080fe89bf1443f51460589b445431913fa20b4b8
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400396"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057734"
 ---
 # <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中创建 PowerShell 选项卡
 

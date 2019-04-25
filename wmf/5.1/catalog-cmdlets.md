@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,安装程序
 title: 目录 cmdlet
 ms.openlocfilehash: ec5fc866fe27a894b23b93d3ea46ad9c0cba288e
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522882"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057593"
 ---
 # <a name="catalog-cmdlets"></a>目录 Cmdlet
 

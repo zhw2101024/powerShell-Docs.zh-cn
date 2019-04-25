@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 title: 创建和发布项
 ms.openlocfilehash: 0e0f871b5d43508735e396224fdfd1a29b1e91c0
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58055472"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084124"
 ---
 # <a name="creating-and-publishing-an-item"></a>创建和发布项
 

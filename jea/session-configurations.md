@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: JEA 会话配置
 ms.openlocfilehash: b98726ea7ed3aabdfd05034c3b70118e327160cd
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58056578"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62059060"
 ---
 # <a name="jea-session-configurations"></a>JEA 会话配置
 

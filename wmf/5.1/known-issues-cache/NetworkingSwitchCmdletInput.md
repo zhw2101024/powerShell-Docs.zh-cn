@@ -5,11 +5,11 @@ ms.topic: conceptual
 contributor: vaibch
 title: 网络交换机管理器 cmdlet 失败
 ms.openlocfilehash: a0f84c35974b6674faba4b0f19a28bd6e2490a96
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893148"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084974"
 ---
 # <a name="network-switch-manager-cmdlets-failure"></a>网络交换机管理器 Cmdlet 失败
 

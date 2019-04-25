@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
 ms.openlocfilehash: fcf2adf67f36edb534df3e2a849459fb20e1c2de
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892340"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085345"
 ---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a>提取和分析字符串外的结构化对象
 
@@ -31,8 +31,8 @@ ms.locfileid: "37892340"
 ```
 
 ```output
-P1     P2
---     --
+P1     P2
+--     --
 Hello  World
 ```
 
@@ -41,49 +41,49 @@ Hello  World
 首先，请考虑基于文本的通讯簿：
 
 ```
-    Ana Trujillo
+    Ana Trujillo
 
-    Redmond, WA
+    Redmond, WA
 
-    Antonio Moreno
+    Antonio Moreno
 
-    Renton, WA
+    Renton, WA
 
-    Thomas Hardy
+    Thomas Hardy
 
-    Seattle, WA
+    Seattle, WA
 
-    Christina Berglund
+    Christina Berglund
 
-    Redmond, WA
+    Redmond, WA
 
-    Hanna Moos
+    Hanna Moos
 
-    Puyallup, WA
+    Puyallup, WA
 ```
 
 将几个示例复制到一个文件，将该文件用作模板：
 
 ```
-    Ana Trujillo
+    Ana Trujillo
 
-    Redmond, WA
+    Redmond, WA
 
-    Antonio Moreno
+    Antonio Moreno
 
-    Renton, WA
+    Renton, WA
 ```
 
 为你想要提取的数据添加大括号，同时为其命名。 由于 **Name** 属性（及其关联的其他属性）可能多次出现，因此请使用星号 (\*) 来表示这会导致出现多个记录（而不是将多个属性提取到单个记录中）：
 
 ```
-    {Name\*:Ana Trujillo}
+    {Name\*:Ana Trujillo}
 
-    {City:Redmond}, {State:WA}
+    {City:Redmond}, {State:WA}
 
-    {Name\*:Antonio Moreno}
+    {Name\*:Antonio Moreno}
 
-    {City:Renton}, {State:WA}
+    {City:Renton}, {State:WA}
 ```
 
 由这组示例可知，`ConvertFrom-String` 现在可以从具有类似结构的输入文件中自动提取基于对象的输出。
@@ -93,13 +93,13 @@ Get-Content .\addresses.output.txt | ConvertFrom-String -TemplateFile .\addresse
 ```
 
 ```output
-ExtentText                     Name               City     State
-----------                     ----               ----     -----
-Ana Trujillo...                Ana Trujillo       Redmond  WA
-Antonio Moreno...              Antonio Moreno     Renton   WA
-Thomas Hardy...                Thomas Hardy       Seattle  WA
-Christina Berglund...          Christina Berglund Redmond  WA
-Hanna Moos...                  Hanna Moos         Puyallup WA
+ExtentText                     Name               City     State
+----------                     ----               ----     -----
+Ana Trujillo...                Ana Trujillo       Redmond  WA
+Antonio Moreno...              Antonio Moreno     Renton   WA
+Thomas Hardy...                Thomas Hardy       Seattle  WA
+Christina Berglund...          Christina Berglund Redmond  WA
+Hanna Moos...                  Hanna Moos         Puyallup WA
 ```
 
 为了对提取的文本进行其他数据操作，则 **ExtentText** 属性将捕获从中提取记录的原始文本。 若要对于此功能给出反馈，或告诉我们无法为其编写示例的内容，请发送电子邮件至 <psdmfb@microsoft.com>。

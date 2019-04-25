@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 在 PowerShell 5.0 及更高版本中使用配置名称设置请求客户端
 ms.openlocfilehash: d591e2a757130ccecaf4eaf9f363f607fca82b93
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58058176"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079381"
 ---
 # <a name="set-up-a-pull-client-using-configuration-names-in-powershell-50-and-later"></a>在 PowerShell 5.0 及更高版本中使用配置名称设置请求客户端
 

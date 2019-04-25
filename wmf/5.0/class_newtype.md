@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
 ms.openlocfilehash: a96a4a58dafa01fb43f5bdffb52ef833816148e7
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587289"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058363"
 ---
 # <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 中的新语言功能
 

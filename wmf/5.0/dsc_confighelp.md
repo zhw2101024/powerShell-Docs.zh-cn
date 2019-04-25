@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: ae693513ec854d766d3dcb1ea8c285963c3aa4ac
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e3a6b31db588cce5d76094f5ed0996bd1e87ab69
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34186970"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085620"
 ---
 # <a name="help-support-for-dsc-configurations"></a>DSC 配置的帮助支持
 

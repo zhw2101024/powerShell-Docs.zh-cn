@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: 9efc640dfda7e08e59d2c56746facd9658b1f9de
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a0b1573611c5d4232082c19ca19b4cca79d0699e
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222167"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057462"
 ---
 # <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a>使用 PowerShellGet 进行 PowerShell 模块发现、安装和盘存
 

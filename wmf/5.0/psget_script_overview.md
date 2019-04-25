@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: 7667aebb6545ae8dde5d94baee4a663f1d26c167
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3c1fcf94174b99490b19963662ef1ccdf6cebfec
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085059"
 ---
 # <a name="powershell-script-discovery-install-and-management-with-powershellget"></a>使用 PowerShellGet 进行 PowerShell 脚本发现、安装和管理
 

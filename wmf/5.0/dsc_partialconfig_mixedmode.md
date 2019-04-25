@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: e2921ffc9dcf4b3a238897451708b46a36f66db1
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 2edf6ce6705738a0e544c2caf8b74f00064c21f2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218019"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058890"
 ---
 # <a name="support-for-mixed-refreshmode"></a>对混合 RefreshMode 的支持
 

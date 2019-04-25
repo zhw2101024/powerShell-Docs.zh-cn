@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
 ms.openlocfilehash: 3acd266a75bc61ffe4bce467cfb804ac7865c629
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39267916"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057241"
 ---
 # <a name="creating-and-connecting-to-a-jea-endpoint"></a>创建并连接到 JEA 终结点
 
@@ -150,5 +150,4 @@ Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfi
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
 
-如果已连接到 JEA 会话，运行你有权访问的列在允许列表中的“角色功能”将会受限。
- 如果尝试运行任何不允许你的角色运行的命令，将会遇到错误。
+如果已连接到 JEA 会话，运行你有权访问的列在允许列表中的“角色功能”将会受限。 如果尝试运行任何不允许你的角色运行的命令，将会遇到错误。

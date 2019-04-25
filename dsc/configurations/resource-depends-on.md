@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,配置,安装程序
 title: 使用 DependsOn 的资源依赖项
 ms.openlocfilehash: 5ea08c76c203188f41513ad0cc1f4571579b4172
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58055693"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080061"
 ---
 # <a name="resource-dependencies-using-dependson"></a>使用 DependsOn 的资源依赖项
 

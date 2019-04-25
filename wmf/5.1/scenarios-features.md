@@ -4,19 +4,19 @@ ms.topic: conceptual
 keywords: wmf,powershell,安装程序
 title: WMF 5.1 中的新方案和功能
 ms.openlocfilehash: b00069aad7422f86d1462a62a6c4bc8a91e46705
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677207"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085412"
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>WMF 5.1 中的新方案和功能
 
-> 注意：此信息是预发布版本，可能会进行更改。
+> 注意：该信息是预发布版本，可能会进行更改。
 
 ## <a name="powershell-editions"></a>PowerShell 版本
 
-从 5.1 版本开始，PowerShell 在具有不同功能集和平台兼容性的不同版本中可用。
+从版本 5.1 开始，PowerShell 以表现出不同功能集和平台兼容性的不同版本提供。
 
 - **桌面版：** 以 .NET Framework 为基础构建，提供与面向在完整功能 Windows 版本（如服务器核心和 Windows 桌面）上运行的 PowerShell 版本的脚本和模块的兼容性。
 - **核心版：** 以 .NET Core 为基础构建，提供与面向在缩减功能 Windows 版本（如 Nano Server 和 Windows IoT）上运行的 PowerShell 版本的脚本和模块的兼容性。

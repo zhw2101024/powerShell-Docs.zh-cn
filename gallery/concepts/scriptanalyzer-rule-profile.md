@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 title: 库的 ScriptAnazlyer 规则配置文件
 ms.openlocfilehash: 939f01dece56b283dbe6e03c888f42ff866707af
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58059586"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084583"
 ---
 # <a name="scriptanalyzer-rule-profile-for-gallery"></a>库的 ScriptAnazlyer 规则配置文件
 
