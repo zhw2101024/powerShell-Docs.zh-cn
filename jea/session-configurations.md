@@ -3,77 +3,77 @@ ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: JEA 会话配置
 ms.openlocfilehash: b98726ea7ed3aabdfd05034c3b70118e327160cd
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58056578"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62059060"
 ---
-# <a name="jea-session-configurations"></a><span data-ttu-id="ca951-103">JEA 会话配置</span><span class="sxs-lookup"><span data-stu-id="ca951-103">JEA Session Configurations</span></span>
+# <a name="jea-session-configurations"></a><span data-ttu-id="bb577-103">JEA 会话配置</span><span class="sxs-lookup"><span data-stu-id="bb577-103">JEA Session Configurations</span></span>
 
-> <span data-ttu-id="ca951-104">适用于：Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="ca951-104">Applies to: Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="bb577-104">适用于：Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="bb577-104">Applies to: Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="ca951-105">JEA 终结点通过在系统上采用特定方式创建和注册 PowerShell 会话配置文件进行注册。</span><span class="sxs-lookup"><span data-stu-id="ca951-105">A JEA endpoint is registered on a system by creating and registering a PowerShell session configuration file in a specific way.</span></span>
-<span data-ttu-id="ca951-106">会话配置确定可使用 JEA 终结点的*人员*及其有权访问的角色。</span><span class="sxs-lookup"><span data-stu-id="ca951-106">Session configurations determine *who* can use the JEA endpoint, and which role(s) they will have access to.</span></span>
-<span data-ttu-id="ca951-107">它们还定义一些全局设置，这些设置应用于 JEA 会话中任何角色的用户。</span><span class="sxs-lookup"><span data-stu-id="ca951-107">They also define global settings that apply to users of any role in the JEA session.</span></span>
+<span data-ttu-id="bb577-105">JEA 终结点通过在系统上采用特定方式创建和注册 PowerShell 会话配置文件进行注册。</span><span class="sxs-lookup"><span data-stu-id="bb577-105">A JEA endpoint is registered on a system by creating and registering a PowerShell session configuration file in a specific way.</span></span>
+<span data-ttu-id="bb577-106">会话配置确定可使用 JEA 终结点的*人员*及其有权访问的角色。</span><span class="sxs-lookup"><span data-stu-id="bb577-106">Session configurations determine *who* can use the JEA endpoint, and which role(s) they will have access to.</span></span>
+<span data-ttu-id="bb577-107">它们还定义一些全局设置，这些设置应用于 JEA 会话中任何角色的用户。</span><span class="sxs-lookup"><span data-stu-id="bb577-107">They also define global settings that apply to users of any role in the JEA session.</span></span>
 
-<span data-ttu-id="ca951-108">本主题介绍如何创建 PowerShell 会话配置文件和注册 JEA 终结点。</span><span class="sxs-lookup"><span data-stu-id="ca951-108">This topic describes how to create a PowerShell session configuration file and register a JEA endpoint.</span></span>
+<span data-ttu-id="bb577-108">本主题介绍如何创建 PowerShell 会话配置文件和注册 JEA 终结点。</span><span class="sxs-lookup"><span data-stu-id="bb577-108">This topic describes how to create a PowerShell session configuration file and register a JEA endpoint.</span></span>
 
-## <a name="create-a-session-configuration-file"></a><span data-ttu-id="ca951-109">创建会话配置文件</span><span class="sxs-lookup"><span data-stu-id="ca951-109">Create a session configuration file</span></span>
+## <a name="create-a-session-configuration-file"></a><span data-ttu-id="bb577-109">创建会话配置文件</span><span class="sxs-lookup"><span data-stu-id="bb577-109">Create a session configuration file</span></span>
 
-<span data-ttu-id="ca951-110">若要注册 JEA 终结点，需要指定该终结点的配置方式。</span><span class="sxs-lookup"><span data-stu-id="ca951-110">In order to register a JEA endpoint, you need to specify how that endpoint should be configured.</span></span>
-<span data-ttu-id="ca951-111">此处需考虑很多事项：最重要的是谁应具有访问 JEA 终结点的权限，其将分配有哪些角色，JEA 实际将使用哪个标识，以及 JEA 终结点将采用哪个名称。</span><span class="sxs-lookup"><span data-stu-id="ca951-111">There are many options to consider here, the most important of which being who should have access to the JEA endpoint, which roles will they be assigned, which identity will JEA use under the covers, and what will be the name of the JEA endpoint.</span></span>
-<span data-ttu-id="ca951-112">这些均可在 PowerShell 会话配置文件中定义，该文件是以 .pssc 扩展名结尾的 PowerShell 数据文件。</span><span class="sxs-lookup"><span data-stu-id="ca951-112">These are all defined in a PowerShell session configuration file, which is a PowerShell data file ending with a .pssc extension.</span></span>
+<span data-ttu-id="bb577-110">若要注册 JEA 终结点，需要指定该终结点的配置方式。</span><span class="sxs-lookup"><span data-stu-id="bb577-110">In order to register a JEA endpoint, you need to specify how that endpoint should be configured.</span></span>
+<span data-ttu-id="bb577-111">此处需考虑很多事项：最重要的是谁应具有访问 JEA 终结点的权限，其将分配有哪些角色，JEA 实际将使用哪个标识，以及 JEA 终结点将采用哪个名称。</span><span class="sxs-lookup"><span data-stu-id="bb577-111">There are many options to consider here, the most important of which being who should have access to the JEA endpoint, which roles will they be assigned, which identity will JEA use under the covers, and what will be the name of the JEA endpoint.</span></span>
+<span data-ttu-id="bb577-112">这些均可在 PowerShell 会话配置文件中定义，该文件是以 .pssc 扩展名结尾的 PowerShell 数据文件。</span><span class="sxs-lookup"><span data-stu-id="bb577-112">These are all defined in a PowerShell session configuration file, which is a PowerShell data file ending with a .pssc extension.</span></span>
 
-<span data-ttu-id="ca951-113">若要创建 JEA 终结点的主干会话配置文件，请运行以下命令。</span><span class="sxs-lookup"><span data-stu-id="ca951-113">To create a skeleton session configuration file for JEA endpoints, run the following command.</span></span>
+<span data-ttu-id="bb577-113">若要创建 JEA 终结点的主干会话配置文件，请运行以下命令。</span><span class="sxs-lookup"><span data-stu-id="bb577-113">To create a skeleton session configuration file for JEA endpoints, run the following command.</span></span>
 
 ```powershell
 New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEAEndpoint.pssc
 ```
 
 > [!TIP]
-> <span data-ttu-id="ca951-114">默认情况下，主干文件仅包含最常用的配置选项。</span><span class="sxs-lookup"><span data-stu-id="ca951-114">Only the most common configuration options are included in the skeleton file by default.</span></span>
-> <span data-ttu-id="ca951-115">使用 `-Full` 切换，在生成的 PSSC 中包含所有适用设置。</span><span class="sxs-lookup"><span data-stu-id="ca951-115">Use the `-Full` switch to include all applicable settings in the generated PSSC.</span></span>
+> <span data-ttu-id="bb577-114">默认情况下，主干文件仅包含最常用的配置选项。</span><span class="sxs-lookup"><span data-stu-id="bb577-114">Only the most common configuration options are included in the skeleton file by default.</span></span>
+> <span data-ttu-id="bb577-115">使用 `-Full` 切换，在生成的 PSSC 中包含所有适用设置。</span><span class="sxs-lookup"><span data-stu-id="bb577-115">Use the `-Full` switch to include all applicable settings in the generated PSSC.</span></span>
 
-<span data-ttu-id="ca951-116">可在任意文本编辑器中打开会话配置文件。</span><span class="sxs-lookup"><span data-stu-id="ca951-116">You can open the session configuration file in any text editor.</span></span>
-<span data-ttu-id="ca951-117">`-SessionType RestrictedRemoteServer` 字段指示 JEA 将使用该会话配置进行安全管理。</span><span class="sxs-lookup"><span data-stu-id="ca951-117">The `-SessionType RestrictedRemoteServer` field indicates that the session configuration will be used by JEA for secure management.</span></span>
-<span data-ttu-id="ca951-118">通过此方式配置的会话将在 [NoLanguage 模式](https://technet.microsoft.com/library/dn433292.aspx)下运行，并且只包含以下 8 个默认命令（和别名）：</span><span class="sxs-lookup"><span data-stu-id="ca951-118">Sessions configured this way will operate in [NoLanguage mode](https://technet.microsoft.com/library/dn433292.aspx) and only have the following 8 default commands (and aliases) available:</span></span>
+<span data-ttu-id="bb577-116">可在任意文本编辑器中打开会话配置文件。</span><span class="sxs-lookup"><span data-stu-id="bb577-116">You can open the session configuration file in any text editor.</span></span>
+<span data-ttu-id="bb577-117">`-SessionType RestrictedRemoteServer` 字段指示 JEA 将使用该会话配置进行安全管理。</span><span class="sxs-lookup"><span data-stu-id="bb577-117">The `-SessionType RestrictedRemoteServer` field indicates that the session configuration will be used by JEA for secure management.</span></span>
+<span data-ttu-id="bb577-118">通过此方式配置的会话将在 [NoLanguage 模式](https://technet.microsoft.com/library/dn433292.aspx)下运行，并且只包含以下 8 个默认命令（和别名）：</span><span class="sxs-lookup"><span data-stu-id="bb577-118">Sessions configured this way will operate in [NoLanguage mode](https://technet.microsoft.com/library/dn433292.aspx) and only have the following 8 default commands (and aliases) available:</span></span>
 
-- <span data-ttu-id="ca951-119">Clear-Host (cls, clear)</span><span class="sxs-lookup"><span data-stu-id="ca951-119">Clear-Host (cls, clear)</span></span>
-- <span data-ttu-id="ca951-120">Exit-PSSession (exsn, exit)</span><span class="sxs-lookup"><span data-stu-id="ca951-120">Exit-PSSession (exsn, exit)</span></span>
-- <span data-ttu-id="ca951-121">Get-Command (gcm)</span><span class="sxs-lookup"><span data-stu-id="ca951-121">Get-Command (gcm)</span></span>
-- <span data-ttu-id="ca951-122">Get-FormatData</span><span class="sxs-lookup"><span data-stu-id="ca951-122">Get-FormatData</span></span>
-- <span data-ttu-id="ca951-123">Get-Help</span><span class="sxs-lookup"><span data-stu-id="ca951-123">Get-Help</span></span>
-- <span data-ttu-id="ca951-124">Measure-Object (measure)</span><span class="sxs-lookup"><span data-stu-id="ca951-124">Measure-Object (measure)</span></span>
-- <span data-ttu-id="ca951-125">Out-Default</span><span class="sxs-lookup"><span data-stu-id="ca951-125">Out-Default</span></span>
-- <span data-ttu-id="ca951-126">Select-Object (select)</span><span class="sxs-lookup"><span data-stu-id="ca951-126">Select-Object (select)</span></span>
+- <span data-ttu-id="bb577-119">Clear-Host (cls, clear)</span><span class="sxs-lookup"><span data-stu-id="bb577-119">Clear-Host (cls, clear)</span></span>
+- <span data-ttu-id="bb577-120">Exit-PSSession (exsn, exit)</span><span class="sxs-lookup"><span data-stu-id="bb577-120">Exit-PSSession (exsn, exit)</span></span>
+- <span data-ttu-id="bb577-121">Get-Command (gcm)</span><span class="sxs-lookup"><span data-stu-id="bb577-121">Get-Command (gcm)</span></span>
+- <span data-ttu-id="bb577-122">Get-FormatData</span><span class="sxs-lookup"><span data-stu-id="bb577-122">Get-FormatData</span></span>
+- <span data-ttu-id="bb577-123">Get-Help</span><span class="sxs-lookup"><span data-stu-id="bb577-123">Get-Help</span></span>
+- <span data-ttu-id="bb577-124">Measure-Object (measure)</span><span class="sxs-lookup"><span data-stu-id="bb577-124">Measure-Object (measure)</span></span>
+- <span data-ttu-id="bb577-125">Out-Default</span><span class="sxs-lookup"><span data-stu-id="bb577-125">Out-Default</span></span>
+- <span data-ttu-id="bb577-126">Select-Object (select)</span><span class="sxs-lookup"><span data-stu-id="bb577-126">Select-Object (select)</span></span>
 
-<span data-ttu-id="ca951-127">PowerShell 提供程序均不可用，也不提供任何外部程序（可执行文件、脚本等）。</span><span class="sxs-lookup"><span data-stu-id="ca951-127">No PowerShell providers are available, nor are any external programs (executables, scripts, etc.).</span></span>
+<span data-ttu-id="bb577-127">PowerShell 提供程序均不可用，也不提供任何外部程序（可执行文件、脚本等）。</span><span class="sxs-lookup"><span data-stu-id="bb577-127">No PowerShell providers are available, nor are any external programs (executables, scripts, etc.).</span></span>
 
-<span data-ttu-id="ca951-128">以下是要为 JEA 会话配置的其他几个字段。</span><span class="sxs-lookup"><span data-stu-id="ca951-128">There are several other fields you will want to configure for the JEA session.</span></span>
-<span data-ttu-id="ca951-129">均在以下各节中有所介绍。</span><span class="sxs-lookup"><span data-stu-id="ca951-129">They are covered in the following sections.</span></span>
+<span data-ttu-id="bb577-128">以下是要为 JEA 会话配置的其他几个字段。</span><span class="sxs-lookup"><span data-stu-id="bb577-128">There are several other fields you will want to configure for the JEA session.</span></span>
+<span data-ttu-id="bb577-129">均在以下各节中有所介绍。</span><span class="sxs-lookup"><span data-stu-id="bb577-129">They are covered in the following sections.</span></span>
 
-### <a name="choose-the-jea-identity"></a><span data-ttu-id="ca951-130">选择 JEA 标识</span><span class="sxs-lookup"><span data-stu-id="ca951-130">Choose the JEA identity</span></span>
+### <a name="choose-the-jea-identity"></a><span data-ttu-id="bb577-130">选择 JEA 标识</span><span class="sxs-lookup"><span data-stu-id="bb577-130">Choose the JEA identity</span></span>
 
-<span data-ttu-id="ca951-131">JEA 在后台运行已连接用户的命令时需要使用标识（即帐户）。</span><span class="sxs-lookup"><span data-stu-id="ca951-131">Behind the scenes, JEA needs an identity (account) to use when running a connected user's commands.</span></span>
-<span data-ttu-id="ca951-132">用户决定 JEA 将在会话配置文件中使用哪个标识。</span><span class="sxs-lookup"><span data-stu-id="ca951-132">You decide which identity JEA will use in the session configuration file.</span></span>
+<span data-ttu-id="bb577-131">JEA 在后台运行已连接用户的命令时需要使用标识（即帐户）。</span><span class="sxs-lookup"><span data-stu-id="bb577-131">Behind the scenes, JEA needs an identity (account) to use when running a connected user's commands.</span></span>
+<span data-ttu-id="bb577-132">用户决定 JEA 将在会话配置文件中使用哪个标识。</span><span class="sxs-lookup"><span data-stu-id="bb577-132">You decide which identity JEA will use in the session configuration file.</span></span>
 
-#### <a name="local-virtual-account"></a><span data-ttu-id="ca951-133">本地虚拟帐户</span><span class="sxs-lookup"><span data-stu-id="ca951-133">Local Virtual Account</span></span>
+#### <a name="local-virtual-account"></a><span data-ttu-id="bb577-133">本地虚拟帐户</span><span class="sxs-lookup"><span data-stu-id="bb577-133">Local Virtual Account</span></span>
 
-<span data-ttu-id="ca951-134">如果此 JEA 终结点支持的角色均用于管理本地计算机，并且本地管理员帐户足以成功运行命令，则应将 JEA 配置为使用本地虚拟帐户。</span><span class="sxs-lookup"><span data-stu-id="ca951-134">If the roles supported by this JEA endpoint are all used to manage the local machine, and a local administrator account is sufficient to run the commands successfully, you should configure JEA to use a local virtual account.</span></span>
-<span data-ttu-id="ca951-135">虚拟帐户是特定用户所独有的临时帐户，仅在 PowerShell 会话的持续时间内有效。</span><span class="sxs-lookup"><span data-stu-id="ca951-135">Virtual accounts are temporary accounts that are unique to a specific user and only last for the duration of their PowerShell session.</span></span>
-<span data-ttu-id="ca951-136">在成员服务器或工作站上，虚拟帐户属于本地计算机的**管理员**组，并且有权访问大多数系统资源。</span><span class="sxs-lookup"><span data-stu-id="ca951-136">On a member server or workstation, virtual accounts belong to the local computer's **Administrators** group, and have access to most system resources.</span></span>
-<span data-ttu-id="ca951-137">在 Active Directory 域控制器上，虚拟帐户属于域的**域管理员**组。</span><span class="sxs-lookup"><span data-stu-id="ca951-137">On an Active Directory Domain Controller, virtual accounts belong to the domain's **Domain Admins** group.</span></span>
+<span data-ttu-id="bb577-134">如果此 JEA 终结点支持的角色均用于管理本地计算机，并且本地管理员帐户足以成功运行命令，则应将 JEA 配置为使用本地虚拟帐户。</span><span class="sxs-lookup"><span data-stu-id="bb577-134">If the roles supported by this JEA endpoint are all used to manage the local machine, and a local administrator account is sufficient to run the commands successfully, you should configure JEA to use a local virtual account.</span></span>
+<span data-ttu-id="bb577-135">虚拟帐户是特定用户所独有的临时帐户，仅在 PowerShell 会话的持续时间内有效。</span><span class="sxs-lookup"><span data-stu-id="bb577-135">Virtual accounts are temporary accounts that are unique to a specific user and only last for the duration of their PowerShell session.</span></span>
+<span data-ttu-id="bb577-136">在成员服务器或工作站上，虚拟帐户属于本地计算机的**管理员**组，并且有权访问大多数系统资源。</span><span class="sxs-lookup"><span data-stu-id="bb577-136">On a member server or workstation, virtual accounts belong to the local computer's **Administrators** group, and have access to most system resources.</span></span>
+<span data-ttu-id="bb577-137">在 Active Directory 域控制器上，虚拟帐户属于域的**域管理员**组。</span><span class="sxs-lookup"><span data-stu-id="bb577-137">On an Active Directory Domain Controller, virtual accounts belong to the domain's **Domain Admins** group.</span></span>
 
 ```powershell
 # Setting the session to use a virtual account
 RunAsVirtualAccount = $true
 ```
 
-<span data-ttu-id="ca951-138">如果会话配置支持的角色不需要此类广泛特权，可选择性地指定将包含虚拟帐户的安全组。</span><span class="sxs-lookup"><span data-stu-id="ca951-138">If the roles supported by the session configuration do not require such broad privileges, you can optionally specify the security groups to which the virtual account will belong.</span></span>
-<span data-ttu-id="ca951-139">在成员服务器或工作站上，指定的安全组必须是本地组，而不是来自域的组。</span><span class="sxs-lookup"><span data-stu-id="ca951-139">On a member server or workstation, the specified security groups must be local groups, not groups from a domain.</span></span>
+<span data-ttu-id="bb577-138">如果会话配置支持的角色不需要此类广泛特权，可选择性地指定将包含虚拟帐户的安全组。</span><span class="sxs-lookup"><span data-stu-id="bb577-138">If the roles supported by the session configuration do not require such broad privileges, you can optionally specify the security groups to which the virtual account will belong.</span></span>
+<span data-ttu-id="bb577-139">在成员服务器或工作站上，指定的安全组必须是本地组，而不是来自域的组。</span><span class="sxs-lookup"><span data-stu-id="bb577-139">On a member server or workstation, the specified security groups must be local groups, not groups from a domain.</span></span>
 
-<span data-ttu-id="ca951-140">指定一个或多个安全组后，虚拟帐户将不再属于本地或域管理员组。</span><span class="sxs-lookup"><span data-stu-id="ca951-140">When one or more security groups is specified, the virtual account will no longer belong to the local or domain administrators group.</span></span>
+<span data-ttu-id="bb577-140">指定一个或多个安全组后，虚拟帐户将不再属于本地或域管理员组。</span><span class="sxs-lookup"><span data-stu-id="bb577-140">When one or more security groups is specified, the virtual account will no longer belong to the local or domain administrators group.</span></span>
 
 ```powershell
 # Setting the session to use a virtual account that only belongs to the NetworkOperator and NetworkAuditor local groups
@@ -82,63 +82,63 @@ RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
 
 > [!NOTE]
-> <span data-ttu-id="ca951-141">虚拟帐户在本地服务器安全策略中被临时授予“作为服务登录”的权限。</span><span class="sxs-lookup"><span data-stu-id="ca951-141">Virtual accounts are temporarily granted the Logon as a service right in the local server security policy.</span></span>  <span data-ttu-id="ca951-142">如果指定的 VirtualAccountGroups 之一已在策略中被授予此权限，则无法对策略添加和删除单个虚拟帐户。</span><span class="sxs-lookup"><span data-stu-id="ca951-142">If one of the VirtualAccountGroups specified has already been granted this right in the policy, the individual virtual account will no longer be added and removed from the policy.</span></span>  <span data-ttu-id="ca951-143">对于会仔细审核域控制器安全策略修订的域控制器这类情形，这可能会十分有用。</span><span class="sxs-lookup"><span data-stu-id="ca951-143">This can be useful in scenarios such as domain controllers where revisions to the domain controller security policy are closely audited.</span></span>  <span data-ttu-id="ca951-144">这仅在具有 2018 年 11 月或更高版本汇总的 Windows Server 2016 和具有 2019 年 1 月或更高版本汇总的 Windows Server 2019 中可用。</span><span class="sxs-lookup"><span data-stu-id="ca951-144">This is only available in Windows Server 2016 with the November 2018 or later rollup and Windows Server 2019 with the January 2019 or later rollup.</span></span>
+> <span data-ttu-id="bb577-141">虚拟帐户在本地服务器安全策略中被临时授予“作为服务登录”的权限。</span><span class="sxs-lookup"><span data-stu-id="bb577-141">Virtual accounts are temporarily granted the Logon as a service right in the local server security policy.</span></span>  <span data-ttu-id="bb577-142">如果指定的 VirtualAccountGroups 之一已在策略中被授予此权限，则无法对策略添加和删除单个虚拟帐户。</span><span class="sxs-lookup"><span data-stu-id="bb577-142">If one of the VirtualAccountGroups specified has already been granted this right in the policy, the individual virtual account will no longer be added and removed from the policy.</span></span>  <span data-ttu-id="bb577-143">对于会仔细审核域控制器安全策略修订的域控制器这类情形，这可能会十分有用。</span><span class="sxs-lookup"><span data-stu-id="bb577-143">This can be useful in scenarios such as domain controllers where revisions to the domain controller security policy are closely audited.</span></span>  <span data-ttu-id="bb577-144">这仅在具有 2018 年 11 月或更高版本汇总的 Windows Server 2016 和具有 2019 年 1 月或更高版本汇总的 Windows Server 2019 中可用。</span><span class="sxs-lookup"><span data-stu-id="bb577-144">This is only available in Windows Server 2016 with the November 2018 or later rollup and Windows Server 2019 with the January 2019 or later rollup.</span></span>
 
-#### <a name="group-managed-service-account"></a><span data-ttu-id="ca951-145">组托管服务帐户</span><span class="sxs-lookup"><span data-stu-id="ca951-145">Group Managed Service Account</span></span>
+#### <a name="group-managed-service-account"></a><span data-ttu-id="bb577-145">组托管服务帐户</span><span class="sxs-lookup"><span data-stu-id="bb577-145">Group Managed Service Account</span></span>
 
 
-<span data-ttu-id="ca951-146">对于需要 JEA 用户访问其他计算机或 Web 服务等网络资源的应用场景，组托管服务帐户 (gMSA) 是更适合使用的标识。</span><span class="sxs-lookup"><span data-stu-id="ca951-146">For scenarios requiring the JEA user to access network resources such as other machines or web services, a group managed service account (gMSA) is a more appropriate identity to use.</span></span>
-<span data-ttu-id="ca951-147">gMSA 帐户提供域标识，可用于向域中任何计算机上的资源进行身份验证。</span><span class="sxs-lookup"><span data-stu-id="ca951-147">gMSA accounts give you a domain identity which can be used to authenticate against resources on any machine within the domain.</span></span>
-<span data-ttu-id="ca951-148">gMSA 帐户授予你的权限由你当前访问的资源决定。</span><span class="sxs-lookup"><span data-stu-id="ca951-148">The rights the gMSA account gives you is determined by the resources you are accessing.</span></span>
-<span data-ttu-id="ca951-149">你在任何计算机或服务上均不会自动拥有管理员权限，除非计算机/服务已显式授予 gMSA 帐户管理员特权。</span><span class="sxs-lookup"><span data-stu-id="ca951-149">You will not automatically have admin rights on any machines or services unless the machine/service administrator has explicitly granted the gMSA account admin privileges.</span></span>
+<span data-ttu-id="bb577-146">对于需要 JEA 用户访问其他计算机或 Web 服务等网络资源的应用场景，组托管服务帐户 (gMSA) 是更适合使用的标识。</span><span class="sxs-lookup"><span data-stu-id="bb577-146">For scenarios requiring the JEA user to access network resources such as other machines or web services, a group managed service account (gMSA) is a more appropriate identity to use.</span></span>
+<span data-ttu-id="bb577-147">gMSA 帐户提供域标识，可用于向域中任何计算机上的资源进行身份验证。</span><span class="sxs-lookup"><span data-stu-id="bb577-147">gMSA accounts give you a domain identity which can be used to authenticate against resources on any machine within the domain.</span></span>
+<span data-ttu-id="bb577-148">gMSA 帐户授予你的权限由你当前访问的资源决定。</span><span class="sxs-lookup"><span data-stu-id="bb577-148">The rights the gMSA account gives you is determined by the resources you are accessing.</span></span>
+<span data-ttu-id="bb577-149">你在任何计算机或服务上均不会自动拥有管理员权限，除非计算机/服务已显式授予 gMSA 帐户管理员特权。</span><span class="sxs-lookup"><span data-stu-id="bb577-149">You will not automatically have admin rights on any machines or services unless the machine/service administrator has explicitly granted the gMSA account admin privileges.</span></span>
 
 ```powershell
 # Configure JEA sessions to use the gMSA account in the local computer's domain with the sAMAccountName of 'MyJEAgMSA'
 GroupManagedServiceAccount = 'Domain\MyJEAgMSA'
 ```
 
-<span data-ttu-id="ca951-150">仅在由于多个原因需要访问网络资源时才应使用 gMSA 帐户：</span><span class="sxs-lookup"><span data-stu-id="ca951-150">gMSA accounts should only be used when access to network resources are required for a few reasons:</span></span>
+<span data-ttu-id="bb577-150">仅在由于多个原因需要访问网络资源时才应使用 gMSA 帐户：</span><span class="sxs-lookup"><span data-stu-id="bb577-150">gMSA accounts should only be used when access to network resources are required for a few reasons:</span></span>
 
-- <span data-ttu-id="ca951-151">使用 gMSA 帐户时，更难跟踪用户的操作，因为每个用户均共享相同的运行方式标识。</span><span class="sxs-lookup"><span data-stu-id="ca951-151">It is harder to trace back actions to a user when using a gMSA account since every user shares the same run-as identity.</span></span> <span data-ttu-id="ca951-152">你需要参考 PowerShell 会话记录和日志，将用户与其操作进行关联。</span><span class="sxs-lookup"><span data-stu-id="ca951-152">You will need to consult PowerShell session transcripts and logs to correlate users with their actions.</span></span>
+- <span data-ttu-id="bb577-151">使用 gMSA 帐户时，更难跟踪用户的操作，因为每个用户均共享相同的运行方式标识。</span><span class="sxs-lookup"><span data-stu-id="bb577-151">It is harder to trace back actions to a user when using a gMSA account since every user shares the same run-as identity.</span></span> <span data-ttu-id="bb577-152">你需要参考 PowerShell 会话记录和日志，将用户与其操作进行关联。</span><span class="sxs-lookup"><span data-stu-id="bb577-152">You will need to consult PowerShell session transcripts and logs to correlate users with their actions.</span></span>
 
-- <span data-ttu-id="ca951-153">gMSA 帐户可访问连接用户无需访问的多个网络资源。</span><span class="sxs-lookup"><span data-stu-id="ca951-153">The gMSA account may have access to many network resources which the connecting user does not need access to.</span></span> <span data-ttu-id="ca951-154">请始终尽力限制 JEA 会话中的有效权限以符合最低特权原则。</span><span class="sxs-lookup"><span data-stu-id="ca951-154">Always try to limit effective permissions in a JEA session to follow the principle of least privilege.</span></span>
+- <span data-ttu-id="bb577-153">gMSA 帐户可访问连接用户无需访问的多个网络资源。</span><span class="sxs-lookup"><span data-stu-id="bb577-153">The gMSA account may have access to many network resources which the connecting user does not need access to.</span></span> <span data-ttu-id="bb577-154">请始终尽力限制 JEA 会话中的有效权限以符合最低特权原则。</span><span class="sxs-lookup"><span data-stu-id="bb577-154">Always try to limit effective permissions in a JEA session to follow the principle of least privilege.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ca951-155">组托管服务帐户仅适用于 Windows PowerShell 5.1 或更高版本以及已加入域的计算机。</span><span class="sxs-lookup"><span data-stu-id="ca951-155">Group managed service accounts are only available in Windows PowerShell 5.1 or newer and on domain-joined machines.</span></span>
+> <span data-ttu-id="bb577-155">组托管服务帐户仅适用于 Windows PowerShell 5.1 或更高版本以及已加入域的计算机。</span><span class="sxs-lookup"><span data-stu-id="bb577-155">Group managed service accounts are only available in Windows PowerShell 5.1 or newer and on domain-joined machines.</span></span>
 
-#### <a name="more-information-about-run-as-users"></a><span data-ttu-id="ca951-156">有关以用户身份运行的详细信息</span><span class="sxs-lookup"><span data-stu-id="ca951-156">More information about run as users</span></span>
+#### <a name="more-information-about-run-as-users"></a><span data-ttu-id="bb577-156">有关以用户身份运行的详细信息</span><span class="sxs-lookup"><span data-stu-id="bb577-156">More information about run as users</span></span>
 
-<span data-ttu-id="ca951-157">若要进一步了解运行方式标识及其如何影响 JEA 会话的安全性，可参阅[安全性注意事项](security-considerations.md)文章。</span><span class="sxs-lookup"><span data-stu-id="ca951-157">Additional information about run as identities and how they factor into the security of a JEA session can be found in the [security considerations](security-considerations.md) article.</span></span>
+<span data-ttu-id="bb577-157">若要进一步了解运行方式标识及其如何影响 JEA 会话的安全性，可参阅[安全性注意事项](security-considerations.md)文章。</span><span class="sxs-lookup"><span data-stu-id="bb577-157">Additional information about run as identities and how they factor into the security of a JEA session can be found in the [security considerations](security-considerations.md) article.</span></span>
 
-### <a name="session-transcripts"></a><span data-ttu-id="ca951-158">会话脚本</span><span class="sxs-lookup"><span data-stu-id="ca951-158">Session transcripts</span></span>
+### <a name="session-transcripts"></a><span data-ttu-id="bb577-158">会话脚本</span><span class="sxs-lookup"><span data-stu-id="bb577-158">Session transcripts</span></span>
 
-<span data-ttu-id="ca951-159">建议将 JEA 会话配置文件配置为自动记录用户会话的脚本。</span><span class="sxs-lookup"><span data-stu-id="ca951-159">It is recommended that you configure a JEA session configuration file to automatically record transcripts of users' sessions.</span></span>
-<span data-ttu-id="ca951-160">通过 PowerShell 会话脚本，可查看连接用户、向其分配的运行方式标识以及该用户运行的命令。</span><span class="sxs-lookup"><span data-stu-id="ca951-160">PowerShell session transcripts contain information about the connecting user, the run as identity assigned to them, and the commands run by the user.</span></span>
-<span data-ttu-id="ca951-161">对于需要了解谁执行了特定系统更改的审核团队，这些信息非常有用。</span><span class="sxs-lookup"><span data-stu-id="ca951-161">They can be useful to an auditing team who needs to understand who performed a specific change to a system.</span></span>
+<span data-ttu-id="bb577-159">建议将 JEA 会话配置文件配置为自动记录用户会话的脚本。</span><span class="sxs-lookup"><span data-stu-id="bb577-159">It is recommended that you configure a JEA session configuration file to automatically record transcripts of users' sessions.</span></span>
+<span data-ttu-id="bb577-160">通过 PowerShell 会话脚本，可查看连接用户、向其分配的运行方式标识以及该用户运行的命令。</span><span class="sxs-lookup"><span data-stu-id="bb577-160">PowerShell session transcripts contain information about the connecting user, the run as identity assigned to them, and the commands run by the user.</span></span>
+<span data-ttu-id="bb577-161">对于需要了解谁执行了特定系统更改的审核团队，这些信息非常有用。</span><span class="sxs-lookup"><span data-stu-id="bb577-161">They can be useful to an auditing team who needs to understand who performed a specific change to a system.</span></span>
 
-<span data-ttu-id="ca951-162">若要在会话配置文件中配置自动脚本，请提供应存储脚本的文件夹路径。</span><span class="sxs-lookup"><span data-stu-id="ca951-162">To configure automatic transcription in the session configuration file, provide a path to a folder where the transcripts should be stored.</span></span>
+<span data-ttu-id="bb577-162">若要在会话配置文件中配置自动脚本，请提供应存储脚本的文件夹路径。</span><span class="sxs-lookup"><span data-stu-id="bb577-162">To configure automatic transcription in the session configuration file, provide a path to a folder where the transcripts should be stored.</span></span>
 
 ```powershell
 TranscriptDirectory = 'C:\ProgramData\JEAConfiguration\Transcripts'
 ```
 
-<span data-ttu-id="ca951-163">应将指定的文件夹配置为阻止用户修改或删除其中的任何数据。</span><span class="sxs-lookup"><span data-stu-id="ca951-163">The specified folder should be configured to prevent users from modifying or deleting any data in it.</span></span>
-<span data-ttu-id="ca951-164">脚本由本地系统帐户写入到文件夹中，该帐户需要目录的读取和写入权限。</span><span class="sxs-lookup"><span data-stu-id="ca951-164">Transcripts are written to the folder by the Local System account, which requires read and write access to the directory.</span></span>
-<span data-ttu-id="ca951-165">标准用户不得具有文件夹的访问权限，一组数量有限的安全管理员须具有访问权限来进行脚本审核。</span><span class="sxs-lookup"><span data-stu-id="ca951-165">Standard users should have no access to the folder, and a limited set of security administrators should have access to audit the transcripts.</span></span>
+<span data-ttu-id="bb577-163">应将指定的文件夹配置为阻止用户修改或删除其中的任何数据。</span><span class="sxs-lookup"><span data-stu-id="bb577-163">The specified folder should be configured to prevent users from modifying or deleting any data in it.</span></span>
+<span data-ttu-id="bb577-164">脚本由本地系统帐户写入到文件夹中，该帐户需要目录的读取和写入权限。</span><span class="sxs-lookup"><span data-stu-id="bb577-164">Transcripts are written to the folder by the Local System account, which requires read and write access to the directory.</span></span>
+<span data-ttu-id="bb577-165">标准用户不得具有文件夹的访问权限，一组数量有限的安全管理员须具有访问权限来进行脚本审核。</span><span class="sxs-lookup"><span data-stu-id="bb577-165">Standard users should have no access to the folder, and a limited set of security administrators should have access to audit the transcripts.</span></span>
 
-### <a name="user-drive"></a><span data-ttu-id="ca951-166">用户驱动器</span><span class="sxs-lookup"><span data-stu-id="ca951-166">User drive</span></span>
+### <a name="user-drive"></a><span data-ttu-id="bb577-166">用户驱动器</span><span class="sxs-lookup"><span data-stu-id="bb577-166">User drive</span></span>
 
-<span data-ttu-id="ca951-167">如果连接用户需要将文件复制到 JEA 终结点或从中复制文件才可运行命令，可在会话配置文件中启用用户驱动器。</span><span class="sxs-lookup"><span data-stu-id="ca951-167">If your connecting users will need to copy files to/from the JEA endpoint in order to run a command, you can enable the user drive in the session configuration file.</span></span>
-<span data-ttu-id="ca951-168">用户驱动器是映射到各连接用户的唯一文件夹的 [PSDrive](https://msdn.microsoft.com/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives)。</span><span class="sxs-lookup"><span data-stu-id="ca951-168">The user drive is a [PSDrive](https://msdn.microsoft.com/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives) that is mapped to a unique folder for each connecting user.</span></span>
-<span data-ttu-id="ca951-169">此文件夹充当将文件复制到系统/从中复制文件的空间，但不提供访问完整文件系统或公开 FileSystem 提供程序的权限。</span><span class="sxs-lookup"><span data-stu-id="ca951-169">This folder serves as a space for them to copy files to/from the system, without giving them access to the full file system or exposing the FileSystem provider.</span></span>
-<span data-ttu-id="ca951-170">用户驱动器内容在会话之间持续存在，以便应对网络连接可能中断的情况。</span><span class="sxs-lookup"><span data-stu-id="ca951-170">The user drive contents are persistent across sessions to accommodate situations where network connectivity may be interrupted.</span></span>
+<span data-ttu-id="bb577-167">如果连接用户需要将文件复制到 JEA 终结点或从中复制文件才可运行命令，可在会话配置文件中启用用户驱动器。</span><span class="sxs-lookup"><span data-stu-id="bb577-167">If your connecting users will need to copy files to/from the JEA endpoint in order to run a command, you can enable the user drive in the session configuration file.</span></span>
+<span data-ttu-id="bb577-168">用户驱动器是映射到各连接用户的唯一文件夹的 [PSDrive](https://msdn.microsoft.com/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives)。</span><span class="sxs-lookup"><span data-stu-id="bb577-168">The user drive is a [PSDrive](https://msdn.microsoft.com/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives) that is mapped to a unique folder for each connecting user.</span></span>
+<span data-ttu-id="bb577-169">此文件夹充当将文件复制到系统/从中复制文件的空间，但不提供访问完整文件系统或公开 FileSystem 提供程序的权限。</span><span class="sxs-lookup"><span data-stu-id="bb577-169">This folder serves as a space for them to copy files to/from the system, without giving them access to the full file system or exposing the FileSystem provider.</span></span>
+<span data-ttu-id="bb577-170">用户驱动器内容在会话之间持续存在，以便应对网络连接可能中断的情况。</span><span class="sxs-lookup"><span data-stu-id="bb577-170">The user drive contents are persistent across sessions to accommodate situations where network connectivity may be interrupted.</span></span>
 
 ```powershell
 MountUserDrive = $true
 ```
 
-<span data-ttu-id="ca951-171">默认情况下，用户驱动器允许每个用户存储最多 50 MB 的数据。</span><span class="sxs-lookup"><span data-stu-id="ca951-171">By default, the user drive allows you to store a maximum of 50MB of data per user.</span></span>
-<span data-ttu-id="ca951-172">可使用“UserDriveMaximumSize”字段限制用户能使用的数据量。</span><span class="sxs-lookup"><span data-stu-id="ca951-172">You can limit the amount of data a user can consume with the *UserDriveMaximumSize* field.</span></span>
+<span data-ttu-id="bb577-171">默认情况下，用户驱动器允许每个用户存储最多 50 MB 的数据。</span><span class="sxs-lookup"><span data-stu-id="bb577-171">By default, the user drive allows you to store a maximum of 50MB of data per user.</span></span>
+<span data-ttu-id="bb577-172">可使用“UserDriveMaximumSize”字段限制用户能使用的数据量。</span><span class="sxs-lookup"><span data-stu-id="bb577-172">You can limit the amount of data a user can consume with the *UserDriveMaximumSize* field.</span></span>
 
 ```powershell
 # Enables the user drive with a per-user limit of 500MB (524288000 bytes)
@@ -146,17 +146,17 @@ MountUserDrive = $true
 UserDriveMaximumSize = 524288000
 ```
 
-<span data-ttu-id="ca951-173">如果不想持久保留用户驱动器中的数据，可在系统上配置计划任务，每晚自动清理文件夹。</span><span class="sxs-lookup"><span data-stu-id="ca951-173">If you do not want data in the user drive to be persistent, you can configure a scheduled task on the system to automatically clean up the folder every night.</span></span>
+<span data-ttu-id="bb577-173">如果不想持久保留用户驱动器中的数据，可在系统上配置计划任务，每晚自动清理文件夹。</span><span class="sxs-lookup"><span data-stu-id="bb577-173">If you do not want data in the user drive to be persistent, you can configure a scheduled task on the system to automatically clean up the folder every night.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ca951-174">用户驱动器仅适用于 Windows PowerShell 5.1 或更高版本。</span><span class="sxs-lookup"><span data-stu-id="ca951-174">The user drive is only available in Windows PowerShell 5.1 or newer.</span></span>
+> <span data-ttu-id="bb577-174">用户驱动器仅适用于 Windows PowerShell 5.1 或更高版本。</span><span class="sxs-lookup"><span data-stu-id="bb577-174">The user drive is only available in Windows PowerShell 5.1 or newer.</span></span>
 
-### <a name="role-definitions"></a><span data-ttu-id="ca951-175">角色定义</span><span class="sxs-lookup"><span data-stu-id="ca951-175">Role definitions</span></span>
+### <a name="role-definitions"></a><span data-ttu-id="bb577-175">角色定义</span><span class="sxs-lookup"><span data-stu-id="bb577-175">Role definitions</span></span>
 
-<span data-ttu-id="ca951-176">会话配置文件中的角色定义可定义*用户*到*角色*的映射。</span><span class="sxs-lookup"><span data-stu-id="ca951-176">Role definitions in a session configuration file define the mapping of *users* to *roles*.</span></span>
-<span data-ttu-id="ca951-177">注册时，此字段中包含的所有用户或组都将获得到 JEA 终结点的权限。</span><span class="sxs-lookup"><span data-stu-id="ca951-177">Every user or group included in this field will automatically be granted permission to the JEA endpoint when it is registered.</span></span>
-<span data-ttu-id="ca951-178">每个用户或组仅可在哈希表中以键的形式内附一次，但可向其分配多个角色。</span><span class="sxs-lookup"><span data-stu-id="ca951-178">Each user or group can be included as a key in the hashtable only once, but can be assigned multiple roles.</span></span>
-<span data-ttu-id="ca951-179">角色功能名称应为角色功能文件的名称，但不带 .psrc 扩展名。</span><span class="sxs-lookup"><span data-stu-id="ca951-179">The name of the role capability should be the name of the role capability file, without the .psrc extension.</span></span>
+<span data-ttu-id="bb577-176">会话配置文件中的角色定义可定义*用户*到*角色*的映射。</span><span class="sxs-lookup"><span data-stu-id="bb577-176">Role definitions in a session configuration file define the mapping of *users* to *roles*.</span></span>
+<span data-ttu-id="bb577-177">注册时，此字段中包含的所有用户或组都将获得到 JEA 终结点的权限。</span><span class="sxs-lookup"><span data-stu-id="bb577-177">Every user or group included in this field will automatically be granted permission to the JEA endpoint when it is registered.</span></span>
+<span data-ttu-id="bb577-178">每个用户或组仅可在哈希表中以键的形式内附一次，但可向其分配多个角色。</span><span class="sxs-lookup"><span data-stu-id="bb577-178">Each user or group can be included as a key in the hashtable only once, but can be assigned multiple roles.</span></span>
+<span data-ttu-id="bb577-179">角色功能名称应为角色功能文件的名称，但不带 .psrc 扩展名。</span><span class="sxs-lookup"><span data-stu-id="bb577-179">The name of the role capability should be the name of the role capability file, without the .psrc extension.</span></span>
 
 ```powershell
 RoleDefinitions = @{
@@ -166,11 +166,11 @@ RoleDefinitions = @{
 }
 ```
 
-<span data-ttu-id="ca951-180">如果某用户属于角色定义中的多个组，则其将获得访问每个组角色的权限。</span><span class="sxs-lookup"><span data-stu-id="ca951-180">If a user belongs to more than one group in the role definition, they will get access to the roles of each.</span></span>
-<span data-ttu-id="ca951-181">如果两个角色向同一个 cmdlet 授予访问权限，则将向用户授予最宽松的参数集。</span><span class="sxs-lookup"><span data-stu-id="ca951-181">If two roles grant access to the same cmdlets, the most permissive parameter set will be granted to the user.</span></span>
+<span data-ttu-id="bb577-180">如果某用户属于角色定义中的多个组，则其将获得访问每个组角色的权限。</span><span class="sxs-lookup"><span data-stu-id="bb577-180">If a user belongs to more than one group in the role definition, they will get access to the roles of each.</span></span>
+<span data-ttu-id="bb577-181">如果两个角色向同一个 cmdlet 授予访问权限，则将向用户授予最宽松的参数集。</span><span class="sxs-lookup"><span data-stu-id="bb577-181">If two roles grant access to the same cmdlets, the most permissive parameter set will be granted to the user.</span></span>
 
-<span data-ttu-id="ca951-182">在角色定义字段中指定本地用户或组时，请务必在反斜杠前面添加计算机名称（而不是 *localhost* 或 *.*）。</span><span class="sxs-lookup"><span data-stu-id="ca951-182">When specifying local users or groups in the role definitions field, be sure to use the computer name (not *localhost* or *.*) before the backslash.</span></span>
-<span data-ttu-id="ca951-183">可通过检查 `$env:computername` 变量来查看计算机名称。</span><span class="sxs-lookup"><span data-stu-id="ca951-183">You can check the computer name by inspecting the `$env:computername` variable.</span></span>
+<span data-ttu-id="bb577-182">在角色定义字段中指定本地用户或组时，请务必在反斜杠前面添加计算机名称（而不是 *localhost* 或 *.*）。</span><span class="sxs-lookup"><span data-stu-id="bb577-182">When specifying local users or groups in the role definitions field, be sure to use the computer name (not *localhost* or *.*) before the backslash.</span></span>
+<span data-ttu-id="bb577-183">可通过检查 `$env:computername` 变量来查看计算机名称。</span><span class="sxs-lookup"><span data-stu-id="bb577-183">You can check the computer name by inspecting the `$env:computername` variable.</span></span>
 
 ```powershell
 RoleDefinitions = @{
@@ -178,29 +178,29 @@ RoleDefinitions = @{
 }
 ```
 
-### <a name="role-capability-search-order"></a><span data-ttu-id="ca951-184">角色功能搜索顺序</span><span class="sxs-lookup"><span data-stu-id="ca951-184">Role capability search order</span></span>
+### <a name="role-capability-search-order"></a><span data-ttu-id="bb577-184">角色功能搜索顺序</span><span class="sxs-lookup"><span data-stu-id="bb577-184">Role capability search order</span></span>
 
-<span data-ttu-id="ca951-185">如上例所示，角色功能由角色功能文件的平面名称（不含扩展名的文件名）进行引用。</span><span class="sxs-lookup"><span data-stu-id="ca951-185">As shown in the example above, role capabilities are referenced by the flat name (filename without the extension) of the role capability file.</span></span>
-<span data-ttu-id="ca951-186">如果多个角色功能适用于带相同平面名称的系统，PowerShell 将使用隐式搜索顺序选择有效的角色功能文件。</span><span class="sxs-lookup"><span data-stu-id="ca951-186">If multiple role capabilities are available on the system with the same flat name, PowerShell will use its implicit search order to select the effective role capability file.</span></span>
-<span data-ttu-id="ca951-187">它将**仅**向部分带同一名称的角色功能文件授予访问权限。</span><span class="sxs-lookup"><span data-stu-id="ca951-187">It will **not** give access to all role capability files with the same name.</span></span>
+<span data-ttu-id="bb577-185">如上例所示，角色功能由角色功能文件的平面名称（不含扩展名的文件名）进行引用。</span><span class="sxs-lookup"><span data-stu-id="bb577-185">As shown in the example above, role capabilities are referenced by the flat name (filename without the extension) of the role capability file.</span></span>
+<span data-ttu-id="bb577-186">如果多个角色功能适用于带相同平面名称的系统，PowerShell 将使用隐式搜索顺序选择有效的角色功能文件。</span><span class="sxs-lookup"><span data-stu-id="bb577-186">If multiple role capabilities are available on the system with the same flat name, PowerShell will use its implicit search order to select the effective role capability file.</span></span>
+<span data-ttu-id="bb577-187">它将**仅**向部分带同一名称的角色功能文件授予访问权限。</span><span class="sxs-lookup"><span data-stu-id="bb577-187">It will **not** give access to all role capability files with the same name.</span></span>
 
-<span data-ttu-id="ca951-188">JEA 使用 `$env:PSModulePath` 环境变量来确定扫描角色功能文件的路径。</span><span class="sxs-lookup"><span data-stu-id="ca951-188">JEA uses the `$env:PSModulePath` environment variable to determine which paths to scan for role capability files.</span></span>
-<span data-ttu-id="ca951-189">在每个路径中，JEA 将查找包含“RoleCapabilities”子文件夹的有效 PowerShell 模块。</span><span class="sxs-lookup"><span data-stu-id="ca951-189">Within each of those paths, JEA will look for valid PowerShell modules that contain a "RoleCapabilities" subfolder.</span></span>
-<span data-ttu-id="ca951-190">与导入模块一样，与具有相同名称的自定义角色功能相比，JEA 更倾向于 Windows 随附的角色功能。</span><span class="sxs-lookup"><span data-stu-id="ca951-190">As with importing modules, JEA prefers role capabilities that are shipped with Windows to custom role capabilities with the same name.</span></span>
-<span data-ttu-id="ca951-191">对于所有其他命名冲突，优先级由 Windows 枚举目录中文件的顺序（不保证按字母顺序排序）决定。</span><span class="sxs-lookup"><span data-stu-id="ca951-191">For all other naming conflicts, precedence is determined by the order in which Windows enumerates the files in the directory (not guaranteed to be alphabetically).</span></span>
-<span data-ttu-id="ca951-192">找到的匹配所需名称的第一个角色功能文件将用于连接用户。</span><span class="sxs-lookup"><span data-stu-id="ca951-192">The first role capability file found that matches the desired name will be used for the connecting user.</span></span>
+<span data-ttu-id="bb577-188">JEA 使用 `$env:PSModulePath` 环境变量来确定扫描角色功能文件的路径。</span><span class="sxs-lookup"><span data-stu-id="bb577-188">JEA uses the `$env:PSModulePath` environment variable to determine which paths to scan for role capability files.</span></span>
+<span data-ttu-id="bb577-189">在每个路径中，JEA 将查找包含“RoleCapabilities”子文件夹的有效 PowerShell 模块。</span><span class="sxs-lookup"><span data-stu-id="bb577-189">Within each of those paths, JEA will look for valid PowerShell modules that contain a "RoleCapabilities" subfolder.</span></span>
+<span data-ttu-id="bb577-190">与导入模块一样，与具有相同名称的自定义角色功能相比，JEA 更倾向于 Windows 随附的角色功能。</span><span class="sxs-lookup"><span data-stu-id="bb577-190">As with importing modules, JEA prefers role capabilities that are shipped with Windows to custom role capabilities with the same name.</span></span>
+<span data-ttu-id="bb577-191">对于所有其他命名冲突，优先级由 Windows 枚举目录中文件的顺序（不保证按字母顺序排序）决定。</span><span class="sxs-lookup"><span data-stu-id="bb577-191">For all other naming conflicts, precedence is determined by the order in which Windows enumerates the files in the directory (not guaranteed to be alphabetically).</span></span>
+<span data-ttu-id="bb577-192">找到的匹配所需名称的第一个角色功能文件将用于连接用户。</span><span class="sxs-lookup"><span data-stu-id="bb577-192">The first role capability file found that matches the desired name will be used for the connecting user.</span></span>
 
-<span data-ttu-id="ca951-193">当两个或多个角色功能共享同一名称时，角色功能搜索顺序是不确定的，因此**强烈建议**确保角色功能在计算机上具有唯一的名称。</span><span class="sxs-lookup"><span data-stu-id="ca951-193">Since the role capability search order is not deterministic when two or more role capabilities share the same name, it is **strongly recommended** that you ensure role capabilities have unique names on your machine.</span></span>
+<span data-ttu-id="bb577-193">当两个或多个角色功能共享同一名称时，角色功能搜索顺序是不确定的，因此**强烈建议**确保角色功能在计算机上具有唯一的名称。</span><span class="sxs-lookup"><span data-stu-id="bb577-193">Since the role capability search order is not deterministic when two or more role capabilities share the same name, it is **strongly recommended** that you ensure role capabilities have unique names on your machine.</span></span>
 
-### <a name="conditional-access-rules"></a><span data-ttu-id="ca951-194">条件访问规则</span><span class="sxs-lookup"><span data-stu-id="ca951-194">Conditional access rules</span></span>
+### <a name="conditional-access-rules"></a><span data-ttu-id="bb577-194">条件访问规则</span><span class="sxs-lookup"><span data-stu-id="bb577-194">Conditional access rules</span></span>
 
-<span data-ttu-id="ca951-195">RoleDefinitions 字段中包含的所有用户和组都将自动获得访问 JEA 终结点的权限。</span><span class="sxs-lookup"><span data-stu-id="ca951-195">All users and groups included in the RoleDefinitions field are automatically granted access to JEA endpoints.</span></span>
-<span data-ttu-id="ca951-196">通过条件访问规则，可优化此访问权限并要求用户隶属于其他不会影响其所拥有角色的安全组。</span><span class="sxs-lookup"><span data-stu-id="ca951-196">Conditional access rules allow you to refine this access and require users to belong to additional security groups which do not impact the roles which they are assigned.</span></span>
-<span data-ttu-id="ca951-197">如果想要将 JEA 与“及时”特权访问管理解决方案、智能卡身份验证或其他多重身份验证解决方案进行集成，则此规则十分有用。</span><span class="sxs-lookup"><span data-stu-id="ca951-197">This can be useful if you want to integrate a "just in time" privileged access management solution, smartcard authentication, or other multifactor authentication solution with JEA.</span></span>
+<span data-ttu-id="bb577-195">RoleDefinitions 字段中包含的所有用户和组都将自动获得访问 JEA 终结点的权限。</span><span class="sxs-lookup"><span data-stu-id="bb577-195">All users and groups included in the RoleDefinitions field are automatically granted access to JEA endpoints.</span></span>
+<span data-ttu-id="bb577-196">通过条件访问规则，可优化此访问权限并要求用户隶属于其他不会影响其所拥有角色的安全组。</span><span class="sxs-lookup"><span data-stu-id="bb577-196">Conditional access rules allow you to refine this access and require users to belong to additional security groups which do not impact the roles which they are assigned.</span></span>
+<span data-ttu-id="bb577-197">如果想要将 JEA 与“及时”特权访问管理解决方案、智能卡身份验证或其他多重身份验证解决方案进行集成，则此规则十分有用。</span><span class="sxs-lookup"><span data-stu-id="bb577-197">This can be useful if you want to integrate a "just in time" privileged access management solution, smartcard authentication, or other multifactor authentication solution with JEA.</span></span>
 
-<span data-ttu-id="ca951-198">条件访问规则在会话配置文件的 RequiredGroups 字段中进行定义。</span><span class="sxs-lookup"><span data-stu-id="ca951-198">Conditional access rules are defined in the RequiredGroups field in a session configuration file.</span></span>
-<span data-ttu-id="ca951-199">可在此处提供哈希表（选择性嵌套），利用“And”和“Or”键构造规则。</span><span class="sxs-lookup"><span data-stu-id="ca951-199">There, you can provide a hashtable (optionally nested) that uses 'And' and 'Or' keys to construct your rules.</span></span>
-<span data-ttu-id="ca951-200">以下是如何使用此字段的一些示例：</span><span class="sxs-lookup"><span data-stu-id="ca951-200">Here are some examples of how to leverage this field:</span></span>
+<span data-ttu-id="bb577-198">条件访问规则在会话配置文件的 RequiredGroups 字段中进行定义。</span><span class="sxs-lookup"><span data-stu-id="bb577-198">Conditional access rules are defined in the RequiredGroups field in a session configuration file.</span></span>
+<span data-ttu-id="bb577-199">可在此处提供哈希表（选择性嵌套），利用“And”和“Or”键构造规则。</span><span class="sxs-lookup"><span data-stu-id="bb577-199">There, you can provide a hashtable (optionally nested) that uses 'And' and 'Or' keys to construct your rules.</span></span>
+<span data-ttu-id="bb577-200">以下是如何使用此字段的一些示例：</span><span class="sxs-lookup"><span data-stu-id="bb577-200">Here are some examples of how to leverage this field:</span></span>
 
 ```powershell
 # Example 1: Connecting users must belong to a security group called "elevated-jea"
@@ -215,25 +215,25 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 ```
 
 > [!NOTE]
-> <span data-ttu-id="ca951-201">条件访问规则仅适用于 Windows PowerShell 5.1 或更高版本。</span><span class="sxs-lookup"><span data-stu-id="ca951-201">Conditional access rules are only available in Windows PowerShell 5.1 or newer.</span></span>
+> <span data-ttu-id="bb577-201">条件访问规则仅适用于 Windows PowerShell 5.1 或更高版本。</span><span class="sxs-lookup"><span data-stu-id="bb577-201">Conditional access rules are only available in Windows PowerShell 5.1 or newer.</span></span>
 
-### <a name="other-properties"></a><span data-ttu-id="ca951-202">其他属性</span><span class="sxs-lookup"><span data-stu-id="ca951-202">Other properties</span></span>
+### <a name="other-properties"></a><span data-ttu-id="bb577-202">其他属性</span><span class="sxs-lookup"><span data-stu-id="bb577-202">Other properties</span></span>
 
-<span data-ttu-id="ca951-203">会话配置文件还可执行角色功能文件能实现的所有操作，但无法授予连接用户访问不同命令的权限。</span><span class="sxs-lookup"><span data-stu-id="ca951-203">Session configuration files can also do everything a role capability file can do, just without the ability to give connecting users access to different commands.</span></span>
-<span data-ttu-id="ca951-204">如果想要允许所有用户访问特定的 cmdlet、函数或提供程序，可直接在会话配置文件中执行此操作。</span><span class="sxs-lookup"><span data-stu-id="ca951-204">If you want to allow all users access to specific cmdlets, functions, or providers, you can do so right in the session configuration file.</span></span>
-<span data-ttu-id="ca951-205">有关会话配置文件中受支持属性的完整列表，请运行 `Get-Help New-PSSessionConfigurationFile -Full`。</span><span class="sxs-lookup"><span data-stu-id="ca951-205">For a full list of supported properties in the session configuration file, run `Get-Help New-PSSessionConfigurationFile -Full`.</span></span>
+<span data-ttu-id="bb577-203">会话配置文件还可执行角色功能文件能实现的所有操作，但无法授予连接用户访问不同命令的权限。</span><span class="sxs-lookup"><span data-stu-id="bb577-203">Session configuration files can also do everything a role capability file can do, just without the ability to give connecting users access to different commands.</span></span>
+<span data-ttu-id="bb577-204">如果想要允许所有用户访问特定的 cmdlet、函数或提供程序，可直接在会话配置文件中执行此操作。</span><span class="sxs-lookup"><span data-stu-id="bb577-204">If you want to allow all users access to specific cmdlets, functions, or providers, you can do so right in the session configuration file.</span></span>
+<span data-ttu-id="bb577-205">有关会话配置文件中受支持属性的完整列表，请运行 `Get-Help New-PSSessionConfigurationFile -Full`。</span><span class="sxs-lookup"><span data-stu-id="bb577-205">For a full list of supported properties in the session configuration file, run `Get-Help New-PSSessionConfigurationFile -Full`.</span></span>
 
-## <a name="testing-a-session-configuration-file"></a><span data-ttu-id="ca951-206">测试会话配置文件</span><span class="sxs-lookup"><span data-stu-id="ca951-206">Testing a session configuration file</span></span>
+## <a name="testing-a-session-configuration-file"></a><span data-ttu-id="bb577-206">测试会话配置文件</span><span class="sxs-lookup"><span data-stu-id="bb577-206">Testing a session configuration file</span></span>
 
-<span data-ttu-id="ca951-207">可使用 [Test-PSSessionConfigurationFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/test-pssessionconfigurationfile) cmdlet 测试会话配置。</span><span class="sxs-lookup"><span data-stu-id="ca951-207">You can test a session configuration using the [Test-PSSessionConfigurationFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/test-pssessionconfigurationfile) cmdlet.</span></span>
-<span data-ttu-id="ca951-208">如果已使用文本编辑器手动编辑 pssc 文件时，强烈建议测试会话配置文件以确保语法正确。</span><span class="sxs-lookup"><span data-stu-id="ca951-208">It is strongly recommended that you test your session configuration file if you have edited the pssc file manually using a text editor to ensure the syntax is correct.</span></span>
-<span data-ttu-id="ca951-209">如果会话配置文件未通过此测试，它将无法在系统上成功注册。</span><span class="sxs-lookup"><span data-stu-id="ca951-209">If a session configuration file does not pass this test, it will not be able to be successfully registered on the system.</span></span>
+<span data-ttu-id="bb577-207">可使用 [Test-PSSessionConfigurationFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/test-pssessionconfigurationfile) cmdlet 测试会话配置。</span><span class="sxs-lookup"><span data-stu-id="bb577-207">You can test a session configuration using the [Test-PSSessionConfigurationFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/test-pssessionconfigurationfile) cmdlet.</span></span>
+<span data-ttu-id="bb577-208">如果已使用文本编辑器手动编辑 pssc 文件时，强烈建议测试会话配置文件以确保语法正确。</span><span class="sxs-lookup"><span data-stu-id="bb577-208">It is strongly recommended that you test your session configuration file if you have edited the pssc file manually using a text editor to ensure the syntax is correct.</span></span>
+<span data-ttu-id="bb577-209">如果会话配置文件未通过此测试，它将无法在系统上成功注册。</span><span class="sxs-lookup"><span data-stu-id="bb577-209">If a session configuration file does not pass this test, it will not be able to be successfully registered on the system.</span></span>
 
-## <a name="sample-session-configuration-file"></a><span data-ttu-id="ca951-210">示例会话配置文件</span><span class="sxs-lookup"><span data-stu-id="ca951-210">Sample session configuration file</span></span>
+## <a name="sample-session-configuration-file"></a><span data-ttu-id="bb577-210">示例会话配置文件</span><span class="sxs-lookup"><span data-stu-id="bb577-210">Sample session configuration file</span></span>
 
-<span data-ttu-id="ca951-211">下面的完整示例演示了如何创建和验证 JEA 的会话配置。</span><span class="sxs-lookup"><span data-stu-id="ca951-211">Below is a complete example showing how to create and validate a session configuration for JEA.</span></span>
-<span data-ttu-id="ca951-212">请注意，为了简便和易读，在 `$roles` 变量中创建和存储角色定义。</span><span class="sxs-lookup"><span data-stu-id="ca951-212">Note that the role definitions are created and stored in the `$roles` variable for convenience and readability.</span></span>
-<span data-ttu-id="ca951-213">但并非必须这样做。</span><span class="sxs-lookup"><span data-stu-id="ca951-213">It is not a requirement to do so.</span></span>
+<span data-ttu-id="bb577-211">下面的完整示例演示了如何创建和验证 JEA 的会话配置。</span><span class="sxs-lookup"><span data-stu-id="bb577-211">Below is a complete example showing how to create and validate a session configuration for JEA.</span></span>
+<span data-ttu-id="bb577-212">请注意，为了简便和易读，在 `$roles` 变量中创建和存储角色定义。</span><span class="sxs-lookup"><span data-stu-id="bb577-212">Note that the role definitions are created and stored in the `$roles` variable for convenience and readability.</span></span>
+<span data-ttu-id="bb577-213">但并非必须这样做。</span><span class="sxs-lookup"><span data-stu-id="bb577-213">It is not a requirement to do so.</span></span>
 
 ```powershell
 $roles = @{
@@ -246,12 +246,12 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\JEACo
 Test-PSSessionConfigurationFile -Path .\JEAConfig.pssc # should yield True
 ```
 
-## <a name="updating-session-configuration-files"></a><span data-ttu-id="ca951-214">更新会话配置文件</span><span class="sxs-lookup"><span data-stu-id="ca951-214">Updating session configuration files</span></span>
+## <a name="updating-session-configuration-files"></a><span data-ttu-id="bb577-214">更新会话配置文件</span><span class="sxs-lookup"><span data-stu-id="bb577-214">Updating session configuration files</span></span>
 
-<span data-ttu-id="ca951-215">如果需要更改 JEA 会话配置的属性（包括用户到角色的映射），需要[注销](register-jea.md#unregistering-jea-configurations)和[重新注册](register-jea.md) JEA 会话配置。</span><span class="sxs-lookup"><span data-stu-id="ca951-215">If you need to change properties of a JEA session configuration, including the mapping of users to roles, you must [unregister](register-jea.md#unregistering-jea-configurations) and [re-register](register-jea.md) the JEA session configuration.</span></span>
-<span data-ttu-id="ca951-216">重新注册 JEA 会话配置时，使用包含所需更改的更新后的 PowerShell 会话配置文件。</span><span class="sxs-lookup"><span data-stu-id="ca951-216">When you re-register the JEA session configuration, use an updated PowerShell session configuration file that includes your desired changes.</span></span>
+<span data-ttu-id="bb577-215">如果需要更改 JEA 会话配置的属性（包括用户到角色的映射），需要[注销](register-jea.md#unregistering-jea-configurations)和[重新注册](register-jea.md) JEA 会话配置。</span><span class="sxs-lookup"><span data-stu-id="bb577-215">If you need to change properties of a JEA session configuration, including the mapping of users to roles, you must [unregister](register-jea.md#unregistering-jea-configurations) and [re-register](register-jea.md) the JEA session configuration.</span></span>
+<span data-ttu-id="bb577-216">重新注册 JEA 会话配置时，使用包含所需更改的更新后的 PowerShell 会话配置文件。</span><span class="sxs-lookup"><span data-stu-id="bb577-216">When you re-register the JEA session configuration, use an updated PowerShell session configuration file that includes your desired changes.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="ca951-217">后续步骤</span><span class="sxs-lookup"><span data-stu-id="ca951-217">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="bb577-217">后续步骤</span><span class="sxs-lookup"><span data-stu-id="bb577-217">Next steps</span></span>
 
-- [<span data-ttu-id="ca951-218">注册 JEA 配置</span><span class="sxs-lookup"><span data-stu-id="ca951-218">Register a JEA configuration</span></span>](register-jea.md)
-- [<span data-ttu-id="ca951-219">创作 JEA 角色</span><span class="sxs-lookup"><span data-stu-id="ca951-219">Author JEA roles</span></span>](role-capabilities.md)
+- [<span data-ttu-id="bb577-218">注册 JEA 配置</span><span class="sxs-lookup"><span data-stu-id="bb577-218">Register a JEA configuration</span></span>](register-jea.md)
+- [<span data-ttu-id="bb577-219">创作 JEA 角色</span><span class="sxs-lookup"><span data-stu-id="bb577-219">Author JEA roles</span></span>](role-capabilities.md)

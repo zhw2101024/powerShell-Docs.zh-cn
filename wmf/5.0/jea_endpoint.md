@@ -2,21 +2,21 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
 ms.openlocfilehash: 3acd266a75bc61ffe4bce467cfb804ac7865c629
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39267916"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057241"
 ---
-# <a name="creating-and-connecting-to-a-jea-endpoint"></a><span data-ttu-id="2218e-102">创建并连接到 JEA 终结点</span><span class="sxs-lookup"><span data-stu-id="2218e-102">Creating and Connecting to a JEA Endpoint</span></span>
+# <a name="creating-and-connecting-to-a-jea-endpoint"></a><span data-ttu-id="66038-102">创建并连接到 JEA 终结点</span><span class="sxs-lookup"><span data-stu-id="66038-102">Creating and Connecting to a JEA Endpoint</span></span>
 
-<span data-ttu-id="2218e-103">若要创建 JEA 终结点，需要创建并注册一个专门配置 PowerShell 会话配置文件，可以使用 **New-PSSessionConfigurationFile** cmdlet 生成该文件。</span><span class="sxs-lookup"><span data-stu-id="2218e-103">To create a JEA endpoint, you need to create and register a specially-configured PowerShell Session Configuration file, which can be generated with the **New-PSSessionConfigurationFile** cmdlet.</span></span>
+<span data-ttu-id="66038-103">若要创建 JEA 终结点，需要创建并注册一个专门配置 PowerShell 会话配置文件，可以使用 **New-PSSessionConfigurationFile** cmdlet 生成该文件。</span><span class="sxs-lookup"><span data-stu-id="66038-103">To create a JEA endpoint, you need to create and register a specially-configured PowerShell Session Configuration file, which can be generated with the **New-PSSessionConfigurationFile** cmdlet.</span></span>
 
 ```powershell
 New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-<span data-ttu-id="2218e-104">这将创建一个如下所示的会话配置文件：</span><span class="sxs-lookup"><span data-stu-id="2218e-104">This will create a session configuration file that looks like this:</span></span>
+<span data-ttu-id="66038-104">这将创建一个如下所示的会话配置文件：</span><span class="sxs-lookup"><span data-stu-id="66038-104">This will create a session configuration file that looks like this:</span></span>
 
 ```powershell
 @{
@@ -53,21 +53,21 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDi
 }
 ```
 
-<span data-ttu-id="2218e-105">在创建 JEA 终结点时，必须设置以下命令的参数（以及文件中的相应密钥）：</span><span class="sxs-lookup"><span data-stu-id="2218e-105">When creating a JEA endpoint, the following parameters of the command (and corresponding keys in the file) must be set:</span></span>
+<span data-ttu-id="66038-105">在创建 JEA 终结点时，必须设置以下命令的参数（以及文件中的相应密钥）：</span><span class="sxs-lookup"><span data-stu-id="66038-105">When creating a JEA endpoint, the following parameters of the command (and corresponding keys in the file) must be set:</span></span>
 
-1. <span data-ttu-id="2218e-106">将 SessionType 设置为 RestrictedRemoteServer</span><span class="sxs-lookup"><span data-stu-id="2218e-106">SessionType to RestrictedRemoteServer</span></span>
-2. <span data-ttu-id="2218e-107">将 RunAsVirtualAccount 设置为 **$true**</span><span class="sxs-lookup"><span data-stu-id="2218e-107">RunAsVirtualAccount to **$true**</span></span>
-3. <span data-ttu-id="2218e-108">将 TranscriptPath 设置为目录中的一个位置，每次会话后将“即时权限提升”脚本保存到该位置</span><span class="sxs-lookup"><span data-stu-id="2218e-108">TranscriptPath to the directory where "over the shoulder" transcripts will be saved after each session</span></span>
-4. <span data-ttu-id="2218e-109">将 RoleDefinitions 设置为一个哈希表，该哈希表定义哪些组有权访问哪些“角色功能”。</span><span class="sxs-lookup"><span data-stu-id="2218e-109">RoleDefinitions to a hashtable that defines which groups have access to which "Role Capabilities."</span></span> <span data-ttu-id="2218e-110">此字段定义**谁**可以在此终结点上执行**什么操作**。</span><span class="sxs-lookup"><span data-stu-id="2218e-110">This field defines **who** can do **what** on this endpoint.</span></span> <span data-ttu-id="2218e-111">“角色功能”是特殊文件，下面进行简要介绍。</span><span class="sxs-lookup"><span data-stu-id="2218e-111">Role Capabilities are special files that will be explained shortly.</span></span>
+1. <span data-ttu-id="66038-106">将 SessionType 设置为 RestrictedRemoteServer</span><span class="sxs-lookup"><span data-stu-id="66038-106">SessionType to RestrictedRemoteServer</span></span>
+2. <span data-ttu-id="66038-107">将 RunAsVirtualAccount 设置为 **$true**</span><span class="sxs-lookup"><span data-stu-id="66038-107">RunAsVirtualAccount to **$true**</span></span>
+3. <span data-ttu-id="66038-108">将 TranscriptPath 设置为目录中的一个位置，每次会话后将“即时权限提升”脚本保存到该位置</span><span class="sxs-lookup"><span data-stu-id="66038-108">TranscriptPath to the directory where "over the shoulder" transcripts will be saved after each session</span></span>
+4. <span data-ttu-id="66038-109">将 RoleDefinitions 设置为一个哈希表，该哈希表定义哪些组有权访问哪些“角色功能”。</span><span class="sxs-lookup"><span data-stu-id="66038-109">RoleDefinitions to a hashtable that defines which groups have access to which "Role Capabilities."</span></span> <span data-ttu-id="66038-110">此字段定义**谁**可以在此终结点上执行**什么操作**。</span><span class="sxs-lookup"><span data-stu-id="66038-110">This field defines **who** can do **what** on this endpoint.</span></span> <span data-ttu-id="66038-111">“角色功能”是特殊文件，下面进行简要介绍。</span><span class="sxs-lookup"><span data-stu-id="66038-111">Role Capabilities are special files that will be explained shortly.</span></span>
 
-<span data-ttu-id="2218e-112">RoleDefinition 字段定义哪些组有权访问哪些角色功能。</span><span class="sxs-lookup"><span data-stu-id="2218e-112">The RoleDefinitions field defines which groups had access to which Role Capabilities.</span></span> <span data-ttu-id="2218e-113">“角色功能”是一个文件，它定义将向连接用户公开的一组功能。</span><span class="sxs-lookup"><span data-stu-id="2218e-113">A Role Capability is a file that defines a set of capabilities that will be exposed to connecting users.</span></span>
-<span data-ttu-id="2218e-114">你可以使用 **New-PSRoleCapabilityFile** 命令创建“角色功能”。</span><span class="sxs-lookup"><span data-stu-id="2218e-114">You can create Role Capabilities with the **New-PSRoleCapabilityFile** command.</span></span>
+<span data-ttu-id="66038-112">RoleDefinition 字段定义哪些组有权访问哪些角色功能。</span><span class="sxs-lookup"><span data-stu-id="66038-112">The RoleDefinitions field defines which groups had access to which Role Capabilities.</span></span> <span data-ttu-id="66038-113">“角色功能”是一个文件，它定义将向连接用户公开的一组功能。</span><span class="sxs-lookup"><span data-stu-id="66038-113">A Role Capability is a file that defines a set of capabilities that will be exposed to connecting users.</span></span>
+<span data-ttu-id="66038-114">你可以使用 **New-PSRoleCapabilityFile** 命令创建“角色功能”。</span><span class="sxs-lookup"><span data-stu-id="66038-114">You can create Role Capabilities with the **New-PSRoleCapabilityFile** command.</span></span>
 
 ```powershell
 New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc"
 ```
 
-<span data-ttu-id="2218e-115">这将生成一个模板角色功能，如下所示：</span><span class="sxs-lookup"><span data-stu-id="2218e-115">This will generate a template role capability that looks like this:</span></span>
+<span data-ttu-id="66038-115">这将生成一个模板角色功能，如下所示：</span><span class="sxs-lookup"><span data-stu-id="66038-115">This will generate a template role capability that looks like this:</span></span>
 
 ```powershell
 @{
@@ -131,24 +131,23 @@ New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\Demo
 }
 ```
 
-<span data-ttu-id="2218e-116">要想 JEA 会话配置能使用角色功能，则必须在名为“RoleCapabilities”的目录中将其保存为有效的 PowerShell 模块。</span><span class="sxs-lookup"><span data-stu-id="2218e-116">To be used by a JEA session configuration, Role Capabilities must be saved as a valid PowerShell module in a directory named "RoleCapabilities".</span></span> <span data-ttu-id="2218e-117">如果需要，一个模块可以有多个角色功能文件。</span><span class="sxs-lookup"><span data-stu-id="2218e-117">A module may have multiple role capability files, if desired.</span></span>
+<span data-ttu-id="66038-116">要想 JEA 会话配置能使用角色功能，则必须在名为“RoleCapabilities”的目录中将其保存为有效的 PowerShell 模块。</span><span class="sxs-lookup"><span data-stu-id="66038-116">To be used by a JEA session configuration, Role Capabilities must be saved as a valid PowerShell module in a directory named "RoleCapabilities".</span></span> <span data-ttu-id="66038-117">如果需要，一个模块可以有多个角色功能文件。</span><span class="sxs-lookup"><span data-stu-id="66038-117">A module may have multiple role capability files, if desired.</span></span>
 
-<span data-ttu-id="2218e-118">若要开始配置当用户接到 JEA 会话时可以访问哪些 cmdlet、函数、别名和脚本，请在注释模板后将你自己的规则添加到“角色功能”文件。</span><span class="sxs-lookup"><span data-stu-id="2218e-118">To start configuring which cmdlets, functions, aliases, and scripts a user may access when connecting to a JEA session, add your own rules to the Role Capability file following the commented out templates.</span></span> <span data-ttu-id="2218e-119">要深入了解如何配置“角色功能”，请查看完整的[体验指南](http://aka.ms/JEA)。</span><span class="sxs-lookup"><span data-stu-id="2218e-119">For a deeper look into how you can configure Role Capabilities, check out the full [experience guide](http://aka.ms/JEA).</span></span>
+<span data-ttu-id="66038-118">若要开始配置当用户接到 JEA 会话时可以访问哪些 cmdlet、函数、别名和脚本，请在注释模板后将你自己的规则添加到“角色功能”文件。</span><span class="sxs-lookup"><span data-stu-id="66038-118">To start configuring which cmdlets, functions, aliases, and scripts a user may access when connecting to a JEA session, add your own rules to the Role Capability file following the commented out templates.</span></span> <span data-ttu-id="66038-119">要深入了解如何配置“角色功能”，请查看完整的[体验指南](http://aka.ms/JEA)。</span><span class="sxs-lookup"><span data-stu-id="66038-119">For a deeper look into how you can configure Role Capabilities, check out the full [experience guide](http://aka.ms/JEA).</span></span>
 
-<span data-ttu-id="2218e-120">最后，完成会话和相关“角色功能”的自定义配置后，通过运行 `Register-PSSessionConfiguration` 注册此会话配置并创建终结点。</span><span class="sxs-lookup"><span data-stu-id="2218e-120">Finally, once you have finished customizing your session configuration and related Role Capabilities, register this session configuration and create the endpoint by running `Register-PSSessionConfiguration`.</span></span>
+<span data-ttu-id="66038-120">最后，完成会话和相关“角色功能”的自定义配置后，通过运行 `Register-PSSessionConfiguration` 注册此会话配置并创建终结点。</span><span class="sxs-lookup"><span data-stu-id="66038-120">Finally, once you have finished customizing your session configuration and related Role Capabilities, register this session configuration and create the endpoint by running `Register-PSSessionConfiguration`.</span></span>
 
 ```powershell
 Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-## <a name="connect-to-a-jea-endpoint"></a><span data-ttu-id="2218e-121">连接到 JEA 终结点</span><span class="sxs-lookup"><span data-stu-id="2218e-121">Connect to a JEA Endpoint</span></span>
+## <a name="connect-to-a-jea-endpoint"></a><span data-ttu-id="66038-121">连接到 JEA 终结点</span><span class="sxs-lookup"><span data-stu-id="66038-121">Connect to a JEA Endpoint</span></span>
 
-<span data-ttu-id="2218e-122">连接到 JEA 终结点与连接到任何其他 PowerShell 终结点的工作原理相同。</span><span class="sxs-lookup"><span data-stu-id="2218e-122">Connecting to a JEA Endpoint works the same way connecting to any other PowerShell endpoint works.</span></span>
-<span data-ttu-id="2218e-123">只需将 JEA 终结点命名为与 New-PSSession、Invoke-Command 或 Enter-PSSession 的“ConfigurationName”参数相同即可。</span><span class="sxs-lookup"><span data-stu-id="2218e-123">You simply have to give your JEA endpoint name as the "ConfigurationName" parameter for **New-PSSession**, **Invoke-Command**, or **Enter-PSSession**.</span></span>
+<span data-ttu-id="66038-122">连接到 JEA 终结点与连接到任何其他 PowerShell 终结点的工作原理相同。</span><span class="sxs-lookup"><span data-stu-id="66038-122">Connecting to a JEA Endpoint works the same way connecting to any other PowerShell endpoint works.</span></span>
+<span data-ttu-id="66038-123">只需将 JEA 终结点命名为与 New-PSSession、Invoke-Command 或 Enter-PSSession 的“ConfigurationName”参数相同即可。</span><span class="sxs-lookup"><span data-stu-id="66038-123">You simply have to give your JEA endpoint name as the "ConfigurationName" parameter for **New-PSSession**, **Invoke-Command**, or **Enter-PSSession**.</span></span>
 
 ```powershell
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
 
-<span data-ttu-id="2218e-124">如果已连接到 JEA 会话，运行你有权访问的列在允许列表中的“角色功能”将会受限。
-</span><span class="sxs-lookup"><span data-stu-id="2218e-124">Once you have connected to the JEA session, you will be limited to running the commands whitelisted in the Role Capabilities that you have access to.</span></span> <span data-ttu-id="2218e-125">如果尝试运行任何不允许你的角色运行的命令，将会遇到错误。</span><span class="sxs-lookup"><span data-stu-id="2218e-125">If you try to run any command not allowed for your role, you will encounter an error.</span></span>
+<span data-ttu-id="66038-124">如果已连接到 JEA 会话，运行你有权访问的列在允许列表中的“角色功能”将会受限。</span><span class="sxs-lookup"><span data-stu-id="66038-124">Once you have connected to the JEA session, you will be limited to running the commands whitelisted in the Role Capabilities that you have access to.</span></span> <span data-ttu-id="66038-125">如果尝试运行任何不允许你的角色运行的命令，将会遇到错误。</span><span class="sxs-lookup"><span data-stu-id="66038-125">If you try to run any command not allowed for your role, you will encounter an error.</span></span>
