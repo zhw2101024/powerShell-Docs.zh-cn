@@ -9,35 +9,35 @@ ms.topic: article
 ms.assetid: dffedd31-c10d-4e11-a9ee-4fdfe9a869e8
 caps.latest.revision: 8
 ms.openlocfilehash: 894c995474d4bf5b7fe11c1289c4500371c9dd43
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058294"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082747"
 ---
-# <a name="remoterunspacepool01-sample"></a><span data-ttu-id="6f85f-102">RemoteRunspacePool01 示例</span><span class="sxs-lookup"><span data-stu-id="6f85f-102">RemoteRunspacePool01 Sample</span></span>
+# <a name="remoterunspacepool01-sample"></a><span data-ttu-id="4c1c2-102">RemoteRunspacePool01 示例</span><span class="sxs-lookup"><span data-stu-id="4c1c2-102">RemoteRunspacePool01 Sample</span></span>
 
-<span data-ttu-id="6f85f-103">此示例演示如何构造远程运行空间池以及如何通过使用此池同时运行多个命令。</span><span class="sxs-lookup"><span data-stu-id="6f85f-103">This sample shows how to construct a remote runspace pool and how to run multiple commands concurrently by using this pool.</span></span>
+<span data-ttu-id="4c1c2-103">此示例演示如何构造远程运行空间池以及如何通过使用此池同时运行多个命令。</span><span class="sxs-lookup"><span data-stu-id="4c1c2-103">This sample shows how to construct a remote runspace pool and how to run multiple commands concurrently by using this pool.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="6f85f-104">要求</span><span class="sxs-lookup"><span data-stu-id="6f85f-104">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="4c1c2-104">要求</span><span class="sxs-lookup"><span data-stu-id="4c1c2-104">Requirements</span></span>
 
- <span data-ttu-id="6f85f-105">此示例要求 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="6f85f-105">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="4c1c2-105">此示例要求 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="4c1c2-105">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="6f85f-106">说明</span><span class="sxs-lookup"><span data-stu-id="6f85f-106">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="4c1c2-106">演示</span><span class="sxs-lookup"><span data-stu-id="4c1c2-106">Demonstrates</span></span>
 
-- <span data-ttu-id="6f85f-107">创建[System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)对象。</span><span class="sxs-lookup"><span data-stu-id="6f85f-107">Creating a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
+- <span data-ttu-id="4c1c2-107">创建[System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)对象。</span><span class="sxs-lookup"><span data-stu-id="4c1c2-107">Creating a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
 
-- <span data-ttu-id="6f85f-108">设置[System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout)并[System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout)属性[System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)对象。</span><span class="sxs-lookup"><span data-stu-id="6f85f-108">Setting the [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) and [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) properties of the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
+- <span data-ttu-id="4c1c2-108">设置[System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout)并[System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout)属性[System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)对象。</span><span class="sxs-lookup"><span data-stu-id="4c1c2-108">Setting the [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) and [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) properties of the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
 
-- <span data-ttu-id="6f85f-109">创建远程运行空间使用[System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)对象建立远程连接。</span><span class="sxs-lookup"><span data-stu-id="6f85f-109">Creating a remote runspace that uses the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object to establish the remote connection.</span></span>
+- <span data-ttu-id="4c1c2-109">创建远程运行空间使用[System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)对象建立远程连接。</span><span class="sxs-lookup"><span data-stu-id="4c1c2-109">Creating a remote runspace that uses the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object to establish the remote connection.</span></span>
 
-- <span data-ttu-id="6f85f-110">运行[Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)并[Get-service](/powershell/module/microsoft.powershell.management/get-service)同时通过使用远程运行空间池的 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="6f85f-110">Running the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlets concurrently by using the remote runspace pool.</span></span>
+- <span data-ttu-id="4c1c2-110">运行[Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)并[Get-service](/powershell/module/microsoft.powershell.management/get-service)同时通过使用远程运行空间池的 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="4c1c2-110">Running the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlets concurrently by using the remote runspace pool.</span></span>
 
-- <span data-ttu-id="6f85f-111">正在关闭要释放的远程连接的远程运行空间池。</span><span class="sxs-lookup"><span data-stu-id="6f85f-111">Closing the remote runspace pool to release the remote connection.</span></span>
+- <span data-ttu-id="4c1c2-111">正在关闭要释放的远程连接的远程运行空间池。</span><span class="sxs-lookup"><span data-stu-id="4c1c2-111">Closing the remote runspace pool to release the remote connection.</span></span>
 
-## <a name="example"></a><span data-ttu-id="6f85f-112">示例</span><span class="sxs-lookup"><span data-stu-id="6f85f-112">Example</span></span>
+## <a name="example"></a><span data-ttu-id="4c1c2-112">示例</span><span class="sxs-lookup"><span data-stu-id="4c1c2-112">Example</span></span>
 
- <span data-ttu-id="6f85f-113">此示例演示如何构造远程运行空间池以及如何通过使用此池同时运行多个命令。</span><span class="sxs-lookup"><span data-stu-id="6f85f-113">This sample shows how to construct a remote runspace pool and how to run multiple commands concurrently by using this pool.</span></span>
+ <span data-ttu-id="4c1c2-113">此示例演示如何构造远程运行空间池以及如何通过使用此池同时运行多个命令。</span><span class="sxs-lookup"><span data-stu-id="4c1c2-113">This sample shows how to construct a remote runspace pool and how to run multiple commands concurrently by using this pool.</span></span>
 
 ```csharp
 namespace Samples
@@ -132,4 +132,4 @@ namespace Samples
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="6f85f-114">另请参阅</span><span class="sxs-lookup"><span data-stu-id="6f85f-114">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4c1c2-114">另请参阅</span><span class="sxs-lookup"><span data-stu-id="4c1c2-114">See Also</span></span>

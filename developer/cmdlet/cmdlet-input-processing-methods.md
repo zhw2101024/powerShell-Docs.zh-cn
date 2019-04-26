@@ -10,84 +10,82 @@ helpviewer_keywords:
 - virtual methods (PowerShell SDK]
 ms.assetid: b0bb8172-c9fa-454b-9f1b-57c3fe60671b
 caps.latest.revision: 12
-ms.openlocfilehash: 065214647dfa6d376b727930fe75140911095faf
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: a28c8d3df19bc72bf338d6abc4e02768c5097209
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059365"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068481"
 ---
-# <a name="cmdlet-input-processing-methods"></a><span data-ttu-id="d76da-102">Cmdlet 输入处理方法</span><span class="sxs-lookup"><span data-stu-id="d76da-102">Cmdlet Input Processing Methods</span></span>
+# <a name="cmdlet-input-processing-methods"></a><span data-ttu-id="87fa8-102">Cmdlet 输入处理方法</span><span class="sxs-lookup"><span data-stu-id="87fa8-102">Cmdlet Input Processing Methods</span></span>
 
-<span data-ttu-id="d76da-103">一个或多个输入处理方法来执行其工作本主题中所述，必须重写 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="d76da-103">Cmdlets must override one or more of the input processing methods described in this topic to perform their work.</span></span> <span data-ttu-id="d76da-104">这些方法允许 cmdlet 来执行预处理操作、 输入处理操作和后期处理操作。</span><span class="sxs-lookup"><span data-stu-id="d76da-104">These methods allow the cmdlet to perform pre-processing operations, input processing operations, and post-processing operations.</span></span> <span data-ttu-id="d76da-105">这些方法还允许您停止 cmdlet 处理。</span><span class="sxs-lookup"><span data-stu-id="d76da-105">These methods also allow you to stop cmdlet processing.</span></span>
+<span data-ttu-id="87fa8-103">一个或多个输入处理方法来执行其工作本主题中所述，必须重写 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="87fa8-103">Cmdlets must override one or more of the input processing methods described in this topic to perform their work.</span></span>
+<span data-ttu-id="87fa8-104">这些方法允许 cmdlet 来执行预处理、 输入的处理和后处理操作。</span><span class="sxs-lookup"><span data-stu-id="87fa8-104">These methods allow the cmdlet to perform operations of pre-processing, input processing, and post-processing.</span></span>
+<span data-ttu-id="87fa8-105">这些方法还允许您停止 cmdlet 处理。</span><span class="sxs-lookup"><span data-stu-id="87fa8-105">These methods also allow you to stop cmdlet processing.</span></span>
+<span data-ttu-id="87fa8-106">有关如何使用这些方法的更详细的示例，请参阅[SelectStr 教程](selectstr-tutorial.md)。</span><span class="sxs-lookup"><span data-stu-id="87fa8-106">For a more detailed example of how to use these methods, see [SelectStr Tutorial](selectstr-tutorial.md).</span></span>
 
-## <a name="pre-processing-tasks"></a><span data-ttu-id="d76da-106">预处理任务</span><span class="sxs-lookup"><span data-stu-id="d76da-106">Pre-Processing Tasks</span></span>
+## <a name="pre-processing-operations"></a><span data-ttu-id="87fa8-107">预处理操作</span><span class="sxs-lookup"><span data-stu-id="87fa8-107">Pre-Processing Operations</span></span>
 
-<span data-ttu-id="d76da-107">Cmdlet 应重写[System.Management.Automation.Cmdlet.Beginprocessing%2A？Displayproperty =](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0)方法中添加任何有效的该 cmdlet 将更高版本处理的所有记录的预处理操作。</span><span class="sxs-lookup"><span data-stu-id="d76da-107">Cmdlets should override the [System.Management.Automation.Cmdlet.Beginprocessing%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0) method to add any preprocessing operations that are valid for all the records that will be processed later by the cmdlet.</span></span> <span data-ttu-id="d76da-108">当 Windows PowerShell 处理命令管道时，Windows PowerShell 调用此方法一次管道中的 cmdlet 的每个实例。</span><span class="sxs-lookup"><span data-stu-id="d76da-108">When Windows PowerShell processes a command pipeline, Windows PowerShell calls this method once for each instance of the cmdlet in the pipeline.</span></span> <span data-ttu-id="d76da-109">有关 Windows PowerShell 如何调用命令管道的详细信息，请参阅[Cmdlet 处理生命周期](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5)。</span><span class="sxs-lookup"><span data-stu-id="d76da-109">For more information about how Windows PowerShell invokes the command pipeline, see [Cmdlet Processing Lifecycle](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).</span></span>
+<span data-ttu-id="87fa8-108">Cmdlet 应重写[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法中添加任何有效的该 cmdlet 将更高版本处理的所有记录的预处理操作。</span><span class="sxs-lookup"><span data-stu-id="87fa8-108">Cmdlets should override the [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) method to add any preprocessing operations that are valid for all the records that will be processed later by the cmdlet.</span></span>
+<span data-ttu-id="87fa8-109">当 PowerShell 处理命令管道时，PowerShell 调用此方法一次管道中的 cmdlet 的每个实例。</span><span class="sxs-lookup"><span data-stu-id="87fa8-109">When PowerShell processes a command pipeline, PowerShell calls this method once for each instance of the cmdlet in the pipeline.</span></span>
+<span data-ttu-id="87fa8-110">有关 PowerShell 如何调用命令管道的详细信息，请参阅[Cmdlet 处理生命周期](/previous-versions/ms714429(v=vs.85))。</span><span class="sxs-lookup"><span data-stu-id="87fa8-110">For more information about how PowerShell invokes the command pipeline, see [Cmdlet Processing Lifecycle](/previous-versions/ms714429(v=vs.85)).</span></span>
 
-<span data-ttu-id="d76da-110">下面的代码演示一种实现[System.Management.Automation.Cmdlet.Beginprocessing%2A？Displayproperty =](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0)方法。</span><span class="sxs-lookup"><span data-stu-id="d76da-110">The following code shows an implementation of the [System.Management.Automation.Cmdlet.Beginprocessing%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0) method.</span></span>
+<span data-ttu-id="87fa8-111">下面的代码演示 BeginProcessing 方法的实现。</span><span class="sxs-lookup"><span data-stu-id="87fa8-111">The following code shows an implementation of the BeginProcessing method.</span></span>
 
 ```csharp
 protected override void BeginProcessing()
 {
-  // Replace the WriteObject method with the logic required
-  // by your cmdlet. It is used here to generate the following
-  // output:
-  // "This is a test of the BeginProcessing template."
+  // Replace the WriteObject method with the logic required by your cmdlet.
   WriteObject("This is a test of the BeginProcessing template.");
 }
 ```
 
-<span data-ttu-id="d76da-111">有关如何使用的更多详细示例[System.Management.Automation.Cmdlet.Beginprocessing%2A？Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0)方法，请参阅[SelectStr 教程](./selectstr-tutorial.md)。</span><span class="sxs-lookup"><span data-stu-id="d76da-111">For a more detailed example of how to use the [System.Management.Automation.Cmdlet.Beginprocessing%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0) method, see [SelectStr Tutorial](./selectstr-tutorial.md).</span></span> <span data-ttu-id="d76da-112">在本教程中，**选择 Str** cmdlet 使用[System.Management.Automation.Cmdlet.Beginprocessing%2A？Displayproperty =](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0)方法生成用于搜索的输入处理记录的正则表达式。</span><span class="sxs-lookup"><span data-stu-id="d76da-112">In this tutorial, the **Select-Str** cmdlet uses the [System.Management.Automation.Cmdlet.Beginprocessing%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0) method to generate the regular expression that is used to search the input processing records.</span></span>
+## <a name="input-processing-operations"></a><span data-ttu-id="87fa8-112">输入处理操作</span><span class="sxs-lookup"><span data-stu-id="87fa8-112">Input Processing Operations</span></span>
 
-## <a name="input-processing-tasks"></a><span data-ttu-id="d76da-113">输入处理任务</span><span class="sxs-lookup"><span data-stu-id="d76da-113">Input Processing Tasks</span></span>
+<span data-ttu-id="87fa8-113">Cmdlet 可以重写[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法来处理发送到该 cmdlet 的输入。</span><span class="sxs-lookup"><span data-stu-id="87fa8-113">Cmdlets can override the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method to process the input that is sent to the cmdlet.</span></span>
+<span data-ttu-id="87fa8-114">当 PowerShell 处理命令管道时，PowerShell cmdlet 处理每个输入记录调用此方法。</span><span class="sxs-lookup"><span data-stu-id="87fa8-114">When PowerShell processes a command pipeline, PowerShell calls this method for each input record that is processed by the cmdlet.</span></span>
+<span data-ttu-id="87fa8-115">有关 PowerShell 如何调用命令管道的详细信息，请参阅[Cmdlet 处理生命周期](/previous-versions/ms714429(v=vs.85))。</span><span class="sxs-lookup"><span data-stu-id="87fa8-115">For more information about how PowerShell invokes the command pipeline, see [Cmdlet Processing Lifecycle](/previous-versions/ms714429(v=vs.85)).</span></span>
 
-<span data-ttu-id="d76da-114">Cmdlet 可以重写[System.Management.Automation.Cmdlet.Processrecord%2A？Displayproperty =](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0)方法来处理发送到该 cmdlet 的输入。</span><span class="sxs-lookup"><span data-stu-id="d76da-114">Cmdlets can override the [System.Management.Automation.Cmdlet.Processrecord%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) method to process the input that is sent to the cmdlet.</span></span> <span data-ttu-id="d76da-115">当 Windows PowerShell 处理命令管道时，Windows PowerShell cmdlet 处理每个输入记录调用此方法。</span><span class="sxs-lookup"><span data-stu-id="d76da-115">When Windows PowerShell processes a command pipeline, Windows PowerShell calls this method for each input record that is processed by the cmdlet.</span></span> <span data-ttu-id="d76da-116">有关 Windows PowerShell 如何调用命令管道的详细信息，请参阅[Cmdlet 处理生命周期](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5)。</span><span class="sxs-lookup"><span data-stu-id="d76da-116">For more information about how Windows PowerShell invokes the command pipeline, see [Cmdlet Processing Lifecycle](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).</span></span>
-
-<span data-ttu-id="d76da-117">下面的代码演示一种实现[System.Management.Automation.Cmdlet.Processrecord%2A？Displayproperty =](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0)方法。</span><span class="sxs-lookup"><span data-stu-id="d76da-117">The following code shows an implementation of the [System.Management.Automation.Cmdlet.Processrecord%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) method.</span></span>
+<span data-ttu-id="87fa8-116">下面的代码演示 ProcessRecord 方法的实现。</span><span class="sxs-lookup"><span data-stu-id="87fa8-116">The following code shows an implementation of the ProcessRecord method.</span></span>
 
 ```csharp
 protected override void ProcessRecord()
 {
-  // Replace the WriteObject method with the logic required
-  // by your cmdlet. It is used here to generate the following
-  // output:
-  // "This is a test of the ProcessRecord template."
+  // Replace the WriteObject method with the logic required by your cmdlet.
   WriteObject("This is a test of the ProcessRecord template.");
 }
 ```
 
-<span data-ttu-id="d76da-118">有关如何使用的更多详细示例[System.Management.Automation.Cmdlet.Processrecord%2A？Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0)方法，请参阅[SelectStr 教程](./selectstr-tutorial.md)。</span><span class="sxs-lookup"><span data-stu-id="d76da-118">For a more detailed example of how to use the [System.Management.Automation.Cmdlet.Processrecord%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) method, see [SelectStr Tutorial](./selectstr-tutorial.md).</span></span>
+## <a name="post-processing-operations"></a><span data-ttu-id="87fa8-117">后续处理操作</span><span class="sxs-lookup"><span data-stu-id="87fa8-117">Post-Processing Operations</span></span>
 
-## <a name="post-processing-tasks"></a><span data-ttu-id="d76da-119">后续处理任务</span><span class="sxs-lookup"><span data-stu-id="d76da-119">Post-Processing Tasks</span></span>
+<span data-ttu-id="87fa8-118">Cmdlet 应重写[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法添加有效的 cmdlet 已处理的所有记录的任何后续处理操作。</span><span class="sxs-lookup"><span data-stu-id="87fa8-118">Cmdlets should override the [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) method to add any post-processing operations that are valid for all the records that were processed by the cmdlet.</span></span>
+<span data-ttu-id="87fa8-119">例如，你的 cmdlet 可能需要在完成后清理对象变量处理。</span><span class="sxs-lookup"><span data-stu-id="87fa8-119">For example, your cmdlet might have to clean up object variables after it is finished processing.</span></span>
 
-<span data-ttu-id="d76da-120">Cmdlet 应重写[System.Management.Automation.Cmdlet.Endprocessing%2A？Displayproperty =](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)方法添加有效的 cmdlet 已处理的所有记录的任何后续处理操作。</span><span class="sxs-lookup"><span data-stu-id="d76da-120">Cmdlets should override the [System.Management.Automation.Cmdlet.Endprocessing%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) method to add any post-processing operations that are valid for all the records that were processed by the cmdlet.</span></span> <span data-ttu-id="d76da-121">例如，你的 cmdlet 可能需要在完成后清理对象变量处理。</span><span class="sxs-lookup"><span data-stu-id="d76da-121">For example, your cmdlet might have to clean up object variables after it is finished processing.</span></span>
+<span data-ttu-id="87fa8-120">当 PowerShell 处理命令管道时，PowerShell 调用此方法一次管道中的 cmdlet 的每个实例。</span><span class="sxs-lookup"><span data-stu-id="87fa8-120">When PowerShell processes a command pipeline, PowerShell calls this method once for each instance of the cmdlet in the pipeline.</span></span>
+<span data-ttu-id="87fa8-121">但是，务必要记住，如果该 cmdlet 将其输入处理通过正中取消或终止错误时该 cmdlet 的任何部分中，PowerShell 运行时将不调用 EndProcessing 方法。</span><span class="sxs-lookup"><span data-stu-id="87fa8-121">However, it is important to remember that the PowerShell runtime will not call the EndProcessing method if the cmdlet is canceled midway through its input processing or if a terminating error occurs in any part of the cmdlet.</span></span>
+<span data-ttu-id="87fa8-122">出于此原因，应实现完整的 cmdlet，需要对象清理[System.IDisposable](/dotnet/api/System.IDisposable)模式，包括一个终结器，以便在运行时可以调用这两个 EndProcessing 和[System.IDisposable.Dispose](/dotnet/api/System.IDisposable.Dispose)末尾的处理方法。</span><span class="sxs-lookup"><span data-stu-id="87fa8-122">For this reason, a cmdlet that requires object cleanup should implement the complete [System.IDisposable](/dotnet/api/System.IDisposable) pattern, including a finalizer, so that the runtime can call both the EndProcessing and [System.IDisposable.Dispose](/dotnet/api/System.IDisposable.Dispose) methods at the end of processing.</span></span>
+<span data-ttu-id="87fa8-123">有关 PowerShell 如何调用命令管道的详细信息，请参阅[Cmdlet 处理生命周期](/previous-versions/ms714429(v=vs.85))。</span><span class="sxs-lookup"><span data-stu-id="87fa8-123">For more information about how PowerShell invokes the command pipeline, see [Cmdlet Processing Lifecycle](/previous-versions/ms714429(v=vs.85)).</span></span>
 
-<span data-ttu-id="d76da-122">当 Windows PowerShell 处理命令管道时，Windows PowerShell 调用此方法一次管道中的 cmdlet 的每个实例。</span><span class="sxs-lookup"><span data-stu-id="d76da-122">When Windows PowerShell processes a command pipeline, Windows PowerShell calls this method once for each instance of the cmdlet in the pipeline.</span></span> <span data-ttu-id="d76da-123">但是，务必记住，Windows PowerShell 运行时将不会调用[System.Management.Automation.Cmdlet.Endprocessing%2A？Displayproperty =](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)方法，如果该 cmdlet 通过其输入处理正中取消或如果终止该 cmdlet 的任何部分中会发生错误。</span><span class="sxs-lookup"><span data-stu-id="d76da-123">However, it is important to remember that the Windows PowerShell runtime will not call the [System.Management.Automation.Cmdlet.Endprocessing%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) method if the cmdlet is canceled midway through its input processing or if a terminating error occurs in any part of the cmdlet.</span></span> <span data-ttu-id="d76da-124">出于此原因，应实现完整的 cmdlet，需要对象清理[System.IDisposable](/dotnet/api/System.IDisposable)模式，包括一个终结器，以便在运行时可以同时调用[System.Management.Automation.Cmdlet.Endprocessing%2A？Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)并[System.IDisposable.Dispose\*](/dotnet/api/System.IDisposable.Dispose)末尾的处理方法。</span><span class="sxs-lookup"><span data-stu-id="d76da-124">For this reason, a cmdlet that requires object cleanup should implement the complete [System.IDisposable](/dotnet/api/System.IDisposable) pattern, including a finalizer, so that the runtime can call both the [System.Management.Automation.Cmdlet.Endprocessing%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) and [System.IDisposable.Dispose\*](/dotnet/api/System.IDisposable.Dispose) methods at the end of processing.</span></span> <span data-ttu-id="d76da-125">有关 Windows PowerShell 如何调用命令管道的详细信息，请参阅[Cmdlet 处理生命周期](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5)。</span><span class="sxs-lookup"><span data-stu-id="d76da-125">For more information about how Windows PowerShell invokes the command pipeline, see [Cmdlet Processing Lifecycle](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).</span></span>
-
-<span data-ttu-id="d76da-126">下面的代码演示一种实现[System.Management.Automation.Cmdlet.Processrecord%2A？Displayproperty =](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0)方法。</span><span class="sxs-lookup"><span data-stu-id="d76da-126">The following code shows an implementation of the [System.Management.Automation.Cmdlet.Processrecord%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) method.</span></span>
+<span data-ttu-id="87fa8-124">下面的代码演示 EndProcessing 方法的实现。</span><span class="sxs-lookup"><span data-stu-id="87fa8-124">The following code shows an implementation of the EndProcessing method.</span></span>
 
 ```csharp
 protected override void EndProcessing()
 {
-  // Replace the WriteObject method with the logic required
-  // by your cmdlet. It is used here to generate the following
-  // output:
-  // "This is a test of the EndProcessing template."
+  // Replace the WriteObject method with the logic required by your cmdlet.
   WriteObject("This is a test of the EndProcessing template.");
 }
 ```
 
-<span data-ttu-id="d76da-127">有关如何使用的更多详细示例[System.Management.Automation.Cmdlet.Processrecord%2A？Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0)方法，请参阅[SelectStr 教程](./selectstr-tutorial.md)。</span><span class="sxs-lookup"><span data-stu-id="d76da-127">For a more detailed example of how to use the [System.Management.Automation.Cmdlet.Processrecord%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) method, see [SelectStr Tutorial](./selectstr-tutorial.md).</span></span>
+## <a name="see-also"></a><span data-ttu-id="87fa8-125">另请参阅</span><span class="sxs-lookup"><span data-stu-id="87fa8-125">See Also</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="d76da-128">另请参阅</span><span class="sxs-lookup"><span data-stu-id="d76da-128">See Also</span></span>
+[<span data-ttu-id="87fa8-126">System.Management.Automation.Cmdlet.BeginProcessing</span><span class="sxs-lookup"><span data-stu-id="87fa8-126">System.Management.Automation.Cmdlet.BeginProcessing</span></span>](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)
 
-[<span data-ttu-id="d76da-129">System.Management.Automation.Cmdlet.Beginprocessing%2A?Displayproperty=Fullname</span><span class="sxs-lookup"><span data-stu-id="d76da-129">System.Management.Automation.Cmdlet.Beginprocessing%2A?Displayproperty=Fullname</span></span>](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0)
+[<span data-ttu-id="87fa8-127">System.Management.Automation.Cmdlet.ProcessRecord</span><span class="sxs-lookup"><span data-stu-id="87fa8-127">System.Management.Automation.Cmdlet.ProcessRecord</span></span>](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
 
-[<span data-ttu-id="d76da-130">System.Management.Automation.Cmdlet.Processrecord%2A?Displayproperty=Fullname</span><span class="sxs-lookup"><span data-stu-id="d76da-130">System.Management.Automation.Cmdlet.Processrecord%2A?Displayproperty=Fullname</span></span>](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0)
+[<span data-ttu-id="87fa8-128">System.Management.Automation.Cmdlet.EndProcessing</span><span class="sxs-lookup"><span data-stu-id="87fa8-128">System.Management.Automation.Cmdlet.EndProcessing</span></span>](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)
 
-[<span data-ttu-id="d76da-131">System.Management.Automation.Cmdlet.Endprocessing%2A?Displayproperty=Fullname</span><span class="sxs-lookup"><span data-stu-id="d76da-131">System.Management.Automation.Cmdlet.Endprocessing%2A?Displayproperty=Fullname</span></span>](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)
+[<span data-ttu-id="87fa8-129">SelectStr 教程</span><span class="sxs-lookup"><span data-stu-id="87fa8-129">SelectStr Tutorial</span></span>](selectstr-tutorial.md)
 
-[<span data-ttu-id="d76da-132">System.IDisposable</span><span class="sxs-lookup"><span data-stu-id="d76da-132">System.IDisposable</span></span>](/dotnet/api/System.IDisposable)
+[<span data-ttu-id="87fa8-130">System.IDisposable</span><span class="sxs-lookup"><span data-stu-id="87fa8-130">System.IDisposable</span></span>](/dotnet/api/System.IDisposable)
 
-[<span data-ttu-id="d76da-133">Windows PowerShell Shell SDK</span><span class="sxs-lookup"><span data-stu-id="d76da-133">Windows PowerShell Shell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="87fa8-131">Windows PowerShell Shell SDK</span><span class="sxs-lookup"><span data-stu-id="87fa8-131">Windows PowerShell Shell SDK</span></span>](../windows-powershell-reference.md)

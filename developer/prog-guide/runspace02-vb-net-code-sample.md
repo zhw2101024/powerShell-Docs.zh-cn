@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 9bd9d599-faa7-4154-ac36-1f35ccf8e320
 caps.latest.revision: 7
 ms.openlocfilehash: 5ad28cfbc73628ba818e42b87128d8f4ad273bda
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856643"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081422"
 ---
-# <a name="runspace02-vbnet-code-sample"></a><span data-ttu-id="4ad97-102">Runspace02 (VB.NET) 代码示例</span><span class="sxs-lookup"><span data-stu-id="4ad97-102">Runspace02 (VB.NET) Code Sample</span></span>
+# <a name="runspace02-vbnet-code-sample"></a><span data-ttu-id="ffa50-102">Runspace02 (VB.NET) 代码示例</span><span class="sxs-lookup"><span data-stu-id="ffa50-102">Runspace02 (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="4ad97-103">下面是 Runspace02 示例 VB.NET 源代码。</span><span class="sxs-lookup"><span data-stu-id="4ad97-103">Here is the VB.NET source code for the Runspace02 sample.</span></span> <span data-ttu-id="4ad97-104">此示例使用[System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)类来执行`Get-Process`cmdlet 以同步方式。</span><span class="sxs-lookup"><span data-stu-id="4ad97-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute the `Get-Process` cmdlet synchronously.</span></span> <span data-ttu-id="4ad97-105">然后将 Windows 窗体和数据绑定使用 DataGridView 控件中显示结果。</span><span class="sxs-lookup"><span data-stu-id="4ad97-105">Windows Forms and data binding are then used to display the results in a DataGridView control.</span></span>
+<span data-ttu-id="ffa50-103">下面是 Runspace02 示例 VB.NET 源代码。</span><span class="sxs-lookup"><span data-stu-id="ffa50-103">Here is the VB.NET source code for the Runspace02 sample.</span></span> <span data-ttu-id="ffa50-104">此示例使用[System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)类来执行`Get-Process`cmdlet 以同步方式。</span><span class="sxs-lookup"><span data-stu-id="ffa50-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute the `Get-Process` cmdlet synchronously.</span></span> <span data-ttu-id="ffa50-105">然后将 Windows 窗体和数据绑定使用 DataGridView 控件中显示结果。</span><span class="sxs-lookup"><span data-stu-id="ffa50-105">Windows Forms and data binding are then used to display the results in a DataGridView control.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="4ad97-106">代码示例</span><span class="sxs-lookup"><span data-stu-id="4ad97-106">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="ffa50-106">代码示例</span><span class="sxs-lookup"><span data-stu-id="ffa50-106">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -86,6 +86,6 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace02.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace02/Runspace02.vb#L09-L68 "Runspace02.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="4ad97-107">另请参阅</span><span class="sxs-lookup"><span data-stu-id="4ad97-107">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ffa50-107">另请参阅</span><span class="sxs-lookup"><span data-stu-id="ffa50-107">See Also</span></span>
 
-[<span data-ttu-id="4ad97-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="4ad97-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="ffa50-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="ffa50-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)

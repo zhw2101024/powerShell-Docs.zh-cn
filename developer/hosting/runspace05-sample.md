@@ -9,41 +9,41 @@ ms.topic: article
 ms.assetid: 1685cfc4-b32c-4bed-b221-e0c4482db955
 caps.latest.revision: 9
 ms.openlocfilehash: eb227b5fa5e91f59b6fc99981ff5affca1cf63fd
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056441"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082696"
 ---
-# <a name="runspace05-sample"></a><span data-ttu-id="05a88-102">Runspace05 示例</span><span class="sxs-lookup"><span data-stu-id="05a88-102">Runspace05 Sample</span></span>
+# <a name="runspace05-sample"></a><span data-ttu-id="21009-102">Runspace05 示例</span><span class="sxs-lookup"><span data-stu-id="21009-102">Runspace05 Sample</span></span>
 
-<span data-ttu-id="05a88-103">此示例演示如何将管理单元添加到[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)对象，以便当打开运行空间时，管理单元的 cmdlet 才可用。</span><span class="sxs-lookup"><span data-stu-id="05a88-103">This sample shows how to add a snap-in to an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object so that the cmdlet of the snap-in is available when the runspace is opened.</span></span> <span data-ttu-id="05a88-104">管理单元提供 Get-proc cmdlet (由[GetProcessSample01 Sample](../cmdlet/getprocesssample01-sample.md))，通过使用以同步方式运行[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)对象。</span><span class="sxs-lookup"><span data-stu-id="05a88-104">The snap-in provides a Get-Proc cmdlet (defined by the [GetProcessSample01 Sample](../cmdlet/getprocesssample01-sample.md)) that is run synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+<span data-ttu-id="21009-103">此示例演示如何将管理单元添加到[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)对象，以便当打开运行空间时，管理单元的 cmdlet 才可用。</span><span class="sxs-lookup"><span data-stu-id="21009-103">This sample shows how to add a snap-in to an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object so that the cmdlet of the snap-in is available when the runspace is opened.</span></span> <span data-ttu-id="21009-104">管理单元提供 Get-proc cmdlet (由[GetProcessSample01 Sample](../cmdlet/getprocesssample01-sample.md))，通过使用以同步方式运行[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)对象。</span><span class="sxs-lookup"><span data-stu-id="21009-104">The snap-in provides a Get-Proc cmdlet (defined by the [GetProcessSample01 Sample](../cmdlet/getprocesssample01-sample.md)) that is run synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="05a88-105">要求</span><span class="sxs-lookup"><span data-stu-id="05a88-105">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="21009-105">要求</span><span class="sxs-lookup"><span data-stu-id="21009-105">Requirements</span></span>
 
-<span data-ttu-id="05a88-106">此示例要求 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="05a88-106">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="21009-106">此示例要求 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="21009-106">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="05a88-107">说明</span><span class="sxs-lookup"><span data-stu-id="05a88-107">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="21009-107">演示</span><span class="sxs-lookup"><span data-stu-id="21009-107">Demonstrates</span></span>
 
-<span data-ttu-id="05a88-108">此示例将演示如下。</span><span class="sxs-lookup"><span data-stu-id="05a88-108">This sample demonstrates the following.</span></span>
+<span data-ttu-id="21009-108">此示例将演示如下。</span><span class="sxs-lookup"><span data-stu-id="21009-108">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="05a88-109">创建[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)对象。</span><span class="sxs-lookup"><span data-stu-id="05a88-109">Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="21009-109">创建[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)对象。</span><span class="sxs-lookup"><span data-stu-id="21009-109">Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="05a88-110">将单元添加到[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)对象。</span><span class="sxs-lookup"><span data-stu-id="05a88-110">Adding the snap-in to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="21009-110">将单元添加到[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)对象。</span><span class="sxs-lookup"><span data-stu-id="21009-110">Adding the snap-in to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="05a88-111">创建[System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace)对象，它使用[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)对象。</span><span class="sxs-lookup"><span data-stu-id="05a88-111">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object that uses the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="21009-111">创建[System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace)对象，它使用[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)对象。</span><span class="sxs-lookup"><span data-stu-id="21009-111">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object that uses the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="05a88-112">创建[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)使用运行空间的对象。</span><span class="sxs-lookup"><span data-stu-id="05a88-112">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
+- <span data-ttu-id="21009-112">创建[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)使用运行空间的对象。</span><span class="sxs-lookup"><span data-stu-id="21009-112">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
 
-- <span data-ttu-id="05a88-113">将管理单元 get proc cmdlet 添加到的管道[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)对象。</span><span class="sxs-lookup"><span data-stu-id="05a88-113">Adding the snap-in's get-proc cmdlet to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="21009-113">将管理单元 get proc cmdlet 添加到的管道[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)对象。</span><span class="sxs-lookup"><span data-stu-id="21009-113">Adding the snap-in's get-proc cmdlet to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="05a88-114">以同步方式运行命令。</span><span class="sxs-lookup"><span data-stu-id="05a88-114">Running the command synchronously.</span></span>
+- <span data-ttu-id="21009-114">以同步方式运行命令。</span><span class="sxs-lookup"><span data-stu-id="21009-114">Running the command synchronously.</span></span>
 
-- <span data-ttu-id="05a88-115">从属性中提取[System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject)命令返回的对象。</span><span class="sxs-lookup"><span data-stu-id="05a88-115">Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
+- <span data-ttu-id="21009-115">从属性中提取[System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject)命令返回的对象。</span><span class="sxs-lookup"><span data-stu-id="21009-115">Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
 
-## <a name="example"></a><span data-ttu-id="05a88-116">示例</span><span class="sxs-lookup"><span data-stu-id="05a88-116">Example</span></span>
+## <a name="example"></a><span data-ttu-id="21009-116">示例</span><span class="sxs-lookup"><span data-stu-id="21009-116">Example</span></span>
 
-<span data-ttu-id="05a88-117">此示例将创建使用的运行空间[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)对象定义的运行空间打开时可用的元素。</span><span class="sxs-lookup"><span data-stu-id="05a88-117">This sample creates a runspace that uses an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened.</span></span> <span data-ttu-id="05a88-118">在此示例中，定义了一个 Get-proc cmdlet 管理单元添加到初始会话状态。</span><span class="sxs-lookup"><span data-stu-id="05a88-118">In this sample, a snap-in that defines a Get-Proc cmdlet is added to the initial session state.</span></span>
+<span data-ttu-id="21009-117">此示例将创建使用的运行空间[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)对象定义的运行空间打开时可用的元素。</span><span class="sxs-lookup"><span data-stu-id="21009-117">This sample creates a runspace that uses an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened.</span></span> <span data-ttu-id="21009-118">在此示例中，定义了一个 Get-proc cmdlet 管理单元添加到初始会话状态。</span><span class="sxs-lookup"><span data-stu-id="21009-118">In this sample, a snap-in that defines a Get-Proc cmdlet is added to the initial session state.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -127,6 +127,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="05a88-119">另请参阅</span><span class="sxs-lookup"><span data-stu-id="05a88-119">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="21009-119">另请参阅</span><span class="sxs-lookup"><span data-stu-id="21009-119">See Also</span></span>
 
-[<span data-ttu-id="05a88-120">编写 Windows PowerShell 主机应用程序</span><span class="sxs-lookup"><span data-stu-id="05a88-120">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="21009-120">编写 Windows PowerShell 主机应用程序</span><span class="sxs-lookup"><span data-stu-id="21009-120">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)

@@ -9,39 +9,39 @@ ms.topic: article
 ms.assetid: f607a5ad-5372-4392-b2dc-ef3532fabd0f
 caps.latest.revision: 9
 ms.openlocfilehash: 7fafbc6bc19082abb8f37b68c031e0995bf879f6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856823"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082526"
 ---
-# <a name="windows-powershell01-sample"></a><span data-ttu-id="795eb-102">Windows PowerShell01 示例</span><span class="sxs-lookup"><span data-stu-id="795eb-102">Windows PowerShell01 Sample</span></span>
+# <a name="windows-powershell01-sample"></a><span data-ttu-id="506c0-102">Windows PowerShell01 示例</span><span class="sxs-lookup"><span data-stu-id="506c0-102">Windows PowerShell01 Sample</span></span>
 
-<span data-ttu-id="795eb-103">此示例演示如何使用[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)对象来限制运行空间的功能。</span><span class="sxs-lookup"><span data-stu-id="795eb-103">This sample shows how to use an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to limit the functionality of a runspace.</span></span> <span data-ttu-id="795eb-104">此示例的输出演示了如何限制的运行空间、 如何将标记为专用的 cmdlet、 如何添加和删除 cmdlet 和提供程序，将语言模式如何添加代理命令，和的详细信息。</span><span class="sxs-lookup"><span data-stu-id="795eb-104">The output of this sample demonstrates how to restrict the language mode of the runspace, how to mark a cmdlet as private, how to add and remove cmdlets and providers, how to add a proxy command, and more.</span></span> <span data-ttu-id="795eb-105">此示例重点介绍如何以编程方式限制运行空间。</span><span class="sxs-lookup"><span data-stu-id="795eb-105">This sample concentrates on how to restrict the runspace programmatically.</span></span> <span data-ttu-id="795eb-106">限制运行空间脚本替代方案包括 $ExecutionContext.SessionState.LanguageMode 和 PSSessionConfiguration 命令。</span><span class="sxs-lookup"><span data-stu-id="795eb-106">Scripting alternatives to restricting the runspace include the $ExecutionContext.SessionState.LanguageMode and PSSessionConfiguration commands.</span></span>
+<span data-ttu-id="506c0-103">此示例演示如何使用[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)对象来限制运行空间的功能。</span><span class="sxs-lookup"><span data-stu-id="506c0-103">This sample shows how to use an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to limit the functionality of a runspace.</span></span> <span data-ttu-id="506c0-104">此示例的输出演示了如何限制的运行空间、 如何将标记为专用的 cmdlet、 如何添加和删除 cmdlet 和提供程序，将语言模式如何添加代理命令，和的详细信息。</span><span class="sxs-lookup"><span data-stu-id="506c0-104">The output of this sample demonstrates how to restrict the language mode of the runspace, how to mark a cmdlet as private, how to add and remove cmdlets and providers, how to add a proxy command, and more.</span></span> <span data-ttu-id="506c0-105">此示例重点介绍如何以编程方式限制运行空间。</span><span class="sxs-lookup"><span data-stu-id="506c0-105">This sample concentrates on how to restrict the runspace programmatically.</span></span> <span data-ttu-id="506c0-106">限制运行空间脚本替代方案包括 $ExecutionContext.SessionState.LanguageMode 和 PSSessionConfiguration 命令。</span><span class="sxs-lookup"><span data-stu-id="506c0-106">Scripting alternatives to restricting the runspace include the $ExecutionContext.SessionState.LanguageMode and PSSessionConfiguration commands.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="795eb-107">要求</span><span class="sxs-lookup"><span data-stu-id="795eb-107">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="506c0-107">要求</span><span class="sxs-lookup"><span data-stu-id="506c0-107">Requirements</span></span>
 
-<span data-ttu-id="795eb-108">此示例要求 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="795eb-108">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="506c0-108">此示例要求 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="506c0-108">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="795eb-109">说明</span><span class="sxs-lookup"><span data-stu-id="795eb-109">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="506c0-109">演示</span><span class="sxs-lookup"><span data-stu-id="506c0-109">Demonstrates</span></span>
 
-<span data-ttu-id="795eb-110">此示例将演示如下：</span><span class="sxs-lookup"><span data-stu-id="795eb-110">This sample demonstrates the following:</span></span>
+<span data-ttu-id="506c0-110">此示例将演示如下：</span><span class="sxs-lookup"><span data-stu-id="506c0-110">This sample demonstrates the following:</span></span>
 
-- <span data-ttu-id="795eb-111">将语言限制通过设置[System.Management.Automation.Runspaces.Initialsessionstate.Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode)属性。</span><span class="sxs-lookup"><span data-stu-id="795eb-111">Restricting the language by setting the [System.Management.Automation.Runspaces.Initialsessionstate.Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode) property.</span></span>
+- <span data-ttu-id="506c0-111">将语言限制通过设置[System.Management.Automation.Runspaces.Initialsessionstate.Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode)属性。</span><span class="sxs-lookup"><span data-stu-id="506c0-111">Restricting the language by setting the [System.Management.Automation.Runspaces.Initialsessionstate.Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode) property.</span></span>
 
-- <span data-ttu-id="795eb-112">将别名添加到初始会话状态使用[System.Management.Automation.Runspaces.Sessionstatealiasentry？Displayproperty =](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry)对象。</span><span class="sxs-lookup"><span data-stu-id="795eb-112">Adding aliases to the initial session state by using a [System.Management.Automation.Runspaces.Sessionstatealiasentry?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry) object.</span></span>
+- <span data-ttu-id="506c0-112">将别名添加到初始会话状态使用[System.Management.Automation.Runspaces.Sessionstatealiasentry？Displayproperty =](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry)对象。</span><span class="sxs-lookup"><span data-stu-id="506c0-112">Adding aliases to the initial session state by using a [System.Management.Automation.Runspaces.Sessionstatealiasentry?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry) object.</span></span>
 
-- <span data-ttu-id="795eb-113">将标记为专用命令。</span><span class="sxs-lookup"><span data-stu-id="795eb-113">Marking commands as private.</span></span>
+- <span data-ttu-id="506c0-113">将标记为专用命令。</span><span class="sxs-lookup"><span data-stu-id="506c0-113">Marking commands as private.</span></span>
 
-- <span data-ttu-id="795eb-114">使用初始会话状态中删除提供程序[System.Management.Automation.Runspaces.Initialsessionstate.Providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers)属性。</span><span class="sxs-lookup"><span data-stu-id="795eb-114">Removing providers from the initial session state by using the [System.Management.Automation.Runspaces.Initialsessionstate.Providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers) property.</span></span>
+- <span data-ttu-id="506c0-114">使用初始会话状态中删除提供程序[System.Management.Automation.Runspaces.Initialsessionstate.Providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers)属性。</span><span class="sxs-lookup"><span data-stu-id="506c0-114">Removing providers from the initial session state by using the [System.Management.Automation.Runspaces.Initialsessionstate.Providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers) property.</span></span>
 
-- <span data-ttu-id="795eb-115">使用初始会话状态中删除命令[System.Management.Automation.Runspaces.Initialsessionstate.Commands](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands)属性。</span><span class="sxs-lookup"><span data-stu-id="795eb-115">Removing commands from the initial session state by using the [System.Management.Automation.Runspaces.Initialsessionstate.Commands](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands) property.</span></span>
+- <span data-ttu-id="506c0-115">使用初始会话状态中删除命令[System.Management.Automation.Runspaces.Initialsessionstate.Commands](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands)属性。</span><span class="sxs-lookup"><span data-stu-id="506c0-115">Removing commands from the initial session state by using the [System.Management.Automation.Runspaces.Initialsessionstate.Commands](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands) property.</span></span>
 
-- <span data-ttu-id="795eb-116">添加命令和提供程序与[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)对象。</span><span class="sxs-lookup"><span data-stu-id="795eb-116">Adding commands and providers to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="506c0-116">添加命令和提供程序与[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)对象。</span><span class="sxs-lookup"><span data-stu-id="506c0-116">Adding commands and providers to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-## <a name="example"></a><span data-ttu-id="795eb-117">示例</span><span class="sxs-lookup"><span data-stu-id="795eb-117">Example</span></span>
+## <a name="example"></a><span data-ttu-id="506c0-117">示例</span><span class="sxs-lookup"><span data-stu-id="506c0-117">Example</span></span>
 
-<span data-ttu-id="795eb-118">此示例演示几种方法可以限制运行空间的功能。</span><span class="sxs-lookup"><span data-stu-id="795eb-118">This sample shows several ways to limit the functionality of a runspace.</span></span>
+<span data-ttu-id="506c0-118">此示例演示几种方法可以限制运行空间的功能。</span><span class="sxs-lookup"><span data-stu-id="506c0-118">This sample shows several ways to limit the functionality of a runspace.</span></span>
 
 ```csharp
 namespace Sample
@@ -257,6 +257,6 @@ namespace Sample
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="795eb-119">另请参阅</span><span class="sxs-lookup"><span data-stu-id="795eb-119">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="506c0-119">另请参阅</span><span class="sxs-lookup"><span data-stu-id="506c0-119">See Also</span></span>
 
-[<span data-ttu-id="795eb-120">编写 Windows PowerShell 主机应用程序</span><span class="sxs-lookup"><span data-stu-id="795eb-120">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="506c0-120">编写 Windows PowerShell 主机应用程序</span><span class="sxs-lookup"><span data-stu-id="506c0-120">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
