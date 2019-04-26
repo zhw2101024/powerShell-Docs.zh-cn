@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 1fd53f55-698d-4df5-bb9a-fe28dc3193e1
 caps.latest.revision: 11
 ms.openlocfilehash: df568ccb36a2646b983622cdf95718dd5cac62c3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853723"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066764"
 ---
 # <a name="control-element-for-controls-for-view--format"></a>Control Element for Controls for View (Format)
 
@@ -30,24 +30,24 @@ ms.locfileid: "56853723"
 </Control>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述了特性、 子元素和父元素的`Control`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[控件的视图 （格式） 的名称元素](./name-element-for-control-for-controls-for-view-format.md)|必需的元素。<br /><br /> 指定控件的名称。|
 |[控件的视图 （格式） 的控件的 CustomControl 元素](./customcontrol-element-for-control-for-controls-for-view-format.md)|必需的元素。<br /><br /> 定义此视图使用的控件。|
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[控件元素 （格式）](./controls-element-for-view-format.md)|定义可由特定视图的视图控件。|
 

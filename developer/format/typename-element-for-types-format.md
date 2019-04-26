@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 0595b99e-b438-4240-b47b-555cf0316f33
 caps.latest.revision: 15
 ms.openlocfilehash: bd5baa03c2050b2c3bbe1d7697c253d923175d39
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083784"
 ---
 # <a name="typename-element-for-types-format"></a>TypeName Element for Types (Format)
 
@@ -27,7 +27,7 @@ ms.locfileid: "58057920"
 <TypeName>Nameof.NetType</Name>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述了特性、 子元素和父元素的`TypeName`元素。 至少一个`TypeName`元素必须包含在选择集中。
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: b07a53df-64f1-49b0-8cea-c993b3f1f76b
 caps.latest.revision: 10
 ms.openlocfilehash: 1bc936b94ee6fd6239e9e3c4afcdb8f14fbe36eb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858203"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066934"
 ---
 # <a name="alignment-element-for-tablecolumnitem-for-tablecontrol-format"></a>Alignment Element for TableColumnItem for TableControl (Format)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56858203"
 <Alignment>AlignmentType</Alignment>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述的特性、 子元素和父元素的`Alignment`元素。
 

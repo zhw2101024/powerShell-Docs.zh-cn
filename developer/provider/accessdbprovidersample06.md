@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 46dc0657-110f-4367-8bb6-a95dca2c5016
 caps.latest.revision: 8
 ms.openlocfilehash: f020f023f9a379ff8a610edb7d5dcfe207170394
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055540"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080979"
 ---
 # <a name="accessdbprovidersample06"></a>AccessDBProviderSample06
 
 此示例演示了如何覆盖内容方法以支持对调用`Clear-Content`， `Get-Content`，和`Set-Content`cmdlet。 当用户需要管理数据存储区中的项的内容时，应实现这些方法。 在此示例中的提供程序类派生[System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)类，并实现[System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)接口。
 
-## <a name="demonstrates"></a>说明
+## <a name="demonstrates"></a>演示
 
 > [!IMPORTANT]
 > 提供程序类将很可能从以下类之一派生，并可能实现其他提供程序接口：

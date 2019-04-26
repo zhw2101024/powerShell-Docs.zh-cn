@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 42c1c59c-6da5-4cda-9562-e8059177fee1
 caps.latest.revision: 11
 ms.openlocfilehash: eec9c616fc6d5240db185f764a3ea2c8f9575d03
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057903"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082781"
 ---
 # <a name="runspace01-sample"></a>Runspace01 示例
 
@@ -23,7 +23,7 @@ ms.locfileid: "58057903"
 
  此示例要求 Windows PowerShell 2.0。
 
-## <a name="demonstrates"></a>说明
+## <a name="demonstrates"></a>演示
 
 - 创建[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)对象运行命令。
 

@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: aaf9351e-157f-4d48-8b8f-1fd64855b682
 caps.latest.revision: 10
 ms.openlocfilehash: d291e401bbf3da998735ebb00f1eb35521f9a19c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853483"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081047"
 ---
 # <a name="accessdbprovidersample02"></a>AccessDBProviderSample02
 
 此示例演示了如何覆盖[System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)和[System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)方法以支持对调用`New-PSDrive`和`Remove-PSDrive`cmdlet。 在此示例中的提供程序类派生[System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)类。
 
-## <a name="demonstrates"></a>说明
+## <a name="demonstrates"></a>演示
 
 > [!IMPORTANT]
 > 提供程序类将很可能从以下类之一派生，并可能实现其他提供程序接口：

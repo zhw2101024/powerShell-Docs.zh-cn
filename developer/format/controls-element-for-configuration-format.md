@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 4d4ef63d-5866-4319-ba00-7ed96de26821
 caps.latest.revision: 18
 ms.openlocfilehash: ac9f7ff08f6e87ef83b5a2fe23fc58ee2651566d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861173"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066866"
 ---
 # <a name="controls-element-for-configuration-format"></a>Controls Element for Configuration (Format)
 
@@ -29,23 +29,23 @@ ms.locfileid: "56861173"
 </Controls>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述了特性、 子元素和父元素的`Controls`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[配置 （格式） 的控件的控件元素](./control-element-for-controls-for-configuration-format.md)|必需的元素。<br /><br /> 定义可由格式设置文件的所有视图的公共控件。|
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[配置元素 （格式）](./configuration-element-format.md)|表示格式设置文件的顶级元素。|
 

@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 1362f4cd-4e05-4ace-ade6-7128da8ad86c
 caps.latest.revision: 10
 ms.openlocfilehash: 4c6aacd49b0a87bca6806ba5f08a1b4d48a90959
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853813"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068549"
 ---
 # <a name="cmdlet-output"></a>Cmdlet 输出
 
 本部分讨论 cmdlet 的输出和 cmdlet 可调用以生成输出，例如错误消息和对象的方法的类型。 本部分还介绍了如何定义由你 cmdlet 返回的.NET Framework 类型以及这些对象的显示方式。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>本部分内容
 
 [类型的 Cmdlet 的输出](./types-of-cmdlet-output.md)描述类型和 cmdlet 可以生成的输出和 cmdlet 调用以生成输出的方法。
 

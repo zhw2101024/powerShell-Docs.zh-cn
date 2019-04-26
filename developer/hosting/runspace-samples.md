@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: c92a6d3d-8d34-4a76-bdc3-dea923d9858e
 caps.latest.revision: 17
 ms.openlocfilehash: e24d40746da91f60aaf2af655ddcadc88ab6a4db
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857333"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082730"
 ---
 # <a name="runspace-samples"></a>运行空间示例
 
 本节包含演示如何使用不同类型的运行空间同步和异步方式运行命令的示例代码。 可以使用 Microsoft Visual Studio 创建控制台应用程序，然后将此部分中的主题从代码复制到主机应用程序。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>本部分内容
 
 > [!NOTE]
 > 有关创建自定义主机接口的托管应用程序的示例，请参阅[自定义主机示例](./custom-host-samples.md)。

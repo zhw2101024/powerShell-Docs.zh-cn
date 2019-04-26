@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: acdeef4d-3554-4f39-a7e6-a684e3848fd7
 caps.latest.revision: 19
 ms.openlocfilehash: efc1c5d1338889ecd0be7150b7733842ce78979e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083818"
 ---
 # <a name="viewselectedby-element-format"></a>ViewSelectedBy Element (Format)
 
@@ -30,24 +30,24 @@ ViewDefinitions 元素 （格式） 视图元素 （格式） ViewSelectedBy 元
 </ViewSelectedBy>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述的特性、 子元素和父元素的`ViewSelectedBy`元素。 此元素必须包含至少一个`TypeName`或`SelectionSetName`子元素。 可以指定的子元素的数目没有限制也不是其顺序重要。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[ViewSelectedBy （格式） 的类型名称元素](./typename-element-for-viewselectedby-format.md)|可选元素。<br /><br /> 指定视图显示的.NET 对象。|
 |[ViewSelectedBy （格式） 的 SelectionSetName 元素](./selectionsetname-element-for-viewselectedby-format.md)|可选元素。<br /><br /> 指定一组.NET 对象所显示的视图。|
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[视图元素 （格式）](./view-element-format.md)|定义一个视图，显示一个或多个.NET 对象。|
 

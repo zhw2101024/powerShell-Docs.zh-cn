@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: b62e81cc-4175-40fa-829f-634245b09f86
 caps.latest.revision: 12
 ms.openlocfilehash: aaf16702e485135b5299ccb43a2b62db2d9f5762
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856783"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065376"
 ---
 # <a name="listentries-element-for-listcontrol-format"></a>ListEntries Element for ListControl (Format)
 
@@ -29,23 +29,23 @@ ms.locfileid: "56856783"
 </ListEntries>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述了特性、 子元素和父元素的`ListEntries`元素。 必须指定至少一个子元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[ListEntry 元素 （格式）](./listentry-element-for-listcontrol-format.md)|提供列表视图中的定义。|
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[ListControl 元素 （格式）](./listcontrol-element-format.md)|定义视图以列表格式。|
 

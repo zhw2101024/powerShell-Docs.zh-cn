@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 98708c1d-6f39-4a76-b454-31153a6ade8c
 caps.latest.revision: 12
 ms.openlocfilehash: 3c110bd5fe3ef2f790ef136556afa7c29d0b5b29
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066402"
 ---
 # <a name="customitem-element-for-customentry-for-customcontrol-for-view-format"></a>CustomItem Element for CustomEntry for CustomControl for View (Format)
 
@@ -32,17 +32,17 @@ ms.locfileid: "56856183"
 </CustomItem>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述了特性、 子元素和父元素的`CustomItem`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[为视图 （格式） 的 CustomControl CustomItem ExpressionBinding 元素](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)|可选元素。<br /><br /> 定义由控件显示的数据。|
 |[为视图 （格式） 的 CustomControl CustomItem 的框架元素](./frame-element-for-customitem-for-customcontrol-for-view-format.md)|可选元素。<br /><br /> 定义由自定义控件视图中显示的数据和显示方式。|
@@ -51,7 +51,7 @@ ms.locfileid: "56856183"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[为视图 （格式） 的 CustomControl CustomEntries CustomEntry 元素](./customentry-element-for-customentries-for-customcontrol-for-view-format.md)|提供自定义控件视图的定义。|
 
