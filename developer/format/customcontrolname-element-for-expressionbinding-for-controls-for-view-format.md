@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 4b6ee11e-9086-41d2-afd3-42fb9f24da69
 caps.latest.revision: 7
 ms.openlocfilehash: bf1d57447f9018f1535af14466427aaeabc048f3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855593"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066645"
 ---
 # <a name="customcontrolname-element-for-expressionbinding-for-controls-for-view-format"></a>CustomControlName Element for ExpressionBinding for Controls for View (Format)
 
@@ -27,11 +27,11 @@ ms.locfileid: "56855593"
 <CustomControlName>NameofCustomControl</CustomControlName>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述了特性、 子元素和父元素的`CustomControlName`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
@@ -41,7 +41,7 @@ ms.locfileid: "56855593"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[ExpressionBinding CustomItem 视图 （格式） 的控件元素](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)|定义由控件显示的数据。|
 
