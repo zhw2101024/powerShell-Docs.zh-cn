@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ab2a5379-299d-4c97-86a2-b639ea890fae
 caps.latest.revision: 6
 ms.openlocfilehash: 7f9066c0fe0954fadff9dc8f0c35a62c6710f516
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854843"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065591"
 ---
 # <a name="frame-element-for-customitem-for-groupby-format"></a>Frame Element for CustomItem for GroupBy (Format)
 
@@ -33,17 +33,17 @@ GroupBy （格式） 的 GroupBy （格式） CustomEntry 元素 CustomControl C
 </Frame>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述了特性、 子元素和父元素的`Frame`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |`CustomItem Element`|所需的元素|
 |[GroupBy （格式） 的帧的 FirstLineHanging 元素](./firstlinehanging-element-for-frame-for-groupby-format.md)|可选元素。<br /><br /> 指定向左移动数据的第一行的字符数。|
@@ -53,7 +53,7 @@ GroupBy （格式） 的 GroupBy （格式） CustomEntry 元素 CustomControl C
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[GroupBy （格式） 的 CustomEntry CustomItem 元素](./customitem-element-for-customentry-for-groupby-format.md)|定义由控件显示的数据和显示方式。|
 

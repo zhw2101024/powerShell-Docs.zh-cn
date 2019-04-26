@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 29840c10-2b30-4bb1-a8a0-ddf84d19c2d0
 caps.latest.revision: 18
 ms.openlocfilehash: c5ec80350c7707ccd41112ab5e1952e5dc198cca
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862083"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083699"
 ---
 # <a name="viewdefinitions-element-format"></a>ViewDefinitions Element (Format)
 
@@ -30,23 +30,23 @@ ms.locfileid: "56862083"
 </ViewDefinitions>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述的特性、 子元素和父元素的`ViewDefinitions`元素。 没有可以在格式设置文件中定义的视图数目没有限制，可以按任意顺序添加它们。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[视图元素 （格式）](./view-element-format.md)|定义用于显示一个或多个.NET 对象的视图。|
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[配置元素 （格式）](./configuration-element-format.md)|表示格式设置文件的顶级元素。|
 

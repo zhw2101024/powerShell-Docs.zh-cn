@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: f6c700c8-0889-49a1-a990-8c6e9aaf4735
 caps.latest.revision: 6
 ms.openlocfilehash: 5166213f8247fa23d5e0b3fdfd2367062d595169
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862463"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067750"
 ---
 # <a name="how-to-validate-parameter-input"></a>如何验证参数输入
 
 本节包含演示如何通过使用各种属性来实施验证规则来验证参数输入的示例。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>本部分内容
 
 [如何验证参数设置](./how-to-validate-an-argument-set.md)描述如何验证通过使用 ArgumentSet 属性设置的参数。
 

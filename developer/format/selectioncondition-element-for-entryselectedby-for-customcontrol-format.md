@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 231e9c6d-09ec-4e68-80ee-0c8f7fe1b9f5
 caps.latest.revision: 7
 ms.openlocfilehash: 49e2c0cf09dfa55b535effcd431e980daf12fac3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858823"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075743"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-customcontrol-format"></a>SelectionCondition Element for EntrySelectedBy for CustomControl (Format)
 
@@ -32,17 +32,17 @@ ms.locfileid: "56858823"
 </SelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述了特性、 子元素和父元素的`SelectionCondition`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[属性名称的视图 （格式） 的 CustomControl SelectionCondition 元素](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md)|可选元素。<br /><br /> 指定触发条件的.NET 属性。|
 |[为视图 （格式） 的 CustomControl SelectionCondition 的脚本块元素](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md)|可选元素。<br /><br /> 指定触发条件的脚本。|
@@ -51,7 +51,7 @@ ms.locfileid: "56858823"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[为视图 （格式） 的 CustomControl CustomEntry EntrySelectedBy 元素](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|定义使用此控件定义或要使用此定义中必须存在的条件的.NET 类型。|
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d0b548aa-febf-45dd-bf71-2077730b9b73
 caps.latest.revision: 6
 ms.openlocfilehash: 767b392bd1603e83d80bad5b3fd9cb42ff142ce6
-ms.sourcegitcommit: 10c347a8c3dcbf8962295601834f5ba85342a87b
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "56863603"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067239"
 ---
 # <a name="tutorials-for-writing-cmdlets"></a>编写 Cmdlet 的教程
 
@@ -22,7 +22,7 @@ ms.locfileid: "56863603"
 > [!IMPORTANT]
 > 对于那些想要使用更少说明的代码示例，请参阅[Cmdlet 示例](./cmdlet-samples.md)。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>本部分内容
 
 [GetProc 教程](./getproc-tutorial.md)-本教程介绍如何定义 cmdlet 类并添加基本功能，例如添加参数和报告错误。 在本教程中所述的 cmdlet 是非常类似于[Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)提供的 Windows PowerShell cmdlet。
 

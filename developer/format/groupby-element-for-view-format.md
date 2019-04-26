@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 67a2b061-2a4a-4ad1-84f9-cdbefb64aaab
 caps.latest.revision: 8
 ms.openlocfilehash: abb8b91626128b3deaa2db24a9fd8b34a6563410
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859523"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065525"
 ---
 # <a name="groupby-element-for-view-format"></a>GroupBy Element for View (Format)
 
@@ -33,17 +33,17 @@ ms.locfileid: "56859523"
 </GroupBy>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述了特性、 子元素和父元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[GroupBy （格式） 的 CustomControl 元素](./customcontrol-element-for-groupby-format.md)|可选元素。<br /><br /> 定义显示新组的自定义控件。|
 |[GroupBy （格式） 的 CustomControlName 元素](./customcontrolname-element-for-groupby-format.md)|可选元素。<br /><br /> 指定控件用于显示新组的名称。|
@@ -53,7 +53,7 @@ ms.locfileid: "56859523"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[视图元素 （格式）](./view-element-format.md)|定义一个视图，显示一个或多个.NET 对象。|
 

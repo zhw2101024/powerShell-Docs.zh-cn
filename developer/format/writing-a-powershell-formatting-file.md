@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 39acce45-5144-43ba-894d-a4ce782fa67d
 caps.latest.revision: 13
 ms.openlocfilehash: f89f0009972d5237d71cb8f0d1c53cd0ae614b67
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857043"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083564"
 ---
 # <a name="writing-a-powershell-formatting-file"></a>编写 PowerShell 格式设置文件
 
 "编写 PowerShell 格式设置文件"适用于命令开发人员要编写 cmdlet 或函数的输出到命令行的对象。 格式设置文件定义 PowerShell 在命令行中显示这些对象的方式。 本文档中概述的格式设置文件，写入这些文件，这些文件，并参考部分中使用的 XML 元素的 XML 的示例时，应了解的概念的说明。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>本部分内容
 
 [格式设置文件概述](./formatting-file-overview.md)格式化文件的描述和格式设置文件，包括可以在文件中，不同类型的格式可以为.NET 对象定义的视图定义的常见功能的常规组件和一个用于定义表视图的 xml 的简化的示例。
 

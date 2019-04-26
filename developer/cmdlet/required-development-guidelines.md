@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 41d2b308-a36a-496f-8542-666b6a21eedc
 caps.latest.revision: 19
 ms.openlocfilehash: 3f6bcd2e4ef4d9c404b3a5deeaa9f25d3fa42ec1
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056509"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067461"
 ---
 # <a name="required-development-guidelines"></a>必需的开发指南
 
 编写 cmdlet 时，必须遵循以下准则。 它们分为设计 cmdlet 和指引，用于编写 cmdlet 代码的准则。 如果不遵循这些指导原则，cmdlet 可能会失败，并在使用 cmdlet 时，用户可能具有不好的体验。
 
-## <a name="in-this-topic"></a>本主题内容
+## <a name="in-this-topic"></a>本主题中
 
 ### <a name="design-guidelines"></a>设计指南
 

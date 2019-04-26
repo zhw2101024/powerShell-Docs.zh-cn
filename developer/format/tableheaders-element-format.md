@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: f9fa2b6f-b99a-42de-9779-44e9cb583f71
 caps.latest.revision: 15
 ms.openlocfilehash: bd44fcf4878c858afe81fb071ce72f627ac465dc
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856873"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075403"
 ---
 # <a name="tableheaders-element-format"></a>TableHeaders Element (Format)
 
@@ -30,23 +30,23 @@ TableControl （格式） 的 ViewDefinitions 元素 （格式） 视图元素 �
 
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述的特性、 子元素和父元素的`TableHeaders`元素。 必须是要显示的对象的每个属性的子元素。 列标头信息显示在指定的子元素的顺序。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[TableColumnHeader 元素 （格式）](./tablecolumnheader-element-format.md)|可选元素。<br /><br /> 定义标签、 宽度和表视图的列的数据的对齐方式。|
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[TableControl 元素 （格式）](./tablecontrol-element-format.md)|定义一个视图，以表格式。|
 

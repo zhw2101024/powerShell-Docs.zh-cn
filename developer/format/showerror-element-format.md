@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: a456e5df-fbf9-42b6-a6d8-4b2adafb86b1
 caps.latest.revision: 9
 ms.openlocfilehash: ff320619b7f768718ace7d482332a60a73c625b7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860133"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62063827"
 ---
 # <a name="showerror-element-format"></a>ShowError Element (Format)
 
@@ -27,11 +27,11 @@ ms.locfileid: "56860133"
 <ShowError/>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述了特性、 子元素和父元素的`ShowError`元素。 此元素的默认值是`false`。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
@@ -41,7 +41,7 @@ ms.locfileid: "56860133"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[DefaultSettings 元素 （格式）](./defaultsettings-element-format.md)|定义应用于的格式设置文件的所有视图的常见设置。|
 

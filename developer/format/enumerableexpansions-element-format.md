@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 50c33892-2ade-44c2-906c-81e5f5ca21f2
 caps.latest.revision: 9
 ms.openlocfilehash: 1ecbda8a3b623757517019105e3b1ee46ccbb55c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860253"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066084"
 ---
 # <a name="enumerableexpansions-element-format"></a>EnumerableExpansions Element (Format)
 
@@ -29,23 +29,23 @@ ms.locfileid: "56860253"
 </EnumerableExpansions>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述了特性、 子元素和父元素的`EnumerableExpansions`元素。 可以使用的子元素的数目没有限制。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[EnumerableExpansion 元素 （格式）](./enumerableexpansion-element-format.md)|可选元素。<br /><br /> 定义显示在视图中时进行扩展的特定.NET 集合对象。|
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[DefaultSettings 元素 （格式）](./defaultsettings-element-format.md)|定义应用于的格式设置文件的所有视图的常见设置。|
 

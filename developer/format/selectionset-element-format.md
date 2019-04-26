@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 848e7acd-d578-4fd1-a575-c0c3b9b5e68a
 caps.latest.revision: 17
 ms.openlocfilehash: c809aa6c3a40d16cfd2fd99065a846d265ec0f61
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861153"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076304"
 ---
 # <a name="selectionset-element-format"></a>SelectionSet Element (Format)
 
@@ -30,24 +30,24 @@ ms.locfileid: "56861153"
 </SelectionSet>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述了特性、 子元素和父元素的`SelectionSet`元素。 每个所选内容集必须具有一个名称，并且它必须指定集的.NET 对象。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[SelectionSet （格式） 的名称元素](./name-element-for-selectionset-format.md)|必需的元素。<br /><br /> 指定用来引用所选内容集的名称。|
 |[类型元素 （格式）](./types-element-for-selectionset-format.md)|必需的元素。<br /><br /> 定义集内所选内容的.NET 对象。|
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[SelectionSets 元素格式](./selectionsets-element-format.md)|定义可以使用的格式设置文件的所有视图的.NET 对象的公用集。|
 

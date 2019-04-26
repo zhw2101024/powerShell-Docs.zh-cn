@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: c6649d07-4762-4602-9b4b-d9e2e9e63312
 caps.latest.revision: 13
 ms.openlocfilehash: 531ff447f8407a737131a38351d7e4c6e7da90fb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855133"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065932"
 ---
 # <a name="expressionbinding-element-for-customitem-for-controls-for-configuration-format"></a>ExpressionBinding Element for CustomItem for Controls for Configuration (Format)
 
@@ -34,17 +34,17 @@ ms.locfileid: "56855133"
 </ExpressionBinding>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述了特性、 子元素和父元素的`ExpressionBinding`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |`CustomControl Element`|可选元素。<br /><br /> 定义此控件使用的控件。|
 |[配置 （格式） 的控件的 ExpressionBinding 的 CustomControlName 元素](./customcontrolname-element-for-expressionbinding-for-controls-for-configuration-format.md)|可选元素。<br /><br /> 指定公共控件或视图控件的名称。|
@@ -55,7 +55,7 @@ ms.locfileid: "56855133"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[有关配置控件 CustomEntry CustomItem 元素](./customitem-element-for-customentry-for-controls-for-configuration-format.md)|定义由自定义控件视图中显示的数据和显示方式。|
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 17352fc4-ba83-4f04-86bc-f591765d85a8
 caps.latest.revision: 18
 ms.openlocfilehash: fa9eda3ea1028c27dbfb3eb04747af3b817c1a81
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862623"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083631"
 ---
 # <a name="wideitem-element-for-widecontrol-format"></a>WideItem Element for WideControl (Format)
 
@@ -31,17 +31,17 @@ ms.locfileid: "56862623"
 </WideItem>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
-以下各节描述了特性、 子元素和父元素的`WideItem`元素。 `FormatString` 元素是可选的。 但是，必须指定`PropertyName`或`ScriptBlock`元素，但是您不能同时指定。
+以下各节描述了特性、 子元素和父元素的`WideItem`元素。 `FormatString`元素是可选的。 但是，必须指定`PropertyName`或`ScriptBlock`元素，但是您不能同时指定。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[WideControl （格式） 的 WideItem 的 FormatString 元素](./formatstring-element-for-wideitem-for-widecontrol-format.md)|可选元素。<br /><br /> 指定格式模式，它定义如何在视图中显示的属性或脚本的值。|
 |[WideItem （格式） 的属性名称元素](./propertyname-element-for-wideitem-for-widecontrol-format.md)|指定其值宽视图中显示的对象的属性。|
@@ -49,7 +49,7 @@ ms.locfileid: "56862623"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[WideEntry 元素 （格式）](./wideentry-element-for-widecontrol-format.md)|提供了宽的视图的定义。|
 
