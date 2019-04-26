@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: e620bf6d-76be-47b0-a7a8-f43418f30c60
 caps.latest.revision: 6
 ms.openlocfilehash: b81a32b867795ae51c3f5308c2f82c31ed2747fa
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858363"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080775"
 ---
 # <a name="adding-resources-to-a-management-odata-web-service"></a>向管理 OData Web 服务添加资源
 
@@ -49,15 +49,15 @@ ms.locfileid: "56858363"
 
 2. 请确保**本地计算机**已选中，然后单击**下一步**。
 
-3. 请确保选择了已安装 Windows PowerShell 模块，并从下拉列表中选择的 HYPER-V。 单击**下一步**。 单击 **下一步**。
+3. 请确保选择了已安装 Windows PowerShell 模块，并从下拉列表中选择的 HYPER-V。 单击**下一步**。 单击**下一步**。
 
-4. 在中**Cmdlet 名词**列表中，选择**VM**。 单击“下一步”
+4. 在中**Cmdlet 名词**列表中，选择**VM**。 单击**下一步**
 
 5. 对于此示例中，我们将绑定只有的 Get 和 Delete 命令使用 cmdlet。 清除**创建**和**更新**复选框，并确保**获取**并**删除**检查对应的复选框。 请确保`Get-VM`cmdlet 选择了**获取**，和`Remove-VM`cmdlet 用于**删除**。
 
 6. 由于 VM cmdlet 的元数据未指定输出类型，需要运行 cmdlet 来指定输出类型。 选择**提供输出类型**然后单击**运行 cmdlet**。 **运行 Cmdlet**此时将显示对话框。 单击**运行**。 **CLR 类型**框中填入`VirtualMachine`类型。 单击**确定**，然后单击**下一步**。
 
-7. 默认情况下已选中所有 VirtualMachine 对象的属性。 您可以清除不希望从 web 服务请求此资源时所返回数据的一部分的任何属性。 单击 **下一步**。
+7. 默认情况下已选中所有 VirtualMachine 对象的属性。 您可以清除不希望从 web 服务请求此资源时所返回数据的一部分的任何属性。 单击**下一步**。
 
 8. 必须选择至少一个要用作键的属性。 选择**名称**在列表中，单击**下一步**。
 

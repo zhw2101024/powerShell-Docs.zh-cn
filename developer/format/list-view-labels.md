@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 53442bb1-74a3-49f9-9150-3bc3081a7565
 caps.latest.revision: 6
 ms.openlocfilehash: 27de41c88e224f7610c10a764e51524016ecc8cb
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065268"
 ---
 # <a name="list-view-labels"></a>列表视图 (Label)
 
@@ -30,7 +30,7 @@ ms.locfileid: "57794818"
    > [!WARNING]
    > 此格式设置文件定义显示由 Windows PowerShell 格式设置文件已定义的对象。 必须使用`prependPath`参数时运行 cmdlet，并且无法加载此格式设置文件作为一个模块。
 
-## <a name="demonstrates"></a>说明
+## <a name="demonstrates"></a>演示
 
 此格式设置文件演示了以下 XML 元素：
 
