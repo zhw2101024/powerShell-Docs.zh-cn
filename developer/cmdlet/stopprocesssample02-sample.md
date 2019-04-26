@@ -9,67 +9,67 @@ ms.topic: article
 ms.assetid: 213ca1a4-e9fe-4969-b7d0-2fca070c6142
 caps.latest.revision: 10
 ms.openlocfilehash: 594c06367baedd1f9bfdbfff9f0e072d579b4099
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067280"
 ---
-# <a name="stopprocesssample02-sample"></a><span data-ttu-id="fb552-102">StopProcessSample02 示例</span><span class="sxs-lookup"><span data-stu-id="fb552-102">StopProcessSample02 Sample</span></span>
+# <a name="stopprocesssample02-sample"></a><span data-ttu-id="1d6de-102">StopProcessSample02 示例</span><span class="sxs-lookup"><span data-stu-id="1d6de-102">StopProcessSample02 Sample</span></span>
 
-<span data-ttu-id="fb552-103">此示例演示如何编写写入调试 (WriteDebug)、 详细 (WriteVerbose) 和警告 (WriteWarning) 消息，同时在本地计算机上停止进程的 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="fb552-103">This sample shows how to write a cmdlet that writes debug (WriteDebug), verbose (WriteVerbose), and warning (WriteWarning) messages while stopping processes on the local computer.</span></span> <span data-ttu-id="fb552-104">此 cmdlet 类似于是`Stop-Process`cmdlet 提供的 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="fb552-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="1d6de-103">此示例演示如何编写写入调试 (WriteDebug)、 详细 (WriteVerbose) 和警告 (WriteWarning) 消息，同时在本地计算机上停止进程的 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="1d6de-103">This sample shows how to write a cmdlet that writes debug (WriteDebug), verbose (WriteVerbose), and warning (WriteWarning) messages while stopping processes on the local computer.</span></span> <span data-ttu-id="1d6de-104">此 cmdlet 类似于是`Stop-Process`cmdlet 提供的 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="1d6de-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
 
-### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="fb552-105">如何通过使用 Visual Studio 生成该示例。</span><span class="sxs-lookup"><span data-stu-id="fb552-105">How to build the sample by using Visual Studio.</span></span>
+### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="1d6de-105">如何通过使用 Visual Studio 生成该示例。</span><span class="sxs-lookup"><span data-stu-id="1d6de-105">How to build the sample by using Visual Studio.</span></span>
 
-1. <span data-ttu-id="fb552-106">打开 Windows Internet Explorer 并导航到示例目录下的 StopProcessSample02 目录。</span><span class="sxs-lookup"><span data-stu-id="fb552-106">Open Windows Internet Explorer and navigate to the StopProcessSample02 directory under the Samples directory.</span></span>
+1. <span data-ttu-id="1d6de-106">打开 Windows Internet Explorer 并导航到示例目录下的 StopProcessSample02 目录。</span><span class="sxs-lookup"><span data-stu-id="1d6de-106">Open Windows Internet Explorer and navigate to the StopProcessSample02 directory under the Samples directory.</span></span>
 
-    <span data-ttu-id="fb552-107">安装了 Windows PowerShell 2.0 sdk，导航到 StopProcessSample02 文件夹。</span><span class="sxs-lookup"><span data-stu-id="fb552-107">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample02 folder.</span></span> <span data-ttu-id="fb552-108">默认位置为 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02。</span><span class="sxs-lookup"><span data-stu-id="fb552-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02.</span></span>
+    <span data-ttu-id="1d6de-107">安装了 Windows PowerShell 2.0 sdk，导航到 StopProcessSample02 文件夹。</span><span class="sxs-lookup"><span data-stu-id="1d6de-107">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample02 folder.</span></span> <span data-ttu-id="1d6de-108">默认位置为 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02。</span><span class="sxs-lookup"><span data-stu-id="1d6de-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02.</span></span>
 
-2. <span data-ttu-id="fb552-109">双击解决方案 (.sln) 文件的图标。</span><span class="sxs-lookup"><span data-stu-id="fb552-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="fb552-110">这将在 Microsoft Visual Studio 中打开示例项目。</span><span class="sxs-lookup"><span data-stu-id="fb552-110">This opens the sample project in Microsoft Visual Studio.</span></span>
+2. <span data-ttu-id="1d6de-109">双击解决方案 (.sln) 文件的图标。</span><span class="sxs-lookup"><span data-stu-id="1d6de-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="1d6de-110">这将在 Microsoft Visual Studio 中打开示例项目。</span><span class="sxs-lookup"><span data-stu-id="1d6de-110">This opens the sample project in Microsoft Visual Studio.</span></span>
 
-3. <span data-ttu-id="fb552-111">在中**构建**菜单中，选择**生成解决方案**。</span><span class="sxs-lookup"><span data-stu-id="fb552-111">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="1d6de-111">在中**构建**菜单中，选择**生成解决方案**。</span><span class="sxs-lookup"><span data-stu-id="1d6de-111">In the **Build** menu, select **Build Solution**.</span></span>
 
-    <span data-ttu-id="fb552-112">将默认 \bin 或 \bin\debug 文件夹中生成的示例库。</span><span class="sxs-lookup"><span data-stu-id="fb552-112">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+    <span data-ttu-id="1d6de-112">将默认 \bin 或 \bin\debug 文件夹中生成的示例库。</span><span class="sxs-lookup"><span data-stu-id="1d6de-112">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="fb552-113">如何运行示例</span><span class="sxs-lookup"><span data-stu-id="fb552-113">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="1d6de-113">如何运行示例</span><span class="sxs-lookup"><span data-stu-id="1d6de-113">How to run the sample</span></span>
 
-1. <span data-ttu-id="fb552-114">创建以下模块文件夹：</span><span class="sxs-lookup"><span data-stu-id="fb552-114">Create the following module folder:</span></span>
+1. <span data-ttu-id="1d6de-114">创建以下模块文件夹：</span><span class="sxs-lookup"><span data-stu-id="1d6de-114">Create the following module folder:</span></span>
 
     `[user]/documents/windowspowershell/modules/StopProcessSample02`
 
-2. <span data-ttu-id="fb552-115">将示例程序集复制到模块文件夹中。</span><span class="sxs-lookup"><span data-stu-id="fb552-115">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="1d6de-115">将示例程序集复制到模块文件夹中。</span><span class="sxs-lookup"><span data-stu-id="1d6de-115">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="fb552-116">启动 Windows PowerShell。</span><span class="sxs-lookup"><span data-stu-id="fb552-116">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="1d6de-116">启动 Windows PowerShell。</span><span class="sxs-lookup"><span data-stu-id="1d6de-116">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="fb552-117">运行以下命令以将该程序集加载到 Windows PowerShell:</span><span class="sxs-lookup"><span data-stu-id="fb552-117">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="1d6de-117">运行以下命令以将该程序集加载到 Windows PowerShell:</span><span class="sxs-lookup"><span data-stu-id="1d6de-117">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
     `import-module stopprossessample02`
 
-5. <span data-ttu-id="fb552-118">运行以下命令以运行该 cmdlet:</span><span class="sxs-lookup"><span data-stu-id="fb552-118">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="1d6de-118">运行以下命令以运行该 cmdlet:</span><span class="sxs-lookup"><span data-stu-id="1d6de-118">Run the following command to run the cmdlet:</span></span>
 
     `stop-proc`
 
-## <a name="requirements"></a><span data-ttu-id="fb552-119">要求</span><span class="sxs-lookup"><span data-stu-id="fb552-119">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="1d6de-119">要求</span><span class="sxs-lookup"><span data-stu-id="1d6de-119">Requirements</span></span>
 
-<span data-ttu-id="fb552-120">此示例要求 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="fb552-120">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="1d6de-120">此示例要求 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="1d6de-120">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="fb552-121">说明</span><span class="sxs-lookup"><span data-stu-id="fb552-121">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="1d6de-121">演示</span><span class="sxs-lookup"><span data-stu-id="1d6de-121">Demonstrates</span></span>
 
-<span data-ttu-id="fb552-122">此示例将演示如下。</span><span class="sxs-lookup"><span data-stu-id="fb552-122">This sample demonstrates the following.</span></span>
+<span data-ttu-id="1d6de-122">此示例将演示如下。</span><span class="sxs-lookup"><span data-stu-id="1d6de-122">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="fb552-123">通过使用 Cmdlet 属性声明 cmdlet 类。</span><span class="sxs-lookup"><span data-stu-id="fb552-123">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="1d6de-123">通过使用 Cmdlet 属性声明 cmdlet 类。</span><span class="sxs-lookup"><span data-stu-id="1d6de-123">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="fb552-124">声明一个 cmdlet 参数使用参数属性。</span><span class="sxs-lookup"><span data-stu-id="fb552-124">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
+- <span data-ttu-id="1d6de-124">声明一个 cmdlet 参数使用参数属性。</span><span class="sxs-lookup"><span data-stu-id="1d6de-124">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="fb552-125">写入详细消息。</span><span class="sxs-lookup"><span data-stu-id="fb552-125">Writing verbose messages.</span></span> <span data-ttu-id="fb552-126">有关用来写入详细消息的方法的详细信息，请参阅[System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)。</span><span class="sxs-lookup"><span data-stu-id="fb552-126">For more information about the method used to write verbose messages, see [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).</span></span>
+- <span data-ttu-id="1d6de-125">写入详细消息。</span><span class="sxs-lookup"><span data-stu-id="1d6de-125">Writing verbose messages.</span></span> <span data-ttu-id="1d6de-126">有关用来写入详细消息的方法的详细信息，请参阅[System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)。</span><span class="sxs-lookup"><span data-stu-id="1d6de-126">For more information about the method used to write verbose messages, see [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).</span></span>
 
-- <span data-ttu-id="fb552-127">编写错误消息。</span><span class="sxs-lookup"><span data-stu-id="fb552-127">Writing error messages.</span></span> <span data-ttu-id="fb552-128">有关用来写入错误消息的方法的详细信息，请参阅[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)。</span><span class="sxs-lookup"><span data-stu-id="fb552-128">For more information about the method used to write error messages, see [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError).</span></span>
+- <span data-ttu-id="1d6de-127">编写错误消息。</span><span class="sxs-lookup"><span data-stu-id="1d6de-127">Writing error messages.</span></span> <span data-ttu-id="1d6de-128">有关用来写入错误消息的方法的详细信息，请参阅[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)。</span><span class="sxs-lookup"><span data-stu-id="1d6de-128">For more information about the method used to write error messages, see [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError).</span></span>
 
-- <span data-ttu-id="fb552-129">写入警告消息。</span><span class="sxs-lookup"><span data-stu-id="fb552-129">Writing warning messages.</span></span> <span data-ttu-id="fb552-130">有关用来写入警告消息的方法的详细信息，请参阅[System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)。</span><span class="sxs-lookup"><span data-stu-id="fb552-130">For more information about the method used to write warning messages, see [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning).</span></span>
+- <span data-ttu-id="1d6de-129">写入警告消息。</span><span class="sxs-lookup"><span data-stu-id="1d6de-129">Writing warning messages.</span></span> <span data-ttu-id="1d6de-130">有关用来写入警告消息的方法的详细信息，请参阅[System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)。</span><span class="sxs-lookup"><span data-stu-id="1d6de-130">For more information about the method used to write warning messages, see [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning).</span></span>
 
-## <a name="example"></a><span data-ttu-id="fb552-131">示例</span><span class="sxs-lookup"><span data-stu-id="fb552-131">Example</span></span>
+## <a name="example"></a><span data-ttu-id="1d6de-131">示例</span><span class="sxs-lookup"><span data-stu-id="1d6de-131">Example</span></span>
 
-<span data-ttu-id="fb552-132">此示例演示如何编写使用 verbose、 debug 和警告消息`WriteDebug`， `WriteVerbose`，和`WriteWarning`方法。</span><span class="sxs-lookup"><span data-stu-id="fb552-132">This sample shows how to write debug, verbose, and warning messages by using the `WriteDebug`, `WriteVerbose`, and `WriteWarning` methods.</span></span>
+<span data-ttu-id="1d6de-132">此示例演示如何编写使用 verbose、 debug 和警告消息`WriteDebug`， `WriteVerbose`，和`WriteWarning`方法。</span><span class="sxs-lookup"><span data-stu-id="1d6de-132">This sample shows how to write debug, verbose, and warning messages by using the `WriteDebug`, `WriteVerbose`, and `WriteWarning` methods.</span></span>
 
 ```csharp
 using System;
@@ -310,6 +310,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="fb552-133">另请参阅</span><span class="sxs-lookup"><span data-stu-id="fb552-133">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1d6de-133">另请参阅</span><span class="sxs-lookup"><span data-stu-id="1d6de-133">See Also</span></span>
 
-[<span data-ttu-id="fb552-134">编写 Windows PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="fb552-134">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="1d6de-134">编写 Windows PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="1d6de-134">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)

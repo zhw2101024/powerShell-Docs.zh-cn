@@ -9,67 +9,67 @@ ms.topic: article
 ms.assetid: ac4903f5-fd40-4f1c-b1d1-18923c16ce45
 caps.latest.revision: 8
 ms.openlocfilehash: 26e882dad839af43945f84d4cdd6cda7bdb2d587
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059705"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067322"
 ---
-# <a name="stopprocesssample04-sample"></a><span data-ttu-id="4e885-102">StopProcessSample04 示例</span><span class="sxs-lookup"><span data-stu-id="4e885-102">StopProcessSample04 Sample</span></span>
+# <a name="stopprocesssample04-sample"></a><span data-ttu-id="212a6-102">StopProcessSample04 示例</span><span class="sxs-lookup"><span data-stu-id="212a6-102">StopProcessSample04 Sample</span></span>
 
-<span data-ttu-id="4e885-103">此示例演示如何编写声明参数集，指定默认参数集，它可以接受输入的对象的 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="4e885-103">This sample shows how to write a cmdlet that declares parameter sets, specifies the default parameter set, and can accept an input object.</span></span> <span data-ttu-id="4e885-104">此 cmdlet 类似于是`Stop-Process`cmdlet 提供的 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="4e885-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="212a6-103">此示例演示如何编写声明参数集，指定默认参数集，它可以接受输入的对象的 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="212a6-103">This sample shows how to write a cmdlet that declares parameter sets, specifies the default parameter set, and can accept an input object.</span></span> <span data-ttu-id="212a6-104">此 cmdlet 类似于是`Stop-Process`cmdlet 提供的 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="212a6-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
 
-### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="4e885-105">如何通过使用 Visual Studio 生成该示例。</span><span class="sxs-lookup"><span data-stu-id="4e885-105">How to build the sample by using Visual Studio.</span></span>
+### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="212a6-105">如何通过使用 Visual Studio 生成该示例。</span><span class="sxs-lookup"><span data-stu-id="212a6-105">How to build the sample by using Visual Studio.</span></span>
 
-1. <span data-ttu-id="4e885-106">安装了 Windows PowerShell 2.0 sdk，导航到 StopProcessSample04 文件夹。</span><span class="sxs-lookup"><span data-stu-id="4e885-106">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample04 folder.</span></span> <span data-ttu-id="4e885-107">默认位置为 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample04。</span><span class="sxs-lookup"><span data-stu-id="4e885-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample04.</span></span>
+1. <span data-ttu-id="212a6-106">安装了 Windows PowerShell 2.0 sdk，导航到 StopProcessSample04 文件夹。</span><span class="sxs-lookup"><span data-stu-id="212a6-106">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample04 folder.</span></span> <span data-ttu-id="212a6-107">默认位置为 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample04。</span><span class="sxs-lookup"><span data-stu-id="212a6-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample04.</span></span>
 
-2. <span data-ttu-id="4e885-108">双击解决方案 (.sln) 文件的图标。</span><span class="sxs-lookup"><span data-stu-id="4e885-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="4e885-109">这将在 Microsoft Visual Studio 中打开示例项目。</span><span class="sxs-lookup"><span data-stu-id="4e885-109">This opens the sample project in Microsoft Visual Studio.</span></span>
+2. <span data-ttu-id="212a6-108">双击解决方案 (.sln) 文件的图标。</span><span class="sxs-lookup"><span data-stu-id="212a6-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="212a6-109">这将在 Microsoft Visual Studio 中打开示例项目。</span><span class="sxs-lookup"><span data-stu-id="212a6-109">This opens the sample project in Microsoft Visual Studio.</span></span>
 
-3. <span data-ttu-id="4e885-110">在中**构建**菜单中，选择**生成解决方案**。</span><span class="sxs-lookup"><span data-stu-id="4e885-110">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="212a6-110">在中**构建**菜单中，选择**生成解决方案**。</span><span class="sxs-lookup"><span data-stu-id="212a6-110">In the **Build** menu, select **Build Solution**.</span></span>
 
-    <span data-ttu-id="4e885-111">将默认 \bin 或 \bin\debug 文件夹中生成的示例库。</span><span class="sxs-lookup"><span data-stu-id="4e885-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+    <span data-ttu-id="212a6-111">将默认 \bin 或 \bin\debug 文件夹中生成的示例库。</span><span class="sxs-lookup"><span data-stu-id="212a6-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="4e885-112">如何运行示例</span><span class="sxs-lookup"><span data-stu-id="4e885-112">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="212a6-112">如何运行示例</span><span class="sxs-lookup"><span data-stu-id="212a6-112">How to run the sample</span></span>
 
-1. <span data-ttu-id="4e885-113">创建以下模块文件夹：</span><span class="sxs-lookup"><span data-stu-id="4e885-113">Create the following module folder:</span></span>
+1. <span data-ttu-id="212a6-113">创建以下模块文件夹：</span><span class="sxs-lookup"><span data-stu-id="212a6-113">Create the following module folder:</span></span>
 
     `[user]/documents/windowspowershell/modules/StopProcessSample04`
 
-2. <span data-ttu-id="4e885-114">将示例程序集复制到模块文件夹中。</span><span class="sxs-lookup"><span data-stu-id="4e885-114">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="212a6-114">将示例程序集复制到模块文件夹中。</span><span class="sxs-lookup"><span data-stu-id="212a6-114">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="4e885-115">启动 Windows PowerShell。</span><span class="sxs-lookup"><span data-stu-id="4e885-115">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="212a6-115">启动 Windows PowerShell。</span><span class="sxs-lookup"><span data-stu-id="212a6-115">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="4e885-116">运行以下命令以将该程序集加载到 Windows PowerShell:</span><span class="sxs-lookup"><span data-stu-id="4e885-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="212a6-116">运行以下命令以将该程序集加载到 Windows PowerShell:</span><span class="sxs-lookup"><span data-stu-id="212a6-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
     `import-module stopprossessample04`
 
-5. <span data-ttu-id="4e885-117">运行以下命令以运行该 cmdlet:</span><span class="sxs-lookup"><span data-stu-id="4e885-117">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="212a6-117">运行以下命令以运行该 cmdlet:</span><span class="sxs-lookup"><span data-stu-id="212a6-117">Run the following command to run the cmdlet:</span></span>
 
     `stop-proc`
 
-## <a name="requirements"></a><span data-ttu-id="4e885-118">要求</span><span class="sxs-lookup"><span data-stu-id="4e885-118">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="212a6-118">要求</span><span class="sxs-lookup"><span data-stu-id="212a6-118">Requirements</span></span>
 
-<span data-ttu-id="4e885-119">此示例要求 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="4e885-119">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="212a6-119">此示例要求 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="212a6-119">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="4e885-120">说明</span><span class="sxs-lookup"><span data-stu-id="4e885-120">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="212a6-120">演示</span><span class="sxs-lookup"><span data-stu-id="212a6-120">Demonstrates</span></span>
 
-<span data-ttu-id="4e885-121">此示例将演示如下。</span><span class="sxs-lookup"><span data-stu-id="4e885-121">This sample demonstrates the following.</span></span>
+<span data-ttu-id="212a6-121">此示例将演示如下。</span><span class="sxs-lookup"><span data-stu-id="212a6-121">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="4e885-122">通过使用 Cmdlet 属性声明 cmdlet 类。</span><span class="sxs-lookup"><span data-stu-id="4e885-122">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="212a6-122">通过使用 Cmdlet 属性声明 cmdlet 类。</span><span class="sxs-lookup"><span data-stu-id="212a6-122">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="4e885-123">声明一个 cmdlet 参数使用参数属性。</span><span class="sxs-lookup"><span data-stu-id="4e885-123">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
+- <span data-ttu-id="212a6-123">声明一个 cmdlet 参数使用参数属性。</span><span class="sxs-lookup"><span data-stu-id="212a6-123">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="4e885-124">添加接受输入的对象的参数。</span><span class="sxs-lookup"><span data-stu-id="4e885-124">Adding a parameter that accepts input object.</span></span>
+- <span data-ttu-id="212a6-124">添加接受输入的对象的参数。</span><span class="sxs-lookup"><span data-stu-id="212a6-124">Adding a parameter that accepts input object.</span></span>
 
-- <span data-ttu-id="4e885-125">添加参数与参数集</span><span class="sxs-lookup"><span data-stu-id="4e885-125">Adding parameters to parameter sets</span></span>
+- <span data-ttu-id="212a6-125">添加参数与参数集</span><span class="sxs-lookup"><span data-stu-id="212a6-125">Adding parameters to parameter sets</span></span>
 
-- <span data-ttu-id="4e885-126">指定默认参数集。</span><span class="sxs-lookup"><span data-stu-id="4e885-126">Specifying the default parameter set.</span></span>
+- <span data-ttu-id="212a6-126">指定默认参数集。</span><span class="sxs-lookup"><span data-stu-id="212a6-126">Specifying the default parameter set.</span></span>
 
-## <a name="example"></a><span data-ttu-id="4e885-127">示例</span><span class="sxs-lookup"><span data-stu-id="4e885-127">Example</span></span>
+## <a name="example"></a><span data-ttu-id="212a6-127">示例</span><span class="sxs-lookup"><span data-stu-id="212a6-127">Example</span></span>
 
-<span data-ttu-id="4e885-128">下面的代码演示声明参数集，指定默认参数集，它可以接受输入的对象的 Stop Proc cmdlet 实现。</span><span class="sxs-lookup"><span data-stu-id="4e885-128">The following code shows an implementation of the Stop-Proc cmdlet that declare parameter sets, specifies the default parameter set, and can accept an input object.</span></span>
+<span data-ttu-id="212a6-128">下面的代码演示声明参数集，指定默认参数集，它可以接受输入的对象的 Stop Proc cmdlet 实现。</span><span class="sxs-lookup"><span data-stu-id="212a6-128">The following code shows an implementation of the Stop-Proc cmdlet that declare parameter sets, specifies the default parameter set, and can accept an input object.</span></span>
 
-<span data-ttu-id="4e885-129">此示例演示输入的对象、 如何声明参数集，以及如何指定默认参数设置为使用。</span><span class="sxs-lookup"><span data-stu-id="4e885-129">This sample shows the input object, how to declare parameter sets, and how to specify the default parameter set to use.</span></span>
+<span data-ttu-id="212a6-129">此示例演示输入的对象、 如何声明参数集，以及如何指定默认参数设置为使用。</span><span class="sxs-lookup"><span data-stu-id="212a6-129">This sample shows the input object, how to declare parameter sets, and how to specify the default parameter set to use.</span></span>
 
 ```csharp
 using System;
@@ -490,6 +490,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="4e885-130">另请参阅</span><span class="sxs-lookup"><span data-stu-id="4e885-130">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="212a6-130">另请参阅</span><span class="sxs-lookup"><span data-stu-id="212a6-130">See Also</span></span>
 
-[<span data-ttu-id="4e885-131">编写 Windows PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="4e885-131">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="212a6-131">编写 Windows PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="212a6-131">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
