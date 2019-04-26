@@ -17,17 +17,17 @@ helpviewer_keywords:
 ms.assetid: 3f1cca5f-5b95-4bce-94a6-a22db1aefd47
 caps.latest.revision: 23
 ms.openlocfilehash: 914a10907bcf980eed8d7e2f819c382fe6b341ad
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853843"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068396"
 ---
 # <a name="cmdlet-parameters"></a>Cmdlet 参数
 
 Cmdlet 参数提供的机制，用于接受输入的 cmdlet。 参数可以接受输入直接从命令行中，或通过管道参数传递给 cmdlet 的对象 (也称为*值*) 的这些参数可以指定该 cmdlet 接受，输入方式cmdlet 应执行的操作，以及该 cmdlet 将返回到管道的数据。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>本部分内容
 
 [声明属性作为参数](./declaring-properties-as-parameters.md)提供声明的参数的 cmdlet 之前，您必须了解的基本信息。
 
@@ -49,7 +49,7 @@ Cmdlet 参数提供的机制，用于接受输入的 cmdlet。 参数可以接�
 
 [输入筛选器参数](./input-filter-parameters.md)讨论`Filter`， `Include`，和`Exclude`筛选会影响该 cmdlet 的输入对象的集合的参数。
 
-## <a name="related-sections"></a>相关章节
+## <a name="related-sections"></a>相关的章节
 
 [如何验证参数输入](./how-to-validate-parameter-input.md)
 

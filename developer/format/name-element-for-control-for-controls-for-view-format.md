@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 26437467-d578-4e8d-8cdd-17dfe644957a
 caps.latest.revision: 7
 ms.openlocfilehash: 7e24aa60f7abae5768707d2527826c452b709002
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862383"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065083"
 ---
 # <a name="name-element-for-control-for-controls-for-view-format"></a>Name Element for Control for Controls for View (Format)
 
@@ -27,11 +27,11 @@ ms.locfileid: "56862383"
 <Name>ControlName</Name>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述了特性、 子元素和父元素的`Name`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
@@ -41,7 +41,7 @@ ms.locfileid: "56862383"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[视图 （格式） 的控件的控件元素](./control-element-for-controls-for-view-format.md)|定义可由该视图和用于引用该控件的名称的控件。|
 

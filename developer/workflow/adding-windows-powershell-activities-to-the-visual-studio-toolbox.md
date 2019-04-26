@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 9c8ef289-0659-42d1-9976-044b144201eb
 caps.latest.revision: 6
 ms.openlocfilehash: 2a8372d937fc3c959f7d829bb52495048423d506
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863563"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080469"
 ---
 # <a name="adding-windows-powershell-activities-to-the-visual-studio-toolbox"></a>向 Visual Studio 工具箱添加 Windows PowerShell 活动
 
@@ -37,7 +37,7 @@ ms.locfileid: "56863563"
 
 7. 导航到 %WINDIR%\Microsoft.NET\assembly\GAC_MSIL\Microsoft.PowerShell.Core.Activities\v4.0_3.0.0.0__31bf3856ad364e 文件夹并双击 Microsoft.PowerShell.Core.Activities.dll。
 
-8. 单击“确定” 。 定义由 Microsoft.PowerShell.Core.Activities 程序集的活动现可在工具箱中。
+8. 单击**确定**。 定义由 Microsoft.PowerShell.Core.Activities 程序集的活动现可在工具箱中。
 
 ## <a name="see-also"></a>另请参阅
 

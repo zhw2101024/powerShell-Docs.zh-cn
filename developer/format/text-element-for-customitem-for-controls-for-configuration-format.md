@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 87a4079e-602c-42de-9de5-9b59df986caa
 caps.latest.revision: 6
 ms.openlocfilehash: b45e96252672a872023a5eb698ffe22d677c5468
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857063"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075301"
 ---
 # <a name="text-element-for-customitem-for-controls-for-configuration-format"></a>Text Element for CustomItem for Controls for Configuration (Format)
 
@@ -27,11 +27,11 @@ ms.locfileid: "56857063"
 <Text>TextToDisplay</Text>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述了特性、 子元素和父元素的`Text`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
@@ -41,7 +41,7 @@ ms.locfileid: "56857063"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[有关配置控件 CustomEntry CustomItem 元素](./customitem-element-for-customentry-for-controls-for-configuration-format.md)|定义由控件显示的数据和显示方式。|
 

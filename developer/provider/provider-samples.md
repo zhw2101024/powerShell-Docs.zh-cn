@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: c4933dad-fec9-4337-a1a9-9dc16ee87cc3
 caps.latest.revision: 9
 ms.openlocfilehash: 1e7aeb5bcb6bd5a2845648c3327e2245e6c428ba
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080928"
 ---
 # <a name="provider-samples"></a>提供程序示例
 
 本部分包括访问的 Microsoft Access 数据库的提供程序的示例。 这些示例包括从所有基本提供程序类派生的提供程序类。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>本部分内容
 
 本部分包括以下主题：
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 2472e256-8f4f-4288-8b67-a3300649dafa
 caps.latest.revision: 9
 ms.openlocfilehash: 2e84e770a345e272d4c5917b00afe7520840e1db
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853743"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066747"
 ---
 # <a name="customcontrol-element-for-groupby-format"></a>CustomControl Element for GroupBy (Format)
 
@@ -29,23 +29,23 @@ GroupBy （格式） 的视图 （格式） CustomControl 元素的配置元素 
 <CustomControl>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述的特性、 子元素和父元素的`CustomControl`元素。 可以指定任意数量的子元素，并按任何顺序列出它们。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[GroupBy （格式） 的 CustomControl CustomEntries 元素](./customentries-element-for-customcontrol-for-groupby-format.md)|必需的元素。<br /><br /> 提供控件的定义。|
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[视图 （格式） 的 GroupBy 元素](./groupby-element-for-view-format.md)|定义 Windows PowerShell 如何显示对象的新的组。|
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d46df0cb-50b7-4b81-82ba-37186a7b7a7f
 caps.latest.revision: 28
 ms.openlocfilehash: 296c63d0c774a0bf56e90dbaa32f2c221d4c3dbd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856323"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066815"
 ---
 # <a name="configuration-element-format"></a>Configuration Element (Format)
 
@@ -33,17 +33,17 @@ ms.locfileid: "56856323"
 
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述了特性、 子元素和父元素的`Configuration`元素。 此元素必须为每个格式设置文件的根元素和此元素必须包含至少一个子元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[配置 （格式） 的控件元素](./controls-element-for-configuration-format.md)|可选元素。<br /><br /> 定义可由格式设置文件的所有视图的公共控件。|
 |[DefaultSettings 元素 （格式）](./defaultsettings-element-format.md)|可选元素。<br /><br /> 定义应用于的格式设置文件的所有视图的常见设置。|

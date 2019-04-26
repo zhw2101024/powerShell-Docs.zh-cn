@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 4a88dd89-6beb-494f-9e2a-6b10baed1a8d
 caps.latest.revision: 17
 ms.openlocfilehash: 08e05939f8aee42f2cd502a3da7a528d8460dec1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858973"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083240"
 ---
 # <a name="how-to-create-the-cmdlet-help-file"></a>如何创建 Cmdlet 帮助文件
 
@@ -36,7 +36,7 @@ ms.locfileid: "56858973"
 
    下表列出了每个节点后, 跟每个节点的说明的 XML 元素。
 
-   |节点|描述|
+   |节点|说明|
    |----------|-----------------|
    |`<details>`|添加的名称和摘要部分的 cmdlet 帮助主题的内容。 有关详细信息，请参阅[How to Add 的 Cmdlet 名称和摘要](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)。|
    |`<maml:description>`|添加的 cmdlet 帮助主题的描述部分的内容。 有关详细信息，请参阅[如何添加到 Cmdlet 的帮助主题的详细说明](./how-to-add-a-cmdlet-description.md)。|

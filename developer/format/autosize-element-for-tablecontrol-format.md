@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 1df5de23-9ffc-427e-bb34-f5efe073f3fe
 caps.latest.revision: 11
 ms.openlocfilehash: f50ba257ee57c36aedc6b37c680a0130842b69b0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858793"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066883"
 ---
 # <a name="autosize-element-for-tablecontrol-format"></a>AutoSize Element for TableControl (Format)
 
@@ -27,11 +27,11 @@ ViewDefinitions 元素 （格式） 视图元素 （格式） TableControl 元�
 <AutoSize/>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述了特性、 子元素和父元素的`AutoSize`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
@@ -41,7 +41,7 @@ ViewDefinitions 元素 （格式） 视图元素 （格式） TableControl 元�
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[TableControl 元素 （格式）](./tablecontrol-element-format.md)|定义一个视图，以表格式。|
 

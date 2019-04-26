@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 471c85f3-9287-45c2-b4bc-833caa1b7634
 caps.latest.revision: 8
 ms.openlocfilehash: 3850aec88bc800718a82f51c91fbd0cb3c705089
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059620"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082630"
 ---
 # <a name="runspace06-sample"></a>Runspace06 示例
 
@@ -23,7 +23,7 @@ ms.locfileid: "58059620"
 
 此示例要求 Windows PowerShell 2.0。
 
-## <a name="demonstrates"></a>说明
+## <a name="demonstrates"></a>演示
 
 此示例将演示如下。
 

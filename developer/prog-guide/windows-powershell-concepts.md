@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 3dd5608e-50b6-4c6a-aee3-dde0e86032bc
 caps.latest.revision: 7
 ms.openlocfilehash: c4b13518ad6452a39ca49e897e1d3e353818d332
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860753"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081019"
 ---
 # <a name="windows-powershell-concepts"></a>Windows PowerShell 概念
 
 本部分包含可帮助您了解 Windows PowerShell 从开发人员的角度来看的概念性信息。
 
-|主题名称|描述|
+|主题名称|说明|
 |----------------|-----------------|
 |[Windows PowerShell 提供程序](http://msdn.microsoft.com/en-us/a65c5c75-1131-4ade-90d3-a613dbe620e9)|讨论有关用来访问数据的 Windows PowerShell 提供程序存储。|
 |[Windows PowerShell 管理单元](http://msdn.microsoft.com/en-us/20e081a9-522c-48bf-9f21-faaf8cca2e82)|用于注册 cmdlet 和提供程序的机制。 (另请参阅[编写 Windows PowerShell 模块](../module/writing-a-windows-powershell-module.md)。)|

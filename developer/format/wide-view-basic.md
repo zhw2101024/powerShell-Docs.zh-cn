@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 9abb63b8-6d02-4e24-9c0e-2d15a04e9051
 caps.latest.revision: 8
 ms.openlocfilehash: 7a36f548a3eccdf2c9cad04a8bfe28bf4e8d6dfd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860103"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083733"
 ---
 # <a name="wide-view-basic"></a>宽视图 (Basic)
 
@@ -30,7 +30,7 @@ ms.locfileid: "56860103"
    > [!WARNING]
    > 此格式设置文件定义显示由 Windows PowerShell 格式设置文件已定义的对象。 必须使用`prependPath`参数时运行 cmdlet，并且无法加载此格式设置文件作为一个模块。
 
-## <a name="demonstrates"></a>说明
+## <a name="demonstrates"></a>演示
 
 此格式设置文件演示了以下 XML 元素：
 

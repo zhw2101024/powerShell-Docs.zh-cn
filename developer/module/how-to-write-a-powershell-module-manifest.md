@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e082c2e3-12ce-4032-9caf-bf6b2e0dcf81
 caps.latest.revision: 23
-ms.openlocfilehash: eaa927ec90df6053843f5c942357fed4c7dee966
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 93a8c11099a9883127bca87422e1acaebfd2c093
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059484"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082288"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>如何编写 PowerShell 模块清单
 
@@ -80,7 +80,7 @@ ms.locfileid: "58059484"
 |DotNetFrameworkVersion<br /><br /> 类型： 字符串|' '|此模块所需的 Microsoft.NET Framework 最低版本。<br /><br /> 示例： `DotNetFrameworkVersion = '3.5'`|
 |CLRVersion<br /><br /> 类型： 字符串|' '|公共语言运行时 (CLR) 所需的此模块的最低版本。<br /><br /> 示例： `CLRVersion = '3.5'`|
 |ProcessorArchitecture<br /><br /> 类型： 字符串|' '|处理器体系结构 （无、 X86 Amd64） 所需的此模块。 有效值为 x86、AMD64、IA64 和 None（未知或未指定）。<br /><br /> 示例： `ProcessorArchitecture = 'x86'`|
-|RequiredModules<br /><br /> 类型: [字符串 []]|@()|必须导入到全局环境之前导入此模块的模块。 这将加载列出，除非它们已加载任何模块。 （例如，某些模块可能已加载的另一个模块。）。 还有可能要指定特定版本进行加载时，使用`RequiredVersion`而非`ModuleVersion`。 当使用`ModuleVersion`它会加载最少的指定的版本可用的最新版本。<br /><br /> 示例： `RequiredModules = @(@{ModuleName="myDependentModule", ModuleVersion="2.0",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> 示例： `RequiredModules = @(@{ModuleName="myDependentModule", RequiredVersion="1.5",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|
+|RequiredModules<br /><br /> 类型: [字符串 []]|@()|必须导入到全局环境之前导入此模块的模块。 这将加载列出，除非它们已加载任何模块。 （例如，某些模块可能已加载的另一个模块。）。 还有可能要指定特定版本进行加载时，使用`RequiredVersion`而非`ModuleVersion`。 当使用`ModuleVersion`它会加载最少的指定的版本可用的最新版本。<br /><br /> 示例： `RequiredModules = @(@{ModuleName="myDependentModule"; ModuleVersion="2.0"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> 示例： `RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="1.5"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|
 |RequiredAssemblies<br /><br /> 类型: [字符串 []]|@()|必须在导入此模块之前加载的程序集。<br /><br /> 请注意，与不同的 RequiredModules，PowerShell 将加载 RequiredAssemblies 是否尚未加载。|
 |ScriptsToProcess<br /><br /> 类型: [字符串 []]|@()|导入模块调用方的会话状态中运行的脚本 (.ps1) 文件。 这可能是全局会话状态的或对于嵌套模块，另一个模块的会话状态。 可以使用这些脚本来准备环境，就像您可能会使用登录脚本。<br /><br /> 在任何清单中列出的模块加载之前运行这些脚本。|
 |TypesToProcess<br /><br /> 类型: [对象 []]|@()|键入要导入此模块时加载的文件 (.ps1xml)。|

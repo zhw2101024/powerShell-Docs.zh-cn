@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: a26661f2-a63c-4ca7-ad3e-dcb4d32ce5a1
 caps.latest.revision: 8
 ms.openlocfilehash: d7d6d3b377a0089bcf96d0ea46e866321441b537
-ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56863783"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080996"
 ---
 # <a name="accessdbprovidersample05"></a>AccessDBProviderSample05
 
 此示例演示了如何覆盖容器方法，以支持对调用`Move-Item`和`Join-Path`cmdlet。 当用户需要移动容器中的项时，如果数据存储区包含嵌套的容器，则应实现这些方法。 在此示例中的提供程序类派生[System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)类。
 
-## <a name="demonstrates"></a>说明
+## <a name="demonstrates"></a>演示
 
 > [!IMPORTANT]
 > 提供程序类将很可能从以下类之一派生，并可能实现其他提供程序接口：

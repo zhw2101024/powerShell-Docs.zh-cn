@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 914917f7-0efc-4d1f-88bd-de714bedd98f
 caps.latest.revision: 15
 ms.openlocfilehash: 29dbdbd335511e4ca2706a625541554825838f23
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858163"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065139"
 ---
 # <a name="name-element-for-selectionset-format"></a>Name Element for SelectionSet (Format)
 
@@ -27,11 +27,11 @@ ms.locfileid: "56858163"
 <Name>Name of selection set</Name>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述的特性、 子元素和父元素的`Name`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
@@ -41,7 +41,7 @@ ms.locfileid: "56858163"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[SelectionSet 元素 （格式）](./selectionset-element-format.md)|定义集的名称，可以引用.NET 对象的单个组。|
 

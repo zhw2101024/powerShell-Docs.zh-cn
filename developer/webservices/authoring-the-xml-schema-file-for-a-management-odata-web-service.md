@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 3e83c9d9-6d06-4247-94d9-e3bfd4013b11
 caps.latest.revision: 4
 ms.openlocfilehash: a806d012097d107b6cc35710b9a93f2b27dd1ace
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857973"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080724"
 ---
 # <a name="authoring-the-xml-schema-file-for-a-management-odata-web-service"></a>创作管理 OData Web 服务的 XML 架构文件
 
@@ -48,7 +48,7 @@ XML 文件的第一部分将映射到用来对其进行访问的 Url 的 MOF 架
 |------------------|-----------------|
 |创建|创建|
 |读取|查询|
-|Update|Update|
+|更新|更新|
 |“删除”|“删除”|
 
 下面的示例演示用于创建、 读取和更新操作映射上`Service`资源。

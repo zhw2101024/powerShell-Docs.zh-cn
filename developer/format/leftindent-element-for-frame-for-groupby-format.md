@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 72f272db-455f-44db-9ab4-6475390a83c4
 caps.latest.revision: 6
 ms.openlocfilehash: 907ee7d070e5ac02464dc58eb32504cb0721f663
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855033"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065336"
 ---
 # <a name="leftindent-element-for-frame-for-groupby-format"></a>LeftIndent Element for Frame for GroupBy (Format)
 
@@ -27,11 +27,11 @@ GroupBy （格式） 的 GroupBy （格式） CustomEntry 元素 CustomControl C
 <LeftIndent>CharactersToShift</LeftIndent>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述了特性、 子元素和父元素的`LeftIndent`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
@@ -41,7 +41,7 @@ GroupBy （格式） 的 GroupBy （格式） CustomEntry 元素 CustomControl C
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[GroupBy （格式） 的 CustomItem 的框架元素](./frame-element-for-customitem-for-groupby-format.md)|定义如何显示数据，如向左或向右移位数据。|
 

@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
 ms.openlocfilehash: 7c2bfca50de4645676eafc01bbf23d9797e8b758
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059773"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082175"
 ---
 # <a name="installing-a-powershell-module"></a>安装 PowerShell 模块
 
 创建 PowerShell 模块后，将可能想要在系统上，安装该模块，以便你或其他人可能会使用它。 通常情况下，这只需包括将复制的模块文件 （即.psm1，或二进制程序集、 模块清单和相关联的任何其他文件） 到一个目录上该计算机上。 对于非常小的项目，这可能是简单复制并粘贴到一台远程计算机; 上的使用 Windows 资源管理器文件但是，对于大型解决方案可能会想要使用更复杂的安装过程。 不管如何获取您到系统上的模块，PowerShell 可以使用技巧，以将帮助用户查找并使用你的模块的数。 (有关详细信息，请参阅[导入 PowerShell 模块](./importing-a-powershell-module.md)。)因此，安装的主要问题确保 PowerShell 将能够找到你的模块。
 
-本主题包含下列部分：
+本主题包含以下各节：
 
 - 安装模块的规则
 

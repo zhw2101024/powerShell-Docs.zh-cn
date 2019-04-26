@@ -11,11 +11,11 @@ helpviewer_keywords:
 ms.assetid: 6c24dd44-a8ec-421d-ac86-90912e1a8cc6
 caps.latest.revision: 5
 ms.openlocfilehash: 7166881bd1403ea8c81ec2928321f6b93e3ac58d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853493"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081561"
 ---
 # <a name="how-to-create-a-console-shell"></a>如何创建控制台 Shell
 
@@ -50,7 +50,7 @@ make-shell
 > [!CAUTION]
 > 通过使 Shell 不支持程序集的 UNC 路径。
 
-|参数|描述|
+|参数|说明|
 |---------------|-----------------|
 |-out n.exe|必需。 命令行程序生成的名称。 路径指定为此参数的一部分。<br /><br /> 如果未指定，使 shell 会将".exe"追加到此值。 **注意：** 不要创建输出文件具有相同名称与引用的.dll 文件。 如果尝试这样做，请 Shell 工具将创建具有相同的名称，这将覆盖具有 cmdlet 源代码的.cs 文件的.cs 文件。|
 |命名空间 ns|必需。 要用于派生的命名空间[System.Management.Automation.Runspaces.Runspaceconfiguration](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfiguration)品牌工具包生成和编译的类。|

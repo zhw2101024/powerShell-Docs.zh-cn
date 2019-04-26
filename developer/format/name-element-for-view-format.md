@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 3a31010d-1db9-44ae-a7f3-6ed32cb641cb
 caps.latest.revision: 16
 ms.openlocfilehash: 097d20cb6a04635124d1f96823248df6095ca1af
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859503"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065064"
 ---
 # <a name="name-element-for-view-format"></a>Name Element for View (Format)
 
@@ -27,11 +27,11 @@ ms.locfileid: "56859503"
 <Name>ViewName</Name>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述了特性、 子元素和父元素的`Name`元素。 只有一个`Name`元素允许为每个视图。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
@@ -41,7 +41,7 @@ ms.locfileid: "56859503"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[视图元素 （格式）](./view-element-format.md)|定义一个视图，它用于显示一个或多个.NET 对象的成员。|
 

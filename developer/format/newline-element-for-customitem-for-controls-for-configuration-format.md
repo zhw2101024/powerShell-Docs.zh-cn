@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 57fcd7ba-44bb-403f-9747-5b429ccb70d0
 caps.latest.revision: 6
 ms.openlocfilehash: 58b6b6be0191ae3feec3d40b85a0de3699870902
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856373"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065082"
 ---
 # <a name="newline-element-for-customitem-for-controls-for-configuration-format"></a>NewLine Element for CustomItem for Controls for Configuration (Format)
 
@@ -27,11 +27,11 @@ ms.locfileid: "56856373"
 <NewLine/>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述了特性、 子元素和父元素的`NewLine`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
@@ -41,7 +41,7 @@ ms.locfileid: "56856373"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[有关配置控件 CustomEntry CustomItem 元素](./customitem-element-for-customentry-for-controls-for-configuration-format.md)|定义自定义控件视图的控件。|
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 1106829a-8ddc-454e-bbdd-ade15d4bffb4
 caps.latest.revision: 7
 ms.openlocfilehash: 264e9f7538e13b48d899e87541239250eb88f14e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863353"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081200"
 ---
 # <a name="windows-powershell-sample-code"></a>Windows PowerShell 示例代码
 
@@ -24,7 +24,7 @@ ms.locfileid: "56863353"
 
 ## <a name="sample-code-listing"></a>示例代码列表
 
-|示例代码|描述|
+|示例代码|说明|
 |-----------------|-----------------|
 |[AccessDbProviderSample01 Code Sample](./accessdbprovidersample01-code-sample.md)|这是提供程序中所述[创建一个基本的 Windows PowerShell 提供程序](./creating-a-basic-windows-powershell-provider.md)。|
 |[AccessDbProviderSample02 Code Sample](./accessdbprovidersample02-code-sample.md)|这是提供程序中所述[创建一个 Windows PowerShell 驱动器提供程序](./creating-a-windows-powershell-drive-provider.md)。|

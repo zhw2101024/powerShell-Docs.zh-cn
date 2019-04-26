@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 61b7773a-c346-4835-a928-7212dc4c85bc
 caps.latest.revision: 7
 ms.openlocfilehash: 259de341fd2fcce2b0c4629f806b4348cba1ff2c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856153"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067065"
 ---
 # <a name="windows-powershell-error-reporting"></a>Windows PowerShell 错误报告
 
 在本部分中的主题讨论 cmdlet 报告错误的方式。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>本部分内容
 
 [错误报告概念](./error-reporting-concepts.md)介绍 cmdlet 可用于报告错误的两个机制。
 

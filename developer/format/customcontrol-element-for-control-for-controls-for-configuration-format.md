@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d9d92a9e-c680-46ca-962e-e82452726953
 caps.latest.revision: 10
 ms.openlocfilehash: 1d72ce5b18e89bd81c7f81b27f4b8c60bed99764
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857663"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066730"
 ---
 # <a name="customcontrol-element-for-control-for-controls-for-configuration-format"></a>CustomControl Element for Control for Controls for Configuration (Format)
 
@@ -29,23 +29,23 @@ ms.locfileid: "56857663"
 </CustomControl>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述了特性、 子元素和父元素的`CustomControl`元素。 此元素必须具有至少一个子元素。 可以指定的子元素的数目没有最大限制。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[配置 （格式） 的 CustomControl CustomEntries 元素](./customentries-element-for-customcontrol-for-controls-for-configuration-format.md)|必需的元素。<br /><br /> 提供了一个控件的定义。|
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[配置 （格式） 的控件的控件元素](./control-element-for-controls-for-configuration-format.md)|定义可由格式设置文件和名称，用于引用该控件的所有视图的公共控件。|
 
