@@ -3,11 +3,11 @@ title: 在 Windows 上安装 PowerShell Core
 description: 介绍如何在 Windows 上安装 PowerShell Core
 ms.date: 08/06/2018
 ms.openlocfilehash: 910ee5a653fc1703bfddaf6367225f3b654d600f
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293004"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058023"
 ---
 # <a name="installing-powershell-core-on-windows"></a>在 Windows 上安装 PowerShell Core
 
@@ -24,7 +24,7 @@ ms.locfileid: "59293004"
 
 若要在 Windows 客户端或 Windows Server（适用于 Windows 7 SP1、Server 2008 R2 以及更高版本）上安装 PowerShell，请从 GitHub [版本][] 页面下载 MSI 包。 向下滚动到要安装的版本的“资产”部分。 “资产”部分可能处于折叠状态，因此可能需要单击使其展开。
 
-MSI 文件类似于 - `PowerShell-<version>-win-<os-arch>.msi`
+MSI 文件类似于 `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 下载后，双击安装程序并按照提示进行操作。
@@ -32,7 +32,7 @@ MSI 文件类似于 - `PowerShell-<version>-win-<os-arch>.msi`
 安装程序在 Windows“开始”菜单中创建一个快捷方式。
 
 - 默认情况下，包安装位置为 `$env:ProgramFiles\PowerShell\<version>`
-- 可以通过“开始”菜单启动 PowerShell 或 `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
+- 可以通过“开始”菜单或 `$env:ProgramFiles\PowerShell\<version>\pwsh.exe` 启动 PowerShell
 
 ### <a name="administrative-install-from-the-command-line"></a>通过命令行进行管理安装
 

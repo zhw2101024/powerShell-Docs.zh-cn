@@ -2,12 +2,12 @@
 title: 了解 VSCode 和 PowerShell 中的文件编码
 description: 在 VSCode 和 PowerShell 中配置文件编码
 ms.date: 02/28/2019
-ms.openlocfilehash: ec06d8f5d446a92e6cd9d2d70b11260d1d0afda8
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+ms.openlocfilehash: 6a00e45b3700f72f78e2fbcdf6e317f3a17b53c0
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320398"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058431"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>了解 VSCode 和 PowerShell 中的文件编码
 
@@ -102,7 +102,7 @@ BOM 是可选的，其采用在 Linux 领域中并不普遍，因为到处都在
 
 VSCode 的默认编码是不具有 BOM 的 UTF-8。
 
-若要设置 [VSCode 的编码][]，请转到 VSCode 设置（<kbd>Ctrl<kbd>+</kbd>，</kbd>）并设置 `"files.encoding"` 设置：
+若要设置 [VSCode 的编码][]，请转到 VSCode 设置（<kbd>Ctrl</kbd>+<kbd>，</kbd>）并设置 `"files.encoding"` 设置：
 
 ```json
 "files.encoding": "utf8bom"
@@ -138,7 +138,7 @@ VSCode 的默认编码是不具有 BOM 的 UTF-8。
 PowerShell 的默认编码因版本而异：
 
 - 在 PowerShell 6+ 中，默认编码在所有平台上都是不具有 BOM 的 UTF-8。
-- 在 Windows PowerShell 中，默认编码通常是 Windows-1252，这是[拉丁语-1][] 的扩展，也称为 ISO 8859-1。
+- 在 Windows PowerShell 中，默认编码通常是 Windows-1252，这是[latin-1][] 的扩展，也称为 ISO 8859-1。
 
 在 PowerShell 5+ 中，可以使用以下方法查找默认编码：
 
@@ -269,7 +269,7 @@ ISE 应遵循 BOM，但也可以使用反射来[设置编码](https://bensonxion
 [@mklement0]: https://github.com/mklement0
 [@rkeithhill]: https://github.com/rkeithhill
 [Windows-1252]: https://wikipedia.org/wiki/Windows-1252
-[拉丁语-1]: https://wikipedia.org/wiki/ISO/IEC_8859-1
+[latin-1]: https://wikipedia.org/wiki/ISO/IEC_8859-1
 [UTF-8]: https://wikipedia.org/wiki/UTF-8
 [字节顺序标记]: https://wikipedia.org/wiki/Byte_order_mark
 [UTF-16]: https://wikipedia.org/wiki/UTF-16
