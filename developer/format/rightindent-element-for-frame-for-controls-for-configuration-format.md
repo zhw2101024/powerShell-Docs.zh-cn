@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 3a6cedcc-0437-4312-961e-0845cc249532
 caps.latest.revision: 8
 ms.openlocfilehash: 9d8779c90421145b40d7b6b537686caf1ccd2a09
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861073"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064826"
 ---
 # <a name="rightindent-element-for-frame-for-controls-for-configuration-format"></a>RightIndent Element for Frame for Controls for Configuration (Format)
 
@@ -27,11 +27,11 @@ ms.locfileid: "56861073"
 <RightIndent>CharactersToShift</RightIndent>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述了特性、 子元素和父元素的`RightIndent`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
@@ -41,7 +41,7 @@ ms.locfileid: "56861073"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[CustomItem 配置 （格式） 的控件的框架元素](./frame-element-for-customitem-for-controls-for-configuration-format.md)|定义如何显示数据，如向左或向右移位数据。|
 

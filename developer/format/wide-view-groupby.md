@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 39388197-4ff9-4889-aa32-526011afa1f6
 caps.latest.revision: 6
 ms.openlocfilehash: e95ec550a7815a76a8bd7f9526dfa405a9644360
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861623"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083648"
 ---
 # <a name="wide-view-groupby"></a>宽视图 (GroupBy)
 
@@ -30,7 +30,7 @@ ms.locfileid: "56861623"
    > [!WARNING]
    > 此格式设置文件定义已由 Windows PowerShell 格式设置文件定义的对象的显示。 必须使用`prependPath`参数时运行 cmdlet，并且无法加载此格式设置文件作为一个模块。
 
-## <a name="demonstrates"></a>说明
+## <a name="demonstrates"></a>演示
 
 此格式设置文件演示了以下 XML 元素：
 

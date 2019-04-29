@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 473d9b56-521b-479a-8010-67fe9f040063
 caps.latest.revision: 8
 ms.openlocfilehash: 3a386eff95044eae573c255a451c5c8b8f16714d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066528"
 ---
 # <a name="customcontrolname-element-for-groupby-format"></a>CustomControlName Element for GroupBy (Format)
 
@@ -27,11 +27,11 @@ GroupBy （格式） 的视图 （格式） CustomControlName 元素的配置元
 <CustomControlName>ControlName</CustomControlName>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述的特性、 子元素和父元素的`CustomControlName`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
@@ -41,7 +41,7 @@ GroupBy （格式） 的视图 （格式） CustomControlName 元素的配置元
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[视图 （格式） 的 GroupBy 元素](./groupby-element-for-view-format.md)|定义 Windows PowerShell 如何显示对象的新的组。|
 

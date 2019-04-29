@@ -3,15 +3,15 @@ title: Windows PowerShell SDK
 ms.date: 09/13/2016
 ms.topic: article
 ms.openlocfilehash: 600d43874d9eda04d556a0ece198026dde9174c3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855353"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080452"
 ---
 # <a name="windows-powershell"></a>Windows PowerShell
 
-更新日期：2013 年 7 月 8日日
+更新时间：2013 年 7 月 8日日
 
 Windows PowerShell® 是基于任务的命令行管理程序和脚本语言，专为进行系统管理而设计。 .NET Framework 上构建，Windows PowerShell® 可帮助 IT 专业人员和高级用户控制和自动进行管理的 Windows 操作系统和在 Windows 运行的应用程序。
 

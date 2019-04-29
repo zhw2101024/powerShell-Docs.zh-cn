@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 9e11da8f-1e75-4d3d-b4c8-b500dec3028e
 caps.latest.revision: 6
 ms.openlocfilehash: 32f8a71e9818c8c1a052f3b96f442f169c1bda4a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854293"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066560"
 ---
 # <a name="customcontrolname-element-for-expressionbinding-for-groupby-format"></a>CustomControlName Element for ExpressionBinding for GroupBy (Format)
 
@@ -27,11 +27,11 @@ GroupBy （格式） 的 GroupBy （格式） CustomEntry 元素 CustomControl C
 <CustomControlName>NameofCustomControl</CustomControlName>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节描述了特性、 子元素和父元素的`CustomControlName`元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
@@ -41,7 +41,7 @@ GroupBy （格式） 的 GroupBy （格式） CustomEntry 元素 CustomControl C
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|元素|说明|
 |-------------|-----------------|
 |[GroupBy （格式） 的 CustomItem ExpressionBinding 元素](./expressionbinding-element-for-customitem-for-groupby-format.md)|定义由控件显示的数据。|
 
