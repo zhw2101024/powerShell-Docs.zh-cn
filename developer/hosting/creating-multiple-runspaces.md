@@ -9,19 +9,19 @@ ms.topic: article
 ms.assetid: 42c40c7f-1ee7-4021-950c-2e013c8f2a4a
 caps.latest.revision: 4
 ms.openlocfilehash: 606a2ee4e70d303bf1b1d69b7523eb8649f9be0c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862603"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082951"
 ---
-# <a name="creating-multiple-runspaces"></a><span data-ttu-id="2ad31-102">创建多个运行空间</span><span class="sxs-lookup"><span data-stu-id="2ad31-102">Creating multiple runspaces</span></span>
+# <a name="creating-multiple-runspaces"></a><span data-ttu-id="79396-102">创建多个运行空间</span><span class="sxs-lookup"><span data-stu-id="79396-102">Creating multiple runspaces</span></span>
 
-<span data-ttu-id="2ad31-103">如果创建大量的运行空间，可以考虑创建运行空间池。</span><span class="sxs-lookup"><span data-stu-id="2ad31-103">If you create a large number of runspaces, you might consider creating a runspace pool.</span></span> <span data-ttu-id="2ad31-104">使用[System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool)对象，而不使用相同的特征，创建大量的单个运行空间可以提高性能。</span><span class="sxs-lookup"><span data-stu-id="2ad31-104">Using a [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) object, rather than creating a large number of individual runspaces with the same characteristics, can improve performance.</span></span>
+<span data-ttu-id="79396-103">如果创建大量的运行空间，可以考虑创建运行空间池。</span><span class="sxs-lookup"><span data-stu-id="79396-103">If you create a large number of runspaces, you might consider creating a runspace pool.</span></span> <span data-ttu-id="79396-104">使用[System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool)对象，而不使用相同的特征，创建大量的单个运行空间可以提高性能。</span><span class="sxs-lookup"><span data-stu-id="79396-104">Using a [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) object, rather than creating a large number of individual runspaces with the same characteristics, can improve performance.</span></span>
 
-## <a name="creating-and-using-a-runspace-pool"></a><span data-ttu-id="2ad31-105">创建和使用运行空间池。</span><span class="sxs-lookup"><span data-stu-id="2ad31-105">Creating and using a runspace pool.</span></span>
+## <a name="creating-and-using-a-runspace-pool"></a><span data-ttu-id="79396-105">创建和使用运行空间池。</span><span class="sxs-lookup"><span data-stu-id="79396-105">Creating and using a runspace pool.</span></span>
 
- <span data-ttu-id="2ad31-106">下面的示例演示如何创建运行空间池以及如何在池的运行空间中以异步方式运行命令。</span><span class="sxs-lookup"><span data-stu-id="2ad31-106">The following example shows how to create a runspace pool and how to run a command asynchronously in a runspace of the pool.</span></span>
+ <span data-ttu-id="79396-106">下面的示例演示如何创建运行空间池以及如何在池的运行空间中以异步方式运行命令。</span><span class="sxs-lookup"><span data-stu-id="79396-106">The following example shows how to create a runspace pool and how to run a command asynchronously in a runspace of the pool.</span></span>
 
 ```csharp
 namespace HostRunspacePool
@@ -79,6 +79,6 @@ namespace HostRunspacePool
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="2ad31-107">另请参阅</span><span class="sxs-lookup"><span data-stu-id="2ad31-107">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="79396-107">另请参阅</span><span class="sxs-lookup"><span data-stu-id="79396-107">See Also</span></span>
 
- [<span data-ttu-id="2ad31-108">创建 InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="2ad31-108">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
+ [<span data-ttu-id="79396-108">创建 InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="79396-108">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)

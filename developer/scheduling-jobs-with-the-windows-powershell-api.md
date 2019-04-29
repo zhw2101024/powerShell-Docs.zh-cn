@@ -3,19 +3,19 @@ title: 使用 Windows PowerShell API 安排作业
 ms.date: 09/13/2016
 ms.topic: article
 ms.openlocfilehash: 4e1d4ed6bffd858b92bf29b1dc6d8503454fafda
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057478"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080792"
 ---
-# <a name="scheduling-jobs-with-the-windows-powershell-api"></a><span data-ttu-id="42e8b-102">使用 Windows PowerShell API 安排作业</span><span class="sxs-lookup"><span data-stu-id="42e8b-102">Scheduling Jobs with the Windows PowerShell API</span></span>
+# <a name="scheduling-jobs-with-the-windows-powershell-api"></a><span data-ttu-id="04648-102">使用 Windows PowerShell API 安排作业</span><span class="sxs-lookup"><span data-stu-id="04648-102">Scheduling Jobs with the Windows PowerShell API</span></span>
 
-<span data-ttu-id="42e8b-103">可以使用由 N:Microsoft.PowerShell.ScheduledJob 命名空间公开的对象创建的计划的作业、 定义在运行时和运行后获取有关已完成作业的结果。</span><span class="sxs-lookup"><span data-stu-id="42e8b-103">You can use the objects exposed by the N:Microsoft.PowerShell.ScheduledJob namespace to create a scheduled job, define when it runs, and get results about the completed job after it has run.</span></span>
+<span data-ttu-id="04648-103">可以使用由 N:Microsoft.PowerShell.ScheduledJob 命名空间公开的对象创建的计划的作业、 定义在运行时和运行后获取有关已完成作业的结果。</span><span class="sxs-lookup"><span data-stu-id="04648-103">You can use the objects exposed by the N:Microsoft.PowerShell.ScheduledJob namespace to create a scheduled job, define when it runs, and get results about the completed job after it has run.</span></span>
 
-## <a name="triggering-the-job"></a><span data-ttu-id="42e8b-104">触发作业</span><span class="sxs-lookup"><span data-stu-id="42e8b-104">Triggering the Job</span></span>
+## <a name="triggering-the-job"></a><span data-ttu-id="04648-104">触发作业</span><span class="sxs-lookup"><span data-stu-id="04648-104">Triggering the Job</span></span>
 
-<span data-ttu-id="42e8b-105">创建计划的作业的第一步指定作业的运行。</span><span class="sxs-lookup"><span data-stu-id="42e8b-105">The first step in creating a scheduled job is specifying when the job should run.</span></span> <span data-ttu-id="42e8b-106">为此，创建和配置 T:Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger 对象。</span><span class="sxs-lookup"><span data-stu-id="42e8b-106">Do this by creating and configuring a T:Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger object.</span></span> <span data-ttu-id="42e8b-107">以下代码创建计划来运行一次在将来 20 秒的作业触发器。</span><span class="sxs-lookup"><span data-stu-id="42e8b-107">The following code creates a trigger that schedules a job to run a single time 20 seconds in the future.</span></span>
+<span data-ttu-id="04648-105">创建计划的作业的第一步指定作业的运行。</span><span class="sxs-lookup"><span data-stu-id="04648-105">The first step in creating a scheduled job is specifying when the job should run.</span></span> <span data-ttu-id="04648-106">为此，创建和配置 T:Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger 对象。</span><span class="sxs-lookup"><span data-stu-id="04648-106">Do this by creating and configuring a T:Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger object.</span></span> <span data-ttu-id="04648-107">以下代码创建计划来运行一次在将来 20 秒的作业触发器。</span><span class="sxs-lookup"><span data-stu-id="04648-107">The following code creates a trigger that schedules a job to run a single time 20 seconds in the future.</span></span>
 
 ```csharp
 ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
@@ -27,20 +27,20 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
     true);                              // Create trigger enabled
 ```
 
-## <a name="defining-the-job"></a><span data-ttu-id="42e8b-108">定义作业</span><span class="sxs-lookup"><span data-stu-id="42e8b-108">Defining the Job</span></span>
+## <a name="defining-the-job"></a><span data-ttu-id="04648-108">定义作业</span><span class="sxs-lookup"><span data-stu-id="04648-108">Defining the Job</span></span>
 
-<span data-ttu-id="42e8b-109">通过创建参数字典定义的 Windows PowerShell 作业。</span><span class="sxs-lookup"><span data-stu-id="42e8b-109">You define a Windows PowerShell job by creating a parameter dictionary.</span></span> <span data-ttu-id="42e8b-110">支持以下参数。</span><span class="sxs-lookup"><span data-stu-id="42e8b-110">The following parameters are supported.</span></span>
+<span data-ttu-id="04648-109">通过创建参数字典定义的 Windows PowerShell 作业。</span><span class="sxs-lookup"><span data-stu-id="04648-109">You define a Windows PowerShell job by creating a parameter dictionary.</span></span> <span data-ttu-id="04648-110">支持以下参数。</span><span class="sxs-lookup"><span data-stu-id="04648-110">The following parameters are supported.</span></span>
 
-|<span data-ttu-id="42e8b-111">参数名称</span><span class="sxs-lookup"><span data-stu-id="42e8b-111">Parameter Name</span></span>|<span data-ttu-id="42e8b-112">说明</span><span class="sxs-lookup"><span data-stu-id="42e8b-112">Description</span></span>|
+|<span data-ttu-id="04648-111">参数名称</span><span class="sxs-lookup"><span data-stu-id="04648-111">Parameter Name</span></span>|<span data-ttu-id="04648-112">说明</span><span class="sxs-lookup"><span data-stu-id="04648-112">Description</span></span>|
 |---|---|
-|<span data-ttu-id="42e8b-113">名称</span><span class="sxs-lookup"><span data-stu-id="42e8b-113">Name</span></span>|<span data-ttu-id="42e8b-114">作业的名称。</span><span class="sxs-lookup"><span data-stu-id="42e8b-114">The name of the job.</span></span>|
-|<span data-ttu-id="42e8b-115">ScriptBock</span><span class="sxs-lookup"><span data-stu-id="42e8b-115">ScriptBock</span></span>|<span data-ttu-id="42e8b-116">指定对作业功能的 Windows PowerShell 脚本块。</span><span class="sxs-lookup"><span data-stu-id="42e8b-116">A Windows PowerShell script block that specifies what the job does.</span></span>|
-|<span data-ttu-id="42e8b-117">文件路径</span><span class="sxs-lookup"><span data-stu-id="42e8b-117">FilePath</span></span>|<span data-ttu-id="42e8b-118">包含 Windows PowerShell 脚本块，用于指定对作业功能文件的路径。</span><span class="sxs-lookup"><span data-stu-id="42e8b-118">A path to a file that contains Windows PowerShell script block that specifies what the job does.</span></span>|
-|<span data-ttu-id="42e8b-119">InitializationScript</span><span class="sxs-lookup"><span data-stu-id="42e8b-119">InitializationScript</span></span>|<span data-ttu-id="42e8b-120">Windows PowerShell 脚本块的初始化作业。</span><span class="sxs-lookup"><span data-stu-id="42e8b-120">A Windows PowerShell script block that initializes the job.</span></span>|
-|<span data-ttu-id="42e8b-121">ArgumentList</span><span class="sxs-lookup"><span data-stu-id="42e8b-121">ArgumentList</span></span>|<span data-ttu-id="42e8b-122">将作业所需的参数指定的对象的数组。</span><span class="sxs-lookup"><span data-stu-id="42e8b-122">An array of objects that specify arguments that the job takes.</span></span>|
-|<span data-ttu-id="42e8b-123">RunAs32</span><span class="sxs-lookup"><span data-stu-id="42e8b-123">RunAs32</span></span>|<span data-ttu-id="42e8b-124">一个布尔值，该值指定是否在 32 位进程中运行该作业。</span><span class="sxs-lookup"><span data-stu-id="42e8b-124">A boolean value that specifies whether to run the job in a 32-bit process.</span></span>|
+|<span data-ttu-id="04648-113">名称</span><span class="sxs-lookup"><span data-stu-id="04648-113">Name</span></span>|<span data-ttu-id="04648-114">作业的名称。</span><span class="sxs-lookup"><span data-stu-id="04648-114">The name of the job.</span></span>|
+|<span data-ttu-id="04648-115">ScriptBock</span><span class="sxs-lookup"><span data-stu-id="04648-115">ScriptBock</span></span>|<span data-ttu-id="04648-116">指定对作业功能的 Windows PowerShell 脚本块。</span><span class="sxs-lookup"><span data-stu-id="04648-116">A Windows PowerShell script block that specifies what the job does.</span></span>|
+|<span data-ttu-id="04648-117">文件路径</span><span class="sxs-lookup"><span data-stu-id="04648-117">FilePath</span></span>|<span data-ttu-id="04648-118">包含 Windows PowerShell 脚本块，用于指定对作业功能文件的路径。</span><span class="sxs-lookup"><span data-stu-id="04648-118">A path to a file that contains Windows PowerShell script block that specifies what the job does.</span></span>|
+|<span data-ttu-id="04648-119">InitializationScript</span><span class="sxs-lookup"><span data-stu-id="04648-119">InitializationScript</span></span>|<span data-ttu-id="04648-120">Windows PowerShell 脚本块的初始化作业。</span><span class="sxs-lookup"><span data-stu-id="04648-120">A Windows PowerShell script block that initializes the job.</span></span>|
+|<span data-ttu-id="04648-121">ArgumentList</span><span class="sxs-lookup"><span data-stu-id="04648-121">ArgumentList</span></span>|<span data-ttu-id="04648-122">将作业所需的参数指定的对象的数组。</span><span class="sxs-lookup"><span data-stu-id="04648-122">An array of objects that specify arguments that the job takes.</span></span>|
+|<span data-ttu-id="04648-123">RunAs32</span><span class="sxs-lookup"><span data-stu-id="04648-123">RunAs32</span></span>|<span data-ttu-id="04648-124">一个布尔值，该值指定是否在 32 位进程中运行该作业。</span><span class="sxs-lookup"><span data-stu-id="04648-124">A boolean value that specifies whether to run the job in a 32-bit process.</span></span>|
 
-<span data-ttu-id="42e8b-125">下面的代码创建参数字典对象，并设置的名称和 ScriptBlock 参数。</span><span class="sxs-lookup"><span data-stu-id="42e8b-125">The following code creates a parameter dictionary object and sets the Name and ScriptBlock parameters.</span></span>
+<span data-ttu-id="04648-125">下面的代码创建参数字典对象，并设置的名称和 ScriptBlock 参数。</span><span class="sxs-lookup"><span data-stu-id="04648-125">The following code creates a parameter dictionary object and sets the Name and ScriptBlock parameters.</span></span>
 
 ```csharp
 string schedJobDefName = "MySampleSchedJob";
@@ -52,9 +52,9 @@ jobDefParameters.Add("ScriptBlock", scriptBlock);  // A scriptblock or script Fi
                                                    // is required.
 ```
 
-## <a name="creating-the-invocation-and-job-definition-objects"></a><span data-ttu-id="42e8b-126">创建调用和作业定义对象</span><span class="sxs-lookup"><span data-stu-id="42e8b-126">Creating the Invocation and Job Definition Objects</span></span>
+## <a name="creating-the-invocation-and-job-definition-objects"></a><span data-ttu-id="04648-126">创建调用和作业定义对象</span><span class="sxs-lookup"><span data-stu-id="04648-126">Creating the Invocation and Job Definition Objects</span></span>
 
-<span data-ttu-id="42e8b-127">然后，创建 ScheduledJobInvocationInfo 和 ScheduledJobDefinition 运行作业的对象。</span><span class="sxs-lookup"><span data-stu-id="42e8b-127">You then create ScheduledJobInvocationInfo and ScheduledJobDefinition objects to run the job.</span></span> <span data-ttu-id="42e8b-128">下面的代码演示此操作。</span><span class="sxs-lookup"><span data-stu-id="42e8b-128">The following code demonstrates this.</span></span>
+<span data-ttu-id="04648-127">然后，创建 ScheduledJobInvocationInfo 和 ScheduledJobDefinition 运行作业的对象。</span><span class="sxs-lookup"><span data-stu-id="04648-127">You then create ScheduledJobInvocationInfo and ScheduledJobDefinition objects to run the job.</span></span> <span data-ttu-id="04648-128">下面的代码演示此操作。</span><span class="sxs-lookup"><span data-stu-id="04648-128">The following code demonstrates this.</span></span>
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
@@ -69,9 +69,9 @@ schedJobDefinition = new ScheduledJobDefinition(
                                                 // in default Task Scheduler process, account.
 ```
 
-## <a name="registering-the-job-with-the-task-scheduler"></a><span data-ttu-id="42e8b-129">注册任务计划程序作业</span><span class="sxs-lookup"><span data-stu-id="42e8b-129">Registering the Job with the Task Scheduler</span></span>
+## <a name="registering-the-job-with-the-task-scheduler"></a><span data-ttu-id="04648-129">注册任务计划程序作业</span><span class="sxs-lookup"><span data-stu-id="04648-129">Registering the Job with the Task Scheduler</span></span>
 
-<span data-ttu-id="42e8b-130">下面的代码注册使用 Windows 任务计划程序作业。</span><span class="sxs-lookup"><span data-stu-id="42e8b-130">The following code registers the job with the Windows Task Scheduler.</span></span>
+<span data-ttu-id="04648-130">下面的代码注册使用 Windows 任务计划程序作业。</span><span class="sxs-lookup"><span data-stu-id="04648-130">The following code registers the job with the Windows Task Scheduler.</span></span>
 
 ```csharp
 schedJobDefinition.Register();
@@ -79,9 +79,9 @@ registrationSucceeded = true;
 Console.WriteLine("Scheduled job has been registered.  Waiting 30 seconds for it to be started and run.");
 ```
 
-## <a name="complete-code-example"></a><span data-ttu-id="42e8b-131">完整的代码示例</span><span class="sxs-lookup"><span data-stu-id="42e8b-131">Complete Code Example</span></span>
+## <a name="complete-code-example"></a><span data-ttu-id="04648-131">完整的代码示例</span><span class="sxs-lookup"><span data-stu-id="04648-131">Complete Code Example</span></span>
 
-<span data-ttu-id="42e8b-132">下面是从其已执行前面的代码片段的完整的代码示例。</span><span class="sxs-lookup"><span data-stu-id="42e8b-132">The following is the complete code example from which the previous snippets were taken.</span></span>
+<span data-ttu-id="04648-132">下面是从其已执行前面的代码片段的完整的代码示例。</span><span class="sxs-lookup"><span data-stu-id="04648-132">The following is the complete code example from which the previous snippets were taken.</span></span>
 
 ```csharp
 using System;

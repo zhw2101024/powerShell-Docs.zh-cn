@@ -9,35 +9,35 @@ ms.topic: article
 ms.assetid: 1fca30b1-13fe-48a2-b0dd-979c161177a6
 caps.latest.revision: 14
 ms.openlocfilehash: 9a4b7c842c6222fa2e9f1c14f37f45d7a5158107
-ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56863693"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082832"
 ---
-# <a name="host01-sample"></a><span data-ttu-id="55d20-102">Host01 示例</span><span class="sxs-lookup"><span data-stu-id="55d20-102">Host01 Sample</span></span>
+# <a name="host01-sample"></a><span data-ttu-id="a6e0b-102">Host01 示例</span><span class="sxs-lookup"><span data-stu-id="a6e0b-102">Host01 Sample</span></span>
 
-<span data-ttu-id="55d20-103">此示例演示如何实现使用自定义主机的主机应用程序。</span><span class="sxs-lookup"><span data-stu-id="55d20-103">This sample shows how to implement a host application that uses a custom host.</span></span> <span data-ttu-id="55d20-104">使用自定义主机，此示例创建一个运行空间中，然后[System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) API 用于运行一个脚本，调用"exit"。</span><span class="sxs-lookup"><span data-stu-id="55d20-104">In this sample a runspace is created that uses the custom host, and then the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) API is used to run a script that calls "exit."</span></span> <span data-ttu-id="55d20-105">主机应用程序随后查看脚本输出并打印出结果。</span><span class="sxs-lookup"><span data-stu-id="55d20-105">The host application then looks at the output of the script and prints out the results.</span></span>
+<span data-ttu-id="a6e0b-103">此示例演示如何实现使用自定义主机的主机应用程序。</span><span class="sxs-lookup"><span data-stu-id="a6e0b-103">This sample shows how to implement a host application that uses a custom host.</span></span> <span data-ttu-id="a6e0b-104">使用自定义主机，此示例创建一个运行空间中，然后[System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) API 用于运行一个脚本，调用"exit"。</span><span class="sxs-lookup"><span data-stu-id="a6e0b-104">In this sample a runspace is created that uses the custom host, and then the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) API is used to run a script that calls "exit."</span></span> <span data-ttu-id="a6e0b-105">主机应用程序随后查看脚本输出并打印出结果。</span><span class="sxs-lookup"><span data-stu-id="a6e0b-105">The host application then looks at the output of the script and prints out the results.</span></span>
 
- <span data-ttu-id="55d20-106">此示例使用 Windows PowerShell 提供的默认 UI 功能。</span><span class="sxs-lookup"><span data-stu-id="55d20-106">This sample uses the default UI features provided by Windows PowerShell.</span></span> <span data-ttu-id="55d20-107">有关实现自定义主机的 UI 功能的详细信息，请参阅[Host02 示例](./host02-sample.md)。</span><span class="sxs-lookup"><span data-stu-id="55d20-107">For more information about implementing the UI features of a custom host, see [Host02 Sample](./host02-sample.md).</span></span>
+ <span data-ttu-id="a6e0b-106">此示例使用 Windows PowerShell 提供的默认 UI 功能。</span><span class="sxs-lookup"><span data-stu-id="a6e0b-106">This sample uses the default UI features provided by Windows PowerShell.</span></span> <span data-ttu-id="a6e0b-107">有关实现自定义主机的 UI 功能的详细信息，请参阅[Host02 示例](./host02-sample.md)。</span><span class="sxs-lookup"><span data-stu-id="a6e0b-107">For more information about implementing the UI features of a custom host, see [Host02 Sample](./host02-sample.md).</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="55d20-108">要求</span><span class="sxs-lookup"><span data-stu-id="55d20-108">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="a6e0b-108">要求</span><span class="sxs-lookup"><span data-stu-id="a6e0b-108">Requirements</span></span>
 
- <span data-ttu-id="55d20-109">此示例要求 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="55d20-109">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="a6e0b-109">此示例要求 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="a6e0b-109">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="55d20-110">说明</span><span class="sxs-lookup"><span data-stu-id="55d20-110">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="a6e0b-110">演示</span><span class="sxs-lookup"><span data-stu-id="a6e0b-110">Demonstrates</span></span>
 
-- <span data-ttu-id="55d20-111">创建自定义主机类派生自[System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)类。</span><span class="sxs-lookup"><span data-stu-id="55d20-111">Creating a custom host class that derives from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class.</span></span>
+- <span data-ttu-id="a6e0b-111">创建自定义主机类派生自[System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)类。</span><span class="sxs-lookup"><span data-stu-id="a6e0b-111">Creating a custom host class that derives from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class.</span></span>
 
-- <span data-ttu-id="55d20-112">创建一个运行空间使用的自定义主机类。</span><span class="sxs-lookup"><span data-stu-id="55d20-112">Creating a runspace that uses the custom host class.</span></span>
+- <span data-ttu-id="a6e0b-112">创建一个运行空间使用的自定义主机类。</span><span class="sxs-lookup"><span data-stu-id="a6e0b-112">Creating a runspace that uses the custom host class.</span></span>
 
-- <span data-ttu-id="55d20-113">创建[System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell)运行调用退出的脚本的对象。</span><span class="sxs-lookup"><span data-stu-id="55d20-113">Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that runs a script that calls exit.</span></span>
+- <span data-ttu-id="a6e0b-113">创建[System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell)运行调用退出的脚本的对象。</span><span class="sxs-lookup"><span data-stu-id="a6e0b-113">Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that runs a script that calls exit.</span></span>
 
-- <span data-ttu-id="55d20-114">正在验证，在退出过程中使用了正确的退出代码。</span><span class="sxs-lookup"><span data-stu-id="55d20-114">Verifying that the correct exit code was used in the exit process.</span></span>
+- <span data-ttu-id="a6e0b-114">正在验证，在退出过程中使用了正确的退出代码。</span><span class="sxs-lookup"><span data-stu-id="a6e0b-114">Verifying that the correct exit code was used in the exit process.</span></span>
 
-## <a name="example"></a><span data-ttu-id="55d20-115">示例</span><span class="sxs-lookup"><span data-stu-id="55d20-115">Example</span></span>
+## <a name="example"></a><span data-ttu-id="a6e0b-115">示例</span><span class="sxs-lookup"><span data-stu-id="a6e0b-115">Example</span></span>
 
- <span data-ttu-id="55d20-116">下面的代码演示使用简单的自定义主机接口的主机应用程序的实现。</span><span class="sxs-lookup"><span data-stu-id="55d20-116">The following code shows an implementation of a host application that uses a simple custom host interface.</span></span>
+ <span data-ttu-id="a6e0b-116">下面的代码演示使用简单的自定义主机接口的主机应用程序的实现。</span><span class="sxs-lookup"><span data-stu-id="a6e0b-116">The following code shows an implementation of a host application that uses a simple custom host interface.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -137,9 +137,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="55d20-117">示例</span><span class="sxs-lookup"><span data-stu-id="55d20-117">Example</span></span>
+## <a name="example"></a><span data-ttu-id="a6e0b-117">示例</span><span class="sxs-lookup"><span data-stu-id="a6e0b-117">Example</span></span>
 
- <span data-ttu-id="55d20-118">下面的代码是实现[System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)此主机应用程序使用的类。</span><span class="sxs-lookup"><span data-stu-id="55d20-118">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="55d20-119">未实现这些元素引发异常或返回任何内容。</span><span class="sxs-lookup"><span data-stu-id="55d20-119">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="a6e0b-118">下面的代码是实现[System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)此主机应用程序使用的类。</span><span class="sxs-lookup"><span data-stu-id="a6e0b-118">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="a6e0b-119">未实现这些元素引发异常或返回任何内容。</span><span class="sxs-lookup"><span data-stu-id="a6e0b-119">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -308,4 +308,4 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="55d20-120">另请参阅</span><span class="sxs-lookup"><span data-stu-id="55d20-120">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a6e0b-120">另请参阅</span><span class="sxs-lookup"><span data-stu-id="a6e0b-120">See Also</span></span>
