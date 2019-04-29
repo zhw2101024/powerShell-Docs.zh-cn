@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 8ae2196d-d6c8-4101-8805-4190d293af51
 caps.latest.revision: 13
 ms.openlocfilehash: 2fc73b6ef5a862fafb7a3c8fe3da19ac71bafc05
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068532"
 ---
 # <a name="cmdlet-dynamic-parameters"></a>Cmdlet 动态参数
 
-Cmdlet 可以定义可供用户使用特殊情况下，例如，当另一个参数的参数为特定值的参数。 这些参数在运行时添加和嘿*动态参数*因为仅在需要时添加它们。 例如，您可以设计添加几个参数，仅当指定一个特定的开关参数的 cmdlet。
+Cmdlet 可以定义可供用户使用特殊情况下，例如，当另一个参数的参数为特定值的参数。 这些参数在运行时添加和*动态参数*因为仅在需要时添加它们。 例如，您可以设计添加几个参数，仅当指定一个特定的开关参数的 cmdlet。
 
 > [!NOTE]
 > 提供程序和 Windows PowerShell 函数还可以定义动态参数。
