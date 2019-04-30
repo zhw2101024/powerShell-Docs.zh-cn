@@ -3,22 +3,22 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,配置,安装程序
 title: 配置中的条件语句和循环
 ms.openlocfilehash: 0073d94d28afbb45bb635442129a6cddde4c805a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400399"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080129"
 ---
 # <a name="conditional-statements-and-loops-in-configurations"></a>配置中的条件语句和循环
 
-可以让你[配置](configurations.md)更加动态使用 PowerShell 流控制关键字。 本文将说明如何使用条件语句和循环来使你的配置更加动态化。 组合条件分支和循环[参数](add-parameters-to-a-configuration.md)并[配置数据](configData.md)允许您更大的灵活性和控制编译你的配置时。
+可以使用 PowerShell 流控制关键字使[配置](configurations.md)更加动态。 本文将介绍如何使用条件语句和循环来使配置更加动态。 将条件语句和循环与[参数](add-parameters-to-a-configuration.md)和[配置数据](configData.md)结合使用，用户可以在编译配置时更灵活地进行控制。
 
-就像函数或脚本块，可以使用配置内的任何 PowerShell 语言。 当您调用你的配置来编译".mof"文件时，才会计算您使用的语句。 下面的示例演示简单的方案来演示概念。 条件语句都使用了循环更频繁地使用参数和配置数据。
+就像函数或脚本块一样，可以在配置中使用任何 PowerShell 语言。 只有在调用配置来编译“.mof”文件时才会计算使用的语句。 下面的示例展示了一些简单的场景来演示概念。 条件语句和循环通常与参数和配置数据一起使用。
 
-在此简单示例中，**服务**资源块检索在编译时生成保持其当前状态的".mof"文件服务的当前状态。
+在这个简单示例中，Service 资源块在编译时检索服务的当前状态，以生成维护其当前状态的“.mof”文件。
 
 > [!NOTE]
-> 使用动态资源块将抢占 Intellisense 的有效性。 PowerShell 分析器无法确定指定的值是否可以接受，直到编译配置。
+> 使用动态资源块将抢占 Intellisense 的效率。 在编译配置之前，PowerShell 解析器无法确定指定的值是否可接受。
 
 ```powershell
 Configuration ServiceState
@@ -37,7 +37,7 @@ Configuration ServiceState
 }
 ```
 
-此外，您可以创建**服务**阻止在当前计算机上的每个服务的资源使用`foreach`循环。
+此外，可以使用 `foreach` 循环为当前计算机上的每个服务创建一个 Service 块资源。
 
 ```powershell
 Configuration ServiceState
@@ -59,7 +59,7 @@ Configuration ServiceState
 }
 ```
 
-你也只能创建处于在线状态，通过使用一个简单的机配置`if`语句。
+还可以仅使用简单的 `if` 语句为联机计算机创建配置。
 
 ```powershell
 Configuration ServiceState
@@ -85,7 +85,7 @@ Configuration ServiceState
 ```
 
 > [!NOTE]
-> 动态资源块以上述示例引用在当前计算机。 在此情况下，将在创作配置的计算机，而不是目标节点。
+> 上述示例中的动态资源块引用当前计算机。 在本例中，这将是你编写配置的计算机，而不是目标节点。
 
 <!---
 Mention Get-DSCConfigurationFromSystem
@@ -93,19 +93,19 @@ Mention Get-DSCConfigurationFromSystem
 
 ## <a name="summary"></a>摘要
 
-总之，您可以使用配置内的任何 PowerShell 语言。
+总之，可以在配置中使用任何 PowerShell 语言。
 
-这包括诸如：
+这包括：
 
 - 自定义对象
 - 哈希表
 - 字符串操作
 - 远程处理
 - WMI 和 CIM
-- 与 active Directory 对象
+- ActiveDirectory 对象
 - 更多...
 
-在配置中定义的任何 PowerShell 代码将计算编译时，但还可以将代码放在脚本中包含你的配置。 导入你的配置时，将执行在配置块之外的任何代码。
+在配置中定义的任何 PowerShell 代码都将在编译时计算，但也可以将代码置于包含配置的脚本中。 在导入配置时，将执行配置块之外的任何代码。
 
 ## <a name="see-also"></a>另请参阅
 

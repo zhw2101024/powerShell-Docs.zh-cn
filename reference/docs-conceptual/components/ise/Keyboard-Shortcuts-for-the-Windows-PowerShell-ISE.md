@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: Windows PowerShell ISE 的键盘快捷方式
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
 ms.openlocfilehash: 1abae849ce599b586357fd2a8db46c608932bd4e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400386"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086827"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE 的键盘快捷方式
 
@@ -20,7 +20,7 @@ ms.locfileid: "53400386"
 
 |操作|键盘快捷方式|用于|
 |----------|----------------------|----------|
-|**帮助**|F1|脚本窗格**重要：** 您可以指定 F1 帮助来自 web 上的 TechNet 库或下载的帮助 （请参阅更新帮助）。 若要选择，请单击“工具”、“选项”，然后在“常规设置”选项卡上，设置或清除“使用本地帮助内容，而不是联机内容”。|
+|**帮助**|F1|脚本窗格“**重要提示**”：你可以指定 F1 帮助来自 Web 上的 TechNet 库或下载的帮助（请参阅“更新帮助”）。 若要选择，请单击“工具”、“选项”，然后在“常规设置”选项卡上，设置或清除“使用本地帮助内容，而不是联机内容”。|
 |**复制**|CTRL+C|脚本窗格、命令窗格、输出窗格|
 |**剪切**|CTRL+X|脚本窗格、命令窗格|
 |**展开或折叠大纲**|Ctrl+M|脚本窗格|
@@ -47,8 +47,8 @@ ms.locfileid: "53400386"
 |**运行**|F5|
 |**运行选定内容**|F8|
 |**停止执行**|CTRL+BREAK。 可以在上下文不明确时（未选定任何文本时）使用 CTRL+C。|
-|**Tab**（切换到下一个脚本）|CTRL + TAB**注意：** 仅当有一个 Windows PowerShell 选项卡打开，或具有多个打开的 Windows PowerShell 选项卡而焦点位于脚本窗格中，切换到下一个脚本才有效。|
-|**Tab**（切换到上一个脚本）|CTRL + SHIFT + TAB**注意：** 到上一个脚本适用于只有一个 Windows PowerShell 选项卡打开，或如果您有多个 Windows PowerShell 选项卡打开，并且焦点位于脚本窗格中。|
+|**Tab**（切换到下一个脚本）|CTRL+TAB **注意：** 按 Tab 键切换到下一个脚本仅适用于打开一个 Windows PowerShell 选项卡或打开多个 Windows PowerShell 选项卡，但焦点在脚本窗格中的情况。|
+|**Tab**（切换到上一个脚本）|CTRL+SHIFT+TAB **注意：** 按 Tab 键切换到上一个脚本适用于仅打开一个 Windows PowerShell 选项卡或打开多个 Windows PowerShell 选项卡，但焦点在脚本窗格中的情况。|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>自定义视图的键盘快捷方式
 

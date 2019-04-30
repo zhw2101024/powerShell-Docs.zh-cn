@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: PowerShell.exe 命令行帮助
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
 ms.openlocfilehash: 0a11ebb11d29adf5853c232b3aa10bc72f92bf0c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400435"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058507"
 ---
 # <a name="powershellexe-command-line-help"></a>PowerShell.exe 命令行帮助
 
@@ -51,10 +51,10 @@ PowerShell[.exe] -Help | -? | /?
 
 在本地作用域中运行指定的脚本（“dot-sourced”），以便脚本创建的函数和变量在当前会话中可用。 输入脚本文件路径和任何参数。 “文件”必须是命令中的最后一个参数。 在 -File 参数之后键入的所有值都被视为脚本文件路径和传递到该脚本的参数。
 
-传递给脚本的参数作为文字字符串（在当前 shell 的解释后）传递。 例如，如果处于 cmd.exe，并且想要将环境变量值传递，将使用 cmd.exe 语法： `powershell.exe -File .\test.ps1 -TestParam %windir%`
+传递给脚本的参数作为文字字符串（在当前 shell 的解释后）传递。 例如，如果处于 cmd.exe 中，并且想要传递环境变量值，请使用 cmd.exe 语法：`powershell.exe -File .\test.ps1 -TestParam %windir%`
 
-与此相反，运行`powershell.exe -File .\test.ps1 -TestParam $env:windir`中接收的文本字符串在脚本中的 cmd.exe 结果`$env:windir`因为它具有到当前的 cmd.exe shell 没有特殊含义。
-`$env:windir`环境变量引用样式_可以_内部使用`-Command`参数，因为它那里将解释为 PowerShell 代码。
+相反，在 cmd.exe 中运行 `powershell.exe -File .\test.ps1 -TestParam $env:windir` 会导致脚本接收文本字符串 `$env:windir`，因为它对当前 cmd.exe shell 没有特殊意义。
+环境变量引用的 `$env:windir` 样式可以在 `-Command` 参数中使用，因为在那里它将被解释为 PowerShell 代码。
 
 ### <a name="-inputformat-text--xml"></a>\-InputFormat {文本 |XML}
 
@@ -107,26 +107,26 @@ PowerShell[.exe] -Help | -? | /?
 ### <a name="-command"></a>-Command
 
 执行指定的命令（和所有参数），就像是在 PowerShell 命令提示符下键入的命令一样。
-在执行之后，PowerShell 退出除非**NoExit**指定参数。
+在执行后，除非指定 NoExit 参数，否则 PowerShell 会退出。
 `-Command` 后面的任何文本都会作为单个命令行发送到 PowerShell。
 这与 `-File` 处理发送到脚本的参数的方式不同。
 
-值`-Command`可以是"-"，一个字符串或脚本块。
-该命令的结果作为反序列化 XML 对象，而非活动对象返回到父外壳程序。
+`-Command` 的值可以是“-”，一个字符串或脚本块。
+命令的结果作为反序列化 XML 对象（而非活动对象）返回到父外壳程序。
 
-如果的值`-Command`是"-"，从标准输入读取命令文本。
+如果 `-Command` 的值为“-”，则将从标准输入读取命令文本。
 
-时的值`-Command`是一个字符串，**命令**_必须_是最后一个参数指定，因为该命令将被解释为命令参数后键入的所有字符。
+当 `-Command` 的值为字符串，则 Command 必须是最后指定的一个参数，因为其后键入的所有字符都会被解释为它的参数。
 
-**命令**参数仅接受执行的脚本块时它可以识别的值传递给`-Command`作为脚本块类型。
-这是_仅_可能从另一个 PowerShell 主机中运行 PowerShell.exe 时。
-类型可能包含中的现有变量、 返回由表达式，或已分析的 PowerShell 脚本块括在大括号中的文本的脚本块的形式托管`{}`之前传递给 PowerShell.exe。
+Command 参数只有在能够将传递给 `-Command` 的值识别为 ScriptBlock 类型时，才接受用于执行的脚本块。
+这只有在从另一个 PowerShell 主机运行 PowerShell.exe 时才有可能。
+ScriptBlock 类型可以包含在现有变量中，可以从表达式返回，也可以由 PowerShell 主机解析为括在大括号 `{}` 中的文字脚本块，然后再传递给 PowerShell.exe。
 
-在 cmd.exe，没有就没有脚本块 （或脚本块类型） 中，因此传递给的值**命令**将_始终_是一个字符串。
-您可以编写一个脚本块内的字符串，但而不是正在执行它的行为完全像你在典型的 PowerShell 提示符下键入它，请打印脚本的内容阻止回给你。
+在 cmd.exe 中，不存在脚本块（或 ScriptBlock 类型），因此传递给 Command 的值将始终是一个字符串。
+可以在字符串中编写一个脚本块，但它不会被执行，该脚本块的行为与你在典型 PowerShell 提示符中键入它的行为完全相同，即将脚本块内容输出出来返还给你。
 
-字符串传递给`-Command`仍将继续执行作为 PowerShell，因此脚本块的大括号通常不需要首先从 cmd.exe 运行时。
-若要执行内联脚本块内一个字符串，定义[调用运算符](/powershell/module/microsoft.powershell.core/about/about_operators#call-operator-)`&`可用：
+传递给 `-Command` 的字符串仍将作为 PowerShell 执行，因此从 cmd.exe 运行脚本块时通常一开始不需要大括号。
+要执行在字符串中定义的内联脚本块，可以使用[调用操作符](/powershell/module/microsoft.powershell.core/about/about_operators#call-operator-) `&`：
 
 ```console
 "& {<command>}"
@@ -137,7 +137,7 @@ PowerShell[.exe] -Help | -? | /?
 显示 powershell.exe 的语法。 如果要在 PowerShell 中键入 PowerShell.exe 命令，请以连字符 (-) 作为命令参数的前缀，不要使用正斜杠 (/)。 你可以在 Cmd.exe 中使用连字符或正斜杠。
 
 > [!NOTE]
-> 故障排除注释：在 PowerShell 2.0 中中, 启动某些程序在 Windows PowerShell 控制台失败，lastexitcode 为 0xc0000142。
+> 疑难解答注释：在 PowerShell 2.0 中，在 Windows PowerShell 控制台中启动某些程序将失败，LastExitCode 为 0xc0000142。
 
 ## <a name="examples"></a>示例
 

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 资源创作清单
 ms.openlocfilehash: 7b1a096bba1b729c096b6689178ee022e12e4634
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400503"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076576"
 ---
 # <a name="resource-authoring-checklist"></a>资源创作清单
 
@@ -210,11 +210,11 @@ File file {
 
 好的错误消息应具有以下特性：
 
-- 那里：错误消息的最大问题是它们经常不存在，因此请确保它们所在的位置。
+- 存在性：错误消息最大的问题在于它们经常不存在，因此应确保它们的确存在。
 - 易于理解：人工可读，没有晦涩的错误代码
-- 精确描述什么是问题的具体
-- 建设性：建议如何解决此问题
-- 正常：不要责怪用户或使它们觉得不舒服
+- 精确性：描述问题的具体内容
+- 建设性：建议如何修复问题
+- 礼貌用语：不要责怪用户或让他们感到不舒服
 
 确保验证端到端方案中的错误（使用 `Start-DscConfiguration`），因为它们可能与直接运行资源函数时返回的错误不同。
 
@@ -222,7 +222,7 @@ File file {
 
 确保由资源输出的日志易于理解且向用户提供有价值的信息。 资源应输出所有可能对用户有用的信息，但并不总是日志越多越好。 你应该避免冗余和输出不提供更多价值的数据 – 不要让人为了找到他们要找的内容而浏览成百上千条日志。 当然，针对此问题没有任何日志也是不可接受的解决方案。
 
-测试时还应分析 verbose 和 debug 日志（通过合理使用 `–Verbose` 和 `–Debug` 开关运行 `Start-DscConfiguration`）以及 ETW 日志。 若要查看 DSC ETW 日志，请转到事件查看器并打开以下文件夹：应用程序和服务-Microsoft-Windows-Desired State Configuration。  默认情况下设置有“操作”通道，但要确保在运行配置之前启用了“分析”通道和“调试”通道。
+测试时还应分析 verbose 和 debug 日志（通过合理使用 `–Verbose` 和 `–Debug` 开关运行 `Start-DscConfiguration`）以及 ETW 日志。 若要查看 DSC ETW 日志，请转到事件查看器并打开以下文件夹：Applications and Services- Microsoft - Windows - Desired State Configuration。  默认情况下设置有“操作”通道，但要确保在运行配置之前启用了“分析”通道和“调试”通道。
 若要启用“分析”/“调试”通道，可以执行下面的脚本：
 
 ```powershell
@@ -283,7 +283,7 @@ $programFilesPath = ${env:ProgramFiles(x86)}
 
 此清单包含要测试的重要项和/或经常丢失的项。 提供了一系列测试，主要是特定于你要测试的资源和此处未提及的测试。 不要忘记负面测试用例。
 
-## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>最佳做法资源模块包含具有 ResourceDesignerTests.ps1 脚本的 Tests 文件夹
+## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>最佳做法：资源模块包含具有 ResourceDesignerTests.ps1 脚本的 Tests 文件夹
 
 对于给定模块中的所有资源，使用 Test-xDscResource 和 Test-xDscSchema 在资源模块中创建“Tests”文件夹、创建 `ResourceDesignerTests.ps1` 文件并添加测试是很好的做法。
 通过这种方法你可以快速验证给定模块的所有资源的架构，并在发布前执行完整性检查。
@@ -294,7 +294,7 @@ Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
 ```
 
-## <a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>最佳做法资源文件夹包含用于生成架构的资源设计器脚本
+## <a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>最佳做法：Resource 文件夹包含用于生成架构的资源设计器脚本
 
 每个资源应包含生成资源的 mof 架构的资源设计器脚本。 此文件应置于 `<ResourceName>\ResourceDesignerScripts` 并命名为 Generate `<ResourceName>Schema.ps1`。对于 xRemoteFile 资源，此文件应被称为 `GenerateXRemoteFileSchema.ps1` 并包含：
 
@@ -310,7 +310,7 @@ $CertificateThumbprint = New-xDscResourceProperty -Name CertificateThumbprint -T
 New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Headers, $UserAgent, $Ensure, $Credential, $CertificateThumbprint) -ModuleName xPSDesiredStateConfiguration2 -FriendlyName xRemoteFile
 ```
 
-## <a name="best-practice-resource-supports--whatif"></a>最佳做法资源支持-WhatIf
+## <a name="best-practice-resource-supports--whatif"></a>最佳做法：资源支持 - WhatIf
 
 如果资源正在执行“危险”操作，最佳做法是实现 `-WhatIf` 功能。 完成后，请确保 `-WhatIf` 输出正确地描述了在无 `-WhatIf` 开关情况下执行命令时可能发生的操作。
 此外，验证当 `–WhatIf` 开关存在时操作未执行（未对节点的状态进行更改）。

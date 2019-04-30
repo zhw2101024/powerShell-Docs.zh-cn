@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
 ms.openlocfilehash: ec4ae8e4b2ef0ec226cb75607f7aaf34b48f6b76
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677502"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085637"
 ---
 # <a name="authoring-improvements-using-powershell-ise"></a>使用 PowerShell ISE 创作改进
 
@@ -17,4 +17,4 @@ ms.locfileid: "55677502"
 - DSC 资源的 **DependsOn** 属性的自动完成基于配置中的其他资源实例。
 - 使用“Tab”更好地完成资源属性值。
 
-**注意：** 在你可以使用“Ctrl+Space”列出选项之前，资源属性值必须为空字符串。 按 **Tab** 循环显示选项。
+**注意：** 在可以使用“Ctrl+Space”列出选项之前，资源属性值必须为空字符串。 按 **Tab** 循环显示选项。

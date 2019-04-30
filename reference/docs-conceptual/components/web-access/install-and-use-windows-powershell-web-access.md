@@ -3,15 +3,15 @@ ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 安装和使用 Windows PowerShell Web 访问
 ms.openlocfilehash: 53558f9be5065c7f630f06e535ddab4d7ad72d9e
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58056713"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058554"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>安装和使用 Windows PowerShell Web 访问
 
-更新日期：2013 年 11 月 5 日（编辑：2017 年 8 月 23 日）
+更新时间：2013 年 11 月 5 日（编辑：2017 年 8 月 23 日）
 
 适用于：Windows Server 2012 R2、Windows Server 2012
 
@@ -35,7 +35,7 @@ Windows PowerShell Web 访问安装和配置过程包含三个步骤：
 
 下图显示 Windows PowerShell Web 访问的工作原理。
 
-![Windows PowerShell Web Access 图](images/Windows-PowerShell-Web-Access-diagram.jpg)
+![Windows PowerShell Web 访问图](images/Windows-PowerShell-Web-Access-diagram.jpg)
 
 ## <a name="requirements-for-running-windows-powershell-web-access"></a>运行 Windows PowerShell Web 访问的要求
 
@@ -58,10 +58,10 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 ### <a name="minimally-tested-mobile-devices-or-browsers"></a>经过最小限度测试的移动设备或浏览器
 
-- Windows Phone 7 和 7.5
-- Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
+- Windows Phone 7 和 7.5
+- Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
 - iPhone 操作系统 5.0.1 的 Apple Safari
-- iPad 2 操作系统 5.0.1 的 Apple Safari
+- iPad 2 操作系统 5.0.1 的 Apple Safari
 
 ### <a name="browser-requirements"></a>浏览器要求
 
@@ -200,7 +200,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
    - 在 Windows 桌面上，右键单击任务栏上的**Windows PowerShell**，然后单击**以管理员身份运行**。
    - 在 Windows **开始**屏幕上，右键单击**Windows PowerShell**，然后单击**以管理员身份运行**。
 
-2. 使用会话配置限制用户访问的可选步骤：确保规则中已经存在你要使用的会话配置。 如果尚未创建这些配置，则使用 [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations) 中用于创建会话配置的说明。
+2. 使用会话配置限制用户访问的可选步骤：确保规则中已经存在要使用的会话配置。 如果尚未创建这些配置，则使用 [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations) 中用于创建会话配置的说明。
 
 3. 键入以下命令，然后按**Enter**。
 
@@ -373,7 +373,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 1. ![安全说明](images/SecurityNote.jpeg) 使用会话配置限制用户访问的可选步骤：
 
-   确保规则中已经存在你要使用的会话配置。 如果尚未创建这些配置，则使用 [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations) 中用于创建会话配置的说明。
+   确保规则中已经存在要使用的会话配置。 如果尚未创建这些配置，则使用 [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations) 中用于创建会话配置的说明。
 
 1. 键入以下命令，然后按**Enter**。
 

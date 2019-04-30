@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 配置数据中的凭据选项
 ms.openlocfilehash: 2a326e45bbbad7bd2362b66b88bf61b98df7b02e
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "55677030"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080146"
 ---
 # <a name="credentials-options-in-configuration-data"></a>配置数据中的凭据选项
 
@@ -65,7 +65,7 @@ Group [String] #ResourceName
 
 有关 `PsDscRunAsCredential` 属性的详细信息，请参阅[使用用户凭据运行 DSC](runAsUser.md)。
 
-## <a name="example-the-group-resource-credential-property"></a>示例：Group 资源 Credential 属性
+## <a name="example-the-group-resource-credential-property"></a>例如：Group 资源 Credential 属性
 
 DSC 在 `Local System` 下运行，因此它已经有权更改本地用户和组。
 如果添加的成员是本地帐户，则无需凭据。
@@ -137,7 +137,7 @@ At C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
 1. 错误消息说明不推荐使用纯文本密码
 2. 警告消息建议不要使用域凭据
 
-标志**PSDSCAllowPlainTextPassword**并**PSDSCAllowDomainUser**禁止显示的错误和警告，指出所涉及的风险的用户。
+标记 PSDSCAllowPlainTextPassword 和 PSDSCAllowDomainUser 禁止显示告知用户所涉及风险的错误和警告。
 
 ## <a name="psdscallowplaintextpassword"></a>PSDSCAllowPlainTextPassword
 
@@ -181,7 +181,7 @@ DomainCredentialExample -ConfigurationData $cd
 
 ### <a name="localhostmof"></a>localhost.mof
 
-**PSDSCAllowPlainTextPassword**标志要求用户确认在 MOF 文件中存储纯文本密码的风险。 在生成的 MOF 文件，即使**PSCredential**对象，其中包含**SecureString**时使用的密码仍显示为纯文本。 这是唯一一次这些凭据会公开。 获取对此 MOF 文件，任何人访问的管理员帐户访问权限。
+PSDSCAllowPlainTextPassword 标记要求用户确认将纯文本密码存储在 MOF 文件中的风险。 在生成的 MOF 文件中，即使使用了包含 SecureString 的 PSCredential 对象，密码仍以纯文本形式出现。 这是唯一一次公开凭据。 获得对此 MOF 文件的访问权限后，任何人都可以访问管理员帐户。
 
 ```
 /*
@@ -216,16 +216,16 @@ ModuleVersion = "1.0";
 };
 ```
 
-### <a name="credentials-in-transit-and-at-rest"></a>凭据在传输过程中和静止
+### <a name="credentials-in-transit-and-at-rest"></a>传输中的凭据和静止状态下的凭据
 
-- **PSDscAllowPlainTextPassword**标志，则包含密码以明文形式的 MOF 文件的编译。
-  存储包含明文密码的 MOF 文件时采取预防措施。
-- 何时向节点中提供的 MOF 文件**推送**模式下，WinRM 对通信进行加密以保护明文密码，除非重写默认**AllowUnencrypted**参数。
-  - 加密 MOF 使用证书保护静态的 MOF 文件之前应用于节点。
-- 在中**拉取**模式下，可以配置 Windows 请求服务器以使用 HTTPS 使用 Internet 信息服务器中指定的协议的通信进行加密。 有关详细信息，请参阅文章[设置 DSC 请求客户端](../pull-server/pullclient.md)并[使用证书保护 MOF 文件](../pull-server/secureMOF.md)。
-  - 在中[Azure 自动化状态配置](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)服务，请求始终加密的流量。
-- 在节点上 MOF 文件进行静态加密从 PowerShell 5.0 开始。
-  - 在 PowerShell 4.0 MOF 文件是未加密静态，除非它们使用加密证书时它们推送或请求到的节点。
+- PSDscAllowPlainTextPassword 标记允许编译包含明文形式密码的 MOF 文件。
+  在存储包含明文密码的 MOF 文件时，应采取预防措施。
+- 在推送模式下将 MOF 文件传递给节点时，WinRM 会对通信进行加密，以保护明文密码，除非使用 AllowUnencrypted 参数覆盖默认值。
+  - 使用证书加密 MOF 可以在将 MOF 文件应用于节点之前保护处于静止状态的 MOF 文件。
+- 在拉取模式下，可以配置 Windows 拉取服务器，以便通过 Internet 信息服务器中指定的协议使用 HTTPS 加密通信。 有关详细信息，请参阅文章[设置 DSC 拉取客户端](../pull-server/pullclient.md)和[使用证书保护 MOF 文件](../pull-server/secureMOF.md)。
+  - 在 [Azure 自动化状态配置](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)服务中，始终加密拉取流量。
+- 从 PowerShell 5.0 开始，节点上的 MOF 文件在静态时加密。
+  - 在 PowerShell 4.0 中，MOF 文件在静态时不加密，除非它们在被推送或拉取到节点时使用证书加密。
 
 **因为存在重大安全风险，Microsoft 建议避免使用纯文本密码。**
 

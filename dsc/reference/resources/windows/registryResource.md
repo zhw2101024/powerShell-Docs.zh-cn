@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: DSC Registry 资源
 ms.openlocfilehash: e0ae1a4a27edc08c4e6ccd47786426917eb1ccb4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677366"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076950"
 ---
 # <a name="dsc-registry-resource"></a>DSC Registry 资源
 
-适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
+适用于：_Windows PowerShell 4.0 和 Windows PowerShell 5.0_
 
 Windows PowerShell Desired State Configuration (DSC) 中的 **Registry** 资源提供了在目标节点上管理注册表项和值的机制。
 
@@ -42,7 +42,7 @@ Registry [string] #ResourceName
 | Hex| 指示是否以十六进制格式表示数据。 如果指定此项，则以十六进制格式显示 DWORD/QWORD 值数据。 对其他类型无效。 默认值为 **$false**。|
 | DependsOn| 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 **ResourceName**、类型为 **ResourceType** 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。|
 | ValueData| 注册表值的数据。|
-| ValueType| 指示值的类型。 支持的类型有：字符串 (REG_SZ)、 二进制文件 (REG-BINARY)、 Dword 32 位 (REG_DWORD)、 Qword 64 位 (REG_QWORD)、 多字符串 (REG_MULTI_SZ)，可扩展字符串 (REG_EXPAND_SZ) |
+| ValueType| 指示值的类型。 支持的类型有：字符串 (REG_SZ)、二进制 (REG-BINARY)、Dword 32 位 (REG_DWORD)、Qword 64 位 (REG_QWORD)、多字符串 (REG_MULTI_SZ)、可扩充字符串 (REG_EXPAND_SZ) |
 
 ## <a name="example"></a>示例
 

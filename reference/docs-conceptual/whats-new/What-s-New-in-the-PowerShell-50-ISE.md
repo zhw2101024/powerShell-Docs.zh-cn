@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: PowerShell 50 ISE 中的新增功能
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
 ms.openlocfilehash: 2d953bc4553de7720c590304d29750b84a1ef3b2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677383"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058176"
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Windows PowerShell ISE 中的新增功能
 本主题介绍已在 Windows PowerShell (R) 集成脚本环境 (ISE) 的各版本中引入的新增功能和更新功能。
@@ -147,11 +147,11 @@ Windows PowerShell ISE 2.0 具有单独的命令和输出窗格。
 
 如果从命令行（通过键入 **powershell_ise.exe**）启动 Windows PowerShell ISE，则可以添加下列新的命令行开关。
 
-- *-NoProfile*： 启动 Windows PowerShell ISE 而无需运行 **$profile**
+- *-NoProfile*：在不运行 $profile 的情况下启动 Windows PowerShell ISE
 
-- -Help：显示帮助窗口
+- *-Help*：显示帮助窗口
 
-- *-mta*： 在多线程的单元模式下启动 Windows PowerShell ISE。 Windows PowerShell ISE 的默认操作模式是单线程的单元模式，或 *-sta*。
+- *-mta*：在多线程的单元模式下启动 Windows PowerShell ISE。 Windows PowerShell ISE 的默认操作模式是单线程的单元模式，或 *-sta*。
 
 **更改增添了什么价值？**
 

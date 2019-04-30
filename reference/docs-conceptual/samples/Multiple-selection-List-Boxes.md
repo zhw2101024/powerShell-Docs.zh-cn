@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: 多选列表框
 ms.assetid: f74cd5d9-da57-4802-b614-0b194a7bc8f8
 ms.openlocfilehash: a762145dc197ec7e1424b2fbdcef5e7380d13803
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400457"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057942"
 ---
 # <a name="multiple-selection-list-boxes"></a>多选列表框
 
@@ -183,6 +183,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>另请参阅
 
--   你好，脚本专家：[为什么这些 PowerShell GUI 示例不起作用？](https://go.microsoft.com/fwlink/?LinkId=506644)
-- [GitHubDave Wyatt 的 WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell 每周提示：多选列表框-还有更多 ！](https://technet.microsoft.com/library/ff730950.aspx)
+- [你好，脚本专家：为什么这些 PowerShell GUI 示例不起作用呢？](https://go.microsoft.com/fwlink/?LinkId=506644)
+- [GitHub：Dave Wyatt 的 WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
+- [本周 Windows PowerShell 提示：多选列表框 - 还有更多！](https://technet.microsoft.com/library/ff730950.aspx)

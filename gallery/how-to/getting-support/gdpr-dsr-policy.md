@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: 库, powershell, psgallery, GDPR
 title: PowerShell 库 GDPR 符合性
 ms.openlocfilehash: fb1191d8a1cd12d5994e41238c384eb504d0c261
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002644"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084226"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>PowerShell 库 GDPR 符合性
 
@@ -53,8 +53,8 @@ PowerShell 库发送和接收的电子邮件具有 90 天的保留策略，以�
 根据策略，电子邮件会在 90 天后删除。
 
 可以请求过去 90 天里，你的电子邮件地址和 PowerShell 库发送和接收的所有电子邮件副本。
-若要请求此通信，请将电子邮件发送到 [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com)，并使用标题“有关此帐户的电子邮件 DSR 请求”。
-请在邮件正文中说明你要请求的信息（例如，请发送此电子邮件地址发送或接收的所有电子邮件）。请求日期前 90 天与你的电子邮件地址有关的所有电子邮件将在 7 个工作日内发送。
+若要请求这种对应关系，请发送电子邮件至 [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com)，标题为：“此帐户相关电子邮件的 DSR 请求”。
+请在邮件正文中说明请求的信息（例如：请发送所有发送到或接收自此电子邮件地址的电子邮件。）请求日期前 90 天与你的电子邮件地址有关的所有电子邮件将在 7 个工作日内发送。
 
 ### <a name="powershell-gallery-account-information"></a>PowerShell 库帐户信息
 
@@ -92,7 +92,7 @@ Save-Script Get-repository psgallery
 
 ## <a name="deleting-personal-data-from-the-powershell-gallery"></a>从 PowerShell 库中删除个人数据
 
-若要删除 PowerShell 库帐户或你在 PowerShell 库中拥有的任何包，请发送电子邮件到 cgadmin@microsoft.com，标题为“此帐户相关项目的 GDPR 请求”。
+若要删除 PowerShell 库帐户或你在 PowerShell 库中拥有的任何包，请发送电子邮件至 cgadmin@microsoft.com，标题为：“此帐户相关项目的 GDPR 请求”。
 请在邮件正文中说明要删除哪些信息。 例如：
 
 - 请删除我的包“包名称”的版本 x.y.z

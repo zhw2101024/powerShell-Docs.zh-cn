@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: ISEOptions 对象
 ms.assetid: 75e2a76f-f3d1-490b-ad5d-e3829946aabb
 ms.openlocfilehash: e756da21aaa5465f7fa6a90563b4180f0c89e87b
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400973"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057768"
 ---
 # <a name="the-iseoptions-object"></a>ISEOptions 对象
 
@@ -138,7 +138,7 @@ $psISE.Options.ConsolePaneTextBackgroundColor = 'pink'
 
 在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
-指定 Windows PowerShell ISE“控制台”窗格中 IntelliSense 标记的颜色。 此属性是一个包含标记类型的名称/值对和“控制台”窗格颜色的字典对象。 若要更改“脚本”窗格中 IntelliSense 标记的颜色，请参阅 [TokenColors](#tokencolors)。 要将颜色重置为默认值，请参阅 [RestoreDefaultConsoleTokenColors](#restoredefaultconsoletokencolors)。 标记颜色可以为以下设置：命令、 CommandArgument、 CommandParameter、 注释、 GroupEnd、 GroupStart、 关键字、 LineContinuation、 LoopLabel、 成员、 换行符、 数字、 运算符、 位置、 StatementSeparator、 字符串、 类型、 未知、 变量属性。
+指定 Windows PowerShell ISE“控制台”窗格中 IntelliSense 标记的颜色。 此属性是一个包含标记类型的名称/值对和“控制台”窗格颜色的字典对象。 若要更改“脚本”窗格中 IntelliSense 标记的颜色，请参阅 [TokenColors](#tokencolors)。 要将颜色重置为默认值，请参阅 [RestoreDefaultConsoleTokenColors](#restoredefaultconsoletokencolors)。 可以针对以下项设置令牌颜色：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。
 
 ```powershell
 # Sets the color of commands to green.
@@ -435,7 +435,7 @@ $psISE.Options.ShowWarningBeforeSavingOnRun = $true
 
 在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
-指定在不同 PowerShell 选项卡中打开同一个文件时是否显示警告消息。 如果设置为 **$true**，若要在多个选项卡显示此消息打开同一个文件："已在另一个 Windows PowerShell 选项卡中打开此文件的副本。对此文件所做的更改将影响所有打开的副本。” 默认值为 **$true**。
+指定在不同 PowerShell 选项卡中打开同一个文件时是否显示警告消息。 如果设置为“$true”，则在多个选项卡中打开同一个文件会显示以下消息："已在其他 Windows PowerShell 选项卡中打开此文件的副本。对此文件所做的更改将影响所有打开的副本。” 默认值为 **$true**。
 
 ```powershell
 # Enable the warning message when a file is
@@ -447,7 +447,7 @@ $psISE.Options.ShowWarningForDuplicateFiles = $true
 
 在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
-指定 Windows PowerShell ISE“脚本”窗格中 IntelliSense 标记的颜色。 此属性是一个包含标记类型的名称/值对和“脚本”窗格颜色的字典对象。 若要更改“脚本”窗格中 IntelliSense 标记的颜色，请参阅 [ConsoleTokenColors](#consoletokencolors)。 要将颜色重置为默认值，请参阅 [RestoreDefaultTokenColors](#restoredefaulttokencolors)。 标记颜色可以为以下设置：命令、 CommandArgument、 CommandParameter、 注释、 GroupEnd、 GroupStart、 关键字、 LineContinuation、 LoopLabel、 成员、 换行符、 数字、 运算符、 位置、 StatementSeparator、 字符串、 类型、 未知、 变量属性。
+指定 Windows PowerShell ISE“脚本”窗格中 IntelliSense 标记的颜色。 此属性是一个包含标记类型的名称/值对和“脚本”窗格颜色的字典对象。 若要更改“脚本”窗格中 IntelliSense 标记的颜色，请参阅 [ConsoleTokenColors](#consoletokencolors)。 要将颜色重置为默认值，请参阅 [RestoreDefaultTokenColors](#restoredefaulttokencolors)。 可以针对以下项设置令牌颜色：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。
 
 ```powershell
 # Sets the color of commands to green.
@@ -539,7 +539,7 @@ $psISE.Options.WarningForegroundColor = 'yellow'
 
 在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
-指定包含标记类型的名称/值对以及 Windows PowerShell ISE 中显示的 XML 内容颜色的字典对象。 标记颜色可以为以下设置：命令、 CommandArgument、 CommandParameter、 注释、 GroupEnd、 GroupStart、 关键字、 LineContinuation、 LoopLabel、 成员、 换行符、 数字、 运算符、 位置、 StatementSeparator、 字符串、 类型、 未知、 变量属性。 另请参阅 [RestoreDefaultXmlTokenColors](#restoredefaultxmltokencolors)。
+指定包含标记类型的名称/值对以及 Windows PowerShell ISE 中显示的 XML 内容颜色的字典对象。 可以针对以下项设置令牌颜色：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。 另请参阅 [RestoreDefaultXmlTokenColors](#restoredefaultxmltokencolors)。
 
 ```powershell
 # Sets the color of XML element names to green.

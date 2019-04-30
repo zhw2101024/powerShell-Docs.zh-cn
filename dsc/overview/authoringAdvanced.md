@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 了解 CI/CD 管道中的 DSC 角色
 ms.openlocfilehash: 7aec414b3d8e61d1daa1ce796184ac34dbbb43ce
-ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56803372"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079784"
 ---
 # <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>了解 CI/CD 管道中的 DSC 角色
 

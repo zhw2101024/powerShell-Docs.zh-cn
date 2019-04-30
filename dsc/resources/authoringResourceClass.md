@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 使用 PowerShell 类编写自定义 DSC 资源
-ms.openlocfilehash: 0759685b04688f574d72b62a15833832ad19e816
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 34356f65bcb83153e7395a16d2a4a5cf2e507332
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400817"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076712"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>使用 PowerShell 类编写自定义 DSC 资源
 
@@ -21,7 +21,7 @@ ms.locfileid: "53400817"
 
 有关 DSC 资源的详细信息，请参阅[构建自定义 Windows PowerShell Desired State Configuration 资源](authoringResource.md)。
 
->**注意：** 在基于类的资源中不支持泛型集合。
+>**注意：** 基于类的资源中不支持泛型集合。
 
 ## <a name="folder-structure-for-a-class-resource"></a>类资源的文件夹结构
 
@@ -30,8 +30,8 @@ ms.locfileid: "53400817"
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
     |- MyDscResource (folder)
-        |- MyDscResource.psm1
-           MyDscResource.psd1
+        MyDscResource.psm1
+        MyDscResource.psd1
 ```
 
 ## <a name="create-the-class"></a>创建类
@@ -64,10 +64,10 @@ DSC 资源架构被定义为类的属性。 我们声明下列三个属性。
 
 请注意，属性通过特性进行修改。 特性的含义如下：
 
-- **Dscproperty （key)**:该属性是必需的。 属性为键。 所有被标记为键的属性的值必须接合以唯一地标识配置内的资源实例。
-- **Dscproperty （mandatory)**:该属性是必需的。
-- **Dscproperty （notconfigurable)**:此属性是只读的。 使用此特性标记的属性不能通过配置进行设置，但出现时使用 **Get()** 方法进行填充。
-- **Dscproperty （)**:该属性可配置，但不需要。
+- **DscProperty(Key)**：属性是必需的。 属性为键。 所有被标记为键的属性的值必须接合以唯一地标识配置内的资源实例。
+- **DscProperty(Mandatory)**：属性是必需的。
+- **DscProperty(NotConfigurable)**：属性为只读属性。 使用此特性标记的属性不能通过配置进行设置，但出现时使用 **Get()** 方法进行填充。
+- **DscProperty()**：属性可配置，但不是必需的。
 
 **$Path** 和 **$SourcePath** 属性都是字符串。 **$CreationTime** 是一个 [DateTime](/dotnet/api/system.datetime) 属性。 **$Ensure** 属性是枚举类，定义如下。
 
@@ -86,7 +86,6 @@ enum Ensure
 此代码还包括 CopyFile() 函数，是一个可将文件从 **$SourcePath** 复制到 **$Path** 的 helper 函数。
 
 ```powershell
-
     <#
         This method is equivalent of the Set-TargetResource script function.
         It sets the resource to the desired state.
@@ -217,6 +216,7 @@ enum Ensure
 ```
 
 ### <a name="the-complete-file"></a>完整文件
+
 完整类文件如下。
 
 ```powershell
@@ -414,7 +414,6 @@ class FileResource
 } # This module defines a class for a DSC "FileResource" provider.
 ```
 
-
 ## <a name="create-a-manifest"></a>创建清单
 
 若要让基于类的资源对 DSC 引擎可用，你必须在清单文件中添加 **DscResourcesToExport** 声明，以指示模块导出资源。 我们的清单如下所示：
@@ -474,7 +473,7 @@ Start-DscConfiguration -Wait -Force Test
 
 ## <a name="supporting-psdscrunascredential"></a>支持 PsDscRunAsCredential
 
->**注意：****PsDscRunAsCredential** PowerShell 5.0 及更高版本支持。
+>**注意：** PsDscRunAsCredential 在 PowerShell 5.0 及更高版本中受支持。
 
 可以在 [DSC 配置](../configurations/configurations.md)资源块中使用 PsDscRunAsCredential 属性，以指定应使用指定的一组凭据运行资源。
 有关详细信息，请参阅[使用用户凭据运行 DSC](../configurations/runAsUser.md)。
@@ -497,6 +496,36 @@ class FileResource {
 }
 ```
 
+### <a name="declaring-multiple-class-resources-in-a-module"></a>声明模块中的多个类资源
+
+模块可以定义多个基于类的 DSC 资源。 可以按以下方式创建文件夹结构：
+
+1. 定义“<ModuleName>.psm1”文件中的第一个资源以及“DSCResources”文件夹下的后续资源。
+
+   ```
+   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
+        |- MyDscResource (folder)
+           |- MyDscResource.psm1
+              MyDscResource.psd1
+        |- DSCResources
+           |- SecondResource.psm1
+   ```
+
+2. 定义“DSCResources”文件夹下的所有资源。
+
+   ```
+   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
+        |- MyDscResource (folder)
+           |- MyDscResource.psm1
+              MyDscResource.psd1
+        |- DSCResources
+           |- FirstResource.psm1
+              SecondResource.psm1
+   ```
+
+> [!NOTE]
+> 在上面的示例中，将“DSCResources”下的任何 PSM1 文件添加到 PSD1 文件中的“NestedModules”键。
+
 ### <a name="access-the-user-context"></a>访问用户上下文
 
 若要从自定义资源访问用户上下文，可以使用自动变量 `$global:PsDscContext`。
@@ -510,5 +539,5 @@ if (PsDscContext.RunAsUser) {
 ```
 
 ## <a name="see-also"></a>另请参阅
-### <a name="concepts"></a>概念
+
 [构建自定义 Windows PowerShell Desired State Configuration 资源](authoringResource.md)

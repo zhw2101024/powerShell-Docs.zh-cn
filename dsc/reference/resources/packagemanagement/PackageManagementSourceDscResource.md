@@ -3,11 +3,11 @@ ms.date: 06/20/2018
 keywords: dsc,powershell,配置,安装程序
 title: DSC PackageManagementSource 资源
 ms.openlocfilehash: e51b5318288bef458567dd4b58d17caaea3ed69b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677014"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077579"
 ---
 # <a name="dsc-packagemanagementsource-resource"></a>DSC PackageManagementSource 资源
 
@@ -42,7 +42,7 @@ PackageManagementSource [String] #ResourceName
 | ProviderName| 指定 OneGet 提供程序的名称，借此可以与包源进行互操作。|
 | SourceLocation| 指定包源的 URI。|
 | Ensure| 确定是要注册还是要取消注册包源。|
-| InstallationPolicy| 供提供程序使用，如内置的 Nuget 提供程序。 确定是否信任包的源。 其中之一：、。"不受信任"，"受信任"。|
+| InstallationPolicy| 供提供程序使用，如内置的 Nuget 提供程序。 确定是否信任包的源。 可取值为：“Untrusted”或“Trusted”。|
 | SourceCredential| 提供远程源上程序包的访问权限。|
 
 ## <a name="example"></a>示例

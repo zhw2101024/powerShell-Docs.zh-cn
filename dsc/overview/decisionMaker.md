@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 适用于决策者的 Desired State Configuration 概述
 ms.openlocfilehash: ce554d4bb994d4b1816d9d9c24599e4ef0e1c593
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400432"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079585"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>适用于决策者的 Desired State Configuration 概述
 
@@ -44,7 +44,7 @@ DSC 设计时考虑到 [DevOps](http://blogs.technet.com/b/ashleymcglone/archive
 
 配置也是[数据驱动](../configurations/configData.md)的，便于操作人员识别和更改环境，无需开发人员介入。
 
-## <a name="desired-state-configuration-on-premises-and-off-premises"></a>在本地和非本地 Desired State Configuration
+## <a name="desired-state-configuration-on-premises-and-off-premises"></a>本地和非本地 Desired State Configuration
 DSC 可用于管理本地和非本地部署。
 针对本地解决方案，DSC 拥有[请求服务器](../pull-server/pullServer.md)，可用于集中式管理计算机并报告其状态。
 针对云解决方案，只要 Windows 可用 DSC 就可用。

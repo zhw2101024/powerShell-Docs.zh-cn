@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: PowerShellTab 对象
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
 ms.openlocfilehash: 577e2aaaddf3071801816d9ae91dbf0006dd5072
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400431"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057666"
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab 对象
 
@@ -40,7 +40,7 @@ $psISE.PowerShellTabs[1].Invoke({dir})
 在 PowerShell 选项卡中运行给定的脚本。
 
 > [!NOTE]
-> 此方法仅适用于其他 PowerShell 选项卡，不适用于运行它的 PowerShell 选项卡。 运行脚本块，并且从该脚本返回的任何值将返回到从中调用该命令的运行环境。 如果此命令采用更长时间才能运行比**millesecondsTimeout**的值指定，则该命令将失败并出现异常：运算超时。
+> 此方法仅适用于其他 PowerShell 选项卡，不适用于运行它的 PowerShell 选项卡。 运行脚本块，并且从该脚本返回的任何值将返回到从中调用该命令的运行环境。 如果命令运行所花费的时间大于指定的 millesecondsTimeout 值，则该命令将失败并出现异常：“操作已超时。”
 
 **Script** - 要运行的脚本块的 System.Management.Automation.ScriptBlock 或字符串。
 

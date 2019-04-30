@@ -1,31 +1,31 @@
 ---
 ms.date: 12/12/2018
 keywords: dsc,powershell,配置,安装程序
-title: 设置请求客户端在 PowerShell 4.0 中使用配置 Id
+title: 在 PowerShell 4.0 中使用配置 ID 设置拉取客户端
 ms.openlocfilehash: 9adc767e91ff19d373c122a0d493e7b8703d5476
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676267"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079466"
 ---
-# <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-40"></a>设置请求客户端在 PowerShell 4.0 中使用配置 Id
+# <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-40"></a>在 PowerShell 4.0 中使用配置 ID 设置拉取客户端
 
 >适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > 请求服务器（Windows 功能 DSC-Service）是 Windows Server 的一个受支持组件，不过目前没有提供新功能的计划。 建议开始将托管客户端转换至 [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)（包括 Windows Server 上的请求服务器以外的功能）或[此处](pullserver.md#community-solutions-for-pull-service)列出的社区解决方案之一。
 
-设置请求客户端之前, 应设置请求服务器。 但此顺序不是必需的它帮助进行故障排除，并帮助您确保注册成功。 若要设置请求服务器，可以使用以下指南：
+设置请求客户端之前，应设置请求服务器。 虽然此顺序不是必需的，不过它帮助进行故障排除，并帮助确保注册成功。 若要设置请求服务器，可以使用以下指南：
 
 - [设置 DSC SMB 拉取服务器](pullServerSmb.md)
 - [设置 DSC HTTP 拉取服务器](pullServer.md)
 
-每个目标节点可以配置为下载的配置，资源，并甚至报告其状态。 以下各节显示如何使用 SMB 共享或 HTTP DSC 请求服务器配置请求客户端。 节点的 LCM 刷新时，它将访问配置的位置下载任何已分配的配置。 如果在节点上不存在任何所需的资源，因此它将自动从配置的位置下载它们。 如果使用配置节点[报表服务器](reportServer.md)，然后，它将报告操作的状态。
+每个目标节点都可以配置为下载配置、资源，甚至是报告其状态。 以下各部分演示如何使用 SMB 共享或 HTTP DSC 请求服务器配置请求客户端。 节点的 LCM 刷新时，它会访问配置的位置以下载任何已分配的配置。 如果有任何所需资源在节点上不存在，则它会自动从配置的位置下载它们。 如果使用[报表服务器](reportServer.md)配置节点，则它随后会报告操作的状态。
 
 ## <a name="configure-the-pull-client-lcm"></a>配置请求客户端 LCM
 
-执行任何下面的示例创建名为的新输出文件夹**PullClientConfigID**并放入元配置 MOF 文件。 在本例中，会将元配置 MOF 文件命名为 `localhost.meta.mof`。
+执行以下任何示例会创建名为 PullClientConfigID 的新输出文件夹，并在其中放入元配置 MOF 文件。 在本例中，会将元配置 MOF 文件命名为 `localhost.meta.mof`。
 
 若要应用配置，请调用 **Set-DscLocalConfigurationManager** cmdlet，并将 **Path** 设置为元配置 MOF 文件的位置。 例如：
 
@@ -35,21 +35,21 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientC
 
 ## <a name="configuration-id"></a>配置 ID
 
-下面一组示例**ConfigurationID**属性将 lcm **Guid** ，之前创建实现此目的。 LCM 使用 **ConfigurationID** 在请求服务器上查找相应配置。 请求服务器上的配置 MOF 文件必须命名为 `ConfigurationID.mof`，其中 *ConfigurationID* 是目标节点上 LCM 的 **ConfigurationID** 属性值。 有关详细信息，请参阅[请求服务器 (v4/v5) 的发布配置](publishConfigs.md)。
+以下示例将 LCM 的 ConfigurationID 属性设置为之前为此目的创建的 Guid。 LCM 使用 **ConfigurationID** 在请求服务器上查找相应配置。 请求服务器上的配置 MOF 文件必须命名为 `ConfigurationID.mof`，其中 *ConfigurationID* 是目标节点上 LCM 的 **ConfigurationID** 属性值。 有关详细信息，请参阅[将配置发布到请求服务器 (v4/v5)](publishConfigs.md)。
 
-您可以创建一个随机**Guid**使用下面的示例。
+可以使用以下示例创建随机 Guid。
 
 ```powershell
 [System.Guid]::NewGuid()
 ```
 
-## <a name="set-up-a-pull-client-to-download-configurations"></a>设置请求客户端下载配置
+## <a name="set-up-a-pull-client-to-download-configurations"></a>设置请求客户端以下载配置
 
-必须在配置每个客户端**拉取**模式和存储其配置为其提供拉取服务器 url。 若要执行此操作，必须为本地配置管理器 (LCM) 配置所需信息。 若要配置 LCM，你创建的特殊类型的配置，与**LocalConfigurationManager**块。 有关配置 LCM 的详细信息，请参阅[配置本地配置管理器](../managing-nodes/metaConfig4.md)。
+必须在“请求”模式下配置每个客户端，并向其提供存储其配置的请求服务器 url。 若要执行此操作，必须为本地配置管理器 (LCM) 配置所需信息。 若要配置 LCM，你需要创建一个具有 LocalConfigurationManager 块的特殊类型配置。 有关配置 LCM 的详细信息，请参阅[配置本地配置管理器](../managing-nodes/metaConfig4.md)。
 
 ## <a name="http-dsc-pull-server"></a>HTTP DSC 请求服务器
 
-如果请求服务器设置为 web 服务，则设置**DownloadManagerName**到**WebDownloadManager**。 **WebDownloadManager**要求您指定**ServerUrl**到**DownloadManagerCustomData**密钥。 此外可以指定的值**AllowUnsecureConnection**，如下面的示例。 下面的脚本将 LCM 配置为从名为“PullServer”的服务器请求配置。
+如果拉取服务器被设置为 Web 服务，请将 DownloadManagerName 设置为 WebDownloadManager。 WebDownloadManager 要求你指定指向 DownloadManagerCustomData 键的 ServerUrl。 还可以指定 AllowUnsecureConnection 的值，如下面的示例中所示。 下面的脚本将 LCM 配置为从名为“PullServer”的服务器请求配置。
 
 ```powershell
 Configuration PullClientConfigId
@@ -71,7 +71,7 @@ PullClientConfigId -Output "."
 
 ## <a name="smb-share"></a>SMB 共享
 
-如果请求服务器设置为 SMB 文件共享，而不是 web 服务，则设置**DownloadManagerName**到**DscFileDownloadManager**而不是**WebDownLoadManager**. **DscFileDownloadManager**要求您指定**SourcePath**中的属性**DownloadManagerCustomData**。 下面的脚本将 LCM 配置为从“CONTOSO-SERVER”服务器上的“SmbDscShare”SMB 共享请求配置。
+如果拉取服务器被设置为 SMB 文件共享，而不是 Web 服务，请将 DownloadManagerName 设置为 DscFileDownloadManager，而不是 WebDownLoadManager。 DscFileDownloadManager 要求你指定 DownloadManagerCustomData 中的 SourcePath 属性。 下面的脚本将 LCM 配置为从“CONTOSO-SERVER”服务器上的“SmbDscShare”SMB 共享请求配置。
 
 ```powershell
 Configuration PullClientConfigId
@@ -93,12 +93,12 @@ PullClientConfigId -Output "."
 
 ## <a name="next-steps"></a>后续步骤
 
-配置请求客户端之后，可以使用以下指南以执行后续步骤：
+配置请求客户端之后，可以使用以下指南执行后续步骤：
 
 - [将配置发布到拉取服务器 (v4/v5)](publishConfigs.md)
 - [打包资源并将其上传到拉取服务器 (v4)](package-upload-resources.md)
 
 ## <a name="see-also"></a>另请参阅
 
-- [设置 DSC web 请求服务器](pullServer.md)
+- [设置 DSC Web 拉取服务器](pullServer.md)
 - [设置 DSC SMB 拉取服务器](pullServerSMB.md)

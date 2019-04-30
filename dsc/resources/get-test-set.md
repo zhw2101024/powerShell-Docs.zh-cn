@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,配置,安装程序
 title: Get-Test-Set
 ms.openlocfilehash: 6d059518a49926bc5fb56e37e7d3d4d2c66bddec
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677355"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076593"
 ---
 # <a name="get-test-set"></a>Get-Test-Set
 
@@ -15,9 +15,9 @@ ms.locfileid: "55677355"
 
 ![获取、测试并设置](/media/get-test-set.png)
 
-PowerShell Desired State Configuration 构造周围**获取**，**测试**，并**设置**过程。 DSC[资源](resources.md)每个都包含用于完成这些操作的方法。 在[配置](../configurations/configurations.md)，定义资源块来填充成为资源的参数的键**获取**，**测试**，以及**设置**方法。
+PowerShell Desired State Configuration 是围绕 Get、Test 和 Set 进程构建的。 每个 DSC [资源](resources.md) 都包含完成这些操作的方法。 在[配置](../configurations/configurations.md)中，定义资源块来填充成为资源的 Get、Test 和 Set 方法参数的键。
 
-这是语法**服务**资源块。 **服务**资源配置 Windows 服务。
+这是 Service 资源块的语法。 Service 资源配置 Windows 服务。
 
 ```syntax
 Service [String] #ResourceName
@@ -37,7 +37,7 @@ Service [String] #ResourceName
 }
 ```
 
-**获取**，**测试**，并**设置**方法**服务**资源将具有接受这些值的参数块。
+Service 资源的 Get、Test 和 Set 方法将具有接受这些值的参数块。
 
 ```powershell
     param
@@ -86,9 +86,9 @@ Service [String] #ResourceName
 ```
 
 > [!NOTE]
-> 语言和方法用于定义该资源确定如何**获取**，**测试**，并**设置**将定义方法。
+> 用于定义资源的语言和方法决定了如何定义 Get、Test 和 Set 方法。
 
-因为**服务**资源仅有一个必需的密钥 (`Name`)、 一个**服务**块资源可能简单，如下：
+由于 Service 资源只有一个必需的键 (`Name`)，因此 Service 块资源可以非常简单，如下所示：
 
 ```powershell
 Configuration TestConfig
@@ -104,7 +104,7 @@ Configuration TestConfig
 }
 ```
 
-编译上面的配置时，生成的".mof"文件中存储指定键的值。 有关详细信息，请参阅[MOF](/windows/desktop/wmisdk/managed-object-format--mof-)。
+编译上述配置时，为键指定的值存储在生成的“.mof”文件中。 有关详细信息，请参阅 [MOF](/windows/desktop/wmisdk/managed-object-format--mof-)。
 
 ```
 instance of MSFT_ServiceResource as $MSFT_ServiceResource1ref
@@ -121,15 +121,15 @@ ModuleVersion = "1.0";
 };
 ```
 
-当应用时，[本地配置管理器](../managing-nodes/metaConfig.md)将从".mof"文件读取值"后台处理程序"并将其传递给`-Name`参数**获取**，**测试**，并**设置**"MyService"实例的方法**服务**资源。
+应用时，[本地配置管理器](../managing-nodes/metaConfig.md)将从“.mof”文件读取值“Spooler”，并将其传递给 Service 资源“MyService”实例的 Get、Test 和 Set 方法的 `-Name` 参数。
 
 ## <a name="get"></a>Get
 
-**获取**的资源，方法检索资源的状态，因为在目标节点上进行此配置。 此状态下返回作为[哈希表](/powershell/module/microsoft.powershell.core/about/about_hash_tables)。 键**哈希表**可配置的值或参数，将为该资源接受。
+资源的 Get 方法，检索在目标节点上配置的资源的状态。 此状态作为[哈希表](/powershell/module/microsoft.powershell.core/about/about_hash_tables)返回。 哈希表的键是资源接受的可配置值或参数。
 
-**获取**方法直接映射到[Get-dscconfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) cmdlet。 当您调用`Get-DSCConfiguration`，则 LCM 将运行**获取**当前应用的配置的每个资源的方法。 LCM 使用为每个相应的资源实例的参数".mof"文件中存储的密钥值。
+Get 方法直接映射到 [Get-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) cmdlet。 调用 `Get-DSCConfiguration` 时，LCM 运行当前应用配置中每个资源的 Get 方法。 LCM 使用存储在“.mof”中的键值作为每个相应资源实例的参数。
 
-这是示例输出**服务**会将"Spooler"服务配置的资源。
+这是配置“Spooler”服务的 Service 资源的示例输出。
 
 ```output
 ConfigurationName    : Test
@@ -155,7 +155,7 @@ PSComputerName       :
 CimClassName         : MSFT_ServiceResource
 ```
 
-该输出显示当前值属性可由配置**服务**资源。
+输出显示了 Service 资源可配置的当前值属性。
 
 ```syntax
 Service [String] #ResourceName
@@ -177,10 +177,10 @@ Service [String] #ResourceName
 
 ## <a name="test"></a>测试
 
-**测试**资源的方法确定目标节点是否与资源的当前兼容*所需状态*。 **测试**方法将返回`$True`或`$False`仅以指示节点是否符合。
-当您调用[Test-dscconfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)，LCM 调用**测试**当前应用的配置的每个资源的方法。 LCM 使用为每个相应的资源实例的参数".mof"文件中存储的密钥值。
+资源的 Test 方法确定目标节点当前是否符合资源的所需状态。 Test 方法返回 `$True` 或 `$False` 以仅指示节点是否符合。
+调用 [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) 时，LCM 调用当前应用配置中每个资源的 Test 方法。 LCM 使用存储在“.mof”中的键值作为每个相应资源实例的参数。
 
-如果任何单独的资源的结果**测试**是`$False`，`Test-DSCConfiguration`返回`$False`，该值指示该节点不符合。 如果所有资源**测试**方法返回`$True`，`Test-DSCConfiguration`返回`$True`以指示该节点是符合。
+如果任何单个资源的 Test 结果是 `$False`，则 `Test-DSCConfiguration` 返回 `$False`，表示该节点不符合。 如果所有资源的 Test 方法都返回 `$True`，则 `Test-DSCConfiguration` 返回 `$True`，表示该节点符合。
 
 ```powershell
 Test-DSCConfiguration
@@ -190,7 +190,7 @@ Test-DSCConfiguration
 True
 ```
 
-从 PowerShell 5.0 开始`-Detailed`参数已添加。 指定`-Detailed`导致`Test-DSCConfiguration`返回一个对象，包含集合的结果符合和不合规资源。
+从 PowerShell 5.0 开始，添加了 `-Detailed` 参数。 指定 `-Detailed` 将导致 `Test-DSCConfiguration` 返回一个对象，该对象包含符合和不符合资源的结果集合。
 
 ```powershell
 Test-DSCConfiguration -Detailed
@@ -202,13 +202,13 @@ PSComputerName  ResourcesInDesiredState        ResourcesNotInDesiredState     In
 localhost       {[Service]Spooler}                                            True
 ```
 
-有关详细信息，请参阅[测试 DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)
+有关详细信息，请参阅 [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)
 
 ## <a name="set"></a>Set
 
-**设置**资源的方法尝试强制符合资源的节点*所需状态*。 **设置**方法旨在**幂等**，这意味着**设置**可能运行多次，并且始终获得相同的结果不包含错误。  在运行时[Start-dscconfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration)、 LCM 循环的当前应用配置的每个资源。 LCM".mof"文件从检索当前的资源实例的密钥值，并使用作为参数**测试**方法。 如果**测试**方法将返回`$True`，该节点是符合当前的资源，并且**设置**方法跳过。 如果**测试**返回`$False`，该节点是不符合标准。  LCM 资源实例的密钥值将作为参数传递到的资源**设置**方法中，节点恢复到符合性。
+资源的 Set 方法尝试强制节点符合资源的所需状态。 Set 方法旨在幂等，这意味着 Set 可以多次运行，并始终得到相同的结果而没有错误。  当运行 [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration) 时，LCM 在当前应用的配置中循环切换每个资源。 LCM 从“.mof”文件检索当前资源实例的键值，并使用它们作为 Test 方法的参数。 如果 Test 方法返回 `$True`，则节点符合当前资源，并跳过 Set 方法。 如果 Test 返回 `$False`，则节点不符合。  LCM 将资源实例的键值作为参数传递给资源的 Set 方法，使节点恢复符合性。
 
-通过指定`-Verbose`并`-Wait`参数，可以查看进度`Start-DSCConfiguration`cmdlet。 在此示例中，该节点是已经符合。 `Verbose`输出指示**设置**方法已跳过。
+通过指定 `-Verbose` 和 `-Wait` 参数，可以查看 `Start-DSCConfiguration` cmdlet的进度。 在此示例中，节点已具有符合性。 `Verbose` 输出表明跳过了 Set 方法。
 
 ```
 PS> Start-DSCConfiguration -Verbose -Wait -UseExisting

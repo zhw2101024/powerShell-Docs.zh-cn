@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2018
+ms.date: 04/19/2019
 keywords: wmf,powershell,安装程序
 title: Windows Management Framework (WMF)
-ms.openlocfilehash: f279f975527dc198dd9b47ca1dc4258f54fafef5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 6d25b4025bbc86f6be0e5c74db9f1fbe6705d816
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676118"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62055439"
 ---
 # <a name="windows-management-framework"></a>Windows Management Framework
 
@@ -35,26 +35,30 @@ WMF 安装添加和/或更新了以下功能：
 
 ## <a name="wmf-availability-across-windows-operating-systems"></a>各个 Windows 操作系统间的 WMF 可用性
 
-|操作系统版本  |[WMF 5.1][] |[WMF 5.0][] |[WMF 4.0][] |[WMF 3.0][]  |[WMF 2.0][] |
-|--------------------------|------------|------------|------------|-------------|------------|
-|Windows Server 2019       |内置提供|            |            |             |            |
-|Windows Server 2016       |内置提供|            |            |             |            |
-|Windows 10                |内置提供|内置提供|            |             |            |
-|Windows Server 2012 R2    |是         |是         |内置提供|             |            |
-|Windows 8.1               |是         |是         |内置提供|             |            |
-|Windows Server 2012       |是         |是         |是         |内置提供 |            |
-|Windows 8                 |            |            |            |内置提供 |            |
-|Windows Server 2008 R2 SP1|是         |是         |是         |是          |内置提供|
-|Windows 7 SP1             |是         |是         |是         |是          |内置提供|
-|Windows Server 2008 SP2   |            |            |            |是          |是         |
-|Windows Vista             |            |            |            |             |是         |
-|Windows Server 2003       |            |            |            |             |是         |
-|Windows XP                |            |            |            |是          |            |
+|        操作系统版本         | [WMF 5.1][]  | WMF 5.0<br>*不支持* | [WMF 4.0][]  | [WMF 3.0][]  | [WMF 2.0][]  |
+| --------------------------------------- | ------------ | --------------------------- | ------------ | ------------ | ------------ |
+| Windows Server 2019                     | 内置提供 |                             |              |              |              |
+| Windows Server 2016                     | 内置提供 |                             |              |              |              |
+| Windows 10                              | 内置提供 | 内置提供                |              |              |              |
+| Windows Server 2012 R2                  | 是          | 是                         | 内置提供 |              |              |
+| Windows 8.1                             | 是          | 是                         | 内置提供 |              |              |
+| Windows Server 2012                     | 是          | 是                         | 是          | 内置提供 |              |
+| Windows 8<br>*不支持*           |              |                             |              | 内置提供 |              |
+| Windows Server 2008 R2 SP1              | 是          | 是                         | 是          | 是          | 内置提供 |
+| Windows 7 SP1                           | 是          | 是                         | 是          | 是          | 内置提供 |
+| Windows Server 2008 SP2                 |              |                             |              | 是          | 是          |
+| Windows Vista<br>*不支持*       |              |                             |              |              | 是          |
+| Windows Server 2003<br>*不支持* |              |                             |              |              | 是          |
+| Windows XP<br>*不支持*          |              |                             |              | 是          | 是          |
 
-内置提供：指定版本的 WMF 的功能内置于所示的 Windows 客户端或 Windows Server 版本中。
+- **内置提供**：指定版本的 WMF 的功能内置于所示的 Windows 客户端或 Windows Server 版本中。
+- **不支持**：Microsoft 不再支持这些产品。 必须升级到受支持的新版本。 有关详细信息，请参阅 [Microsoft 生命周期策略][]页。
 
+> [!NOTE]
+> WMF 5.0 的安装程序不再可用或受支持。 它已被 WMF 5.1 取代。
+
+[Microsoft 生命周期策略]: https://support.microsoft.com/lifecycle
 [WMF 5.1]: https://aka.ms/wmf51download
-[WMF 5.0]: https://aka.ms/wmf5download
 [WMF 4.0]: https://aka.ms/wmf4download
 [WMF 3.0]: https://aka.ms/wmf3download
 [WMF 2.0]: https://aka.ms/wmf2download

@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 更多 PowerShell 学习
 ms.openlocfilehash: 5e81801df99a55a358d1d1405bdc79f882aae92f
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012545"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058380"
 ---
 # <a name="more-powershell-learning"></a>更多 PowerShell 学习
 
@@ -29,9 +29,9 @@ ms.locfileid: "54012545"
 - [PowerShell 3.0 快速入门](https://mva.microsoft.com/en-US/training-courses/getting-started-with-powershell-30-jump-start-8276)
 - [高级工具以及使用 PowerShell 3.0 编写脚本快速入门](https://mva.microsoft.com/en-US/training-courses/advanced-tools-scripting-with-powershell-30-jump-start-8277)
 
-### <a name="channel-9-videos"></a>第 9 频道视频
+### <a name="channel-9-videos"></a>Channel 9 视频
 
-第 9 频道是我们视频的发布平台。 有数百个有关 PowerShell 的视频。 ["PowerShell"的搜索](https://channel9.msdn.com/Search?term=PowerShell&sortBy=top-rated)若要查看可用的视频。
+Channel 9 是我们的视频发布平台。 有数百个关于 PowerShell 的可用视频。 [搜索“PowerShell”](https://channel9.msdn.com/Search?term=PowerShell&sortBy=top-rated)以查看哪些视频可用。
 
 ## <a name="resources-for-windows-powershell-developers"></a>面向 Windows PowerShell 开发人员的资源
 

@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
 ms.openlocfilehash: 31fde15e644455dbe77f68bca713bf026544fdc7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677469"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057564"
 ---
 # <a name="on-demand-pull-of-dsc-configurations"></a>DSC 配置的按需请求
 
@@ -19,7 +19,7 @@ ms.locfileid: "55677469"
 2. 如果它们相同，则不应用配置而成功完成操作。
 3. 如果它们不同，则从请求服务器请求并应用配置。
 
-**注意：** 如果元配置 RefreshMode = 'Push'，则此 cmdlet 将返回错误，从而当目标节点为“请求”模式时，此 cmdlet 将始终不执行任何操作。
+**注意：** 如果元配置 RefreshMode = 'Push'，则此 cmdlet 将返回错误，从而当目标节点为“推送”模式时，此 cmdlet 将始终不执行任何操作。
 
 ```powershell
 Update-DscConfiguration     [[-ComputerName] <string[]>]

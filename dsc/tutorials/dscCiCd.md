@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 使用 DSC 生成持续集成和连续部署管道
-ms.openlocfilehash: c305d9bc7e0f8c659129b5a20d0b7e8b34d09ba8
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 012057a32ccf85b0d15e76a332cadda4b226180a
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400857"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076457"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>使用 DSC 生成持续集成和连续部署管道
 
@@ -388,7 +388,7 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 
 为此，添加与之前创建的 `InfraDNS` 生成定义相关联的新发布定义。
 请务必选择“连续部署”，以便只要有新生成完成，都会触发新发布。
-[How to:使用发布定义](https://www.visualstudio.com/en-us/docs/build/actions/work-with-release-definitions)) 并将其配置，如下所示：
+（请参阅[发布管道是什么？](/azure/devops/pipelines/release/what-is-release-management)），然后按如下进行配置：
 
 向发布定义添加以下步骤：
 

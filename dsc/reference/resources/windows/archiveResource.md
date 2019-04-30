@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: DSC Archive 资源
 ms.openlocfilehash: d5ccd242d000a0907c6768f30923764be6bf20a3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677451"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077545"
 ---
 # <a name="dsc-archive-resource"></a>DSC Archive 资源
 
@@ -35,7 +35,7 @@ Archive [string] #ResourceName
 |---|---|
 | 目标| 指定你想将存档内容提取至哪个位置。|
 | 路径| 指定存档文件的源路径。|
-| Checksum| 定义当确定两个文件是否相同时使用的类型。 如果未指定__校验和__，则只是文件或目录名用于比较。 有效值包括：Sha-1、 SHA-256、 SHA-512、 createdDate、 modifiedDate、 none （默认值）。 如果指定__校验和__不指定__验证__，则配置会失败。|
+| Checksum| 定义当确定两个文件是否相同时使用的类型。 如果未指定__校验和__，则只是文件或目录名用于比较。 有效值包括：SHA-1、SHA-256、SHA-512、createdDate、modifiedDate 和 none（默认值）。 如果指定__校验和__不指定__验证__，则配置会失败。|
 | Ensure| 确定是否要检查存档的内容是否位于__目标__上。 将此属性设置为 __Present__ 可确保内容存在。 将其设置为 __Absent__ 可确保内容不存在。 默认值为 __Present__。|
 | DependsOn | 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 ResourceName、类型为 __ResourceType__ 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。|
 | 验证| 使用校验和属性来确定存档是否和签名匹配。 如果指定校验和不指定验证，则配置会失败。 如果指定验证不指定校验和，则默认使用 SHA-256 校验和。|

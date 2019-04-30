@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: d2fa3e22b049b4164e9a44e8f2d62833cab093d0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3a810a21cb959691a910a3ef3767d7885683dce8
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190020"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084923"
 ---
 # <a name="product-compatibility-status"></a>产品兼容性状态
 

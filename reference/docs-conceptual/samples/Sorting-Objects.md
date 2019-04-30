@@ -4,20 +4,20 @@ keywords: powershell,cmdlet
 title: 对对象进行排序
 ms.assetid: 8530caa8-3ed4-4c56-aed7-1295dd9ba199
 ms.openlocfilehash: 06aa15d89888f1ecbe60b8e1dfb4efebb1d73673
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400378"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086045"
 ---
 # <a name="sorting-objects"></a>对对象进行排序
 
-我们可以将组织显示的数据，使其更轻松地使用扫描`Sort-Object`cmdlet。 `Sort-Object` 将一个或多个要作为排序依据的属性的名称并返回按这些属性值进行排序的数据。
+可以通过使用 `Sort-Object` cmdlet 组织已显示的数据，使其更易于扫描。 `Sort-Object` 依据一个或多个属性的名称进行排序，并返回按这些属性的值进行排序的数据。
 
 ## <a name="basic-sorting"></a>基本排序
 
-请考虑列出当前目录中子目录和文件的问题。
-如果我们想要作为排序依据**LastWriteTime**然后按**名称**，我们可以通过键入操作即可：
+请考虑列出当前目录中的子目录和文件的问题。
+如果想要依次按 LastWriteTime 和 Name 进行排序，可键入：
 
 ```powershell
 Get-ChildItem |
@@ -40,7 +40,7 @@ LastWriteTime          Name
 ...
 ```
 
-您还可以进行排序的对象按相反的顺序通过指定**降序**开关参数。
+也可通过指定 Descending 开关参数按相反顺序对对象进行排序。
 
 ```powershell
 Get-ChildItem |
@@ -67,12 +67,12 @@ LastWriteTime          Name
 
 ## <a name="using-hash-tables"></a>使用哈希表
 
-可以通过使用哈希表数组中对不同属性进行不同的顺序进行排序。
-每个哈希表使用**表达式**键属性名称指定为字符串和一个**Ascending**或**降序**键以指定排序顺序由`$true`或`$false`.
-**表达式**键是必需的。
-**升序**或**降序**关键字是可选的。
+可以使用数组中的哈希表按不同顺序对不同属性进行排序。
+每个哈希表使用 Expression 键将属性名称指定为字符串，并使用 Ascending 或 Descending 键按 `$true` 或 `$false` 指定排序顺序。
+Expression 键是必需的。
+Ascending 或 Descending 键是可选的。
 
-下面的示例对按降序对象进行排序**LastWriteTime**顺序和升序**名称**顺序。
+下面的示例按 LastWriteTime 降序和 Name 升序对对象进行排序。
 
 ```powershell
 Get-ChildItem |
@@ -92,10 +92,10 @@ LastWriteTime          Name
 ...
 ```
 
-您还可以设置为一个脚本块**表达式**密钥。
-运行时`Sort-Object`cmdlet 执行脚本块，以及用于排序结果。
+还可以将 scriptblock 设置为 Expression 键。
+运行 `Sort-Object` cmdlet 时，将执行 scriptblock 并使用结果进行排序。
 
-下面的示例对对象之间的时间跨度按降序进行排序**CreationTime**并**LastWriteTime**。
+下面的示例按 CreationTime 和 LastWriteTime 之间的时间跨度以降序对对象进行排序。
 
 ```powershell
 Get-ChildItem |
@@ -119,27 +119,27 @@ LastWriteTime          CreationTime
 
 ## <a name="tips"></a>提示
 
-可以省略**属性**参数名称，如下所示：
+可以省略 Property 参数名称，如下所示：
 
 ```powershell
 Sort-Object LastWriteTime, Name
 ```
 
-此外，请参阅`Sort-Object`的内置别名， `sort`:
+此外，可以通过其内置别名 `sort` 来引用 `Sort-Object`：
 
 ```powershell
 sort LastWriteTime, Name
 ```
 
-哈希表中进行排序的键可缩写如下所示：
+用于排序的哈希表中的键可以缩写为：
 
 ```powershell
 Sort-Object @{ e = 'LastWriteTime'; d = $true }, @{ e = 'Name'; a = $true }
 ```
 
-在此示例中， **e**代表**表达式**，则**d**代表**降序**，并代表**升序**。
+在此示例中，e 代表 Expression，d 代表 Descending，a 代表 Ascending。
 
-为了提高可读性，可以将哈希表放到一个单独的变量：
+为了提高可读性，可以将哈希表置于一个单独的变量中：
 
 ```powershell
 $order = @(

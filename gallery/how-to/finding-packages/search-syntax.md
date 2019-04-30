@@ -4,22 +4,22 @@ contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 title: 库搜索语法
 ms.openlocfilehash: aabcaa1f1b5b641ab5033c9ba2e358477c84a23b
-ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52742850"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084294"
 ---
 # <a name="gallery-search-syntax"></a>库搜索语法
 
-您可以搜索 PowerShell 库使用[PowerShell 库的 web 站点](https://www.powershellgallery.com/)。
-PowerShell 库网站上提供文本搜索框，其中使用单词、 短语和关键字表达式来缩小搜索结果。
+可以使用 [PowerShell 库的网站](https://www.powershellgallery.com/)搜索 PowerShell 库。
+PowerShell 库网站提供文本搜索框，可以在其中使用单词、短语和关键字表达式来缩小搜索结果的范围。
 
 ## <a name="search-by-keywords"></a>按关键字搜索
 
     dsc azure sql
 
-搜索尝试查找包含所有 3 个关键字的相关文档，并返回匹配的文档。
+“搜索”尝试查找包含所有 3 个关键字的相关文档，并返回匹配的文档。
 
 ## <a name="search-using-phrases-and-keywords"></a>使用短语和关键字进行搜索
 
@@ -40,7 +40,7 @@ PowerShell 库网站上提供文本搜索框，其中使用单词、 短语和�
 
     ID:PSReadline
     
-查找包含"PSReadline"id 的程序包。
+查找 ID 包含“PSReadline”的包。
 
     Id:"AzureRM.Profile"
 
@@ -50,13 +50,13 @@ PowerShell 库网站上提供文本搜索框，其中使用单词、 短语和�
 
     Id:"azure"
 
-这提供了结果，包括 AzureRM.Profile 和 Azure.Storage。
+它将提供结果，其中包括“AzureRM.Profile”和“Azure.Storage”。
 
 你也可以搜索单个字段中的多个关键字。 
 
     id:azure tags:intellisense
 
-还可以执行短语搜索使用双引号引起来：
+还可以使用双引号执行短语搜索：
 
     id:"azure.storage"
 

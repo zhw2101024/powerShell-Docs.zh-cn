@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 title: 筛选搜索结果
 ms.openlocfilehash: 13270a310613a974e1588a9f56d443a936cfebb8
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003687"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084396"
 ---
 # <a name="filtering-search-results"></a>筛选搜索结果
 
@@ -41,7 +41,7 @@ ms.locfileid: "50003687"
 
 > [!NOTE]
 > 筛选器为包含式。
-> 例如，如果选中“Cmdlet”和/或“函数”，将显示包含 cmdlet 和函数的包。
+> 例如：如果选中“Cmdlet”和/或“函数”，将显示包含 cmdlet 和函数的包。
 > 如果未选中任何一个，则不会显示包。
 > 同样，如果选择了所有类别，将仅显示包含这些类别之一的包。
 > 不会显示不属于任何这些类别的包。

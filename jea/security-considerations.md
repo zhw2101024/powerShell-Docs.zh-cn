@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: JEA 安全注意事项
 ms.openlocfilehash: 9526e141517601ae3b6d6932cd3536fdf49aa9a6
-ms.sourcegitcommit: 10c347a8c3dcbf8962295601834f5ba85342a87b
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55887593"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084770"
 ---
 # <a name="jea-security-considerations"></a>JEA 安全注意事项
 
@@ -127,7 +127,7 @@ JEA 角色功能通过限制可使用该特权运行上下文的命令和应用�
 ```
 
 此角色功能使用户能够从 Microsoft.PowerShell.Management 模块使用名词“Process”运行任何 PowerShell cmdlet。
-用户可能需要访问等 cmdlet`Get-Process`若要了解哪些应用程序运行在系统上和`Stop-Process`终止任何未响应的应用程序。
+用户可能需要访问 `Get-Process` 等 cmdlet，以了解哪些应用程序在系统上运行，以及访问 `Stop-Process` 以终止任何未响应的应用程序。
 但是，此项还允许访问 `Start-Process`，以用于启动具有完全管理员权限的任意程序。
 该程序无需安装在系统本地，因此攻击者只需启动文件共享上的一个程序，就可授予连接用户本地管理员权限、运行恶意程序等等。”
 

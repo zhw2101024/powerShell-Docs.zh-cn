@@ -4,11 +4,11 @@ schema: 2.0.0
 keywords: powershell
 title: 需要为脚本接受许可证
 ms.openlocfilehash: e7101eb6a480dd87965b7b9be9d49583042b603f
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084668"
 ---
 # <a name="requiring-license-acceptance-for-scripts"></a>需要为脚本接受许可证
 
@@ -18,7 +18,7 @@ ms.locfileid: "50002576"
 
 ## <a name="examples"></a>示例
 
-### <a name="example-1-install-script-with-dependencies-requiring-license-acceptance"></a>示例 1：安装脚本及需要接受许可证的依赖项
+### <a name="example-1-install-script-with-dependencies-requiring-license-acceptance"></a>示例 1：安装脚本及要求接受许可证的依赖项
 
 脚本“ScriptRequireLicenseAcceptance”依赖于“ModuleRequireLicenseAcceptance”模块。 系统提示用户接受许可证。
 
@@ -38,7 +38,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-### <a name="example-2-install-script-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>示例 2：安装脚本及需要接受许可证和 -AcceptLicense 的依赖项
+### <a name="example-2-install-script-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>示例 2：安装脚本及要求接受许可证和 -AcceptLicense 的依赖项
 
 脚本“ScriptRequireLicenseAcceptance”依赖于“ModuleRequireLicenseAcceptance”模块。 系统不提示用户接受许可证，因为已指定 -AcceptLicense。
 

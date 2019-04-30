@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
-ms.openlocfilehash: 82451c550014c684958aaf0f324457db8f0d8ceb
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3cfc2f042234f682599bb67eac592ea3f77b31b6
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221997"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085178"
 ---
 # <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a>使用改进的 Item cmdlet 与符号链接交互
 
@@ -14,7 +14,7 @@ ms.locfileid: "34221997"
 
 以下为新功能的一些用例：
 
-## <a name="new-item"></a>NEW-ITEM
+## <a name="new-item"></a>New-Item
 
 ### <a name="symbolic-link-files"></a>符号链接文件
 
@@ -59,7 +59,7 @@ New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome
 # Same combinations of Path and Name allowed as described above
 ```
 
-## <a name="get-childitem"></a>GET-CHILDITEM
+## <a name="get-childitem"></a>Get-ChildItem
 
 ```powershell
 # Append link type column to Mode property and display with Get-ChildItem
@@ -110,7 +110,7 @@ SpecialBuild: False
 Language:
 ```
 
-## <a name="remove-item"></a>REMOVE-ITEM
+## <a name="remove-item"></a>Remove-Item
 
 ```powershell
 # Works like any other item type

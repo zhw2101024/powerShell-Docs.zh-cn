@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,配置,安装程序
 title: DSC 配置
 ms.openlocfilehash: 6af27f442de3080facd65892c713c989d0e388c5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676097"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080163"
 ---
 # <a name="dsc-configurations"></a>DSC 配置
 
@@ -32,7 +32,7 @@ Configuration MyDscConfiguration {
 MyDscConfiguration
 ```
 
-保存该脚本作为`.ps1`文件。
+将脚本保存为 `.ps1` 文件。
 
 ## <a name="configuration-syntax"></a>配置语法
 
@@ -73,13 +73,13 @@ Configuration MyDscConfiguration
 MyDscConfiguration
 ```
 
-**节点**块还可以接受多个计算机名称。 在上述示例中，您可以使用`-ComputerName`参数或传递以逗号分隔列表的计算机直接连接到**节点**块。
+节点块还可以接受多个计算机名称。 在上述示例中，可以使用 `-ComputerName` 参数，也可以将以逗号分隔的计算机列表直接传递到节点块。
 
 ```powershell
 MyDscConfiguration -ComputerName "localhost", "Server01"
 ```
 
-指定的计算机连接到列表时**节点**块中，从在配置中，您需要使用数组表示法。
+将计算机列表从配置指定到节点块时，需要使用数组表示法。
 
 ```powershell
 Configuration MyDscConfiguration
@@ -119,7 +119,7 @@ MyDscConfiguration
 - 解析所有变量
 - 在当前目录中使用与配置相同的名称创建文件夹。
 - 在新目录中创建名为 _NodeName_.mof 的文件，其中 _NodeName_ 为配置的目标节点名称。
-  如果多个节点，将为每个节点创建 MOF 文件。
+  如果有多个节点，则将为每个节点创建一个 MOF 文件。
 
 > [!NOTE]
 > MOF 文件包含目标节点的所有配置信息。 因此，务必确保其安全性。
@@ -161,17 +161,17 @@ Mode                LastWriteTime         Length Name
 cmdlet - [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)，可用来确定哪些资源已安装在系统上并且可供 LCM 使用。
 一旦这些模块已置于 `$env:PSModulePath` 中并由 [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) 正确识别，你仍需在配置中加载它们。
 
-**导入 DscResource**是一个仅在中识别出的动态关键字**配置**块中，它不是 cmdlet。
+Import-DscResource 是仅可在配置块中识别的动态关键字，它不是 cmdlet。
 **Import-DscResource** 支持两种参数：
 
 - **ModuleName** 是使用 **Import-DscResource** 的推荐方法。 它接受包含要导入资源的模块名称以及模块名称的字符串数组。
 - **Name** 是要导入资源的名称。 这不是由 [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) 返回为“Name”的友好名称，而是定义资源架构时使用的类名（由 [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) 返回为 **ResourceType**）。
 
-有关使用的详细信息`Import-DSCResource`，请参阅[使用 Import-dscresource](import-dscresource.md)
+有关使用 `Import-DSCResource` 的详细信息，请参阅[使用 Import-DSCResource](import-dscresource.md)
 
 ## <a name="powershell-v4-and-v5-differences"></a>PowerShell v4 和 v5 差异
 
-有需要存储在 PowerShell 4.0 DSC 资源之间的差异。 有关详细信息，请参阅[资源位置](import-dscresource.md#resource-location)。
+DSC 资源需要在 PowerShell 4.0 中存储的位置存在差异。 有关详细信息，请参阅[资源位置](import-dscresource.md#resource-location)。
 
 ## <a name="see-also"></a>另请参阅
 

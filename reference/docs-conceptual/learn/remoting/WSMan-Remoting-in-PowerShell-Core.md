@@ -2,12 +2,12 @@
 title: PowerShell Core 中的 WS-Management (WSMan) 远程处理
 description: 在 PowerShell Core 中使用 WSMan 进行远程处理
 ms.date: 08/06/2018
-ms.openlocfilehash: ce58ed88f59f32b0f83951e55de36e829f7fa3f4
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: e5f00128bc8ebc1b432cc77a5896a9e09d684109
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401090"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058873"
 ---
 # <a name="ws-management-wsman-remoting-in-powershell-core"></a>PowerShell Core 中的 WS-Management (WSMan) 远程处理
 
@@ -28,7 +28,7 @@ ms.locfileid: "53401090"
 
 脚本
 
-1. 在 %windir%\System32\PowerShell 中创建插件目录
+1. 在 `$env:windir\System32\PowerShell` 中创建插件目录
 1. 将 pwrshplugin.dll 复制到该位置
 1. 生成配置文件
 1. 使用 WinRM 注册该插件

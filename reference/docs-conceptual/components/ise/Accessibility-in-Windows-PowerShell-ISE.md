@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: Windows PowerShell ISE 中的辅助功能
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
 ms.openlocfilehash: 78a001dbe43a0b005d10a817e05e4cc7a72f5bd0
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400452"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058448"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE 中的辅助功能
 
@@ -85,8 +85,8 @@ Windows PowerShell ISE 支持高对比度模式。 为方便有视觉障碍的�
 |**运行**|F5|
 |**运行选定内容**|F8|
 |**停止执行**|CTRL+BREAK。 可以在上下文不明确时（未选定任何文本时）使用 CTRL+C。|
-|**Tab**（切换到下一个脚本）|CTRL + TAB**注意：** 只有在单个 PowerShell 选项卡打开，或如果你具有多个 PowerShell 选项卡打开，但焦点位于脚本窗格中，切换到下一个脚本才有效。|
-|**Tab**（切换到上一个脚本）|CTRL + SHIFT + TAB**注意：** 到上一个脚本适用于只有一个 PowerShell 选项卡打开，或如果您有多个 PowerShell 选项卡打开，并且焦点位于脚本窗格中。|
+|**Tab**（切换到下一个脚本）|CTRL+TAB **注意：** 按 Tab 键切换到下一个脚本仅适用于打开单个 PowerShell 选项卡或打开多个 PowerShell 选项卡，但焦点在脚本窗格中的情况。|
+|**Tab**（切换到上一个脚本）|CTRL+SHIFT+TAB **注意：** 按 Tab 键切换到上一个脚本适用于仅打开一个 PowerShell 选项卡或打开多个 PowerShell 选项卡，但焦点在脚本窗格中的情况。|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>自定义视图的键盘快捷方式
 

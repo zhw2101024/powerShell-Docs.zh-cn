@@ -3,15 +3,15 @@ ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 卸载 Windows PowerShell Web 访问
 ms.openlocfilehash: 22c874d766445dccedd8494097daf16c30fa66ff
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677416"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058129"
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>卸载 Windows PowerShell Web 访问
 
-更新时间：2013年 6 月 24日
+更新时间：2013 年 6 月 24 日
 
 适用于：Windows Server 2012 R2、Windows Server 2012
 
@@ -33,7 +33,7 @@ ms.locfileid: "55677416"
 
 方法是使用 Windows PowerShell cmdlet。
 
-### <a name="step-1-delete-the-web-application-using-cmdlets"></a>步骤 1：删除使用 cmdlet 的 web 应用程序
+### <a name="step-1-delete-the-web-application-using-cmdlets"></a>步骤 1：使用 cmdlet 删除 Web 应用程序
 
 1. 执行以下操作之一，打开 Windows PowerShell 会话。
 
@@ -52,7 +52,7 @@ ms.locfileid: "55677416"
 
         `Uninstall-PswaWebApplication -DeleteTestCertificate`
 
-### <a name="step-2-uninstall-windows-powershell-web-access-using-cmdlets"></a>步骤 2：卸载 Windows PowerShell Web 访问使用 cmdlet
+### <a name="step-2-uninstall-windows-powershell-web-access-using-cmdlets"></a>步骤 2：使用 cmdlet 卸载 Windows PowerShell Web 访问
 
 1. 使用提升的用户权限执行以下操作之一打开 Windows PowerShell 会话。 如果会话已经打开，则继续执行下一步。
 
@@ -76,7 +76,7 @@ ms.locfileid: "55677416"
 
 本部分中的过程帮助你通过使用服务管理器中的“删除角色和功能向导”和 IIS 管理器卸载 Windows PowerShell Web 访问 Web 应用程序和 Windows PowerShell Web 访问功能。
 
-### <a name="step-1-delete-the-web-application-using-iis-manager"></a>步骤 1：删除 web 应用程序使用 IIS 管理器
+### <a name="step-1-delete-the-web-application-using-iis-manager"></a>步骤 1：使用 IIS Manager 删除 Web 应用程序
 
 
 1. 通过执行以下操作之一，打开 IIS 管理器控制台。 如果该控制台已经打开，则继续执行下一步。
@@ -101,7 +101,7 @@ ms.locfileid: "55677416"
 >
 > 如果你创建了自签名的证书或使用测试证书，现想将它删除，则可在 IIS 管理器中删除该证书。
 
-### <a name="step-2-uninstall-windows-powershell-web-access-using-the-remove-roles-and-features-wizard"></a>步骤 2：卸载 Windows PowerShell Web 访问使用删除角色和功能向导
+### <a name="step-2-uninstall-windows-powershell-web-access-using-the-remove-roles-and-features-wizard"></a>步骤 2：使用“删除角色和功能向导”卸载 Windows PowerShell Web 访问
 
 1. 如果服务器管理器已经打开，则继续执行下一步。 如果服务器管理器尚未打开，请执行以下任一操作打开它。
 

@@ -2,25 +2,25 @@
 ms.date: 08/14/2018
 keywords: powershell,cmdlet
 title: Windows PowerShell ISE 简介
-ms.openlocfilehash: 09a28b295855fd2a3c62bba8a681399dae3454f8
-ms.sourcegitcommit: 3402a478cf118c11a5642038eb117bc76553e3ab
-ms.translationtype: MTE95
+ms.openlocfilehash: 729c8535dbcfcd2c51070b8beac5d328375f36ae
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53411576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057399"
 ---
 # <a name="the-windows-powershell-ise"></a>Windows PowerShell ISE
 
-Windows PowerShell 集成脚本环境 (ISE) 是 Windows PowerShell 的主机应用程序。 在 ISE 中，可以运行命令并编写、 测试，并在单个基于 Windows 的图形用户界面中调试脚本。 ISE 的右到左的语言提供了多行编辑、 tab 自动补全、 语法颜色设置、 选择性执行、 上下文相关帮助和支持。 将菜单项和键盘快捷方式映射到许多将会在 Windows PowerShell 控制台中执行的相同任务。 例如，当脚本在 ISE 中调试时，您可以右键单击在编辑窗格中设置断点的代码行上。
+Windows PowerShell 集成脚本环境 (ISE) 是 Windows PowerShell 的主机应用程序。 在 ISE 中，可以在单个基于 Windows 的图形用户界面中运行命令并编写、测试和调试脚本。 ISE 提供多行编辑、Tab 自动补全、语法颜色设置、选择性执行、上下文相关帮助以及对从右到左语言的支持。 将菜单项和键盘快捷方式映射到许多将会在 Windows PowerShell 控制台中执行的相同任务。 例如，在 ISE 中调试脚本时，可以右键单击编辑窗格中的代码行来设置断点。
 
 ## <a name="support"></a>支持
 
-在 ISE 首次随 Windows PowerShell V2 和的重新设计了 PowerShell V3。 在 ISE 中所有受支持版本的 Windows PowerShell 最多和包括 Windows PowerShell V5.1 支持。 在 ISE 中，但是，处于维护模式，可能会添加任何新功能。
-此外，没有 ISE 与 PowerShell v6 和更高版本的支持。 用户，他们希望一种图形工具，可用于管理 PowerShell scrips，等等，应考虑[Visual Studio Code](https://code.visualstudio.com/)。
+ISE 先随 Windows PowerShell V2 一起引入，然后随 PowerShell V3 一起重新设计。 包括 Windows PowerShell V5.1 在内的所有支持的 Windows PowerShell 版本都支持 ISE。 但是，ISE 处于维护模式，可能不会添加任何新功能。
+此外，不支持具有 PowerShell v6 及更高版本的 ISE。 想要使用图形工具管理 PowerShell 脚本等的用户应考虑使用 [Visual Studio Code](https://code.visualstudio.com/)。
 
 ## <a name="key-features"></a>关键功能
 
-在 Windows PowerShell ISE 中的主要功能包括：
+Windows PowerShell ISE 中的关键功能包括：
 
 - 多行编辑：若要在“命令”窗格中的当前行下插入一个空行，请按 SHIFT+ENTER。
 - 选择性执行：要运行部分脚本，请选择要运行的文本，然后单击“运行脚本”按钮。 或者，按 F5。

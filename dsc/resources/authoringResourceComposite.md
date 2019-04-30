@@ -3,13 +3,13 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 复合资源--将 DSC 配置用作资源
 ms.openlocfilehash: 2823d05e0c8feb2933ca691f9ab5149ace2f7ee3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676062"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076678"
 ---
-# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>复合资源将 DSC 配置用作资源
+# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>复合资源：将 DSC 配置用作资源
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
@@ -190,7 +190,7 @@ configuration RenameVM
 
 ## <a name="supporting-psdscrunascredential"></a>支持 PsDscRunAsCredential
 
->**注意：** **PsDscRunAsCredential** PowerShell 5.0 及更高版本支持。
+>**注意：** PsDscRunAsCredential 在 PowerShell 5.0 及更高版本中受支持。
 
 可以在 [DSC 配置](../configurations/configurations.md)资源块中使用 PsDscRunAsCredential 属性，以指定应使用指定的一组凭据运行资源。
 有关详细信息，请参阅[使用用户凭据运行 DSC](../configurations/runAsUser.md)。

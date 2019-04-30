@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
-title: 快速入门-使用 DSC 创建网站
+title: 快速入门 - 使用 DSC 创建网站
 ms.openlocfilehash: d98607939ccd3cc5e660936d8c0a6d54fce7d65f
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56265478"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079110"
 ---
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
-# <a name="quickstart---create-a-website-with-dsc"></a>快速入门-使用 DSC 创建网站
+# <a name="quickstart---create-a-website-with-dsc"></a>快速入门 - 使用 DSC 创建网站
 
 本练习演示创建和应用 Desired State Configuration (DSC) 配置的完整过程。
 我们使用的示例可确保服务器启用了 `Web-Server`(IIS) 功能，并且该服务器的 `inetpub\wwwroot` 目录中存在一个简单“Hello World”网站的内容。

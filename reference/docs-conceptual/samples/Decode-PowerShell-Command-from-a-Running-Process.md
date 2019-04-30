@@ -4,20 +4,20 @@ keywords: powershell,cmdlet
 title: 从正在运行的进程解码 PowerShell 命令
 author: randomnote1
 ms.openlocfilehash: a0602070a8c5b60ce0bb09e227690f48d970a868
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676842"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086232"
 ---
 # <a name="decode-a-powershell-command-from-a-running-process"></a>从正在运行的进程解码 PowerShell 命令
 
-有时，您可能必须运行的进程什么占用了大量的资源的 PowerShell。
-可能的上下文中运行此过程[任务计划程序][]作业或[SQL Server 代理][]作业。 其中有多个运行的 PowerShell 进程，它可能很难知道哪个进程表示问题。 本文介绍如何对 PowerShell 进程当前正在运行的脚本块。
+有时，你可能有一个正在运行的 PowerShell 进程占用了大量资源。
+此进程可以在[任务计划程序][]作业或 [SQL Server 代理][]作业的上下文中运行。 在运行多个 PowerShell 进程的位置，很难知道哪个进程表示问题。 本文演示了如何解码 PowerShell 进程当前运行的脚本块。
 
-## <a name="create-a-long-running-process"></a>创建长时间运行进程
+## <a name="create-a-long-running-process"></a>创建一个长时间运行的进程
 
-为了演示此方案中，打开新的 PowerShell 窗口并运行下面的代码。 它将执行的 PowerShell 命令的输出 10 分钟内每隔一分钟的数字。
+要演示此场景，请打开一个新的 PowerShell 窗口并运行以下代码。 它执行一个 PowerShell 命令，每分钟输出一个数字，持续 10 分钟。
 
 ```powershell
 powershell.exe -Command {
@@ -33,17 +33,17 @@ powershell.exe -Command {
 
 ## <a name="view-the-process"></a>查看进程
 
-执行的 PowerShell 命令的正文存储在**CommandLine**的属性[Win32_Process][]类。 如果该命令是[编码命令][]，则**CommandLine**属性包含字符串"EncodedCommand"。 使用此信息，该编码的命令可以是通过以下过程取消模糊处理。
+PowerShell 正在执行的命令正文存储在 [Win32_Process][] 类的 CommandLine 属性中。 如果命令是[编码命令][]，则 CommandLine 属性包含字符串“EncodedCommand”。 使用此信息，可以通过以下进程取消对编码命令的模糊处理。
 
-以管理员身份启动 PowerShell。 非常重要，以管理员身份运行 PowerShell，否则不返回任何结果查询正在运行的进程时。
+以管理员身份启动 PowerShell。 以管理员身份运行 PowerShell 至关重要，否则在查询正在运行的进程时不会返回任何结果。
 
-执行以下命令获取所有已编码的命令的 PowerShell 进程：
+执行以下命令以获取所有具有编码命令的 PowerShell 进程：
 
 ```powershell
 $powerShellProcesses = Get-CimInstance -ClassName Win32_Process -Filter 'CommandLine LIKE "%EncodedCommand%"'
 ```
 
-以下命令创建包含进程 ID 和编码命令的自定义 PowerShell 对象。
+下面的命令创建一个自定义 PowerShell 对象，其中包含进程 ID 和编码命令。
 
 ```powershell
 $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
@@ -58,7 +58,7 @@ $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
 }
 ```
 
-现在可以解码已编码的命令。 以下代码片段循环访问命令的详细信息对象、 解码已编码的命令，并将解码后的命令添加回以便进一步进行调查的对象。
+现在可以解码编码命令。 下面的代码片段循环访问命令详细信息对象、解码编码命令，并将解码后的命令添加回该对象，以便进一步研究。
 
 ```powershell
 $commandDetails | ForEach-Object -Process {
@@ -79,7 +79,7 @@ $commandDetails | ForEach-Object -Process {
 $commandDetails[0]
 ```
 
-现在可以选择已解码的 command 属性来查看已解码的命令。
+现在可以通过选择解码后的命令属性来查看已解码的命令。
 
 ```output
 ProcessId      : 8752

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: DSC ServiceSet 资源
 ms.openlocfilehash: 5694c2abc5c0caf0098670b629af464b35125583
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676826"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076818"
 ---
 # <a name="dsc-serviceset-resource"></a>DSC ServiceSet 资源
 
@@ -38,9 +38,9 @@ Service [string] #ResourceName
 |  属性  |  说明   |
 |---|---|
 | 名称| 指示服务名称。 请注意，有时它与显示名称不同。 你可以使用 [Get-Service](https://technet.microsoft.com/library/hh849804.aspx) cmdlet 获取服务及其当前状态的列表。|
-| StartupType| 设置服务的启动类型。 允许用于此属性的值包括：**自动**，**禁用**，和**手动**|
-| BuiltInAccount| 指示要用于服务的登录帐户。 允许用于此属性的值包括：**LocalService**， **LocalSystem**，和**NetworkService**。|
-| State| 指示你想要确保服务所处的状态。**已停止**或**运行**。|
+| StartupType| 设置服务的启动类型。 允许用于此属性的值有：Automatic、Disabled 和 Manual|
+| BuiltInAccount| 指示要用于服务的登录帐户。 允许用于此属性的值有：LocalService、LocalSystem 和 NetworkService。|
+| State| 指示你想要确保服务所处的状态：Stopped或 Running。|
 | Ensure| 指示服务是否在系统中存在。 将此属性设置为 **Absent** 可确保服务不存在。 将它设置为 **Present**（默认值）可确保目标服务存在。|
 | 凭据| 指示服务资源将在其下运行的帐户的凭据。 此属性与 **BuiltinAccount** 属性不能一起使用。|
 | DependsOn| 指示必须先运行其他资源的配置，再配置此资源。 例如，如果你想要首先运行 ID 为 *ResourceName*、类型为 *ResourceType* 的资源配置脚本块，则使用此属性的语法为 `DependsOn = "[ResourceType]ResourceName"`。|

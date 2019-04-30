@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
 ms.openlocfilehash: 46a278b83edb9d8e3d75b0874603710d416be3b5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676149"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085726"
 ---
 # <a name="import-dscresource-keyword-supports--moduleversion-parameter"></a>Import-DscResource 关键字支持 -ModuleVersion 参数
 
@@ -18,7 +18,7 @@ Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName(s)>] [-Mod
 
 * **Name**：要导入的一个或多个资源的名称。
 * **ModuleName**：要导入的一个或多个模块的模块名称或 ModuleSpecification 对象。
-* ModuleVersion：要导入的模块的版本。 如果使用 ModuleName，则它只能表示一个模块的名称。
+* **ModuleVersion**：要导入的模块的版本。 如果使用 ModuleName，则它只能表示一个模块的名称。
 
 在 Windows PowerShell ISE 中，它与 IntelliSense 一起出现：
 

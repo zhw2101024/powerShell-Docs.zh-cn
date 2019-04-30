@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 在 PowerShell 远程处理中形成第二个跃点
 ms.openlocfilehash: 1b6e5ad53346324adc7be2d013e154c8600afa4f
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56265580"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086334"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>在 PowerShell 远程处理中形成第二个跃点
 
@@ -24,7 +24,7 @@ ms.locfileid: "56265580"
 
 可以使用[凭据安全支持提供程序(CredSSP)](https://msdn.microsoft.com/library/windows/desktop/bb931352.aspx) 进行身份验证。 CredSSP 会将凭据缓存在远程服务器 (_ServerB_) 上，因此使用它会给你带来凭据被盗攻击的风险。 如果远程计算机被攻破，攻击者将有权访问用户的凭据。 默认情况下，CredSSP 在客户端和服务器计算机上都处于禁用状态。 应该仅在最受信任的环境中启用 CredSSP。 例如，连接到域控制器的域管理员，因为域控制器是高度可信任的。
 
-若要详细了解在使用 CredSSP 进行 PowerShell 远程处理时需要注意的安全问题，请参阅 [Accidental Sabotage: Beware of CredSSP（非蓄意破坏：当心 CredSSP）](https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp)。
+若要详细了解在使用 CredSSP 进行 PowerShell 远程处理时需要注意的安全问题，请参阅[非蓄意破坏：当心 CredSSP](https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp)。
 
 有关凭据被盗攻击的详细信息，请参阅[缓解哈希传递 (PtH) 攻击和其他凭据被盗](https://www.microsoft.com/en-us/download/details.aspx?id=36036)。
 
@@ -43,7 +43,7 @@ ms.locfileid: "56265580"
 
 还可以使用 Kerberos 非约束委派来形成第二个跃点。 但是，此方法无法控制使用委派凭据的位置。
 
->**注意：** 无法委派具有**敏感帐户，不能被委派**属性集的 Active Directory 帐户。 有关详细信息，请参阅 [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)（安全聚焦：对特权帐户分析“敏感帐户，不能被委派”）和 [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)（Kerberos 身份验证工具和设置）
+>**注意：** 无法委派具有“敏感帐户，不能被委派”属性集的 Active Directory 帐户。 有关详细信息，请参阅[安全聚焦：对特权帐户分析“敏感帐户，不能被委派”](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)和 [Kerberos 身份验证工具和设置](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
 ### <a name="pros"></a>优点
 
@@ -56,10 +56,10 @@ ms.locfileid: "56265580"
 
 ## <a name="kerberos-constrained-delegation"></a>Kerberos 约束委派
 
-可以使用旧的约束委派（而非基于资源的委派）形成第二个跃点。 "使用任何身份验证协议"选项配置 Kerberos 约束委派以允许协议转换。
+可以使用旧的约束委派（而非基于资源的委派）形成第二个跃点。 “使用任何身份验证协议”选项配置 Kerberos 约束委派以允许协议转换。
 
 > [!NOTE]
-> 无法委派具有“敏感帐户，不能被委派”属性集的 Active Directory 帐户。 有关详细信息，请参阅 [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)（安全聚焦：对特权帐户分析“敏感帐户，不能被委派”）和 [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)（Kerberos 身份验证工具和设置）
+> 无法委派具有“敏感帐户，不能被委派”属性集的 Active Directory 帐户。 有关详细信息，请参阅[安全聚焦：对特权帐户分析“敏感帐户，不能被委派”](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)和 [Kerberos 身份验证工具和设置](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
 ### <a name="pros"></a>优点
 
@@ -77,7 +77,7 @@ ms.locfileid: "56265580"
 通过使用（Windows Server 2012 中引入的）基于资源的 Kerberos 约束委派，在资源驻留的服务器对象上配置凭据委派。
 在上述第二个跃点场景中，配置 _ServerC_ 以指定从何处接受委派凭据。
 
->**注意：** 无法委派具有**敏感帐户，不能被委派**属性集的 Active Directory 帐户。 有关详细信息，请参阅 [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)（安全聚焦：对特权帐户分析“敏感帐户，不能被委派”）和 [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)（Kerberos 身份验证工具和设置）
+>**注意：** 无法委派具有“敏感帐户，不能被委派”属性集的 Active Directory 帐户。 有关详细信息，请参阅[安全聚焦：对特权帐户分析“敏感帐户，不能被委派”](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)和 [Kerberos 身份验证工具和设置](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
 ### <a name="pros"></a>优点
 
@@ -214,8 +214,8 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 1](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)（Windows Server 2012 如何缓解 Kerberos 约束委派的痛苦，第 1 部分）
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 2](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)（Windows Server 2012 如何缓解 Kerberos 约束委派的痛苦，第 2 部分）
 - [Understanding Kerberos Constrained Delegation for Azure Active Directory Application Proxy Deployments with Integrated Windows Authentication](https://aka.ms/kcdpaper)（了解 Kerberos 约束委派，以使用集成的 Windows 身份验证进行 Azure Active Directory 应用程序代理部署）
-- [[MS-ADA2]: Active Directory 架构属性 M2.210 属性 msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx)
-- [[MS-SFU]：Kerberos 协议扩展：用户和约束委派协议 1.3.2 S4U2proxy 服务](https://msdn.microsoft.com/library/cc246079.aspx)
+- [[MS-ADA2]：Active Directory 架构属性 M2.210 属性 msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx)
+- [[MS-SFU]：Kerberos 协议扩展：用户服务和约束委派协议 1.3.2 S4U2proxy](https://msdn.microsoft.com/library/cc246079.aspx)
 - [基于资源的 Kerberos 约束委派](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
 - [Remote Administration Without Constrained Delegation Using PrincipalsAllowedToDelegateToAccount](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)（在不使用约束委派的情况下，使用 PrincipalsAllowedToDelegateToAccount 进行远程管理）
 

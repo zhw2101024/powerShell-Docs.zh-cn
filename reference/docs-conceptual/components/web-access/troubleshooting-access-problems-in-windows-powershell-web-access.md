@@ -3,15 +3,15 @@ ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell Web 访问中的访问问题疑难解答
 ms.openlocfilehash: 314e4a8098988111739705d55b68ff5ed2f5eff3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677410"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086589"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Windows PowerShell Web 访问中的访问问题疑难解答
 
-更新日期：2013 年 6 月 24日，（修订 2017 年 8 月 23日日）
+更新时间：2013 年 6 月 24 日（修订时间：2017 年 8 月 23 日）
 
 适用于：Windows Server 2012 R2、Windows Server 2012
 

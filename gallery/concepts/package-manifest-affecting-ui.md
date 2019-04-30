@@ -4,11 +4,11 @@ schema: 2.0.0
 keywords: powershell
 title: 影响 PowerShell 库 UI 的包清单值
 ms.openlocfilehash: cedf81df8de29c54ef559a800d654305029491ec
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58058209"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084702"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>影响 PowerShell 库 UI 的包清单值
 
@@ -113,7 +113,7 @@ PowerShell 库编辑包页允许发行者更改为包显示的若干字段，具
 | Network (网络) | Networking 非常相似，不经常使用 |
 | SharePoint |  |
 | 报告 | Reporting 是一项操作，Report 是一件东西 |
-| 报告 | Report 是一件东西 |
+| 报表 | Report 是一件东西 |
 | WinRM |  |
 | 监视 |  |
 | VSTS |  |

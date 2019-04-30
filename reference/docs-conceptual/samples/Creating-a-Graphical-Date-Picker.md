@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: 创建图形日期选取器
 ms.assetid: c1cb722c-41e9-4baa-be83-59b4653222e9
 ms.openlocfilehash: d3b24af935e781a8a36fc346a6108baaed37b6db
-ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59506795"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058601"
 ---
 # <a name="creating-a-graphical-date-picker"></a>创建图形日期选取器
 
@@ -146,6 +146,6 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 
 ## <a name="see-also"></a>另请参阅
 
-- [脚本编写人员，你好：为什么这些 PowerShell GUI 示例不起作用呢？](https://go.microsoft.com/fwlink/?LinkId=506644)
+- [你好，脚本专家：为什么这些 PowerShell GUI 示例不起作用呢？](https://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub：Dave Wyatt 的 WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
 - [本周 Windows PowerShell 提示：创建图形日期选取器](https://technet.microsoft.com/library/ff730942.aspx)

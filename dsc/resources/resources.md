@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,配置,安装程序
 title: DSC 资源
 ms.openlocfilehash: 1f77b5e6630a2e3de6e1d1a05638f94d2df039ae
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676942"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076614"
 ---
 # <a name="dsc-resources"></a>DSC 资源
 
@@ -17,22 +17,22 @@ Desired State Configuration (DSC) 资源为 DSC 配置提供构建基块。 资�
 
 资源的建模对象可以是一般的文件或 Windows 进程，也可以是具体的 IIS 服务器设置。  资源等组被组合成为 DSC 模块，模块将全部所需文件组织成为一个可移植结构，该结构包含标志资源既定用途的元数据。
 
-每个资源都有 * 确定使用中的资源所需的语法的架构[配置](../configurations/configurations.md)。 可以按以下方式定义资源的架构：
+每个资源都具有用于确定使用[配置](../configurations/configurations.md)中的资源所需的语法的 *架构。 可以按以下方式定义资源的架构：
 
-- **Schema.Mof**文件：最多的资源定义其*架构*中 schema.mof 文件，请使用[托管对象格式](/windows/desktop/wmisdk/managed-object-format--mof-)。
-- **'\<资源名称\>。 schema.psm1**文件：[复合资源](../configurations/compositeConfigs.md)定义其*架构*中<ResourceName>。 schema.psm1 文件中使用[参数块](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters)。
-- **'\<资源名称\>.psm1**文件：基于的 DSC 资源定义的类及其*架构*类定义中。 语法项表示为类的属性。 有关详细信息，请参阅[about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc)。
+- “Schema.Mof”文件：大多数资源使用[托管对象格式](/windows/desktop/wmisdk/managed-object-format--mof-)定义它们在“schema.mof”文件中的架构。
+- “\<Resource Name\>.schema.psm1”文件：[复合资源](../configurations/compositeConfigs.md)使用[参数块](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters)定义它们在“<ResourceName>.schema.psm1”文件中的架构。
+- “\<Resource Name\>.psm1”文件：基于类的 DSC 资源定义它们在类定义中的架构。 语法项表示为类属性。 有关详细信息，请参阅 [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc)。
 
-若要检索的 DSC 资源的语法，请使用[Get-dscresource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) cmdlet 与`-Syntax`参数。 这种用法是使用类似[Get-command](/powershell/module/microsoft.powershell.core/get-command)与`-Syntax`参数，以获取 cmdlet 的语法。 您所看到的输出将显示你指定的资源的资源块中使用的模板。
+若要检索 DSC 资源的语法，请将 [Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) cmdlet 与 `-Syntax` 参数一起使用。 此用法类似于将 [Get-Command](/powershell/module/microsoft.powershell.core/get-command) 与 `-Syntax` 参数一起使用以获取 cmdlet 语法。 所看到的输出将显示用于指定资源的资源块的模板。
 
 ```powershell
 Get-DscResource -Syntax Service
 ```
 
-尽管此资源的语法可能会在将来更改，您所看到的输出应类似于下面的输出。 喜欢的 cmdlet 语法*密钥*方括号中所示，都是可选的。 类型指定每个密钥需要的数据的类型。
+所看到的输出应类似于以下输出，尽管此资源的语法在将来可能会发生改变也是如此。 类似于 cmdlet 语法，方括号中所示的键是可选的。 类型指定每个键所需的数据类型。
 
 > [!NOTE]
-> **确保**密钥是可选的因为它默认为"Present"。
+> 确保键是可选的，因为它默认为“Present”。
 
 ```output
 Service [String] #ResourceName
@@ -52,10 +52,10 @@ Service [String] #ResourceName
 }
 ```
 
-在配置**服务**资源块可能如下所示向**确保**后台处理程序服务是否正在运行。
+在配置内，Service 资源块可能如下所示以确保 Spooler 服务正在运行。
 
 > [!NOTE]
-> 之前在配置中使用的资源，你必须使用导入[Import-dscresource](../configurations/import-dscresource.md)。
+> 在使用配置中的资源之前，必须使用 [Import-DSCResource](../configurations/import-dscresource.md) 导入该资源。
 
 ```powershell
 Configuration TestConfig
@@ -74,7 +74,7 @@ Configuration TestConfig
 }
 ```
 
-配置可以包含相同的资源类型的多个实例。 每个实例必须具有唯一名称。 在以下示例中，第二个**服务**资源块已添加用于配置"DHCP"服务。
+配置可以包含同一资源类型的多个实例。 每个实例必须具有唯一名称。 在以下示例中，添加了第二个 Service 资源块以配置“DHCP”服务。
 
 ```powershell
 Configuration TestConfig
@@ -101,13 +101,13 @@ Configuration TestConfig
 ```
 
 > [!NOTE]
-> 从 PowerShell 5.0 开始，intellisense 添加了对 DSC。 这一新功能，可使用\<选项卡\>并\<Ctrl + 空格键\>到自动补全键名。
+> 从 PowerShell 5.0 开始，为 DSC 添加了 Intellisense。 借助这一新功能，可以使用 \<TAB\> 和 \<Ctrl+Space\> 自动补全键名称。
 
 ![资源 Tab 自动补全](../media/resource-tabcompletion.png)
 
 ## <a name="built-in-resources"></a>内置资源
 
-除了社区资源，还有适用于 Windows、 Linux、 资源和资源的跨节点依赖关系内置资源。 可以使用上述步骤以确定这些资源以及如何使用它们的语法。 这些资源提供服务的页面已存档下**引用**。
+除了社区资源之外，还有适用于 Windows 的内置资源、适用于 Linux 的资源和适用于跨节点依赖项的资源。 可以使用上述步骤确定这些资源的语法以及如何使用这些资源。 已在“参考”下存档提供这些资源的页面。
 
 Windows 内置资源
 
@@ -128,10 +128,10 @@ Windows 内置资源
 * [WindowsFeatureSet 资源](../reference/resources/windows/windowsFeatureSetResource.md)
 * [WindowsOptionalFeature 资源](../reference/resources/windows/windowsOptionalFeatureResource.md)
 * [WindowsOptionalFeatureSet 资源](../reference/resources/windows/windowsOptionalFeatureSetResource.md)
-* [WindowsPackageCabResource Resource](../reference/resources/windows/windowsPackageCabResource.md)
+* [WindowsPackageCabResource 资源](../reference/resources/windows/windowsPackageCabResource.md)
 * [WindowsProcess 资源](../reference/resources/windows/windowsProcessResource.md)
 
-[跨节点依赖关系](../configurations/crossNodeDependencies.md)资源
+[跨节点依赖项](../configurations/crossNodeDependencies.md)资源
 
 * [WaitForAll 资源](../reference/resources/windows/waitForAllResource.md)
 * [WaitForSome 资源](../reference/resources/windows/waitForSomeResource.md)
@@ -140,7 +140,7 @@ Windows 内置资源
 包管理资源
 
 * [PackageManagement 资源](../reference/resources/packagemanagement/PackageManagementDscResource.md)
-* [PackageManagementSource Resource](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
+* [PackageManagementSource 资源](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
 
 Linux 资源
 

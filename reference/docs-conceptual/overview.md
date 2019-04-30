@@ -2,12 +2,12 @@
 ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: PowerShell 脚本
-ms.openlocfilehash: 07925ce8dcafd33970a703c9b241bf6f76f88d10
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 281f2e798b3d3fa1c150b079d633cb7e8490dcec
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400829"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058482"
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -50,7 +50,7 @@ Get-Service | Get-Member
 
 ### <a name="consistency"></a>一致性
 
-管理系统是一项复杂的任务。 具有一致的接口的工具有助于控制固有的复杂性。 遗憾的是，命令行工具和可编写脚本的 COM 对象的一致性均未知。
+管理系统是一项复杂的任务。 具有一致的接口的工具有助于控制固有的复杂性。 遗憾的是，命令行工具和可编写脚本的组件对象模型 (COM) 对象的一致性均未知。
 
 PowerShell 一致性是它的主要资产之一。 例如，如果了解如何使用 `Sort-Object` cmdlet，可以利用这一知识对任何 cmdlet 的输出进行排序。 不需要了解每个 cmdlet 的不同排序例程。
 

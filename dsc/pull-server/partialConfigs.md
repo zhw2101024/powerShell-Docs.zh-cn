@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: PowerShell Desired State Configuration 部分配置
 ms.openlocfilehash: b2b17e35597707eb97ecdcea9dda4466deeab0cb
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400501"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079517"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell Desired State Configuration 部分配置
 
-适用于：Windows PowerShell 5.0 及更高版本。_
+适用于：_Windows PowerShell 5.0 及更高版本。_
 
 在 PowerShell 5.0 中，Desired State Configuration (DSC) 允许从多个源中以片段形式提交配置。 目标节点上的本地配置管理器 (LCM) 将碎片整理到一起，然后将其作为单个配置进行应用。 此功能允许在团队或个人之间共享配置控制权。 例如，如果两个或更多开发人员团队协作提供一项服务，那么每个团队都可以创建配置来管理该服务中由其负责的部分。 可以从不同请求服务器请求其中每个配置，并可以在各个开发阶段加入这些配置。 部分配置还允许不同的个人或团队控制配置节点的不同方面，而无需协调单个配置文档的编辑。 例如，可能由一个团队负责部署 VM 和操作系统，而由另一个团队负责在该 VM 上部署其它应用程序和服务。 使用部分配置，每个团队都可以创建自己的配置，避免任何不必要的复杂配置。
 
@@ -375,6 +375,6 @@ SharePointConfig
 
 ## <a name="see-also"></a>另请参阅
 
-[Windows PowerShell Desired State Configuration 请求服务器](pullServer.md)
+[Windows PowerShell Desired State Configuration 拉取服务器](pullServer.md)
 
 [Windows 配置本地配置管理器](../managing-nodes/metaConfig.md)

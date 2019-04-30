@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: 获取有关命令的信息
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
 ms.openlocfilehash: 7af83e3a0e776d96e580b442430357b4ea063a72
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401034"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057700"
 ---
 # <a name="getting-information-about-commands"></a>获取有关命令的信息
 
@@ -74,7 +74,7 @@ Get-Command *
 > 星号 (\*) 用于 PowerShell 命令参数中的通配符匹配。 \* 表示“匹配一个或多个任意字符”。 可以键入 `Get-Command a*` 查找所有以字母“a”开头的命令。 与 cmd.exe 中的通配符匹配不同，PowerShell 的通配符还会匹配句点。
 
 使用 `Get-Command` 的 CommandType 参数可以获取其他类型的本机命令。
-cmdlet 时返回的仲裁资源的信息。
+cmdlet。
 
 若要获取命令别名（即命令的已分配昵称），请键入：
 

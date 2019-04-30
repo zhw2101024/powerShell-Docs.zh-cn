@@ -4,15 +4,15 @@ contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 title: PowerShell 库入门
 ms.openlocfilehash: c8beba3009e462ce52cdecd34fc0313d9234f289
-ms.sourcegitcommit: 1082b13115c5c5be4b76574ba55307b3e567983f
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52576883"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084753"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>PowerShell 库入门
 
-PowerShell 库是包含脚本、 模块和 DSC 资源可以下载并将它们的包存储库。 使用中的 cmdlet [PowerShellGet](/powershell/module/powershellget)模块从 PowerShell 库安装包。 从 PowerShell 库下载项时无需登录。
+PowerShell 库是一个包存储库，包含脚本、模块以及可供下载和使用的 DSC 资源。 可以使用 [PowerShellGet](/powershell/module/powershellget) 模块中的 cmdlet 从 PowerShell 库安装包。 从 PowerShell 库下载项时无需登录。
 
 > [!NOTE]
 > 可直接从 PowerShell 库下载包，但不推荐此方法。
@@ -20,9 +20,9 @@ PowerShell 库是包含脚本、 模块和 DSC 资源可以下载并将它们的
 
 ## <a name="discovering-packages-from-the-powershell-gallery"></a>从 PowerShell 库中发现包
 
-可以通过使用 PowerShell 库中找到包**搜索**PowerShell 库上的控件[主页](https://www.powershellgallery.com)，或通过浏览模块和脚本从[包页](https://www.powershellgallery.com/packages). 此外可以通过运行查找 PowerShell 库中的包[Find-module][]， [Find-dscresource]，并[Find-script][] cmdlet，具体取决于包类型使用`-Repository PSGallery`。
+可通过使用 PowerShell 库[主页](https://www.powershellgallery.com)上的“搜索”控件或浏览[程序包页](https://www.powershellgallery.com/packages)中的“模块和脚本”来查找 PowerShell 库中的包。 还可以使用 `-Repository PSGallery` 运行 [Find-Module][]、[Find-DscResource] 和 [Find-Script][] cmdlet（具体视包类型而定），来查找 PowerShell 库中的包。
 
-可以使用以下参数来筛选库中的结果：
+可使用以下参数筛选库中的结果：
 
 - 名称
 - AllVersions
@@ -75,15 +75,15 @@ Microsoft 建议安装前检查库中包的内容和代码。
 
 ### <a name="deploy"></a>在来宾群集上部署
 
-若要部署到 Azure 自动化 PowerShell 库中的包，请单击**Azure 自动化**，然后单击**部署到 Azure 自动化**包详细信息页上。 你将重定向到 Azure 管理门户中你在其中登录通过使用 Azure 帐户凭据。 请注意，部署具有依赖项包将所有依赖项部署到 Azure 自动化。 通过将 AzureAutomationNotSupported 标记添加到包元数据可禁用“部署到 Azure 自动化”按钮。
+若要将包从 PowerShell 库部署到 Azure 自动化，请单击“Azure 自动化”，然后单击包详细信息页上的“部署到 Azure 自动化”。 这会将你重定向到 Azure 管理门户，可使用 Azure 帐户凭据登录该门户。 请注意，部署具有依赖关系的包会将所有依赖关系部署到 Azure 自动化。 通过将 AzureAutomationNotSupported 标记添加到包元数据可禁用“部署到 Azure 自动化”按钮。
 
 若要了解有关 Azure 自动化的详细信息，请参阅 [Azure 自动化](/azure/automation)文档。
 
 ## <a name="updating-packages-from-the-powershell-gallery"></a>从 PowerShell 库更新包
 
-若要更新从 PowerShell 库安装的包，请运行 [Update-Module][] 或 [Update-Script][] cmdlet。 当运行不带任何其他参数时，尝试更新通过运行安装的所有模块 [都更新模块] [] [Install-module][]。 若要选择性地更新模块，请添加 `-Name` 参数。 
+若要更新从 PowerShell 库安装的包，请运行 [Update-Module][] 或 [Update-Script][] cmdlet。 如果不使用其他任何参数运行，[Update-Module][] 将尝试通过运行 [Install-Module][] 来更新所有已安装的模块。 若要选择性地更新模块，请添加 `-Name` 参数。 
 
-同样，当运行时不使用任何其他参数，[更新脚本] [] 还会尝试更新所有脚本运行安装[Install-script][]。 若要选择性地更新脚本，请添加 `-Name` 参数。
+同样，如果不使用其他任何参数运行，[Update-Script][] 也会尝试通过运行 [Install-Script][] 来更新所有已安装的脚本。 若要选择性地更新脚本，请添加 `-Name` 参数。
 
 ## <a name="list-packages-that-you-have-installed-from-the-powershell-gallery"></a>列出从 PowerShell 库安装的包
 

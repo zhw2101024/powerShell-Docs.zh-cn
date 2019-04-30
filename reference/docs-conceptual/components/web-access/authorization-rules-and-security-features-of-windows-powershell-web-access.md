@@ -2,18 +2,18 @@
 ms.date: 06/27/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell Web 访问的授权规则和安全功能
-ms.openlocfilehash: 95c61d3a0431cda9dee738d1c9f5ec843c1209f3
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400512"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058414"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 访问的授权规则和安全功能
 
-更新日期：2013 年 6 月 24 日
+更新时间：2013 年 6 月 24 日
 
-适用于：Windows Server 2012 R2、 Windows Server 2012
+适用于：Windows Server 2012 R2、Windows Server 2012
 
 在 Windows Server 2012 R2 和 Windows Server 2012 中的 Windows PowerShell Web 访问具有受限的安全模型。 必须向用户显式授予访问权限，他们才能登录 Windows PowerShell Web 访问网关和使用基于 Web 的 Windows PowerShell 控制台。
 
@@ -156,7 +156,7 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即星号 ( \* )。
 - 管理员创建名为 **PswaEndpoint** 的终结点，其中带有受限的运行空间。 然后管理员创建规则 `*,*,PswaEndpoint`，并将终结点分配给其他计算机。 规则可让所有用户访问所有带有终结点 **PswaEndpoint** 的计算机。
   如果这只是在规则集中定义的授权规则，则不能访问不带有终结点的计算机。
 
-- 管理员创建名为 **PswaEndpoint** 的终结点（其中带有受限的运行空间），并希望限制特定用户的访问权限。 管理员创建一组名为 **Level1Support** 的用户，并定义以下规则：**Level1Support,\*,PswaEndpoint**。 规则可让 **Level1Support** 组中的用户访问所有带有 **PswaEndpoint** 配置的计算机。 类似地，可限制对特定计算机组合的访问权限。
+- 管理员创建名为 **PswaEndpoint** 的终结点（其中带有受限的运行空间），并希望限制特定用户的访问权限。 管理员创建一组名为 Level1Support 的用户，并定义以下规则：Level1Support、\*、PswaEndpoint。 规则可让 **Level1Support** 组中的用户访问所有带有 **PswaEndpoint** 配置的计算机。 类似地，可限制对特定计算机组合的访问权限。
 
 - 有些管理员为某些用户提供的访问权限要比其他用户多。 例如，管理员创建两个用户组，分别是 **Admins** 和 **BasicSupport**。 管理员还创建名为 PswaEndpoint 的终结点（其中带有受限的运行空间），并定义以下两项规则：**Admins,\*,\*** 和 **BasicSupport,\*,PswaEndpoint**. 第一条规则为**Admin**组中的所有用户提供访问所有计算机的权限，第二条规则为**BasicSupport**组中的所有用户仅提供访问那些带有**PswaEndpoint**的计算机的权限。
 
@@ -186,13 +186,13 @@ Add-PswaAuthorizationRule -userName PswaServer\chrisLocal `
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>对多个网站使用单一的授权规则集
 
-授权规则存储在 XML 文件中。 默认情况下，XML 文件的路径名称是 `%windir%\Web\PowershellWebAccess\data\AuthorizationRules.xml`。
+授权规则存储在 XML 文件中。 默认情况下，XML 文件的路径名称是 `$env:windir\Web\PowershellWebAccess\data\AuthorizationRules.xml`。
 
-授权规则 XML 文件的路径存储在 powwa.config 文件中，可在 `%windir%\Web\PowershellWebAccess\data` 中找到。 管理员可随时将参考路径更改为 **powwa.config** 中的默认路径，以满足首选项或要求。 允许管理员更改文件的位置，可让多个 Windows PowerShell Web 访问网关在需要此类配置的情况下，使用相同的授权规则。
+授权规则 XML 文件的路径存储在 powwa.config 文件中，可在 `$env:windir\Web\PowershellWebAccess\data` 中找到。 管理员可随时将参考路径更改为 **powwa.config** 中的默认路径，以满足首选项或要求。 允许管理员更改文件的位置，可让多个 Windows PowerShell Web 访问网关在需要此类配置的情况下，使用相同的授权规则。
 
 ## <a name="session-management"></a>会话管理
 
-默认情况下，Windows PowerShell Web 访问限制一名用户一次访问三个会话。 可在 IIS 管理器中编辑 Web 应用程序的 web.config 文件，使每名用户可访问不同数目的会话。 web.config 文件的路径是 `$Env:Windir\Web\PowerShellWebAccess\wwwroot\Web.config`。
+默认情况下，Windows PowerShell Web 访问限制一名用户一次访问三个会话。 可在 IIS 管理器中编辑 Web 应用程序的 web.config 文件，使每名用户可访问不同数目的会话。 web.config 文件的路径是 `$env:windir\Web\PowerShellWebAccess\wwwroot\Web.config`。
 
 默认情况下，如果编辑了任何设置，则会配置 IIS Web 服务器，以重启应用程序池。 例如，如果对 **web.config** 文件进行更改，则重新启动应用程序池。 由于 Windows PowerShell Web 访问使用内存中的会话状态，因此重启应用程序池时，登录到 Windows PowerShell Web 访问会话的用户将错过其会话。
 

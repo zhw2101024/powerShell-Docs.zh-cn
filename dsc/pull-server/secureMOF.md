@@ -3,11 +3,11 @@ ms.date: 10/31/2017
 keywords: dsc,powershell,配置,安装程序
 title: 保护 MOF 文件
 ms.openlocfilehash: 6c2aadb75ac617d9b845ef387f292b8156bb8889
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677440"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079317"
 ---
 # <a name="securing-the-mof-file"></a>保护 MOF 文件
 
@@ -51,11 +51,11 @@ DSC 通过应用存储于 MOF 文件中的信息来管理服务器节点的配�
 若要将此公钥证书用于 DSC 凭据加密，它需具有以下特定要求：
 
 1. **密钥用法**：
-   - 必须包含：KeyEncipherment 和 DataEncipherment。
-   - 应_不_包含：数字签名：
+   - 必须包含：“KeyEncipherment”和“DataEncipherment”。
+   - 不应包含：“数字签名”。
 2. **增强型密钥用法**：
    - 必须包含：文档加密 (1.3.6.1.4.1.311.80.1)。
-   - 应_不_包含：客户端身份验证 (1.3.6.1.5.5.7.3.2) 和服务器身份验证 (1.3.6.1.5.5.7.3.1)。
+   - 不应包含：客户端身份验证 (1.3.6.1.5.5.7.3.2) 和服务器身份验证 (1.3.6.1.5.5.7.3.1)。
 3. 证书的私钥在*目标节点_上可用。
 4. 证书的**提供程序**必须是“Microsoft RSA SChannel Cryptographic Provider”。
 
@@ -84,7 +84,7 @@ _目标节点_上满足这些条件的任何现有证书都可以用于保护 DS
 
 #### <a name="on-the-target-node-create-and-export-the-certificate"></a>在目标节点上：创建并导出证书
 
-> 目标节点Windows Server 2016 和 Windows 10
+> 目标节点：Windows Server 2016 和 Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -95,7 +95,7 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 
 一旦导出完成，需要将 `DscPublicKey.cer` 复制到**创作节点**。
 
-> 目标节点Windows Server 2012 R2/Windows 8.1 及更早版本
+> 目标节点：Windows Server 2012 R2/Windows 8.1 及更早版本
 > [!WARNING]
 > 因为 Windows 10 和 Windows Server 2016 之前版本的 Windows 操作系统上的 `New-SelfSignedCertificate` cmdlet 不支持 Type 参数，因此，在这些操作系统上创建此证书需要其他方法。
 >
@@ -151,7 +151,7 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
 
 #### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>在创作节点上：创建并导出证书
 
-> 目标节点Windows Server 2016 和 Windows 10
+> 目标节点：Windows Server 2016 和 Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -167,7 +167,7 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
 
 一旦导出完成，需要将 `DscPrivateKey.pfx` 复制到**目标节点**。
 
-> 目标节点Windows Server 2012 R2/Windows 8.1 及更早版本
+> 目标节点：Windows Server 2012 R2/Windows 8.1 及更早版本
 > [!WARNING]
 > 因为 Windows 10 和 Windows Server 2016 之前版本的 Windows 操作系统上的 `New-SelfSignedCertificate` cmdlet 不支持 Type 参数，因此，在这些操作系统上创建此证书需要其他方法。
 >
