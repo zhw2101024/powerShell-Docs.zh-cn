@@ -22,7 +22,7 @@ ms.locfileid: "62058023"
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />安装 MSI 包
 
-若要在 Windows 客户端或 Windows Server（适用于 Windows 7 SP1、Server 2008 R2 以及更高版本）上安装 PowerShell，请从 GitHub [版本][] 页面下载 MSI 包。 向下滚动到要安装的版本的“资产”部分。 “资产”部分可能处于折叠状态，因此可能需要单击使其展开。
+若要在 Windows 客户端或 Windows Server（适用于 Windows 7 SP1、Server 2008 R2 以及更高版本）上安装 PowerShell，请从 GitHub [版本][版本] 页面下载 MSI 包。 向下滚动到要安装的版本的“资产”部分。 “资产”部分可能处于折叠状态，因此可能需要单击使其展开。
 
 MSI 文件类似于 `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
@@ -154,4 +154,7 @@ PowerShell Core 同时支持采用 WSMan 和 SSH 的 PowerShell 远程处理协�
 - [PowerShell Core 中的 WSMan 远程处理][wsman-remoting]
 
 <!-- [download-center]: TODO -->
-[版本]： https://github.com/PowerShell/PowerShell/releases [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md [wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+[版本]: https://github.com/PowerShell/PowerShell/releases 
+[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md 
+[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md 
+[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
