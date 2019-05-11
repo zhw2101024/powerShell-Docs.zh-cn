@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], described
 ms.assetid: 0aa32589-4447-4ead-a5dd-a3be99113140
 caps.latest.revision: 21
-ms.openlocfilehash: f8a8c9300d1ac811c7fbbf7050dd24f78306db8f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 14200aed2fb94c37c8b8af29650f602945e7ac1c
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068464"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229366"
 ---
 # <a name="cmdlet-overview"></a>Cmdlet 概述
 
@@ -38,19 +38,53 @@ Cmdlet 执行操作，并通常将 Microsoft.NET Framework 对象返回到管道
 
 Windows PowerShell cmdlet 文档中经常使用以下术语：
 
-- **Cmdlet 属性**:.NET Framework 属性，用于声明 cmdlet 类作为一个 cmdlet。 尽管 Windows PowerShell 使用多个其他属性是可选的但 Cmdlet 属性是必需的。 有关此属性的详细信息，请参阅[Cmdlet 特性声明](./cmdlet-attribute-declaration.md)。
+### <a name="cmdlet-attribute"></a>Cmdlet 属性
 
-- **Cmdlet 参数**:定义可向用户或应用程序运行该 cmdlet 的参数的公共属性。 Cmdlet 可以都没有必需的命名、 位置，并*切换*参数。 开关参数可用于定义在调用中指定了参数时，才会评估的参数。 有关不同类型的参数的详细信息，请参阅[Cmdlet 参数](./cmdlet-parameters.md)。
+.NET Framework 属性，用于声明 cmdlet 类作为一个 cmdlet。
+虽然 PowerShell 使用多个其他属性是可选的但 Cmdlet 属性是必需的。
+有关此属性的详细信息，请参阅[Cmdlet 特性声明](cmdlet-attribute-declaration.md)。
 
-- **参数集**:可用于相同的命令中以执行特定操作的一组参数。 一个 cmdlet 可以具有多个参数集，但每个参数集必须具有至少一个参数，它是唯一的。 好 cmdlet 设计强烈建议的唯一参数也是必需的参数。 有关参数集的详细信息，请参阅[Cmdlet 参数可设置](./cmdlet-parameter-sets.md)。
+### <a name="cmdlet-parameter"></a>Cmdlet 参数
 
-- **动态参数**:添加到该 cmdlet 在运行时参数。 通常情况下，动态参数添加到该 cmdlet 时另一个参数设置为特定值。 有关动态参数的详细信息，请参阅[Cmdlet 的动态参数](./cmdlet-dynamic-parameters.md)。
+定义可向用户或应用程序运行该 cmdlet 的参数的公共属性。
+Cmdlet 可以都没有必需的命名、 位置，并*切换*参数。
+开关参数可用于定义在调用中指定了参数时，才会评估的参数。
+有关不同类型的参数的详细信息，请参阅[Cmdlet 参数](cmdlet-parameters.md)。
 
-- **输入处理方法**:Cmdlet 可用于处理其以输入形式所接收的记录的一种方法。 输入的处理方法包括[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法， [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法， [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法，并[System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing)方法。 当实现一个 cmdlet 时，您必须重写的至少一个[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)， [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)，并且[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。 通常情况下， [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法是您重写，因为调用 cmdlet 所处理的每条记录的方法。 与此相反， [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法并[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法调用一次来执行预处理或后处理的记录。 有关这些方法的详细信息，请参阅[输入处理方法](./cmdlet-input-processing-methods.md)。
+### <a name="parameter-set"></a>参数集
 
-- **ShouldProcess 功能**:Windows PowerShell，可创建该 cmdlet 对系统进行更改之前提示用户提供反馈的 cmdlet。 若要使用此功能，该 cmdlet 必须声明它时声明 Cmdlet 特性和必须调用该 cmdlet 支持 ShouldProcess 功能[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)和[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)从输入处理方法中的方法。 有关如何支持 ShouldProcess 功能的详细信息，请参阅[请求确认](./requesting-confirmation-from-cmdlets.md)。
+可用于相同的命令中以执行特定操作的一组参数。
+一个 cmdlet 可以具有多个参数集，但每个参数集必须具有至少一个参数，它是唯一的。
+好 cmdlet 设计强烈建议的唯一参数也是必需的参数。
+有关参数集的详细信息，请参阅[Cmdlet 参数可设置](cmdlet-parameter-sets.md)。
 
-- **事务**:逻辑组将被视为单个任务的命令。 如果组中的任何命令失败，并且用户可以选择接受或拒绝在事务中执行的操作，则任务自动失败。 若要参与事务，该 cmdlet 必须声明其支持事务，在声明 Cmdlet 属性。 在 Windows PowerShell 2.0 中引入了对事务的支持。 有关事务的详细信息，请参阅[Windows PowerShell 事务](http://msdn.microsoft.com/en-us/74d7bac7-bc53-49f1-a47a-272e8da84710)。
+### <a name="dynamic-parameter"></a>动态参数
+
+添加到该 cmdlet 在运行时参数。
+通常情况下，动态参数添加到该 cmdlet 时另一个参数设置为特定值。
+有关动态参数的详细信息，请参阅[Cmdlet 的动态参数](cmdlet-dynamic-parameters.md)。
+
+### <a name="input-processing-method"></a>输入处理方法
+
+Cmdlet 可用于处理其以输入形式所接收的记录的一种方法。
+输入的处理方法包括[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法， [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法， [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法，并[System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing)方法。 当实现一个 cmdlet 时，您必须重写的至少一个[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)， [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)，并且[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。
+通常情况下， [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法是您重写，因为调用 cmdlet 所处理的每条记录的方法。
+与此相反， [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法并[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法调用一次来执行预处理或后处理的记录。
+有关这些方法的详细信息，请参阅[输入处理方法](cmdlet-input-processing-methods.md)。
+
+### <a name="shouldprocess-feature"></a>ShouldProcess 功能
+
+PowerShell 允许您创建该 cmdlet 对系统进行更改之前提示用户提供反馈的 cmdlet。
+若要使用此功能，该 cmdlet 必须声明它时声明 Cmdlet 特性和必须调用该 cmdlet 支持 ShouldProcess 功能[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)和[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)从输入处理方法中的方法。
+有关如何支持 ShouldProcess 功能的详细信息，请参阅[请求确认](requesting-confirmation-from-cmdlets.md)。
+
+### <a name="transaction"></a>事务
+
+逻辑组将被视为单个任务的命令。
+如果组中的任何命令失败，并且用户可以选择接受或拒绝在事务中执行的操作，则任务自动失败。
+若要参与事务，该 cmdlet 必须声明其支持事务，在声明 Cmdlet 属性。
+在 Windows PowerShell 2.0 中引入了对事务的支持。
+有关事务的详细信息，请参阅[如何支持事务](how-to-support-transactions.md)。
 
 ## <a name="how-cmdlets-differ-from-commands"></a>与命令 Cmdlet 有何区别
 

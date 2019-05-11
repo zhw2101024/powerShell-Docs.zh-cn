@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 30183927-6f0e-4717-b6f5-f07a6e134cfb
 caps.latest.revision: 6
-ms.openlocfilehash: f2f6b9af7740b1231881294c2f32bf97b5a1568b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 37a297228eb33ff75daf94a12635d42b52c6cc9f
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62064503"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229320"
 ---
 # <a name="scriptblock-element-for-groupby-format"></a>ScriptBlock Element for GroupBy (Format)
 
@@ -27,7 +27,7 @@ ms.locfileid: "62064503"
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a>特性和元素
+## <a name="attributes-and-elements"></a>属性和元素
 
 以下各节描述了特性、 子元素和父元素的`ScriptBlock`元素。
 
@@ -51,14 +51,14 @@ ms.locfileid: "62064503"
 
 ## <a name="remarks"></a>备注
 
-此脚本的值发生更改时，Windows PowerShell 启动新的组。
+此脚本的值发生更改时，PowerShell 将启动一个新的组。
 
-当指定此元素时，不能指定[PropertyName](http://msdn.microsoft.com/en-us/396dede0-039a-4a87-a5ef-3ecabb729676)元素，用于启动新的组。
+当指定此元素时，不能指定[PropertyName](propertyname-element-for-groupby-format.md)元素，用于启动新的组。
 
 ## <a name="see-also"></a>另请参阅
 
-[GroupBy （格式） 的属性名称元素](./propertyname-element-for-groupby-format.md)
+[GroupBy （格式） 的属性名称元素](propertyname-element-for-groupby-format.md)
 
-[视图 （格式） 的 GroupBy 元素](./groupby-element-for-view-format.md)
+[视图 （格式） 的 GroupBy 元素](groupby-element-for-view-format.md)
 
-[编写 PowerShell 格式设置文件](./writing-a-powershell-formatting-file.md)
+[编写 PowerShell 格式设置文件](writing-a-powershell-formatting-file.md)

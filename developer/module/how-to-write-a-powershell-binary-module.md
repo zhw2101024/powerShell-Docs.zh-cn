@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: eb4e72e6-24c4-42b6-b7b9-a62585c17f26
 caps.latest.revision: 15
-ms.openlocfilehash: 9ddb3bc172c66314603d2be4df5192a76c92e05d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: ed614de125f78cbcf8411cc334baf3c95933dd47
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082220"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229338"
 ---
 # <a name="how-to-write-a-powershell-binary-module"></a>如何编写 PowerShell 二进制模块
 
@@ -29,7 +29,10 @@ ms.locfileid: "62082220"
 
 2. 如有必要，创建解决方案的其余部分: （更多的 cmdlet、 XML 文件等） 并使用模块清单中描述它们。
 
-   除了介绍你的解决方案中的 cmdlet 程序集，模块清单可以描述要如何导出和导入模块、 将公开哪些 cmdlet，和内容的其他文件将进入该模块。 如前面所述但是，PowerShell，可以将任何额外操作模块之类的二进制 cmdlet。 在这种情况下，模块清单是主要用于将多个文件组合成单个包中，或显式控制给定程序集发布有用的。 有关详细信息，请参阅[如何编写 PowerShell 模块清单](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6)。
+   除了介绍你的解决方案中的 cmdlet 程序集，模块清单可以描述要如何导出和导入模块、 将公开哪些 cmdlet，和内容的其他文件将进入该模块。
+   如前面所述但是，PowerShell，可以将任何额外操作模块之类的二进制 cmdlet。
+   在这种情况下，模块清单是主要用于将多个文件组合成单个包中，或显式控制给定程序集发布有用的。
+   有关详细信息，请参阅[如何编写 PowerShell 模块清单](how-to-write-a-powershell-module-manifest.md)。
 
    下面的代码是非常简单C#包含三个 cmdlet 可以用作模块在同一文件中的代码块。
 
@@ -82,7 +85,9 @@ ms.locfileid: "62082220"
 
 可以作为二进制模块加载 Cmdlet 和提供程序中管理单元中的程序集存在。 作为二进制模块加载管理单元中的程序集时，cmdlet 和管理单元中的提供程序可供用户，但在程序集中的管理单元类将被忽略，以及未注册管理单元中。 因此，提供 Windows PowerShell 的管理单元中 cmdlet 无法检测到管理单元中即使 cmdlet 和提供程序是可用于该会话。
 
-此外，不能作为二进制模块的一部分导入引用的管理单元中的任何格式设置或类型文件。 若要导入的文件格式和类型文件必须创建一个模块清单。 查看，请[如何编写 PowerShell 模块清单](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6)。
+此外，不能作为二进制模块的一部分导入引用的管理单元中的任何格式设置或类型文件。
+若要导入的文件格式和类型文件必须创建一个模块清单。
+查看，请[如何编写 PowerShell 模块清单](how-to-write-a-powershell-module-manifest.md)。
 
 ## <a name="see-also"></a>另请参阅
 

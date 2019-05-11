@@ -8,26 +8,29 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
-ms.openlocfilehash: c9963819f1842d1245735dabc487babaa566c160
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8f745cc0e5ef6db7a6bbdf39d826103f3b8a98ce
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068124"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229304"
 ---
 # <a name="events01-sample"></a>Events01 示例
 
-此示例演示如何创建由引发的事件，则允许用户注册一个 cmdlet [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher)。 此 cmdlet，用户可以注册在特定目录下创建一个文件时要执行的操作。 此示例从派生[Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)基类。
+此示例演示如何创建由引发的事件，则允许用户注册一个 cmdlet [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher)。
+此 cmdlet，用户可以注册在特定目录下创建一个文件时要执行的操作。
+此示例从派生[Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)基类。
 
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>如何通过使用 Visual Studio 生成该示例。
 
-1. 安装了 Windows PowerShell 2.0 sdk，导航到 Events01 文件夹。 默认位置为 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01。
+1. 安装了 Windows PowerShell 2.0 sdk，导航到 Events01 文件夹。
+   默认位置是`C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`。
 
-2. 双击解决方案 (.sln) 文件的图标。 这将在 Microsoft Visual Studio 中打开示例项目。
+2. 双击解决方案 (.sln) 文件的图标。
+   这将在 Microsoft Visual Studio 中打开示例项目。
 
 3. 在中**构建**菜单中，选择**生成解决方案**。
-
-    将默认 \bin 或 \bin\debug 文件夹中生成的示例库。
+   将默认值中生成的示例库`\bin`或`\bin\debug`文件夹。
 
 ### <a name="how-to-run-the-sample"></a>如何运行示例
 
@@ -78,11 +81,14 @@ A file was created in the TEMP directory
 
 此示例将演示如下。
 
-- 如何编写事件注册的 cmdlet。 该 cmdlet 派生[Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)类，该类提供支持公共参数的寄存器-* 事件 cmdlet。 派生自的 Cmdlet [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)只需定义其特定的参数，并覆盖`GetSourceObject`和`GetSourceObjectEventName`抽象方法。
+### <a name="how-to-write-a-cmdlet-for-event-registration"></a>如何编写事件注册 cmdlet
+
+该 cmdlet 派生[Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)类，该类提供通用的参数的支持`Register-*Event`cmdlet。
+派生自的 Cmdlet [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)只需定义其特定的参数，并覆盖`GetSourceObject`和`GetSourceObjectEventName`抽象方法。
 
 ## <a name="example"></a>示例
 
-此示例演示如何引发的事件注册[System.IO.FileSystemWatcher](https://msdn.microsoft.com/en-us/library/system.io.filesystemwatcher\(v=vs.110\).aspx)。
+此示例演示如何引发的事件注册[System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher)。
 
 ```csharp
 namespace Sample
@@ -183,4 +189,4 @@ namespace Sample
 
 ## <a name="see-also"></a>另请参阅
 
-[编写 Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+[编写 Windows PowerShell Cmdlet](writing-a-windows-powershell-cmdlet.md)

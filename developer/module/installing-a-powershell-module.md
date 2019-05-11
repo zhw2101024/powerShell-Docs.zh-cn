@@ -8,26 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
-ms.openlocfilehash: 7c2bfca50de4645676eafc01bbf23d9797e8b758
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 60ac4bf9089232a9fa879e835e32da53422489fd
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082175"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229451"
 ---
 # <a name="installing-a-powershell-module"></a>安装 PowerShell 模块
 
-创建 PowerShell 模块后，将可能想要在系统上，安装该模块，以便你或其他人可能会使用它。 通常情况下，这只需包括将复制的模块文件 （即.psm1，或二进制程序集、 模块清单和相关联的任何其他文件） 到一个目录上该计算机上。 对于非常小的项目，这可能是简单复制并粘贴到一台远程计算机; 上的使用 Windows 资源管理器文件但是，对于大型解决方案可能会想要使用更复杂的安装过程。 不管如何获取您到系统上的模块，PowerShell 可以使用技巧，以将帮助用户查找并使用你的模块的数。 (有关详细信息，请参阅[导入 PowerShell 模块](./importing-a-powershell-module.md)。)因此，安装的主要问题确保 PowerShell 将能够找到你的模块。
-
-本主题包含以下各节：
-
-- 安装模块的规则
-
-- 安装模块的位置
-
-- 安装模块的多个版本
-
-- 处理命令名发生冲突
+创建 PowerShell 模块后，将可能想要在系统上，安装该模块，以便你或其他人可能会使用它。 通常情况下，这包括将文件复制的模块 （即.psm1，或二进制程序集、 模块清单和相关联的任何其他文件） 到一个目录上该计算机上。 对于非常小的项目，这可能是简单复制并粘贴到一台远程计算机; 上的使用 Windows 资源管理器文件但是，对于大型解决方案可能会想要使用更复杂的安装过程。 不管如何获取您到系统上的模块，PowerShell 可以使用技巧，以将帮助用户查找并使用你的模块的数。 因此，安装的主要问题确保 PowerShell 将能够找到你的模块。 有关详细信息，请参阅[导入 PowerShell 模块](./importing-a-powershell-module.md)。
 
 ## <a name="rules-for-installing-modules"></a>安装模块的规则
 
@@ -41,14 +31,14 @@ ms.locfileid: "62082175"
 
 默认情况下**PSModulePath**环境变量值包含以下系统和用户模块目录，但可以为添加和编辑值。
 
-- $PSHome\Modules (%Windir%\System32\WindowsPowerShell\v1.0\Modules)
+- `$PSHome\Modules` (%Windir%\System32\WindowsPowerShell\v1.0\Modules)
 
   > [!WARNING]
   > 此位置保留供 Windows 附带的模块。 不要对此位置安装模块。
 
-- $ Home\Documents\WindowsPowerShell\Modules (%userprofile%\documents\windowspowershell\modules)
+- `$Home\Documents\WindowsPowerShell\Modules` （%userprofile%\documents\windowspowershell\modules)
 
-- $Env: ProgramFiles\WindowsPowerShell\Modules (%programfiles%\windowspowershell\modules)
+- `$Env:ProgramFiles\WindowsPowerShell\Modules` (%ProgramFiles%\WindowsPowerShell\Modules)
 
   若要获取的值**PSModulePath**环境变量，使用以下命令之一。
 
@@ -60,7 +50,6 @@ ms.locfileid: "62082175"
   若要添加的模块路径的值**PSModulePath**环境变量值，请使用以下命令格式。 此格式使用**SetEnvironmentVariable**方法**System.Environment**类，以使对独立于会话的更改**PSModulePath**环境变量。
 
   ```powershell
-
   #Save the current value in the $p variable.
   $p = [Environment]::GetEnvironmentVariable("PSModulePath")
 
@@ -77,7 +66,7 @@ ms.locfileid: "62082175"
 
 ### <a name="use-the-correct-module-directory-name"></a>使用正确的模块目录名称
 
-"良好"模块是存储在模块目录中的至少一个文件的基名称与同名的目录中的模块。 如果模块不是格式正确的 Windows PowerShell 无法识别它作为一个模块。
+格式正确的模块是存储在模块目录中的至少一个文件的基名称与同名的目录中的模块。 如果模块不是格式正确的 Windows PowerShell 无法识别它作为一个模块。
 
 文件的"基名称"是不带文件扩展名的名称。 在格式正确的模块中包含的模块文件的目录的名称必须与匹配模块中的至少一个文件的基名称。
 
@@ -122,9 +111,7 @@ C:\Program Files
 
 如果创建你自己的模块或获取模块从其他参与方，如 Windows PowerShell 社区网站，并且您希望模块可用于仅你的用户帐户，请在特定于用户的模块目录中安装模块。
 
-```
-$home\Documents\WindowsPowerShell\Modules\<Module Folder>\<Module Files>
-```
+`$home\Documents\WindowsPowerShell\Modules\<Module Folder>\<Module Files>`
 
 特定于用户的 Modules 目录添加到的值**PSModulePath**默认情况下的环境变量。
 
@@ -132,9 +119,7 @@ $home\Documents\WindowsPowerShell\Modules\<Module Folder>\<Module Files>
 
 如果你想要可供所有用户帐户的计算机上的模块，模块安装在 Program Files 位置。
 
-```
-$Env:ProgramFiles\WindowsPowerShell\Modules\<Module Folder>\<Module Files>
-```
+`$Env:ProgramFiles\WindowsPowerShell\Modules\<Module Folder>\<Module Files>`
 
 > [!NOTE]
 > 默认情况下，Windows PowerShell 4.0 及更高版本情况下，程序文件位置添加到 PSModulePath 环境变量的值。 对于早期版本的 Windows PowerShell，您可以手动创建 Program Files 位置 ((%ProgramFiles%\WindowsPowerShell\Modules) 和将此路径添加到 PSModulePath 环境变量，如上文所述。
@@ -160,7 +145,7 @@ C:\Program Files
 
 ```powershell
 $p = [Environment]::GetEnvironmentVariable("PSModulePath")
-$p += "C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
+$p += ";C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
@@ -168,7 +153,7 @@ $p += "C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 
 如果产品的多个组件或产品的多个版本使用模块，则特定于模块的 %ProgramFiles%\Common Files\Modules 子目录的子目录中安装模块。
 
-在以下示例中，Fabrikam 模块安装 Fabrikam %ProgramFiles%\Common Files\Modules 子目录的子目录中。 请注意每个模块驻留在其自身中的模块子目录的子目录中。
+在以下示例中，Fabrikam 模块安装的 Fabrikam 子目录中`%ProgramFiles%\Common Files\Modules`子目录。 请注意每个模块驻留在其自身中的模块子目录的子目录中。
 
 ```
 C:\Program Files
@@ -177,7 +162,6 @@ C:\Program Files
       Fabrikam
         Fabrikam.psd1 (module manifest)
         Fabrikam.dll (module assembly)
-
 ```
 
 然后，安装程序可确保的值**PSModulePath**环境变量包含常见的文件的模块子目录的路径。
@@ -198,9 +182,7 @@ $p = $q -join ';'
 若要安装的相同模块的多个版本，请使用以下过程。
 
 1. 创建模块的每个版本的目录。 目录名称中包含的版本号。
-
 2. 创建每个版本的模块的模块清单。 中的值**ModuleVersion**密钥在清单中，输入模块版本号。 模块的特定于版本的目录中将清单文件 (.psd1)。
-
 3. 将模块的根文件夹路径添加到的值**PSModulePath**环境变量，如以下示例所示。
 
 若要导入特定版本的模块，最终用户可以使用`MinimumVersion`或`RequiredVersion`的参数[导入模块](/powershell/module/Microsoft.PowerShell.Core/Import-Module)cmdlet。
