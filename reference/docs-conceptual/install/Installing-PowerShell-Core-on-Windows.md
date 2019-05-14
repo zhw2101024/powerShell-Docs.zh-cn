@@ -154,7 +154,4 @@ PowerShell Core 同时支持采用 WSMan 和 SSH 的 PowerShell 远程处理协�
 - [PowerShell Core 中的 WSMan 远程处理][wsman-remoting]
 
 <!-- [download-center]: TODO -->
-[版本]: https://github.com/PowerShell/PowerShell/releases 
-[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md 
-[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md 
-[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+[版本]： https://github.com/PowerShell/PowerShell/releases [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md [wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
