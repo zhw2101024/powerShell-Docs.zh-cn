@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,配置,安装程序
 title: 配置本地配置管理器
-ms.openlocfilehash: 86d2cc17872692a738e9c68121b8931833d2a251
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 15d696587d54d4a6464096cfb78757c41e9185c6
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079670"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229494"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>配置本地配置管理器
 
@@ -121,6 +121,10 @@ LCM 配置支持定义以下类型的请求服务终结点：
 |ConfigurationNames|string[]|目标节点将请求的配置名称的数组。 仅当通过 RegistrationKey 将节点注册到请求服务后，才使用这些操作。 有关详细信息，请参阅[使用配置名称设置请求客户端](../pull-server/pullClientConfigNames.md)。|
 |RegistrationKey|字符串|用于将节点注册到请求服务的 GUID。 有关详细信息，请参阅[使用配置名称设置请求客户端](../pull-server/pullClientConfigNames.md)。|
 |ServerURL|字符串|配置服务的 URL。|
+|ProxyURL*|字符串|要在与配置服务通信时使用的 http 代理的 URL。|
+|ProxyCredential*|pscredential|用于 http 代理的凭据。|
+
+>!注意 \* 在 Windows 版本 1809 及更高版本中受支持。
 
 提供简化本地节点的 ConfigurationRepositoryWeb 值配置的示例脚本 - 请参阅[生成 DSC 元配置](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
@@ -143,6 +147,10 @@ LCM 配置支持定义以下类型的请求服务终结点：
 |CertificateID|字符串|用于向服务器进行身份验证的证书指纹。|
 |RegistrationKey|字符串|用于将节点标识到请求服务的 GUID。|
 |ServerURL|字符串|配置服务器的 URL。|
+|ProxyURL*|字符串|要在与配置服务通信时使用的 http 代理的 URL。|
+|ProxyCredential*|pscredential|用于 http 代理的凭据。|
+
+>!注意 \* 在 Windows 版本 1809 及更高版本中受支持。
 
 提供简化本地节点的 ResourceRepositoryWeb 值配置的示例脚本 - 请参阅[生成 DSC 元配置](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
@@ -166,6 +174,10 @@ LCM 配置支持定义以下类型的请求服务终结点：
 |CertificateID|字符串|用于向服务器进行身份验证的证书指纹。|
 |RegistrationKey|字符串|用于将节点标识到请求服务的 GUID。|
 |ServerURL|字符串|配置服务器的 URL。|
+|ProxyURL*|字符串|要在与配置服务通信时使用的 http 代理的 URL。|
+|ProxyCredential*|pscredential|用于 http 代理的凭据。|
+
+>!注意 \* 在 Windows 版本 1809 及更高版本中受支持。
 
 提供简化本地节点的 ReportServerWeb 值配置的示例脚本 - 请参阅[生成 DSC 元配置](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
