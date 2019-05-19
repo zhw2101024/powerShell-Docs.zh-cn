@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: 5b3a5f5d5d02c7d5a3c1d622ec1a3740739c694f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 138c6a43937e72fffaa2a09243e500e9822e6111
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068770"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854935"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>向 Cmdlet 添加用户消息
 
@@ -51,32 +51,6 @@ Cmdlet 可以编写多种类型的可由 Windows PowerShell 运行时向用户�
 - 包含数量相关信息的消息处理该 cmdlet 的进度报告已完成时执行时间较长的操作。
 
 没有针对你的 cmdlet 可以写入的消息数或的 cmdlet 将写入的消息类型的限制。 中的输入处理方法的 cmdlet 从特定的调用，从而写入每条消息。
-
-## <a name="the-stopproc-cmdlet"></a>StopProc Cmdlet
-
-在本部分中的主题包括：
-
-- [定义 Cmdlet](#Defining-the-Cmdlet)
-
-- [系统修改为定义参数](#Defining-Parameters-for-System-Modification)
-
-- [重写方法的处理的输入](#Overriding-an-Input-Processing-Method)
-
-- [写入详细消息](#Writing-a-Verbose-Message)
-
-- [写入调试消息](#Writing-a-Debug-Message)
-
-- [编写一条警告消息](#Writing-a-Warning-Message)
-
-- [写入进度消息](#Writing-a-Progress-Message)
-
-- [代码示例](#Code-Sample)
-
-- [定义对象类型和格式设置](#Define-Object-Types-and-Formatting)
-
-- [生成该 Cmdlet](#Building-the-Cmdlet)
-
-- [测试 Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>定义 Cmdlet
 

@@ -8,24 +8,14 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d0c6d03f-1c1a-43d8-928e-e3290e90e0bc
 caps.latest.revision: 5
-ms.openlocfilehash: 2e9dbc9ff8f9507f2008cd6e114ba6fec36b10bf
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0210b5ed3104777541692a0e78e7d3b16f9c8256
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083376"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855138"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>如何向 Cmdlet 帮助主题添加语法
-
-- [参数特性](#Parameter-Attributes)
-
-- [参数值属性](#Parameter-Value-Attributes)
-
-- [正在收集语法信息](#Gathering-Syntax-Information)
-
-- [编码 XML 的语法关系图](#Coding-the-Syntax-Diagram-XML)
-
-## <a name="things-to-know-about-the-syntax-diagram-in-cmdlet-help"></a>若要了解的 Cmdlet 帮助中的语法关系图的内容
 
 在开始编写 cmdlet 帮助文件中的语法关系图的 XML 的代码之前，阅读此部分，获取清楚地了解你需要提供的数据，如参数属性和该数据的语法关系图中的显示方式的类型...
 
@@ -166,7 +156,7 @@ ms.locfileid: "62083376"
 
 ## <a name="coding-the-syntax-diagram-xml"></a>编码 XML 的语法关系图
 
-XML 的语法节点后说明节点，结尾，立即开始\</maml:description > 标记。 有关收集的语法关系图中使用的数据的信息，请参阅[收集语法信息](#Gathering-Syntax-Information)。
+XML 的语法节点后说明节点，结尾，立即开始\</maml:description > 标记。 有关收集的语法关系图中使用的数据的信息，请参阅[收集语法信息](#gathering-syntax-information)。
 
 ### <a name="adding-a-syntax-node"></a>添加的语法节点
 
@@ -210,7 +200,7 @@ XML 的语法节点后说明节点，结尾，立即开始\</maml:description > 
 
 添加到语法项节点的每个参数指定一对大\<命令： 参数 > 标记。 需要一对\<命令： 参数 > 包含的参数集，但提供的 Windows PowerShell 通用参数在每个参数的标记？。
 
-在打开的特性\<命令： 参数 > 标记确定参数的语法关系图中的显示方式。 有关参数属性的信息，请参阅[参数特性](#Parameter-Attributes)。
+在打开的特性\<命令： 参数 > 标记确定参数的语法关系图中的显示方式。 有关参数属性的信息，请参阅[参数特性](#parameter-attributes)。
 
 > [!NOTE]
 > \<命令： 参数 > 标记支持子元素\<maml:description > 永远不会显示其内容。 参数说明中的 xml 的参数节点指定。 若要避免出现不一致的语法项中的信息之间 bodes 和省略的参数节点 (\<maml:description > 或将其留空。

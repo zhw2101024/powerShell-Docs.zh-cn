@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], property provider
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
-ms.openlocfilehash: 6ec0752a9ae06c5c2cdd1a1851caeeff52d8eb74
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c503b17a670a5d1f07aa48e714d8a0eb0aa78ae9
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081829"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855004"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>创建 Windows PowerShell 属性提供程序
 
@@ -31,26 +31,6 @@ ms.locfileid: "62081829"
 
 > [!CAUTION]
 > 属性提供程序的方法应编写使用的任何对象[System.Management.Automation.Provider.Cmdletprovider.Writepropertyobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WritePropertyObject)方法。
-
-以下列表包含本主题中的部分。 如果您不熟悉编写 Windows PowerShell 属性提供程序，读取此信息显示的顺序。 但是，如果你熟悉编写 Windows PowerShell 属性提供程序，请直接转到所需的信息。
-
-- [定义 Windows PowerShell 提供程序](#Defining-the-Windows-PowerShell-provider)
-
-- [定义基本功能](#Defining-Base-Functionality)
-
-- [检索属性](#Retrieving-Properties)
-
-- [附加到的动态参数`Get-ItemProperty`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-ItemProperty-Cmdlet)
-
-- [设置属性](#Setting-Properties)
-
-- [附加到的动态参数`Set-ItemProperty`Cmdlet](#Attaching-Dynamic-Parameters-for-the-Set-ItemProperty-Cmdlet)
-
-- [清除属性](#Clearing-Properties)
-
-- [附加到的动态参数`Clear-ItemProperty`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Clear-ItemProperty-Cmdlet)
-
-- [生成 Windows PowerShell 提供程序](#Building-the-Windows-PowerShell-provider)
 
 ## <a name="defining-the-windows-powershell-provider"></a>定义 Windows PowerShell 提供程序
 

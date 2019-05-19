@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], base provider
 ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
 caps.latest.revision: 7
-ms.openlocfilehash: 19cc3817016d96e1412a5f3506e9d694ba55b48d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5ebc22067b20f0e1d35d31d5f33e599f50cb7564
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082067"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855070"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>创建基础 Windows PowerShell 提供程序
 
@@ -26,22 +26,6 @@ ms.locfileid: "62082067"
 
 > [!NOTE]
 > 可以通过 Windows PowerShell 提供的 AccessDBSampleProvider01.cs 文件中找到此提供程序的示例。
-
-本主题中的部分如下所示：
-
-- [定义 Windows PowerShell 提供程序类](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [定义特定于提供程序的状态信息](#Defining-Provider-Specific-State-Information)
-
-- [初始化提供程序](#Initializing-the-Provider)
-
-- [启动动态参数](#Start-Dynamic-Parameters)
-
-- [取消初始化提供程序](#Uninitializing-the-Provider)
-
-- [代码示例](#Code-Sample)
-
-- [测试 Windows PowerShell 提供程序](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>定义 Windows PowerShell 提供程序类
 
@@ -77,7 +61,7 @@ Windows PowerShell 提供程序还可以维护基于连接的状态。 有关保
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderStart](Msh_samplesaccessdbprov01#accessdbprov01ProviderStart)]  -->
 
-提供程序可以维护状态的特定于提供程序的信息，如中所述[定义特定于提供程序的数据状态](#Defining-Provider-Specific-State-Information)。 在这种情况下，您的实现必须重写[System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)方法以返回派生的类的实例。
+提供程序可以维护状态的特定于提供程序的信息，如中所述[定义特定于提供程序的数据状态](#defining-provider-specific-state-information)。 在这种情况下，您的实现必须重写[System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)方法以返回派生的类的实例。
 
 ## <a name="start-dynamic-parameters"></a>启动动态参数
 

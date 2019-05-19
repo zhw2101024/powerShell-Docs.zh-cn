@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: f2c9e10f0dc392399cf062500b7f28b3d1c07f6e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6f91fd53d41dd72c99f8fbc7bc7b863322d88787
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081863"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855053"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>创建 Windows PowerShell 项提供程序
 
@@ -30,44 +30,6 @@ ms.locfileid: "62081863"
 > 有关其他 Windows PowerShell 提供程序实现的详细信息，请参阅[设计你 Windows PowerShell 提供程序](./designing-your-windows-powershell-provider.md)。
 
 本主题中所述的 Windows PowerShell 项提供程序从 Access 数据库中获取项的数据。 在这种情况下，"项"是访问数据库中的表或表中的行。
-
-以下列表包含本主题中的部分。 如果您不熟悉编写 Windows PowerShell 项提供程序，阅读这些部分中显示的顺序。 但是，如果你熟悉编写 Windows PowerShell 项提供程序，直接转到所需的信息：
-
-- [定义 Windows PowerShell 项提供程序类](#Defining-the-Windows-PowerShell-Item-Provider-Class)
-
-- [定义基本功能](#Defining-Base-Functionality)
-
-- [路径有效性检查](#Checking-for-Path-Validity)
-
-- [确定项是否存在](#Determining-if-an-Item-Exists)
-
-- [附加到的动态参数`Test-Path`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Test-Path-Cmdlet)
-
-- [检索项](#Retrieving-an-Item)
-
-- [附加到的动态参数`Get-Item`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-Item-Cmdlet)
-
-- [将项目设置](#Setting-an-Item)
-
-- [附加到的动态参数`Set-Item`Cmdlet](#Retrieving-Dynamic-Parameters-for-SetItem)
-
-- [清除某一项](#Clearing-an-Item)
-
-- [附加到 Clear-item Cmdlet 的动态参数](#Retrieve-Dynamic-Parameters-for-ClearItem)
-
-- [项执行默认操作](#Performing-a-Default-Action-for-an-Item)
-
-- [检索 InvokeDefaultAction 动态参数](#Retrieve-Dynamic-Parameters-for-InvokeDefaultAction)
-
-- [实现帮助器方法和类](#Implementing-Helper-Methods-and-Classes)
-
-- [代码示例](#Code-Sample)
-
-- [定义对象类型和格式设置](#Defining-Object-Types-and-Formatting)
-
-- [生成 Windows PowerShell 提供程序](#Building-the-Windows-PowerShell-provider)
-
-- [测试 Windows PowerShell 提供程序](#Testing-the-Windows-PowerShell-provider)
 
 ## <a name="defining-the-windows-powershell-item-provider-class"></a>定义 Windows PowerShell 项提供程序类
 
@@ -223,7 +185,7 @@ Windows PowerShell 项提供程序可以实现[System.Management.Automation.Prov
 
 ## <a name="implementing-helper-methods-and-classes"></a>实现帮助器方法和类
 
-此项提供程序实现几个帮助器方法，并使用由公共类重写方法定义的 Windows PowerShell。 这些帮助器方法和类的代码所示[代码示例](#Code-Sample)部分。
+此项提供程序实现几个帮助器方法，并使用由公共类重写方法定义的 Windows PowerShell。 这些帮助器方法和类的代码所示[代码示例](#code-sample)部分。
 
 ### <a name="normalizepath-method"></a>NormalizePath 方法
 

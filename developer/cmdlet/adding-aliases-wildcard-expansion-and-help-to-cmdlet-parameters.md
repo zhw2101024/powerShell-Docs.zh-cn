@@ -8,40 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
-ms.openlocfilehash: db664e589f625855b5a33a02c522d6b238ad2810
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 946b71e4480a47ac6ccd6930be445d7efb4fb62d
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62075250"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854891"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>向 Cmdlet 参数添加别名、通配符扩展和帮助
 
 本部分介绍如何添加别名，通配符扩展和帮助消息到停止进程 cmdlet 的参数 (中所述[创建一个 Cmdlet 来修改系统](./creating-a-cmdlet-that-modifies-the-system.md))。
 
 此停止进程 cmdlet 会尝试停止使用 Get-proc cmdlet 检索的进程 (中所述[创建第一个 Cmdlet](./creating-a-cmdlet-without-parameters.md))。
-
-在本部分中的主题包括：
-
-- [定义 Cmdlet](#Defining-the-Cmdlet)
-
-- [系统修改为定义参数](#Defining-Parameters-for-System-Modification)
-
-- [定义参数别名](#Defining-a-Parameter-Alias)
-
-- [创建参数的帮助](#Creating-Help-for-Parameters)
-
-- [重写方法的处理的输入](#Overriding-an-Input-Processing-Method)
-
-- [支持通配符扩展](#Supporting-Wildcard-Expansion)
-
-- [代码示例](#Defining-a-Parameter-Alias)
-
-- [定义对象类型和格式设置](#Define-Object-Types-and-Formatting)
-
-- [生成该 Cmdlet](#Building-the-Cmdlet)
-
-- [测试 Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>定义 Cmdlet
 

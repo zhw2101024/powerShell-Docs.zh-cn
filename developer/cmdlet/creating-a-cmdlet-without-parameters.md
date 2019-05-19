@@ -11,35 +11,19 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: c380b28570c955de6f41152fd617f5c1b0f9e4bd
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7f10acf59dedbb4af17bc5250e8624282ba22656
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068328"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854969"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>创建不具有参数的 Cmdlet
 
 本部分介绍如何创建从本地计算机而不使用参数，检索的信息，然后将信息写入管道的 cmdlet。 此处所述的 cmdlet 是检索本地计算机的进程的信息，然后在命令行中显示该信息的 Get-proc cmdlet。
 
-在本部分中的主题包括：
-
-- [命名该 Cmdlet](#Naming-the-Cmdlet)
-
-- [定义在 Cmdlet 类](#Defining-the-Cmdlet-Class)
-
-- [重写方法的处理的输入](#Overriding-an-Input-Processing-Method)
-
-- [代码示例](#Code-Sample)
-
-- [定义对象类型和格式设置](#Defining-Object-Types-and-Formatting)
-
-- [生成该 Cmdlet](#Building-the-Cmdlet)
-
-- [测试 Cmdlet](#Testing-the-Cmdlet)
-
 > [!NOTE]
-> 请注意，在编写 cmdlet，Windows PowerShell® 引用程序集下载到磁盘上 （通过默认位于 C:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0）。它们不被安装在全局程序集缓存 (GAC) 中。
+> 请注意，在编写 cmdlet，Windows PowerShell® 引用程序集下载到磁盘上 （通过默认位于 C:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0）。 它们不被安装在全局程序集缓存 (GAC) 中。
 
 ## <a name="naming-the-cmdlet"></a>命名该 Cmdlet
 

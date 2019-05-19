@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], navigation provider
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
 caps.latest.revision: 5
-ms.openlocfilehash: 40454f880b57d5b3a8a8ded21c8c97aebba027fe
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5f7a61e261399d3d2abe62fe4523e8c9895d5ad4
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081846"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855175"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>创建 Windows PowerShell 导航提供程序
 
@@ -33,34 +33,6 @@ ms.locfileid: "62081846"
 
 > [!CAUTION]
 > 请注意，此设计假定具有名为 id，字段的数据库字段的类型是 LongInteger。
-
-以下列表包含本主题中的部分。 如果您不熟悉编写 Windows PowerShell 导航提供程序，读取此信息显示的顺序。 但是，如果你熟悉编写 Windows PowerShell 导航提供程序，请直接转到所需的信息。
-
-- [定义 PS 导航提供程序类](#Define-the-Windows-PowerShell-provider)
-
-- [定义基本功能](#Defining-Base-Functionality)
-
-- [创建 PS 路径](#Creating-a-Windows-PowerShell-Path)
-
-- [检索父路径](#Retrieving-the-Parent-Path)
-
-- [检索子路径名称](#Retrieve-the-Child-Path-Name)
-
-- [确定某个项是否容器](#Determining-if-an-Item-is-a-Container)
-
-- [将项移](#Moving-an-Item)
-
-- [附加到的动态参数`Move-Item`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Move-Item-Cmdlet)
-
-- [规范化的相对路径](#Normalizing-a-Relative-Path)
-
-- [代码示例](#Code-Sample)
-
-- [定义对象类型和格式设置](#Defining-Object-Types-and-Formatting)
-
-- [生成 Windows PowerShell 提供程序](#Building-the-Windows-PowerShell-provider)
-
-- [测试 Windows PowerShell 提供程序](#Testing-the-Windows-PowerShell-provider)
 
 ## <a name="define-the-windows-powershell-provider"></a>定义 Windows PowerShell 提供程序
 

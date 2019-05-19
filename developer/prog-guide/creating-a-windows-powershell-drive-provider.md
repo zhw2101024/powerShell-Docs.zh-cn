@@ -12,38 +12,18 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: 174d3a6860790295e1b73f32d9c1bad46b653917
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 2696d78cae7739310b7684161b597ce436dabe92
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055642"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855205"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>创建 Windows PowerShell 驱动器提供程序
 
 本主题介绍如何创建可用于通过 Windows PowerShell 驱动器访问数据存储区的 Windows PowerShell 驱动器提供程序。 这种类型的提供程序也称为 Windows PowerShell 驱动器提供程序。 提供程序使用的 Windows PowerShell 驱动器提供了用来连接到数据存储。
 
 此处所述的 Windows PowerShell 驱动器提供程序提供对 Microsoft Access 数据库的访问。 为此提供程序，Windows PowerShell 驱动器表示 （它是可以将任意数量的驱动器添加到驱动器提供程序） 的数据库，该驱动器的顶级容器表示在数据库中，表和容器的项表示中的行表中。
-
-下面是此主题中的部分列表。 如果您不熟悉编写 Windows PowerShell 驱动器提供程序，阅读这些部分中显示的顺序。 但是，如果你熟悉编写驱动器提供程序，请直接转到所需的信息。
-
-- [定义 Windows PowerShell 提供程序类](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [定义基本功能](#Defining-Base-Functionality)
-
-- [创建驱动器状态信息](#Creating-Drive-State-Information)
-
-- [创建驱动器](#Creating-a-Drive)
-
-- [将动态参数附加到 NewDrive](#Attaching-Dynamic-Parameters-to-NewDrive)
-
-- [移除驱动器](#Removing-a-Drive)
-
-- [初始化默认驱动器](#Initializing-Default-Drives)
-
-- [代码示例](#Code-Sample)
-
-- [测试 Windows PowerShell 驱动器提供程序](#Testing-the-Windows-PowerShell-Drive-Provider)
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>定义 Windows PowerShell 提供程序类
 

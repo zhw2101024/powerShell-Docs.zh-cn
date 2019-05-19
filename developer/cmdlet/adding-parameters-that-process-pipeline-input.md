@@ -11,34 +11,18 @@ helpviewer_keywords:
 - parameters [PowerShell Programmer's Guide], pipeline input
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
-ms.openlocfilehash: bd52dc8aee7975d0899083a5c2f595b17690dc33
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: def0ac2ff98575beb29c3c2a7d91a5a5c53e648e
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068753"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854985"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>添加用于处理管道输入的参数
 
 一个源的一个 cmdlet 是输入的源自于上游 cmdlet 在管道上的对象。 本部分介绍如何将参数添加到 Get-proc cmdlet (中所述[创建第一个 Cmdlet](./creating-a-cmdlet-without-parameters.md))，以便该 cmdlet 可以处理管道对象。
 
 此 Get-proc cmdlet 使用`Name`接受来自管道对象的输入参数从基于提供的名称，在本地计算机检索进程信息，然后在命令行中显示有关进程的信息。
-
-在本部分中的主题包括：
-
-- [定义在 Cmdlet 类](#Defining-the-Cmdlet-Class)
-
-- [定义来自管道的输入](#Defining-Input-from-the-Pipeline)
-
-- [重写方法的处理的输入](#Overriding-an-Input-Processing-Method)
-
-- [代码示例](#Code-Sample)
-
-- [定义对象类型和格式设置](#Defining-Object-Types-and-Formatting)
-
-- [生成该 Cmdlet](#Building-the-Cmdlet)
-
-- [测试 Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet-class"></a>定义在 Cmdlet 类
 

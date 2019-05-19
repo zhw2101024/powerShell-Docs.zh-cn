@@ -10,34 +10,14 @@ helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
 ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
 caps.latest.revision: 8
-ms.openlocfilehash: f0bff11618c18bf53b9c2a185445795a17306fa3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6a3b592c5f85c1f065ad4b5b0290cf44dcef484e
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068831"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854881"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>向 Cmdlet 添加参数集
-
-本部分介绍如何添加参数设置为 Stop Proc cmdlet (中所述[创建一个 Cmdlet 来修改系统](./creating-a-cmdlet-that-modifies-the-system.md))。 类似于此编程人员的指南中所述的其他进程停止外 cmdlet，此 cmdlet 会尝试停止使用 Get-proc cmdlet 检索的进程 (中所述[创建第一个 Cmdlet](./creating-a-cmdlet-without-parameters.md))。
-
-在本部分中的主题包括：
-
-- [关于参数集点提示](#Adding-Parameter-Sets-to-a-Cmdlet)
-
-- [声明 Cmdlet 类](#Declaring-the-Cmdlet-Class)
-
-- [声明 Cmdlet 的参数](#Declaring-the-Parameters-of-the-Cmdlet)
-
-- [重写方法的处理的输入](#Overriding-an-Input-Processing-Method)
-
-- [代码示例](#Declaring-the-Parameters-of-the-Cmdlet)
-
-- [定义对象类型和格式设置](#Defining-Object-Types-and-Formatting)
-
-- [生成该 Cmdlet](#Building-the-Cmdlet)
-
-- [测试 Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="things-to-know-about-parameter-sets"></a>关于参数集点提示
 

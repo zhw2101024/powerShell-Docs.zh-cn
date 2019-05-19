@@ -15,34 +15,16 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmer's Guide], creating
 ms.assetid: da0b32f8-7b51-440e-a061-3177b5759e0e
 caps.latest.revision: 9
-ms.openlocfilehash: fb113086ce89e4becff9bcaf3232905fde2bf610
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c9ad84c5bcb6826fcf51db9a1f1a578a65a1f275
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068804"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854946"
 ---
 # <a name="adding-parameters-that-process-command-line-input"></a>添加用于处理命令行输入的参数
 
 一个用于某个 cmdlet 的源是输入的命令行。 本主题介绍如何将参数添加到**Get-proc** cmdlet (中所述[创建第一个 Cmdlet](./creating-a-cmdlet-without-parameters.md))，以便该 cmdlet 可以处理来自基于显式的本地计算机的输入对象传递给 cmdlet。 **Get-proc**所述的 cmdlet 此处检索的过程基于它们的名称，然后显示在命令提示符下的进程的信息。
-
-本主题中的以下各节：
-
-- [定义在 Cmdlet 类](#Defining-the-Cmdlet-Class)
-
-- [声明参数](#Declaring-Parameters)
-
-- [支持的参数验证](#Supporting-Parameter-Validation)
-
-- [重写方法的处理的输入](#Overriding-an-Input-Processing-Method)
-
-- [代码示例](#Code-Sample)
-
-- [定义对象类型和格式设置](#Defining-Object-Types-and-Formatting)
-
-- [生成该 Cmdlet](#Building-the-Cmdlet)
-
-- [测试 Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet-class"></a>定义在 Cmdlet 类
 

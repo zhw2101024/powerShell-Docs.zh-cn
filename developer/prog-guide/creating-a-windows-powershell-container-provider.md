@@ -11,12 +11,12 @@ helpviewer_keywords:
 - container providers [PowerShell Programmer's Guide]
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
-ms.openlocfilehash: 33effed9a96cf1b9ee5f1a50b60a1937526db9d1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 9e7da13ff559e802d52df475f2a555baeeeef983
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081897"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855182"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>创建 Windows PowerShell 容器提供程序
 
@@ -35,44 +35,6 @@ ms.locfileid: "62081897"
 
 > [!CAUTION]
 > 请注意，此设计假定具有名为 id，字段的数据库字段的类型是 LongInteger。
-
-下面是此主题中的部分列表。 如果您不熟悉编写 Windows PowerShell 容器提供程序，请阅读此信息中出现的顺序。 但是，如果你熟悉编写 Windows PowerShell 容器提供程序，请直接转到所需的信息。
-
-- [定义 Windows PowerShell 容器提供程序类](#Defining-a-Windows-PowerShell-Container-Provider-Class)
-
-- [定义基本功能](#defining-base-functionality)
-
-- [正在检索子项目](#Retrieving-Child-Items)
-
-- [附加到的动态参数`Get-ChildItem`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-ChildItem-Cmdlet)
-
-- [检索子项名称](#Retrieving-Child-Item-Names)
-
-- [附加到的动态参数`Get-ChildItem`Cmdlet （名称）](#Attaching-Dynamic-Parameters-to-the-Get-ChildItem-Cmdlet-(Name))
-
-- [重命名项](#Renaming-Items)
-
-- [附加到的动态参数`Rename-Item`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Rename-Item-Cmdlet)
-
-- [创建新项](#Creating-New-Items)
-
-- [附加到的动态参数`New-Item`Cmdlet](#Attaching-Dynamic-Parameters-to-the-New-Item-Cmdlet)
-
-- [删除项](#Removing-Items)
-
-- [附加到的动态参数`Remove-Item`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Remove-Item-Cmdlet)
-
-- [查询子项目](#Querying-for-Child-Items)
-
-- [如何运用给出的项](#Copying-Items)
-
-- [附加到的动态参数`Copy-Item`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Copy-Item-Cmdlet)
-
-- [代码示例](#Code-Sample)
-
-- [生成 Windows PowerShell 提供程序](#Building-the-Windows-PowerShell-Provider)
-
-- [测试 Windows PowerShell 提供程序](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="defining-a-windows-powershell-container-provider-class"></a>定义 Windows PowerShell 容器提供程序类
 
@@ -398,7 +360,7 @@ protected override bool HasChildItems( string path )
 
 - 实现[System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)负责有循环的链接，以及类似时防止无限递归。 应引发相应的终止异常，以反映此类情况。
 
-- 实现[System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法应调用[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ，并向数据存储区进行任何更改之前检查它的返回值。 在调用[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ，则返回 true， [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法应调用[System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)具有潜在危险的系统修改作为额外检查方法。 有关调用这些方法的详细信息，请参阅[重命名项](#Renaming-Items)。
+- 实现[System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法应调用[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ，并向数据存储区进行任何更改之前检查它的返回值。 在调用[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ，则返回 true， [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法应调用[System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)具有潜在危险的系统修改作为额外检查方法。 有关调用这些方法的详细信息，请参阅[重命名项](#renaming-items)。
 
 ## <a name="attaching-dynamic-parameters-to-the-copy-item-cmdlet"></a>附加到 Copy-item Cmdlet 的动态参数
 

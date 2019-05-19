@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], content provider
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
 caps.latest.revision: 6
-ms.openlocfilehash: 35c68a2b0f8c9bd1ed4fc54c41aa427ddd75907c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d7e237514b4db4bce3366836d3b6e0cd340bf107
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081914"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855024"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>创建 Windows PowerShell 内容提供程序
 
@@ -28,36 +28,6 @@ ms.locfileid: "62081914"
 > 已下载的源文件中有 **\<PowerShell 示例 >** 目录。
 >
 > 有关其他 Windows PowerShell 提供程序实现的详细信息，请参阅[设计你 Windows PowerShell 提供程序](./designing-your-windows-powershell-provider.md)。
-
-以下列表包含本主题中的部分。 如果您不熟悉编写 Windows PowerShell 内容提供商，阅读这些部分中显示的顺序。 但是，如果你熟悉编写 Windows PowerShell 内容提供程序，直接转到所需的信息。
-
-- [定义 Windows PowerShell 内容提供程序类](#Define-the-Windows-PowerShell-Content-Provider-Class)
-
-- [定义基本功能](#Define-Functionality-of-Base-Class)
-
-- [实现内容的读取器](#Implementing-a-Content-Reader)
-
-- [实现内容的编写器](#Implementing-a-Content-Writer)
-
-- [检索内容的读取器](#Retrieving-the-Content-Reader)
-
-- [附加到的动态参数`Get-Content`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-Content-Cmdlet)
-
-- [检索内容编写器](#Retrieving-the-Content-Writer)
-
-- [将动态参数附加到 Add_Content 和`Set-Content`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Add-Content-and-Set-Content-Cmdlets)
-
-- [清除内容](#Clearing-Content)
-
-- [附加到的动态参数`Clear-Content`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Clear-Content-Cmdlet)
-
-- [代码示例](#Code-Sample)
-
-- [定义对象类型和格式设置](#defining-object-types-and-formatting)
-
-- [生成 Windows PowerShell 提供程序](#Building-the-Windows-PowerShell-Provider)
-
-- [测试 Windows PowerShell 提供程序](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="define-the-windows-powershell-content-provider-class"></a>定义 Windows PowerShell 内容提供程序类
 

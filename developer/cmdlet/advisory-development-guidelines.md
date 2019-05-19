@@ -8,42 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
-ms.openlocfilehash: 871a74a084da3c7ec36767b7195461e0e7290cb9
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 980b488800587e31286e2ca2ece924e07f8af3f3
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068787"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854858"
 ---
 # <a name="advisory-development-guidelines"></a>咨询性的开发指南
 
 本部分介绍应考虑以确保良好的开发和用户体验的指导原则。 有时它们可能适用，并且它们有时不可能。
-
-## <a name="design-guidelines"></a>设计指南
-
-- [支持一个 InputObject 参数 (AD01)](./advisory-development-guidelines.md#AD01)
-
-- [Force 参数 (AD02) 的支持](./advisory-development-guidelines.md#AD02)
-
-- [处理通过 Windows PowerShell (AD03) 的凭据](./advisory-development-guidelines.md#AD03)
-
-- [支持编码的参数 (AD04)](./advisory-development-guidelines.md#AD04)
-
-- [测试 Cmdlet 应返回一个布尔值 (AD05)](./advisory-development-guidelines.md#AD05)
-
-## <a name="code-guidelines"></a>代码指南
-
-- [遵循 Cmdlet 类命名约定 (AC01)](./advisory-development-guidelines.md#AC01)
-
-- [如果没有管道输入重写 BeginProcessing 方法 (AC02)](./advisory-development-guidelines.md#AC02)
-
-- [若要处理停止请求数，重写 StopProcessing 方法 (AC03)](./advisory-development-guidelines.md#AC03)
-
-- [实现 IDisposable 接口 (AC04)](./advisory-development-guidelines.md#AC04)
-
-- [使用适合于序列化的参数类型 (AC05)](./advisory-development-guidelines.md#AC05)
-
-- [使用 SecureString 的敏感数据 (AC06)](./advisory-development-guidelines.md#AC06)
 
 ## <a name="design-guidelines"></a>设计指南
 
