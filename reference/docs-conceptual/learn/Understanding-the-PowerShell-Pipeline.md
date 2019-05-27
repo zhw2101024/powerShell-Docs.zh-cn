@@ -3,24 +3,24 @@ ms.date: 08/23/2018
 keywords: powershell,cmdlet
 title: 了解 PowerShell 管道
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: 05ab98b7261f4d41ade1788a924193eccda6318c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 10e09fbe8de83eba2473f8f042657f7c80473fbd
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086436"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854348"
 ---
-# <a name="understanding-pipelines"></a><span data-ttu-id="ea9b6-103">了解管道</span><span class="sxs-lookup"><span data-stu-id="ea9b6-103">Understanding pipelines</span></span>
+# <a name="understanding-pipelines"></a><span data-ttu-id="3863f-103">了解管道</span><span class="sxs-lookup"><span data-stu-id="3863f-103">Understanding pipelines</span></span>
 
-<span data-ttu-id="ea9b6-104">管道的行为就像一系列连接的管道段一样。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-104">Pipelines act like a series of connected segments of pipe.</span></span> <span data-ttu-id="ea9b6-105">沿着管道移动的项会通过每个管道段。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-105">Items moving along the pipeline pass through each segment.</span></span> <span data-ttu-id="ea9b6-106">若要在 PowerShell 中创建管道，请使用管道运算符“|”将命令连接在一起。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-106">To create a pipeline in PowerShell, you connect commands together with the pipe operator "|".</span></span> <span data-ttu-id="ea9b6-107">每个命令的输出都将被用作下一命令的输入。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-107">The output of each command is used as input to the next command.</span></span>
+<span data-ttu-id="3863f-104">管道的行为就像一系列连接的管道段一样。</span><span class="sxs-lookup"><span data-stu-id="3863f-104">Pipelines act like a series of connected segments of pipe.</span></span> <span data-ttu-id="3863f-105">沿着管道移动的项会通过每个管道段。</span><span class="sxs-lookup"><span data-stu-id="3863f-105">Items moving along the pipeline pass through each segment.</span></span> <span data-ttu-id="3863f-106">若要在 PowerShell 中创建管道，请使用管道运算符“|”将命令连接在一起。</span><span class="sxs-lookup"><span data-stu-id="3863f-106">To create a pipeline in PowerShell, you connect commands together with the pipe operator "|".</span></span> <span data-ttu-id="3863f-107">每个命令的输出都将被用作下一命令的输入。</span><span class="sxs-lookup"><span data-stu-id="3863f-107">The output of each command is used as input to the next command.</span></span>
 
-<span data-ttu-id="ea9b6-108">用于管道的符号类似于其他 shell 中使用的符号。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-108">The notation used for pipelines is similar to the notation used in other shells.</span></span> <span data-ttu-id="ea9b6-109">初看起来 PowerShell 中管道的不同之处可能并不明显。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-109">At first glance, it may not be apparent how pipelines are different in PowerShell.</span></span> <span data-ttu-id="ea9b6-110">尽管你会在屏幕上看到文本，但 PowerShell 通过管道在命令之间传递对象，而不是文本。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-110">Although you see text on the screen, PowerShell pipes objects, not text, between commands.</span></span>
+<span data-ttu-id="3863f-108">用于管道的符号类似于其他 shell 中使用的符号。</span><span class="sxs-lookup"><span data-stu-id="3863f-108">The notation used for pipelines is similar to the notation used in other shells.</span></span> <span data-ttu-id="3863f-109">初看起来 PowerShell 中管道的不同之处可能并不明显。</span><span class="sxs-lookup"><span data-stu-id="3863f-109">At first glance, it may not be apparent how pipelines are different in PowerShell.</span></span> <span data-ttu-id="3863f-110">尽管你会在屏幕上看到文本，但 PowerShell 通过管道在命令之间传递对象，而不是文本。</span><span class="sxs-lookup"><span data-stu-id="3863f-110">Although you see text on the screen, PowerShell pipes objects, not text, between commands.</span></span>
 
-## <a name="the-powershell-pipeline"></a><span data-ttu-id="ea9b6-111">PowerShell 管道</span><span class="sxs-lookup"><span data-stu-id="ea9b6-111">The PowerShell pipeline</span></span>
+## <a name="the-powershell-pipeline"></a><span data-ttu-id="3863f-111">PowerShell 管道</span><span class="sxs-lookup"><span data-stu-id="3863f-111">The PowerShell pipeline</span></span>
 
-<span data-ttu-id="ea9b6-112">管道可能是命令行界面中使用的最有价值的概念。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-112">Pipelines are arguably the most valuable concept used in command-line interfaces.</span></span> <span data-ttu-id="ea9b6-113">如果使用得当，管道可以减少使用复杂命令的工作量，并且可以更轻松地查看命令的工作流程。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-113">When used properly, pipelines reduce the effort of using complex commands and make it easier to see the flow of work for the commands.</span></span> <span data-ttu-id="ea9b6-114">管道中的每个命令（称为管道元素）将其输出逐项传递到管道中的下一个命令。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-114">Each command in a pipeline (called a pipeline element) passes its output to the next command in the pipeline, item-by-item.</span></span> <span data-ttu-id="ea9b6-115">命令不必一次处理多个项目。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-115">Commands don't have to handle more than one item at a time.</span></span> <span data-ttu-id="ea9b6-116">结果是减少了资源消耗，并且能够立即开始获取输出。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-116">The result is reduced resource consumption and the ability to begin getting the output immediately.</span></span>
+<span data-ttu-id="3863f-112">管道可能是命令行界面中使用的最有价值的概念。</span><span class="sxs-lookup"><span data-stu-id="3863f-112">Pipelines are arguably the most valuable concept used in command-line interfaces.</span></span> <span data-ttu-id="3863f-113">如果使用得当，管道可以减少使用复杂命令的工作量，并且可以更轻松地查看命令的工作流程。</span><span class="sxs-lookup"><span data-stu-id="3863f-113">When used properly, pipelines reduce the effort of using complex commands and make it easier to see the flow of work for the commands.</span></span> <span data-ttu-id="3863f-114">管道中的每个命令（称为管道元素）将其输出逐项传递到管道中的下一个命令。</span><span class="sxs-lookup"><span data-stu-id="3863f-114">Each command in a pipeline (called a pipeline element) passes its output to the next command in the pipeline, item-by-item.</span></span> <span data-ttu-id="3863f-115">命令不必一次处理多个项目。</span><span class="sxs-lookup"><span data-stu-id="3863f-115">Commands don't have to handle more than one item at a time.</span></span> <span data-ttu-id="3863f-116">结果是减少了资源消耗，并且能够立即开始获取输出。</span><span class="sxs-lookup"><span data-stu-id="3863f-116">The result is reduced resource consumption and the ability to begin getting the output immediately.</span></span>
 
-<span data-ttu-id="ea9b6-117">例如，如果使用 `Out-Host` cmdlet 来强制逐页显示来自于另一个命令的输出，那么这一输出看起来就像分页显示在屏幕上的普通文本：</span><span class="sxs-lookup"><span data-stu-id="ea9b6-117">For example, if you use the `Out-Host` cmdlet to force a page-by-page display of output from another command, the output looks just like the normal text displayed on the screen, broken up into pages:</span></span>
+<span data-ttu-id="3863f-117">例如，如果使用 `Out-Host` cmdlet 来强制逐页显示来自于另一个命令的输出，那么这一输出看起来就像分页显示在屏幕上的普通文本：</span><span class="sxs-lookup"><span data-stu-id="3863f-117">For example, if you use the `Out-Host` cmdlet to force a page-by-page display of output from another command, the output looks just like the normal text displayed on the screen, broken up into pages:</span></span>
 
 ```powershell
 Get-ChildItem -Path C:\WINDOWS\System32 | Out-Host -Paging
@@ -59,12 +59,15 @@ d-----        8/23/2018   5:07 PM                catroot2
 ...
 ```
 
-<span data-ttu-id="ea9b6-118">分页还会降低 CPU 利用率，因为准备好显示完整页面时，会转为处理 `Out-Host` cmdlet。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-118">Paging also reduces CPU utilization because processing transfers to the `Out-Host` cmdlet when it has a complete page ready to display.</span></span> <span data-ttu-id="ea9b6-119">管道中位于前面的 cmdlet 暂停执行，直到输出的下一页可用。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-119">The cmdlets that precede it in the pipeline pause execution until the next page of output is available.</span></span>
+<span data-ttu-id="3863f-118">分页还会降低 CPU 利用率，因为准备好显示完整页面时，会转为处理 `Out-Host` cmdlet。</span><span class="sxs-lookup"><span data-stu-id="3863f-118">Paging also reduces CPU utilization because processing transfers to the `Out-Host` cmdlet when it has a complete page ready to display.</span></span> <span data-ttu-id="3863f-119">管道中位于前面的 cmdlet 暂停执行，直到输出的下一页可用。</span><span class="sxs-lookup"><span data-stu-id="3863f-119">The cmdlets that precede it in the pipeline pause execution until the next page of output is available.</span></span>
 
-<span data-ttu-id="ea9b6-120">可以看到 Windows 任务管理器监视的 PowerShell 使用的 CPU 和内存存在差异。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-120">You can see the difference Windows Task Manager to monitor CPU and memory used by PowerShell.</span></span> <span data-ttu-id="ea9b6-121">运行以下命令：`Get-ChildItem C:\Windows -Recurse`。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-121">Run the following command: `Get-ChildItem C:\Windows -Recurse`.</span></span> <span data-ttu-id="ea9b6-122">将 CPU 和内存使用情况与此命令进行比较：`Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-122">Compare the CPU and memory usage to this command: `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`.</span></span>
+<span data-ttu-id="3863f-120">通过比较以下命令可以看到管道对 Windows 任务管理器中的 CPU 和内存使用情况的影响：</span><span class="sxs-lookup"><span data-stu-id="3863f-120">You can see how piping impacts CPU and memory usage in the Windows Task Manager by comparing the following commands:</span></span>
+
+- `Get-ChildItem C:\Windows -Recurse`
+- `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`
 
 > [!NOTE]
-> <span data-ttu-id="ea9b6-123">并非所有的 PowerShell 主机都支持 Paging 参数。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-123">The **Paging** parameter is not supported by all PowerShell hosts.</span></span> <span data-ttu-id="ea9b6-124">例如，当你尝试在 PowerShell ISE 中使用 Paging 参数时，会看到以下错误：</span><span class="sxs-lookup"><span data-stu-id="ea9b6-124">For example, when you try to use the **Paging** parameter in the PowerShell ISE, you see the following error:</span></span>
+> <span data-ttu-id="3863f-121">并非所有的 PowerShell 主机都支持 Paging 参数。</span><span class="sxs-lookup"><span data-stu-id="3863f-121">The **Paging** parameter is not supported by all PowerShell hosts.</span></span> <span data-ttu-id="3863f-122">例如，当你尝试在 PowerShell ISE 中使用 Paging 参数时，会看到以下错误：</span><span class="sxs-lookup"><span data-stu-id="3863f-122">For example, when you try to use the **Paging** parameter in the PowerShell ISE, you see the following error:</span></span>
 >
 > ```Output
 > out-lineoutput : The method or operation is not implemented.
@@ -75,11 +78,11 @@ d-----        8/23/2018   5:07 PM                catroot2
 >     + FullyQualifiedErrorId : System.NotImplementedException,Microsoft.PowerShell.Commands.OutLineOutputCommand
 > ```
 
-## <a name="objects-in-the-pipeline"></a><span data-ttu-id="ea9b6-125">管道中的对象</span><span class="sxs-lookup"><span data-stu-id="ea9b6-125">Objects in the pipeline</span></span>
+## <a name="objects-in-the-pipeline"></a><span data-ttu-id="3863f-123">管道中的对象</span><span class="sxs-lookup"><span data-stu-id="3863f-123">Objects in the pipeline</span></span>
 
-<span data-ttu-id="ea9b6-126">在 PowerShell 中运行 cmdlet 时，可以看到文本输出，因为必须在控制台窗口中以文本形式表示对象。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-126">When you run a cmdlet in PowerShell, you see text output because it is necessary to represent objects as text in a console window.</span></span> <span data-ttu-id="ea9b6-127">文本输出可能不会显示输出的对象的所有属性。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-127">The text output may not display all of the properties of the object being output.</span></span>
+<span data-ttu-id="3863f-124">在 PowerShell 中运行 cmdlet 时，可以看到文本输出，因为必须在控制台窗口中以文本形式表示对象。</span><span class="sxs-lookup"><span data-stu-id="3863f-124">When you run a cmdlet in PowerShell, you see text output because it is necessary to represent objects as text in a console window.</span></span> <span data-ttu-id="3863f-125">文本输出可能不会显示输出的对象的所有属性。</span><span class="sxs-lookup"><span data-stu-id="3863f-125">The text output may not display all of the properties of the object being output.</span></span>
 
-<span data-ttu-id="ea9b6-128">例如，请考虑 `Get-Location` cmdlet。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-128">For example, consider the `Get-Location` cmdlet.</span></span> <span data-ttu-id="ea9b6-129">如果运行 `Get-Location`，而当前位置是 C 驱动器的根路径，将看到以下输出：</span><span class="sxs-lookup"><span data-stu-id="ea9b6-129">If you run `Get-Location` while your current location is the root of the C drive, you see the following output:</span></span>
+<span data-ttu-id="3863f-126">例如，请考虑 `Get-Location` cmdlet。</span><span class="sxs-lookup"><span data-stu-id="3863f-126">For example, consider the `Get-Location` cmdlet.</span></span> <span data-ttu-id="3863f-127">如果运行 `Get-Location`，而当前位置是 C 驱动器的根路径，将看到以下输出：</span><span class="sxs-lookup"><span data-stu-id="3863f-127">If you run `Get-Location` while your current location is the root of the C drive, you see the following output:</span></span>
 
 ```
 PS> Get-Location
@@ -89,9 +92,9 @@ Path
 C:\
 ```
 
-<span data-ttu-id="ea9b6-130">文本输出是信息摘要，而非 `Get-Location` 返回的对象的完整表示形式。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-130">The text output is a summary of information, not a complete representation of the object returned by `Get-Location`.</span></span> <span data-ttu-id="ea9b6-131">输出中的标题通过格式化屏幕显示数据的过程添加。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-131">The heading in the output is added by the process that formats the data for onscreen display.</span></span>
+<span data-ttu-id="3863f-128">文本输出是信息摘要，而非 `Get-Location` 返回的对象的完整表示形式。</span><span class="sxs-lookup"><span data-stu-id="3863f-128">The text output is a summary of information, not a complete representation of the object returned by `Get-Location`.</span></span> <span data-ttu-id="3863f-129">输出中的标题通过格式化屏幕显示数据的过程添加。</span><span class="sxs-lookup"><span data-stu-id="3863f-129">The heading in the output is added by the process that formats the data for onscreen display.</span></span>
 
-<span data-ttu-id="ea9b6-132">通过管道将输出传递到 `Get-Member` cmdlet 后，可以获取有关 `Get-Location` 返回的对象信息。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-132">When you pipe the output to the `Get-Member` cmdlet you get information about the object returned by `Get-Location`.</span></span>
+<span data-ttu-id="3863f-130">通过管道将输出传递到 `Get-Member` cmdlet 后，可以获取有关 `Get-Location` 返回的对象信息。</span><span class="sxs-lookup"><span data-stu-id="3863f-130">When you pipe the output to the `Get-Member` cmdlet you get information about the object returned by `Get-Location`.</span></span>
 
 ```powershell
 Get-Location | Get-Member
@@ -112,4 +115,4 @@ Provider     Property   System.Management.Automation.ProviderInfo Provider {get;
 ProviderPath Property   string ProviderPath {get;}
 ```
 
-<span data-ttu-id="ea9b6-133">`Get-Location` 返回 PathInfo 对象，其中包含当前路径和其他信息。</span><span class="sxs-lookup"><span data-stu-id="ea9b6-133">`Get-Location` returns a **PathInfo** object that contains the current path and other information.</span></span>
+<span data-ttu-id="3863f-131">`Get-Location` 返回 PathInfo 对象，其中包含当前路径和其他信息。</span><span class="sxs-lookup"><span data-stu-id="3863f-131">`Get-Location` returns a **PathInfo** object that contains the current path and other information.</span></span>
