@@ -2,12 +2,12 @@
 title: 使用 Visual Studio Code 进行 PowerShell 开发
 description: 使用 Visual Studio Code 进行 PowerShell 开发
 ms.date: 08/06/2018
-ms.openlocfilehash: 1e9b9d811a39656327af2810bd6dc8aaf3fde3a4
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5badffd49252e0d72ae2c20d3147ad4b1e92d5ed
+ms.sourcegitcommit: cf1a281cce9f7239c440c90f8b2798d32a13778d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086712"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882576"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>使用 Visual Studio Code 进行 PowerShell 开发
 
@@ -82,27 +82,72 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 系统会提示你“是否要运行来自此不可信发布者的软件？”
 键入 `R` 以运行该文件。 然后打开 Visual Studio Code，并检查 PowerShell 扩展是否工作正常。 如果在开始使用时仍有问题，请在 [GitHub](https://github.com/PowerShell/vscode-powershell/issues) 上告诉我们。
 
-#### <a name="using-a-specific-installed-version-of-powershell"></a>使用 PowerShell 特定安装版
+#### <a name="choosing-a-version-of-powershell-to-use-with-the-extension"></a>选择要与扩展一起使用的 PowerShell 版本
 
-如果要通过 Visual Studio Code 使用 PowerShell 的特定安装版，则需要将新的变量添加到用户设置文件。
+将 PowerShell Core 与 Windows PowerShell 并行安装后，现在可以将特定版本的 PowerShell 与 PowerShell 扩展一起使用。 使用以下步骤选择版本：
 
-1. 单击“文件”->“首选项”->“设置”
-1. 此时会出现两个编辑器窗格。
-   在最右侧窗格 (`settings.json`) 中，在两个花括号（`{` 和 `}`）之间的某处插入下面的 OS 对应设置，并将 \<版本\> 替换为已安装的 PowerShell 版本：
+1. 打开命令托盘（在 Windows 和 Linux 上为 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>，在 macOS 上为 <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>）。
+1. 搜索“会话”。
+1. 单击“PowerShell:显示会话菜单”。
+1. 选择要从列表中使用的 PowerShell 版本 - 例如，“PowerShell Core”。
 
-   ```json
-    // On Windows:
-    "powershell.powerShellExePath": "c:/Program Files/PowerShell/<version>/pwsh.exe"
+>[!IMPORTANT]
+> 此功能通过不同操作系统上的几个已知路径来发现 PowerShell 的安装位置。 如果已将 PowerShell 安装到非典型位置，则最初可能不会显示在会话菜单中。 可以按如下所述[添加你自己的自定义路径](#adding-your-own-powershell-paths-to-the-session-menu)来扩展会话菜单。
 
-    // On Linux:
-    "powershell.powerShellExePath": "/opt/microsoft/powershell/<version>/pwsh"
+>[!NOTE]
+> 还有一种方法可以获取会话菜单。 当 PowerShell 文件在编辑器中打开时，你会看到右下角的绿色版本号。 单击此版本号将为你提供会话菜单。
 
-    // On macOS:
-    "powershell.powerShellExePath": "/usr/local/microsoft/powershell/<version>/pwsh"
-   ```
+##### <a name="adding-your-own-powershell-paths-to-the-session-menu"></a>将你自己的 PowerShell 路径添加到会话菜单
 
-1. 将设置替换为所需 PowerShell 可执行文件的路径
-1. 保存设置文件并重启 Visual Studio Code
+可以通过 VS Code 设置将其他 PowerShell 可执行文件路径添加到会话菜单。
+
+向列表 `powershell.powerShellAdditionalExePaths` 添加项或创建该列表（如果它不存在于 `settings.json` 中）：
+
+```json
+{
+    // other settings...
+
+    "powershell.powerShellAdditionalExePaths": [
+        {
+            "exePath": "C:\\Users\\tyler\\Downloads\\PowerShell\\pwsh.exe",
+            "versionName": "Downloaded PowerShell"
+        }
+    ],
+    
+    // other settings...
+}
+```
+
+每个项必须具有：
+
+* `exePath`：`pwsh` 或 `powershell` 可执行文件的路径。
+* `versionName`：将显示在会话菜单中的文本。
+
+可以将默认 PowerShell 版本设置为使用 `powershell.powerShellDefaultVersion` 设置，方法是将其设置为显示在会话菜单中的文本（也称为最后一个设置中的 `versionName`）：
+
+```json
+{
+    // other settings...
+
+    "powershell.powerShellAdditionalExePaths": [
+        {
+            "exePath": "C:\\Users\\tyler\\Downloads\\PowerShell\\pwsh.exe",
+            "versionName": "Downloaded PowerShell"
+        }
+    ],
+    
+    "powershell.powerShellDefaultVersion": "Downloaded PowerShell",
+    
+    // other settings...
+}
+```
+
+进行此设置后，重新启动 Visual Studio Code 或使用“开发人员:重新加载窗口”命令托盘操作来重新加载当前的 vscode 窗口。
+
+如果打开会话菜单，你现在会看到其他 PowerShell 版本！
+
+> [!NOTE]
+> 如果从源生成 PowerShell，则这是测试 PowerShell 的本地生成的好办法。
 
 #### <a name="configuration-settings-for-visual-studio-code"></a>Visual Studio Code 的配置设置
 

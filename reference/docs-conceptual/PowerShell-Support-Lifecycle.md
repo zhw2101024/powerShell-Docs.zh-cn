@@ -2,12 +2,12 @@
 title: PowerShell Core 支持生命周期
 description: 用于管理 PowerShell Core 支持的策略
 ms.date: 08/06/2018
-ms.openlocfilehash: 178e5c43520f9a392ca219b9f785eb18b1ec5436
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: b8dd4891ecf245b87c3fe2fa61cd241a12209b57
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086950"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854382"
 ---
 # <a name="powershell-core-support-lifecycle"></a>PowerShell Core 支持生命周期
 
@@ -41,8 +41,6 @@ PowerShell Core 的版本 6.x 分支（例如 6.0、6.1、6.2 等）大约每六
 
 例如，如果正在运行 PowerShell Core 6.1，并且 6.1.3 发布于 2019 年 2 月 19 日，则应在发布后的 30 天之内（即，在 2019 年 3 月 21 日前）更新到 PowerShell Core 6.1.3，更新后方可继续获取支持。
 如果发现需要任何修补程序，则将在下一次累积更新中发布修补程序。
-
-![PowerShell Core 分支生命周期][lifecycle-chart]
 
 新式生命周期策略还要求，在中止对某产品（即 PowerShell Core）提供支持前的 12 个月内，Microsoft 需向客户持续提供通知。
 
@@ -88,7 +86,7 @@ PowerShell Core 的版本 6.x 分支（例如 6.0、6.1、6.2 等）大约每六
 |---------|-------------------------------|
 | 6.0     | 2019 年 2 月 13 日             |
 | 6.1     | 2019 年 9 月 28 日            |
-| 6.2     | 6.3 发布后的 6 个月后   |
+| 6.2     | 7 发布后的 6 个月后     |
 
 ## <a name="platforms-which-are-out-of-support"></a>不受支持的平台
 
