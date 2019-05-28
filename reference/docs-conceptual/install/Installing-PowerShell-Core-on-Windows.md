@@ -22,7 +22,7 @@ ms.locfileid: "65854365"
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />安装 MSI 包
 
-若要在 Windows 客户端或 Windows Server（适用于 Windows 7 SP1、Server 2008 R2 以及更高版本）上安装 PowerShell，请从 GitHub [版本][版本] 页面下载 MSI 包。 向下滚动到要安装的版本的“资产”部分。 “资产”部分可能处于折叠状态，因此可能需要单击使其展开。
+若要在 Windows 客户端或 Windows Server（适用于 Windows 7 SP1、Server 2008 R2 以及更高版本）上安装 PowerShell，请从 GitHub [版本][版本] 页面下载 MSI 包。 向下滚动到要安装的版本的“资产”  部分。 “资产”部分可能处于折叠状态，因此可能需要单击使其展开。
 
 MSI 文件类似于 `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
@@ -38,7 +38,7 @@ MSI 文件类似于 `PowerShell-<version>-win-<os-arch>.msi`
 
 可以通过命令行安装 MSI 包。 这样，管理员可以部署包而无需用户交互。 适用于 PowerShell 的 MSI 包包含下列属性以控制安装选项：
 
-- **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** - 此属性控制向 Windows 资源管理器中的上下文菜单添加“打开 PowerShell”项的选项。
+- **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** - 此属性控制向 Windows 资源管理器中的上下文菜单添加“打开 PowerShell”  项的选项。
 - **ENABLE_PSREMOTING** - 此属性控制用于在安装过程中启用 PowerShell 远程处理的选项。
 - **REGISTER_MANIFEST** - 此属性控制用于注册 Windows 事件日志记录清单的选项。
 
@@ -154,4 +154,7 @@ PowerShell Core 同时支持采用 WSMan 和 SSH 的 PowerShell 远程处理协�
 - [PowerShell Core 中的 WSMan 远程处理][wsman-remoting]
 
 <!-- [download-center]: TODO -->
-[版本]： https://github.com/PowerShell/PowerShell/releases [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md [wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+[版本]: https://github.com/PowerShell/PowerShell/releases 
+[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md 
+[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md 
+[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
