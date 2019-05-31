@@ -44,7 +44,7 @@ MyDscConfiguration
 
 在**配置**块中，可执行在 PowerShell 函数中通常可执行的任何操作。 例如，在上一示例中，如果不想在配置中对目标计算机名进行硬编码，则可以为节点名添加参数：
 
-在此示例中，指定节点名称，具体方法为在编译配置时以 ComputerName 参数的形式传递节点名称。 该名称默认为“localhost”。
+在此示例中，指定节点名称，具体方法为在编译配置时以 ComputerName  参数的形式传递节点名称。 该名称默认为“localhost”。
 
 ```powershell
 Configuration MyDscConfiguration
@@ -73,13 +73,13 @@ Configuration MyDscConfiguration
 MyDscConfiguration
 ```
 
-节点块还可以接受多个计算机名称。 在上述示例中，可以使用 `-ComputerName` 参数，也可以将以逗号分隔的计算机列表直接传递到节点块。
+ 节点块还可以接受多个计算机名称。 在上述示例中，可以使用 `-ComputerName` 参数，也可以将以逗号分隔的计算机列表直接传递到节点  块。
 
 ```powershell
 MyDscConfiguration -ComputerName "localhost", "Server01"
 ```
 
-将计算机列表从配置指定到节点块时，需要使用数组表示法。
+将计算机列表从配置指定到节点  块时，需要使用数组表示法。
 
 ```powershell
 Configuration MyDscConfiguration
@@ -111,7 +111,7 @@ MyDscConfiguration
 
 > [!NOTE]
 > 函数必须在全局范围内（与其他任何 PowerShell 函数一样），才能调用配置。
-> 可通过以下方式来实现此操作：对脚本执行“dot-source”操作，或者使用 F5 或单击 ISE 中的“运行脚本”按钮以运行配置脚本。
+> 可通过以下方式来实现此操作：对脚本执行“dot-source”操作，或者使用 F5 或单击 ISE 中的“运行脚本”  按钮以运行配置脚本。
 > 若要对脚本执行“dot-source”操作，请运行命令 `. .\myConfig.ps1`，其中 `myConfig.ps1` 是包含配置的脚本文件的名称。
 
 调用配置时，它会：
@@ -161,7 +161,7 @@ Mode                LastWriteTime         Length Name
 cmdlet - [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)，可用来确定哪些资源已安装在系统上并且可供 LCM 使用。
 一旦这些模块已置于 `$env:PSModulePath` 中并由 [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) 正确识别，你仍需在配置中加载它们。
 
-Import-DscResource 是仅可在配置块中识别的动态关键字，它不是 cmdlet。
+ Import-DscResource 是仅可在配置  块中识别的动态关键字，它不是 cmdlet。
 **Import-DscResource** 支持两种参数：
 
 - **ModuleName** 是使用 **Import-DscResource** 的推荐方法。 它接受包含要导入资源的模块名称以及模块名称的字符串数组。
