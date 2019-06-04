@@ -2,12 +2,12 @@
 title: Windows PowerShell SDK
 ms.date: 09/13/2016
 ms.topic: article
-ms.openlocfilehash: 600d43874d9eda04d556a0ece198026dde9174c3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7627ab336ddc40ab47c3017eed77c78bbdac4e7f
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080452"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470809"
 ---
 # <a name="windows-powershell"></a>Windows PowerShell
 
@@ -22,7 +22,7 @@ Windows PowerShell® 是基于任务的命令行管理程序和脚本语言，�
 
 ## <a name="windows-powershell-documents-on-msdn"></a>MSDN 上的 Windows PowerShell 文档
 
-- [安装 Windows PowerShell SDK](https://msdn.microsoft.com/en-us/library/ff458115.aspx)提供有关如何安装 Windows PowerShell SDK 的信息。
+- [安装 Windows PowerShell SDK](./installing-the-windows-powershell-sdk.md)提供有关如何安装 Windows PowerShell SDK 的信息。
 
 - [编写 Windows PowerShell 模块](./module/writing-a-windows-powershell-module.md)管理员、 脚本开发人员和 cmdlet 的开发人员需要打包并分发其 Windows PowerShell 解决方案提供的信息。
 

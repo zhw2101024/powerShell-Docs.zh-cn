@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ed7645ea-5e52-4a45-81a7-aa3c2d605cde
 caps.latest.revision: 16
-ms.openlocfilehash: e8b7151538235cdf7183b78aa8df7e596d6bcfd9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b2a929a1724f77f0516ad24cfd90f6d6053ed19e
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859003"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470799"
 ---
 # <a name="how-to-write-a-powershell-script-module"></a>如何编写 PowerShell 脚本模块
 
@@ -27,9 +27,9 @@ ms.locfileid: "56859003"
 
 1. 选取现有的 PowerShell 脚本，并具有.psm1 扩展名保存脚本。
 
-   保存具有.psm1 的脚本扩展意味着，您可以使用模块 cmdlet，如[导入模块](/powershell/module/Microsoft.PowerShell.Core/Import-Module)，其上。 这些 cmdlet 存在主要，以便您可以轻松地导入和导出到其他用户的系统上您的代码。 （替代解决方案是在其他系统，然后使用点获取来源代码将其加载到活动内存中，这并不特别是可缩放的解决方案。）有关详细信息请参阅**模块 Cmdlet 和变量**主题中[Windows PowerShell 模块](./understanding-a-windows-powershell-module.md)请注意，默认情况下，您的脚本中的所有函数都可供导入你.psm1 的用户文件，但属性将不会。
+   保存具有.psm1 的脚本扩展意味着，您可以使用模块 cmdlet，如[导入模块](/powershell/module/Microsoft.PowerShell.Core/Import-Module)，其上。 这些 cmdlet 存在主要，以便您可以轻松地导入和导出到其他用户的系统上您的代码。 （替代解决方案是在其他系统，然后使用点获取来源代码将其加载到活动内存中，这并不特别是可缩放的解决方案。）有关详细信息请参阅**模块 Cmdlet 和变量**主题中[Windows PowerShell 模块](./understanding-a-windows-powershell-module.md)请注意，默认情况下，在脚本中的所有函数都都用户导入.psm1 文件，都可以访问但不是属性。
 
-   在本主题末尾提供了示例 PowerShell 脚本，标题为显示日历。
+   示例 PowerShell 脚本，标题为`Show-Calendar`，可在本主题末尾。
 
    ```powershell
    function Show-Calendar {
@@ -45,7 +45,7 @@ ms.locfileid: "56859003"
    }
    ```
 
-2. 如果你想要控制用户对特定函数或属性访问，则调用[Export-modulemember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember)您的脚本结尾处。
+2. 若要控制用户对特定函数或属性访问，请调用[Export-modulemember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember)您的脚本结尾处。
 
    在页面底部的示例代码具有只有一个函数，它默认情况下会公开。 但是，建议你明确指出希望公开，如下面的代码中所述的函数：
 
@@ -65,9 +65,9 @@ ms.locfileid: "56859003"
    Import-Module GenericModule
    ```
 
-4. 如果你想要描述你对 PowerShell 帮助系统的模块，就可以做到文件内的标准帮助注释或包含一个额外的帮助文件。
+4. 若要描述你对 PowerShell 帮助系统的模块，可以使用该文件中的标准帮助注释或创建一个额外的帮助文件。
 
-   本主题底部的代码示例在注释中包含的帮助信息。 如果这样选择，也可以编写展开的 XML 文件包含更多帮助内容。 有关详细信息，请参阅[编写为 Windows PowerShell 模块帮助](./writing-help-for-windows-powershell-modules.md)。
+   本主题底部的代码示例在注释中包含的帮助信息。 您也可以编写展开的 XML 文件包含更多帮助内容。 有关详细信息，请参阅[编写为 Windows PowerShell 模块帮助](./writing-help-for-windows-powershell-modules.md)。
 
 5. 如果你有更多的模块、 XML 文件或想要打包对模块的使用其他内容，就可以做到与模块清单。
 
@@ -75,15 +75,17 @@ ms.locfileid: "56859003"
 
 6. 若要安装和运行你的模块，将模块保存到一个相应的 PowerShell 路径，并调用`Import-Module`。
 
-   您可以在其中安装你的模块的路径位于`$env:PSModulePath`全局变量。 例如，若要将模块保存在系统上的公共路径将`%SystemRoot%/users/<user>/Documents/WindowsPowerShell/Modules/<moduleName>`。 请务必创建你的模块中，存在一个文件夹，即使它是单个.psm1 文件。 如果不保存你的模块对两个路径，必须在调用中模块的位置传递`Import-Module`。 （否则，PowerShell 将不能找到它。）与 PowerShell 3.0 中，从开始，如果有一个 PowerShell 模块路径上放置你的模块，你不需要显式将其导入： 只需让用户调用函数将自动加载它。 模块路径的详细信息，请参阅[导入 PowerShell 模块](./importing-a-powershell-module.md)并[PSModulePath 环境变量](./modifying-the-psmodulepath-installation-path.md)。
+   您可以在其中安装你的模块的路径位于`$env:PSModulePath`全局变量。 例如，若要将模块保存在系统上的公共路径将`%SystemRoot%/users/<user>/Documents/WindowsPowerShell/Modules/<moduleName>`。 请务必创建你的模块中，存在一个文件夹，即使它是单个.psm1 文件。 如果不保存你的模块对两个路径，必须在调用中模块的位置传递`Import-Module`。 （否则，PowerShell 将不能找到它。）如果有一个 PowerShell 模块路径中放置您的模块，从与 PowerShell 3.0 开始，你不需要显式将其导入。 当用户调用函数时，会自动加载你的模块。
+   模块路径的详细信息，请参阅[导入 PowerShell 模块](./importing-a-powershell-module.md)并[PSModulePath 环境变量](./modifying-the-psmodulepath-installation-path.md)。
 
 7. 若要从活动服务中删除模块，请调用[Remove-module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module)。
 
-请注意， [Remove-module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module)删除你的模块从活动内存-它不会实际删除它从保存的模块文件的位置。
+   请注意， [Remove-module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module)删除你的模块从活动内存-它不会实际删除它从保存的模块文件的位置。
 
 ### <a name="show-calendar-code-example"></a>显示日历的代码示例
 
-下面的示例是一个简单的脚本模块，其中包含一个名为显示日历的单个函数。 此函数显示日历的可视表示形式。 此外，该示例包含有关摘要、 说明、 参数值和示例的 PowerShell 帮助字符串。 请注意最后一行代码，指示导入模块时，显示日历函数，导出为模块成员。
+下面的示例是一个简单的脚本模块，包含一个名为的单个函数`Show-Calendar`。
+此函数显示日历的可视表示形式。 此外，该示例包含有关摘要、 说明、 参数值和示例的 PowerShell 帮助字符串。 请注意，最后一行代码可确保`Show-Calendar`函数将被导出为模块成员导入模块。
 
 ```powershell
 <#
@@ -217,10 +219,10 @@ while($start -le $end)
     $calendar = $weeks | Format-Table $dayNames -AutoSize | Out-String
 
     ## Add a centered header.
-    $width = ($calendar.Split("'n") | Measure-Object -Maximum Length).Maximum
+    $width = ($calendar.Split("`n") | Measure-Object -Maximum Length).Maximum
     $header = "{0:MMMM yyyy}" -f $start
     $padding = " " * (($width - $header.Length) / 2)
-    $displayCalendar = " 'n" + $padding + $header + "'n " + $calendar
+    $displayCalendar = " `n" + $padding + $header + "`n " + $calendar
     $displayCalendar.TrimEnd()
 
     ## Move to the next month.

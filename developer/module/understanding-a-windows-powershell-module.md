@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d4e38235-9987-4347-afd2-0f7d1dc8f64a
 caps.latest.revision: 19
-ms.openlocfilehash: 77d328bc1cb8cb42d5a10f107a149c05ab270ce3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: cff50d415c4c90182fa1cf015a5a5ba84d4d613a
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082090"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470787"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>了解 Windows PowerShell 模块
 
@@ -55,7 +55,7 @@ ms.locfileid: "62082090"
 
 ### <a name="dynamic-modules"></a>动态模块
 
-一个*动态模块*是模块未加载，或保存到文件。 相反，它们动态创建的脚本，请使用[New-module](/powershell/module/Microsoft.PowerShell.Core/New-Module) cmdlet。 这种类型的模块使脚本能够按需，不需要加载或保存到持久性存储区中创建一个模块。 按其性质，动态模块用于是短暂性的并因此不能访问通过`Get-Module`cmdlet。 同样，他们通常不需要模块清单，也无可能需永久文件夹来存储其相关的程序集。
+一个*动态模块*是一个模块，未从，加载或保存到文件。 相反，它们动态创建的脚本，请使用[New-module](/powershell/module/Microsoft.PowerShell.Core/New-Module) cmdlet。 这种类型的模块使脚本能够按需，不需要加载或保存到持久性存储区中创建一个模块。 按其性质，动态模块用于是短暂性的并因此不能访问通过`Get-Module`cmdlet。 同样，他们通常不需要模块清单，也无可能需永久文件夹来存储其相关的程序集。
 
 ## <a name="module-manifests"></a>模块清单
 
@@ -91,7 +91,7 @@ ms.locfileid: "62082090"
 
 - 通过创建的动态模块`New-Module`可以使用名为 cmdlet `Name` cmdlet 参数。
 
-- 从程序集对象的导入的模块**`Import-Module`的程序集**命令将名为根据以下语法： `"dynamic_code_module_" + assembly.GetName()`。
+- 从程序集对象的导入的模块 **`Import-Module`的程序集**命令将名为根据以下语法： `"dynamic_code_module_" + assembly.GetName()`。
 
   有关详细信息，请参阅[安装 PowerShell 模块](./installing-a-powershell-module.md)并[修改 PSModulePath 安装路径](./modifying-the-psmodulepath-installation-path.md)。
 
