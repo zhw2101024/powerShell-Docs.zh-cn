@@ -1,21 +1,21 @@
 ---
-ms.date: 1/17/2019
+ms.date: 01/17/2019
 keywords: dsc,powershell,配置,安装程序
 title: 重新启动节点
-ms.openlocfilehash: 015b82a32caefc420973651c72e272fd85baf880
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 106fa1e7b0e3aaf3070ec05548d51140fe9a7725
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080112"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470742"
 ---
 # <a name="reboot-a-node"></a>重新启动节点
 
 > [!NOTE]
-> 本主题讨论如何重新启动节点。 若要使重新启动成功，需要正确配置 ActionAfterReboot 和 RebootNodeIfNeeded LCM 设置。
+> 本主题讨论如何重新启动节点。 若要使重新启动成功，需要正确配置 ActionAfterReboot  和 RebootNodeIfNeeded  LCM 设置。
 > 若要了解本地配置管理器设置，请参阅[配置本地配置管理器](../managing-nodes/metaConfig.md)或[配置本地配置管理器 (v4)](../managing-nodes/metaConfig4.md)。
 
-可以使用 `$global:DSCMachineStatus` 标志，从资源中重新启动节点。 在 `Set-TargetResource` 函数中将此标志设置为 `1` 会强制 LCM 在当前资源的 Set 方法之后直接重新启动节点。 使用此标志时，xPendingReboot 资源会检测重新启动是否在 DSC 外部挂起。
+可以使用 `$global:DSCMachineStatus` 标志，从资源中重新启动节点。 在 `Set-TargetResource` 函数中将此标志设置为 `1` 会强制 LCM 在当前资源的 Set  方法之后直接重新启动节点。 使用此标志时，xPendingReboot  资源会检测重新启动是否在 DSC 外部挂起。
 
 [配置](configurations.md)可能会执行需要重新启动节点的步骤。 这可能包括诸如以下这类情况：
 
@@ -24,7 +24,7 @@ ms.locfileid: "62080112"
 - 文件重命名
 - 计算机重命名
 
-xPendingReboot 资源会检查特定计算机位置，以确定重新启动是否挂起。 如果节点需要在 DSC 外部重新启动，则 xPendingReboot 资源会将 `$global:DSCMachineStatus` 标志设置为 `1`，从而强制重新启动并解决挂起条件。
+xPendingReboot  资源会检查特定计算机位置，以确定重新启动是否挂起。 如果节点需要在 DSC 外部重新启动，则 xPendingReboot  资源会将 `$global:DSCMachineStatus` 标志设置为 `1`，从而强制重新启动并解决挂起条件。
 
 > [!NOTE]
 > 任何 DSC 资源都可以通过在 `Set-TargetResource` 函数中设置此标志，来指示 LCM 重新启动节点。 有关详细信息，请参阅[使用 MOF 编写自定义 DSC 资源](../resources/authoringResourceMOF.md)。
@@ -61,7 +61,7 @@ xPendingReboot [String] #ResourceName
 ## <a name="example"></a>示例
 
 下面的示例使用 [xExchange](https://github.com/PowerShell/xExchange) 资源安装 Microsoft Exchange。
-在整个安装过程中，xPendingReboot 资源用于重新启动节点。
+在整个安装过程中，xPendingReboot  资源用于重新启动节点。
 
 > [!NOTE]
 > 此示例需要有权向林中添加 Exchange 服务器的帐户的凭据。 有关在 DSC 中使用凭据的详细信息，请参阅[在 DSC 中处理凭据](../configurations/configDataCredentials.md)
