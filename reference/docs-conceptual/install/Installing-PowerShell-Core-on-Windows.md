@@ -2,12 +2,12 @@
 title: 在 Windows 上安装 PowerShell Core
 description: 介绍如何在 Windows 上安装 PowerShell Core
 ms.date: 08/06/2018
-ms.openlocfilehash: 5a3c43e27f0027cfbeeefab33b045e618e0ff045
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: e716e24ba47c0c109ab302b4b1a9254d7110ddef
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854365"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66471002"
 ---
 # <a name="installing-powershell-core-on-windows"></a>在 Windows 上安装 PowerShell Core
 
@@ -52,7 +52,7 @@ msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_
 
 ## <a name="a-idzip-installing-the-zip-package"></a><a id="zip" />安装 ZIP 包
 
-提供有 PowerShell 二进制 ZIP 存档，从而支持高级部署方案。 请注意，使用 ZIP 存档时，不同于使用 MSI，你无法获取 MSI 先决条件检查。 要使通过 WSMan 的远程处理正常工作，请确保满足[先决条件](#prerequisites)。
+提供有 PowerShell 二进制 ZIP 存档，从而支持高级部署方案。 请注意，使用 ZIP 存档时，不同于使用 MSI，你无法获取 MSI 先决条件检查。 要使 WSMan 远程处理正常工作，请确保您已满足[先决条件](#prerequisites)。
 
 ## <a name="deploying-on-windows-iot"></a>在 Windows IoT 上部署
 

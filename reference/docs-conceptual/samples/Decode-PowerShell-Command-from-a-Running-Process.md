@@ -3,12 +3,12 @@ ms.date: 11/13/2018
 keywords: powershell,cmdlet
 title: 从正在运行的进程解码 PowerShell 命令
 author: randomnote1
-ms.openlocfilehash: a0602070a8c5b60ce0bb09e227690f48d970a868
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a6c01d8edf67aba6c47350a97cc0ceec4801ad29
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086232"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470964"
 ---
 # <a name="decode-a-powershell-command-from-a-running-process"></a>从正在运行的进程解码 PowerShell 命令
 
@@ -33,7 +33,7 @@ powershell.exe -Command {
 
 ## <a name="view-the-process"></a>查看进程
 
-PowerShell 正在执行的命令正文存储在 [Win32_Process][] 类的 CommandLine 属性中。 如果命令是[编码命令][]，则 CommandLine 属性包含字符串“EncodedCommand”。 使用此信息，可以通过以下进程取消对编码命令的模糊处理。
+PowerShell 正在执行的命令正文存储在 [Win32_Process][] 类的 CommandLine  属性中。 如果命令为编码命令，**CommandLine** 属性将包含字符串“EncodedCommand”。 使用此信息，可以通过以下进程取消对编码命令的模糊处理。
 
 以管理员身份启动 PowerShell。 以管理员身份运行 PowerShell 至关重要，否则在查询正在运行的进程时不会返回任何结果。
 
@@ -107,4 +107,3 @@ DecodedCommand :
 [任务计划程序]: /windows/desktop/TaskSchd/task-scheduler-start-page
 [SQL Server 代理]: /sql/ssms/agent/sql-server-agent
 [Win32_Process]: /windows/desktop/CIMWin32Prov/win32-process
-[编码命令]: /powershell/scripting/core-powershell/console/powershell.exe-command-line-help#-encodedcommand-

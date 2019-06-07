@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
 title: 使用 PowerShell 类创建自定义类型
-ms.openlocfilehash: 0dd5bbaca50abb746e15a7bb64a706c7eceee905
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: c2c50fb65ce4931fcf6ae529b4146df391c831c4
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855532"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470931"
 ---
 # <a name="creating-custom-types-using-powershell-classes"></a>使用 PowerShell 类创建自定义类型
 
@@ -21,7 +21,7 @@ PowerShell 5.0 添加了使用类似于其他面向对象的编程语言的语�
 - 使用 PowerShell 语言调试类型
 - 使用正式的机制以及适当的级别生成和处理异常
 
-# <a name="declare-base-class"></a>声明基类
+## <a name="declare-base-class"></a>声明基类
 
 可以将 PowerShell 类声明为另一个 PowerShell 类的基类型。
 
@@ -54,7 +54,7 @@ $list.Add(100)
 $list[0] # return 100
 ```
 
-# <a name="call-base-class-constructor"></a>调用基类构造函数
+### <a name="call-base-class-constructor"></a>调用基类构造函数
 
 若要从子类调用基类构造函数，请使用关键字 **base**：
 
@@ -86,7 +86,7 @@ class C : B
 }
 ```
 
-# <a name="call-base-class-method"></a>调用基类方法
+### <a name="call-base-class-method"></a>调用基类方法
 
 你可以重写子类中的现有方法。 若要执行此操作，请使用相同的名称和签名声明方法：
 
@@ -135,7 +135,7 @@ $list.Add(100)
 $list[0] # return 200
 ```
 
-# <a name="declare-implemented-interface"></a>声明已实现的接口
+### <a name="declare-implemented-interface"></a>声明已实现的接口
 
 如果未指定任何基类型，则可以在基类型或冒号 (:) 之后立即声明已实现的接口。 使用逗号分隔所有类型名称。 这与 C# 语法类似。
 
@@ -157,11 +157,11 @@ class MyComparableBar : bar, system.IComparable
 }
 ```
 
-# <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 中的新语言功能
+## <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 中的新语言功能
 
 PowerShell 5.0 引入了以下 PowerShell 中的新语言元素：
 
-## <a name="class-keyword"></a>Class 关键字
+### <a name="class-keyword"></a>Class 关键字
 
 `class` 关键字定义了一个新类。 这是真正的 .NET Framework 类型。 Class 成员是公开的，但仅在模块作用域内公开。 不能引用类型名称作为字符串（例如，`New-Object` 不起作用），并且在此版本中，也不能在该类定义的脚本或模块文件外部使用类型文本（例如，`[MyClass]`）。
 
@@ -172,7 +172,7 @@ class MyClass
 }
 ```
 
-## <a name="enum-keyword-and-enumerations"></a>Enum 关键字和枚举
+### <a name="enum-keyword-and-enumerations"></a>Enum 关键字和枚举
 
 已添加对 `enum` 关键字的支持，它使用换行符作为分隔符。 当前，不能根据自身定义枚举器。 但是，可以根据一个枚举初始化另一个枚举，如下面的示例中所示。 此外，不能指定基类型；它始终是 `[int]`。
 
@@ -202,13 +202,13 @@ enum SomeEnum { Max = 42 }
 enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 ```
 
-## <a name="import-dscresource"></a>Import-DscResource
+### <a name="import-dscresource"></a>Import-DscResource
 
-`Import-DscResource` 现在是一个真正的动态关键字。 PowerShell 用于分析指定的模块的根模块，搜索包含 DscResource 属性的类。
+`Import-DscResource` 现在是一个真正的动态关键字。 PowerShell 用于分析指定的模块的根模块，搜索包含 DscResource  属性的类。
 
-## <a name="implementingassembly"></a>ImplementingAssembly
+### <a name="implementingassembly"></a>ImplementingAssembly
 
-已将新字段 ImplementingAssembly 添加到了 ModuleInfo。 如果脚本模块定义类，或者二进制模块的加载程序集，则会将此字段设置为为脚本模块创建的动态程序集。 当 ModuleType 为 Manifest 时，不会对该字段进行设置。
+已将新字段 ImplementingAssembly  添加到了 ModuleInfo  。 如果脚本模块定义类，或者二进制模块的加载程序集，则会将此字段设置为为脚本模块创建的动态程序集。 当 ModuleType  为 Manifest  时，不会对该字段进行设置。
 
 **ImplementingAssembly** 字段上的反射可发现模块中的资源。 这意味着你可以发现用 PowerShell 或其他托管语言编写的资源。
 
@@ -232,11 +232,11 @@ $s = "hello"
 
 所有成员都是公开的。
 
-## <a name="constructors-and-instantiation"></a>构造函数和实例化
+### <a name="constructors-and-instantiation"></a>构造函数和实例化
 
 PowerShell 类可以具有构造函数。 它们与其类同名。 这些构造函数可进行重载。 支持静态构造函数。 在运行构造函数中的任何代码之前，将初始化具有初始化表达式的属性。 静态属性在静态构造函数的主体之前进行初始化，而实例属性则在非静态构造函数的主体之前进行初始化。 目前，没有用于从另一个构造函数中调用某个构造函数的语法（例如，C\# 语法“: this()”）。 解决方法是定义一种常用的 `Init()` 方法。
 
-### <a name="creating-instances"></a>创建实例
+#### <a name="creating-instances"></a>创建实例
 
 > [!NOTE]
 > 在 PowerShell 5.0 中，`New-Object` 不适用于 PowerShell 中定义的类。 此外，类型名称只在词法上可见，意思是在定义类的模块或脚本外部不可见。 函数可以返回 PowerShell 中定义的类的实例。 这些实例在模块或脚本外部工作。
@@ -265,7 +265,7 @@ PowerShell 类可以具有构造函数。 它们与其类同名。 这些构造�
 [hashtable]::new()
 ```
 
-### <a name="discovering-constructors"></a>发现构造函数
+#### <a name="discovering-constructors"></a>发现构造函数
 
 你现在可以使用 `Get-Member` 查看构造函数重载，或如此示例所示：
 
@@ -280,9 +280,9 @@ hashtable new(int capacity, float loadFactor)
 
 `Get-Member -Static` 列出了构造函数，以便你可以像任何其他方法一样查看重载。 此语法的性能比 `New-Object` 快得多。
 
-## <a name="methods"></a>方法
+### <a name="methods"></a>方法
 
-PowerShell 类方法被实现为仅有一个结束块的 ScriptBlock。 所有方法都是公开的。 下面介绍了定义一个名为 **DoSomething** 的方法的示例。
+PowerShell 类方法被实现为仅有一个结束块的 ScriptBlock  。 所有方法都是公开的。 下面介绍了定义一个名为 **DoSomething** 的方法的示例。
 
 ```powershell
 class MyClass
@@ -304,29 +304,29 @@ $b.DoSomething(42)
 
 还支持重载方法。
 
-## <a name="properties"></a>“属性”
+### <a name="properties"></a>“属性”
 
 所有属性都是公开的。 属性要求使用换行符或分号。 如果未指定任何对象类型，则该属性类型是对象。
 
 使用验证或参数转换属性的属性（如 `[ValidateSet("aaa")]`）按预期方式运行。
 
-## <a name="hidden"></a>Hidden
+### <a name="hidden"></a>Hidden
 
 已添加新的关键字 `Hidden`。 `Hidden` 可应用于属性和方法（包括构造函数）。
 
-Hidden 成员是公开的，除非添加了 -Force 参数，否则不出现在 `Get-Member` 的输出中。 当选项卡完成或使用 Intellisense 时，除非完成发生在定义 Hidden 成员的类中，否则不包括 Hidden 成员。
+Hidden 成员是公开的，但不会出现在 `Get-Member` 的输出中，除非添加 `-Force` 参数。 当选项卡完成或使用 Intellisense 时，除非完成发生在定义 Hidden 成员的类中，否则不包括 Hidden 成员。
 
-已添加新的属性 System.Management.Automation.HiddenAttribute，以便 C\# 代码可以在 PowerShell 中具有相同的语义。
+已添加新的属性  System.Management.Automation.HiddenAttribute，以便 C\# 代码可以在 PowerShell 中具有相同的语义。
 
-## <a name="return-types"></a>返回类型
+### <a name="return-types"></a>返回类型
 
-返回类型是一种构造。 返回值将被转换为预期类型。 如果没有指定返回类型，则返回类型为 void。 没有对象流。 不能有意或无意将对象写入管道。
+返回类型是一种构造。 返回值将被转换为预期类型。 如果没有指定返回类型，则返回类型为 void  。 没有对象流。 对象无法写入到工作流中，不论是有意还是无意。
 
-## <a name="attributes"></a>属性
+### <a name="attributes"></a>属性
 
 添加了 **DscResource** 和 **DscProperty** 这两个新属性。
 
-## <a name="lexical-scoping-of-variables"></a>变量的词法作用域
+### <a name="lexical-scoping-of-variables"></a>变量的词法作用域
 
 下例介绍了词法作用域在此版本中的工作原理。
 

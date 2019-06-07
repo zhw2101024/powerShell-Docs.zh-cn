@@ -1,17 +1,24 @@
 ---
-ms.openlocfilehash: 6e36e6599e36218ce2a925dceda7aa0ee6811057
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 84b29953f09eb62eb30f52d84b087eb4f1f90eed
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068821"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470646"
 ---
 # <a name="microsoft-open-source-code-of-conduct"></a>Microsoft 开放源代码行为准则
 
 此项目采用了 [Microsoft 开放源代码行为准则](https://opensource.microsoft.com/codeofconduct/)。
 有关详细信息，请参阅[行为准则常见问题](https://opensource.microsoft.com/codeofconduct/faq/)，或如果有任何其他问题或意见，请与 [opencode@microsoft.com ](mailto:opencode@microsoft.com) 联系。
 
-[![生成状态](https://ci.appveyor.com/api/projects/status/onshefxnc4g4pv87/branch/staging?svg=true)](https://ci.appveyor.com/project/PowerShell/powershell-docs/branch/staging)
+[live-badge]: https://powershell.visualstudio.com/PowerShell-Docs/_apis/build/status/PowerShell-Docs-CI?branchName=live
+[staging-badge]: https://powershell.visualstudio.com/PowerShell-Docs/_apis/build/status/PowerShell-Docs-CI?branchName=staging
+
+## <a name="build-status"></a>生成状态
+
+| 活动分支 | 临时分支 |
+|:------------|:---------------|
+| [![live-badge][]][live-badge] | [![staging-badge][]][staging-badge]
 
 ## <a name="powershell-documentation"></a>PowerShell 文档
 
@@ -32,7 +39,7 @@ ms.locfileid: "62068821"
 
 ## <a name="contributing"></a>贡献文档
 
-通过[拉取请求](https://help.github.com/articles/using-pull-requests/)到临时分支，我们正积极将贡献文档并入此存储库。
+通过[拉取请求](https://help.github.com/articles/using-pull-requests/)到临时  分支，我们正积极将贡献文档并入此存储库。
 请注意在提交拉取请求前，必须签订[文档贡献许可协议](https://cla.microsoft.com/)，以确保社区成员可免费使用你的文档。
 
 若要详细了解如何参与，请阅读[参与者指南](CONTRIBUTING.md)。
