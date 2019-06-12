@@ -2,12 +2,12 @@
 title: 在 Windows 上安装 PowerShell Core
 description: 介绍如何在 Windows 上安装 PowerShell Core
 ms.date: 08/06/2018
-ms.openlocfilehash: e716e24ba47c0c109ab302b4b1a9254d7110ddef
-ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
+ms.openlocfilehash: 3f21761037311891162f1083234edb0aca80d28b
+ms.sourcegitcommit: 4ec9e10647b752cc62b1eabb897ada3dc03c93eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66471002"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66830227"
 ---
 # <a name="installing-powershell-core-on-windows"></a>在 Windows 上安装 PowerShell Core
 
@@ -22,7 +22,7 @@ ms.locfileid: "66471002"
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />安装 MSI 包
 
-若要在 Windows 客户端或 Windows Server（适用于 Windows 7 SP1、Server 2008 R2 以及更高版本）上安装 PowerShell，请从 GitHub [版本][版本] 页面下载 MSI 包。 向下滚动到要安装的版本的“资产”  部分。 “资产”部分可能处于折叠状态，因此可能需要单击使其展开。
+若要在 Windows 客户端或 Windows Server（适用于 Windows 7 SP1、Server 2008 R2 以及更高版本）上安装 PowerShell，请从 GitHub [版本][releases]页面下载 MSI 包。 向下滚动到要安装的版本的“资产”  部分。 “资产”部分可能处于折叠状态，因此可能需要单击使其展开。
 
 MSI 文件类似于 `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
@@ -150,11 +150,12 @@ Nano Server 是“无外设”OS。 可以使用两种不同的方法部署核�
 
 PowerShell Core 同时支持采用 WSMan 和 SSH 的 PowerShell 远程处理协议 (PSRP)。 有关更多信息，请参阅：
 
-- [SSH Remoting in PowerShell Core][ssh-remoting]
-- [PowerShell Core 中的 WSMan 远程处理][wsman-remoting]
+- [在 PowerShell Core 中进行 SSH 远程处理][ssh-remoting]
+- [在 PowerShell Core 中进行 WSMan 远程处理][wsman-remoting]
 
 <!-- [download-center]: TODO -->
-[版本]: https://github.com/PowerShell/PowerShell/releases 
-[ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md 
-[wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md 
+
+[releases]: https://github.com/PowerShell/PowerShell/releases
+[ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
+[wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
