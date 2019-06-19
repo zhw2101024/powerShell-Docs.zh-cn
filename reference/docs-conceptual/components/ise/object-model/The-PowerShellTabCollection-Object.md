@@ -2,38 +2,37 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: PowerShellTabCollection 对象
-ms.assetid: 81f4bf4a-83bf-415e-8378-1703792fbb58
-ms.openlocfilehash: d9088b26de35360b8258d3f15924b3010a986d15
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5a1318534ddce19c2f5faa0d2013e2b38d8b79e5
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086606"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030486"
 ---
-# <a name="the-powershelltabcollection-object"></a><span data-ttu-id="987e5-103">PowerShellTabCollection 对象</span><span class="sxs-lookup"><span data-stu-id="987e5-103">The PowerShellTabCollection Object</span></span>
+# <a name="the-powershelltabcollection-object"></a><span data-ttu-id="e018a-103">PowerShellTabCollection 对象</span><span class="sxs-lookup"><span data-stu-id="e018a-103">The PowerShellTabCollection Object</span></span>
 
-<span data-ttu-id="987e5-104">**PowerShellTab** 集合对象是 **PowerShellTab** 对象的集合。</span><span class="sxs-lookup"><span data-stu-id="987e5-104">The **PowerShellTab** collection object is a collection of **PowerShellTab** objects.</span></span> <span data-ttu-id="987e5-105">每个 **PowerShellTab** 对象充当一个单独的运行时环境。</span><span class="sxs-lookup"><span data-stu-id="987e5-105">Each **PowerShellTab** object functions as a separate runtime environment.</span></span> <span data-ttu-id="987e5-106">它是 Microsoft.PowerShell.Host.ISE.PowerShellTabs 类的实例。</span><span class="sxs-lookup"><span data-stu-id="987e5-106">It is an instance of Microsoft.PowerShell.Host.ISE.PowerShellTabs class.</span></span> <span data-ttu-id="987e5-107">例如 **$psISE.PowerShellTabs** 对象。</span><span class="sxs-lookup"><span data-stu-id="987e5-107">An example is the **$psISE.PowerShellTabs** object.</span></span>
+<span data-ttu-id="e018a-104">**PowerShellTab** 集合对象是 **PowerShellTab** 对象的集合。</span><span class="sxs-lookup"><span data-stu-id="e018a-104">The **PowerShellTab** collection object is a collection of **PowerShellTab** objects.</span></span> <span data-ttu-id="e018a-105">每个 **PowerShellTab** 对象充当一个单独的运行时环境。</span><span class="sxs-lookup"><span data-stu-id="e018a-105">Each **PowerShellTab** object functions as a separate runtime environment.</span></span> <span data-ttu-id="e018a-106">它是 Microsoft.PowerShell.Host.ISE.PowerShellTabs 类的实例。</span><span class="sxs-lookup"><span data-stu-id="e018a-106">It is an instance of Microsoft.PowerShell.Host.ISE.PowerShellTabs class.</span></span> <span data-ttu-id="e018a-107">例如 **$psISE.PowerShellTabs** 对象。</span><span class="sxs-lookup"><span data-stu-id="e018a-107">An example is the **$psISE.PowerShellTabs** object.</span></span>
 
-## <a name="methods"></a><span data-ttu-id="987e5-108">方法</span><span class="sxs-lookup"><span data-stu-id="987e5-108">Methods</span></span>
+## <a name="methods"></a><span data-ttu-id="e018a-108">方法</span><span class="sxs-lookup"><span data-stu-id="e018a-108">Methods</span></span>
 
-### <a name="add"></a><span data-ttu-id="987e5-109">添加\(\)</span><span class="sxs-lookup"><span data-stu-id="987e5-109">Add\(\)</span></span>
+### <a name="add"></a><span data-ttu-id="e018a-109">添加\(\)</span><span class="sxs-lookup"><span data-stu-id="e018a-109">Add\(\)</span></span>
 
-<span data-ttu-id="987e5-110">在 Windows PowerShell ISE 2.0 和更高版本中受支持。</span><span class="sxs-lookup"><span data-stu-id="987e5-110">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="e018a-110">在 Windows PowerShell ISE 2.0 和更高版本中受支持。</span><span class="sxs-lookup"><span data-stu-id="e018a-110">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="987e5-111">向集合中添加一个新的 PowerShell 选项卡。</span><span class="sxs-lookup"><span data-stu-id="987e5-111">Adds a new PowerShell tab to the collection.</span></span> <span data-ttu-id="987e5-112">它将返回新添加的选项卡。</span><span class="sxs-lookup"><span data-stu-id="987e5-112">It returns the newly added tab.</span></span>
+<span data-ttu-id="e018a-111">向集合中添加一个新的 PowerShell 选项卡。</span><span class="sxs-lookup"><span data-stu-id="e018a-111">Adds a new PowerShell tab to the collection.</span></span> <span data-ttu-id="e018a-112">它将返回新添加的选项卡。</span><span class="sxs-lookup"><span data-stu-id="e018a-112">It returns the newly added tab.</span></span>
 
 ```powershell
 $newTab = $psISE.PowerShellTabs.Add()
 $newTab.DisplayName = 'Brand New Tab'
 ```
 
-### <a name="removemicrosoftpowershellhostisepowershelltab-pstab"></a><span data-ttu-id="987e5-113">Remove\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)</span><span class="sxs-lookup"><span data-stu-id="987e5-113">Remove\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)</span></span>
+### <a name="removemicrosoftpowershellhostisepowershelltab-pstab"></a><span data-ttu-id="e018a-113">Remove\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)</span><span class="sxs-lookup"><span data-stu-id="e018a-113">Remove\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)</span></span>
 
-<span data-ttu-id="987e5-114">在 Windows PowerShell ISE 2.0 和更高版本中受支持。</span><span class="sxs-lookup"><span data-stu-id="987e5-114">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="e018a-114">在 Windows PowerShell ISE 2.0 和更高版本中受支持。</span><span class="sxs-lookup"><span data-stu-id="e018a-114">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="987e5-115">删除由 **psTab** 参数指定的选项卡。</span><span class="sxs-lookup"><span data-stu-id="987e5-115">Removes the tab that is specified by the **psTab** parameter.</span></span>
+<span data-ttu-id="e018a-115">删除由 **psTab** 参数指定的选项卡。</span><span class="sxs-lookup"><span data-stu-id="e018a-115">Removes the tab that is specified by the **psTab** parameter.</span></span>
 
-<span data-ttu-id="987e5-116">**psTab** 要删除的 PowerShell 选项卡。</span><span class="sxs-lookup"><span data-stu-id="987e5-116">**psTab** The PowerShell tab to remove.</span></span>
+<span data-ttu-id="e018a-116">**psTab** 要删除的 PowerShell 选项卡。</span><span class="sxs-lookup"><span data-stu-id="e018a-116">**psTab** The PowerShell tab to remove.</span></span>
 
 ```powershell
 $newTab = $psISE.PowerShellTabs.Add()
@@ -43,13 +42,13 @@ sleep 5
 $psISE.PowerShellTabs.Remove($newTab)
 ```
 
-### <a name="setselectedpowershelltabmicrosoftpowershellhostisepowershelltab-pstab"></a><span data-ttu-id="987e5-117">SetSelectedPowerShellTab\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)</span><span class="sxs-lookup"><span data-stu-id="987e5-117">SetSelectedPowerShellTab\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)</span></span>
+### <a name="setselectedpowershelltabmicrosoftpowershellhostisepowershelltab-pstab"></a><span data-ttu-id="e018a-117">SetSelectedPowerShellTab\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)</span><span class="sxs-lookup"><span data-stu-id="e018a-117">SetSelectedPowerShellTab\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)</span></span>
 
-<span data-ttu-id="987e5-118">在 Windows PowerShell ISE 2.0 和更高版本中受支持。</span><span class="sxs-lookup"><span data-stu-id="987e5-118">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="e018a-118">在 Windows PowerShell ISE 2.0 和更高版本中受支持。</span><span class="sxs-lookup"><span data-stu-id="e018a-118">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="987e5-119">选择由 **psTab** 参数指定的 PowerShell 选项卡，以使它当前是处于活动状态的 PowerShell 选项卡。</span><span class="sxs-lookup"><span data-stu-id="987e5-119">Selects the PowerShell tab that is specified by the **psTab** parameter to make it the currently active PowerShell tab.</span></span>
+<span data-ttu-id="e018a-119">选择由 **psTab** 参数指定的 PowerShell 选项卡，以使它当前是处于活动状态的 PowerShell 选项卡。</span><span class="sxs-lookup"><span data-stu-id="e018a-119">Selects the PowerShell tab that is specified by the **psTab** parameter to make it the currently active PowerShell tab.</span></span>
 
-<span data-ttu-id="987e5-120">**psTab** 要选择的 PowerShell 选项卡。</span><span class="sxs-lookup"><span data-stu-id="987e5-120">**psTab** The PowerShell tab to select.</span></span>
+<span data-ttu-id="e018a-120">**psTab** 要选择的 PowerShell 选项卡。</span><span class="sxs-lookup"><span data-stu-id="e018a-120">**psTab** The PowerShell tab to select.</span></span>
 
 ```powershell
 # Save the current tab in a variable and rename it
@@ -62,8 +61,8 @@ $newTab.DisplayName = 'Brand New Tab'
 $psISE.PowerShellTabs.SelectedPowerShellTab = $oldTab
 ```
 
-## <a name="see-also"></a><span data-ttu-id="987e5-121">另请参阅</span><span class="sxs-lookup"><span data-stu-id="987e5-121">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e018a-121">另请参阅</span><span class="sxs-lookup"><span data-stu-id="e018a-121">See Also</span></span>
 
-- [<span data-ttu-id="987e5-122">PowerShellTab 对象</span><span class="sxs-lookup"><span data-stu-id="987e5-122">The PowerShellTab Object</span></span>](The-PowerShellTab-Object.md)
-- [<span data-ttu-id="987e5-123">Windows PowerShell ISE 脚本对象模型的用途</span><span class="sxs-lookup"><span data-stu-id="987e5-123">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [<span data-ttu-id="987e5-124">ISE 对象模型层次结构</span><span class="sxs-lookup"><span data-stu-id="987e5-124">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)
+- [<span data-ttu-id="e018a-122">PowerShellTab 对象</span><span class="sxs-lookup"><span data-stu-id="e018a-122">The PowerShellTab Object</span></span>](The-PowerShellTab-Object.md)
+- [<span data-ttu-id="e018a-123">Windows PowerShell ISE 脚本对象模型的用途</span><span class="sxs-lookup"><span data-stu-id="e018a-123">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [<span data-ttu-id="e018a-124">ISE 对象模型层次结构</span><span class="sxs-lookup"><span data-stu-id="e018a-124">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)
