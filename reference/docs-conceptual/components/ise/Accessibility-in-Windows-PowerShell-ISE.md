@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell ISE 中的辅助功能
-ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 78a001dbe43a0b005d10a817e05e4cc7a72f5bd0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 416b18dd492ca04d98b5adf9f7f0f88ea495740a
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058448"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030635"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE 中的辅助功能
 
@@ -52,9 +51,9 @@ Windows PowerShell ISE 支持高对比度模式。 为方便有视觉障碍的�
 
 - 若要最大化脚本窗格，请按 **CTRL+3**，或单击工具栏上的“**显示最大化脚本窗格**”图标，或单击“**视图**”菜单上的“**显示最大化脚本窗格**”。
 
-- 若要最大化控制台窗格并隐藏脚本窗格，请在选项卡行的最右侧边缘上单击“隐藏脚本窗格”图标，在“视图”菜单上单击以取消选择“显示脚本窗格”菜单选项。
+- 若要最大化控制台窗格并隐藏脚本窗格，请在选项卡行的最右侧边缘上单击“隐藏脚本窗格”图标，在“视图”菜单上单击以取消选择“显示脚本窗格”菜单选项。   
 
-- 若要在控制台窗格最大化时显示脚本窗格，请在选项卡行的最右侧边缘上单击“隐藏脚本窗格”图标，或在“视图”菜单上单击以选择“显示脚本窗格”菜单选项。
+- 若要在控制台窗格最大化时显示脚本窗格，请在选项卡行的最右侧边缘上单击“隐藏脚本窗格”图标，或在“视图”菜单上单击以选择“显示脚本窗格”菜单选项。   
 
 ## <a name="keyboard-shortcuts-for-editing-text"></a>编辑文本的键盘快捷方式
 
@@ -131,7 +130,7 @@ Windows PowerShell ISE 支持高对比度模式。 为方便有视觉障碍的�
 |**步入**|S|控制台窗格，调试脚本时|
 |**步越**|V|控制台窗格，调试脚本时|
 |**步出**|O|控制台窗格，调试脚本时|
-|重复上一命令（用于步入或步越）|Enter|控制台窗格，调试脚本时|
+|重复上一命令（用于步入或步越） |Enter|控制台窗格，调试脚本时|
 |**显示调用堆栈**|K|控制台窗格，调试脚本时|
 |**停止调试**|Q|控制台窗格，调试脚本时|
 |**列出脚本**|L|控制台窗格，调试脚本时|

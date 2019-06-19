@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 管理当前位置
-ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
-ms.openlocfilehash: f5e0653b2c3bbc9d2526c7a1c2ff88a8a6641695
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 42ab56759dec882d140f813c8614e578957722b3
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086249"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030196"
 ---
 # <a name="managing-current-location"></a>管理当前位置
 

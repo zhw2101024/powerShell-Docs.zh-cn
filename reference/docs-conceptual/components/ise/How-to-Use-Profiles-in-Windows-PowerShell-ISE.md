@@ -2,17 +2,16 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 如何在 Windows PowerShell ISE 中使用配置文件
-ms.assetid: 0219626a-6da5-4acc-b630-d058e8b29cc6
-ms.openlocfilehash: b319aa089c2a4a7008acd9850f15342dac70aee2
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 28354f39aaaa577cec69c1b3f62cfe16ef091218
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62057509"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030607"
 ---
 # <a name="how-to-use-profiles-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中使用配置文件
 
-本主题说明如何使用 Windows PowerShell® 集成脚本环境 (ISE) 中的配置文件。 建议在执行此部分中的任务前，先查看 [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles)，或在控制台窗格中键入“`Get-Help about_Profiles`”并按 Enter。
+本主题说明如何使用 Windows PowerShell® 集成脚本环境 (ISE) 中的配置文件。 建议在执行此部分中的任务前，先查看 [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles)，或在控制台窗格中键入“`Get-Help about_Profiles`”并按 Enter  。
 
 配置文件是当你启动新的会话时自动运行的 Windows PowerShell ISE 脚本。  你可以为 Windows PowerShell ISE 创建一个或多个 Windows PowerShell ISE 配置文件，并使用它们向 Windows PowerShell 或 Windows PowerShell ISE 环境添加配置，从而通过提供你所需要的变量、别名、函数、颜色和字体首选项做好准备，以供你使用。 配置文件会对你所启动的每个 Windows PowerShell ISE 会话产生影响。
 
@@ -78,7 +77,7 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
 
    - 若要将字体大小更改为 20，请在配置文件中键入：`$psISE.Options.FontSize =20`
 
-3. 若要保存你的配置文件，请在“文件”菜单上单击“保存”。 下次打开 Windows PowerShell ISE 时，会应用你的自定义项。
+3. 若要保存你的配置文件，请在“文件”菜单上单击“保存”。   下次打开 Windows PowerShell ISE 时，会应用你的自定义项。
 
 ## <a name="see-also"></a>另请参阅
 

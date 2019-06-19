@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用 Tab 键扩展
-ms.assetid: c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
-ms.openlocfilehash: 437c1e3c04352f2c5c3aba4c67b542821975f739
-ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
+ms.openlocfilehash: d96cbf848f464aff29a7bed9b70d0b6a000aa808
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65229429"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67031006"
 ---
 # <a name="using-tab-expansion"></a>使用 Tab 键扩展
 

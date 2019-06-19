@@ -2,17 +2,16 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: ISEMenuItemCollection 对象
-ms.assetid: 0c0f5484-3320-408e-8534-5bd1c8e48512
-ms.openlocfilehash: 7e5030416df394aaa9e9d3f63978e204a7faabf1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: b3795af1a6ed61ed6e371e5fc20cc4e95f643fd4
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086691"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030540"
 ---
 # <a name="the-isemenuitemcollection-object"></a>ISEMenuItemCollection 对象
 
-**ISEMenuItemCollection** 对象是 **ISEMenuItem** 对象的集合。 它是 Microsoft.PowerShell.Host.ISE.ISEOptions 类的实例。 一个示例是用于在 Windows PowerShell® 集成脚本环境 (ISE) 中自定义“加载项”菜单的 **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** 对象。
+**ISEMenuItemCollection** 对象是 **ISEMenuItem** 对象的集合。 它是 Microsoft.PowerShell.Host.ISE.ISEOptions 类的实例。 一个示例是用于在 Windows PowerShell® 集成脚本环境 (ISE) 中自定义“加载项”  菜单的 **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** 对象。
 
 ## <a name="method"></a>方法
 
@@ -24,7 +23,7 @@ ms.locfileid: "62086691"
 
 **DisplayName** 要添加的菜单显示名称。
 
-**Action** 用于指定与此菜单项关联的操作的 System.Management.Automation.ScriptBlock 对象。
+**Action** 用于指定与此菜单项关联的操作的 System.Management.Automation.ScriptBlock 对象  。
 
 **Shortcut** 此操作的键盘快捷方式。
 

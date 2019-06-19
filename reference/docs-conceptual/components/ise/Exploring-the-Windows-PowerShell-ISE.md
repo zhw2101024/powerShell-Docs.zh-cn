@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 探究 Windows PowerShell ISE
-ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
-ms.openlocfilehash: 059651f159fb2636a93167709134788e90d062b8
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8c47e236e2e345a887fc3af281e429f440e176ff
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086895"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67031026"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>探究 Windows PowerShell ISE
 
@@ -80,7 +79,7 @@ Windows PowerShell 选项卡是 Windows PowerShell 脚本可在其中运行的�
 
 ## <a name="help"></a>帮助
 
-可在 Web 上的 TechNet 库中找到有关 Windows PowerShell ISE 的帮助。 可以通过单击“帮助”菜单上的“Windows PowerShell ISE 帮助”打开帮助，或通过在任意位置（光标在脚本窗格或控制台窗格中的 cmdlet 名称上时除外）按 F1 键打开帮助。 从“**帮助**”菜单还可以运行 Update-Help cmdlet 和显示命令窗口，该命令窗口可显示某个 cmdlet 的所有参数并允许你在易于使用的窗体中填写参数，从而帮助你构造命令。
+可在 Web 上的 TechNet 库中找到有关 Windows PowerShell ISE 的帮助。 可以通过单击“帮助”菜单上的“Windows PowerShell ISE 帮助”打开帮助，或通过在任意位置（光标在脚本窗格或控制台窗格中的 cmdlet 名称上时除外）按 F1 键打开帮助。   从“**帮助**”菜单还可以运行 Update-Help cmdlet 和显示命令窗口，该命令窗口可显示某个 cmdlet 的所有参数并允许你在易于使用的窗体中填写参数，从而帮助你构造命令。
 
 ## <a name="see-also"></a>另请参阅
 

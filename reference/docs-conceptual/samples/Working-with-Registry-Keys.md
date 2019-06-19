@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用注册表项
-ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
-ms.openlocfilehash: e7b497ec2fccf9ba3934439a9c1e9be3cf70a705
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 18daeaea2ee8917a709fef421d2b316f46bf7f4c
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058856"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030659"
 ---
 # <a name="working-with-registry-keys"></a>使用注册表项
 
@@ -36,7 +35,7 @@ SKC  VC Name                           Property
 
 这些是注册表编辑器 (Regedit.exe) 中 HKEY_CURRENT_USER 下可见的顶级项。
 
-还可以通过指定注册表提供程序的名称（后跟“**::**”）来指定此注册表路径。 注册表提供程序的全名是 **Microsoft.PowerShell.Core\\Registry**，但此名称可以缩短至只有 **Registry**。 任一以下命令都可直接列出 HKCU 下面的内容：
+还可以通过指定注册表提供程序的名称（后跟“ **::** ”）来指定此注册表路径。 注册表提供程序的全名是 **Microsoft.PowerShell.Core\\Registry**，但此名称可以缩短至只有 **Registry**。 任一以下命令都可直接列出 HKCU 下面的内容：
 
 ```powershell
 Get-ChildItem -Path Registry::HKEY_CURRENT_USER
@@ -52,7 +51,7 @@ Get-ChildItem HKCU:
 Get-ChildItem -Path hkcu:\ -Recurse
 ```
 
-**Get-ChildItem** 可以通过其 **Path**、**Filter**、**Include** 和 **Exclude** 参数执行复杂的筛选功能，但这些参数通常只基于名称。 还可以通过使用 Where-Object cmdlet 基于项的其他属性执行复杂的筛选。 下面的命令用于查找不止只有一个子项并且刚好具有 4 个值的 HKCU:\\Software 中的所有项：
+**Get-ChildItem** 可以通过其 **Path**、**Filter**、**Include** 和 **Exclude** 参数执行复杂的筛选功能，但这些参数通常只基于名称。 还可以通过使用 Where-Object cmdlet 基于项的其他属性执行复杂的筛选  。 下面的命令用于查找不止只有一个子项并且刚好具有 4 个值的 HKCU:\\Software 中的所有项：
 
 ```powershell
 Get-ChildItem -Path HKCU:\Software -Recurse | Where-Object -FilterScript {($_.SubKeyCount -le 1) -and ($_.ValueCount -eq 4) }

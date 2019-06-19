@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 启动 Windows PowerShell
-ms.assetid: 59b649a2-c90c-4cf4-bf95-a740c59148e7
-ms.openlocfilehash: 9184e8b0e508610e7f4775f1032f3a69c93bb8c1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d2cb77027f404c5b008a902c5147d018dd741a67
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058346"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030450"
 ---
 # <a name="starting-windows-powershell"></a>启动 Windows PowerShell
 PowerShell 是一个脚本引擎 dll，嵌入到多个主机中。  启动的最常见主机是交互式命令行 PowerShell.exe 和交互式脚本环境 PowerShell_ISE.exe。
@@ -23,8 +22,8 @@ PowerShell 是一个脚本引擎 dll，嵌入到多个主机中。  启动的最
 
 #### <a name="from-the-start-menu"></a>在“开始”菜单中
 
-- 单击“开始”，键入 **PowerShell**，然后单击“Windows PowerShell”。
-- 在“开始”菜单中，依次单击“开始”、“所有程序”、“附件”、“Windows PowerShell”文件夹，然后单击“Windows PowerShell”。
+- 单击“开始”  ，键入 **PowerShell**，然后单击“Windows PowerShell”  。
+- 在“开始”  菜单中，依次单击“开始”  、“所有程序”  、“附件”  、“Windows PowerShell”  文件夹，然后单击“Windows PowerShell”  。
 
 #### <a name="at-the-command-prompt"></a>在命令提示符处
 
@@ -46,8 +45,8 @@ PowerShell
 
 #### <a name="from-the-start-menu"></a>在“开始”菜单中
 
-- 单击“开始”，键入 **ISE**，然后单击“Windows PowerShell ISE”。
-- 在“开始”菜单中，依次单击“开始”、“所有程序”、“附件”、“Windows PowerShell”文件夹，然后单击“Windows PowerShell ISE”。
+- 单击“开始”  ，键入 **ISE**，然后单击“Windows PowerShell ISE”  。
+- 在“开始”  菜单中，依次单击“开始”  、“所有程序”  、“附件”  、“Windows PowerShell”  文件夹，然后单击“Windows PowerShell ISE”  。
 
 #### <a name="at-the-command-prompt"></a>在命令提示符处
 
@@ -78,42 +77,42 @@ ISE
 #### <a name="to-enable-windows-powershell-integrated-scripting-environment-ise"></a>启用 Windows PowerShell 集成脚本环境 (ISE)
 
 1. 启动“服务器管理器”。
-2. 单击“功能”，然后单击“添加功能”。
+2. 单击“功能”  ，然后单击“添加功能”  。
 3. 在“选择功能”中，单击“Windows PowerShell 集成脚本环境 (ISE)”
 
 ## <a name="starting-the-32-bit-version-of-windows-powershell"></a>启动 32 位版本的 Windows PowerShell
 
-在 64 位计算机 (**Windows PowerShell (x86)**) 上安装 Windows PowerShell 时，除 64 位版之外，还将安装 32 位版本的 Windows PowerShell。 运行 Windows PowerShell 时，默认运行 64 位版。
+在 64 位计算机 (**Windows PowerShell (x86)** ) 上安装 Windows PowerShell 时，除 64 位版之外，还将安装 32 位版本的 Windows PowerShell。 运行 Windows PowerShell 时，默认运行 64 位版。
 
-但是，有时可能需要运行 **Windows PowerShell (x86)**，例如使用需要 32 位版的模块时，或者远程连接到 32 位计算机时。
+但是，有时可能需要运行 **Windows PowerShell (x86)** ，例如使用需要 32 位版的模块时，或者远程连接到 32 位计算机时。
 
 若要启动 32 位版本的 Windows PowerShell，请使用以下任何过程。
 
 #### <a name="in-windows-server-2012-r2"></a>在 Windows Server® 2012 R2 中
 
-- 在“开始”屏幕上，键入 **Windows PowerShell (x86)**。 单击“Windows PowerShell x86”磁贴。
-- 在“服务器管理器”中，从“工具”菜单中选择“Windows PowerShell (x86)”。
-- 在桌面上，将光标移动到右上角，单击“搜索”，键入**PowerShell x86**，然后单击“Windows PowerShell (x86)”。
+- 在“开始”  屏幕上，键入 **Windows PowerShell (x86)** 。 单击“Windows PowerShell x86”  磁贴。
+- 在“服务器管理器”  中，从“工具”  菜单中选择“Windows PowerShell (x86)”  。
+- 在桌面上，将光标移动到右上角，单击“搜索”  ，键入**PowerShell x86**，然后单击“Windows PowerShell (x86)”  。
 - 通过命令行，输入：`%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
 #### <a name="in-windows-server-2012"></a>在 Windows Server® 2012 中
 
-- 在“开始”屏幕上，键入 **PowerShell**，然后单击“Windows PowerShell (x86)”。
-- 在“服务器管理器”中，从“工具”菜单中选择“Windows PowerShell (x86)”。
-- 在桌面上，将光标移动到右上角，单击“搜索”，键入 **PowerShell**，然后单击“Windows PowerShell (x86)”。
+- 在“开始”  屏幕上，键入 **PowerShell**，然后单击“Windows PowerShell (x86)”  。
+- 在“服务器管理器”  中，从“工具”  菜单中选择“Windows PowerShell (x86)”  。
+- 在桌面上，将光标移动到右上角，单击“搜索”  ，键入 **PowerShell**，然后单击“Windows PowerShell (x86)”  。
 - 通过命令行，输入：`%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
 #### <a name="in-windows-81"></a>在 Windows® 8.1 中
 
-- 在“开始”屏幕上，键入 **Windows PowerShell (x86)**。 单击“Windows PowerShell x86”磁贴。
-- 如果你正在运行 Windows 8.1 的[远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkID=304145)，则也可从“服务器管理器工具”菜单中打开 Windows PowerShell x86。
-  选择“Windows PowerShell (x86)”。
-- 在桌面上，将光标移动到右上角，单击“搜索”，键入**PowerShell x86**，然后单击“Windows PowerShell (x86)”。
+- 在“开始”  屏幕上，键入 **Windows PowerShell (x86)** 。 单击“Windows PowerShell x86”  磁贴。
+- 如果你正在运行 Windows 8.1 的[远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkID=304145)，则也可从“服务器管理器工具”  菜单中打开 Windows PowerShell x86。
+  选择“Windows PowerShell (x86)”  。
+- 在桌面上，将光标移动到右上角，单击“搜索”  ，键入**PowerShell x86**，然后单击“Windows PowerShell (x86)”  。
 - 通过命令行，输入：`%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
 #### <a name="in-windows-8"></a>在 Windows® 8 中
 
-- 在“开始”屏幕上，将光标移动到右上角，依次单击“设置”、“磁贴”，然后将“显示管理工具”滑块移动到“是”。 然后，键入 **PowerShell**，单击“Windows PowerShell (x86)”。
-- 如果你正在运行 Windows 8 的[远程服务器管理工具](https://www.microsoft.com/download/details.aspx?id=28972)，则也可从“服务器管理器工具”菜单中打开 Windows PowerShell x86。 选择“Windows PowerShell (x86)”。
-- 在“开始”屏幕或桌面上，键入 **PowerShell (x86)**，然后单击“Windows PowerShell (x86)”。
+- 在“开始”  屏幕上，将光标移动到右上角，依次单击“设置”  、“磁贴”  ，然后将“显示管理工具”  滑块移动到“是”。 然后，键入 **PowerShell**，单击“Windows PowerShell (x86)”  。
+- 如果你正在运行 Windows 8 的[远程服务器管理工具](https://www.microsoft.com/download/details.aspx?id=28972)，则也可从“服务器管理器工具”  菜单中打开 Windows PowerShell x86。 选择“Windows PowerShell (x86)”  。
+- 在“开始”  屏幕或桌面上，键入 **PowerShell (x86)** ，然后单击“Windows PowerShell (x86)”  。
 - 通过命令行，输入：`%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
