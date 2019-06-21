@@ -11,12 +11,12 @@ helpviewer_keywords:
 - parameters [PowerShell Programmer's Guide], pipeline input
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
-ms.openlocfilehash: def0ac2ff98575beb29c3c2a7d91a5a5c53e648e
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 34643d20c16f8cc45e7fb20dc2a87d78b18bbf10
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854985"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67298631"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>添加用于处理管道输入的参数
 
@@ -77,7 +77,7 @@ End Property
 
 如果你的 cmdlet 是处理管道输入，则需要重写相应的输入处理方法。 中引入的基本输入的处理方法[创建第一个 Cmdlet](./creating-a-cmdlet-without-parameters.md)。
 
-此 Get-proc cmdlet 覆盖[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法以处理`Name`参数输入提供的用户或脚本。 如果未提供名称，此方法将获取每个请求的进程名称或所有进程的进程。 请注意，在[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)，在调用[System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29)是输出机制，用于将输出发送到管道对象。 此调用，第二个参数`enumerateCollection`，设置为`true`告诉 Windows PowerShell 运行时，若要枚举的进程对象的数组和一个进程一次写入命令行。
+此 Get-proc cmdlet 覆盖[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法以处理`Name`参数输入提供的用户或脚本。 如果未提供名称，此方法将获取每个请求的进程名称或所有进程的进程。 请注意，在[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)，在调用[WriteObject(System.Object,System.Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)是用于发送到的输出对象的输出机制管道。 此调用，第二个参数`enumerateCollection`，设置为`true`告诉 Windows PowerShell 运行时，若要枚举的进程对象的数组和一个进程一次写入命令行。
 
 ```csharp
 protected override void ProcessRecord()
@@ -130,11 +130,11 @@ End Sub 'ProcessRecord
 
 ## <a name="defining-object-types-and-formatting"></a>定义对象类型和格式设置
 
-Windows PowerShell cmdlet 使用.Net 对象之间传递信息。 因此，一个 cmdlet 可能需要定义其自己的类型，或者该 cmdlet 可能需要扩展现有类型提供的另一个 cmdlet。 有关定义新类型或扩展现有类型的详细信息，请参阅[扩展对象类型和格式设置](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)。
+Windows PowerShell cmdlet 使用.Net 对象之间传递信息。 因此，一个 cmdlet 可能需要定义其自己的类型，或者该 cmdlet 可能需要扩展现有类型提供的另一个 cmdlet。 有关定义新类型或扩展现有类型的详细信息，请参阅[扩展对象类型和格式设置](/previous-versions//ms714665(v=vs.85))。
 
 ## <a name="building-the-cmdlet"></a>生成该 Cmdlet
 
-实现必须将它注册使用通过 Windows PowerShell 的 Windows PowerShell cmdlet 后管理单元。 有关注册 cmdlet 的详细信息，请参阅[如何注册 Cmdlet、 提供商和主机应用程序](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
+实现必须将它注册使用通过 Windows PowerShell 的 Windows PowerShell cmdlet 后管理单元。 有关注册 cmdlet 的详细信息，请参阅[如何注册 Cmdlet、 提供商和主机应用程序](/previous-versions//ms714644(v=vs.85))。
 
 ## <a name="testing-the-cmdlet"></a>测试 Cmdlet
 
@@ -180,9 +180,9 @@ Windows PowerShell cmdlet 使用.Net 对象之间传递信息。 因此，一个
 
 [创建第一个 Cmdlet](./creating-a-cmdlet-without-parameters.md)
 
-[扩展对象类型和格式设置](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[扩展对象类型和格式设置](/previous-versions//ms714665(v=vs.85))
 
-[如何注册 Cmdlet、 提供程序，和托管应用程序](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[如何注册 Cmdlet、 提供程序，和托管应用程序](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell 参考](../windows-powershell-reference.md)
 

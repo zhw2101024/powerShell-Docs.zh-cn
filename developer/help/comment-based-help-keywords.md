@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ab90ec96-77f5-42e3-9c7e-2f4156ec207f
 caps.latest.revision: 6
-ms.openlocfilehash: af8a151070d26ffe236800076115c964f625e572
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 534a6c9a43326c8a01b2181c7a799286fa4d3997
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083529"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301528"
 ---
 # <a name="comment-based-help-keywords"></a>基于注释的帮助关键字
 
@@ -23,7 +23,7 @@ ms.locfileid: "62083529"
 
 以下是有效的基于注释的帮助关键字。 它们通常出现在其预期用途以及帮助主题中的顺序列出。 这些关键字可以出现在任何顺序的基于注释的帮助信息，并且不区分大小写。
 
-请注意，`.ExternalHelp`关键字将优先于所有其他基于注释的帮助关键字。 当`.ExternalHelp`存在，则[Microsoft.PowerShell.Commands.Get 帮助](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help)cmdlet 不显示基于注释的帮助，即使它找不到匹配关键字的值的帮助文件。
+请注意，`.ExternalHelp`关键字将优先于所有其他基于注释的帮助关键字。 当`.ExternalHelp`存在，则[Microsoft.PowerShell.Commands.GetHelpCommand](/dotnet/api/Microsoft.PowerShell.Commands.gethelpcommand) cmdlet 不显示基于注释的帮助，即使它找不到匹配关键字的值的帮助文件。
 
 `.Synopsis` 函数或脚本的简短说明。 每个主题中，可以一次使用此关键字。
 
@@ -61,9 +61,9 @@ ms.locfileid: "62083529"
 
 `.ExternalHelp` `<XML Help File>` 指定的路径和/或基于 XML 的帮助文件的脚本或函数的名称。
 
-`.ExternalHelp`关键字告知[Microsoft.PowerShell.Commands.Get 帮助](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help)cmdlet 来获取帮助的脚本或函数的基于 XML 的文件中。 **。ExternalHelp**关键字时是必需的脚本或函数中使用基于 XML 的帮助文件。 如果没有它，`Get-Help`将不到为该函数或脚本的帮助文件。
+`.ExternalHelp`关键字告知[Microsoft.PowerShell.Commands.GetHelpCommand](/dotnet/api/Microsoft.PowerShell.Commands.gethelpcommand) cmdlet 来获取帮助的脚本或函数的基于 XML 的文件中。 **。ExternalHelp**关键字时是必需的脚本或函数中使用基于 XML 的帮助文件。 如果没有它，`Get-Help`将不到为该函数或脚本的帮助文件。
 
-`.ExternalHelp`关键字将优先于所有其他基于注释的帮助关键字。 当`.ExternalHelp`存在，则[Microsoft.PowerShell.Commands.Get 帮助](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help)cmdlet 不显示基于注释的帮助，即使它找不到匹配关键字的值的帮助文件。
+`.ExternalHelp`关键字将优先于所有其他基于注释的帮助关键字。 当`.ExternalHelp`存在，则[Microsoft.PowerShell.Commands.GetHelpCommand](/dotnet/api/Microsoft.PowerShell.Commands.gethelpcommand) cmdlet 不显示基于注释的帮助，即使它找不到匹配关键字的值的帮助文件。
 
 该函数通过脚本模块的值的导出时`.ExternalHelp`应该是不含路径的文件名称。 `Get-Help` 查找在模块目录的区域设置特定的子目录中的文件。 没有任何要求的文件名称，但最佳做法是使用以下文件名称格式： `<ScriptModule>.psm1-help.xml`。
 

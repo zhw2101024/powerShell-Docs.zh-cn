@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: a4fa9ce52855928679a2425f24f2e49a68030c63
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 8a65915b88a04e36e773853b903528a65fe11e99
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854922"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301391"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>创建用于修改系统的 Cmdlet
 
@@ -59,7 +59,7 @@ public class StopProcCommand : Cmdlet
 
 ### <a name="extremely-destructive-actions"></a>极具破坏性操作
 
-某些操作是极具破坏性，如重新格式化活动硬盘分区。 在这些情况下，该 cmdlet 应设置`ConfirmImpact`  =  `ConfirmImpact.High`声明时[System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)属性。 此设置为请求用户确认强制 cmdlet，即使用户未指定`Confirm`参数。 但是，cmdlet 开发人员应避免过度使用`ConfirmImpact`是只具有潜在破坏性，如删除用户帐户的操作。 请记住，如果`ConfirmImpact`设置为[System.Management.Automation.Confirmimpact.High](/dotnet/api/System.Management.Automation.ConfirmImpact.High)。
+某些操作是极具破坏性，如重新格式化活动硬盘分区。 在这些情况下，该 cmdlet 应设置`ConfirmImpact`  =  `ConfirmImpact.High`声明时[System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)属性。 此设置为请求用户确认强制 cmdlet，即使用户未指定`Confirm`参数。 但是，cmdlet 开发人员应避免过度使用`ConfirmImpact`是只具有潜在破坏性，如删除用户帐户的操作。 请记住，如果`ConfirmImpact`设置为[System.Management.Automation.ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **高**。
 
 同样，某些操作不太可能会破坏性，尽管它们在理论上修改 Windows PowerShell 外部系统的运行状态。 此类 cmdlet 可以设置`ConfirmImpact`到[System.Management.Automation.Confirmimpact.Low](/dotnet/api/system.management.automation.confirmimpact?view=powershellsdk-1.1.0)。 这将绕过其中已要求用户确认仅中影响和影响较大的操作的确认请求。
 
@@ -278,11 +278,11 @@ if (criticalProcess &&!force)
 
 ## <a name="defining-object-types-and-formatting"></a>定义对象类型和格式设置
 
-Windows PowerShell cmdlet 使用.Net 对象之间传递信息。 因此，一个 cmdlet 可能需要定义其自己的类型，或者该 cmdlet 可能需要扩展现有类型提供的另一个 cmdlet。 有关定义新类型或扩展现有类型的详细信息，请参阅[扩展对象类型和格式设置](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)。
+Windows PowerShell cmdlet 使用.Net 对象之间传递信息。 因此，一个 cmdlet 可能需要定义其自己的类型，或者该 cmdlet 可能需要扩展现有类型提供的另一个 cmdlet。 有关定义新类型或扩展现有类型的详细信息，请参阅[扩展对象类型和格式设置](/previous-versions//ms714665(v=vs.85))。
 
 ## <a name="building-the-cmdlet"></a>生成该 Cmdlet
 
-执行后一个 cmdlet，它必须向注册 Windows PowerShell 通过 Windows PowerShell 管理单元。 有关注册 cmdlet 的详细信息，请参阅[如何注册 Cmdlet、 提供商和主机应用程序](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
+执行后一个 cmdlet，它必须向注册 Windows PowerShell 通过 Windows PowerShell 管理单元。 有关注册 cmdlet 的详细信息，请参阅[如何注册 Cmdlet、 提供商和主机应用程序](/previous-versions//ms714644(v=vs.85))。
 
 ## <a name="testing-the-cmdlet"></a>测试 Cmdlet
 
@@ -354,9 +354,9 @@ Windows PowerShell cmdlet 使用.Net 对象之间传递信息。 因此，一个
 
 [添加处理命令行输入的参数](./adding-parameters-that-process-command-line-input.md)
 
-[扩展对象类型和格式设置](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[扩展对象类型和格式设置](/previous-versions//ms714665(v=vs.85))
 
-[如何注册 Cmdlet、 提供程序，和托管应用程序](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[如何注册 Cmdlet、 提供程序，和托管应用程序](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 
