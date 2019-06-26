@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 使用 DSC 生成持续集成和连续部署管道
-ms.openlocfilehash: 012057a32ccf85b0d15e76a332cadda4b226180a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2d049cd640f0df9b018a88ad106e59dbeed7bcee
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076457"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301496"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>使用 DSC 生成持续集成和连续部署管道
 
@@ -22,10 +22,10 @@ ms.locfileid: "62076457"
 
 若要使用此示例，应熟悉以下内容：
 
-- CI-CD 概念。 [发布管道模型](http://aka.ms/thereleasepipelinemodelpdf)提供了很好的参考资源。
+- CI-CD 概念。 [发布管道模型](https://aka.ms/thereleasepipelinemodelpdf)提供了很好的参考资源。
 - [Git](https://git-scm.com/) 源控件
 - [Pester](https://github.com/pester/Pester) 测试框架
-- [Team Foundation Server](https://www.visualstudio.com/tfs/)
+- [Team Foundation Server](https://visualstudio.microsoft.com/tfs/)
 
 ## <a name="what-you-will-need"></a>将需要
 
@@ -44,7 +44,7 @@ ms.locfileid: "62076457"
 ### <a name="tfssrv1"></a>TFSSrv1
 
 托管 TFS 服务器的计算机，将在其中定义生成和发布。
-必须在此计算机上安装 [Team Foundation Server 2017](https://www.visualstudio.com/tfs/)。
+必须在此计算机上安装 [Team Foundation Server 2017](https://visualstudio.microsoft.com/tfs/)。
 
 ### <a name="buildagent"></a>BuildAgent
 
@@ -74,7 +74,7 @@ ms.locfileid: "62076457"
 1. 在客户端计算机上的 Web 浏览器中，转到 TFS 服务器。
 1. 在 TFS 中，[新建名为“Demo_CI”的团队项目](/azure/devops/organizations/projects/create-project)。
 
-   请务必将“版本控制”设置为“Git”。
+   请务必将“版本控制”  设置为“Git”  。
 1. 在客户端计算机上运行以下命令，添加对刚刚在 TFS 中创建的存储库的远程控制：
 
    `git remote add tfs <YourTFSRepoURL>`
@@ -157,7 +157,7 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 
 此语句可查找所有定义为在 `DevEnv.ps1` 脚本创建的[配置数据](../configurations/configData.md)中担任 `DNSServer` 角色的节点。
 
-可阅读 [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md) 了解有关 `Where` 方法的详细信息
+可阅读 [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays) 了解有关 `Where` 方法的详细信息
 
 请务必在执行 CI 时使用配置数据定义节点，因为节点信息可能会在不同环境中进行切换，而使用配置数据则可以轻松更改节点信息，无需更改配置代码。
 
@@ -319,9 +319,9 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 
 至此，我们已经将代码上传到了 TFS 并分析了代码用途，让我们来定义生成吧。
 
-本文将只介绍要添加到生成定义的生成步骤。 若要了解如何在 TFS 中创建生成定义，请参阅[创建并将生成定义排入队列](/azure/devops/pipelines/get-started-designer)。
+本文将只介绍要添加到生成定义的生成步骤。 若要了解如何在 TFS 中创建生成定义，请参阅[创建并将生成定义排入队列](/azure/devops/pipelines/create-first-pipeline)。
 
-新建名为“InfraDNS”的生成定义（选择“空”模板）。
+新建名为“InfraDNS”的生成定义（选择“空”  模板）。
 向生成定义添加以下步骤：
 
 - PowerShell 脚本
@@ -333,24 +333,24 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 
 ### <a name="powershell-script"></a>PowerShell 脚本
 
-1. 将“类型”属性设置为“`File Path`”。
-1. 将“脚本路径”属性设置为“`initiate.ps1`”。
-1. 向“参数”属性添加“`-fileName build`”。
+1. 将“类型”  属性设置为“`File Path`”。
+1. 将“脚本路径”  属性设置为“`initiate.ps1`”。
+1. 向“参数”  属性添加“`-fileName build`”。
 
 此生成步骤运行用于调用 psake 生成脚本的 `initiate.ps1` 文件。
 
 ### <a name="publish-test-results"></a>发布测试结果
 
-1. 将“测试结果格式”设置为“`NUnit`”
-1. 将“测试结果文件”设置为“`InfraDNS/Tests/Results/*.xml`”
-1. 将“测试运行标题”设置为“`Unit`”。
-1. 请务必选中“控制选项已启用”和“始终运行”。
+1. 将“测试结果格式”  设置为“`NUnit`”
+1. 将“测试结果文件”  设置为“`InfraDNS/Tests/Results/*.xml`”
+1. 将“测试运行标题”  设置为“`Unit`”。
+1. 请务必选中“控制选项已启用”   和“始终运行”  。
 
 此生成步骤在我们前面分析的 Pester 脚本中运行单元测试，并将结果存储在 `InfraDNS/Tests/Results/*.xml` 文件夹中。
 
 ### <a name="copy-files"></a>复制文件
 
-1. 将以下代码行添加到“内容”：
+1. 将以下代码行添加到“内容”  ：
 
    ```
    initiate.ps1
@@ -359,26 +359,26 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
    **\Integration\**
    ```
 
-1. 将“目标文件夹”设置为“`$(Build.ArtifactStagingDirectory)\`”
+1. 将“目标文件夹”  设置为“`$(Build.ArtifactStagingDirectory)\`”
 
 此步骤将生成和测试脚本复制到临时目录，以便它们可以在下一步中作为生成项目发布。
 
 ### <a name="publish-artifact"></a>发布项目
 
-1. 将“发布路径”设置为“`$(Build.ArtifactStagingDirectory)\`”
-1. 将“项目名称”设置为“`Deploy`”
-1. 将“项目类型”设置为“`Server`”
-1. 在“控制选项”中选择“`Enabled`”
+1. 将“发布路径”  设置为“`$(Build.ArtifactStagingDirectory)\`”
+1. 将“项目名称”  设置为“`Deploy`”
+1. 将“项目类型”  设置为“`Server`”
+1. 在“控制选项”  中选择“`Enabled`”
 
 ## <a name="enable-continuous-integration"></a>启用持续集成
 
 现在，我们将设置一个触发器，这样只要有更改签入 git 存储库的 `ci-cd-example` 分支，便会触发项目生成。
 
-1. 在 TFS 中，单击“生成和发布”选项卡
-1. 选择“`DNS Infra`”生成定义，再单击“编辑”
-1. 单击“触发器”选项卡
-1. 依次选择“持续集成(CI)”和分支下拉列表中的“`refs/heads/ci-cd-example`”
-1. 依次单击“保存”和“确定”
+1. 在 TFS 中，单击“生成和发布”  选项卡
+1. 选择“`DNS Infra`”生成定义，再单击“编辑” 
+1. 单击“触发器”  选项卡
+1. 依次选择“持续集成(CI)”  和分支下拉列表中的“`refs/heads/ci-cd-example`”
+1. 依次单击“保存”  和“确定” 
 
 此时，只要 TFS git 存储库中有任何更改，都会触发自动生成。
 
@@ -387,8 +387,8 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 让我们来创建发布定义，以便将项目部署到包含每个代码签入信息的开发环境。
 
 为此，添加与之前创建的 `InfraDNS` 生成定义相关联的新发布定义。
-请务必选择“连续部署”，以便只要有新生成完成，都会触发新发布。
-（请参阅[发布管道是什么？](/azure/devops/pipelines/release/what-is-release-management)），然后按如下进行配置：
+请务必选择“连续部署”  ，以便只要有新生成完成，都会触发新发布。
+（请参阅[发布管道是什么？](/azure/devops/pipelines/release/)），然后按如下进行配置：
 
 向发布定义添加以下步骤：
 
@@ -400,22 +400,22 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 
 ### <a name="powershell-script"></a>PowerShell 脚本
 
-1. 将“脚本路径”字段设置为“`$(Build.DefinitionName)\Deploy\initiate.ps1"`”
-1. 将“参数”字段设置为“`-fileName Deploy`”
+1. 将“脚本路径”  字段设置为“`$(Build.DefinitionName)\Deploy\initiate.ps1"`”
+1. 将“参数”  字段设置为“`-fileName Deploy`”
 
 ### <a name="first-publish-test-results"></a>第一次发布测试结果
 
-1. 为“测试结果格式”字段选择“`NUnit`”
-1. 将“测试结果文件”字段设置为“`$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`”
-1. 将“测试运行标题”设置为“`Integration`”
-1. 在“控制选项”下，选中“始终运行”
+1. 为“测试结果格式”  字段选择“`NUnit`”
+1. 将“测试结果文件”  字段设置为“`$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`”
+1. 将“测试运行标题”  设置为“`Integration`”
+1. 在“控制选项”  下，选中“始终运行” 
 
 ### <a name="second-publish-test-results"></a>第二次发布测试结果
 
-1. 为“测试结果格式”字段选择“`NUnit`”
-1. 将“测试结果文件”字段设置为“`$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`”
-1. 将“测试运行标题”设置为“`Acceptance`”
-1. 在“控制选项”下，选中“始终运行”
+1. 为“测试结果格式”  字段选择“`NUnit`”
+1. 将“测试结果文件”  字段设置为“`$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`”
+1. 将“测试运行标题”  设置为“`Acceptance`”
+1. 在“控制选项”  下，选中“始终运行” 
 
 ## <a name="verify-your-results"></a>验证结果
 

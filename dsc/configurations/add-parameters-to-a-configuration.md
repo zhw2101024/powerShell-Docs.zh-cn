@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,资源,库,安装程序
 title: 向配置添加参数
-ms.openlocfilehash: 15213404f0cdd6416baf1f83af91b8f5279cc97f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 514bb4cf82b7adbe4cd3d3e34d5464f574cb2206
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080248"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301518"
 ---
 # <a name="add-parameters-to-a-configuration"></a>向配置添加参数
 
@@ -46,7 +46,7 @@ Configuration TestConfig
 
 ## <a name="adding-your-own-parameters-to-configurations"></a>将自己的参数添加到配置中
 
-除了内置参数，还可以向配置添加自己的参数。 参数块直接进入配置声明，就像函数一样。 配置参数块应位于任何节点声明之外，并且位于任何导入语句之上。 通过添加参数，可以使配置更加可靠和动态。
+除了内置参数，还可以向配置添加自己的参数。 参数块直接进入配置声明，就像函数一样。 配置参数块应位于任何节点  声明之外，并且位于任何导入  语句之上。 通过添加参数，可以使配置更加可靠和动态。
 
 ```powershell
 Configuration TestConfig
@@ -117,7 +117,7 @@ TestConfig -ComputerName "server01", "server02", "server03"
 
 ## <a name="advanced-parameters-in-configurations"></a>配置中的高级参数
 
-除了 `-ComputerName` 参数之外，还可以为服务名称和状态添加参数。 下面的示例添加一个带有 `-ServiceName` 参数的参数块，并使用它动态定义 Service 资源块。 它还添加一个 `-State` 参数来动态定义 Service 资源块中的状态。
+除了 `-ComputerName` 参数之外，还可以为服务名称和状态添加参数。 下面的示例添加一个带有 `-ServiceName` 参数的参数块，并使用它动态定义 Service  资源块。 它还添加一个 `-State` 参数来动态定义 Service  资源块中的状态  。
 
 ```powershell
 Configuration TestConfig
@@ -168,7 +168,7 @@ $ServiceName="Spooler"
 $ServiceName
 ```
 
-可以为每个 `parameter` 属性指定自变量，以控制已定义参数的各个方面。 下面的示例使 `$ServiceName` 成为强制参数。
+可以为每个 `parameter` 属性指定自变量，以控制已定义参数的各个方面。 下面的示例使 `$ServiceName` 成为强制  参数。
 
 ```powershell
 [parameter(Mandatory)]
@@ -176,7 +176,7 @@ $ServiceName
 $ServiceName
 ```
 
-对于 `$State` 参数，我们希望阻止用户指定预定义集之外的值（如 Running、Stopped），`ValidationSet*` 属性将阻止用户指定预定义集之外的值（如 Running、Stopped）。 下面的示例将 `ValidationSet` 属性添加到 `$State` 参数。 由于我们不希望使 `$State` 成为强制参数，因此需要为它添加一个默认值。
+对于 `$State` 参数，我们希望阻止用户指定预定义集之外的值（如 Running、Stopped），`ValidationSet*` 属性将阻止用户指定预定义集之外的值（如 Running、Stopped）。 下面的示例将 `ValidationSet` 属性添加到 `$State` 参数。 由于我们不希望使 `$State` 成为强制  参数，因此需要为它添加一个默认值。
 
 ```powershell
 [ValidateSet("Running", "Stopped")]
@@ -187,7 +187,7 @@ $State="Running"
 > [!NOTE]
 > 在使用 `validation` 属性时，不需要指定 `parameter` 属性。
 
-可以在 [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters.md) 中了解更多有关 `parameter` 和验证属性的信息。
+可以在 [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters) 中了解更多有关 `parameter` 和验证属性的信息。
 
 ## <a name="fully-parameterized-configuration"></a>完全参数化的配置
 

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
 title: 新的和更新的 cmdlet
-ms.openlocfilehash: 9ec31c89c0bc4b111b40e2d4725fa0782a573204
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: ffd5db2d4fc9bf8f67ef5e352633ad3209f72c87
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855542"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67298657"
 ---
 # <a name="new-and-updated-cmdlets"></a>新的和更新的 cmdlet
 
@@ -39,19 +39,19 @@ ms.locfileid: "65855542"
 
 ## <a name="cryptographic-message-syntax-cms-cmdlets"></a>加密消息语法 (CMS) cmdlet
 
-加密消息语法 cmdlet 对使用 IETF 标准格式加密保护消息的内容提供加密和解密支持，如 [RFC5652](https://tools.ietf.org/html/rfc5652).中所述。
+加密消息语法 cmdlet 对使用 IETF 标准格式加密保护消息的内容提供加密和解密支持，如 [RFC5652](https://tools.ietf.org/html/rfc5652.html).中所述。
 
-CMS 加密标准采用公钥加密系统，其中用来加密内容的密钥（公钥）和用来解密内容的密钥（私钥）是分离的。
+CMS 加密标准采用公钥加密系统，其中用来加密内容的密钥（公钥  ）和用来解密内容的密钥（私钥  ）是分离的。
 
 公钥可以广泛共享，它不是敏感数据。 只能使用私钥解密使用公钥加密的任何内容。 有关详细信息，请参阅 [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography)（公钥加密）。
 
 有关详细信息，请参阅：
 
-- [Get-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Get-CmsMessage.md)
-- [Protect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage.md)
-- [Unprotect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/rotect-CmsMessage.md)
+- [Get-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Get-CmsMessage)
+- [Protect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage)
+- [Unprotect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/unprotect-CmsMessage)
 
-证书需要唯一的密钥用法标识符 (EKU)（如“代码签名”或“加密邮件”）在 PowerShell 中将它们识别为数据加密证书。 若要在证书提供程序中查看文档加密证书，可以使用 `Get-ChildItem` 的 DocumentEncryptionCert 动态参数：
+证书需要唯一的密钥用法标识符 (EKU)（如“代码签名”或“加密邮件”）在 PowerShell 中将它们识别为数据加密证书。 若要在证书提供程序中查看文档加密证书，可以使用 `Get-ChildItem` 的 DocumentEncryptionCert  动态参数：
 
 ```powershell
 Get-ChildItem Cert:\CurrentUser -DocumentEncryptionCert -Recurse
@@ -68,7 +68,7 @@ Get-ChildItem Cert:\CurrentUser -DocumentEncryptionCert -Recurse
 
 默认情况下，分隔分析会在空格处将输入拆分，并为得到的组分配属性名称。
 
-UpdateTemplate 参数将学习算法的结果保存到模板文件中的注释内。 这使得学习过程（速度最慢的阶段）成为一次性完成的过程。 使用包含已编码学习算法的模板来运行 `ConvertFrom-String` 现为近即时行为。
+UpdateTemplate  参数将学习算法的结果保存到模板文件中的注释内。 这使得学习过程（速度最慢的阶段）成为一次性完成的过程。 使用包含已编码学习算法的模板来运行 `ConvertFrom-String` 现为近即时行为。
 
 有关详细信息，请参阅 [ConvertFrom-String](/powershell/module/Microsoft.PowerShell.Utility/ConvertFrom-String)。
 
@@ -80,7 +80,7 @@ UpdateTemplate 参数将学习算法的结果保存到模板文件中的注释�
 
 ## <a name="updates-to-fileinfo-object"></a>对 FileInfo 对象的更新
 
-文件版本信息可能会产生误导，尤其是在对文件进行了修补的情况下。 WMF 5.0 向 FileInfo 对象添加了新的 FileVersionRaw 和 ProductVersionRaw 脚本属性。
+文件版本信息可能会产生误导，尤其是在对文件进行了修补的情况下。 WMF 5.0 向 FileInfo 对象添加了新的 FileVersionRaw 和 ProductVersionRaw 脚本属性    。
 以下是为 powershell.exe 显示的属性（假设 $pid 为 PowerShell 进程的 ID）：
 
 ```powershell
@@ -102,11 +102,11 @@ ProductVersion    : 10.0.17763.1
 
 ## <a name="get-childitem-has--depth-parameter"></a>Get-ChildItem 具有 -Depth 参数
 
-`Get-ChildItem` 现在具有 Depth 参数，可以将其与 Recurse 一起使用来限制递归：
+`Get-ChildItem` 现在具有 Depth  参数，可以将其与 Recurse  一起使用来限制递归：
 
 ## <a name="modules-support-for-declaring-version-ranges-1-etc"></a>对声明版本范围的模块支持（1.* 等）
 
-现在，可以组合 MinimumVersion 和 MaximumVersion，导入特定范围内的模块。 这些参数还支持通配符。
+现在，可以组合 MinimumVersion 和 MaximumVersion，导入特定范围内的模块   。 这些参数还支持通配符。
 
 ```powershell
 Import-Module psreadline -Verbose -MinimumVersion 1.0 -MaximumVersion 1.2.*
@@ -138,19 +138,20 @@ e19d6ea5-3cc2-4db9-8095-0cdaed5a703d
 
 ## <a name="nonewline-parameter"></a>NoNewLine 参数
 
-`Out-File`、`Add-Content` 和 `Set-Content` 现在具有新的 NoNewline 开关，它将在输出后省略新的行。 例如：
+`Out-File`、`Add-Content` 和 `Set-Content` 现在具有新的 NoNewline  开关，它将在输出后省略新的行。 例如：
 
 ```powershell
 "This is " | Out-File -FilePath Example.txt -NoNewline
 "a single " | Add-Content -Path Example.txt -NoNewline
 "sentence." | Add-Content -Path Example.txt -NoNewline
 Get-Content .\Example.txt
+```
 
 ```Output
 This is a single sentence.
 ```
 
-如果不指定 NoNewline，每个片段将出现在单独的行上：
+如果不指定 NoNewline  ，每个片段将出现在单独的行上：
 
 ```powershell
 "This is " | Out-File -FilePath Example.txt
@@ -191,7 +192,7 @@ New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkDir -Value $pshome
 
 ### <a name="hard-links"></a>硬链接
 
-允许的路径和名称的相同组合如上所述。
+允许的路径  和名称  的相同组合如上所述。
 
 ```powershell
 New-Item -ItemType HardLink -Path C:\Temp -Name MyHardLinkFile.txt -Value $pshome\profile.ps1
@@ -199,7 +200,7 @@ New-Item -ItemType HardLink -Path C:\Temp -Name MyHardLinkFile.txt -Value $pshom
 
 ### <a name="directory-junctions"></a>目录联接
 
-允许的路径和名称的相同组合如上所述。
+允许的路径  和名称  的相同组合如上所述。
 
 ```powershell
 New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome
@@ -207,7 +208,7 @@ New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome
 
 ### <a name="get-childitem"></a>Get-ChildItem
 
-`Get-ChildItem` 现在显示 Mode 属性中的“l”以指示符号链接文件或目录。
+`Get-ChildItem` 现在显示 Mode  属性中的“l”以指示符号链接文件或目录。
 
 ```powershell
 Get-ChildItem C:\Temp | sort LastWriteTime -Descending
@@ -233,7 +234,7 @@ Remove-Item C:\Temp\MySymLinkFile.txt
 Remove-Item C:\Temp\MySymLinkDir
 ```
 
-使用 Force 参数可删除目标目录和符号链接中的文件。
+使用 Force  参数可删除目标目录和符号链接中的文件。
 
 ```powershell
 Remove-Item C:\Temp\MySymLinkDir -Force
@@ -285,7 +286,7 @@ ODataUtils 模块允许从支持 OData 的 REST 终结点生成 PowerShell cmdle
 - 通过使用 -Select 参数进行的服务器端筛选
 - 对 Web 请求标头的支持
 
-由 `Export-ODataEndPointProxy` cmdlet 生成的代理 cmdlet 提供来自信息流上服务器端 OData 终结点的其他信息。
+由 `Export-ODataEndPointProxy` cmdlet 生成的代理 cmdlet 提供来自信息流上服务器端 OData 终结点的其他信息  。
 
 ```powershell
 Import-Module Microsoft.PowerShell.ODataUtils -Force
@@ -296,7 +297,7 @@ Export-ODataEndpointProxy -Uri $uri -OutputModule $generatedProxyModuleDir -Forc
 
 在以下示例中，我们将检索热门产品并捕获 `$infoStream` 变量中的输出。
 
-通过指定 IncludeTotalResponseCount参数，我们将获得服务器上可用的所有产品记录的总计数。
+通过指定 IncludeTotalResponseCount  参数，我们将获得服务器上可用的所有产品  记录的总计数。
 
 ```powershell
 Import-Module $generatedProxyModuleDir -Force
@@ -317,15 +318,15 @@ while($skipCount -le $additionalInfo['odata.count'])
 }
 ```
 
-生成的代理 cmdlet 支持 Select 参数，你可以使用该参数作为筛选器以只接收客户端需要的记录属性。 在服务器端进行筛选，从而减少通过网络传输的数据量。
+生成的代理 cmdlet 支持 Select  参数，你可以使用该参数作为筛选器以只接收客户端需要的记录属性。 在服务器端进行筛选，从而减少通过网络传输的数据量。
 
 ```powershell
 Get-Product -Top 2 -AllowUnsecureConnection -AllowAdditionalData -Select Name
 ```
 
-`Export-ODataEndpointProxy` cmdlet 以及由其生成的代理 cmdlet 现在支持 Headers 参数。 标头可用于通过通道传递 OData 终结点所需的其他信息。
+`Export-ODataEndpointProxy` cmdlet 以及由其生成的代理 cmdlet 现在支持 Headers  参数。 标头可用于通过通道传递 OData 终结点所需的其他信息。
 
-在以下示例中，为 Headers 参数提供了包含订阅密钥的哈希表。 这是需要订阅密钥进行身份验证的服务的一个典型示例。
+在以下示例中，为 Headers  参数提供了包含订阅密钥的哈希表。 这是需要订阅密钥进行身份验证的服务的一个典型示例。
 
 ```powershell
 Export-ODataEndpointProxy -Uri $endPointUri -OutputModule $generatedProxyModuleDir -Force -AllowUnSecureConnection -Verbose -Headers @{'subscription-key'='XXXX'}
