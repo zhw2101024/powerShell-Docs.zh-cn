@@ -20,8 +20,8 @@ ms.locfileid: "65855712"
 
 在本版本中，在 Nano 服务器上使用 Pester 时应注意两个问题：
 
-- 由于 FULL CLR 和 CORE CLR 之间的差异，针对 Pester 自身运行测试可能导致一些失败。 特别是，Validate 方法不可用于 XmlDocument 类型。 众所周知，尝试验证 NUnit 输出日志的架构的六个测试都将失败。
-- 一个代码覆盖率测试失败的原因是 Nano 服务器中不存在 WindowsFeature DSC 资源。 但是，这些故障通常是无害的，可以放心地忽略。
+- 由于 FULL CLR 和 CORE CLR 之间的差异，针对 Pester 自身运行测试可能导致一些失败。 特别是，Validate 方法不可用于 XmlDocument 类型   。 众所周知，尝试验证 NUnit 输出日志的架构的六个测试都将失败。
+- 一个代码覆盖率测试会失败，因为 Nano 服务器中不存在 WindowsFeature  DSC 资源。 但是，这些故障通常是无害的，可以放心地忽略。
 
 ## <a name="operation-validation"></a>操作验证
 

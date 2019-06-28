@@ -15,7 +15,7 @@ ms.locfileid: "67298657"
 
 ## <a name="archive-cmdlets"></a>存档 cmdlet
 
-通过 `Compress-Archive` 和 `Expand-Archive` 这两个新 cmdlet 可以压缩和展开 ZIP 文件。
+`Compress-Archive` 和 `Expand-Archive` 这两个新 cmdlet 可用于压缩和展开 ZIP 文件。
 
 有关详细信息，请参阅 [Microsoft.Powershell.Archive](/powershell/module/microsoft.powershell.archive/) 模块文档。
 
@@ -41,9 +41,9 @@ ms.locfileid: "67298657"
 
 加密消息语法 cmdlet 对使用 IETF 标准格式加密保护消息的内容提供加密和解密支持，如 [RFC5652](https://tools.ietf.org/html/rfc5652.html).中所述。
 
-CMS 加密标准采用公钥加密系统，其中用来加密内容的密钥（公钥  ）和用来解密内容的密钥（私钥  ）是分离的。
+CMS 加密标准采用公钥加密系统，其中用来加密内容的密钥（公钥  ）和用来解密内容的密钥（私钥  ）是不同的。
 
-公钥可以广泛共享，它不是敏感数据。 只能使用私钥解密使用公钥加密的任何内容。 有关详细信息，请参阅 [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography)（公钥加密）。
+公钥可以广泛共享，并非敏感数据。 只能使用私钥解密使用公钥加密的任何内容。 有关详细信息，请参阅 [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography)（公钥加密）。
 
 有关详细信息，请参阅：
 
@@ -68,13 +68,13 @@ Get-ChildItem Cert:\CurrentUser -DocumentEncryptionCert -Recurse
 
 默认情况下，分隔分析会在空格处将输入拆分，并为得到的组分配属性名称。
 
-UpdateTemplate  参数将学习算法的结果保存到模板文件中的注释内。 这使得学习过程（速度最慢的阶段）成为一次性完成的过程。 使用包含已编码学习算法的模板来运行 `ConvertFrom-String` 现为近即时行为。
+UpdateTemplate  参数将算法学习的结果保存到模板文件中的注释内。 这使得学习过程（速度最慢的阶段）成为一次性完成的过程。 使用包含已编码学习算法的模板来运行 `ConvertFrom-String` 现为近即时行为。
 
 有关详细信息，请参阅 [ConvertFrom-String](/powershell/module/Microsoft.PowerShell.Utility/ConvertFrom-String)。
 
 ### <a name="convert-string"></a>Convert-String
 
-`Convert-String` 可用于提供提供所需文本外观的前后对照示例。 该 cmdlet 将自动设置文本格式。
+`Convert-String` 可用于通过提供前后对照示例来指定所需文本外观。 该 cmdlet 将自动设置文本格式。
 
 有关详细信息，请参阅 [Convert-String](/powershell/module/Microsoft.PowerShell.Utility/Convert-String)。
 
@@ -200,7 +200,7 @@ New-Item -ItemType HardLink -Path C:\Temp -Name MyHardLinkFile.txt -Value $pshom
 
 ### <a name="directory-junctions"></a>目录联接
 
-允许的路径  和名称  的相同组合如上所述。
+可以继续使用上述路径  和名称  组合。
 
 ```powershell
 New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome
@@ -208,7 +208,7 @@ New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome
 
 ### <a name="get-childitem"></a>Get-ChildItem
 
-`Get-ChildItem` 现在显示 Mode  属性中的“l”以指示符号链接文件或目录。
+现在，`Get-ChildItem` 在 Mode  属性中显示“l”以指示符号链接文件或目录。
 
 ```powershell
 Get-ChildItem C:\Temp | sort LastWriteTime -Descending
