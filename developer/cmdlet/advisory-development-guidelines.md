@@ -59,7 +59,7 @@ Cmdlet 应定义`Credential`参数以表示凭据。 此参数必须属于类型
 
 #### <a name="name-the-cmdlet-class-to-match-the-cmdlet-name"></a>Cmdlet 类以匹配的 Cmdlet 名称命名
 
-命名时实现 cmdlet 的.NET Framework 类，类命名为"*\<谓词 >**\<名词 >**\<命令 >*"中，您可以将为*\<谓词 >* 并*\<名词 >* 占位符替换动词和名词的 cmdlet 名称使用。 例如， [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)由一个名为类实现 cmdlet `GetProcessCommand`。
+命名时实现 cmdlet 的.NET Framework 类，类命名为" *\<谓词 > **\<名词 >** \<命令 >* "中，您可以将为 *\<谓词 >* 并 *\<名词 >* 占位符替换动词和名词的 cmdlet 名称使用。 例如， [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)由一个名为类实现 cmdlet `GetProcessCommand`。
 
 ### <a name="if-no-pipeline-input-override-the-beginprocessing-method-ac02"></a>如果没有管道输入重写 BeginProcessing 方法 (AC02)
 
