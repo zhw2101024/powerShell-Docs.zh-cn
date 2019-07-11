@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 12ee5382-95ba-41c7-8291-7f69a6f63514
 caps.latest.revision: 7
-ms.openlocfilehash: c45e802605bf0b4fd84a8847787bcc937b7f417b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 19de0fd33cd764c161366c8161adf46c2247482b
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081423"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735015"
 ---
 # <a name="runspace01-vbnet-code-sample"></a>Runspace01 (VB.NET) 代码示例
 
-以下是代码示例的运行空间中所述[创建控制台应用程序，运行指定命令](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e)。 若要执行此操作，该应用程序调用一个运行空间，并调用命令。 （请注意，此应用程序未指定的运行空间配置信息，也不它不会显式创建的管道）。调用的命令是`Get-Process`cmdlet。
+以下是代码示例的运行空间中所述[创建控制台应用程序，运行指定命令](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program)。 若要执行此操作，该应用程序调用一个运行空间，并调用命令。 （请注意，此应用程序未指定的运行空间配置信息，也不它不会显式创建的管道）。调用的命令是`Get-Process`cmdlet。
 
 ## <a name="code-sample"></a>代码示例
 

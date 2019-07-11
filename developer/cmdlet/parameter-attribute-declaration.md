@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Parameter attribute
 ms.assetid: 08433d0b-169b-42c8-9335-2881d9034698
 caps.latest.revision: 13
-ms.openlocfilehash: a3488d5fb3f7eb3df28d0242d6c39d07145a3c8d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 81b1ed95669f51ba554f6f99031d098e239f02e0
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067546"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735138"
 ---
 # <a name="parameter-attribute-declaration"></a>参数属性声明
 
@@ -36,7 +36,7 @@ ms.locfileid: "62067546"
 
 `ParameterSetName` ([System.String](/dotnet/api/System.String)) 可选的命名参数。 指定该参数设置，此 cmdlet 参数属于。 如果不指定任何参数集，则该参数属于所有参数集。
 
-`Position` ([System.Integer](/dotnet/api/System.Integer)) 可选的命名参数。 指定的 Windows PowerShell 命令中的参数的位置。
+`Position` ([System.Int32](/dotnet/api/System.Int32)) 可选的命名参数。 指定的 Windows PowerShell 命令中的参数的位置。
 
 `ValueFromPipeline` ([System.Boolean](/dotnet/api/System.Boolean)) 可选的命名参数。 `True` 指示此 cmdlet 参数采用其值从管道对象。 指定此关键字，如果该 cmdlet 将访问的完整对象，而不仅仅是对象的属性。 默认值为 `false`。
 

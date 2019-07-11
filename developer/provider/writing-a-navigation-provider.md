@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 98bcfda0-6ee2-46f5-bbc7-5fab8b780d6a
 caps.latest.revision: 5
-ms.openlocfilehash: f449c17e4c373c42f8a1d96fa9075940111c65bc
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: edb4d9944a527391983e068ddf07f4fac415c3f9
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080860"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734726"
 ---
 # <a name="writing-a-navigation-provider"></a>编写导航提供程序
 
@@ -25,7 +25,7 @@ ms.locfileid: "62080860"
 
 ## <a name="implementing-navigation-methods"></a>实现导航方法
 
-[System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)类实现支持嵌套的容器、 相对路径和移动的项的方法。 有关这些方法的完整列表，请参阅[NavigationCmdletProvider 方法](http://msdn.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider_methods\(v=vs.85\).aspx)。
+[System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)类实现支持嵌套的容器、 相对路径和移动的项的方法。 有关这些方法的完整列表，请参阅[NavigationCmdletProvider 方法](/dotnet/api/system.management.automation.provider.navigationcmdletprovider?view=pscore-6.2.0#methods)。
 
 > [!NOTE]
 > 本主题中的信息为基础[Windows PowerShell 提供程序快速入门](./windows-powershell-provider-quickstart.md)。 本主题不会介绍如何设置提供程序项目的基础知识，或如何实现的方法继承自[System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)类，该类创建并删除驱动器。 本主题还不会涉及如何实现公开的方法[System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)或[System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)类。 有关演示如何实现项 cmdlet 的示例，请参阅[编写项提供程序](./writing-an-item-provider.md)。 有关演示如何实现容器的 cmdlet 示例，请参阅[编写容器提供程序](./writing-a-container-provider.md)。
@@ -132,7 +132,7 @@ protected override string GetParentPath(string path, string root)
 
 ### <a name="implementing-makepath"></a>实现 MakePath
 
-[System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)方法加入指定的父路径和指定的子路径来创建提供程序内部的路径 （的路径的信息类型，提供程序可以支持，请参阅[Windows PowerShell 提供程序概述](./windows-powershell-provider-overview.md)。 PowerShell 引擎调用此方法，当用户调用[Microsoft.PowerShell.Commands.Join 路径](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path)cmdlet。
+[System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)方法加入指定的父路径和指定的子路径来创建提供程序内部的路径 （的路径的信息类型，提供程序可以支持，请参阅[Windows PowerShell 提供程序概述](./windows-powershell-provider-overview.md)。 PowerShell 引擎调用此方法，当用户调用[Microsoft.PowerShell.Commands.JoinPathCommand](/dotnet/api/Microsoft.PowerShell.Commands.joinpathcommand) cmdlet。
 
 ```csharp
 protected override string MakePath(string parent, string child)
@@ -221,7 +221,7 @@ protected override string NormalizeRelativePath(string path,
 
 ### <a name="implementing-moveitem"></a>实现 MoveItem
 
-[System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)方法将项从指定的路径移动到指定的目标路径。 PowerShell 引擎调用此方法，当用户调用[Microsoft.PowerShell.Commands.Move 项](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item)cmdlet。
+[System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)方法将项从指定的路径移动到指定的目标路径。 PowerShell 引擎调用此方法，当用户调用[Microsoft.PowerShell.Commands.MoveItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.moveitemcommand) cmdlet。
 
 ```csharp
 protected override void MoveItem(string path, string destination)

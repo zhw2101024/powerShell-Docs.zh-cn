@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
 caps.latest.revision: 13
-ms.openlocfilehash: 0d4addc0a064873701ae15c204dbd335f3374ab7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 81f6c8cd75ccea9e711cd8f6d6daa6cca5a499a0
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080895"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734870"
 ---
 # <a name="windows-powershell-provider-overview"></a>Windows PowerShell 提供程序概述
 
@@ -27,7 +27,7 @@ Windows PowerShell 提供程序允许将任何数据存储，就好像已装载�
 
 ## <a name="type-of-providers"></a>提供程序的类型
 
-有几种类型的提供程序，其中每个提供不同级别的功能。 一个提供程序实现为类派生的后代之一[System.Management.Automation.Sessionstatecategory.Cmdletprovider](/dotnet/api/System.Management.Automation.SessionStateCategory.CmdletProvider)类。 有关不同类型的提供程序的信息，请参阅[提供程序类型](./provider-types.md)。
+有几种类型的提供程序，其中每个提供不同级别的功能。 一个提供程序实现为类派生的后代之一[System.Management.Automation.SessionStateCategory](/dotnet/api/system.management.automation.sessionstatecategory?view=pscore-6.2.0) **CmdletProvider**类。 有关不同类型的提供程序的信息，请参阅[提供程序类型](./provider-types.md)。
 
 ## <a name="provider-cmdlets"></a>提供程序 cmdlet
 
@@ -63,7 +63,7 @@ Windows PowerShell 提供程序允许将任何数据存储，就好像已装载�
 
 ## <a name="provider-capabilities"></a>提供程序的功能
 
-[System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)枚举定义的提供程序可以支持的功能数。 其中包括使用通配符、 筛选器项和支持事务的功能。 若要指定提供程序的功能，请添加一系列的值[System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)枚举，与逻辑组合`OR`操作，作为[System.Management.Automation.Provider.Cmdletproviderattribute.Providercapabilities*](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities)属性 （该属性的第二个参数） 的[System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)提供程序类的属性。 例如，以下属性指定的提供程序支持[System.Management.Automation.Provider.Providercapabilities.Shouldprocess](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities.ShouldProcess)和[System.Management.Automation.Provider.Providercapabilities.Transactions](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities.Transactions)功能。
+[System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)枚举定义的提供程序可以支持的功能数。 其中包括使用通配符、 筛选器项和支持事务的功能。 若要指定提供程序的功能，请添加一系列的值[System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)枚举，与逻辑组合`OR`操作，作为[System.Management.Automation.Provider.Cmdletproviderattribute.Providercapabilities*](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities)属性 （该属性的第二个参数） 的[System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)提供程序类的属性。 例如，以下属性指定的提供程序支持[System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess**和[System.Management.Automation.Provider.ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **事务**功能。
 
 ```csharp
 [CmdletProvider(RegistryProvider.ProviderName, ProviderCapabilities.ShouldProcess | ProviderCapabilities.Transactions)]

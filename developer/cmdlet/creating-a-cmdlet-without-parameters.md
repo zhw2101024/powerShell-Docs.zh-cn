@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: 7f10acf59dedbb4af17bc5250e8624282ba22656
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 2685215f41c96955fc662d5eee27fc0e7a31da83
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854969"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733972"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>创建不具有参数的 Cmdlet
 
@@ -71,7 +71,7 @@ Public Class GetProcCommand
 
 ## <a name="overriding-an-input-processing-method"></a>重写方法的处理的输入
 
-[System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)类提供了三个主要的输入的处理方法，你的 cmdlet 必须在至少一个替代。 有关 Windows PowerShell 如何处理记录的详细信息，请参阅[Windows PowerShell 的工作原理](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)。
+[System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)类提供了三个主要的输入的处理方法，你的 cmdlet 必须在至少一个替代。 有关 Windows PowerShell 如何处理记录的详细信息，请参阅[Windows PowerShell 的工作原理](/previous-versions//ms714658(v=vs.85))。
 
 对于所有类型的输入，Windows PowerShell 运行时调用[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)启用处理。 如果你的 cmdlet 必须执行一些预处理或安装程序，它可以执行此操作通过重写此方法。
 
@@ -135,11 +135,11 @@ End Sub 'ProcessRecord
 
 ## <a name="defining-object-types-and-formatting"></a>定义对象类型和格式设置
 
-Windows PowerShell cmdlet 使用.NET 对象之间传递信息。 因此，一个 cmdlet 可能需要定义其自己的类型，或者该 cmdlet 可能需要扩展现有类型提供的另一个 cmdlet。 有关定义新类型或扩展现有类型的详细信息，请参阅[扩展对象类型和格式设置](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)。
+Windows PowerShell cmdlet 使用.NET 对象之间传递信息。 因此，一个 cmdlet 可能需要定义其自己的类型，或者该 cmdlet 可能需要扩展现有类型提供的另一个 cmdlet。 有关定义新类型或扩展现有类型的详细信息，请参阅[扩展对象类型和格式设置](/previous-versions//ms714665(v=vs.85))。
 
 ## <a name="building-the-cmdlet"></a>生成该 Cmdlet
 
-实现一个 cmdlet 之后, 您必须注册它使用 Windows PowerShell 通过 Windows PowerShell 管理单元。 有关注册 cmdlet 的详细信息，请参阅[如何注册 Cmdlet、 提供商和主机应用程序](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
+实现一个 cmdlet 之后, 您必须注册它使用 Windows PowerShell 通过 Windows PowerShell 管理单元。 有关注册 cmdlet 的详细信息，请参阅[如何注册 Cmdlet、 提供商和主机应用程序](/previous-versions//ms714644(v=vs.85))。
 
 ## <a name="testing-the-cmdlet"></a>测试 Cmdlet
 
@@ -260,13 +260,13 @@ Windows PowerShell cmdlet 使用.NET 对象之间传递信息。 因此，一个
 
 [创建用于处理管道输入的 Cmdlet](./adding-parameters-that-process-pipeline-input.md)
 
-[如何创建 Windows PowerShell Cmdlet](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[如何创建 Windows PowerShell Cmdlet](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[扩展对象类型和格式设置](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[扩展对象类型和格式设置](/previous-versions//ms714665(v=vs.85))
 
-[Windows PowerShell 的工作原理](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[Windows PowerShell 的工作原理](/previous-versions//ms714658(v=vs.85))
 
-[如何注册 Cmdlet、 提供程序，和托管应用程序](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[如何注册 Cmdlet、 提供程序，和托管应用程序](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell 参考](../windows-powershell-reference.md)
 

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell SDK
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
-ms.openlocfilehash: 86595ebaac32318a4e3b9a3c4b295c73fb2e1c75
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 48b2b2b9ab2a39cf185ed54bcfa99d46562e13b6
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080488"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733749"
 ---
 # <a name="windows-powershell-reference"></a>Windows PowerShell 参考
 
@@ -53,4 +53,4 @@ Windows PowerShell SDK，除了以下资源提供的详细信息。
 
 [System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal)此命名空间包含由其他命名空间类的基类。 例如， [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute)类是基类[System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)类。
 
-[System.Management.Automation.Runspaces](/dotnet/api/System.Management.Automation.Runspaces)此命名空间包含类、 枚举和接口用于创建 Windows PowerShell 运行空间。 在此上下文中，Windows PowerShell 运行空间是在其中一个或多个 Windows PowerShell 管道调用 cmdlet 的上下文。 也就是说，cmdlet 适用的 Windows PowerShell 运行空间上下文中。 有关详细信息 aboutWindows PowerShell 运行空间，请参阅[Windows PowerShell 运行空间](http://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9)。
+[System.Management.Automation.Runspaces](/dotnet/api/System.Management.Automation.Runspaces)此命名空间包含类、 枚举和接口用于创建 Windows PowerShell 运行空间。 在此上下文中，Windows PowerShell 运行空间是在其中一个或多个 Windows PowerShell 管道调用 cmdlet 的上下文。 也就是说，cmdlet 适用的 Windows PowerShell 运行空间上下文中。 有关详细信息 aboutWindows PowerShell 运行空间，请参阅[Windows PowerShell 运行空间](https://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9)。

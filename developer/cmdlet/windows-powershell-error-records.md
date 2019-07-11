@@ -13,12 +13,12 @@ helpviewer_keywords:
 - error category string [PowerShell SDK]
 ms.assetid: bdd66fea-eb63-4bb6-9cbe-9a799e5e0db5
 caps.latest.revision: 9
-ms.openlocfilehash: f6f5e50c55b477cbbeeaaf4f3ea665d5dc07758c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5412d88b690a1f5f1ef387416e3bf9da3a32c95d
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067036"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735075"
 ---
 # <a name="windows-powershell-error-records"></a>Windows PowerShell 错误记录
 
@@ -60,9 +60,9 @@ Cmdlet 必须传递[System.Management.Automation.ErrorRecord](/dotnet/api/System
 
 ## <a name="error-category"></a>错误类别
 
-创建错误记录时，指定使用定义的常量之一的错误类别[System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)枚举。 Windows PowerShell 使用的错误类别的用户设置时显示错误信息`$ErrorView`变量`"CategoryView"`。
+创建错误记录时，指定使用定义的常量之一的错误类别[System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)枚举。 Windows PowerShell 使用的错误类别的用户设置时显示错误信息`$ErrorView`变量`"CategoryView"`。
 
-避免使用[System.Management.Automation.Errorcategory.Notspecified](/dotnet/api/System.Management.Automation.ErrorCategory.NotSpecified)常量。 如果有任何有关错误或导致了错误的操作的信息，即使该类别不是完美匹配选择最适合描述错误或操作的类别。
+避免使用[System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) **NotSpecified**常量。 如果有任何有关错误或导致了错误的操作的信息，即使该类别不是完美匹配选择最适合描述错误或操作的类别。
 
 显示 Windows powershell 的信息被称为类别查看字符串和为依据的属性[System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)类。 (此类错误可通过访问[System.Management.Automation.ErrorRecord.CategoryInfo](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo)属性。)
 
@@ -72,7 +72,7 @@ Cmdlet 必须传递[System.Management.Automation.ErrorRecord](/dotnet/api/System
 
 以下列表描述了显示的信息：
 
-- 类别：Windows PowerShell 定义[System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)常量。
+- 类别：Windows PowerShell 定义[System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)常量。
 
 - TargetName:默认情况下，该对象的名称 cmdlet 处理中出现错误。 或者，另一个 cmdlet，定义的字符串。
 
@@ -88,9 +88,9 @@ Cmdlet 必须传递[System.Management.Automation.ErrorRecord](/dotnet/api/System
 
 通过提供的替换消息[System.Management.Automation.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails)对象。 使用此对象的以下构造函数之一，因为它们提供可由 Windows PowerShell 的额外的本地化信息。
 
-- [ErrorDetails.ErrorDetails (Cmdlet、 字符串、 字符串、 对象\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29？Displayproperty =](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29):使用此构造函数，如果您的模板字符串是在其中实现该 cmdlet 在同一程序集中的资源字符串，或如果你想要加载的模板字符串的重写通过[System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)方法。
+- [ErrorDetails(Cmdlet, String, String, Object[])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___):使用此构造函数，如果您的模板字符串是在其中实现该 cmdlet 在同一程序集中的资源字符串，或如果你想要加载的模板字符串的重写通过[System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)方法。
 
-- [ErrorDetails.ErrorDetails (程序集、 字符串、 字符串、 对象\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29？Displayproperty =](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29):如果模板字符串为另一个程序集中并且不执行操作的重写通过加载它，请使用此构造函数[System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)。
+- [ErrorDetails (程序集、 字符串、 字符串、 Object[])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Reflection_Assembly_System_String_System_String_System_Object___):如果模板字符串为另一个程序集中并且不执行操作的重写通过加载它，请使用此构造函数[System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)。
 
 替换消息应符合编写略有不同的异常消息的.NET Framework 设计准则。 异常消息应面向开发人员指南状态。 应为 cmdlet 用户编写这些替换消息。
 
@@ -110,7 +110,7 @@ Cmdlet 必须传递[System.Management.Automation.ErrorRecord](/dotnet/api/System
 
 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
-[System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)
+[System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)
 
 [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)
 

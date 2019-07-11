@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
 caps.latest.revision: 5
-ms.openlocfilehash: 151b7125afe1b0d386467a0e5f89225716857ac2
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 949c0d63b1e5bca1bfe670362df4297c29e98fcc
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080877"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734842"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Windows PowerShell 提供程序快速入门
 
@@ -67,7 +67,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 ### <a name="implementing-newdrive"></a>实现 NewDrive
 
-[System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)由 Windows PowerShell 引擎调用方法，当用户调用[Microsoft.PowerShell.Commands.New PSDrive](/dotnet/api/Microsoft.PowerShell.Commands.New-PSDrive)cmdlet 并指定您的提供程序的名称。 PSDriveInfo 参数传递由 Windows PowerShell 引擎中，并且该方法返回到 Windows PowerShell 引擎的新驱动器。 此方法必须在上面创建的类内部声明。
+[System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)由 Windows PowerShell 引擎调用方法，当用户调用[Microsoft.PowerShell.Commands.NewPSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand) cmdlet 并指定您的提供程序的名称。 PSDriveInfo 参数传递由 Windows PowerShell 引擎中，并且该方法返回到 Windows PowerShell 引擎的新驱动器。 此方法必须在上面创建的类内部声明。
 
 该方法首先检查以确保该驱动器对象和驱动器根目录中传递存在，返回`null`如果其中任何一个不匹配。 它然后使用 AccessDBPSDriveInfo 的内部类的构造函数来创建一个新的驱动器，连接到 Access 数据库驱动器表示。
 
@@ -147,7 +147,7 @@ internal class AccessDBPSDriveInfo : PSDriveInfo
 
 ### <a name="implementing-removedrive"></a>实现 RemoveDrive
 
-[System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)由 Windows PowerShell 引擎调用方法，当用户调用[Microsoft.PowerShell.Commands.Remove PSDrive](/dotnet/api/Microsoft.PowerShell.Commands.Remove-PSDrive) cmdlet。 此提供程序中的方法关闭到 Access 数据库的连接。
+[System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)由 Windows PowerShell 引擎调用方法，当用户调用[Microsoft.PowerShell.Commands.RemovePSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.removepsdrivecommand) cmdlet。 此提供程序中的方法关闭到 Access 数据库的连接。
 
 ```csharp
 protected override PSDriveInfo RemoveDrive(PSDriveInfo drive)

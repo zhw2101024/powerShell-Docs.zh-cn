@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 8d7ba9d122e90b80f6009b6dc8e8e3bb07331e4a
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 555baec08539403d3c15d1eca2b23eec0a874e49
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854854"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733945"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>创建用于访问数据存储的 Cmdlet
 
@@ -72,7 +72,7 @@ private string[] paths;
 
 两个[System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)特性声明`Path`参数属于`ScriptParameterSet`和`PatternParameterSet`。 有关参数集的详细信息，请参阅[添加到 Cmdlet 的参数集](./adding-parameter-sets-to-a-cmdlet.md)。
 
-[System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute)特性声明`PSPath`别名以供`Path`参数。 为了与访问 Windows PowerShell 提供程序的其他 cmdlet 保持一致，强烈建议声明此别名。 详细信息 aboutWindows PowerShell 路径，请参阅"PowerShell 路径概念"中的[Windows PowerShell 的工作原理](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)。
+[System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute)特性声明`PSPath`别名以供`Path`参数。 为了与访问 Windows PowerShell 提供程序的其他 cmdlet 保持一致，强烈建议声明此别名。 详细信息 aboutWindows PowerShell 路径，请参阅"PowerShell 路径概念"中的[Windows PowerShell 的工作原理](/previous-versions//ms714658(v=vs.85))。
 
 ### <a name="declaring-the-pattern-parameter"></a>声明的模式参数
 
@@ -379,7 +379,7 @@ Cmdlet 必须打开 Windows PowerShell 路径，以便它可以访问数据所�
 
 ## <a name="code-sample"></a>代码示例
 
-下面的代码显示了此选择 Str cmdlet 的此版本的实现。 请注意，此代码包括在 cmdlet 类，使用该 cmdlet 的私有方法和 Windows PowerShell 管理单元中使用的代码以注册该 cmdlet。 有关注册该 cmdlet 的详细信息，请参阅[构建 Cmdlet](#building-the-cmdlet)。
+下面的代码显示了此选择 Str cmdlet 的此版本的实现。 请注意，此代码包括在 cmdlet 类，使用该 cmdlet 的私有方法和 Windows PowerShell 管理单元中使用的代码以注册该 cmdlet。 有关注册该 cmdlet 的详细信息，请参阅[构建 Cmdlet](#Defining-the-Cmdlet-Class)。
 
 ```csharp
 //
@@ -1090,7 +1090,7 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="building-the-cmdlet"></a>生成该 Cmdlet
 
-实现一个 cmdlet 之后, 您必须注册它使用 Windows PowerShell 通过 Windows PowerShell 管理单元。 有关注册 cmdlet 的详细信息，请参阅[如何注册 Cmdlet、 提供商和主机应用程序](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
+实现一个 cmdlet 之后, 您必须注册它使用 Windows PowerShell 通过 Windows PowerShell 管理单元。 有关注册 cmdlet 的详细信息，请参阅[如何注册 Cmdlet、 提供商和主机应用程序](/previous-versions//ms714644(v=vs.85))。
 
 ## <a name="testing-the-cmdlet"></a>测试 Cmdlet
 
@@ -1214,7 +1214,7 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="see-also"></a>另请参阅
 
-[如何创建 Windows PowerShell Cmdlet](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[如何创建 Windows PowerShell Cmdlet](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
 [创建第一个 Cmdlet](./creating-a-cmdlet-without-parameters.md)
 
@@ -1222,8 +1222,8 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 [设计 Windows PowerShell 提供程序](../prog-guide/designing-your-windows-powershell-provider.md)
 
-[Windows PowerShell 的工作原理](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[Windows PowerShell 的工作原理](/previous-versions//ms714658(v=vs.85))
 
-[如何注册 Cmdlet、 提供程序，和托管应用程序](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[如何注册 Cmdlet、 提供程序，和托管应用程序](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

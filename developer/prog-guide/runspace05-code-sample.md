@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9688cd69-07ea-4ea0-8822-0a4850bcf86c
 caps.latest.revision: 7
-ms.openlocfilehash: b16ee45383059c52ce3433699c6b8d2120992431
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: abf19d848f6150d005c63bb0fc2ffbe1de405e2a
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081336"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734972"
 ---
 # <a name="runspace05-code-sample"></a>RunSpace05 代码示例
 
-以下是中所述的 Runspace05 示例源代码[配置的运行空间使用 RunspaceConfiguration](http://msdn.microsoft.com/en-us/42681d19-2d05-4975-befd-afb1990e79b2)。 此示例演示如何创建运行空间配置信息、 创建的运行空间，使用单个命令，创建一个管道并执行管道。 执行的命令是`Get-Process`cmdlet。
+以下是中所述的 Runspace05 示例源代码[配置的运行空间使用 RunspaceConfiguration](https://msdn.microsoft.com/en-us/42681d19-2d05-4975-befd-afb1990e79b2)。 此示例演示如何创建运行空间配置信息、 创建的运行空间，使用单个命令，创建一个管道并执行管道。 执行的命令是`Get-Process`cmdlet。
 
 > [!NOTE]
 > 您可以下载C#使用 Microsoft Windows 软件开发工具包适用于 Windows Vista 和 Microsoft.NET Framework 3.0 运行时组件的源文件 (runspace05.cs)。 有关下载说明，请参阅[如何安装 Windows PowerShell 和下载 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。

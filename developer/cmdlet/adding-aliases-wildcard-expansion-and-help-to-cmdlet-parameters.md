@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
-ms.openlocfilehash: 946b71e4480a47ac6ccd6930be445d7efb4fb62d
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: bc921537062e35aa203fa3ee95d3b7211c89cb28
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854891"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733848"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>向 Cmdlet 参数添加别名、通配符扩展和帮助
 
@@ -134,11 +134,11 @@ if (!wildcard.IsMatch(processName))
 
 ## <a name="define-object-types-and-formatting"></a>定义对象类型和格式设置
 
-Windows PowerShell cmdlet 使用.Net 对象之间传递信息。 因此，一个 cmdlet 可能需要定义其自己的类型，或者该 cmdlet 可能需要扩展现有类型提供的另一个 cmdlet。 有关定义新类型或扩展现有类型的详细信息，请参阅[扩展对象类型和格式设置](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)。
+Windows PowerShell cmdlet 使用.Net 对象之间传递信息。 因此，一个 cmdlet 可能需要定义其自己的类型，或者该 cmdlet 可能需要扩展现有类型提供的另一个 cmdlet。 有关定义新类型或扩展现有类型的详细信息，请参阅[扩展对象类型和格式设置](/previous-versions//ms714665(v=vs.85))。
 
 ## <a name="building-the-cmdlet"></a>生成该 Cmdlet
 
-执行后一个 cmdlet，它必须向注册 Windows PowerShell 通过 Windows PowerShell 管理单元。 有关注册 cmdlet 的详细信息，请参阅[如何注册 Cmdlet、 提供商和主机应用程序](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
+执行后一个 cmdlet，它必须向注册 Windows PowerShell 通过 Windows PowerShell 管理单元。 有关注册 cmdlet 的详细信息，请参阅[如何注册 Cmdlet、 提供商和主机应用程序](/previous-versions//ms714644(v=vs.85))。
 
 ## <a name="testing-the-cmdlet"></a>测试 Cmdlet
 
@@ -213,11 +213,11 @@ Windows PowerShell cmdlet 使用.Net 对象之间传递信息。 因此，一个
 
 [创建用于修改系统的 Cmdlet](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[如何创建 Windows PowerShell Cmdlet](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[如何创建 Windows PowerShell Cmdlet](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[扩展对象类型和格式设置](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[扩展对象类型和格式设置](/previous-versions//ms714665(v=vs.85))
 
-[如何注册 Cmdlet、 提供程序，和托管应用程序](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[如何注册 Cmdlet、 提供程序，和托管应用程序](/previous-versions//ms714644(v=vs.85))
 
 [中的 Cmdlet 参数支持通配符](./supporting-wildcard-characters-in-cmdlet-parameters.md)
 

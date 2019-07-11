@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7649d5d0-2b56-49b5-a670-dde46caca343
 caps.latest.revision: 11
-ms.openlocfilehash: 633204f3b181316761746ea2679910216fb74657
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: f04a07c241268566eaedfe2b299c33d5be4dc19d
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62064095"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735082"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-listcontrol-format"></a>SelectionCondition Element for EntrySelectedBy for ListControl (Format)
 
@@ -36,7 +36,7 @@ ms.locfileid: "62064095"
 
 以下各节描述了特性、 子元素和父元素的`SelectionCondition`元素。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 无。
 
@@ -77,6 +77,6 @@ lWhen 定义选择条件，必须满足以下要求：
 
 [ListEntry （格式） 的 EntrySelectedBy SelectionSetName 元素](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
-[ListEntry （格式） 的 EntrySelectedBy 的 TypeName 元素](http://msdn.microsoft.com/en-us/fcd4daa6-f3fd-43f7-a468-03c582d34533)
+[ListEntry （格式） 的 EntrySelectedBy 的 TypeName 元素](/powershell/developer/format/typename-element-for-entryselectedby-for-listcontrol-format)
 
 [编写 PowerShell 格式设置文件](./writing-a-powershell-formatting-file.md)

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 606c880c-6cf1-4ea6-8730-dbf137bfabff
 caps.latest.revision: 5
-ms.openlocfilehash: 9285a2f0e673de8b86084157423512bdeeda109d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 12d2cb8c40c9fd6278bb964a6259d03167536195
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080809"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734716"
 ---
 # <a name="writing-an-item-provider"></a>编写项提供程序
 
@@ -25,7 +25,7 @@ ms.locfileid: "62080809"
 
 ## <a name="implementing-item-methods"></a>实现的项方法
 
-[System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)类公开可用于访问和操作数据存储区中的项的几种方法。 有关这些方法的完整列表，请参阅[ItemCmdletProvider 方法](http://msdn.microsoft.com/library/system.management.automation.provider.itemcmdletprovider_methods\(v=vs.85\).aspx)。 在此示例中，我们将实现四个这些方法。 [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)获取指定路径处的项。 [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)设置指定项的值。 [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)检查指定路径处是否存在的项。 [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)检查以查看是否映射到数据存储区中的位置的路径。
+[System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)类公开可用于访问和操作数据存储区中的项的几种方法。 有关这些方法的完整列表，请参阅[ItemCmdletProvider 方法](/dotnet/api/system.management.automation.provider.itemcmdletprovider?view=pscore-6.2.0#methods)。 在此示例中，我们将实现四个这些方法。 [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)获取指定路径处的项。 [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)设置指定项的值。 [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)检查指定路径处是否存在的项。 [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)检查以查看是否映射到数据存储区中的位置的路径。
 
 > [!NOTE]
 > 本主题中的信息为基础[Windows PowerShell 提供程序快速入门](./windows-powershell-provider-quickstart.md)。 本主题不会介绍如何设置提供程序项目的基础知识，或如何实现的方法继承自[System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)类，该类创建并删除驱动器。
@@ -46,7 +46,7 @@ ms.locfileid: "62080809"
 
 ### <a name="implementing-getitem"></a>实现 GetItem
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)当用户调用时，PowerShell 引擎将调用[Microsoft.PowerShell.Commands.Get 项](/dotnet/api/Microsoft.PowerShell.Commands.Get-Item)cmdlet 将提供程序。 该方法返回位于指定路径处的项。 在访问数据库示例中，该方法检查该项是否为驱动器本身，而在数据库或数据库中的行中的表。 该方法将项发送到 PowerShell 引擎，通过调用[System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)方法。
+[System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)当用户调用时，PowerShell 引擎将调用[Microsoft.PowerShell.Commands.GetItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.getitemcommand) cmdlet您的提供程序。 该方法返回位于指定路径处的项。 在访问数据库示例中，该方法检查该项是否为驱动器本身，而在数据库或数据库中的行中的表。 该方法将项发送到 PowerShell 引擎，通过调用[System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)方法。
 
 ```csharp
 protected override void GetItem(string path)
@@ -85,9 +85,9 @@ protected override void GetItem(string path)
 
 ### <a name="implementing-setitem"></a>实现 SetItem
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) PowerShell 引擎调用由调用方法，当用户调用[Microsoft.PowerShell.Commands.Set 项](/dotnet/api/Microsoft.PowerShell.Commands.Set-Item)cmdlet. 它在指定的路径设置项的值。
+[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) PowerShell 引擎调用由调用方法，当用户调用[Microsoft.PowerShell.Commands.SetItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.setitemcommand)cmdlet。 它在指定的路径设置项的值。
 
-在访问数据库示例中，则最好设置项的值，仅当该项目是一个行，因此该方法将引发[NotSupportedException](http://msdn.microsoft.com/library/system.notsupportedexception\(v=vs.110\).aspx)时此项不是行。
+在访问数据库示例中，则最好设置项的值，仅当该项目是一个行，因此该方法将引发[NotSupportedException](/dotnet/api/system.notsupportedexception?view=netframework-4.8)时此项不是行。
 
 ```csharp
 protected override void SetItem(string path, object values)
@@ -145,7 +145,7 @@ protected override void SetItem(string path, object values)
 
 ### <a name="implementing-itemexists"></a>实现 ItemExists
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) PowerShell 引擎通过调用方法，当用户调用[Microsoft.PowerShell.Commands.Test 路径](/dotnet/api/Microsoft.PowerShell.Commands.Test-Path)cmdlet。 该方法确定在指定的路径是否存在某个项。 如果存在此项，该方法将其传递给 PowerShell 引擎通过调用[System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)。
+[System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) PowerShell 引擎通过调用方法，当用户调用[Microsoft.PowerShell.Commands.TestPathCommand](/dotnet/api/Microsoft.PowerShell.Commands.Testpathcommand)cmdlet。 该方法确定在指定的路径是否存在某个项。 如果存在此项，该方法将其传递给 PowerShell 引擎通过调用[System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)。
 
 ```csharp
 protected override bool ItemExists(string path)
