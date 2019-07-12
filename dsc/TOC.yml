@@ -19,7 +19,10 @@
     - name: Azure 虚拟机上的 DSC 入门
       href: getting-started/azureDSCexthistory.md
 - name: 快速入门
+  expanded: true
   items:
+    - name: 基于组策略创建配置
+      href: quickstarts/gpo-quickstart.md
     - name: 使用 DSC 创建网站
       href: quickstarts/website-quickStart.md
 - name: 配置
@@ -102,7 +105,7 @@
           href: managing-nodes/apply-get-test.md
         - name: 配置本地配置管理器 (v5)
           href: managing-nodes/metaConfig.md
-        - name: 配置本地配置管理器 (v4)
+        - name: 在 PowerShell 4.0 中配置 LCM
           href: managing-nodes/metaConfig4.md
         - name: 直接调用 DSC 资源方法
           href: managing-nodes/directCallResource.md
@@ -242,43 +245,43 @@
       items:
         - name: 概述
           href: reference/mof-classes/msft-dsclocalconfigurationmanager.md
-        - name: MSFT_DSCLocalConfigurationManager 类的 ApplyConfiguration 方法
+        - name: ApplyConfiguration 方法
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-applyconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager 类的 DisableDebugConfiguration 方法
+        - name: DisableDebugConfiguration 方法
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-disabledebugconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager 类的 EnableDebugConfiguration 方法
+        - name: EnableDebugConfiguration 方法
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-enabledebugconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager 类的 GetConfiguration 方法
+        - name: GetConfiguration 方法
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager 类的 GetConfigurationResultOutput 方法
+        - name: GetConfigurationResultOutput 方法
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md
-        - name: MSFT_DSCLocalConfigurationManager 类的 GetConfigurationStatus 方法
+        - name: GetConfigurationStatus 方法
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationstatus.md
-        - name: MSFT_DSCLocalConfigurationManager 类的 GetMetaConfiguration 方法
+        - name: GetMetaConfiguration 方法
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-getmetaconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager 类的 PerformRequiredConfigurationChecks 方法
+        - name: PerformRequiredConfigurationChecks 方法
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md
-        - name: MSFT_DSCLocalConfigurationManager 类的 RemoveConfiguration 方法
+        - name: RemoveConfiguration 方法
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-removeconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager 类的 ResourceGet 方法
+        - name: ResourceGet 方法
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourceget.md
-        - name: MSFT_DSCLocalConfigurationManager 类的 ResourceSet 方法
+        - name: ResourceSet 方法
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourceset.md
-        - name: MSFT_DSCLocalConfigurationManager 类的 ResourceTest 方法
+        - name: ResourceTest 方法
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourcetest.md
-        - name: MSFT_DSCLocalConfigurationManager 类的 RollBack 方法
+        - name: RollBack 方法
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-rollback.md
-        - name: MSFT_DSCLocalConfigurationManager 类的 SendConfiguration 方法
+        - name: SendConfiguration 方法
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager 类的 SendConfigurationApply 方法
+        - name: SendConfigurationApply 方法
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapply.md
-        - name: MSFT_DSCLocalConfigurationManager 类的 SendConfigurationApplyAsync 方法
+        - name: SendConfigurationApplyAsync 方法
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md
-        - name: MSFT_DSCLocalConfigurationManager 类的 SendMetaConfigurationApply 方法
+        - name: SendMetaConfigurationApply 方法
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md
-        - name: MSFT_DSCLocalConfigurationManager 类的 StopConfiguration 方法
+        - name: StopConfiguration 方法
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-stopconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager 类的 TestConfiguration 方法
+        - name: TestConfiguration 方法
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-testconfiguration.md
 - name: 进一步阅读
   items:
