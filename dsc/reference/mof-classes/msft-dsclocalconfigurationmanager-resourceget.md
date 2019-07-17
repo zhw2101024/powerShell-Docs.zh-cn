@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
-title: MSFT_DSCLocalConfigurationManager 类的 ResourceGet 方法
-ms.openlocfilehash: 1b74adf2327af2e0f9416f1d00eac4e3b75e9013
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: ResourceGet 方法
+ms.openlocfilehash: dbe610dfcef5ef6c79783801ecb6fdb7408bdfa5
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078565"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727108"
 ---
-# <a name="resourceget-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类的 ResourceGet 方法
+# <a name="resourceget-method"></a>ResourceGet 方法
 
 直接调用 DSC 资源的 **Get** 方法。
 
@@ -26,13 +26,13 @@ uint32 ResourceGet(
 
 ## <a name="parameters"></a>参数
 
-ResourceType \[in\]：要调用的资源的名称。
+ResourceType  \[in\]：要调用的资源的名称。
 
-ModuleName \[in\]：包含要调用资源的模块名称。
+ModuleName  \[in\]：包含要调用资源的模块名称。
 
-resourceProperty \[in\]：在哈希表中分别将资源属性名及其值指定为键和值。 使用 [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) cmdlet 可以发现资源属性及其类型。
+resourceProperty  \[in\]：在哈希表中分别将资源属性名及其值指定为键和值。 使用 [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) cmdlet 可以发现资源属性及其类型。
 
-configurations \[out\]：返回响应时，包含配置的嵌入实例。
+configurations  \[out\]：返回响应时，包含配置的嵌入实例。
 
 ## <a name="return-value"></a>返回值
 

@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
-title: MSFT_DSCLocalConfigurationManager 类的 EnableDebugConfiguration 方法
-ms.openlocfilehash: b2eaebfa901cb5d93fd0183287073e6b31f975d1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: EnableDebugConfiguration 方法
+ms.openlocfilehash: f1290e4d898332361850ffc85aa0a8d79863c8f7
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078752"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727143"
 ---
-# <a name="enabledebugconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类的 EnableDebugConfiguration 方法
+# <a name="enabledebugconfiguration-method"></a>EnableDebugConfiguration 方法
 
 启用 DSC 资源调试。
 
@@ -23,7 +23,7 @@ uint32 EnableDebugConfiguration(
 
 ## <a name="parameters"></a>参数
 
-BreakAll \[in\]：在资源脚本中的每一行设置断点。
+BreakAll  \[in\]：在资源脚本中的每一行设置断点。
 
 ## <a name="return-value"></a>返回值
 

@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
-title: MSFT_DSCLocalConfigurationManager 类的 ApplyConfiguration 方法
-ms.openlocfilehash: 559ff1793a18e28dad2f176bdb20eb53bc08630d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: ApplyConfiguration 方法
+ms.openlocfilehash: 0425b9a7db37e421830ba37da8f5c0a4877a1b72
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079160"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727180"
 ---
-# <a name="applyconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类的 ApplyConfiguration 方法
+# <a name="applyconfiguration-method"></a>ApplyConfiguration 方法
 
 使用配置代理应用处于挂起状态的配置。
 
@@ -25,7 +25,7 @@ uint32 ApplyConfiguration(
 
 ## <a name="parameters"></a>参数
 
-force \[in\]：若为 true，将会重新应用当前配置，即使有挂起的配置，也不例外。
+force  \[in\]：若为 true  ，将会重新应用当前配置，即使有挂起的配置，也不例外。
 
 ## <a name="return-value"></a>返回值
 

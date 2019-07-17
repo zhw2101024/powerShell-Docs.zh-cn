@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
-title: MSFT_DSCLocalConfigurationManager 类的 GetConfigurationResultOutput 方法
-ms.openlocfilehash: ea572a4a66befd4e4b8d83e2957632b1b5ed7d93
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: GetConfigurationResultOutput 方法
+ms.openlocfilehash: 480e710ce1a208253f0e664474c3e9bab296066a
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078634"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727129"
 ---
-# <a name="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类的 GetConfigurationResultOutput 方法
+# <a name="getconfigurationresultoutput-method"></a>GetConfigurationResultOutput 方法
 
 获取与特定作业相关的配置代理输出。
 
@@ -25,11 +25,11 @@ uint32 GetConfigurationResultOutput(
 
 ## <a name="parameters"></a>参数
 
-jobId \[in\]：要为其获取输出数据的作业的 ID。
+jobId  \[in\]：要为其获取输出数据的作业的 ID。
 
-resumeOutputBookmark \[in\]：指定输出应接着上一书签。
+resumeOutputBookmark  \[in\]：指定输出应接着上一书签。
 
-output \[out\]：指定作业的输出。
+output  \[out\]：指定作业的输出。
 
 ## <a name="return-value"></a>返回值
 

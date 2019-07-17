@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: DSC WindowsFeatureSet 资源
-ms.openlocfilehash: 8b7c7e72dd58459bd19cb723e5790a82841515c0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8a64168d9ad0d6a6c40eb0398cc734fa93a247dc
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076780"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726793"
 ---
 # <a name="dsc-windowsfeatureset-resource"></a>DSC WindowsFeatureSet 资源
 
@@ -38,7 +38,7 @@ WindowsFeatureSet [string] #ResourceName
 
 |  属性  |  说明   |
 |---|---|
-| 名称| 要确保添加或删除的角色或功能的名称。 这与 [Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx) cmdlet 的 **Name** 属性相同，并非角色或功能的显示名称。|
+| 名称| 要确保添加或删除的角色或功能的名称。 这与 [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature?view=winserver2012r2-ps) cmdlet 的 **Name** 属性相同，并非角色或功能的显示名称。|
 | 凭据| 要用于添加或删除角色或功能的凭据。|
 | Ensure| 指示是否添加角色或功能。 若要确保添加角色或功能，请将此属性设置为“Present”。若要确保删除角色或功能，请将此属性设为“Absent”。|
 | IncludeAllSubFeature| 将此属性设置为 **$true** 可包括通过 **Name** 属性指定的功能的所有所需子功能。|

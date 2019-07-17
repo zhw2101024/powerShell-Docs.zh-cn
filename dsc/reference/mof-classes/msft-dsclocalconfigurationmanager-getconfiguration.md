@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
-title: MSFT_DSCLocalConfigurationManager 类的 GetConfiguration 方法
-ms.openlocfilehash: ae31ac30c152c96707b764ddaf00c924806afcfc
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: GetConfiguration 方法
+ms.openlocfilehash: eabc536cfe69abe1144ff031a6f64c09a772e638
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078635"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734526"
 ---
-# <a name="getconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类的 GetConfiguration 方法
+# <a name="getconfiguration-method"></a>GetConfiguration 方法
 
 将配置文档发送到托管节点，并使用配置代理的 **Get** 方法以应用配置。
 
@@ -24,9 +24,9 @@ uint32 GetConfiguration(
 
 ## <a name="parameters"></a>参数
 
-configurationData \[in\]：指定要发送的配置数据。
+configurationData  \[in\]：指定要发送的配置数据。
 
-configurations \[out\]：返回响应时，包含配置的嵌入实例。
+configurations  \[out\]：返回响应时，包含配置的嵌入实例。
 
 ## <a name="return-value"></a>返回值
 

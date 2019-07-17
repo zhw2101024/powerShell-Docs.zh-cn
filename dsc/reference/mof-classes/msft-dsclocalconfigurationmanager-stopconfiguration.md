@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
-title: MSFT_DSCLocalConfigurationManager 类的 StopConfiguration 方法
-ms.openlocfilehash: 1cd887d205967c3d282143df4e6199027639230e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: StopConfiguration 方法
+ms.openlocfilehash: e1de175032a3bddf11af218bc4a15bdbe554a9d5
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078226"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726987"
 ---
-# <a name="stopconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类的 StopConfiguration 方法
+# <a name="stopconfiguration-method"></a>StopConfiguration 方法
 
 停止正在进行的配置更改。
 
@@ -23,7 +23,7 @@ uint32 StopConfiguration(
 
 ## <a name="parameters"></a>参数
 
-force \[in\]：若为 true，强制停止配置。
+force  \[in\]：若为 true  ，强制停止配置。
 
 ## <a name="return-value"></a>返回值
 

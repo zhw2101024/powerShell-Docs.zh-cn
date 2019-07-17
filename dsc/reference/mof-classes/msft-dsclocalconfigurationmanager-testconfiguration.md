@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
-title: MSFT_DSCLocalConfigurationManager 类的 TestConfiguration 方法
-ms.openlocfilehash: d746832b01310f43a7aae33dd0fa70c0928bb3e0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: TestConfiguration 方法
+ms.openlocfilehash: 384134212e3b29b63dc045aee4b708c87c970302
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078072"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726961"
 ---
-# <a name="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类的 TestConfiguration 方法
+# <a name="testconfiguration-method"></a>TestConfiguration 方法
 
 将配置文档发送到托管节点并针对该文档验证当前配置。
 
@@ -26,13 +26,13 @@ uint32 TestConfiguration(
 
 ## <a name="parameters"></a>参数
 
-configurationData \[in\]：配置的环境数据。
+configurationData  \[in\]：配置的环境数据。
 
-InDesiredState \[out\]：返回响应时，指定托管节点是否处于配置文档指定的状态。
+InDesiredState  \[out\]：返回响应时，指定托管节点是否处于配置文档指定的状态。
 
-ResourcesInDesiredState \[out\]：返回响应时，包含 MSFT_ResourceInDesiredState 类的嵌入实例，此类指定处于所需状态的资源。
+ResourcesInDesiredState  \[out\]：返回响应时，包含 MSFT_ResourceInDesiredState  类的嵌入实例，此类指定处于所需状态的资源。
 
-ResourcesNotInDesiredState \[out\]：返回响应时，包含 MSFT_ResourceNotInDesiredState 类的嵌入实例，此类指定不处于所需状态的资源。
+ResourcesNotInDesiredState  \[out\]：返回响应时，包含 MSFT_ResourceNotInDesiredState  类的嵌入实例，此类指定不处于所需状态的资源。
 
 ## <a name="return-value"></a>返回值
 

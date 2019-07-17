@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 使用 Nano Server 上的 DSC
-ms.openlocfilehash: ac5eaf3885788f40e12e4f0a0f19025668280f7e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: fb826455c21833ae4c8dc2ecd731ffce6bf7eaba
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079721"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734607"
 ---
 # <a name="using-dsc-on-nano-server"></a>使用 Nano Server 上的 DSC
 
@@ -44,7 +44,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 - [Remove-DscConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument)
 - [Get-DscConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus)
 - [Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource)
-- [Find-DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
+- [Find-DscResource](/powershell/module/powershellget/find-dscresource?view=powershell-6)
 - [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)
 - [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum)
 
@@ -56,7 +56,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 
 - 在用户上下文内运行资源（请参阅[使用用户凭据运行 DSC (RunAs)](../configurations/runAsUser.md)）
 
-- 基于类的资源（请参阅[使用 PowerShell 类编写自定义 DSC 资源](../resources/authoringResourceClass.md)）
+- 基于类的资源（请参阅[使用 PowerShell 类编写自定义 DSC 资源](/previous-versions//dn948461(v=technet.10))）
 
 - 调试 DSC 资源（见[调试 DSC 资源](../troubleshooting/debugResource.md)）
 
@@ -104,7 +104,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 
   **问题：** 仅对处于正在启动/停止（状态）的服务有效。 如果有人尝试更改其他服务属性（如 startuptype、credentials、description 等），则会失败。 引发的错误类似于：
 
-  找不到类型 [management.managementobject]: 请验证包含此类型的程序集是否已加载。
+  找不到类型 [management.managementobject]: 请验证包含此类型的程序集是否已加载。 
 
 - 无法实现功能的资源
 - **用户**

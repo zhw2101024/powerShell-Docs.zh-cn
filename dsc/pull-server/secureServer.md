@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 请求服务器最佳做法
-ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a3c4ca039b1e061a9246848bef6aeecebcd89011
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079194"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727196"
 ---
 # <a name="pull-server-best-practices"></a>请求服务器最佳做法
 
 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> 请求服务器（Windows 功能 DSC-Service）是 Windows Server 的一个受支持组件，不过目前没有提供新功能的计划。 建议开始将托管客户端转换至 [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)（包括 Windows Server 上的请求服务器以外的功能）或[此处](pullserver.md#community-solutions-for-pull-service)列出的社区解决方案之一。
+> 请求服务器（Windows 功能 DSC-Service）是 Windows Server 的一个受支持组件，不过目前没有提供新功能的计划  。 建议开始将托管客户端转换至 [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)（包括 Windows Server 上的请求服务器以外的功能）或[此处](/powershell/dsc/pull-server/pullserver#community-solutions-for-pull-service)列出的社区解决方案之一。
 
 摘要：本文档旨在包括用于帮助为解决方案进行准备的工程师的过程和可扩展性。 详细信息应提供由客户确定，然后由产品团队验证的最佳做法，以确保建议面向未来并且可视为是稳定的。
 
@@ -50,9 +50,9 @@ Windows PowerShell 为所需状态配置提供了一组语言扩展，可以用�
 请求服务器提供了一个集中化服务来存储可供目标节点访问的配置。
 
 请求服务器角色可以作为 Web 服务器实例或 SMB 文件共享进行部署。 Web 服务器功能包含一个 OData 接口，并且可以选择包含供目标节点在应用配置时报告返回成功或失败确认的功能。 此功能在存在大量目标节点的环境中非常有用。
-配置目标节点（也称为客户端）以指向请求服务器之后，最新配置数据和任何所需脚本会进行下载并应用。 这可以作为一次性部署或作为反复出现的作业（这也使得请求服务器成为用于大规模管理更改的重要资产）来进行。 有关详细信息，请参阅 [Windows PowerShell 所需状态配置请求服务器](/powershell/dsc/pullServer)和
+配置目标节点（也称为客户端）以指向请求服务器之后，最新配置数据和任何所需脚本会进行下载并应用。 这可以作为一次性部署或作为反复出现的作业（这也使得请求服务器成为用于大规模管理更改的重要资产）来进行。 有关详细信息，请参阅 [Windows PowerShell 所需状态配置请求服务器](/powershell/dsc/pullServer/pullserver)和
 
-[推送和拉取配置模式](/powershell/dsc/pullServer)。
+[推送和拉取配置模式](/powershell/dsc/pullServer/pullserver)。
 
 ## <a name="configuration-planning"></a>配置规划
 
@@ -82,7 +82,7 @@ WMF 包含在 Windows Server 中，在各个 Windows Server 版本之间进行�
 
 可以通过使用 DSC 配置脚本设置服务来简化请求服务器部署。 本文档包含可以用于部署生产准备就绪服务器节点的配置脚本。 若要使用配置脚本，需要一个未包含在 Windows Server 中的 DSC 模块。 所需模块名称是 **xPSDesiredStateConfiguration**，其中包括 DSC 资源 **xDscWebService**。 可以在[此处](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d)下载 xPSDesiredStateConfiguration 模块。
 
-使用 PowerShellGet 模块中的 `Install-Module` cmdlet。
+使用 PowerShellGet  模块中的 `Install-Module` cmdlet。
 
 ```powershell
 Install-Module xPSDesiredStateConfiguration
@@ -215,11 +215,11 @@ New-DscChecksum -ConfigurationPath .\ -OutPath .\
 #### <a name="dsc-configurations"></a>DSC 配置
 
 请求服务器的用途是提供一种集中式机制，用于将 DSC 配置分发到客户端节点。 配置作为 MOF 文档存储在服务器上。
-每个文档都使用唯一的 Guid 进行命名。 客户端配置为与请求服务器连接时，还会向它们提供它们应请求的配置的 Guid。 这一通过 Guid 引用配置的系统可保证全局唯一性，并且十分灵活，以便配置可按照每个节点的粒度进行应用，或作为跨应具有相同配置的多台服务器的角色配置。
+每个文档都使用唯一的 Guid 进行命名  。 客户端配置为与请求服务器连接时，还会向它们提供它们应请求的配置的 Guid  。 这一通过 Guid 引用配置的系统可保证全局唯一性，并且十分灵活，以便配置可按照每个节点的粒度进行应用，或作为跨应具有相同配置的多台服务器的角色配置  。
 
 #### <a name="guids"></a>Guid
 
-全面考虑请求服务器部署时，规划配置 Guid 值得多加注意。 对于如何处理 Guid 没有特定要求，该过程可能对于每个环境是唯一的。 该过程的范围可以从简单到复杂：集中存储的 CSV 文件、简单 SQL 表、CMDB 或需要与其他工具或软件解决方案集成的复杂解决方案。 有两种常规方法：
+全面考虑请求服务器部署时，规划配置 Guid 值得多加注意  。 对于如何处理 Guid 没有特定要求，该过程可能对于每个环境是唯一的  。 该过程的范围可以从简单到复杂：集中存储的 CSV 文件、简单 SQL 表、CMDB 或需要与其他工具或软件解决方案集成的复杂解决方案。 有两种常规方法：
 
 - **对每台服务器分配 Guid** — 提供一种措施来保证分别控制每台服务器配置。 这提供了更新方面的精度级别，十分适合于包含少量服务器的环境。
 - **对每个服务器角色分配 Guid** — 执行相同功能的所有服务器（如 Web 服务器）都使用相同 GUID 引用所需配置数据。  请注意，如果有许多服务器共享相同 GUID，则它们都会在配置更改时同时更新。

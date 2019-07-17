@@ -3,12 +3,12 @@ description: 了解 Azure 中 Desired State Configuration (DSC) 扩展的版本�
 ms.date: 06/21/2018
 keywords: dsc, powershell, azure, 扩展
 title: Azure DSC 扩展版本历史记录
-ms.openlocfilehash: 2c076e3beccc15e99af2327820916d7a4d28da68
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6d821e53e9206d99425e8c83f6d90986c7c28b63
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079738"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734660"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Azure Desired State Configuration 扩展版本历史记录
 
@@ -164,7 +164,7 @@ ms.locfileid: "62079738"
 - **环境：** Azure
 - **备注：** 此版本使用包括在 Windows Server 2016 Technical Preview 中的 DSC；对于其他 Windows OS，它将安装 [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/)（安装 WMF 需要重启）。
 - **新功能：**
-  - 支持 WMF 5.1 预览版。 此版本在首次发布时是一个可选升级，必须在资源管理器模板中指定 Wmfversion =“5.1PP”来安装 WMF 5.1 预览版。 若 Wmfversion =“latest”，则仍安装 [WMF 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/)。 有关 WMF 5.1 预览版的详细信息，请参阅[此博客]( https://blogs.msdn.microsoft.com/powershell/2016/07/16/announcing-windows-management-framework-wmf-5-1-preview/)。
+  - 支持 WMF 5.1 预览版。 此版本在首次发布时是一个可选升级，必须在资源管理器模板中指定 Wmfversion =“5.1PP”来安装 WMF 5.1 预览版。 若 Wmfversion =“latest”，则仍安装 [WMF 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/)。 有关 WMF 5.1 预览版的详细信息，请参阅[此博客](https://blogs.msdn.microsoft.com/powershell/2016/07/16/announcing-windows-management-framework-wmf-5-1-preview/)。
   - 添加了其他小的修复和改进。
 
 ### <a name="version--219"></a>版本 2.19
@@ -219,7 +219,7 @@ ms.locfileid: "62079738"
 - **环境：** Azure
 - **备注：** 此版本使用包括在 Windows Server 2016 Technical Preview 中的 DSC；对于其他 Windows OS，它将安装 [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/)（安装 WMF 需要重启）。
 - **新功能：**
-  - 在扩展版本 2.14 中，包括了对安装 WMF RTM 的更改。 从扩展版本 2.13.2.0 升级到 2.14.0.0 时，你可能会注意到某些 DSC cmdlet 失败或配置失败，并出现错误“未找到含给定属性值的实例”。 有关详细信息，请参阅 [DSC 发行说明](https://msdn.microsoft.com/en-us/powershell/wmf/limitation_dsc)。 2.15 版中已添加这些问题的解决方法。
+  - 在扩展版本 2.14 中，包括了对安装 WMF RTM 的更改。 从扩展版本 2.13.2.0 升级到 2.14.0.0 时，你可能会注意到某些 DSC cmdlet 失败或配置失败，并出现错误“未找到含给定属性值的实例”。 有关详细信息，请参阅 [DSC 发行说明](https://msdn.microsoft.com/en-us/powershell/wmf/limitation_dsc)。 2\.15 版中已添加这些问题的解决方法。
   - 遗憾的是，如果你已安装版本 2.14 且遇到上述两个问题之一，则将需要手动执行这些步骤。  在提升的 PowerShell 会话中：
     - `Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof`
     - `mofcomp $env:windir\system32\wbem\DscCoreConfProv.mof`

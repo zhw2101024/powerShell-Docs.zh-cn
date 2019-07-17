@@ -1,15 +1,15 @@
 ---
 ms.date: 12/12/2018
 keywords: dsc,powershell,配置,安装程序
-title: 在早期版本的 Windows PowerShell 中配置本地配置管理器
-ms.openlocfilehash: cea32c9aa8144bc52f3d44f2ad852f577f6a5e6d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: 在 PowerShell 4.0 中配置 LCM
+ms.openlocfilehash: a7d8a1d8dea5ca4c2cdf53b8c02e498be20dab60
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079602"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734625"
 ---
-# <a name="configuring-the-local-configuration-manager-in-previous-versions-of-windows-powershell"></a>在早期版本的 Windows PowerShell 中配置本地配置管理器
+# <a name="configuring-the-lcm-in-powershell-40"></a>在 PowerShell 4.0 中配置 LCM
 
 >适用于：Windows PowerShell 4.0
 
@@ -36,10 +36,10 @@ ms.locfileid: "62079602"
 - **DownloadManagerName**：指示配置和模块下载管理器的名称。
 - **RebootNodeIfNeeded**：将此设置为 `$true` 可使资源使用 `$global:DSCMachineStatus` 标志重新启动节点。 否则，你必须为要求重启的配置手动重启节点。 默认值为 `$false`。 若要在通过 DSC（例如 Windows Installer）以外的其他配置执行重启条件时使用此设置，请将此设置和 [xPendingReboot](https://github.com/powershell/xpendingreboot) 模块组合使用。
 - **RefreshFrequencyMins**：设置请求服务后使用。 表示本地配置管理器联系请求服务下载当前配置的频率（以分钟为单位）。 可将此值设置为与 ConfigurationModeFrequencyMins 结合使用。 当 RefreshMode 设置为 PULL 时，目标节点按 RefreshFrequencyMins 所设置的时间间隔与请求服务联系并下载当前配置。 一致性引擎将在由 ConfigurationModeFrequencyMins 设置的时间间隔将下载的最新配置应用到目标节点。 若 RefreshFrequencyMins 未设置为 ConfigurationModeFrequencyMins 的整倍数，系统将会向上进行舍入。 默认值为 30。
-- **RefreshMode**：可能的值为 Push（默认值）和 Pull。 在“推送”配置下，必须在每个目标节点上放置配置文件（可使用任何客户端计算机进行此操作）。 在“请求”模式下，必须为本地配置管理器设置请求服务，以便其联系和访问配置文件。
+- **RefreshMode**：可能的值为 Push  （默认值）和 Pull  。 在“推送”配置下，必须在每个目标节点上放置配置文件（可使用任何客户端计算机进行此操作）。 在“请求”模式下，必须为本地配置管理器设置请求服务，以便其联系和访问配置文件。
 
 > [!NOTE]
-> LCM 基于以下条件启动 ConfigurationModeFrequencyMins 周期：
+> LCM 基于以下条件启动 ConfigurationModeFrequencyMins  周期：
 >
 > - 使用 `Set-DscLocalConfigurationManager` 应用新的元配置
 > - 计算机重新启动

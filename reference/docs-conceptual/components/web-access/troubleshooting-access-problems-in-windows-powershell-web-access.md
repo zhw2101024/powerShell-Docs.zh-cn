@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell Web 访问中的访问问题疑难解答
-ms.openlocfilehash: 314e4a8098988111739705d55b68ff5ed2f5eff3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 66e913504cf0c34f8d9ab18b088fb06173aca24c
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086589"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733866"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Windows PowerShell Web 访问中的访问问题疑难解答
 
@@ -35,11 +35,11 @@ ms.locfileid: "62086589"
 
   验证用户尝试连接的计算机上是否已启用远程管理。
 
-  有关详细信息，请参阅 [How to Configure Your Computer for Remoting](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting)（如何配置计算机进行远程处理）。
+  有关详细信息，请参阅 [How to Configure Your Computer for Remoting](/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting)（如何配置计算机进行远程处理）。
 
 ## <a name="internal-server-error"></a>内部服务器错误
 
-用户尝试在 Internet Explorer 窗口中登录到 Windows PowerShell Web 访问时，系统会向他们显示“内部服务器错误”页面或 Internet Explorer 停止响应。
+用户尝试在 Internet Explorer 窗口中登录到 Windows PowerShell Web 访问时，系统会向他们显示“内部服务器错误”页面或 Internet Explorer 停止响应   。
 
 此问题特定于 Internet Explorer。
 
@@ -50,15 +50,15 @@ ms.locfileid: "62086589"
 #### <a name="workaround"></a>解决方法
 
 1. [安装并运行 Internet Explorer 10](https://ie.microsoft.com/testdrive/info/downloads/Default.html)
-1. 将 Internet Explorer“文档模式”设置更改为“IE10 标准”。
-   1. 按 F12 打开“开发人员工具”控制台。
-   1. 在 Internet Explorer 10 中，单击“浏览器模式”，然后选择“Internet Explorer 10”。
-   1. 单击“文档模式”，然后单击“IE10 标准”。
+1. 将 Internet Explorer“文档模式”设置更改为“IE10 标准”   。
+   1. 按 F12 打开“开发人员工具”控制台  。
+   1. 在 Internet Explorer 10 中，单击“浏览器模式”  ，然后选择“Internet Explorer 10”  。
+   1. 单击“文档模式”，然后单击“IE10 标准”   。
    1. 再次按 **F12** 可关闭“开发人员工具”控制台。
 1. 在 Internet Explorer 10 中禁用自动代理配置。
-   1. 单击 **“工具”**，然后单击 **“Internet 选项”**。
-   1. 在“Internet 选项”对话框中的“连接”选项卡上，单击“LAN 设置”。
-   1. 清除“自动检测设置”复选框。 单击“确定”，然后再次单击“确定”可关闭“Internet 选项”对话框。
+   1. 单击 **“工具”** ，然后单击 **“Internet 选项”** 。
+   1. 在“Internet 选项”  对话框中的“连接”  选项卡上，单击“LAN 设置”  。
+   1. 清除“自动检测设置”  复选框。 单击“确定”  ，然后再次单击“确定”  可关闭“Internet 选项”  对话框。
 
 ## <a name="cannot-connect-to-a-remote-workgroup-computer"></a>无法连接到远程工作组计算机
 
@@ -70,7 +70,7 @@ ms.locfileid: "62086589"
 
 有关示例，请参阅[使用 Windows PowerShell cmdlet 安装 Windows PowerShell Web 访问](install-and-use-windows-powershell-web-access.md#to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets)。
 
-可选择在以网关服务器为目标的“添加角色和功能向导”会话中的工具，添加 IIS Manager 控制台及其他所需的 IIS 管理工具。
+可选择在以网关服务器为目标的“添加角色和功能向导”会话中的工具，添加 IIS Manager 控制台及其他所需的 IIS 管理工具  。
 “添加角色和功能向导”可从服务器管理器中打开。
 
 ## <a name="windows-powershell-web-access-website-is-not-accessible"></a>无法访问 Windows PowerShell Web 访问网站

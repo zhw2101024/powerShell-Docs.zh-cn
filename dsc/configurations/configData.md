@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 使用配置数据
-ms.openlocfilehash: f2d25b9ced805fb4c91378ebfe840104eb6ce52a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7d13b19ba932d1a818194a221f145fd1a3832547
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080214"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727216"
 ---
 # <a name="using-configuration-data-in-dsc"></a>使用 DSC 中的配置数据
 
@@ -17,19 +17,19 @@ ms.locfileid: "62080214"
 这样一来，便可创建可用于多个节点或不同环境的单个配置。
 例如，如果要开发应用程序，可将一个配置同时用于开发和生产环境，并使用配置数据指定每个环境的数据。
 
-本主题介绍了 ConfigurationData 哈希表的结构。
+本主题介绍了 ConfigurationData  哈希表的结构。
 有关如何使用配置数据的示例，请参阅[分离配置和环境数据](separatingEnvData.md)。
 
 ## <a name="the-configurationdata-common-parameter"></a>ConfigurationData 常见参数
 
-DSC 配置使用在编译配置时指定的常见参数 ConfigurationData。
+DSC 配置使用在编译配置时指定的常见参数 ConfigurationData  。
 有关编译配置的信息，请参阅 [DSC 配置](configurations.md)。
 
-ConfigurationData 参数是必须具有至少一个名为 AllNodes 的键的哈希表。
+ConfigurationData 参数是必须具有至少一个名为 AllNodes 的键的哈希表   。
 它还可以额外包含一个或多个键。
 
 > [!NOTE]
-> 除了名为“AllNodes”的键之外，本主题中的示例还额外使用一个名为 `NonNodeData` 的键。不过，可以额外添加任意数量的键，并能根据需要随意命名这些键。
+> 除了名为“AllNodes”的键之外，本主题中的示例还额外使用一个名为 `NonNodeData` 的键。不过，可以额外添加任意数量的键，并能根据需要随意命名这些键  。
 
 ```powershell
 $MyData =
@@ -136,8 +136,8 @@ $MyData =
 
 ## <a name="defining-the-configurationdata-hashtable"></a>定义 ConfigurationData 哈希表
 
-可以将 ConfigurationData 定义为与配置同属一个脚本文件的变量（如上面的示例所示），也可以定义为单独的 `.psd1` 文件中的变量。
-若要在 `.psd1` 文件中定义 ConfigurationData，请创建仅包含表示配置数据的哈希表的文件。
+可以将 ConfigurationData  定义为与配置同属一个脚本文件的变量（如上面的示例所示），也可以定义为单独的 `.psd1` 文件中的变量。
+若要在 `.psd1` 文件中定义 ConfigurationData  ，请创建仅包含表示配置数据的哈希表的文件。
 
 例如，可创建一个名为 `MyData.psd1` 的文件，此文件包含以下内容：
 
@@ -160,16 +160,16 @@ $MyData =
 
 ## <a name="compiling-a-configuration-with-configuration-data"></a>编译包含配置数据的配置
 
-若要编译已为其定义配置数据的配置，请以 ConfigurationData 参数值的形式传递配置数据。
+若要编译已为其定义配置数据的配置，请以 ConfigurationData  参数值的形式传递配置数据。
 
-这将为 AllNodes 数组中的每一条目都创建一个 MOF 文件。
+这将为 AllNodes  数组中的每一条目都创建一个 MOF 文件。
 每个 MOF 文件都使用相应数组条目的 `NodeName` 属性进行命名。
 
 例如，如果将配置数据定义为位于上面的 `MyData.psd1` 文件中，编译配置将创建 `VM-1.mof` 和 `VM-2.mof` 文件。
 
 ### <a name="compiling-a-configuration-with-configuration-data-using-a-variable"></a>使用变量编译包含配置数据的配置
 
-若要使用定义为与配置同属一个 `.ps1` 文件的变量的配置数据，请在编译配置时将变量名称作为 ConfigurationData 参数值进行传递：
+若要使用定义为与配置同属一个 `.ps1` 文件的变量的配置数据，请在编译配置时将变量名称作为 ConfigurationData  参数值进行传递：
 
 ```powershell
 MyDscConfiguration -ConfigurationData $MyData
@@ -189,13 +189,13 @@ DSC 提供以下几种可在配置脚本中使用的特殊变量：
 
 - **$AllNodes** 指 **ConfigurationData** 中定义的整个节点集合。 可使用 **.Where()** 和 **.ForEach()** 筛选 **AllNodes** 集合。
 - **ConfigurationData** 指编译配置时，作为参数传递的整个哈希表。
-- MyTypeName 包含使用了变量的[配置](configurations.md)名称。 例如，在配置 `MyDscConfiguration` 中，`$MyTypeName` 的值将为 `MyDscConfiguration`。
+-  MyTypeName 包含使用了变量的[配置](configurations.md)名称。 例如，在配置 `MyDscConfiguration` 中，`$MyTypeName` 的值将为 `MyDscConfiguration`。
 - **Node** 指使用 **.Where()** 或 **.ForEach()** 筛选 **AllNodes** 集合后，该集合中的特定项。
-  - 可阅读 [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md) 了解有关这些方法的详细信息
+  - 可阅读 [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays) 了解有关这些方法的详细信息
 
 ## <a name="using-non-node-data"></a>使用非节点数据
 
-如上面的示例所示，除了必需的 AllNodes 键之外，ConfigurationData 哈希表还可以额外包含一个或多个键。
+如上面的示例所示，除了必需的 AllNodes  键之外，ConfigurationData  哈希表还可以额外包含一个或多个键。
 本主题中的示例只额外使用了一个节点，并将它命名为“`NonNodeData`”。
 不过，可以额外定义任意数量的键，并能根据需要随意命名这些键。
 

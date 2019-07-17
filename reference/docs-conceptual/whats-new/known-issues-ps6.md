@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell, 核心
 title: PowerShell 6.0 的已知问题
-ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 502143b660204edada6a9e62bdf6b260a384a078
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62085960"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733821"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell 6.0 的已知问题
 
@@ -55,7 +55,7 @@ PowerShell 脚本必须以 `.ps1` 结尾，以便解释器了解如何在当前�
 
 Linux/macOS 上的 PowerShell 使用 .NET Core，即 Microsoft Windows 上的完整 .NET Framework 的子集。 这非常重要，因为 PowerShell 提供对基础框架类型、方法等的直接访问。因此，在 Windows 上运行的脚本可能无法在非 Windows 平台上运行，因为框架之间存在差异。 有关 .NET Core Framework 的详细信息，请参阅 <https://dotnetfoundation.org/net-core>
 
-随着 [.NET Standard 2.0](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/) 的出现，.NET Core 2.0 将恢复存在于完整 .NET Framework 中的许多传统类型和方法。 这意味着，PowerShell Core 将能够加载许多传统 Windows PowerShell 模块，而无需进行修改。 可以在[此处](https://github.com/PowerShell/PowerShell/projects/4)了解我们有关 .NET Standard 2.0 的工作。
+随着 [.NET Standard 2.0](https://devblogs.microsoft.com/dotnet/introducing-net-standard/) 的出现，.NET Core 2.0 将恢复存在于完整 .NET Framework 中的许多传统类型和方法。 这意味着，PowerShell Core 将能够加载许多传统 Windows PowerShell 模块，而无需进行修改。 可以在[此处](https://github.com/PowerShell/PowerShell/projects/4)了解我们有关 .NET Standard 2.0 的工作。
 
 ### <a name="redirection-issues"></a>重定向问题
 
@@ -82,7 +82,7 @@ Linux/macOS 上的 PowerShell 中不支持作业控制。
 
 在 [psl-omi-provider](https://github.com/PowerShell/psl-omi-provider) 存储库中完成基于 WSMan 的远程处理工作。
 
-PowerShell Core 还支持所有平台（Windows、macOS 和 Linux）上通过 SSH 的 PowerShell 远程处理 (PSRP)。 虽然目前在生产中不支持此功能，但可以在[此处](../core-powershell/ssh-remoting-in-powershell-core.md)了解有关此设置的详细信息。
+PowerShell Core 还支持所有平台（Windows、macOS 和 Linux）上通过 SSH 的 PowerShell 远程处理 (PSRP)。 虽然目前在生产中不支持此功能，但可以在[此处](../learn/remoting/SSH-Remoting-in-PowerShell-Core.md)了解有关此设置的详细信息。
 
 ### <a name="just-enough-administration-jea-support"></a>Just-Enough-Administration (JEA) 支持
 

@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
-title: MSFT_DSCLocalConfigurationManager 类的 SendMetaConfigurationApply 方法
-ms.openlocfilehash: b372a6c0ab9d4561dcf67026275e7d3ca6aa2584
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: SendMetaConfigurationApply 方法
+ms.openlocfilehash: b2e420bafb8ea22aea43800f6e429d3ed785d1e8
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078303"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727041"
 ---
-# <a name="sendmetaconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类的 SendMetaConfigurationApply 方法
+# <a name="sendmetaconfigurationapply-method"></a>SendMetaConfigurationApply 方法
 
 设置用于控制配置代理的本地配置管理器设置。
 
@@ -24,9 +24,9 @@ uint32 SendMetaConfigurationApply(
 
 ## <a name="parameters"></a>参数
 
-ConfigurationData \[in\]：配置的环境数据。
+ConfigurationData  \[in\]：配置的环境数据。
 
-force \[in\]：若为 true，强制停止配置。
+force  \[in\]：若为 true  ，强制停止配置。
 
 ## <a name="return-value"></a>返回值
 

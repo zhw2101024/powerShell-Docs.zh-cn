@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
-title: MSFT_DSCLocalConfigurationManager 类的 RemoveConfiguration 方法
-ms.openlocfilehash: 03555cc73da1272bdebebc3d93b26aaf8fabc18e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: RemoveConfiguration 方法
+ms.openlocfilehash: aacbed96beb960d7e0d449423a4de9a27f0a287e
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078684"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734383"
 ---
-# <a name="removeconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 类的 RemoveConfiguration 方法
+# <a name="removeconfiguration-method"></a>RemoveConfiguration 方法
 
 删除配置文件。
 
@@ -24,7 +24,7 @@ uint32 RemoveConfiguration(
 
 ## <a name="parameters"></a>参数
 
-Stage \[in\]：指定要删除的配置文档。 下面的值是有效的：
+Stage  \[in\]：指定要删除的配置文档。 下面的值是有效的：
 
 |值 |说明 |
 |:--- |:---|
@@ -32,7 +32,7 @@ Stage \[in\]：指定要删除的配置文档。 下面的值是有效的：
 |**2** | **挂起的**配置文档 (pending.mof)。  |
 |**4** | **以前的**配置文档 (previous.mof)。 |
 
-Force \[in\]：若为 true，强制删除配置。
+Force  \[in\]：若为 true  ，强制删除配置。
 
 ## <a name="return-value"></a>返回值
 
