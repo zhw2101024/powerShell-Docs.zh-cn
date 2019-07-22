@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell, 核心
 title: PowerShell 6.0 的重大更改
-ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 186e55c1ac46ce3fc172df18995f8c15d9eeb8eb
+ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62085926"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67843944"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>PowerShell 6.0 的重大更改
 
@@ -15,7 +15,7 @@ ms.locfileid: "62085926"
 
 ### <a name="powershell-workflow"></a>PowerShell 工作流
 
-[PowerShell 工作流][workflow]是基于可为长时间运行或并行化任务创建可靠 runbook 的 [Windows Workflow Foundation (WF)][workflow-foundation] 生成的 Windows PowerShell 中的一项功能。
+[PowerShell 工作流][workflow] 是 Windows PowerShell 中基于 Windows Workflow Foundation (WF) 构建的一项功能，可为长时间运行的任务或并行任务创建稳健的 runbook。
 
 由于缺少对 .NET Core 中的 Windows Workflow Foundation 的支持，我们将不继续在 PowerShell Core 中支持 PowerShell 工作流。
 
@@ -113,9 +113,13 @@ ms.locfileid: "62085926"
 
 当 API 仅返回 `null` 时，Invoke-RestMethod 将其序列化为字符串 `"null"`，而不是 `$null`。 此项更改修复了 `Invoke-RestMethod` 中的逻辑，以便将有效的单个值 JSON `null` 文本正确序列化为 `$null`。
 
-### <a name="remove--computername-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>从 `*-Computer` cmdlet 中删除 `-ComputerName` [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
+### <a name="remove--protocol-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>从 `*-Computer` cmdlet 中删除 `-Protocol` [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
 
-由于 CoreFX 中的 RPC 远程处理出现问题（特别是在非 Windows 平台上）以及为确保在 PowerShell 中获得一致的远程处理体验，已将 `-ComputerName` 参数从 `\*-Computer` cmdlet 中删除。 改为使用 `Invoke-Command` 作为远程执行 cmdlet 的方法。
+由于 CoreFX 中的 RPC 远程处理出现问题（特别是在非 Windows 平台上）以及为确保在 PowerShell 中获得一致的远程处理体验，已将 `-Protocol` 参数从 `\*-Computer` cmdlet 中删除。 远程处理功能不再支持 DCOM。 以下 cmdlet 仅支持 WSMAN 远程处理：
+
+- Rename-Computer
+- Restart-Computer
+- Stop-Computer
 
 ### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>从 `*-Service` cmdlet 中删除 `-ComputerName` [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
 
@@ -159,7 +163,7 @@ ms.locfileid: "62085926"
 
 ### <a name="removed-runspaceconfiguration-support-4942httpsgithubcompowershellpowershellissues4942"></a>已删除 `RunspaceConfiguration` 支持 [#4942](https://github.com/PowerShell/PowerShell/issues/4942)
 
-以前，在使用 API 以编程方式创建 PowerShell 运行空间时，可以使用旧版 [`RunspaceConfiguration`][runspaceconfig] 或较新的 [`InitialSessionState`][iss]。 此更改不再支持 `RunspaceConfiguration` 并仅支持 `InitialSessionState`。
+以前，在使用 API 以编程方式创建 PowerShell 运行空间时，可使用旧版 [`RunspaceConfiguration`][runspaceconfig] 或较新的 `InitialSessionState`。 此更改不再支持 `RunspaceConfiguration` 并仅支持 `InitialSessionState`。
 
 [runspaceconfig]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.runspaceconfiguration
 [iss]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.initialsessionstate
@@ -194,7 +198,7 @@ PowerShell 中的命名应与我们的命名保持一致，并符合 Apple 对 m
 
 ### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>使用 bool 参数执行 PowerShell 脚本不起作用 [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
 
-以前，使用 powershell.exe（现在使用 pwsh.exe）执行 PowerShell 脚本，使用 `-File` 无法将 `$true`/`$false` 作为参数值进行传递。 添加了支持将 `$true`/`$false` 作为参数的解析值。 由于当前记录的语法不起作用，也支持开关值。
+以前，使用 powershell.exe  （现在使用 pwsh.exe  ）执行 PowerShell 脚本，使用 `-File` 无法将 `$true`/`$false` 作为参数值进行传递。 添加了支持将 `$true`/`$false` 作为参数的解析值。 由于当前记录的语法不起作用，也支持开关值。
 
 ### <a name="remove-clrversion-property-from-psversiontable-4027httpsgithubcompowershellpowershellissues4027"></a>从 `$PSVersionTable` 删除 `ClrVersion` 属性 [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
 
