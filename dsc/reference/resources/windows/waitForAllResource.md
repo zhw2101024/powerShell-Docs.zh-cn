@@ -2,20 +2,24 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: DSC WaitForAll 资源
-ms.openlocfilehash: 1e891f1aecbdbe641973669f71f22664ad8ea16c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c1125b7c5b68b9b520ed052800b6a2abf4e53b85
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076916"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726881"
 ---
 # <a name="dsc-waitforall-resource"></a>DSC WaitForAll 资源
 
 > 适用于：Windows PowerShell 5.0 及更高版本
 
-可以在 [DSC 配置](../../../configurations/configurations.md)中的节点块内使用 WaitForAll Desired State Configuration (DSC) 资源，以指定依赖其他节点上的配置。
+可以在 [DSC 配置](../../../configurations/configurations.md)中的节点块内使用 WaitForAll  Desired State Configuration (DSC) 资源，以指定依赖其他节点上的配置。
 
-如果由 ResourceName 属性指定的资源在 NodeName 属性定义的所有目标节点上都处于相应状态，那么此资源成功。
+如果由 ResourceName  属性指定的资源在 NodeName  属性定义的所有目标节点上都处于相应状态，那么此资源成功。
+
+> [!NOTE]
+> WaitForAll 资源使用 Windows 远程管理来检查其他节点的状态  。
+> 要详细了解 WinRM 的端口和安全性要求，请参阅 [PowerShell 远程处理安全注意事项](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6)。
 
 ## <a name="syntax"></a>语法
 

@@ -1,49 +1,43 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/10/2019
 keywords: jea,powershell,安全性
 title: 使用 JEA
-ms.openlocfilehash: fa3d3a3c8bc0090ec9ad788585ec5df933134173
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8f3cc9186c61a2ae5b64eb3dc4f72ca83f1a58c5
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62084039"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734218"
 ---
 # <a name="using-jea"></a>使用 JEA
 
-> 适用于：Windows PowerShell 5.0
-
-本主题介绍连接和使用 JEA 终结点的各种方式。
+本文介绍连接和使用 JEA 终结点的各种方式。
 
 ## <a name="using-jea-interactively"></a>以交互方式使用 JEA
 
-如果你正在测试 JEA 配置或具有需要用户执行的简单任务，可以采用与进行常规 PowerShell 远程处理会话相同的方式使用 JEA。
-对于复杂的远程处理任务，建议改为使用[隐式远程处理](#using-jea-with-implicit-remoting)，允许用户在本地处理数据对象，以方便用户进行操作。
+如果你正在测试 JEA 配置或需要用户执行简单任务，可采用与进行常规 PowerShell 远程处理会话相同的方式使用 JEA。 对于复杂的远程处理任务，建议使用[隐式远程处理](#using-jea-with-implicit-remoting)。 通过隐式远程处理，用户可在本地处理数据对象。
 
-以交互方式使用 JEA 需要提供以下信息：
-- 要连接到的计算机名称（可以是本地计算机）
+若要以交互方式使用 JEA，需要提供以下信息：
+
+- 要连接到的计算机的名称（可以是本地计算机）
 - 在该计算机上注册的 JEA 终结点名称
-- 该计算机有权访问 JEA 终结点的凭据
+- 在该计算机上有权访问 JEA 终结点的凭据
 
-获取该信息后，可以使用 [New-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/New-PSSession) 或 [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/enter-pssession) 开始 JEA 会话。
+考虑到该信息，可使用 [New-PSSession](/powershell/module/microsoft.powershell.core/New-PSSession) 或 [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession) cmdlet 开始 JEA 会话。
 
 ```powershell
 $nonAdminCred = Get-Credential
 Enter-PSSession -ComputerName localhost -ConfigurationName JEAMaintenance -Credential $nonAdminCred
 ```
 
-如果当前登录的帐户有权访问 JEA 终结点，则可以省略 `-Credential` 参数。
+如果当前用户帐户有权访问 JEA 终结点，则可省略 Credential 参数  。
 
-PowerShell 提示更改为 `[localhost]: PS>` 时，你会知道自己正在与远程 JEA 会话交互。
-可以运行 `Get-Command` 检查哪些命令可用。
-你需要咨询管理员，了解可用参数或允许参数值是否存在任何限制。
+PowerShell 提示更改为 `[localhost]: PS>` 时，即表示你正在与远程 JEA 会话交互。 可以运行 `Get-Command` 检查哪些命令可用。 咨询管理员，了解可用参数或允许的参数值是否存在任何限制。
 
-提醒一下，由于 JEA 会话在 NoLanguage 模式下运行，因此通常使用 PowerShell 的某些方式可能不适用。
-例如，你无法使用变量存储数据或检查从 cmdlet 返回的对象的属性。
-下面的示例展示了目前 PowerShell 的使用方式，以及使相同的命令在 NoLanguage 模式下工作的两种方法。
+请记住，JEA 会话在 NoLanguage 模式下运行。 可能无法使用某些常用的 PowerShell 用法。 例如，无法使用变量来存储数据或检查从 cmdlet 返回的对象的属性。 以下示例显示了为在 NoLanguage 模式下工作而获取相同命令的两种方法。
 
 ```powershell
-# Using variables in NoLanguage mode is disallowed, so the following will not work
+# Using variables is prohibited in NoLanguage mode. The following will not work:
 # $vm = Get-VM -Name 'SQL01'
 # Start-VM -VM $vm
 
@@ -53,23 +47,18 @@ Get-VM -Name 'SQL01' | Start-VM
 # You can also wrap subcommands in parentheses and enter them inline as arguments
 Start-VM -VM (Get-VM -Name 'SQL01')
 
-# Better yet, use parameter sets that don't require extra data to be passed in when possible
+# You can also use parameter sets that don't require extra data to be passed in
 Start-VM -VMName 'SQL01'
 ```
 
-对于增加此方法难度的更复杂的命令调用，请考虑使用包含所需功能的[隐式远程处理](#using-jea-with-implicit-remoting)或[创建自定义函数](role-capabilities.md#creating-custom-functions)。
+对于让此方法变难的更复杂的命令调用，请考虑使用[隐式远程处理](#using-jea-with-implicit-remoting)或[创建自定义函数](role-capabilities.md#creating-custom-functions)（其中包含所需功能）。
 
 ## <a name="using-jea-with-implicit-remoting"></a>将 JEA 与隐式远程处理配合使用
 
-PowerShell 支持备用远程处理模型，在此模型中，用户可以将代理 cmdlet 从远程计算机导入本地计算机，并且可以如同本地命令一样与之交互。
-这称为隐式远程处理，[这篇 *Hey, Scripting Guy!*《你好，脚本专家！》博客文章](https://blogs.technet.microsoft.com/heyscriptingguy/2013/09/08/remoting-the-implicit-way/)中对此进行了详细介绍。
-当隐式远程处理配合 JEA 使用时特别有用，因为它允许在完整语言模式下使用 JEA cmdlet。
-这意味着可以使用 Tab 自动补全和变量，操作对象，甚至使用本地脚本对 JEA 终结点更轻松地实现自动化。
-每当调用代理命令时，数据将发送到远程计算机上的 JEA 终结点并加以执行。
+PowerShell 具有隐式远程处理模型，让你能够从远程计算机导入代理 cmdlet，并如同本地命令一样与之交互。 有关隐式远程处理的解释，请参阅“你好，脚本专家！”  [博客文章](https://devblogs.microsoft.com/scripting/remoting-the-implicit-way/)。
+当隐式远程处理配合 JEA 使用时非常有用，因为它允许在完整语言模式下使用 JEA cmdlet。 你可使用 Tab 自动补全、变量、操作对象，甚至使用本地脚本对 JEA 终结点自动执行任务。 每次调用代理命令时，数据都会发送到远程计算机上的 JEA 终结点并在此执行。
 
-隐式远程处理工作时，从现有 PowerShell 会话中导入 cmdlet。
-可以有选择性地选择使用所选字符串作为每个代理 cmdlet 名词的前缀，以区分哪些命令适用于远程系统。
-将创建包含所有代理命令的临时脚本模块，该模块可在本地 PowerShell 会话期间使用。
+隐式远程处理工作时，从现有 PowerShell 会话中导入 cmdlet。 可以有选择性地选择使用所选字符串作为每个代理 cmdlet 的名词前缀。 通过前缀，可区分哪些命令适用于远程系统。 系统会创建包含所有代理命令的临时脚本模块，该模块可在本地 PowerShell 会话期间导入。
 
 ```powershell
 # Create a new PSSession to your JEA endpoint
@@ -83,12 +72,9 @@ Get-JEACommand
 ```
 
 > [!IMPORTANT]
-> 由于默认 JEA cmdlet 中存在约束，某些系统可能无法导入整个 JEA 会话。
-> 为避免这一问题，请向 `-CommandName` 参数显示提供名称，从 JEA 会话仅导入所需的命令。
-> 将来的更新会解决在受影响的系统上导入整个 JEA 会话方面的问题。
+> 由于默认 JEA cmdlet 中存在约束，某些系统可能无法导入整个 JEA 会话。 为避免这一问题，请向 `-CommandName` 参数显示提供名称，从 JEA 会话仅导入所需的命令。 将来的更新会解决在受影响的系统上导入整个 JEA 会话方面的问题。
 
-如果由于默认 JEA 参数存在约束而无法导入 JEA 会话，可以按照以下步骤操作，从导入组中筛选出默认命令。
-你仍可使用 `Select-Object` 等命令 - 只需使用安装在计算机上的本地版本，而非 JEA 会话中的远程版本。
+如果由于默认参数存在 JEA 约束而无法导入 JEA 会话，请按照以下步骤操作，从导入的集中筛选出默认命令。 你仍可使用 `Select-Object` 等命令，但只能使用安装在计算机上的本地版本，而非从远程 JEA 会话导入的版本。
 
 ```powershell
 # Create a new PSSession to your JEA endpoint
@@ -105,15 +91,14 @@ $filteredCommands = $commands.Name | Where-Object { $jeaDefaultCmdlets -notconta
 Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredCommands
 ```
 
-还可以使用 [Export-pssession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession) 通过隐式远程处理保留代理 cmdlet。
-有关隐式远程处理的详细信息，请参阅 [Import-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/import-pssession) 和 [Import-Module](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/import-module) 的帮助文档。
+还可以使用 [Export-pssession](/powershell/microsoft.powershell.utility/Export-PSSession) 通过隐式远程处理保留代理 cmdlet。
+有关隐式远程处理的详细信息，请参阅 [Import-PSSession](/powershell/microsoft.powershell.utility/import-pssession) 和 [Import-Module](/powershell/microsoft.powershell.core/import-module) 的文档。
 
 ## <a name="using-jea-programmatically"></a>以编程方式使用 JEA
 
-JEA 还可用于自动化系统和用户应用程序，例如内部的支持人员应用和 Web 站点。
-该方法和生成与非约束 PowerShell 终结点进行会话的应用所用的方法相同，同时警告程序应该注意 JEA 将限制可在远程会话中运行的命令。
+JEA 还可用于自动化系统和用户应用程序，例如内部的支持人员应用和网站。 方法和构建与不受约束的 PowerShell 终结点进行通信的应用时采用的方法相同。 请确保该程序的设计符合由 JEA 施加的限制。
 
-对于简单的一次性任务，可以使用 [Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command) 来运行使用 JEA 的一组命令。
+对于简单的一次性任务，可使用 [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command) 在 JEA 会话中运行命令。
 
 ```powershell
 Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'JEAMaintenance' -ScriptBlock { Get-Process; Get-Service }
@@ -126,21 +111,24 @@ $allowedCommands = Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'J
 $allowedCommands | Where-Object { $_.CommandType -in 'Function', 'Cmdlet' } | Format-Table Name, Parameters
 ```
 
-如果要生成 C# 应用，可以通过在 [WSManConnectionInfo](https://msdn.microsoft.com/library/system.management.automation.runspaces.wsmanconnectioninfo(v=vs.85).aspx) 对象中指定配置名称来创建与 JEA 会话连接的 PowerShell 运行空间。
+要构建 C# 应用，可通过在 [WSManConnectionInfo](/dotnet/api/system.management.automation.runspaces.wsmanconnectioninfo) 对象中指定配置名称来创建与 JEA 会话连接的 PowerShell 运行空间。
 
 ```csharp
 // using System.Management.Automation;
 var computerName = "SERVER01";
 var configName   = "JEAMaintenance";
-var creds        = // create a PSCredential object here (https://msdn.microsoft.com/library/system.management.automation.pscredential(v=vs.85).aspx)
+// See https://docs.microsoft.com/dotnet/api/system.management.automation.pscredential
+var creds        = // create a PSCredential object here
 
 WSManConnectionInfo connectionInfo = new WSManConnectionInfo(
-                    false,                 // Use SSL
-                    computerName,          // Computer name
-                    5985,                  // WSMan Port
-                    "/wsman",              // WSMan Path
-                    string.Format(CultureInfo.InvariantCulture, "http://schemas.microsoft.com/powershell/{0}", configName),  // Connection URI with config name
-                    creds);                // Credentials
+    false,                 // Use SSL
+    computerName,          // Computer name
+    5985,                  // WSMan Port
+    "/wsman",              // WSMan Path
+                           // Connection URI with config name
+    string.Format(CultureInfo.InvariantCulture, "http://schemas.microsoft.com/powershell/{0}", configName),
+    creds);                // Credentials
+
 // Now, use the connection info to create a runspace where you can run the commands
 using (Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo))
 {
@@ -167,12 +155,12 @@ using (Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo))
 
 ## <a name="using-jea-with-powershell-direct"></a>将 JEA 与 PowerShell Direct 配合使用
 
-Windows 10 和 Windows Server 2016 中的 Hyper-V 提供 [PowerShell Direct](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/vmsession) 功能，以便 Hyper-V 管理员可以使用 PowerShell 管理虚拟机，无论虚拟机上的网络配置或远程管理设置如何。
+Windows 10 和 Windows Server 2016 中的 Hyper-V 提供 [PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct)；借助此功能，无论虚拟机上的网络配置或远程管理设置如何，Hyper-V 管理员都能使用 PowerShell 管理虚拟机。
 
-可以将 PowerShell Direct 与 JEA 配合使用，向 Hyper-V 管理员提供对 VM 有限的访问权限，这在失去与 VM 的网络连接并需要数据中心管理员来修复网络设置时十分有用。
+可将 PowerShell Direct 与 JEA 结合使用，为 Hyper-V 管理员提供对 VM 的有限访问权限。
+如果断开与 VM 的网络连接，并且需要数据中心管理员来修复网络设置，这会非常有用。
 
-通过 PowerShell Direct 使用 JEA 无需其他配置，但虚拟机内运行的操作系统必须是 Windows 10 或 Windows Server 2016。
-Hyper-V 管理员可以使用 PSRemoting cmdlet 的 `-VMName` 或 `-VMId` 参数连接到 JEA 终结点：
+无需其他配置即可在 PowerShell Direct 上使用 JEA。 但是，在虚拟机内运行的来宾操作系统必须是 Windows 10、Windows Server 2016 或更高版本。 Hyper-V 管理员可以使用 PSRemoting cmdlet 的 `-VMName` 或 `-VMId` 参数连接到 JEA 终结点：
 
 ```powershell
 # Entering a JEA session using PowerShell Direct when the VM name is unique
@@ -183,7 +171,4 @@ $vm = Get-VM -VMName 'MyVM' | Select-Object -First 1
 Enter-PSSession -VMId $vm.VMId -ConfigurationName 'NICMaintenance' -Credential 'localhost\JEAformyHoster'
 ```
 
-强烈建议创建没有其他系统管理权限的本地用户，以供 Hyper-V 管理员使用。
-请注意，默认情况下，即使是没有特权的用户，也仍可登录 Windows 计算机（包括使用不受限制的 PowerShell）。
-这将使他们能够浏览（某些）文件系统，并深入了解操作系统环境。
-若要将 Hyper-V 管理员限制为只能通过将 PowerShell Direct 与 JEA 结合使用来访问 VM，则需要拒绝向 Hyper-V 管理员的 JEA 帐户授予本地登录权限。
+建议创建具有管理系统所需的最低权限的专用用户帐户，供 Hyper-V 管理员使用。 请记住，默认情况下，即使是没有特权的用户，也可通过使用不受约束的 PowerShell 等方式登录到 Windows 计算机。 这使他们能够浏览文件系统，并深入了解操作系统环境。 若要锁定 Hyper-V 管理员并限制其只能通过结合使用 PowerShell Direct 和 JEA 来访问 VM，则必须拒绝向 Hyper-V 管理员的 JEA 帐户授予本地登录权限。

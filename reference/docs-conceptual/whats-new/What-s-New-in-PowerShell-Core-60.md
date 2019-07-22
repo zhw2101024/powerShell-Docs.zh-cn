@@ -2,16 +2,16 @@
 title: PowerShell Core 6.0 中的最近更新
 description: PowerShell Core 6.0 中发布的新功能和更改
 ms.date: 08/06/2018
-ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e1218a38398f4d86829cf2b4ba6a3a882675eaab
+ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62059009"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67843916"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>PowerShell Core 6.0 中的最近更新
 
-[PowerShell Core 6.0][github] 是为异类环境和混合云而构建的跨平台（Windows、macOS 和 Linux）且开源的新版 PowerShell。
+[PowerShell Core 6.0][github] 是 PowerShell 的新版本，它跨平台（Windows、macOS 和 Linux）、开源且针对异类环境和混合云而构建。
 
 ## <a name="moved-from-net-framework-to-net-core"></a>从 .NET Framework 移动到 .NET Core
 
@@ -135,11 +135,11 @@ PowerShell Core 还包含一个启发式方法，通过该方法可在常用文�
 在许多情况下，通过社区的帮助，我们已添加了一些新功能和针对 cmdlet 的 bug 修补程序。
 在某些情况下，由于基础 .NET 层中缺失依赖项，因此功能已被删除或者不可用。
 
-大多随附 Windows 的模块（例如 `DnsClient`、`Hyper-V``NetTCPIP`、`Storage` 等）以及其他一些 Microsoft 产品（包括 Azure 和 Office）尚未显式移植到 .NET Core。
+大多随附 Windows 的模块（例如 `DnsClient`、`Hyper-V``NetTCPIP`、`Storage` 等）以及其他一些 Microsoft 产品（包括 Azure 和 Office）尚未显式移植到 .NET Core  。
 PowerShell 团队正与这些产品组以及团队开展协作，以验证并将现有模块迁移到 PowerShell Core。
 通过使用 .NET Standard 和 [CDXML][]，其中许多传统 Windows PowerShell 模块看似确实可在 PowerShell Core 中运行，但是它们尚未经过正式验证，且不受正式支持。
 
-通过安装 [`WindowsPSModulePath`][windowspsmodulepath] 模块，可将 Windows PowerShell `PSModulePath` 附加到 PowerShell Core `PSModulePath`，从而可使用 Windows PowerShell 模块。
+通过安装 [`WindowsPSModulePath`][windowspsmodulepath] 模块，可通过将 Windows PowerShell `PSModulePath` 追加到 PowerShell Core `PSModulePath` 来使用 Windows PowerShell 模块。
 
 首先，从 PowerShell 库安装 `WindowsPSModulePath` 模块：
 
@@ -159,7 +159,7 @@ Add-WindowsPSModulePath
 
 PowerShell Core 已对我们支持的所有主要平台（包括多个 Linux 发行版、Windows Server Core 和 Nano Server）添加了 Docker 容器支持。
 
-关于完整列表，请查看 [`microsoft/powershell` Docker Hub][docker-hub] 上对的标记。
+关于完整列表，请查看 [Docker Hub 上 `microsoft/powershell`][docker-hub] 的标记。
 有关 Docker 和 PowerShell Core 的详细信息，请参阅 GitHub 上的 [Docker][]。
 
 ## <a name="ssh-based-powershell-remoting"></a>基于 SSH 的 PowerShell 远程处理
@@ -201,7 +201,7 @@ PowerShell Core 更改默认编码以符合更广泛的生态系统。
 
 作为最佳做法，应该使用 `-Encoding` 参数在脚本中显示设置编码以生成确定的跨平台行为。
 
-`New-ModuleManifest` cmdlet 没有 Encoding 参数。 如果模块清单 (.psd1) 文件是使用 `New-ModuleManifest` cmdlet 创建而成，清单编码视环境而定：如果是在 Linux 上运行的 PowerShell Core，编码为 UTF-8（不使用 BOM）；否则，编码为 UTF-16（使用 BOM）。 (#3940)
+`New-ModuleManifest` cmdlet 没有 Encoding  参数。 如果模块清单 (.psd1) 文件是使用 `New-ModuleManifest` cmdlet 创建而成，清单编码视环境而定：如果是在 Linux 上运行的 PowerShell Core，编码为 UTF-8（不使用 BOM）；否则，编码为 UTF-16（使用 BOM）。 (#3940)
 
 ## <a name="support-backgrounding-of-pipelines-with-ampersand--3360"></a>有 `&` 的管道的支持背景 (#3360)
 
@@ -295,9 +295,10 @@ PowerShell Core 更改默认编码以符合更广泛的生态系统。
 
 ### <a name="csv-cmdlets"></a>CSV cmdlet
 
+- `Import-Csv` 现支持 W3C 扩展日志文件格式 (#2482)（感谢 [@iSazonov](https://github.com/iSazonov)！）
 - 添加了对 `Import-Csv` 和 `ConvertFrom-Csv` 的 `PSTypeName` 支持。 (#5389)（感谢 [@markekraus](https://github.com/markekraus)！）
 - `Import-Csv` 现已支持将 `CR`、`LF` 和 `CRLF` 作为行分隔符。 (#5363)（感谢 [@iSazonov](https://github.com/iSazonov)！）
-- `-NoTypeInformation` 现在作为 `Export-Csv` 和 `ConvertTo-Csv` 上的默认值。 (#5164)（感谢 [@markekraus](https://github.com/markekraus)）
+- `-NoTypeInformation` 现在作为 `Export-Csv` 和 `ConvertTo-Csv` 上的默认值。 (#5164)（感谢 [@markekraus](https://github.com/markekraus)！）
 
 ### <a name="service-cmdlets"></a>服务 cmdlet
 
@@ -346,7 +347,7 @@ PowerShell Core 更改默认编码以符合更广泛的生态系统。
 ## <a name="breaking-changes"></a>重大更改
 
 我们在 PowerShell Core 6.0 中引入大量重大更改。
-若要了解其详细信息，请参阅 [PowerShell Core 6.0 中的重大更改][breaking-changes]。
+要了解其详细信息，请参阅 [PowerShell Core 6.0 中的重大更改][breaking-changes]。
 
 ## <a name="debugging"></a>调试
 
@@ -362,7 +363,7 @@ PowerShell Core 更改默认编码以符合更广泛的生态系统。
 
 ## <a name="bug-fixes-and-performance-improvements"></a>Bug 修复和性能改进
 
-我们已对 PowerShell 多方面作出众多性能改进，涉及方面包含启动时间、各种内置 cmdlet以及与本机二进制文件的交互。
+我们已对 PowerShell 多方面作出众多性能改进，涉及方面包含启动时间、各种内置 cmdlet以及与本机二进制文件的交互  。
 
 我们还修复 PowerShell Core 中的众多 bug。
 有关修复和更改的完整列表，请查看 GitHub 上的 [changelog][]。
@@ -375,7 +376,7 @@ PowerShell Core 更改默认编码以符合更广泛的生态系统。
 
 如果想选择退出此遥测，只需使用以下值之一创建 `POWERSHELL_TELEMETRY_OPTOUT` 环境变量：`true`、`1` 或 `yes`。
 创建该变量会绕过所有遥测，即便在首次运行 PowerShell 之前也不例外。
-我们还计划将此遥测数据和从遥测中收集的见解公开在[社区仪表盘][community-dashboard]中。
+我们还计划在[社区仪表板][community-dashboard]中公开此遥测数据以及从遥测中收集的见解。
 如需详细了解我们如何使用此数据，请阅读本[博客文章][telemetry-blog]。
 
 [github]: https://github.com/PowerShell/PowerShell
