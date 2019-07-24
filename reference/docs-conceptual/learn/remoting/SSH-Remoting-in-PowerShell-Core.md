@@ -2,12 +2,12 @@
 title: 通过 SSH 进行 PowerShell 远程处理
 description: 在 PowerShell Core 中使用 SSH 进行远程处理
 ms.date: 08/14/2018
-ms.openlocfilehash: 1d7bcb69c7e784bf745cb5c2633106ea53f6226a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d994a3888b9a372b803a65666634775a8905d63a
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086385"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372151"
 ---
 # <a name="powershell-remoting-over-ssh"></a>通过 SSH 进行 PowerShell 远程处理
 
@@ -17,8 +17,7 @@ PowerShell 远程处理通常使用 WinRM 进行连接协商和数据传输。 S
 
 WinRM 为 PowerShell 远程会话提供可靠的托管模型。 基于 SSH 的远程处理目前不支持远程终结点配置和 JEA (Just Enough Administration)。
 
-通过 SSH 远程处理可以在 Windows 和 Linux 计算机之间执行基础的 PowerShell 会话远程处理。 SSH 远程处理在目标计算机上创建一个 PowerShell 托管进程作为 SSH 子系统。
-最终，我们将实现常规托管模型（类似于 WinRM）以支持终结点配置和 JEA。
+通过 SSH 远程处理可以在 Windows 和 Linux 计算机之间执行基础的 PowerShell 会话远程处理。 SSH 远程处理在目标计算机上创建一个 PowerShell 托管进程作为 SSH 子系统。 最终，我们将实现常规托管模型（类似于 WinRM）以支持终结点配置和 JEA。
 
 `New-PSSession`、`Enter-PSSession` 和 `Invoke-Command` cmdlet 现具有新的参数集，以支持这个新的远程处理连接。
 
@@ -88,9 +87,9 @@ WinRM 为 PowerShell 远程会话提供可靠的托管模型。 基于 SSH 的�
 
 5. 将 OpenSSH 的安装路径添加到 Path 环境变量。 例如，`C:\Program Files\OpenSSH\`。 通过此条目可找到 ssh.exe。
 
-## <a name="set-up-on-linux-ubuntu-1404-machine"></a>在 Linux (Ubuntu 14.04) 计算机上设置
+## <a name="set-up-on-linux-ubuntu-1604-machine"></a>在 Linux (Ubuntu 16.04) 计算机上设置
 
-1. 从 GitHub 安装[适用于 Linux 的 PowerShell Core](../../install/installing-powershell-core-on-linux.md#ubuntu-1404) 最新版本
+1. 从 GitHub 安装[适用于 Linux 的 PowerShell Core](../../install/installing-powershell-core-on-linux.md#ubuntu-1604) 最新版本
 2. 按需安装 [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)
 
    ```bash
@@ -169,11 +168,7 @@ WinRM 为 PowerShell 远程会话提供可靠的托管模型。 基于 SSH 的�
 
 ## <a name="authentication"></a>身份验证
 
-通过 SSH 进行 PowerShell 远程处理依赖于 SSH 客户端和 SSH 服务之间的身份验证交换，并且本身不实现任何身份验证方案。
-这意味着任何配置的身份验证方案（包括多重身份验证）都由 SSH 处理，并且独立于 PowerShell。
-例如，可以将 SSH 服务配置为需要公钥身份验证以及一次性密码，从而增加安全性。
-多重身份验证的配置不在本文档的讨论范围。
-若要了解如何正确配置多重身份验证，请参阅相关的 SSH 文档，并在尝试将其用于 PowerShell 远程处理之前先在 PowerShell 之外验证它的运行效果。
+通过 SSH 进行 PowerShell 远程处理依赖于 SSH 客户端和 SSH 服务之间的身份验证交换，并且本身不实现任何身份验证方案。 这意味着任何配置的身份验证方案（包括多重身份验证）都由 SSH 处理，并且独立于 PowerShell。 例如，可以将 SSH 服务配置为需要公钥身份验证以及一次性密码，从而增加安全性。 多重身份验证的配置不在本文档的讨论范围。 若要了解如何正确配置多重身份验证，请参阅相关的 SSH 文档，并在尝试将其用于 PowerShell 远程处理之前先在 PowerShell 之外验证它的运行效果。
 
 ## <a name="powershell-remoting-example"></a>PowerShell 远程处理示例
 
@@ -209,7 +204,7 @@ Enter-PSSession $session
 
 ```output
 [UbuntuVM1]: PS /home/TestUser> uname -a
-Linux TestUser-UbuntuVM1 4.2.0-42-generic 49~14.04.1-Ubuntu SMP Wed Jun 29 20:22:11 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
+Linux TestUser-UbuntuVM1 4.2.0-42-generic 49~16.04.1-Ubuntu SMP Wed Jun 29 20:22:11 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
 
 [UbuntuVM1]: PS /home/TestUser> Exit-PSSession
 ```
@@ -310,7 +305,7 @@ sudo 命令对 Linux 计算机上的远程会话不起作用。
 
 [PowerShell Core for Windows](../../install/installing-powershell-core-on-windows.md#msi)
 
-[适用于 Linux 的 PowerShell Core](../../install/installing-powershell-core-on-linux.md#ubuntu-1404)
+[适用于 Linux 的 PowerShell Core](../../install/installing-powershell-core-on-linux.md#ubuntu-1604)
 
 [适用于 MacOS 的 PowerShell Core](../../install/installing-powershell-core-on-macos.md)
 
