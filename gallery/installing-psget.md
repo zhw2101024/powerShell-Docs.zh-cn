@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: 库,powershell,cmdlet,psget
 title: 安装 PowerShellGet
-ms.openlocfilehash: 23a53a9117c9f6a7ad157b635cd7ff4b3b3444c5
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2d3ba8c4d4d4c7ee023c7e6a948a29d8f47ea242
+ms.sourcegitcommit: 8d47eb41445ffaf10fcd68874e397c9a1703d898
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62075267"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68601417"
 ---
 # <a name="installing-powershellget"></a>安装 PowerShellGet
 
@@ -28,7 +28,7 @@ ms.locfileid: "62075267"
 - 更新 PowerShellGet 前，应始终安装最新的 Nuget 提供程序。 为此，请在提升的 PowerShell 会话中运行以下命令：
 
   ```powershell
-  Install-PackageProvider Nuget –Force
+  Install-PackageProvider Nuget -Force
   Exit
   ```
 
@@ -37,7 +37,7 @@ ms.locfileid: "62075267"
 - 若要在 Windows 10、Windows Server 2016、任何安装了 WMF 5.0 或 5.1 的系统或任何安装了 PowerShell 6 的系统上执行此操作，请通过提升的 PowerShell 会话运行以下命令。
 
   ```powershell
-  Install-Module –Name PowerShellGet –Force
+  Install-Module -Name PowerShellGet -Force
   Exit
   ```
 
