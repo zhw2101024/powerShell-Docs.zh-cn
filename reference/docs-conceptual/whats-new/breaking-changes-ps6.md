@@ -3,10 +3,10 @@ ms.date: 05/17/2018
 keywords: powershell, 核心
 title: PowerShell 6.0 的重大更改
 ms.openlocfilehash: 186e55c1ac46ce3fc172df18995f8c15d9eeb8eb
-ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "67843944"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>PowerShell 6.0 的重大更改
@@ -15,7 +15,7 @@ ms.locfileid: "67843944"
 
 ### <a name="powershell-workflow"></a>PowerShell 工作流
 
-[PowerShell 工作流][workflow] 是 Windows PowerShell 中基于 Windows Workflow Foundation (WF) 构建的一项功能，可为长时间运行的任务或并行任务创建稳健的 runbook。
+[PowerShell 工作流][workflow]是基于可为长时间运行或并行化任务创建可靠 runbook 的 [Windows Workflow Foundation (WF)][workflow-foundation] 生成的 Windows PowerShell 中的一项功能。
 
 由于缺少对 .NET Core 中的 Windows Workflow Foundation 的支持，我们将不继续在 PowerShell Core 中支持 PowerShell 工作流。
 
@@ -163,7 +163,7 @@ ms.locfileid: "67843944"
 
 ### <a name="removed-runspaceconfiguration-support-4942httpsgithubcompowershellpowershellissues4942"></a>已删除 `RunspaceConfiguration` 支持 [#4942](https://github.com/PowerShell/PowerShell/issues/4942)
 
-以前，在使用 API 以编程方式创建 PowerShell 运行空间时，可使用旧版 [`RunspaceConfiguration`][runspaceconfig] 或较新的 `InitialSessionState`。 此更改不再支持 `RunspaceConfiguration` 并仅支持 `InitialSessionState`。
+以前，在使用 API 以编程方式创建 PowerShell 运行空间时，可以使用旧版 [`RunspaceConfiguration`][runspaceconfig] 或较新的 [`InitialSessionState`][iss]。 此更改不再支持 `RunspaceConfiguration` 并仅支持 `InitialSessionState`。
 
 [runspaceconfig]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.runspaceconfiguration
 [iss]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.initialsessionstate
