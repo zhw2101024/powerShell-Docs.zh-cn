@@ -1,5 +1,5 @@
 ---
-title: Cmdlet 的错误报告 |Microsoft Docs
+title: Cmdlet 错误报告 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -14,79 +14,80 @@ helpviewer_keywords:
 - error records [PowerShell], non-terminating
 ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
 caps.latest.revision: 8
-ms.openlocfilehash: 45f5934314a2871ceb921c7a66b9dfb658d0bd99
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5dfec318438ca139518c596011ac5e56445738ea
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068583"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986318"
 ---
 # <a name="cmdlet-error-reporting"></a>Cmdlet 错误报告
 
-Cmdlet 应报告以不同的方式根据错误是否终止错误的错误或非终止错误。 终止错误会导致立即终止，将管道的错误或无需继续进行处理时，可能发生的错误。 非终止错误，报告当前的错误条件，这些错误，但该 cmdlet 可以继续处理输入的对象。 与非终止错误的问题，通常会通知用户，但该 cmdlet 将继续处理下一步的输入的对象。
+根据错误是终止错误还是非终止错误, cmdlet 应以不同的方式报告错误。 终止错误是导致管道立即终止的错误, 或在没有理由继续处理时所发生的错误。 非终止错误是报告当前错误情况的错误, 但该 cmdlet 可以继续处理输入对象。 对于非终止错误, 用户通常会收到有关问题的通知, 但 cmdlet 会继续处理下一个输入对象。
 
-## <a name="terminating-and-nonterminating-errors"></a>终止性和非终止错误
+## <a name="terminating-and-nonterminating-errors"></a>终止和非终止错误
 
-可以使用以下准则，以确定错误条件是否终止错误或非终止错误。
+以下准则可用于确定错误条件是终止错误还是非终止错误。
 
-- 错误条件是否已成功处理任何进一步输入的对象阻止 cmdlet？ 如果是这样，这是一个终止错误。
+- 错误情况是否会阻止 cmdlet 成功处理任何其他输入对象？ 如果是这样, 则这是一个终止错误。
 
-- 与特定的输入的对象或输入对象的一个子集相关的错误条件？ 如果是这样，这是一个非终止错误。
+- 与特定输入对象或输入对象的子集相关的错误条件？ 如果是这样, 则这是一个非终止错误。
 
-- 该 cmdlet 是否接受多个输入的对象，此类处理可能会在另一个输入对象上成功？ 如果是这样，这是一个非终止错误。
+- Cmdlet 是否接受多个输入对象, 以便处理可以在另一个输入对象上成功进行？ 如果是这样, 则这是一个非终止错误。
 
-- 即使在特定情况下适用于单个输入对象时，可以接受多个输入的对象的 Cmdlet 应确定什么终止和非终止错误之间。
+- 可以接受多个输入对象的 cmdlet 应在什么是终止和非终止错误之间做出决定, 即使特定情况仅适用于单个输入对象也是如此。
 
-- Cmdlet 可以接收任意数量的输入对象，并引发了终止异常之前发送任意数量的成功或错误的对象。 收到的输入对象的数量和发送的 success 和 error 对象数之间没有关系。
+- 在引发终止异常之前, cmdlet 可以接收任意数量的输入对象并发送任意数量的 success 或 error 对象。 收到的输入对象数与发送的成功和错误对象数之间没有关系。
 
-- Cmdlet 可接受 0 到 1 输入对象，并生成 0 到 1 的输出对象应将错误视为终止错误并生成终止的异常。
+- 仅可接受0-1 输入对象并仅生成0-1 输出对象的 cmdlet 应将错误视为终止错误并生成终止异常。
 
 ## <a name="reporting-nonterminating-errors"></a>报告非终止错误
 
-非终止错误的报告应始终进行中的 cmdlet 的实现[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法， [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，或[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。 这些类型的错误报告通过调用[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)反过来将错误记录发送到错误流的方法。
+报告非终止错误的操作应始终在 cmdlet 的[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法 ( [ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法) 的实现中完成, 或为, 则不应如此。[system.web. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法的方法。 这些类型的错误通过调用[WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法进行报告, 后者会将错误记录发送到错误流。
 
-## <a name="reporting-terminating-errors"></a>报告的终止错误
+## <a name="reporting-terminating-errors"></a>报告终止错误
 
-通过引发异常或通过调用报告的终止错误[System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)方法。 请注意，cmdlet 还可以捕获并重新引发如 OutOfMemory 异常，但是，它们不需要重新引发异常，如 Windows PowerShell 运行时将同时捕获它们。
+通过引发异常或通过调用[ThrowTerminatingError](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)方法来报告终止错误。 请注意, cmdlet 还可以捕获并重新引发异常 (如**OutOfMemory**), 但是, 它们不需要重新引发异常, 因为 PowerShell 运行时也会捕获它们。
 
-此外可以定义自己的特定问题的异常情况，或将其他信息添加到现有异常使用其错误记录。
+你还可以为特定于你的情况的问题定义自己的异常, 或使用其错误记录向现有异常添加其他信息。
 
 ## <a name="error-records"></a>错误记录
 
-Windows PowerShell 描述使用非终止错误条件[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象。 每个[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象提供错误类别信息、 可选目标对象，以及有关错误条件的详细信息。
+PowerShell 介绍了[ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象的非终止错误条件。 每个对象提供错误类别信息、可选的目标对象以及有关错误情况的详细信息。
 
 ### <a name="error-identifiers"></a>错误标识符
 
-错误标识符是一个简单字符串，标识 cmdlet 中的错误情况。 Windows PowerShell 将合并此标识符与创建时，可以使用更高版本筛选错误流或日志记录错误，具体的错误，在响应时的完全限定的错误标识符的 cmdlet 标识符或其他特定于用户的活动。
+错误标识符是一个简单的字符串, 用于标识 cmdlet 内的错误条件。
+PowerShell 将此标识符与 cmdlet 标识符组合在一起, 创建完全限定的错误标识符, 稍后在筛选错误流或记录错误时、响应特定错误时或与其他用户特定活动一起使用。
 
-指定错误标识符时，应遵循以下准则。
+指定错误标识符时, 应遵循以下准则:
 
-- 不同且非常具体的错误标识符分配到不同的代码路径。 调用每个代码路径[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)或[System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)应具有其自己的错误标识符。
+- 将不同的、高度特定的错误标识符分配给不同的代码路径。 调用[WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)或[ThrowTerminatingError](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)的每个代码路径都应具有其自己的错误标识符的错误标识符。
 
-- 错误标识符应是唯一的 CLR 异常类型的终止性和非终止错误。
+- 错误标识符对于终止和非终止错误应是公共语言运行时 (CLR) 异常类型所特有的。
 
-- 不要更改 cmdlet 或 Windows PowerShell 提供程序的不同版本之间的错误标识符的语义。 错误标识符的语义建立后，它应保留常量整个生命周期的 cmdlet。
+- 请勿更改 cmdlet 或 PowerShell 提供程序版本之间的错误标识符的语义。 建立错误标识符的语义后, 它应在 cmdlet 的整个生命周期中保持不变。
 
-- 对于终止错误，为特定的 CLR 异常类型使用唯一的错误标识符。 如果异常类型发生更改，使用新的错误标识符。
+- 对于终止错误, 请为特定的 CLR 异常类型使用唯一的错误标识符。 如果异常类型发生更改, 请使用新的错误标识符。
 
-- 对于非终止错误，使用一个特定的输入对象特定的错误标识符。
+- 对于非终止错误, 请使用特定输入对象的特定错误标识符。
 
-- 选择文本 tersely 与所报告的错误相对应的标识符。 不要使用空格或标点。
+- 选择 tersely 与所报告错误相对应的标识符文本。 不要使用空格或标点。
 
-- 不会生成不是可重现的错误标识符。 例如，不生成标识符，其中包括进程标识符。 仅当它们对应于遇到相同问题的其他用户看到的标识符时，错误标识符是非常有用。
+- 不要生成不可重复的错误标识符。 例如, 不生成包含进程标识符的标识符。 仅当错误标识符对应于遇到相同问题的其他用户所见的标识符时, 错误标识符才有用。
 
 ### <a name="error-categories"></a>错误类别
 
-错误类别用于为最终用户的错误进行分组。 Windows PowerShell 定义了这些类别和 cmdlet 和 Windows PowerShell 提供程序必须选择时生成的错误记录在它们之间。
+错误类别用于对用户的错误进行分组。 PowerShell 定义这些类别和 cmdlet, 并且 PowerShell 提供程序在生成错误记录时必须在它们之间进行选择。
 
-可将错误类别的说明，请参阅[System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)枚举。 一般情况下，应避免使用 NoError、 UndefinedError 和 GenericError 只要有可能。
+有关可用的错误类别的说明, 请参阅[ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory)枚举。 通常, 应尽可能避免使用**NoError**、 **UndefinedError**和**GenericError** 。
 
-用户可以查看基于类别，这些设置时的错误"`$ErrorView`"到"CategoryView"。
+用户可以根据类别设置`$ErrorView`为 " **CategoryView**" 查看错误。
 
 ## <a name="see-also"></a>另请参阅
 
-[Windows PowerShell Cmdlets](./cmdlet-overview.md)
+[Cmdlet 概述](./cmdlet-overview.md)
 
-[Cmdlet Output](./types-of-cmdlet-output.md)
+[Cmdlet 输出的类型](./types-of-cmdlet-output.md)
 
-[Windows PowerShell Shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell 参考](../windows-powershell-reference.md)

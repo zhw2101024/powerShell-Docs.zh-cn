@@ -8,44 +8,44 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8ae2196d-d6c8-4101-8805-4190d293af51
 caps.latest.revision: 13
-ms.openlocfilehash: 2fc73b6ef5a862fafb7a3c8fe3da19ac71bafc05
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 19d31f6b619dff23e7e35bb53d2397f4f41eb728
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068532"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986244"
 ---
 # <a name="cmdlet-dynamic-parameters"></a>Cmdlet 动态参数
 
-Cmdlet 可以定义可供用户使用特殊情况下，例如，当另一个参数的参数为特定值的参数。 这些参数在运行时添加和*动态参数*因为仅在需要时添加它们。 例如，您可以设计添加几个参数，仅当指定一个特定的开关参数的 cmdlet。
+Cmdlet 可以定义在特殊条件下可用于用户的参数, 如其他参数的参数是特定值时。 这些参数是在运行时添加的, 它们被称为动态参数, 因为它们仅在需要时才添加。 例如, 你可以设计仅在指定了特定交换机参数时添加多个参数的 cmdlet。
 
 > [!NOTE]
-> 提供程序和 Windows PowerShell 函数还可以定义动态参数。
+> 提供程序和 PowerShell 函数也可以定义动态参数。
 
-## <a name="dynamic-parameters-in-windows-powershell-cmdlets"></a>在 Windows PowerShell Cmdlet 的动态参数
+## <a name="dynamic-parameters-in-powershell-cmdlets"></a>PowerShell cmdlet 中的动态参数
 
-Windows PowerShell 在多个提供程序 cmdlet 中使用动态参数。 例如，`Get-Item`并`Get-ChildItem`cmdlet 添加`CodeSigningCert`在运行时参数时`Path`cmdlet 参数指定的证书提供程序路径。 如果`Path`cmdlet 参数指定的路径不同的提供程序，`CodeSigningCert`参数不可用。
+PowerShell 在其提供程序 cmdlet 中使用动态参数。 例如, 当**Path**参数`Get-ChildItem`指定了**证书**提供程序路径时, `Get-Item`和 cmdlet 会在运行时添加**CodeSigningCert**参数。 如果**path**参数指定了不同提供程序的路径, 则**CodeSigningCert**参数不可用。
 
-下面的示例演示如何`CodeSigningCert`在运行时添加参数时`Get-Item`运行 cmdlet。
+下面的示例演示如何在运行时`Get-Item`在运行时添加 CodeSigningCert 参数。
 
-在第一个示例中，Windows PowerShell 运行时已添加了参数，并且该 cmdlet 成功。
+在此示例中, PowerShell 运行时添加了参数, 且 cmdlet 成功。
 
 ```powershell
-Get-Item -Path cert:\CurrentUser -codesigningcert
+Get-Item -Path cert:\CurrentUser -CodeSigningCert
 ```
 
-```output
+```Output
 Location   : CurrentUser
 StoreNames : {SmartCardRoot, UserDS, AuthRoot, CA...}
 ```
 
-在第二个示例中，指定文件系统驱动器，并返回错误。 错误消息指示`CodeSigningCert`找不到参数。
+在此示例中, 指定了一个**FileSystem**驱动器并返回错误。 错误消息指示找不到**CodeSigningCert**参数。
 
 ```powershell
-Get-Item -Path C:\ -codesigningcert
+Get-Item -Path C:\ -CodeSigningCert
 ```
 
-```output
+```Output
 Get-Item : A parameter cannot be found that matches parameter name 'codesigningcert'.
 At line:1 char:37
 +  get-item -path C:\ -codesigningcert <<<<
@@ -54,17 +54,23 @@ At line:1 char:37
     FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.GetItemCommand
 ```
 
-## <a name="support-for-dynamic-parameters"></a>对动态参数的支持
+## <a name="support-for-dynamic-parameters"></a>支持动态参数
 
-若要支持动态参数，cmdlet 代码必须包含以下元素。
+若要支持动态参数, 必须在 cmdlet 代码中包含以下元素。
 
-[System.Management.Automation.Idynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters)此接口提供用于检索动态参数的方法。
+### <a name="interface"></a>接口
+
+[IDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters))。
+此接口提供检索动态参数的方法。
 
 例如：
 
 `public class SendGreetingCommand : Cmdlet, IDynamicParameters`
 
-[System.Management.Automation.Idynamicparameters.Getdynamicparameters*](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)此方法检索包含的动态参数定义的对象。
+### <a name="method"></a>方法
+
+[IDynamicParameters. GetDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)。
+此方法检索包含动态参数定义的对象。
 
 例如：
 
@@ -81,7 +87,9 @@ At line:1 char:37
 private SendGreetingCommandDynamicParameters context;
 ```
 
-动态参数类此类定义要添加的参数。 此类必须包含每个参数和所需 cmdlet 的任何可选别名和验证属性的参数属性。
+### <a name="class"></a>类
+
+定义要添加的动态参数的类。 此类必须包括每个参数的**参数**属性以及 cmdlet 所需的任何可选**别名**和**验证**属性。
 
 例如：
 
@@ -99,13 +107,13 @@ public class SendGreetingCommandDynamicParameters
 }
 ```
 
-支持动态参数的 cmdlet 的完整示例，请参阅[如何声明动态参数](./how-to-declare-dynamic-parameters.md)。
+有关支持动态参数的 cmdlet 的完整示例, 请参阅[如何声明动态参数](./how-to-declare-dynamic-parameters.md)。
 
 ## <a name="see-also"></a>另请参阅
 
-[System.Management.Automation.Idynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters)
+[System.web. IDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters)
 
-[System.Management.Automation.Idynamicparameters.Getdynamicparameters*](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)
+[IDynamicParameters. GetDynamicParameters。](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)
 
 [如何声明动态参数](./how-to-declare-dynamic-parameters.md)
 
