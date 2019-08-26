@@ -12,6 +12,8 @@
   items:
     - name: DSC for Linux 入门
       href: getting-started/lnxGettingStarted.md
+    - name: DSC for Windows 入门
+      href: getting-started/winGettingStarted.md
     - name: Nano 上的 DSC 入门
       href: getting-started/nanoDSC.md
     - name: Azure 自动化中的 DSC 入门

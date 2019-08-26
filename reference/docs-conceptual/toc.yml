@@ -52,6 +52,24 @@
       href: learn/writing-portable-modules.md
     - name: PowerShell 远程处理
       items:
+        - name: Just Enough Administration (JEA)
+          items:
+            - name: 概述
+              href: learn/remoting/jea/overview.md
+            - name: 必备条件
+              href: learn/remoting/jea/prerequisites.md
+            - name: 角色功能
+              href: learn/remoting/jea/role-capabilities.md
+            - name: 会话配置
+              href: learn/remoting/jea/session-configurations.md
+            - name: 注册 JEA
+              href: learn/remoting/jea/register-jea.md
+            - name: 使用 JEA
+              href: learn/remoting/jea/using-jea.md
+            - name: 安全注意事项
+              href: learn/remoting/jea/security-considerations.md
+            - name: JEA 审核和报告
+              href: learn/remoting/jea/audit-and-report.md
         - name: 运行远程命令
           href: learn/remoting/running-remote-commands.md
         - name: 通过 SSH 进行 PowerShell 远程处理
