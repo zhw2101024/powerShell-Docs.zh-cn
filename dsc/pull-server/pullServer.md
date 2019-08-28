@@ -2,17 +2,17 @@
 ms.date: 03/04/2019
 keywords: dsc,powershell,配置,安装程序
 title: DSC 请求服务
-ms.openlocfilehash: 3cb2ca09111100f39589072a0d8e7010f9188efb
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 865eae5813e0c7b656a4158f0b1350e60f1e3291
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079398"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986531"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration 请求服务
 
 > [!IMPORTANT]
-> 请求服务器（Windows 功能 DSC-Service）是 Windows Server 的一个受支持组件，不过目前没有提供新功能的计划。 建议开始将托管客户端转换至 [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)（包括 Windows Server 上的请求服务器以外的功能）或[此处](pullserver.md#community-solutions-for-pull-service)列出的社区解决方案之一。
+> 请求服务器（Windows 功能 DSC-Service）是 Windows Server 的一个受支持组件，不过目前没有提供新功能的计划  。 建议开始将托管客户端转换至 [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)（包括 Windows Server 上的请求服务器以外的功能）或[此处](pullserver.md#community-solutions-for-pull-service)列出的社区解决方案之一。
 
 本地配置管理器可由请求服务解决方案集中管理。
 使用此方法时，会向服务注册要管理的节点并在 LCM 设置中指定一个配置。
@@ -70,22 +70,22 @@ Windows Server 中提供的请求服务是 IIS 中的一项 Web 服务，当目�
 |---------|---------|---------|---------|
 |MDB     |ESENT（默认）、MDB |ESENT（默认）、MDB|ESENT（默认）、SQL Server、MDB
 
-从 [Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) 的版本 17090 开始，SQL Server 成为了请求服务（Windows Feature DSC-Service）的支持选项。 这为缩放未迁移至 [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) 的大型 DSC 环境提供了新选项。
+从 [Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) 的版本 17090 开始，SQL Server 成为了请求服务（Windows Feature DSC-Service）的支持选项  。 这为缩放未迁移至 [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) 的大型 DSC 环境提供了新选项。
 
 > [!NOTE]
 > SQL Server 支持不会添加到 WMF 5.1 的以前版本（或更早版本）中，仅在 17090 版本或更高版本的 Windows Server 上提供。
 
-若要将请求服务器配置为使用 SQL Server，可将“SqlProvider”设为 `$true`并将“SqlConnectionString”设为有效的 SQL Server 连接字符串。 有关详细信息，请参阅 [SqlClient 连接字符串](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings)。
-若要查看使用 xDscWebService 的 SQL Server 配置的示例，请先阅读[使用 xDscWebService 资源](#using-the-xdscwebservice-resource)，再查看 [GitHub 上的 Sample_xDscWebServiceRegistration_UseSQLProvider.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1)。
+若要将请求服务器配置为使用 SQL Server，可将“SqlProvider”设为 `$true`并将“SqlConnectionString”设为有效的 SQL Server 连接字符串   。 有关详细信息，请参阅 [SqlClient 连接字符串](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings)。
+若要查看使用 xDscWebService 的 SQL Server 配置的示例，请先阅读[使用 xDscWebService 资源](#using-the-xdscwebservice-resource)，再查看 [GitHub 上的 Sample_xDscWebServiceRegistration_UseSQLProvider.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1)  。
 
 ### <a name="using-the-xdscwebservice-resource"></a>使用 xDscWebService 资源
 
-设置 Web 请求服务器的最简单方法是使用包含在 xPSDesiredStateConfiguration 模块中的 xDscWebService 资源。
+设置 Web 请求服务器的最简单方法是使用包含在 xPSDesiredStateConfiguration 模块中的 xDscWebService 资源   。
 下列步骤说明如何使用设置 Web 服务的配置中的资源。
 
 1. 调用 [Install-Module](/powershell/module/PowershellGet/Install-Module) 以安装 **xPSDesiredStateConfiguration** 模块。
    > [!NOTE]
-   > Install-Module 包含在 PowerShellGet 模块中，后者纳入 PowerShell 5.0。 可在 [PackageManagement PowerShell 模块预览](https://www.microsoft.com/en-us/download/details.aspx?id=49186)中下载适用于 PowerShell 3.0 和 4.0 的 **PowerShellGet**。
+   > Install-Module  包含在 PowerShellGet  模块中，后者纳入 PowerShell 5.0。 可在 [PackageManagement PowerShell 模块预览](https://www.microsoft.com/en-us/download/details.aspx?id=49186)中下载适用于 PowerShell 3.0 和 4.0 的 **PowerShellGet**。
 2. 从受信任的证书颁发机构（在所在组织或公共颁发机构中）获取 DSC 请求服务器的 SSL 证书。 从颁发机构收到的证书通常采用 PFX 格式。
 3. 采用默认位置（应是 `CERT:\LocalMachine\My`），在将成为 DSC 请求服务器的节点上安装证书。
    - 记下证书指纹。
@@ -167,7 +167,7 @@ Windows Server 中提供的请求服务是 IIS 中的一项 Web 服务，当目�
 > [!NOTE]
 > PowerShell 4.0 中不支持注册密钥。
 
-为了配置节点以便向请求服务器进行身份验证，注册密钥需要处于将向此请求服务器注册的任何目标节点的元配置中。 请注意，以下元配置中的 RegistrationKey 会在目标计算机成功注册之后删除，并且值必须与请求服务器上的 `RegistrationKeys.txt` 文件中存储的值匹配（对于此示例为“140a952b-b9d6-406b-b416-e0f759c9c0e4”）。 请始终安全地处理注册密钥值，因为知道它便可以向请求服务器注册任何目标计算机。
+为了配置节点以便向请求服务器进行身份验证，注册密钥需要处于将向此请求服务器注册的任何目标节点的元配置中。 请注意，以下元配置中的 RegistrationKey  会在目标计算机成功注册之后删除，并且值必须与请求服务器上的 `RegistrationKeys.txt` 文件中存储的值匹配（对于此示例为“140a952b-b9d6-406b-b416-e0f759c9c0e4”）。 请始终安全地处理注册密钥值，因为知道它便可以向请求服务器注册任何目标计算机。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -211,7 +211,7 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 ```
 
 > [!NOTE]
-> ReportServerWeb 部分允许将报表数据发送到请求服务器。
+> ReportServerWeb  部分允许将报表数据发送到请求服务器。
 
 元配置文件中缺少 **ConfigurationID** 属性暗示请求服务器支持 V2 版本的请求服务器协议，因此需要初始注册。
 相反，存在 **ConfigurationID** 意味着使用 V1 版本的请求服务器协议，不会进行注册处理。
@@ -228,12 +228,12 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 
 每个资源模块都需要进行压缩并按照 `{Module Name}_{Module Version}.zip` 模式进行命名。
 
-例如，一个名为 xWebAdminstration 并且模块版本为 3.1.2.0 的模块会命名为 `xWebAdministration_3.2.1.0.zip`。
+例如，一个名为 xWebAdminstration 并且模块版本为 3.1.2.0 的模块会命名为 `xWebAdministration_3.1.2.0.zip`。
 每个版本的模块都必须包含在单个 zip 文件中。
 由于每个 zip 文件中只有单个版本的资源，因此不支持在 WMF 5.0 中添加的可在单个目录中支持多个模块版本的模块格式。
 这意味着在打包 DSC 资源模块以便用于请求服务器之前，需要对目录结构进行少量更改。
 包含 WMF 5.0 中 DSC 资源的模块的默认格式为 `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`。
-为请求服务器打包前，删除 {Module version} 文件夹，以使路径变为 `{Module Folder}\DscResources\{DSC Resource Folder}\`。
+为请求服务器打包前，删除 {Module version}  文件夹，以使路径变为 `{Module Folder}\DscResources\{DSC Resource Folder}\`。
 进行此更改之后，按上文所述压缩文件夹，并将这些 zip 文件置于 **ModulePath** 文件夹中。
 
 使用 `New-DscChecksum {module zip file}` 可为新添加的模块创建校验和文件。
@@ -245,7 +245,7 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 该 cmdlet 将接受 **Path** 参数，该参数指定了配置 MOF 所在的文件夹。
 该 cmdlet 将创建名为 `ConfigurationMOFName.mof.checksum` 的校验和文件，其中 `ConfigurationMOFName` 是配置 mof 文件的名称。
 如果指定文件夹中存在多个配置 MOF 文件，则将为该文件夹中的每个配置分别创建校验和。
-将 MOF 文件及其关联校验和文件置于 ConfigurationPath 文件夹中。
+将 MOF 文件及其关联校验和文件置于 ConfigurationPath  文件夹中。
 
 > [!NOTE]
 > 如果以任何方式更改配置 MOF 文件，则还必须重新创建校验和文件。
