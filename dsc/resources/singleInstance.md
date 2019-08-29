@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 编写单实例 DSC 资源（最佳做法）
-ms.openlocfilehash: 9494964b1b13eaa082ad5cbc279b4586bb7211cc
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 4d9e07c6aaa064f808a03d4252e8d352b82183ec
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076559"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986518"
 ---
 # <a name="writing-a-single-instance-dsc-resource-best-practice"></a>编写单实例 DSC 资源（最佳做法）
 
@@ -70,7 +70,7 @@ class xTimeZone : OMI_BaseResource
 };
 ```
 
-资源脚本也已更新为使用新参数。 以下是旧资源脚本：
+资源脚本也已更新为使用新参数。 下面介绍了资源脚本发生的变化：
 
 ```powershell
 function Get-TargetResource
@@ -102,10 +102,9 @@ function Get-TargetResource
     $returnValue
 }
 
-
 function Set-TargetResource
 {
-    [CmdletBinding(SupportsShouldProcess=$true)]
+    [CmdletBinding()]
     param
     (
         [parameter(Mandatory = $true)]
@@ -122,24 +121,24 @@ function Set-TargetResource
     #Output the result of Get-TargetResource function.
     $CurrentTimeZone = Get-TimeZone
 
-    if($PSCmdlet.ShouldProcess("'$TimeZone'","Replace the System Time Zone"))
+    Write-Verbose -Message "Replace the System Time Zone to $TimeZone"
+    
+    try
     {
-        try
+        if($CurrentTimeZone -ne $TimeZone)
         {
-            if($CurrentTimeZone -ne $TimeZone)
-            {
-                Write-Verbose -Verbose "Setting the TimeZone"
-                Set-TimeZone -TimeZone $TimeZone}
-            else
-            {
-                Write-Verbose -Verbose "TimeZone already set to $TimeZone"
-            }
+            Write-Verbose -Verbose "Setting the TimeZone"
+            Set-TimeZone -TimeZone $TimeZone
         }
-        catch
+        else
         {
-            $ErrorMsg = $_.Exception.Message
-            Write-Verbose -Verbose $ErrorMsg
+            Write-Verbose -Verbose "TimeZone already set to $TimeZone"
         }
+    }
+    catch
+    {
+        $ErrorMsg = $_.Exception.Message
+        Write-Verbose -Verbose $ErrorMsg
     }
 }
 

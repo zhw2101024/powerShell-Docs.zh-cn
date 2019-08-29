@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
+contributor: JKeithB, SydneyhSmith
 keywords: 库,powershell,cmdlet,psgallery
 description: 面向发行者的指南
 title: PowerShell 库发布指南和最佳做法
-ms.openlocfilehash: 1cd0140cc208949e13d23331b23a58ffc374430b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: b470dbd81e79d2a6a228b8c89f85e57c03803ede
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62084651"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986510"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell 库发布指南和最佳做法
 
@@ -85,6 +85,22 @@ PSScriptAnalyzer 可发现 PowerShell 代码中存在的最常见问题，通常
 
 Examples\RegistryResource 文件夹下的 [PSDscResource 模块](https://www.powershellgallery.com/packages/PSDscResources)中包含优质示例模式。
 具体包含四个示例用例，每个文件的顶部都简要说明了要演示的内容。
+
+## <a name="manage-dependencies"></a>管理依赖项
+
+请务必在模块清单中指定你的模块所依赖的模块。
+这样，最终用户就不必为安装你的模块所依赖的正确版本模块而担心了。
+若要指定依赖模块，应使用模块清单中的“必需模块”字段。
+这会在导入你的模块之前，将列出的所有模块都加载到全局环境中，除非它们已加载。 （例如，一些模块可能已由其他模块加载。）
+也可以使用 RequiredVersion 字段（而不是 ModuleVersion 字段）指定要加载的特定版本。 使用 ModuleVersion 会加载最新版本（在已指定最低版本的情况下）。
+如果不使用 RequiredVersion 字段指定特定版本，请务必监视必需模块的版本更新。
+特别重要的是，要注意任何可能会影响用户的模块体验的中断性变更。
+
+```powershell
+Example: RequiredModules = @(@{ModuleName="myDependentModule"; ModuleVersion="2.0"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})
+
+Example: RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="1.5"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})
+```
 
 ## <a name="respond-to-feedback"></a>及时反馈响应
 
