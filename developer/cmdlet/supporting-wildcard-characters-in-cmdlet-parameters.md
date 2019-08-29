@@ -1,70 +1,80 @@
 ---
-title: 中的 Cmdlet 参数支持通配符字符 |Microsoft Docs
+title: 支持在 Cmdlet 参数中使用通配符
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 08/26/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
-helpviewer_keywords:
-- wildcards [PowerShell Programmer's Guide]
-- parameters [PowerShell Programmer's Guide], wildcards
-ms.assetid: 9b26e1e9-9350-4a5a-aad5-ddcece658d93
-caps.latest.revision: 12
-ms.openlocfilehash: 6c762d3889bc4b649252390625525db4735f4c1d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 19644c5bc186a5554d6b134a67fc7c4d7aa7b64c
+ms.sourcegitcommit: a02ccbeaa17c0e513d6c4a21b877c88ac7725458
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067393"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70104449"
 ---
 # <a name="supporting-wildcard-characters-in-cmdlet-parameters"></a>支持在 Cmdlet 参数中使用通配符
 
-通常，您将必须设计用于运行针对一组资源，而不是针对单个资源的 cmdlet。 例如，一个 cmdlet 可能需要在具有相同的名称或扩展的数据存储区中找到的所有文件。 在设计的 cmdlet，将针对资源组的运行时，你必须提供支持的通配符字符。
+通常, 你必须将 cmdlet 设计为针对一组资源而不是针对单个资源运行。 例如, cmdlet 可能需要查找数据存储区中具有相同名称或扩展名的所有文件。 设计将对一组资源运行的 cmdlet 时, 必须提供对通配符字符的支持。
 
 > [!NOTE]
-> 使用通配符字符有时称为*通配*。
+> 使用通配符有时称为 "组合"。
 
 ## <a name="windows-powershell-cmdlets-that-use-wildcards"></a>使用通配符的 Windows PowerShell Cmdlet
 
- 许多 Windows PowerShell cmdlet 的参数值支持通配符字符。 例如，几乎每个 cmdlet，具有`Name`或`Path`参数支持通配符字符为这些参数。 (尽管大多数 cmdlet 都`Path`参数还具有`LiteralPath`不支持通配符字符的参数。)以下命令演示如何使用通配符字符以返回名称中包含 Get 谓词在当前会话中的所有 cmdlet。
+ 许多 Windows PowerShell cmdlet 都支持为其参数值提供通配符。 例如, 几乎每个具有`Name`或`Path`参数的 cmdlet 都支持这些参数的通配符。 (尽管包含`Path`参数的大多数 cmdlet 也`LiteralPath`包含不支持通配符的参数。)以下命令显示了如何使用通配符来返回当前会话中其名称包含 Get 谓词的所有 cmdlet。
 
- **PS > get 命令 get-\***
+ `Get-Command get-*`
 
-## <a name="supported-wildcard-characters"></a>受支持的通配符字符
+## <a name="supported-wildcard-characters"></a>支持的通配符
 
-Windows PowerShell 支持下列通配符。
+Windows PowerShell 支持以下通配符。
 
-|通配符字符|说明|示例|匹配|不匹配|
-|------------------------|-----------------|-------------|-------------|--------------------|
-|*|匹配零个或多个字符，从指定位置开始|a*|A，ag Apple||
-|?|位于指定位置的匹配任何字符|？ n|中，在|运行|
-|[ ]|匹配字符的范围|[a-l]ook|书籍、 cook 外观|花费了|
-|[ ]|匹配指定的字符|[bc]ook|书籍、 cook|查找|
+| 通配符 |                             说明                             |  示例   |     匹配      | 不匹配 |
+| -------- | ------------------------------------------------------------------- | ---------- | ---------------- | -------------- |
+| *        | 匹配零个或多个字符 (从指定位置开始) | `a*`       | A、ag、Apple     |                |
+| ?        | 匹配指定位置的任何字符                     | `?n`       | , 在中, 在       | 为名            |
+| [ ]      | 匹配一系列字符                                       | `[a-l]ook` | 书籍, 库, 查找 | nook, 拍摄     |
+| [ ]      | 匹配指定字符                                    | `[bn]ook`  | 书籍, nook       | 库, 查找     |
 
-在设计时支持通配符的 cmdlet，允许的通配符字符的组合。 例如，下面的命令使用`Get-ChildItem`cmdlet 来检索所有.txt 文件，位于 c:\Techdocs 文件夹然后开头的字母"a"到"l。"
+设计支持通配符的 cmdlet 时, 允许组合通配符字符。 例如, 下面的命令使用`Get-ChildItem` cmdlet 来检索 c:\Techdocs 文件夹中的所有 .txt 文件, 以字母 "a" 到 "l" 开头。
 
-**get-childitem c:\techdocs\\[a-l]\*.txt**
+`Get-ChildItem c:\techdocs\[a-l]\*.txt`
 
-前一个命令使用范围通配符 **[a-l]** 以指定的文件名称应开始的字符"a"到"l。" 该命令将使用 * 通配符作为.txt 扩展名的文件的名称的第一个字母之间的任何字符的占位符。
+前面的命令使用范围通配符`[a-l]`指定文件名应以字符 "a" 到 "l" 开头, 并`*`使用通配符作为文件名第一个字母和后面的任何字符的占位符 **.txt**扩展名。
 
-下面的示例使用范围通配符模式排除字母"d"，但包含从"a"到"f。"的所有其他字母
+下面的示例使用范围通配符模式, 该模式不包括字母 "d", 但包含 "a" 到 "f" 的所有其他字母。
 
-**get-childitem c:\techdocs\\[a-cef]\*.txt**
+`Get-ChildItem c:\techdocs\[a-cef]\*.txt`
 
-## <a name="handling-literal-characters-in-wildcard-patterns"></a>处理文本字符的通配符模式
+## <a name="handling-literal-characters-in-wildcard-patterns"></a>在通配符模式中处理文本字符
 
-如果所指定的通配符模式包含原义字符，使用反撇号字符 （'） 作为转义符。 当以编程方式指定的原义字符时，请使用单个反引号。 当指定文本字符的命令提示符处时，使用两个反撇号。 例如，以下模式包含必须按字面的两个方括号。
+如果指定的通配符模式包含不应解释为通配符的原义字符, 请使用反撇号字符 (`` ` ``) 作为转义符。 当你为 PowerShell API 指定整数字符时, 请使用单个反撇号。 在 PowerShell 命令提示符处指定原义字符时, 请使用两个反撇号。
 
-"John Smith \`[*']"（指定以编程方式）
+例如, 下面的模式包含两个必须按原义取的方括号。
 
-"John Smith \` \`[*\`]"（在命令提示符下指定）
+使用 PowerShell API 时, 请使用:
 
-此模式匹配"John Smith [营销]"或"John Smith [开发]"。
+- "John Smith \`[*"] "
 
-## <a name="cmdlet-output-and-wildcard-characters"></a>Cmdlet 的输出和通配符
+在 PowerShell 命令提示符下使用时:
 
-如果 cmdlet 参数支持通配符，cmdlet 操作通常生成数组输出。 有时，它成为支持输出，因为用户可能会一次使用单个项的数组没有意义。 例如， `Set-Location` cmdlet 支持输出，因为用户设置的单个位置的数组。 在此情况下，该 cmdlet 仍然支持通配符，但它会强制解析为单个位置。
+- "John Smith \` \`[*\`"] "
+
+此模式匹配 "John Smith [行销]" 或 "John Smith [开发]"。 例如：
+
+```
+PS> "John Smith [Marketing]" -like "John Smith ``[*``]"
+True
+
+PS> "John Smith [Development]" -like "John Smith ``[*``]"
+True
+```
+
+## <a name="cmdlet-output-and-wildcard-characters"></a>Cmdlet 输出和通配符
+
+当 cmdlet 参数支持通配符时, 操作通常会生成一个数组输出。
+有时, 因为用户可能只使用一个项, 所以不能提供支持数组输出的意义。 例如, `Set-Location` cmdlet 不支持数组输出, 因为用户仅设置了一个位置。 在这种情况下, 该 cmdlet 仍支持通配符, 但会强制将分辨率转换为单一位置。
 
 ## <a name="see-also"></a>另请参阅
 
