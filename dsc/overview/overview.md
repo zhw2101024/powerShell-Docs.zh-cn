@@ -23,7 +23,7 @@ DSC 是 PowerShell 中的一个管理平台，可允许通过配置为代码来�
 
 DSC 是一个声明性平台，用于配置、部署和管理系统。 它包括三个主要组件：
 
-- [Configurations](../configurations/configurations.md) 是声明性的 PowerShell 脚本，用于定义和配置资源实例。
+- [配置](../configurations/configurations.md)是声明性的 PowerShell 脚本，用于定义和配置资源实例。
     在运行配置时，DSC（和配置调用的资源）将“使其如此”，确保系统处于配置所布局的状态。
     DSC 配置也是幂等的：无论配置声明什么状态，本地配置管理器 (LCM) 都将继续确保计算机已配置为该状态。
 - [资源](../resources/resources.md)是 DSC 的“实现器”部分。 它们包含将配置的目标置于并保持在指定状态的代码。
