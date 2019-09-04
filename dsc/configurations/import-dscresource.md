@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,配置,安装程序
 title: 使用 Import-DSCResource
-ms.openlocfilehash: ee0b2f0469c6507c8f0148138198597a9e57cdd7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e1c2c06d756a70c2de516f330e3123235ce740ba
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080095"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215400"
 ---
 # <a name="using-import-dscresource"></a>使用 Import-DSCResource
 
@@ -78,7 +78,7 @@ Configuration MSDSCConfiguration
 
 在 ISE 中编写 DSC 配置时，PowerShell 为资源和资源属性提供 IntelliSence。 `$pshome` 模块路径下的资源定义将自动加载。 当使用 `Import-DSCResource` 关键字导入资源时，将添加指定的资源定义，并扩展 Intellisense 以包含导入的资源架构。
 
-![资源 Intellisense](/media/resource-intellisense.png)
+![资源 Intellisense](../media/resource-intellisense.png)
 
 > [!NOTE]
 > 从 PowerShell 5.0 开始，已将 Tab 自动补全添加到 DSC 资源及其属性的 ISE 中。 有关详细信息，请参阅[资源](../resources/resources.md)。
@@ -120,12 +120,12 @@ PSDesiredStateConfiguration\WindowsFeature: At least one of the values ‘Invali
 Intellisense 和架构验证允许在解析和编译期间捕获更多错误，从而避免了运行时的复杂性。
 
 > [!NOTE]
-> 每个 DSC 资源都可以有一个名称，以及一个由资源架构定义的 FriendlyName。 下面是“MSFT_ServiceResource.shema.mof”的前两行。
+> 每个 DSC 资源都可以有一个名称，以及一个由资源架构定义的 FriendlyName  。 下面是“MSFT_ServiceResource.shema.mof”的前两行。
 > ```syntax
 > [ClassVersion("1.0.0"),FriendlyName("Service")]
 > class MSFT_ServiceResource : OMI_BaseResource
 > ```
-> 在配置中使用此资源时，可以指定 MSFT_ServiceResource 或 Service。
+> 在配置中使用此资源时，可以指定 MSFT_ServiceResource  或 Service  。
 
 ## <a name="powershell-v4-and-v5-differences"></a>PowerShell v4 和 v5 差异
 
@@ -135,13 +135,13 @@ Intellisense 和架构验证允许在解析和编译期间捕获更多错误，�
 
 PowerShell 4.0 不支持同时安装和使用多个资源版本。 如果注意到将资源导入配置时存在问题，请确保只安装一个资源版本。
 
-在下图中，安装了两个版本的 xPSDesiredStateConfiguration 模块。
+在下图中，安装了两个版本的 xPSDesiredStateConfiguration  模块。
 
-![修复了多个资源版本](/media/multiple-resource-versions-broken.md)
+![修复了多个资源版本](../media/multiple-resource-versions-broken.png)
 
 将所需模块版本的内容复制到模块目录的顶层。
 
-![修复了多个资源版本](/media/multiple-resource-versions-fixed.md)
+![修复了多个资源版本](../media/multiple-resource-versions-fixed.png)
 
 ### <a name="resource-location"></a>资源位置
 
