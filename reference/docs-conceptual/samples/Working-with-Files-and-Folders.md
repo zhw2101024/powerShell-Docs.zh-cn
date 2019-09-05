@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用文件和文件夹
-ms.openlocfilehash: 0f7cb233918b59475417ec49b611ecc25a94ebe1
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 743e261d2f5e8bfa39f2731fca7fea6e5678c711
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030683"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215534"
 ---
 # <a name="working-with-files-and-folders"></a>使用文件和文件夹
 
@@ -106,15 +106,17 @@ sure you want to continue?
 Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
-## <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>将本地文件夹映射为 Windows 可访问驱动器
+## <a name="mapping-a-local-folder-as-a-drive"></a>将本地文件夹映射为驱动器
 
-你还可以使用 **subst** 命令映射本地文件夹。 以下命令可在根路径为本地 Program Files 的目录中创建本地驱动器 P:：
+你还可以使用 New-PSDrive  命令映射本地文件夹。 以下命令可在根路径为本地 Program Files 的目录中创建本地驱动器 P:（仅在 PowerShell 会话中可见）：
 
 ```powershell
-subst p: $env:programfiles
+New-PSDrive -Name P -Root $env:ProgramFiles -PSProvider FileSystem
 ```
 
-正如网络驱动器一样，使用 **subst** 在 Windows PowerShell 内映射的驱动器将对 Windows PowerShell shell 立即可见。
+正如网络驱动器一样，在 Windows PowerShell 内映射的驱动器将对 Windows PowerShell shell 立即可见。
+若要创建从文件资源管理器中可见的映射驱动器，需要使用参数 -Persist  。 但是，只有远程路径才能与 Persist 一起使用。
+
 
 ## <a name="reading-a-text-file-into-an-array"></a>将文本文件数据读取到数组中
 

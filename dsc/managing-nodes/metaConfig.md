@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,配置,安装程序
 title: 配置本地配置管理器
-ms.openlocfilehash: 15d696587d54d4a6464096cfb78757c41e9185c6
-ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
+ms.openlocfilehash: 42544036d87fcea3189fd6d2e55579fe87f137e1
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65229494"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215387"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>配置本地配置管理器
 
@@ -67,7 +67,7 @@ LCM 配置只能包含有限组资源的块。
 
 ## <a name="basic-settings"></a>基本设置
 
-不通过指定请求服务终结点/路径和部分配置 LCM 的所有属性，而是在 Settings 块中进行配置。
+不通过指定请求服务终结点/路径和部分配置 LCM 的所有属性，而是在 Settings  块中进行配置。
 **Settings** 块中提供下列属性。
 
 |  属性  |  类型  |  说明   |
@@ -76,7 +76,7 @@ LCM 配置只能包含有限组资源的块。
 | AllowModuleOverwrite| 布尔| 若允许从请求服务下载的新配置覆盖目标节点上的旧配置，则为 __$TRUE__。 否则为 $FALSE。|
 | CertificateID| 字符串| 用于保护在配置中传递的凭据的证书指纹。 更多详细信息，请参阅 [Want to secure credentials in Windows PowerShell Desired State Configuration?（希望在 Windows PowerShell Desired State Configuration 中保护凭据？）](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)。 <br> __注意：__ 如果使用 Azure 自动化 DSC 请求服务，则会自动进行管理。|
 | ConfigurationDownloadManagers| CimInstance[]| 已过时。 使用 __ConfigurationRepositoryWeb__ 和 __ConfigurationRepositoryShare__ 块定义配置请求服务终结点。|
-| ConfigurationID| 字符串| 用于向后兼容早期版本的请求服务。 用于标识要从请求服务获取的配置文件的 GUID。 如果配置 MOF 名为 ConfigurationID.mof，那么节点将在请求服务上请求配置。<br> __注意：__ 如果设置此属性，将无法使用 RegistrationKey 将节点注册到请求服务。 有关详细信息，请参阅[使用配置名称设置请求客户端](../pull-server/pullClientConfigNames.md)。|
+| ConfigurationID| 字符串| 用于向后兼容早期版本的请求服务。 用于标识要从请求服务获取的配置文件的 GUID。 如果配置 MOF 名为 ConfigurationID.mof，那么节点将在请求服务上请求配置。<br> __注意：__ 如果设置此属性，将无法使用 RegistrationKey 将节点注册到请求服务  。 有关详细信息，请参阅[使用配置名称设置请求客户端](../pull-server/pullClientConfigNames.md)。|
 | ConfigurationMode| 字符串 | 指定 LCM 实际如何将配置应用到目标节点。 可能的值为 __ApplyOnly__、__ApplyAndMonitor__ 和 __ApplyAndAutoCorrect__。 <ul><li>__ApplyOnly__：DSC 将应用配置，但若未向目标节点推送新配置或从服务请求新配置，则它不会执行任何进一步操作。 首次应用新配置后，DSC 不会检查是否偏离以前配置的状态。 请注意，__ApplyOnly__ 生效前，DSC 将尝试应用配置，直到成功为止。 </li><li> __ApplyAndMonitor__：这是默认值。 LCM 将应用任意新配置。 首次应用新配置后，如果目标节点偏离期望状态，则 DSC 将在日志中报告差异。 请注意，__ApplyAndMonitor__ 生效前，DSC 将尝试应用配置，直到成功为止。</li><li>__ApplyAndAutoCorrect__：DSC 将应用任何新配置。 首次应用新配置后，如果目标节点偏离适当状态，则 DSC 将在日志中报告差异然后重新应用当前配置。</li></ul>|
 | ConfigurationModeFrequencyMins| UInt32| 检查和应用当前配置的时间间隔（以分钟为单位）。 如果将 ConfigurationMode 属性设置为 ApplyOnly，则将忽略此属性。 默认值为 15。|
 | DebugMode| 字符串| 可取值为 __None__、__ForceModuleImport__ 和 __All__。 <ul><li>设置为 __None__ 可以使用缓存的资源。 这是默认值，应在生产方案中使用。</li><li>设置为 __ForceModuleImport__ 会导致 LCM 重载所有 DSC 资源模块，即使这些模块之前已被加载并缓存，也是如此。 这会影响 DSC 操作的性能，因为将在使用时重新加载每个模块。 通常在调试资源时使用此值</li><li>在此版本中，__All__ 等同于 __ForceModuleImport__</li></ul> |
@@ -89,7 +89,7 @@ LCM 配置只能包含有限组资源的块。
 | StatusRetentionTimeInDays | UInt32| LCM 保留当前配置状态的天数。|
 
 > [!NOTE]
-> LCM 基于以下条件启动 ConfigurationModeFrequencyMins 周期：
+> LCM 基于以下条件启动 ConfigurationModeFrequencyMins  周期：
 >
 > - 使用 `Set-DscLocalConfigurationManager` 应用新的元配置
 > - 计算机重新启动
@@ -118,13 +118,14 @@ LCM 配置支持定义以下类型的请求服务终结点：
 |---|---|---|
 |AllowUnsecureConnection|布尔|设置为 **$TRUE** 以允许无需身份验证即可从节点连接到服务器。 设置为 **$FALSE** 以要求进行身份验证。|
 |CertificateID|字符串|用于向服务器进行身份验证的证书指纹。|
-|ConfigurationNames|string[]|目标节点将请求的配置名称的数组。 仅当通过 RegistrationKey 将节点注册到请求服务后，才使用这些操作。 有关详细信息，请参阅[使用配置名称设置请求客户端](../pull-server/pullClientConfigNames.md)。|
+|ConfigurationNames|string[]|目标节点将请求的配置名称的数组。 仅当通过 RegistrationKey  将节点注册到请求服务后，才使用这些操作。 有关详细信息，请参阅[使用配置名称设置请求客户端](../pull-server/pullClientConfigNames.md)。|
 |RegistrationKey|字符串|用于将节点注册到请求服务的 GUID。 有关详细信息，请参阅[使用配置名称设置请求客户端](../pull-server/pullClientConfigNames.md)。|
 |ServerURL|字符串|配置服务的 URL。|
 |ProxyURL*|字符串|要在与配置服务通信时使用的 http 代理的 URL。|
 |ProxyCredential*|pscredential|用于 http 代理的凭据。|
 
->!注意 \* 在 Windows 版本 1809 及更高版本中受支持。
+> [!NOTE]
+> * 在 Windows 版本 1809 及更高版本中受支持。
 
 提供简化本地节点的 ConfigurationRepositoryWeb 值配置的示例脚本 - 请参阅[生成 DSC 元配置](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
@@ -150,7 +151,8 @@ LCM 配置支持定义以下类型的请求服务终结点：
 |ProxyURL*|字符串|要在与配置服务通信时使用的 http 代理的 URL。|
 |ProxyCredential*|pscredential|用于 http 代理的凭据。|
 
->!注意 \* 在 Windows 版本 1809 及更高版本中受支持。
+> [!NOTE]
+> * 在 Windows 版本 1809 及更高版本中受支持。
 
 提供简化本地节点的 ResourceRepositoryWeb 值配置的示例脚本 - 请参阅[生成 DSC 元配置](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
@@ -177,7 +179,8 @@ LCM 配置支持定义以下类型的请求服务终结点：
 |ProxyURL*|字符串|要在与配置服务通信时使用的 http 代理的 URL。|
 |ProxyCredential*|pscredential|用于 http 代理的凭据。|
 
->!注意 \* 在 Windows 版本 1809 及更高版本中受支持。
+> [!NOTE]
+> * 在 Windows 版本 1809 及更高版本中受支持。
 
 提供简化本地节点的 ReportServerWeb 值配置的示例脚本 - 请参阅[生成 DSC 元配置](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
@@ -189,12 +192,12 @@ LCM 配置支持定义以下类型的请求服务终结点：
 
 |属性|类型|说明|
 |---|---|---|
-|ConfigurationSource|string[]|以前在 ConfigurationRepositoryWeb 和 ConfigurationRepositoryShare 块中定义的配置服务器的名称数组，将从其中拉取部分配置。|
+|ConfigurationSource|string[]|以前在 ConfigurationRepositoryWeb  和 ConfigurationRepositoryShare  块中定义的配置服务器的名称数组，将从其中拉取部分配置。|
 |DependsOn|string{}|应用此部分配置之前必须完成的其他配置名称的列表。|
 |说明|字符串|用于描述部分配置的文本。|
 |ExclusiveResources|string[]|此部分配置专用的资源数组。|
 |RefreshMode|字符串|指定 LCM 如何获取此部分配置。 可取值为 __Disabled__、__Push__ 和 __Pull__。 <ul><li>__Disabled__：禁用此部分配置。</li><li> __Push__：通过调用 [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) cmdlet 将部分配置推送到节点。 从服务推送或请求该节点的所有部分配置后，可以通过调用 `Start-DscConfiguration –UseExisting` 来启动配置。 这是默认值。</li><li>__Pull：__ 将节点配置为从拉取服务定期检查部分配置。 如果将此属性设置为 __Pull__，则必须在 __ConfigurationSource__ 属性中指定请求服务。 有关 Azure 自动化请求服务的详细信息，请参阅 [Azure 自动化 DSC 概述](https://docs.microsoft.com/azure/automation/automation-dsc-overview)。</li></ul>|
-|ResourceModuleSource|string[]|可从中下载此部分配置所需资源的资源服务器的名称数组。 这些名称必须表示之前在 ResourceRepositoryWeb 和 ResourceRepositoryShare 块中定义的服务终结点。|
+|ResourceModuleSource|string[]|可从中下载此部分配置所需资源的资源服务器的名称数组。 这些名称必须表示之前在 ResourceRepositoryWeb  和 ResourceRepositoryShare  块中定义的服务终结点。|
 
 __注意：__ Azure 自动化 DSC 支持部分配置，但每个节点只能从每个自动化帐户中请求一个配置。
 
