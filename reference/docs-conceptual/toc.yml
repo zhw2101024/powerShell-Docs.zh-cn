@@ -199,7 +199,7 @@
 - name: 示例脚本
   items:
     - name: 管理示例脚本
-      href: samples/sample-scripts-for-administration.md
+      href: samples/sample-scripts-for-administration.yml
     - name: 更改计算机状态
       href: samples/changing-computer-state.md
     - name: 收集有关计算机的信息
