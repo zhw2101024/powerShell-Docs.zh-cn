@@ -9,27 +9,27 @@ ms.topic: article
 ms.assetid: e20e5ad6-a6e6-4a63-9d42-1ac54214f748
 caps.latest.revision: 5
 ms.openlocfilehash: cc4877242a16a9caa99564aeaae985f85e38791e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: ffcc1c55f5b3adc063353cb75f2a2183acc2234a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859873"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70737599"
 ---
 # <a name="how-to-add-dynamic-parameters-to-a-provider-help-topic"></a>如何向提供程序帮助主题添加动态参数
 
-本部分介绍了如何填充**动态参数**提供程序帮助主题的部分。
+本部分介绍如何填充提供程序帮助主题的 "**动态参数**" 部分。
 
-*动态参数*cmdlet 的参数或仅有的函数指定的条件。
+*动态参数*是仅在指定条件下可用的 cmdlet 或函数的参数。
 
-提供程序帮助主题中所述的动态参数是提供程序驱动器中使用的 cmdlet 或函数时，提供程序添加到 cmdlet 或函数的动态参数。
+提供程序帮助主题中记录的动态参数是在提供程序驱动器中使用 cmdlet 或函数时，提供程序添加到 cmdlet 或函数中的动态参数。
 
-此外可以提供程序的自定义 cmdlet 帮助中记录了动态参数。 在提供程序编写提供程序帮助和自定义 cmdlet 帮助，在这两个文档中包括的动态参数文档。 有关自定义 cmdlet 帮助的详细信息，请参阅[编写 Windows PowerShell 自定义 Cmdlet 帮助的提供程序](./writing-custom-cmdlet-help-for-windows-powershell-providers.md)。
+动态参数还可以在提供程序的自定义 cmdlet 帮助中记录。 同时编写提供程序帮助和提供程序的自定义 cmdlet 帮助时，请在这两个文档中包含动态参数文档。 有关自定义 cmdlet 帮助的详细信息，请参阅[编写适用于提供程序的 Windows PowerShell 自定义 Cmdlet 帮助](./writing-custom-cmdlet-help-for-windows-powershell-providers.md)。
 
-如果提供程序不实现任何动态参数，提供程序帮助主题包含一个空`DynamicParameters`元素。
+如果提供程序未实现任何动态参数，则提供程序帮助主题将包含一个`DynamicParameters`空元素。
 
-### <a name="to-add-dynamic-parameters"></a>若要添加的动态参数
+### <a name="to-add-dynamic-parameters"></a>添加动态参数
 
-1. 在中*AssemblyName*.dll help.xml 文件内,`providerHelp`元素中，添加`DynamicParameters`元素。 `DynamicParameters`元素应显示后`Tasks`元素和之前`RelatedLinks`元素。
+1. 在`providerHelp`元素*中的 dll-help*文件中，添加一个`DynamicParameters`元素。 元素应出现在元素`Tasks`之后、元素之前`RelatedLinks`。 `DynamicParameters`
 
    例如：
 
@@ -44,9 +44,9 @@ ms.locfileid: "56859873"
     </providerHelp>
     ```
 
-   如果提供程序不实现任何动态参数，`DynamicParameters`元素可以为空。
+   如果提供程序未实现任何动态参数，则`DynamicParameters`元素可以为空。
 
-2. 内`DynamicParameters`元素中的，为每个动态参数添加`DynamicParameter`元素。
+2. 在元素中，为每个动态参数添加一个`DynamicParameter`元素。 `DynamicParameters`
 
    例如：
 
@@ -57,14 +57,14 @@ ms.locfileid: "56859873"
     </DynamicParameters>
     ```
 
-3. 在每个`DynamicParameter`元素中，添加`Name`和`CmdletSupported`元素。
+3. 在每`DynamicParameter`个元素中， `Name`添加`CmdletSupported`一个和元素。
 
-   |元素名称|描述|
+   |元素名称|说明|
    |------------------|-----------------|
-   |名称|指定的参数名称。|
-   |CmdletSupported|指定在其中的参数是有效的 cmdlet。 键入 cmdlet 名称的逗号分隔列表。|
+   |名称|指定参数名称。|
+   |CmdletSupported|指定参数在其中有效的 cmdlet。 键入以逗号分隔的 cmdlet 名称列表。|
 
-   例如，以下 XML 文档`Encoding`Windows PowerShell FileSystem 提供程序添加到的动态参数`Add-Content`， `Get-Content`， `Set-Content` cmdlet。
+   例如，以下 XML `Encoding`记录了 Windows PowerShell FileSystem 提供程序添加`Add-Content`到、 `Get-Content`、 `Set-Content` cmdlet 的动态参数。
 
     ```xml
     <DynamicParameters/>
@@ -75,9 +75,9 @@ ms.locfileid: "56859873"
 
     ```
 
-4. 在每个`DynamicParameter`元素中，添加`Type`元素。 `Type`元素是用于容器`Name`包含的.NET 类型的动态参数的值的元素。
+4. 在每`DynamicParameter`个元素中， `Type`添加一个元素。 元素是包含动态参数值的`Name` .net 类型的元素的容器。 `Type`
 
-   例如，以下 XML 显示的.NET 类型`Encoding`动态参数是[Microsoft.PowerShell.Commands.FileSystemCmdletProviderEncoding](/dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding)枚举。
+   例如，下面的 XML 显示`Encoding`动态参数的 .net 类型为[FileSystemCmdletProviderEncoding](/dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding)枚举的类型。
 
     ```xml
     <DynamicParameters/>
@@ -91,9 +91,9 @@ ms.locfileid: "56859873"
     </DynamicParameters>
     ```
 
-5. 添加`Description`元素，它包含的动态参数的简短说明。 时编写说明，使用指南中的所有 cmdlet 参数的规定[如何添加参数信息](./how-to-add-parameter-information.md)。
+5. `Description`添加元素，该元素包含动态参数的简短说明。 编写说明时，请使用[如何添加参数信息](./how-to-add-parameter-information.md)中的所有 cmdlet 参数规定的准则。
 
-   例如，以下 XML 中包含的说明`Encoding`动态参数。
+   例如，下面的 XML 包含`Encoding`动态参数的说明。
 
     ```xml
     <DynamicParameters/>
@@ -108,18 +108,18 @@ ms.locfileid: "56859873"
     </DynamicParameters>
     ```
 
-6. 添加`PossibleValues`元素和子元素。 在一起，这些元素描述的动态参数的值。 此元素专用于枚举值。 如果动态参数不采用一个值，如是一个开关参数，使用这种情况或不能枚举值，添加一个空`PossibleValues`元素。
+6. `PossibleValues`添加元素及其子元素。 这些元素共同描述了动态参数的值。 此元素用于枚举值。 如果动态参数不采用值（如使用开关参数的情况）或无法枚举值，则添加一个空`PossibleValues`元素。
 
-   下表列出并描述了`PossibleValues`元素和子元素。
+   下表列出并说明`PossibleValues`了元素及其子元素。
 
-   |元素名称|描述|
+   |元素名称|说明|
    |------------------|-----------------|
-   |PossibleValues|此元素是一个容器。 及其子元素如下所述。 添加一个`PossibleValues`于每个提供程序帮助主题的元素。 元素可以为空。|
-   |PossibleValue|此元素是一个容器。 及其子元素如下所述。 添加一个`PossibleValue`动态参数的每个值的元素。|
-   |值|指定的值名称。|
-   |描述|此元素包含`Para`元素。 中的文本`Para`元素描述中命名的值`Value`元素。|
+   |PossibleValues|此元素是一个容器。 下面介绍了其子元素。 将一个`PossibleValues`元素添加到每个提供程序帮助主题。 元素可以为空。|
+   |PossibleValue|此元素是一个容器。 下面介绍了其子元素。 为动态`PossibleValue`参数的每个值添加一个元素。|
+   |值|指定值名称。|
+   |说明|此元素包含一个`Para`元素。 `Para`元素中的文本描述`Value`元素中命名的值。|
 
-   例如，以下 XML 显示了一个`PossibleValue`元素的`Encoding`动态参数。
+   例如，下面的 XML 显示`PossibleValue` `Encoding`动态参数的一个元素。
 
     ```xml
     <DynamicParameters/>
@@ -140,7 +140,7 @@ ms.locfileid: "56859873"
 
 ## <a name="example"></a>示例
 
-下面的示例演示`DynamicParameters`元素的`Encoding`动态参数。
+下面的示例演示`DynamicParameters`了`Encoding`动态参数的元素。
 
 ```xml
 <DynamicParameters/>
