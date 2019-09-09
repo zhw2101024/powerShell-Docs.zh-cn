@@ -1,5 +1,5 @@
 ---
-title: 所需的开发准则 |Microsoft Docs
+title: 必需的开发指南 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,212 +8,212 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 41d2b308-a36a-496f-8542-666b6a21eedc
 caps.latest.revision: 19
-ms.openlocfilehash: 3f6bcd2e4ef4d9c404b3a5deeaa9f25d3fa42ec1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e68e43a91f9139e8d3dc636b5740121515aab2e6
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067461"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986671"
 ---
 # <a name="required-development-guidelines"></a>必需的开发指南
 
-编写 cmdlet 时，必须遵循以下准则。 它们分为设计 cmdlet 和指引，用于编写 cmdlet 代码的准则。 如果不遵循这些指导原则，cmdlet 可能会失败，并在使用 cmdlet 时，用户可能具有不好的体验。
+编写 cmdlet 时必须遵循以下准则。 它们分为准则，用于设计 cmdlet 以及编写 cmdlet 代码的准则。 如果未遵循这些指导原则，则 cmdlet 可能会失败，并且你的用户在使用 cmdlet 时可能会遇到不佳的体验。
 
-## <a name="in-this-topic"></a>本主题中
+## <a name="in-this-topic"></a>本主题内容
 
-### <a name="design-guidelines"></a>设计指南
+### <a name="design-guidelines"></a>设计准则
 
-- [只使用批准的谓词 (RD01)](./required-development-guidelines.md#use-only-approved-verbs-rd01)
+- [仅使用批准的动词（RD01）](./required-development-guidelines.md#use-only-approved-verbs-rd01)
 
-- [Cmdlet 名称：不能使用的字符 (RD02)](./required-development-guidelines.md#cmdlet-names-characters-that-cannot-be-used-rd02)
+- [Cmdlet 名称：不能使用的字符（RD02）](./required-development-guidelines.md#cmdlet-names-characters-that-cannot-be-used-rd02)
 
-- [不能使用的参数名称 (RD03)](./required-development-guidelines.md#parameters-names-that-cannot-be-used-rd03)
+- [不能使用的参数名称（RD03）](./required-development-guidelines.md#parameters-names-that-cannot-be-used-rd03)
 
-- [支持确认请求 (RD04)](./required-development-guidelines.md#support-confirmation-requests-rd04)
+- [支持确认请求（RD04）](./required-development-guidelines.md#support-confirmation-requests-rd04)
 
-- [为交互式会话 (RD05) 支持 Force 参数](./required-development-guidelines.md#support-force-parameter-for-interactive-sessions-rd05)
+- [交互式会话的支持强制参数（RD05）](./required-development-guidelines.md#support-force-parameter-for-interactive-sessions-rd05)
 
-- [文档输出对象 (RD06)](./required-development-guidelines.md#document-output-objects-rd06)
+- [文档输出对象（RD06）](./required-development-guidelines.md#document-output-objects-rd06)
 
-### <a name="code-guidelines"></a>代码指南
+### <a name="code-guidelines"></a>代码准则
 
-- [派生的 Cmdlet 或 PSCmdlet 类 (RC01)](./required-development-guidelines.md#derive-from-the-cmdlet-or-pscmdlet-classes-rc01)
+- [从 Cmdlet 或 PSCmdlet 类（RC01）派生](./required-development-guidelines.md#derive-from-the-cmdlet-or-pscmdlet-classes-rc01)
 
-- [指定 Cmdlet 属性 (RC02)](./required-development-guidelines.md#specify-the-cmdlet-attribute-rc02)
+- [指定 Cmdlet 属性（RC02）](./required-development-guidelines.md#specify-the-cmdlet-attribute-rc02)
 
-- [重写输入处理方法 (RC03)](./required-development-guidelines.md#override-an-input-processing-method-rc03)
+- [重写输入处理方法（RC03）](./required-development-guidelines.md#override-an-input-processing-method-rc03)
 
-- [指定 OutputType 属性 (RC04)](./required-development-guidelines.md#specify-the-outputtype-attribute-rc04)
+- [指定 OutputType 属性（RC04）](./required-development-guidelines.md#specify-the-outputtype-attribute-rc04)
 
-- [不保留输出对象 (RC05) 的句柄](./required-development-guidelines.md#do-not-retain-handles-to-output-objects-rc05)
+- [不保留输出对象的句柄（RC05）](./required-development-guidelines.md#do-not-retain-handles-to-output-objects-rc05)
 
-- [可靠地处理错误 (RC06)](./required-development-guidelines.md#handle-errors-robustly-rc06)
+- [可靠地处理错误（RC06）](./required-development-guidelines.md#handle-errors-robustly-rc06)
 
-- [使用 Windows PowerShell 模块来部署 Cmdlet (RC07)](./required-development-guidelines.md#use-a-windows-powershell-module-to-deploy-your-cmdlets-rc07)
+- [使用 Windows PowerShell 模块部署 Cmdlet （RC07）](./required-development-guidelines.md#use-a-windows-powershell-module-to-deploy-your-cmdlets-rc07)
 
-## <a name="design-guidelines"></a>设计指南
+## <a name="design-guidelines"></a>设计准则
 
-设计用于确保使用 cmdlet 和其他 cmdlet 之间一致的用户体验的 cmdlet 时，必须遵循以下准则。 找到一个设计指导原则适用于你的情况，请务必查看类似的指导原则的代码准则。
+设计 cmdlet 时必须遵循以下指导原则，以确保在使用 cmdlet 和其他 cmdlet 之间保持一致的用户体验。 如果找到适用于你的情况的设计准则，请务必查看类似准则的代码准则。
 
-### <a name="use-only-approved-verbs-rd01"></a>只使用批准的谓词 (RD01)
+### <a name="use-only-approved-verbs-rd01"></a>仅使用批准的动词（RD01）
 
-Cmdlet 属性中指定的谓词必须来自已识别组提供的 Windows PowerShell 的谓词。 它不能禁止同义词之一。 使用以下枚举来指定 cmdlet 谓词定义的常量字符串：
+Cmdlet 属性中指定的动词必须来自 Windows PowerShell 提供的已识别的动词集。 它不得为禁止的同义词之一。 使用以下枚举定义的常量字符串指定 cmdlet 谓词：
 
-- [System.Management.Automation.VerbsCommon](/dotnet/api/System.Management.Automation.VerbsCommon)
+- [System.web. VerbsCommon](/dotnet/api/System.Management.Automation.VerbsCommon)
 
-- [System.Management.Automation.VerbsCommunications](/dotnet/api/System.Management.Automation.VerbsCommunications)
+- [System.web. VerbsCommunications](/dotnet/api/System.Management.Automation.VerbsCommunications)
 
-- [System.Management.Automation.VerbsData](/dotnet/api/System.Management.Automation.VerbsData)
+- [System.web. VerbsData](/dotnet/api/System.Management.Automation.VerbsData)
 
-- [System.Management.Automation.VerbsDiagnostic](/dotnet/api/System.Management.Automation.VerbsDiagnostic)
+- [System.web. VerbsDiagnostic](/dotnet/api/System.Management.Automation.VerbsDiagnostic)
 
-- [System.Management.Automation.VerbsLifeCycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle)
+- [System.web. VerbsLifeCycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle)
 
-- [System.Management.Automation.VerbsSecurity](/dotnet/api/System.Management.Automation.VerbsSecurity)
+- [System.web. VerbsSecurity](/dotnet/api/System.Management.Automation.VerbsSecurity)
 
-- [System.Management.Automation.VerbsOther](/dotnet/api/System.Management.Automation.VerbsOther)
+- [System.web. VerbsOther](/dotnet/api/System.Management.Automation.VerbsOther)
 
-有关批准的动词名称的详细信息，请参阅[Cmdlet 谓词](./approved-verbs-for-windows-powershell-commands.md)。
+有关已批准的动词名称的详细信息，请参阅[Cmdlet 谓词](./approved-verbs-for-windows-powershell-commands.md)。
 
-用户需要一组可发现和预期的 cmdlet 名称。 使用相应的动词，以便用户能够进行快速评估的 cmdlet 的用途并轻松地发现系统的功能。 例如，以下命令行命令将获取名称以"start"开头的系统上的所有命令列表： `get-command start-*`。 使用中的名词 cmdlet 中将 cmdlet 与其他 cmdlet 区分开来。 （） 名词，指示将对其执行操作的资源。 谓词被表示本身的操作。
+用户需要一组可发现的和预期的 cmdlet 名称。 使用适当的动词，使用户能够快速评估 cmdlet 的作用，并轻松发现系统功能。 例如，以下命令行命令将获取系统上名称以 "start" 开头的所有命令的列表： `get-command start-*`。 在 cmdlet 中使用名词，将 cmdlet 与其他 cmdlet 区分开来。 名词指示将对其执行操作的资源。 操作本身由谓词表示。
 
-### <a name="cmdlet-names-characters-that-cannot-be-used-rd02"></a>Cmdlet 名称：不能使用的字符 (RD02)
+### <a name="cmdlet-names-characters-that-cannot-be-used-rd02"></a>Cmdlet 名称：不能使用的字符（RD02）
 
-当命名 cmdlet 时，则不使用任何以下特殊字符。
+命名 cmdlet 时，请不要使用以下任何特殊字符。
 
 |字符|名称|
 |---------------|----------|
 |#|数字符号|
-|、|逗号|
+|、|跟|
 |()|括号|
-|{}|大括号|
+|{}|住|
 |[]|方括号|
-|&|and 符|
-|-|连字符**注意：** 可以使用连字符分隔中名词谓词，但不是能在名词或谓词中使用。|
+|&|前面|
+|-|连字符**注释：** 连字符可用于分隔动词与名词之间的分隔符，但不能在名词内或动词内使用。|
 |/|斜杠标记|
-|\|反斜杠|
+|\\| 反斜杠|
 |$|美元符号|
-|^|插入符号|
-|;|以分号|
-|：|冒号|
+|^|字|
+|;|之间|
+|:|开头|
 |"|双引号|
 |'|单引号|
 |<>|尖括号|
-|&#124;|垂直条|
+|&#124;|竖线|
 |?|问号|
 |@|at 符号|
-|| 返回时钟周期 （重音符）|
-|*|星号|
-|%|百分比符号|
+|`|后退（重音符）|
+|*|红星|
+|%|百分号|
 |+|加号|
 |=|等号|
-|~|波形符|
+|~|波浪|
 
-### <a name="parameters-names-that-cannot-be-used-rd03"></a>不能使用的参数名称 (RD03)
+### <a name="parameters-names-that-cannot-be-used-rd03"></a>不能使用的参数名称（RD03）
 
-Windows PowerShell 提供了一组通用的所有 cmdlet 参数加上在特定情况下添加的其他参数。 设计自己的 cmdlet 时不能使用以下名称：确认，Debug、 ErrorAction、 ErrorVariable、 OutBuffer OutVariable、 WarningAction、 WarningVariable、 WhatIf、 UseTransaction，和详细。 有关这些参数的详细信息，请参阅[通用参数名称](./common-parameter-names.md)。
+Windows PowerShell 为所有 cmdlet 提供了一个通用参数，以及在特定情况下添加的附加参数。 设计自己的 cmdlet 时，不能使用以下名称：Confirm、Debug、ErrorAction、ErrorVariable、OutBuffer、OutVariable、WarningAction、WarningVariable、WhatIf、UseTransaction 和 Verbose。 有关这些参数的详细信息，请参阅[通用参数名称](./common-parameter-names.md)。
 
-### <a name="support-confirmation-requests-rd04"></a>支持确认请求 (RD04)
+### <a name="support-confirmation-requests-rd04"></a>支持确认请求（RD04）
 
-对于执行修改系统的操作的 cmdlet，它们应调用[System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法来请求确认，并在特殊情况下调用[System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法。 ( [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)后，才应调用方法[System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)调用方法。)
+对于执行修改系统的操作的 cmdlet，它们应调用[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法来请求确认，在特殊情况下，调用[ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法的方法。 （仅应在调用[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法后调用[ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法。）（可能为一个），该方法为
 
-若要进行这些调用必须指定该 cmdlet，它支持通过设置确认请求`SupportsShouldProcess`Cmdlet 属性的关键字。 有关设置此属性的详细信息，请参阅[Cmdlet 特性声明](./cmdlet-attribute-declaration.md)。
+若要进行这些调用，cmdlet 必须指定它支持确认请求，方法是`SupportsShouldProcess`设置 cmdlet 属性的关键字。 有关设置此属性的详细信息，请参阅[Cmdlet 特性声明](./cmdlet-attribute-declaration.md)。
 
 > [!NOTE]
-> 如果在 cmdlet 类 Cmdlet 属性指示该 cmdlet 支持调用[System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法，并且该 cmdlet 无法调用[System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法，用户可能意外修改系统。
+> 如果该 cmdlet 类的 Cmdlet 特性指示该 cmdlet 支持对[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法的调用，则该 cmdlet 将无法调用此[类ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法，用户可能会意外地修改系统。
 
-使用[System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)系统进行任何修改的方法。 用户首选项和`WhatIf`参数控制[System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 与此相反， [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)调用具有潜在危险的修改，执行其他检查。 此方法不受任何用户首选项或`WhatIf`参数。 如果你的 cmdlet 调用[System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，它应具有`Force`参数跳过对这两种方法的调用和，继续执行该操作。 这非常重要，因为它允许您以非交互式脚本和主机中使用的 cmdlet。
+对于任何系统修改，请使用[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 用户首选项和`WhatIf`参数，用于控制[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 与此相反， [ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)调用会执行其他检查，以检查是否存在潜在的危险修改。 此方法不由任何用户首选项或`WhatIf`参数控制。 如果你的 cmdlet 调用[ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，则它应具有一个`Force`参数，该参数会绕过对这两个方法的调用，并继续执行该操作。 这一点很重要，因为它允许在非交互式脚本和主机中使用 cmdlet。
 
-如果你 cmdlet 支持这些调用，用户可以确定是否应实际执行该操作。 例如， [Stop-process](/powershell/module/microsoft.powershell.management/stop-process) cmdlet 可调用[System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法之前停止的一组关键进程，包括 Winlogon，系统和Spoolsv 进程。
+如果 cmdlet 支持这些调用，则用户可以确定是否应实际执行该操作。 例如，在停止一组关键进程（包括系统、Winlogon 和 Spoolsv.exe 进程）之前，[停止进程](/powershell/module/microsoft.powershell.management/stop-process)cmdlet 会调用[ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法。
 
-支持这些方法的详细信息，请参阅[请求确认](./requesting-confirmation-from-cmdlets.md)。
+有关支持这些方法的详细信息，请参阅[请求确认](./requesting-confirmation-from-cmdlets.md)。
 
-### <a name="support-force-parameter-for-interactive-sessions-rd05"></a>为交互式会话 (RD05) 支持 Force 参数
+### <a name="support-force-parameter-for-interactive-sessions-rd05"></a>交互式会话的支持强制参数（RD05）
 
-如果以交互方式使用 cmdlet，则始终提供 Force 参数来重写的交互操作，如提示或读取行输入）。 这非常重要，因为它允许您以非交互式脚本和主机中使用的 cmdlet。 以下方法可以实现的交互式主机。
+如果 cmdlet 以交互方式使用，请始终提供 Force 参数来重写交互式操作，如提示或读取输入的行。 这一点很重要，因为它允许在非交互式脚本和主机中使用 cmdlet。 交互式主机可以实现以下方法。
 
-- [System.Management.Automation.Host.PSHostUserInterface.Prompt*](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.Prompt)
+- [PSHostUserInterface * 的命令行管理](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.Prompt)
 
-- [System.Management.Automation.Host.Pshostuserinterface.PromptForChoice](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.PromptForChoice)
+- [Pshostuserinterface. "PromptForChoice"](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.PromptForChoice)
 
-- [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection.PromptForChoice](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection.PromptForChoice)
+- [Ihostuisupportsmultiplechoiceselection. "PromptForChoice"](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection.PromptForChoice)
 
-- [System.Management.Automation.Host.Pshostuserinterface.PromptForCredential*](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.PromptForCredential)
+- [PromptForCredential * 的 Pshostuserinterface *。](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.PromptForCredential)
 
-- [System.Management.Automation.Host.Pshostuserinterface.ReadLine*](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.ReadLine)
+- [Pshostuserinterface * 的功能的 *](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.ReadLine)
 
-- [System.Management.Automation.Host.Pshostuserinterface.ReadLineAsSecureString*](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.ReadLineAsSecureString)
+- [ReadLineAsSecureString * 的 Pshostuserinterface *。](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.ReadLineAsSecureString)
 
-### <a name="document-output-objects-rd06"></a>文档输出对象 (RD06)
+### <a name="document-output-objects-rd06"></a>文档输出对象（RD06）
 
-Windows PowerShell 使用写入管道的对象。 为了使用户可以利用每个 cmdlet 返回的对象，必须文档将返回的对象和必须文档使用为这些返回的对象的成员。
+Windows PowerShell 使用写入管道的对象。 为了使用户能够利用每个 cmdlet 返回的对象，你必须记录返回的对象，并且必须记录这些返回对象的成员的用途。
 
-## <a name="code-guidelines"></a>代码指南
+## <a name="code-guidelines"></a>代码准则
 
-编写 cmdlet 代码时，必须遵循以下准则。 找到适用于您的具体情况的代码准则，请务必查看类似的指导原则的设计指南。
+编写 cmdlet 代码时必须遵循以下准则。 如果你发现适用于你的情况的代码准则，请务必查看类似指导原则的设计指南。
 
-### <a name="derive-from-the-cmdlet-or-pscmdlet-classes-rc01"></a>派生的 Cmdlet 或 PSCmdlet 类 (RC01)
+### <a name="derive-from-the-cmdlet-or-pscmdlet-classes-rc01"></a>从 Cmdlet 或 PSCmdlet 类（RC01）派生
 
-Cmdlet 必须或者派生[System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)或[System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基类。 派生的 Cmdlet [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)类不依赖于 Windows PowerShell 运行时。 它们可以直接从任何 Microsoft.NET Framework 语言调用。 派生的 Cmdlet [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)类依赖于 Windows PowerShell 运行时。 因此，它们在内执行一个运行空间。
+Cmdlet 必须派生自[PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) [基类或派生](/dotnet/api/System.Management.Automation.Cmdlet)自的派生类的派生类。 派生自[system.object](/dotnet/api/System.Management.Automation.Cmdlet)类的 cmdlet 不依赖于 Windows PowerShell 运行时。 可以直接从任何 Microsoft .NET Framework 语言调用它们。 派生自[PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)类的 cmdlet 依赖于 Windows PowerShell 运行时。 因此，它们在运行空间内执行。
 
-您实现的所有 cmdlet 类必须都是公共类。 有关这些 cmdlet 类的详细信息，请参阅[Cmdlet 概述](./cmdlet-overview.md)。
+实现的所有 cmdlet 类必须是公共类。 有关这些 cmdlet 类的详细信息，请参阅[Cmdlet 概述](./cmdlet-overview.md)。
 
-### <a name="specify-the-cmdlet-attribute-rc02"></a>指定 Cmdlet 属性 (RC02)
+### <a name="specify-the-cmdlet-attribute-rc02"></a>指定 Cmdlet 属性（RC02）
 
-若要识别的 Windows PowerShell cmdlet，必须使用 Cmdlet 特性修饰其.NET Framework 类。 此属性指定该 cmdlet 的以下功能。
+要使 cmdlet 能够被 Windows PowerShell 识别，其 .NET Framework 类必须使用 Cmdlet 特性修饰。 此属性指定 cmdlet 的以下功能。
 
-- 标识该 cmdlet 的动词-名词对。
+- 用于标识 cmdlet 的动词和名词对。
 
-- 指定多个参数集时使用默认参数集。 如果 Windows PowerShell 不具有足够的信息来确定哪些参数设置为使用，则使用默认参数集。
+- 指定多个参数集时使用的默认参数集。 当 Windows PowerShell 没有足够的信息来确定要使用的参数时，将使用默认参数集。
 
-- 指示该 cmdlet 支持调用[System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 该 cmdlet 对系统进行更改之前，此方法会向用户显示一条确认消息。 有关如何建立确认请求的详细信息，请参阅[请求确认](./requesting-confirmation-from-cmdlets.md)。
+- 指示此 cmdlet 是否支持对[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法的调用。 此方法在 cmdlet 更改系统之前向用户显示一条确认消息。 有关如何发出确认请求的详细信息，请参阅[请求确认](./requesting-confirmation-from-cmdlets.md)。
 
-- 指示与确认消息关联的操作的影响级别 （或严重性）。 在大多数情况下，应使用的介质的默认值。 有关如何影响级别影响向用户显示的确认请求的详细信息，请参阅[请求确认](./requesting-confirmation-from-cmdlets.md)。
+- 指示与确认消息相关联的操作的影响级别（或严重性）。 在大多数情况下，应使用默认值 "中"。 有关影响级别如何影响向用户显示的确认请求的详细信息，请参阅[请求确认](./requesting-confirmation-from-cmdlets.md)。
 
-有关如何声明 cmdlet 属性的详细信息，请参阅[CmdletAttribute 声明](./cmdlet-attribute-declaration.md)。
+有关如何声明 cmdlet 特性的详细信息，请参阅[CmdletAttribute 声明](./cmdlet-attribute-declaration.md)。
 
-### <a name="override-an-input-processing-method-rc03"></a>重写输入处理方法 (RC03)
+### <a name="override-an-input-processing-method-rc03"></a>重写输入处理方法（RC03）
 
-若要在 Windows PowerShell 环境中参与 cmdlet，则必须重写至少一个以下*输入处理方法*。
+要使 cmdlet 参与 Windows PowerShell 环境，必须重写以下*输入处理方法*中的至少一个。
 
-[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)调用一次，此方法，它用于提供预处理功能。
+[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)此方法被调用一次，并且它用于提供处理前功能的情况。
 
-[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)多次调用此方法，它用于提供按记录功能。
+[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)此方法被调用多次，并用于提供按记录提供的功能，则为。
 
-[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)调用一次，此方法，它用于提供后续处理功能。
+[System.web. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)此方法被调用一次，并且用于提供后处理功能的功能。
 
-### <a name="specify-the-outputtype-attribute-rc04"></a>指定 OutputType 属性 (RC04)
+### <a name="specify-the-outputtype-attribute-rc04"></a>指定 OutputType 属性（RC04）
 
-（在 Windows PowerShell 2.0 中引入） 的 OutputType 属性指定您 cmdlet 将返回到管道的.NET Framework 类型。 通过指定 cmdlet 的输出类型可以将返回的对象在 cmdlet 更容易地发现其他 cmdlet。 修饰具有此特性在 cmdlet 类的详细信息，请参阅[OutputType 特性声明](./outputtype-attribute-declaration.md)。
+OutputType 属性（在 Windows PowerShell 2.0 中引入）指定 cmdlet 返回到管道的 .NET Framework 类型。 通过指定 cmdlet 的输出类型，可使 cmdlet 返回的对象更容易被其他 cmdlet 发现。 有关修饰具有此属性的 cmdlet 类的详细信息，请参阅[OutputType 特性声明](./outputtype-attribute-declaration.md)。
 
-### <a name="do-not-retain-handles-to-output-objects-rc05"></a>不保留输出对象 (RC05) 的句柄
+### <a name="do-not-retain-handles-to-output-objects-rc05"></a>不保留输出对象的句柄（RC05）
 
-你的 cmdlet 应不保留任何对象的句柄传递给[System.Management.Automation.Cmdlet.WriteObject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法。 这些对象传递给管道中下一个 cmdlet 或脚本使用它们。 如果保留对象的句柄，两个实体将拥有每个对象，这会导致错误。
+你的 cmdlet 不应将任何句柄保留到传递给[WriteObject *](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法的对象。 这些对象将传递到管道中的下一个 cmdlet，或者由脚本使用。 如果保留对象的句柄，则两个实体将拥有每个对象，这将导致错误。
 
-### <a name="handle-errors-robustly-rc06"></a>可靠地处理错误 (RC06)
+### <a name="handle-errors-robustly-rc06"></a>可靠地处理错误（RC06）
 
-管理环境本质上是检测，并会对您管理的系统的重要更改。 因此，非常重要 cmdlet 正确地处理错误。 错误记录的详细信息，请参阅[Windows PowerShell 错误报告](./error-reporting-concepts.md)。
+管理环境在本质上检测并对所管理的系统进行重要更改。 因此，cmdlet 会正确处理错误，这一点非常重要。 有关错误记录的详细信息，请参阅[Windows PowerShell 错误报告](./error-reporting-concepts.md)。
 
-- 当某个错误阻止 cmdlet 继续处理任何更多记录时，它是一个终止错误。 该 cmdlet 必须调用[System.Management.Automation.Cmdlet.ThrowTerminatingError*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)引用方法[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象。 如果 cmdlet 不捕获异常，Windows PowerShell 运行时本身将引发一个终止错误包含较少的信息。
+- 当错误阻止某个 cmdlet 继续处理任何其他记录时，它是终止错误。 该 cmdlet 必须调用[ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)方法，该方法引用了[ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象的目标系统。 如果 cmdlet 未捕获到异常，Windows PowerShell 运行时本身将引发包含较少信息的终止错误。
 
-- 对于不会停止操作在下一个非终止错误来自管道 （例如，a 记录的其他进程生成），该 cmdlet 的记录必须调用[System.Management.Automation.Cmdlet.WriteError*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)引用方法[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象。 非终止错误的一个示例是如果在特定的进程无法停止，则会发生的错误。 调用[System.Management.Automation.Cmdlet.WriteError*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法允许用户以一致地执行请求的操作，并保留失败的特定操作的信息。 你的 cmdlet 应尽可能独立处理每条记录。
+- 对于在来自管道的下一条记录（例如，由其他进程生成的记录）上不停止操作的非终止错误，该 cmdlet 必须调用[WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法，该方法引用一个[ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象。 非终止错误的一个示例是特定进程无法停止时出现的错误。 通过调用[WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法，用户可以持续执行请求的操作，并保留失败的特定操作的信息。 你的 cmdlet 应尽可能独立地处理每条记录。
 
-- [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象，该引用的对象[System.Management.Automation.Cmdlet.ThrowTerminatingError*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)和[System.Management.Automation.Cmdlet.WriteError*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法需要在其核心异常。 确定要使用的异常时，请遵循.NET Framework 设计准则。 如果错误是在语义上与现有异常不同，使用该异常或派生自该异常。 否则，派生的新异常或直接从异常层次结构[System.Exception](/dotnet/api/System.Exception)类型。
+- 由[ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)和[ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) * 方法引用的[WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法所引用的对象的对象，需要使用一个方法来实现其核心发生了异常。 确定要使用的异常时，请遵循 .NET Framework 设计准则。 如果错误在语义上与现有异常相同，请使用该异常或从该异常派生。 否则，直接从[system.exception 类型派生](/dotnet/api/System.Exception)新的异常或异常层次结构。
 
-[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象也需要进行分组的用户错误的错误类别。 用户可以查看基于类别的值设置的错误`$ErrorView`CategoryView 的 shell 变量。 可能的类别定义由[System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory)枚举。
+[ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象还需要一个为用户分组错误的错误类别。 用户可以通过将`$ErrorView` shell 变量的值设置为 CategoryView，查看基于类别的错误。 可能的类别由[ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory)枚举来定义。
 
-- 如果某个 cmdlet 创建一个新线程，并且在该线程中运行的代码将引发未处理的异常，Windows PowerShell 将不会捕获该错误，并将终止进程。
+- 如果 cmdlet 创建新线程，并且在该线程中运行的代码引发未处理的异常，则 Windows PowerShell 将不会捕获该错误，将终止该进程。
 
-- 如果一个对象将代码中未经处理的异常将导致其析构函数，Windows PowerShell 将不会捕获该错误，并将终止进程。 如果对象调用 Dispose 方法会导致未经处理的异常也会发生这种情况。
+- 如果对象在其析构函数中包含导致未经处理的异常的代码，则 Windows PowerShell 将不会捕获该错误，将终止该进程。 如果对象调用导致未经处理的异常的 Dispose 方法，也会发生这种情况。
 
-### <a name="use-a-windows-powershell-module-to-deploy-your-cmdlets-rc07"></a>使用 Windows PowerShell 模块来部署 Cmdlet (RC07)
+### <a name="use-a-windows-powershell-module-to-deploy-your-cmdlets-rc07"></a>使用 Windows PowerShell 模块部署 Cmdlet （RC07）
 
-创建一个 Windows PowerShell 模块来打包和部署 cmdlet。 在 Windows PowerShell 2.0 中引入的模块的支持。 可以使用二进制模块文件 （这是非常有用测试 cmdlet 时），作为直接包含的 cmdlet 类的程序集，或者可以创建引用 cmdlet 程序集的模块清单。 （您还可以添加现有管理单元中程序集时使用的模块。）有关模块的详细信息，请参阅[编写 Windows PowerShell 模块](../module/writing-a-windows-powershell-module.md)。
+创建用于打包和部署 cmdlet 的 Windows PowerShell 模块。 Windows PowerShell 2.0 中引入了对模块的支持。 你可以使用包含 cmdlet 类的程序集直接作为二进制模块文件（这在测试 cmdlet 时非常有用），也可以创建引用 cmdlet 程序集的模块清单。 （使用模块时，还可以添加现有的管理单元程序集。）有关模块的详细信息，请参阅[编写 Windows PowerShell 模块](../module/writing-a-windows-powershell-module.md)。
 
 ## <a name="see-also"></a>另请参阅
 
-[强烈建议的开发指导原则](./strongly-encouraged-development-guidelines.md)
+[强烈建议开发指南](./strongly-encouraged-development-guidelines.md)
 
-[咨询开发指导原则](./advisory-development-guidelines.md)
+[咨询开发指南](./advisory-development-guidelines.md)
 
 [编写 Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
