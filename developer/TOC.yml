@@ -887,39 +887,13 @@
         - name: 编写针对 Windows PowerShell Cmdlet 的帮助
           href: ./help/writing-help-for-windows-powershell-cmdlets.md
         - name: 编写针对 Windows PowerShell 提供程序的帮助
-          href: ./help/writing-help-for-windows-powershell-providers.md
           items:
-            - name: 如何创建提供程序帮助主题
-              href: ./help/how-to-create-a-provider-help-topic.md
-            - name: 如何添加提供程序名称
-              href: ./help/how-to-add-the-provider-name.md
-            - name: 如何添加提供程序驱动器
-              href: ./help/how-to-add-the-provider-drives.md
-            - name: 如何添加提供程序摘要
-              href: ./help/how-to-add-the-provider-synopsis.md
-            - name: 如何添加提供程序说明
-              href: ./help/how-to-add-a-provider-description.md
-            - name: 如何添加功能
-              href: ./help/how-to-add-capabilities.md
-            - name: 如何向提供程序帮助主题添加任务
-              href: ./help/how-to-add-tasks-to-a-provider-help-topic.md
             - name: 如何向提供程序帮助主题添加动态参数
               href: ./help/how-to-add-dynamic-parameters-to-a-provider-help-topic.md
-            - name: 如何向提供程序帮助主题添加备注
-              href: ./help/how-to-add-notes-to-a-provider-help-topic.md
             - name: 如何向提供程序帮助主题添加“另请参阅”部分
               href: ./help/how-to-add-a-see-also-section-to-a-provider-help-topic.md
         - name: 编写针对 Windows PowerShell 脚本和函数的帮助
           href: ./help/writing-help-for-windows-powershell-scripts-and-functions.md
-          items:
-            - name: 编写针对脚本和函数的基于 XML 的帮助主题
-              href: ./help/writing-xml-based-help-topics-for-scripts-and-functions.md
-        - name: 编写针对 Windows PowerShell 管理单元的帮助
-          href: ./help/writing-help-for-windows-powershell-snap-ins.md
-        - name: 编写针对 Windows PowerShell 提供程序的自定义 Cmdlet 帮助
-          href: ./help/writing-custom-cmdlet-help-for-windows-powershell-providers.md
-        - name: 编写 Windows PowerShell 相关帮助
-          href: ./help/writing-windows-powershell-about-help.md
         - name: 编写基于注释的帮助主题
           href: ./help/writing-comment-based-help-topics.md
           items:
@@ -936,7 +910,6 @@
             - name: 基于注释的帮助的示例
               href: ./help/examples-of-comment-based-help.md
         - name: 编写针对命令的基于 XML 的帮助主题
-          href: ./help/writing-xml-based-help-topics-for-commands.md
           items:
             - name: 如何创建 Cmdlet 帮助文件
               href: ./help/how-to-create-the-cmdlet-help-file.md
