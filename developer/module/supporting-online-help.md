@@ -8,48 +8,48 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3204599c-7159-47aa-82ec-4a476f461027
 caps.latest.revision: 7
-ms.openlocfilehash: b76f45299d11dc10c8b16ed80f87c7f1fcc5ed65
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5c5707d1c533e0498c6794b60f4499e530e25813
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082135"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848076"
 ---
 # <a name="supporting-online-help"></a>支持联机帮助
 
-从 Windows PowerShell 3.0 开始，有两种方法来支持`Get-Help`Windows PowerShell 命令的联机功能。 本主题说明如何实现此功能对于不同的命令类型。
+从 windows powershell 3.0 开始，有两种方法可支持 windows `Get-Help` powershell 命令的联机功能。 本主题说明如何针对不同的命令类型实现此功能。
 
-## <a name="about-online-help"></a>有关联机帮助
+## <a name="about-online-help"></a>关于联机帮助
 
-联机帮助始终是 Windows PowerShell 的关键部分。 尽管`Get-Help`cmdlet 显示帮助主题的命令提示符处，许多用户首选的联机读取，包括颜色编码、 超链接和社区内容和 wiki 基于文档中的共享想法的体验。 最重要的是之前可更新帮助的问世，, 联机帮助提供的帮助文件的最新版本。
+联机帮助始终是 Windows PowerShell 的重要组成部分。 尽管该`Get-Help` cmdlet 会在命令提示符下显示帮助主题，但许多用户喜欢联机阅读的体验，包括颜色编码、超链接，以及在社区内容和基于 wiki 的文档中共享创意。 最重要的是，在可更新帮助出现之前，联机帮助提供了最新版本的帮助文件。
 
-随着在 Windows PowerShell 3.0 中的可更新帮助，联机帮助仍扮演着重要角色。 灵活的用户体验，除了联机帮助提供了向用户对于没有或不能使用可更新的帮助来下载帮助主题的帮助。
+随着 Windows PowerShell 3.0 中的可更新帮助出现，联机帮助仍扮演着重要的角色。 除了灵活的用户体验外，联机帮助还向不或无法使用可更新帮助下载帮助主题的用户提供帮助。
 
-## <a name="how-get-help--online-works"></a>如何获取帮助的联机工作原理
+## <a name="how-get-help--online-works"></a>Get-help-Online 工作方式
 
-若要帮助用户查找联机帮助主题的命令，`Get-Help`命令有一个用户的默认 Internet 浏览器中打开一个命令的帮助主题的联机版本的 Online 参数。
+若要帮助用户查找命令的联机帮助主题，此`Get-Help`命令有一个联机参数，可在用户的默认 Internet 浏览器中打开命令的联机版本帮助主题。
 
-例如，以下命令将打开联机帮助主题中的`Invoke-Command`cmdlet。
+例如，以下命令将打开`Invoke-Command` cmdlet 的联机帮助主题。
 
 ```powershell
 Get-Help Invoke-Command -Online
 ```
 
-若要实现`Get-Help`-联机， `Get-Help` cmdlet 看起来的统一资源标识符 (URI) 的以下位置中的联机版本帮助主题。
+若要`Get-Help`实现联机，该`Get-Help` cmdlet 将在以下位置查找联机版本帮助主题的统一资源标识符（URI）。
 
-- 该命令的帮助主题的相关链接部分中的第一个链接。 必须在用户计算机上安装的帮助主题。 在 Windows PowerShell 2.0 中引入了此功能。
+- 命令的帮助主题的 "相关链接" 部分中的第一个链接。 必须在用户计算机上安装 "帮助" 主题。 此功能是在 Windows PowerShell 2.0 中引入的。
 
-- 任何命令的 HelpUri 属性。 即使在用户的计算机上未安装该命令的帮助主题时，才可访问 HelpUri 属性。 在 Windows PowerShell 3.0 中引入了此功能。
+- 任何命令的 HelpUri 属性。 即使在用户的计算机上未安装命令的帮助主题，也可以访问 HelpUri 属性。 此功能是在 Windows PowerShell 3.0 中引入的。
 
-  `Get-Help` 查找之前获取的 HelpUri 属性值中的相关链接部分中的第一个条目的 URI。 如果属性值不正确或已更改，您可以通过在第一个相关链接中输入一个不同的值重写它。 但是，第一个相关链接仅适用于用户的计算机上安装的帮助主题。
+  `Get-Help`获取 HelpUri 属性值之前，在 "相关链接" 部分的第一项中查找 URI。 如果属性值不正确或已更改，则可以通过在第一个相关链接中输入不同的值来覆盖它。 但是，只有在用户计算机上安装了帮助主题后，第一个相关链接才有效。
 
-## <a name="adding-a-uri-to-the-first-related-link-of-a-command-help-topic"></a>将 URI 添加到命令的帮助主题的第一个相关链接
+## <a name="adding-a-uri-to-the-first-related-link-of-a-command-help-topic"></a>将 URI 添加到命令帮助主题中的第一个相关链接
 
-您可以支持`Get-Help`-联机的任何命令通过将是有效的 URI 添加到命令的基于 XML 的帮助主题的相关链接部分中的第一个条目。 此选项仅在基于 XML 的帮助主题中有效，并且仅适用于用户的计算机上安装的帮助主题。 当安装的帮助主题，并且填充 URI 时，此值将优先于**HelpUri**命令的属性。 有关基于 XML 的命令的帮助主题的信息，请参阅[Writing XML-Based 命令的帮助主题](../help/writing-xml-based-help-topics-for-commands.md)。
+可以通过将`Get-Help`有效 URI 添加到命令的基于 XML 的帮助主题的 "相关链接" 部分中的第一个条目，为任何命令支持-Online。 此选项仅在基于 XML 的帮助主题中有效，并且仅在用户计算机上安装了帮助主题时才有效。 如果安装了帮助主题并填充了 URI，则此值优先于命令的**HelpUri**属性。
 
-若要支持此功能，URI 必须出现在`maml:uri`下第一个元素`maml:relatedLinks/maml:navigationLink`中的元素`maml:relatedLinks`元素。
+若要支持此功能，URI 必须出现在`maml:uri` `maml:relatedLinks`元素中第一个`maml:relatedLinks/maml:navigationLink`元素下的元素中。
 
-以下 XML 显示了 URI 的正确位置。 "联机版本:"中的文本`maml:linkText`元素是最佳做法，但它不是必需。
+下面的 XML 显示 URI 的正确位置。 `maml:linkText`元素中的 "联机版本：" 文本是最佳做法，但不是必需的。
 
 ```xml
 
@@ -67,23 +67,23 @@ Get-Help Invoke-Command -Online
 
 ## <a name="adding-the-helpuri-property-to-a-command"></a>将 HelpUri 属性添加到命令
 
-本部分演示如何将 HelpUri 属性添加到不同类型的命令。
+本部分介绍如何将 HelpUri 属性添加到不同类型的命令。
 
-### <a name="adding-a-helpuri-property-to-a-cmdlet"></a>将 HelpUri 属性添加到 Cmdlet
+### <a name="adding-a-helpuri-property-to-a-cmdlet"></a>向 Cmdlet 添加 HelpUri 属性
 
-编写的 cmdlet 的C#，添加**HelpUri**在 Cmdlet 类的属性。 属性的值必须是"http"或"https"开头的 URI。
+对于用编写的C#cmdlet，请将**HelpUri**属性添加到 Cmdlet 类中。 特性的值必须是以 "http" 或 "https" 开头的 URI。
 
-下面的代码演示的 HelpUri 属性`Get-History`cmdlet 类。
+下面的代码显示了`Get-History` cmdlet 类的 HelpUri 属性。
 
 ```
 [Cmdlet(VerbsCommon.Get, "History", HelpUri = "http://go.microsoft.com/fwlink/?LinkID=001122")]
 ```
 
-### <a name="adding-a-helpuri-property-to-an-advanced-function"></a>将 HelpUri 属性添加到高级功能
+### <a name="adding-a-helpuri-property-to-an-advanced-function"></a>将 HelpUri 属性添加到高级函数
 
-对于高级函数，添加**HelpUri**属性设置为**CmdletBinding**属性。 属性的值必须是"http"或"https"开头的 URI。
+对于高级函数，请将**HelpUri**属性添加到**CmdletBinding**属性。 属性的值必须是以 "http" 或 "https" 开头的 URI。
 
-下面的代码显示了新建日历函数的 HelpUri 属性
+下面的代码演示了新的 Calendar 函数的 HelpUri 属性。
 
 ```powershell
 
@@ -92,24 +92,24 @@ function New-Calendar {
     HelpURI="http://go.microsoft.com/fwlink/?LinkID=01122")]
 ```
 
-### <a name="adding-a-helpuri-attribute-to-a-cim-command"></a>将 HelpUri 属性添加到 CIM 命令
+### <a name="adding-a-helpuri-attribute-to-a-cim-command"></a>将 HelpUri 特性添加到 CIM 命令
 
-有关 CIM 命令，添加**HelpUri**归于**CmdletMetadata** CDXML 文件中的元素。 属性的值必须是"http"或"https"开头的 URI。
+对于 CIM 命令，请将**HelpUri**属性添加到 CDXML 文件中的**CmdletMetadata**元素。 特性的值必须是以 "http" 或 "https" 开头的 URI。
 
-下面的代码演示开始调试 CIM 命令的 HelpUri 属性
+下面的代码显示了 "启动-调试 CIM 命令" 的 HelpUri 属性
 
 ```
 <CmdletMetadata Verb="Debug" HelpUri="http://go.microsoft.com/fwlink/?LinkID=001122"/>
 ```
 
-### <a name="adding-a-helpuri-attribute-to-a-workflow"></a>将 HelpUri 属性添加到工作流
+### <a name="adding-a-helpuri-attribute-to-a-workflow"></a>向工作流添加 HelpUri 属性
 
-Windows PowerShell 语言编写而成的工作流，将添加 **。ExternalHelp**到工作流代码注释指令。 指令的值必须以"http"或"https"开头的 URI。
+对于使用 Windows PowerShell 语言编写的工作流，请添加 **。将 .Externalhelp**注释指令添加到工作流代码。 指令的值必须是以 "http" 或 "https" 开头的 URI。
 
 > [!NOTE]
-> 有关基于 XAML 的 Windows PowerShell 中的工作流不支持的 HelpUri 属性。
+> Windows PowerShell 中基于 XAML 的工作流不支持 HelpUri 属性。
 
-下面的代码演示。工作流文件中的 ExternalHelp 指令。
+下面的代码演示了。工作流文件中的 .Externalhelp 指令。
 
 ```powershell
 # .ExternalHelp "http://go.microsoft.com/fwlink/?LinkID=138338"

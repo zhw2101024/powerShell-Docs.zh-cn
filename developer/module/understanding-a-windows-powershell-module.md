@@ -8,114 +8,114 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d4e38235-9987-4347-afd2-0f7d1dc8f64a
 caps.latest.revision: 19
-ms.openlocfilehash: cff50d415c4c90182fa1cf015a5a5ba84d4d613a
-ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
+ms.openlocfilehash: b42ba6b2bf42a74213eb78f2db22e16de7e90583
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66470787"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848062"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>了解 Windows PowerShell 模块
 
-一个*模块*是一组相关的 Windows PowerShell 功能，作为方便单元 （通常保存在单个目录中） 组合在一起。 通过为模块中定义一系列相关的脚本文件、 程序集，以及相关的资源，可以引用、 加载、 保存和共享代码更容易，否则会比。
+*模块*是一组相关的 Windows PowerShell 功能，作为一个方便的单元组合在一起（通常保存在单个目录中）。 通过将一组相关的脚本文件、程序集和相关资源定义为模块，你可以像使用其他方法一样，引用、加载、保存和共享你的代码。
 
-模块的主要用途是允许 Windows PowerShell 代码模块化 （ie、 重用和抽象）。 例如，创建一个模块的最基本的方法是只需将 Windows PowerShell 脚本保存为.psm1 文件。 这样做因此允许你控制 （即，使公共或专用） 的函数和脚本中包含的变量。 将脚本另存为.psm1 文件还允许您控制特定变量的作用域。 最后，您还可以使用 cmdlet 如[Install-module](/powershell/module/PowershellGet/Install-Module)组织，请安装并使用您的脚本作为构建基块更大的解决方案。
+模块的主要用途是允许 Windows PowerShell 代码的模块化（即，重用和抽象）。 例如，创建模块的最基本方法是将 Windows PowerShell 脚本保存为 hbase-runner.psm1 文件。 这样，便可以控制（即公共或私有）脚本中包含的函数和变量。 将脚本另存为 hbase-runner.psm1 文件还可以控制某些变量的作用域。 最后，还可以使用 cmdlet （如[安装模块](/powershell/module/PowershellGet/Install-Module)）来组织、安装和使用你的脚本作为大型解决方案的构建基块。
 
 ## <a name="module-components-and-types"></a>模块组件和类型
 
-模块是由四个基本组件构成：
+模块由四个基本组件组成：
 
-1. 某些排序的代码文件-通常一个 PowerShell 脚本或托管的 cmdlet 的程序集。
+1. 某些类型的代码文件，通常是 PowerShell 脚本或托管 cmdlet 程序集。
 
-2. 其他任何更高版本的代码文件可能需要例如其他程序集，帮助文件或脚本。
+2. 以上代码文件可能需要的任何其他内容，如其他程序集、帮助文件或脚本。
 
-3. 清单文件，描述了上述文件，以及将存储元数据，例如作者和版本控制信息...
+3. 描述上述文件以及存储作者和版本信息等元数据的清单文件。
 
-4. 一个目录，其中包含所有上述内容，它位于 PowerShell 可以合理地找到的位置。
+4. 一个目录，其中包含上述所有内容，并且位于 PowerShell 可合理查找的位置。
 
-   请注意，没有任何这些组件，通过本身，实际上有必要。 例如，模块可以从技术上讲是仅为.psm1 文件中存储的脚本。 您还可以只是主要用于组织得更好的清单文件的模块。 此外可以编写一个脚本来动态创建一个模块，并因此实际上无需用于存储中的任何内容的目录。 以下部分介绍可以通过混合和匹配的模块的不同可能部分一起获取的模块的类型。
+   请注意，这些组件本身并不是必需的。 例如，从技术上讲，模块只能是存储在 hbase-runner.psm1 文件中的脚本。 你还可以有一个模块，该模块只是用于组织用途的清单文件。 您还可以编写一个动态创建模块的脚本，因此，实际上不需要使用目录来存储任何内容。 以下各节介绍了可通过混合并匹配模块的不同可能部分来获得的模块类型。
 
 ### <a name="script-modules"></a>脚本模块
 
-正如其名字*脚本模块*是包含任何有效的 Windows PowerShell 代码的文件 (.psm1)。 脚本开发人员和管理员可以使用这种类型的模块创建模块的成员包括函数、 变量和的详细信息。 核心，脚本模块都是只需具有不同的扩展，它允许管理员在其上使用导入、 导出和管理功能的 Windows PowerShell 脚本。
+顾名思义，*脚本模块*是包含任何有效 Windows PowerShell 代码的文件（. hbase-runner.psm1）。 脚本开发人员和管理员可以使用这种类型的模块来创建其成员包括函数、变量等的模块。 就说，脚本模块只是一个具有不同扩展的 Windows PowerShell 脚本，它允许管理员对它使用导入、导出和管理功能。
 
-此外，可以使用清单文件以包含在模块中，例如数据文件、 其他依赖模块或运行时脚本的其他资源。 清单文件，还有用于跟踪元数据，例如创作和版本控制信息。
+此外，您还可以使用清单文件来包含模块中的其他资源，如数据文件、其他相关模块或运行时脚本。 清单文件也可用于跟踪元数据，例如创作和版本信息。
 
-最后，需要保存在文件夹中，可以合理地发现 PowerShell 脚本模块，例如不动态创建的任何其他模块。 通常，这是 PowerShell 模块路径;但如有必要可明确描述你的模块的安装位置。 有关详细信息，请参阅[如何编写 PowerShell 脚本模块](./how-to-write-a-powershell-script-module.md)。
+最后，与任何其他不是动态创建的模块一样，都需要将脚本模块保存在 PowerShell 可合理发现的文件夹中。 通常，这是在 PowerShell 模块路径上;但如有必要，您可以显式描述模块的安装位置。 有关详细信息，请参阅[如何编写 PowerShell 脚本模块](./how-to-write-a-powershell-script-module.md)。
 
 ### <a name="binary-modules"></a>二进制模块
 
-一个*二进制模块*是.NET Framework 程序集 (.dll)，包含已编译的代码，如C#。 Cmdlet 开发人员可以使用这种类型的模块共享 cmdlet、 提供程序，和的详细信息。 （现有的管理单元还可作为二进制模块。）与脚本模块相比，二进制模块，可创建速度更快或使用功能的 cmdlet (如多线程处理) 不是向 Windows PowerShell 脚本中的代码一样简单。
+*二进制模块*是包含编译的代码（如）的 .NET Framework 程序集（.dll） C#。 Cmdlet 开发人员可以使用此类型的模块来共享 cmdlet、提供程序等。 （现有管理单元也可以用作二进制模块。）与脚本模块相比，二进制模块可让你创建更快或更使用功能（例如多线程）的 cmdlet，这些 cmdlet 不像在 Windows PowerShell 脚本中编写代码那么简单。
 
-作为使用脚本模块可以包含一个清单文件来描述其他资源的模块使用，并跟踪你的模块有关的元数据。 同样，您可能应安装二进制模块在 PowerShell 模块路径上的某个位置的文件夹中。 有关详细信息，请参阅如何[如何编写 PowerShell 二进制模块](./how-to-write-a-powershell-binary-module.md)。
+与脚本模块一样，你可以包含一个清单文件来描述模块使用的其他资源，并跟踪有关模块的元数据。 同样，您可能应该将您的二进制模块安装在 PowerShell 模块路径中某个位置的某个文件夹中。 有关详细信息，请参阅如何[编写 PowerShell 二进制模块](./how-to-write-a-powershell-binary-module.md)。
 
 ### <a name="manifest-modules"></a>清单模块
 
-一个*清单模块*是一个模块，使用清单文件来描述的所有组件，但不具有任何类型的核心程序集或脚本。 (正式情况下，清单模块离开`ModuleToProcess`或`RootModule`清单空元素。)但是，仍可以使用模块，例如加载依赖程序集或自动运行某些预处理脚本的功能的其他功能。 此外可以方便地打包将使用其他模块，如嵌套的模块、 程序集、 类型或格式的资源作为使用清单模块。 有关详细信息，请参阅[如何编写 PowerShell 模块清单](./how-to-write-a-powershell-module-manifest.md)。
+*清单模块*是一个模块，它使用清单文件来描述其所有组件，但不包含任何种类的核心程序集或脚本。 （正式地说，清单模块会`ModuleToProcess`使`RootModule`清单的或元素保持为空。）但是，您仍然可以使用模块的其他功能，例如加载依赖程序集或自动运行某些预处理脚本的能力。 你还可以使用清单模块来打包其他模块将使用的资源，例如嵌套的模块、程序集、类型或格式。 有关详细信息，请参阅[如何编写 PowerShell 模块清单](./how-to-write-a-powershell-module-manifest.md)。
 
 ### <a name="dynamic-modules"></a>动态模块
 
-一个*动态模块*是一个模块，未从，加载或保存到文件。 相反，它们动态创建的脚本，请使用[New-module](/powershell/module/Microsoft.PowerShell.Core/New-Module) cmdlet。 这种类型的模块使脚本能够按需，不需要加载或保存到持久性存储区中创建一个模块。 按其性质，动态模块用于是短暂性的并因此不能访问通过`Get-Module`cmdlet。 同样，他们通常不需要模块清单，也无可能需永久文件夹来存储其相关的程序集。
+*动态模块*是指不是从文件加载或保存到文件的模块。 相反，它们是使用[新的模块](/powershell/module/Microsoft.PowerShell.Core/New-Module)cmdlet 通过脚本动态创建的。 此类型的模块使脚本能够创建无需加载或保存到持久性存储中的需要的模块。 就其本质而言，动态模块旨在缩短生存期，因此无法通过`Get-Module` cmdlet 进行访问。 同样，它们通常不需要模块清单，也不可能需要永久文件夹来存储其相关程序集。
 
 ## <a name="module-manifests"></a>模块清单
 
-一个*模块清单*是一个包含哈希表的.psd1 文件。 密钥和哈希表中的值执行以下操作：
+*模块清单*是包含哈希表的 psd1 文件。 哈希表中的键和值执行以下操作：
 
-- 介绍的内容和模块的属性。
+- 描述模块的内容和属性。
 
-- 定义的先决条件。
+- 定义必备组件。
 
 - 确定如何处理组件。
 
-  模块并不一定需要清单。 模块可以引用脚本文件 (.ps1)、 脚本模块文件 (.psm1) 清单文件 (.psd1)，格式设置和键入文件 (.ps1xml)、 cmdlet 和提供程序程序集 (.dll)、 资源文件、 帮助文件、 本地化文件或任何其他类型的文件或资源，均打包为模块的一部分。 对于脚本国际化，模块文件夹还包含一组消息目录文件。 如果将清单文件添加到模块文件夹中，则可以通过引用清单作为单一单元引用多个文件。
+  模块并不一定需要清单。 模块可以引用脚本文件（ps1）、脚本模块文件（hbase-runner.psm1）、清单文件（psd1）、格式设置和类型文件（types.ps1xml）、cmdlet 和提供程序程序集（.dll）、资源文件、帮助文件、本地化文件或任何其他类型的文件或资源，捆绑为模块的一部分。 对于国际化脚本，module 文件夹还包含一组消息目录文件。 如果将清单文件添加到 module 文件夹，则可以通过引用清单，将多个文件作为一个单元来引用。
 
   清单本身描述了以下类别的信息：
 
-- 有关该模块，如的模块的版本编号、 作者和说明的元数据。
+- 有关模块的元数据，如模块版本号、作者和说明。
 
-- 若要导入模块，例如 Windows PowerShell 版本，公共语言运行时 (CLR) 版本，以及所需的模块所需的先决条件。
+- 导入模块所需的先决条件，如 Windows PowerShell 版本、公共语言运行时（CLR）版本和所需的模块。
 
-- 处理指令，如脚本、 格式和类型来处理。
+- 处理指令，如要处理的脚本、格式和类型。
 
-- 限制对成员的模块导出，如别名、 函数、 变量和用于导出的 cmdlet。
+- 对要导出的模块成员的限制，例如要导出的别名、函数、变量和 cmdlet。
 
   有关详细信息，请参阅[如何编写 PowerShell 模块清单](./how-to-write-a-powershell-module-manifest.md)。
 
-## <a name="storing-and-installing-a-module"></a>存储和安装的模块
+## <a name="storing-and-installing-a-module"></a>存储和安装模块
 
-创建脚本、 二进制或清单模块后，您可以保存您的工作在一个位置中其他人可以访问它。 例如，你的模块可以存储在其中安装 Windows PowerShell，或它可以存储在用户文件夹中的系统文件夹。
+一旦创建了脚本、二进制或清单模块，就可以将工作保存到其他人可以访问的位置。 例如，模块可以存储在安装了 Windows PowerShell 的系统文件夹中，也可以存储在用户文件夹中。
 
-通常情况下，您可以确定你应通过使用其中一个路径存储在安装模块`$ENV:PSModulePath`变量。 使用以下方式之一意味着 PowerShell 会自动查找和加载你的模块，当用户在其代码中对它的调用。 如果存储您的模块中其他位置，可以显式让 PowerShell 调用时，通过你的模块的位置作为参数传入知道`Install-Module`。
+一般而言，你可以通过使用存储在`$ENV:PSModulePath`变量中的路径之一确定你应该安装模块的位置。 使用其中一种路径意味着，当用户在代码中调用模块时，PowerShell 可以自动查找并加载模块。 如果将模块存储在其他位置，则可以通过在调用`Install-Module`时将模块的位置作为参数传入来显式允许 PowerShell。
 
-无论如何，文件夹的路径被称为*基*模块 (ModuleBase) 和脚本的名称，二进制或清单模块文件应为相同模块文件夹的名称，但存在以下例外：
+无论如何，文件夹的路径称为模块（ModuleBase）的*基*项，脚本、二进制或清单模块文件的名称应与模块文件夹名称相同，但以下情况例外：
 
-- 通过创建的动态模块`New-Module`可以使用名为 cmdlet `Name` cmdlet 参数。
+- `New-Module` 可以`Name`使用 cmdlet 的参数来命名由 cmdlet 创建的动态模块。
 
-- 从程序集对象的导入的模块 **`Import-Module`的程序集**命令将名为根据以下语法： `"dynamic_code_module_" + assembly.GetName()`。
+- `"dynamic_code_module_" + assembly.GetName()` **按`Import-Module`程序集**命令从程序集对象导入的模块按照以下语法命名：。
 
-  有关详细信息，请参阅[安装 PowerShell 模块](./installing-a-powershell-module.md)并[修改 PSModulePath 安装路径](./modifying-the-psmodulepath-installation-path.md)。
+  有关详细信息，请参阅[安装 PowerShell 模块](./installing-a-powershell-module.md)和[修改 PSModulePath 安装路径](./modifying-the-psmodulepath-installation-path.md)。
 
 ## <a name="module-cmdlets-and-variables"></a>模块 Cmdlet 和变量
 
-以下 cmdlet 和变量提供的 Windows PowerShell 用于创建和管理的模块。
+Windows PowerShell 提供以下 cmdlet 和变量来创建和管理模块。
 
-[新模块](/powershell/module/Microsoft.PowerShell.Core/New-Module)cmdlet 此 cmdlet 将创建仅在内存中存在的新动态模块。 从脚本块中，创建此模块，其导出的成员，例如，其函数和变量，同时在会话中立即可用并在会话关闭前仍可。
+[新的模块](/powershell/module/Microsoft.PowerShell.Core/New-Module)cmdlet 此 cmdlet 将创建一个仅存在于内存中的新动态模块。 模块是从脚本块创建的，它的导出成员（如其函数和变量）在会话中立即可用并保持可用状态，直到会话关闭。
 
-[新 ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet 此 cmdlet 创建一个新的模块清单 (.psd1) 文件，将填充它的值，而将清单文件保存到指定的路径。 此 cmdlet 还可用于创建一个模块清单模板，可以手动填写。
+[New-modulemanifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet 此 cmdlet 创建新的模块清单（. psd1）文件，填充其值，并将清单文件保存到指定的路径。 此 cmdlet 还可用于创建可以手动填充的模块清单模板。
 
-[导入模块](/powershell/module/Microsoft.PowerShell.Core/Import-Module)cmdlet 此 cmdlet 将一个或多个模块添加到当前会话。
+[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet 此 cmdlet 将一个或多个模块添加到当前会话中。
 
-[获取模块](/powershell/module/Microsoft.PowerShell.Core/Get-Module)cmdlet 此 cmdlet 检索已或可导入当前会话的模块有关的信息。
+[Get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet 此 cmdlet 检索有关已在或可以导入到当前会话中的模块的信息。
 
-[导出 ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) cmdlet 将此 cmdlet 指定从脚本模块 (.psm1) 文件或通过使用创建的动态模块导出的模块成员 （如 cmdlet、 函数、 变量和别名） `New-Module` cmdlet。
+[Export-modulemember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) cmdlet 此 cmdlet 指定从脚本模块（hbase-runner.psm1）文件或使用`New-Module` cmdlet 创建的动态模块导出的模块成员（如 cmdlet、函数、变量和别名）。
 
-[删除模块](/powershell/module/Microsoft.PowerShell.Core/Remove-Module)cmdlet 此 cmdlet 将从当前会话中删除模块。
+[Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) cmdlet 此 cmdlet 将从当前会话中删除模块。
 
-[测试 ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest) cmdlet，此 cmdlet 验证是否在模块清单准确地通过验证模块清单文件 (.psd1) 中列出的文件实际存在于指定的路径来描述模块的组件。
+[New-modulemanifest](/powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest) cmdlet 此 cmdlet 通过验证模块清单文件（. psd1）中列出的文件是否确实存在于指定的路径中来验证模块清单是否准确描述了模块的组件。
 
-$PSScriptRoot 此变量包含从其执行脚本模块的目录。 这样，脚本使用的模块路径来访问其他资源。
+$PSScriptRoot 此变量包含执行脚本模块所用的目录。 它使脚本能够使用模块路径来访问其他资源。
 
-$env: PSModulePath 此环境变量包含在 Windows PowerShell 存储模块的目录的列表。 Windows PowerShell 使用自动导入模块和更新的模块的帮助主题时此变量的值。
+$env:P SModulePath 此环境变量包含存储 Windows PowerShell 模块的目录的列表。 当自动导入模块时，Windows PowerShell 将使用此变量的值，并更新模块的帮助主题。
 
 ## <a name="see-also"></a>另请参阅
 

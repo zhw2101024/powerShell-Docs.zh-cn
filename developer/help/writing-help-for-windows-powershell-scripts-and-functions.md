@@ -8,70 +8,66 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 859a6e22-75b1-43d4-ba62-62c107803b37
 caps.latest.revision: 7
-ms.openlocfilehash: 98a3f61ff4fa2367f69357173d4e8e14288ff429
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: af989fb2eeba6b68f2e3e6506f3f60d5be6f7d8a
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083104"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848103"
 ---
 # <a name="writing-help-for-powershell-scripts-and-functions"></a>编写 PowerShell 脚本和函数的帮助
 
-PowerShell 脚本和函数应完整记录时与其他人共享。
-`Get-Help` Cmdlet 显示脚本和函数的帮助主题中的相同的格式显示有关 cmdlet 和的所有帮助的方式`Get-Help`参数对脚本和函数的帮助主题的工作。
+当 PowerShell 脚本和函数与其他人共享时，它们应该是完整记录的。
+Cmdlet 显示脚本和函数的帮助主题，其格式与显示 cmdlet 的帮助相同，并且所有`Get-Help`参数都适用于脚本和函数的帮助主题。 `Get-Help`
 
-PowerShell 脚本可以在脚本中包括有关脚本的帮助主题以及有关每个函数的帮助主题。
-独立于脚本共享的函数可以包含其自己的帮助主题。
+PowerShell 脚本可以包括有关脚本的帮助主题，以及有关脚本中每个函数的帮助主题。
+独立于脚本共享的函数可以包含它们自己的帮助主题。
 
-本文档介绍了格式和正确放置的帮助主题，并建议内容的指导原则。
+本文档介绍了 "帮助" 主题的格式和正确位置，并为内容提供指导原则。
 
-## <a name="types-of-script-and-function-help"></a>类型的脚本和函数帮助
+## <a name="types-of-script-and-function-help"></a>脚本和函数帮助的类型
 
 ### <a name="comment-based-help"></a>基于注释的帮助
-介绍脚本或函数的帮助主题可以实现为一系列脚本或函数内的注释。
-当在脚本中编写的脚本和函数基于注释的帮助，请注意规则放置基于注释的帮助。
-放置将确定是否`Get-Help`cmdlet 将脚本或函数与相关联的帮助主题。
+描述脚本或函数的帮助主题可作为脚本或函数中的一组注释实现。
+为脚本编写基于注释的帮助和脚本中的函数时，请注意用于放置基于注释的帮助的规则。
+此位置确定 cmdlet 是否`Get-Help`将帮助主题与脚本或函数关联。
 有关编写基于注释的帮助主题的详细信息，请参阅[about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)。
 
-### <a name="xml-based-command-help"></a>基于 XML 的命令的帮助
-可以在使用命令帮助架构的 XML 文件中实现介绍脚本或函数的帮助主题。
-若要将脚本或函数相关联的 XML 文件，请使用`ExternalHelp`注释关键字后面的路径和 XML 文件的名称。
+### <a name="xml-based-command-help"></a>基于 XML 的命令帮助
+描述脚本或函数的帮助主题可以在使用 command help 架构的 XML 文件中实现。
+若要将脚本或函数与 xml 文件相关联，请`ExternalHelp`使用 comment 关键字，后跟 xml 文件的路径和名称。
 
-当`ExternalHelp`注释关键字是否存在，它将优先于基于注释的帮助，即使`Get-Help`找不到匹配的值的帮助文件`ExternalHelp`关键字。
+如果存在`Get-Help` `ExternalHelp` comment 关键字，则其优先于基于注释的帮助，即使找不到与关键字的值匹配的帮助文件也是如此。 `ExternalHelp`
 
 ### <a name="online-help"></a>联机帮助
-可以在 Internet 上发布您的帮助主题，然后将`Get-Help`打开主题。
+你可以在 Internet 上发布帮助主题，然后直接`Get-Help`打开这些主题。
 有关编写基于注释的帮助主题的详细信息，请参阅[支持联机帮助](../module/supporting-online-help.md)。
 
-没有已建立的方法以进行写入 （"关于"） 的脚本和函数的主题。
-但是，您可以发布 Internet 列表上的概念性主题的主题，因此其 Url 命令的帮助主题的相关链接部分中。
+没有已建立的方法来编写脚本和函数的概念（"关于"）主题。
+但是，你可以在 "命令帮助" 主题的 "相关链接" 部分中，在 Internet 上列出主题及其 Url。
 
-## <a name="content-considerations-for-script-and-function-help"></a>脚本和函数的内容注意事项帮助
+## <a name="content-considerations-for-script-and-function-help"></a>脚本和函数帮助的内容注意事项
 
-- 如果你正在使用只有几个可用命令的帮助部分编写非常简短的帮助主题，请务必包括脚本或函数参数的详细描述。 此外在示例部分中，包含一个或两个示例命令即使你决定以忽略此参数的示例说明。
+- 如果你正在编写一个非常简短的帮助主题，其中只包含几个可用的命令帮助部分，请确保包含脚本或函数参数的明确说明。 还在 "示例" 部分中包括一个或两个示例命令，即使您决定省略示例说明。
 
-- 在所有的说明，请参阅命令的访问权限的脚本或函数。 此信息可帮助用户了解和管理命令。
+- 在所有说明中，请将命令作为脚本或函数引用。 此信息可帮助用户了解和管理命令。
 
-  例如，以下详细的说明指出新建主题命令是一个脚本。 这将提醒用户他们需要在运行时指定的路径和完整名称。
+  例如，下面的详细说明指出，新的主题命令是一个脚本。 这会提醒用户他们在运行时需要指定路径和全名。
 
-  > "新建主题脚本...在输入文件中创建空白的概念主题，为每个主题名称"
+  > "新的主题脚本为输入文件中的每个主题名称创建一个空白的概念主题 ..."
 
-  下面详细的说明指出`Disable-PSRemoting`是一个函数。 此信息在会话中包括多个命令具有相同的名称，其中一些可能被隐藏某一命令优先级更高时向用户特别有用。
+  下面是一个函数的`Disable-PSRemoting`详细说明状态。 当会话中包含多个具有相同名称的命令时，此信息对用户特别有用，其中有些命令可能由优先级较高的命令隐藏。
 
-  > `Disable-PSRemoting`函数可禁用本地计算机上的所有会话配置...
+  > 此`Disable-PSRemoting`函数将禁用本地计算机上的所有会话配置 。
 
-- 在脚本的帮助主题中，介绍如何使用此脚本作为一个整体。 如果您还会在脚本中编写函数的帮助主题，提到您脚本的帮助主题中的函数和脚本帮助主题的相关链接部分中包括对函数的帮助主题。 相反，如果函数是脚本的一部分，阐释函数帮助主题中该函数在脚本和它可以如何使用独立中所扮演的角色。 然后列出函数帮助主题的相关链接部分中的脚本帮助主题。
+- 在脚本帮助主题中，介绍如何将该脚本作为一个整体使用。 如果你还在脚本中编写函数的帮助主题，请在脚本帮助主题的 "相关链接" 部分中提到函数帮助主题，并将其包含在脚本帮助主题中。 相反，当某个函数作为脚本的一部分时，将在函数帮助主题中介绍函数在脚本中所扮演的角色以及如何单独使用该函数。 然后在函数帮助主题的 "相关链接" 部分中列出脚本帮助主题。
 
-- 在编写脚本的帮助主题的示例，请务必在示例命令中包含的脚本文件的路径。 这将提醒用户他们都必须显式指定的路径，即使脚本位于当前目录。
+- 编写脚本帮助主题的示例时，请确保在示例命令中包含脚本文件的路径。 这会提醒用户他们必须显式指定路径，即使脚本在当前目录中也是如此。
 
-- 在函数的帮助主题中，提醒用户，仅在当前会话中存在的函数，若要在其他会话中使用它，他们需要添加它，或将其添加 PowerShell 配置文件。
+- 在函数帮助主题中，提醒用户此函数仅在当前会话中存在，若要在其他会话中使用它，需要添加它，或者将其添加到 PowerShell 配置文件。
 
-- `Get-Help` 仅当在正确的位置保存的脚本文件和帮助主题文件时将显示有关脚本或函数的帮助主题。 因此，不需要包含有关安装 PowerShell，或保存或安装脚本或函数的帮助主题中的脚本或函数的说明。 相反，包括用于分发的脚本或函数的文档中的任何安装说明。
+- `Get-Help`仅当脚本文件和帮助主题文件保存到正确的位置时，才显示脚本或函数的帮助主题。 因此，在脚本或函数帮助主题中包含用于安装 PowerShell 或保存或安装脚本或函数的说明并不有用。 相反，请在用于分发脚本或函数的文档中包含任何安装说明。
 
 ## <a name="see-also"></a>另请参阅
 
- [编写脚本和函数的基于 XML 的帮助主题](./writing-xml-based-help-topics-for-scripts-and-functions.md)
-
- [命令为编写基于 XML 的帮助主题](./writing-xml-based-help-topics-for-commands.md)
-
- [编写基于注释的帮助主题](./writing-comment-based-help-topics.md)
+[编写基于注释的帮助主题](./writing-comment-based-help-topics.md)

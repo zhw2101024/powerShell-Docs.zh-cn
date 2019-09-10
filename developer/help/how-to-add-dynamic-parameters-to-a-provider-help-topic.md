@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e20e5ad6-a6e6-4a63-9d42-1ac54214f748
 caps.latest.revision: 5
-ms.openlocfilehash: cc4877242a16a9caa99564aeaae985f85e38791e
-ms.sourcegitcommit: ffcc1c55f5b3adc063353cb75f2a2183acc2234a
+ms.openlocfilehash: 59839e9b8b6f2a56f2f1a9c755f2f1a85deb34aa
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70737599"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848111"
 ---
 # <a name="how-to-add-dynamic-parameters-to-a-provider-help-topic"></a>如何向提供程序帮助主题添加动态参数
 
@@ -23,7 +23,7 @@ ms.locfileid: "70737599"
 
 提供程序帮助主题中记录的动态参数是在提供程序驱动器中使用 cmdlet 或函数时，提供程序添加到 cmdlet 或函数中的动态参数。
 
-动态参数还可以在提供程序的自定义 cmdlet 帮助中记录。 同时编写提供程序帮助和提供程序的自定义 cmdlet 帮助时，请在这两个文档中包含动态参数文档。 有关自定义 cmdlet 帮助的详细信息，请参阅[编写适用于提供程序的 Windows PowerShell 自定义 Cmdlet 帮助](./writing-custom-cmdlet-help-for-windows-powershell-providers.md)。
+动态参数还可以在提供程序的自定义 cmdlet 帮助中记录。 同时编写提供程序帮助和提供程序的自定义 cmdlet 帮助时，请在这两个文档中包含动态参数文档。
 
 如果提供程序未实现任何动态参数，则提供程序帮助主题将包含一个`DynamicParameters`空元素。
 
