@@ -94,8 +94,6 @@
       items:
         - name: Windows PowerShell ISE 简介
           href: components/ise/introducing-the-windows-powershell-ise.md
-        - name: Windows PowerShell 集成脚本环境 (ISE)
-          href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
         - name: 使用 Windows PowerShell ISE
           items:
             - name: 探究 Windows PowerShell ISE
@@ -200,12 +198,66 @@
   items:
     - name: 管理示例脚本
       href: samples/sample-scripts-for-administration.yml
-    - name: 更改计算机状态
-      href: samples/changing-computer-state.md
-    - name: 收集有关计算机的信息
-      href: samples/collecting-information-about-computers.md
-    - name: 使用 FilterHashtable 创建 Get-WinEvent 查询
-      href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+    - name: 使用对象
+      items:
+        - name: 查看对象结构 - Get-Member
+          href: samples/viewing-object-structure--get-member-.md
+        - name: 选择对象部件 - Select-Object
+          href: samples/selecting-parts-of-objects--select-object-.md
+        - name: 从管道中删除对象 - Where-Object
+          href: samples/removing-objects-from-the-pipeline--where-object-.md
+        - name: 对对象进行排序
+          href: samples/sorting-objects.md
+        - name: 为多个对象重复执行任务 - ForEach-Object
+          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
+        - name: 创建 .NET 和 COM 对象 - New-Object
+          href: samples/creating-.net-and-com-objects--new-object-.md
+        - name: 使用静态类和方法
+          href: samples/using-static-classes-and-methods.md
+        - name: 获取 WMI 对象 - Get-WmiObject
+          href: samples/getting-wmi-objects--get-wmiobject-.md
+    - name: 管理计算机
+      items:
+        - name: 更改计算机状态
+          href: samples/changing-computer-state.md
+        - name: 收集有关计算机的信息
+          href: samples/collecting-information-about-computers.md
+        - name: 使用 FilterHashtable 创建 Get-WinEvent 查询
+          href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+    - name: 管理进程与服务
+      items:
+        - name: 使用 Process Cmdlet 管理进程
+          href: samples/managing-processes-with-process-cmdlets.md
+        - name: 管理服务
+          href: samples/managing-services.md
+        - name: 管理 Windows PowerShell 驱动器
+          href: samples/managing-windows-powershell-drives.md
+        - name: 使用打印机
+          href: samples/working-with-printers.md
+        - name: 执行网络任务
+          href: samples/performing-networking-tasks.md
+        - name: 使用软件安装
+          href: samples/working-with-software-installations.md
+        - name: 从正在运行的进程解码 PowerShell 命令
+          href: samples/decode-powershell-command-from-a-running-process.md
+    - name: 使用输出
+      items:
+        - name: 使用 Out-* cmdlet 重定向数据
+          href: samples/redirecting-data-with-out---cmdlets.md
+        - name: 使用格式命令更改输出视图
+          href: samples/using-format-commands-to-change-output-view.md
+    - name: 管理驱动器与文件
+      items:
+        - name: 管理当前位置
+          href: samples/managing-current-location.md
+        - name: 使用文件和文件夹
+          href: samples/working-with-files-and-folders.md
+        - name: 使用文件、文件夹和注册表项
+          href: samples/working-with-files-folders-and-registry-keys.md
+        - name: 使用注册表条目
+          href: samples/working-with-registry-entries.md
+        - name: 使用注册表项
+          href: samples/working-with-registry-keys.md
     - name: 创建 UI 元素
       items:
         - name: 创建自定义输入框
@@ -216,57 +268,13 @@
           href: samples/multiple-selection-list-boxes.md
         - name: 从列表框中选择项
           href: samples/selecting-items-from-a-list-box.md
-    - name: 从正在运行的进程解码 PowerShell 命令
-      href: samples/decode-powershell-command-from-a-running-process.md
-    - name: 管理当前位置
-      href: samples/managing-current-location.md
-    - name: 使用 Process Cmdlet 管理进程
-      href: samples/managing-processes-with-process-cmdlets.md
-    - name: 管理服务
-      href: samples/managing-services.md
-    - name: 管理 Windows PowerShell 驱动器
-      href: samples/managing-windows-powershell-drives.md
-    - name: 直接操作项
-      href: samples/manipulating-items-directly.md
-    - name: 执行网络任务
-      href: samples/performing-networking-tasks.md
-    - name: 使用 Out-* cmdlet 重定向数据
-      href: samples/redirecting-data-with-out---cmdlets.md
-    - name: 使用格式命令更改输出视图
-      href: samples/using-format-commands-to-change-output-view.md
-    - name: 使用文件和文件夹
-      href: samples/working-with-files-and-folders.md
-    - name: 使用文件、文件夹和注册表项
-      href: samples/working-with-files-folders-and-registry-keys.md
-    - name: 使用对象
+    - name: 其他示例
       items:
-        - name: 获取 WMI 对象 - Get-WmiObject
-          href: samples/getting-wmi-objects--get-wmiobject-.md
-        - name: 创建 .NET 和 COM 对象 - New-Object
-          href: samples/creating-.net-and-com-objects--new-object-.md
-        - name: 从管道中删除对象 - Where-Object
-          href: samples/removing-objects-from-the-pipeline--where-object-.md
-        - name: 选择对象部件 - Select-Object
-          href: samples/selecting-parts-of-objects--select-object-.md
-        - name: 对对象进行排序
-          href: samples/sorting-objects.md
-        - name: 为多个对象重复执行任务 - ForEach-Object
-          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
-        - name: 使用静态类和方法
-          href: samples/using-static-classes-and-methods.md
-        - name: 查看对象结构 - Get-Member
-          href: samples/viewing-object-structure--get-member-.md
-    - name: 使用打印机
-      href: samples/working-with-printers.md
-    - name: 使用注册表条目
-      href: samples/working-with-registry-entries.md
-    - name: 使用注册表项
-      href: samples/working-with-registry-keys.md
-    - name: 使用软件安装
-      href: samples/working-with-software-installations.md
-    - name: 其他有用的脚本对象
-      href: samples/other-useful-scripting-objects.md
-    - name: 附录 1 - 兼容性别名
-      href: samples/appendix-1---compatibility-aliases.md
-    - name: 附录 2 - 创建自定义 PowerShell 快捷方式
-      href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
+        - name: 直接操作项
+          href: samples/manipulating-items-directly.md
+        - name: 其他有用的脚本对象
+          href: samples/other-useful-scripting-objects.md
+        - name: 附录 1 - 兼容性别名
+          href: samples/appendix-1---compatibility-aliases.md
+        - name: 附录 2 - 创建自定义 PowerShell 快捷方式
+          href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
