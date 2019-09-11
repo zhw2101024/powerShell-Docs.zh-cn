@@ -123,7 +123,7 @@ WinRM 为 PowerShell 远程会话提供可靠的托管模型。 基于 SSH 的�
    sudo service sshd restart
    ```
 
-## <a name="set-up-on-macos-machine"></a>在 MacOS 计算器上设置
+## <a name="set-up-on-macos-machine"></a>在 MacOS 计算机上设置
 
 1. 安装[适用于 MacOS 的 PowerShell Core](../../install/installing-powershell-core-on-macos.md) 最新版本
 
