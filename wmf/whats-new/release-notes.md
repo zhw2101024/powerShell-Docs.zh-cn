@@ -3,18 +3,18 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,安装程序
 title: WMF 5.x 发行说明
-ms.openlocfilehash: 8bdc423234cf0b104b72b1bee1de35e50783d8a4
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 8924240a4bbedcd34bc68b7cacdd23189a3716d6
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855762"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848157"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Windows Management Framework (WMF) 5.x 发行说明
 
 ## <a name="wmf-50-changes"></a>WMF 5.0 更改
 
-- PowerShell 5.0 添加了新的结构化信息流
+- PowerShell 5.0 添加了新的结构化信息  流
 - 对 DSC 的改进包括以下四个新 DSC 资源：
   - WindowsFeatureSet
   - WindowsOptionalFeatureSet
@@ -41,6 +41,9 @@ WMF 5.1 包括与 Windows Server 2016 一起发行的 PowerShell、WMI、WinRM �
 - DSC 和 PowerShell 类的调试改进
 - 安全增强包括强制执行来自请求服务器和使用 PowerShellGet cmdlet 时的目录签名模块
 - 响应大量的用户请求和问题
+
+> [!IMPORTANT]
+> 在 Windows Server 2008 或 Windows 7 上安装 WMF 5.1 之前，请确认未安装 WMF 3.0。 有关详细信息，请参阅 [Windows Server 2008 R2 SP1 和 Windows 7 SP1 的 WMF 5.1 系统必备](../setup/install-configure.md#wmf-51-prerequisites-for-windows-server-2008-r2-sp1-and-windows-7-sp1)。
 
 ## <a name="powershell-editions"></a>PowerShell 版本
 
@@ -90,6 +93,7 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 在 WMF 5.1 中：
 
 - 可以使用 [ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_)。
+
   此哈希表具有与 `Get-Module -FullyQualifiedName` 相同的格式。
 
   **示例：** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
