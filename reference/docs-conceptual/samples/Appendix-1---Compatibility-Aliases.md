@@ -1,36 +1,54 @@
 ---
-ms.date: 06/05/2017
+ms.date: 09/09/2019
 keywords: powershell,cmdlet
 title: 附录 1 - 兼容性别名
-ms.openlocfilehash: 553b9f01d6b5e3f4e04f1a75c25979b54dc205da
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 2351fdf23711fe1417f7e3fc3cca5b642d5a59fc
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030333"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848163"
 ---
-# <a name="appendix-1---compatibility-aliases"></a><span data-ttu-id="07fa9-103">附录 1 - 兼容性别名</span><span class="sxs-lookup"><span data-stu-id="07fa9-103">Appendix 1 - Compatibility Aliases</span></span>
+# <a name="appendix-1---compatibility-aliases"></a><span data-ttu-id="70b78-103">附录 1 - 兼容性别名</span><span class="sxs-lookup"><span data-stu-id="70b78-103">Appendix 1 - Compatibility Aliases</span></span>
 
-<span data-ttu-id="07fa9-104">Windows PowerShell 具有几个转换别名，它们让 UNIX 和 Cmd 用户能够在 Windows PowerShell 中使用熟悉的命令名称的。</span><span class="sxs-lookup"><span data-stu-id="07fa9-104">Windows PowerShell has several transition aliases that allow UNIX and Cmd users to use familiar command names in Windows PowerShell.</span></span> <span data-ttu-id="07fa9-105">下表中显示的是最常见的别名，别名后带有 Windows PowerShell 命令和标准 Windows PowerShell 别名（如果存在）。</span><span class="sxs-lookup"><span data-stu-id="07fa9-105">The most common aliases are shown in the table below, along with the Windows PowerShell command behind the alias and the standard Windows PowerShell alias if one exists.</span></span>
+<span data-ttu-id="70b78-104">PowerShell 具有多个别名，使 UNIX  和 cmd.exe  用户可以使用熟悉的命令。</span><span class="sxs-lookup"><span data-stu-id="70b78-104">PowerShell has several aliases that allow **UNIX** and **cmd.exe** users to use familiar commands.</span></span>
+<span data-ttu-id="70b78-105">下表显示了这些命令及其相关的 PowerShell cmdlet 和 PowerShell 别名：</span><span class="sxs-lookup"><span data-stu-id="70b78-105">The commands and their related PowerShell cmdlet and PowerShell alias are shown in the following table:</span></span>
 
-<span data-ttu-id="07fa9-106">你可以通过使用 Get-Alias cmdlet 从 Windows PowerShell 内部找到任何别名指向的 Windows PowerShell 命令。</span><span class="sxs-lookup"><span data-stu-id="07fa9-106">You can find the Windows PowerShell command that any alias points to from within Windows PowerShell by using the Get-Alias cmdlet.</span></span> <span data-ttu-id="07fa9-107">例如，键入 **get-alias cls**。</span><span class="sxs-lookup"><span data-stu-id="07fa9-107">For example, type **get-alias cls**.</span></span>
-
-```
-CommandType     Name                            Definition
------------     ----                            ----------
-Alias           cls                             Clear-Host
-```
-
-|<span data-ttu-id="07fa9-108">CMD 命令</span><span class="sxs-lookup"><span data-stu-id="07fa9-108">CMD Command</span></span>|<span data-ttu-id="07fa9-109">UNIX 命令</span><span class="sxs-lookup"><span data-stu-id="07fa9-109">UNIX Command</span></span>|<span data-ttu-id="07fa9-110">PS 命令</span><span class="sxs-lookup"><span data-stu-id="07fa9-110">PS Command</span></span>|<span data-ttu-id="07fa9-111">PS 别名</span><span class="sxs-lookup"><span data-stu-id="07fa9-111">PS Alias</span></span>|
+|<span data-ttu-id="70b78-106">cmd.exe命令</span><span class="sxs-lookup"><span data-stu-id="70b78-106">cmd.exe command</span></span>|<span data-ttu-id="70b78-107">UNIX 命令</span><span class="sxs-lookup"><span data-stu-id="70b78-107">UNIX command</span></span>|<span data-ttu-id="70b78-108">PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="70b78-108">PowerShell cmdlet</span></span>|<span data-ttu-id="70b78-109">PowerShell 别名</span><span class="sxs-lookup"><span data-stu-id="70b78-109">PowerShell alias</span></span>|
 |---------------|----------------|--------------|------------|
-|<span data-ttu-id="07fa9-112">**dir**</span><span class="sxs-lookup"><span data-stu-id="07fa9-112">**dir**</span></span>|<span data-ttu-id="07fa9-113">**ls**</span><span class="sxs-lookup"><span data-stu-id="07fa9-113">**ls**</span></span>|<span data-ttu-id="07fa9-114">**Get-ChildItem**</span><span class="sxs-lookup"><span data-stu-id="07fa9-114">**Get-ChildItem**</span></span>|<span data-ttu-id="07fa9-115">**gci**</span><span class="sxs-lookup"><span data-stu-id="07fa9-115">**gci**</span></span>|
-|<span data-ttu-id="07fa9-116">**cls**</span><span class="sxs-lookup"><span data-stu-id="07fa9-116">**cls**</span></span>|<span data-ttu-id="07fa9-117">**clear**</span><span class="sxs-lookup"><span data-stu-id="07fa9-117">**clear**</span></span>|<span data-ttu-id="07fa9-118">**Clear-Host**（函数）</span><span class="sxs-lookup"><span data-stu-id="07fa9-118">**Clear-Host** (function)</span></span>|<span data-ttu-id="07fa9-119">**cls**</span><span class="sxs-lookup"><span data-stu-id="07fa9-119">**cls**</span></span>|
-|<span data-ttu-id="07fa9-120">**del, erase, rmdir**</span><span class="sxs-lookup"><span data-stu-id="07fa9-120">**del, erase, rmdir**</span></span>|<span data-ttu-id="07fa9-121">**rm**</span><span class="sxs-lookup"><span data-stu-id="07fa9-121">**rm**</span></span>|<span data-ttu-id="07fa9-122">**Remove-Item**</span><span class="sxs-lookup"><span data-stu-id="07fa9-122">**Remove-Item**</span></span>|<span data-ttu-id="07fa9-123">**ri**</span><span class="sxs-lookup"><span data-stu-id="07fa9-123">**ri**</span></span>|
-|<span data-ttu-id="07fa9-124">**copy**</span><span class="sxs-lookup"><span data-stu-id="07fa9-124">**copy**</span></span>|<span data-ttu-id="07fa9-125">**cp**</span><span class="sxs-lookup"><span data-stu-id="07fa9-125">**cp**</span></span>|<span data-ttu-id="07fa9-126">**Copy-Item**</span><span class="sxs-lookup"><span data-stu-id="07fa9-126">**Copy-Item**</span></span>|<span data-ttu-id="07fa9-127">**ci**</span><span class="sxs-lookup"><span data-stu-id="07fa9-127">**ci**</span></span>|
-|<span data-ttu-id="07fa9-128">**move**</span><span class="sxs-lookup"><span data-stu-id="07fa9-128">**move**</span></span>|<span data-ttu-id="07fa9-129">**mv**</span><span class="sxs-lookup"><span data-stu-id="07fa9-129">**mv**</span></span>|<span data-ttu-id="07fa9-130">**Move-Item**</span><span class="sxs-lookup"><span data-stu-id="07fa9-130">**Move-Item**</span></span>|<span data-ttu-id="07fa9-131">**mi**</span><span class="sxs-lookup"><span data-stu-id="07fa9-131">**mi**</span></span>|
-|<span data-ttu-id="07fa9-132">**rename**</span><span class="sxs-lookup"><span data-stu-id="07fa9-132">**rename**</span></span>|<span data-ttu-id="07fa9-133">**mv**</span><span class="sxs-lookup"><span data-stu-id="07fa9-133">**mv**</span></span>|<span data-ttu-id="07fa9-134">**Rename-Item**</span><span class="sxs-lookup"><span data-stu-id="07fa9-134">**Rename-Item**</span></span>|<span data-ttu-id="07fa9-135">**rni**</span><span class="sxs-lookup"><span data-stu-id="07fa9-135">**rni**</span></span>|
-|<span data-ttu-id="07fa9-136">**type**</span><span class="sxs-lookup"><span data-stu-id="07fa9-136">**type**</span></span>|<span data-ttu-id="07fa9-137">**cat**</span><span class="sxs-lookup"><span data-stu-id="07fa9-137">**cat**</span></span>|<span data-ttu-id="07fa9-138">**Get-Content**</span><span class="sxs-lookup"><span data-stu-id="07fa9-138">**Get-Content**</span></span>|<span data-ttu-id="07fa9-139">**gc**</span><span class="sxs-lookup"><span data-stu-id="07fa9-139">**gc**</span></span>|
-|<span data-ttu-id="07fa9-140">**cd**</span><span class="sxs-lookup"><span data-stu-id="07fa9-140">**cd**</span></span>|<span data-ttu-id="07fa9-141">**cd**</span><span class="sxs-lookup"><span data-stu-id="07fa9-141">**cd**</span></span>|<span data-ttu-id="07fa9-142">**Set-Location**</span><span class="sxs-lookup"><span data-stu-id="07fa9-142">**Set-Location**</span></span>|<span data-ttu-id="07fa9-143">**sl**</span><span class="sxs-lookup"><span data-stu-id="07fa9-143">**sl**</span></span>|
-|<span data-ttu-id="07fa9-144">**md**</span><span class="sxs-lookup"><span data-stu-id="07fa9-144">**md**</span></span>|<span data-ttu-id="07fa9-145">**mkdir**</span><span class="sxs-lookup"><span data-stu-id="07fa9-145">**mkdir**</span></span>|<span data-ttu-id="07fa9-146">**New-Item**</span><span class="sxs-lookup"><span data-stu-id="07fa9-146">**New-Item**</span></span>|<span data-ttu-id="07fa9-147">**ni**</span><span class="sxs-lookup"><span data-stu-id="07fa9-147">**ni**</span></span>|
-|<span data-ttu-id="07fa9-148">**pushd**</span><span class="sxs-lookup"><span data-stu-id="07fa9-148">**pushd**</span></span>|<span data-ttu-id="07fa9-149">**pushd**</span><span class="sxs-lookup"><span data-stu-id="07fa9-149">**pushd**</span></span>|<span data-ttu-id="07fa9-150">**Push-Location**</span><span class="sxs-lookup"><span data-stu-id="07fa9-150">**Push-Location**</span></span>|<span data-ttu-id="07fa9-151">**pushd**</span><span class="sxs-lookup"><span data-stu-id="07fa9-151">**pushd**</span></span>|
-|<span data-ttu-id="07fa9-152">**popd**</span><span class="sxs-lookup"><span data-stu-id="07fa9-152">**popd**</span></span>|<span data-ttu-id="07fa9-153">**popd**</span><span class="sxs-lookup"><span data-stu-id="07fa9-153">**popd**</span></span>|<span data-ttu-id="07fa9-154">**Pop-Location**</span><span class="sxs-lookup"><span data-stu-id="07fa9-154">**Pop-Location**</span></span>|<span data-ttu-id="07fa9-155">**popd**</span><span class="sxs-lookup"><span data-stu-id="07fa9-155">**popd**</span></span>|
+|<span data-ttu-id="70b78-110">**cls**</span><span class="sxs-lookup"><span data-stu-id="70b78-110">**cls**</span></span>|<span data-ttu-id="70b78-111">**clear**</span><span class="sxs-lookup"><span data-stu-id="70b78-111">**clear**</span></span>|<span data-ttu-id="70b78-112">`Clear-Host`（函数）</span><span class="sxs-lookup"><span data-stu-id="70b78-112">`Clear-Host` (function)</span></span>|`cls`|
+|<span data-ttu-id="70b78-113">**copy**</span><span class="sxs-lookup"><span data-stu-id="70b78-113">**copy**</span></span>|<span data-ttu-id="70b78-114">**cp**</span><span class="sxs-lookup"><span data-stu-id="70b78-114">**cp**</span></span>|`Copy-Item`|`cpi`|
+|<span data-ttu-id="70b78-115">**dir**</span><span class="sxs-lookup"><span data-stu-id="70b78-115">**dir**</span></span>|<span data-ttu-id="70b78-116">**ls**</span><span class="sxs-lookup"><span data-stu-id="70b78-116">**ls**</span></span>|`Get-ChildItem`|`gci`|
+|<span data-ttu-id="70b78-117">**type**</span><span class="sxs-lookup"><span data-stu-id="70b78-117">**type**</span></span>|<span data-ttu-id="70b78-118">**cat**</span><span class="sxs-lookup"><span data-stu-id="70b78-118">**cat**</span></span>|`Get-Content`|`gc`|
+|<span data-ttu-id="70b78-119">**move**</span><span class="sxs-lookup"><span data-stu-id="70b78-119">**move**</span></span>|<span data-ttu-id="70b78-120">**mv**</span><span class="sxs-lookup"><span data-stu-id="70b78-120">**mv**</span></span>|`Move-Item`|`mi`|
+|<span data-ttu-id="70b78-121">**md**</span><span class="sxs-lookup"><span data-stu-id="70b78-121">**md**</span></span>|<span data-ttu-id="70b78-122">**mkdir**</span><span class="sxs-lookup"><span data-stu-id="70b78-122">**mkdir**</span></span>|`New-Item`|`ni`|
+|<span data-ttu-id="70b78-123">**pushd**</span><span class="sxs-lookup"><span data-stu-id="70b78-123">**pushd**</span></span>|<span data-ttu-id="70b78-124">**pushd**</span><span class="sxs-lookup"><span data-stu-id="70b78-124">**pushd**</span></span>|`Push-Location`|`pushd`|
+|<span data-ttu-id="70b78-125">**popd**</span><span class="sxs-lookup"><span data-stu-id="70b78-125">**popd**</span></span>|<span data-ttu-id="70b78-126">**popd**</span><span class="sxs-lookup"><span data-stu-id="70b78-126">**popd**</span></span>|`Pop-Location`|`popd`|
+|<span data-ttu-id="70b78-127">**del**、**erase**、**rd**、**rmdir**</span><span class="sxs-lookup"><span data-stu-id="70b78-127">**del**, **erase**, **rd**, **rmdir**</span></span>|<span data-ttu-id="70b78-128">**rm**</span><span class="sxs-lookup"><span data-stu-id="70b78-128">**rm**</span></span>|`Remove-Item`|`ri`|
+|<span data-ttu-id="70b78-129">**ren**</span><span class="sxs-lookup"><span data-stu-id="70b78-129">**ren**</span></span>|<span data-ttu-id="70b78-130">**mv**</span><span class="sxs-lookup"><span data-stu-id="70b78-130">**mv**</span></span>|`Rename-Item`|`rni`|
+|<span data-ttu-id="70b78-131">**cd**、**chdir**</span><span class="sxs-lookup"><span data-stu-id="70b78-131">**cd**, **chdir**</span></span>|<span data-ttu-id="70b78-132">**cd**</span><span class="sxs-lookup"><span data-stu-id="70b78-132">**cd**</span></span>|`Set-Location`|`sl`|
+
+<span data-ttu-id="70b78-133">若要查找 PowerShell 别名，请使用 [Get-Alias](/powershell/module/Microsoft.PowerShell.Utility/Get-Alias) cmdlet。</span><span class="sxs-lookup"><span data-stu-id="70b78-133">To find the PowerShell aliases, use the [Get-Alias](/powershell/module/Microsoft.PowerShell.Utility/Get-Alias) cmdlet.</span></span> <span data-ttu-id="70b78-134">若要显示 cmdlet 的别名，请使用 Definition  参数并指定 cmdlet 名称。</span><span class="sxs-lookup"><span data-stu-id="70b78-134">To display a cmdlet's aliases, use the **Definition** parameter and specify the cmdlet name.</span></span>
+<span data-ttu-id="70b78-135">或者，要查找别名的 cmdlet 名称，请使用 name  参数并指定别名。</span><span class="sxs-lookup"><span data-stu-id="70b78-135">Or, to find an alias's cmdlet name, use the **Name** parameter and specify the alias.</span></span>
+
+```powershell
+Get-Alias -Definition Get-ChildItem
+```
+
+```Output
+CommandType     Name
+-----------     ----
+Alias           dir -> Get-ChildItem
+Alias           gci -> Get-ChildItem
+Alias           ls -> Get-ChildItem
+```
+
+```powershell
+Get-Alias -Name gci
+```
+
+```Output
+CommandType     Name
+-----------     ----
+Alias           gci -> Get-ChildItem
+```
