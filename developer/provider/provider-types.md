@@ -1,144 +1,148 @@
 ---
 title: 提供程序类型 |Microsoft Docs
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 08/21/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e523a8e1-42e4-4633-887f-fb74b3464561
 caps.latest.revision: 12
-ms.openlocfilehash: 37689571eb1650e5991af2e7002cd037ae99dd68
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0a9bfe5dd0978ffce66db1b18ef4d82be6c1a7f2
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080896"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986660"
 ---
 # <a name="provider-types"></a>提供程序类型
 
-提供程序通过更改提供程序 cmdlet （由 Windows PowerShell） 执行其操作的方式定义其基本功能。 例如，提供程序可以使用的默认功能`Get-Item`cmdlet，或者他们可以更改从数据存储区中检索项时，该 cmdlet 的运行方式。 本主题中所述的提供程序功能包括通过覆盖从特定的提供程序基类和接口的方法定义的功能。
+提供程序通过更改 PowerShell 提供的提供程序 cmdlet 的执行操作来定义其基本功能。 例如，提供程序可以使用`Get-Item` cmdlet 的默认功能，也可以在从数据存储区中检索项时更改该 cmdlet 的操作方式。 本文档中所述的提供程序功能包括通过覆盖特定提供程序基类和接口中的方法定义的功能。
 
 > [!NOTE]
-> 有关预定义的 Windows PowerShell 提供程序功能，请参阅[提供程序的功能](http://msdn.microsoft.com/en-us/864e4807-554a-4016-80ea-bf643a090fc6)。
+> 有关 PowerShell 预定义的提供程序功能，请参阅[提供程序功能](/previous-versions//ee126189(v=vs.85))。
 
-## <a name="drive-enabled-providers"></a>启用驱动器的提供程序
+## <a name="drive-enabled-providers"></a>支持驱动器的提供程序
 
-启用驱动器的提供程序指定向用户提供的默认驱动器，并允许用户添加或删除驱动器。 在大多数情况下，提供程序是已启用驱动器的提供程序，因为它们需要一些默认的驱动器来访问数据存储区。 但是，编写自己的提供程序时您可能会或可能不希望允许用户创建和删除驱动器。
+启用驱动器的提供程序指定用户可用的默认驱动器，并允许用户添加或删除驱动器。 在大多数情况下，提供程序是支持驱动器的提供程序，因为它们需要某些默认驱动器来访问数据存储。 但是，在编写您自己的提供程序时，您可能会或可能不希望允许用户创建和删除驱动器。
 
-若要创建驱动器启用提供程序，提供程序类必须派生自[System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)类或派生自该类的另一个类。 [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)类定义以下方法用来实现的提供程序的默认驱动器和支持`New-PSDrive`和`Remove-PSDrive`cmdlet。 在大多数情况下，若要支持提供程序 cmdlet 必须覆盖方法，用于 Windows PowerShell 引擎调用以调用 cmdlet，如`NewDrive`方法`New-PSDrive`cmdlet，并 （可选） 你可以覆盖之类的第二个方法`NewDriveDynamicParameters`，用于将动态参数添加到该 cmdlet。
+若要创建启用驱动器的提供程序，提供程序类必须派生自[DriveCmdletProvider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)类或派生自该类的另一个类。 **DriveCmdletProvider**类定义以下用于实现提供程序的默认驱动器并支持`New-PSDrive`和`Remove-PSDrive` cmdlet 的方法：。 在大多数情况下，若要支持提供程序 cmdlet，必须覆盖 PowerShell 引擎调用的方法来调用 cmdlet，例如`NewDrive` `New-PSDrive` cmdlet 的方法，还可以覆盖`NewDriveDynamicParameters`第二种方法，例如，用于将动态参数添加到 cmdlet。
 
-- [System.Management.Automation.Provider.Drivecmdletprovider.Initializedefaultdrives*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.InitializeDefaultDrives)方法定义可供用户使用的提供程序时的默认驱动器。
+- 当使用提供程序时， [DriveCmdletProvider. InitializeDefaultDrives](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.InitializeDefaultDrives)方法将定义可供用户使用的默认驱动器。
 
-- [System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)并[System.Management.Automation.Provider.Drivecmdletprovider.Newdrivedynamicparameters*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters)方法定义您的提供程序如何支持`New-PSDrive`提供程序 cmdlet。 此 cmdlet 允许用户创建的驱动器访问数据存储区。
+- [DriveCmdletProvider 和 NewDrive](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)方法定义了提供程序支持的方式的方法[，这些](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters)方法是如何支持的`New-PSDrive`。提供程序 cmdlet。 此 cmdlet 允许用户创建驱动器以访问数据存储。
 
-- [System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)方法定义您的提供程序如何支持`Remove-PSDrive`提供程序 cmdlet。 此 cmdlet 允许用户从数据存储区中删除驱动器。
+- [DriveCmdletProvider. RemoveDrive](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)方法定义提供程序如何支持`Remove-PSDrive`提供程序 cmdlet。 此 cmdlet 允许用户从数据存储中删除驱动器。
 
-## <a name="item-enabled-providers"></a>启用了项的提供程序
+## <a name="item-enabled-providers"></a>启用了项目的提供程序
 
-启用了项的提供程序允许用户获取、 设置或清除数据存储区中的项。 "项"是用户可以访问或独立管理的数据存储区的一个元素。 若要创建的项启用提供程序，提供程序类必须派生自[System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)类或派生自该类的另一个类。
+启用项的提供程序允许用户获取、设置或清除数据存储区中的项。 "项" 是用户可以单独访问或管理的数据存储的元素。 若要创建支持项的提供程序，提供程序类必须派生自[ItemCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)类或派生自该类的另一个类。
 
-[System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)类定义以下方法用于实现特定的提供程序 cmdlet。 在大多数情况下，若要支持提供程序 cmdlet 必须覆盖方法，用于 Windows PowerShell 引擎调用以调用 cmdlet，如`ClearItem`方法`Clear-Item`cmdlet，并 （可选） 你可以覆盖之类的第二个方法`ClearItemDynamicParameters`，用于将动态参数添加到该 cmdlet。
+**ItemCmdletProvider**类定义以下用于实现特定提供程序 cmdlet 的方法。 在大多数情况下，若要支持提供程序 cmdlet，必须覆盖 PowerShell 引擎调用的方法来调用 cmdlet，例如`ClearItem` `Clear-Item` cmdlet 的方法，还可以覆盖`ClearItemDynamicParameters`第二种方法，例如，用于将动态参数添加到 cmdlet。
 
-- [System.Management.Automation.Provider.Itemcmdletprovider.Clearitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem)并[System.Management.Automation.Provider.Itemcmdletprovider.Clearitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters)方法定义您的提供程序如何支持`Clear-Item`提供程序 cmdlet。 此 cmdlet 允许用户删除的数据存储区中项的值。
+- [ItemCmdletProvider 和 ClearItem](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem)方法定义了提供程序支持的方式的方法[，这些](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters)方法是如何支持的`Clear-Item`。提供程序 cmdlet。 此 cmdlet 允许用户删除数据存储中某个项的值。
 
-- [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)并[System.Management.Automation.Provider.Itemcmdletprovider.Getitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters)方法定义如何您的提供程序支持`Get-Item`提供程序 cmdlet。 此 cmdlet 允许用户从数据存储中检索数据。
+- [ItemCmdletProvider 和 GetItem](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)方法定义了提供程序支持的方式的方法[，这些](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters)方法是如何支持的`Get-Item` 。提供程序 cmdlet。 此 cmdlet 允许用户从数据存储中检索数据。
 
-- [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)并[System.Management.Automation.Provider.Itemcmdletprovider.Setitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItemDynamicParameters)方法定义如何您的提供程序支持`Set-Item`提供程序 cmdlet。 此 cmdlet 允许用户更新的数据存储区中的项的值。
+- [ItemCmdletProvider 和 SetItem](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法定义了提供程序支持的方式的方法[，这些](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItemDynamicParameters)方法是如何支持的`Set-Item` 。提供程序 cmdlet。 此 cmdlet 允许用户更新数据存储区中的项的值。
 
-- [System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultaction*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)并[System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultaction*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)方法定义您的提供程序如何支持`Invoke-Item`提供程序 cmdlet。 此 cmdlet 允许用户执行指定的项的默认操作。
+- [Itemcmdletprovider 和 InvokeDefaultAction](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)方法用于定义你的提供程序的提供程序的实现方式的[方法。](/dotnet/api/system.management.automation.provider.itemcmdletprovider.invokedefaultactiondynamicparameters)`Invoke-Item`支持提供程序 cmdlet。 此 cmdlet 允许用户执行项指定的默认操作。
 
-- [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)并[System.Management.Automation.Provider.Itemcmdletprovider.Itemexistsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExistsDynamicParameters)方法定义您的提供程序如何支持`Test-Path`提供程序 cmdlet。 此 cmdlet 允许用户确定路径的所有元素是否都存在。
+- [ItemCmdletProvider 和 ItemExists](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)方法定义了提供程序支持的方式的方法[，这些](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExistsDynamicParameters)方法是如何支持的`Test-Path`。提供程序 cmdlet。 此 cmdlet 允许用户确定路径的所有元素是否存在。
 
-  方法可用来实现提供程序 cmdlet，除了[System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)类还定义了以下方法：
+除了用于实现提供程序 cmdlet 的方法以外， **ItemCmdletProvider**类还定义了以下方法：
 
-- [System.Management.Automation.Provider.Itemcmdletprovider.Expandpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ExpandPath)方法，则允许用户指定的提供程序路径时使用通配符。
+- [ItemCmdletProvider. ExpandPath](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ExpandPath)方法允许用户在指定提供程序路径时使用通配符（）。
 
-- [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)用于确定的路径是语法和语义上有效的提供程序。
+- [ItemCmdletProvider. IsValidPath](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)用于确定路径对于提供程序是否在语法和语义上是有效的。
 
 ## <a name="container-enabled-providers"></a>启用容器的提供程序
 
-启用容器的提供程序允许用户管理是容器的项。 容器是包含公用父项下的子项的组。 若要创建启用了容器的提供程序，提供程序类必须派生自[System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)类或派生自该类的另一个类。
+启用容器的提供程序允许用户管理容器中的项。 容器是包含公用父项下的子项的组。 若要创建启用容器的提供程序，提供程序类必须派生自[ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)类或派生自该类的另一个类。
 
 > [!IMPORTANT]
-> 启用容器的提供程序无法访问数据存储区，其中包含嵌套的容器。 如果容器的子项目是另一个容器，则必须实现导航启用提供程序。
+> 启用容器的访问接口无法访问包含嵌套容器的数据存储区。 如果容器的子项是另一个容器，则必须实现启用导航的提供程序。
 
-[System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)类定义以下方法用于实现特定的提供程序 cmdlet。 在大多数情况下，若要支持提供程序 cmdlet 必须覆盖方法，用于 Windows PowerShell 引擎调用以调用 cmdlet，如`CopyItem`方法`Copy-Item`cmdlet，并 （可选） 你可以覆盖之类的第二个方法`CopyItemDynamicParameters`，用于将动态参数添加到该 cmdlet。
+**ContainerCmdletProvider**类定义以下用于实现特定提供程序 cmdlet 的方法。 在大多数情况下，若要支持提供程序 cmdlet，必须覆盖 PowerShell 引擎调用的方法来调用 cmdlet，例如`CopyItem` `Copy-Item` cmdlet 的方法，还可以覆盖`CopyItemDynamicParameters`第二种方法，例如，用于将动态参数添加到 cmdlet。
 
-- [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)并[System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters)方法定义您的提供程序如何支持`Copy-Item`提供程序 cmdlet。 此 cmdlet 允许用户将项从一个位置复制到另一个。
+- [ContainerCmdletProvider 和 CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法定义了提供程序支持的方式的方法[，这些](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters)方法是如何支持的。`Copy-Item`提供程序 cmdlet。 此 cmdlet 允许用户将项从一个位置复制到另一个位置。
 
-- [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)和[System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters)方法定义您的提供程序如何支持`Get-ChildItem`提供程序 cmdlet。 此 cmdlet 允许用户检索父项的子项。
+- [ContainerCmdletProvider 和 GetChildItems](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法用于定义你的提供程序的提供程序的实现方式的[方法。](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters)`Get-ChildItem`支持提供程序 cmdlet。 此 cmdlet 允许用户检索父项的子项。
 
-- [System.Management.Automation.Provider.Containercmdletprovider.Getchildnames*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)和[System.Management.Automation.Provider.Containercmdletprovider.Getchildnamesdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters)方法定义您的提供程序如何支持`Get-ChildItem`提供程序 cmdlet 如果其`Name`指定参数。
+- [ContainerCmdletProvider 和 GetChildNames](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)方法用于定义你的提供程序的提供程序的实现方式的[方法。](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters)如果指定了`Get-ChildItem` 参数，则支持`Name`提供程序 cmdlet。
 
-- [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)并[System.Management.Automation.Provider.Containercmdletprovider.Newitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItemDynamicParameters)方法定义您的提供程序如何支持`New-Item`提供程序 cmdlet。 此 cmdlet 允许用户在数据存储区中创建新项目。
+- [ContainerCmdletProvider 和 NewItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法定义了提供程序支持的方式的方法[，这些](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItemDynamicParameters)方法是如何支持的。`New-Item`提供程序 cmdlet。 此 cmdlet 允许用户在数据存储中创建新项。
 
-- [System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)并[System.Management.Automation.Provider.Containercmdletprovider.Removeitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters)方法定义您的提供程序如何支持`Remove-Item`提供程序 cmdlet。 此 cmdlet 允许用户从数据存储区中删除项目。
+- [ContainerCmdletProvider 和 RemoveItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)方法定义了提供程序支持的方式的方法[，这些](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters)方法是如何支持的。`Remove-Item`提供程序 cmdlet。 此 cmdlet 允许用户从数据存储中删除项。
 
-- [System.Management.Automation.Provider.Containercmdletprovider.Renameitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem)并[System.Management.Automation.Provider.Containercmdletprovider.Renameitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItemDynamicParameters)方法定义您的提供程序如何支持`Rename-Item`提供程序 cmdlet。 此 cmdlet 允许用户重命名数据存储中的项目。
+- [ContainerCmdletProvider 和 RenameItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem)方法定义了提供程序支持的方式的方法[，这些](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItemDynamicParameters)方法是如何支持的。`Rename-Item`提供程序 cmdlet。 此 cmdlet 允许用户重命名数据存储区中的项。
 
-  方法可用来实现提供程序 cmdlet，除了[System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)类还定义了以下方法：
+除了用于实现提供程序 cmdlet 的方法以外， **ContainerCmdletProvider**类还定义了以下方法：
 
-- [System.Management.Automation.Provider.Containercmdletprovider.Haschilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.HasChildItems)方法可以使用由提供程序类，以确定某个项是否有子项目。
+- 提供程序类可以使用[ContainerCmdletProvider. HasChildItems](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.HasChildItems)方法来确定某一项是否具有子项。
 
-- [System.Management.Automation.Provider.Containercmdletprovider.Convertpath*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.ConvertPath)方法可以由提供程序类以从指定的路径创建新的特定于提供程序的路径。
+- 提供程序类可以使用[ContainerCmdletProvider. ConvertPath](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.ConvertPath)方法从指定的路径创建新的特定于提供程序的路径。
 
 ## <a name="navigation-enabled-providers"></a>启用导航的提供程序
 
-启用导航的提供程序允许用户在数据存储区中移动项。 若要创建启用了导航提供程序，提供程序类必须派生自[System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)类。
+启用导航的提供程序允许用户在数据存储中移动项。 若要创建启用导航的提供程序，提供程序类必须派生自[NavigationCmdletProvider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)类。
 
-[System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)类定义以下方法用于实现特定的提供程序 cmdlet。 在大多数情况下，若要支持提供程序 cmdlet 必须覆盖方法，用于 Windows PowerShell 引擎调用以调用 cmdlet，如`MoveItem`方法`Move-Item`cmdlet，并 （可选） 你可以覆盖之类的第二个方法`MoveItemDynamicParameters`，用于将动态参数添加到该 cmdlet。
+**NavigationCmdletProvider**类定义以下用于实现特定提供程序 cmdlet 的方法。 在大多数情况下，若要支持提供程序 cmdlet，必须覆盖 PowerShell 引擎调用的方法来调用 cmdlet，例如`MoveItem` `Move-Item` cmdlet 的方法，还可以覆盖`MoveItemDynamicParameters`第二种方法，例如，用于将动态参数添加到 cmdlet。
 
-- [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)并[System.Management.Automation.Provider.Navigationcmdletprovider.Moveitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters)方法定义您的提供程序如何支持`Move-Item`提供程序 cmdlet。 此 cmdlet 允许用户将项从存储区中的一个位置移动到另一个位置。
+- [NavigationCmdletProvider 和 MoveItem](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)方法定义了提供程序支持的方式的方法[，这些](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters)方法是如何支持的。`Move-Item`提供程序 cmdlet。 此 cmdlet 允许用户将项从存储区中的一个位置移到另一个位置。
 
-- [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)方法定义您的提供程序如何支持`Join-Path`提供程序 cmdlet。 此 cmdlet 允许用户以合并一个父级和子级路径片段来创建提供程序内部的路径。
+- [NavigationCmdletProvider. MakePath](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)方法定义提供程序如何支持`Join-Path`提供程序 cmdlet。 此 cmdlet 允许用户合并父路径段和子路径段以创建提供程序内部路径。
 
-  方法可用来实现提供程序 cmdlet，除了[System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)类还定义了以下方法：
+除了用于实现提供程序 cmdlet 的方法以外， **NavigationCmdletProvider**类还定义了以下方法：
 
-- [System.Management.Automation.Provider.Navigationcmdletprovider.Getchildname*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetChildName)方法提取一个路径的子节点的名称。
+- [NavigationCmdletProvider. GetChildName](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetChildName)方法提取路径的子节点的名称（& e）。
 
-- [System.Management.Automation.Provider.Navigationcmdletprovider.Getparentpath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath)方法提取路径的父部件。
+- [NavigationCmdletProvider. GetParentPath](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath)方法会提取路径的父部分，而不是。
 
-- [System.Management.Automation.Provider.Navigationcmdletprovider.Isitemcontainer*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer)方法确定项是否为容器项。 在此上下文中，容器是包含公用父项下的子项的组。
+- [NavigationCmdletProvider. IsItemContainer](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer)方法决定项是否为容器项。）。 在此上下文中，容器是公共父项下的一组子项。
 
-- [System.Management.Automation.Provider.Navigationcmdletprovider.Normalizerelativepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath)方法返回的路径是相对于指定的基路径的项。
+- [NavigationCmdletProvider. NormalizeRelativePath](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath)方法将返回相对于指定基路径的项的路径，该路径为。
 
-## <a name="content-enabled-providers"></a>启用了内容的提供程序
+## <a name="content-enabled-providers"></a>启用内容的提供程序
 
-启用了内容的提供程序允许用户以清除、 获取或设置数据存储区中的各项的内容。 例如，FileSystem 提供程序，可清除、 获取和设置文件系统中的文件的内容。 若要创建的内容已启用提供程序，提供程序类必须实现的方法[System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)接口。
+启用内容的提供程序允许用户在数据存储中清除、获取或设置项的内容。
+例如，FileSystem 提供程序允许清除、获取和设置文件系统中的文件的内容。 若要创建启用内容的提供程序，提供程序类必须实现[IContentCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)接口的方法。
 
-[System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)接口定义用于实现特定的提供程序 cmdlet 的以下方法。 在大多数情况下，若要支持提供程序 cmdlet 必须覆盖方法，用于 Windows PowerShell 引擎调用以调用 cmdlet，如`ClearContent`方法`Clear-Content`cmdlet，并 （可选） 你可以覆盖之类的第二个方法`ClearContentDynamicParameters`，用于将动态参数添加到该 cmdlet。
+**IContentCmdletProvider**接口定义以下用于实现特定提供程序 cmdlet 的方法。 在大多数情况下，若要支持提供程序 cmdlet，必须覆盖 PowerShell 引擎调用的方法来调用 cmdlet，例如`ClearContent` `Clear-Content` cmdlet 的方法，还可以覆盖`ClearContentDynamicParameters`第二种方法，例如，用于将动态参数添加到 cmdlet。
 
-- [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)和[System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontentdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContentDynamicParameters)方法定义您的提供程序如何支持`Clear-Content`提供程序 cmdlet。 此 cmdlet 允许用户删除项的内容，而不删除该项。
+- IContentCmdletProvider 方法定义提供程序支持的方式的[ClearContent](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)和[IContentCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContentDynamicParameters)方法的定义方式的方法，它`Clear-Content`提供程序 cmdlet。 此 cmdlet 允许用户删除项的内容，而不会删除该项。
 
-- [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreader*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)和[System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreaderdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters)方法定义您的提供程序如何支持`Get-Content`提供程序 cmdlet。 此 cmdlet 允许用户检索其内容的项。 [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreader*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)方法将返回[System.Management.Automation.Provider.Icontentreader](/dotnet/api/System.Management.Automation.Provider.IContentReader)定义接口用于读取内容的方法。
+- [IContentCmdletProvider 和 GetContentReader](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)方法用于定义你的提供程序的提供程序的实现方式的[方法。](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters)`Get-Content`支持提供程序 cmdlet。 此 cmdlet 允许用户检索项的内容。 `System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader` 方法返回一个 [System.Management.Automation.Provider.IContentReader](/dotnet/api/System.Management.Automation.Provider.IContentReader) 接口，该接口定义用于读取内容的方法。
 
-- [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentwriter*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter)和[System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentwriterdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriterDynamicParameters)方法定义您的提供程序如何支持`Set-Content`提供程序 cmdlet。 此 cmdlet 允许用户更新项的内容。 [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentwriter*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter)方法将返回[System.Management.Automation.Provider.Icontentwriter](/dotnet/api/System.Management.Automation.Provider.IContentWriter)定义接口用于写入内容的方法。
+- [IContentCmdletProvider 和 GetContentWriter](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter)方法用于定义你的提供程序的提供程序的实现方式的[方法。](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriterDynamicParameters)`Set-Content`支持提供程序 cmdlet。 此 cmdlet 允许用户更新项的内容。 `System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter`方法返回一个 [System.Management.Automation.Provider.IContentWriter](/dotnet/api/System.Management.Automation.Provider.IContentWriter) 接口，该接口定义用于写入内容的方法。
 
-## <a name="property-enabled-providers"></a>属性启用提供程序
+## <a name="property-enabled-providers"></a>启用了属性的提供程序
 
-属性启用提供程序允许用户管理的数据存储区中的项的属性。 若要创建启用了属性的提供程序，提供程序类必须实现的方法[System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)和[System.Management.Automation.Provider.Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider)接口。 在大多数情况下，若要支持提供程序 cmdlet 必须覆盖方法，用于 Windows PowerShell 引擎调用以调用 cmdlet，如`ClearProperty`清除属性 cmdlet，并选择性地将您的方法可以覆盖之类的第二个方法`ClearPropertyDynamicParameters`，用于将动态参数添加到该 cmdlet。
+启用了属性的提供程序允许用户管理数据存储中项的属性。
+若要创建一个启用了属性的提供程序，提供程序类必须实现[IPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)和 IDynamicPropertyCmdletProvider 的方法。的提供程序类 [System.Management.Automation.Provider.IDynamicPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) 接口。 在大多数情况下，若要支持提供程序 cmdlet，必须覆盖 PowerShell 引擎调用的方法来调用 cmdlet，如 Clear 属性 cmdlet `ClearProperty`的方法，还可以覆盖第二种方法，例如`ClearPropertyDynamicParameters`，用于将动态参数添加到 cmdlet。
 
-[System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)接口定义用于实现特定的提供程序 cmdlet 的以下方法：
+**IPropertyCmdletProvider**接口定义以下用于实现特定提供程序 cmdlet 的方法：
 
-- [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)和[System.Management.Automation.Provider.Ipropertycmdletprovider.Clearpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters)方法定义您的提供程序如何支持`Clear-ItemProperty`提供程序 cmdlet。 此 cmdlet 允许用户删除属性的值。
+- [IPropertyCmdletProvider 和 ClearProperty](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)方法用于定义你的提供程序的提供程序的实现方式的[方法。](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters)`Clear-ItemProperty`支持提供程序 cmdlet。 此 cmdlet 允许用户删除属性的值。
 
-- [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)和[System.Management.Automation.Provider.Ipropertycmdletprovider.Getpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters)方法定义您的提供程序如何支持`Get-ItemProperty`提供程序 cmdlet。 此 cmdlet 允许用户检索其属性的项。
+- IPropertyCmdletProvider 方法定义提供程序支持的方式的[GetProperty](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)和[IPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters)方法的定义方式的方法，它`Get-ItemProperty`提供程序 cmdlet。 此 cmdlet 允许用户检索项的属性。
 
-- [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)和[System.Management.Automation.Provider.Ipropertycmdletprovider.Setpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetPropertyDynamicParameters)方法定义您的提供程序如何支持`Set-ItemProperty`提供程序 cmdlet。 此 cmdlet 允许用户更新项的属性。
+- [IPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)和[IPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetPropertyDynamicParameters)方法定义了提供程序支持的方式的方法，该方法用于定义访问者`Set-ItemProperty`提供程序 cmdlet。 此 cmdlet 允许用户更新项的属性。
 
-  [System.Management.Automation.Provider.Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider)接口定义用于实现特定的提供程序 cmdlet 的以下方法：
+  **IDynamicPropertyCmdletProvider**接口定义以下用于实现特定提供程序 cmdlet 的方法：
 
-- [System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Copyproperty*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.CopyProperty)和[System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Copypropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.CopyPropertyDynamicParameters)方法定义您的提供程序如何支持`Copy-ItemProperty`提供程序 cmdlet。 此 cmdlet 允许用户将属性和其值从一个位置复制到另一个。
+- [IDynamicPropertyCmdletProvider. CopyProperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.CopyProperty)和[IDynamicPropertyCmdletProvider. CopyPropertyDynamicParameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.CopyPropertyDynamicParameters)方法用于定义你的工作方式的你的管理提供程序支持`Copy-ItemProperty`提供程序 cmdlet。 此 cmdlet 允许用户将属性及其值从一个位置复制到另一个位置。
 
-- [System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Moveproperty*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.MoveProperty)和[System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Movepropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.MovePropertyDynamicParameters)方法定义您的提供程序如何支持`Move-ItemProperty`提供程序 cmdlet。 此 cmdlet 允许用户将属性和其值从一个位置移到另一个。
+- [IDynamicPropertyCmdletProvider. MoveProperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.MoveProperty)和[IDynamicPropertyCmdletProvider. MovePropertyDynamicParameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.MovePropertyDynamicParameters)方法用于定义你的工作方式的你的管理提供程序支持`Move-ItemProperty`提供程序 cmdlet。 此 cmdlet 允许用户将属性及其值从一个位置移动到另一个位置。
 
-- [System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Newproperty*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewProperty)和[System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Newpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters)方法定义您的提供程序如何支持`New-ItemProperty`提供程序 cmdlet。 此 cmdlet 允许用户创建新的属性并将其值设置。
+- [IDynamicPropertyCmdletProvider. NewProperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewProperty)和[IDynamicPropertyCmdletProvider. NewPropertyDynamicParameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters)方法用于定义你的工作方式的你的管理提供程序支持`New-ItemProperty`提供程序 cmdlet。 此 cmdlet 允许用户创建新属性并设置其值。
 
-- [System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Removeproperty*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemoveProperty)和[System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Removepropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemovePropertyDynamicParameters)方法定义您的提供程序如何支持`Remove-ItemProperty`cmdlet。 此 cmdlet 允许用户删除一个属性及其值。
+- [IDynamicPropertyCmdletProvider. RemoveProperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemoveProperty)和[IDynamicPropertyCmdletProvider. RemovePropertyDynamicParameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemovePropertyDynamicParameters)方法定义了如何进行操作的方式，以及如何你的`Remove-ItemProperty`提供程序支持 cmdlet。 此 cmdlet 允许用户删除属性及其值。
 
-- [System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Renameproperty*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenameProperty)和[System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Renamepropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenamePropertyDynamicParameters)方法定义您的提供程序如何支持`Rename-ItemProperty`cmdlet。 此 cmdlet 允许用户更改的属性名称。
+- [IDynamicPropertyCmdletProvider. RenameProperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenameProperty)和[IDynamicPropertyCmdletProvider. RenamePropertyDynamicParameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenamePropertyDynamicParameters)方法定义了如何进行操作的方式，以及如何你的`Rename-ItemProperty`提供程序支持 cmdlet。 此 cmdlet 允许用户更改属性的名称。
 
 ## <a name="see-also"></a>另请参阅
+
+[about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers)
 
 [编写 Windows PowerShell 提供程序](./writing-a-windows-powershell-provider.md)
