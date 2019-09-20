@@ -194,6 +194,55 @@
           href: whats-new/what-s-new-in-the-powershell-50-ise.md
 - name: PowerShell Core 支持生命周期
   href: powershell-support-lifecycle.md
+- name: Windows Management Framework (WMF)
+  items:
+    - name: 概述
+      href: wmf/overview.md
+    - name: 安装
+      items:
+        - name: 安装和配置 WMF 5.1
+          href: wmf/setup/install-configure.md
+        - name: 卸载WMF 5.0
+          href: wmf/setup/uninstall.md
+    - name: 新增功能
+      expanded: true
+      items:
+        - name: WMF 5.x 发行说明
+          href: wmf/whats-new/release-notes.md
+        - name: WMF 5.1 中的 Bug 修复
+          href: wmf/whats-new/bugfixes.md
+        - name: 新的和更新的 cmdlet
+          href: wmf/whats-new/new-updated-cmdlets.md
+        - name: 使用 PowerShell 类创建自定义类型
+          href: wmf/whats-new/class-overview.md
+        - name: WMF 5.1 中的控制台改进
+          href: wmf/whats-new/console-improvements.md
+        - name: PowerShell 脚本调试中的改进
+          href: wmf/whats-new/debug-overview.md
+        - name: 脚本跟踪和日志记录
+          href: wmf/whats-new/script-logging.md
+        - name: WMF 5.1 中的 DSC 改进
+          href: wmf/whats-new/DSC-improvements.md
+        - name: WMF 5.1 中的 PowerShell 引擎改进
+          href: wmf/whats-new/engine-improvements.md
+        - name: 信息流
+          href: wmf/whats-new/informationstream-overview.md
+        - name: 对 Just Enough Administration (JEA) 的改进
+          href: wmf/whats-new/jea-improvements.md
+        - name: WMF 5.1 中对包管理的改进
+          href: wmf/whats-new/package-management-improvements.md
+        - name: 软件清单日志记录 (SIL)
+          href: wmf/whats-new/sil-overview.md
+        - name: 产品兼容性状态
+          href: wmf/whats-new/compatibility.md
+    - name: 已知问题
+      items:
+        - name: WMF 5.0 中的已知问题
+          href: wmf/known-issues/known-issues-50.md
+        - name: WMF 5.1 中的已知问题
+          href: wmf/known-issues/known-issues-51.md
+        - name: DSC 中的已知问题和限制
+          href: wmf/known-issues/known-issues-dsc.md
 - name: 示例脚本
   items:
     - name: 管理示例脚本
