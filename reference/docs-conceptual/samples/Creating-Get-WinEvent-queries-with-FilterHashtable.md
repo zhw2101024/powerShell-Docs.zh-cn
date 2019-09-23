@@ -1,12 +1,12 @@
 ---
-ms.date: 03/18/2019
+ms.date: 09/13/2019
 title: 使用 FilterHashtable 创建 Get-WinEvent 查询
-ms.openlocfilehash: 2f598fceb570f189bee776b6ed572b11a6938f64
-ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
+ms.openlocfilehash: 1bf321c09c20736de36eb896fabced31cfdfbd75
+ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66471015"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143657"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>使用 FilterHashtable 创建 Get-WinEvent 查询
 
@@ -16,9 +16,11 @@ ms.locfileid: "66471015"
 
 处理大型事件日志时，如果将对象沿管道下发到 `Where-Object` 命令，效率将较低。 在 PowerShell 6 之前，`Get-EventLog` cmdlet 曾是另一个用于获取日志数据的方法。 例如，使用下面的命令筛选 Microsoft-Windows-Defrag 日志时，效率较低  ：
 
-`Get-EventLog -LogName Application | Where-Object Source -Match defrag`
+```powershell
+Get-EventLog -LogName Application | Where-Object Source -Match defrag
 
-`Get-WinEvent -LogName Application | Where-Object { $_.ProviderName -Match 'defrag' }`
+Get-WinEvent -LogName Application | Where-Object { $_.ProviderName -Match 'defrag' }
+```
 
 下面的命令使用了可提升性能的哈希表：
 
@@ -48,19 +50,35 @@ FilterHashtable  参数的文档也包含这些键值对。
 
 下表显示了键名称、数据类型以及数据值是否接受通配符。
 
-| 键名称     | 值数据类型    | 是否接受通配符？ |
-|------------- | ------------------ | ---------------------------- |
-| LogName      | `<String[]>`       | 是 |
-| ProviderName | `<String[]>`       | 是 |
-| 路径         | `<String[]>`       | 否  |
-| Keywords     | `<Long[]>`         | 否  |
-| ID           | `<Int32[]>`        | 否  |
-| 层次        | `<Int32[]>`        | 否  |
-| StartTime    | `<DateTime>`       | 否  |
-| EndTime      | `<DateTime>`       | 否  |
-| UserID       | `<SID>`            | 否  |
-| 数据         | `<String[]>`       | 否  |
-| *            | `<String[]>`       | 否  |
+|    键名称    | 值数据类型 | 是否接受通配符？ |
+| -------------- | --------------- | ---------------------------- |
+| LogName        | `<String[]>`    | 是                          |
+| ProviderName   | `<String[]>`    | 是                          |
+| 路径           | `<String[]>`    | 否                           |
+| Keywords       | `<Long[]>`      | 否                           |
+| ID             | `<Int32[]>`     | 否                           |
+| 层次          | `<Int32[]>`     | 否                           |
+| StartTime      | `<DateTime>`    | 否                           |
+| EndTime        | `<DateTime>`    | 否                           |
+| UserID         | `<SID>`         | 否                           |
+| 数据           | `<String[]>`    | 否                           |
+| \<named-data\> | `<String[]>`    | 否                           |
+
+\<named-data\> 键表示命名事件数据字段。 例如，Perflib 事件 1008 可以包含以下事件数据：
+
+```xml
+<EventData>
+  <Data Name="Service">BITS</Data>
+  <Data Name="Library">C:\Windows\System32\bitsperf.dll</Data>
+  <Data Name="Win32Error">2</Data>
+</EventData>
+```
+
+可以使用以下命令查询这些事件：
+
+```powershell
+Get-WinEvent -FilterHashtable @{LogName='Application'; 'Service'='Bits'}
+```
 
 ## <a name="building-a-query-with-a-hash-table"></a>使用哈希表生成查询
 
