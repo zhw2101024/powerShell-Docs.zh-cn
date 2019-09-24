@@ -138,11 +138,11 @@ Windows PowerShell 为所有 cmdlet 提供了一个通用参数，以及在特�
 
 - [Ihostuisupportsmultiplechoiceselection. "PromptForChoice"](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection.PromptForChoice)
 
-- [PromptForCredential * 的 Pshostuserinterface *。](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.PromptForCredential)
+- [PromptForCredential 的 Pshostuserinterface *。](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.PromptForCredential)
 
-- [Pshostuserinterface * 的功能的 *](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.ReadLine)
+- [Pshostuserinterface 的功能的 *](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.ReadLine)
 
-- [ReadLineAsSecureString * 的 Pshostuserinterface *。](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.ReadLineAsSecureString)
+- [ReadLineAsSecureString 的 Pshostuserinterface *。](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.ReadLineAsSecureString)
 
 ### <a name="document-output-objects-rd06"></a>文档输出对象（RD06）
 
@@ -198,7 +198,7 @@ OutputType 属性（在 Windows PowerShell 2.0 中引入）指定 cmdlet 返回�
 
 - 对于在来自管道的下一条记录（例如，由其他进程生成的记录）上不停止操作的非终止错误，该 cmdlet 必须调用[WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法，该方法引用一个[ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象。 非终止错误的一个示例是特定进程无法停止时出现的错误。 通过调用[WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法，用户可以持续执行请求的操作，并保留失败的特定操作的信息。 你的 cmdlet 应尽可能独立地处理每条记录。
 
-- 由[ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)和[ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) * 方法引用的[WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法所引用的对象的对象，需要使用一个方法来实现其核心发生了异常。 确定要使用的异常时，请遵循 .NET Framework 设计准则。 如果错误在语义上与现有异常相同，请使用该异常或从该异常派生。 否则，直接从[system.exception 类型派生](/dotnet/api/System.Exception)新的异常或异常层次结构。
+- 由[ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)和[ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) 方法引用的[WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法所引用的对象的对象，需要使用一个方法来实现其核心发生了异常。 确定要使用的异常时，请遵循 .NET Framework 设计准则。 如果错误在语义上与现有异常相同，请使用该异常或从该异常派生。 否则，直接从[system.exception 类型派生](/dotnet/api/System.Exception)新的异常或异常层次结构。
 
 [ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象还需要一个为用户分组错误的错误类别。 用户可以通过将`$ErrorView` shell 变量的值设置为 CategoryView，查看基于类别的错误。 可能的类别由[ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory)枚举来定义。
 
