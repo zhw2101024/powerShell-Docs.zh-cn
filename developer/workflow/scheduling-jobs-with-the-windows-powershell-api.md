@@ -1,5 +1,5 @@
 ---
-title: 计划作业使用 Windows PowerShell API |Microsoft Docs
+title: 通过 Windows PowerShell API 安排作业 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/12/2016
 ms.reviewer: ''
@@ -8,24 +8,24 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 64718f8e-de60-4fb7-894d-2975b5257ff6
 caps.latest.revision: 4
-ms.openlocfilehash: 8e1d2feff0665f169966f7d5e99540088e66bdfb
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: bdced961d91088dd75be347b7b74b22467c8c9be
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080350"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71322959"
 ---
-# <a name="scheduling-jobs-with-the-powershell-api"></a>使用 PowerShell API 的计划作业
+# <a name="scheduling-jobs-with-the-powershell-api"></a>通过 PowerShell API 安排作业
 
-可以使用公开的对象**Microsoft.PowerShell.ScheduledJob**命名空间来执行以下操作：
+可以使用**get-scheduledjob**命名空间公开的对象执行以下操作：
 
-- 创建计划的作业。
+- 创建计划作业。
 - 定义作业运行的时间。
-- 获取有关已完成作业的结果。
+- 获取有关已完成的作业的结果。
 
 ## <a name="triggering-the-job"></a>触发作业
 
-创建计划的作业的第一步指定作业的运行。 执行此操作通过创建和配置**Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger**对象。 以下代码创建计划来运行一次在将来 20 秒的作业触发器。
+创建计划作业的第一步是指定作业应运行的时间。 为此，请创建并配置**get-scheduledjob. ScheduledJobTrigger**对象。 下面的代码创建一个触发器，该触发器计划作业在未来20秒运行一次。
 
 ```csharp
 ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
@@ -40,18 +40,18 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
 
 ## <a name="defining-the-job"></a>定义作业
 
-通过创建参数字典定义的 PowerShell 作业。 支持以下参数：
+可以通过创建参数字典来定义 PowerShell 作业。 支持以下参数：
 
-|参数名称|说明|
+|参数名称|描述|
 |--------------------|-----------------|
-|**Name**|作业的名称。|
-|**ScriptBock**|指定对作业功能的 PowerShell 脚本块。|
-|**FilePath**|包含 PowerShell 脚本块来指定作业的文件的路径。|
-|**InitializationScript**|PowerShell 脚本块的初始化作业。|
-|**ArgumentList**|将作业所需的参数指定的对象的数组。|
-|**RunAs32**|一个布尔值，该值指定是否在 32 位进程中运行该作业。|
+|**名称**|作业的名称。|
+|**ScriptBock**|指定作业执行的操作的 PowerShell 脚本块。|
+|**FilePath**|文件的路径，该文件包含用于指定作业执行的操作的 PowerShell 脚本块。|
+|**InitializationScript**|用于初始化作业的 PowerShell 脚本块。|
+|**ArgumentList**|对象的数组，这些对象指定作业所采用的参数。|
+|**RunAs32**|一个布尔值，指定是否在32位进程中运行作业。|
 
-以下代码将创建参数字典对象，并设置**名称**并**脚本块**参数。
+下面的代码创建一个参数字典对象并设置**Name**和**ScriptBlock**参数。
 
 ```csharp
 string schedJobDefName = "MySampleSchedJob";
@@ -66,7 +66,7 @@ string schedJobDefName = "MySampleSchedJob";
 
 ## <a name="creating-the-invocation-and-job-definition-objects"></a>创建调用和作业定义对象
 
-然后，创建`ScheduledJobInvocationInfo`和`ScheduledJobDefinition`对象来运行作业，如下面的示例中所示：
+然后创建`ScheduledJobInvocationInfo`和`ScheduledJobDefinition`对象来运行作业，如以下示例中所示：
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
@@ -82,9 +82,9 @@ ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
 
 ```
 
-## <a name="registering-the-job-with-the-task-scheduler"></a>注册任务计划程序作业
+## <a name="registering-the-job-with-the-task-scheduler"></a>向任务计划程序注册作业
 
-下面的代码注册与作业[Windows 任务计划程序](http://go.microsoft.com/fwlink/?LinkId=251817)。
+下面的代码向[Windows 任务计划程序](https://go.microsoft.com/fwlink/?LinkId=251817)注册作业。
 
 ```csharp
 schedJobDefinition.Register();
@@ -95,7 +95,7 @@ schedJobDefinition.Register();
 
 ## <a name="complete-code-example"></a>完整的代码示例
 
-下面是从其已执行前面的代码片段的完整的代码示例。
+下面是从中获取了前面的代码段的完整代码示例。
 
 ```csharp
 using System;
