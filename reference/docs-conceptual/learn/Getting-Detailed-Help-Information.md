@@ -2,12 +2,12 @@
 ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: 获取详细的帮助信息
-ms.openlocfilehash: 3f52de8c9963618c154b119d5f4859a92d61fbda
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 033a8962ca438b49c10fafa2852c87d19868b4d9
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030398"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71325204"
 ---
 # <a name="getting-detailed-help-information"></a>获取详细的帮助信息
 
@@ -54,25 +54,25 @@ man Get-ChildItem
 help Get-ChildItem
 ```
 
-若要显示详细信息，请使用 `Get-Help` cmdlet 的 Detailed 参数。 例如，若要获取有关 `Get-ChildItem` cmdlet 的详细信息，请键入：
+若要显示详细信息，请使用 `Get-Help` cmdlet 的 Detailed  参数。 例如，若要获取有关 `Get-ChildItem` cmdlet 的详细信息，请键入：
 
 ```powershell
 Get-Help Get-ChildItem -Detailed
 ```
 
-若要显示帮助文章中的所有内容，请使用 `Get-Help` cmdlet 的 Full 参数。 例如，若要显示 `Get-ChildItem` cmdlet 的帮助文章中的所有内容，请键入：
+若要显示帮助文章中的所有内容，请使用 `Get-Help` cmdlet 的 Full  参数。 例如，若要显示 `Get-ChildItem` cmdlet 的帮助文章中的所有内容，请键入：
 
 ```powershell
 Get-Help Get-ChildItem -Full
 ```
 
-若要获取有关 cmdlet 的参数的详细帮助，请使用 `Get-Help` cmdlet 的 Parameter 参数。 例如，若要获取 `Get-ChildItem` cmdlet 的所有参数的详细帮助，请键入：
+若要获取有关 cmdlet 的参数的详细帮助，请使用 `Get-Help` cmdlet 的 Parameter  参数。 例如，若要获取 `Get-ChildItem` cmdlet 的所有参数的详细帮助，请键入：
 
 ```powershell
 Get-Help Get-ChildItem -Parameter *
 ```
 
-若要仅显示帮助文章中的示例，请使用 `Get-Help` 的 Examples 参数。
+若要仅显示帮助文章中的示例，请使用 `Get-Help` 的 Examples  参数。
 例如，若要仅显示 `Get-ChildItem` cmdlet 的帮助文章中的示例，请键入：
 
 ```powershell
@@ -97,7 +97,7 @@ Get-Help about_*
 Get-Help about_command_syntax
 ```
 
-`Get-Help` 的参数（例如 Detailed、Parameter 和 Examples）对概念帮助文章的显示没有影响。
+`Get-Help` 的参数（例如 Detailed  、Parameter  和 Examples  ）对概念帮助文章的显示没有影响。
 
 ## <a name="getting-help-about-providers"></a>获取有关提供程序的帮助
 
@@ -113,7 +113,7 @@ Get-Help registry
 Get-Help -Category provider
 ```
 
-`Get-Help` 的参数（例如 Detailed、Parameter 和 Examples）对提供程序帮助文章的显示没有影响。
+`Get-Help` 的参数（例如 Detailed  、Parameter  和 Examples  ）对提供程序帮助文章的显示没有影响。
 
 ## <a name="getting-help-about-scripts-and-functions"></a>获取有关脚本和函数的帮助
 
@@ -145,7 +145,7 @@ Get-Help c:\ps-test\TestScript.ps1
 
 在线查看帮助文章是获得帮助的最佳方式之一。 在线文章更易于更新并提供最新内容。
 
-若要在线获取帮助，请使用 `Get-Help` cmdlet 的 Online 参数。 PowerShell 附带的所有帮助文章（包括提供程序帮助和概念(关于)帮助文章），都可以在 [PowerShell](/powershell/scripting/powershell-scripting) 文档中在线获取。
+若要在线获取帮助，请使用 `Get-Help` cmdlet 的 Online  参数。 PowerShell 附带的所有帮助文章（包括提供程序帮助和概念(关于)帮助文章），都可以在 [PowerShell](/powershell/scripting/powershell-scripting) 文档中在线获取。
 
 > [!NOTE]
 > 不能将 Online  参数用于概念 (about_\*) 或提供程序帮助文章。
@@ -168,7 +168,7 @@ Get-Help Add-Computer
 该文章“相关链接”部分的第一行如下所示。
 
 ```Output
-Online version: http://go.microsoft.com/fwlink/?LinkId=821564
+Online version: https://go.microsoft.com/fwlink/?LinkId=821564
 ```
 
 有关如何提供帮助文章的在线支持的信息，请参阅 [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)。

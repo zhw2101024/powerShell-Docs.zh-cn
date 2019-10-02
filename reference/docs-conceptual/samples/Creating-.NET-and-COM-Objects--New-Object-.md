@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 创建 .NET 和 COM 对象 (New Object)
-ms.openlocfilehash: 8bb0326d350be634a50897bdcd432e13ec93450c
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 6e98a159451bc7da4ba3b37eaeb813eb71590d2b
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030269"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71325173"
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>创建 .NET 和 COM 对象 (New-Object)
 
@@ -122,7 +122,7 @@ PS> $RemoteAppLog
 
 **New-Object** 使用 .NET Framework 运行时可调用的包装器创建 COM 对象，因此调用 COM 对象时它与 .NET Framework 具有相同的限制。 若要创建 COM 对象，需要为 **ComObject** 参数指定要使用的 COM 类的编程标识符（或 *ProgId*）。 COM 用途限制的全面讨论和确定系统上可用的 ProgId 已超出本用户指南的范围，但来自环境的大多数已知对象（如 WSH）都可在 Windows PowerShell 内使用。
 
-可以通过指定以下 progid 来创建 WSH 对象：WScript.Shell、WScript.Network、Scripting.Dictionary 和 Scripting.FileSystemObject。 以下命令将创建这些对象：
+可以通过指定以下 progid 来创建 WSH 对象：WScript.Shell  、WScript.Network  、Scripting.Dictionary  和 Scripting.FileSystemObject  。 以下命令将创建这些对象：
 
 ```powershell
 New-Object -ComObject WScript.Shell
@@ -226,7 +226,7 @@ $ie.Visible = $true
 然后可以通过使用 Navigate 方法导航到特定的 Web 地址：
 
 ```powershell
-$ie.Navigate("http://www.microsoft.com/technet/scriptcenter/default.mspx")
+$ie.Navigate("https://devblogs.microsoft.com/scripting/")
 ```
 
 使用 Internet Explorer 对象模型的其他成员，可以从网页中检索文本内容。 下面的命令将在当前网页的正文中显示 HTML 文本：

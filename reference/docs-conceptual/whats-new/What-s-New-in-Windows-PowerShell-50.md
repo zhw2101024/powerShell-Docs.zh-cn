@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell 5.0 中的新增功能
-ms.openlocfilehash: b2cb729948d4b53c5ea9a536dbeda04c7cb50997
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d86c9c947c521e0aee261a8a0335f1557b0d5a34
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62085943"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71325141"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 中的新增功能
 
@@ -117,7 +117,7 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 - 已增强了 New-Item、Remove-Item、Get-ChildItem 的功能，用于支持创建和管理[符号链接](https://en.wikipedia.org/wiki/Symbolic_link)。 New-Item 的 **ItemType** 参数接受一个新的值 **SymbolicLink**。 现在可通过运行 New-Item cmdlet 在单行中创建符号链接。
 - Get-ChildItem 也有一个新的 -Depth 参数，可将该参数与 -Recurse 参数一起使用，以限制递归。 例如，Get-ChildItem -Recurse -Depth 2 从当前文件夹、当前文件夹中的所有子文件夹，以及子文件夹中的所有文件夹返回结果。
 - 现在 Copy-Item 使你能够将文件或文件夹从一个 Windows PowerShell 会话复制到另一个会话中，意味着可以将文件复制到已连接至远程计算机（包括运行 [Nano Server](https://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx) 因而没有其他界面的计算机）的会话中。 若要复制文件，请将 PSSession ID 指定为新的 -FromSession 和 -ToSession 参数的值，并添加 -Path 和 -Destination 以分别指定源路径和目标位置。 例如，Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder。
-- 除了控制台主机 (**powershell.exe**) 外，Windows PowerShell 转录已经得到改进以应用到所有主机应用程序（例如 Windows PowerShell ISE）。 脚本选项（包括启用 system-wide 脚本）可以通过启用“打开 PowerShell 脚本”组策略设置（位于 Administrative Templates/Windows Components/Windows PowerShell）来进行配置。
+- 除了控制台主机 (**powershell.exe**) 外，Windows PowerShell 转录已经得到改进以应用到所有主机应用程序（例如 Windows PowerShell ISE）。 脚本选项（包括启用 system-wide 脚本）可以通过启用“打开 PowerShell 脚本”  组策略设置（位于 Administrative Templates/Windows Components/Windows PowerShell）来进行配置。
 - 新的“详细脚本跟踪”功能让你能够启用系统上使用的 Windows PowerShell 脚本的详细跟踪和分析。 在启用详细脚本跟踪后，Windows PowerShell 会将所有的脚本块记录到 **Microsoft-Windows-PowerShell/Operational** 的 Windows 事件跟踪 (ETW) 事件日志中。
 - 从 Windows PowerShell 5.0 开始，新的加密消息语法 cmdlet 通过使用加密保护消息的 IETF 标准格式对内容的加密和解密提供支持，如 [RFC5652](https://tools.ietf.org/html/rfc5652) 中所述。 已将 Get-CmsMessage、Protect-CmsMessage 和 Unprotect-CmsMessage cmdlet 添加到 [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh849807.aspx) 模块中。
 - [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) 中新的 cmdlet 包括 Get-Runspace、Debug-Runspace、Get-RunspaceDebug、Enable-RunspaceDebug 和 Disable-RunspaceDebug，使你能够在运行空间上设置调试选型，以及在运行空间上开始和停止调试。 针对调试任意运行空间（即不是 Windows PowerShell 控制台或 Windows PowerShell ISE 会话默认的运行空间），Windows PowerShell 使你能够在脚本中设置断点，并添加了断点以停止脚本运行，直到你可以附加调试器来调试运行空间脚本。 已将对任意运行空间的嵌套调试支持添加到了运行空间的 Windows PowerShell 脚本调试器中。
@@ -137,13 +137,13 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 - 你现在可以通过运行 Test-ModuleManifest cmdlet 执行模块版本验证。
 - 现在 Get-Command cmdlet 的结果显示版本列；一个新的版本属性已添加到 CommandInfo 类中。 Get-Command 从相同模块的多个版本中显示命令。 Version 属性也是 CmdletInfo 的派生类的一部分：CmdletInfo 和 ApplicationInfo。
 - Get-Command 拥由一个新的参数 -ShowCommandInfo，它将 ShowCommand 信息作为 PSObjects 返回。 当通过使用 Windows PowerShell 远程在 Windows PowerShell ISE 中运行 Show-Command 时，这是非常有用的功能。 -ShowCommandInfo 参数替换了 Microsoft.PowerShell.Utility 模块中现有的 Get-SerializedCommand 函数，但 Get-SerializedCommand 脚本仍可用于支持下层脚本。
-- 新的 Get-ItemPropertyValue cmdlet 使你能够获取属性的值，而无需使用点表示法。 例如，在 Windows PowerShell 的较旧版本中，可以运行以下命令来获取 PowerShellEngine 注册表项的 Application Base 属性的值：(Get-ItemProperty -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase).ApplicationBase。 从 PowerShell 5.0 开始，可运行 **Get-ItemPropertyValue -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase**。
+- 新的 Get-ItemPropertyValue cmdlet 使你能够获取属性的值，而无需使用点表示法。 例如，在 Windows PowerShell 的较旧版本中，可以运行以下命令来获取 PowerShellEngine 注册表项的 Application Base 属性的值：(Get-ItemProperty -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase).ApplicationBase  。 从 PowerShell 5.0 开始，可运行 **Get-ItemPropertyValue -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase**。
 - Windows PowerShell 控制台现在使用语法着色，就像 Windows PowerShell ISE 中一样。
 - 新的 NetworkSwitch 模块包括的 cmdlet 使你能够将交换机、虚拟 LAN (VLAN) 和基本第 2 层网络交换机端口配置应用到 Windows Server 2012 R2 徽章认证的网络交换机中。
 - 已将 FullyQualifiedName 参数添加到 Import-Module 和 Remove-Module cmdlet 中，用于支持存储单个模块的多个版本。
 - Save-Help、Update-Help、Import-PSSession、Export-PSSession 和 Get-Command 拥有一个新的参数，ModuleSpecification 类型的 FullyQualifiedModule。 添加此参数以按模块的完全限定名称来指定它。
 - **$PSVersionTable.PSVersion** 的值已更新为 5.0。
-- WMF 5.0 (PowerShell 5.0) 包括 Pester 模块。  Pester 是 PowerShell 的单元测试框架。 它提供了几个易于使用的关键字，可用于为脚本创建测试。
+- WMF 5.0 (PowerShell 5.0) 包括 Pester  模块。  Pester 是 PowerShell 的单元测试框架。 它提供了几个易于使用的关键字，可用于为脚本创建测试。
 
 ### <a name="new-features-in-windows-powershell-desired-state-configuration"></a>Windows PowerShell Desired State Configuration 中的新增功能
 
@@ -181,7 +181,7 @@ Windows PowerShell 5.0 可向后兼容。 为 Windows PowerShell 4.0、Windows P
 
 ### <a name="new-features-in-windows-powershell-ise"></a>Windows PowerShell ISE 中的新增功能
 
-- 你现在可以通过运行 Enter-PSSession 在存储你希望编辑的文件的计算机上启动远程会话，然后运行 PSEdit \<远程计算机上的路径和文件名\> 以在 Windows PowerShell ISE 的本地副本中编辑远程 Windows PowerShell 脚本和文件。 此功能实现轻松编辑存储在 Windows Server 的服务器核心安装选项（Windows PowerShell ISE 无法在其中运行）上的 Windows PowerShell 文件。
+- 你现在可以通过运行 Enter-PSSession 在存储你希望编辑的文件的计算机上启动远程会话，然后运行 PSEdit \<远程计算机上的路径和文件名\>  以在 Windows PowerShell ISE 的本地副本中编辑远程 Windows PowerShell 脚本和文件。 此功能实现轻松编辑存储在 Windows Server 的服务器核心安装选项（Windows PowerShell ISE 无法在其中运行）上的 Windows PowerShell 文件。
 - Windows PowerShell ISE 中现在支持 Start-Transcript cmdlet。
 - 现在可以在 Windows PowerShell ISE 中调试远程脚本。
 - 新的菜单命令 **Break All** (Ctrl+B) 会强行进入本地和远程运行的脚本的调试器中。
@@ -217,7 +217,7 @@ Windows PowerShell 4.0 包括以下新增功能。
 - Windows PowerShell 调试器已经过增强，从而允许对 Windows PowerShell 工作流以及在远程计算机上运行的脚本进行调试。 现在，Windows PowerShell 工作流都可以从 Windows PowerShell 命令行或 Windows PowerShell ISE 在脚本级别进行调试。 现在，可通过远程会话来调试 Windows PowerShell 脚本，包括脚本工作流。 远程调试会话是通过先断开连接再重新连接的 Windows PowerShell 远程会话保留的。
 - **Register-ScheduledJob** 和 **Set-ScheduledJob** 的 **RunNow** 参数无需使用 **Trigger** 参数为作业设置即时启动日期和时间。
 - **Invoke-RestMethod** 和 **Invoke-WebRequest** 现在使你能够使用 Headers 参数来设置所有标头。 虽然此参数一直存在，但它也是会导致异常或错误的 Web cmdlet 的几个参数之一。
-- **Get-Module** 具有一个新参数 **FullyQualifiedName**，其类型为 **ModuleSpecification\[]**。 Get-Module 的参数 **FullyQualifiedName** 现在使你能够通过使用模块的名称、版本和 GUID（可选）来指定该模块。
+- **Get-Module** 具有一个新参数 **FullyQualifiedName**，其类型为 **ModuleSpecification\[]** 。 Get-Module 的参数 **FullyQualifiedName** 现在使你能够通过使用模块的名称、版本和 GUID（可选）来指定该模块。
 - Windows Server 2012 R2 上的默认执行策略设置为 **RemoteSigned**。 在 Windows 8.1 上，默认设置保持不变。
 - 从 Windows PowerShell 4.0 开始，支持通过使用动态方法名称来调用方法。 你可以使用变量来存储方法名称，然后通过调用该变量动态调用该方法。
 - 超过由 **PSElapsedTimeoutSec** 工作流通用参数指定的超时期限时，不再删除异步工作流作业。
@@ -241,7 +241,7 @@ Windows PowerShell 4.0 包括以下新增功能。
 
 - 已添加对迭代管道上下文中新的 **PipelineVariable** 通用参数的支持，其中迭代管道是指诸如这些由 System Center Orchestrator 所使用的管道；即相对于通过使用流式处理交错运行，只需从左到右运行命令的管道。
 - 参数绑定已得到显著增强，从而在 Tab 自动补全情况以外的其他情况下使用，例如用于当前运行空间中不存在的命令。
-- 已向 Windows PowerShell 工作流添加对自定义容器活动的支持。 如果某个活动参数 Activity\[] 属于类型 Activity（或为泛型活动集合），并且用户已提供一个脚本块作为实际参数，则 Windows PowerShell 工作流会将该脚本块转换为 XAML，正如处理普通的 Windows PowerShell 脚本到工作流编译一样。
+- 已向 Windows PowerShell 工作流添加对自定义容器活动的支持。 如果某个活动参数 Activity\[] 属于类型 Activity（或为泛型活动集合），并且用户已提供一个脚本块作为实际参数，则 Windows PowerShell 工作流会将该脚本块转换为 XAML，正如处理普通的 Windows PowerShell 脚本到工作流编译一样   。
 - 在发生崩溃之后，Windows PowerShell 工作流会自动重新连接到托管的节点。
 - 你现在可以通过使用 **ThrottleLimit** 属性来限制 **Foreach -Parallel** 活动语句。
 - **ErrorAction** 通用参数具有一个专用于工作流的新的有效值：**Suspend**。
@@ -331,7 +331,7 @@ Windows PowerShell 工作流将 Windows Workflow Foundation 的强大功能引�
 - **远程监控长期运行的任务**。 活动的状态和进度随时可见。
 - **多计算机管理。** 同时在数百个托管节点上将任务作为工作流运行。 Windows PowerShell 工作流包含了一个内置的常用管理参数（例如 **PSComputerName**）库，实现了多计算机管理方案。
 - **复杂进程的单个任务执行。** 你可将实施整个端到端方案的相关脚本集成到单个工作流中。
-- **暂留。**：工作流保存在由其作者定义的特定点上（或在这些点上对工作流执行检查点），以便你可以从最后暂留的任务（或检查点）恢复该工作流，而不是从开头重启该工作流。
+- **暂留。** ：工作流保存在由其作者定义的特定点上（或在这些点上对工作流执行检查点），以便你可以从最后暂留的任务（或检查点）恢复该工作流，而不是从开头重启该工作流。
 - **稳定性。** 自动的故障恢复。 工作流支持计划和非计划的重新启动。 你可以挂起工作流执行，然后从最后一个暂留点恢复该工作流。 工作流作者可以指定当在一个或多个托管节点上出现故障时，要重新运行的特定活动。
 - **断开连接、重新连接以及在已断开连接的会话中运行的能力。** 用户可以连接和断开工作流服务器，但工作流依旧继续运行。 你可以注销客户端计算机或重新启动客户端计算机，并通过其他计算机监视工作流执行，而不中断工作流。
 - **计划。** 可以像计划任何 Windows PowerShell cmdlet 或脚本那样计划工作流任务。
@@ -407,7 +407,7 @@ Windows PowerShell 3.0 中的 **Get-Help -Online** 功能现在更加强大了�
 
 ```
 PS C:\>(Get-Command Get-ScheduledJob).HelpUri
-http://go.microsoft.com/fwlink/?LinkID=223923
+https://go.microsoft.com/fwlink/?LinkID=223923
 ```
 
 从 Windows PowerShell 3.0 开始，C# cmdlet 的作者可以通过在 cmdlet 类上创建 **HelpUri** 特性来填充 **HelpUri** 属性。 高级函数的作者可以在 **CmdletBinding** 特性上定义 **HelpUri** 属性。 **HelpUri** 属性的值必须以“http”或“https”开头。

@@ -2,19 +2,19 @@
 ms.date: 04/11/2018
 keywords: dsc,powershell,配置,安装程序
 title: 设置 DSC SMB 请求服务器
-ms.openlocfilehash: 9d087a08861b2f4683e81efd1e25f857b8b75e07
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 25705d9ae06b3ce8daa352142cc0b84793ab6359
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079279"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324863"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>设置 DSC SMB 请求服务器
 
 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> 请求服务器（Windows 功能 DSC-Service）是 Windows Server 的一个受支持组件，不过目前没有提供新功能的计划。 建议开始将托管客户端转换至 [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)（包括 Windows Server 上的请求服务器以外的功能）或[此处](pullserver.md#community-solutions-for-pull-service)列出的社区解决方案之一。
+> 请求服务器（Windows 功能 DSC-Service）是 Windows Server 的一个受支持组件，不过目前没有提供新功能的计划  。 建议开始将托管客户端转换至 [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)（包括 Windows Server 上的请求服务器以外的功能）或[此处](pullserver.md#community-solutions-for-pull-service)列出的社区解决方案之一。
 
 DSC [SMB](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11)) 请求服务器是计算机托管 SMB 文件共享，可在目标节点提出请求时向它们提供 DSC 配置文件和 DSC 资源。
 
@@ -32,7 +32,7 @@ DSC [SMB](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh83
 调用 [Install-Module](/powershell/module/PowershellGet/Install-Module) cmdlet 可以安装 **xSmbShare** 模块。
 
 > [!NOTE]
-> `Install-Module` 包含在 PowerShellGet 模块中，后者纳入 PowerShell 5.0。 可在 [PackageManagement PowerShell 模块预览](https://www.microsoft.com/en-us/download/details.aspx?id=49186)中下载适用于 PowerShell 3.0 和 4.0 的 **PowerShellGet**。
+> `Install-Module` 包含在 PowerShellGet  模块中，后者纳入 PowerShell 5.0。 可在 [PackageManagement PowerShell 模块预览](https://www.microsoft.com/en-us/download/details.aspx?id=49186)中下载适用于 PowerShell 3.0 和 4.0 的 **PowerShellGet**。
 > **xSmbShare** 包含 DSC 资源 **xSmbShare**，后者可用于创建 SMB 文件共享。
 
 ### <a name="create-the-directory-and-file-share"></a>创建目录和文件共享
@@ -69,7 +69,7 @@ Configuration SmbShare
 }
 ```
 
-该配置会创建目录 `C:\DscSmbShare`（如果尚未存在），随后将该目录用作 SMB 文件共享。 应将 FullAccess 授予给任何需要对文件共享进行写入或删除的帐户。 必须将 ReadAccess 授予给任何从共享获取配置和/或 DSC 资源的客户端节点。
+该配置会创建目录 `C:\DscSmbShare`（如果尚未存在），随后将该目录用作 SMB 文件共享。 应将 FullAccess  授予给任何需要对文件共享进行写入或删除的帐户。 必须将 ReadAccess  授予给任何从共享获取配置和/或 DSC 资源的客户端节点。
 
 > [!NOTE]
 > DSC 在默认情况下作为系统帐户进行运行，因此计算机本身必须有权访问共享。
@@ -159,13 +159,13 @@ Configuration DSCSMB
 有关配置 LCM 的详细信息，请参阅[使用配置 ID 设置请求客户端](pullClientConfigID.md)。
 
 > [!NOTE]
-> 为简单起见，此示例使用 PSDscAllowPlainTextPassword，以允许将明文密码传递到 Credential 参数。 有关更安全传递凭据的信息，请参阅[配置数据中的凭据选项](../configurations/configDataCredentials.md)。
+> 为简单起见，此示例使用 PSDscAllowPlainTextPassword  ，以允许将明文密码传递到 Credential  参数。 有关更安全传递凭据的信息，请参阅[配置数据中的凭据选项](../configurations/configDataCredentials.md)。
 >
-> 即使仅请求资源，也必须在 SMB 请求服务器的 metaconfiguration“设置”块中指定“ConfigurationID”。
+> 即使仅请求资源，也必须  在 SMB 请求服务器的 metaconfiguration“设置”  块中指定“ConfigurationID”  。
 
 ```powershell
-$secpasswd = ConvertTo-SecureString “Pass1Word” -AsPlainText -Force
-$mycreds = New-Object System.Management.Automation.PSCredential (“TestUser”, $secpasswd)
+$secpasswd = ConvertTo-SecureString "Pass1Word" -AsPlainText -Force
+$mycreds = New-Object System.Management.Automation.PSCredential ("TestUser", $secpasswd)
 
 [DSCLocalConfigurationManager()]
 configuration SmbCredTest

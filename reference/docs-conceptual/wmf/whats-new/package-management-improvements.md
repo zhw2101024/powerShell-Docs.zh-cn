@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,安装程序
 title: WMF 5.1 中对包管理的改进
-ms.openlocfilehash: 24ff05d6bf5993826106f1a1d2cee6dad363d1e2
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.openlocfilehash: cb19c2d71391b5729ce9d73fc6b033270f8db307
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71147787"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71325118"
 ---
 # <a name="improvements-to-package-management-in-wmf-51"></a>WMF 5.1 中对包管理的改进
 
@@ -66,5 +66,5 @@ Find-Package -Source <SourceWithCredential> -Credential (Get-Credential)
 在 WMF 5.1 中，PackageManagement 现在采用新的代理参数 `-ProxyCredential` 和 `-Proxy`。 使用这些参数可以向 PackageManagement cmdlets 指定代理 URL 和凭据。 默认情况下，会使用系统代理设置。 例如：
 
 ```powershell
-Find-Package -Source http://www.nuget.org/api/v2/ -Proxy http://www.myproxyserver.com -ProxyCredential (Get-Credential)
+Find-Package -Source https://www.nuget.org/api/v2/ -Proxy http://www.myproxyserver.com -ProxyCredential (Get-Credential)
 ```

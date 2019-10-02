@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 了解 CI/CD 管道中的 DSC 角色
-ms.openlocfilehash: 7aec414b3d8e61d1daa1ce796184ac34dbbb43ce
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a8e2e6ef4634216ae7468384b8e1f4d849bb997a
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079784"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71324964"
 ---
 # <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>了解 CI/CD 管道中的 DSC 角色
 
@@ -46,7 +46,7 @@ ms.locfileid: "62079784"
 
 除此之外，客户还提供了反馈，在使用此模型时，每个控制团队的配置更改都不太可能通过发布管道进行全面测试，从而导致生产中出现意外结果。
 
-使用单个管道评估发布到服务器的所有更改至关重要。
+使用单个管道评估发布到服务器的所有更改至关重要  。
 
 在下图中，团队 B 将其部分配置发布到团队 A，然后团队 A 针对应用了两种配置的服务器运行测试。
 在此模型中，只有一个机构有权在生产中进行更改。
@@ -73,20 +73,20 @@ Configuration Name
 {
   File 1
   {
-    Ensure = “Present”
-    Path = “c:\inetpub\file1.zip”
-    Source = “http://uri/file1.zip”
+    Ensure = "Present"
+    Path = "c:\inetpub\file1.zip"
+    Source = "http://uri/file1.zip"
   }
   Service A
   {
-    Ensure = “Present”
-    Name = “ServiceA”
-    Status = “Running”
+    Ensure = "Present"
+    Name = "ServiceA"
+    Status = "Running"
   }
   SecurityBaseline Settings
   {
-    Ensure = “Present”
-    Datacenter = “NorthAmerica”
+    Ensure = "Present"
+    Datacenter = "NorthAmerica"
   }
 }
 ```
@@ -94,7 +94,7 @@ Configuration Name
 复合资源在构建操作成熟度的同时使用管道促进组合和协作
 
 你可能已在使用复合资源却没有意识到这一点。
-ServiceSet 就是一个示例。
+ServiceSet 就是一个示例  。
 此资源管理多个 Windows 服务的状态，而无需单独列出它们。
 Name 属性接受一个字符串数组，以提供每个服务的名称。
 编译配置时，MOF 将包含传递给 ServiceSet 的每个名称的唯一服务部分。
