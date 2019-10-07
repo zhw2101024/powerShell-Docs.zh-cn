@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 安装和使用 Windows PowerShell Web 访问
-ms.openlocfilehash: 53558f9be5065c7f630f06e535ddab4d7ad72d9e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5f6e94859c55bbd07f3f8a83bc4b9a83bc89d0fa
+ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058554"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71692252"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>安装和使用 Windows PowerShell Web 访问
 
@@ -103,7 +103,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -IncludeManagementTools -Restart`
 
-1. 安装完成后，验证 Windows PowerShell Web 访问是否已安装在目标服务器上，方法是：在使用提升的用户权限打开的 Windows PowerShell 控制台中，在目标服务器上运行 `Get-WindowsFeature` cmdlet。 你还可以验证 Windows PowerShell Web 访问是否已安装在 Server Manager 控制台中，方法是在“所有服务器”页面上选择目标服务器，然后查看所选服务器的“角色和功能”磁贴。 你还可以查看 Windows PowerShell Web 访问的自述文件。
+1. 安装完成后，验证 Windows PowerShell Web 访问是否已安装在目标服务器上，方法是：在使用提升的用户权限打开的 Windows PowerShell 控制台中，在目标服务器上运行 `Get-WindowsFeature` cmdlet。 你还可以验证 Windows PowerShell Web 访问是否已安装在 Server Manager 控制台中，方法是在“所有服务器”  页面上选择目标服务器，然后查看所选服务器的“角色和功能”  磁贴。 你还可以查看 Windows PowerShell Web 访问的自述文件。
 
 1. 安装 Windows PowerShell Web 访问后，系统将提示你查看自述文件，该文件包含网关的基本且必需的设置说明。 有关这些设置说明，还可以参阅以下部分：[配置网关](#configure-the-gateway)。 自述文件路径为 `C:\Windows\Web\PowerShellWebAccess\wwwroot\README.txt`。
 
@@ -114,20 +114,20 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 可完成 Windows PowerShell Web 访问 Web 应用程序配置，方法是运行 `Install-PswaWebApplication` cmdlet，或在 IIS Manager 中执行基于 GUI 的配置步骤。
 默认情况下，cmdlet 在**默认网站**容器中安装 Web 应用程序、**pswa**（及其应用程序池 **pswa_pool**），如 IIS 管理器所示；必要时，你可指示 cmdlet 更改 Web 应用程序的默认网站容器。 IIS 管理器提供可供 Web 应用程序使用的配置选项，例如更改端口号或安全套接字层 (SSL) 证书。
 
-> ![Security Note](images/securitynote.jpeg) 安全说明：我们强烈推荐管理员配置网关，以使用 CA 已签名的有效证书。
+> ![Security Note](images/securitynote.jpeg) 安全说明  ：我们强烈推荐管理员配置网关，以使用 CA 已签名的有效证书。
 
 #### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication"></a>使用 Install-PswaWebApplication，配置带有测试证书的 Windows PowerShell Web 访问网关。
 
 1. 执行以下操作之一，打开 Windows PowerShell 会话。
 
-   - 在 Windows 桌面上，右键单击任务栏上的 Windows PowerShell。
+   - 在 Windows 桌面上，右键单击任务栏上的 Windows PowerShell  。
    - 在 Windows **开始**屏幕上，单击**Windows PowerShell**。
 
 2. 键入以下命令，然后按**Enter**。
 
    `Install-PswaWebApplication -UseTestCertificate`
 
-   > ![Security Note](images/securitynote.jpeg) 安全说明：`UseTestCertificate` 参数仅可在专用测试环境中使用。 对于安全的生产环境，建议使用证书颁发机构已签名的有效证书。
+   > ![Security Note](images/securitynote.jpeg) 安全说明  ：`UseTestCertificate` 参数仅可在专用测试环境中使用。 对于安全的生产环境，建议使用证书颁发机构已签名的有效证书。
 
    通过运行 cmdlet，在 IIS 默认网站容器中安装 Windows PowerShell Web 访问 Web 应用程序。 cmdlet 创建在默认网站 `https://<server_name>/pswa` 上运行 Windows PowerShell Web 访问所必需的基础结构。 若要在不同的网站上安装 Web 应用程序，请添加 `WebSiteName` 参数，以提供网站名称。 若要更改 Web 应用程序的名称（默认名称是 `pswa`），请添加 `WebApplicationName` 参数。
 
@@ -138,7 +138,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
    - EnabledProtocols: http
    - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
-   示例：`Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate`
+   示例：`Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate` 
 
    在本示例中，Windows PowerShell Web 访问的相关网站是 `https://<server_name>/myWebApp`。
 
@@ -149,7 +149,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 1. 执行以下操作之一，打开 Windows PowerShell 会话。
 
-   - 在 Windows 桌面上，右键单击任务栏上的 Windows PowerShell。
+   - 在 Windows 桌面上，右键单击任务栏上的 Windows PowerShell  。
    - 在 Windows **开始**屏幕上，单击**Windows PowerShell**。
 
 2. 键入以下命令，然后按**Enter**。
@@ -165,10 +165,10 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 3. 通过执行以下操作之一，打开 IIS 管理器控制台。
 
-   - 在 Windows 桌面上，启动服务器管理器，方法是单击 Windows 任务栏中的“服务器管理器”。 在“服务器管理器”的**工具**菜单中，单击**Internet Information Services (IIS) Manager**。
+   - 在 Windows 桌面上，启动服务器管理器，方法是单击 Windows 任务栏中的“服务器管理器”  。 在“服务器管理器”的**工具**菜单中，单击**Internet Information Services (IIS) Manager**。
    - 在 Windows **开始**屏幕上，单击**服务器管理器**。
 
-4. 在 IIS 管理器树窗格中，展开已安装 Windows PowerShell Web 访问的服务器的节点，直到“站点”文件夹可见。 展开“网站”文件夹。
+4. 在 IIS 管理器树窗格中，展开已安装 Windows PowerShell Web 访问的服务器的节点，直到“站点”  文件夹可见。 展开“网站”  文件夹。
 
 5. 选择你已安装 Windows PowerShell Web 访问的 Web 应用程序的网站。
    在**操作**窗格中，单击**绑定**。
@@ -177,7 +177,7 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 7. 在**添加网站绑定**对话框中，在**类型**字段，选择**https**。
 
-8. 在“SSL 证书”字段中，从下拉菜单中选择你的已签名证书。
+8. 在“SSL 证书”  字段中，从下拉菜单中选择你的已签名证书。
    单击**确定**。 有关如何获得证书的详细信息，请参阅本主题中的[在 IIS 管理器中配置 SSL 证书](#to-configure-an-ssl-certificate-in-iis-manager)。
 
    现可配置 Windows PowerShell Web 访问 Web 应用程序，以便使用已签名的 SSL 证书。
@@ -227,15 +227,15 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 1. 如果服务器管理器已经打开，则继续执行下一步。 如果服务器管理器尚未打开，请执行以下任一操作打开它。
 
-   - 在 Windows 桌面上，启动服务器管理器，方法是单击 Windows 任务栏中的“服务器管理器”。
+   - 在 Windows 桌面上，启动服务器管理器，方法是单击 Windows 任务栏中的“服务器管理器”  。
    - 在 Windows **开始**屏幕上，单击**服务器管理器**。
 
 2. 在**管理**菜单上，单击**添加角色和功能**。
 
-3. 在“选择安装类型”页上，选择“基于角色或基于功能的安装”。
+3. 在“选择安装类型”  页上，选择“基于角色或基于功能的安装”  。
    单击**下一步**。
 
-4. 在“选择目标服务器”页面上，从服务器池中选择一台服务器，或选择脱机 VHD。 若要将离线的 VHD 选择为你的目标服务器，则先选择安装 VHD 的服务器，然后选择 VHD 文件。 有关如何将服务器添加到服务器池的详细信息，请参阅服务器管理器帮助。 选择目标服务器后，单击**下一步**。
+4. 在“选择目标服务器”  页面上，从服务器池中选择一台服务器，或选择脱机 VHD。 若要将离线的 VHD 选择为你的目标服务器，则先选择安装 VHD 的服务器，然后选择 VHD 文件。 有关如何将服务器添加到服务器池的详细信息，请参阅服务器管理器帮助。 选择目标服务器后，单击**下一步**。
 
 5. 在向导的**选择功能**页面上，展开**Windows PowerShell**，然后选择**Windows PowerShell Web 访问**。
 
@@ -244,9 +244,9 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
    > [!NOTE]
    > 通过使用“添加角色和功能向导”安装 Windows PowerShell Web 访问还将安装 Web 服务器 (IIS)，包括 IIS 管理器管理单元。 如果你使用“添加角色和功能向导”，则在默认情况下，也安装了管理单元及其他 IIS 管理工具。 如果你按照以下步骤，使用 Windows PowerShell cmdlet 安装 Windows PowerShell Web 访问，则不会默认添加管理工具。
 
-7. 在“确认安装选择”页面上，如果 Windows PowerShell Web 访问的功能文件并不存储在你在步骤 4 中所选的目标服务器上，则单击“指定备用的源路径”，并提供功能文件的路径。 否则，单击**安装**。
+7. 在“确认安装选择”  页面上，如果 Windows PowerShell Web 访问的功能文件并不存储在你在步骤 4 中所选的目标服务器上，则单击“指定备用的源路径”  ，并提供功能文件的路径。 否则，单击**安装**。
 
-8. 单击“安装”后，“安装进度”页面将显示安装进度、结果以及有关警告、故障或 Windows PowerShell Web 访问所必需的安装后配置步骤的信息。 安装 Windows PowerShell Web 访问后，系统将提示你查看自述文件，该文件包含网关的基本且必需的设置说明。 这些说明也包括在本主题中。 自述文件路径为 `C:\Windows\Web\PowerShellWebAccess\wwwroot\README.txt`。
+8. 单击“安装”  后，“安装进度”  页面将显示安装进度、结果以及有关警告、故障或 Windows PowerShell Web 访问所必需的安装后配置步骤的信息。 安装 Windows PowerShell Web 访问后，系统将提示你查看自述文件，该文件包含网关的基本且必需的设置说明。 这些说明也包括在本主题中。 自述文件路径为 `C:\Windows\Web\PowerShellWebAccess\wwwroot\README.txt`。
 
 ### <a name="configure-the-gateway"></a>配置网关
 
@@ -256,33 +256,33 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 1. 通过执行以下操作之一，打开 IIS 管理器控制台。
 
-   - 在 Windows 桌面上，启动服务器管理器，方法是单击 Windows 任务栏中的“服务器管理器”。 在“服务器管理器”的**工具**菜单中，单击**Internet Information Services (IIS) Manager**。
-   - 在 Windows“开始”屏幕上，键入“Internet 信息服务 (IIS) 管理器”名称的任何部分。 当它在“应用程序”结果中显示时，单击快捷方式。
+   - 在 Windows 桌面上，启动服务器管理器，方法是单击 Windows 任务栏中的“服务器管理器”  。 在“服务器管理器”的**工具**菜单中，单击**Internet Information Services (IIS) Manager**。
+   - 在 Windows“开始”  屏幕上，键入“Internet 信息服务 (IIS) 管理器”  名称的任何部分。 当它在“应用程序”  结果中显示时，单击快捷方式。
 
-2. 为 Windows PowerShell Web 访问创建新的应用程序池。 在 IIS 管理器树窗格中展开网关服务器的节点，选择“应用程序池”，然后单击“操作”窗格中的“添加应用程序池”。
+2. 为 Windows PowerShell Web 访问创建新的应用程序池。 在 IIS 管理器树窗格中展开网关服务器的节点，选择“应用程序池”  ，然后单击“操作”  窗格中的“添加应用程序池”  。
 
 3. 为新的应用程序池添加名称 **pswa_pool**，或提供其他名称。 单击**确定**。
 
-4. 在 IIS 管理器树窗格中，展开已安装 Windows PowerShell Web 访问的服务器的节点，直到“站点”文件夹可见。 选择“站点”文件夹。
+4. 在 IIS 管理器树窗格中，展开已安装 Windows PowerShell Web 访问的服务器的节点，直到“站点”  文件夹可见。 选择“站点”  文件夹。
 
 5. 右键单击你想添加 Windows PowerShell Web 访问网站的网站（例如，**默认网站**），然后单击**添加应用程序**。
 
-6. 在“别名”字段中，键入 pswa 或提供其他别名。 别名变为虚拟目录的名称。 例如，在以下 URL 中的 pswa 表示在本步骤中指定的别名：`https://<server-name>/pswa`。
+6. 在“别名”  字段中，键入 pswa 或提供其他别名。 别名变为虚拟目录的名称。 例如，在以下 URL 中的 pswa  表示在本步骤中指定的别名：`https://<server-name>/pswa`。
 
-7. 在“应用程序池”字段中，选择在步骤 3 中创建的应用程序池。
+7. 在“应用程序池”  字段中，选择在步骤 3 中创建的应用程序池。
 
-8. 在“物理路径”字段中，浏览到应用程序的位置。 可以使用默认位置 `$env:windir/Web/PowerShellWebAccess/wwwroot`。 单击**确定**。
+8. 在“物理路径”  字段中，浏览到应用程序的位置。 可以使用默认位置 `$env:windir/Web/PowerShellWebAccess/wwwroot`。 单击**确定**。
 
 9. 按照本主题中的过程 [在 IIS 管理器中配置 SSL 证书](#to-configure-an-ssl-certificate-in-iis-manager) 中的步骤执行。
 
-10. ![](images/SecurityNote.jpeg) 可选安全步骤：
+10. ![安全说明](images/SecurityNote.jpeg) 可选安全步骤：
 
-    利用树窗格中所选的网站，双击内容窗格中的“SSL 设置”。
-    选择“需要 SSL”，然后在“操作”窗格中，单击“应用”。 此外，在“SSL 设置”窗格中，你可要求连接到 Windows PowerShell Web 访问网站的用户持有客户端证书。 客户端证书可协助验证客户端设备用户的身份。 有关要求提供客户端证书如何提高 Windows PowerShell Web 访问的安全性的详细信息，请参阅本指南中 [Windows PowerShell Web 访问的授权规则和安全功能](authorization-rules-and-security-features-of-windows-powershell-web-access.md)。
+    利用树窗格中所选的网站，双击内容窗格中的“SSL 设置”  。
+    选择“需要 SSL”  ，然后在“操作”  窗格中，单击“应用”  。 此外，在“SSL 设置”  窗格中，你可要求连接到 Windows PowerShell Web 访问网站的用户持有客户端证书。 客户端证书可协助验证客户端设备用户的身份。 有关要求提供客户端证书如何提高 Windows PowerShell Web 访问的安全性的详细信息，请参阅本指南中 [Windows PowerShell Web 访问的授权规则和安全功能](authorization-rules-and-security-features-of-windows-powershell-web-access.md)。
 
 11. 在客户端设备上打开浏览器会话。 有关受支持的浏览器和设备的详细信息，请参阅本主题中的[浏览器和客户端设备支持](#browser-and-client-device-support)。
 
-12. 打开新的 Windows PowerShell Web 访问网站 https://\<gateway-server-name\>/pswa。
+12. 打开新的 Windows PowerShell Web 访问网站 https://\<gateway-server-name  \>/pswa  。
 
     浏览器应显示 Windows PowerShell Web 访问控制台登录页面。
 
@@ -307,31 +307,31 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 1. 通过执行以下操作之一，打开 IIS 管理器控制台。
 
-   - 在 Windows 桌面上，启动服务器管理器，方法是单击 Windows 任务栏中的“服务器管理器”。 在“服务器管理器”的**工具**菜单中，单击**Internet Information Services (IIS) Manager**。
-   - 在 Windows“开始”屏幕上，键入“Internet 信息服务 (IIS) 管理器”名称的任何部分。 当它在“应用程序”结果中显示时，单击快捷方式。
+   - 在 Windows 桌面上，启动服务器管理器，方法是单击 Windows 任务栏中的“服务器管理器”  。 在“服务器管理器”的**工具**菜单中，单击**Internet Information Services (IIS) Manager**。
+   - 在 Windows“开始”  屏幕上，键入“Internet 信息服务 (IIS) 管理器”  名称的任何部分。 当它在“应用程序”  结果中显示时，单击快捷方式。
 
-1. 在 IIS 管理器树窗格中，展开已安装 Windows PowerShell Web 访问的服务器的节点，直到“站点”文件夹可见。 选择“站点”文件夹。
+1. 在 IIS 管理器树窗格中，展开已安装 Windows PowerShell Web 访问的服务器的节点，直到“站点”  文件夹可见。 选择“站点”  文件夹。
 
 1. 在**操作**窗格中，单击**添加网站**。
 
 1. 键入网站的名称，例如**Windows PowerShell Web 访问**。
 
-1. 新网站的应用程序池自动创建。 若果使用其他应用程序池，请单击“选择”，以选择与新网站相关的应用程序池。 在**选择应用程序池**对话框中选择备用的应用程序池，然后单击**确定**。
+1. 新网站的应用程序池自动创建。 若果使用其他应用程序池，请单击“选择”  ，以选择与新网站相关的应用程序池。 在**选择应用程序池**对话框中选择备用的应用程序池，然后单击**确定**。
 
-1. 在“物理路径”文本框中，导航到 %windir%/Web/PowerShellWebAccess/wwwroot。
+1. 在“物理路径”  文本框中，导航到 %windir%/Web/PowerShellWebAccess/wwwroot。
 
 1. 在**绑定**区域的**类型**字段中，选择**https**。
 
 1. 向网站分配一个不再被其他网站或应用程序使用的端口号。
    若要定位打开的端口，你可在“命令提示符”窗口中运行 **netstat** 命令。 默认端口号为 443。
 
-   如果其他网站已经使用 443，或你有其他更改端口号的安全原因，则更改默认端口。 如果在你的网关服务器上运行的其他网站使用你所选的端口，当你在“添加网站”对话框中单击“确定”时，将会显示一条警告信息。 必须使用未使用的端口运行 Windows PowerShell Web 访问。
+   如果其他网站已经使用 443，或你有其他更改端口号的安全原因，则更改默认端口。 如果在你的网关服务器上运行的其他网站使用你所选的端口，当你在“添加网站”  对话框中单击“确定”  时，将会显示一条警告信息。 必须使用未使用的端口运行 Windows PowerShell Web 访问。
 
-1. 此外，如果你的组织有需要，请指定一个对组织和用户都有意义的主机名称，例如 **`www.contoso.com`**。 单击**确定**。
+1. 此外，如果你的组织有需要，请指定一个对组织和用户都有意义的主机名称，例如 **`www.contoso.com`** 。 单击**确定**。
 
 1. 为提高生产环境的安全性，我们强烈建议提供证书颁发机构已签名的有效证书。 你必须提供 SSL 证书，因为用户仅可通过 HTTPS 网站连接到 Windows PowerShell Web 访问。 有关如何获得证书的详细信息，请参阅本主题中的[在 IIS 管理器中配置 SSL 证书](#to-configure-an-ssl-certificate-in-iis-manager)。
 
-1. 单击“确定”关闭“添加网站”对话框。
+1. 单击“确定”  关闭“添加网站”  对话框。
 
 1. 在使用提升的用户权限打开的 Windows PowerShell 会话（以管理员身份运行）中，运行以下脚本（其中 _application_pool_name_ 表示你在步骤 4 中创建的应用程序池的名称），以便向应用程序池提供授权文件的访问权限。
 
@@ -401,18 +401,18 @@ Windows PowerShell Web 访问支持以下 Internet 浏览器。 虽然移动浏�
 
 1. 在内容窗格中，双击**服务器证书**。
 
-1. 在“操作”窗格中，执行以下操作之一。 有关在 IIS 中配置服务器证书的详细信息，请参阅[在 IIS 7 中配置服务器证书](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10))。
+1. 在“操作”  窗格中，执行以下操作之一。 有关在 IIS 中配置服务器证书的详细信息，请参阅[在 IIS 7 中配置服务器证书](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10))。
 
-   - 单击“导入”，以从网络上的位置中导入现有的有效证书。
-   - 单击“创建证书请求”，以请求证书颁发机构颁发的证书，例如 [VeriSign](https://www.verisign.com/)、[Thawte](https://www.thawte.com/) 或 [GeoTrust](https://www.geotrust.com/)。 证书的公用名必须与申请的主机头相匹配。
+   - 单击“导入”  ，以从网络上的位置中导入现有的有效证书。
+   - 单击“创建证书请求”，以请求证书颁发机构颁发的证书，例如 [VeriSign](https://www.verisign.com/)、[Thawte](https://www.thawte.com/) 或 [GeoTrust](https://www.geotrust.com/)  。 证书的公用名必须与申请的主机头相匹配。
 
      例如，如果客户端浏览器申请 `http://www.contoso.com/`，则公用名也必须是 `http://www.contoso.com/`。 这是向 Windows PowerShell Web 访问网关提供证书的最安全的推荐方案。
 
-   - 单击“创建自签名的证书”，以创建你可立即使用的证书，必要时稍后再由 CA 签名。 为自签名的证书指定一个友好名称，例如 **Windows PowerShell Web 访问**。 此选项被视为不安全的，仅建议在专用测试环境中使用。
+   - 单击“创建自签名的证书”  ，以创建你可立即使用的证书，必要时稍后再由 CA 签名。 为自签名的证书指定一个友好名称，例如 **Windows PowerShell Web 访问**。 此选项被视为不安全的，仅建议在专用测试环境中使用。
 
-1. 创建或获得证书后，在 IIS 管理器树窗格中选择要应用证书的网站（如默认网站），然后单击“操作”窗格中的“绑定”。
+1. 创建或获得证书后，在 IIS 管理器树窗格中选择要应用证书的网站（如默认网站  ），然后单击“操作”  窗格中的“绑定”  。
 
-1. 如果尚未显示，则在“添加网站绑定”对话框中，向网站添加 **https** 绑定。 如果使用的不是自签名的证书，请从本程序的步骤 3 中指定主机名称。 如果使用的是自签名的证书，则无需执行此步骤。
+1. 如果尚未显示，则在“添加网站绑定”  对话框中，向网站添加 **https** 绑定。 如果使用的不是自签名的证书，请从本程序的步骤 3 中指定主机名称。 如果使用的是自签名的证书，则无需执行此步骤。
 
 1. 选择要使用或在步骤 3 中创建的证书，然后单击**确定**。
 

@@ -1,13 +1,13 @@
 ---
 title: 通过 SSH 进行 PowerShell 远程处理
 description: 在 PowerShell Core 中使用 SSH 进行远程处理
-ms.date: 08/14/2018
-ms.openlocfilehash: d994a3888b9a372b803a65666634775a8905d63a
-ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
+ms.date: 09/30/2019
+ms.openlocfilehash: 744fa95e42b0cf6eb28db0c7014d07f143174214
+ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68372151"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71692169"
 ---
 # <a name="powershell-remoting-over-ssh"></a>通过 SSH 进行 PowerShell 远程处理
 
@@ -15,7 +15,7 @@ ms.locfileid: "68372151"
 
 PowerShell 远程处理通常使用 WinRM 进行连接协商和数据传输。 SSH 现在可用于 Linux 和 Windows 平台，并允许进行真正的多平台 PowerShell 远程处理。
 
-WinRM 为 PowerShell 远程会话提供可靠的托管模型。 基于 SSH 的远程处理目前不支持远程终结点配置和 JEA (Just Enough Administration)。
+WinRM 为 PowerShell 远程会话提供可靠的托管模型。 基于 SSH 的远程处理目前不支持远程终结点配置和 Just Enough Administration (JEA)。
 
 通过 SSH 远程处理可以在 Windows 和 Linux 计算机之间执行基础的 PowerShell 会话远程处理。 SSH 远程处理在目标计算机上创建一个 PowerShell 托管进程作为 SSH 子系统。 最终，我们将实现常规托管模型（类似于 WinRM）以支持终结点配置和 JEA。
 
@@ -29,137 +29,149 @@ WinRM 为 PowerShell 远程会话提供可靠的托管模型。 基于 SSH 的�
 
 ## <a name="general-setup-information"></a>常规安装信息
 
-必须在所有计算机上安装 SSH。 SSH 客户端 (`ssh.exe`) 和服务器 (`sshd.exe`) 皆应安装，以便远程到计算机或从计算机进行远程。 OpenSSH for Windows 现已在 Windows 10 内部版本 1809 和 Windows Server 2019 中可用。 有关详细信息，请参阅 [OpenSSH for Windows](/windows-server/administration/openssh/openssh_overview)。 对于 Linux，请安装适用于平台的 SSH（包括 sshd 服务器）。 此外，需要从 GitHub 安装 PowerShell Core 以获取 SSH 远程处理功能。 必须配置 SSH 服务器以创建 SSH 子系统来托管远程计算机上的 PowerShell 进程。 还必须配置启用密码或基于密钥的身份验证。
+必须在所有计算机上安装 PowerShell 6 或更高版本，以及 SSH。 安装 SSH 客户端 (`ssh.exe`) 和服务器 (`sshd.exe`)，以便对计算机进行远程处理或从计算机进行远程处理。 OpenSSH for Windows 现已在 Windows 10 内部版本 1809 和 Windows Server 2019 中可用。 有关详细信息，请参阅[使用 OpenSSH 管理 Windows](/windows-server/administration/openssh/openssh_overview)。 对于 Linux，请安装适用于平台的 SSH（包括 sshd 服务器）。 此外，还需要从 GitHub 安装 PowerShell 以获取 SSH 远程处理功能。 必须配置 SSH 服务器以创建 SSH 子系统来托管远程计算机上的 PowerShell 进程。 还必须启用**密码**或**基于密钥的**身份验证。
 
-## <a name="set-up-on-windows-machine"></a>在 Windows 计算机上设置
+## <a name="set-up-on-a-windows-computer"></a>在 Windows 计算机上设置
 
-1. 安装 [PowerShell Core for Windows](../../install/installing-powershell-core-on-windows.md#msi) 的最新版本
+1. 安装最新版本的 PowerShell，请参阅[在 Windows 上安装 PowerShell Core](../../install/installing-powershell-core-on-windows.md#msi)。
 
-   - 可以通过查看 `New-PSSession` 参数集来判断它是否具有 SSH 远程处理支持
+   可通过列出 `New-PSSession` 参数集来确认 PowerShell 具有 SSH 远程处理支持。 你会注意到存在以 **SSH** 开头的参数集名称。 这些参数集包括 **SSH** 参数。
 
    ```powershell
-   Get-Command New-PSSession -syntax
+   (Get-Command New-PSSession).ParameterSets.Name
    ```
 
-   ```output
-   New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
+   ```Output
+   Name
+   ----
+   SSHHost
+   SSHHostHashParam
    ```
 
-2. 安装最新 Win32 OpenSSH。 有关安装说明，请参阅 [OpenSSH 的安装](/windows-server/administration/openssh/openssh_install_firstuse)。
-3. 编辑位于 `$env:ProgramData\ssh` 的 `sshd_config` 文件。
+1. 安装最新 Win32 OpenSSH。 有关安装说明，请参阅 [OpenSSH 入门](/windows-server/administration/openssh/openssh_install_firstuse)。
 
-   - 确保已启用密码身份验证
+   > [!NOTE]
+   > 如果要将 PowerShell 设置为 OpenSSH 的默认 shell，请参阅[为 OpenSSH 配置 Windows](/windows-server/administration/openssh/openssh_server_configuration)。
 
-     ```
-     PasswordAuthentication yes
-     ```
+1. 编辑位于 `$env:ProgramData\ssh` 的 `sshd_config` 文件。
 
-     ```
-     Subsystem    powershell c:/program files/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
-     ```
+   确保已启用密码身份验证：
 
-     > [!NOTE]
-     > OpenSSH for Windows 中存在一个 bug，使空格在子系统可执行路径中无效。 有关详细信息，请参阅[此 GitHub 问题](https://github.com/PowerShell/Win32-OpenSSH/issues/784)。
+   ```
+   PasswordAuthentication yes
+   ```
 
-     一种解决方案是创建不包含空格的 PowerShell 安装目录 symlink：
+   创建托管远程计算机上的 PowerShell 进程的 SSH 子系统：
 
-     ```powershell
-     mklink /D c:\pwsh "C:\Program Files\PowerShell\6"
-     ```
+   ```
+   Subsystem powershell c:/program files/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
+   ```
 
-     然后将其输入子系统：
+   > [!NOTE]
+   > OpenSSH for Windows 中存在一个 bug，使空格在子系统可执行路径中无效。 有关详细信息，请参阅此 [GitHub 问题](https://github.com/PowerShell/Win32-OpenSSH/issues/784)。
 
-     ```
-     Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
-     ```
+   一种解决方案是创建不包含空格的 PowerShell 安装目录的符号链接：
 
-   - 启用密钥身份验证（可选）
+   ```powershell
+   New-Item -ItemType SymbolicLink -Path "C:\pwshdir" -Value "C:\Program Files\PowerShell\6"
+   ```
 
-     ```
-     PubkeyAuthentication yes
-     ```
+   使用子系统中 PowerShell 可执行文件的符号链接路径：
 
-4. 重启 sshd 服务
+   ```
+   Subsystem powershell C:\pwshdir\pwsh.exe -sshs -NoLogo -NoProfile
+   ```
+
+   启用密钥身份验证（可选）：
+
+   ```
+   PubkeyAuthentication yes
+   ```
+
+   有关详细信息，请参阅[管理 OpenSSH 密钥](/windows-server/administration/openssh/openssh_keymanagement)。
+
+1. 重启 **sshd** 服务。
 
    ```powershell
    Restart-Service sshd
    ```
 
-5. 将 OpenSSH 的安装路径添加到 Path 环境变量。 例如，`C:\Program Files\OpenSSH\`。 通过此条目可找到 ssh.exe。
+1. 将 OpenSSH 的安装路径添加到 Path 环境变量。 例如，`C:\Program Files\OpenSSH\`。 通过此条目可找到 `ssh.exe`。
 
-## <a name="set-up-on-linux-ubuntu-1604-machine"></a>在 Linux (Ubuntu 16.04) 计算机上设置
+## <a name="set-up-on-an-ubuntu-1604-linux-computer"></a>在 Ubuntu 16.04 Linux 计算机上设置
 
-1. 从 GitHub 安装[适用于 Linux 的 PowerShell Core](../../install/installing-powershell-core-on-linux.md#ubuntu-1604) 最新版本
-2. 按需安装 [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)
+1. 安装最新版本的 PowerShell，请参阅[在 Linux 上安装 PowerShell Core](../../install/installing-powershell-core-on-linux.md#ubuntu-1604)。
+1. 安装 [Ubuntu OpenSSH 服务器](https://help.ubuntu.com/lts/serverguide/openssh-server.html)。
 
    ```bash
    sudo apt install openssh-client
    sudo apt install openssh-server
    ```
 
-3. 编辑 /etc/ssh 位置中的 sshd_config 文件
+1. 编辑 `/etc/ssh` 位置中的 `sshd_config` 文件。
 
-   - 确保已启用密码身份验证
+   确保已启用密码身份验证：
 
    ```
    PasswordAuthentication yes
    ```
 
-   - 添加 PowerShell 子系统项
+   添加 PowerShell 子系统条目：
 
    ```
    Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
    ```
 
-   - 启用密钥身份验证（可选）
+   启用密钥身份验证（可选）：
 
    ```
    PubkeyAuthentication yes
    ```
 
-4. 重启 sshd 服务
+1. 重启 **sshd** 服务。
 
    ```bash
    sudo service sshd restart
    ```
 
-## <a name="set-up-on-macos-machine"></a>在 MacOS 计算机上设置
+## <a name="set-up-on-a-macos-computer"></a>在 macOS 计算机上设置
 
-1. 安装[适用于 MacOS 的 PowerShell Core](../../install/installing-powershell-core-on-macos.md) 最新版本
+1. 安装最新版本的 PowerShell，请参阅[在 macOS 上安装 PowerShell Core](../../install/installing-powershell-core-on-macos.md)。
 
-   - 按照以下步骤确保已启用 SSH 远程处理：
-     - 打开 `System Preferences`
-     - 单击 `Sharing`
-     - 检查 `Remote Login` - 应为 `Remote Login: On`
-     - 允许相应用户访问
+   按照以下步骤确保已启用 SSH 远程处理：
 
-2. 编辑 `/private/etc/ssh/sshd_config` 位置中的 `sshd_config` 文件
+   1. 打开 `System Preferences`。
+   1. 单击 `Sharing`。
+   1. 选中 `Remote Login` 以设置 `Remote Login: On`。
+   1. 允许相应用户访问。
 
-   - 使用常用编辑器或者
+1. 编辑 `/private/etc/ssh/sshd_config` 位置中的 `sshd_config` 文件。
 
-     ```bash
-     sudo nano /private/etc/ssh/sshd_config
-     ```
+   打开文本编辑器，例如 **nano**：
 
-   - 确保已启用密码身份验证
+   ```bash
+   sudo nano /private/etc/ssh/sshd_config
+   ```
 
-     ```
-     PasswordAuthentication yes
-     ```
+   确保已启用密码身份验证：
 
-   - 添加 PowerShell 子系统项
+   ```
+   PasswordAuthentication yes
+   ```
 
-     ```
-     Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
-     ```
+   添加 PowerShell 子系统条目：
 
-   - 启用密钥身份验证（可选）
+   ```
+   Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
+   ```
 
-     ```
-     PubkeyAuthentication yes
-     ```
+   启用密钥身份验证（可选）：
 
-3. 重启 sshd 服务
+   ```
+   PubkeyAuthentication yes
+   ```
+
+1. 重启 **sshd** 服务。
 
    ```bash
    sudo launchctl stop com.openssh.sshd
@@ -168,7 +180,7 @@ WinRM 为 PowerShell 远程会话提供可靠的托管模型。 基于 SSH 的�
 
 ## <a name="authentication"></a>身份验证
 
-通过 SSH 进行 PowerShell 远程处理依赖于 SSH 客户端和 SSH 服务之间的身份验证交换，并且本身不实现任何身份验证方案。 这意味着任何配置的身份验证方案（包括多重身份验证）都由 SSH 处理，并且独立于 PowerShell。 例如，可以将 SSH 服务配置为需要公钥身份验证以及一次性密码，从而增加安全性。 多重身份验证的配置不在本文档的讨论范围。 若要了解如何正确配置多重身份验证，请参阅相关的 SSH 文档，并在尝试将其用于 PowerShell 远程处理之前先在 PowerShell 之外验证它的运行效果。
+通过 SSH 进行 PowerShell 远程处理依赖于 SSH 客户端和 SSH 服务之间的身份验证交换，并且本身不实现任何身份验证方案。 这使得任何配置的身份验证方案（包括多重身份验证）都由 SSH 处理，并且独立于 PowerShell。 例如，可以将 SSH 服务配置为需要公钥身份验证以及一次性密码，从而增加安全性。 多重身份验证的配置不在本文档的讨论范围。 若要了解如何正确配置多重身份验证，请参阅相关的 SSH 文档，并在尝试将其用于 PowerShell 远程处理之前先在 PowerShell 之外验证它的运行效果。
 
 ## <a name="powershell-remoting-example"></a>PowerShell 远程处理示例
 
@@ -181,7 +193,7 @@ WinRM 为 PowerShell 远程会话提供可靠的托管模型。 基于 SSH 的�
 $session = New-PSSession -HostName UbuntuVM1 -UserName TestUser
 ```
 
-```output
+```Output
 The authenticity of host 'UbuntuVM1 (9.129.17.107)' cannot be established.
 ECDSA key fingerprint is SHA256:2kCbnhT2dUE6WCGgVJ8Hyfu1z2wE4lifaJXLO7QJy0Y.
 Are you sure you want to continue connecting (yes/no)?
@@ -192,7 +204,7 @@ TestUser@UbuntuVM1s password:
 $session
 ```
 
-```output
+```Output
  Id Name   ComputerName    ComputerType    State    ConfigurationName     Availability
  -- ----   ------------    ------------    -----    -----------------     ------------
   1 SSH1   UbuntuVM1       RemoteMachine   Opened   DefaultShell             Available
@@ -202,7 +214,7 @@ $session
 Enter-PSSession $session
 ```
 
-```output
+```Output
 [UbuntuVM1]: PS /home/TestUser> uname -a
 Linux TestUser-UbuntuVM1 4.2.0-42-generic 49~16.04.1-Ubuntu SMP Wed Jun 29 20:22:11 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
 
@@ -213,7 +225,7 @@ Linux TestUser-UbuntuVM1 4.2.0-42-generic 49~16.04.1-Ubuntu SMP Wed Jun 29 20:22
 Invoke-Command $session -ScriptBlock { Get-Process powershell }
 ```
 
-```output
+```Output
 Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName                    PSComputerName
 -------  ------    -----      -----     ------     --  -- -----------                    --------------
       0       0        0         19       3.23  10635 635 powershell                     UbuntuVM1
@@ -228,7 +240,7 @@ Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName           
 Enter-PSSession -HostName WinVM1 -UserName PTestName
 ```
 
-```output
+```Output
 PTestName@WinVM1s password:
 ```
 
@@ -236,7 +248,7 @@ PTestName@WinVM1s password:
 [WinVM1]: PS C:\Users\PTestName\Documents> cmd /c ver
 ```
 
-```output
+```Output
 Microsoft Windows [Version 10.0.10586]
 ```
 
@@ -247,7 +259,7 @@ Microsoft Windows [Version 10.0.10586]
 C:\Users\PSUser\Documents>pwsh.exe
 ```
 
-```output
+```Output
 PowerShell
 Copyright (c) Microsoft Corporation. All rights reserved.
 ```
@@ -256,7 +268,7 @@ Copyright (c) Microsoft Corporation. All rights reserved.
 $session = New-PSSession -HostName WinVM2 -UserName PSRemoteUser
 ```
 
-```output
+```Output
 The authenticity of host 'WinVM2 (10.13.37.3)' can't be established.
 ECDSA key fingerprint is SHA256:kSU6slAROyQVMEynVIXAdxSiZpwDBigpAF/TXjjWjmw.
 Are you sure you want to continue connecting (yes/no)?
@@ -268,7 +280,7 @@ PSRemoteUser@WinVM2's password:
 $session
 ```
 
-```output
+```Output
  Id Name            ComputerName    ComputerType    State         ConfigurationName     Availability
  -- ----            ------------    ------------    -----         -----------------     ------------
   1 SSH1            WinVM2          RemoteMachine   Opened        DefaultShell             Available
@@ -278,7 +290,7 @@ $session
 Enter-PSSession -Session $session
 ```
 
-```output
+```Output
 [WinVM2]: PS C:\Users\PSRemoteUser\Documents> $PSVersionTable
 
 Name                           Value
@@ -299,16 +311,18 @@ GitCommitId                    v6.0.0-alpha.17
 
 ### <a name="known-issues"></a>已知问题
 
-sudo 命令对 Linux 计算机上的远程会话不起作用。
+**sudo** 命令对 Linux 计算机上的远程会话不起作用。
 
 ## <a name="see-also"></a>另请参阅
 
-[PowerShell Core for Windows](../../install/installing-powershell-core-on-windows.md#msi)
+[在 Linux 上安装 PowerShell Core](../../install/installing-powershell-core-on-linux.md#ubuntu-1604)
 
-[适用于 Linux 的 PowerShell Core](../../install/installing-powershell-core-on-linux.md#ubuntu-1604)
+[在 macOS 上安装 PowerShell Core](../../install/installing-powershell-core-on-macos.md)
 
-[适用于 MacOS 的 PowerShell Core](../../install/installing-powershell-core-on-macos.md)
+[在 Windows 上安装 PowerShell Core](../../install/installing-powershell-core-on-windows.md#msi)
 
-[OpenSSH for Windows](/windows-server/administration/openssh/openssh_overview)
+[使用 OpenSSH 管理 Windows](/windows-server/administration/openssh/openssh_overview)
+
+[管理 OpenSSH 密钥](/windows-server/administration/openssh/openssh_keymanagement)
 
 [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)

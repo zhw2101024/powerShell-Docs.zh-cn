@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell, 核心
 title: PowerShell 6.0 的已知问题
-ms.openlocfilehash: 502143b660204edada6a9e62bdf6b260a384a078
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: e84dd2f7deefcc64aea09585e7ce24dc1e8515fc
+ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733821"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71692227"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell 6.0 的已知问题
 
@@ -53,7 +53,7 @@ PowerShell 脚本必须以 `.ps1` 结尾，以便解释器了解如何在当前�
 
 ### <a name="net-framework-vs-net-core-framework"></a>.NET Framework 和 .NET Core Framework
 
-Linux/macOS 上的 PowerShell 使用 .NET Core，即 Microsoft Windows 上的完整 .NET Framework 的子集。 这非常重要，因为 PowerShell 提供对基础框架类型、方法等的直接访问。因此，在 Windows 上运行的脚本可能无法在非 Windows 平台上运行，因为框架之间存在差异。 有关 .NET Core Framework 的详细信息，请参阅 <https://dotnetfoundation.org/net-core>
+Linux/macOS 上的 PowerShell 使用 .NET Core，即 Microsoft Windows 上的完整 .NET Framework 的子集。 这非常重要，因为 PowerShell 提供对基础框架类型、方法等的直接访问。因此，在 Windows 上运行的脚本可能无法在非 Windows 平台上运行，因为框架之间存在差异。 有关 .NET Core Framework 的详细信息，请参阅 [dotnetfoundation.org](https://dotnetfoundation.org/)。
 
 随着 [.NET Standard 2.0](https://devblogs.microsoft.com/dotnet/introducing-net-standard/) 的出现，.NET Core 2.0 将恢复存在于完整 .NET Framework 中的许多传统类型和方法。 这意味着，PowerShell Core 将能够加载许多传统 Windows PowerShell 模块，而无需进行修改。 可以在[此处](https://github.com/PowerShell/PowerShell/projects/4)了解我们有关 .NET Standard 2.0 的工作。
 

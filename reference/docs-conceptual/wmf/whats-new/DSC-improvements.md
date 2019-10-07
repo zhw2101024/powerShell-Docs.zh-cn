@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,安装程序
 title: WMF 5.1 中的 DSC 改进
-ms.openlocfilehash: 47c1de362108096f26c0420d6135a9d9028a0302
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.openlocfilehash: 4de295db539b95d0f4ddef297df5e9523892bffc
+ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71147667"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71692415"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 中的 Desired State Configuration (DSC) 改进
 
@@ -353,4 +353,4 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 
 - 请尝试推送已签名的 MOF 文件。
 
-  ![SignMofFile](../images/DSC-improvements/PushSignedMof.png)
+  ![PushSignedMofFile](../images/DSC-improvements/PushSignedMof.png)
