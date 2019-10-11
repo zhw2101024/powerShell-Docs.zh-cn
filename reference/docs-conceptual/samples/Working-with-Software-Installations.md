@@ -116,7 +116,7 @@ Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
 Uninstall  Registry      HKEY_LOCAL_MACHINE\SOFTWARE\Micr...
 ```
-我们现在具有一个名为“Uninstall”的驱动器，可用于快速方便地查找应用程序安装。 我们可以查找已安装应用程序的数量，方法是计算 Uninstall 中的注册表项数：PowerShell 驱动器：
+我们现在具有一个名为“Uninstall:”的驱动器，可用于快速方便地查找应用程序安装。 我们可以查找已安装应用程序的数量，方法是计算''Uninstall: PowerShell''驱动器中的注册表项数：
 
 ```
 (Get-ChildItem -Path Uninstall:).Count

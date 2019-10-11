@@ -13,7 +13,7 @@ ms.locfileid: "70848187"
 
 支持 [Ubuntu 16.04][u16]、[Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810]、[Ubuntu 19.04][u1904]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora] 和 [Arch Linux][arch]。
 
-对于未获得官方支持的 Linux 分发，可尝试使用 [PowerShell Snap 包][snap]安装 PowerShell。 还可尝试直接使用 Linux [`tar.gz` archive][tar] 部署 PowerShell 二进制文件，但是需要在各个步骤中基于 OS 设置必要的依赖项。
+对于未获得官方支持的 Linux 分发，可尝试使用 [PowerShell Snap 包][snap]安装 PowerShell。 还可尝试直接使用 Linux [`tar.gz`存档][tar] 部署 PowerShell 二进制文件，但是需要在各个步骤中基于 OS 设置必要的依赖项。
 
 GitHub [版本][]页面上提供有所有可用包。 安装包以后，从终端运行 `pwsh`。
 
@@ -71,7 +71,7 @@ pwsh
 
 以超级用户身份注册 Microsoft 存储库一次。 注册后，可以通过 `sudo apt-get upgrade powershell` 更新 PowerShell。
 
-### <a name="installation-via-direct-download---ubuntu-1604"></a>通过 Direct Download 的安装 - Ubuntu 16.04
+### <a name="installation-via-direct-download---ubuntu-1604"></a>通过直接下载进行安装 - Ubuntu 16.04
 
 从[版本][]页中将 Debian 包 `powershell_6.2.0-1.ubuntu.16.04_amd64.deb` 下载到 Ubuntu 计算机。
 
@@ -588,13 +588,13 @@ rm -rf ~/powershell
 
 已对 Linux 平台提供 PowerShell 二进制 `tar.gz` 存档，以启用高级部署方案。
 
-### <a name="dependencies"></a>依赖关系
+### <a name="dependencies"></a>依赖项
 
 PowerShell 为所有 Linux 分发版生成可移植二进制文件。 但是对于不同的分发版，.NET Core 运行时需要不同的依赖项，并且 PowerShell 也有相同要求。
 
 下表列出了在不同 Linux 分发版上正式支持的 .NET Core 2.0 依赖项。
 
-| 操作系统                 | 依赖关系 |
+| 操作系统                 | 依赖项 |
 | ------------------ | ------------ |
 | Ubuntu 16.04       | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu55 |
 | Ubuntu 17.10       | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu57 |
@@ -647,7 +647,7 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 * 将从 `$PSHOME/Modules` 中读取默认模块
 * PSReadline 历史记录将记录到 `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
-配置文件采用 PowerShell 的每个主机配置，所以默认主机特定配置文件位于相同位置下的 `Microsoft.PowerShell_profile.ps1` 中。
+配置文件采用 PowerShell 的按主机配置，所以默认主机特定配置文件位于相同位置下的 `Microsoft.PowerShell_profile.ps1` 中。
 
 PowerShell 采用 Linux 上的 [XDG 基目录规范][xdg-bds]。
 
