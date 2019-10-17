@@ -2,12 +2,12 @@
 title: PowerShell Core 支持生命周期
 description: 用于管理 PowerShell Core 支持的策略
 ms.date: 08/06/2018
-ms.openlocfilehash: 60999ed54ca3be15232ffee3ab0c49cb94873a8f
-ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
+ms.openlocfilehash: fbbda0a5f8460e5625625adcc50c631729df53f1
+ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69986737"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72351797"
 ---
 # <a name="powershell-core-support-lifecycle"></a>PowerShell Core 支持生命周期
 
@@ -49,28 +49,35 @@ PowerShell Core 的版本 6.x 分支（例如 6.0、6.1、6.2 等）大约每六
 
 列为 `Experimental` 的平台不受官方支持，但可用于实验和反馈。
 
-| 平台                                          | 6.1         | 6.2         |
-|---------------------------------------------------|:-----------:|:-----------:|
-| Windows 7、8.1 和 10                            | 支持   | 支持   |
-| Windows Server 2008 R2、2012 R2、2016             | 支持   | 支持   |
-| [Windows Server 半年频道][semi-annual] | 支持   | 支持   |
-| Ubuntu 16.04 和 18.04                            | 支持   | 支持   |
-| Ubuntu 18.10（使用 Snap 包）                   | 社区   | 社区   |
-| Ubuntu 19.04（通过 Snap 包）                   | 社区   | 社区   |
-| Debian 9                                          | 支持   | 支持   |
-| CentOS 7                                          | 支持   | 支持   |
-| Red Hat Enterprise Linux 7                        | 支持   | 支持   |
-| openSUSE 42.3                                     | 支持   | 支持   |
-| Fedora 28                                         | 支持   | 支持   |
-| macOS 10.12+                                      | 支持   | 支持   |
-| Arch                                              | 社区   | 社区   |
-| Raspbian                                          | 社区   | 社区   |
-| Kali                                              | 社区   | 社区   |
-| AppImage（可在多个 Linux 平台上运行）      | 社区   | 社区   |
-| [Snap 包](https://snapcraft.io/powershell)   | 查看注释    | 查看注释    |
+| 平台                                          |      6.2      |    7.0    |
+|---------------------------------------------------|:-------------:|:---------:|
+| Windows 7、8.1 和 10                            |   支持   | 支持 |
+| Windows Server 2008 R2、2012 R2、2016             |   支持   | 支持 |
+| [Windows Server 半年频道][semi-annual] |   支持   | 支持 |
+| Ubuntu 16.04 和 18.04                            |   支持   | 支持 |
+| Ubuntu 18.10（使用 Snap 包）                   |   社区   | 社区 |
+| Ubuntu 19.04（通过 Snap 包）                   |   社区   | 社区 |
+| Debian 9                                          |   支持   | 支持 |
+| Debian 10                                         | 不受支持 | 支持 |
+| CentOS 7                                          |   支持   | 支持 |
+| Red Hat Enterprise Linux 7                        |   支持   | 支持 |
+| openSUSE 42.3                                     |   支持   | 支持 |
+| Fedora 28                                         |   支持   | 支持 |
+| Fedora 29、Fedora 30                                     | 不受支持 | 支持 |
+| Alpine 3.8                                        |   请参阅备注    | 请参阅备注  |
+| Alpine 3.9 和 Alpine 3.10                               | 不受支持 | 请参阅备注  |
+| macOS 10.12+                                      |   支持   | 支持 |
+| Arch                                              |   社区   | 社区 |
+| Raspbian                                          |   社区   | 社区 |
+| Kali                                              |   社区   | 社区 |
+| AppImage（可在多个 Linux 平台上运行）      |   社区   | 社区 |
+| [Snap 包](https://snapcraft.io/powershell)   |   查看注释    | 查看注释  |
 
 > [!NOTE]
 > Snap 包与正在运行此包的发行版受到相同的支持。
+
+> [!NOTE]
+> Alpine 不支持 CIM、PowerShell 远程处理和 DSC。
 
 ## <a name="powershell-releases-end-of-life"></a>PowerShell 版本生命周期终止日期
 
