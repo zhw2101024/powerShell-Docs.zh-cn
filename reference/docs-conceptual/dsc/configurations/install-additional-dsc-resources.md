@@ -1,7 +1,7 @@
 ---
 ms.date: 12/12/2018
 keywords: dsc,powershell,资源,库,安装程序
-title: 安全其他 DSC 资源
+title: 安装其他 DSC 资源
 ms.openlocfilehash: ecaf176230ccd934b57b1c27d72ff83e6ba906e9
 ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
 ms.translationtype: HT
@@ -9,7 +9,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/04/2019
 ms.locfileid: "71954484"
 ---
-# <a name="install-additional-dsc-resources"></a>安全其他 DSC 资源
+# <a name="install-additional-dsc-resources"></a>安装其他 DSC 资源
 
 PowerShell 包括 Desired State Configuration (DSC) 的多个现成资源。  PSDesiredStateConfiguration 模块包含特定 PowerShell 实例上可用的所有 OOB DSC 资源。
 
