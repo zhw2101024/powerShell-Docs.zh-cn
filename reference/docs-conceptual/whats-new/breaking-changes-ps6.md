@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell, 核心
 title: PowerShell 6.0 的重大更改
-ms.openlocfilehash: 186e55c1ac46ce3fc172df18995f8c15d9eeb8eb
-ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
+ms.openlocfilehash: df716fc3ad48d640ddefcfd87da445eaf104cfbe
+ms.sourcegitcommit: e1027805385081c2e6f9250f9cd1167a45f035b0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "67843944"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72561262"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>PowerShell 6.0 的重大更改
 
@@ -20,6 +20,8 @@ ms.locfileid: "67843944"
 由于缺少对 .NET Core 中的 Windows Workflow Foundation 的支持，我们将不继续在 PowerShell Core 中支持 PowerShell 工作流。
 
 将来，我们希望使用 PowerShell 语言启用本机并行/并发，而无需使用 PowerShell 工作流。
+
+如果在操作系统重启后需要使用检查点来恢复脚本，建议在操作系统启动时使用任务计划程序运行脚本，但此脚本将需要维持自身的状态（例如将它保存到文件）。
 
 [workflow]: https://docs.microsoft.com/powershell/scripting/core-powershell/workflows-guide
 [workflow-foundation]: https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/
