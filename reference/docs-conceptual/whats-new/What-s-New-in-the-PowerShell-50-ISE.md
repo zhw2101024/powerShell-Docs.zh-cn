@@ -30,7 +30,7 @@ Intellisense 会在你键入时显示可单击的菜单，其中包括可能匹�
 
 **更改增添了什么价值？**
 
-新增 Intellisense 功能后，使用 Windows PowerShell ISE 创建脚本时，可以更容易地发现 cmdlet 和语法。 在创建新脚本时，还可以使用 Windows PowerShell ISE 了解 Windows PowerShell。
+新增 Intellisense 功能后，使用 Windows PowerShell ISE 创建脚本时，可以更轻松地发现 cmdlet 和语法。 在创建新脚本时，还可以使用 Windows PowerShell ISE 了解 Windows PowerShell。
 
 **工作原理的不同之处是什么？**
 
@@ -70,7 +70,7 @@ Windows PowerShell ISE 3.0 及更高版本附带**命令**附加工具。 借助
 
 > 在 PowerShell 3.0 中添加
 
-Windows PowerShell ISE 每隔两分钟在单独的位置上自动保存你打开的脚本。 当 Windows PowerShell ISE 在意外崩溃或重新启动后重新启动时，它会恢复在上一个会话中打开的脚本，即使脚本未保存也是如此。
+Windows PowerShell ISE 每隔两分钟在单独的位置上自动保存你打开的脚本。 当 Windows PowerShell ISE 在意外崩溃或系统重启后重新启动时，它会恢复在上一个会话中打开的脚本，即使脚本未保存也是如此。
 
 要更改自动保存间隔，可在控制台窗格中运行下面的命令：`$psise.Options.AutoSaveMinuteInterval`。
 
@@ -88,7 +88,7 @@ Windows PowerShell ISE 2.0 不会自动保存脚本。
 
 Windows PowerShell ISE 现在具有最近使用过的文件列表。 在 Windows PowerShell ISE 中打开文件时，文件会添加到“文件”  菜单上的最近使用列表中。
 
-若要更改最近使用列表中的文件默认数量，请在控制台窗格中运行以下命令：`$psise.Options.MruCount`。
+若要更改最近使用列表中的默认文件数量，请在控制台窗格中运行以下命令：`$psise.Options.MruCount`。
 
 **更改增添了什么价值？**
 
@@ -193,7 +193,7 @@ Windows PowerShell ISE 2.0 中不具有这些编辑增强功能。
 
 **更改增添了什么价值？**
 
-通过在 Windows PowerShell 脚本中使用 `Show-Command`，可以为用户提供其熟悉的图形环境。 `Show-Command` 还有助于引导用户了解 Windows PowerShell。
+通过在 Windows PowerShell 脚本中使用 `Show-Command`，可以为用户提供其熟悉的图形环境。 `Show-Command` 还有助于新用户了解 Windows PowerShell。
 
 **工作原理的不同之处是什么？**
 
