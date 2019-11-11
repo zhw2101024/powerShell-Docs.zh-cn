@@ -1,12 +1,12 @@
 ---
 ms.date: 09/13/2019
 title: 使用 FilterHashtable 创建 Get-WinEvent 查询
-ms.openlocfilehash: 1bf321c09c20736de36eb896fabced31cfdfbd75
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.openlocfilehash: 35d18dc894d90e698b38395b79ff4cf395515909
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71143657"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444391"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>使用 FilterHashtable 创建 Get-WinEvent 查询
 
@@ -36,7 +36,7 @@ Get-WinEvent -FilterHashtable @{
 本文提供了如何在哈希表中使用枚举值的相关信息。 有关枚举的详细信息，请参阅  “脚本专家”博客文章。 若要创建用于返回枚举值的函数，请参阅[枚举和值](https://devblogs.microsoft.com/scripting/hey-scripting-guy-weekend-scripter-enumerations-and-values)。
 有关详细信息，请参阅[关于枚举的“脚本专家”系列博客文章](https://devblogs.microsoft.com/scripting/?s=about+enumeration)。
 
-## <a name="hash-table-keyvalue-pairs"></a>哈希表键值对
+## <a name="hash-table-key-value-pairs"></a>哈希表键值对
 
 若要生成高效查询，请将 `Get-WinEvent` cmdlet 和 FilterHashtable 参数结合使用  。
 FilterHashtable 允许哈希表作为筛选器，以从 Windows 事件日志获取特定信息。  哈希表将使用键值对。  有关哈希表的详细信息，请参阅 [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables)。
@@ -62,9 +62,9 @@ FilterHashtable  参数的文档也包含这些键值对。
 | EndTime        | `<DateTime>`    | 否                           |
 | UserID         | `<SID>`         | 否                           |
 | 数据           | `<String[]>`    | 否                           |
-| \<named-data\> | `<String[]>`    | 否                           |
+| `<named-data>` | `<String[]>`    | 否                           |
 
-\<named-data\> 键表示命名事件数据字段。 例如，Perflib 事件 1008 可以包含以下事件数据：
+`<named-data>` 键表示命名事件数据字段。 例如，Perflib 事件 1008 可以包含以下事件数据：
 
 ```xml
 <EventData>
@@ -79,6 +79,9 @@ FilterHashtable  参数的文档也包含这些键值对。
 ```powershell
 Get-WinEvent -FilterHashtable @{LogName='Application'; 'Service'='Bits'}
 ```
+
+> [!NOTE]
+> PowerShell 6 中添加了查询 `<named-data>` 的功能。
 
 ## <a name="building-a-query-with-a-hash-table"></a>使用哈希表生成查询
 
@@ -148,7 +151,7 @@ WdiContext       Property   static System.Diagnostics.Eventing.Reader.StandardEv
 WdiDiagnostic    Property   static System.Diagnostics.Eventing.Reader.StandardEventKey…
 ```
 
-枚举值将记录在 .NET Framework 中。  有关详细信息，请参阅 [StandardEventKeywords 枚举](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords?redirectedfrom=MSDN&view=netframework-4.7.2)。
+枚举值将记录在 .NET Framework 中。  有关详细信息，请参阅 [StandardEventKeywords 枚举](/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords?redirectedfrom=MSDN&view=netframework-4.7.2)。
 
 Keywords 名称和枚举值如下所示： 
 
@@ -229,7 +232,7 @@ Verbose       Property   static System.Diagnostics.Eventing.Reader.StandardEvent
 Warning       Property   static System.Diagnostics.Eventing.Reader.StandardEventLevel Warning {get;}
 ```
 
-枚举值将记录在 .NET Framework 中。  有关详细信息，请参阅 [StandardEventLevel 枚举](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel?redirectedfrom=MSDN&view=netframework-4.7.2)。
+枚举值将记录在 .NET Framework 中。  有关详细信息，请参阅 [StandardEventLevel 枚举](/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel?redirectedfrom=MSDN&view=netframework-4.7.2)。
 
 Level 键的名称和枚举值如下所示： 
 
