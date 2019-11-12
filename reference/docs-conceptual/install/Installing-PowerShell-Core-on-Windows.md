@@ -22,7 +22,7 @@ ms.locfileid: "66830227"
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />安装 MSI 包
 
-若要在 Windows 客户端或 Windows Server（适用于 Windows 7 SP1、Server 2008 R2 以及更高版本）上安装 PowerShell，请从 GitHub [Releases][releases]页面下载 MSI 包。 向下滚动到要安装的版本的“Assets”部分。 “Assets”部分可能处于折叠状态，因此可能需要单击使其展开。
+若要在 Windows 客户端或 Windows Server（适用于 Windows 7 SP1、Server 2008 R2 以及更高版本）上安装 PowerShell，请从 GitHub [版本][releases]页面下载 MSI 包。 向下滚动到要安装的版本的“资产”部分。“资产”部分可能处于折叠状态，因此可能需要单击使其展开。
 
 MSI 文件类似于 `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
