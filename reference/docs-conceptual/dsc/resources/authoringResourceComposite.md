@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 复合资源--将 DSC 配置用作资源
-ms.openlocfilehash: ef8d5665e552da01977c2f21a43246c72bb7155f
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: 7fa6ee56d4706b96fb47123c7aa00c4df6256492
+ms.sourcegitcommit: 14b50e5446f69729f72231f5dc6f536cdd1084c3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71954344"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73933827"
 ---
 # <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>复合资源：将 DSC 配置用作资源
 
@@ -158,10 +158,8 @@ $env: psmodulepath
 接下来我们将创建一个调用复合资源的配置。 此配置调用 xVirtualMachine 复合资源来创建一个虚拟机，然后调用 **xComputer** 资源重命名虚拟机。
 
 ```powershell
-
 configuration RenameVM
 {
-
     Import-DscResource -Module xVirtualMachine
     Node localhost
     {
@@ -188,9 +186,32 @@ configuration RenameVM
 }
 ```
 
+通过将 VM 名称数组传入 xVirtualMachine 资源，你还可以使用此资源创建多个 VM。
+
+```PowerShell
+Configuration MultipleVms
+{
+    Import-DscResource -Module xVirtualMachine
+    Node localhost
+    {
+        xVirtualMachine VMs
+        {
+            VMName = "IIS01", "SQL01", "SQL02"
+            SwitchName = "Internal"
+            SwitchType = "Internal"
+            VhdParentPath = "C:\Demo\VHD\RTM.vhd"
+            VHDPath = "C:\Demo\VHD"
+            VMStartupMemory = 1024MB
+            VMState = "Running"
+        }
+    }
+}
+```
+
 ## <a name="supporting-psdscrunascredential"></a>支持 PsDscRunAsCredential
 
->**注意：** PsDscRunAsCredential  在 PowerShell 5.0 及更高版本中受支持。
+> [!NOTE]
+> PsDscRunAsCredential  在 PowerShell 5.0 及更高版本中受支持。
 
 可以在 [DSC 配置](../configurations/configurations.md)资源块中使用 PsDscRunAsCredential  属性，以指定应使用指定的一组凭据运行资源。
 有关详细信息，请参阅[使用用户凭据运行 DSC](../configurations/runAsUser.md)。
