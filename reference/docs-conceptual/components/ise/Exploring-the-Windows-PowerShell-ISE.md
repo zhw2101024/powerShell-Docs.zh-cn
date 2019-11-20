@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 探究 Windows PowerShell ISE
-ms.openlocfilehash: 8c47e236e2e345a887fc3af281e429f440e176ff
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 7949b690cda73148f07922985b1fc30fe1e8b2d0
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67031026"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117438"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>探究 Windows PowerShell ISE
 
@@ -18,7 +18,7 @@ ms.locfileid: "67031026"
 
 ## <a name="menu-bar"></a>菜单栏
 
-菜单栏包含“**文件**”、“**编辑**”、“**视图**”、“**工具**”、“**调试**”、“**加载项**”和“**帮助**”菜单。 菜单上的按钮允许执行与编写和运行脚本以及在 Windows PowerShell ISE 中运行命令相关的任务。 此外，可以运行使用 [ISE 对象模型层次结构](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md)的脚本，将[加载项工具](../../core-powershell/ise/The-ISEAddOnTool-Object.md)置于菜单栏中。
+菜单栏包含“**文件**”、“**编辑**”、“**视图**”、“**工具**”、“**调试**”、“**加载项**”和“**帮助**”菜单。 菜单上的按钮允许执行与编写和运行脚本以及在 Windows PowerShell ISE 中运行命令相关的任务。 此外，可以运行使用 [ISE 对象模型层次结构](object-model/The-ISE-Object-Model-Hierarchy.md)的脚本，将[加载项工具](object-model/The-ISEAddOnTool-Object.md)置于菜单栏中。
 
 > [!NOTE]
 > 在 Windows PowerShell ISE 2.0 中，不存在“**工具**”和“**加载项**”菜单。
@@ -83,4 +83,4 @@ Windows PowerShell 选项卡是 Windows PowerShell 脚本可在其中运行的�
 
 ## <a name="see-also"></a>另请参阅
 
-- [Windows PowerShell ISE 简介](../../core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)
+- [Windows PowerShell ISE 简介](Introducing-the-Windows-PowerShell-ISE.md)

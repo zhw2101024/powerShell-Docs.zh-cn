@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 如何在 Windows PowerShell ISE 中调试脚本
-ms.openlocfilehash: b7af2de83a3f796a2057514e36ad8b74367e8ce2
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 99d6fbcb805e3fe31f95eafd4daf272cf41fd845
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086861"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117429"
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中调试脚本
 
@@ -29,7 +29,7 @@ ms.locfileid: "62086861"
 
 ### <a name="to-set-a-breakpoint"></a>设置断点
 
-仅当保存脚本后，才可以在其中设置断点。 右键单击你想要设置行断点的行，然后单击“**切换断点**”。 或者，单击你想要设置的行断点所在的行，然后按 **F9**，或在“调试”菜单上，单击“切换断点”。
+仅当保存脚本后，才可以在其中设置断点。 右键单击你想要设置行断点的行，然后单击“**切换断点**”。 或者，单击你想要设置的行断点所在的行，然后按 **F9**，或在“调试”菜单上，单击“切换断点”。  
 
 以下脚本是如何通过使用 [Set-PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420) cmdlet 从控制台窗格中设置变量断点的示例。
 
@@ -42,7 +42,7 @@ Set-PSBreakpoint -Script sample.ps1 -Variable Server
 
 在当前 Windows PowerShell 会话中显示所有断点。
 
-在“调试”菜单上，单击“列表断点”。 以下脚本是如何通过使用 [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) cmdlet 从控制台窗格中列出所有断点的示例。
+在“调试”菜单上，单击“列表断点”。   以下脚本是如何通过使用 [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) cmdlet 从控制台窗格中列出所有断点的示例。
 
 ```powershell
 # This command lists all breakpoints in the current session.
@@ -55,7 +55,7 @@ Get-PSBreakpoint
 
 如果你认为稍后还可能再次使用，请考虑改为[禁用断点](#disable-a-breakpoint)。
 右键单击你想要移除的断点所在的行，然后单击“**切换断点**”。
-或者，单击你想要移除的断点所在的行，然后在“调试”菜单上，单击“切换断点”。
+或者，单击你想要移除的断点所在的行，然后在“调试”菜单上，单击“切换断点”。  
 以下脚本是如何通过使用 [Remove-PSBreakpoint](https://technet.microsoft.com/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) cmdlet 从控制台窗格中移除具有指定 ID 的断点的示例。
 
 ```powershell
@@ -65,7 +65,7 @@ Remove-PSBreakpoint -Id 2
 
 ### <a name="remove-all-breakpoints"></a>移除所有断点
 
-若要移除在当前会话中定义的所有断点，在“调试”菜单上，单击“移除所有断点”。
+若要移除在当前会话中定义的所有断点，在“调试”菜单上，单击“移除所有断点”。  
 
 以下脚本是如何通过使用 [Remove-PSBreakpoint](https://technet.microsoft.com/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) cmdlet 从控制台窗格中移除所有断点的示例。
 
@@ -76,7 +76,7 @@ Get-PSBreakpoint | Remove-PSBreakpoint
 
 ### <a name="disable-a-breakpoint"></a>禁用断点
 
-禁用断点不会将断点移除；只是会将其关闭，直至启用。  若要禁用特定行断点，右键单击你想要禁用的行断点所在的行，然后单击“**切换断点**”。 或者，单击你想要禁用的断点所在的行，然后按 **F9**，或在“调试”菜单上，单击“禁用断点”。 以下脚本是如何通过使用 [Disable-PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) cmdlet 从控制台窗格中移除具有指定 ID 的断点的示例。
+禁用断点不会将断点移除；只是会将其关闭，直至启用。  若要禁用特定行断点，右键单击你想要禁用的行断点所在的行，然后单击“**切换断点**”。 或者，单击你想要禁用的断点所在的行，然后按 **F9**，或在“调试”菜单上，单击“禁用断点”。   以下脚本是如何通过使用 [Disable-PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) cmdlet 从控制台窗格中移除具有指定 ID 的断点的示例。
 
 ```powershell
 # This command disables the breakpoint with breakpoint ID 0.
@@ -85,7 +85,7 @@ Disable-PSBreakpoint -Id 0
 
 ### <a name="disable-all-breakpoints"></a>禁用所有断点
 
-禁用断点不会将断点移除；只是会将其关闭，直至启用。  若要禁用在当前会话中的所有断点，在“调试”菜单上，单击“禁用所有断点”。 以下脚本是如何通过使用 [Disable-PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) cmdlet 从控制台窗格中禁用所有断点的示例。
+禁用断点不会将断点移除；只是会将其关闭，直至启用。  若要禁用在当前会话中的所有断点，在“调试”菜单上，单击“禁用所有断点”。   以下脚本是如何通过使用 [Disable-PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) cmdlet 从控制台窗格中禁用所有断点的示例。
 
 ```powershell
 # This command disables all breakpoints in the current session.
@@ -95,7 +95,7 @@ Get-PSBreakpoint | Disable-PSBreakpoint
 
 ### <a name="enable-a-breakpoint"></a>启用断点
 
-若要启用特定断点，右键单击你想要启用的断点所在的行，然后单击“**启用断点**”。 或者，单击你想要启用的断点所在的行，然后按 **F9**，或在“调试”菜单上，单击“启用断点”。 以下脚本是如何通过使用 [Enable-PSBreakpoint](https://technet.microsoft.com/library/739e1091-3b3f-405f-a428-bec7543e5df0) cmdlet 从控制台窗格中启用特定断点的示例。
+若要启用特定断点，右键单击你想要启用的断点所在的行，然后单击“**启用断点**”。 或者，单击你想要启用的断点所在的行，然后按 **F9**，或在“调试”菜单上，单击“启用断点”。   以下脚本是如何通过使用 [Enable-PSBreakpoint](https://technet.microsoft.com/library/739e1091-3b3f-405f-a428-bec7543e5df0) cmdlet 从控制台窗格中启用特定断点的示例。
 
 ```powershell
 # This command enables breakpoints with breakpoint IDs 0, 1, and 5.
@@ -104,7 +104,7 @@ Enable-PSBreakpoint -Id 0, 1, 5
 
 ### <a name="enable-all-breakpoints"></a>启用所有断点
 
-若要启用在当前会话中定义的所有断点，在“调试”菜单上，单击“启用所有断点”。 以下脚本是如何通过使用 [Enable-PSBreakpoint](https://technet.microsoft.com/library/739e1091-3b3f-405f-a428-bec7543e5df0) cmdlet 从控制台窗格中启用所有断点的示例。
+若要启用在当前会话中定义的所有断点，在“调试”菜单上，单击“启用所有断点”。   以下脚本是如何通过使用 [Enable-PSBreakpoint](https://technet.microsoft.com/library/739e1091-3b3f-405f-a428-bec7543e5df0) cmdlet 从控制台窗格中启用所有断点的示例。
 
 ```powershell
 # This command enables all breakpoints in the current session.
@@ -140,8 +140,8 @@ Get-PSBreakpoint | Enable-PSBreakpoint
 
 | 调试任务 | 说明 | 如何在 PowerShell ISE 中完成它 |
 | --- | --- | --- |
-| **步入** | 执行当前的语句，然后在下一个语句处停止。 如果当前语句是一个函数或脚本调用，则调试器将单步调试该函数或脚本，或者停止在下一条语句上。 | 按 **F11**，或在“调试”菜单上，单击“步入”，或者，在控制台窗格中，键入 **S**，然后按 **ENTER**。 |
-| **步越** | 执行当前的语句，然后在下一个语句处停止。 如果当前语句是函数或脚本调用，调试器会执行整个函数或脚本，并在函数调用后的下一个语句处停止。 | 按 **F10**，或在“调试”菜单上，单击“步越”，或者在控制台窗格中，键入 **V**，然后按 **ENTER**。 |
+| **步入** | 执行当前的语句，然后在下一个语句处停止。 如果当前语句是一个函数或脚本调用，则调试器将单步调试该函数或脚本，或者停止在下一条语句上。 | 按 **F11**，或在“调试”菜单上，单击“步入”，或者，在控制台窗格中，键入 **S**，然后按 **ENTER**。   |
+| **步越** | 执行当前的语句，然后在下一个语句处停止。 如果当前语句是函数或脚本调用，调试器会执行整个函数或脚本，并在函数调用后的下一个语句处停止。 | 按 **F10**，或在“调试”菜单上，单击“步越”，或者在控制台窗格中，键入 **V**，然后按 **ENTER**。   |
 | **步出** | 跳出当前函数，如果函数是嵌套的则返回上一级。 如果在主正文中，脚本将执行到末尾，或到下一个断点。 将执行跳过的语句，但不会单步遍历。 | 按 **SHIFT+F11**，或在“**调试**”菜单上，单击“**步出**”，或者，在控制台窗格中，键入 **O**，然后按 **ENTER**。 |
 | **继续** | 继续执行到结束，或到下一个断点。 将执行已跳过的函数和调用，但不会进行单步遍历。 | 按 **F5**，或在“**调试**”菜单上，单击“**运行/继续**”，或者，在控制台窗格中，键入 **C**，然后按 **ENTER**。 |
 
@@ -195,4 +195,4 @@ C:\ps-test\MyScript.ps1
 
 ## <a name="see-also"></a>另请参阅
 
-- [探究 Windows PowerShell ISE](../../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
+- [探究 Windows PowerShell ISE](exploring-the-windows-powershell-ise.md)

@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell 入门
-ms.openlocfilehash: 3b0bde8d86b0f0ae64b430022543ba493f3927b7
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: fde0788a877cf93ee6423566c3275380474f4ee4
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030474"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117544"
 ---
 # <a name="getting-started-with-windows-powershell"></a>Windows PowerShell 入门
 Windows PowerShell 是专门为系统管理员设计的 Windows 命令行 Shell。 Windows PowerShell 包括可以单独或组合使用的交互提示和脚本编写环境。
@@ -22,8 +22,8 @@ Windows PowerShell 引入了 cmdlet（读作“command-let”）的概念，它�
 
 本主题内容：
 
-- [Windows PowerShell 系统要求](../setup/Windows-PowerShell-System-Requirements.md)
+- [Windows PowerShell 系统要求](../install/Windows-PowerShell-System-Requirements.md)
 
-- [安装 Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
+- [安装 Windows PowerShell](../install/Installing-Windows-PowerShell.md)
 
-- [启动 Windows PowerShell](../setup/Starting-Windows-PowerShell.md)
+- [启动 Windows PowerShell](Starting-Windows-PowerShell.md)

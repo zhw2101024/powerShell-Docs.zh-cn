@@ -2,12 +2,12 @@
 ms.date: 09/06/2019
 keywords: powershell,cmdlet
 title: PowerShell 5.0 ISE 中的新增功能
-ms.openlocfilehash: a719baef0da1600f0a5377e1b72c81b67e37eef2
-ms.sourcegitcommit: a74ae7ed089301992fed201fbe55d827a622afa0
+ms.openlocfilehash: f687c409a1a4b0e6b872863e9f132f7cf5baff20
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70746225"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117511"
 ---
 # <a name="whats-new-in-the-windows-powershell-50-ise"></a>Windows PowerShell 5.0 ISE 中的新增功能
 
@@ -30,7 +30,7 @@ Intellisense 会在你键入时显示可单击的菜单，其中包括可能匹�
 
 **更改增添了什么价值？**
 
-新增 Intellisense 功能后，使用 Windows PowerShell ISE 创建脚本时，可以更轻松地发现 cmdlet 和语法。 在创建新脚本时，还可以使用 Windows PowerShell ISE 了解 Windows PowerShell。
+新增 Intellisense 功能后，使用 Windows PowerShell ISE 创建脚本时，可以更容易地发现 cmdlet 和语法。 在创建新脚本时，还可以使用 Windows PowerShell ISE 了解 Windows PowerShell。
 
 **工作原理的不同之处是什么？**
 
@@ -70,7 +70,7 @@ Windows PowerShell ISE 3.0 及更高版本附带**命令**附加工具。 借助
 
 > 在 PowerShell 3.0 中添加
 
-Windows PowerShell ISE 每隔两分钟在单独的位置上自动保存你打开的脚本。 当 Windows PowerShell ISE 在意外崩溃或系统重启后重新启动时，它会恢复在上一个会话中打开的脚本，即使脚本未保存也是如此。
+Windows PowerShell ISE 每隔两分钟在单独的位置上自动保存你打开的脚本。 当 Windows PowerShell ISE 在意外崩溃或重新启动后重新启动时，它会恢复在上一个会话中打开的脚本，即使脚本未保存也是如此。
 
 要更改自动保存间隔，可在控制台窗格中运行下面的命令：`$psise.Options.AutoSaveMinuteInterval`。
 
@@ -88,7 +88,7 @@ Windows PowerShell ISE 2.0 不会自动保存脚本。
 
 Windows PowerShell ISE 现在具有最近使用过的文件列表。 在 Windows PowerShell ISE 中打开文件时，文件会添加到“文件”  菜单上的最近使用列表中。
 
-若要更改最近使用列表中的默认文件数量，请在控制台窗格中运行以下命令：`$psise.Options.MruCount`。
+若要更改最近使用列表中的文件默认数量，请在控制台窗格中运行以下命令：`$psise.Options.MruCount`。
 
 **更改增添了什么价值？**
 
@@ -193,7 +193,7 @@ Windows PowerShell ISE 2.0 中不具有这些编辑增强功能。
 
 **更改增添了什么价值？**
 
-通过在 Windows PowerShell 脚本中使用 `Show-Command`，可以为用户提供其熟悉的图形环境。 `Show-Command` 还有助于新用户了解 Windows PowerShell。
+通过在 Windows PowerShell 脚本中使用 `Show-Command`，可以为用户提供其熟悉的图形环境。 `Show-Command` 还有助于引导用户了解 Windows PowerShell。
 
 **工作原理的不同之处是什么？**
 
@@ -201,4 +201,4 @@ Windows PowerShell ISE 2.0 中不具有这些编辑增强功能。
 
 ## <a name="see-also"></a>另请参阅
 
-若要详细了解如何使用 Windows PowerShell ISE，请参阅[了解 Windows PowerShell 集成脚本环境](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)。
+若要详细了解如何使用 Windows PowerShell ISE，请参阅[了解 Windows PowerShell 集成脚本环境](../components/ise/exploring-the-windows-powershell-ise.md)。
