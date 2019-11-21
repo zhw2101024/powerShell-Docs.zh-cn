@@ -2,12 +2,12 @@
 title: 如何复制 Visual Studio Code 中的 ISE 体验
 description: 如何复制 Visual Studio Code 中的 ISE 体验
 ms.date: 08/06/2018
-ms.openlocfilehash: 983da850c13d72bcdc7b2d33970c6e9e06b3d869
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d5542e9a3a48b1ae64356309be669418edf6c79e
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058499"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117473"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>如何复制 Visual Studio Code 中的 ISE 体验
 
@@ -27,12 +27,29 @@ ms.locfileid: "62058499"
 
 也可以在 VSCode 中[配置自己的键绑定](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings)。
 
+## <a name="simplified-ise-like-ui"></a>简化的类似 ISE 的 UI
+
+如果希望简化 Visual Studio Code UI，以便看起来更接近 ISE 的 UI，请应用以下两个设置：
+
+```json
+"workbench.activityBar.visible": false,
+"debug.openDebug": "neverOpen",
+```
+
+这会在红色框内隐藏下面的“活动栏”和“调试侧边栏”部分：
+
+![突出显示的部分包括“活动栏”和“调试侧边栏”](images/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
+
+最终结果如下所示：
+
+![简化的 VS Code 视图](images/How-To-Replicate-the-ISE-Experience-In-VSCode/2-simplified-ui.png)
+
 ## <a name="tab-completion"></a>Tab 自动补全
 
 若要启用更类似于 ISE 的 Tab 自动补全，请添加以下设置：
 
 ```json
-"editor.tabCompletion": "on"
+"editor.tabCompletion": "on",
 ```
 
 > [!NOTE]
@@ -64,7 +81,7 @@ ms.locfileid: "62058499"
 若要创建新/无标题文件，请默认注册为 PowerShell：
 
 ```json
-"files.defaultLanguage": "powershell"
+"files.defaultLanguage": "powershell",
 ```
 
 ## <a name="color-scheme"></a>配色方案
@@ -77,7 +94,7 @@ ms.locfileid: "62058499"
 可以通过以下工具在设置中设置该主题：
 
 ```json
-"workbench.colorTheme": "PowerShell ISE"
+"workbench.colorTheme": "PowerShell ISE",
 ```
 
 ## <a name="powershell-command-explorer"></a>PowerShell 命令资源管理器

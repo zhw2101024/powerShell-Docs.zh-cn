@@ -2,12 +2,12 @@
 title: 了解 VSCode 和 PowerShell 中的文件编码
 description: 在 VSCode 和 PowerShell 中配置文件编码
 ms.date: 02/28/2019
-ms.openlocfilehash: 6a00e45b3700f72f78e2fbcdf6e317f3a17b53c0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 3283e1262c8eb26906429ecf195cfa0b122b330f
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058431"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117407"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>了解 VSCode 和 PowerShell 中的文件编码
 
@@ -15,9 +15,9 @@ ms.locfileid: "62058431"
 
 ## <a name="what-is-file-encoding-and-why-is-it-important"></a>什么是文件编码以及它为什么很重要？
 
-VSCode 管理人员向缓冲区中输入字符串与对文件系统读取/写入字节块之间的接口。 VSCode 保存文件时，会使用文本编码执行此操作。
+VSCode 管理人员向缓冲区中输入字符串与对文件系统读取/写入字节块之间的接口。 当 VSCode 保存文件时，它会使用文本编码来确定每个字符变为哪些字节。
 
-同样，当 PowerShell 运行脚本时，必须将文件中的字节转换为字符以将文件重新构造为 PowerShell 程序。 由于 VSCode 写入文件，而 PowerShell 读取文件，因此它们需要使用相同的编码系统。 分析 PowerShell 脚本的这一过程是：字节 -> 字符 -> 标记 -> 抽象语法树 -> 执行。
+同样，当 PowerShell 运行脚本时，必须将文件中的字节转换为字符以将文件重新构造为 PowerShell 程序。 由于 VSCode 写入文件，而 PowerShell 读取文件，因此它们需要使用相同的编码系统。 分析 PowerShell 脚本的这一过程是：字节   -> 字符   -> 标记   -> 抽象语法树   -> 执行  。
 
 VSCode 和 PowerShell 都使用合理的默认编码配置进行安装。 但是，PowerShell 使用的默认编码已随着 PowerShell Core (v6.x) 的发布而更改。 若要确保在 VSCode 中使用 PowerShell 或 PowerShell 扩展时不会出现问题，需要正确配置 VSCode 和 PowerShell 设置。
 
@@ -27,9 +27,10 @@ VSCode 和 PowerShell 都使用合理的默认编码配置进行安装。 但是
 
 如果使用的字符不在 [7 位 ASCII 字符集](https://ascii.cl/)中，则更可能出现编码问题。 例如：
 
+- 扩展的非字母字符，如长破折号 (`—`)、不间断空格 (` `) 或左双引号 (`“`)
 - 重音拉丁字符（`É`、`ü`）
 - 非拉丁字符，如西里尔文（`Д`、`Ц`）
-- 汉字（`脚`、`本`）
+- CJK 字符（`本`、`화`、`が`）
 
 编码问题的常见原因有：
 
@@ -194,7 +195,7 @@ finally
 
 ### <a name="existing-scripts"></a>现有脚本
 
-文件系统上已有的脚本可能需要重新编码为新的所选编码。 在 VSCode 底部栏中，会看到 UTF-8 标签。 单击它可打开操作栏并选择“保存时使用编码”。 现在可以为该文件选取新编码。 有关完整说明，请参阅 [VSCode 的编码][]。
+文件系统上已有的脚本可能需要重新编码为新的所选编码。 在 VSCode 底部栏中，会看到 UTF-8 标签。 单击它可打开操作栏并选择“保存时使用编码”  。 现在可以为该文件选取新编码。 有关完整说明，请参阅 [VSCode 的编码][]。
 
 如果需要重新编码多个文件，则可以使用以下脚本：
 
@@ -262,7 +263,7 @@ ISE 应遵循 BOM，但也可以使用反射来[设置编码](https://bensonxion
   - [#1680](https://github.com/PowerShell/vscode-powershell/issues/1680)
   - [#1744](https://github.com/PowerShell/vscode-powershell/issues/1744)
   - [#1751](https://github.com/PowerShell/vscode-powershell/issues/1751)
-- [经典的“Joel 说软件”探讨 Unicode](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
+- [经典的“Joel 说软件”  探讨 Unicode](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
 - [.NET Standard 中的编码](https://github.com/dotnet/standard/issues/260#issuecomment-289549508)
 
 
