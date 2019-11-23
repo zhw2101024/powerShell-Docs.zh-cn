@@ -1,5 +1,5 @@
 ---
-title: GetProc04 （VB.NET）示例代码 |Microsoft Docs
+title: GetProc04 (VB.NET) Sample Code | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,28 +8,28 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5d22f47b-3679-4587-a559-94454415d2dd
 caps.latest.revision: 5
-ms.openlocfilehash: 0d0d1a3f82bc2cee025139d69fee02eb601fa563
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: f2164b97e4f3b3346e66d00834aa299659b62b33
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72360296"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416094"
 ---
 # <a name="getproc04-vbnet-sample-code"></a>GetProc04 (VB.NET) 示例代码
 
-下面的代码演示了非终止 cmdlet 的 @no__t 实现，该 cmdlet 报告的错误。 此实现将调用[WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法来报告非终止错误。
+The following code shows the implementation of a `Get-Process` cmdlet that reports nonterminating errors. This implementation calls the [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) method to report nonterminating errors.
 
 > [!NOTE]
-> 你可以使用适用C#于 windows Vista 的 Microsoft Windows 软件开发工具包和 .NET Framework 3.0 运行时组件下载此 getprov04.cs cmdlet 的源文件（）。 有关下载说明，请参阅[如何安装 Windows powershell 和下载 Windows POWERSHELL SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
+> You can download the C# source file (getprov04.cs) for this Get-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 >
-> 下载的源文件在 **\<PowerShell 示例 >** 目录中提供。
+> The downloaded source files are available in the **\<PowerShell Samples>** directory.
 
-## <a name="code-sample"></a>代码示例
+## <a name="code-sample"></a>Code Sample
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesgetproc04#GetProc04vball](Msh_samplesgetproc04#GetProc04vball)]  -->
 
 ## <a name="see-also"></a>另请参阅
 
-[Windows PowerShell 程序员指南](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

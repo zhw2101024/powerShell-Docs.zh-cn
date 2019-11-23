@@ -1,5 +1,5 @@
 ---
-title: Cmdlet 参数集 |Microsoft Docs
+title: Cmdlet Parameter Sets | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,60 +8,59 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f902fd4d-8f6e-4ef1-b07f-59983039a0d1
 caps.latest.revision: 10
-ms.openlocfilehash: d8c00c7ffd369a32af151836785a2c5f47b05a68
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: dfe747893b4aef6376ea3b12dd79b7c144455ed0
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72365896"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74415687"
 ---
-# <a name="cmdlet-parameter-sets"></a>Cmdlet 参数集
+# <a name="cmdlet-parameter-sets"></a>Cmdlet parameter sets
 
-PowerShell 使用参数集来编写单个 cmdlet，该 cmdlet 可以针对不同的方案执行不同的操作。 参数集使你可以向用户公开不同参数。 和，根据用户指定的参数返回不同的信息。
+PowerShell uses parameter sets to enable you to write a single cmdlet that can do different actions for different scenarios. Parameter sets enable you to expose different parameters to the user. And, to return different information based on the parameters specified by the user.
 
-## <a name="examples-of-parameter-sets"></a>参数集的示例
+## <a name="examples-of-parameter-sets"></a>Examples of parameter sets
 
-例如，PowerShell `Get-EventLog` cmdlet 返回不同的信息，具体取决于用户是否指定了**List**或**LogName**参数。 如果指定了**List**参数，则 cmdlet 将返回有关日志文件本身的信息，而不返回这些日志文件所包含的事件信息。 如果指定了**LogName**参数，则 cmdlet 将返回有关特定事件日志中的事件的信息。 **List**和**LogName**参数标识两个单独的参数集。
+For example, the PowerShell `Get-EventLog` cmdlet returns different information depending on whether the user specifies the **List** or **LogName** parameter. If the **List** parameter is specified, the cmdlet returns information about the log files themselves but not the event information they contain. If the **LogName** parameter is specified, the cmdlet returns information about the events in a specific event log. The **List** and **LogName** parameters identify two separate parameter sets.
 
-## <a name="unique-parameter"></a>唯一参数
+## <a name="unique-parameter"></a>Unique parameter
 
-每个参数集都必须具有一个唯一参数，该参数由 PowerShell 运行时用来公开相应的参数集。 如果可能，唯一参数应该是必需参数。 如果参数是必需的，则用户必须指定参数，并且 PowerShell 运行时使用该参数来标识参数集。 如果 cmdlet 设计为在不指定任何参数的情况下运行，则 unique 参数不是必需的。
+Each parameter set must have a unique parameter that the PowerShell runtime uses to expose the appropriate parameter set. If possible, the unique parameter should be a mandatory parameter. When a parameter is mandatory, the user must specify the parameter, and the PowerShell runtime uses that parameter to identify the parameter set. The unique parameter can't be mandatory if your cmdlet is designed to run without specifying any parameters.
 
-## <a name="multiple-parameter-sets"></a>多个参数集
+## <a name="multiple-parameter-sets"></a>Multiple parameter sets
 
-在下图中，左栏显示了三个有效的参数集。 **参数 A**对于第一个参数集是唯一的，**参数 B**对于第二个参数集是唯一的，而**参数 C**对第三个参数集是唯一的。 在右列中，参数集没有唯一参数。
+In the following illustration, the left column shows three valid parameter sets. **Parameter A** is unique to the first parameter set, **parameter B** is unique to the second parameter set, and **parameter C** is unique to the third parameter set. In the right column, the parameter sets don't have a unique parameter.
 
 ![ps_parametersets](../media/ps-parametersets.gif)
 
-## <a name="parameter-set-requirements"></a>参数集要求
+## <a name="parameter-set-requirements"></a>Parameter set requirements
 
-以下要求适用于所有参数集。
+The following requirements apply to all parameter sets.
 
-- 每个参数集必须至少具有一个唯一参数。 如果可能，请将此参数设置为必需参数。
+- Each parameter set must have at least one unique parameter. If possible, make this parameter a mandatory parameter.
 
-- 包含多个位置参数的参数集必须为每个参数定义唯一的位置。 无两个位置参数可以指定同一位置。
+- A parameter set that contains multiple positional parameters must define unique positions for each parameter. No two positional parameters can specify the same position.
 
-- 集中只能有一个参数可以声明值为 @no__t `ValueFromPipeline` 的关键字。
-  多个参数可以定义值为 @no__t 的 @no__t 0 关键字。
+- Only one parameter in a set can declare the `ValueFromPipeline` keyword with a value of `true`.
+  Multiple parameters can define the `ValueFromPipelineByPropertyName` keyword with a value of `true`.
 
-- 如果未指定参数的参数集，则参数属于所有参数集。
+- If no parameter set is specified for a parameter, the parameter belongs to all parameter sets.
 
 > [!NOTE]
-> 对于 cmdlet 或函数，有32个参数集的限制。
+> For a cmdlet or function, there is a limit of 32 parameter sets.
 
-## <a name="default-parameter-sets"></a>默认参数集
+## <a name="default-parameter-sets"></a>Default parameter sets
 
-如果定义了多个参数集，则可以使用**Cmdlet**特性的 @no__t 关键字来指定默认参数集。 如果 PowerShell 无法根据命令提供的信息确定要使用的参数集，则它将使用默认参数集。 有关**cmdlet**特性的详细信息，请参阅[cmdlet 特性声明](./cmdlet-attribute-declaration.md)。
+When multiple parameter sets are defined, you can use the `DefaultParameterSetName` keyword of the **Cmdlet** attribute to specify the default parameter set. PowerShell uses the default parameter set if it can't determine the parameter set to use based on the information provided by the command. For more information about the **Cmdlet** attribute, see [Cmdlet Attribute Declaration](./cmdlet-attribute-declaration.md).
 
-## <a name="declaring-parameter-sets"></a>声明参数集
+## <a name="declaring-parameter-sets"></a>Declaring parameter sets
 
-若要创建参数集，则在为参数集中的每个参数声明**参数**属性时，必须指定 @no__t 关键字。 对于属于多个参数集的参数，请为每个参数集添加一个**参数**特性。 此特性使你能够以不同的方式为每个参数集定义参数。 例如，可以在一组中将参数定义为强制参数，并在另一个集中定义为可选参数。 但是，每个参数集必须包含一个唯一参数。 有关详细信息，请参阅[参数属性声明](parameter-attribute-declaration.md)。
+To create a parameter set, you must specify the `ParameterSetName` keyword when you declare the **Parameter** attribute for every parameter in the parameter set. For parameters that belong to multiple parameter sets, add a **Parameter** attribute for each parameter set. This attribute enables you to define the parameter differently for each parameter set. For example, you can define a parameter as mandatory in one set and optional in another. However, each parameter set must contain one unique parameter. For more information, see [Parameter Attribute Declaration](parameter-attribute-declaration.md).
 
-在下面的示例中， **UserName**参数是 `Test01` 参数集的唯一参数， **ComputerName**参数是 `Test02` 参数集的唯一参数。 **SharedParam**参数属于这两个集，对于 `Test01` 参数集是必需的，但对于 `Test02` 参数设置是可选的。
+In the following example, the **UserName** parameter is the unique parameter of the `Test01` parameter set, and the **ComputerName** parameter is the unique parameter of the `Test02` parameter set. The **SharedParam** parameter belongs to both sets and is mandatory for the `Test01` parameter set but optional for the `Test02` parameter set.
 
 ```csharp
-[Parameter(Position = 0, Mandatory = true,
-           ParameterSetName = "Test01")]
+[Parameter(Position = 0, Mandatory = true, ParameterSetName = "Test01")]
 public string UserName
 {
   get { return userName; }
@@ -69,8 +68,7 @@ public string UserName
 }
 private string userName;
 
-[Parameter(Position = 0, Mandatory = true,
-           ParameterSetName = "Test02")]
+[Parameter(Position = 0, Mandatory = true, ParameterSetName = "Test02")]
 public string ComputerName
 {
   get { return computerName; }
