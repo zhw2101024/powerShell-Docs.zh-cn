@@ -15,15 +15,15 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72366686"
 ---
-# <a name="getproc05-code-samples"></a><span data-ttu-id="1084f-102">GetProc05 代码示例</span><span class="sxs-lookup"><span data-stu-id="1084f-102">GetProc05 Code Samples</span></span>
+# <a name="getproc05-code-samples"></a><span data-ttu-id="a2b4c-102">GetProc05 代码示例</span><span class="sxs-lookup"><span data-stu-id="a2b4c-102">GetProc05 Code Samples</span></span>
 
-<span data-ttu-id="1084f-103">下面是 GetProc05 cmdlet 的代码示例。</span><span class="sxs-lookup"><span data-stu-id="1084f-103">Here are the code samples for the GetProc05 sample cmdlet.</span></span> <span data-ttu-id="1084f-104">此 @no__t cmdlet 类似于在[cmdlet 中添加非终止错误报告](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md)中所述的 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="1084f-104">This `Get-Process` cmdlet is similar to the cmdlet described in [Adding Nonterminating Error Reporting to Your Cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).</span></span>
+<span data-ttu-id="a2b4c-103">下面是 GetProc05 cmdlet 的代码示例。</span><span class="sxs-lookup"><span data-stu-id="a2b4c-103">Here are the code samples for the GetProc05 sample cmdlet.</span></span> <span data-ttu-id="a2b4c-104">此 `Get-Process` cmdlet 类似于在[cmdlet 中添加非终止错误报告](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md)中所述的 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="a2b4c-104">This `Get-Process` cmdlet is similar to the cmdlet described in [Adding Nonterminating Error Reporting to Your Cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).</span></span>
 
-|<span data-ttu-id="1084f-105">Language</span><span class="sxs-lookup"><span data-stu-id="1084f-105">Language</span></span>|<span data-ttu-id="1084f-106">主题</span><span class="sxs-lookup"><span data-stu-id="1084f-106">Topic</span></span>|
+|<span data-ttu-id="a2b4c-105">语言</span><span class="sxs-lookup"><span data-stu-id="a2b4c-105">Language</span></span>|<span data-ttu-id="a2b4c-106">主题</span><span class="sxs-lookup"><span data-stu-id="a2b4c-106">Topic</span></span>|
 |--------------|-----------|
-|<span data-ttu-id="1084f-107">C#</span><span class="sxs-lookup"><span data-stu-id="1084f-107">C#</span></span>|[<span data-ttu-id="1084f-108">GetProc05 （C#）示例代码</span><span class="sxs-lookup"><span data-stu-id="1084f-108">GetProc05 (C#) Sample Code</span></span>](./getproc05-csharp-sample-code.md)|
-|<span data-ttu-id="1084f-109">VB.NET</span><span class="sxs-lookup"><span data-stu-id="1084f-109">VB.NET</span></span>|[<span data-ttu-id="1084f-110">GetProc05 （VB.NET）示例代码</span><span class="sxs-lookup"><span data-stu-id="1084f-110">GetProc05 (VB.NET) Sample Code</span></span>](./getproc05-vb-net-sample-code.md)|
+|<span data-ttu-id="a2b4c-107">C#</span><span class="sxs-lookup"><span data-stu-id="a2b4c-107">C#</span></span>|[<span data-ttu-id="a2b4c-108">GetProc05 （C#）示例代码</span><span class="sxs-lookup"><span data-stu-id="a2b4c-108">GetProc05 (C#) Sample Code</span></span>](./getproc05-csharp-sample-code.md)|
+|<span data-ttu-id="a2b4c-109">VB.NET</span><span class="sxs-lookup"><span data-stu-id="a2b4c-109">VB.NET</span></span>|[<span data-ttu-id="a2b4c-110">GetProc05 （VB.NET）示例代码</span><span class="sxs-lookup"><span data-stu-id="a2b4c-110">GetProc05 (VB.NET) Sample Code</span></span>](./getproc05-vb-net-sample-code.md)|
 
-## <a name="see-also"></a><span data-ttu-id="1084f-111">另请参阅</span><span class="sxs-lookup"><span data-stu-id="1084f-111">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a2b4c-111">另请参阅</span><span class="sxs-lookup"><span data-stu-id="a2b4c-111">See Also</span></span>
 
-[<span data-ttu-id="1084f-112">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="1084f-112">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="a2b4c-112">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="a2b4c-112">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)

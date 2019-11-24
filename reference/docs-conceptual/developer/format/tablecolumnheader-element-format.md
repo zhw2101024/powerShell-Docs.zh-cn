@@ -15,13 +15,13 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72361846"
 ---
-# <a name="tablecolumnheader-element-format"></a><span data-ttu-id="aa69f-102">TableColumnHeader Element (Format)</span><span class="sxs-lookup"><span data-stu-id="aa69f-102">TableColumnHeader Element (Format)</span></span>
+# <a name="tablecolumnheader-element-format"></a><span data-ttu-id="43b2c-102">TableColumnHeader Element (Format)</span><span class="sxs-lookup"><span data-stu-id="43b2c-102">TableColumnHeader Element (Format)</span></span>
 
-<span data-ttu-id="aa69f-103">定义标签、列的宽度和表中某一列的标签对齐方式。</span><span class="sxs-lookup"><span data-stu-id="aa69f-103">Defines the label, the width of the column, and the alignment of the label for a column of the table.</span></span>
+<span data-ttu-id="43b2c-103">定义标签、列的宽度和表中某一列的标签对齐方式。</span><span class="sxs-lookup"><span data-stu-id="43b2c-103">Defines the label, the width of the column, and the alignment of the label for a column of the table.</span></span>
 
-<span data-ttu-id="aa69f-104">TableColumnHeader for TableHeaders 的 TableControl （Format） TableControl 元素的配置元素（格式） ViewDefinitions 元素（格式） TableControl 元素（format） TableHeaders 元素（format）</span><span class="sxs-lookup"><span data-stu-id="aa69f-104">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) TableControl Element (Format) TableHeaders Element for TableControl (Format) TableColumnHeader Element for TableHeaders for TableControl (Format)</span></span>
+<span data-ttu-id="43b2c-104">TableColumnHeader for TableHeaders 的 TableControl （Format） TableControl 元素的配置元素（格式） ViewDefinitions 元素（格式） TableControl 元素（format） TableHeaders 元素（format）</span><span class="sxs-lookup"><span data-stu-id="43b2c-104">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) TableControl Element (Format) TableHeaders Element for TableControl (Format) TableColumnHeader Element for TableHeaders for TableControl (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="aa69f-105">语法</span><span class="sxs-lookup"><span data-stu-id="aa69f-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="43b2c-105">语法</span><span class="sxs-lookup"><span data-stu-id="43b2c-105">Syntax</span></span>
 
 ```xml
 <TableColumnHeader>
@@ -31,39 +31,39 @@ ms.locfileid: "72361846"
 </TableColumnHeader>
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="aa69f-106">属性和元素</span><span class="sxs-lookup"><span data-stu-id="aa69f-106">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="43b2c-106">属性和元素</span><span class="sxs-lookup"><span data-stu-id="43b2c-106">Attributes and Elements</span></span>
 
-<span data-ttu-id="aa69f-107">以下各节介绍了 `TableColumnHeader` 元素的属性、子元素和父元素。</span><span class="sxs-lookup"><span data-stu-id="aa69f-107">The following sections describe attributes, child elements, and the parent element of the `TableColumnHeader` element.</span></span>
+<span data-ttu-id="43b2c-107">以下各节介绍了 `TableColumnHeader` 元素的属性、子元素和父元素。</span><span class="sxs-lookup"><span data-stu-id="43b2c-107">The following sections describe attributes, child elements, and the parent element of the `TableColumnHeader` element.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="aa69f-108">属性</span><span class="sxs-lookup"><span data-stu-id="aa69f-108">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="43b2c-108">特性</span><span class="sxs-lookup"><span data-stu-id="43b2c-108">Attributes</span></span>
 
-<span data-ttu-id="aa69f-109">无。</span><span class="sxs-lookup"><span data-stu-id="aa69f-109">None.</span></span>
+<span data-ttu-id="43b2c-109">无。</span><span class="sxs-lookup"><span data-stu-id="43b2c-109">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="aa69f-110">子元素</span><span class="sxs-lookup"><span data-stu-id="aa69f-110">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="43b2c-110">子元素</span><span class="sxs-lookup"><span data-stu-id="43b2c-110">Child Elements</span></span>
 
-|<span data-ttu-id="aa69f-111">元素</span><span class="sxs-lookup"><span data-stu-id="aa69f-111">Element</span></span>|<span data-ttu-id="aa69f-112">描述</span><span class="sxs-lookup"><span data-stu-id="aa69f-112">Description</span></span>|
+|<span data-ttu-id="43b2c-111">元素</span><span class="sxs-lookup"><span data-stu-id="43b2c-111">Element</span></span>|<span data-ttu-id="43b2c-112">描述</span><span class="sxs-lookup"><span data-stu-id="43b2c-112">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="aa69f-113">TableControl 的 TableColumnHeader 的 Label 元素（Format）</span><span class="sxs-lookup"><span data-stu-id="aa69f-113">Label Element For TableColumnHeader for TableControl (Format)</span></span>](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)|<span data-ttu-id="aa69f-114">可选元素。</span><span class="sxs-lookup"><span data-stu-id="aa69f-114">Optional element.</span></span><br /><br /> <span data-ttu-id="aa69f-115">定义在列顶部显示的标签。</span><span class="sxs-lookup"><span data-stu-id="aa69f-115">Defines the label that is displayed at the top of the column.</span></span> <span data-ttu-id="aa69f-116">如果未指定标签，则使用在行中显示其值的属性的名称。</span><span class="sxs-lookup"><span data-stu-id="aa69f-116">If no label is specified, the name of the property whose value is displayed in the rows is used.</span></span>|
-|[<span data-ttu-id="aa69f-117">TableControl 的 TableColumnHeader 的 Width 元素（Format）</span><span class="sxs-lookup"><span data-stu-id="aa69f-117">Width Element for TableColumnHeader for TableControl (Format)</span></span>](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)|<span data-ttu-id="aa69f-118">必需的元素。</span><span class="sxs-lookup"><span data-stu-id="aa69f-118">Required element.</span></span><br /><br /> <span data-ttu-id="aa69f-119">指定列的宽度（以字符为字符）。</span><span class="sxs-lookup"><span data-stu-id="aa69f-119">Specifies the width (in characters) of the column.</span></span>|
-|[<span data-ttu-id="aa69f-120">TableControl 的 TableColumnHeader 的对齐元素（格式）</span><span class="sxs-lookup"><span data-stu-id="aa69f-120">Alignment Element for TableColumnHeader for TableControl (Format)</span></span>](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|<span data-ttu-id="aa69f-121">可选元素。</span><span class="sxs-lookup"><span data-stu-id="aa69f-121">Optional element.</span></span><br /><br /> <span data-ttu-id="aa69f-122">指定列的标签的显示方式。</span><span class="sxs-lookup"><span data-stu-id="aa69f-122">Specifies how the label of the column is displayed.</span></span> <span data-ttu-id="aa69f-123">如果未指定对齐方式，则在左侧对齐标签。</span><span class="sxs-lookup"><span data-stu-id="aa69f-123">If no alignment is specified, the label is aligned on the left.</span></span>|
+|[<span data-ttu-id="43b2c-113">TableControl 的 TableColumnHeader 的 Label 元素（Format）</span><span class="sxs-lookup"><span data-stu-id="43b2c-113">Label Element For TableColumnHeader for TableControl (Format)</span></span>](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)|<span data-ttu-id="43b2c-114">可选元素。</span><span class="sxs-lookup"><span data-stu-id="43b2c-114">Optional element.</span></span><br /><br /> <span data-ttu-id="43b2c-115">定义在列顶部显示的标签。</span><span class="sxs-lookup"><span data-stu-id="43b2c-115">Defines the label that is displayed at the top of the column.</span></span> <span data-ttu-id="43b2c-116">如果未指定标签，则使用在行中显示其值的属性的名称。</span><span class="sxs-lookup"><span data-stu-id="43b2c-116">If no label is specified, the name of the property whose value is displayed in the rows is used.</span></span>|
+|[<span data-ttu-id="43b2c-117">TableControl 的 TableColumnHeader 的 Width 元素（Format）</span><span class="sxs-lookup"><span data-stu-id="43b2c-117">Width Element for TableColumnHeader for TableControl (Format)</span></span>](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)|<span data-ttu-id="43b2c-118">必需的元素。</span><span class="sxs-lookup"><span data-stu-id="43b2c-118">Required element.</span></span><br /><br /> <span data-ttu-id="43b2c-119">指定列的宽度（以字符为字符）。</span><span class="sxs-lookup"><span data-stu-id="43b2c-119">Specifies the width (in characters) of the column.</span></span>|
+|[<span data-ttu-id="43b2c-120">TableControl 的 TableColumnHeader 的对齐元素（格式）</span><span class="sxs-lookup"><span data-stu-id="43b2c-120">Alignment Element for TableColumnHeader for TableControl (Format)</span></span>](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|<span data-ttu-id="43b2c-121">可选元素。</span><span class="sxs-lookup"><span data-stu-id="43b2c-121">Optional element.</span></span><br /><br /> <span data-ttu-id="43b2c-122">指定列的标签的显示方式。</span><span class="sxs-lookup"><span data-stu-id="43b2c-122">Specifies how the label of the column is displayed.</span></span> <span data-ttu-id="43b2c-123">如果未指定对齐方式，则在左侧对齐标签。</span><span class="sxs-lookup"><span data-stu-id="43b2c-123">If no alignment is specified, the label is aligned on the left.</span></span>|
 
-### <a name="parent-elements"></a><span data-ttu-id="aa69f-124">父元素</span><span class="sxs-lookup"><span data-stu-id="aa69f-124">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="43b2c-124">父元素</span><span class="sxs-lookup"><span data-stu-id="43b2c-124">Parent Elements</span></span>
 
-|<span data-ttu-id="aa69f-125">元素</span><span class="sxs-lookup"><span data-stu-id="aa69f-125">Element</span></span>|<span data-ttu-id="aa69f-126">描述</span><span class="sxs-lookup"><span data-stu-id="aa69f-126">Description</span></span>|
+|<span data-ttu-id="43b2c-125">元素</span><span class="sxs-lookup"><span data-stu-id="43b2c-125">Element</span></span>|<span data-ttu-id="43b2c-126">描述</span><span class="sxs-lookup"><span data-stu-id="43b2c-126">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="aa69f-127">TableHeaders 元素（格式）</span><span class="sxs-lookup"><span data-stu-id="aa69f-127">TableHeaders Element (Format)</span></span>](./tableheaders-element-format.md)|<span data-ttu-id="aa69f-128">定义表视图的列。</span><span class="sxs-lookup"><span data-stu-id="aa69f-128">Defines the columns of a table view.</span></span>|
+|[<span data-ttu-id="43b2c-127">TableHeaders 元素（格式）</span><span class="sxs-lookup"><span data-stu-id="43b2c-127">TableHeaders Element (Format)</span></span>](./tableheaders-element-format.md)|<span data-ttu-id="43b2c-128">定义表视图的列。</span><span class="sxs-lookup"><span data-stu-id="43b2c-128">Defines the columns of a table view.</span></span>|
 
-## <a name="remarks"></a><span data-ttu-id="aa69f-129">备注</span><span class="sxs-lookup"><span data-stu-id="aa69f-129">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="43b2c-129">备注</span><span class="sxs-lookup"><span data-stu-id="43b2c-129">Remarks</span></span>
 
-<span data-ttu-id="aa69f-130">为表的每个列指定标题。</span><span class="sxs-lookup"><span data-stu-id="aa69f-130">Specify a header for each column of the table.</span></span> <span data-ttu-id="aa69f-131">列按定义 `TableColumnHeader` 元素的顺序显示。</span><span class="sxs-lookup"><span data-stu-id="aa69f-131">The columns are displayed in the order in which the `TableColumnHeader` elements are defined.</span></span>
+<span data-ttu-id="43b2c-130">为表的每个列指定标题。</span><span class="sxs-lookup"><span data-stu-id="43b2c-130">Specify a header for each column of the table.</span></span> <span data-ttu-id="43b2c-131">列按定义 `TableColumnHeader` 元素的顺序显示。</span><span class="sxs-lookup"><span data-stu-id="43b2c-131">The columns are displayed in the order in which the `TableColumnHeader` elements are defined.</span></span>
 
-<span data-ttu-id="aa69f-132">表必须与 @no__t 个元素具有相同数量的 `TableColumnHeader` 元素。</span><span class="sxs-lookup"><span data-stu-id="aa69f-132">A table must have the same number of `TableColumnHeader` elements as `TableRowEntry` elements.</span></span> <span data-ttu-id="aa69f-133">列标题定义表顶部的文本的显示方式。</span><span class="sxs-lookup"><span data-stu-id="aa69f-133">The column header defines how the text at the top of the table is displayed.</span></span> <span data-ttu-id="aa69f-134">行条目定义在表的行中显示的数据。</span><span class="sxs-lookup"><span data-stu-id="aa69f-134">The row entries define what data is displayed in the rows of the table.</span></span>
+<span data-ttu-id="43b2c-132">表必须与 `TableRowEntry` 元素具有相同数量的 `TableColumnHeader` 元素。</span><span class="sxs-lookup"><span data-stu-id="43b2c-132">A table must have the same number of `TableColumnHeader` elements as `TableRowEntry` elements.</span></span> <span data-ttu-id="43b2c-133">列标题定义表顶部的文本的显示方式。</span><span class="sxs-lookup"><span data-stu-id="43b2c-133">The column header defines how the text at the top of the table is displayed.</span></span> <span data-ttu-id="43b2c-134">行条目定义在表的行中显示的数据。</span><span class="sxs-lookup"><span data-stu-id="43b2c-134">The row entries define what data is displayed in the rows of the table.</span></span>
 
-<span data-ttu-id="aa69f-135">有关表视图的组件的详细信息，请参阅[表视图](./creating-a-table-view.md)。</span><span class="sxs-lookup"><span data-stu-id="aa69f-135">For more information about the components of a table view, see [Table View](./creating-a-table-view.md).</span></span>
+<span data-ttu-id="43b2c-135">有关表视图的组件的详细信息，请参阅[表视图](./creating-a-table-view.md)。</span><span class="sxs-lookup"><span data-stu-id="43b2c-135">For more information about the components of a table view, see [Table View](./creating-a-table-view.md).</span></span>
 
-## <a name="example"></a><span data-ttu-id="aa69f-136">示例</span><span class="sxs-lookup"><span data-stu-id="aa69f-136">Example</span></span>
+## <a name="example"></a><span data-ttu-id="43b2c-136">示例</span><span class="sxs-lookup"><span data-stu-id="43b2c-136">Example</span></span>
 
-<span data-ttu-id="aa69f-137">下面的示例演示两个 @no__t 0 元素。</span><span class="sxs-lookup"><span data-stu-id="aa69f-137">The following example shows two `TableColumnHeader` elements.</span></span> <span data-ttu-id="aa69f-138">第一个元素定义其标签为 "列 1" 的列，宽度为16个字符，其标签在左侧对齐。</span><span class="sxs-lookup"><span data-stu-id="aa69f-138">The first element defines a column whose label is "Column 1", has a width of 16 characters, and whose label is aligned on the left.</span></span> <span data-ttu-id="aa69f-139">第二个元素定义标签为 "Column 2" 的列，其宽度为10个字符，标签在列中居中。</span><span class="sxs-lookup"><span data-stu-id="aa69f-139">The second element defines a column whose label is "Column 2", has a width of 10 characters, and whose label is centered in the column.</span></span>
+<span data-ttu-id="43b2c-137">下面的示例演示两个 `TableColumnHeader` 元素。</span><span class="sxs-lookup"><span data-stu-id="43b2c-137">The following example shows two `TableColumnHeader` elements.</span></span> <span data-ttu-id="43b2c-138">第一个元素定义其标签为 "列 1" 的列，宽度为16个字符，其标签在左侧对齐。</span><span class="sxs-lookup"><span data-stu-id="43b2c-138">The first element defines a column whose label is "Column 1", has a width of 16 characters, and whose label is aligned on the left.</span></span> <span data-ttu-id="43b2c-139">第二个元素定义标签为 "Column 2" 的列，其宽度为10个字符，标签在列中居中。</span><span class="sxs-lookup"><span data-stu-id="43b2c-139">The second element defines a column whose label is "Column 2", has a width of 10 characters, and whose label is centered in the column.</span></span>
 
 ```xml
 <TableHeaders>
@@ -80,16 +80,16 @@ ms.locfileid: "72361846"
 </TableHeaders>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="aa69f-140">另请参阅</span><span class="sxs-lookup"><span data-stu-id="aa69f-140">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="43b2c-140">另请参阅</span><span class="sxs-lookup"><span data-stu-id="43b2c-140">See Also</span></span>
 
-[<span data-ttu-id="aa69f-141">TableControl 的 TableColumnHeader 的对齐元素（格式）</span><span class="sxs-lookup"><span data-stu-id="aa69f-141">Alignment Element for TableColumnHeader for TableControl (Format)</span></span>](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
+[<span data-ttu-id="43b2c-141">TableControl 的 TableColumnHeader 的对齐元素（格式）</span><span class="sxs-lookup"><span data-stu-id="43b2c-141">Alignment Element for TableColumnHeader for TableControl (Format)</span></span>](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
 
-[<span data-ttu-id="aa69f-142">创建表视图</span><span class="sxs-lookup"><span data-stu-id="aa69f-142">Creating a Table View</span></span>](./creating-a-table-view.md)
+[<span data-ttu-id="43b2c-142">创建表视图</span><span class="sxs-lookup"><span data-stu-id="43b2c-142">Creating a Table View</span></span>](./creating-a-table-view.md)
 
-[<span data-ttu-id="aa69f-143">TableControl 的 TableColumnHeader 的 Label 元素（Format）</span><span class="sxs-lookup"><span data-stu-id="aa69f-143">Label Element for TableColumnHeader for TableControl (Format)</span></span>](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)
+[<span data-ttu-id="43b2c-143">TableControl 的 TableColumnHeader 的 Label 元素（Format）</span><span class="sxs-lookup"><span data-stu-id="43b2c-143">Label Element for TableColumnHeader for TableControl (Format)</span></span>](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)
 
-[<span data-ttu-id="aa69f-144">TableControl 的 TableHeaders 元素（格式）</span><span class="sxs-lookup"><span data-stu-id="aa69f-144">TableHeaders Element for TableControl (Format)</span></span>](./tableheaders-element-format.md)
+[<span data-ttu-id="43b2c-144">TableControl 的 TableHeaders 元素（格式）</span><span class="sxs-lookup"><span data-stu-id="43b2c-144">TableHeaders Element for TableControl (Format)</span></span>](./tableheaders-element-format.md)
 
-[<span data-ttu-id="aa69f-145">TableControl 元素的 TableColumnHeader 宽度（格式）</span><span class="sxs-lookup"><span data-stu-id="aa69f-145">Width for TableColumnHeader for TableControl Element (Format)</span></span>](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)
+[<span data-ttu-id="43b2c-145">TableControl 元素的 TableColumnHeader 宽度（格式）</span><span class="sxs-lookup"><span data-stu-id="43b2c-145">Width for TableColumnHeader for TableControl Element (Format)</span></span>](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)
 
-[<span data-ttu-id="aa69f-146">编写 PowerShell 格式化文件</span><span class="sxs-lookup"><span data-stu-id="aa69f-146">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="43b2c-146">编写 PowerShell 格式化文件</span><span class="sxs-lookup"><span data-stu-id="43b2c-146">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
