@@ -23,7 +23,7 @@ ms.locfileid: "72359626"
 
 ### <a name="setting-up-the-project"></a>设置项目
 
-1. 按照[将 Windows PowerShell 活动添加到 Visual Studio 工具箱](./adding-windows-powershell-activities-to-the-visual-studio-toolbox.md)中的过程来创建工作流项目，并添加来自 Microsoft. [activity](/dotnet/api/Microsoft.PowerShell.Activities)和[microsoft。](/dotnet/api/Microsoft.PowerShell.Management.Activities)程序集到工具箱。
+1. 按照[将 Windows PowerShell 活动添加到 Visual Studio 工具箱](./adding-windows-powershell-activities-to-the-visual-studio-toolbox.md)中的过程，创建一个工作流项目，并将这些活动从 " [microsoft](/dotnet/api/Microsoft.PowerShell.Activities) " 和 " [microsoft. 管理](/dotnet/api/Microsoft.PowerShell.Management.Activities)" 程序集添加到 "工具箱"。
 
 2. 将 System.object 作为引用程序集添加到项目中，以作为引用程序集的作为项目的 "管理"、"microsoft"、"管理" 和 "microsoft"。
 
@@ -33,11 +33,11 @@ ms.locfileid: "72359626"
 
 2. 创建一个名为 `ComputerName` 的参数，参数类型为 `String[]`。 此参数表示要检查和加入的计算机的名称。
 
-3. 创建一个名为 `DomainCred`[的类型为的参数。](/dotnet/api/System.Management.Automation.PSCredential) 此参数表示有权将计算机加入域的域帐户的域凭据。
+3. 创建一个名为的参数，该参数[的类型为 `DomainCred`。](/dotnet/api/System.Management.Automation.PSCredential) 此参数表示有权将计算机加入域的域帐户的域凭据。
 
-4. 创建一个名为 `MachineCred`[的类型为的参数。](/dotnet/api/System.Management.Automation.PSCredential) 此参数表示要检查和加入计算机上的管理员的凭据。
+4. 创建一个名为的参数，该参数[的类型为 `MachineCred`。](/dotnet/api/System.Management.Automation.PSCredential) 此参数表示要检查和加入计算机上的管理员的凭据。
 
-5. 添加 "**序列**" 活动中的**ParallelForEach**活动。 在文本框中输入 `comp` 并 `ComputerName`，以便循环遍历 @no__t 2 数组的元素。
+5. 添加 "**序列**" 活动中的**ParallelForEach**活动。 在文本框中输入 `comp` 和 `ComputerName`，以便循环遍历 `ComputerName` 数组的元素。
 
 6. 将 "**序列**" 活动添加到 " **ParallelForEach** " 活动的正文中。 将序列的**DisplayName**属性设置为 `JoinDomain`。
 
@@ -77,4 +77,5 @@ ms.locfileid: "72359626"
 
     完成这些过程后，工作流设计窗口应如下所示。
 
-    工作流设计器中的 @no__t 0JoinDomain XAML @ no__t-1![JOINDOMAIN xaml In workflow designer](../media/joindomainworkflow.png "JoinDomainWorkflow")
+    ![工作流设计器中的 JoinDomain XAML](../media/joindomainworkflow.png)
+    ![JOINDOMAIN xaml In workflow designer](../media/joindomainworkflow.png "JoinDomainWorkflow")

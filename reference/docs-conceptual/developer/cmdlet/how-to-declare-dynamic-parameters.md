@@ -17,7 +17,7 @@ ms.locfileid: "72364416"
 ---
 # <a name="how-to-declare-dynamic-parameters"></a>如何声明动态参数
 
-此示例演示如何定义在运行时添加到 cmdlet 的动态参数。 在此示例中，只要用户指定 @no__t 开关参数，就会将 `Department` 参数添加到 cmdlet。 有关动态参数的详细信息，请参阅[Cmdlet 动态参数](./cmdlet-dynamic-parameters.md)。
+此示例演示如何定义在运行时添加到 cmdlet 的动态参数。 在此示例中，只要用户指定 `Employee` 开关参数，就会将 `Department` 参数添加到 cmdlet。 有关动态参数的详细信息，请参阅[Cmdlet 动态参数](./cmdlet-dynamic-parameters.md)。
 
 ## <a name="to-define-dynamic-parameters"></a>定义动态参数
 
@@ -27,7 +27,7 @@ ms.locfileid: "72364416"
    public class SendGreetingCommand : Cmdlet, IDynamicParameters
    ```
 
-2. 调用[Idynamicparameters. Getdynamicparameters *](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)方法，该方法返回在其中定义动态参数的对象。 在此示例中，当指定 @no__t 0 参数时，将调用方法。
+2. 调用[Idynamicparameters. Getdynamicparameters *](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)方法，该方法返回在其中定义动态参数的对象。 在此示例中，当指定 `Employee` 参数时，将调用方法。
 
    ```csharp
    public object GetDynamicParameters()
@@ -60,7 +60,7 @@ ms.locfileid: "72364416"
 
 ## <a name="example"></a>示例
 
-在此示例中，只要用户指定 `Employee` 参数，就会添加 @no__t 的参数。 @No__t 的参数是一个可选参数，ValidateSet 属性用于指定允许的参数。
+在此示例中，只要用户指定 `Employee` 参数，就会添加 `Department` 参数。 `Department` 参数是一个可选参数，ValidateSet 属性用于指定允许的参数。
 
 ```csharp
 using System;

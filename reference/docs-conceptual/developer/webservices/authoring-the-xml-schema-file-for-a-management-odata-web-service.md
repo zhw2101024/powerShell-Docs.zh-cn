@@ -17,7 +17,7 @@ ms.locfileid: "72359796"
 ---
 # <a name="authoring-the-xml-schema-file-for-a-management-odata-web-service"></a>创作管理 OData Web 服务的 XML 架构文件
 
-定义 web 服务将公开的资源之后（请参阅[创作用于管理 OData web 服务的 MOF 架构文件](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)），将这些资源映射到用于实现每个资源：创建符合[资源映射架构](./resource-mapping-schema.md)的 XML 文件。 该 XML 文件还指定客户端用来访问资源的 Url。
+定义 web 服务将公开的资源之后（请参阅[创作用于管理 OData web 服务的 MOF 架构文件](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)），通过创建符合[资源映射架构](./resource-mapping-schema.md)的 XML 文件，将这些资源映射到用于实现每个资源支持的操作的基础 Windows PowerShell cmdlet。 该 XML 文件还指定客户端用来访问资源的 Url。
 
 ## <a name="mappng-resources-to-urls"></a>将资源 Mappng 到 Url
 
@@ -49,9 +49,9 @@ XML 文件的第一部分将 MOF 架构文件中定义的资源映射到用于�
 |创建|创建|
 |读取|查询|
 |更新|更新|
-|“删除”|“删除”|
+|DELETE|DELETE|
 
-下面的示例演示对 @no__t 资源的创建、读取和更新操作的映射。
+下面的示例演示 `Service` 资源上的创建、读取和更新操作的映射。
 
 ```xml
 <ClassImplementations>

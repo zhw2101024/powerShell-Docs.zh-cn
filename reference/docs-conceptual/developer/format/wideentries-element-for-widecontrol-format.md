@@ -34,7 +34,7 @@ ms.locfileid: "72361426"
 
 以下各节介绍 `WideEntries` 元素的属性、子元素和父元素。 必须至少指定一个子元素。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 无。
 
@@ -56,7 +56,7 @@ ms.locfileid: "72361426"
 
 ## <a name="example"></a>示例
 
-下面的示例演示了一个 `WideEntries` 元素，该元素定义单个 @no__t 1 元素。 @No__t-0 元素包含一个 @no__t 元素，该元素定义在视图中显示的属性或脚本值。
+下面的示例演示了一个 `WideEntries` 元素，该元素定义单个 `WideEntry` 元素。 `WideEntry` 元素包含一个 `WideItem` 元素，该元素定义在视图中显示的属性或脚本值。
 
 ```xml
 <WideControl>

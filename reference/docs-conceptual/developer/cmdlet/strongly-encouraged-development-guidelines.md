@@ -57,11 +57,11 @@ Cmdlet 命名中使用的名词需要是非常具体的，以便用户能够发�
 
 ### <a name="parameter-design-guidelines-sd03"></a>参数设计准则（SD03）
 
-Cmdlet 需要用于接收必须操作的数据的参数，以及指示用于确定操作特征的信息的参数。 例如，一个 cmdlet 可能有一个从管道接收数据的 @no__t 0 参数，该 cmdlet 可能有一个 @no__t 的参数，用于指示该 cmdlet 可以强制执行其操作。 Cmdlet 可以定义的参数数量没有限制。
+Cmdlet 需要用于接收必须操作的数据的参数，以及指示用于确定操作特征的信息的参数。 例如，一个 cmdlet 可能有一个从管道接收数据的 `Name` 参数，该 cmdlet 可能具有一个 `Force` 参数，以指示可以强制该 cmdlet 执行其操作。 Cmdlet 可以定义的参数数量没有限制。
 
 #### <a name="use-standard-parameter-names"></a>使用标准参数名称
 
-你的 cmdlet 应使用标准参数名称，以便用户可以快速确定特定参数的含义。 如果需要更具体的名称，请使用标准参数名称，然后将更具体的名称指定为别名。 例如，@no__t cmdlet 有一个参数，该参数具有通用名称（`Name`）和更具体的别名（`ServiceName`）。 这两个术语可用于指定参数。
+你的 cmdlet 应使用标准参数名称，以便用户可以快速确定特定参数的含义。 如果需要更具体的名称，请使用标准参数名称，然后将更具体的名称指定为别名。 例如，`Get-Service` cmdlet 具有一个参数，该参数具有通用名称（`Name`）和更具体的别名（`ServiceName`）。 这两个术语可用于指定参数。
 
 有关参数名称及其数据类型的详细信息，请参阅[Cmdlet 参数名称和功能准则](./standard-cmdlet-parameter-names-and-types.md)。
 
@@ -73,7 +73,7 @@ Cmdlet 需要用于接收必须操作的数据的参数，以及指示用于确�
 
 #### <a name="use-pascal-case-for-parameter-names"></a>对于参数名称使用 Pascal 大小写
 
-对于参数名称使用 Pascal 大小写。 换句话说，将参数名称中每个单词的首字母大写，包括名称的第一个字母。 例如，参数名 `ErrorAction` 使用正确的大小写。 以下参数名称使用了不正确的大小写：
+对于参数名称使用 Pascal 大小写。 换句话说，将参数名称中每个单词的首字母大写，包括名称的第一个字母。 例如，参数名称 `ErrorAction` 使用正确的大小写。 以下参数名称使用了不正确的大小写：
 
 - `errorAction`
 
@@ -97,13 +97,13 @@ Cmdlet 需要用于接收必须操作的数据的参数，以及指示用于确�
 
 #### <a name="use-consistent-parameter-types"></a>使用一致的参数类型
 
-当多个 cmdlet 使用同一个参数时，请始终使用相同的参数类型。  例如，如果 @no__t 参数为一个 cmdlet 的[Int16](/dotnet/api/System.Int16)类型，请不要为另一个 cmdlet 创建[一个类型为的 @no__t](/dotnet/api/System.UInt16) -2 参数。
+当多个 cmdlet 使用同一个参数时，请始终使用相同的参数类型。  例如，如果 `Process` 参数为一个 cmdlet 的[system.object](/dotnet/api/System.Int16)类型，请不要为另一个 cmdlet 设置一个[system.object](/dotnet/api/System.UInt16)类型的 `Process` 参数。
 
 #### <a name="parameters-that-take-true-and-false"></a>采用 True 和 False 的参数
 
-如果参数仅使用 `true` 并 `false`，则将参数定义为[SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)类型。 在命令中指定开关参数时，该参数将被视为 `true`。 如果命令中未包含该参数，则 Windows PowerShell 会将参数的值视为 `false`。 不要定义布尔参数。
+如果参数仅 `true` 和 `false`，请将参数定义为[SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)类型。 在命令中指定开关参数时，该参数将被视为 `true`。 如果命令中未包含该参数，则 Windows PowerShell 会将参数的值视为 `false`。 不要定义布尔参数。
 
-如果参数需要区分三个值： $true、$false 和 "未指定"，则定义类型为 Nullable @ no__t-0bool > 的参数。  当 cmdlet 可以修改对象的布尔属性时，通常会出现第三个 "未指定" 值。 在这种情况下，"未指定" 表示不更改属性的当前值。
+如果参数需要区分三个值： $true、$false 和 "未指定"，则定义类型为 Nullable\<bool > 的参数。  当 cmdlet 可以修改对象的布尔属性时，通常会出现第三个 "未指定" 值。 在这种情况下，"未指定" 表示不更改属性的当前值。
 
 #### <a name="support-arrays-for-parameters"></a>支持参数的数组
 
@@ -111,13 +111,13 @@ Cmdlet 需要用于接收必须操作的数据的参数，以及指示用于确�
 
 #### <a name="support-the-passthru-parameter"></a>支持 PassThru 参数
 
-默认情况下，修改系统的许多 cmdlet （如[Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) cmdlet）都充当对象的 "接收器"，不返回结果。 这些 cmdlet 应实现 `PassThru` 参数以强制 cmdlet 返回对象。 当指定 @no__t 的参数时，该 cmdlet 将使用对[WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法的调用来返回一个对象。 例如，以下命令将停止 Calc 进程，并将生成的进程传递给管道。
+默认情况下，修改系统的许多 cmdlet （如[Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) cmdlet）都充当对象的 "接收器"，不返回结果。 这些 cmdlet 应实现 `PassThru` 参数以强制 cmdlet 返回对象。 当指定 `PassThru` 参数时，该 cmdlet 将使用对[WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法的调用返回一个对象。 例如，以下命令将停止 Calc 进程，并将生成的进程传递给管道。
 
 ```powershell
 Stop-Process calc -passthru
 ```
 
-在大多数情况下，添加、设置和新的 cmdlet 应支持 @no__t 0 参数。
+在大多数情况下，添加、设置和新的 cmdlet 应支持 `PassThru` 参数。
 
 #### <a name="support-parameter-sets"></a>支持参数集
 
@@ -139,7 +139,7 @@ Windows PowerShell 运行时允许用户通过设置首选项变量来指定如�
 
 如果用户需要有关 cmdlet 执行的操作的一些详细信息，则 cmdlet 应调用[WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法。 例如，如果 cmdlet 作者认为某些方案可能需要有关 cmdlet 执行的操作的详细信息，则 cmdlet 应调用此信息。
 
-当开发人员或产品支持工程师必须了解已损坏 cmdlet 操作时，该 cmdlet 应调用[WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法。 对于调用[WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法的相同代码，此 cmdlet 不需要调用[WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法，因为 `Debug` 参数同时提供了两个参数的两种方法。信息集。
+当开发人员或产品支持工程师必须了解已损坏 cmdlet 操作时，该 cmdlet 应调用[WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法。 Cmdlet 不需要在调用[WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法的同一代码中调用[WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法，因为 `Debug` 参数会同时提供这两种信息的集合，这种情况是必需的。
 
 #### <a name="support-writeprogress-for-operations-that-take-a-long-time"></a>支持对耗时较长的操作的 WriteProgress
 
@@ -170,9 +170,9 @@ Windows PowerShell 运行时允许用户通过设置首选项变量来指定如�
 
 Windows PowerShell 路径是用于规范化对命名空间的访问的机制。 将 Windows PowerShell 路径分配到 cmdlet 中的参数时，用户可以定义一个自定义 "驱动器"，它充当特定路径的快捷方式。 当用户指定此类驱动器时，可以通过一致的方式使用存储的数据（如注册表中的数据）。
 
-如果你的 cmdlet 允许用户指定文件或数据源，则它应定义类型为[system.string](/dotnet/api/System.String)的参数。 如果支持多个驱动器，则类型应为数组。 参数的名称应为 `Path`，别名为 `PSPath`。 此外，@no__t 的参数应支持通配符。 如果不需要支持通配符，请定义 `LiteralPath` 参数。
+如果你的 cmdlet 允许用户指定文件或数据源，则它应定义类型为[system.string](/dotnet/api/System.String)的参数。 如果支持多个驱动器，则类型应为数组。 参数的名称应为 `Path`，别名为 `PSPath`。 此外，`Path` 参数应支持通配符。 如果不需要支持通配符，请定义 `LiteralPath` 参数。
 
-如果 cmdlet 读取或写入的数据必须是文件，则该 cmdlet 应接受 Windows PowerShell 路径输入，并且该 cmdlet 应使用[Sessionstate](/dotnet/api/System.Management.Automation.SessionState.Path)属性将 Windows powershell 路径转换为文件系统识别的路径。 具体的机制包括以下方法：
+如果 cmdlet 读取或写入的数据必须是文件，则该 cmdlet 应接受 Windows PowerShell 路径输入，并且该 cmdlet 应使用[Sessionstate](/dotnet/api/System.Management.Automation.SessionState.Path)属性将 Windows powershell 路径转换为文件系统可识别的路径。 具体的机制包括以下方法：
 
 - [PSCmdlet. GetResolvedProviderPathFromPSPath。](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
 
@@ -182,7 +182,7 @@ Windows PowerShell 路径是用于规范化对命名空间的访问的机制。 
 
 - [PathIntrinsics. GetUnresolvedProviderPathFromPSPath。](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
 
-如果 cmdlet 读取或写入的数据只是一组字符串而不是文件，则该 cmdlet 应该使用提供程序内容信息（@no__t 0 成员）进行读取和写入。 此信息是从[CmdletProvider. InvokeProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider)属性获取的。 这些机制允许其他数据存储区参与数据的读取和写入。
+如果 cmdlet 读取或写入的数据只是一组字符串而不是文件，则该 cmdlet 应该使用提供程序内容信息（`Content` 成员）进行读取和写入。 此信息是从[CmdletProvider. InvokeProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider)属性获取的。 这些机制允许其他数据存储区参与数据的读取和写入。
 
 #### <a name="support-wildcard-characters"></a>支持通配符
 
@@ -206,7 +206,7 @@ Windows PowerShell 路径是用于规范化对命名空间的访问的机制。 
 
 Cmdlet 返回的预先存在的 .NET Framework 对象常常缺少脚本开发人员或用户所需的一些重要或便捷的成员。 这些缺少的成员对于显示和创建正确的成员名称尤其重要，这样就可以正确地将对象传递到管道。 创建自定义 types.ps1xml 文件来记录这些必需成员。 创建此文件时，建议采用以下命名约定： *< Your_Product_Name >* 。Types.ps1xml。
 
-例如，可以将 `Mode` 脚本属性添加到[FileInfo](/dotnet/api/System.IO.FileInfo)类型，以更清晰地显示文件的属性。 此外，您还可以将 `Count` alias 属性添加到[system.string 类型，](/dotnet/api/System.Array)以允许一致地使用该属性名称（而不是 `Length`）。
+例如，可以将 `Mode` script 属性添加到[FileInfo](/dotnet/api/System.IO.FileInfo)类型，以更清晰地显示文件的属性。 此外，您还可以将 `Count` alias 属性添加到[系统数组](/dotnet/api/System.Array)类型，以允许一致地使用该属性名称（而不是 `Length`）。
 
 ##### <a name="implement-the-icomparable-interface"></a>实现 IComparable 接口
 
@@ -220,13 +220,13 @@ Cmdlet 返回的预先存在的 .NET Framework 对象常常缺少脚本开发人
 
 #### <a name="implement-for-the-middle-of-a-pipeline"></a>实现管道的中间
 
-实现一个 cmdlet，假设它将从管道的中间调用（也就是说，其他 cmdlet 将生成其输入或使用其输出）。 例如，你可能会假设 @no__t 的 cmdlet，因为它会生成数据，仅用作管道中的第一个 cmdlet。 但是，由于此 cmdlet 是为管道的中间设计的，因此此 cmdlet 允许管道中的上一个 cmdlet 或数据指定要检索的进程。
+实现一个 cmdlet，假设它将从管道的中间调用（也就是说，其他 cmdlet 将生成其输入或使用其输出）。 例如，你可能会假设 `Get-Process` cmdlet，因为它会生成数据，仅用作管道中的第一个 cmdlet。 但是，由于此 cmdlet 是为管道的中间设计的，因此此 cmdlet 允许管道中的上一个 cmdlet 或数据指定要检索的进程。
 
 #### <a name="support-input-from-the-pipeline"></a>支持管道中的输入
 
 在 cmdlet 的每个参数集中，至少包括一个支持管道输入的参数。 支持管道输入允许用户检索数据或对象，以将其发送到正确的参数集，并将结果直接传递给 cmdlet。
 
-如果**参数**属性包含 `ValueFromPipeline` 关键字、`ValueFromPipelineByPropertyName` 关键字特性或其声明中的这两个关键字，则参数接受来自管道的输入。 如果参数集中的参数均不支持 `ValueFromPipeline` 或 `ValueFromPipelineByPropertyName` 关键字，则无法有意义地将 cmdlet 置于另一个 cmdlet 之后，因为它将忽略任何管道输入。
+如果**参数**属性包括 `ValueFromPipeline` 关键字、`ValueFromPipelineByPropertyName` 关键字特性或其声明中的这两个关键字，则参数接受来自管道的输入。 如果参数集中的参数均不支持 `ValueFromPipeline` 或 `ValueFromPipelineByPropertyName` 关键字，则无法有意义地将 cmdlet 置于另一个 cmdlet 之后，因为它将忽略任何管道输入。
 
 #### <a name="support-the-processrecord-method"></a>支持 ProcessRecord 方法
 
@@ -234,7 +234,7 @@ Cmdlet 返回的预先存在的 .NET Framework 对象常常缺少脚本开发人
 
 ### <a name="write-single-records-to-the-pipeline-sc03"></a>将单个记录写入管道（SC03）
 
-当 cmdlet 返回对象时，cmdlet 应在生成对象时立即写入它们。 Cmdlet 不应包含它们，以便将它们缓冲到合并的数组中。 作为输入接收对象的 cmdlet 将能够处理、显示或处理并显示输出对象，而无需延迟。 一个 cmdlet，它一次生成一个输出对象应调用[WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法。 成批生成输出对象的 cmdlet （例如，由于基础 API 返回输出对象的数组），应调用[WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法，并将第二个参数设置为 `true`。
+当 cmdlet 返回对象时，cmdlet 应在生成对象时立即写入它们。 Cmdlet 不应包含它们，以便将它们缓冲到合并的数组中。 作为输入接收对象的 cmdlet 将能够处理、显示或处理并显示输出对象，而无需延迟。 一个 cmdlet，它一次生成一个输出对象应调用[WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法。 成批生成输出对象的 cmdlet （例如，因为基础 API 返回输出对象的数组），则应调用[WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法，并将第二个参数设置为 `true`。
 
 ### <a name="make-cmdlets-case-insensitive-and-case-preserving-sc04"></a>使 Cmdlet 不区分大小写并保留大小写（SC04）
 

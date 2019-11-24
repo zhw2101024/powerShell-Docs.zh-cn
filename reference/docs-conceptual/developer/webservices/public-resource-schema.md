@@ -38,9 +38,9 @@ class PswsTest_Process
 
 每个属性名称前面都有一个数据类型。 本示例中的数据类型与 .NET Framework 中的基元 CLR 数据类型相对应，但属性也可以引用其他资源或复杂类型，这两种方法在稍后进行介绍。
 
-@No__t-0 限定符指示属性用于唯一标识资源实例。 一个资源可以有多个键。
+`Key` 限定符指示属性用于唯一标识资源实例。 一个资源可以有多个键。
 
-@No__t-0 限定符指示属性是必需的。 如果用 `Key` 限定符标记属性，则认为该属性是必需的，不需要 @no__t 限定符。
+`Required` 限定符指示属性是必需的。 如果使用 `Key` 限定符标记属性，则认为该属性是必需的，并且不需要 `Required` 限定符。
 
 ### <a name="complex-data-types"></a>复杂数据类型
 
@@ -55,7 +55,7 @@ class PswsTest_ProcessModule
 };
 ```
 
-若要将实体属性声明为复杂类型，可以将其声明为带有 `EmbeddedInstance` 限定符的 @no__t 0 类型，包括复杂类型的名称。 下面的示例演示上一示例中声明的 `PswsTest_ProcessModule` 类型的属性的声明。
+若要将实体属性声明为复杂类型，请使用 `EmbeddedInstance` 限定符将它声明为 `string` 类型，包括复杂类型的名称。 下面的示例演示上一示例中声明的 `PswsTest_ProcessModule` 类型的属性的声明。
 
 ```csharp
 [Required, EmbeddedInstance("PswsTest_ProcessModule")] String Modules[];

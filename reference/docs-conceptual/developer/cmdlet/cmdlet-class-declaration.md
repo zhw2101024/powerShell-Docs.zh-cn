@@ -29,7 +29,7 @@ ms.locfileid: "72363516"
 
 Cmdlet 的名词指定该 cmdlet 操作的资源。 名词将 cmdlet 与其他 cmdlet 区分开来。
 
-Cmdlet 名称中的名词必须是特定的，如果是泛型名词（如*server*），最好添加一个短前缀，将资源与其他类似资源区分开来。 例如，包含前缀名词的 cmdlet 名称将 `Get-SQLServer`。 将特定名词与更通用的动词组合后，用户可以通过其操作快速找到 cmdlet，然后通过其资源确定 cmdlet，同时避免不必要的 cmdlet 名称重复。
+Cmdlet 名称中的名词必须是特定的，如果是泛型名词（如*server*），最好添加一个短前缀，将资源与其他类似资源区分开来。 例如，包含带有前缀名词的 cmdlet 名称将 `Get-SQLServer`。 将特定名词与更通用的动词组合后，用户可以通过其操作快速找到 cmdlet，然后通过其资源确定 cmdlet，同时避免不必要的 cmdlet 名称重复。
 
 有关不能在 cmdlet 名称中使用的特殊字符列表，请参阅[所需的开发指南](./required-development-guidelines.md)。
 
@@ -53,7 +53,7 @@ Cmdlet 名称中的名词必须是特定的，如果是泛型名词（如*server
 
 ## <a name="pascal-casing"></a>Pascal 大小写
 
-命名 cmdlet 时，请使用 Pascal 大小写。 例如，在命名 cmdlet 时，`Get-Item` 和 @no__t cmdlet 会显示使用大写的正确方法。
+命名 cmdlet 时，请使用 Pascal 大小写。 例如，在命名 cmdlet 时，`Get-Item` 和 `Get-ItemProperty` cmdlet 会显示使用大小写的正确方法。
 
 ## <a name="see-also"></a>另请参阅
 

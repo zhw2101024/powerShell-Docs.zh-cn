@@ -43,7 +43,7 @@ Windows PowerShell 使用 PSStandardMembers 成员集来定义对象的默认属
   </MemberSet>
 ```
 
-以下输出显示了由[格式列表](/powershell/module/Microsoft.PowerShell.Utility/Format-List)cmdlet 返回的默认属性。 对于每个进程对象，只返回 `Id`、@no__t @no__t 和 @no__t。
+以下输出显示了由[格式列表](/powershell/module/Microsoft.PowerShell.Utility/Format-List)cmdlet 返回的默认属性。 只为每个进程对象返回 `Id`、`Handles`、`CPU`和 `Name` 属性。
 
 ```powershell
 Get-Process | format-list

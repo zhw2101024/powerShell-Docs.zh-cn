@@ -36,11 +36,11 @@ ms.locfileid: "72363616"
    </Configuration>
    ```
 
-   - @No__t > \</Configuration > 标记定义根 @no__t 节点。 所有其他 XML 标记将包含在此节点中。
+   - \<配置 >\</配置 > 标记定义根 `Configuration` 节点。 所有其他 XML 标记将包含在此节点中。
 
    - <ViewDefinitions></ViewDefinitions>标记定义 `ViewDefinitions` 节点。 所有视图都在此节点中定义。
 
-3. 将该文件保存到 Windows PowerShell 安装文件夹、模块文件夹或模块文件夹的子文件夹。 保存文件时，请使用以下名称格式： `MyFile.format.ps1xml`。 格式化文件必须使用 `.format.ps1xml` 扩展。
+3. 将该文件保存到 Windows PowerShell 安装文件夹、模块文件夹或模块文件夹的子文件夹。 保存文件时，请使用以下名称格式： `MyFile.format.ps1xml`。 格式化文件必须使用 `.format.ps1xml` 扩展名。
 
    你现在可以将视图添加到格式设置文件。 对于可在格式设置文件中定义的视图数没有限制。 您可以为每个对象添加单个视图、同一个对象的多个视图或多个对象使用的单个视图。
 

@@ -44,7 +44,7 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
 
 |参数名称|描述|
 |--------------------|-----------------|
-|**Name**|作业的名称。|
+|**名称**|作业的名称。|
 |**ScriptBock**|指定作业执行的操作的 PowerShell 脚本块。|
 |**FilePath**|文件的路径，该文件包含用于指定作业执行的操作的 PowerShell 脚本块。|
 |**InitializationScript**|用于初始化作业的 PowerShell 脚本块。|
@@ -66,7 +66,7 @@ string schedJobDefName = "MySampleSchedJob";
 
 ## <a name="creating-the-invocation-and-job-definition-objects"></a>创建调用和作业定义对象
 
-然后创建 @no__t 0 和 `ScheduledJobDefinition` 对象来运行作业，如以下示例中所示：
+然后创建 `ScheduledJobInvocationInfo` 和 `ScheduledJobDefinition` 对象来运行作业，如以下示例中所示：
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(

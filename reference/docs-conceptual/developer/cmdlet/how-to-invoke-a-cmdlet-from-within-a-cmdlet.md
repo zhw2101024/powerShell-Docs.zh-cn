@@ -17,7 +17,7 @@ ms.locfileid: "72365546"
 ---
 # <a name="how-to-invoke-a-cmdlet-from-within-a-cmdlet"></a>如何从 Cmdlet 内部调用 Cmdlet
 
-此示例演示如何从另一个 cmdlet 中调用 cmdlet，这允许你将调用的 cmdlet 的功能添加到正在开发的 cmdlet。 在此示例中，调用 `Get-Process` cmdlet 来获取本地计算机上运行的进程。 调用 `Get-Process` cmdlet 等效于以下命令。 此命令检索其名称以字符 "a" 到 "t" 开头的所有进程。
+此示例演示如何从另一个 cmdlet 中调用 cmdlet，这允许你将调用的 cmdlet 的功能添加到正在开发的 cmdlet。 在此示例中，将调用 `Get-Process` cmdlet 以获取在本地计算机上运行的进程。 调用 `Get-Process` cmdlet 等效于以下命令。 此命令检索其名称以字符 "a" 到 "t" 开头的所有进程。
 
 ```powershell
 Get-Process -name [a-t]
@@ -28,7 +28,7 @@ Get-Process -name [a-t]
 
 ## <a name="to-invoke-a-cmdlet-from-within-a-cmdlet"></a>从 cmdlet 内调用 cmdlet
 
-1. 确保引用定义要调用的 cmdlet 的程序集，并且添加适当的 @no__t 0 语句。 在此示例中，添加了以下命名空间。
+1. 确保引用定义要调用的 cmdlet 的程序集，并添加相应的 `using` 语句。 在此示例中，添加了以下命名空间。
 
     ```csharp
     using System.Diagnostics;
@@ -43,7 +43,7 @@ Get-Process -name [a-t]
     gp.Name = new string[] { "[a-t]*" };
     ```
 
-3. 调用 " [system.object](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) " 方法以调用 `Get-Process` Cmdlet 的。
+3. 调用 " [system.object *](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) " 方法以调用 `Get-Process` Cmdlet。
 
     ```csharp
       foreach (Process p in gp.Invoke<Process>())
@@ -55,7 +55,7 @@ Get-Process -name [a-t]
 
 ## <a name="example"></a>示例
 
-在此示例中，将从 cmdlet 的[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法中调用 `Get-Process` cmdlet。
+在此示例中，`Get-Process` cmdlet 是从 cmdlet 的[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法中调用的。
 
 ```csharp
 using System;

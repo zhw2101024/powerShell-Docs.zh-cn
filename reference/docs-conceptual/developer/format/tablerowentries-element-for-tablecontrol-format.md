@@ -33,7 +33,7 @@ TableControl 的 Configuration 元素（格式） ViewDefinitions 元素（格�
 
 以下各节介绍 `TableRowEntries` 元素的属性、子元素和父元素。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 无。
 
@@ -51,7 +51,7 @@ TableControl 的 Configuration 元素（格式） ViewDefinitions 元素（格�
 
 ## <a name="remarks"></a>备注
 
-您必须为表视图指定一个或多个 `TableRowEntry` 元素。 对于可以添加的 @no__t 0 个元素，其顺序并没有最大限制。
+您必须为表视图指定一个或多个 `TableRowEntry` 元素。 对于可以添加的 `TableRowEntry` 元素数没有最大限制，也没有其顺序。
 
 有关表视图的组件的详细信息，请参阅[创建表视图](./creating-a-table-view.md)。
 

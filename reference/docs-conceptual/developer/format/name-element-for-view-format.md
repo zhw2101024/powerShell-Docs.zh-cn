@@ -29,9 +29,9 @@ ms.locfileid: "72362636"
 
 ## <a name="attributes-and-elements"></a>属性和元素
 
-以下各节介绍了 `Name` 元素的属性、子元素和父元素。 每个视图只允许一个 @no__t 0 元素。
+以下各节介绍了 `Name` 元素的属性、子元素和父元素。 每个视图只允许一个 `Name` 元素。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 无。
 

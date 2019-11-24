@@ -91,7 +91,7 @@ PowerShell.Create().AddCommand("Get-Process")
 ### <a name="addstatement"></a>AddStatement
 
 您可以使用[AddStatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement)方法来模拟批处理，该方法将附加语句添加到管道的末尾。
-下面的代码获取名称为 @no__t 的运行中进程的列表，然后获取正在运行的服务的列表。
+下面的代码获取名称 `PowerShell`正在运行的进程的列表，然后获取正在运行的服务的列表。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -104,15 +104,15 @@ ps.Invoke();
 
 您可以通过调用[AddScript](/dotnet/api/System.Management.Automation.PowerShell.AddScript)方法来运行现有的脚本。
 下面的示例向管道添加一个脚本并运行该脚本。
-此示例假设名为 @no__t 的文件夹中已存在一个名为 `MyScript.ps1` 的脚本。
+此示例假设名为 `D:\PSScripts`的文件夹中已有一个名为 `MyScript.ps1` 的脚本。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
-还有一个 AddScript 方法版本，该方法采用名为 `useLocalScope` 的布尔参数。
-如果此参数设置为 `true`，则脚本将在本地作用域中运行。
+还有一个 AddScript 方法版本，该方法采用名为 `useLocalScope`的布尔参数。
+如果将此参数设置为 `true`，则脚本将在本地作用域中运行。
 以下代码将在本地作用域中运行该脚本。
 
 ```csharp
@@ -151,7 +151,7 @@ ps.Invoke();
 使用仅加载您指定的命令的运行空间可显著提高性能。
 
 你可以使用[SessionStateCmdletEntry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry)类的方法来定义初始会话状态的 cmdlet）。
-下面的示例创建一个空的初始会话状态，然后定义 `Get-Command`，并向初始会话状态添加 @no__t 的命令。
+下面的示例创建一个空的初始会话状态，然后定义 `Get-Command`，并将 `Import-Module` 命令添加到初始会话状态。
 然后创建一个受该初始会话状态约束的运行空间，并执行该运行空间中的命令。
 
 创建初始会话状态。

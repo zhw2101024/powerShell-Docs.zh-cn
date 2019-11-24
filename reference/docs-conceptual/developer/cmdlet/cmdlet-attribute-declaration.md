@@ -36,15 +36,15 @@ Cmdlet 属性将 Microsoft .NET 框架类标识为 Cmdlet，并指定用于调�
 
 需要 `NounName` （[system.string](/dotnet/api/System.String)）。 指定 cmdlet 名词。 此名词指定该 cmdlet 作用于的资源。 有关 cmdlet 名词的详细信息，请参阅[Cmdlet 声明](./cmdlet-class-declaration.md)和[强烈建议开发指南](./strongly-encouraged-development-guidelines.md)。
 
-@no__t-[0 （system.string](/dotnet/api/System.Boolean)）可选命名参数。 `True` 指示 cmdlet 支持对[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法的调用，该方法为 cmdlet 提供了一种在执行更改系统的操作之前提示用户的方法。 @no__t 为0（默认值），则指示该 cmdlet 不支持对[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法的调用。 有关确认请求的详细信息，请参阅[请求确认](./requesting-confirmation-from-cmdlets.md)。
+`SupportsShouldProcess` （[system.string](/dotnet/api/System.Boolean)）可选命名参数。 `True` 指示 cmdlet 支持对[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法的调用，该方法为 cmdlet 提供了一种在执行更改系统的操作之前提示用户的方法。 `False`（默认值），则指示该 cmdlet 不支持对[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法的调用。 有关确认请求的详细信息，请参阅[请求确认](./requesting-confirmation-from-cmdlets.md)。
 
-@no__t 为0（[Confirmimpact](/dotnet/api/System.Management.Automation.ConfirmImpact)）可选的命名参数。 指定应通过对[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法的调用来确认 cmdlet 的操作的时间的。 仅当 Cmdlet 的 ConfirmImpact 值（默认情况下，Medium）等于或大于 `$ConfirmPreference` 变量的值时，才会调用[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) 。 仅当指定了 @no__t 0 参数时，才应指定此参数。
+`ConfirmImpact` （[Confirmimpact](/dotnet/api/System.Management.Automation.ConfirmImpact)）可选的命名参数。 指定应通过对[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法的调用来确认 cmdlet 的操作的时间的。 仅当 Cmdlet 的 ConfirmImpact 值（默认情况下，Medium）等于或大于 `$ConfirmPreference` 变量的值时，才会调用[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)变量。 仅当指定了 `SupportsShouldProcess` 参数时，才应指定此参数。
 
-`DefaultParameterSetName` （[system.string](/dotnet/api/System.String)）可选命名参数。 指定 Windows PowerShell 运行时在无法确定要使用哪个参数时尝试使用的默认参数集。 请注意，可以通过使每个参数的唯一参数设置一个必需的参数来消除这种情况。
+`DefaultParameterSetName` （[system.string](/dotnet/api/System.String)）可选的命名参数。 指定 Windows PowerShell 运行时在无法确定要使用哪个参数时尝试使用的默认参数集。 请注意，可以通过使每个参数的唯一参数设置一个必需的参数来消除这种情况。
 
 在这种情况下，即使指定了默认参数集名称，Windows PowerShell 也无法使用默认参数集。 Windows PowerShell 运行时无法仅基于对象类型区分参数集。 例如，如果你有一个参数集，该参数集采用字符串作为文件路径，而另一个组直接采用**FileInfo**对象，则 Windows PowerShell 无法根据传递给 cmdlet 的值来确定要使用的参数集，也不会使用默认参数集。 在这种情况下，即使指定默认参数集名称，Windows PowerShell 也会引发不明确的参数集错误消息。
 
-@no__t-[0 （system.string](/dotnet/api/System.Boolean)）可选命名参数。 `True` 指示该 cmdlet 可以在事务中使用。 当指定 `True` 时，Windows PowerShell 运行时将 @no__t 参数添加到 cmdlet 的参数列表中。 @no__t 为0（默认值），则指示不能在事务中使用 cmdlet。
+`SupportsTransactions` （[system.string](/dotnet/api/System.Boolean)）可选命名参数。 `True` 指示该 cmdlet 可以在事务中使用。 指定 `True` 时，Windows PowerShell 运行时将 `UseTransaction` 参数添加到 cmdlet 的参数列表中。 `False`（默认值）指示不能在事务中使用该 cmdlet。
 
 ## <a name="remarks"></a>备注
 
@@ -54,9 +54,9 @@ Cmdlet 属性将 Microsoft .NET 框架类标识为 Cmdlet，并指定用于调�
 
 **VerbName-NounName**
 
-- 声明 Cmdlet 属性时，在 Windows PowerShell 外部更改资源的所有 cmdlet 都应包含 `SupportsShouldProcess` 关键字，这允许 Cmdlet 在[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法之前调用cmdlet 执行其操作。 如果[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)调用返回 `false`，则不应执行该操作。 有关[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)调用生成的确认请求的详细信息，请参阅[请求确认](./requesting-confirmation-from-cmdlets.md)。
+- 在声明 Cmdlet 属性时，更改 Windows PowerShell 外部资源的所有 cmdlet 都应包括 `SupportsShouldProcess` 关键字，这允许 cmdlet 在 cmdlet 执行操作之前调用[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 如果[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)调用返回 `false`，则不应执行该操作。 有关[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)调用生成的确认请求的详细信息，请参阅[请求确认](./requesting-confirmation-from-cmdlets.md)。
 
-@No__t-0 和 @no__t cmdlet 参数仅可用于支持[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)调用的 cmdlet 的 cmdlet。
+`Confirm` 和 `WhatIf` cmdlet 参数仅可用于支持[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)调用的 cmdlet 的 cmdlet。
 
 ## <a name="example"></a>示例
 

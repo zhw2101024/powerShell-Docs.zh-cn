@@ -157,7 +157,7 @@ ms.locfileid: "72361226"
 
 下面是添加参数时要记住的一些内容。
 
-- 参数的属性不会显示在 cmdlet 帮助主题的所有视图中。 但是，当用户要求提供完整的（Get-help \<cmdletname >-Full）或本主题的参数（Get-help \<cmdletname >-parameter）视图时，它们会按照参数说明显示在表中。
+- 参数的属性不会显示在 cmdlet 帮助主题的所有视图中。 但是，当用户要求提供完整（Get-help \<cmdletname >-Full）或本主题的参数（Get-help \<cmdletname >-parameter）视图时，它们会按照参数说明显示在表中。
 
 - 参数说明是 cmdlet 帮助主题最重要的部分之一。 说明应简短，并且是完整的。 另外，请记住，如果参数说明太长，例如两个参数彼此交互，则可以在 cmdlet 帮助主题的 "注释" 部分添加更多内容。
 
@@ -171,11 +171,11 @@ ms.locfileid: "72361226"
 
 如果未在命令行上指定参数，则参数的默认值是使用的值。 请注意，默认值是可选的，对于某些参数（如所需参数）不需要此值。 但是，您应为大多数可选参数指定默认值。
 
-默认值可帮助用户了解不使用参数的影响。 描述可选路径的默认值，如 "当前目录" 或 "Windows PowerShell 安装目录（$pshome）"。 你还可以编写描述默认值的句子，如用于 @no__t 参数的以下句子： "如果未指定 PassThru，则该 cmdlet 不会将对象向下传递管道。"  另外，由于值与字段名称 "**默认值**" 的显示顺序相反，因此不需要在条目中包含 "默认值" 一词。
+默认值可帮助用户了解不使用参数的影响。 描述可选路径的默认值，如 "当前目录" 或 "Windows PowerShell 安装目录（$pshome）"。 你还可以编写描述默认值的句子，如用于 `PassThru` 参数的以下句子： "如果未指定 PassThru，该 cmdlet 不会将对象向下传递管道。"  另外，由于值与字段名称 "**默认值**" 的显示顺序相反，因此不需要在条目中包含 "默认值" 一词。
 
-此参数的默认值不会显示在 cmdlet 帮助主题的所有视图中。 但是，当用户要求提供完整（Get-help \<cmdletname >-Full）或本主题的参数（Get-help \<cmdletname >-parameter）视图时，它显示在参数说明之后的表中（连同参数属性）。
+此参数的默认值不会显示在 cmdlet 帮助主题的所有视图中。 但是，当用户要求提供完整（Get-help \<cmdletname >-Full）或本主题的参数（Get-help \<cmdletname >-parameter）视图时，它将显示在参数说明之后的表中（连同参数属性）。
 
-下面的 XML 演示添加到 @no__t 节点的一对 @no__t 的标记。 请注意，默认值紧跟在关闭 `</command:parameterValue>` 标记后（指定了参数值）或参数说明的结束 `</maml:description>` 标记之后。 路径名.
+下面的 XML 演示添加到 `<command:parameter>` 节点的 `<dev:defaultValue>` 标记对。 请注意，默认值紧跟在结束 `</command:parameterValue>` 标记之后（指定了参数值）或参数说明的结束 `</maml:description>` 标记后。 路径名.
 
 ```xml
 <command:parameters>
@@ -195,11 +195,11 @@ ms.locfileid: "72361226"
 
 为枚举类型添加值
 
-如果参数具有多个值或枚举类型的值，则可以使用可选的 \<dev： possibleValues > 节点。 使用此节点可以指定多个值的名称和描述。
+如果参数具有多个值或枚举类型的值，则可以使用可选的 \<dev： possibleValues > "节点。 使用此节点可以指定多个值的名称和描述。
 
 请注意，枚举值的说明不显示在 `Get-Help` cmdlet 显示的任何默认帮助视图中，但其他帮助查看器可能会在其视图中显示此内容。
 
-下面的 XML 显示了一个 @no__t 为0的节点，其中指定了两个值。
+下面的 XML 显示一个 `<dev:possibleValues>` 节点，其中指定了两个值。
 
 ```xml
 <command:parameters>

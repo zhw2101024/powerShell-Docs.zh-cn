@@ -35,7 +35,7 @@ TableRowEntry for TableRowEntries 的 TableControl （Format） TableControl 元
 
 以下各节介绍 `TableRowEntry` 元素的属性、子元素和父元素。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 无。
 
@@ -55,7 +55,7 @@ TableRowEntry for TableRowEntries 的 TableControl （Format） TableControl 元
 
 ## <a name="remarks"></a>备注
 
-必须指定一个 @no__t 0 元素和一个 @no__t 1 元素。
+必须指定一个 `TableColumnItems` 元素和一个 `EntrySelectedBy` 元素。
 
 有关表视图的组件的详细信息，请参阅[创建表视图](./creating-a-table-view.md)。
 

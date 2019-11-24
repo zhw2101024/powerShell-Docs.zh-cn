@@ -26,7 +26,7 @@ ms.locfileid: "72364446"
 
 Alias 属性定义现有属性的新名称。
 
-在下面的示例中， **Count**属性添加到了[system.object](/dotnet/api/System.Array)类型中。 [AliasProperty](/dotnet/api/system.management.automation.psaliasproperty)元素将扩展属性定义为别名属性。 [Name](/dotnet/api/system.management.automation.psmemberinfo.name)元素指定新名称。 [ReferencedMemberName](/dotnet/api/system.management.automation.psaliasproperty.referencedmembername)元素指定别名引用的现有属性。 你还可以将 `AliasProperty` 元素添加到[MemberSets](/dotnet/api/system.management.automation.psmemberset)元素的成员。
+在下面的示例中， **Count**属性添加到了[system.object](/dotnet/api/System.Array)类型中。 [AliasProperty](/dotnet/api/system.management.automation.psaliasproperty)元素将扩展属性定义为别名属性。 [Name](/dotnet/api/system.management.automation.psmemberinfo.name)元素指定新名称。 [ReferencedMemberName](/dotnet/api/system.management.automation.psaliasproperty.referencedmembername)元素指定别名引用的现有属性。 还可以将 `AliasProperty` 元素添加到[MemberSets](/dotnet/api/system.management.automation.psmemberset)元素的成员。
 
 ```xml
 <Type>
@@ -44,7 +44,7 @@ Alias 属性定义现有属性的新名称。
 
 一个代码属性引用 .NET Framework 对象的静态属性。
 
-在下面的示例中， **Mode**属性添加到[DirectoryInfo](/dotnet/api/System.IO.DirectoryInfo)类型中。 [CodeProperty](/dotnet/api/system.management.automation.pscodeproperty)元素将扩展属性定义为代码属性。 [Name](/dotnet/api/system.management.automation.psmemberinfo.name)元素指定扩展属性的名称。 [GetCodeReference](/dotnet/api/system.management.automation.pscodeproperty.gettercodereference)元素定义扩展属性引用的静态方法。 你还可以将 `CodeProperty` 元素添加到[MemberSets](/dotnet/api/system.management.automation.psmemberset)元素的成员。
+在下面的示例中， **Mode**属性添加到[DirectoryInfo](/dotnet/api/System.IO.DirectoryInfo)类型中。 [CodeProperty](/dotnet/api/system.management.automation.pscodeproperty)元素将扩展属性定义为代码属性。 [Name](/dotnet/api/system.management.automation.psmemberinfo.name)元素指定扩展属性的名称。 [GetCodeReference](/dotnet/api/system.management.automation.pscodeproperty.gettercodereference)元素定义扩展属性引用的静态方法。 还可以将 `CodeProperty` 元素添加到[MemberSets](/dotnet/api/system.management.automation.psmemberset)元素的成员。
 
 ```xml
 <Type>
@@ -65,7 +65,7 @@ Alias 属性定义现有属性的新名称。
 
 Note 属性定义具有静态值的属性。
 
-在下面的示例中， **Status**属性（其值始终为 "**成功**"）将添加到[DirectoryInfo](/dotnet/api/System.IO.DirectoryInfo)类型中。 [NoteProperty](/dotnet/api/system.management.automation.psnoteproperty)元素将扩展属性定义为附注属性。 [Name](/dotnet/api/system.management.automation.psmemberinfo.name)元素指定扩展属性的名称。 [值](/dotnet/api/system.management.automation.psnoteproperty.value)元素指定扩展属性的静态值。 也可以将 `NoteProperty` 元素添加到[MemberSets](/dotnet/api/system.management.automation.psmemberset)元素的成员。
+在下面的示例中， **Status**属性（其值始终为 "**成功**"）将添加到[DirectoryInfo](/dotnet/api/System.IO.DirectoryInfo)类型中。 [NoteProperty](/dotnet/api/system.management.automation.psnoteproperty)元素将扩展属性定义为附注属性。 [Name](/dotnet/api/system.management.automation.psmemberinfo.name)元素指定扩展属性的名称。 [值](/dotnet/api/system.management.automation.psnoteproperty.value)元素指定扩展属性的静态值。 还可以将 `NoteProperty` 元素添加到[MemberSets](/dotnet/api/system.management.automation.psmemberset)元素的成员。
 
 ```xml
 <Type>
@@ -83,7 +83,7 @@ Note 属性定义具有静态值的属性。
 
 脚本属性定义一个属性，其值为脚本的输出。
 
-在下面的示例中，将**VersionInfo**属性添加到[FileInfo](/dotnet/api/System.IO.FileInfo)类型。 [ScriptProperty](/dotnet/api/system.management.automation.psscriptproperty)元素将扩展属性定义为脚本属性。 [Name](/dotnet/api/system.management.automation.psmemberinfo.name)元素指定扩展属性的名称。 [GetScriptBlock](/dotnet/api/system.management.automation.psscriptproperty.getterscript)元素指定生成属性值的脚本。 你还可以将 `ScriptProperty` 元素添加到[MemberSets](/dotnet/api/system.management.automation.psmemberset)元素的成员。
+在下面的示例中，将**VersionInfo**属性添加到[FileInfo](/dotnet/api/System.IO.FileInfo)类型。 [ScriptProperty](/dotnet/api/system.management.automation.psscriptproperty)元素将扩展属性定义为脚本属性。 [Name](/dotnet/api/system.management.automation.psmemberinfo.name)元素指定扩展属性的名称。 [GetScriptBlock](/dotnet/api/system.management.automation.psscriptproperty.getterscript)元素指定生成属性值的脚本。 还可以将 `ScriptProperty` 元素添加到[MemberSets](/dotnet/api/system.management.automation.psmemberset)元素的成员。
 
 ```xml
 <Type>
@@ -107,7 +107,7 @@ Note 属性定义具有静态值的属性。
 
 对于可以为对象定义的属性集的数量没有限制。 但是，必须在**PSStandardMembers**成员集中指定用于定义对象的默认显示属性的属性集。 在 `Types.ps1xml` 类型文件中，默认属性集名称包括**DefaultDisplayProperty**、**使用 defaultdisplaypropertyset**和**DefaultKeyPropertySet**。 将忽略添加到**PSStandardMembers**成员集中的任何其他属性集。
 
-在下面的示例中，**使用 defaultdisplaypropertyset**属性集添加到[System.serviceprocess](/dotnet/api/System.ServiceProcess.ServiceController)类型的**PSStandardMembers**成员集中。 [PropertySet](/dotnet/api/system.management.automation.pspropertyset)元素定义一组属性。 [Name](/dotnet/api/system.management.automation.psmemberinfo.name)元素指定属性集的名称。 和， [ReferencedProperties](/dotnet/api/system.management.automation.pspropertyset.referencedpropertynames)元素指定集的属性。 你还可以将 `PropertySet` 元素添加到[Type](/dotnet/api/system.management.automation.pstypename)元素的成员。
+在下面的示例中，**使用 defaultdisplaypropertyset**属性集添加到[System.serviceprocess](/dotnet/api/System.ServiceProcess.ServiceController)类型的**PSStandardMembers**成员集中。 [PropertySet](/dotnet/api/system.management.automation.pspropertyset)元素定义一组属性。 [Name](/dotnet/api/system.management.automation.psmemberinfo.name)元素指定属性集的名称。 和， [ReferencedProperties](/dotnet/api/system.management.automation.pspropertyset.referencedpropertynames)元素指定集的属性。 还可以将 `PropertySet` 元素添加到[Type](/dotnet/api/system.management.automation.pstypename)元素的成员。
 
 ```xml
 <Type>

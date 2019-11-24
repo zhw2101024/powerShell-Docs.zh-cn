@@ -62,7 +62,7 @@ ms.locfileid: "72367066"
   ```
 
   > [!IMPORTANT]
-  > 将路径添加到**PSModulePath**后，应广播与更改相关的环境消息。 广播更改后，其他应用程序（如 shell）可以选取更改。 若要广播此更改，请让你的产品安装代码发送**WM_SETTINGCHANGE**消息，并将 @no__t 设置为字符串 "环境"。 请确保在模块安装代码更新后发送消息**PSModulePath**。
+  > 将路径添加到**PSModulePath**后，应广播与更改相关的环境消息。 广播更改后，其他应用程序（如 shell）可以选取更改。 若要广播此更改，请让你的产品安装代码发送**WM_SETTINGCHANGE**消息，并将 `lParam` 设置为字符串 "环境"。 请确保在模块安装代码更新后发送消息**PSModulePath**。
 
 ### <a name="use-the-correct-module-directory-name"></a>使用正确的模块目录名称
 
@@ -101,7 +101,7 @@ C:\Program Files
 
 - [Show-Command](/powershell/module/Microsoft.PowerShell.Utility/Show-Command) cmdlet 无法在模块中找到并显示命令。
 
-  Windows PowerShell 集成脚本环境（ISE）的 `Show-Command` 窗口中缺少模块中的命令。
+  Windows PowerShell 集成脚本环境（ISE）中的 "`Show-Command`" 窗口缺少模块中的命令。
 
 ## <a name="where-to-install-modules"></a>模块的安装位置
 
@@ -185,7 +185,7 @@ $p = $q -join ';'
 2. 为每个版本的模块创建一个模块清单。 在清单中**ModuleVersion**键的值中，输入模块版本号。 将清单文件（. psd1）保存在模块的特定于版本的目录中。
 3. 将模块根文件夹路径添加到**PSModulePath**环境变量的值，如以下示例中所示。
 
-若要导入特定版本的模块，最终用户可以使用[import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet 的 @no__t 0 或 @no__t 参数。
+若要导入特定版本的模块，最终用户可以使用[import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet 的 `MinimumVersion` 或 `RequiredVersion` 参数。
 
 例如，如果 Fabrikam 模块在版本8.0 和9.0 中可用，则 Fabrikam 模块目录结构可能类似于以下内容。
 
@@ -210,7 +210,7 @@ $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
-完成这些步骤后， [get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Module) Cmdlet 的**ListAvailable**参数将获取 Fabrikam 模块。 若要导入特定模块，请使用[import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet 的 `MinimumVersion` 或 @no__t 参数。
+完成这些步骤后， [get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Module) Cmdlet 的**ListAvailable**参数将获取 Fabrikam 模块。 若要导入特定模块，请使用[import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet 的 `MinimumVersion` 或 `RequiredVersion` 参数。
 
 如果两个模块都导入到同一会话中，并且模块包含具有相同名称的 cmdlet，则最后导入的 cmdlet 在会话中有效。
 
@@ -220,7 +220,7 @@ $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
 
 当会话中包含两个具有相同名称的命令时，Windows PowerShell 将运行优先的命令类型。 如果会话中包含两个具有相同名称和相同类型的命令，则 Windows PowerShell 将运行最近添加到会话中的命令。 若要运行默认情况下不运行的命令，用户可以使用模块名称限定命令名称。
 
-例如，如果会话包含 `Get-Date` 函数和 @no__t cmdlet，则默认情况下，Windows PowerShell 将运行该函数。 若要运行 cmdlet，请在命令前面加上模块名称，例如：
+例如，如果会话包含 `Get-Date` 函数和 `Get-Date` cmdlet，则默认情况下，Windows PowerShell 将运行该函数。 若要运行 cmdlet，请在命令前面加上模块名称，例如：
 
 ```powershell
 Microsoft.PowerShell.Utility\Get-Date
@@ -228,7 +228,7 @@ Microsoft.PowerShell.Utility\Get-Date
 
 若要防止名称冲突，模块作者可以使用模块清单中的**DefaultCommandPrefix**键为从该模块导出的所有命令指定名词前缀。
 
-用户可以使用 @no__t cmdlet 的**prefix**参数来使用替代前缀。 **Prefix**参数的值优先于**DefaultCommandPrefix**键的值。
+用户可以使用 `Import-Module` cmdlet 的**prefix**参数来使用替代前缀。 **Prefix**参数的值优先于**DefaultCommandPrefix**键的值。
 
 ## <a name="see-also"></a>另请参阅
 

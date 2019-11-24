@@ -17,7 +17,7 @@ ms.locfileid: "72360556"
 ---
 # <a name="writing-help-for-windows-powershell-modules"></a>编写针对 Windows PowerShell 模块的帮助
 
-Windows PowerShell 模块可以包含有关模块和模块成员（例如 cmdlet、提供程序、函数和脚本）的帮助主题。 @No__t cmdlet 以与为其他 Windows PowerShell 项显示帮助相同的格式显示模块帮助主题，用户使用标准的 @no__t 1 命令获取帮助主题。
+Windows PowerShell 模块可以包含有关模块和模块成员（例如 cmdlet、提供程序、函数和脚本）的帮助主题。 `Get-Help` cmdlet 以与为其他 Windows PowerShell 项显示帮助相同的格式显示模块帮助主题，用户使用标准 `Get-Help` 命令获取帮助主题。
 
 本文档说明了模块帮助主题的格式和正确位置，并建议了模块帮助内容的准则。
 
@@ -58,7 +58,7 @@ Windows PowerShell 模块可以包含有关模块和模块成员（例如 cmdlet
 
 ## <a name="placement-of-module-help"></a>模块的位置帮助
 
-@No__t cmdlet 在模块目录的特定于语言的子目录中查找模块帮助主题文件。
+`Get-Help` cmdlet 将在模块目录的特定于语言的子目录中查找模块帮助主题文件。
 
 例如，下面的目录结构关系图显示了 SampleModule 模块的帮助主题的位置。
 
@@ -77,23 +77,23 @@ Windows PowerShell 模块可以包含有关模块和模块成员（例如 cmdlet
 ```
 
 > [!NOTE]
-> 在此示例中， *@no__t >* 占位符表示 `PSModulePath` 环境变量中的路径之一，例如 $home \documents\modules、$pshome \modules 或用户指定的自定义路径。
+> 在此示例中， *\<ModulePath >* 占位符表示 `PSModulePath` 环境变量中的路径之一，例如 $home \documents\modules、$pshome \modules 或用户指定的自定义路径。
 
 ## <a name="getting-module-help"></a>获取模块帮助
 
-当用户将模块导入到会话中时，该模块的帮助主题将与模块一起导入到会话中。 可以在模块清单中的 FileList 键的值中列出帮助主题文件，但帮助主题不受 @no__t cmdlet 的影响。
+当用户将模块导入到会话中时，该模块的帮助主题将与模块一起导入到会话中。 可以在模块清单中的 FileList 键的值中列出帮助主题文件，但帮助主题不受 `Export-ModuleMember` cmdlet 的影响。
 
-可以用不同的语言提供模块帮助主题。 @No__t cmdlet 会自动以 "控制面板" 的 "区域和语言选项" 项中为当前用户指定的语言显示模块帮助主题。 在 Windows Vista 和更高版本的 Windows 中，`Get-Help` 在模块目录的特定于语言的子目录中按照为 Windows 建立的语言回退标准搜索帮助主题。
+可以用不同的语言提供模块帮助主题。 `Get-Help` cmdlet 会自动以 "控制面板" 的 "区域和语言选项" 项中为当前用户指定的语言显示模块帮助主题。 在 Windows Vista 和更高版本的 Windows 中，`Get-Help` 按照为 Windows 建立的语言回退标准在模块目录的特定于语言的子目录中搜索帮助主题。
 
-从 Windows PowerShell 3.0 开始，运行 cmdlet 或函数的 `Get-Help` 命令将触发模块的自动导入。 @No__t cmdlet 立即显示模块中帮助主题的内容。
+从 Windows PowerShell 3.0 开始，运行 cmdlet 或函数的 `Get-Help` 命令将触发模块的自动导入。 `Get-Help` cmdlet 会立即显示模块中帮助主题的内容。
 
-如果该模块不包含帮助主题，而且没有关于用户计算机上模块中的命令的帮助主题，`Get-Help` 会显示自动生成的帮助。 自动生成的帮助包括命令语法、参数、输入和输出类型，但不包含任何说明。 自动生成的帮助包括文本，该文本指示用户尝试使用 `Update-Help` cmdlet 从 Internet 或文件共享下载命令的帮助。 它还建议使用 `Get-Help` cmdlet 的**online**参数获取帮助主题的联机版本。
+如果该模块不包含帮助主题，而且没有关于用户计算机上模块中的命令的帮助主题，`Get-Help` 将显示自动生成的帮助。 自动生成的帮助包括命令语法、参数、输入和输出类型，但不包含任何说明。 自动生成的帮助包括文本，该文本指示用户尝试使用 `Update-Help` cmdlet 从 Internet 或文件共享下载命令的帮助。 它还建议使用 `Get-Help` cmdlet 的**online**参数获取帮助主题的联机版本。
 
 ## <a name="supporting-updatable-help"></a>支持可更新的帮助
 
-Windows PowerShell 3.0 和更高版本的 Windows PowerShell 的用户可以从 Internet 或本地文件共享下载和安装模块的更新帮助文件。 @No__t，`Save-Help` cmdlet 将隐藏用户的管理详细信息。 用户运行 `Update-Help` cmdlet，然后在 Windows PowerShell 命令提示符处使用 @no__t cmdlet 读取模块的最新帮助文件。 用户无需重启 Windows 或 Windows PowerShell。
+Windows PowerShell 3.0 和更高版本的 Windows PowerShell 的用户可以从 Internet 或本地文件共享下载和安装模块的更新帮助文件。 `Update-Help` 和 `Save-Help` cmdlet 将隐藏用户的管理详细信息。 用户运行 `Update-Help` cmdlet，然后在 Windows PowerShell 命令提示符处使用 `Get-Help` cmdlet 读取模块的最新帮助文件。 用户无需重启 Windows 或 Windows PowerShell。
 
-防火墙之后的用户和无 Internet 访问权限的用户也可以使用可更新的帮助。 具有 Internet 访问权限的管理员使用 `Save-Help` cmdlet 下载最新的帮助文件并将其安装到文件共享。 然后，用户使用 @no__t cmdlet 的**Path**参数从文件共享获取最新的帮助文件。
+防火墙之后的用户和无 Internet 访问权限的用户也可以使用可更新的帮助。 具有 Internet 访问权限的管理员使用 `Save-Help` cmdlet 下载最新的帮助文件并将其安装到文件共享。 然后，用户使用 `Update-Help` cmdlet 的**Path**参数从文件共享中获取最新的帮助文件。
 
 模块作者可将帮助文件包含在模块中，并使用可更新的帮助来更新帮助文件，或从模块中忽略帮助文件，并使用可更新的帮助来安装和更新这些文件。
 
@@ -101,9 +101,9 @@ Windows PowerShell 3.0 和更高版本的 Windows PowerShell 的用户可以从 
 
 ## <a name="supporting-online-help"></a>支持联机帮助
 
-不能或不在其计算机上安装更新的帮助文件的用户通常依赖于模块帮助主题的联机版本。 @No__t cmdlet 的**online**参数将在用户的默认 Internet 浏览器中打开 cmdlet 或高级函数帮助主题的联机版本。
+不能或不在其计算机上安装更新的帮助文件的用户通常依赖于模块帮助主题的联机版本。 `Get-Help` cmdlet 的**online**参数会在用户的默认 Internet 浏览器中打开 cmdlet 或高级函数帮助主题的联机版本。
 
-@No__t cmdlet 使用 cmdlet 或函数的**HelpUri**属性的值查找帮助主题的联机版本。
+`Get-Help` cmdlet 使用 cmdlet 或函数的**HelpUri**属性的值查找帮助主题的联机版本。
 
 从 Windows PowerShell 3.0 开始，你可以通过在 cmdlet 类上定义 HelpUri 属性或**CmdletBinding**属性的**HelpUri**属性，帮助用户找到 cmdlet 和函数帮助主题的联机版本。 该属性的值为 cmdlet 或函数的**HelpUri**属性的值。
 

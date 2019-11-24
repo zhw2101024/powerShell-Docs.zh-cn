@@ -22,7 +22,7 @@ ms.locfileid: "72365306"
 
 ## <a name="windows-powershell-cmdlets-that-use-wildcards"></a>使用通配符的 Windows PowerShell Cmdlet
 
- 许多 Windows PowerShell cmdlet 都支持为其参数值提供通配符。 例如，几乎每个具有 @no__t 0 或 `Path` 参数的 cmdlet 都支持这些参数的通配符。 （尽管大多数包含 `Path` 参数的 cmdlet 也具有不支持通配符的 @no__t 1 参数。）以下命令显示了如何使用通配符来返回当前会话中其名称包含 Get 谓词的所有 cmdlet。
+ 许多 Windows PowerShell cmdlet 都支持为其参数值提供通配符。 例如，几乎每个具有 `Name` 或 `Path` 参数的 cmdlet 都支持这些参数的通配符。 （尽管大多数包含 `Path` 参数的 cmdlet 也具有不支持通配符的 `LiteralPath` 参数。）以下命令显示了如何使用通配符来返回当前会话中其名称包含 Get 谓词的所有 cmdlet。
 
  `Get-Command get-*`
 
@@ -37,11 +37,11 @@ Windows PowerShell 支持以下通配符。
 | [ ]      | 匹配一系列字符                                       | `[a-l]ook` | 书籍，库，查找 | nook，拍摄     |
 | [ ]      | 匹配指定字符                                    | `[bn]ook`  | 书籍，nook       | 库，查找     |
 
-设计支持通配符的 cmdlet 时，允许组合通配符字符。 例如，以下命令使用 @no__t cmdlet 来检索 c:\Techdocs 文件夹中的所有 .txt 文件，并以字母 "a" 到 "l" 开头。
+设计支持通配符的 cmdlet 时，允许组合通配符字符。 例如，以下命令使用 `Get-ChildItem` cmdlet 来检索 c:\Techdocs 文件夹中所有以字母 "a" 到 "l" 开头的 .txt 文件。
 
 `Get-ChildItem c:\techdocs\[a-l]\*.txt`
 
-前面的命令使用范围通配符 `[a-l]` 来指定文件名应以字符 "a" 到 "l" 开头，并使用 `*` 通配符作为文件名和 .txt 第一个字母之间的任何字符的占位符 **。** 扩展。
+前面的命令使用范围通配符 `[a-l]` 来指定文件名应以字符 "a" 到 "l" 开头，并使用 `*` 通配符作为文件名第一个字母与 **.txt**扩展名之间的任何字符的占位符。
 
 下面的示例使用范围通配符模式，该模式不包括字母 "d"，但包含 "a" 到 "f" 的所有其他字母。
 
@@ -55,11 +55,11 @@ Windows PowerShell 支持以下通配符。
 
 使用 PowerShell API 时，请使用：
 
-- "John Smith \` [*"] "
+- "John Smith \`[* ']"
 
 在 PowerShell 命令提示符下使用时：
 
-- "John Smith \` @ no__t-1 [* \`"] "
+- "John Smith \`\`[*\`"] "
 
 此模式匹配 "John Smith [行销]" 或 "John Smith [开发]"。 例如：
 
@@ -74,7 +74,7 @@ True
 ## <a name="cmdlet-output-and-wildcard-characters"></a>Cmdlet 输出和通配符
 
 当 cmdlet 参数支持通配符时，操作通常会生成一个数组输出。
-有时，因为用户可能只使用一个项，所以不能提供支持数组输出的意义。 例如，`Set-Location` cmdlet 不支持数组输出，因为用户仅设置一个位置。 在这种情况下，该 cmdlet 仍支持通配符，但会强制将分辨率转换为单一位置。
+有时，因为用户可能只使用一个项，所以不能提供支持数组输出的意义。 例如，`Set-Location` cmdlet 不支持数组输出，因为用户仅设置了一个位置。 在这种情况下，该 cmdlet 仍支持通配符，但会强制将分辨率转换为单一位置。
 
 ## <a name="see-also"></a>另请参阅
 

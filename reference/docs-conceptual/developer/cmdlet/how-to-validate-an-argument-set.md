@@ -26,7 +26,7 @@ ms.locfileid: "72365506"
 
 ## <a name="to-validate-an-argument-set"></a>验证参数集
 
-- 添加 ValidateSet 特性，如下面的代码所示。 此示例为 @no__t 参数指定了三个可能的值集。
+- 添加 ValidateSet 特性，如下面的代码所示。 此示例为 `UserName` 参数指定了一组三个可能的值。
 
     ```csharp
     [ValidateSet("Steve", "Mary", "Carl", IgnoreCase = true)]

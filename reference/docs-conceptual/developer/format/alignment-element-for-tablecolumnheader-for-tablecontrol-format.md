@@ -31,7 +31,7 @@ TableColumnHeader 的 ViewDefinitions 元素（格式）视图元素（格式）
 
 以下各节介绍 `Alignment` 元素的属性、子元素和父元素。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 无。
 
@@ -61,7 +61,7 @@ TableColumnHeader 的 ViewDefinitions 元素（格式）视图元素（格式）
 
 ## <a name="example"></a>示例
 
-此示例演示一个 @no__t 0 元素，其数据在左侧对齐。
+此示例演示一个 `TableColumnHeader` 元素，其数据在左侧对齐。
 
 ```xml
 <TableColumnHeader>

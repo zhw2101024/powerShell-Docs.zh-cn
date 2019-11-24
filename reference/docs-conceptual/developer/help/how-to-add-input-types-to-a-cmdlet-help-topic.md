@@ -19,13 +19,13 @@ ms.locfileid: "72361236"
 
 本部分介绍如何将输入部分添加到 Windows PowerShell® cmdlet 帮助主题。 "输入" 部分列出了 cmdlet 作为管道的输入接受的对象的 .NET 类，可以通过值或按属性名称。
 
-可以添加到输入部分的类的数量没有限制。 输入类型括在 \<command： inputTypes > 节点中，其中每个类都包含在 \<command： inputType > 元素中。
+可以添加到输入部分的类的数量没有限制。 输入类型括在 \<命令中： inputTypes > node，其中每个类都包含在一个 \<命令中： inputType > 元素。
 
-此架构包括两个 \<maml： description > 每个 \<command： inputType > 元素中的元素。 但 @no__t cmdlet 只显示 @no__t 1command： inputType >/\<maml： description >）元素的内容。
+此架构包括两个 \<maml： description > 元素在每个 \<命令中： inputType > 元素。 但 `Get-Help` cmdlet 只显示 \<命令的内容： inputType >/\<maml： description >）元素。
 
-从 Windows PowerShell 3.0 开始，@no__t cmdlet 显示 \<maml： uri > 元素的内容。 此元素使用户能够将用户定向到描述 .NET 类的主题。
+从 Windows PowerShell 3.0 开始，`Get-Help` cmdlet 显示 \<maml： uri > 元素的内容。 此元素使用户能够将用户定向到描述 .NET 类的主题。
 
-下面的 XML 显示 \<maml： inputTypes > 节点。
+下面的 XML 演示 \<maml： inputTypes > 节点。
 
 ```xml
 <command:inputTypes>
@@ -42,7 +42,7 @@ ms.locfileid: "72361236"
 </command:inputTypes>
 ```
 
-下面的 XML 显示使用 \<maml： inputTypes > 节点记录输入类型的示例。
+下面的 XML 演示使用 \<maml： inputTypes > 节点记录输入类型的示例。
 
 ```xml
 <command:inputTypes>

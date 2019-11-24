@@ -33,9 +33,9 @@ ms.locfileid: "72361396"
 
 ## <a name="attributes-and-elements"></a>属性和元素
 
-以下各节介绍了 `WideItem` 元素的属性、子元素和父元素。 @No__t 0 元素是可选的。 但是，必须指定 @no__t 0 或 `ScriptBlock` 元素，但不能同时指定两者。
+以下各节介绍了 `WideItem` 元素的属性、子元素和父元素。 `FormatString` 元素是可选的。 但是，必须指定 `PropertyName` 或 `ScriptBlock` 元素，但不能同时指定这两个元素。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 无。
 
@@ -59,7 +59,7 @@ ms.locfileid: "72361396"
 
 ## <a name="example"></a>示例
 
-下面的示例演示了一个 `WideEntry` 元素，该元素定义单个 @no__t 1 元素。 @No__t-0 元素定义其值在视图中显示的属性或脚本。
+下面的示例演示了一个 `WideEntry` 元素，该元素定义单个 `WideItem` 元素。 `WideItem` 元素定义其值在视图中显示的属性或脚本。
 
 ```xml
 <WideEntry>

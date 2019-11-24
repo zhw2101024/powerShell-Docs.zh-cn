@@ -17,7 +17,7 @@ ms.locfileid: "72359986"
 ---
 # <a name="accessdbprovidersample03"></a>AccessDBProviderSample03
 
-此示例演示如何覆盖[Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)和[Itemcmdletprovider. Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法，以支持对 `Get-Item` 和 @no__ 的调用的调用，并对其进行访问t-sql cmdlet。 此示例中的提供程序类派生自[Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)类。
+此示例演示如何覆盖[Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)和[Itemcmdletprovider. Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法，以支持对 `Get-Item` 和 `Set-Item` cmdlet 的调用的调用，这种情况下是如此。 此示例中的提供程序类派生自[Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)类。
 
 ## <a name="demonstrates"></a>示例
 
@@ -32,19 +32,19 @@ ms.locfileid: "72359986"
 
 此示例演示了以下内容：
 
-- 声明 `CmdletProvider` 属性。
+- 声明 `CmdletProvider` 特性。
 
 - 定义一个派生自[Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)类的提供程序类。
 
-- 覆盖 Newdrive * 方法，以更改 @no__t cmdlet 的行为，使用户能够创建新的驱动[程序。 Drivecmdletprovider。](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) （此示例不显示如何将动态参数添加到 `New-PSDrive` cmdlet。）
+- 覆盖[Drivecmdletprovider 的 Newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)方法，以更改 `New-PSDrive` cmdlet 的行为，从而允许用户创建新的驱动器。 （此示例不显示如何将动态参数添加到 `New-PSDrive` cmdlet。）
 
 - 覆盖[Drivecmdletprovider. Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)方法，以支持删除现有驱动器。
 
-- 覆盖[Getitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)方法，以更改 @no__t cmdlet 的行为，从而允许用户从数据存储中检索项（& a）。 （此示例不显示如何将动态参数添加到 `Get-Item` cmdlet。）
+- 覆盖[Itemcmdletprovider 的 Getitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)方法，以更改 `Get-Item` cmdlet 的行为，从而允许用户从数据存储中检索项。 （此示例不显示如何将动态参数添加到 `Get-Item` cmdlet。）
 
-- 重写[Itemcmdletprovider 的 Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法，以更改 @no__t cmdlet 的行为，从而允许用户更新数据存储区中的项。 （此示例不显示如何将动态参数添加到 `Get-Item` cmdlet。）
+- 覆盖[Itemcmdletprovider 的 Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法，以更改 `Set-Item` cmdlet 的行为，从而使用户能够更新数据存储中的项。 （此示例不显示如何将动态参数添加到 `Get-Item` cmdlet。）
 
-- 覆盖 Itemexists * 方法，以更改 @no__t cmdlet 的行为。 [Itemcmdletprovider. *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)方法。 （此示例不显示如何将动态参数添加到 `Test-Path` cmdlet。）
+- 覆盖[Itemcmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)方法，以更改 `Test-Path` cmdlet 的行为方式。 （此示例不显示如何将动态参数添加到 `Test-Path` cmdlet。）
 
 - 覆盖[Itemcmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)方法，以确定提供的路径是否有效。
 

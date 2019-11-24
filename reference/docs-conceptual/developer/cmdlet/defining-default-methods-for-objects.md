@@ -21,7 +21,7 @@ ms.locfileid: "72365686"
 以下各节介绍了用于定义这些方法的 XML。
 
 > [!NOTE]
-> 以下部分中的示例来自 Windows PowerShell 安装目录中的 @no__t 0 类型文件（`$PSHOME`）。 有关详细信息，请参阅[关于 types.ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)。
+> 以下部分中的示例来自 Windows PowerShell 安装目录（`$PSHOME`）中的 `Types.ps1xml` 类型文件。 有关详细信息，请参阅[关于 types.ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)。
 
 ## <a name="code-methods"></a>代码方法
 

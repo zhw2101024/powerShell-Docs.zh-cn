@@ -32,7 +32,7 @@ ms.locfileid: "72365166"
 
 以下各节介绍了 `Label` 元素的属性、子元素和父元素。 每个列只允许有一个标签。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 无。
 
@@ -58,7 +58,7 @@ ms.locfileid: "72365166"
 
 ## <a name="example"></a>示例
 
-此示例演示一个标签为 "Column 1" 的 @no__t 0 元素。
+此示例演示一个标签为 "Column 1" 的 `TableColumnHeader` 元素。
 
 ```xml
 <TableColumnHeader>

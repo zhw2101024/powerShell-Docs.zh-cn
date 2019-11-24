@@ -17,7 +17,7 @@ ms.locfileid: "72366326"
 ---
 # <a name="accessdbprovidersample06"></a>AccessDBProviderSample06
 
-此示例演示如何覆盖内容方法以支持对 `Clear-Content`、`Get-Content` 和 @no__t cmdlet 的调用。 当用户需要管理数据存储区中的项的内容时，应实现这些方法。 此示例中的提供程序类派生自[Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)类，并且它实现了[Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)接口的执行程序。）。
+此示例演示如何覆盖内容方法以支持对 `Clear-Content`、`Get-Content`和 `Set-Content` cmdlet 的调用。 当用户需要管理数据存储区中的项的内容时，应实现这些方法。 此示例中的提供程序类派生自[Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)类，并且它实现了[Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)接口的执行程序。）。
 
 ## <a name="demonstrates"></a>示例
 
@@ -32,15 +32,15 @@ ms.locfileid: "72366326"
 
 此示例演示了以下内容：
 
-- 声明 `CmdletProvider` 属性。
+- 声明 `CmdletProvider` 特性。
 
 - 定义一个派生自[Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)类的提供程序类，并声明一个声明[Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)接口的提供程序类。
 
-- 重写[Icontentcmdletprovider 的 Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)方法，以更改 @no__t cmdlet 的行为，允许用户从项中删除该内容。）。 （此示例不显示如何将动态参数添加到 `Clear-Content` cmdlet。）
+- 覆盖[Icontentcmdletprovider 的 Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)方法，以更改 `Clear-Content` cmdlet 的行为，从而允许用户从项中删除该内容。 （此示例不显示如何将动态参数添加到 `Clear-Content` cmdlet。）
 
-- 重写[Icontentcmdletprovider 的 Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)方法，以更改 @no__t cmdlet 的行为，从而允许用户检索项的内容（& e）。 （此示例不显示如何将动态参数添加到 `Get-Content` cmdlet。）。
+- 覆盖[Icontentcmdletprovider 的 Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)方法，以更改 `Get-Content` cmdlet 的行为，从而允许用户检索项的内容的内容。 （此示例不显示如何将动态参数添加到 `Get-Content` cmdlet。）。
 
-- 覆盖[Getcontentwriter *](/dotnet/api/Microsoft.PowerShell.Commands.FileSystemProvider.GetContentWriter)方法，以更改 @no__t cmdlet 的行为，从而使用户能够更新项的内容（& e）。 （此示例不显示如何将动态参数添加到 `Set-Content` cmdlet。）
+- 覆盖[Getcontentwriter *](/dotnet/api/Microsoft.PowerShell.Commands.FileSystemProvider.GetContentWriter)方法，以更改 `Set-Content` cmdlet 的行为，从而使用户能够更新项的内容了。 （此示例不显示如何将动态参数添加到 `Set-Content` cmdlet。）
 
 ## <a name="example"></a>示例
 

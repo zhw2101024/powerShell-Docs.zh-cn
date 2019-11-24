@@ -21,7 +21,7 @@ ms.locfileid: "72367636"
 
 ## <a name="creating-a-pipeline"></a>创建管道
 
- [System.web](/dotnet/api/system.management.automation.powershell)类提供多种方法来向管道添加命令、参数和脚本。 您可以通过调用 Begininvoke [*](/dotnet/api/System.Management.Automation.PowerShell.Invoke)方法的重载，或通过调用 * 的重载，以同步方式调用该管道。[管理组件](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke)的重载 *然后，再将[Endinvoke *](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)方法。
+ [System.web](/dotnet/api/system.management.automation.powershell)类提供多种方法来向管道添加命令、参数和脚本。 您可以通过调用 Begininvoke [* 方法的](/dotnet/api/System.Management.Automation.PowerShell.Invoke)重载，或通过调用[*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke)的重载，然后通过调用[Endinvoke *](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)方法，以同步方式调用该管道，或通过调用此方法来异步调用该管道。
 
 ### <a name="addcommand"></a>AddCommand
 
@@ -79,7 +79,7 @@ PowerShell.Create().AddCommand("Get-Process")
 
 ### <a name="addstatement"></a>AddStatement
 
- 您可以使用[Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement)方法模拟批处理，该方法将其他语句添加到管道的末尾，以下代码将获取名称 @no__t 为的正在运行的进程的列表，然后获取正在运行的服务的列表。
+ 您可以使用[Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement)方法模拟批处理，该方法将其他语句添加到管道的末尾，以下代码获取名称为 `PowerShell`的运行中进程的列表，然后获取正在运行的服务的列表。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -90,14 +90,14 @@ ps.Invoke();
 
 ### <a name="addscript"></a>AddScript
 
- 您可以通过调用[Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript)方法来运行现有的脚本。 下面的示例向管道添加一个脚本并运行该脚本。 此示例假设名为 @no__t 的文件夹中已存在一个名为 `MyScript.ps1` 的脚本。
+ 您可以通过调用[Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript)方法来运行现有的脚本。 下面的示例向管道添加一个脚本并运行该脚本。 此示例假设名为 `D:\PSScripts`的文件夹中已有一个名为 `MyScript.ps1` 的脚本。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
- 还有一个版本的[Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript)方法，该方法采用名为 `useLocalScope` 的布尔参数。 如果此参数设置为 `true`，则脚本将在本地作用域中运行。 以下代码将在本地作用域中运行该脚本。
+ 还有一个版本的[Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript)方法，该方法采用名为 `useLocalScope`的布尔参数。 如果将此参数设置为 `true`，则脚本将在本地作用域中运行。 以下代码将在本地作用域中运行该脚本。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -138,7 +138,7 @@ namespace HostPS1e
 
 ### <a name="invoking-a-pipeline-asynchronously"></a>异步调用管道
 
- 您可以通过调用[Begininvoke *](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke)的重载来异步调用管道，以创建[IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx)对象，然后调用 Endinvoke 的重载对象，然后调用。 [*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)方法。
+ 您可以通过调用[Begininvoke *](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke)的重载来异步调用管道，以创建[IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx)对象，然后调用[Endinvoke *](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)方法，从而实现这一目标的调用。
 
  下面的示例演示如何以异步方式调用管道。
 

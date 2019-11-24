@@ -65,7 +65,7 @@ ms.locfileid: "72365296"
 
 ## <a name="example"></a>示例
 
-此示例演示如何实现 `PassThru` 参数，该参数指示用户希望 cmdlet 返回对象，以及如何通过调用 @no__t 和 @no__t 2 方法请求用户反馈。
+此示例演示如何实现一个 `PassThru` 参数，该参数指示用户希望 cmdlet 返回对象，以及如何通过调用 `ShouldProcess` 和 `ShouldContinue` 方法请求用户反馈。
 
 ```csharp
 using System;

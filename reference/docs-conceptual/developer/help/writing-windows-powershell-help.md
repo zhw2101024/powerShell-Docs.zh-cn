@@ -17,7 +17,7 @@ ms.locfileid: "72367666"
 ---
 # <a name="writing-windows-powershell-help"></a>编写 Windows PowerShell 帮助
 
-此文档是为编写 Windows PowerShell cmdlet、提供程序的帮助内容的任何人员编写的，以及有关可以使用 @no__t cmdlet 在命令行上查看的主题的概念。
+此文档是为编写 Windows PowerShell cmdlet、提供程序的帮助内容的任何人员编写的，以及有关可以使用 `Get-Help` cmdlet 在命令行上查看的主题的概念。
 
 ## <a name="cmdlet-help"></a>Cmdlet 帮助
 

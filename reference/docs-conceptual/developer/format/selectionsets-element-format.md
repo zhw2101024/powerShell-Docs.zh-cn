@@ -33,7 +33,7 @@ ms.locfileid: "72361866"
 
 以下各节介绍 `SelectionSets` 元素的属性、子元素和父元素。 每个子元素定义一组可由集名称引用的对象。 子元素的顺序并不重要。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 无。
 
@@ -53,7 +53,7 @@ ms.locfileid: "72361866"
 
 如果你有一组要通过使用单个名称引用的相关对象（例如通过继承相关的一组对象），则可以使用选择集。 定义视图时，可以使用选择集的名称（而不是列出每个视图中的所有对象）来指定对象集。
 
-常用选择集在定义格式设置文件的视图或视图定义时由其名称指定。 在这些情况下，@no__t 的 @no__t 子元素和 @no__t 2 元素指定要使用的集。 有关选择集的详细信息，请参阅[定义对象集](./defining-selection-sets.md)。
+常用选择集在定义格式设置文件的视图或视图定义时由其名称指定。 在这些情况下，`ViewSelectedBy` 和 `EntrySelectedBy` 元素的 `SelectionSetName` 子元素指定要使用的集。 有关选择集的详细信息，请参阅[定义对象集](./defining-selection-sets.md)。
 
 ## <a name="see-also"></a>另请参阅
 

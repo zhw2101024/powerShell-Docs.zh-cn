@@ -23,12 +23,12 @@ ms.locfileid: "72365136"
 
 1. 将本主题的 "示例" 部分中的 XML 复制到一个文本文件中。
 
-2. 保存文本文件。 请确保将 @no__t 0 扩展添加到文件，以将其标识为格式文件。
+2. 保存文本文件。 请确保将 `format.ps1xml` 扩展添加到文件中，以将其标识为格式文件。
 
 3. 打开 Windows PowerShell 并运行以下命令，将格式化文件加载到当前会话中： `Update-formatdata -prependpath PathToFormattingFile`。
 
    > [!WARNING]
-   > 此格式化文件定义已由 Windows PowerShell 格式设置文件定义的对象的显示。 当你运行 cmdlet 时，必须使用 @no__t 参数，并且无法将此格式化文件作为模块加载。
+   > 此格式化文件定义已由 Windows PowerShell 格式设置文件定义的对象的显示。 在运行 cmdlet 时，必须使用 `prependPath` 参数，并且不能将此格式化文件作为模块加载。
 
 ## <a name="demonstrates"></a>示例
 

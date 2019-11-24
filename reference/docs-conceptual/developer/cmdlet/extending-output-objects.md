@@ -21,7 +21,7 @@ ms.locfileid: "72369716"
 
 ## <a name="extending-the-systemarray-object"></a>扩展 System.object 对象
 
-下面的示例演示 Windows PowerShell 如何在 types.ps1xml 文件中扩展[system.object](/dotnet/api/System.Array)对象。 默认情况下， [system.object](/dotnet/api/System.Array)对象有一个 `Length` 属性，该属性列出数组中对象的数量。 但是，由于名称 "length" 未清楚地描述属性，因此 Windows PowerShell 将添加 `Count` alias 属性，该属性显示与 @no__t 1 属性相同的值。 下面的 XML 将 `Count` 属性添加到[system.object](/dotnet/api/System.Array)类型。
+下面的示例演示 Windows PowerShell 如何在 types.ps1xml 文件中扩展[system.object](/dotnet/api/System.Array)对象。 默认情况下， [system.object](/dotnet/api/System.Array)对象具有一个 `Length` 属性，该属性列出数组中对象的数量。 但是，由于名称 "length" 未清楚地描述属性，因此 Windows PowerShell 将添加 `Count` alias 属性，该属性与 `Length` 属性显示相同的值。 下面的 XML 将 `Count` 属性添加到[system.object](/dotnet/api/System.Array)类型。
 
 ```xml
 <Type>
@@ -55,7 +55,7 @@ Get            Method        System.Object Get(Int32 )
 ...
 Length         Property      System.Int32 Length {get;}
 ```
-您可以使用 `Count` 属性或 @no__t 属性来确定数组中有多少个对象。 例如：
+您可以使用 `Count` 属性或 `Length` 属性来确定数组中有多少个对象。 例如：
 
 ```powershell
 PS> (1, 2, 3, 4).Count
@@ -75,7 +75,7 @@ PS> (1, 2, 3, 4).Length
 
 ## <a name="custom-types-files"></a>自定义类型文件
 
-若要创建自定义类型文件，请首先复制现有的类型文件。 新文件可以具有任何名称，但它必须具有 types.ps1xml 文件扩展名。 复制文件时，您可以将新文件放置在可供 Windows PowerShell 访问的任何目录中，但将文件放在 Windows PowerShell 安装目录（`$pshome`）或安装目录的子目录中会很有用。
+若要创建自定义类型文件，请首先复制现有的类型文件。 新文件可以具有任何名称，但它必须具有 types.ps1xml 文件扩展名。 复制文件时，您可以将新文件放置在可供 Windows PowerShell 访问的任何目录中，但将这些文件放在 Windows PowerShell 安装目录（`$pshome`）或安装目录的子目录中会很有用。
 
 若要将自己的扩展类型添加到文件中，请为要扩展的每个对象添加类型元素。 以下主题提供了示例。
 

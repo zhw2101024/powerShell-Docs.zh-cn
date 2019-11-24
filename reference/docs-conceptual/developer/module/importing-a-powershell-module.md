@@ -31,7 +31,7 @@ PowerShell 2.0 使用适当命名的[import-module](/powershell/module/Microsoft
 Import-Module myModule
 ```
 
-假设 myModule 位于 `PSModulePath` 中，则 PowerShell 会将 myModule 加载到活动内存。 如果 myModule 不在 `PSModulePath` 路径上，你仍可以显式告知 PowerShell 在何处查找：
+假设 myModule 位于 `PSModulePath`中，则 PowerShell 会将 myModule 加载到活动内存。 如果 myModule 不在 `PSModulePath` 路径上，你仍可以显式告知 PowerShell 在何处找到它：
 
 ```powershell
 Import-Module -Name C:\myRandomDirectory\myModule -Verbose
@@ -45,13 +45,13 @@ Import-Module -Name C:\myRandomDirectory\myModule -Verbose
 
 以下操作触发自动导入模块，也称为 "模块自动加载"。
 
-- 在命令中使用 cmdlet。 例如，键入 `Get-ExecutionPolicy` 会导入包含 @no__t cmdlet 的 Microsoft. Security 模块。
+- 在命令中使用 cmdlet。 例如，键入 `Get-ExecutionPolicy` 导入包含 `Get-ExecutionPolicy` cmdlet 的 Microsoft. Security 模块。
 
-- 使用[get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Command) cmdlet 获取命令。  例如，键入 `Get-Command Get-JobTrigger` 会导入包含 @no__t cmdlet 的**PSScheduledJob**模块。 包含通配符的 @no__t 0 命令被视为发现，不会触发模块的导入。
+- 使用[get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Command) cmdlet 获取命令。  例如，键入 `Get-Command Get-JobTrigger` 导入包含 `Get-JobTrigger` cmdlet 的**PSScheduledJob**模块。 包含通配符的 `Get-Command` 命令被视为发现，不会触发模块的导入。
 
-- 使用[get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet 获取有关 cmdlet 的帮助。 例如，键入 `Get-Help Get-WinEvent` 会导入包含 @no__t cmdlet 的 Microsoft PowerShell 诊断模块。
+- 使用[get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet 获取有关 cmdlet 的帮助。 例如，键入 `Get-Help Get-WinEvent` 导入包含 `Get-WinEvent` cmdlet 的 "诊断" 模块。
 
-若要支持模块的自动导入，@no__t cmdlet 将获取所有已安装模块中的所有 cmdlet 和函数，即使模块未导入到会话中也是如此。 有关详细信息，请参阅[Get Command](/powershell/module/Microsoft.PowerShell.Core/Get-Command) cmdlet 的帮助主题。
+为了支持模块的自动导入，`Get-Command` cmdlet 获取所有已安装模块中的所有 cmdlet 和函数，即使模块未导入到会话中也是如此。 有关详细信息，请参阅[Get Command](/powershell/module/Microsoft.PowerShell.Core/Get-Command) cmdlet 的帮助主题。
 
 ## <a name="the-importing-process"></a>导入过程
 
@@ -62,11 +62,11 @@ Import-Module -Name C:\myRandomDirectory\myModule -Verbose
 > [!WARNING]
 > 如果导出成员的名称使用未经批准的谓词，或如果该成员的名称使用受限字符，则在运行[import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet 时，将显示一条警告。
 
-默认情况下， [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet 不会将任何对象返回到管道。 但是，该 cmdlet 支持 @no__t 0 参数，该参数可用于为导入的每个模块返回[PSModuleInfo](/dotnet/api/System.Management.Automation.PSModuleInfo)对象。 若要将输出发送到主机，用户应运行[写入主机](/powershell/module/Microsoft.PowerShell.Utility/Write-Host)cmdlet。
+默认情况下， [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet 不会将任何对象返回到管道。 但是，该 cmdlet 支持 `PassThru` 参数，该参数可用于为导入的每个模块返回[PSModuleInfo](/dotnet/api/System.Management.Automation.PSModuleInfo)对象。 若要将输出发送到主机，用户应运行[写入主机](/powershell/module/Microsoft.PowerShell.Utility/Write-Host)cmdlet。
 
 ## <a name="restricting--the-members-that-are-imported"></a>限制导入的成员
 
-当使用[import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet 导入模块时，默认情况下，所有导出的模块成员都将导入到会话中，包括通过嵌套模块导出到该模块中的任何命令。 默认情况下，不导出变量和别名。 若要限制导出的成员，请使用[模块清单](./how-to-write-a-powershell-module-manifest.md)。 若要限制导入的成员，请使用 @no__t cmdlet 的以下参数。
+当使用[import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet 导入模块时，默认情况下，所有导出的模块成员都将导入到会话中，包括通过嵌套模块导出到该模块中的任何命令。 默认情况下，不导出变量和别名。 若要限制导出的成员，请使用[模块清单](./how-to-write-a-powershell-module-manifest.md)。 若要限制导入的成员，请使用 `Import-Module` cmdlet 的以下参数。
 
 - `Function`：此参数限制导出的函数。 （如果使用的是模块清单，请参阅 FunctionsToExport 键。）
 

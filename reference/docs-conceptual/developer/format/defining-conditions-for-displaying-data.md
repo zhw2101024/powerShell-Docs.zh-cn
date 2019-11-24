@@ -17,13 +17,13 @@ ms.locfileid: "72363896"
 ---
 # <a name="defining-conditions-for-displaying-data"></a>定义用于显示数据的条件
 
-定义视图或控件显示的数据时，您可以指定一个必须存在的条件，以便显示数据。 条件可由特定属性触发，或者在脚本或属性值的计算结果为 `true` 时触发。 如果满足选择条件，将使用视图或控件的定义。
+定义视图或控件显示的数据时，您可以指定一个必须存在的条件，以便显示数据。 条件可由特定属性触发，或者当脚本或属性值的计算结果为 `true`时。 如果满足选择条件，将使用视图或控件的定义。
 
 ## <a name="specifying-a-selection-condition-for-a-definition"></a>为定义指定选择条件
 
-创建视图或控件的定义时，@no__t 的元素用于指定将使用定义的对象或必须存在的条件才能使用定义。 条件由 `SelectionCondition` 元素指定。
+创建视图或控件的定义时，`EntrySelectedBy` 元素用于指定将使用定义的对象或必须存在的条件才能使用定义。 条件由 `SelectionCondition` 元素指定。
 
-在下面的示例中，将为表视图的定义指定选择条件。 在此示例中，仅当指定的脚本计算为 `true` 时，才使用定义。
+在下面的示例中，将为表视图的定义指定选择条件。 在此示例中，仅当指定的脚本计算为 `true`时才使用定义。
 
 ```xml
 <TableRowEntry>
@@ -46,7 +46,7 @@ ms.locfileid: "72363896"
 
 ## <a name="specifying-a-selection-condition-for-an-item"></a>指定项的选择条件
 
-你还可以通过在项定义中包含 `ItemSelectionCondition` 元素来指定何时使用列表视图或控件的项。 在下面的示例中，为列表视图的项指定了选择条件。 在此示例中，仅当将脚本计算为 `true` 时才使用此项。
+您还可以通过在项定义中包含 `ItemSelectionCondition` 元素，指定列表视图或控件的项的使用时间。 在下面的示例中，为列表视图的项指定了选择条件。 在此示例中，仅当将脚本计算为 `true`时才使用此项。
 
 ```xml
 <ListItem>

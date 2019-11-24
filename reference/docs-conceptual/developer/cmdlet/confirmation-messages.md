@@ -24,7 +24,7 @@ ms.locfileid: "72365726"
 
 ## <a name="specifying-the-resource"></a>指定资源
 
-你可以通过调用 Shouldprocess% 2A 来指定要更改的资源（& i） [？Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0)方法。 在这种情况下，请使用方法的 @no__t 参数提供资源，并由 Windows PowerShell 添加操作。 在下面的消息中，文本 "MyResource" 是操作资源，操作是执行调用的命令的名称。
+你可以通过调用 Shouldprocess% 2A 来指定要更改的资源（& i） [？Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0)方法。 在这种情况下，请使用方法的 `target` 参数提供资源，并由 Windows PowerShell 添加操作。 在下面的消息中，文本 "MyResource" 是操作资源，操作是执行调用的命令的名称。
 
 ```output
 Confirm
@@ -33,7 +33,7 @@ Performing operation "Test-RequestConfirmationTemplate1" on Target "MyResource".
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
 ```
 
-如果用户为确认请求选择 **"是"** 或 **"全部"** （如以下示例中所示），则会调用[ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，这将导致第二条确认消息会.
+如果用户为确认请求选择 **"是"** 或 **"全部"** （如以下示例中所示），则会调用[ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，这将导致显示第二条确认消息。
 
 ```output
 Confirm
@@ -48,7 +48,7 @@ Continue with this operation?
 
 ## <a name="specifying-the-operation-and-resource"></a>指定操作和资源
 
-你可以通过调用 Shouldprocess% 2A 来指定要更改的资源，以及该命令将要执行的操作（& e） [？Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0)方法。 在这种情况下，请使用 @no__t 参数和操作通过使用 `target` 参数提供资源。 在下面的消息中，文本 "MyResource" 是操作资源，而 "MyAction" 是要执行的操作。
+你可以通过调用 Shouldprocess% 2A 来指定要更改的资源，以及该命令将要执行的操作（& e） [？Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0)方法。 在这种情况下，请使用 `target` 参数和操作通过使用 `target` 参数提供资源。 在下面的消息中，文本 "MyResource" 是操作资源，而 "MyAction" 是要执行的操作。
 
 ```output
 Confirm

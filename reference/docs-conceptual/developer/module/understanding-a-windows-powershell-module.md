@@ -51,11 +51,11 @@ ms.locfileid: "72360636"
 
 ### <a name="manifest-modules"></a>清单模块
 
-*清单模块*是一个模块，它使用清单文件来描述其所有组件，但不包含任何种类的核心程序集或脚本。 （正式地说，清单模块将清单的 @no__t 0 或 @no__t 元素保留为空。）但是，您仍然可以使用模块的其他功能，例如加载依赖程序集或自动运行某些预处理脚本的能力。 你还可以使用清单模块来打包其他模块将使用的资源，例如嵌套的模块、程序集、类型或格式。 有关详细信息，请参阅[如何编写 PowerShell 模块清单](./how-to-write-a-powershell-module-manifest.md)。
+*清单模块*是一个模块，它使用清单文件来描述其所有组件，但不包含任何种类的核心程序集或脚本。 （正式，清单模块会将清单的 `ModuleToProcess` 或 `RootModule` 元素留空。）但是，您仍然可以使用模块的其他功能，例如加载依赖程序集或自动运行某些预处理脚本的能力。 你还可以使用清单模块来打包其他模块将使用的资源，例如嵌套的模块、程序集、类型或格式。 有关详细信息，请参阅[如何编写 PowerShell 模块清单](./how-to-write-a-powershell-module-manifest.md)。
 
 ### <a name="dynamic-modules"></a>动态模块
 
-*动态模块*是指不是从文件加载或保存到文件的模块。 相反，它们是使用[新的模块](/powershell/module/Microsoft.PowerShell.Core/New-Module)cmdlet 通过脚本动态创建的。 此类型的模块使脚本能够创建无需加载或保存到持久性存储中的需要的模块。 就其本质而言，动态模块的生存期很短，因此不能通过 `Get-Module` cmdlet 进行访问。 同样，它们通常不需要模块清单，也不可能需要永久文件夹来存储其相关程序集。
+*动态模块*是指不是从文件加载或保存到文件的模块。 相反，它们是使用[新的模块](/powershell/module/Microsoft.PowerShell.Core/New-Module)cmdlet 通过脚本动态创建的。 此类型的模块使脚本能够创建无需加载或保存到持久性存储中的需要的模块。 就其本质而言，动态模块旨在缩短生存期，因此 `Get-Module` cmdlet 无法访问。 同样，它们通常不需要模块清单，也不可能需要永久文件夹来存储其相关程序集。
 
 ## <a name="module-manifests"></a>模块清单
 
@@ -85,13 +85,13 @@ ms.locfileid: "72360636"
 
 一旦创建了脚本、二进制或清单模块，就可以将工作保存到其他人可以访问的位置。 例如，模块可以存储在安装了 Windows PowerShell 的系统文件夹中，也可以存储在用户文件夹中。
 
-一般而言，你可以通过使用 `$ENV:PSModulePath` 变量中存储的路径之一确定你应该安装模块的位置。 使用其中一种路径意味着，当用户在代码中调用模块时，PowerShell 可以自动查找并加载模块。 如果将模块存储在其他位置，则可以通过在调用 `Install-Module` 时将模块的位置作为参数传入来显式允许 PowerShell 知道。
+一般而言，你可以通过使用 `$ENV:PSModulePath` 变量中存储的路径之一确定你应该安装模块的位置。 使用其中一种路径意味着，当用户在代码中调用模块时，PowerShell 可以自动查找并加载模块。 如果将模块存储在其他位置，则在调用 `Install-Module`时，可以通过将模块的位置作为参数传入来显式让 PowerShell 知道。
 
 无论如何，文件夹的路径称为模块（ModuleBase）的*基*项，脚本、二进制或清单模块文件的名称应与模块文件夹名称相同，但以下情况例外：
 
-- 可以使用 cmdlet 的 @no__t 参数来命名 @no__t cmdlet 创建的动态模块。
+- 可以使用 cmdlet 的 `Name` 参数来命名 `New-Module` cmdlet 创建的动态模块。
 
-- 通过 **`Import-Module`-assembly**命令从程序集对象导入的模块按照以下语法命名： `"dynamic_code_module_" + assembly.GetName()`。
+- **`Import-Module` 程序集**命令从程序集对象导入的模块按照以下语法命名： `"dynamic_code_module_" + assembly.GetName()`。
 
   有关详细信息，请参阅[安装 PowerShell 模块](./installing-a-powershell-module.md)和[修改 PSModulePath 安装路径](./modifying-the-psmodulepath-installation-path.md)。
 
@@ -107,7 +107,7 @@ Windows PowerShell 提供以下 cmdlet 和变量来创建和管理模块。
 
 [Get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet 此 cmdlet 检索有关已在或可以导入到当前会话中的模块的信息。
 
-[Export-modulemember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) cmdlet 此 cmdlet 指定从脚本模块（hbase-runner.psm1）文件或通过使用 `New-Module` cmdlet 创建的动态模块导出的模块成员（如 cmdlet、函数、变量和别名）。
+[Export-modulemember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) cmdlet 此 cmdlet 指定从脚本模块（hbase-runner.psm1）文件或使用 `New-Module` cmdlet 创建的动态模块导出的模块成员（如 cmdlet、函数、变量和别名）。
 
 [Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) cmdlet 此 cmdlet 将从当前会话中删除模块。
 

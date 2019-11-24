@@ -19,15 +19,15 @@ ms.locfileid: "72367796"
 
 本部分介绍如何将输出部分添加到 Windows PowerShell® cmdlet 帮助主题。 "输出" 部分列出了 cmdlet 返回或沿管道向下传递的对象的 .NET 类。
 
-可以添加到 "输出" 部分的类的数量没有限制。 Cmdlet 的返回类型括在 \<command： returnValues > 节点中，其中每个类都包含在 \<command： returnValue > 元素中。
+可以添加到 "输出" 部分的类的数量没有限制。 Cmdlet 的返回类型括在 \<命令中： returnValues > node，其中每个类都包含在一个 \<命令中： returnValue > 元素。
 
 如果 cmdlet 未生成任何输出，请使用此部分来指示没有输出。 例如，若要替代类名称，请编写 "None" 并提供简短说明。 如果 cmdlet 按条件生成输出，请使用此节点解释条件并描述条件输出。
 
-此架构包括两个 \<maml： description > 每个 \<command： returnValue > 元素中的元素。 但是，@no__t cmdlet 只显示 \<command： returnValue > @no__t/2maml： description > 元素的内容。
+此架构包括两个 \<maml： description > 每个 \<命令中的元素： returnValue > 元素。 但 `Get-Help` cmdlet 只显示 \<命令的内容： returnValue >/\<maml： description > 元素。
 
-从 Windows PowerShell 3.0 开始，@no__t cmdlet 显示 \<maml： uri > 元素的内容。 此元素使用户能够将用户定向到描述 .NET 类的主题。
+从 Windows PowerShell 3.0 开始，`Get-Help` cmdlet 显示 \<maml： uri > 元素的内容。 此元素使用户能够将用户定向到描述 .NET 类的主题。
 
-下面的 XML 显示 \<maml： returnValues > 节点。
+下面的 XML 演示 \<maml： returnValues > 节点。
 
 ```xml
 <command:returnValues>
@@ -45,7 +45,7 @@ ms.locfileid: "72367796"
 </command: returnValues>
 ```
 
-下面的 XML 显示使用 \<maml： returnValues > 节点记录输出类型的示例。
+下面的 XML 演示使用 \<maml： returnValues > 节点记录输出类型的示例。
 
 ```xml
 <command:returnValues>

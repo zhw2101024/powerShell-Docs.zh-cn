@@ -21,7 +21,7 @@ Windows PowerShell®示例通过 Windows SDK 提供。 本部分包含 Windows S
 
 > [!NOTE]
 > 在安装 Windows SDK 时，将创建一个**示例**目录，在该目录中，将提供所有的 Windows PowerShell 示例。 典型的安装目录为**C:\Program Files\Microsoft SDKs\Windows\v6.0**。
-> 启动 Windows PowerShell 并键入 **"cd Samples\SysMgmt\PowerShell"** 以查找 Windows PowerShell 示例目录。 在本文档中，Windows PowerShell 示例目录称为 **> @no__t 1PowerShell 示例**。
+> 启动 Windows PowerShell 并键入 **"cd Samples\SysMgmt\PowerShell"** 以查找 Windows PowerShell 示例目录。 在本文档中，Windows PowerShell 示例目录被称为 **\<PowerShell 示例 >** 。
 
 ## <a name="sample-code-listing"></a>示例代码列表
 
@@ -35,11 +35,11 @@ Windows PowerShell®示例通过 Windows SDK 提供。 本部分包含 Windows S
 |[AccessDbProviderSample06 代码示例](./accessdbprovidersample06-code-sample.md)|这是[创建 Windows PowerShell 内容提供程序](./creating-a-windows-powershell-content-provider.md)中所述的提供程序。|
 |[GetProc01 代码示例](./getproc01-code-samples.md)|这是[创建第一个 cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)中所述的基本 `Get-Process` cmdlet 示例。|
 |[GetProc02 代码示例](./getproc02-code-samples.md)|这是[添加处理命令行输入的参数](../cmdlet/adding-parameters-that-process-command-line-input.md)中所述的 `Get-Process` cmdlet 示例。|
-|[GetProc03 代码示例](./getproc03-code-samples.md)|这是[添加处理管道输入的参数](../cmdlet/adding-parameters-that-process-pipeline-input.md)中所述的 @no__t 的 cmdlet 示例。|
-|[GetProc04 代码示例](./getproc04-code-samples.md)|这是[将非终止错误报告添加到 cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md)中所述的 @no__t 的 cmdlet 示例。|
-|[GetProc05 代码示例](./getproc05-code-samples.md)|此 @no__t cmdlet 类似于在[cmdlet 中添加非终止错误报告](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md)中所述的 cmdlet。|
+|[GetProc03 代码示例](./getproc03-code-samples.md)|这是[添加处理管道输入的参数](../cmdlet/adding-parameters-that-process-pipeline-input.md)中所述的 `Get-Process` cmdlet 示例。|
+|[GetProc04 代码示例](./getproc04-code-samples.md)|这是[将非终止错误报告添加到 cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md)中所述的 `Get-Process` cmdlet 示例。|
+|[GetProc05 代码示例](./getproc05-code-samples.md)|此 `Get-Process` cmdlet 类似于在[cmdlet 中添加非终止错误报告](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md)中所述的 cmdlet。|
 |[StopProc01 代码示例](./stopproc01-code-samples.md)|这是[创建修改系统的 cmdlet](../cmdlet/creating-a-cmdlet-that-modifies-the-system.md)中所述的 `Stop-Process` cmdlet 示例。|
-|[StopProcessSample04 代码示例](./stopprocesssample04-code-samples.md)|这是[将参数集添加到 cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md)中所述的 @no__t 的 cmdlet 示例。|
+|[StopProcessSample04 代码示例](./stopprocesssample04-code-samples.md)|这是[将参数集添加到 cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md)中所述的 `Stop-Process` cmdlet 示例。|
 |[Runspace01 代码示例](./runspace01-code-samples.md)|下面是[创建运行指定命令的控制台应用程序](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program)中所述的运行空间的代码示例。|
 |[Runspace02 代码示例](./runspace02-code-samples.md)|此示例使用[Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)类来同步执行 `Get-Process` cmdlet。|
 |[RunSpace03 代码示例](./runspace03-code-samples.md)|下面是 "创建运行指定脚本的控制台应用程序" 中所述的运行空间的代码示例。|

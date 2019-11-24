@@ -25,7 +25,7 @@ ms.locfileid: "72365926"
 ---
 # <a name="cmdlet-parameters"></a>Cmdlet 参数
 
-Cmdlet 参数提供允许 cmdlet 接受输入的机制。 参数可以直接从命令行输入，也可以从通过管道传递给 cmdlet 的对象接受输入，这些参数的参数（也称为*值*）可以指定 cmdlet 接受的输入，cmdlet 应如何执行其操作和 cmdlet 返回给管道的数据。
+Cmdlet 参数提供允许 cmdlet 接受输入的机制。 参数可以直接从命令行进行输入，也可以从通过管道传递给 cmdlet 的对象接受输入，这些参数的参数（也称为*值*）可以指定 cmdlet 接受的输入、cmdlet 应如何执行其操作以及 cmdlet 返回到管道的数据。
 
 ## <a name="in-this-section"></a>本部分内容
 
@@ -47,7 +47,7 @@ Cmdlet 参数提供允许 cmdlet 接受输入的机制。 参数可以直接从�
 
 [正在验证参数输入](./validating-parameter-input.md)介绍 Windows PowerShell 如何验证传递给 cmdlet 参数的参数。
 
-[输入筛选器参数](./input-filter-parameters.md)讨论 `Filter`、`Include` 和 @no__t 的参数，这些参数用于筛选 cmdlet 影响的输入对象集。
+[输入筛选器参数](./input-filter-parameters.md)讨论 `Filter`、`Include`和 `Exclude` 参数，这些参数用于筛选 cmdlet 影响的输入对象集。
 
 ## <a name="related-sections"></a>相关章节
 

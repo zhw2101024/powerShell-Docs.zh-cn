@@ -34,7 +34,7 @@ ms.locfileid: "72367956"
 
 以下各节介绍了 `Types` 元素的属性、子元素和父元素。 必须至少有一个子元素，但对于可添加的子元素数没有最大限制。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 无。
 
@@ -56,7 +56,7 @@ ms.locfileid: "72367956"
 
 ## <a name="example"></a>示例
 
-此示例演示一个定义四个 .NET 类型的 @no__t 0 元素。
+此示例演示一个定义四个 .NET 类型的 `SelectionSet` 元素。
 
 ```xml
 <SelectionSets>

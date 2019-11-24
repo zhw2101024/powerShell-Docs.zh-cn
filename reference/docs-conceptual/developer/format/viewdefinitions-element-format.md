@@ -34,7 +34,7 @@ Configuration 元素（Format） ViewDefinitions （Format XML）元素
 
 以下各节介绍 `ViewDefinitions` 元素的属性、子元素和父元素。 对于可以在格式设置文件中定义的视图数量没有限制，可以按任意顺序添加它们。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 无。
 
@@ -64,7 +64,7 @@ Configuration 元素（Format） ViewDefinitions （Format XML）元素
 
 ## <a name="example"></a>示例
 
-此示例演示一个 @no__t 0 元素，该元素包含表视图和列表视图的父元素。
+此示例演示一个 `ViewDefinitions` 元素，该元素包含表视图和列表视图的父元素。
 
 ```xml
 <Configuration>

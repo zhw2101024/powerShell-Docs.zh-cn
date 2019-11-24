@@ -21,9 +21,9 @@ ms.locfileid: "72363196"
 
 ## <a name="in-this-section"></a>本部分内容
 
-[宽视图（基本）](./wide-view-basic.md)此示例演示如何实现显示[system.serviceprocess. Servicecontroller 的基本视图？Displayproperty =](/dotnet/api/System.ServiceProcess.ServiceController) @no__t cmdlet 返回的 Fullname 对象。
+[宽视图（基本）](./wide-view-basic.md)此示例演示如何实现显示[system.serviceprocess. Servicecontroller 的基本视图？Displayproperty =](/dotnet/api/System.ServiceProcess.ServiceController) `Get-Service` cmdlet 返回的 Fullname 对象。
 
-[宽视图（GroupBy）](./wide-view-groupby.md)此示例演示如何实现显示 System.serviceprocess. Servicecontroller 的组的宽视图[？Displayproperty =](/dotnet/api/System.ServiceProcess.ServiceController) @no__t cmdlet 返回的 Fullname 对象。
+[宽视图（GroupBy）](./wide-view-groupby.md)此示例演示如何实现显示 System.serviceprocess. Servicecontroller 的组的宽视图[？Displayproperty =](/dotnet/api/System.ServiceProcess.ServiceController) `Get-Service` cmdlet 返回的 Fullname 对象。
 
 ## <a name="see-also"></a>另请参阅
 

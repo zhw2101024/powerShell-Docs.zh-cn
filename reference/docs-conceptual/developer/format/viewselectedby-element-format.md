@@ -32,9 +32,9 @@ ViewDefinitions 元素（格式） View 元素（Format） ViewSelectedBy 元素
 
 ## <a name="attributes-and-elements"></a>属性和元素
 
-以下各节介绍 `ViewSelectedBy` 元素的属性、子元素和父元素。 此元素必须包含至少一个 @no__t 0 或 @no__t 子元素。 对于可以指定的子元素数没有限制，也没有其顺序。
+以下各节介绍 `ViewSelectedBy` 元素的属性、子元素和父元素。 此元素必须包含至少一个 `TypeName` 或 `SelectionSetName` 子元素。 对于可以指定的子元素数没有限制，也没有其顺序。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 无。
 
@@ -55,7 +55,7 @@ ViewDefinitions 元素（格式） View 元素（Format） ViewSelectedBy 元素
 
 有关此元素在不同视图中的使用方式的详细信息，请参阅[表视图组件](./creating-a-table-view.md)、[列表视图](./creating-a-list-view.md)组件、[宽视图组件](./creating-a-wide-view.md)和[自定义控件组件](./creating-custom-controls.md)。
 
-当格式设置文件定义一组由多个视图显示的对象时，将使用 @no__t 0 元素。 有关如何定义和引用选择集的详细信息，请参阅[定义对象集](./defining-selection-sets.md)。
+当格式文件定义一组由多个视图显示的对象时，将使用 `SelectionSetName` 元素。 有关如何定义和引用选择集的详细信息，请参阅[定义对象集](./defining-selection-sets.md)。
 
 ## <a name="example"></a>示例
 

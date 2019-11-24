@@ -24,13 +24,13 @@ ms.locfileid: "72369736"
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>如何使用 Visual Studio 生成示例。
 
 1. 安装 Windows PowerShell 2.0 SDK 后，导航到 Events01 文件夹。
-   默认位置为 `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`。
+   默认位置是 `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`。
 
 2. 双击解决方案（.sln）文件的图标。
    这会在 Microsoft Visual Studio 中打开示例项目。
 
 3. 在 "**生成**" 菜单中，选择 "**生成解决方案**"。
-   示例的库将在默认 `\bin` 或 @no__t 1 文件夹中生成。
+   示例的库将在默认 `\bin` 或 `\bin\debug` 文件夹中生成。
 
 ### <a name="how-to-run-the-sample"></a>如何运行示例
 
@@ -83,8 +83,8 @@ A file was created in the TEMP directory
 
 ### <a name="how-to-write-a-cmdlet-for-event-registration"></a>如何为事件注册编写 cmdlet
 
-该 cmdlet 派生自[ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)类，该类提供对 @no__t cmdlet 通用的参数的支持。
-派生自[ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)的 cmdlet 只需定义其特定参数，并覆盖 `GetSourceObject` 和 `GetSourceObjectEventName` 抽象方法。
+该 cmdlet 派生自[ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)类，该类提供对 `Register-*Event` cmdlet 通用的参数的支持。
+派生自[ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)的 cmdlet 只需定义其特定参数，并重写 `GetSourceObject` 和 `GetSourceObjectEventName` 抽象方法。
 
 ## <a name="example"></a>示例
 

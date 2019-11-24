@@ -34,7 +34,7 @@ Configuration 元素（格式）控制配置（format） CustomControl 元素的
 
 以下各节介绍了 `CustomEntries` 元素的属性、子元素和父元素。 您必须指定一个或多个子元素。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 无。
 
@@ -52,7 +52,7 @@ Configuration 元素（格式）控制配置（format） CustomControl 元素的
 
 ## <a name="remarks"></a>备注
 
-在大多数情况下，控件只有一个定义，该定义在单个 @no__t 0 元素中定义。 但是，如果希望使用同一控件显示不同的 .NET 对象，则可以有多个定义。 在这些情况下，可以为每个对象或一组对象定义 `CustomEntry` 元素。
+在大多数情况下，控件只有一个定义，该定义在单个 `CustomEntry` 元素中定义。 但是，如果希望使用同一控件显示不同的 .NET 对象，则可以有多个定义。 在这些情况下，可以为每个对象或一组对象定义 `CustomEntry` 元素。
 
 ## <a name="see-also"></a>另请参阅
 

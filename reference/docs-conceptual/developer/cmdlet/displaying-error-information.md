@@ -26,7 +26,7 @@ $ stop-service lanmanworkstation
 You do not have sufficient permissions to stop the service Workstation.
 ```
 
-但是，用户可以通过将 `$ErrorView` 变量设置为 @no__t，按类别查看错误。 类别视图显示来自错误记录的特定信息，而不是错误的自由文本说明。 如果要扫描的错误的列表很长，此视图会很有用。 在类别视图中，以前的错误消息显示如下。
+但是，用户可以通过将 `$ErrorView` 变量设置为 `"CategoryView"`来按类别查看错误。 类别视图显示来自错误记录的特定信息，而不是错误的自由文本说明。 如果要扫描的错误的列表很长，此视图会很有用。 在类别视图中，以前的错误消息显示如下。
 
 ```powershell
 $ $ErrorView = "CategoryView"

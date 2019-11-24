@@ -21,7 +21,7 @@ ms.locfileid: "72363406"
 
 ## <a name="a-table-view-display"></a>表格视图显示
 
-下面的示例演示 Windows PowerShell 如何显示由[Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) [Cmdlet 返回](/powershell/module/microsoft.powershell.management/get-service)的 system.serviceprocess 对象。 对于此对象，Windows PowerShell 定义了一个显示 `Status` 属性的表视图，`Name` 属性（此属性是 @no__t 2 属性的别名属性）和 @no__t。 表中的每一行表示该 cmdlet 返回的对象。
+下面的示例演示 Windows PowerShell 如何显示由[Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) [Cmdlet 返回](/powershell/module/microsoft.powershell.management/get-service)的 system.serviceprocess 对象。 对于此对象，Windows PowerShell 定义了显示 `Status` 属性、`Name` 属性（此属性是 `ServiceName` 属性的 alias 属性）和 `DisplayName` 属性的表视图。 表中的每一行表示该 cmdlet 返回的对象。
 
 ```output
 Status   Name               DisplayName
@@ -232,7 +232,7 @@ Running  Appinfo            Application Information
 
 - "格式[字符串](./label-element-for-listitem-for-listcontrol-format.md)" 元素指定定义如何显示属性或脚本值的格式模式。
 
-在下面的示例中，调用 `ToString` 方法来设置脚本的值的格式。 脚本可以调用对象的任何方法。 因此，如果对象有一个具有格式参数的方法（如 `ToString`），则脚本可以调用该方法来设置脚本的输出值的格式。
+在下面的示例中，调用 `ToString` 方法来设置脚本的值的格式。 脚本可以调用对象的任何方法。 因此，如果对象具有具有格式参数的方法（如 `ToString`），则脚本可以调用该方法来设置脚本的输出值的格式。
 
 ```xml
 <ListItem>

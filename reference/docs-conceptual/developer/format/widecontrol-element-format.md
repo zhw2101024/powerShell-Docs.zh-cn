@@ -33,9 +33,9 @@ ms.locfileid: "72367986"
 
 ## <a name="attributes-and-elements"></a>属性和元素
 
-以下各节介绍 `WideControl` 元素的属性、子元素和父元素。 不能同时指定 @no__t 0 和 `ColumnNumber` 元素。
+以下各节介绍 `WideControl` 元素的属性、子元素和父元素。 不能同时指定 `AutoSize` 和 `ColumnNumber` 元素。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 无。
 

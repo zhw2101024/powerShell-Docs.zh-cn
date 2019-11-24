@@ -20,11 +20,11 @@ ms.locfileid: "72365606"
 此示例演示如何在声明 cmdlet 的参数时定义两个参数集。 每个参数集都具有唯一参数和两个参数集均使用的共享参数。 有关参数集的详细信息，包括如何指定默认参数集，请参阅[Cmdlet 参数集](./cmdlet-parameter-sets.md)。
 
 > [!IMPORTANT]
-> 尽可能将参数集的唯一参数定义为必需的参数。 但是，如果想要在不指定任何参数的情况下运行 cmdlet，则 unique 参数可以是可选参数。 例如，@no__t cmdlet 的唯一参数是可选的。
+> 尽可能将参数集的唯一参数定义为必需的参数。 但是，如果想要在不指定任何参数的情况下运行 cmdlet，则 unique 参数可以是可选参数。 例如，`Get-Command` cmdlet 的唯一参数是可选的。
 
 ## <a name="how-to-define-two-parameter-sets"></a>如何定义两个参数集
 
-1. 将 @no__t 0 关键字添加到第一个参数集的 unique 参数的 Parameter 特性中。
+1. 将 `ParameterSet` 关键字添加到第一个参数集的 unique 参数的 Parameter 特性中。
 
    ```csharp
    [Parameter(Position = 0, Mandatory = true,
@@ -37,7 +37,7 @@ ms.locfileid: "72365606"
    private string userName;
    ```
 
-2. 对于第二个参数集的唯一参数，将 @no__t 0 关键字添加到参数特性。
+2. 将 `ParameterSet` 关键字添加到第二个参数集的 unique 参数的 Parameter 特性中。
 
    ```csharp
    [Parameter(Position = 0, Mandatory = true,

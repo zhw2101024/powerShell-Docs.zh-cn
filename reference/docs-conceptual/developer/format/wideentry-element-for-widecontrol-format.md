@@ -32,9 +32,9 @@ ms.locfileid: "72367896"
 
 ## <a name="attributes-and-elements"></a>属性和元素
 
-以下各节介绍了 `WideEntry` 元素的属性、子元素和父元素。 必须指定单个 @no__t 0 子元素。
+以下各节介绍了 `WideEntry` 元素的属性、子元素和父元素。 必须指定单个 `WideItem` 子元素。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 无。
 
@@ -57,7 +57,7 @@ ms.locfileid: "72367896"
 
 ## <a name="example"></a>示例
 
-下面的示例演示了一个 `WideEntry` 元素，该元素定义单个 @no__t 1 元素。 @No__t-0 元素定义其值在视图中显示的属性。
+下面的示例演示了一个 `WideEntry` 元素，该元素定义单个 `WideItem` 元素。 `WideItem` 元素定义其值在视图中显示的属性。
 
 ```xml
 <WideEntries>

@@ -31,7 +31,7 @@ ms.locfileid: "72362246"
 
 以下各节介绍 `PropertyName` 元素的属性、子元素和父元素。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 无。
 
@@ -55,7 +55,7 @@ ms.locfileid: "72362246"
 
 ## <a name="example"></a>示例
 
-此示例演示一个 @no__t 0 元素，该元素指定了[system.exception 对象的](/dotnet/api/System.Diagnostics.Process)@no__t 属性。
+此示例演示了一个 `TableColumnItem` 元素，该元素指定了 system.exception[对象的](/dotnet/api/System.Diagnostics.Process)`Status` 属性。
 
 ```xml
 <TableColumnItem>

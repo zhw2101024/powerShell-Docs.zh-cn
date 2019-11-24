@@ -17,7 +17,7 @@ ms.locfileid: "72359966"
 ---
 # <a name="accessdbprovidersample05"></a>AccessDBProviderSample05
 
-此示例演示如何覆盖容器方法以支持对 `Move-Item` 和 @no__t cmdlet 的调用。 当用户需要移动容器中的项时，如果数据存储区包含嵌套的容器，则应实现这些方法。 此示例中的提供程序类派生自[Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)类。
+此示例演示如何覆盖容器方法以支持对 `Move-Item` 和 `Join-Path` cmdlet 的调用。 当用户需要移动容器中的项时，如果数据存储区包含嵌套的容器，则应实现这些方法。 此示例中的提供程序类派生自[Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)类。
 
 ## <a name="demonstrates"></a>示例
 
@@ -32,13 +32,13 @@ ms.locfileid: "72359966"
 
 此示例演示了以下内容：
 
-- 声明 `CmdletProvider` 属性。
+- 声明 `CmdletProvider` 特性。
 
 - 定义一个派生自[Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)类的提供程序类。
 
-- 覆盖[Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)方法，以更改 @no__t cmdlet 的行为，从而允许用户将项从一个位置移到另一个位置。 （此示例不显示如何将动态参数添加到 `Move-Item` cmdlet。）
+- 覆盖[Navigationcmdletprovider 的 Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)方法，以更改 `Move-Item` cmdlet 的行为，允许用户将项从一个位置移到另一个位置。 （此示例不显示如何将动态参数添加到 `Move-Item` cmdlet。）
 
-- 覆盖 Makepath * 方法，以更改 @no__t cmdlet 的行为。 [Navigationcmdletprovider. *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)方法。
+- 覆盖[Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)方法，以更改 `Join-Path` cmdlet 的行为方式。
 
 - 正在重写[Navigationcmdletprovider. Isitemcontainer *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer)方法。
 

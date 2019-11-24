@@ -19,7 +19,7 @@ ms.locfileid: "72365416"
 
 在大多数情况下， [ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象表示命令或脚本生成的非终止错误。 终止错误还可以通过[Icontainserrorrecord](/dotnet/api/System.Management.Automation.IContainsErrorRecord)接口在 ErrorRecord 中指定其他信息。
 
-如果要在脚本或主机中编写错误处理程序来处理命令或脚本执行过程中发生的特定错误，则必须解释[ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象，以确定它是否表示的类要处理的错误。
+如果要在脚本或主机中编写错误处理程序来处理在命令或脚本执行期间发生的特定错误，则必须解释[ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象，以确定它是否表示你要处理的错误类。
 
 当 cmdlet 遇到终止或非终止错误时，它应创建描述错误情况的错误记录。 宿主应用程序必须调查这些错误记录，并执行任何可缓解错误的操作。 主机应用程序还必须调查错误记录中是否存在无法处理记录但能够继续的非终止错误，还必须调查错误记录以终止导致管道停止的错误。
 
@@ -52,7 +52,7 @@ Cmdlet 可以指定 CloseError、OpenError、InvalidType、ReadError 和 WriteEr
 
 错误记录中包含的异常由 cmdlet 提供，并可通过[ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象的[ErrorRecord *](/dotnet/api/System.Management.Automation.ErrorRecord.Exception)属性进行访问，可通过此方法访问。
 
-主机应用程序可以使用 @no__t 0 关键字来确定异常是特定类还是派生类。 最好在异常类型上进行分支，如下面的示例中所示。
+宿主应用程序可以使用 `is` 关键字来确定异常是否属于特定类或派生类。 最好在异常类型上进行分支，如下面的示例中所示。
 
 `if (MyNonTerminatingError.Exception is AccessDeniedException)`
 

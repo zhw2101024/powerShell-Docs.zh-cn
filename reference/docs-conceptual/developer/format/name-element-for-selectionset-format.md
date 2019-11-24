@@ -31,7 +31,7 @@ ms.locfileid: "72362666"
 
 以下各节介绍 `Name` 元素的属性、子元素和父元素。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 无。
 
@@ -55,7 +55,7 @@ ms.locfileid: "72362666"
 
 ## <a name="example"></a>示例
 
-此示例演示一个定义四个 .NET 类型的 @no__t 0 元素。 选择集的名称为 "FileSystemTypes"。
+此示例演示一个定义四个 .NET 类型的 `SelectionSet` 元素。 选择集的名称为 "FileSystemTypes"。
 
 ```xml
 <SelectionSets>

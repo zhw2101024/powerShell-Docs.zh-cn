@@ -17,7 +17,7 @@ ms.locfileid: "72364566"
 ---
 # <a name="getprocesssample02-sample"></a>GetProcessSample02 示例
 
-此示例演示如何编写一个用于检索本地计算机上的进程的 cmdlet。 它提供了一个 @no__t 0 参数，该参数可用于指定要检索的进程。 此 cmdlet 是 Windows PowerShell 2.0 提供的 `Get-Process` cmdlet 的简化版本。
+此示例演示如何编写一个用于检索本地计算机上的进程的 cmdlet。 它提供了一个 `Name` 参数，该参数可用于指定要检索的进程。 此 cmdlet 是 Windows PowerShell 2.0 提供的 `Get-Process` cmdlet 的简化版本。
 
 ## <a name="how-to-build-the-sample-using-visual-studio"></a>如何使用 Visual Studio 生成示例。
 
@@ -65,7 +65,7 @@ ms.locfileid: "72364566"
 
 ## <a name="example"></a>示例
 
-此示例演示包含 `Name` 参数的 Get Proc cmdlet 的实现。
+此示例演示包含 `Name` 参数的进程中 cmdlet 的实现。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands

@@ -34,7 +34,7 @@ ViewDefinitions 元素（格式） View 元素（format） TableControl 元素�
 
 以下各节介绍 `TableHeaders` 元素的属性、子元素和父元素。 对于要显示的对象的每个属性，都必须有一个子元素。 列标题信息按指定子元素的顺序显示。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 无。
 
@@ -56,7 +56,7 @@ ViewDefinitions 元素（格式） View 元素（format） TableControl 元素�
 
 ## <a name="example"></a>示例
 
-此示例显示了一个用于定义两个列标题的 @no__t 0 元素。
+此示例演示一个定义两个列标题的 `TableHeaders` 元素。
 
 ```xml
 <TableHeaders>

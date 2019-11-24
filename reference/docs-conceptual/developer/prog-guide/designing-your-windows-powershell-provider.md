@@ -33,15 +33,15 @@ Windows PowerShell 运行时使用 Windows PowerShell 路径访问相应的 Wind
 
 ### <a name="defining-a-provider-qualified-path"></a>定义提供程序限定的路径
 
-为了允许 Windows PowerShell 运行时对提供程序进行初始化和取消初始化，Windows PowerShell 提供程序必须支持提供程序限定的路径。 例如，FileSystem：： \\ \ uncshare\abc\bar 是 Windows PowerShell 提供的 filesystem 提供程序的提供程序限定路径。
+为了允许 Windows PowerShell 运行时对提供程序进行初始化和取消初始化，Windows PowerShell 提供程序必须支持提供程序限定的路径。 例如，FileSystem：：\\\uncshare\abc\bar 是由 Windows PowerShell 提供的 filesystem 提供程序的提供程序限定路径。
 
 ### <a name="defining-a-provider-direct-path"></a>定义提供程序-直接路径
 
-若要允许远程访问你的 Windows PowerShell 提供程序，它应该支持直接传递到 Windows PowerShell 提供程序以获取当前位置的提供程序直接路径。 例如，注册表 Windows PowerShell 提供程序可以使用 \\ \ server\regkeypath 作为提供者直接路径。
+若要允许远程访问你的 Windows PowerShell 提供程序，它应该支持直接传递到 Windows PowerShell 提供程序以获取当前位置的提供程序直接路径。 例如，注册表 Windows PowerShell 提供程序可以使用 \\\server\regkeypath 作为提供者直接路径。
 
 ### <a name="defining-a-provider-internal-path"></a>定义提供程序内部路径
 
-若要允许提供程序 cmdlet 使用非 Windows PowerShell 应用程序编程接口（Api）访问数据，Windows PowerShell 提供程序应支持提供程序内部路径。 此路径在提供程序限定的路径中的 "：：" 后指示。 例如，filesystem Windows PowerShell 提供程序的提供程序内部路径 \\ \ uncshare\abc\bar。
+若要允许提供程序 cmdlet 使用非 Windows PowerShell 应用程序编程接口（Api）访问数据，Windows PowerShell 提供程序应支持提供程序内部路径。 此路径在提供程序限定的路径中的 "：：" 后指示。 例如，filesystem Windows PowerShell 提供程序的提供程序内部路径 \\\uncshare\abc\bar。
 
 ## <a name="changing-stored-data"></a>更改存储的数据
 
@@ -53,7 +53,7 @@ Windows PowerShell 提供了许多可用于实现自己的 Windows PowerShell �
 
 每个 Windows PowerShell 提供程序基类都提供一组 cmdlet。 本部分介绍 cmdlet，但不描述它们的参数。
 
-使用会话状态，Windows PowerShell 运行时会使一些位置 cmdlet 可用于某些 Windows PowerShell 提供程序，例如 `Get-Location`、`Set-Location`、`Pop-Location` 和 @no__t 3 cmdlet。 可以使用 @no__t cmdlet 获取有关这些位置 cmdlet 的信息。
+使用会话状态，Windows PowerShell 运行时会向某些 Windows PowerShell 提供程序提供若干位置 cmdlet，如 `Get-Location`、`Set-Location`、`Pop-Location`和 `Push-Location` cmdlet。 可以使用 `Get-Help` cmdlet 获取有关这些位置 cmdlet 的信息。
 
 ### <a name="cmdletprovider-base-class"></a>CmdletProvider 基类
 
@@ -66,7 +66,7 @@ Windows PowerShell 提供了许多可用于实现自己的 Windows PowerShell �
 
 [Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)类定义 Windows PowerShell 驱动器提供程序，该提供程序支持用于添加新驱动器、删除现有驱动器和初始化默认驱动器的操作。 例如，Windows PowerShell 提供的 FileSystem 提供程序为装入的所有卷（如硬盘驱动器和 CD/DVD 设备驱动器）初始化驱动器。
 
-此类是从[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)基类派生的。 下表列出了由此类公开的 cmdlet。 除了列出的外，@no__t cmdlet （由会话状态公开）是用于检索可用驱动器的相关 cmdlet。
+此类是从[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)基类派生的。 下表列出了由此类公开的 cmdlet。 除了列出的外，`Get-PSDrive` cmdlet （由会话状态公开）是用于检索可用驱动器的相关 cmdlet。
 
 |Cmdlet|定义|
 |------------|----------------|
@@ -79,12 +79,12 @@ Windows PowerShell 提供了许多可用于实现自己的 Windows PowerShell �
 
 |Cmdlet|定义|
 |------------|----------------|
-|`Clear-Item`|清除指定位置的项的当前内容，并将其替换为提供程序指定的 "clear" 值。 此 cmdlet 不通过管道传递输出对象，除非指定了其 @no__t 参数。|
+|`Clear-Item`|清除指定位置的项的当前内容，并将其替换为提供程序指定的 "clear" 值。 此 cmdlet 不通过管道传递输出对象，除非指定了其 `PassThru` 参数。|
 |`Get-Item`|检索指定位置中的项，并对生成的对象进行流式处理。|
 |`Invoke-Item`|调用指定路径处的项的默认操作。|
-|`Set-Item`|使用指示的值在指定位置设置项。 此 cmdlet 不通过管道传递输出对象，除非指定了其 @no__t 参数。|
+|`Set-Item`|使用指示的值在指定位置设置项。 此 cmdlet 不通过管道传递输出对象，除非指定了其 `PassThru` 参数。|
 |`Resolve-Path`|解析 Windows PowerShell 路径和流路径信息的通配符。|
-|`Test-Path`|测试指定的路径，如果该路径 @no__t 存在，则返回 `true`; 否则返回-1。 此 cmdlet 的实现是为了支持[Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)方法的 `IsContainer` 参数。|
+|`Test-Path`|测试指定的路径，如果该路径存在，则返回 `true`; 否则返回 `false`。 此 cmdlet 的实现是为了支持[Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)方法的 `IsContainer` 参数。|
 
 ### <a name="containercmdletprovider-base-class"></a>ContainerCmdletProvider 基类
 
@@ -94,11 +94,11 @@ Windows PowerShell 提供了许多可用于实现自己的 Windows PowerShell �
 
 |Cmdlet|定义|
 |------------|----------------|
-|`Copy-Item`|将项从一个位置复制到另一个位置。 此 cmdlet 不通过管道传递输出对象，除非指定了其 @no__t 参数。|
+|`Copy-Item`|将项从一个位置复制到另一个位置。 此 cmdlet 不通过管道传递输出对象，除非指定了其 `PassThru` 参数。|
 |`Get-Childitem`|检索指定位置的子项，并将它们作为对象进行流式处理。|
 |`New-Item`|在指定位置创建新项，并对生成的对象进行流式处理。|
 |`Remove-Item`|删除指定位置中的项。|
-|`Rename-Item`|重命名指定位置的项。 此 cmdlet 不通过管道传递输出对象，除非指定了其 @no__t 参数。|
+|`Rename-Item`|重命名指定位置的项。 此 cmdlet 不通过管道传递输出对象，除非指定了其 `PassThru` 参数。|
 
 ### <a name="navigationcmdletprovider-base-class"></a>NavigationCmdletProvider 基类
 
@@ -107,13 +107,13 @@ Windows PowerShell 提供了许多可用于实现自己的 Windows PowerShell �
 |Cmdlet|定义|
 |------------|----------------|
 |合并-路径|使用路径之间特定于提供程序的分隔符将两个路径合并为一个路径。 此 cmdlet 流式传输字符串。|
-|`Move-Item`|将项移动到指定位置。 此 cmdlet 不通过管道传递输出对象，除非指定了其 @no__t 参数。|
+|`Move-Item`|将项移动到指定位置。 此 cmdlet 不通过管道传递输出对象，除非指定了其 `PassThru` 参数。|
 
-相关 cmdlet 是 Windows PowerShell 提供的基本分析路径 cmdlet。 此 cmdlet 可用于分析 Windows PowerShell 路径，以支持 @no__t 0 参数。 它流式传输父路径字符串。
+相关 cmdlet 是 Windows PowerShell 提供的基本分析路径 cmdlet。 此 cmdlet 可用于分析 Windows PowerShell 路径，以支持 `Parent` 参数。 它流式传输父路径字符串。
 
 ## <a name="select-provider-interfaces-to-support"></a>选择要支持的提供程序接口
 
-除了从一个 Windows PowerShell 基类派生，Windows PowerShell 提供程序还可以通过从以下一个或多个提供程序接口派生来支持其他功能。 本部分定义每个接口和支持的 cmdlet。 它不描述接口支持的 cmdlet 的参数。 Cmdlet 参数信息可联机使用 `Get-Command` 和 @no__t cmdlet 提供。
+除了从一个 Windows PowerShell 基类派生，Windows PowerShell 提供程序还可以通过从以下一个或多个提供程序接口派生来支持其他功能。 本部分定义每个接口和支持的 cmdlet。 它不描述接口支持的 cmdlet 的参数。 Cmdlet 参数信息可联机使用 `Get-Command` 和 `Get-Help` cmdlet 提供。
 
 ### <a name="icontentcmdletprovider"></a>IContentCmdletProvider
 
@@ -121,10 +121,10 @@ Windows PowerShell 提供了许多可用于实现自己的 Windows PowerShell �
 
 |Cmdlet|定义|
 |------------|----------------|
-|`Add-Content`|将指示的值长度追加到指定项的内容。 此 cmdlet 不通过管道传递输出对象，除非指定了其 @no__t 参数。|
-|`Clear-Content`|将指定项的内容设置为 "clear" 值。 此 cmdlet 不通过管道传递输出对象，除非指定了其 @no__t 参数。|
+|`Add-Content`|将指示的值长度追加到指定项的内容。 此 cmdlet 不通过管道传递输出对象，除非指定了其 `PassThru` 参数。|
+|`Clear-Content`|将指定项的内容设置为 "clear" 值。 此 cmdlet 不通过管道传递输出对象，除非指定了其 `PassThru` 参数。|
 |`Get-Content`|检索指定项的内容，并对生成的对象进行流式处理。|
-|`Set-Content`|替换指定项的现有内容。 此 cmdlet 不通过管道传递输出对象，除非指定了其 @no__t 参数。|
+|`Set-Content`|替换指定项的现有内容。 此 cmdlet 不通过管道传递输出对象，除非指定了其 `PassThru` 参数。|
 
 ### <a name="ipropertycmdletprovider"></a>IPropertyCmdletProvider
 
@@ -135,21 +135,21 @@ Windows PowerShell 提供了许多可用于实现自己的 Windows PowerShell �
 
 |Cmdlet|定义|
 |------------|----------------|
-|`Clear-ItemProperty`|将指定项的属性设置为 "clear" 值。 此 cmdlet 不通过管道传递输出对象，除非指定了其 @no__t 参数。|
+|`Clear-ItemProperty`|将指定项的属性设置为 "clear" 值。 此 cmdlet 不通过管道传递输出对象，除非指定了其 `PassThru` 参数。|
 |`Get-ItemProperty`|检索指定项中的属性并流式传输生成的对象。|
-|`Set-ItemProperty`|设置具有指示值的指定项的属性。 此 cmdlet 不通过管道传递输出对象，除非指定了其 @no__t 参数。|
+|`Set-ItemProperty`|设置具有指示值的指定项的属性。 此 cmdlet 不通过管道传递输出对象，除非指定了其 `PassThru` 参数。|
 
 ### <a name="idynamicpropertycmdletprovider"></a>IDynamicPropertyCmdletProvider
 
-[Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider)接口派生自 Ipropertycmdletprovider，它定义了一个提供程序，该接口指定了它的动态参数[。](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)支持的 cmdlet。 这种类型的提供程序处理可在运行时定义其属性的操作，例如，一个新的属性操作。 不能对具有静态定义的属性的项进行此类操作。 下表列出了此接口公开的 cmdlet。
+[Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider)接口派生自[Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)，它定义了一个提供程序，该提供程序为其支持的 cmdlet 指定动态参数。 这种类型的提供程序处理可在运行时定义其属性的操作，例如，一个新的属性操作。 不能对具有静态定义的属性的项进行此类操作。 下表列出了此接口公开的 cmdlet。
 
 |Cmdlet|定义|
 |------------|----------------|
-|`Copy-ItemProperty`|将属性从指定项复制到另一项。 此 cmdlet 不通过管道传递输出对象，除非指定了其 @no__t 参数。|
-|`Move-ItemProperty`|将属性从指定项移动到另一项。 此 cmdlet 不通过管道传递输出对象，除非指定了其 @no__t 参数。|
+|`Copy-ItemProperty`|将属性从指定项复制到另一项。 此 cmdlet 不通过管道传递输出对象，除非指定了其 `PassThru` 参数。|
+|`Move-ItemProperty`|将属性从指定项移动到另一项。 此 cmdlet 不通过管道传递输出对象，除非指定了其 `PassThru` 参数。|
 |`New-ItemProperty`|在指定项上创建属性，并对生成的对象进行流式处理。|
 |`Remove-ItemProperty`|删除指定项的属性。|
-|`Rename-ItemProperty`|重命名指定项的属性。 此 cmdlet 不通过管道传递输出对象，除非指定了其 @no__t 参数。|
+|`Rename-ItemProperty`|重命名指定项的属性。 此 cmdlet 不通过管道传递输出对象，除非指定了其 `PassThru` 参数。|
 
 ### <a name="isecuritydescriptorcmdletprovider"></a>ISecurityDescriptorCmdletProvider
 

@@ -69,7 +69,7 @@ ms.locfileid: "72369376"
 
 ## <a name="example"></a>示例
 
-此示例演示如何使用 `WriteDebug`、`WriteVerbose` 和 @no__t 2 方法来编写调试、详细和警告消息。
+此示例演示如何使用 `WriteDebug`、`WriteVerbose`和 `WriteWarning` 方法来编写调试、详细和警告消息。
 
 ```csharp
 using System;

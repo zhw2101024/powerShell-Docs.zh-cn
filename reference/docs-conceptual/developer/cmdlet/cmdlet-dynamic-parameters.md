@@ -24,7 +24,7 @@ Cmdlet 可以定义在特殊条件下可用于用户的参数，如其他参数�
 
 ## <a name="dynamic-parameters-in-powershell-cmdlets"></a>PowerShell cmdlet 中的动态参数
 
-PowerShell 在其提供程序 cmdlet 中使用动态参数。 例如，当**Path**参数指定了**证书**提供程序路径时，`Get-Item` 和 @no__t cmdlet 会在运行时添加**CodeSigningCert**参数。 如果**path**参数指定了不同提供程序的路径，则**CodeSigningCert**参数不可用。
+PowerShell 在其提供程序 cmdlet 中使用动态参数。 例如，如果**Path**参数指定了**证书**提供程序路径，则 `Get-Item` 和 `Get-ChildItem` cmdlet 会在运行时添加**CodeSigningCert**参数。 如果**path**参数指定了不同提供程序的路径，则**CodeSigningCert**参数不可用。
 
 下面的示例演示如何在运行 `Get-Item` 时在运行时添加**CodeSigningCert**参数。
 

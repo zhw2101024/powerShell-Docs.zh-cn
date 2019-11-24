@@ -36,7 +36,7 @@ ms.locfileid: "72363936"
 
 以下各节介绍了 `CustomItem` 元素的属性、子元素和父元素。 有关详细信息，请参阅 "备注"。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 无。
 
@@ -59,7 +59,7 @@ ms.locfileid: "72363936"
 
 指定 `CustomItem` 元素的子元素时，请记住以下事项：
 
-- 必须按以下顺序添加子元素： `ExpressionBinding`、`NewLine`、`Text` 和 @no__t。
+- 必须按以下顺序添加子元素： `ExpressionBinding`、`NewLine`、`Text`和 `Frame`。
 
 - 您可以指定的序列数量没有最大限制。
 

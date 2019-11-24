@@ -29,9 +29,9 @@ ms.locfileid: "72368026"
 
 ## <a name="attributes-and-elements"></a>属性和元素
 
-以下各节介绍了 `TypeName` 元素的属性、子元素和父元素。 选择集中必须包含至少一个 @no__t 0 元素。
+以下各节介绍了 `TypeName` 元素的属性、子元素和父元素。 选择集中必须包含至少一个 `TypeName` 元素。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 无。
 
@@ -53,11 +53,11 @@ ms.locfileid: "72368026"
 
 如果你有一组要通过使用单个名称引用的相关对象（例如通过继承相关的一组对象），则可以使用选择集。 定义视图时，可以使用选择集的名称（而不是列出每个视图中的所有对象）来指定对象集。
 
-常用选择集在定义格式设置文件的视图时由其名称指定。 在这些情况下，视图的 @no__t 元素的 `SelectionSetName` 子元素指定集。 但是，视图的不同项还可以指定仅适用于该视图项的选择集。 有关选择集的详细信息，请参阅[定义对象集](./defining-selection-sets.md)。
+常用选择集在定义格式设置文件的视图时由其名称指定。 在这些情况下，视图的 `ViewSelectedBy` 元素的 `SelectionSetName` 子元素将指定集。 但是，视图的不同项还可以指定仅适用于该视图项的选择集。 有关选择集的详细信息，请参阅[定义对象集](./defining-selection-sets.md)。
 
 ## <a name="example"></a>示例
 
-下面的示例演示一个定义四个 .NET 类型的 @no__t 0 元素。
+下面的示例演示一个定义四个 .NET 类型的 `SelectionSet` 元素。
 
 ```
 <SelectionSets>

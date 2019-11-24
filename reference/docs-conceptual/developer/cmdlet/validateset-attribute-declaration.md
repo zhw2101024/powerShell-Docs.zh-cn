@@ -41,7 +41,7 @@ ValidateSetAttribute 属性为 cmdlet 参数参数指定一组可能的值。 �
 [ValidateSetAttribute("Steve","Mary")]
 ```
 
-@no__t-[0 （system.string](/dotnet/api/System.Boolean)）可选命名参数。 @No__t 的默认值为-0 指示忽略大小写。 值 `false` 使 cmdlet 区分大小写。
+`IgnoreCase` （[system.string](/dotnet/api/System.Boolean)）可选命名参数。 `true` 的默认值指示忽略大小写。 `false` 的值使 cmdlet 区分大小写。
 
 ## <a name="remarks"></a>备注
 

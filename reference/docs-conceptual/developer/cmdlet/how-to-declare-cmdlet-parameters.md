@@ -21,7 +21,7 @@ ms.locfileid: "72365676"
 
 ## <a name="how-to-declare-a-named-parameter"></a>如何声明命名参数
 
-- 定义公共属性，如下面的代码所示。 添加参数属性时，请省略属性中的 @no__t 0 关键字。
+- 定义公共属性，如下面的代码所示。 添加参数特性时，请从特性中省略 `Position` 关键字。
 
     ```csharp
     [Parameter()]
@@ -37,7 +37,7 @@ ms.locfileid: "72365676"
 
 ## <a name="how-to-declare-a-positional-parameter"></a>如何声明位置参数
 
-- 定义公共属性，如下面的代码所示。 添加参数特性时，将 `Position` 关键字设置为参数位置。 值0指示第一个位置。
+- 定义公共属性，如下面的代码所示。 添加参数特性时，请将 `Position` 关键字设置为参数位置。 值0指示第一个位置。
 
     ```csharp
     [Parameter(Position = 0)]
@@ -69,7 +69,7 @@ ms.locfileid: "72365676"
 
 ## <a name="how-to-declare-an-optional-parameter"></a>如何声明可选参数
 
-- 定义公共属性，如下面的代码所示。 添加参数属性时，请省略 @no__t 关键字。
+- 定义公共属性，如下面的代码所示。 添加参数属性时，请省略 `Mandatory` 关键字。
 
     ```csharp
     [Parameter(Position = 0)]

@@ -19,7 +19,7 @@ ms.locfileid: "72359816"
 
 此示例演示如何使用管理 OData 架构设计器将资源添加到现有的管理 OData web 服务。 [PswsRoleBasedPlugins](https://code.msdn.microsoft.com:443/windowsdesktop/PswsRoleBasedPlugins-9c79b75a)示例创建一个公开进程和服务器资源的 web 服务。 在此示例中，你将向 web 服务添加一个虚拟机（VM）资源。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 本主题假定你已按照[创建 Windows PowerShell Web 服务](./creating-a-management-odata-web-service.md)中所述下载并安装了[PswsRoleBasedPlugins](https://code.msdn.microsoft.com:443/windowsdesktop/PswsRoleBasedPlugins-9c79b75a)示例，并且已下载并安装了[管理 OData 架构设计器](https://marketplace.visualstudio.com/items?itemName=jlisc0.ManagementODataSchemaDesigner)。 本主题还假设你在设置管理 Odata 终结点的计算机上安装了 Hyper-v Windows PowerShell 模块。
 
@@ -49,7 +49,7 @@ ms.locfileid: "72359816"
 
 2. 请确保选择 "**本地计算机**"，然后单击 "**下一步**"。
 
-3. 确保选中 "已安装的 Windows PowerShell 模块"，然后从下拉列表中选择 "Hyper-v"。 单击 "**下一步**"。 单击?下一步?。
+3. 确保选中 "已安装的 Windows PowerShell 模块"，然后从下拉列表中选择 "Hyper-v"。 单击 "**下一步**"。 单击 **下一步**。
 
 4. 在 " **Cmdlet 名词**" 列表中，选择 " **VM**"。 单击“下一步”
 
@@ -57,11 +57,11 @@ ms.locfileid: "72359816"
 
 6. 由于 VM cmdlet 的元数据未指定输出类型，因此你将需要运行 cmdlet 来指定输出类型。 选择 "**提供输出类型**"，然后单击 "**运行 cmdlet**"。 此时会出现 "**运行 Cmdlet** " 对话框。 单击 "**运行**"。 将用 `VirtualMachine` 类型填充 " **CLR 类型**" 框。 单击 **"确定"** ，然后单击 "**下一步**"。
 
-7. 默认情况下，将选择 VirtualMachine 对象的所有属性。 在从 web 服务请求此资源时，你可以清除不希望作为数据的一部分返回的任何属性。 单击?下一步?。
+7. 默认情况下，将选择 VirtualMachine 对象的所有属性。 在从 web 服务请求此资源时，你可以清除不希望作为数据的一部分返回的任何属性。 单击 **下一步**。
 
 8. 必须至少选择一个要用作键的属性。 在列表中选择 "**名称**"，然后单击 "**下一步**"。
 
-9. 下一窗口允许将管理 OData 资源的属性映射到基础 cmdlet 的属性。 默认情况下，向导映射具有相同名称的属性。 例如，资源的 @no__t 的属性将映射到 cmdlet 的 @no__t 属性。  这使你可以在对 web 服务的请求中指定 `ComputerName` 属性，并将指定的值传递给 @no__t cmdlet。 默认情况下，`Id` 和 @no__t。
+9. 下一窗口允许将管理 OData 资源的属性映射到基础 cmdlet 的属性。 默认情况下，向导映射具有相同名称的属性。 例如，资源的 `ComputerName` 属性映射到 cmdlet 的 `ComputerName` 属性。  这使你可以在对 web 服务的请求中指定 `ComputerName` 属性，并将指定的值传递给 `Get-VM` cmdlet。 默认情况下，还会映射 `Id` 和 `Name`。
 
    10. 单击 "**下一步**"，然后单击 "**完成**"。
 
@@ -77,4 +77,4 @@ ms.locfileid: "72359816"
 
 ## <a name="next-steps"></a>后续步骤
 
-从管理 OData web 服务访问新的 VM 资源之前，必须更新 RbacConfiguration 文件以允许访问 Hyper-v Windows PowerShell 模块，如[配置基于角色的授权](./configuring-role-based-authorization.md)中所述，你还将需要重新启动 web 服务。
+从管理 OData web 服务访问新的 VM 资源之前，你必须更新 RbacConfiguration 文件以允许访问 Hyper-v Windows PowerShell 模块，如[配置基于角色的授权](./configuring-role-based-authorization.md)中所述，你还需要重新启动 web 服务。

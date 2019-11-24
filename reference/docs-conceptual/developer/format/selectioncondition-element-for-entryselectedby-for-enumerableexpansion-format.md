@@ -34,9 +34,9 @@ ms.locfileid: "72362006"
 
 ## <a name="attributes-and-elements"></a>属性和元素
 
-以下各节介绍了 `SelectionCondition` 元素的属性、子元素和父元素。 必须指定单个 @no__t 0 或 `ScriptBlock` 元素。 @No__t，@no__t 元素是可选的。 可以指定任一元素中的一个。
+以下各节介绍了 `SelectionCondition` 元素的属性、子元素和父元素。 必须指定单个 `PropertyName` 或 `ScriptBlock` 元素。 `SelectionSetName` 和 `TypeName` 元素是可选的。 可以指定任一元素中的一个。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 无。
 

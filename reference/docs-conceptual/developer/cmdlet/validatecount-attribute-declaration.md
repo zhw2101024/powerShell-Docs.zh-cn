@@ -43,9 +43,9 @@ ValidateCount 属性指定 cmdlet 参数允许的最小和最大参数数量。
 
 - Windows PowerShell 运行时在以下条件下引发错误：
 
-    - @No__t-0 和 @no__t 属性参数的类型不是[system.object][]。
+    - `MinLength` 和 `MaxLength` 属性参数的类型不是[system.object][]。
 
-    - @No__t-0 特性参数的值小于 `MinLength` 特性参数的值。
+    - `MaxLength` 属性参数的值小于 `MinLength` attribute 参数的值。
 
 - ValidateCount 特性是由[System.web. ValidateCountAttribute][]类定义的。
 

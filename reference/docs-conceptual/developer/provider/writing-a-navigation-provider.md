@@ -191,7 +191,7 @@ protected override string MakePath(string parent, string child)
 
 ### <a name="implementing-normalizerelativepath"></a>实现 NormalizeRelativePath
 
-[Navigationcmdletprovider. Normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath)方法采用 `path` 和 `basepath` 参数，并返回一个与第 3 @no__t 参数相对应的规范化路径，该路径相对于 `basepath`参数.
+[Navigationcmdletprovider. Normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath)方法采用 `path` 和 `basepath` 参数，并返回一个与 `path` 参数等效的规范化路径，并且该路径相对于 `basepath` 参数。
 
 ```csharp
 protected override string NormalizeRelativePath(string path,

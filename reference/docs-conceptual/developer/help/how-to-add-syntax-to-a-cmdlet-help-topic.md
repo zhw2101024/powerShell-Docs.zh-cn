@@ -37,7 +37,7 @@ ms.locfileid: "72361206"
 
   - 如果为 true （ByValue），则可以通过管道将输入传递给参数。 即使属性名称和对象类型与预期类型不匹配，输入也与（"绑定到"）参数相关联。 Windows PowerShell？参数绑定组件尝试将输入转换为正确的类型，并且仅在不能转换类型时才会导致命令失败。 参数集中只能有一个参数可以通过值来关联。
 
-  - 如果为 true （ByPropertyName），则可以通过管道将输入传递给参数。 但是，仅当参数名称与输入对象的属性的名称匹配时，输入才与参数相关联。 例如，如果参数名称为 `Path`，则仅当对象具有名为 path 的属性时，才与该参数关联的对象将与该参数相关联。
+  - 如果为 true （ByPropertyName），则可以通过管道将输入传递给参数。 但是，仅当参数名称与输入对象的属性的名称匹配时，输入才与参数相关联。 例如，如果参数名称是 `Path`的，则仅当对象具有名为 path 的属性时，才与该参数关联的对象将与该参数相关联。
 
   - 如果为 true （ByValue，ByPropertyName），则可以通过属性名称或值通过管道将输入传递给参数。 参数集中只能有一个参数可以通过值来关联。
 
@@ -90,7 +90,7 @@ ms.locfileid: "72361206"
 
    如果 cmdlet 支持 ShouldProcess，请务必列出 WhatIf 和 Confirm 参数。
 
-   不要在语法关系图中列出常见参数（例如 Verbose、Debug 和 ErrorAction）。 @No__t cmdlet 在显示 "帮助" 主题时会为你添加该信息。
+   不要在语法关系图中列出常见参数（例如 Verbose、Debug 和 ErrorAction）。 `Get-Help` cmdlet 在显示 "帮助" 主题时会为你添加该信息。
 
 3. 添加参数值。 在 Windows PowerShell 中，参数值按其 .NET 类型表示。 但是，类型名称可以缩写，如 system.string 的 "string"。
 
@@ -156,11 +156,11 @@ ms.locfileid: "72361206"
 
 ## <a name="coding-the-syntax-diagram-xml"></a>编码语法关系图 XML
 
-XML 的语法节点紧随 description 节点（以 \</maml： description > 标记结尾）之后。 有关收集语法关系图中使用的数据的信息，请参阅[收集语法信息](#gathering-syntax-information)。
+XML 的语法节点紧随 description 节点后开始，该节点以 \</maml： description > 标记结尾。 有关收集语法关系图中使用的数据的信息，请参阅[收集语法信息](#gathering-syntax-information)。
 
 ### <a name="adding-a-syntax-node"></a>添加语法节点
 
-Cmdlet 帮助主题中显示的语法关系图是从 XML 语法节点中的数据生成的。 如果 \<command：语法 > 标记，则语法节点将括在对中。 将 cmdlet 的每个参数集括在一对 \<command： syntaxitem > 标记中。 您可以添加的 @no__t > 标记的数量没有限制。
+Cmdlet 帮助主题中显示的语法关系图是从 XML 语法节点中的数据生成的。 如果 \<命令：语法 > 标记，则语法节点包含在对中。 将 cmdlet 的每个参数集括在一对 \<命令中： syntaxitem > 标记。 \<命令的数量没有限制： syntaxitem > 可以添加的标记。
 
 下面的示例演示一个语法节点，该节点具有两个参数集的语法项节点。
 
@@ -181,7 +181,7 @@ Cmdlet 帮助主题中显示的语法关系图是从 XML 语法节点中的数�
 
 ### <a name="adding-the-cmdlet-name-to-the-parameter-set-data"></a>将 Cmdlet 名称添加到参数集数据
 
-Cmdlet 的每个参数集是在语法项节点中指定的。 每个语法项节点都以一对 @no__t： > 标记（包含 cmdlet 的名称）开头。
+Cmdlet 的每个参数集是在语法项节点中指定的。 每个语法项节点都以一对 \<maml：名称 > 标记组成，其中包括 cmdlet 的名称。
 
 下面的示例包含一个语法节点，该节点具有两个参数集的语法项节点。
 
@@ -198,12 +198,12 @@ Cmdlet 的每个参数集是在语法项节点中指定的。 每个语法项节
 
 ### <a name="adding-parameters"></a>添加参数
 
-添加到语法项节点中的每个参数都是在一 @no__t 对0command：参数 > 标记中指定的。 对于参数集中包含的每个参数，需要一对 \<command：参数 > 标记，Windows PowerShell 提供的通用参数除外？。
+添加到语法项节点中的每个参数都是在一对 \<命令中指定的：参数 > 标记。 需要一对 \<命令：参数集中包含的每个参数 > 标记，Windows PowerShell 提供的通用参数除外？。
 
-打开 @no__t：参数 > 标记的属性确定参数在语法关系图中的显示方式。 有关参数属性的信息，请参阅[参数特性](#parameter-attributes)。
+打开 \<command：参数 > 标记的属性确定参数在语法关系图中的显示方式。 有关参数属性的信息，请参阅[参数特性](#parameter-attributes)。
 
 > [!NOTE]
-> @No__t-0command：参数 > 标记支持子元素 \<maml： description > 其内容从未显示。 在 XML 的参数节点中指定参数说明。 若要避免语法项预兆中的信息与参数节点中的信息不一致，请省略（\<maml： description > 或将其保留为空。
+> \<command：参数 > 标记支持子元素，\<maml： description >，其内容从未显示。 在 XML 的参数节点中指定参数说明。 若要避免语法项预兆中的信息与参数节点中的信息不一致，请省略（\<maml： description > 或将其保留为空。
 
 下面的示例包含具有两个参数的参数集的语法项节点。
 

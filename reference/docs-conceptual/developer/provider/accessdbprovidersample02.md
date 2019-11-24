@@ -17,7 +17,7 @@ ms.locfileid: "72366366"
 ---
 # <a name="accessdbprovidersample02"></a>AccessDBProviderSample02
 
-此示例演示如何覆盖 Drivecmdletprovider * 方法以支持对 @no__t 的调用-2 的[Newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)和[Drivecmdletprovider. Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)方法的调用。和 @no__t 三个 cmdlet。 此示例中的提供程序类派生自[Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)类。
+此示例演示如何覆盖[Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)和[Drivecmdletprovider. Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)方法，以支持对 `New-PSDrive` 和 `Remove-PSDrive` cmdlet 的调用的调用，这种情况下是如此。 此示例中的提供程序类派生自[Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)类。
 
 ## <a name="demonstrates"></a>示例
 
@@ -32,7 +32,7 @@ ms.locfileid: "72366366"
 
 此示例演示了以下内容：
 
-- 声明 `CmdletProvider` 属性。
+- 声明 `CmdletProvider` 特性。
 
 - 定义从[Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)类中驱动的提供程序类。
 
@@ -42,7 +42,7 @@ ms.locfileid: "72366366"
 
 ## <a name="example"></a>示例
 
-此示例演示如何重写 Drivecmdletprovider * 和[Newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)和[Drivecmdletprovider. Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)方法的操作方式。 对于此示例提供程序，创建驱动器时，其连接信息存储在 @no__t 0 对象中。
+此示例演示如何重写 Drivecmdletprovider * 和[Newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)和[Drivecmdletprovider. Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)方法的操作方式。 对于此示例提供程序，创建驱动器时，其连接信息存储在 `AccessDBPsDriveInfo` 对象中。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Providers

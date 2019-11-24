@@ -36,7 +36,7 @@ TableRowEntry for TableRowEntries 的 TableControl （Format） TableControl 元
 
 以下各节介绍 `TableColumnItem` 元素的属性、子元素和父元素。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 无。
 
@@ -63,7 +63,7 @@ TableRowEntry for TableRowEntries 的 TableControl （Format） TableControl 元
 
 ## <a name="example"></a>示例
 
-此示例演示一个 `TableColumnItem` 元素，该元素显示[system.object](/dotnet/api/System.Diagnostics.Process)对象的 @no__t 属性的值。
+此示例演示一个 `TableColumnItem` 元素，该元素显示[system.object](/dotnet/api/System.Diagnostics.Process)对象的 `Status` 属性的值。
 
 ```xml
 <TableColumnItem>

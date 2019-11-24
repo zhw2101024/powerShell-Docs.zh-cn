@@ -32,17 +32,17 @@ ms.locfileid: "72365356"
 
 #### <a name="parameters"></a>参数
 
-@no__t-[0 （system.string](/dotnet/api/System.Boolean)）可选命名参数。 `True` 指示 cmdlet 参数是必需的。 如果在调用 cmdlet 时未提供所需的参数，则 Windows PowerShell 会提示用户输入参数值。 默认值为 `false`。
+`Mandatory` （[system.string](/dotnet/api/System.Boolean)）可选命名参数。 `True` 指示 cmdlet 参数是必需的。 如果在调用 cmdlet 时未提供所需的参数，则 Windows PowerShell 会提示用户输入参数值。 默认值为 `false`。
 
-`ParameterSetName` （[system.string](/dotnet/api/System.String)）可选命名参数。 指定此 cmdlet 参数所属的参数集。 如果未指定参数集，则参数属于所有参数集。
+`ParameterSetName` （[system.string](/dotnet/api/System.String)）可选的命名参数。 指定此 cmdlet 参数所属的参数集。 如果未指定参数集，则参数属于所有参数集。
 
 `Position` （[system.web](/dotnet/api/System.Int32)）可选命名参数。 指定参数在 Windows PowerShell 命令中的位置。
 
-@no__t-[0 （system.string](/dotnet/api/System.Boolean)）可选命名参数。 `True` 指示 cmdlet 参数从管道对象获取其值。 如果 cmdlet 访问完整对象，而不仅仅是对象的属性，请指定此关键字。 默认值为 `false`。
+`ValueFromPipeline` （[system.string](/dotnet/api/System.Boolean)）可选命名参数。 `True` 指示 cmdlet 参数从管道对象获取其值。 如果 cmdlet 访问完整对象，而不仅仅是对象的属性，请指定此关键字。 默认值为 `false`。
 
-@no__t-[0 （system.string](/dotnet/api/System.Boolean)）可选命名参数。 `True` 指示 cmdlet 参数从管道对象的属性中获取其值，该对象具有相同的名称或与此参数相同的别名。 例如，如果该 cmdlet 具有 @no__t 参数并且管道对象还具有 @no__t 属性，则 `Name` 属性的值将分配给该 cmdlet 的 `Name` 参数。 默认值为 `false`。
+`ValueFromPipelineByPropertyName` （[system.string](/dotnet/api/System.Boolean)）可选命名参数。 `True` 指示 cmdlet 参数从管道对象的属性中获取其值，该对象具有相同的名称或与此参数相同的别名。 例如，如果 cmdlet 具有 `Name` 参数并且管道对象还具有 `Name` 属性，则 `Name` 属性的值将分配给该 cmdlet 的 `Name` 参数。 默认值为 `false`。
 
-@no__t-[0 （system.string](/dotnet/api/System.Boolean)）可选命名参数。 `True` 指示 cmdlet 参数接受传递到 cmdlet 的所有剩余参数。 默认值为 `false`。
+`ValueFromRemainingArguments` （[system.string](/dotnet/api/System.Boolean)）可选命名参数。 `True` 指示 cmdlet 参数接受传递到 cmdlet 的所有剩余参数。 默认值为 `false`。
 
 `HelpMessage` 可选的命名参数。 指定参数的简短说明。 运行 cmdlet 时，Windows PowerShell 会显示此消息，未指定必需的参数。
 
@@ -56,11 +56,11 @@ ms.locfileid: "72365356"
 
 - Cmdlet 可以有任意数量的参数。 但是，为了获得更好的用户体验，请限制参数的数目。
 
-- 必须对公共非静态字段或属性声明参数。 应在属性上声明参数。 属性必须具有公共 set 访问器，如果指定 `ValueFromPipeline` 或 `ValueFromPipelineByPropertyName` 关键字，则该属性必须具有公共 get 访问器。
+- 必须对公共非静态字段或属性声明参数。 应在属性上声明参数。 属性必须具有公共 set 访问器，如果指定了 `ValueFromPipeline` 或 `ValueFromPipelineByPropertyName` 关键字，则该属性必须具有公共 get 访问器。
 
 - 当指定位置参数时，请将参数集中的位置参数数目限制为小于5。 和，位置参数不必是连续的。 位置5、100和250的工作方式与位置0、1和2相同。
 
-- 如果未指定 @no__t 0 关键字，则必须按其名称引用 cmdlet 参数。
+- 如果未指定 `Position` 关键字，则必须按其名称引用 cmdlet 参数。
 
 - 使用参数集时，请注意以下事项：
 

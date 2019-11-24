@@ -31,7 +31,7 @@ ms.locfileid: "72367866"
 
 以下各节描述定义列标题时使用的 `Width` 元素的特性、子元素和父元素。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 无。
 
@@ -55,7 +55,7 @@ ms.locfileid: "72367866"
 
 ## <a name="example"></a>示例
 
-下面的示例演示一个 @no__t 0 元素，其宽度为16个字符。
+下面的示例演示一个宽度为16个字符的 `TableColumnHeader` 元素。
 
 ```xml
 <TableColumnHeader>

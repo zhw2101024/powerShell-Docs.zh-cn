@@ -33,7 +33,7 @@ TableColumnItems>
 
 以下各节介绍 `TableColumnItems` 元素的属性、子元素和父元素。
 
-### <a name="attributes"></a>属性
+### <a name="attributes"></a>特性
 
 无。
 
@@ -51,7 +51,7 @@ TableColumnItems>
 
 ## <a name="remarks"></a>备注
 
-行的每个列都需要 @no__t 0 元素。 第一项显示在第一列中，第二项显示在第二列，依此类推。
+行的每个列都需要 `TableColumnItem` 元素。 第一项显示在第一列中，第二项显示在第二列，依此类推。
 
 有关表视图的组件的详细信息，请参阅[创建表视图](./creating-a-table-view.md)。
 

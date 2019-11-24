@@ -37,13 +37,13 @@ ValidateRange 属性指定 cmdlet 参数参数的最小值和最大值（范围�
 
 ## <a name="remarks"></a>备注
 
-- 当 `MinRange` 参数的值大于 @no__t 参数的值时，Windows PowerShell 运行时将引发构造错误。
+- 当 `MinRange` 参数的值大于 `MaxRange` 参数的值时，Windows PowerShell 运行时将引发构造错误。
 
 - Windows PowerShell 运行时在以下条件下引发验证错误：
 
     - 当参数的值小于 `MinRange` 限制或大于 `MaxRange` 限制时。
 
-    - 参数与 `MinRange` 和 @no__t 参数的类型不同时。
+    - 当参数与 `MinRange` 和 `MaxRange` 参数的类型不同时。
 
 - ValidateRange 特性是由[Validaterangeattribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute)类定义的。
 

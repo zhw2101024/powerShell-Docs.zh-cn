@@ -17,7 +17,7 @@ ms.locfileid: "72366476"
 ---
 # <a name="runspace08-code-sample"></a>RunSpace08 代码示例
 
-下面是[创建将参数添加到命令的控制台应用程序](https://msdn.microsoft.com/en-us/848b2b46-60f1-4a86-b448-cfc7c0cccfba)中所述的 Runspace08 示例的源代码。 此示例应用程序创建一个运行空间，创建一个管道，将两个命令添加到管道，将两个参数添加到第二个命令，然后执行管道。 添加到管道中的命令是 @no__t 0 和 @no__t cmdlet。
+下面是[创建将参数添加到命令的控制台应用程序](https://msdn.microsoft.com/en-us/848b2b46-60f1-4a86-b448-cfc7c0cccfba)中所述的 Runspace08 示例的源代码。 此示例应用程序创建一个运行空间，创建一个管道，将两个命令添加到管道，将两个参数添加到第二个命令，然后执行管道。 添加到管道中的命令是 `Get-Process` 和 `Sort-Object` cmdlet。
 
 ## <a name="code-sample"></a>代码示例
 

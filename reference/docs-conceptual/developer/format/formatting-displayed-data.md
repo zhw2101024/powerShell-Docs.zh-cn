@@ -17,11 +17,11 @@ ms.locfileid: "72363696"
 ---
 # <a name="formatting-displayed-data"></a>设置显示数据的格式
 
-您可以指定如何显示列表、表或宽视图中的各个数据点。 在定义视图的项时，可以使用 `FormatString` 元素，也可以使用 @no__t 元素对数据调用 `FormatString` 方法。
+您可以指定如何显示列表、表或宽视图中的各个数据点。 在定义视图的项时，可以使用 `FormatString` 元素，也可以使用 `ScriptBlock` 元素对数据调用 `FormatString` 方法。
 
 ## <a name="using-the-formatstring-element"></a>使用格式字符串元素
 
-在下面的示例中，使用 "格式字符串" 元素设置 "@no__t [" 对象的值。](/dotnet/api/System.Diagnostics.Process) `TotalProcessorTime` 属性
+在下面的示例中，使用 "格式字符串" 元素[设置 "`TotalProcessorTime`" 对象的](/dotnet/api/System.Diagnostics.Process)"" 属性的值。 `TotalProcessorTime` 属性
 
 ```
 <TableColumnItem>
