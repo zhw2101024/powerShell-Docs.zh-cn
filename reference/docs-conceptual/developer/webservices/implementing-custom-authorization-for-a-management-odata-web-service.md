@@ -21,7 +21,7 @@ ms.locfileid: "72359676"
 
 ## <a name="pass-through-authorization"></a>传递授权
 
-实现[CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)接口的最简单方法是向所有用户授权的传递实现。 此示例不提供安全性，仅提供了作为如何实现接口的说明。 [CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)接口的实现必须重写以下两个方法： [CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)和[。CustomAuthorization. GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId)。 在此示例中， [CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)将始终返回与当前用户关联的 AuthorizeUser 对象的**安全**对象的。
+实现[CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)接口的最简单方法是向所有用户授权的传递实现。 此示例不提供安全性，仅提供了作为如何实现接口的说明。 [CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)接口的实现必须重写两种方法：[CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)和[CustomAuthorization... GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId)。 在此示例中， [CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)将始终返回与当前用户关联的 AuthorizeUser 对象的**安全**对象的。
 
 ```csharp
 namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPERLINK "VBScript:u(%227%22,30)" OData. HYPERLINK "VBScript:u(%227%22,36)" BasicPlugins
@@ -134,7 +134,7 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
 ### <a name="role-based-authorization"></a>基于角色的授权
 
-下面的示例实现了基于角色的授权策略。 此策略在一个 XML 文件中定义，该文件位于主应用程序目录中，其中包含 web.config 和 MOF 以及 XML 映射架构文件。 有关如何配置授权架构文件的信息，请参阅[配置基于角色的授权](./configuring-role-based-authorization.md)。 该示例的第一部分实现了[CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)和[CustomAuthorization. GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId)方法的实现。 在这种情况下，接口方法会调用 @no__t 0 类（定义如下）中的方法来执行检查用户权限的实际工作。
+下面的示例实现了基于角色的授权策略。 此策略在一个 XML 文件中定义，该文件位于主应用程序目录中，其中包含 web.config 和 MOF 以及 XML 映射架构文件。 有关如何配置授权架构文件的信息，请参阅[配置基于角色的授权](./configuring-role-based-authorization.md)。 该示例的第一部分实现了[CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)和[CustomAuthorization. GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId)方法的实现。 在这种情况下，接口方法调用 `RbacSystem` 类中的方法（定义如下），该方法执行检查用户的权限的实际工作。
 
 ```csharp
 namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
@@ -738,4 +738,4 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 }
 ```
 
-最后，RbacSystem 类实现了一些方法，这些方法用于检查用户的权限，并将授权状态返回到在[CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)实现中定义的方法。交互.
+最后，RbacSystem 类实现了一些方法，这些方法用于检查用户的权限，并将授权状态返回到在[CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)接口的实现中定义的方法。
