@@ -1,5 +1,5 @@
 ---
-title: Windows PowerShell Programmer&#39;s Guide | Microsoft Docs
+title: Windows PowerShell 程序员&#39;指南 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,94 +17,94 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74417772"
 ---
-# <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell Programmer&#39;s Guide
+# <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell 程序员&#39;指南
 
-This programmer's guide is targeted at developers who are interested in providing a command-line management environment for system administrators. Windows PowerShell provides a simple way for you to build management commands that expose .NET objects, while allowing Windows PowerShell to do most of the work for you.
+此程序员指南面向有兴趣为系统管理员提供命令行管理环境的开发人员。 Windows PowerShell 提供了一种简单的方法来生成公开 .NET 对象的管理命令，同时允许 Windows PowerShell 为你完成大部分工作。
 
-In traditional command development, you are required to write a parameter parser, a parameter binder, filters, and all other functionality exposed by each command. Windows PowerShell provides the following to make it easy for you to write commands:
+在传统的命令开发中，需要编写参数分析器、参数联编程序、筛选器以及每个命令公开的所有其他功能。 Windows PowerShell 提供下列内容，便于你编写命令：
 
-- A powerful Windows PowerShell runtime (execution engine) with its own parser and a mechanism for automatically binding command parameters.
+- 强大的 Windows PowerShell 运行时（执行引擎）及其自己的分析器和用于自动绑定命令参数的机制。
 
-- Utilities for formatting and displaying command results using a command line interpreter (CLI).
+- 使用命令行解释器（CLI）设置和显示命令结果的实用程序。
 
-- Support for high levels of functionality  (through Windows PowerShell providers) that make it easy to access stored data.
+- 支持高级别的功能（通过 Windows PowerShell 提供程序），使访问存储的数据变得轻松。
 
-  At little cost, you can represent a .NET object by a rich command or set of commands that will offer a complete command-line experience to the administrator.
+  只需很少的成本，你可以通过一个丰富的命令或一组命令来表示 .NET 对象，这些命令将向管理员提供完整的命令行体验。
 
-  The next section covers the key Windows PowerShell concepts and terms. Familiarize yourself with these concepts and terms before starting development.
+  下一部分介绍了 Windows PowerShell 的主要概念和术语。 开始开发之前，请先熟悉这些概念和术语。
 
 ## <a name="about-windows-powershell"></a>关于 Windows PowerShell
 
-Windows PowerShell defines several types of commands that you can use in development. These commands include: functions, filters, scripts, aliases, and executables (applications). The main command type discussed in this guide is a simple, small command called a "cmdlet". Windows PowerShell furnishes a set of cmdlets and fully supports cmdlet customization to suit your environment. The Windows PowerShell runtime processes all command types just as it does cmdlets, using pipelines.
+Windows PowerShell 定义了几种可用于开发的命令类型。 这些命令包括：函数、筛选器、脚本、别名和可执行文件（应用程序）。 本指南中讨论的主命令类型是一个简单的小命令，称为 "cmdlet"。 Windows PowerShell furnishes 一组 cmdlet，并完全支持 cmdlet 自定义以适合你的环境。 Windows PowerShell 运行时处理所有命令类型，就像使用管道执行 cmdlet 一样。
 
-In addition to commands, Windows PowerShell supports various customizable Windows PowerShell providers that make available specific sets of cmdlets. The shell operates within the Windows PowerShell-provided host application (Windows PowerShell.exe), but it is equally accessible from a custom host application that you can develop to meet specific requirements. For more information, see [How Windows PowerShell Works](/previous-versions//ms714658(v=vs.85)).
+除了命令以外，Windows PowerShell 还支持各种可自定义的 Windows PowerShell 提供程序，这些提供程序可提供特定的 cmdlet 集。 Shell 在 Windows PowerShell 提供的主机应用程序（Windows PowerShell）中运行，但它可以通过可开发的自定义主机应用程序进行访问，以满足特定的要求。 有关详细信息，请参阅[Windows PowerShell 的工作原理](/previous-versions//ms714658(v=vs.85))。
 
-### <a name="windows-powershell-cmdlets"></a>Windows PowerShell Cmdlets
+### <a name="windows-powershell-cmdlets"></a>Windows PowerShell Cmdlet
 
-A cmdlet is a lightweight command that is used in the Windows PowerShell environment. The Windows PowerShell runtime invokes these cmdlets within the context of automation scripts that are provided at the command line, and the Windows PowerShell runtime also invokes them programmatically through Windows PowerShell APIs.
+Cmdlet 是在 Windows PowerShell 环境中使用的轻量命令。 Windows PowerShell 运行时在命令行中提供的自动化脚本的上下文中调用这些 cmdlet，而且 Windows PowerShell 运行时还会通过 Windows PowerShell Api 以编程方式调用它们。
 
-For more information about cmdlets, see [Writing a Windows PowerShell Cmdlet](../cmdlet/writing-a-windows-powershell-cmdlet.md).
+有关 cmdlet 的详细信息，请参阅[编写 Windows PowerShell Cmdlet](../cmdlet/writing-a-windows-powershell-cmdlet.md)。
 
-### <a name="windows-powershell-providers"></a>Windows PowerShell Providers
+### <a name="windows-powershell-providers"></a>Windows PowerShell 提供程序
 
-In performing administrative tasks, the user may need to examine data stored in a data store (for example, the file system, the Windows Registry, or a certificate store). To make these operations easier, Windows PowerShell defines a module called a Windows PowerShell provider that can be used to access a specific data store, such as the Windows Registry. Each provider supports a set of related cmdlets to give the user a symmetrical view of the data in the store.
+在执行管理任务时，用户可能需要检查存储在数据存储中的数据（例如，文件系统、Windows 注册表或证书存储区）。 为了使这些操作更容易，Windows PowerShell 定义了一个名为 Windows PowerShell 提供程序的模块，该模块可用于访问特定的数据存储，如 Windows 注册表。 每个提供程序都支持一组相关的 cmdlet，以便为用户提供存储区中数据的对称视图。
 
-Windows PowerShell provides several default Windows PowerShell providers. For example, the Registry provider supports navigation and manipulation of the Windows Registry. Registry keys are represented as items, and registry values are treated as properties.
+Windows PowerShell 提供多个默认的 Windows PowerShell 提供程序。 例如，注册表提供程序支持导航和操作 Windows 注册表。 注册表项表示为项，注册表值被视为属性。
 
-If you expose a data store that the user will need to access, you might need to write your own Windows PowerShell provider, as described in [Creating Windows PowerShell Providers](./how-to-create-a-windows-powershell-provider.md). For more information aboutWindows PowerShell providers, see [How Windows PowerShell Works](/previous-versions//ms714658(v=vs.85)).
+如果公开用户需要访问的数据存储区，可能需要编写自己的 Windows PowerShell 提供程序，如[创建 Windows Powershell 提供](./how-to-create-a-windows-powershell-provider.md)程序中所述。 AboutWindows PowerShell 提供程序的详细信息，请参阅[Windows powershell 的工作原理](/previous-versions//ms714658(v=vs.85))。
 
-### <a name="host-application"></a>Host Application
+### <a name="host-application"></a>主机应用程序
 
-Windows PowerShell includes the default host application powershell.exe, which is a console application that interacts with the user and hosts the Windows PowerShell runtime using a console window.
+Windows PowerShell 包含默认主机应用程序 PowerShell，它是一个控制台应用程序，它与用户交互，并使用控制台窗口托管 Windows PowerShell 运行时。
 
-Only rarely will you need to write your own host application for Windows PowerShell, although customization is supported. One case in which you might need your own application is when you have a requirement for a GUI interface that is richer than the interface provided by the default host application. You might also want a custom application when you are basing your GUI on the command line. For more information, see [How to Create a Windows PowerShell Host Application](/powershell/scripting/developer/hosting/writing-a-windows-powershell-host-application).
+尽管支持自定义，但很少需要为 Windows PowerShell 编写自己的主机应用程序。 可能需要您自己的应用程序的一种情况是，您要求的 GUI 界面比默认主机应用程序提供的界面更丰富。 当你在命令行上将 GUI 作为基础时，你可能还需要自定义应用程序。 有关详细信息，请参阅[如何创建 Windows PowerShell 主机应用程序](/powershell/scripting/developer/hosting/writing-a-windows-powershell-host-application)。
 
-### <a name="windows-powershell-runtime"></a>Windows PowerShell Runtime
+### <a name="windows-powershell-runtime"></a>Windows PowerShell 运行时
 
-The Windows PowerShell runtime is the execution engine that implements command processing. It includes the classes that provide the interface between the host application and Windows PowerShell commands and providers. The Windows PowerShell runtime is implemented as a runspace object for the current Windows PowerShell session, which is the operational environment in which the shell and the commands execute. For operational details, see [How Windows PowerShell Works](/previous-versions//ms714658(v=vs.85)).
+Windows PowerShell 运行时是实现命令处理的执行引擎。 它包含提供主机应用程序和 Windows PowerShell 命令与提供程序之间的接口的类。 Windows PowerShell 运行时实现为当前 Windows PowerShell 会话的运行空间对象，这是执行 shell 和命令的操作环境。 有关操作的详细信息，请参阅[Windows PowerShell 的工作原理](/previous-versions//ms714658(v=vs.85))。
 
-### <a name="windows-powershell-language"></a>Windows PowerShell Language
+### <a name="windows-powershell-language"></a>Windows PowerShell 语言
 
-The Windows PowerShell language provides scripting functions and mechanisms to invoke commands. For complete scripting information, see the Windows PowerShell Language Reference shipped with Windows PowerShell.
+Windows PowerShell 语言提供用于调用命令的脚本函数和机制。 有关完整的脚本信息，请参阅 Windows PowerShell 随附的 Windows PowerShell 语言参考。
 
-### <a name="extended-type-system-ets"></a>Extended Type System (ETS)
+### <a name="extended-type-system-ets"></a>扩展类型系统（ETS）
 
-Windows PowerShell provides access to a variety of different objects, such as .NET and XML objects. As a consequence, to present a common abstraction for all object types the shell uses its extended type system (ETS). Most ETS functionality is transparent to the user, but the script or .NET developer uses it for the following purposes:
+Windows PowerShell 提供对各种不同对象（如 .NET 和 XML 对象）的访问。 因此，为了提供所有对象类型的公共抽象，shell 使用其扩展类型系统（ETS）。 大多数 ETS 功能对于用户是透明的，但脚本或 .NET 开发人员将使用它来实现以下目的：
 
-- Viewing a subset of the members of specific objects. Windows PowerShell provides an "adapted" view of several specific object types.
+- 查看特定对象的部分成员。 Windows PowerShell 提供多个特定对象类型的 "改编的" 视图。
 
-- Adding members to existing objects.
+- 将成员添加到现有对象。
 
-- Access to serialized objects.
+- 对序列化对象的访问。
 
-- Writing customized objects.
+- 编写自定义对象。
 
-  Using ETS, you can create flexible new "types" that are compatible with the Windows PowerShell language. If you are a .NET developer, you are able to work with objects using the same semantics as the Windows PowerShell language applies to scripting, for example, to determine if an object evaluates to `true`.
+  使用 ETS，可以创建与 Windows PowerShell 语言兼容的灵活的新 "类型"。 如果你是 .NET 开发人员，则可以使用与 Windows PowerShell 语言相同的语义来处理对象，例如，确定对象的计算结果是否为 `true`。
 
-  For more information about ETS and how Windows PowerShell uses objects, see [Windows PowerShell Object Concepts](/powershell/scripting/learn/understanding-important-powershell-concepts?view=powershell-6).
+  有关 ETS 以及 Windows PowerShell 如何使用对象的详细信息，请参阅[Windows Powershell 对象概念](/powershell/scripting/learn/understanding-important-powershell-concepts?view=powershell-6)。
 
-## <a name="programming-for-windows-powershell"></a>Programming for Windows PowerShell
+## <a name="programming-for-windows-powershell"></a>Windows PowerShell 编程
 
-Windows PowerShell defines its code for commands, providers, and other program modules using the .NET Framework. You are not confined to the use of Microsoft Visual Studio in creating customized modules for Windows PowerShell, although the samples provided in this guide are known to run in this tool. You can use any .NET language that supports class inheritance and the use of attributes. In some cases, Windows PowerShell APIs require the programming language to be able to access generic types.
+Windows PowerShell 使用 .NET Framework 为命令、提供程序和其他程序模块定义其代码。 尽管本指南中提供的示例在此工具中运行，但并不局限于使用 Microsoft Visual Studio 来为 Windows PowerShell 创建自定义模块。 您可以使用支持类继承和属性使用的任何 .NET 语言。 在某些情况下，Windows PowerShell Api 需要编程语言才能访问泛型类型。
 
-## <a name="programmers-reference"></a>Programmer's Reference
+## <a name="programmers-reference"></a>程序员参考
 
-For reference when developing for Windows PowerShell, see the [Windows PowerShell SDK](../windows-powershell-reference.md).
+有关为 Windows PowerShell 进行开发时的参考，请参阅[Windows POWERSHELL SDK](../windows-powershell-reference.md)。
 
-## <a name="getting-started-using-windows-powershell"></a>Getting Started Using Windows PowerShell
+## <a name="getting-started-using-windows-powershell"></a>使用 Windows PowerShell 入门
 
-For more information about starting to use the Windows PowerShell shell, see the [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell) shipped with Windows PowerShell. A Quick Reference tri-fold document is also supplied as a primer for cmdlet use.
+有关开始使用 Windows PowerShell shell 的详细信息，请参阅随 windows powershell 一起提供的[Windows powershell 入门](/powershell/scripting/getting-started/getting-started-with-windows-powershell)。 快速参考三栏式文档也作为 cmdlet 使用的入门教程提供。
 
-## <a name="contents-of-this-guide"></a>Contents of This Guide
+## <a name="contents-of-this-guide"></a>本指南的内容
 
 |主题|定义|
 |-----------|----------------|
-|[How to Create a Windows PowerShell Provider](./how-to-create-a-windows-powershell-provider.md)|This section describes how to build a Windows PowerShell provider for Windows PowerShell.|
-|[How to Create a Windows PowerShell Host Application](/powershell/scripting/developer/hosting/writing-a-windows-powershell-host-application)|This section describes how to write a host application that manipulates a runspace and how to write a host application that implements its own custom host.|
-|[How to Create a Windows PowerShell Snap-in](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|This section describes how to create a snap-in that is used to register all cmdlets and providers in an assembly and how to create a custom snap-in.|
-|[How to Create a Console Shell](./how-to-create-a-console-shell.md)|This section describes how to create a console shell that is not extensible.|
-|[Windows PowerShell Concepts](./windows-powershell-concepts.md)|This section contains conceptual information that will help you understand Windows PowerShell from the viewpoint of a developer.|
+|[如何创建 Windows PowerShell 提供程序](./how-to-create-a-windows-powershell-provider.md)|本部分介绍如何生成适用于 Windows PowerShell 的 Windows PowerShell 提供程序。|
+|[如何创建 Windows PowerShell 主机应用程序](/powershell/scripting/developer/hosting/writing-a-windows-powershell-host-application)|本部分介绍如何编写操作运行空间的主机应用程序，以及如何编写可实现其自己的自定义主机的主机应用程序。|
+|[如何创建 Windows PowerShell 管理单元](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|本部分介绍如何创建用于在程序集中注册所有 cmdlet 和提供程序的管理单元，以及如何创建自定义管理单元。|
+|[如何创建控制台 Shell](./how-to-create-a-console-shell.md)|本部分介绍如何创建不可扩展的控制台 shell。|
+|[Windows PowerShell 概念](./windows-powershell-concepts.md)|本部分包含有助于从开发人员的角度了解 Windows PowerShell 的概念信息。|
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

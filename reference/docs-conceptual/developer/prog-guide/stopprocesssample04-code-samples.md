@@ -1,5 +1,5 @@
 ---
-title: StopProcessSample04 Code Samples | Microsoft Docs
+title: StopProcessSample04 代码示例 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,22 +17,22 @@ ms.locfileid: "74417826"
 ---
 # <a name="stopprocesssample04-code-samples"></a>StopProcessSample04 代码示例
 
-Here are the code samples for the StopProc00 sample cmdlet. This is the `Stop-Process` cmdlet sample described in [Adding Parameter Sets to a Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md). The `Stop-Process` cmdlet is designed to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).
+下面是 StopProc00 cmdlet 的代码示例。 这是[将参数集添加到 cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md)中所述的 `Stop-Process` cmdlet 示例。 `Stop-Process` cmdlet 旨在停止使用 Get-help cmdlet （在[创建第一个 cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)中介绍）检索的进程。
 
 > [!NOTE]
-> You can download the C# (stopprocesssample04.cs) and VB.NET (stopprocesssample04.vb) for this Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> 你可以使用适用C#于 windows Vista 的 Microsoft Windows 软件开发工具包和 .NET Framework 3.0 运行时组件为此 stopprocesssample04.cs cmdlet 下载（）和 VB.NET （stopprocesssample04）。 有关下载说明，请参阅[如何安装 Windows powershell 和下载 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
 >
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> 下载的源文件在 **\<PowerShell 示例 >** 目录中提供。
 
-For complete sample code, see the following topics.
+有关完整的示例代码，请参阅以下主题。
 
-|Language|主题|
+|语言|主题|
 |--------------|-----------|
-|C#|[StopProc04 (C#) Sample Code](./stopprocesssample04-csharp-sample-code.md)|
-|VB.NET|[StopProc04 (VB.NET) Sample Code](./stopprocesssample04-vb-net-sample-code.md)|
+|C#|[StopProc04 （C#）示例代码](./stopprocesssample04-csharp-sample-code.md)|
+|VB.NET|[StopProc04 （VB.NET）示例代码](./stopprocesssample04-vb-net-sample-code.md)|
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell 程序员指南](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

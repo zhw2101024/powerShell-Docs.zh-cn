@@ -1,5 +1,5 @@
 ---
-title: StopProc01 Code Samples | Microsoft Docs
+title: StopProc01 代码示例 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,19 +17,19 @@ ms.locfileid: "74417883"
 ---
 # <a name="stopproc01-code-samples"></a>StopProc01 代码示例
 
-Here is the code sample for the StopProc01 sample cmdlet. This is the `Stop-Process` cmdlet sample described in [Creating a Cmdlet that Modifies the System](../cmdlet/creating-a-cmdlet-that-modifies-the-system.md). The `Stop-Process` cmdlet is designed to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).
+下面是 StopProc01 cmdlet 的代码示例。 这是[创建修改系统的 cmdlet](../cmdlet/creating-a-cmdlet-that-modifies-the-system.md)中所述的 `Stop-Process` cmdlet 示例。 `Stop-Process` cmdlet 旨在停止使用 Get-help cmdlet （在[创建第一个 cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)中介绍）检索的进程。
 
 > [!NOTE]
-> You can download the C# (stopproc01.cs) source file for the Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> 你可以使用适用C#于 windows Vista 的 Microsoft Windows 软件开发工具包和 .NET Framework 3.0 运行时组件，为 stopproc01.cs cmdlet 下载（）源文件。 有关下载说明，请参阅[如何安装 Windows powershell 和下载 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
 >
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> 下载的源文件在 **\<PowerShell 示例 >** 目录中提供。
 
-|Language|主题|
+|语言|主题|
 |--------------|-----------|
-|C#|[StopProc01 (C#) Sample Code](./stopproc01-csharp-sample-code.md)|
+|C#|[StopProc01 （C#）示例代码](./stopproc01-csharp-sample-code.md)|
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell 程序员指南](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

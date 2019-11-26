@@ -1,5 +1,5 @@
 ---
-title: RunSpace04 Code Samples | Microsoft Docs
+title: RunSpace04 代码示例 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,21 +17,21 @@ ms.locfileid: "74416072"
 ---
 # <a name="runspace04-code-samples"></a>RunSpace04 代码示例
 
-Here is a code sample for a runspace that uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that generates a terminating error. The host application is responsible for catching the error and interpreting the error record.
+下面是使用[Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)类来执行生成终止错误的脚本的运行空间的代码示例。 宿主应用程序负责捕获错误并解释错误记录。
 
 > [!NOTE]
-> You can download the VB.NET source file (Runspace04.vb) for this runspace using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> 你可以使用适用于 Windows Vista 的 Windows 软件开发工具包和 Microsoft .NET Framework 3.0 运行时组件下载此运行空间的 VB.NET 源文件（Runspace04）。 有关下载说明，请参阅[如何安装 Windows powershell 和下载 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
 >
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> 下载的源文件在 **\<PowerShell 示例 >** 目录中提供。
 
-For complete sample code, see the following topics.
+有关完整的示例代码，请参阅以下主题。
 
-|Language|主题|
+|语言|主题|
 |--------------|-----------|
-|VB.NET|[Runspace01 (VB.NET) Code Sample](./runspace01-vb-net-code-sample.md)|
+|VB.NET|[Runspace01 （VB.NET）代码示例](./runspace01-vb-net-code-sample.md)|
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell 程序员指南](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

@@ -1,5 +1,5 @@
 ---
-title: GetProc02 Code Samples | Microsoft Docs
+title: GetProc02 代码示例 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,22 +17,22 @@ ms.locfileid: "74416176"
 ---
 # <a name="getproc02-code-samples"></a>GetProc02 代码示例
 
-Here are the code samples for the GetProc02 sample cmdlet. This is the `Get-Process` cmdlet sample described in [Adding Parameters that Process Command-Line Input](../cmdlet/adding-parameters-that-process-command-line-input.md). This `Get-Process` cmdlet retrieves processes based on their name, and then displays information about the processes at the command line.
+下面是 GetProc02 cmdlet 的代码示例。 这是[添加处理命令行输入的参数](../cmdlet/adding-parameters-that-process-command-line-input.md)中所述的 `Get-Process` cmdlet 示例。 此 `Get-Process` cmdlet 根据其名称检索进程，然后在命令行中显示有关进程的信息。
 
 > [!NOTE]
-> You can download the C# source file (getproc02.cs) for this Get-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> 你可以使用适用C#于 windows Vista 的 Microsoft Windows 软件开发工具包和 .NET Framework 3.0 运行时组件下载此 getproc02.cs cmdlet 的源文件（）。 有关下载说明，请参阅[如何安装 Windows powershell 和下载 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
 >
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> 下载的源文件在 **\<PowerShell 示例 >** 目录中提供。
 
-For complete sample code, see the following topics.
+有关完整的示例代码，请参阅以下主题。
 
-|Language|主题|
+|语言|主题|
 |--------------|-----------|
-|C#|[GetProc02 (C#) Sample Code](./getproc02-csharp-sample-code.md)|
-|VB.NET|[GetProc02 (VB.NET) Sample Code](./getproc02-vb-net-sample-code.md)|
+|C#|[GetProc02 （C#）示例代码](./getproc02-csharp-sample-code.md)|
+|VB.NET|[GetProc02 （VB.NET）示例代码](./getproc02-vb-net-sample-code.md)|
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell 程序员指南](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

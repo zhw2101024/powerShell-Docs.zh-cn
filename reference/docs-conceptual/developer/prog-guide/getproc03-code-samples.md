@@ -1,5 +1,5 @@
 ---
-title: GetProc03 Code Samples | Microsoft Docs
+title: GetProc03 代码示例 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,22 +17,22 @@ ms.locfileid: "74416149"
 ---
 # <a name="getproc03-code-samples"></a>GetProc03 代码示例
 
-Here are the code samples for the GetProc03 sample cmdlet. This is the `Get-Process` cmdlet sample described in [Adding Parameters that Process Pipeline Input](../cmdlet/adding-parameters-that-process-pipeline-input.md). This `Get-Process` cmdlet uses a `Name` parameter that accepts input from a pipeline object, retrieves process information from the local computer based on the supplied names, and then displays information about the processes at the command line.
+下面是 GetProc03 cmdlet 的代码示例。 这是[添加处理管道输入的参数](../cmdlet/adding-parameters-that-process-pipeline-input.md)中所述的 `Get-Process` cmdlet 示例。 此 `Get-Process` cmdlet 使用 `Name` 参数，该参数接受来自管道对象的输入，基于提供的名称从本地计算机检索进程信息，然后在命令行中显示有关进程的信息。
 
 > [!NOTE]
-> You can download the C# source file (getprov03.cs) for this Get-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> 你可以使用适用C#于 windows Vista 的 Microsoft Windows 软件开发工具包和 .NET Framework 3.0 运行时组件下载此 getprov03.cs cmdlet 的源文件（）。 有关下载说明，请参阅[如何安装 Windows powershell 和下载 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
 >
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> 下载的源文件在 **\<PowerShell 示例 >** 目录中提供。
 
-For complete sample code, see the following topics.
+有关完整的示例代码，请参阅以下主题。
 
-|Language|主题|
+|语言|主题|
 |--------------|-----------|
-|C#|[GetProc03 (C#) Sample Code](./getproc03-csharp-sample-code.md)|
-|VB.NET|[GetProc03 (VB.NET) Sample Code](./getproc03-vb-net-sample-code.md)|
+|C#|[GetProc03 （C#）示例代码](./getproc03-csharp-sample-code.md)|
+|VB.NET|[GetProc03 （VB.NET）示例代码](./getproc03-vb-net-sample-code.md)|
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell 程序员指南](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
