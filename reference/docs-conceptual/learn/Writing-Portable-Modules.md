@@ -2,12 +2,12 @@
 ms.date: 12/14/2018
 keywords: powershell,cmdlet
 title: 编写可移植模块
-ms.openlocfilehash: 237f6aaea0ed019c54d04a8477d7a456edf00910
-ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
+ms.openlocfilehash: 7871f524495c1ce5283b30696a24185d427edebf
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66470980"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417645"
 ---
 # <a name="portable-modules"></a>可移植模块
 
@@ -17,7 +17,7 @@ Windows PowerShell 是为 [.NET Framework][] 编写的，而 PowerShell Core 是
 
 ### <a name="porting-a-pssnapin"></a>移植 PSSnapIn
 
-PowerShell [SnapIns](/powershell/developer/cmdlet/modules-and-snap-ins) 在 PowerShell Core 中不受支持。 然而，将 PSSnapIn 转换为 PowerShell 模块非常简单。 通常，PSSnapIn 注册代码位于派生自 [PSSnapIn][] 的类的单个源文件中。
+PowerShell [SnapIns](/powershell/scripting/developer/cmdlet/modules-and-snap-ins) 在 PowerShell Core 中不受支持。 然而，将 PSSnapIn 转换为 PowerShell 模块非常简单。 通常，PSSnapIn 注册代码位于派生自 [PSSnapIn][] 的类的单个源文件中。
 从生成中删除此源文件；不再需要该文件。
 
 使用 [New-ModuleManifest][] 创建一个新的模块清单，进而无需 PSSnapIn 注册代码。 **PSSnapIn** 中的某些值（例如 **Description**）可以在模块清单中重复使用。
@@ -266,4 +266,4 @@ PowerShell Standard 旨在始终向前兼容。 使用 PowerShell Standard 库 5
 [PowerShell Standard 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
 [PowerShell 库]: https://www.powershellgallery.com
 [.NET 可移植性分析器]: https://github.com/Microsoft/dotnet-apiport
-[CompatiblePSEditions]: /powershell/gallery/concepts/module-psedition-support
+[CompatiblePSEditions]: /powershell/scripting/gallery/concepts/module-psedition-support

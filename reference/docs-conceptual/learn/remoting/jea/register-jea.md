@@ -2,12 +2,12 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,安全性
 title: 注册 JEA 配置
-ms.openlocfilehash: c85eddea2196e4db4bbeea54bde11074f3d1c927
-ms.sourcegitcommit: e894ed833cef57967cdaf002f8c883f66864e836
+ms.openlocfilehash: dbed5c7dd71f2f7a09d97416be56dff675799548
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2019
-ms.locfileid: "70017708"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417614"
 ---
 # <a name="registering-jea-configurations"></a>注册 JEA 配置
 
@@ -51,7 +51,7 @@ Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' 
 
 ## <a name="multi-machine-configuration-with-dsc"></a>使用 DSC 的多台计算机配置
 
-在多台计算机上部署 JEA 时，最简单的部署模型使用 JEA [Desired State Configuration (DSC)](/powershell/dsc/overview) 资源，在每台计算机上快速且一致地部署 JEA。
+在多台计算机上部署 JEA 时，最简单的部署模型使用 JEA [Desired State Configuration (DSC)](/powershell/scripting/dsc/overview) 资源，在每台计算机上快速且一致地部署 JEA。
 
 要使用 DSC 部署 JEA，请确保满足以下先决条件：
 
@@ -59,7 +59,7 @@ Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' 
 - 包含角色的 PowerShell 模块存储在每台计算机可访问的（只读）文件共享中。
 - 已确定会话配置设置。 使用 JEA DSC 资源时，无需创建会话配置文件。
 - 已获得允许在每台计算机上执行管理操作的凭据，或有权访问用于管理计算机的 DSC 拉取服务器。
-- 已下载 [JEA DSC 资源](https://github.com/PowerShell/JEA/tree/master/DSC%20Resource)。
+- 已下载 [JEA DSC 资源](https://github.com/powershell/JEA/tree/master/DSC%20Resource)。
 
 在目标计算机或拉取服务器上创建 JEA 终结点的 DSC 配置。 在此配置中，JustEnoughAdministration DSC 资源定义会话配置文件，文件资源从文件共享复制角色功能   。
 
@@ -102,7 +102,7 @@ Configuration JEAMaintenance
 }
 ```
 
-接下来，可在系统上直接调用[本地配置管理器](/powershell/dsc/managing-nodes/metaConfig)或更新[拉取服务器配置](/powershell/dsc/pull-server/pullServer)来应用此配置。
+接下来，可在系统上直接调用[本地配置管理器](/powershell/scripting/dsc/managing-nodes/metaConfig)或更新[拉取服务器配置](/powershell/scripting/dsc/pull-server/pullServer)来应用此配置。
 
 通过 DSC 资源，还可替换默认的 Microsoft.PowerShell 终结点  。 替换时，资源会自动注册一个名为 Microsoft.PowerShell.Restricted 的备份终结点  。 备份终结点具有默认 WinRM ACL，允许远程管理用户和本地管理员组成员对其进行访问。
 

@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,安装程序
 title: WMF 5.x 发行说明
-ms.openlocfilehash: 8924240a4bbedcd34bc68b7cacdd23189a3716d6
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.openlocfilehash: 3fc712dbcbe184c60ae248b260c8f6800f111fdd
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71147577"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416501"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Windows Management Framework (WMF) 5.x 发行说明
 
@@ -56,8 +56,8 @@ WMF 5.1 包括与 Windows Server 2016 一起发行的 PowerShell、WMI、WinRM �
 
 - [使用 $PSVersionTable 确定正在运行的 PowerShell 版本](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
 - [使用 PSEdition 参数按 CompatiblePSEditions 筛选 Get-Module 结果](/powershell/module/microsoft.powershell.core/get-module)
-- [阻止脚本执行，除非在 PowerShell 的兼容版本上运行](/powershell/gallery/concepts/script-psedition-support)
-- [声明模块与特定 PowerShell 版本的兼容性](/powershell/gallery/concepts/module-psedition-support)
+- [阻止脚本执行，除非在 PowerShell 的兼容版本上运行](/powershell/scripting/gallery/concepts/script-psedition-support)
+- [声明模块与特定 PowerShell 版本的兼容性](/powershell/scripting/gallery/concepts/module-psedition-support)
 
 ## <a name="module-analysis-cache"></a>模块分析缓存
 

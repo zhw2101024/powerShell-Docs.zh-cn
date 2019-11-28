@@ -2,18 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 在 C# 中创作 DSC 资源
-ms.openlocfilehash: 6f2bb4d411237f13e2735c2e5f630b4f40dc6842
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: a19559c225dd91eceed397df91dd584a577cd7d4
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71954314"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417699"
 ---
 # <a name="authoring-a-dsc-resource-in-c"></a>在 C 中创作 DSC 资源\#
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
-通常在 PowerShell 脚本中实现 Windows PowerShell Desired State Configuration (DSC) 自定义资源。 但是你也可以通过在 C# 中编写 cmdlet 来实现 DSC 自定义资源的功能。 有关在 C# 中编写 cmdlet 的介绍，请参阅[编写 Windows PowerShell Cmdlet](/powershell/developer/windows-powershell)。
+通常在 PowerShell 脚本中实现 Windows PowerShell Desired State Configuration (DSC) 自定义资源。 但是你也可以通过在 C# 中编写 cmdlet 来实现 DSC 自定义资源的功能。 有关在 C# 中编写 cmdlet 的介绍，请参阅[编写 Windows PowerShell Cmdlet](/powershell/scripting/developer/windows-powershell)。
 
 除在 C# 中用 cmdlet 实现资源外，创建 MOF 架构、创建文件夹结构、导入和使用自定义 DSC 资源的过程都与[使用 MOF 编写自定义 DSC 资源](authoringResourceMOF.md)中介绍的相同。
 
@@ -281,4 +281,4 @@ $env: psmodulepath (folder)
 #### <a name="concepts"></a>概念
 [使用 MOF 编写自定义 DSC 资源](authoringResourceMOF.md)
 #### <a name="other-resources"></a>其他资源
-[编写 Windows PowerShell Cmdlet](/powershell/developer/windows-powershell)
+[编写 Windows PowerShell Cmdlet](/powershell/scripting/developer/windows-powershell)

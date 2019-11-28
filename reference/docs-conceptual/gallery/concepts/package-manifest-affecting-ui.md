@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: 影响 PowerShell 库 UI 的包清单值
-ms.openlocfilehash: cedf81df8de29c54ef559a800d654305029491ec
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: 9e37fec879f2f5cbe3926c7dbc946389425d856a
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71328128"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417044"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>影响 PowerShell 库 UI 的包清单值
 
@@ -37,7 +37,7 @@ ms.locfileid: "71328128"
 | **函数** | 这可使用 FunctionsToExport 在模块清单中提供。 请注意，最佳做法是明确列出各项，而不是使用通配符“*”，因为这样将为用户提高负载模块性能。 | 是 | 否 |
 | **DSC 资源** | 对于将在 PowerShell 版本 5.0 及更高版本上使用的模块，这可使用 DscResourcesToExport 在清单中提供。 如果模块要在 PowerShell 4 中使用，则不应使用 DSCResourcesToExport，因为它不是受支持的清单键。 （DSC 在 PowerShell 4 之前不可用。） | 是 | 否 |
 | **工作流** | 工作流作为脚本发布到 PowerShell 库，并在代码中标识为工作流（有关示例，请参阅 [Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1)）。 这不可由清单进行控制。 | 否 | 否 |
-| **角色功能** | 当发布到 PowerShell 库的模块包含一个或多个由 JEA 使用的角色功能 (.psrc) 文件时，将会列出此元素。 有关[角色功能](/powershell/jea/role-capabilities)的更多详细信息，请参阅 JEA 文档。 | 是 | 否 |
+| **角色功能** | 当发布到 PowerShell 库的模块包含一个或多个由 JEA 使用的角色功能 (.psrc) 文件时，将会列出此元素。 有关[角色功能](/powershell/scripting/learn/remoting/jea/role-capabilities)的更多详细信息，请参阅 JEA 文档。 | 是 | 否 |
 | **PowerShell 版本** | 这在脚本或模块清单中指定。 对于设计用于 PowerShell 5.0 及更低版本的模块，这使用标记进行控制。 对于桌面，使用标记 PSEdition_Desktop；对于核心，使用标记 PSEdition_Core。 对于仅在 PowerShell 5.1 及更高版本中使用的模块，主清单中存在 CompatiblePSEditions 键。 有关更多详细信息，请查看 [PowerShell Get 文档](module-psedition-support.md)中的 PS 版本功能。 | 是 | 是 |
 | **依赖项** | 依赖项是 PowerShell 库中的模块，它们在模块中被声明为 RequiredModules，在脚本清单中被声明为 #Requires –Module（名称）。 | 是 | 是 |
 | **最低 PowerShell 版本** | 这可以在模块清单中指定为 PowerShellVersion | 是 | 否 |

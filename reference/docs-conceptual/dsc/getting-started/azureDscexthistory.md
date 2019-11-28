@@ -3,12 +3,12 @@ description: 了解 Azure 中 Desired State Configuration (DSC) 扩展的版本�
 ms.date: 06/21/2018
 keywords: dsc, powershell, azure, 扩展
 title: Azure DSC 扩展版本历史记录
-ms.openlocfilehash: d97ba879679972752196e3f16d0dfb7c731776b9
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: 7a89037d62cb2c8580141d2b177fdded5db654eb
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71953914"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417280"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Azure Desired State Configuration 扩展版本历史记录
 
@@ -219,7 +219,7 @@ ms.locfileid: "71953914"
 - **环境：** Azure
 - **备注：** 此版本使用包括在 Windows Server 2016 Technical Preview 中的 DSC；对于其他 Windows OS，它将安装 [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/)（安装 WMF 需要重启）。
 - **新功能：**
-  - 在扩展版本 2.14 中，包括了对安装 WMF RTM 的更改。 从扩展版本 2.13.2.0 升级到 2.14.0.0 时，你可能会注意到某些 DSC cmdlet 失败或配置失败，并出现错误“未找到含给定属性值的实例”。 有关详细信息，请参阅 [DSC 发行说明](https://msdn.microsoft.com/en-us/powershell/wmf/limitation_dsc)。 2\.15 版中已添加这些问题的解决方法。
+  - 在扩展版本 2.14 中，包括了对安装 WMF RTM 的更改。 从扩展版本 2.13.2.0 升级到 2.14.0.0 时，你可能会注意到某些 DSC cmdlet 失败或配置失败，并出现错误“未找到含给定属性值的实例”。 有关详细信息，请参阅 [DSC 发行说明](/powershell/scripting/wmf/known-issues/known-issues-dsc)。 2\.15 版中已添加这些问题的解决方法。
   - 遗憾的是，如果你已安装版本 2.14 且遇到上述两个问题之一，则将需要手动执行这些步骤。  在提升的 PowerShell 会话中：
     - `Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof`
     - `mofcomp $env:windir\system32\wbem\DscCoreConfProv.mof`

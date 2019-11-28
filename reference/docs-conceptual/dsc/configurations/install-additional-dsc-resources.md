@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,资源,库,安装程序
 title: 安装其他 DSC 资源
-ms.openlocfilehash: ecaf176230ccd934b57b1c27d72ff83e6ba906e9
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: 7a6a935349358e11a77d2f00c0bf88e0ad18c097
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71954484"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417797"
 ---
 # <a name="install-additional-dsc-resources"></a>安装其他 DSC 资源
 
@@ -39,7 +39,7 @@ OOB 资源可为常见操作提供良好起点。 如果 OOB 资源不能满足�
 
 ## <a name="installing-powershellget"></a>安装 PowerShellGet
 
-若要确定是否已获得 PowerShell  ，或者若要获取安装它的帮助，请参阅以下指南：[安装 PowerShellGet](/powershell/gallery/installing-psget)。
+若要确定是否已获得 PowerShell  ，或者若要获取安装它的帮助，请参阅以下指南：[安装 PowerShellGet](/powershell/scripting/gallery/installing-psget)。
 
 ## <a name="finding-dsc-resources-using-powershellget"></a>使用 PowerShellGet 查找 DSC 资源
 

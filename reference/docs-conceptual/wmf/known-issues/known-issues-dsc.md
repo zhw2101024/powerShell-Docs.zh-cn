@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
 title: Desired State Configuration (DSC) 已知问题和限制
-ms.openlocfilehash: 6faf24795d14a93f265943029d9f6f1388f32263
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.openlocfilehash: a76c5bb336804c5b384e6b6ba6a705c6049ef7fb
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71147717"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416606"
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Desired State Configuration (DSC) 已知问题和限制
 
@@ -52,7 +52,7 @@ mofcomp $env:windir\system32\wbem\DscCoreConfProv.mof
 
 如果 LCM 处于 DebugMode，则试图停止由 `Get-DscConfiguration` 启动的操作时，`Stop-DscConfiguration` 可能不响应
 
-**解决方法：** 按[调试 DSC 资源](/powershell/dsc/troubleshooting/debugResource)中所述完成由 `Get-DscConfiguration` 所启动操作的调试。
+**解决方法：** 按[调试 DSC 资源](/powershell/scripting/dsc/troubleshooting/debugResource)中所述完成由 `Get-DscConfiguration` 所启动操作的调试。
 
 ## <a name="no-verbose-error-messages-are-shown-in-debugmode"></a>DebugMode 中不显示详细错误消息
 
@@ -80,7 +80,7 @@ mofcomp $env:windir\system32\wbem\DscCoreConfProv.mof
 
 ## <a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>与 Invoke-DscResource 一起使用时，无法轻松调试 DSC 资源
 
-LCM 在调试模式下运行时，`Invoke-DscResource` cmdlet 不会给出有关连接到运行空间以进行调试的信息。 有关详细信息，请参阅[调试 DSC 资源](/powershell/dsc/troubleshooting/debugResource)。
+LCM 在调试模式下运行时，`Invoke-DscResource` cmdlet 不会给出有关连接到运行空间以进行调试的信息。 有关详细信息，请参阅[调试 DSC 资源](/powershell/scripting/dsc/troubleshooting/debugResource)。
 
 **解决方法：** 使用 cmdlet `Get-PSHostProcessInfo`、`Enter-PSHostProcess`、`Get-Runspace` 和 `Debug-Runspace` 发现并连接到运行空间以调试 DSC 资源。
 

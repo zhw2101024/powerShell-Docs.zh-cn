@@ -2,12 +2,12 @@
 ms.date: 08/15/2019
 keywords: dsc,powershell,配置,安装程序
 title: 适用于 Windows 的 Desired State Configuration (DSC) 入门
-ms.openlocfilehash: a4f9db481afda65fc4ac5e553230dbba3037ac9a
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: a9346b96693acdbad9bacbd4b6ca85971e17a3d1
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71954404"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417764"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-windows"></a>适用于 Windows 的 Desired State Configuration (DSC) 入门
 
@@ -110,4 +110,4 @@ Windows PowerShell Desired State Configuration 有包含 DSC 资源的内置模�
 ## <a name="windows-powershell-desired-state-configuration-log-files"></a>Windows PowerShell Desired State Configuration 日志文件
 
 DSC 日志写入 Windows 事件日志，路径为 `Microsoft-Windows-Dsc/Operational`。
-可以按照 [DSC 事件日志位置](/powershell/dsc/troubleshooting/troubleshooting#where-are-dsc-event-logs)中的步骤操作，启用其他日志用于调试目的。
+可以按照 [DSC 事件日志位置](/powershell/scripting/dsc/troubleshooting/troubleshooting#where-are-dsc-event-logs)中的步骤操作，启用其他日志用于调试目的。

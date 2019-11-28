@@ -2,12 +2,12 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,安全性
 title: JEA 先决条件
-ms.openlocfilehash: 8fca5c068412e86acfdb8bed400699f721b76191
-ms.sourcegitcommit: e894ed833cef57967cdaf002f8c883f66864e836
+ms.openlocfilehash: 1833bacf49eebcccefc10f7c85a39732559c1a97
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2019
-ms.locfileid: "70017808"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416726"
 ---
 # <a name="prerequisites"></a>必备条件
 
@@ -60,7 +60,7 @@ JEA 适用于 PowerShell 5.0 及更高版本。 要使用完整功能，建议�
 
 ### <a name="install-windows-management-framework"></a>安装 Windows Management Framework
 
-如果运行的是较旧版本的 PowerShell，则可能需要使用最新的 Windows Management Framework (WMF) 更新来更新系统。 有关详细信息，请参阅 [WMF 文档](/powershell/wmf/overview)。
+如果运行的是较旧版本的 PowerShell，则可能需要使用最新的 Windows Management Framework (WMF) 更新来更新系统。 有关详细信息，请参阅 [WMF 文档](/powershell/scripting/wmf/overview)。
 
 建议在升级所有服务器之前，测试工作负载与 WMF 的兼容性。
 

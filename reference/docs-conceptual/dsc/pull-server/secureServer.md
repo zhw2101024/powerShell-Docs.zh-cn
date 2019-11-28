@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 请求服务器最佳做法
-ms.openlocfilehash: a3c4ca039b1e061a9246848bef6aeecebcd89011
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: 5cb47598b11f7884dddf1440cec21afeab49bebb
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71953524"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417727"
 ---
 # <a name="pull-server-best-practices"></a>请求服务器最佳做法
 
 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> 请求服务器（Windows 功能 DSC-Service）是 Windows Server 的一个受支持组件，不过目前没有提供新功能的计划  。 建议开始将托管客户端转换至 [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)（包括 Windows Server 上的请求服务器以外的功能）或[此处](/powershell/dsc/pull-server/pullserver#community-solutions-for-pull-service)列出的社区解决方案之一。
+> 请求服务器（Windows 功能 DSC-Service）是 Windows Server 的一个受支持组件，不过目前没有提供新功能的计划  。 建议开始将托管客户端转换至 [Azure Automation DSC](/azure/automation/automation-dsc-getting-started)（包括 Windows Server 上的请求服务器以外的功能）或[此处](/powershell/scripting/dsc/pull-server/pullserver#community-solutions-for-pull-service)列出的社区解决方案之一。
 
 摘要：本文档旨在包括用于帮助为解决方案进行准备的工程师的过程和可扩展性。 详细信息应提供由客户确定，然后由产品团队验证的最佳做法，以确保建议面向未来并且可视为是稳定的。
 
@@ -27,7 +27,7 @@ ms.locfileid: "71953524"
 ## <a name="abstract"></a>摘要
 
 本文档旨在为规划 Windows PowerShell 所需状态配置请求服务器实现的任何人提供官方指南。 请求服务器是只应花费几分钟进行部署的简单服务。 虽然本文档会提供可以在部署中使用的技术操作方法指南，不过本文档的价值是作为最佳做法以及在部署之前要考虑的事项的参考。
-读者应基本熟悉 DSC 以及用于描述在 DSC 部署中包含的组件的术语。 有关详细信息，请参阅 [Windows PowerShell 所需状态配置概述](/powershell/dsc/overview)主题。
+读者应基本熟悉 DSC 以及用于描述在 DSC 部署中包含的组件的术语。 有关详细信息，请参阅 [Windows PowerShell 所需状态配置概述](/powershell/scripting/dsc/overview)主题。
 因为 DSC 预计会随着云一起发展，所以包括请求服务器在内的基础技术也预计会进行发展并引入新功能。 本文档在附录中包含一个版本表，该表提供了对以前版本的参考以及对展望未来的解决方案的参考，以鼓励进行前瞻性设计。
 
 本文档的两个主要部分：
@@ -50,9 +50,9 @@ Windows PowerShell 为所需状态配置提供了一组语言扩展，可以用�
 请求服务器提供了一个集中化服务来存储可供目标节点访问的配置。
 
 请求服务器角色可以作为 Web 服务器实例或 SMB 文件共享进行部署。 Web 服务器功能包含一个 OData 接口，并且可以选择包含供目标节点在应用配置时报告返回成功或失败确认的功能。 此功能在存在大量目标节点的环境中非常有用。
-配置目标节点（也称为客户端）以指向请求服务器之后，最新配置数据和任何所需脚本会进行下载并应用。 这可以作为一次性部署或作为反复出现的作业（这也使得请求服务器成为用于大规模管理更改的重要资产）来进行。 有关详细信息，请参阅 [Windows PowerShell 所需状态配置请求服务器](/powershell/dsc/pullServer/pullserver)和
+配置目标节点（也称为客户端）以指向请求服务器之后，最新配置数据和任何所需脚本会进行下载并应用。 这可以作为一次性部署或作为反复出现的作业（这也使得请求服务器成为用于大规模管理更改的重要资产）来进行。 有关详细信息，请参阅 [Windows PowerShell 所需状态配置请求服务器](/powershell/scripting/dsc/pullServer/pullserver)和
 
-[推送和拉取配置模式](/powershell/dsc/pullServer/pullserver)。
+[推送和拉取配置模式](/powershell/scripting/dsc/pullServer/pullserver)。
 
 ## <a name="configuration-planning"></a>配置规划
 

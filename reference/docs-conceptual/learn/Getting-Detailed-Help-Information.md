@@ -2,12 +2,12 @@
 ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: 获取详细的帮助信息
-ms.openlocfilehash: 033a8962ca438b49c10fafa2852c87d19868b4d9
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: e722eb8a0ca13e3d2de864314775a0a9fa578390
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71325204"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417658"
 ---
 # <a name="getting-detailed-help-information"></a>获取详细的帮助信息
 
@@ -79,7 +79,7 @@ Get-Help Get-ChildItem -Parameter *
 Get-Help Get-ChildItem -Examples
 ```
 
-有关如何为你编写的 cmdlet 编写帮助文章的信息，请参阅[如何编写 Cmdlet 帮助](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets)主题。
+有关如何为你编写的 cmdlet 编写帮助文章的信息，请参阅[如何编写 Cmdlet 帮助](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets)主题。
 
 ## <a name="getting-conceptual-help"></a>获取概念帮助
 

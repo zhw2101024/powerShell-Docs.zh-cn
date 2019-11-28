@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,配置,安装程序
 title: 在 PowerShell 5.0 及更高版本中使用配置 ID 设置请求客户端
-ms.openlocfilehash: 14db98d240bc87aca3ee985db08c14b7c65d8bb8
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: bd173a1079b916c450a0292dca7a595a9bcff985
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71953604"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417235"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>在 PowerShell 5.0 及更高版本中使用配置 ID 设置请求客户端
 
@@ -46,7 +46,7 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientC
 [System.Guid]::NewGuid()
 ```
 
-有关在环境中使用 Guid  的详细信息，请参阅[规划 Guid](/powershell/dsc/secureserver#guids)。
+有关在环境中使用 Guid  的详细信息，请参阅[规划 Guid](/powershell/scripting/dsc/secureserver#guids)。
 
 ## <a name="set-up-a-pull-client-to-download-configurations"></a>设置请求客户端以下载配置
 
