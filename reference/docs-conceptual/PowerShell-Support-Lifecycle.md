@@ -2,12 +2,12 @@
 title: PowerShell Core 支持生命周期
 description: 用于管理 PowerShell Core 支持的策略
 ms.date: 08/06/2018
-ms.openlocfilehash: fbbda0a5f8460e5625625adcc50c631729df53f1
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: 27738514fc84105a0339eafcdbb540b7d3790052
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72351797"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416302"
 ---
 # <a name="powershell-core-support-lifecycle"></a>PowerShell Core 支持生命周期
 
@@ -19,7 +19,7 @@ PowerShell Core 是独特的工具和组件集，该集从 Windows PowerShell �
 ## <a name="community-support"></a>社区支持
 
 我们还在 GitHub 上提供[社区支持][]，你可在其中提交问题、bug 或功能请求。
-此外，还可以获取来自常规 [Microsoft 社区][]或 Microsoft [PowerShell 技术社区][] 的其他成员的帮助。 我们不能确保社区能够及时解决问题。 如果问题需要立即解决，应使用传统的付费支持选项。
+此外，你还可以从 Microsoft [PowerShell 技术社区][]或 [PowerShell][pshub] 中心页的社区部分列出的任何论坛中获得社区其他成员的帮助。 我们不能确保社区能够及时解决问题。 如果问题需要立即解决，应使用传统的付费支持选项。
 
 ## <a name="lifecycle-of-powershell-core"></a>PowerShell Core 生命周期
 
@@ -117,9 +117,9 @@ PowerShell Core 在 [MIT 许可][] 下发布。 根据此许可规定，如果�
 
 对 PowerShell Core 的支持不包括产品模块，除非这些模块显式支持 PowerShell Core。 例如，使用 Windows Server 随附的 `ActiveDirectory` 模块是不受支持的方案。
 
-不过，在某些情况下，不显式支持 PowerShell Core 的模块可能是兼容的。 通过安装 [`WindowsPSModulePath`][] 模块，可以将 Windows PowerShell `PSModulePath` 添加到 PowerShell Core `PSModulePath`。
+不过，在某些情况下，不显式支持 PowerShell Core 的模块可能是兼容的。 通过安装 [WindowsPSModulePath][] 模块，可以将 Windows PowerShell `PSModulePath` 添加到 PowerShell Core `PSModulePath`。
 
-首先，从 PowerShell 库安装 `WindowsPSModulePath` 模块：
+首先，安装来自 PowerShell 库的 WindowsPSModulePath  模块：
 
 ```powershell
 # Add `-Scope CurrentUser` if you're installing as non-admin
@@ -141,12 +141,12 @@ Add-WindowsPSModulePath
 [enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
 [社区支持]: https://github.com/powershell/powershell/issues
-[Microsoft 社区]: https://answers.microsoft.com/
+[pshub]: https://docs.microsoft.com/powershell
 [PowerShell 技术社区]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
 [辅助支持]: https://support.microsoft.com/assistedsupportproducts
 [modern]: https://support.microsoft.com/help/30881/modern-lifecycle-policy
 [lifecycle-chart]: ./images/modern-lifecycle.png
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
 [MIT 许可]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
-[`WindowsPSModulePath`]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
+[WindowsPSModulePath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [实验性功能]: /powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-6#experimentalfeatures

@@ -2,12 +2,12 @@
 title: 在 Windows 上安装 PowerShell Core
 description: 介绍如何在 Windows 上安装 PowerShell Core
 ms.date: 08/06/2018
-ms.openlocfilehash: c06eba06e376c3f795ab9c0fae9270cf6cf8f2ce
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.openlocfilehash: 00a1d8064a3c1ec6608a46415bbabb8d98d880f0
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73444462"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416775"
 ---
 # <a name="installing-powershell-core-on-windows"></a>在 Windows 上安装 PowerShell Core
 
@@ -25,7 +25,7 @@ ms.locfileid: "73444462"
 若要通过 WSMan 启用 PowerShell 远程处理，需要满足以下先决条件：
 
 - 在 Windows 10 之前的 Windows 版本上安装[通用 C 运行时](https://www.microsoft.com/download/details.aspx?id=50410)。 可通过直接下载或 Windows 更新进行安装。 经完全修补（含可选包）且受支持的系统中已安装有通用 C 运行时。
-- 在 Windows 7 和 Windows Server 2008 R2 上安装 Windows Management Framework (WMF) 4.0 或更高版本。 有关 WMF 的详细信息，请参阅 [WMF 概述](/powershell/wmf/overview)。
+- 在 Windows 7 和 Windows Server 2008 R2 上安装 Windows Management Framework (WMF) 4.0 或更高版本。 有关 WMF 的详细信息，请参阅 [WMF 概述](/powershell/scripting/wmf/overview)。
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />安装 MSI 包
 
@@ -56,6 +56,18 @@ msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_
 ```
 
 有关 Msiexec.exe 命令行选项的完整列表，请参阅[命令行选项](/windows/desktop/Msi/command-line-options)。
+
+## <a name="a-idmsix-installing-the-msix-package"></a><a id="msix" />安装 MSIX 包
+
+要在 Windows 10 客户端上手动安装 MSIX 包，请从 GitHub [版本][releases]页面下载 MSIX 包。 向下滚动到要安装的版本的“资产”部分。  “资产”部分可能处于折叠状态，因此可能需要单击使其展开。
+
+MSI 文件类似于 `PowerShell-<version>-win-<os-arch>.msix`
+
+下载后，请勿简单地双击安装程序，因为此程序包需要使用非虚拟资源。  要安装，必须使用 `Add-AppxPackage` cmdlet：
+
+```powershell
+Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
+```
 
 ## <a name="a-idzip-installing-the-zip-package"></a><a id="zip" />安装 ZIP 包
 

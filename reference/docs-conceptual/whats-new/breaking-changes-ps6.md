@@ -1,15 +1,15 @@
 ---
-ms.date: 05/17/2018
+ms.date: 11/15/2019
 keywords: powershell, 核心
 title: PowerShell 6.0 的重大更改
-ms.openlocfilehash: df716fc3ad48d640ddefcfd87da445eaf104cfbe
-ms.sourcegitcommit: e1027805385081c2e6f9250f9cd1167a45f035b0
+ms.openlocfilehash: a1dac42bcda8e1258a99ef281691a9d4c5986b53
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72561262"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417555"
 ---
-# <a name="breaking-changes-for-powershell-60"></a>PowerShell 6.0 的重大更改
+# <a name="breaking-changes-for-powershell-6x"></a>PowerShell 6.x 的重大变更
 
 ## <a name="features-no-longer-available-in-powershell-core"></a>PowerShell Core 中不再可用的功能
 
@@ -23,7 +23,7 @@ ms.locfileid: "72561262"
 
 如果在操作系统重启后需要使用检查点来恢复脚本，建议在操作系统启动时使用任务计划程序运行脚本，但此脚本将需要维持自身的状态（例如将它保存到文件）。
 
-[workflow]: https://docs.microsoft.com/powershell/scripting/core-powershell/workflows-guide
+[workflow]: /powershell/scripting/components/workflows-guide
 [workflow-foundation]: https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/
 
 ### <a name="custom-snap-ins"></a>自定义管理单元
@@ -291,3 +291,4 @@ Web Cmdlet 的基础 .NET API 已更改为 `System.Net.Http.HttpClient`。 此�
 - 目前在 macOS 上尚无基于证书的身份验证。
 - 通过 `http://` URI 使用 `-Credential` 将导致错误。 使用 `https://` URI 或提供 `-AllowUnencryptedAuthentication` 参数来阻止此错误。
 - 现在当重定向尝试超过提供的限制时，`-MaximumRedirection` 会生成终止错误时，而不是返回最后一次重定向的结果。
+- 在 PowerShell 6.2 中，JSON 响应默认更改为 UTF-8 编码。 如果未为 JSON 响应提供字符集，则依照 RFC 8259，默认编码应为 UTF-8。

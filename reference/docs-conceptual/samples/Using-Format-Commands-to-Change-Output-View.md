@@ -1,13 +1,13 @@
 ---
-ms.date: 10/22/2019
+ms.date: 11/22/2019
 keywords: powershell,cmdlet
 title: 使用格式命令更改输出视图
-ms.openlocfilehash: 9d9854362b5150a99bdd0c02518599840c1fd42d
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.openlocfilehash: f270d5ec5efe5caf506d6a8a45285990996f6ae6
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73444427"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417593"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>使用格式命令更改输出视图
 
@@ -128,7 +128,7 @@ Id          : 21748
 
 ### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>通过将 Format-List 与通配符搭配使用获取详细信息
 
-`Format-List` cmdlet 使你可以将通配符用作其 Property 参数的值  。 这样便可以显示详细信息。 通常情况下，对象包含的信息比你需要的多，这就是默认情况下 PowerShell 不显示所有属性值的原因。 若要显示对象的全部属性，则使用 **Format-List-Property \&#42;** 命令。 下面的命令针对单个进程生成超过 60 行的输出：
+`Format-List` cmdlet 使你可以将通配符用作其 Property 参数的值  。 这样便可以显示详细信息。 通常情况下，对象包含的信息比你需要的多，这就是默认情况下 PowerShell 不显示所有属性值的原因。 若要显示对象的全部属性，则使用 `Format-List -Property *` 命令。 下面的命令针对单个进程生成超过 60 行的输出：
 
 ```powershell
 Get-Process -Name iexplore | Format-List -Property *
