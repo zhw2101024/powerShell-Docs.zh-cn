@@ -4,21 +4,21 @@ contributor: manikb
 keywords: 库,powershell,cmdlet,psget
 title: 具有兼容的 PowerShell 版本的脚本
 ms.openlocfilehash: e364879f611429a8583e550fb7704431e456fbb1
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71328058"
 ---
-# <a name="script-with-compatible-powershell-editions"></a><span data-ttu-id="fb97f-103">具有兼容的 PowerShell 版本的脚本</span><span class="sxs-lookup"><span data-stu-id="fb97f-103">Script with compatible PowerShell editions</span></span>
+# <a name="script-with-compatible-powershell-editions"></a><span data-ttu-id="64297-103">具有兼容的 PowerShell 版本的脚本</span><span class="sxs-lookup"><span data-stu-id="64297-103">Script with compatible PowerShell editions</span></span>
 
-<span data-ttu-id="fb97f-104">从版本 5.1 开始，PowerShell 以表现出不同功能集和平台兼容性的不同版本提供。</span><span class="sxs-lookup"><span data-stu-id="fb97f-104">Starting with version 5.1, PowerShell is available in different editions which denote varying feature sets and platform compatibility.</span></span>
+<span data-ttu-id="64297-104">从版本 5.1 开始，PowerShell 以表现出不同功能集和平台兼容性的不同版本提供。</span><span class="sxs-lookup"><span data-stu-id="64297-104">Starting with version 5.1, PowerShell is available in different editions which denote varying feature sets and platform compatibility.</span></span>
 
-- <span data-ttu-id="fb97f-105">**桌面版：** 以 .NET Framework 为基础构建，提供与面向在完整功能 Windows 版本（如服务器核心和 Windows 桌面）上运行的 PowerShell 版本的脚本和模块的兼容性。</span><span class="sxs-lookup"><span data-stu-id="fb97f-105">**Desktop Edition:** Built on .NET Framework and provides compatibility with scripts and modules targeting versions of PowerShell running on full footprint editions of Windows such as Server Core and Windows Desktop.</span></span>
+- <span data-ttu-id="64297-105">**桌面版：** 以 .NET Framework 为基础构建，提供与面向在完整功能 Windows 版本（如服务器核心和 Windows 桌面）上运行的 PowerShell 版本的脚本和模块的兼容性。</span><span class="sxs-lookup"><span data-stu-id="64297-105">**Desktop Edition:** Built on .NET Framework and provides compatibility with scripts and modules targeting versions of PowerShell running on full footprint editions of Windows such as Server Core and Windows Desktop.</span></span>
 
-- <span data-ttu-id="fb97f-106">**核心版：** 以 .NET Core 为基础构建，提供与面向在缩减功能 Windows 版本（如 Nano Server 和 Windows IoT）上运行的 PowerShell 版本的脚本和模块的兼容性。</span><span class="sxs-lookup"><span data-stu-id="fb97f-106">**Core Edition:** Built on .NET Core and provides compatibility with scripts and modules targeting versions of PowerShell running on reduced footprint editions of Windows such as Nano Server and Windows IoT.</span></span>
+- <span data-ttu-id="64297-106">**核心版：** 以 .NET Core 为基础构建，提供与面向在缩减功能 Windows 版本（如 Nano Server 和 Windows IoT）上运行的 PowerShell 版本的脚本和模块的兼容性。</span><span class="sxs-lookup"><span data-stu-id="64297-106">**Core Edition:** Built on .NET Core and provides compatibility with scripts and modules targeting versions of PowerShell running on reduced footprint editions of Windows such as Nano Server and Windows IoT.</span></span>
 
-<span data-ttu-id="fb97f-107">正在运行的 PowerShell 版本显示在 $PSVersionTable.的 PSEdition 属性中。</span><span class="sxs-lookup"><span data-stu-id="fb97f-107">The running edition of PowerShell is shown in the PSEdition property of $PSVersionTable.</span></span>
+<span data-ttu-id="64297-107">正在运行的 PowerShell 版本显示在 $PSVersionTable.的 PSEdition 属性中。</span><span class="sxs-lookup"><span data-stu-id="64297-107">The running edition of PowerShell is shown in the PSEdition property of $PSVersionTable.</span></span>
 
 ```powershell
 $PSVersionTable
@@ -35,7 +35,7 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
 
-<span data-ttu-id="fb97f-108">脚本编写者可以防止执行脚本，除非它使用 `#requires` 语句的 PSEdition 参数在 PowerShell 的兼容版本上运行。</span><span class="sxs-lookup"><span data-stu-id="fb97f-108">Script authors can prevent a script from executing unless it is run on a compatible edition of PowerShell using the PSEdition parameter on a `#requires` statement.</span></span>
+<span data-ttu-id="64297-108">脚本编写者可以防止执行脚本，除非它使用 `#requires` 语句的 PSEdition 参数在 PowerShell 的兼容版本上运行。</span><span class="sxs-lookup"><span data-stu-id="64297-108">Script authors can prevent a script from executing unless it is run on a compatible edition of PowerShell using the PSEdition parameter on a `#requires` statement.</span></span>
 
 ```powershell
 Set-Content C:\script.ps1 -Value "#requires -PSEdition Core
@@ -53,8 +53,8 @@ At line:1 char:1
     + FullyQualifiedErrorId : ScriptRequiresUnmatchedPSEdition
 ```
 
-<span data-ttu-id="fb97f-109">PowerShell 库用户可以查找特定 PowerShell 版本上受支持的脚本的列表。</span><span class="sxs-lookup"><span data-stu-id="fb97f-109">PowerShell Gallery users can find the list of scripts supported on a specific PowerShell Edition.</span></span>
-<span data-ttu-id="fb97f-110">不含 PSEdition_Desktop 和 PSEdition_Core 标记的脚本被视为可以在 PowerShell Desktop 版本上正常运行。</span><span class="sxs-lookup"><span data-stu-id="fb97f-110">Scripts without PSEdition_Desktop and PSEdition_Core tags are considered to work fine on PowerShell Desktop edition.</span></span>
+<span data-ttu-id="64297-109">PowerShell 库用户可以查找特定 PowerShell 版本上受支持的脚本的列表。</span><span class="sxs-lookup"><span data-stu-id="64297-109">PowerShell Gallery users can find the list of scripts supported on a specific PowerShell Edition.</span></span>
+<span data-ttu-id="64297-110">不含 PSEdition_Desktop 和 PSEdition_Core 标记的脚本被视为可以在 PowerShell Desktop 版本上正常运行。</span><span class="sxs-lookup"><span data-stu-id="64297-110">Scripts without PSEdition_Desktop and PSEdition_Core tags are considered to work fine on PowerShell Desktop edition.</span></span>
 
 ```powershell
 # Find scripts supported on PowerShell Desktop edition
@@ -64,7 +64,7 @@ Find-Script -Tag PSEdition_Desktop
 Find-Script -Tag PSEdition_Core
 ```
 
-## <a name="more-details"></a><span data-ttu-id="fb97f-111">详细信息</span><span class="sxs-lookup"><span data-stu-id="fb97f-111">More details</span></span>
+## <a name="more-details"></a><span data-ttu-id="64297-111">详细信息</span><span class="sxs-lookup"><span data-stu-id="64297-111">More details</span></span>
 
-- [<span data-ttu-id="fb97f-112">PSEditions 模块</span><span class="sxs-lookup"><span data-stu-id="fb97f-112">Modules with PSEditions</span></span>](module-psedition-support.md)
-- [<span data-ttu-id="fb97f-113">PowerShell 库的 PSEditions 支持</span><span class="sxs-lookup"><span data-stu-id="fb97f-113">PSEditions support on PowerShellGallery</span></span>](../how-to/finding-packages/searching-by-compatibility.md)
+- [<span data-ttu-id="64297-112">PSEditions 模块</span><span class="sxs-lookup"><span data-stu-id="64297-112">Modules with PSEditions</span></span>](module-psedition-support.md)
+- [<span data-ttu-id="64297-113">PowerShell 库的 PSEditions 支持</span><span class="sxs-lookup"><span data-stu-id="64297-113">PSEditions support on PowerShellGallery</span></span>](../how-to/finding-packages/searching-by-compatibility.md)
