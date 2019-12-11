@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 执行网络任务
 ms.openlocfilehash: e581296b4b7609b374f206c447c4f797e3e2c400
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030854"
 ---
 # <a name="performing-networking-tasks"></a>执行网络任务
@@ -163,7 +163,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "DHCPEnabled=$tru
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -ComputerName . | ForEach-Object -Process {$_.EnableDHCP()}
 ```
 
-可以使用 Filter 语句“IPEnabled=$true and DHCPEnabled=$false”，以免在已启用 DHCP 的适配器上再次启用它，但忽略这一步也不会导致错误出现。
+可以使用 Filter 语句“IPEnabled=$true and DHCPEnabled=$false”，以免在已启用 DHCP 的适配器上再次启用它，但忽略这一步也不会导致错误出现  。
 
 ### <a name="releasing-and-renewing-dhcp-leases-on-specific-adapters"></a>释放和续订特定适配器上的 DHCP 租约
 

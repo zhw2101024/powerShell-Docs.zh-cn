@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 直接操作项
 ms.openlocfilehash: 50aed569cf6b876297abe3cf1544eba70f6279ce
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030122"
 ---
 # <a name="manipulating-items-directly"></a>直接操作项
@@ -72,7 +72,7 @@ SKC  VC Name                           Property
   0   0 _Test                          {}
 ```
 
-在键入注册表路径时，请确保在 Windows PowerShell 驱动器名称中包含冒号 (**:**)，如 HKLM: 和 HKCU:。 如果不带冒号，则 Windows PowerShell 无法识别路径中的驱动器名称。
+在键入注册表路径时，请确保在 Windows PowerShell 驱动器名称中包含冒号 ( **:** )，如 HKLM: 和 HKCU:。 如果不带冒号，则 Windows PowerShell 无法识别路径中的驱动器名称。
 
 ## <a name="why-registry-values-are-not-items"></a>为什么注册表值不是项
 
@@ -92,7 +92,7 @@ SKC  VC Name                           Property
   3   0 OptionalComponents             {}
 ```
 
-尽管将注册表条目视为项会很方便，但无法确保指定的注册表条目路径是唯一的。 路径表示法不区分名为 **Run** 的注册表子项和 **Run** 子项中的 **(Default)** 注册表条目。 此外，由于注册表条目名称可以包含反斜杠字符 (\\)，因此如果注册表条目是项，则无法使用路径表示法区分名为 Windows\\CurrentVersion\\Run 的注册表条目和此路径中的子项。
+尽管将注册表条目视为项会很方便，但无法确保指定的注册表条目路径是唯一的。 路径表示法不区分名为 **Run** 的注册表子项和 **Run** 子项中的 **(Default)** 注册表条目。 此外，由于注册表条目名称可以包含反斜杠字符 (\\  )，因此如果注册表条目是项，则无法使用路径表示法区分名为 Windows\\CurrentVersion\\Run  的注册表条目和此路径中的子项。
 
 ## <a name="renaming-existing-items-rename-item"></a>重命名现有项 (Rename-Item)
 
@@ -181,7 +181,7 @@ specified. If you continue, all children will be removed with the item. Are you
 (default is "Y"):
 ```
 
-由于“是”是默认响应，因此若要删除文件夹及其文件，请按“Enter”键。 若要删除文件夹而不进行确认，请使用 **-Recurse**参数。
+由于“是”  是默认响应，因此若要删除文件夹及其文件，请按“Enter”  键。 若要删除文件夹而不进行确认，请使用 **-Recurse**参数。
 
 ```powershell
 Remove-Item C:\temp\New.Directory -Recurse

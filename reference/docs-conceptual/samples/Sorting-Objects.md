@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 对对象进行排序
 ms.openlocfilehash: ed78e7e333f3468781c9cd96df2194fbdfebe753
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030784"
 ---
 # <a name="sorting-objects"></a>对对象进行排序
@@ -16,7 +16,7 @@ ms.locfileid: "67030784"
 ## <a name="basic-sorting"></a>基本排序
 
 请考虑列出当前目录中的子目录和文件的问题。
-如果想要依次按 LastWriteTime 和 Name 进行排序，可键入：
+如果想要依次按 LastWriteTime  和 Name  进行排序，可键入：
 
 ```powershell
 Get-ChildItem |
@@ -39,7 +39,7 @@ LastWriteTime          Name
 ...
 ```
 
-也可通过指定 Descending 开关参数按相反顺序对对象进行排序。
+也可通过指定 Descending  开关参数按相反顺序对对象进行排序。
 
 ```powershell
 Get-ChildItem |
@@ -67,11 +67,11 @@ LastWriteTime          Name
 ## <a name="using-hash-tables"></a>使用哈希表
 
 可以使用数组中的哈希表按不同顺序对不同属性进行排序。
-每个哈希表使用 Expression 键将属性名称指定为字符串，并使用 Ascending 或 Descending 键按 `$true` 或 `$false` 指定排序顺序。
-Expression 键是必需的。
-Ascending 或 Descending 键是可选的。
+每个哈希表使用 Expression  键将属性名称指定为字符串，并使用 Ascending  或 Descending  键按 `$true` 或 `$false` 指定排序顺序。
+Expression  键是必需的。
+Ascending  或 Descending  键是可选的。
 
-下面的示例按 LastWriteTime 降序和 Name 升序对对象进行排序。
+下面的示例按 LastWriteTime  降序和 Name  升序对对象进行排序。
 
 ```powershell
 Get-ChildItem |
@@ -91,10 +91,10 @@ LastWriteTime          Name
 ...
 ```
 
-还可以将 scriptblock 设置为 Expression 键。
+还可以将 scriptblock 设置为 Expression  键。
 运行 `Sort-Object` cmdlet 时，将执行 scriptblock 并使用结果进行排序。
 
-下面的示例按 CreationTime 和 LastWriteTime 之间的时间跨度以降序对对象进行排序。
+下面的示例按 CreationTime  和 LastWriteTime  之间的时间跨度以降序对对象进行排序。
 
 ```powershell
 Get-ChildItem |
@@ -118,7 +118,7 @@ LastWriteTime          CreationTime
 
 ## <a name="tips"></a>提示
 
-可以省略 Property 参数名称，如下所示：
+可以省略 Property  参数名称，如下所示：
 
 ```powershell
 Sort-Object LastWriteTime, Name
@@ -136,7 +136,7 @@ sort LastWriteTime, Name
 Sort-Object @{ e = 'LastWriteTime'; d = $true }, @{ e = 'Name'; a = $true }
 ```
 
-在此示例中，e 代表 Expression，d 代表 Descending，a 代表 Ascending。
+在此示例中，e  代表 Expression  ，d  代表 Descending  ，a  代表 Ascending  。
 
 为了提高可读性，可以将哈希表置于一个单独的变量中：
 

@@ -3,10 +3,10 @@ ms.date: 08/09/2017
 keywords: powershell, cmdlet, 下载, 安装, 设置, windows 10, windows 8.1, windows 8.0, windows 7
 title: 安装 Windows PowerShell
 ms.openlocfilehash: 345cde8012bece730e7217ed16be6175ad26bb28
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62086470"
 ---
 # <a name="installing-windows-powershell"></a>安装 Windows PowerShell
@@ -35,19 +35,19 @@ Windows 7 SP1 | 单击左下角的 Windows 图标，在搜索框中键入 PowerS
 版本 | Location
 -- | --
 Windows 10 | 单击左下角的 Windows 图标，键入 ISE
-Windows 8.1、8.0 | 在“开始”屏幕上，键入 PowerShell ISE。<br/>如果位于桌面，请单击左下角的 Windows 图标，键入 PowerShell ISE
+Windows 8.1、8.0 | 在“开始”屏幕上，键入 PowerShell ISE  。<br/>如果位于桌面，请单击左下角的 Windows 图标，键入 PowerShell ISE 
 Windows 7 SP1 | 单击左下角的 Windows 图标，在搜索框中键入 PowerShell
 
 ## <a name="finding-powershell-in-windows-server-versions"></a>在 Windows Server 版本中查找 PowerShell
 
 从 Windows Server 2008 R2 开始，安装操作系统可不包含图形用户界面 (GUI)。
-不含 GUI 的 Windows Server 版本名为“核心”版本，包含 GUI 的版本名为“桌面”版本。
+不含 GUI 的 Windows Server 版本名为“核心”  版本，包含 GUI 的版本名为“桌面”  版本。
 
 ### <a name="windows-server-core-editions"></a>Windows Server 核心版本
 
 在所有核心版本中，登录到服务器时会显示 Windows 命令提示符窗口。
 
-键入 `powershell` 并按“Enter”可在命令提示符会话内启动 PowerShell。
+键入 `powershell` 并按“Enter”  可在命令提示符会话内启动 PowerShell。
 键入 `exit` 可终止 PowerShell 会话并返回命令提示符。
 
 ### <a name="windows-server-desktop-editions"></a>Windows Server 桌面版本
@@ -59,7 +59,7 @@ Windows 7 SP1 | 单击左下角的 Windows 图标，在搜索框中键入 PowerS
 
 ## <a name="how-to-check-the-version-of-powershell"></a>如何检查 PowerShell 版本
 
-若要查看已安装的 PowerShell 版本，请启动 PowerShell 控制台（或 ISE），键入 `$PSVersionTable`，然后按“Enter”。 查找 `PSVersion` 值。
+若要查看已安装的 PowerShell 版本，请启动 PowerShell 控制台（或 ISE），键入 `$PSVersionTable`，然后按“Enter”  。 查找 `PSVersion` 值。
 
 ## <a name="upgrading-existing-windows-powershell"></a>升级现有 Windows PowerShell
 
@@ -83,7 +83,7 @@ Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.c
 
 ## <a name="need-azure-powershell"></a>需要 Azure PowerShell
 
-如需要 Azure PowerShell，请先参阅 [Azure PowerShell 概述](/powershell/azure/overview)。
+如需要 Azure PowerShell  ，请先参阅 [Azure PowerShell 概述](/powershell/azure/overview)。
 
 或者，可能需要参阅[安装和配置 Azure PowerShell](/powershell/azure/install-az-ps)
 

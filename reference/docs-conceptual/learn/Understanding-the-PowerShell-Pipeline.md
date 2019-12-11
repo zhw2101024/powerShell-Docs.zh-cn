@@ -3,10 +3,10 @@ ms.date: 08/23/2018
 keywords: powershell,cmdlet
 title: 了解 PowerShell 管道
 ms.openlocfilehash: 3033a4fe1a704fbbfa76e6d38662c8b22c3dbd9b
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030389"
 ---
 # <a name="understanding-pipelines"></a>了解管道
@@ -66,7 +66,7 @@ d-----        8/23/2018   5:07 PM                catroot2
 - `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`
 
 > [!NOTE]
-> 并非所有的 PowerShell 主机都支持 Paging 参数。 例如，当你尝试在 PowerShell ISE 中使用 Paging 参数时，会看到以下错误：
+> 并非所有的 PowerShell 主机都支持 Paging  参数。 例如，当你尝试在 PowerShell ISE 中使用 Paging  参数时，会看到以下错误：
 >
 > ```Output
 > out-lineoutput : The method or operation is not implemented.
@@ -114,4 +114,4 @@ Provider     Property   System.Management.Automation.ProviderInfo Provider {get;
 ProviderPath Property   string ProviderPath {get;}
 ```
 
-`Get-Location` 返回 PathInfo 对象，其中包含当前路径和其他信息。
+`Get-Location` 返回 PathInfo  对象，其中包含当前路径和其他信息。

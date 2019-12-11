@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell ISE 的键盘快捷方式
 ms.openlocfilehash: f71aea16f7a98ff7b6427237dc90104e4ea0db71
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030923"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE 的键盘快捷方式
@@ -19,7 +19,7 @@ ms.locfileid: "67030923"
 
 |操作|键盘快捷方式|用于|
 |----------|----------------------|----------|
-|**帮助**|F1|脚本窗格“**重要提示**”：你可以指定 F1 帮助来自 Web 上的 TechNet 库或下载的帮助（请参阅“更新帮助”）。 若要选择，请单击“工具”、“选项”，然后在“常规设置”选项卡上，设置或清除“使用本地帮助内容，而不是联机内容”。|
+|**帮助**|F1|脚本窗格“**重要提示**”：你可以指定 F1 帮助来自 Web 上的 TechNet 库或下载的帮助（请参阅“更新帮助”）。 若要选择，请单击“工具”、“选项”，然后在“常规设置”选项卡上，设置或清除“使用本地帮助内容，而不是联机内容”。    |
 |**复制**|CTRL+C|脚本窗格、命令窗格、输出窗格|
 |**剪切**|CTRL+X|脚本窗格、命令窗格|
 |**展开或折叠大纲**|Ctrl+M|脚本窗格|
@@ -91,7 +91,7 @@ ms.locfileid: "67030923"
 |**步入**|S|控制台窗格，调试脚本时|
 |**步越**|V|控制台窗格，调试脚本时|
 |**步出**|O|控制台窗格，调试脚本时|
-|重复上一命令（用于步入或步越）|Enter|控制台窗格，调试脚本时|
+|重复上一命令（用于步入或步越） |Enter|控制台窗格，调试脚本时|
 |**显示调用堆栈**|K|控制台窗格，调试脚本时|
 |**停止调试**|Q|控制台窗格，调试脚本时|
 |**列出脚本**|L|控制台窗格，调试脚本时|

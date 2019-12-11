@@ -3,10 +3,10 @@ ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 卸载 Windows PowerShell Web 访问
 ms.openlocfilehash: 22c874d766445dccedd8494097daf16c30fa66ff
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62058129"
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>卸载 Windows PowerShell Web 访问
@@ -37,15 +37,15 @@ ms.locfileid: "62058129"
 
 1. 执行以下操作之一，打开 Windows PowerShell 会话。
 
-    -   在 Windows 桌面上，右键单击任务栏上的 Windows PowerShell。
+    -   在 Windows 桌面上，右键单击任务栏上的 Windows PowerShell  。
 
     -   在 Windows **开始**屏幕上，单击**Windows PowerShell**。
 
-2. 键入 `Uninstall-PswaWebApplication`，然后按 Enter。
+2. 键入 `Uninstall-PswaWebApplication`，然后按 Enter  。
    1. 如果指定了自己的自定义网站名称，请将 `-WebsiteName` 参数添加到命令中，并指定网站名称。
 
         `Uninstall-PswaWebApplication -WebsiteName <web-site-name>`
-   1. 如果使用了自定义 Web 应用程序（不是默认应用程序 pswa），请将 `-WebApplicationName` 参数添加到命令中，并指定 Web 应用程序的名称。
+   1. 如果使用了自定义 Web 应用程序（不是默认应用程序 pswa），请将 `-WebApplicationName` 参数添加到命令中，并指定 Web 应用程序的名称  。
 
         `Uninstall-PswaWebApplication -WebApplicationName <web-application-name>`
    1. 如果你使用的是测试证书，则将 `DeleteTestCertificate` 参数添加到 cmdlet（如以下示例所述）。
@@ -68,9 +68,9 @@ ms.locfileid: "62058129"
 
         Uninstall-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -Restart
 
-1. 删除完成后，验证你已删除 Windows PowerShell Web 访问，方法是打开服务管理器中的“所有服务器”页面，选择要删除其功能的服务器，然后在选定服务器的页面上查看“角色和功能”磁贴。
+1. 删除完成后，验证你已删除 Windows PowerShell Web 访问，方法是打开服务管理器中的“所有服务器”  页面，选择要删除其功能的服务器，然后在选定服务器的页面上查看“角色和功能”  磁贴。
 
-    也可针对选定的服务器运行 `Get-WindowsFeature` cmdlet (Get-WindowsFeature -ComputerName &lt;computer_name&gt;)，以查看该服务器上安装的角色和功能的列表。
+    也可针对选定的服务器运行 `Get-WindowsFeature` cmdlet (Get-WindowsFeature -ComputerName &lt;computer_name&gt;)，以查看该服务器上安装的角色和功能的列表  。
 
 ## <a name="custom-uninstallation"></a>自定义卸载
 
@@ -81,9 +81,9 @@ ms.locfileid: "62058129"
 
 1. 通过执行以下操作之一，打开 IIS 管理器控制台。 如果该控制台已经打开，则继续执行下一步。
 
-    -   在 Windows 桌面上，启动服务器管理器，方法是单击 Windows 任务栏中的“服务器管理器”。 在“服务器管理器”的**工具**菜单中，单击**Internet Information Services (IIS) Manager**。
+    -   在 Windows 桌面上，启动服务器管理器，方法是单击 Windows 任务栏中的“服务器管理器”  。 在“服务器管理器”的**工具**菜单中，单击**Internet Information Services (IIS) Manager**。
 
-    -   在 Windows“开始”屏幕上，键入“Internet 信息服务 (IIS) 管理器”名称的任何部分。 当快捷方式在“应用程序”结果中显示时，单击它。
+    -   在 Windows“开始”  屏幕上，键入“Internet 信息服务 (IIS) 管理器”  名称的任何部分。 当快捷方式在“应用程序”  结果中显示时，单击它。
 
 1. 在 IIS 管理器树窗格中，选择运行 Windows PowerShell Web 访问 Web 应用程序的网站。
 
@@ -91,7 +91,7 @@ ms.locfileid: "62058129"
 
 1. 在树窗格中，右键单击运行 Windows PowerShell Web 访问 Web 应用程序的网站中的 Web 应用程序，然后单击**删除**。
 
-1. 在树窗格中，选择“应用程序池”，并选择 Windows PowerShell Web 访问应用程序池文件夹，单击“操作”窗格中的“停止”，然后单击内容窗格中的“删除”。
+1. 在树窗格中，选择“应用程序池”  ，并选择 Windows PowerShell Web 访问应用程序池文件夹，单击“操作”  窗格中的“停止”  ，然后单击内容窗格中的“删除”  。
 
 1. 关闭 IIS 管理器。
 
@@ -105,15 +105,15 @@ ms.locfileid: "62058129"
 
 1. 如果服务器管理器已经打开，则继续执行下一步。 如果服务器管理器尚未打开，请执行以下任一操作打开它。
 
-    -   在 Windows 桌面上，启动服务器管理器，方法是单击 Windows 任务栏中的“服务器管理器”。
+    -   在 Windows 桌面上，启动服务器管理器，方法是单击 Windows 任务栏中的“服务器管理器”  。
 
     -   在 Windows **开始**屏幕上，单击**服务器管理器**。
 
 1. 在**管理**菜单上，单击**删除角色和功能**。
 
-1. 在“选择目标服务器”页面上，选择你想删除其功能的服务器或离线 VHD。 若要选择离线的 VHD，请选择安装 VHD 的服务器，然后选择 VHD 文件。 选择目标服务器后，单击**下一步**。
+1. 在“选择目标服务器”  页面上，选择你想删除其功能的服务器或离线 VHD。 若要选择离线的 VHD，请选择安装 VHD 的服务器，然后选择 VHD 文件。 选择目标服务器后，单击**下一步**。
 
-1. 再次单击“下一步”，跳到“删除功能”页面。
+1. 再次单击“下一步”  ，跳到“删除功能”  页面。
 
 1. 清除**Windows PowerShell Web 访问**复选框，然后单击**下一步**。
 

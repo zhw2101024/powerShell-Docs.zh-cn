@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: ISEFile 对象
 ms.openlocfilehash: ebb5a35f6ea9d93eab633b9f4e6c84e4fddd6ae8
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67028955"
 ---
 # <a name="the-isefile-object"></a>ISEFile 对象
@@ -51,8 +51,8 @@ $myfile.Encoding
 
 ### <a name="exceptions"></a>例外
 
-- **System.ArgumentNullException**：filename 参数为 Null。
-- **System.ArgumentException**：filename 参数为空。
+- **System.ArgumentNullException**：filename  参数为 Null。
+- **System.ArgumentException**：filename  参数为空。
 - **System.IO.IOException**：无法保存文件。
 
 ```powershell
@@ -69,7 +69,7 @@ $psISE.CurrentFile.SaveAs($fullPath, [System.Text.Encoding]::UTF8)
 
 在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
-只读属性，可获取包含此文件显示名称的字符串。 名称显示在编辑器顶部的“文件”选项卡上。 名称结尾处存在星号 \(\*\)，表示文件具有未保存的更改。
+只读属性，可获取包含此文件显示名称的字符串。 名称显示在编辑器顶部的  “文件”选项卡上。 名称结尾处存在星号 \(\*\)，表示文件具有未保存的更改。
 
 ```powershell
 # Shows the display name of the file.

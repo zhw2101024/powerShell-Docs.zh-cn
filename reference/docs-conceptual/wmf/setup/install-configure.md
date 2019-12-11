@@ -5,10 +5,10 @@ keywords: wmf,powershell,安装程序
 contributor: keithb
 title: 安装和配置 WMF 5.1
 ms.openlocfilehash: 241f52be011e1afc87d25c9a934db0c1e0361b76
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71147687"
 ---
 # <a name="install-and-configure-wmf-51"></a>安装和配置 WMF 5.1
