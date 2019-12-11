@@ -4,10 +4,10 @@ contributor: keithb
 keywords: 库,powershell,cmdlet,psget
 title: 预发行模块版本
 ms.openlocfilehash: eced067dd21082de0db653daf3b838217154f1dd
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71328138"
 ---
 # <a name="prerelease-module-versions"></a>预发行模块版本

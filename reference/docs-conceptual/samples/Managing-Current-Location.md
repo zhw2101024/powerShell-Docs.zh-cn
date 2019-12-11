@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 管理当前位置
 ms.openlocfilehash: 42ab56759dec882d140f813c8614e578957722b3
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030196"
 ---
 # <a name="managing-current-location"></a>管理当前位置
@@ -49,9 +49,9 @@ C:\WINDOWS
 
 可将 **-PassThru** 参数与 Windows PowerShell 中的许多 Set 命令结合使用，以在没有默认输出的情况下返回有关结果的信息。
 
-采用在大多数 UNIX 和 Windows 命令 shell 中指定路径的相同方式，指定相对于当前位置的路径。 在相对路径的标准表示法中，句点 (**.**) 表示当前文件夹，而双句点 (**..**) 表示当前位置的父目录。
+采用在大多数 UNIX 和 Windows 命令 shell 中指定路径的相同方式，指定相对于当前位置的路径。 在相对路径的标准表示法中，句点 ( **.** ) 表示当前文件夹，而双句点 ( **..** ) 表示当前位置的父目录。
 
-例如，如果你位于 **C:\\Windows** 文件夹中，则句点 (**.**) 表示 **C:\\Windows**，而双句点 (**..**) 表示 **C:**。 你可以从当前位置更改到 C: 驱动器的根目录，方法是键入：
+例如，如果你位于 **C:\\Windows** 文件夹中，则句点 ( **.** ) 表示 **C:\\Windows**，而双句点 ( **..** ) 表示 **C:** 。 你可以从当前位置更改到 C: 驱动器的根目录，方法是键入：
 
 ```
 PS> Set-Location -Path .. -PassThru
@@ -61,7 +61,7 @@ Path
 C:\
 ```
 
-相同的技术适用于非文件系统驱动器（例如 **HKLM:**）的 Windows PowerShell 驱动器。 可以在注册表中将你的位置设置为 HKLM\\Software 项，方法是键入：
+相同的技术适用于非文件系统驱动器（例如 **HKLM:** ）的 Windows PowerShell 驱动器。 可以在注册表中将你的位置设置为 HKLM\\Software 项，方法是键入：
 
 ```
 PS> Set-Location -Path HKLM:\SOFTWARE -PassThru

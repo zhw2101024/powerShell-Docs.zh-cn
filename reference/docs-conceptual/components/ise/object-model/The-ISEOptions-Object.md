@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: ISEOptions 对象
 ms.openlocfilehash: e9dcb13c14212ec4aec40a7f163e2ed56ceea6f9
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67028927"
 ---
 # <a name="the-iseoptions-object"></a>ISEOptions 对象
@@ -434,7 +434,7 @@ $psISE.Options.ShowWarningBeforeSavingOnRun = $true
 
 在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
-指定在不同 PowerShell 选项卡中打开同一个文件时是否显示警告消息。 如果设置为“$true”，则在多个选项卡中打开同一个文件会显示以下消息："已在其他 Windows PowerShell 选项卡中打开此文件的副本。对此文件所做的更改将影响所有打开的副本。” 默认值为 **$true**。
+指定在不同 PowerShell 选项卡中打开同一个文件时是否显示警告消息。 如果设置为“$true”  ，则在多个选项卡中打开同一个文件会显示以下消息："已在其他 Windows PowerShell 选项卡中打开此文件的副本。对此文件所做的更改将影响所有打开的副本。” 默认值为 **$true**。
 
 ```powershell
 # Enable the warning message when a file is

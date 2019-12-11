@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: dsc,powershell,配置,安装程序
 title: DSC Environment 资源
 ms.openlocfilehash: d6d3b4a2086be28fbfa2bf200acef9b13b7b7825
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71954714"
 ---
 # <a name="dsc-environment-resource"></a>DSC Environment 资源

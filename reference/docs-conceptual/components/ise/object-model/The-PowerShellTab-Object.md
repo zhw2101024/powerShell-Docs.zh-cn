@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: PowerShellTab 对象
 ms.openlocfilehash: bfa11b553f97b7b27b974855ff4e8f1a48c33fea
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67028905"
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab 对象
@@ -39,11 +39,11 @@ $psISE.PowerShellTabs[1].Invoke({dir})
 在 PowerShell 选项卡中运行给定的脚本。
 
 > [!NOTE]
-> 此方法仅适用于其他 PowerShell 选项卡，不适用于运行它的 PowerShell 选项卡。 运行脚本块，并且从该脚本返回的任何值将返回到从中调用该命令的运行环境。 如果命令运行所花费的时间大于指定的 millesecondsTimeout 值，则该命令将失败并出现异常：“操作已超时。”
+> 此方法仅适用于其他 PowerShell 选项卡，不适用于运行它的 PowerShell 选项卡。 运行脚本块，并且从该脚本返回的任何值将返回到从中调用该命令的运行环境。 如果命令运行所花费的时间大于指定的 millesecondsTimeout  值，则该命令将失败并出现异常：“操作已超时。”
 
 **Script** - 要运行的脚本块的 System.Management.Automation.ScriptBlock 或字符串。
 
-**\[useNewScope\]** -  可选的布尔值，默认值为 $true，如果设置为 $true，则会新建作用域以在其中运行命令。 它不会修改该命令指定的 PowerShell 选项卡的运行时环境。
+**\[useNewScope\]** -  可选的布尔值，默认值为 $true，如果设置为 $true，则会新建作用域以在其中运行命令   。 它不会修改该命令指定的 PowerShell 选项卡的运行时环境。
 
 **\[millisecondsTimeout\]** - 可选整数，默认值为 **500**。
 如果在指定时间内未完成命令，则该命令将生成 **TimeoutException** 并显示消息“操作已超时。”
@@ -169,7 +169,7 @@ $psISE.CurrentPowerShellTab.output.clear()
 
 在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
-只读属性，可获取当前提示文本。 注意：Prompt 函数可以被用户的配置文件覆盖。 如果结果不止一个简单的字符串，则此属性不会返回任何内容。
+只读属性，可获取当前提示文本。 注意：Prompt 函数可以被用户的配置文件覆盖  。 如果结果不止一个简单的字符串，则此属性不会返回任何内容。
 
 ```powershell
 # Gets the current prompt text.

@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell ISE 脚本对象模型的用途
 ms.openlocfilehash: e59593ef06911c709e92fa7a1eabd96d2636ca30
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030910"
 ---
 # <a name="purpose-of-the-windows-powershell-ise-scripting-object-model"></a>Windows PowerShell ISE 脚本对象模型的用途

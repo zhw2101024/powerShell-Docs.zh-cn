@@ -3,10 +3,10 @@ ms.date: 06/27/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell Web 访问的授权规则和安全功能
 ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62058414"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 访问的授权规则和安全功能
@@ -27,7 +27,7 @@ ms.locfileid: "62058414"
 Windows Server 2012 R2 中的 [Add-PswaAuthorizationRule](/powershell/module/powershellwebaccess/add-pswaauthorizationrule?view=winserver2012r2-ps) 和 [Test-PswaAuthorizationRule](/powershell/module/powershellwebaccess/test-pswaauthorizationrule?view=winserver2012r2-ps) 包含一个 Credential 参数，该参数使你可从远程计算机或在活动的 Windows PowerShell Web 访问会话中添加和测试 Windows PowerShell Web 访问授权规则。 与其他具有 Credential 参数的 Windows PowerShell cmdlet 一样，你可以指定一个 PSCredential 对象作为该参数的值。 若要创建一个包含要传递到远程计算机的凭据的 PSCredential 对象，请运行 [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential) cmdlet。
 
 Windows PowerShell Web 访问身份验证规则是允许列表规则。 每条规则定义了用户、目标计算机和特定的 Windows PowerShell [会话配置](/powershell/module/microsoft.powershell.core/about/about_session_configurations?view=powershell-5.1)（_也称作终结点或运行空间_）在特定目标计算机上的允许连接。
-有关运行空间的说明，请参阅 [Beginning Use of PowerShell Runspaces](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)（PowerShell 运行空间入门）
+有关运行空间的说明，请参阅 [Beginning Use of PowerShell Runspaces](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)（PowerShell 运行空间入门） 
 
 > [!IMPORTANT]
 > 用户仅需要一条可访问的规则。 如果用户有权从基于 Web 的控制台访问一台具有所有语言访问权限或仅可访问 Windows PowerShell 远程管理 cmdlet 的计算机，用户可登录（或跳到）其他与第一台目标计算机连接的计算机。 配置 Windows PowerShell Web 访问的最安全方法是仅允许用户访问受限制的会话配置，从而可让用户完成他们通常需要远程执行的特定任务。
@@ -85,7 +85,7 @@ Windows PowerShell Web 访问的最后安全层是目标计算机自身的安全
 
 默认情况下，Windows PowerShell Web 访问使用主要用户名和密码，在网关和目标计算机上进行身份验证。 在标题为**可选的连接设置**部分，基于 Web 的登录页面为用户提供一个为目标计算机提供其他凭据的选项（如有必要）。 如果用户不提供备用凭据，则照样可使用连接网关时所用的主要用户名和密码，连接目标计算机。
 
-授权规则可让用户访问特定的会话配置。 可以为 Windows PowerShell Web 访问创建受限的运行空间或会话配置，并可让特定用户在登录到 Windows PowerShell Web 访问时仅连接到特定的会话配置。 你可使用访问控制列表 (ACL) 确定哪个用户具有访问特定终结点的权限，并使用本部分中的授权规则进一步限制特定用户组合访问终结点的权限。 有关受限运行空间的详细信息，请参阅 [Creating a constrained runspace](https://msdn.microsoft.com/library/dn614668)（创建受限运行空间）。
+授权规则可让用户访问特定的会话配置。 可以为 Windows PowerShell Web 访问创建受限的运行空间  或会话配置，并可让特定用户在登录到 Windows PowerShell Web 访问时仅连接到特定的会话配置。 你可使用访问控制列表 (ACL) 确定哪个用户具有访问特定终结点的权限，并使用本部分中的授权规则进一步限制特定用户组合访问终结点的权限。 有关受限运行空间的详细信息，请参阅 [Creating a constrained runspace](https://msdn.microsoft.com/library/dn614668)（创建受限运行空间）。
 
 ### <a name="configuring-authorization-rules"></a>配置授权规则
 
@@ -106,7 +106,7 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即星号 ( \* )。
 
    - 在 Windows **开始**屏幕上，右键单击**Windows PowerShell**，然后单击**以管理员身份运行**。
 
-2. 使用会话配置限制用户访问的可选步骤：
+2. 使用会话配置限制用户访问的可选步骤： 
 
    确保规则中已存在要使用的会话配置。
 
@@ -126,7 +126,7 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即星号 ( \* )。
       -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
    ```
 
-4. 验证规则是否是通过运行 Get-PswaAuthorizationRule cmdlet 或 `Test-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName** <computer_name>` 进行创建的。
+4. 验证规则是否是通过运行 Get-PswaAuthorizationRule  cmdlet 或 `Test-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName** <computer_name>` 进行创建的。
    例如，`Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214`。
 
 #### <a name="to-remove-an-authorization-rule"></a>删除授权规则
@@ -156,9 +156,9 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即星号 ( \* )。
 - 管理员创建名为 **PswaEndpoint** 的终结点，其中带有受限的运行空间。 然后管理员创建规则 `*,*,PswaEndpoint`，并将终结点分配给其他计算机。 规则可让所有用户访问所有带有终结点 **PswaEndpoint** 的计算机。
   如果这只是在规则集中定义的授权规则，则不能访问不带有终结点的计算机。
 
-- 管理员创建名为 **PswaEndpoint** 的终结点（其中带有受限的运行空间），并希望限制特定用户的访问权限。 管理员创建一组名为 Level1Support 的用户，并定义以下规则：Level1Support、\*、PswaEndpoint。 规则可让 **Level1Support** 组中的用户访问所有带有 **PswaEndpoint** 配置的计算机。 类似地，可限制对特定计算机组合的访问权限。
+- 管理员创建名为 **PswaEndpoint** 的终结点（其中带有受限的运行空间），并希望限制特定用户的访问权限。 管理员创建一组名为 Level1Support  的用户，并定义以下规则：  Level1Support、\*、PswaEndpoint。 规则可让 **Level1Support** 组中的用户访问所有带有 **PswaEndpoint** 配置的计算机。 类似地，可限制对特定计算机组合的访问权限。
 
-- 有些管理员为某些用户提供的访问权限要比其他用户多。 例如，管理员创建两个用户组，分别是 **Admins** 和 **BasicSupport**。 管理员还创建名为 PswaEndpoint 的终结点（其中带有受限的运行空间），并定义以下两项规则：**Admins,\*,\*** 和 **BasicSupport,\*,PswaEndpoint**. 第一条规则为**Admin**组中的所有用户提供访问所有计算机的权限，第二条规则为**BasicSupport**组中的所有用户仅提供访问那些带有**PswaEndpoint**的计算机的权限。
+- 有些管理员为某些用户提供的访问权限要比其他用户多。 例如，管理员创建两个用户组，分别是 **Admins** 和 **BasicSupport**。 管理员还创建名为 PswaEndpoint 的终结点（其中带有受限的运行空间），并定义以下两项规则  ：**Admins,\*,\*** 和 **BasicSupport,\*,PswaEndpoint**. 第一条规则为**Admin**组中的所有用户提供访问所有计算机的权限，第二条规则为**BasicSupport**组中的所有用户仅提供访问那些带有**PswaEndpoint**的计算机的权限。
 
 - 管理员已设置专用测试环境，希望可让所有授权的网络用户通过他们经常访问的网络访问所有计算机，并持有对所有他们经常访问的会话配置的访问权限。 因为这是专用测试环境，管理员创建了不安全的授权规则。 - 管理员运行的 cmdlet `Add-PswaAuthorizationRule * * *`，使用通配符 **\*** 来表示所有用户、所有计算机和所有配置。 - 此规则与下列各项等效：`Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`。
 
@@ -178,7 +178,7 @@ Add-PswaAuthorizationRule -userName PswaServer\chrisLocal `
 
 1. 工作组网关服务器上的身份验证，方法是向授权规则添加采用 *server_name*\\*user_name* 格式的用户名
 
-2. 目标计算机上的身份验证，方法是使用“可选连接设置”区域的登录页面中提供的备用凭据
+2. 目标计算机上的身份验证，方法是使用“可选连接设置”  区域的登录页面中提供的备用凭据
 
    > [!NOTE]
    > 如果网关和目标计算机位于不同的工作组或域中，则必须在两个工作组计算机之间、两个域之间或工作组和域之间建立信任关系。 不能使用 Windows PowerShell Web 访问授权规则 cmdlet 配置此关系。 授权规则不会定义计算机之间的信任关系，它们仅可授权用户连接到特定目标计算机和会话配置。 有关如何配置不同域之间信任关系的详细信息，请参阅[创建域和林信任](https://technet.microsoft.com/library/cc794775.aspx)。
@@ -188,19 +188,19 @@ Add-PswaAuthorizationRule -userName PswaServer\chrisLocal `
 
 授权规则存储在 XML 文件中。 默认情况下，XML 文件的路径名称是 `$env:windir\Web\PowershellWebAccess\data\AuthorizationRules.xml`。
 
-授权规则 XML 文件的路径存储在 powwa.config 文件中，可在 `$env:windir\Web\PowershellWebAccess\data` 中找到。 管理员可随时将参考路径更改为 **powwa.config** 中的默认路径，以满足首选项或要求。 允许管理员更改文件的位置，可让多个 Windows PowerShell Web 访问网关在需要此类配置的情况下，使用相同的授权规则。
+授权规则 XML 文件的路径存储在 powwa.config  文件中，可在 `$env:windir\Web\PowershellWebAccess\data` 中找到。 管理员可随时将参考路径更改为 **powwa.config** 中的默认路径，以满足首选项或要求。 允许管理员更改文件的位置，可让多个 Windows PowerShell Web 访问网关在需要此类配置的情况下，使用相同的授权规则。
 
 ## <a name="session-management"></a>会话管理
 
-默认情况下，Windows PowerShell Web 访问限制一名用户一次访问三个会话。 可在 IIS 管理器中编辑 Web 应用程序的 web.config 文件，使每名用户可访问不同数目的会话。 web.config 文件的路径是 `$env:windir\Web\PowerShellWebAccess\wwwroot\Web.config`。
+默认情况下，Windows PowerShell Web 访问限制一名用户一次访问三个会话。 可在 IIS 管理器中编辑 Web 应用程序的 web.config 文件，使每名用户可访问不同数目的会话  。 web.config  文件的路径是 `$env:windir\Web\PowerShellWebAccess\wwwroot\Web.config`。
 
-默认情况下，如果编辑了任何设置，则会配置 IIS Web 服务器，以重启应用程序池。 例如，如果对 **web.config** 文件进行更改，则重新启动应用程序池。 由于 Windows PowerShell Web 访问使用内存中的会话状态，因此重启应用程序池时，登录到 Windows PowerShell Web 访问会话的用户将错过其会话。
+默认情况下，如果编辑了任何设置，则会配置 IIS Web 服务器，以重启应用程序池。 例如，如果对 **web.config** 文件进行更改，则重新启动应用程序池。 由于 Windows PowerShell Web 访问  使用内存中的会话状态，因此重启应用程序池时，登录到 Windows PowerShell Web 访问  会话的用户将错过其会话。
 
 ### <a name="setting-default-parameters-on-the-sign-in-page"></a>在登录页上设置默认参数
 
 如果您的 Windows PowerShell Web 访问网关在 Windows Server 2012 R2 上运行，您可以配置在 Windows PowerShell Web 访问登录页上显示的设置的默认值。 可以配置上一段所述的 **web.config** 文件中的值。 登录页设置的默认值位于 web.config 文件的 **appSettings** 部分中；以下是 **appSettings** 部分的示例。 其中许多设置的有效值与 Windows PowerShell 中 [New-PSSession](https://technet.microsoft.com/library/hh849717.aspx) cmdlet 的相应参数的有效值相同。
 
-例如，`defaultApplicationName` 键（如以下代码块中所示）是目标计算机上 $PSSessionApplicationName 首选项变量的值。
+例如，`defaultApplicationName` 键（如以下代码块中所示）是目标计算机上 $PSSessionApplicationName 首选项变量的值  。
 
 ```xml
   <appSettings>

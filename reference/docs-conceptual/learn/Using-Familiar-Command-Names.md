@@ -3,10 +3,10 @@ ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: 使用熟悉的命令名称
 ms.openlocfilehash: 30b33bc8739975c1a40e51c04a3ee4e426c199e7
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030890"
 ---
 # <a name="using-familiar-command-names"></a>使用熟悉的命令名称
@@ -15,9 +15,9 @@ PowerShell 支持别名以通过备用名称引用命令。 别名允许具有�
 
 别名将新名称与其他命令关联。 例如，PowerShell 具有名为 `Clear-Host` 的内部函数，该函数清空输出窗口。 可以在命令提示符下键入 `cls` 或 `clear` 别名。 PowerShell 解释这些别名并运行 `Clear-Host` 函数。
 
-此功能可帮助用户了解 PowerShell。 首先，大多数 cmd.exe 和 Unix 用户都要使用大量命令，用户通过名称已经了解这些命令。 PowerShell 等效项可能不会产生相同的结果。 但是，结果非常接近，用户可以在不知道 PowerShell 命令名称的情况下完成工作。 学习新的命令 shell 时，“手指记忆”是另一个令人沮丧的主要原因。 如果你已使用 cmd.exe 多年，则可能会条件反射地键入 `cls` 命令来清除屏幕。 如果没有 `Clear-Host` 的别名，则会收到一条错误消息，并且不知道如何操作才能清除输出。
+此功能可帮助用户了解 PowerShell。 首先，大多数 cmd.exe  和 Unix 用户都要使用大量命令，用户通过名称已经了解这些命令。 PowerShell 等效项可能不会产生相同的结果。 但是，结果非常接近，用户可以在不知道 PowerShell 命令名称的情况下完成工作。 学习新的命令 shell 时，“手指记忆”是另一个令人沮丧的主要原因。 如果你已使用 cmd.exe  多年，则可能会条件反射地键入 `cls` 命令来清除屏幕。 如果没有 `Clear-Host` 的别名，则会收到一条错误消息，并且不知道如何操作才能清除输出。
 
-以下列表显示可在 PowerShell 中使用的常见 cmd.exe 和 UNIX 命令：
+以下列表显示可在 PowerShell 中使用的常见 cmd.exe  和 UNIX 命令：
 
 |||||
 |-|-|-|-|
@@ -71,7 +71,7 @@ PowerShell 别名尝试兼顾清晰度和简洁性。 PowerShell 为常见名词
 | `Get-Command`  | gcm   |
 | `Get-Alias`    | gal   |
 
-熟悉 PowerShell 别名后，就很容易猜到 sal 别名指的是 `Set-Alias`。
+熟悉 PowerShell 别名后，就很容易猜到 sal  别名指的是 `Set-Alias`。
 
 ## <a name="creating-new-aliases"></a>创建新别名
 

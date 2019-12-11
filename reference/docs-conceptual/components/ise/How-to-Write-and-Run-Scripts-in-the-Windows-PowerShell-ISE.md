@@ -3,10 +3,10 @@ ms.date: 08/14/2018
 keywords: powershell,cmdlet
 title: 如何在 Windows PowerShell ISE 中编写和运行脚本
 ms.openlocfilehash: be54e26965a6d2f1472059820080a6a06c47dd26
-ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74117569"
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中编写和运行脚本

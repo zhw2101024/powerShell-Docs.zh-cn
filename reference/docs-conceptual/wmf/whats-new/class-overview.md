@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,安装程序
 title: 使用 PowerShell 类创建自定义类型
 ms.openlocfilehash: c2c50fb65ce4931fcf6ae529b4146df391c831c4
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71147837"
 ---
 # <a name="creating-custom-types-using-powershell-classes"></a>使用 PowerShell 类创建自定义类型

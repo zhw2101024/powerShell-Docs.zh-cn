@@ -3,15 +3,15 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 为多个对象重复执行任务 (ForEach Object)
 ms.openlocfilehash: 1442507c4213476f65df3401c1021f8d0fc31956
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030815"
 ---
 # <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>为多个对象重复执行任务 (ForEach-Object)
 
-ForEach-Object cmdlet 对当前管道对象使用脚本块和 `$_` 描述符，以便你可以对管道中的每个对象运行命令。 这可用于执行某些复杂的任务。
+ForEach-Object  cmdlet 对当前管道对象使用脚本块和 `$_` 描述符，以便你可以对管道中的每个对象运行命令。 这可用于执行某些复杂的任务。
 
 一种有帮助的情况就是操纵数据使其更为有用。 例如，WMI 的 Win32_LogicalDisk 类可用于返回每个本地磁盘的可用空间信息。 返回以字节表示的数据，但是，这也将增加阅读的难度：
 
