@@ -2,19 +2,19 @@
 ms.date: 09/13/2019
 title: 使用 FilterHashtable 创建 Get-WinEvent 查询
 ms.openlocfilehash: 35d18dc894d90e698b38395b79ff4cf395515909
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73444391"
 ---
-# <a name="creating-get-winevent-queries-with-filterhashtable"></a><span data-ttu-id="fa1ac-102">使用 FilterHashtable 创建 Get-WinEvent 查询</span><span class="sxs-lookup"><span data-stu-id="fa1ac-102">Creating Get-WinEvent queries with FilterHashtable</span></span>
+# <a name="creating-get-winevent-queries-with-filterhashtable"></a><span data-ttu-id="9d595-102">使用 FilterHashtable 创建 Get-WinEvent 查询</span><span class="sxs-lookup"><span data-stu-id="9d595-102">Creating Get-WinEvent queries with FilterHashtable</span></span>
 
-<span data-ttu-id="fa1ac-103">请参阅[通过 PowerShell 使用 FilterHashTable 筛选事件日志](https://devblogs.microsoft.com/scripting/use-filterhashtable-to-filter-event-log-with-powershell/)，以查看 2014 年 6 月 3 日的原创“脚本专家”博客文章。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-103">To read the original June 3, 2014 **Scripting Guy** blog post, see [Use FilterHashTable to Filter Event Log with PowerShell](https://devblogs.microsoft.com/scripting/use-filterhashtable-to-filter-event-log-with-powershell/).</span></span>
+<span data-ttu-id="9d595-103">请参阅[通过 PowerShell 使用 FilterHashTable 筛选事件日志](https://devblogs.microsoft.com/scripting/use-filterhashtable-to-filter-event-log-with-powershell/)，以查看 2014 年 6 月 3 日的原创“脚本专家”博客文章。 </span><span class="sxs-lookup"><span data-stu-id="9d595-103">To read the original June 3, 2014 **Scripting Guy** blog post, see [Use FilterHashTable to Filter Event Log with PowerShell](https://devblogs.microsoft.com/scripting/use-filterhashtable-to-filter-event-log-with-powershell/).</span></span>
 
-<span data-ttu-id="fa1ac-104">本文摘录自此原创博客文章，并说明了如何使用 `Get-WinEvent` cmdlet 的 FilterHashtable 参数筛选事件日志。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-104">This article is an excerpt of the original blog post and explains how to use the `Get-WinEvent` cmdlet's **FilterHashtable** parameter to filter event logs.</span></span> <span data-ttu-id="fa1ac-105">PowerShell 的 `Get-WinEvent` cmdlet 是一种功能强大的方法，可用于筛选 Windows 事件和诊断日志。</span><span class="sxs-lookup"><span data-stu-id="fa1ac-105">PowerShell's `Get-WinEvent` cmdlet is a powerful method to filter Windows event and diagnostic logs.</span></span> <span data-ttu-id="fa1ac-106">`Get-WinEvent` 查询使用 FilterHashtable 参数时，性能将得到改进。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-106">Performance improves when a `Get-WinEvent` query uses the **FilterHashtable** parameter.</span></span>
+<span data-ttu-id="9d595-104">本文摘录自此原创博客文章，并说明了如何使用 `Get-WinEvent` cmdlet 的 FilterHashtable 参数筛选事件日志。 </span><span class="sxs-lookup"><span data-stu-id="9d595-104">This article is an excerpt of the original blog post and explains how to use the `Get-WinEvent` cmdlet's **FilterHashtable** parameter to filter event logs.</span></span> <span data-ttu-id="9d595-105">PowerShell 的 `Get-WinEvent` cmdlet 是一种功能强大的方法，可用于筛选 Windows 事件和诊断日志。</span><span class="sxs-lookup"><span data-stu-id="9d595-105">PowerShell's `Get-WinEvent` cmdlet is a powerful method to filter Windows event and diagnostic logs.</span></span> <span data-ttu-id="9d595-106">`Get-WinEvent` 查询使用 FilterHashtable 参数时，性能将得到改进。 </span><span class="sxs-lookup"><span data-stu-id="9d595-106">Performance improves when a `Get-WinEvent` query uses the **FilterHashtable** parameter.</span></span>
 
-<span data-ttu-id="fa1ac-107">处理大型事件日志时，如果将对象沿管道下发到 `Where-Object` 命令，效率将较低。</span><span class="sxs-lookup"><span data-stu-id="fa1ac-107">When you work with large event logs, it's not efficient to send objects down the pipeline to a `Where-Object` command.</span></span> <span data-ttu-id="fa1ac-108">在 PowerShell 6 之前，`Get-EventLog` cmdlet 曾是另一个用于获取日志数据的方法。</span><span class="sxs-lookup"><span data-stu-id="fa1ac-108">Prior to PowerShell 6, the `Get-EventLog` cmdlet was another option to get log data.</span></span> <span data-ttu-id="fa1ac-109">例如，使用下面的命令筛选 Microsoft-Windows-Defrag 日志时，效率较低  ：</span><span class="sxs-lookup"><span data-stu-id="fa1ac-109">For example, the following commands are inefficient to filter the **Microsoft-Windows-Defrag** logs:</span></span>
+<span data-ttu-id="9d595-107">处理大型事件日志时，如果将对象沿管道下发到 `Where-Object` 命令，效率将较低。</span><span class="sxs-lookup"><span data-stu-id="9d595-107">When you work with large event logs, it's not efficient to send objects down the pipeline to a `Where-Object` command.</span></span> <span data-ttu-id="9d595-108">在 PowerShell 6 之前，`Get-EventLog` cmdlet 曾是另一个用于获取日志数据的方法。</span><span class="sxs-lookup"><span data-stu-id="9d595-108">Prior to PowerShell 6, the `Get-EventLog` cmdlet was another option to get log data.</span></span> <span data-ttu-id="9d595-109">例如，使用下面的命令筛选 Microsoft-Windows-Defrag 日志时，效率较低  ：</span><span class="sxs-lookup"><span data-stu-id="9d595-109">For example, the following commands are inefficient to filter the **Microsoft-Windows-Defrag** logs:</span></span>
 
 ```powershell
 Get-EventLog -LogName Application | Where-Object Source -Match defrag
@@ -22,7 +22,7 @@ Get-EventLog -LogName Application | Where-Object Source -Match defrag
 Get-WinEvent -LogName Application | Where-Object { $_.ProviderName -Match 'defrag' }
 ```
 
-<span data-ttu-id="fa1ac-110">下面的命令使用了可提升性能的哈希表：</span><span class="sxs-lookup"><span data-stu-id="fa1ac-110">The following command uses a hash table that improves the performance:</span></span>
+<span data-ttu-id="9d595-110">下面的命令使用了可提升性能的哈希表：</span><span class="sxs-lookup"><span data-stu-id="9d595-110">The following command uses a hash table that improves the performance:</span></span>
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -31,41 +31,41 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-## <a name="blog-posts-about-enumeration"></a><span data-ttu-id="fa1ac-111">关于枚举的博客文章</span><span class="sxs-lookup"><span data-stu-id="fa1ac-111">Blog posts about enumeration</span></span>
+## <a name="blog-posts-about-enumeration"></a><span data-ttu-id="9d595-111">关于枚举的博客文章</span><span class="sxs-lookup"><span data-stu-id="9d595-111">Blog posts about enumeration</span></span>
 
-<span data-ttu-id="fa1ac-112">本文提供了如何在哈希表中使用枚举值的相关信息。</span><span class="sxs-lookup"><span data-stu-id="fa1ac-112">This article presents information about how to use enumerated values in a hash table.</span></span> <span data-ttu-id="fa1ac-113">有关枚举的详细信息，请参阅  “脚本专家”博客文章。</span><span class="sxs-lookup"><span data-stu-id="fa1ac-113">For more information about enumeration, read these **Scripting Guy** blog posts.</span></span> <span data-ttu-id="fa1ac-114">若要创建用于返回枚举值的函数，请参阅[枚举和值](https://devblogs.microsoft.com/scripting/hey-scripting-guy-weekend-scripter-enumerations-and-values)。</span><span class="sxs-lookup"><span data-stu-id="fa1ac-114">To create a function that returns the enumerated values, see [Enumerations and Values](https://devblogs.microsoft.com/scripting/hey-scripting-guy-weekend-scripter-enumerations-and-values).</span></span>
-<span data-ttu-id="fa1ac-115">有关详细信息，请参阅[关于枚举的“脚本专家”系列博客文章](https://devblogs.microsoft.com/scripting/?s=about+enumeration)。</span><span class="sxs-lookup"><span data-stu-id="fa1ac-115">For more information, see the [Scripting Guy series of blog posts about enumeration](https://devblogs.microsoft.com/scripting/?s=about+enumeration).</span></span>
+<span data-ttu-id="9d595-112">本文提供了如何在哈希表中使用枚举值的相关信息。</span><span class="sxs-lookup"><span data-stu-id="9d595-112">This article presents information about how to use enumerated values in a hash table.</span></span> <span data-ttu-id="9d595-113">有关枚举的详细信息，请参阅  “脚本专家”博客文章。</span><span class="sxs-lookup"><span data-stu-id="9d595-113">For more information about enumeration, read these **Scripting Guy** blog posts.</span></span> <span data-ttu-id="9d595-114">若要创建用于返回枚举值的函数，请参阅[枚举和值](https://devblogs.microsoft.com/scripting/hey-scripting-guy-weekend-scripter-enumerations-and-values)。</span><span class="sxs-lookup"><span data-stu-id="9d595-114">To create a function that returns the enumerated values, see [Enumerations and Values](https://devblogs.microsoft.com/scripting/hey-scripting-guy-weekend-scripter-enumerations-and-values).</span></span>
+<span data-ttu-id="9d595-115">有关详细信息，请参阅[关于枚举的“脚本专家”系列博客文章](https://devblogs.microsoft.com/scripting/?s=about+enumeration)。</span><span class="sxs-lookup"><span data-stu-id="9d595-115">For more information, see the [Scripting Guy series of blog posts about enumeration](https://devblogs.microsoft.com/scripting/?s=about+enumeration).</span></span>
 
-## <a name="hash-table-key-value-pairs"></a><span data-ttu-id="fa1ac-116">哈希表键值对</span><span class="sxs-lookup"><span data-stu-id="fa1ac-116">Hash table key-value pairs</span></span>
+## <a name="hash-table-key-value-pairs"></a><span data-ttu-id="9d595-116">哈希表键值对</span><span class="sxs-lookup"><span data-stu-id="9d595-116">Hash table key-value pairs</span></span>
 
-<span data-ttu-id="fa1ac-117">若要生成高效查询，请将 `Get-WinEvent` cmdlet 和 FilterHashtable 参数结合使用  。</span><span class="sxs-lookup"><span data-stu-id="fa1ac-117">To build efficient queries, use the `Get-WinEvent` cmdlet with the **FilterHashtable** parameter.</span></span>
-<span data-ttu-id="fa1ac-118">FilterHashtable 允许哈希表作为筛选器，以从 Windows 事件日志获取特定信息。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-118">**FilterHashtable** accepts a hash table as a filter to get specific information from Windows event logs.</span></span> <span data-ttu-id="fa1ac-119">哈希表将使用键值对。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-119">A hash table uses **key-value** pairs.</span></span> <span data-ttu-id="fa1ac-120">有关哈希表的详细信息，请参阅 [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables)。</span><span class="sxs-lookup"><span data-stu-id="fa1ac-120">For more information about hash tables, see [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables).</span></span>
+<span data-ttu-id="9d595-117">若要生成高效查询，请将 `Get-WinEvent` cmdlet 和 FilterHashtable 参数结合使用  。</span><span class="sxs-lookup"><span data-stu-id="9d595-117">To build efficient queries, use the `Get-WinEvent` cmdlet with the **FilterHashtable** parameter.</span></span>
+<span data-ttu-id="9d595-118">FilterHashtable 允许哈希表作为筛选器，以从 Windows 事件日志获取特定信息。 </span><span class="sxs-lookup"><span data-stu-id="9d595-118">**FilterHashtable** accepts a hash table as a filter to get specific information from Windows event logs.</span></span> <span data-ttu-id="9d595-119">哈希表将使用键值对。 </span><span class="sxs-lookup"><span data-stu-id="9d595-119">A hash table uses **key-value** pairs.</span></span> <span data-ttu-id="9d595-120">有关哈希表的详细信息，请参阅 [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables)。</span><span class="sxs-lookup"><span data-stu-id="9d595-120">For more information about hash tables, see [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables).</span></span>
 
-<span data-ttu-id="fa1ac-121">键值对均位于同一行时，必须使用分号将它们分隔开来。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-121">If the **key-value** pairs are on the same line, they must be separated by a semicolon.</span></span> <span data-ttu-id="fa1ac-122">每个键值对位于单独的行时，则无需使用分号。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-122">If each **key-value** pair is on a separate line, the semicolon isn't needed.</span></span> <span data-ttu-id="fa1ac-123">例如，本文将键值对均放置在单独的行上，因此未使用分号。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-123">For example, this article places **key-value** pairs on separate lines and doesn't use semicolons.</span></span>
+<span data-ttu-id="9d595-121">键值对均位于同一行时，必须使用分号将它们分隔开来。 </span><span class="sxs-lookup"><span data-stu-id="9d595-121">If the **key-value** pairs are on the same line, they must be separated by a semicolon.</span></span> <span data-ttu-id="9d595-122">每个键值对位于单独的行时，则无需使用分号。 </span><span class="sxs-lookup"><span data-stu-id="9d595-122">If each **key-value** pair is on a separate line, the semicolon isn't needed.</span></span> <span data-ttu-id="9d595-123">例如，本文将键值对均放置在单独的行上，因此未使用分号。 </span><span class="sxs-lookup"><span data-stu-id="9d595-123">For example, this article places **key-value** pairs on separate lines and doesn't use semicolons.</span></span>
 
-<span data-ttu-id="fa1ac-124">本示例使用多个 FilterHashtable 参数的键值对。  </span><span class="sxs-lookup"><span data-stu-id="fa1ac-124">This sample uses several of the **FilterHashtable** parameter's **key-value** pairs.</span></span> <span data-ttu-id="fa1ac-125">完成的查询包括 LogName、ProviderName、Keywords、ID 和 Level。     </span><span class="sxs-lookup"><span data-stu-id="fa1ac-125">The completed query includes **LogName**, **ProviderName**, **Keywords**, **ID**, and **Level**.</span></span>
+<span data-ttu-id="9d595-124">本示例使用多个 FilterHashtable 参数的键值对。  </span><span class="sxs-lookup"><span data-stu-id="9d595-124">This sample uses several of the **FilterHashtable** parameter's **key-value** pairs.</span></span> <span data-ttu-id="9d595-125">完成的查询包括 LogName、ProviderName、Keywords、ID 和 Level。     </span><span class="sxs-lookup"><span data-stu-id="9d595-125">The completed query includes **LogName**, **ProviderName**, **Keywords**, **ID**, and **Level**.</span></span>
 
-<span data-ttu-id="fa1ac-126">下表显示了允许的键值对，关于 [Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/Get-WinEvent)
-FilterHashtable  参数的文档也包含这些键值对。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-126">The accepted **key-value** pairs are shown in the following table and are included in the documentation for the [Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/Get-WinEvent)
+<span data-ttu-id="9d595-126">下表显示了允许的键值对，关于 [Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/Get-WinEvent)
+FilterHashtable  参数的文档也包含这些键值对。 </span><span class="sxs-lookup"><span data-stu-id="9d595-126">The accepted **key-value** pairs are shown in the following table and are included in the documentation for the [Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/Get-WinEvent)
 **FilterHashtable** parameter.</span></span>
 
-<span data-ttu-id="fa1ac-127">下表显示了键名称、数据类型以及数据值是否接受通配符。</span><span class="sxs-lookup"><span data-stu-id="fa1ac-127">The following table displays the key names, data types, and whether wildcard characters are accepted for a data value.</span></span>
+<span data-ttu-id="9d595-127">下表显示了键名称、数据类型以及数据值是否接受通配符。</span><span class="sxs-lookup"><span data-stu-id="9d595-127">The following table displays the key names, data types, and whether wildcard characters are accepted for a data value.</span></span>
 
-|    <span data-ttu-id="fa1ac-128">键名称</span><span class="sxs-lookup"><span data-stu-id="fa1ac-128">Key name</span></span>    | <span data-ttu-id="fa1ac-129">值数据类型</span><span class="sxs-lookup"><span data-stu-id="fa1ac-129">Value data type</span></span> | <span data-ttu-id="fa1ac-130">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="fa1ac-130">Accepts wildcard characters?</span></span> |
+|    <span data-ttu-id="9d595-128">键名称</span><span class="sxs-lookup"><span data-stu-id="9d595-128">Key name</span></span>    | <span data-ttu-id="9d595-129">值数据类型</span><span class="sxs-lookup"><span data-stu-id="9d595-129">Value data type</span></span> | <span data-ttu-id="9d595-130">是否接受通配符？</span><span class="sxs-lookup"><span data-stu-id="9d595-130">Accepts wildcard characters?</span></span> |
 | -------------- | --------------- | ---------------------------- |
-| <span data-ttu-id="fa1ac-131">LogName</span><span class="sxs-lookup"><span data-stu-id="fa1ac-131">LogName</span></span>        | `<String[]>`    | <span data-ttu-id="fa1ac-132">是</span><span class="sxs-lookup"><span data-stu-id="fa1ac-132">Yes</span></span>                          |
-| <span data-ttu-id="fa1ac-133">ProviderName</span><span class="sxs-lookup"><span data-stu-id="fa1ac-133">ProviderName</span></span>   | `<String[]>`    | <span data-ttu-id="fa1ac-134">是</span><span class="sxs-lookup"><span data-stu-id="fa1ac-134">Yes</span></span>                          |
-| <span data-ttu-id="fa1ac-135">路径</span><span class="sxs-lookup"><span data-stu-id="fa1ac-135">Path</span></span>           | `<String[]>`    | <span data-ttu-id="fa1ac-136">否</span><span class="sxs-lookup"><span data-stu-id="fa1ac-136">No</span></span>                           |
-| <span data-ttu-id="fa1ac-137">Keywords</span><span class="sxs-lookup"><span data-stu-id="fa1ac-137">Keywords</span></span>       | `<Long[]>`      | <span data-ttu-id="fa1ac-138">否</span><span class="sxs-lookup"><span data-stu-id="fa1ac-138">No</span></span>                           |
-| <span data-ttu-id="fa1ac-139">ID</span><span class="sxs-lookup"><span data-stu-id="fa1ac-139">ID</span></span>             | `<Int32[]>`     | <span data-ttu-id="fa1ac-140">否</span><span class="sxs-lookup"><span data-stu-id="fa1ac-140">No</span></span>                           |
-| <span data-ttu-id="fa1ac-141">层次</span><span class="sxs-lookup"><span data-stu-id="fa1ac-141">Level</span></span>          | `<Int32[]>`     | <span data-ttu-id="fa1ac-142">否</span><span class="sxs-lookup"><span data-stu-id="fa1ac-142">No</span></span>                           |
-| <span data-ttu-id="fa1ac-143">StartTime</span><span class="sxs-lookup"><span data-stu-id="fa1ac-143">StartTime</span></span>      | `<DateTime>`    | <span data-ttu-id="fa1ac-144">否</span><span class="sxs-lookup"><span data-stu-id="fa1ac-144">No</span></span>                           |
-| <span data-ttu-id="fa1ac-145">EndTime</span><span class="sxs-lookup"><span data-stu-id="fa1ac-145">EndTime</span></span>        | `<DateTime>`    | <span data-ttu-id="fa1ac-146">否</span><span class="sxs-lookup"><span data-stu-id="fa1ac-146">No</span></span>                           |
-| <span data-ttu-id="fa1ac-147">UserID</span><span class="sxs-lookup"><span data-stu-id="fa1ac-147">UserID</span></span>         | `<SID>`         | <span data-ttu-id="fa1ac-148">否</span><span class="sxs-lookup"><span data-stu-id="fa1ac-148">No</span></span>                           |
-| <span data-ttu-id="fa1ac-149">数据</span><span class="sxs-lookup"><span data-stu-id="fa1ac-149">Data</span></span>           | `<String[]>`    | <span data-ttu-id="fa1ac-150">否</span><span class="sxs-lookup"><span data-stu-id="fa1ac-150">No</span></span>                           |
-| `<named-data>` | `<String[]>`    | <span data-ttu-id="fa1ac-151">否</span><span class="sxs-lookup"><span data-stu-id="fa1ac-151">No</span></span>                           |
+| <span data-ttu-id="9d595-131">LogName</span><span class="sxs-lookup"><span data-stu-id="9d595-131">LogName</span></span>        | `<String[]>`    | <span data-ttu-id="9d595-132">是</span><span class="sxs-lookup"><span data-stu-id="9d595-132">Yes</span></span>                          |
+| <span data-ttu-id="9d595-133">ProviderName</span><span class="sxs-lookup"><span data-stu-id="9d595-133">ProviderName</span></span>   | `<String[]>`    | <span data-ttu-id="9d595-134">是</span><span class="sxs-lookup"><span data-stu-id="9d595-134">Yes</span></span>                          |
+| <span data-ttu-id="9d595-135">路径</span><span class="sxs-lookup"><span data-stu-id="9d595-135">Path</span></span>           | `<String[]>`    | <span data-ttu-id="9d595-136">否</span><span class="sxs-lookup"><span data-stu-id="9d595-136">No</span></span>                           |
+| <span data-ttu-id="9d595-137">Keywords</span><span class="sxs-lookup"><span data-stu-id="9d595-137">Keywords</span></span>       | `<Long[]>`      | <span data-ttu-id="9d595-138">否</span><span class="sxs-lookup"><span data-stu-id="9d595-138">No</span></span>                           |
+| <span data-ttu-id="9d595-139">ID</span><span class="sxs-lookup"><span data-stu-id="9d595-139">ID</span></span>             | `<Int32[]>`     | <span data-ttu-id="9d595-140">否</span><span class="sxs-lookup"><span data-stu-id="9d595-140">No</span></span>                           |
+| <span data-ttu-id="9d595-141">层次</span><span class="sxs-lookup"><span data-stu-id="9d595-141">Level</span></span>          | `<Int32[]>`     | <span data-ttu-id="9d595-142">否</span><span class="sxs-lookup"><span data-stu-id="9d595-142">No</span></span>                           |
+| <span data-ttu-id="9d595-143">StartTime</span><span class="sxs-lookup"><span data-stu-id="9d595-143">StartTime</span></span>      | `<DateTime>`    | <span data-ttu-id="9d595-144">否</span><span class="sxs-lookup"><span data-stu-id="9d595-144">No</span></span>                           |
+| <span data-ttu-id="9d595-145">EndTime</span><span class="sxs-lookup"><span data-stu-id="9d595-145">EndTime</span></span>        | `<DateTime>`    | <span data-ttu-id="9d595-146">否</span><span class="sxs-lookup"><span data-stu-id="9d595-146">No</span></span>                           |
+| <span data-ttu-id="9d595-147">UserID</span><span class="sxs-lookup"><span data-stu-id="9d595-147">UserID</span></span>         | `<SID>`         | <span data-ttu-id="9d595-148">否</span><span class="sxs-lookup"><span data-stu-id="9d595-148">No</span></span>                           |
+| <span data-ttu-id="9d595-149">数据</span><span class="sxs-lookup"><span data-stu-id="9d595-149">Data</span></span>           | `<String[]>`    | <span data-ttu-id="9d595-150">否</span><span class="sxs-lookup"><span data-stu-id="9d595-150">No</span></span>                           |
+| `<named-data>` | `<String[]>`    | <span data-ttu-id="9d595-151">否</span><span class="sxs-lookup"><span data-stu-id="9d595-151">No</span></span>                           |
 
-<span data-ttu-id="fa1ac-152">`<named-data>` 键表示命名事件数据字段。</span><span class="sxs-lookup"><span data-stu-id="fa1ac-152">The `<named-data>` key represents a named event data field.</span></span> <span data-ttu-id="fa1ac-153">例如，Perflib 事件 1008 可以包含以下事件数据：</span><span class="sxs-lookup"><span data-stu-id="fa1ac-153">For example, the Perflib event 1008 can contain the following event data:</span></span>
+<span data-ttu-id="9d595-152">`<named-data>` 键表示命名事件数据字段。</span><span class="sxs-lookup"><span data-stu-id="9d595-152">The `<named-data>` key represents a named event data field.</span></span> <span data-ttu-id="9d595-153">例如，Perflib 事件 1008 可以包含以下事件数据：</span><span class="sxs-lookup"><span data-stu-id="9d595-153">For example, the Perflib event 1008 can contain the following event data:</span></span>
 
 ```xml
 <EventData>
@@ -75,20 +75,20 @@ FilterHashtable  参数的文档也包含这些键值对。 </span><span class="
 </EventData>
 ```
 
-<span data-ttu-id="fa1ac-154">可以使用以下命令查询这些事件：</span><span class="sxs-lookup"><span data-stu-id="fa1ac-154">You can query for these events using the following command:</span></span>
+<span data-ttu-id="9d595-154">可以使用以下命令查询这些事件：</span><span class="sxs-lookup"><span data-stu-id="9d595-154">You can query for these events using the following command:</span></span>
 
 ```powershell
 Get-WinEvent -FilterHashtable @{LogName='Application'; 'Service'='Bits'}
 ```
 
 > [!NOTE]
-> <span data-ttu-id="fa1ac-155">PowerShell 6 中添加了查询 `<named-data>` 的功能。</span><span class="sxs-lookup"><span data-stu-id="fa1ac-155">The ability to query for `<named-data>` was added in PowerShell 6.</span></span>
+> <span data-ttu-id="9d595-155">PowerShell 6 中添加了查询 `<named-data>` 的功能。</span><span class="sxs-lookup"><span data-stu-id="9d595-155">The ability to query for `<named-data>` was added in PowerShell 6.</span></span>
 
-## <a name="building-a-query-with-a-hash-table"></a><span data-ttu-id="fa1ac-156">使用哈希表生成查询</span><span class="sxs-lookup"><span data-stu-id="fa1ac-156">Building a query with a hash table</span></span>
+## <a name="building-a-query-with-a-hash-table"></a><span data-ttu-id="9d595-156">使用哈希表生成查询</span><span class="sxs-lookup"><span data-stu-id="9d595-156">Building a query with a hash table</span></span>
 
-<span data-ttu-id="fa1ac-157">若要验证结果并解决问题，它帮助生成一次包含一个键值对的哈希表。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-157">To verify results and troubleshoot problems, it helps to build the hash table one **key-value** pair at a time.</span></span> <span data-ttu-id="fa1ac-158">查询从“Application”日志获取数据。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-158">The query gets data from the **Application** log.</span></span> <span data-ttu-id="fa1ac-159">哈希表等效于 `Get-WinEvent –LogName Application`。</span><span class="sxs-lookup"><span data-stu-id="fa1ac-159">The hash table is equivalent to `Get-WinEvent –LogName Application`.</span></span>
+<span data-ttu-id="9d595-157">若要验证结果并解决问题，它帮助生成一次包含一个键值对的哈希表。 </span><span class="sxs-lookup"><span data-stu-id="9d595-157">To verify results and troubleshoot problems, it helps to build the hash table one **key-value** pair at a time.</span></span> <span data-ttu-id="9d595-158">查询从“Application”日志获取数据。 </span><span class="sxs-lookup"><span data-stu-id="9d595-158">The query gets data from the **Application** log.</span></span> <span data-ttu-id="9d595-159">哈希表等效于 `Get-WinEvent –LogName Application`。</span><span class="sxs-lookup"><span data-stu-id="9d595-159">The hash table is equivalent to `Get-WinEvent –LogName Application`.</span></span>
 
-<span data-ttu-id="fa1ac-160">首先创建 `Get-WinEvent` 查询。</span><span class="sxs-lookup"><span data-stu-id="fa1ac-160">To begin, create the `Get-WinEvent` query.</span></span> <span data-ttu-id="fa1ac-161">使用 FilterHashtable 参数的键值对，其中键为“LogName”，值为“Application”。    </span><span class="sxs-lookup"><span data-stu-id="fa1ac-161">Use the **FilterHashtable** parameter's **key-value** pair with the key, **LogName**, and the value, **Application**.</span></span>
+<span data-ttu-id="9d595-160">首先创建 `Get-WinEvent` 查询。</span><span class="sxs-lookup"><span data-stu-id="9d595-160">To begin, create the `Get-WinEvent` query.</span></span> <span data-ttu-id="9d595-161">使用 FilterHashtable 参数的键值对，其中键为“LogName”，值为“Application”。    </span><span class="sxs-lookup"><span data-stu-id="9d595-161">Use the **FilterHashtable** parameter's **key-value** pair with the key, **LogName**, and the value, **Application**.</span></span>
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -96,11 +96,11 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-<span data-ttu-id="fa1ac-162">继续使用 ProviderName 键生成哈希表。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-162">Continue to build the hash table with the **ProviderName** key.</span></span> <span data-ttu-id="fa1ac-163">ProviderName 是在“Windows 事件查看器”的“源”字段中显示的名称。   </span><span class="sxs-lookup"><span data-stu-id="fa1ac-163">The **ProviderName** is the name that appears in the **Source** field in the **Windows Event Viewer**.</span></span> <span data-ttu-id="fa1ac-164">例如，下面的屏幕截图中的“.NET 运行时”： </span><span class="sxs-lookup"><span data-stu-id="fa1ac-164">For example, **.NET Runtime** in the following screenshot:</span></span>
+<span data-ttu-id="9d595-162">继续使用 ProviderName 键生成哈希表。 </span><span class="sxs-lookup"><span data-stu-id="9d595-162">Continue to build the hash table with the **ProviderName** key.</span></span> <span data-ttu-id="9d595-163">ProviderName 是在“Windows 事件查看器”的“源”字段中显示的名称。   </span><span class="sxs-lookup"><span data-stu-id="9d595-163">The **ProviderName** is the name that appears in the **Source** field in the **Windows Event Viewer**.</span></span> <span data-ttu-id="9d595-164">例如，下面的屏幕截图中的“.NET 运行时”： </span><span class="sxs-lookup"><span data-stu-id="9d595-164">For example, **.NET Runtime** in the following screenshot:</span></span>
 
 ![“Windows 事件查看器”源的图片。](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
 
-<span data-ttu-id="fa1ac-166">更新哈希表，并包含键为 \*\*ProviderName 且值为 .NET 运行时的键值对。  </span><span class="sxs-lookup"><span data-stu-id="fa1ac-166">Update the hash table and include the **key-value** pair with the key, \*\*ProviderName, and the value, **.NET Runtime**.</span></span>
+<span data-ttu-id="9d595-166">更新哈希表，并包含键为 \*\*ProviderName 且值为 .NET 运行时的键值对。  </span><span class="sxs-lookup"><span data-stu-id="9d595-166">Update the hash table and include the **key-value** pair with the key, \*\*ProviderName, and the value, **.NET Runtime**.</span></span>
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -109,11 +109,11 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-<span data-ttu-id="fa1ac-167">若查询需要从存档的事件日志获取数据，请使用 Path 键。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-167">If your query needs to get data from archived event logs, use the **Path** key.</span></span> <span data-ttu-id="fa1ac-168">Path 值指定日志文件的完整路径。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-168">The **Path** value specifies the full path to the log file.</span></span> <span data-ttu-id="fa1ac-169">有关详细信息，请参阅“脚本专家”  博客文章[使用 PowerShell 分析保存的事件日志以查找错误](https://devblogs.microsoft.com/scripting/use-powershell-to-parse-saved-event-logs-for-errors)。</span><span class="sxs-lookup"><span data-stu-id="fa1ac-169">For more information, see the **Scripting Guy** blog post, [Use PowerShell to Parse Saved Event Logs for Errors](https://devblogs.microsoft.com/scripting/use-powershell-to-parse-saved-event-logs-for-errors).</span></span>
+<span data-ttu-id="9d595-167">若查询需要从存档的事件日志获取数据，请使用 Path 键。 </span><span class="sxs-lookup"><span data-stu-id="9d595-167">If your query needs to get data from archived event logs, use the **Path** key.</span></span> <span data-ttu-id="9d595-168">Path 值指定日志文件的完整路径。 </span><span class="sxs-lookup"><span data-stu-id="9d595-168">The **Path** value specifies the full path to the log file.</span></span> <span data-ttu-id="9d595-169">有关详细信息，请参阅“脚本专家”  博客文章[使用 PowerShell 分析保存的事件日志以查找错误](https://devblogs.microsoft.com/scripting/use-powershell-to-parse-saved-event-logs-for-errors)。</span><span class="sxs-lookup"><span data-stu-id="9d595-169">For more information, see the **Scripting Guy** blog post, [Use PowerShell to Parse Saved Event Logs for Errors](https://devblogs.microsoft.com/scripting/use-powershell-to-parse-saved-event-logs-for-errors).</span></span>
 
-## <a name="using-enumerated-values-in-a-hash-table"></a><span data-ttu-id="fa1ac-170">在哈希表中使用枚举值</span><span class="sxs-lookup"><span data-stu-id="fa1ac-170">Using enumerated values in a hash table</span></span>
+## <a name="using-enumerated-values-in-a-hash-table"></a><span data-ttu-id="9d595-170">在哈希表中使用枚举值</span><span class="sxs-lookup"><span data-stu-id="9d595-170">Using enumerated values in a hash table</span></span>
 
-<span data-ttu-id="fa1ac-171">Keywords 是哈希表中的下一个  键。</span><span class="sxs-lookup"><span data-stu-id="fa1ac-171">**Keywords** is the next key in the hash table.</span></span> <span data-ttu-id="fa1ac-172">Keywords  数据类型是一个包含大量数字的 `[long]` 值类型的数组。</span><span class="sxs-lookup"><span data-stu-id="fa1ac-172">The **Keywords** data type is an array of the `[long]` value type that holds a large number.</span></span> <span data-ttu-id="fa1ac-173">使用下面的命令查找 `[long]` 的最大值：</span><span class="sxs-lookup"><span data-stu-id="fa1ac-173">Use the following command to find the maximum value of `[long]`:</span></span>
+<span data-ttu-id="9d595-171">Keywords 是哈希表中的下一个  键。</span><span class="sxs-lookup"><span data-stu-id="9d595-171">**Keywords** is the next key in the hash table.</span></span> <span data-ttu-id="9d595-172">Keywords  数据类型是一个包含大量数字的 `[long]` 值类型的数组。</span><span class="sxs-lookup"><span data-stu-id="9d595-172">The **Keywords** data type is an array of the `[long]` value type that holds a large number.</span></span> <span data-ttu-id="9d595-173">使用下面的命令查找 `[long]` 的最大值：</span><span class="sxs-lookup"><span data-stu-id="9d595-173">Use the following command to find the maximum value of `[long]`:</span></span>
 
 ```powershell
 [long]::MaxValue
@@ -123,14 +123,14 @@ Get-WinEvent -FilterHashtable @{
 9223372036854775807
 ```
 
-<span data-ttu-id="fa1ac-174">对于 Keywords 键，PowerShell 使用数字，而不是字符串（如 Security）。  </span><span class="sxs-lookup"><span data-stu-id="fa1ac-174">For the **Keywords** key, PowerShell uses a number, not a string such as **Security**.</span></span> <span data-ttu-id="fa1ac-175">“Windows 事件查看器”将 Keywords 显示为字符串，但它们是枚举值。  </span><span class="sxs-lookup"><span data-stu-id="fa1ac-175">**Windows Event Viewer** displays the **Keywords** as strings, but they are enumerated values.</span></span> <span data-ttu-id="fa1ac-176">在哈希表中使用包含字符串值的 Keywords 键时，将显示错误消息。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-176">In the hash table, if you use the **Keywords** key with a string value, an error message is displayed.</span></span>
+<span data-ttu-id="9d595-174">对于 Keywords 键，PowerShell 使用数字，而不是字符串（如 Security）。  </span><span class="sxs-lookup"><span data-stu-id="9d595-174">For the **Keywords** key, PowerShell uses a number, not a string such as **Security**.</span></span> <span data-ttu-id="9d595-175">“Windows 事件查看器”将 Keywords 显示为字符串，但它们是枚举值。  </span><span class="sxs-lookup"><span data-stu-id="9d595-175">**Windows Event Viewer** displays the **Keywords** as strings, but they are enumerated values.</span></span> <span data-ttu-id="9d595-176">在哈希表中使用包含字符串值的 Keywords 键时，将显示错误消息。 </span><span class="sxs-lookup"><span data-stu-id="9d595-176">In the hash table, if you use the **Keywords** key with a string value, an error message is displayed.</span></span>
 
-<span data-ttu-id="fa1ac-177">打开“Windows 事件查看器”，从“操作”窗格单击“筛选当前日志”。   </span><span class="sxs-lookup"><span data-stu-id="fa1ac-177">Open the **Windows Event Viewer** and from the **Actions** pane, click on **Filter current log**.</span></span>
-<span data-ttu-id="fa1ac-178">“关键字”下拉菜单将显示可用的关键字，如下面的屏幕截图所示： </span><span class="sxs-lookup"><span data-stu-id="fa1ac-178">The **Keywords** drop-down menu displays the available keywords, as shown in the following screenshot:</span></span>
+<span data-ttu-id="9d595-177">打开“Windows 事件查看器”，从“操作”窗格单击“筛选当前日志”。   </span><span class="sxs-lookup"><span data-stu-id="9d595-177">Open the **Windows Event Viewer** and from the **Actions** pane, click on **Filter current log**.</span></span>
+<span data-ttu-id="9d595-178">“关键字”下拉菜单将显示可用的关键字，如下面的屏幕截图所示： </span><span class="sxs-lookup"><span data-stu-id="9d595-178">The **Keywords** drop-down menu displays the available keywords, as shown in the following screenshot:</span></span>
 
 ![“Windows 事件查看器”关键字的图片。](./media/creating-get-winEvent-queries-with-filterhashtable/keywords.png)
 
-<span data-ttu-id="fa1ac-180">使用下面的命令显示 `StandardEventKeywords` 属性名称。</span><span class="sxs-lookup"><span data-stu-id="fa1ac-180">Use the following command to display the `StandardEventKeywords` property names.</span></span>
+<span data-ttu-id="9d595-180">使用下面的命令显示 `StandardEventKeywords` 属性名称。</span><span class="sxs-lookup"><span data-stu-id="9d595-180">Use the following command to display the `StandardEventKeywords` property names.</span></span>
 
 ```powershell
 [System.Diagnostics.Eventing.Reader.StandardEventKeywords] | Get-Member -Static -MemberType Property
@@ -152,23 +152,23 @@ WdiContext       Property   static System.Diagnostics.Eventing.Reader.StandardEv
 WdiDiagnostic    Property   static System.Diagnostics.Eventing.Reader.StandardEventKey…
 ```
 
-<span data-ttu-id="fa1ac-181">枚举值将记录在 .NET Framework 中。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-181">The enumerated values are documented in the **.NET Framework**.</span></span> <span data-ttu-id="fa1ac-182">有关详细信息，请参阅 [StandardEventKeywords 枚举](/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords?redirectedfrom=MSDN&view=netframework-4.7.2)。</span><span class="sxs-lookup"><span data-stu-id="fa1ac-182">For more information, see [StandardEventKeywords Enumeration](/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords?redirectedfrom=MSDN&view=netframework-4.7.2).</span></span>
+<span data-ttu-id="9d595-181">枚举值将记录在 .NET Framework 中。 </span><span class="sxs-lookup"><span data-stu-id="9d595-181">The enumerated values are documented in the **.NET Framework**.</span></span> <span data-ttu-id="9d595-182">有关详细信息，请参阅 [StandardEventKeywords 枚举](/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords?redirectedfrom=MSDN&view=netframework-4.7.2)。</span><span class="sxs-lookup"><span data-stu-id="9d595-182">For more information, see [StandardEventKeywords Enumeration](/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords?redirectedfrom=MSDN&view=netframework-4.7.2).</span></span>
 
-<span data-ttu-id="fa1ac-183">Keywords 名称和枚举值如下所示： </span><span class="sxs-lookup"><span data-stu-id="fa1ac-183">The **Keywords** names and enumerated values are as follows:</span></span>
+<span data-ttu-id="9d595-183">Keywords 名称和枚举值如下所示： </span><span class="sxs-lookup"><span data-stu-id="9d595-183">The **Keywords** names and enumerated values are as follows:</span></span>
 
-| <span data-ttu-id="fa1ac-184">名称</span><span class="sxs-lookup"><span data-stu-id="fa1ac-184">Name</span></span>             |  <span data-ttu-id="fa1ac-185">值</span><span class="sxs-lookup"><span data-stu-id="fa1ac-185">Value</span></span>            |
+| <span data-ttu-id="9d595-184">名称</span><span class="sxs-lookup"><span data-stu-id="9d595-184">Name</span></span>             |  <span data-ttu-id="9d595-185">值</span><span class="sxs-lookup"><span data-stu-id="9d595-185">Value</span></span>            |
 | ---------------- | ------------------|
-| <span data-ttu-id="fa1ac-186">AuditFailure</span><span class="sxs-lookup"><span data-stu-id="fa1ac-186">AuditFailure</span></span>     | <span data-ttu-id="fa1ac-187">4503599627370496</span><span class="sxs-lookup"><span data-stu-id="fa1ac-187">4503599627370496</span></span>  |
-| <span data-ttu-id="fa1ac-188">AuditSuccess</span><span class="sxs-lookup"><span data-stu-id="fa1ac-188">AuditSuccess</span></span>     | <span data-ttu-id="fa1ac-189">9007199254740992</span><span class="sxs-lookup"><span data-stu-id="fa1ac-189">9007199254740992</span></span>  |
-| <span data-ttu-id="fa1ac-190">CorrelationHint2</span><span class="sxs-lookup"><span data-stu-id="fa1ac-190">CorrelationHint2</span></span> | <span data-ttu-id="fa1ac-191">18014398509481984</span><span class="sxs-lookup"><span data-stu-id="fa1ac-191">18014398509481984</span></span> |
-| <span data-ttu-id="fa1ac-192">EventLogClassic</span><span class="sxs-lookup"><span data-stu-id="fa1ac-192">EventLogClassic</span></span>  | <span data-ttu-id="fa1ac-193">36028797018963968</span><span class="sxs-lookup"><span data-stu-id="fa1ac-193">36028797018963968</span></span> |
-| <span data-ttu-id="fa1ac-194">Sqm</span><span class="sxs-lookup"><span data-stu-id="fa1ac-194">Sqm</span></span>              | <span data-ttu-id="fa1ac-195">2251799813685248</span><span class="sxs-lookup"><span data-stu-id="fa1ac-195">2251799813685248</span></span>  |
-| <span data-ttu-id="fa1ac-196">WdiDiagnostic</span><span class="sxs-lookup"><span data-stu-id="fa1ac-196">WdiDiagnostic</span></span>    | <span data-ttu-id="fa1ac-197">1125899906842624</span><span class="sxs-lookup"><span data-stu-id="fa1ac-197">1125899906842624</span></span>  |
-| <span data-ttu-id="fa1ac-198">WdiContext</span><span class="sxs-lookup"><span data-stu-id="fa1ac-198">WdiContext</span></span>       | <span data-ttu-id="fa1ac-199">562949953421312</span><span class="sxs-lookup"><span data-stu-id="fa1ac-199">562949953421312</span></span>   |
-| <span data-ttu-id="fa1ac-200">ResponseTime</span><span class="sxs-lookup"><span data-stu-id="fa1ac-200">ResponseTime</span></span>     | <span data-ttu-id="fa1ac-201">281474976710656</span><span class="sxs-lookup"><span data-stu-id="fa1ac-201">281474976710656</span></span>   |
-| <span data-ttu-id="fa1ac-202">无</span><span class="sxs-lookup"><span data-stu-id="fa1ac-202">None</span></span>             | <span data-ttu-id="fa1ac-203">0</span><span class="sxs-lookup"><span data-stu-id="fa1ac-203">0</span></span>                 |
+| <span data-ttu-id="9d595-186">AuditFailure</span><span class="sxs-lookup"><span data-stu-id="9d595-186">AuditFailure</span></span>     | <span data-ttu-id="9d595-187">4503599627370496</span><span class="sxs-lookup"><span data-stu-id="9d595-187">4503599627370496</span></span>  |
+| <span data-ttu-id="9d595-188">AuditSuccess</span><span class="sxs-lookup"><span data-stu-id="9d595-188">AuditSuccess</span></span>     | <span data-ttu-id="9d595-189">9007199254740992</span><span class="sxs-lookup"><span data-stu-id="9d595-189">9007199254740992</span></span>  |
+| <span data-ttu-id="9d595-190">CorrelationHint2</span><span class="sxs-lookup"><span data-stu-id="9d595-190">CorrelationHint2</span></span> | <span data-ttu-id="9d595-191">18014398509481984</span><span class="sxs-lookup"><span data-stu-id="9d595-191">18014398509481984</span></span> |
+| <span data-ttu-id="9d595-192">EventLogClassic</span><span class="sxs-lookup"><span data-stu-id="9d595-192">EventLogClassic</span></span>  | <span data-ttu-id="9d595-193">36028797018963968</span><span class="sxs-lookup"><span data-stu-id="9d595-193">36028797018963968</span></span> |
+| <span data-ttu-id="9d595-194">Sqm</span><span class="sxs-lookup"><span data-stu-id="9d595-194">Sqm</span></span>              | <span data-ttu-id="9d595-195">2251799813685248</span><span class="sxs-lookup"><span data-stu-id="9d595-195">2251799813685248</span></span>  |
+| <span data-ttu-id="9d595-196">WdiDiagnostic</span><span class="sxs-lookup"><span data-stu-id="9d595-196">WdiDiagnostic</span></span>    | <span data-ttu-id="9d595-197">1125899906842624</span><span class="sxs-lookup"><span data-stu-id="9d595-197">1125899906842624</span></span>  |
+| <span data-ttu-id="9d595-198">WdiContext</span><span class="sxs-lookup"><span data-stu-id="9d595-198">WdiContext</span></span>       | <span data-ttu-id="9d595-199">562949953421312</span><span class="sxs-lookup"><span data-stu-id="9d595-199">562949953421312</span></span>   |
+| <span data-ttu-id="9d595-200">ResponseTime</span><span class="sxs-lookup"><span data-stu-id="9d595-200">ResponseTime</span></span>     | <span data-ttu-id="9d595-201">281474976710656</span><span class="sxs-lookup"><span data-stu-id="9d595-201">281474976710656</span></span>   |
+| <span data-ttu-id="9d595-202">无</span><span class="sxs-lookup"><span data-stu-id="9d595-202">None</span></span>             | <span data-ttu-id="9d595-203">0</span><span class="sxs-lookup"><span data-stu-id="9d595-203">0</span></span>                 |
 
-<span data-ttu-id="fa1ac-204">更新哈希表，并包含键为 Keywords 且 EventLogClassic 枚举值为 36028797018963968 的键值对。    </span><span class="sxs-lookup"><span data-stu-id="fa1ac-204">Update the hash table and include the **key-value** pair with the key, **Keywords**, and the **EventLogClassic** enumeration value, **36028797018963968**.</span></span>
+<span data-ttu-id="9d595-204">更新哈希表，并包含键为 Keywords 且 EventLogClassic 枚举值为 36028797018963968 的键值对。    </span><span class="sxs-lookup"><span data-stu-id="9d595-204">Update the hash table and include the **key-value** pair with the key, **Keywords**, and the **EventLogClassic** enumeration value, **36028797018963968**.</span></span>
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -178,12 +178,12 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="keywords-static-property-value-optional"></a><span data-ttu-id="fa1ac-205">Keywords 静态属性值（可选）</span><span class="sxs-lookup"><span data-stu-id="fa1ac-205">Keywords static property value (optional)</span></span>
+### <a name="keywords-static-property-value-optional"></a><span data-ttu-id="9d595-205">Keywords 静态属性值（可选）</span><span class="sxs-lookup"><span data-stu-id="9d595-205">Keywords static property value (optional)</span></span>
 
-<span data-ttu-id="fa1ac-206">枚举 Keywords 键，但可以在哈希表查询中使用静态属性名称。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-206">The **Keywords** key is enumerated, but you can use a static property name in the hash table query.</span></span>
-<span data-ttu-id="fa1ac-207">必须使用 Value__ 属性将属性名称转换为值，而非使用返回值。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-207">Rather than using the returned string, the property name must be converted to a value with the **Value__** property.</span></span>
+<span data-ttu-id="9d595-206">枚举 Keywords 键，但可以在哈希表查询中使用静态属性名称。 </span><span class="sxs-lookup"><span data-stu-id="9d595-206">The **Keywords** key is enumerated, but you can use a static property name in the hash table query.</span></span>
+<span data-ttu-id="9d595-207">必须使用 Value__ 属性将属性名称转换为值，而非使用返回值。 </span><span class="sxs-lookup"><span data-stu-id="9d595-207">Rather than using the returned string, the property name must be converted to a value with the **Value__** property.</span></span>
 
-<span data-ttu-id="fa1ac-208">例如，下面的脚本就使用了 Value__ 属性。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-208">For example, the following script uses the **Value__** property.</span></span>
+<span data-ttu-id="9d595-208">例如，下面的脚本就使用了 Value__ 属性。 </span><span class="sxs-lookup"><span data-stu-id="9d595-208">For example, the following script uses the **Value__** property.</span></span>
 
 ```powershell
 $C = [System.Diagnostics.Eventing.Reader.StandardEventKeywords]::EventLogClassic
@@ -194,11 +194,11 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-## <a name="filtering-by-event-id"></a><span data-ttu-id="fa1ac-209">按事件 ID 筛选</span><span class="sxs-lookup"><span data-stu-id="fa1ac-209">Filtering by Event Id</span></span>
+## <a name="filtering-by-event-id"></a><span data-ttu-id="9d595-209">按事件 ID 筛选</span><span class="sxs-lookup"><span data-stu-id="9d595-209">Filtering by Event Id</span></span>
 
-<span data-ttu-id="fa1ac-210">若要获取更多特定数据，请按事件 ID 筛选查询的结果。  哈希表将“事件 ID”引用为键 ID，其值为特定的“事件 ID”。    “Windows 事件查看器”将显示“事件 ID”。   此示例使用“事件 ID 1023”。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-210">To get more specific data, the query's results are filtered by **Event Id**. The **Event Id** is referenced in the hash table as the key **ID** and the value is a specific **Event Id**. The **Windows Event Viewer** displays the **Event Id**. This example uses **Event Id 1023**.</span></span>
+<span data-ttu-id="9d595-210">若要获取更多特定数据，请按事件 ID 筛选查询的结果。  哈希表将“事件 ID”引用为键 ID，其值为特定的“事件 ID”。    “Windows 事件查看器”将显示“事件 ID”。   此示例使用“事件 ID 1023”。 </span><span class="sxs-lookup"><span data-stu-id="9d595-210">To get more specific data, the query's results are filtered by **Event Id**. The **Event Id** is referenced in the hash table as the key **ID** and the value is a specific **Event Id**. The **Windows Event Viewer** displays the **Event Id**. This example uses **Event Id 1023**.</span></span>
 
-<span data-ttu-id="fa1ac-211">更新哈希表，并包含键为 ID 且值为 1023 的键值对。   </span><span class="sxs-lookup"><span data-stu-id="fa1ac-211">Update the hash table and include the **key-value** pair with the key, **ID** and the value, **1023**.</span></span>
+<span data-ttu-id="9d595-211">更新哈希表，并包含键为 ID 且值为 1023 的键值对。   </span><span class="sxs-lookup"><span data-stu-id="9d595-211">Update the hash table and include the **key-value** pair with the key, **ID** and the value, **1023**.</span></span>
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -209,12 +209,12 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-## <a name="filtering-by-level"></a><span data-ttu-id="fa1ac-212">按级别筛选</span><span class="sxs-lookup"><span data-stu-id="fa1ac-212">Filtering by Level</span></span>
+## <a name="filtering-by-level"></a><span data-ttu-id="9d595-212">按级别筛选</span><span class="sxs-lookup"><span data-stu-id="9d595-212">Filtering by Level</span></span>
 
-<span data-ttu-id="fa1ac-213">若要进一步优化结果并仅包含属于错误的事件，请使用 Level 键。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-213">To further refine the results and include only events that are errors, use the **Level** key.</span></span>
-<span data-ttu-id="fa1ac-214">“Windows 事件查看器”将 Level 显示为字符串值，但它们是枚举值。  </span><span class="sxs-lookup"><span data-stu-id="fa1ac-214">**Windows Event Viewer** displays the **Level** as string values, but they are enumerated values.</span></span> <span data-ttu-id="fa1ac-215">在哈希表中使用包含字符串值的 Level 键时，将显示错误消息。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-215">In the hash table, if you use the **Level** key with a string value, an error message is displayed.</span></span>
+<span data-ttu-id="9d595-213">若要进一步优化结果并仅包含属于错误的事件，请使用 Level 键。 </span><span class="sxs-lookup"><span data-stu-id="9d595-213">To further refine the results and include only events that are errors, use the **Level** key.</span></span>
+<span data-ttu-id="9d595-214">“Windows 事件查看器”将 Level 显示为字符串值，但它们是枚举值。  </span><span class="sxs-lookup"><span data-stu-id="9d595-214">**Windows Event Viewer** displays the **Level** as string values, but they are enumerated values.</span></span> <span data-ttu-id="9d595-215">在哈希表中使用包含字符串值的 Level 键时，将显示错误消息。 </span><span class="sxs-lookup"><span data-stu-id="9d595-215">In the hash table, if you use the **Level** key with a string value, an error message is displayed.</span></span>
 
-<span data-ttu-id="fa1ac-216">Level 包含诸如“错误”、“警告”或“信息性”等值。    </span><span class="sxs-lookup"><span data-stu-id="fa1ac-216">**Level** has values such as **Error**, **Warning**, or **Informational**.</span></span> <span data-ttu-id="fa1ac-217">使用下面的命令显示 `StandardEventLevel` 属性名称。</span><span class="sxs-lookup"><span data-stu-id="fa1ac-217">Use the following command to display the `StandardEventLevel` property names.</span></span>
+<span data-ttu-id="9d595-216">Level 包含诸如“错误”、“警告”或“信息性”等值。    </span><span class="sxs-lookup"><span data-stu-id="9d595-216">**Level** has values such as **Error**, **Warning**, or **Informational**.</span></span> <span data-ttu-id="9d595-217">使用下面的命令显示 `StandardEventLevel` 属性名称。</span><span class="sxs-lookup"><span data-stu-id="9d595-217">Use the following command to display the `StandardEventLevel` property names.</span></span>
 
 ```powershell
 [System.Diagnostics.Eventing.Reader.StandardEventLevel] | Get-Member -Static -MemberType Property
@@ -233,20 +233,20 @@ Verbose       Property   static System.Diagnostics.Eventing.Reader.StandardEvent
 Warning       Property   static System.Diagnostics.Eventing.Reader.StandardEventLevel Warning {get;}
 ```
 
-<span data-ttu-id="fa1ac-218">枚举值将记录在 .NET Framework 中。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-218">The enumerated values are documented in the **.NET Framework**.</span></span> <span data-ttu-id="fa1ac-219">有关详细信息，请参阅 [StandardEventLevel 枚举](/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel?redirectedfrom=MSDN&view=netframework-4.7.2)。</span><span class="sxs-lookup"><span data-stu-id="fa1ac-219">For more information, see [StandardEventLevel Enumeration](/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel?redirectedfrom=MSDN&view=netframework-4.7.2).</span></span>
+<span data-ttu-id="9d595-218">枚举值将记录在 .NET Framework 中。 </span><span class="sxs-lookup"><span data-stu-id="9d595-218">The enumerated values are documented in the **.NET Framework**.</span></span> <span data-ttu-id="9d595-219">有关详细信息，请参阅 [StandardEventLevel 枚举](/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel?redirectedfrom=MSDN&view=netframework-4.7.2)。</span><span class="sxs-lookup"><span data-stu-id="9d595-219">For more information, see [StandardEventLevel Enumeration](/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel?redirectedfrom=MSDN&view=netframework-4.7.2).</span></span>
 
-<span data-ttu-id="fa1ac-220">Level 键的名称和枚举值如下所示： </span><span class="sxs-lookup"><span data-stu-id="fa1ac-220">The **Level** key's names and enumerated values are as follows:</span></span>
+<span data-ttu-id="9d595-220">Level 键的名称和枚举值如下所示： </span><span class="sxs-lookup"><span data-stu-id="9d595-220">The **Level** key's names and enumerated values are as follows:</span></span>
 
-| <span data-ttu-id="fa1ac-221">名称</span><span class="sxs-lookup"><span data-stu-id="fa1ac-221">Name</span></span>           | <span data-ttu-id="fa1ac-222">值</span><span class="sxs-lookup"><span data-stu-id="fa1ac-222">Value</span></span> |
+| <span data-ttu-id="9d595-221">名称</span><span class="sxs-lookup"><span data-stu-id="9d595-221">Name</span></span>           | <span data-ttu-id="9d595-222">值</span><span class="sxs-lookup"><span data-stu-id="9d595-222">Value</span></span> |
 | -------------- | ----- |
-| <span data-ttu-id="fa1ac-223">Verbose</span><span class="sxs-lookup"><span data-stu-id="fa1ac-223">Verbose</span></span>        |   <span data-ttu-id="fa1ac-224">5</span><span class="sxs-lookup"><span data-stu-id="fa1ac-224">5</span></span>   |
-| <span data-ttu-id="fa1ac-225">信息</span><span class="sxs-lookup"><span data-stu-id="fa1ac-225">Informational</span></span>  |   <span data-ttu-id="fa1ac-226">4</span><span class="sxs-lookup"><span data-stu-id="fa1ac-226">4</span></span>   |
-| <span data-ttu-id="fa1ac-227">警告</span><span class="sxs-lookup"><span data-stu-id="fa1ac-227">Warning</span></span>        |   <span data-ttu-id="fa1ac-228">3</span><span class="sxs-lookup"><span data-stu-id="fa1ac-228">3</span></span>   |
-| <span data-ttu-id="fa1ac-229">错误</span><span class="sxs-lookup"><span data-stu-id="fa1ac-229">Error</span></span>          |   <span data-ttu-id="fa1ac-230">2</span><span class="sxs-lookup"><span data-stu-id="fa1ac-230">2</span></span>   |
-| <span data-ttu-id="fa1ac-231">严重</span><span class="sxs-lookup"><span data-stu-id="fa1ac-231">Critical</span></span>       |   <span data-ttu-id="fa1ac-232">1</span><span class="sxs-lookup"><span data-stu-id="fa1ac-232">1</span></span>   |
-| <span data-ttu-id="fa1ac-233">LogAlways</span><span class="sxs-lookup"><span data-stu-id="fa1ac-233">LogAlways</span></span>      |   <span data-ttu-id="fa1ac-234">0</span><span class="sxs-lookup"><span data-stu-id="fa1ac-234">0</span></span>   |
+| <span data-ttu-id="9d595-223">Verbose</span><span class="sxs-lookup"><span data-stu-id="9d595-223">Verbose</span></span>        |   <span data-ttu-id="9d595-224">5</span><span class="sxs-lookup"><span data-stu-id="9d595-224">5</span></span>   |
+| <span data-ttu-id="9d595-225">信息</span><span class="sxs-lookup"><span data-stu-id="9d595-225">Informational</span></span>  |   <span data-ttu-id="9d595-226">4</span><span class="sxs-lookup"><span data-stu-id="9d595-226">4</span></span>   |
+| <span data-ttu-id="9d595-227">警告</span><span class="sxs-lookup"><span data-stu-id="9d595-227">Warning</span></span>        |   <span data-ttu-id="9d595-228">3</span><span class="sxs-lookup"><span data-stu-id="9d595-228">3</span></span>   |
+| <span data-ttu-id="9d595-229">错误</span><span class="sxs-lookup"><span data-stu-id="9d595-229">Error</span></span>          |   <span data-ttu-id="9d595-230">2</span><span class="sxs-lookup"><span data-stu-id="9d595-230">2</span></span>   |
+| <span data-ttu-id="9d595-231">严重</span><span class="sxs-lookup"><span data-stu-id="9d595-231">Critical</span></span>       |   <span data-ttu-id="9d595-232">1</span><span class="sxs-lookup"><span data-stu-id="9d595-232">1</span></span>   |
+| <span data-ttu-id="9d595-233">LogAlways</span><span class="sxs-lookup"><span data-stu-id="9d595-233">LogAlways</span></span>      |   <span data-ttu-id="9d595-234">0</span><span class="sxs-lookup"><span data-stu-id="9d595-234">0</span></span>   |
 
-<span data-ttu-id="fa1ac-235">完成的查询的哈希表包括 Level 键和值 2。  </span><span class="sxs-lookup"><span data-stu-id="fa1ac-235">The hash table for the completed query includes the key, **Level**, and the value, **2**.</span></span>
+<span data-ttu-id="9d595-235">完成的查询的哈希表包括 Level 键和值 2。  </span><span class="sxs-lookup"><span data-stu-id="9d595-235">The hash table for the completed query includes the key, **Level**, and the value, **2**.</span></span>
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -258,12 +258,12 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="level-static-property-in-enumeration-optional"></a><span data-ttu-id="fa1ac-236">枚举中的 Level 静态属性（可选）</span><span class="sxs-lookup"><span data-stu-id="fa1ac-236">Level static property in enumeration (optional)</span></span>
+### <a name="level-static-property-in-enumeration-optional"></a><span data-ttu-id="9d595-236">枚举中的 Level 静态属性（可选）</span><span class="sxs-lookup"><span data-stu-id="9d595-236">Level static property in enumeration (optional)</span></span>
 
-<span data-ttu-id="fa1ac-237">枚举 Level 键，但可以在哈希表查询中使用静态属性名称。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-237">The **Level** key is enumerated, but you can use a static property name in the hash table query.</span></span>
-<span data-ttu-id="fa1ac-238">必须使用 Value__ 属性将属性名称转换为值，而非使用返回值。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-238">Rather than using the returned string, the property name must be converted to a value with the **Value__** property.</span></span>
+<span data-ttu-id="9d595-237">枚举 Level 键，但可以在哈希表查询中使用静态属性名称。 </span><span class="sxs-lookup"><span data-stu-id="9d595-237">The **Level** key is enumerated, but you can use a static property name in the hash table query.</span></span>
+<span data-ttu-id="9d595-238">必须使用 Value__ 属性将属性名称转换为值，而非使用返回值。 </span><span class="sxs-lookup"><span data-stu-id="9d595-238">Rather than using the returned string, the property name must be converted to a value with the **Value__** property.</span></span>
 
-<span data-ttu-id="fa1ac-239">例如，下面的脚本就使用了 Value__ 属性。 </span><span class="sxs-lookup"><span data-stu-id="fa1ac-239">For example, the following script uses the **Value__** property.</span></span>
+<span data-ttu-id="9d595-239">例如，下面的脚本就使用了 Value__ 属性。 </span><span class="sxs-lookup"><span data-stu-id="9d595-239">For example, the following script uses the **Value__** property.</span></span>
 
 ```powershell
 $C = [System.Diagnostics.Eventing.Reader.StandardEventLevel]::Informational

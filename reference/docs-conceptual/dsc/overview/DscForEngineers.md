@@ -3,56 +3,56 @@ ms.date: 10/13/2017
 keywords: dsc,powershell,配置,安装程序
 title: 适用于工程师的 Desired State Configuration 概述
 ms.openlocfilehash: 0e599c2218cd2df29dbd0529006be5e1ef17ce5f
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71953794"
 ---
-# <a name="desired-state-configuration-overview-for-engineers"></a><span data-ttu-id="661ce-103">适用于工程师的 Desired State Configuration 概述</span><span class="sxs-lookup"><span data-stu-id="661ce-103">Desired State Configuration Overview for Engineers</span></span>
+# <a name="desired-state-configuration-overview-for-engineers"></a><span data-ttu-id="e415b-103">适用于工程师的 Desired State Configuration 概述</span><span class="sxs-lookup"><span data-stu-id="e415b-103">Desired State Configuration Overview for Engineers</span></span>
 
-<span data-ttu-id="661ce-104">本文档旨在使开发人员和运营团队了解 PowerShell Desired State Configuration (DSC) 的优势。</span><span class="sxs-lookup"><span data-stu-id="661ce-104">This document is intended for developer and operations teams to understand the benefits of PowerShell Desired State Configuration (DSC).</span></span>
-<span data-ttu-id="661ce-105">有关 DSC 提供的值的更高级别视图，请参阅[适用于决策者的 Desired State Configuration 概述](decisionMaker.md)</span><span class="sxs-lookup"><span data-stu-id="661ce-105">For a higher level view of the value DSC provides, please see [Desired State Configuration Overview for Decision Makers](decisionMaker.md)</span></span>
+<span data-ttu-id="e415b-104">本文档旨在使开发人员和运营团队了解 PowerShell Desired State Configuration (DSC) 的优势。</span><span class="sxs-lookup"><span data-stu-id="e415b-104">This document is intended for developer and operations teams to understand the benefits of PowerShell Desired State Configuration (DSC).</span></span>
+<span data-ttu-id="e415b-105">有关 DSC 提供的值的更高级别视图，请参阅[适用于决策者的 Desired State Configuration 概述](decisionMaker.md)</span><span class="sxs-lookup"><span data-stu-id="e415b-105">For a higher level view of the value DSC provides, please see [Desired State Configuration Overview for Decision Makers](decisionMaker.md)</span></span>
 
-## <a name="benefits-of-desired-state-configuration"></a><span data-ttu-id="661ce-106">Desired State Configuration 的优势</span><span class="sxs-lookup"><span data-stu-id="661ce-106">Benefits of Desired State Configuration</span></span>
+## <a name="benefits-of-desired-state-configuration"></a><span data-ttu-id="e415b-106">Desired State Configuration 的优势</span><span class="sxs-lookup"><span data-stu-id="e415b-106">Benefits of Desired State Configuration</span></span>
 
-<span data-ttu-id="661ce-107">DSC 具有以下优势：</span><span class="sxs-lookup"><span data-stu-id="661ce-107">DSC exists to:</span></span>
+<span data-ttu-id="e415b-107">DSC 具有以下优势：</span><span class="sxs-lookup"><span data-stu-id="e415b-107">DSC exists to:</span></span>
 
-- <span data-ttu-id="661ce-108">降低在 Windows 中编写脚本的复杂程度</span><span class="sxs-lookup"><span data-stu-id="661ce-108">Decrease the complexity of scripting in Windows</span></span>
-- <span data-ttu-id="661ce-109">提高迭代速度</span><span class="sxs-lookup"><span data-stu-id="661ce-109">Increase the speed of iteration</span></span>
+- <span data-ttu-id="e415b-108">降低在 Windows 中编写脚本的复杂程度</span><span class="sxs-lookup"><span data-stu-id="e415b-108">Decrease the complexity of scripting in Windows</span></span>
+- <span data-ttu-id="e415b-109">提高迭代速度</span><span class="sxs-lookup"><span data-stu-id="e415b-109">Increase the speed of iteration</span></span>
 
-<span data-ttu-id="661ce-110">“连续部署”的概念变得更加重要。</span><span class="sxs-lookup"><span data-stu-id="661ce-110">The concept of "continuous deployment" is becoming more important.</span></span>
-<span data-ttu-id="661ce-111">连续部署是指能够频繁部署，可能每天进行多次部署。</span><span class="sxs-lookup"><span data-stu-id="661ce-111">Continuous deployment means the ability to deploy frequently, potentially many times per day.</span></span>
-<span data-ttu-id="661ce-112">这些部署的目的不是为了提供修复，而是为了进行快速发布。</span><span class="sxs-lookup"><span data-stu-id="661ce-112">The purpose of these deployments are not to fix something but to get something published quickly.</span></span>
-<span data-ttu-id="661ce-113">通过尽可能顺畅可靠地完成新功能从开发到操作的过程，可以缩短新的业务逻辑转换为价值的时间。</span><span class="sxs-lookup"><span data-stu-id="661ce-113">By getting new features through development into operation as smoothly and reliably as possible, you reduce time-to-value of new business logic.</span></span>
+<span data-ttu-id="e415b-110">“连续部署”的概念变得更加重要。</span><span class="sxs-lookup"><span data-stu-id="e415b-110">The concept of "continuous deployment" is becoming more important.</span></span>
+<span data-ttu-id="e415b-111">连续部署是指能够频繁部署，可能每天进行多次部署。</span><span class="sxs-lookup"><span data-stu-id="e415b-111">Continuous deployment means the ability to deploy frequently, potentially many times per day.</span></span>
+<span data-ttu-id="e415b-112">这些部署的目的不是为了提供修复，而是为了进行快速发布。</span><span class="sxs-lookup"><span data-stu-id="e415b-112">The purpose of these deployments are not to fix something but to get something published quickly.</span></span>
+<span data-ttu-id="e415b-113">通过尽可能顺畅可靠地完成新功能从开发到操作的过程，可以缩短新的业务逻辑转换为价值的时间。</span><span class="sxs-lookup"><span data-stu-id="e415b-113">By getting new features through development into operation as smoothly and reliably as possible, you reduce time-to-value of new business logic.</span></span>
 
-<span data-ttu-id="661ce-114">转向云计算意味着采用了利用“声明式”模板模型的部署解决方案，其中结束状态环境声明为文本，并发布到部署引擎中。</span><span class="sxs-lookup"><span data-stu-id="661ce-114">The move towards cloud computing implies a deployment solution that utilizes a "declarative" template model, where an end state environment is declared as text and published to a deployment engine.</span></span>
-<span data-ttu-id="661ce-115">此部署技术允许使用针对失败威胁的恢复能力进行大规模的快速更改，这是因为，在任何时候都可以不断重复部署，以保证结束状态。</span><span class="sxs-lookup"><span data-stu-id="661ce-115">This deployment technique allows for rapid change, at scale, with resilience against threat of failure because at any time the deployment can be consistently repeated to guarantee an end state.</span></span>
-<span data-ttu-id="661ce-116">创建通过自动化支持此操作风格的工具和服务是对这些更改的响应。</span><span class="sxs-lookup"><span data-stu-id="661ce-116">The creation of tools and services that support this style of operations through automation is a response to these changes.</span></span>
+<span data-ttu-id="e415b-114">转向云计算意味着采用了利用“声明式”模板模型的部署解决方案，其中结束状态环境声明为文本，并发布到部署引擎中。</span><span class="sxs-lookup"><span data-stu-id="e415b-114">The move towards cloud computing implies a deployment solution that utilizes a "declarative" template model, where an end state environment is declared as text and published to a deployment engine.</span></span>
+<span data-ttu-id="e415b-115">此部署技术允许使用针对失败威胁的恢复能力进行大规模的快速更改，这是因为，在任何时候都可以不断重复部署，以保证结束状态。</span><span class="sxs-lookup"><span data-stu-id="e415b-115">This deployment technique allows for rapid change, at scale, with resilience against threat of failure because at any time the deployment can be consistently repeated to guarantee an end state.</span></span>
+<span data-ttu-id="e415b-116">创建通过自动化支持此操作风格的工具和服务是对这些更改的响应。</span><span class="sxs-lookup"><span data-stu-id="e415b-116">The creation of tools and services that support this style of operations through automation is a response to these changes.</span></span>
 
-<span data-ttu-id="661ce-117">DSC 是一个提供声明式和幂等式（可重复）部署、配置和符合项的平台。</span><span class="sxs-lookup"><span data-stu-id="661ce-117">DSC is a platform that provides declarative and idempotent (repeatable) deployment, configuration and conformance.</span></span>
-<span data-ttu-id="661ce-118">通过 DSC 平台，你可以确保数据中心的组件采用了正确的配置，从而避免错误并防止代价高昂的部署失败。</span><span class="sxs-lookup"><span data-stu-id="661ce-118">The DSC platform enables you to ensure that the components of your data center have the correct configuration, which avoids errors and prevents costly deployment failures.</span></span>
-<span data-ttu-id="661ce-119">通过将 DSC 配置视为应用程序代码的一部分，DSC 可实现连续部署。</span><span class="sxs-lookup"><span data-stu-id="661ce-119">By treating DSC configurations as part of application code, DSC enables continuous deployment.</span></span>
-<span data-ttu-id="661ce-120">DSC 配置应作为应用程序的一部分进行更新，从而确保部署应用程序所需知识始终保持最新且随时可以使用。</span><span class="sxs-lookup"><span data-stu-id="661ce-120">The DSC configuration should be updated as a part of the application, ensuring that the knowledge needed to deploy the application is always up-to-date and ready to be used.</span></span>
+<span data-ttu-id="e415b-117">DSC 是一个提供声明式和幂等式（可重复）部署、配置和符合项的平台。</span><span class="sxs-lookup"><span data-stu-id="e415b-117">DSC is a platform that provides declarative and idempotent (repeatable) deployment, configuration and conformance.</span></span>
+<span data-ttu-id="e415b-118">通过 DSC 平台，你可以确保数据中心的组件采用了正确的配置，从而避免错误并防止代价高昂的部署失败。</span><span class="sxs-lookup"><span data-stu-id="e415b-118">The DSC platform enables you to ensure that the components of your data center have the correct configuration, which avoids errors and prevents costly deployment failures.</span></span>
+<span data-ttu-id="e415b-119">通过将 DSC 配置视为应用程序代码的一部分，DSC 可实现连续部署。</span><span class="sxs-lookup"><span data-stu-id="e415b-119">By treating DSC configurations as part of application code, DSC enables continuous deployment.</span></span>
+<span data-ttu-id="e415b-120">DSC 配置应作为应用程序的一部分进行更新，从而确保部署应用程序所需知识始终保持最新且随时可以使用。</span><span class="sxs-lookup"><span data-stu-id="e415b-120">The DSC configuration should be updated as a part of the application, ensuring that the knowledge needed to deploy the application is always up-to-date and ready to be used.</span></span>
 
-## <a name="i-have-powershell-why-do-i-need-desired-state-configuration"></a><span data-ttu-id="661ce-121">“我已有 PowerShell，为什么还需要 Desired State Configuration？”</span><span class="sxs-lookup"><span data-stu-id="661ce-121">"I have PowerShell, why do I need Desired State Configuration?"</span></span>
+## <a name="i-have-powershell-why-do-i-need-desired-state-configuration"></a><span data-ttu-id="e415b-121">“我已有 PowerShell，为什么还需要 Desired State Configuration？”</span><span class="sxs-lookup"><span data-stu-id="e415b-121">"I have PowerShell, why do I need Desired State Configuration?"</span></span>
 
-<span data-ttu-id="661ce-122">DSC 配置将意图或“我想要执行哪些操作”与执行或“我要如何操作”分离开来。</span><span class="sxs-lookup"><span data-stu-id="661ce-122">DSC configurations separate intent, or "what I want to do", from execution, or "how I want to do it."</span></span>
-<span data-ttu-id="661ce-123">这意味着资源内包含执行逻辑。</span><span class="sxs-lookup"><span data-stu-id="661ce-123">This means the logic of execution is contained within the resources.</span></span>
-<span data-ttu-id="661ce-124">当某个功能的 DSC 资源可用时，用户无需知道如何实现或部署该功能。</span><span class="sxs-lookup"><span data-stu-id="661ce-124">Users do not have to know how to implement or deploy a feature when a DSC resource for that feature is available.</span></span>
-<span data-ttu-id="661ce-125">这样，用户就可以专注于部署的结构。</span><span class="sxs-lookup"><span data-stu-id="661ce-125">This allows the user to focus on the structure of their deployment.</span></span>
+<span data-ttu-id="e415b-122">DSC 配置将意图或“我想要执行哪些操作”与执行或“我要如何操作”分离开来。</span><span class="sxs-lookup"><span data-stu-id="e415b-122">DSC configurations separate intent, or "what I want to do", from execution, or "how I want to do it."</span></span>
+<span data-ttu-id="e415b-123">这意味着资源内包含执行逻辑。</span><span class="sxs-lookup"><span data-stu-id="e415b-123">This means the logic of execution is contained within the resources.</span></span>
+<span data-ttu-id="e415b-124">当某个功能的 DSC 资源可用时，用户无需知道如何实现或部署该功能。</span><span class="sxs-lookup"><span data-stu-id="e415b-124">Users do not have to know how to implement or deploy a feature when a DSC resource for that feature is available.</span></span>
+<span data-ttu-id="e415b-125">这样，用户就可以专注于部署的结构。</span><span class="sxs-lookup"><span data-stu-id="e415b-125">This allows the user to focus on the structure of their deployment.</span></span>
 
-<span data-ttu-id="661ce-126">例如，PowerShell 脚本应如下所示：</span><span class="sxs-lookup"><span data-stu-id="661ce-126">As an example, PowerShell scripts should look like this:</span></span>
+<span data-ttu-id="e415b-126">例如，PowerShell 脚本应如下所示：</span><span class="sxs-lookup"><span data-stu-id="e415b-126">As an example, PowerShell scripts should look like this:</span></span>
 ```powershell
 # Create a share in Windows Server 8
 New-SmbShare -Name MyShare -Path C:\Demo\Temp -FullAccess Alice -ReadAccess Bob
 ```
-<span data-ttu-id="661ce-127">虽然此脚本简单易懂。</span><span class="sxs-lookup"><span data-stu-id="661ce-127">This script is simple, comprehensible, and straightforward.</span></span>
-<span data-ttu-id="661ce-128">但是，如果尝试将该脚本投入生产环境，将会遇到一些问题。</span><span class="sxs-lookup"><span data-stu-id="661ce-128">However, if you try putting that script into production, you will run into several issues.</span></span>
-<span data-ttu-id="661ce-129">如果该脚本连续运行两次会发生什么情况？</span><span class="sxs-lookup"><span data-stu-id="661ce-129">What happens if that script is run twice in a row?</span></span>
-<span data-ttu-id="661ce-130">如果 Bob 以前对共享具有完全访问权限会发生什么情况？</span><span class="sxs-lookup"><span data-stu-id="661ce-130">What happens if Bob previously had Full Access to the share?</span></span>
+<span data-ttu-id="e415b-127">虽然此脚本简单易懂。</span><span class="sxs-lookup"><span data-stu-id="e415b-127">This script is simple, comprehensible, and straightforward.</span></span>
+<span data-ttu-id="e415b-128">但是，如果尝试将该脚本投入生产环境，将会遇到一些问题。</span><span class="sxs-lookup"><span data-stu-id="e415b-128">However, if you try putting that script into production, you will run into several issues.</span></span>
+<span data-ttu-id="e415b-129">如果该脚本连续运行两次会发生什么情况？</span><span class="sxs-lookup"><span data-stu-id="e415b-129">What happens if that script is run twice in a row?</span></span>
+<span data-ttu-id="e415b-130">如果 Bob 以前对共享具有完全访问权限会发生什么情况？</span><span class="sxs-lookup"><span data-stu-id="e415b-130">What happens if Bob previously had Full Access to the share?</span></span>
 
-<span data-ttu-id="661ce-131">为了弥补这些问题，“实际”版本的脚本将进一步类似于：</span><span class="sxs-lookup"><span data-stu-id="661ce-131">To compensate for these issues, a "real" version of the script will look closer to something like:</span></span>
+<span data-ttu-id="e415b-131">为了弥补这些问题，“实际”版本的脚本将进一步类似于：</span><span class="sxs-lookup"><span data-stu-id="e415b-131">To compensate for these issues, a "real" version of the script will look closer to something like:</span></span>
 ```powershell
 # But actually creating a share in an idempotent way would be
 
@@ -79,10 +79,10 @@ else
 }
 ```
 
-<span data-ttu-id="661ce-132">此脚本更加复杂，包含大量逻辑和错误处理。</span><span class="sxs-lookup"><span data-stu-id="661ce-132">This script is more complex, with plenty of logic and error handling.</span></span>
-<span data-ttu-id="661ce-133">该脚本更为复杂，因为不再需要指出要执行哪些操作，而是说明如何执行  。</span><span class="sxs-lookup"><span data-stu-id="661ce-133">The script is more complex because you are no longer stating what you want done, but *how to do it*.</span></span>
+<span data-ttu-id="e415b-132">此脚本更加复杂，包含大量逻辑和错误处理。</span><span class="sxs-lookup"><span data-stu-id="e415b-132">This script is more complex, with plenty of logic and error handling.</span></span>
+<span data-ttu-id="e415b-133">该脚本更为复杂，因为不再需要指出要执行哪些操作，而是说明如何执行  。</span><span class="sxs-lookup"><span data-stu-id="e415b-133">The script is more complex because you are no longer stating what you want done, but *how to do it*.</span></span>
 
-<span data-ttu-id="661ce-134">使用 DSC 可以指出要执行哪些操作，并且抽象出底层逻辑。</span><span class="sxs-lookup"><span data-stu-id="661ce-134">DSC allows you to say what you want done, and the underlying logic is abstracted away.</span></span>
+<span data-ttu-id="e415b-134">使用 DSC 可以指出要执行哪些操作，并且抽象出底层逻辑。</span><span class="sxs-lookup"><span data-stu-id="e415b-134">DSC allows you to say what you want done, and the underlying logic is abstracted away.</span></span>
 
 ```powershell
 # A configuration is a special kind of PowerShell function
@@ -113,27 +113,27 @@ Sample_Share
 Start-DscConfiguration Sample_Share
 ```
 
-<span data-ttu-id="661ce-135">此脚本格式清晰，简单易读。</span><span class="sxs-lookup"><span data-stu-id="661ce-135">This script is cleanly formatted and straightforward to read.</span></span>
-<span data-ttu-id="661ce-136">逻辑路径和错误处理仍存在于[资源](../resources/resources.md)实现中，但对脚本作者不可见。</span><span class="sxs-lookup"><span data-stu-id="661ce-136">The logic paths and error handling are still present in the [resource](../resources/resources.md) implementation, but invisible to the script author.</span></span>
+<span data-ttu-id="e415b-135">此脚本格式清晰，简单易读。</span><span class="sxs-lookup"><span data-stu-id="e415b-135">This script is cleanly formatted and straightforward to read.</span></span>
+<span data-ttu-id="e415b-136">逻辑路径和错误处理仍存在于[资源](../resources/resources.md)实现中，但对脚本作者不可见。</span><span class="sxs-lookup"><span data-stu-id="e415b-136">The logic paths and error handling are still present in the [resource](../resources/resources.md) implementation, but invisible to the script author.</span></span>
 
-## <a name="separating-environment-from-structure"></a><span data-ttu-id="661ce-137">将环境从结构中分离出来</span><span class="sxs-lookup"><span data-stu-id="661ce-137">Separating Environment from Structure</span></span>
+## <a name="separating-environment-from-structure"></a><span data-ttu-id="e415b-137">将环境从结构中分离出来</span><span class="sxs-lookup"><span data-stu-id="e415b-137">Separating Environment from Structure</span></span>
 
-<span data-ttu-id="661ce-138">DevOps 中的常见模式是多个环境用于部署。</span><span class="sxs-lookup"><span data-stu-id="661ce-138">A common pattern in DevOps is to have multiple environments for deployment.</span></span>
-<span data-ttu-id="661ce-139">例如，可能有用于快速生成原型新代码的“开发”环境。</span><span class="sxs-lookup"><span data-stu-id="661ce-139">For example, there might be a "dev" environment used to quickly prototype new code.</span></span>
-<span data-ttu-id="661ce-140">“开发”环境中的代码进入“测试”环境，其他人员在其中验证新功能。</span><span class="sxs-lookup"><span data-stu-id="661ce-140">The code from the "dev" environment goes into a "test" environment, where other people verify the new functionality.</span></span>
-<span data-ttu-id="661ce-141">最后，代码将进入“生产”或实时站点生产环境。</span><span class="sxs-lookup"><span data-stu-id="661ce-141">Finally, the code goes into "prod", or the live site production environment.</span></span>
+<span data-ttu-id="e415b-138">DevOps 中的常见模式是多个环境用于部署。</span><span class="sxs-lookup"><span data-stu-id="e415b-138">A common pattern in DevOps is to have multiple environments for deployment.</span></span>
+<span data-ttu-id="e415b-139">例如，可能有用于快速生成原型新代码的“开发”环境。</span><span class="sxs-lookup"><span data-stu-id="e415b-139">For example, there might be a "dev" environment used to quickly prototype new code.</span></span>
+<span data-ttu-id="e415b-140">“开发”环境中的代码进入“测试”环境，其他人员在其中验证新功能。</span><span class="sxs-lookup"><span data-stu-id="e415b-140">The code from the "dev" environment goes into a "test" environment, where other people verify the new functionality.</span></span>
+<span data-ttu-id="e415b-141">最后，代码将进入“生产”或实时站点生产环境。</span><span class="sxs-lookup"><span data-stu-id="e415b-141">Finally, the code goes into "prod", or the live site production environment.</span></span>
 
-<span data-ttu-id="661ce-142">DSC 配置可通过使用[配置数据](../configurations/configData.md)适应此开发-测试-生产流程。</span><span class="sxs-lookup"><span data-stu-id="661ce-142">DSC configurations accommodate this dev-test-prod pipeline through the use of [configuration data](../configurations/configData.md).</span></span>
-<span data-ttu-id="661ce-143">这可进一步抽象出托管节点的配置结构之间的差异。</span><span class="sxs-lookup"><span data-stu-id="661ce-143">This further abstracts the difference between the structure of the configuration from the nodes that are managed.</span></span>
-<span data-ttu-id="661ce-144">例如，可以定义需要 SQL server、IIS 服务器和中间层服务器的配置。</span><span class="sxs-lookup"><span data-stu-id="661ce-144">For example, you can define a configuration that requires a SQL server, an IIS server, and a middle-tier server.</span></span>
-<span data-ttu-id="661ce-145">无论哪个节点接收到此配置的不同部分，这三个元素会始终存在。</span><span class="sxs-lookup"><span data-stu-id="661ce-145">Regardless of what nodes receive the different pieces of this configuration, those three elements will always be present.</span></span>
-<span data-ttu-id="661ce-146">对于开发环境，可以使用配置数据将所有三个元素指向同一计算机；对于测试环境，可以将这三个元素分离到三个不同的计算机；最后对于生产环境，又可以将其指向所有的生产服务器。</span><span class="sxs-lookup"><span data-stu-id="661ce-146">You can use configuration data to point all three elements towards the same machine for a dev environment, separate out the three elements to three different machines for a test environment, and finally towards all your production servers for the prod environment.</span></span>
-<span data-ttu-id="661ce-147">若要部署到各种环境中，可以针对想要面向的环境，使用正确的配置数据调用 Start-DscConfiguration  。</span><span class="sxs-lookup"><span data-stu-id="661ce-147">To deploy to the different environments, you can invoke **Start-DscConfiguration** with the correct configuration data for the environment you want to target.</span></span>
+<span data-ttu-id="e415b-142">DSC 配置可通过使用[配置数据](../configurations/configData.md)适应此开发-测试-生产流程。</span><span class="sxs-lookup"><span data-stu-id="e415b-142">DSC configurations accommodate this dev-test-prod pipeline through the use of [configuration data](../configurations/configData.md).</span></span>
+<span data-ttu-id="e415b-143">这可进一步抽象出托管节点的配置结构之间的差异。</span><span class="sxs-lookup"><span data-stu-id="e415b-143">This further abstracts the difference between the structure of the configuration from the nodes that are managed.</span></span>
+<span data-ttu-id="e415b-144">例如，可以定义需要 SQL server、IIS 服务器和中间层服务器的配置。</span><span class="sxs-lookup"><span data-stu-id="e415b-144">For example, you can define a configuration that requires a SQL server, an IIS server, and a middle-tier server.</span></span>
+<span data-ttu-id="e415b-145">无论哪个节点接收到此配置的不同部分，这三个元素会始终存在。</span><span class="sxs-lookup"><span data-stu-id="e415b-145">Regardless of what nodes receive the different pieces of this configuration, those three elements will always be present.</span></span>
+<span data-ttu-id="e415b-146">对于开发环境，可以使用配置数据将所有三个元素指向同一计算机；对于测试环境，可以将这三个元素分离到三个不同的计算机；最后对于生产环境，又可以将其指向所有的生产服务器。</span><span class="sxs-lookup"><span data-stu-id="e415b-146">You can use configuration data to point all three elements towards the same machine for a dev environment, separate out the three elements to three different machines for a test environment, and finally towards all your production servers for the prod environment.</span></span>
+<span data-ttu-id="e415b-147">若要部署到各种环境中，可以针对想要面向的环境，使用正确的配置数据调用 Start-DscConfiguration  。</span><span class="sxs-lookup"><span data-stu-id="e415b-147">To deploy to the different environments, you can invoke **Start-DscConfiguration** with the correct configuration data for the environment you want to target.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="661ce-148">另请参阅</span><span class="sxs-lookup"><span data-stu-id="661ce-148">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e415b-148">另请参阅</span><span class="sxs-lookup"><span data-stu-id="e415b-148">See Also</span></span>
 
-[<span data-ttu-id="661ce-149">配置</span><span class="sxs-lookup"><span data-stu-id="661ce-149">Configurations</span></span>](../configurations/configurations.md)
+[<span data-ttu-id="e415b-149">配置</span><span class="sxs-lookup"><span data-stu-id="e415b-149">Configurations</span></span>](../configurations/configurations.md)
 
-[<span data-ttu-id="661ce-150">配置数据</span><span class="sxs-lookup"><span data-stu-id="661ce-150">Configuration Data</span></span>](../configurations/configData.md)
+[<span data-ttu-id="e415b-150">配置数据</span><span class="sxs-lookup"><span data-stu-id="e415b-150">Configuration Data</span></span>](../configurations/configData.md)
 
-[<span data-ttu-id="661ce-151">资源</span><span class="sxs-lookup"><span data-stu-id="661ce-151">Resources</span></span>](../resources/resources.md)
+[<span data-ttu-id="e415b-151">资源</span><span class="sxs-lookup"><span data-stu-id="e415b-151">Resources</span></span>](../resources/resources.md)
