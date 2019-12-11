@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 创建图形日期选取器
 ms.openlocfilehash: d05445963b41af61a61aa29a425e638d43fb5d9d
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030251"
 ---
 # <a name="creating-a-graphical-date-picker"></a>创建图形日期选取器
@@ -60,7 +60,7 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 }
 ```
 
-该脚本首先加载两个 .NET Framework 类：System.Drawing 和 System.Windows.Forms。
+该脚本首先加载两个 .NET Framework 类：System.Drawing 和 System.Windows.Forms   。
 然后，启动 .NET Framework 类 **Windows.Forms.Form** 的新实例；它提供一个可以开始添加控件的空白窗体或窗口。
 
 ```powershell
@@ -72,10 +72,10 @@ $form = New-Object Windows.Forms.Form -Property @{
 }
 ```
 
-此示例使用 Property 属性和 hashtable 将值分配给此类的四个属性。
+此示例使用 Property 属性和 hashtable 将值分配给此类的四个属性  。
 
 1. **StartPosition**：如果未添加此属性，Windows 将在窗体打开时选择一个位置。
-   通过将此属性设置为 CenterScreen，可使窗体在每次加载时都自动显示在屏幕中间。
+   通过将此属性设置为 CenterScreen  ，可使窗体在每次加载时都自动显示在屏幕中间。
 
 2. **Size**：这是窗体的大小（以像素为单位）。
    上述脚本创建的窗体大小为宽 243 像素、高 230 像素。
@@ -96,8 +96,8 @@ $calendar = New-Object Windows.Forms.MonthCalendar -Property @{
 $form.Controls.Add($calendar)
 ```
 
-接下来，为窗体创建“确定”按钮。
-指定“确定”按钮的大小和行为。
+接下来，为窗体创建“确定”按钮。 
+指定“确定”按钮的大小和行为。 
 在此示例中，按钮位置为距窗体上边缘 165 像素，距左边缘 38 像素。
 按钮高度为 23 像素，按钮长度为 75 像素。
 此脚本使用预定义的 Windows 窗体类型确定按钮行为。
@@ -113,8 +113,8 @@ $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-采用相同方式创建“取消”按钮。
-“取消”按钮距窗口上边缘 165 像素，但距左边缘 113 像素。
+采用相同方式创建“取消”按钮。 
+“取消”按钮距窗口上边缘 165 像素，但距左边缘 113 像素。 
 
 ```powershell
 $CancelButton = New-Object Windows.Forms.Button -Property @{
@@ -133,7 +133,7 @@ $form.Controls.Add($CancelButton)
 $result = $form.ShowDialog()
 ```
 
-最后，`if` 块内的代码指示在用户在日历上选择某一天，然后单击“确定”按钮或按“Enter”键后，Windows 应如何处理该窗体。
+最后，`if` 块内的代码指示在用户在日历上选择某一天，然后单击“确定”按钮或按“Enter”键后，Windows 应如何处理该窗体   。
 Windows PowerShell 向用户显示选定的日期。
 
 ```powershell

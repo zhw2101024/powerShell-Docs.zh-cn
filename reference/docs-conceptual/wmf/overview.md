@@ -3,10 +3,10 @@ ms.date: 04/19/2019
 keywords: wmf,powershell,安装程序
 title: Windows Management Framework (WMF)
 ms.openlocfilehash: d581370fd602e03c86aa549eb8b273ff4d01b4e5
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71147907"
 ---
 # <a name="windows-management-framework"></a>Windows Management Framework

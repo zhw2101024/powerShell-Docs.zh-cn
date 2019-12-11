@@ -3,10 +3,10 @@ ms.date: 10/31/2017
 keywords: dsc,powershell,配置,安装程序
 title: 保护 MOF 文件
 ms.openlocfilehash: 4ca540303cb740ac602bce181e0e446efcd16b6e
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71953554"
 ---
 # <a name="securing-the-mof-file"></a>保护 MOF 文件

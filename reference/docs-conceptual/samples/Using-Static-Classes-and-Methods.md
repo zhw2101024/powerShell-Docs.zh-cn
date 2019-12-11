@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用静态类和方法
 ms.openlocfilehash: 437e7b430f37224de7c617e120e37c3efcd7787a
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030749"
 ---
 # <a name="using-static-classes-and-methods"></a>使用静态类和方法
@@ -46,7 +46,7 @@ True     False    Environment                              System.Object
 ```
 
 > [!NOTE]
-> 正如我们之前提到的，当你使用 **New-Object** 时，Windows PowerShell 会 使用 **New-Object**.时输入名称。 使用被括号括起来的类型名称时也会发生同样的情况，因此可以将 **\[System.Environment]** 指定为 **\[Environment]**。
+> 正如我们之前提到的，当你使用 **New-Object** 时，Windows PowerShell 会 使用 **New-Object**.时输入名称。 使用被括号括起来的类型名称时也会发生同样的情况，因此可以将 **\[System.Environment]** 指定为 **\[Environment]** 。
 
 **System.Environment** 类包含关于当前进程工作环境的一般信息，如果是在 Windows PowerShell 内工作，该进程为 powershell.exe。
 

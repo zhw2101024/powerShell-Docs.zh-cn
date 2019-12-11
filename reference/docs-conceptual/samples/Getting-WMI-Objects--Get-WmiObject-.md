@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 获取 WMI 对象 (Get WmiObject)
 ms.openlocfilehash: 93276ce12135342af2d6f238976e65e5d8bdde7a
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030210"
 ---
 # <a name="getting-wmi-objects-get-wmiobject"></a>获取 WMI 对象 (Get-WmiObject)
@@ -120,7 +120,7 @@ TotalVirtualMemorySize TotalVisibleMemory FreePhysicalMemory FreeVirtualMemory F
 ```
 
 > [!NOTE]
-> 由于通配符支持 Format-Table 中的属性名，因此最终管道元素可缩减为 `Format-Table -Property Total,Free`
+> 由于通配符支持 Format-Table  中的属性名，因此最终管道元素可缩减为 `Format-Table -Property Total,Free`
 
 通过键入以下内容将内存数据的格式设置为列表可提高其可读性：
 

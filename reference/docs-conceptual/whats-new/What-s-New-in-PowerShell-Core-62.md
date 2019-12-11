@@ -3,10 +3,10 @@ title: PowerShell Core 6.2 中的新增功能
 description: PowerShell Core 6.2 中发布的新功能和更改
 ms.date: 03/28/2019
 ms.openlocfilehash: 6a0da8a410e602ae3963e0bc7bace745317d7d4b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62058091"
 ---
 # <a name="whats-new-in-powershell-core-62"></a>PowerShell Core 6.2 中的新增功能
@@ -15,7 +15,7 @@ PowerShell Core 6.2 版本侧重于性能改进、bug 修复以及可提高质�
 
 ## <a name="experimental-features"></a>实验性功能
 
-在此之前，我们启用了对[实验性功能][]的支持。 6.2 版本中提供了四个要试用的实验性功能。请提供反馈，以便我们进行改进，并决定该功能是否值得提升到主流状态。
+在此之前，我们启用了对[实验性功能][]的支持。 6\.2 版本中提供了四个要试用的实验性功能。请提供反馈，以便我们进行改进，并决定该功能是否值得提升到主流状态。
 
 使用 `Get-ExperimentalFeature` 获取可用的实验性功能列表。 可以使用 `Enable-ExperimentalFeature` 和 `Disable-ExperimentalFeature` 启用或禁用这些功能。
 
@@ -58,7 +58,7 @@ PowerShell 使用该功能分析管道，以确定该命令是否可以安全运
 Enable-ExperimentalFeature -Name PSImplicitRemotingBatching
 ```
 
-在 localhost 上实际测试 `Get-Process | Sort-Object` 的时间从 10-15 秒减少到 20-30 毫秒。 该功能只需在客户端上启用。 不需要在服务器上进行任何更改。
+在 localhost 上实际测试 `Get-Process | Sort-Object` 的时间从 10-15 秒减少到 20-30 毫秒  。 该功能只需在客户端上启用。 不需要在服务器上进行任何更改。
 
 ### <a name="temp-drive"></a>临时驱动器
 
@@ -109,10 +109,10 @@ PS> Import-AzRecoveryServicesAsrVaultSettingsFile
 - 将 `-Stable` 添加到 `Sort-Object` 和相关测试 (#7862)（感谢 @KirkMunro！）
 - 改进 `Start-Sleep` cmdlet 以接受秒的小数部分 (#8537)（感谢 @Prototyyppi！）
 - 将 Hashtable 更改为在所有区域性中使用 OrdinalIgnoreCase 作为 `case-insensitive` (#8566)
-- 修复 `Import-Csv` 中的 LiteralPath 以绑定到 `Get-ChildItem` 输出 (#8277)（感谢 @iSazonov！）
+- 修复 `Import-Csv` 中的 LiteralPath  以绑定到 `Get-ChildItem` 输出 (#8277)（感谢 @iSazonov！）
 - 如果在 `Import-Csv` 中使用双引号分隔符，则不再跳过没有名称的列 (#7899)（感谢 @Topping！）
 - `Get-ExperimentalFeature` 不再具有 `-ListAvailable` 开关 (#8318)
-- 调试参数现将 `$DebugPreference` 设置为“继续”而不是“查询” (#8195)（感谢 @KirkMunro！）
+- 调试参数现将 `$DebugPreference` 设置为“继续”  而不是“查询”  (#8195)（感谢 @KirkMunro！）
 - 如果在与 pwsh 一起使用的非交互式、重定向、编码命令中指定 `-OutputFormat`，则采用该指定项 (#8115)
 - 在尝试从 GAC 加载程序集之前，先从模块基路径加载程序集 (#8073)
 - 从 Linux 预览包中删除波形符 (#8244)
@@ -129,7 +129,7 @@ PS> Import-AzRecoveryServicesAsrVaultSettingsFile
 - 公开 PSVersionInfo.PSVersion 和 PSVersionInfo.PSEdition (#8054)（感谢 @KirkMunro！）
 - 在 `catch{ }` 块中为 `$_` / `$PSItem` 添加类型推理 (#8020)（感谢 @vexx32！）
 - 修复静态方法调用类型推理 (#8018)（感谢 @SeeminglyScience！）
-- 为 `Select-Object`、`Group-Object`、PSObject 和 Hashtable 创建推理类型 (#7231)（感谢 @powercode！）
+- 为 `Select-Object`、`Group-Object`、PSObject  和 Hashtable  创建推理类型 (#7231)（感谢 @powercode！）
 - 支持使用 `ByRef-like` 类型参数的调用方法 (#7721)
 - 处理 Windows PowerShell 模块路径已在环境的 PSModulePath 中的情况 (#7727)
 - 通过存储纯文本来启用适用于非 Windows 的 `SecureString` cmdlet (#9199)
@@ -171,8 +171,8 @@ PS> Import-AzRecoveryServicesAsrVaultSettingsFile
 - help 函数不应为 AliasHelpInfo 使用寻呼程序 (#8552)
 - 将 `-UseMinimalHeader` 添加到 `Start-Transcript` 以最小化脚本标头 (#8402)（感谢 @lukexjeremy！）
 - 添加 `Enable-ExperimentalFeature` 和 `Disable-ExperimentalFeature` cmdlet (#8318)
-- 如果 logman.exe 可用，则公开 PSDiagnostics 中的所有 cmdlet (#8366)
-- 在 `non-Windows` 平台上从 `New-PSDrive` 删除 Persist 参数 (#8291)（感谢 @lukexjeremy！）
+- 如果 logman.exe 可用，则公开 PSDiagnostics  中的所有 cmdlet (#8366)
+- 在 `non-Windows` 平台上从 `New-PSDrive` 删除 Persist  参数 (#8291)（感谢 @lukexjeremy！）
 - 添加对 `cd +` 的支持 (#7206)（感谢 @bergmeister！）
 - 使 `Set-Location -LiteralPath` 能够使用名为 - 和 + 的文件夹 (#8089)
 - 当给定空路径值或 `$null` 路径值时，`Test-Path` 返回 `$false` (#8080)（感谢 @vexx32！）
@@ -182,13 +182,13 @@ PS> Import-AzRecoveryServicesAsrVaultSettingsFile
 - 允许 `Add-Content` 在编写内容时与其他工具共享读取访问 (#8091)
 - 在将某个容器设定为目标时，`Get/Add-Content` 引发改进错误 (#7823)（感谢 @kvprasoon！）
 - 将 `-Name`、`-NoUserOverrides` 和 `-ListAvailable` 参数添加到 `Get-Culture` cmdlet (#7702)（感谢 @iSazonov！）
-- 为完成 Encoding 参数添加统一属性。 (#7732)（感谢 @ThreeFive-O！）
-- 允许注册代码页的数字 Id 和名称出现在 Encoding 参数中 (#7636)（感谢 @iSazonov！）
+- 为完成 Encoding  参数添加统一属性。 (#7732)（感谢 @ThreeFive-O！）
+- 允许注册代码页的数字 Id 和名称出现在 Encoding  参数中 (#7636)（感谢 @iSazonov！）
 - 使用通配符字符修复 `Rename-Item -Path` (#7398)（感谢 @kwkam！）
 - 当使用 `Start-Transcript` 且文件存在时，清空文件而不是将其删除 (#8131)（感谢 @paalbra！）
-- 通过 FileAccess.Read 和 FileShare.Read 使 `Add-Type` 显式成为开放源代码文件 (#7915)（感谢 @IISResetMe！）
+- 通过 FileAccess.Read  和 FileShare.Read  使 `Add-Type` 显式成为开放源代码文件 (#7915)（感谢 @IISResetMe！）
 - 修复最新 Windows 的 `Enter-PSSession -ContainerId` (#7883)
-- 请确保 NestedModules 属性由 `Test-ModuleManifest` 填充 (#7859)
+- 请确保 NestedModules  属性由 `Test-ModuleManifest` 填充 (#7859)
 - 将 `%F` case 添加到 `Get-Date` -UFormat (#7630)（感谢 @britishben！）
 - 修复 `Set-Service -Status Stopped` 以停止具有依赖项的服务 (#5525)（感谢 @zhenggu！）
 

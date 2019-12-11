@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: ISE 对象模型层次结构
 ms.openlocfilehash: 0159707b1050c412a74da3d3ca02a46cea982556
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62057717"
 ---
 # <a name="the-ise-object-model-hierarchy"></a>ISE 对象模型层次结构
@@ -22,7 +22,7 @@ ms.locfileid: "62057717"
 
 ## <a name="psisecurrentfilethe-isefile-objectmd"></a>[$psISE.CurrentFile](The-ISEFile-Object.md)
 
-$PsISE.CurrentFile 对象是 [ISEFile](The-ISEFile-Object.md) 类的一个实例。
+$PsISE.CurrentFile 对象是 [ISEFile](The-ISEFile-Object.md) 类的一个实例  。
 
 ## <a name="psisecurrentpowershelltabthe-powershelltab-objectmd"></a>[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)
 
@@ -40,7 +40,7 @@ $PsISE.CurrentFile 对象是 [ISEFile](The-ISEFile-Object.md) 类的一个实例
 
 ## <a name="psiseoptionsthe-iseoptions-objectmd"></a>[$psISE.Options](The-ISEOptions-Object.md)
 
-$PsISE.Options 对象是 [ISEOptions](The-ISEOptions-Object.md) 类的一个实例。
+$PsISE.Options 对象是 [ISEOptions](The-ISEOptions-Object.md) 类的一个实例  。
 ISEOptions 对象代表 Windows PowerShell ISE 的各种设置。
 它是 Microsoft.PowerShell.Host.ISE.ISEOptions 类的实例。
 

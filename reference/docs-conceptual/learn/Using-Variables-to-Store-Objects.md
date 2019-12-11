@@ -3,10 +3,10 @@ ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: 使用变量存储对象
 ms.openlocfilehash: 2d20d84e48d3f68cab5c1ffa05d689b46415ebc8
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030368"
 ---
 # <a name="using-variables-to-store-objects"></a>使用变量存储对象
@@ -40,7 +40,7 @@ Path
 C:\temp
 ```
 
-可以使用 `Get-Member` 显示有关变量内容的信息。 `Get-Member` 表示 `$loc` 是 PathInfo 对象，类似于来自 `Get-Location` 的输出：
+可以使用 `Get-Member` 显示有关变量内容的信息。 `Get-Member` 表示 `$loc` 是 PathInfo  对象，类似于来自 `Get-Location` 的输出：
 
 ```powershell
 PS> $loc | Get-Member -MemberType Property
@@ -79,13 +79,13 @@ Get-ChildItem variable:
 
 ## <a name="using-cmdexe-variables"></a>使用 cmd.exe 变量
 
-PowerShell 可以使用任何 Windows 进程可用的相同环境变量，其中包括 cmd.exe。 这些变量通过名为 `env:` 的驱动器公开。 可以通过键入以下命令查看这些变量：
+PowerShell 可以使用任何 Windows 进程可用的相同环境变量，其中包括 cmd.exe  。 这些变量通过名为 `env:` 的驱动器公开。 可以通过键入以下命令查看这些变量：
 
 ```powershell
 Get-ChildItem env:
 ```
 
-标准 `*-Variable` cmdlet 未设计为使用环境变量。 使用 `env:` 驱动器前缀访问环境变量。 例如，cmd.exe 中的 %SystemRoot% 变量包含操作系统的根目录名称。 在 PowerShell 中，使用 `$env:SystemRoot` 可访问相同的值。
+标准 `*-Variable` cmdlet 未设计为使用环境变量。 使用 `env:` 驱动器前缀访问环境变量。 例如，cmd.exe  中的 %SystemRoot%  变量包含操作系统的根目录名称。 在 PowerShell 中，使用 `$env:SystemRoot` 可访问相同的值。
 
 ```
 PS> $env:SystemRoot
