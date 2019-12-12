@@ -9,54 +9,54 @@ ms.topic: article
 ms.assetid: c6ac3d86-0529-4b93-9bc7-ee94fcef9618
 caps.latest.revision: 8
 ms.openlocfilehash: ea43e025f5f653ff000e1d7591b535e73da5c9e5
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363156"
 ---
-# <a name="firstlinehanging-element-for-frame-for-customcontrol-for-view-format"></a><span data-ttu-id="54abf-102">FirstLineHanging Element for Frame for CustomControl for View (Format)</span><span class="sxs-lookup"><span data-stu-id="54abf-102">FirstLineHanging Element for Frame for CustomControl for View (Format)</span></span>
+# <a name="firstlinehanging-element-for-frame-for-customcontrol-for-view-format"></a><span data-ttu-id="eed1f-102">FirstLineHanging Element for Frame for CustomControl for View (Format)</span><span class="sxs-lookup"><span data-stu-id="eed1f-102">FirstLineHanging Element for Frame for CustomControl for View (Format)</span></span>
 
-<span data-ttu-id="54abf-103">指定将第一行数据向左移动的字符数。</span><span class="sxs-lookup"><span data-stu-id="54abf-103">Specifies how many characters the first line of data is shifted to the left.</span></span> <span data-ttu-id="54abf-104">定义自定义控件视图时，将使用此元素。</span><span class="sxs-lookup"><span data-stu-id="54abf-104">This element is used when defining a custom control view.</span></span>
+<span data-ttu-id="eed1f-103">指定将第一行数据向左移动的字符数。</span><span class="sxs-lookup"><span data-stu-id="eed1f-103">Specifies how many characters the first line of data is shifted to the left.</span></span> <span data-ttu-id="eed1f-104">定义自定义控件视图时，将使用此元素。</span><span class="sxs-lookup"><span data-stu-id="eed1f-104">This element is used when defining a custom control view.</span></span>
 
-<span data-ttu-id="54abf-105">用于 CustomEntry 的 CustomControl for view （format） CustomEntries 元素的 ViewDefinitions 元素（format） View 元素（format） CustomControl 元素（format） CustomEntries 元素CustomEntry for CustomControlView （Format） Frame 元素 for CustomItem for CustomControl for view （format） FirstLineHanging 元素 for CustomControl for View （Format）</span><span class="sxs-lookup"><span data-stu-id="54abf-105">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) CustomControl Element (Format) CustomEntries Element for CustomControl for View (Format) CustomEntry Element for CustomEntries for View (Format) CustomItem Element for CustomEntry for CustomControlView (Format) Frame Element for CustomItem for CustomControl for View (Format) FirstLineHanging Element for Frame for CustomControl for View (Format)</span></span>
+<span data-ttu-id="eed1f-105">用于 CustomEntry 的 CustomControl for view （format） CustomEntries 元素的 ViewDefinitions 元素（format） View 元素（format） CustomControl 元素（format） CustomEntries 元素CustomEntry for CustomControlView （Format） Frame 元素 for CustomItem for CustomControl for view （format） FirstLineHanging 元素 for CustomControl for View （Format）</span><span class="sxs-lookup"><span data-stu-id="eed1f-105">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) CustomControl Element (Format) CustomEntries Element for CustomControl for View (Format) CustomEntry Element for CustomEntries for View (Format) CustomItem Element for CustomEntry for CustomControlView (Format) Frame Element for CustomItem for CustomControl for View (Format) FirstLineHanging Element for Frame for CustomControl for View (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="54abf-106">语法</span><span class="sxs-lookup"><span data-stu-id="54abf-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="eed1f-106">语法</span><span class="sxs-lookup"><span data-stu-id="eed1f-106">Syntax</span></span>
 
 ```xml
 <FirstLineHanging>NumberOfCharactersToShift</FirstLineHanging>
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="54abf-107">属性和元素</span><span class="sxs-lookup"><span data-stu-id="54abf-107">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="eed1f-107">属性和元素</span><span class="sxs-lookup"><span data-stu-id="eed1f-107">Attributes and Elements</span></span>
 
-<span data-ttu-id="54abf-108">以下各节介绍 `FirstLineHanging` 元素的属性、子元素和父元素。</span><span class="sxs-lookup"><span data-stu-id="54abf-108">The following sections describe attributes, child elements, and parent element of the `FirstLineHanging` element.</span></span>
+<span data-ttu-id="eed1f-108">以下各节介绍 `FirstLineHanging` 元素的属性、子元素和父元素。</span><span class="sxs-lookup"><span data-stu-id="eed1f-108">The following sections describe attributes, child elements, and parent element of the `FirstLineHanging` element.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="54abf-109">属性</span><span class="sxs-lookup"><span data-stu-id="54abf-109">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="eed1f-109">属性</span><span class="sxs-lookup"><span data-stu-id="eed1f-109">Attributes</span></span>
 
-<span data-ttu-id="54abf-110">无。</span><span class="sxs-lookup"><span data-stu-id="54abf-110">None.</span></span>
+<span data-ttu-id="eed1f-110">无。</span><span class="sxs-lookup"><span data-stu-id="eed1f-110">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="54abf-111">子元素</span><span class="sxs-lookup"><span data-stu-id="54abf-111">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="eed1f-111">子元素</span><span class="sxs-lookup"><span data-stu-id="eed1f-111">Child Elements</span></span>
 
-<span data-ttu-id="54abf-112">无。</span><span class="sxs-lookup"><span data-stu-id="54abf-112">None.</span></span>
+<span data-ttu-id="eed1f-112">无。</span><span class="sxs-lookup"><span data-stu-id="eed1f-112">None.</span></span>
 
-### <a name="parent-elements"></a><span data-ttu-id="54abf-113">父元素</span><span class="sxs-lookup"><span data-stu-id="54abf-113">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="eed1f-113">父元素</span><span class="sxs-lookup"><span data-stu-id="eed1f-113">Parent Elements</span></span>
 
-|<span data-ttu-id="54abf-114">元素</span><span class="sxs-lookup"><span data-stu-id="54abf-114">Element</span></span>|<span data-ttu-id="54abf-115">描述</span><span class="sxs-lookup"><span data-stu-id="54abf-115">Description</span></span>|
+|<span data-ttu-id="eed1f-114">元素</span><span class="sxs-lookup"><span data-stu-id="eed1f-114">Element</span></span>|<span data-ttu-id="eed1f-115">描述</span><span class="sxs-lookup"><span data-stu-id="eed1f-115">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="54abf-116">View 的 CustomItem for CustomControl 的 Frame 元素（Format）</span><span class="sxs-lookup"><span data-stu-id="54abf-116">Frame Element for CustomItem for CustomControl for View (Format)</span></span>](./frame-element-for-customitem-for-customcontrol-for-view-format.md)|<span data-ttu-id="54abf-117">定义数据的显示方式，例如，将数据向左或向右移动。</span><span class="sxs-lookup"><span data-stu-id="54abf-117">Defines how the data is displayed, such as shifting the data to the left or right.</span></span>|
+|[<span data-ttu-id="eed1f-116">View 的 CustomItem for CustomControl 的 Frame 元素（Format）</span><span class="sxs-lookup"><span data-stu-id="eed1f-116">Frame Element for CustomItem for CustomControl for View (Format)</span></span>](./frame-element-for-customitem-for-customcontrol-for-view-format.md)|<span data-ttu-id="eed1f-117">定义数据的显示方式，例如，将数据向左或向右移动。</span><span class="sxs-lookup"><span data-stu-id="eed1f-117">Defines how the data is displayed, such as shifting the data to the left or right.</span></span>|
 
-## <a name="text-value"></a><span data-ttu-id="54abf-118">文本值</span><span class="sxs-lookup"><span data-stu-id="54abf-118">Text Value</span></span>
+## <a name="text-value"></a><span data-ttu-id="eed1f-118">文本值</span><span class="sxs-lookup"><span data-stu-id="eed1f-118">Text Value</span></span>
 
-<span data-ttu-id="54abf-119">指定要将数据的第一行移动到的字符数。</span><span class="sxs-lookup"><span data-stu-id="54abf-119">Specify the number of characters that you want to shift the first line of the data.</span></span>
+<span data-ttu-id="eed1f-119">指定要将数据的第一行移动到的字符数。</span><span class="sxs-lookup"><span data-stu-id="eed1f-119">Specify the number of characters that you want to shift the first line of the data.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="54abf-120">备注</span><span class="sxs-lookup"><span data-stu-id="54abf-120">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="eed1f-120">备注</span><span class="sxs-lookup"><span data-stu-id="eed1f-120">Remarks</span></span>
 
-<span data-ttu-id="54abf-121">如果指定此元素，则不能指定[FirstLineIndent](./firstlineindent-element-for-frame-for-customcontrol-for-view-format.md)元素。</span><span class="sxs-lookup"><span data-stu-id="54abf-121">If this element is specified, you cannot specify the [FirstLineIndent](./firstlineindent-element-for-frame-for-customcontrol-for-view-format.md) element.</span></span>
+<span data-ttu-id="eed1f-121">如果指定此元素，则不能指定[FirstLineIndent](./firstlineindent-element-for-frame-for-customcontrol-for-view-format.md)元素。</span><span class="sxs-lookup"><span data-stu-id="eed1f-121">If this element is specified, you cannot specify the [FirstLineIndent](./firstlineindent-element-for-frame-for-customcontrol-for-view-format.md) element.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="54abf-122">另请参阅</span><span class="sxs-lookup"><span data-stu-id="54abf-122">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="eed1f-122">另请参阅</span><span class="sxs-lookup"><span data-stu-id="eed1f-122">See Also</span></span>
 
-[<span data-ttu-id="54abf-123">用于视图的 CustomControl 的帧的 FirstLineIndent 元素（格式）</span><span class="sxs-lookup"><span data-stu-id="54abf-123">FirstLineIndent Element for Frame for CustomControl for View (Format)</span></span>](./firstlineindent-element-for-frame-for-customcontrol-for-view-format.md)
+[<span data-ttu-id="eed1f-123">用于视图的 CustomControl 的帧的 FirstLineIndent 元素（格式）</span><span class="sxs-lookup"><span data-stu-id="eed1f-123">FirstLineIndent Element for Frame for CustomControl for View (Format)</span></span>](./firstlineindent-element-for-frame-for-customcontrol-for-view-format.md)
 
-[<span data-ttu-id="54abf-124">View 的 CustomItem for CustomControl 的 Frame 元素（Format）</span><span class="sxs-lookup"><span data-stu-id="54abf-124">Frame Element for CustomItem for CustomControl for View (Format)</span></span>](./frame-element-for-customitem-for-customcontrol-for-view-format.md)
+[<span data-ttu-id="eed1f-124">View 的 CustomItem for CustomControl 的 Frame 元素（Format）</span><span class="sxs-lookup"><span data-stu-id="eed1f-124">Frame Element for CustomItem for CustomControl for View (Format)</span></span>](./frame-element-for-customitem-for-customcontrol-for-view-format.md)
 
-[<span data-ttu-id="54abf-125">编写 PowerShell 格式化文件</span><span class="sxs-lookup"><span data-stu-id="54abf-125">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="eed1f-125">编写 PowerShell 格式化文件</span><span class="sxs-lookup"><span data-stu-id="eed1f-125">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)

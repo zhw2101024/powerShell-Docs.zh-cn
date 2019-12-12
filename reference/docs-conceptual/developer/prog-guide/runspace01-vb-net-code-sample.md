@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 12ee5382-95ba-41c7-8291-7f69a6f63514
 caps.latest.revision: 7
 ms.openlocfilehash: 19de0fd33cd764c161366c8161adf46c2247482b
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360216"
 ---
-# <a name="runspace01-vbnet-code-sample"></a><span data-ttu-id="2b8ce-102">Runspace01 (VB.NET) 代码示例</span><span class="sxs-lookup"><span data-stu-id="2b8ce-102">Runspace01 (VB.NET) Code Sample</span></span>
+# <a name="runspace01-vbnet-code-sample"></a><span data-ttu-id="19ba0-102">Runspace01 (VB.NET) 代码示例</span><span class="sxs-lookup"><span data-stu-id="19ba0-102">Runspace01 (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="2b8ce-103">下面是[创建运行指定命令的控制台应用程序](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program)中所述的运行空间的代码示例。</span><span class="sxs-lookup"><span data-stu-id="2b8ce-103">Here are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Command](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).</span></span> <span data-ttu-id="2b8ce-104">为此，应用程序将调用运行空间，然后调用命令。</span><span class="sxs-lookup"><span data-stu-id="2b8ce-104">To do this, the application invokes a runspace, and then invokes a command.</span></span> <span data-ttu-id="2b8ce-105">（请注意，此应用程序不会指定运行空间配置信息，也不会显式创建管道。）调用的命令是 `Get-Process` cmdlet。</span><span class="sxs-lookup"><span data-stu-id="2b8ce-105">(Note that this application does not specify runspace configuration information, nor does it explicitly create a pipeline.) The command that is invoked is the `Get-Process` cmdlet.</span></span>
+<span data-ttu-id="19ba0-103">下面是[创建运行指定命令的控制台应用程序](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program)中所述的运行空间的代码示例。</span><span class="sxs-lookup"><span data-stu-id="19ba0-103">Here are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Command](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).</span></span> <span data-ttu-id="19ba0-104">为此，应用程序将调用运行空间，然后调用命令。</span><span class="sxs-lookup"><span data-stu-id="19ba0-104">To do this, the application invokes a runspace, and then invokes a command.</span></span> <span data-ttu-id="19ba0-105">（请注意，此应用程序不会指定运行空间配置信息，也不会显式创建管道。）调用的命令是 `Get-Process` cmdlet。</span><span class="sxs-lookup"><span data-stu-id="19ba0-105">(Note that this application does not specify runspace configuration information, nor does it explicitly create a pipeline.) The command that is invoked is the `Get-Process` cmdlet.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="2b8ce-106">代码示例</span><span class="sxs-lookup"><span data-stu-id="2b8ce-106">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="19ba0-106">代码示例</span><span class="sxs-lookup"><span data-stu-id="19ba0-106">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -71,6 +71,6 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace01.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace01/Runspace01.vb#L09-L53 "Runspace01.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="2b8ce-107">另请参阅</span><span class="sxs-lookup"><span data-stu-id="2b8ce-107">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="19ba0-107">另请参阅</span><span class="sxs-lookup"><span data-stu-id="19ba0-107">See Also</span></span>
 
-[<span data-ttu-id="2b8ce-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="2b8ce-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="19ba0-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="19ba0-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
