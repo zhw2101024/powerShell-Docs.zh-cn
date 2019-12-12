@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: b7a9f086-b1ca-4400-9be7-9ec1ec8880f3
 caps.latest.revision: 11
 ms.openlocfilehash: f20679e3392b99a049c075f24c7712262bab08e1
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364776"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-widecontrol-format"></a>SelectionCondition Element for EntrySelectedBy for WideControl (Format)
@@ -36,7 +36,7 @@ ms.locfileid: "72364776"
 
 以下各节介绍了 `SelectionCondition` 元素的属性、子元素和父元素。 必须指定单个 `PropertyName` 或 `ScriptBlock` 元素。 `SelectionSetName` 和 `TypeName` 元素是可选的。 可以指定任一元素中的一个。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
