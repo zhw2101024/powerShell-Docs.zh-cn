@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3af6aff8-4c2d-4f08-9bb1-e1f3ed3e583e
 caps.latest.revision: 11
 ms.openlocfilehash: 6a371bdbb85d07730c32931a4a79ee40856ce298
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368796"
 ---
 # <a name="entryselectedby-element-for-enumerableexpansion-format"></a>EntrySelectedBy Element for EnumerableExpansion (Format)
@@ -57,7 +57,7 @@ EnumerableExpansion 的配置元素（格式） DefaultSettings 元素（格式�
 
 必须为定义条目指定至少一个类型、选择集或选择条件。 您可以使用的子元素数没有最大限制。
 
-选择条件用于定义要使用的定义必须存在的条件，例如当对象具有特定属性或特定属性值或脚本计算结果为 `true` 时。 有关选择条件的详细信息，请参阅[定义用于显示数据的条件](./defining-conditions-for-displaying-data.md)。
+选择条件用于定义要使用的定义必须存在的条件，例如当对象具有特定属性或特定属性值或脚本计算结果为 `true`时。 有关选择条件的详细信息，请参阅[定义用于显示数据的条件](./defining-conditions-for-displaying-data.md)。
 
 ## <a name="see-also"></a>另请参阅
 
