@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 17352fc4-ba83-4f04-86bc-f591765d85a8
 caps.latest.revision: 18
 ms.openlocfilehash: fa9eda3ea1028c27dbfb3eb04747af3b817c1a81
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361396"
 ---
 # <a name="wideitem-element-for-widecontrol-format"></a>WideItem Element for WideControl (Format)
@@ -35,7 +35,7 @@ ms.locfileid: "72361396"
 
 以下各节介绍了 `WideItem` 元素的属性、子元素和父元素。 `FormatString` 元素是可选的。 但是，必须指定 `PropertyName` 或 `ScriptBlock` 元素，但不能同时指定这两个元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 

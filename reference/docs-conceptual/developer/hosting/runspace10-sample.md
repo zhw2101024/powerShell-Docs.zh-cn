@@ -9,21 +9,21 @@ ms.topic: article
 ms.assetid: 7c265084-e072-46ca-9844-c3c0e275d6b0
 caps.latest.revision: 7
 ms.openlocfilehash: fdf0036c68b608d254ed928ae9ac58616a856200
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367336"
 ---
 # <a name="runspace10-sample"></a>Runspace10 示例
 
-此示例演示如何创建默认初始会话状态，如何将 cmdlet 添加到[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)，如何创建使用初始会话状态的运行空间，以及如何使用来运行该命令的示例。" [System.object](/dotnet/api/system.management.automation.powershell) " 对象。
+此示例演示如何创建默认初始会话状态，如何将 cmdlet 添加到[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)，如何创建使用初始会话状态的运行空间，以及如何通过使用[system.exception 对象运行](/dotnet/api/system.management.automation.powershell)该命令，请执行以下操作：方法。
 
 ## <a name="requirements"></a>要求
 
 此示例需要 Windows PowerShell 2.0。
 
-## <a name="demonstrates"></a>示例
+## <a name="demonstrates"></a>说明
 
 此示例演示以下各项。
 

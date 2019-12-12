@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: cf6c1442-60aa-477a-8f30-ab02b1b11039
 caps.latest.revision: 7
 ms.openlocfilehash: d4a5fc934a41b00f89862674e44e4540680674f7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361226"
 ---
 # <a name="how-to-add-parameter-information"></a>如何添加参数信息
@@ -175,7 +175,7 @@ ms.locfileid: "72361226"
 
 此参数的默认值不会显示在 cmdlet 帮助主题的所有视图中。 但是，当用户要求提供完整（Get-help \<cmdletname >-Full）或本主题的参数（Get-help \<cmdletname >-parameter）视图时，它将显示在参数说明之后的表中（连同参数属性）。
 
-下面的 XML 演示添加到 `<command:parameter>` 节点的 `<dev:defaultValue>` 标记对。 请注意，默认值紧跟在结束 `</command:parameterValue>` 标记之后（指定了参数值）或参数说明的结束 `</maml:description>` 标记后。 路径名.
+下面的 XML 演示添加到 `<command:parameter>` 节点的 `<dev:defaultValue>` 标记对。 请注意，默认值紧跟在结束 `</command:parameterValue>` 标记之后（指定了参数值）或参数说明的结束 `</maml:description>` 标记后。 name。
 
 ```xml
 <command:parameters>

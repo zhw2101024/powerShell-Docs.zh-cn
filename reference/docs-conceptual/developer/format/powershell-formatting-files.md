@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 5d4c8f84-ebd2-4405-bb10-cfc5400d4ad6
 caps.latest.revision: 6
 ms.openlocfilehash: 3ec127d5ff60754de5d7f1ac73f2965524228b9c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365006"
 ---
 # <a name="windows-powershell-formatting-files"></a>Windows PowerShell 格式设置文件
@@ -27,9 +27,9 @@ Windows PowerShell 提供了几个位于安装目录（`$pshome`）中的格式�
 
 `Help.Format.ps1xml` 定义[get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet 使用的不同视图，例如详细、完整、参数和示例视图。
 
-`PowerShellCore.Format.ps1xml` 定义 Windows PowerShell 核心 cmdlet 生成的对象的显示方式，例如，[获取成员](/powershell/module/Microsoft.PowerShell.Utility/Get-Member)和[获取历史](/powershell/module/Microsoft.PowerShell.Core/Get-History)cmdlet 返回的对象。
+`PowerShellCore.Format.ps1xml` 定义 Windows PowerShell 核心 cmdlet 生成的对象的显示方式，如[获取成员](/powershell/module/Microsoft.PowerShell.Utility/Get-Member)和[获取历史](/powershell/module/Microsoft.PowerShell.Core/Get-History)cmdlet 返回的对象。
 
-`PowerShellTrace.Format.ps1xml` 定义跟踪对象的显示，如[trace-Command](/powershell/module/Microsoft.PowerShell.Utility/Trace-Command) cmdlet 生成的对象。
+`PowerShellTrace.Format.ps1xml` 定义跟踪对象的显示，如[trace-Command](/powershell/module/Microsoft.PowerShell.Utility/Trace-Command) cmdlet 生成的跟踪对象。
 
 `Registry.Format.ps1xml` 定义注册表对象的显示，如 key 和 entry 对象。
 

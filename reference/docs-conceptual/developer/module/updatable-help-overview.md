@@ -11,17 +11,17 @@ applies_to:
 ms.assetid: 3f7388a9-9fa8-42bc-b294-538c9a01e30a
 caps.latest.revision: 12
 ms.openlocfilehash: f2dfb9642ba2dde38124142b659b425bbbb00f37
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366956"
 ---
 # <a name="updatable-help-overview"></a>可更新帮助概述
 
 本文档简要介绍了 Windows PowerShell 可更新帮助功能的设计和操作。 它适用于向用户提供 Windows PowerShell 帮助主题的模块作者和其他人员。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
 Windows PowerShell 帮助主题是 Windows PowerShell 体验中不可或缺的一部分。 与 Windows PowerShell 模块一样，帮助主题会不断地由作者和 Windows PowerShell 用户社区的内容进行更新和改进。
 

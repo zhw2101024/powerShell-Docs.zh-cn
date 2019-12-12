@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3e83c9d9-6d06-4247-94d9-e3bfd4013b11
 caps.latest.revision: 4
 ms.openlocfilehash: a806d012097d107b6cc35710b9a93f2b27dd1ace
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359796"
 ---
 # <a name="authoring-the-xml-schema-file-for-a-management-odata-web-service"></a>创作管理 OData Web 服务的 XML 架构文件
@@ -49,7 +49,7 @@ XML 文件的第一部分将 MOF 架构文件中定义的资源映射到用于�
 |创建|创建|
 |读取|查询|
 |更新|更新|
-|DELETE|DELETE|
+|“删除”|“删除”|
 
 下面的示例演示 `Service` 资源上的创建、读取和更新操作的映射。
 

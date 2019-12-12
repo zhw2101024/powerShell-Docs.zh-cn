@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
 ms.openlocfilehash: 8f745cc0e5ef6db7a6bbdf39d826103f3b8a98ce
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369736"
 ---
 # <a name="events01-sample"></a>Events01 示例
@@ -24,12 +24,12 @@ ms.locfileid: "72369736"
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>如何使用 Visual Studio 生成示例。
 
 1. 安装 Windows PowerShell 2.0 SDK 后，导航到 Events01 文件夹。
-   默认位置是 `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`。
+   默认位置为 `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`。
 
 2. 双击解决方案（.sln）文件的图标。
    这会在 Microsoft Visual Studio 中打开示例项目。
 
-3. 在 "**生成**" 菜单中，选择 "**生成解决方案**"。
+3. 在“生成”菜单中选择“生成解决方案”。
    示例的库将在默认 `\bin` 或 `\bin\debug` 文件夹中生成。
 
 ### <a name="how-to-run-the-sample"></a>如何运行示例
@@ -77,7 +77,7 @@ A file was created in the TEMP directory
 
 此示例需要 Windows PowerShell 2.0。
 
-## <a name="demonstrates"></a>示例
+## <a name="demonstrates"></a>说明
 
 此示例演示以下各项。
 

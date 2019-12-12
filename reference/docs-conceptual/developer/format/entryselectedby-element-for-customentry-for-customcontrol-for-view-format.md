@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 7828b45b-eabf-4432-b127-131b4ef0c800
 caps.latest.revision: 8
 ms.openlocfilehash: e7176f9f6ef67116ea7c07a46797fb0ba84f915d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368776"
 ---
 # <a name="entryselectedby-element-for-customentry-for-customcontrol-for-view-format"></a>EntrySelectedBy Element for CustomEntry for CustomControl for View (Format)
@@ -57,7 +57,7 @@ ms.locfileid: "72368776"
 
 您必须为某个条目指定至少一个类型、选择集或选择条件。 您可以使用的子元素数没有最大限制。
 
-选择条件用于定义要使用的项必须存在的条件，例如当对象具有特定属性或特定属性值或脚本计算结果为 `true` 时。 有关选择条件的详细信息，请参阅[定义使用视图条目或项的条件](./defining-conditions-for-displaying-data.md)。
+选择条件用于定义要使用的项必须存在的条件，例如当对象具有特定属性或特定属性值或脚本计算结果为 `true`时。 有关选择条件的详细信息，请参阅[定义使用视图条目或项的条件](./defining-conditions-for-displaying-data.md)。
 
 有关自定义控件视图组件的详细信息，请参阅[自定义控件视图](./creating-custom-controls.md)。
 

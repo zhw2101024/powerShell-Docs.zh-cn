@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 0f7a74e9-764d-46ce-ab8e-8b9314ce1659
 caps.latest.revision: 12
 ms.openlocfilehash: 442565d25f60ae8e04501f3f9ffba35d486fbc8a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363826"
 ---
 # <a name="entryselectedby-element-for-listentry-for-listcontrol-format"></a>EntrySelectedBy Element for ListEntry for ListControl (Format)
@@ -57,7 +57,7 @@ ms.locfileid: "72363826"
 
 对于列表视图定义，必须至少指定一个类型、选择集或选择条件。 您可以使用的子元素数没有最大限制。
 
-选择条件用于定义要使用的定义必须存在的条件，例如当对象具有特定属性或特定属性值或脚本计算结果为 `true` 时。 有关选择条件的详细信息，请参阅为[数据显示定义条件](./defining-conditions-for-displaying-data.md)。
+选择条件用于定义要使用的定义必须存在的条件，例如当对象具有特定属性或特定属性值或脚本计算结果为 `true`时。 有关选择条件的详细信息，请参阅为[数据显示定义条件](./defining-conditions-for-displaying-data.md)。
 
 有关列表视图组件的详细信息，请参阅[创建列表视图](./creating-a-list-view.md)。
 

@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: e620bf6d-76be-47b0-a7a8-f43418f30c60
 caps.latest.revision: 6
 ms.openlocfilehash: b81a32b867795ae51c3f5308c2f82c31ed2747fa
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359816"
 ---
 # <a name="adding-resources-to-a-management-odata-web-service"></a>向管理 OData Web 服务添加资源
 
 此示例演示如何使用管理 OData 架构设计器将资源添加到现有的管理 OData web 服务。 [PswsRoleBasedPlugins](https://code.msdn.microsoft.com:443/windowsdesktop/PswsRoleBasedPlugins-9c79b75a)示例创建一个公开进程和服务器资源的 web 服务。 在此示例中，你将向 web 服务添加一个虚拟机（VM）资源。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 本主题假定你已按照[创建 Windows PowerShell Web 服务](./creating-a-management-odata-web-service.md)中所述下载并安装了[PswsRoleBasedPlugins](https://code.msdn.microsoft.com:443/windowsdesktop/PswsRoleBasedPlugins-9c79b75a)示例，并且已下载并安装了[管理 OData 架构设计器](https://marketplace.visualstudio.com/items?itemName=jlisc0.ManagementODataSchemaDesigner)。 本主题还假设你在设置管理 Odata 终结点的计算机上安装了 Hyper-v Windows PowerShell 模块。
 
@@ -49,15 +49,15 @@ ms.locfileid: "72359816"
 
 2. 请确保选择 "**本地计算机**"，然后单击 "**下一步**"。
 
-3. 确保选中 "已安装的 Windows PowerShell 模块"，然后从下拉列表中选择 "Hyper-v"。 单击 "**下一步**"。 单击 **下一步**。
+3. 确保选中 "已安装的 Windows PowerShell 模块"，然后从下拉列表中选择 "Hyper-v"。 单击“下一步”。 单击?下一步?。
 
 4. 在 " **Cmdlet 名词**" 列表中，选择 " **VM**"。 单击“下一步”
 
 5. 在此示例中，我们将仅绑定带有 cmdlet 的 Get 和 Delete 命令。 清除 "**创建**" 和 "**更新**" 复选框，并确保选中 "**获取**" 和 "**删除**" 复选框。 请确保为**GET**选择 `Get-VM` cmdlet，并选择 `Remove-VM` Cmdlet 进行**删除**。
 
-6. 由于 VM cmdlet 的元数据未指定输出类型，因此你将需要运行 cmdlet 来指定输出类型。 选择 "**提供输出类型**"，然后单击 "**运行 cmdlet**"。 此时会出现 "**运行 Cmdlet** " 对话框。 单击 "**运行**"。 将用 `VirtualMachine` 类型填充 " **CLR 类型**" 框。 单击 **"确定"** ，然后单击 "**下一步**"。
+6. 由于 VM cmdlet 的元数据未指定输出类型，因此你将需要运行 cmdlet 来指定输出类型。 选择 "**提供输出类型**"，然后单击 "**运行 cmdlet**"。 此时会出现 "**运行 Cmdlet** " 对话框。 单击 **“运行”** 。 将用 `VirtualMachine` 类型填充 " **CLR 类型**" 框。 单击 **"确定"** ，然后单击 "**下一步**"。
 
-7. 默认情况下，将选择 VirtualMachine 对象的所有属性。 在从 web 服务请求此资源时，你可以清除不希望作为数据的一部分返回的任何属性。 单击 **下一步**。
+7. 默认情况下，将选择 VirtualMachine 对象的所有属性。 在从 web 服务请求此资源时，你可以清除不希望作为数据的一部分返回的任何属性。 单击?下一步?。
 
 8. 必须至少选择一个要用作键的属性。 在列表中选择 "**名称**"，然后单击 "**下一步**"。
 

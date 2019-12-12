@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 697791b3-2135-4a39-b9d7-8566ed67acf2
 caps.latest.revision: 13
 ms.openlocfilehash: bb5d036e5658c365a4fafa2cac05c0bba9f87019
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360696"
 ---
 # <a name="importing-a-powershell-module"></a>导入 PowerShell 模块
@@ -41,7 +41,7 @@ Import-Module -Name C:\myRandomDirectory\myModule -Verbose
 
 ## <a name="implicitly-importing-a-module-powershell-30"></a>隐式导入模块（PowerShell 3.0）
 
-从 Windows PowerShell 3.0 开始，在命令中使用模块中的任何 cmdlet 或函数时，将自动导入模块。 此功能适用于目录中的任何模块，这些模块包含在**PSModulePath**环境变量的值中。 但是，如果您不将模块保存在有效路径上，则仍可以使用上面所述的显式[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)选项加载它们。
+从 Windows PowerShell 3.0 开始，在命令中使用模块的任意 cmdlet 或函数时会自动导入该模块。 此功能适用于目录中的任何模块，这些模块包含在**PSModulePath**环境变量的值中。 但是，如果您不将模块保存在有效路径上，则仍可以使用上面所述的显式[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)选项加载它们。
 
 以下操作触发自动导入模块，也称为 "模块自动加载"。
 

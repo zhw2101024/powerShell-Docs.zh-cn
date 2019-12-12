@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
 caps.latest.revision: 5
 ms.openlocfilehash: 949c0d63b1e5bca1bfe670362df4297c29e98fcc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359916"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Windows PowerShell 提供程序快速入门
@@ -21,7 +21,7 @@ ms.locfileid: "72359916"
 
 ## <a name="writing-a-basic-provider"></a>编写基本提供程序
 
-Windows PowerShell 提供程序的最基本功能是创建和删除驱动器。 在此示例中，我们实现了的[Drivecmdletprovider. Newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)和[Drivecmdletprovider. Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)方法，该[方法"Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) " 类。 你还将了解如何声明提供程序类。
+Windows PowerShell 提供程序的最基本功能是创建和删除驱动器。 在此示例中，我们[实现了 Drivecmdletprovider 类的](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)Newdrive * 和[Drivecmdletprovider. Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)方法的实例的[*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)和管理器类的方法。 你还将了解如何声明提供程序类。
 
 当你编写提供程序时，可以指定默认驱动器-在提供程序可用时自动创建的驱动器。 还定义了一个方法来创建使用该提供程序的新驱动器。
 
@@ -35,7 +35,7 @@ Windows PowerShell 提供程序的最基本功能是创建和删除驱动器。 
 
 1. 添加 System.web 程序集作为对项目的引用。
 
-2. 单击 "**项目 > AccessDBProviderSample Properties > 调试**"。 在 "**启动项目**" 中，单击 "**启动外部程序**"，并导航到 Windows PowerShell 可执行文件（通常为 c:\Windows\System32\WindowsPowerShell\v1.0 \\）。
+2. 单击 "**项目 > AccessDBProviderSample Properties > 调试**"。 在 "**启动项目**" 中，单击 "**启动外部程序**"，并导航到 Windows PowerShell 可执行文件（通常为 c:\Windows\System32\WindowsPowerShell\v1.0\\）。
 
 3. 在 "**启动选项**" 下的 "**命令行参数**" 框中输入以下内容： `-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
 
@@ -67,7 +67,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 ### <a name="implementing-newdrive"></a>实现 NewDrive
 
-当用户调用 Drivecmdletprovider cmdlet 时，Windows PowerShell 引擎会调用[Newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)方法，该方法用于指定你的用户的名称[。 NewPSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand) cmdlet程序. 即 system.management.automation.psdriveinfo 参数由 Windows PowerShell 引擎传递，方法会将新驱动器返回给 Windows PowerShell 引擎。 此方法必须在上面创建的类中声明。
+当用户调用[NewPSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand) cmdlet 指定提供程序的名称时，Windows PowerShell 引擎将调用[Drivecmdletprovider. Newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)方法，此方法由 Windows PowerShell 引擎调用。 即 system.management.automation.psdriveinfo 参数由 Windows PowerShell 引擎传递，方法会将新驱动器返回给 Windows PowerShell 引擎。 此方法必须在上面创建的类中声明。
 
 此方法首先检查以确保传入的驱动器对象和驱动器根都存在，如果不存在，则返回 `null`。 然后，它使用内部类 AccessDBPSDriveInfo 的构造函数来创建新的驱动器以及与该驱动器表示的 Access 数据库的连接。
 

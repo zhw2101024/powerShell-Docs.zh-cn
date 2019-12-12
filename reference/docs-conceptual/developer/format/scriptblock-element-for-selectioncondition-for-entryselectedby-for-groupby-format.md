@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e01344bd-ad69-4789-8e9f-2e79880c3a33
 caps.latest.revision: 6
 ms.openlocfilehash: cb79fb942111cee89c6b2abba75de4c494082b7e
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368596"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format"></a>ScriptBlock Element for SelectionCondition for EntrySelectedBy for GroupBy (Format)

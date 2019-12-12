@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e523a8e1-42e4-4633-887f-fb74b3464561
 caps.latest.revision: 12
 ms.openlocfilehash: 0a9bfe5dd0978ffce66db1b18ef4d82be6c1a7f2
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359956"
 ---
 # <a name="provider-types"></a>提供程序类型

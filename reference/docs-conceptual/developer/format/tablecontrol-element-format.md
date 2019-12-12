@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1550b068-dfbc-4ae0-9aa1-72c9a680ec59
 caps.latest.revision: 15
 ms.openlocfilehash: 3942c008e026b0b99db3c77af4a0152b50fffc4e
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368196"
 ---
 # <a name="tablecontrol-element-format"></a>TableControl Element (Format)
@@ -62,7 +62,7 @@ ViewDefinitions 元素（格式） View 元素（Format） TableControl 元素�
 
 ## <a name="example"></a>示例
 
-此示例演示一个 `TableControl` 元素，该元素用于显示[Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)对象的属性。
+此示例演示用于显示[system.serviceprocess. Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)对象的属性的 `TableControl` 元素。
 
 ```xml
 <View>

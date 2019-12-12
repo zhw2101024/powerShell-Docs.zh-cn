@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1106829a-8ddc-454e-bbdd-ade15d4bffb4
 caps.latest.revision: 7
 ms.openlocfilehash: e9df44b17453e9f73f6eb388d9cbc8a69fce4ba2
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366416"
 ---
 # <a name="windows-powershell-sample-code"></a>Windows PowerShell 示例代码

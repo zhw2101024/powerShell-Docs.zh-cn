@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: a26661f2-a63c-4ca7-ad3e-dcb4d32ce5a1
 caps.latest.revision: 8
 ms.openlocfilehash: d7d6d3b377a0089bcf96d0ea46e866321441b537
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359966"
 ---
 # <a name="accessdbprovidersample05"></a>AccessDBProviderSample05
 
 此示例演示如何覆盖容器方法以支持对 `Move-Item` 和 `Join-Path` cmdlet 的调用。 当用户需要移动容器中的项时，如果数据存储区包含嵌套的容器，则应实现这些方法。 此示例中的提供程序类派生自[Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)类。
 
-## <a name="demonstrates"></a>示例
+## <a name="demonstrates"></a>说明
 
 > [!IMPORTANT]
 > 提供程序类最有可能派生自以下类之一，并可能实现其他提供程序接口：
@@ -30,7 +30,7 @@ ms.locfileid: "72359966"
 >
 > 有关根据提供程序功能选择要从哪个提供程序类派生的详细信息，请参阅[设计你的 Windows PowerShell 提供程序](./provider-types.md)。
 
-此示例演示了以下内容：
+本示例演示下面几点：
 
 - 声明 `CmdletProvider` 特性。
 

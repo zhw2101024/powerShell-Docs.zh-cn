@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 4a1adad7-e864-4892-9d26-a6476a9698d2
 caps.latest.revision: 7
 ms.openlocfilehash: b65d953169f6daf15fb617ce4d0303cf4cb584ee
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368586"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format"></a>ScriptBlock Element for SelectionCondition for EntrySelectedBy for ListControl (Format)

@@ -16,10 +16,10 @@ helpviewer_keywords:
 ms.assetid: da0b32f8-7b51-440e-a061-3177b5759e0e
 caps.latest.revision: 9
 ms.openlocfilehash: 7db93af33717dc4802ed915793f6cd570cfb48f6
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364626"
 ---
 # <a name="adding-parameters-that-process-command-line-input"></a>添加用于处理命令行输入的参数
@@ -47,9 +47,9 @@ Public Class GetProcCommand
 
 Cmdlet 参数使用户能够向 cmdlet 提供输入。 在以下示例中， **get-help**和 `Get-Member` 是流水线 cmdlet 的名称，`MemberType` 是 `Get-Member` cmdlet 的参数。 参数的参数为 "属性"。
 
-**PS > `get-member` membertype 属性**
+**PS >`get-member` membertype 属性**
 
-若要声明 cmdlet 的参数，必须首先定义表示参数的属性。 在**get-help** cmdlet 中，仅 `Name` 参数，在此示例中，它表示要检索的 .NET Framework 进程对象的名称。 因此，cmdlet 类定义类型字符串的属性以接受名称数组。
+要声明 Cmdlet 的参数，必须首先定义代表这些参数的属性。 在**get-help** cmdlet 中，仅 `Name`参数，在此示例中，它表示要检索的 .NET Framework 进程对象的名称。 因此，cmdlet 类定义类型字符串的属性以接受名称数组。
 
 下面是用于**获取处理器**cmdlet 的 `Name` 参数的参数声明。
 
@@ -94,7 +94,7 @@ End Property
 
 - 应尽可能多地重复使用预定义的 Windows PowerShell 参数名称和数据类型，确保 cmdlet 与 Windows PowerShell cmdlet 兼容。 例如，如果所有 cmdlet 都使用预定义的 `Id` 参数名称来标识资源，则无论使用哪种 cmdlet，用户都可以轻松地了解参数的含义。 基本上，参数名称与公共语言运行时（CLR）中用于变量名称的规则遵循相同的规则。 有关参数命名的详细信息，请参阅[Cmdlet 参数名称](https://msdn.microsoft.com/en-us/c4500737-0a05-4d01-911b-394424c65bfb)。
 
-- Windows PowerShell 保留了几个参数名称，以便提供一致的用户体验。 不要使用以下参数名称： `WhatIf`、`Confirm`、`Verbose`、`Debug`、`Warn`、`ErrorAction`、`ErrorVariable`、`OutVariable` 和 `OutBuffer`。 此外，还保留了这些参数名称的以下别名： `vb`、`db`、`ea`、`ev`、`ov` 和 `ob`。
+- Windows PowerShell 保留了几个参数名称，以便提供一致的用户体验。 不要使用以下参数名称： `WhatIf`、`Confirm`、`Verbose`、`Debug`、`Warn`、`ErrorAction`、`ErrorVariable`、`OutVariable`和 `OutBuffer`。 此外，还保留了这些参数名称的以下别名： `vb`、`db`、`ea`、`ev`、`ov`和 `ob`。
 
 - `Name` 是一个简单的通用参数名称，建议在 cmdlet 中使用。 最好选择与特定 cmdlet 唯一的复杂名称类似的参数名称，并且很难记住。
 
@@ -129,7 +129,7 @@ public string[] Name
 
 如果 cmdlet 要处理命令行输入，则必须重写相应的输入处理方法。 基本输入处理方法在[创建第一个 Cmdlet](./creating-a-cmdlet-without-parameters.md)时引入。
 
-**Get-Proc** cmdlet 将重写 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) 方法，以处理用户或脚本提供的 `Name` 参数输入的参数。 此方法获取每个请求的进程名称的进程，如果未提供任何名称，则获取所有进程的进程。 请注意，在[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)中，对[WriteObject% 28system.object% 2csystem.string% %29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)的调用是用于将输出对象发送到该对象的输出机制。条. 此调用 `enumerateCollection` 的第二个参数设置为 `true`，以通知 Windows PowerShell 运行时枚举进程对象的输出数组，并一次将一个进程写入命令行。
+**Get-Proc** cmdlet 将重写 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) 方法，以处理用户或脚本提供的 `Name` 参数输入的参数。 此方法获取每个请求的进程名称的进程，如果未提供任何名称，则获取所有进程的进程。 请注意，在[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)中，对[WriteObject% 28system.object% 2csystem.string% %29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)的调用是用于将输出对象发送到管道的输出的机制。）。 此调用 `enumerateCollection`的第二个参数设置为 `true`，以通知 Windows PowerShell 运行时枚举进程对象的输出数组，并一次将一个进程写入命令行。
 
 ```csharp
 protected override void ProcessRecord()
@@ -198,7 +198,7 @@ Windows PowerShell 通过使用 .NET Framework 对象在 cmdlet 之间传递信�
     PS> get-proc -name iexplore
     ```
 
-此时将显示以下输出。
+将显示以下输出。
 
     ```
     Handles  NPM(K)  PM(K)   WS(K)  VS(M)  CPU(s)   Id   ProcessName
@@ -212,7 +212,7 @@ Windows PowerShell 通过使用 .NET Framework 对象在 cmdlet 之间传递信�
     PS> get-proc -name iexplore, outlook, notepad
     ```
 
-此时将显示以下输出。
+将显示以下输出。
 
     ```
     Handles  NPM(K)  PM(K)   WS(K)  VS(M)  CPU(s)   Id   ProcessName
@@ -224,7 +224,7 @@ Windows PowerShell 通过使用 .NET Framework 对象在 cmdlet 之间传递信�
          39       2   1024     356     30   0.08  3396   notepad
     ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [添加处理管道输入的参数](./adding-parameters-that-process-pipeline-input.md)
 

@@ -14,10 +14,10 @@ helpviewer_keywords:
 ms.assetid: bdd66fea-eb63-4bb6-9cbe-9a799e5e0db5
 caps.latest.revision: 9
 ms.openlocfilehash: 5412d88b690a1f5f1ef387416e3bf9da3a32c95d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369106"
 ---
 # <a name="windows-powershell-error-records"></a>Windows PowerShell 错误记录
@@ -60,7 +60,7 @@ Cmdlet 必须传递一个[ErrorRecord](/dotnet/api/System.Management.Automation.
 
 ## <a name="error-category"></a>错误类别
 
-当你创建错误记录时，使用[ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)枚举定义的其中一个常量指定错误的类别。 当用户将 `$ErrorView` 变量设置为 `"CategoryView"` 时，Windows PowerShell 使用错误类别显示错误信息。
+当你创建错误记录时，使用[ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)枚举定义的其中一个常量指定错误的类别。 当用户将 `$ErrorView` 变量设置为 `"CategoryView"`时，Windows PowerShell 使用错误类别显示错误信息。
 
 避免使用[ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) **NotSpecified**常数。 如果有关于错误的任何信息或有关导致错误的操作的信息，请选择最能描述错误或操作的类别，即使该类别不是完全匹配。
 
@@ -72,13 +72,13 @@ Windows PowerShell 显示的信息称为类别视图字符串，是从[Errorcate
 
 以下列表描述了显示的信息：
 
-- 类别：Windows PowerShell 定义的[ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)常量。
+- 类别： Windows PowerShell 定义的[ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)常量。
 
-- TargetName默认情况下，该 cmdlet 在发生错误时正在处理的对象的名称。 或其他 cmdlet 定义的字符串。
+- TargetName：默认情况下，在发生错误时 cmdlet 正在处理的对象的名称。 或其他 cmdlet 定义的字符串。
 
-- TargetType默认情况下，目标对象的类型。 或其他 cmdlet 定义的字符串。
+- TargetType：默认情况下，目标对象的类型。 或其他 cmdlet 定义的字符串。
 
-- 活动默认情况下，创建错误记录的 cmdlet 的名称。 或其他 cmdlet 定义的字符串。
+- 活动：默认情况下，创建错误记录的 cmdlet 的名称。 或其他 cmdlet 定义的字符串。
 
 - 原因：默认情况下，异常类型。 或其他 cmdlet 定义的字符串。
 
@@ -88,9 +88,9 @@ Windows PowerShell 显示的信息称为类别视图字符串，是从[Errorcate
 
 替换消息是由[ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails)对象提供的。 使用此对象的以下构造函数之一，因为它们提供了可供 Windows PowerShell 使用的其他本地化信息。
 
-- [ErrorDetails （Cmdlet，string，string，Object []）](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___)：如果模板字符串是在其中实现了 cmdlet 的同一程序集中的资源字符串，或者如果要通过[GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)方法的重写加载模板字符串，请使用此构造函数.
+- [ErrorDetails （Cmdlet，string，string，Object []）](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___)：如果你的模板字符串是在其中实现 Cmdlet 的同一程序集中的资源字符串，或者如果你想要通过[GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)方法的替代加载模板字符串，请使用此构造函数。
 
-- [ErrorDetails （Assembly，string，string，Object []）](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Reflection_Assembly_System_String_System_String_System_Object___)：如果模板字符串在另一个程序集中，并且不通过重写[GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)来加载它，请使用此构造函数。
+- [ErrorDetails （Assembly，string，string，Object []）](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Reflection_Assembly_System_String_System_String_System_Object___)：如果模板字符串在另一个程序集中，而你不通过重写[GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)将其加载，则使用此构造函数。
 
 替换消息应该符合 .NET Framework 的设计准则，用于编写少量的异常消息。 准则表明应为开发人员编写异常消息。 应为 cmdlet 用户编写这些替换消息。
 
@@ -102,7 +102,7 @@ Windows PowerShell 显示的信息称为类别视图字符串，是从[Errorcate
 
 ## <a name="invocation-information"></a>调用信息
 
-当某个 cmdlet 使用[WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)或[Throwterminatingerror *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)来报告错误记录时，Windows PowerShell 会自动添加描述该内容的信息，这些发生错误时调用的命令。 此信息由[Invocationinfo](/dotnet/api/System.Management.Automation.InvocationInfo)对象提供，该对象包含命令调用的 cmdlet 的名称、命令本身，以及有关管道或脚本的信息。 此属性是只读的。
+当某个 cmdlet 使用[WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)或[Throwterminatingerror *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)来报告错误记录时，Windows PowerShell 会自动添加描述发生错误时调用的命令的信息，并对此进行了说明。 此信息由[Invocationinfo](/dotnet/api/System.Management.Automation.InvocationInfo)对象提供，该对象包含命令调用的 cmdlet 的名称、命令本身，以及有关管道或脚本的信息。 该属性为只读。
 
 ## <a name="see-also"></a>另请参阅
 

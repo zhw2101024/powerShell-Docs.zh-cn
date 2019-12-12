@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 9c8ef289-0659-42d1-9976-044b144201eb
 caps.latest.revision: 6
 ms.openlocfilehash: 2a8372d937fc3c959f7d829bb52495048423d506
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359646"
 ---
 # <a name="adding-windows-powershell-activities-to-the-visual-studio-toolbox"></a>向 Visual Studio 工具箱添加 Windows PowerShell 活动
@@ -23,7 +23,7 @@ ms.locfileid: "72359646"
 
 1. 在 Visual Studio 中创建新的工作流控制台应用程序项目。
 
-2. 在 "**视图**" 菜单上，单击 **"工具箱**"。
+2. 在“视图”菜单上，单击“工具箱”。
 
 3. 右键单击 "工具箱"，然后单击 "**添加选项卡**"，并为新选项卡指定一个名称，如 "PowerShell 活动"，从而在 "工具箱" 中添加新选项卡。
 
@@ -33,9 +33,9 @@ ms.locfileid: "72359646"
 
 5. 在 "**选择工具箱项**" 对话框中，单击 "**系统**" 选项卡。
 
-6. 单击 "**浏览**"。
+6. 单击**浏览**。
 
-7. 导航到%WINDIR%\Microsoft.NET\assembly\GAC_MSIL\Microsoft.PowerShell.Core.Activities\v4.0_3.0.0.0__31bf3856ad364e 文件夹，然后双击 ""。
+7. 导航到%WINDIR%\Microsoft.NET\assembly\ GAC_MSIL \Microsoft.PowerShell.Core.Activities\v4.0_3.0.0. 0__31bf3856ad364e 文件夹，然后双击 ""。
 
 8. 单击**确定**。 现在，"工具箱" 中提供了由 "Microsoft. Core" 程序集定义的活动。
 

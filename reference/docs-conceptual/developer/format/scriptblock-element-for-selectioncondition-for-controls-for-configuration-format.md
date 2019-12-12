@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: bb032dfc-9ef6-403c-b557-5858617e3483
 caps.latest.revision: 6
 ms.openlocfilehash: 102987970152420896a0c986f0973280ae209623
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368616"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-controls-for-configuration-format"></a>ScriptBlock Element for SelectionCondition for Controls for Configuration (Format)

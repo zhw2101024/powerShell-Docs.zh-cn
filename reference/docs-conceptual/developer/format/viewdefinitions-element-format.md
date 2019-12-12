@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 29840c10-2b30-4bb1-a8a0-ddf84d19c2d0
 caps.latest.revision: 18
 ms.openlocfilehash: c5ec80350c7707ccd41112ab5e1952e5dc198cca
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361416"
 ---
 # <a name="viewdefinitions-element-format"></a>ViewDefinitions Element (Format)
@@ -34,7 +34,7 @@ Configuration 元素（Format） ViewDefinitions （Format XML）元素
 
 以下各节介绍 `ViewDefinitions` 元素的属性、子元素和父元素。 对于可以在格式设置文件中定义的视图数量没有限制，可以按任意顺序添加它们。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 

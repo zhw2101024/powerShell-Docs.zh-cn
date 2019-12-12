@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 94eb0535-8002-4f17-9a2b-4be75ec20e5c
 caps.latest.revision: 18
 ms.openlocfilehash: 4a25c9d81df670dc10955065bfb66766cdb1bd33
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367866"
 ---
 # <a name="width-element-for-tablecolumnheader-for-tablecontrol-format"></a>Width Element for TableColumnHeader for TableControl (Format)
@@ -31,7 +31,7 @@ ms.locfileid: "72367866"
 
 以下各节描述定义列标题时使用的 `Width` 元素的特性、子元素和父元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 

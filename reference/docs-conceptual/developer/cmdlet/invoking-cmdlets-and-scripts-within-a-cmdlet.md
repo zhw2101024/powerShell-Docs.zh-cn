@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e7040a5c-4a47-42df-a2ea-96b134a4ed9b
 caps.latest.revision: 10
 ms.openlocfilehash: f20708ff41d9a6de90090997a875ba5371eccd74
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364286"
 ---
 # <a name="invoking-cmdlets-and-scripts-within-a-cmdlet"></a>调用 Cmdlet 中的 Cmdlet 和脚本
@@ -21,7 +21,7 @@ Cmdlet 可以从 cmdlet 的输入处理方法中调用其他 cmdlet 和脚本。
 
 ## <a name="the-invoke-method"></a>Invoke 方法
 
-所有 cmdlet 都可以调用现有的 cmdlet，方法是从[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)重写的输入处理方法中调用[system.exception 方法，该方法是](/dotnet/api/System.Management.Automation.Cmdlet.Invoke)由重写的cmdlet。 但是，你只能调用直接从[system.web](/dotnet/api/System.Management.Automation.Cmdlet)类派生的 cmdlet。 不能调用派生自[PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)类的 cmdlet。
+所有 cmdlet 都可以通过从 cmdlet 重写的输入处理方法中调用[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法来调用现有的 cmdlet，例如，该 cmdlet 会重写[此方法。](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) 但是，你只能调用直接从[system.web](/dotnet/api/System.Management.Automation.Cmdlet)类派生的 cmdlet。 不能调用派生自[PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)类的 cmdlet。
 
 " [System.object](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) " 方法具有以下变体。
 

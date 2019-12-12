@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 50e6f9b1-2678-4f53-9250-7c48843a9549
 caps.latest.revision: 5
 ms.openlocfilehash: 1113c0d1cd68bb97d2f96b529f755b62137d1f40
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366036"
 ---
 # <a name="importing-and-invoking-a-windows-powershell-workflow"></a>导入并调用 Windows PowerShell 工作流
@@ -25,7 +25,7 @@ Windows PowerShell 3 允许导入和调用打包为 Windows PowerShell 模块的
 
 1. 创建一个[Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)对象以创建与远程运行空间的连接。
 
-2. 将 Wsmanconnectioninfo 对象的 Shelluri * 属性设置为 `Microsoft.PowerShell.Workflow` 以指定 Windows PowerShell 终结点的[Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)对象的[*](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ShellUri)属性。
+2. 若要 `Microsoft.PowerShell.Workflow`，请将[Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)对象的[Shelluri *](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ShellUri)属性设置为 ""，以指定 Windows PowerShell 终结点。
 
 3. 创建一个运行空间，该运行空间使用通过完成前面的步骤创建的连接。
 

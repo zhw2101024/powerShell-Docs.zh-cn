@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: 547e6695-e936-4cac-a90b-417d0dab393d
 caps.latest.revision: 12
 ms.openlocfilehash: 3efa98c7aa22fdaee8042bae99282aea0618ef5f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369286"
 ---
 # <a name="types-of-cmdlet-output"></a>Cmdlet 输出的类型
@@ -54,7 +54,7 @@ Cmdlet 可以提供调试消息，这些消息对 cmdlet 代码进行疑难解�
 
 Cmdlet 可以通过调用[WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)方法来显示警告消息。
 
-默认情况下，会显示警告消息。 但是，你可以通过使用 `$WarningPreference` 变量或在调用 cmdlet 时使用**Verbose**和**Debug**参数来配置警告消息。
+默认情况下，会显示警告消息。 但是，您可以通过使用 `$WarningPreference` 变量或在调用 cmdlet 时使用**Verbose**和**Debug**参数来配置警告消息。
 
 ## <a name="displaying-output"></a>显示输出
 
@@ -62,7 +62,7 @@ Cmdlet 可以通过调用[WriteWarning](/dotnet/api/System.Management.Automation
 
 ## <a name="accessing-the-output-functionality-of-a-host-application"></a>访问主机应用程序的输出功能
 
-你还可以设计 cmdlet，以通过 PowerShell 运行时直接访问主机应用程序的输出功能。 使用 PowerShell 提供的宿主 Api，而不是使用[system. 控制台](/dotnet/api/System.Console)或[System.web。窗体](/dotnet/api/System.Windows.Forms)可确保你的 cmdlet 可与各种主机一起使用。 例如： **ngen.exe**控制台主机、 **powershell_ise**图形主机、powershell 远程处理主机和第三方主机。
+你还可以设计 cmdlet，以通过 PowerShell 运行时直接访问主机应用程序的输出功能。 使用 PowerShell 提供的宿主 Api，而不是使用[system. 控制台](/dotnet/api/System.Console)或[System.web。窗体](/dotnet/api/System.Windows.Forms)可确保你的 cmdlet 可与各种主机一起使用。 例如： **ngen.exe**控制台主机、 **powershell_ise**图形宿主、powershell 远程处理主机和第三方主机。
 
 ## <a name="see-also"></a>另请参阅
 

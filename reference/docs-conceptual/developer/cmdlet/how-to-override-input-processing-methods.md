@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1a1ad921-5816-4937-acf1-ed4760fae740
 caps.latest.revision: 8
 ms.openlocfilehash: cfee55576518cf9ce38501192872ce94054f5213
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364466"
 ---
 # <a name="how-to-override-input-processing-methods"></a>如何替代输入处理方法
@@ -29,7 +29,7 @@ ms.locfileid: "72364466"
 
 - 声明一个受保护的[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法重写。
 
-下面的类打印示例消息。 若要使用此类，请更改 Cmdlet 属性中的动词和名词，更改类的名称以反映新的动词和名词，然后将所需的功能添加到[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)的重写中。付款方式.
+下面的类打印示例消息。 若要使用此类，请更改 Cmdlet 属性中的动词和名词，更改类的名称以反映新的动词和名词，然后将所需的功能添加到[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法的重写。
 
 ```csharp
 [Cmdlet(VerbsDiagnostic.Test, "BeginProcessingClass")]

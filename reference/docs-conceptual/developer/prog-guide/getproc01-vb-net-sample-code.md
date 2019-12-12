@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3ee87f67-6d2c-48cc-b300-3ae917c6dc88
 caps.latest.revision: 5
 ms.openlocfilehash: 80f145da8f4e2f3a39b1cdd533478b7fdc2f0a31
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417447"
 ---
 # <a name="getproc01-vbnet-sample-code"></a>GetProc01 (VB.NET) 示例代码
@@ -28,7 +28,7 @@ ms.locfileid: "74417447"
 
 <!-- TODO!!!: review snippet reference  [!CODE [msh_samplesgetproc01#getproc01vball](msh_samplesgetproc01#getproc01vball)]  -->
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [Windows PowerShell 程序员指南](./windows-powershell-programmer-s-guide.md)
 

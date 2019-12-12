@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: c4933dad-fec9-4337-a1a9-9dc16ee87cc3
 caps.latest.revision: 9
 ms.openlocfilehash: 1e7aeb5bcb6bd5a2845648c3327e2245e6c428ba
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366296"
 ---
 # <a name="provider-samples"></a>提供程序示例

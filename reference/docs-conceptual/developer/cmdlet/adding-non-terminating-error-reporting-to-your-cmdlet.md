@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
 caps.latest.revision: 8
 ms.openlocfilehash: a4426abec96cd922360aeef8c157b4e9f41a15b9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364606"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>向 Cmdlet 添加非终止错误报告
@@ -188,7 +188,7 @@ Cmdlet 经常需要修改非终止错误产生的 PowerShell 操作。
 它可以通过定义 `ErrorAction` 和 `ErrorVariable` 参数来实现此目的。
 如果定义 `ErrorAction` 参数，该 cmdlet 将提供用户选项[System.web. ActionPreference][]，还可以通过设置 `$ErrorActionPreference` 变量直接影响该操作。
 
-该 cmdlet 可以使用 `ErrorVariable` 参数将非终止错误保存到变量，此参数不受 `ErrorAction` 的设置影响。
+该 cmdlet 可以使用 `ErrorVariable` 参数将非终止错误保存到变量，此参数不受 `ErrorAction`的设置影响。
 可以通过将加号（+）添加到变量名前面来向现有错误变量追加失败。
 
 ## <a name="code-sample"></a>代码示例
@@ -217,7 +217,7 @@ PowerShell 使用 .NET 对象在 cmdlet 之间传递信息。
     PS> get-proc -name test
     ```
 
-此时将显示以下输出。
+将显示以下输出。
 
     ```
     get-proc : Operation is not valid due to the current state of the object.
@@ -225,7 +225,7 @@ PowerShell 使用 .NET 对象在 cmdlet 之间传递信息。
     + get-proc  <<<< -name test
     ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [添加处理管道输入的参数](./adding-parameters-that-process-pipeline-input.md)
 

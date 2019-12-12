@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 2933a6ca-fe92-4ba2-97ee-ef0f0d5fdfcf
 caps.latest.revision: 8
 ms.openlocfilehash: b73284adb4bf228510bf8134aa4c6a10561b7ea2
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359766"
 ---
 # <a name="configuring-role-based-authorization"></a>配置基于角色的授权
@@ -23,7 +23,7 @@ ms.locfileid: "72359766"
 
 ## <a name="modifying-the-rbacconfigurationxml-file"></a>修改 RBacConfiguration 文件
 
-此文件定义了应用程序的授权策略。 使用 `Group` 节点定义角色。 @No__t_0 节点定义分配给该组的用户可以运行的 Windows PowerShell 命令。 使用 `User` 节点将用户分配到组。
+此文件定义了应用程序的授权策略。 使用 `Group` 节点定义角色。 `Group` 节点定义分配给该组的用户可以运行的 Windows PowerShell 命令。 使用 `User` 节点将用户分配到组。
 
 在这些示例中，会将一个模块添加到管理员 `Group` "节点，并将用户添加到每个组。
 
@@ -97,7 +97,7 @@ ms.locfileid: "72359766"
 
 #### <a name="adding-a-user-to-a-group-node"></a>将用户添加到组节点
 
-1. 在文本编辑器中打开**RBacConfiguration**文件。 如果在安装之前未更改终结点名称，则此文件位于文件夹 C： \\ \inetpub\wwwroot\Modata 中。
+1. 在文本编辑器中打开**RBacConfiguration**文件。 如果在安装之前未更改终结点名称，则此文件位于文件夹 C：\\\inetpub\wwwroot\Modata 中。
 
 2. 直接在 `Users` "节点中的结束标记后，添加以下 XML：
 

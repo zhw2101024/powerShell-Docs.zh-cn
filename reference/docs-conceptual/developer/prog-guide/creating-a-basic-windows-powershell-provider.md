@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
 caps.latest.revision: 7
 ms.openlocfilehash: e825581b96f0f33893b38f9f6499dd46a7bf38eb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360516"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>创建基础 Windows PowerShell 提供程序
@@ -49,7 +49,7 @@ ms.locfileid: "72360516"
 
 ## <a name="defining-provider-specific-state-information"></a>定义特定于提供程序的状态信息
 
-由于 Windows PowerShell 运行时仅根据需要创建提供程序实例，因此[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)基类和所有派生类均被视为无状态。 因此，如果提供程序需要完全控制和状态维护特定于提供程序的数据，则必须从[Providerinfo](/dotnet/api/System.Management.Automation.ProviderInfo)类派生一个类。 派生类应定义维护状态所需的成员，以便在 Windows PowerShell 运行时调用[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)方法时可以访问提供程序特定的数据，以便初始化提供程序。
+由于 Windows PowerShell 运行时仅根据需要创建提供程序实例，因此[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)基类和所有派生类均被视为无状态。 因此，如果提供程序需要完全控制和状态维护特定于提供程序的数据，则必须从[Providerinfo](/dotnet/api/System.Management.Automation.ProviderInfo)类派生一个类。 派生类应定义维护状态所需的成员，以便在 Windows PowerShell 运行时调用[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)方法来初始化提供程序时可以访问提供程序特定的数据。
 
 Windows PowerShell 提供程序也可以维护基于连接的状态。 有关维护连接状态的详细信息，请参阅[创建 PowerShell 驱动器提供程序](./creating-a-windows-powershell-drive-provider.md)。
 
@@ -65,7 +65,7 @@ Windows PowerShell 提供程序也可以维护基于连接的状态。 有关维
 
 ## <a name="start-dynamic-parameters"></a>启动动态参数
 
-你的[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)方法的提供程序实现可能需要其他参数。 在这种情况下，提供程序应重写[Cmdletprovider. Startdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.StartDynamicParameters)方法，并返回一个对象，该对象具有与 cmdlet 类或[类似的分析特性的属性和字段Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)对象的。
+你的[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)方法的提供程序实现可能需要其他参数。 在这种情况下，提供程序应重写[Cmdletprovider. Startdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.StartDynamicParameters)方法，并返回一个对象，该对象具有与 cmdlet 类或[Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)对象类似的分析特性的属性和字段。
 
 此基本提供程序不重写此方法。 但是，以下代码显示了此方法的默认实现：
 

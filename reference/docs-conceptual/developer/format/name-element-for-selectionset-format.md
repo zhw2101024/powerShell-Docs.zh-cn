@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 914917f7-0efc-4d1f-88bd-de714bedd98f
 caps.latest.revision: 15
 ms.openlocfilehash: 29dbdbd335511e4ca2706a625541554825838f23
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362666"
 ---
 # <a name="name-element-for-selectionset-format"></a>Name Element for SelectionSet (Format)
@@ -31,7 +31,7 @@ ms.locfileid: "72362666"
 
 以下各节介绍 `Name` 元素的属性、子元素和父元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 

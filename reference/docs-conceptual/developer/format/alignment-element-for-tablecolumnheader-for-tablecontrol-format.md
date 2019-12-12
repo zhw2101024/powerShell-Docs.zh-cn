@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ff85e83a-c9c2-4c37-accc-e6a27c182f3c
 caps.latest.revision: 19
 ms.openlocfilehash: 16b41535109ca503e679a135f5ba30054e33de5b
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364376"
 ---
 # <a name="alignment-element-for-tablecolumnheader-for-tablecontrol-format"></a>Alignment Element for TableColumnHeader for TableControl (Format)
@@ -31,7 +31,7 @@ TableColumnHeader 的 ViewDefinitions 元素（格式）视图元素（格式）
 
 以下各节介绍 `Alignment` 元素的属性、子元素和父元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 

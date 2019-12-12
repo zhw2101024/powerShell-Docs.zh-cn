@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 8ab0f033-df09-4435-a8bd-76ec2d01f13b
 caps.latest.revision: 13
 ms.openlocfilehash: d1de2b30860bac80bf17508f40eec33c2794c4b2
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368256"
 ---
 # <a name="selectionsetname-element-for-viewselectedby-format"></a>SelectionSetName Element for ViewSelectedBy (Format)
@@ -47,7 +47,7 @@ ViewSelectedBy 的 Configuration 元素（格式） ViewDefinitions 元素（格
 
 ## <a name="text-value"></a>文本值
 
-为选择集指定由 `Name` 元素定义的选择集的名称。
+指定选择集的名称，该选择集由 `Name` 元素为选择集定义。
 
 ## <a name="remarks"></a>备注
 

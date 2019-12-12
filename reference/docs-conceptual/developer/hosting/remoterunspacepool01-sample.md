@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: dffedd31-c10d-4e11-a9ee-4fdfe9a869e8
 caps.latest.revision: 8
 ms.openlocfilehash: 894c995474d4bf5b7fe11c1289c4500371c9dd43
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367426"
 ---
 # <a name="remoterunspacepool01-sample"></a>RemoteRunspacePool01 示例
@@ -23,11 +23,11 @@ ms.locfileid: "72367426"
 
  此示例需要 Windows PowerShell 2.0。
 
-## <a name="demonstrates"></a>示例
+## <a name="demonstrates"></a>说明
 
 - 正在创建一个[Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)对象。
 
-- 设置 Runspaceconnectioninfo * 的[Operationtimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout)和[Runspaceconnectioninfo. Opentimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout)属性，该[属性的属性为"Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) " 对象。
+- 设置 Runspaceconnectioninfo 对象的[Operationtimeout * 和 *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout)和[Runspaceconnectioninfo. Opentimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout)属性的其他[对象的属性](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)的对象的属性的属性。
 
 - 创建一个使用[Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)对象的远程运行空间来建立远程连接。
 

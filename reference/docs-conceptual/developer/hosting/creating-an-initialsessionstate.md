@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 5ae707db-52e0-408c-87fa-b35c42eaaab1
 caps.latest.revision: 5
 ms.openlocfilehash: 9140d03e046def2fbbcc2a842b9ea1b9e1fa2985
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367616"
 ---
 # <a name="creating-an-initialsessionstate"></a>创建 InitialSessionState
@@ -25,7 +25,7 @@ InitialSessionState 指定运行空间的特征，例如，哪些命令、变量
 ## <a name="create-a-default-initialsessionstate"></a>创建默认 InitialSessionState
 
 **InitialSessionState**类的[CreateDefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault)和[CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2)方法可用于创建**InitialSessionState**对象。
-**CreateDefault**方法创建**InitialSessionState** ，其中加载了所有内置命令，而**CreateDefault2**方法只加载承载 PowerShell 所需的命令（Microsoft. Core module）。
+**CreateDefault**方法将创建一个**InitialSessionState** ，其中加载了所有内置命令，而**CreateDefault2**方法只加载承载 PowerShell 所需的命令（来自模块的命令）。
 
 若要进一步限制主机应用程序中可用的命令，需要创建受约束的运行空间。
 有关信息，请参阅[创建受限的运行空间](creating-a-constrained-runspace.md)。

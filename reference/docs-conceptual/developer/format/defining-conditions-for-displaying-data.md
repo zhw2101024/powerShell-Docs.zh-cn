@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: c1e05821-6aec-437b-84a5-218a5727f88b
 caps.latest.revision: 10
 ms.openlocfilehash: 8a5b84b6a461e9fc340a5981578d95ca2ac6b9f7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363896"
 ---
 # <a name="defining-conditions-for-displaying-data"></a>定义用于显示数据的条件

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a41d9e5f-de6f-47b7-9601-c108609320d0
 caps.latest.revision: 8
 ms.openlocfilehash: 2f145795a57c988da0cb4ed294142aa141c53cae
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364456"
 ---
 # <a name="how-to-import-cmdlets-using-modules"></a>如何使用模块导入 Cmdlet
@@ -28,11 +28,11 @@ ms.locfileid: "72364456"
 
    `%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules\mymodule`
 
-1. 请确保 `PSModulePath` 环境变量包含新模块文件夹的路径。 默认情况下，系统文件夹已添加到 `PSModulePath` 环境变量中。 若要查看 `PSModulePath`，请键入： `$env:PSModulePath`。
+1. 请确保 `PSModulePath` 环境变量包含新模块文件夹的路径。 默认情况下，系统文件夹已添加到 `PSModulePath` 环境变量。 若要查看 `PSModulePath`，请键入： `$env:PSModulePath`。
 
 1. 将 cmdlet 程序集复制到模块文件夹中。
 
-1. 将模块清单文件（`.psd1`）添加到模块的根文件夹中。 PowerShell 使用模块清单导入模块。 有关详细信息，请参阅[如何编写 PowerShell 模块清单](../module/how-to-write-a-powershell-module-manifest.md)。
+1. 在模块的根文件夹中添加模块清单文件（`.psd1`）。 PowerShell 使用模块清单导入模块。 有关详细信息，请参阅[如何编写 PowerShell 模块清单](../module/how-to-write-a-powershell-module-manifest.md)。
 
 1. 运行以下命令，将 cmdlet 添加到会话：
 

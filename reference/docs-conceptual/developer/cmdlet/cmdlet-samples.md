@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: b99d53fc-0af9-426b-82ce-09955e031d4b
 caps.latest.revision: 13
 ms.openlocfilehash: 0fa4a5f804586c51ae6a36121f9aab041b0989cc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365876"
 ---
 # <a name="cmdlet-samples"></a>Cmdlet 示例
 
-本部分介绍 Windows PowerShell 2.0 SDK 中提供的示例代码。 您可以从本部分中的主题复制代码，或打开随 SDK 一起安装的源文件。 [Windows PowerShell 2.0 软件开发工具包（SDK）](https://www.microsoft.com/en-us/download/details.aspx?id=2560)提供每个示例的自述文件、源文件和 Visual Studio 项目文件。 安装 SDK 后，可以在 `<Drive>:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\` 文件夹下找到示例。
+本部分介绍 Windows PowerShell 2.0 SDK 中提供的示例代码。 您可以从本部分中的主题复制代码，或打开随 SDK 一起安装的源文件。 [Windows PowerShell 2.0 软件开发工具包（SDK）](https://www.microsoft.com/en-us/download/details.aspx?id=2560)提供每个示例的自述文件、源文件和 Visual Studio 项目文件。 安装 SDK 后，可以在 "`<Drive>:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`" 文件夹下找到相应的示例。
 
 ## <a name="in-this-section"></a>本部分内容
 
@@ -31,7 +31,7 @@ ms.locfileid: "72365876"
 
 [GetProcessSample05 示例](./getprocesssample05-sample.md)此示例显示了获取处理器 cmdlet 的完整版本。
 
-[StopProcessSample01 示例](./stopprocesssample01-sample.md)此示例演示如何编写一个 cmdlet，用于在尝试停止进程之前请求用户提供反馈，以及如何实现 `PassThru` 参数，该参数指示用户希望该 cmdlet 返回对象。
+[StopProcessSample01 示例](./stopprocesssample01-sample.md)此示例演示如何编写一个 cmdlet，用于在尝试停止进程之前请求用户提供反馈，以及如何实现一个 `PassThru` 参数，该参数指示用户希望该 cmdlet 返回对象。
 
 [StopProcessSample02 示例](./stopprocesssample02-sample.md)此示例演示如何编写一个在本地计算机上停止进程时写入调试、详细和警告消息的 cmdlet。
 

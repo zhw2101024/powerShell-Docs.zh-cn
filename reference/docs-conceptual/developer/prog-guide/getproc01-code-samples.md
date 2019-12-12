@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: f85487d6-ef50-40b9-b60d-8bb65506627e
 caps.latest.revision: 6
 ms.openlocfilehash: 6d47fbc6b41d87cb830683ea412826275083b8a3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360456"
 ---
 # <a name="getproc01-code-samples"></a>GetProc01 代码示例
 
-下面是 GetProc01 cmdlet 的代码示例。 这是[创建第一个 cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)中所述的基本 `Get-Process` cmdlet 示例。 @No__t-0 cmdlet 用于检索有关在本地计算机上运行的所有进程的信息。
+下面是 GetProc01 cmdlet 的代码示例。 这是[创建第一个 cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)中所述的基本 `Get-Process` cmdlet 示例。 `Get-Process` cmdlet 用于检索有关在本地计算机上运行的所有进程的信息。
 
 有关完整的示例代码，请参阅以下主题。
 

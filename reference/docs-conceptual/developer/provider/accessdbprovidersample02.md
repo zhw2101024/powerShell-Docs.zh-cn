@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: aaf9351e-157f-4d48-8b8f-1fd64855b682
 caps.latest.revision: 10
 ms.openlocfilehash: d291e401bbf3da998735ebb00f1eb35521f9a19c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366366"
 ---
 # <a name="accessdbprovidersample02"></a>AccessDBProviderSample02
 
 此示例演示如何覆盖[Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)和[Drivecmdletprovider. Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)方法，以支持对 `New-PSDrive` 和 `Remove-PSDrive` cmdlet 的调用的调用，这种情况下是如此。 此示例中的提供程序类派生自[Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)类。
 
-## <a name="demonstrates"></a>示例
+## <a name="demonstrates"></a>说明
 
 > [!IMPORTANT]
 > 提供程序类最有可能派生自以下类之一，并可能实现其他提供程序接口：
@@ -30,7 +30,7 @@ ms.locfileid: "72366366"
 >
 > 有关根据提供程序功能选择要从哪个提供程序类派生的详细信息，请参阅[设计你的 Windows PowerShell 提供程序](./provider-types.md)。
 
-此示例演示了以下内容：
+本示例演示下面几点：
 
 - 声明 `CmdletProvider` 特性。
 

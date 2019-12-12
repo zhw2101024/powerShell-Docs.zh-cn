@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ebbac73a-1c99-4388-9f47-703cd024dc6d
 caps.latest.revision: 18
 ms.openlocfilehash: a9356635d60d5f8c5d4dec4ec8b7d0aea2b037dd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361866"
 ---
 # <a name="selectionsets-element-format"></a>SelectionSets Element (Format)
@@ -33,7 +33,7 @@ ms.locfileid: "72361866"
 
 以下各节介绍 `SelectionSets` 元素的属性、子元素和父元素。 每个子元素定义一组可由集名称引用的对象。 子元素的顺序并不重要。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 

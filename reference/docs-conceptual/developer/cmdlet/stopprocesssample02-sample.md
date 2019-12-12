@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 213ca1a4-e9fe-4969-b7d0-2fca070c6142
 caps.latest.revision: 10
 ms.openlocfilehash: 594c06367baedd1f9bfdbfff9f0e072d579b4099
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369376"
 ---
 # <a name="stopprocesssample02-sample"></a>StopProcessSample02 示例
@@ -27,7 +27,7 @@ ms.locfileid: "72369376"
 
 2. 双击解决方案（.sln）文件的图标。 这会在 Microsoft Visual Studio 中打开示例项目。
 
-3. 在 "**生成**" 菜单中，选择 "**生成解决方案**"。
+3. 在“生成”菜单中选择“生成解决方案”。
 
     示例库将在默认的 \bin 或 \bin\debug 文件夹中生成。
 
@@ -53,7 +53,7 @@ ms.locfileid: "72369376"
 
 此示例需要 Windows PowerShell 2.0。
 
-## <a name="demonstrates"></a>示例
+## <a name="demonstrates"></a>说明
 
 此示例演示以下各项。
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 39388197-4ff9-4889-aa32-526011afa1f6
 caps.latest.revision: 6
 ms.openlocfilehash: e95ec550a7815a76a8bd7f9526dfa405a9644360
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367946"
 ---
 # <a name="wide-view-groupby"></a>宽视图 (GroupBy)
@@ -30,7 +30,7 @@ ms.locfileid: "72367946"
    > [!WARNING]
    > 此格式化文件定义已由 Windows PowerShell 格式设置文件定义的对象的显示。 在运行 cmdlet 时，必须使用 `prependPath` 参数，并且不能将此格式化文件作为模块加载。
 
-## <a name="demonstrates"></a>示例
+## <a name="demonstrates"></a>说明
 
 此格式化文件演示了以下 XML 元素：
 

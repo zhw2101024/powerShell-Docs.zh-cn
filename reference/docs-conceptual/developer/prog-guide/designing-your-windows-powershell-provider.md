@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: 11d20319-cc40-4227-b810-4af33372b182
 caps.latest.revision: 10
 ms.openlocfilehash: 962d2ba9fd892c297a633276b9ac07a5fa75ea87
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366806"
 ---
 # <a name="designing-your-windows-powershell-provider"></a>设计 Windows PowerShell 提供程序

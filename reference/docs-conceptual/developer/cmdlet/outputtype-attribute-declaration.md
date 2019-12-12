@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: a97a98ee-ffc0-42f0-a9a6-b0717b39c798
 caps.latest.revision: 5
 ms.openlocfilehash: 7aa6fa407e509a31c4066c4f73ae01b02b2f338c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365336"
 ---
 # <a name="outputtype-attribute-declaration"></a>OutputType 属性声明
 
-@No__t-0 属性标识由 cmdlet、函数或脚本返回的 .NET Framework 类型。
+`OutputType` 属性标识由 cmdlet、函数或脚本返回的 .NET Framework 类型。
 
 ## <a name="syntax"></a>语法
 
@@ -32,7 +32,7 @@ ms.locfileid: "72365336"
 
 需要键入（`string[]` 或 `Type[]`）。 指定由 cmdlet 函数或脚本返回的类型。
 
-ParameterSetName （string []）可选。 指定返回 `type` 参数中指定的类型的参数集。
+ParameterSetName （string []）可选。 指定返回在 `type` 参数中指定的类型的参数集。
 
 providerCmdlet 可选。 指定提供程序 cmdlet，该 cmdlet 返回在 `type` 参数中指定的类型。
 

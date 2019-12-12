@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1fca30b1-13fe-48a2-b0dd-979c161177a6
 caps.latest.revision: 14
 ms.openlocfilehash: 9a4b7c842c6222fa2e9f1c14f37f45d7a5158107
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361046"
 ---
 # <a name="host01-sample"></a>Host01 示例
@@ -25,7 +25,7 @@ ms.locfileid: "72361046"
 
  此示例需要 Windows PowerShell 2.0。
 
-## <a name="demonstrates"></a>示例
+## <a name="demonstrates"></a>说明
 
 - 创建一个派生自[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)类的自定义宿主类。
 

@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 2d4e58a9-05bc-437c-86b9-d8d55cba7d48
 caps.latest.revision: 36
 ms.openlocfilehash: 4475b3f5e15826efbe8bab867011985cd7e2e1ae
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72370026"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>PowerShell 命令的批准的谓词
@@ -84,7 +84,7 @@ ms.locfileid: "72370026"
 PowerShell 使用[VerbsCommon](/dotnet/api/System.Management.Automation.VerbsCommon)枚举类定义适用于几乎任何 cmdlet 的一般操作。
 下表列出了大多数定义的谓词。
 
-|谓词（别名）|Action|说明|
+|谓词（别名）|操作|说明|
 |--------------------|------------|--------------|
 |[添加](/dotnet/api/System.Management.Automation.VerbsCommon.Add)（a）|将资源添加到容器，或将一个项附加到另一个项。 例如，`Add-Content` cmdlet 将内容添加到文件。 此谓词与 `Remove`配对。|对于此操作，请不要使用 "追加"、"附加"、"连接" 或 "插入" 之类的谓词。|
 |[清除](/dotnet/api/System.Management.Automation.VerbsCommon.Clear)（cl）|从容器中移除所有资源，但不删除容器。 例如，`Clear-Content` cmdlet 将删除文件的内容，但不会删除文件。|对于此操作，请勿使用 Flush、Erase、Release、取消标记、未设置或废除等谓词。|
@@ -125,7 +125,7 @@ PowerShell 使用[VerbsCommon](/dotnet/api/System.Management.Automation.VerbsCom
 PowerShell 使用[VerbsCommunications](/dotnet/api/System.Management.Automation.VerbsCommunications)类定义适用于通信的操作。
 下表列出了大多数定义的谓词。
 
-|谓词（别名）|Action|说明|
+|谓词（别名）|操作|说明|
 |--------------------|------------|--------------|
 |[连接](/dotnet/api/System.Management.Automation.VerbsCommunications.Connect)（cc）|创建源和目标之间的链接。 此谓词与 `Disconnect`配对。|对于此操作，请不要使用 Join 或 Telnet 等谓词。|
 |[断开连接](/dotnet/api/System.Management.Automation.VerbsCommunications.Disconnect)（dc）|断开源和目标之间的链接。 此谓词与 `Connect`配对。|对于此操作，请不要使用动词，如中断或注销。|
@@ -139,7 +139,7 @@ PowerShell 使用[VerbsCommunications](/dotnet/api/System.Management.Automation.
 PowerShell 使用[VerbsData](/dotnet/api/System.Management.Automation.VerbsData)类定义适用于数据处理的操作。
 下表列出了大多数定义的谓词。
 
-|谓词名称（别名）|Action|说明|
+|谓词名称（别名）|操作|说明|
 |-------------------------|------------|--------------|
 |[备份](/dotnet/api/System.Management.Automation.VerbsData.Backup)（ba）|通过复制数据来存储数据。|对于此操作，请不要使用 "保存"、"刻录"、"复制" 或 "同步" 等谓词。|
 |[检查点](/dotnet/api/System.Management.Automation.VerbsData.Checkpoint)（ch）|创建数据或其配置的当前状态的快照。|对于此操作，请不要使用诸如 Diff 这样的谓词。|
@@ -171,7 +171,7 @@ PowerShell 使用[VerbsData](/dotnet/api/System.Management.Automation.VerbsData)
 PowerShell 使用[VerbsDiagnostic](/dotnet/api/System.Management.Automation.VerbsDiagnostic)类定义适用于诊断的操作。
 下表列出了大多数定义的谓词。
 
-|谓词（别名）|Action|说明|
+|谓词（别名）|操作|说明|
 |--------------------|------------|--------------|
 |[调试](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Debug)（db）|检查资源以诊断操作问题。|对于此操作，请不要使用谓词，如诊断。|
 |[度量值](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Measure)（毫秒）|标识指定操作使用的资源，或检索有关资源的统计信息。|对于此操作，请不要使用 "计算"、"确定" 或 "分析" 这样的谓词。|
@@ -186,7 +186,7 @@ PowerShell 使用[VerbsDiagnostic](/dotnet/api/System.Management.Automation.Verb
 PowerShell 使用[VerbsLifeCycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle)类来定义适用于资源生命周期的操作。
 下表列出了大多数定义的谓词。
 
-|谓词（别名）|Action|说明|
+|谓词（别名）|操作|说明|
 |--------------------|------------|--------------|
 |[批准](/dotnet/api/System.Management.Automation.VerbsLifecycle.Approve)（ap）|确认或同意资源或进程的状态。||
 |[Assert](/dotnet/api/System.Management.Automation.VerbsLifecycle.Assert) （as）|确认资源的状态。|对于此操作，请不要使用动词，如认证。|
@@ -216,7 +216,7 @@ PowerShell 使用[VerbsLifeCycle](/dotnet/api/System.Management.Automation.Verbs
 PowerShell 使用[VerbsSecurity](/dotnet/api/System.Management.Automation.VerbsSecurity)类定义适用于安全的操作。
 下表列出了大多数定义的谓词。
 
-|谓词（别名）|Action|说明|
+|谓词（别名）|操作|说明|
 |--------------------|------------|--------------|
 |[块](/dotnet/api/System.Management.Automation.VerbsSecurity.Block)（bl）|限制对资源的访问。 此谓词与 `Unblock`配对。|对于此操作，请不要使用谓词，如 "阻止"、"限制" 或 "拒绝"。|
 |[授权](/dotnet/api/System.Management.Automation.VerbsSecurity.Grant)（gr）|允许访问资源。 此谓词与 `Revoke`配对。|对于此操作，请不要使用 "允许" 或 "启用" 等谓词。|
@@ -229,7 +229,7 @@ PowerShell 使用[VerbsSecurity](/dotnet/api/System.Management.Automation.VerbsS
 
 PowerShell 使用[VerbsOther](/dotnet/api/System.Management.Automation.VerbsOther)类来定义不适合特定谓词名称类别的规范谓词名称，如公用、通信、数据、生命周期或安全谓词名称谓词。
 
-|谓词（别名）|Action|说明|
+|谓词（别名）|操作|说明|
 |--------------------|------------|--------------|
 |[使用](/dotnet/api/System.Management.Automation.VerbsOther.Use)（u）|使用或包含资源来执行某些操作。||
 

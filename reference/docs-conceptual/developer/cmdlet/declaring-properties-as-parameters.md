@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: f71ea35d-cff5-4e44-a5c6-3a747ed4c4d9
 caps.latest.revision: 9
 ms.openlocfilehash: 6f6640afb15b3608669538f9b5f53d7a8a5c380d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365746"
 ---
 # <a name="declaring-properties-as-parameters"></a>将属性声明为参数
 
 本主题提供在声明 cmdlet 参数之前必须了解的基本信息。
 
-若要声明 cmdlet 类中 cmdlet 的参数，请定义表示每个参数的公共属性，然后将一个或多个参数特性添加到每个属性。 Windows PowerShell 运行时使用参数属性将属性标识为 cmdlet 参数。 用于声明参数特性的基本语法为 `[Parameter()]`。
+若要声明 cmdlet 类中 cmdlet 的参数，请定义表示每个参数的公共属性，然后将一个或多个参数特性添加到每个属性。 Windows PowerShell 运行时使用参数属性将属性标识为 cmdlet 参数。 声明参数属性的基本语法是 `[Parameter()]`。
 
 下面是一个定义为所需参数的属性示例。
 

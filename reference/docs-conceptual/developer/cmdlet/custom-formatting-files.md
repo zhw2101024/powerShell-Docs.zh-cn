@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 85d27545-8097-4010-9947-6d8b3ce2eac0
 caps.latest.revision: 15
 ms.openlocfilehash: 71c1c181058c5646c817b90d9832976a78c6c7de
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369826"
 ---
 # <a name="custom-formatting-files"></a>自定义格式设置文件
@@ -40,7 +40,7 @@ Windows PowerShell 使用这些格式设置文件中的数据来确定显示的�
 
 ## <a name="view-xml-elements"></a>查看 XML 元素
 
-下面的示例显示用于定义包含两个列的表视图的 XML 标记。 [ViewDefinitions](../format/viewdefinitions-element-format.md)元素是在格式设置文件中定义的所有视图的容器元素。 [View](../format/view-element-format.md)元素定义特定的表、列表、宽视图或自定义视图。 在每个视图中， [name](../format/name-element-for-view-format.md)元素指定视图的名称， [ViewSelectedBy](../format/viewselectedby-element-format.md)元素定义使用视图的对象，不同的控件元素（例如 `TableControl` 元素）定义视图的格式。
+下面的示例显示用于定义包含两个列的表视图的 XML 标记。 [ViewDefinitions](../format/viewdefinitions-element-format.md)元素是在格式设置文件中定义的所有视图的容器元素。 [View](../format/view-element-format.md)元素定义特定的表、列表、宽视图或自定义视图。 在每个视图中， [name](../format/name-element-for-view-format.md)元素指定视图的名称， [ViewSelectedBy](../format/viewselectedby-element-format.md)元素定义使用视图的对象，不同的控件元素（如 `TableControl` 元素）定义视图的格式。
 
 ```xml
 ViewDefinitions

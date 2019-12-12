@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 46dc0657-110f-4367-8bb6-a95dca2c5016
 caps.latest.revision: 8
 ms.openlocfilehash: 9c00ec6de987729fec42dc57245a949d11e31f4b
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366326"
 ---
 # <a name="accessdbprovidersample06"></a>AccessDBProviderSample06
 
 此示例演示如何覆盖内容方法以支持对 `Clear-Content`、`Get-Content`和 `Set-Content` cmdlet 的调用。 当用户需要管理数据存储区中的项的内容时，应实现这些方法。 此示例中的提供程序类派生自[Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)类，并且它实现了[Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)接口的执行程序。）。
 
-## <a name="demonstrates"></a>示例
+## <a name="demonstrates"></a>说明
 
 > [!IMPORTANT]
 > 提供程序类最有可能派生自以下类之一，并可能实现其他提供程序接口：
@@ -30,7 +30,7 @@ ms.locfileid: "72366326"
 >
 > 有关根据提供程序功能选择要从哪个提供程序类派生的详细信息，请参阅[设计你的 Windows PowerShell 提供程序](./provider-types.md)。
 
-此示例演示了以下内容：
+本示例演示下面几点：
 
 - 声明 `CmdletProvider` 特性。
 

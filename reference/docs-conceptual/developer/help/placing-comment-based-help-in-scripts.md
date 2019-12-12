@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 49f8267c-d887-4d7d-b9b7-80dc624b1261
 caps.latest.revision: 4
 ms.openlocfilehash: d199c53a748ac57bb2a5f998b5056e39d3e80c0d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361176"
 ---
 # <a name="placing-comment-based-help-in-scripts"></a>在脚本中放置基于注释的帮助
 
-本主题介绍在何处放置脚本的基于注释的帮助，以便 `Get-Help` cmdlet 将基于注释的帮助主题与脚本相关联，而不是与脚本中可能包含的任何函数相关联。
+本主题介绍在何处放置脚本的基于注释的帮助，以便 `Get-Help` cmdlet 将基于注释的帮助主题与脚本关联，而不是与脚本中可能包含的任何函数关联。
 
 ## <a name="where-to-place-comment-based-help-for-a-script"></a>在何处放置脚本的基于注释的帮助
 

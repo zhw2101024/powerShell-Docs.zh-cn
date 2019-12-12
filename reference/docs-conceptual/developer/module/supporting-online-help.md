@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3204599c-7159-47aa-82ec-4a476f461027
 caps.latest.revision: 7
 ms.openlocfilehash: 5c5707d1c533e0498c6794b60f4499e530e25813
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360656"
 ---
 # <a name="supporting-online-help"></a>支持联机帮助

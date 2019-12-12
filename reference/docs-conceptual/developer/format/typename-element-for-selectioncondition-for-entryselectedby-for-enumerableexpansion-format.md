@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d9100ab7-fbdc-4c0d-bb56-57669ef42b95
 caps.latest.revision: 9
 ms.openlocfilehash: 316e54d11647aedc1552a0bb74b943de7e4e3588
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361576"
 ---
 # <a name="typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format"></a>TypeName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)

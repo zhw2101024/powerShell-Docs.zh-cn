@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
 ms.openlocfilehash: d210a852a90d94df2ab360dd86f0b83a396330e3
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74415657"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>向 Cmdlet 参数添加别名、通配符扩展和帮助
@@ -150,7 +150,7 @@ Windows PowerShell 使用 .Net 对象在 cmdlet 之间传递信息。 因此，c
     PS> stop-proc -ProcessName notepad
     ```
 
-此时将显示以下输出。
+将显示以下输出。
 
     ```
     Confirm
@@ -165,7 +165,7 @@ Windows PowerShell 使用 .Net 对象在 cmdlet 之间传递信息。 因此，c
     PS> stop-proc
     ```
 
-此时将显示以下输出。
+将显示以下输出。
 
     ```
     Cmdlet stop-proc at command pipeline position 1
@@ -182,7 +182,7 @@ Windows PowerShell 使用 .Net 对象在 cmdlet 之间传递信息。 因此，c
     PS> stop-proc -Name *note*
     ```
 
-此时将显示以下输出。
+将显示以下输出。
 
     ```
     Confirm
@@ -191,7 +191,7 @@ Windows PowerShell 使用 .Net 对象在 cmdlet 之间传递信息。 因此，c
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
     ```
 
-此时将显示以下输出。
+将显示以下输出。
 
     ```
     Confirm
@@ -200,7 +200,7 @@ Windows PowerShell 使用 .Net 对象在 cmdlet 之间传递信息。 因此，c
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-此时将显示以下输出。
+将显示以下输出。
 
     ```
     Confirm
@@ -209,7 +209,7 @@ Windows PowerShell 使用 .Net 对象在 cmdlet 之间传递信息。 因此，c
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [创建用于修改系统的 Cmdlet](./creating-a-cmdlet-that-modifies-the-system.md)
 

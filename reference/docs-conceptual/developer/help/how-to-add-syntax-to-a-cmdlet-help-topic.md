@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: d0c6d03f-1c1a-43d8-928e-e3290e90e0bc
 caps.latest.revision: 5
 ms.openlocfilehash: 0210b5ed3104777541692a0e78e7d3b16f9c8256
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361206"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>如何向 Cmdlet 帮助主题添加语法
 
 在开始编写 cmdlet 帮助文件中语法关系图的 XML 代码之前，请阅读此部分以清楚地了解你需要提供的数据类型，如参数特性，以及如何在语法关系图中显示这些数据。
 
-### <a name="parameter-attributes"></a>参数特性
+### <a name="parameter-attributes"></a>Parameter 特性
 
 - 必需
 
@@ -27,7 +27,7 @@ ms.locfileid: "72361206"
 
   - 如果为 false，则参数在所有使用参数集的命令中是可选的。
 
-- 置于
+- 位置
 
   - 如果已命名，则参数名称是必需的。
 

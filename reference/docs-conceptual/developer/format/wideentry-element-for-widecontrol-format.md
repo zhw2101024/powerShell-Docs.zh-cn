@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 014763cb-7716-4931-899c-8375b5d7a3dd
 caps.latest.revision: 15
 ms.openlocfilehash: d1d13b5c3436871053353814293d9163ea13c7fb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367896"
 ---
 # <a name="wideentry-element-for-widecontrol-format"></a>WideEntry Element for WideControl (Format)
@@ -34,7 +34,7 @@ ms.locfileid: "72367896"
 
 以下各节介绍了 `WideEntry` 元素的属性、子元素和父元素。 必须指定单个 `WideItem` 子元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 

@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
 ms.openlocfilehash: f8cbaf464345b8f2b693e72f3dbe781a47605b28
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417772"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell 程序员&#39;指南
@@ -39,7 +39,7 @@ Windows PowerShell 定义了几种可用于开发的命令类型。 这些命令
 
 除了命令以外，Windows PowerShell 还支持各种可自定义的 Windows PowerShell 提供程序，这些提供程序可提供特定的 cmdlet 集。 Shell 在 Windows PowerShell 提供的主机应用程序（Windows PowerShell）中运行，但它可以通过可开发的自定义主机应用程序进行访问，以满足特定的要求。 有关详细信息，请参阅[Windows PowerShell 的工作原理](/previous-versions//ms714658(v=vs.85))。
 
-### <a name="windows-powershell-cmdlets"></a>Windows PowerShell Cmdlet
+### <a name="windows-powershell-cmdlets"></a>Windows PowerShell Cmdlets
 
 Cmdlet 是在 Windows PowerShell 环境中使用的轻量命令。 Windows PowerShell 运行时在命令行中提供的自动化脚本的上下文中调用这些 cmdlet，而且 Windows PowerShell 运行时还会通过 Windows PowerShell Api 以编程方式调用它们。
 
@@ -105,6 +105,6 @@ Windows PowerShell 使用 .NET Framework 为命令、提供程序和其他程序
 |[如何创建控制台 Shell](./how-to-create-a-console-shell.md)|本部分介绍如何创建不可扩展的控制台 shell。|
 |[Windows PowerShell 概念](./windows-powershell-concepts.md)|本部分包含有助于从开发人员的角度了解 Windows PowerShell 的概念信息。|
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

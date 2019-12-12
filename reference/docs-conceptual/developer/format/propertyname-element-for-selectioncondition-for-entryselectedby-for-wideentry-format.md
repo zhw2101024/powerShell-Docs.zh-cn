@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 340abb12-6df1-42f4-bdae-b0509c90952c
 caps.latest.revision: 11
 ms.openlocfilehash: 196877b97db9ed0592e357486c1318dc1e7efd31
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362236"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format"></a>PropertyName Element for SelectionCondition for EntrySelectedBy for WideEntry (Format)
 
-指定触发条件的 .NET 属性。 如果存在此属性，或者其计算结果为 `true`，则满足条件，并使用定义。
+指定触发条件的 .NET 属性。 如果该属性存在或其计算结果为 `true`，则满足条件，并使用定义。
 
 配置元素（格式） ViewDefinitions 元素（格式）查看元素（格式） WideControl 元素（格式） WideEntries 元素（格式） WideEntry 元素（format） EntrySelectedBy 元素 for WideEntry （Format） SelectionCondition 元素 forSelectionCondition for EntrySelectedBy for WideEntry 的 WideEntry （Format） PropertyName 元素的 EntrySelectedBy （Format）
 

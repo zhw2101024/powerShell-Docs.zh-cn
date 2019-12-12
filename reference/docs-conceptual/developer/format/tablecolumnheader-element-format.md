@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 49ff3062-6396-4aa8-919b-3fd3ac60899a
 caps.latest.revision: 19
 ms.openlocfilehash: d3ad7fa563def17d43ce4dc64d155b65b650521f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361846"
 ---
 # <a name="tablecolumnheader-element-format"></a>TableColumnHeader Element (Format)
@@ -35,7 +35,7 @@ TableColumnHeader for TableHeaders 的 TableControl （Format） TableControl �
 
 以下各节介绍了 `TableColumnHeader` 元素的属性、子元素和父元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 

@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 137543d8-0012-4cba-bcd6-98b25aac83bb
 caps.latest.revision: 9
 ms.openlocfilehash: 8271512d06047f3ff5e45f81d971ffe2c1f6afd7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365466"
 ---
 # <a name="how-to-write-a-cmdlet"></a>如何编写 cmdlet
 
-本文介绍如何编写 cmdlet。 @No__t cmdlet 使用单个用户名作为输入，然后将问候语写入该用户。 尽管此 cmdlet 不会执行许多工作，但本示例演示了 cmdlet 的主要部分。
+本文介绍如何编写 cmdlet。 `Send-Greeting` cmdlet 使用单个用户名作为输入，然后将问候语写入该用户。 尽管此 cmdlet 不会执行许多工作，但本示例演示了 cmdlet 的主要部分。
 
 ## <a name="steps-to-write-a-cmdlet"></a>编写 cmdlet 的步骤
 

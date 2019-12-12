@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 2d4303c5-b451-4ccb-9831-b17a17ceac20
 caps.latest.revision: 16
 ms.openlocfilehash: 651de5d3bc2619f20438f3951ac5a8c4b0bf46d4
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368946"
 ---
 # <a name="creating-a-wide-view"></a>创建宽视图
@@ -76,11 +76,11 @@ View>
 
 - [Name](./name-element-for-view-format.md)元素指定视图的名称。 此元素对于所有视图都是必需的。
 
-- [ViewSelectedBy](./viewselectedby-element-format.md)元素定义使用视图的对象。 此元素是必需的。
+- [ViewSelectedBy](./viewselectedby-element-format.md)元素定义使用视图的对象。 需要此元素。
 
-- [GroupBy](./groupby-element-for-view-format.md)元素定义何时显示新的对象组。 每当特定属性或脚本的值发生更改时，就会启动一个新组。 此元素是可选的。
+- [GroupBy](./groupby-element-for-view-format.md)元素定义何时显示新的对象组。 每当特定属性或脚本的值发生更改时，就会启动一个新组。 此元素为可选元素。
 
-- [Controls](./controls-element-for-view-format.md)元素定义由宽视图定义的自定义控件。 控件使您可以进一步指定数据的显示方式。 此元素是可选的。 视图可以定义自己的自定义控件，也可以使用可由格式设置文件中的任何视图使用的公共控件。 有关自定义控件的详细信息，请参阅[创建自定义控件](./creating-custom-controls.md)。
+- [Controls](./controls-element-for-view-format.md)元素定义由宽视图定义的自定义控件。 控件使您可以进一步指定数据的显示方式。 此元素为可选元素。 视图可以定义自己的自定义控件，也可以使用可由格式设置文件中的任何视图使用的公共控件。 有关自定义控件的详细信息，请参阅[创建自定义控件](./creating-custom-controls.md)。
 
 - [WideControl](./widecontrol-element-format.md)元素及其子元素定义视图中显示的内容。 在前面的示例中，视图设计为显示[Processname](/dotnet/api/System.Diagnostics.Process.ProcessName)属性。
 
@@ -108,11 +108,11 @@ View>
 
 - [WideControl](./widecontrol-element-format.md)元素及其子元素定义视图中显示的内容。
 
-- [AutoSize](./autosize-element-for-widecontrol-format.md)元素指定是否根据数据大小调整列大小和列数。 此元素是可选的。
+- [AutoSize](./autosize-element-for-widecontrol-format.md)元素指定是否根据数据大小调整列大小和列数。 此元素为可选元素。
 
-- [ColumnNumber](./columnnumber-element-for-widecontrol-format.md)元素指定在宽视图中显示的列数。 此元素是可选的。
+- [ColumnNumber](./columnnumber-element-for-widecontrol-format.md)元素指定在宽视图中显示的列数。 此元素为可选元素。
 
-- [WideEntries](./wideentries-element-for-widecontrol-format.md)元素提供视图的定义。 在大多数情况下，视图将只有一个定义。 此元素是必需的。
+- [WideEntries](./wideentries-element-for-widecontrol-format.md)元素提供视图的定义。 在大多数情况下，视图将只有一个定义。 需要此元素。
 
 - [WideEntry](./wideentry-element-for-widecontrol-format.md)元素提供视图的定义。 至少需要一个[WideEntry](./wideentry-element-for-widecontrol-format.md) ;但是，可以添加的元素数没有最大限制。 在大多数情况下，视图将只有一个定义。
 
@@ -124,7 +124,7 @@ View>
 
 - [ScriptBlock](./scriptblock-element-for-wideitem-for-widecontrol-format.md)元素指定其值由视图显示的脚本。 您必须指定脚本或属性，但不能同时指定两者。
 
-- "[格式字符串](./formatstring-element-for-wideitem-for-widecontrol-format.md)" 元素指定用于显示数据的模式。 此元素是可选的。
+- "[格式字符串](./formatstring-element-for-wideitem-for-widecontrol-format.md)" 元素指定用于显示数据的模式。 此元素为可选元素。
 
 有关定义宽视图定义的完整格式化文件的示例，请参阅[宽视图（基本）](./wide-view-basic.md)。
 
@@ -210,11 +210,11 @@ View>
 
 - [ScriptBlock](./scriptblock-element-for-groupby-format.md)元素指定在其值更改时启动新组的脚本。 您必须指定脚本或属性以启动组，但不能同时指定两者。
 
-- [标签](./label-element-for-groupby-format.md)元素定义在每个组的开头显示的标签。 除了此元素指定的文本，Windows PowerShell 还显示触发新组的值，并在标签之前和之后添加一个空白行。 此元素是可选的。
+- [标签](./label-element-for-groupby-format.md)元素定义在每个组的开头显示的标签。 除了此元素指定的文本，Windows PowerShell 还显示触发新组的值，并在标签之前和之后添加一个空白行。 此元素为可选元素。
 
-- [CustomControl](./customcontrol-element-for-groupby-format.md)元素定义用于显示数据的控件。 此元素是可选的。
+- [CustomControl](./customcontrol-element-for-groupby-format.md)元素定义用于显示数据的控件。 此元素为可选元素。
 
-- [CustomControlName](./customcontrolname-element-for-groupby-format.md)元素指定用于显示数据的通用控件或视图控件。 此元素是可选的。
+- [CustomControlName](./customcontrolname-element-for-groupby-format.md)元素指定用于显示数据的通用控件或视图控件。 此元素为可选元素。
 
 有关定义组的完整格式化文件的示例，请参阅[宽视图（GroupBy）](./wide-view-groupby.md)。
 
@@ -239,7 +239,7 @@ View>
 
 - [ScriptBlock](./scriptblock-element-for-wideitem-for-widecontrol-format.md)元素（未显示）指定其值由视图显示的脚本。 您必须指定脚本或属性，但不能同时指定两者。
 
-在下面的示例中，调用 `ToString` 方法来设置脚本的值的格式。 脚本可以调用对象的任何方法。 因此，如果对象有一个具有格式参数的方法（如 `ToString`），则脚本可以调用该方法来设置脚本的输出值的格式。
+在下面的示例中，调用 `ToString` 方法来设置脚本的值的格式。 脚本可以调用对象的任何方法。 因此，如果对象具有具有格式参数的方法（如 `ToString`），则脚本可以调用该方法来设置脚本的输出值的格式。
 
 ```xml
 <WideItem>

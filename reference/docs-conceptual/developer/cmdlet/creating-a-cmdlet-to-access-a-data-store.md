@@ -7,10 +7,10 @@ ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.openlocfilehash: 3096965ba9f99f70994f2fb5b180cc58691b04f8
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74415712"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>创建用于访问数据存储的 Cmdlet
@@ -1100,7 +1100,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     select-str -Path "notes" -Pattern ".NET" -SimpleMatch=$false
     ```
 
-    此时将显示以下输出。
+    将显示以下输出。
 
     ```output
     IgnoreCase   : True
@@ -1121,7 +1121,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     select-str -Path notes -Pattern "over*" -SimpleMatch -CaseSensitive:$false
     ```
 
-    此时将显示以下输出。
+    将显示以下输出。
 
     ```output
     IgnoreCase   : True
@@ -1142,7 +1142,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     select-str -Path notes -Pattern "\([A-Za-z:blank:]" -SimpleMatch:$false
     ```
 
-    此时将显示以下输出。
+    将显示以下输出。
 
     ```output
     IgnoreCase   : True
@@ -1163,7 +1163,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     select-str -Path notes -Pattern Parameter -CaseSensitive
     ```
 
-    此时将显示以下输出。
+    将显示以下输出。
 
     ```output
     IgnoreCase   : False
@@ -1184,7 +1184,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     select-str -Path * -Pattern "[0-9]"
     ```
 
-    此时将显示以下输出。
+    将显示以下输出。
 
     ```output
     IgnoreCase   : True
@@ -1200,7 +1200,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     select-str -Path "SelectStrCommandSample.cs" -Script { if ($args[0] -cmatch "Pos"){ return $true } return $false }
     ```
 
-    此时将显示以下输出。
+    将显示以下输出。
 
     ```output
     IgnoreCase   : True
@@ -1210,7 +1210,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     Pattern      :
     ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [如何创建 Windows PowerShell Cmdlet](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 

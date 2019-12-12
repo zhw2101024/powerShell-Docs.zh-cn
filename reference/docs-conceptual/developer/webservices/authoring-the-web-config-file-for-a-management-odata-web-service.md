@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: d569f5d5-9746-40c0-be5e-f218bc4560f7
 caps.latest.revision: 4
 ms.openlocfilehash: f52953ee091f05df5f355719ecba788d3d5ee055
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359786"
 ---
 # <a name="authoring-the-webconfig-file-for-a-management-odata-web-service"></a>创作管理 OData Web 服务的 Web.config 架构文件
 
-在部署您的管理 OData web 服务之前，您必须将 web.config 文件配置为指向 XML 架构文件和实现[Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)的 dll，然后[Set-pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration)接口进行处理。
+在部署你的管理 OData web 服务之前，必须将 web.config 文件配置为指向 XML 架构文件以及实现[Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)和[Set-pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration)接口的 dll。 "的配置文件的配置文件。
 
 ## <a name="sample-config-file"></a>示例配置文件
 

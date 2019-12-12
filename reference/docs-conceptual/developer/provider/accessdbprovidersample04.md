@@ -9,22 +9,22 @@ ms.topic: article
 ms.assetid: ee3a7e56-7331-4f71-9ecb-7a59b8021c68
 caps.latest.revision: 10
 ms.openlocfilehash: 7096f8066568c214a5902f6943a2c093932d3b56
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366336"
 ---
 # <a name="accessdbprovidersample04"></a>AccessDBProviderSample04
 
 此示例演示如何覆盖容器方法以支持对 `Copy-Item`、`Get-ChildItem`、`New-Item`和 `Remove-Item` cmdlet 的调用。 当数据存储区包含属于容器的项时，应实现这些方法。 容器是包含公用父项下的子项的组。 此示例中的提供程序类派生自[Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)类。
 
-## <a name="demonstrates"></a>示例
+## <a name="demonstrates"></a>说明
 
 > [!IMPORTANT]
 > 你的提供程序类最有可能派生自[Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)
 
-此示例演示了以下内容：
+本示例演示下面几点：
 
 - 声明 `CmdletProvider` 特性。
 

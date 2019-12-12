@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 9ae11924-0072-451e-bf70-c5ffb25dccc0
 caps.latest.revision: 13
 ms.openlocfilehash: 0c20512e660c8d2b61d063dbd7078b55b23efeb8
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362316"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format"></a>PropertyName Element for SelectionCondition for EntrySelectedBy for EnumerableExpansion (Format)
 
-指定触发条件的 .NET 属性。 如果存在此属性，或者其计算结果为 `true`，则满足条件，并使用定义。
+指定触发条件的 .NET 属性。 如果该属性存在或其计算结果为 `true`，则满足条件，并使用定义。
 
 用于 EnumerableExpansion 的 SelectionCondition （Format） EntrySelectedBy 元素的配置元素（格式） DefaultSettings 元素（format） EnumerableExpansions 元素（format） EntrySelectedBy 元素EnumerableExpansion 的 EntrySelectedBy 的 SelectionCondition 的 EnumerableExpansion （格式） PropertyName 元素（Format）
 

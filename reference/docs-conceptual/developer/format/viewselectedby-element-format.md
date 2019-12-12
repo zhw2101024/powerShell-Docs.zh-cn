@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: acdeef4d-3554-4f39-a7e6-a684e3848fd7
 caps.latest.revision: 19
 ms.openlocfilehash: efc1c5d1338889ecd0be7150b7733842ce78979e
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367966"
 ---
 # <a name="viewselectedby-element-format"></a>ViewSelectedBy Element (Format)
@@ -34,7 +34,7 @@ ViewDefinitions 元素（格式） View 元素（Format） ViewSelectedBy 元素
 
 以下各节介绍 `ViewSelectedBy` 元素的属性、子元素和父元素。 此元素必须包含至少一个 `TypeName` 或 `SelectionSetName` 子元素。 对于可以指定的子元素数没有限制，也没有其顺序。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 

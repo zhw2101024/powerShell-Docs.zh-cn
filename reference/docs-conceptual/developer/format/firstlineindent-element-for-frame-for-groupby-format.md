@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 33be3b9e-53c8-433f-8c11-c65b0d46744c
 caps.latest.revision: 6
 ms.openlocfilehash: 9ba6fc1b9924a4b0d5b56ee15290a2293217403c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363076"
 ---
 # <a name="firstlineindent-element-for-frame-for-groupby-format"></a>FirstLineIndent Element for Frame for GroupBy (Format)

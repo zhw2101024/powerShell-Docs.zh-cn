@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 65fbac8b-07d0-4513-bc8d-79f1f389be0f
 caps.latest.revision: 5
 ms.openlocfilehash: 7aadee07b38d2e9d87c5f0c548d13a5cdad1939f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366166"
 ---
 # <a name="authoring-the-mof-schema-file-for-a-management-odata-web-service"></a>创作管理 OData Web 服务的 MOF 架构文件
@@ -23,7 +23,7 @@ ms.locfileid: "72366166"
 
 以下文件定义了服务和进程资源。 其中每个资源都对应于一个可由一组 Windows PowerShell cmdlet 管理的对象。 属性对应于这些 cmdlet 使用的参数。
 
-这两个资源都包含复杂类型的属性。 复杂类型定义为用 `ComplexType` 限定符修改的类。
+这两个资源都包含复杂类型的属性。 复杂类型定义为带有 `ComplexType` 限定符修改的类。
 
 ```csharp
 

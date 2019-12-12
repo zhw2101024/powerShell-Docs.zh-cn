@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 82fe3a35-a94b-4bc1-ad9e-dfc5f1e788b3
 caps.latest.revision: 13
 ms.openlocfilehash: a25fa2410fcc6803563573596af1bc99052c3ffa
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369176"
 ---
 # <a name="validatelength-attribute-declaration"></a>ValidateLength 属性声明
@@ -43,7 +43,7 @@ ValidateLength 属性指定 cmdlet 参数参数的最小和最大字符数。 �
 
 - Windows PowerShell 运行时在以下条件下引发错误：
 
-    - 当 `MaxLength` 特性参数的值小于 `MinLength` 特性参数的值时。
+    - 当 `MaxLength` attribute 参数的值小于 `MinLength` attribute 参数的值时。
 
     - 如果 `MaxLength` 特性参数设置为0，则为。
 

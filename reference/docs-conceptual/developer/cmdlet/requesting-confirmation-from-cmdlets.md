@@ -15,10 +15,10 @@ helpviewer_keywords:
 ms.assetid: 37d6e87f-57b7-40bd-b645-392cf0b6e88e
 caps.latest.revision: 13
 ms.openlocfilehash: 0c0517ef7fbd5ae6434773a2dfe276f3a8c35f39
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369526"
 ---
 # <a name="requesting-confirmation-from-cmdlets"></a>请求 Cmdlet 确认
@@ -29,7 +29,7 @@ ms.locfileid: "72369526"
 
 ## <a name="supporting-confirmation-requests"></a>支持确认请求
 
-为了支持确认请求，cmdlet 必须将 Cmdlet 特性的 `SupportsShouldProcess` 参数设置为 `true`。 这将启用 Windows PowerShell 提供的 `Confirm` 和 `WhatIf` cmdlet 参数。 @No__t_0 参数允许用户控制是否显示确认请求。 @No__t_0 参数允许用户确定该 cmdlet 是应显示消息还是执行其操作。 不要手动将 `Confirm` 和 `WhatIf` 参数添加到 cmdlet。
+为了支持确认请求，cmdlet 必须将 Cmdlet 特性的 `SupportsShouldProcess` 参数设置为 `true`。 这将启用 Windows PowerShell 提供的 `Confirm` 和 `WhatIf` cmdlet 参数。 `Confirm` 参数允许用户控制是否显示确认请求。 `WhatIf` 参数允许用户确定该 cmdlet 是应显示消息还是执行其操作。 不要手动将 `Confirm` 和 `WhatIf` 参数添加到 cmdlet。
 
 下面的示例演示支持确认请求的 Cmdlet 特性声明。
 
@@ -40,7 +40,7 @@ ms.locfileid: "72369526"
 
 ## <a name="calling-the-confirmation-request-methods"></a>调用确认请求方法
 
-在 cmdlet 代码中，先调用[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法，然后再执行更改系统的操作。 设计 cmdlet，以便在调用返回 `false` 的值时，不会执行操作，并且该 cmdlet 将处理下一个操作。
+在 cmdlet 代码中，先调用[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法，然后再执行更改系统的操作。 设计 cmdlet，以便在调用返回 `false`的值时，不会执行操作，并且该 cmdlet 将处理下一个操作。
 
 ## <a name="calling-the-shouldcontinue-method"></a>调用 ShouldContinue 方法
 
@@ -74,7 +74,7 @@ if (ShouldProcess (...) )
 
 ## <a name="calling-non-confirmation-methods"></a>调用非确认方法
 
-如果 cmdlet 或提供程序必须发送消息但未请求确认，则它可以调用以下三种方法。 避免使用[WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法发送这些类型的消息，这是因为[WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)输出与 Cmdlet 或提供程序的正常输出混合使用的输出方式。，这使得脚本编写变得困难。
+如果 cmdlet 或提供程序必须发送消息但未请求确认，则它可以调用以下三种方法。 避免使用[WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法发送这些类型的消息，因为[WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)输出与 Cmdlet 或提供程序的正常输出混在一起，这会使脚本编写变得很困难。
 
 - 若要警告用户并继续操作，cmdlet 或提供程序可以调用[WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)方法来调用。
 

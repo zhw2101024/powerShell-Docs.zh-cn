@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1f405afb-70b5-4fe0-9986-bc07401d93fd
 caps.latest.revision: 23
 ms.openlocfilehash: 862f942facafff6cea66c4f8f1040772c6a62ec3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363406"
 ---
 # <a name="creating-a-table-view"></a>创建表视图
@@ -79,13 +79,13 @@ Running  Appinfo            Application Information
 
 - [Name](./name-element-for-view-format.md)元素指定视图的名称。 此元素对于所有视图都是必需的。
 
-- [ViewSelectedBy](./viewselectedby-element-format.md)元素定义使用视图的对象。 此元素是必需的。
+- [ViewSelectedBy](./viewselectedby-element-format.md)元素定义使用视图的对象。 需要此元素。
 
-- [GroupBy](./groupby-element-for-view-format.md)元素（在本示例中未显示）定义显示新的对象组的时间。 每当特定属性或脚本的值发生更改时，就会启动一个新组。 此元素是可选的。
+- [GroupBy](./groupby-element-for-view-format.md)元素（在本示例中未显示）定义显示新的对象组的时间。 每当特定属性或脚本的值发生更改时，就会启动一个新组。 此元素为可选元素。
 
-- [Controls](./controls-element-for-view-format.md)元素（在本示例中未显示）定义表视图定义的自定义控件。 控件使您可以进一步指定数据的显示方式。 此元素是可选的。 视图可以定义自己的自定义控件，也可以使用可由格式设置文件中的任何视图使用的公共控件。 有关自定义控件的详细信息，请参阅[创建自定义控件](./creating-custom-controls.md)。
+- [Controls](./controls-element-for-view-format.md)元素（在本示例中未显示）定义表视图定义的自定义控件。 控件使您可以进一步指定数据的显示方式。 此元素为可选元素。 视图可以定义自己的自定义控件，也可以使用可由格式设置文件中的任何视图使用的公共控件。 有关自定义控件的详细信息，请参阅[创建自定义控件](./creating-custom-controls.md)。
 
-- [HideTableHeaders](./hidetableheaders-element-format.md)元素（在本示例中不显示）指定表将不会在表的顶部显示任何标签。 此元素是可选的。
+- [HideTableHeaders](./hidetableheaders-element-format.md)元素（在本示例中不显示）指定表将不会在表的顶部显示任何标签。 此元素为可选元素。
 
 - 定义表的标头和行信息的[TableControl](./tablecontrol-element-format.md)元素。 与所有其他视图类似，表视图可以显示对象属性的值或脚本生成的值。
 
@@ -97,11 +97,11 @@ Running  Appinfo            Application Information
 
    您可以使用的这些元素的数量没有限制，但表视图中的[TableColumnHeader](./tablecolumnheader-element-format.md)元素数目必须等于您使用的[TableRowEntry](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)元素的数目。
 
-3. [Label](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)元素指定显示的文本。 此元素是可选的。
+3. [Label](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)元素指定显示的文本。 此元素为可选元素。
 
-4. [Width](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)元素指定列的宽度（以字符为字符）。 此元素是可选的。
+4. [Width](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)元素指定列的宽度（以字符为字符）。 此元素为可选元素。
 
-5. [对齐](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)元素指定如何显示标签。 标签可以左对齐、右对齐或居中对齐。 此元素是可选的。
+5. [对齐](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)元素指定如何显示标签。 标签可以左对齐、右对齐或居中对齐。 此元素为可选元素。
 
 ## <a name="defining-the-table-rows"></a>定义表行
 
@@ -146,9 +146,9 @@ Running  Appinfo            Application Information
 
 - [ScriptBlock](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md)元素指定其值在行中显示的脚本。 您必须指定脚本或属性，但不能同时指定两者。
 
-- "格式[字符串](./label-element-for-listitem-for-listcontrol-format.md)" 元素指定定义如何显示属性或脚本值的格式模式。 此元素是可选的。
+- "格式[字符串](./label-element-for-listitem-for-listcontrol-format.md)" 元素指定定义如何显示属性或脚本值的格式模式。 此元素为可选元素。
 
-- [对齐](./alignment-element-for-tablecolumnitem-for-tablecontrol-format.md)元素指定属性或脚本的值的显示方式。 值可以左对齐、右对齐或居中对齐。 此元素是可选的。
+- [对齐](./alignment-element-for-tablecolumnitem-for-tablecontrol-format.md)元素指定属性或脚本的值的显示方式。 值可以左对齐、右对齐或居中对齐。 此元素为可选元素。
 
 ## <a name="defining-the-objects-that-use-the-table-view"></a>定义使用表视图的对象
 

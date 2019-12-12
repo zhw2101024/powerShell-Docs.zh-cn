@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e20e5ad6-a6e6-4a63-9d42-1ac54214f748
 caps.latest.revision: 5
 ms.openlocfilehash: 59839e9b8b6f2a56f2f1a9c755f2f1a85deb34aa
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361256"
 ---
 # <a name="how-to-add-dynamic-parameters-to-a-provider-help-topic"></a>如何向提供程序帮助主题添加动态参数

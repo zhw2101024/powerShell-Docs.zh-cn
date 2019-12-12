@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 8a150731-d4b4-4d63-8db5-f14d463c8c37
 caps.latest.revision: 13
 ms.openlocfilehash: b7e1d0adc43254141056a729e1c1cc9699b6ac9b
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363706"
 ---
 # <a name="formatstring-element-for-tablecolumnitem-for-tablecontrol-format"></a>FormatString Element for TableColumnItem for TableControl (Format)
