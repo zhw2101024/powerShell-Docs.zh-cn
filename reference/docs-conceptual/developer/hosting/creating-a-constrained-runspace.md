@@ -9,25 +9,25 @@ ms.topic: article
 ms.assetid: 59125e65-7030-40bb-9926-756120b2d952
 caps.latest.revision: 5
 ms.openlocfilehash: 20ac1e2af8e047b8b572d86a55439676aa8df25c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367646"
 ---
-# <a name="creating-a-constrained-runspace"></a><span data-ttu-id="cda86-102">创建受限运行空间</span><span class="sxs-lookup"><span data-stu-id="cda86-102">Creating a constrained runspace</span></span>
+# <a name="creating-a-constrained-runspace"></a><span data-ttu-id="1eff6-102">创建受限运行空间</span><span class="sxs-lookup"><span data-stu-id="1eff6-102">Creating a constrained runspace</span></span>
 
-<span data-ttu-id="cda86-103">出于性能或安全方面的考虑，可能需要限制可用于主机应用程序的 Windows PowerShell 命令。</span><span class="sxs-lookup"><span data-stu-id="cda86-103">For performance or security reasons, you might want to restrict the Windows PowerShell commands available to your host application.</span></span> <span data-ttu-id="cda86-104">要执行此操作，请通过调用[Initialsessionstate \*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create)方法来创建一个空的[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) ，然后仅添加所需的命令，然后再添加即可.</span><span class="sxs-lookup"><span data-stu-id="cda86-104">To do this you create an empty [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) by calling the [System.Management.Automation.Runspaces.Initialsessionstate.Create\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) method, and then add only the commands you want available.</span></span>
+<span data-ttu-id="1eff6-103">出于性能或安全方面的考虑，可能需要限制可用于主机应用程序的 Windows PowerShell 命令。</span><span class="sxs-lookup"><span data-stu-id="1eff6-103">For performance or security reasons, you might want to restrict the Windows PowerShell commands available to your host application.</span></span> <span data-ttu-id="1eff6-104">要执行此操作，请通过调用[Initialsessionstate \*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create)方法来创建一个空的[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) ，然后仅添加所需的命令，然后再添加一个。</span><span class="sxs-lookup"><span data-stu-id="1eff6-104">To do this you create an empty [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) by calling the [System.Management.Automation.Runspaces.Initialsessionstate.Create\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) method, and then add only the commands you want available.</span></span>
 
- <span data-ttu-id="cda86-105">使用仅加载您指定的命令的运行空间可显著提高性能。</span><span class="sxs-lookup"><span data-stu-id="cda86-105">Using a runspace that loads only the commands that you specify provides significantly improved performance.</span></span>
+ <span data-ttu-id="1eff6-105">使用仅加载您指定的命令的运行空间可显著提高性能。</span><span class="sxs-lookup"><span data-stu-id="1eff6-105">Using a runspace that loads only the commands that you specify provides significantly improved performance.</span></span>
 
- <span data-ttu-id="cda86-106">你可以使用[Sessionstatecmdletentry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry)类的方法来定义初始会话状态的 cmdlet）。</span><span class="sxs-lookup"><span data-stu-id="cda86-106">You use the methods of the [System.Management.Automation.Runspaces.Sessionstatecmdletentry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) class to define cmdlets for the initial session state.</span></span>
+ <span data-ttu-id="1eff6-106">你可以使用[Sessionstatecmdletentry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry)类的方法来定义初始会话状态的 cmdlet）。</span><span class="sxs-lookup"><span data-stu-id="1eff6-106">You use the methods of the [System.Management.Automation.Runspaces.Sessionstatecmdletentry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) class to define cmdlets for the initial session state.</span></span>
 
- <span data-ttu-id="cda86-107">你还可以将命令设置为私有。</span><span class="sxs-lookup"><span data-stu-id="cda86-107">You can also make commands private.</span></span> <span data-ttu-id="cda86-108">专用命令可由主机应用程序使用，但不能由应用程序的用户使用。</span><span class="sxs-lookup"><span data-stu-id="cda86-108">Private commands can be used by the host application, but not by users of the application.</span></span>
+ <span data-ttu-id="1eff6-107">你还可以将命令设置为私有。</span><span class="sxs-lookup"><span data-stu-id="1eff6-107">You can also make commands private.</span></span> <span data-ttu-id="1eff6-108">专用命令可由主机应用程序使用，但不能由应用程序的用户使用。</span><span class="sxs-lookup"><span data-stu-id="1eff6-108">Private commands can be used by the host application, but not by users of the application.</span></span>
 
-## <a name="adding-commands-to-an-empty-runspace"></a><span data-ttu-id="cda86-109">将命令添加到空的运行空间</span><span class="sxs-lookup"><span data-stu-id="cda86-109">Adding commands to an empty runspace</span></span>
+## <a name="adding-commands-to-an-empty-runspace"></a><span data-ttu-id="1eff6-109">将命令添加到空的运行空间</span><span class="sxs-lookup"><span data-stu-id="1eff6-109">Adding commands to an empty runspace</span></span>
 
- <span data-ttu-id="cda86-110">下面的示例演示如何创建一个空的 InitialSessionState 并向其中添加命令。</span><span class="sxs-lookup"><span data-stu-id="cda86-110">The following example demonstrates how to create an empty InitialSessionState and add commands to it.</span></span>
+ <span data-ttu-id="1eff6-110">下面的示例演示如何创建一个空的 InitialSessionState 并向其中添加命令。</span><span class="sxs-lookup"><span data-stu-id="1eff6-110">The following example demonstrates how to create an empty InitialSessionState and add commands to it.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -107,9 +107,9 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="making-commands-private"></a><span data-ttu-id="cda86-111">使命令私有</span><span class="sxs-lookup"><span data-stu-id="cda86-111">Making commands private</span></span>
+## <a name="making-commands-private"></a><span data-ttu-id="1eff6-111">使命令私有</span><span class="sxs-lookup"><span data-stu-id="1eff6-111">Making commands private</span></span>
 
- <span data-ttu-id="cda86-112">你还可以通过将命令的[Commandinfo](/dotnet/api/System.Management.Automation.CommandInfo.Visibility)属性设置为 private，使其成为私有命令。 [SessionStateEntryVisibility](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility) **私有**。</span><span class="sxs-lookup"><span data-stu-id="cda86-112">You can also make a command private, by setting it's [System.Management.Automation.Commandinfo.Visibility](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) property to [System.Management.Automation.SessionStateEntryVisibility](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility) **Private**.</span></span> <span data-ttu-id="cda86-113">宿主应用程序和其他命令可以调用该命令，但应用程序的用户不能。</span><span class="sxs-lookup"><span data-stu-id="cda86-113">The host application and other commands can call that command, but the user of the application cannot.</span></span> <span data-ttu-id="cda86-114">在下面的示例中， [get-childitem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem)命令是私有的。</span><span class="sxs-lookup"><span data-stu-id="cda86-114">In the following example, the [Get-ChildItem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) command is private.</span></span>
+ <span data-ttu-id="1eff6-112">你还可以通过将命令的[Commandinfo](/dotnet/api/System.Management.Automation.CommandInfo.Visibility)属性设置为 private，使其成为私有命令。 [SessionStateEntryVisibility](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility) **私有**。</span><span class="sxs-lookup"><span data-stu-id="1eff6-112">You can also make a command private, by setting it's [System.Management.Automation.Commandinfo.Visibility](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) property to [System.Management.Automation.SessionStateEntryVisibility](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility) **Private**.</span></span> <span data-ttu-id="1eff6-113">宿主应用程序和其他命令可以调用该命令，但应用程序的用户不能。</span><span class="sxs-lookup"><span data-stu-id="1eff6-113">The host application and other commands can call that command, but the user of the application cannot.</span></span> <span data-ttu-id="1eff6-114">在下面的示例中， [get-childitem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem)命令是私有的。</span><span class="sxs-lookup"><span data-stu-id="1eff6-114">In the following example, the [Get-ChildItem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) command is private.</span></span>
 
 ```csharp
 defaultSessionState = InitialSessionState.CreateDefault();
@@ -120,6 +120,6 @@ this.runspace = RunspaceFactory.CreateRunspace(defaultSessionState);
 this.runspace.Open();
 ```
 
-## <a name="see-also"></a><span data-ttu-id="cda86-115">另请参阅</span><span class="sxs-lookup"><span data-stu-id="cda86-115">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1eff6-115">另请参阅</span><span class="sxs-lookup"><span data-stu-id="1eff6-115">See Also</span></span>
 
- [<span data-ttu-id="cda86-116">创建 InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="cda86-116">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
+ [<span data-ttu-id="1eff6-116">创建 InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="1eff6-116">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)

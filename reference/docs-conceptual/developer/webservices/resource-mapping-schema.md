@@ -9,19 +9,19 @@ ms.topic: article
 ms.assetid: a7b2cc4d-292f-4714-888b-3b81536bef5d
 caps.latest.revision: 7
 ms.openlocfilehash: 0a71167926a39c821d25228825297e924e9682bd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359636"
 ---
-# <a name="resource-mapping-schema"></a><span data-ttu-id="0e34b-102">资源映射架构</span><span class="sxs-lookup"><span data-stu-id="0e34b-102">Resource Mapping Schema</span></span>
+# <a name="resource-mapping-schema"></a><span data-ttu-id="fee6b-102">资源映射架构</span><span class="sxs-lookup"><span data-stu-id="fee6b-102">Resource Mapping Schema</span></span>
 
-<span data-ttu-id="0e34b-103">管理 OData IIS 扩展使用 XML 文件来定义资源映射。</span><span class="sxs-lookup"><span data-stu-id="0e34b-103">Management OData IIS Extension uses XML files to define resource mapping.</span></span> <span data-ttu-id="0e34b-104">以下 XSD 定义了用于这些文件的架构。</span><span class="sxs-lookup"><span data-stu-id="0e34b-104">The following XSD defines the schema used for these files.</span></span>
+<span data-ttu-id="fee6b-103">管理 OData IIS 扩展使用 XML 文件来定义资源映射。</span><span class="sxs-lookup"><span data-stu-id="fee6b-103">Management OData IIS Extension uses XML files to define resource mapping.</span></span> <span data-ttu-id="fee6b-104">以下 XSD 定义了用于这些文件的架构。</span><span class="sxs-lookup"><span data-stu-id="fee6b-104">The following XSD defines the schema used for these files.</span></span>
 
-## <a name="resource-mapping-file-xsd"></a><span data-ttu-id="0e34b-105">资源映射文件 XSD</span><span class="sxs-lookup"><span data-stu-id="0e34b-105">Resource Mapping File XSD</span></span>
+## <a name="resource-mapping-file-xsd"></a><span data-ttu-id="fee6b-105">资源映射文件 XSD</span><span class="sxs-lookup"><span data-stu-id="fee6b-105">Resource Mapping File XSD</span></span>
 
-<span data-ttu-id="0e34b-106">以下 XSD 定义管理 OData IIS 扩展资源映射文件的架构。</span><span class="sxs-lookup"><span data-stu-id="0e34b-106">The following XSD defines the schema for Management OData IIS Extension resource mapping files.</span></span>
+<span data-ttu-id="fee6b-106">以下 XSD 定义管理 OData IIS 扩展资源映射文件的架构。</span><span class="sxs-lookup"><span data-stu-id="fee6b-106">The following XSD defines the schema for Management OData IIS Extension resource mapping files.</span></span>
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

@@ -9,19 +9,19 @@ ms.topic: article
 ms.assetid: 0b2a7ce2-3c33-469c-a4a4-b8fe3bd05324
 caps.latest.revision: 5
 ms.openlocfilehash: 93780ee8af80d78a5b97a32098384a148070b54a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366136"
 ---
-# <a name="implementing-sessionconfiguration-for-a-management-odata-web-service"></a><span data-ttu-id="8c719-102">实现管理 OData Web 服务的会话配置</span><span class="sxs-lookup"><span data-stu-id="8c719-102">Implementing SessionConfiguration for a Management OData web service</span></span>
+# <a name="implementing-sessionconfiguration-for-a-management-odata-web-service"></a><span data-ttu-id="d205d-102">实现管理 OData Web 服务的会话配置</span><span class="sxs-lookup"><span data-stu-id="d205d-102">Implementing SessionConfiguration for a Management OData web service</span></span>
 
-<span data-ttu-id="8c719-103">使用 Windows PowerShell Web 服务需要第三方来实现[set-pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration)接口，以公开 Windows PowerShell cmdlet。</span><span class="sxs-lookup"><span data-stu-id="8c719-103">Using the Windows PowerShell Web Service requires a third party to implement the [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interface to expose Windows PowerShell cmdlets.</span></span> <span data-ttu-id="8c719-104">此接口提供对 web 服务用于在服务器上运行 cmdlet 的远程会话的信息的访问。</span><span class="sxs-lookup"><span data-stu-id="8c719-104">This interface provides access to information about the remote session that the web service uses to run the cmdlets on the server.</span></span> <span data-ttu-id="8c719-105">编写代码来实现接口后，必须将其编译到要在 web 应用程序中使用的 DLL。</span><span class="sxs-lookup"><span data-stu-id="8c719-105">After writing the code to implement the interface, you must compile it into a DLL to be used in the web application.</span></span>
+<span data-ttu-id="d205d-103">使用 Windows PowerShell Web 服务需要第三方来实现[set-pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration)接口，以公开 Windows PowerShell cmdlet。</span><span class="sxs-lookup"><span data-stu-id="d205d-103">Using the Windows PowerShell Web Service requires a third party to implement the [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interface to expose Windows PowerShell cmdlets.</span></span> <span data-ttu-id="d205d-104">此接口提供对 web 服务用于在服务器上运行 cmdlet 的远程会话的信息的访问。</span><span class="sxs-lookup"><span data-stu-id="d205d-104">This interface provides access to information about the remote session that the web service uses to run the cmdlets on the server.</span></span> <span data-ttu-id="d205d-105">编写代码来实现接口后，必须将其编译到要在 web 应用程序中使用的 DLL。</span><span class="sxs-lookup"><span data-stu-id="d205d-105">After writing the code to implement the interface, you must compile it into a DLL to be used in the web application.</span></span>
 
-## <a name="implementation-of-pssessionconfiguration-interface"></a><span data-ttu-id="8c719-106">Set-pssessionconfiguration 接口的实现</span><span class="sxs-lookup"><span data-stu-id="8c719-106">Implementation of PSSessionConfiguration interface</span></span>
+## <a name="implementation-of-pssessionconfiguration-interface"></a><span data-ttu-id="d205d-106">Set-pssessionconfiguration 接口的实现</span><span class="sxs-lookup"><span data-stu-id="d205d-106">Implementation of PSSessionConfiguration interface</span></span>
 
-<span data-ttu-id="8c719-107">下面的代码实现了[set-pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration)接口的实现。</span><span class="sxs-lookup"><span data-stu-id="8c719-107">The following code implements the [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interface.</span></span>
+<span data-ttu-id="d205d-107">下面的代码实现了[set-pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration)接口的实现。</span><span class="sxs-lookup"><span data-stu-id="d205d-107">The following code implements the [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interface.</span></span>
 
 ```csharp
 //-----------------------------------------------------------------------
@@ -114,6 +114,6 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="8c719-108">另请参阅</span><span class="sxs-lookup"><span data-stu-id="8c719-108">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d205d-108">另请参阅</span><span class="sxs-lookup"><span data-stu-id="d205d-108">See Also</span></span>
 
-[<span data-ttu-id="8c719-109">为管理 OData web 服务实现自定义授权</span><span class="sxs-lookup"><span data-stu-id="8c719-109">Implementing Custom Authorization for a Management OData web service</span></span>](./implementing-custom-authorization-for-a-management-odata-web-service.md)
+[<span data-ttu-id="d205d-109">为管理 OData web 服务实现自定义授权</span><span class="sxs-lookup"><span data-stu-id="d205d-109">Implementing Custom Authorization for a Management OData web service</span></span>](./implementing-custom-authorization-for-a-management-odata-web-service.md)

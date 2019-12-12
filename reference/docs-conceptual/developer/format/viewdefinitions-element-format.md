@@ -9,19 +9,19 @@ ms.topic: article
 ms.assetid: 29840c10-2b30-4bb1-a8a0-ddf84d19c2d0
 caps.latest.revision: 18
 ms.openlocfilehash: c5ec80350c7707ccd41112ab5e1952e5dc198cca
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361416"
 ---
-# <a name="viewdefinitions-element-format"></a><span data-ttu-id="d0979-102">ViewDefinitions Element (Format)</span><span class="sxs-lookup"><span data-stu-id="d0979-102">ViewDefinitions Element (Format)</span></span>
+# <a name="viewdefinitions-element-format"></a><span data-ttu-id="01965-102">ViewDefinitions Element (Format)</span><span class="sxs-lookup"><span data-stu-id="01965-102">ViewDefinitions Element (Format)</span></span>
 
-<span data-ttu-id="d0979-103">定义用于显示 .NET 对象的视图。</span><span class="sxs-lookup"><span data-stu-id="d0979-103">Defines the views used to display .NET objects.</span></span> <span data-ttu-id="d0979-104">这些视图可以采用表格格式、列表格式、宽格式和自定义控件格式显示对象的属性和脚本值。</span><span class="sxs-lookup"><span data-stu-id="d0979-104">These views can display the properties and script values of an object  in a table format, list format, wide format, and custom control format.</span></span>
+<span data-ttu-id="01965-103">定义用于显示 .NET 对象的视图。</span><span class="sxs-lookup"><span data-stu-id="01965-103">Defines the views used to display .NET objects.</span></span> <span data-ttu-id="01965-104">这些视图可以采用表格格式、列表格式、宽格式和自定义控件格式显示对象的属性和脚本值。</span><span class="sxs-lookup"><span data-stu-id="01965-104">These views can display the properties and script values of an object  in a table format, list format, wide format, and custom control format.</span></span>
 
-<span data-ttu-id="d0979-105">Configuration 元素（Format） ViewDefinitions （Format XML）元素</span><span class="sxs-lookup"><span data-stu-id="d0979-105">Configuration Element (Format) ViewDefinitions (Format XML) Element</span></span>
+<span data-ttu-id="01965-105">Configuration 元素（Format） ViewDefinitions （Format XML）元素</span><span class="sxs-lookup"><span data-stu-id="01965-105">Configuration Element (Format) ViewDefinitions (Format XML) Element</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="d0979-106">语法</span><span class="sxs-lookup"><span data-stu-id="d0979-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="01965-106">语法</span><span class="sxs-lookup"><span data-stu-id="01965-106">Syntax</span></span>
 
 ```xml
 
@@ -30,41 +30,41 @@ ms.locfileid: "72361416"
 </ViewDefinitions>
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="d0979-107">属性和元素</span><span class="sxs-lookup"><span data-stu-id="d0979-107">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="01965-107">属性和元素</span><span class="sxs-lookup"><span data-stu-id="01965-107">Attributes and Elements</span></span>
 
-<span data-ttu-id="d0979-108">以下各节介绍 `ViewDefinitions` 元素的属性、子元素和父元素。</span><span class="sxs-lookup"><span data-stu-id="d0979-108">The following sections describe the attributes, child elements, and parent element of the `ViewDefinitions` element.</span></span> <span data-ttu-id="d0979-109">对于可以在格式设置文件中定义的视图数量没有限制，可以按任意顺序添加它们。</span><span class="sxs-lookup"><span data-stu-id="d0979-109">There is no limit to the number of views that can be defined in a formatting file, and they can be added in any order.</span></span>
+<span data-ttu-id="01965-108">以下各节介绍 `ViewDefinitions` 元素的属性、子元素和父元素。</span><span class="sxs-lookup"><span data-stu-id="01965-108">The following sections describe the attributes, child elements, and parent element of the `ViewDefinitions` element.</span></span> <span data-ttu-id="01965-109">对于可以在格式设置文件中定义的视图数量没有限制，可以按任意顺序添加它们。</span><span class="sxs-lookup"><span data-stu-id="01965-109">There is no limit to the number of views that can be defined in a formatting file, and they can be added in any order.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="d0979-110">特性</span><span class="sxs-lookup"><span data-stu-id="d0979-110">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="01965-110">属性</span><span class="sxs-lookup"><span data-stu-id="01965-110">Attributes</span></span>
 
-<span data-ttu-id="d0979-111">无。</span><span class="sxs-lookup"><span data-stu-id="d0979-111">None.</span></span>
+<span data-ttu-id="01965-111">无。</span><span class="sxs-lookup"><span data-stu-id="01965-111">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="d0979-112">子元素</span><span class="sxs-lookup"><span data-stu-id="d0979-112">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="01965-112">子元素</span><span class="sxs-lookup"><span data-stu-id="01965-112">Child Elements</span></span>
 
-|<span data-ttu-id="d0979-113">元素</span><span class="sxs-lookup"><span data-stu-id="d0979-113">Element</span></span>|<span data-ttu-id="d0979-114">描述</span><span class="sxs-lookup"><span data-stu-id="d0979-114">Description</span></span>|
+|<span data-ttu-id="01965-113">元素</span><span class="sxs-lookup"><span data-stu-id="01965-113">Element</span></span>|<span data-ttu-id="01965-114">描述</span><span class="sxs-lookup"><span data-stu-id="01965-114">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="d0979-115">View 元素（格式）</span><span class="sxs-lookup"><span data-stu-id="d0979-115">View Element (Format)</span></span>](./view-element-format.md)|<span data-ttu-id="d0979-116">定义用于显示一个或多个 .NET 对象的视图。</span><span class="sxs-lookup"><span data-stu-id="d0979-116">Defines a view that is used to display one or more .NET objects.</span></span>|
+|[<span data-ttu-id="01965-115">View 元素（格式）</span><span class="sxs-lookup"><span data-stu-id="01965-115">View Element (Format)</span></span>](./view-element-format.md)|<span data-ttu-id="01965-116">定义用于显示一个或多个 .NET 对象的视图。</span><span class="sxs-lookup"><span data-stu-id="01965-116">Defines a view that is used to display one or more .NET objects.</span></span>|
 
-### <a name="parent-elements"></a><span data-ttu-id="d0979-117">父元素</span><span class="sxs-lookup"><span data-stu-id="d0979-117">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="01965-117">父元素</span><span class="sxs-lookup"><span data-stu-id="01965-117">Parent Elements</span></span>
 
-|<span data-ttu-id="d0979-118">元素</span><span class="sxs-lookup"><span data-stu-id="d0979-118">Element</span></span>|<span data-ttu-id="d0979-119">描述</span><span class="sxs-lookup"><span data-stu-id="d0979-119">Description</span></span>|
+|<span data-ttu-id="01965-118">元素</span><span class="sxs-lookup"><span data-stu-id="01965-118">Element</span></span>|<span data-ttu-id="01965-119">描述</span><span class="sxs-lookup"><span data-stu-id="01965-119">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="d0979-120">配置元素（格式）</span><span class="sxs-lookup"><span data-stu-id="d0979-120">Configuration Element (Format)</span></span>](./configuration-element-format.md)|<span data-ttu-id="d0979-121">表示格式设置文件的顶级元素。</span><span class="sxs-lookup"><span data-stu-id="d0979-121">Represents the top-level element of a formatting file.</span></span>|
+|[<span data-ttu-id="01965-120">配置元素（格式）</span><span class="sxs-lookup"><span data-stu-id="01965-120">Configuration Element (Format)</span></span>](./configuration-element-format.md)|<span data-ttu-id="01965-121">表示格式设置文件的顶级元素。</span><span class="sxs-lookup"><span data-stu-id="01965-121">Represents the top-level element of a formatting file.</span></span>|
 
-## <a name="remarks"></a><span data-ttu-id="d0979-122">备注</span><span class="sxs-lookup"><span data-stu-id="d0979-122">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="01965-122">备注</span><span class="sxs-lookup"><span data-stu-id="01965-122">Remarks</span></span>
 
-<span data-ttu-id="d0979-123">有关不同视图类型的组件的详细信息，请参阅以下主题：</span><span class="sxs-lookup"><span data-stu-id="d0979-123">For more information about the components of the different types of views, see the following topics:</span></span>
+<span data-ttu-id="01965-123">有关不同视图类型的组件的详细信息，请参阅以下主题：</span><span class="sxs-lookup"><span data-stu-id="01965-123">For more information about the components of the different types of views, see the following topics:</span></span>
 
-- [<span data-ttu-id="d0979-124">创建表视图</span><span class="sxs-lookup"><span data-stu-id="d0979-124">Creating a Table View</span></span>](./creating-a-table-view.md)
+- [<span data-ttu-id="01965-124">创建表视图</span><span class="sxs-lookup"><span data-stu-id="01965-124">Creating a Table View</span></span>](./creating-a-table-view.md)
 
-- [<span data-ttu-id="d0979-125">创建列表视图</span><span class="sxs-lookup"><span data-stu-id="d0979-125">Creating a List View</span></span>](./creating-a-list-view.md)
+- [<span data-ttu-id="01965-125">创建列表视图</span><span class="sxs-lookup"><span data-stu-id="01965-125">Creating a List View</span></span>](./creating-a-list-view.md)
 
-- [<span data-ttu-id="d0979-126">创建宽视图</span><span class="sxs-lookup"><span data-stu-id="d0979-126">Creating a Wide View</span></span>](./creating-a-wide-view.md)
+- [<span data-ttu-id="01965-126">创建宽视图</span><span class="sxs-lookup"><span data-stu-id="01965-126">Creating a Wide View</span></span>](./creating-a-wide-view.md)
 
-- [<span data-ttu-id="d0979-127">自定义控件</span><span class="sxs-lookup"><span data-stu-id="d0979-127">Custom Controls</span></span>](./creating-custom-controls.md)
+- [<span data-ttu-id="01965-127">自定义控件</span><span class="sxs-lookup"><span data-stu-id="01965-127">Custom Controls</span></span>](./creating-custom-controls.md)
 
-## <a name="example"></a><span data-ttu-id="d0979-128">示例</span><span class="sxs-lookup"><span data-stu-id="d0979-128">Example</span></span>
+## <a name="example"></a><span data-ttu-id="01965-128">示例</span><span class="sxs-lookup"><span data-stu-id="01965-128">Example</span></span>
 
-<span data-ttu-id="d0979-129">此示例演示一个 `ViewDefinitions` 元素，该元素包含表视图和列表视图的父元素。</span><span class="sxs-lookup"><span data-stu-id="d0979-129">This example shows a `ViewDefinitions` element that contains the parent elements for a table view and a list view.</span></span>
+<span data-ttu-id="01965-129">此示例演示一个 `ViewDefinitions` 元素，该元素包含表视图和列表视图的父元素。</span><span class="sxs-lookup"><span data-stu-id="01965-129">This example shows a `ViewDefinitions` element that contains the parent elements for a table view and a list view.</span></span>
 
 ```xml
 <Configuration>
@@ -79,18 +79,18 @@ ms.locfileid: "72361416"
 </Configuration>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="d0979-130">另请参阅</span><span class="sxs-lookup"><span data-stu-id="d0979-130">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="01965-130">另请参阅</span><span class="sxs-lookup"><span data-stu-id="01965-130">See Also</span></span>
 
-[<span data-ttu-id="d0979-131">配置元素（格式）</span><span class="sxs-lookup"><span data-stu-id="d0979-131">Configuration Element (Format)</span></span>](./configuration-element-format.md)
+[<span data-ttu-id="01965-131">配置元素（格式）</span><span class="sxs-lookup"><span data-stu-id="01965-131">Configuration Element (Format)</span></span>](./configuration-element-format.md)
 
-[<span data-ttu-id="d0979-132">View 元素（格式）</span><span class="sxs-lookup"><span data-stu-id="d0979-132">View Element (Format)</span></span>](./view-element-format.md)
+[<span data-ttu-id="01965-132">View 元素（格式）</span><span class="sxs-lookup"><span data-stu-id="01965-132">View Element (Format)</span></span>](./view-element-format.md)
 
-[<span data-ttu-id="d0979-133">创建表视图</span><span class="sxs-lookup"><span data-stu-id="d0979-133">Creating a Table View</span></span>](./creating-a-table-view.md)
+[<span data-ttu-id="01965-133">创建表视图</span><span class="sxs-lookup"><span data-stu-id="01965-133">Creating a Table View</span></span>](./creating-a-table-view.md)
 
-[<span data-ttu-id="d0979-134">创建列表视图</span><span class="sxs-lookup"><span data-stu-id="d0979-134">Creating a List View</span></span>](./creating-a-list-view.md)
+[<span data-ttu-id="01965-134">创建列表视图</span><span class="sxs-lookup"><span data-stu-id="01965-134">Creating a List View</span></span>](./creating-a-list-view.md)
 
-[<span data-ttu-id="d0979-135">创建宽视图</span><span class="sxs-lookup"><span data-stu-id="d0979-135">Creating a Wide View</span></span>](./creating-a-wide-view.md)
+[<span data-ttu-id="01965-135">创建宽视图</span><span class="sxs-lookup"><span data-stu-id="01965-135">Creating a Wide View</span></span>](./creating-a-wide-view.md)
 
-[<span data-ttu-id="d0979-136">自定义控件</span><span class="sxs-lookup"><span data-stu-id="d0979-136">Custom Controls</span></span>](./creating-custom-controls.md)
+[<span data-ttu-id="01965-136">自定义控件</span><span class="sxs-lookup"><span data-stu-id="01965-136">Custom Controls</span></span>](./creating-custom-controls.md)
 
-[<span data-ttu-id="d0979-137">编写 PowerShell 格式化文件</span><span class="sxs-lookup"><span data-stu-id="d0979-137">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="01965-137">编写 PowerShell 格式化文件</span><span class="sxs-lookup"><span data-stu-id="01965-137">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)

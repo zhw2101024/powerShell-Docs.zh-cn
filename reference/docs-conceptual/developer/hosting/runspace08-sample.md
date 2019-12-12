@@ -9,37 +9,37 @@ ms.topic: article
 ms.assetid: 1100d91d-249d-4af7-9854-2d6a423ac2f4
 caps.latest.revision: 7
 ms.openlocfilehash: 70577a6a42ce26e9791360fa30baae9d7a492daf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367306"
 ---
-# <a name="runspace08-sample"></a><span data-ttu-id="7e636-102">Runspace08 示例</span><span class="sxs-lookup"><span data-stu-id="7e636-102">Runspace08 Sample</span></span>
+# <a name="runspace08-sample"></a><span data-ttu-id="10eeb-102">Runspace08 示例</span><span class="sxs-lookup"><span data-stu-id="10eeb-102">Runspace08 Sample</span></span>
 
-<span data-ttu-id="7e636-103">此示例演示如何将命令和参数添加到[system.web](/dotnet/api/system.management.automation.powershell)对象的管道，以及如何以同步方式运行命令。</span><span class="sxs-lookup"><span data-stu-id="7e636-103">This sample shows how to add commands and arguments to the pipeline of a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object and how to run the commands synchronously.</span></span>
+<span data-ttu-id="10eeb-103">此示例演示如何将命令和参数添加到[system.web](/dotnet/api/system.management.automation.powershell)对象的管道，以及如何以同步方式运行命令。</span><span class="sxs-lookup"><span data-stu-id="10eeb-103">This sample shows how to add commands and arguments to the pipeline of a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object and how to run the commands synchronously.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="7e636-104">要求</span><span class="sxs-lookup"><span data-stu-id="7e636-104">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="10eeb-104">要求</span><span class="sxs-lookup"><span data-stu-id="10eeb-104">Requirements</span></span>
 
-<span data-ttu-id="7e636-105">此示例需要 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="7e636-105">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="10eeb-105">此示例需要 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="10eeb-105">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="7e636-106">示例</span><span class="sxs-lookup"><span data-stu-id="7e636-106">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="10eeb-106">说明</span><span class="sxs-lookup"><span data-stu-id="10eeb-106">Demonstrates</span></span>
 
-<span data-ttu-id="7e636-107">此示例演示以下各项。</span><span class="sxs-lookup"><span data-stu-id="7e636-107">This sample demonstrates the following.</span></span>
+<span data-ttu-id="10eeb-107">此示例演示以下各项。</span><span class="sxs-lookup"><span data-stu-id="10eeb-107">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="7e636-108">使用[Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory)类创建一个 system.web. e x.///[运行空间](/dotnet/api/System.Management.Automation.Runspaces.Runspace)对象。</span><span class="sxs-lookup"><span data-stu-id="7e636-108">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object by using the [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) class.</span></span>
+- <span data-ttu-id="10eeb-108">使用[Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory)类创建一个 system.web. e x.///[运行空间](/dotnet/api/System.Management.Automation.Runspaces.Runspace)对象。</span><span class="sxs-lookup"><span data-stu-id="10eeb-108">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object by using the [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) class.</span></span>
 
-- <span data-ttu-id="7e636-109">创建使用运行空间的[system.web](/dotnet/api/system.management.automation.powershell)对象。</span><span class="sxs-lookup"><span data-stu-id="7e636-109">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
+- <span data-ttu-id="10eeb-109">创建使用运行空间的[system.web](/dotnet/api/system.management.automation.powershell)对象。</span><span class="sxs-lookup"><span data-stu-id="10eeb-109">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
 
-- <span data-ttu-id="7e636-110">将 cmdlet 添加到[system.web](/dotnet/api/system.management.automation.powershell)对象的管道。</span><span class="sxs-lookup"><span data-stu-id="7e636-110">Adding cmdlets to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="10eeb-110">将 cmdlet 添加到[system.web](/dotnet/api/system.management.automation.powershell)对象的管道。</span><span class="sxs-lookup"><span data-stu-id="10eeb-110">Adding cmdlets to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="7e636-111">同步运行 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="7e636-111">Running the cmdlets synchronously.</span></span>
+- <span data-ttu-id="10eeb-111">同步运行 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="10eeb-111">Running the cmdlets synchronously.</span></span>
 
-- <span data-ttu-id="7e636-112">从命令返回的[system.object](/dotnet/api/System.Management.Automation.PSObject)对象中提取属性。</span><span class="sxs-lookup"><span data-stu-id="7e636-112">Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
+- <span data-ttu-id="10eeb-112">从命令返回的[system.object](/dotnet/api/System.Management.Automation.PSObject)对象中提取属性。</span><span class="sxs-lookup"><span data-stu-id="10eeb-112">Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
 
-## <a name="example"></a><span data-ttu-id="7e636-113">示例</span><span class="sxs-lookup"><span data-stu-id="7e636-113">Example</span></span>
+## <a name="example"></a><span data-ttu-id="10eeb-113">示例</span><span class="sxs-lookup"><span data-stu-id="10eeb-113">Example</span></span>
 
-<span data-ttu-id="7e636-114">此示例使用一个[system.web](/dotnet/api/system.management.automation.powershell)对象运行[获取进程](/powershell/module/Microsoft.PowerShell.Management/Get-Process)和[排序对象](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object)的 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="7e636-114">This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+<span data-ttu-id="10eeb-114">此示例使用一个[system.web](/dotnet/api/system.management.automation.powershell)对象运行[获取进程](/powershell/module/Microsoft.PowerShell.Management/Get-Process)和[排序对象](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object)的 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="10eeb-114">This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -120,6 +120,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="7e636-115">另请参阅</span><span class="sxs-lookup"><span data-stu-id="7e636-115">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="10eeb-115">另请参阅</span><span class="sxs-lookup"><span data-stu-id="10eeb-115">See Also</span></span>
 
-[<span data-ttu-id="7e636-116">编写 Windows PowerShell 主机应用程序</span><span class="sxs-lookup"><span data-stu-id="7e636-116">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="10eeb-116">编写 Windows PowerShell 主机应用程序</span><span class="sxs-lookup"><span data-stu-id="10eeb-116">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
