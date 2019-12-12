@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 64718f8e-de60-4fb7-894d-2975b5257ff6
 caps.latest.revision: 4
 ms.openlocfilehash: bdced961d91088dd75be347b7b74b22467c8c9be
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366016"
 ---
 # <a name="scheduling-jobs-with-the-powershell-api"></a>通过 PowerShell API 安排作业
@@ -44,7 +44,7 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
 
 |参数名称|描述|
 |--------------------|-----------------|
-|**名称**|作业的名称。|
+|**Name**|作业的名称。|
 |**ScriptBock**|指定作业执行的操作的 PowerShell 脚本块。|
 |**FilePath**|文件的路径，该文件包含用于指定作业执行的操作的 PowerShell 脚本块。|
 |**InitializationScript**|用于初始化作业的 PowerShell 脚本块。|

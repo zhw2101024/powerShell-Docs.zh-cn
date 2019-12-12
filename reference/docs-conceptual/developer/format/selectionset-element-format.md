@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 848e7acd-d578-4fd1-a575-c0c3b9b5e68a
 caps.latest.revision: 17
 ms.openlocfilehash: c809aa6c3a40d16cfd2fd99065a846d265ec0f61
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368376"
 ---
 # <a name="selectionset-element-format"></a>SelectionSet Element (Format)
@@ -34,7 +34,7 @@ ms.locfileid: "72368376"
 
 以下各节介绍了 `SelectionSet` 元素的属性、子元素和父元素。 每个选项集都必须具有一个名称，并且必须指定该集的 .NET 对象。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 

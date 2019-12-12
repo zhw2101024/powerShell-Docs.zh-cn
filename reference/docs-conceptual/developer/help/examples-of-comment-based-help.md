@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 868194a2-17e9-4184-bc36-c04a33f26494
 caps.latest.revision: 4
 ms.openlocfilehash: 30e98bfcf06b1720005a73ee8294aeba7e1ae066
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367816"
 ---
 # <a name="examples-of-comment-based-help"></a>基于注释的帮助的示例

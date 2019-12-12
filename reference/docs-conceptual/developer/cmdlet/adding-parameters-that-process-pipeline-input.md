@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
 ms.openlocfilehash: 9ecb73a4138a5853fa5fb378874da2d81c5dbdba
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364596"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>添加用于处理管道输入的参数
@@ -68,7 +68,7 @@ End Property
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesgetproc03#GetProc03VBNameParameter](Msh_samplesgetproc03#GetProc03VBNameParameter)]  -->
 
-前面的声明将 `ValueFromPipeline` 关键字设置为 `true` 这样，如果对象与参数的类型相同，或者可以将参数强制转换为同一类型，则 Windows PowerShell 运行时会将参数绑定到传入对象。 @No__t_0 关键字还设置为 `true`，以便 Windows PowerShell 运行时将检查 `Name` 属性的传入对象。 如果传入对象具有此类属性，则运行时将 `Name` 参数绑定到传入对象的 `Name` 属性。
+前面的声明将 `ValueFromPipeline` 关键字设置为 `true` 这样，如果对象与参数的类型相同，或者可以将参数强制转换为同一类型，则 Windows PowerShell 运行时会将参数绑定到传入对象。 `ValueFromPipelineByPropertyName` 关键字还设置为 `true`，以便 Windows PowerShell 运行时将检查 `Name` 属性的传入对象。 如果传入对象具有此类属性，则运行时将 `Name` 参数绑定到传入对象的 `Name` 属性。
 
 > [!NOTE]
 > 参数 `ValueFromPipeline` attribute 关键字的设置优先于 `ValueFromPipelineByPropertyName` 关键字的设置。
@@ -77,7 +77,7 @@ End Property
 
 如果 cmdlet 要处理管道输入，则需要重写适当的输入处理方法。 基本输入处理方法在[创建第一个 Cmdlet](./creating-a-cmdlet-without-parameters.md)时引入。
 
-此 ProcessRecord cmdlet 将重写 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) 方法，以处理由用户或脚本提供的 `Name` 参数输入。 如果未提供任何名称，则此方法将获取每个请求的进程名称或所有进程的进程。 请注意，在[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)中，对[WriteObject （system.string，system.string）](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)的调用是用于将输出对象发送到管道的输出机制。 此调用 `enumerateCollection` 的第二个参数设置为 `true`，告知 Windows PowerShell 运行时枚举进程对象的数组，并一次将一个进程写入命令行。
+此 ProcessRecord cmdlet 将重写 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) 方法，以处理由用户或脚本提供的 `Name` 参数输入。 如果未提供任何名称，则此方法将获取每个请求的进程名称或所有进程的进程。 请注意，在[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)中，对[WriteObject （system.string，system.string）](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)的调用是用于将输出对象发送到管道的输出机制。 此调用 `enumerateCollection`的第二个参数设置为 `true`，告知 Windows PowerShell 运行时枚举进程对象的数组，并一次将一个进程写入命令行。
 
 ```csharp
 protected override void ProcessRecord()
@@ -146,7 +146,7 @@ Windows PowerShell 使用 .Net 对象在 cmdlet 之间传递信息。 因此，c
     PS> type ProcessNames | get-proc
     ```
 
-此时将显示以下输出。
+将显示以下输出。
 
     ```
     Handles  NPM(K)  PM(K)   WS(K)  VS(M)  CPU(s)    Id  ProcessName
@@ -163,7 +163,7 @@ Windows PowerShell 使用 .Net 对象在 cmdlet 之间传递信息。 因此，c
     PS> get-process iexplore | get-proc
     ```
 
-此时将显示以下输出。
+将显示以下输出。
 
     ```
     Handles  NPM(K)  PM(K)   WS(K)  VS(M)  CPU(s)    Id  ProcessName

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a0ef5ac9-8254-4832-ace8-84b356c10f08
 caps.latest.revision: 13
 ms.openlocfilehash: ff4fe159eedc47fc69f4d783cd90d2b0e888c0d5
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363556"
 ---
 # <a name="background-jobs"></a>后台作业
@@ -51,7 +51,7 @@ Cmdlet 可以在内部执行其操作，也可以用作 Windows PowerShell*后�
 
 Windows PowerShell 提供以下 Api 来管理后台作业。
 
-[System.web](/dotnet/api/System.Management.Automation.Job)派生自定义作业对象。 这是一个抽象类。
+[System.web](/dotnet/api/System.Management.Automation.Job)派生自定义作业对象。 这是一个 abstract 类。
 
 [Jobrepository](/dotnet/api/System.Management.Automation.JobRepository)管理并提供有关当前活动的后台作业的信息。
 

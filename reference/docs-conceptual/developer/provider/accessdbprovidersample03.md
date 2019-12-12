@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 9e576199-49c7-4355-9686-f9ed40c64a5f
 caps.latest.revision: 10
 ms.openlocfilehash: aa67bb605f90c1ea40323b4583766069ff1226fb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359986"
 ---
 # <a name="accessdbprovidersample03"></a>AccessDBProviderSample03
 
 此示例演示如何覆盖[Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)和[Itemcmdletprovider. Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法，以支持对 `Get-Item` 和 `Set-Item` cmdlet 的调用的调用，这种情况下是如此。 此示例中的提供程序类派生自[Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)类。
 
-## <a name="demonstrates"></a>示例
+## <a name="demonstrates"></a>说明
 
 > [!IMPORTANT]
 > 提供程序类最有可能派生自以下类之一，并可能实现其他提供程序接口：
@@ -30,7 +30,7 @@ ms.locfileid: "72359986"
 >
 > 有关根据提供程序功能选择要从哪个提供程序类派生的详细信息，请参阅[设计你的 Windows PowerShell 提供程序](./provider-types.md)。
 
-此示例演示了以下内容：
+本示例演示下面几点：
 
 - 声明 `CmdletProvider` 特性。
 

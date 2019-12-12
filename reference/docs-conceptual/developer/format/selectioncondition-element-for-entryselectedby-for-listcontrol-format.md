@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 7649d5d0-2b56-49b5-a670-dde46caca343
 caps.latest.revision: 11
 ms.openlocfilehash: 7150b29ad84dfb587215ee3e64c356adbd5a6305
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417534"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-listcontrol-format"></a>SelectionCondition Element for EntrySelectedBy for ListControl (Format)
@@ -32,17 +32,17 @@ ms.locfileid: "74417534"
 </SelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>特性和元素
+## <a name="attributes-and-elements"></a>属性和元素
 
 以下各节介绍了 `SelectionCondition` 元素的属性、子元素和父元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 
 ### <a name="child-elements"></a>子元素
 
-|元素|说明|
+|元素|描述|
 |-------------|-----------------|
 |[ListEntry 的 SelectionCondition for EntrySelectedBy 的 PropertyName 元素（Format）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|可选元素。<br /><br /> 指定触发条件的 .NET 属性。|
 |[ListEntry 的 EntrySelectedBy 的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|可选元素。<br /><br /> 指定触发条件的脚本。|
@@ -51,7 +51,7 @@ ms.locfileid: "74417534"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|说明|
+|元素|描述|
 |-------------|-----------------|
 |[TableRowEntry 的 EntrySelectedBy 元素（格式）](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|定义使用此表项的 .NET 类型或此项要使用的条件。|
 
@@ -67,7 +67,7 @@ lWhen 正在定义选择条件，以下要求适用：
 
 有关列表视图的其他组件的详细信息，请参阅[创建列表视图](./creating-a-list-view.md)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [创建列表视图](./creating-a-list-view.md)
 

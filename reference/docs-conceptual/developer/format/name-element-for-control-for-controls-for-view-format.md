@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 26437467-d578-4e8d-8cdd-17dfe644957a
 caps.latest.revision: 7
 ms.openlocfilehash: 7e24aa60f7abae5768707d2527826c452b709002
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365096"
 ---
 # <a name="name-element-for-control-for-controls-for-view-format"></a>Name Element for Control for Controls for View (Format)

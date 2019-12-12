@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 0595b99e-b438-4240-b47b-555cf0316f33
 caps.latest.revision: 15
 ms.openlocfilehash: bd5baa03c2050b2c3bbe1d7697c253d923175d39
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368026"
 ---
 # <a name="typename-element-for-types-format"></a>TypeName Element for Types (Format)
@@ -31,7 +31,7 @@ ms.locfileid: "72368026"
 
 以下各节介绍了 `TypeName` 元素的属性、子元素和父元素。 选择集中必须包含至少一个 `TypeName` 元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 

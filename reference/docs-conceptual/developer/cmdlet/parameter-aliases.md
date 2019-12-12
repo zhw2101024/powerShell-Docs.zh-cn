@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 7c9096a1-46fa-48ea-9b8a-a583484b9d68
 caps.latest.revision: 13
 ms.openlocfilehash: 6545e71ea18d10621ee9c203e70f64dece460ef5
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369586"
 ---
 # <a name="parameter-aliases"></a>参数别名
 
-Cmdlet 参数还可以有别名。 在命令中键入或指定参数时，可以使用别名，而不是参数名称。
+Cmdlet 参数也可以有别名。 在命令中键入或指定参数时，可以使用别名，而不是参数名称。
 
 ## <a name="benefits-of-using-aliases"></a>使用别名的好处
 

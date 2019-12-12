@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 4732e38c-b1a0-4de7-b6de-75dbde850488
 caps.latest.revision: 8
 ms.openlocfilehash: c5eea216efd8048aee5768c78c0b48617670f091
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365536"
 ---
 # <a name="how-to-support-transactions"></a>如何支持事务

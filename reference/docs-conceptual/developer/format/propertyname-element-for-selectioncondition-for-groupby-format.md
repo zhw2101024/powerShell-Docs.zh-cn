@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: d1707317-6c26-4866-bcc1-8924103c9014
 caps.latest.revision: 6
 ms.openlocfilehash: 7241ea0ea364befa7ad4ab0af4c4209be72214a7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364946"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-groupby-format"></a>PropertyName Element for SelectionCondition for GroupBy (Format)
 
-指定触发条件的 .NET 属性。 如果存在此属性，或者其计算结果为 `true`，则满足条件，并使用定义。 此元素在定义如何显示新的对象组时使用。
+指定触发条件的 .NET 属性。 如果该属性存在或其计算结果为 `true`，则满足条件，并使用定义。 此元素在定义如何显示新的对象组时使用。
 
 配置元素（格式） ViewDefinitions 元素（格式） View 元素（format）对于 GroupBy （format） CustomEntries 元素，用于元素的 CustomControl 元素（format）CustomControl for groupby （format） EntrySelectedBy 元素 for CustomEntry for groupby （format） SelectionCondition 元素 for EntrySelectedBy for groupby （format） PropertyName 元素 for GroupBy （Format）
 

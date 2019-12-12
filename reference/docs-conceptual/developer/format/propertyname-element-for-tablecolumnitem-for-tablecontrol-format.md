@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fb26d72c-2f77-4801-badf-0537ccc55e31
 caps.latest.revision: 10
 ms.openlocfilehash: 6e86b6a0874b385703121802bc8108a0410442cd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362246"
 ---
 # <a name="propertyname-element-for-tablecolumnitem-for-tablecontrol-format"></a>PropertyName Element for TableColumnItem for TableControl (Format)
@@ -31,7 +31,7 @@ ms.locfileid: "72362246"
 
 以下各节介绍 `PropertyName` 元素的属性、子元素和父元素。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 

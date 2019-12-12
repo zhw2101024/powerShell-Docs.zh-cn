@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 7196f039-2f6a-41fd-b252-5b1623ebb9f9
 caps.latest.revision: 11
 ms.openlocfilehash: 09183a538c179f19347c3f1ed45b4ad38c2ca451
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365166"
 ---
 # <a name="label-element-for-tablecolumnheader-for-tablecontrol-format"></a>Label Element for TableColumnHeader for TableControl (Format)
@@ -32,7 +32,7 @@ ms.locfileid: "72365166"
 
 以下各节介绍了 `Label` 元素的属性、子元素和父元素。 每个列只允许有一个标签。
 
-### <a name="attributes"></a>特性
+### <a name="attributes"></a>属性
 
 无。
 

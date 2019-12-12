@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a317d482-73cc-4c98-a002-1357fa879cd7
 caps.latest.revision: 7
 ms.openlocfilehash: cf1a80e845c38d97d71f26eba63c38a550958b79
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363856"
 ---
 # <a name="entryselectedby-element-for-customentry-for-groupby-format"></a>EntrySelectedBy Element for CustomEntry for GroupBy (Format)
@@ -55,7 +55,7 @@ ms.locfileid: "72363856"
 
 ## <a name="remarks"></a>备注
 
-选择条件用于定义要使用的定义必须存在的条件，例如当对象具有特定属性或特定属性值或脚本计算结果为 `true` 时。 有关选择条件的详细信息，请参阅[定义使用视图条目或项的条件](./defining-conditions-for-displaying-data.md)。
+选择条件用于定义要使用的定义必须存在的条件，例如当对象具有特定属性或特定属性值或脚本计算结果为 `true`时。 有关选择条件的详细信息，请参阅[定义使用视图条目或项的条件](./defining-conditions-for-displaying-data.md)。
 
 ## <a name="see-also"></a>另请参阅
 

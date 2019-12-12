@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e0c98933-b7a5-4205-b811-06c0b0bf8988
 caps.latest.revision: 9
 ms.openlocfilehash: 54c7c261a23075721cd7bce75e530150dc0e0212
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363326"
 ---
 # <a name="entryselectedby-element-for-wideentry-format"></a>EntrySelectedBy Element for WideEntry (Format)
@@ -57,7 +57,7 @@ ms.locfileid: "72363326"
 
 对于宽视图定义，必须至少指定一个类型、选择集或选择条件。 您可以使用的子元素数没有最大限制。
 
-选择条件用于定义要使用的定义必须存在的条件，例如当对象具有特定属性或特定属性值或脚本值的计算结果为 `true` 时。 有关选择条件的详细信息，请参阅[定义用于显示数据的条件](./defining-conditions-for-displaying-data.md)。
+选择条件用于定义要使用的定义必须存在的条件，例如当对象具有特定属性或特定属性值或脚本值的计算结果为 `true`时。 有关选择条件的详细信息，请参阅[定义用于显示数据的条件](./defining-conditions-for-displaying-data.md)。
 
 有关大视图的其他组件的详细信息，请参阅[创建宽视图](./creating-a-wide-view.md)。
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d837d5d4-ed2e-4d84-a306-0b5d2ad2d0bf
 caps.latest.revision: 24
 ms.openlocfilehash: 2361c1117757569bef0815018c75764430a9e7a8
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361456"
 ---
 # <a name="view-element-format"></a>View Element (Format)
@@ -77,7 +77,7 @@ ms.locfileid: "72361456"
 
 ## <a name="example"></a>示例
 
-此示例演示一个 `View` 元素，该元素定义[system.serviceprocess. Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)对象的表视图。
+此示例演示了一个 `View` 元素，该元素定义[system.serviceprocess. Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)对象的表视图。
 
 ```xml
 <ViewDefinitions>

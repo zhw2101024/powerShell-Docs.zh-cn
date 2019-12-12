@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 0db9f54c-4014-4450-9e81-c9f5fe562a0e
 caps.latest.revision: 12
 ms.openlocfilehash: c65deeda6b2ef1b52de55035dc606259a7f2d232
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365736"
 ---
 # <a name="common-parameter-names"></a>常见参数名称
@@ -20,7 +20,7 @@ ms.locfileid: "72365736"
 本主题中描述的参数称为*通用参数*。 它们由 Windows PowerShell 运行时添加到 cmdlet 中，不能由 cmdlet 声明。
 
 > [!NOTE]
-> 还会将这些参数添加到提供程序 cmdlet 和用 `CmdletBinding` 特性修饰的函数。
+> 还会将这些参数添加到提供程序 cmdlet 以及用 `CmdletBinding` 特性修饰的函数。
 
 ## <a name="general-common-parameters"></a>一般常见参数
 

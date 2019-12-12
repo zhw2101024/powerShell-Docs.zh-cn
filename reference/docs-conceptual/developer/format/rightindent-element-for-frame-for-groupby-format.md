@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 43f940db-62e9-4c4d-945c-6f6f48880868
 caps.latest.revision: 6
 ms.openlocfilehash: 395798bd39f18af01a7da6b88916ed82cd514003
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362186"
 ---
 # <a name="rightindent-element-for-frame-for-groupby-format"></a>RightIndent Element for Frame for GroupBy (Format)

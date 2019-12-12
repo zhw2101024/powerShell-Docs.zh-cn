@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 5ec68309-7826-4643-a521-e29c996663fb
 caps.latest.revision: 11
 ms.openlocfilehash: 649a978e21e9421a3f3e953261e1d309e23c3f9c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368556"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format"></a>ScriptBlock Element for SelectionCondition for EntrySelectedBy for WideControl (Format)

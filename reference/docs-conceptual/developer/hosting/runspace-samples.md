@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: c92a6d3d-8d34-4a76-bdc3-dea923d9858e
 caps.latest.revision: 17
 ms.openlocfilehash: e24d40746da91f60aaf2af655ddcadc88ab6a4db
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360996"
 ---
 # <a name="runspace-samples"></a>运行空间示例
@@ -42,7 +42,7 @@ ms.locfileid: "72360996"
 
  [Runspace09 示例](./runspace09-sample.md)此示例演示如何将脚本添加到[system.web](/dotnet/api/system.management.automation.powershell)对象的管道，以及如何以异步方式运行脚本。 使用事件处理脚本的输出。
 
- [Runspace10 示例](./runspace10-sample.md)此示例演示如何创建默认初始会话状态，如何将 cmdlet 添加到[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)，如何创建使用初始会话状态的运行空间，以及如何使用来运行该命令的示例。" [System.object](/dotnet/api/system.management.automation.powershell) " 对象。
+ [Runspace10 示例](./runspace10-sample.md)此示例演示如何创建默认初始会话状态，如何将 cmdlet 添加到[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)，如何创建使用初始会话状态的运行空间，以及如何通过使用[system.exception 对象运行](/dotnet/api/system.management.automation.powershell)该命令，请执行以下操作：方法。
 
  [Runspace11 示例](./runspace11-sample.md)这说明了如何使用[Proxycommand](/dotnet/api/System.Management.Automation.ProxyCommand)类来创建一个代理命令，该命令将调用现有的 cmdlet，但会限制可用参数的集合。 然后，代理命令被添加到用来创建受限运行空间的初始会话状态。 这意味着用户只能通过该代理命令使用该 cmdlet 的功能。
 

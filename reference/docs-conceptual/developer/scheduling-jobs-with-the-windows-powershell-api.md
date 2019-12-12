@@ -3,10 +3,10 @@ title: 使用 Windows PowerShell API 安排作业
 ms.date: 09/13/2016
 ms.topic: article
 ms.openlocfilehash: 4e1d4ed6bffd858b92bf29b1dc6d8503454fafda
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359826"
 ---
 # <a name="scheduling-jobs-with-the-windows-powershell-api"></a>使用 Windows PowerShell API 安排作业
@@ -54,7 +54,7 @@ jobDefParameters.Add("ScriptBlock", scriptBlock);  // A scriptblock or script Fi
 
 ## <a name="creating-the-invocation-and-job-definition-objects"></a>创建调用和作业定义对象
 
-然后，创建 ScheduledJobInvocationInfo 和 ScheduledJobDefinition 对象以运行作业。 下面的代码演示了这一点。
+然后，创建 ScheduledJobInvocationInfo 和 ScheduledJobDefinition 对象以运行作业。 以下代码对此做了演示。
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(

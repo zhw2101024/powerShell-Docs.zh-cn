@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e8adc997-1a71-48e9-9383-513ef13da7cf
 caps.latest.revision: 4
 ms.openlocfilehash: 584e5923008e8369a83c699478844f0e0c295adc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367756"
 ---
 # <a name="syntax-of-comment-based-help"></a>基于注释的帮助的语法
@@ -37,7 +37,7 @@ ms.locfileid: "72367756"
 
 ## <a name="syntax-description"></a>语法说明
 
- 基于注释的帮助以一系列注释形式编写。 您可以在每行注释之前键入注释符号（#），也可以使用 "\< #" 和 "# >" 符号创建注释块。 注释块内的所有行都解释为注释。
+ 基于注释的帮助以一系列注释形式编写。 可以在每行注释之前键入注释符号（#），也可以使用 "\<#" 和 "# >" 符号创建注释块。 注释块内的所有行都解释为注释。
 
  基于注释的帮助的每个部分都由关键字定义，每个关键字前面有一个句点（.）。 关键字可以按任意顺序出现。 关键字名称不区分大小写。
 

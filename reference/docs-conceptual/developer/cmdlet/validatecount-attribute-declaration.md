@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 516af1ef-2c2e-408d-84bc-865f5bccf761
 caps.latest.revision: 11
 ms.openlocfilehash: ffc45f6b80a2b7ed22f27d083d042b1de7f353f6
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369226"
 ---
 # <a name="validatecount-attribute-declaration"></a>ValidateCount 属性声明
@@ -31,9 +31,9 @@ ValidateCount 属性指定 cmdlet 参数允许的最小和最大参数数量。
 
 #### <a name="parameters"></a>参数
 
-需要 `MinLength`[System.object][] 指定参数的最小数目。
+需要 `MinLength`[System.Int32][] 指定参数的最小数目。
 
-需要 `MaxLength`[System.object][] 指定参数的最大数目。
+需要 `MaxLength`[System.Int32][] 指定参数的最大数目。
 
 ## <a name="remarks"></a>备注
 
@@ -43,7 +43,7 @@ ValidateCount 属性指定 cmdlet 参数允许的最小和最大参数数量。
 
 - Windows PowerShell 运行时在以下条件下引发错误：
 
-    - `MinLength` 和 `MaxLength` 属性参数的类型不是[system.object][]。
+    - `MinLength` 和 `MaxLength` 属性参数的类型不是[System.Int32][]。
 
     - `MaxLength` 属性参数的值小于 `MinLength` attribute 参数的值。
 
@@ -60,5 +60,5 @@ ValidateCount 属性指定 cmdlet 参数允许的最小和最大参数数量。
 [如何验证参数计数]: how-to-validate-an-argument-count.md
 [编写 Windows PowerShell Cmdlet]: writing-a-windows-powershell-cmdlet.md
 
-[System.object]: /dotnet/api/System.Int32
+[System.Int32]: /dotnet/api/System.Int32
 [System.web. ValidateCountAttribute]: /dotnet/api/System.Management.Automation.ValidateCountAttribute

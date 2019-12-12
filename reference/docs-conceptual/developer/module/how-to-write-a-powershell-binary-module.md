@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: eb4e72e6-24c4-42b6-b7b9-a62585c17f26
 caps.latest.revision: 15
 ms.openlocfilehash: ed614de125f78cbcf8411cc334baf3c95933dd47
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367116"
 ---
 # <a name="how-to-write-a-powershell-binary-module"></a>如何编写 PowerShell 二进制模块
@@ -73,9 +73,9 @@ ms.locfileid: "72367116"
 
 3. 打包解决方案，并将包保存到 PowerShell 模块路径中的某个位置。
 
-   @No__t-0 全局环境变量描述 PowerShell 将用于查找模块的默认路径。 例如，在系统上保存模块的通用路径将为 `%SystemRoot%\users\<user>\Documents\WindowsPowerShell\Modules\<moduleName>`。 如果未使用默认路径，则需要在安装过程中显式声明模块的位置。 请确保创建一个文件夹以将模块保存在中，因为您可能需要使用文件夹存储解决方案的多个程序集和文件。
+   `PSModulePath` 全局环境变量描述 PowerShell 将用于查找模块的默认路径。 例如，在系统上保存模块的通用路径将 `%SystemRoot%\users\<user>\Documents\WindowsPowerShell\Modules\<moduleName>`。 如果未使用默认路径，则需要在安装过程中显式声明模块的位置。 请确保创建一个文件夹以将模块保存在中，因为您可能需要使用文件夹存储解决方案的多个程序集和文件。
 
-   请注意，从技术上讲，不需要在任何位置将模块安装到 `PSModulePath`-它们只是 PowerShell 将在其中查找模块的默认位置。 但是，除非您有充分的理由将模块存储在其他位置，否则这会被视为最佳做法。 有关详细信息，请参阅[安装 Powershell 模块](./installing-a-powershell-module.md)和[修改 Powershell 模块安装路径](./modifying-the-psmodulepath-installation-path.md)。
+   请注意，从技术上讲，无需将模块安装到 `PSModulePath` 上的任何位置-这些只是 PowerShell 将在其中查找模块的默认位置。 但是，除非您有充分的理由将模块存储在其他位置，否则这会被视为最佳做法。 有关详细信息，请参阅[安装 Powershell 模块](./installing-a-powershell-module.md)和[修改 Powershell 模块安装路径](./modifying-the-psmodulepath-installation-path.md)。
 
 4. 通过调用[import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)将模块导入 PowerShell。
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 8c7a40ca-1786-46f0-bab5-6ce229daa7ee
 caps.latest.revision: 14
 ms.openlocfilehash: 25d24063501196d44e0f806a55bb699c82f771ce
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368976"
 ---
 # <a name="creating-a-list-view"></a>创建列表视图
@@ -99,11 +99,11 @@ ServiceType         : Win32OwnProcess
 
 - [Name](./name-element-for-view-format.md)元素指定视图的名称。 此元素对于所有视图都是必需的。
 
-- [ViewSelectedBy](./viewselectedby-element-format.md)元素定义使用视图的对象。 此元素是必需的。
+- [ViewSelectedBy](./viewselectedby-element-format.md)元素定义使用视图的对象。 需要此元素。
 
-- [GroupBy](./groupby-element-for-view-format.md)元素定义何时显示新的对象组。 每当特定属性或脚本的值发生更改时，就会启动一个新组。 此元素是可选的。
+- [GroupBy](./groupby-element-for-view-format.md)元素定义何时显示新的对象组。 每当特定属性或脚本的值发生更改时，就会启动一个新组。 此元素为可选元素。
 
-- [Controls](./controls-element-for-view-format.md)元素定义由列表视图定义的自定义控件。 控件使您可以进一步指定数据的显示方式。 此元素是可选的。 视图可以定义自己的自定义控件，也可以使用可由格式设置文件中的任何视图使用的公共控件。 有关自定义控件的详细信息，请参阅[创建自定义控件](./creating-custom-controls.md)。
+- [Controls](./controls-element-for-view-format.md)元素定义由列表视图定义的自定义控件。 控件使您可以进一步指定数据的显示方式。 此元素为可选元素。 视图可以定义自己的自定义控件，也可以使用可由格式设置文件中的任何视图使用的公共控件。 有关自定义控件的详细信息，请参阅[创建自定义控件](./creating-custom-controls.md)。
 
 - [ListControl](./listcontrol-element-format.md)元素定义视图中显示的内容以及如何设置它的格式。 与所有其他视图类似，列表视图可以显示对象属性的值或脚本生成的值。
 
@@ -141,7 +141,7 @@ ServiceType         : Win32OwnProcess
 
 - [ListControl](./listcontrol-element-format.md)元素及其子元素定义视图中显示的内容。
 
-- [ListEntries](./listentries-element-for-listcontrol-format.md)元素提供视图的定义。 在大多数情况下，视图将只有一个定义。 此元素是必需的。
+- [ListEntries](./listentries-element-for-listcontrol-format.md)元素提供视图的定义。 在大多数情况下，视图将只有一个定义。 需要此元素。
 
 - [ListEntry](./listentry-element-for-listcontrol-format.md)元素提供视图的定义。 至少需要一个[ListEntry](./listentry-element-for-listcontrol-format.md) ;但是，可以添加的元素数没有最大限制。 在大多数情况下，视图将只有一个定义。
 
@@ -155,11 +155,11 @@ ServiceType         : Win32OwnProcess
 
 - [ScriptBlock](./scriptblock-element-for-listitem-for-listcontrol-format.md)元素指定其值在行中显示的脚本。 您必须指定脚本或属性，但不能同时指定两者。
 
-- [Label](./label-element-for-listitem-for-listcontrol-format.md)元素指定在行中的属性或脚本值左侧显示的标签。 此元素是可选的。 如果未指定标签，则显示属性或脚本的名称。 有关完整示例，请参阅[列表视图（标签）](./list-view-labels.md)。
+- [Label](./label-element-for-listitem-for-listcontrol-format.md)元素指定在行中的属性或脚本值左侧显示的标签。 此元素为可选元素。 如果未指定标签，则显示属性或脚本的名称。 有关完整示例，请参阅[列表视图（标签）](./list-view-labels.md)。
 
-- [ItemSelectionCondition](./itemselectioncondition-element-for-listitem-for-listcontrol-format.md)元素指定要显示的行必须存在的条件。 有关向列表视图添加条件的详细信息，请参阅[定义用于显示数据的条件](./defining-conditions-for-displaying-data.md)。 此元素是可选的。
+- [ItemSelectionCondition](./itemselectioncondition-element-for-listitem-for-listcontrol-format.md)元素指定要显示的行必须存在的条件。 有关向列表视图添加条件的详细信息，请参阅[定义用于显示数据的条件](./defining-conditions-for-displaying-data.md)。 此元素为可选元素。
 
-- [格式字符串](./formatstring-element-for-listitem-for-listcontrol-format.md)元素指定用于显示属性或脚本的值的模式。 此元素是可选的。
+- [格式字符串](./formatstring-element-for-listitem-for-listcontrol-format.md)元素指定用于显示属性或脚本的值的模式。 此元素为可选元素。
 
 有关定义简单列表视图的完整格式化文件的示例，请参阅[列表视图（基本）](./list-view-basic.md)。
 
@@ -245,11 +245,11 @@ ServiceType         : Win32OwnProcess
 
 - [ScriptBlock](./scriptblock-element-for-groupby-format.md)元素指定在其值更改时启动新组的脚本。 您必须指定脚本或属性以启动组，但不能同时指定两者。
 
-- [标签](./label-element-for-groupby-format.md)元素定义在每个组的开头显示的标签。 除了此元素指定的文本，Windows PowerShell 还显示触发新组的值，并在标签之前和之后添加一个空白行。 此元素是可选的。
+- [标签](./label-element-for-groupby-format.md)元素定义在每个组的开头显示的标签。 除了此元素指定的文本，Windows PowerShell 还显示触发新组的值，并在标签之前和之后添加一个空白行。 此元素为可选元素。
 
-- [CustomControl](./customcontrol-element-for-groupby-format.md)元素定义用于显示数据的控件。 此元素是可选的。
+- [CustomControl](./customcontrol-element-for-groupby-format.md)元素定义用于显示数据的控件。 此元素为可选元素。
 
-- [CustomControlName](./customcontrolname-element-for-groupby-format.md)元素指定用于显示数据的通用控件或视图控件。 此元素是可选的。
+- [CustomControlName](./customcontrolname-element-for-groupby-format.md)元素指定用于显示数据的通用控件或视图控件。 此元素为可选元素。
 
 有关定义组的完整格式化文件的示例，请参阅[列表视图（GroupBy）](./list-view-groupby.md)。
 
@@ -274,7 +274,7 @@ ServiceType         : Win32OwnProcess
 
 - [ScriptBlock](./scriptblock-element-for-listitem-for-listcontrol-format.md)元素（未显示）指定其值由视图显示的脚本。 您必须指定脚本或属性，但不能同时指定两者。
 
-在下面的示例中，调用 `ToString` 方法来设置脚本的值的格式。 脚本可以调用对象的任何方法。 因此，如果对象有一个具有格式参数的方法（如 `ToString`），则脚本可以调用该方法来设置脚本的输出值的格式。
+在下面的示例中，调用 `ToString` 方法来设置脚本的值的格式。 脚本可以调用对象的任何方法。 因此，如果对象具有具有格式参数的方法（如 `ToString`），则脚本可以调用该方法来设置脚本的输出值的格式。
 
 ```xml
 <ListItem>

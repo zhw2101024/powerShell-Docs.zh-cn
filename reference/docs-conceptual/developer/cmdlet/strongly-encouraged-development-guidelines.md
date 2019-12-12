@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
 caps.latest.revision: 13
 ms.openlocfilehash: 0906d0d37c66b8c1538a0b2e9e0f1ff2fba12ac0
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369336"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>强烈建议的开发指南
 
 本部分介绍编写 cmdlet 时应遵循的准则。 它们分为准则，用于设计 cmdlet 以及编写 cmdlet 代码的准则。 你可能会发现这些指南不适用于每个方案。 但是，如果它们确实适用，并且你未遵循这些指导原则，则用户在使用 cmdlet 时可能会遇到不佳的体验。
 
-## <a name="design-guidelines"></a>设计准则
+## <a name="design-guidelines"></a>设计指南
 
 - [使用特定名词作为 Cmdlet 名称（SD01）](./strongly-encouraged-development-guidelines.md#use-a-specific-noun-for-a-cmdlet-name-sd01)
 
@@ -41,7 +41,7 @@ ms.locfileid: "72369336"
 
 - [使 Cmdlet 不区分大小写并保留大小写（SC04）](./strongly-encouraged-development-guidelines.md#make-cmdlets-case-insensitive-and-case-preserving-sc04)
 
-## <a name="design-guidelines"></a>设计准则
+## <a name="design-guidelines"></a>设计指南
 
 设计 cmdlet 时应遵循以下指导原则，以确保在使用 cmdlet 和其他 cmdlet 之间保持一致的用户体验。 如果找到适用于你的情况的设计准则，请务必查看类似准则的代码准则。
 
@@ -53,7 +53,7 @@ Cmdlet 命名中使用的名词需要是非常具体的，以便用户能够发�
 
 ### <a name="use-pascal-case-for-cmdlet-names-sd02"></a>对 Cmdlet 名称使用 Pascal 大小写（SD02）
 
-对于参数名称使用 Pascal 大小写。 换言之，将动词的第一个字母和名词中使用的所有字词都大写。 例如，"`Clear-ItemProperty`"。
+对于参数名称使用 Pascal 大小写。 换言之，将动词的第一个字母和名词中使用的所有字词都大写。 例如，“`Clear-ItemProperty`”。
 
 ### <a name="parameter-design-guidelines-sd03"></a>参数设计准则（SD03）
 

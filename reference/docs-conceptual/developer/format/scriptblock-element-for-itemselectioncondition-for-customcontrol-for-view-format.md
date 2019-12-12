@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 946cd2b5-ac37-4a13-bb49-29fbc70ec8d7
 caps.latest.revision: 6
 ms.openlocfilehash: 0c07ab0e5d04c4056a7e7215bfa55773bfccb41d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362066"
 ---
 # <a name="scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format"></a>ScriptBlock Element for ItemSelectionCondition for CustomControl for View (Format)

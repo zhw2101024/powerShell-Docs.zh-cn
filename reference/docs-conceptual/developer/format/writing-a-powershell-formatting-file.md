@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 39acce45-5144-43ba-894d-a4ce782fa67d
 caps.latest.revision: 13
 ms.openlocfilehash: f89f0009972d5237d71cb8f0d1c53cd0ae614b67
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361406"
 ---
 # <a name="writing-a-powershell-formatting-file"></a>编写 PowerShell 格式设置文件
@@ -21,7 +21,7 @@ ms.locfileid: "72361406"
 
 ## <a name="in-this-section"></a>本部分内容
 
-[格式化文件概述](./formatting-file-overview.md)描述格式化文件的定义和格式设置文件的常规组件，包括可以在文件中定义的常见功能、可以为 .NET 对象定义的不同类型的格式视图，以及用于定义表 v 的 XML 的简化示例。i）.
+[格式化文件概述](./formatting-file-overview.md)描述格式化文件的定义和格式设置文件的常规组件，包括可以在文件中定义的常见功能、可以为 .NET 对象定义的不同类型的格式视图，以及用于定义表视图的 XML 简化示例。
 
 [格式化文件概念](./formatting-file-concepts.md)包含您在创建自己的格式设置文件时可能需要了解的信息，如您可以定义的不同类型的视图，以及这些视图的特殊组件。
 

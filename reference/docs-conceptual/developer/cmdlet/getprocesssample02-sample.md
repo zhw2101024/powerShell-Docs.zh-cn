@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 481f557d-3344-4d33-b2da-4736a0165181
 caps.latest.revision: 7
 ms.openlocfilehash: fa4cd8a724793e71b615c84a5c5a833aa92c93fc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364566"
 ---
 # <a name="getprocesssample02-sample"></a>GetProcessSample02 示例
@@ -25,7 +25,7 @@ ms.locfileid: "72364566"
 
 2. 双击解决方案（.sln）文件的图标。 这会在 Visual Studio 中打开示例项目。
 
-3. 在 "**生成**" 菜单中，选择 "**生成解决方案**"。
+3. 在“生成”菜单中选择“生成解决方案”。
 
     示例库将在默认的 \bin 或 \bin\debug 文件夹中生成。
 
@@ -51,7 +51,7 @@ ms.locfileid: "72364566"
 
 此示例需要 Windows PowerShell 2.0。
 
-## <a name="demonstrates"></a>示例
+## <a name="demonstrates"></a>说明
 
 此示例演示以下各项。
 

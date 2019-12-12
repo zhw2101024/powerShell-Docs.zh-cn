@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
 ms.openlocfilehash: 98cac43698b3f537ee318cd2570b2174631665a7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359626"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>创建具有 Windows PowerShell 活动的工作流
@@ -47,7 +47,7 @@ ms.locfileid: "72359626"
 
    |属性|值|
    |--------------|-----------|
-   |**班级**|"Win32_ComputerSystem"|
+   |**类**|"Win32_ComputerSystem"|
    |**PSComputerName**|压缩|
    |**PSCredential**|MachineCred|
 
@@ -67,8 +67,8 @@ ms.locfileid: "72359626"
     |属性|值|
     |--------------|-----------|
     |**ComputerName**|压缩|
-    |**Credential**|MachineCred|
-    |**进行**|WaitForServiceTypes （PowerShell）|
+    |**凭据**|MachineCred|
+    |**对于**|WaitForServiceTypes （PowerShell）|
     |**团队**|True|
     |Wait|True|
     |PSComputerName|{""}|
@@ -78,4 +78,4 @@ ms.locfileid: "72359626"
     完成这些过程后，工作流设计窗口应如下所示。
 
     ![工作流设计器中的 JoinDomain XAML](../media/joindomainworkflow.png)
-    ![JOINDOMAIN xaml In workflow designer](../media/joindomainworkflow.png "JoinDomainWorkflow")
+    ![工作流设计器中的 JOINDOMAIN xaml](../media/joindomainworkflow.png "JoinDomainWorkflow")

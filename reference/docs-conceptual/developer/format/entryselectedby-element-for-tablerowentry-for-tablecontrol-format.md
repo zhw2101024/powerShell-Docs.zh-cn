@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 49623fcf-1238-4d20-a7ce-238d47d9d565
 caps.latest.revision: 15
 ms.openlocfilehash: 9302bfed0324773cb98d698acdcf608f34ee19c1
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363336"
 ---
 # <a name="entryselectedby-element-for-tablerowentry--for-tablecontrol-format"></a>EntrySelectedBy Element for TableRowEntry for TableControl (Format)
@@ -57,7 +57,7 @@ ms.locfileid: "72363336"
 
 对于表视图定义，必须至少指定一个类型、选择集或选择条件。 您可以使用的子元素数没有最大限制。
 
-选择条件用于定义要使用的定义必须存在的条件，例如当对象具有特定属性或特定属性值或脚本计算结果为 `true` 时。 有关选择条件的详细信息，请参阅[定义使用视图条目或项的条件](./defining-conditions-for-displaying-data.md)。
+选择条件用于定义要使用的定义必须存在的条件，例如当对象具有特定属性或特定属性值或脚本计算结果为 `true`时。 有关选择条件的详细信息，请参阅[定义使用视图条目或项的条件](./defining-conditions-for-displaying-data.md)。
 
 有关表视图的组件的详细信息，请参阅[创建表视图](./creating-a-table-view.md)。
 

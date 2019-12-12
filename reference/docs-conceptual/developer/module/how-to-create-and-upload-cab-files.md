@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 8d35f233-5447-48a2-a961-9fbca763262b
 caps.latest.revision: 7
 ms.openlocfilehash: 9928a0b31a57d42eb39cea1af0509613c483caf7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367326"
 ---
 # <a name="how-to-create-and-upload-cab-files"></a>如何创建和上传 CAB 文件
@@ -25,7 +25,7 @@ ms.locfileid: "72367326"
 
 1. 按 UI 区域性组织模块的帮助文件。 每个可更新帮助 CAB 文件都包含一个 UI 区域性中某个模块的帮助文件。 可以为模块提供多个帮助 CAB 文件，每个文件都适用于不同的 UI 区域性。
 
-2. 验证 "帮助" 文件只包含可更新帮助所允许的文件类型，并根据帮助文件架构对其进行验证。 如果 `Update-Help` cmdlet 遇到无效的文件或它不是允许的类型，则它不会安装无效文件，也不会停止从 CAB 安装文件。 有关允许的文件类型的列表，请参阅[可更新的帮助 CAB 文件中允许的文件类型](./file-types-permitted-in-an-updatable-help-cab-file.md)。
+2. 验证 "帮助" 文件只包含可更新帮助所允许的文件类型，并根据帮助文件架构对其进行验证。 如果 `Update-Help` cmdlet 遇到无效的文件或该文件不是允许的类型，则它不会安装无效文件，也不会停止从 CAB 安装文件。 有关允许的文件类型的列表，请参阅[可更新的帮助 CAB 文件中允许的文件类型](./file-types-permitted-in-an-updatable-help-cab-file.md)。
 
 3. 对帮助文件进行数字签名。 不需要数字签名，但这是最佳做法。
 

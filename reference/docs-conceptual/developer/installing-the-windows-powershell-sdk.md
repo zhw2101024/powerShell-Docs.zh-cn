@@ -3,10 +3,10 @@ title: 安装 Windows PowerShell SDK
 ms.date: 09/13/2016
 ms.topic: article
 ms.openlocfilehash: e7ca38377b3e6533eec1a70027f6de1a9fb3091b
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73444499"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>安装 Windows PowerShell SDK

@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: fc48a417-2083-46d4-ac38-16c12e65b6b9
 caps.latest.revision: 7
 ms.openlocfilehash: e08037d5d051d3be51e90193c7e87cc2e738f78a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362346"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-customcontrol-for-view-format"></a>PropertyName Element for SelectionCondition for CustomControl for View (Format)
 
-指定触发条件的 .NET 属性。 如果存在此属性，或者其计算结果为 `true`，则满足条件，并使用定义。 定义自定义控件视图时，将使用此元素。
+指定触发条件的 .NET 属性。 如果该属性存在或其计算结果为 `true`，则满足条件，并使用定义。 定义自定义控件视图时，将使用此元素。
 
 Configuration Element （Format） ViewDefinitions 元素（格式） View 元素（format） CustomControl 元素 for View （format） CustomEntries 元素 for CustomControl for CustomEntry for CustomEntries for View （Format） CustomControl 元素 for view （Format） CustomItem 元素 for CustomEntry for CustomControl for CustomEntry for CustomControl for SelectionCondition for EntrySelectedBy for view （format） PropertyName 的 CustomControl 元素View 的 SelectionCondition for CustomControl 的元素（格式）
 

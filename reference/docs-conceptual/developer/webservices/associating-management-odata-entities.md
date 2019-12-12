@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 947a3add-3593-400d-8144-8b44c8adbe5e
 caps.latest.revision: 5
 ms.openlocfilehash: 44b718e024eb98ac562edb50076287a31f5edc6b
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359806"
 ---
 # <a name="associating-management-odata-entities"></a>关联管理 OData 实体

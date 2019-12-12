@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e082c2e3-12ce-4032-9caf-bf6b2e0dcf81
 caps.latest.revision: 23
 ms.openlocfilehash: 4aa6c020cf0e82a4ffcad6f6c7540688d3369aa6
-ms.sourcegitcommit: e1027805385081c2e6f9250f9cd1167a45f035b0
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72561277"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>如何编写 PowerShell 模块清单
@@ -61,43 +61,43 @@ ms.locfileid: "72561277"
 
 |元素|默认值|描述|
 |-------------|-------------|-----------------|
-|**RootModule**<br /> 类型： `String`|`<empty string>`|与此清单关联的脚本模块或二进制模块文件。 以前版本的 PowerShell 调用此元素为**ModuleToProcess**。<br /> 根模块的可能类型可以是空的，这会创建一个**清单**模块、一个脚本模块的名称（`.psm1`）或者二进制模块的名称（`.exe` 或 `.dll`）。 在此元素中放置模块清单（`.psd1`）或脚本文件（`.ps1`）的名称会导致错误。 <br /> 示例： `RootModule = 'ScriptModule.psm1'`|
-|**ModuleVersion**<br /> 类型： `Version`|`'0.0.1'`|此模块的版本号。 如果未指定值，`New-ModuleManifest` 将使用默认值。 此字符串必须能够转换为类型 `Version` 例如 `#.#.#.#.#`。 `Import-Module` 将在与该名称匹配的 **$PSModulePath**上加载它找到的第一个模块，并至少将**ModuleVersion**作为**MinimumVersion**参数。 若要导入特定版本，请使用 `Import-Module` cmdlet 的**RequiredVersion**参数。<br /> 示例： `ModuleVersion = '1.0'`|
-|**GUID.EMPTY**<br /> 类型： `GUID`|`'<GUID>'`|用于唯一标识此模块的 ID。 如果未指定值，则 `New-ModuleManifest` 自动生成值。 当前无法按**GUID**导入模块。 <br /> 示例： `GUID = 'cfc45206-1e49-459d-a8ad-5b571ef94857'`|
-|**作者**<br /> 类型： `String`|`'<Current user>'`|此模块的作者。 如果未指定值，`New-ModuleManifest` 将使用当前用户。 <br /> 示例： `Author = 'AuthorNameHere'`|
-|**公司**<br /> 类型： `String`|`'Unknown'`|此模块的公司或供应商。 如果未指定值，`New-ModuleManifest` 将使用默认值。<br /> 示例： `CompanyName = 'Fabrikam'`|
-|**版权**<br /> 类型： `String`|`'(c) <Author>. All rights reserved.'`| 此模块的版权声明。 如果未指定值，则 `New-ModuleManifest` 使用当前用户作为 `<Author>` 的默认值。 若要指定作者，请使用**author**参数。 <br /> 示例： `Copyright = '2019 AuthorName. All rights reserved.'`|
-|**描述**<br /> 类型： `String`|`<empty string>`|此模块提供的功能的说明。<br /> 示例： `Description = 'This is the module's description.'`|
-|**PowerShellVersion**<br /> 类型： `Version`|`<empty string>`|此模块所需的最小 PowerShell 引擎版本。 有效值为1.0、2.0、3.0、4.0、5.0、5.1、6和7。<br /> 示例： `PowerShellVersion = '5.0'`|
-|**PowerShellHostName**<br /> 类型： `String`|`<empty string>`|此模块所需的 PowerShell 主机的名称。 此名称由 PowerShell 提供。 若要查找主机程序的名称，请在 "程序" 中键入： `$host.name`。<br /> 示例： `PowerShellHostName = 'ConsoleHost'`|
-|**PowerShellHostVersion**<br /> 类型： `Version`|`<empty string>`|此模块所需的最小 PowerShell 主机版本。<br /> 示例： `PowerShellHostVersion = '2.0'`|
-|**DotNetFrameworkVersion**<br /> 类型： `Version`|`<empty string>`|此模块所需的 Microsoft .NET Framework 的最低版本。 此先决条件仅适用于 PowerShell 桌面版，如 PowerShell 5.1。<br /> 示例： `DotNetFrameworkVersion = '3.5'`|
-|**CLRVersion**<br /> 类型： `Version`|`<empty string>`|此模块所需的公共语言运行时（CLR）的最低版本。 此先决条件仅适用于 PowerShell 桌面版，如 PowerShell 5.1。<br /> 示例： `CLRVersion = '3.5'`|
-|**ProcessorArchitecture**<br /> 类型： `ProcessorArchitecture`|`<empty string>`|此模块需要的处理器体系结构（无、X86、Amd64）。 有效值为 x86、AMD64、Arm、IA64、MSIL 和 None （未知或未指定）。<br /> 示例： `ProcessorArchitecture = 'x86'`|
-|**RequiredModules**<br /> 类型： `Object[]`|`@()`|在导入此模块之前，必须导入到全局环境中的模块。 这会加载列出的任何模块，除非已将其加载。 例如，一些模块可能已由其他模块加载。 可以使用 `RequiredVersion` 而不是 `ModuleVersion` 来指定要加载的特定版本。 使用 `ModuleVersion` 时，它将加载最新版本，最小为指定版本。 可以将字符串和哈希表组合到参数值中。<br /> 示例： `RequiredModules = @("MyModule", @{ModuleName="MyDependentModule"; ModuleVersion="2.0"; GUID="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /> 示例： `RequiredModules = @("MyModule", @{ModuleName="MyDependentModule"; RequiredVersion="1.5"; GUID="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|
-|**RequiredAssemblies**<br /> 类型： `String[]`|`@()`|必须在导入此模块之前加载的程序集。 指定模块需要的程序集（`.dll`）文件名。<br /> PowerShell 在更新类型或格式、导入嵌套模块或导入在 RootModule 项的值中指定的模块文件之前加载指定的程序集。 使用此参数可列出模块所需的所有程序集。<br /> 示例： `RequiredAssemblies = @("assembly1.dll", "assembly2.dll", "assembly3.dll")`|
-|**ScriptsToProcess**<br /> 类型： `String[]`|`@()`|导入模块时，在调用方的会话状态中运行的脚本（`.ps1`）文件。 这可以是全局会话状态，也可以是嵌套模块的其他模块会话状态。 您可以使用这些脚本来准备环境，就像您可以在脚本中使用一样。<br /> 在加载清单中列出的任何模块之前，将运行这些脚本。 <br /> 示例： `ScriptsToProcess = @("script1.ps1", "script2.ps1", "script3.ps1")`|
-|**TypesToProcess**<br /> 类型： `String[]`|`@()`|导入此模块时要加载的类型文件（`.ps1xml`）。 <br /> 示例： `TypesToProcess = @("type1.ps1xml", "type2.ps1xml", "type3.ps1xml")`|
-|**FormatsToProcess**<br /> 类型： `String[]`|`@()`|导入此模块时要加载的格式化文件（`.ps1xml`）。 <br /> 示例： `FormatsToProcess = @("format1.ps1xml", "format2.ps1xml", "format3.ps1xml")`|
-|**NestedModules**<br /> 类型： `Object[]`|`@()`|要导入的模块，作为**RootModule** （Alias：**ModuleToProcess**）中指定的模块的嵌套模块。<br /> 向此元素添加模块名称类似于从脚本或程序集代码中调用 `Import-Module`。 使用清单文件的主要区别是，可以更方便地查看正在加载的内容。 而且，如果模块未能加载，则尚未加载您的实际模块。<br /> 除了其他模块以外，你还可以在此处加载脚本（`.ps1`）文件。 这些文件将在根模块的上下文中执行。 这等效于根模块中的脚本。 <br /> 示例： `NestedModules = @("script.ps1", @{ModuleName="MyModule"; ModuleVersion="1.0.0.0"; GUID="50cdb55f-5ab7-489f-9e94-4ec21ff51e59"})`|
-|**FunctionsToExport**<br /> 类型： `String[]`|`@()`|指定要从此模块导出的函数。为了获得最佳性能，请不要使用通配符，不要删除该项，如果没有要导出的函数，请使用空数组。 默认情况下，不导出任何函数。 您可以使用此键列出模块导出的函数。<br /> 模块将函数导出到调用方的会话状态。 调用方的会话状态可以是全局会话状态，也可以是嵌套模块的其他模块会话状态。 链接嵌套模块时，嵌套模块导出的所有函数都将导出到全局会话状态，除非该链中的模块使用**FunctionsToExport**键限制该函数。<br /> 如果清单导出函数的别名，则此键可以删除其别名在**AliasesToExport**项中列出的函数，但此键无法向列表中添加函数别名。 <br /> 示例： `FunctionsToExport = @("function1", "function2", "function3")`|
-|**CmdletsToExport**<br /> 类型： `String[]`|`@()`|指定要从此模块导出的 cmdlet。为了获得最佳性能，请不要使用通配符，不要删除该项，如果没有要导出的 cmdlet，请使用空数组。 默认情况下，不导出任何 cmdlet。 你可以使用此密钥列出模块导出的 cmdlet。<br /> 调用方的会话状态可以是全局会话状态，也可以是嵌套模块的其他模块会话状态。 链接嵌套模块时，嵌套模块导出的所有 cmdlet 都将导出到全局会话状态，除非该链中的模块使用**CmdletsToExport**键限制该 cmdlet。<br /> 如果清单导出 cmdlet 的别名，此密钥可以删除**AliasesToExport**密钥中列出其别名的 cmdlet，但此密钥不能将 cmdlet 别名添加到该列表中。 <br /> 示例： `CmdletsToExport = @("Get-MyCmdlet", "Set-MyCmdlet", "Test-MyCmdlet")`|
-|**VariablesToExport**<br /> 类型： `String[]`|`'*'`|指定模块导出到调用方的会话状态的变量。 允许使用通配符。 默认情况下，将导出所有变量（`'*'`）。 您可以使用此密钥来限制由模块导出的变量。<br /> 调用方的会话状态可以是全局会话状态，也可以是嵌套模块的其他模块会话状态。 链接嵌套模块时，嵌套模块导出的所有变量都将被导出到全局会话状态，除非该链中的模块使用**VariablesToExport**键限制了该变量。<br /> 如果清单还导出变量的别名，则此键可以删除在**AliasesToExport**项中列出其别名的变量，但此键不能将变量别名添加到该列表中。 <br /> 示例： `VariablesToExport = @('$MyVariable1', '$MyVariable2', '$MyVariable3')`|
-|**AliasesToExport**<br /> 类型： `String[]`|`@()`|指定要从此模块导出的别名。为了获得最佳性能，请不要使用通配符，不要删除该项，如果没有要导出的别名，请使用空数组。 默认情况下，不导出任何别名。 您可以使用此密钥列出模块导出的别名。<br /> 模块将别名导出到调用方的会话状态。 调用方的会话状态可以是全局会话状态，也可以是嵌套模块的其他模块会话状态。 链接嵌套模块时，嵌套模块导出的所有别名最终都将导出到全局会话状态，除非该链中的模块使用**AliasesToExport**键限制该别名。 <br /> 示例： `AliasesToExport = @("MyAlias1", "MyAlias2", "MyAlias3")`|
-|**DscResourcesToExport**<br /> 类型： `String[]`|`@()`|指定要从此模块导出的 DSC 资源。 允许使用通配符。 <br /> 示例： `DscResourcesToExport = @("DscResource1", "DscResource2", "DscResource3")`|
-|**ModuleList**<br /> 类型： `Object[]`|`@()`|指定与此模块一起打包的所有模块。 可以按名称、以逗号分隔的字符串或使用**ModuleName**和**GUID**密钥的哈希表的形式输入这些模块。 哈希表还可以具有可选的**ModuleVersion**键。 **ModuleList**键旨在充当模块清单。 这些模块不会自动处理。 <br /> 示例： `ModuleList = @("SampleModule", "MyModule", @{ModuleName="MyModule"; ModuleVersion="1.0.0.0"; GUID="50cdb55f-5ab7-489f-9e94-4ec21ff51e59"})`|
-|**文件列表**<br /> 类型： `String[]`|`@()`|与此模块一起打包的所有文件的列表。 与**ModuleList**一样， **FileList**是一个清单列表，并不以其他方式处理。 <br /> 示例： `FileList = @("File1", "File2", "File3")`|
-|**PrivateData**<br /> 类型： `Object`|`@{...}`|指定任何需要传递到由**RootModule** （Alias： **ModuleToProcess**）键指定的根模块的私有数据。 **PrivateData**是一个哈希表，其中包含多个元素：**标记**、 **LicenseUri**、 **ProjectURI**、 **IconUri**、 **ReleaseNotes**、**预**发布、 **RequireLicenseAcceptance**和**ExternalModuleDependencies**。 |
-|**标记** <br /> 类型： `String[]` |`@()`| 标记有助于联机库中的模块发现。 <br /> 示例： `Tags = "PackageManagement", "PowerShell", "Manifest"`|
-|**LicenseUri**<br /> 类型： `Uri` |`<empty string>`| 此模块的许可证的 URL。 <br /> 示例： `LicenseUri = 'https://www.contoso.com/license'`|
-|**ProjectUri**<br /> 类型： `Uri` |`<empty string>`| 此项目的主网站的 URL。 <br /> 示例： `ProjectUri = 'https://www.contoso.com/project'`|
-|**IconUri**<br /> 类型： `Uri` |`<empty string>`| 表示此模块的图标的 URL。 <br /> 示例： `IconUri = 'https://www.contoso.com/icons/icon.png'`|
-|**ReleaseNotes**<br /> 类型： `String` |`<empty string>`| 指定模块的发行说明。 <br /> 示例： `ReleaseNotes = 'The release notes provide information about the module.`|
-|**早期**<br /> 类型： `String` |`<empty string>`| 此参数是在 PowerShell 7 中添加的。 将模块标识为联机库中的预发行版本的**预发行**版本字符串。 <br /> 示例： `PreRelease = 'This module is a prerelease version.`|
-|**RequireLicenseAcceptance**<br /> 类型： `Boolean`|`$true`| 此参数是在 PowerShell 7 中添加的。 一个标志，用于指示该模块是否需要显式用户接受安装、更新或保存。 <br /> 示例： `RequireLicenseAcceptance = $false`|
-|**ExternalModuleDependencies**<br /> 类型： `String[]` |`@()`| 此参数是在 PowerShell 7 中添加的。 此模块依赖的外部模块的列表。 <br /> 示例： `ExternalModuleDependencies =  @("ExtModule1", "ExtModule2", "ExtModule3")`|
-|**HelpInfoURI**<br /> 类型： `String`|`<empty string>`|此模块的 HelpInfo URI。 <br /> 示例： `HelpInfoURI = 'https://www.contoso.com/help'`|
-|**DefaultCommandPrefix**<br /> 类型： `String`|`<empty string>`|从此模块导出的命令的默认前缀。 使用 `Import-Module -Prefix` 重写默认前缀。 <br /> 示例： `DefaultCommandPrefix = 'My'`|
+|**RootModule**<br /> 键入：`String`|`<empty string>`|与此清单关联的脚本模块或二进制模块文件。 以前版本的 PowerShell 调用此元素为**ModuleToProcess**。<br /> 根模块的可能类型可以是空的，这会创建一个**清单**模块、一个脚本模块的名称（`.psm1`）或者二进制模块的名称（`.exe` 或 `.dll`）。 在此元素中放置模块清单（`.psd1`）或脚本文件（`.ps1`）的名称会导致错误。 <br /> 示例： `RootModule = 'ScriptModule.psm1'`|
+|**ModuleVersion**<br /> 键入：`Version`|`'0.0.1'`|此模块的版本号。 如果未指定值，`New-ModuleManifest` 将使用默认值。 此字符串必须能够转换为类型 `Version` 例如 `#.#.#.#.#`。 `Import-Module` 将在与该名称匹配的 **$PSModulePath**上加载它找到的第一个模块，并至少将**ModuleVersion**作为**MinimumVersion**参数。 若要导入特定版本，请使用 `Import-Module` cmdlet 的**RequiredVersion**参数。<br /> 示例： `ModuleVersion = '1.0'`|
+|**GUID**<br /> 键入：`GUID`|`'<GUID>'`|用于唯一标识此模块的 ID。 如果未指定值，则 `New-ModuleManifest` 自动生成值。 当前无法按**GUID**导入模块。 <br /> 示例： `GUID = 'cfc45206-1e49-459d-a8ad-5b571ef94857'`|
+|**作者**<br /> 键入：`String`|`'<Current user>'`|此模块的作者。 如果未指定值，`New-ModuleManifest` 将使用当前用户。 <br /> 示例： `Author = 'AuthorNameHere'`|
+|**CompanyName**<br /> 键入：`String`|`'Unknown'`|此模块的公司或供应商。 如果未指定值，`New-ModuleManifest` 将使用默认值。<br /> 示例： `CompanyName = 'Fabrikam'`|
+|**版权**<br /> 键入：`String`|`'(c) <Author>. All rights reserved.'`| 此模块的版权声明。 如果未指定值，则 `New-ModuleManifest` 使用当前用户作为 `<Author>`的默认值。 若要指定作者，请使用**author**参数。 <br /> 示例： `Copyright = '2019 AuthorName. All rights reserved.'`|
+|**描述**<br /> 键入：`String`|`<empty string>`|此模块提供的功能的说明。<br /> 示例： `Description = 'This is the module's description.'`|
+|**PowerShellVersion**<br /> 键入：`Version`|`<empty string>`|此模块所需的最小 PowerShell 引擎版本。 有效值为1.0、2.0、3.0、4.0、5.0、5.1、6和7。<br /> 示例： `PowerShellVersion = '5.0'`|
+|**PowerShellHostName**<br /> 键入：`String`|`<empty string>`|此模块所需的 PowerShell 主机的名称。 此名称由 PowerShell 提供。 若要查找主机程序的名称，请在 "程序" 中键入： `$host.name`。<br /> 示例： `PowerShellHostName = 'ConsoleHost'`|
+|**PowerShellHostVersion**<br /> 键入：`Version`|`<empty string>`|此模块所需的最小 PowerShell 主机版本。<br /> 示例： `PowerShellHostVersion = '2.0'`|
+|**DotNetFrameworkVersion**<br /> 键入：`Version`|`<empty string>`|此模块所需的 Microsoft .NET Framework 的最低版本。 此先决条件仅适用于 PowerShell 桌面版，如 PowerShell 5.1。<br /> 示例： `DotNetFrameworkVersion = '3.5'`|
+|**CLRVersion**<br /> 键入：`Version`|`<empty string>`|此模块所需的公共语言运行时（CLR）的最低版本。 此先决条件仅适用于 PowerShell 桌面版，如 PowerShell 5.1。<br /> 示例： `CLRVersion = '3.5'`|
+|**ProcessorArchitecture**<br /> 键入：`ProcessorArchitecture`|`<empty string>`|此模块需要的处理器体系结构（无、X86、Amd64）。 有效值为 x86、AMD64、Arm、IA64、MSIL 和 None （未知或未指定）。<br /> 示例： `ProcessorArchitecture = 'x86'`|
+|**RequiredModules**<br /> 键入：`Object[]`|`@()`|在导入此模块之前，必须导入到全局环境中的模块。 这会加载列出的任何模块，除非已将其加载。 例如，一些模块可能已由其他模块加载。 可以使用 `RequiredVersion` 而不是 `ModuleVersion`来指定要加载的特定版本。 使用 `ModuleVersion` 时，它将加载最新版本，最小为指定版本。 可以将字符串和哈希表组合到参数值中。<br /> 示例： `RequiredModules = @("MyModule", @{ModuleName="MyDependentModule"; ModuleVersion="2.0"; GUID="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /> 示例： `RequiredModules = @("MyModule", @{ModuleName="MyDependentModule"; RequiredVersion="1.5"; GUID="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|
+|**RequiredAssemblies**<br /> 键入：`String[]`|`@()`|必须在导入此模块之前加载的程序集。 指定模块需要的程序集（`.dll`）文件名。<br /> PowerShell 在更新类型或格式、导入嵌套模块或导入在 RootModule 项的值中指定的模块文件之前加载指定的程序集。 使用此参数可列出模块所需的所有程序集。<br /> 示例： `RequiredAssemblies = @("assembly1.dll", "assembly2.dll", "assembly3.dll")`|
+|**ScriptsToProcess**<br /> 键入：`String[]`|`@()`|导入模块时，在调用方的会话状态中运行的脚本（`.ps1`）文件。 这可以是全局会话状态，也可以是嵌套模块的其他模块会话状态。 您可以使用这些脚本来准备环境，就像您可以在脚本中使用一样。<br /> 在加载清单中列出的任何模块之前，将运行这些脚本。 <br /> 示例： `ScriptsToProcess = @("script1.ps1", "script2.ps1", "script3.ps1")`|
+|**TypesToProcess**<br /> 键入：`String[]`|`@()`|导入此模块时要加载的类型文件（`.ps1xml`）。 <br /> 示例： `TypesToProcess = @("type1.ps1xml", "type2.ps1xml", "type3.ps1xml")`|
+|**FormatsToProcess**<br /> 键入：`String[]`|`@()`|导入此模块时要加载的格式化文件（`.ps1xml`）。 <br /> 示例： `FormatsToProcess = @("format1.ps1xml", "format2.ps1xml", "format3.ps1xml")`|
+|**NestedModules**<br /> 键入：`Object[]`|`@()`|要导入的模块，作为**RootModule** （Alias：**ModuleToProcess**）中指定的模块的嵌套模块。<br /> 向此元素添加模块名称类似于从脚本或程序集代码中调用 `Import-Module`。 使用清单文件的主要区别是，可以更方便地查看正在加载的内容。 而且，如果模块未能加载，则尚未加载您的实际模块。<br /> 除了其他模块以外，你还可以在此处加载脚本（`.ps1`）文件。 这些文件将在根模块的上下文中执行。 这等效于根模块中的脚本。 <br /> 示例： `NestedModules = @("script.ps1", @{ModuleName="MyModule"; ModuleVersion="1.0.0.0"; GUID="50cdb55f-5ab7-489f-9e94-4ec21ff51e59"})`|
+|**FunctionsToExport**<br /> 键入：`String[]`|`@()`|指定要从此模块导出的函数。为了获得最佳性能，请不要使用通配符，不要删除该项，如果没有要导出的函数，请使用空数组。 默认情况下，不导出任何函数。 您可以使用此键列出模块导出的函数。<br /> 模块将函数导出到调用方的会话状态。 调用方的会话状态可以是全局会话状态，也可以是嵌套模块的其他模块会话状态。 链接嵌套模块时，嵌套模块导出的所有函数都将导出到全局会话状态，除非该链中的模块使用**FunctionsToExport**键限制该函数。<br /> 如果清单导出函数的别名，则此键可以删除其别名在**AliasesToExport**项中列出的函数，但此键无法向列表中添加函数别名。 <br /> 示例： `FunctionsToExport = @("function1", "function2", "function3")`|
+|**CmdletsToExport**<br /> 键入：`String[]`|`@()`|指定要从此模块导出的 cmdlet。为了获得最佳性能，请不要使用通配符，不要删除该项，如果没有要导出的 cmdlet，请使用空数组。 默认情况下，不导出任何 cmdlet。 你可以使用此密钥列出模块导出的 cmdlet。<br /> 调用方的会话状态可以是全局会话状态，也可以是嵌套模块的其他模块会话状态。 链接嵌套模块时，嵌套模块导出的所有 cmdlet 都将导出到全局会话状态，除非该链中的模块使用**CmdletsToExport**键限制该 cmdlet。<br /> 如果清单导出 cmdlet 的别名，此密钥可以删除**AliasesToExport**密钥中列出其别名的 cmdlet，但此密钥不能将 cmdlet 别名添加到该列表中。 <br /> 示例： `CmdletsToExport = @("Get-MyCmdlet", "Set-MyCmdlet", "Test-MyCmdlet")`|
+|**VariablesToExport**<br /> 键入：`String[]`|`'*'`|指定模块导出到调用方的会话状态的变量。 允许使用通配符。 默认情况下，将导出所有变量（`'*'`）。 您可以使用此密钥来限制由模块导出的变量。<br /> 调用方的会话状态可以是全局会话状态，也可以是嵌套模块的其他模块会话状态。 链接嵌套模块时，嵌套模块导出的所有变量都将被导出到全局会话状态，除非该链中的模块使用**VariablesToExport**键限制了该变量。<br /> 如果清单还导出变量的别名，则此键可以删除在**AliasesToExport**项中列出其别名的变量，但此键不能将变量别名添加到该列表中。 <br /> 示例： `VariablesToExport = @('$MyVariable1', '$MyVariable2', '$MyVariable3')`|
+|**AliasesToExport**<br /> 键入：`String[]`|`@()`|指定要从此模块导出的别名。为了获得最佳性能，请不要使用通配符，不要删除该项，如果没有要导出的别名，请使用空数组。 默认情况下，不导出任何别名。 您可以使用此密钥列出模块导出的别名。<br /> 模块将别名导出到调用方的会话状态。 调用方的会话状态可以是全局会话状态，也可以是嵌套模块的其他模块会话状态。 链接嵌套模块时，嵌套模块导出的所有别名最终都将导出到全局会话状态，除非该链中的模块使用**AliasesToExport**键限制该别名。 <br /> 示例： `AliasesToExport = @("MyAlias1", "MyAlias2", "MyAlias3")`|
+|**DscResourcesToExport**<br /> 键入：`String[]`|`@()`|指定要从此模块导出的 DSC 资源。 允许使用通配符。 <br /> 示例： `DscResourcesToExport = @("DscResource1", "DscResource2", "DscResource3")`|
+|**ModuleList**<br /> 键入：`Object[]`|`@()`|指定与此模块一起打包的所有模块。 可以按名称、以逗号分隔的字符串或使用**ModuleName**和**GUID**密钥的哈希表的形式输入这些模块。 哈希表还可以具有可选的**ModuleVersion**键。 **ModuleList**键旨在充当模块清单。 这些模块不会自动处理。 <br /> 示例： `ModuleList = @("SampleModule", "MyModule", @{ModuleName="MyModule"; ModuleVersion="1.0.0.0"; GUID="50cdb55f-5ab7-489f-9e94-4ec21ff51e59"})`|
+|**文件列表**<br /> 键入：`String[]`|`@()`|与此模块一起打包的所有文件的列表。 与**ModuleList**一样， **FileList**是一个清单列表，并不以其他方式处理。 <br /> 示例： `FileList = @("File1", "File2", "File3")`|
+|**PrivateData**<br /> 键入：`Object`|`@{...}`|指定任何需要传递到由**RootModule** （Alias： **ModuleToProcess**）键指定的根模块的私有数据。 **PrivateData**是一个哈希表，其中包含多个元素：**标记**、 **LicenseUri**、 **ProjectURI**、 **IconUri**、 **ReleaseNotes**、**预**发布、 **RequireLicenseAcceptance**和**ExternalModuleDependencies**。 |
+|**标记** <br /> 键入：`String[]` |`@()`| 标记有助于联机库中的模块发现。 <br /> 示例： `Tags = "PackageManagement", "PowerShell", "Manifest"`|
+|**LicenseUri**<br /> 键入：`Uri` |`<empty string>`| 此模块的许可证的 URL。 <br /> 示例： `LicenseUri = 'https://www.contoso.com/license'`|
+|**ProjectUri**<br /> 键入：`Uri` |`<empty string>`| 此项目的主网站的 URL。 <br /> 示例： `ProjectUri = 'https://www.contoso.com/project'`|
+|**IconUri**<br /> 键入：`Uri` |`<empty string>`| 表示此模块的图标的 URL。 <br /> 示例： `IconUri = 'https://www.contoso.com/icons/icon.png'`|
+|**ReleaseNotes**<br /> 键入：`String` |`<empty string>`| 指定模块的发行说明。 <br /> 示例： `ReleaseNotes = 'The release notes provide information about the module.`|
+|**早期**<br /> 键入：`String` |`<empty string>`| 此参数是在 PowerShell 7 中添加的。 将模块标识为联机库中的预发行版本的**预发行**版本字符串。 <br /> 示例： `PreRelease = 'This module is a prerelease version.`|
+|**RequireLicenseAcceptance**<br /> 键入：`Boolean`|`$true`| 此参数是在 PowerShell 7 中添加的。 一个标志，用于指示该模块是否需要显式用户接受安装、更新或保存。 <br /> 示例： `RequireLicenseAcceptance = $false`|
+|**ExternalModuleDependencies**<br /> 键入：`String[]` |`@()`| 此参数是在 PowerShell 7 中添加的。 此模块依赖的外部模块的列表。 <br /> 示例： `ExternalModuleDependencies =  @("ExtModule1", "ExtModule2", "ExtModule3")`|
+|**HelpInfoURI**<br /> 键入：`String`|`<empty string>`|此模块的 HelpInfo URI。 <br /> 示例： `HelpInfoURI = 'https://www.contoso.com/help'`|
+|**DefaultCommandPrefix**<br /> 键入：`String`|`<empty string>`|从此模块导出的命令的默认前缀。 使用 `Import-Module -Prefix`重写默认前缀。 <br /> 示例： `DefaultCommandPrefix = 'My'`|
 
 ## <a name="sample-module-manifest"></a>示例模块清单
 

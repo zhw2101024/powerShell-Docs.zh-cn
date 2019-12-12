@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ac6f7aaa-d0cc-4c7b-a341-85e736174579
 caps.latest.revision: 21
 ms.openlocfilehash: 437b3d6bb62fdd3a74f3392ec71df360c01a1974
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363716"
 ---
 # <a name="format-schema-xml-reference"></a>格式架构 XML 参考
@@ -213,33 +213,33 @@ ms.locfileid: "72363716"
 
 [GroupBy 的 PropertyName 元素（Format）](./propertyname-element-for-groupby-format.md)指定在新组的值发生更改时启动新组的 .NET 属性。
 
-用于[配置的控件的 ItemSeclectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)指定触发条件的 .NET 属性。 如果该属性存在，或其计算结果为 `true`，则满足条件，并使用控件。 此元素在定义可供格式设置文件中的所有视图使用的公共控件时使用。
+用于[配置的控件的 ItemSeclectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)指定触发条件的 .NET 属性。 如果该属性存在或其计算结果为 `true`，则满足条件，并使用控件。 此元素在定义可供格式设置文件中的所有视图使用的公共控件时使用。
 
-[View 的 ItemSelectionCondition For Controls 的 PropertyName 元素（Format）](./propertyname-element-for-itemselectioncondition-for-controls-for-view-format.md)指定触发条件的 .NET 属性。 如果该属性存在，或其计算结果为 `true`，则满足条件，并使用控件。 定义可由视图使用的控件时，将使用此元素。
+[View 的 ItemSelectionCondition For Controls 的 PropertyName 元素（Format）](./propertyname-element-for-itemselectioncondition-for-controls-for-view-format.md)指定触发条件的 .NET 属性。 如果该属性存在或其计算结果为 `true`，则满足条件，并使用控件。 定义可由视图使用的控件时，将使用此元素。
 
-[View 的 ItemSelectionCondition For CustomControl 的 PropertyName 元素（Format](./propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md)指定触发条件的 .net 属性。 如果该属性存在，或其计算结果为 `true`，则满足条件，并使用控件。 定义自定义控件视图时，将使用此元素。
+[View 的 ItemSelectionCondition For CustomControl 的 PropertyName 元素（Format](./propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md)指定触发条件的 .net 属性。 如果该属性存在或其计算结果为 `true`，则满足条件，并使用控件。 定义自定义控件视图时，将使用此元素。
 
-[GroupBy 的 ItemSelectionCondition 的 PropertyName 元素（Format）](./propertyname-element-for-itemselectioncondition-for-groupby-format.md)指定触发条件的 .NET 属性。 如果该属性存在，或其计算结果为 `true`，则满足条件，并使用控件。 此元素在定义如何显示新的对象组时使用。
+[GroupBy 的 ItemSelectionCondition 的 PropertyName 元素（Format）](./propertyname-element-for-itemselectioncondition-for-groupby-format.md)指定触发条件的 .NET 属性。 如果该属性存在或其计算结果为 `true`，则满足条件，并使用控件。 此元素在定义如何显示新的对象组时使用。
 
-[ItemSelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)指定触发条件的 .NET 属性。 如果该属性存在，或其计算结果为 `true`，则满足条件，并使用视图。 定义列表视图时，将使用此元素。
+[ItemSelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)指定触发条件的 .NET 属性。 如果该属性存在或其计算结果为 `true`，则满足条件，并使用视图。 定义列表视图时，将使用此元素。
 
 [ListControl 的名称名称元素（格式）](./propertyname-element-for-listitem-for-listcontrol-format.md)指定其值显示在列表中的 .NET 属性。
 
-[ListEntry 的 SelectionCondition For EntrySelectedBy 的 PropertyName 元素（Format）](./propertyname-element-for-selectioncondition-for-controls-for-configuration-format.md)指定触发条件的 .NET 属性。 如果该属性存在，或其计算结果为 `true`，则满足条件，并使用该条目。 此元素在定义可供格式设置文件中的所有视图使用的公共控件时使用。
+[ListEntry 的 SelectionCondition For EntrySelectedBy 的 PropertyName 元素（Format）](./propertyname-element-for-selectioncondition-for-controls-for-configuration-format.md)指定触发条件的 .NET 属性。 如果该属性存在或其计算结果为 `true`，则满足条件，并使用该条目。 此元素在定义可供格式设置文件中的所有视图使用的公共控件时使用。
 
-[View 的 SelectionCondition For Controls 的 PropertyName 元素（Format）](./propertyname-element-for-selectioncondition-for-controls-for-view-format.md)指定触发条件的 .NET 属性。 如果该属性存在，或其计算结果为 `true`，则满足条件，并使用该条目。 定义可由视图使用的控件时，将使用此元素。
+[View 的 SelectionCondition For Controls 的 PropertyName 元素（Format）](./propertyname-element-for-selectioncondition-for-controls-for-view-format.md)指定触发条件的 .NET 属性。 如果该属性存在或其计算结果为 `true`，则满足条件，并使用该条目。 定义可由视图使用的控件时，将使用此元素。
 
-[View 的 SelectionCondition For CustomControl 的 PropertyName 元素（Format）](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md)指定触发条件的 .NET 属性。 如果存在此属性，或者其计算结果为 `true`，则满足条件，并使用定义。 定义自定义控件视图时，将使用此元素。
+[View 的 SelectionCondition For CustomControl 的 PropertyName 元素（Format）](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md)指定触发条件的 .NET 属性。 如果该属性存在或其计算结果为 `true`，则满足条件，并使用定义。 定义自定义控件视图时，将使用此元素。
 
-[EnumerableExpansion 的 SelectionCondition For EntrySelectedBy 的 PropertyName 元素（Format）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)指定触发条件的 .NET 属性。 如果存在此属性，或者其计算结果为 `true`，则满足条件，并使用定义。
+[EnumerableExpansion 的 SelectionCondition For EntrySelectedBy 的 PropertyName 元素（Format）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)指定触发条件的 .NET 属性。 如果该属性存在或其计算结果为 `true`，则满足条件，并使用定义。
 
-[GroupBy 的 SelectionCondition 的 PropertyName 元素（Format）](./propertyname-element-for-selectioncondition-for-groupby-format.md)指定触发条件的 .NET 属性。 如果存在此属性，或者其计算结果为 `true`，则满足条件，并使用定义。 此元素在定义如何显示新的对象组时使用。
+[GroupBy 的 SelectionCondition 的 PropertyName 元素（Format）](./propertyname-element-for-selectioncondition-for-groupby-format.md)指定触发条件的 .NET 属性。 如果该属性存在或其计算结果为 `true`，则满足条件，并使用定义。 此元素在定义如何显示新的对象组时使用。
 
-[ListEntry 的 SelectionCondition For EntrySelectedBy 的 PropertyName 元素（Format）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)指定触发条件的 .NET 属性。 如果该属性存在，或其计算结果为 `true`，则满足条件，并使用列表项。
+[ListEntry 的 SelectionCondition For EntrySelectedBy 的 PropertyName 元素（Format）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)指定触发条件的 .NET 属性。 如果该属性存在或其计算结果为 `true`，则满足条件，并使用列表项。
 
-[TableRowEntry 的 SelectionCondition For EntrySelectedBy 的 PropertyName 元素（Format）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md)指定触发条件的 .NET 属性。 如果该属性存在，或其计算结果为 `true`，则满足条件，并使用表项。
+[TableRowEntry 的 SelectionCondition For EntrySelectedBy 的 PropertyName 元素（Format）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md)指定触发条件的 .NET 属性。 如果该属性存在或其计算结果为 `true`，则满足条件，并使用表项。
 
-[WideEntry 的 SelectionCondition For EntrySelectedBy 的 PropertyName 元素（Format）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)指定触发条件的 .NET 属性。 如果存在此属性，或者其计算结果为 `true`，则满足条件，并使用定义。
+[WideEntry 的 SelectionCondition For EntrySelectedBy 的 PropertyName 元素（Format）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)指定触发条件的 .NET 属性。 如果该属性存在或其计算结果为 `true`，则满足条件，并使用定义。
 
 [TableColumnItem 的 PropertyName 元素（Format）](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md)指定其值显示在行的列中的属性。
 
