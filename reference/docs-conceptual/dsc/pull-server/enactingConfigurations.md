@@ -3,10 +3,10 @@ ms.date: 10/16/2017
 keywords: dsc,powershell,配置,安装程序
 title: 执行配置
 ms.openlocfilehash: 2a40f2055dda78cc0cb6cb05a5e14dce48be9d00
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71953644"
 ---
 # <a name="enacting-configurations"></a>执行配置
@@ -28,7 +28,7 @@ ms.locfileid: "71953644"
 
 ## <a name="pull-mode"></a>请求模式
 
-![拉取模式](../images/pullModel.png "拉取模式的工作原理")
+![请求模式](../images/pullModel.png "请求模式的工作原理")
 
 在请求模式下，配置请求客户端以从远程请求服务中获取所需的状态配置。
 同样，已将请求服务设置为托管 DSC 服务，并预配了请求服务器所需的配置和资源。

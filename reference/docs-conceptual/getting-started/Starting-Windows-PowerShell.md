@@ -1,18 +1,36 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/05/2019
 keywords: powershell,cmdlet
 title: 启动 Windows PowerShell
-ms.openlocfilehash: d2cb77027f404c5b008a902c5147d018dd741a67
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 97b15a4cd79c77a391451ba917f985f9d99db3f5
+ms.sourcegitcommit: 0e4c69d8b5cf71431592fe41da816dec9b70f1f9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030450"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74953817"
 ---
 # <a name="starting-windows-powershell"></a>启动 Windows PowerShell
-PowerShell 是一个脚本引擎 dll，嵌入到多个主机中。  启动的最常见主机是交互式命令行 PowerShell.exe 和交互式脚本环境 PowerShell_ISE.exe。
 
-若要在 Windows Server® 2012 R2、Windows® 8.1、Windows Server 2012 和 Windows 8 上启动 Windows PowerShell®，请参阅[常见管理任务和导航](https://technet.microsoft.com/library/hh831491.aspx)。
+Windows PowerShell 是一个嵌入到多个主机中的脚本引擎 `.DLL`。 启动的最常见主机是交互式命令行 powershell.exe 和交互式脚本环境 powershell_ise.exe   。
+
+若要在 Windows Server® 2012 R2、Windows® 8.1、Windows Server 2012 和 Windows 8 上启动 Windows PowerShell®，请参阅 [Windows 中的常见管理任务和导航](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831491(v=ws.11))。
+
+## <a name="powershell-core-has-renamed-binary"></a>PowerShell Core 已重命名二进制文件
+
+PowerShell Core（称为 PowerShell）为第 6 版及更高版本，采用开源代码并使用 .NET Core。 受支持的版本在 Windows、macOS 和 Linux 上可用。
+
+自 PowerShell 6 起，PowerShell 二进制文件已分别重命名为 pwsh.exe（适用于 Windows）和 pwsh（适用于 macOS 和 Linux）   。 可以使用 pwsh-preview 启动 PowerShell 预览版  。 有关详细信息，请参阅 [PowerShell Core 6.0 中的新增功能](/powershell/scripting/whats-new/what-s-new-in-powershell-core-60#renamed-powershellexe-to-pwshexe)和[关于 pwsh](/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7)。
+
+若要查找 PowerShell 7 的 cmdlet 参考文档和安装文档，请使用以下链接：
+
+| 文档 | 链接 |
+| ----- | ----- |
+| Cmdlet 参考 | [PowerShell 模块浏览器](/powershell/module/?view=powershell-7) |
+| Windows 安装 | [在 Windows 上安装 PowerShell Core](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7) |
+| macOS 安装 | [在 macOS 上安装 PowerShell Core](/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7) |
+| Linux 安装 | [在 Linux 上安装 PowerShell Core](/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7) |
+
+若要查看其他 PowerShell 版本的相关内容，请参阅[如何使用 PowerShell 文档](../how-to-use-docs.md)。
 
 ## <a name="how-to-start-windows-powershell-on-earlier-versions-of-windows"></a>如何在早期版本的 Windows 上启动 Windows PowerShell
 
@@ -27,15 +45,15 @@ PowerShell 是一个脚本引擎 dll，嵌入到多个主机中。  启动的最
 
 #### <a name="at-the-command-prompt"></a>在命令提示符处
 
-在 Cmd.exe、Windows PowerShell 或 Windows PowerShell ISE 中，若要启动 Windows PowerShell，请键入：
+在 cmd.exe、Windows PowerShell 或 Windows PowerShell ISE 中，若要启动 Windows PowerShell，请键入  ：
 
 ```
 PowerShell
 ```
 
-你还可以使用 PowerShell.exe 程序的参数来自定义会话。 有关详细信息，请参阅 [PowerShell.exe 命令行帮助](../core-powershell/console/PowerShell.exe-Command-Line-Help.md)。
+你还可以使用 powershell.exe 程序的参数来自定义会话  。 有关详细信息，请参阅 [PowerShell.exe 命令行帮助](../core-powershell/console/PowerShell.exe-Command-Line-Help.md)。
 
-#### <a name="with-administrative-privileges-run-as-administrator"></a>使用管理权限（“以管理员身份运行”）
+#### <a name="with-administrative-privileges-run-as-administrator"></a>使用管理权限（以管理员身份运行）
 
 单击“**开始**”，键入 **PowerShell**，右键单击“**Windows PowerShell**”，然后单击“**以管理员身份运行**”。
 
@@ -50,7 +68,7 @@ PowerShell
 
 #### <a name="at-the-command-prompt"></a>在命令提示符处
 
-在 Cmd.exe、Windows PowerShell 或 Windows PowerShell ISE 中，若要启动 Windows PowerShell，请键入：
+在 cmd.exe、Windows PowerShell 或 Windows PowerShell ISE 中，若要启动 Windows PowerShell，请键入  ：
 
 ```
 PowerShell_ISE
@@ -62,7 +80,7 @@ PowerShell_ISE
 ISE
 ```
 
-#### <a name="with-administrative-privileges-run-as-administrator"></a>使用管理权限（“以管理员身份运行”）
+#### <a name="with-administrative-privileges-run-as-administrator"></a>使用管理权限（以管理员身份运行）
 
 单击“**开始**”，键入 **ISE**，右键单击“**Windows PowerShell ISE**”，然后单击“**以管理员身份运行**”。
 
@@ -84,7 +102,7 @@ ISE
 
 在 64 位计算机 (**Windows PowerShell (x86)** ) 上安装 Windows PowerShell 时，除 64 位版之外，还将安装 32 位版本的 Windows PowerShell。 运行 Windows PowerShell 时，默认运行 64 位版。
 
-但是，有时可能需要运行 **Windows PowerShell (x86)** ，例如使用需要 32 位版的模块时，或者远程连接到 32 位计算机时。
+但是，有时可能需要运行 Windows PowerShell (x86)，例如使用需要 32 位版本的模块时，或者远程连接到 32 位计算机时  。
 
 若要启动 32 位版本的 Windows PowerShell，请使用以下任何过程。
 
@@ -105,14 +123,13 @@ ISE
 #### <a name="in-windows-81"></a>在 Windows® 8.1 中
 
 - 在“开始”  屏幕上，键入 **Windows PowerShell (x86)** 。 单击“Windows PowerShell x86”  磁贴。
-- 如果你正在运行 Windows 8.1 的[远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkID=304145)，则也可从“服务器管理器工具”  菜单中打开 Windows PowerShell x86。
-  选择“Windows PowerShell (x86)”  。
+- 如果你正在运行 Windows 8.1 的[远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkID=304145)，则也可从“服务器管理器工具”菜单中打开 Windows PowerShell x86  。 选择“Windows PowerShell (x86)”  。
 - 在桌面上，将光标移动到右上角，单击“搜索”  ，键入**PowerShell x86**，然后单击“Windows PowerShell (x86)”  。
 - 通过命令行，输入：`%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
 #### <a name="in-windows-8"></a>在 Windows® 8 中
 
-- 在“开始”  屏幕上，将光标移动到右上角，依次单击“设置”  、“磁贴”  ，然后将“显示管理工具”  滑块移动到“是”。 然后，键入 **PowerShell**，单击“Windows PowerShell (x86)”  。
-- 如果你正在运行 Windows 8 的[远程服务器管理工具](https://www.microsoft.com/download/details.aspx?id=28972)，则也可从“服务器管理器工具”  菜单中打开 Windows PowerShell x86。 选择“Windows PowerShell (x86)”  。
+- 在“开始”屏幕上，将光标移动到右上角，依次单击“设置”、“磁贴”，然后将“显示管理工具”滑块移动到“是”      。 然后，键入 **PowerShell**，单击“Windows PowerShell (x86)”  。
+- 如果你正在运行 Windows 8 的[远程服务器管理工具](https://www.microsoft.com/download/details.aspx?id=28972)，则也可从“服务器管理器工具”菜单中打开 Windows PowerShell x86  。 选择“Windows PowerShell (x86)”  。
 - 在“开始”  屏幕或桌面上，键入 **PowerShell (x86)** ，然后单击“Windows PowerShell (x86)”  。
 - 通过命令行，输入：`%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
