@@ -2,12 +2,12 @@
 ms.date: 10/11/2019
 keywords: dsc,powershell,配置,安装程序
 title: 适用于决策者的 Desired State Configuration 概述
-ms.openlocfilehash: 271ec04035feb17e932acd0ac80f32213a4e018b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b6d483d105c2d3b9be7215be36397d452338c7f1
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352125"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737247"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>适用于决策者的 Desired State Configuration 概述
 
@@ -31,7 +31,7 @@ DSC 内置了监视和报告。 如果系统不再相容，DSC 会引发警报�
 
 ## <a name="dsc-and-devops"></a>DSC 和 DevOps
 
-DSC 以 [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) 为设计理念。 人员、流程和工具的组合，方便实现快速部署和迭代，旨在向内外部最终用户传递价值。 定义环境的单个配置意味着开发人员可以将其要求编码到配置，并将该配置签入源代码管理。 然后操作团队无需完成易出错的手动流程即可部署代码。
+DSC 以 [DevOps](/archive/blogs/ashleymcglone/devops-for-n00bs-ie-windows-people-like-me) 为设计理念。 人员、流程和工具的组合，方便实现快速部署和迭代，旨在向内外部最终用户传递价值。 定义环境的单个配置意味着开发人员可以将其要求编码到配置，并将该配置签入源代码管理。 然后操作团队无需完成易出错的手动流程即可部署代码。
 
 配置[由数据驱动](../configurations/configData.md)。 定义的数据便于操作人员识别和更改环境，而无需开发人员介入。
 
