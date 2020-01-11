@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell SDK
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
-ms.openlocfilehash: 48b2b2b9ab2a39cf185ed54bcfa99d46562e13b6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c00590df4d07e0f5ed9e93fd84a2780329753e39
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366276"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870857"
 ---
 # <a name="windows-powershell-reference"></a>Windows PowerShell 参考
 
@@ -37,7 +37,8 @@ Windows PowerShell 软件开发工具包（SDK）是针对需要 Windows PowerSh
 
 [编写 Windows PowerShell Cmdlet](./cmdlet/writing-a-windows-powershell-cmdlet.md)为正在设计 cmdlet 的程序管理器和实现 cmdlet 代码的开发人员提供信息和代码示例。
 
-[Windows PowerShell 团队博客](https://blogs.msdn.microsoft.com/PowerShell/)用于学习和与其他 Windows PowerShell 用户协作的最佳资源。 请阅读 Windows PowerShell 团队博客，然后加入 Windows PowerShell 用户论坛 (microsoft.public.windows.powershell)。 可使用 Windows Live Search 查找其他 Windows PowerShell 博客和资源。 然后，在开发专业知识时，自由地提供您的观点。
+[Windows PowerShell 团队博客](https://blogs.msdn.microsoft.com/PowerShell/)用于学习和与其他 Windows PowerShell 用户协作的最佳资源。 请阅读 Windows PowerShell 团队博客，然后加入 Windows PowerShell 用户论坛 (microsoft.public.windows.powershell)。
+可使用 Windows Live Search 查找其他 Windows PowerShell 博客和资源。 然后，在开发专业知识时，自由地提供您的观点。
 
 [PowerShell 模块浏览器](/powershell/module/)提供命令行帮助主题的最新版本。
 
@@ -53,4 +54,4 @@ Windows PowerShell 软件开发工具包（SDK）是针对需要 Windows PowerSh
 
 [System.web](/dotnet/api/System.Management.Automation.Internal)命名空间包含由其他命名空间类使用的基类。 例如， [Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute)类是[CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)类的基本类。 "管理类" 的基类为。
 
-[此命名](/dotnet/api/System.Management.Automation.Runspaces)空间包含用于创建 Windows PowerShell 运行空间的类、枚举和接口。 在此上下文中，Windows PowerShell 运行空间是一个或多个 Windows PowerShell 管道调用 cmdlet 的上下文。 也就是说，cmdlet 在 Windows PowerShell 运行空间的上下文中工作。 AboutWindows PowerShell 运行空间的详细信息，请参阅[Windows powershell 运行空间](https://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9)。
+[此命名](/dotnet/api/System.Management.Automation.Runspaces)空间包含用于创建 Windows PowerShell 运行空间的类、枚举和接口。 在此上下文中，Windows PowerShell 运行空间是一个或多个 Windows PowerShell 管道调用 cmdlet 的上下文。 也就是说，cmdlet 在 Windows PowerShell 运行空间的上下文中工作。 AboutWindows PowerShell 运行空间的详细信息，请参阅[Windows powershell 运行空间](hosting/creating-runspaces.md)。

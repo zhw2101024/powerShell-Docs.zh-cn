@@ -10,12 +10,12 @@ helpviewer_keywords:
 - snap-ins [PowerShell SDK], PSSnapin example
 ms.assetid: 875024f4-e02b-4416-80b9-af5e5b50aad6
 caps.latest.revision: 7
-ms.openlocfilehash: 465ab9e8fa29716ce0f46ad0dcf01d0ddd615bcd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d12a66e354a23041fffb0f8fa286c849849ec2b0
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364226"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870466"
 ---
 # <a name="writing-a-windows-powershell-snap-in"></a>编写 Windows PowerShell 管理单元
 
@@ -31,7 +31,7 @@ ms.locfileid: "72364226"
 
     在此示例中，类名为 "GetProcPSSnapIn01"。
 
-3. 为管理单元的名称添加一个公共属性（必需）。 命名管理单元时，请不要使用以下任何字符： #。 ，（） {} [] &-/\ $;： "" \< >;？ @ ` *
+3. 为管理单元的名称添加一个公共属性（必需）。 命名管理单元时，请不要使用以下任何字符： `#`、`.`、`,`、`(`、`)`、`{`、`}`、`[`、`]`、`&`、`-`、`/`、`\`、`$`、`;`、`:`、`"`、`'`、`<`、`>`、`|`
 
     在此示例中，管理单元的名称为 "GetProcPSSnapIn01"。
 
@@ -53,7 +53,7 @@ ms.locfileid: "72364226"
 
 ## <a name="example"></a>示例
 
-此示例演示如何编写可用于在 Windows PowerShell shell 中注册 Get-help cmdlet 的 Windows PowerShell 管理单元。 请注意，在此示例中，完整的程序集只包含 GetProcPSSnapIn01 管理单元类和 Get-help cmdlet 类。
+此示例演示如何编写可用于在 Windows PowerShell shell 中注册 Get-help cmdlet 的 Windows PowerShell 管理单元。 请注意，在此示例中，完整的程序集只包含 GetProcPSSnapIn01 管理单元类和 `Get-Proc` cmdlet 类。
 
 ```csharp
 [RunInstaller(true)]
@@ -128,6 +128,6 @@ public class GetProcPSSnapIn01 : PSSnapIn
 
 ## <a name="see-also"></a>另请参阅
 
-[如何注册 Cmdlet、提供程序和主机应用程序](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[如何注册 Cmdlet、提供程序和主机应用程序](/previous-versions/ms714644(v=vs.85))
 
 [Windows PowerShell Shell SDK](../windows-powershell-reference.md)

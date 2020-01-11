@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 81aeafad-dbc3-4712-8bb9-e6a417be260f
 caps.latest.revision: 15
-ms.openlocfilehash: b44708b3bbcb974a6178323dff2302b7da121af6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fe0393634a1e5bb1a3d4a98ccf245e199beb0f16
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367276"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75869905"
 ---
 # <a name="writing-a-windows-powershell-host-application"></a>编写 Windows PowerShell 主机应用程序
 
@@ -34,7 +34,3 @@ ms.locfileid: "72367276"
 [创建自定义用户界面](./creating-a-custom-user-interface.md)介绍自定义用户界面并提供指向示例的链接。
 
 [主机应用程序示例](./host-application-samples.md)本部分包含完整主机应用程序的示例。
-
-## <a name="see-also"></a>另请参阅
-
-[Windows PowerShell](https://msdn.microsoft.com/en-us/b41a2af3-aec1-402d-8e18-c2c26be461ff)
