@@ -1,22 +1,14 @@
 ---
-title: 创建 Windows PowerShell 导航提供程序 |Microsoft Docs
-ms.custom: ''
+title: 创建 Windows PowerShell 导航提供程序
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
 ms.topic: article
-helpviewer_keywords:
-- navigation providers [PowerShell Programmer's Guide]
-- providers [PowerShell Programmer's Guide], navigation provider
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
-caps.latest.revision: 5
-ms.openlocfilehash: f73e732ca9416b906b3647c5090dfa04ad940484
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
-ms.translationtype: HT
+ms.openlocfilehash: 96a9167019c047bb9c6e56362b2c1110ece553dd
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416196"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870687"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>创建 Windows PowerShell 导航提供程序
 
@@ -24,10 +16,7 @@ ms.locfileid: "74416196"
 
 > [!NOTE]
 > 你可以使用适用C#于 windows Vista 的 Microsoft Windows 软件开发工具包和 .NET Framework 3.0 运行时组件下载此提供程序的源文件（AccessDBSampleProvider05.cs）。 有关下载说明，请参阅[如何安装 Windows powershell 和下载 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
->
-> 下载的源文件在 **\<PowerShell 示例 >** 目录中提供。
->
-> 有关其他 Windows PowerShell 提供程序实现的详细信息，请参阅[设计 Windows Powershell 提供程序](./designing-your-windows-powershell-provider.md)。
+> 下载的源文件在 **\<PowerShell 示例 >** 目录中提供。 有关其他 Windows PowerShell 提供程序实现的详细信息，请参阅[设计 Windows Powershell 提供程序](./designing-your-windows-powershell-provider.md)。
 
 此处所述的提供程序使用户能够将 Access 数据库作为驱动器处理，使用户可以导航到数据库中的数据表。 在创建自己的导航提供程序时，您可以实现一些方法，这些方法可以使导航所需的驱动器限定路径，规范化相对路径，移动数据存储区的项，以及获取子名称的方法，获取项的父路径，以及测试确定项是否为容器。
 
@@ -38,7 +27,8 @@ ms.locfileid: "74416196"
 
 Windows PowerShell 导航提供程序必须创建一个从[Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)基类派生的 .net 类的 .net 类。 下面是本部分中所述的导航提供程序的类定义。
 
-[!code-csharp[AccessDBProviderSample05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L31-L32 "AccessDBProviderSample05.cs")]
+[!code-csharp[AccessDBProviderSample05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L31-L32
+"AccessDBProviderSample05.cs")]
 
 请注意，在此提供程序中， [Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)属性包括两个参数。 第一个参数指定 Windows PowerShell 使用的提供程序的用户友好名称。 第二个参数指定 Windows PowerShell 特定功能，该功能是在命令处理过程中提供给 Windows PowerShell 运行时的。 对于此提供程序，没有添加的 Windows PowerShell 特定功能。
 
@@ -77,7 +67,8 @@ Windows PowerShell 导航提供程序使用提供程序内部的 Windows PowerSh
 
 Windows PowerShell 导航提供程序可实现[Navigationcmdletprovider. Getparentpath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath)方法，以检索指定完整或部分提供程序特定路径的父部分。 方法移除路径的子部分，并返回父路径部分。 `root` 参数指定驱动器根目录的完全限定路径。 如果已装载的驱动器未用于检索操作，则此参数可以为 null 或空。 如果指定了根，则该方法必须返回与根位于同一树中的容器的路径。
 
-示例导航提供程序不会重写此方法，但会使用默认实现。 它接受使用 "/" 和 "\\" 作为路径分隔符的路径。 它首先将路径规范化为仅具有 "\\" 分隔符，然后在最后一个 "\\" 处拆分父路径，并返回父路径。
+示例导航提供程序不会重写此方法，但会使用默认实现。
+它接受使用 "/" 和 "\\" 作为路径分隔符的路径。 它首先将路径规范化为仅具有 "\\" 分隔符，然后在最后一个 "\\" 处拆分父路径，并返回父路径。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetparentpath](Msh_samplestestcmdlets#testprovidergetparentpath)]  -->
 
@@ -126,9 +117,10 @@ Windows PowerShell 导航提供程序可实现[Navigationcmdletprovider. Getpare
 
 默认情况下，此方法的重写不应将对象移到现有对象上，除非[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)属性设置为 `true`。 例如，filesystem 提供程序将不会通过现有的 c:\bar.txt 文件复制 c:\temp\abc.txt，除非[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)属性设置为 `true`。 如果 `destination` 参数中指定的路径存在并且是一个容器，则不需要[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)属性（& e）。 在这种情况下， [Navigationcmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)应将 `path` 参数指示的项移动到由 `destination` 参数指示为子级的容器。
 
-在对数据存储进行任何更改之前，你的[Navigationcmdletprovider 和 Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)方法的实现应调用[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ，并检查其返回值，然后再进行更改。 此方法用于在对系统状态进行更改时（例如，删除文件时）确认操作的执行。 [Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)发送要更改为用户的资源的名称，Windows PowerShell 运行时在确定应该向用户显示的内容时，会考虑到任何命令行设置或首选项变量。
+在对数据存储进行任何更改之前，你的[Navigationcmdletprovider 和 Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)方法的实现应调用[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ，并检查其返回值，然后再进行更改。 此方法用于在对系统状态进行更改时（例如，删除文件时）确认操作的执行。
+[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)发送要更改为用户的资源的名称，Windows PowerShell 运行时在确定应该向用户显示的内容时，会考虑到任何命令行设置或首选项变量。
 
-在对 [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) 的调用返回 `true` 后，[System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) 方法应调用 [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) 方法，则为，否则返回Navigationcmdletprovider. Moveitem *方法的调用方，则为。 此方法将向用户发送一条消息，以允许反馈以指示是否应继续进行操作。 提供程序应调用[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)作为额外检查来检查是否存在潜在的危险系统修改。
+在对 Cmdletprovider 的调用返回 `true`后，* 方法应调用[ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)方法，则为，否则返回[Navigationcmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)方法的调用方，则为。 [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) 此方法将向用户发送一条消息，以允许反馈以指示是否应继续进行操作。 提供程序应调用[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)作为额外检查来检查是否存在潜在的危险系统修改。
 
 ## <a name="attaching-dynamic-parameters-to-the-move-item-cmdlet"></a>将动态参数附加到移动项 Cmdlet
 
@@ -156,11 +148,11 @@ Windows PowerShell 导航提供程序可实现[Navigationcmdletprovider. Getpare
 
 ## <a name="defining-object-types-and-formatting"></a>定义对象类型和格式设置
 
-提供程序可以将成员添加到现有对象或定义新的对象。 有关详细信息，请参阅[扩展对象类型和格式](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)。
+提供程序可以将成员添加到现有对象或定义新的对象。 有关详细信息，请参阅[扩展对象类型和格式](/previous-versions/ms714665(v=vs.85))。
 
 ## <a name="building-the-windows-powershell-provider"></a>生成 Windows PowerShell 提供程序
 
-有关详细信息，请参阅[如何注册 cmdlet、提供程序和主机应用程序](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
+有关详细信息，请参阅[如何注册 cmdlet、提供程序和主机应用程序](/previous-versions/ms714644(v=vs.85))。
 
 ## <a name="testing-the-windows-powershell-provider"></a>测试 Windows PowerShell 提供程序
 
@@ -178,7 +170,7 @@ Windows PowerShell 导航提供程序可实现[Navigationcmdletprovider. Getpare
    Get-ChildItem | Format-Table rowcount,name -AutoSize
    ```
 
-   ```output
+   ```Output
    RowCount   Name
    --------   ----
         180   MSysAccessObjects
@@ -211,7 +203,7 @@ Windows PowerShell 导航提供程序可实现[Navigationcmdletprovider. Getpare
    Get-Location
    ```
 
-   ```output
+   ```Output
    Path
    ----
    mydb:\Employees
@@ -223,7 +215,7 @@ Windows PowerShell 导航提供程序可实现[Navigationcmdletprovider. Getpare
    Get-ChildItem | Format-Table rownumber,psiscontainer,data -AutoSize
    ```
 
-   ```output
+   ```Output
    RowNumber   PSIsContainer   Data
    ---------   --------------   ----
    0           False            System.Data.DataRow
@@ -243,7 +235,7 @@ Windows PowerShell 导航提供程序可实现[Navigationcmdletprovider. Getpare
    Get-Item 0
    ```
 
-   ```output
+   ```Output
    PSPath        : AccessDB::C:\PS\Northwind.mdb\Employees\0
    PSParentPath  : AccessDB::C:\PS\Northwind.mdb\Employees
    PSChildName   : 0
@@ -260,7 +252,7 @@ Windows PowerShell 导航提供程序可实现[Navigationcmdletprovider. Getpare
    (Get-Item 0).data
    ```
 
-   ```output
+   ```Output
    EmployeeID      : 1
    LastName        : Davis
    FirstName       : Sara
@@ -290,11 +282,11 @@ Windows PowerShell 导航提供程序可实现[Navigationcmdletprovider. Getpare
 
 [设计你的 Windows PowerShell 提供程序](./designing-your-windows-powershell-provider.md)
 
-[扩展对象类型和格式](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[扩展对象类型和格式](/previous-versions/ms714665(v=vs.85))
 
 [实现容器 Windows PowerShell 提供程序](./creating-a-windows-powershell-container-provider.md)
 
-[如何注册 Cmdlet、提供程序和主机应用程序](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[如何注册 Cmdlet、提供程序和主机应用程序](/previous-versions/ms714644(v=vs.85))
 
 [Windows PowerShell 程序员指南](./windows-powershell-programmer-s-guide.md)
 

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], property provider
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
-ms.openlocfilehash: 9197f5635528e0f52cd08adde1c6bd69467725e8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
-ms.translationtype: HT
+ms.openlocfilehash: d6c84c3b23439cd3fd6205a2c1d480e0c063d09c
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417481"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870670"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>创建 Windows PowerShell 属性提供程序
 
@@ -24,10 +24,7 @@ ms.locfileid: "74417481"
 
 > [!NOTE]
 > Windows PowerShell 提供了一个可用于开发 Windows PowerShell 提供程序的模板文件。 TemplateProvider.cs 文件位于适用于 Windows Vista 的 Microsoft Windows 软件开发工具包和 .NET Framework 3.0 运行时组件中。 有关下载说明，请参阅[如何安装 Windows powershell 和下载 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
->
-> 下载的模板在 **\<PowerShell 示例 >** 目录中提供。 应创建此文件的副本，并使用该副本创建新的 Windows PowerShell 提供程序，删除不需要的任何功能。
->
-> 有关其他 Windows PowerShell 提供程序实现的详细信息，请参阅[设计 Windows Powershell 提供程序](./designing-your-windows-powershell-provider.md)。
+> 下载的模板在 **\<PowerShell 示例 >** 目录中提供。 应创建此文件的副本，并使用该副本创建新的 Windows PowerShell 提供程序，删除不需要的任何功能。 有关其他 Windows PowerShell 提供程序实现的详细信息，请参阅[设计 Windows Powershell 提供程序](./designing-your-windows-powershell-provider.md)。
 
 > [!CAUTION]
 > 您的属性提供程序的方法应使用[Cmdletprovider. Writepropertyobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WritePropertyObject)方法编写任何对象。
@@ -72,7 +69,8 @@ ms.locfileid: "74417481"
 
 ## <a name="setting-properties"></a>设置属性
 
-若要设置属性，Windows PowerShell 属性提供程序必须实现[Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)方法，以支持来自 `Set-ItemProperty` cmdlet 的调用。 此方法设置指定路径处的项的一个或多个属性，并根据需要覆盖提供的属性。 [Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)还会写入一个表示已更新属性的属性包的[system.servicemodel 对象的](/dotnet/api/System.Management.Automation.PSObject)实例，该对象表示更新后的属性的属性包。
+若要设置属性，Windows PowerShell 属性提供程序必须实现[Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)方法，以支持来自 `Set-ItemProperty` cmdlet 的调用。 此方法设置指定路径处的项的一个或多个属性，并根据需要覆盖提供的属性。
+[Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)还会写入一个表示已更新属性的属性包的[system.servicemodel 对象的](/dotnet/api/System.Management.Automation.PSObject)实例，该对象表示更新后的属性的属性包。
 
 下面是由 Windows PowerShell 提供的 TemplateProvider.cs 文件中的[Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)的默认实现方式。
 
@@ -86,9 +84,10 @@ ms.locfileid: "74417481"
 
 - 默认情况下，此方法的重写不应检索用户隐藏的对象的读取器，除非[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)属性设置为 `true`。 如果路径表示从用户和[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)中隐藏的项被设置为 `false`，则应写入错误，则为。
 
-- 在对数据存储进行任何更改之前，你的[Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)方法的实现应调用 Cmdletprovider，并验证其返回值是否为 " [ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) "。 此方法用于在对系统状态进行更改时（例如，重命名文件）确认操作的执行。 在确定应显示的内容时， [Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)将通过 Windows PowerShell 运行时并处理任何命令行设置或首选项变量，来向用户发送要更改的资源的名称。
+- 在对数据存储进行任何更改之前，你的[Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)方法的实现应调用 Cmdletprovider，并验证其返回值是否为 " [ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) "。 此方法用于在对系统状态进行更改时（例如，重命名文件）确认操作的执行。
+  在确定应显示的内容时， [Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)将通过 Windows PowerShell 运行时并处理任何命令行设置或首选项变量，来向用户发送要更改的资源的名称。
 
-  在对 [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) 的调用返回 `true` 之后，如果可以进行可能有危险性的系统修改，则 [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) 方法应调用 [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) 方法，则为。 Ipropertycmdletprovider *方法应调用方法的调用方方法。 此方法向用户发送一条确认消息，以允许其他反馈指示该操作应继续。
+  在对 Cmdletprovider 的调用返回 `true`之后，如果可以进行可能有危险性的系统修改，则[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) * 方法应调用 ShouldProcess 方法，则为。 [Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)方法应调用方法的调用[方](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)方法。 此方法向用户发送一条确认消息，以允许其他反馈指示该操作应继续。
 
 ## <a name="attaching-dynamic-parameters-for-the-set-itemproperty-cmdlet"></a>为 Set-itemproperty Cmdlet 附加动态参数
 
@@ -114,9 +113,10 @@ ms.locfileid: "74417481"
 
 - 默认情况下，此方法的重写不应检索用户隐藏的对象的读取器，除非[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)属性设置为 `true`。 如果路径表示从用户和[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)中隐藏的项被设置为 `false`，则应写入错误，则为。
 
-- 在对数据存储进行任何更改之前，你的[Ipropertycmdletprovider 和 Clearproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)方法的实现应调用[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ，并验证其返回值的返回值。 此方法用于在更改系统状态之前确认操作的执行，例如清除内容。 [Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)发送要更改为用户的资源的名称，Windows PowerShell 运行时在确定应显示的内容时考虑了任何命令行设置或首选项变量。
+- 在对数据存储进行任何更改之前，你的[Ipropertycmdletprovider 和 Clearproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)方法的实现应调用[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ，并验证其返回值的返回值。 此方法用于在更改系统状态之前确认操作的执行，例如清除内容。
+  [Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)发送要更改为用户的资源的名称，Windows PowerShell 运行时在确定应显示的内容时考虑了任何命令行设置或首选项变量。
 
-  在对 [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) 的调用返回 `true` 之后，如果可以进行可能有危险性的系统修改，则 [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) 方法应调用 [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) 方法，则为。 Ipropertycmdletprovider. Clearproperty *方法应调用. Cmdletprovider 方法。 此方法会向用户发送一条确认消息，以允许其他反馈指示应该继续进行潜在的危险操作。
+  在对 Cmdletprovider 的调用返回 `true`之后，如果可以进行可能有危险性的系统修改，则[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) * 方法应调用 ShouldProcess 方法，则为。 [Ipropertycmdletprovider. Clearproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)方法应调用. Cmdletprovider 方法。 [](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) 此方法会向用户发送一条确认消息，以允许其他反馈指示应该继续进行潜在的危险操作。
 
 ## <a name="attaching-dynamic-parameters-to-the-clear-itemproperty-cmdlet"></a>将动态参数附加到 Set-itemproperty Cmdlet
 
@@ -128,7 +128,7 @@ ms.locfileid: "74417481"
 
 ## <a name="building-the-windows-powershell-provider"></a>生成 Windows PowerShell 提供程序
 
-请参阅[如何注册 cmdlet、提供程序和主机应用程序](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
+请参阅[如何注册 cmdlet、提供程序和主机应用程序](https://msdn.microsoft.com/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
 
 ## <a name="see-also"></a>另请参阅
 
@@ -136,6 +136,6 @@ ms.locfileid: "74417481"
 
 [设计你的 Windows PowerShell 提供程序](./designing-your-windows-powershell-provider.md)
 
-[扩展对象类型和格式](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[扩展对象类型和格式](https://msdn.microsoft.com/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[如何注册 Cmdlet、提供程序和主机应用程序](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[如何注册 Cmdlet、提供程序和主机应用程序](https://msdn.microsoft.com/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
