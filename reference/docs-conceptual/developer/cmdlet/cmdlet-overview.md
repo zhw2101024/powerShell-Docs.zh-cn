@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 0aa32589-4447-4ead-a5dd-a3be99113140
 caps.latest.revision: 21
 ms.openlocfilehash: 14200aed2fb94c37c8b8af29650f602945e7ac1c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365886"
 ---
 # <a name="cmdlet-overview"></a>Cmdlet 概述
@@ -67,7 +67,7 @@ Cmdlet 可以有必需的、命名的、位置参数和*开关*参数。
 ### <a name="input-processing-method"></a>输入处理方法
 
 Cmdlet 可用于处理其以输入形式所接收的记录的一种方法。
-输入处理方法包括[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法（ [ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法），该方法的方法是，该[方法的System.web](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法和[StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing)方法中的方法的方法和方法的方法。 在实现 cmdlet 时，必须重写至少一个[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)、 [ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)和中的该参数，然后再[重写。System.web. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。
+输入处理方法包括 [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) 方法、[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) 方法、[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) 方法和 [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) 方法的输入处理方法中的一种方法，其中包括：方法和方法的方法。 在实现 cmdlet 时，必须重写至少一个[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)、 [ProcessRecord 和](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法中的一个方法，并且必须重写其中的一种，即[方法。](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)
 通常， [ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法是重写的方法，因为它是为该 Cmdlet 处理的每条记录调用的。
 与此相反， [BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法和[system.object](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法一次被调用一次来执行记录的预处理或后处理过程，而不是一次。
 有关这些方法的详细信息，请参阅[输入处理方法](cmdlet-input-processing-methods.md)。
@@ -75,7 +75,7 @@ Cmdlet 可用于处理其以输入形式所接收的记录的一种方法。
 ### <a name="shouldprocess-feature"></a>ShouldProcess 功能
 
 通过 PowerShell，你可以创建在 cmdlet 对系统进行更改之前提示用户提供反馈的 cmdlet。
-若要使用此功能，cmdlet 必须在声明 Cmdlet 属性时声明它支持 ShouldProcess 功能，并且该 cmdlet 必须调用[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)和[ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法从输入处理方法中进行。
+若要使用此功能，该 cmdlet 必须在声明 Cmdlet 特性时声明它支持 ShouldProcess 功能，并且该 cmdlet 必须从输入处理方法中调用 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) 和 [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) 方法中的和方法。
 有关如何支持 ShouldProcess 功能的详细信息，请参阅[请求确认](requesting-confirmation-from-cmdlets.md)。
 
 ### <a name="transaction"></a>Transaction
@@ -104,7 +104,7 @@ Cmdlet 在以下方面与其他命令 shell 环境中的命令不同：
 
 Windows PowerShell 支持从以下两个基类派生的 cmdlet。
 
-- 大多数 cmdlet 都以派生自[system.exception 基类的](/dotnet/api/System.Management.Automation.Cmdlet).NET Framework 类为基础。 从此类派生允许 cmdlet 使用 Windows PowerShell 运行时上的最小依赖项集。 这有两个优点。 第一个优点是，cmdlet 对象更小，不太可能受到对 Windows PowerShell 运行时的更改的影响。 第二个优点是，如果你需要，可以直接创建 cmdlet 对象的实例，然后直接调用它，而不是通过 Windows PowerShell 运行时调用它。
+- 大多数 cmdlet 都以派生自[system.exception 基类的](/dotnet/api/System.Management.Automation.Cmdlet).NET Framework 类为基础。 从此类派生允许 cmdlet 使用 Windows PowerShell 运行时上的最小依赖项集。 这具有两方面的好处。 第一个优点是，cmdlet 对象更小，不太可能受到对 Windows PowerShell 运行时的更改的影响。 第二个优点是，如果你需要，可以直接创建 cmdlet 对象的实例，然后直接调用它，而不是通过 Windows PowerShell 运行时调用它。
 
 - 更复杂的 cmdlet 基于从[PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基类派生的 .NET Framework 类的功能。 从此类派生，可以更好地访问 Windows PowerShell 运行时。 此访问权限允许 cmdlet 调用脚本、访问提供程序和访问当前会话状态。 （若要访问当前会话状态，可以获取和设置会话变量和首选项。）但是，从此类派生将增加 cmdlet 对象的大小，这意味着你的 cmdlet 更紧密地耦合到当前版本的 Windows PowerShell 运行时。
 

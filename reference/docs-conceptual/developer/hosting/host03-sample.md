@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: c9864f46-200d-422e-86ed-2fddcb5b7503
 caps.latest.revision: 12
 ms.openlocfilehash: 202f6ea0521c7c053d5a01314fb44bd1806abab3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361036"
 ---
 # <a name="host03-sample"></a>Host03 示例
@@ -23,9 +23,9 @@ ms.locfileid: "72361036"
 
  此示例需要 Windows PowerShell 2.0。
 
-## <a name="demonstrates"></a>示例
+## <a name="demonstrates"></a>说明
 
-- 创建一个自定义宿主，其类派生自[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)类、 [Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)类和[，后者派生自一个类。"Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) " 类。
+- 创建一个自定义主机，其类派生自 [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) 类、[System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) 类和 [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) 类中的类的类和类中的类的类。
 
 - 构建一个控制台应用程序，该应用程序使用这些主机类来构建交互式 Windows PowerShell shell。
 

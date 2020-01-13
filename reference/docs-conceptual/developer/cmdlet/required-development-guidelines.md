@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 41d2b308-a36a-496f-8542-666b6a21eedc
 caps.latest.revision: 19
 ms.openlocfilehash: e68e43a91f9139e8d3dc636b5740121515aab2e6
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369516"
 ---
 # <a name="required-development-guidelines"></a>必需的开发指南
@@ -21,7 +21,7 @@ ms.locfileid: "72369516"
 
 ## <a name="in-this-topic"></a>本主题内容
 
-### <a name="design-guidelines"></a>设计准则
+### <a name="design-guidelines"></a>设计指南
 
 - [仅使用批准的动词（RD01）](./required-development-guidelines.md#use-only-approved-verbs-rd01)
 
@@ -51,7 +51,7 @@ ms.locfileid: "72369516"
 
 - [使用 Windows PowerShell 模块部署 Cmdlet （RC07）](./required-development-guidelines.md#use-a-windows-powershell-module-to-deploy-your-cmdlets-rc07)
 
-## <a name="design-guidelines"></a>设计准则
+## <a name="design-guidelines"></a>设计指南
 
 设计 cmdlet 时必须遵循以下指导原则，以确保在使用 cmdlet 和其他 cmdlet 之间保持一致的用户体验。 如果找到适用于你的情况的设计准则，请务必查看类似准则的代码准则。
 
@@ -84,26 +84,26 @@ Cmdlet 属性中指定的动词必须来自 Windows PowerShell 提供的已识�
 |字符|名称|
 |---------------|----------|
 |#|数字符号|
-|、|跟|
+|、|逗号|
 |()|括号|
 |{}|住|
 |[]|方括号|
 |&|前面|
 |-|连字符**注意：** 可以使用连字符分隔名词中的动词，但不能在名词内或动词内使用它。|
 |/|斜杠标记|
-|\\ | 反斜杠|
+|\\| 反斜杠|
 |$|美元符号|
-|^|字|
-|;|之间|
+|^|caret|
+|；|分号|
 |：|开头|
 |"|双引号|
-|'|单引号|
+|”启用|单引号|
 |<>|尖括号|
-|&#124;|竖线|
+|||竖线|
 |?|问号|
 |@|at 符号|
 |`|后退（重音符）|
-|*|红星|
+|*|星号|
 |%|百分号|
 |+|加号|
 |=|等号|
@@ -115,14 +115,14 @@ Windows PowerShell 为所有 cmdlet 提供了一个通用参数，以及在特�
 
 ### <a name="support-confirmation-requests-rd04"></a>支持确认请求（RD04）
 
-对于执行修改系统的操作的 cmdlet，它们应调用[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法来请求确认，在特殊情况下，调用[ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法的方法。 （仅应在调用[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法后调用[ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法。）（可能为一个），该方法为
+对于执行修改系统的操作的 cmdlet，这些 cmdlet 应调用[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法来请求确认，在特殊情况下，调用[ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法中的方法来调用。 （仅应在调用[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法后调用[ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法。）（可能为一个），该方法为
 
-若要进行这些调用，cmdlet 必须指定它支持确认请求，方法是设置 Cmdlet 特性的 @no__t 0 关键字。 有关设置此属性的详细信息，请参阅[Cmdlet 特性声明](./cmdlet-attribute-declaration.md)。
+若要进行这些调用，cmdlet 必须通过设置 Cmdlet 特性的 `SupportsShouldProcess` 关键字来指定它支持确认请求。 有关设置此属性的详细信息，请参阅[Cmdlet 特性声明](./cmdlet-attribute-declaration.md)。
 
 > [!NOTE]
-> 如果该 cmdlet 类的 Cmdlet 特性指示该 cmdlet 支持对[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法的调用，则该 cmdlet 将无法调用此[类ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法，用户可能会意外地修改系统。
+> 如果 cmdlet 类的 Cmdlet 特性指示该 cmdlet 支持对[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法的调用，并且该 cmdlet 无法对[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法进行调用，则用户可能会意外地修改该系统。请注意，用户可能会意外地修改系统。
 
-对于任何系统修改，请使用[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 用户首选项和 `WhatIf` 参数用于控制[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 与此相反， [ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)调用会执行其他检查，以检查是否存在潜在的危险修改。 此方法不由任何用户首选项或 `WhatIf` 参数控制。 如果你的 cmdlet 调用[ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，则它应具有一个 `Force` 参数，该参数将绕过对这两个方法的调用，并继续执行该操作。 这一点很重要，因为它允许在非交互式脚本和主机中使用 cmdlet。
+对于任何系统修改，请使用[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 用户首选项和 `WhatIf` 参数，用于控制[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 与此相反， [ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)调用会执行其他检查，以检查是否存在潜在的危险修改。 此方法不由任何用户首选项或 `WhatIf` 参数控制。 如果你的 cmdlet 调用[ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，则它应具有一个 `Force` 参数，该参数会绕过对这两个方法的调用，并继续执行该操作。 这一点很重要，因为它允许在非交互式脚本和主机中使用 cmdlet。
 
 如果 cmdlet 支持这些调用，则用户可以确定是否应实际执行该操作。 例如，在停止一组关键进程（包括系统、Winlogon 和 Spoolsv.exe 进程）之前，[停止进程](/powershell/module/microsoft.powershell.management/stop-process)cmdlet 会调用[ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法。
 
@@ -138,11 +138,11 @@ Windows PowerShell 为所有 cmdlet 提供了一个通用参数，以及在特�
 
 - [Ihostuisupportsmultiplechoiceselection. "PromptForChoice"](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection.PromptForChoice)
 
-- [PromptForCredential 的 Pshostuserinterface *。](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.PromptForCredential)
+- [PromptForCredential * 的 Pshostuserinterface *。](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.PromptForCredential)
 
-- [Pshostuserinterface 的功能的 *](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.ReadLine)
+- [Pshostuserinterface * 的功能的 *](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.ReadLine)
 
-- [ReadLineAsSecureString 的 Pshostuserinterface *。](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.ReadLineAsSecureString)
+- [ReadLineAsSecureString * 的 Pshostuserinterface *。](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.ReadLineAsSecureString)
 
 ### <a name="document-output-objects-rd06"></a>文档输出对象（RD06）
 
@@ -196,9 +196,9 @@ OutputType 属性（在 Windows PowerShell 2.0 中引入）指定 cmdlet 返回�
 
 - 当错误阻止某个 cmdlet 继续处理任何其他记录时，它是终止错误。 该 cmdlet 必须调用[ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)方法，该方法引用了[ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象的目标系统。 如果 cmdlet 未捕获到异常，Windows PowerShell 运行时本身将引发包含较少信息的终止错误。
 
-- 对于在来自管道的下一条记录（例如，由其他进程生成的记录）上不停止操作的非终止错误，该 cmdlet 必须调用[WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法，该方法引用一个[ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象。 非终止错误的一个示例是特定进程无法停止时出现的错误。 通过调用[WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法，用户可以持续执行请求的操作，并保留失败的特定操作的信息。 你的 cmdlet 应尽可能独立地处理每条记录。
+- 对于不会对来自管道的下一条记录（例如，由其他进程生成的记录）停止操作的非终止错误，该 cmdlet 必须调用引用 [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) 对象的 [System.Management.Automation.Cmdlet.WriteError*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) 方法，该方法将引用对象。 非终止错误的一个示例是特定进程无法停止时出现的错误。 通过调用[WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法，用户可以持续执行请求的操作，并保留失败的特定操作的信息。 你的 cmdlet 应尽可能独立地处理每条记录。
 
-- 由[ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)和[ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) 方法引用的[WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法所引用的对象的对象，需要使用一个方法来实现其核心发生了异常。 确定要使用的异常时，请遵循 .NET Framework 设计准则。 如果错误在语义上与现有异常相同，请使用该异常或从该异常派生。 否则，直接从[system.exception 类型派生](/dotnet/api/System.Exception)新的异常或异常层次结构。
+- [ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)和[WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法所引用的[ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象在其核心中需要异常。 "的核心中，它需要一个例外。"）。 确定要使用的异常时，请遵循 .NET Framework 设计准则。 如果错误在语义上与现有异常相同，请使用该异常或从该异常派生。 否则，直接从[system.exception 类型派生](/dotnet/api/System.Exception)新的异常或异常层次结构。
 
 [ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)对象还需要一个为用户分组错误的错误类别。 用户可以基于类别查看错误，方法是将 `$ErrorView` shell 变量的值设置为 CategoryView。 可能的类别由[ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory)枚举来定义。
 

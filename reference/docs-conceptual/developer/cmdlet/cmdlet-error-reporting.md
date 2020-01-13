@@ -15,10 +15,10 @@ helpviewer_keywords:
 ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
 caps.latest.revision: 8
 ms.openlocfilehash: 5dfec318438ca139518c596011ac5e56445738ea
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365916"
 ---
 # <a name="cmdlet-error-reporting"></a>Cmdlet 错误报告
@@ -43,7 +43,7 @@ ms.locfileid: "72365916"
 
 ## <a name="reporting-nonterminating-errors"></a>报告非终止错误
 
-报告非终止错误的操作应始终在 cmdlet 的[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法（ [ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法）的实现中完成，或为，则不应如此。[system.web. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法的方法。 这些类型的错误通过调用[WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法进行报告，后者会将错误记录发送到错误流。
+非终止错误的报告应始终在 [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)  方法、[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) 方法或 [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) 方法的cmdlet 实现内完成，否则应始终在该 cmdlet 的实现中完成此操作的报告。 方法。 这些类型的错误通过调用[WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法进行报告，后者会将错误记录发送到错误流。
 
 ## <a name="reporting-terminating-errors"></a>报告终止错误
 

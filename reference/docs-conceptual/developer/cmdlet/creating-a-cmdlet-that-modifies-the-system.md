@@ -14,10 +14,10 @@ helpviewer_keywords:
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
 ms.openlocfilehash: 8a65915b88a04e36e773853b903528a65fe11e99
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365756"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>创建用于修改系统的 Cmdlet
@@ -26,11 +26,11 @@ ms.locfileid: "72365756"
 
 若要支持确认，cmdlet 必须执行两项操作。
 
-- 声明通过将 SupportsShouldProcess 关键字设置为 `true` 来指定[CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)属性时，cmdlet 支持确认。
+- 声明通过将 SupportsShouldProcess 关键字设置为 `true`来指定[CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)属性时，cmdlet 支持确认。
 
 - 在执行 Cmdlet 的过程中，请调用[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) （如以下示例中所示）。
 
-通过支持确认，cmdlet 将公开 Windows PowerShell 提供的 `Confirm` 和 `WhatIf` 参数，同时满足 cmdlet 的开发准则（有关 cmdlet 开发指南的详细信息，请参阅[cmdlet开发指南](./cmdlet-development-guidelines.md)。）
+通过支持确认，cmdlet 将公开 Windows PowerShell 提供的 `Confirm` 和 `WhatIf` 参数，同时满足 cmdlet 的开发准则（有关 cmdlet 开发指南的详细信息，请参阅[Cmdlet 开发指南](./cmdlet-development-guidelines.md)）。
 
 ## <a name="changing-the-system"></a>更改系统
 
@@ -55,11 +55,11 @@ ms.locfileid: "72365756"
 public class StopProcCommand : Cmdlet
 ```
 
-请注意，在[CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)声明中，`SupportsShouldProcess` attribute 关键字设置为 "`true`，以使该 cmdlet 可以调用[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ，并[将调用"ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)"。 如果未设置此关键字，则用户将无法使用 `Confirm` 和 `WhatIf` 参数。
+请注意，在 [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) 声明中，`SupportsShouldProcess` attribute 关键字设置为 `true`，以使 cmdlet 能够对 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) 和 [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) 进行调用，从而实现对和的调用的调用。 如果未设置此关键字，则用户将无法使用 `Confirm` 和 `WhatIf` 参数。
 
 ### <a name="extremely-destructive-actions"></a>极其破坏性操作
 
-有些操作非常有破坏性，如重新格式化活动硬盘分区。 在这些情况下，cmdlet 应在声明[CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)属性时设置 `ConfirmImpact`  =  `ConfirmImpact.High`。 此设置强制 cmdlet 即使在用户未指定 `Confirm` 参数时也请求用户确认。 但是，cmdlet 开发人员应避免过度使用 `ConfirmImpact` 的操作，这些操作可能具有破坏性，如删除用户帐户。 请记住，如果 `ConfirmImpact` 设置为[ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **High**。
+有些操作非常有破坏性，如重新格式化活动硬盘分区。 在这些情况下，cmdlet 应在声明[CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)属性时设置 `ConfirmImpact` = `ConfirmImpact.High`。 此设置强制 cmdlet 即使在用户未指定 `Confirm` 参数时也请求用户确认。 但是，cmdlet 开发人员应避免过度使用 `ConfirmImpact` 的操作，这些操作可能具有破坏性，如删除用户帐户。 请记住，如果 `ConfirmImpact` 设置为[ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **High**。
 
 同样，某些操作不太可能是破坏性的，尽管它们在理论上是在 Windows PowerShell 之外修改系统的运行状态。 此类 cmdlet 可将 `ConfirmImpact` 设置为[Confirmimpact](/dotnet/api/system.management.automation.confirmimpact?view=powershellsdk-1.1.0)。 这会绕过确认请求，用户只要求确认影响和影响最大的操作。
 
@@ -67,13 +67,13 @@ public class StopProcCommand : Cmdlet
 
 本部分介绍如何定义 cmdlet 参数，包括支持系统修改所需的参数。 如果需要有关定义参数的常规信息，请参阅[添加处理命令行输入的参数](./adding-parameters-that-process-command-line-input.md)。
 
-停止过程 cmdlet 定义三个参数： `Name`、`Force` 和 `PassThru`。
+停止过程 cmdlet 定义三个参数： `Name`、`Force`和 `PassThru`。
 
-@No__t_0 参数对应于进程输入对象的 `Name` 属性。 请注意，此示例中的 `Name` 参数是必需的，因为如果没有要停止的命名进程，cmdlet 将失败。
+`Name` 参数对应于进程输入对象的 `Name` 属性。 请注意，此示例中的 `Name` 参数是必需的，因为如果没有要停止的命名进程，cmdlet 将失败。
 
-@No__t_0 参数允许用户重写对[ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)的调用。） 事实上，调用 [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) 的任何 cmdlet 都应具有一个 `Force` 参数，以便在指定 `Force` 时，该 cmdlet 将跳过对 [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) 的调用。 继续执行该操作。 请注意，这不会影响对[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)的调用。
+`Force` 参数允许用户重写对[ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)的调用。） 事实上，调用 [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) 的任何 cmdlet 都应具有一个 `Force` 参数，以便在指定 `Force` 时，该 cmdlet 将跳过对 [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) 的调用。 继续执行该操作。 请注意，这不会影响对[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)的调用。
 
-@No__t_0 参数允许用户指示 cmdlet 是否通过管道传递输出对象，在这种情况下，进程停止后。 请注意，此参数绑定到 cmdlet 本身，而不是绑定到输入对象的属性。
+`PassThru` 参数允许用户指示 cmdlet 是否通过管道传递输出对象，在这种情况下，进程停止后。 请注意，此参数绑定到 cmdlet 本身，而不是绑定到输入对象的属性。
 
 下面是用于停止过程 cmdlet 的参数声明。
 
@@ -229,7 +229,7 @@ Cmdlet 的输入处理方法应调用[ShouldProcess](/dotnet/api/System.Manageme
 > [!NOTE]
 > 如果某个 cmdlet 指出它支持的操作应该处理并无法进行[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)调用，则用户可能会意外地修改系统。
 
-对[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)的调用将向用户发送要更改的资源的名称，Windows PowerShell 运行时在确定哪些内容行设置或首选项变量的作用应显示给用户。
+对[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)的调用会发送要更改为用户的资源的名称，并且 Windows PowerShell 运行时在确定应该向用户显示的内容时考虑了任何命令行设置或首选项变量。
 
 下面的示例演示了如何调用[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ，以便从示例停止过程 Cmdlet 中的[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法的重写中调用该方法的调用。
 
@@ -294,7 +294,7 @@ Windows PowerShell 使用 .Net 对象在 cmdlet 之间传递信息。 因此，c
     PS> stop-proc
     ```
 
-此时将显示以下输出。
+将显示以下输出。
 
     ```
     Cmdlet stop-proc at command pipeline position 1
@@ -308,7 +308,7 @@ Windows PowerShell 使用 .Net 对象在 cmdlet 之间传递信息。 因此，c
     PS> stop-proc -Name notepad
     ```
 
-此时将显示以下输出。
+将显示以下输出。
 
     ```
     Confirm
@@ -323,7 +323,7 @@ Windows PowerShell 使用 .Net 对象在 cmdlet 之间传递信息。 因此，c
     PS> stop-proc -Name Winlogon
     ```
 
-此时将显示以下输出。
+将显示以下输出。
 
     ```output
     Confirm
@@ -341,7 +341,7 @@ Windows PowerShell 使用 .Net 对象在 cmdlet 之间传递信息。 因此，c
     PS> stop-proc -Name winlogon -Force
     ```
 
-此时将显示以下输出。
+将显示以下输出。
 
     ```output
     Confirm

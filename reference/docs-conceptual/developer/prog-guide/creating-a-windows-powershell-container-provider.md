@@ -1,5 +1,5 @@
 ---
-title: Creating a Windows PowerShell Container Provider | Microsoft Docs
+title: 创建 Windows PowerShell 容器提供程序 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -12,33 +12,33 @@ helpviewer_keywords:
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
 ms.openlocfilehash: fcb03d4021f00837095ce703beb0d841233391d6
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
-ms.translationtype: MT
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416211"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>创建 Windows PowerShell 容器提供程序
 
-This topic describes how to create a Windows PowerShell provider that can work on multi-layer data stores. For this type of data store, the top level of the store contains the root items and each subsequent level is referred to as a node of child items. By allowing the user to work on these child nodes, a user can interact hierarchically through the data store.
+本主题介绍如何创建可在多层数据存储上使用的 Windows PowerShell 提供程序。 对于这种类型的数据存储，存储区的顶层包含根项，而每个后续级别称为子项的节点。 通过允许用户在这些子节点上工作，用户可以通过数据存储区进行分层交互。
 
-Providers that can work on multi-level data stores are referred to as Windows PowerShell container providers. However, be aware that a Windows PowerShell container provider can be used only when there is one container (no nested containers) with items in it. If there are nested containers, then you must implement a Windows PowerShell navigation provider. For more information about implementing Windows PowerShell navigation provider, see [Creating a Windows PowerShell Navigation Provider](./creating-a-windows-powershell-navigation-provider.md).
+可在多级别数据存储上使用的提供程序称为 "Windows PowerShell 容器提供程序"。 但请注意，只有当一个容器（无嵌套容器）包含项时，才能使用 Windows PowerShell 容器提供程序。 如果有嵌套容器，则必须实现 Windows PowerShell 导航提供程序。 有关实现 Windows PowerShell 导航提供程序的详细信息，请参阅[创建 Windows Powershell 导航提供程序](./creating-a-windows-powershell-navigation-provider.md)。
 
 > [!NOTE]
-> You can download the C# source file (AccessDBSampleProvider04.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> 你可以使用适用C#于 windows Vista 的 Microsoft Windows 软件开发工具包和 .NET Framework 3.0 运行时组件下载此提供程序的源文件（AccessDBSampleProvider04.cs）。 有关下载说明，请参阅[如何安装 Windows powershell 和下载 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
 >
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> 下载的源文件在 **\<PowerShell 示例 >** 目录中提供。
 >
-> For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
+> 有关其他 Windows PowerShell 提供程序实现的详细信息，请参阅[设计 Windows Powershell 提供程序](./designing-your-windows-powershell-provider.md)。
 
-The Windows PowerShell container provider described here defines the database as its single container, with the tables and rows of the database defined as items of the container.
+此处所述的 Windows PowerShell 容器提供程序将数据库定义为其单个容器，并将数据库的表和行定义为容器的项。
 
 > [!CAUTION]
-> Be aware that this design assumes a database that has a field with the name ID, and that the type of the field is LongInteger.
+> 请注意，此设计假设有一个数据库，该数据库具有名称为 ID 的字段，并且该字段的类型为 LongInteger。
 
-## <a name="defining-a-windows-powershell-container-provider-class"></a>Defining a Windows PowerShell Container Provider Class
+## <a name="defining-a-windows-powershell-container-provider-class"></a>定义 Windows PowerShell 容器提供程序类
 
-A Windows PowerShell container provider must define a .NET class that derives from the [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) base class. Here is the class definition for the Windows PowerShell container provider described in this section.
+Windows PowerShell 容器提供程序必须定义一个从[Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)基类派生的 .net 类的 .net 类。 下面是本部分中所述的 Windows PowerShell 容器提供程序的类定义。
 
 ```csharp
    [CmdletProvider("AccessDB", ProviderCapabilities.None)]
@@ -47,23 +47,23 @@ A Windows PowerShell container provider must define a .NET class that derives fr
 
 [!code-csharp[AccessDBProviderSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L34-L35 "AccessDBProviderSample04.cs")]
 
-Notice that in this class definition, the [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) attribute includes two parameters. The first parameter specifies a user-friendly name for the provider that is used by Windows PowerShell. The second parameter specifies the Windows PowerShell specific capabilities that the provider exposes to the Windows PowerShell runtime during command processing. For this provider, there are no Windows PowerShell specific capabilities that are added.
+请注意，在此类定义中， [Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)属性包括两个参数。 第一个参数指定 Windows PowerShell 使用的提供程序的用户友好名称。 第二个参数指定 Windows PowerShell 特定功能，该功能是在命令处理过程中提供给 Windows PowerShell 运行时的。 对于此提供程序，没有添加的 Windows PowerShell 特定功能。
 
-## <a name="defining-base-functionality"></a>Defining Base Functionality
+## <a name="defining-base-functionality"></a>定义基本功能
 
-As described in [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md), the [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) class derives from several other classes that provided different provider functionality. A Windows PowerShell container provider, therefore, needs to define all of the functionality provided by those classes.
+如[设计你的 Windows PowerShell 提供](./designing-your-windows-powershell-provider.md)程序中所述， [Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)类派生自其他一些类，这些类提供了不同的提供程序功能。 因此，Windows PowerShell 容器提供程序需要定义这些类提供的所有功能。
 
-To implement functionality for adding session-specific initialization information and for releasing resources that are used by the provider, see [Creating a Basic Windows PowerShell Provider](./creating-a-basic-windows-powershell-provider.md). However, most providers (including the provider described here) can use the default implementation of this functionality that is provided by Windows PowerShell.
+若要实现添加特定于会话的初始化信息以及释放提供程序所用资源的功能，请参阅[创建基本 Windows PowerShell 提供程序](./creating-a-basic-windows-powershell-provider.md)。 但是，大多数提供程序（包括此处所述的提供程序）可以使用 Windows PowerShell 提供的此功能的默认实现。
 
-To get access to the data store, the provider must implement the methods of the [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) base class. For more information about implementing these methods, see [Creating an Windows PowerShell Drive Provider](./creating-a-windows-powershell-drive-provider.md).
+若要获取对数据存储区的访问权限，提供程序必须实现[Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)基类的方法。 有关实现这些方法的详细信息，请参阅[创建 Windows PowerShell 驱动器提供程序](./creating-a-windows-powershell-drive-provider.md)。
 
-To manipulate the items of a data store, such as getting, setting, and clearing items, the provider must implement the methods provided by the [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) base class. For more information about implementing these methods, see [Creating an Windows PowerShell Item Provider](./creating-a-windows-powershell-item-provider.md).
+若要操作数据存储区的项（如获取、设置和清除项），提供程序必须实现[Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)基类提供的方法。 有关实现这些方法的详细信息，请参阅[创建 Windows PowerShell 项提供程序](./creating-a-windows-powershell-item-provider.md)。
 
-## <a name="retrieving-child-items"></a>Retrieving Child Items
+## <a name="retrieving-child-items"></a>检索子项
 
-To retrieve a child item, the Windows PowerShell container provider must override the [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) method to support calls from the `Get-ChildItem` cmdlet. This method retrieves child items from the data store and writes them to the pipeline as objects. If the `recurse` parameter of the cmdlet is specified, the method retrieves all children regardless of what level they are at. If the `recurse` parameter is not specified, the method retrieves only a single level of children.
+若要检索子项，Windows PowerShell 容器提供程序必须重写[Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法，以支持来自 `Get-ChildItem` cmdlet 的调用。 此方法从数据存储中检索子项目，并将其作为对象写入管道。 如果指定了 cmdlet 的 `recurse` 参数，则该方法将检索所有子项，而不管它们处于什么级别。 如果未指定 `recurse` 参数，则方法只检索一级子级。
 
-Here is the implementation of the [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) method for this provider. Notice that this method retrieves the child items in all database tables when the path indicates the Access database, and retrieves the child items from the rows of that table if the path indicates a data table.
+下面是此提供程序的[Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法的实现。 请注意，当路径指示 Access 数据库时，此方法将检索所有数据库表中的子项目，如果路径指示数据表，则从该表的行中检索子项。
 
 ```csharp
 protected override void GetChildItems(string path, bool recurse)
@@ -122,31 +122,31 @@ protected override void GetChildItems(string path, bool recurse)
 
 [!code-csharp[AccessDBProviderSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L311-L362 "AccessDBProviderSample04.cs")]
 
-#### <a name="things-to-remember-about-implementing-getchilditems"></a>Things to Remember About Implementing GetChildItems
+#### <a name="things-to-remember-about-implementing-getchilditems"></a>有关实现 GetChildItems 的注意事项
 
-The following conditions may apply to your implementation of [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems):
+以下情况可能适用于你的[Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)实现：
 
-- When defining the provider class, a Windows PowerShell container provider might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In these cases, the implementation of the [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) method needs to ensure that the path passed to the method meets the requirements of the specified capabilities. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) and [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) properties.
+- 定义提供程序类时，Windows PowerShell 容器提供程序可能会声明 ExpandWildcards、Filter、Include 或 Exclude 的提供程序功能， [Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)枚举。 在这些情况下， [Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法的实现需要确保传递给方法的路径满足指定的功能的要求。）。 若要执行此操作，方法应访问相应的属性，例如， [Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude)和[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include)属性中的相应属性，例如 ""。
 
-- The implementation of this method should take into account any form of access to the item that might make the item visible to the user. For example, if a user has write access to a file through the FileSystem provider (supplied by Windows PowerShell), but not read access, the file still exists and [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) returns `true`. Your implementation might require the checking of a parent item to see if the child can be enumerated.
+- 此方法的实现应将对该项的任何形式的访问权限考虑到对用户可见的项。 例如，如果用户通过 FileSystem 提供程序（由 Windows PowerShell 提供）对文件的写入访问权限，但不是读取访问权限，则该文件仍然存在，并且[Itemcmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)返回 `true`。 您的实现可能需要检查父项，以查看是否可以枚举子级。
 
-- When writing multiple items, the [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) method can take some time. You can design your provider to write the items using the [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) method one at a time. Using this technique will present the items to the user in a stream.
+- 写入多个项时， [Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法可能需要一些时间。 你可以设计提供程序，以一次一个地使用[Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)方法来编写项。 使用此方法会向用户提供流中的项。
 
-- Your implementation of [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) is responsible for preventing infinite recursion when there are circular links, and the like. An appropriate terminating exception should be thrown to reflect such a condition.
+- 当存在循环链接时， [Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)的实现会阻止无限递归，如所示。 应该引发适当的终止异常来反映这种情况。
 
-## <a name="attaching-dynamic-parameters-to-the-get-childitem-cmdlet"></a>Attaching Dynamic Parameters to the Get-ChildItem Cmdlet
+## <a name="attaching-dynamic-parameters-to-the-get-childitem-cmdlet"></a>将动态参数附加到 Get-childitem Cmdlet
 
-Sometimes the `Get-ChildItem` cmdlet that calls [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) requires additional parameters that are specified dynamically at runtime. To provide these dynamic parameters, the Windows PowerShell container provider must implement the [System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) method. This method retrieves dynamic parameters for the item at the indicated path and returns an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. The Windows PowerShell runtime uses the returned object to add the parameters to the `Get-ChildItem` cmdlet.
+有时，调用[Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)的 `Get-ChildItem` cmdlet 会要求在运行时动态指定的附加参数。 若要提供这些动态参数，Windows PowerShell 容器提供程序必须实现[Containercmdletprovider. Getchilditemsdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters)方法。 此方法检索指定路径处的项的动态参数，并返回一个对象，该对象具有与 cmdlet 类或[Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)对象类似的分析特性的属性和字段。 Windows PowerShell 运行时使用返回的对象将参数添加到 `Get-ChildItem` cmdlet 中。
 
-This Windows PowerShell container provider does not implement this method. However, the following code is the default implementation of this method.
+此 Windows PowerShell 容器提供程序未实现此方法。 但是，下面的代码是此方法的默认实现。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetchilditemsdynamicparameters](Msh_samplestestcmdlets#testprovidergetchilditemsdynamicparameters)]  -->
 
-## <a name="retrieving-child-item-names"></a>Retrieving Child Item Names
+## <a name="retrieving-child-item-names"></a>检索子项名称
 
-To retrieve the names of child items, the Windows PowerShell container provider must override the [System.Management.Automation.Provider.Containercmdletprovider.Getchildnames*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) method to support calls from the `Get-ChildItem` cmdlet when its `Name` parameter is specified. This method retrieves the names of the child items for the specified path or child item names for all containers if the `returnAllContainers` parameter of the cmdlet is specified. A child name is the leaf portion of a path. For example, the child name for the path c:\windows\system32\abc.dll is "abc.dll". The child name for the directory c:\windows\system32 is "system32".
+若要检索子项目的名称，Windows PowerShell 容器提供程序必须重写[Containercmdletprovider Getchildnames](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)方法，以便在指定其 `Name` 参数时支持 `Get-ChildItem` cmdlet 中的调用。 如果指定了 cmdlet 的 `returnAllContainers` 参数，则此方法将检索所有容器的指定路径或子项目名称的子项目的名称。 子名称是路径的叶部分。 例如，路径 c:\windows\system32\abc.dll 的子名称为 "abc .dll"。 目录 c:\windows\system32 的子名称为 "system32"。
 
-Here is the implementation of the [System.Management.Automation.Provider.Containercmdletprovider.Getchildnames*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) method for this provider. Notice that the method retrieves table names if the specified path indicates the Access database (drive) and row numbers if the path indicates a table.
+下面是此提供程序的[Containercmdletprovider. Getchildnames *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)方法的实现。 请注意，如果指定的路径指示 Access 数据库（驱动器）和行号（如果路径指示表），则方法将检索表名称。
 
 ```csharp
 protected override void GetChildNames(string path,
@@ -196,62 +196,62 @@ protected override void GetChildNames(string path,
 
 [!code-csharp[AccessDBProviderSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L369-L411 "AccessDBProviderSample04.cs")]
 
-#### <a name="things-to-remember-about-implementing-getchildnames"></a>Things to Remember About Implementing GetChildNames
+#### <a name="things-to-remember-about-implementing-getchildnames"></a>有关实现 GetChildNames 的注意事项
 
-The following conditions may apply to your implementation of [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems):
+以下情况可能适用于你的[Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)实现：
 
-- When defining the provider class, a Windows PowerShell container provider might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In these cases, the implementation of the [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) method needs to ensure that the path passed to the method meets the requirements of the specified capabilities. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) and [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) properties.
+- 定义提供程序类时，Windows PowerShell 容器提供程序可能会声明 ExpandWildcards、Filter、Include 或 Exclude 的提供程序功能， [Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)枚举。 在这些情况下， [Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法的实现需要确保传递给方法的路径满足指定的功能的要求。）。 若要执行此操作，方法应访问相应的属性，例如， [Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude)和[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include)属性中的相应属性，例如 ""。
 
   > [!NOTE]
-  > An exception to this rule occurs when the `returnAllContainers` parameter of the cmdlet is specified. In this case, the method should retrieve any child name for a container, even if it does not match the values of the [System.Management.Automation.Provider.Cmdletprovider.Filter*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Filter), [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include), or [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) properties.
+  > 当指定 cmdlet 的 `returnAllContainers` 参数时，将发生此规则的例外情况。 在这种情况下，该方法应检索某个容器的任何子名称，即使该名称与 [System.Management.Automation.Provider.Cmdletprovider.Filter*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Filter)、[System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) 或 [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) 属性的值不匹配，也是如此。  * 属性的值的值相同，则为。
 
-- By default, overrides of this method should not retrieve names of objects that are generally hidden from the user unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is specified. If the specified path indicates a container, the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is not required.
+- 默认情况下，除非指定了[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)属性，否则此方法的重写不应检索用户通常隐藏的对象的名称。 如果指定的路径指示一个容器，则不需要[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)属性（& e）。
 
-- Your implementation of [System.Management.Automation.Provider.Containercmdletprovider.Getchildnames*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) is responsible for preventing infinite recursion when there are circular links, and the like. An appropriate terminating exception should be thrown to reflect such a condition.
+- 当存在循环链接时， [Containercmdletprovider. Getchildnames *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)的实现会阻止无限递归，如所示。 应该引发适当的终止异常来反映这种情况。
 
-## <a name="attaching-dynamic-parameters-to-the-get-childitem-cmdlet-name"></a>Attaching Dynamic Parameters to the Get-ChildItem Cmdlet (Name)
+## <a name="attaching-dynamic-parameters-to-the-get-childitem-cmdlet-name"></a>将动态参数附加到 Get-childitem Cmdlet （Name）
 
-Sometimes the `Get-ChildItem` cmdlet (with the `Name` parameter) requires additional parameters that are specified dynamically at runtime. To provide these dynamic parameters, the Windows PowerShell container provider must implement the [System.Management.Automation.Provider.Containercmdletprovider.Getchildnamesdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters) method. This method retrieves the dynamic parameters for the item at the indicated path and returns an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. The Windows PowerShell runtime uses the returned object to add the parameters to the `Get-ChildItem` cmdlet.
+有时 `Get-ChildItem` cmdlet （具有 `Name` 参数）需要在运行时动态指定的其他参数。 若要提供这些动态参数，Windows PowerShell 容器提供程序必须实现[Containercmdletprovider. Getchildnamesdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters)方法。 此方法检索指定路径处的项的动态参数，并返回一个对象，该对象具有分析特性类似于 cmdlet 类或 [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) 对象的属性和字段。 Windows PowerShell 运行时使用返回的对象将参数添加到 `Get-ChildItem` cmdlet 中。
 
-This provider does not implement this method. However, the following code is the default implementation of this method.
+此提供程序未实现此方法。 但是，下面的代码是此方法的默认实现。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetchildnamesdynamicparameters](Msh_samplestestcmdlets#testprovidergetchildnamesdynamicparameters)]  -->
 
-## <a name="renaming-items"></a>Renaming Items
+## <a name="renaming-items"></a>重命名项
 
-To rename an item, a Windows PowerShell container provider must override the [System.Management.Automation.Provider.Containercmdletprovider.Renameitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) method to support calls from the `Rename-Item` cmdlet. This method changes the name of the item at the specified path to the new name provided. The new name must always be relative to the parent item (container).
+若要重命名某个项，Windows PowerShell 容器提供程序必须重写[Containercmdletprovider. Renameitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem)方法，以支持来自 `Rename-Item` cmdlet 的调用。 此方法将指定路径处的项的名称更改为提供的新名称。 新名称必须始终相对于父项（容器）。
 
-This provider does not override the [System.Management.Automation.Provider.Containercmdletprovider.Renameitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) method. However, the following is the default implementation.
+此提供程序不重写[Containercmdletprovider. Renameitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem)方法。 但是，下面是默认实现。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderrenameitem](Msh_samplestestcmdlets#testproviderrenameitem)]  -->
 
-#### <a name="things-to-remember-about-implementing-renameitem"></a>Things to Remember About Implementing RenameItem
+#### <a name="things-to-remember-about-implementing-renameitem"></a>有关实现 RenameItem 的注意事项
 
-The following conditions may apply to your implementation of [System.Management.Automation.Provider.Containercmdletprovider.Renameitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem):
+以下情况可能适用于你的[Containercmdletprovider. Renameitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem)实现：
 
-- When defining the provider class, a Windows PowerShell container provider might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In these cases, the implementation of the [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) method needs to ensure that the path passed to the method meets the requirements of the specified capabilities. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) and [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) properties.
+- 定义提供程序类时，Windows PowerShell 容器提供程序可能会声明 ExpandWildcards、Filter、Include 或 Exclude 的提供程序功能， [Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)枚举。 在这些情况下， [Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法的实现需要确保传递给方法的路径满足指定的功能的要求。）。 若要执行此操作，方法应访问相应的属性，例如， [Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude)和[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include)属性中的相应属性，例如 ""。
 
-- The [System.Management.Automation.Provider.Containercmdletprovider.Renameitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) method is intended for the modification of the name of an item only, and not for move operations. Your implementation of the method should write an error if the `newName` parameter contains path separators, or might otherwise cause the item to change its parent location.
+- [Containercmdletprovider. Renameitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem)方法仅用于修改某个项的名称，而不是用于移动操作的修改。 如果 `newName` 参数包含路径分隔符，则方法的实现应写入错误，否则可能导致项更改其父位置。
 
-- By default, overrides of this method should not rename objects unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is specified. If the specified path indicates a container, the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is not required.
+- 默认情况下，除非指定了[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)属性，否则此方法的重写不应重命名对象。 如果指定的路径指示一个容器，则不需要[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)属性（& e）。
 
-- Your implementation of the [System.Management.Automation.Provider.Containercmdletprovider.Renameitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) method should call [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and check its return value before making any changes to the data store. This method is used to confirm execution of an operation when a change is made to system state, for example, renaming files. [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) sends the name of the resource to be changed to the user, with the Windows PowerShell runtime taking into account any command line settings or preference variables in determining what should be displayed.
+- 在对数据存储进行任何更改之前，你的[Containercmdletprovider 和 Renameitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem)方法的实现应调用[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ，并检查其返回值，然后再进行更改。 此方法用于在对系统状态进行更改时（例如，重命名文件）确认操作的执行。 [Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)发送要更改为用户的资源的名称，Windows PowerShell 运行时在确定应显示的内容时考虑了任何命令行设置或首选项变量。
 
-  After the call to [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, the [System.Management.Automation.Provider.Containercmdletprovider.Renameitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) method should call the [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method. This method sends a message a confirmation message to the user to allow additional feedback to say if the operation should be continued. A provider should call [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) as an additional check for potentially dangerous system modifications.
+  在对 [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) 的调用返回 `true` 后，[System.Management.Automation.Provider.Containercmdletprovider.Renameitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) 方法应调用 [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) 方法。 此方法向用户发送一条确认消息，以允许其他反馈显示是否应继续进行操作。 提供程序应调用[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)作为额外检查来检查是否存在潜在的危险系统修改。
 
-## <a name="attaching-dynamic-parameters-to-the-rename-item-cmdlet"></a>Attaching Dynamic Parameters to the Rename-Item Cmdlet
+## <a name="attaching-dynamic-parameters-to-the-rename-item-cmdlet"></a>将动态参数附加到重命名项 Cmdlet
 
-Sometimes the `Rename-Item` cmdlet requires additional parameters that are specified dynamically at runtime. To provide these dynamic parameters, Windows PowerShell container provider must implement the [System.Management.Automation.Provider.Containercmdletprovider.Renameitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItemDynamicParameters) method. This method retrieves the parameters for the item at the indicated path and returns an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. The Windows PowerShell runtime uses the returned object to add the parameters to the `Rename-Item` cmdlet.
+有时 `Rename-Item` cmdlet 需要在运行时动态指定的其他参数。 若要提供这些动态参数，Windows PowerShell 容器提供程序必须实现[Containercmdletprovider. Renameitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItemDynamicParameters)方法。 此方法检索指定路径处的项的参数，并返回一个对象，该对象具有与 cmdlet 类或[Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)对象类似的分析特性的属性和字段。 Windows PowerShell 运行时使用返回的对象将参数添加到 `Rename-Item` cmdlet 中。
 
-This container provider does not implement this method. However, the following code is the default implementation of this method.
+此容器提供程序不实现此方法。 但是，下面的代码是此方法的默认实现。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderrenameitemdynamicparameters](Msh_samplestestcmdlets#testproviderrenameitemdynamicparameters)]  -->
 
-## <a name="creating-new-items"></a>Creating New Items
+## <a name="creating-new-items"></a>正在创建新项
 
-To create new items, a container provider must implement the [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) method to support calls from the `New-Item` cmdlet. This method creates a data item located at the specified path. The `type` parameter of the cmdlet contains the provider-defined type for the new item. For example, the FileSystem provider uses a `type` parameter with a value of "file" or "directory". The `newItemValue` parameter of the cmdlet specifies a provider-specific value for the new item.
+若要创建新项，容器提供程序必须实现[Containercmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法，以支持来自 `New-Item` cmdlet 的调用。 此方法创建位于指定路径的数据项。 Cmdlet 的 `type` 参数包含用于新项的提供程序定义的类型。 例如，FileSystem 提供程序使用值为 "file" 或 "directory" 的 `type` 参数。 Cmdlet 的 `newItemValue` 参数为新项指定特定于提供程序的值。
 
-Here is the implementation of the [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) method for this provider.
+下面是此提供程序的[Containercmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法的实现。
 
 ```csharp
 protected override void NewItem( string path, string type,
@@ -275,57 +275,57 @@ protected override void NewItem( string path, string type,
 
 [!code-csharp[AccessDBProviderSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L939-L955 "AccessDBProviderSample04.cs")]
 
-#### <a name="things-to-remember-about-implementing-newitem"></a>Things to Remember About Implementing NewItem
+#### <a name="things-to-remember-about-implementing-newitem"></a>有关实现 NewItem 的注意事项
 
-The following conditions may apply to your implementation of [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem):
+以下情况可能适用于你的[Containercmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)实现：
 
-- The [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) method should perform a case-insensitive comparison of the string passed in the `type` parameter. It should also allow for least ambiguous matches. For example, for the types "file" and "directory", only the first letter is required to disambiguate. If the `type` parameter indicates a type your provider cannot create, the [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) method should write an ArgumentException with a message indicating the types the provider can create.
+- [Containercmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法应对 `type` 参数中传递的字符串执行不区分大小写的比较。 它还应允许最小不明确匹配。 例如，对于类型 "file" 和 "directory"，只需第一个字母来消除歧义。 如果 `type` 参数指示提供程序无法创建的类型，则[Containercmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法应使用指示提供程序可以创建的类型的消息编写 ArgumentException。
 
-- For the `newItemValue` parameter, the implementation of the [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) method is recommended to accept strings at a minimum. It should also accept the type of object that is retrieved by the [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) method for the same path. The [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) method can use the [System.Management.Automation.Languageprimitives.Convertto*](/dotnet/api/System.Management.Automation.LanguagePrimitives.ConvertTo) method to convert types to the desired type.
+- 对于 "`newItemValue`" 参数，建议使用[Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法的实现来最小限度地接受字符串。 它还应接受由[Itemcmdletprovider. Getitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)方法为同一路径检索的对象的类型的对象。 [Containercmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法可以使用[languageprimitives.physicalequality. convertto-html *](/dotnet/api/System.Management.Automation.LanguagePrimitives.ConvertTo)方法将类型转换为所需的类型（& i）。
 
-- Your implementation of the [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) method should call [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and check its return value before making any changes to the data store. After the call to [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns true, the [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) method should call the [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method as an additional check for potentially dangerous system modifications.
+- 在对数据存储进行任何更改之前，你的[Containercmdletprovider 和 Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法的实现应调用[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ，并检查其返回值，然后再进行更改。 在对 [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) 的调用返回 true 后，[System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) 方法应调用方法作为额外的检查，以应对潜在的危险系统修改情况进行检查，然后再调用 [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) 方法，则为。
 
-## <a name="attaching-dynamic-parameters-to-the-new-item-cmdlet"></a>Attaching Dynamic Parameters to the New-Item Cmdlet
+## <a name="attaching-dynamic-parameters-to-the-new-item-cmdlet"></a>将动态参数附加到新项 Cmdlet
 
-Sometimes the `New-Item` cmdlet requires additional parameters that are specified dynamically at runtime. To provide these dynamic parameters, the container provider must implement the [System.Management.Automation.Provider.Containercmdletprovider.Newitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItemDynamicParameters) method. This method retrieves the parameters for the item at the indicated path and returns an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. The Windows PowerShell runtime uses the returned object to add the parameters to the `New-Item` cmdlet.
+有时 `New-Item` cmdlet 需要在运行时动态指定的其他参数。 为了提供这些动态参数，容器提供程序必须实现[Containercmdletprovider. Newitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItemDynamicParameters)方法。 此方法检索指定路径处的项的参数，并返回一个对象，该对象具有与 cmdlet 类或[Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)对象类似的分析特性的属性和字段。 Windows PowerShell 运行时使用返回的对象将参数添加到 `New-Item` cmdlet 中。
 
-This provider does not implement this method. However, the following code is the default implementation of this method.
+此提供程序未实现此方法。 但是，下面的代码是此方法的默认实现。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidernewitemdynamicparameters](Msh_samplestestcmdlets#testprovidernewitemdynamicparameters)]  -->
 
-## <a name="removing-items"></a>Removing Items
+## <a name="removing-items"></a>删除项
 
-To remove items, the Windows PowerShell provider must override the [System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) method to support calls from the `Remove-Item` cmdlet. This method deletes an item from the data store at the specified path. If the `recurse` parameter of the `Remove-Item` cmdlet is set to `true`, the method removes all child items regardless of their level. If the parameter is set to `false`, the method removes only a single item at the specified path.
+若要删除项，Windows PowerShell 提供程序必须重写[Containercmdletprovider. Removeitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)方法，以支持来自 `Remove-Item` cmdlet 的调用。 此方法从数据存储区中的指定路径删除一个项。 如果 `Remove-Item` cmdlet 的 `recurse` 参数设置为 `true`，则方法将删除所有子项，而不考虑它们的级别。 如果将参数设置为 `false`，则方法只删除指定路径中的单个项。
 
-This provider does not support item removal. However, the following code is the default implementation of [System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem).
+此提供程序不支持删除项。 但是，下面的代码是[Containercmdletprovider. Removeitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)的默认实现。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderremoveitem](Msh_samplestestcmdlets#testproviderremoveitem)]  -->
 
-#### <a name="things-to-remember-about-implementing-removeitem"></a>Things to Remember About Implementing RemoveItem
+#### <a name="things-to-remember-about-implementing-removeitem"></a>有关实现 RemoveItem 的注意事项
 
-The following conditions may apply to your implementation of [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem):
+以下情况可能适用于你的[Containercmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)实现：
 
-- When defining the provider class, a Windows PowerShell container provider might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In these cases, the implementation of the [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) method needs to ensure that the path passed to the method meets the requirements of the specified capabilities. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) and [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) properties.
+- 定义提供程序类时，Windows PowerShell 容器提供程序可能会声明 ExpandWildcards、Filter、Include 或 Exclude 的提供程序功能， [Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)枚举。 在这些情况下， [Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法的实现需要确保传递给方法的路径满足指定的功能的要求。）。 若要执行此操作，方法应访问相应的属性，例如， [Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude)和[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include)属性中的相应属性，例如 ""。
 
-- By default, overrides of this method should not remove objects unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to true. If the specified path indicates a container, the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is not required.
+- 默认情况下，除非[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)属性设置为 true，否则此方法的重写不应删除对象。 如果指定的路径指示一个容器，则不需要[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)属性（& e）。
 
-- Your implementation of [System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) is responsible for preventing infinite recursion when there are circular links, and the like. An appropriate terminating exception should be thrown to reflect such a condition.
+- 当存在循环链接时， [Containercmdletprovider. Removeitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)的实现会阻止无限递归，如所示。 应该引发适当的终止异常来反映这种情况。
 
-- Your implementation of the [System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) method should call [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and check its return value before making any changes to the data store. After the call to [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, the [System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) method should call the [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method as an additional check for potentially dangerous system modifications.
+- 在对数据存储进行任何更改之前，你的[Containercmdletprovider 和 Removeitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)方法的实现应调用[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ，并检查其返回值，然后再进行更改。 在对 [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) 的调用返回 `true` 后，[System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) 方法应调用 [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) 方法，作为额外检查是否存在潜在的危险系统修改。
 
-## <a name="attaching-dynamic-parameters-to-the-remove-item-cmdlet"></a>Attaching Dynamic Parameters to the Remove-Item Cmdlet
+## <a name="attaching-dynamic-parameters-to-the-remove-item-cmdlet"></a>将动态参数附加到移除项 Cmdlet
 
-Sometimes the `Remove-Item` cmdlet requires additional parameters that are specified dynamically at runtime. To provide these dynamic parameters, the container provider must implement the [System.Management.Automation.Provider.Containercmdletprovider.Removeitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters) method to handle these parameters. This method retrieves the dynamic parameters for the item at the indicated path and returns an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. The Windows PowerShell runtime uses the returned object to add the parameters to the `Remove-Item` cmdlet.
+有时 `Remove-Item` cmdlet 需要在运行时动态指定的其他参数。 为了提供这些动态参数，容器提供程序必须实现[Containercmdletprovider. Removeitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters)方法来处理这些参数。 此方法检索指定路径处的项的动态参数，并返回一个对象，该对象具有分析特性类似于 cmdlet 类或 [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) 对象的属性和字段。 Windows PowerShell 运行时使用返回的对象将参数添加到 `Remove-Item` cmdlet 中。
 
-This container provider does not implement this method. However, the following code is the default implementation of [System.Management.Automation.Provider.Containercmdletprovider.Removeitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters).
+此容器提供程序不实现此方法。 但是，下面的代码是[Containercmdletprovider. Removeitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters)的默认实现。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderremoveitemdynamicparameters](Msh_samplestestcmdlets#testproviderremoveitemdynamicparameters)]  -->
 
-## <a name="querying-for-child-items"></a>Querying for Child Items
+## <a name="querying-for-child-items"></a>查询子项
 
-To check to see if child items exist at the specified path, the Windows PowerShell container provider must override the [System.Management.Automation.Provider.Containercmdletprovider.Haschilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.HasChildItems) method. This method returns `true` if the item has children, and `false` otherwise. For a null or empty path, the method considers any items in the data store to be children and returns `true`.
+若要检查子项目是否存在于指定的路径，Windows PowerShell 容器提供程序必须重写[Containercmdletprovider. Haschilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.HasChildItems)方法。 如果项具有子级，则此方法返回 `true`; 否则返回 `false`。 对于 null 或空路径，方法会将数据存储区中的任何项视为子级并返回 `true`。
 
-Here is the override for the [System.Management.Automation.Provider.Containercmdletprovider.Haschilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.HasChildItems) method. If there are more than two path parts created by the ChunkPath helper method, the method returns `false`, since only a database container and a table container are defined. For more information about this helper method, see the ChunkPath method is discussed in [Creating a Windows PowerShell Item Provider](./creating-a-windows-powershell-item-provider.md).
+下面是对[Containercmdletprovider. Haschilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.HasChildItems)方法的重写。 如果 ChunkPath helper 方法创建了两个以上的路径部分，则方法将返回 `false`，因为只定义了一个数据库容器和一个表容器。 有关此帮助器方法的详细信息，请参阅[创建 Windows PowerShell 项提供程序](./creating-a-windows-powershell-item-provider.md)中介绍的 ChunkPath 方法。
 
 ```csharp
 protected override bool HasChildItems( string path )
@@ -336,59 +336,59 @@ protected override bool HasChildItems( string path )
 
 [!code-csharp[AccessDBProviderSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L1094-L1097 "AccessDBProviderSample04.cs")]
 
-#### <a name="things-to-remember-about-implementing-haschilditems"></a>Things to Remember About Implementing HasChildItems
+#### <a name="things-to-remember-about-implementing-haschilditems"></a>有关实现 HasChildItems 的注意事项
 
-The following conditions may apply to your implementation of [System.Management.Automation.Provider.Containercmdletprovider.Haschilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.HasChildItems):
+以下情况可能适用于你的[Containercmdletprovider. Haschilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.HasChildItems)实现：
 
-- If the container provider exposes a root that contains interesting mount points, the implementation of the [System.Management.Automation.Provider.Containercmdletprovider.Haschilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.HasChildItems) method should return `true` when a null or an empty string is passed in for the path.
+- 如果容器提供程序公开包含有趣装入点的根，则当为路径传递了 null 或空字符串时， [Containercmdletprovider 和 Haschilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.HasChildItems)方法的实现应返回 `true`。
 
-## <a name="copying-items"></a>Copying Items
+## <a name="copying-items"></a>复制项
 
-To copy items, the container provider must implement the [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) method to support calls from the `Copy-Item` cmdlet. This method copies a data item from the location indicated by the `path` parameter of the cmdlet to the location indicated by the `copyPath` parameter. If the `recurse` parameter is specified, the method copies all sub-containers. If the parameter is not specified, the method copies only a single level of items.
+若要复制项，容器提供程序必须实现[ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法以支持来自 `Copy-Item` cmdlet 的调用。 此方法将数据项从 cmdlet 的 `path` 参数指示的位置复制到 `copyPath` 参数指示的位置。 如果指定 `recurse` 参数，则该方法将复制所有子容器。 如果未指定参数，则方法只复制单个级别的项。
 
-This provider does not implement this method. However, the following code is the default implementation of [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem).
+此提供程序未实现此方法。 但是，下面的代码是[ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)的默认实现。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidercopyitem](Msh_samplestestcmdlets#testprovidercopyitem)]  -->
 
-#### <a name="things-to-remember-about-implementing-copyitem"></a>Things to Remember About Implementing CopyItem
+#### <a name="things-to-remember-about-implementing-copyitem"></a>有关实现 CopyItem 的注意事项
 
-The following conditions may apply to your implementation of [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem):
+以下情况可能适用于你的 ContainerCmdletProvider 的实现。 [CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)：
 
-- When defining the provider class, a Windows PowerShell container provider might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In these cases, the implementation of the [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) method needs to ensure that the path passed to the method meets the requirements of the specified capabilities. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) and [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) properties.
+- 定义提供程序类时，Windows PowerShell 容器提供程序可能会声明 ExpandWildcards、Filter、Include 或 Exclude 的提供程序功能， [Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)枚举。 在这些情况下， [Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法的实现需要确保传递给方法的路径满足指定的功能的要求。）。 若要执行此操作，方法应访问相应的属性，例如， [Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude)和[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include)属性中的相应属性，例如 ""。
 
-- By default, overrides of this method should not copy objects over existing objects unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. For example, the FileSystem provider will not copy c:\temp\abc.txt over an existing c:\abc.txt file unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. If the path specified in the `copyPath` parameter exists and indicates a container, the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is not required. In this case, [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) should copy the item indicated by the `path` parameter to the container indicated by the `copyPath` parameter as a child.
+- 默认情况下，此方法的重写不应将对象复制到现有对象上，除非[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)属性设置为 `true`。 例如，FileSystem 提供程序将不会通过现有的 c:\abc.txt 文件复制 c:\temp\abc.txt，除非[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)属性设置为 `true`。 如果在 `copyPath` 参数中指定的路径存在，并指示一个容器，则不需要[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)属性。 在这种情况下， [ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)应将 `path` 参数指示的项复制到由 `copyPath` 参数指示为子级的容器。
 
-- Your implementation of [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) is responsible for preventing infinite recursion when there are circular links, and the like. An appropriate terminating exception should be thrown to reflect such a condition.
+- 当存在循环链接时，你的[ContainerCmdletProvider CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)的实现负责阻止无限递归，如所示。 应该引发适当的终止异常来反映这种情况。
 
-- Your implementation of the [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) method should call [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and check its return value before making any changes to the data store. After the call to [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns true, the [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) method should call the [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method as an additional check for potentially dangerous system modifications. For more information about calling these methods, see [Rename Items](#renaming-items).
+- 在对数据存储进行任何更改之前，你的[ContainerCmdletProvider CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法的实现应调用[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ，并检查其返回值，然后再进行更改。 在对 [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) 的调用返回 true 后，[System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) 方法应调用 [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) 方法作为额外的检查，以检查是否存在潜在的危险系统修改的情况下出现的其他检查功能。 ） 。 "。 有关调用这些方法的详细信息，请参阅[Rename 项](#renaming-items)。
 
-## <a name="attaching-dynamic-parameters-to-the-copy-item-cmdlet"></a>Attaching Dynamic Parameters to the Copy-Item Cmdlet
+## <a name="attaching-dynamic-parameters-to-the-copy-item-cmdlet"></a>将动态参数附加到复制项 Cmdlet
 
-Sometimes the `Copy-Item` cmdlet requires additional parameters that are specified dynamically at runtime. To provide these dynamic parameters, the Windows PowerShell container provider must implement the [System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) method to handle these parameters. This method retrieves the parameters for the item at the indicated path and returns an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. The Windows PowerShell runtime uses the returned object to add the parameters to the `Copy-Item` cmdlet.
+有时 `Copy-Item` cmdlet 需要在运行时动态指定的其他参数。 为了提供这些动态参数，Windows PowerShell 容器提供程序必须实现[Containercmdletprovider. Copyitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters)方法来处理这些参数。 此方法检索指定路径处的项的参数，并返回一个对象，该对象具有与 cmdlet 类或[Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)对象类似的分析特性的属性和字段。 Windows PowerShell 运行时使用返回的对象将参数添加到 `Copy-Item` cmdlet 中。
 
-This provider does not implement this method. However, the following code is the default implementation of [System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters).
+此提供程序未实现此方法。 但是，下面的代码是[Containercmdletprovider. Copyitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters)的默认实现。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidercopyitemdynamicparameters](Msh_samplestestcmdlets#testprovidercopyitemdynamicparameters)]  -->
 
-## <a name="code-sample"></a>Code Sample
+## <a name="code-sample"></a>代码示例
 
-For complete sample code, see [AccessDbProviderSample04 Code Sample](./accessdbprovidersample04-code-sample.md).
+有关完整的示例代码，请参阅[AccessDbProviderSample04 代码示例](./accessdbprovidersample04-code-sample.md)。
 
-## <a name="building-the-windows-powershell-provider"></a>Building the Windows PowerShell Provider
+## <a name="building-the-windows-powershell-provider"></a>生成 Windows PowerShell 提供程序
 
-See [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+请参阅[如何注册 cmdlet、提供程序和主机应用程序](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
 
-## <a name="testing-the-windows-powershell-provider"></a>Testing the Windows PowerShell Provider
+## <a name="testing-the-windows-powershell-provider"></a>测试 Windows PowerShell 提供程序
 
-When your Windows PowerShell provider has been registered with Windows PowerShell, you can test it by running the supported cmdlets on the command line. Be aware that the following example output uses a fictitious Access database.
+向 Windows powershell 注册 Windows PowerShell 提供程序后，可以通过在命令行上运行支持的 cmdlet 来对其进行测试。 请注意，以下示例输出使用虚构的 Access 数据库。
 
-1. Run the `Get-ChildItem` cmdlet to retrieve the list of child items from a Customers table in the Access database.
+1. 运行 `Get-ChildItem` cmdlet 可在 Access 数据库中检索 Customers 表中的子项列表。
 
    ```powershell
    Get-ChildItem mydb:customers
    ```
 
-   The following output appears.
+   将显示以下输出。
 
    ```output
    PSPath        : AccessDB::customers
@@ -401,13 +401,13 @@ When your Windows PowerShell provider has been registered with Windows PowerShel
    Columns       :
    ```
 
-2. Run the `Get-ChildItem` cmdlet again to retrieve the data of a table.
+2. 再次运行 `Get-ChildItem` cmdlet 以检索表的数据。
 
    ```powershell
    (Get-ChildItem mydb:customers).data
    ```
 
-   The following output appears.
+   将显示以下输出。
 
    ```output
    TABLE_CAT   : c:\PS\northwind
@@ -417,13 +417,13 @@ When your Windows PowerShell provider has been registered with Windows PowerShel
    REMARKS     :
    ```
 
-3. Now use the `Get-Item` cmdlet to retrieve the items at row 0 in the data table.
+3. 现在使用 `Get-Item` cmdlet 来检索数据表中第0行的项。
 
    ```powershell
    Get-Item mydb:\customers\0
    ```
 
-   The following output appears.
+   将显示以下输出。
 
    ```output
    PSPath        : AccessDB::customers\0
@@ -434,13 +434,13 @@ When your Windows PowerShell provider has been registered with Windows PowerShel
    RowNumber     : 0
    ```
 
-4. Reuse `Get-Item` to retrieve the data for the items in row 0.
+4. 重复使用 `Get-Item` 检索第0行中的项的数据。
 
    ```powershell
    (Get-Item mydb:\customers\0).data
    ```
 
-   The following output appears.
+   将显示以下输出。
 
    ```output
    CustomerID   : 1234
@@ -456,20 +456,20 @@ When your Windows PowerShell provider has been registered with Windows PowerShel
    Fax          : (425) 555-0101
    ```
 
-5. Now use the `New-Item` cmdlet to add a row to an existing table. The `Path` parameter specifies the full path to the row, and must indicate a row number that is greater than the existing number of rows in the table. The `Type` parameter indicates "row" to specify that type of item to add. Finally, the `Value` parameter specifies a comma-delimited list of column values for the row.
+5. 现在使用 `New-Item` cmdlet 向现有表添加行。 `Path` 参数指定行的完整路径，并且必须指示大于表中现有行数的行号。 `Type` 参数指示 "行" 以指定要添加的项的类型。 最后，`Value` 参数为行指定以逗号分隔的列值列表。
 
    ```powershell
    New-Item -Path mydb:\Customers\3 -ItemType "row" -Value "3,CustomerFirstName,CustomerLastName,CustomerEmailAddress,CustomerTitle,CustomerCompany,CustomerPhone, CustomerAddress,CustomerCity,CustomerState,CustomerZip,CustomerCountry"
    ```
 
-6. Verify the correctness of the new item operation as follows.
+6. 验证新项操作的正确性，如下所示。
 
    ```none
    PS mydb:\> cd Customers
    PS mydb:\Customers> (Get-Item 3).data
    ```
 
-   The following output appears.
+   将显示以下输出。
 
    ```output
    ID        : 3
@@ -488,16 +488,16 @@ When your Windows PowerShell provider has been registered with Windows PowerShel
 
 ## <a name="see-also"></a>另请参阅
 
-[Creating Windows PowerShell Providers](./how-to-create-a-windows-powershell-provider.md)
+[创建 Windows PowerShell 提供程序](./how-to-create-a-windows-powershell-provider.md)
 
-[Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md)
+[设计你的 Windows PowerShell 提供程序](./designing-your-windows-powershell-provider.md)
 
-[Implementing an Item Windows PowerShell Provider](./creating-a-windows-powershell-item-provider.md)
+[实现 Windows PowerShell 提供程序项](./creating-a-windows-powershell-item-provider.md)
 
-[Implementing a Navigation Windows PowerShell Provider](./creating-a-windows-powershell-navigation-provider.md)
+[实现导航 Windows PowerShell 提供程序](./creating-a-windows-powershell-navigation-provider.md)
 
-[How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[如何注册 Cmdlet、提供程序和主机应用程序](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell 程序员指南](./windows-powershell-programmer-s-guide.md)
