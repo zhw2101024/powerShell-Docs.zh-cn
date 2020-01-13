@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 0a49e3c4-6a1b-404c-aefc-134e5ce3d108
 caps.latest.revision: 11
 ms.openlocfilehash: 98271f5f439d10b6d29fd0a6422b5b9b4ab55716
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367456"
 ---
 # <a name="host05-sample"></a>Host05 示例
@@ -25,13 +25,13 @@ ms.locfileid: "72367456"
 
 - 此应用程序必须以提升模式运行（以管理员身份运行）。
 
-## <a name="demonstrates"></a>示例
+## <a name="demonstrates"></a>说明
 
-- 创建一个自定义宿主，其类派生自[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)类、 [Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)类和[，后者派生自一个类。"Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) " 类。
+- 创建一个自定义主机，其类派生自 [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) 类、[System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) 类和 [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) 类中的类的类和类中的类的类。
 
 - 构建一个控制台应用程序，该应用程序使用这些主机类来构建交互式 Windows PowerShell shell。
 
-- 创建 @no__t 0 变量并加载以下配置文件。
+- 创建 `$profile` 变量并加载以下配置文件。
 
   - 当前用户、当前主机
 

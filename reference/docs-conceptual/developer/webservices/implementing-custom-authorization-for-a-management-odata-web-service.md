@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ae37e3f3-5fd6-4ff6-bf66-a249ff96822b
 caps.latest.revision: 7
 ms.openlocfilehash: 2afa0e79d9de781149f31a45666d13f98ca10a26
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359676"
 ---
 # <a name="implementing-custom-authorization-for-a-management-odata-web-service"></a>实现管理 OData Web 服务的自定义授权
@@ -21,7 +21,7 @@ ms.locfileid: "72359676"
 
 ## <a name="pass-through-authorization"></a>传递授权
 
-实现[CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)接口的最简单方法是向所有用户授权的传递实现。 此示例不提供安全性，仅提供了作为如何实现接口的说明。 [CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)接口的实现必须重写两种方法：[CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)和[CustomAuthorization... GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId)。 在此示例中， [CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)将始终返回与当前用户关联的 AuthorizeUser 对象的**安全**对象的。
+实现[CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)接口的最简单方法是向所有用户授权的传递实现。 此示例不提供安全性，仅提供了作为如何实现接口的说明。 [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) 接口的实现必须重写以下两个方法：[Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) 和 [Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) 在此示例中， [CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)将始终返回与当前用户关联的 AuthorizeUser 对象的**安全**对象的。
 
 ```csharp
 namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPERLINK "VBScript:u(%227%22,30)" OData. HYPERLINK "VBScript:u(%227%22,36)" BasicPlugins

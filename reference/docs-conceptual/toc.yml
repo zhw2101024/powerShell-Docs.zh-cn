@@ -84,7 +84,7 @@
           href: learn/remoting/ps-remoting-second-hop.md
     - name: 术语表
       href: learn/windows-powershell-glossary.md
-- name: 组件数
+- name: 组件
   items:
     - name: 控制台
       items:
@@ -164,7 +164,7 @@
           href: components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
         - name: 安装
           href: components/web-access/install-and-use-windows-powershell-web-access.md
-        - name: 有关访问问题的疑难解答
+        - name: 解决访问问题
           href: components/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
         - name: 卸载 Windows PowerShell Web 访问
           href: components/web-access/uninstall-windows-powershell-web-access.md
@@ -222,7 +222,7 @@
               href: gallery/how-to/managing-profile/managing-account.md
             - name: 管理 API 密钥
               href: gallery/how-to/managing-profile/creating-apikeys.md
-        - name: 使用本地 PowerShellGet 存储库
+        - name: 使用专用 PowerShellGet 存储库
           href: gallery/how-to/working-with-local-psrepositories.md
     - name: 概念
       items:
@@ -258,11 +258,11 @@
           href: gallery/how-to/getting-support/dispute-resolution.md
         - name: 联系管理员
           href: gallery/how-to/getting-support/contacting-administrators.md
-        - name: 疑难解答
+        - name: 故障排除
           href: gallery/how-to/getting-support/troubleshooting-cmdlets.md
         - name: 启动 NuGet 提供程序和 NuGet.exe
           href: gallery/how-to/getting-support/bootstrapping-nuget.md
-        - name: GDPR 合规性
+        - name: GDPR 符合性
           href: gallery/how-to/getting-support/gdpr-dsr-policy.md
     - name: 有关库的常见问题
       href: gallery/faqs.md
@@ -339,7 +339,7 @@
           href: wmf/known-issues/known-issues-51.md
         - name: DSC 中的已知问题和限制
           href: wmf/known-issues/known-issues-dsc.md
-- name: 所需状态配置 (DSC)
+- name: Desired State Configuration (DSC)
   items:
     - name: 概述
       items:
@@ -351,7 +351,7 @@
           href: dsc/overview/DscForEngineers.md
         - name: 了解 CI/CD 管道中的 DSC 角色
           href: dsc/overview/authoringAdvanced.md
-    - name: 开始使用
+    - name: 入门
       items:
         - name: DSC for Linux 入门
           href: dsc/getting-started/lnxGettingStarted.md
@@ -454,7 +454,7 @@
               href: dsc/managing-nodes/metaConfig4.md
             - name: 直接调用 DSC 资源方法
               href: dsc/managing-nodes/directCallResource.md
-    - name: 请求服务器
+    - name: 拉取服务器
       items:
         - name: 概念
           items:
@@ -504,13 +504,13 @@
           href: dsc/tutorials/bootstrapDsc.md
         - name: 配置 DSCAutomationHostEnabled 注册表项
           href: dsc/tutorials/DSCAutomationHostEnabled.md
-    - name: 疑难解答
+    - name: 故障排除
       items:
         - name: 已知问题
           href: dsc/troubleshooting/troubleshooting.md
         - name: 调试 DSC 资源
           href: dsc/troubleshooting/debugResource.md
-    - name: 引用
+    - name: 参考
       items:
         - name: Windows 内置资源
           items:
@@ -744,7 +744,7 @@
           items:
             - name: 命名帮助文件
               href: developer/module/naming-help-files.md
-            - name: 支持可更新的帮助
+            - name: 支持可更新帮助
               href: developer/module/supporting-updatable-help.md
               items:
                 - name: 可更新帮助概述

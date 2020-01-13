@@ -1,5 +1,5 @@
 ---
-title: Creating a Windows PowerShell Property Provider | Microsoft Docs
+title: 创建 Windows PowerShell 属性提供程序 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -12,130 +12,130 @@ helpviewer_keywords:
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
 ms.openlocfilehash: 9197f5635528e0f52cd08adde1c6bd69467725e8
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
-ms.translationtype: MT
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417481"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>创建 Windows PowerShell 属性提供程序
 
-This topic describes how to create a provider that enables the user to manipulate the properties of items in a data store. As a consequence, this type of provider is referred to as a Windows PowerShell property provider. For example, the Registry provider provided by Windows PowerShell handles registry key values as properties of the registry key item. This type of provider must add the [System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) interface to the implementation of the .NET class.
+本主题介绍如何创建一个提供程序，该提供程序使用户能够操作数据存储区中的项的属性。 因此，这种类型的提供程序称为 Windows PowerShell 属性提供程序。 例如，Windows PowerShell 提供的注册表提供程序将注册表项值作为该注册表项的属性进行处理。 这种类型的提供程序必须将[Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)接口添加到 .net 类的实现。
 
 > [!NOTE]
-> Windows PowerShell provides a template file that you can use to develop a Windows PowerShell provider. The TemplateProvider.cs file is available on the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> Windows PowerShell 提供了一个可用于开发 Windows PowerShell 提供程序的模板文件。 TemplateProvider.cs 文件位于适用于 Windows Vista 的 Microsoft Windows 软件开发工具包和 .NET Framework 3.0 运行时组件中。 有关下载说明，请参阅[如何安装 Windows powershell 和下载 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
 >
-> The downloaded template is available in the **\<PowerShell Samples>** directory. You should make a copy of this file and use the copy for creating a new Windows PowerShell provider, removing any functionality that you do not need.
+> 下载的模板在 **\<PowerShell 示例 >** 目录中提供。 应创建此文件的副本，并使用该副本创建新的 Windows PowerShell 提供程序，删除不需要的任何功能。
 >
-> For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
+> 有关其他 Windows PowerShell 提供程序实现的详细信息，请参阅[设计 Windows Powershell 提供程序](./designing-your-windows-powershell-provider.md)。
 
 > [!CAUTION]
-> The methods of your property provider should write any objects using the [System.Management.Automation.Provider.Cmdletprovider.Writepropertyobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WritePropertyObject) method.
+> 您的属性提供程序的方法应使用[Cmdletprovider. Writepropertyobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WritePropertyObject)方法编写任何对象。
 
-## <a name="defining-the-windows-powershell-provider"></a>Defining the Windows PowerShell provider
+## <a name="defining-the-windows-powershell-provider"></a>定义 Windows PowerShell 提供程序
 
-A property provider must create a .NET class that supports the [System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) interface. Here is the default class declaration from the TemplateProvider.cs file provided by Windows PowerShell.
+属性提供程序必须创建一个支持[Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)接口的 .net 类。 下面是 Windows PowerShell 提供的 TemplateProvider.cs 文件中的默认类声明。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyproviderclassdeclaration](Msh_samplestestcmdlets#testcmdletspropertyproviderclassdeclaration)]  -->
 
-## <a name="defining-base-functionality"></a>Defining Base Functionality
+## <a name="defining-base-functionality"></a>定义基本功能
 
-The [System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) interface can be attached to any of the provider base classes, with the exception of the [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) class. Add the base functionality that is required by the base class you are using. For more information about base classes, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
+可以将[Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)接口附加到任何提供程序基类，但[Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)类除外，这种情况下，可能会出现这种情况。 添加所使用的基类所需的基本功能。 有关基类的详细信息，请参阅[设计 Windows PowerShell 提供程序](./designing-your-windows-powershell-provider.md)。
 
-## <a name="retrieving-properties"></a>Retrieving Properties
+## <a name="retrieving-properties"></a>检索属性
 
-To retrieve properties, the provider must implement the [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty) method to support calls from the `Get-ItemProperty` cmdlet. This method retrieves the properties of the item located at the specified provider-internal path (fully-qualified).
+若要检索属性，提供程序必须实现[Ipropertycmdletprovider. Getproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)方法，以支持来自 `Get-ItemProperty` cmdlet 的调用。 此方法检索位于指定提供程序-内部路径（完全限定）中的项的属性。
 
-The `providerSpecificPickList` parameter indicates which properties to retrieve. If this parameter is `null` or empty, the method should retrieve all properties. In addition, [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty) writes an instance of a [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) object that represents a property bag of the retrieved properties. The method should return nothing.
+`providerSpecificPickList` 参数指示要检索的属性。 如果此参数 `null` 或为空，则该方法应检索所有属性。 此外， [Ipropertycmdletprovider. Getproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)将写入表示检索到的属性的属性包的[对象的](/dotnet/api/System.Management.Automation.PSObject)实例中的一个实例。 方法应不返回任何内容。
 
-It is recommended that the implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty) supports the wildcard expansion of property names for each element in the pick list. To do this, use the [System.Management.Automation.Wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern) class to perform the wildcard pattern matching.
+建议为选取列表中的每个元素的属性名称提供通配符扩展。 [Ipropertycmdletprovider. Getproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)的实现。 为此，请使用[Wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern)类来执行通配符模式匹配。
 
-Here is the default implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty) from the TemplateProvider.cs file provided by Windows PowerShell.
+下面是 Windows PowerShell 提供的 TemplateProvider.cs 文件中的[Ipropertycmdletprovider. Getproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)的默认实现。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyprovidergetproperty](Msh_samplestestcmdlets#testcmdletspropertyprovidergetproperty)]  -->
 
-#### <a name="things-to-remember-about-implementing-getproperty"></a>Things to Remember About Implementing GetProperty
+#### <a name="things-to-remember-about-implementing-getproperty"></a>有关实现 GetProperty 的注意事项
 
-The following conditions may apply to your implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty):
+以下情况可能适用于你的[Ipropertycmdletprovider. Getproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)实现：
 
-- When defining the provider class, a Windows PowerShell property provider might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In these cases, the implementation of the [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty) method needs to ensure that the path passed to the method meets the requirements of the specified capabilities. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) and [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) properties.
+- 定义提供程序类时，Windows PowerShell 属性提供程序可能会声明 ExpandWildcards、Filter、Include 或 Exclude 的提供程序功能， [Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)枚举。 在这些情况下， [Ipropertycmdletprovider. Getproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)方法的实现需要确保传递给方法的路径满足指定的功能的要求。）。 若要执行此操作，方法应访问相应的属性，例如， [Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude)和[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include)属性中的相应属性，例如 ""。
 
-- By default, overrides of this method should not retrieve a reader for objects that are hidden from the user unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. An error should be written if the path represents an item that is hidden from the user and [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is set to `false`.
+- 默认情况下，此方法的重写不应检索用户隐藏的对象的读取器，除非[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)属性设置为 `true`。 如果路径表示从用户和[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)中隐藏的项被设置为 `false`，则应写入错误，则为。
 
-## <a name="attaching-dynamic-parameters-to-the-get-itemproperty-cmdlet"></a>Attaching Dynamic Parameters to the Get-ItemProperty Cmdlet
+## <a name="attaching-dynamic-parameters-to-the-get-itemproperty-cmdlet"></a>将动态参数附加到 Set-itemproperty Cmdlet
 
-The `Get-ItemProperty` cmdlet might require additional parameters that are specified dynamically at runtime. To provide these dynamic parameters, the Windows PowerShell property provider must implement the [System.Management.Automation.Provider.Ipropertycmdletprovider.Getpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters) method. The `path` parameter indicates a fully-qualified provider-internal path, while the `providerSpecificPickList` parameter specifies the provider-specific properties entered on the command line. This parameter might be `null` or empty if the properties are piped to the cmdlet. In this case, this method returns an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. The Windows PowerShell runtime uses the returned object to add the parameters to the cmdlet.
+`Get-ItemProperty` cmdlet 可能需要在运行时动态指定的其他参数。 为了提供这些动态参数，Windows PowerShell 属性提供程序必须实现[Ipropertycmdletprovider. Getpropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters)方法。 `path` 参数指示完全限定的提供程序内部路径，而 `providerSpecificPickList` 参数指定在命令行上输入的特定于提供程序的属性。 如果将属性传递给 cmdlet，则此参数可能 `null` 或为空。 在这种情况下，此方法将返回一个对象，该对象具有与 cmdlet 类或[Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)对象类似的分析特性的属性和字段。 Windows PowerShell 运行时使用返回的对象将参数添加到 cmdlet。
 
-Here is the default implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Getpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters) from the TemplateProvider.cs file provided by Windows PowerShell.
+下面是 Windows PowerShell 提供的 TemplateProvider.cs 文件中的[Ipropertycmdletprovider. Getpropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters)的默认实现。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyprovidergetpropertydynamicparameters](Msh_samplestestcmdlets#testcmdletspropertyprovidergetpropertydynamicparameters)]  -->
 
-## <a name="setting-properties"></a>Setting Properties
+## <a name="setting-properties"></a>设置属性
 
-To set properties, the Windows PowerShell property provider must implement the [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) method to support calls from the `Set-ItemProperty` cmdlet. This method sets one or more properties of the item at the specified path, and overwrites the supplied properties as required. [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) also writes an instance of a [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) object that represents a property bag of the updated properties.
+若要设置属性，Windows PowerShell 属性提供程序必须实现[Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)方法，以支持来自 `Set-ItemProperty` cmdlet 的调用。 此方法设置指定路径处的项的一个或多个属性，并根据需要覆盖提供的属性。 [Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)还会写入一个表示已更新属性的属性包的[system.servicemodel 对象的](/dotnet/api/System.Management.Automation.PSObject)实例，该对象表示更新后的属性的属性包。
 
-Here is the default implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) from the TemplateProvider.cs file provided by Windows PowerShell.
+下面是由 Windows PowerShell 提供的 TemplateProvider.cs 文件中的[Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)的默认实现方式。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyprovidersetproperty](Msh_samplestestcmdlets#testcmdletspropertyprovidersetproperty)]  -->
 
-#### <a name="things-to-remember-about-implementing-set-itemproperty"></a>Things to Remember About Implementing Set-ItemProperty
+#### <a name="things-to-remember-about-implementing-set-itemproperty"></a>有关实现 Set-itemproperty 的注意事项
 
-The following conditions may apply to an implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty):
+以下情况可能适用于[Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)的实现：：（）
 
-- When defining the provider class, a Windows PowerShell property provider might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In these cases, the implementation of the [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) method must ensure that the path passed to the method meets the requirements of the specified capabilities. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) and [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) properties.
+- 定义提供程序类时，Windows PowerShell 属性提供程序可能会声明 ExpandWildcards、Filter、Include 或 Exclude 的提供程序功能， [Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)枚举。 在这些情况下， [Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)方法的实现必须确保传递给该方法的路径满足指定功能的要求。）。 若要执行此操作，方法应访问相应的属性，例如， [Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude)和[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include)属性中的相应属性，例如 ""。
 
-- By default, overrides of this method should not retrieve a reader for objects that are hidden from the user unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. An error should be written if the path represents an item that is hidden from the user and [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is set to `false`.
+- 默认情况下，此方法的重写不应检索用户隐藏的对象的读取器，除非[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)属性设置为 `true`。 如果路径表示从用户和[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)中隐藏的项被设置为 `false`，则应写入错误，则为。
 
-- Your implementation of the [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) method should call [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and verify its return value before making any changes to the data store. This method is used to confirm execution of an operation when a change is made to system state, for example, renaming files. [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) sends the name of the resource to be changed to the user, with the Windows PowerShell runtime and handling any command-line settings or preference variables in determining what should be displayed.
+- 在对数据存储进行任何更改之前，你的[Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)方法的实现应调用 Cmdletprovider，并验证其返回值是否为 " [ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) "。 此方法用于在对系统状态进行更改时（例如，重命名文件）确认操作的执行。 在确定应显示的内容时， [Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)将通过 Windows PowerShell 运行时并处理任何命令行设置或首选项变量，来向用户发送要更改的资源的名称。
 
-  After the call to [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, if potentially dangerous system modifications can be made, the [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) method should call the [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method. This method sends a confirmation message to the user to allow additional feedback to indicate that the operation should be continued.
+  在对 [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) 的调用返回 `true` 之后，如果可以进行可能有危险性的系统修改，则 [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) 方法应调用 [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) 方法，则为。 Ipropertycmdletprovider *方法应调用方法的调用方方法。 此方法向用户发送一条确认消息，以允许其他反馈指示该操作应继续。
 
-## <a name="attaching-dynamic-parameters-for-the-set-itemproperty-cmdlet"></a>Attaching Dynamic Parameters for the Set-ItemProperty Cmdlet
+## <a name="attaching-dynamic-parameters-for-the-set-itemproperty-cmdlet"></a>为 Set-itemproperty Cmdlet 附加动态参数
 
-The `Set-ItemProperty` cmdlet might require additional parameters that are specified dynamically at runtime. To provide these dynamic parameters, the Windows PowerShell property provider must implement the [System.Management.Automation.Provider.Ipropertycmdletprovider.Setpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetPropertyDynamicParameters) method. This method returns an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. The `null` value can be returned if no dynamic parameters are to be added.
+`Set-ItemProperty` cmdlet 可能需要在运行时动态指定的其他参数。 为了提供这些动态参数，Windows PowerShell 属性提供程序必须实现[Ipropertycmdletprovider. Setpropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetPropertyDynamicParameters)方法。 此方法返回一个对象，该对象具有与 cmdlet 类或[Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)对象类似的分析特性的属性和字段。 如果未添加任何动态参数，则可以返回 `null` 值。
 
-Here is the default implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Getpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters) from the TemplateProvider.cs file provided by Windows PowerShell.
+下面是 Windows PowerShell 提供的 TemplateProvider.cs 文件中的[Ipropertycmdletprovider. Getpropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters)的默认实现。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyprovidersetpropertydynamicparameters](Msh_samplestestcmdlets#testcmdletspropertyprovidersetpropertydynamicparameters)]  -->
 
-## <a name="clearing-properties"></a>Clearing Properties
+## <a name="clearing-properties"></a>清除属性
 
-To clear properties, the Windows PowerShell property provider must implement the [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) method to support calls from the `Clear-ItemProperty` cmdlet. This method sets one or more properties for the item located at the specified path.
+若要清除属性，Windows PowerShell 属性提供程序必须实现[Ipropertycmdletprovider. Clearproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)方法，以支持来自 `Clear-ItemProperty` cmdlet 的调用。 此方法设置位于指定路径的项的一个或多个属性。
 
-Here is the default implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) from the TemplateProvider.cs file provided by Windows PowerShell.
+下面是 Windows PowerShell 提供的 TemplateProvider.cs 文件中的[Ipropertycmdletprovider. Clearproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)的默认实现。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyproviderclearproperty](Msh_samplestestcmdlets#testcmdletspropertyproviderclearproperty)]  -->
 
-#### <a name="thing-to-remember-about-implementing-clearproperty"></a>Thing to Remember About Implementing ClearProperty
+#### <a name="thing-to-remember-about-implementing-clearproperty"></a>要记住如何实现 ClearProperty
 
-The following conditions may apply to your implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty):
+以下情况可能适用于你的[Ipropertycmdletprovider. Clearproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)实现：
 
-- When defining the provider class, a Windows PowerShell property provider might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In these cases, the implementation of the [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) method needs to ensure that the path passed to the method meets the requirements of the specified capabilities. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) and [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) properties.
+- 定义提供程序类时，Windows PowerShell 属性提供程序可能会声明 ExpandWildcards、Filter、Include 或 Exclude 的提供程序功能， [Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)枚举。 在这些情况下， [Ipropertycmdletprovider. Clearproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)方法的实现需要确保传递给方法的路径满足指定的功能的要求。）。 若要执行此操作，方法应访问相应的属性，例如， [Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude)和[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include)属性中的相应属性，例如 ""。
 
-- By default, overrides of this method should not retrieve a reader for objects that are hidden from the user unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. An error should be written if the path represents an item that is hidden from the user and [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is set to `false`.
+- 默认情况下，此方法的重写不应检索用户隐藏的对象的读取器，除非[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)属性设置为 `true`。 如果路径表示从用户和[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)中隐藏的项被设置为 `false`，则应写入错误，则为。
 
-- Your implementation of the [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) method should call [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and verify its return value before making any changes to the data store. This method is used to confirm execution of an operation before a change is made to system state, such as clearing content. [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) sends the name of the resource to be changed to the user, with the Windows PowerShell runtime taking into account any command line settings or preference variables in determining what should be displayed.
+- 在对数据存储进行任何更改之前，你的[Ipropertycmdletprovider 和 Clearproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)方法的实现应调用[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ，并验证其返回值的返回值。 此方法用于在更改系统状态之前确认操作的执行，例如清除内容。 [Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)发送要更改为用户的资源的名称，Windows PowerShell 运行时在确定应显示的内容时考虑了任何命令行设置或首选项变量。
 
-  After the call to [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, if potentially dangerous system modifications can be made, the [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) method should call the [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method. This method sends a confirmation message to the user to allow additional feedback to indicate that the potentially dangerous operation should be continued.
+  在对 [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) 的调用返回 `true` 之后，如果可以进行可能有危险性的系统修改，则 [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) 方法应调用 [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) 方法，则为。 Ipropertycmdletprovider. Clearproperty *方法应调用. Cmdletprovider 方法。 此方法会向用户发送一条确认消息，以允许其他反馈指示应该继续进行潜在的危险操作。
 
-## <a name="attaching-dynamic-parameters-to-the-clear-itemproperty-cmdlet"></a>Attaching Dynamic Parameters to the Clear-ItemProperty Cmdlet
+## <a name="attaching-dynamic-parameters-to-the-clear-itemproperty-cmdlet"></a>将动态参数附加到 Set-itemproperty Cmdlet
 
-The `Clear-ItemProperty` cmdlet might require additional parameters that are specified dynamically at runtime. To provide these dynamic parameters, the Windows PowerShell property provider must implement the [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters) method. This method returns an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. The `null` value can be returned if no dynamic parameters are to be added.
+`Clear-ItemProperty` cmdlet 可能需要在运行时动态指定的其他参数。 为了提供这些动态参数，Windows PowerShell 属性提供程序必须实现[Ipropertycmdletprovider. Clearpropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters)方法。 此方法返回一个对象，该对象具有与 cmdlet 类或[Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)对象类似的分析特性的属性和字段。 如果未添加任何动态参数，则可以返回 `null` 值。
 
-Here is the default implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters) from the TemplateProvider.cs file provided by Windows PowerShell.
+下面是 Windows PowerShell 提供的 TemplateProvider.cs 文件中的[Ipropertycmdletprovider. Clearpropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters)的默认实现。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyproviderclearpropertydynamicparameters](Msh_samplestestcmdlets#testcmdletspropertyproviderclearpropertydynamicparameters)]  -->
 
-## <a name="building-the-windows-powershell-provider"></a>Building the Windows PowerShell provider
+## <a name="building-the-windows-powershell-provider"></a>生成 Windows PowerShell 提供程序
 
-See [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+请参阅[如何注册 cmdlet、提供程序和主机应用程序](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
 
 ## <a name="see-also"></a>另请参阅
 
-[Windows PowerShell provider](./designing-your-windows-powershell-provider.md)
+[Windows PowerShell 提供程序](./designing-your-windows-powershell-provider.md)
 
-[Design Your Windows PowerShell provider](./designing-your-windows-powershell-provider.md)
+[设计你的 Windows PowerShell 提供程序](./designing-your-windows-powershell-provider.md)
 
-[Extending Object Types and Formatting](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[扩展对象类型和格式](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[如何注册 Cmdlet、提供程序和主机应用程序](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
