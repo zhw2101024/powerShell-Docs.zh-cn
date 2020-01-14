@@ -1,45 +1,31 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell,cmdlet
 title: ISEAddOnToolCollection 对象
-ms.openlocfilehash: 28ab9747e573b7a76ee655289b341870b1728bc2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e07a47169381307b50ac190165307c926b4ad94e
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030621"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737009"
 ---
-# <a name="the-iseaddontoolcollection-object"></a><span data-ttu-id="beebf-103">ISEAddOnToolCollection 对象</span><span class="sxs-lookup"><span data-stu-id="beebf-103">The ISEAddOnToolCollection Object</span></span>
+# <a name="the-iseaddontoolcollection-object"></a><span data-ttu-id="77f43-103">ISEAddOnToolCollection 对象</span><span class="sxs-lookup"><span data-stu-id="77f43-103">The ISEAddOnToolCollection Object</span></span>
 
-<span data-ttu-id="beebf-104">**ISEAddOnToolCollection** 对象是 **ISEAddOnTool** 对象的集合。</span><span class="sxs-lookup"><span data-stu-id="beebf-104">The **ISEAddOnToolCollection** object is a collection of **ISEAddOnTool** objects.</span></span> <span data-ttu-id="beebf-105">示例是 **$psISE.CurrentPowerShellTab.VerticalAddOnTools** 对象。</span><span class="sxs-lookup"><span data-stu-id="beebf-105">An example is the **$psISE.CurrentPowerShellTab.VerticalAddOnTools** object.</span></span>
+<span data-ttu-id="77f43-104">**ISEAddOnToolCollection** 对象是 **ISEAddOnTool** 对象的集合。</span><span class="sxs-lookup"><span data-stu-id="77f43-104">The **ISEAddOnToolCollection** object is a collection of **ISEAddOnTool** objects.</span></span> <span data-ttu-id="77f43-105">`$psISE.CurrentPowerShellTab.VerticalAddOnTools` 对象就是一个示例。</span><span class="sxs-lookup"><span data-stu-id="77f43-105">An example is the `$psISE.CurrentPowerShellTab.VerticalAddOnTools` object.</span></span>
 
-## <a name="methods"></a><span data-ttu-id="beebf-106">方法</span><span class="sxs-lookup"><span data-stu-id="beebf-106">Methods</span></span>
+## <a name="methods"></a><span data-ttu-id="77f43-106">方法</span><span class="sxs-lookup"><span data-stu-id="77f43-106">Methods</span></span>
 
-### <a name="add-name-controltype-isvisible-"></a><span data-ttu-id="beebf-107">Add\( Name、ControlType、\[IsVisible\]\)</span><span class="sxs-lookup"><span data-stu-id="beebf-107">Add\( Name, ControlType, \[IsVisible\] \)</span></span>
+### <a name="add-name-controltype-isvisible-"></a><span data-ttu-id="77f43-107">Add\( Name、ControlType、\[IsVisible\] \)</span><span class="sxs-lookup"><span data-stu-id="77f43-107">Add\( Name, ControlType, \[IsVisible\] \)</span></span>
 
-<span data-ttu-id="beebf-108">在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。</span><span class="sxs-lookup"><span data-stu-id="beebf-108">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="77f43-108">在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。</span><span class="sxs-lookup"><span data-stu-id="77f43-108">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="beebf-109">将新附加工具添加到集合。</span><span class="sxs-lookup"><span data-stu-id="beebf-109">Adds a new add-on tool to the collection.</span></span> <span data-ttu-id="beebf-110">它将返回新添加的附加工具。</span><span class="sxs-lookup"><span data-stu-id="beebf-110">It returns the newly added add-on tool.</span></span> <span data-ttu-id="beebf-111">在运行此命令之前，必须在本地计算机上安装附加工具并加载程序集。</span><span class="sxs-lookup"><span data-stu-id="beebf-111">Before you run this command, you must install the add-on tool on the local computer and load the assembly.</span></span>
+<span data-ttu-id="77f43-109">将新附加工具添加到集合。</span><span class="sxs-lookup"><span data-stu-id="77f43-109">Adds a new add-on tool to the collection.</span></span> <span data-ttu-id="77f43-110">它将返回新添加的附加工具。</span><span class="sxs-lookup"><span data-stu-id="77f43-110">It returns the newly added add-on tool.</span></span> <span data-ttu-id="77f43-111">在运行此命令之前，必须在本地计算机上安装附加工具并加载程序集。</span><span class="sxs-lookup"><span data-stu-id="77f43-111">Before you run this command, you must install the add-on tool on the local computer and load the assembly.</span></span>
 
-<span data-ttu-id="beebf-112">**Name** - 字符串，指定添加到 Windows PowerShell ISE 的附加工具的显示名称。</span><span class="sxs-lookup"><span data-stu-id="beebf-112">**Name** - String Specifies the display name of the add-on tool that is added to Windows PowerShell ISE.</span></span>
+<span data-ttu-id="77f43-112">**Name** - 字符串，指定添加到 Windows PowerShell ISE 的附加工具的显示名称。</span><span class="sxs-lookup"><span data-stu-id="77f43-112">**Name** - String Specifies the display name of the add-on tool that is added to Windows PowerShell ISE.</span></span>
 
-<span data-ttu-id="beebf-113">**ControlType** - 类型，指定要添加的控件。</span><span class="sxs-lookup"><span data-stu-id="beebf-113">**ControlType** -Type Specifies the control that is added.</span></span>
+<span data-ttu-id="77f43-113">**ControlType** - 类型，指定要添加的控件。</span><span class="sxs-lookup"><span data-stu-id="77f43-113">**ControlType** -Type Specifies the control that is added.</span></span>
 
-<span data-ttu-id="beebf-114">**\[IsVisible\]** - 可选布尔值，如果设置为 **$true**，可立即在关联的工具窗格中看到附加工具。</span><span class="sxs-lookup"><span data-stu-id="beebf-114">**\[IsVisible\]** - optional Boolean If set to **$true**, the add-on tool is immediately visible in the associated tool pane.</span></span>
-
-```powershell
-# Load a DLL with an add-on and then add it to the ISE
-[reflection.assembly]::LoadFile("c:\test\ISESimpleSolution\ISESimpleSolution.dll")
-$psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSolution.Solution], $true)
-```
-
-### <a name="remove-item-"></a><span data-ttu-id="beebf-115">Remove\( Item \)</span><span class="sxs-lookup"><span data-stu-id="beebf-115">Remove\( Item \)</span></span>
-
-<span data-ttu-id="beebf-116">在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。</span><span class="sxs-lookup"><span data-stu-id="beebf-116">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
-
-<span data-ttu-id="beebf-117">从集合中删除指定的附加工具。</span><span class="sxs-lookup"><span data-stu-id="beebf-117">Removes the specified add-on tool from the collection.</span></span>
-
-<span data-ttu-id="beebf-118">**Item** - Microsoft.PowerShell.Host.ISE.ISEAddOnTool，指定要从 Windows PowerShell ISE 删除的对象。</span><span class="sxs-lookup"><span data-stu-id="beebf-118">**Item** - Microsoft.PowerShell.Host.ISE.ISEAddOnTool Specifies the object to be removed from Windows PowerShell ISE.</span></span>
+<span data-ttu-id="77f43-114">**\[IsVisible\]** - 可选布尔值，如果设置为 `$true`，可立即在关联的工具窗格中看到附加工具。</span><span class="sxs-lookup"><span data-stu-id="77f43-114">**\[IsVisible\]** - optional Boolean If set to `$true`, the add-on tool is immediately visible in the associated tool pane.</span></span>
 
 ```powershell
 # Load a DLL with an add-on and then add it to the ISE
@@ -47,13 +33,27 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSolution.Solution], $true)
 ```
 
-### <a name="setselectedpowershelltab-pstab-"></a><span data-ttu-id="beebf-119">SetSelectedPowerShellTab\( psTab \)</span><span class="sxs-lookup"><span data-stu-id="beebf-119">SetSelectedPowerShellTab\( psTab \)</span></span>
+### <a name="remove-item-"></a><span data-ttu-id="77f43-115">Remove\( Item \)</span><span class="sxs-lookup"><span data-stu-id="77f43-115">Remove\( Item \)</span></span>
 
-<span data-ttu-id="beebf-120">在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。</span><span class="sxs-lookup"><span data-stu-id="beebf-120">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="77f43-116">在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。</span><span class="sxs-lookup"><span data-stu-id="77f43-116">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="beebf-121">选择 **psTab** 参数指定的 PowerShell 选项卡。</span><span class="sxs-lookup"><span data-stu-id="beebf-121">Selects the PowerShell tab that the **psTab** parameter specifies.</span></span>
+<span data-ttu-id="77f43-117">从集合中删除指定的附加工具。</span><span class="sxs-lookup"><span data-stu-id="77f43-117">Removes the specified add-on tool from the collection.</span></span>
 
-<span data-ttu-id="beebf-122">**psTab** - Microsoft.PowerShell.Host.ISE.PowerShellTab，要选择的 PowerShell 选项卡。</span><span class="sxs-lookup"><span data-stu-id="beebf-122">**psTab** - Microsoft.PowerShell.Host.ISE.PowerShellTab The PowerShell tab to select.</span></span>
+<span data-ttu-id="77f43-118">**Item** - Microsoft.PowerShell.Host.ISE.ISEAddOnTool，指定要从 Windows PowerShell ISE 删除的对象。</span><span class="sxs-lookup"><span data-stu-id="77f43-118">**Item** - Microsoft.PowerShell.Host.ISE.ISEAddOnTool Specifies the object to be removed from Windows PowerShell ISE.</span></span>
+
+```powershell
+# Load a DLL with an add-on and then add it to the ISE
+[reflection.assembly]::LoadFile("c:\test\ISESimpleSolution\ISESimpleSolution.dll")
+$psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSolution.Solution], $true)
+```
+
+### <a name="setselectedpowershelltab-pstab-"></a><span data-ttu-id="77f43-119">SetSelectedPowerShellTab\( psTab \)</span><span class="sxs-lookup"><span data-stu-id="77f43-119">SetSelectedPowerShellTab\( psTab \)</span></span>
+
+<span data-ttu-id="77f43-120">在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。</span><span class="sxs-lookup"><span data-stu-id="77f43-120">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+
+<span data-ttu-id="77f43-121">选择 **psTab** 参数指定的 PowerShell 选项卡。</span><span class="sxs-lookup"><span data-stu-id="77f43-121">Selects the PowerShell tab that the **psTab** parameter specifies.</span></span>
+
+<span data-ttu-id="77f43-122">**psTab** - Microsoft.PowerShell.Host.ISE.PowerShellTab，要选择的 PowerShell 选项卡。</span><span class="sxs-lookup"><span data-stu-id="77f43-122">**psTab** - Microsoft.PowerShell.Host.ISE.PowerShellTab The PowerShell tab to select.</span></span>
 
 ```powershell
 $newTab = $psISE.PowerShellTabs.Add()
@@ -61,13 +61,13 @@ $newTab = $psISE.PowerShellTabs.Add()
 $newTab.DisplayName = 'Brand New Tab'
 ```
 
-### <a name="remove-pstab-"></a><span data-ttu-id="beebf-123">Remove\( psTab \)</span><span class="sxs-lookup"><span data-stu-id="beebf-123">Remove\( psTab \)</span></span>
+### <a name="remove-pstab-"></a><span data-ttu-id="77f43-123">Remove\( psTab \)</span><span class="sxs-lookup"><span data-stu-id="77f43-123">Remove\( psTab \)</span></span>
 
-<span data-ttu-id="beebf-124">在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。</span><span class="sxs-lookup"><span data-stu-id="beebf-124">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="77f43-124">在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。</span><span class="sxs-lookup"><span data-stu-id="77f43-124">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="beebf-125">删除 **psTab** 参数指定的 PowerShell 选项卡。</span><span class="sxs-lookup"><span data-stu-id="beebf-125">Removes the PowerShell tab that the **psTab** parameter specifies.</span></span>
+<span data-ttu-id="77f43-125">删除 **psTab** 参数指定的 PowerShell 选项卡。</span><span class="sxs-lookup"><span data-stu-id="77f43-125">Removes the PowerShell tab that the **psTab** parameter specifies.</span></span>
 
-<span data-ttu-id="beebf-126">**psTab** - Microsoft.PowerShell.Host.ISE.PowerShellTab，要删除的 PowerShell 选项卡。</span><span class="sxs-lookup"><span data-stu-id="beebf-126">**psTab** - Microsoft.PowerShell.Host.ISE.PowerShellTab The PowerShell tab to remove.</span></span>
+<span data-ttu-id="77f43-126">**psTab** - Microsoft.PowerShell.Host.ISE.PowerShellTab，要删除的 PowerShell 选项卡。</span><span class="sxs-lookup"><span data-stu-id="77f43-126">**psTab** - Microsoft.PowerShell.Host.ISE.PowerShellTab The PowerShell tab to remove.</span></span>
 
 ```powershell
 $newTab = $psISE.PowerShellTabs.Add()
@@ -77,8 +77,8 @@ sleep 5
 $psISE.PowerShellTabs.Remove($newTab)
 ```
 
-## <a name="see-also"></a><span data-ttu-id="beebf-127">另请参阅</span><span class="sxs-lookup"><span data-stu-id="beebf-127">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="77f43-127">另请参阅</span><span class="sxs-lookup"><span data-stu-id="77f43-127">See Also</span></span>
 
-- [<span data-ttu-id="beebf-128">PowerShellTab 对象</span><span class="sxs-lookup"><span data-stu-id="beebf-128">The PowerShellTab Object</span></span>](The-PowerShellTab-Object.md)
-- [<span data-ttu-id="beebf-129">Windows PowerShell ISE 脚本对象模型的用途</span><span class="sxs-lookup"><span data-stu-id="beebf-129">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [<span data-ttu-id="beebf-130">ISE 对象模型层次结构</span><span class="sxs-lookup"><span data-stu-id="beebf-130">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)
+- [<span data-ttu-id="77f43-128">PowerShellTab 对象</span><span class="sxs-lookup"><span data-stu-id="77f43-128">The PowerShellTab Object</span></span>](The-PowerShellTab-Object.md)
+- [<span data-ttu-id="77f43-129">Windows PowerShell ISE 脚本对象模型的用途</span><span class="sxs-lookup"><span data-stu-id="77f43-129">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [<span data-ttu-id="77f43-130">ISE 对象模型层次结构</span><span class="sxs-lookup"><span data-stu-id="77f43-130">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)
