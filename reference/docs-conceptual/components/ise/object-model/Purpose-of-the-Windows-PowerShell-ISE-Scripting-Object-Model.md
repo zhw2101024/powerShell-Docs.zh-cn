@@ -1,13 +1,13 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell,cmdlet
 title: Windows PowerShell ISE 脚本对象模型的用途
-ms.openlocfilehash: e59593ef06911c709e92fa7a1eabd96d2636ca30
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1f48df112bd19297baa311116e79d3d7603d7c81
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030910"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736226"
 ---
 # <a name="purpose-of-the-windows-powershell-ise-scripting-object-model"></a>Windows PowerShell ISE 脚本对象模型的用途
 
@@ -17,12 +17,13 @@ ms.locfileid: "67030910"
 
 对象模型可用于修改应用程序设置和选项。 例如，可以如下所示修改它们：
 
-- 可以更改错误、警告、详细输出和调试输出的颜色。
-- 可以获取或设置“命令”窗格、“输出”窗格以及“脚本”窗格的背景色。
-- 可以设置“输出”窗格的前景色。
-- 可以设置 Windows PowerShell ISE 的字体名称和字体大小。
-- 可以配置警告。 此设置包含在多个 PowerShell 选项卡中打开一个文件或者在保存文件之前运行该文件中的脚本时将发出的警告。
-- 你可以在“脚本”窗格和“输出”窗格并排显示的视图与“脚本”窗格位于“输出”窗格之上的视图之间进行切换。 你可以将“命令”窗格停靠在“输出”窗格的底部或之上。
+- 更改错误、警告、详细输出和调试输出的颜色。
+- 获取或设置“命令”窗格、“输出”窗格以及“脚本”窗格的背景色。
+- 设置“输出”窗格的前景色。
+- 设置 Windows PowerShell ISE 的字体名称和字体大小。
+- 配置警告。 此设置包含在多个 PowerShell 选项卡中打开一个文件或者在保存文件之前运行该文件中的脚本时将发出的警告。
+- 在“脚本”窗格和“输出”窗格并排显示的视图与“脚本”窗格位于“输出”窗格之上的视图之间进行切换。
+- 将“命令”窗格停靠在“输出”窗格的底部或之上。
 
 ## <a name="enhancing-the-functionality-of-windows-powershell-ise"></a>增强 Windows PowerShell ISE 的功能
 

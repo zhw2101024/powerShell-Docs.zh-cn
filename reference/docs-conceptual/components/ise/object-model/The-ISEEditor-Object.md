@@ -1,13 +1,13 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell,cmdlet
 title: ISEEditor 对象
-ms.openlocfilehash: 2d4c3d941035384c591ca57e809c0e3a9b852f5c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: cb63acebc1a8bb9fa6cc07199088ae0d5441bc91
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62086759"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736183"
 ---
 # <a name="the-iseeditor-object"></a>ISEEditor 对象
 
@@ -69,7 +69,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
 在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
-如果编辑器对象的 **CanGoToMatch** 属性是 **$true**，当脱字号直接位于左括号、中括号或大括号 - \(、\[、{ - 或直接位于右括号、中括号或大括号 - \)、\]、}。  脱字号位于开始字符之前或结束字符之后。 如果 **CanGoToMatch** 属性是 **$false**，则此方法不执行任何操作。
+如果编辑器对象的 CanGoToMatch  属性是 `$true`，当脱字号直接位于左括号、中括号或大括号 - `(`、`[`、`{` 之前或直接位于右括号、中括号或大括号 - `)`、`]`、`}` 之后。 脱字号位于开始字符之前或结束字符之后。 如果 CanGoToMatch  属性是 `$false`，则此方法不执行任何操作。
 
 ```powershell
 # Goes to the matching character if CanGoToMatch() is $true
@@ -141,13 +141,13 @@ $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 ```
 
-## <a name="properties"></a>“属性”
+## <a name="properties"></a>属性
 
 ### <a name="cangotomatch"></a>CanGoToMatch
 
 在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
-只读布尔值属性，指示脱字号是否位于小括号、中括号或大括号（即 \(\)、\[\]、{}）旁边。 如果脱字号直接位于开始字符之前或直接位于结束字符之后，则此属性值是 **$true**。 否则，是 **$false**。
+只读布尔值属性，指示脱字号是否位于小括号、中括号或大括号（即 `()`、`[]`、`{}`）旁边。 如果脱字号直接位于开始字符之前或直接位于结束字符之后，则此属性值是 `$true`。 否则为 `$false`。
 
 ```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace

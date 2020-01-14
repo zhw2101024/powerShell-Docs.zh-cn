@@ -1,17 +1,17 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell,cmdlet
 title: ISEMenuItemCollection 对象
-ms.openlocfilehash: b3795af1a6ed61ed6e371e5fc20cc4e95f643fd4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 39e8547c9b19ba323d4b224a46eda416542b2807
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030540"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736166"
 ---
 # <a name="the-isemenuitemcollection-object"></a>ISEMenuItemCollection 对象
 
-**ISEMenuItemCollection** 对象是 **ISEMenuItem** 对象的集合。 它是 Microsoft.PowerShell.Host.ISE.ISEOptions 类的实例。 一个示例是用于在 Windows PowerShell® 集成脚本环境 (ISE) 中自定义“加载项”  菜单的 **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** 对象。
+**ISEMenuItemCollection** 对象是 **ISEMenuItem** 对象的集合。 它是 **Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection** 类的实例。 一个示例是用于在 Windows PowerShell® 集成脚本环境 (ISE) 中自定义“加载项”  菜单的 `$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus` 对象。
 
 ## <a name="method"></a>方法
 
@@ -27,7 +27,7 @@ ms.locfileid: "67030540"
 
 **Shortcut** 此操作的键盘快捷方式。
 
-**Returns** 刚添加的 ISEMenuItem 对象。
+**Returns** 刚添加的 ISEMenuItem  对象。
 
 ```powershell
 # Create an Add-ons menu with an fast access key and a shortcut.

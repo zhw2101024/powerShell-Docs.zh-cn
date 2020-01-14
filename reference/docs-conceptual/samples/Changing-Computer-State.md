@@ -1,27 +1,28 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/23/2019
 keywords: powershell,cmdlet
 title: 更改计算机状态
-ms.openlocfilehash: de3e31e358548943a015b7bba275c4461202b20f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9278df55ba027134a61c8ed4e89b5b839d460b29
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70386288"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736907"
 ---
 # <a name="changing-computer-state"></a>更改计算机状态
 
-若要在 Windows PowerShell 中重置计算机，请使用标准命令行工具、WMI 或 CIM 类。 尽管你使用 Windows PowerShell 仅仅是为了运行该工具，但了解如何在 Windows PowerShell 中更改计算机的电源状态将阐明有关在 Windows PowerShell 中使用外部工具的一些重要详细信息。
+若要在 PowerShell 中重置计算机，请使用标准命令行工具、WMI 或 CIM 类。
+尽管你使用 PowerShell 仅仅是为了运行该工具，但了解如何在 PowerShell 中更改计算机的电源状态将阐明有关在 PowerShell 中使用外部工具的一些重要详细信息。
 
 ## <a name="locking-a-computer"></a>锁定计算机
 
 使用标准可用工具直接锁定计算机的唯一方法是调用 **user32.dll** 中的 **LockWorkstation()** 函数：
 
-```
+```powershell
 rundll32.exe user32.dll,LockWorkStation
 ```
 
-此命令将立即锁定工作站。 它使用 *rundll32.exe*，后者运行 Windows DLL（并保存其库以便重复使用）以运行 user32.dll（Windows 管理函数的库）。
+此命令将立即锁定工作站。 它使用 rundll32.exe  ，后者运行 Windows DLL（并保存其库以便重复使用）以运行 `user32.dll`（Windows 管理函数的库）。
 
 如果在启用了“快速用户切换”时锁定工作站（例如在 Windows XP 中），则计算机将显示用户登录屏幕，而不会启动当前用户的屏幕保护程序。
 
@@ -29,33 +30,28 @@ rundll32.exe user32.dll,LockWorkStation
 
 ## <a name="logging-off-the-current-session"></a>注销当前会话
 
-可以使用多种不同的方法来注销本地系统上的会话。 最简单的方法是使用远程桌面/终端服务命令行工具 **logoff.exe**（若要了解有关详细信息，请在 Windows PowerShell 提示符处键入 **logoff /?** ）。 若要注销当前活动会话，请键入 **logoff** 而不带参数。
+可以使用多种不同的方法来注销本地系统上的会话。 最简单的方法是使用远程桌面/终端服务命令行工具 logoff.exe  （若要了解有关详细信息，请在 PowerShell 提示符处键入 `logoff /?`）。 若要注销当前活动会话，请键入 `logoff` 而不带参数。
 
 你还可以使用具 **shutdown.exe** 工具及其 logoff 选项：
 
-```
+```powershell
 shutdown.exe -l
 ```
 
-另一种方法是使用 WMI。 Win32_OperatingSystem 类具有 Win32Shutdown 方法。 调用具有 0 标志的方法将启动注销：
+另一种方法是使用 WMI。 Win32_OperatingSystem  类具有 Shutdown  方法。
+调用具有 0 标志的方法将启动注销：
+
+有关 Shutdown  方法的详细信息，请参阅 [Win32_OperatingSystem 类的 Shutdown 方法](/windows/win32/cimwin32prov/shutdown-method-in-class-win32-operatingsystem)
 
 ```powershell
-(Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(0)
-```
-
-若要了解有关详细信息和 Win32Shutdown 方法的其他功能，请参阅 MSDN 中的“Win32_OperatingSystem 类的 Win32Shutdown 方法”。
-
-最后，可以将 CIM 用于同一 Win32_OperatingSystem 类，如上面的 WMI 方法中所述。
-
-```powershell
-Get-CIMInstance -Classname Win32_OperatingSystem | Invoke-CimMethod -MethodName Shutdown
+Get-CimInstance -Classname Win32_OperatingSystem | Invoke-CimMethod -MethodName Shutdown
 ```
 
 ## <a name="shutting-down-or-restarting-a-computer"></a>关闭或重启计算机
 
-关闭和重启计算机通常是相同类型的任务。 关闭计算机的工具通常也可以重启计算机，反之亦然。 从 Windows PowerShell 重启计算机有两个直接的选项。 使用 Tsshutdn.exe 或 Shutdown.exe 及其相应参数。 你可以从 **tsshutdn.exe /?** 或 **shutdown.exe /?** 获取详细的使用情况信息。
+关闭和重启计算机通常是相同类型的任务。 关闭计算机的工具通常也可以重启计算机，反之亦然。 从 PowerShell 重启计算机有两个直接的选项。 使用 tsshutdn.exe  或 shutdown.exe  及其相应参数。 你可以从 `tsshutdn.exe /?` 或 `shutdown.exe /?` 获取详细的使用信息。
 
-也可以直接从 Windows PowerShell 执行关闭或重启操作。
+也可以直接从 PowerShell 执行关闭和重启操作。
 
 要关闭计算机，请使用 Stop-Computer 命令
 

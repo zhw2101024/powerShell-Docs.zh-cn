@@ -1,27 +1,27 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell,cmdlet
 title: ISEFileCollection 对象
-ms.openlocfilehash: 96db51ee921cc0fa34803091d563bc6e118643b6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4192afa9dc91d9ea4c4c084d3ba0175483620229
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030515"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736209"
 ---
 # <a name="the-isefilecollection-object"></a>ISEFileCollection 对象
 
-**ISEFileCollection** 对象是 **ISEFile** 对象的集合。 例如，$psISE.CurrentPowerShellTab.Files 集合。
+**ISEFileCollection** 对象是 **ISEFile** 对象的集合。 `$psISE.CurrentPowerShellTab.Files` 集合就是一个示例。
 
 ## <a name="methods"></a>方法
 
-### <a name="add-fullpath-"></a>Add\( \[fullPath\] \)
+### <a name="add-fullpath-"></a>Add\( \[FullPath\] \)
 
 在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
-创建并返回一个新的未命名文件，并将其添加到集合中。 新创建的文件的 **IsUntitled** 属性为 **$true**。
+创建并返回一个新的未命名文件，并将其添加到集合中。 新创建的文件的 IsUntitled  属性为 `$true`。
 
-**\[fullPath\]** - 可选字符串，表示文件的完全指定路径。 如果包含 **fullPath** 参数和相对路径，或者如果你使用文件名而不是完整路径，则会生成异常。
+**\[FullPath\]** - 可选字符串，表示文件的完全指定路径。 如果包含 **FullPath** 参数和相对路径，或者如果你使用文件名而不是完整路径，则会生成异常。
 
 ```powershell
 # Adds a new untitled file to the collection of files in the current PowerShell tab.
@@ -39,7 +39,7 @@ $psISE.CurrentPowerShellTab.Files.Add("$pshome\Examples\profile.ps1")
 
 **File** - 字符串，表示要从集合中删除的 ISEFile 文件。 如果尚未保存该文件，此方法将引发异常。 使用 **Force** 开关参数强制删除未保存的文件。
 
-**\[Force\]** - 可选布尔值，如果设置为 **$true**，即使在最后一次使用后尚未保存文件，也会授予权限来删除该文件。 默认值为 **$false**。
+**\[Force\]** - 可选布尔值，如果设置为 `$true`，即使在最后一次使用后尚未保存文件，也会授予权限来删除该文件。 默认为 `$false`。
 
 ```powershell
 # Removes the first opened file from the file collection associated with the current PowerShell tab.
@@ -56,9 +56,9 @@ $psISE.CurrentPowerShellTab.Files.Remove($firstfile, $true)
 
 在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
-选择由 **selectedFile** 参数指定的文件。
+选择由 SelectedFile  参数指定的文件。
 
-**selectedFile** - Microsoft.PowerShell.Host.ISE.ISEFile，要选择的 ISEFile 文件。
+SelectedFile  - Microsoft.PowerShell.Host.ISE.ISEFile，要选择的 ISEFile 文件。
 
 ```powershell
 # Selects the specified file.

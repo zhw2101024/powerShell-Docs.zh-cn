@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 快速入门 - 使用 DSC 创建网站
-ms.openlocfilehash: d98607939ccd3cc5e660936d8c0a6d54fce7d65f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 08ca25604998ce8c913ef8112b5342f2e0216b6e
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71955064"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75416133"
 ---
-> 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
+# <a name="quickstart---create-a-website-with-desired-state-configuration-dsc"></a>快速入门 - 使用 Desired State Configuration (DSC) 创建网站
 
-# <a name="quickstart---create-a-website-with-dsc"></a>快速入门 - 使用 DSC 创建网站
+> 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
 本练习演示创建和应用 Desired State Configuration (DSC) 配置的完整过程。
 我们使用的示例可确保服务器启用了 `Web-Server`(IIS) 功能，并且该服务器的 `inetpub\wwwroot` 目录中存在一个简单“Hello World”网站的内容。
@@ -70,11 +70,11 @@ Configuration WebsiteTest {
 }
 ```
 
-将该文件另存为 `WebsiteTest.ps1`。
+将文件另存为 `WebsiteTest.ps1`。
 
 你会发现它类似于 PowerShell 函数，在函数名称之前添加了关键字 **Configuration**。
 
-**节点**块指定要配置的目标节点，在本示例中为 `localhost`。
+“节点”块指定要配置的目标节点  。 在本例中为 `localhost`。
 
 此配置调用两个 [resource](../resources/resources.md)、**WindowsFeature** 和 **File**。
 资源负责确保目标节点处于由配置定义的状态。
@@ -113,6 +113,9 @@ Mode                LastWriteTime         Length Name
 
 `Start-DscConfiguration` cmdlet 通知作为 DSC 引擎的[本地配置管理器 (LCM)](../managing-nodes/metaConfig.md)应用配置。
 LCM 的工作是调用 DSC 资源以应用配置。
+
+> [!NOTE]
+> 即使在运行 `localhost` 配置的情况下，也需要将 Windows 配置为接收 PowerShell 远程命令，以允许 DSC 运行。 在提升的 PowerShell 终端中运行 `Set-WsManQuickConfig -Force`，即可轻松地正确配置环境。
 
 在 PowerShell 控制台中，导航到保存配置的同一文件夹，并运行以下命令：
 

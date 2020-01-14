@@ -2,12 +2,12 @@
 ms.date: 08/15/2019
 keywords: dsc,powershell,配置,安装程序
 title: 适用于 Windows 的 Desired State Configuration (DSC) 入门
-ms.openlocfilehash: a9346b96693acdbad9bacbd4b6ca85971e17a3d1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2add2c936e60c0c9446bf4b398fbf7b4bd6407f7
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417764"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75416161"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-windows"></a>适用于 Windows 的 Desired State Configuration (DSC) 入门
 
@@ -31,8 +31,7 @@ ms.locfileid: "74417764"
 
 ## <a name="installing-dsc"></a>安装 DSC
 
-PowerShell Desired State Configuration 包含在 Windows 中，并通过 Windows Management Framework 进行更新。
-最新版本为 [Windows Management Framework 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)。
+PowerShell Desired State Configuration 包含在 Windows 中，并通过 Windows Management Framework 进行更新。 最新版本为 [Windows Management Framework 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)。
 
 > [!NOTE]
 > 无需启用 Windows Server 功能“DSC 服务”，即可使用 DSC 管理计算机。
@@ -44,7 +43,7 @@ PowerShell Desired State Configuration 包含在 Windows 中，并通过 Windows
 
 ### <a name="creating-a-configuration-mof-document"></a>创建配置 MOF 文档
 
-Windows PowerShell Configuration 关键字用于创建配置。
+Windows PowerShell `Configuration` 关键字用于创建配置。
 下面逐步介绍了如何使用 Windows PowerShell 创建配置文档。
 
 #### <a name="define-a-configuration-and-generate-the-configuration-document"></a>定义配置并生成配置文档：
@@ -71,41 +70,57 @@ Configuration EnvironmentVariable_Path
 
 EnvironmentVariable_Path -OutputPath:"C:\EnvironmentVariable_Path"
 ```
+
 #### <a name="install-a-module-containing-dsc-resources"></a>安装包含 DSC 资源的模块
 
 Windows PowerShell Desired State Configuration 有包含 DSC 资源的内置模块。
 也可以使用 PowerShellGet cmdlet 从 PowerShell 库等外部源加载模块。
 
-`Install-Module 'PSDscResources' -Verbose`
+```PowerShell
+Install-Module 'PSDscResources' -Verbose
+```
 
 #### <a name="apply-the-configuration-to-the-machine"></a>将配置应用于计算机
 
+> [!NOTE]
+> 即使在运行 `localhost` 配置的情况下，也需要将 Windows 配置为接收 PowerShell 远程命令，以允许 DSC 运行。 在提升的 PowerShell 终端中运行 `Set-WsManQuickConfig -Force`，即可轻松地正确配置环境。
+
 可以使用 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet，将配置文档（MOF 文件）应用于计算机。
 
-`Start-DscConfiguration -Path 'C:\EnvironmentVariable_Path' -Wait -Verbose`
+```powershell
+Start-DscConfiguration -Path 'C:\EnvironmentVariable_Path' -Wait -Verbose
+```
 
 #### <a name="get-the-current-state-of-the-configuration"></a>获取配置的当前状态
 
 [Get-DscConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) cmdlet 可查询计算机的当前状态，并返回配置的当前值。
 
-`Get-DscConfiguration`
+```powershell
+Get-DscConfiguration
+```
 
 [Get-DscLocalConfigurationManager](/powershell/module/psdesiredstateconfiguration/get-dscLocalConfigurationManager) cmdlet 可返回应用于计算机的当前元配置。
 
-`Get-DscLocalConfigurationManager`
+```powershell
+Get-DscLocalConfigurationManager
+```
 
 #### <a name="remove-the-current-configuration-from-a-machine"></a>从计算机中删除当前配置
 
 [Remove-DscConfigurationDocument](/powershell/module/psdesiredstateconfiguration/remove-dscconfigurationdocument)
 
-`Remove-DscConfigurationDocument -Stage Current -Verbose`
+```powershell
+Remove-DscConfigurationDocument -Stage Current -Verbose
+```
 
 #### <a name="configure-settings-in-local-configuration-manager"></a>在本地配置管理器中配置设置
 
 使用 [Set-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) cmdlet 将元配置 MOF 文件应用于计算机。
 需要元配置 MOF 的路径。
 
-`Set-DSCLocalConfigurationManager -Path 'c:\metaconfig\localhost.meta.mof' -Verbose`
+```powershell
+Set-DSCLocalConfigurationManager -Path 'c:\metaconfig\localhost.meta.mof' -Verbose
+```
 
 ## <a name="windows-powershell-desired-state-configuration-log-files"></a>Windows PowerShell Desired State Configuration 日志文件
 

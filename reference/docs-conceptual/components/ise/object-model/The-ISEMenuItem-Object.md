@@ -1,19 +1,20 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell,cmdlet
 title: ISEMenuItem 对象
-ms.openlocfilehash: a513a3e9f2eb97f3955fa817faedbcbf4e0ed018
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c3ffe6e8f0b28987543fe0a873c552292dc5158a
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028935"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736975"
 ---
 # <a name="the-isemenuitem-object"></a>ISEMenuItem 对象
 
-**ISEMenuItem** 对象是 Microsoft.PowerShell.Host.ISE.ISEMenuItem 类的实例。 “**加载项**”菜单上的所有对象都是 **Microsoft.PowerShell.Host.ISE.ISEMenuItem** 类的实例。
+ISEMenuItem 对象是 Microsoft.PowerShell.Host.ISE.ISEMenuItem 类的实例。  
+“**加载项**”菜单上的所有对象都是 **Microsoft.PowerShell.Host.ISE.ISEMenuItem** 类的实例。
 
-## <a name="properties"></a>“属性”
+## <a name="properties"></a>属性
 
 ### <a name="displayname"></a>DisplayName
 

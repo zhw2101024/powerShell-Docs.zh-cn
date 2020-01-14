@@ -2,17 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 嵌套配置
-ms.openlocfilehash: 54162cd72d2d1e7773e3be636bfa681329854498
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 07e4fb5b9d406153d2fbb4285e28b8d1f0dfdcf5
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954554"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75417869"
 ---
 # <a name="nesting-dsc-configurations"></a>嵌套 DSC 配置
 
-嵌套配置（也称为复合配置）是在其他配置中进行调用的配置，就像它是资源一样。
-两个配置必须在同一文件中定义。
+嵌套配置（也称为复合配置）是在其他配置中进行调用的配置，就像它是资源一样。 两个配置必须在同一文件中定义。
 
 让我们看一个简单的示例：
 
@@ -30,12 +29,11 @@ Configuration FileConfig
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
     File FileTest
-       {
-           SourcePath = $CopyFrom
-           DestinationPath = $CopyTo
-           Ensure = 'Present'
-       }
-
+    {
+        SourcePath = $CopyFrom
+        DestinationPath = $CopyTo
+        Ensure = 'Present'
+    }
 }
 
 Configuration NestedFileConfig
@@ -51,9 +49,9 @@ Configuration NestedFileConfig
 }
 ```
 
-在这个示例中，`FileConfig` 采用两个强制参数 **CopyFrom** 和 **CopyTo**，它们在 `File` 资源块中用作 **SourcePath** 和 **DestinationPath** 属性的值。
-`NestedConfig` 配置调用 `FileConfig`，就像它是资源一样。
-`NestedConfig` 资源块中的属性（**CopyFrom** 和 **CopyTo**）是 `FileConfig` 配置的参数。
+在这个示例中，`FileConfig` 采用两个强制参数 CopyFrom  和 CopyTo  ，它们在 `File` 资源块中用作 SourcePath  和 DestinationPath  属性的值。 `NestedConfig` 配置调用 `FileConfig`，就像它是资源一样。 `NestedConfig` 资源块中的属性（**CopyFrom** 和 **CopyTo**）是 `FileConfig` 配置的参数。
+
+DSC 当前不支持嵌套配置中的嵌套配置。 只能将配置嵌套一层。
 
 ## <a name="see-also"></a>另请参阅
 

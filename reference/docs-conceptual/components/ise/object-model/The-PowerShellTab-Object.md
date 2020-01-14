@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: PowerShellTab 对象
-ms.openlocfilehash: bfa11b553f97b7b27b974855ff4e8f1a48c33fea
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 55e3678a8285f0ec7e8131d98c87478216c26f37
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028905"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736924"
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab 对象
 
@@ -43,7 +43,7 @@ $psISE.PowerShellTabs[1].Invoke({dir})
 
 **Script** - 要运行的脚本块的 System.Management.Automation.ScriptBlock 或字符串。
 
-**\[useNewScope\]** -  可选的布尔值，默认值为 $true，如果设置为 $true，则会新建作用域以在其中运行命令   。 它不会修改该命令指定的 PowerShell 选项卡的运行时环境。
+**\[useNewScope\]** -  可选的布尔值，默认值为 `$true`，如果设置为 `$true`，则会新建作用域以在其中运行命令。 它不会修改该命令指定的 PowerShell 选项卡的运行时环境。
 
 **\[millisecondsTimeout\]** - 可选整数，默认值为 **500**。
 如果在指定时间内未完成命令，则该命令将生成 **TimeoutException** 并显示消息“操作已超时。”
@@ -67,7 +67,7 @@ $a
 Measure-Command {$psISE.PowerShellTabs[1].InvokeSynchronous('sleep 10', $false, 5000)}
 ```
 
-## <a name="properties"></a>“属性”
+## <a name="properties"></a>属性
 
 ### <a name="addonsmenu"></a>AddOnsMenu
 
@@ -92,7 +92,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu
 
 在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
-只读布尔属性，如果可以使用 [Invoke( Script )](#invoke-script-) 方法调用脚本，则返回 **$true** 值。
+只读布尔属性，如果可以使用 [Invoke( Script )](#invoke-script-) 方法调用脚本，则返回 `$true` 值。
 
 ```powershell
 # CanInvoke will be false if the PowerShell
@@ -107,9 +107,9 @@ $secondTab.Invoke({sleep 20})
 $secondTab.CanInvoke
 ```
 
-### <a name="consolepane"></a>Consolepane
+### <a name="consolepane"></a>ConsolePane
 
-在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。  在 Windows PowerShell ISE 2.0 中，这命名为 **CommandPane**。
+在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。 在 Windows PowerShell ISE 2.0 中，这命名为 **CommandPane**。
 
 获取“控制台”窗格 [editor](The-ISEEditor-Object.md) 对象的只读属性。
 
@@ -156,7 +156,7 @@ $newFile.Editor.LineCount
 
 ### <a name="output"></a>输出
 
-此功能存在于 Windows PowerShell ISE 2.0 中，但已在更高版本的 ISE 中删除或重命名。  在更高版本的 Windows PowerShell ISE 中，你可以将 **ConsolePane** 对象用于相同的目的。
+此功能存在于 Windows PowerShell ISE 2.0 中，但已在更高版本的 ISE 中删除或重命名。 在更高版本的 Windows PowerShell ISE 中，你可以将 **ConsolePane** 对象用于相同的目的。
 
 只读属性，可获取当前[编辑器](The-ISEEditor-Object.md)的“输出”窗格。
 
@@ -165,7 +165,7 @@ $newFile.Editor.LineCount
 $psISE.CurrentPowerShellTab.output.clear()
 ```
 
-### <a name="prompt"></a>提示
+### <a name="prompt"></a>Prompt
 
 在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 

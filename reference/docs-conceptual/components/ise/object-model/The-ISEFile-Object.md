@@ -1,17 +1,17 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell,cmdlet
 title: ISEFile 对象
-ms.openlocfilehash: ebb5a35f6ea9d93eab633b9f4e6c84e4fddd6ae8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1069e46aa586b8df2050129194a909b90f77b745
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028955"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736992"
 ---
 # <a name="the-isefile-object"></a>ISEFile 对象
 
-**ISEFile** 对象，表示 Windows PowerShell® 集成脚本环境 (ISE) 中的文件。 它是 Microsoft.PowerShell.Host.ISE.ISEFile 类的实例。 本主题列出其成员方法和成员属性。 **$PsISE.CurrentFile** 和 PowerShell 选项卡中的文件集合中的文件是 Microsoft.PowerShell.Host.ISE.ISEFile 类的所有实例。
+**ISEFile** 对象，表示 Windows PowerShell® 集成脚本环境 (ISE) 中的文件。 它是 Microsoft.PowerShell.Host.ISE.ISEFile  类的实例。 本主题列出其成员方法和成员属性。 `$psISE.CurrentFile` 和 PowerShell 选项卡中的文件集合中的文件是 ****Microsoft.PowerShell.Host.ISE.ISEFile** 类的所有实例。
 
 ## <a name="methods"></a>方法
 
@@ -63,13 +63,13 @@ $psISE.CurrentFile.SaveAs($fullPath)
 $psISE.CurrentFile.SaveAs($fullPath, [System.Text.Encoding]::UTF8)
 ```
 
-## <a name="properties"></a>“属性”
+## <a name="properties"></a>属性
 
 ### <a name="displayname"></a>DisplayName
 
 在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
-只读属性，可获取包含此文件显示名称的字符串。 名称显示在编辑器顶部的  “文件”选项卡上。 名称结尾处存在星号 \(\*\)，表示文件具有未保存的更改。
+只读属性，可获取包含此文件显示名称的字符串。 名称显示在编辑器顶部的  “文件”选项卡上。 名称结尾处存在星号 `(*)` 表示文件具有未保存的更改。
 
 ```powershell
 # Shows the display name of the file.
@@ -113,7 +113,7 @@ $psISE.CurrentFile.FullPath
 
 在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
-只读布尔属性，如果在最后一次修改文件后保存了文件，则返回 **$true**。
+只读布尔属性，如果在最后一次修改文件后保存了文件，则返回 `$true`。
 
 ```powershell
 # Determines whether the file has been saved since it was last modified.
@@ -125,7 +125,7 @@ $myfile.IsSaved
 
 在 Windows PowerShell ISE 2.0 和更高版本中受支持。
 
-只读属性，如果从未指定文件标题，则返回 **$true**。
+只读属性，如果从未指定文件标题，则返回 `$true`。
 
 ```powershell
 # Determines whether the file has never been given a title.

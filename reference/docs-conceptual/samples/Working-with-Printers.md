@@ -1,24 +1,24 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/23/2019
 keywords: powershell,cmdlet
 title: 使用打印机
-ms.openlocfilehash: 816388325cc3155f1dbd1bc15fc1736155216092
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 47c4f230d023ad93e2b65080feaa1dbfae803d08
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030678"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736856"
 ---
-# <a name="working-with-printers"></a>使用打印机
+# <a name="working-with-printers-in-windows"></a>在 Windows 中使用打印机
 
-你可以通过 Windows PowerShell 使用 WMI 和 WSH 中的 WScript.Network COM 对象来管理打印机。 我们将结合这两种工具来演示特定任务。
+你可以通过 PowerShell 使用 WMI 和 WSH 中的 WScript.Network  COM 对象来管理打印机。 我们将结合这两种工具来演示特定任务。
 
 ## <a name="listing-printer-connections"></a>列出打印机连接
 
 列出计算机上安装的打印机的最简单方法是使用 WMI **Win32_Printer** 类：
 
 ```powershell
-Get-WmiObject -Class Win32_Printer
+Get-CimInstance -Class Win32_Printer
 ```
 
 此外还可以通过使用通常在 WSH 脚本中使用的 **WScript.Network** COM 对象列出打印机：
@@ -42,7 +42,7 @@ Get-WmiObject -Class Win32_Printer
 若要使用 WMI 设置默认打印机，请在 **Win32_Printer** 集合中查找打印机，然后调用 **SetDefaultPrinter** 方法：
 
 ```powershell
-(Get-WmiObject -ComputerName . -Class Win32_Printer -Filter "Name='HP LaserJet 5Si'").SetDefaultPrinter()
+(Get-CimInstance -Class Win32_Printer -Filter "Name='HP LaserJet 5Si'").SetDefaultPrinter()
 ```
 
 **WScript.Network** 使用起来要简单一些，因为它具有 **SetDefaultPrinter** 方法，该方法仅将打印机名称作为参数：

@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: ISEAddOnTool 对象
-ms.openlocfilehash: c71602d200b941ed4fb142b9c35f0fe68982e3e9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a5357005ec1a883f5a14882a42e3150e09ff33a2
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028994"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736124"
 ---
 # <a name="the-iseaddontool-object"></a>ISEAddOnTool 对象
 
@@ -21,9 +21,9 @@ Windows PowerShell ISE 中的每个 PowerShell 选项卡上可以安装自己的
 
 没有特定于 Windows PowerShell ISE 的方法可用于此类的对象。
 
-## <a name="properties"></a>“属性”
+## <a name="properties"></a>属性
 
-### <a name="control"></a>控件
+### <a name="control"></a>控制
 
 在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
@@ -33,6 +33,9 @@ Windows PowerShell ISE 中的每个 PowerShell 选项卡上可以安装自己的
 # View the properties of the Commands add-on tool.
 # (assumes that it is visible in the vertical pane)
 $psISE.CurrentVisibleVerticalTool.Control
+```
+
+```Output
 HostObject                  : Microsoft.PowerShell.Host.ISE.ObjectModelRoot
 Content                     :
 HasContent                  :
@@ -143,7 +146,7 @@ Dispatcher                  : System.Windows.Threading.Dispatcher
 
 在 Windows PowerShell ISE 3.0 和更高版本中受支持，但不存在于早期版本中。
 
-布尔值属性，指示附加设备工具当前是否在其已分配的窗格中可见。 如果可见，则可以将 **IsVisible** 属性设置为 **$false** 以隐藏工具，或将 **IsVisible** 属性设置为 **$true** 以使附加设备工具在其 PowerShell 选项卡上可见。请注意，隐藏附加设备工具后，将无法再通过 **CurrentVisibleHorizontalTool** 或 **CurrentVisibleVerticalTool** 对象对其进行访问，因此无法使用该对象上的此属性使其可见。
+布尔值属性，指示附加设备工具当前是否在其已分配的窗格中可见。 如果可见，则可以将 IsVisible 属性设置为 `$false` 以隐藏工具，或将 IsVisible 属性设置为 `$true` 以使附加设备工具在其 PowerShell 选项卡上可见。   请注意，隐藏附加设备工具后，将无法再通过 **CurrentVisibleHorizontalTool** 或 **CurrentVisibleVerticalTool** 对象对其进行访问，因此无法使用该对象上的此属性使其可见。
 
 ```powershell
 # Hide the current tool in the vertical tool pane
@@ -161,6 +164,9 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools[0].IsVisible = $true
 ```powershell
 # Gets the name of the visible vertical pane add-on tool.
 $psISE.CurrentVisibleVerticalTool.Name
+```
+
+```Output
 Commands
 ```
 

@@ -2,19 +2,18 @@
 ms.date: 08/25/2017
 keywords: powershell,cmdlet
 title: ObjectModelRoot 对象
-ms.openlocfilehash: 2670321ebac1eac4ecc8457afb796f9f260da471
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0b04bdb3127edaac7b504556843efb64ee65ed13
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62086776"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736022"
 ---
 # <a name="the-objectmodelroot-object"></a>ObjectModelRoot 对象
 
-Windows PowerShell® 集成脚本环境 (ISE) 中的主体根对象（ **$psISE** 对象）是 Microsoft.PowerShell.Host.ISE.ObjectModelRoot 类的实例。
-本主题介绍 **ObjectModelRoot** 对象的属性。
+Windows PowerShell® 集成脚本环境 (ISE) 中的主体根对象（`$psISE` 对象）是 Microsoft.PowerShell.Host.ISE.ObjectModelRoot 类的实例。 本主题介绍 **ObjectModelRoot** 对象的属性。
 
-## <a name="properties"></a>“属性”
+## <a name="properties"></a>属性
 
 ### <a name="currentfile"></a>CurrentFile
 

@@ -1,13 +1,13 @@
 ---
-ms.date: 11/15/2019
+ms.date: 12/18/2019
 keywords: powershell, 核心
 title: PowerShell 6.0 的重大更改
-ms.openlocfilehash: a1dac42bcda8e1258a99ef281691a9d4c5986b53
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: dfbbeb5e5bb3d43959ce144afffc5b10193f8b30
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417555"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75415708"
 ---
 # <a name="breaking-changes-for-powershell-6x"></a>PowerShell 6.x 的重大变更
 
@@ -17,7 +17,7 @@ ms.locfileid: "74417555"
 
 [PowerShell 工作流][workflow]是基于可为长时间运行或并行化任务创建可靠 runbook 的 [Windows Workflow Foundation (WF)][workflow-foundation] 生成的 Windows PowerShell 中的一项功能。
 
-由于缺少对 .NET Core 中的 Windows Workflow Foundation 的支持，我们将不继续在 PowerShell Core 中支持 PowerShell 工作流。
+由于缺少对 .NET Core 中的 Windows Workflow Foundation 的支持，我们将不在 PowerShell Core 中支持 PowerShell 工作流。
 
 将来，我们希望使用 PowerShell 语言启用本机并行/并发，而无需使用 PowerShell 工作流。
 
@@ -64,6 +64,10 @@ ms.locfileid: "74417555"
 
 由于使用了不受支持的 API 而从 PowerShell Core 中删除 `Microsoft.PowerShell.LocalAccounts`，直至找到更佳解决方案。
 
+### <a name="new-webserviceproxy-cmdlet-removed"></a>删除了 `New-WebServiceProxy` cmdlet
+
+.NET Core 不支持为使用 SOAP 协议提供服务的 Windows Communication Framework。 由于此 cmdlet 需要 SOAP 协议，因此已将其删除。
+
 ### <a name="-computer-cmdlets"></a>`*-Computer` cmdlet
 
 由于使用了不受支持的 API，从 PowerShell Core 中删除了以下 cmdlet，直至找到更佳解决方案。
@@ -101,7 +105,7 @@ ms.locfileid: "74417555"
 
 以前的编码 ASCII（7 位）在某些情况下会导致输出的错误更改。 此更改将使 `UTF-8 NoBOM` 成为默认设置，从而保留具有大多数工具和操作系统支持的编码的 Unicode 输出。
 
-### <a name="remove-allscope-from-most-default-aliases-5268httpsgithubcompowershellpowershellissues5268"></a>从大多数默认别名中删除 `AllScope` [#5268](https://github.com/PowerShell/PowerShell/issues/5268)
+### <a name="remove-allscope-from-most-default-aliases-5268httpsgithubcompowershellpowershellissues5268"></a>从大多数默认别名中删除 `AllScope`[#5268](https://github.com/PowerShell/PowerShell/issues/5268)
 
 为了加快作用域创建，从大多数默认别名中删除了 `AllScope`。 保留 `AllScope` 供查找速度更快的几个常用别名使用。
 
@@ -115,7 +119,7 @@ ms.locfileid: "74417555"
 
 当 API 仅返回 `null` 时，Invoke-RestMethod 将其序列化为字符串 `"null"`，而不是 `$null`。 此项更改修复了 `Invoke-RestMethod` 中的逻辑，以便将有效的单个值 JSON `null` 文本正确序列化为 `$null`。
 
-### <a name="remove--protocol-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>从 `*-Computer` cmdlet 中删除 `-Protocol` [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
+### <a name="remove--protocol-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>从 `*-Computer` cmdlet 中删除 `-Protocol`[#5277](https://github.com/PowerShell/PowerShell/issues/5277)
 
 由于 CoreFX 中的 RPC 远程处理出现问题（特别是在非 Windows 平台上）以及为确保在 PowerShell 中获得一致的远程处理体验，已将 `-Protocol` 参数从 `\*-Computer` cmdlet 中删除。 远程处理功能不再支持 DCOM。 以下 cmdlet 仅支持 WSMAN 远程处理：
 
@@ -123,7 +127,7 @@ ms.locfileid: "74417555"
 - Restart-Computer
 - Stop-Computer
 
-### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>从 `*-Service` cmdlet 中删除 `-ComputerName` [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
+### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>从 `*-Service` cmdlet 中删除 `-ComputerName`[#5090](https://github.com/PowerShell/PowerShell/issues/5094)
 
 为了鼓励一致地使用 PSRP，已将 `-ComputerName` 参数从 `*-Service` cmdlet 中删除。
 
@@ -131,7 +135,7 @@ ms.locfileid: "74417555"
 
 以前，给定通配符的 `-LiteralPath` 将其视为与 `-Path` 相同，如果该通配符未找到任何文件，则会以无提示方式退出。 正确的行为应该是 `-LiteralPath` 是文本，因此，如果文件不存在，它应显示错误。 更改就是将与 `-Literal` 一起使用的通配符视作文本。
 
-### <a name="import-csv-should-apply-pstypenames-upon-import-when-type-information-is-present-in-the-csv-5134httpsgithubcompowershellpowershellissues5134"></a>当类型信息以 CSV 显示时，`Import-Csv` 应在导入时应用 `PSTypeNames` [#5134](https://github.com/PowerShell/PowerShell/issues/5134)
+### <a name="import-csv-should-apply-pstypenames-upon-import-when-type-information-is-present-in-the-csv-5134httpsgithubcompowershellpowershellissues5134"></a>当类型信息以 CSV 显示时，`Import-Csv` 应在导入时应用 `PSTypeNames`[#5134](https://github.com/PowerShell/PowerShell/issues/5134)
 
 以前，使用 `Export-CSV` 导出的对象（带有使用 `ConvertFrom-Csv` 导入的 `TypeInformation`）已不保留类型信息。 此更改会将类型信息添加到 `PSTypeNames` 成员（若可从 CSV 文件中获得）。
 
@@ -214,7 +218,7 @@ PowerShell 中的命名应与我们的命名保持一致，并符合 Apple 对 m
 
 将 `` `u####`` 或 `` `u{####}`` 转换为相应的 Unicode 字符。 若要输出文本 `` `u``，转义反引号：``` ``u```。
 
-### <a name="change-new-modulemanifest-encoding-to-utf8nobom-on-non-windows-platforms-3940httpsgithubcompowershellpowershellissues3940"></a>在非 Windows 平台上将 `New-ModuleManifest` 编码更改为 `UTF8NoBOM` [#3940](https://github.com/PowerShell/PowerShell/issues/3940)
+### <a name="change-new-modulemanifest-encoding-to-utf8nobom-on-non-windows-platforms-3940httpsgithubcompowershellpowershellissues3940"></a>在非 Windows 平台上将 `New-ModuleManifest` 编码更改为 `UTF8NoBOM`[#3940](https://github.com/PowerShell/PowerShell/issues/3940)
 
 以前，`New-ModuleManifest` 创建带有 BOM 的 UTF-16 格式的 psd1 清单，这为 Linux 工具带来了一个问题。 这一重大更改将 `New-ModuleManifest` 的编码更改为非 Windows 平台中的 UTF（无 BOM）。
 
