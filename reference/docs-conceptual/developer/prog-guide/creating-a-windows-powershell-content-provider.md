@@ -1,22 +1,14 @@
 ---
-title: 创建 Windows PowerShell 内容提供程序 |Microsoft Docs
-ms.custom: ''
+title: 创建 Windows PowerShell 内容提供程序
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
 ms.topic: article
-helpviewer_keywords:
-- content providers [PowerShell Programmer's Guide]
-- providers [PowerShell Programmer's Guide], content provider
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
-caps.latest.revision: 6
-ms.openlocfilehash: 4afe0370f7a2c5b17826544e94e76650611c9d68
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
-ms.translationtype: HT
+ms.openlocfilehash: 2d48c18cb41dcca372b1e12e1f3abc4c3f5e4bee
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417508"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870721"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>创建 Windows PowerShell 内容提供程序
 
@@ -24,16 +16,14 @@ ms.locfileid: "74417508"
 
 > [!NOTE]
 > 你可以使用适用C#于 windows Vista 的 Microsoft Windows 软件开发工具包和 .NET Framework 3.0 运行时组件下载此提供程序的源文件（AccessDBSampleProvider06.cs）。 有关下载说明，请参阅[如何安装 Windows powershell 和下载 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
->
-> 下载的源文件在 **\<PowerShell 示例 >** 目录中提供。
->
-> 有关其他 Windows PowerShell 提供程序实现的详细信息，请参阅[设计 Windows Powershell 提供程序](./designing-your-windows-powershell-provider.md)。
+> 下载的源文件在 **\<PowerShell 示例 >** 目录中提供。 有关其他 Windows PowerShell 提供程序实现的详细信息，请参阅[设计 Windows Powershell 提供程序](./designing-your-windows-powershell-provider.md)。
 
 ## <a name="define-the-windows-powershell-content-provider-class"></a>定义 Windows PowerShell 内容提供程序类
 
 Windows PowerShell 内容提供程序必须创建一个支持[Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)接口的 .net 类。 下面是本部分中所述的项提供程序的类定义。
 
-[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L32-L33 "AccessDBProviderSample06.cs")]
+[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L32-L33
+"AccessDBProviderSample06.cs")]
 
 请注意，在此类定义中， [Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)属性包括两个参数。 第一个参数指定 Windows PowerShell 使用的提供程序的用户友好名称。 第二个参数指定 Windows PowerShell 特定功能，该功能是在命令处理过程中提供给 Windows PowerShell 运行时的。 对于此提供程序，没有添加 Windows PowerShell 特定功能。
 
@@ -41,7 +31,8 @@ Windows PowerShell 内容提供程序必须创建一个支持[Icontentcmdletprov
 
 如[设计你的 Windows PowerShell 提供程序](./designing-your-windows-powershell-provider.md)中所述， [Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)类从提供不同提供程序功能的其他一些类派生。 因此，Windows PowerShell 内容提供程序通常定义这些类提供的所有功能。
 
-若要详细了解如何实现添加特定于会话的初始化信息以及释放提供程序所用资源的功能，请参阅[创建基本 Windows PowerShell 提供程序](./creating-a-basic-windows-powershell-provider.md)。 但是，大多数提供程序（包括此处所述的提供程序）都可以使用 Windows PowerShell 提供的此功能的默认实现。
+若要详细了解如何实现添加特定于会话的初始化信息以及释放提供程序所用资源的功能，请参阅[创建基本 Windows PowerShell 提供程序](./creating-a-basic-windows-powershell-provider.md)。
+但是，大多数提供程序（包括此处所述的提供程序）都可以使用 Windows PowerShell 提供的此功能的默认实现。
 
 若要访问数据存储区，该提供程序必须实现[Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)基类的方法。 有关实现这些方法的详细信息，请参阅[创建 Windows PowerShell 驱动器提供程序](./creating-a-windows-powershell-drive-provider.md)。
 
@@ -53,13 +44,16 @@ Windows PowerShell 内容提供程序必须创建一个支持[Icontentcmdletprov
 
 ## <a name="implementing-a-content-reader"></a>实现内容读取器
 
-若要从项读取内容，提供程序必须实现从[Icontentreader](/dotnet/api/System.Management.Automation.Provider.IContentReader)派生的内容读取器类。 此提供程序的内容读取器允许访问数据表中某行的内容。 内容读取器类定义一个**读取**方法，该方法从指示的行中检索数据并返回一个表示该数据的列表、一个移动内容读取器的**查找**方法、一个关闭内容读取器的**关闭**方法以及一个**Dispose**方法。
+若要从项读取内容，提供程序必须实现从[Icontentreader](/dotnet/api/System.Management.Automation.Provider.IContentReader)派生的内容读取器类。
+此提供程序的内容读取器允许访问数据表中某行的内容。 内容读取器类定义一个**读取**方法，该方法从指示的行中检索数据并返回一个表示该数据的列表、一个移动内容读取器的**查找**方法、一个关闭内容读取器的**关闭**方法以及一个**Dispose**方法。
 
-[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L2115-L2241 "AccessDBProviderSample06.cs")]
+[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L2115-L2241
+"AccessDBProviderSample06.cs")]
 
 ## <a name="implementing-a-content-writer"></a>实现内容编写器
 
-若要向项写入内容，提供程序必须实现从[Icontentwriter](/dotnet/api/System.Management.Automation.Provider.IContentWriter)派生的内容编写器类。 内容编写器类定义**写入**方法，该方法写入指定的行内容、移动内容编写器的**Seek**方法、关闭内容编写器的**关闭**方法以及**Dispose**方法。
+若要向项写入内容，提供程序必须实现从[Icontentwriter](/dotnet/api/System.Management.Automation.Provider.IContentWriter)派生的内容编写器类。
+内容编写器类定义**写入**方法，该方法写入指定的行内容、移动内容编写器的**Seek**方法、关闭内容编写器的**关闭**方法以及**Dispose**方法。
 
 [!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L2250-L2394 "AccessDBProviderSample06.cs")]
 
@@ -178,7 +172,7 @@ public IContentWriter GetContentWriter(string path)
 
 - 在对数据存储进行任何更改之前，你的[Icontentcmdletprovider 和 Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)方法的实现应调用[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ，并验证其返回值的返回值。 此方法用于确认对数据存储进行更改时（如清除内容）执行操作。 [Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)方法发送要更改为用户的资源的名称，并在 Windows PowerShell 运行时处理任何命令行设置或首选项变量来确定应显示的内容。
 
-  在对 [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) 的调用返回 `true` 后，[System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) 方法应调用  [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) 方法，则为，否则返回Icontentcmdletprovider. Clearcontent *方法的调用方，则为。 此方法向用户发送一条消息，以允许反馈验证是否应继续进行操作。 对[Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)的调用允许对潜在的危险系统修改进行额外检查。
+  在对 Cmdletprovider 的调用返回 `true`后，* 方法应调用[ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)方法，则为，否则返回[Icontentcmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)方法的调用方，则为。 [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) 此方法向用户发送一条消息，以允许反馈验证是否应继续进行操作。 对[Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)的调用允许对潜在的危险系统修改进行额外检查。
 
 ## <a name="attaching-dynamic-parameters-to-the-clear-content-cmdlet"></a>将动态参数附加到清除内容 Cmdlet
 
@@ -201,11 +195,11 @@ public object ClearContentDynamicParameters(string path)
 
 ## <a name="defining-object-types-and-formatting"></a>定义对象类型和格式设置
 
-编写提供程序时，可能需要将成员添加到现有对象或定义新的对象。 完成此操作后，你必须创建一个类型文件，Windows PowerShell 可以使用该文件来标识该对象的成员和定义如何显示该对象的格式化文件。 有关详细信息，请参阅[扩展对象类型和格式](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)。
+编写提供程序时，可能需要将成员添加到现有对象或定义新的对象。 完成此操作后，你必须创建一个类型文件，Windows PowerShell 可以使用该文件来标识该对象的成员和定义如何显示该对象的格式化文件。 有关详细信息，请参阅[扩展对象类型和格式](/previous-versions//ms714665(v=vs.85))。
 
 ## <a name="building-the-windows-powershell-provider"></a>生成 Windows PowerShell 提供程序
 
-请参阅[如何注册 cmdlet、提供程序和主机应用程序](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
+请参阅[如何注册 cmdlet、提供程序和主机应用程序](/previous-versions/ms714644(v=vs.85))。
 
 ## <a name="testing-the-windows-powershell-provider"></a>测试 Windows PowerShell 提供程序
 
@@ -217,7 +211,7 @@ public object ClearContentDynamicParameters(string path)
 Get-Content -Path mydb:\Customers -ReadCount 2
 ```
 
-```output
+```Output
 ID        : 1
 FirstName : Eric
 LastName  : Gruber
@@ -250,11 +244,11 @@ Country   : USA
 
 [设计你的 Windows PowerShell 提供程序](./designing-your-windows-powershell-provider.md)
 
-[扩展对象类型和格式](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[扩展对象类型和格式](/previous-versions//ms714665(v=vs.85))
 
 [实现导航 Windows PowerShell 提供程序](./creating-a-windows-powershell-navigation-provider.md)
 
-[如何注册 Cmdlet、提供程序和主机应用程序](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[如何注册 Cmdlet、提供程序和主机应用程序](/previous-versions/ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 

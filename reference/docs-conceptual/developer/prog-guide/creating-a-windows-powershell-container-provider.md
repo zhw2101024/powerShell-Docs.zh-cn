@@ -11,12 +11,12 @@ helpviewer_keywords:
 - container providers [PowerShell Programmer's Guide]
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
-ms.openlocfilehash: fcb03d4021f00837095ce703beb0d841233391d6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
-ms.translationtype: HT
+ms.openlocfilehash: 69e45de4220a234783d35a877116ad5a5e47d182
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416211"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870772"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>创建 Windows PowerShell 容器提供程序
 
@@ -26,10 +26,7 @@ ms.locfileid: "74416211"
 
 > [!NOTE]
 > 你可以使用适用C#于 windows Vista 的 Microsoft Windows 软件开发工具包和 .NET Framework 3.0 运行时组件下载此提供程序的源文件（AccessDBSampleProvider04.cs）。 有关下载说明，请参阅[如何安装 Windows powershell 和下载 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
->
-> 下载的源文件在 **\<PowerShell 示例 >** 目录中提供。
->
-> 有关其他 Windows PowerShell 提供程序实现的详细信息，请参阅[设计 Windows Powershell 提供程序](./designing-your-windows-powershell-provider.md)。
+> 下载的源文件在 **\<PowerShell 示例 >** 目录中提供。 有关其他 Windows PowerShell 提供程序实现的详细信息，请参阅[设计 Windows Powershell 提供程序](./designing-your-windows-powershell-provider.md)。
 
 此处所述的 Windows PowerShell 容器提供程序将数据库定义为其单个容器，并将数据库的表和行定义为容器的项。
 
@@ -41,8 +38,8 @@ ms.locfileid: "74416211"
 Windows PowerShell 容器提供程序必须定义一个从[Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)基类派生的 .net 类的 .net 类。 下面是本部分中所述的 Windows PowerShell 容器提供程序的类定义。
 
 ```csharp
-   [CmdletProvider("AccessDB", ProviderCapabilities.None)]
-   public class AccessDBProvider : ContainerCmdletProvider
+[CmdletProvider("AccessDB", ProviderCapabilities.None)]
+public class AccessDBProvider : ContainerCmdletProvider
 ```
 
 [!code-csharp[AccessDBProviderSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L34-L35 "AccessDBProviderSample04.cs")]
@@ -53,7 +50,8 @@ Windows PowerShell 容器提供程序必须定义一个从[Containercmdletprovid
 
 如[设计你的 Windows PowerShell 提供](./designing-your-windows-powershell-provider.md)程序中所述， [Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)类派生自其他一些类，这些类提供了不同的提供程序功能。 因此，Windows PowerShell 容器提供程序需要定义这些类提供的所有功能。
 
-若要实现添加特定于会话的初始化信息以及释放提供程序所用资源的功能，请参阅[创建基本 Windows PowerShell 提供程序](./creating-a-basic-windows-powershell-provider.md)。 但是，大多数提供程序（包括此处所述的提供程序）可以使用 Windows PowerShell 提供的此功能的默认实现。
+若要实现添加特定于会话的初始化信息以及释放提供程序所用资源的功能，请参阅[创建基本 Windows PowerShell 提供程序](./creating-a-basic-windows-powershell-provider.md)。
+但是，大多数提供程序（包括此处所述的提供程序）可以使用 Windows PowerShell 提供的此功能的默认实现。
 
 若要获取对数据存储区的访问权限，提供程序必须实现[Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)基类的方法。 有关实现这些方法的详细信息，请参阅[创建 Windows PowerShell 驱动器提供程序](./creating-a-windows-powershell-drive-provider.md)。
 
@@ -203,7 +201,7 @@ protected override void GetChildNames(string path,
 - 定义提供程序类时，Windows PowerShell 容器提供程序可能会声明 ExpandWildcards、Filter、Include 或 Exclude 的提供程序功能， [Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)枚举。 在这些情况下， [Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法的实现需要确保传递给方法的路径满足指定的功能的要求。）。 若要执行此操作，方法应访问相应的属性，例如， [Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude)和[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include)属性中的相应属性，例如 ""。
 
   > [!NOTE]
-  > 当指定 cmdlet 的 `returnAllContainers` 参数时，将发生此规则的例外情况。 在这种情况下，该方法应检索某个容器的任何子名称，即使该名称与 [System.Management.Automation.Provider.Cmdletprovider.Filter*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Filter)、[System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) 或 [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) 属性的值不匹配，也是如此。  * 属性的值的值相同，则为。
+  > 当指定 cmdlet 的 `returnAllContainers` 参数时，将发生此规则的例外情况。 在这种情况下，该方法应检索某个容器的任何子名称，即使该名称与[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Filter)* 或[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include)* 或 Cmdletprovider * 属性的值不匹配，也是如此。 [System.Management.Automation.Provider.Cmdletprovider.Exclude](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) * 属性的值的值相同，则为。
 
 - 默认情况下，除非指定了[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)属性，否则此方法的重写不应检索用户通常隐藏的对象的名称。 如果指定的路径指示一个容器，则不需要[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)属性（& e）。
 
@@ -231,11 +229,13 @@ protected override void GetChildNames(string path,
 
 - 定义提供程序类时，Windows PowerShell 容器提供程序可能会声明 ExpandWildcards、Filter、Include 或 Exclude 的提供程序功能， [Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)枚举。 在这些情况下， [Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法的实现需要确保传递给方法的路径满足指定的功能的要求。）。 若要执行此操作，方法应访问相应的属性，例如， [Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude)和[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include)属性中的相应属性，例如 ""。
 
-- [Containercmdletprovider. Renameitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem)方法仅用于修改某个项的名称，而不是用于移动操作的修改。 如果 `newName` 参数包含路径分隔符，则方法的实现应写入错误，否则可能导致项更改其父位置。
+- [Containercmdletprovider. Renameitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem)方法仅用于修改某个项的名称，而不是用于移动操作的修改。
+  如果 `newName` 参数包含路径分隔符，则方法的实现应写入错误，否则可能导致项更改其父位置。
 
 - 默认情况下，除非指定了[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)属性，否则此方法的重写不应重命名对象。 如果指定的路径指示一个容器，则不需要[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)属性（& e）。
 
-- 在对数据存储进行任何更改之前，你的[Containercmdletprovider 和 Renameitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem)方法的实现应调用[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ，并检查其返回值，然后再进行更改。 此方法用于在对系统状态进行更改时（例如，重命名文件）确认操作的执行。 [Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)发送要更改为用户的资源的名称，Windows PowerShell 运行时在确定应显示的内容时考虑了任何命令行设置或首选项变量。
+- 在对数据存储进行任何更改之前，你的[Containercmdletprovider 和 Renameitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem)方法的实现应调用[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ，并检查其返回值，然后再进行更改。 此方法用于在对系统状态进行更改时（例如，重命名文件）确认操作的执行。
+  [Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)发送要更改为用户的资源的名称，Windows PowerShell 运行时在确定应显示的内容时考虑了任何命令行设置或首选项变量。
 
   在对 [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) 的调用返回 `true` 后，[System.Management.Automation.Provider.Containercmdletprovider.Renameitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) 方法应调用 [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) 方法。 此方法向用户发送一条确认消息，以允许其他反馈显示是否应继续进行操作。 提供程序应调用[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)作为额外检查来检查是否存在潜在的危险系统修改。
 
@@ -254,8 +254,7 @@ protected override void GetChildNames(string path,
 下面是此提供程序的[Containercmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法的实现。
 
 ```csharp
-protected override void NewItem( string path, string type,
-                                 object newItemValue )
+protected override void NewItem( string path, string type, object newItemValue )
 {
     // Create the new item here after
     // performing necessary validations
@@ -279,11 +278,12 @@ protected override void NewItem( string path, string type,
 
 以下情况可能适用于你的[Containercmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)实现：
 
-- [Containercmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法应对 `type` 参数中传递的字符串执行不区分大小写的比较。 它还应允许最小不明确匹配。 例如，对于类型 "file" 和 "directory"，只需第一个字母来消除歧义。 如果 `type` 参数指示提供程序无法创建的类型，则[Containercmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法应使用指示提供程序可以创建的类型的消息编写 ArgumentException。
+- [Containercmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法应对 `type` 参数中传递的字符串执行不区分大小写的比较。
+  它还应允许最小不明确匹配。 例如，对于类型 "file" 和 "directory"，只需第一个字母来消除歧义。 如果 `type` 参数指示提供程序无法创建的类型，则[Containercmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法应使用指示提供程序可以创建的类型的消息编写 ArgumentException。
 
 - 对于 "`newItemValue`" 参数，建议使用[Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法的实现来最小限度地接受字符串。 它还应接受由[Itemcmdletprovider. Getitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)方法为同一路径检索的对象的类型的对象。 [Containercmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法可以使用[languageprimitives.physicalequality. convertto-html *](/dotnet/api/System.Management.Automation.LanguagePrimitives.ConvertTo)方法将类型转换为所需的类型（& i）。
 
-- 在对数据存储进行任何更改之前，你的[Containercmdletprovider 和 Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法的实现应调用[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ，并检查其返回值，然后再进行更改。 在对 [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) 的调用返回 true 后，[System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) 方法应调用方法作为额外的检查，以应对潜在的危险系统修改情况进行检查，然后再调用 [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) 方法，则为。
+- 在对数据存储进行任何更改之前，你的[Containercmdletprovider 和 Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法的实现应调用[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ，并检查其返回值，然后再进行更改。 在对 Cmdletprovider 的调用返回 true 后，ShouldProcess[方法应](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)调用[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)方法作为额外的检查，以应对潜在的危险系统修改情况进行检查，然后再调用[Containercmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法，则为。
 
 ## <a name="attaching-dynamic-parameters-to-the-new-item-cmdlet"></a>将动态参数附加到新项 Cmdlet
 
@@ -360,7 +360,7 @@ protected override bool HasChildItems( string path )
 
 - 当存在循环链接时，你的[ContainerCmdletProvider CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)的实现负责阻止无限递归，如所示。 应该引发适当的终止异常来反映这种情况。
 
-- 在对数据存储进行任何更改之前，你的[ContainerCmdletProvider CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法的实现应调用[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ，并检查其返回值，然后再进行更改。 在对 [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) 的调用返回 true 后，[System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) 方法应调用 [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) 方法作为额外的检查，以检查是否存在潜在的危险系统修改的情况下出现的其他检查功能。 ） 。 "。 有关调用这些方法的详细信息，请参阅[Rename 项](#renaming-items)。
+- 在对数据存储进行任何更改之前，你的[ContainerCmdletProvider CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法的实现应调用[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ，并检查其返回值，然后再进行更改。 在对 Cmdletprovider 的调用返回 true 后，ShouldProcess 方法应调用[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)方法作为额外的检查，以检查是否存在潜在的危险系统修改的情况下出现的其他[检查功能。](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) ） [。 "。](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) 有关调用这些方法的详细信息，请参阅[Rename 项](#renaming-items)。
 
 ## <a name="attaching-dynamic-parameters-to-the-copy-item-cmdlet"></a>将动态参数附加到复制项 Cmdlet
 
@@ -376,7 +376,7 @@ protected override bool HasChildItems( string path )
 
 ## <a name="building-the-windows-powershell-provider"></a>生成 Windows PowerShell 提供程序
 
-请参阅[如何注册 cmdlet、提供程序和主机应用程序](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
+请参阅[如何注册 cmdlet、提供程序和主机应用程序](/previous-versions/ms714644(v=vs.85))。
 
 ## <a name="testing-the-windows-powershell-provider"></a>测试 Windows PowerShell 提供程序
 
@@ -456,7 +456,8 @@ protected override bool HasChildItems( string path )
    Fax          : (425) 555-0101
    ```
 
-5. 现在使用 `New-Item` cmdlet 向现有表添加行。 `Path` 参数指定行的完整路径，并且必须指示大于表中现有行数的行号。 `Type` 参数指示 "行" 以指定要添加的项的类型。 最后，`Value` 参数为行指定以逗号分隔的列值列表。
+5. 现在使用 `New-Item` cmdlet 向现有表添加行。 `Path` 参数指定行的完整路径，并且必须指示大于表中现有行数的行号。 `Type` 参数指示 "行" 以指定要添加的项的类型。
+   最后，`Value` 参数为行指定以逗号分隔的列值列表。
 
    ```powershell
    New-Item -Path mydb:\Customers\3 -ItemType "row" -Value "3,CustomerFirstName,CustomerLastName,CustomerEmailAddress,CustomerTitle,CustomerCompany,CustomerPhone, CustomerAddress,CustomerCity,CustomerState,CustomerZip,CustomerCountry"
@@ -496,7 +497,7 @@ protected override bool HasChildItems( string path )
 
 [实现导航 Windows PowerShell 提供程序](./creating-a-windows-powershell-navigation-provider.md)
 
-[如何注册 Cmdlet、提供程序和主机应用程序](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[如何注册 Cmdlet、提供程序和主机应用程序](/previous-versions/ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 
