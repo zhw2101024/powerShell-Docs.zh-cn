@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用 Process Cmdlet 管理进程
-ms.openlocfilehash: 0962290327a02141f582acdf168143dee14ac60a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8de0cbae508958bf7970ce69e03257ea0a8dca6f
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030176"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870738"
 ---
 # <a name="managing-processes-with-process-cmdlets"></a>使用 Process Cmdlet 管理进程
 
@@ -78,7 +78,8 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 计算机名在此显示中不可见，但是它们存储在 Get-Process 返回的进程对象的 MachineName 属性中。 下面的命令使用 Format-Table cmdlet 显示进程对象的进程 ID、ProcessName 和 MachineName (ComputerName) 属性。
 
 ```
-PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 | Format-Table -Property ID, ProcessName, MachineName
+PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 |
+  Format-Table -Property ID, ProcessName, MachineName
 
   Id ProcessName MachineName
   -- ----------- -----------
@@ -179,9 +180,9 @@ Windows PowerShell 还附带 cmdlet，以启动（或重启）、调试进程，
 
 ## <a name="see-also"></a>另请参阅
 
-- [Get-Process [m2]](https://technet.microsoft.com/en-us/library/27a05dbd-4b69-48a3-8d55-b295f6225f15)
-- [Stop-Process [m2]](https://technet.microsoft.com/en-us/library/12454238-9881-457a-bde4-fb6cd124deec)
-- [Start-Process](https://technet.microsoft.com/en-us/library/41a7e43c-9bb3-4dc2-8b0c-f6c32962e72c)
-- [Wait-Process](https://technet.microsoft.com/en-us/library/9222af7a-789d-4a09-aa90-09d7c256c799)
-- [Debug-Process](https://technet.microsoft.com/en-us/library/eea1dace-3913-4dbd-b659-5a94a610eee1)
-- [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462)
+- [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)
+- [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process)
+- [Start-Process](/powershell/module/Microsoft.PowerShell.Management/Start-Process)
+- [Wait-Process](/powershell/module/Microsoft.PowerShell.Management/Wait-Process)
+- [Debug-Process](/powershell/module/Microsoft.PowerShell.Management/Debug-Process)
+- [Invoke-Command](/powershell/module/Microsoft.PowerShell.Core/Invoke-Command)

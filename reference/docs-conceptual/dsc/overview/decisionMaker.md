@@ -2,12 +2,12 @@
 ms.date: 10/11/2019
 keywords: dsc,powershell,配置,安装程序
 title: 适用于决策者的 Desired State Configuration 概述
-ms.openlocfilehash: b6d483d105c2d3b9be7215be36397d452338c7f1
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.openlocfilehash: bb73ee8fe636272f99989aa45712fe34fedad617
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75737247"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870789"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>适用于决策者的 Desired State Configuration 概述
 
@@ -38,7 +38,7 @@ DSC 以 [DevOps](/archive/blogs/ashleymcglone/devops-for-n00bs-ie-windows-people
 ## <a name="dsc-on-premises-and-off-premises"></a>DSC 本地和非本地
 
 DSC 可管理本地和非本地部署。 对于本地解决方案，DSC 拥有[请求服务器](../pull-server/pullServer.md)，可用于集中式管理计算机并报告其状态。 对于非本地云解决方案，Windows 适用的地方即可使用 DSC。
-Azure 有基于 DSC 的特定产品/服务，例如将 DSC 报告集中化的 [Azure 自动化](https://azure.microsoft.com/en-us/documentation/services/automation/)。
+Azure 有基于 DSC 的特定产品/服务，例如将 DSC 报告集中化的 [Azure 自动化](/azure/automation)。
 
 ## <a name="dsc-and-compatibility"></a>DSC 和兼容性
 
