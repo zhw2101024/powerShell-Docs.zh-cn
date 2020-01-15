@@ -101,7 +101,7 @@ Get-Help about_command_syntax
 
 ## <a name="getting-help-about-providers"></a>获取有关提供程序的帮助
 
-`Get-Help` cmdlet 显示有关 PowerShell 提供程序的信息。 若要获取有关提供程序的帮助，请键入 `Get-Help`，后跟提供程序名称。 例如，若要获取有关 Registr 提供程序的帮助，请键入：
+`Get-Help` cmdlet 显示有关 PowerShell 提供程序的信息。 若要获取有关提供程序的帮助，请键入 `Get-Help`，后跟提供程序名称。 例如，若要获取有关 Registry 提供程序的帮助，请键入：
 
 ```powershell
 Get-Help registry
