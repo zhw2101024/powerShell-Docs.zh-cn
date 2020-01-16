@@ -16,12 +16,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], parameters
 ms.assetid: 3f1cca5f-5b95-4bce-94a6-a22db1aefd47
 caps.latest.revision: 23
-ms.openlocfilehash: 914a10907bcf980eed8d7e2f819c382fe6b341ad
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c1d8984f4aad7bae6f9be66a2222e2c74c8afa3d
+ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365926"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022204"
 ---
 # <a name="cmdlet-parameters"></a>Cmdlet 参数
 
@@ -33,7 +33,7 @@ Cmdlet 参数提供允许 cmdlet 接受输入的机制。 参数可以直接从�
 
 [Cmdlet 参数的类型](./types-of-cmdlet-parameters.md)描述可在 cmdlet 中声明的不同类型的参数。
 
-[Cmdlet 参数名称和功能指导原则](./standard-cmdlet-parameter-names-and-types.md)Discuses 名称、建议的数据类型和标准参数的功能。
+[Cmdlet 参数名称和功能指导原则](./standard-cmdlet-parameter-names-and-types.md)讨论了标准参数的名称、建议的数据类型和功能。
 
 [参数别名](./parameter-aliases.md)讨论可以为参数定义的别名。
 
