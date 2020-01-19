@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 管理服务
-ms.openlocfilehash: d9e17b2d91ae01d7d4d6d573348289fa68dc9c56
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7a238a3fea857c5dac1c12ca0d0371a49e6bf58c
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030158"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870517"
 ---
 # <a name="managing-services"></a>管理服务
 
@@ -89,7 +89,8 @@ Running  BITS               Background Intelligent Transfer Ser...
 你甚至可以获取所有具有依赖关系的服务。 下面的命令所做的就是这些，然后使用 Format-Table cmdlet 来显示计算机上服务的 Status、Name、RequiredServices 和 DependentServices 属性。
 
 ```powershell
-Get-Service -Name * | Where-Object {$_.RequiredServices -or $_.DependentServices} | Format-Table -Property Status, Name, RequiredServices, DependentServices -auto
+Get-Service -Name * | Where-Object {$_.RequiredServices -or $_.DependentServices} |
+  Format-Table -Property Status, Name, RequiredServices, DependentServices -auto
 ```
 
 ## <a name="stopping-starting-suspending-and-restarting-services"></a>停止、启动、暂停和重启服务
@@ -152,11 +153,11 @@ Set-Service cmdlet 还有一个 StartupType 参数，可让你更改服务启动
 
 若要在 Windows Vista 和 Windows 的更高版本上使用 `Set-Service`，请使用“以管理员身份运行”选项打开 Windows PowerShell。
 
-有关详细信息，请参阅 [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
+有关详细信息，请参阅 [Set-Service](/powershell/module/Microsoft.PowerShell.Management/set-service)
 
 ## <a name="see-also"></a>另请参阅
 
-- [Get-Service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
-- [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
-- [Restart-Service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
-- [Suspend-Service [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)
+- [Get-Service](/powershell/module/Microsoft.PowerShell.Management/get-service)
+- [Set-Service](/powershell/module/Microsoft.PowerShell.Management/set-service)
+- [Restart-Service](/powershell/module/Microsoft.PowerShell.Management/restart-service)
+- [Suspend-Service](/powershell/module/Microsoft.PowerShell.Management/suspend-service)

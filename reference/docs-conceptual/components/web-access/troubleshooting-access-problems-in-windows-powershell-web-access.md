@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell Web 访问中的访问问题疑难解答
-ms.openlocfilehash: 74cebbe418fecd21567ba9ecc7c561b51ac008fd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 818beffaf7df55ae36a154b7b751f9201c5b4299
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71692238"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870177"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Windows PowerShell Web 访问中的访问问题疑难解答
 
@@ -56,7 +56,7 @@ ms.locfileid: "71692238"
    1. 单击“文档模式”，然后单击“IE10 标准”   。
    1. 再次按 **F12** 可关闭“开发人员工具”控制台。
 1. 在 Internet Explorer 10 中禁用自动代理配置。
-   1. 单击 **“工具”** ，然后单击 **“Internet 选项”** 。
+   1. 单击“工具”  ，然后单击“Internet 选项”  。
    1. 在“Internet 选项”  对话框中的“连接”  选项卡上，单击“LAN 设置”  。
    1. 清除“自动检测设置”  复选框。 单击“确定”  ，然后再次单击“确定”  可关闭“Internet 选项”  对话框。
 
@@ -66,63 +66,59 @@ ms.locfileid: "71692238"
 
 ## <a name="cannot-find-web-server-iis-management-tools-even-though-the-role-was-installed"></a>找不到 Web 服务器 (IIS) 管理工具，即使已安装了角色
 
-如果使用 `Install-WindowsFeature` cmdlet 安装了 Windows PowerShell Web 访问，除非将 `-IncludeManagementTools` 参数添加到 cmdlet，否则不会安装管理工具。
+如果你通过使用 `Install-WindowsFeature` cmdlet 安装了 Windows PowerShell Web 访问，则不会安装管理工具，除非将 IncludeManagementTools  参数添加到该 cmdlet。
 
 有关示例，请参阅[使用 Windows PowerShell cmdlet 安装 Windows PowerShell Web 访问](install-and-use-windows-powershell-web-access.md#to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets)。
 
-可选择在以网关服务器为目标的“添加角色和功能向导”会话中的工具，添加 IIS Manager 控制台及其他所需的 IIS 管理工具  。
-“添加角色和功能向导”可从服务器管理器中打开。
+可选择在以网关服务器为目标的“添加角色和功能向导”会话中的工具，添加 IIS Manager 控制台及其他所需的 IIS 管理工具  。 “添加角色和功能向导”可从服务器管理器中打开。
 
 ## <a name="windows-powershell-web-access-website-is-not-accessible"></a>无法访问 Windows PowerShell Web 访问网站
 
 如果已在 Internet Explorer 中启用了增强的安全配置 (IE ESC)，可将 Windows PowerShell Web 访问网站添加到受信任的站点列表。
 
-出于安全风险考虑，建议禁用 IE ESC。
-可在服务器管理器中的“本地服务器”页面上的“属性”磁贴中禁用 IE ESC。
+出于安全风险考虑，建议禁用 IE ESC。 可在服务器管理器中的“本地服务器”页面上的“属性”磁贴中禁用 IE ESC。
 
 ## <a name="an-authorization-failure-occurred-verify-that-you-are-authorized-to-connect-to-the-destination-computer"></a>授权失败。 请验证你是否被授权连接到目标计算机。
 
 如果网关服务器为目标计算机且也位于工作组中，尝试连接时，会显示上述错误消息。
 
-如果网关服务器也是目标计算机且位于工作组中，指定用户名、计算机名称以及用户组名。
-不要使用点 (.) 自行表示计算机名称。
+如果网关服务器也是目标计算机且位于工作组中，指定用户名、计算机名称以及用户组名。 不要使用点 (.) 自行表示计算机名称。
 
 ### <a name="scenarios-and-proper-values"></a>方案和适当的值
 
 #### <a name="all-cases"></a>所有情况
 
-参数 | 值
--- | --
-UserName | Server\_name\\user\_name<br/>Localhost\\user\_name<br/>.\\user\_name
-UserGroup | Server\_name\\user\_group<br/>Localhost\\user\_group<br/>.\\user\_group
-ComputerGroup | Server\_name\\computer\_group<br/>Localhost\\computer\_group<br/>.\\computer\_group
+  参数   |                                        值
+------------- | -----------------------------------------------------------------------------------
+UserName      | `Server_name\user_name`<br/>`Localhost\user_name`<br/>`.\user_name`
+UserGroup     | `Server_name\user_group`<br/>`Localhost\user_group`<br/>`.\user_group`
+ComputerGroup | `Server_name\computer_group`<br/>`Localhost\computer_group`<br/>`.\computer_group`
 
 #### <a name="gateway-server-is-in-a-domain"></a>网关服务器位于域中
 
-参数 | 值
--- | --
-ComputerName | 网关服务器的完全限定名称或 Localhost
+ 参数   |                        值
+------------ | ----------------------------------------------------
+计算机名 | 网关服务器的完全限定名称或 Localhost
 
 #### <a name="gateway-server-is-in-a-workgroup"></a>网关服务器位于工作组中
 
-参数 | 值
--- | --
-ComputerName | 服务器名称
+ 参数   |    值
+------------ | -----------
+计算机名 | 服务器名称
 
 ### <a name="gateway-credentials"></a>Gateway credentials
 
 以目标计算机身份登录到网关服务器，方法是使用以下格式之一的凭据。
 
-- Server\_name\\user\_name
-- Localhost\\user\_name
-- .\\user\_name
+- `Server_name\user_name`
+- `Localhost\user_name`
+- `.\user_name`
 
 ## <a name="a-security-identifier-sid-is-displayed-in-an-authorization-rule"></a>授权规则中显示安全标识符 (SID)
 
-在授权规则中显示安全标识符 (SID) 而不是语法 user\_name/computer\_name。
+在授权规则中显示安全标识符 (SID) 而不是语法 `user_name/computer_name`。
 
-规则不再有效或 Active Directory 域服务查询失败。
-如果网关服务器曾一时位于工作组中，但后来加入域中，则这种情形下通常授权规则无效
+规则不再有效或 Active Directory 域服务查询失败。 如果网关服务器曾一时位于工作组中，但后来加入域中，则这种情形下通常授权规则无效
 
 ## <a name="cannot-sign-in-with-rule-as-an-ipv6-address-with-a-domain"></a>无法使用规则登录为带有域的 IPv6 地址
 
@@ -130,13 +126,12 @@ ComputerName | 服务器名称
 
 授权规则不支持域名形式的 IPv6 地址。
 
-若要使用 IPv6 地址指定目标计算机，请在授权规则中使用原始 IPv6 地址（包含冒号）。
-支持域和数值（带有冒号）IPv6 地址作为 Windows PowerShell Web 访问登录页面而非授权规则中的目标计算机名称。
+若要使用 IPv6 地址指定目标计算机，请在授权规则中使用原始 IPv6 地址（包含冒号）。 支持域和数值（带有冒号）IPv6 地址作为 Windows PowerShell Web 访问登录页面而非授权规则中的目标计算机名称。
 
-有关 IPv6 地址的详细信息，请参阅 [How IPv6 Works](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx)（IPv6 的工作原理）。
+有关 IPv6 地址的详细信息，请参阅 [How IPv6 Works](/previous-versions/windows/it-pro/windows-server-2003/cc781672(v=ws.10))（IPv6 的工作原理）。
 
 ## <a name="see-also"></a>另请参阅
 
-- [Windows PowerShell Web 访问的授权规则和安全功能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
-- [使用基于 Web 的 Windows PowerShell 控制台](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
-- [about_Remote_Requirements](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
+- [Windows PowerShell Web 访问的授权规则和安全功能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn282394(v=ws.11))
+- [使用基于 Web 的 Windows PowerShell 控制台](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831417(v=ws.11))
+- [about_Remote_Requirements](/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
