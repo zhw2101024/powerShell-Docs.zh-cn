@@ -2,12 +2,12 @@
 title: PowerShell Core 支持生命周期
 description: 用于管理 PowerShell Core 支持的策略
 ms.date: 08/06/2018
-ms.openlocfilehash: 27738514fc84105a0339eafcdbb540b7d3790052
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 57804df830da01bee0f48acc374658b025a46b85
+ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416302"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022236"
 ---
 # <a name="powershell-core-support-lifecycle"></a>PowerShell Core 支持生命周期
 
@@ -41,7 +41,7 @@ PowerShell Core 的版本 6.x 分支（例如 6.0、6.1、6.2 等）大约每六
 
 最终，我们预计 PowerShell Core 将采用长期服务方法。 在此服务方法中，只需服务和安全更新即可获取有关 6.x 特定分支/版本的支持。
 
-## <a name="supported-platforms"></a>支持平台
+## <a name="supported-platforms"></a>支持的平台
 
 若要确认你的 PowerShell Core 平台和版本是否受到官方支持，请参阅下表。
 
@@ -58,14 +58,16 @@ PowerShell Core 的版本 6.x 分支（例如 6.0、6.1、6.2 等）大约每六
 | Ubuntu 18.10（使用 Snap 包）                   |   社区   | 社区 |
 | Ubuntu 19.04（通过 Snap 包）                   |   社区   | 社区 |
 | Debian 9                                          |   支持   | 支持 |
-| Debian 10                                         | 不受支持 | 支持 |
+| Debian 10                                         | 不支持 | 支持 |
 | CentOS 7                                          |   支持   | 支持 |
+| CentOS 8                                          | 不支持 | 支持 |
 | Red Hat Enterprise Linux 7                        |   支持   | 支持 |
+| Red Hat Enterprise Linux 8                        | 不支持 | 支持 |
 | openSUSE 42.3                                     |   支持   | 支持 |
 | Fedora 28                                         |   支持   | 支持 |
-| Fedora 29、Fedora 30                                     | 不受支持 | 支持 |
+| Fedora 29、Fedora 30                                     | 不支持 | 支持 |
 | Alpine 3.8                                        |   请参阅备注    | 请参阅备注  |
-| Alpine 3.9 和 Alpine 3.10                               | 不受支持 | 请参阅备注  |
+| Alpine 3.9 和 Alpine 3.10                               | 不支持 | 请参阅备注  |
 | macOS 10.12+                                      |   支持   | 支持 |
 | Arch                                              |   社区   | 社区 |
 | Raspbian                                          |   社区   | 社区 |
@@ -104,7 +106,7 @@ PowerShell Core 的版本 6.x 分支（例如 6.0、6.1、6.2 等）大约每六
 | OpenSUSE | 42.2    | [2018 年 1 月](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
 | Ubuntu   | 16.10   | [2017 年 7 月](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
 | Ubuntu   | 17.04   | [2018 年 1 月](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
-| Ubuntu   | 17.10   | [2018 年 7 月](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
+| Ubuntu   | 17.1   | [2018 年 7 月](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
 | Debian   | 8       | [2018 年 6 月](https://lists.debian.org/debian-security-announce/2018/msg00132.html)           |
 | Fedora   | 27      | [2018 年 11 月](https://fedoramagazine.org/fedora-27-end-of-life/)                          |
 | Ubuntu   | 14.04   | [2019 年 4 月](https://wiki.ubuntu.com/Releases)                                              |

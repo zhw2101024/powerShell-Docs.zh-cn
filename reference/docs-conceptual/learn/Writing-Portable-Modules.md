@@ -1,13 +1,13 @@
 ---
-ms.date: 12/14/2018
+ms.date: 01/10/2020
 keywords: powershell,cmdlet
 title: 编写可移植模块
-ms.openlocfilehash: 7871f524495c1ce5283b30696a24185d427edebf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 124e6efadfd07b8c5214a5c0446b1589f7142388
+ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417645"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022245"
 ---
 # <a name="portable-modules"></a>可移植模块
 
@@ -208,7 +208,7 @@ PowerShell Standard 旨在始终向前兼容。 使用 PowerShell Standard 库 5
 | Linux             | 与 Linux（无特定发行版）兼容 |
 | macOS             | 与 macOS 兼容                      |
 
-例如：
+示例：
 
 ```powershell
 @{
@@ -254,6 +254,45 @@ PowerShell Standard 旨在始终向前兼容。 使用 PowerShell Standard 库 5
 }
 ```
 
+## <a name="dependency-on-native-libraries"></a>本机库的依赖项
+
+旨在跨不同操作系统或处理器体系结构使用的模块可能依赖于托管库，而托管库本身又依赖于一些本机库。
+
+在使用 PowerShell 7 之前，必须使用自定义代码来加载适当的本机 dll，以便托管库能够正确找到它。
+
+借助 PowerShell 7，可以在托管库位置（在 [.NET RID 目录][]表示法的子集后面）的子文件夹中搜索要加载的本机二进制文件。
+
+```
+managed.dll folder
+                |
+                |--- 'win-x64' folder
+                |       |--- native.dll
+                |
+                |--- 'win-x86' folder
+                |       |--- native.dll
+                |
+                |--- 'win-arm' folder
+                |       |--- native.dll
+                |
+                |--- 'win-arm64' folder
+                |       |--- native.dll
+                |
+                |--- 'linux-x64' folder
+                |       |--- native.so
+                |
+                |--- 'linux-x86' folder
+                |       |--- native.so
+                |
+                |--- 'linux-arm' folder
+                |       |--- native.so
+                |
+                |--- 'linux-arm64' folder
+                |       |--- native.so
+                |
+                |--- 'osx-x64' folder
+                |       |--- native.dylib
+```
+
 <!-- reference links -->
 [.NET Framework]: /dotnet/framework/
 [.NET Core]: /dotnet/core/
@@ -267,3 +306,4 @@ PowerShell Standard 旨在始终向前兼容。 使用 PowerShell Standard 库 5
 [PowerShell 库]: https://www.powershellgallery.com
 [.NET 可移植性分析器]: https://github.com/Microsoft/dotnet-apiport
 [CompatiblePSEditions]: /powershell/scripting/gallery/concepts/module-psedition-support
+[.NET RID 目录]: https://docs.microsoft.com/dotnet/core/rid-catalog
