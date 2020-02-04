@@ -288,6 +288,8 @@
           href: whats-new/what-s-new-in-windows-powershell-50.md
         - name: PowerShell 5.0 ISE 中的最近更新
           href: whats-new/what-s-new-in-the-powershell-50-ise.md
+    - name: 模块和 cmdlet 发行历史记录
+      href: whats-new/cmdlet-versions.md
 - name: PowerShell Core 支持生命周期
   href: powershell-support-lifecycle.md
 - name: Windows Management Framework (WMF)
