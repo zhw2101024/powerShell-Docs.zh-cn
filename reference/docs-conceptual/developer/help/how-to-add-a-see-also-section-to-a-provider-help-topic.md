@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9c754ac3-cee3-4c13-9bad-e499c8a68a09
 caps.latest.revision: 4
-ms.openlocfilehash: f5c48fd04c620828a6e99c5c5424d11b31fd10e5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1c1b7f4cf56ea2f9e30438a60e7bee29d87b80ba
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367836"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995956"
 ---
 # <a name="how-to-add-a-see-also-section-to-a-provider-help-topic"></a>如何向提供程序帮助主题添加“另请参阅”部分
 
@@ -70,7 +70,7 @@ ms.locfileid: "72367836"
             </navigationLink>
             <navigationLink>
                 <linkText> Windows PowerShell Getting Started Guide </linkText>
-                <uri>http://go.microsoft.com/fwlink/?LinkID=89597<uri/>
+                <uri>https://go.microsoft.com/fwlink/?LinkID=89597<uri/>
             </navigationLink>
         </RelatedLinks>
     </providerHelp>

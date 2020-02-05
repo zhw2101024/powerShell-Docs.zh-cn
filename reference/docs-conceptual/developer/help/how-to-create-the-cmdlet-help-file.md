@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4a88dd89-6beb-494f-9e2a-6b10baed1a8d
 caps.latest.revision: 17
-ms.openlocfilehash: 08e05939f8aee42f2cd502a3da7a528d8460dec1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 186a8ceecea47564503dc181a76cc314033b6d3f
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361196"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76996030"
 ---
 # <a name="how-to-create-the-cmdlet-help-file"></a>如何创建 Cmdlet 帮助文件
 
@@ -36,7 +36,7 @@ ms.locfileid: "72361196"
 
    下表列出了每个节点的 XML 元素，后跟每个节点的说明。
 
-   |节点|描述|
+   |节点|Description|
    |----------|-----------------|
    |`<details>`|为 cmdlet 帮助主题的名称和摘要部分添加内容。 有关详细信息，请参阅[如何添加 Cmdlet 名称和摘要](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)。|
    |`<maml:description>`|添加 cmdlet 帮助主题的 "描述" 部分的内容。 有关详细信息，请参阅[如何将详细描述添加到 Cmdlet 的帮助主题](./how-to-add-a-cmdlet-description.md)。|
@@ -54,9 +54,9 @@ ms.locfileid: "72361196"
 
 ```xml
 <command:command
-  xmlns:maml="http://schemas.microsoft.com/maml/2004/10"
-  xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
-  xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+  xmlns:maml="https://schemas.microsoft.com/maml/2004/10"
+  xmlns:command="https://schemas.microsoft.com/maml/dev/command/2004/10"
+  xmlns:dev="https://schemas.microsoft.com/maml/dev/2004/10">
   <command:details>
     <!--Add name an synopsis here-->
   </command:details>
