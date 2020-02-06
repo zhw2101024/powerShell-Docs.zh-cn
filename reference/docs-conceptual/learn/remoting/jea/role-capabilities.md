@@ -2,12 +2,12 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,安全性
 title: JEA 角色功能
-ms.openlocfilehash: 613557d03bb481f9280a06ca1506166a18b4dab2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5b5b5977d4fec1ed850f1146fe7c09463908651b
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416777"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818169"
 ---
 # <a name="jea-role-capabilities"></a>JEA 角色功能
 
@@ -157,9 +157,11 @@ FunctionDefinitions = @{
 
 为了使 tab 自动补全在 JEA 会话中正常工作，必须在 VisibleFunctions 列表中包含内置函数 `tabexpansion2`  。
 
-## <a name="place-role-capabilities-in-a-module"></a>在模块中放置角色功能
+## <a name="make-the-role-capabilities-available-to-a-configuration"></a>让角色功能可用于配置
 
-为使 PowerShell 能找到角色功能文件，必须将其存储在 PowerShell 模块的“RoleCapabilities”文件夹中  。 该模块可存储在 `$env:PSModulePath` 环境变量内附的任何文件夹中，但不得放在 System32 中，也不得放到不受信的连接用户可在其中修改文件的文件夹中。 下例说明了如何在 `$env:ProgramFiles` 路径中创建名为 ContosoJEA 的基本 PowerShell 脚本模块  。
+在 PowerShell 6 之前的版本中，必须将角色功能文件存储在 PowerShell 模块的“RoleCapabilities”  文件夹中，PowerShell 才能找到它。 此模块可存储在 `$env:PSModulePath` 环境变量内附的任何文件夹中，但不得放在 `$env:SystemRoot\System32` 中，也不得放到允许不受信任的用户修改其中文件的文件夹内。
+
+下面的示例在 `$env:ProgramFiles` 路径中创建名为“ContosoJEA”  的 PowerShell 脚本模块，用于托管角色功能文件。
 
 ```powershell
 # Create a folder for the module
@@ -178,6 +180,8 @@ Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 ```
 
 有关 PowerShell 模块的详细信息，请参阅[了解 PowerShell 模块](/powershell/scripting/developer/windows-powershell)。
+
+自 PowerShell 6 起，RoleDefinitions  属性已添加到会话配置文件中。 借助此属性，可以指定角色定义的角色配置文件的位置。 请参阅 [New-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile) 中的示例。
 
 ## <a name="updating-role-capabilities"></a>更新角色功能
 

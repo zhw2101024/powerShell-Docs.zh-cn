@@ -2,19 +2,18 @@
 title: PowerShell Core 6.1 中的新增内容
 description: PowerShell Core 6.1 中发布的新功能和更改
 ms.date: 09/13/2018
-ms.openlocfilehash: 3d836a24b494df9c7f6ebe994386e2a0297521fa
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 531259217f2b71213776e7d394616c7790e9aca9
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62086090"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995503"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 中的新增内容
 
 以下是 PowerShell Core 6.1 中引入的一系列新功能和更改。
 
-此外还有使 PowerShell 更快更稳定的“无数”“无聊的东西”（以及很多 bug 修复）  ！
-若要获取更改的完整列表，请查看我们 [GitHub 上的更改日志](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md)。
+此外还有使 PowerShell 更快更稳定的“无数”“无聊的东西”（以及很多 bug 修复）  ！ 若要获取更改的完整列表，请查看我们 [GitHub 上的更改日志](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md)。
 
 尽管我们在下面公布了一些名字，但是同样感谢实现此版本的[所有社区参与者](https://github.com/PowerShell/PowerShell/graphs/contributors)。
 
@@ -37,13 +36,11 @@ Windows兼容包使 PowerShell Core 能使用 Windows 10 2018 年 10 月更新�
 
 ## <a name="support-for-application-whitelisting"></a>对应用程序允许列表的支持
 
-PowerShell Core 6.1 与支持 [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) 和 [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) 应用程序允许列表的 Windows PowerShell 5.1 具有奇偶一致性。
-根据应用程序允许列表，可使用 PowerShell [受限语言模式](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/)精确地控制允许执行的二进制文件。
+PowerShell Core 6.1 与支持 [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) 和 [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) 应用程序允许列表的 Windows PowerShell 5.1 具有奇偶一致性。 根据应用程序允许列表，可使用 PowerShell [受限语言模式](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/)精确地控制允许执行的二进制文件。
 
 ## <a name="performance-improvements"></a>性能改进
 
-PowerShell Core 6.0 取得了一些显着的性能提升。
-PowerShell Core 6.1 持续提高部分操作的速度。
+PowerShell Core 6.0 取得了一些显着的性能提升。 PowerShell Core 6.1 持续提高部分操作的速度。
 
 例如，`Group-Object` 的速度提高了 66%：
 
@@ -54,7 +51,7 @@ Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Group-O
 |              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
 |--------------|------------------------|---------------------|---------------------|
 | 时间 (秒)   | 25.178                 | 19.653              | 6.641               |
-| 加快 (%) | N/A                    | 21.9%               | 66.2%               |
+| 加快 (%) | 空值                    | 21.9%               | 66.2%               |
 
 同样，像这样的排序方案提高了 15% 以上：
 
@@ -65,7 +62,7 @@ Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Ob
 |              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
 |--------------|------------------------|---------------------|---------------------|
 | 时间 (秒)   | 12.170                 | 8.493               | 7.08                |
-| 加快 (%) | N/A                    | 30.2%               | 16.6%               |
+| 加快 (%) | 空值                    | 30.2%               | 16.6%               |
 
 在从 Windows PowerShell 回归后，`Import-Csv` 的速度也显著提升了。
 以下示例使用具有 26,616 行和 6 列的测试 CSV：
@@ -77,7 +74,7 @@ Measure-Command {$a = Import-Csv foo.csv}
 |              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
 |--------------|------------------------|---------------------|------------------------|
 | 时间 (秒)   | 0.441                  | 1.069               | 0.268                  |
-| 加快 (%) | N/A                    | -142.4%             | 74.9%（来自 WPS 的 39.2%） |
+| 加快 (%) | 空值                    | -142.4%             | 74.9%（来自 WPS 的 39.2%） |
 
 最后，使用 Windows PowerShell，从 JSON 到 `PSObject` 的转换速度提高了 50% 以上。
 以下示例使用大约 2MB 的测试 JSON 文件：
@@ -89,14 +86,13 @@ Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 |              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
 |--------------|------------------------|---------------------|------------------------|
 | 时间 (秒)   | 0.259                  | 0.577               | 0.125                  |
-| 加快 (%) | N/A                    | -122.8%             | 78.3%（从 WPS 为 51.7%） |
+| 加快 (%) | 空值                    | -122.8%             | 78.3%（从 WPS 为 51.7%） |
 
 ## <a name="check-system32-for-compatible-in-box-modules-on-windows"></a>在 Windows 上检查 `system32` 以获取兼容的内置模块
 
 在 Windows 10 1809 更新和 Windows Server 2019 中，我们更新了许多内置 PowerShell 模块，将其标记为与 PowerShell Core 兼容。
 
-当 PowerShell Core 6.1 启动时，它会自动将 `$windir\System32` 包含为 `PSModulePath` 环境变量的一部分。
-但是，如果模块 `CompatiblePSEdition` 被标记为与 `Core` 兼容，则它仅将模块公开给 `Get-Module` 和 `Import-Module`。
+当 PowerShell Core 6.1 启动时，它会自动将 `$windir\System32` 包含为 `PSModulePath` 环境变量的一部分。 但是，如果模块 `CompatiblePSEdition` 被标记为与 `Core` 兼容，则它仅将模块公开给 `Get-Module` 和 `Import-Module`。
 
 
 ```powershell
@@ -187,11 +183,11 @@ Markdown 是创建可读明文文档的标准，其基本格式可以呈现为 H
 
 ## <a name="web-cmdlet-improvements"></a>Web cmdlet 的改进
 
-感谢 [@markekraus ](https://github.com/markekraus)，我们对 Web cmdlet 进行了一系列改进：[`Invoke-WebRequest`](/powershell/module/microsoft.powershell.utility/invoke-webrequest)
+感谢 [@markekraus](https://github.com/markekraus)，我们对 Web cmdlet 进行了一系列改进：[`Invoke-WebRequest`](/powershell/module/microsoft.powershell.utility/invoke-webrequest)
 和 [`Invoke-RestMethod`](/powershell/module/microsoft.powershell.utility/invoke-restmethod)。
 
 - [PR #6109](https://github.com/PowerShell/PowerShell/pull/6109) - 对于 `application-json` 响应，默认编码设置为 UTF-8
-- [PR #6018](https://github.com/PowerShell/PowerShell/pull/6018) - `-SkipHeaderValidation` 参数允许不符合标准的 `Content-Type` 标头
+- [PR #6018](https://github.com/PowerShell/PowerShell/pull/6018) - `-SkipHeaderValidation` 参数允许不符合标准的 `Content-Type` 头
 - [PR #5972](https://github.com/PowerShell/PowerShell/pull/5972) - `Form` 参数支持简化的 `multipart/form-data` 支持
 - [PR #6338](https://github.com/PowerShell/PowerShell/pull/6338) - 合规且不区分大小写的关系键处理
 - [PR #6447](https://github.com/PowerShell/PowerShell/pull/6447) -添加 Web cmdlet 的 `-Resume` 参数
@@ -202,15 +198,13 @@ Markdown 是创建可读明文文档的标准，其基本格式可以呈现为 H
 
 [PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) 是 PowerShell 和 Hyper-V 的一项功能，允许在没有网络连接或其他远程管理服务的情况下连接到 Hyper-V VM 或容器。
 
-在过去，PowerShell Direct 使用容器上的收件箱 Windows PowerShell 实例进行连接。
-现在，PowerShell Direct 先尝试使用 `PATH` 环境变量上任何可用的 `pwsh.exe` 进行连接。
-如果 `pwsh.exe` 不可用，PowerShell Direct 则会回退为使用 `powershell.exe`。
+在过去，PowerShell Direct 使用容器上的收件箱 Windows PowerShell 实例进行连接。 现在，PowerShell Direct 先尝试使用 `PATH` 环境变量上任何可用的 `pwsh.exe` 进行连接。 如果 `pwsh.exe` 不可用，PowerShell Direct 则会回退为使用 `powershell.exe`。
 
 ### <a name="enable-psremoting-now-creates-separate-remoting-endpoints-for-preview-versions"></a>`Enable-PSRemoting` 现在为预览版本创建单独的远程处理终结点
 
 `Enable-PSRemoting` 现在创建两个远程会话配置：
 
-- 一个用于 PowerShell 的主要版本。 例如，`PowerShell.6`。 根据“系统范围”的 PowerShell 6 会话配置，次要版本更新可依赖于此终结点
+- 一个用于 PowerShell 的主要版本。 例如，`PowerShell.6` 。 根据“系统范围”的 PowerShell 6 会话配置，次要版本更新可依赖于此终结点
 - 一个版本特定的会话配置，例如：`PowerShell.6.1.0`
 
 如果要在同一台计算机上安装并访问多个 PowerShell 6 版本，则此行为会很有帮助。
@@ -262,8 +256,7 @@ Permission    : NT AUTHORITY\INTERACTIVE AccessAllowed, BUILTIN\Administrators A
 
 ### <a name="userhostport-syntax-supported-for-ssh"></a>SSH 支持的 `user@host:port` 语法
 
-SSH 客户端通常支持格式为 `user@host:port` 的连接字符串。
-我们通过将 SSH 添加为 PowerShell 远程处理的协议，增加了对这种连接字符串格式的支持：
+SSH 客户端通常支持格式为 `user@host:port` 的连接字符串。 我们通过将 SSH 添加为 PowerShell 远程处理的协议，增加了对这种连接字符串格式的支持：
 
 `Enter-PSSession -HostName fooUser@ssh.contoso.com:2222`
 
@@ -305,13 +298,11 @@ PS /etc>
 
 ### <a name="update-help-as-non-admin"></a>`Update-Help` 更改为非管理员命令
 
-根据大众需求，`Update-Help` 不再需要以管理员身份运行。
-`Update-Help` 现在默认将帮助保存到用户范围的文件夹。
+根据大众需求，`Update-Help` 不再需要以管理员身份运行。 `Update-Help` 现在默认将帮助保存到用户范围的文件夹。
 
 ### <a name="new-methodsproperties-on-pscustomobject"></a>`PSCustomObject` 上的新方法/属性
 
-感谢 [@iSazonov](https://github.com/iSazonov) 的帮助，我们为 `PSCustomObject` 添加了新的方法和属性。
-`PSCustomObject` 现在包括类似于其他对象的 `Count`/`Length` 属性。
+感谢 [@iSazonov](https://github.com/iSazonov) 的帮助，我们为 `PSCustomObject` 添加了新的方法和属性。 `PSCustomObject` 现在包括类似于其他对象的 `Count`/`Length` 属性。
 
 ```powershell
 $PSCustomObject = [pscustomobject]@{foo = 1}
@@ -353,8 +344,7 @@ foo
 
 ### `Where-Object -Not`
 
-感谢 @SimonWahlin 的帮助，我们已将 `-Not` 参数添加到 `Where-Object`。
-现在可在管道中筛选对象，查看是否有不存在的属性或 null/空属性值。
+感谢 @SimonWahlin 的帮助，我们已将 `-Not` 参数添加到 `Where-Object`。 现在可在管道中筛选对象，查看是否有不存在的属性或 null/空属性值。
 
 例如，此命令返回未定义任何依赖服务的所有服务：
 
@@ -368,8 +358,7 @@ Get-Service | Where-Object -Not DependentServices
 
 ### <a name="conversions-from-psmethod-to-delegate"></a>从 PSMethod 到委托的转换
 
-感谢 [@powercode ](https://github.com/powercode) 的帮助，我们现已支持将 `PSMethod` 转换为委托。
-这允许执行类似于将 `PSMethod` `[M]::DoubleStrLen` 作为委托值传递到 `[M]::AggregateString` 中的操作：
+感谢 [@powercode](https://github.com/powercode) 的帮助，我们现已支持将 `PSMethod` 转换为委托。 这样，可以执行将 `PSMethod` `[M]::DoubleStrLen` 作为委托值传递到 `[M]::AggregateString` 等操作：
 
 ```powershell
 class M {
@@ -420,8 +409,7 @@ $certThumbPrint = (Get-PfxCertificate -FilePath $certFile -Password $certPass ).
 
 ### <a name="removal-of-the-more-function"></a>删除 `more` 函数
 
-在过去，PowerShell 在 Windows 上发布了一个名为 `more` 的函数，它包含 `more.com`。
-该函数现在已删除。
+在过去，PowerShell 在 Windows 上发布了一个名为 `more` 的函数，它包含 `more.com`。 该函数现在已删除。
 
 此外，`help` 函数已改为在 Windows 上使用 `more.com`，或在非 Windows 平台上使用 `$env:PAGER` 指定的系统默认页导航。
 
@@ -511,8 +499,7 @@ PowerShell Core 在启动时会向 Microsoft 发送基本的遥测数据。 该�
 
 ### <a name="removed-visualbasic-as-a-supported-language-in-add-type"></a>已在 Add-Type 中删除作为受支持语言的 `VisualBasic`
 
-在过去，可以使用 `Add-Type` cmdlet 编译 Visual Basic 代码。
-Visual Basic 很少与 `Add-Type` 一起使用。 我们已删除此功能以减小 PowerShell 的大小。
+在过去，可以使用 `Add-Type` cmdlet 编译 Visual Basic 代码。 Visual Basic 很少与 `Add-Type` 一起使用。 我们已删除此功能以减小 PowerShell 的大小。
 
 ### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a>已清理 `CommandTypes.Workflow` 和 `WorkflowInfoCleaned` 的使用
 

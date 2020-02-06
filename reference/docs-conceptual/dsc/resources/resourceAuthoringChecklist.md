@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,配置,安装程序
 title: 资源创作清单
-ms.openlocfilehash: c0a18169b5e9f6ba0c3848b00725731453763611
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e7401071db9cb149fff572d79568d69a0b8ea004
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71952874"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818135"
 ---
 # <a name="resource-authoring-checklist"></a>资源创作清单
 
@@ -130,7 +130,7 @@ File file {
 - 由于 DSC 代理以服务方式运行，因此凭据/会话的行为可能不同。  请务必端到端地测试此处的任何功能。
 - 由 `Start-DscConfiguration` 输出的错误可能与在直接调用 `Set-TargetResource` 函数时显示的错误不同。
 
-## <a name="test-compatability-on-all-dsc-supported-platforms"></a>在所有 DSC 支持的平台上测试兼容性
+## <a name="test-compatibility-on-all-dsc-supported-platforms"></a>在所有 DSC 支持的平台上测试兼容性
 
 资源应适用于所有支持 DSC 的平台（Windows Server 2008 R2 或更高版本）。 在操作系统上安装最新的 WMF (Windows Management Framework) 以获取最新版本的 DSC。 如果资源按设计无法在部分平台上运作，则将返回特定的错误消息。 此外，确保资源检查你调用的 cmdlet 是否存在于特定的计算机上。 Windows Server 2012 添加了大量新 cmdlet，即使安装了 WMF，它们在 Windows Server 2008R2 上也不可用。
 
@@ -244,9 +244,9 @@ Invoke-Expression $commandToExecute
 确保资源实现中没有硬编码路径，特别是如果它们表示语言时 (en-us)，或者当存在可以使用的系统变量时。
 如果资源需要访问特定路径，请使用环境变量而非硬编码路径，因为后者在其他计算机上可能有所不同。
 
-例如：
+示例：
 
-而不是：
+不是：
 
 ```powershell
 $tempPath = "C:\Users\kkaczma\AppData\Local\Temp\MyResource"

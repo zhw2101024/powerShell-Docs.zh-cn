@@ -2,12 +2,12 @@
 ms.date: 01/08/2020
 keywords: dsc,powershell,配置,安装程序
 title: DSC 请求服务
-ms.openlocfilehash: d71c87e0420a0ee54eca36f1792b43103431233f
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: f171c3dc579dfb24a8c9fb87fbb50dccae619091
+ms.sourcegitcommit: aaf1284dfec2e4c698009d6dc27ff103aaafd581
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870806"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76885381"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration 请求服务
 
@@ -22,6 +22,14 @@ ms.locfileid: "75870806"
 - 在 Windows Server 上运行的请求服务
 - 由社区维护的开放源解决方案
 - SMB 共享
+
+每个解决方案的建议规模如下所示：
+
+|                   解决方案                   |              客户端节点              |
+| -------------------------------------------- | -------------------------------------- |
+| 使用 MDB/ESENT 数据库的 Windows 拉取服务器 | 最多 500 个节点                        |
+| 使用 SQL 数据库的 Windows 拉取服务器       | 最多 1000 个节点                       |
+| Azure Automation DSC                         | 包含超过 1000 个节点的方案 |
 
 **建议的解决方案**和可用功能最多的选项是 [Azure 自动化 DSC](/azure/automation/automation-dsc-getting-started)。
 
@@ -42,7 +50,7 @@ Azure 服务可以在本地管理私有数据中心或 Azure 和 AWS 等公有�
 
 ## <a name="dsc-pull-service-in-windows-server"></a>Windows Server 中的 DSC 请求服务
 
-可将请求服务配置为在 Windows Server 上运行。 请注意，Windows Server 中包含的请求服务解决方案仅具备存储配置/模块以将报表数据下载并捕获到数据中的功能。 它不具备 Azure 中的服务所提供的许多功能，因此不适合用于评估服务的使用方式。
+可将请求服务配置为在 Windows Server 上运行。 请注意，Windows Server 中包含的拉取服务解决方案只能存储配置/模块以供下载，并将报表数据捕获到数据库中。 它不具备 Azure 中的服务所提供的许多功能，因此不适合用于评估服务的使用方式。
 
 Windows Server 中提供的请求服务是 IIS 中的一项 Web 服务，当目标节点请求 DSC 配置文件时，此服务通过 OData 接口向这些节点提供它们。
 
@@ -219,7 +227,7 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 
 每个资源模块都需要进行压缩并按照 `{Module Name}_{Module Version}.zip` 模式进行命名。
 
-例如，一个名为 xWebAdminstration 并且模块版本为 3.1.2.0 的模块会命名为 `xWebAdministration_3.1.2.0.zip`。 每个版本的模块都必须包含在单个 zip 文件中。
+例如，名为“xWebAdminstration”  且模块版本为 3.1.2.0 的模块会命名为 `xWebAdministration_3.1.2.0.zip`。 每个版本的模块都必须包含在单个 zip 文件中。
 由于每个 zip 文件中只有单个版本的资源，因此不支持在 WMF 5.0 中添加的可在单个目录中支持多个模块版本的模块格式。 这意味着在打包 DSC 资源模块以便用于请求服务器之前，需要对目录结构进行少量更改。 包含 WMF 5.0 中 DSC 资源的模块的默认格式为 `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`。 为请求服务器打包前，删除 {Module version}  文件夹，以使路径变为 `{Module Folder}\DscResources\{DSC Resource Folder}\`。 进行此更改之后，按上文所述压缩文件夹，并将这些 zip 文件置于 **ModulePath** 文件夹中。
 
 使用 `New-DscChecksum {module zip file}` 可为新添加的模块创建校验和文件。

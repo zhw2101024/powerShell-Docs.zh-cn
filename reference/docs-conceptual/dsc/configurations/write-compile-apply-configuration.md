@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,配置,服务,设置
 title: 编写、编译和应用配置
-ms.openlocfilehash: 8bcd55518b0409b9a4b02ca95f027a0a77eb5300
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: eb61e518762b9f13e617ecd4711bfef7a86814ec
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71953994"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818152"
 ---
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
@@ -47,7 +47,7 @@ Configuration HelloWorld {
 }
 ```
 
-> 重要提示！在需要导入多个模块以便在同一配置中使用多个 DSC 资源的更高级方案中，请确保使用 `Import-DscResource` 将每个模块放在单独的行中。
+> 重要提示！在需要导入多个模块以便在同一配置中使用多个 DSC 资源的更高级方案中，请务必使用 `Import-DscResource` 让每个模块单独占一行。
 > 这样一来，在源代码管理中更易于维护，这也是在 Azure 状态配置中使用 DSC 时所必需的操作。
 >
 > ```powershell

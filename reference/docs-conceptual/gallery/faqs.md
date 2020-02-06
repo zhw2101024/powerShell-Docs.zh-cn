@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 title: PowerShell 库常见问题解答
-ms.openlocfilehash: bcbb36a9ec60d88d1ef56fd270f0ae1862d5ca6b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 70e2220bd68b351e0b09dd3c59901104f7874335
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328048"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818118"
 ---
 # <a name="frequently-asked-questions"></a>常见问题
 
@@ -36,7 +36,7 @@ PowerShell 脚本是存储在.ps1 文件中的一系列命令，用于启用重�
 
 安装或保存包无需注册或登录到库。 
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>尝试将项发布到 PowerShell 库时，出现“无法处理请求。 ‘指定的 API 密钥无效或无权限访问指定的包。’。 远程服务器返回错误：(403) 已禁止。” 错误。 这是什么意思？
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>尝试将项发布到 PowerShell 库时，出现“无法处理请求。 ‘指定的 API 密钥无效或无权限访问指定的包。’。 远程服务器返回了错误：(403) 已禁止。” 错误。 这是什么意思？
 
 出现该错误的原因可能如下：
 
@@ -93,8 +93,8 @@ PSScriptInfo 部分中包括以下信息的任何脚本都可发布到库中：
 
 在文本框中键入要查找的内容。 例如，如要查找与 Azure SQL 相关的模块，只需键入“azure sql”。 搜索引擎会在所有已发布的包（包括标题、说明和元数据）中查找这些关键字。 然后，根据加权质量分，搜索引擎将显示最接近的匹配。 你也可以在以下字段的搜索查询中使用 field:"value" 语法按指定字段进行搜索：
 
-- 标记
-- 功能
+- Tags
+- 函数
 - Cmdlet
 - DscResources
 - PowerShellVersion
@@ -161,8 +161,8 @@ PowerShell 库是 [NuGet Gallery](https://www.nuget.org/)（NuGet 库）的修�
 因此，**PowerShellGet** 需要以下操作系统之一：
 
 - Windows 10
-- Windows 8.1 专业版
-- Windows 8.1 企业版
+- Windows 8.1 Pro
+- Windows 8.1 Enterprise
 - Windows 7 SP1
 - Windows Server 2016
 - Windows Server 2012 R2
@@ -172,7 +172,7 @@ PowerShell 库是 [NuGet Gallery](https://www.nuget.org/)（NuGet 库）的修�
 
 ## <a name="is-it-possible-to-reserve-names-for-packages-that-will-be-published-in-future"></a>能否保留将来要发布的包的名称？
 
-不能抢占包名称。 如果认为现有包占用的名称更适合你的包，可尝试[联系包的所有者](./how-to/working-with-packages/contacting-package-owners.md)。 如果数周内未获得回复，可联系支持人员，PowerShell 库团队将进行查看。
+不能抢占包名称。 如果认为现有包占用的名称更适合你的包，可尝试[联系包的所有者](./how-to/working-with-packages/contacting-package-owners.md)。 如果你在几周内没有收到回复，可以联系支持部门，PowerShell 库团队会对此进行调查。
 
 ## <a name="how-do-i-claim-ownership-for-packages"></a>如何索取包的所有权？
 

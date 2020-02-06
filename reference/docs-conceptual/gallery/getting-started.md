@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 title: PowerShell 库入门
-ms.openlocfilehash: ee3fe7d9c65ad1a8f9ffd2ddec0f4ce6659bc3d5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fd4185234136dd9f3e628df50954b6ebff637639
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328458"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995892"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>PowerShell 库入门
 
@@ -32,7 +32,7 @@ PowerShell 库是一个包存储库，包含脚本、模块以及可供下载和
 - DscResource
 - RoleCapability
 - Command
-- 筛选
+- “筛选器”
 
 如果只想发现库中的特定 DSC 资源，可运行 [Find-DscResource][] cmdlet。 Find-DscResource 会返回库中 DSC 资源的相关数据。 由于 DSC 资源始终作为模块的部分进行传递，所以仍需运行 [Install-Module][] 来安装这些 DSC 资源。
 
@@ -68,7 +68,7 @@ PowerShell 库是一个包存储库，包含脚本、模块以及可供下载和
 
 默认情况下，[Install-Module][] 和 [Install-Script][] 安装最新版包。 若要安装旧版包，请添加 `-RequiredVersion` 参数。
 
-### <a name="deploy"></a>在来宾群集上部署
+### <a name="deploy"></a>部署
 
 若要将包从 PowerShell 库部署到 Azure 自动化，请单击“Azure 自动化”  ，然后单击包详细信息页上的“部署到 Azure 自动化”  。 这会将你重定向到 Azure 管理门户，可使用 Azure 帐户凭据登录该门户。 请注意，部署具有依赖关系的包会将所有依赖关系部署到 Azure 自动化。 通过将 AzureAutomationNotSupported  标记添加到包元数据可禁用“部署到 Azure 自动化”按钮。
 
@@ -76,9 +76,9 @@ PowerShell 库是一个包存储库，包含脚本、模块以及可供下载和
 
 ## <a name="updating-packages-from-the-powershell-gallery"></a>从 PowerShell 库更新包
 
-若要更新从 PowerShell 库安装的包，请运行 [Update-Module][] 或 [Update-Script][] cmdlet。 如果不使用其他任何参数运行，[Update-Module][] 将尝试通过运行 [Install-Module][] 来更新所有已安装的模块。 若要选择性地更新模块，请添加 `-Name` 参数。
+若要更新从 PowerShell 库安装的包，请运行 [Update-Module][] 或 [Update-Script][] cmdlet。 如果不使用其他任何参数运行，[Update-Module][] 会尝试更新所有通过运行 [Install-Module][] 来安装的模块。 若要选择性地更新模块，请添加 `-Name` 参数。
 
-同样，如果不使用其他任何参数运行，[Update-Script][] 也会尝试通过运行 [Install-Script][] 来更新所有已安装的脚本。 若要选择性地更新脚本，请添加 `-Name` 参数。
+同样，如果不使用其他任何参数运行，[Update-Script][] 也会尝试更新所有通过运行 [Install-Script][] 来安装的脚本。 若要选择性地更新脚本，请添加 `-Name` 参数。
 
 ## <a name="list-packages-that-you-have-installed-from-the-powershell-gallery"></a>列出从 PowerShell 库安装的包
 
@@ -98,3 +98,5 @@ PowerShell 库是一个包存储库，包含脚本、模块以及可供下载和
 [Register-PSRepository]: /powershell/module/powershellget/Register-Repository
 [Save-Module]: /powershell/module/powershellget/Save-Module
 [Save-Script]: /powershell/module/powershellget/Save-Script
+[Update-Module]: /powershell/module/powershellget/Update-Module
+[Update-Script]: /powershell/module/powershellget/Update-Script
