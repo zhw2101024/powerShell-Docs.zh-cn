@@ -11,7 +11,7 @@ ms.locfileid: "75736992"
 ---
 # <a name="the-isefile-object"></a>ISEFile 对象
 
-**ISEFile** 对象，表示 Windows PowerShell® 集成脚本环境 (ISE) 中的文件。 它是 Microsoft.PowerShell.Host.ISE.ISEFile  类的实例。 本主题列出其成员方法和成员属性。 `$psISE.CurrentFile` 和 PowerShell 选项卡中的文件集合中的文件是 ****Microsoft.PowerShell.Host.ISE.ISEFile** 类的所有实例。
+**ISEFile** 对象，表示 Windows PowerShell® 集成脚本环境 (ISE) 中的文件。 它是 Microsoft.PowerShell.Host.ISE.ISEFile  类的实例。 本主题列出其成员方法和成员属性。 `$psISE.CurrentFile` 和 PowerShell 选项卡中的文件集合中的文件是 \*\***Microsoft.PowerShell.Host.ISE.ISEFile** 类的所有实例。
 
 ## <a name="methods"></a>方法
 
