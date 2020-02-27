@@ -2,12 +2,12 @@
 ms.date: 10/30/2018
 keywords: dsc,powershell,配置,安装程序
 title: DSC 故障排除
-ms.openlocfilehash: 2a0d2138f30573b9ae6cf52d8b106a05f1193407
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5cbe6496a6e0b9940f4b69e13d1e19e43b3915f0
+ms.sourcegitcommit: 5f199cd2a1b31dbcebaab44f2fe496f289831a30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954614"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77478779"
 ---
 # <a name="troubleshooting-dsc"></a>DSC 故障排除
 
@@ -119,7 +119,7 @@ Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 Consistency engine was run successfully.
 ```
 
-以特定结构记录 DSC 事件，该结构让用户可以通过一个 DSC 作业聚合事件。 该结构如下所示：
+以特定结构记录 DSC 事件，该结构让用户可以通过一个 DSC 作业聚合事件。 结构如下：
 
 ```
 Job ID : <Guid>
@@ -206,7 +206,7 @@ Count Name                      Group
    38 {5BCA8BE7-5BB6-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
 ```
 
-### <a name="2-details-of-operations-run-in-the-last-half-hour"></a>2：过去半小时内所运行操作的详细信息
+### <a name="2-details-of-operations-run-in-the-last-half-hour"></a>2:过去半小时内所运行操作的详细信息
 
 每个 Windows 事件都具有 `TimeCreated` 属性，它表明创建该事件的时间。 可通过将此属性与特定日期/时间对象进行比较来筛选所有事件：
 
@@ -642,6 +642,16 @@ https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned une
 
 当服务器上用于加密流量的证书公用名称 (CN) 不同于节点用于解析 URL 的 DNS 名称时，可能发生此情况。
 更新 Windows 拉取服务器实例，使用名称正确的证书。
+
+## <a name="error-when-running-sysprep-after-applying-a-dsc-configuration"></a>在应用 DSC 配置后应用 Sysprep 时出错
+
+应用 DSC 配置后尝试运行 Sysprep 来通用化 Windows Server 时，你可能会遇到以下问题。
+
+```
+SYSPRP LaunchDll:Failure occurred while executing 'DscCore.dll,SysPrep_Cleanup', returned error code 0x2
+```
+
+不支持在使用 Windows PowerShell Desired State Configuration 配置后通用化服务器。  转而，请在完成 Windows 设置的通用化阶段后将配置应用于 Windows。
 
 ## <a name="see-also"></a>另请参阅
 
