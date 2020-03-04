@@ -2,12 +2,12 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,安全性
 title: 注册 JEA 配置
-ms.openlocfilehash: dbed5c7dd71f2f7a09d97416be56dff675799548
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7cc67e891bc14dd667c97e9a8b550b33b4c2b874
+ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417614"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77706200"
 ---
 # <a name="registering-jea-configurations"></a>注册 JEA 配置
 
@@ -51,7 +51,7 @@ Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' 
 
 ## <a name="multi-machine-configuration-with-dsc"></a>使用 DSC 的多台计算机配置
 
-在多台计算机上部署 JEA 时，最简单的部署模型使用 JEA [Desired State Configuration (DSC)](/powershell/scripting/dsc/overview) 资源，在每台计算机上快速且一致地部署 JEA。
+在多台计算机上部署 JEA 时，最简单的部署模型使用 JEA [Desired State Configuration (DSC)](../../../dsc/overview/overview.md) 资源，在每台计算机上快速且一致地部署 JEA。
 
 要使用 DSC 部署 JEA，请确保满足以下先决条件：
 
