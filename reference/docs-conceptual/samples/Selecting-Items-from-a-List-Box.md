@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 从列表框中选择项
-ms.openlocfilehash: 55bc9409b0e330a2080781bfd4c586109896258f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 048bccd403e01e2290a8930a0faba30d4c7caa73
+ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030827"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77706166"
 ---
 # <a name="selecting-items-from-a-list-box"></a>从列表框中选择项
 
@@ -26,21 +26,21 @@ $form.Text = 'Select a Computer'
 $form.Size = New-Object System.Drawing.Size(300,200)
 $form.StartPosition = 'CenterScreen'
 
-$OKButton = New-Object System.Windows.Forms.Button
-$OKButton.Location = New-Object System.Drawing.Point(75,120)
-$OKButton.Size = New-Object System.Drawing.Size(75,23)
-$OKButton.Text = 'OK'
-$OKButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
-$form.AcceptButton = $OKButton
-$form.Controls.Add($OKButton)
+$okButton = New-Object System.Windows.Forms.Button
+$okButton.Location = New-Object System.Drawing.Point(75,120)
+$okButton.Size = New-Object System.Drawing.Size(75,23)
+$okButton.Text = 'OK'
+$okButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
+$form.AcceptButton = $okButton
+$form.Controls.Add($okButton)
 
-$CancelButton = New-Object System.Windows.Forms.Button
-$CancelButton.Location = New-Object System.Drawing.Point(150,120)
-$CancelButton.Size = New-Object System.Drawing.Size(75,23)
-$CancelButton.Text = 'Cancel'
-$CancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
-$form.CancelButton = $CancelButton
-$form.Controls.Add($CancelButton)
+$cancelButton = New-Object System.Windows.Forms.Button
+$cancelButton.Location = New-Object System.Drawing.Point(150,120)
+$cancelButton.Size = New-Object System.Drawing.Size(75,23)
+$cancelButton.Text = 'Cancel'
+$cancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
+$form.CancelButton = $cancelButton
+$form.Controls.Add($cancelButton)
 
 $label = New-Object System.Windows.Forms.Label
 $label.Location = New-Object System.Drawing.Point(10,20)
@@ -87,7 +87,8 @@ Add-Type -AssemblyName System.Drawing
 
 - **大小。** 这是窗体的大小（以像素为单位）。 上述脚本创建的窗体大小为宽 300 像素、高 200 像素。
 
-- **StartingPosition。** 在上述脚本中，此可选属性将设置为 **CenterScreen**。 如果未添加此属性，Windows 将在窗体打开时选择一个位置。 通过将 **StartingPosition** 设置为 **CenterScreen**，可使窗体在每次加载时都自动显示在屏幕中间。
+- **StartingPosition。** 在上述脚本中，此可选属性将设置为 **CenterScreen**。
+  如果未添加此属性，Windows 将在窗体打开时选择一个位置。 通过将 **StartingPosition** 设置为 **CenterScreen**，可使窗体在每次加载时都自动显示在屏幕中间。
 
 ```powershell
 $form.Text = 'Select a Computer'
@@ -98,25 +99,25 @@ $form.StartPosition = 'CenterScreen'
 接下来，为窗体创建“确定”按钮。  指定“确定”按钮的大小和行为。  在此示例中，按钮位置为距窗体上边缘 120 像素，距左边缘 75 像素。 按钮高度为 23 像素，按钮长度为 75 像素。 此脚本使用预定义的 Windows 窗体类型确定按钮行为。
 
 ```powershell
-$OKButton = New-Object System.Windows.Forms.Button
-$OKButton.Location = New-Object System.Drawing.Point(75,120)
-$OKButton.Size = New-Object System.Drawing.Size(75,23)
-$OKButton.Text = 'OK'
-$OKButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
-$form.AcceptButton = $OKButton
-$form.Controls.Add($OKButton)
+$okButton = New-Object System.Windows.Forms.Button
+$okButton.Location = New-Object System.Drawing.Point(75,120)
+$okButton.Size = New-Object System.Drawing.Size(75,23)
+$okButton.Text = 'OK'
+$okButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
+$form.AcceptButton = $okButton
+$form.Controls.Add($okButton)
 ```
 
 采用相同方式创建“取消”按钮。  “取消”按钮距窗口上边缘 120 像素，但距左边缘 150 像素。 
 
 ```powershell
-$CancelButton = New-Object System.Windows.Forms.Button
-$CancelButton.Location = New-Object System.Drawing.Point(150,120)
-$CancelButton.Size = New-Object System.Drawing.Size(75,23)
-$CancelButton.Text = 'Cancel'
-$CancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
-$form.CancelButton = $CancelButton
-$form.Controls.Add($CancelButton)
+$cancelButton = New-Object System.Windows.Forms.Button
+$cancelButton.Location = New-Object System.Drawing.Point(150,120)
+$cancelButton.Size = New-Object System.Drawing.Size(75,23)
+$cancelButton.Text = 'Cancel'
+$cancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
+$form.CancelButton = $cancelButton
+$form.Controls.Add($cancelButton)
 ```
 
 接下来，在窗口上提供标签文本，用于描述你希望用户提供的信息。 在本例中，你希望用户选择一台计算机。
@@ -129,7 +130,7 @@ $label.Text = 'Please select a computer:'
 $form.Controls.Add($label)
 ```
 
-添加控件（在本例中为列表框），从而让用户提供你在标签文本中描述的信息。 除了文本框，你还可以应用许多其他控件；有关更多控件，请参阅 MSDN 上的 [System.Windows.Forms 命名空间](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx)。
+添加控件（在本例中为列表框），从而让用户提供你在标签文本中描述的信息。 除了文本框，你还可以应用许多其他控件；有关更多控件，请参阅 MSDN 上的 [System.Windows.Forms 命名空间](/dotnet/api/system.windows.forms)。
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.ListBox
@@ -141,7 +142,7 @@ $listBox.Height = 80
 在下一部分中，你可以指定希望列表框向用户显示的值。
 
 > [!NOTE]
-> 此脚本创建的列表框只允许进行单选。 若要创建允许进行多选的列表框控件，请指定 **SelectionMode** 属性的值，类似于以下内容：`$listBox.SelectionMode = 'MultiExtended'`。 有关详细信息，请参阅[多选列表框](Multiple-selection-List-Boxes.md)。
+> 此脚本创建的列表框只允许进行单选。 若要创建允许进行多选的列表框控件，请指定 SelectionMode  属性的值，类似于以下内容：`$listBox.SelectionMode = 'MultiExtended'`。 有关详细信息，请参阅[多选列表框](Multiple-selection-List-Boxes.md)。
 
 ```powershell
 [void] $listBox.Items.Add('atl-dc-001')
@@ -178,6 +179,5 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>另请参阅
 
-- [你好，脚本专家：为什么这些 PowerShell GUI 示例不起作用呢？](https://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub：Dave Wyatt 的 WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [本周 Windows PowerShell 提示：从列表框中选择项](https://technet.microsoft.com/library/ff730949.aspx)
+- [本周 Windows PowerShell 提示：从列表框中选择项](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730949(v=technet.10))

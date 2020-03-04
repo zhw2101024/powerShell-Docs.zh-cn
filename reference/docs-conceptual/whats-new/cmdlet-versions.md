@@ -2,12 +2,12 @@
 ms.date: 02/03/2020
 keywords: powershell, 核心
 title: 模块和 cmdlet 发行历史记录
-ms.openlocfilehash: e421201d74da2cc74b1bd57529fb3c3e5245ecae
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: e0fe9b263bdd0a5e1bedd0762b7613a4bbe02a58
+ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995438"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77706117"
 ---
 # <a name="release-history-of-modules-and-cmdlets"></a>模块和 cmdlet 发行历史记录
 
@@ -47,7 +47,7 @@ ms.locfileid: "76995438"
 | PSScheduledJob                            | &check; |         |         |         | 仅限 Windows |
 | PSWorkflow                                | &check; |         |         |         | 仅限 Windows |
 | PSWorkflowUtility                         | &check; |         |         |         | 仅限 Windows |
-| ThreadJob                                 |         | &check; | &check; | &check; |              |
+| ThreadJob                                 |         | &check; | &check; | &check; | 可在 PowerShell 5.1 中安装 |
 
 ## <a name="cmdlet-release-history"></a>Cmdlet 发行历史记录
 
@@ -121,7 +121,7 @@ ms.locfileid: "76995438"
 | Get-PSSessionCapability           | &check; | &check; | &check; | &check; |                            |
 | Get-PSSessionConfiguration        | &check; | &check; | &check; | &check; |                            |
 | Get-PSSnapin                      | &check; |         |         |         | 仅限 Windows               |
-| Get-Verb                          | &check; |         |         |         | 仅限 Windows               |
+| Get-Verb                          | &check; |         |         |         | 已移至 Microsoft.PowerShell.Utility 6.0 以上版本 |
 | Import-Module                     | &check; | &check; | &check; | &check; |                            |
 | Invoke-Command                    | &check; | &check; | &check; | &check; |                            |
 | Invoke-History                    | &check; | &check; | &check; | &check; |                            |
@@ -636,4 +636,4 @@ ms.locfileid: "76995438"
 
 |   Cmdlet 名称   |  5.1  |   6.x   |   7.0   |   7.1   | 注意 |
 | --------------- | :---: | :-----: | :-----: | :-----: | ---- |
-| Start-ThreadJob |       | &check; | &check; | &check; |      |
+| Start-ThreadJob |       | &check; | &check; | &check; | 可在 PowerShell 5.1 中安装 |

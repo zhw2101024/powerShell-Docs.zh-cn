@@ -2,12 +2,12 @@
 title: PowerShell Core 支持生命周期
 description: 用于管理 PowerShell Core 支持的策略
 ms.date: 08/06/2018
-ms.openlocfilehash: d535199e19c1aabbbfdd140b38aad329bc5d957e
-ms.sourcegitcommit: 5f199cd2a1b31dbcebaab44f2fe496f289831a30
+ms.openlocfilehash: 8cf8a0ac6140d28e55b065bf711763ba1c681d63
+ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77478796"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77706251"
 ---
 # <a name="powershell-core-support-lifecycle"></a>PowerShell Core 支持生命周期
 
@@ -141,6 +141,22 @@ Add-WindowsPSModulePath
 
 [实验性功能][]只能获得[社区支持](#community-support)。
 
+## <a name="release-history"></a>版本历史记录
+
+下表包含 PowerShell 主要版本的时间线。 此表仅供历史参考。 它不用于确定支持生命周期。
+
+|       版本        | 发布日期 |                                                                     注意                                                                      |
+| -------------------- | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| PowerShell 7.0 (LTS) |   2020 年 3 月   | 基于 .NET Core 3.1 (LTS) 生成                                                                                                                  |
+| PowerShell 6.0       |   2018 年 1 月   | 第一版，基于 .NET Core 2.1 生成。 可在 Windows、Linux 和 macOS 上安装。                                                              |
+| PowerShell 5.1       |   2016 年 8 月   | 在 Windows 10 周年更新和 Windows Server 2016 中发布                                                                             |
+| PowerShell 5.0       |   2016 年 2 月   | 在 Windows Management Framework (WMF) 5.0 中发布                                                                                            |
+| PowerShell 4.0       |   2013 年 10 月   | 在 Windows 8.1 中与 Windows Server 2012 R2 集成。 可在 Windows 7 SP1、Windows Server 2008 R2 SP1 和 Windows Server 2012 上安装。 |
+| PowerShell 3.0       |   2012 年 10 月   | 在 Windows 8 中与 Windows Server 2012 集成。 可在 Windows 7 SP1、Windows Server 2008 SP1 和 Windows Server 2008 R2 SP1 上安装。  |
+| PowerShell 2.0       |   2009 年 7 月   | 在 Windows 7 中与 Windows Server 2008 R2 集成。 可在 Windows XP SP3、Windows Server 2003 SP2 和 Windows Vista SP1 上安装。            |
+| PowerShell 1.0       |   2006 年 11 月   | 可在 Windows XP SP2、Windows Server 2003 SP1 和 Windows Vista 上安装。 Windows Server 2008 的可选组件。                          |
+
+<!-- hyperlink references -->
 [顶级]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
 [enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
