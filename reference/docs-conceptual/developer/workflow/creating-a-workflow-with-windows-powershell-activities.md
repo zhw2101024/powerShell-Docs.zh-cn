@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
-ms.openlocfilehash: 98cac43698b3f537ee318cd2570b2174631665a7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7d399786b9b43ee302493359d9702981045212e9
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359626"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78277452"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>创建具有 Windows PowerShell 活动的工作流
 
@@ -57,7 +57,7 @@ ms.locfileid: "72359626"
 
     |属性|值|
     |--------------|-----------|
-    |**ComputerName**|压缩|
+    |**计算机名**|压缩|
     |**DomainCredential**|DomainCred|
 
 11. 在**AddComputer**活动后，将**RestartComputer**活动添加到**JoinDomain**序列。
@@ -66,9 +66,9 @@ ms.locfileid: "72359626"
 
     |属性|值|
     |--------------|-----------|
-    |**ComputerName**|压缩|
+    |**计算机名**|压缩|
     |**凭据**|MachineCred|
-    |**对于**|WaitForServiceTypes （PowerShell）|
+    |**进行**|WaitForServiceTypes （PowerShell）|
     |**团队**|True|
     |Wait|True|
     |PSComputerName|{""}|
@@ -77,5 +77,5 @@ ms.locfileid: "72359626"
 
     完成这些过程后，工作流设计窗口应如下所示。
 
-    ![工作流设计器中的 JoinDomain XAML](../media/joindomainworkflow.png)
-    ![工作流设计器中的 JOINDOMAIN xaml](../media/joindomainworkflow.png "JoinDomainWorkflow")
+    ![工作流设计器中的 JoinDomain XAML](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png)
+    ![工作流设计器中的 JOINDOMAIN xaml](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png "JoinDomainWorkflow")
