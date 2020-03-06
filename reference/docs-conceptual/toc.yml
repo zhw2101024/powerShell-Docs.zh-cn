@@ -6,7 +6,7 @@
   items:
     - name: 安装各种版本的 PowerShell
       href: install/installing-powershell.md
-    - name: PowerShell Core
+    - name: 安装 PowerShell
       items:
         - name: 在 Windows 上安装 PowerShell Core
           href: install/installing-powershell-core-on-windows.md
@@ -16,7 +16,7 @@
           href: install/installing-powershell-core-on-macos.md
         - name: 在 ARM 上安装 PowerShell Core
           href: install/powershell-core-on-arm.md
-    - name: Windows PowerShell
+    - name: 安装 Windows PowerShell 5.1
       items:
         - name: 安装 Windows PowerShell
           href: install/installing-windows-powershell.md
@@ -24,6 +24,8 @@
           href: install/installing-the-windows-powershell-2.0-engine.md
         - name: Windows PowerShell 系统要求
           href: install/windows-powershell-system-requirements.md
+    - name: 在 Docker 中使用 PowerShell
+      href: install/PowerShell-in-Docker.md
 - name: 入门
   items:
     - name: PowerShell 入门
@@ -58,7 +60,7 @@
           items:
             - name: 概述
               href: learn/remoting/jea/overview.md
-            - name: 必备条件
+            - name: 先决条件
               href: learn/remoting/jea/prerequisites.md
             - name: 角色功能
               href: learn/remoting/jea/role-capabilities.md
@@ -268,6 +270,10 @@
       href: gallery/faqs.md
 - name: 新增功能
   items:
+    - name: PowerShell 7.x 中的新增功能
+      items:
+        - name: PowerShell 7.0 中的新增功能
+          href: whats-new/what-s-new-in-powershell-70.md
     - name: PowerShell Core 6.x 中的新增功能
       items:
         - name: PowerShell Core 6.2 中的最近更新
