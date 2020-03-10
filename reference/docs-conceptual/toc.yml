@@ -8,13 +8,13 @@
       href: install/installing-powershell.md
     - name: 安装 PowerShell
       items:
-        - name: 在 Windows 上安装 PowerShell Core
+        - name: 在 Windows 上安装 PowerShell
           href: install/installing-powershell-core-on-windows.md
-        - name: 在 Linux 上安装 PowerShell Core
+        - name: 在 Linux 上安装 PowerShell
           href: install/installing-powershell-core-on-linux.md
-        - name: 在 macOS 上安装 PowerShell Core
+        - name: 在 macOS 上安装 PowerShell
           href: install/installing-powershell-core-on-macos.md
-        - name: 在 ARM 上安装 PowerShell Core
+        - name: 在 ARM 上安装 PowerShell
           href: install/powershell-core-on-arm.md
     - name: 安装 Windows PowerShell 5.1
       items:
@@ -296,6 +296,8 @@
           href: whats-new/what-s-new-in-the-powershell-50-ise.md
     - name: 模块和 cmdlet 发行历史记录
       href: whats-new/cmdlet-versions.md
+    - name: 模块兼容性列表
+      href: whats-new/module-compatibility.md
 - name: PowerShell Core 支持生命周期
   href: powershell-support-lifecycle.md
 - name: Windows Management Framework (WMF)
