@@ -2,12 +2,12 @@
 ms.date: 10/20/2019
 keywords: powershell,cmdlet
 title: 如何使用 PowerShell 文档
-ms.openlocfilehash: 80f72bb89b3bb82ee7c4d16b8969395f02d7d4ca
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7b73bc82f32e3ce1e6015822e0cc82078183931b
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72676168"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279294"
 ---
 # <a name="how-to-use-the-powershell-documentation"></a>如何使用 PowerShell 文档
 
@@ -25,7 +25,7 @@ ms.locfileid: "72676168"
 
 使用页面顶部的版本选取器来选择所需的 PowerShell 版本。
 
-![版本选取器](images/how-to-use-docs/version-search.gif)
+![版本选取器](media/how-to-use-docs/version-search.gif)
 
 可以通过查看 `$PSversionTable.PSVersion` 值来验证所使用的 PowerShell 版本。 下面的示例演示 Windows PowerShell v5.1 的输出。
 

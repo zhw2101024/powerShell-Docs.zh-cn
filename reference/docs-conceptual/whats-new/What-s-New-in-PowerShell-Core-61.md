@@ -2,12 +2,12 @@
 title: PowerShell Core 6.1 中的新增内容
 description: PowerShell Core 6.1 中发布的新功能和更改
 ms.date: 09/13/2018
-ms.openlocfilehash: 531259217f2b71213776e7d394616c7790e9aca9
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: 079d5a472c743ce94f2e93143c1dcb4ff406951f
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995503"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78277709"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 中的新增内容
 
@@ -169,7 +169,7 @@ Markdown 是创建可读明文文档的标准，其基本格式可以呈现为 H
 
 例如，`Show-Markdown` 在控制台中呈现 Markdown 文件：
 
-![Show-Markdown 示例](./images/markdown_example.png)
+![Show-Markdown 示例](media/What-s-New-in-PowerShell-Core-61/markdown_example.png)
 
 若要详细了解这些 cmdlet 的工作方式，请查看[此 RFC](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-Native-Markdown-Rendering.md)。
 
@@ -264,7 +264,7 @@ SSH 客户端通常支持格式为 `user@host:port` 的连接字符串。 我们
 
 感谢 [@bergmeister](https://github.com/bergmeister) 的帮助，现在可以在 Windows 上启用上下文菜单。 现在，可以从 Windows 资源管理器中的任何文件夹打开系统范围的 PowerShell 6.1 安装：
 
-![PowerShell 6 的 Shell 上下文菜单](./images/shell_context_menu.png)
+![PowerShell 6 的 Shell 上下文菜单](media/What-s-New-in-PowerShell-Core-61/shell_context_menu.png)
 
 ## <a name="goodies"></a>超值服务
 
@@ -272,7 +272,7 @@ SSH 客户端通常支持格式为 `user@host:port` 的连接字符串。 我们
 
 感谢 [@bergmeister](https://github.com/bergmeister) 的帮助，PowerShell Core 快捷方式的跳转列表现已包含“以管理员身份运行”：
 
-![PowerShell 6 跳转列表中的“以管理员身份运行”](./images/jumplist.png)
+![PowerShell 6 跳转列表中的“以管理员身份运行”](media/What-s-New-in-PowerShell-Core-61/jumplist.png)
 
 ### <a name="cd---returns-to-previous-directory"></a>`cd -` 返回到上一目录
 

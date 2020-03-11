@@ -2,12 +2,12 @@
 title: 使用 Visual Studio Code 进行远程编辑和调试
 description: 使用 Visual Studio Code 进行远程编辑和调试
 ms.date: 06/13/2019
-ms.openlocfilehash: ae3b7a3709498fcd547a48d0849b0dc880217225
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5ce7f575d90ff47fd6b8a0a2b567e972ec3a9fef
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67264002"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279096"
 ---
 # <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>使用 Visual Studio Code 进行远程编辑和调试
 
@@ -15,7 +15,7 @@ ms.locfileid: "67264002"
 
 该功能在适用于 VSCode 的 PowerShell 扩展中也可用。 本指南将演示如何操作。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 本指南假定你拥有：
 
@@ -38,7 +38,7 @@ ms.locfileid: "67264002"
 
 启动适用于 VSCode 的 PowerShell 扩展并打开 PowerShell 集成控制台之后，可以在编辑器中键入 `Open-EditorFile foo.ps1` 或 `psedit foo.ps1` 来打开本地 foo.ps1 文件。
 
-![Open-EditorFile foo.ps1 可在本地工作](images/Using-VSCode-for-Remote-Editing-and-Debugging/1-open-local-file.png)
+![Open-EditorFile foo.ps1 可在本地工作](media/Using-VSCode-for-Remote-Editing-and-Debugging/1-open-local-file.png)
 
 >[!NOTE]
 > 文件 `foo.ps1` 必须已经存在。
@@ -47,11 +47,11 @@ ms.locfileid: "67264002"
 
 - 将断点添加到装订线
 
-  ![将断点添加到装订线](images/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
+  ![将断点添加到装订线](media/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
 
 - 按 F5 调试 PowerShell 脚本。
 
-  ![调试 PowerShell 本地脚本](images/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
+  ![调试 PowerShell 本地脚本](media/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
 
 调试期间，可以与调试控制台进行交互，查看左边范围中的变量，以及所有其他标准调试工具。
 
@@ -73,20 +73,20 @@ ms.locfileid: "67264002"
 
 首先，在集成控制台中，运行 `Enter-PSSession`。 当提示符的左侧显示 `[<hostname>]` 时，即表示已连接到远程会话。
 
-![对 Enter-PSSession 的调用](images/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
+![对 Enter-PSSession 的调用](media/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
 
 现在，我们可以执行与编辑本地脚本相同的步骤。
 
 1. 运行 `Open-EditorFile test.ps1` 或 `psedit test.ps1` 以打开远程 `test.ps1` 文件
 
-  ![Open-EditorFile test.ps1 文件](images/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
+  ![Open-EditorFile test.ps1 文件](media/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
 
 1. 编辑文件/设置断点
 
-   ![编辑并设置断点](images/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
+   ![编辑并设置断点](media/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
 
 1. 开始调试 (F5) 远程文件
 
-   ![调试远程文件](images/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
+   ![调试远程文件](media/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
 
 如有任何疑问，可在 [GitHub 存储库](https://github.com/powershell/vscode-powershell)中提问。

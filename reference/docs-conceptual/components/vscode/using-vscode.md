@@ -2,12 +2,12 @@
 title: 使用 Visual Studio Code 进行 PowerShell 开发
 description: 使用 Visual Studio Code 进行 PowerShell 开发
 ms.date: 11/07/2019
-ms.openlocfilehash: 4f197e71d3b79828f466584f5d862415726818b1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 16ae228c0d169261b783366a730fd2d5d77d32d6
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74117395"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279056"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>使用 Visual Studio Code 进行 PowerShell 开发
 
@@ -48,7 +48,7 @@ ms.locfileid: "74117395"
    1. “扩展”视图随即在侧边栏上打开  。 从 Microsoft 中选择 PowerShell 扩展。
       应会看到类似于下图的 VSCode 屏幕：
 
-      ![VSCode](../../images/using-vscode/vscode.png)
+      ![VSCode](media/using-vscode/vscode.png)
 
    1. 在 Microsoft 下单击 PowerShell 扩展上的“安装”按钮  。
    1. 安装后，“安装”按钮将变为“重载”   。 单击“重载”  。
@@ -110,8 +110,8 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 
 每个项必须具有：
 
-* `exePath`：`pwsh` 或 `powershell` 可执行文件的路径。
-* `versionName`：将显示在会话菜单中的文本。
+* `exePath`设置用户帐户 ：`pwsh` 或 `powershell` 可执行文件的路径。
+* `versionName`设置用户帐户 ：将显示在会话菜单中的文本。
 
 可以将默认 PowerShell 版本设置为使用 `powershell.powerShellDefaultVersion` 设置，方法是将其设置为显示在会话菜单中的文本（也是最后一个设置中的 `versionName`）：
 

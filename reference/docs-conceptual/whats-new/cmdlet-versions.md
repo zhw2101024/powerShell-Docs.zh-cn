@@ -2,12 +2,12 @@
 ms.date: 02/03/2020
 keywords: powershell, 核心
 title: 模块和 cmdlet 发行历史记录
-ms.openlocfilehash: e0fe9b263bdd0a5e1bedd0762b7613a4bbe02a58
-ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
+ms.openlocfilehash: 9b7c769198fa2a39d8efcc9602f2a913c041289c
+ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77706117"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78404981"
 ---
 # <a name="release-history-of-modules-and-cmdlets"></a>模块和 cmdlet 发行历史记录
 
@@ -401,7 +401,7 @@ ms.locfileid: "77706117"
 | New-TimeSpan              | &check; | &check; | &check; | &check; |                                           |
 | New-Variable              | &check; | &check; | &check; | &check; |                                           |
 | Out-File                  | &check; | &check; | &check; | &check; |                                           |
-| Out-GridView              | &check; |         | &check; | &check; |                                           |
+| Out-GridView              | &check; |         | &check; | &check; | 仅限 Windows                              |
 | Out-printer               | &check; |         | &check; | &check; |                                           |
 | Out-String                | &check; | &check; | &check; | &check; |                                           |
 | Read-Host                 | &check; | &check; | &check; | &check; |                                           |

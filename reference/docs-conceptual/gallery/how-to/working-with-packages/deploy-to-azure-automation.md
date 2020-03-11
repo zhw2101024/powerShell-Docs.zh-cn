@@ -3,18 +3,18 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 title: 部署到 Azure 自动化
-ms.openlocfilehash: 707691e24a77647064e60da0d9a31ad5eece1c59
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5d09a0777c59b642400d683c8cb6f881319fb881
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71327908"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278685"
 ---
 # <a name="deploy-to-azure-automation"></a>部署到 Azure 自动化
 
 包详细信息页上的“部署到 Azure 自动化”按钮会将包从 PowerShell 库部署到 Azure 自动化。
 
-![“部署到 Azure 自动化”按钮](../../Images/DeployToAzureAutomationButton.png)
+![“部署到 Azure 自动化”按钮](media/deploy-to-azure-automation/DeployToAzureAutomationButton.png)
 
 单击后，将重定向到 Azure 管理门户，可使用 Azure 帐户凭据进行登录。
 如果该包包含依赖关系，则所有依赖关系也将部署到 Azure 自动化。
@@ -30,9 +30,9 @@ ms.locfileid: "71327908"
 
 如果正在部署到 Azure 自动化的模块需要接受许可证，则门户 UI 将会显示内容为“此模块需要接受许可证。 单击“确定”接受许可证条款。”的声明
 
-![部署到 Azure 自动化需要接受许可证](../../Images/DeployToAzureAutomationRequireLicenseAcceptanceDisclaimer.png)
+![部署到 Azure 自动化需要接受许可证](media/deploy-to-azure-automation/DeployToAzureAutomationRequireLicenseAcceptanceDisclaimer.png)
 
-## <a name="more-details"></a>详细信息
+## <a name="more-details"></a>更多详细信息
 
 - [在 PowerShellGet 中需要接受许可证](../../concepts/module-license-acceptance.md)
 - [在 Power 库中需要接受许可证](packages-that-require-license-acceptance.md)

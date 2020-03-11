@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: 库,powershell,cmdlet,psgallery
 title: PowerShell 库常见问题解答
-ms.openlocfilehash: 70e2220bd68b351e0b09dd3c59901104f7874335
-ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
+ms.openlocfilehash: 9572a61d38b0d540b0b8933405810ac4f2b6377e
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76818118"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278166"
 ---
 # <a name="frequently-asked-questions"></a>常见问题
 
@@ -148,7 +148,7 @@ PowerShell 库是 [NuGet Gallery](https://www.nuget.org/)（NuGet 库）的修�
 
 在 PackageManagement 程序包提供程序层，PSModule 程序包提供程序实际调用到其他 PackageManagement 程序包提供程序。 例如，使用基于 NuGet 的库（例如 PowerShell 库）时，PSModule 程序包提供程序会使用 NuGet 程序包提供程序作用于该存储库。
 
-![PowerShellGet 体系结构](Images/powershellgetArchitecture.png)
+![PowerShellGet 体系结构](media/faqs/powershellgetArchitecture.png)
 
 图 1：PowerShellGet 体系结构
 

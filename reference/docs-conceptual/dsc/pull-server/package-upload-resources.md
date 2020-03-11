@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,配置,安装程序
 title: 打包资源并将其上传到拉取服务器
-ms.openlocfilehash: 29a62f96393a53c9e7da57a5e51732dcb0937194
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8aac343d7495ecda94ed76d1d97079397eecd65f
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954374"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278489"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>打包资源并将其上传到拉取服务器
 
@@ -27,7 +27,7 @@ ms.locfileid: "71954374"
 
 可以使用喜欢的任何实用工具、脚本或方法压缩资源目录。 在 Windows 中，可以  右键单击“xPSDesiredStateConfiguration”目录，然后依次选择“发送到”和“压缩文件夹”。
 
-![右键单击](../media/right-click.gif)
+![右键单击](media/package-upload-resources/right-click.gif)
 
 ### <a name="naming-the-resource-archive"></a>命名资源存档
 

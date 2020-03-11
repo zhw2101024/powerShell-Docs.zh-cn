@@ -2,32 +2,25 @@
 ms.date: 10/31/2017
 keywords: dsc,powershell,配置,安装程序
 title: 保护 MOF 文件
-ms.openlocfilehash: 4ca540303cb740ac602bce181e0e446efcd16b6e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ab03db8bf4ed7d412691ae87fd12da5131607886
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71953554"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278455"
 ---
 # <a name="securing-the-mof-file"></a>保护 MOF 文件
 
 > 适用于：Windows PowerShell 4.0 和 Windows PowerShell 5.0
 
-DSC 通过应用存储于 MOF 文件中的信息来管理服务器节点的配置，其中本地配置管理器 (LCM) 在该文件中实现所需的结束状态。
-由于此文件包含配置的详细信息，确保其安全非常重要。
-本主题介绍如何确保目标节点已加密文件。
+DSC 通过应用存储于 MOF 文件中的信息来管理服务器节点的配置，其中本地配置管理器 (LCM) 在该文件中实现所需的结束状态。 由于此文件包含配置的详细信息，确保其安全非常重要。 本主题介绍如何确保目标节点已加密文件。
 
-自 PowerShell 版本 5.0 起，在将 MOF 文件应用于使用 `Start-DSCConfiguration` cmdlet 的节点时，默认情况下将加密整个 MOF 文件。
-仅在使用请求服务协议实现解决方案（如果证书未被托管）时，才需用到本文所述相关过程，以确保目标节点下载的配置在被应用之前可由系统解密和读取（例如 Windows Server 中可用的请求服务）。
-注册到 [Azure 自动化 DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) 的节点将自动安装证书并使其由服务进行托管，无需承担管理开销。
+自 PowerShell 版本 5.0 起，在将 MOF 文件应用于使用 `Start-DSCConfiguration` cmdlet 的节点时，默认情况下将加密整个 MOF 文件。 仅在使用请求服务协议实现解决方案（如果证书未被托管）时，才需用到本文所述相关过程，以确保目标节点下载的配置在被应用之前可由系统解密和读取（例如 Windows Server 中可用的请求服务）。 注册到 [Azure 自动化 DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) 的节点将自动安装证书并使其由服务进行托管，无需承担管理开销。
 
 > [!NOTE]
-> 本主题讨论用于加密的证书。
-> 对于加密，自签名证书就已足够，因为私钥始终保密，而加密并不表示信任该文档。
-> 自签名证书*不*得用于身份验证目的。
-> 应使用来自受信任的证书颁发机构 (CA) 的证书进行任何身份验证。
+> 本主题讨论用于加密的证书。 对于加密，自签名证书就已足够，因为私钥始终保密，而加密并不表示信任该文档。 自签名证书*不*得用于身份验证目的。 应使用来自受信任的证书颁发机构 (CA) 的证书进行任何身份验证。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 要成功加密所用凭据以保护 DSC 配置，请确保你有以下各项：
 
@@ -36,19 +29,18 @@ DSC 通过应用存储于 MOF 文件中的信息来管理服务器节点的配�
 - **每个目标节点的个人存储区中均保存了可加密的证书**。 在 Windows PowerShell 中，该存储区的路径为 Cert:\LocalMachine\My。 本主题中的示例使用“工作站身份验证”模板，你可以在[默认证书模板](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx)中找到它（以及其他证书模板）。
 - 如果你将在计算机而不是目标节点上运行此配置，请**导出证书的公钥**，然后将其导入到你将要从中运行配置的计算机。 请确保仅导出**公**钥；保护私钥安全。
 
-## <a name="overall-process"></a>整体过程
+## <a name="overall-process"></a>整体进程
 
  1. 设置证书、密钥和指纹，确保每个目标节点具有证书的副本，且配置计算机具有公钥和指纹。
  2. 创建包含公钥的路径和指纹的配置数据块。
  3. 创建配置脚本，该脚本定义目标节点的所需配置，并通过命令本地配置管理器使用证书及其指纹解密配置数据来设置目标节点上的解密。
  4. 运行配置，这将设置本地配置管理器设置并启动 DSC 配置。
 
-![Diagram1](../images/CredentialEncryptionDiagram1.png)
+![Diagram1](media/secureMOF/CredentialEncryptionDiagram1.png)
 
 ## <a name="certificate-requirements"></a>证书要求
 
-若要执行凭据加密，公钥证书必须在受用于创作 DSC 配置的计算机**信任**的_目标节点_上可用。
-若要将此公钥证书用于 DSC 凭据加密，它需具有以下特定要求：
+若要执行凭据加密，公钥证书必须在受用于创作 DSC 配置的计算机**信任**的_目标节点_上可用。 若要将此公钥证书用于 DSC 凭据加密，它需具有以下特定要求：
 
 1. **密钥用法**：
    - 必须包含：“KeyEncipherment”和“DataEncipherment”。
@@ -75,8 +67,7 @@ _目标节点_上满足这些条件的任何现有证书都可以用于保护 DS
 
 ### <a name="creating-the-certificate-on-the-target-node"></a>在目标节点上创建证书
 
-私钥必须是保密的，因为它可用于解密**目标节点**上的 MOF。为此，最简单的方法是在**目标节点**上创建私钥证书，并将**公钥证书**复制到用于将 DSC 配置编写到 MOF 文件中的计算机内。
-以下示例：
+私钥必须是保密的，因为它可用于解密**目标节点**上的 MOF。为此，最简单的方法是在**目标节点**上创建私钥证书，并将**公钥证书**复制到用于将 DSC 配置编写到 MOF 文件中的计算机内。 下面的示例：
 
 1. 在**目标节点**上创建证书
 2. 在**目标节点**上导出公钥证书。
@@ -97,11 +88,7 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 
 > 目标节点：Windows Server 2012 R2/Windows 8.1 及更早版本
 > [!WARNING]
-> 因为 Windows 10 和 Windows Server 2016 之前版本的 Windows 操作系统上的 `New-SelfSignedCertificate` cmdlet 不支持 Type  参数，因此，在这些操作系统上创建此证书需要其他方法。
->
-> 在这种情况下，可以使用 `makecert.exe` 或者 `certutil.exe` 来创建证书。
->
->一种替代方法是[从 Microsoft 脚本中心下载 New-SelfSignedCertificateEx.ps1 脚本](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) 并改为使用它来创建证书：
+> 因为 Windows 10 和 Windows Server 2016 之前版本的 Windows 操作系统上的 `New-SelfSignedCertificate` cmdlet 不支持 Type  参数，因此，在这些操作系统上创建此证书需要其他方法。 在这种情况下，可以使用 `makecert.exe` 或者 `certutil.exe` 来创建证书。 一种替代方法是[从 Microsoft 脚本中心下载 New-SelfSignedCertificateEx.ps1 脚本](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) 并改为使用它来创建证书：
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -138,10 +125,7 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
 
 ### <a name="creating-the-certificate-on-the-authoring-node"></a>在创作节点上创建证书
 
-或者，可以在**创作节点**上创建加密证书，并与**私钥**以 PFX 文件导出，然后在**目标节点**上导入。
-这是当前用于在 _Nano Server_ 上实现 DSC 凭据加密的方法。
-尽管 PFX 使用密码保护，但在传输过程中也应保证其安全性。
-以下示例：
+或者，可以在**创作节点**上创建加密证书，并与**私钥**以 PFX 文件导出，然后在**目标节点**上导入。 这是当前用于在 _Nano Server_ 上实现 DSC 凭据加密的方法。 尽管 PFX 使用密码保护，但在传输过程中也应保证其安全性。 下面的示例：
 
 1. 在**创作节点**上创建证书
 2. 在**创作节点**上导出证书（包括私钥）。
@@ -169,11 +153,7 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
 
 > 目标节点：Windows Server 2012 R2/Windows 8.1 及更早版本
 > [!WARNING]
-> 因为 Windows 10 和 Windows Server 2016 之前版本的 Windows 操作系统上的 `New-SelfSignedCertificate` cmdlet 不支持 Type  参数，因此，在这些操作系统上创建此证书需要其他方法。
->
-> 在这种情况下，可以使用 `makecert.exe` 或者 `certutil.exe` 来创建证书。
->
-> 一种替代方法是[从 Microsoft 脚本中心下载 New-SelfSignedCertificateEx.ps1 脚本](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) 并改为使用它来创建证书：
+> 因为 Windows 10 和 Windows Server 2016 之前版本的 Windows 操作系统上的 `New-SelfSignedCertificate` cmdlet 不支持 Type  参数，因此，在这些操作系统上创建此证书需要其他方法。 在这种情况下，可以使用 `makecert.exe` 或者 `certutil.exe` 来创建证书。 一种替代方法是[从 Microsoft 脚本中心下载 New-SelfSignedCertificateEx.ps1 脚本](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) 并改为使用它来创建证书：
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -323,7 +303,8 @@ configuration CredentialEncryptionExample
 
 此时，你可以运行配置，此操作将输出两个文件：
 
-- *.meta.mof 文件，它将本地配置管理器配置为使用存储在本地计算机存储区上、并由其指纹标识的证书来解密凭据。 [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) 应用 *.meta.mof 文件。
+- *.meta.mof 文件，它将本地配置管理器配置为使用存储在本地计算机存储区上、并由其指纹标识的证书来解密凭据。
+  [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) 应用 *.meta.mof 文件。
 - 实际应用配置的 MOF 文件。 Start-DscConfiguration 应用配置。
 
 这些命令将完成这些步骤：
@@ -339,8 +320,7 @@ Write-Host "Starting Configuration..."
 Start-DscConfiguration .\CredentialEncryptionExample -wait -Verbose
 ```
 
-此示例将 DSC 配置推送到目标节点。
-还可以使用 DSC 请求服务器（如果可用）来应用 DSC 配置。
+此示例将 DSC 配置推送到目标节点。 还可以使用 DSC 请求服务器（如果可用）来应用 DSC 配置。
 
 有关使用 DSC 请求服务器应用 DSC 配置的详细信息，请参阅[设置 DSC 请求客户端](pullClient.md)。
 
