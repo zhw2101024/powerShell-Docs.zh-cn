@@ -726,6 +726,36 @@
           href: samples/appendix-1---compatibility-aliases.md
         - name: 附录 2 - 创建自定义 PowerShell 快捷方式
           href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
+- name: 社区
+  items:
+    - name: 社区资源
+      href: community/community-support.md
+    - name: 数字艺术
+      href: community/digital-art.md
+    - name: PowerShell Docs 的最近更新
+      href: community/whats-new-in-docs.md
+    - name: 参与者指南
+      items:
+        - name: 概述
+          href: community/contributing/overview.md
+        - name: 如何提交 Docs 问题
+          href: community/contributing/file-an-issue.md
+        - name: 开始编写代码
+          href: community/contributing/get-started-writing.md
+        - name: 提交拉取请求
+          href: community/contributing/pull-requests.md
+        - name: PowerShell-Docs 风格指南
+          href: community/contributing/powershell-style-guide.md
+        - name: 编辑 cmdlet 参考
+          href: community/contributing/editing-cmdlet-ref.md
+        - name: 其他资源
+          items:
+            - name: 编辑清单
+              href: community/contributing/editorial-checklist.md
+            - name: 如何管理问题
+              href: community/contributing/managing-issues.md
+            - name: 如何管理拉取请求
+              href: community/contributing/managing-pull-requests.md
 - name: PowerShell SDK
   items:
     - name: 概述
