@@ -1,21 +1,28 @@
 ---
-title: 在 Linux 上安装 PowerShell Core
-description: 介绍如何在各种 Linux 分发上安装 PowerShell Core
-ms.date: 07/19/2019
-ms.openlocfilehash: 3b0b9b1520247fa49760e631c837196fb7107b5f
-ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
+title: 在 Linux 上安装 PowerShell
+description: 介绍如何在各种 Linux 分发版上安装 PowerShell
+ms.date: 03/09/2020
+ms.openlocfilehash: 0c7b2bd804d07b2fcb61a61240b139f84fabd6db
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022267"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402534"
 ---
-# <a name="installing-powershell-core-on-linux"></a>在 Linux 上安装 PowerShell Core
+# <a name="installing-powershell-on-linux"></a>在 Linux 上安装 PowerShell
 
 支持 [Ubuntu 16.04][u16]、[Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810]、[Ubuntu 19.04][u1904]、[Debian 8][deb8]、[Debian 9][deb9]、[Debian 10][deb10]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora] 和 [Arch Linux][arch]。
 
 对于未获得官方支持的 Linux 分发，可尝试使用 [PowerShell Snap 包][snap]安装 PowerShell。 还可尝试直接使用 Linux [`tar.gz`存档][tar] 部署 PowerShell 二进制文件，但是需要在各个步骤中基于 OS 设置必要的依赖项。
 
 GitHub [版本][]页面上提供有所有可用包。 安装包以后，从终端运行 `pwsh`。 若已安装 [预览版](#installing-preview-releases)，请运行 `pwsh-preview`。
+
+> [!NOTE]
+> PowerShell 7 是就地升级，升级后会删除 PowerShell Core 6.x。
+>
+> `/usr/local/microsoft/powershell/6` 文件夹被替换为 `/usr/local/microsoft/powershell/7`。
+>
+> 如果需要与 PowerShell 7 并行运行 PowerShell 6，请使用[二进制存档](#binary-archives)方法重新安装 PowerShell 6。
 
 [u16]: #ubuntu-1604
 [u1804]: #ubuntu-1804
@@ -32,32 +39,26 @@ GitHub [版本][]页面上提供有所有可用包。 安装包以后，从终�
 [snap]: #snap-package
 [tar]: #binary-archives
 
-> [!TIP]
-> 如果已安装 [.NET Core SDK](/dotnet/core/sdk)，则可以轻松地将 PowerShell 作为 [.NET 全局工具](/dotnet/core/tools/global-tools)进行安装。
->
-> ```
-> dotnet tool install --global PowerShell
-> ```
 
 ## <a name="installing-preview-releases"></a>安装预览版本
 
-通过包存储库安装适用于 Linux 的 PowerShell Core 预览版本时，包名称从 `powershell` 更改为 `powershell-preview`。
+通过包存储库安装适用于 Linux 的 PowerShell 预览版本时，包名称从 `powershell` 更改为 `powershell-preview`。
 
 直接下载安装不会更改包名称（文件名除外）。
 
 下表包含使用各种包管理器安装稳定包和预览包的命令：
 
-|分配|稳定包命令 | 预览包命令 |
-|---------------|---------------|-----------------|
-| Ubuntu、Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
-| CentOS、RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
-| Fedora   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
+| 分配 |            稳定包命令            |               预览包命令                |
+| --------------- | ------------------------------------ | -------------------------------------------- |
+| Ubuntu、Debian  | `sudo apt-get install -y powershell` | `sudo apt-get install -y powershell-preview` |
+| CentOS、RedHat  | `sudo yum install -y powershell`     | `sudo yum install -y powershell-preview`     |
+| Fedora          | `sudo dnf install -y powershell`     | `sudo dnf install -y powershell-preview`     |
 
 ## <a name="ubuntu-1604"></a>Ubuntu 16.04
 
 ### <a name="installation-via-package-repository---ubuntu-1604"></a>通过包存储库安装 - Ubuntu 16.04
 
-为简化安装和更新，已将适用于 Linux 的 PowerShell Core 发布到包存储库。
+为简化安装和更新，已将适用于 Linux 的 PowerShell 发布到包存储库。
 
 首选方法如下所示：
 
@@ -104,7 +105,7 @@ sudo apt-get remove powershell
 
 ### <a name="installation-via-package-repository---ubuntu-1804"></a>通过包存储库安装 - Ubuntu 18.04
 
-为简化安装和更新，已将适用于 Linux 的 PowerShell Core 发布到包存储库。
+为简化安装和更新，已将适用于 Linux 的 PowerShell 发布到包存储库。
 
 首选方法如下所示：
 
@@ -168,7 +169,7 @@ sudo apt-get remove powershell
 
 ### <a name="installation-via-package-repository---debian-8"></a>通过包存储库安装 - Debian 8
 
-为简化安装和更新，已将适用于 Linux 的 PowerShell Core 发布到包存储库。
+为简化安装和更新，已将适用于 Linux 的 PowerShell 发布到包存储库。
 
 首选方法如下所示：
 
@@ -199,7 +200,7 @@ pwsh
 
 ### <a name="installation-via-package-repository---debian-9"></a>通过包存储库安装 - Debian 9
 
-为简化安装和更新，已将适用于 Linux 的 PowerShell Core 发布到包存储库。
+为简化安装和更新，已将适用于 Linux 的 PowerShell 发布到包存储库。
 
 首选方法如下所示：
 
@@ -250,7 +251,7 @@ sudo apt-get remove powershell
 
 ### <a name="installation-via-direct-download---debian-10"></a>通过直接下载进行安装 - Debian 10
 
-从[版本][]页中将 tar.gz 包 `powershell_7.0.0-preview-7-linux-x64.tar.gz` 下载到 Debian 计算机。
+从[版本][]页中将 tar.gz 包 `powershell_7.0.0-linux-x64.tar.gz` 下载到 Debian 计算机。
 
 然后在终端中执行以下命令：
 
@@ -272,22 +273,22 @@ sudo apt-get install -y \
         curl
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.0.0-preview.4/powershell-7.0.0-preview.4-linux-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L  https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-7.0.0-linux-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /opt/microsoft/powershell/7-preview
+sudo mkdir -p /opt/microsoft/powershell/7
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7-preview
+sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7
 
 # Set execute permissions
-sudo chmod +x /opt/microsoft/powershell/7-preview/pwsh
+sudo chmod +x /opt/microsoft/powershell/7/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /opt/microsoft/powershell/7-preview/pwsh /usr/bin/pwsh-preview
+sudo ln -s /opt/microsoft/powershell/7/pwsh /usr/bin/pwsh
 
 # Start PowerShell
-pwsh-preview
+pwsh
 ```
 
 ## <a name="alpine-39-and-310"></a>Alpine 3.9 和 Alpine 3.10
@@ -297,7 +298,7 @@ pwsh-preview
 
 ### <a name="installation-via-direct-download---alpine-39-and-310"></a>通过直接下载进行安装 - Alpine 3.9 和 3.10
 
-从[版本][]页中将 tar.gz 包 `powershell_7.0.0-preview-7-linux-x64.tar.gz` 下载到 Alpine 计算机。
+从[版本][]页中将 tar.gz 包 `powershell_7.0.0-linux-x64.tar.gz` 下载到 Alpine 计算机。
 
 然后在终端中执行以下命令：
 
@@ -322,22 +323,22 @@ sudo apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
     lttng-ust
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.0.0-preview.4/powershell-7.0.0-preview.4-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-7.0.0-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /opt/microsoft/powershell/7-preview
+sudo mkdir -p /opt/microsoft/powershell/7
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7-preview
+sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7
 
 # Set execute permissions
-sudo chmod +x /opt/microsoft/powershell/7-preview/pwsh
+sudo chmod +x /opt/microsoft/powershell/7/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /opt/microsoft/powershell/7-preview/pwsh /usr/bin/pwsh-preview
+sudo ln -s /opt/microsoft/powershell/7/pwsh /usr/bin/pwsh
 
 # Start PowerShell
-pwsh-preview
+pwsh
 ```
 
 ## <a name="centos-7"></a>CentOS 7
@@ -347,7 +348,7 @@ pwsh-preview
 
 ### <a name="installation-via-package-repository-preferred---centos-7"></a>通过包存储库安装（首选）- CentOS 7
 
-为简化安装和更新，已将适用于 Linux 的 PowerShell Core 发布到正式的 Microsoft 存储库。
+为简化安装和更新，已将适用于 Linux 的 PowerShell 发布到正式的 Microsoft 存储库。
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -390,7 +391,7 @@ sudo yum remove powershell
 
 ### <a name="installation-via-package-repository-preferred---red-hat-enterprise-linux-rhel-7"></a>通过包存储库安装（首选）- Red Hat Enterprise Linux (RHEL) 7
 
-为简化安装和更新，已将适用于 Linux 的 PowerShell Core 发布到正式的 Microsoft 存储库。
+为简化安装和更新，已将适用于 Linux 的 PowerShell 发布到正式的 Microsoft 存储库。
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -488,14 +489,14 @@ rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ## <a name="fedora"></a>Fedora
 
 > [!NOTE]
-> Fedora 28 仅在 PowerShell Core 6.1 以及更新版本中受到支持。
+> Fedora 28 仅在 PowerShell 6.1 以及更新版本中受到支持。
 
 > [!NOTE]
 > Fedora 29 和 Fedora 30 仅在 PowerShell 7.0 以及更新版本中受到支持。
 
 ### <a name="installation-via-package-repository-preferred---fedora-28-29-and-30"></a>通过包存储库安装（首选）- Fedora 28、Fedora 29 和 Fedora 30
 
-为简化安装和更新，已将适用于 Linux 的 PowerShell Core 发布到正式的 Microsoft 存储库。
+为简化安装和更新，已将适用于 Linux 的 PowerShell 发布到正式的 Microsoft 存储库。
 
 ```sh
 # Register the Microsoft signature key
@@ -569,7 +570,7 @@ AUR 中的包由社区维护，并无正式支持。
 
 ### <a name="installation-via-snap"></a>通过 Snap 进行安装
 
-为简化安装和更新，已向 [Snap 存储](https://snapcraft.io/store)发布 PowerShell Core for Linux。
+为简化安装和更新，已向 [Snap 存储](https://snapcraft.io/store)发布适用于 Linux 的 PowerShell。
 
 首选方法如下所示：
 
@@ -634,7 +635,7 @@ apt -y remove powershell
 
 当前仅 Raspbian Stretch 支持 PowerShell。
 
-CoreCLR 和 PowerShell Core 仅适用于 Pi 2 和 Pi 3 设备，因为其他设备（如 [Pi 0](https://github.com/dotnet/coreclr/issues/10605)）有不受支持的处理器。
+CoreCLR 和 PowerShell 仅适用于 Pi 2 和 Pi 3 设备，因为其他设备（如 [Pi 0](https://github.com/dotnet/coreclr/issues/10605)）有不受支持的处理器。
 
 下载 [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) 并按照[安装说明](https://www.raspberrypi.org/documentation/installation/installing-images/README.md)操作，将其安装在你的 Pi 上。
 
@@ -683,6 +684,14 @@ sudo ~/powershell/pwsh -c New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" 
 
 ```sh
 rm -rf ~/powershell
+```
+
+## <a name="install-as-a-net-global-tool"></a>作为 .NET 全局工具安装
+
+如果你已安装 [.NET Core SDK](/dotnet/core/sdk)，则可以轻松地安装 PowerShell 作为 [.NET 全局工具](/dotnet/core/tools/global-tools)。
+
+```
+dotnet tool install --global PowerShell
 ```
 
 ## <a name="binary-archives"></a>二进制存档
@@ -740,13 +749,13 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 
 ## <a name="paths"></a>路径
 
-* `$PSHOME` 是 `/opt/microsoft/powershell/7/`
-* 将从 `~/.config/powershell/profile.ps1` 中读取用户配置文件
-* 将从 `$PSHOME/profile.ps1` 中读取默认配置文件
-* 将从 `~/.local/share/powershell/Modules` 中读取用户模块
-* 将从 `/usr/local/share/powershell/Modules` 中读取共享模块
-* 将从 `$PSHOME/Modules` 中读取默认模块
-* PSReadline 历史记录将记录到 `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+- `$PSHOME` 是 `/opt/microsoft/powershell/7/`
+- 将从 `~/.config/powershell/profile.ps1` 中读取用户配置文件
+- 将从 `$PSHOME/profile.ps1` 中读取默认配置文件
+- 将从 `~/.local/share/powershell/Modules` 中读取用户模块
+- 将从 `/usr/local/share/powershell/Modules` 中读取共享模块
+- 将从 `$PSHOME/Modules` 中读取默认模块
+- PSReadline 历史记录将记录到 `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 配置文件采用 PowerShell 的按主机配置，所以默认主机特定配置文件位于相同位置下的 `Microsoft.PowerShell_profile.ps1` 中。
 

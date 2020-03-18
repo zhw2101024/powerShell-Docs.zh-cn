@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,安装程序
 title: WMF 5.x 发行说明
 ms.openlocfilehash: 3fc712dbcbe184c60ae248b260c8f6800f111fdd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416501"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402354"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Windows Management Framework (WMF) 5.x 发行说明
 
@@ -98,7 +98,7 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
   **示例：** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
-- 如果有多个版本的模块，则 PowerShell 会使用与 `Import-Module` **相同的解析逻辑**，不会返回错误 - - 行为与 `Import-Module` 和 `Import-DscResource` 相同。
+- 如果有多个版本的模块，则 PowerShell 会使用与 `Import-Module`**相同的解析逻辑**，不会返回错误 - - 行为与 `Import-Module` 和 `Import-DscResource` 相同。
 
 ## <a name="improvements-to-pester"></a>针对 Pester 的改进
 

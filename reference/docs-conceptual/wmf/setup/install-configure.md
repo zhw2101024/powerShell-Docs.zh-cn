@@ -5,11 +5,11 @@ keywords: wmf,powershell,安装程序
 contributor: keithb
 title: 安装和配置 WMF 5.1
 ms.openlocfilehash: 241f52be011e1afc87d25c9a934db0c1e0361b76
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71147687"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402364"
 ---
 # <a name="install-and-configure-wmf-51"></a>安装和配置 WMF 5.1
 
@@ -21,7 +21,7 @@ ms.locfileid: "71147687"
 
 下载适用于要在其中进行安装的操作系统和体系结构的 WMF 5.1 包：
 
-| 操作系统       | 必备条件           | 包链接                          |
+| 操作系统       | 先决条件           | 包链接                          |
 |------------------------|-------------------------|----------------------------------------|
 | Windows Server 2012 R2 |                         | [Win8.1AndW2K12R2-KB3191564-x64.msu][] |
 | Windows Server 2012    |                         | [W2K12-KB3191565-x64.msu][]            |

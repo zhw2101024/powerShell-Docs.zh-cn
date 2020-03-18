@@ -3,11 +3,11 @@ ms.date: 06/27/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell Web 访问的授权规则和安全功能
 ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62058414"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402604"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 访问的授权规则和安全功能
 
@@ -38,7 +38,7 @@ Windows PowerShell Web 访问身份验证规则是允许列表规则。 每条�
 
 有关如何配置授权规则的详细信息，请参阅本主题中的[配置授权规则](#configuring-authorization-rules-and-site-security)。
 
-### <a name="security"></a>安全
+### <a name="security"></a>安全性
 
 Windows PowerShell Web 访问安全模型在基于 Web 控制台的最终用户和目标计算机之间具有四个安全层。 Windows PowerShell Web 访问管理员可通过其它配置在 IIS 管理器控制台中添加安全层。 有关如何确保 IIS 管理器控制台中网站安全的详细信息，请参阅[配置 Web 服务器安全 (IIS7)](https://technet.microsoft.com/library/cc731278)。
 
@@ -47,7 +47,7 @@ Windows PowerShell Web 访问安全模型在基于 Web 控制台的最终用户�
 
 下表描述最终用户与目标计算机之间的四个安全层。
 
-|层次|层|
+|级别|层|
 |-|-|
 |1|[IIS Web 服务器安全功能](#iis-web-server-security-features)|
 |2|[Windows PowerShell Web 访问基于表单的网关身份验证](#windows-powershell-web-access-forms-based-gateway-authentication)|
@@ -127,7 +127,7 @@ Windows PowerShell Web 访问 cmdlet 支持一个通配符，即星号 ( \* )。
    ```
 
 4. 验证规则是否是通过运行 Get-PswaAuthorizationRule  cmdlet 或 `Test-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName** <computer_name>` 进行创建的。
-   例如，`Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214`。
+   例如，`Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214` 。
 
 #### <a name="to-remove-an-authorization-rule"></a>删除授权规则
 

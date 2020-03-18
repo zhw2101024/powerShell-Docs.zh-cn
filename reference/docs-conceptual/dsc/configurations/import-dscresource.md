@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,配置,安装程序
 title: 使用 Import-DSCResource
-ms.openlocfilehash: 4bc269ab1dd4696298b4f33f7661473aae869eba
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a041169ad557becf7ca87641d9ce5222ee8f6beb
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417426"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402444"
 ---
 # <a name="using-import-dscresource"></a>使用 Import-DSCResource
 
@@ -21,7 +21,7 @@ Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>] [-Module
 
 |参数  |说明  |
 |---------|---------|
-|`-Name`|必须导入的 DSC 资源名称。 如果指定了模块名称，命令将在该模块中搜索这些 DSC 资源；否则，命令将在所有 DSC 资源路径中搜索 DSC 资源。 支持使用通配符。|
+|`-Name`|必须导入的 DSC 资源名称。 如果指定了模块名称，命令将在该模块中搜索这些 DSC 资源；否则，命令将在所有 DSC 资源路径中搜索 DSC 资源。 支持通配符。|
 |`-ModuleName`|模块名称或模块规范。  如果指定要从模块导入的资源，该命令将尝试只导入这些资源。 如果仅指定模块，则命令将导入模块中的所有 DSC 资源。|
 |`-ModuleVersion`|从 PowerShell 5.0 开始，可以指定配置应使用的模块版本。 有关详细信息，请参阅[导入已安装资源的特定版本](sxsresource.md)。|
 
@@ -29,7 +29,7 @@ Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>] [-Module
 Import-DscResource -ModuleName xActiveDirectory
 ```
 
-## <a name="example-use-import-dscresource-within-a-configuration"></a>例如：在配置中使用 Import-DSCResource
+## <a name="example-use-import-dscresource-within-a-configuration"></a>示例：在配置中使用 Import-DSCResource
 
 ```powershell
 Configuration MSDSCConfiguration
@@ -80,7 +80,7 @@ Configuration MSDSCConfiguration
 
 在 ISE 中编写 DSC 配置时，PowerShell 为资源和资源属性提供 IntelliSence。 `$pshome` 模块路径下的资源定义将自动加载。 当使用 `Import-DSCResource` 关键字导入资源时，将添加指定的资源定义，并扩展 Intellisense 以包含导入的资源架构。
 
-![资源 Intellisense](../media/resource-intellisense.png)
+![资源 Intellisense](media/import-dscresource/resource-intellisense.png)
 
 > [!NOTE]
 > 从 PowerShell 5.0 开始，已将 Tab 自动补全添加到 DSC 资源及其属性的 ISE 中。 有关详细信息，请参阅[资源](../resources/resources.md)。
@@ -139,11 +139,11 @@ PowerShell 4.0 不支持同时安装和使用多个资源版本。 如果注意�
 
 在下图中，安装了两个版本的 xPSDesiredStateConfiguration  模块。
 
-![修复了多个资源版本](../media/multiple-resource-versions-broken.png)
+![修复了多个资源版本](media/import-dscresource/multiple-resource-versions-broken.png)
 
 将所需模块版本的内容复制到模块目录的顶层。
 
-![修复了多个资源版本](../media/multiple-resource-versions-fixed.png)
+![修复了多个资源版本](media/import-dscresource/multiple-resource-versions-fixed.png)
 
 ### <a name="resource-location"></a>资源位置
 
