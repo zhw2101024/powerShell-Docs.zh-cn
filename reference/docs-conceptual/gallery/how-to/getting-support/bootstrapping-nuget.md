@@ -1,18 +1,17 @@
 ---
 ms.date: 06/12/2017
-contributor: manikb
 keywords: 库,powershell,cmdlet,psget
 title: 正在启动 NuGet
-ms.openlocfilehash: 6d8f106bc3b8741203e87e4c097948a843f06d6e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 70403006c7a48ac70a6766de3aa52d80cebbd86a
+ms.sourcegitcommit: 1fa89ab20d14a61f139f1394c45aaedd5a7c5438
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328428"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78935178"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>启动 NuGet 提供程序和 NuGet.exe
 
-最新的 NuGet 提供程序不包含 NuGet.exe。 若要对模块或脚本执行发布操作，PowerShellGet 需要使用二进制可执行 NuGet.exe。 对于其他所有操作（包括查找  、安装  、保存  和卸载  ），只需要使用 NuGet 提供程序。
+最新的 NuGet 提供程序不包含 NuGet.exe。 若要对模块或脚本执行发布操作，PowerShellGet 需要使用二进制可执行文件 NuGet.exe  。 对于其他所有操作（包括查找  、安装  、保存  和卸载  ），只需要使用 NuGet 提供程序。
 PowerShellGet 中的逻辑可以同时启动 NuGet 提供程序和 NuGet.exe，也可以只启动 NuGet 提供程序。 无论属于上述哪种情况，都应该仅显示一条提示消息。 如果计算机未连接 Internet，用户或管理员必须将 NuGet 提供程序和/或 NuGet.exe 文件的受信任实例复制到已断开连接的计算机。
 
 > [!NOTE]
@@ -24,10 +23,10 @@ PowerShellGet 中的逻辑可以同时启动 NuGet 提供程序和 NuGet.exe，�
 Find-Module -Repository PSGallery -Verbose -Name Contoso
 ```
 
-```output
+```Output
 NuGet provider is required to continue
 PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based repositories. The NuGet provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies' or
-'C:\Users\manikb\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to install and import the NuGet provider
+'C:\Users\user1\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to install and import the NuGet provider
 now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): n
 Find-Module : NuGet provider is required to interact with NuGet-based repositories. Please ensure that '2.8.5.201' or newer version of NuGet provider is installed.
@@ -42,10 +41,10 @@ At line:1 char:1
 Find-Module -Repository PSGallery -Verbose -Name Contoso
 ```
 
-```output
+```Output
 NuGet provider is required to continue
 PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based repositories. The NuGet provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies' or
-'C:\Users\manikb\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to install and import the NuGet provider
+'C:\Users\user1\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to install and import the NuGet provider
 now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 VERBOSE: Installing NuGet provider.
@@ -61,7 +60,7 @@ Version    Name                                Type       Repository           D
 Publish-Module -Name Contoso -Repository PSGallery -Verbose
 ```
 
-```output
+```Output
 NuGet.exe is required to continue
 PowerShellGet requires NuGet.exe to publish an item to the NuGet-based repositories. NuGet.exe must be available under one of the paths specified in PATH environment variable value. Do you want PowerShellGet to install NuGet.exe now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): N
@@ -77,7 +76,7 @@ At line:1 char:1
 Publish-Module -Name Contoso -Repository PSGallery -Verbose
 ```
 
-```output
+```Output
 NuGet.exe is required to continue
 PowerShellGet requires NuGet.exe to publish an item to the NuGet-based repositories. NuGet.exe must be available under one of the paths specified in PATH environment variable value. Do you want PowerShellGet to install NuGet.exe now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
@@ -91,7 +90,7 @@ VERBOSE: Successfully published module 'Contoso' to the module publish location 
 Publish-Module -Name Contoso -Repository PSGallery -Verbose
 ```
 
-```output
+```Output
 NuGet.exe and NuGet provider are required to continue
 PowerShellGet requires NuGet.exe and NuGet provider version '2.8.5.201' or newer to interact with the NuGet-based repositories. Do you want PowerShellGet to install both NuGet.exe and NuGet provider now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): N
@@ -108,7 +107,7 @@ At line:1 char:1
 Publish-Module -Name Contoso -Repository PSGallery -Verbose
 ```
 
-```output
+```Output
 NuGet.exe and NuGet provider are required to continue
 PowerShellGet requires NuGet.exe and NuGet provider version '2.8.5.201' or newer to interact with the NuGet-based repositories. Do you want PowerShellGet to install both NuGet.exe and NuGet provider now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
@@ -133,7 +132,11 @@ NuGet
 ----Microsoft.PackageManagement.NuGetProvider.dll
 ```
 
-使用受信任进程将这些文件夹和文件复制到脱机计算机。
+使用受信任进程将这些文件夹和文件复制到脱机计算机。 若要在离线计算机上使用该提供程序，必须将其导入。 在离线计算机上运行以下命令：
+
+```powershell
+Import-PackageProvider -Name NuGet
+```
 
 ## <a name="manually-bootstrapping-nugetexe-to-support-publish-operations-on-a-machine-that-is-not-connected-to-the-internet"></a>在未连接 Internet 的计算机上手动启动 NuGet.exe 以支持发布操作
 
@@ -143,30 +146,30 @@ NuGet
 
 一种方法是启动已连接 Internet 的计算机，并使用受信任进程将文件复制到脱机计算机。 启动已连接 Internet 的计算机后，NuGet.exe 二进制文件位于以下两个文件夹之一：
 
-如果使用提升的权限（以管理员身份）执行 `Publish-Module` 或 `Publish-Script` cmdlet：
+ - 如果使用提升的权限（以管理员身份）执行 `Publish-Module` 或 `Publish-Script` cmdlet：
 
-```powershell
-$env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
-```
+   ```powershell
+   $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
+   ```
 
-如果不使用提升的权限（以用户身份）执行这两个 cmdlet：
+- 如果不使用提升的权限（以用户身份）执行这两个 cmdlet：
 
-```powershell
-$env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
-```
+  ```powershell
+  $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
+  ```
 
 第二种方法是从 NuGet.Org 网站下载 NuGet.exe：[https://dist.nuget.org/index.html](https://www.nuget.org/downloads) 选择生产计算机的 NugGet 版本时，请确保版本高于 2.8.5.208，并确认版本已标记为“推荐”。 如果使用浏览器下载，请务必取消阻止文件。 为此，可以使用 `Unblock-File` cmdlet。
 
 无论属于上述哪种情况，都可以将 NuGet.exe 文件复制到 `$env:path` 中的任意位置，但标准位置为：
 
-若要让可执行文件可用，以便所有用户都可以使用 `Publish-Module` 和 `Publish-Script` cmdlet：
+- 若要让可执行文件可用，以便所有用户都可以使用 `Publish-Module` 和 `Publish-Script` cmdlet：
 
-```powershell
-$env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
-```
+  ```powershell
+  $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
+  ```
 
-若要让可执行文件仅对特定用户可用，请仅将文件复制到相应用户配置文件内的位置：
+- 若要让可执行文件仅对特定用户可用，请仅将文件复制到相应用户配置文件内的位置：
 
-```powershell
-$env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
-```
+  ```powershell
+  $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
+  ```

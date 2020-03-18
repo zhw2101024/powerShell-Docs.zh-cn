@@ -1,32 +1,30 @@
 ---
-title: 在 macOS 上安装 PowerShell Core
-description: 介绍如何在 macOS 上安装 PowerShell Core
+title: 在 macOS 上安装 PowerShell
+description: 介绍如何在 macOS 上安装 PowerShell
 ms.date: 12/12/2018
-ms.openlocfilehash: ad1306e99261e8e6e2fd49d3199d863929c31e92
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7f0d6a1aa275deb39a7d670546ee7e833b8ef315
+ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73444436"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78404817"
 ---
-# <a name="installing-powershell-core-on-macos"></a>在 macOS 上安装 PowerShell Core
+# <a name="installing-powershell-on-macos"></a>在 macOS 上安装 PowerShell
 
-PowerShell Core 支持 macOS 10.12 和更高版本。
+PowerShell 支持 macOS 10.12 及更高版本。
 GitHub [版本][]页面上提供有所有可用包。
 安装包以后，从终端运行 `pwsh`。
 
-> [!TIP]
-> 如果已安装 [.NET Core SDK](/dotnet/core/sdk)，则可以轻松地将 PowerShell 作为 [.NET 全局工具](/dotnet/core/tools/global-tools)进行安装。
+> [!NOTE]
+> PowerShell 7 是就地升级，升级后会删除 PowerShell Core 6.x。
 >
-> ```
-> dotnet tool install --global PowerShell
-> ```
+> `/usr/local/microsoft/powershell/6` 文件夹被替换为 `/usr/local/microsoft/powershell/7`。
+>
+> 如果需要与 PowerShell 7 并行运行 PowerShell 6，请使用[二进制存档](#binary-archives)方法重新安装 PowerShell 6。
 
 ## <a name="about-brew"></a>关于 Brew
 
-[Homebrew][brew] 是 macOS 的首选包管理器。
-如果未找到 `brew` 命令，则需要按照[说明][brew]安装 Homebrew。
-或者，可通过[直接下载](#installation-via-direct-download)或从[二进制存档](#binary-archives)安装 PowerShell。
+[Homebrew][brew] 是 macOS 的首选包管理器。 如果未找到 `brew` 命令，则需要按照[说明][brew]安装 Homebrew。 或者，可通过[直接下载](#installation-via-direct-download)或从[二进制存档](#binary-archives)安装 PowerShell。
 
 ## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>通过 Homebrew 在 macOS 10.12 或更高版本上安装最新的稳定版本
 
@@ -103,6 +101,14 @@ sudo installer -pkg powershell-6.2.0-osx-x64.pkg -target /
 
 安装 [OpenSSL](#install-openssl). PowerShell 远程处理和 CIM 操作均需要 OpenSSL。
 
+## <a name="install-as-a-net-global-tool"></a>作为 .NET 全局工具安装
+
+如果你已安装 [.NET Core SDK](/dotnet/core/sdk)，则可以轻松地安装 PowerShell 作为 [.NET 全局工具](/dotnet/core/tools/global-tools)。
+
+```
+dotnet tool install --global PowerShell
+```
+
 ## <a name="binary-archives"></a>二进制存档
 
 已对 macOS 平台提供 PowerShell 二进制 `tar.gz` 存档，以启用高级部署方案。
@@ -161,7 +167,7 @@ sudo mkdir -p /usr/local/opt/openssl
 sudo ln -s /opt/local/lib /usr/local/opt/openssl/lib
 ```
 
-## <a name="uninstalling-powershell-core"></a>卸载 PowerShell Core
+## <a name="uninstalling-powershell"></a>卸载 PowerShell
 
 如果使用 Homebrew 安装 PowerShell，请使用以下命令进行卸载：
 

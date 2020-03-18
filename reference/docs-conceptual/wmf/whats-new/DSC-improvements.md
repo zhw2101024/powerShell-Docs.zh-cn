@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,安装程序
 title: WMF 5.1 中的 DSC 改进
-ms.openlocfilehash: d9339ec9f316c4a32c5fa6cb2360c077973ee334
-ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
+ms.openlocfilehash: 99434d14100de54d2d4c89c5888741ab2f1c512a
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76818101"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78277561"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 中的 Desired State Configuration (DSC) 改进
 
@@ -59,7 +59,7 @@ ms.locfileid: "76818101"
 
 - 本地配置设置，定义了节点可以接收的部分配置。
 
-  ![示例 metaconfiguration](../images/DSC-improvements/MetaConfigPartialOne.png)
+  ![示例 metaconfiguration](media/DSC-improvements/MetaConfigPartialOne.png)
 
 - 部分配置定义示例
 
@@ -80,11 +80,11 @@ ms.locfileid: "76818101"
 
 - 生成的 MOF 文件中嵌入的“ConfigurationName”。
 
-  ![生成的 mof 文件示例](../images/DSC-improvements/PartialGeneratedMof.png)
+  ![生成的 mof 文件示例](media/DSC-improvements/PartialGeneratedMof.png)
 
 - 拉取配置存储库中的文件名
 
-  ![配置存储库中的文件名](../images/DSC-improvements/PartialInConfigRepository.png)
+  ![配置存储库中的文件名](media/DSC-improvements/PartialInConfigRepository.png)
 
   Azure 自动化服务名称生成的 MOF 文件名为 `<ConfigurationName>.<NodeName>.mof`。 因此，下面的配置编译到 PartialOne.localhost.mof 中。
 
@@ -249,7 +249,7 @@ Configuration WebApplication
 
 #### <a name="pull"></a>请求
 
-节点的 LocalConfigurationManager 根据其当前设置执行模块和配置的签名验证。 默认情况下，签名验证处于禁用状态。 你可以将 SignatureValidation 块添加到节点的元配置定义来启用签名验证，如下所示：
+节点的 LocalConfigurationManager 根据其当前设置执行模块和配置的签名验证。 默认情况下，签名验证处于禁用状态。 可以将“SignatureValidation”块添加到节点的元配置定义来启用签名验证，如下所示：
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -293,11 +293,11 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 > 仅在第一次将配置应用到系统或下载并安装模块时，才执行对模块目录和配置的签名验证。
 > 一致性运行不会验证 Current.mof 或其模块依赖项的签名。 如果在任何阶段验证失败（例如，如果从请求服务器请求获取的配置未签名），那么配置处理会终止，同时显示以下错误，并删除所有临时文件。
 
-![错误输出配置示例](../images/DSC-improvements/PullUnsignedConfigFail.png)
+![错误输出配置示例](media/DSC-improvements/PullUnsignedConfigFail.png)
 
 同样，如果请求获取的模块包含未签名的目录，也会导致以下错误生成：
 
-![错误输出模块示例](../images/DSC-improvements/PullUnisgnedCatalog.png)
+![错误输出模块示例](media/DSC-improvements/PullUnisgnedCatalog.png)
 
 #### <a name="push"></a>推送
 
@@ -345,12 +345,12 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
   Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
   ```
 
-  ![ErrorUnsignedMofPushed](../images/DSC-improvements/PushUnsignedMof.png)
+  ![ErrorUnsignedMofPushed](media/DSC-improvements/PushUnsignedMof.png)
 
 - 使用代码签名证书对配置文件进行签名。
 
-  ![SignMofFile](../images/DSC-improvements/SignMofFile.png)
+  ![SignMofFile](media/DSC-improvements/SignMofFile.png)
 
 - 请尝试推送已签名的 MOF 文件。
 
-  ![PushSignedMofFile](../images/DSC-improvements/PushSignedMof.png)
+  ![PushSignedMofFile](media/DSC-improvements/PushSignedMof.png)
