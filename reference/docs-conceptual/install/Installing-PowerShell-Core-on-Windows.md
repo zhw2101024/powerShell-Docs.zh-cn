@@ -1,26 +1,19 @@
 ---
-title: 在 Windows 上安装 PowerShell Core
-description: 介绍如何在 Windows 上安装 PowerShell Core
+title: 在 Windows 上安装 PowerShell
+description: 介绍如何在 Windows 上安装 PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: 00a1d8064a3c1ec6608a46415bbabb8d98d880f0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: df05a16bcf7a81d43d24535e50517fa217f82e7a
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416775"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402414"
 ---
-# <a name="installing-powershell-core-on-windows"></a>在 Windows 上安装 PowerShell Core
+# <a name="installing-powershell-on-windows"></a>在 Windows 上安装 PowerShell
 
-有多种方法可以在 Windows 中安装 PowerShell Core。
+有多种方法可以在 Windows 中安装 PowerShell。
 
-> [!TIP]
-> 如果已安装 [.NET Core SDK](/dotnet/core/sdk)，则可以轻松地将 PowerShell 作为 [.NET 全局工具](/dotnet/core/tools/global-tools)进行安装。
->
-> ```
-> dotnet tool install --global PowerShell
-> ```
-
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 若要通过 WSMan 启用 PowerShell 远程处理，需要满足以下先决条件：
 
@@ -32,7 +25,6 @@ ms.locfileid: "74416775"
 若要在 Windows 客户端或 Windows Server（适用于 Windows 7 SP1、Server 2008 R2 以及更高版本）上安装 PowerShell，请从 GitHub [版本][releases]页面下载 MSI 包。 向下滚动到要安装的版本的“资产”部分。  “资产”部分可能处于折叠状态，因此可能需要单击使其展开。
 
 MSI 文件类似于 `PowerShell-<version>-win-<os-arch>.msi`
-<!-- TODO: should be updated to point to the Download Center as well -->
 
 下载后，双击安装程序并按照提示进行操作。
 
@@ -40,6 +32,15 @@ MSI 文件类似于 `PowerShell-<version>-win-<os-arch>.msi`
 
 - 默认情况下，包安装位置为 `$env:ProgramFiles\PowerShell\<version>`
 - 可以通过“开始”菜单或 `$env:ProgramFiles\PowerShell\<version>\pwsh.exe` 启动 PowerShell
+
+> [!NOTE]
+> PowerShell 7 安装到新目录，并与 Windows PowerShell 5.1 并行运行。 对于 PowerShell Core 6.x，PowerShell 7 是删除 PowerShell Core 6.x 的就地升级。
+>
+> - PowerShell 7 安装到 `%programfiles%\PowerShell\7`
+> - `%programfiles%\PowerShell\7` 文件夹已添加到 `$env:PATH`
+> - `%programfiles%\PowerShell\6` 文件夹已删除
+>
+> 如果需要与 PowerShell 7 并行运行 PowerShell 6，请使用 [ZIP 安装](#zip)方法重新安装 PowerShell 6。
 
 ### <a name="administrative-install-from-the-command-line"></a>通过命令行进行管理安装
 
@@ -49,7 +50,7 @@ MSI 文件类似于 `PowerShell-<version>-win-<os-arch>.msi`
 - **ENABLE_PSREMOTING** - 此属性控制用于在安装过程中启用 PowerShell 远程处理的选项。
 - **REGISTER_MANIFEST** - 此属性控制用于注册 Windows 事件日志记录清单的选项。
 
-下面的示例演示如何在启用所有安装选项的情况下以无提示方式安装 PowerShell Core。
+下面的示例演示如何在启用所有安装选项的情况下以无提示方式安装 PowerShell。
 
 ```powershell
 msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
@@ -61,7 +62,7 @@ msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_
 
 要在 Windows 10 客户端上手动安装 MSIX 包，请从 GitHub [版本][releases]页面下载 MSIX 包。 向下滚动到要安装的版本的“资产”部分。  “资产”部分可能处于折叠状态，因此可能需要单击使其展开。
 
-MSI 文件类似于 `PowerShell-<version>-win-<os-arch>.msix`
+MSIX 文件类似于 - `PowerShell-<version>-win-<os-arch>.msix`
 
 下载后，请勿简单地双击安装程序，因为此程序包需要使用非虚拟资源。  要安装，必须使用 `Add-AppxPackage` cmdlet：
 
@@ -75,7 +76,7 @@ Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 
 ## <a name="deploying-on-windows-iot"></a>在 Windows IoT 上部署
 
-Windows IoT 已经附带了 Windows PowerShell，我们将使用它来部署 PowerShell Core 6。
+Windows IoT 已经附带了 Windows PowerShell，我们可以使用它来部署 PowerShell 7。
 
 1. 在目标设备中创建 `PSSession`
 
@@ -100,7 +101,7 @@ Windows IoT 已经附带了 Windows PowerShell，我们将使用它来部署 Pow
    Expand-Archive .\PowerShell-<version>-win-<os-arch>.zip
    ```
 
-4. 在 PowerShell Core 6 中设置远程处理
+4. 在 PowerShell 7 中设置远程处理
 
    ```powershell
    Set-Location .\PowerShell-<version>-win-<os-arch>
@@ -110,7 +111,7 @@ Windows IoT 已经附带了 Windows PowerShell，我们将使用它来部署 Pow
    # You'll get an error message and will be disconnected from the device because it has to restart WinRM
    ```
 
-5. 连接到设备上的 PowerShell Core 6 终结点
+5. 连接到设备上的 PowerShell 7 终结点
 
    ```powershell
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
@@ -120,23 +121,23 @@ Windows IoT 已经附带了 Windows PowerShell，我们将使用它来部署 Pow
 ## <a name="deploying-on-nano-server"></a>在 Nano Server 上进行部署
 
 这些说明假定某个 PowerShell 版本已在 Nano Server 映像上运行，并且其已经由 [Nano Server 映像生成器](/windows-server/get-started/deploy-nano-server)生成。
-Nano Server 是“无外设”OS。 可以使用两种不同的方法部署核心二进制文件。
+Nano Server 是“无外设”OS。 可以使用两种不同的方法部署 PowerShell 二进制文件。
 
 1. 脱机 - 安装 Nano Server VHD，并将 zip 文件的内容解压到安装映像中的所选位置。
 2. 联机 - 通过 PowerShell 会话传输 zip 文件，并在所需位置中将其解压。
 
 这两种情况下皆需要 Windows 10 x64 ZIP 发布包，且需要在“管理员”PowerShell 实例中运行命令。
 
-### <a name="offline-deployment-of-powershell-core"></a>PowerShell Core 脱机部署
+### <a name="offline-deployment-of-powershell"></a>PowerShell 脱机部署
 
 1. 使用常用 zip 实用工具将包解压到已安装的 Nano Server 映像中的目录。
 2. 卸载映像并启动。
 3. 连接到 Windows PowerShell 的收件箱实例。
 4. 按照说明使用[“另一种实例技术”](../learn/remoting/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register)创建远程处理终结点。
 
-### <a name="online-deployment-of-powershell-core"></a>PowerShell Core 联机部署
+### <a name="online-deployment-of-powershell"></a>PowerShell 联机部署
 
-以下步骤将指导你向 Nano Server 运行实例部署 PowerShell Core，并配置其远程终结点。
+以下步骤将指导你向 Nano Server 运行实例部署 PowerShell，并配置其远程终结点。
 
 - 连接到 Windows PowerShell 的收件箱实例
 
@@ -160,14 +161,22 @@ Nano Server 是“无外设”OS。 可以使用两种不同的方法部署核�
 
   ```powershell
   # Insert the appropriate version.
-  Expand-Archive -Path C:\powershell-<version>-win-x64.zip -DestinationPath "C:\PowerShellCore_<version>"
+  Expand-Archive -Path C:\powershell-<version>-win-x64.zip -DestinationPath "C:\PowerShell_<version>"
   ```
 
 - 如果需要基于 WSMan 的远程处理，请按照说明使用[“另一种实例技术”](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register)创建远程处理终结点。
 
+## <a name="install-as-a-net-global-tool"></a>作为 .NET 全局工具安装
+
+如果你已安装 [.NET Core SDK](/dotnet/core/sdk)，则可以轻松地安装 PowerShell 作为 [.NET 全局工具](/dotnet/core/tools/global-tools)。
+
+```
+dotnet tool install --global PowerShell
+```
+
 ## <a name="how-to-create-a-remoting-endpoint"></a>如何创建远程处理终结点
 
-PowerShell Core 同时支持采用 WSMan 和 SSH 的 PowerShell 远程处理协议 (PSRP)。 有关更多信息，请参阅：
+PowerShell 同时支持采用 WSMan 和 SSH 的 PowerShell 远程处理协议 (PSRP)。 有关详细信息，请参阅：
 
 - [在 PowerShell Core 中进行 SSH 远程处理][ssh-remoting]
 - [在 PowerShell Core 中进行 WSMan 远程处理][wsman-remoting]

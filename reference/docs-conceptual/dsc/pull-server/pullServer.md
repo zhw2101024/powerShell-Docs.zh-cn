@@ -2,12 +2,12 @@
 ms.date: 01/08/2020
 keywords: dsc,powershell,配置,安装程序
 title: DSC 请求服务
-ms.openlocfilehash: f171c3dc579dfb24a8c9fb87fbb50dccae619091
-ms.sourcegitcommit: aaf1284dfec2e4c698009d6dc27ff103aaafd581
+ms.openlocfilehash: cf2420e6889f63ac3b2859e5ee36fa888b728afc
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76885381"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402434"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration 请求服务
 
@@ -28,10 +28,10 @@ ms.locfileid: "76885381"
 |                   解决方案                   |              客户端节点              |
 | -------------------------------------------- | -------------------------------------- |
 | 使用 MDB/ESENT 数据库的 Windows 拉取服务器 | 最多 500 个节点                        |
-| 使用 SQL 数据库的 Windows 拉取服务器       | 最多 1000 个节点                       |
-| Azure Automation DSC                         | 包含超过 1000 个节点的方案 |
+| 使用 SQL 数据库的 Windows 拉取服务器       | 最多 3500 个节点                       |
+| Azure Automation DSC                         | 小型环境和大型环境      |
 
-**建议的解决方案**和可用功能最多的选项是 [Azure 自动化 DSC](/azure/automation/automation-dsc-getting-started)。
+**建议的解决方案**和可用功能最多的选项是 [Azure 自动化 DSC](/azure/automation/automation-dsc-getting-started)。 尚未标识每个自动化帐户的节点数的上限。
 
 Azure 服务可以在本地管理私有数据中心或 Azure 和 AWS 等公有云中的节点。 对于服务器无法直接连接到 Internet 的私有环境，请考虑将出站流量限制为仅已发布的 Azure IP 范围（请参阅 [Azure 数据中心 IP 范围](https://www.microsoft.com/download/details.aspx?id=41653)）。
 
