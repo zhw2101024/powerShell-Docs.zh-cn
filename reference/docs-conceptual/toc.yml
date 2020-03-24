@@ -298,7 +298,7 @@
       href: whats-new/cmdlet-versions.md
     - name: 模块兼容性列表
       href: whats-new/module-compatibility.md
-- name: PowerShell Core 支持生命周期
+- name: PowerShell 支持生命周期
   href: powershell-support-lifecycle.md
 - name: Windows Management Framework (WMF)
   items:
