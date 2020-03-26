@@ -2,18 +2,18 @@
 ms.date: 10/20/2019
 keywords: powershell,cmdlet
 title: 如何使用 PowerShell 文档
-ms.openlocfilehash: 7b73bc82f32e3ce1e6015822e0cc82078183931b
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 50b054ddc21d55946969414688306fc0d15a5adf
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78279294"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082836"
 ---
 # <a name="how-to-use-the-powershell-documentation"></a>如何使用 PowerShell 文档
 
 欢迎使用 PowerShell 联机文档。 此站点包含以下 PowerShell 版本的 cmdlet 参考：
 
-- PowerShell 7（预览版）
+- PowerShell 7
 - PowerShell 6
 - PowerShell 5.1
 

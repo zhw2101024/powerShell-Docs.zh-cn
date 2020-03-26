@@ -2,12 +2,12 @@
 title: PowerShell Core 支持生命周期
 description: 用于管理 PowerShell Core 支持的策略
 ms.date: 03/09/2020
-ms.openlocfilehash: a1cd316b1d5351acd04c547bc35b3cc62a561429
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: c1e91aa193dd4a6353098e16ae18301c0753ea85
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79090258"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082413"
 ---
 # <a name="powershell-support-lifecycle"></a>PowerShell 支持生命周期
 
@@ -133,7 +133,7 @@ PowerShell 7 改进了与为 Windows PowerShell 编写的现有 PowerShell 模�
 有关详细信息，请参阅 [about_Windows_Compatibility][] 文章和[模块兼容性列表][]。
 
 > [!NOTE]
-> PowerShell 7 中不再需要也不再支持 [WindowsPSModulePath](https://www.powershellgallery.com/packages/WindowsPSModulePath) 模块  。
+> PowerShell 7 中不再需要也不再支持 [WindowsPSModulePath](https://www.powershellgallery.com/packages/WindowsPSModulePath) 模块。
 
 ## <a name="experimental-features"></a>实验性功能
 

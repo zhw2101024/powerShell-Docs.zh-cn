@@ -2,12 +2,12 @@
 title: 在 macOS 上安装 PowerShell
 description: 介绍如何在 macOS 上安装 PowerShell
 ms.date: 12/12/2018
-ms.openlocfilehash: 7f0d6a1aa275deb39a7d670546ee7e833b8ef315
-ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
+ms.openlocfilehash: 2233bc01ee8c53087f79d83ca936c5a3800cfdba
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78404817"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082763"
 ---
 # <a name="installing-powershell-on-macos"></a>在 macOS 上安装 PowerShell
 
@@ -108,6 +108,8 @@ sudo installer -pkg powershell-6.2.0-osx-x64.pkg -target /
 ```
 dotnet tool install --global PowerShell
 ```
+
+dotnet 工具安装程序将 `~/.dotnet/tools` 添加到 `PATH` 环境变量中。 但是，当前运行的 shell 没有更新的 `PATH`。 应该可以通过键入 `pwsh` 从新 shell 启动 PowerShell。
 
 ## <a name="binary-archives"></a>二进制存档
 

@@ -2,12 +2,12 @@
 ms.date: 02/03/2020
 keywords: powershell, 核心
 title: 模块和 cmdlet 发行历史记录
-ms.openlocfilehash: 9b7c769198fa2a39d8efcc9602f2a913c041289c
-ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
+ms.openlocfilehash: 824380c7aa732e6a2027d86be33cbde901ab11e1
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78404981"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082733"
 ---
 # <a name="release-history-of-modules-and-cmdlets"></a>模块和 cmdlet 发行历史记录
 
@@ -103,9 +103,9 @@ ms.locfileid: "78404981"
 | Enable-ExperimentalFeature        |         |   6.2   | &check; | &check; |                            |
 | Enable-PSRemoting                 | &check; | &check; | &check; | &check; | 仅限 Windows               |
 | Enable-PSSessionConfiguration     | &check; | &check; | &check; | &check; | 仅限 Windows               |
-| Enter-PSHostProcess               | &check; | &check; | &check; | &check; | 6\.2 中新增 Linux 支持 |
+| Enter-PSHostProcess               | &check; | &check; | &check; | &check; | 6.2 中新增 Linux 支持 |
 | Enter-PSSession                   | &check; | &check; | &check; | &check; |                            |
-| Exit-PSHostProcess                | &check; | &check; | &check; | &check; | 6\.2 中新增 Linux 支持 |
+| Exit-PSHostProcess                | &check; | &check; | &check; | &check; | 6.2 中新增 Linux 支持 |
 | Exit-PSSession                    | &check; | &check; | &check; | &check; |                            |
 | Export-Console                    | &check; |         |         |         | 仅限 Windows               |
 | Export-ModuleMember               | &check; | &check; | &check; | &check; |                            |
@@ -116,7 +116,7 @@ ms.locfileid: "78404981"
 | Get-History                       | &check; | &check; | &check; | &check; |                            |
 | Get-Job                           | &check; | &check; | &check; | &check; |                            |
 | Get-Module                        | &check; | &check; | &check; | &check; |                            |
-| Get-PSHostProcessInfo             | &check; | &check; | &check; | &check; | 6\.2 中新增 Linux 支持 |
+| Get-PSHostProcessInfo             | &check; | &check; | &check; | &check; | 6.2 中新增 Linux 支持 |
 | Get-PSSession                     | &check; | &check; | &check; | &check; |                            |
 | Get-PSSessionCapability           | &check; | &check; | &check; | &check; |                            |
 | Get-PSSessionConfiguration        | &check; | &check; | &check; | &check; |                            |
@@ -278,7 +278,7 @@ ms.locfileid: "78404981"
 | Start-Process                 | &check; | &check; | &check; | &check; |                                  |
 | Start-Service                 | &check; | &check; | &check; | &check; | 仅限 Windows                     |
 | Start-Transaction             | &check; |         |         |         | 仅限 Windows                     |
-| Stop-Computer                 | &check; | &check; | &check; | &check; | 7\.0 中新增 Linux/macOS 支持 |
+| Stop-Computer                 | &check; | &check; | &check; | &check; | 7.0 中新增 Linux/macOS 支持 |
 | Stop-Process                  | &check; | &check; | &check; | &check; |                                  |
 | Stop-Service                  | &check; | &check; | &check; | &check; | 仅限 Windows                     |
 | Suspend-Service               | &check; | &check; | &check; | &check; | 仅限 Windows                     |
@@ -311,17 +311,17 @@ ms.locfileid: "78404981"
 | ConvertTo-SecureString    | &check; | &check; | &check; | &check; |                                         |
 | Get-Acl                   | &check; | &check; | &check; | &check; | 仅限 Windows                            |
 | Get-AuthenticodeSignature | &check; | &check; | &check; | &check; | 仅限 Windows                            |
-| Get-CmsMessage            | &check; | &check; | &check; | &check; | 仅限 Windows                            |
+| Get-CmsMessage            | &check; | &check; | &check; | &check; | 在 7.1 中添加了对 Linux/macOS 的支持    |
 | Get-Credential            | &check; | &check; | &check; | &check; |                                         |
-| Get-ExecutionPolicy       | &check; | &check; | &check; | &check; | 在 Linux/macOS 上返回“无限制”  |
+| Get-ExecutionPolicy       | &check; | &check; | &check; | &check; | 在 Linux/macOS 上返回“无限制” |
 | Get-PfxCertificate        | &check; | &check; | &check; | &check; |                                         |
 | New-FileCatalog           | &check; | &check; | &check; | &check; | 仅限 Windows                            |
-| Protect-CmsMessage        | &check; | &check; | &check; | &check; | 仅限 Windows                            |
+| Protect-CmsMessage        | &check; | &check; | &check; | &check; | 在 7.1 中添加了对 Linux/macOS 的支持    |
 | Set-Acl                   | &check; | &check; | &check; | &check; | 仅限 Windows                            |
 | Set-AuthenticodeSignature | &check; | &check; | &check; | &check; | 仅限 Windows                            |
 | Set-ExecutionPolicy       | &check; | &check; | &check; | &check; | 在 Linux/macOS 上不执行任何操作             |
 | Test-FileCatalog          | &check; | &check; | &check; | &check; | 仅限 Windows                            |
-| Unprotect-CmsMessage      | &check; | &check; | &check; | &check; | 仅限 Windows                            |
+| Unprotect-CmsMessage      | &check; | &check; | &check; | &check; | 在 7.1 中添加了对 Linux/macOS 的支持    |
 
 ### <a name="microsoftpowershellutility"></a>Microsoft.PowerShell.Utility
 
@@ -429,7 +429,7 @@ ms.locfileid: "78404981"
 | Tee-Object                | &check; | &check; | &check; | &check; |                                           |
 | Test-Json                 |         | &check; | &check; | &check; |                                           |
 | Trace-Command             | &check; | &check; | &check; | &check; |                                           |
-| Unblock-File              | &check; | &check; | &check; | &check; | 7\.0 中新增 macOS 支持            |
+| Unblock-File              | &check; | &check; | &check; | &check; | 7.0 中新增 macOS 支持            |
 | Unregister-Event          | &check; | &check; | &check; | &check; | Linux/macOS 上没有可用的事件源 |
 | Update-FormatData         | &check; | &check; | &check; | &check; |                                           |
 | Update-List               | &check; |         | &check; | &check; |                                           |
@@ -516,66 +516,22 @@ ms.locfileid: "78404981"
 
 |                Cmdlet 名称                 |   5.1   |   6.x   |   7.0   |   7.1   |     注意     |
 | ------------------------------------------ | :-----: | :-----: | :-----: | :-----: | ------------ |
-| Add-NodeKeys                               |         | &check; |         |         |              |
-| ConvertTo-MOFInstance                      |         | &check; |         |         |              |
 | Disable-DscDebug                           | &check; |         |         |         | 仅限 Windows |
 | Enable-DscDebug                            | &check; |         |         |         | 仅限 Windows |
-| Generate-VersionInfo                       |         | &check; |         |         |              |
-| Get-CompatibleVersionAddtionaPropertiesStr |         | &check; |         |         |              |
-| Get-ComplexResourceQualifier               |         | &check; |         |         |              |
-| Get-ConfigurationErrorCount                |         | &check; |         |         |              |
 | Get-DscConfiguration                       | &check; |         |         |         | 仅限 Windows |
 | Get-DscConfigurationStatus                 | &check; |         |         |         | 仅限 Windows |
 | Get-DscLocalConfigurationManager           | &check; |         |         |         | 仅限 Windows |
 | Get-DscResource                            | &check; | &check; | &check; | &check; |              |
-| Get-DSCResourceModules                     |         | &check; |         |         |              |
-| Get-EncryptedPassword                      |         | &check; |         |         |              |
-| Get-InnerMostErrorRecord                   |         | &check; |         |         |              |
-| Get-MofInstanceName                        |         | &check; |         |         |              |
-| Get-MofInstanceText                        |         | &check; |         |         |              |
-| Get-PositionInfo                           |         | &check; |         |         |              |
-| Get-PSCurrentConfigurationNode             |         | &check; |         |         |              |
-| Get-PSDefaultConfigurationDocument         |         | &check; |         |         |              |
-| Get-PSMetaConfigDocumentInstVersionInfo    |         | &check; |         |         |              |
-| Get-PSMetaConfigurationProcessed           |         | &check; |         |         |              |
-| Get-PSTopConfigurationName                 |         | &check; |         |         |              |
-| Get-PublicKeyFromFile                      |         | &check; |         |         |              |
-| Get-PublicKeyFromStore                     |         | &check; |         |         |              |
-| Initialize-ConfigurationRuntimeState       |         | &check; |         |         |              |
 | Invoke-DscResource                         | &check; |         | &check; | &check; |              |
 | New-DSCCheckSum                            | &check; | &check; | &check; | &check; |              |
 | Publish-DscConfiguration                   | &check; |         |         |         | 仅限 Windows |
 | Remove-DscConfigurationDocument            | &check; |         |         |         | 仅限 Windows |
 | Restore-DscConfiguration                   | &check; |         |         |         | 仅限 Windows |
 | Set-DscLocalConfigurationManager           | &check; |         |         |         | 仅限 Windows |
-| Set-NodeExclusiveResources                 |         | &check; |         |         |              |
-| Set-NodeManager                            |         | &check; |         |         |              |
-| Set-NodeResources                          |         | &check; |         |         |              |
-| Set-NodeResourceSource                     |         | &check; |         |         |              |
-| Set-PSCurrentConfigurationNode             |         | &check; |         |         |              |
-| Set-PSDefaultConfigurationDocument         |         | &check; |         |         |              |
-| Set-PSMetaConfigDocInsProcessedBeforeMeta  |         | &check; |         |         |              |
-| Set-PSMetaConfigVersionInfoV2              |         | &check; |         |         |              |
-| Set-PSTopConfigurationName                 |         | &check; |         |         |              |
 | Start-DscConfiguration                     | &check; |         |         |         | 仅限 Windows |
 | Stop-DscConfiguration                      | &check; |         |         |         | 仅限 Windows |
-| Test-ConflictingResources                  |         | &check; |         |         |              |
 | Test-DscConfiguration                      | &check; |         |         |         | 仅限 Windows |
-| Test-ModuleReloadRequired                  |         | &check; |         |         |              |
-| Test-MofInstanceText                       |         | &check; |         |         |              |
-| Test-NodeManager                           |         | &check; |         |         |              |
-| Test-NodeResources                         |         | &check; |         |         |              |
-| Test-NodeResourceSource                    |         | &check; |         |         |              |
-| Update-ConfigurationDocumentRef            |         | &check; |         |         |              |
-| Update-ConfigurationErrorCount             |         | &check; |         |         |              |
-| Update-DependsOn                           |         | &check; |         |         |              |
 | Update-DscConfiguration                    | &check; |         |         |         | 仅限 Windows |
-| Update-LocalConfigManager                  |         | &check; |         |         |              |
-| Update-ModuleVersion                       |         | &check; |         |         |              |
-| ValidateUpdate-ConfigurationData           |         | &check; |         |         |              |
-| Write-Log                                  |         | &check; |         |         |              |
-| Write-MetaConfigFile                       |         | &check; |         |         |              |
-| Write-NodeMOFFile                          |         | &check; |         |         |              |
 
 ### <a name="psdiagnostics"></a>PSDiagnostics
 

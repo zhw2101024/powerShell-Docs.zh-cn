@@ -2,12 +2,12 @@
 title: 在 Windows 上安装 PowerShell
 description: 介绍如何在 Windows 上安装 PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: df05a16bcf7a81d43d24535e50517fa217f82e7a
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: bb0971b6c4ac99bde70b226da2becf2f4ed82083
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402414"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082777"
 ---
 # <a name="installing-powershell-on-windows"></a>在 Windows 上安装 PowerShell
 
@@ -20,9 +20,9 @@ ms.locfileid: "79402414"
 - 在 Windows 10 之前的 Windows 版本上安装[通用 C 运行时](https://www.microsoft.com/download/details.aspx?id=50410)。 可通过直接下载或 Windows 更新进行安装。 经完全修补（含可选包）且受支持的系统中已安装有通用 C 运行时。
 - 在 Windows 7 和 Windows Server 2008 R2 上安装 Windows Management Framework (WMF) 4.0 或更高版本。 有关 WMF 的详细信息，请参阅 [WMF 概述](/powershell/scripting/wmf/overview)。
 
-## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />安装 MSI 包
+## <a name="installing-the-msi-package"></a><a id="msi" />安装 MSI 包
 
-若要在 Windows 客户端或 Windows Server（适用于 Windows 7 SP1、Server 2008 R2 以及更高版本）上安装 PowerShell，请从 GitHub [版本][releases]页面下载 MSI 包。 向下滚动到要安装的版本的“资产”部分。  “资产”部分可能处于折叠状态，因此可能需要单击使其展开。
+若要在 Windows 客户端或 Windows Server（适用于 Windows 7 SP1、Server 2008 R2 以及更高版本）上安装 PowerShell，请从 GitHub [版本][releases]页面下载 MSI 包。 向下滚动到要安装的版本的“资产”部分。 “资产”部分可能处于折叠状态，因此可能需要单击使其展开。
 
 MSI 文件类似于 `PowerShell-<version>-win-<os-arch>.msi`
 
@@ -46,7 +46,7 @@ MSI 文件类似于 `PowerShell-<version>-win-<os-arch>.msi`
 
 可以通过命令行安装 MSI 包。 这样，管理员可以部署包而无需用户交互。 适用于 PowerShell 的 MSI 包包含下列属性以控制安装选项：
 
-- **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** - 此属性控制向 Windows 资源管理器中的上下文菜单添加“打开 PowerShell”  项的选项。
+- **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** - 此属性控制向 Windows 资源管理器中的上下文菜单添加“打开 PowerShell”项的选项。
 - **ENABLE_PSREMOTING** - 此属性控制用于在安装过程中启用 PowerShell 远程处理的选项。
 - **REGISTER_MANIFEST** - 此属性控制用于注册 Windows 事件日志记录清单的选项。
 
@@ -58,9 +58,9 @@ msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_
 
 有关 Msiexec.exe 命令行选项的完整列表，请参阅[命令行选项](/windows/desktop/Msi/command-line-options)。
 
-## <a name="a-idmsix-installing-the-msix-package"></a><a id="msix" />安装 MSIX 包
+## <a name="installing-the-msix-package"></a><a id="msix" />安装 MSIX 包
 
-要在 Windows 10 客户端上手动安装 MSIX 包，请从 GitHub [版本][releases]页面下载 MSIX 包。 向下滚动到要安装的版本的“资产”部分。  “资产”部分可能处于折叠状态，因此可能需要单击使其展开。
+要在 Windows 10 客户端上手动安装 MSIX 包，请从 GitHub [版本][releases]页面下载 MSIX 包。 向下滚动到要安装的版本的“资产”部分。 “资产”部分可能处于折叠状态，因此可能需要单击使其展开。
 
 MSIX 文件类似于 - `PowerShell-<version>-win-<os-arch>.msix`
 
@@ -70,7 +70,7 @@ MSIX 文件类似于 - `PowerShell-<version>-win-<os-arch>.msix`
 Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 ```
 
-## <a name="a-idzip-installing-the-zip-package"></a><a id="zip" />安装 ZIP 包
+## <a name="installing-the-zip-package"></a><a id="zip" />安装 ZIP 包
 
 提供有 PowerShell 二进制 ZIP 存档，从而支持高级部署方案。 请注意，使用 ZIP 存档时，不同于使用 MSI，你无法获取 MSI 先决条件检查。 要使 WSMan 远程处理正常工作，请确保您已满足[先决条件](#prerequisites)。
 
@@ -81,7 +81,8 @@ Windows IoT 已经附带了 Windows PowerShell，我们可以使用它来部署 
 1. 在目标设备中创建 `PSSession`
 
    ```powershell
-   $s = New-PSSession -ComputerName <deviceIp> -Credential Administrator
+   Set-Item -Path WSMan:\localhost\Client\TrustedHosts <deviceip>
+   $S = New-PSSession -ComputerName <deviceIp> -Credential Administrator
    ```
 
 2. 将 ZIP 包复制到设备
@@ -173,6 +174,8 @@ Nano Server 是“无外设”OS。 可以使用两种不同的方法部署 Powe
 ```
 dotnet tool install --global PowerShell
 ```
+
+dotnet 工具安装程序将 `$env:USERPROFILE\dotnet\tools` 添加到 `$env:PATH` 环境变量中。 但是，当前运行的 shell 没有更新的 `$env:PATH`。 应该可以通过键入 `pwsh` 从新 shell 启动 PowerShell。
 
 ## <a name="how-to-create-a-remoting-endpoint"></a>如何创建远程处理终结点
 

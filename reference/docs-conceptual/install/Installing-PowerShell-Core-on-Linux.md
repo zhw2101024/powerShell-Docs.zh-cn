@@ -2,12 +2,12 @@
 title: 在 Linux 上安装 PowerShell
 description: 介绍如何在各种 Linux 分发版上安装 PowerShell
 ms.date: 03/09/2020
-ms.openlocfilehash: 0c7b2bd804d07b2fcb61a61240b139f84fabd6db
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 13b8583ed45f1201e61225b377112a59d2b26cb2
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402534"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082800"
 ---
 # <a name="installing-powershell-on-linux"></a>在 Linux 上安装 PowerShell
 
@@ -298,7 +298,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---alpine-39-and-310"></a>通过直接下载进行安装 - Alpine 3.9 和 3.10
 
-从[版本][]页中将 tar.gz 包 `powershell_7.0.0-linux-x64.tar.gz` 下载到 Alpine 计算机。
+从[版本][]页中将 tar.gz 包 `powershell-7.0.0-linux-alpine-x64.tar.gz` 下载到 Alpine 计算机。
 
 然后在终端中执行以下命令：
 
@@ -693,6 +693,8 @@ rm -rf ~/powershell
 ```
 dotnet tool install --global PowerShell
 ```
+
+dotnet 工具安装程序将 `~/.dotnet/tools` 添加到 `PATH` 环境变量中。 但是，当前运行的 shell 没有更新的 `PATH`。 应该可以通过键入 `pwsh` 从新 shell 启动 PowerShell。
 
 ## <a name="binary-archives"></a>二进制存档
 
