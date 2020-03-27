@@ -21,7 +21,7 @@ PowerShell 可帮助系统管理员和高级用户快速自动执行用于管理
 PowerShell 基本源代码目前在 GitHub 中提供，且对社区贡献开放。
 请参阅 [GitHub 上的 PowerShell 源](https://github.com/powershell/powershell)。
 
-可以从[获取 PowerShell](https://github.com/PowerShell/PowerShell#get-powershell) 中的所需位数入手。
+可以从[获取 PowerShell](https://github.com/PowerShell/PowerShell#get-powershell) 的内容入手。
 或者可以快速查看[入门](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell)。
 
 ## <a name="powershell-design-goals"></a>PowerShell 设计目标
